@@ -5,7 +5,7 @@
 </div>
 <br />
 
-![Screenshot](https://github.com/HerbL27/ps3xftp/blob/master/Screenshots/Screenshot.png?raw=true)
+![Screenshot](https://github.com/HerbL27/ps3xftp/blob/master/Screenshot.png?raw=true)
 
 A federated desktop application for discovering hundreds of mods for your favourite playstation 3 games. Simply choose your desired game from the dropdown menu and select from the listed mods available, then install the mod files to your console while making sure you're on the XMB screen. After installing, boot up your game and read the configration and description in the mod details to ensure your mods are loaded correctly.
 
