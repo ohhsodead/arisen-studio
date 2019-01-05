@@ -19,7 +19,8 @@ A federated desktop application for discovering hundreds of mods for your favour
 * Download mod files to your computer
 * Install mod files directly to your console, in appropriate folders for it to work too
 * Many games including GTA, Battlefield and more
-* Supporting every game region
+* Automatically detect your game region folders
+* Supports every game region
 * Create, edit and save your list of consoles
 
 ## Installation
