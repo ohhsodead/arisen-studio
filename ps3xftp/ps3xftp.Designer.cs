@@ -54,10 +54,10 @@
             this.ColumnAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DropdownTypes = new System.Windows.Forms.ComboBox();
             this.LabelSelectType = new System.Windows.Forms.Label();
-            this.ImageHeader = new System.Windows.Forms.PictureBox();
+            this.ImageText = new System.Windows.Forms.PictureBox();
             this.LabelSelectRegion = new System.Windows.Forms.Label();
             this.DropdownRegions = new System.Windows.Forms.ComboBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.MenuStripFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripFileRefreshData = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripFileExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +65,7 @@
             this.MenuStripConsolesEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripContribute = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripInformation = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.ToolStrip = new System.Windows.Forms.ToolStrip();
             this.ToolStripTitleConsole = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripConsole = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripSeperator = new System.Windows.Forms.ToolStripSeparator();
@@ -74,9 +74,9 @@
             this.LabelModDetails = new System.Windows.Forms.Label();
             this.FlowPanelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataModItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImageHeader)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageText)).BeginInit();
+            this.MenuStrip.SuspendLayout();
+            this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // LabelSelectConsole
@@ -94,12 +94,13 @@
             // DropdownConsoles
             // 
             this.DropdownConsoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DropdownConsoles.Enabled = false;
             this.DropdownConsoles.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DropdownConsoles.FormattingEnabled = true;
             this.DropdownConsoles.Location = new System.Drawing.Point(238, 61);
             this.DropdownConsoles.Name = "DropdownConsoles";
             this.DropdownConsoles.Size = new System.Drawing.Size(228, 23);
-            this.DropdownConsoles.TabIndex = 1063;
+            this.DropdownConsoles.TabIndex = 0;
             this.DropdownConsoles.SelectedIndexChanged += new System.EventHandler(this.ComboBoxConsoles_SelectedIndexChanged);
             // 
             // ButtonUninstallMods
@@ -109,7 +110,7 @@
             this.ButtonUninstallMods.Location = new System.Drawing.Point(623, 339);
             this.ButtonUninstallMods.Name = "ButtonUninstallMods";
             this.ButtonUninstallMods.Size = new System.Drawing.Size(70, 26);
-            this.ButtonUninstallMods.TabIndex = 1107;
+            this.ButtonUninstallMods.TabIndex = 8;
             this.ButtonUninstallMods.Text = "Uninstall";
             this.ButtonUninstallMods.UseVisualStyleBackColor = true;
             // 
@@ -132,7 +133,7 @@
             this.FlowPanelDetails.Name = "FlowPanelDetails";
             this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.FlowPanelDetails.Size = new System.Drawing.Size(314, 273);
-            this.FlowPanelDetails.TabIndex = 1105;
+            this.FlowPanelDetails.TabIndex = 6;
             // 
             // LabelDetailsName
             // 
@@ -295,7 +296,7 @@
             this.ButtonInstallMods.Location = new System.Drawing.Point(561, 339);
             this.ButtonInstallMods.Name = "ButtonInstallMods";
             this.ButtonInstallMods.Size = new System.Drawing.Size(56, 26);
-            this.ButtonInstallMods.TabIndex = 1106;
+            this.ButtonInstallMods.TabIndex = 7;
             this.ButtonInstallMods.Text = "Install";
             this.ButtonInstallMods.UseVisualStyleBackColor = true;
             this.ButtonInstallMods.Click += new System.EventHandler(this.ButtonInstallMods_Click);
@@ -320,7 +321,7 @@
             this.DropdownGames.Location = new System.Drawing.Point(12, 112);
             this.DropdownGames.Name = "DropdownGames";
             this.DropdownGames.Size = new System.Drawing.Size(349, 23);
-            this.DropdownGames.TabIndex = 1092;
+            this.DropdownGames.TabIndex = 2;
             this.DropdownGames.SelectedIndexChanged += new System.EventHandler(this.DropdownGames_SelectedIndexChanged);
             // 
             // DataModItems
@@ -354,7 +355,7 @@
             this.DataModItems.ShowCellToolTips = false;
             this.DataModItems.ShowEditingIcon = false;
             this.DataModItems.Size = new System.Drawing.Size(537, 221);
-            this.DataModItems.TabIndex = 1095;
+            this.DataModItems.TabIndex = 5;
             this.DataModItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataItemsMods_CellClick);
             this.DataModItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataItemsMods_CellContentClick);
             // 
@@ -400,7 +401,7 @@
             this.DropdownTypes.Location = new System.Drawing.Point(471, 112);
             this.DropdownTypes.Name = "DropdownTypes";
             this.DropdownTypes.Size = new System.Drawing.Size(78, 23);
-            this.DropdownTypes.TabIndex = 1101;
+            this.DropdownTypes.TabIndex = 4;
             this.DropdownTypes.SelectedIndexChanged += new System.EventHandler(this.DropdownTypes_SelectedIndexChanged);
             // 
             // LabelSelectType
@@ -415,15 +416,15 @@
             this.LabelSelectType.TabIndex = 1102;
             this.LabelSelectType.Text = "Type:";
             // 
-            // ImageHeader
+            // ImageText
             // 
-            this.ImageHeader.Image = global::ps3xftp.Properties.Resources.ps3xftp_text;
-            this.ImageHeader.Location = new System.Drawing.Point(9, 32);
-            this.ImageHeader.Name = "ImageHeader";
-            this.ImageHeader.Size = new System.Drawing.Size(213, 52);
-            this.ImageHeader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ImageHeader.TabIndex = 1077;
-            this.ImageHeader.TabStop = false;
+            this.ImageText.Image = global::ps3xftp.Properties.Resources.ps3xftp_text;
+            this.ImageText.Location = new System.Drawing.Point(9, 32);
+            this.ImageText.Name = "ImageText";
+            this.ImageText.Size = new System.Drawing.Size(213, 52);
+            this.ImageText.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImageText.TabIndex = 1077;
+            this.ImageText.TabStop = false;
             // 
             // LabelSelectRegion
             // 
@@ -445,22 +446,22 @@
             this.DropdownRegions.Location = new System.Drawing.Point(367, 112);
             this.DropdownRegions.Name = "DropdownRegions";
             this.DropdownRegions.Size = new System.Drawing.Size(98, 23);
-            this.DropdownRegions.TabIndex = 1103;
+            this.DropdownRegions.TabIndex = 3;
             this.DropdownRegions.SelectedIndexChanged += new System.EventHandler(this.DropdownRegions_SelectedIndexChanged);
             // 
-            // menuStrip1
+            // MenuStrip
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuStripFile,
             this.MenuStripConsoles,
             this.MenuStripContribute,
             this.MenuStripInformation});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(884, 24);
-            this.menuStrip1.TabIndex = 1105;
-            this.menuStrip1.Text = "menuStrip1";
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Size = new System.Drawing.Size(884, 24);
+            this.MenuStrip.TabIndex = 1105;
+            this.MenuStrip.Text = "menuStrip1";
             // 
             // MenuStripFile
             // 
@@ -474,14 +475,14 @@
             // MenuStripFileRefreshData
             // 
             this.MenuStripFileRefreshData.Name = "MenuStripFileRefreshData";
-            this.MenuStripFileRefreshData.Size = new System.Drawing.Size(140, 22);
+            this.MenuStripFileRefreshData.Size = new System.Drawing.Size(180, 22);
             this.MenuStripFileRefreshData.Text = "Refresh Data";
             this.MenuStripFileRefreshData.Click += new System.EventHandler(this.MenuStripFileRefreshData_Click);
             // 
             // MenuStripFileExit
             // 
             this.MenuStripFileExit.Name = "MenuStripFileExit";
-            this.MenuStripFileExit.Size = new System.Drawing.Size(140, 22);
+            this.MenuStripFileExit.Size = new System.Drawing.Size(180, 22);
             this.MenuStripFileExit.Text = "Exit";
             this.MenuStripFileExit.Click += new System.EventHandler(this.MenuStripFileExit_Click);
             // 
@@ -514,22 +515,22 @@
             this.MenuStripInformation.Text = "Information";
             this.MenuStripInformation.Click += new System.EventHandler(this.MenuStripInformation_Click);
             // 
-            // toolStrip1
+            // ToolStrip
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStrip.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.ToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripTitleConsole,
             this.ToolStripConsole,
             this.ToolStripSeperator,
             this.ToolStripStatus});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 378);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(3, 0, 1, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(884, 25);
-            this.toolStrip1.TabIndex = 1106;
-            this.toolStrip1.Text = "toolStrip1";
+            this.ToolStrip.Location = new System.Drawing.Point(0, 378);
+            this.ToolStrip.Name = "ToolStrip";
+            this.ToolStrip.Padding = new System.Windows.Forms.Padding(3, 0, 1, 0);
+            this.ToolStrip.Size = new System.Drawing.Size(884, 25);
+            this.ToolStrip.TabIndex = 1106;
+            this.ToolStrip.Text = "toolStrip1";
             // 
             // ToolStripTitleConsole
             // 
@@ -553,17 +554,19 @@
             // 
             this.ToolStripStatus.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.ToolStripStatus.Name = "ToolStripStatus";
+            this.ToolStripStatus.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.ToolStripStatus.Size = new System.Drawing.Size(48, 22);
             this.ToolStripStatus.Text = "Status...";
             // 
             // ButtonConnectToConsole
             // 
             this.ButtonConnectToConsole.AutoSize = true;
+            this.ButtonConnectToConsole.Enabled = false;
             this.ButtonConnectToConsole.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonConnectToConsole.Location = new System.Drawing.Point(472, 59);
             this.ButtonConnectToConsole.Name = "ButtonConnectToConsole";
             this.ButtonConnectToConsole.Size = new System.Drawing.Size(77, 26);
-            this.ButtonConnectToConsole.TabIndex = 1108;
+            this.ButtonConnectToConsole.TabIndex = 1;
             this.ButtonConnectToConsole.Text = "Connect...";
             this.ButtonConnectToConsole.UseVisualStyleBackColor = true;
             this.ButtonConnectToConsole.Click += new System.EventHandler(this.ButtonConnectToConsole_Click);
@@ -591,7 +594,7 @@
             this.Controls.Add(this.ButtonInstallMods);
             this.Controls.Add(this.ButtonConnectToConsole);
             this.Controls.Add(this.FlowPanelDetails);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.ToolStrip);
             this.Controls.Add(this.LabelSelectRegion);
             this.Controls.Add(this.DropdownRegions);
             this.Controls.Add(this.LabelSelectType);
@@ -599,12 +602,12 @@
             this.Controls.Add(this.DataModItems);
             this.Controls.Add(this.LabelSelectGame);
             this.Controls.Add(this.DropdownGames);
-            this.Controls.Add(this.ImageHeader);
+            this.Controls.Add(this.ImageText);
             this.Controls.Add(this.LabelSelectConsole);
             this.Controls.Add(this.DropdownConsoles);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.MenuStrip);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.MenuStrip;
             this.MaximizeBox = false;
             this.Name = "Ps3xftp";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -615,18 +618,18 @@
             this.FlowPanelDetails.ResumeLayout(false);
             this.FlowPanelDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataModItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImageHeader)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageText)).EndInit();
+            this.MenuStrip.ResumeLayout(false);
+            this.MenuStrip.PerformLayout();
+            this.ToolStrip.ResumeLayout(false);
+            this.ToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox ImageHeader;
+        private System.Windows.Forms.PictureBox ImageText;
         private System.Windows.Forms.Label LabelSelectConsole;
         private System.Windows.Forms.ComboBox DropdownConsoles;
         private System.Windows.Forms.Label LabelSelectGame;
@@ -645,7 +648,7 @@
         private System.Windows.Forms.Label LabelModConfiguration;
         private System.Windows.Forms.Label LabelDescription;
         private System.Windows.Forms.Label LabelModDescription;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip MenuStrip;
         private System.Windows.Forms.ToolStripMenuItem MenuStripFile;
         private System.Windows.Forms.ToolStripMenuItem MenuStripFileExit;
         private System.Windows.Forms.ToolStripMenuItem MenuStripConsoles;
@@ -662,7 +665,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAuthor;
         private System.Windows.Forms.Button ButtonUninstallMods;
         private System.Windows.Forms.Button ButtonInstallMods;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip ToolStrip;
         private System.Windows.Forms.ToolStripLabel ToolStripStatus;
         private System.Windows.Forms.Label LabelModDetails;
         private System.Windows.Forms.Button ButtonConnectToConsole;

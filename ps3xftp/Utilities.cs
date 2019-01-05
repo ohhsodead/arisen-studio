@@ -20,10 +20,38 @@ namespace ps3xftp
         /// <summary>
         /// Web address link pointing to the database file containing the mods data
         /// </summary>
-        internal const string URL_MODSDATA = "https://www.dropbox.com/s/428l3axwg1h68ch/database.json?raw=true";
+        internal const string URL_MODSDATA = "https://www.dropbox.com/s/9kzqk21hkz2nt14/modsdata.json?raw=true";
 
         /// <summary>
-        /// Gets the game details database file
+        /// Gets the mods details from the database 
+        /// </summary>
+        /// <returns></returns>
+        internal static Models.ModsData GetModsData()
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.GetAsync(URL_MODSDATA).Result;
+
+                if (response.StatusCode != HttpStatusCode.OK) throw new Exception($"Bad response {response.StatusCode}");
+
+                var responseData = response.Content.ReadAsStringAsync().Result;
+
+                if (Utilities.ValidResponse(responseData))
+                    return JsonConvert.DeserializeObject<Models.ModsData>(responseData);
+
+                dynamic data = JsonConvert.DeserializeObject(responseData);
+
+                throw new Exception(data.data.message.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Web address link pointing to the database file containing the game data
+        /// </summary>
+        internal const string URL_GAMEDATA = "https://www.dropbox.com/s/98bp8y8ii1o7y64/gamedata.json?raw=true";
+
+        /// <summary>
+        /// Gets the game details from the database
         /// </summary>
         /// <returns></returns>
         internal static Models.GamesData GetGameData()
@@ -44,31 +72,7 @@ namespace ps3xftp
                 throw new Exception(data.data.message.ToString());
             }
         }
-
-        /// <summary>
-        /// Web address link pointing to the database file containing the game data
-        /// </summary>
-        internal const string URL_GAMEDATA = "https://www.dropbox.com/s/98bp8y8ii1o7y64/gamedata.json?raw=true";
-
-        internal static Models.ModsData GetModsData()
-        {
-            using (var client = new HttpClient())
-            {
-                var response = client.GetAsync(URL_MODSDATA).Result;
-
-                if (response.StatusCode != HttpStatusCode.OK) throw new Exception($"Bad response {response.StatusCode}");
-
-                var responseData = response.Content.ReadAsStringAsync().Result;
-
-                if (Utilities.ValidResponse(responseData))
-                    return JsonConvert.DeserializeObject<Models.ModsData>(responseData);
-
-                dynamic data = JsonConvert.DeserializeObject(responseData);
-
-                throw new Exception(data.data.message.ToString());
-            }
-        }
-
+        
         /// <summary>
         /// Uploads the specified local file to the appropriate location on the console
         /// </summary>

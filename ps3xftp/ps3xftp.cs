@@ -54,6 +54,9 @@ namespace ps3xftp
         /// </summary>
         private void InitializeFinished(object sender, RunWorkerCompletedEventArgs e)
         {
+            DropdownConsoles.Enabled = true;
+            DropdownConsoles.Items.Clear();
+            DropdownGames.Items.Clear();
             foreach (var console in Properties.Settings.Default.UserConsoles)
                 DropdownConsoles.Items.Add(console);
             foreach (var game in GamesData.Games)
@@ -78,9 +81,11 @@ namespace ps3xftp
 
         private void MenuStripFileRefreshData_Click(object sender, EventArgs e)
         {
-            SetStatus("Refreshing data...");
+            SetStatus("Refreshing data for games and mods updates...");
             EnableModsUI(false);
-            LoadData();
+            DropdownConsoles.Enabled = false;
+            ButtonConnectToConsole.Enabled = false;
+            Worker.RunWorkAsync(() => LoadData(), InitializeFinished);
         }
 
         private void MenuStripFileExit_Click(object sender, EventArgs e)
@@ -158,7 +163,7 @@ namespace ps3xftp
                 using (var PS3 = new PS3FTP(SelectedConsole)) { }
                 EnableModsUI(true);
                 DropdownGames.SelectedIndex = 0;
-                SetConnectedConsole(DropdownConsoles.GetItemText(DropdownConsoles.SelectedItem));
+                SetStatusConsole(DropdownConsoles.GetItemText(DropdownConsoles.SelectedItem), true);
                 SetStatus("Successfully connected to selected console");
 
             }
@@ -315,12 +320,15 @@ namespace ps3xftp
         }
 
         /// <summary>
-        /// Set the current connected console in the tool strip
+        /// Set the current connected console status in the tool strip
         /// </summary>
         /// <param name="console"></param>
-        private void SetConnectedConsole(string console)
+        /// <param name="connected"></param>
+        private void SetStatusConsole(string console, bool connected)
         {
             ToolStripConsole.Text = console;
+            if (connected) ToolStripConsole.ForeColor = Color.Green;
+            else ToolStripConsole.ForeColor = Color.Red;
         }
 
         /// <summary>
