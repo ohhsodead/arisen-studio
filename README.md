@@ -1,8 +1,4 @@
-<h1 align="center">
-  <img src="/ps3xftp/Resources/ps3xftp.png" width="381" height="55" alt="Logo" />
-  <br />
-
-</h1>
+<h1 align="center">ps3xftp</h1>
 
 <h3 align="center">Server-driven mod manager to discover, download and install mods for, your console with ease</h3>
 <div align="center">
