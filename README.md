@@ -4,7 +4,7 @@
 
 </h1>
 
-<h3 align="center">Server-driven application for uploading mods to your PS3</h3>
+<h3 align="center">Discover, download and install mods for popular games straight to your console!</h3>
 <div align="center">
 </div>
 <br />
