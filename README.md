@@ -1,23 +1,22 @@
 <h1 align="center">ps3xftp</h1>
 
-<h3 align="center">Discover a community-curated collection of mods in one place, then upload the files to your console using our integrated file-transfer protocol.</h3>
+<h3 align="center">Discover a community-curated collection of mods in one place, then upload the mods to your console using our integrated file-transfer protocol.</h3>
 <div align="center">
 </div>
 <br />
 
-A federated desktop application for searching our regularly updated database containing hundreds of cool, fun and random mod files from around the community.
+A federated desktop application for searching our regularly updated database containing hundreds of cool, fun and random mods from around the community.
 
 ![ps3xftp](https://github.com/HerbL27/ps3xftp/blob/master/Screenshot.png?raw=true)
 
-*I can accept no responsibility for any damage you cause to your system by using these files*
+*I can accept no responsibility for any damage you cause to your system by using these mods*
 
-[![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/HerbL27/ps3xftp/issues/new) [![Feature Requests](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/HerbL27/ps3xftp)
-
-## Current Features:
+## Features:
 * Simple and clean interface
-* View list containg mods
-* Upload and install files to console
-* Auto detect users game region
+* Lots of mods for most games
+* Filter mod types
+* Download locally or install to console
+* Automatic game region detection
 * Create, edit and save consoles
 
 ## Installation
