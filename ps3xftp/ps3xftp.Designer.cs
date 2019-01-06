@@ -30,7 +30,7 @@
         {
             this.LabelSelectConsole = new System.Windows.Forms.Label();
             this.DropdownConsoles = new System.Windows.Forms.ComboBox();
-            this.ButtonUninstallMods = new System.Windows.Forms.Button();
+            this.ButtonUninstallFiles = new System.Windows.Forms.Button();
             this.FlowPanelDetails = new System.Windows.Forms.FlowLayoutPanel();
             this.LabelDetailsName = new System.Windows.Forms.Label();
             this.LabelModName = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             this.LabelModConfiguration = new System.Windows.Forms.Label();
             this.LabelDescription = new System.Windows.Forms.Label();
             this.LabelModDescription = new System.Windows.Forms.Label();
-            this.ButtonInstallMods = new System.Windows.Forms.Button();
+            this.ButtonInstallFiles = new System.Windows.Forms.Button();
             this.LabelSelectGame = new System.Windows.Forms.Label();
             this.DropdownGames = new System.Windows.Forms.ComboBox();
             this.DataModItems = new System.Windows.Forms.DataGridView();
@@ -54,9 +54,6 @@
             this.ColumnAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DropdownTypes = new System.Windows.Forms.ComboBox();
             this.LabelSelectType = new System.Windows.Forms.Label();
-            this.ImageText = new System.Windows.Forms.PictureBox();
-            this.LabelSelectRegion = new System.Windows.Forms.Label();
-            this.DropdownRegions = new System.Windows.Forms.ComboBox();
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.MenuStripFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripFileRefreshData = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,23 +68,26 @@
             this.ToolStripSeperator = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripStatus = new System.Windows.Forms.ToolStripLabel();
             this.ButtonConnectToConsole = new System.Windows.Forms.Button();
-            this.LabelModDetails = new System.Windows.Forms.Label();
+            this.ImageText = new System.Windows.Forms.PictureBox();
+            this.CheckboxAutoRegion = new System.Windows.Forms.CheckBox();
+            this.ButtonDownloadFiles = new System.Windows.Forms.Button();
+            this.ButtonDownloadInstallFiles = new System.Windows.Forms.Button();
             this.FlowPanelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataModItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImageText)).BeginInit();
             this.MenuStrip.SuspendLayout();
             this.ToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageText)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelSelectConsole
             // 
             this.LabelSelectConsole.AutoSize = true;
-            this.LabelSelectConsole.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelSelectConsole.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.LabelSelectConsole.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectConsole.Location = new System.Drawing.Point(235, 39);
+            this.LabelSelectConsole.Location = new System.Drawing.Point(242, 69);
             this.LabelSelectConsole.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelSelectConsole.Name = "LabelSelectConsole";
-            this.LabelSelectConsole.Size = new System.Drawing.Size(58, 17);
+            this.LabelSelectConsole.Size = new System.Drawing.Size(59, 17);
             this.LabelSelectConsole.TabIndex = 1074;
             this.LabelSelectConsole.Text = "Console:";
             // 
@@ -95,28 +95,30 @@
             // 
             this.DropdownConsoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DropdownConsoles.Enabled = false;
-            this.DropdownConsoles.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DropdownConsoles.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.DropdownConsoles.FormattingEnabled = true;
-            this.DropdownConsoles.Location = new System.Drawing.Point(238, 61);
+            this.DropdownConsoles.Location = new System.Drawing.Point(307, 66);
             this.DropdownConsoles.Name = "DropdownConsoles";
-            this.DropdownConsoles.Size = new System.Drawing.Size(228, 23);
+            this.DropdownConsoles.Size = new System.Drawing.Size(204, 25);
             this.DropdownConsoles.TabIndex = 0;
             this.DropdownConsoles.SelectedIndexChanged += new System.EventHandler(this.ComboBoxConsoles_SelectedIndexChanged);
             // 
-            // ButtonUninstallMods
+            // ButtonUninstallFiles
             // 
-            this.ButtonUninstallMods.Enabled = false;
-            this.ButtonUninstallMods.Font = new System.Drawing.Font("Arial", 9F);
-            this.ButtonUninstallMods.Location = new System.Drawing.Point(623, 339);
-            this.ButtonUninstallMods.Name = "ButtonUninstallMods";
-            this.ButtonUninstallMods.Size = new System.Drawing.Size(70, 26);
-            this.ButtonUninstallMods.TabIndex = 8;
-            this.ButtonUninstallMods.Text = "Uninstall";
-            this.ButtonUninstallMods.UseVisualStyleBackColor = true;
+            this.ButtonUninstallFiles.Enabled = false;
+            this.ButtonUninstallFiles.Font = new System.Drawing.Font("Arial", 9F);
+            this.ButtonUninstallFiles.Location = new System.Drawing.Point(896, 402);
+            this.ButtonUninstallFiles.Name = "ButtonUninstallFiles";
+            this.ButtonUninstallFiles.Size = new System.Drawing.Size(70, 26);
+            this.ButtonUninstallFiles.TabIndex = 8;
+            this.ButtonUninstallFiles.Text = "Uninstall";
+            this.ButtonUninstallFiles.UseVisualStyleBackColor = true;
+            this.ButtonUninstallFiles.Click += new System.EventHandler(this.ButtonUninstallFiles_Click);
             // 
             // FlowPanelDetails
             // 
             this.FlowPanelDetails.AutoScroll = true;
+            this.FlowPanelDetails.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.FlowPanelDetails.Controls.Add(this.LabelDetailsName);
             this.FlowPanelDetails.Controls.Add(this.LabelModName);
             this.FlowPanelDetails.Controls.Add(this.LabelDetailsVersion);
@@ -129,198 +131,196 @@
             this.FlowPanelDetails.Controls.Add(this.LabelModConfiguration);
             this.FlowPanelDetails.Controls.Add(this.LabelDescription);
             this.FlowPanelDetails.Controls.Add(this.LabelModDescription);
-            this.FlowPanelDetails.Location = new System.Drawing.Point(558, 60);
+            this.FlowPanelDetails.Location = new System.Drawing.Point(617, 48);
             this.FlowPanelDetails.Name = "FlowPanelDetails";
-            this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.FlowPanelDetails.Size = new System.Drawing.Size(314, 273);
+            this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(0, 2, 6, 2);
+            this.FlowPanelDetails.Size = new System.Drawing.Size(349, 348);
             this.FlowPanelDetails.TabIndex = 6;
             // 
             // LabelDetailsName
             // 
             this.LabelDetailsName.AutoSize = true;
-            this.LabelDetailsName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDetailsName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.LabelDetailsName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelDetailsName.Location = new System.Drawing.Point(0, 5);
             this.LabelDetailsName.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.LabelDetailsName.Name = "LabelDetailsName";
-            this.LabelDetailsName.Size = new System.Drawing.Size(46, 17);
-            this.LabelDetailsName.TabIndex = 1100;
+            this.LabelDetailsName.Size = new System.Drawing.Size(47, 17);
+            this.LabelDetailsName.TabIndex = 1;
             this.LabelDetailsName.Text = "Name:";
             // 
             // LabelModName
             // 
             this.LabelModName.AutoSize = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelModName, true);
-            this.LabelModName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelModName.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelModName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelModName.Location = new System.Drawing.Point(46, 7);
-            this.LabelModName.Margin = new System.Windows.Forms.Padding(0, 5, 0, 3);
+            this.LabelModName.Location = new System.Drawing.Point(47, 5);
+            this.LabelModName.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.LabelModName.Name = "LabelModName";
-            this.LabelModName.Size = new System.Drawing.Size(16, 15);
-            this.LabelModName.TabIndex = 1107;
+            this.LabelModName.Size = new System.Drawing.Size(17, 17);
+            this.LabelModName.TabIndex = 2;
             this.LabelModName.Text = "...";
             // 
             // LabelDetailsVersion
             // 
             this.LabelDetailsVersion.AutoSize = true;
-            this.LabelDetailsVersion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDetailsVersion.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.LabelDetailsVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelDetailsVersion.Location = new System.Drawing.Point(0, 28);
             this.LabelDetailsVersion.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.LabelDetailsVersion.Name = "LabelDetailsVersion";
-            this.LabelDetailsVersion.Size = new System.Drawing.Size(54, 17);
-            this.LabelDetailsVersion.TabIndex = 1110;
+            this.LabelDetailsVersion.Size = new System.Drawing.Size(55, 17);
+            this.LabelDetailsVersion.TabIndex = 3;
             this.LabelDetailsVersion.Text = "Version:";
             // 
             // LabelModVersion
             // 
             this.LabelModVersion.AutoSize = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelModVersion, true);
-            this.LabelModVersion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelModVersion.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelModVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelModVersion.Location = new System.Drawing.Point(54, 30);
-            this.LabelModVersion.Margin = new System.Windows.Forms.Padding(0, 5, 0, 3);
+            this.LabelModVersion.Location = new System.Drawing.Point(55, 28);
+            this.LabelModVersion.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.LabelModVersion.Name = "LabelModVersion";
-            this.LabelModVersion.Size = new System.Drawing.Size(16, 15);
-            this.LabelModVersion.TabIndex = 1111;
+            this.LabelModVersion.Size = new System.Drawing.Size(17, 17);
+            this.LabelModVersion.TabIndex = 4;
             this.LabelModVersion.Text = "...";
             // 
             // LabelDetailsAuthor
             // 
             this.LabelDetailsAuthor.AutoSize = true;
-            this.LabelDetailsAuthor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDetailsAuthor.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.LabelDetailsAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelDetailsAuthor.Location = new System.Drawing.Point(0, 51);
             this.LabelDetailsAuthor.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.LabelDetailsAuthor.Name = "LabelDetailsAuthor";
-            this.LabelDetailsAuthor.Size = new System.Drawing.Size(50, 17);
-            this.LabelDetailsAuthor.TabIndex = 1101;
+            this.LabelDetailsAuthor.Size = new System.Drawing.Size(55, 17);
+            this.LabelDetailsAuthor.TabIndex = 5;
             this.LabelDetailsAuthor.Text = "Author:";
             // 
             // LabelModAuthor
             // 
             this.LabelModAuthor.AutoSize = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelModAuthor, true);
-            this.LabelModAuthor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelModAuthor.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelModAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelModAuthor.Location = new System.Drawing.Point(50, 53);
-            this.LabelModAuthor.Margin = new System.Windows.Forms.Padding(0, 5, 0, 3);
+            this.LabelModAuthor.Location = new System.Drawing.Point(55, 51);
+            this.LabelModAuthor.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.LabelModAuthor.Name = "LabelModAuthor";
-            this.LabelModAuthor.Size = new System.Drawing.Size(16, 15);
-            this.LabelModAuthor.TabIndex = 1106;
+            this.LabelModAuthor.Size = new System.Drawing.Size(17, 17);
+            this.LabelModAuthor.TabIndex = 6;
             this.LabelModAuthor.Text = "...";
             // 
             // LabelDetailsType
             // 
             this.LabelDetailsType.AutoSize = true;
-            this.LabelDetailsType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDetailsType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.LabelDetailsType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelDetailsType.Location = new System.Drawing.Point(0, 74);
             this.LabelDetailsType.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.LabelDetailsType.Name = "LabelDetailsType";
-            this.LabelDetailsType.Size = new System.Drawing.Size(38, 17);
-            this.LabelDetailsType.TabIndex = 1108;
+            this.LabelDetailsType.Size = new System.Drawing.Size(39, 17);
+            this.LabelDetailsType.TabIndex = 7;
             this.LabelDetailsType.Text = "Type:";
             // 
             // LabelModType
             // 
             this.LabelModType.AutoSize = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelModType, true);
-            this.LabelModType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelModType.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelModType.Location = new System.Drawing.Point(38, 76);
-            this.LabelModType.Margin = new System.Windows.Forms.Padding(0, 5, 0, 3);
+            this.LabelModType.Location = new System.Drawing.Point(39, 74);
+            this.LabelModType.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.LabelModType.Name = "LabelModType";
-            this.LabelModType.Size = new System.Drawing.Size(16, 15);
-            this.LabelModType.TabIndex = 1109;
+            this.LabelModType.Size = new System.Drawing.Size(17, 17);
+            this.LabelModType.TabIndex = 8;
             this.LabelModType.Text = "...";
             // 
             // LabelDetailsConfiguration
             // 
             this.LabelDetailsConfiguration.AutoSize = true;
-            this.LabelDetailsConfiguration.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDetailsConfiguration.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.LabelDetailsConfiguration.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelDetailsConfiguration.Location = new System.Drawing.Point(0, 97);
             this.LabelDetailsConfiguration.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.LabelDetailsConfiguration.Name = "LabelDetailsConfiguration";
-            this.LabelDetailsConfiguration.Size = new System.Drawing.Size(90, 17);
-            this.LabelDetailsConfiguration.TabIndex = 1102;
+            this.LabelDetailsConfiguration.Size = new System.Drawing.Size(94, 17);
+            this.LabelDetailsConfiguration.TabIndex = 9;
             this.LabelDetailsConfiguration.Text = "Configuration:";
             // 
             // LabelModConfiguration
             // 
             this.LabelModConfiguration.AutoSize = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelModConfiguration, true);
-            this.LabelModConfiguration.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelModConfiguration.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelModConfiguration.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelModConfiguration.Location = new System.Drawing.Point(90, 99);
-            this.LabelModConfiguration.Margin = new System.Windows.Forms.Padding(0, 5, 0, 3);
+            this.LabelModConfiguration.Location = new System.Drawing.Point(94, 97);
+            this.LabelModConfiguration.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.LabelModConfiguration.Name = "LabelModConfiguration";
-            this.LabelModConfiguration.Size = new System.Drawing.Size(16, 15);
-            this.LabelModConfiguration.TabIndex = 1105;
+            this.LabelModConfiguration.Size = new System.Drawing.Size(17, 17);
+            this.LabelModConfiguration.TabIndex = 10;
             this.LabelModConfiguration.Text = "...";
             // 
             // LabelDescription
             // 
             this.LabelDescription.AutoSize = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelDescription, true);
-            this.LabelDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.LabelDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelDescription.Location = new System.Drawing.Point(0, 120);
             this.LabelDescription.Margin = new System.Windows.Forms.Padding(0, 3, 0, 1);
             this.LabelDescription.Name = "LabelDescription";
-            this.LabelDescription.Size = new System.Drawing.Size(77, 17);
-            this.LabelDescription.TabIndex = 1103;
+            this.LabelDescription.Size = new System.Drawing.Size(79, 17);
+            this.LabelDescription.TabIndex = 11;
             this.LabelDescription.Text = "Description:";
             // 
             // LabelModDescription
             // 
-            this.LabelModDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelModDescription.AutoEllipsis = true;
             this.LabelModDescription.AutoSize = true;
-            this.LabelModDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FlowPanelDetails.SetFlowBreak(this.LabelModDescription, true);
+            this.LabelModDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelModDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelModDescription.Location = new System.Drawing.Point(0, 143);
-            this.LabelModDescription.Margin = new System.Windows.Forms.Padding(0, 4, 3, 3);
+            this.LabelModDescription.Location = new System.Drawing.Point(0, 145);
+            this.LabelModDescription.Margin = new System.Windows.Forms.Padding(0, 4, 24, 3);
             this.LabelModDescription.Name = "LabelModDescription";
-            this.LabelModDescription.Size = new System.Drawing.Size(16, 15);
-            this.LabelModDescription.TabIndex = 1104;
+            this.LabelModDescription.Size = new System.Drawing.Size(17, 17);
+            this.LabelModDescription.TabIndex = 12;
             this.LabelModDescription.Text = "...";
             // 
-            // ButtonInstallMods
+            // ButtonInstallFiles
             // 
-            this.ButtonInstallMods.Enabled = false;
-            this.ButtonInstallMods.Font = new System.Drawing.Font("Arial", 9F);
-            this.ButtonInstallMods.Location = new System.Drawing.Point(561, 339);
-            this.ButtonInstallMods.Name = "ButtonInstallMods";
-            this.ButtonInstallMods.Size = new System.Drawing.Size(56, 26);
-            this.ButtonInstallMods.TabIndex = 7;
-            this.ButtonInstallMods.Text = "Install";
-            this.ButtonInstallMods.UseVisualStyleBackColor = true;
-            this.ButtonInstallMods.Click += new System.EventHandler(this.ButtonInstallMods_Click);
+            this.ButtonInstallFiles.Enabled = false;
+            this.ButtonInstallFiles.Font = new System.Drawing.Font("Arial", 9F);
+            this.ButtonInstallFiles.Location = new System.Drawing.Point(704, 402);
+            this.ButtonInstallFiles.Name = "ButtonInstallFiles";
+            this.ButtonInstallFiles.Size = new System.Drawing.Size(54, 26);
+            this.ButtonInstallFiles.TabIndex = 7;
+            this.ButtonInstallFiles.Text = "Install";
+            this.ButtonInstallFiles.UseVisualStyleBackColor = true;
+            this.ButtonInstallFiles.Click += new System.EventHandler(this.ButtonInstallMods_Click);
             // 
             // LabelSelectGame
             // 
             this.LabelSelectGame.AutoSize = true;
-            this.LabelSelectGame.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelSelectGame.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.LabelSelectGame.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectGame.Location = new System.Drawing.Point(9, 90);
+            this.LabelSelectGame.Location = new System.Drawing.Point(14, 114);
             this.LabelSelectGame.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelSelectGame.Name = "LabelSelectGame";
-            this.LabelSelectGame.Size = new System.Drawing.Size(45, 17);
+            this.LabelSelectGame.Size = new System.Drawing.Size(46, 17);
             this.LabelSelectGame.TabIndex = 1093;
             this.LabelSelectGame.Text = "Game:";
             // 
             // DropdownGames
             // 
             this.DropdownGames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.DropdownGames.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DropdownGames.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.DropdownGames.FormattingEnabled = true;
-            this.DropdownGames.Location = new System.Drawing.Point(12, 112);
+            this.DropdownGames.Location = new System.Drawing.Point(66, 111);
+            this.DropdownGames.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
             this.DropdownGames.Name = "DropdownGames";
-            this.DropdownGames.Size = new System.Drawing.Size(349, 23);
+            this.DropdownGames.Size = new System.Drawing.Size(267, 25);
             this.DropdownGames.TabIndex = 2;
             this.DropdownGames.SelectedIndexChanged += new System.EventHandler(this.DropdownGames_SelectedIndexChanged);
             // 
@@ -338,7 +338,7 @@
             this.ColumnVersion,
             this.ColumnAuthor});
             this.DataModItems.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.DataModItems.Location = new System.Drawing.Point(12, 144);
+            this.DataModItems.Location = new System.Drawing.Point(13, 148);
             this.DataModItems.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.DataModItems.MultiSelect = false;
             this.DataModItems.Name = "DataModItems";
@@ -347,14 +347,14 @@
             this.DataModItems.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.DataModItems.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DataModItems.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.DataModItems.RowTemplate.Height = 26;
+            this.DataModItems.RowTemplate.Height = 25;
             this.DataModItems.RowTemplate.ReadOnly = true;
             this.DataModItems.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.DataModItems.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DataModItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataModItems.ShowCellToolTips = false;
             this.DataModItems.ShowEditingIcon = false;
-            this.DataModItems.Size = new System.Drawing.Size(537, 221);
+            this.DataModItems.Size = new System.Drawing.Size(594, 280);
             this.DataModItems.TabIndex = 5;
             this.DataModItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataItemsMods_CellClick);
             this.DataModItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataItemsMods_CellContentClick);
@@ -396,58 +396,26 @@
             // DropdownTypes
             // 
             this.DropdownTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.DropdownTypes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DropdownTypes.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.DropdownTypes.FormattingEnabled = true;
-            this.DropdownTypes.Location = new System.Drawing.Point(471, 112);
+            this.DropdownTypes.Location = new System.Drawing.Point(387, 111);
+            this.DropdownTypes.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.DropdownTypes.Name = "DropdownTypes";
-            this.DropdownTypes.Size = new System.Drawing.Size(78, 23);
+            this.DropdownTypes.Size = new System.Drawing.Size(84, 25);
             this.DropdownTypes.TabIndex = 4;
             this.DropdownTypes.SelectedIndexChanged += new System.EventHandler(this.DropdownTypes_SelectedIndexChanged);
             // 
             // LabelSelectType
             // 
             this.LabelSelectType.AutoSize = true;
-            this.LabelSelectType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelSelectType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectType.Location = new System.Drawing.Point(468, 90);
+            this.LabelSelectType.Location = new System.Drawing.Point(342, 114);
             this.LabelSelectType.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelSelectType.Name = "LabelSelectType";
-            this.LabelSelectType.Size = new System.Drawing.Size(38, 17);
+            this.LabelSelectType.Size = new System.Drawing.Size(39, 17);
             this.LabelSelectType.TabIndex = 1102;
             this.LabelSelectType.Text = "Type:";
-            // 
-            // ImageText
-            // 
-            this.ImageText.Image = global::ps3xftp.Properties.Resources.ps3xftp_text;
-            this.ImageText.Location = new System.Drawing.Point(9, 32);
-            this.ImageText.Name = "ImageText";
-            this.ImageText.Size = new System.Drawing.Size(213, 52);
-            this.ImageText.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ImageText.TabIndex = 1077;
-            this.ImageText.TabStop = false;
-            // 
-            // LabelSelectRegion
-            // 
-            this.LabelSelectRegion.AutoSize = true;
-            this.LabelSelectRegion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSelectRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectRegion.Location = new System.Drawing.Point(364, 90);
-            this.LabelSelectRegion.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
-            this.LabelSelectRegion.Name = "LabelSelectRegion";
-            this.LabelSelectRegion.Size = new System.Drawing.Size(52, 17);
-            this.LabelSelectRegion.TabIndex = 1104;
-            this.LabelSelectRegion.Text = "Region:";
-            // 
-            // DropdownRegions
-            // 
-            this.DropdownRegions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.DropdownRegions.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DropdownRegions.FormattingEnabled = true;
-            this.DropdownRegions.Location = new System.Drawing.Point(367, 112);
-            this.DropdownRegions.Name = "DropdownRegions";
-            this.DropdownRegions.Size = new System.Drawing.Size(98, 23);
-            this.DropdownRegions.TabIndex = 3;
-            this.DropdownRegions.SelectedIndexChanged += new System.EventHandler(this.DropdownRegions_SelectedIndexChanged);
             // 
             // MenuStrip
             // 
@@ -459,7 +427,7 @@
             this.MenuStripInformation});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Size = new System.Drawing.Size(884, 24);
+            this.MenuStrip.Size = new System.Drawing.Size(981, 24);
             this.MenuStrip.TabIndex = 1105;
             this.MenuStrip.Text = "menuStrip1";
             // 
@@ -475,14 +443,14 @@
             // MenuStripFileRefreshData
             // 
             this.MenuStripFileRefreshData.Name = "MenuStripFileRefreshData";
-            this.MenuStripFileRefreshData.Size = new System.Drawing.Size(180, 22);
+            this.MenuStripFileRefreshData.Size = new System.Drawing.Size(140, 22);
             this.MenuStripFileRefreshData.Text = "Refresh Data";
             this.MenuStripFileRefreshData.Click += new System.EventHandler(this.MenuStripFileRefreshData_Click);
             // 
             // MenuStripFileExit
             // 
             this.MenuStripFileExit.Name = "MenuStripFileExit";
-            this.MenuStripFileExit.Size = new System.Drawing.Size(180, 22);
+            this.MenuStripFileExit.Size = new System.Drawing.Size(140, 22);
             this.MenuStripFileExit.Text = "Exit";
             this.MenuStripFileExit.Click += new System.EventHandler(this.MenuStripFileExit_Click);
             // 
@@ -525,10 +493,10 @@
             this.ToolStripConsole,
             this.ToolStripSeperator,
             this.ToolStripStatus});
-            this.ToolStrip.Location = new System.Drawing.Point(0, 378);
+            this.ToolStrip.Location = new System.Drawing.Point(0, 444);
             this.ToolStrip.Name = "ToolStrip";
             this.ToolStrip.Padding = new System.Windows.Forms.Padding(3, 0, 1, 0);
-            this.ToolStrip.Size = new System.Drawing.Size(884, 25);
+            this.ToolStrip.Size = new System.Drawing.Size(981, 25);
             this.ToolStrip.TabIndex = 1106;
             this.ToolStrip.Text = "toolStrip1";
             // 
@@ -562,46 +530,80 @@
             // 
             this.ButtonConnectToConsole.AutoSize = true;
             this.ButtonConnectToConsole.Enabled = false;
-            this.ButtonConnectToConsole.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonConnectToConsole.Location = new System.Drawing.Point(472, 59);
+            this.ButtonConnectToConsole.Font = new System.Drawing.Font("Arial", 9F);
+            this.ButtonConnectToConsole.Location = new System.Drawing.Point(517, 65);
             this.ButtonConnectToConsole.Name = "ButtonConnectToConsole";
-            this.ButtonConnectToConsole.Size = new System.Drawing.Size(77, 26);
+            this.ButtonConnectToConsole.Size = new System.Drawing.Size(90, 27);
             this.ButtonConnectToConsole.TabIndex = 1;
-            this.ButtonConnectToConsole.Text = "Connect...";
+            this.ButtonConnectToConsole.Text = "Connect";
             this.ButtonConnectToConsole.UseVisualStyleBackColor = true;
             this.ButtonConnectToConsole.Click += new System.EventHandler(this.ButtonConnectToConsole_Click);
             // 
-            // LabelModDetails
+            // ImageText
             // 
-            this.LabelModDetails.AutoSize = true;
-            this.LabelModDetails.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelModDetails.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelModDetails.Location = new System.Drawing.Point(558, 39);
-            this.LabelModDetails.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
-            this.LabelModDetails.Name = "LabelModDetails";
-            this.LabelModDetails.Size = new System.Drawing.Size(79, 17);
-            this.LabelModDetails.TabIndex = 1109;
-            this.LabelModDetails.Text = "Mod Details";
+            this.ImageText.Image = global::ps3xftp.Properties.Resources.ps3xftp_text;
+            this.ImageText.Location = new System.Drawing.Point(11, 41);
+            this.ImageText.Name = "ImageText";
+            this.ImageText.Size = new System.Drawing.Size(213, 52);
+            this.ImageText.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImageText.TabIndex = 1077;
+            this.ImageText.TabStop = false;
+            // 
+            // CheckboxAutoRegion
+            // 
+            this.CheckboxAutoRegion.AutoSize = true;
+            this.CheckboxAutoRegion.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.CheckboxAutoRegion.Location = new System.Drawing.Point(485, 114);
+            this.CheckboxAutoRegion.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.CheckboxAutoRegion.Name = "CheckboxAutoRegion";
+            this.CheckboxAutoRegion.Size = new System.Drawing.Size(103, 21);
+            this.CheckboxAutoRegion.TabIndex = 1110;
+            this.CheckboxAutoRegion.Text = "Auto Region";
+            this.CheckboxAutoRegion.UseVisualStyleBackColor = true;
+            // 
+            // ButtonDownloadFiles
+            // 
+            this.ButtonDownloadFiles.Enabled = false;
+            this.ButtonDownloadFiles.Font = new System.Drawing.Font("Arial", 9F);
+            this.ButtonDownloadFiles.Location = new System.Drawing.Point(620, 402);
+            this.ButtonDownloadFiles.Name = "ButtonDownloadFiles";
+            this.ButtonDownloadFiles.Size = new System.Drawing.Size(78, 26);
+            this.ButtonDownloadFiles.TabIndex = 1111;
+            this.ButtonDownloadFiles.Text = "Download";
+            this.ButtonDownloadFiles.UseVisualStyleBackColor = true;
+            this.ButtonDownloadFiles.Click += new System.EventHandler(this.ButtonDownloadFiles_Click);
+            // 
+            // ButtonDownloadInstallFiles
+            // 
+            this.ButtonDownloadInstallFiles.Enabled = false;
+            this.ButtonDownloadInstallFiles.Font = new System.Drawing.Font("Arial", 9F);
+            this.ButtonDownloadInstallFiles.Location = new System.Drawing.Point(764, 402);
+            this.ButtonDownloadInstallFiles.Name = "ButtonDownloadInstallFiles";
+            this.ButtonDownloadInstallFiles.Size = new System.Drawing.Size(126, 26);
+            this.ButtonDownloadInstallFiles.TabIndex = 1112;
+            this.ButtonDownloadInstallFiles.Text = "Download && Install";
+            this.ButtonDownloadInstallFiles.UseVisualStyleBackColor = true;
+            this.ButtonDownloadInstallFiles.Click += new System.EventHandler(this.ButtonDownloadInstallMods_Click);
             // 
             // Ps3xftp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(884, 403);
-            this.Controls.Add(this.LabelModDetails);
-            this.Controls.Add(this.ButtonUninstallMods);
-            this.Controls.Add(this.ButtonInstallMods);
+            this.ClientSize = new System.Drawing.Size(981, 469);
+            this.Controls.Add(this.ButtonDownloadInstallFiles);
+            this.Controls.Add(this.ButtonDownloadFiles);
+            this.Controls.Add(this.CheckboxAutoRegion);
+            this.Controls.Add(this.ButtonInstallFiles);
             this.Controls.Add(this.ButtonConnectToConsole);
             this.Controls.Add(this.FlowPanelDetails);
             this.Controls.Add(this.ToolStrip);
-            this.Controls.Add(this.LabelSelectRegion);
-            this.Controls.Add(this.DropdownRegions);
             this.Controls.Add(this.LabelSelectType);
             this.Controls.Add(this.DropdownTypes);
             this.Controls.Add(this.DataModItems);
             this.Controls.Add(this.LabelSelectGame);
             this.Controls.Add(this.DropdownGames);
+            this.Controls.Add(this.ButtonUninstallFiles);
             this.Controls.Add(this.ImageText);
             this.Controls.Add(this.LabelSelectConsole);
             this.Controls.Add(this.DropdownConsoles);
@@ -618,11 +620,11 @@
             this.FlowPanelDetails.ResumeLayout(false);
             this.FlowPanelDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataModItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImageText)).EndInit();
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageText)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -637,8 +639,6 @@
         private System.Windows.Forms.DataGridView DataModItems;
         private System.Windows.Forms.ComboBox DropdownTypes;
         private System.Windows.Forms.Label LabelSelectType;
-        private System.Windows.Forms.Label LabelSelectRegion;
-        private System.Windows.Forms.ComboBox DropdownRegions;
         private System.Windows.Forms.FlowLayoutPanel FlowPanelDetails;
         private System.Windows.Forms.Label LabelDetailsName;
         private System.Windows.Forms.Label LabelModName;
@@ -663,15 +663,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnType;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnVersion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAuthor;
-        private System.Windows.Forms.Button ButtonUninstallMods;
-        private System.Windows.Forms.Button ButtonInstallMods;
+        private System.Windows.Forms.Button ButtonUninstallFiles;
+        private System.Windows.Forms.Button ButtonInstallFiles;
         private System.Windows.Forms.ToolStrip ToolStrip;
         private System.Windows.Forms.ToolStripLabel ToolStripStatus;
-        private System.Windows.Forms.Label LabelModDetails;
         private System.Windows.Forms.Button ButtonConnectToConsole;
         private System.Windows.Forms.ToolStripMenuItem MenuStripFileRefreshData;
         private System.Windows.Forms.ToolStripLabel ToolStripTitleConsole;
         private System.Windows.Forms.ToolStripLabel ToolStripConsole;
         private System.Windows.Forms.ToolStripSeparator ToolStripSeperator;
+        private System.Windows.Forms.CheckBox CheckboxAutoRegion;
+        private System.Windows.Forms.Button ButtonDownloadFiles;
+        private System.Windows.Forms.Button ButtonDownloadInstallFiles;
     }
 }

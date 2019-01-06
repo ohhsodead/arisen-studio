@@ -94,6 +94,12 @@
     <Compile Include="Windows\ConsolesWindow.Designer.cs">
       <DependentUpon>ConsolesWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\RegionsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\RegionsWindow.Designer.cs">
+      <DependentUpon>RegionsWindow.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ps3xftp.resx">
       <DependentUpon>ps3xftp.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\ConsolesWindow.resx">
       <DependentUpon>ConsolesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\RegionsWindow.resx">
+      <DependentUpon>RegionsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
