@@ -15,8 +15,8 @@ A federated desktop application for searching a regularly updated collection of 
 * Simple, fast and lightweight
 * Browse hundreds of useful mods
 * Filter by specific types
-* Download archives to computer
-* Install files to console at correct locations
+* Download archive to computer
+* Install files to console correct locations
 * Automatic game region detection
 * Create, edit and save multiple consoles
 
