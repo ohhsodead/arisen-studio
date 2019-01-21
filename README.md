@@ -22,8 +22,14 @@ A federated desktop application for searching a regularly updated collection of 
 
 ## Usage
 
+### Getting Started
+Firstly, edit the console list to add your own console's IP address. This can be found in 'System Information' on your PlayStation. 
+
+### Connecting to PS3
+Select your console from the list, then click the 'Connect' button.
+
 ### Installing Mods
-todo
+
 
 ## Installation
 Download and run the latest version of the Windows installer, "ps3xftp.Installer.Windows.exe" from the [releases](https://github.com/HerbL27/ps3xftp/releases/latest) page.
