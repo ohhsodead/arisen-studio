@@ -1,4 +1,4 @@
-﻿namespace ps3xftp.Windows
+﻿namespace Ps3Xftp.Windows
 {
     partial class DataWindow
     {

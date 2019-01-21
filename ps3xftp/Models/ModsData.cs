@@ -1,23 +1,22 @@
-﻿using System.Collections.Generic;
-
-namespace ps3xftp.Models
+﻿namespace Ps3Xftp.Models
 {
     public class ModsData
     {
-        public string Version { get; set; }
-        public IList<ModItem> Mods { get; set; }
+        public string Version;
+        public ModItem[] Mods;
 
         public class ModItem
         {
-            public string GamePrefix { get; set; }
-            public string Name { get; set; }
-            public string Author { get; set; }
-            public string Version { get; set; }
-            public string Configuration { get; set; }
-            public string Type { get; set; }
-            public string Description { get; set; }
-            public string URL { get; set; }
-            public IList<string> InstallPaths { get; set; }
+            public long Id;
+            public string Name;
+            public string GameId;
+            public string Author;
+            public string Version;
+            public string Configuration;
+            public string Type;
+            public string Description;
+            public string Url;
+            public string[] InstallPaths;
         }
     }
 }

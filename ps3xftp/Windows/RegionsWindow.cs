@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ps3xftp.Windows
+namespace Ps3Xftp.Windows
 {
     public partial class RegionsWindow : Form
     {
@@ -17,7 +10,7 @@ namespace ps3xftp.Windows
             InitializeComponent();
         }
 
-        public string SelectedRegion { get; set; }
+        public string SelectedRegion { get; private set; }
 
         private void ListboxRegions_SelectedIndexChanged(object sender, EventArgs e)
         {

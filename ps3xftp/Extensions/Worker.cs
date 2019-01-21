@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace ps3xftp.Extensions
+namespace Ps3Xftp.Extensions
 {
     public static class Worker
     {
@@ -14,22 +14,22 @@ namespace ps3xftp.Extensions
         /// <param name="completedWork">the return value</param>
         private static void StartWorker<T>(this BackgroundWorker bgw, Func<T> work, Action<T> completedWork = null)
         {
-            bgw.DoWork += new DoWorkEventHandler(delegate (object obj, DoWorkEventArgs args)
+            bgw.DoWork += delegate (object obj, DoWorkEventArgs args)
             {
                 args.Result = work.Invoke();
-            });
+            };
             if (completedWork != null)
             {
-                bgw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(delegate (object obj, RunWorkerCompletedEventArgs args)
+                bgw.RunWorkerCompleted += delegate (object obj, RunWorkerCompletedEventArgs args)
                 {
                     completedWork.Invoke((T)args.Result);
-                });
+                };
             }
 
         }
 
         /// <summary>
-        /// start a returned type method in backgroundworker
+        /// start a returned type method in BackgroundWorker
         /// </summary>
         /// <typeparam name="T">a generic return type</typeparam>
         /// <param name="work">method passed as argument</param>
@@ -37,26 +37,26 @@ namespace ps3xftp.Extensions
         public static void RunWorkAsync<T>(Func<T> work, Action<T> completedWork = null)
         {
             BackgroundWorker worker = new BackgroundWorker();
-            worker.StartWorker<T>(work, completedWork);
+            worker.StartWorker(work, completedWork);
 
             worker.RunWorkerAsync();
         }
 
         /// <summary>
-        /// the actual method invoked here
+        /// The actual method invoked here
         /// </summary>
         /// <param name="bgw">the BackgroundWorker</param>
         /// <param name="work">method passed as argument</param>
         private static void StartWorker(this BackgroundWorker bgw, Action work)
         {
-            bgw.DoWork += new DoWorkEventHandler(delegate (object obj, DoWorkEventArgs args)
+            bgw.DoWork += delegate (object obj, DoWorkEventArgs args)
             {
                 args.Result = work.DynamicInvoke();
-            });
+            };
         }
 
         /// <summary>
-        /// start a void method in backgroundworker 
+        /// Start a void method in BackgroundWorker 
         /// </summary>
         /// <param name="work">Method passed as argument</param>
         /// <param name="completed">the completed work event handler</param>

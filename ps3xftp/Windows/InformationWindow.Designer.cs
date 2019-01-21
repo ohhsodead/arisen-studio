@@ -1,4 +1,4 @@
-﻿namespace ps3xftp.Windows
+﻿namespace Ps3Xftp.Windows
 {
     partial class InformationWindow
     {
@@ -43,7 +43,7 @@
             this.LabelDescription.Name = "LabelDescription";
             this.LabelDescription.Size = new System.Drawing.Size(260, 64);
             this.LabelDescription.TabIndex = 1;
-            this.LabelDescription.Text = "This application was developed by HerbL27.\r\nAll credits goes to the appropriate c" +
+            this.LabelDescription.Text = "This application was developed by mostlyash.\r\nAll credits goes to the appropriate c" +
     "reators\r\nof the mods used in this application.\r\nIf you have any questions,";
             // 
             // LabelEmailMe
@@ -63,7 +63,7 @@
             // 
             // ImageInformation
             // 
-            this.ImageInformation.Image = global::ps3xftp.Properties.Resources.InformationIcon;
+            this.ImageInformation.Image = global::Ps3Xftp.Properties.Resources.InformationIcon;
             this.ImageInformation.Location = new System.Drawing.Point(14, 15);
             this.ImageInformation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ImageInformation.Name = "ImageInformation";

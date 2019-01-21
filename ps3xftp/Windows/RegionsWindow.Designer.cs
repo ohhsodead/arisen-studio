@@ -1,4 +1,4 @@
-﻿namespace ps3xftp.Windows
+﻿namespace Ps3Xftp.Windows
 {
     partial class RegionsWindow
     {
@@ -33,12 +33,12 @@
             // 
             // ListboxRegions
             // 
-            this.ListboxRegions.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListboxRegions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.ListboxRegions.FormattingEnabled = true;
-            this.ListboxRegions.ItemHeight = 15;
+            this.ListboxRegions.ItemHeight = 17;
             this.ListboxRegions.Location = new System.Drawing.Point(12, 12);
             this.ListboxRegions.Name = "ListboxRegions";
-            this.ListboxRegions.Size = new System.Drawing.Size(156, 199);
+            this.ListboxRegions.Size = new System.Drawing.Size(156, 191);
             this.ListboxRegions.TabIndex = 0;
             this.ListboxRegions.SelectedIndexChanged += new System.EventHandler(this.ListboxRegions_SelectedIndexChanged);
             // 
@@ -46,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(180, 222);
+            this.ClientSize = new System.Drawing.Size(180, 214);
             this.Controls.Add(this.ListboxRegions);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

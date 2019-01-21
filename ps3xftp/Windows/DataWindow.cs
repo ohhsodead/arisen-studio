@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace ps3xftp.Windows
+namespace Ps3Xftp.Windows
 {
     public partial class DataWindow : Form
     {

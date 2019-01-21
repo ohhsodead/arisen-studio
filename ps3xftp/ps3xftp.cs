@@ -1,91 +1,91 @@
-﻿using ps3xftp.Extensions;
-using System;
+﻿using System;
 using System.ComponentModel;
-using System.Drawing;
+using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Net;
 using System.Windows.Forms;
-using ps3xftp.Windows;
+using Ps3Xftp.Extensions;
+using Ps3Xftp.Models;
+using Ps3Xftp.Properties;
+using Ps3Xftp.Windows;
 
-namespace ps3xftp
+namespace Ps3Xftp
 {
-    public partial class Ps3xftp : Form
+    public partial class Ps3Xftp : Form
     {
         /// <summary>
-        /// This is only instance of the main form
+        ///     Contains the latest mods data retrieved from the database
         /// </summary>
-        public static Ps3xftp Form { get; set; } = null;
+        private static ModsData _modsData = new ModsData();
 
-        public Ps3xftp()
+        /// <summary>
+        ///     Contains the latest games data retrieved from the database
+        /// </summary>
+        public static GamesData GamesData = new GamesData();
+
+        /// <summary>
+        ///     Application user's data roaming directory
+        /// </summary>
+        private static string AppDataPath { get; } = $@"{Application.UserAppDataPath}\";
+
+        public Ps3Xftp()
         {
             InitializeComponent();
-            Form = this;
-            EnableModsUI(false);
+            EnableModsUi(false);
         }
 
         /// <summary>
-        /// Ps3xftp application loading event
+        ///     Ps3xftp application loading event
         /// </summary>
         private void Ps3xftp_Load(object sender, EventArgs e)
         {
-            SetStatus("Initializing ps3xftp...");
-            Worker.RunWorkAsync(() => LoadData(), InitializeFinished);
+            SetStatus("Initializing...");
+            Worker.RunWorkAsync(LoadData, InitializeFinished);
         }
 
         /// <summary>
-        /// Application closing event to save settings
+        ///     Application closing event to save settings
         /// </summary>
         private void Ps3xftp_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.Save();
+            Settings.Default.Save();
         }
 
         /// <summary>
-        /// Retrieves the mods and games data from the database into the application
+        ///     Retrieves the mods and games data from the database into the application
         /// </summary>
-        private void LoadData()
+        private static void LoadData()
         {
-            ModsData = Utilities.GetModsData();
+            _modsData = Utilities.GetModsData();
             GamesData = Utilities.GetGameData();
         }
 
         /// <summary>
-        /// After data is initialized, load consoles and games into dropdown menu
+        ///     After data is initialized, load consoles and games into dropdown menu
         /// </summary>
         private void InitializeFinished(object sender, RunWorkerCompletedEventArgs e)
         {
             DropdownConsoles.Enabled = true;
             DropdownConsoles.Items.Clear();
             DropdownGames.Items.Clear();
-            foreach (var console in Properties.Settings.Default.UserConsoles)
+            foreach (var console in Settings.Default.UserConsoles)
                 DropdownConsoles.Items.Add(console);
             foreach (var game in GamesData.Games)
                 DropdownGames.Items.Add(game.Title);
-            SetStatus(string.Format("Initialized ps3xftp data (version {0}) - Ready to connect...", ModsData.Version));
+            SetStatus($"Initialized application (Version {_modsData.Version}) - Ready to connect...");
+            DropdownConsoles.SelectedIndex = 0;
         }
-
-        /// <summary>
-        /// Application user's data roaming directory
-        /// </summary>
-        static string AppDataPath { get; } = $@"{Application.UserAppDataPath}\";
-
-        /// <summary>
-        /// Contains the latest mods data retrieved from the database
-        /// </summary>
-        public static Models.ModsData ModsData { get; set; } = new Models.ModsData();
-
-        /// <summary>
-        /// Contains the latest games data retrieved from the database
-        /// </summary>
-        public static Models.GamesData GamesData { get; set; } = new Models.GamesData();
 
         private void MenuStripFileRefreshData_Click(object sender, EventArgs e)
         {
             SetStatus("Refreshing data for games and mods updates...");
-            EnableModsUI(false);
+            EnableModsUi(false);
+            IsConsoleConnected = false;
+            ButtonConnectToConsole.Text = @"Connect";
             DropdownConsoles.Enabled = false;
             ButtonConnectToConsole.Enabled = false;
-            Worker.RunWorkAsync(() => LoadData(), InitializeFinished);
+            Worker.RunWorkAsync(LoadData, InitializeFinished);
         }
 
         private void MenuStripFileExit_Click(object sender, EventArgs e)
@@ -93,126 +93,146 @@ namespace ps3xftp
             Application.Exit();
         }
 
-        private void MenuStripConsolesEdit_Click(object sender, EventArgs e)
+        private void MenuStripContribute_Click(object sender, EventArgs e)
+        {
+            Process.Start(Utilities.GithubProject);
+        }
+
+        private void MenuStripInformation_Click(object sender, EventArgs e)
+        {
+            var infoWindow = new InformationWindow();
+            infoWindow.ShowDialog();
+        }
+
+        /// <summary>
+        ///     Reloads the consoles list into the dropdown menu
+        /// </summary>
+        private void LoadConsoles()
+        {
+            DropdownConsoles.Items.Clear();
+            foreach (var profile in Settings.Default.UserConsoles)
+                DropdownConsoles.Items.Add(profile);
+        }
+
+        /// <summary>
+        ///     Contains the console name of the users selected console
+        /// </summary>
+        private static string UsersConsoleName { get; set; }
+
+        /// <summary>
+        ///     Contains the console IP of the users selected console
+        /// </summary>
+        private static string UsersConsoleIp { get; set; }
+
+        /// <summary>
+        ///     Contains the selected game data selected by the user
+        /// </summary>
+        private static GamesData.Game UsersGame { get; set; }
+
+        /// <summary>
+        ///     Contains the selected mods info selected by the user
+        /// </summary>
+        private static ModsData.ModItem UsersGameMod { get; set; }
+
+        /// <summary>
+        ///     Contains the region response from the user
+        /// </summary>
+        private static string UsersGameRegion { get; set; }
+
+        /// <summary>
+        ///     Whether the user's selected console has been connected
+        /// </summary>
+        private static bool IsConsoleConnected { get; set; }
+
+        /// <summary>
+        ///     Set the selected item from the dropdown menu to property
+        /// </summary>
+        private void ComboBoxConsoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (DropdownConsoles.SelectedIndex != -1)
+            {
+                UsersConsoleName = DropdownConsoles.GetItemText(DropdownConsoles.SelectedItem)
+                    .Split(new[] {" : "}, StringSplitOptions.RemoveEmptyEntries)[0];
+                UsersConsoleIp = DropdownConsoles.GetItemText(DropdownConsoles.SelectedItem)
+                    .Split(new[] {" : "}, StringSplitOptions.RemoveEmptyEntries)[1];
+            }
+
+            EnableButton(ButtonConnectToConsole, DropdownConsoles.SelectedIndex != -1);
+        }
+
+        /// <summary>
+        ///     Test connection to the console and enable user controls
+        /// </summary>
+        private void ButtonConnectToConsole_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (IsConsoleConnected)
+                {
+                    SetStatus($"Disconnecting from {UsersConsoleName} - Please wait...");
+                    EnableModsUi(false);
+                    DropdownConsoles.Enabled = true;
+                    ButtonConnectToConsole.Text = @"Connect";
+                    SetStatusConsole("none", "0.0.0.0");
+                    SetStatus("Disconnected from console");
+                    IsConsoleConnected = false;
+                }
+                else
+                {
+                    SetStatus($"Connecting to {UsersConsoleName} - Please wait...");
+                    using (new Ps3Ftp(UsersConsoleIp))
+                    {
+                    } // Just test a connection to the console
+
+                    EnableModsUi(true);
+                    DropdownConsoles.Enabled = false;
+                    ButtonConnectToConsole.Text = @"Disconnect";
+                    DropdownGames.SelectedIndex = 0;
+                    SetStatusConsole(UsersConsoleName, UsersConsoleIp);
+                    SetStatus("Connected to console, ready");
+                    IsConsoleConnected = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                SetStatus($"Unable to connect to console - Error: {ex.Message}");
+                EnableModsUi(false);
+            }
+        }
+
+        private void ButtonEditConsoles_Click(object sender, EventArgs e)
         {
             var consolesWindow = new ConsolesWindow();
             consolesWindow.ShowDialog(this);
             LoadConsoles();
         }
-        
-        private void MenuStripContribute_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start(Utilities.URL_GITUBPROJECT);
-        }
-
-        private void MenuStripInformation_Click(object sender, EventArgs e)
-        {
-            var InfoWindow = new InformationWindow();
-            InfoWindow.ShowDialog();
-        }
 
         /// <summary>
-        /// Loads and clears all the user's consoles into the dropdown menu
+        ///     Retrieve the mods data from the loaded database
         /// </summary>
-        private void LoadConsoles()
-        {
-            DropdownConsoles.Items.Clear();
-            foreach (var profile in Properties.Settings.Default.UserConsoles)
-                DropdownConsoles.Items.Add(profile);
-        }
-
-        /// <summary>
-        /// Contains the IP address of the user's selected console
-        /// </summary>
-        static string UsersConsoleIP { get; set; }
-
-        /// <summary>
-        /// Contains data for the current user's selected game
-        /// </summary>
-        static Models.GamesData.Game UsersGame { get; set; }
-
-        /// <summary>
-        /// Contains info for the user's selected mod 
-        /// </summary>
-        static Models.ModsData.ModItem UsersGameMod { get; set; }
-
-        /// <summary>
-        /// Contains the region for the user's selected game
-        /// </summary>
-        static string UsersGameRegion { get; set; }
-
-        /// <summary>
-        /// Contains the region for the user's selected game
-        /// </summary>
-        static bool IsConsoleConnected { get; set; }= false;
-
-        /// <summary>
-        /// Set the selected dropdown item to console
-        /// </summary>
-        private void ComboBoxConsoles_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (DropdownConsoles.SelectedIndex != -1)
-                UsersConsoleIP = DropdownConsoles.GetItemText(DropdownConsoles.SelectedItem).Split(new string[] { " : " }, StringSplitOptions.RemoveEmptyEntries)[1];
-            EnableButton(ButtonConnectToConsole, DropdownConsoles.SelectedIndex != -1);
-        }
-
-        /// <summary>
-        /// Test connection to the console and enable ui controls
-        /// </summary>
-        private void ButtonConnectToConsole_Click(object sender, EventArgs e)
-        {
-            try {
-                if (IsConsoleConnected) {
-                    SetStatus(string.Format("Disconnecting from {0} - Please wait...", UsersConsoleIP));
-                    EnableModsUI(false);
-                    DropdownConsoles.Enabled = true;
-                    ButtonConnectToConsole.Text = "Connect";
-                    SetStatusConsole("none", false);
-                    SetStatus("Successfully disconnected from console");
-                }
-                else {
-                    SetStatus(string.Format("Connecting to {0} - Please wait...", UsersConsoleIP));
-                    Refresh();
-                    using (var PS3 = new PS3FTP(UsersConsoleIP)) { }
-                    EnableModsUI(true);
-                    DropdownConsoles.Enabled = false;
-                    ButtonConnectToConsole.Text = "Disconnect";
-                    DropdownGames.SelectedIndex = 0;
-                    SetStatusConsole(DropdownConsoles.GetItemText(DropdownConsoles.SelectedItem), true);
-                    SetStatus("Successfully connected to selected console");
-                }
-            }
-            catch (Exception ex) {
-                SetStatus(string.Format("Unable to connect, ensure your console is powered on - Error: {0}", ex.Message));
-                EnableModsUI(false);
-            }
-        }
-
-        /// <summary>
-        /// Retrive the mods data information
-        /// </summary>
-        /// <param name="name">Name of the mod</param>
+        /// <param name="modId">Name of the mod</param>
         /// <returns>Mod information</returns>
-        private Models.ModsData.ModItem GetModsDetails(string name)
+        private static ModsData.ModItem GetModDetails(long modId)
         {
-            foreach (var mod in ModsData.Mods)
-                if (mod.Name == name)
+            foreach (var mod in _modsData.Mods)
+                if (mod.Id == modId)
                     return mod;
-            return null;
+            throw new Exception($"Unable to specified match modId : {modId}");
         }
 
         /// <summary>
-        /// Loads all the mods for the user's selected game into the dropdown menu
+        ///     Loads all the mods for the user's selected game into the dropdown menu
         /// </summary>
-        /// <param name="gamePrefix"></param>
+        /// <param name="gameId"></param>
         /// <param name="gameType"></param>
-        private void LoadGameMods(string gamePrefix, string gameType = "")
+        private void LoadGameMods(string gameId, string gameType = "")
         {
             DataModItems.Rows.Clear();
 
-            foreach (var modData in ModsData.Mods)
-                if (modData.GamePrefix == gamePrefix && modData.Type.Contains(gameType)) {
-                    DataModItems.Rows.Add(modData.Name, modData.Type, modData.Version, modData.Author);
+            foreach (var modData in _modsData.Mods)
+                if (string.Equals(modData.GameId, gameId) && modData.Type.Contains(gameType))
+                {
+                    DataModItems.Rows.Add(modData.Id, modData.Name, modData.Type, modData.Version, modData.Author);
                     if (!DropdownTypes.Items.Contains(modData.Type))
                         DropdownTypes.Items.Add(modData.Type);
                 }
@@ -222,44 +242,56 @@ namespace ps3xftp
         {
             UsersGame = Utilities.GetGameByTitle(DropdownGames.GetItemText(DropdownGames.SelectedItem));
 
-            LoadGameMods(UsersGame.Prefix);
+            LoadGameMods(UsersGame.Id);
 
             DropdownTypes.Items.Clear();
             DropdownTypes.Items.Add("ANY");
             DropdownTypes.SelectedIndex = 0;
             DataModItems.Enabled = DropdownGames.SelectedItem != null;
+            DataModItems.Sort(ColumnName, ListSortDirection.Ascending);
         }
-        
+
         private void DropdownTypes_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DropdownTypes.SelectedIndex == 0)
-                LoadGameMods(UsersGame.Prefix);
+                LoadGameMods(UsersGame.Id);
             else
-                LoadGameMods(UsersGame.Prefix, DropdownTypes.GetItemText(DropdownTypes.SelectedItem));
+                LoadGameMods(UsersGame.Id, DropdownTypes.GetItemText(DropdownTypes.SelectedItem));
         }
 
         private void DataItemsMods_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            ShowModsDetails(DataModItems.CurrentRow.Cells[0].Value.ToString());
+            if (DataModItems.CurrentRow != null)
+                ShowModDetails(Convert.ToInt64(DataModItems.CurrentRow.Cells[0].Value.ToString()));
+        }
+
+        private void DataModItems_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DataModItems.CurrentRow != null)
+                ShowModDetails(Convert.ToInt64(DataModItems.CurrentRow.Cells[0].Value.ToString()));
+            EnableButton(ButtonDownloadLocally, DataModItems.SelectedRows.Count != 0);
+            EnableButton(ButtonInstallToConsole, DataModItems.SelectedRows.Count != 0);
+            EnableButton(ButtonUninstallFromConsole, DataModItems.SelectedRows.Count != 0);
+            EnableButton(ButtonReportMod, DataModItems.SelectedRows.Count != 0);
         }
 
         private void DataItemsMods_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
-                ShowModsDetails(DataModItems.CurrentRow.Cells[0].Value.ToString());
-            EnableButton(ButtonDownloadFiles, e.RowIndex != -1);
-            EnableButton(ButtonInstallFiles, e.RowIndex != -1);
-            EnableButton(ButtonDownloadInstallFiles, e.RowIndex != -1);
-            EnableButton(ButtonUninstallFiles, e.RowIndex != -1);
+            if (DataModItems.CurrentRow != null)
+                ShowModDetails(Convert.ToInt64(DataModItems.CurrentRow.Cells[0].Value.ToString()));
+            EnableButton(ButtonDownloadLocally, e.RowIndex != -1);
+            EnableButton(ButtonInstallToConsole, e.RowIndex != -1);
+            EnableButton(ButtonUninstallFromConsole, e.RowIndex != -1);
+            EnableButton(ButtonReportMod, e.RowIndex != -1);
         }
 
         /// <summary>
-        /// Sets the UI to display the user's selected mod
+        ///     Sets the UI to display the user's selected mod
         /// </summary>
-        /// <param name="modName"></param>
-        private void ShowModsDetails(string modName)
+        /// <param name="modId">Id of the mod item</param>
+        private void ShowModDetails(long modId)
         {
-            var modDetails = GetModsDetails(modName);
+            var modDetails = GetModDetails(modId);
             LabelModName.Text = modDetails.Name;
             LabelModVersion.Text = modDetails.Version;
             LabelModAuthor.Text = modDetails.Author;
@@ -271,152 +303,189 @@ namespace ps3xftp
 
         private void ButtonDownloadFiles_Click(object sender, EventArgs e)
         {
-            SetStatus("Downloading mod files locally...");
+            SetStatus($"Downloading modded files for '{UsersGameMod.Name}' locally...");
 
-            try {
-                DownloadModFiles(UsersGameMod);
-                SetStatus(string.Format("Downloaded {0} to ps3xftp data roaming directory.", UsersGameMod.Name));
+            try
+            {
+                var folderBrowser = new FolderBrowserDialog {ShowNewFolderButton = true};
+                if (folderBrowser.ShowDialog() != DialogResult.OK) return;
+                DownloadModToLocation(UsersGameMod, folderBrowser.SelectedPath);
+                SetStatus($"Downloaded compressed archive {UsersGameMod.Name} to specified folder");
             }
-            catch (Exception ex) {
-                SetStatus(string.Format("Error downloading files locally - {0}", ex.Message));
-            }
-        }
-
-        private void ButtonInstallMods_Click(object sender, EventArgs e)
-        {
-            SetStatus(string.Format("Installing '{0}' to console - Detecting game region...", UsersGameMod.Name));
-
-            try {
-                UsersGameRegion = GetUsersGameRegion(UsersGame, CheckboxAutoRegion.Checked);
-                if (!string.IsNullOrEmpty(UsersGameRegion)) {
-                    SetStatus(string.Format("Installing files to console..."));
-                    InstallModFiles(UsersGameMod);
-                    SetStatus(string.Format("{0} files for {1} successfully uploaded. Ready to boot: {2}", UsersGameMod.InstallPaths.Count.ToString(), UsersGameMod.Name, UsersGame.Title));
-                }
-                else
-                    SetStatus("Aborted. Game region cannot be null.");
-            }
-            catch (Exception ex) {
-                SetStatus(string.Format("Error installing files to console - {0}", ex.Message));
+            catch (Exception ex)
+            {
+                SetStatus($"Unable to download '{UsersGameMod.Name}' files - Error: {ex.Message}");
             }
         }
 
         private void ButtonDownloadInstallMods_Click(object sender, EventArgs e)
         {
-            SetStatus(string.Format("Installing '{0}' - Detecting game region...", UsersGameMod.Name));
+            SetStatus($"Installing '{UsersGameMod.Name}' modded files to console - Detecting game region...");
 
-            try {
+            try
+            {
                 UsersGameRegion = GetUsersGameRegion(UsersGame, CheckboxAutoRegion.Checked);
-                if (!string.IsNullOrEmpty(UsersGameRegion)) {
-                    SetStatus(string.Format("Downloading files to appdata..."));
-                    DownloadModFiles(UsersGameMod);
-                    SetStatus(string.Format("Installing files to console..."));
-                    InstallModFiles(UsersGameMod);
-                    SetStatus(string.Format("{0} files for {1} successfully uploaded. Ready to boot: {2}", UsersGameMod.InstallPaths.Count.ToString(), UsersGameMod.Name, UsersGame.Title));
+                if (!string.IsNullOrEmpty(UsersGameRegion))
+                {
+                    SetStatus("Downloading archive to disk...");
+                    DownloadExtractFiles(UsersGameMod);
+
+                    var currentFileNo = 0;
+                    var totalFileNo = Directory.GetFiles($@"{AppDataPath}{UsersGameMod.Name}\").Length;
+                    foreach (var installFilePath in UsersGameMod.InstallPaths)
+                    foreach (var modFilePath in Directory.GetFiles($@"{AppDataPath}{UsersGameMod.Name}\"))
+                        if (string.Equals(Path.GetFileName(installFilePath), Path.GetFileName(modFilePath), StringComparison.CurrentCultureIgnoreCase))
+                        {
+                            currentFileNo++;
+                            SetStatus($"Installing file {currentFileNo} of {totalFileNo} to console: {Path.GetFileName(modFilePath)}");
+                            Utilities.FileToPs3(UsersConsoleIp, modFilePath, installFilePath
+                                .Replace("/{REGION}/", $"/{UsersGameRegion}/"));
+                        }
+
+                    SetStatus($"{UsersGameMod.Name} ({totalFileNo}) has been installed. Ready to start: {UsersGame.Title}");
                 }
                 else
-                    SetStatus("Aborted. Game region cannot be null.");
+                {
+                    SetStatus("Aborted - Game region could not be found");
+                }
             }
-            catch (Exception ex) {
-                SetStatus(string.Format("Error downloading and installing files - {0}", ex.Message));
+            catch (Exception ex)
+            {
+                SetStatus($"Unable to install files for '{UsersGameMod.Name}' - Error: {ex.Message}");
             }
         }
 
         private void ButtonUninstallFiles_Click(object sender, EventArgs e)
         {
-            SetStatus(string.Format("Installing '{0}' - Detecting game region...", UsersGameMod.Name));
+            SetStatus($"Uninstalling '{UsersGameMod.Name}' modded files from console...");
 
-            try {
+            try
+            {
                 UsersGameRegion = GetUsersGameRegion(UsersGame, CheckboxAutoRegion.Checked);
-                if (!string.IsNullOrEmpty(UsersGameRegion)) {
-                    SetStatus(string.Format("Uninstalling files from console..."));
+                if (!string.IsNullOrEmpty(UsersGameRegion))
+                {
+                    SetStatus("Uninstalling files...");
                     UninstallModFiles(UsersGameMod);
-                    SetStatus(string.Format("{0} files for {1} successfully removed.", UsersGameMod.InstallPaths.Count.ToString(), UsersGameMod.Name));
+                    SetStatus($"{UsersGameMod.Name} files uninstalled");
                 }
                 else
-                    SetStatus("Aborted. Game region cannot be null.");
+                {
+                    SetStatus("Aborted - Game region is not specified");
+                }
             }
-            catch (Exception ex) {
-                SetStatus(string.Format("Error downloading and installing files - {0}", ex.Message));
+            catch (Exception ex)
+            {
+                SetStatus($"Unable to uninstall files - Error: {ex.Message}");
             }
         }
 
-        public static string GetUsersGameRegion(Models.GamesData.Game game, bool autoRegion)
+        private void ButtonReportMod_Click(object sender, EventArgs e)
         {
-            if (autoRegion) {
-                using (var PS3 = new PS3FTP(UsersConsoleIP))
+            Utilities.OpenReportTemplate(UsersGameMod);
+        }
+
+        /// <summary>
+        ///     Returns the users game region, either automatically set region by searching existing console directories or prompt
+        ///     the user to select one
+        /// </summary>
+        /// <param name="game">Selected game</param>
+        /// <param name="autoRegion">Automatically retrieve users region</param>
+        /// <returns></returns>
+        private static string GetUsersGameRegion(GamesData.Game game, bool autoRegion)
+        {
+            if (autoRegion)
+            {
+                using (var ps3 = new Ps3Ftp(UsersConsoleIp))
                     foreach (var region in game.Regions)
-                        if (PS3.DirectoryExists($"dev_hdd0/game/{region}/"))
+                        if (ps3.DirectoryExists($"dev_hdd0/game/{region}/"))
                             return region;
             }
-            else { 
+            else
+            {
                 var frmRegions = new RegionsWindow();
                 foreach (var region in game.Regions)
                     frmRegions.ListboxRegions.Items.Add(region);
                 frmRegions.ShowDialog();
                 return frmRegions.SelectedRegion;
             }
+
             return null;
         }
-        
-        private void DownloadModFiles(Models.ModsData.ModItem modInfo)
+
+        /// <summary>
+        ///     Download modded files from the URL of the ModsData to the path specified by the user
+        /// </summary>
+        /// <param name="modInfo">Mod to download</param>
+        /// <param name="downloadPath">Mod to download</param>
+        private static void DownloadModToLocation(ModsData.ModItem modInfo, string downloadPath)
         {
-            string archiveLocation = $"{AppDataPath}{modInfo.Name}.zip";
-            using (WebClient wc = new WebClient()) {
+            using (var wc = new WebClient())
+            {
                 wc.Headers.Add("Accept: application/zip");
                 wc.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
-                wc.DownloadFile(new Uri(modInfo.URL), archiveLocation);
-                System.IO.Compression.ZipFile.ExtractToDirectory(archiveLocation, AppDataPath);
+                wc.DownloadFile(new Uri(modInfo.Url),
+                    $"{downloadPath}/{modInfo.Name} (v{modInfo.Version}) ({modInfo.Author}).zip");
             }
         }
-        
+
         /// <summary>
-        /// Starts the process of downloading and then installing the mod files from the database
+        ///     Downloads the compressed archive for the mods and then extracts the archive into the app data roaming director
         /// </summary>
-        /// <param name="modInfo">Mod info</param>
-        private void InstallModFiles(Models.ModsData.ModItem modInfo)
+        /// <param name="modInfo">Mod to download</param>
+        private static void DownloadExtractFiles(ModsData.ModItem modInfo)
+        {
+            var archivePath = $"{AppDataPath}{modInfo.Name}";
+            var archiveFilePath = $"{AppDataPath}{modInfo.Name}.zip";
+            if (Directory.Exists(archivePath))
+                Directory.Delete(archivePath, true);
+            using (var wc = new WebClient())
+            {
+                wc.Headers.Add("Accept: application/zip");
+                wc.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
+                wc.DownloadFile(new Uri(modInfo.Url), archiveFilePath);
+                ZipFile.ExtractToDirectory(archiveFilePath, AppDataPath);
+            }
+        }
+
+        /// <summary>
+        ///     Uninstall modded files specified in the InstallPath from the users console, ignore game specific files as this
+        ///     could cause game to stop working (only .sprx files)
+        /// </summary>
+        /// <param name="modInfo">Mod to uninstall</param>
+        private static void UninstallModFiles(ModsData.ModItem modInfo)
         {
             foreach (var installFilePath in modInfo.InstallPaths)
-                foreach (var modFilePath in Directory.GetFiles($@"{AppDataPath}{modInfo.Name}\"))
-                    if (Path.GetFileName(installFilePath).ToLower() == Path.GetFileName(modFilePath).ToLower())
-                        Utilities.FileToPS3(UsersConsoleIP.ToString(), modFilePath, installFilePath
-                               .Replace("/{REGION}/", $"/{UsersGameRegion}/"));
-        }
-
-        private void UninstallModFiles(Models.ModsData.ModItem modInfo)
-        {
-            foreach (var installFilePath in modInfo.InstallPaths)
-                using (var PS3 = new PS3FTP(UsersConsoleIP))
-                    if (installFilePath.EndsWith(".sprx", StringComparison.InvariantCultureIgnoreCase) && PS3.FileExists(installFilePath))
-                        PS3.RemoveFile(installFilePath);
+                using (var ps3 = new Ps3Ftp(UsersConsoleIp))
+                {
+                    if (installFilePath.StartsWith("dev_hdd0/game/{REGION}/",
+                            StringComparison.InvariantCultureIgnoreCase) && ps3.FileExists(installFilePath))
+                        ps3.RemoveFile(installFilePath);
+                }
         }
 
         /// <summary>
-        /// Set the current connected console status in the tool strip
+        ///     Set the current connected console status in the tool strip
         /// </summary>
-        /// <param name="console"></param>
-        /// <param name="connected"></param>
-        private void SetStatusConsole(string console, bool connected)
+        /// <param name="name"></param>
+        /// <param name="ip"></param>
+        private void SetStatusConsole(string name, string ip)
         {
-            ToolStripConsole.Text = console;
-            if (connected)
-                ToolStripConsole.ForeColor = Color.Green;
-            else
-                ToolStripConsole.ForeColor = Color.Red;
+            ToolStripConsole.Text = $@"{name} ({ip})";
         }
 
         /// <summary>
-        /// Set the current process status in the tool strip
+        ///     Set the current process status in the tool strip
         /// </summary>
         /// <param name="status"></param>
         private void SetStatus(string status)
         {
             ToolStripStatus.Text = status;
             Program.WriteToLog(status);
+            Refresh();
         }
 
         /// <summary>
-        /// Enable/disable button
+        ///     Enable/disable button
         /// </summary>
         /// <param name="button">Button to enable/disable</param>
         /// <param name="enabled">True enables the button</param>
@@ -426,11 +495,12 @@ namespace ps3xftp
         }
 
         /// <summary>
-        /// Enable/disable the mods user interface controls
+        ///     Enable/disable the mods user interface controls
         /// </summary>
         /// <param name="enabled">True/false</param>
-        public void EnableModsUI(bool enabled)
+        private void EnableModsUi(bool enabled)
         {
+            DataModItems.Rows.Clear();
             LabelSelectGame.Enabled = enabled;
             LabelSelectType.Enabled = enabled;
             LabelDetailsName.Enabled = enabled;
@@ -439,19 +509,6 @@ namespace ps3xftp
             DropdownTypes.Enabled = enabled;
             CheckboxAutoRegion.Enabled = enabled;
             DataModItems.Enabled = enabled;
-        }
-
-        /// <summary>
-        /// Show raw text from the specified URL in a window box
-        /// </summary>
-        /// <param name="title">Title of file</param>
-        /// <param name="filePath">Path pointing to info file</param>
-        public static void ShowDataWindow(string title, string filePath)
-        {
-            var frmInfo = new DataWindow { Text = title };
-            frmInfo.labelData.Text = File.ReadAllText(filePath);
-            frmInfo.MaximumSize = new Size(frmInfo.MaximumSize.Width, Form.Height - 100);
-            frmInfo.ShowDialog(Form);
         }
     }
 }

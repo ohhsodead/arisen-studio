@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4996A6E8-C4B0-4E21-B68C-5A29C9B3F9B3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ps3xftp</RootNamespace>
-    <AssemblyName>ps3xftp</AssemblyName>
+    <RootNamespace>Ps3Xftp</RootNamespace>
+    <AssemblyName>Ps3Xftp</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ps3xftp.Program</StartupObject>
+    <StartupObject>Ps3Xftp.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>AIO_Logo.ico</ApplicationIcon>
@@ -64,11 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\Worker.cs" />
-    <Compile Include="ps3xftp.cs">
+    <Compile Include="Ps3Xftp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ps3xftp.Designer.cs">
-      <DependentUpon>ps3xftp.cs</DependentUpon>
+    <Compile Include="Ps3Xftp.Designer.cs">
+      <DependentUpon>Ps3Xftp.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\GamesData.cs" />
     <Compile Include="Models\ModsData.cs" />
@@ -79,7 +79,7 @@
     <Compile Include="Windows\DataWindow.Designer.cs">
       <DependentUpon>DataWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Extensions\PS3FTP.cs" />
+    <Compile Include="Extensions\Ps3Ftp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Windows\InformationWindow.cs">
@@ -100,8 +100,8 @@
     <Compile Include="Windows\RegionsWindow.Designer.cs">
       <DependentUpon>RegionsWindow.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ps3xftp.resx">
-      <DependentUpon>ps3xftp.cs</DependentUpon>
+    <EmbeddedResource Include="Ps3Xftp.resx">
+      <DependentUpon>Ps3Xftp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\DataWindow.resx">
       <DependentUpon>DataWindow.cs</DependentUpon>

@@ -1,71 +1,39 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Schema;
-using ps3xftp.Extensions;
-using System;
-using System.ComponentModel;
+﻿using System;
+using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Reflection;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Ps3Xftp.Extensions;
+using Ps3Xftp.Models;
 
-namespace ps3xftp
+namespace Ps3Xftp
 {
     internal static class Utilities
     {
         /// <summary>
-        /// Web address link pointing to the project repo hosted on GitHub
+        ///     Web address link pointing to the project repo hosted on GitHub
         /// </summary>
-        internal const string URL_GITUBPROJECT = "https://github.com/HerbL27/ps3xftp/";
-
+        internal const string GithubProject = "https://github.com/mostlyash/ps3xftp/";
+        
         /// <summary>
-        /// Web address link pointing to the database file containing the mods data
-        /// </summary>
-        internal const string URL_MODSDATA = "https://www.dropbox.com/s/9kzqk21hkz2nt14/modsdata.json?raw=true";
-
-        /// <summary>
-        /// Gets the mods details from the database 
+        ///     Gets the mods details from the database
         /// </summary>
         /// <returns></returns>
-        internal static Models.ModsData GetModsData()
+        internal static ModsData GetModsData()
         {
             using (var client = new HttpClient())
             {
-                var response = client.GetAsync(URL_MODSDATA).Result;
+                var response = client.GetAsync("https://www.dropbox.com/s/9kzqk21hkz2nt14/modsdata.json?raw=true").Result;
 
-                if (response.StatusCode != HttpStatusCode.OK) throw new Exception($"Bad response {response.StatusCode}");
-
-                var responseData = response.Content.ReadAsStringAsync().Result;
-
-                if (Utilities.ValidResponse(responseData))
-                    return JsonConvert.DeserializeObject<Models.ModsData>(responseData);
-
-                dynamic data = JsonConvert.DeserializeObject(responseData);
-
-                throw new Exception(data.data.message.ToString());
-            }
-        }
-
-        /// <summary>
-        /// Web address link pointing to the database file containing the game data
-        /// </summary>
-        internal const string URL_GAMEDATA = "https://www.dropbox.com/s/98bp8y8ii1o7y64/gamedata.json?raw=true";
-
-        /// <summary>
-        /// Gets the game details from the database
-        /// </summary>
-        /// <returns></returns>
-        internal static Models.GamesData GetGameData()
-        {
-            using (var client = new HttpClient())
-            {
-                var response = client.GetAsync(URL_GAMEDATA).Result;
-
-                if (response.StatusCode != HttpStatusCode.OK) throw new Exception($"Bad response {response.StatusCode}");
+                if (response.StatusCode != HttpStatusCode.OK)
+                    throw new Exception($"Bad response {response.StatusCode}");
 
                 var responseData = response.Content.ReadAsStringAsync().Result;
 
-                if (Utilities.ValidResponse(responseData))
-                    return JsonConvert.DeserializeObject<Models.GamesData>(responseData);
+                if (IsValidJson(responseData))
+                    return JsonConvert.DeserializeObject<ModsData>(responseData);
 
                 dynamic data = JsonConvert.DeserializeObject(responseData);
 
@@ -74,110 +42,99 @@ namespace ps3xftp
         }
         
         /// <summary>
-        /// Uploads the specified local file to the appropriate location on the console
+        ///     Gets the game details from the database
+        /// </summary>
+        /// <returns></returns>
+        internal static GamesData GetGameData()
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.GetAsync("https://www.dropbox.com/s/98bp8y8ii1o7y64/gamedata.json?raw=true").Result;
+
+                if (response.StatusCode != HttpStatusCode.OK)
+                    throw new Exception($"Bad response {response.StatusCode}");
+
+                var responseData = response.Content.ReadAsStringAsync().Result;
+
+                if (IsValidJson(responseData))
+                    return JsonConvert.DeserializeObject<GamesData>(responseData);
+
+                dynamic data = JsonConvert.DeserializeObject(responseData);
+
+                throw new Exception(data.data.message.ToString());
+            }
+        }
+
+        /// <summary>
+        ///     Uploads the specified local file to the appropriate location on the console
         /// </summary>
         /// <param name="ps3Address">PS3 IP address</param>
         /// <param name="localFile">Path of the local file</param>
-        /// <param name="consoleFile">Path of the uploading file directory/param>
-        internal static void FileToPS3(string ps3Address, string localFile, string consoleFile)
+        /// <param name="consoleFile">Path of the uploading file directory</param>
+        internal static void FileToPs3(string ps3Address, string localFile, string consoleFile)
         {
-            using (var PS3 = new PS3FTP(ps3Address))
+            using (var ps3 = new Ps3Ftp(ps3Address))
             {
-                if (!PS3.IsConnected)
-                    throw new Exception("Failed to connect to console");
+                if (!ps3.IsConnected)
+                    throw new Exception("Unable to connect to console");
 
-                string fileName = consoleFile.Contains("/") ? consoleFile.Substring(consoleFile.LastIndexOf('/')).Replace("/", "").Replace("//", "") : consoleFile;
-                string dirPath = consoleFile.Contains("/") ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/' : "dev_hdd0/";
-                PS3.SetCurrentDirectory(dirPath);
-                PS3.PutFile(localFile, fileName);
+                var fileName = consoleFile.Contains("/")
+                    ? consoleFile.Substring(consoleFile.LastIndexOf('/')).Replace("/", "").Replace("//", "")
+                    : consoleFile;
+                var dirPath = consoleFile.Contains("/")
+                    ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
+                    : "dev_hdd0/";
+                ps3.SetCurrentDirectory(dirPath);
+                ps3.PutFile(localFile, fileName);
             }
         }
 
         /// <summary>
-        /// Gets the game data matching the prefix
-        /// </summary>
-        /// <param name="gamePrefix">Prefix of the game</param>
-        /// <returns>Game information</returns>
-        internal static Models.GamesData.Game GetGameByPrefix(string gamePrefix)
-        {
-            foreach (var game in Ps3xftp.GamesData.Games)
-                if (game.Prefix == gamePrefix)
-                    return game;
-
-            return new Models.GamesData.Game() { };
-        }
-
-        /// <summary>
-        /// Gets the game data matching the title
+        ///     Gets the game data matching the title
         /// </summary>
         /// <param name="gameTitle">Title of the game</param>
         /// <returns>Game information</returns>
-        internal static Models.GamesData.Game GetGameByTitle(string gameTitle)
+        internal static GamesData.Game GetGameByTitle(string gameTitle)
         {
-            foreach (var game in Ps3xftp.GamesData.Games)
+            foreach (var game in Ps3Xftp.GamesData.Games)
                 if (game.Title == gameTitle)
                     return game;
-
-            return new Models.GamesData.Game() { };
+            throw new Exception("Unable to find game data for the specified title");
         }
 
         /// <summary>
-        /// Determines a valid json response
+        /// Start a new instance of the report mod template
         /// </summary>
-        /// <param name="data">Json data</param>
-        /// <returns>True/false if valid</returns>
-        internal static bool ValidResponse(string data)
+        /// <param name="modItem">Mod info to fill with</param>
+        internal static void OpenReportTemplate(ModsData.ModItem modItem)
         {
-            string validator = @"{
-			  'type': 'object',
-			  'required': true,
-			  'properties': {
-				'status': {
-					'type': 'string',
-					'required': true
-				},
-				'data': {
-				  'type': 'object',
-				  'required': true,
-				  'properties': {
-					'type': {
-						'type': 'string',
-						'required': true
-					},
-					'message': {
-						'type': 'string',
-						'required': true
-					}
-				  }
-				}
-			  }
-			}";
-
-            //Hack: Just pull in the new library at some point!
-#pragma warning disable 0618
-            var schema = JsonSchema.Parse(validator);
-            var obj = JObject.Parse(data);
-            var ret = obj.IsValid(schema);
-            return !obj.IsValid(schema);
-#pragma warning restore 0618
+            Process.Start($"{GithubProject}issues/new?" +
+                          $"title=[Report] {modItem.Name} (v{modItem.Version})" +
+                          "&labels=mod-request&" +
+                          $"body=Id: {modItem.Id}%0A" +
+                          $"Game Id: {modItem.GameId}%0A" +
+                          $"Author: {modItem.Author}%0A" +
+                          $"Install Paths: {modItem.InstallPaths.ToList()}%0A" +
+                          "----------------------- %0A" +
+                          "*Please include additional information about the issue you are experiencing...");
         }
 
-        internal static string GetDescription(this Enum value)
+        /// <summary>
+        ///     Determines a valid json response
+        /// </summary>
+        /// <param name="data">Json data to validate</param>
+        /// <returns>Whether text is valid json format</returns>
+        private static bool IsValidJson(string data)
         {
-            Type type = value.GetType();
-            string name = Enum.GetName(type, value);
-            if (name != null)
+            try
             {
-                FieldInfo field = type.GetField(name);
-                if (field != null)
-                {
-                    if (Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) is DescriptionAttribute attr)
-                    {
-                        return attr.Description;
-                    }
-                }
+                var unused = JToken.Parse(data);
+                return true;
             }
-            return null;
+            catch
+            {
+                return false;
+            }
         }
     }
 }
