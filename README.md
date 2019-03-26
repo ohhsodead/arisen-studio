@@ -1,4 +1,4 @@
-<h1 align="center">ps3xftp</h1>
+<h1 align="center">ModioX</h1>
 
 <h3 align="center">Discover, download and install PlayStation 3 game mods</h3>
 <div align="center">
