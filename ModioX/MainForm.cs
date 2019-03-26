@@ -4,15 +4,17 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
+using System.Reflection;
 using System.Windows.Forms;
-using Ps3Xftp.Extensions;
-using Ps3Xftp.Models;
-using Ps3Xftp.Properties;
-using Ps3Xftp.Windows;
+using System.Windows.Forms.VisualStyles;
+using ModioX.Extensions;
+using ModioX.Models;
+using ModioX.Properties;
+using ModioX.Windows;
 
-namespace Ps3Xftp
+namespace ModioX
 {
-    public partial class Ps3Xftp : Form
+    public partial class MainForm : Form
     {
         /// <summary>
         ///     Contains the latest mods data retrieved from the database
@@ -29,7 +31,7 @@ namespace Ps3Xftp
         /// </summary>
         private static string AppDataPath { get; } = $@"{Application.UserAppDataPath}\";
 
-        public Ps3Xftp()
+        public MainForm()
         {
             InitializeComponent();
             EnableModsUi(false);
@@ -68,12 +70,15 @@ namespace Ps3Xftp
         {
             DropdownConsoles.Enabled = true;
             DropdownConsoles.Items.Clear();
-            DropdownGames.Items.Clear();
+            ListGames.Controls.Clear();
             foreach (var console in Settings.Default.UserConsoles)
                 DropdownConsoles.Items.Add(console);
             foreach (var game in GamesData.Games)
-                DropdownGames.Items.Add(game.Title);
-            SetStatus($"Initialized application (Version {_modsData.Version}) - Ready to connect...");
+            {
+                ListGames.Items.Add(game.Title);
+            }
+
+            SetStatus($"Initialized application (Version {FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion}) - Ready to connect...");
             DropdownConsoles.SelectedIndex = 0;
         }
 
@@ -95,7 +100,7 @@ namespace Ps3Xftp
 
         private void MenuStripContribute_Click(object sender, EventArgs e)
         {
-            Process.Start(Utilities.GithubProject);
+            Process.Start(Utilities.GithubRepoUrl);
         }
 
         private void MenuStripInformation_Click(object sender, EventArgs e)
@@ -152,9 +157,9 @@ namespace Ps3Xftp
             if (DropdownConsoles.SelectedIndex != -1)
             {
                 UsersConsoleName = DropdownConsoles.GetItemText(DropdownConsoles.SelectedItem)
-                    .Split(new[] {" : "}, StringSplitOptions.RemoveEmptyEntries)[0];
+                    .Split(new[] { " : " }, StringSplitOptions.RemoveEmptyEntries)[0];
                 UsersConsoleIp = DropdownConsoles.GetItemText(DropdownConsoles.SelectedItem)
-                    .Split(new[] {" : "}, StringSplitOptions.RemoveEmptyEntries)[1];
+                    .Split(new[] { " : " }, StringSplitOptions.RemoveEmptyEntries)[1];
             }
 
             EnableButton(ButtonConnectToConsole, DropdownConsoles.SelectedIndex != -1);
@@ -180,22 +185,22 @@ namespace Ps3Xftp
                 else
                 {
                     SetStatus($"Connecting to {UsersConsoleName} - Please wait...");
-                    using (new Ps3Ftp(UsersConsoleIp))
+                    using (new FtpConnection(UsersConsoleIp))
                     {
                     } // Just test a connection to the console
 
                     EnableModsUi(true);
                     DropdownConsoles.Enabled = false;
                     ButtonConnectToConsole.Text = @"Disconnect";
-                    DropdownGames.SelectedIndex = 0;
+                    //DropdownGames.SelectedIndex = 0;
                     SetStatusConsole(UsersConsoleName, UsersConsoleIp);
-                    SetStatus("Connected to console, ready");
+                    SetStatus("Connected, ready to install");
                     IsConsoleConnected = true;
                 }
             }
             catch (Exception ex)
             {
-                SetStatus($"Unable to connect to console - Error: {ex.Message}");
+                SetStatus($"Unable to connect - Error: {ex.Message}");
                 EnableModsUi(false);
             }
         }
@@ -217,7 +222,7 @@ namespace Ps3Xftp
             foreach (var mod in _modsData.Mods)
                 if (mod.Id == modId)
                     return mod;
-            throw new Exception($"Unable to specified match modId : {modId}");
+            throw new Exception($"Unable to match with modId : {modId}");
         }
 
         /// <summary>
@@ -240,14 +245,14 @@ namespace Ps3Xftp
 
         private void DropdownGames_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UsersGame = Utilities.GetGameByTitle(DropdownGames.GetItemText(DropdownGames.SelectedItem));
+            UsersGame = Utilities.GetGameByTitle((sender as Label).Text);
 
             LoadGameMods(UsersGame.Id);
 
             DropdownTypes.Items.Clear();
             DropdownTypes.Items.Add("ANY");
             DropdownTypes.SelectedIndex = 0;
-            DataModItems.Enabled = DropdownGames.SelectedItem != null;
+            DataModItems.Enabled =  DataModItems.Rows.Count != 0;
             DataModItems.Sort(ColumnName, ListSortDirection.Ascending);
         }
 
@@ -271,7 +276,7 @@ namespace Ps3Xftp
                 ShowModDetails(Convert.ToInt64(DataModItems.CurrentRow.Cells[0].Value.ToString()));
             EnableButton(ButtonDownloadLocally, DataModItems.SelectedRows.Count != 0);
             EnableButton(ButtonInstallToConsole, DataModItems.SelectedRows.Count != 0);
-            EnableButton(ButtonUninstallFromConsole, DataModItems.SelectedRows.Count != 0);
+            EnableButton(ButtonUninstallFiles, DataModItems.SelectedRows.Count != 0);
             EnableButton(ButtonReportMod, DataModItems.SelectedRows.Count != 0);
         }
 
@@ -281,7 +286,7 @@ namespace Ps3Xftp
                 ShowModDetails(Convert.ToInt64(DataModItems.CurrentRow.Cells[0].Value.ToString()));
             EnableButton(ButtonDownloadLocally, e.RowIndex != -1);
             EnableButton(ButtonInstallToConsole, e.RowIndex != -1);
-            EnableButton(ButtonUninstallFromConsole, e.RowIndex != -1);
+            EnableButton(ButtonUninstallFiles, e.RowIndex != -1);
             EnableButton(ButtonReportMod, e.RowIndex != -1);
         }
 
@@ -292,10 +297,9 @@ namespace Ps3Xftp
         private void ShowModDetails(long modId)
         {
             var modDetails = GetModDetails(modId);
-            LabelModName.Text = modDetails.Name;
+            LabelModName.Text = $"{modDetails.Name} ({modDetails.Type})";
             LabelModVersion.Text = modDetails.Version;
-            LabelModAuthor.Text = modDetails.Author;
-            LabelModType.Text = modDetails.Type;
+            LabelModAuthor.Text = $"by {modDetails.Author}";
             LabelModConfiguration.Text = modDetails.Configuration;
             LabelModDescription.Text = modDetails.Description;
             UsersGameMod = modDetails;
@@ -307,7 +311,7 @@ namespace Ps3Xftp
 
             try
             {
-                var folderBrowser = new FolderBrowserDialog {ShowNewFolderButton = true};
+                var folderBrowser = new FolderBrowserDialog { ShowNewFolderButton = true };
                 if (folderBrowser.ShowDialog() != DialogResult.OK) return;
                 DownloadModToLocation(UsersGameMod, folderBrowser.SelectedPath);
                 SetStatus($"Downloaded compressed archive {UsersGameMod.Name} to specified folder");
@@ -324,7 +328,7 @@ namespace Ps3Xftp
 
             try
             {
-                UsersGameRegion = GetUsersGameRegion(UsersGame, CheckboxAutoRegion.Checked);
+                UsersGameRegion = GetUsersGameRegion(UsersGame, Settings.Default.AutoGameRegion);
                 if (!string.IsNullOrEmpty(UsersGameRegion))
                 {
                     SetStatus("Downloading archive to disk...");
@@ -333,14 +337,14 @@ namespace Ps3Xftp
                     var currentFileNo = 0;
                     var totalFileNo = Directory.GetFiles($@"{AppDataPath}{UsersGameMod.Name}\").Length;
                     foreach (var installFilePath in UsersGameMod.InstallPaths)
-                    foreach (var modFilePath in Directory.GetFiles($@"{AppDataPath}{UsersGameMod.Name}\"))
-                        if (string.Equals(Path.GetFileName(installFilePath), Path.GetFileName(modFilePath), StringComparison.CurrentCultureIgnoreCase))
-                        {
-                            currentFileNo++;
-                            SetStatus($"Installing file {currentFileNo} of {totalFileNo} to console: {Path.GetFileName(modFilePath)}");
-                            Utilities.FileToPs3(UsersConsoleIp, modFilePath, installFilePath
-                                .Replace("/{REGION}/", $"/{UsersGameRegion}/"));
-                        }
+                        foreach (var modFilePath in Directory.GetFiles($@"{AppDataPath}{UsersGameMod.Name}\"))
+                            if (string.Equals(Path.GetFileName(installFilePath), Path.GetFileName(modFilePath), StringComparison.CurrentCultureIgnoreCase))
+                            {
+                                currentFileNo++;
+                                SetStatus($"Installing file {currentFileNo} of {totalFileNo} to console: {Path.GetFileName(modFilePath)}");
+                                Utilities.FileToPs3(UsersConsoleIp, modFilePath, installFilePath
+                                    .Replace("/{REGION}/", $"/{UsersGameRegion}/"));
+                            }
 
                     SetStatus($"{UsersGameMod.Name} ({totalFileNo}) has been installed. Ready to start: {UsersGame.Title}");
                 }
@@ -361,7 +365,7 @@ namespace Ps3Xftp
 
             try
             {
-                UsersGameRegion = GetUsersGameRegion(UsersGame, CheckboxAutoRegion.Checked);
+                UsersGameRegion = GetUsersGameRegion(UsersGame, Settings.Default.AutoGameRegion);
                 if (!string.IsNullOrEmpty(UsersGameRegion))
                 {
                     SetStatus("Uninstalling files...");
@@ -395,7 +399,7 @@ namespace Ps3Xftp
         {
             if (autoRegion)
             {
-                using (var ps3 = new Ps3Ftp(UsersConsoleIp))
+                using (var ps3 = new FtpConnection(UsersConsoleIp))
                     foreach (var region in game.Regions)
                         if (ps3.DirectoryExists($"dev_hdd0/game/{region}/"))
                             return region;
@@ -455,7 +459,7 @@ namespace Ps3Xftp
         private static void UninstallModFiles(ModsData.ModItem modInfo)
         {
             foreach (var installFilePath in modInfo.InstallPaths)
-                using (var ps3 = new Ps3Ftp(UsersConsoleIp))
+                using (var ps3 = new FtpConnection(UsersConsoleIp))
                 {
                     if (installFilePath.StartsWith("dev_hdd0/game/{REGION}/",
                             StringComparison.InvariantCultureIgnoreCase) && ps3.FileExists(installFilePath))
@@ -501,13 +505,9 @@ namespace Ps3Xftp
         private void EnableModsUi(bool enabled)
         {
             DataModItems.Rows.Clear();
-            LabelSelectGame.Enabled = enabled;
-            LabelSelectType.Enabled = enabled;
-            LabelDetailsName.Enabled = enabled;
             FlowPanelDetails.Enabled = enabled;
-            DropdownGames.Enabled = enabled;
+            //DropdownGames.Enabled = enabled;
             DropdownTypes.Enabled = enabled;
-            CheckboxAutoRegion.Enabled = enabled;
             DataModItems.Enabled = enabled;
         }
     }

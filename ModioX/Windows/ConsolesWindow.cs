@@ -2,7 +2,7 @@
 using System.Net;
 using System.Windows.Forms;
 
-namespace Ps3Xftp.Windows
+namespace ModioX.Windows
 {
     public partial class ConsolesWindow : Form
     {
@@ -25,14 +25,14 @@ namespace Ps3Xftp.Windows
 
         private void TextBoxProfileName_TextChanged(object sender, EventArgs e)
         {
-            Ps3Xftp.EnableButton(ButtonAddProfile, !string.IsNullOrEmpty(TextBoxConsoleName.Text) && !string.IsNullOrEmpty(TextBoxProfileIP.Text));
-            Ps3Xftp.EnableButton(ButtonRemoveProfile, ProfileExists(TextBoxConsoleName.Text));
+            MainForm.EnableButton(ButtonAddProfile, !string.IsNullOrEmpty(TextBoxConsoleName.Text) && !string.IsNullOrEmpty(TextBoxProfileIP.Text));
+            MainForm.EnableButton(ButtonRemoveProfile, ProfileExists(TextBoxConsoleName.Text));
         }
 
         private void TextBoxProfileIP_TextChanged(object sender, EventArgs e)
         {
-            Ps3Xftp.EnableButton(ButtonAddProfile, !string.IsNullOrEmpty(TextBoxConsoleName.Text) && !string.IsNullOrEmpty(TextBoxProfileIP.Text));
-            Ps3Xftp.EnableButton(ButtonRemoveProfile, ProfileExists(TextBoxConsoleName.Text));
+            MainForm.EnableButton(ButtonAddProfile, !string.IsNullOrEmpty(TextBoxConsoleName.Text) && !string.IsNullOrEmpty(TextBoxProfileIP.Text));
+            MainForm.EnableButton(ButtonRemoveProfile, ProfileExists(TextBoxConsoleName.Text));
         }
 
         private void ButtonAddProfile_Click(object sender, EventArgs e)
@@ -69,8 +69,8 @@ namespace Ps3Xftp.Windows
                 TextBoxConsoleName.Text = profileDetails[0];
                 TextBoxProfileIP.Text = profileDetails[1];
             }
-            Ps3Xftp.EnableButton(ButtonAddProfile, ListboxConsoles.SelectedIndex != -1);
-            Ps3Xftp.EnableButton(ButtonRemoveProfile, ListboxConsoles.SelectedIndex != -1);
+            MainForm.EnableButton(ButtonAddProfile, ListboxConsoles.SelectedIndex != -1);
+            MainForm.EnableButton(ButtonRemoveProfile, ListboxConsoles.SelectedIndex != -1);
         }
 
         private static bool ProfileExists(string name)

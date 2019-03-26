@@ -4,7 +4,7 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Ps3Xftp
+namespace ModioX
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace Ps3Xftp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Ps3Xftp());
+            Application.Run(new MainForm());
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
         }

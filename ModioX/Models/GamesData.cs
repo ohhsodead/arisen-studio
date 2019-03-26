@@ -1,4 +1,4 @@
-﻿namespace Ps3Xftp.Models
+﻿namespace ModioX.Models
 {
     public class GamesData
     {
@@ -8,6 +8,7 @@
         {
             public string Id;
             public string Title;
+            public string ImageUrl;
             public string[] Regions;
         }
     }

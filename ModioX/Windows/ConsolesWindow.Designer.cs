@@ -1,4 +1,4 @@
-﻿namespace Ps3Xftp.Windows
+﻿namespace ModioX.Windows
 {
     partial class ConsolesWindow
     {

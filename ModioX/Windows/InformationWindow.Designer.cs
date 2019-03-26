@@ -1,4 +1,4 @@
-﻿namespace Ps3Xftp.Windows
+﻿namespace ModioX.Windows
 {
     partial class InformationWindow
     {
@@ -63,7 +63,7 @@
             // 
             // ImageInformation
             // 
-            this.ImageInformation.Image = global::Ps3Xftp.Properties.Resources.InformationIcon;
+            this.ImageInformation.Image = global::ModioX.Properties.Resources.InformationIcon;
             this.ImageInformation.Location = new System.Drawing.Point(14, 15);
             this.ImageInformation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ImageInformation.Name = "ImageInformation";

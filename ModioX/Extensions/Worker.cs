@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace Ps3Xftp.Extensions
+namespace ModioX.Extensions
 {
     public static class Worker
     {

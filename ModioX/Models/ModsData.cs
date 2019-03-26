@@ -1,4 +1,4 @@
-﻿namespace Ps3Xftp.Models
+﻿namespace ModioX.Models
 {
     public class ModsData
     {

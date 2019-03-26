@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Ps3Xftp.Windows
+namespace ModioX.Windows
 {
     public partial class RegionsWindow : Form
     {

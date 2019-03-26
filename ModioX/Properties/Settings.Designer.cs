@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ps3Xftp.Properties {
+namespace ModioX.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -34,6 +34,18 @@ namespace Ps3Xftp.Properties {
             }
             set {
                 this["UserConsoles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoGameRegion {
+            get {
+                return ((bool)(this["AutoGameRegion"]));
+            }
+            set {
+                this["AutoGameRegion"] = value;
             }
         }
     }

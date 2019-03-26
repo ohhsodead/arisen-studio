@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4996A6E8-C4B0-4E21-B68C-5A29C9B3F9B3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Ps3Xftp</RootNamespace>
-    <AssemblyName>Ps3Xftp</AssemblyName>
+    <RootNamespace>ModioX</RootNamespace>
+    <AssemblyName>ModioX</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,18 +33,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Ps3Xftp.Program</StartupObject>
+    <StartupObject>ModioX.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>AIO_Logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CButtonLib">
-      <HintPath>..\..\..\- Plugins\CButton\bin\Release\CButtonLib.dll</HintPath>
+    <Reference Include="BlackShades">
+      <HintPath>..\..\..\Plugins\Themes\BlackShades.dll</HintPath>
     </Reference>
-    <Reference Include="ChreneLib">
-      <HintPath>..\..\..\- Plugins\ChreneLib_DLL\ChreneLib.dll</HintPath>
+    <Reference Include="CButtonLib, Version=3.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Plugins\CButton\bin\Release\CButtonLib.dll</HintPath>
     </Reference>
+    <Reference Include="ChreneLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Plugins\ChreneLib_DLL\ChreneLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -61,27 +71,24 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Teen">
+      <HintPath>..\..\..\Plugins\Themes\Teen.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\Worker.cs" />
-    <Compile Include="Ps3Xftp.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ps3Xftp.Designer.cs">
-      <DependentUpon>Ps3Xftp.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\GamesData.cs" />
     <Compile Include="Models\ModsData.cs" />
-    <Compile Include="Utilities.cs" />
-    <Compile Include="Windows\DataWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\DataWindow.Designer.cs">
-      <DependentUpon>DataWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Extensions\Ps3Ftp.cs" />
+    <Compile Include="Extensions\Utilities.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extensions\FtpConnection.cs" />
     <Compile Include="Windows\InformationWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,11 +107,8 @@
     <Compile Include="Windows\RegionsWindow.Designer.cs">
       <DependentUpon>RegionsWindow.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Ps3Xftp.resx">
-      <DependentUpon>Ps3Xftp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\DataWindow.resx">
-      <DependentUpon>DataWindow.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,11 +146,14 @@
   <ItemGroup>
     <None Include="Resources\AIO-Loader.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="AIO_Logo.ico" />
+    <None Include="Resources\ModioX.png" />
     <None Include="Resources\ps3xftp_text.png" />
     <None Include="Resources\InformationIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
