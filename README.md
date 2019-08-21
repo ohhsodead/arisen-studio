@@ -1,4 +1,4 @@
-<h1 align="center">ps3xftp</h1>
+<h1 align="center">ModioX</h1>
 
 <h3 align="center">Discover, download and install PlayStation 3 game mods</h3>
 <div align="center">
@@ -7,18 +7,16 @@
 
 A federated desktop application for searching a regularly updated collection of compressed mod archives, populated by me so most have been tested and verified.
 
-![ps3xftp](https://github.com/HerbL27/ps3xftp/blob/master/Screenshot.png?raw=true)
+![ModioX](https://github.com/HerbL27/ps3xftp/blob/master/Screenshot.png?raw=true)
 
 *I can accept no responsibility for any damage you cause to your system by using these mods*
 
-## Features:
-* Simple, fast and lightweight
-* Browse hundreds of useful mods
-* Filter by specific types
+## Upcoming/Current Features
+* Browse hundreds of different mods
 * Download archive to computer
-* Install files to console correct locations
+* Install files to appropriate location 
 * Automatic game region detection
-* Create, edit and save multiple consoles
+* Create, edit and save consoles
 
 ## Usage
 
@@ -38,4 +36,4 @@ Download and run the latest version of the Windows installer, "ps3xftp.Installer
 Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on, which will be found the application start-up directory.
 
 ### Requesting Mods
-I appreciate that currently not all mods can't be found on our database, so if there's any I've missed and you'd like to uploaded, please submit a request.
+I appreciate that currently not all mods are available on our database, so if there's any you'd like uploaded, please submit a request.
