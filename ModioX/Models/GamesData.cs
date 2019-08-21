@@ -1,15 +1,14 @@
 ﻿namespace ModioX.Models
 {
-    public class GamesData
+    public partial class GamesData
     {
-        public Game[] Games;
+        public Game[] Games { get; set; }
 
-        public class Game
+        public partial class Game
         {
-            public string Id;
-            public string Title;
-            public string ImageUrl;
-            public string[] Regions;
+            public string Id { get; set; }
+            public string Title { get; set; }
+            public string[] Regions { get; set; }
         }
     }
 }

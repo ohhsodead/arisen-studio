@@ -1,9 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
+using DarkUI.Collections;
+using DarkUI.Config;
+using DarkUI.Controls;
+using DarkUI.Docking;
+using DarkUI.Forms;
+using DarkUI.Renderers;
 
 namespace ModioX.Windows
 {
-    public partial class RegionsWindow : Form
+    public partial class RegionsWindow : DarkForm
     {
         public RegionsWindow()
         {
@@ -12,9 +18,9 @@ namespace ModioX.Windows
 
         public string SelectedRegion { get; private set; }
 
-        private void ListboxRegions_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListViewRegions_SelectedIndicesChanged(object sender, EventArgs e)
         {
-            SelectedRegion = ListboxRegions.GetItemText(ListboxRegions.SelectedItem);
+            SelectedRegion = ListViewRegions.Items[ListViewRegions.SelectedIndices[0]].Text;
             Close();
         }
     }

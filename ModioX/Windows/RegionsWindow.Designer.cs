@@ -28,41 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ListboxRegions = new System.Windows.Forms.ListBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegionsWindow));
+            this.ListViewRegions = new DarkUI.Controls.DarkListView();
+            this.darkSectionPanel1 = new DarkUI.Controls.DarkSectionPanel();
+            this.darkSectionPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ListboxRegions
+            // ListViewRegions
             // 
-            this.ListboxRegions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ListboxRegions.FormattingEnabled = true;
-            this.ListboxRegions.ItemHeight = 17;
-            this.ListboxRegions.Location = new System.Drawing.Point(12, 12);
-            this.ListboxRegions.Name = "ListboxRegions";
-            this.ListboxRegions.Size = new System.Drawing.Size(156, 191);
-            this.ListboxRegions.TabIndex = 0;
-            this.ListboxRegions.SelectedIndexChanged += new System.EventHandler(this.ListboxRegions_SelectedIndexChanged);
+            this.ListViewRegions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListViewRegions.Location = new System.Drawing.Point(1, 25);
+            this.ListViewRegions.Name = "ListViewRegions";
+            this.ListViewRegions.Size = new System.Drawing.Size(154, 143);
+            this.ListViewRegions.TabIndex = 1;
+            this.ListViewRegions.Text = "darkListView1";
+            this.ListViewRegions.SelectedIndicesChanged += new System.EventHandler(this.ListViewRegions_SelectedIndicesChanged);
+            // 
+            // darkSectionPanel1
+            // 
+            this.darkSectionPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.darkSectionPanel1.Controls.Add(this.ListViewRegions);
+            this.darkSectionPanel1.Location = new System.Drawing.Point(12, 12);
+            this.darkSectionPanel1.Name = "darkSectionPanel1";
+            this.darkSectionPanel1.SectionHeader = "Choose Your Region...";
+            this.darkSectionPanel1.Size = new System.Drawing.Size(156, 169);
+            this.darkSectionPanel1.TabIndex = 2;
             // 
             // RegionsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(180, 214);
-            this.Controls.Add(this.ListboxRegions);
+            this.ClientSize = new System.Drawing.Size(180, 193);
+            this.Controls.Add(this.darkSectionPanel1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegionsWindow";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Choose Region...";
+            this.Text = "Game Regions";
+            this.darkSectionPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.ListBox ListboxRegions;
+        public DarkUI.Controls.DarkListView ListViewRegions;
+        private DarkUI.Controls.DarkSectionPanel darkSectionPanel1;
     }
 }

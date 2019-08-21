@@ -6,7 +6,7 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace ModioX
+namespace ModioX.Extensions
 {
     public class FtpConnection : IDisposable
     {

@@ -36,10 +36,11 @@ namespace ModioX.Extensions
         /// <param name="completedWork">the return value</param>
         public static void RunWorkAsync<T>(Func<T> work, Action<T> completedWork = null)
         {
-            BackgroundWorker worker = new BackgroundWorker();
-            worker.StartWorker(work, completedWork);
-
-            worker.RunWorkerAsync();
+            using (BackgroundWorker worker = new BackgroundWorker())
+            { 
+                worker.StartWorker(work, completedWork);
+                worker.RunWorkerAsync();
+            }
         }
 
         /// <summary>
@@ -62,10 +63,12 @@ namespace ModioX.Extensions
         /// <param name="completed">the completed work event handler</param>
         public static void RunWorkAsync(Action work, RunWorkerCompletedEventHandler completed = null)
         {
-            BackgroundWorker worker = new BackgroundWorker();
-            worker.StartWorker(work);
-            if (completed != null) { worker.RunWorkerCompleted += completed; }
-            worker.RunWorkerAsync();
+            using (BackgroundWorker worker = new BackgroundWorker())
+            {
+                worker.StartWorker(work);
+                if (completed != null) { worker.RunWorkerCompleted += completed; }
+                worker.RunWorkerAsync();
+            }                
         }
     }
 }

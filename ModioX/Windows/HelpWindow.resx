@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>ModioX is quite basic meaning you're able to familiarise with ease and only consists of a few features that makes it great to use.
+
+NOTE: Ensure that you're at the XMB/Rebug Toolbox before installing any mods. I am not responsible for any issues that occur.
+
+So, to start with all of the games supported are displayed on the left side under the section 'Games' allowing you to select your desired game.
+
+Once you've chosen and selected the game, all of the 'Mods' for the game are then loaded into the gridview with relevant information: name, version and author.
+
+You're then able to choose from the mods shown, which will give you more information for the mods such as category, configuration and description.
+
+Then there are few options that you can do with these mods. You're able to install the files directly to your console, there are installation paths for each of the mods to ensure they're installed correctly. You're also able to uninstall those files from your console, but ignoring the game files as you'll need to find your default file to replace this with. You can also download the archive to your computer so you can install manually. In addition, you can report any non-working mods to my github project repo.
+
+Lastly, you can install any files from your computer that you wish. The 'Custom Installation' allows for you to choose your local file and specify where you would like to install the file.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

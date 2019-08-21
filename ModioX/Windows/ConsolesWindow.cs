@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Net;
 using System.Windows.Forms;
+using DarkUI.Collections;
+using DarkUI.Config;
+using DarkUI.Controls;
+using DarkUI.Docking;
+using DarkUI.Forms;
+using DarkUI.Renderers;
 
 namespace ModioX.Windows
 {
-    public partial class ConsolesWindow : Form
+    public partial class ConsolesWindow : DarkForm
     {
         public ConsolesWindow()
         {
@@ -18,29 +24,30 @@ namespace ModioX.Windows
 
         private void LoadProfiles()
         {
-            ListboxConsoles.Items.Clear();
+            ListViewConsoles.Items.Clear();
             foreach (var profile in Properties.Settings.Default.UserConsoles)
-                ListboxConsoles.Items.Add(profile);
+                ListViewConsoles.Items.Add(new DarkListItem() { Text = profile });
+            ListViewConsoles.SelectedIndices.Add(0);
         }
 
-        private void TextBoxProfileName_TextChanged(object sender, EventArgs e)
+        private void TextBoxName_TextChanged(object sender, EventArgs e)
         {
-            MainForm.EnableButton(ButtonAddProfile, !string.IsNullOrEmpty(TextBoxConsoleName.Text) && !string.IsNullOrEmpty(TextBoxProfileIP.Text));
-            MainForm.EnableButton(ButtonRemoveProfile, ProfileExists(TextBoxConsoleName.Text));
+            MainForm.EnableButton(ButtonConsoleAdd, !string.IsNullOrEmpty(TextBoxName.Text) && !string.IsNullOrEmpty(TextBoxAddress.Text));
+            MainForm.EnableButton(ButtonConsoleRemove, ProfileExists(TextBoxName.Text));
         }
 
-        private void TextBoxProfileIP_TextChanged(object sender, EventArgs e)
+        private void TextBoxAddress_TextChanged(object sender, EventArgs e)
         {
-            MainForm.EnableButton(ButtonAddProfile, !string.IsNullOrEmpty(TextBoxConsoleName.Text) && !string.IsNullOrEmpty(TextBoxProfileIP.Text));
-            MainForm.EnableButton(ButtonRemoveProfile, ProfileExists(TextBoxConsoleName.Text));
+            MainForm.EnableButton(ButtonConsoleAdd, !string.IsNullOrEmpty(TextBoxName.Text) && !string.IsNullOrEmpty(TextBoxAddress.Text));
+            MainForm.EnableButton(ButtonConsoleRemove, ProfileExists(TextBoxName.Text));
         }
 
-        private void ButtonAddProfile_Click(object sender, EventArgs e)
+        private void ButtonConsoleAdd_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(TextBoxConsoleName.Text) || !string.IsNullOrEmpty(TextBoxProfileIP.Text))
-                if (!ProfileExists(TextBoxConsoleName.Text))
-                    if (IPAddress.TryParse(TextBoxProfileIP.Text, out var address))
-                        Properties.Settings.Default.UserConsoles.Add(TextBoxConsoleName.Text + " : " + address);
+            if (!string.IsNullOrEmpty(TextBoxName.Text) || !string.IsNullOrEmpty(TextBoxAddress.Text))
+                if (!ProfileExists(TextBoxName.Text))
+                    if (IPAddress.TryParse(TextBoxAddress.Text, out var address))
+                        Properties.Settings.Default.UserConsoles.Add(TextBoxName.Text + " : " + address);
                     else
                         MessageBox.Show(@"IP address is invalid.");
                 else
@@ -51,26 +58,27 @@ namespace ModioX.Windows
             LoadProfiles();
         }
 
-        private void ButtonRemoveProfile_Click(object sender, EventArgs e)
+        private void ButtonConsoleRemove_Click(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.UserConsoles.Count > 1)
-                Properties.Settings.Default.UserConsoles.Remove(TextBoxConsoleName.Text + " : " + TextBoxProfileIP.Text);
+            {
+                Properties.Settings.Default.UserConsoles.Remove(TextBoxName.Text + " : " + TextBoxAddress.Text);
+                LoadProfiles();
+            }
             else
                 MessageBox.Show(@"You must have one profile.");
-
-            LoadProfiles();
         }
 
-        private void ListBoxProfiles_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListViewConsoles_SelectedIndicesChanged(object sender, EventArgs e)
         {
-            if (ListboxConsoles.SelectedIndex != -1)
+            if (ListViewConsoles.SelectedIndices.Count > 0)
             {
-                var profileDetails = ListboxConsoles.GetItemText(ListboxConsoles.SelectedItem).Split(new[] { " : " }, StringSplitOptions.RemoveEmptyEntries);
-                TextBoxConsoleName.Text = profileDetails[0];
-                TextBoxProfileIP.Text = profileDetails[1];
+                var profileDetails = ListViewConsoles.Items[ListViewConsoles.SelectedIndices[0]].Text.Split(new[] { " : " }, StringSplitOptions.RemoveEmptyEntries);
+                TextBoxName.Text = profileDetails[0];
+                TextBoxAddress.Text = profileDetails[1];
             }
-            MainForm.EnableButton(ButtonAddProfile, ListboxConsoles.SelectedIndex != -1);
-            MainForm.EnableButton(ButtonRemoveProfile, ListboxConsoles.SelectedIndex != -1);
+            MainForm.EnableButton(ButtonConsoleAdd, ListViewConsoles.SelectedIndices.Count > 0);
+            MainForm.EnableButton(ButtonConsoleRemove, ListViewConsoles.SelectedIndices.Count > 0);
         }
 
         private static bool ProfileExists(string name)
