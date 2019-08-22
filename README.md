@@ -11,7 +11,7 @@ A federated desktop application for browsing a regularly updated collection of g
 
 *I can accept no responsibility for any damage you cause to your system by using this tool. Follow the instructions so you shouldn't have any issues.*
 
-## Upcoming/Current Features
+## Features
 * All major and popular games supported
 * Browse hundreds of various mods for games
 * Download mods to your computer
@@ -29,7 +29,7 @@ A federated desktop application for browsing a regularly updated collection of g
 ### Getting Started
 You're going to want to add your console address to the application so that you're able to connect. Go to 'Settings' > 'Edit Consoles...' and fill in the information with your console name and the address. Otherwise you can ignore that and enter your address manually in the textbox. Your address can be found under 'System Information' on the console.
 
-### Connecting to PS3
+### Connecting Console
 Select your console from the list or enter the address manually and then click the 'Connect' button. Note: this is only testing a connection to the console before you're able to install any files to it.
 
 ### Browsing Mods
