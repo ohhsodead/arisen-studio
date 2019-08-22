@@ -1,6 +1,6 @@
 <h1 align="center">ModioX</h1>
 
-<h3 align="center">Discover, Download and Install Game Mods for PlayStation 3</h3>
+<h3 align="center">Browse, Download and Install Game Mods for PlayStation 3</h3>
 <div align="center">
 </div>
 <br />
@@ -22,7 +22,7 @@ A federated desktop application for browsing a regularly updated collection of g
 
 ## Usage
 
-### Requirements:
+### Requirements
 * An internet connection
 * Console running DEX firmware
 
@@ -58,7 +58,7 @@ If you encounter issues with any of the mods then I'd suggest you use the 'Repor
 ### Installing Custom Files
 So, rather than installing the predefined mods from the database you can choose to install your own files that you have locally. Under the section 'Custom Installation' there are two textboxes, one the points to the file on your hard drive, and the other is the installation file path for which you would like to install your file to. Click '...' to open your chosen file, then either enter your install path manually or from the dropdown next to the textbox. Then click 'Install' to start the process. It will let you know once it's complete.
 
-## Applciation Installation
+## Application Installation
 Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/wh1ter0se-x/ModioX/releases/latest) page.
 
 ## Contributing
