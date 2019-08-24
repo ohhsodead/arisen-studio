@@ -5,11 +5,9 @@
 </div>
 <br />
 
-A federated desktop application for browsing a regularly updated collection of game mods, populated by myself and a few friends so that almost all of them have been tested and verified to work. One core purpose is to provide users with an efficient method of being able to discover, install and download mods directly to their console, without any special requirements such as using an FTP client or doing anything to the console itself. 
+A federated desktop application for browsing a regularly updated collection of game mods, populated by myself and a few friends so that almost all of them have been tested and verified to work. The core purpose is to provide users with an efficient method for being able to browse, download install mods directly to their console, without the need for searching forums or using an FTP client. 
 
 ![ModioX](https://github.com/wh1ter0se-x/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
-
-*I can accept no responsibility for any damage you cause to your system by using this tool. Follow the instructions so you shouldn't have any issues.*
 
 ## Features
 * All major and popular games supported
@@ -29,7 +27,7 @@ A federated desktop application for browsing a regularly updated collection of g
 ### Getting Started
 You're going to want to add your console address to the application so that you're able to connect. Go to Settings > Edit Consoles... and fill in the information with your console name and the address. Otherwise you can ignore that and enter your address manually in the textbox. Your address can be found under 'System Information' on the console.
 
-### Connecting Console
+### Connecting Your Console
 Select your console from the list or enter the address manually and then click the **Connect** button. Note: this is only testing a connection to the console before you're able to install any files to it.
 
 ### Browsing Mods
@@ -64,5 +62,8 @@ Download and run the latest version of the Windows installer, "ModioX.Installer.
 ## Contributing
 Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on, which will be found the application startup directory. You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. But, please open an issue so we can discuss things before going further so maybe we can work on this together!
 
-### Requesting Mods
-I appreciate that currently not all mods are available in our database, so if there's any you'd like to be uploaded, please submit an issue using the 'Request Mods' at the top of the application.
+## Requesting Mods
+I appreciate that currently not all mods are available in our database, so if there's any you'd like to be uploaded, please submit an issue using the **Request Mods** at the top of the application.
+
+## Disclaimer
+I can accept no responsibility for any damage you cause to your system by using this tool. Follow the instructions so you shouldn't have any issues.
