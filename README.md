@@ -5,7 +5,7 @@
 </div>
 <br />
 
-A federated desktop application for browsing a regularly updated collection of game mods, populated by myself and a few friends almost all of them have been tested and verified to work. One core purpose is to provide users with an efficient method of being able to discover, install and download mods directly to their console, without any special requirements such as using an FTP client or doing anything to the console itself. 
+A federated desktop application for browsing a regularly updated collection of game mods, populated by myself and a few friends so that almost all of them have been tested and verified to work. One core purpose is to provide users with an efficient method of being able to discover, install and download mods directly to their console, without any special requirements such as using an FTP client or doing anything to the console itself. 
 
 ![ModioX](https://github.com/wh1ter0se-x/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
 
