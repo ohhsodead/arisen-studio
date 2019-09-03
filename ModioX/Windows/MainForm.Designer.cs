@@ -58,32 +58,34 @@
             this.ButtonUninstallFiles = new DarkUI.Controls.DarkButton();
             this.ButtonDownloadFiles = new DarkUI.Controls.DarkButton();
             this.ButtonReport = new DarkUI.Controls.DarkButton();
+            this.SectionInstallPaths = new DarkUI.Controls.DarkSectionPanel();
+            this.ScrollBarInstallPaths = new DarkUI.Controls.DarkScrollBar();
+            this.darkToolStrip2 = new DarkUI.Controls.DarkToolStrip();
             this.MenuStrip = new DarkUI.Controls.DarkMenuStrip();
             this.MenuStripFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripFileRefreshData = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripFileSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.MenuStripFileExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripContribute = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripRequestMods = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripInformation = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStripContribute = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripSettingsEditConsoles = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuStripSettingsAutoDetectRegion = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.darkSectionPanel1 = new DarkUI.Controls.DarkSectionPanel();
+            this.SectionGames = new DarkUI.Controls.DarkSectionPanel();
+            this.ScrollBarGames = new DarkUI.Controls.DarkScrollBar();
             this.ScrollBarMods = new DarkUI.Controls.DarkScrollBar();
-            this.SectionInstallPaths = new DarkUI.Controls.DarkSectionPanel();
-            this.ScrollBarInstallPaths = new DarkUI.Controls.DarkScrollBar();
-            this.darkSectionPanel4 = new DarkUI.Controls.DarkSectionPanel();
+            this.SectionMods = new DarkUI.Controls.DarkSectionPanel();
             this.darkToolStrip1 = new DarkUI.Controls.DarkToolStrip();
             this.ToolStripLabelConnected = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripLabelConsole = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripLabelStatus = new System.Windows.Forms.ToolStripLabel();
+            this.ToolStripLabelStats = new System.Windows.Forms.ToolStripLabel();
             this.TextBoxAddress = new DarkUI.Controls.DarkTextBox();
-            this.LabelAddress = new DarkUI.Controls.DarkLabel();
-            this.darkLabel2 = new DarkUI.Controls.DarkLabel();
+            this.LabelConsoleAddress = new DarkUI.Controls.DarkLabel();
+            this.LabelConsoles = new DarkUI.Controls.DarkLabel();
             this.TextBoxSelectedConsole = new DarkUI.Controls.DarkTextBox();
             this.TextBoxSelectedCategory = new DarkUI.Controls.DarkTextBox();
             this.SectionCustomInstallation = new DarkUI.Controls.DarkSectionPanel();
@@ -94,27 +96,31 @@
             this.LabelInstallPath = new DarkUI.Controls.DarkLabel();
             this.ButtonInstallCustom = new DarkUI.Controls.DarkButton();
             this.LabelLocalFile = new DarkUI.Controls.DarkLabel();
+            this.ButtonRequestMods = new DarkUI.Controls.DarkButton();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).BeginInit();
             this.FlowPanelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvInstallPaths)).BeginInit();
             this.SectionModsDetails.SuspendLayout();
-            this.MenuStrip.SuspendLayout();
-            this.darkSectionPanel1.SuspendLayout();
             this.SectionInstallPaths.SuspendLayout();
-            this.darkSectionPanel4.SuspendLayout();
+            this.MenuStrip.SuspendLayout();
+            this.SectionGames.SuspendLayout();
+            this.SectionMods.SuspendLayout();
             this.darkToolStrip1.SuspendLayout();
             this.SectionCustomInstallation.SuspendLayout();
             this.SuspendLayout();
             // 
             // FlowPanelGames
             // 
+            this.FlowPanelGames.AutoScroll = true;
             this.FlowPanelGames.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FlowPanelGames.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.FlowPanelGames.Location = new System.Drawing.Point(1, 25);
             this.FlowPanelGames.Margin = new System.Windows.Forms.Padding(5);
             this.FlowPanelGames.Name = "FlowPanelGames";
-            this.FlowPanelGames.Size = new System.Drawing.Size(226, 424);
+            this.FlowPanelGames.Size = new System.Drawing.Size(226, 447);
             this.FlowPanelGames.TabIndex = 5;
+            this.FlowPanelGames.WrapContents = false;
+            this.FlowPanelGames.Scroll += new System.Windows.Forms.ScrollEventHandler(this.FlowPanelGames_Scroll);
             // 
             // DgvMods
             // 
@@ -163,17 +169,17 @@
             this.DgvMods.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.DgvMods.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DgvMods.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Gainsboro;
-            this.DgvMods.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.DgvMods.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.DgvMods.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(75)))), ((int)(((byte)(77)))));
             this.DgvMods.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.DgvMods.RowTemplate.Height = 24;
+            this.DgvMods.RowTemplate.Height = 26;
             this.DgvMods.RowTemplate.ReadOnly = true;
             this.DgvMods.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.DgvMods.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DgvMods.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvMods.ShowCellToolTips = false;
             this.DgvMods.ShowEditingIcon = false;
-            this.DgvMods.Size = new System.Drawing.Size(532, 328);
+            this.DgvMods.Size = new System.Drawing.Size(531, 351);
             this.DgvMods.TabIndex = 7;
             this.DgvMods.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMods_CellClick);
             this.DgvMods.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMods_CellContentClick);
@@ -221,10 +227,10 @@
             this.ComboBoxConsole.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComboBoxConsole.ForeColor = System.Drawing.Color.Gainsboro;
             this.ComboBoxConsole.FormattingEnabled = true;
-            this.ComboBoxConsole.Location = new System.Drawing.Point(257, 34);
+            this.ComboBoxConsole.Location = new System.Drawing.Point(282, 34);
             this.ComboBoxConsole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ComboBoxConsole.Name = "ComboBoxConsole";
-            this.ComboBoxConsole.Size = new System.Drawing.Size(174, 23);
+            this.ComboBoxConsole.Size = new System.Drawing.Size(162, 23);
             this.ComboBoxConsole.TabIndex = 2;
             this.ComboBoxConsole.SelectedIndexChanged += new System.EventHandler(this.ComboBoxConsole_SelectedIndexChanged);
             // 
@@ -235,7 +241,7 @@
             this.LabelSelectCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSelectCategory.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectCategory.Location = new System.Drawing.Point(628, 37);
+            this.LabelSelectCategory.Location = new System.Drawing.Point(627, 37);
             this.LabelSelectCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelSelectCategory.Name = "LabelSelectCategory";
             this.LabelSelectCategory.Size = new System.Drawing.Size(58, 15);
@@ -245,10 +251,12 @@
             // ComboBoxCategory
             // 
             this.ComboBoxCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.ComboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ComboBoxCategory.ForeColor = System.Drawing.Color.Gainsboro;
             this.ComboBoxCategory.FormattingEnabled = true;
-            this.ComboBoxCategory.Location = new System.Drawing.Point(692, 34);
+            this.ComboBoxCategory.Location = new System.Drawing.Point(691, 34);
             this.ComboBoxCategory.Margin = new System.Windows.Forms.Padding(3, 4, 7, 4);
             this.ComboBoxCategory.Name = "ComboBoxCategory";
             this.ComboBoxCategory.Size = new System.Drawing.Size(90, 23);
@@ -270,8 +278,8 @@
             this.FlowPanelDetails.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.FlowPanelDetails.Location = new System.Drawing.Point(1, 25);
             this.FlowPanelDetails.Name = "FlowPanelDetails";
-            this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(0, 2, 18, 2);
-            this.FlowPanelDetails.Size = new System.Drawing.Size(328, 298);
+            this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(4, 4, 18, 2);
+            this.FlowPanelDetails.Size = new System.Drawing.Size(328, 313);
             this.FlowPanelDetails.TabIndex = 15;
             this.FlowPanelDetails.Scroll += new System.Windows.Forms.ScrollEventHandler(this.FlowPanelDetails_Scroll);
             // 
@@ -282,7 +290,7 @@
             this.LabelHeaderName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelHeaderName.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderName.Location = new System.Drawing.Point(0, 4);
+            this.LabelHeaderName.Location = new System.Drawing.Point(4, 6);
             this.LabelHeaderName.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.LabelHeaderName.Name = "LabelHeaderName";
             this.LabelHeaderName.Size = new System.Drawing.Size(101, 15);
@@ -296,7 +304,7 @@
             this.LabelByAuthor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelByAuthor.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelByAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelByAuthor.Location = new System.Drawing.Point(0, 23);
+            this.LabelByAuthor.Location = new System.Drawing.Point(4, 25);
             this.LabelByAuthor.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.LabelByAuthor.Name = "LabelByAuthor";
             this.LabelByAuthor.Size = new System.Drawing.Size(62, 15);
@@ -309,7 +317,7 @@
             this.LabelHeaderVersion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelHeaderVersion.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderVersion.Location = new System.Drawing.Point(0, 42);
+            this.LabelHeaderVersion.Location = new System.Drawing.Point(4, 44);
             this.LabelHeaderVersion.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.LabelHeaderVersion.Name = "LabelHeaderVersion";
             this.LabelHeaderVersion.Size = new System.Drawing.Size(51, 15);
@@ -323,7 +331,7 @@
             this.LabelVersion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelVersion.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelVersion.Location = new System.Drawing.Point(51, 42);
+            this.LabelVersion.Location = new System.Drawing.Point(55, 44);
             this.LabelVersion.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.LabelVersion.Name = "LabelVersion";
             this.LabelVersion.Size = new System.Drawing.Size(16, 15);
@@ -336,7 +344,7 @@
             this.LabelHeaderConfiguration.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelHeaderConfiguration.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderConfiguration.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderConfiguration.Location = new System.Drawing.Point(0, 61);
+            this.LabelHeaderConfiguration.Location = new System.Drawing.Point(4, 63);
             this.LabelHeaderConfiguration.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.LabelHeaderConfiguration.Name = "LabelHeaderConfiguration";
             this.LabelHeaderConfiguration.Size = new System.Drawing.Size(86, 15);
@@ -350,7 +358,7 @@
             this.LabelConfiguration.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelConfiguration.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelConfiguration.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelConfiguration.Location = new System.Drawing.Point(86, 61);
+            this.LabelConfiguration.Location = new System.Drawing.Point(90, 63);
             this.LabelConfiguration.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.LabelConfiguration.Name = "LabelConfiguration";
             this.LabelConfiguration.Size = new System.Drawing.Size(16, 15);
@@ -364,11 +372,12 @@
             this.LabelDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelDescription.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelDescription.Location = new System.Drawing.Point(0, 81);
+            this.LabelDescription.Location = new System.Drawing.Point(4, 83);
             this.LabelDescription.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.LabelDescription.MaximumSize = new System.Drawing.Size(332, 0);
             this.LabelDescription.Name = "LabelDescription";
-            this.LabelDescription.Size = new System.Drawing.Size(16, 15);
+            this.LabelDescription.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.LabelDescription.Size = new System.Drawing.Size(16, 25);
             this.LabelDescription.TabIndex = 12;
             this.LabelDescription.Text = "...";
             // 
@@ -418,7 +427,7 @@
             this.DgvInstallPaths.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvInstallPaths.ShowCellToolTips = false;
             this.DgvInstallPaths.ShowEditingIcon = false;
-            this.DgvInstallPaths.Size = new System.Drawing.Size(328, 65);
+            this.DgvInstallPaths.Size = new System.Drawing.Size(326, 71);
             this.DgvInstallPaths.TabIndex = 17;
             this.DgvInstallPaths.Scroll += new System.Windows.Forms.ScrollEventHandler(this.DgvInstallPaths_Scroll);
             // 
@@ -432,10 +441,10 @@
             // 
             // ButtonConnectConsole
             // 
-            this.ButtonConnectConsole.Location = new System.Drawing.Point(437, 34);
+            this.ButtonConnectConsole.Location = new System.Drawing.Point(450, 34);
             this.ButtonConnectConsole.Name = "ButtonConnectConsole";
             this.ButtonConnectConsole.Padding = new System.Windows.Forms.Padding(5);
-            this.ButtonConnectConsole.Size = new System.Drawing.Size(76, 23);
+            this.ButtonConnectConsole.Size = new System.Drawing.Size(78, 23);
             this.ButtonConnectConsole.TabIndex = 3;
             this.ButtonConnectConsole.Text = "Connect";
             this.ButtonConnectConsole.Click += new System.EventHandler(this.ButtonConnectConsole_Click);
@@ -444,9 +453,9 @@
             // 
             this.ScrollBarDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ScrollBarDetails.Location = new System.Drawing.Point(1100, 87);
+            this.ScrollBarDetails.Location = new System.Drawing.Point(1097, 87);
             this.ScrollBarDetails.Name = "ScrollBarDetails";
-            this.ScrollBarDetails.Size = new System.Drawing.Size(17, 298);
+            this.ScrollBarDetails.Size = new System.Drawing.Size(17, 313);
             this.ScrollBarDetails.TabIndex = 1133;
             this.ScrollBarDetails.Text = "darkScrollBar1";
             this.ScrollBarDetails.ViewSize = 1;
@@ -456,18 +465,24 @@
             // 
             this.SectionModsDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.SectionModsDetails.Controls.Add(this.ButtonInstallFiles);
+            this.SectionModsDetails.Controls.Add(this.ButtonUninstallFiles);
+            this.SectionModsDetails.Controls.Add(this.ButtonDownloadFiles);
+            this.SectionModsDetails.Controls.Add(this.ButtonReport);
             this.SectionModsDetails.Controls.Add(this.FlowPanelDetails);
-            this.SectionModsDetails.Location = new System.Drawing.Point(788, 62);
+            this.SectionModsDetails.Controls.Add(this.SectionInstallPaths);
+            this.SectionModsDetails.Controls.Add(this.darkToolStrip2);
+            this.SectionModsDetails.Location = new System.Drawing.Point(785, 62);
             this.SectionModsDetails.Name = "SectionModsDetails";
-            this.SectionModsDetails.SectionHeader = "Mod\'s Details";
-            this.SectionModsDetails.Size = new System.Drawing.Size(330, 324);
+            this.SectionModsDetails.SectionHeader = "Mods Details";
+            this.SectionModsDetails.Size = new System.Drawing.Size(330, 473);
             this.SectionModsDetails.TabIndex = 14;
             // 
             // ButtonInstallFiles
             // 
             this.ButtonInstallFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonInstallFiles.Enabled = false;
-            this.ButtonInstallFiles.Location = new System.Drawing.Point(788, 489);
+            this.ButtonInstallFiles.Location = new System.Drawing.Point(7, 442);
             this.ButtonInstallFiles.Name = "ButtonInstallFiles";
             this.ButtonInstallFiles.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonInstallFiles.Size = new System.Drawing.Size(59, 23);
@@ -479,7 +494,7 @@
             // 
             this.ButtonUninstallFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonUninstallFiles.Enabled = false;
-            this.ButtonUninstallFiles.Location = new System.Drawing.Point(853, 489);
+            this.ButtonUninstallFiles.Location = new System.Drawing.Point(72, 442);
             this.ButtonUninstallFiles.Name = "ButtonUninstallFiles";
             this.ButtonUninstallFiles.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonUninstallFiles.Size = new System.Drawing.Size(73, 23);
@@ -491,7 +506,7 @@
             // 
             this.ButtonDownloadFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonDownloadFiles.Enabled = false;
-            this.ButtonDownloadFiles.Location = new System.Drawing.Point(932, 489);
+            this.ButtonDownloadFiles.Location = new System.Drawing.Point(151, 442);
             this.ButtonDownloadFiles.Name = "ButtonDownloadFiles";
             this.ButtonDownloadFiles.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonDownloadFiles.Size = new System.Drawing.Size(79, 23);
@@ -503,7 +518,7 @@
             // 
             this.ButtonReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonReport.Enabled = false;
-            this.ButtonReport.Location = new System.Drawing.Point(1017, 489);
+            this.ButtonReport.Location = new System.Drawing.Point(236, 442);
             this.ButtonReport.Name = "ButtonReport";
             this.ButtonReport.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonReport.Size = new System.Drawing.Size(61, 23);
@@ -511,21 +526,55 @@
             this.ButtonReport.Text = "Report";
             this.ButtonReport.Click += new System.EventHandler(this.ButtonReport_Click);
             // 
+            // SectionInstallPaths
+            // 
+            this.SectionInstallPaths.Controls.Add(this.ScrollBarInstallPaths);
+            this.SectionInstallPaths.Controls.Add(this.DgvInstallPaths);
+            this.SectionInstallPaths.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.SectionInstallPaths.Location = new System.Drawing.Point(1, 338);
+            this.SectionInstallPaths.Name = "SectionInstallPaths";
+            this.SectionInstallPaths.SectionHeader = "Install Paths";
+            this.SectionInstallPaths.Size = new System.Drawing.Size(328, 97);
+            this.SectionInstallPaths.TabIndex = 16;
+            // 
+            // ScrollBarInstallPaths
+            // 
+            this.ScrollBarInstallPaths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ScrollBarInstallPaths.Location = new System.Drawing.Point(310, 33);
+            this.ScrollBarInstallPaths.Name = "ScrollBarInstallPaths";
+            this.ScrollBarInstallPaths.Size = new System.Drawing.Size(17, 63);
+            this.ScrollBarInstallPaths.TabIndex = 1144;
+            this.ScrollBarInstallPaths.Text = "darkScrollBar3";
+            this.ScrollBarInstallPaths.ViewSize = 40;
+            this.ScrollBarInstallPaths.ValueChanged += new System.EventHandler<DarkUI.Controls.ScrollValueEventArgs>(this.ScrollBarInstallPaths_ValueChanged);
+            // 
+            // darkToolStrip2
+            // 
+            this.darkToolStrip2.AutoSize = false;
+            this.darkToolStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.darkToolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.darkToolStrip2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkToolStrip2.Location = new System.Drawing.Point(1, 435);
+            this.darkToolStrip2.Name = "darkToolStrip2";
+            this.darkToolStrip2.Padding = new System.Windows.Forms.Padding(5, 0, 1, 0);
+            this.darkToolStrip2.Size = new System.Drawing.Size(328, 37);
+            this.darkToolStrip2.TabIndex = 16;
+            this.darkToolStrip2.Text = "darkToolStrip2";
+            // 
             // MenuStrip
             // 
             this.MenuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStrip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuStripFile,
-            this.MenuStripContribute,
-            this.MenuStripRequestMods,
             this.MenuStripInformation,
+            this.MenuStripContribute,
             this.MenuStripSettings,
             this.MenuStripHelp});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
             this.MenuStrip.Padding = new System.Windows.Forms.Padding(3, 5, 3, 2);
-            this.MenuStrip.Size = new System.Drawing.Size(1129, 26);
+            this.MenuStrip.Size = new System.Drawing.Size(1126, 26);
             this.MenuStrip.TabIndex = 1140;
             this.MenuStrip.Text = "darkMenuStrip1";
             // 
@@ -563,22 +612,6 @@
             this.MenuStripFileExit.Text = "Exit";
             this.MenuStripFileExit.Click += new System.EventHandler(this.MenuStripFileExit_Click);
             // 
-            // MenuStripContribute
-            // 
-            this.MenuStripContribute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripContribute.Name = "MenuStripContribute";
-            this.MenuStripContribute.Size = new System.Drawing.Size(76, 19);
-            this.MenuStripContribute.Text = "Contribute";
-            this.MenuStripContribute.Click += new System.EventHandler(this.MenuStripContribute_Click);
-            // 
-            // MenuStripRequestMods
-            // 
-            this.MenuStripRequestMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripRequestMods.Name = "MenuStripRequestMods";
-            this.MenuStripRequestMods.Size = new System.Drawing.Size(94, 19);
-            this.MenuStripRequestMods.Text = "Request Mods";
-            this.MenuStripRequestMods.Click += new System.EventHandler(this.MenuStripRequestMods_Click);
-            // 
             // MenuStripInformation
             // 
             this.MenuStripInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
@@ -586,6 +619,14 @@
             this.MenuStripInformation.Size = new System.Drawing.Size(82, 19);
             this.MenuStripInformation.Text = "Information";
             this.MenuStripInformation.Click += new System.EventHandler(this.MenuStripInformation_Click);
+            // 
+            // MenuStripContribute
+            // 
+            this.MenuStripContribute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuStripContribute.Name = "MenuStripContribute";
+            this.MenuStripContribute.Size = new System.Drawing.Size(76, 19);
+            this.MenuStripContribute.Text = "Contribute";
+            this.MenuStripContribute.Click += new System.EventHandler(this.MenuStripContribute_Click);
             // 
             // MenuStripSettings
             // 
@@ -633,62 +674,53 @@
             this.MenuStripHelp.Text = "Help";
             this.MenuStripHelp.Click += new System.EventHandler(this.MenuStripHelp_Click);
             // 
-            // darkSectionPanel1
+            // SectionGames
             // 
-            this.darkSectionPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.SectionGames.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.darkSectionPanel1.Controls.Add(this.FlowPanelGames);
-            this.darkSectionPanel1.Location = new System.Drawing.Point(14, 62);
-            this.darkSectionPanel1.Name = "darkSectionPanel1";
-            this.darkSectionPanel1.SectionHeader = "Games";
-            this.darkSectionPanel1.Size = new System.Drawing.Size(228, 450);
-            this.darkSectionPanel1.TabIndex = 4;
+            this.SectionGames.Controls.Add(this.ScrollBarGames);
+            this.SectionGames.Controls.Add(this.FlowPanelGames);
+            this.SectionGames.Location = new System.Drawing.Point(12, 62);
+            this.SectionGames.Name = "SectionGames";
+            this.SectionGames.SectionHeader = "Browse Games";
+            this.SectionGames.Size = new System.Drawing.Size(228, 473);
+            this.SectionGames.TabIndex = 4;
+            // 
+            // ScrollBarGames
+            // 
+            this.ScrollBarGames.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ScrollBarGames.Location = new System.Drawing.Point(210, 25);
+            this.ScrollBarGames.Name = "ScrollBarGames";
+            this.ScrollBarGames.Size = new System.Drawing.Size(17, 447);
+            this.ScrollBarGames.TabIndex = 1144;
+            this.ScrollBarGames.Text = "darkScrollBar2";
+            this.ScrollBarGames.ViewSize = 10;
+            this.ScrollBarGames.ValueChanged += new System.EventHandler<DarkUI.Controls.ScrollValueEventArgs>(this.ScrollBarGames_ValueChanged);
             // 
             // ScrollBarMods
             // 
             this.ScrollBarMods.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ScrollBarMods.Location = new System.Drawing.Point(764, 87);
+            this.ScrollBarMods.Location = new System.Drawing.Point(761, 87);
             this.ScrollBarMods.Name = "ScrollBarMods";
-            this.ScrollBarMods.Size = new System.Drawing.Size(17, 328);
+            this.ScrollBarMods.Size = new System.Drawing.Size(17, 351);
             this.ScrollBarMods.TabIndex = 1143;
             this.ScrollBarMods.Text = "darkScrollBar2";
             this.ScrollBarMods.ViewSize = 10;
             this.ScrollBarMods.ValueChanged += new System.EventHandler<DarkUI.Controls.ScrollValueEventArgs>(this.ScrollBarMods_ValueChanged);
             // 
-            // SectionInstallPaths
+            // SectionMods
             // 
-            this.SectionInstallPaths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.SectionInstallPaths.Controls.Add(this.ScrollBarInstallPaths);
-            this.SectionInstallPaths.Controls.Add(this.DgvInstallPaths);
-            this.SectionInstallPaths.Location = new System.Drawing.Point(788, 392);
-            this.SectionInstallPaths.Name = "SectionInstallPaths";
-            this.SectionInstallPaths.SectionHeader = "Install Paths";
-            this.SectionInstallPaths.Size = new System.Drawing.Size(330, 91);
-            this.SectionInstallPaths.TabIndex = 16;
-            // 
-            // ScrollBarInstallPaths
-            // 
-            this.ScrollBarInstallPaths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ScrollBarInstallPaths.Location = new System.Drawing.Point(312, 27);
-            this.ScrollBarInstallPaths.Name = "ScrollBarInstallPaths";
-            this.ScrollBarInstallPaths.Size = new System.Drawing.Size(17, 63);
-            this.ScrollBarInstallPaths.TabIndex = 1144;
-            this.ScrollBarInstallPaths.Text = "darkScrollBar3";
-            this.ScrollBarInstallPaths.ViewSize = 40;
-            this.ScrollBarInstallPaths.ValueChanged += new System.EventHandler<DarkUI.Controls.ScrollValueEventArgs>(this.ScrollBarInstallPaths_ValueChanged);
-            // 
-            // darkSectionPanel4
-            // 
-            this.darkSectionPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.SectionMods.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.darkSectionPanel4.Controls.Add(this.DgvMods);
-            this.darkSectionPanel4.Location = new System.Drawing.Point(248, 62);
-            this.darkSectionPanel4.Name = "darkSectionPanel4";
-            this.darkSectionPanel4.SectionHeader = "Mods";
-            this.darkSectionPanel4.Size = new System.Drawing.Size(534, 354);
-            this.darkSectionPanel4.TabIndex = 6;
+            this.SectionMods.Controls.Add(this.DgvMods);
+            this.SectionMods.Location = new System.Drawing.Point(246, 62);
+            this.SectionMods.Name = "SectionMods";
+            this.SectionMods.SectionHeader = "Discover Mods";
+            this.SectionMods.Size = new System.Drawing.Size(533, 377);
+            this.SectionMods.TabIndex = 6;
             // 
             // darkToolStrip1
             // 
@@ -701,11 +733,12 @@
             this.ToolStripLabelConnected,
             this.ToolStripLabelConsole,
             this.toolStripSeparator3,
-            this.ToolStripLabelStatus});
-            this.darkToolStrip1.Location = new System.Drawing.Point(0, 518);
+            this.ToolStripLabelStatus,
+            this.ToolStripLabelStats});
+            this.darkToolStrip1.Location = new System.Drawing.Point(0, 541);
             this.darkToolStrip1.Name = "darkToolStrip1";
             this.darkToolStrip1.Padding = new System.Windows.Forms.Padding(5, 0, 1, 2);
-            this.darkToolStrip1.Size = new System.Drawing.Size(1129, 25);
+            this.darkToolStrip1.Size = new System.Drawing.Size(1126, 25);
             this.darkToolStrip1.TabIndex = 1146;
             this.darkToolStrip1.Text = "darkToolStrip1";
             // 
@@ -737,36 +770,45 @@
             this.ToolStripLabelStatus.Size = new System.Drawing.Size(85, 20);
             this.ToolStripLabelStatus.Text = "Loading data...";
             // 
+            // ToolStripLabelStats
+            // 
+            this.ToolStripLabelStats.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.ToolStripLabelStats.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ToolStripLabelStats.Margin = new System.Windows.Forms.Padding(0, 1, 3, 2);
+            this.ToolStripLabelStats.Name = "ToolStripLabelStats";
+            this.ToolStripLabelStats.Size = new System.Drawing.Size(154, 20);
+            this.ToolStripLabelStats.Text = "# Mods Overall for # Games";
+            // 
             // TextBoxAddress
             // 
             this.TextBoxAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.TextBoxAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxAddress.Location = new System.Drawing.Point(70, 34);
+            this.TextBoxAddress.Location = new System.Drawing.Point(115, 34);
             this.TextBoxAddress.Name = "TextBoxAddress";
-            this.TextBoxAddress.Size = new System.Drawing.Size(122, 23);
+            this.TextBoxAddress.Size = new System.Drawing.Size(92, 23);
             this.TextBoxAddress.TabIndex = 0;
             this.TextBoxAddress.TextChanged += new System.EventHandler(this.TextBoxAddress_TextChanged);
             // 
-            // LabelAddress
+            // LabelConsoleAddress
             // 
-            this.LabelAddress.AutoSize = true;
-            this.LabelAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelAddress.Location = new System.Drawing.Point(12, 38);
-            this.LabelAddress.Name = "LabelAddress";
-            this.LabelAddress.Size = new System.Drawing.Size(52, 15);
-            this.LabelAddress.TabIndex = 1148;
-            this.LabelAddress.Text = "Address:";
+            this.LabelConsoleAddress.AutoSize = true;
+            this.LabelConsoleAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.LabelConsoleAddress.Location = new System.Drawing.Point(11, 38);
+            this.LabelConsoleAddress.Name = "LabelConsoleAddress";
+            this.LabelConsoleAddress.Size = new System.Drawing.Size(98, 15);
+            this.LabelConsoleAddress.TabIndex = 1148;
+            this.LabelConsoleAddress.Text = "Console Address:";
             // 
-            // darkLabel2
+            // LabelConsoles
             // 
-            this.darkLabel2.AutoSize = true;
-            this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel2.Location = new System.Drawing.Point(198, 38);
-            this.darkLabel2.Name = "darkLabel2";
-            this.darkLabel2.Size = new System.Drawing.Size(53, 15);
-            this.darkLabel2.TabIndex = 1149;
-            this.darkLabel2.Text = "Console:";
+            this.LabelConsoles.AutoSize = true;
+            this.LabelConsoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.LabelConsoles.Location = new System.Drawing.Point(215, 38);
+            this.LabelConsoles.Name = "LabelConsoles";
+            this.LabelConsoles.Size = new System.Drawing.Size(61, 15);
+            this.LabelConsoles.TabIndex = 1149;
+            this.LabelConsoles.Text = "Console\'s:";
             // 
             // TextBoxSelectedConsole
             // 
@@ -774,21 +816,22 @@
             this.TextBoxSelectedConsole.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxSelectedConsole.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.TextBoxSelectedConsole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxSelectedConsole.Location = new System.Drawing.Point(257, 34);
+            this.TextBoxSelectedConsole.Location = new System.Drawing.Point(282, 34);
             this.TextBoxSelectedConsole.Name = "TextBoxSelectedConsole";
             this.TextBoxSelectedConsole.ReadOnly = true;
-            this.TextBoxSelectedConsole.Size = new System.Drawing.Size(157, 23);
+            this.TextBoxSelectedConsole.Size = new System.Drawing.Size(145, 23);
             this.TextBoxSelectedConsole.TabIndex = 1;
             this.TextBoxSelectedConsole.Click += new System.EventHandler(this.TextBoxSelectedConsole_Click);
             this.TextBoxSelectedConsole.Enter += new System.EventHandler(this.TextBoxSelectedConsole_Enter);
             // 
             // TextBoxSelectedCategory
             // 
+            this.TextBoxSelectedCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxSelectedCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.TextBoxSelectedCategory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxSelectedCategory.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.TextBoxSelectedCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxSelectedCategory.Location = new System.Drawing.Point(692, 34);
+            this.TextBoxSelectedCategory.Location = new System.Drawing.Point(689, 34);
             this.TextBoxSelectedCategory.Name = "TextBoxSelectedCategory";
             this.TextBoxSelectedCategory.ReadOnly = true;
             this.TextBoxSelectedCategory.Size = new System.Drawing.Size(73, 23);
@@ -808,16 +851,16 @@
             this.SectionCustomInstallation.Controls.Add(this.LabelInstallPath);
             this.SectionCustomInstallation.Controls.Add(this.ButtonInstallCustom);
             this.SectionCustomInstallation.Controls.Add(this.LabelLocalFile);
-            this.SectionCustomInstallation.Location = new System.Drawing.Point(248, 422);
+            this.SectionCustomInstallation.Location = new System.Drawing.Point(246, 445);
             this.SectionCustomInstallation.Name = "SectionCustomInstallation";
             this.SectionCustomInstallation.SectionHeader = "Custom Installation";
-            this.SectionCustomInstallation.Size = new System.Drawing.Size(534, 90);
+            this.SectionCustomInstallation.Size = new System.Drawing.Size(533, 90);
             this.SectionCustomInstallation.TabIndex = 8;
             // 
             // ButtonBrowseFile
             // 
             this.ButtonBrowseFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonBrowseFile.Location = new System.Drawing.Point(468, 31);
+            this.ButtonBrowseFile.Location = new System.Drawing.Point(469, 31);
             this.ButtonBrowseFile.Name = "ButtonBrowseFile";
             this.ButtonBrowseFile.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonBrowseFile.Size = new System.Drawing.Size(59, 23);
@@ -832,9 +875,9 @@
             this.TextBoxLocalFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.TextBoxLocalFile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxLocalFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxLocalFile.Location = new System.Drawing.Point(86, 31);
+            this.TextBoxLocalFile.Location = new System.Drawing.Point(80, 31);
             this.TextBoxLocalFile.Name = "TextBoxLocalFile";
-            this.TextBoxLocalFile.Size = new System.Drawing.Size(376, 23);
+            this.TextBoxLocalFile.Size = new System.Drawing.Size(383, 23);
             this.TextBoxLocalFile.TabIndex = 9;
             // 
             // TextBoxInstallPath
@@ -845,9 +888,9 @@
             this.TextBoxInstallPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxInstallPath.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxInstallPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxInstallPath.Location = new System.Drawing.Point(86, 59);
+            this.TextBoxInstallPath.Location = new System.Drawing.Point(80, 59);
             this.TextBoxInstallPath.Name = "TextBoxInstallPath";
-            this.TextBoxInstallPath.Size = new System.Drawing.Size(359, 23);
+            this.TextBoxInstallPath.Size = new System.Drawing.Size(366, 23);
             this.TextBoxInstallPath.TabIndex = 11;
             // 
             // ComboBoxInstallPath
@@ -864,10 +907,10 @@
             "dev_hdd0/game/{REGION}/USRDIR/patch_mp.ff",
             "dev_hdd0/game/{REGION}/default_mp.self",
             "dev_hdd0/tmp/Menu.sprx"});
-            this.ComboBoxInstallPath.Location = new System.Drawing.Point(86, 59);
+            this.ComboBoxInstallPath.Location = new System.Drawing.Point(80, 59);
             this.ComboBoxInstallPath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ComboBoxInstallPath.Name = "ComboBoxInstallPath";
-            this.ComboBoxInstallPath.Size = new System.Drawing.Size(376, 23);
+            this.ComboBoxInstallPath.Size = new System.Drawing.Size(383, 23);
             this.ComboBoxInstallPath.TabIndex = 12;
             this.ComboBoxInstallPath.SelectedIndexChanged += new System.EventHandler(this.ComboBoxInstallPath_SelectedIndexChanged);
             // 
@@ -878,20 +921,20 @@
             this.LabelInstallPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.LabelInstallPath.Location = new System.Drawing.Point(4, 62);
             this.LabelInstallPath.Name = "LabelInstallPath";
-            this.LabelInstallPath.Size = new System.Drawing.Size(76, 15);
+            this.LabelInstallPath.Size = new System.Drawing.Size(69, 15);
             this.LabelInstallPath.TabIndex = 1153;
-            this.LabelInstallPath.Text = "Install to File:";
+            this.LabelInstallPath.Text = "Upload File:";
             // 
             // ButtonInstallCustom
             // 
             this.ButtonInstallCustom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonInstallCustom.Enabled = false;
-            this.ButtonInstallCustom.Location = new System.Drawing.Point(468, 59);
+            this.ButtonInstallCustom.Location = new System.Drawing.Point(469, 59);
             this.ButtonInstallCustom.Name = "ButtonInstallCustom";
             this.ButtonInstallCustom.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonInstallCustom.Size = new System.Drawing.Size(59, 23);
             this.ButtonInstallCustom.TabIndex = 13;
-            this.ButtonInstallCustom.Text = "Install";
+            this.ButtonInstallCustom.Text = "Upload";
             this.ButtonInstallCustom.Click += new System.EventHandler(this.ButtonInstallCustom_Click);
             // 
             // LabelLocalFile
@@ -900,48 +943,56 @@
             this.LabelLocalFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.LabelLocalFile.Location = new System.Drawing.Point(4, 34);
             this.LabelLocalFile.Name = "LabelLocalFile";
-            this.LabelLocalFile.Size = new System.Drawing.Size(65, 15);
+            this.LabelLocalFile.Size = new System.Drawing.Size(59, 15);
             this.LabelLocalFile.TabIndex = 1152;
-            this.LabelLocalFile.Text = "Local Path:";
+            this.LabelLocalFile.Text = "Local File:";
+            // 
+            // ButtonRequestMods
+            // 
+            this.ButtonRequestMods.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonRequestMods.Location = new System.Drawing.Point(1013, 34);
+            this.ButtonRequestMods.Name = "ButtonRequestMods";
+            this.ButtonRequestMods.Padding = new System.Windows.Forms.Padding(5);
+            this.ButtonRequestMods.Size = new System.Drawing.Size(102, 23);
+            this.ButtonRequestMods.TabIndex = 22;
+            this.ButtonRequestMods.Text = "Request Mods";
+            this.ButtonRequestMods.Click += new System.EventHandler(this.ButtonRequestMods_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1129, 543);
+            this.ClientSize = new System.Drawing.Size(1126, 566);
+            this.Controls.Add(this.ButtonRequestMods);
             this.Controls.Add(this.SectionCustomInstallation);
             this.Controls.Add(this.TextBoxSelectedCategory);
             this.Controls.Add(this.ButtonConnectConsole);
             this.Controls.Add(this.TextBoxSelectedConsole);
-            this.Controls.Add(this.darkLabel2);
+            this.Controls.Add(this.LabelConsoles);
             this.Controls.Add(this.TextBoxAddress);
-            this.Controls.Add(this.LabelAddress);
+            this.Controls.Add(this.LabelConsoleAddress);
             this.Controls.Add(this.darkToolStrip1);
-            this.Controls.Add(this.SectionInstallPaths);
             this.Controls.Add(this.ScrollBarMods);
-            this.Controls.Add(this.darkSectionPanel1);
-            this.Controls.Add(this.ButtonReport);
-            this.Controls.Add(this.ButtonDownloadFiles);
-            this.Controls.Add(this.ButtonUninstallFiles);
-            this.Controls.Add(this.ButtonInstallFiles);
+            this.Controls.Add(this.SectionGames);
             this.Controls.Add(this.ScrollBarDetails);
             this.Controls.Add(this.LabelSelectCategory);
             this.Controls.Add(this.ComboBoxCategory);
             this.Controls.Add(this.ComboBoxConsole);
             this.Controls.Add(this.MenuStrip);
             this.Controls.Add(this.SectionModsDetails);
-            this.Controls.Add(this.darkSectionPanel4);
+            this.Controls.Add(this.SectionMods);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MenuStrip;
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MinimumSize = new System.Drawing.Size(1050, 128);
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ModioX - Beta";
+            this.Text = "ModioX (beta) ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).EndInit();
@@ -950,11 +1001,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvInstallPaths)).EndInit();
             this.SectionModsDetails.ResumeLayout(false);
             this.SectionModsDetails.PerformLayout();
+            this.SectionInstallPaths.ResumeLayout(false);
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
-            this.darkSectionPanel1.ResumeLayout(false);
-            this.SectionInstallPaths.ResumeLayout(false);
-            this.darkSectionPanel4.ResumeLayout(false);
+            this.SectionGames.ResumeLayout(false);
+            this.SectionMods.ResumeLayout(false);
             this.darkToolStrip1.ResumeLayout(false);
             this.darkToolStrip1.PerformLayout();
             this.SectionCustomInstallation.ResumeLayout(false);
@@ -996,10 +1047,10 @@
         private System.Windows.Forms.ToolStripMenuItem MenuStripSettingsAutoDetectRegion;
         private System.Windows.Forms.ToolStripMenuItem MenuStripFileRefreshData;
         private System.Windows.Forms.ToolStripMenuItem MenuStripFileExit;
-        private DarkUI.Controls.DarkSectionPanel darkSectionPanel1;
+        private DarkUI.Controls.DarkSectionPanel SectionGames;
         private DarkUI.Controls.DarkScrollBar ScrollBarMods;
         private DarkUI.Controls.DarkSectionPanel SectionInstallPaths;
-        private DarkUI.Controls.DarkSectionPanel darkSectionPanel4;
+        private DarkUI.Controls.DarkSectionPanel SectionMods;
         private System.Windows.Forms.ToolStripSeparator MenuStripFileSeparator;
         private DarkUI.Controls.DarkScrollBar ScrollBarInstallPaths;
         private System.Windows.Forms.ToolStripMenuItem MenuStripSettingsEditConsoles;
@@ -1010,8 +1061,8 @@
         private System.Windows.Forms.ToolStripLabel ToolStripLabelStatus;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelConsole;
         private DarkUI.Controls.DarkTextBox TextBoxAddress;
-        private DarkUI.Controls.DarkLabel LabelAddress;
-        private DarkUI.Controls.DarkLabel darkLabel2;
+        private DarkUI.Controls.DarkLabel LabelConsoleAddress;
+        private DarkUI.Controls.DarkLabel LabelConsoles;
         private DarkUI.Controls.DarkTextBox TextBoxSelectedConsole;
         private DarkUI.Controls.DarkTextBox TextBoxSelectedCategory;
         private DarkUI.Controls.DarkSectionPanel SectionCustomInstallation;
@@ -1023,10 +1074,13 @@
         private DarkUI.Controls.DarkButton ButtonInstallCustom;
         private DarkUI.Controls.DarkLabel LabelLocalFile;
         private System.Windows.Forms.ToolStripMenuItem MenuStripHelp;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripRequestMods;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnVersion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAuthor;
+        private DarkUI.Controls.DarkToolStrip darkToolStrip2;
+        private DarkUI.Controls.DarkButton ButtonRequestMods;
+        private DarkUI.Controls.DarkScrollBar ScrollBarGames;
+        private System.Windows.Forms.ToolStripLabel ToolStripLabelStats;
     }
 }

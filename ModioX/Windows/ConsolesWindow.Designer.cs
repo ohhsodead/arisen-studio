@@ -41,10 +41,10 @@
             // ButtonConsoleAdd
             // 
             this.ButtonConsoleAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonConsoleAdd.Location = new System.Drawing.Point(227, 79);
+            this.ButtonConsoleAdd.Location = new System.Drawing.Point(210, 30);
             this.ButtonConsoleAdd.Name = "ButtonConsoleAdd";
             this.ButtonConsoleAdd.Padding = new System.Windows.Forms.Padding(5);
-            this.ButtonConsoleAdd.Size = new System.Drawing.Size(75, 23);
+            this.ButtonConsoleAdd.Size = new System.Drawing.Size(65, 22);
             this.ButtonConsoleAdd.TabIndex = 1133;
             this.ButtonConsoleAdd.Text = "Add";
             this.ButtonConsoleAdd.Click += new System.EventHandler(this.ButtonConsoleAdd_Click);
@@ -59,7 +59,7 @@
             this.TextBoxName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxName.Location = new System.Drawing.Point(12, 30);
             this.TextBoxName.Name = "TextBoxName";
-            this.TextBoxName.Size = new System.Drawing.Size(209, 22);
+            this.TextBoxName.Size = new System.Drawing.Size(192, 22);
             this.TextBoxName.TabIndex = 1134;
             this.TextBoxName.TextChanged += new System.EventHandler(this.TextBoxName_TextChanged);
             // 
@@ -83,17 +83,17 @@
             this.TextBoxAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxAddress.Location = new System.Drawing.Point(12, 79);
             this.TextBoxAddress.Name = "TextBoxAddress";
-            this.TextBoxAddress.Size = new System.Drawing.Size(209, 22);
+            this.TextBoxAddress.Size = new System.Drawing.Size(192, 22);
             this.TextBoxAddress.TabIndex = 1137;
             this.TextBoxAddress.TextChanged += new System.EventHandler(this.TextBoxAddress_TextChanged);
             // 
             // ButtonConsoleRemove
             // 
             this.ButtonConsoleRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonConsoleRemove.Location = new System.Drawing.Point(227, 30);
+            this.ButtonConsoleRemove.Location = new System.Drawing.Point(210, 79);
             this.ButtonConsoleRemove.Name = "ButtonConsoleRemove";
             this.ButtonConsoleRemove.Padding = new System.Windows.Forms.Padding(5);
-            this.ButtonConsoleRemove.Size = new System.Drawing.Size(75, 23);
+            this.ButtonConsoleRemove.Size = new System.Drawing.Size(65, 22);
             this.ButtonConsoleRemove.TabIndex = 1136;
             this.ButtonConsoleRemove.Text = "Remove";
             this.ButtonConsoleRemove.Click += new System.EventHandler(this.ButtonConsoleRemove_Click);
@@ -105,7 +105,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ListViewConsoles.Location = new System.Drawing.Point(12, 107);
             this.ListViewConsoles.Name = "ListViewConsoles";
-            this.ListViewConsoles.Size = new System.Drawing.Size(290, 146);
+            this.ListViewConsoles.Size = new System.Drawing.Size(263, 146);
             this.ListViewConsoles.TabIndex = 1138;
             this.ListViewConsoles.Text = "darkListView1";
             this.ListViewConsoles.SelectedIndicesChanged += new System.EventHandler(this.ListViewConsoles_SelectedIndicesChanged);
@@ -125,7 +125,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(314, 265);
+            this.ClientSize = new System.Drawing.Size(287, 265);
             this.Controls.Add(this.darkLabel2);
             this.Controls.Add(this.ListViewConsoles);
             this.Controls.Add(this.TextBoxAddress);
@@ -142,7 +142,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Consoles";
+            this.Text = "Edit Consoles";
             this.Load += new System.EventHandler(this.ProfilesWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
