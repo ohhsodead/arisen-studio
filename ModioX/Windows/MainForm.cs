@@ -69,9 +69,10 @@ namespace ModioX.Windows
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            SetStatus($"Initializing application data...");
+
             Extensions.Update.CheckVersion();
             Worker.RunWorkAsync(LoadData, InitializeFinished);
-            MenuStripSettingsAutoDetectRegion.Checked = Settings.Default.AutoGameRegion;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -88,59 +89,43 @@ namespace ModioX.Windows
             ModsData = Utilities.GetModsData();
         }
 
-            /// <summary>
-            ///     Set a few properties after being initialized
-            /// </summary>
+        /// <summary>
+        ///     Set a few properties after being initialized
+        /// </summary>
         private void InitializeFinished(object sender, RunWorkerCompletedEventArgs e)
         {
             SetStatus($"Initialized application (Version {Utilities.GetCurrentVersion()}) - Ready to connect...");
 
-            ComboBoxConsole.Enabled = true;
-            ComboBoxConsole.Items.Clear();
             LoadConsoles();
-            ComboBoxConsole.SelectedIndex = 0;
-
+            ComboBoxConsole.Enabled = true;
             FlowPanelGames.Controls.Clear();
 
-            foreach (var game in GamesData.Games)
+            foreach (GamesData.Game gameData in GamesData.Games)
             {
-                AddGameTitle(game);
+                AddGameTitle(gameData);
             }
 
             SelectedGame = GamesData.Games[0];
             LoadGameMods(GamesData.Games[0].Id);
-
+            UpdateScrollBarGames();
             UpdateGameControls();
+
+            ToolStripLabelStats.Text = string.Format("{0} Mods Overall for {1} Games", ModsData.Mods.Length, GamesData.Games.Length);
+
+            // Load Settings UI
+            MenuStripSettingsAutoDetectRegion.Checked = Settings.Default.AutoGameRegion;
         }
 
         private void LoadConsoles()
         {
+            ComboBoxConsole.Items.Clear();
+
             foreach (var console in Settings.Default.UserConsoles)
             {
                 ComboBoxConsole.Items.Add(console);
             }
-        }
 
-        /// <summary>
-        ///     Loads all the mods for the selected game into the datagridview
-        /// </summary>
-        /// <param name="gameId"></param>
-        /// <param name="gameType"></param>
-        private void LoadGameMods(string gameId, string gameType = "")
-        {
-            DgvMods.Rows.Clear();
-            ComboBoxCategory.Items.Clear();
-            ComboBoxCategory.Items.Add("ANY");
-
-            foreach (var modData in ModsData.Mods)
-                if (string.Equals(modData.GameId, gameId) && modData.Type.Contains(gameType))
-                {
-                    DgvMods.Rows.Add(modData.Id, modData.Name, modData.Version, modData.Author);
-                    if (!ComboBoxCategory.Items.Contains(modData.Type))
-                        ComboBoxCategory.Items.Add(modData.Type);
-                }
-
-            UpdateScrollBarMods();
+            ComboBoxConsole.SelectedIndex = 0;
         }
         
         private void MenuStripFileRefreshData_Click(object sender, EventArgs e)
@@ -163,14 +148,9 @@ namespace ModioX.Windows
             System.Diagnostics.Process.Start(Utilities.ProjectRepoUrl);
         }
 
-        private void MenuStripRequestMods_Click(object sender, EventArgs e)
-        {
-            Utilities.OpenRequestTemplate();
-        }
-
         private void MenuStripInformation_Click(object sender, EventArgs e)
         {
-            DarkMessageBox.ShowInformation("ModioX is developed by wh1ter0se-x with intended purpose of proving an efficient method of browsing, downloading and installing popular game mods. All credits given to those appropriate creators/authors of all the mods used for this database. If you have any questions please send a message at my Discord: wh1ter0se#7480 with your much welcomed comments, suggestions and feedback to help support this project.", "Information");
+            DarkMessageBox.ShowInformation("ModioX is developed by wh1ter0se-x, with the intended purpose of proving an efficient method of browsing, downloading and installing popular game mods. All credits given to those appropriate creators/authors of all the mods used for this database. If you have any questions please send a message at my Discord: wh1ter0se#7480 with your much welcomed comments, suggestions and feedback to help support this project.", "Information");
         }
 
         private void MenuStripHelp_Click(object sender, EventArgs e)
@@ -282,16 +262,18 @@ namespace ModioX.Windows
 
             EnableButton(ButtonConnectConsole, !string.IsNullOrWhiteSpace(TextBoxAddress.Text));
         }
-                
+
+        private void ButtonRequestMods_Click(object sender, EventArgs e)
+        {
+            Utilities.OpenRequestTemplate();
+        }
+
         private void GameTitle_Click(object sender, EventArgs e)
         {
             SelectedGame = Utilities.GetGameByTitle(GamesData, ((Label)sender).Text);
 
             LoadGameMods(SelectedGame.Id);
 
-            ComboBoxCategory.Items.Clear();
-            ComboBoxCategory.Items.Add("ANY");
-            ComboBoxCategory.SelectedIndex = 0;
             DgvMods.Enabled = DgvMods.Rows.Count != 0;
             DgvMods.Sort(ColumnName, ListSortDirection.Ascending);
 
@@ -349,7 +331,7 @@ namespace ModioX.Windows
         private void DgvMods_SelectionChanged(object sender, EventArgs e)
         {
             if (DgvMods.CurrentRow != null)
-                ShowModDetails(Convert.ToInt64(DgvMods.CurrentRow.Cells[0].Value.ToString()));
+                ShowModDetails(int.Parse(DgvMods.CurrentRow.Cells[0].Value.ToString()));
 
             EnableButton(ButtonInstallFiles, DgvMods.SelectedRows.Count != 0 && IsConsoleConnected);
             EnableButton(ButtonUninstallFiles, DgvMods.SelectedRows.Count != 0 && IsConsoleConnected);
@@ -360,7 +342,7 @@ namespace ModioX.Windows
         private void DgvMods_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (DgvMods.CurrentRow != null)
-                ShowModDetails(Convert.ToInt64(DgvMods.CurrentRow.Cells[0].Value.ToString()));
+                ShowModDetails(int.Parse(DgvMods.CurrentRow.Cells[0].Value.ToString()));
 
             EnableButton(ButtonInstallFiles, e.RowIndex != -1 && IsConsoleConnected);
             EnableButton(ButtonUninstallFiles, e.RowIndex != -1 && IsConsoleConnected);
@@ -371,7 +353,34 @@ namespace ModioX.Windows
         private void DgvMods_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (DgvMods.CurrentRow != null)
-                ShowModDetails(Convert.ToInt64(DgvMods.CurrentRow.Cells[0].Value.ToString()));
+                ShowModDetails(int.Parse(DgvMods.CurrentRow.Cells[0].Value.ToString()));
+        }
+
+        /// <summary>
+        ///     Loads all the specified types of mods for the given game into the gridview
+        /// </summary>
+        /// <param name="gameId"></param>
+        /// <param name="modType"></param>
+        private void LoadGameMods(string gameId, string modType = "")
+        {
+            DgvMods.Rows.Clear();
+            ComboBoxCategory.Items.Clear();
+            ComboBoxCategory.Items.Add("ANY");
+
+            foreach (var modData in ModsData.Mods)
+            {
+                if (string.Equals(modData.GameId, gameId) && modData.Type.Contains(modType))
+                {
+                    DgvMods.Rows.Add(modData.Id, modData.Name, modData.Version, modData.Author);
+
+                    if (!ComboBoxCategory.Items.Contains(modData.Type))
+                    {
+                        ComboBoxCategory.Items.Add(modData.Type);
+                    }
+                }
+            }
+
+            UpdateScrollBarMods();
         }
 
         /// <summary>
@@ -380,22 +389,22 @@ namespace ModioX.Windows
         /// <param name="modId">Id of the mod item</param>
         private void ShowModDetails(long modId)
         {
-            ModsData.ModItem modDetails = Utilities.GetModById(ModsData, modId);
+            ModsData.ModItem modItem = Utilities.GetModById(ModsData, modId);
 
             // Set the selected mod item property
-            SelectedModItem = modDetails;
+            SelectedModItem = modItem;
 
             // Display details in UI
-            LabelHeaderName.Text = $"{modDetails.Name} ({modDetails.Type})";
-            LabelByAuthor.Text = $"by {modDetails.Author}";
-            LabelVersion.Text = modDetails.Version;
-            LabelConfiguration.Text = modDetails.Configuration;
-            LabelDescription.Text = modDetails.Description;
+            LabelHeaderName.Text = $"{modItem.Name} ({modItem.Type})";
+            LabelByAuthor.Text = $"Created by {modItem.Author}";
+            LabelVersion.Text = modItem.Version;
+            LabelConfiguration.Text = modItem.Configuration;
+            LabelDescription.Text = modItem.Description;
 
             DgvInstallPaths.Rows.Clear();
-            foreach (string file in modDetails.InstallPaths)
+            foreach (string filePath in modItem.InstallPaths)
             {
-                DgvInstallPaths.Rows.Add(file);
+                DgvInstallPaths.Rows.Add(filePath);
             }
 
             UpdateScrollBarDetails();
@@ -411,14 +420,15 @@ namespace ModioX.Windows
             Label gameTitle = new Label
             {
                 AutoSize = false,
-                Width = FlowPanelGames.Width,
-                Height = 27,
+                Height = 26,
+                Width = FlowPanelGames.Width - 20,
                 Text = game.Title,
-                TextAlign = ContentAlignment.MiddleCenter,
+                TextAlign = ContentAlignment.MiddleLeft,
                 Font = new Font("Segoe UI", 9F, FontStyle.Regular),
                 BackColor = Color.Transparent,
                 ForeColor = Color.Gainsboro,
                 Margin = new Padding(0, 0, 0, 0),
+                Padding = new Padding(5, 0, 0, 0),
                 Cursor = Cursors.Hand,
                 Name = game.Id
             };
@@ -449,19 +459,32 @@ namespace ModioX.Windows
             }
         }
 
+        public void UpdateScrollBarGames()
+        {
+            FlowPanelGames.HorizontalScroll.Visible = false;
+            ScrollBarGames.Visible = FlowPanelGames.VerticalScroll.Visible;
+            ScrollBarGames.Minimum = FlowPanelGames.VerticalScroll.Minimum;
+            ScrollBarGames.Maximum = FlowPanelGames.VerticalScroll.Maximum;
+            ScrollBarGames.ViewSize = FlowPanelGames.VerticalScroll.LargeChange;
+            ScrollBarGames.Value = 0;
+            ScrollBarGames.UpdateScrollBar();
+        }
+
         public void UpdateScrollBarMods()
         {
             DgvMods.ScrollBars = ScrollBars.None;
             ScrollBarMods.Maximum = DgvMods.RowCount;
+            ScrollBarMods.ViewSize = DgvMods.DisplayedRowCount(true);
             ScrollBarMods.Value = 0;
             ScrollBarMods.UpdateScrollBar();
         }
 
         public void UpdateScrollBarDetails()
         {
+            //ScrollBarDetails.Visible = FlowPanelDetails.VerticalScroll.Visible
             ScrollBarDetails.Minimum = FlowPanelDetails.VerticalScroll.Minimum;
             ScrollBarDetails.Maximum = FlowPanelDetails.VerticalScroll.Maximum;
-            ScrollBarDetails.ViewSize = FlowPanelDetails.VerticalScroll.LargeChange;
+            ScrollBarDetails.ViewSize = FlowPanelDetails.VerticalScroll.LargeChange - 30;
             ScrollBarDetails.Value = 0;
             ScrollBarDetails.UpdateScrollBar();
         }
@@ -469,9 +492,21 @@ namespace ModioX.Windows
         public void UpdateScrollBarInstallPaths()
         {
             DgvInstallPaths.ScrollBars = ScrollBars.None;
-            //ScrollBarInstallPaths.Maximum = DgvInstallPaths.RowCount;
+            ScrollBarInstallPaths.Maximum = DgvInstallPaths.RowCount;
+            ScrollBarInstallPaths.ViewSize = DgvInstallPaths.DisplayedRowCount(true);
             ScrollBarInstallPaths.Value = 0;
             ScrollBarInstallPaths.UpdateScrollBar();
+        }
+
+        private void ScrollBarGames_ValueChanged(object sender, ScrollValueEventArgs e)
+        {
+            FlowPanelGames.VerticalScroll.Value = ScrollBarGames.Value;
+            FlowPanelGames.Update();
+        }
+
+        private void FlowPanelGames_Scroll(object sender, ScrollEventArgs e)
+        {
+            ScrollBarGames.Value = e.NewValue;
         }
 
         private void ScrollBarMods_ValueChanged(object sender, ScrollValueEventArgs e)
@@ -585,9 +620,11 @@ namespace ModioX.Windows
             {
                 using (FolderBrowserDialog folderBrowser = new FolderBrowserDialog() { ShowNewFolderButton = true })
                 {
-                    if (folderBrowser.ShowDialog() != DialogResult.OK) return;
-                    Utilities.DownloadModToLocation(SelectedModItem, folderBrowser.SelectedPath);
-                    SetStatus($"Downloaded compressed files '{SelectedModItem.Name}' to folder specified");
+                    if (folderBrowser.ShowDialog() != DialogResult.OK)
+                    {
+                        Utilities.DownloadToLocation(SelectedModItem, folderBrowser.SelectedPath);
+                        SetStatus($"Downloaded compressed archive for '{SelectedModItem.Name}' to {folderBrowser.SelectedPath}");
+                    }
                 }
             }
             catch (Exception ex)
