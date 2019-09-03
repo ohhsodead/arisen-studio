@@ -137,17 +137,27 @@ namespace ModioX.Extensions
             if (detectRegion)
             {
                 using (var ps3 = new FtpConnection(ipAddress))
+                {
                     foreach (var region in game.Regions)
+                    {
                         if (ps3.DirectoryExists($"dev_hdd0/game/{region}/"))
+                        {
                             return region;
+                        }
+                    }
+                }
             }
             else
             {
-                Windows.RegionsWindow frmRegions = new Windows.RegionsWindow();
-                foreach (var region in game.Regions)
-                    frmRegions.ListViewRegions.Items.Add(new DarkUI.Controls.DarkListItem() { Text = region });
-                frmRegions.ShowDialog();
-                return frmRegions.SelectedRegion;
+                using (Windows.RegionsWindow frmRegions = new Windows.RegionsWindow())
+                {
+                    foreach (var region in game.Regions)
+                    {
+                        frmRegions.ListViewRegions.Items.Add(new DarkUI.Controls.DarkListItem() { Text = region });
+                    }
+                    frmRegions.ShowDialog();
+                    return frmRegions.SelectedRegion;
+                }                    
             }
 
             return null;
@@ -158,25 +168,24 @@ namespace ModioX.Extensions
         /// </summary>
         /// <param name="modItem">Mod to download</param>
         /// <param name="downloadPath">Mod to download</param>
-        internal static void DownloadModToLocation(ModsData.ModItem modItem, string downloadPath)
+        internal static void DownloadToLocation(ModsData.ModItem modItem, string downloadPath)
         {
             using (var wc = new WebClient())
             {
                 wc.Headers.Add("Accept: application/zip");
                 wc.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
-                wc.DownloadFile(new Uri(modItem.Url),
-                    $"{downloadPath}/{modItem.Name} (v{modItem.Version}) ({modItem.Author}).zip");
+                wc.DownloadFile(new Uri(modItem.Url),$"{downloadPath}/{modItem.Name} (v{modItem.Version}) ({modItem.Author}).zip");
             }
         }
 
         /// <summary>
         ///     Downloads the compressed archive for the mods and then extracts the archive to the appdata path
         /// </summary>
-        /// <param name="modItem">Mod to download</param>
+        /// <param name="modItem">Mod Item</param>
         internal static void DownloadExtractFiles(ModsData.ModItem modItem)
         {
-            string archivePath = $"{AppDataPath}{modItem.Name}";
-            string archiveFilePath = $"{AppDataPath}{modItem.Name}.zip";
+            string archivePath = $"{AppDataPath}{modItem.GameId}{modItem.Name}";
+            string archiveFilePath = $"{AppDataPath}{modItem.GameId}{modItem.Name}.zip";
 
             if (Directory.Exists(archivePath))
             {
@@ -188,16 +197,9 @@ namespace ModioX.Extensions
                 File.Delete(archiveFilePath);
             }
 
-            using (var wc = new WebClient())
-            {
-                wc.Headers.Add("Accept: application/zip");
-                wc.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
-                wc.DownloadFile(new Uri(modItem.Url), archiveFilePath);
-                ZipFile.ExtractToDirectory(archiveFilePath, AppDataPath);
-            }
+            DownloadToLocation(modItem, archiveFilePath);
+            ZipFile.ExtractToDirectory(archiveFilePath, archiveFilePath);
         }
-
-
 
         /// <summary>
         ///     Upload the specified local file to the appropriate location on the console
