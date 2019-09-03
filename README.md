@@ -12,11 +12,13 @@ A federated desktop application for browsing a regularly updated collection of g
 ## Features
 * All major and popular games supported
 * Browse hundreds of various mods
+* View details, such as creator, version and info
 * Download mods archive to computer
 * Install mods directly to console
-* Upload your own files to console
+* Uninstall mods from console
 * Automatic game region detection
-* Save multiple console addresses
+* Upload any other files to console
+* Save multiple consoles
 
 ## Usage
 
