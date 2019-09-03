@@ -65,5 +65,8 @@ Please supply as much information about the problem you are experiencing as poss
 ## Requesting Mods
 I appreciate that currently not all mods are available in our database, so if there's any you'd like to be uploaded, please submit an issue using the **Request Mods** at the top of the application.
 
+## Contributers
+- HeadstrongWolf 
+
 ## Disclaimer
 I can accept no responsibility for any damage you cause to your system by using this tool. Follow the instructions so you shouldn't have any issues.
