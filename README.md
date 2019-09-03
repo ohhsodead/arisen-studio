@@ -22,6 +22,7 @@ A federated desktop application for browsing a regularly updated collection of g
 
 ### Requirements
 * An internet connection
+* .NET Framework 4.6.2
 * Console with DEX firmware
 
 ### Getting Started
@@ -53,7 +54,7 @@ If you would like to do something else with the mods then you can use the **Down
 ### Reporting Mods
 If you encounter issues with any of your for us all.
 
-### Installing Custom Files
+### Uploading Custom Files
 So, rather than installing the predefined mods from the database you can choose to install your own files that you have locally. Under the section **Custom Installation* there are two text boxes, one points to the file on your hard drive, and the other is the installation file path for which you would like to install your file to. Click _..._  to  open your chosen file, then either enter your install path manually or from the dropdown next to the textbox. Then click **Install** to start the process. It will let you know once it's complete.
 
 ## Installation
@@ -63,7 +64,11 @@ Download and run the latest version of the Windows installer, "ModioX.Installer.
 Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on, which will be found the application startup directory. You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. But, please open an issue so we can discuss things before going further so maybe we can work on this together!
 
 ## Requesting Mods
-I appreciate that currently not all mods are available in our database, so if there's any you'd like to be uploaded, please submit an issue using the **Request Mods** at the top of the application.
+I understand that currently not every mods you know will be available yet, so I'd welcome you to please use the **Request Mods** button at the top of ModioX.
+
+## Credits
+- The Appropriate Authors of All Mods
+- [HeadstrongWolf](https://github.com/headstrongwolf)
 
 ## Disclaimer
 I can accept no responsibility for any damage you cause to your system by using this tool. Follow the instructions so you shouldn't have any issues.
