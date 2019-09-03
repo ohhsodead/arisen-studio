@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading;
 using System.Windows.Forms;
 using DarkUI.Win32;
+using ModioX.Windows;
 
 namespace ModioX
 {
@@ -21,7 +22,7 @@ namespace ModioX
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.AddMessageFilter(new ControlScrollFilter());
-            Application.Run(new Windows.MainForm());
+            Application.Run(new MainForm());
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
         }
