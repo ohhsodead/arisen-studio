@@ -5,20 +5,21 @@
 </div>
 <br />
 
-A federated desktop application for browsing a regularly updated collection of game mods, populated by myself and a few friends so that almost all of them have been tested and verified to work. The core purpose is to provide users with an efficient method for being able to browse, download install mods directly to their console, without the need for searching modding forums or using file managers. 
+A federated desktop application for browsing a regularly updated collection of game mods, populated by myself and a few friends so that almost all of them have been tested and verified to work. The core purpose is to provide users with an efficient method for browsing, downloading and installing game mods directly to their console, without the need for searching modding forums or using file managers - this does it all for you.
 
 ![ModioX](https://github.com/wh1ter0se-x/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
 
 ## Features
-* Browse major and popular games
-* Discover hundreds of various supported mods
+* Browse all major and popular games
+* Discover hundreds of various mods
 * View details, such as creator, version and info
+* Supports all different types of mods/files
 * Download mods archives to computer
 * Install mods directly to console
 * Uninstall mods from console
 * Automatic game region detection
 * Upload any other files to console
-* Save multiple consoles
+* Add and save multiple consoles
 
 ## Usage
 
