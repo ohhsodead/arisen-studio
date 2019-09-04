@@ -13,7 +13,7 @@ A federated desktop application for browsing a regularly updated collection of g
 * Browse all major and popular games
 * Discover hundreds of various mods
 * View details, such as creator, version and info
-* Supports all different types of mods/files
+* Supports all types of mods/files
 * Download mods archives to computer
 * Install mods directly to console
 * Uninstall mods from console
