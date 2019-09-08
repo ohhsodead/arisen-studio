@@ -1,11 +1,11 @@
 <h1 align="center">ModioX</h1>
 
-<h3 align="center">Browse, Download and Install Game Mods for the PlayStation 3</h3>
+<h3 align="center">Browse, Download and Install Mods for the PlayStation 3</h3>
 <div align="center">
 </div>
 <br />
 
-A federated desktop application for browsing a regularly updated collection of game mods, populated by myself and a few friends so that almost all of them have been tested and verified to work. The core purpose is to provide users with an efficient method for browsing, downloading and installing game mods directly to their console, without the need for searching modding forums or using file managers - this does it all for you.
+A federated desktop application for browsing a regularly updated collection of mods, homebrew and themes, populated by myself and a few friends so that almost all of them have been tested and verified to work. The core purpose is to provide users with an efficient method for browsing, downloading and installing game mods directly to their console, without the need for searching modding forums or using file managers - this does it all for you.
 
 ![ModioX](https://github.com/wh1ter0se-x/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
 
