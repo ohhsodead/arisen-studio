@@ -10,10 +10,10 @@ A federated desktop application for browsing a regularly updated collection of g
 ![ModioX](https://github.com/wh1ter0se-x/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
 
 ## Features
-* Browse all major and popular games
-* Discover hundreds of various mods
-* Complete details, creator, version and info
-* Supports all types of mods/files
+* Browse major and popular games
+* Discover hundreds of mods, apps and themes
+* Complete details, creator, version and description
+* Supports all types of mods and files
 * Download mods archives to computer
 * Install mods directly to console
 * Uninstall mods from console
