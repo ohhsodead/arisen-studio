@@ -24,9 +24,9 @@ A federated desktop application for browsing a regularly updated collection of m
 ## Usage
 
 ### Requirements
-* Internet connection
+* An internet connection
 * .NET Framework 4.6.2
-* Jailbroken PlayStation 3
+* PlayStation 3 with CFW
 
 ### Getting Started
 You're going to want to add your console address to the application so that you're able to connect. Go to Settings > Edit Consoles... and fill in the information with your console name and the address. Otherwise you can ignore that and enter your address manually in the textbox. Your address can be found under 'System Information' on the console.
