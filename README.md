@@ -24,9 +24,9 @@ A federated desktop application for browsing a regularly updated collection of g
 ## Usage
 
 ### Requirements
-* An internet connection
+* Internet connection
 * .NET Framework 4.6.2
-* Console with DEX firmware
+* Jailbroken PlayStation 3
 
 ### Getting Started
 You're going to want to add your console address to the application so that you're able to connect. Go to Settings > Edit Consoles... and fill in the information with your console name and the address. Otherwise you can ignore that and enter your address manually in the textbox. Your address can be found under 'System Information' on the console.
