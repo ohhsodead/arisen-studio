@@ -1,6 +1,6 @@
 <h1 align="center">ModioX</h1>
 
-<h3 align="center">Browse, Download and Install Mods for the PlayStation 3</h3>
+<h3 align="center">Browse, Download and Install Mods to the PlayStation 3</h3>
 <div align="center">
 </div>
 <br />
@@ -11,8 +11,9 @@ A federated desktop application for browsing a regularly updated collection of m
 
 ## Features
 * Browse major and popular games
-* Discover hundreds of mods, apps and themes
-* Complete details, creator, version and description
+* Discover hundreds of mods, apps and resources
+* Complete details, creator, version and other info
+* Filter mods by types and firmware
 * Supports all types of mods and files
 * Download mods archives to computer
 * Install mods directly to console
