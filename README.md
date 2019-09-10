@@ -13,7 +13,7 @@ A federated desktop application for browsing a regularly updated collection of m
 * Browse major and popular games and categories
 * Discover hundreds of game mods, apps and resources
 * Complete details, creator, version and other info
-* Filter by firmware and type
+* Filter database by firmware and type
 * Supports every type of mods and files
 * Download archives to computer
 * Install mod files directly to console
@@ -30,19 +30,17 @@ A federated desktop application for browsing a regularly updated collection of m
 * PlayStation 3 with CFW
 
 ### Getting Started
-Go to Settings > Edit Consoles... and fill in the information with your console name and the address. Otherwise you can ignore that and enter your address manually in the textbox. Your address can be found under 'System Information' on the console.
+Go to Settings > Edit Consoles... and add your console name and the address. Otherwise, ignore that and enter your address manually in the textbox. Your address can be found under 'System Information' on the console.
 
 ### Connecting to Console
-Select your console from the list or enter the address manually and then click the **Connect** button. Note: this is only testing a connection to the console before you're able to install any files to it.
+Simply click the **Connect** button. Note: this is only testing a connection to the console before you're able to install any files. 
 
 ### Browsing Mods
-So to top everything off, finding mods for your console is extremely simple too. You will start by choosing and selecting a game from the list of supported titles that are displayed on the left side.
+Finding mods is extremely simple too. Start by choosing and selecting a game from the long list titles/categories that are displayed on the left.
 
-Then all of the mods that are available for your chosen game will be loaded into the gridview, with some information such as the name, version and creator.
+All of the mods that are available for will be loaded into the gridview, with some information such as the name, version and creator.
 
-When selecting any mods from the list, further details that you'll need to know will be displayed on the right side, including the configuration and description for the mod item. 
-
-Now once you've found a nice mod that you want to use, there are a few things that you can do with them.
+Further details that you'll need to know will be displayed on the right side when selecting an item, including the configuration and description. 
 
 ### Installing Mods
 Before you use this step to install files, ensure that your console is either at the XMB menu or Rebug Toolbox open. Otherwise this could mean major errors occur when trying to install the files. 
