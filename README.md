@@ -1,36 +1,38 @@
 <h1 align="center">ModioX</h1>
 
-<h3 align="center">Browse, Download and Install Game Mods for the PlayStation 3</h3>
+<h3 align="center">Browse, Download and Install Mods to the PlayStation 3</h3>
 <div align="center">
 </div>
 <br />
 
-A federated desktop application for browsing a regularly updated collection of game mods, populated by myself and a few friends so that almost all of them have been tested and verified to work. The core purpose is to provide users with an efficient method for being able to browse, download install mods directly to their console, without the need for searching forums or using an FTP client. 
+A federated desktop application for browsing a regularly updated collection of mods, homebrew and themes, populated by myself and a few friends so that almost all of them have been tested and verified to work. The core purpose is to provide users with an efficient method for browsing, downloading and installing game mods directly to their console, without the need for searching modding forums or using file managers - this does it all for you.
 
 ![ModioX](https://github.com/wh1ter0se-x/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
 
 ## Features
-* All major and popular games supported
-* Browse hundreds of various mods
-* View details, such as creator, version and info
-* Download mods archive to computer
+* Browse major and popular games
+* Discover hundreds of mods, apps and resources
+* Complete details, creator, version and other info
+* Filter mods by types and firmware
+* Supports all types of mods and files
+* Download mods archives to computer
 * Install mods directly to console
 * Uninstall mods from console
 * Automatic game region detection
 * Upload any other files to console
-* Save multiple consoles
+* Add and save multiple consoles
 
 ## Usage
 
 ### Requirements
 * An internet connection
 * .NET Framework 4.6.2
-* Console with DEX firmware
+* PlayStation 3 with CFW
 
 ### Getting Started
-You're going to want to add your console address to the application so that you're able to connect. Go to Settings > Edit Consoles... and fill in the information with your console name and the address. Otherwise you can ignore that and enter your address manually in the textbox. Your address can be found under 'System Information' on the console.
+Go to Settings > Edit Consoles... and fill in the information with your console name and the address. Otherwise you can ignore that and enter your address manually in the textbox. Your address can be found under 'System Information' on the console.
 
-### Connecting Your Console
+### Connecting to Console
 Select your console from the list or enter the address manually and then click the **Connect** button. Note: this is only testing a connection to the console before you're able to install any files to it.
 
 ### Browsing Mods
