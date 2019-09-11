@@ -30,34 +30,36 @@ A federated desktop application for browsing a regularly updated collection of m
 * PlayStation 3 with CFW
 
 ### Getting Started
-Go to Settings > Edit Consoles... and add your console name and the address. Otherwise, ignore that and enter your address manually in the textbox. Your address can be found under 'System Information' on the console.
+In the upper left corner under **Settings** > **Edit Consoles** is where you can add and save your console. Your address can be found under **System Information**.
 
 ### Connecting to Console
-Simply click the **Connect** button. Note: this is only testing a connection to the console before you're able to install any files. 
+Either select your console from the dropdown menu or type it manually in the textbox, then hit the **Connect** button.
+
+Note: This is only testing a connection to the address so that it ensures you're able to upload files. 
 
 ### Browsing Mods
-Finding mods is extremely simple too. Start by choosing and selecting a game from the long list titles/categories that are displayed on the left.
+Finding mods is extremely simple too. Start by choosing something from the long list of titles/categories that are displayed on the left.
 
-All of the mods that are available for will be loaded into the gridview, with some information such as the name, version and creator.
+All the mods that are available will be loaded into the gridview, including information such as the name, version, creator, etc. 
 
-Further details that you'll need to know will be displayed on the right side when selecting an item, including the configuration and description. 
+Further details that you'll need to know will be displayed on the right side when selecting an item, including the firmware, configuration, description and more. 
 
 ### Installing Mods
-Ensure that your console is either at the XMB menu or Rebug Toolbox open before uploading any files. It could cause issues such as console freezing or crashing. 
+Before install any files, make sure that your console is either at the XMB menu or with Rebug Toolbox open. It could cause issues such as console freezing or crashing. 
 
-A compressed archive containing the files and a set of installation paths are included by default, so the **Install** process will be to the appropriate paths for you. 
+A compressed archive containing the modded files and a set of installation paths are included by default with each, so the **Install** process will be to the appropriate paths to work as instructed/intended.
 
 ### Uninstalling Mods
-The **Uninstall** option is still being worked on to allow for some guarantees. But for now it will remove the files from the specified install path. Files that are installed into your game folders are not deleted as it could cause issues with game, these files include _EBOOT.BIN_, _patch_mp.ff_, etc. You can always find them from the database, which usually contain the words like 'default' or similar, install those after uninstalling the game mods. 
+The **Uninstall** option is still being worked on to allow for original files to be backed up. But for now it will remove the specified installation files. Ones that are installed into your game folders are not deleted as it could cause issues with playing the game, these can include the _EBOOT.BIN_, _patch_mp.ff_, etc. You may be able to find the original/default files from the database, install those after uninstalling the game mods. 
 
 ### Downloading Mods
-Instead you're able to **Download** the compressed mods archive locally to your computer. Ideal for sending to friends or installing files manually.
+You're also able to **Download** the compressed archive to somewhere on your computer. Ideal for sending to friends or installing files manually.
 
 ### Reporting
-I encourage users to report any issues that may occur with mods or files, whether that's due to ingame problems or installing errors. It will be looked into by someone, for sure. 
+It's encouraged to submit reports of any issues that may occur with mods or files, whether that's ingame problems or installing errors. It will be looked into by someone, for sure. 
 
 ### Console File Explorer
-There's also included a simple to use ftp client that allows you to easily navigate both the local and console file systems. Go through your folders to choose the desired file, do the same to your console folders to where you'd like to upload the file and hit **Upload**, otherwise you can download or delete files from your console.
+There's also included a simple ftp client that allows you to easily navigate both computer and console file systems. Go through your folders to choose the desired file, do the same to your console folders to where you'd like to upload the file then hit **Upload**, otherwise you can download or delete files from your console.
 
 ## Installation
 Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/wh1ter0se-x/ModioX/releases/latest) page.
@@ -66,11 +68,12 @@ Download and run the latest version of the Windows installer, "ModioX.Installer.
 Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on, which will be found the application startup directory. You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. But, please open an issue so we can discuss things before going further so maybe we can work on this together!
 
 ## Requesting Mods
-I understand that currently not every mods you know will be available yet, so I'd welcome you to please use the **Request Mods** button at the top of ModioX.
+I understand that currently not all mods will be available yet, so I'd welcome you to please use the **Request Mods** to open an issue with the details.
 
-## Credits
-- The Appropriate Authors of All Mods
-- [HeadstrongWolf](https://github.com/headstrongwolf)
+## Credits / Libraries
+- Appropriate Authors of the Mods
+- DarkUI for WinForms
+- Newtonsoft.Json
 
 ## Disclaimer
 I can accept no responsibility for any damage you cause to your system by using this tool. Follow the instructions so you shouldn't have any issues.
