@@ -30,7 +30,7 @@ A federated desktop application for browsing a regularly updated collection of m
 * PlayStation 3 with CFW
 
 ### Getting Started
-In the upper left corner under **Settings** > **Edit Consoles** is where you can add and save your console. Your address can be found under **System Information**.
+In the upper left corner under **Settings** > **Edit Consoles** is where you can add and save your console. Your address can be found under **System Information** from playstation console.
 
 ### Connecting to Console
 Either select your console from the dropdown menu or type it manually in the textbox, then hit the **Connect** button.
