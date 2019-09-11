@@ -43,21 +43,21 @@ All of the mods that are available for will be loaded into the gridview, with so
 Further details that you'll need to know will be displayed on the right side when selecting an item, including the configuration and description. 
 
 ### Installing Mods
-Before you use this step to install files, ensure that your console is either at the XMB menu or Rebug Toolbox open. Otherwise this could mean major errors occur when trying to install the files. 
+Ensure that your console is either at the XMB menu or Rebug Toolbox open before uploading any files. It could cause issues such as console freezing or crashing. 
 
-You're able to install mods directly to your console by the using the installation paths that come with each of the mods, to do this simply click **Install** and it will complete everything for you, letting you know when you're ready to start the game.
+A compressed archive containing the files and a set of installation paths are included by default, so the **Install** process will be to the appropriate paths for you. 
 
 ### Uninstalling Mods
-There is also an **Uninstall** option that will remove the modded files from inside your _/tmp/_ folder, unlike those that are installed into your game folders, in this case you're going to need to install the default files such as the _EBOOT.BIN_ and/or _patch_mp.ff_, etc. But you can find these files from the list which are under the names like 'Default EBOOT' and 'Default PATCH', so you can install those after uninstalling the previously installed mods.
+The **Uninstall** option is still being worked on to allow for some guarantees. But for now it will remove the files from the specified install path. Files that are installed into your game folders are not deleted as it could cause issues with game, these files include _EBOOT.BIN_, _patch_mp.ff_, etc. You can always find them from the database, which usually contain the words like 'default' or similar, install those after uninstalling the game mods. 
 
 ### Downloading Mods
-If you would like to do something else with the mods then you can use the **Download** button to download them locally to your computer.
+Instead you're able to **Download** the compressed mods archive locally to your computer. Ideal for sending to friends or installing files manually.
 
-### Reporting Mods
-If you encounter issues with any of your for us all.
+### Reporting
+I encourage users to report any issues that may occur with mods or files, whether that's due to ingame problems or installing errors. It will be looked into by someone, for sure. 
 
-### Uploading Custom Files
-So, rather than installing the predefined mods from the database you can choose to install your own files that you have locally. Under the section **Custom Installation* there are two text boxes, one points to the file on your hard drive, and the other is the installation file path for which you would like to install your file to. Click _..._  to  open your chosen file, then either enter your install path manually or from the dropdown next to the textbox. Then click **Install** to start the process. It will let you know once it's complete.
+### Console File Explorer
+There's also included a simple to use ftp client that allows you to easily navigate both the local and console file systems. Go through your folders to choose the desired file, do the same to your console folders to where you'd like to upload the file and hit **Upload**, otherwise you can download or delete files from your console.
 
 ## Installation
 Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/wh1ter0se-x/ModioX/releases/latest) page.
