@@ -9,18 +9,18 @@ A federated desktop application for browsing a regularly updated collection of m
 
 ![ModioX](https://github.com/wh1ter0se-x/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
 
-## Features
-* Browse major and popular games and categories
-* Discover hundreds of game mods, apps and resources
+## Main Features
+* Browse by games and categories
+* Discover game mods, apps and resources
 * Complete details, creator, version and other info
-* Filter database by firmware and type
+* Filter mods by firmware or type
 * Supports every type of mods and files
 * Download archives to computer
-* Install mod files directly to console
-* Uninstall mod files from console
+* Install files directly to console
+* Uninstall files from console
 * Automatically detect game region, or manually
 * Built-in ftp client features, with directory listings 
-* Add and save multiple console addresses
+* Add and save multiple console profiles
 
 ## Usage
 
