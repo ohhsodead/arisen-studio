@@ -5,9 +5,9 @@
 </div>
 <br />
 
-A federated desktop application for browsing a regularly updated collection of mods, homebrew and themes, populated by myself and a few friends so that almost all of them have been tested and verified to work. The core purpose is to provide users with an efficient method for browsing, downloading and installing game mods directly to their console, without the need for searching modding forums or using file managers - this does it all for you.
+A federated desktop application for browsing a regularly updated library of mods, homebrew and themes, populated by myself and a few friends so that almost all of them have been tested and verified to work. The core purpose is to provide users with an efficient method for browsing, downloading and installing game mods directly to their console, without the need for searching modding forums or using file managers - this does it all for you.
 
-![ModioX](https://github.com/wh1ter0se-x/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
+![ModioX](https://github.com/ohhsoash/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
 
 ## Main Features
 * Browse by games and categories
@@ -62,7 +62,7 @@ It's encouraged to submit reports of any issues that may occur with mods or file
 There's also included a simple ftp client that allows you to easily navigate both computer and console file systems. Go through your folders to choose the desired file, do the same to your console folders to where you'd like to upload the file then hit **Upload**, otherwise you can download or delete files from your console.
 
 ## Installation
-Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/wh1ter0se-x/ModioX/releases/latest) page.
+Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsoash/ModioX/releases/latest) page.
 
 ## Contributing
 Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on, which will be found the application startup directory. You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. But, please open an issue so we can discuss things before going further so maybe we can work on this together!
