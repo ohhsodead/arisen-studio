@@ -35,12 +35,10 @@ In the upper left corner under **Settings** > **Edit Consoles** is where you can
 ### Connecting to Console
 Either select your console from the dropdown menu or type it manually in the textbox, then hit the **Connect** button.
 
-Note: This is only testing a connection to the address so that it ensures you're able to upload files. 
-
 ### Browsing Mods
-Finding mods is extremely simple too. Start by choosing something from the long list of titles/categories that are displayed on the left.
+Finding mods is extremely simple too. Start by choosing something from the long list of game titles or categories. 
 
-All the mods that are available will be loaded into the gridview, including information such as the name, version, creator, etc. 
+All the mods that are available will be loaded into the gridview, including information such as the name, version, creator, etc. You can also filter these results for your preferred console and mod type. 
 
 Further details that you'll need to know will be displayed on the right side when selecting an item, including the firmware, configuration, description and more. 
 
