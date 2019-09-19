@@ -10,7 +10,7 @@ A federated desktop application for browsing a regularly updated library of mods
 ![ModioX](https://github.com/ohhsoash/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
 
 ## Main Features
-* Browse by games and categories
+* Browse games, categories and favorites
 * Discover game mods, apps and resources
 * Complete details, creator, version and other info
 * Filter mods by firmware or type
