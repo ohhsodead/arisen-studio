@@ -10,16 +10,17 @@ A federated desktop application for browsing a regularly updated library of mods
 ![ModioX](https://github.com/ohhsoash/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
 
 ## Main Features
+* Fast, lightweight and easy to navigate
 * Browse games, categories and favorites
 * Discover game mods, apps and resources
-* Complete details, creator, version and other info
+* Complete with details, creator, version, etc. 
 * Filter mods by firmware or type
-* Supports every type of mods and files
-* Download archives to computer
-* Install files directly to console
-* Uninstall files from console
-* Automatically detect game region, or manually
-* Built-in ftp client features, with directory listings 
+* Supports all types of modded files
+* Download mods archive to your drive
+* Install mods files directly to games
+* Uninstall mods files from games
+* Automatically detect game region, or prompted
+* Built-in ftp client, with basic features
 * Add and save multiple console profiles
 
 ## Usage
@@ -30,7 +31,7 @@ A federated desktop application for browsing a regularly updated library of mods
 * PlayStation 3 with CFW
 
 ### Getting Started
-At the top go to **Settings** > **Edit Consoles** so you can add and save your console. Your address can be found under **System Information** from playstation console.
+At the top go to _Settings_ > _Edit Consoles_ so you can add and save your console. Your address can be found under **System Information** from playstation console.
 
 ### Connecting to Console
 Either select your console from the dropdown menu or type it manually in the textbox, then hit the **Connect** button.
