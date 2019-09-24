@@ -14,7 +14,7 @@ A federated desktop application for browsing a regularly updated library of mods
 * Browse games, categories and favorites
 * Discover game mods, apps and resources
 * Complete with details, creator, version, etc. 
-* Filter mods by firmware or type
+* Filter mods by firmware and type
 * Supports all types of modded files
 * Download mods archive to your drive
 * Install mods files directly to games
