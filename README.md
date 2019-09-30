@@ -7,7 +7,7 @@ A federated desktop application for browsing a regularly updated library of mods
 ## Features
 * Fast, lightweight and simple to use
 * Access huge database of mods
-* Complete with info, crrator, version, etc.
+* Complete with info, creator, version, etc.
 * Sorted by games and categories
 * Filter by firmware and mod type
 * Download archive to your computer
