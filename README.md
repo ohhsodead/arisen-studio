@@ -1,27 +1,21 @@
 <h1 align="center">ModioX</h1>
 
-<h3 align="center">Browse, Download and Install Mods to the PlayStation 3</h3>
-<div align="center">
-</div>
-<br />
-
-A federated desktop application for browsing a regularly updated library of mods, homebrew and themes. Populated by myself and a few friends so that they're verified and tested to work. The core purpose is to provide users with an efficient method for browsing, downloading and installing game mods directly to their console, without the need for searching modding forums or using file managers - this does it all for you.
+A federated desktop application for browsing a regularly updated library of mods, homebrew and themes for the PlayStation 3. Database is populated by myself, few friends and now awesome contributors, so that they're all verified and tested to work. One core purpose is to provide an efficient method for browsing, downloading and installing game mods directly to their console, without the need for searching modding forums or using file managers - this does it all for you, with ease.
 
 ![ModioX](https://github.com/ohhsoash/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
 
-## Main Features
-* Fast, lightweight and easy to navigate
-* Browse games, categories and favorites
-* Discover game mods, apps and resources
-* Complete with details, creator, version, etc. 
-* Filter mods by firmware and type
-* Supports all types of modded files
-* Download mods archive to your drive
-* Install mods files directly to games
-* Uninstall mods files from games
-* Automatically detect game region, or prompted
+## Features
+* Fast, lightweight and simple to use
+* Access huge database of mods
+* Complete with info, crrator, version, etc.
+* Sorted by games and categories
+* Filter by firmware and mod type
+* Download archive to your computer
+* Install mods directly to games
+* Automatically detects game region
+* Supports uploading any other files
 * Built-in ftp client, with basic features
-* Add and save multiple console profiles
+* Save multiple console profiles
 
 ## Usage
 
