@@ -7,7 +7,7 @@ A federated desktop application for browsing a regularly updated library of mods
 ## Features
 * Fast, lightweight and simple to use
 * Access huge database of mods
-* Complete with info, creator, version, etc.
+* Complete with info, crrator, version, etc.
 * Sorted by games and categories
 * Filter by firmware and mod type
 * Download archive to your computer
@@ -20,8 +20,7 @@ A federated desktop application for browsing a regularly updated library of mods
 ## Usage
 
 ### Requirements
-* An internet connection
-* .NET Framework 4.6.2
+* NET Framework 4.6.2
 * PlayStation 3 with CFW
 
 ### Getting Started
