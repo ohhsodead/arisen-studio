@@ -7,14 +7,14 @@ A federated desktop application for browsing a regularly updated library of mods
 ## Features
 * Fast, lightweight and simple to use
 * Access huge database of mods
-* Complete with info, crrator, version, etc.
+* Complete with info, creator, version, etc.
 * Sorted by games and categories
 * Filter by firmware and mod type
 * Download archive to your computer
 * Install mods directly to games
 * Automatically detects game region
 * Supports uploading any other files
-* Built-in ftp client, with basic features
+* File explorer with upload, delete, etc. 
 * Save multiple console profiles
 
 ## Usage
