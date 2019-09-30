@@ -31,7 +31,7 @@ A federated desktop application for browsing a regularly updated library of mods
 * PlayStation 3 with CFW
 
 ### Getting Started
-At the top go to _Settings_ > _Edit Consoles_ so you can add and save your console. Your address can be found under **System Information** from playstation console.
+First, go to _Settings_ > _Edit Consoles_ so you can add and save your console. Your address can be found under **System Information** from playstation console.
 
 ### Installing Mods
 It's important to note that before install any files, ensure that your console is either at the xmb screen or with Rebug Toolbox open (and not connected to psn to be safe).
