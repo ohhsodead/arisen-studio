@@ -24,7 +24,7 @@ A federated desktop application for browsing a regularly updated library of mods
 * PlayStation 3 with CFW
 
 ### Getting Started
-First, go to _Settings_ > _Edit Consoles_ so you can add and save your console. Your address can be found under **System Information** from playstation console.
+Firstly, under _Settings_ > _Edit Consoles_ you can add your console name and address to the list, for when you're ready to connect and upload files. Your address can be found under **System Information** on the console.
 
 ### Installing Mods
 It's important to note that before install any files, ensure that your console is either at the xmb screen or with Rebug Toolbox open (and not connected to psn to be safe).
@@ -32,13 +32,13 @@ It's important to note that before install any files, ensure that your console i
 A compressed archive containing the modded files and a set of installation paths are included by default with each, so the **Install** process will be to the appropriate paths to work as instructed/intended.
 
 ### Uninstalling Mods
-The **Uninstall** option is still being worked on to allow for original files to be backed up. But for now it will remove the specified installation files. Ones that are installed into your game folders are not deleted as it could cause issues with playing the game, these can include the _EBOOT.BIN_, _patch_mp.ff_, etc. You may be able to find the original/default files from the database, install those after uninstalling the game mods. .
+I would suggest you backup your original game files before installing mods, in case the mods fail to work for your system. So, the **Uninstall** option is still being worked on, to allow for this process to be automatic. But for now it will remove the specified installation files, except for those installed into your game folders, as it could cause issues for missing files. You can use the file explorer to re-install the original backed-up files to the game folder. 
 
 ### File Explorer
-This includes a simple ftp client that allows easily navigating both computer and console file systems. Go through your computer folders and choose the desired file, do the same to your console folders to where you'd like to upload the file then hit **Upload**, otherwise you can download or delete files from your console too. Maybe more coming soon. 
+A simple ftp client is included, which allows for easily navigating both computer and console file systems. Go through your computer folders and choose your file, do the same to your console folders to where you'd like the file to be, then hit **Upload**, you can otherwise download or delete filees. Hopefully other features soon for this soon. 
 
 ### Reporting Issues
-It's encouraged to submit reports of any issues that may occur with mods or files, whether that's with ingame or installing. It will be looked into by someone and fixed as soon as possible
+It's encouraged to submit reports of any issues that may occur with mods or files, whether that's ingame or installing. It will be looked into by someone and fixed as soon as we can. 
 
 ## ModioX Installation
 Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsoash/ModioX/releases/latest) page.
@@ -47,12 +47,13 @@ Download and run the latest version of the Windows installer, "ModioX.Installer.
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. But, please open an issue so we can discuss things before going further so maybe we can work on this together!
 
 ## Requesting Mods
-I understand that currently not all mods will be available, so I welcome you to please use the **Request Mods** to open an issue with the details and they will be submitted by someone on your behalf.
+I understand that currently not all mods known will be available, so I welcome you to please use the **Request Mods** to open an issue with the details and they will be submitted by someone on your behalf.
 
 ## Credits / Libraries
-- Appropriate Authors of the Mods
+- Appropriate Authors of all Mods
 - DarkUI for WinForms
 - Newtonsoft.Json
+- Log4net
 
 ## Disclaimer
 I can accept no responsibility for any damage you cause to your system by using this tool. Follow the instructions so you shouldn't have any issues.
