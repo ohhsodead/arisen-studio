@@ -1,6 +1,6 @@
 <h1 align="center">ModioX</h1>
 
-A federated desktop application for browsing a regularly updated library of mods, homebrew and themes for the PlayStation 3. Database is populated by myself, few friends and now awesome contributors, so that they're all verified and tested to work. One core purpose is to provide an efficient method for browsing, downloading and installing game mods directly to their console, without the need for searching modding forums or using file managers - this does it all for you, with ease.
+A federated desktop application to browse through a regularly updated library of mods, homebrew and themes for the PlayStation 3. Populated by myself, few friends and awesome contributors, so that they're all verified and tested to work. One core purpose is to provide an efficient tool for browsing, downloading and installing mods directly to games on the console, without the need to dig up forums or use file managers - this aims to do it all for you. 
 
 ![ModioX](https://github.com/ohhsoash/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
 
@@ -9,12 +9,11 @@ A federated desktop application for browsing a regularly updated library of mods
 * Access huge database of mods
 * Complete with info, creator, version, etc.
 * Sorted by games and categories
-* Filter by firmware and mod type
-* Download archive to your computer
+* Filter by firmware and mod types
+* Download archives to your computer
 * Install mods directly to games
-* Automatically detects game region
-* Supports uploading any other files
-* File explorer with upload, delete, etc. 
+* Automatically detect game region
+* File explorer with upload, delete, etc.
 * Save multiple console profiles
 
 ## Usage
