@@ -6,7 +6,7 @@ A federated desktop application designed to browse through a regularly updated l
 
 ## Features
 * Fast, lightweight and simple to use
-* Access huge database of mods
+* Access a huge database of mods
 * Complete with info, creator, version, etc.
 * Sorted by games and categories
 * Filter by firmware and mod types
