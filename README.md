@@ -40,11 +40,11 @@ A simple ftp client is included, which allows for easily navigating both compute
 ### Reporting Issues
 It's encouraged to submit reports of any issues that may occur with mods or files, whether that's ingame or installing. It will be looked into by someone and fixed as soon as we can. 
 
-## ModioX Installation
+## Installation
 Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsoash/ModioX/releases/latest) page.
 
 ## Contributing
-You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. But, please open an issue so we can discuss things before going further so maybe we can work on this together!
+You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further so maybe we can work on this together!
 
 ## Requesting Mods
 I understand that currently not all mods known will be available, so I welcome you to please use the **Request Mods** to open an issue with the details and they will be submitted by someone on your behalf.
