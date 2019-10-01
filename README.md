@@ -1,6 +1,6 @@
 <h1 align="left">ModioX</h1>
 
-An open source desktop application designed to easily browse through a regularly updated library of game mods, homebrew and themes for the PlayStation 3. Populated by myself, few friends and awesome contributors, so that they're all verified and tested to work. It also utilizes and includes an efficient ftp client, which allows for being able to install modded files directly to games using a set of installation paths with ease, all without the need to dig up old threads or use file managers - this aims to do everything for you. 
+An open source desktop application designed to easily browse through a regularly updated library of game mods, homebrew and themes for the PlayStation 3. Populated by myself, few friends and awesome contributors, so that they're all verified and tested to work. It also utilizes and includes the ftp client, which allows for an efficient tool for being able to install modded files directly to games using a set of installation paths, without the need to dig up threads or using file managers - this aims to do everything for you. 
 
 ![ModioX](https://github.com/ohhsoash/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
 
@@ -26,15 +26,14 @@ An open source desktop application designed to easily browse through a regularly
 Firstly, under _Settings_ > _Edit Consoles_ you can add your console name and address to the list, for when you're ready to connect and upload files. Your address can be found under **System Information** on the console.
 
 ### Installing Mods
-It's important to note that before install any files, ensure that your console is either at the xmb screen or with Rebug Toolbox open (and not connected to psn to be safe).
+It's important to note that before install any files, ensure that your console is either at the xmb screen or with Rebug Toolbox open (and to be safe, not connected to psn).
 
-A compressed archive containing the modded files and a set of installation paths are included by default with each, so the **Install** process will be to the appropriate paths to work as instructed/intended.
+A compressed archive containing the modded files and a set of installation paths are included by default with each, so the **Install** process will be done to the appropriate paths in order for the mods to work as instructed/intended.
 
 ### Uninstalling Mods
-I would suggest you backup your original game files before installing mods, in case the mods fail to work for your system. So, the **Uninstall** option is still being worked on, to allow for this process to be automatic. But for now it will remove the specified installation files, except for those installed into your game folders, as it could cause issues for missing files. You can use the file explorer to re-install the original backed-up files to the game folder. 
+I would suggest you backup your original game files before installing mods, in case the mods fail to work for your system. So, the **Uninstall** option is still being worked on, to allow for this process to be automatic.
 
-### File Explorer
-A simple ftp client is included, which allows for easily navigating both computer and console file systems. Go through your computer folders and choose your file, do the same to your console folders to where you'd like the file to be, then hit **Upload**, you can otherwise download or delete filees. Hopefully other features soon for this soon. 
+For now it will remove the specified installation files, except for those installed into your game folders, as it could cause issues for missing files. You can use the file explorer to re-install the original backed-up files to the game folder. 
 
 ### Reporting Issues
 It's encouraged to submit reports of any issues that may occur with mods or files, whether that's ingame or installing. It will be looked into by someone and fixed as soon as we can. 
