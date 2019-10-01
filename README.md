@@ -23,7 +23,7 @@ An open source desktop application designed to easily browse through a regularly
 * PlayStation 3 with CFW
 
 ### Getting Started
-Firstly, under _Settings_ > _Edit Consoles_ you can add your console name and address to the list, for when you're ready to connect and upload files. Your address can be found under **System Information** on the console.
+Firstly, under _Settings_ > _Edit Consoles_ to show the profiles window, enter console name and address and add to the list. Your address can be found under **System Information** on the console. You can hit *Connect* once you're ready to install files.
 
 ### Installing Mods
 It's important to note that before install any files, ensure that your console is either at the xmb screen or with Rebug Toolbox open (and to be safe, not connected to psn).
