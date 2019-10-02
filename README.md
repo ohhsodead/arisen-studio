@@ -1,6 +1,6 @@
 <h1 align="left">ModioX</h1>
 
-An open source desktop application designed to easily browse through a regularly updated library of game mods, resources and themes for the PlayStation 3. Populated by myself, few friends and awesome contributors, so that they're all verified and tested to work. It also utilizes and includes the ftp client, which allows for an efficient tool for being able to install modded files directly to games using a set of installation paths, without the need to dig up threads or using file managers - this aims to do everything for you. 
+An open source desktop application designed to easily browse through a regularly updated library of game mods, homebrew and themes for the PlayStation 3. Populated by myself, few friends and awesome contributors, so that they're all verified and tested to work. It also utilizes and includes the ftp client, which allows for an efficient tool for being able to install modded files directly to games using a set of installation paths, without the need to dig up threads or using file managers - this aims to do everything for you. 
 
 ![ModioX](https://github.com/ohhsoash/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
 
@@ -20,7 +20,7 @@ An open source desktop application designed to easily browse through a regularly
 
 ### Requirements
 * NET Framework 4.6.2
-* PlayStation 3 with CFW
+* Modded PlayStation 3
 
 ### Getting Started
 Firstly, under _Settings_ > _Edit Consoles_ to show the profiles window, enter console name and address and add to the list. Your address can be found under **System Information** on the console. You can hit *Connect* once you're ready to install files.
