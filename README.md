@@ -12,7 +12,7 @@ An open source desktop application designed to easily browse through a regularly
 * Filter by firmware and mod types
 * Download archives to your computer
 * Install mods files directly to games
-* Automatically detect game region
+* Detect installed game region
 * File explorer with upload, delete, etc.
 * Save multiple console profiles
 
