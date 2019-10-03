@@ -49,9 +49,9 @@ I understand that currently not all mods known will be available, so I welcome y
 
 ## Credits / Libraries
 - Appropriate Authors of all Mods
-- DarkUI for WinForms
-- Newtonsoft.Json
-- Log4net
+- [DarkUI for WinFormrs](https://github.com/RobinPerris/DarkUI)
+- [Newtonsoft.Json](https://www.newtonsoft.com/json)
+- [Apache log4net](https://logging.apache.org/log4net/)
 
 ## Disclaimer
 I can accept no responsibility for any damage you cause to your system by using this tool. Follow the instructions so you shouldn't have any issues.
