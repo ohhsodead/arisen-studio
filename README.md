@@ -11,7 +11,7 @@ An open source desktop application designed to easily browse through a regularly
 * Sorted by games and categories
 * Filter by firmware and mod types
 * Download archives to your computer
-* Install mods directly to games
+* Install mods files directly to games
 * Automatically detect game region
 * File explorer with upload, delete, etc.
 * Save multiple console profiles
