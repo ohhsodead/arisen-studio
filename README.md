@@ -36,7 +36,7 @@ I would suggest you backup your original game files before installing mods, in c
 For now it will remove the specified installation files, except for those installed into your game folders, as it could cause issues for missing files. You can use the file explorer to re-install the original backed-up files to the game folder. 
 
 ### Reporting Issues
-It's encouraged to submit reports of any issues that may occur with mods or files, whether that's ingame or installing. It will be looked into by someone and fixed as soon as we can. 
+It's encouraged to submit reports of any issues that may occur with mods or files, it will most likely be due to incompatible firmware or regions. But it'll be looked into by someone. 
 
 ## Installation
 Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsoash/ModioX/releases/latest) page.
