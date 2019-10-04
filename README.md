@@ -1,6 +1,6 @@
 <h1 align="left">ModioX</h1>
 
-An open source desktop application designed to easily browse through a regularly updated library of game mods, homebrew and themes for the PlayStation 3. Populated by myself, few friends and awesome contributors, meaning  they're all verified and tested to work. It also utilizes and includes the ftp client, which allows for an efficient tool for being able to install modded files directly to games using a set of installation paths, without the need to dig up threads or using file managers - this aims to do everything for you. 
+An open source desktop application designed to easily browse through a regularly updated library of game mods, homebrew and themes for the PlayStation 3. Populated by myself, few friends and awesome contributors, meaning  they're all verified and tested to work. It also utilizes and includes the ftp client, which allows for being able to install modded files directly to games using a set of installation paths, without the need for digging up old posts or using file managers - this aims to do everything for you. 
 
 ![ModioX](https://github.com/ohhsoash/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
 
@@ -49,7 +49,7 @@ I understand that currently not all mods known will be available, so I welcome y
 
 ## Credits / Libraries
 - Appropriate Authors of all Mods
-- [DarkUI for WinFormrs](https://github.com/RobinPerris/DarkUI)
+- [DarkUI for Winforms] (https://github.com/RobinPerris/DarkUI)
 - [Newtonsoft.Json](https://www.newtonsoft.com/json)
 - [Apache log4net](https://logging.apache.org/log4net/)
 
