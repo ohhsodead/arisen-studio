@@ -26,14 +26,14 @@ An open source desktop application designed to easily browse through a regularly
 Firstly, under _Settings_ > _Edit Consoles_ to show the profiles window, enter console name and address and add to the list. Your address can be found under **System Information** on the console. You can hit *Connect* once you're ready to install files.
 
 ### Installing Mods
-It's important to note that before install any files, ensure that your console is either at the xmb screen or with Rebug Toolbox open (and to be safe, not connected to psn).
+It's important to note that before installing any files, ensure that the console is either at the xmb screen or with Rebug Toolbox open (and to be safe, not connected to psn).
 
-A compressed archive containing the modded files and a set of installation paths are included by default with each, so the **Install** process will be done to the appropriate paths in order for the mods to work as instructed/intended.
+A compressed archive containing the modded files and a set of installation paths are included by default with each of the mods, so the installation process will be done at the appropriate paths in order for mods to work as instructed/intended.
 
 ### Uninstalling Mods
-I would suggest you backup your original game files before installing mods, in case the mods fail to work for your system. So, the **Uninstall** option is still being worked on, to allow for this process to be automatic.
+I would suggest backing-up the original game files before installing mods, in the case that mods fail to work. So, this option is still being worked on to be made automatic.
 
-For now it will remove the specified installation files, except for those installed into your game folders, as it could cause issues for missing files. You can use the file explorer to re-install the original backed-up files to the game folder. 
+For now it will remove the specified installation files, except for files installed into your game folders. You can use the file explorer to re-install the original files to the game. 
 
 ### Reporting Mods
 It's encouraged to submit reports of any issues that may occur with mods or files, but most likely be due to incompatible firmware or game region. 
