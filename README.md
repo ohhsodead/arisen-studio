@@ -7,7 +7,7 @@
 
 A federated desktop application for browsing a regularly updated collection of mods, homebrew and themes, populated by myself and a few friends so that almost all of them have been tested and verified to work. The core purpose is to provide users with an efficient method for browsing, downloading and installing game mods directly to their console, without the need for searching modding forums or using file managers - this does it all for you.
 
-![ModioX](https://github.com/wh1ter0se-x/ModioX/blob/master/Images/Screenshot1.png?raw=true) 
+![ModioX](https://github.com/wh1ter0se-x/ModioX/blob/master/Screenshots/Screenshot1.png?raw=true) 
 
 ## Features
 * Browse major and popular games
