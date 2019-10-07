@@ -8,11 +8,11 @@ An open source desktop application designed to easily browse through a regularly
 * Fast, lightweight and simple to use
 * Access a huge database of mods
 * Complete with info, creator, version, etc.
-* Sorted by games and categories
-* Filter by firmware and mod types
+* Sorted into games and categories
+* Filter by firmware and mod type
 * Download archives to your computer
-* Install mods files directly to games
-* Detect installed game region
+* Install modded files directly to games
+* Detect the installed game region
 * File explorer with upload, delete, etc.
 * Save multiple console profiles
 
