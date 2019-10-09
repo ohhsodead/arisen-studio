@@ -13,7 +13,7 @@ An open source desktop application designed to easily browse through a regularly
 * Download archives to your computer
 * Install modded files directly to games
 * Detect the installed game region
-* File backup and restore manager
+* Backup and restore original game files
 * Directory listings with upload, delete, etc.
 * Save multiple console profiles
 
