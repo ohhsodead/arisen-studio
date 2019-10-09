@@ -50,7 +50,7 @@ I understand that currently not all mods known will be available, so I welcome y
 
 ## Credits / Libraries
 - Appropriate Authors of all Mods
-- [DarkUI for Winforms] (https://github.com/RobinPerris/DarkUI)
+- [DarkUI for Winforms](https://github.com/RobinPerris/DarkUI)
 - [Newtonsoft.Json](https://www.newtonsoft.com/json)
 - [Apache log4net](https://logging.apache.org/log4net/)
 
