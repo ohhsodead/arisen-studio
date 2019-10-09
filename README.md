@@ -32,9 +32,9 @@ It's important to note that before installing any files, ensure that the console
 A compressed archive containing the modded files and a set of installation paths are included by default with each of the mods, so the installation process will be done at the appropriate paths in order for mods to work as instructed/intended.
 
 ### Uninstalling Mods
-I would suggest backing-up the original game files before installing mods, in the case that mods fail to work. So, this option is still being worked on to be made automatic.
+I would suggest that you backup your original game files using our backup manager before installing mods, in the case that mods fail to work you can revert as normal. 
 
-For now it will remove the specified installation files, except for files installed into your game folders. You can use the file explorer to re-install the original files to the game. 
+If you have a backup of your game files, then those will be installed. Otherwise, game files will be ignored when uninstalling mods, but any other files on the console will be removed. 
 
 ### Reporting Mods
 It's encouraged to submit reports of any issues that may occur with mods or files, but most likely be due to incompatible firmware or game region. 
