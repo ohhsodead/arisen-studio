@@ -1,18 +1,13 @@
-﻿using System;
-using System.Net;
-using System.Windows.Forms;
-using DarkUI.Collections;
-using DarkUI.Config;
-using DarkUI.Controls;
-using DarkUI.Docking;
+﻿using DarkUI.Controls;
 using DarkUI.Forms;
-using DarkUI.Renderers;
+using System;
+using System.Net;
 
 namespace ModioX.Windows
 {
-    public partial class ConsolesWindow : DarkForm
+    public partial class ProfilesForm : DarkForm
     {
-        public ConsolesWindow()
+        public ProfilesForm()
         {
             InitializeComponent();
         }
@@ -26,7 +21,7 @@ namespace ModioX.Windows
         {
             ListViewConsoles.Items.Clear();
 
-            foreach (string profile in Properties.Settings.Default.UserConsoles)
+            foreach (string profile in MainForm.SettingsData.ConsoleProfiles)
             {
                 ListViewConsoles.Items.Add(new DarkListItem() { Text = profile });
             }
@@ -54,7 +49,7 @@ namespace ModioX.Windows
                 {
                     if (IPAddress.TryParse(TextBoxAddress.Text, out var address))
                     {
-                        Properties.Settings.Default.UserConsoles.Add(TextBoxName.Text + " : " + address);
+                        MainForm.SettingsData.ConsoleProfiles.Add(TextBoxName.Text + " : " + address);
                     }
                     else
                     {
@@ -76,9 +71,9 @@ namespace ModioX.Windows
 
         private void ButtonConsoleRemove_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.UserConsoles.Count > 1)
+            if (MainForm.SettingsData.ConsoleProfiles.Count > 1)
             {
-                Properties.Settings.Default.UserConsoles.Remove(TextBoxName.Text + " : " + TextBoxAddress.Text);
+                MainForm.SettingsData.ConsoleProfiles.Remove(TextBoxName.Text + " : " + TextBoxAddress.Text);
                 LoadConsoles();
             }
             else
@@ -102,7 +97,7 @@ namespace ModioX.Windows
 
         private static bool ConsoleExists(string name)
         {
-            foreach (var profile in Properties.Settings.Default.UserConsoles)
+            foreach (var profile in MainForm.SettingsData.ConsoleProfiles)
             {
                 string[] profileDetails = profile.Split(new[] { " : " }, StringSplitOptions.RemoveEmptyEntries);
 

@@ -84,35 +84,56 @@
   <ItemGroup>
     <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Extensions\FtpConnection.cs" />
+    <Compile Include="Extensions\FtpExtensions.cs" />
     <Compile Include="Extensions\ImageExtensions.cs" />
     <Compile Include="Extensions\HttpExtensions.cs" />
     <Compile Include="Extensions\KnownFolders.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Application\Update.cs" />
     <Compile Include="Extensions\Worker.cs" />
+    <Compile Include="Models\Application\SettingsData.cs" />
+    <Compile Include="Models\Database\BackupFile.cs" />
+    <Compile Include="Windows\BackupManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BackupManagerForm.Designer.cs">
+      <DependentUpon>BackupManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditBackupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\EditBackupForm.Designer.cs">
+      <DependentUpon>EditBackupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Windows\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GamesData.cs" />
-    <Compile Include="Models\ModsData.cs" />
+    <Compile Include="Models\Database\CategoriesData.cs" />
+    <Compile Include="Models\Database\ModsData.cs" />
     <Compile Include="Extensions\Utilities.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Windows\ConsolesWindow.cs">
+    <Compile Include="Windows\ProfilesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\ConsolesWindow.Designer.cs">
-      <DependentUpon>ConsolesWindow.cs</DependentUpon>
+    <Compile Include="Windows\ProfilesForm.Designer.cs">
+      <DependentUpon>ProfilesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\RegionsWindow.cs">
+    <Compile Include="Windows\GameRegionDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\RegionsWindow.Designer.cs">
-      <DependentUpon>RegionsWindow.cs</DependentUpon>
+    <Compile Include="Windows\GameRegionDialog.Designer.cs">
+      <DependentUpon>GameRegionDialog.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Windows\BackupManagerForm.resx">
+      <DependentUpon>BackupManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\EditBackupForm.resx">
+      <DependentUpon>EditBackupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,11 +147,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Windows\ConsolesWindow.resx">
-      <DependentUpon>ConsolesWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\ProfilesForm.resx">
+      <DependentUpon>ProfilesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\RegionsWindow.resx">
-      <DependentUpon>RegionsWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\GameRegionDialog.resx">
+      <DependentUpon>GameRegionDialog.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -147,6 +168,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-add-22.png" />
+    <None Include="Resources\icons8-create-22.png" />
+    <None Include="Resources\icons8-restore-page-22.png" />
+    <None Include="Resources\icons8-edit-22.png" />
     <None Include="Resources\icons8-refresh-22.png" />
     <None Include="Resources\icons8-search-16.png" />
     <None Include="Resources\icons8-heart-outline-22.png" />

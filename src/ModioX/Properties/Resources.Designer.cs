@@ -63,9 +63,29 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_to_favorites_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8_add_to_favorites_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_create_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-create-22", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +146,16 @@ namespace ModioX.Properties {
         internal static System.Drawing.Bitmap icons8_download_from_the_cloud_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-download-from-the-cloud-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_edit_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-edit-22", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +246,16 @@ namespace ModioX.Properties {
         internal static System.Drawing.Bitmap icons8_refresh_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-refresh-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_restore_page_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-restore-page-22", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

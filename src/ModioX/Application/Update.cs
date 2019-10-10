@@ -1,14 +1,9 @@
 ﻿using ModioX.Extensions;
 using ModioX.Windows;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ModioX.Application
 {
@@ -19,15 +14,16 @@ namespace ModioX.Application
         /// <summary>
         /// Check application for update. Installs the latest installer and runs the file before closing this instance
         /// </summary>
-        public static void CheckVersion()
+        public static void CheckApplicationVersion()
         {
             try
             {
                 Program.Log.Info("Checking application for update...");
 
-                using (StreamReader sr = new StreamReader(HttpExtensions.GetStream(Utilities.ProjectVersionUrl)))
+                using (StreamReader streamReader = new StreamReader(HttpExtensions.GetStream(Utilities.ProjectVersionUrl)))
                 {
-                    Version newVersion = new Version(sr.ReadToEnd());
+                    Version newVersion = new Version(streamReader.ReadToEnd());
+
                     if (CurrentVersion.CompareTo(newVersion) < 0)
                     {
                         RunInstaller(newVersion);
@@ -40,7 +36,7 @@ namespace ModioX.Application
             }
             catch (Exception ex)
             {
-                Program.Log.Info("Failed to update : " + ex.Message, ex);
+                Program.Log.Info("Failed to update application. Message : " + ex.Message, ex);
                 System.Windows.Forms.Application.Exit();
             }
         }

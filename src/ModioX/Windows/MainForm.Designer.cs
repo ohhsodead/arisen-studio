@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ContextMenuMods = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuModsInstallToConsole = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,8 +55,9 @@
             this.LabelHeaderConfig = new System.Windows.Forms.Label();
             this.LabelConfig = new System.Windows.Forms.Label();
             this.LabelDescription = new System.Windows.Forms.Label();
-            this.DgvInstallPaths = new System.Windows.Forms.DataGridView();
-            this.ColumnModFilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SectionModsInstallFilePaths = new DarkUI.Controls.DarkSectionPanel();
+            this.DgvInstallPaths = new DarkUI.Controls.DarkDataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ButtonConnectConsole = new DarkUI.Controls.DarkButton();
             this.ScrollBarDetails = new DarkUI.Controls.DarkScrollBar();
             this.SectionArchiveInformation = new DarkUI.Controls.DarkSectionPanel();
@@ -65,8 +65,6 @@
             this.ToolStripInstallFiles = new System.Windows.Forms.ToolStripButton();
             this.ToolStripDownloadArchive = new System.Windows.Forms.ToolStripButton();
             this.ToolStripFavorite = new System.Windows.Forms.ToolStripButton();
-            this.SectionModsInstallFilePaths = new DarkUI.Controls.DarkSectionPanel();
-            this.ScrollBarInstallPaths = new DarkUI.Controls.DarkScrollBar();
             this.MenuStrip = new DarkUI.Controls.DarkMenuStrip();
             this.MenuStripFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripFileRefreshData = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,10 +98,11 @@
             this.MenuStripResourcesReddit = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripResourcesRedditPs3Hacks = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripResourcesRedditPs3Homebrew = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemTools = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemToolsGameFileBackupManager = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripContribute = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripSettingsEditConsoles = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStripSettingsEditProfiles = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuStripSettingsEnableFileManager = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripSettingsAutoDetectGameRegion = new System.Windows.Forms.ToolStripMenuItem();
@@ -124,22 +123,34 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.PanelLocalFiles = new System.Windows.Forms.Panel();
             this.DgvLocalFiles = new DarkUI.Controls.DarkDataGridView();
+            this.ColumnLocalType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLocalIcon = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnLocalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLocalSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLocalExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLocalDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ButtonLocalDirectory = new DarkUI.Controls.DarkButton();
             this.TextBoxLocalDirectory = new DarkUI.Controls.DarkTextBox();
             this.darkToolStrip5 = new DarkUI.Controls.DarkToolStrip();
             this.ToolStripLocalFiles = new DarkUI.Controls.DarkToolStrip();
-            this.ToolStripLocalDeleteFile = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripLocalUploadFile = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripLocalOpenExplorer = new System.Windows.Forms.ToolStripButton();
+            this.ToolItemLocalDeleteFile = new System.Windows.Forms.ToolStripButton();
+            this.ToolItemLocalUploadFile = new System.Windows.Forms.ToolStripButton();
+            this.ToolItemLocalOpenExplorer = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DgvConsoleFiles = new DarkUI.Controls.DarkDataGridView();
+            this.ColumnConsoleType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnConsoleIcon = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnConsoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnConsoleSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnConsoleExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnConsoleDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ButtonNavigateConsoleExplorer = new DarkUI.Controls.DarkButton();
             this.TextBoxConsoleDirectory = new DarkUI.Controls.DarkTextBox();
             this.darkToolStrip6 = new DarkUI.Controls.DarkToolStrip();
             this.ToolStripConsoleFiles = new DarkUI.Controls.DarkToolStrip();
-            this.ToolStripConsoleDownloadFile = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripConsoleDeleteFile = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripConsoleRefresh = new System.Windows.Forms.ToolStripButton();
+            this.ToolItemConsoleDownloadFile = new System.Windows.Forms.ToolStripButton();
+            this.ToolItemConsoleDeleteFile = new System.Windows.Forms.ToolStripButton();
+            this.ToolItemConsoleRefresh = new System.Windows.Forms.ToolStripButton();
             this.ContextMenuLocalFile = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuStripLocalUploadFile = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuStripLocalDeleteFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -150,7 +161,6 @@
             this.LabelSelectFirmware = new System.Windows.Forms.Label();
             this.ButtonPickRandom = new DarkUI.Controls.DarkButton();
             this.TextBoxSearch = new DarkUI.Controls.DarkTextBox();
-            this.ImageSearch = new System.Windows.Forms.PictureBox();
             this.SectionModsLibrary = new DarkUI.Controls.DarkSectionPanel();
             this.DgvMods = new DarkUI.Controls.DarkDataGridView();
             this.ColumnModsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -164,27 +174,16 @@
             this.ColumnModsFavorite = new System.Windows.Forms.DataGridViewImageColumn();
             this.SectionGamesCategories = new DarkUI.Controls.DarkSectionPanel();
             this.ListViewGamesCategories = new DarkUI.Controls.DarkListView();
-            this.ComboBoxConsole = new DarkUI.Controls.DarkComboBox();
-            this.ComboBoxFirmware = new DarkUI.Controls.DarkComboBox();
             this.ComboBoxType = new DarkUI.Controls.DarkComboBox();
-            this.ColumnLocalType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLocalIcon = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnLocalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLocalSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLocalExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLocalDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnConsoleType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnConsoleIcon = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnConsoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnConsoleSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnConsoleExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnConsoleDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ComboBoxFirmware = new DarkUI.Controls.DarkComboBox();
+            this.ComboBoxConsole = new DarkUI.Controls.DarkComboBox();
+            this.ImageSearchIcon = new System.Windows.Forms.PictureBox();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
+            this.SectionModsInstallFilePaths.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvInstallPaths)).BeginInit();
             this.SectionArchiveInformation.SuspendLayout();
             this.ToolStripArchiveInformation.SuspendLayout();
-            this.SectionModsInstallFilePaths.SuspendLayout();
             this.MenuStrip.SuspendLayout();
             this.darkToolStrip1.SuspendLayout();
             this.SectionFileExplorer.SuspendLayout();
@@ -197,10 +196,10 @@
             this.ToolStripConsoleFiles.SuspendLayout();
             this.ContextMenuLocalFile.SuspendLayout();
             this.ContextMenuConsoleFile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ImageSearch)).BeginInit();
             this.SectionModsLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).BeginInit();
             this.SectionGamesCategories.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageSearchIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // ContextMenuMods
@@ -287,7 +286,7 @@
             this.LabelSelectType.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSelectType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectType.Location = new System.Drawing.Point(869, 43);
+            this.LabelSelectType.Location = new System.Drawing.Point(785, 41);
             this.LabelSelectType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelSelectType.Name = "LabelSelectType";
             this.LabelSelectType.Size = new System.Drawing.Size(34, 15);
@@ -314,12 +313,13 @@
             this.FlowPanelDetails.Controls.Add(this.LabelHeaderConfig);
             this.FlowPanelDetails.Controls.Add(this.LabelConfig);
             this.FlowPanelDetails.Controls.Add(this.LabelDescription);
+            this.FlowPanelDetails.Controls.Add(this.SectionModsInstallFilePaths);
             this.FlowPanelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FlowPanelDetails.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.FlowPanelDetails.Location = new System.Drawing.Point(1, 25);
             this.FlowPanelDetails.Name = "FlowPanelDetails";
             this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(4, 4, 18, 2);
-            this.FlowPanelDetails.Size = new System.Drawing.Size(398, 652);
+            this.FlowPanelDetails.Size = new System.Drawing.Size(396, 537);
             this.FlowPanelDetails.TabIndex = 15;
             this.FlowPanelDetails.Scroll += new System.Windows.Forms.ScrollEventHandler(this.FlowPanelDetails_Scroll);
             // 
@@ -537,73 +537,56 @@
             this.LabelDescription.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.LabelDescription.MaximumSize = new System.Drawing.Size(404, 0);
             this.LabelDescription.Name = "LabelDescription";
-            this.LabelDescription.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.LabelDescription.Size = new System.Drawing.Size(16, 25);
+            this.LabelDescription.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.LabelDescription.Size = new System.Drawing.Size(16, 35);
             this.LabelDescription.TabIndex = 12;
             this.LabelDescription.Text = "...";
+            // 
+            // SectionModsInstallFilePaths
+            // 
+            this.SectionModsInstallFilePaths.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SectionModsInstallFilePaths.Controls.Add(this.DgvInstallPaths);
+            this.SectionModsInstallFilePaths.Location = new System.Drawing.Point(4, 206);
+            this.SectionModsInstallFilePaths.Margin = new System.Windows.Forms.Padding(0);
+            this.SectionModsInstallFilePaths.Name = "SectionModsInstallFilePaths";
+            this.SectionModsInstallFilePaths.SectionHeader = "Installation File Paths";
+            this.SectionModsInstallFilePaths.Size = new System.Drawing.Size(372, 108);
+            this.SectionModsInstallFilePaths.TabIndex = 26;
+            this.SectionModsInstallFilePaths.Visible = false;
             // 
             // DgvInstallPaths
             // 
             this.DgvInstallPaths.AllowUserToAddRows = false;
             this.DgvInstallPaths.AllowUserToDeleteRows = false;
+            this.DgvInstallPaths.AllowUserToDragDropRows = false;
+            this.DgvInstallPaths.AllowUserToPasteCells = false;
             this.DgvInstallPaths.AllowUserToResizeColumns = false;
-            this.DgvInstallPaths.AllowUserToResizeRows = false;
-            this.DgvInstallPaths.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.DgvInstallPaths.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DgvInstallPaths.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.DgvInstallPaths.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvInstallPaths.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.DgvInstallPaths.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvInstallPaths.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvInstallPaths.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.DgvInstallPaths.ColumnHeadersHeight = 23;
             this.DgvInstallPaths.ColumnHeadersVisible = false;
             this.DgvInstallPaths.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnModFilePath});
-            this.DgvInstallPaths.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Column1});
             this.DgvInstallPaths.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvInstallPaths.EnableHeadersVisualStyles = false;
-            this.DgvInstallPaths.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
             this.DgvInstallPaths.Location = new System.Drawing.Point(1, 25);
-            this.DgvInstallPaths.Margin = new System.Windows.Forms.Padding(3, 7, 3, 5);
             this.DgvInstallPaths.MultiSelect = false;
             this.DgvInstallPaths.Name = "DgvInstallPaths";
             this.DgvInstallPaths.ReadOnly = true;
-            this.DgvInstallPaths.RowHeadersVisible = false;
-            this.DgvInstallPaths.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.DgvInstallPaths.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.DgvInstallPaths.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DgvInstallPaths.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Gainsboro;
-            this.DgvInstallPaths.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.DgvInstallPaths.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.DgvInstallPaths.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Gainsboro;
-            this.DgvInstallPaths.RowTemplate.Height = 24;
-            this.DgvInstallPaths.RowTemplate.ReadOnly = true;
-            this.DgvInstallPaths.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvInstallPaths.RowHeadersWidth = 41;
             this.DgvInstallPaths.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvInstallPaths.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvInstallPaths.ShowCellToolTips = false;
-            this.DgvInstallPaths.ShowEditingIcon = false;
-            this.DgvInstallPaths.Size = new System.Drawing.Size(380, 72);
-            this.DgvInstallPaths.TabIndex = 17;
-            this.DgvInstallPaths.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
-            this.DgvInstallPaths.Scroll += new System.Windows.Forms.ScrollEventHandler(this.DgvInstallPaths_Scroll);
+            this.DgvInstallPaths.Size = new System.Drawing.Size(370, 82);
+            this.DgvInstallPaths.TabIndex = 28;
             // 
-            // ColumnModFilePath
+            // Column1
             // 
-            this.ColumnModFilePath.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnModFilePath.HeaderText = "Install Paths";
-            this.ColumnModFilePath.Name = "ColumnModFilePath";
-            this.ColumnModFilePath.ReadOnly = true;
-            this.ColumnModFilePath.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.HeaderText = "Install FIle Path";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // ButtonConnectConsole
             // 
-            this.ButtonConnectConsole.Location = new System.Drawing.Point(229, 39);
+            this.ButtonConnectConsole.Location = new System.Drawing.Point(220, 37);
             this.ButtonConnectConsole.Name = "ButtonConnectConsole";
             this.ButtonConnectConsole.Size = new System.Drawing.Size(77, 24);
             this.ButtonConnectConsole.TabIndex = 1;
@@ -614,9 +597,9 @@
             // 
             this.ScrollBarDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ScrollBarDetails.Location = new System.Drawing.Point(1367, 87);
+            this.ScrollBarDetails.Location = new System.Drawing.Point(380, 25);
             this.ScrollBarDetails.Name = "ScrollBarDetails";
-            this.ScrollBarDetails.Size = new System.Drawing.Size(17, 662);
+            this.ScrollBarDetails.Size = new System.Drawing.Size(17, 537);
             this.ScrollBarDetails.TabIndex = 1133;
             this.ScrollBarDetails.Text = "darkScrollBar1";
             this.ScrollBarDetails.ViewSize = 1;
@@ -626,12 +609,13 @@
             // 
             this.SectionArchiveInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.SectionArchiveInformation.Controls.Add(this.ScrollBarDetails);
             this.SectionArchiveInformation.Controls.Add(this.FlowPanelDetails);
             this.SectionArchiveInformation.Controls.Add(this.ToolStripArchiveInformation);
-            this.SectionArchiveInformation.Location = new System.Drawing.Point(985, 70);
+            this.SectionArchiveInformation.Location = new System.Drawing.Point(900, 68);
             this.SectionArchiveInformation.Name = "SectionArchiveInformation";
             this.SectionArchiveInformation.SectionHeader = "Mods Information";
-            this.SectionArchiveInformation.Size = new System.Drawing.Size(400, 715);
+            this.SectionArchiveInformation.Size = new System.Drawing.Size(398, 600);
             this.SectionArchiveInformation.TabIndex = 12;
             // 
             // ToolStripArchiveInformation
@@ -646,10 +630,10 @@
             this.ToolStripInstallFiles,
             this.ToolStripDownloadArchive,
             this.ToolStripFavorite});
-            this.ToolStripArchiveInformation.Location = new System.Drawing.Point(1, 677);
+            this.ToolStripArchiveInformation.Location = new System.Drawing.Point(1, 562);
             this.ToolStripArchiveInformation.Name = "ToolStripArchiveInformation";
             this.ToolStripArchiveInformation.Padding = new System.Windows.Forms.Padding(5, 0, 1, 0);
-            this.ToolStripArchiveInformation.Size = new System.Drawing.Size(398, 37);
+            this.ToolStripArchiveInformation.Size = new System.Drawing.Size(396, 37);
             this.ToolStripArchiveInformation.TabIndex = 16;
             this.ToolStripArchiveInformation.TabStop = true;
             this.ToolStripArchiveInformation.Text = "darkToolStrip2";
@@ -675,7 +659,6 @@
             this.ToolStripDownloadArchive.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolStripDownloadArchive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ToolStripDownloadArchive.Image = global::ModioX.Properties.Resources.icons8_download_from_the_cloud_22;
-            this.ToolStripDownloadArchive.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.ToolStripDownloadArchive.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripDownloadArchive.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolStripDownloadArchive.Margin = new System.Windows.Forms.Padding(0, 9, 4, 1);
@@ -690,36 +673,13 @@
             this.ToolStripFavorite.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolStripFavorite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ToolStripFavorite.Image = global::ModioX.Properties.Resources.icons8_heart_outline_22;
-            this.ToolStripFavorite.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.ToolStripFavorite.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripFavorite.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripFavorite.Margin = new System.Windows.Forms.Padding(0, 9, 4, 1);
+            this.ToolStripFavorite.Margin = new System.Windows.Forms.Padding(0, 9, 4, 0);
             this.ToolStripFavorite.Name = "ToolStripFavorite";
-            this.ToolStripFavorite.Size = new System.Drawing.Size(79, 27);
+            this.ToolStripFavorite.Size = new System.Drawing.Size(79, 28);
             this.ToolStripFavorite.Text = "Favorite";
             this.ToolStripFavorite.Click += new System.EventHandler(this.ToolStripFavorite_Click);
-            // 
-            // SectionModsInstallFilePaths
-            // 
-            this.SectionModsInstallFilePaths.Controls.Add(this.ScrollBarInstallPaths);
-            this.SectionModsInstallFilePaths.Controls.Add(this.DgvInstallPaths);
-            this.SectionModsInstallFilePaths.Location = new System.Drawing.Point(981, 617);
-            this.SectionModsInstallFilePaths.Name = "SectionModsInstallFilePaths";
-            this.SectionModsInstallFilePaths.SectionHeader = "Installation File Paths";
-            this.SectionModsInstallFilePaths.Size = new System.Drawing.Size(382, 98);
-            this.SectionModsInstallFilePaths.TabIndex = 16;
-            this.SectionModsInstallFilePaths.Visible = false;
-            // 
-            // ScrollBarInstallPaths
-            // 
-            this.ScrollBarInstallPaths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ScrollBarInstallPaths.Location = new System.Drawing.Point(364, 34);
-            this.ScrollBarInstallPaths.Name = "ScrollBarInstallPaths";
-            this.ScrollBarInstallPaths.Size = new System.Drawing.Size(17, 63);
-            this.ScrollBarInstallPaths.TabIndex = 1144;
-            this.ScrollBarInstallPaths.Text = "darkScrollBar3";
-            this.ScrollBarInstallPaths.ViewSize = 40;
-            this.ScrollBarInstallPaths.ValueChanged += new System.EventHandler<DarkUI.Controls.ScrollValueEventArgs>(this.ScrollBarInstallPaths_ValueChanged);
             // 
             // MenuStrip
             // 
@@ -730,14 +690,14 @@
             this.MenuStripFile,
             this.MenuStripApplications,
             this.resourcesToolStripMenuItem,
-            this.toolsToolStripMenuItem,
+            this.MenuItemTools,
             this.MenuStripContribute,
             this.MenuStripSettings,
             this.MenuStripHelp});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
             this.MenuStrip.Padding = new System.Windows.Forms.Padding(6, 9, 3, 2);
-            this.MenuStrip.Size = new System.Drawing.Size(1396, 30);
+            this.MenuStrip.Size = new System.Drawing.Size(1310, 30);
             this.MenuStrip.TabIndex = 1140;
             this.MenuStrip.Text = "darkMenuStrip1";
             // 
@@ -755,6 +715,7 @@
             // 
             // MenuStripFileRefreshData
             // 
+            this.MenuStripFileRefreshData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripFileRefreshData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripFileRefreshData.Name = "MenuStripFileRefreshData";
             this.MenuStripFileRefreshData.Size = new System.Drawing.Size(140, 22);
@@ -770,6 +731,7 @@
             // 
             // MenuStripFileExit
             // 
+            this.MenuStripFileExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripFileExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripFileExit.Name = "MenuStripFileExit";
             this.MenuStripFileExit.Size = new System.Drawing.Size(140, 22);
@@ -788,6 +750,7 @@
             // 
             // MenuStripApplicationsCCAPI
             // 
+            this.MenuStripApplicationsCCAPI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripApplicationsCCAPI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripApplicationsCCAPI.Name = "MenuStripApplicationsCCAPI";
             this.MenuStripApplicationsCCAPI.Size = new System.Drawing.Size(204, 22);
@@ -810,6 +773,7 @@
             // 
             // MenuStripResourcesCustomFirmware
             // 
+            this.MenuStripResourcesCustomFirmware.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripResourcesCustomFirmware.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuStripResourcesCustomFirmwareRebug});
             this.MenuStripResourcesCustomFirmware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
@@ -819,6 +783,7 @@
             // 
             // MenuStripResourcesCustomFirmwareRebug
             // 
+            this.MenuStripResourcesCustomFirmwareRebug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripResourcesCustomFirmwareRebug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripResourcesCustomFirmwareRebug.Name = "MenuStripResourcesCustomFirmwareRebug";
             this.MenuStripResourcesCustomFirmwareRebug.Size = new System.Drawing.Size(108, 22);
@@ -827,6 +792,7 @@
             // 
             // moddingForumsToolStripMenuItem
             // 
+            this.moddingForumsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.moddingForumsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuStripResourcesForumsPsxPlace,
             this.pSXSceneToolStripMenuItem,
@@ -840,6 +806,7 @@
             // 
             // MenuStripResourcesForumsPsxPlace
             // 
+            this.MenuStripResourcesForumsPsxPlace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripResourcesForumsPsxPlace.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuStripResourcesForumsPsxPlacePs3Mods,
             this.MenuStripResourcesForumsPsxPlaceGameMods});
@@ -866,6 +833,7 @@
             // 
             // pSXSceneToolStripMenuItem
             // 
+            this.pSXSceneToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.pSXSceneToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuStripResourcesForumsPsxScenePs3Mods,
             this.MenuStripResourcesForumsPsxSceneGameMods});
@@ -892,6 +860,7 @@
             // 
             // MenuStripResourcesNguPs3Mods
             // 
+            this.MenuStripResourcesNguPs3Mods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripResourcesNguPs3Mods.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuStripResourcesForumsNguPs3Mods});
             this.MenuStripResourcesNguPs3Mods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
@@ -909,6 +878,7 @@
             // 
             // se7enSinsPS3ModsToolStripMenuItem
             // 
+            this.se7enSinsPS3ModsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.se7enSinsPS3ModsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pS3ModsToolStripMenuItem,
             this.gameModsToolStripMenuItem});
@@ -935,6 +905,7 @@
             // 
             // theTechGameToolStripMenuItem
             // 
+            this.theTechGameToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.theTechGameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pS3ModsToolStripMenuItem3,
             this.gameModsToolStripMenuItem2});
@@ -961,6 +932,7 @@
             // 
             // MenuStripResourcesGames
             // 
+            this.MenuStripResourcesGames.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripResourcesGames.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuStripResourcesGamesPsnDLv3,
             this.MenuStripResourcesGamesNoPsv2});
@@ -971,6 +943,7 @@
             // 
             // MenuStripResourcesGamesPsnDLv3
             // 
+            this.MenuStripResourcesGamesPsnDLv3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripResourcesGamesPsnDLv3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripResourcesGamesPsnDLv3.Name = "MenuStripResourcesGamesPsnDLv3";
             this.MenuStripResourcesGamesPsnDLv3.Size = new System.Drawing.Size(170, 22);
@@ -979,6 +952,7 @@
             // 
             // MenuStripResourcesGamesNoPsv2
             // 
+            this.MenuStripResourcesGamesNoPsv2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripResourcesGamesNoPsv2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripResourcesGamesNoPsv2.Name = "MenuStripResourcesGamesNoPsv2";
             this.MenuStripResourcesGamesNoPsv2.Size = new System.Drawing.Size(170, 22);
@@ -987,6 +961,7 @@
             // 
             // homebrewToolStripMenuItem
             // 
+            this.homebrewToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.homebrewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuStripHomebrewBrewologyStore});
             this.homebrewToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
@@ -996,6 +971,7 @@
             // 
             // MenuStripHomebrewBrewologyStore
             // 
+            this.MenuStripHomebrewBrewologyStore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripHomebrewBrewologyStore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripHomebrewBrewologyStore.Name = "MenuStripHomebrewBrewologyStore";
             this.MenuStripHomebrewBrewologyStore.Size = new System.Drawing.Size(160, 22);
@@ -1004,6 +980,7 @@
             // 
             // MenuStripResourcesReddit
             // 
+            this.MenuStripResourcesReddit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripResourcesReddit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuStripResourcesRedditPs3Hacks,
             this.MenuStripResourcesRedditPs3Homebrew});
@@ -1014,6 +991,7 @@
             // 
             // MenuStripResourcesRedditPs3Hacks
             // 
+            this.MenuStripResourcesRedditPs3Hacks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripResourcesRedditPs3Hacks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripResourcesRedditPs3Hacks.Name = "MenuStripResourcesRedditPs3Hacks";
             this.MenuStripResourcesRedditPs3Hacks.Size = new System.Drawing.Size(155, 22);
@@ -1022,19 +1000,32 @@
             // 
             // MenuStripResourcesRedditPs3Homebrew
             // 
+            this.MenuStripResourcesRedditPs3Homebrew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripResourcesRedditPs3Homebrew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripResourcesRedditPs3Homebrew.Name = "MenuStripResourcesRedditPs3Homebrew";
             this.MenuStripResourcesRedditPs3Homebrew.Size = new System.Drawing.Size(155, 22);
             this.MenuStripResourcesRedditPs3Homebrew.Text = "PS3 Homebrew";
             this.MenuStripResourcesRedditPs3Homebrew.Click += new System.EventHandler(this.MenuStripResourcesRedditPs3Homebrew_Click);
             // 
-            // toolsToolStripMenuItem
+            // MenuItemTools
             // 
-            this.toolsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.toolsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 19);
-            this.toolsToolStripMenuItem.Text = "Tools";
+            this.MenuItemTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemToolsGameFileBackupManager});
+            this.MenuItemTools.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemTools.Name = "MenuItemTools";
+            this.MenuItemTools.Size = new System.Drawing.Size(46, 19);
+            this.MenuItemTools.Text = "Tools";
+            // 
+            // MenuItemToolsGameFileBackupManager
+            // 
+            this.MenuItemToolsGameFileBackupManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemToolsGameFileBackupManager.Enabled = false;
+            this.MenuItemToolsGameFileBackupManager.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.MenuItemToolsGameFileBackupManager.Name = "MenuItemToolsGameFileBackupManager";
+            this.MenuItemToolsGameFileBackupManager.Size = new System.Drawing.Size(218, 22);
+            this.MenuItemToolsGameFileBackupManager.Text = "Game File Backup Manager";
+            this.MenuItemToolsGameFileBackupManager.Click += new System.EventHandler(this.MenuItemToolsBackupFileManager_Click);
             // 
             // MenuStripContribute
             // 
@@ -1049,7 +1040,7 @@
             // 
             this.MenuStripSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuStripSettingsEditConsoles,
+            this.MenuStripSettingsEditProfiles,
             this.toolStripSeparator1,
             this.MenuStripSettingsEnableFileManager,
             this.MenuStripSettingsAutoDetectGameRegion,
@@ -1059,16 +1050,18 @@
             this.MenuStripSettings.Size = new System.Drawing.Size(61, 19);
             this.MenuStripSettings.Text = "Settings";
             // 
-            // MenuStripSettingsEditConsoles
+            // MenuStripSettingsEditProfiles
             // 
-            this.MenuStripSettingsEditConsoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripSettingsEditConsoles.Name = "MenuStripSettingsEditConsoles";
-            this.MenuStripSettingsEditConsoles.Size = new System.Drawing.Size(223, 22);
-            this.MenuStripSettingsEditConsoles.Text = "Edit Consoles...";
-            this.MenuStripSettingsEditConsoles.Click += new System.EventHandler(this.MenuStripSettingsEditConsoles_Click);
+            this.MenuStripSettingsEditProfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuStripSettingsEditProfiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuStripSettingsEditProfiles.Name = "MenuStripSettingsEditProfiles";
+            this.MenuStripSettingsEditProfiles.Size = new System.Drawing.Size(223, 22);
+            this.MenuStripSettingsEditProfiles.Text = "Edit Profiles...";
+            this.MenuStripSettingsEditProfiles.Click += new System.EventHandler(this.MenuStripSettingsEditConsoles_Click);
             // 
             // toolStripSeparator1
             // 
+            this.toolStripSeparator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.toolStripSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -1076,6 +1069,7 @@
             // 
             // MenuStripSettingsEnableFileManager
             // 
+            this.MenuStripSettingsEnableFileManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripSettingsEnableFileManager.Checked = true;
             this.MenuStripSettingsEnableFileManager.CheckOnClick = true;
             this.MenuStripSettingsEnableFileManager.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -1087,6 +1081,7 @@
             // 
             // MenuStripSettingsAutoDetectGameRegion
             // 
+            this.MenuStripSettingsAutoDetectGameRegion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripSettingsAutoDetectGameRegion.Checked = true;
             this.MenuStripSettingsAutoDetectGameRegion.CheckOnClick = true;
             this.MenuStripSettingsAutoDetectGameRegion.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -1099,6 +1094,7 @@
             // 
             // MenuStripSettingsSaveCurrentLocalDirectory
             // 
+            this.MenuStripSettingsSaveCurrentLocalDirectory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripSettingsSaveCurrentLocalDirectory.Checked = true;
             this.MenuStripSettingsSaveCurrentLocalDirectory.CheckOnClick = true;
             this.MenuStripSettingsSaveCurrentLocalDirectory.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -1123,6 +1119,7 @@
             // 
             // MenuStripHelpSourceCode
             // 
+            this.MenuStripHelpSourceCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripHelpSourceCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripHelpSourceCode.Name = "MenuStripHelpSourceCode";
             this.MenuStripHelpSourceCode.Size = new System.Drawing.Size(154, 22);
@@ -1131,6 +1128,7 @@
             // 
             // MenuStripHelpReportIssue
             // 
+            this.MenuStripHelpReportIssue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripHelpReportIssue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripHelpReportIssue.Name = "MenuStripHelpReportIssue";
             this.MenuStripHelpReportIssue.Size = new System.Drawing.Size(154, 22);
@@ -1139,6 +1137,7 @@
             // 
             // MenuStripHelpSeperator0
             // 
+            this.MenuStripHelpSeperator0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripHelpSeperator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripHelpSeperator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.MenuStripHelpSeperator0.Name = "MenuStripHelpSeperator0";
@@ -1146,6 +1145,7 @@
             // 
             // MenuStripHelpAboutApp
             // 
+            this.MenuStripHelpAboutApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripHelpAboutApp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripHelpAboutApp.Name = "MenuStripHelpAboutApp";
             this.MenuStripHelpAboutApp.Size = new System.Drawing.Size(154, 22);
@@ -1166,10 +1166,10 @@
             this.toolStripSeparator3,
             this.ToolStripLabelStatus,
             this.ToolStripLabelStats});
-            this.darkToolStrip1.Location = new System.Drawing.Point(0, 792);
+            this.darkToolStrip1.Location = new System.Drawing.Point(0, 673);
             this.darkToolStrip1.Name = "darkToolStrip1";
-            this.darkToolStrip1.Padding = new System.Windows.Forms.Padding(10, 0, 6, 7);
-            this.darkToolStrip1.Size = new System.Drawing.Size(1396, 30);
+            this.darkToolStrip1.Padding = new System.Windows.Forms.Padding(10, 0, 6, 5);
+            this.darkToolStrip1.Size = new System.Drawing.Size(1310, 29);
             this.darkToolStrip1.TabIndex = 1146;
             this.darkToolStrip1.Text = "darkToolStrip1";
             // 
@@ -1178,7 +1178,7 @@
             this.ToolStripLabelConnectedConsole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ToolStripLabelConnectedConsole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ToolStripLabelConnectedConsole.Name = "ToolStripLabelConnectedConsole";
-            this.ToolStripLabelConnectedConsole.Size = new System.Drawing.Size(96, 20);
+            this.ToolStripLabelConnectedConsole.Size = new System.Drawing.Size(96, 21);
             this.ToolStripLabelConnectedConsole.Text = "PS3 Connected  :";
             // 
             // ToolStripLabelConsole
@@ -1186,7 +1186,7 @@
             this.ToolStripLabelConsole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ToolStripLabelConsole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ToolStripLabelConsole.Name = "ToolStripLabelConsole";
-            this.ToolStripLabelConsole.Size = new System.Drawing.Size(36, 20);
+            this.ToolStripLabelConsole.Size = new System.Drawing.Size(36, 21);
             this.ToolStripLabelConsole.Text = "None";
             // 
             // toolStripSeparator3
@@ -1195,14 +1195,14 @@
             this.toolStripSeparator3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 24);
             // 
             // ToolStripLabelStatus
             // 
             this.ToolStripLabelStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ToolStripLabelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ToolStripLabelStatus.Name = "ToolStripLabelStatus";
-            this.ToolStripLabelStatus.Size = new System.Drawing.Size(85, 20);
+            this.ToolStripLabelStatus.Size = new System.Drawing.Size(85, 21);
             this.ToolStripLabelStatus.Text = "Loading data...";
             // 
             // ToolStripLabelStats
@@ -1212,14 +1212,14 @@
             this.ToolStripLabelStats.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ToolStripLabelStats.Margin = new System.Windows.Forms.Padding(0, 1, 3, 2);
             this.ToolStripLabelStats.Name = "ToolStripLabelStats";
-            this.ToolStripLabelStats.Size = new System.Drawing.Size(567, 20);
+            this.ToolStripLabelStats.Size = new System.Drawing.Size(567, 21);
             this.ToolStripLabelStats.Text = "## Mods for ## Games, ## Game Updates, ## Homebrew Packages, ## Resources && ## A" +
     "wesome Themes";
             // 
             // ButtonRequestMods
             // 
             this.ButtonRequestMods.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonRequestMods.Location = new System.Drawing.Point(1086, 39);
+            this.ButtonRequestMods.Location = new System.Drawing.Point(1001, 37);
             this.ButtonRequestMods.Name = "ButtonRequestMods";
             this.ButtonRequestMods.Size = new System.Drawing.Size(100, 24);
             this.ButtonRequestMods.TabIndex = 6;
@@ -1231,10 +1231,10 @@
             this.SectionFileExplorer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SectionFileExplorer.Controls.Add(this.tableLayoutPanel1);
-            this.SectionFileExplorer.Location = new System.Drawing.Point(12, 518);
+            this.SectionFileExplorer.Location = new System.Drawing.Point(12, 412);
             this.SectionFileExplorer.Name = "SectionFileExplorer";
             this.SectionFileExplorer.SectionHeader = "File Explorer";
-            this.SectionFileExplorer.Size = new System.Drawing.Size(967, 268);
+            this.SectionFileExplorer.Size = new System.Drawing.Size(882, 256);
             this.SectionFileExplorer.TabIndex = 17;
             // 
             // tableLayoutPanel1
@@ -1249,8 +1249,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 242F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(965, 242);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(880, 230);
             this.tableLayoutPanel1.TabIndex = 1156;
             // 
             // PanelLocalFiles
@@ -1263,7 +1263,7 @@
             this.PanelLocalFiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelLocalFiles.Location = new System.Drawing.Point(3, 3);
             this.PanelLocalFiles.Name = "PanelLocalFiles";
-            this.PanelLocalFiles.Size = new System.Drawing.Size(476, 236);
+            this.PanelLocalFiles.Size = new System.Drawing.Size(434, 224);
             this.PanelLocalFiles.TabIndex = 1156;
             // 
             // DgvLocalFiles
@@ -1293,15 +1293,57 @@
             this.DgvLocalFiles.RowTemplate.Height = 26;
             this.DgvLocalFiles.RowTemplate.ReadOnly = true;
             this.DgvLocalFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvLocalFiles.Size = new System.Drawing.Size(476, 169);
+            this.DgvLocalFiles.Size = new System.Drawing.Size(434, 159);
             this.DgvLocalFiles.TabIndex = 20;
             this.DgvLocalFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLocalFiles_CellClick);
             this.DgvLocalFiles.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
             // 
+            // ColumnLocalType
+            // 
+            this.ColumnLocalType.HeaderText = "Type";
+            this.ColumnLocalType.Name = "ColumnLocalType";
+            this.ColumnLocalType.ReadOnly = true;
+            this.ColumnLocalType.Visible = false;
+            // 
+            // ColumnLocalIcon
+            // 
+            this.ColumnLocalIcon.HeaderText = "Icon";
+            this.ColumnLocalIcon.Name = "ColumnLocalIcon";
+            this.ColumnLocalIcon.ReadOnly = true;
+            this.ColumnLocalIcon.Width = 27;
+            // 
+            // ColumnLocalName
+            // 
+            this.ColumnLocalName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnLocalName.HeaderText = "Name";
+            this.ColumnLocalName.Name = "ColumnLocalName";
+            this.ColumnLocalName.ReadOnly = true;
+            // 
+            // ColumnLocalSize
+            // 
+            this.ColumnLocalSize.HeaderText = "Size";
+            this.ColumnLocalSize.Name = "ColumnLocalSize";
+            this.ColumnLocalSize.ReadOnly = true;
+            this.ColumnLocalSize.Width = 94;
+            // 
+            // ColumnLocalExtension
+            // 
+            this.ColumnLocalExtension.HeaderText = "Ext";
+            this.ColumnLocalExtension.Name = "ColumnLocalExtension";
+            this.ColumnLocalExtension.ReadOnly = true;
+            this.ColumnLocalExtension.Width = 82;
+            // 
+            // ColumnLocalDateTime
+            // 
+            this.ColumnLocalDateTime.HeaderText = "DateTime";
+            this.ColumnLocalDateTime.Name = "ColumnLocalDateTime";
+            this.ColumnLocalDateTime.ReadOnly = true;
+            this.ColumnLocalDateTime.Width = 120;
+            // 
             // ButtonLocalDirectory
             // 
             this.ButtonLocalDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonLocalDirectory.Location = new System.Drawing.Point(431, 3);
+            this.ButtonLocalDirectory.Location = new System.Drawing.Point(391, 3);
             this.ButtonLocalDirectory.Name = "ButtonLocalDirectory";
             this.ButtonLocalDirectory.Size = new System.Drawing.Size(43, 23);
             this.ButtonLocalDirectory.TabIndex = 19;
@@ -1313,10 +1355,10 @@
             this.TextBoxLocalDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxLocalDirectory.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBoxLocalDirectory.Location = new System.Drawing.Point(2, 3);
+            this.TextBoxLocalDirectory.Location = new System.Drawing.Point(0, 3);
             this.TextBoxLocalDirectory.Name = "TextBoxLocalDirectory";
             this.TextBoxLocalDirectory.ReadOnly = true;
-            this.TextBoxLocalDirectory.Size = new System.Drawing.Size(472, 23);
+            this.TextBoxLocalDirectory.Size = new System.Drawing.Size(385, 23);
             this.TextBoxLocalDirectory.TabIndex = 18;
             this.TextBoxLocalDirectory.Text = "\\";
             // 
@@ -1330,7 +1372,7 @@
             this.darkToolStrip5.Location = new System.Drawing.Point(0, 0);
             this.darkToolStrip5.Name = "darkToolStrip5";
             this.darkToolStrip5.Padding = new System.Windows.Forms.Padding(5, 0, 1, 0);
-            this.darkToolStrip5.Size = new System.Drawing.Size(476, 30);
+            this.darkToolStrip5.Size = new System.Drawing.Size(434, 30);
             this.darkToolStrip5.TabIndex = 1157;
             this.darkToolStrip5.Text = "darkToolStrip5";
             // 
@@ -1343,63 +1385,63 @@
             this.ToolStripLocalFiles.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.ToolStripLocalFiles.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ToolStripLocalFiles.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripLocalDeleteFile,
-            this.ToolStripLocalUploadFile,
-            this.ToolStripLocalOpenExplorer});
-            this.ToolStripLocalFiles.Location = new System.Drawing.Point(0, 199);
+            this.ToolItemLocalDeleteFile,
+            this.ToolItemLocalUploadFile,
+            this.ToolItemLocalOpenExplorer});
+            this.ToolStripLocalFiles.Location = new System.Drawing.Point(0, 189);
             this.ToolStripLocalFiles.Name = "ToolStripLocalFiles";
             this.ToolStripLocalFiles.Padding = new System.Windows.Forms.Padding(5, 0, 1, 0);
-            this.ToolStripLocalFiles.Size = new System.Drawing.Size(476, 37);
+            this.ToolStripLocalFiles.Size = new System.Drawing.Size(434, 35);
             this.ToolStripLocalFiles.TabIndex = 21;
             this.ToolStripLocalFiles.TabStop = true;
             this.ToolStripLocalFiles.Text = "darkToolStrip3";
             // 
-            // ToolStripLocalDeleteFile
+            // ToolItemLocalDeleteFile
             // 
-            this.ToolStripLocalDeleteFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLocalDeleteFile.Enabled = false;
-            this.ToolStripLocalDeleteFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripLocalDeleteFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLocalDeleteFile.Image = global::ModioX.Properties.Resources.icons8_delete_22;
-            this.ToolStripLocalDeleteFile.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ToolStripLocalDeleteFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripLocalDeleteFile.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLocalDeleteFile.Margin = new System.Windows.Forms.Padding(0, 9, 4, 1);
-            this.ToolStripLocalDeleteFile.Name = "ToolStripLocalDeleteFile";
-            this.ToolStripLocalDeleteFile.Size = new System.Drawing.Size(71, 27);
-            this.ToolStripLocalDeleteFile.Text = "Delete";
-            this.ToolStripLocalDeleteFile.Click += new System.EventHandler(this.ToolStripLocalDeleteFile_Click);
+            this.ToolItemLocalDeleteFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ToolItemLocalDeleteFile.Enabled = false;
+            this.ToolItemLocalDeleteFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ToolItemLocalDeleteFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ToolItemLocalDeleteFile.Image = global::ModioX.Properties.Resources.icons8_delete_22;
+            this.ToolItemLocalDeleteFile.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ToolItemLocalDeleteFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolItemLocalDeleteFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolItemLocalDeleteFile.Margin = new System.Windows.Forms.Padding(0, 9, 4, 1);
+            this.ToolItemLocalDeleteFile.Name = "ToolItemLocalDeleteFile";
+            this.ToolItemLocalDeleteFile.Size = new System.Drawing.Size(71, 25);
+            this.ToolItemLocalDeleteFile.Text = "Delete";
+            this.ToolItemLocalDeleteFile.Click += new System.EventHandler(this.ToolStripLocalDeleteFile_Click);
             // 
-            // ToolStripLocalUploadFile
+            // ToolItemLocalUploadFile
             // 
-            this.ToolStripLocalUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLocalUploadFile.Enabled = false;
-            this.ToolStripLocalUploadFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripLocalUploadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLocalUploadFile.Image = global::ModioX.Properties.Resources.icons8_upload_22;
-            this.ToolStripLocalUploadFile.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ToolStripLocalUploadFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripLocalUploadFile.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLocalUploadFile.Margin = new System.Windows.Forms.Padding(0, 9, 4, 1);
-            this.ToolStripLocalUploadFile.Name = "ToolStripLocalUploadFile";
-            this.ToolStripLocalUploadFile.Size = new System.Drawing.Size(72, 27);
-            this.ToolStripLocalUploadFile.Text = "Upload";
-            this.ToolStripLocalUploadFile.Click += new System.EventHandler(this.ToolStripLocalUploadFile_Click);
+            this.ToolItemLocalUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ToolItemLocalUploadFile.Enabled = false;
+            this.ToolItemLocalUploadFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ToolItemLocalUploadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ToolItemLocalUploadFile.Image = global::ModioX.Properties.Resources.icons8_upload_22;
+            this.ToolItemLocalUploadFile.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ToolItemLocalUploadFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolItemLocalUploadFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolItemLocalUploadFile.Margin = new System.Windows.Forms.Padding(0, 9, 4, 1);
+            this.ToolItemLocalUploadFile.Name = "ToolItemLocalUploadFile";
+            this.ToolItemLocalUploadFile.Size = new System.Drawing.Size(72, 25);
+            this.ToolItemLocalUploadFile.Text = "Upload";
+            this.ToolItemLocalUploadFile.Click += new System.EventHandler(this.ToolStripLocalUploadFile_Click);
             // 
-            // ToolStripLocalOpenExplorer
+            // ToolItemLocalOpenExplorer
             // 
-            this.ToolStripLocalOpenExplorer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLocalOpenExplorer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripLocalOpenExplorer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLocalOpenExplorer.Image = global::ModioX.Properties.Resources.icons8_opened_folder_22;
-            this.ToolStripLocalOpenExplorer.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ToolStripLocalOpenExplorer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripLocalOpenExplorer.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLocalOpenExplorer.Margin = new System.Windows.Forms.Padding(0, 9, 4, 1);
-            this.ToolStripLocalOpenExplorer.Name = "ToolStripLocalOpenExplorer";
-            this.ToolStripLocalOpenExplorer.Size = new System.Drawing.Size(113, 27);
-            this.ToolStripLocalOpenExplorer.Text = "Open Explorer";
-            this.ToolStripLocalOpenExplorer.Click += new System.EventHandler(this.ToolStripLocalOpenExplorer_Click);
+            this.ToolItemLocalOpenExplorer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ToolItemLocalOpenExplorer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ToolItemLocalOpenExplorer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ToolItemLocalOpenExplorer.Image = global::ModioX.Properties.Resources.icons8_opened_folder_22;
+            this.ToolItemLocalOpenExplorer.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ToolItemLocalOpenExplorer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolItemLocalOpenExplorer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolItemLocalOpenExplorer.Margin = new System.Windows.Forms.Padding(0, 9, 4, 1);
+            this.ToolItemLocalOpenExplorer.Name = "ToolItemLocalOpenExplorer";
+            this.ToolItemLocalOpenExplorer.Size = new System.Drawing.Size(113, 25);
+            this.ToolItemLocalOpenExplorer.Text = "Open Explorer";
+            this.ToolItemLocalOpenExplorer.Click += new System.EventHandler(this.ToolStripLocalOpenExplorer_Click);
             // 
             // panel2
             // 
@@ -1409,9 +1451,9 @@
             this.panel2.Controls.Add(this.darkToolStrip6);
             this.panel2.Controls.Add(this.ToolStripConsoleFiles);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(485, 3);
+            this.panel2.Location = new System.Drawing.Point(443, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(477, 236);
+            this.panel2.Size = new System.Drawing.Size(434, 224);
             this.panel2.TabIndex = 1157;
             // 
             // DgvConsoleFiles
@@ -1441,16 +1483,60 @@
             this.DgvConsoleFiles.RowTemplate.Height = 26;
             this.DgvConsoleFiles.RowTemplate.ReadOnly = true;
             this.DgvConsoleFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvConsoleFiles.Size = new System.Drawing.Size(477, 169);
+            this.DgvConsoleFiles.Size = new System.Drawing.Size(434, 159);
             this.DgvConsoleFiles.TabIndex = 24;
             this.DgvConsoleFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvConsoleFiles_CellClick);
             this.DgvConsoleFiles.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
+            // 
+            // ColumnConsoleType
+            // 
+            this.ColumnConsoleType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnConsoleType.HeaderText = "Type";
+            this.ColumnConsoleType.Name = "ColumnConsoleType";
+            this.ColumnConsoleType.ReadOnly = true;
+            this.ColumnConsoleType.Visible = false;
+            // 
+            // ColumnConsoleIcon
+            // 
+            this.ColumnConsoleIcon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnConsoleIcon.HeaderText = "Icon";
+            this.ColumnConsoleIcon.Name = "ColumnConsoleIcon";
+            this.ColumnConsoleIcon.ReadOnly = true;
+            this.ColumnConsoleIcon.Width = 27;
+            // 
+            // ColumnConsoleName
+            // 
+            this.ColumnConsoleName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnConsoleName.HeaderText = "Name";
+            this.ColumnConsoleName.Name = "ColumnConsoleName";
+            this.ColumnConsoleName.ReadOnly = true;
+            // 
+            // ColumnConsoleSize
+            // 
+            this.ColumnConsoleSize.HeaderText = "Size";
+            this.ColumnConsoleSize.Name = "ColumnConsoleSize";
+            this.ColumnConsoleSize.ReadOnly = true;
+            this.ColumnConsoleSize.Width = 94;
+            // 
+            // ColumnConsoleExtension
+            // 
+            this.ColumnConsoleExtension.HeaderText = "Extension";
+            this.ColumnConsoleExtension.Name = "ColumnConsoleExtension";
+            this.ColumnConsoleExtension.ReadOnly = true;
+            this.ColumnConsoleExtension.Width = 82;
+            // 
+            // ColumnConsoleDateTime
+            // 
+            this.ColumnConsoleDateTime.HeaderText = "DateTime";
+            this.ColumnConsoleDateTime.Name = "ColumnConsoleDateTime";
+            this.ColumnConsoleDateTime.ReadOnly = true;
+            this.ColumnConsoleDateTime.Width = 120;
             // 
             // ButtonNavigateConsoleExplorer
             // 
             this.ButtonNavigateConsoleExplorer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonNavigateConsoleExplorer.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.ButtonNavigateConsoleExplorer.Location = new System.Drawing.Point(437, 3);
+            this.ButtonNavigateConsoleExplorer.Location = new System.Drawing.Point(395, 3);
             this.ButtonNavigateConsoleExplorer.Name = "ButtonNavigateConsoleExplorer";
             this.ButtonNavigateConsoleExplorer.Size = new System.Drawing.Size(39, 23);
             this.ButtonNavigateConsoleExplorer.TabIndex = 23;
@@ -1462,9 +1548,9 @@
             this.TextBoxConsoleDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxConsoleDirectory.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBoxConsoleDirectory.Location = new System.Drawing.Point(2, 3);
+            this.TextBoxConsoleDirectory.Location = new System.Drawing.Point(0, 3);
             this.TextBoxConsoleDirectory.Name = "TextBoxConsoleDirectory";
-            this.TextBoxConsoleDirectory.Size = new System.Drawing.Size(438, 23);
+            this.TextBoxConsoleDirectory.Size = new System.Drawing.Size(389, 23);
             this.TextBoxConsoleDirectory.TabIndex = 22;
             this.TextBoxConsoleDirectory.Text = "/";
             // 
@@ -1478,7 +1564,7 @@
             this.darkToolStrip6.Location = new System.Drawing.Point(0, 0);
             this.darkToolStrip6.Name = "darkToolStrip6";
             this.darkToolStrip6.Padding = new System.Windows.Forms.Padding(5, 0, 1, 0);
-            this.darkToolStrip6.Size = new System.Drawing.Size(477, 30);
+            this.darkToolStrip6.Size = new System.Drawing.Size(434, 30);
             this.darkToolStrip6.TabIndex = 1155;
             this.darkToolStrip6.Text = "darkToolStrip6";
             // 
@@ -1491,63 +1577,63 @@
             this.ToolStripConsoleFiles.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.ToolStripConsoleFiles.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ToolStripConsoleFiles.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripConsoleDownloadFile,
-            this.ToolStripConsoleDeleteFile,
-            this.ToolStripConsoleRefresh});
-            this.ToolStripConsoleFiles.Location = new System.Drawing.Point(0, 199);
+            this.ToolItemConsoleDownloadFile,
+            this.ToolItemConsoleDeleteFile,
+            this.ToolItemConsoleRefresh});
+            this.ToolStripConsoleFiles.Location = new System.Drawing.Point(0, 189);
             this.ToolStripConsoleFiles.Name = "ToolStripConsoleFiles";
             this.ToolStripConsoleFiles.Padding = new System.Windows.Forms.Padding(5, 0, 1, 0);
-            this.ToolStripConsoleFiles.Size = new System.Drawing.Size(477, 37);
+            this.ToolStripConsoleFiles.Size = new System.Drawing.Size(434, 35);
             this.ToolStripConsoleFiles.TabIndex = 25;
             this.ToolStripConsoleFiles.TabStop = true;
             this.ToolStripConsoleFiles.Text = "darkToolStrip4";
             // 
-            // ToolStripConsoleDownloadFile
+            // ToolItemConsoleDownloadFile
             // 
-            this.ToolStripConsoleDownloadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripConsoleDownloadFile.Enabled = false;
-            this.ToolStripConsoleDownloadFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripConsoleDownloadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripConsoleDownloadFile.Image = global::ModioX.Properties.Resources.icons8_download_22;
-            this.ToolStripConsoleDownloadFile.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ToolStripConsoleDownloadFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripConsoleDownloadFile.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripConsoleDownloadFile.Margin = new System.Windows.Forms.Padding(0, 9, 4, 1);
-            this.ToolStripConsoleDownloadFile.Name = "ToolStripConsoleDownloadFile";
-            this.ToolStripConsoleDownloadFile.Size = new System.Drawing.Size(89, 27);
-            this.ToolStripConsoleDownloadFile.Text = "Download";
-            this.ToolStripConsoleDownloadFile.Click += new System.EventHandler(this.ToolStripConsoleDownloadFile_Click);
+            this.ToolItemConsoleDownloadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ToolItemConsoleDownloadFile.Enabled = false;
+            this.ToolItemConsoleDownloadFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ToolItemConsoleDownloadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ToolItemConsoleDownloadFile.Image = global::ModioX.Properties.Resources.icons8_download_22;
+            this.ToolItemConsoleDownloadFile.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ToolItemConsoleDownloadFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolItemConsoleDownloadFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolItemConsoleDownloadFile.Margin = new System.Windows.Forms.Padding(0, 9, 4, 1);
+            this.ToolItemConsoleDownloadFile.Name = "ToolItemConsoleDownloadFile";
+            this.ToolItemConsoleDownloadFile.Size = new System.Drawing.Size(89, 25);
+            this.ToolItemConsoleDownloadFile.Text = "Download";
+            this.ToolItemConsoleDownloadFile.Click += new System.EventHandler(this.ToolStripConsoleDownloadFile_Click);
             // 
-            // ToolStripConsoleDeleteFile
+            // ToolItemConsoleDeleteFile
             // 
-            this.ToolStripConsoleDeleteFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripConsoleDeleteFile.Enabled = false;
-            this.ToolStripConsoleDeleteFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripConsoleDeleteFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripConsoleDeleteFile.Image = global::ModioX.Properties.Resources.icons8_delete_22;
-            this.ToolStripConsoleDeleteFile.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ToolStripConsoleDeleteFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripConsoleDeleteFile.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripConsoleDeleteFile.Margin = new System.Windows.Forms.Padding(0, 9, 4, 1);
-            this.ToolStripConsoleDeleteFile.Name = "ToolStripConsoleDeleteFile";
-            this.ToolStripConsoleDeleteFile.Size = new System.Drawing.Size(71, 27);
-            this.ToolStripConsoleDeleteFile.Text = "Delete";
-            this.ToolStripConsoleDeleteFile.Click += new System.EventHandler(this.ToolStripConsoleDeleteFile_Click);
+            this.ToolItemConsoleDeleteFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ToolItemConsoleDeleteFile.Enabled = false;
+            this.ToolItemConsoleDeleteFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ToolItemConsoleDeleteFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ToolItemConsoleDeleteFile.Image = global::ModioX.Properties.Resources.icons8_delete_22;
+            this.ToolItemConsoleDeleteFile.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ToolItemConsoleDeleteFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolItemConsoleDeleteFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolItemConsoleDeleteFile.Margin = new System.Windows.Forms.Padding(0, 9, 4, 1);
+            this.ToolItemConsoleDeleteFile.Name = "ToolItemConsoleDeleteFile";
+            this.ToolItemConsoleDeleteFile.Size = new System.Drawing.Size(71, 25);
+            this.ToolItemConsoleDeleteFile.Text = "Delete";
+            this.ToolItemConsoleDeleteFile.Click += new System.EventHandler(this.ToolStripConsoleDeleteFile_Click);
             // 
-            // ToolStripConsoleRefresh
+            // ToolItemConsoleRefresh
             // 
-            this.ToolStripConsoleRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripConsoleRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripConsoleRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripConsoleRefresh.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripConsoleRefresh.Image")));
-            this.ToolStripConsoleRefresh.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ToolStripConsoleRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripConsoleRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripConsoleRefresh.Margin = new System.Windows.Forms.Padding(0, 9, 4, 1);
-            this.ToolStripConsoleRefresh.Name = "ToolStripConsoleRefresh";
-            this.ToolStripConsoleRefresh.Size = new System.Drawing.Size(77, 27);
-            this.ToolStripConsoleRefresh.Text = "Refresh";
-            this.ToolStripConsoleRefresh.Click += new System.EventHandler(this.ToolStripConsoleRefresh_Click);
+            this.ToolItemConsoleRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ToolItemConsoleRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ToolItemConsoleRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ToolItemConsoleRefresh.Image = ((System.Drawing.Image)(resources.GetObject("ToolItemConsoleRefresh.Image")));
+            this.ToolItemConsoleRefresh.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ToolItemConsoleRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolItemConsoleRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolItemConsoleRefresh.Margin = new System.Windows.Forms.Padding(0, 9, 4, 0);
+            this.ToolItemConsoleRefresh.Name = "ToolItemConsoleRefresh";
+            this.ToolItemConsoleRefresh.Size = new System.Drawing.Size(77, 26);
+            this.ToolItemConsoleRefresh.Text = "Refresh";
+            this.ToolItemConsoleRefresh.Click += new System.EventHandler(this.ToolStripConsoleRefresh_Click);
             // 
             // ContextMenuLocalFile
             // 
@@ -1625,7 +1711,7 @@
             this.LabelSelectFirmware.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSelectFirmware.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectFirmware.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectFirmware.Location = new System.Drawing.Point(732, 43);
+            this.LabelSelectFirmware.Location = new System.Drawing.Point(648, 41);
             this.LabelSelectFirmware.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelSelectFirmware.Name = "LabelSelectFirmware";
             this.LabelSelectFirmware.Size = new System.Drawing.Size(59, 15);
@@ -1635,7 +1721,7 @@
             // ButtonPickRandom
             // 
             this.ButtonPickRandom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonPickRandom.Location = new System.Drawing.Point(985, 39);
+            this.ButtonPickRandom.Location = new System.Drawing.Point(900, 37);
             this.ButtonPickRandom.Name = "ButtonPickRandom";
             this.ButtonPickRandom.Size = new System.Drawing.Size(95, 24);
             this.ButtonPickRandom.TabIndex = 5;
@@ -1646,26 +1732,14 @@
             // 
             this.TextBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBoxSearch.Location = new System.Drawing.Point(493, 39);
+            this.TextBoxSearch.Location = new System.Drawing.Point(414, 37);
             this.TextBoxSearch.Name = "TextBoxSearch";
-            this.TextBoxSearch.Size = new System.Drawing.Size(230, 23);
+            this.TextBoxSearch.Size = new System.Drawing.Size(228, 23);
             this.TextBoxSearch.TabIndex = 2;
             this.TextBoxSearch.Text = "Enter text to search...";
             this.TextBoxSearch.Click += new System.EventHandler(this.TextBoxSearch_Click);
             this.TextBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
-            // 
-            // ImageSearch
-            // 
-            this.ImageSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImageSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.ImageSearch.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ImageSearch.Image = global::ModioX.Properties.Resources.icons8_search_16;
-            this.ImageSearch.Location = new System.Drawing.Point(703, 42);
-            this.ImageSearch.Name = "ImageSearch";
-            this.ImageSearch.Size = new System.Drawing.Size(17, 17);
-            this.ImageSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ImageSearch.TabIndex = 1163;
-            this.ImageSearch.TabStop = false;
+            this.TextBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearch_KeyDown);
             // 
             // SectionModsLibrary
             // 
@@ -1673,10 +1747,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SectionModsLibrary.Controls.Add(this.DgvMods);
-            this.SectionModsLibrary.Location = new System.Drawing.Point(285, 70);
+            this.SectionModsLibrary.Location = new System.Drawing.Point(272, 68);
             this.SectionModsLibrary.Name = "SectionModsLibrary";
             this.SectionModsLibrary.SectionHeader = "Mods Library";
-            this.SectionModsLibrary.Size = new System.Drawing.Size(694, 442);
+            this.SectionModsLibrary.Size = new System.Drawing.Size(622, 338);
             this.SectionModsLibrary.TabIndex = 10;
             // 
             // DgvMods
@@ -1708,7 +1782,7 @@
             this.DgvMods.RowTemplate.Height = 24;
             this.DgvMods.RowTemplate.ReadOnly = true;
             this.DgvMods.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvMods.Size = new System.Drawing.Size(692, 416);
+            this.DgvMods.Size = new System.Drawing.Size(620, 312);
             this.DgvMods.TabIndex = 11;
             this.DgvMods.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMods_CellClick);
             this.DgvMods.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
@@ -1800,10 +1874,10 @@
             this.SectionGamesCategories.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.SectionGamesCategories.Controls.Add(this.ListViewGamesCategories);
-            this.SectionGamesCategories.Location = new System.Drawing.Point(13, 70);
+            this.SectionGamesCategories.Location = new System.Drawing.Point(13, 68);
             this.SectionGamesCategories.Name = "SectionGamesCategories";
             this.SectionGamesCategories.SectionHeader = "Categories";
-            this.SectionGamesCategories.Size = new System.Drawing.Size(266, 442);
+            this.SectionGamesCategories.Size = new System.Drawing.Size(253, 338);
             this.SectionGamesCategories.TabIndex = 8;
             // 
             // ListViewGamesCategories
@@ -1814,136 +1888,63 @@
             this.ListViewGamesCategories.ItemHeight = 24;
             this.ListViewGamesCategories.Location = new System.Drawing.Point(1, 25);
             this.ListViewGamesCategories.Name = "ListViewGamesCategories";
-            this.ListViewGamesCategories.Size = new System.Drawing.Size(264, 416);
+            this.ListViewGamesCategories.Size = new System.Drawing.Size(251, 312);
             this.ListViewGamesCategories.TabIndex = 9;
             this.ListViewGamesCategories.SelectedIndicesChanged += new System.EventHandler(this.ListViewGamesCategories_SelectedIndicesChanged);
-            // 
-            // ComboBoxConsole
-            // 
-            this.ComboBoxConsole.DrawDropdownHoverOutline = true;
-            this.ComboBoxConsole.FormattingEnabled = true;
-            this.ComboBoxConsole.Location = new System.Drawing.Point(14, 39);
-            this.ComboBoxConsole.Name = "ComboBoxConsole";
-            this.ComboBoxConsole.Size = new System.Drawing.Size(209, 24);
-            this.ComboBoxConsole.TabIndex = 0;
-            this.ComboBoxConsole.SelectedIndexChanged += new System.EventHandler(this.ComboBoxConsole_SelectedIndexChanged);
-            // 
-            // ComboBoxFirmware
-            // 
-            this.ComboBoxFirmware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxFirmware.FormattingEnabled = true;
-            this.ComboBoxFirmware.Location = new System.Drawing.Point(797, 39);
-            this.ComboBoxFirmware.Name = "ComboBoxFirmware";
-            this.ComboBoxFirmware.Size = new System.Drawing.Size(65, 24);
-            this.ComboBoxFirmware.TabIndex = 3;
-            this.ComboBoxFirmware.SelectedIndexChanged += new System.EventHandler(this.ComboBoxFirmware_SelectedIndexChanged);
             // 
             // ComboBoxType
             // 
             this.ComboBoxType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBoxType.FormattingEnabled = true;
-            this.ComboBoxType.Location = new System.Drawing.Point(909, 39);
+            this.ComboBoxType.Location = new System.Drawing.Point(825, 37);
             this.ComboBoxType.Name = "ComboBoxType";
             this.ComboBoxType.Size = new System.Drawing.Size(69, 24);
             this.ComboBoxType.TabIndex = 4;
             this.ComboBoxType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxType_SelectedIndexChanged);
             // 
-            // ColumnLocalType
+            // ComboBoxFirmware
             // 
-            this.ColumnLocalType.HeaderText = "Type";
-            this.ColumnLocalType.Name = "ColumnLocalType";
-            this.ColumnLocalType.ReadOnly = true;
-            this.ColumnLocalType.Visible = false;
+            this.ComboBoxFirmware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxFirmware.FormattingEnabled = true;
+            this.ComboBoxFirmware.Location = new System.Drawing.Point(713, 37);
+            this.ComboBoxFirmware.Name = "ComboBoxFirmware";
+            this.ComboBoxFirmware.Size = new System.Drawing.Size(65, 24);
+            this.ComboBoxFirmware.TabIndex = 3;
+            this.ComboBoxFirmware.SelectedIndexChanged += new System.EventHandler(this.ComboBoxFirmware_SelectedIndexChanged);
             // 
-            // ColumnLocalIcon
+            // ComboBoxConsole
             // 
-            this.ColumnLocalIcon.HeaderText = "Icon";
-            this.ColumnLocalIcon.Name = "ColumnLocalIcon";
-            this.ColumnLocalIcon.ReadOnly = true;
-            this.ColumnLocalIcon.Width = 27;
+            this.ComboBoxConsole.DrawDropdownHoverOutline = true;
+            this.ComboBoxConsole.FormattingEnabled = true;
+            this.ComboBoxConsole.Location = new System.Drawing.Point(13, 37);
+            this.ComboBoxConsole.Name = "ComboBoxConsole";
+            this.ComboBoxConsole.Size = new System.Drawing.Size(201, 24);
+            this.ComboBoxConsole.TabIndex = 0;
+            this.ComboBoxConsole.SelectedIndexChanged += new System.EventHandler(this.ComboBoxConsole_SelectedIndexChanged);
             // 
-            // ColumnLocalName
+            // ImageSearchIcon
             // 
-            this.ColumnLocalName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnLocalName.HeaderText = "Name";
-            this.ColumnLocalName.Name = "ColumnLocalName";
-            this.ColumnLocalName.ReadOnly = true;
-            // 
-            // ColumnLocalSize
-            // 
-            this.ColumnLocalSize.HeaderText = "Size";
-            this.ColumnLocalSize.Name = "ColumnLocalSize";
-            this.ColumnLocalSize.ReadOnly = true;
-            this.ColumnLocalSize.Width = 94;
-            // 
-            // ColumnLocalExtension
-            // 
-            this.ColumnLocalExtension.HeaderText = "Ext";
-            this.ColumnLocalExtension.Name = "ColumnLocalExtension";
-            this.ColumnLocalExtension.ReadOnly = true;
-            this.ColumnLocalExtension.Width = 82;
-            // 
-            // ColumnLocalDateTime
-            // 
-            this.ColumnLocalDateTime.HeaderText = "DateTime";
-            this.ColumnLocalDateTime.Name = "ColumnLocalDateTime";
-            this.ColumnLocalDateTime.ReadOnly = true;
-            this.ColumnLocalDateTime.Width = 120;
-            // 
-            // ColumnConsoleType
-            // 
-            this.ColumnConsoleType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnConsoleType.HeaderText = "Type";
-            this.ColumnConsoleType.Name = "ColumnConsoleType";
-            this.ColumnConsoleType.ReadOnly = true;
-            this.ColumnConsoleType.Visible = false;
-            // 
-            // ColumnConsoleIcon
-            // 
-            this.ColumnConsoleIcon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnConsoleIcon.HeaderText = "Icon";
-            this.ColumnConsoleIcon.Name = "ColumnConsoleIcon";
-            this.ColumnConsoleIcon.ReadOnly = true;
-            this.ColumnConsoleIcon.Width = 27;
-            // 
-            // ColumnConsoleName
-            // 
-            this.ColumnConsoleName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnConsoleName.HeaderText = "Name";
-            this.ColumnConsoleName.Name = "ColumnConsoleName";
-            this.ColumnConsoleName.ReadOnly = true;
-            // 
-            // ColumnConsoleSize
-            // 
-            this.ColumnConsoleSize.HeaderText = "Size";
-            this.ColumnConsoleSize.Name = "ColumnConsoleSize";
-            this.ColumnConsoleSize.ReadOnly = true;
-            this.ColumnConsoleSize.Width = 94;
-            // 
-            // ColumnConsoleExtension
-            // 
-            this.ColumnConsoleExtension.HeaderText = "Extension";
-            this.ColumnConsoleExtension.Name = "ColumnConsoleExtension";
-            this.ColumnConsoleExtension.ReadOnly = true;
-            this.ColumnConsoleExtension.Width = 82;
-            // 
-            // ColumnConsoleDateTime
-            // 
-            this.ColumnConsoleDateTime.HeaderText = "DateTime";
-            this.ColumnConsoleDateTime.Name = "ColumnConsoleDateTime";
-            this.ColumnConsoleDateTime.ReadOnly = true;
-            this.ColumnConsoleDateTime.Width = 120;
+            this.ImageSearchIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ImageSearchIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.ImageSearchIcon.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ImageSearchIcon.Image = global::ModioX.Properties.Resources.icons8_search_16;
+            this.ImageSearchIcon.Location = new System.Drawing.Point(621, 40);
+            this.ImageSearchIcon.Name = "ImageSearchIcon";
+            this.ImageSearchIcon.Size = new System.Drawing.Size(17, 17);
+            this.ImageSearchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImageSearchIcon.TabIndex = 1163;
+            this.ImageSearchIcon.TabStop = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1396, 822);
+            this.ClientSize = new System.Drawing.Size(1310, 702);
             this.Controls.Add(this.ComboBoxType);
             this.Controls.Add(this.ComboBoxFirmware);
             this.Controls.Add(this.ComboBoxConsole);
-            this.Controls.Add(this.ImageSearch);
+            this.Controls.Add(this.ImageSearchIcon);
             this.Controls.Add(this.TextBoxSearch);
             this.Controls.Add(this.ButtonPickRandom);
             this.Controls.Add(this.LabelSelectFirmware);
@@ -1951,11 +1952,9 @@
             this.Controls.Add(this.ButtonRequestMods);
             this.Controls.Add(this.ButtonConnectConsole);
             this.Controls.Add(this.darkToolStrip1);
-            this.Controls.Add(this.ScrollBarDetails);
             this.Controls.Add(this.LabelSelectType);
             this.Controls.Add(this.MenuStrip);
             this.Controls.Add(this.SectionArchiveInformation);
-            this.Controls.Add(this.SectionModsInstallFilePaths);
             this.Controls.Add(this.SectionModsLibrary);
             this.Controls.Add(this.SectionGamesCategories);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -1975,12 +1974,12 @@
             this.ContextMenuMods.ResumeLayout(false);
             this.FlowPanelDetails.ResumeLayout(false);
             this.FlowPanelDetails.PerformLayout();
+            this.SectionModsInstallFilePaths.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvInstallPaths)).EndInit();
             this.SectionArchiveInformation.ResumeLayout(false);
             this.SectionArchiveInformation.PerformLayout();
             this.ToolStripArchiveInformation.ResumeLayout(false);
             this.ToolStripArchiveInformation.PerformLayout();
-            this.SectionModsInstallFilePaths.ResumeLayout(false);
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
             this.darkToolStrip1.ResumeLayout(false);
@@ -1999,10 +1998,10 @@
             this.ToolStripConsoleFiles.PerformLayout();
             this.ContextMenuLocalFile.ResumeLayout(false);
             this.ContextMenuConsoleFile.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ImageSearch)).EndInit();
             this.SectionModsLibrary.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).EndInit();
             this.SectionGamesCategories.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ImageSearchIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2018,8 +2017,6 @@
         private System.Windows.Forms.Label LabelHeaderConfig;
         private System.Windows.Forms.Label LabelConfig;
         private System.Windows.Forms.Label LabelDescription;
-        private System.Windows.Forms.DataGridView DgvInstallPaths;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModFilePath;
         private DarkUI.Controls.DarkButton ButtonConnectConsole;
         private DarkUI.Controls.DarkScrollBar ScrollBarDetails;
         private DarkUI.Controls.DarkSectionPanel SectionArchiveInformation;
@@ -2031,10 +2028,8 @@
         private System.Windows.Forms.ToolStripMenuItem MenuStripSettingsAutoDetectGameRegion;
         private System.Windows.Forms.ToolStripMenuItem MenuStripFileRefreshData;
         private System.Windows.Forms.ToolStripMenuItem MenuStripFileExit;
-        private DarkUI.Controls.DarkSectionPanel SectionModsInstallFilePaths;
         private System.Windows.Forms.ToolStripSeparator MenuStripFileSeparator0;
-        private DarkUI.Controls.DarkScrollBar ScrollBarInstallPaths;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripSettingsEditConsoles;
+        private System.Windows.Forms.ToolStripMenuItem MenuStripSettingsEditProfiles;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private DarkUI.Controls.DarkToolStrip darkToolStrip1;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelConnectedConsole;
@@ -2116,18 +2111,18 @@
         private System.Windows.Forms.ToolStripMenuItem MenuStripResourcesRedditPs3Hacks;
         private System.Windows.Forms.ToolStripMenuItem MenuStripApplications;
         private System.Windows.Forms.ToolStripMenuItem MenuStripApplicationsCCAPI;
-        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemTools;
         private DarkUI.Controls.DarkTextBox TextBoxSearch;
-        private System.Windows.Forms.PictureBox ImageSearch;
+        private System.Windows.Forms.PictureBox ImageSearchIcon;
         private System.Windows.Forms.ToolStripButton ToolStripInstallFiles;
         private System.Windows.Forms.ToolStripButton ToolStripDownloadArchive;
         private System.Windows.Forms.ToolStripButton ToolStripFavorite;
-        private System.Windows.Forms.ToolStripButton ToolStripConsoleRefresh;
-        private System.Windows.Forms.ToolStripButton ToolStripConsoleDownloadFile;
-        private System.Windows.Forms.ToolStripButton ToolStripConsoleDeleteFile;
-        private System.Windows.Forms.ToolStripButton ToolStripLocalUploadFile;
-        private System.Windows.Forms.ToolStripButton ToolStripLocalDeleteFile;
-        private System.Windows.Forms.ToolStripButton ToolStripLocalOpenExplorer;
+        private System.Windows.Forms.ToolStripButton ToolItemConsoleRefresh;
+        private System.Windows.Forms.ToolStripButton ToolItemConsoleDownloadFile;
+        private System.Windows.Forms.ToolStripButton ToolItemConsoleDeleteFile;
+        private System.Windows.Forms.ToolStripButton ToolItemLocalUploadFile;
+        private System.Windows.Forms.ToolStripButton ToolItemLocalDeleteFile;
+        private System.Windows.Forms.ToolStripButton ToolItemLocalOpenExplorer;
         private DarkUI.Controls.DarkSectionPanel SectionModsLibrary;
         private DarkUI.Controls.DarkSectionPanel SectionGamesCategories;
         private DarkUI.Controls.DarkComboBox ComboBoxConsole;
@@ -2158,5 +2153,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnConsoleSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnConsoleExtension;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnConsoleDateTime;
+        private DarkUI.Controls.DarkSectionPanel SectionModsInstallFilePaths;
+        private DarkUI.Controls.DarkDataGridView DgvInstallPaths;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsGameFileBackupManager;
     }
 }

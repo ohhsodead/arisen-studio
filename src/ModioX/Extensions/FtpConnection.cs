@@ -218,7 +218,7 @@ namespace ModioX.Extensions
                             LastAccessTime = findFileData.ftLastAccessTime.ToDateTime(),
                             LastWriteTime = findFileData.ftLastWriteTime.ToDateTime(),
                             CreationTime = findFileData.ftCreationTime.ToDateTime(),
-                            Attributes = (FileAttributes) findFileData.dfFileAttributes
+                            Attributes = (FileAttributes)findFileData.dfFileAttributes
                         };
                     list.Add(item);
                 }
@@ -235,7 +235,7 @@ namespace ModioX.Extensions
                                 LastAccessTime = findFileData.ftLastAccessTime.ToDateTime(),
                                 LastWriteTime = findFileData.ftLastWriteTime.ToDateTime(),
                                 CreationTime = findFileData.ftCreationTime.ToDateTime(),
-                                Attributes = (FileAttributes) findFileData.dfFileAttributes
+                                Attributes = (FileAttributes)findFileData.dfFileAttributes
                             };
                         list.Add(info2);
                     }
@@ -302,7 +302,7 @@ namespace ModioX.Extensions
                         LastAccessTime = findFileData.ftLastAccessTime.ToDateTime(),
                         LastWriteTime = findFileData.ftLastWriteTime.ToDateTime(),
                         CreationTime = findFileData.ftCreationTime.ToDateTime(),
-                        Attributes = (FileAttributes) findFileData.dfFileAttributes
+                        Attributes = (FileAttributes)findFileData.dfFileAttributes
                     };
                     list.Add(item);
                 }
@@ -319,7 +319,7 @@ namespace ModioX.Extensions
                                 LastAccessTime = findFileData.ftLastAccessTime.ToDateTime(),
                                 LastWriteTime = findFileData.ftLastWriteTime.ToDateTime(),
                                 CreationTime = findFileData.ftCreationTime.ToDateTime(),
-                                Attributes = (FileAttributes) findFileData.dfFileAttributes
+                                Attributes = (FileAttributes)findFileData.dfFileAttributes
                             };
                         list.Add(info2);
                     }
@@ -947,7 +947,7 @@ namespace ModioX.Extensions
             {
                 StringBuilder lpBuffer = new StringBuilder(0xff);
                 zero = LoadLibrary("wininet.dll");
-                if (FormatMessage(0x1200, zero, errorCode, 0, lpBuffer, (uint) (lpBuffer.Capacity + 1), IntPtr.Zero) !=
+                if (FormatMessage(0x1200, zero, errorCode, 0, lpBuffer, (uint)(lpBuffer.Capacity + 1), IntPtr.Zero) !=
                     0)
                 {
                     return lpBuffer.ToString();

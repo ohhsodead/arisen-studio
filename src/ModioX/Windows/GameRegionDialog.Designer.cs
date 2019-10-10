@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Windows
 {
-    partial class RegionsWindow
+    partial class GameRegionDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegionsWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameRegionDialog));
             this.ListViewRegions = new DarkUI.Controls.DarkListView();
             this.darkSectionPanel1 = new DarkUI.Controls.DarkSectionPanel();
             this.darkSectionPanel1.SuspendLayout();
@@ -59,7 +59,7 @@
             this.darkSectionPanel1.Size = new System.Drawing.Size(161, 195);
             this.darkSectionPanel1.TabIndex = 2;
             // 
-            // RegionsWindow
+            // GameRegionsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -70,12 +70,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "RegionsWindow";
+            this.Name = "GameRegionsWindow";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Game Regions";
+            this.Load += new System.EventHandler(this.GameRegionsWindow_Load);
             this.darkSectionPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

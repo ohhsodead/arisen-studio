@@ -1,13 +1,10 @@
-﻿using System;
-using System.Globalization;
-using System.IO;
+﻿using DarkUI.Win32;
+using log4net;
+using ModioX.Windows;
+using System;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Threading;
-using System.Windows.Forms;
-using DarkUI.Win32;
-using log4net;
-using ModioX.Windows;
 
 namespace ModioX
 {
@@ -27,7 +24,7 @@ namespace ModioX
         {
             // Initialize log4net.
             log4net.Config.XmlConfigurator.Configure();
-            Log.Info("Successfully configured logging.");
+            Log.Info("Configured logging.");
 
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);

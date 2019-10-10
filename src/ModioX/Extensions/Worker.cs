@@ -37,7 +37,7 @@ namespace ModioX.Extensions
         public static void RunWorkAsync<T>(Func<T> work, Action<T> completedWork = null)
         {
             using (BackgroundWorker worker = new BackgroundWorker())
-            { 
+            {
                 worker.StartWorker(work, completedWork);
                 worker.RunWorkerAsync();
             }
@@ -68,7 +68,7 @@ namespace ModioX.Extensions
                 worker.StartWorker(work);
                 if (completed != null) { worker.RunWorkerCompleted += completed; }
                 worker.RunWorkerAsync();
-            }                
+            }
         }
     }
 }

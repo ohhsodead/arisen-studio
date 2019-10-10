@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Windows
 {
-    partial class ConsolesWindow
+    partial class ProfilesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsolesWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfilesForm));
             this.ButtonConsoleAdd = new DarkUI.Controls.DarkButton();
             this.TextBoxName = new DarkUI.Controls.DarkTextBox();
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
@@ -41,9 +41,8 @@
             // ButtonConsoleAdd
             // 
             this.ButtonConsoleAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonConsoleAdd.Location = new System.Drawing.Point(210, 30);
+            this.ButtonConsoleAdd.Location = new System.Drawing.Point(210, 31);
             this.ButtonConsoleAdd.Name = "ButtonConsoleAdd";
-            this.ButtonConsoleAdd.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonConsoleAdd.Size = new System.Drawing.Size(65, 22);
             this.ButtonConsoleAdd.TabIndex = 1133;
             this.ButtonConsoleAdd.Text = "Add";
@@ -53,11 +52,8 @@
             // 
             this.TextBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.TextBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxName.Font = new System.Drawing.Font("Consolas", 9F);
-            this.TextBoxName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxName.Location = new System.Drawing.Point(12, 30);
+            this.TextBoxName.Location = new System.Drawing.Point(12, 31);
             this.TextBoxName.Name = "TextBoxName";
             this.TextBoxName.Size = new System.Drawing.Size(192, 22);
             this.TextBoxName.TabIndex = 1134;
@@ -67,7 +63,7 @@
             // 
             this.darkLabel1.AutoSize = true;
             this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel1.Location = new System.Drawing.Point(12, 9);
+            this.darkLabel1.Location = new System.Drawing.Point(12, 10);
             this.darkLabel1.Name = "darkLabel1";
             this.darkLabel1.Size = new System.Drawing.Size(42, 15);
             this.darkLabel1.TabIndex = 1135;
@@ -77,11 +73,8 @@
             // 
             this.TextBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.TextBoxAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxAddress.Font = new System.Drawing.Font("Consolas", 9F);
-            this.TextBoxAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxAddress.Location = new System.Drawing.Point(12, 79);
+            this.TextBoxAddress.Location = new System.Drawing.Point(12, 80);
             this.TextBoxAddress.Name = "TextBoxAddress";
             this.TextBoxAddress.Size = new System.Drawing.Size(192, 22);
             this.TextBoxAddress.TabIndex = 1137;
@@ -90,9 +83,8 @@
             // ButtonConsoleRemove
             // 
             this.ButtonConsoleRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonConsoleRemove.Location = new System.Drawing.Point(210, 79);
+            this.ButtonConsoleRemove.Location = new System.Drawing.Point(210, 80);
             this.ButtonConsoleRemove.Name = "ButtonConsoleRemove";
-            this.ButtonConsoleRemove.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonConsoleRemove.Size = new System.Drawing.Size(65, 22);
             this.ButtonConsoleRemove.TabIndex = 1136;
             this.ButtonConsoleRemove.Text = "Remove";
@@ -103,9 +95,9 @@
             this.ListViewConsoles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListViewConsoles.Location = new System.Drawing.Point(12, 107);
+            this.ListViewConsoles.Location = new System.Drawing.Point(12, 108);
             this.ListViewConsoles.Name = "ListViewConsoles";
-            this.ListViewConsoles.Size = new System.Drawing.Size(263, 118);
+            this.ListViewConsoles.Size = new System.Drawing.Size(263, 121);
             this.ListViewConsoles.TabIndex = 1138;
             this.ListViewConsoles.Text = "darkListView1";
             this.ListViewConsoles.SelectedIndicesChanged += new System.EventHandler(this.ListViewConsoles_SelectedIndicesChanged);
@@ -114,7 +106,7 @@
             // 
             this.darkLabel2.AutoSize = true;
             this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel2.Location = new System.Drawing.Point(12, 58);
+            this.darkLabel2.Location = new System.Drawing.Point(12, 59);
             this.darkLabel2.Name = "darkLabel2";
             this.darkLabel2.Size = new System.Drawing.Size(73, 15);
             this.darkLabel2.TabIndex = 1139;
@@ -125,7 +117,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(287, 237);
+            this.ClientSize = new System.Drawing.Size(287, 241);
             this.Controls.Add(this.darkLabel2);
             this.Controls.Add(this.ListViewConsoles);
             this.Controls.Add(this.TextBoxAddress);
@@ -142,7 +134,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Edit Consoles";
+            this.Text = "Edit Profiles";
             this.Load += new System.EventHandler(this.ConsolesWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
