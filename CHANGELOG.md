@@ -1,5 +1,7 @@
-# Change Log
-...
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Beta 1.1.0
 Improved and cleaned the user interface, also many new features, advancements and customization for a complete built-in ftp client, with a more useful logging library and some bug fixes. 
