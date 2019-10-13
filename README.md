@@ -37,7 +37,7 @@ I would suggest that you backup your original game files using our backup manage
 If you have a backup of your game files, then those will be installed. Otherwise, game files will be ignored when uninstalling mods, but any other files on the console will be removed. 
 
 ### Reporting Mods
-It's encouraged to submit reports of any issues that may occur with mods or files, but most likely be due to incompatible firmware or game region. 
+It's encouraged to submit reports of any issues that may occur with mods or files, but could either be due to incompatible firmware or game region. 
 
 ## Installation
 Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsoash/ModioX/releases/latest) page.
