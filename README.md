@@ -1,6 +1,6 @@
 <h1 align="left">ModioX</h1>
 
-An open source desktop application designed to easily browse through a regularly updated library of game mods, homebrew and themes for the PlayStation 3. Populated by myself, few friends and awesome contributors, meaning  they're all verified and tested to work. It also utilizes and includes the ftp client, which allows for being able to install modded files directly to games using a set of installation paths, without the need for digging up old posts or using file managers - this aims to do everything for you. 
+An open source desktop application designed to easily browse through a regularly updated library of game mods, homebrew and themes for the PlayStation 3. Populated by myself, few friends and awesome contributors, meaning they're all verified and tested to work by our contributers. It also utilizes the ftp client, which allows for being able to install and uninstall modded files directly to games using a set of installation paths included with all mods, without the need for digging up old posts or using file managers - this aims to do everything for you. 
 
 ![ModioX](https://github.com/ohhsoash/ModioX/blob/master/Screenshots/Screenshot1.png?raw=true) 
 
@@ -12,9 +12,9 @@ An open source desktop application designed to easily browse through a regularly
 * Filter by firmware and mod type
 * Download archives to your computer
 * Install modded files directly to games
-* Detect the installed game region
+* Detect game region, or manually chosen
 * Backup and restore original game files
-* Directory listings with upload, delete, etc.
+* Directory listings with download, delete, etc.
 * Save multiple console profiles
 
 ## Usage
