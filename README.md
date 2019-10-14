@@ -21,7 +21,7 @@ An open source desktop application designed to easily browse through a regularly
 
 ### Requirements
 * NET Framework 4.6.2
-* Modded PlayStation 3
+* PlayStation 3 with MFW
 
 ### Getting Started
 Firstly, under _Settings_ > _Edit Consoles_ to show the profiles window, enter console name and address and add to the list. Your address can be found under **System Information** on the console. You can hit *Connect* once you're ready to install files.
