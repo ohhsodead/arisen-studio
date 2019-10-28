@@ -24,17 +24,17 @@ An open source desktop application designed to easily browse through a regularly
 * PlayStation 3 with MFW
 
 ### Getting Started
-Firstly, under _Settings_ > _Edit Consoles_ to show the profiles window, enter console name and address and add to the list. Your address can be found under **System Information** on the console. You can hit *Connect* once you're ready to install files.
+Firstly, you can add your console by going to _Settings_ > _Edit Consoles_ which opens the profiles window. Your address can be found under **System Information** on the console. Just hit *Connect* once you're ready to install mods. 
 
 ### Installing Mods
 It's important to note that before installing any files, ensure that the console is either at the xmb screen or with Rebug Toolbox open (and to be safe, not connected to psn).
 
-A compressed archive containing the modded files and a set of installation paths are included by default with each of the mods, so the installation process will be done at the appropriate paths in order for mods to work as instructed/intended.
+A compressed archive containing the necessary modded files and a set of install file paths are included by default with each mods, so the installation process will be done at the appropriate directories in order for the mods to work as instructed/intended.
 
 ### Uninstalling Mods
-I would suggest that you backup your original game files using our backup manager before installing mods, in the case that mods fail to work you can revert as normal. 
+I would suggest that you backup the original game files using our backup manager before installing mods, in the case that mods fail to work or you want to uninstall then you can revert as normal.
 
-If you have a backup of your game files, then those will be installed. Otherwise, game files will be ignored when uninstalling mods, but any other files on the console will be removed. 
+If there are game file backups, those will be restored to the game directory. Otherwise, game files will be ignored, but any other files will be removed.
 
 ### Reporting Mods
 It's encouraged to submit reports of any issues that may occur with mods or files, but could either be due to incompatible firmware or game region. 
