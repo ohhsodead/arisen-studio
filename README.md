@@ -30,12 +30,12 @@ Firstly, you can add your console by going to _Settings_ > _Edit Consoles_ to op
 ### Installing Mods
 It's important to note that before installing any files, ensure that the console is either at the xmb screen or with Rebug Toolbox open (and to be safe, not connected to psn).
 
-A compressed archive containing the required modded files (some optional) and a set of install file paths are included. So the installation process will be done at the appropriate directories for the mods to work as instructed/intended by the creators.
+A compressed archive containing the required modded files (some optional) and a set of installation file paths are included. So the installation process will be done at the appropriate directories for the mods to work as instructed/intended by the creators.
 
 ### Uninstalling Mods
 I would suggest that you backup your original game files before installing mods, then you can revert to normal state by uninstalling the modded files.
 
-If there are game file backups, those will be restored to the game directory. Otherwise, game files will be ignored and all of other files will be uninstalled. 
+If game file backups have been created then those will be restored to the game directory and all other installed files will be removed too. Otherwise, game files will be ignored.
 
 ### Reporting Mods
 It's encouraged to submit reports of any issues that may occur with mods or files, but could either be due to incompatible firmware or game region. 
