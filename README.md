@@ -20,6 +20,7 @@ An open source desktop application designed to easily browse through a regularly
 ## Usage
 
 ### Requirements
+* An internet connection
 * NET Framework 4.6.2
 * PlayStation 3 with MFW
 
