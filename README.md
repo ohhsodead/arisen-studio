@@ -1,6 +1,6 @@
 <h1 align="left">ModioX</h1>
 
-An open source desktop application designed to easily browse through a regularly updated library of game mods, homebrew, themes and more for the PlayStation 3. A collection that is populated by myself, few friends and awesome contributors, meaning they have all been teated and verified to work. It also utilizes the ftp client to install and uninstall modded files directly to games using a set of installation paths that are included with all mods. Without the need for digging up old threads or using file managers - this aims to do everything for you. 
+An open source desktop application designed to easily browse through a regularly updated database of game mods, homebrew, themes and more for the PlayStation 3. A library that is populated by myself, few friends and awesome contributors, so they have all been teated and verified to work. It also utilizes the ftp client for allowing to install and uninstall modded files directly to games. Without the need for digging up old threads or using file managers - this aims to do everything for you. 
 
 ![ModioX](https://github.com/ohhsoash/ModioX/blob/master/Screenshots/Screenshot1.png?raw=true) 
 
@@ -47,7 +47,7 @@ Download and run the latest version of the Windows installer, "ModioX.Installer.
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further so maybe we can work on this together!
 
 ## Requesting Mods
-I understand that currently not all mods known will be available, so I welcome you to please use the **Request Mods** to open an issue with the details and they will be submitted by someone on your behalf.
+I understand that not every mod is available, so I welcome you to please use the **Request Mods** to open an issue with the details and they will be submitted to our database.
 
 ## Credits / Libraries
 - Appropriate Authors of all Mods
