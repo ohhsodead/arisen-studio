@@ -10,7 +10,7 @@ An open source desktop application designed to easily browse through a regularly
 * Complete with info, creator, version, etc.
 * Filter by firmware and mod type
 * Download archives to your computer
-* Install and uninstall files anywhere
+* Install and uninstall any files to console
 * Automatic game region detection
 * Backup and restore original game files
 * Directory listings with basic commands
