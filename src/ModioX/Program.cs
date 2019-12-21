@@ -10,9 +10,6 @@ namespace ModioX
 {
     internal static class Program
     {
-        [DllImport("user32.dll")]
-        public static extern bool HideCaret(IntPtr hWnd);
-
         public static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public static readonly WebClient WebClient = new WebClient();
 
@@ -24,7 +21,7 @@ namespace ModioX
         {
             // Initialize log4net.
             log4net.Config.XmlConfigurator.Configure();
-            Log.Info("Configured logging.");
+            Log.Info("Configured logging");
 
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);

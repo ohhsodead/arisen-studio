@@ -14,6 +14,9 @@ namespace ModioX.Extensions
         {
             using (FtpConnection ftpConnection = new FtpConnection(hostAddress))
             {
+                ftpConnection.Open();
+                ftpConnection.Login();
+
                 string dirPath = consoleFile.Contains("/")
                     ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
                     : "dev_hdd0/";
@@ -43,6 +46,9 @@ namespace ModioX.Extensions
         {
             using (FtpConnection ftpConnection = new FtpConnection(hostAddress))
             {
+                ftpConnection.Open();
+                ftpConnection.Login();
+
                 string dirPath = consoleFile.Contains("/")
                     ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
                     : "/dev_hdd0/";
@@ -70,6 +76,9 @@ namespace ModioX.Extensions
         {
             using (FtpConnection ftpConnection = new FtpConnection(hostAddress))
             {
+                ftpConnection.Open();
+                ftpConnection.Login();
+
                 string dirPath = consoleFile.Contains("/")
                 ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
                 : "/dev_hdd0/";
@@ -93,6 +102,9 @@ namespace ModioX.Extensions
         {
             using (FtpConnection ftpConnection = new FtpConnection(hostAddress))
             {
+                ftpConnection.Open();
+                ftpConnection.Login();
+
                 string dirPath = consoleFile.Contains("/")
                 ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
                 : "/dev_hdd0/";

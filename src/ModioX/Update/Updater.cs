@@ -5,9 +5,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
-namespace ModioX.Application
+namespace ModioX.Updater
 {
-    internal static class Update
+    internal static class Updater
     {
         public static Version CurrentVersion { get; } = Assembly.GetExecutingAssembly().GetName().Version;
 

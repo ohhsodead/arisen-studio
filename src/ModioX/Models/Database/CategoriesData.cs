@@ -15,14 +15,16 @@ namespace ModioX.Models.Database
         public partial class Category
         {
             public string Id { get; set; }
+
             public string Title { get; set; }
+
             public string Icon { get; set; }
+
             public string[] Regions { get; set; }
 
             /// <summary>
             ///     Determines whether the game needs a region to be selected before installing mods
             /// </summary>
-            /// <param name="game">Selected game</param>
             /// <returns></returns>
             public bool RequiresRegion()
             {
@@ -78,12 +80,12 @@ namespace ModioX.Models.Database
         /// <summary>
         ///     Get the game data matching the specified title
         /// </summary>
-        /// <param name="gameId">Title of the game</param>
+        /// <param name="id">Title of the game</param>
         /// <returns>Game information</returns>
         public Category GetCategoryById(string id)
         {
             foreach (Category game in from Category game in Categories
-                                      where game.Id.Equals(id)
+                                      where game.Id.ToLower().Equals(id.ToLower())
                                       select game)
             {
                 return game;

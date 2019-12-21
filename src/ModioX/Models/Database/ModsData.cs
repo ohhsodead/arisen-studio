@@ -1,4 +1,5 @@
 ﻿using ModioX.Extensions;
+using ModioX.Windows;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,16 +16,27 @@ namespace ModioX.Models.Database
         public class ModItem
         {
             public long Id { get; set; }
+
             public string GameId { get; set; }
+
             public string Name { get; set; }
+
             public string Firmware { get; set; }
+
             public string Author { get; set; }
+
             public string SubmittedBy { get; set; }
+
             public string Version { get; set; }
+
             public string Configuration { get; set; }
+
             public string Type { get; set; }
+
             public string Description { get; set; }
+
             public string Url { get; set; }
+
             public string[] InstallPaths { get; set; }
 
             /// <summary>
@@ -62,7 +74,7 @@ namespace ModioX.Models.Database
             /// <param name="localPath">Path to downloads mods archive at folder</param>
             public void DownloadArchiveAtPath(string localPath)
             {
-                string zipFileName = string.Format("{0} v{1} ({2}).zip", Name, Version, Id);
+                string zipFileName = string.Format("{0} v{1}.zip", Name.Replace(":", ""), Version);
                 string zipFilePath = Path.Combine(localPath, zipFileName);
 
                 GenerateReadMeAtPath(GetDirectoryDownloadData());
@@ -76,6 +88,10 @@ namespace ModioX.Models.Database
                 }
             }
 
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="directoryPath"></param>
             public void GenerateReadMeAtPath(string directoryPath)
             {
                 // Create contents and write them to readme file 
@@ -103,7 +119,10 @@ namespace ModioX.Models.Database
                 File.WriteAllLines(Path.Combine(directoryPath, "README.txt"), contents);
             }
 
-
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <returns></returns>
             public string GetDirectoryGameData()
             {
                 return $@"{Utilities.AppDataPath}{GameId}\";
@@ -112,21 +131,40 @@ namespace ModioX.Models.Database
             /// <summary>
             /// Retrieves the directory structure for extracting modded files to
             /// </summary>
-            /// <param name="modItem"></param>
             /// <returns></returns>
             public string GetDirectoryDownloadData()
             {
-                return $@"{Utilities.AppDataPath}{GameId}\{Author}\{Name.Replace(":", "")} (v{Version}) ({Id})\";
+                return $@"{Utilities.AppDataPath}{GameId}\{Author}\{Name.Replace(":", "")} (v{Version})\";
             }
 
             /// <summary>
             /// 
             /// </summary>
-            /// <param name="modItem"></param>
             /// <returns></returns>
             public string GetArchiveZipFile()
             {
                 return $@"{Utilities.AppDataPath}{GameId}\{Author}\{Name.Replace(":", "")} (v{Version}) ({Id}).zip";
+            }
+        }
+
+        public List<ModItem> GetModItems(string categoryId, string firmware, string type)
+        {
+            if (categoryId.Equals("fvrt"))
+            {
+                return (from ModItem modItem in Mods
+                        where MainForm.SettingsData.FavoritedIds.Contains(modItem.Id.ToString())
+                        && modItem.Firmware.ToLower().Contains(firmware.ToLower())
+                        && modItem.Type.ToLower().Contains(type)
+                        select modItem).Distinct().ToList();
+            }
+            else
+            {
+                return (from ModItem modItem in Mods
+                        where string.Equals(modItem.GameId.ToLower(), categoryId.ToLower())
+                        //&& modItem.Name.ToLower().Contains(name)
+                        && modItem.Firmware.ToLower().Contains(firmware.ToLower())
+                        && modItem.Type.ToLower().Contains(type.ToLower())
+                        select modItem).Distinct().ToList();
             }
         }
 
@@ -137,11 +175,11 @@ namespace ModioX.Models.Database
         /// <returns>Mod information</returns>
         public ModItem GetModById(long modId)
         {
-            foreach (ModItem mod in from ModItem mod in Mods
-                                    where mod.Id == modId
-                                    select mod)
+            foreach (ModItem modItem in from ModItem modItem in Mods
+                                        where modItem.Id == modId
+                                        select modItem)
             {
-                return mod;
+                return modItem;
             }
 
             throw new Exception($"Unable to match with modId : {modId}");
@@ -151,9 +189,9 @@ namespace ModioX.Models.Database
         /// Gets mods that match the specified game id
         /// </summary>
         /// <returns></returns>
-        public ModItem[] GetModsByGameId(string gameId) => (from ModItem modItem in Mods
-                                                            where modItem.GameId.Equals(gameId)
-                                                            select modItem).ToArray();
+        public ModItem[] GetModsByCategoryId(string gameId) => (from ModItem modItem in Mods
+                                                                where modItem.GameId.Equals(gameId)
+                                                                select modItem).ToArray();
 
         /// <summary>
         /// Gets the total number of game mods

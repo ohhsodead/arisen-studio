@@ -1,15 +1,16 @@
 ﻿using DarkUI.Controls;
 using DarkUI.Forms;
 using ModioX.Extensions;
-using ModioX.Models.Application;
 using ModioX.Models.Database;
+using ModioX.Models.Resources;
 using ModioX.Properties;
+using ModioX.Windows.Connection;
+using ModioX.Windows.Custom_Mods;
 using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -33,30 +34,31 @@ namespace ModioX.Windows
         /// <summary>
         ///     Contains the selected console profile name
         /// </summary>
-        public static string ProfileName { get; set; }
+        public static ConsoleProfile ConsoleProfile { get; set; }
 
         /// <summary>
-        ///     Contains the selected console profile ip address
+        ///    Determines the connection status for the console
         /// </summary>
-        public static string ProfileIP { get; set; }
+        public static bool IsConsoleConnected { get; set; }
 
         /// <summary>
         ///     Contains the selected game data selected by the user
         /// </summary>
-        private static CategoriesData.Category SelectedCategory { get; set; }
+        public static CategoriesData.Category SelectedCategory { get; set; }
 
         /// <summary>
         ///     Contains the selected mods info selected by the user
         /// </summary>
-        private static ModsData.ModItem SelectedModItem { get; set; }
+        public static ModsData.ModItem SelectedModItem { get; set; }
 
         /// <summary>
-        ///     Whether the user's selected console has been connected
+        /// 
         /// </summary>
-        private static bool IsConnected { get; set; }
-
         public static SettingsData SettingsData { get; set; } = new SettingsData();
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static readonly string SettingsDataFile = Path.Combine(Environment.CurrentDirectory, "SettingsData.json");
 
         public MainForm()
@@ -67,23 +69,24 @@ namespace ModioX.Windows
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            Text = string.Format("ModioX - Beta {0}", Updater.Updater.CurrentVersion.ToString().Remove(0, 2));
+
             SetStatus($"Initializing application data...");
 
-            Application.Update.CheckApplicationVersion();
+            Updater.Updater.CheckApplicationVersion();
             LoadSettingsData();
             Worker.RunWorkAsync(LoadData, InitializeFinished);
 
             // Load Settings UI
             MenuStripSettingsAutoDetectGameRegion.Checked = SettingsData.AutoDetectGameRegion;
             MenuStripSettingsSaveCurrentLocalDirectory.Checked = SettingsData.SaveLocalDirectory;
-            MenuStripSettingsEnableFileManager.Checked = SettingsData.EnableFileExplorer;
-
-            LoadProfiles();
+            MenuStripSettingsEnableConsoleFileExplorer.Checked = SettingsData.EnableFileExplorer;
+            MenuStripSettingsShowModIDs.Checked = SettingsData.ShowModIds;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (IsConnected)
+            if (IsConsoleConnected)
             {
                 if (!string.IsNullOrEmpty(TextBoxLocalDirectory.Text))
                 {
@@ -112,85 +115,149 @@ namespace ModioX.Windows
 
             Categories.Categories = Categories.Categories.OrderBy(o => o.Title).ToList();
 
-            ComboBoxConsole.Enabled = true;
             ListViewGamesCategories.Items.Clear();
 
             foreach (CategoriesData.Category category in Categories.Categories)
             {
-                ListViewGamesCategories.Items.Add(new DarkListItem()
+                if (Mods.GetModsByCategoryId(category.Id).Length > 0 || category.Id.Equals("fvrt"))
                 {
-                    Tag = category.Id,
-                    Text = category.Id.Equals("fvrt") ? string.Format("{0} ({1})", category.Title, SettingsData.FavoritedIds.Count) : string.Format("{0} ({1})", category.Title, Mods.GetModsByGameId(category.Id).Length)
-                });
+                    ListViewGamesCategories.Items.Add(new DarkListItem()
+                    {
+                        Tag = category.Id,
+                        Text = category.Id.Equals("fvrt") ? string.Format("{0} ({1})", category.Title, SettingsData.FavoritedIds.Count) : string.Format("{0} ({1})", category.Title, Mods.GetModsByCategoryId(category.Id).Length)
+                    });
+                }                
             }
+
             ListViewGamesCategories.SelectItem(0);
 
-            SetComboBoxItems();
+            ComboBoxFirmware.Items.Clear(); ComboBoxFirmware.Items.Add("ANY");
+
+            foreach (ModsData.ModItem modItem in Mods.Mods)
+            {
+                if (!ComboBoxFirmware.Items.Contains(modItem.Firmware))
+                {
+                    ComboBoxFirmware.Items.Add(modItem.Firmware);
+                }
+            }
+
             ComboBoxFirmware.SelectedIndex = 0;
 
             SelectedCategory = Categories.Categories[0];
             LoadModsByCategoryId(
-                SelectedCategory.Id, 
-                "", 
-                "", 
+                SelectedCategory.Id,
+                "",
                 "");
 
             ToolStripLabelStats.Text = string.Format("{0} Mods for {1} Games, {2} Game Updates, {3} Homebrew Packages, {4} Resources && {5} Themes", Mods.TotalGameMods, Categories.TotalGames, Mods.TotalGameUpdates, Mods.TotalHomebrew, Mods.TotalResources, Mods.TotalThemes);
 
-            SetStatus($"Initialized ModioX successful (Version {Utilities.GetCurrentVersion()}) - Ready to connect to console...");
+            SetStatus($"Initialized ModioX successful (Version {Utilities.GetCurrentVersion().Remove(0, 2)}) - Ready to connect to console...");
         }
 
-        private void LoadProfiles()
+        public void ConnectConsole()
         {
-            ComboBoxConsole.Items.Clear();
+            SetStatus($"Console : {ConsoleProfile.Name} ({ConsoleProfile.Address}) - Preparing to establish a connection...");
 
-            foreach (string console in SettingsData.ConsoleProfiles)
+            FtpConnection = new FtpConnection(ConsoleProfile.Address);
+            SetStatusConsole(ConsoleProfile);
+            IsConsoleConnected = true;
+            MenuStripConnectPS3.Text = "Disconnect Console...";
+            EnableConsoleActions(true);
+
+            SetStatus($"Console : Successfully connected - Ready for files to be installed...");
+
+            if (SettingsData.EnableFileExplorer)
             {
-                ComboBoxConsole.Items.Add(console);
-            }
+                if (SettingsData.SaveLocalDirectory)
+                {
+                    // Load saved local directory path
+                    if (SettingsData.LocalDirectory.Equals(@"\") || SettingsData.LocalDirectory.Equals(""))
+                    {
+                        LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents));
+                    }
+                    else
+                    {
+                        LoadLocalDirectory(SettingsData.LocalDirectory);
+                    }
+                }
+                else
+                {
+                    // Load users documents path by default
+                    LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents));
+                }
 
-            ComboBoxConsole.SelectedIndex = 0;
-        }
-
-        private void MenuStripFileRefreshData_Click(object sender, EventArgs e)
-        {
-            SetStatus("Refreshing application data...");
-            DisconnectConsole();
-            Worker.RunWorkAsync(LoadData, InitializeFinished);
-        }
-
-        private void MenuStripFileExit_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
-        }
-
-        private void MenuStripContribute_Click(object sender, EventArgs e)
-        {
-            Process.Start(Utilities.ProjectRepoUrl);
-        }
-
-        private void MenuStripSettingsEditConsoles_Click(object sender, EventArgs e)
-        {
-            using (ProfilesForm consolesWindow = new ProfilesForm())
-            {
-                consolesWindow.ShowDialog(this);
-                LoadProfiles();
+                LoadConsoleDirectory(FtpDirectoryPath);
             }
         }
 
-        private void MenuStripSettingsEnableFileManager_Click(object sender, EventArgs e)
+        private void DisconnectConsole()
         {
-            SettingsData.EnableFileExplorer = MenuStripSettingsEnableFileManager.Checked;
+            SetStatus($"Console : {ConsoleProfile.Name} ({ConsoleProfile.Address}) - Preparing for disconnection...");
+            FtpConnection = null;
+            SetStatusConsole(null);
+            SetStatus("Console : Successfully disconnected");
+            MenuStripConnectPS3.Text = "Connect Console...";
+            IsConsoleConnected = false;
+            EnableConsoleActions(false);
         }
 
-        private void MenuStripSettingsAutoDetectRegion_Click(object sender, EventArgs e)
+        private void MenuStripConnectPS3Console_Click(object sender, EventArgs e)
         {
-            SettingsData.AutoDetectGameRegion = MenuStripSettingsAutoDetectGameRegion.Checked;
+            if (IsConsoleConnected)
+            {
+                DisconnectConsole();
+            }
+            else
+            {
+                using (ConsoleConnection consoleConnection = new ConsoleConnection())
+                {
+                    consoleConnection.ShowDialog(this);
+                }
+            }
         }
 
-        private void MenuStripSettingsSaveCurrentLocalDirectory_Click(object sender, EventArgs e)
+        private void MenuItemToolsBackupFileManager_Click(object sender, EventArgs e)
         {
-            SettingsData.SaveLocalDirectory = MenuStripSettingsSaveCurrentLocalDirectory.Checked;
+            using (ViewGameBackups backupManagerForm = new ViewGameBackups())
+            {
+                backupManagerForm.ShowDialog(this);
+            }
+        }
+
+        private void MenuStripToolsCustomMods_Click(object sender, EventArgs e)
+        {
+            using (ViewCustomMods customModsManager = new ViewCustomMods())
+            {
+                customModsManager.ShowDialog(this);
+            }
+        }
+
+        private void MenuStripApplicationsCCAPI_Click(object sender, EventArgs e)
+        {
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"ControlConsoleAPI\CCAPIConsoleManager.exe");
+
+            if (File.Exists(filePath))
+            {
+                Process.Start(filePath);
+            }
+            else
+            {
+                DarkMessageBox.Show(this, "Could not locate application Console Manager (CCAPI) at the default installation path. This option could become customizable to set your own in future updates.", "Not Found", MessageBoxIcon.Error);
+            }
+        }
+
+        private void MenuStripApplicationsFileZilla_Click(object sender, EventArgs e)
+        {
+            string filePath = @"C:\Program Files\FileZilla FTP Client\filezilla.exe";
+
+            if (File.Exists(filePath))
+            {
+                Process.Start(filePath);
+            }
+            else
+            {
+                DarkMessageBox.Show(this, "Could not locate the application FileZilla at the default installation path. This option could become customizable to set your own in future updates.", "Not Found", MessageBoxIcon.Error);
+            }
         }
 
         private void MenuStripResourcesForumsPsxPlacePs3Mods_Click(object sender, EventArgs e)
@@ -273,18 +340,37 @@ namespace ModioX.Windows
             Process.Start("http://nopaystation.com/");
         }
 
-        private void MenuStripApplicationsCCAPI_Click(object sender, EventArgs e)
+        private void MenuStripContribute_Click(object sender, EventArgs e)
         {
-            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"ControlConsoleAPI\CCAPIConsoleManager.exe");
+            Process.Start(Utilities.ProjectRepoUrl);
+        }
 
-            if (File.Exists(filePath))
+        private void MenuStripSettingsEditConsoles_Click(object sender, EventArgs e)
+        {
+            using (EditProfiles consolesWindow = new EditProfiles())
             {
-                Process.Start(filePath);
+                consolesWindow.ShowDialog(this);
             }
-            else
-            {
-                DarkMessageBox.Show(this, "Could not locate the Console Manager CCAPI application at the default installation path. This option could become customizable in future updates.", "Not Found", MessageBoxIcon.Error);
-            }
+        }
+
+        private void MenuStripSettingsEnableFileManager_Click(object sender, EventArgs e)
+        {
+            SettingsData.EnableFileExplorer = MenuStripSettingsEnableConsoleFileExplorer.Checked;
+        }
+
+        private void MenuStripSettingsAutoDetectRegion_Click(object sender, EventArgs e)
+        {
+            SettingsData.AutoDetectGameRegion = MenuStripSettingsAutoDetectGameRegion.Checked;
+        }
+
+        private void MenuStripSettingsShowModNumbers_Click(object sender, EventArgs e)
+        {
+            SettingsData.ShowModIds = MenuStripSettingsShowModIDs.Checked;
+        }
+
+        private void MenuStripSettingsSaveCurrentLocalDirectory_Click(object sender, EventArgs e)
+        {
+            SettingsData.SaveLocalDirectory = MenuStripSettingsSaveCurrentLocalDirectory.Checked;
         }
 
         private void MenuStripHelpSourceCode_Click(object sender, EventArgs e)
@@ -292,9 +378,14 @@ namespace ModioX.Windows
             Process.Start("https://github.com/ohhsoash/ModioX");
         }
 
-        private void MenuStripHelpGitHubIssues_Click(object sender, EventArgs e)
+        private void MenuStripHelpReportBugSuggestions_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/ohhsoash/ModioX/issues/new");
+        }
+
+        private void MenuStripHelpCheckForUpdates_Click(object sender, EventArgs e)
+        {
+            Updater.Updater.CheckApplicationVersion();
         }
 
         private void MenuStripHelpAbout_Click(object sender, EventArgs e)
@@ -302,87 +393,34 @@ namespace ModioX.Windows
             DarkMessageBox.Show(this, "ModioX was developed by @ohhsoash and few friends, with the only intention of providing an efficient tool for browsing, downloading and installing game and console mods directly. All credits are given to those appropriate creators/authors of the mods used in this application. If you have any questions please send a message at my Discord: wh1ter0se#7480 with your much welcomed comments, suggestions and feedback to help support this project.", "Information", MessageBoxIcon.Information);
         }
 
-        private void ButtonConnectConsole_Click(object sender, EventArgs e)
+        private void MenuStripItemRefreshData_Click(object sender, EventArgs e)
         {
-            try
+            SetStatus($"Initializing application data...");
+
+            if (IsConsoleConnected)
             {
-                if (IsConnected)
-                {
-                    DisconnectConsole();
-                }
-                else
-                {
-                    ConnectConsole();
-                }
-            }
-            catch (Exception ex)
-            {
-                SetStatus($"Console : There was an issue connecting or disconnecting console {ProfileName} ({ProfileIP}) - {ex.Message}", ex);
-            }
-        }
-
-        private void ConnectConsole()
-        {
-            SetStatus($"Console : {ProfileName} ({ProfileIP}) - Preparing to establish a connection...");
-            FtpConnection = new FtpConnection(ProfileIP);
-            SetStatusConsole(ProfileName, ProfileIP);
-            ComboBoxConsole.Enabled = false;
-            ButtonConnectConsole.Text = "Disconnect";
-            IsConnected = true;
-            EnableConsoleActions(true);
-
-            SetStatus($"Console : Successfully connected - Ready for files to be installed...");
-
-            if (SettingsData.EnableFileExplorer)
-            {
-                if (SettingsData.SaveLocalDirectory)
-                {
-                    // Load saved local directory path
-                    if (SettingsData.LocalDirectory.Equals(@"\") || SettingsData.LocalDirectory.Equals(""))
-                    {
-                        LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents));
-                    }
-                    else
-                    {
-                        LoadLocalDirectory(SettingsData.LocalDirectory);
-                    }
-                }
-                else
-                {
-                    // Load users documents path by default
-                    LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents));
-                }
-
-                LoadConsoleDirectory(FtpDirectoryPath);
-            }
-        }
-
-        private void DisconnectConsole()
-        {
-            SetStatus($"Console : {ProfileName} ({ProfileIP}) - Preparing for disconnection...");
-            FtpConnection = null;
-            ComboBoxConsole.Enabled = true;
-            ButtonConnectConsole.Text = "Connect";
-            SetStatusConsole("None", "n/a");
-            SetStatus("Console : Disconnected from console");
-            IsConnected = false;
-            EnableConsoleActions(false);
-        }
-
-        private void ComboBoxConsole_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ComboBoxConsole.SelectedIndex != -1)
-            {
-                ProfileName = ComboBoxConsole.GetItemText(ComboBoxConsole.SelectedItem)
-                    .Split(new[] { " : " }, StringSplitOptions.RemoveEmptyEntries)[0];
-                ProfileIP = ComboBoxConsole.GetItemText(ComboBoxConsole.SelectedItem)
-                    .Split(new[] { " : " }, StringSplitOptions.RemoveEmptyEntries)[1];
+                DisconnectConsole();
             }
 
-            ButtonConnectConsole.Enabled = !string.IsNullOrWhiteSpace(ProfileIP);
+            SaveSettingsData();
+            LoadSettingsData();
+
+            Worker.RunWorkAsync(LoadData, InitializeFinished);
+
+            // Load Settings UI
+            MenuStripSettingsAutoDetectGameRegion.Checked = SettingsData.AutoDetectGameRegion;
+            MenuStripSettingsSaveCurrentLocalDirectory.Checked = SettingsData.SaveLocalDirectory;
+            MenuStripSettingsEnableConsoleFileExplorer.Checked = SettingsData.EnableFileExplorer;
+            MenuStripSettingsShowModIDs.Checked = SettingsData.ShowModIds;
         }
 
-        string SelectedModQuery { get; set; } = "";
+        private void MenuStripRequestMod_Click(object sender, EventArgs e)
+        {
+            Utilities.OpenRequestTemplate();
+        }
+
+
+        /***************                       MODS LIBRARY                        ***************/
 
         string SelectedModFirmware { get; set; } = "";
 
@@ -401,7 +439,6 @@ namespace ModioX.Windows
 
             LoadModsByCategoryId(
                     SelectedCategory.Id,
-                    SelectedModQuery,
                     SelectedModFirmware,
                     SelectedModType);
         }
@@ -419,23 +456,8 @@ namespace ModioX.Windows
 
             LoadModsByCategoryId(
                 SelectedCategory.Id,
-                SelectedModQuery,
                 SelectedModFirmware,
                 SelectedModType);
-        }
-
-        private void ButtonRequestMods_Click(object sender, EventArgs e)
-        {
-            Utilities.OpenRequestTemplate();
-        }
-
-        private void ButtonPickRandom_Click(object sender, EventArgs e)
-        {
-            if (DgvMods.RowCount > 0)
-            {
-                DgvMods.CurrentCell = DgvMods[1, new Random().Next(0, DgvMods.RowCount)];
-                ShowModDetails(long.Parse(DgvMods.SelectedRows[0].Cells[0].Value.ToString()));
-            }
         }
 
         private void ListViewGamesCategories_SelectedIndicesChanged(object sender, EventArgs e)
@@ -445,9 +467,8 @@ namespace ModioX.Windows
                 SelectedCategory = Categories.GetCategoryById(ListViewGamesCategories.Items[ListViewGamesCategories.SelectedIndices[0]].Tag.ToString());
 
                 LoadModsByCategoryId(
-                    SelectedCategory.Id, 
-                    SelectedModQuery, 
-                    SelectedModFirmware, 
+                    SelectedCategory.Id,
+                    SelectedModFirmware,
                     SelectedModType);
 
                 if (string.IsNullOrEmpty(SelectedModType))
@@ -468,9 +489,9 @@ namespace ModioX.Windows
                 ShowModDetails(int.Parse(DgvMods.CurrentRow.Cells[0].Value.ToString()));
             }
 
-            ToolStripInstallFiles.Enabled = DgvMods.SelectedRows.Count != 0 && IsConnected;
-            ToolStripDownloadArchive.Enabled = DgvMods.SelectedRows.Count != 0;
-            ToolStripFavorite.Enabled = DgvMods.SelectedRows.Count != 0;
+            ToolStripInstallMod.Enabled = DgvMods.SelectedRows.Count != 0 && IsConsoleConnected;
+            ToolStripDownloadMod.Enabled = DgvMods.SelectedRows.Count != 0;
+            ToolStripFavoriteMod.Enabled = DgvMods.SelectedRows.Count != 0;
         }
 
         private void DgvMods_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -479,19 +500,19 @@ namespace ModioX.Windows
             {
                 ShowModDetails(int.Parse(DgvMods.CurrentRow.Cells[0].Value.ToString()));
 
-                if (DgvMods.CurrentCell.ColumnIndex.Equals(7) && e.RowIndex != -1)
+                if (DgvMods.CurrentCell.ColumnIndex.Equals(8) && e.RowIndex != -1)
                 {
-                    ToolStripDownloadArchive.PerformClick();
+                    ToolStripDownloadMod.PerformClick();
                 }
-                else if (DgvMods.CurrentCell.ColumnIndex.Equals(8) && e.RowIndex != -1)
+                else if (DgvMods.CurrentCell.ColumnIndex.Equals(9) && e.RowIndex != -1)
                 {
-                    ToolStripFavorite.PerformClick();
+                    ToolStripFavoriteMod.PerformClick();
                 }
             }
 
-            ToolStripInstallFiles.Enabled = e.RowIndex != -1 && IsConnected;
-            ToolStripDownloadArchive.Enabled = e.RowIndex != -1;
-            ToolStripFavorite.Enabled = e.RowIndex != -1;
+            ToolStripInstallMod.Enabled = e.RowIndex != -1 && IsConsoleConnected;
+            ToolStripDownloadMod.Enabled = e.RowIndex != -1;
+            ToolStripFavoriteMod.Enabled = e.RowIndex != -1;
         }
 
         private void DgvMods_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -502,12 +523,17 @@ namespace ModioX.Windows
 
         private void ContextMenuModsInstallToConsole_Click(object sender, EventArgs e)
         {
-            ToolStripInstallFiles.PerformClick();
+            ToolStripInstallMod.PerformClick();
+        }
+
+        private void ContextMenuModsUninstallFromConsole_Click(object sender, EventArgs e)
+        {
+            ToolStripUninstallMod.PerformClick();
         }
 
         private void ContextMenuModsDownloadArchive_Click(object sender, EventArgs e)
         {
-            ToolStripDownloadArchive.PerformClick();
+            ToolStripDownloadMod.PerformClick();
         }
 
         private void ContextMenuModsExtractInformation_Click(object sender, EventArgs e)
@@ -529,25 +555,35 @@ namespace ModioX.Windows
             Utilities.OpenReportTemplate(SelectedModItem);
         }
 
+        private void DgvInstallPaths_SelectionChanged(object sender, EventArgs e)
+        {
+            DgvInstallPaths.ClearSelection();
+        }
+
         private void ToolStripInstallFiles_Click(object sender, EventArgs e)
         {
             CategoriesData.Category actualCategory = Categories.GetCategoryById(SelectedModItem.GameId);
 
-            SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {actualCategory.Title} - Preparing to install mods...");
+            SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {actualCategory.Title} - Preparing to install files...");
 
             bool isGameMod = actualCategory.RequiresRegion();
 
+            string gameTitle;
+            string gameRegion;
+
             try
             {
-                string gameTitle;
-                string gameRegion;
-
-                // Retrieve the users game region if needed
                 if (isGameMod)
                 {
-                    SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {actualCategory.Title} - Retrieving game region...");
-                    gameRegion = actualCategory.GetGameRegion(ProfileIP);
+                    SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {actualCategory.Title} - Retrieving region...");
+                    gameRegion = actualCategory.GetGameRegion(ConsoleProfile.Address);
                     gameTitle = $"{actualCategory.Title} ({gameRegion})";
+
+                    if (string.IsNullOrEmpty(gameRegion))
+                    {
+                        SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {actualCategory.Title} - No region selected when prompted. Canceled.");
+                        return;
+                    }
                 }
                 else
                 {
@@ -555,17 +591,10 @@ namespace ModioX.Windows
                     gameTitle = $"{actualCategory.Title}";
                 }
 
-                if (isGameMod && string.IsNullOrEmpty(gameRegion))
-                {
-                    SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {actualCategory.Title} - No region chosen for game.");
-                    DarkMessageBox.Show(this, "There was no region chosen for this game title. Install this again.", "No Region", MessageBoxIcon.Exclamation);
-                    return;
-                }
-
-                SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Downloading and extracting mods archive...");
+                SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Downloading and extracting archive...");
                 SelectedModItem.DownloadArchive();
 
-                int indexOfFiles = 0;
+                int indexOfFiles = 1;
                 int totalLengthFiles = SelectedModItem.InstallPaths.Length;
 
                 foreach (string installFilePath in SelectedModItem.InstallPaths)
@@ -576,86 +605,163 @@ namespace ModioX.Windows
                         {
                             string installPath = installFilePath.Replace("/{REGION}/", $"/{gameRegion}/");
 
-                            SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Preparing to upload modded files...");
+                            SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Preparing to install files...");
 
-                            //if (installPath.StartsWith("/dev_hdd0/game/", StringComparison.InvariantCultureIgnoreCase))
                             if (installPath.Contains("dev_hdd0/game/"))
                             {
                                 if (DarkMessageBox.Show(this, "A file is being uploaded to your game folder. Would you like to first backup the original game file before installing this file? You can then revert the mods at anytime using the Tools > Backup File Manager window to restore the game files to their original state.\n\nFile being installed : " + Path.GetFileName(installFilePath), "Backup Game File", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                                 {
-                                    SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Creating game backup file for {Path.GetFileName(localFilePath)} ({indexOfFiles}/{totalLengthFiles}) to a folder...");
+                                    SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Creating backup file for {Path.GetFileName(localFilePath)} ({indexOfFiles}/{totalLengthFiles})...");
 
-                                    string backupFileFolder = Path.Combine(SelectedModItem.GetDirectoryGameData(), "Game Backup Files");
-                                    string backupGameFile = Path.Combine(backupFileFolder, Path.GetFileName(localFilePath));
-
-                                    Directory.CreateDirectory(backupFileFolder);
+                                    Directory.CreateDirectory(SettingsData.CreateBackupFileFolder(SelectedModItem));
 
                                     BackupFile backupFile = new BackupFile()
                                     {
                                         Name = "Original Game File",
-                                        File = Path.GetFileName(installPath),
-                                        GameId = SelectedModItem.GameId,
-                                        LocalPath = backupGameFile,
+                                        CategoryId = SelectedModItem.GameId,
+                                        FileName = Path.GetFileName(installPath),
+                                        LocalPath = SettingsData.CreateBackupFile(SelectedModItem, Path.GetFileName(localFilePath)),
                                         InstallPath = installPath
                                     };
 
                                     EditBackupDialog(backupFile);
 
-                                    SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Uploading {Path.GetFileName(localFilePath)} ({indexOfFiles}/{totalLengthFiles}) to {Path.GetDirectoryName(installPath)}");
+                                    SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Downloading backup file {Path.GetFileName(backupFile.InstallPath)} from {backupFile.InstallPath}");
 
-                                    FtpExtensions.UploadFile(ProfileIP, localFilePath, installPath);
+                                    FtpExtensions.DownloadFile(ConsoleProfile.Address, backupFile.LocalPath, backupFile.InstallPath);
+
+                                    SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Installing file {Path.GetFileName(localFilePath)} ({indexOfFiles}/{totalLengthFiles}) to {Path.GetDirectoryName(installPath)}");
+
+                                    FtpExtensions.UploadFile(ConsoleProfile.Address, localFilePath, installPath);
                                     indexOfFiles++;
                                 }
                                 else
                                 {
-                                    SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Uploading {Path.GetFileName(localFilePath)} ({indexOfFiles}/{totalLengthFiles}) to {Path.GetDirectoryName(installPath)}");
+                                    SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Installing file {Path.GetFileName(localFilePath)} ({indexOfFiles}/{totalLengthFiles}) to {Path.GetDirectoryName(installPath)}");
 
-                                    FtpExtensions.UploadFile(ProfileIP, localFilePath, installPath);
+                                    FtpExtensions.UploadFile(ConsoleProfile.Address, localFilePath, installPath);
                                     indexOfFiles++;
                                 }
                             }
                             else if (installFilePath.Contains("dev_usb000/"))
                             {
-                                if (DarkMessageBox.Show(this, "A file wants to be uploaded to usb device - it maybe required for the mods to function, or not. I suggest reading the complete description to see if it's mentioned there. It could be used for configuration or settings purposes." +
-                                    "\n\nIf you would still like to proceed, then plug your usb into the right-most slot of the console ports at the front. So, should the file be installed? Only click 'YES' if you've connected the usb device.", "USB File", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                                if (DarkMessageBox.Show(this, "A file wants to be installed to a usb device connected to the console - it maybe required for the mods to function, or not. I suggest reading the complete description to see if it's mentioned there. It could be used for configuration or settings purposes." +
+                                    "\n\nIf you would still like to continue, then insert your usb into the right-most slot of the console ports at the front. So, should the file be installed? Only click 'YES' if you've connected the usb device. Otherwise this fine will be ignored.", "USB File", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                                 {
-                                    SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Uploading {Path.GetFileName(localFilePath)} ({indexOfFiles}/{totalLengthFiles}) to {Path.GetDirectoryName(installPath)}");
+                                    SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Uploading {Path.GetFileName(localFilePath)} ({indexOfFiles}/{totalLengthFiles}) to {Path.GetDirectoryName(installPath)}");
 
-                                    FtpExtensions.UploadFile(ProfileIP, localFilePath, installPath);
+                                    FtpExtensions.UploadFile(ConsoleProfile.Address, localFilePath, installPath);
                                     indexOfFiles++;
                                 }
                             }
                             else
                             {
-                                SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Uploading {Path.GetFileName(localFilePath)} ({indexOfFiles}/{totalLengthFiles}) to {Path.GetDirectoryName(installPath)}");
+                                SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Uploading {Path.GetFileName(localFilePath)} ({indexOfFiles}/{totalLengthFiles}) to {Path.GetDirectoryName(installPath)}");
 
-                                FtpExtensions.UploadFile(ProfileIP, localFilePath, installPath);
+                                FtpExtensions.UploadFile(ConsoleProfile.Address, localFilePath, installPath);
                                 indexOfFiles++;
                             }
                         }
                     }
                 }
 
-                SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Successfully installed ({totalLengthFiles} files)");
+                SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Successfully installed {totalLengthFiles} files");
             }
             catch (Exception ex)
             {
-                SetStatus($"Mods Archive : Unable to install files '{SelectedModItem.Name} ({SelectedModItem.Id}) for {actualCategory.Title} - {ex.Message}", ex);
-                DarkMessageBox.Show(this, "There was an issue installing the mods for some reason. I encourage you to submit your log.txt file contents to our GitHub issue tracker so this can be resolved. You can find us at 'ohhsoash/ModioX' on GitHub repos.", "Error");
+                SetStatus($"Mods : Unable to install files '{SelectedModItem.Name} ({SelectedModItem.Id}) for {actualCategory.Title} - {ex.Message}", ex);
+                DarkMessageBox.Show(this, "An error occurred installing the files for this mod. See menu HELP > Report Bug/Suggestions to submit an issue, and attach your log.txt file contents so this bug can be investigated and fixed." +
+                    "\n\nError Message:\n" + ex.Message, "Install Error", MessageBoxIcon.Error);
             }
         }
 
-        public void EditBackupDialog(BackupFile backupFile)
+        private void ToolStripUninstallFiles_Click(object sender, EventArgs e)
         {
-            using (EditBackupForm editBackupForm = new EditBackupForm() { BackupFile = backupFile })
+            CategoriesData.Category actualCategory = Categories.GetCategoryById(SelectedModItem.GameId);
+
+            SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {actualCategory.Title} - Preparing to uninstall modded files...");
+
+            bool isGameMod = actualCategory.RequiresRegion();
+
+            string gameTitle;
+            string gameRegion;
+
+            try
             {
-                editBackupForm.ShowDialog(this);
+                if (isGameMod)
+                {
+                    SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {actualCategory.Title} - Retrieving game region...");
+                    gameRegion = actualCategory.GetGameRegion(ConsoleProfile.Address);
+                    gameTitle = $"{actualCategory.Title} ({gameRegion})";
+
+                    if (string.IsNullOrEmpty(gameRegion))
+                    {
+                        SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {actualCategory.Title} - No region selected when prompted. Canceled.");
+                        return;
+                    }
+                }
+                else
+                {
+                    gameRegion = null;
+                    gameTitle = $"{actualCategory.Title}";
+                }
+
+                int indexOfFiles = 0;
+                int totalLengthFiles = SelectedModItem.InstallPaths.Length;
+
+                foreach (string installFilePath in SelectedModItem.InstallPaths)
+                {
+                    if (installFilePath.Contains("dev_hdd0/game/"))
+                    {
+                        BackupFile gameBackupFile = SettingsData.GetGameFileBackup(SelectedModItem.GameId, Path.GetFileName(installFilePath), installFilePath);
+
+                        if (gameBackupFile != null)
+                        {
+                            string installPath = gameBackupFile.InstallPath.Replace("/{REGION}/", $"/{gameRegion}/");
+
+                            if (File.Exists(gameBackupFile.LocalPath))
+                            {
+                                FtpExtensions.UploadFile(ConsoleProfile.Address, gameBackupFile.LocalPath, installPath);
+                                SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Installed backup file {Path.GetFileName(installPath)} ({indexOfFiles}/{totalLengthFiles}) to {Path.GetDirectoryName(installPath).Replace(@"\", @"/")})");
+                                indexOfFiles++;
+                            }
+                            else
+                            {
+                                DarkMessageBox.Show(this, "You've created a backup for this game file, but the file doesn't exist anymore. Open the Tools > Game File Backup Manager to edit your backup set the local file. This game file will be ignored.", "No Backup File", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                    else if (installFilePath.Contains("dev_usb000/"))
+                    {
+                        if (DarkMessageBox.Show(this, "The mod wants to uninstall a file from your USB drive." +
+                            "\n\nIf you would still like to continue, then insert your usb into the right-most slot at the front of the console. Would you like to continue? Only click 'YES' if you've connected the USB device. Otherwise this file will be ignored.", "Install USB File", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                        {
+                            FtpExtensions.DeleteFile(ConsoleProfile.Address, installFilePath);
+                            SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Uninstalled file {Path.GetFileName(installFilePath)} ({indexOfFiles}/{totalLengthFiles}) from {Path.GetDirectoryName(installFilePath).Replace(@"\", @"/")})");
+                            indexOfFiles++;
+                        }
+                    }
+                    else
+                    {
+                        FtpExtensions.DeleteFile(ConsoleProfile.Address, installFilePath);
+                        SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Uninstalled file {Path.GetFileName(installFilePath)} ({indexOfFiles}/{totalLengthFiles}) from {Path.GetDirectoryName(installFilePath).Replace(@"\", @"/")})");
+                        indexOfFiles++;
+                    }
+                }
+
+                SetStatus($"Mods  : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Successfully uninstalled {indexOfFiles} files");
+            }
+            catch (Exception ex)
+            {
+                SetStatus($"Mods : Unable to uninstall files '{SelectedModItem.Name} ({SelectedModItem.Type}) ({SelectedModItem.Id}) for {actualCategory.Title} - {ex.Message}", ex);
+                DarkMessageBox.Show(this, "An error occurred uninstalling the files for this mod. See menu HELP > Report Bug/Suggestions to submit an issue, and attach your log.txt file contents so this bug can be investigated and fixed." +
+                   "\n\nError Message:\n" + ex.Message, "Uninstall Error", MessageBoxIcon.Error);
             }
         }
 
         private void ToolStripDownloadArchive_Click(object sender, EventArgs e)
         {
-            SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {SelectedCategory.Title} - Preparing to download mods archive...");
+            SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {SelectedCategory.Title} - Preparing to download mods archive...");
 
             try
             {
@@ -664,30 +770,30 @@ namespace ModioX.Windows
                     if (folderBrowser.ShowDialog() == DialogResult.OK)
                     {
                         SelectedModItem.DownloadArchiveAtPath(folderBrowser.SelectedPath);
-                        SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {SelectedCategory.Title} - Successfully downloaded mods archive to '{folderBrowser.SelectedPath}'");
+                        SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {SelectedCategory.Title} - Successfully downloaded archive to '{folderBrowser.SelectedPath}'");
                     }
                     else
                     {
-                        SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {SelectedCategory.Title} - Canceled request to download archive.");
+                        SetStatus($"Mods : {SelectedModItem.Name} ({SelectedModItem.Type}) for {SelectedCategory.Title} - Archive download canceled.");
                     }
                 }
             }
             catch (Exception ex)
             {
-                SetStatus($"Mods Archive : Unable to download mods archive '{SelectedModItem.Name} ({SelectedModItem.Id}) for {SelectedCategory.Title}  (Access may be denied to the specified path, try a different one) - {ex.Message}", ex);
+                SetStatus($"Mods : Unable to download archive '{SelectedModItem.Name} ({SelectedModItem.Id}) for {SelectedCategory.Title} (Access may be denied to the specified path, try a different one) - {ex.Message}", ex);
             }
         }
 
         private void ToolStripFavorite_Click(object sender, EventArgs e)
         {
-            if (ToolStripFavorite.Text == "Favorite")
+            if (ToolStripFavoriteMod.Text == "Favorite")
             {
-                ToolStripFavorite.Text = "Unfavorite";
+                ToolStripFavoriteMod.Text = "Unfavorite";
                 SettingsData.FavoritedIds.Add(SelectedModItem.Id.ToString());
             }
             else
             {
-                ToolStripFavorite.Text = "Favorite";
+                ToolStripFavoriteMod.Text = "Favorite";
                 SettingsData.FavoritedIds.Remove(SelectedModItem.Id.ToString());
 
                 if (SelectedCategory.Id == "fvrt")
@@ -696,58 +802,10 @@ namespace ModioX.Windows
                 }
             }
 
-            ToolStripFavorite.AutoSize = false;
-            ToolStripFavorite.AutoSize = true;
-        }
+            ToolStripFavoriteMod.AutoSize = false;
+            ToolStripFavoriteMod.AutoSize = true;
 
-        private void ButtonUninstallFiles_Click(object sender, EventArgs e)
-        {
-            SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {SelectedCategory.Title} - Preparing to uninstall files...");
-
-            try
-            {
-                string gameTitle;
-                string gameRegion;
-
-                if (SelectedCategory.RequiresRegion())
-                {
-                    SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {SelectedCategory.Title} - Retrieving game region...");
-                    gameRegion = SelectedCategory.GetGameRegion(ProfileIP);
-                    gameTitle = $"{SelectedCategory.Title} ({gameRegion})";
-                }
-                else
-                {
-                    gameRegion = null;
-                    gameTitle = $"{SelectedCategory.Title}";
-                }
-
-                if (string.IsNullOrEmpty(gameRegion))
-                {
-                    SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {SelectedCategory.Title} - No region chosen for game.");
-                    DarkMessageBox.Show(this, "You didn't select your game region when prompted. Try to do this again.", "No Region", MessageBoxIcon.Exclamation);
-                    return;
-                }
-
-                int currentFileNo = 0;
-                int totalFileNo = SelectedModItem.InstallPaths.Length;
-
-                foreach (string installFilePath in SelectedModItem.InstallPaths)
-                {
-                    currentFileNo++;
-
-                    if (!installFilePath.StartsWith("dev_hdd0/game/{REGION}/", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Uninstalling {Path.GetFileName(installFilePath)} ({currentFileNo}/{totalFileNo}) from {Path.GetDirectoryName(installFilePath)}");
-                        FtpExtensions.DeleteFile(ProfileIP, "/" + installFilePath.Replace("/{REGION}/", $"/{gameRegion}/"));
-                    }
-                }
-
-                SetStatus($"Mods Archive : {SelectedModItem.Name} ({SelectedModItem.Type}) for {gameTitle} - Successfully uninstalled files ({currentFileNo} files)");
-            }
-            catch (Exception ex)
-            {
-                SetStatus($"Mods Archive : Unable to uninstall files '{SelectedModItem.Name} ({SelectedModItem.Type}) ({SelectedModItem.Id}) for {SelectedCategory.Title} - {ex.Message}", ex);
-            }
+            ToolStripArchiveInformation.Update();
         }
 
         private void ButtonLocalDirectory_Click(object sender, EventArgs e)
@@ -762,9 +820,33 @@ namespace ModioX.Windows
             }
         }
 
-        private void ButtonNavigateConsoleExplorer_Click(object sender, EventArgs e)
+        private void ButtonConsoleExplorerNavigate_Click(object sender, EventArgs e)
         {
             LoadConsoleDirectory(TextBoxConsoleDirectory.Text);
+        }
+
+        private void DgvLocalFiles_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DgvLocalFiles.SelectedRows.Count > 0)
+            {
+                string type = DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
+                ToolStripItemLocalUploadFile.Enabled = type == "file";
+                ToolStripLocalDeleteFile.Enabled = type == "file";
+                ContextMenuStripLocalUploadFile.Enabled = type == "file";
+                ContextMenuStripLocalDeleteFile.Enabled = type == "file";
+            }
+        }
+
+        private void DgvConsoleFiles_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DgvConsoleFiles.SelectedRows.Count > 0)
+            {
+                string type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
+                ToolStripItemConsoleFileDownload.Enabled = type == "file";
+                ToolStripItemConsoleFileDelete.Enabled = type == "file";
+                ContextMenuConsoleDownloadFile.Enabled = type == "file";
+                ContextMenuConsoleDeleteFile.Enabled = type == "file";
+            }
         }
 
         private void DgvLocalFiles_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -788,12 +870,12 @@ namespace ModioX.Windows
                     LoadLocalDirectory(LocalDirectoryPath + @"\" + DgvLocalFiles.CurrentRow.Cells[2].Value.ToString());
                 }
 
-                ToolItemLocalUploadFile.Enabled = type == "file";
-                ToolItemLocalDeleteFile.Enabled = type == "file";
+                ToolStripItemLocalUploadFile.Enabled = type == "file";
+                ToolStripLocalDeleteFile.Enabled = type == "file";
                 ContextMenuStripLocalUploadFile.Enabled = type == "file";
                 ContextMenuStripLocalDeleteFile.Enabled = type == "file";
 
-                ToolItemLocalOpenExplorer.Enabled = Directory.Exists(TextBoxLocalDirectory.Text);
+                ToolStripItemLocalOpenExplorer.Enabled = Directory.Exists(TextBoxLocalDirectory.Text);
             }
         }
 
@@ -817,8 +899,8 @@ namespace ModioX.Windows
                     LoadConsoleDirectory(FtpDirectoryPath + "/" + DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString());
                 }
 
-                ToolItemConsoleDownloadFile.Enabled = type == "file";
-                ToolItemConsoleDeleteFile.Enabled = type == "file";
+                ToolStripItemConsoleFileDownload.Enabled = type == "file";
+                ToolStripItemConsoleFileDelete.Enabled = type == "file";
                 ContextMenuConsoleDownloadFile.Enabled = type == "file";
                 ContextMenuConsoleDeleteFile.Enabled = type == "file";
             }
@@ -838,7 +920,7 @@ namespace ModioX.Windows
 
                 foreach (string directoryItem in Directory.GetDirectories(directoryPath))
                 {
-                    DgvLocalFiles.Rows.Add("folder", Resources.icons8_folder_16, Path.GetFileName(directoryItem), "", "file-folder", Directory.GetLastWriteTime(directoryItem));
+                    DgvLocalFiles.Rows.Add("folder", Resources.icons8_folder_16, Path.GetFileName(directoryItem), "-", "file-folder", Directory.GetLastWriteTime(directoryItem));
                 }
 
                 foreach (string fileItem in Directory.GetFiles(directoryPath))
@@ -848,7 +930,7 @@ namespace ModioX.Windows
             }
             catch (Exception ex)
             {
-                SetStatus($"File Explorer : Unable to retrieve local directory listing - " + ex.Message, ex);
+                SetStatus($"Local File Explorer : Unable to retrieve directory listing - " + ex.Message, ex);
                 LoadLocalDirectory(Directory.GetParent(LocalDirectoryPath).FullName);
             }
         }
@@ -861,52 +943,64 @@ namespace ModioX.Windows
         {
             try
             {
+                SetStatus(string.Format("Console File Explorer : Preparing to connect to console..."));
+
                 if (FtpConnection == null)
                 {
-                    FtpConnection = new FtpConnection(ProfileIP);
+                    FtpConnection = new FtpConnection(ConsoleProfile.Address);
                 }
 
-                FtpConnection.Login();
-
-                DgvConsoleFiles.Rows.Clear();
-
-                SetStatus(string.Format("Retrieving console directory listing of '{0}'...", directoryPath.Replace("//", "/")));
-
-                FtpDirectoryPath = directoryPath.Replace("//", "/");
-                TextBoxConsoleDirectory.Text = directoryPath.Replace("//", "/");
-
-                FtpConnection.SetCurrentDirectory(FtpDirectoryPath);
-
-                //FtpDirectoryInfo rootDirectoryInfo = FtpConnection.GetCurrentDirectoryInfo();
-
-                foreach (FtpDirectoryInfo ftpDirectoryInfo in FtpConnection.GetDirectories(FtpDirectoryPath))
+                using (FtpConnection)
                 {
-                    DgvConsoleFiles.Rows.Add("folder", Resources.icons8_folder_16, ftpDirectoryInfo.Name, "", "file-folder", ftpDirectoryInfo.LastWriteTimeUtc);
-                }
+                    FtpConnection.Open(); /* Open the FTP connection */
+                    FtpConnection.Login(); /* Login using previously provided credentials */
 
-                foreach (FtpFileInfo ftpFileInfo in FtpConnection.GetFiles(FtpDirectoryPath))
-                {
-                    long ftpFileSize = 0;
+                    DgvConsoleFiles.Rows.Clear();
 
-                    try
+                    SetStatus(string.Format("Console File Explorer : Retrieving directory listing of '{0}'...", directoryPath.Replace("//", "/")));
+
+                    FtpDirectoryPath = directoryPath.Replace("//", "/");
+                    TextBoxConsoleDirectory.Text = directoryPath.Replace("//", "/");
+
+                    FtpConnection.SetCurrentDirectory(FtpDirectoryPath);
+
+                    //FtpDirectoryInfo rootDirectoryInfo = FtpConnection.GetCurrentDirectoryInfo();
+
+                    foreach (FtpDirectoryInfo ftpDirectoryInfo in FtpConnection.GetDirectories(FtpDirectoryPath))
                     {
-                        ftpFileSize = FtpConnection.GetFileSize(ftpFileInfo.FullName);
-                    }
-                    catch (Exception ex)
-                    {
-                        Program.Log.Error(string.Format("An error occurred fetching file size for file {0}", ftpFileInfo.FullName), ex);
+                        DgvConsoleFiles.Rows.Add("folder", Resources.icons8_folder_16, ftpDirectoryInfo.Name, "-", "file-folder", ftpDirectoryInfo.LastWriteTimeUtc);
                     }
 
-                    //DgvConsoleFiles.Rows.Add("file", Resources.icons8_file_16, ftpFileInfo.Name, Path.GetExtension(ftpFileInfo.FullName).ToUpper().Trim('.') + " File", ftpFileInfo.LastWriteTimeUtc);
-                    DgvConsoleFiles.Rows.Add("file", Resources.icons8_file_16, ftpFileInfo.Name, ftpFileSize.ToString("#,##0") + " bytes", Path.GetExtension(ftpFileInfo.FullName).ToUpper().Trim('.') + " File", ftpFileInfo.LastWriteTimeUtc);
-                }
+                    foreach (FtpFileInfo ftpFileInfo in FtpConnection.GetFiles(FtpDirectoryPath))
+                    {
+                        long ftpFileSize = 0;
 
-                SetStatus(string.Format("File Explorer : Console directory listing of '{0}' successful ({1} Items)", FtpDirectoryPath, DgvConsoleFiles.Rows.Count));
+                        try
+                        {
+                            ftpFileSize = FtpConnection.GetFileSize(ftpFileInfo.FullName);
+                        }
+                        catch (FtpException ex)
+                        {
+                            Program.Log.Error(string.Format("An error occurred fetching file size for file {0}", ftpFileInfo.FullName), ex);
+                        }
+                        catch (Exception ex)
+                        {
+                            Program.Log.Error(string.Format("An error occurred fetching file size for file {0}", ftpFileInfo.FullName), ex);
+                        }
+
+                        DgvConsoleFiles.Rows.Add("file", Resources.icons8_file_16, ftpFileInfo.Name, ftpFileSize.ToString("#,##0") + " bytes", Path.GetExtension(ftpFileInfo.FullName).ToUpper().Trim('.') + " File", ftpFileInfo.LastWriteTimeUtc);
+                    }
+
+                    SetStatus(string.Format("Console File Explorer : Directory listing of '{0}' successful ({1} Items)", FtpDirectoryPath, DgvConsoleFiles.Rows.Count));
+                }
+            }
+            catch (FtpException ex)
+            {
+                SetStatus($"Console File Explorer : An error occurred attempting to display directory listing - {ex.Message}", ex);
             }
             catch (Exception ex)
             {
-                SetStatus($"File Explorer : An error occurred attempting to display directory listing - {ex.Message}", ex);
-                try { LoadConsoleDirectory(Path.GetDirectoryName(new FtpDirectoryInfo(FtpConnection, FtpDirectoryPath).FullName).Replace(@"\", "/")); } catch { }
+                SetStatus($"Console File Explorer : An error occurred attempting to display directory listing - {ex.Message}", ex);
             }
         }
 
@@ -929,21 +1023,21 @@ namespace ModioX.Windows
             }
             catch (Exception ex)
             {
-                SetStatus(string.Format("There was an issue opening this directory ({0}) in explorer : {1}", TextBoxLocalDirectory.Text, ex.Message), ex);
+                SetStatus(string.Format("An error occurred retrieving this directory listing ({0}) - {1}", TextBoxLocalDirectory.Text, ex.Message), ex);
             }
         }
 
-        private void ToolStripConsoleDownloadFile_Click(object sender, EventArgs e)
+        private void ToolStripItemConsoleFileDownload_Click(object sender, EventArgs e)
         {
             DownloadConsoleFile();
         }
 
-        private void ToolStripConsoleDeleteFile_Click(object sender, EventArgs e)
+        private void ToolStripItemConsoleFileDelete_Click(object sender, EventArgs e)
         {
             DeleteConsoleFile();
         }
 
-        private void ToolStripConsoleRefresh_Click(object sender, EventArgs e)
+        private void ToolStripConsoleFileRefresh_Click(object sender, EventArgs e)
         {
             LoadConsoleDirectory(FtpDirectoryPath);
         }
@@ -982,20 +1076,20 @@ namespace ModioX.Windows
 
                 if (File.Exists(localFile))
                 {
-                    SetStatus($"File Explorer : Starting upload of local file to console...");
-                    FtpExtensions.UploadFile(ProfileIP, localFile, installFile);
+                    SetStatus($"Local File Explorer : Starting upload of local file to console...");
+                    FtpExtensions.UploadFile(ConsoleProfile.Address, localFile, installFile);
                     DgvConsoleFiles.Rows.Add("file", Resources.icons8_file_16, Path.GetFileName(installFile), new FileInfo(localFile).Length.ToString("#,##0") + " bytes", Path.GetExtension(localFile).ToUpper().Trim('.') + " File", File.GetLastWriteTime(installFile));
                     SetStatus(string.Format("File Explorer : Successfully uploaded file {0} to console path {1}", Path.GetFileName(localFile), Path.GetDirectoryName(installFile)));
                 }
                 else
                 {
-                    SetStatus($"File Explorer : Unable to install local file as it doesn't exist on drive.");
+                    SetStatus($"Local File Explorer : Unable to install local file as it doesn't exist on drive.");
                 }
 
             }
             catch (Exception ex)
             {
-                SetStatus($"File Explorer : There was an issue trying to upload this local file to the console : " + ex.Message, ex);
+                SetStatus($"Local File Explorer : An error occurred when upladoing this local file to console : " + ex.Message, ex);
             }
         }
 
@@ -1022,14 +1116,14 @@ namespace ModioX.Windows
                     File.Delete(localFile);
                 }
 
-                SetStatus($"File Explorer : Starting download of file from console to your computer, locating the console file...");
-                FtpExtensions.DownloadFile(ProfileIP, localFile, consoleFile);
-                SetStatus(string.Format("File Explorer : Successfully downloaded file {0} to directory {1}", Path.GetFileName(localFile), Path.GetDirectoryName(localFile)));
+                SetStatus($"Console File Explorer : Starting download of file from console to computer...");
+                FtpExtensions.DownloadFile(ConsoleProfile.Address, localFile, consoleFile);
+                SetStatus(string.Format("Console File Explorer : Successfully downloaded file {0} to directory {1}", Path.GetFileName(localFile), Path.GetDirectoryName(localFile)));
 
             }
             catch (Exception ex)
             {
-                SetStatus($"File Explorer : Unable to download console file to computer - " + ex.Message, ex);
+                SetStatus($"Console File Explorer : An error occurred downloading file - " + ex.Message, ex);
             }
 
             LoadLocalDirectory(LocalDirectoryPath);
@@ -1042,15 +1136,22 @@ namespace ModioX.Windows
                 string consoleFile = TextBoxConsoleDirectory.Text + "/" + DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
                 string localFile = TextBoxLocalDirectory.Text + @"\" + DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
 
-                SetStatus($"File Explorer : Starting delete of console file, locating the file...");
-                FtpExtensions.DeleteFile(ProfileIP, consoleFile);
-                SetStatus(string.Format("File Explorer : Successfully deleted console file {0}", Path.GetFileName(localFile)));
+                SetStatus($"Console File Explorer : Starting delete of file...");
+                FtpExtensions.DeleteFile(ConsoleProfile.Address, consoleFile);
                 DgvConsoleFiles.Rows.RemoveAt(DgvConsoleFiles.CurrentRow.Index);
-
+                SetStatus(string.Format("Console File Explorer : Successfully delete {0} file", Path.GetFileName(localFile)));
             }
             catch (Exception ex)
             {
-                SetStatus($"File Explorer : Unable to delete console file - " + ex.Message, ex);
+                SetStatus($"Console File Explorer : Unable to delete file - " + ex.Message, ex);
+            }
+        }
+
+        public void EditBackupDialog(BackupFile backupFile)
+        {
+            using (EditBackupForm editBackupForm = new EditBackupForm() { BackupFile = backupFile })
+            {
+                editBackupForm.ShowDialog(this);
             }
         }
 
@@ -1060,13 +1161,15 @@ namespace ModioX.Windows
         /// <param name="modId">Id of the mod item</param>
         private void ShowModDetails(long modId)
         {
+            DgvInstallPaths.Rows.Clear();
+
             ModsData.ModItem modItem = Mods.GetModById(modId);
 
             // Set the selected mod item property
             SelectedModItem = modItem;
 
             // Display details in UI
-            LabelHeaderNameNo.Text = string.Format("{0} (#{1})", modItem.Name, modItem.Id.ToString());
+            LabelHeaderNameNo.Text = string.Format("{0} {1}", modItem.Name, SettingsData.ShowModIds ? "(ID # " + modItem.Id.ToString() + ")" : "");
             LabelCategory.Text = Categories.GetCategoryById(Mods.GetModById(modId).GameId).Title;
             LabelFirmware.Text = modItem.Firmware + " Systems";
             LabelType.Text = modItem.Type;
@@ -1076,15 +1179,14 @@ namespace ModioX.Windows
             LabelConfig.Text = modItem.Configuration;
             LabelDescription.Text = modItem.Description;
 
-            DgvInstallPaths.Rows.Clear();
             foreach (string filePath in modItem.InstallPaths)
             {
                 DgvInstallPaths.Rows.Add(filePath);
             }
 
-            ToolStripFavorite.Text = SettingsData.FavoritedIds.Contains(modItem.Id.ToString()) ? "Unfavorite" : "Favorite";
-            ToolStripFavorite.AutoSize = false;
-            ToolStripFavorite.AutoSize = true;
+            ToolStripFavoriteMod.Text = SettingsData.FavoritedIds.Contains(modItem.Id.ToString()) ? "Unfavorite" : "Favorite";
+            ToolStripFavoriteMod.AutoSize = false;
+            ToolStripFavoriteMod.AutoSize = true;
 
             UpdateScrollBarDetails();
         }
@@ -1093,45 +1195,22 @@ namespace ModioX.Windows
         ///     Loops and adds either entire or users favourites mods from the database for the given game and filter into the gridview
         /// </summary>
         /// <param name="gameId"></param>
-        /// <param name="query"></param>
         /// <param name="firmware"></param>
         /// <param name="type"></param>
-        private void LoadModsByCategoryId(string gameId, string query, string firmware, string type)
+        private void LoadModsByCategoryId(string gameId, string firmware, string type)
         {
             DgvMods.Rows.Clear();
 
             ComboBoxType.Items.Clear();
             ComboBoxType.Items.Add("ANY");
 
-            // Load favorite mods, otherwise all mods
-            if (gameId.Equals("fvrt"))
+            foreach (var modItem in Mods.GetModItems(gameId, firmware, type))
             {
-                foreach (ModsData.ModItem modItem in Mods.Mods)
-                {
-                    if (SettingsData.FavoritedIds.Contains(modItem.Id.ToString()) && modItem.Firmware.ToLower().Contains(query) && modItem.Firmware.ToLower().Contains(firmware) && modItem.Type.ToLower().Contains(type))
-                    {
-                        DgvMods.Rows.Add(modItem.Id, modItem.Name, modItem.Firmware, modItem.Type, modItem.Version, modItem.Author, modItem.InstallPaths.Length + (modItem.InstallPaths.Length == 1 ? " file" : " files"), ImageExtensions.ResizeBitmap(Resources.icons8_download_22, 21, 21), ImageExtensions.ResizeBitmap(Resources.icons8_heart_outline_22, 21, 21));
+                DgvMods.Rows.Add(modItem.Id, modItem.Name, modItem.Configuration, modItem.Firmware, modItem.Type, modItem.Version, modItem.Author, modItem.InstallPaths.Length + (modItem.InstallPaths.Length == 1 ? " file" : " files"), ImageExtensions.ResizeBitmap(Resources.icons8_download_22, 21, 21), ImageExtensions.ResizeBitmap(Resources.icons8_heart_outline_22, 21, 21));
 
-                        if (!ComboBoxType.Items.Contains(modItem.Type))
-                        {
-                            ComboBoxType.Items.Add(modItem.Type);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                foreach (ModsData.ModItem modItem in Mods.Mods)
+                if (!ComboBoxType.Items.Contains(modItem.Type))
                 {
-                    if (string.Equals(modItem.GameId, gameId) && modItem.Name.ToLower().Contains(query) && modItem.Firmware.Contains(firmware) && modItem.Type.ToLower().Contains(type))
-                    {
-                        DgvMods.Rows.Add(modItem.Id, modItem.Name, modItem.Firmware, modItem.Type, modItem.Version, modItem.Author, modItem.InstallPaths.Length + (modItem.InstallPaths.Length == 1 ? " file" : " files"), ImageExtensions.ResizeBitmap(Resources.icons8_download_22, 21, 21), ImageExtensions.ResizeBitmap(Resources.icons8_heart_outline_22, 21, 21));
-
-                        if (!ComboBoxType.Items.Contains(modItem.Type))
-                        {
-                            ComboBoxType.Items.Add(modItem.Type);
-                        }
-                    }
+                    ComboBoxType.Items.Add(modItem.Type);
                 }
             }
 
@@ -1161,7 +1240,6 @@ namespace ModioX.Windows
 
         public void UpdateScrollBarDetails()
         {
-            ScrollBarDetails.Visible = FlowPanelDetails.VerticalScroll.Visible;
             ScrollBarDetails.Minimum = FlowPanelDetails.VerticalScroll.Minimum;
             ScrollBarDetails.Maximum = FlowPanelDetails.VerticalScroll.Maximum;
             ScrollBarDetails.ViewSize = FlowPanelDetails.VerticalScroll.LargeChange - 30;
@@ -1183,11 +1261,17 @@ namespace ModioX.Windows
         /// <summary>
         ///     Set the current connected console status in the tool strip
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="ip"></param>
-        private void SetStatusConsole(string name, string ip)
+        /// <param name="consoleProfile"></param>
+        private void SetStatusConsole(ConsoleProfile consoleProfile)
         {
-            ToolStripLabelConsole.Text = $@"{name} ({ip})";
+            if (consoleProfile == null)
+            {
+                ToolStripLabelConsole.Text = "Idle";
+            }
+            else
+            {
+                ToolStripLabelConsole.Text = $@"{consoleProfile.Name} ({consoleProfile.Address})";
+            }
         }
 
         /// <summary>
@@ -1210,26 +1294,19 @@ namespace ModioX.Windows
             Refresh();
         }
 
-        private void SetComboBoxItems()
-        {
-            ComboBoxFirmware.Items.Clear(); ComboBoxFirmware.Items.Add("ANY");
-
-            foreach (ModsData.ModItem modItem in Mods.Mods)
-            {
-                if (!ComboBoxFirmware.Items.Contains(modItem.Firmware))
-                {
-                    ComboBoxFirmware.Items.Add(modItem.Firmware);
-                }
-            }
-        }
-
         private void EnableConsoleActions(bool enable)
         {
-            MenuItemToolsGameFileBackupManager.Enabled = enable;
-            ToolItemConsoleDownloadFile.Enabled = enable;
-            ToolItemConsoleDeleteFile.Enabled = enable;
-            ToolStripInstallFiles.Enabled = enable;
-            ToolStripDownloadArchive.Enabled = enable;
+            MenuItemToolsFileBackupManager.Enabled = enable;
+            ToolStripItemConsoleFileDownload.Enabled = enable;
+            ToolStripItemConsoleFileDelete.Enabled = enable;
+            ToolStripInstallMod.Enabled = enable;
+            ToolStripUninstallMod.Enabled = enable;
+            ToolStripDownloadMod.Enabled = enable;
+
+            if (!enable)
+            {
+                DgvConsoleFiles.Rows.Clear();
+            }
         }
 
         // Remove dotted borders from the cells upon focus
@@ -1261,50 +1338,7 @@ namespace ModioX.Windows
 
             if (SettingsData.ConsoleProfiles.Count == 0)
             {
-                SettingsData.ConsoleProfiles.Add("Default Console : 192.168.0.42");
-            }
-        }
-
-        // Dark TextBox Fake Watermark - It doesn't support this yet, maybe add this to source eventually
-        readonly string searchWatermark = "Enter text to search...";
-
-        private void TextBoxSearch_TextChanged(object sender, EventArgs e)
-        {
-            if (TextBoxSearch.Text.Equals(searchWatermark))
-            {
-                TextBoxSearch.Text = null;
-                TextBoxSearch.ForeColor = Color.Gainsboro;
-            }
-        }
-
-        private void TextBoxSearch_Click(object sender, EventArgs e)
-        {
-            if (TextBoxSearch.Text.Equals(searchWatermark))
-            {
-                TextBoxSearch.Text = null;
-                TextBoxSearch.ForeColor = Color.Gainsboro;
-            }
-        }
-
-        private void MenuItemToolsBackupFileManager_Click(object sender, EventArgs e)
-        {
-            using (BackupManagerForm backupManagerForm = new BackupManagerForm())
-            {
-                backupManagerForm.ShowDialog(this);
-            }
-        }
-
-        private void TextBoxSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                SelectedModQuery = TextBoxSearch.Text;
-
-                LoadModsByCategoryId(
-                    SelectedCategory.Id, 
-                    SelectedModQuery, 
-                    SelectedModFirmware,
-                    SelectedModType);
+                SettingsData.ConsoleProfiles.Add(new ConsoleProfile() { Name = "Default Console", Address = "192.168.0.42" });
             }
         }
     }

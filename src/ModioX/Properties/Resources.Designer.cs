@@ -283,6 +283,26 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_software_installer_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-software-installer-22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_uninstall_programs_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-uninstall-programs-22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_upload_22 {
             get {
                 object obj = ResourceManager.GetObject("icons8-upload-22", resourceCulture);

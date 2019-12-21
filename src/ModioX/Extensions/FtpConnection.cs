@@ -17,7 +17,7 @@ namespace ModioX.Extensions
         private string _password;
         private int _port;
         private string _username;
-        private bool _isconnected;
+        private bool _IsConsoleConnected;
 
         public FtpConnection(string host)
         {
@@ -68,9 +68,9 @@ namespace ModioX.Extensions
             this.Dispose();
         }
 
-        public bool IsConnected
+        public bool IsConsoleConnected
         {
-            get { return _isconnected; }
+            get { return _IsConsoleConnected; }
         }
 
         public void CreateDirectory(string path)
@@ -466,22 +466,22 @@ namespace ModioX.Extensions
         {
             if (username == null)
             {
-                _isconnected = false;
+                _IsConsoleConnected = false;
                 throw new ArgumentNullException("username");
             }
 
             if (password == null)
             {
-                _isconnected = false;
+                _IsConsoleConnected = false;
                 throw new ArgumentNullException("password");
             }
 
             this._hConnect = WININET.InternetConnect(this._hInternet, this._host, this._port, username, password, 1,
                 0x8000000, IntPtr.Zero);
-            _isconnected = true;
+            _IsConsoleConnected = true;
             if (this._hConnect == IntPtr.Zero)
             {
-                _isconnected = false;
+                _IsConsoleConnected = false;
                 this.Error();
             }
         }
@@ -490,15 +490,15 @@ namespace ModioX.Extensions
         {
             if (string.IsNullOrEmpty(this._host))
             {
-                _isconnected = false;
+                _IsConsoleConnected = false;
                 throw new ArgumentNullException("Host");
             }
 
             this._hInternet = WININET.InternetOpen(Environment.UserName, 0, null, null, 4);
-            _isconnected = true;
+            _IsConsoleConnected = true;
             if (this._hInternet == IntPtr.Zero)
             {
-                _isconnected = false;
+                _IsConsoleConnected = false;
                 this.Error();
             }
         }
