@@ -27,7 +27,7 @@ Download and run the latest version of the Windows installer, "ModioX.Installer.
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further so maybe we can work on this together!
 
 ## Requesting Mods
-I understand that not every mod is available, so I welcome you to please use the **Request Mods** to open an issue with the details and they will be submitted to our database.
+I understand that not every mod is available, so I welcome you to use the **Request Mod** feature to open an issue with the details and they will be submitted to our database.
 
 ## Credits / Libraries
 - Appropriate Authors of all Mods
