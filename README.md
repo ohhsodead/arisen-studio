@@ -34,10 +34,10 @@ An open source desktop application designed to easily browse through a regularly
 Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsoash/ModioX/releases/latest) page.
  
 ## Contributing
-You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further so maybe we can work on this together!
+You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue do we can discuss things before going further, maybe we can work on this together!
  
 ## Requesting Mods
-I understand that not every mod is available, so I welcome you to use the **Request Mod** feature to open an issue with the details and they will be submitted to our database.
+I understand that not every mod is available, you can use the **Request Mod** feature to open an issue with the details and they will be submitted to our database.
  
 ## Credits / Libraries
 - Appropriate Authors of all Mods
