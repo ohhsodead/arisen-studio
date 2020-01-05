@@ -12,7 +12,7 @@ An open source desktop application designed to easily browse through a regularly
 
 ![Custom Mods](https://github.com/ohhsoash/ModioX/blob/master/Screenshots/View/CustomMods.png?raw=true)
 
-**Comments, ideas, suggestions?** You can contact [me](https://github.com/ohhsodead/) via [Email](bettercodes1@gmail.com).
+**Comments, ideas, suggestions?** You can contact [me](https://github.com/ohhsodead/) via [Email](mailto:bettercodes1@gmail.com).
 
 ## Features
 * Fast, lightweight and simple to use
