@@ -49,4 +49,4 @@ I understand that not every mod is available, you can use the **Request Mod** fe
 I can accept no responsibility for any damage you cause to your system by using this tool. Follow the instructions so you shouldn't have any issues.
 
 ## License
-This project is released under the MIT License.
+This project is released under the General Public License v3.
