@@ -4,7 +4,7 @@ An open source desktop application designed to easily browse through a regularly
 
 <h4 align="left">the only one of its kind (i think)</h4>
 
-![ModioX](https://github.com/ohhsoash/ModioX/blob/master/Screenshots/View/MainForm.png?raw=true) 
+![Main Form](https://github.com/ohhsoash/ModioX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
 
 ![File Explorer](https://github.com/ohhsoash/ModioX/blob/master/.screenshots/demo/FileExplorer.png?raw=true)
 
@@ -40,7 +40,7 @@ Download and run the latest version of the Windows installer, "ModioX.Installer.
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue do we can discuss things before going further, maybe we can work on this together!
  
 ## Requesting Mods
-I understand that not every mod is available, you can use the **Request Mod** feature to open an issue with the details and they will be submitted to our database.
+I understand that not every mod is available, you can use the **REQUEST MOD** feature to open an issue with the details and they will be submitted to our database.
  
 ## Credits / Libraries
 - Appropriate Authors of all Mods
