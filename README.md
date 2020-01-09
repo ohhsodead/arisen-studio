@@ -14,6 +14,9 @@ An open source desktop application designed to easily browse through a regularly
 
 **Comments, ideas, suggestions?** You can contact [me](https://github.com/ohhsodead/) via [Email](mailto:bettercodes1@gmail.com).
 
+## Note
+- Before using this tool, I suggest you reinstall game updates that you would like to mod. So you can backup the original game files when installing the mods, and restore them when uninstalling.
+
 ## Features
 * Fast, lightweight and simple to use
 * Browse a large database of ps3 mods
