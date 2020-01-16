@@ -6,12 +6,6 @@ An open source desktop application designed to easily browse through a regularly
 
 ![Main Form](https://github.com/ohhsoash/ModioX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
 
-![File Explorer](https://github.com/ohhsoash/ModioX/blob/master/.screenshots/demo/FileExplorer.png?raw=true)
-
-![Backup Files](https://github.com/ohhsoash/ModioX/blob/master/.screenshots/demo/BackupFiles.png?raw=true) 
-
-![Custom Mods](https://github.com/ohhsoash/ModioX/blob/master/.screenshots/demo/CustomMods.png?raw=true)
-
 **Comments, ideas, suggestions?** You can contact [me](https://github.com/ohhsodead/) via [Email](mailto:bettercodes1@gmail.com).
 
 ## Note
