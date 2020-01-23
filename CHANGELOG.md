@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Beta 1.2.0
+This update mainly includes improvements to the core functionality for installing and uninstalling mods.
+
+- Added console profile connection window
+- Added custom mods window
+- Added option to show/hide mod id
+- Added game mode property to mods
+- Added FileZilla option to applications
+- Improved game file backups
+
 ## Beta 1.1.0
 Improved and cleaned the user interface, also many new features, advancements and customization for a complete built-in ftp client, with a more useful logging library and some bug fixes. 
 
