@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ModioX.Windows.Custom_Mods
+namespace ModioX.Forms.Custom_Mods
 {
     public partial class EditCustomMod : DarkForm
     {
@@ -20,19 +20,9 @@ namespace ModioX.Windows.Custom_Mods
 
         private void EditCustomMod_Load(object sender, EventArgs e)
         {
-            foreach (var customMod in MainForm.SettingsData.CustomMods)
-            {
-                ComboBoxCustomMods.Items.Add(string.Format("{0} ({1}) ({2} Files)", customMod.Name, customMod.CategoryId, customMod.InstallFiles.Count.ToString()));
-            }
-
-            if (CustomModIndex.HasValue)
-            {
-                ComboBoxCustomMods.SelectedIndex = CustomModIndex.Value;
-            }
-
             foreach (var category in MainForm.Categories.Categories)
             {
-                ComboBoxCategoryId.Items.Add(category.Id.ToUpper());
+                ComboBoxCategoryTitle.Items.Add(category.Title);
             }
 
             UpdateUI();
@@ -44,62 +34,21 @@ namespace ModioX.Windows.Custom_Mods
 
             TextBoxName.Text = CustomMod.Name;
             TextBoxDescription.Text = CustomMod.Description;
-            ComboBoxCategoryId.Text = CustomMod.CategoryId;
+            ComboBoxCategoryTitle.Text = CustomMod.CategoryTitle;
 
             foreach (var installFile in CustomMod.InstallFiles)
             {
                 ListViewInstallFiles.Items.Add(new DarkListItem() { Text = installFile.LocalPath + " > " +  installFile.ConsolePath });
             }
         }
-
-
-        private void ComboBoxCustomMods_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ComboBoxCustomMods.SelectedIndex != -1)
-            {
-                CustomMod = MainForm.SettingsData.CustomMods[ComboBoxCustomMods.SelectedIndex];
-                CustomModIndex = ComboBoxCustomMods.SelectedIndex;
-            }
-
-            UpdateUI();
-        }
-
-        private void ButtonNewMod_Click(object sender, EventArgs e)
-        {
-            if (ComboBoxCustomMods.SelectedIndex != -1)
-            {
-                if (DarkMessageBox.Show(this, "Would you like to update the current mod information before creating a new one?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
-                    if (string.IsNullOrWhiteSpace(TextBoxName.Text))
-                    {
-                        DarkMessageBox.Show(this, "You haven't provided a job name for the details.", "Attention", MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    if (ListViewInstallFiles.Items.Count < 1)
-                    {
-                        DarkMessageBox.Show(this, "You haven't provided any files to be installed for this mod. There must be at least one file.", "Attention", MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    MainForm.SettingsData.UpdateMod(ComboBoxCustomMods.SelectedIndex, CustomMod);
-
-                    DarkMessageBox.Show(this, string.Format("You have updated the information for job {0} (#{1}).", CustomMod.Name, CustomMod.CategoryId), "Updated Mod", MessageBoxIcon.Information);
-                }
-            }
-
-            CustomMod = new CustomMod();
-            ComboBoxCustomMods.SelectedIndex = -1;
-            UpdateUI();
-        }
-
+        
         private void TextBoxName_TextChanged(object sender, EventArgs e)
         {
             CustomMod.Name = TextBoxName.Text;
         }
         private void ComboBoxCategoryId_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CustomMod.CategoryId = ComboBoxCategoryId.GetItemText(ComboBoxCategoryId.SelectedItem).ToUpper();
+            CustomMod.CategoryTitle = ComboBoxCategoryTitle.GetItemText(ComboBoxCategoryTitle.SelectedItem);
         }
 
         private void TextBoxDescription_TextChanged(object sender, EventArgs e)
@@ -153,7 +102,7 @@ namespace ModioX.Windows.Custom_Mods
                 return;
             }
 
-            if (ComboBoxCategoryId.SelectedIndex == -1)
+            if (ComboBoxCategoryTitle.SelectedIndex == -1)
             {
                 DarkMessageBox.Show(this, "You must include a category to this mod.", "No Name", MessageBoxIcon.Exclamation);
                 return;
@@ -165,13 +114,13 @@ namespace ModioX.Windows.Custom_Mods
                 return;
             }
 
-            if (ComboBoxCustomMods.SelectedIndex == -1)
+            if (CustomModIndex.HasValue)
             {
-                MainForm.SettingsData.AddMod(CustomMod);
+                MainForm.SettingsData.UpdateMod(CustomModIndex.Value, CustomMod);
             }
             else
             {
-                MainForm.SettingsData.UpdateMod(ComboBoxCustomMods.SelectedIndex, CustomMod);
+                MainForm.SettingsData.AddMod(CustomMod);
             }
 
             Close();

@@ -1,4 +1,4 @@
-﻿namespace ModioX.Windows
+﻿namespace ModioX.Forms.Console_Profiles
 {
     partial class EditProfiles
     {

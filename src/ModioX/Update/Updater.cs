@@ -1,4 +1,5 @@
 ﻿using ModioX.Extensions;
+using ModioX.Forms;
 using ModioX.Windows;
 using System;
 using System.Diagnostics;
@@ -50,7 +51,7 @@ namespace ModioX.Updater
             try
             {
                 Program.Log.Info(@"New update available - Starting to download the installer...");
-                DarkUI.Forms.DarkMessageBox.Show(MainForm.mainForm, $@"This version of ModioX is now outdated. An update (v{newVersion}) has been released on GitHub. Click OK to download and run the installer.", @"Update Available");
+                DarkUI.Forms.DarkMessageBox.Show(MainForm.mainForm, $@"This version of ModioX is now outdated. An update (v{newVersion}) has been released on GitHub. Click OK to download and run the installer.", @"Update Available", System.Windows.Forms.MessageBoxIcon.Information);
                 Program.WebClient.DownloadFile($"{Utilities.ProjectRepoUrl}releases/download/{newVersion}/ModioX.Installer.Windows.exe", $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\ModioX.Installer.Windows.exe.exe");
                 Process.Start($@"{KnownFolders.GetPath(KnownFolder.Downloads)}\ModioX.Installer.Windows.exe.exe");
                 System.Windows.Forms.Application.Exit();
@@ -58,7 +59,7 @@ namespace ModioX.Updater
             catch (Exception ex)
             {
                 Program.Log.Error("There was a problem starting the update installer : " + ex.Message, ex);
-                DarkUI.Forms.DarkMessageBox.Show(MainForm.mainForm, @"There was an issue. You will need to manually install the latest available update from the GitHub releases page.", "Error");
+                DarkUI.Forms.DarkMessageBox.Show(MainForm.mainForm, @"There was an issue. You will need to manually install the latest available update from the GitHub releases page.", "Error", System.Windows.Forms.MessageBoxIcon.Error);
                 Process.Start($"{Utilities.ProjectRepoUrl}releases/latest");
                 System.Windows.Forms.Application.Exit();
             }

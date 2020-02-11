@@ -1,5 +1,6 @@
 ﻿using DarkUI.Forms;
 using ModioX.Extensions;
+using ModioX.Forms;
 using ModioX.Windows;
 using System;
 using System.Collections.Generic;
@@ -18,17 +19,28 @@ namespace ModioX.Models.Database
 
             public string Title { get; set; }
 
-            public string Icon { get; set; }
+            public string Type { get; set; }
 
             public string[] Regions { get; set; }
 
-            /// <summary>
-            ///     Determines whether the game needs a region to be selected before installing mods
-            /// </summary>
-            /// <returns></returns>
-            public bool RequiresRegion()
+            public CategoryType GetCategoryType()
             {
-                return Regions.Length > 0;
+                if (Type.Equals("game"))
+                {
+                    return CategoryType.Game;
+                }
+                else if (Type.Equals("resource"))
+                {
+                    return CategoryType.Resource;
+                }
+                else if (Type.Equals("favorite"))
+                {
+                    return CategoryType.Favorite;
+                }
+                else
+                {
+                    return CategoryType.Game;
+                }
             }
 
             /// <summary>
@@ -56,24 +68,48 @@ namespace ModioX.Models.Database
 
                     foreach (string region in detectedRegions)
                     {
-                        if (DarkMessageBox.Show(MainForm.mainForm, string.Format("We have detected the your region for '{0}' is {1} - Is this correct?", Title, region), "Detected Game Region", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (DarkMessageBox.Show(MainForm.mainForm, string.Format("We have detected your region for '{0}' is {1} - Is this correct?", Title, region), "Detected Game Region", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             return region;
                         }
                     }
 
-                    DarkMessageBox.Show(MainForm.mainForm, "Could not find any regions on your console for this title", "No Region Detected", MessageBoxIcon.Error);
+                    DarkMessageBox.Show(MainForm.mainForm, "Could not find any regions on your console for this game title. Make sure you have installed the game update on your console.", "No Region Detected", MessageBoxIcon.Error);
+                    return null;
                 }
                 else
                 {
-                    using (GameRegionDialog regionsWindow = new GameRegionDialog() { Regions = Regions.ToList() })
+                    using (ListViewDialog listViewDialog = new ListViewDialog() { Text = "Game Regions", Items = Regions.ToList() })
                     {
-                        regionsWindow.ShowDialog();
-                        return regionsWindow.SelectedRegion;
+                        listViewDialog.ShowDialog();
+                        return listViewDialog.SelectedItem;
                     }
                 }
+            }
 
-                return null;
+            /// <summary>
+            ///     Returns the users game region, either automatically set region by searching existing console directories or prompt
+            ///     the user to select one
+            /// </summary>
+            /// <param name="hostAddress">Console ip address</param>
+            /// <returns></returns>
+            public string GetUserId(string hostAddress)
+            {
+                List<string> userIds = FtpExtensions.GetFolderNames(hostAddress, "/dev_hdd0/home/");
+
+                if (userIds.Count < 1)
+                {
+                    DarkMessageBox.Show(MainForm.mainForm, "Could not find any userId's on your console. Make sure you have created at least one user profile.", "No UserId's Detected", MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    using (ListViewDialog listViewDialog = new ListViewDialog() { Text = "Profile User IDs", Items = userIds })
+                    {
+                        listViewDialog.ShowDialog();
+                        return listViewDialog.SelectedItem;
+                    }
+                }
             }
         }
 
@@ -95,11 +131,35 @@ namespace ModioX.Models.Database
         }
 
         /// <summary>
+        ///     Get the game data matching the specified title
+        /// </summary>
+        /// <param name="title">Title of the game</param>
+        /// <returns>Game information</returns>
+        public Category GetCategoryByTitle(string title)
+        {
+            foreach (Category game in from Category game in Categories
+                                      where game.Title.ToLower().Equals(title.ToLower())
+                                      select game)
+            {
+                return game;
+            }
+
+            throw new Exception("Unable to find game data for the specified game id");
+        }
+
+        /// <summary>
         /// Gets the total number of games, these are defined by having regions
         /// </summary>
         /// <returns></returns>
         public int TotalGames => (from Category category in Categories
                                   where category.Regions.Length > 0
                                   select category).Count();
+    }
+
+    public enum CategoryType
+    {
+        Game,
+        Resource,
+        Favorite
     }
 }

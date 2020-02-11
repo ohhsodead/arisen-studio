@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ModioX.Windows.Connection
+namespace ModioX.Forms.Connection
 {
     public partial class ConsoleConnection : DarkForm
     {
@@ -25,6 +25,11 @@ namespace ModioX.Windows.Connection
         private void ListViewConsoleProfiles_SelectedIndicesChanged(object sender, EventArgs e)
         {
             ButtonConnect.Enabled = ListViewConsoleProfiles.SelectedIndices.Count > 0;
+
+            if (ListViewConsoleProfiles.SelectedIndices.Count > 0)
+            {
+                ButtonConnect.Focus();
+            }
         }
 
         private void ButtonConnect_Click(object sender, EventArgs e)

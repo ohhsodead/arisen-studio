@@ -21,7 +21,7 @@ namespace ModioX.Extensions
         /// <summary>
         ///     Web URL pointing to the project repo hosted on GitHub
         /// </summary>
-        internal const string ProjectRepoUrl = "https://github.com/ohhsoash/ModioX/";
+        internal const string ProjectRepoUrl = "https://github.com/ohhsodead/ModioX/";
 
         /// <summary>
         ///     Web URL pointing to the project's version file
@@ -45,7 +45,7 @@ namespace ModioX.Extensions
         {
             using (HttpClient client = new HttpClient())
             {
-                using (HttpResponseMessage response = client.GetAsync("https://www.dropbox.com/s/9kzqk21hkz2nt14/mods.json?raw=true").Result)
+                using (HttpResponseMessage response = client.GetAsync("https://dl.dropbox.com/s/9kzqk21hkz2nt14/mods.json?raw=true").Result)
                 {
                     if (response.StatusCode != HttpStatusCode.OK)
                     {
@@ -74,7 +74,7 @@ namespace ModioX.Extensions
         {
             using (HttpClient client = new HttpClient())
             {
-                using (HttpResponseMessage response = client.GetAsync("https://www.dropbox.com/s/98bp8y8ii1o7y64/categories.json?raw=true").Result)
+                using (HttpResponseMessage response = client.GetAsync("https://dl.dropbox.com/s/98bp8y8ii1o7y64/categories.json?raw=true").Result)
                 {
                     if (response.StatusCode != HttpStatusCode.OK)
                     {

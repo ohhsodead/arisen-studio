@@ -1,10 +1,11 @@
 ﻿using DarkUI.Win32;
 using log4net;
-using ModioX.Windows;
+using ModioX.Forms;
 using System;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace ModioX
 {
@@ -21,24 +22,25 @@ namespace ModioX
         {
             // Initialize log4net.
             log4net.Config.XmlConfigurator.Configure();
-            Log.Info("Configured logging");
+            Log.Info("Configured logging settings");
 
-            System.Windows.Forms.Application.EnableVisualStyles();
-            System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-            System.Windows.Forms.Application.AddMessageFilter(new ControlScrollFilter());
-            System.Windows.Forms.Application.Run(new MainForm());
-            System.Windows.Forms.Application.ThreadException += Application_ThreadException;
-            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+            Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.AddMessageFilter(new ControlScrollFilter());
+            Application.Run(new MainForm());
         }
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            Log.Error(e.Exception.Message, e.Exception);
+            MainForm.mainForm.SetStatus(string.Format("An unknown error occurred : {0} - See log file for more details", e.Exception.Message), e.Exception);
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            Log.Error(((Exception)e.ExceptionObject).Message, (Exception)e.ExceptionObject);
+            MainForm.mainForm.SetStatus(string.Format("An unknown error occurred : {0} - See log file for more details", ((Exception)e.ExceptionObject).Message), (Exception)e.ExceptionObject);
         }
     }
 }

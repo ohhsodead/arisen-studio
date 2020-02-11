@@ -6,7 +6,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ModioX.Windows
+namespace ModioX.Forms.Game_File_Backups
 {
     public partial class ViewGameBackups : DarkForm
     {
@@ -31,11 +31,11 @@ namespace ModioX.Windows
                 if (File.Exists(backupFile.LocalPath))
                 {
                     FileInfo fileInfo = new FileInfo(backupFile.LocalPath);
-                    DgvBackups.Rows.Add(backupFile.Name, backupFile.FileName, gameId.ToUpper(), fileInfo.Length.ToString("#,##0") + " bytes", fileInfo.LastWriteTime);
+                    DgvBackups.Rows.Add(backupFile.Name, MainForm.Categories.GetCategoryById(gameId).Title, backupFile.FileName, fileInfo.Length.ToString("#,##0") + " bytes");
                 }
                 else
                 {
-                    DgvBackups.Rows.Add(backupFile.Name + " (No Local File Found)", backupFile.FileName, gameId.ToUpper(), "n/a", "n/a");
+                    DgvBackups.Rows.Add(backupFile.Name, MainForm.Categories.GetCategoryById(gameId).Title, backupFile.FileName, "No File");
                 }
             }
         }
@@ -47,7 +47,7 @@ namespace ModioX.Windows
                 BackupFile backupFile = MainForm.SettingsData.BackupFiles[DgvBackups.CurrentRow.Index];
 
                 LabelName.Text = backupFile.Name;
-                LabelGame.Text = string.IsNullOrEmpty(backupFile.CategoryId) ? "n/a" : MainForm.Categories.GetCategoryById(backupFile.CategoryId).Title;
+                LabelGame.Text = MainForm.Categories.GetCategoryById(backupFile.CategoryId).Title;
                 LabelFileName.Text = backupFile.FileName;
                 LabelLocalPath.Text = backupFile.LocalPath;
                 LabelConsolePath.Text = backupFile.InstallPath;
@@ -55,7 +55,7 @@ namespace ModioX.Windows
                 if (!File.Exists(backupFile.LocalPath))
                 {
                     LabelName.Text += " (No Local File Found)";
-                    DarkMessageBox.Show(this, string.Format("Local file for {0} can't be found at path {1}.\n\nYou can either edit the backup and choose your local file again, or re-install your game update and re-backup the game file.", backupFile.Name, backupFile.LocalPath));
+                    DarkMessageBox.Show(this, string.Format("Local file for {0} can't be found at path {1}.\n\nIf you have moved this file then edit the backup and choose the local file again, otherwise re-install your game update and re-backup the orginal game file.", backupFile.Name, backupFile.LocalPath), "No Local File", MessageBoxIcon.Warning);
                 }
             }
 
@@ -71,7 +71,8 @@ namespace ModioX.Windows
 
             using (EditBackupForm editBackupForm = new EditBackupForm()
             {
-                BackupFile = backupFile
+                BackupFile = backupFile,
+                BackupFileIndex = DgvBackups.CurrentRow.Index
             })
             {
                 editBackupForm.ShowDialog(this);
@@ -100,8 +101,6 @@ namespace ModioX.Windows
 
         public void BackupGameFile(BackupFile backupFile)
         {
-            CategoriesData.Category category = MainForm.Categories.GetCategoryById(backupFile.CategoryId);
-
             try
             {
                 FtpExtensions.DownloadFile(MainForm.ConsoleProfile.Address, backupFile.LocalPath, backupFile.InstallPath);

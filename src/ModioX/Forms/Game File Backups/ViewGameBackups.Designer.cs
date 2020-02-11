@@ -1,4 +1,4 @@
-﻿namespace ModioX.Windows
+﻿namespace ModioX.Forms.Game_File_Backups
 {
     partial class ViewGameBackups
     {
@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewGameBackups));
             this.DgvBackups = new DarkUI.Controls.DarkDataGridView();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnGameId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLastModified = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SectionBackupFile = new DarkUI.Controls.DarkSectionPanel();
             this.ToolStripArchiveInformation = new DarkUI.Controls.DarkToolStrip();
             this.ToolItemEditBackup = new System.Windows.Forms.ToolStripButton();
@@ -53,6 +48,18 @@
             this.LabelLocalPath = new System.Windows.Forms.Label();
             this.LabelHeaderInstallPath = new System.Windows.Forms.Label();
             this.LabelConsolePath = new System.Windows.Forms.Label();
+            this.ColumnSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnGameId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBackups)).BeginInit();
             this.SectionBackupFile.SuspendLayout();
             this.ToolStripArchiveInformation.SuspendLayout();
@@ -66,14 +73,14 @@
             this.DgvBackups.AllowUserToDeleteRows = false;
             this.DgvBackups.AllowUserToDragDropRows = false;
             this.DgvBackups.AllowUserToPasteCells = false;
+            this.DgvBackups.AllowUserToResizeColumns = false;
             this.DgvBackups.ColumnHeadersHeight = 23;
             this.DgvBackups.ColumnHeadersVisible = false;
             this.DgvBackups.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnName,
-            this.ColumnType,
-            this.ColumnGameId,
-            this.ColumnSize,
-            this.ColumnLastModified});
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             this.DgvBackups.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvBackups.Location = new System.Drawing.Point(1, 25);
             this.DgvBackups.MultiSelect = false;
@@ -84,49 +91,9 @@
             this.DgvBackups.RowTemplate.Height = 24;
             this.DgvBackups.RowTemplate.ReadOnly = true;
             this.DgvBackups.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvBackups.Size = new System.Drawing.Size(519, 162);
+            this.DgvBackups.Size = new System.Drawing.Size(519, 189);
             this.DgvBackups.TabIndex = 12;
             this.DgvBackups.SelectionChanged += new System.EventHandler(this.DgvBackupFiles_SelectionChanged);
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnName.HeaderText = "Name";
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
-            // 
-            // ColumnType
-            // 
-            this.ColumnType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnType.HeaderText = "Type";
-            this.ColumnType.MinimumWidth = 80;
-            this.ColumnType.Name = "ColumnType";
-            this.ColumnType.ReadOnly = true;
-            this.ColumnType.Width = 80;
-            // 
-            // ColumnGameId
-            // 
-            this.ColumnGameId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnGameId.HeaderText = "Game Id";
-            this.ColumnGameId.Name = "ColumnGameId";
-            this.ColumnGameId.ReadOnly = true;
-            this.ColumnGameId.Width = 80;
-            // 
-            // ColumnSize
-            // 
-            this.ColumnSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnSize.HeaderText = "Size";
-            this.ColumnSize.Name = "ColumnSize";
-            this.ColumnSize.ReadOnly = true;
-            this.ColumnSize.Width = 90;
-            // 
-            // ColumnLastModified
-            // 
-            this.ColumnLastModified.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnLastModified.HeaderText = "Last Modified";
-            this.ColumnLastModified.Name = "ColumnLastModified";
-            this.ColumnLastModified.ReadOnly = true;
-            this.ColumnLastModified.Width = 115;
             // 
             // SectionBackupFile
             // 
@@ -137,12 +104,13 @@
             this.SectionBackupFile.Controls.Add(this.ToolStripArchiveInformation);
             this.SectionBackupFile.Location = new System.Drawing.Point(12, 12);
             this.SectionBackupFile.Name = "SectionBackupFile";
-            this.SectionBackupFile.SectionHeader = "File Backups";
-            this.SectionBackupFile.Size = new System.Drawing.Size(521, 224);
+            this.SectionBackupFile.SectionHeader = "Backup Files";
+            this.SectionBackupFile.Size = new System.Drawing.Size(521, 251);
             this.SectionBackupFile.TabIndex = 15;
             // 
             // ToolStripArchiveInformation
             // 
+            this.ToolStripArchiveInformation.AutoSize = false;
             this.ToolStripArchiveInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ToolStripArchiveInformation.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ToolStripArchiveInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
@@ -153,7 +121,7 @@
             this.ToolItemDeleteBackup,
             this.ToolItemBackupFile,
             this.ToolItemRestoreFile});
-            this.ToolStripArchiveInformation.Location = new System.Drawing.Point(1, 187);
+            this.ToolStripArchiveInformation.Location = new System.Drawing.Point(1, 214);
             this.ToolStripArchiveInformation.Name = "ToolStripArchiveInformation";
             this.ToolStripArchiveInformation.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.ToolStripArchiveInformation.Size = new System.Drawing.Size(519, 36);
@@ -223,14 +191,13 @@
             // 
             // SectionBackupDetails
             // 
-            this.SectionBackupDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.SectionBackupDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SectionBackupDetails.Controls.Add(this.FlowPanelDetails);
-            this.SectionBackupDetails.Location = new System.Drawing.Point(12, 242);
+            this.SectionBackupDetails.Location = new System.Drawing.Point(12, 269);
             this.SectionBackupDetails.Name = "SectionBackupDetails";
-            this.SectionBackupDetails.SectionHeader = "File Backup Details";
-            this.SectionBackupDetails.Size = new System.Drawing.Size(521, 207);
+            this.SectionBackupDetails.SectionHeader = "Backup File Details";
+            this.SectionBackupDetails.Size = new System.Drawing.Size(521, 216);
             this.SectionBackupDetails.TabIndex = 16;
             // 
             // FlowPanelDetails
@@ -252,7 +219,7 @@
             this.FlowPanelDetails.Location = new System.Drawing.Point(1, 25);
             this.FlowPanelDetails.Name = "FlowPanelDetails";
             this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(4, 4, 18, 2);
-            this.FlowPanelDetails.Size = new System.Drawing.Size(519, 181);
+            this.FlowPanelDetails.Size = new System.Drawing.Size(519, 190);
             this.FlowPanelDetails.TabIndex = 15;
             // 
             // LabelHeaderName
@@ -392,12 +359,104 @@
             this.LabelConsolePath.TabIndex = 15;
             this.LabelConsolePath.Text = "...";
             // 
+            // ColumnSize
+            // 
+            this.ColumnSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnSize.HeaderText = "Size";
+            this.ColumnSize.MinimumWidth = 6;
+            this.ColumnSize.Name = "ColumnSize";
+            this.ColumnSize.Width = 95;
+            // 
+            // ColumnType
+            // 
+            this.ColumnType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnType.HeaderText = "File Name";
+            this.ColumnType.MinimumWidth = 100;
+            this.ColumnType.Name = "ColumnType";
+            this.ColumnType.Width = 105;
+            // 
+            // ColumnGameId
+            // 
+            this.ColumnGameId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnGameId.HeaderText = "Game Id";
+            this.ColumnGameId.MinimumWidth = 6;
+            this.ColumnGameId.Name = "ColumnGameId";
+            this.ColumnGameId.Width = 140;
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnName.HeaderText = "Name";
+            this.ColumnName.MinimumWidth = 6;
+            this.ColumnName.Name = "ColumnName";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Game Id";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 190;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn3.HeaderText = "File Name";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 100;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Size";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 95;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Name";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Category";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 190;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "File Name";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "File Size";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 90;
+            // 
             // ViewGameBackups
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(544, 461);
+            this.ClientSize = new System.Drawing.Size(544, 497);
             this.Controls.Add(this.SectionBackupDetails);
             this.Controls.Add(this.SectionBackupFile);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -408,11 +467,10 @@
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Game File Backups";
+            this.Text = "Game Backup Files";
             this.Load += new System.EventHandler(this.BackupManagerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvBackups)).EndInit();
             this.SectionBackupFile.ResumeLayout(false);
-            this.SectionBackupFile.PerformLayout();
             this.ToolStripArchiveInformation.ResumeLayout(false);
             this.ToolStripArchiveInformation.PerformLayout();
             this.SectionBackupDetails.ResumeLayout(false);
@@ -442,12 +500,19 @@
         private System.Windows.Forms.ToolStripButton ToolItemDeleteBackup;
         private System.Windows.Forms.ToolStripButton ToolItemBackupFile;
         private System.Windows.Forms.ToolStripButton ToolItemRestoreFile;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLastModified;
         private System.Windows.Forms.Label LabelName;
         private System.Windows.Forms.Label LabelFileName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

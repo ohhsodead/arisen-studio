@@ -1,4 +1,4 @@
-﻿namespace ModioX.Windows.Custom_Mods
+﻿namespace ModioX.Forms.Custom_Mods
 {
     partial class ViewCustomMods
     {
@@ -38,21 +38,23 @@
             this.ToolStripCreate = new System.Windows.Forms.ToolStripButton();
             this.ToolItemEdit = new System.Windows.Forms.ToolStripButton();
             this.ToolItemDelete = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripInstall = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripUninstall = new System.Windows.Forms.ToolStripButton();
-            this.LabelGame = new System.Windows.Forms.Label();
-            this.LabelHeaderGame = new System.Windows.Forms.Label();
-            this.LabelName = new System.Windows.Forms.Label();
-            this.LabelHeaderName = new System.Windows.Forms.Label();
+            this.ToolItemInstall = new System.Windows.Forms.ToolStripButton();
+            this.ToolItemUninstall = new System.Windows.Forms.ToolStripButton();
             this.ListViewInstallFiles = new DarkUI.Controls.DarkListView();
-            this.LabelTitleLocalConsolePath = new DarkUI.Controls.DarkTitle();
+            this.darkSectionPanel1 = new DarkUI.Controls.DarkSectionPanel();
+            this.FlowPanelDetails = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LabelName = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.LabelCategory = new System.Windows.Forms.Label();
+            this.LabelHeaderFileName = new System.Windows.Forms.Label();
             this.LabelDescription = new System.Windows.Forms.Label();
-            this.LabelHeaderDescription = new System.Windows.Forms.Label();
-            this.SectionBackupDetails = new DarkUI.Controls.DarkSectionPanel();
+            this.darkTitle1 = new DarkUI.Controls.DarkTitle();
             this.SectionCustomMods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCustomMods)).BeginInit();
             this.ToolStripArchiveInformation.SuspendLayout();
-            this.SectionBackupDetails.SuspendLayout();
+            this.darkSectionPanel1.SuspendLayout();
+            this.FlowPanelDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // SectionCustomMods
@@ -66,7 +68,7 @@
             this.SectionCustomMods.Margin = new System.Windows.Forms.Padding(4);
             this.SectionCustomMods.Name = "SectionCustomMods";
             this.SectionCustomMods.SectionHeader = "Mods";
-            this.SectionCustomMods.Size = new System.Drawing.Size(521, 224);
+            this.SectionCustomMods.Size = new System.Drawing.Size(521, 241);
             this.SectionCustomMods.TabIndex = 15;
             // 
             // DgvCustomMods
@@ -75,6 +77,7 @@
             this.DgvCustomMods.AllowUserToDeleteRows = false;
             this.DgvCustomMods.AllowUserToDragDropRows = false;
             this.DgvCustomMods.AllowUserToPasteCells = false;
+            this.DgvCustomMods.AllowUserToResizeColumns = false;
             this.DgvCustomMods.ColumnHeadersHeight = 23;
             this.DgvCustomMods.ColumnHeadersVisible = false;
             this.DgvCustomMods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -91,7 +94,7 @@
             this.DgvCustomMods.RowTemplate.Height = 24;
             this.DgvCustomMods.RowTemplate.ReadOnly = true;
             this.DgvCustomMods.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvCustomMods.Size = new System.Drawing.Size(519, 162);
+            this.DgvCustomMods.Size = new System.Drawing.Size(519, 179);
             this.DgvCustomMods.TabIndex = 12;
             this.DgvCustomMods.SelectionChanged += new System.EventHandler(this.DgvCustomMods_SelectionChanged);
             // 
@@ -107,7 +110,7 @@
             this.Column2.HeaderText = "Category";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 205;
+            this.Column2.Width = 190;
             // 
             // Column3
             // 
@@ -128,9 +131,9 @@
             this.ToolStripCreate,
             this.ToolItemEdit,
             this.ToolItemDelete,
-            this.ToolStripInstall,
-            this.ToolStripUninstall});
-            this.ToolStripArchiveInformation.Location = new System.Drawing.Point(1, 187);
+            this.ToolItemInstall,
+            this.ToolItemUninstall});
+            this.ToolStripArchiveInformation.Location = new System.Drawing.Point(1, 204);
             this.ToolStripArchiveInformation.Name = "ToolStripArchiveInformation";
             this.ToolStripArchiveInformation.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.ToolStripArchiveInformation.Size = new System.Drawing.Size(519, 36);
@@ -185,160 +188,176 @@
             this.ToolItemDelete.Text = "Delete";
             this.ToolItemDelete.Click += new System.EventHandler(this.ToolStripItemDelete_Click);
             // 
-            // ToolStripInstall
+            // ToolItemInstall
             // 
-            this.ToolStripInstall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripInstall.Enabled = false;
-            this.ToolStripInstall.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripInstall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripInstall.Image = global::ModioX.Properties.Resources.icons8_software_installer_22;
-            this.ToolStripInstall.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripInstall.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripInstall.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripInstall.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripInstall.Name = "ToolStripInstall";
-            this.ToolStripInstall.Size = new System.Drawing.Size(66, 26);
-            this.ToolStripInstall.Text = "Install";
-            this.ToolStripInstall.Click += new System.EventHandler(this.ToolStripItemInstall_Click);
+            this.ToolItemInstall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ToolItemInstall.Enabled = false;
+            this.ToolItemInstall.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ToolItemInstall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ToolItemInstall.Image = global::ModioX.Properties.Resources.icons8_software_installer_22;
+            this.ToolItemInstall.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ToolItemInstall.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolItemInstall.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolItemInstall.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.ToolItemInstall.Name = "ToolItemInstall";
+            this.ToolItemInstall.Size = new System.Drawing.Size(66, 26);
+            this.ToolItemInstall.Text = "Install";
+            this.ToolItemInstall.Click += new System.EventHandler(this.ToolStripItemInstall_Click);
             // 
-            // ToolStripUninstall
+            // ToolItemUninstall
             // 
-            this.ToolStripUninstall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripUninstall.Enabled = false;
-            this.ToolStripUninstall.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripUninstall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripUninstall.Image = global::ModioX.Properties.Resources.icons8_uninstall_programs_22;
-            this.ToolStripUninstall.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripUninstall.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripUninstall.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripUninstall.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripUninstall.Name = "ToolStripUninstall";
-            this.ToolStripUninstall.Size = new System.Drawing.Size(81, 26);
-            this.ToolStripUninstall.Text = "Uninstall";
-            this.ToolStripUninstall.Click += new System.EventHandler(this.ToolStripItemUninstall_Click);
+            this.ToolItemUninstall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ToolItemUninstall.Enabled = false;
+            this.ToolItemUninstall.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ToolItemUninstall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ToolItemUninstall.Image = global::ModioX.Properties.Resources.icons8_uninstall_programs_22;
+            this.ToolItemUninstall.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ToolItemUninstall.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolItemUninstall.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolItemUninstall.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.ToolItemUninstall.Name = "ToolItemUninstall";
+            this.ToolItemUninstall.Size = new System.Drawing.Size(81, 26);
+            this.ToolItemUninstall.Text = "Uninstall";
+            this.ToolItemUninstall.Click += new System.EventHandler(this.ToolStripItemUninstall_Click);
             // 
-            // LabelGame
+            // ListViewInstallFiles
             // 
-            this.LabelGame.AutoSize = true;
-            this.LabelGame.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelGame.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelGame.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGame.Location = new System.Drawing.Point(319, 32);
-            this.LabelGame.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelGame.Name = "LabelGame";
-            this.LabelGame.Size = new System.Drawing.Size(16, 15);
-            this.LabelGame.TabIndex = 23;
-            this.LabelGame.Text = "...";
+            this.ListViewInstallFiles.Location = new System.Drawing.Point(8, 91);
+            this.ListViewInstallFiles.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.ListViewInstallFiles.Name = "ListViewInstallFiles";
+            this.ListViewInstallFiles.Size = new System.Drawing.Size(502, 74);
+            this.ListViewInstallFiles.TabIndex = 18;
+            this.ListViewInstallFiles.Text = "darkListView1";
             // 
-            // LabelHeaderGame
+            // darkSectionPanel1
             // 
-            this.LabelHeaderGame.AutoSize = true;
-            this.LabelHeaderGame.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderGame.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelHeaderGame.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderGame.Location = new System.Drawing.Point(257, 32);
-            this.LabelHeaderGame.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
-            this.LabelHeaderGame.Name = "LabelHeaderGame";
-            this.LabelHeaderGame.Size = new System.Drawing.Size(60, 15);
-            this.LabelHeaderGame.TabIndex = 24;
-            this.LabelHeaderGame.Text = "Category:";
+            this.darkSectionPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.darkSectionPanel1.Controls.Add(this.FlowPanelDetails);
+            this.darkSectionPanel1.Location = new System.Drawing.Point(12, 260);
+            this.darkSectionPanel1.Name = "darkSectionPanel1";
+            this.darkSectionPanel1.SectionHeader = "Backup File Details";
+            this.darkSectionPanel1.Size = new System.Drawing.Size(521, 219);
+            this.darkSectionPanel1.TabIndex = 17;
+            // 
+            // FlowPanelDetails
+            // 
+            this.FlowPanelDetails.AutoScroll = true;
+            this.FlowPanelDetails.AutoSize = true;
+            this.FlowPanelDetails.Controls.Add(this.label1);
+            this.FlowPanelDetails.Controls.Add(this.LabelName);
+            this.FlowPanelDetails.Controls.Add(this.label3);
+            this.FlowPanelDetails.Controls.Add(this.LabelCategory);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderFileName);
+            this.FlowPanelDetails.Controls.Add(this.LabelDescription);
+            this.FlowPanelDetails.Controls.Add(this.darkTitle1);
+            this.FlowPanelDetails.Controls.Add(this.ListViewInstallFiles);
+            this.FlowPanelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FlowPanelDetails.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.FlowPanelDetails.Location = new System.Drawing.Point(1, 25);
+            this.FlowPanelDetails.Name = "FlowPanelDetails";
+            this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(2, 4, 2, 2);
+            this.FlowPanelDetails.Size = new System.Drawing.Size(519, 193);
+            this.FlowPanelDetails.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(5, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Name:";
             // 
             // LabelName
             // 
             this.LabelName.AutoSize = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelName, true);
             this.LabelName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelName.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelName.Location = new System.Drawing.Point(51, 32);
+            this.LabelName.Location = new System.Drawing.Point(50, 7);
             this.LabelName.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(16, 15);
             this.LabelName.TabIndex = 25;
             this.LabelName.Text = "...";
             // 
-            // LabelHeaderName
+            // label3
             // 
-            this.LabelHeaderName.AutoSize = true;
-            this.LabelHeaderName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderName.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelHeaderName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderName.Location = new System.Drawing.Point(6, 32);
-            this.LabelHeaderName.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
-            this.LabelHeaderName.Name = "LabelHeaderName";
-            this.LabelHeaderName.Size = new System.Drawing.Size(43, 15);
-            this.LabelHeaderName.TabIndex = 2;
-            this.LabelHeaderName.Text = "Name:";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(5, 28);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 15);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Category:";
             // 
-            // ListViewInstallFiles
+            // LabelCategory
             // 
-            this.ListViewInstallFiles.Location = new System.Drawing.Point(9, 116);
-            this.ListViewInstallFiles.Name = "ListViewInstallFiles";
-            this.ListViewInstallFiles.Size = new System.Drawing.Size(502, 78);
-            this.ListViewInstallFiles.TabIndex = 18;
-            this.ListViewInstallFiles.Text = "darkListView1";
+            this.LabelCategory.AutoSize = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelCategory, true);
+            this.LabelCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelCategory.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelCategory.Location = new System.Drawing.Point(67, 28);
+            this.LabelCategory.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelCategory.Name = "LabelCategory";
+            this.LabelCategory.Size = new System.Drawing.Size(16, 15);
+            this.LabelCategory.TabIndex = 23;
+            this.LabelCategory.Text = "...";
             // 
-            // LabelTitleLocalConsolePath
+            // LabelHeaderFileName
             // 
-            this.LabelTitleLocalConsolePath.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelTitleLocalConsolePath.Location = new System.Drawing.Point(9, 94);
-            this.LabelTitleLocalConsolePath.Name = "LabelTitleLocalConsolePath";
-            this.LabelTitleLocalConsolePath.Size = new System.Drawing.Size(500, 19);
-            this.LabelTitleLocalConsolePath.TabIndex = 26;
-            this.LabelTitleLocalConsolePath.Text = "Install File Paths";
+            this.LabelHeaderFileName.AutoSize = true;
+            this.LabelHeaderFileName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderFileName.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderFileName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderFileName.Location = new System.Drawing.Point(5, 49);
+            this.LabelHeaderFileName.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
+            this.LabelHeaderFileName.Name = "LabelHeaderFileName";
+            this.LabelHeaderFileName.Size = new System.Drawing.Size(74, 15);
+            this.LabelHeaderFileName.TabIndex = 16;
+            this.LabelHeaderFileName.Text = "Description:";
             // 
             // LabelDescription
             // 
             this.LabelDescription.AutoSize = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelDescription, true);
             this.LabelDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelDescription.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelDescription.Location = new System.Drawing.Point(6, 74);
-            this.LabelDescription.Margin = new System.Windows.Forms.Padding(3);
+            this.LabelDescription.Location = new System.Drawing.Point(81, 49);
+            this.LabelDescription.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelDescription.Name = "LabelDescription";
             this.LabelDescription.Size = new System.Drawing.Size(16, 15);
-            this.LabelDescription.TabIndex = 27;
+            this.LabelDescription.TabIndex = 17;
             this.LabelDescription.Text = "...";
             // 
-            // LabelHeaderDescription
+            // darkTitle1
             // 
-            this.LabelHeaderDescription.AutoSize = true;
-            this.LabelHeaderDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderDescription.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelHeaderDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderDescription.Location = new System.Drawing.Point(6, 53);
-            this.LabelHeaderDescription.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
-            this.LabelHeaderDescription.Name = "LabelHeaderDescription";
-            this.LabelHeaderDescription.Size = new System.Drawing.Size(74, 15);
-            this.LabelHeaderDescription.TabIndex = 28;
-            this.LabelHeaderDescription.Text = "Description:";
-            // 
-            // SectionBackupDetails
-            // 
-            this.SectionBackupDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SectionBackupDetails.Controls.Add(this.LabelHeaderDescription);
-            this.SectionBackupDetails.Controls.Add(this.LabelDescription);
-            this.SectionBackupDetails.Controls.Add(this.LabelTitleLocalConsolePath);
-            this.SectionBackupDetails.Controls.Add(this.ListViewInstallFiles);
-            this.SectionBackupDetails.Controls.Add(this.LabelHeaderName);
-            this.SectionBackupDetails.Controls.Add(this.LabelName);
-            this.SectionBackupDetails.Controls.Add(this.LabelHeaderGame);
-            this.SectionBackupDetails.Controls.Add(this.LabelGame);
-            this.SectionBackupDetails.Location = new System.Drawing.Point(12, 244);
-            this.SectionBackupDetails.Margin = new System.Windows.Forms.Padding(4);
-            this.SectionBackupDetails.Name = "SectionBackupDetails";
-            this.SectionBackupDetails.SectionHeader = "Mod Details";
-            this.SectionBackupDetails.Size = new System.Drawing.Size(521, 204);
-            this.SectionBackupDetails.TabIndex = 16;
+            this.darkTitle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.darkTitle1.Location = new System.Drawing.Point(8, 69);
+            this.darkTitle1.Margin = new System.Windows.Forms.Padding(6, 2, 3, 0);
+            this.darkTitle1.Name = "darkTitle1";
+            this.darkTitle1.Size = new System.Drawing.Size(500, 19);
+            this.darkTitle1.TabIndex = 27;
+            this.darkTitle1.Text = "Install File Paths";
             // 
             // ViewCustomMods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(544, 461);
-            this.Controls.Add(this.SectionBackupDetails);
+            this.ClientSize = new System.Drawing.Size(544, 491);
+            this.Controls.Add(this.darkSectionPanel1);
             this.Controls.Add(this.SectionCustomMods);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -354,8 +373,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvCustomMods)).EndInit();
             this.ToolStripArchiveInformation.ResumeLayout(false);
             this.ToolStripArchiveInformation.PerformLayout();
-            this.SectionBackupDetails.ResumeLayout(false);
-            this.SectionBackupDetails.PerformLayout();
+            this.darkSectionPanel1.ResumeLayout(false);
+            this.darkSectionPanel1.PerformLayout();
+            this.FlowPanelDetails.ResumeLayout(false);
+            this.FlowPanelDetails.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -367,19 +388,20 @@
         private System.Windows.Forms.ToolStripButton ToolItemDelete;
         private System.Windows.Forms.ToolStripButton ToolStripCreate;
         private DarkUI.Controls.DarkDataGridView DgvCustomMods;
-        private System.Windows.Forms.ToolStripButton ToolStripInstall;
-        private System.Windows.Forms.ToolStripButton ToolStripUninstall;
-        private System.Windows.Forms.Label LabelGame;
-        private System.Windows.Forms.Label LabelHeaderGame;
-        private System.Windows.Forms.Label LabelName;
-        private System.Windows.Forms.Label LabelHeaderName;
+        private System.Windows.Forms.ToolStripButton ToolItemInstall;
+        private System.Windows.Forms.ToolStripButton ToolItemUninstall;
         private DarkUI.Controls.DarkListView ListViewInstallFiles;
-        private DarkUI.Controls.DarkTitle LabelTitleLocalConsolePath;
-        private System.Windows.Forms.Label LabelDescription;
-        private System.Windows.Forms.Label LabelHeaderDescription;
-        private DarkUI.Controls.DarkSectionPanel SectionBackupDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private DarkUI.Controls.DarkSectionPanel darkSectionPanel1;
+        private System.Windows.Forms.FlowLayoutPanel FlowPanelDetails;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LabelName;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LabelCategory;
+        private System.Windows.Forms.Label LabelHeaderFileName;
+        private System.Windows.Forms.Label LabelDescription;
+        private DarkUI.Controls.DarkTitle darkTitle1;
     }
 }

@@ -4,11 +4,13 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ModioX.Windows
+namespace ModioX.Forms.Game_File_Backups
 {
     public partial class EditBackupForm : DarkForm
     {
         public BackupFile BackupFile { get; set; } = new BackupFile();
+
+        public int? BackupFileIndex { get; set; }
 
         public EditBackupForm()
         {
@@ -16,6 +18,11 @@ namespace ModioX.Windows
         }
 
         private void EditBackupForm_Load(object sender, EventArgs e)
+        {
+            UpdateUI();
+        }
+
+        private void UpdateUI()
         {
             TextBoxName.Text = BackupFile.Name;
             TextBoxFileName.Text = BackupFile.FileName;
@@ -54,24 +61,28 @@ namespace ModioX.Windows
                 return;
             }
 
-            MainForm.SettingsData.BackupFiles.Remove(BackupFile);
-            MainForm.SettingsData.BackupFiles.Add(CreateBackup());
+            if (BackupFileIndex.HasValue)
+            {
+                MainForm.SettingsData.UpdateBackupFile(BackupFileIndex.Value, CreateBackup());
+            }
+            else
+            {
+                MainForm.SettingsData.AddBackupFile(CreateBackup());
+            }
 
             Close();
         }
 
         private BackupFile CreateBackup()
         {
-            BackupFile backupFile = new BackupFile()
+            return new BackupFile()
             {
                 Name = TextBoxName.Text,
                 CategoryId = TextBoxGameId.Text,
                 FileName = Path.GetFileName(TextBoxConsolePath.Text),
                 LocalPath = TextBoxLocalPath.Text,
-                InstallPath = TextBoxConsolePath.Text,
+                InstallPath = TextBoxConsolePath.Text
             };
-
-            return backupFile;
         }
 
         private void ButtonLocalPath_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 
 namespace ModioX.Extensions
 {
@@ -15,7 +16,6 @@ namespace ModioX.Extensions
             using (FtpConnection ftpConnection = new FtpConnection(hostAddress))
             {
                 ftpConnection.Open();
-                ftpConnection.Login();
 
                 string dirPath = consoleFile.Contains("/")
                     ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
@@ -47,7 +47,6 @@ namespace ModioX.Extensions
             using (FtpConnection ftpConnection = new FtpConnection(hostAddress))
             {
                 ftpConnection.Open();
-                ftpConnection.Login();
 
                 string dirPath = consoleFile.Contains("/")
                     ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
@@ -77,7 +76,6 @@ namespace ModioX.Extensions
             using (FtpConnection ftpConnection = new FtpConnection(hostAddress))
             {
                 ftpConnection.Open();
-                ftpConnection.Login();
 
                 string dirPath = consoleFile.Contains("/")
                 ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
@@ -103,19 +101,44 @@ namespace ModioX.Extensions
             using (FtpConnection ftpConnection = new FtpConnection(hostAddress))
             {
                 ftpConnection.Open();
-                ftpConnection.Login();
 
                 string dirPath = consoleFile.Contains("/")
                 ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
                 : "/dev_hdd0/";
 
-                string fileName = consoleFile.Contains("/")
-                        ? consoleFile.Substring(consoleFile.LastIndexOf('/')).Replace("/", "").Replace("//", "")
-                        : consoleFile;
-
                 ftpConnection.SetCurrentDirectory(dirPath);
 
                 return ftpConnection.FileExists(consoleFile);
+            }
+        }
+
+        /// <summary>
+        ///     Downloads the specified console file to the computer
+        /// </summary>
+        /// <param name="hostAddress">PS3 IP address</param>
+        /// <param name="folderPath">Path of the uploading file directory</param>
+        internal static List<string> GetFolderNames(string hostAddress, string folderPath)
+        {
+            using (FtpConnection ftpConnection = new FtpConnection(hostAddress))
+            {
+                List<string> folderNames = new List<string>();
+
+                ftpConnection.Open();
+
+                string dirPath = folderPath.Contains("/")
+                ? folderPath.Substring(0, folderPath.LastIndexOf('/')) + '/'
+                : "/dev_hdd0/";
+
+                ftpConnection.SetCurrentDirectory(dirPath);
+
+                foreach (var path in ftpConnection.GetDirectories(dirPath))
+                {
+                    folderNames.Add(path.Name);
+                }
+
+                folderNames.RemoveRange(0, 2);
+
+                return folderNames;
             }
         }
     }

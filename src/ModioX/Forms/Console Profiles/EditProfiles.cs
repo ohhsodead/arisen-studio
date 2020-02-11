@@ -5,7 +5,7 @@ using System;
 using System.Net;
 using System.Windows.Forms;
 
-namespace ModioX.Windows
+namespace ModioX.Forms.Console_Profiles
 {
     public partial class EditProfiles : DarkForm
     {
@@ -25,7 +25,7 @@ namespace ModioX.Windows
 
             foreach (ConsoleProfile profile in MainForm.SettingsData.ConsoleProfiles)
             {
-                ListViewConsoles.Items.Add(new DarkListItem() { Text = string.Format("{0} (IP : {1})", profile.Name, profile.Address) });
+                ListViewConsoles.Items.Add(new DarkListItem() { Text = string.Format("{0} - {1}", profile.Name, profile.Address) });
             }
         }
 
@@ -82,7 +82,7 @@ namespace ModioX.Windows
             }
             else
             {
-                DarkMessageBox.Show(this, @"You must have at least one console saved.", "Error", System.Windows.Forms.MessageBoxIcon.Error);
+                DarkMessageBox.Show(this, @"You must have at least one console saved.", "Error", MessageBoxIcon.Error);
             }
         }
     }

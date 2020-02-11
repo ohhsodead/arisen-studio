@@ -1,4 +1,4 @@
-﻿namespace ModioX.Windows.Connection
+﻿namespace ModioX.Forms.Connection
 {
     partial class ConsoleConnection
     {
@@ -65,7 +65,7 @@
             this.darkSectionPanel2.Controls.Add(this.ListViewConsoleProfiles);
             this.darkSectionPanel2.Location = new System.Drawing.Point(12, 12);
             this.darkSectionPanel2.Name = "darkSectionPanel2";
-            this.darkSectionPanel2.SectionHeader = "Console Profiles...";
+            this.darkSectionPanel2.SectionHeader = "Choose Profile...";
             this.darkSectionPanel2.Size = new System.Drawing.Size(224, 202);
             this.darkSectionPanel2.TabIndex = 0;
             // 
