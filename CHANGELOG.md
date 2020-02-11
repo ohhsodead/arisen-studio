@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Beta 1.4.0
+A small update to support installing mods to account resources, allowing the user to choose their specified userId when prompted.
+
+- Added support for installing to user accounts
+- Added warning messages about installing to 'dev_rebug' folders
+- Disabled uninstall option from 'dev_rebug' folders
+- Removed unnecessary game information section
+
 ## Beta 1.3.0
 - Improved game file backups
 - Added file explorer to seperate form
