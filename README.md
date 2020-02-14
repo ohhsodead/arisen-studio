@@ -9,7 +9,7 @@ An open source desktop application designed to easily browse through a regularly
 **Comments, ideas, suggestions?** You can contact [me](https://github.com/ohhsodead/) via [Email](mailto:bettercodes1@gmail.com).
 
 ## Note
-- Before using this tool, I suggest you reinstall game updates that you would like to mod. So you can backup the original game files when installing the mods, and restore them when uninstalling.
+- We recommend to reinstall updates for games that are going to be modded. So backups for the original game files are created, which can be restored when uninstalling mods.
 
 ## Features
 * Fast, lightweight and simple to use
@@ -31,7 +31,7 @@ An open source desktop application designed to easily browse through a regularly
 Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsoash/ModioX/releases/latest) page.
  
 ## Contributing
-You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue do we can discuss things before going further, maybe we can work on this together!
+You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
  
 ## Requesting Mods
 I understand that not every mod is available, you can use the **REQUEST MOD** feature to open an issue with the details and they will be submitted to our database.
