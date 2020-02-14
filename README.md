@@ -9,7 +9,7 @@ An open source desktop application designed to easily browse through a regularly
 **Comments, ideas, suggestions?** You can contact [me](https://github.com/ohhsodead/) via [Email](mailto:bettercodes1@gmail.com).
 
 ## Note
-- Before using this tool, I suggest you reinstall game updates that you would like to mod. So you can backup the original game files when installing the mods, and restore them when uninstalling.
+- We recommend to reinstall updates for games that are going to be modded. So backups for the original game files are created, which can be restored when uninstalling mods.
 
 ## Features
 * Fast, lightweight and simple to use
