@@ -9,7 +9,7 @@ A small update to support installing mods to account resources, allowing the use
 - Added support for installing to user accounts
 - Added warning messages about installing to 'dev_rebug' folders
 - Disabled uninstall option from 'dev_rebug' folders
-- Removed unnecessary game information section
+- Removed unnecessary game details section
 
 ## Beta 1.3.0
 - Improved game file backups

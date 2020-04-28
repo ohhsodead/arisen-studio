@@ -1,6 +1,6 @@
 <h1 align="left">ModioX</h1>
  
-An open source desktop application designed to easily browse through a regularly updated database of game mods, homebrew, themes and more for the PlayStation 3. A library that is populated by myself, few friends and awesome contributors, so that all mods have been tested and verified. It also utilizes the ftp commands to be able to install and uninstall modded files directly to games. Without the need for digging up old threads or using file managers - this aims to do everything for you. 
+An open source desktop application designed to easily browse through a regularly updated database of game mods, homebrew, resources and themes for the PlayStation 3. A library that is populated by myself, few friends and awesome contributors, so that all mods have been tested and verified. It also utilizes the ftp commands to be able to install and uninstall modded files directly to games. Without the need for digging up old threads or using file managers - this aims to do everything for you. 
 
 <h4 align="left">the only one of its kind (i think)</h4>
 
@@ -9,7 +9,7 @@ An open source desktop application designed to easily browse through a regularly
 **Comments, ideas, suggestions?** You can contact [me](https://github.com/ohhsodead/) via [Email](mailto:bettercodes1@gmail.com).
 
 ## Note
-- We recommend to reinstall updates for games that are going to be modded. So backups for the original game files are created, which can be restored when uninstalling mods.
+- It's recommend to reinstall updates for games that will be modded. So backups for the original game files are created, which can be restored when uninstalling mods.
 
 ## Features
 * Fast, lightweight and simple to use
@@ -28,7 +28,7 @@ An open source desktop application designed to easily browse through a regularly
 * PlayStation 3 with MFW
  
 ## Installation
-Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsoash/ModioX/releases/latest) page.
+Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/ModioX/releases/latest) page.
  
 ## Contributing
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
