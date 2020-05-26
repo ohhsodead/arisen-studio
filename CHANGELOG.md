@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Beta 1.4.1
+A small update to support installing mods to account resources, allowing the user to choose their specified userId when prompted.
+
+- Added support for specific regions to game mods
+- Added ability to filter mods by game regions
+- Other minor improvements
+
 ## Beta 1.4.0
 A small update to support installing mods to account resources, allowing the user to choose their specified userId when prompted.
 
