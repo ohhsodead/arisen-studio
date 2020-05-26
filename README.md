@@ -9,13 +9,13 @@ An open source desktop application designed to easily browse through a regularly
 **Comments, ideas, suggestions?** You can contact [me](https://github.com/ohhsodead/) via [Email](mailto:bettercodes1@gmail.com).
 
 ## Note
-- It's recommend to reinstall updates for games that will be modded. So backups for the original game files are created, which can be restored when uninstalling mods.
+- It's recommend to reinstall updates for games that will be modded. So the tool can create backups of original game files, and then can be restored when uninstalling mods.
 
 ## Features
 * Fast, lightweight and simple to use
 * Browse a large database of ps3 mods
 * Complete with info, creator, version, etc.
-* Filter by firmware and mod type
+* Filter by firmware, mod type and region
 * Install and uninstall mods to games
 * Automatically detect game region
 * Backup and restore original game files
