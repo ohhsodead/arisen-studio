@@ -5,11 +5,11 @@ using System;
 using System.Net;
 using System.Windows.Forms;
 
-namespace ModioX.Forms.Console_Profiles
+namespace ModioX.Forms
 {
-    public partial class EditProfiles : DarkForm
+    public partial class EditConsoleProfiles : DarkForm
     {
-        public EditProfiles()
+        public EditConsoleProfiles()
         {
             InitializeComponent();
         }

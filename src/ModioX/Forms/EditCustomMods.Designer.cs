@@ -1,6 +1,6 @@
-﻿namespace ModioX.Forms.Custom_Mods
+﻿namespace ModioX.Forms
 {
-    partial class ViewCustomMods
+    partial class EditCustomMods
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewCustomMods));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditCustomMods));
             this.SectionCustomMods = new DarkUI.Controls.DarkSectionPanel();
             this.DgvCustomMods = new DarkUI.Controls.DarkDataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -351,7 +351,7 @@
             this.darkTitle1.TabIndex = 27;
             this.darkTitle1.Text = "Install File Paths";
             // 
-            // ViewCustomMods
+            // EditCustomMods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -363,7 +363,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ViewCustomMods";
+            this.Name = "EditCustomMods";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

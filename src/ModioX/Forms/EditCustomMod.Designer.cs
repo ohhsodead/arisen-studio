@@ -1,4 +1,4 @@
-﻿namespace ModioX.Forms.Custom_Mods
+﻿namespace ModioX.Forms
 {
     partial class EditCustomMod
     {
@@ -237,7 +237,7 @@
             this.ButtonAddInstall.Text = "Add File";
             this.ButtonAddInstall.Click += new System.EventHandler(this.ButtonAddInstall_Click);
             // 
-            // EditCustomMod
+            // EditModDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -252,12 +252,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EditCustomMod";
+            this.Name = "EditModDetails";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Edit Custom Mod";
+            this.Text = "Edit Mod Details";
             this.Load += new System.EventHandler(this.EditCustomMod_Load);
             this.darkSectionPanel1.ResumeLayout(false);
             this.darkSectionPanel1.PerformLayout();

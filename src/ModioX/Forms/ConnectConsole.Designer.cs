@@ -1,6 +1,6 @@
-﻿namespace ModioX.Forms.Connection
+﻿namespace ModioX.Forms
 {
-    partial class ConsoleConnection
+    partial class ConnectConsole
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsoleConnection));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConnectConsole));
             this.ButtonConnect = new DarkUI.Controls.DarkButton();
             this.ListViewConsoleProfiles = new DarkUI.Controls.DarkListView();
             this.darkSectionPanel2 = new DarkUI.Controls.DarkSectionPanel();
@@ -44,7 +44,7 @@
             this.ButtonConnect.Name = "ButtonConnect";
             this.ButtonConnect.Size = new System.Drawing.Size(224, 24);
             this.ButtonConnect.TabIndex = 1;
-            this.ButtonConnect.Text = "Connect Console";
+            this.ButtonConnect.Text = "Connect to Console";
             this.ButtonConnect.Click += new System.EventHandler(this.ButtonConnect_Click);
             // 
             // ListViewConsoleProfiles
@@ -69,9 +69,9 @@
             this.darkSectionPanel2.Size = new System.Drawing.Size(224, 202);
             this.darkSectionPanel2.TabIndex = 0;
             // 
-            // ConsoleConnection
+            // ConnectConsole
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(248, 257);
@@ -83,7 +83,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ConsoleConnection";
+            this.Name = "ConnectConsole";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

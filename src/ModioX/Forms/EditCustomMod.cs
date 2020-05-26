@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ModioX.Forms.Custom_Mods
+namespace ModioX.Forms
 {
     public partial class EditCustomMod : DarkForm
     {
@@ -48,7 +48,13 @@ namespace ModioX.Forms.Custom_Mods
         }
         private void ComboBoxCategoryId_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CustomMod.CategoryTitle = ComboBoxCategoryTitle.GetItemText(ComboBoxCategoryTitle.SelectedItem);
+            if (ComboBoxCategoryTitle.SelectedIndex != -1)
+            {
+                string categoryTitle = ComboBoxCategoryTitle.GetItemText(ComboBoxCategoryTitle.SelectedItem);
+
+                CustomMod.CategoryId = MainForm.Categories.GetCategoryByTitle(categoryTitle).Id;
+                CustomMod.CategoryTitle = categoryTitle;
+            }
         }
 
         private void TextBoxDescription_TextChanged(object sender, EventArgs e)
@@ -116,11 +122,11 @@ namespace ModioX.Forms.Custom_Mods
 
             if (CustomModIndex.HasValue)
             {
-                MainForm.SettingsData.UpdateMod(CustomModIndex.Value, CustomMod);
+                MainForm.SettingsData.UpdateCustomMod(CustomModIndex.Value, CustomMod);
             }
             else
             {
-                MainForm.SettingsData.AddMod(CustomMod);
+                MainForm.SettingsData.AddCustomMod(CustomMod);
             }
 
             Close();

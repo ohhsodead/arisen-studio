@@ -39,24 +39,26 @@
             this.ContextMenuModsReportOnGitHub = new System.Windows.Forms.ToolStripMenuItem();
             this.LabelSelectType = new System.Windows.Forms.Label();
             this.FlowPanelDetails = new System.Windows.Forms.FlowLayoutPanel();
-            this.darkTitle9 = new DarkUI.Controls.DarkTitle();
+            this.LabelTitleModDetails = new DarkUI.Controls.DarkTitle();
             this.LabelHeaderName = new System.Windows.Forms.Label();
             this.LabelHeaderNameNo = new System.Windows.Forms.Label();
             this.LabelHeaderCategory = new System.Windows.Forms.Label();
             this.LabelCategory = new System.Windows.Forms.Label();
-            this.LabelHeaderType = new System.Windows.Forms.Label();
+            this.LabelHeaderFirmware = new System.Windows.Forms.Label();
+            this.LabelFirmware = new System.Windows.Forms.Label();
+            this.LabelHeaderModType = new System.Windows.Forms.Label();
             this.LabelType = new System.Windows.Forms.Label();
             this.LabelHeaderVersion = new System.Windows.Forms.Label();
             this.LabelVersion = new System.Windows.Forms.Label();
-            this.LabelHeaderFirmware = new System.Windows.Forms.Label();
-            this.LabelFirmware = new System.Windows.Forms.Label();
+            this.LabelHeaderRegion = new System.Windows.Forms.Label();
+            this.LabelRegion = new System.Windows.Forms.Label();
+            this.LabelHeaderGameType = new System.Windows.Forms.Label();
+            this.LabelConfig = new System.Windows.Forms.Label();
             this.LabelHeaderAuthor = new System.Windows.Forms.Label();
             this.LabelAuthor = new System.Windows.Forms.Label();
             this.LabelHeaderSubmittedBy = new System.Windows.Forms.Label();
             this.LabelSubmittedBy = new System.Windows.Forms.Label();
-            this.LabelHeaderConfig = new System.Windows.Forms.Label();
-            this.LabelConfig = new System.Windows.Forms.Label();
-            this.darkTitle8 = new DarkUI.Controls.DarkTitle();
+            this.LabelTitleModDescription = new DarkUI.Controls.DarkTitle();
             this.LabelDescription = new System.Windows.Forms.Label();
             this.SectionModsInstallFilePaths = new DarkUI.Controls.DarkSectionPanel();
             this.darkTitle7 = new DarkUI.Controls.DarkTitle();
@@ -83,7 +85,7 @@
             this.MenuItemTools = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripToolsCustomMods = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemToolsBackupFiles = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuItemToolsSeperator0 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemToolsFileExplorer = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemResources = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemCustomFirmware = new System.Windows.Forms.ToolStripMenuItem();
@@ -115,61 +117,67 @@
             this.MenuItemApplicationsCCAPI = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemApplicationsFileZilla = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSettingsEditConsoleProfiles = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSeperator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemSettingsShowModID = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettingsAutoDetectGameRegion = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemSettingsRememberGameRegions = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettingsAlwaysDownloadInstallFiles = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemSeperator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuItemSettingsEditConsoleProfiles = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemSettingsEditGameRegions = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemReportIssue = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSourceCode = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemCheckForUpdates = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSeperator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuItemMoreInformation = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemSeperator4 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripRefreshData = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripRequestMod = new System.Windows.Forms.ToolStripMenuItem();
-            this.darkToolStrip1 = new DarkUI.Controls.DarkToolStrip();
+            this.MenuStatusStrip = new DarkUI.Controls.DarkToolStrip();
             this.ToolStripLabelConnectedConsole = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripLabelConsole = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripStatusSeperator0 = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripLabelStatus = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripLabelStats = new System.Windows.Forms.ToolStripLabel();
             this.ContextMenuLocalFile = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuStripLocalUploadFile = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuStripLocalDeleteFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.LabelSelectSystem = new System.Windows.Forms.Label();
+            this.LabelSelectSystemType = new System.Windows.Forms.Label();
             this.SectionModsLibrary = new DarkUI.Controls.DarkSectionPanel();
+            this.LabelNoModsFound = new System.Windows.Forms.Label();
             this.DgvMods = new DarkUI.Controls.DarkDataGridView();
             this.ColumnModsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsGameMode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsFirmware = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsNoFiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.LabelFilesInstalled = new System.Windows.Forms.Label();
-            this.darkTitle3 = new DarkUI.Controls.DarkTitle();
-            this.darkTitle1 = new DarkUI.Controls.DarkTitle();
+            this.PanelModsLibraryFilters = new System.Windows.Forms.Panel();
+            this.ComboBoxRegion = new DarkUI.Controls.DarkComboBox();
+            this.LabelSelectRegion = new System.Windows.Forms.Label();
+            this.LabelTitleMods = new DarkUI.Controls.DarkTitle();
+            this.LabelTitleFilterMods = new DarkUI.Controls.DarkTitle();
             this.TextBoxSearch = new DarkUI.Controls.DarkTextBox();
             this.LabelSearch = new System.Windows.Forms.Label();
-            this.ComboBoxType = new DarkUI.Controls.DarkComboBox();
-            this.ComboBoxFirmware = new DarkUI.Controls.DarkComboBox();
+            this.ComboBoxModType = new DarkUI.Controls.DarkComboBox();
+            this.ComboBoxSystemType = new DarkUI.Controls.DarkComboBox();
             this.SectionGames = new DarkUI.Controls.DarkSectionPanel();
             this.ScrollBarCategories = new DarkUI.Controls.DarkScrollBar();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.darkTitle4 = new DarkUI.Controls.DarkTitle();
+            this.FlowPanelCategories = new System.Windows.Forms.FlowLayoutPanel();
+            this.LabelTitleGames = new DarkUI.Controls.DarkTitle();
             this.PanelGames = new System.Windows.Forms.FlowLayoutPanel();
-            this.darkTitle5 = new DarkUI.Controls.DarkTitle();
+            this.LabelTitleResources = new DarkUI.Controls.DarkTitle();
             this.PanelResources = new System.Windows.Forms.FlowLayoutPanel();
-            this.darkTitle6 = new DarkUI.Controls.DarkTitle();
+            this.LabelTitleMyLists = new DarkUI.Controls.DarkTitle();
             this.PanelLists = new System.Windows.Forms.FlowLayoutPanel();
             this.SectionInstalledGameMods = new DarkUI.Controls.DarkSectionPanel();
+            this.LabelNoModsInstalled = new System.Windows.Forms.Label();
             this.DgvModsInstalled = new DarkUI.Controls.DarkDataGridView();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -180,13 +188,14 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.PanelModsInstalledHeader = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.darkTitle12 = new DarkUI.Controls.DarkTitle();
-            this.darkToolStrip2 = new DarkUI.Controls.DarkToolStrip();
+            this.MenuGameModsStrip = new DarkUI.Controls.DarkToolStrip();
             this.ToolItemUninstallAllGameMods = new System.Windows.Forms.ToolStripButton();
             this.LabelInstalledGameModsStatus = new System.Windows.Forms.ToolStripLabel();
+            this.MenuItemSeperator5 = new System.Windows.Forms.ToolStripSeparator();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
             this.SectionModsInstallFilePaths.SuspendLayout();
@@ -196,17 +205,17 @@
             this.PanelModsInstallationPaths.SuspendLayout();
             this.ToolStripArchiveInformation.SuspendLayout();
             this.MenuStrip.SuspendLayout();
-            this.darkToolStrip1.SuspendLayout();
+            this.MenuStatusStrip.SuspendLayout();
             this.ContextMenuLocalFile.SuspendLayout();
             this.SectionModsLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.PanelModsLibraryFilters.SuspendLayout();
             this.SectionGames.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.FlowPanelCategories.SuspendLayout();
             this.SectionInstalledGameMods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvModsInstalled)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.darkToolStrip2.SuspendLayout();
+            this.PanelModsInstalledHeader.SuspendLayout();
+            this.MenuGameModsStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContextMenuMods
@@ -294,8 +303,8 @@
             this.LabelSelectType.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSelectType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectType.Location = new System.Drawing.Point(624, 33);
-            this.LabelSelectType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.LabelSelectType.Location = new System.Drawing.Point(468, 42);
+            this.LabelSelectType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelSelectType.Name = "LabelSelectType";
             this.LabelSelectType.Size = new System.Drawing.Size(64, 15);
             this.LabelSelectType.TabIndex = 1122;
@@ -305,44 +314,48 @@
             // 
             this.FlowPanelDetails.AutoScroll = true;
             this.FlowPanelDetails.AutoSize = true;
-            this.FlowPanelDetails.Controls.Add(this.darkTitle9);
+            this.FlowPanelDetails.Controls.Add(this.LabelTitleModDetails);
             this.FlowPanelDetails.Controls.Add(this.LabelHeaderName);
             this.FlowPanelDetails.Controls.Add(this.LabelHeaderNameNo);
             this.FlowPanelDetails.Controls.Add(this.LabelHeaderCategory);
             this.FlowPanelDetails.Controls.Add(this.LabelCategory);
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderType);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderFirmware);
+            this.FlowPanelDetails.Controls.Add(this.LabelFirmware);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderModType);
             this.FlowPanelDetails.Controls.Add(this.LabelType);
             this.FlowPanelDetails.Controls.Add(this.LabelHeaderVersion);
             this.FlowPanelDetails.Controls.Add(this.LabelVersion);
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderFirmware);
-            this.FlowPanelDetails.Controls.Add(this.LabelFirmware);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderRegion);
+            this.FlowPanelDetails.Controls.Add(this.LabelRegion);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderGameType);
+            this.FlowPanelDetails.Controls.Add(this.LabelConfig);
             this.FlowPanelDetails.Controls.Add(this.LabelHeaderAuthor);
             this.FlowPanelDetails.Controls.Add(this.LabelAuthor);
             this.FlowPanelDetails.Controls.Add(this.LabelHeaderSubmittedBy);
             this.FlowPanelDetails.Controls.Add(this.LabelSubmittedBy);
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderConfig);
-            this.FlowPanelDetails.Controls.Add(this.LabelConfig);
-            this.FlowPanelDetails.Controls.Add(this.darkTitle8);
+            this.FlowPanelDetails.Controls.Add(this.LabelTitleModDescription);
             this.FlowPanelDetails.Controls.Add(this.LabelDescription);
             this.FlowPanelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FlowPanelDetails.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.FlowPanelDetails.Location = new System.Drawing.Point(1, 25);
             this.FlowPanelDetails.Margin = new System.Windows.Forms.Padding(0);
             this.FlowPanelDetails.Name = "FlowPanelDetails";
-            this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(2, 4, 18, 4);
-            this.FlowPanelDetails.Size = new System.Drawing.Size(386, 490);
-            this.FlowPanelDetails.TabIndex = 15;
+            this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(3, 8, 18, 4);
+            this.FlowPanelDetails.Size = new System.Drawing.Size(375, 489);
+            this.FlowPanelDetails.TabIndex = 0;
+            this.FlowPanelDetails.TabStop = true;
             this.FlowPanelDetails.Scroll += new System.Windows.Forms.ScrollEventHandler(this.FlowPanelDetails_Scroll);
+            this.FlowPanelDetails.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.FlowPanelDetails_MouseWheel);
             // 
-            // darkTitle9
+            // LabelTitleModDetails
             // 
-            this.darkTitle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.darkTitle9.Location = new System.Drawing.Point(7, 6);
-            this.darkTitle9.Margin = new System.Windows.Forms.Padding(5, 2, 3, 3);
-            this.darkTitle9.Name = "darkTitle9";
-            this.darkTitle9.Size = new System.Drawing.Size(356, 17);
-            this.darkTitle9.TabIndex = 1163;
-            this.darkTitle9.Text = "DETAILS";
+            this.LabelTitleModDetails.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelTitleModDetails.Location = new System.Drawing.Point(8, 10);
+            this.LabelTitleModDetails.Margin = new System.Windows.Forms.Padding(5, 2, 3, 3);
+            this.LabelTitleModDetails.Name = "LabelTitleModDetails";
+            this.LabelTitleModDetails.Size = new System.Drawing.Size(344, 17);
+            this.LabelTitleModDetails.TabIndex = 1163;
+            this.LabelTitleModDetails.Text = "MOD DETAILS";
             // 
             // LabelHeaderName
             // 
@@ -350,7 +363,7 @@
             this.LabelHeaderName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelHeaderName.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderName.Location = new System.Drawing.Point(4, 29);
+            this.LabelHeaderName.Location = new System.Drawing.Point(5, 33);
             this.LabelHeaderName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.LabelHeaderName.Name = "LabelHeaderName";
             this.LabelHeaderName.Size = new System.Drawing.Size(43, 15);
@@ -364,12 +377,12 @@
             this.LabelHeaderNameNo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelHeaderNameNo.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderNameNo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderNameNo.Location = new System.Drawing.Point(49, 29);
+            this.LabelHeaderNameNo.Location = new System.Drawing.Point(50, 33);
             this.LabelHeaderNameNo.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelHeaderNameNo.Name = "LabelHeaderNameNo";
-            this.LabelHeaderNameNo.Size = new System.Drawing.Size(71, 15);
+            this.LabelHeaderNameNo.Size = new System.Drawing.Size(16, 15);
             this.LabelHeaderNameNo.TabIndex = 2;
-            this.LabelHeaderNameNo.Text = "Name (ID #)";
+            this.LabelHeaderNameNo.Text = "...";
             // 
             // LabelHeaderCategory
             // 
@@ -377,7 +390,7 @@
             this.LabelHeaderCategory.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelHeaderCategory.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderCategory.Location = new System.Drawing.Point(4, 50);
+            this.LabelHeaderCategory.Location = new System.Drawing.Point(5, 54);
             this.LabelHeaderCategory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.LabelHeaderCategory.Name = "LabelHeaderCategory";
             this.LabelHeaderCategory.Size = new System.Drawing.Size(60, 15);
@@ -391,25 +404,52 @@
             this.LabelCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelCategory.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelCategory.Location = new System.Drawing.Point(66, 50);
+            this.LabelCategory.Location = new System.Drawing.Point(67, 54);
             this.LabelCategory.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelCategory.Name = "LabelCategory";
             this.LabelCategory.Size = new System.Drawing.Size(16, 15);
             this.LabelCategory.TabIndex = 23;
             this.LabelCategory.Text = "...";
             // 
-            // LabelHeaderType
+            // LabelHeaderFirmware
             // 
-            this.LabelHeaderType.AutoSize = true;
-            this.LabelHeaderType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderType.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelHeaderType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderType.Location = new System.Drawing.Point(4, 71);
-            this.LabelHeaderType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.LabelHeaderType.Name = "LabelHeaderType";
-            this.LabelHeaderType.Size = new System.Drawing.Size(58, 15);
-            this.LabelHeaderType.TabIndex = 16;
-            this.LabelHeaderType.Text = "File Type:";
+            this.LabelHeaderFirmware.AutoSize = true;
+            this.LabelHeaderFirmware.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderFirmware.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderFirmware.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderFirmware.Location = new System.Drawing.Point(5, 75);
+            this.LabelHeaderFirmware.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LabelHeaderFirmware.Name = "LabelHeaderFirmware";
+            this.LabelHeaderFirmware.Size = new System.Drawing.Size(80, 15);
+            this.LabelHeaderFirmware.TabIndex = 20;
+            this.LabelHeaderFirmware.Text = "System Type:";
+            // 
+            // LabelFirmware
+            // 
+            this.LabelFirmware.AutoSize = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelFirmware, true);
+            this.LabelFirmware.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelFirmware.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelFirmware.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelFirmware.Location = new System.Drawing.Point(87, 75);
+            this.LabelFirmware.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelFirmware.Name = "LabelFirmware";
+            this.LabelFirmware.Size = new System.Drawing.Size(16, 15);
+            this.LabelFirmware.TabIndex = 21;
+            this.LabelFirmware.Text = "...";
+            // 
+            // LabelHeaderModType
+            // 
+            this.LabelHeaderModType.AutoSize = true;
+            this.LabelHeaderModType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderModType.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderModType.Location = new System.Drawing.Point(5, 96);
+            this.LabelHeaderModType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LabelHeaderModType.Name = "LabelHeaderModType";
+            this.LabelHeaderModType.Size = new System.Drawing.Size(64, 15);
+            this.LabelHeaderModType.TabIndex = 16;
+            this.LabelHeaderModType.Text = "Mod Type:";
             // 
             // LabelType
             // 
@@ -418,7 +458,7 @@
             this.LabelType.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelType.Location = new System.Drawing.Point(64, 71);
+            this.LabelType.Location = new System.Drawing.Point(71, 96);
             this.LabelType.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelType.Name = "LabelType";
             this.LabelType.Size = new System.Drawing.Size(16, 15);
@@ -431,7 +471,7 @@
             this.LabelHeaderVersion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelHeaderVersion.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderVersion.Location = new System.Drawing.Point(4, 92);
+            this.LabelHeaderVersion.Location = new System.Drawing.Point(5, 117);
             this.LabelHeaderVersion.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.LabelHeaderVersion.Name = "LabelHeaderVersion";
             this.LabelHeaderVersion.Size = new System.Drawing.Size(51, 15);
@@ -445,39 +485,66 @@
             this.LabelVersion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelVersion.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelVersion.Location = new System.Drawing.Point(57, 92);
+            this.LabelVersion.Location = new System.Drawing.Point(58, 117);
             this.LabelVersion.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelVersion.Name = "LabelVersion";
             this.LabelVersion.Size = new System.Drawing.Size(16, 15);
             this.LabelVersion.TabIndex = 4;
             this.LabelVersion.Text = "...";
             // 
-            // LabelHeaderFirmware
+            // LabelHeaderRegion
             // 
-            this.LabelHeaderFirmware.AutoSize = true;
-            this.LabelHeaderFirmware.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderFirmware.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelHeaderFirmware.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderFirmware.Location = new System.Drawing.Point(4, 113);
-            this.LabelHeaderFirmware.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.LabelHeaderFirmware.Name = "LabelHeaderFirmware";
-            this.LabelHeaderFirmware.Size = new System.Drawing.Size(63, 15);
-            this.LabelHeaderFirmware.TabIndex = 20;
-            this.LabelHeaderFirmware.Text = "Firmware:";
+            this.LabelHeaderRegion.AutoSize = true;
+            this.LabelHeaderRegion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderRegion.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderRegion.Location = new System.Drawing.Point(5, 138);
+            this.LabelHeaderRegion.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LabelHeaderRegion.Name = "LabelHeaderRegion";
+            this.LabelHeaderRegion.Size = new System.Drawing.Size(85, 15);
+            this.LabelHeaderRegion.TabIndex = 1164;
+            this.LabelHeaderRegion.Text = "Game Region:";
             // 
-            // LabelFirmware
+            // LabelRegion
             // 
-            this.LabelFirmware.AutoSize = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelFirmware, true);
-            this.LabelFirmware.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelFirmware.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelFirmware.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFirmware.Location = new System.Drawing.Point(69, 113);
-            this.LabelFirmware.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelFirmware.Name = "LabelFirmware";
-            this.LabelFirmware.Size = new System.Drawing.Size(16, 15);
-            this.LabelFirmware.TabIndex = 21;
-            this.LabelFirmware.Text = "...";
+            this.LabelRegion.AutoSize = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelRegion, true);
+            this.LabelRegion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelRegion.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelRegion.Location = new System.Drawing.Point(92, 138);
+            this.LabelRegion.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelRegion.Name = "LabelRegion";
+            this.LabelRegion.Size = new System.Drawing.Size(16, 15);
+            this.LabelRegion.TabIndex = 1165;
+            this.LabelRegion.Text = "...";
+            // 
+            // LabelHeaderGameType
+            // 
+            this.LabelHeaderGameType.AutoSize = true;
+            this.LabelHeaderGameType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHeaderGameType.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderGameType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderGameType.Location = new System.Drawing.Point(5, 159);
+            this.LabelHeaderGameType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LabelHeaderGameType.Name = "LabelHeaderGameType";
+            this.LabelHeaderGameType.Size = new System.Drawing.Size(72, 15);
+            this.LabelHeaderGameType.TabIndex = 9;
+            this.LabelHeaderGameType.Text = "Game Type:";
+            // 
+            // LabelConfig
+            // 
+            this.LabelConfig.AutoSize = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelConfig, true);
+            this.LabelConfig.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelConfig.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelConfig.Location = new System.Drawing.Point(79, 159);
+            this.LabelConfig.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelConfig.Name = "LabelConfig";
+            this.LabelConfig.Size = new System.Drawing.Size(16, 15);
+            this.LabelConfig.TabIndex = 10;
+            this.LabelConfig.Text = "...";
             // 
             // LabelHeaderAuthor
             // 
@@ -485,12 +552,12 @@
             this.LabelHeaderAuthor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelHeaderAuthor.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderAuthor.Location = new System.Drawing.Point(4, 134);
+            this.LabelHeaderAuthor.Location = new System.Drawing.Point(5, 180);
             this.LabelHeaderAuthor.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.LabelHeaderAuthor.Name = "LabelHeaderAuthor";
-            this.LabelHeaderAuthor.Size = new System.Drawing.Size(52, 15);
+            this.LabelHeaderAuthor.Size = new System.Drawing.Size(71, 15);
             this.LabelHeaderAuthor.TabIndex = 6;
-            this.LabelHeaderAuthor.Text = "Creator:";
+            this.LabelHeaderAuthor.Text = "Created By:";
             // 
             // LabelAuthor
             // 
@@ -499,7 +566,7 @@
             this.LabelAuthor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelAuthor.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelAuthor.Location = new System.Drawing.Point(58, 134);
+            this.LabelAuthor.Location = new System.Drawing.Point(78, 180);
             this.LabelAuthor.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelAuthor.Name = "LabelAuthor";
             this.LabelAuthor.Size = new System.Drawing.Size(16, 15);
@@ -512,7 +579,7 @@
             this.LabelHeaderSubmittedBy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelHeaderSubmittedBy.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderSubmittedBy.Location = new System.Drawing.Point(4, 155);
+            this.LabelHeaderSubmittedBy.Location = new System.Drawing.Point(5, 201);
             this.LabelHeaderSubmittedBy.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.LabelHeaderSubmittedBy.Name = "LabelHeaderSubmittedBy";
             this.LabelHeaderSubmittedBy.Size = new System.Drawing.Size(86, 15);
@@ -526,49 +593,22 @@
             this.LabelSubmittedBy.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSubmittedBy.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSubmittedBy.Location = new System.Drawing.Point(92, 155);
+            this.LabelSubmittedBy.Location = new System.Drawing.Point(93, 201);
             this.LabelSubmittedBy.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelSubmittedBy.Name = "LabelSubmittedBy";
             this.LabelSubmittedBy.Size = new System.Drawing.Size(16, 15);
             this.LabelSubmittedBy.TabIndex = 14;
             this.LabelSubmittedBy.Text = "...";
             // 
-            // LabelHeaderConfig
+            // LabelTitleModDescription
             // 
-            this.LabelHeaderConfig.AutoSize = true;
-            this.LabelHeaderConfig.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeaderConfig.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelHeaderConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderConfig.Location = new System.Drawing.Point(4, 176);
-            this.LabelHeaderConfig.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.LabelHeaderConfig.Name = "LabelHeaderConfig";
-            this.LabelHeaderConfig.Size = new System.Drawing.Size(78, 15);
-            this.LabelHeaderConfig.TabIndex = 9;
-            this.LabelHeaderConfig.Text = "Game Mode:";
-            // 
-            // LabelConfig
-            // 
-            this.LabelConfig.AutoSize = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelConfig, true);
-            this.LabelConfig.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelConfig.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelConfig.Location = new System.Drawing.Point(84, 176);
-            this.LabelConfig.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelConfig.Name = "LabelConfig";
-            this.LabelConfig.Size = new System.Drawing.Size(16, 15);
-            this.LabelConfig.TabIndex = 10;
-            this.LabelConfig.Text = "...";
-            // 
-            // darkTitle8
-            // 
-            this.darkTitle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.darkTitle8.Location = new System.Drawing.Point(7, 198);
-            this.darkTitle8.Margin = new System.Windows.Forms.Padding(5, 4, 3, 4);
-            this.darkTitle8.Name = "darkTitle8";
-            this.darkTitle8.Size = new System.Drawing.Size(356, 17);
-            this.darkTitle8.TabIndex = 1162;
-            this.darkTitle8.Text = "DESCRIPTION";
+            this.LabelTitleModDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelTitleModDescription.Location = new System.Drawing.Point(8, 223);
+            this.LabelTitleModDescription.Margin = new System.Windows.Forms.Padding(5, 4, 3, 4);
+            this.LabelTitleModDescription.Name = "LabelTitleModDescription";
+            this.LabelTitleModDescription.Size = new System.Drawing.Size(344, 17);
+            this.LabelTitleModDescription.TabIndex = 1162;
+            this.LabelTitleModDescription.Text = "DESCRIPTION";
             // 
             // LabelDescription
             // 
@@ -577,11 +617,12 @@
             this.LabelDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelDescription.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelDescription.Location = new System.Drawing.Point(4, 221);
+            this.LabelDescription.Location = new System.Drawing.Point(5, 246);
             this.LabelDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 3);
             this.LabelDescription.MaximumSize = new System.Drawing.Size(410, 0);
             this.LabelDescription.Name = "LabelDescription";
-            this.LabelDescription.Size = new System.Drawing.Size(16, 15);
+            this.LabelDescription.Padding = new System.Windows.Forms.Padding(0, 0, 0, 12);
+            this.LabelDescription.Size = new System.Drawing.Size(16, 27);
             this.LabelDescription.TabIndex = 12;
             this.LabelDescription.Text = "...";
             // 
@@ -594,7 +635,7 @@
             this.SectionModsInstallFilePaths.Margin = new System.Windows.Forms.Padding(0);
             this.SectionModsInstallFilePaths.Name = "SectionModsInstallFilePaths";
             this.SectionModsInstallFilePaths.SectionHeader = " ";
-            this.SectionModsInstallFilePaths.Size = new System.Drawing.Size(386, 124);
+            this.SectionModsInstallFilePaths.Size = new System.Drawing.Size(375, 125);
             this.SectionModsInstallFilePaths.TabIndex = 26;
             // 
             // darkTitle7
@@ -604,7 +645,7 @@
             this.darkTitle7.Location = new System.Drawing.Point(6, 5);
             this.darkTitle7.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.darkTitle7.Name = "darkTitle7";
-            this.darkTitle7.Size = new System.Drawing.Size(373, 16);
+            this.darkTitle7.Size = new System.Drawing.Size(362, 16);
             this.darkTitle7.TabIndex = 1163;
             this.darkTitle7.Text = "INSTALLATION FILES";
             // 
@@ -631,8 +672,8 @@
             this.DgvInstallPaths.RowTemplate.Height = 24;
             this.DgvInstallPaths.RowTemplate.ReadOnly = true;
             this.DgvInstallPaths.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvInstallPaths.Size = new System.Drawing.Size(384, 98);
-            this.DgvInstallPaths.TabIndex = 25;
+            this.DgvInstallPaths.Size = new System.Drawing.Size(373, 99);
+            this.DgvInstallPaths.TabIndex = 3;
             this.DgvInstallPaths.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
             this.DgvInstallPaths.SelectionChanged += new System.EventHandler(this.Dgv_SelectionChanged);
             // 
@@ -684,7 +725,7 @@
             // 
             this.ScrollBarDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ScrollBarDetails.Location = new System.Drawing.Point(370, 25);
+            this.ScrollBarDetails.Location = new System.Drawing.Point(359, 25);
             this.ScrollBarDetails.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
             this.ScrollBarDetails.Name = "ScrollBarDetails";
             this.ScrollBarDetails.Size = new System.Drawing.Size(17, 500);
@@ -701,22 +742,22 @@
             this.SectionArchiveInformation.Controls.Add(this.FlowPanelDetails);
             this.SectionArchiveInformation.Controls.Add(this.PanelModsInstallationPaths);
             this.SectionArchiveInformation.Controls.Add(this.ToolStripArchiveInformation);
-            this.SectionArchiveInformation.Location = new System.Drawing.Point(1085, 39);
+            this.SectionArchiveInformation.Location = new System.Drawing.Point(1096, 39);
             this.SectionArchiveInformation.Margin = new System.Windows.Forms.Padding(4, 4, 3, 4);
             this.SectionArchiveInformation.Name = "SectionArchiveInformation";
             this.SectionArchiveInformation.SectionHeader = "MOD INFORMATION";
-            this.SectionArchiveInformation.Size = new System.Drawing.Size(388, 687);
-            this.SectionArchiveInformation.TabIndex = 12;
+            this.SectionArchiveInformation.Size = new System.Drawing.Size(377, 687);
+            this.SectionArchiveInformation.TabIndex = 9;
             // 
             // PanelModsInstallationPaths
             // 
             this.PanelModsInstallationPaths.Controls.Add(this.SectionModsInstallFilePaths);
             this.PanelModsInstallationPaths.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelModsInstallationPaths.Location = new System.Drawing.Point(1, 515);
+            this.PanelModsInstallationPaths.Location = new System.Drawing.Point(1, 514);
             this.PanelModsInstallationPaths.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PanelModsInstallationPaths.Name = "PanelModsInstallationPaths";
             this.PanelModsInstallationPaths.Padding = new System.Windows.Forms.Padding(0, 11, 0, 0);
-            this.PanelModsInstallationPaths.Size = new System.Drawing.Size(386, 135);
+            this.PanelModsInstallationPaths.Size = new System.Drawing.Size(375, 136);
             this.PanelModsInstallationPaths.TabIndex = 26;
             // 
             // ToolStripArchiveInformation
@@ -735,8 +776,8 @@
             this.ToolStripArchiveInformation.Location = new System.Drawing.Point(1, 650);
             this.ToolStripArchiveInformation.Name = "ToolStripArchiveInformation";
             this.ToolStripArchiveInformation.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.ToolStripArchiveInformation.Size = new System.Drawing.Size(386, 36);
-            this.ToolStripArchiveInformation.TabIndex = 16;
+            this.ToolStripArchiveInformation.Size = new System.Drawing.Size(375, 36);
+            this.ToolStripArchiveInformation.TabIndex = 4;
             this.ToolStripArchiveInformation.TabStop = true;
             this.ToolStripArchiveInformation.Text = "darkToolStrip2";
             // 
@@ -754,6 +795,7 @@
             this.ToolItemInstallMod.Name = "ToolItemInstallMod";
             this.ToolItemInstallMod.Size = new System.Drawing.Size(66, 26);
             this.ToolItemInstallMod.Text = "Install";
+            this.ToolItemInstallMod.ToolTipText = "Install Mod to Console";
             this.ToolItemInstallMod.Click += new System.EventHandler(this.ToolStripInstallFiles_Click);
             // 
             // ToolItemUninstallMod
@@ -770,6 +812,7 @@
             this.ToolItemUninstallMod.Name = "ToolItemUninstallMod";
             this.ToolItemUninstallMod.Size = new System.Drawing.Size(81, 26);
             this.ToolItemUninstallMod.Text = "Uninstall";
+            this.ToolItemUninstallMod.ToolTipText = "Uninstall Mod from Console";
             this.ToolItemUninstallMod.Click += new System.EventHandler(this.ToolStripUninstallFiles_Click);
             // 
             // ToolItemDownloadMod
@@ -785,6 +828,7 @@
             this.ToolItemDownloadMod.Name = "ToolItemDownloadMod";
             this.ToolItemDownloadMod.Size = new System.Drawing.Size(89, 26);
             this.ToolItemDownloadMod.Text = "Download";
+            this.ToolItemDownloadMod.ToolTipText = "Download Archive to Computer";
             this.ToolItemDownloadMod.Click += new System.EventHandler(this.ToolStripDownloadArchive_Click);
             // 
             // ToolItemFavoriteMod
@@ -800,6 +844,7 @@
             this.ToolItemFavoriteMod.Name = "ToolItemFavoriteMod";
             this.ToolItemFavoriteMod.Size = new System.Drawing.Size(79, 26);
             this.ToolItemFavoriteMod.Text = "Favorite";
+            this.ToolItemFavoriteMod.ToolTipText = "Add/Remove from Favorites";
             this.ToolItemFavoriteMod.Click += new System.EventHandler(this.ToolStripFavorite_Click);
             // 
             // MenuStrip
@@ -851,8 +896,8 @@
             this.MenuStripConnectPS3Console.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripConnectPS3Console.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripConnectPS3Console.Name = "MenuStripConnectPS3Console";
-            this.MenuStripConnectPS3Console.Size = new System.Drawing.Size(174, 22);
-            this.MenuStripConnectPS3Console.Text = "Connect Console...";
+            this.MenuStripConnectPS3Console.Size = new System.Drawing.Size(186, 22);
+            this.MenuStripConnectPS3Console.Text = "Connect to console...";
             this.MenuStripConnectPS3Console.Click += new System.EventHandler(this.MenuStripConnectPS3Console_Click);
             // 
             // MenuStripFileSeparator0
@@ -878,7 +923,7 @@
             this.MenuItemTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuStripToolsCustomMods,
             this.MenuItemToolsBackupFiles,
-            this.toolStripSeparator2,
+            this.MenuItemToolsSeperator0,
             this.MenuItemToolsFileExplorer});
             this.MenuItemTools.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemTools.Name = "MenuItemTools";
@@ -890,7 +935,7 @@
             this.MenuStripToolsCustomMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripToolsCustomMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripToolsCustomMods.Name = "MenuStripToolsCustomMods";
-            this.MenuStripToolsCustomMods.Size = new System.Drawing.Size(168, 22);
+            this.MenuStripToolsCustomMods.Size = new System.Drawing.Size(180, 22);
             this.MenuStripToolsCustomMods.Text = "Custom Mods";
             this.MenuStripToolsCustomMods.Click += new System.EventHandler(this.MenuStripToolsCustomMods_Click);
             // 
@@ -899,24 +944,24 @@
             this.MenuItemToolsBackupFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemToolsBackupFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemToolsBackupFiles.Name = "MenuItemToolsBackupFiles";
-            this.MenuItemToolsBackupFiles.Size = new System.Drawing.Size(168, 22);
+            this.MenuItemToolsBackupFiles.Size = new System.Drawing.Size(180, 22);
             this.MenuItemToolsBackupFiles.Text = "Backup Files";
             this.MenuItemToolsBackupFiles.Click += new System.EventHandler(this.MenuItemToolsBackupFileManager_Click);
             // 
-            // toolStripSeparator2
+            // MenuItemToolsSeperator0
             // 
-            this.toolStripSeparator2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.toolStripSeparator2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(165, 6);
+            this.MenuItemToolsSeperator0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemToolsSeperator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemToolsSeperator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.MenuItemToolsSeperator0.Name = "MenuItemToolsSeperator0";
+            this.MenuItemToolsSeperator0.Size = new System.Drawing.Size(177, 6);
             // 
             // MenuItemToolsFileExplorer
             // 
             this.MenuItemToolsFileExplorer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemToolsFileExplorer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemToolsFileExplorer.Name = "MenuItemToolsFileExplorer";
-            this.MenuItemToolsFileExplorer.Size = new System.Drawing.Size(168, 22);
+            this.MenuItemToolsFileExplorer.Size = new System.Drawing.Size(180, 22);
             this.MenuItemToolsFileExplorer.Text = "File Explorer (FTP)";
             this.MenuItemToolsFileExplorer.Click += new System.EventHandler(this.MenuItemToolsFileExplorer_Click);
             // 
@@ -1212,32 +1257,18 @@
             // 
             this.MenuItemSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemSettingsEditConsoleProfiles,
-            this.MenuItemSeperator2,
             this.MenuItemSettingsShowModID,
             this.MenuItemSettingsAutoDetectGameRegion,
-            this.MenuItemSettingsAlwaysDownloadInstallFiles});
+            this.MenuItemSettingsRememberGameRegions,
+            this.MenuItemSettingsAlwaysDownloadInstallFiles,
+            this.MenuItemSeperator2,
+            this.MenuItemSettingsEditGameRegions,
+            this.MenuItemSeperator5,
+            this.MenuItemSettingsEditConsoleProfiles});
             this.MenuItemSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemSettings.Name = "MenuItemSettings";
             this.MenuItemSettings.Size = new System.Drawing.Size(69, 19);
             this.MenuItemSettings.Text = "SETTINGS";
-            // 
-            // MenuItemSettingsEditConsoleProfiles
-            // 
-            this.MenuItemSettingsEditConsoleProfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSettingsEditConsoleProfiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSettingsEditConsoleProfiles.Name = "MenuItemSettingsEditConsoleProfiles";
-            this.MenuItemSettingsEditConsoleProfiles.Size = new System.Drawing.Size(228, 22);
-            this.MenuItemSettingsEditConsoleProfiles.Text = "Edit Console Profiles...";
-            this.MenuItemSettingsEditConsoleProfiles.Click += new System.EventHandler(this.MenuItemSettingsEditConsoleProfiles_Click);
-            // 
-            // MenuItemSeperator2
-            // 
-            this.MenuItemSeperator2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSeperator2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSeperator2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuItemSeperator2.Name = "MenuItemSeperator2";
-            this.MenuItemSeperator2.Size = new System.Drawing.Size(225, 6);
             // 
             // MenuItemSettingsShowModID
             // 
@@ -1256,8 +1287,18 @@
             this.MenuItemSettingsAutoDetectGameRegion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemSettingsAutoDetectGameRegion.Name = "MenuItemSettingsAutoDetectGameRegion";
             this.MenuItemSettingsAutoDetectGameRegion.Size = new System.Drawing.Size(228, 22);
-            this.MenuItemSettingsAutoDetectGameRegion.Text = "Auto Detect Game Region";
+            this.MenuItemSettingsAutoDetectGameRegion.Text = "Auto-Detect Game Regions";
             this.MenuItemSettingsAutoDetectGameRegion.Click += new System.EventHandler(this.MenuItemSettingsAutoDetectGameRegion_Click);
+            // 
+            // MenuItemSettingsRememberGameRegions
+            // 
+            this.MenuItemSettingsRememberGameRegions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemSettingsRememberGameRegions.CheckOnClick = true;
+            this.MenuItemSettingsRememberGameRegions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemSettingsRememberGameRegions.Name = "MenuItemSettingsRememberGameRegions";
+            this.MenuItemSettingsRememberGameRegions.Size = new System.Drawing.Size(228, 22);
+            this.MenuItemSettingsRememberGameRegions.Text = "Save Game Regions";
+            this.MenuItemSettingsRememberGameRegions.Click += new System.EventHandler(this.MenuItemSettingsRememberGameRegions_Click);
             // 
             // MenuItemSettingsAlwaysDownloadInstallFiles
             // 
@@ -1269,6 +1310,32 @@
             this.MenuItemSettingsAlwaysDownloadInstallFiles.Text = "Always Download Install Files";
             this.MenuItemSettingsAlwaysDownloadInstallFiles.Click += new System.EventHandler(this.MenuItemSettingsAlwaysDownloadInstallFiles_Click);
             // 
+            // MenuItemSeperator2
+            // 
+            this.MenuItemSeperator2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemSeperator2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemSeperator2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.MenuItemSeperator2.Name = "MenuItemSeperator2";
+            this.MenuItemSeperator2.Size = new System.Drawing.Size(225, 6);
+            // 
+            // MenuItemSettingsEditConsoleProfiles
+            // 
+            this.MenuItemSettingsEditConsoleProfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemSettingsEditConsoleProfiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemSettingsEditConsoleProfiles.Name = "MenuItemSettingsEditConsoleProfiles";
+            this.MenuItemSettingsEditConsoleProfiles.Size = new System.Drawing.Size(228, 22);
+            this.MenuItemSettingsEditConsoleProfiles.Text = "Edit Console Profiles...";
+            this.MenuItemSettingsEditConsoleProfiles.Click += new System.EventHandler(this.MenuItemSettingsEditConsoleProfiles_Click);
+            // 
+            // MenuItemSettingsEditGameRegions
+            // 
+            this.MenuItemSettingsEditGameRegions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemSettingsEditGameRegions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemSettingsEditGameRegions.Name = "MenuItemSettingsEditGameRegions";
+            this.MenuItemSettingsEditGameRegions.Size = new System.Drawing.Size(228, 22);
+            this.MenuItemSettingsEditGameRegions.Text = "Edit Saved Game Regions...";
+            this.MenuItemSettingsEditGameRegions.Click += new System.EventHandler(this.MenuItemSettingsEditGameRegions_Click);
+            // 
             // MenuItemHelp
             // 
             this.MenuItemHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
@@ -1277,6 +1344,8 @@
             this.MenuItemSourceCode,
             this.MenuItemCheckForUpdates,
             this.MenuItemSeperator3,
+            this.MenuItemMoreInformation,
+            this.MenuItemSeperator4,
             this.MenuItemAbout});
             this.MenuItemHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemHelp.Name = "MenuItemHelp";
@@ -1318,6 +1387,23 @@
             this.MenuItemSeperator3.Name = "MenuItemSeperator3";
             this.MenuItemSeperator3.Size = new System.Drawing.Size(223, 6);
             // 
+            // MenuItemMoreInformation
+            // 
+            this.MenuItemMoreInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemMoreInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemMoreInformation.Name = "MenuItemMoreInformation";
+            this.MenuItemMoreInformation.Size = new System.Drawing.Size(226, 22);
+            this.MenuItemMoreInformation.Text = "More Information";
+            this.MenuItemMoreInformation.Click += new System.EventHandler(this.MenuItemInstallUninstallNotes_Click);
+            // 
+            // MenuItemSeperator4
+            // 
+            this.MenuItemSeperator4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemSeperator4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemSeperator4.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.MenuItemSeperator4.Name = "MenuItemSeperator4";
+            this.MenuItemSeperator4.Size = new System.Drawing.Size(223, 6);
+            // 
             // MenuItemAbout
             // 
             this.MenuItemAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
@@ -1343,30 +1429,30 @@
             this.MenuStripRequestMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuStripRequestMod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripRequestMod.Name = "MenuStripRequestMod";
-            this.MenuStripRequestMod.Size = new System.Drawing.Size(98, 19);
-            this.MenuStripRequestMod.Text = "REQUEST MOD";
+            this.MenuStripRequestMod.Size = new System.Drawing.Size(104, 19);
+            this.MenuStripRequestMod.Text = "REQUEST MODS";
             this.MenuStripRequestMod.Click += new System.EventHandler(this.MenuStripRequestMod_Click);
             // 
-            // darkToolStrip1
+            // MenuStatusStrip
             // 
-            this.darkToolStrip1.AutoSize = false;
-            this.darkToolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.darkToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.darkToolStrip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.darkToolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.darkToolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuStatusStrip.AutoSize = false;
+            this.MenuStatusStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuStatusStrip.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MenuStatusStrip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuStatusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.MenuStatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MenuStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripLabelConnectedConsole,
             this.ToolStripLabelConsole,
-            this.toolStripSeparator3,
+            this.ToolStripStatusSeperator0,
             this.ToolStripLabelStatus,
             this.ToolStripLabelStats});
-            this.darkToolStrip1.Location = new System.Drawing.Point(0, 733);
-            this.darkToolStrip1.Name = "darkToolStrip1";
-            this.darkToolStrip1.Padding = new System.Windows.Forms.Padding(11, 0, 8, 5);
-            this.darkToolStrip1.Size = new System.Drawing.Size(1485, 32);
-            this.darkToolStrip1.TabIndex = 1146;
-            this.darkToolStrip1.Text = "darkToolStrip1";
+            this.MenuStatusStrip.Location = new System.Drawing.Point(0, 733);
+            this.MenuStatusStrip.Name = "MenuStatusStrip";
+            this.MenuStatusStrip.Padding = new System.Windows.Forms.Padding(11, 0, 8, 5);
+            this.MenuStatusStrip.Size = new System.Drawing.Size(1485, 32);
+            this.MenuStatusStrip.TabIndex = 1146;
+            this.MenuStatusStrip.Text = "darkToolStrip1";
             // 
             // ToolStripLabelConnectedConsole
             // 
@@ -1384,13 +1470,13 @@
             this.ToolStripLabelConsole.Size = new System.Drawing.Size(26, 24);
             this.ToolStripLabelConsole.Text = "Idle";
             // 
-            // toolStripSeparator3
+            // ToolStripStatusSeperator0
             // 
-            this.toolStripSeparator3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.toolStripSeparator3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
+            this.ToolStripStatusSeperator0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ToolStripStatusSeperator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ToolStripStatusSeperator0.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.ToolStripStatusSeperator0.Name = "ToolStripStatusSeperator0";
+            this.ToolStripStatusSeperator0.Size = new System.Drawing.Size(6, 27);
             // 
             // ToolStripLabelStatus
             // 
@@ -1438,34 +1524,50 @@
             this.ContextMenuStripLocalDeleteFile.Size = new System.Drawing.Size(133, 22);
             this.ContextMenuStripLocalDeleteFile.Text = "Delete File";
             // 
-            // LabelSelectSystem
+            // LabelSelectSystemType
             // 
-            this.LabelSelectSystem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelSelectSystem.AutoSize = true;
-            this.LabelSelectSystem.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelSelectSystem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSelectSystem.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelSelectSystem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectSystem.Location = new System.Drawing.Point(470, 33);
-            this.LabelSelectSystem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
-            this.LabelSelectSystem.Name = "LabelSelectSystem";
-            this.LabelSelectSystem.Size = new System.Drawing.Size(78, 15);
-            this.LabelSelectSystem.TabIndex = 1156;
-            this.LabelSelectSystem.Text = "SYSTEM TYPE";
+            this.LabelSelectSystemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelSelectSystemType.AutoSize = true;
+            this.LabelSelectSystemType.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelSelectSystemType.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSelectSystemType.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelSelectSystemType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelSelectSystemType.Location = new System.Drawing.Point(316, 42);
+            this.LabelSelectSystemType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
+            this.LabelSelectSystemType.Name = "LabelSelectSystemType";
+            this.LabelSelectSystemType.Size = new System.Drawing.Size(78, 15);
+            this.LabelSelectSystemType.TabIndex = 1156;
+            this.LabelSelectSystemType.Text = "SYSTEM TYPE";
             // 
             // SectionModsLibrary
             // 
             this.SectionModsLibrary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.SectionModsLibrary.Controls.Add(this.LabelNoModsFound);
             this.SectionModsLibrary.Controls.Add(this.DgvMods);
-            this.SectionModsLibrary.Controls.Add(this.panel1);
+            this.SectionModsLibrary.Controls.Add(this.PanelModsLibraryFilters);
             this.SectionModsLibrary.Location = new System.Drawing.Point(286, 39);
             this.SectionModsLibrary.Margin = new System.Windows.Forms.Padding(4);
             this.SectionModsLibrary.Name = "SectionModsLibrary";
             this.SectionModsLibrary.SectionHeader = "MODS LIBRARY";
-            this.SectionModsLibrary.Size = new System.Drawing.Size(791, 463);
+            this.SectionModsLibrary.Size = new System.Drawing.Size(802, 437);
             this.SectionModsLibrary.TabIndex = 10;
+            // 
+            // LabelNoModsFound
+            // 
+            this.LabelNoModsFound.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelNoModsFound.AutoSize = true;
+            this.LabelNoModsFound.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelNoModsFound.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelNoModsFound.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelNoModsFound.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelNoModsFound.Location = new System.Drawing.Point(349, 182);
+            this.LabelNoModsFound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.LabelNoModsFound.Name = "LabelNoModsFound";
+            this.LabelNoModsFound.Size = new System.Drawing.Size(105, 15);
+            this.LabelNoModsFound.TabIndex = 1159;
+            this.LabelNoModsFound.Text = "NO MODS FOUND";
             // 
             // DgvMods
             // 
@@ -1474,14 +1576,14 @@
             this.DgvMods.AllowUserToDragDropRows = false;
             this.DgvMods.AllowUserToPasteCells = false;
             this.DgvMods.AllowUserToResizeColumns = false;
-            this.DgvMods.ColumnHeadersHeight = 23;
-            this.DgvMods.ColumnHeadersVisible = false;
+            this.DgvMods.ColumnHeadersHeight = 21;
+            this.DgvMods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DgvMods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnModsId,
             this.ColumnModsName,
-            this.ColumnModsGameMode,
             this.ColumnModsFirmware,
             this.ColumnModsType,
+            this.ColumnModsRegion,
             this.ColumnModsVersion,
             this.ColumnModsAuthor,
             this.ColumnModsNoFiles,
@@ -1490,7 +1592,7 @@
             this.Column13});
             this.DgvMods.ContextMenuStrip = this.ContextMenuMods;
             this.DgvMods.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvMods.Location = new System.Drawing.Point(1, 107);
+            this.DgvMods.Location = new System.Drawing.Point(1, 121);
             this.DgvMods.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.DgvMods.MultiSelect = false;
             this.DgvMods.Name = "DgvMods";
@@ -1500,8 +1602,8 @@
             this.DgvMods.RowTemplate.Height = 24;
             this.DgvMods.RowTemplate.ReadOnly = true;
             this.DgvMods.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvMods.Size = new System.Drawing.Size(789, 355);
-            this.DgvMods.TabIndex = 11;
+            this.DgvMods.Size = new System.Drawing.Size(800, 315);
+            this.DgvMods.TabIndex = 6;
             this.DgvMods.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMods_CellClick);
             this.DgvMods.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
             this.DgvMods.SelectionChanged += new System.EventHandler(this.DgvMods_SelectionChanged);
@@ -1518,36 +1620,36 @@
             // ColumnModsName
             // 
             this.ColumnModsName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnModsName.HeaderText = "Name";
+            this.ColumnModsName.HeaderText = "Mod Name";
             this.ColumnModsName.MinimumWidth = 6;
             this.ColumnModsName.Name = "ColumnModsName";
             this.ColumnModsName.ReadOnly = true;
             // 
-            // ColumnModsGameMode
-            // 
-            this.ColumnModsGameMode.HeaderText = "Mode";
-            this.ColumnModsGameMode.MinimumWidth = 6;
-            this.ColumnModsGameMode.Name = "ColumnModsGameMode";
-            this.ColumnModsGameMode.ReadOnly = true;
-            this.ColumnModsGameMode.Width = 62;
-            // 
             // ColumnModsFirmware
             // 
             this.ColumnModsFirmware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnModsFirmware.HeaderText = "FW";
+            this.ColumnModsFirmware.HeaderText = "System Type";
             this.ColumnModsFirmware.MinimumWidth = 6;
             this.ColumnModsFirmware.Name = "ColumnModsFirmware";
             this.ColumnModsFirmware.ReadOnly = true;
-            this.ColumnModsFirmware.Width = 55;
+            this.ColumnModsFirmware.Width = 82;
             // 
             // ColumnModsType
             // 
             this.ColumnModsType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnModsType.HeaderText = "Type";
+            this.ColumnModsType.HeaderText = "Mod Type";
             this.ColumnModsType.MinimumWidth = 6;
             this.ColumnModsType.Name = "ColumnModsType";
             this.ColumnModsType.ReadOnly = true;
-            this.ColumnModsType.Width = 82;
+            this.ColumnModsType.Width = 86;
+            // 
+            // ColumnModsRegion
+            // 
+            this.ColumnModsRegion.HeaderText = "Region";
+            this.ColumnModsRegion.MinimumWidth = 6;
+            this.ColumnModsRegion.Name = "ColumnModsRegion";
+            this.ColumnModsRegion.ReadOnly = true;
+            this.ColumnModsRegion.Width = 78;
             // 
             // ColumnModsVersion
             // 
@@ -1556,12 +1658,12 @@
             this.ColumnModsVersion.MinimumWidth = 6;
             this.ColumnModsVersion.Name = "ColumnModsVersion";
             this.ColumnModsVersion.ReadOnly = true;
-            this.ColumnModsVersion.Width = 68;
+            this.ColumnModsVersion.Width = 70;
             // 
             // ColumnModsAuthor
             // 
             this.ColumnModsAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnModsAuthor.HeaderText = "Author";
+            this.ColumnModsAuthor.HeaderText = "Creator";
             this.ColumnModsAuthor.MinimumWidth = 124;
             this.ColumnModsAuthor.Name = "ColumnModsAuthor";
             this.ColumnModsAuthor.ReadOnly = true;
@@ -1570,7 +1672,7 @@
             // ColumnModsNoFiles
             // 
             this.ColumnModsNoFiles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnModsNoFiles.HeaderText = "No. Files";
+            this.ColumnModsNoFiles.HeaderText = "# Files";
             this.ColumnModsNoFiles.MinimumWidth = 6;
             this.ColumnModsNoFiles.Name = "ColumnModsNoFiles";
             this.ColumnModsNoFiles.ReadOnly = true;
@@ -1578,7 +1680,7 @@
             // 
             // Column9
             // 
-            this.Column9.HeaderText = "Install";
+            this.Column9.HeaderText = "";
             this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
@@ -1586,7 +1688,7 @@
             // 
             // Column10
             // 
-            this.Column10.HeaderText = "Download";
+            this.Column10.HeaderText = "";
             this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
@@ -1594,87 +1696,87 @@
             // 
             // Column13
             // 
-            this.Column13.HeaderText = "Favorite";
+            this.Column13.HeaderText = "";
             this.Column13.MinimumWidth = 6;
             this.Column13.Name = "Column13";
             this.Column13.ReadOnly = true;
             this.Column13.Width = 28;
             // 
-            // panel1
+            // PanelModsLibraryFilters
             // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.LabelFilesInstalled);
-            this.panel1.Controls.Add(this.darkTitle3);
-            this.panel1.Controls.Add(this.darkTitle1);
-            this.panel1.Controls.Add(this.TextBoxSearch);
-            this.panel1.Controls.Add(this.LabelSearch);
-            this.panel1.Controls.Add(this.ComboBoxType);
-            this.panel1.Controls.Add(this.LabelSelectSystem);
-            this.panel1.Controls.Add(this.LabelSelectType);
-            this.panel1.Controls.Add(this.ComboBoxFirmware);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(1, 25);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(789, 82);
-            this.panel1.TabIndex = 12;
+            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxRegion);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectRegion);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelTitleMods);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelTitleFilterMods);
+            this.PanelModsLibraryFilters.Controls.Add(this.TextBoxSearch);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelSearch);
+            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxModType);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectSystemType);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectType);
+            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxSystemType);
+            this.PanelModsLibraryFilters.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelModsLibraryFilters.Location = new System.Drawing.Point(1, 25);
+            this.PanelModsLibraryFilters.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PanelModsLibraryFilters.Name = "PanelModsLibraryFilters";
+            this.PanelModsLibraryFilters.Size = new System.Drawing.Size(800, 96);
+            this.PanelModsLibraryFilters.TabIndex = 12;
             // 
-            // label2
+            // ComboBoxRegion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(392, 91);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 4, 2, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 15);
-            this.label2.TabIndex = 1173;
-            this.label2.Text = "Files Installed:";
+            this.ComboBoxRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxRegion.FormattingEnabled = true;
+            this.ComboBoxRegion.Location = new System.Drawing.Point(697, 39);
+            this.ComboBoxRegion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ComboBoxRegion.Name = "ComboBoxRegion";
+            this.ComboBoxRegion.Size = new System.Drawing.Size(95, 24);
+            this.ComboBoxRegion.TabIndex = 5;
+            this.ComboBoxRegion.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRegion_SelectedIndexChanged);
             // 
-            // LabelFilesInstalled
+            // LabelSelectRegion
             // 
-            this.LabelFilesInstalled.AutoSize = true;
-            this.LabelFilesInstalled.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelFilesInstalled.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelFilesInstalled.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFilesInstalled.Location = new System.Drawing.Point(478, 91);
-            this.LabelFilesInstalled.Margin = new System.Windows.Forms.Padding(0, 4, 3, 4);
-            this.LabelFilesInstalled.Name = "LabelFilesInstalled";
-            this.LabelFilesInstalled.Size = new System.Drawing.Size(25, 15);
-            this.LabelFilesInstalled.TabIndex = 1172;
-            this.LabelFilesInstalled.Text = "n/a";
+            this.LabelSelectRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelSelectRegion.AutoSize = true;
+            this.LabelSelectRegion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelSelectRegion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSelectRegion.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelSelectRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelSelectRegion.Location = new System.Drawing.Point(642, 42);
+            this.LabelSelectRegion.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
+            this.LabelSelectRegion.Name = "LabelSelectRegion";
+            this.LabelSelectRegion.Size = new System.Drawing.Size(49, 15);
+            this.LabelSelectRegion.TabIndex = 1163;
+            this.LabelSelectRegion.Text = "REGION";
             // 
-            // darkTitle3
+            // LabelTitleMods
             // 
-            this.darkTitle3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.LabelTitleMods.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.darkTitle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.darkTitle3.Location = new System.Drawing.Point(7, 59);
-            this.darkTitle3.Name = "darkTitle3";
-            this.darkTitle3.Size = new System.Drawing.Size(774, 17);
-            this.darkTitle3.TabIndex = 1161;
-            this.darkTitle3.Text = "MODS";
+            this.LabelTitleMods.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelTitleMods.Location = new System.Drawing.Point(7, 70);
+            this.LabelTitleMods.Name = "LabelTitleMods";
+            this.LabelTitleMods.Size = new System.Drawing.Size(785, 17);
+            this.LabelTitleMods.TabIndex = 1161;
+            this.LabelTitleMods.Text = "MODS";
             // 
-            // darkTitle1
+            // LabelTitleFilterMods
             // 
-            this.darkTitle1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.LabelTitleFilterMods.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.darkTitle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.darkTitle1.Location = new System.Drawing.Point(7, 6);
-            this.darkTitle1.Name = "darkTitle1";
-            this.darkTitle1.Size = new System.Drawing.Size(774, 17);
-            this.darkTitle1.TabIndex = 1159;
-            this.darkTitle1.Text = "FILTER MODS";
+            this.LabelTitleFilterMods.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelTitleFilterMods.Location = new System.Drawing.Point(7, 10);
+            this.LabelTitleFilterMods.Name = "LabelTitleFilterMods";
+            this.LabelTitleFilterMods.Size = new System.Drawing.Size(785, 17);
+            this.LabelTitleFilterMods.TabIndex = 1159;
+            this.LabelTitleFilterMods.Text = "FILTER MODS";
             // 
             // TextBoxSearch
             // 
             this.TextBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxSearch.Location = new System.Drawing.Point(61, 30);
+            this.TextBoxSearch.Location = new System.Drawing.Point(61, 38);
             this.TextBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxSearch.Name = "TextBoxSearch";
-            this.TextBoxSearch.Size = new System.Drawing.Size(403, 23);
+            this.TextBoxSearch.Size = new System.Drawing.Size(246, 23);
             this.TextBoxSearch.TabIndex = 1158;
             this.TextBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
             // 
@@ -1685,48 +1787,48 @@
             this.LabelSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSearch.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSearch.Location = new System.Drawing.Point(4, 33);
+            this.LabelSearch.Location = new System.Drawing.Point(4, 42);
             this.LabelSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelSearch.Name = "LabelSearch";
             this.LabelSearch.Size = new System.Drawing.Size(51, 15);
             this.LabelSearch.TabIndex = 1157;
             this.LabelSearch.Text = "SEARCH";
             // 
-            // ComboBoxType
+            // ComboBoxModType
             // 
-            this.ComboBoxType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxType.FormattingEnabled = true;
-            this.ComboBoxType.Location = new System.Drawing.Point(694, 30);
-            this.ComboBoxType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ComboBoxType.Name = "ComboBoxType";
-            this.ComboBoxType.Size = new System.Drawing.Size(86, 24);
-            this.ComboBoxType.TabIndex = 4;
-            this.ComboBoxType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxType_SelectedIndexChanged);
+            this.ComboBoxModType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxModType.FormattingEnabled = true;
+            this.ComboBoxModType.Location = new System.Drawing.Point(538, 38);
+            this.ComboBoxModType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ComboBoxModType.Name = "ComboBoxModType";
+            this.ComboBoxModType.Size = new System.Drawing.Size(96, 24);
+            this.ComboBoxModType.TabIndex = 4;
+            this.ComboBoxModType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxType_SelectedIndexChanged);
             // 
-            // ComboBoxFirmware
+            // ComboBoxSystemType
             // 
-            this.ComboBoxFirmware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxFirmware.FormattingEnabled = true;
-            this.ComboBoxFirmware.Location = new System.Drawing.Point(555, 30);
-            this.ComboBoxFirmware.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ComboBoxFirmware.Name = "ComboBoxFirmware";
-            this.ComboBoxFirmware.Size = new System.Drawing.Size(60, 24);
-            this.ComboBoxFirmware.TabIndex = 3;
-            this.ComboBoxFirmware.SelectedIndexChanged += new System.EventHandler(this.ComboBoxFirmware_SelectedIndexChanged);
+            this.ComboBoxSystemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxSystemType.FormattingEnabled = true;
+            this.ComboBoxSystemType.Location = new System.Drawing.Point(400, 38);
+            this.ComboBoxSystemType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ComboBoxSystemType.Name = "ComboBoxSystemType";
+            this.ComboBoxSystemType.Size = new System.Drawing.Size(60, 24);
+            this.ComboBoxSystemType.TabIndex = 3;
+            this.ComboBoxSystemType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxFirmware_SelectedIndexChanged);
             // 
             // SectionGames
             // 
             this.SectionGames.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.SectionGames.Controls.Add(this.ScrollBarCategories);
-            this.SectionGames.Controls.Add(this.flowLayoutPanel1);
+            this.SectionGames.Controls.Add(this.FlowPanelCategories);
             this.SectionGames.Cursor = System.Windows.Forms.Cursors.Default;
             this.SectionGames.Location = new System.Drawing.Point(13, 39);
             this.SectionGames.Margin = new System.Windows.Forms.Padding(3, 4, 4, 4);
             this.SectionGames.Name = "SectionGames";
-            this.SectionGames.SectionHeader = "MODDING CATEGORIES";
+            this.SectionGames.SectionHeader = "CATEGORIES";
             this.SectionGames.Size = new System.Drawing.Size(265, 687);
-            this.SectionGames.TabIndex = 8;
+            this.SectionGames.TabIndex = 0;
             // 
             // ScrollBarCategories
             // 
@@ -1741,86 +1843,87 @@
             this.ScrollBarCategories.ViewSize = 1;
             this.ScrollBarCategories.ValueChanged += new System.EventHandler<DarkUI.Controls.ScrollValueEventArgs>(this.ScrollBarCategories_ValueChanged);
             // 
-            // flowLayoutPanel1
+            // FlowPanelCategories
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.darkTitle4);
-            this.flowLayoutPanel1.Controls.Add(this.PanelGames);
-            this.flowLayoutPanel1.Controls.Add(this.darkTitle5);
-            this.flowLayoutPanel1.Controls.Add(this.PanelResources);
-            this.flowLayoutPanel1.Controls.Add(this.darkTitle6);
-            this.flowLayoutPanel1.Controls.Add(this.PanelLists);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 25);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(2, 6, 0, 11);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(263, 661);
-            this.flowLayoutPanel1.TabIndex = 0;
-            this.flowLayoutPanel1.WrapContents = false;
+            this.FlowPanelCategories.AutoScroll = true;
+            this.FlowPanelCategories.Controls.Add(this.LabelTitleGames);
+            this.FlowPanelCategories.Controls.Add(this.PanelGames);
+            this.FlowPanelCategories.Controls.Add(this.LabelTitleResources);
+            this.FlowPanelCategories.Controls.Add(this.PanelResources);
+            this.FlowPanelCategories.Controls.Add(this.LabelTitleMyLists);
+            this.FlowPanelCategories.Controls.Add(this.PanelLists);
+            this.FlowPanelCategories.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FlowPanelCategories.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.FlowPanelCategories.Location = new System.Drawing.Point(1, 25);
+            this.FlowPanelCategories.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.FlowPanelCategories.Name = "FlowPanelCategories";
+            this.FlowPanelCategories.Padding = new System.Windows.Forms.Padding(2, 6, 0, 11);
+            this.FlowPanelCategories.Size = new System.Drawing.Size(263, 661);
+            this.FlowPanelCategories.TabIndex = 0;
+            this.FlowPanelCategories.WrapContents = false;
+            this.FlowPanelCategories.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.FlowPanelCategories_MouseWheel);
             // 
-            // darkTitle4
+            // LabelTitleGames
             // 
-            this.darkTitle4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.darkTitle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.darkTitle4.Location = new System.Drawing.Point(7, 6);
-            this.darkTitle4.Margin = new System.Windows.Forms.Padding(5, 0, 3, 3);
-            this.darkTitle4.Name = "darkTitle4";
-            this.darkTitle4.Size = new System.Drawing.Size(236, 16);
-            this.darkTitle4.TabIndex = 1161;
-            this.darkTitle4.Text = "GAMES";
+            this.LabelTitleGames.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LabelTitleGames.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelTitleGames.Location = new System.Drawing.Point(7, 9);
+            this.LabelTitleGames.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
+            this.LabelTitleGames.Name = "LabelTitleGames";
+            this.LabelTitleGames.Size = new System.Drawing.Size(236, 16);
+            this.LabelTitleGames.TabIndex = 1161;
+            this.LabelTitleGames.Text = "GAMES";
             // 
             // PanelGames
             // 
             this.PanelGames.AutoSize = true;
             this.PanelGames.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelGames.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.PanelGames.Location = new System.Drawing.Point(2, 27);
+            this.PanelGames.Location = new System.Drawing.Point(2, 30);
             this.PanelGames.Margin = new System.Windows.Forms.Padding(0, 2, 0, 8);
             this.PanelGames.Name = "PanelGames";
             this.PanelGames.Size = new System.Drawing.Size(244, 0);
-            this.PanelGames.TabIndex = 1162;
+            this.PanelGames.TabIndex = 0;
             // 
-            // darkTitle5
+            // LabelTitleResources
             // 
-            this.darkTitle5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.darkTitle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.darkTitle5.Location = new System.Drawing.Point(7, 35);
-            this.darkTitle5.Margin = new System.Windows.Forms.Padding(5, 0, 3, 3);
-            this.darkTitle5.Name = "darkTitle5";
-            this.darkTitle5.Size = new System.Drawing.Size(236, 16);
-            this.darkTitle5.TabIndex = 1163;
-            this.darkTitle5.Text = "RESOURCES";
+            this.LabelTitleResources.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LabelTitleResources.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelTitleResources.Location = new System.Drawing.Point(7, 38);
+            this.LabelTitleResources.Margin = new System.Windows.Forms.Padding(5, 0, 3, 3);
+            this.LabelTitleResources.Name = "LabelTitleResources";
+            this.LabelTitleResources.Size = new System.Drawing.Size(236, 16);
+            this.LabelTitleResources.TabIndex = 1163;
+            this.LabelTitleResources.Text = "RESOURCES";
             // 
             // PanelResources
             // 
             this.PanelResources.AutoSize = true;
             this.PanelResources.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelResources.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.PanelResources.Location = new System.Drawing.Point(2, 56);
+            this.PanelResources.Location = new System.Drawing.Point(2, 59);
             this.PanelResources.Margin = new System.Windows.Forms.Padding(0, 2, 0, 8);
             this.PanelResources.Name = "PanelResources";
             this.PanelResources.Size = new System.Drawing.Size(244, 0);
             this.PanelResources.TabIndex = 1164;
             // 
-            // darkTitle6
+            // LabelTitleMyLists
             // 
-            this.darkTitle6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.darkTitle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.darkTitle6.Location = new System.Drawing.Point(7, 64);
-            this.darkTitle6.Margin = new System.Windows.Forms.Padding(5, 0, 3, 3);
-            this.darkTitle6.Name = "darkTitle6";
-            this.darkTitle6.Size = new System.Drawing.Size(236, 16);
-            this.darkTitle6.TabIndex = 1165;
-            this.darkTitle6.Text = "LISTS";
+            this.LabelTitleMyLists.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LabelTitleMyLists.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelTitleMyLists.Location = new System.Drawing.Point(7, 67);
+            this.LabelTitleMyLists.Margin = new System.Windows.Forms.Padding(5, 0, 3, 3);
+            this.LabelTitleMyLists.Name = "LabelTitleMyLists";
+            this.LabelTitleMyLists.Size = new System.Drawing.Size(236, 16);
+            this.LabelTitleMyLists.TabIndex = 1165;
+            this.LabelTitleMyLists.Text = "MY LISTS";
             // 
             // PanelLists
             // 
             this.PanelLists.AutoSize = true;
             this.PanelLists.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelLists.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.PanelLists.Location = new System.Drawing.Point(2, 85);
+            this.PanelLists.Location = new System.Drawing.Point(2, 88);
             this.PanelLists.Margin = new System.Windows.Forms.Padding(0, 2, 0, 8);
             this.PanelLists.Name = "PanelLists";
             this.PanelLists.Size = new System.Drawing.Size(244, 0);
@@ -1830,16 +1933,32 @@
             // 
             this.SectionInstalledGameMods.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.SectionInstalledGameMods.Controls.Add(this.LabelNoModsInstalled);
             this.SectionInstalledGameMods.Controls.Add(this.DgvModsInstalled);
-            this.SectionInstalledGameMods.Controls.Add(this.panel2);
-            this.SectionInstalledGameMods.Controls.Add(this.darkToolStrip2);
+            this.SectionInstalledGameMods.Controls.Add(this.PanelModsInstalledHeader);
+            this.SectionInstalledGameMods.Controls.Add(this.MenuGameModsStrip);
             this.SectionInstalledGameMods.Cursor = System.Windows.Forms.Cursors.Default;
-            this.SectionInstalledGameMods.Location = new System.Drawing.Point(286, 510);
+            this.SectionInstalledGameMods.Location = new System.Drawing.Point(286, 483);
             this.SectionInstalledGameMods.Margin = new System.Windows.Forms.Padding(4);
             this.SectionInstalledGameMods.Name = "SectionInstalledGameMods";
             this.SectionInstalledGameMods.SectionHeader = "MODS INSTALLED";
-            this.SectionInstalledGameMods.Size = new System.Drawing.Size(791, 216);
+            this.SectionInstalledGameMods.Size = new System.Drawing.Size(802, 243);
             this.SectionInstalledGameMods.TabIndex = 1175;
+            // 
+            // LabelNoModsInstalled
+            // 
+            this.LabelNoModsInstalled.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelNoModsInstalled.AutoSize = true;
+            this.LabelNoModsInstalled.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelNoModsInstalled.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelNoModsInstalled.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelNoModsInstalled.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelNoModsInstalled.Location = new System.Drawing.Point(340, 107);
+            this.LabelNoModsInstalled.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.LabelNoModsInstalled.Name = "LabelNoModsInstalled";
+            this.LabelNoModsInstalled.Size = new System.Drawing.Size(122, 15);
+            this.LabelNoModsInstalled.TabIndex = 1178;
+            this.LabelNoModsInstalled.Text = "NO MODS INSTALLED";
             // 
             // DgvModsInstalled
             // 
@@ -1848,8 +1967,8 @@
             this.DgvModsInstalled.AllowUserToDragDropRows = false;
             this.DgvModsInstalled.AllowUserToPasteCells = false;
             this.DgvModsInstalled.AllowUserToResizeColumns = false;
-            this.DgvModsInstalled.ColumnHeadersHeight = 23;
-            this.DgvModsInstalled.ColumnHeadersVisible = false;
+            this.DgvModsInstalled.ColumnHeadersHeight = 21;
+            this.DgvModsInstalled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DgvModsInstalled.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column14,
             this.Column3,
@@ -1861,7 +1980,7 @@
             this.Column4,
             this.Column12});
             this.DgvModsInstalled.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvModsInstalled.Location = new System.Drawing.Point(1, 54);
+            this.DgvModsInstalled.Location = new System.Drawing.Point(1, 61);
             this.DgvModsInstalled.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.DgvModsInstalled.MultiSelect = false;
             this.DgvModsInstalled.Name = "DgvModsInstalled";
@@ -1871,8 +1990,8 @@
             this.DgvModsInstalled.RowTemplate.Height = 24;
             this.DgvModsInstalled.RowTemplate.ReadOnly = true;
             this.DgvModsInstalled.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvModsInstalled.Size = new System.Drawing.Size(789, 125);
-            this.DgvModsInstalled.TabIndex = 1176;
+            this.DgvModsInstalled.Size = new System.Drawing.Size(800, 145);
+            this.DgvModsInstalled.TabIndex = 7;
             this.DgvModsInstalled.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvModsInstalled_CellClick);
             this.DgvModsInstalled.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
             this.DgvModsInstalled.SelectionChanged += new System.EventHandler(this.DgvModsInstalled_SelectionChanged);
@@ -1889,7 +2008,7 @@
             // Column3
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Game";
+            this.Column3.HeaderText = "Game Title";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -1900,31 +2019,31 @@
             this.Column16.MinimumWidth = 6;
             this.Column16.Name = "Column16";
             this.Column16.ReadOnly = true;
-            this.Column16.Width = 80;
+            this.Column16.Width = 78;
             // 
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Name";
+            this.Column2.HeaderText = "Mod Name";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column17
             // 
-            this.Column17.HeaderText = "Firmware";
+            this.Column17.HeaderText = "System Type";
             this.Column17.MinimumWidth = 6;
             this.Column17.Name = "Column17";
             this.Column17.ReadOnly = true;
-            this.Column17.Width = 55;
+            this.Column17.Width = 82;
             // 
             // Column5
             // 
-            this.Column5.HeaderText = "Type";
+            this.Column5.HeaderText = "Mod Type";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 82;
+            this.Column5.Width = 86;
             // 
             // Column6
             // 
@@ -1936,7 +2055,7 @@
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Files";
+            this.Column4.HeaderText = "# Files";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -1944,23 +2063,23 @@
             // 
             // Column12
             // 
-            this.Column12.HeaderText = "Uninstall";
+            this.Column12.HeaderText = "";
             this.Column12.MinimumWidth = 6;
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
             this.Column12.Width = 28;
             // 
-            // panel2
+            // PanelModsInstalledHeader
             // 
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.darkTitle12);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(1, 25);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(789, 29);
-            this.panel2.TabIndex = 1177;
+            this.PanelModsInstalledHeader.Controls.Add(this.label7);
+            this.PanelModsInstalledHeader.Controls.Add(this.label8);
+            this.PanelModsInstalledHeader.Controls.Add(this.darkTitle12);
+            this.PanelModsInstalledHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelModsInstalledHeader.Location = new System.Drawing.Point(1, 25);
+            this.PanelModsInstalledHeader.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PanelModsInstalledHeader.Name = "PanelModsInstalledHeader";
+            this.PanelModsInstalledHeader.Size = new System.Drawing.Size(800, 36);
+            this.PanelModsInstalledHeader.TabIndex = 1177;
             // 
             // label7
             // 
@@ -1993,30 +2112,30 @@
             this.darkTitle12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.darkTitle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.darkTitle12.Location = new System.Drawing.Point(7, 6);
+            this.darkTitle12.Location = new System.Drawing.Point(7, 10);
             this.darkTitle12.Name = "darkTitle12";
-            this.darkTitle12.Size = new System.Drawing.Size(777, 17);
+            this.darkTitle12.Size = new System.Drawing.Size(788, 17);
             this.darkTitle12.TabIndex = 1160;
             this.darkTitle12.Text = "GAME MODS";
             // 
-            // darkToolStrip2
+            // MenuGameModsStrip
             // 
-            this.darkToolStrip2.AutoSize = false;
-            this.darkToolStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.darkToolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.darkToolStrip2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkToolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.darkToolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.darkToolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuGameModsStrip.AutoSize = false;
+            this.MenuGameModsStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuGameModsStrip.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MenuGameModsStrip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuGameModsStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.MenuGameModsStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MenuGameModsStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolItemUninstallAllGameMods,
             this.LabelInstalledGameModsStatus});
-            this.darkToolStrip2.Location = new System.Drawing.Point(1, 179);
-            this.darkToolStrip2.Name = "darkToolStrip2";
-            this.darkToolStrip2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.darkToolStrip2.Size = new System.Drawing.Size(789, 36);
-            this.darkToolStrip2.TabIndex = 1178;
-            this.darkToolStrip2.TabStop = true;
-            this.darkToolStrip2.Text = "darkToolStrip2";
+            this.MenuGameModsStrip.Location = new System.Drawing.Point(1, 206);
+            this.MenuGameModsStrip.Name = "MenuGameModsStrip";
+            this.MenuGameModsStrip.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.MenuGameModsStrip.Size = new System.Drawing.Size(800, 36);
+            this.MenuGameModsStrip.TabIndex = 8;
+            this.MenuGameModsStrip.TabStop = true;
+            this.MenuGameModsStrip.Text = "darkToolStrip2";
             // 
             // ToolItemUninstallAllGameMods
             // 
@@ -2033,6 +2152,7 @@
             this.ToolItemUninstallAllGameMods.Name = "ToolItemUninstallAllGameMods";
             this.ToolItemUninstallAllGameMods.Size = new System.Drawing.Size(98, 26);
             this.ToolItemUninstallAllGameMods.Text = "Uninstall All";
+            this.ToolItemUninstallAllGameMods.ToolTipText = "Uninstall All Mods";
             this.ToolItemUninstallAllGameMods.Click += new System.EventHandler(this.ToolItemUninstallAllGameMods_Click);
             // 
             // LabelInstalledGameModsStatus
@@ -2041,8 +2161,16 @@
             this.LabelInstalledGameModsStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.LabelInstalledGameModsStatus.Name = "LabelInstalledGameModsStatus";
             this.LabelInstalledGameModsStatus.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.LabelInstalledGameModsStatus.Size = new System.Drawing.Size(204, 33);
-            this.LabelInstalledGameModsStatus.Text = "0 Game Mods Installed (0 Total Files)";
+            this.LabelInstalledGameModsStatus.Size = new System.Drawing.Size(170, 33);
+            this.LabelInstalledGameModsStatus.Text = "0 Mods Installed (0 Files Total)";
+            // 
+            // MenuItemSeperator5
+            // 
+            this.MenuItemSeperator5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemSeperator5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemSeperator5.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.MenuItemSeperator5.Name = "MenuItemSeperator5";
+            this.MenuItemSeperator5.Size = new System.Drawing.Size(225, 6);
             // 
             // MainForm
             // 
@@ -2051,7 +2179,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1485, 765);
             this.Controls.Add(this.SectionInstalledGameMods);
-            this.Controls.Add(this.darkToolStrip1);
+            this.Controls.Add(this.MenuStatusStrip);
             this.Controls.Add(this.MenuStrip);
             this.Controls.Add(this.SectionArchiveInformation);
             this.Controls.Add(this.SectionModsLibrary);
@@ -2066,7 +2194,7 @@
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ModioX - Beta 1.0.0";
+            this.Text = "ModioX - Beta v1.0.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
@@ -2083,22 +2211,24 @@
             this.ToolStripArchiveInformation.PerformLayout();
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
-            this.darkToolStrip1.ResumeLayout(false);
-            this.darkToolStrip1.PerformLayout();
+            this.MenuStatusStrip.ResumeLayout(false);
+            this.MenuStatusStrip.PerformLayout();
             this.ContextMenuLocalFile.ResumeLayout(false);
             this.SectionModsLibrary.ResumeLayout(false);
+            this.SectionModsLibrary.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.PanelModsLibraryFilters.ResumeLayout(false);
+            this.PanelModsLibraryFilters.PerformLayout();
             this.SectionGames.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.FlowPanelCategories.ResumeLayout(false);
+            this.FlowPanelCategories.PerformLayout();
             this.SectionInstalledGameMods.ResumeLayout(false);
+            this.SectionInstalledGameMods.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvModsInstalled)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.darkToolStrip2.ResumeLayout(false);
-            this.darkToolStrip2.PerformLayout();
+            this.PanelModsInstalledHeader.ResumeLayout(false);
+            this.PanelModsInstalledHeader.PerformLayout();
+            this.MenuGameModsStrip.ResumeLayout(false);
+            this.MenuGameModsStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2111,7 +2241,7 @@
         private System.Windows.Forms.Label LabelHeaderAuthor;
         private System.Windows.Forms.Label LabelHeaderVersion;
         private System.Windows.Forms.Label LabelVersion;
-        private System.Windows.Forms.Label LabelHeaderConfig;
+        private System.Windows.Forms.Label LabelHeaderGameType;
         private System.Windows.Forms.Label LabelConfig;
         private System.Windows.Forms.Label LabelDescription;
         private DarkUI.Controls.DarkScrollBar ScrollBarDetails;
@@ -2121,9 +2251,9 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemHelp;
         private System.Windows.Forms.ToolStripMenuItem MenuStripConnectPS3;
         private System.Windows.Forms.ToolStripSeparator MenuStripFileSeparator0;
-        private DarkUI.Controls.DarkToolStrip darkToolStrip1;
+        private DarkUI.Controls.DarkToolStrip MenuStatusStrip;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelConnectedConsole;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator ToolStripStatusSeperator0;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelStatus;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelConsole;
         private DarkUI.Controls.DarkToolStrip ToolStripArchiveInformation;
@@ -2131,9 +2261,9 @@
         private System.Windows.Forms.Label LabelHeaderSubmittedBy;
         private System.Windows.Forms.Label LabelSubmittedBy;
         private System.Windows.Forms.Label LabelAuthor;
-        private System.Windows.Forms.Label LabelHeaderType;
+        private System.Windows.Forms.Label LabelHeaderModType;
         private System.Windows.Forms.Label LabelType;
-        private System.Windows.Forms.Label LabelSelectSystem;
+        private System.Windows.Forms.Label LabelSelectSystemType;
         private DarkUI.Controls.DarkContextMenu ContextMenuConsoleFile;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuConsoleDownloadFile;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuConsoleDeleteFile;
@@ -2190,8 +2320,8 @@
         private System.Windows.Forms.ToolStripButton ToolItemDownloadMod;
         private DarkUI.Controls.DarkSectionPanel SectionModsLibrary;
         private DarkUI.Controls.DarkSectionPanel SectionGames;
-        private DarkUI.Controls.DarkComboBox ComboBoxFirmware;
-        private DarkUI.Controls.DarkComboBox ComboBoxType;
+        private DarkUI.Controls.DarkComboBox ComboBoxSystemType;
+        private DarkUI.Controls.DarkComboBox ComboBoxModType;
         private DarkUI.Controls.DarkDataGridView DgvMods;
         private DarkUI.Controls.DarkSectionPanel SectionModsInstallFilePaths;
         private System.Windows.Forms.ToolStripMenuItem MenuItemToolsBackupFiles;
@@ -2208,7 +2338,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuStripConnectPS3Console;
         private DarkUI.Controls.DarkDataGridView DgvInstallPaths;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator MenuItemToolsSeperator0;
         private System.Windows.Forms.ToolStripMenuItem MenuItemToolsFileExplorer;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettings;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsEditConsoleProfiles;
@@ -2216,32 +2346,48 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsShowModID;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsAutoDetectGameRegion;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsAlwaysDownloadInstallFiles;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PanelModsLibraryFilters;
         private DarkUI.Controls.DarkTextBox TextBoxSearch;
         private System.Windows.Forms.Label LabelSearch;
-        private DarkUI.Controls.DarkTitle darkTitle3;
-        private DarkUI.Controls.DarkTitle darkTitle1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private DarkUI.Controls.DarkTitle darkTitle4;
+        private DarkUI.Controls.DarkTitle LabelTitleMods;
+        private DarkUI.Controls.DarkTitle LabelTitleFilterMods;
+        private System.Windows.Forms.FlowLayoutPanel FlowPanelCategories;
+        private DarkUI.Controls.DarkTitle LabelTitleGames;
         private System.Windows.Forms.FlowLayoutPanel PanelGames;
-        private DarkUI.Controls.DarkTitle darkTitle5;
+        private DarkUI.Controls.DarkTitle LabelTitleResources;
         private System.Windows.Forms.FlowLayoutPanel PanelResources;
         private DarkUI.Controls.DarkScrollBar ScrollBarCategories;
-        private DarkUI.Controls.DarkTitle darkTitle6;
+        private DarkUI.Controls.DarkTitle LabelTitleMyLists;
         private System.Windows.Forms.FlowLayoutPanel PanelLists;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label LabelFilesInstalled;
-        private DarkUI.Controls.DarkTitle darkTitle9;
-        private DarkUI.Controls.DarkTitle darkTitle8;
+        private DarkUI.Controls.DarkTitle LabelTitleModDetails;
+        private DarkUI.Controls.DarkTitle LabelTitleModDescription;
         private DarkUI.Controls.DarkSectionPanel SectionInstalledGameMods;
         private DarkUI.Controls.DarkDataGridView DgvModsInstalled;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PanelModsInstalledHeader;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private DarkUI.Controls.DarkTitle darkTitle12;
         private DarkUI.Controls.DarkTitle darkTitle7;
-        private DarkUI.Controls.DarkToolStrip darkToolStrip2;
+        private DarkUI.Controls.DarkToolStrip MenuGameModsStrip;
         private System.Windows.Forms.ToolStripButton ToolItemUninstallAllGameMods;
+        private System.Windows.Forms.ToolStripLabel LabelInstalledGameModsStatus;
+        private System.Windows.Forms.Label LabelHeaderRegion;
+        private System.Windows.Forms.Label LabelRegion;
+        private DarkUI.Controls.DarkComboBox ComboBoxRegion;
+        private System.Windows.Forms.Label LabelSelectRegion;
+        private System.Windows.Forms.Label LabelNoModsFound;
+        private System.Windows.Forms.Label LabelNoModsInstalled;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsFirmware;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsRegion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsVersion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsAuthor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsNoFiles;
+        private System.Windows.Forms.DataGridViewImageColumn Column9;
+        private System.Windows.Forms.DataGridViewImageColumn Column10;
+        private System.Windows.Forms.DataGridViewImageColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
@@ -2251,17 +2397,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewImageColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsGameMode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsFirmware;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsVersion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsAuthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsNoFiles;
-        private System.Windows.Forms.DataGridViewImageColumn Column9;
-        private System.Windows.Forms.DataGridViewImageColumn Column10;
-        private System.Windows.Forms.DataGridViewImageColumn Column13;
-        private System.Windows.Forms.ToolStripLabel LabelInstalledGameModsStatus;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemMoreInformation;
+        private System.Windows.Forms.ToolStripSeparator MenuItemSeperator4;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsRememberGameRegions;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsEditGameRegions;
+        private System.Windows.Forms.ToolStripSeparator MenuItemSeperator5;
     }
 }

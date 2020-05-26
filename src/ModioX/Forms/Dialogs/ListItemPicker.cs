@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace ModioX.Windows
 {
-    public partial class ListViewDialog : DarkForm
+    public partial class ListItemPicker : DarkForm
     {
-        public ListViewDialog()
+        public ListItemPicker()
         {
             InitializeComponent();
         }

@@ -6,11 +6,11 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ModioX.Forms.Game_File_Backups
+namespace ModioX.Forms
 {
-    public partial class ViewGameBackups : DarkForm
+    public partial class EditBackupFiles : DarkForm
     {
-        public ViewGameBackups()
+        public EditBackupFiles()
         {
             InitializeComponent();
         }
@@ -69,7 +69,7 @@ namespace ModioX.Forms.Game_File_Backups
         {
             BackupFile backupFile = MainForm.SettingsData.BackupFiles[DgvBackups.CurrentRow.Index];
 
-            using (EditBackupForm editBackupForm = new EditBackupForm()
+            using (EditBackupFile editBackupForm = new EditBackupFile()
             {
                 BackupFile = backupFile,
                 BackupFileIndex = DgvBackups.CurrentRow.Index

@@ -1,6 +1,6 @@
-﻿namespace ModioX.Forms.Console_Profiles
+﻿namespace ModioX.Forms
 {
-    partial class EditProfiles
+    partial class EditConsoleProfiles
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProfiles));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditConsoleProfiles));
             this.ButtonRemoveProfile = new DarkUI.Controls.DarkButton();
             this.ListViewConsoles = new DarkUI.Controls.DarkListView();
             this.SectionConsoleProfile = new DarkUI.Controls.DarkSectionPanel();
@@ -46,9 +46,9 @@
             // 
             this.ButtonRemoveProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonRemoveProfile.Enabled = false;
-            this.ButtonRemoveProfile.Location = new System.Drawing.Point(135, 131);
+            this.ButtonRemoveProfile.Location = new System.Drawing.Point(155, 131);
             this.ButtonRemoveProfile.Name = "ButtonRemoveProfile";
-            this.ButtonRemoveProfile.Size = new System.Drawing.Size(117, 25);
+            this.ButtonRemoveProfile.Size = new System.Drawing.Size(107, 25);
             this.ButtonRemoveProfile.TabIndex = 1136;
             this.ButtonRemoveProfile.Text = "Remove Profile";
             this.ButtonRemoveProfile.Click += new System.EventHandler(this.ButtonRemoveProfile_Click);
@@ -58,31 +58,34 @@
             this.ListViewConsoles.Dock = System.Windows.Forms.DockStyle.Top;
             this.ListViewConsoles.Location = new System.Drawing.Point(1, 25);
             this.ListViewConsoles.Name = "ListViewConsoles";
-            this.ListViewConsoles.Size = new System.Drawing.Size(258, 99);
+            this.ListViewConsoles.Size = new System.Drawing.Size(268, 99);
             this.ListViewConsoles.TabIndex = 1138;
             this.ListViewConsoles.Text = "darkListView1";
             this.ListViewConsoles.SelectedIndicesChanged += new System.EventHandler(this.ListViewConsoles_SelectedIndicesChanged);
             // 
             // SectionConsoleProfile
             // 
+            this.SectionConsoleProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.SectionConsoleProfile.Controls.Add(this.ButtonAddProfile);
             this.SectionConsoleProfile.Controls.Add(this.LabelName);
             this.SectionConsoleProfile.Controls.Add(this.TextBoxName);
             this.SectionConsoleProfile.Controls.Add(this.TextBoxAddress);
             this.SectionConsoleProfile.Controls.Add(this.LabelDescription);
-            this.SectionConsoleProfile.Location = new System.Drawing.Point(13, 13);
+            this.SectionConsoleProfile.Location = new System.Drawing.Point(13, 12);
             this.SectionConsoleProfile.Margin = new System.Windows.Forms.Padding(4);
             this.SectionConsoleProfile.Name = "SectionConsoleProfile";
-            this.SectionConsoleProfile.SectionHeader = "Console Profile";
-            this.SectionConsoleProfile.Size = new System.Drawing.Size(229, 164);
+            this.SectionConsoleProfile.SectionHeader = "Add Console Profile";
+            this.SectionConsoleProfile.Size = new System.Drawing.Size(270, 164);
             this.SectionConsoleProfile.TabIndex = 1140;
             // 
             // ButtonAddProfile
             // 
             this.ButtonAddProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAddProfile.Location = new System.Drawing.Point(127, 131);
+            this.ButtonAddProfile.Location = new System.Drawing.Point(178, 131);
             this.ButtonAddProfile.Name = "ButtonAddProfile";
-            this.ButtonAddProfile.Size = new System.Drawing.Size(94, 25);
+            this.ButtonAddProfile.Size = new System.Drawing.Size(84, 25);
             this.ButtonAddProfile.TabIndex = 1137;
             this.ButtonAddProfile.Text = "Add Profile";
             this.ButtonAddProfile.Click += new System.EventHandler(this.ButtonAddProfile_Click);
@@ -105,7 +108,7 @@
             this.TextBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxName.Location = new System.Drawing.Point(8, 51);
             this.TextBoxName.Name = "TextBoxName";
-            this.TextBoxName.Size = new System.Drawing.Size(213, 23);
+            this.TextBoxName.Size = new System.Drawing.Size(254, 23);
             this.TextBoxName.TabIndex = 4;
             // 
             // TextBoxAddress
@@ -115,7 +118,7 @@
             this.TextBoxAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxAddress.Location = new System.Drawing.Point(8, 101);
             this.TextBoxAddress.Name = "TextBoxAddress";
-            this.TextBoxAddress.Size = new System.Drawing.Size(213, 23);
+            this.TextBoxAddress.Size = new System.Drawing.Size(254, 23);
             this.TextBoxAddress.TabIndex = 13;
             // 
             // LabelDescription
@@ -131,30 +134,31 @@
             // 
             // SectionConsoleProfiles
             // 
-            this.SectionConsoleProfiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.SectionConsoleProfiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SectionConsoleProfiles.Controls.Add(this.ListViewConsoles);
             this.SectionConsoleProfiles.Controls.Add(this.ButtonRemoveProfile);
-            this.SectionConsoleProfiles.Location = new System.Drawing.Point(249, 13);
+            this.SectionConsoleProfiles.Location = new System.Drawing.Point(291, 12);
             this.SectionConsoleProfiles.Margin = new System.Windows.Forms.Padding(4);
             this.SectionConsoleProfiles.Name = "SectionConsoleProfiles";
-            this.SectionConsoleProfiles.SectionHeader = "Console Profiles";
-            this.SectionConsoleProfiles.Size = new System.Drawing.Size(260, 164);
+            this.SectionConsoleProfiles.SectionHeader = "Remove Console Profile";
+            this.SectionConsoleProfiles.Size = new System.Drawing.Size(270, 164);
             this.SectionConsoleProfiles.TabIndex = 1141;
             // 
-            // EditProfiles
+            // EditConsoleProfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(522, 189);
+            this.ClientSize = new System.Drawing.Size(574, 189);
             this.Controls.Add(this.SectionConsoleProfiles);
             this.Controls.Add(this.SectionConsoleProfile);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EditProfiles";
+            this.Name = "EditConsoleProfiles";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

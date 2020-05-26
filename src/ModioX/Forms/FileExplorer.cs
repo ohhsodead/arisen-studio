@@ -4,9 +4,6 @@ using ModioX.Extensions;
 using ModioX.Models.Database;
 using ModioX.Models.Resources;
 using ModioX.Properties;
-using ModioX.Forms.Connection;
-using ModioX.Forms.Custom_Mods;
-using ModioX.Forms.Game_File_Backups;
 using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
@@ -16,7 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ModioX.Forms.File_Explorer
+namespace ModioX.Forms
 {
     public partial class FileExplorer : DarkForm
     {
@@ -82,56 +79,49 @@ namespace ModioX.Forms.File_Explorer
 
         private void DgvLocalFiles_SelectionChanged(object sender, EventArgs e)
         {
-            if (DgvLocalFiles.SelectedRows.Count > 0)
-            {
-                string type = DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
-                ToolStripItemLocalUploadFile.Enabled = type == "file";
-                ToolStripLocalDeleteFile.Enabled = type == "file";
-                ContextMenuStripLocalUploadFile.Enabled = type == "file";
-                ContextMenuStripLocalDeleteFile.Enabled = type == "file";
-            }
+            string type = DgvLocalFiles.SelectedRows.Count == 0 ? "" : DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
+
+            ToolStripItemLocalUploadFile.Enabled = type == "file";
+            ToolStripLocalDeleteFile.Enabled = type == "file";
+            ContextMenuStripLocalUploadFile.Enabled = type == "file";
+            ContextMenuStripLocalDeleteFile.Enabled = type == "file";
         }
 
         private void DgvConsoleFiles_SelectionChanged(object sender, EventArgs e)
         {
-            if (DgvConsoleFiles.SelectedRows.Count > 0)
-            {
-                string type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
-                ToolStripItemConsoleFileDownload.Enabled = type == "file";
-                ToolStripItemConsoleFileDelete.Enabled = type == "file";
-                ContextMenuConsoleDownloadFile.Enabled = type == "file";
-                ContextMenuConsoleDeleteFile.Enabled = type == "file";
-            }
+            string type = DgvConsoleFiles.SelectedRows.Count == 0 ? "" : DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
+
+            ToolStripItemConsoleFileDownload.Enabled = type == "file";
+            ToolStripItemConsoleFileDelete.Enabled = type == "file";
+            ContextMenuConsoleDownloadFile.Enabled = type == "file";
+            ContextMenuConsoleDeleteFile.Enabled = type == "file";
         }
 
         private void DgvLocalFiles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (DgvLocalFiles.CurrentRow != null)
+            string type = DgvLocalFiles.CurrentRow == null ? "" : DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
+            string name = DgvLocalFiles.CurrentRow == null ? "" : DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
+
+            if (name == "..")
             {
-                string type = DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
-                string name = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
+                string parentDirecory = Directory.GetParent(LocalDirectoryPath).FullName;
 
-                if (name == "..")
+                if (Directory.Exists(parentDirecory))
                 {
-                    string parentDirecory = Directory.GetParent(LocalDirectoryPath).FullName;
-
-                    if (Directory.Exists(parentDirecory))
-                    {
-                        LoadLocalDirectory(parentDirecory);
-                    }
+                    LoadLocalDirectory(parentDirecory);
                 }
-                else if (type == "folder")
-                {
-                    LoadLocalDirectory(LocalDirectoryPath + @"\" + DgvLocalFiles.CurrentRow.Cells[2].Value.ToString());
-                }
-
-                ToolStripItemLocalUploadFile.Enabled = type == "file";
-                ToolStripLocalDeleteFile.Enabled = type == "file";
-                ContextMenuStripLocalUploadFile.Enabled = type == "file";
-                ContextMenuStripLocalDeleteFile.Enabled = type == "file";
-
-                ToolStripItemLocalOpenExplorer.Enabled = Directory.Exists(TextBoxLocalDirectory.Text);
             }
+            else if (type == "folder")
+            {
+                LoadLocalDirectory(LocalDirectoryPath + @"\" + DgvLocalFiles.CurrentRow.Cells[2].Value.ToString());
+            }
+
+            ToolStripItemLocalUploadFile.Enabled = type == "file";
+            ToolStripLocalDeleteFile.Enabled = type == "file";
+            ContextMenuStripLocalUploadFile.Enabled = type == "file";
+            ContextMenuStripLocalDeleteFile.Enabled = type == "file";
+
+            ToolStripItemLocalOpenExplorer.Enabled = Directory.Exists(TextBoxLocalDirectory.Text);
         }
 
         private void DgvConsoleFiles_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -161,8 +151,15 @@ namespace ModioX.Forms.File_Explorer
             }
         }
 
+        /// <summary>
+        ///     Gets/sets the current local directory path
+        /// </summary>
         public string LocalDirectoryPath { get; set; } = @"\";
 
+        /// <summary>
+        ///     Loads both files and folders into the local dgv
+        /// </summary>
+        /// <param name="directoryPath"></param>
         public void LoadLocalDirectory(string directoryPath)
         {
             DgvLocalFiles.Rows.Clear();
@@ -173,6 +170,8 @@ namespace ModioX.Forms.File_Explorer
                 LocalDirectoryPath = directoryPath.Replace("\\", @"\");
                 TextBoxLocalDirectory.Text = directoryPath.Replace("\\", @"\");
 
+                SetStatus($"Retrieving directory listing of '{directoryPath}'...");
+
                 foreach (string directoryItem in Directory.GetDirectories(directoryPath))
                 {
                     DgvLocalFiles.Rows.Add("folder", Resources.icons8_folder_16, Path.GetFileName(directoryItem), "-", "file-folder", Directory.GetLastWriteTime(directoryItem));
@@ -182,21 +181,32 @@ namespace ModioX.Forms.File_Explorer
                 {
                     DgvLocalFiles.Rows.Add("file", Resources.icons8_file_16, Path.GetFileName(fileItem), new FileInfo(fileItem).Length.ToString("#,##0") + " bytes", Path.GetExtension(fileItem).ToUpper().Trim('.') + " File", File.GetLastWriteTime(fileItem));
                 }
+
+                SetStatus($"Local directory listing for path: {directoryPath}' successful ({DgvLocalFiles.Rows.Count} items)");
             }
             catch (Exception ex)
             {
-                SetStatus($"Unable to retrieve local directory listing - {ex.Message}", ex);
-                LoadLocalDirectory(Directory.GetParent(LocalDirectoryPath).FullName);
+                SetStatus($"Error retrieving local directory listing for path: {directoryPath} - {ex.Message}", ex);
+
+                try
+                {
+                    // Attempt to load the parent directory if the current path crashes
+                    LoadLocalDirectory(Directory.GetParent(LocalDirectoryPath).FullName);
+                }
+                catch { }
             }
         }
 
+        /// <summary>
+        ///     Get/sets the current ftp directory path
+        /// </summary>
         public string FtpDirectoryPath { get; set; } = "/";
 
         public void LoadConsoleDirectory(string directoryPath)
         {
             try
             {
-                SetStatus(string.Format("Preparing to connect..."));
+                SetStatus("Connecting to console...");
 
                 using (FtpConnection ftpConnection = new FtpConnection(MainForm.ConsoleProfile.Address))
                 {
@@ -243,11 +253,11 @@ namespace ModioX.Forms.File_Explorer
             }
             catch (FtpException ex)
             {
-                SetStatus($"An error occurred retrieving console directory listing - {ex.Message}", ex);
+                SetStatus($"Error retrieving console directory listing for path: {directoryPath} - {ex.Message}", ex);
             }
             catch (Exception ex)
             {
-                SetStatus($"An error occurred retrieving console directory listing - {ex.Message}", ex);
+                SetStatus($"Error retrieving console directory listing for path: {directoryPath} - {ex.Message}", ex);
             }
         }
 
@@ -270,7 +280,7 @@ namespace ModioX.Forms.File_Explorer
             }
             catch (Exception ex)
             {
-                SetStatus(string.Format("An error occurred retrieving local directory listing {0} ({1})", TextBoxLocalDirectory.Text, ex.Message), ex);
+                SetStatus(string.Format("Error opening file explorer for path: {0} - {1}", TextBoxLocalDirectory.Text, ex.Message), ex);
             }
         }
 
@@ -336,7 +346,7 @@ namespace ModioX.Forms.File_Explorer
             }
             catch (Exception ex)
             {
-                SetStatus($"An error occurred when upladoing this local file to console : " + ex.Message, ex);
+                SetStatus($"Error uploading local file to console - {ex.Message}", ex);
             }
         }
 
@@ -363,14 +373,14 @@ namespace ModioX.Forms.File_Explorer
                     File.Delete(localFile);
                 }
 
-                SetStatus($"Starting download of file from console to computer...");
+                SetStatus($"Downloading console file: {Path.GetFileName(localFile)} to path: {localFile}...");
                 FtpExtensions.DownloadFile(MainForm.ConsoleProfile.Address, localFile, consoleFile);
-                SetStatus(string.Format("Successfully downloaded file {0} to directory {1}", Path.GetFileName(localFile), Path.GetDirectoryName(localFile)));
+                SetStatus($"Successfully downloaded file {Path.GetFileName(localFile)} to path: {localFile}");
 
             }
             catch (Exception ex)
             {
-                SetStatus($"An error occurred downloading file - " + ex.Message, ex);
+                SetStatus($"Error downloading console file - {ex.Message}", ex);
             }
 
             LoadLocalDirectory(LocalDirectoryPath);
@@ -383,17 +393,16 @@ namespace ModioX.Forms.File_Explorer
                 string consoleFile = TextBoxConsoleDirectory.Text + "/" + DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
                 string localFile = TextBoxLocalDirectory.Text + @"\" + DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
 
-                SetStatus($"Starting delete of file...");
+                SetStatus($"Delete console file: {consoleFile}...");
                 FtpExtensions.DeleteFile(MainForm.ConsoleProfile.Address, consoleFile);
                 DgvConsoleFiles.Rows.RemoveAt(DgvConsoleFiles.CurrentRow.Index);
-                SetStatus(string.Format("Successfully delete {0} file", Path.GetFileName(localFile)));
+                SetStatus($"Successfully deleted console file: {consoleFile}");
             }
             catch (Exception ex)
             {
-                SetStatus($"Unable to delete file - " + ex.Message, ex);
+                SetStatus($"Error deleting console file - {ex.Message}", ex);
             }
-        }
-        
+        }        
 
         /// <summary>
         ///     Set the current process status in the tool strip
@@ -415,7 +424,6 @@ namespace ModioX.Forms.File_Explorer
 
             Refresh();
         }
-
 
         private void Dgv_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {

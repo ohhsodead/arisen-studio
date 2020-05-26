@@ -8,11 +8,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ModioX.Forms.Custom_Mods
+namespace ModioX.Forms
 {
-    public partial class ViewCustomMods : DarkForm
+    public partial class EditCustomMods : DarkForm
     {
-        public ViewCustomMods()
+        public EditCustomMods()
         {
             InitializeComponent();
         }
@@ -69,16 +69,15 @@ namespace ModioX.Forms.Custom_Mods
             })
             {
                 editCustomMod.ShowDialog(this);
+                LoadCustomMods();
             }
-
-            LoadCustomMods();
         }
 
         private void ToolStripItemDelete_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.Show(this, "Are you sure about deleting this custom mod item and all of the details? This can't be undone.", "Delete Mod Item", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Exclamation) == System.Windows.Forms.DialogResult.Yes)
+            if (DarkMessageBox.Show(this, "Are you sure about deleting this custom mod item and all of the details? This can't be undone.", "Delete Mod Item", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                MainForm.SettingsData.RemoveMod(DgvCustomMods.CurrentRow.Index);
+                MainForm.SettingsData.RemoveCustomMod(DgvCustomMods.CurrentRow.Index);
                 LoadCustomMods();
             }
         }
@@ -88,6 +87,7 @@ namespace ModioX.Forms.Custom_Mods
             using (EditCustomMod editCustomMod = new EditCustomMod() { CustomMod = new CustomMod() })
             {
                 editCustomMod.ShowDialog();
+                LoadCustomMods();
             }
         }
 
@@ -115,7 +115,7 @@ namespace ModioX.Forms.Custom_Mods
             {
                 if (customMod.RequiresRegion())
                 {
-                    gameRegion = category.GetGameRegion(MainForm.ConsoleProfile.Address);
+                    gameRegion = category.GetGameRegion(MainForm.ConsoleProfile.Address, customMod.CategoryId);
                     gameTitle = $"{category.Title} ({gameRegion})";
 
                     userId = null;
@@ -127,7 +127,7 @@ namespace ModioX.Forms.Custom_Mods
                 }
                 else if (customMod.RequiresUserId())
                 {
-                    userId = category.GetUserId(MainForm.ConsoleProfile.Address);
+                    userId = FtpExtensions.GetUserId(MainForm.ConsoleProfile.Address);
 
                     gameTitle = $"{category.Title} ({userId})";
                     gameRegion = null;
@@ -218,7 +218,7 @@ namespace ModioX.Forms.Custom_Mods
 
                 if (customMod.RequiresRegion())
                 {
-                    gameRegion = category.GetGameRegion(MainForm.ConsoleProfile.Address);
+                    gameRegion = category.GetGameRegion(MainForm.ConsoleProfile.Address, customMod.CategoryId);
                     gameTitle = $"{category.Title} ({gameRegion})";
 
                     userId = null;
@@ -230,7 +230,7 @@ namespace ModioX.Forms.Custom_Mods
                 }
                 else if (customMod.RequiresUserId())
                 {
-                    userId = category.GetUserId(MainForm.ConsoleProfile.Address);
+                    userId = FtpExtensions.GetUserId(MainForm.ConsoleProfile.Address);
 
                     gameTitle = $"{category.Title} ({userId})";
                     gameRegion = null;

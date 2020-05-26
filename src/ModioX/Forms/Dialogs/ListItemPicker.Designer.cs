@@ -1,11 +1,11 @@
 ﻿namespace ModioX.Windows
 {
-    partial class ListViewDialog
+    partial class ListItemPicker
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+    private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListViewDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListItemPicker));
             this.ListViewItems = new DarkUI.Controls.DarkListView();
             this.SectionItems = new DarkUI.Controls.DarkSectionPanel();
             this.SectionItems.SuspendLayout();
@@ -59,9 +59,9 @@
             this.SectionItems.Size = new System.Drawing.Size(161, 195);
             this.SectionItems.TabIndex = 0;
             // 
-            // ListViewDialog
+            // ListItemPicker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(189, 223);
             this.Controls.Add(this.SectionItems);
@@ -70,7 +70,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ListViewDialog";
+            this.Name = "ListItemPicker";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

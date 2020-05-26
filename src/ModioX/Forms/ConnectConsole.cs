@@ -5,11 +5,11 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ModioX.Forms.Connection
+namespace ModioX.Forms
 {
-    public partial class ConsoleConnection : DarkForm
+    public partial class ConnectConsole : DarkForm
     {
-        public ConsoleConnection()
+        public ConnectConsole()
         {
             InitializeComponent();
         }

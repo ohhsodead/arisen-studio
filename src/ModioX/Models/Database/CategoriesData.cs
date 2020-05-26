@@ -1,6 +1,7 @@
 ﻿using DarkUI.Forms;
 using ModioX.Extensions;
 using ModioX.Forms;
+using ModioX.Models.Resources;
 using ModioX.Windows;
 using System;
 using System.Collections.Generic;
@@ -11,35 +12,47 @@ namespace ModioX.Models.Database
 {
     public partial class CategoriesData
     {
+        /// <summary>
+        ///     
+        /// </summary>
         public List<Category> Categories { get; set; }
 
+        /// <summary>
+        ///     
+        /// </summary>
         public partial class Category
         {
             public string Id { get; set; }
 
+            /// <summary>
+            ///     
+            /// </summary>
             public string Title { get; set; }
 
+            /// <summary>
+            ///     
+            /// </summary>
             public string Type { get; set; }
 
+            /// <summary>
+            ///     
+            /// </summary>
             public string[] Regions { get; set; }
 
-            public CategoryType GetCategoryType()
+            /// <summary>
+            /// 
+            /// </summary>
+            public CategoryType CategoryType
             {
-                if (Type.Equals("game"))
+                get
                 {
-                    return CategoryType.Game;
-                }
-                else if (Type.Equals("resource"))
-                {
-                    return CategoryType.Resource;
-                }
-                else if (Type.Equals("favorite"))
-                {
-                    return CategoryType.Favorite;
-                }
-                else
-                {
-                    return CategoryType.Game;
+                    switch (Type)
+                    {
+                        case "game": return CategoryType.Game;
+                        case "resource": return CategoryType.Resource;
+                        case "favorite": return CategoryType.Favorite;
+                        default: return CategoryType.Game;
+                    }
                 }
             }
 
@@ -48,9 +61,20 @@ namespace ModioX.Models.Database
             ///     the user to select one
             /// </summary>
             /// <param name="hostAddress">Console ip address</param>
+            /// <param name="gameId">Game Id</param>
             /// <returns></returns>
-            public string GetGameRegion(string hostAddress)
+            public string GetGameRegion(string hostAddress, string gameId)
             {
+                if (MainForm.SettingsData.RememberGameRegions)
+                {
+                    string gameRegion = MainForm.SettingsData.GetGameRegion(gameId);
+
+                    if (!string.IsNullOrEmpty(gameRegion))
+                    {
+                        return gameRegion;
+                    }
+                }
+
                 if (MainForm.SettingsData.AutoDetectGameRegion)
                 {
                     List<string> detectedRegions = new List<string>();
@@ -68,66 +92,57 @@ namespace ModioX.Models.Database
 
                     foreach (string region in detectedRegions)
                     {
-                        if (DarkMessageBox.Show(MainForm.mainForm, string.Format("We have detected your region for '{0}' is {1} - Is this correct?", Title, region), "Detected Game Region", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (DarkMessageBox.Show(MainForm.mainForm, $"Game Region: {region} has been found for: {Title}\nIs this the correct game region?", "Found Game Region", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             return region;
                         }
                     }
 
-                    DarkMessageBox.Show(MainForm.mainForm, "Could not find any regions on your console for this game title. Make sure you have installed the game update on your console.", "No Region Detected", MessageBoxIcon.Error);
+                    _ = DarkMessageBox.Show(MainForm.mainForm, "Could not find any regions on your console for this game title. Make sure you have updated your game correctly, updates will be found under 'Game Data Utility' if you have this installed already.", "No Game Region Found", MessageBoxIcon.Error);
                     return null;
                 }
                 else
                 {
-                    using (ListViewDialog listViewDialog = new ListViewDialog() { Text = "Game Regions", Items = Regions.ToList() })
-                    {
-                        listViewDialog.ShowDialog();
-                        return listViewDialog.SelectedItem;
-                    }
-                }
-            }
-
-            /// <summary>
-            ///     Returns the users game region, either automatically set region by searching existing console directories or prompt
-            ///     the user to select one
-            /// </summary>
-            /// <param name="hostAddress">Console ip address</param>
-            /// <returns></returns>
-            public string GetUserId(string hostAddress)
-            {
-                List<string> userIds = FtpExtensions.GetFolderNames(hostAddress, "/dev_hdd0/home/");
-
-                if (userIds.Count < 1)
-                {
-                    DarkMessageBox.Show(MainForm.mainForm, "Could not find any userId's on your console. Make sure you have created at least one user profile.", "No UserId's Detected", MessageBoxIcon.Error);
-                    return null;
-                }
-                else
-                {
-                    using (ListViewDialog listViewDialog = new ListViewDialog() { Text = "Profile User IDs", Items = userIds })
-                    {
-                        listViewDialog.ShowDialog();
-                        return listViewDialog.SelectedItem;
-                    }
+                    return Utilities.GetItemFromList("Game Regions", Regions.ToList());
                 }
             }
         }
 
         /// <summary>
+        ///     
+        /// </summary>
+        /// <param name="gameId"></param>
+        /// <returns></returns>
+        public List<string> GetGameRegions(string gameId)
+        {
+            foreach (Category category in Categories)
+            {
+                if (category.CategoryType == CategoryType.Game)
+                {
+                    if (category.Id.Equals(gameId))
+                    {
+                        return category.Regions.ToList();
+                    }
+                }
+            }
+
+            throw new Exception("Unable to find game matching the specified game id");
+        }
+
+        /// <summary>
         ///     Get the game data matching the specified title
         /// </summary>
-        /// <param name="id">Title of the game</param>
+        /// <param name="categoryId">Title of the game</param>
         /// <returns>Game information</returns>
-        public Category GetCategoryById(string id)
+        public Category GetCategoryById(string categoryId)
         {
             foreach (Category game in from Category game in Categories
-                                      where game.Id.ToLower().Equals(id.ToLower())
+                                      where game.Id.ToLower().Equals(categoryId.ToLower())
                                       select game)
             {
                 return game;
             }
-
-            throw new Exception("Unable to find game data for the specified game id");
+            throw new Exception("Unable to find game data matching the specified game id");
         }
 
         /// <summary>
@@ -144,7 +159,7 @@ namespace ModioX.Models.Database
                 return game;
             }
 
-            throw new Exception("Unable to find game data for the specified game id");
+            throw new Exception("Unable to find game data for the specified game title");
         }
 
         /// <summary>
@@ -156,6 +171,9 @@ namespace ModioX.Models.Database
                                   select category).Count();
     }
 
+    /// <summary>
+    ///     
+    /// </summary>
     public enum CategoryType
     {
         Game,

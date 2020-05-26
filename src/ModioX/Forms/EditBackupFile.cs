@@ -4,15 +4,15 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ModioX.Forms.Game_File_Backups
+namespace ModioX.Forms
 {
-    public partial class EditBackupForm : DarkForm
+    public partial class EditBackupFile : DarkForm
     {
         public BackupFile BackupFile { get; set; } = new BackupFile();
 
         public int? BackupFileIndex { get; set; }
 
-        public EditBackupForm()
+        public EditBackupFile()
         {
             InitializeComponent();
         }

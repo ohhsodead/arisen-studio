@@ -1,7 +1,10 @@
-﻿using ModioX.Models.Database;
+﻿using ModioX.Forms;
+using ModioX.Models.Database;
+using ModioX.Windows;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
@@ -96,8 +99,23 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        /// Depth-first recursive delete, with handling for descendant 
-        /// directories open in Windows Explorer.
+        ///         
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="items"></param>
+        /// <returns></returns>
+        public static string GetItemFromList(string title, List<string> items)
+        {
+            using (ListItemPicker listViewDialog = new ListItemPicker() { Text = title, Items = items })
+            {
+                listViewDialog.ShowDialog();
+                return listViewDialog.SelectedItem;
+            }
+        }
+
+        /// <summary>
+        ///     Depth-first recursive delete, with handling for descendant 
+        ///     directories open in Windows Explorer.
         /// </summary>
         internal static void DeleteDirectory(string path)
         {
@@ -126,16 +144,17 @@ namespace ModioX.Extensions
         /// <param name="modItem">Mod info to fill with</param>
         internal static void OpenReportTemplate(ModsData.ModItem modItem)
         {
-            Process.Start($"{ProjectRepoUrl}issues/new?" +
-                          $"title=[Report] {modItem.Name} ({modItem.Type}) ({modItem.GameId.ToUpper()})" +
-                          $"&labels=report-mod&" +
-                          $"body=Id: {modItem.Id}%0A" +
-                          $"Author: {modItem.Author}%0A" +
-                          $"Version: {modItem.Version}%0A" +
-                          $"Configuration: {modItem.Configuration}%0A" +
-                          $"Files: {string.Join(" | ", modItem.InstallPaths)}%0A" +
-                          "----------------------- %0A" +
-                          "*Please include some additional information about the issue you are experiencing, such as how to reproduce the problem, what happened before this occurred, etc...");
+            _ = Process.Start($"{ProjectRepoUrl}issues/new?"
+                              + $"title={modItem.Name} ({modItem.Type}) ({modItem.GameId.ToUpper()})"
+                              + $"&labels=mod report&"
+                              + $"body=- Mod Name: {modItem.Name}%0A"
+                              + $"- Mod Id: {modItem.Id}%0A"
+                              + $"- Mod Type: {modItem.Type}%0A"
+                              + $"- Category: {MainForm.Categories.GetCategoryById(modItem.GameId).Title}%0A"
+                              + $"- Author: {modItem.Author}%0A"
+                              + $"- Version: {modItem.Version}%0A"
+                              + "----------------------- %0A"
+                              + "*Please include additional information about the issue, details such as how to reproduce the problem, what happened before this occurred, etc...");
         }
 
         /// <summary>
@@ -143,16 +162,39 @@ namespace ModioX.Extensions
         /// </summary>
         internal static void OpenRequestTemplate()
         {
-            Process.Start($"{ProjectRepoUrl}issues/new?" +
-                          $"title=[Request] Mod Name (SPRX/EBOOT/etc.)" +
-                          $"&labels=request-mod&" +
-                          $"body=Enter some information about the mods you'd like to be added, as well as any links you can find that showcase the mods.%0A" +
-                          $"Author: Creator / Developer%0A" +
-                          $"Version: Version%0A" +
-                          $"Configuration: Singleplayer / Multiplayer / Zombies%0A" +
-                          $"Files: Download Link%0A" +
-                          "----------------------- %0A" +
-                          "*Please include any other additional information you can find on the mods.");
+            _ = Process.Start($"{ProjectRepoUrl}issues/new?"
+                              + $"title=Mod Name (SPRX/EBOOT/etc.)"
+                              + $"&labels=mod request&"
+                              + $"body=Please provide as much information you can find about the mods, also any links you can find showcasing the mods will help to find more details.%0A"
+                              + $"- Author: Creator/Developer%0A"
+                              + $"- Version: Version%0A"
+                              + $"- Game Type: Singleplayer/Multiplayer/Zombies%0A"
+                              + $"- Files: Download Link%0A"
+                              + "----------------------- %0A"
+                              + "*Here you can include any other additional information we may need.");
+        }
+
+        /// <summary>
+        ///     Open a new issue template for requesting mods
+        /// </summary>
+        internal static void OpenRequestTemplate(string name, string type, string categoryTitle, string author, string version, string description, string links)
+        {
+            string requestTemplate = $"{ProjectRepoUrl}issues/new?"
+                                     + $"title=[Request Mod] {name} ({type})&"
+                                     + $"labels=mod request&"
+                                     + $"assignee=ohhsodead&"
+                                     + $"body=Please provide as much information you can find about the mods, also any links you can find showcasing the mods will help to find more details.%0A"
+                                     + $"- Name: {name}%0A"
+                                     + $"- Type: {type}%0A"
+                                     + $"- Category: {categoryTitle}%0A"
+                                     + $"- Author: {author}%0A"
+                                     + $"- Version: {version}%0A"
+                                     + $"- Description: {description}%0A"
+                                     + $"- Links: {links}%0A"
+                                     + "----------------------- %0A"
+                                     + "*You could include any other additional information we may need here.";
+
+            _ = Process.Start(requestTemplate);
         }
 
         public static void AddFilesToZip(string zipPath, string[] files)

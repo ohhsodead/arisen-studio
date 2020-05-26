@@ -589,7 +589,7 @@ namespace ModioX.Extensions
             try
             {
                 byte[] newFileData = request.DownloadData(url);
-                fileString = System.Text.Encoding.UTF8.GetString(newFileData);
+                fileString = Encoding.UTF8.GetString(newFileData);
             }
             catch
             {
@@ -630,7 +630,7 @@ namespace ModioX.Extensions
         public FtpDirectoryInfo(FtpConnection ftp, string path)
         {
             this._ftp = ftp;
-            base.FullPath = path;
+            FullPath = path;
         }
 
         public override void Delete()
@@ -647,12 +647,12 @@ namespace ModioX.Extensions
 
         public FtpDirectoryInfo[] GetDirectories()
         {
-            return this.FtpConnection.GetDirectories(base.FullPath);
+            return this.FtpConnection.GetDirectories(FullPath);
         }
 
         public FtpDirectoryInfo[] GetDirectories(string path)
         {
-            path = Path.Combine(base.FullPath, path);
+            path = Path.Combine(FullPath, path);
             return this.FtpConnection.GetDirectories(path);
         }
 
@@ -765,7 +765,7 @@ namespace ModioX.Extensions
 
         public override string Name
         {
-            get { return Path.GetFileName(base.FullPath); }
+            get { return Path.GetFileName(FullPath); }
         }
     }
 
@@ -786,8 +786,8 @@ namespace ModioX.Extensions
                 throw new ArgumentNullException("fileName");
             }
 
-            base.OriginalPath = filePath;
-            base.FullPath = filePath;
+            OriginalPath = filePath;
+            FullPath = filePath;
             this._filePath = filePath;
             this._ftp = ftp;
             this._name = Path.GetFileName(filePath);

@@ -71,6 +71,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -89,43 +90,55 @@
     <Compile Include="Extensions\HttpExtensions.cs" />
     <Compile Include="Extensions\KnownFolders.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Forms\File Explorer\FileExplorer.cs">
+    <Compile Include="Forms\EditGameRegions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\File Explorer\FileExplorer.Designer.cs">
+    <Compile Include="Forms\EditGameRegions.Designer.cs">
+      <DependentUpon>EditGameRegions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RequestMods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RequestMods.Designer.cs">
+      <DependentUpon>RequestMods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FileExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FileExplorer.Designer.cs">
       <DependentUpon>FileExplorer.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions\Worker.cs" />
     <Compile Include="Models\Resources\SettingsData.cs" />
-    <Compile Include="Forms\Connection\ConsoleConnection.cs">
+    <Compile Include="Forms\ConnectConsole.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Connection\ConsoleConnection.Designer.cs">
-      <DependentUpon>ConsoleConnection.cs</DependentUpon>
+    <Compile Include="Forms\ConnectConsole.Designer.cs">
+      <DependentUpon>ConnectConsole.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Custom Mods\EditCustomMod.cs">
+    <Compile Include="Forms\EditCustomMod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Custom Mods\EditCustomMod.Designer.cs">
+    <Compile Include="Forms\EditCustomMod.Designer.cs">
       <DependentUpon>EditCustomMod.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Custom Mods\ViewCustomMods.cs">
+    <Compile Include="Forms\EditCustomMods.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Custom Mods\ViewCustomMods.Designer.cs">
-      <DependentUpon>ViewCustomMods.cs</DependentUpon>
+    <Compile Include="Forms\EditCustomMods.Designer.cs">
+      <DependentUpon>EditCustomMods.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Game File Backups\ViewGameBackups.cs">
+    <Compile Include="Forms\EditBackupFiles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Game File Backups\ViewGameBackups.Designer.cs">
-      <DependentUpon>ViewGameBackups.cs</DependentUpon>
+    <Compile Include="Forms\EditBackupFiles.Designer.cs">
+      <DependentUpon>EditBackupFiles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Game File Backups\EditBackupDetails.cs">
+    <Compile Include="Forms\EditBackupFile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Game File Backups\EditBackupDetails.Designer.cs">
-      <DependentUpon>EditBackupDetails.cs</DependentUpon>
+    <Compile Include="Forms\EditBackupFile.Designer.cs">
+      <DependentUpon>EditBackupFile.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -138,35 +151,41 @@
     <Compile Include="Extensions\Utilities.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\Console Profiles\EditProfiles.cs">
+    <Compile Include="Forms\EditConsoleProfiles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Console Profiles\EditProfiles.Designer.cs">
-      <DependentUpon>EditProfiles.cs</DependentUpon>
+    <Compile Include="Forms\EditConsoleProfiles.Designer.cs">
+      <DependentUpon>EditConsoleProfiles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ListViewDialog\ListViewDialog.cs">
+    <Compile Include="Forms\Dialogs\ListItemPicker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ListViewDialog\ListViewDialog.Designer.cs">
-      <DependentUpon>ListViewDialog.cs</DependentUpon>
+    <Compile Include="Forms\Dialogs\ListItemPicker.Designer.cs">
+      <DependentUpon>ListItemPicker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Update\Updater.cs" />
-    <EmbeddedResource Include="Forms\Connection\ConsoleConnection.resx">
-      <DependentUpon>ConsoleConnection.cs</DependentUpon>
+    <Compile Include="AppUpdate\AppUpdate.cs" />
+    <EmbeddedResource Include="Forms\ConnectConsole.resx">
+      <DependentUpon>ConnectConsole.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Custom Mods\EditCustomMod.resx">
+    <EmbeddedResource Include="Forms\EditGameRegions.resx">
+      <DependentUpon>EditGameRegions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RequestMods.resx">
+      <DependentUpon>RequestMods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditCustomMod.resx">
       <DependentUpon>EditCustomMod.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Custom Mods\ViewCustomMods.resx">
-      <DependentUpon>ViewCustomMods.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EditCustomMods.resx">
+      <DependentUpon>EditCustomMods.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Game File Backups\ViewGameBackups.resx">
-      <DependentUpon>ViewGameBackups.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EditBackupFiles.resx">
+      <DependentUpon>EditBackupFiles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Game File Backups\EditBackupDetails.resx">
-      <DependentUpon>EditBackupDetails.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EditBackupFile.resx">
+      <DependentUpon>EditBackupFile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\File Explorer\FileExplorer.resx">
+    <EmbeddedResource Include="Forms\FileExplorer.resx">
       <DependentUpon>FileExplorer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
@@ -182,11 +201,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Forms\Console Profiles\EditProfiles.resx">
-      <DependentUpon>EditProfiles.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EditConsoleProfiles.resx">
+      <DependentUpon>EditConsoleProfiles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ListViewDialog\ListViewDialog.resx">
-      <DependentUpon>ListViewDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Dialogs\ListItemPicker.resx">
+      <DependentUpon>ListItemPicker.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

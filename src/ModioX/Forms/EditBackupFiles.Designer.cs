@@ -1,6 +1,6 @@
-﻿namespace ModioX.Forms.Game_File_Backups
+﻿namespace ModioX.Forms
 {
-    partial class ViewGameBackups
+    partial class EditBackupFiles
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewGameBackups));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBackupFiles));
             this.DgvBackups = new DarkUI.Controls.DarkDataGridView();
             this.SectionBackupFile = new DarkUI.Controls.DarkSectionPanel();
             this.ToolStripArchiveInformation = new DarkUI.Controls.DarkToolStrip();

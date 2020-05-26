@@ -1,4 +1,4 @@
-﻿namespace ModioX.Forms.File_Explorer
+﻿namespace ModioX.Forms
 {
     partial class FileExplorer
     {
@@ -37,14 +37,16 @@
             this.MenuStripHeader = new DarkUI.Controls.DarkMenuStrip();
             this.MenuItemSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettingsSaveLocalDirectoryPath = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripHelpReportIssue = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripHelpSeperator0 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuStripHelpAboutApp = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripFooter = new DarkUI.Controls.DarkToolStrip();
             this.ToolStripLabelStatus = new System.Windows.Forms.ToolStripLabel();
             this.SectionLocalFileExplorer = new DarkUI.Controls.DarkSectionPanel();
             this.DgvLocalFiles = new DarkUI.Controls.DarkDataGridView();
+            this.ColumnLocalType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLocalIcon = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnLocalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLocalSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLocalExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLocalDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContextMenuLocalFile = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuStripLocalUploadFile = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuStripLocalDeleteFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +58,12 @@
             this.ButtonLocalDirectory = new DarkUI.Controls.DarkButton();
             this.SectionConsoleFileExplorer = new DarkUI.Controls.DarkSectionPanel();
             this.DgvConsoleFiles = new DarkUI.Controls.DarkDataGridView();
+            this.ColumnConsoleFileType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnConsoleFileImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnConsoleFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnConsoleFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnConsoleFileExt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnConsoleLastModified = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ButtonConsoleExplorerNavigate = new DarkUI.Controls.DarkButton();
             this.darkToolStrip7 = new DarkUI.Controls.DarkToolStrip();
             this.ToolStripItemConsoleFileDownload = new System.Windows.Forms.ToolStripButton();
@@ -64,18 +72,6 @@
             this.TextBoxConsoleDirectory = new DarkUI.Controls.DarkTextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.ColumnLocalType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLocalIcon = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnLocalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLocalSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLocalExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLocalDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnConsoleFileType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnConsoleFileImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnConsoleFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnConsoleFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnConsoleFileExt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnConsoleLastModified = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContextMenuConsoleFile.SuspendLayout();
             this.MenuStripHeader.SuspendLayout();
             this.ToolStripFooter.SuspendLayout();
@@ -134,8 +130,7 @@
             this.MenuStripHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripHeader.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MenuStripHeader.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemSettings,
-            this.MenuItemHelp});
+            this.MenuItemSettings});
             this.MenuStripHeader.Location = new System.Drawing.Point(0, 0);
             this.MenuStripHeader.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
             this.MenuStripHeader.Name = "MenuStripHeader";
@@ -163,42 +158,6 @@
             this.MenuItemSettingsSaveLocalDirectoryPath.Size = new System.Drawing.Size(207, 22);
             this.MenuItemSettingsSaveLocalDirectoryPath.Text = "Save Local Directory Path";
             this.MenuItemSettingsSaveLocalDirectoryPath.Click += new System.EventHandler(this.MenuItemSettingsSaveLocalDirectoryPath_Click);
-            // 
-            // MenuItemHelp
-            // 
-            this.MenuItemHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuStripHelpReportIssue,
-            this.MenuStripHelpSeperator0,
-            this.MenuStripHelpAboutApp});
-            this.MenuItemHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemHelp.Name = "MenuItemHelp";
-            this.MenuItemHelp.Size = new System.Drawing.Size(47, 19);
-            this.MenuItemHelp.Text = "HELP";
-            // 
-            // MenuStripHelpReportIssue
-            // 
-            this.MenuStripHelpReportIssue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripHelpReportIssue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripHelpReportIssue.Name = "MenuStripHelpReportIssue";
-            this.MenuStripHelpReportIssue.Size = new System.Drawing.Size(226, 22);
-            this.MenuStripHelpReportIssue.Text = "Report Problem/Suggestions";
-            // 
-            // MenuStripHelpSeperator0
-            // 
-            this.MenuStripHelpSeperator0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripHelpSeperator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripHelpSeperator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuStripHelpSeperator0.Name = "MenuStripHelpSeperator0";
-            this.MenuStripHelpSeperator0.Size = new System.Drawing.Size(223, 6);
-            // 
-            // MenuStripHelpAboutApp
-            // 
-            this.MenuStripHelpAboutApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripHelpAboutApp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripHelpAboutApp.Name = "MenuStripHelpAboutApp";
-            this.MenuStripHelpAboutApp.Size = new System.Drawing.Size(226, 22);
-            this.MenuStripHelpAboutApp.Text = "About ModioX";
             // 
             // ToolStripFooter
             // 
@@ -274,6 +233,55 @@
             this.DgvLocalFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLocalFiles_CellClick);
             this.DgvLocalFiles.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
             this.DgvLocalFiles.SelectionChanged += new System.EventHandler(this.DgvLocalFiles_SelectionChanged);
+            // 
+            // ColumnLocalType
+            // 
+            this.ColumnLocalType.HeaderText = "Type";
+            this.ColumnLocalType.MinimumWidth = 6;
+            this.ColumnLocalType.Name = "ColumnLocalType";
+            this.ColumnLocalType.ReadOnly = true;
+            this.ColumnLocalType.Visible = false;
+            this.ColumnLocalType.Width = 125;
+            // 
+            // ColumnLocalIcon
+            // 
+            this.ColumnLocalIcon.HeaderText = "Icon";
+            this.ColumnLocalIcon.MinimumWidth = 6;
+            this.ColumnLocalIcon.Name = "ColumnLocalIcon";
+            this.ColumnLocalIcon.ReadOnly = true;
+            this.ColumnLocalIcon.Width = 28;
+            // 
+            // ColumnLocalName
+            // 
+            this.ColumnLocalName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnLocalName.HeaderText = "Name";
+            this.ColumnLocalName.MinimumWidth = 6;
+            this.ColumnLocalName.Name = "ColumnLocalName";
+            this.ColumnLocalName.ReadOnly = true;
+            // 
+            // ColumnLocalSize
+            // 
+            this.ColumnLocalSize.HeaderText = "Size";
+            this.ColumnLocalSize.MinimumWidth = 6;
+            this.ColumnLocalSize.Name = "ColumnLocalSize";
+            this.ColumnLocalSize.ReadOnly = true;
+            this.ColumnLocalSize.Width = 115;
+            // 
+            // ColumnLocalExtension
+            // 
+            this.ColumnLocalExtension.HeaderText = "Ext";
+            this.ColumnLocalExtension.MinimumWidth = 6;
+            this.ColumnLocalExtension.Name = "ColumnLocalExtension";
+            this.ColumnLocalExtension.ReadOnly = true;
+            this.ColumnLocalExtension.Width = 90;
+            // 
+            // ColumnLocalDateTime
+            // 
+            this.ColumnLocalDateTime.HeaderText = "Last Modified";
+            this.ColumnLocalDateTime.MinimumWidth = 6;
+            this.ColumnLocalDateTime.Name = "ColumnLocalDateTime";
+            this.ColumnLocalDateTime.ReadOnly = true;
+            this.ColumnLocalDateTime.Width = 120;
             // 
             // ContextMenuLocalFile
             // 
@@ -443,6 +451,55 @@
             this.DgvConsoleFiles.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
             this.DgvConsoleFiles.SelectionChanged += new System.EventHandler(this.DgvConsoleFiles_SelectionChanged);
             // 
+            // ColumnConsoleFileType
+            // 
+            this.ColumnConsoleFileType.HeaderText = "Type";
+            this.ColumnConsoleFileType.MinimumWidth = 6;
+            this.ColumnConsoleFileType.Name = "ColumnConsoleFileType";
+            this.ColumnConsoleFileType.ReadOnly = true;
+            this.ColumnConsoleFileType.Visible = false;
+            this.ColumnConsoleFileType.Width = 125;
+            // 
+            // ColumnConsoleFileImage
+            // 
+            this.ColumnConsoleFileImage.HeaderText = "Icon";
+            this.ColumnConsoleFileImage.MinimumWidth = 6;
+            this.ColumnConsoleFileImage.Name = "ColumnConsoleFileImage";
+            this.ColumnConsoleFileImage.ReadOnly = true;
+            this.ColumnConsoleFileImage.Width = 28;
+            // 
+            // ColumnConsoleFileName
+            // 
+            this.ColumnConsoleFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnConsoleFileName.HeaderText = "Name";
+            this.ColumnConsoleFileName.MinimumWidth = 6;
+            this.ColumnConsoleFileName.Name = "ColumnConsoleFileName";
+            this.ColumnConsoleFileName.ReadOnly = true;
+            // 
+            // ColumnConsoleFileSize
+            // 
+            this.ColumnConsoleFileSize.HeaderText = "Size";
+            this.ColumnConsoleFileSize.MinimumWidth = 6;
+            this.ColumnConsoleFileSize.Name = "ColumnConsoleFileSize";
+            this.ColumnConsoleFileSize.ReadOnly = true;
+            this.ColumnConsoleFileSize.Width = 115;
+            // 
+            // ColumnConsoleFileExt
+            // 
+            this.ColumnConsoleFileExt.HeaderText = "Ext";
+            this.ColumnConsoleFileExt.MinimumWidth = 6;
+            this.ColumnConsoleFileExt.Name = "ColumnConsoleFileExt";
+            this.ColumnConsoleFileExt.ReadOnly = true;
+            this.ColumnConsoleFileExt.Width = 90;
+            // 
+            // ColumnConsoleLastModified
+            // 
+            this.ColumnConsoleLastModified.HeaderText = "Last Modified";
+            this.ColumnConsoleLastModified.MinimumWidth = 6;
+            this.ColumnConsoleLastModified.Name = "ColumnConsoleLastModified";
+            this.ColumnConsoleLastModified.ReadOnly = true;
+            this.ColumnConsoleLastModified.Width = 120;
+            // 
             // ButtonConsoleExplorerNavigate
             // 
             this.ButtonConsoleExplorerNavigate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -556,104 +613,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // ColumnLocalType
-            // 
-            this.ColumnLocalType.HeaderText = "Type";
-            this.ColumnLocalType.MinimumWidth = 6;
-            this.ColumnLocalType.Name = "ColumnLocalType";
-            this.ColumnLocalType.ReadOnly = true;
-            this.ColumnLocalType.Visible = false;
-            this.ColumnLocalType.Width = 125;
-            // 
-            // ColumnLocalIcon
-            // 
-            this.ColumnLocalIcon.HeaderText = "Icon";
-            this.ColumnLocalIcon.MinimumWidth = 6;
-            this.ColumnLocalIcon.Name = "ColumnLocalIcon";
-            this.ColumnLocalIcon.ReadOnly = true;
-            this.ColumnLocalIcon.Width = 28;
-            // 
-            // ColumnLocalName
-            // 
-            this.ColumnLocalName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnLocalName.HeaderText = "Name";
-            this.ColumnLocalName.MinimumWidth = 6;
-            this.ColumnLocalName.Name = "ColumnLocalName";
-            this.ColumnLocalName.ReadOnly = true;
-            // 
-            // ColumnLocalSize
-            // 
-            this.ColumnLocalSize.HeaderText = "Size";
-            this.ColumnLocalSize.MinimumWidth = 6;
-            this.ColumnLocalSize.Name = "ColumnLocalSize";
-            this.ColumnLocalSize.ReadOnly = true;
-            this.ColumnLocalSize.Width = 115;
-            // 
-            // ColumnLocalExtension
-            // 
-            this.ColumnLocalExtension.HeaderText = "Ext";
-            this.ColumnLocalExtension.MinimumWidth = 6;
-            this.ColumnLocalExtension.Name = "ColumnLocalExtension";
-            this.ColumnLocalExtension.ReadOnly = true;
-            this.ColumnLocalExtension.Width = 90;
-            // 
-            // ColumnLocalDateTime
-            // 
-            this.ColumnLocalDateTime.HeaderText = "Last Modified";
-            this.ColumnLocalDateTime.MinimumWidth = 6;
-            this.ColumnLocalDateTime.Name = "ColumnLocalDateTime";
-            this.ColumnLocalDateTime.ReadOnly = true;
-            this.ColumnLocalDateTime.Width = 120;
-            // 
-            // ColumnConsoleFileType
-            // 
-            this.ColumnConsoleFileType.HeaderText = "Type";
-            this.ColumnConsoleFileType.MinimumWidth = 6;
-            this.ColumnConsoleFileType.Name = "ColumnConsoleFileType";
-            this.ColumnConsoleFileType.ReadOnly = true;
-            this.ColumnConsoleFileType.Visible = false;
-            this.ColumnConsoleFileType.Width = 125;
-            // 
-            // ColumnConsoleFileImage
-            // 
-            this.ColumnConsoleFileImage.HeaderText = "Icon";
-            this.ColumnConsoleFileImage.MinimumWidth = 6;
-            this.ColumnConsoleFileImage.Name = "ColumnConsoleFileImage";
-            this.ColumnConsoleFileImage.ReadOnly = true;
-            this.ColumnConsoleFileImage.Width = 28;
-            // 
-            // ColumnConsoleFileName
-            // 
-            this.ColumnConsoleFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnConsoleFileName.HeaderText = "Name";
-            this.ColumnConsoleFileName.MinimumWidth = 6;
-            this.ColumnConsoleFileName.Name = "ColumnConsoleFileName";
-            this.ColumnConsoleFileName.ReadOnly = true;
-            // 
-            // ColumnConsoleFileSize
-            // 
-            this.ColumnConsoleFileSize.HeaderText = "Size";
-            this.ColumnConsoleFileSize.MinimumWidth = 6;
-            this.ColumnConsoleFileSize.Name = "ColumnConsoleFileSize";
-            this.ColumnConsoleFileSize.ReadOnly = true;
-            this.ColumnConsoleFileSize.Width = 115;
-            // 
-            // ColumnConsoleFileExt
-            // 
-            this.ColumnConsoleFileExt.HeaderText = "Ext";
-            this.ColumnConsoleFileExt.MinimumWidth = 6;
-            this.ColumnConsoleFileExt.Name = "ColumnConsoleFileExt";
-            this.ColumnConsoleFileExt.ReadOnly = true;
-            this.ColumnConsoleFileExt.Width = 90;
-            // 
-            // ColumnConsoleLastModified
-            // 
-            this.ColumnConsoleLastModified.HeaderText = "Last Modified";
-            this.ColumnConsoleLastModified.MinimumWidth = 6;
-            this.ColumnConsoleLastModified.Name = "ColumnConsoleLastModified";
-            this.ColumnConsoleLastModified.ReadOnly = true;
-            this.ColumnConsoleLastModified.Width = 120;
-            // 
             // FileExplorer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -699,7 +658,6 @@
 
         #endregion
         private DarkUI.Controls.DarkMenuStrip MenuStripHeader;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemHelp;
         private DarkUI.Controls.DarkToolStrip ToolStripFooter;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelStatus;
         private DarkUI.Controls.DarkSectionPanel SectionLocalFileExplorer;
@@ -713,9 +671,6 @@
         private DarkUI.Controls.DarkContextMenu ContextMenuLocalFile;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuStripLocalUploadFile;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuStripLocalDeleteFile;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripHelpReportIssue;
-        private System.Windows.Forms.ToolStripSeparator MenuStripHelpSeperator0;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripHelpAboutApp;
         private System.Windows.Forms.ToolStripButton ToolStripItemLocalUploadFile;
         private System.Windows.Forms.ToolStripButton ToolStripLocalDeleteFile;
         private System.Windows.Forms.ToolStripButton ToolStripItemLocalOpenExplorer;
