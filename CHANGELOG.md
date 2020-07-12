@@ -1,8 +1,6 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
 ## Beta 1.4.2
 - Added support for installing game saves
 - Added support for installing files to both console USB ports
