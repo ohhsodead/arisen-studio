@@ -1,7 +1,6 @@
 ﻿using DarkUI.Forms;
 using ModioX.Extensions;
 using ModioX.Models.Resources;
-using ModioX.Models.Database;
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -31,11 +30,11 @@ namespace ModioX.Forms
                 if (File.Exists(backupFile.LocalPath))
                 {
                     FileInfo fileInfo = new FileInfo(backupFile.LocalPath);
-                    DgvBackups.Rows.Add(backupFile.Name, MainForm.Categories.GetCategoryById(gameId).Title, backupFile.FileName, fileInfo.Length.ToString("#,##0") + " bytes");
+                    _ = DgvBackups.Rows.Add(backupFile.Name, MainForm.Categories.GetCategoryById(gameId).Title, backupFile.FileName, fileInfo.Length.ToString("#,##0") + " bytes", backupFile.CreatedDate.ToString());
                 }
                 else
                 {
-                    DgvBackups.Rows.Add(backupFile.Name, MainForm.Categories.GetCategoryById(gameId).Title, backupFile.FileName, "No File");
+                    _ = DgvBackups.Rows.Add(backupFile.Name, MainForm.Categories.GetCategoryById(gameId).Title, backupFile.FileName, "No File Exists", backupFile.CreatedDate.ToString());
                 }
             }
         }
@@ -47,7 +46,7 @@ namespace ModioX.Forms
                 BackupFile backupFile = MainForm.SettingsData.BackupFiles[DgvBackups.CurrentRow.Index];
 
                 LabelName.Text = backupFile.Name;
-                LabelGame.Text = MainForm.Categories.GetCategoryById(backupFile.CategoryId).Title;
+                LabelGameTitle.Text = MainForm.Categories.GetCategoryById(backupFile.CategoryId).Title;
                 LabelFileName.Text = backupFile.FileName;
                 LabelLocalPath.Text = backupFile.LocalPath;
                 LabelConsolePath.Text = backupFile.InstallPath;
@@ -55,7 +54,7 @@ namespace ModioX.Forms
                 if (!File.Exists(backupFile.LocalPath))
                 {
                     LabelName.Text += " (No Local File Found)";
-                    DarkMessageBox.Show(this, string.Format("Local file for {0} can't be found at path {1}.\n\nIf you have moved this file then edit the backup and choose the local file again, otherwise re-install your game update and re-backup the orginal game file.", backupFile.Name, backupFile.LocalPath), "No Local File", MessageBoxIcon.Warning);
+                    _ = DarkMessageBox.Show(this, string.Format("Local file for {0} can't be found at path {1}.\n\nIf you have moved this file then edit the backup and choose the local file again, otherwise re-install your game update and re-backup the orginal game file.", backupFile.Name, backupFile.LocalPath), "No Local File", MessageBoxIcon.Warning);
                 }
             }
 
@@ -69,13 +68,13 @@ namespace ModioX.Forms
         {
             BackupFile backupFile = MainForm.SettingsData.BackupFiles[DgvBackups.CurrentRow.Index];
 
-            using (EditBackupFile editBackupForm = new EditBackupFile()
+            using (EditBackupFileDetails editBackupForm = new EditBackupFileDetails()
             {
                 BackupFile = backupFile,
                 BackupFileIndex = DgvBackups.CurrentRow.Index
             })
             {
-                editBackupForm.ShowDialog(this);
+                _ = editBackupForm.ShowDialog(this);
             }
 
             LoadBackups();
@@ -104,12 +103,12 @@ namespace ModioX.Forms
             try
             {
                 FtpExtensions.DownloadFile(MainForm.ConsoleProfile.Address, backupFile.LocalPath, backupFile.InstallPath);
-                DarkMessageBox.Show(this, string.Format("Successfully backed up {0} for file {1} from {2}", backupFile.Name, backupFile.FileName, backupFile.InstallPath), "Backup File Restored", MessageBoxIcon.Information);
+                _ = DarkMessageBox.Show(this, string.Format("Successfully backed up {0} for file {1} from {2}", backupFile.Name, backupFile.FileName, backupFile.InstallPath), "Backup File Restored", MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 Program.Log.Error("There was an issue attempting to backup game file.", ex);
-                DarkMessageBox.Show(this, string.Format("There was an issue when attempting to restore file to console. Make sure the local file path exists on your computer and that there isn't a typos", Path.GetFileName(backupFile.LocalPath), backupFile.InstallPath), "Backup File Restored", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, string.Format("There was an issue when attempting to restore file to console. Make sure the local file path exists on your computer and that there isn't a typos", Path.GetFileName(backupFile.LocalPath), backupFile.InstallPath), "Backup File Restored", MessageBoxIcon.Error);
             }
         }
 
@@ -119,17 +118,17 @@ namespace ModioX.Forms
             {
                 if (!File.Exists(backupFile.LocalPath))
                 {
-                    DarkMessageBox.Show(this, "This file backup doesn't exist on your computer. If your game doesn't have mods installed, then I would suggest you backup the original files.", "No Backup File", MessageBoxIcon.Information);
+                    _ = DarkMessageBox.Show(this, "This file backup doesn't exist on your computer. If your game doesn't have mods installed, then I would suggest you backup the original files.", "No Backup File", MessageBoxIcon.Information);
                     return;
                 }
 
                 FtpExtensions.UploadFile(MainForm.ConsoleProfile.Address, backupFile.LocalPath, backupFile.InstallPath);
-                DarkMessageBox.Show(this, string.Format("Successfully restored {0} for file {1} to {2}", backupFile.Name, backupFile.FileName, backupFile.InstallPath), "Backup File Restored", MessageBoxIcon.Information);
+                _ = DarkMessageBox.Show(this, string.Format("Successfully restored {0} for file {1} to {2}", backupFile.Name, backupFile.FileName, backupFile.InstallPath), "Backup File Restored", MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 Program.Log.Error("There was an issue attempting to restore game file.", ex);
-                DarkMessageBox.Show(this, string.Format("There was an issue attempting to restore game file. Make sure the local file path exists on your computer and that there isn't a typos", Path.GetFileName(backupFile.LocalPath), backupFile.InstallPath), "Backup File Restored", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, string.Format("There was an issue attempting to restore game file. Make sure the local file path exists on your computer and that there isn't a typos", Path.GetFileName(backupFile.LocalPath), backupFile.InstallPath), "Backup File Restored", MessageBoxIcon.Error);
             }
         }
     }

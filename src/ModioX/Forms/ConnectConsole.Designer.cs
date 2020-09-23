@@ -42,7 +42,7 @@
             this.ButtonConnect.Enabled = false;
             this.ButtonConnect.Location = new System.Drawing.Point(12, 221);
             this.ButtonConnect.Name = "ButtonConnect";
-            this.ButtonConnect.Size = new System.Drawing.Size(224, 24);
+            this.ButtonConnect.Size = new System.Drawing.Size(224, 32);
             this.ButtonConnect.TabIndex = 1;
             this.ButtonConnect.Text = "Connect to Console";
             this.ButtonConnect.Click += new System.EventHandler(this.ButtonConnect_Click);
@@ -52,7 +52,7 @@
             this.ListViewConsoleProfiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListViewConsoleProfiles.Location = new System.Drawing.Point(1, 25);
             this.ListViewConsoleProfiles.Name = "ListViewConsoleProfiles";
-            this.ListViewConsoleProfiles.Size = new System.Drawing.Size(222, 176);
+            this.ListViewConsoleProfiles.Size = new System.Drawing.Size(222, 184);
             this.ListViewConsoleProfiles.TabIndex = 0;
             this.ListViewConsoleProfiles.Text = "darkListView1";
             this.ListViewConsoleProfiles.SelectedIndicesChanged += new System.EventHandler(this.ListViewConsoleProfiles_SelectedIndicesChanged);
@@ -65,26 +65,25 @@
             this.darkSectionPanel2.Controls.Add(this.ListViewConsoleProfiles);
             this.darkSectionPanel2.Location = new System.Drawing.Point(12, 12);
             this.darkSectionPanel2.Name = "darkSectionPanel2";
-            this.darkSectionPanel2.SectionHeader = "Choose Profile...";
-            this.darkSectionPanel2.Size = new System.Drawing.Size(224, 202);
+            this.darkSectionPanel2.SectionHeader = "CONSOLE PROFILES";
+            this.darkSectionPanel2.Size = new System.Drawing.Size(224, 210);
             this.darkSectionPanel2.TabIndex = 0;
             // 
             // ConnectConsole
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(248, 257);
+            this.ClientSize = new System.Drawing.Size(248, 265);
             this.Controls.Add(this.darkSectionPanel2);
             this.Controls.Add(this.ButtonConnect);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Gainsboro;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ConnectConsole";
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

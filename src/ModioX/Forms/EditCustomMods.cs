@@ -1,10 +1,8 @@
-﻿using DarkUI.Controls;
-using DarkUI.Forms;
+﻿using DarkUI.Forms;
 using ModioX.Extensions;
-using ModioX.Models.Resources;
 using ModioX.Models.Database;
+using ModioX.Models.Resources;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -28,9 +26,10 @@ namespace ModioX.Forms
 
             foreach (CustomMod customMod in MainForm.SettingsData.CustomMods)
             {
-                DgvCustomMods.Rows.Add(customMod.Name, 
-                    string.IsNullOrEmpty(customMod.CategoryTitle) ? "n/a" : customMod.CategoryTitle, 
-                    string.Format("{0} {1}", customMod.InstallFiles.Count.ToString(), customMod.InstallFiles.Count > 1 ? "Files" : "File"));
+                _ = DgvCustomMods.Rows.Add(customMod.Name,
+                                           string.IsNullOrEmpty(customMod.CategoryTitle) ? "n/a" : customMod.CategoryTitle,
+                                           string.Format("{0} {1}", customMod.InstallFiles.Count.ToString(), customMod.InstallFiles.Count > 1 ? "Files" : "File"),
+                                           string.Format("{0:g}", customMod.CreatedDate));
             }
         }
 
@@ -38,7 +37,7 @@ namespace ModioX.Forms
         {
             if (DgvCustomMods.SelectedRows.Count > 0)
             {
-                ListViewInstallFiles.Items.Clear();
+                DgvInstallFilePaths.Rows.Clear();
 
                 CustomMod customMod = MainForm.SettingsData.CustomMods[DgvCustomMods.CurrentRow.Index];
 
@@ -46,9 +45,9 @@ namespace ModioX.Forms
                 LabelCategory.Text = customMod.CategoryTitle;
                 LabelDescription.Text = customMod.Description;
 
-                foreach (var installFile in customMod.InstallFiles)
+                foreach (InstallFile installFile in customMod.InstallFiles)
                 {
-                    ListViewInstallFiles.Items.Add(new DarkListItem(string.Format("{0} > {1}", installFile.LocalPath, installFile.ConsolePath)));
+                    _ = DgvInstallFilePaths.Rows.Add(installFile.LocalPath, installFile.ConsolePath);
                 }
             }
 
@@ -62,20 +61,20 @@ namespace ModioX.Forms
         {
             CustomMod customMod = MainForm.SettingsData.CustomMods[DgvCustomMods.CurrentRow.Index];
 
-            using (EditCustomMod editCustomMod = new EditCustomMod()
+            using (EditCustomModDetails editCustomMod = new EditCustomModDetails()
             {
                 CustomMod = customMod,
                 CustomModIndex = DgvCustomMods.CurrentRow.Index
             })
             {
-                editCustomMod.ShowDialog(this);
+                _ = editCustomMod.ShowDialog(this);
                 LoadCustomMods();
             }
         }
 
         private void ToolStripItemDelete_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.Show(this, "Are you sure about deleting this custom mod item and all of the details? This can't be undone.", "Delete Mod Item", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            if (DarkMessageBox.Show(this, "Are you sure that you woud like to delete this mod and all of the details? This can't be undone.", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 MainForm.SettingsData.RemoveCustomMod(DgvCustomMods.CurrentRow.Index);
                 LoadCustomMods();
@@ -84,9 +83,9 @@ namespace ModioX.Forms
 
         private void ToolStripCreate_Click(object sender, EventArgs e)
         {
-            using (EditCustomMod editCustomMod = new EditCustomMod() { CustomMod = new CustomMod() })
+            using (EditCustomModDetails editCustomMod = new EditCustomModDetails() { CustomMod = new CustomMod() })
             {
-                editCustomMod.ShowDialog();
+                _ = editCustomMod.ShowDialog();
                 LoadCustomMods();
             }
         }
@@ -192,16 +191,16 @@ namespace ModioX.Forms
                     }
                     else
                     {
-                        DarkMessageBox.Show(this, "A file you have included for this custom mod doesn't exist on your computer.", "No Mod File", MessageBoxIcon.Information);
+                        _ = DarkMessageBox.Show(this, "A file you have included for this custom mod doesn't exist on your computer.", "No Mod File", MessageBoxIcon.Information);
                     }
                 }
-                
-                DarkMessageBox.Show(this, string.Format("Installed {0} modded files for {1}", customMod.InstallFiles.Count.ToString(), gameTitle), "Installed Mod", MessageBoxIcon.Information);
+
+                _ = DarkMessageBox.Show(this, string.Format("Installed {0} modded files for {1}", customMod.InstallFiles.Count.ToString(), gameTitle), "Installed Mod", MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 Program.Log.Error("An error occurred when installing a custom mod. " + customMod.ToString(), ex);
-                DarkMessageBox.Show(this, "There was an issue installing this custom mod. Make sure there aren't any typos in the local or console file paths.", "Custom Mod Error", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, "There was an issue installing this custom mod. Make sure there aren't any typos in the local or console file paths.", "Custom Mod Error", MessageBoxIcon.Error);
             }
         }
 
@@ -268,12 +267,12 @@ namespace ModioX.Forms
                             }
                             else
                             {
-                                DarkMessageBox.Show(this, "You have created a backup for this game file, but the file doesn't exist on your computer anymore. Open the Tools > Game File Backup Manager to edit your backup and set the local file. This game file will be ignored for now.", "No Existing Backup File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                _ = DarkMessageBox.Show(this, "You have created a backup for this game file, but the file doesn't exist on your computer anymore. Open the Tools > Game File Backup Manager to edit your backup and set the local file. This game file will be ignored for now.", "No Existing Backup File", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            DarkMessageBox.Show(this, "You haven't created a backup for this game file. This game file will be ignored otherwise the game may have issues with missing files.", "No Created Backup", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            _ = DarkMessageBox.Show(this, "You haven't created a backup for this game file. This game file will be ignored otherwise the game may have issues with missing files.", "No Created Backup", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else if (installFile.ConsolePath.Contains("dev_usb000/"))
@@ -290,12 +289,12 @@ namespace ModioX.Forms
                     }
                 }
 
-                DarkMessageBox.Show(this, string.Format("Uninstalled {0} modded files for {1}", customMod.InstallFiles.Count.ToString(), gameTitle), "Uninstall Mod", MessageBoxIcon.Information);
+                _ = DarkMessageBox.Show(this, string.Format("Uninstalled {0} modded files for {1}", customMod.InstallFiles.Count.ToString(), gameTitle), "Uninstall Mod", MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 Program.Log.Error("An error occurred when uninstalling a custom mod. " + customMod.ToString(), ex);
-                DarkMessageBox.Show(this, "There was an issue uninstalling this custom mod. Make sure there aren't any typos in the local or console file paths.", "Custom Mod Error", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, "There was an issue uninstalling this custom mod. Make sure there aren't any typos in the local or console file paths.", "Custom Mod Error", MessageBoxIcon.Error);
             }
         }
 

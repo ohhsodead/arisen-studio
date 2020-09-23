@@ -1,16 +1,19 @@
 ﻿using ModioX.Forms;
 using ModioX.Models.Database;
+using ModioX.Models.Release_Data;
 using ModioX.Windows;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
 using System.Net.Http;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace ModioX.Extensions
 {
@@ -19,20 +22,20 @@ namespace ModioX.Extensions
         /// <summary>
         ///     Application user's data roaming directory
         /// </summary>
-        internal static string AppDataPath { get; } = $@"{System.Windows.Forms.Application.UserAppDataPath}\";
+        internal static string AppDataPath { get; } = $@"{Application.UserAppDataPath}\";
 
         /// <summary>
-        ///     Web URL pointing to the project repo hosted on GitHub
+        ///     Web URL for this projects repository on GitHub.
         /// </summary>
-        internal const string ProjectRepoUrl = "https://github.com/ohhsodead/ModioX/";
+        internal const string GitHubRepo = "https://github.com/ohhsodead/ModioX/";
 
         /// <summary>
-        ///     Web URL pointing to the project's version file
+        ///     Web API for this projects repository on GitHub with the latest release information.
         /// </summary>
-        internal const string ProjectVersionUrl = "https://dl.dropbox.com/s/1dvbz2ejh0239mv/version.txt?raw=true";
+        internal const string GitHubRelease = "https://api.github.com/repos/ohhsodead/ModioX/releases/latest";
 
         /// <summary>
-        ///     Get the current application product version
+        ///     Get the current application product version.
         /// </summary>
         /// <returns></returns>
         internal static string GetCurrentVersion()
@@ -41,7 +44,7 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        ///     Download and return the mods information
+        ///     Download and return the mods information.
         /// </summary>
         /// <returns></returns>
         internal static ModsData GetModsData()
@@ -70,7 +73,7 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        ///     Download and return the information for categories and games
+        ///     Download and return the information for categories and games.
         /// </summary>
         /// <returns></returns>
         internal static CategoriesData GetCategoriesData()
@@ -99,23 +102,22 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        ///         
+        ///         Returns the item selected from the list item picker.
         /// </summary>
-        /// <param name="title"></param>
-        /// <param name="items"></param>
+        /// <param name="title">Window title</param>
+        /// <param name="items">Items to select from</param>
         /// <returns></returns>
         public static string GetItemFromList(string title, List<string> items)
         {
             using (ListItemPicker listViewDialog = new ListItemPicker() { Text = title, Items = items })
             {
-                listViewDialog.ShowDialog();
+                _ = listViewDialog.ShowDialog();
                 return listViewDialog.SelectedItem;
             }
         }
 
         /// <summary>
-        ///     Depth-first recursive delete, with handling for descendant 
-        ///     directories open in Windows Explorer.
+        ///     Depth-first recursive delete, with handling for descendant directories open in Windows Explorer.
         /// </summary>
         internal static void DeleteDirectory(string path)
         {
@@ -144,49 +146,44 @@ namespace ModioX.Extensions
         /// <param name="modItem">Mod info to fill with</param>
         internal static void OpenReportTemplate(ModsData.ModItem modItem)
         {
-            _ = Process.Start($"{ProjectRepoUrl}issues/new?"
-                              + $"title={modItem.Name} ({modItem.Type}) ({modItem.GameId.ToUpper()})"
-                              + $"&labels=mod report&"
-                              + $"body=- Mod Name: {modItem.Name}%0A"
-                              + $"- Mod Id: {modItem.Id}%0A"
-                              + $"- Mod Type: {modItem.Type}%0A"
-                              + $"- Category: {MainForm.Categories.GetCategoryById(modItem.GameId).Title}%0A"
-                              + $"- Author: {modItem.Author}%0A"
-                              + $"- Version: {modItem.Version}%0A"
-                              + "----------------------- %0A"
-                              + "*Please include additional information about the issue, details such as how to reproduce the problem, what happened before this occurred, etc...");
+            string formatModName = modItem.Name.Replace("%", "%25").Replace("(", "%28").Replace(")", "%29").Replace("&", "%26");
+
+            string reportTemplate = $"issues/new?"
+                                    + $"title=%5BMOD REPORT%5D {formatModName} ({modItem.GameId.ToUpper()})"
+                                    + $"&labels=mod report&"
+                                    + $"body=- Mod Name: {formatModName} (ID%23{modItem.Id})%0A"
+                                    + $"- Category: {MainForm.Categories.GetCategoryById(modItem.GameId).Title}%0A"
+                                    + $"- Mod Type: {modItem.Type}%0A"
+                                    + $"- Author: {modItem.Author}%0A"
+                                    + $"- Version: {modItem.Version}%0A"
+                                    + "----------------------- %0A"
+                                    + "*Please include additional information about the issue, details such as how to reproduce the problem, what happened before this occurred, etc...";
+
+            _ = Process.Start(GitHubRepo + reportTemplate);
         }
 
         /// <summary>
         ///     Open a new issue template for requesting mods
         /// </summary>
-        internal static void OpenRequestTemplate()
+        /// <param name="name"></param>
+        /// <param name="type"></param>
+        /// <param name="category"></param>
+        /// <param name="author"></param>
+        /// <param name="version"></param>
+        /// <param name="systemType"></param>
+        /// <param name="description"></param>
+        /// <param name="links"></param>
+        internal static void OpenRequestTemplate(string name, string type, string category, string author, string version, string systemType, string description, string links)
         {
-            _ = Process.Start($"{ProjectRepoUrl}issues/new?"
-                              + $"title=Mod Name (SPRX/EBOOT/etc.)"
-                              + $"&labels=mod request&"
-                              + $"body=Please provide as much information you can find about the mods, also any links you can find showcasing the mods will help to find more details.%0A"
-                              + $"- Author: Creator/Developer%0A"
-                              + $"- Version: Version%0A"
-                              + $"- Game Type: Singleplayer/Multiplayer/Zombies%0A"
-                              + $"- Files: Download Link%0A"
-                              + "----------------------- %0A"
-                              + "*Here you can include any other additional information we may need.");
-        }
-
-        /// <summary>
-        ///     Open a new issue template for requesting mods
-        /// </summary>
-        internal static void OpenRequestTemplate(string name, string type, string categoryTitle, string author, string version, string description, string links)
-        {
-            string requestTemplate = $"{ProjectRepoUrl}issues/new?"
-                                     + $"title=[Request Mod] {name} ({type})&"
+            string requestTemplate = $"issues/new?"
+                                     + $"title={name} ({type})&"
                                      + $"labels=mod request&"
                                      + $"assignee=ohhsodead&"
-                                     + $"body=Please provide as much information you can find about the mods, also any links you can find showcasing the mods will help to find more details.%0A"
+                                     + $"body=Please provide as much information you can find about the mods, also any links showcasing the mods will help to find more details.%0A"
                                      + $"- Name: {name}%0A"
-                                     + $"- Type: {type}%0A"
-                                     + $"- Category: {categoryTitle}%0A"
+                                     + $"- Category: {category}%0A"
+                                     + $"- Mod Type: {type}%0A"
+                                     + $"- System Type: {systemType}%0A"
                                      + $"- Author: {author}%0A"
                                      + $"- Version: {version}%0A"
                                      + $"- Description: {description}%0A"
@@ -194,9 +191,14 @@ namespace ModioX.Extensions
                                      + "----------------------- %0A"
                                      + "*You could include any other additional information we may need here.";
 
-            _ = Process.Start(requestTemplate);
+            _ = Process.Start(GitHubRepo + requestTemplate);
         }
 
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <param name="zipPath"></param>
+        /// <param name="files"></param>
         public static void AddFilesToZip(string zipPath, string[] files)
         {
             if (files == null || files.Length == 0)
@@ -204,12 +206,12 @@ namespace ModioX.Extensions
                 return;
             }
 
-            using (var zipArchive = ZipFile.Open(zipPath, ZipArchiveMode.Update))
+            using (ZipArchive zipArchive = ZipFile.Open(zipPath, ZipArchiveMode.Update))
             {
-                foreach (var file in files)
+                foreach (string file in files)
                 {
                     FileInfo fileInfo = new FileInfo(file);
-                    zipArchive.CreateEntryFromFile(fileInfo.FullName, fileInfo.Name);
+                    _ = zipArchive.CreateEntryFromFile(fileInfo.FullName, fileInfo.Name);
                 }
             }
         }
@@ -232,6 +234,11 @@ namespace ModioX.Extensions
             }
         }
 
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns></returns>
         public static DateTime? ToDateTime(this WINAPI.FILETIME time)
         {
             if ((time.dwHighDateTime == 0) && (time.dwLowDateTime == 0))
@@ -244,6 +251,63 @@ namespace ModioX.Extensions
             long fileTime = (time.dwHighDateTime << 0x20) | dwLowDateTime;
 #pragma warning restore CS0675 // Bitwise-or operator used on a sign-extended operand
             return new DateTime?(DateTime.FromFileTimeUtc(fileTime));
+        }
+
+        /// <summary>
+        ///     Shows the data view window with the specified parameters
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="title"></param>
+        /// <param name="subtitle"></param>
+        /// <param name="body"></param>
+        public static void ShowDataViewWindow(Form owner, string title, string subtitle, string body)
+        {
+            using (DataViewWindow dataViewWindow = new DataViewWindow { Text =  title })
+            {
+                dataViewWindow.LabelTitle.Text = subtitle;
+                dataViewWindow.LabelData.Text = body;
+
+                dataViewWindow.MaximumSize = new Size(dataViewWindow.MaximumSize.Width, owner.Height + 100);
+                dataViewWindow.Size = new Size(dataViewWindow.Width, dataViewWindow.Height + 15);
+                _ = dataViewWindow.ShowDialog(owner);
+            }
+        }
+
+        /// <summary>
+        ///     Shows the changelog form with the new Github release data
+        /// </summary>
+        /// <param name="owner">Parent owner of the data view window</param>
+        public static void ShowWhatsNewWindow(Form owner)
+        {
+            try
+            {
+                GitHubData GitHubData = GetGitHubReleaseData();
+
+                string releaseBody = GitHubData.Body;
+                string releaseBodyWithoutLastLine = releaseBody.Substring(0, releaseBody.Trim().LastIndexOf(Environment.NewLine));
+
+                ShowDataViewWindow(owner, GitHubData.Name + " - What's New", "Change Log", releaseBodyWithoutLastLine.Replace("-", "•"));
+            }
+            catch (Exception ex)
+            {
+                Program.Log.Error("Unable to load github release data.", ex);
+            }
+        }
+
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <returns></returns>
+        public static GitHubData GetGitHubReleaseData()
+        {
+            GitHubData GitHubReleaseData;
+
+            using (StreamReader streamReader = new StreamReader(HttpExtensions.GetStream(GitHubRelease)))
+            {
+                GitHubReleaseData = JsonConvert.DeserializeObject<GitHubData>(streamReader.ReadToEnd());
+            }
+
+            return GitHubReleaseData;
         }
     }
 }

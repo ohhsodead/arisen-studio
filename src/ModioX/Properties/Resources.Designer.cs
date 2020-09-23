@@ -193,6 +193,16 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_heart_fill_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_heart_fill_22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_heart_outline_22 {
             get {
                 object obj = ResourceManager.GetObject("icons8-heart-outline-22", resourceCulture);

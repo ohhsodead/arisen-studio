@@ -40,12 +40,12 @@
             this.LabelSupportedRegions = new DarkUI.Controls.DarkLabel();
             this.TextBoxGameRegions = new DarkUI.Controls.DarkTextBox();
             this.LabelSupportedSystemType = new DarkUI.Controls.DarkLabel();
-            this.TextBoxSystems = new DarkUI.Controls.DarkTextBox();
+            this.TextBoxSystemType = new DarkUI.Controls.DarkTextBox();
             this.TextBoxLinks = new DarkUI.Controls.DarkTextBox();
             this.LabelDownloadOtherLinks = new DarkUI.Controls.DarkLabel();
             this.LabelVersion = new DarkUI.Controls.DarkLabel();
             this.LabelModType = new DarkUI.Controls.DarkLabel();
-            this.TextBoxType = new DarkUI.Controls.DarkTextBox();
+            this.TextBoxModType = new DarkUI.Controls.DarkTextBox();
             this.LabelModName = new DarkUI.Controls.DarkLabel();
             this.TextBoxVersion = new DarkUI.Controls.DarkTextBox();
             this.TextBoxName = new DarkUI.Controls.DarkTextBox();
@@ -114,8 +114,8 @@
             this.TextBoxDescription.Name = "TextBoxDescription";
             this.TextBoxDescription.Size = new System.Drawing.Size(435, 54);
             this.TextBoxDescription.TabIndex = 7;
-            this.TextBoxDescription.Text = "Explain some additional information we may need, such as features, notes and any " +
-    "other important details about the mods...";
+            this.TextBoxDescription.Text = "Explain some details about the mod that we users may need to know, including feat" +
+    "ures, important notes and any other information...";
             // 
             // ComboBoxCategoryTitle
             // 
@@ -131,12 +131,12 @@
             this.SectionModDetails.Controls.Add(this.LabelSupportedRegions);
             this.SectionModDetails.Controls.Add(this.TextBoxGameRegions);
             this.SectionModDetails.Controls.Add(this.LabelSupportedSystemType);
-            this.SectionModDetails.Controls.Add(this.TextBoxSystems);
+            this.SectionModDetails.Controls.Add(this.TextBoxSystemType);
             this.SectionModDetails.Controls.Add(this.TextBoxLinks);
             this.SectionModDetails.Controls.Add(this.LabelDownloadOtherLinks);
             this.SectionModDetails.Controls.Add(this.LabelVersion);
             this.SectionModDetails.Controls.Add(this.LabelModType);
-            this.SectionModDetails.Controls.Add(this.TextBoxType);
+            this.SectionModDetails.Controls.Add(this.TextBoxModType);
             this.SectionModDetails.Controls.Add(this.LabelModName);
             this.SectionModDetails.Controls.Add(this.TextBoxVersion);
             this.SectionModDetails.Controls.Add(this.TextBoxName);
@@ -184,14 +184,14 @@
             this.LabelSupportedSystemType.TabIndex = 26;
             this.LabelSupportedSystemType.Text = "System Type:";
             // 
-            // TextBoxSystems
+            // TextBoxSystemType
             // 
-            this.TextBoxSystems.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBoxSystems.Location = new System.Drawing.Point(8, 190);
-            this.TextBoxSystems.Name = "TextBoxSystems";
-            this.TextBoxSystems.Size = new System.Drawing.Size(212, 23);
-            this.TextBoxSystems.TabIndex = 5;
-            this.TextBoxSystems.Text = "CEX/DEX/HEN/HAN/ANY";
+            this.TextBoxSystemType.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxSystemType.Location = new System.Drawing.Point(8, 190);
+            this.TextBoxSystemType.Name = "TextBoxSystemType";
+            this.TextBoxSystemType.Size = new System.Drawing.Size(212, 23);
+            this.TextBoxSystemType.TabIndex = 5;
+            this.TextBoxSystemType.Text = "CEX/DEX/HEN/HAN/ANY";
             // 
             // TextBoxLinks
             // 
@@ -203,8 +203,8 @@
             this.TextBoxLinks.Name = "TextBoxLinks";
             this.TextBoxLinks.Size = new System.Drawing.Size(435, 54);
             this.TextBoxLinks.TabIndex = 8;
-            this.TextBoxLinks.Text = "Please add some links to sites where the mods can be found, such as downloads, fo" +
-    "rums, posts, etc.";
+            this.TextBoxLinks.Text = "Please add a few links where the mods can be found, such as download links, forum" +
+    "s, youtube videos, etc.";
             // 
             // LabelDownloadOtherLinks
             // 
@@ -213,9 +213,9 @@
             this.LabelDownloadOtherLinks.Location = new System.Drawing.Point(7, 302);
             this.LabelDownloadOtherLinks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
             this.LabelDownloadOtherLinks.Name = "LabelDownloadOtherLinks";
-            this.LabelDownloadOtherLinks.Size = new System.Drawing.Size(129, 15);
+            this.LabelDownloadOtherLinks.Size = new System.Drawing.Size(169, 15);
             this.LabelDownloadOtherLinks.TabIndex = 23;
-            this.LabelDownloadOtherLinks.Text = "Download/Other Links:";
+            this.LabelDownloadOtherLinks.Text = "Download/Forum/Other Links:";
             // 
             // LabelVersion
             // 
@@ -239,14 +239,14 @@
             this.LabelModType.TabIndex = 19;
             this.LabelModType.Text = "Mod Type:";
             // 
-            // TextBoxType
+            // TextBoxModType
             // 
-            this.TextBoxType.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBoxType.Location = new System.Drawing.Point(226, 89);
-            this.TextBoxType.Name = "TextBoxType";
-            this.TextBoxType.Size = new System.Drawing.Size(217, 23);
-            this.TextBoxType.TabIndex = 1;
-            this.TextBoxType.Text = "SPRX/EBOOT/GAMESAVE/etc.";
+            this.TextBoxModType.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxModType.Location = new System.Drawing.Point(226, 89);
+            this.TextBoxModType.Name = "TextBoxModType";
+            this.TextBoxModType.Size = new System.Drawing.Size(217, 23);
+            this.TextBoxModType.TabIndex = 1;
+            this.TextBoxModType.Text = "SPRX/EBOOT/GAMESAVE/etc.";
             // 
             // LabelModName
             // 
@@ -296,13 +296,11 @@
             this.Controls.Add(this.ButtonRequestModsDetails);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Gainsboro;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RequestMods";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Request Mods Form";
@@ -328,13 +326,13 @@
         private DarkUI.Controls.DarkLabel LabelDownloadOtherLinks;
         private DarkUI.Controls.DarkLabel LabelVersion;
         private DarkUI.Controls.DarkLabel LabelModType;
-        private DarkUI.Controls.DarkTextBox TextBoxType;
+        private DarkUI.Controls.DarkTextBox TextBoxModType;
         private DarkUI.Controls.DarkLabel LabelModName;
         private DarkUI.Controls.DarkTextBox TextBoxVersion;
         private DarkUI.Controls.DarkTextBox TextBoxName;
         private DarkUI.Controls.DarkLabel LabelSupportedRegions;
         private DarkUI.Controls.DarkTextBox TextBoxGameRegions;
         private DarkUI.Controls.DarkLabel LabelSupportedSystemType;
-        private DarkUI.Controls.DarkTextBox TextBoxSystems;
+        private DarkUI.Controls.DarkTextBox TextBoxSystemType;
     }
 }

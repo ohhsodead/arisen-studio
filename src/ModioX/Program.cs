@@ -3,7 +3,6 @@ using log4net;
 using ModioX.Forms;
 using System;
 using System.Net;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -15,13 +14,13 @@ namespace ModioX
         public static readonly WebClient WebClient = new WebClient();
 
         /// <summary>
-        /// The main entry point for the application.
+        ///     The main entry point for the application.
         /// </summary>
         [STAThread]
         private static void Main()
         {
             // Initialize log4net.
-            log4net.Config.XmlConfigurator.Configure();
+            _ = log4net.Config.XmlConfigurator.Configure();
             Log.Info("Configured logging settings");
 
             Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);

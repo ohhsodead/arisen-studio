@@ -1,9 +1,6 @@
 ﻿using DarkUI.Controls;
 using DarkUI.Forms;
-using ModioX.Models.Resources;
 using System;
-using System.IO;
-using System.Windows.Forms;
 
 namespace ModioX.Forms
 {
@@ -16,7 +13,7 @@ namespace ModioX.Forms
 
         private void ConnectConsole_Load(object sender, EventArgs e)
         {
-            foreach (var console in MainForm.SettingsData.ConsoleProfiles)
+            foreach (Models.Resources.ConsoleProfile console in MainForm.SettingsData.ConsoleProfiles)
             {
                 ListViewConsoleProfiles.Items.Add(new DarkListItem(console.ToString()));
             }
@@ -28,7 +25,7 @@ namespace ModioX.Forms
 
             if (ListViewConsoleProfiles.SelectedIndices.Count > 0)
             {
-                ButtonConnect.Focus();
+                _ = ButtonConnect.Focus();
             }
         }
 

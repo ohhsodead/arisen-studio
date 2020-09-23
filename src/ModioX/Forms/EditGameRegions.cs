@@ -1,10 +1,7 @@
-﻿using DarkUI.Controls;
-using DarkUI.Forms;
+﻿using DarkUI.Forms;
 using ModioX.Models.Resources;
 using System;
 using System.ComponentModel;
-using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ModioX.Forms
@@ -29,19 +26,19 @@ namespace ModioX.Forms
 
             foreach (GameRegion gameRegion in MainForm.SettingsData.GameRegions)
             {
-                DgvGameRegions.Rows.Add(MainForm.Categories.GetCategoryById(gameRegion.GameId).Title, gameRegion.Region);
+                _ = DgvGameRegions.Rows.Add(MainForm.Categories.GetCategoryById(gameRegion.GameId).Title, gameRegion.Region);
             }
 
-            LabelTotalGameRegions.Text = $"{DgvGameRegions.Rows.Count} Saved Game Regions";
+            LabelTotalGameRegions.Text = $"{DgvGameRegions.Rows.Count} Regions Saved";
 
             LabelNoGameRegionsSaved.Visible = DgvGameRegions.Rows.Count < 1;
             ToolItemDeleteAll.Enabled = DgvGameRegions.Rows.Count > 0;
 
-            foreach (var category in MainForm.Categories.Categories)
+            foreach (Models.Database.CategoriesData.Category category in MainForm.Categories.Categories)
             {
                 if (category.CategoryType == Models.Database.CategoryType.Game)
                 {
-                    ComboBoxGameTitle.Items.Add(category.Title);
+                    _ = ComboBoxGameTitle.Items.Add(category.Title);
                 }
             }
 
@@ -67,12 +64,12 @@ namespace ModioX.Forms
 
         private void ToolItemDeleteAll_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.Show(this, $"Are you sure that you would like to delete of all the specified regions for games?", "Delete All Game Regions", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (DarkMessageBox.Show(this, $"Are you sure that you would like to delete of all your saved game regions? This cannot be undone.", "Delete All Regions", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 MainForm.SettingsData.GameRegions.Clear();
                 _ = DarkMessageBox.Show(this, $"All specified regions for games have now been deleted.", "Deleted All Game Regions", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
-            }            
+            }
         }
 
         private void ComboBoxGameTitle_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,7 +108,7 @@ namespace ModioX.Forms
             UpdateUI();
         }
 
-        private void ButtonSaveGameRegions_Click(object sender, EventArgs e)
+        private void ButtonSaveAll_Click(object sender, EventArgs e)
         {
             bool isSuccess = true;
 
@@ -128,7 +125,7 @@ namespace ModioX.Forms
                 }
                 else
                 {
-                    _ = DarkMessageBox.Show(this, $"Game Region: {gameRegion} is not supported for: {gameTitle}\nPlease change the region to one that is supported by this game.", "Not Supported Game Region", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    _ = DarkMessageBox.Show(this, $"Region: {gameRegion} is not supported for game: {gameTitle}\nPlease change the region to one that is supported.", "Region Not Supported for Game", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     isSuccess = false;
                     break;
                 }
@@ -136,7 +133,7 @@ namespace ModioX.Forms
 
             if (isSuccess)
             {
-                _ = DarkMessageBox.Show(this, $"All game regions have now been saved.", "Saved Game Regions", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = DarkMessageBox.Show(this, $"All game regions have now been saved.", "Game Regions Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
         }

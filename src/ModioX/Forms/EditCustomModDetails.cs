@@ -1,28 +1,27 @@
-﻿using DarkUI.Controls;
-using DarkUI.Forms;
+﻿using DarkUI.Forms;
+using ModioX.Models.Database;
 using ModioX.Models.Resources;
 using System;
-using System.IO;
 using System.Windows.Forms;
 
 namespace ModioX.Forms
 {
-    public partial class EditCustomMod : DarkForm
+    public partial class EditCustomModDetails : DarkForm
     {
         public CustomMod CustomMod { get; set; } = new CustomMod();
 
-        public int? CustomModIndex { get; set; } 
+        public int? CustomModIndex { get; set; }
 
-        public EditCustomMod()
+        public EditCustomModDetails()
         {
             InitializeComponent();
         }
 
         private void EditCustomMod_Load(object sender, EventArgs e)
         {
-            foreach (var category in MainForm.Categories.Categories)
+            foreach (CategoriesData.Category game in MainForm.Categories.GetGames())
             {
-                ComboBoxCategoryTitle.Items.Add(category.Title);
+                _ = ComboBoxCategoryTitle.Items.Add(game.Title);
             }
 
             UpdateUI();
@@ -30,18 +29,18 @@ namespace ModioX.Forms
 
         private void UpdateUI()
         {
-            ListViewInstallFiles.Items.Clear();
+            DgvInstallFilePaths.Rows.Clear();
 
             TextBoxName.Text = CustomMod.Name;
             TextBoxDescription.Text = CustomMod.Description;
             ComboBoxCategoryTitle.Text = CustomMod.CategoryTitle;
 
-            foreach (var installFile in CustomMod.InstallFiles)
+            foreach (InstallFile installFile in CustomMod.InstallFiles)
             {
-                ListViewInstallFiles.Items.Add(new DarkListItem() { Text = installFile.LocalPath + " > " +  installFile.ConsolePath });
+                DgvInstallFilePaths.Rows.Add(installFile.LocalPath, installFile.ConsolePath);
             }
         }
-        
+
         private void TextBoxName_TextChanged(object sender, EventArgs e)
         {
             CustomMod.Name = TextBoxName.Text;
@@ -75,48 +74,48 @@ namespace ModioX.Forms
 
         private void ButtonAddInstall_Click(object sender, EventArgs e)
         {
-            CustomMod.InstallFiles.Add(new InstallFile() { LocalPath = TextBoxLocalPath.Text, ConsolePath = TextBoxConsolePath.Text });
+            CustomMod.InstallFiles.Add(new InstallFile(TextBoxLocalPath.Text, TextBoxConsolePath.Text));
             UpdateUI();
         }
 
         private void ButtonRemoveInstallFile_Click(object sender, EventArgs e)
         {
-            DarkListItem selectedItem = ListViewInstallFiles.Items[ListViewInstallFiles.SelectedIndices[0]];
-            CustomMod.InstallFiles.RemoveAt(ListViewInstallFiles.Items.IndexOf(selectedItem));
+            int selectedItem = DgvInstallFilePaths.Rows[DgvInstallFilePaths.SelectedRows[0].Index].Index;
+            CustomMod.InstallFiles.RemoveAt(selectedItem);
             UpdateUI();
         }
 
-        private void ListViewInstallFiles_SelectedIndicesChanged(object sender, EventArgs e)
+        private void DgvInstallFilePaths_SelectionChanged(object sender, EventArgs e)
         {
-            if (ListViewInstallFiles.SelectedIndices.Count > 0)
+            if (DgvInstallFilePaths.SelectedRows.Count > 0)
             {
-                DarkListItem selectedItem = ListViewInstallFiles.Items[ListViewInstallFiles.SelectedIndices[0]];
-                InstallFile installFile = CustomMod.InstallFiles[ListViewInstallFiles.Items.IndexOf(selectedItem)];
+                int selectedItem = DgvInstallFilePaths.Rows[DgvInstallFilePaths.SelectedRows[0].Index].Index;
+                InstallFile installFile = CustomMod.InstallFiles[selectedItem];
 
                 TextBoxLocalPath.Text = installFile.LocalPath;
                 TextBoxConsolePath.Text = installFile.ConsolePath;
             }
 
-            ButtonRemoveInstallFile.Enabled = ListViewInstallFiles.SelectedIndices.Count > 0;
+            ButtonRemoveInstallFile.Enabled = DgvInstallFilePaths.SelectedRows.Count > 0;
         }
 
         private void ButtonSaveMod_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(CustomMod.Name))
             {
-                DarkMessageBox.Show(this, "You must include a useful name for this mod.", "No Name", MessageBoxIcon.Exclamation);
+                _ = DarkMessageBox.Show(this, "You must include a useful name for this mod.", "No Name", MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (ComboBoxCategoryTitle.SelectedIndex == -1)
             {
-                DarkMessageBox.Show(this, "You must include a category to this mod.", "No Name", MessageBoxIcon.Exclamation);
+                _ = DarkMessageBox.Show(this, "You must include a category to this mod.", "No Name", MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (CustomMod.InstallFiles.Count < 1)
             {
-                DarkMessageBox.Show(this, "You must include at least one file to be installed for this mod.", "No Local Path", MessageBoxIcon.Exclamation);
+                _ = DarkMessageBox.Show(this, "You must include at least one file to be installed for this mod.", "No Local Path", MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -131,6 +130,5 @@ namespace ModioX.Forms
 
             Close();
         }
-
     }
 }

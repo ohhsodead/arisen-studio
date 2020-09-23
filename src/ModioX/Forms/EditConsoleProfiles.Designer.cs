@@ -76,7 +76,7 @@
             this.SectionConsoleProfile.Location = new System.Drawing.Point(13, 12);
             this.SectionConsoleProfile.Margin = new System.Windows.Forms.Padding(4);
             this.SectionConsoleProfile.Name = "SectionConsoleProfile";
-            this.SectionConsoleProfile.SectionHeader = "Add Console Profile";
+            this.SectionConsoleProfile.SectionHeader = "ADD CONSOLE PROFILE";
             this.SectionConsoleProfile.Size = new System.Drawing.Size(270, 164);
             this.SectionConsoleProfile.TabIndex = 1140;
             // 
@@ -142,7 +142,7 @@
             this.SectionConsoleProfiles.Location = new System.Drawing.Point(291, 12);
             this.SectionConsoleProfiles.Margin = new System.Windows.Forms.Padding(4);
             this.SectionConsoleProfiles.Name = "SectionConsoleProfiles";
-            this.SectionConsoleProfiles.SectionHeader = "Remove Console Profile";
+            this.SectionConsoleProfiles.SectionHeader = "REMOVE CONSOLE PROFILES";
             this.SectionConsoleProfiles.Size = new System.Drawing.Size(270, 164);
             this.SectionConsoleProfiles.TabIndex = 1141;
             // 
@@ -155,12 +155,11 @@
             this.Controls.Add(this.SectionConsoleProfiles);
             this.Controls.Add(this.SectionConsoleProfile);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditConsoleProfiles";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Console Profiles";

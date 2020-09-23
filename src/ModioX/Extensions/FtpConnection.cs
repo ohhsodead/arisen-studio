@@ -99,7 +99,7 @@ namespace ModioX.Extensions
             {
                 if (hInternet != IntPtr.Zero)
                 {
-                    WININET.InternetCloseHandle(hInternet);
+                    _ = WININET.InternetCloseHandle(hInternet);
                 }
             }
 
@@ -112,12 +112,12 @@ namespace ModioX.Extensions
             {
                 if (this._hConnect != IntPtr.Zero)
                 {
-                    WININET.InternetCloseHandle(this._hConnect);
+                    _ = WININET.InternetCloseHandle(this._hConnect);
                 }
 
                 if (this._hInternet != IntPtr.Zero)
                 {
-                    WININET.InternetCloseHandle(this._hInternet);
+                    _ = WININET.InternetCloseHandle(this._hInternet);
                 }
 
                 this._hInternet = IntPtr.Zero;
@@ -157,7 +157,7 @@ namespace ModioX.Extensions
             {
                 if (hInternet != IntPtr.Zero)
                 {
-                    WININET.InternetCloseHandle(hInternet);
+                    _ = WININET.InternetCloseHandle(hInternet);
                 }
             }
 
@@ -252,7 +252,7 @@ namespace ModioX.Extensions
             {
                 if (hInternet != IntPtr.Zero)
                 {
-                    WININET.InternetCloseHandle(hInternet);
+                    _ = WININET.InternetCloseHandle(hInternet);
                 }
             }
 
@@ -336,7 +336,7 @@ namespace ModioX.Extensions
             {
                 if (hInternet != IntPtr.Zero)
                 {
-                    WININET.InternetCloseHandle(hInternet);
+                    _ = WININET.InternetCloseHandle(hInternet);
                 }
             }
 
@@ -364,7 +364,7 @@ namespace ModioX.Extensions
                 }
                 finally
                 {
-                    WININET.InternetCloseHandle(hConnect);
+                    _ = WININET.InternetCloseHandle(hConnect);
                 }
             }
 
@@ -375,7 +375,7 @@ namespace ModioX.Extensions
         {
             int capacity = 0x2000;
             StringBuilder buffer = new StringBuilder(capacity);
-            WININET.InternetGetLastResponseInfo(ref code, buffer, ref capacity);
+            _ = WININET.InternetGetLastResponseInfo(ref code, buffer, ref capacity);
             return buffer.ToString();
         }
 
@@ -450,7 +450,7 @@ namespace ModioX.Extensions
             {
                 if (hInternet != IntPtr.Zero)
                 {
-                    WININET.InternetCloseHandle(hInternet);
+                    _ = WININET.InternetCloseHandle(hInternet);
                 }
             }
 
@@ -961,7 +961,7 @@ namespace ModioX.Extensions
             }
             finally
             {
-                FreeLibrary(zero);
+                _ = FreeLibrary(zero);
             }
 
             return str;

@@ -90,11 +90,23 @@
     <Compile Include="Extensions\HttpExtensions.cs" />
     <Compile Include="Extensions\KnownFolders.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Forms\EditExternalApplications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditExternalApplications.Designer.cs">
+      <DependentUpon>EditExternalApplications.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditGameRegions.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\EditGameRegions.Designer.cs">
       <DependentUpon>EditGameRegions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataViewWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DataViewWindow.Designer.cs">
+      <DependentUpon>DataViewWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\RequestMods.cs">
       <SubType>Form</SubType>
@@ -109,6 +121,7 @@
       <DependentUpon>FileExplorer.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions\Worker.cs" />
+    <Compile Include="Models\Release Data\GitHubData.cs" />
     <Compile Include="Models\Resources\SettingsData.cs" />
     <Compile Include="Forms\ConnectConsole.cs">
       <SubType>Form</SubType>
@@ -116,11 +129,11 @@
     <Compile Include="Forms\ConnectConsole.Designer.cs">
       <DependentUpon>ConnectConsole.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditCustomMod.cs">
+    <Compile Include="Forms\EditCustomModDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditCustomMod.Designer.cs">
-      <DependentUpon>EditCustomMod.cs</DependentUpon>
+    <Compile Include="Forms\EditCustomModDetails.Designer.cs">
+      <DependentUpon>EditCustomModDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EditCustomMods.cs">
       <SubType>Form</SubType>
@@ -134,11 +147,11 @@
     <Compile Include="Forms\EditBackupFiles.Designer.cs">
       <DependentUpon>EditBackupFiles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditBackupFile.cs">
+    <Compile Include="Forms\EditBackupFileDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditBackupFile.Designer.cs">
-      <DependentUpon>EditBackupFile.cs</DependentUpon>
+    <Compile Include="Forms\EditBackupFileDetails.Designer.cs">
+      <DependentUpon>EditBackupFileDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -167,14 +180,20 @@
     <EmbeddedResource Include="Forms\ConnectConsole.resx">
       <DependentUpon>ConnectConsole.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditExternalApplications.resx">
+      <DependentUpon>EditExternalApplications.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditGameRegions.resx">
       <DependentUpon>EditGameRegions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataViewWindow.resx">
+      <DependentUpon>DataViewWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RequestMods.resx">
       <DependentUpon>RequestMods.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditCustomMod.resx">
-      <DependentUpon>EditCustomMod.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EditCustomModDetails.resx">
+      <DependentUpon>EditCustomModDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditCustomMods.resx">
       <DependentUpon>EditCustomMods.cs</DependentUpon>
@@ -182,8 +201,8 @@
     <EmbeddedResource Include="Forms\EditBackupFiles.resx">
       <DependentUpon>EditBackupFiles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditBackupFile.resx">
-      <DependentUpon>EditBackupFile.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EditBackupFileDetails.resx">
+      <DependentUpon>EditBackupFileDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FileExplorer.resx">
       <DependentUpon>FileExplorer.cs</DependentUpon>
@@ -222,6 +241,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-heart-outline-22.png" />
+    <None Include="Resources\icons8-heart-fill-22.png" />
     <None Include="Resources\icons8-software-installer-22.png" />
     <None Include="Resources\icons8-uninstall-programs-22.png" />
     <None Include="Resources\icons8-add-22.png" />
@@ -230,7 +251,6 @@
     <None Include="Resources\icons8-edit-22.png" />
     <None Include="Resources\icons8-refresh-22.png" />
     <None Include="Resources\icons8-search-16.png" />
-    <None Include="Resources\icons8-heart-outline-22.png" />
     <None Include="Resources\icons8-download-from-the-cloud-22.png" />
     <None Include="Resources\icons8-download-22.png" />
     <None Include="Resources\icons8-opened-folder-22.png" />

@@ -1,8 +1,6 @@
 ﻿using DarkUI.Forms;
 using ModioX.Extensions;
 using ModioX.Forms;
-using ModioX.Models.Resources;
-using ModioX.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -115,18 +113,25 @@ namespace ModioX.Models.Database
         /// <returns></returns>
         public List<string> GetGameRegions(string gameId)
         {
-            foreach (Category category in Categories)
+            foreach (Category category in from Category category in Categories
+                                          where category.Id.Equals(gameId)
+                                          select category)
             {
-                if (category.CategoryType == CategoryType.Game)
-                {
-                    if (category.Id.Equals(gameId))
-                    {
-                        return category.Regions.ToList();
-                    }
-                }
+                return category.Regions.ToList();
             }
 
-            throw new Exception("Unable to find game matching the specified game id");
+            throw new Exception("Unable to find game matching the specified id: " + gameId);
+        }
+
+        /// <summary>
+        ///     Get all of the games from the categories data
+        /// </summary>
+        /// <returns>Game information</returns>
+        public List<Category> GetGames()
+        {
+            return (from Category game in Categories
+                    where game.CategoryType == CategoryType.Game
+                    select game).ToList();
         }
 
         /// <summary>
@@ -142,7 +147,7 @@ namespace ModioX.Models.Database
             {
                 return game;
             }
-            throw new Exception("Unable to find game data matching the specified game id");
+            throw new Exception("Unable to find game data matching the specified id: " + categoryId);
         }
 
         /// <summary>
@@ -159,7 +164,7 @@ namespace ModioX.Models.Database
                 return game;
             }
 
-            throw new Exception("Unable to find game data for the specified game title");
+            throw new Exception("Unable to find game data for the specified title: " + title);
         }
 
         /// <summary>

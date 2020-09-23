@@ -46,24 +46,24 @@ namespace ModioX.Forms
         {
             if (string.IsNullOrEmpty(TextBoxName.Text) || string.IsNullOrEmpty(TextBoxAddress.Text))
             {
-                DarkMessageBox.Show(this, @"You haven't provided a profile name or address for this profile. This can't be empty or blank.", "No Profile Name", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, @"You haven't provided a profile name or address for this profile. This can't be empty or blank.", "No Profile Name", MessageBoxIcon.Error);
                 return;
             }
 
             if (ProfileExists(TextBoxName.Text))
             {
-                DarkMessageBox.Show(this, @" You already have a profile with the same name.", "Profile Name Exists", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, @" You already have a profile with the same name.", "Profile Name Exists", MessageBoxIcon.Error);
                 return;
             }
 
             if (IPAddress.TryParse(TextBoxAddress.Text, out IPAddress address))
             {
-                MainForm.SettingsData.ConsoleProfiles.Add(new ConsoleProfile() { Name = TextBoxName.Text, Address = address.ToString() });
+                MainForm.SettingsData.ConsoleProfiles.Add(new ConsoleProfile(TextBoxName.Text, address.ToString()));
                 UpdateUI();
             }
             else
             {
-                DarkMessageBox.Show(this, @"You haven't provided an valid IP address, it maybe not in the correct format. Make sure you've copied exactly from the console system information screen, or displayed on the bottom-right corner of the xmb screen.", "Invalid Profile Address", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, @"You haven't provided an valid IP address, it maybe not in the correct format. Make sure you've copied exactly from the console system information screen, or displayed on the bottom-right corner of the xmb screen.", "Invalid Profile Address", MessageBoxIcon.Error);
             }
         }
 
@@ -82,7 +82,7 @@ namespace ModioX.Forms
             }
             else
             {
-                DarkMessageBox.Show(this, @"You must have at least one console saved.", "Error", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, @"You must have at least one console saved.", "Error", MessageBoxIcon.Error);
             }
         }
     }

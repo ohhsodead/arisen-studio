@@ -1,16 +1,9 @@
-﻿using DarkUI.Controls;
-using DarkUI.Forms;
+﻿using DarkUI.Forms;
 using ModioX.Extensions;
-using ModioX.Models.Database;
-using ModioX.Models.Resources;
 using ModioX.Properties;
-using Newtonsoft.Json;
 using System;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ModioX.Forms
@@ -163,7 +156,7 @@ namespace ModioX.Forms
         public void LoadLocalDirectory(string directoryPath)
         {
             DgvLocalFiles.Rows.Clear();
-            DgvLocalFiles.Rows.Add("folder", Resources.icons8_folder_16, "..", "", ".", DateTime.Now);
+            _ = DgvLocalFiles.Rows.Add("folder", Resources.icons8_folder_16, "..", "", ".", DateTime.Now);
 
             try
             {
@@ -174,12 +167,12 @@ namespace ModioX.Forms
 
                 foreach (string directoryItem in Directory.GetDirectories(directoryPath))
                 {
-                    DgvLocalFiles.Rows.Add("folder", Resources.icons8_folder_16, Path.GetFileName(directoryItem), "-", "file-folder", Directory.GetLastWriteTime(directoryItem));
+                    _ = DgvLocalFiles.Rows.Add("folder", Resources.icons8_folder_16, Path.GetFileName(directoryItem), "-", "file-folder", Directory.GetLastWriteTime(directoryItem));
                 }
 
                 foreach (string fileItem in Directory.GetFiles(directoryPath))
                 {
-                    DgvLocalFiles.Rows.Add("file", Resources.icons8_file_16, Path.GetFileName(fileItem), new FileInfo(fileItem).Length.ToString("#,##0") + " bytes", Path.GetExtension(fileItem).ToUpper().Trim('.') + " File", File.GetLastWriteTime(fileItem));
+                    _ = DgvLocalFiles.Rows.Add("file", Resources.icons8_file_16, Path.GetFileName(fileItem), new FileInfo(fileItem).Length.ToString("#,##0") + " bytes", Path.GetExtension(fileItem).ToUpper().Trim('.') + " File", File.GetLastWriteTime(fileItem));
                 }
 
                 SetStatus($"Local directory listing for path: {directoryPath}' successful ({DgvLocalFiles.Rows.Count} items)");
@@ -225,7 +218,7 @@ namespace ModioX.Forms
 
                     foreach (FtpDirectoryInfo ftpDirectoryInfo in ftpConnection.GetDirectories(FtpDirectoryPath))
                     {
-                        DgvConsoleFiles.Rows.Add("folder", Resources.icons8_folder_16, ftpDirectoryInfo.Name, "-", "file-folder", ftpDirectoryInfo.LastWriteTimeUtc);
+                        _ = DgvConsoleFiles.Rows.Add("folder", Resources.icons8_folder_16, ftpDirectoryInfo.Name, "-", "file-folder", ftpDirectoryInfo.LastWriteTimeUtc);
                     }
 
                     foreach (FtpFileInfo ftpFileInfo in ftpConnection.GetFiles(FtpDirectoryPath))
@@ -245,7 +238,7 @@ namespace ModioX.Forms
                             Program.Log.Error(string.Format("An error occurred fetching console file size for {0}", ftpFileInfo.FullName), ex);
                         }
 
-                        DgvConsoleFiles.Rows.Add("file", Resources.icons8_file_16, ftpFileInfo.Name, ftpFileSize.ToString("#,##0") + " bytes", Path.GetExtension(ftpFileInfo.FullName).ToUpper().Trim('.') + " File", ftpFileInfo.LastWriteTimeUtc);
+                        _ = DgvConsoleFiles.Rows.Add("file", Resources.icons8_file_16, ftpFileInfo.Name, ftpFileSize.ToString("#,##0") + " bytes", Path.GetExtension(ftpFileInfo.FullName).ToUpper().Trim('.') + " File", ftpFileInfo.LastWriteTimeUtc);
                     }
 
                     SetStatus(string.Format("Console directory listing of '{0}' successful ({1} items)", FtpDirectoryPath, DgvConsoleFiles.Rows.Count));
@@ -276,7 +269,7 @@ namespace ModioX.Forms
         {
             try
             {
-                Process.Start("explorer.exe", TextBoxLocalDirectory.Text);
+                _ = Process.Start("explorer.exe", TextBoxLocalDirectory.Text);
             }
             catch (Exception ex)
             {
@@ -335,7 +328,7 @@ namespace ModioX.Forms
                 {
                     SetStatus($"Starting upload of local file to console...");
                     FtpExtensions.UploadFile(MainForm.ConsoleProfile.Address, localFile, installFile);
-                    DgvConsoleFiles.Rows.Add("file", Resources.icons8_file_16, Path.GetFileName(installFile), new FileInfo(localFile).Length.ToString("#,##0") + " bytes", Path.GetExtension(localFile).ToUpper().Trim('.') + " File", File.GetLastWriteTime(installFile));
+                    _ = DgvConsoleFiles.Rows.Add("file", Resources.icons8_file_16, Path.GetFileName(installFile), new FileInfo(localFile).Length.ToString("#,##0") + " bytes", Path.GetExtension(localFile).ToUpper().Trim('.') + " File", File.GetLastWriteTime(installFile));
                     SetStatus(string.Format("File Explorer : Successfully uploaded file {0} to console path {1}", Path.GetFileName(localFile), Path.GetDirectoryName(installFile)));
                 }
                 else
@@ -402,7 +395,7 @@ namespace ModioX.Forms
             {
                 SetStatus($"Error deleting console file - {ex.Message}", ex);
             }
-        }        
+        }
 
         /// <summary>
         ///     Set the current process status in the tool strip

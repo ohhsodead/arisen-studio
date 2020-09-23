@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Forms
 {
-    partial class EditCustomMod
+    partial class EditCustomModDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditCustomMod));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditCustomModDetails));
             this.TextBoxName = new DarkUI.Controls.DarkTextBox();
             this.ButtonSaveMod = new DarkUI.Controls.DarkButton();
             this.LabelName = new DarkUI.Controls.DarkLabel();
@@ -41,13 +41,16 @@
             this.TextBoxDescription = new DarkUI.Controls.DarkTextBox();
             this.ButtonLocalPath = new DarkUI.Controls.DarkButton();
             this.ComboBoxCategoryTitle = new DarkUI.Controls.DarkComboBox();
-            this.ListViewInstallFiles = new DarkUI.Controls.DarkListView();
-            this.darkSectionPanel1 = new DarkUI.Controls.DarkSectionPanel();
-            this.darkSectionPanel2 = new DarkUI.Controls.DarkSectionPanel();
+            this.SectionModDetails = new DarkUI.Controls.DarkSectionPanel();
+            this.SectionInstallFiles = new DarkUI.Controls.DarkSectionPanel();
+            this.DgvInstallFilePaths = new DarkUI.Controls.DarkDataGridView();
+            this.ColumnLocalFilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnConsoleFilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ButtonRemoveInstallFile = new DarkUI.Controls.DarkButton();
             this.ButtonAddInstall = new DarkUI.Controls.DarkButton();
-            this.darkSectionPanel1.SuspendLayout();
-            this.darkSectionPanel2.SuspendLayout();
+            this.SectionModDetails.SuspendLayout();
+            this.SectionInstallFiles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvInstallFilePaths)).BeginInit();
             this.SuspendLayout();
             // 
             // TextBoxName
@@ -55,14 +58,14 @@
             this.TextBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxName.Location = new System.Drawing.Point(8, 51);
             this.TextBoxName.Name = "TextBoxName";
-            this.TextBoxName.Size = new System.Drawing.Size(212, 23);
+            this.TextBoxName.Size = new System.Drawing.Size(265, 23);
             this.TextBoxName.TabIndex = 4;
             this.TextBoxName.TextChanged += new System.EventHandler(this.TextBoxName_TextChanged);
             // 
             // ButtonSaveMod
             // 
             this.ButtonSaveMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSaveMod.Location = new System.Drawing.Point(335, 479);
+            this.ButtonSaveMod.Location = new System.Drawing.Point(426, 505);
             this.ButtonSaveMod.Name = "ButtonSaveMod";
             this.ButtonSaveMod.Size = new System.Drawing.Size(128, 24);
             this.ButtonSaveMod.TabIndex = 14;
@@ -98,7 +101,7 @@
             this.TextBoxLocalPath.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxLocalPath.Location = new System.Drawing.Point(8, 51);
             this.TextBoxLocalPath.Name = "TextBoxLocalPath";
-            this.TextBoxLocalPath.Size = new System.Drawing.Size(387, 23);
+            this.TextBoxLocalPath.Size = new System.Drawing.Size(478, 23);
             this.TextBoxLocalPath.TabIndex = 9;
             // 
             // LabelConsolePath
@@ -119,7 +122,7 @@
             this.TextBoxConsolePath.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxConsolePath.Location = new System.Drawing.Point(8, 101);
             this.TextBoxConsolePath.Name = "TextBoxConsolePath";
-            this.TextBoxConsolePath.Size = new System.Drawing.Size(435, 23);
+            this.TextBoxConsolePath.Size = new System.Drawing.Size(526, 23);
             this.TextBoxConsolePath.TabIndex = 11;
             this.TextBoxConsolePath.Text = "e.g. /dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN or patch_mp.ff";
             // 
@@ -127,7 +130,7 @@
             // 
             this.LabelGameId.AutoSize = true;
             this.LabelGameId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelGameId.Location = new System.Drawing.Point(224, 31);
+            this.LabelGameId.Location = new System.Drawing.Point(276, 31);
             this.LabelGameId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelGameId.Name = "LabelGameId";
             this.LabelGameId.Size = new System.Drawing.Size(58, 15);
@@ -153,7 +156,7 @@
             this.TextBoxDescription.Location = new System.Drawing.Point(8, 101);
             this.TextBoxDescription.Multiline = true;
             this.TextBoxDescription.Name = "TextBoxDescription";
-            this.TextBoxDescription.Size = new System.Drawing.Size(435, 52);
+            this.TextBoxDescription.Size = new System.Drawing.Size(526, 52);
             this.TextBoxDescription.TabIndex = 6;
             this.TextBoxDescription.Text = "Also some text here to explain about the mods...";
             this.TextBoxDescription.TextChanged += new System.EventHandler(this.TextBoxDescription_TextChanged);
@@ -161,7 +164,7 @@
             // ButtonLocalPath
             // 
             this.ButtonLocalPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonLocalPath.Location = new System.Drawing.Point(401, 51);
+            this.ButtonLocalPath.Location = new System.Drawing.Point(492, 51);
             this.ButtonLocalPath.Name = "ButtonLocalPath";
             this.ButtonLocalPath.Size = new System.Drawing.Size(42, 23);
             this.ButtonLocalPath.TabIndex = 10;
@@ -171,57 +174,92 @@
             // ComboBoxCategoryTitle
             // 
             this.ComboBoxCategoryTitle.FormattingEnabled = true;
-            this.ComboBoxCategoryTitle.Location = new System.Drawing.Point(226, 51);
+            this.ComboBoxCategoryTitle.Location = new System.Drawing.Point(279, 51);
             this.ComboBoxCategoryTitle.Name = "ComboBoxCategoryTitle";
-            this.ComboBoxCategoryTitle.Size = new System.Drawing.Size(217, 24);
+            this.ComboBoxCategoryTitle.Size = new System.Drawing.Size(255, 24);
             this.ComboBoxCategoryTitle.TabIndex = 5;
             this.ComboBoxCategoryTitle.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCategoryId_SelectedIndexChanged);
             // 
-            // ListViewInstallFiles
+            // SectionModDetails
             // 
-            this.ListViewInstallFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.SectionModDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListViewInstallFiles.Location = new System.Drawing.Point(8, 161);
-            this.ListViewInstallFiles.Name = "ListViewInstallFiles";
-            this.ListViewInstallFiles.Size = new System.Drawing.Size(435, 92);
-            this.ListViewInstallFiles.TabIndex = 8;
-            this.ListViewInstallFiles.Text = "darkListView1";
-            this.ListViewInstallFiles.SelectedIndicesChanged += new System.EventHandler(this.ListViewInstallFiles_SelectedIndicesChanged);
+            this.SectionModDetails.Controls.Add(this.LabelName);
+            this.SectionModDetails.Controls.Add(this.TextBoxName);
+            this.SectionModDetails.Controls.Add(this.ComboBoxCategoryTitle);
+            this.SectionModDetails.Controls.Add(this.LabelGameId);
+            this.SectionModDetails.Controls.Add(this.TextBoxDescription);
+            this.SectionModDetails.Controls.Add(this.LabelDescription);
+            this.SectionModDetails.Location = new System.Drawing.Point(12, 12);
+            this.SectionModDetails.Name = "SectionModDetails";
+            this.SectionModDetails.SectionHeader = "MOD INFORMATION";
+            this.SectionModDetails.Size = new System.Drawing.Size(542, 161);
+            this.SectionModDetails.TabIndex = 3;
             // 
-            // darkSectionPanel1
+            // SectionInstallFiles
             // 
-            this.darkSectionPanel1.Controls.Add(this.LabelName);
-            this.darkSectionPanel1.Controls.Add(this.TextBoxName);
-            this.darkSectionPanel1.Controls.Add(this.ComboBoxCategoryTitle);
-            this.darkSectionPanel1.Controls.Add(this.LabelGameId);
-            this.darkSectionPanel1.Controls.Add(this.TextBoxDescription);
-            this.darkSectionPanel1.Controls.Add(this.LabelDescription);
-            this.darkSectionPanel1.Location = new System.Drawing.Point(12, 12);
-            this.darkSectionPanel1.Name = "darkSectionPanel1";
-            this.darkSectionPanel1.SectionHeader = "Mod Details";
-            this.darkSectionPanel1.Size = new System.Drawing.Size(451, 161);
-            this.darkSectionPanel1.TabIndex = 3;
+            this.SectionInstallFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SectionInstallFiles.Controls.Add(this.DgvInstallFilePaths);
+            this.SectionInstallFiles.Controls.Add(this.ButtonRemoveInstallFile);
+            this.SectionInstallFiles.Controls.Add(this.ButtonAddInstall);
+            this.SectionInstallFiles.Controls.Add(this.LabelConsolePath);
+            this.SectionInstallFiles.Controls.Add(this.ButtonLocalPath);
+            this.SectionInstallFiles.Controls.Add(this.TextBoxLocalPath);
+            this.SectionInstallFiles.Controls.Add(this.TextBoxConsolePath);
+            this.SectionInstallFiles.Controls.Add(this.LabelLocalPath);
+            this.SectionInstallFiles.Location = new System.Drawing.Point(12, 179);
+            this.SectionInstallFiles.Name = "SectionInstallFiles";
+            this.SectionInstallFiles.SectionHeader = "INSTALL FILES";
+            this.SectionInstallFiles.Size = new System.Drawing.Size(542, 316);
+            this.SectionInstallFiles.TabIndex = 7;
             // 
-            // darkSectionPanel2
+            // DgvInstallFilePaths
             // 
-            this.darkSectionPanel2.Controls.Add(this.ButtonRemoveInstallFile);
-            this.darkSectionPanel2.Controls.Add(this.ButtonAddInstall);
-            this.darkSectionPanel2.Controls.Add(this.ListViewInstallFiles);
-            this.darkSectionPanel2.Controls.Add(this.LabelConsolePath);
-            this.darkSectionPanel2.Controls.Add(this.ButtonLocalPath);
-            this.darkSectionPanel2.Controls.Add(this.TextBoxLocalPath);
-            this.darkSectionPanel2.Controls.Add(this.TextBoxConsolePath);
-            this.darkSectionPanel2.Controls.Add(this.LabelLocalPath);
-            this.darkSectionPanel2.Location = new System.Drawing.Point(12, 179);
-            this.darkSectionPanel2.Name = "darkSectionPanel2";
-            this.darkSectionPanel2.SectionHeader = "Mod Install Files";
-            this.darkSectionPanel2.Size = new System.Drawing.Size(451, 292);
-            this.darkSectionPanel2.TabIndex = 7;
+            this.DgvInstallFilePaths.AllowUserToAddRows = false;
+            this.DgvInstallFilePaths.AllowUserToDeleteRows = false;
+            this.DgvInstallFilePaths.AllowUserToDragDropRows = false;
+            this.DgvInstallFilePaths.AllowUserToPasteCells = false;
+            this.DgvInstallFilePaths.AllowUserToResizeColumns = false;
+            this.DgvInstallFilePaths.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvInstallFilePaths.ColumnHeadersHeight = 21;
+            this.DgvInstallFilePaths.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DgvInstallFilePaths.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnLocalFilePath,
+            this.ColumnConsoleFilePath});
+            this.DgvInstallFilePaths.Location = new System.Drawing.Point(8, 161);
+            this.DgvInstallFilePaths.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.DgvInstallFilePaths.MultiSelect = false;
+            this.DgvInstallFilePaths.Name = "DgvInstallFilePaths";
+            this.DgvInstallFilePaths.ReadOnly = true;
+            this.DgvInstallFilePaths.RowHeadersWidth = 41;
+            this.DgvInstallFilePaths.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DgvInstallFilePaths.RowTemplate.Height = 24;
+            this.DgvInstallFilePaths.RowTemplate.ReadOnly = true;
+            this.DgvInstallFilePaths.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DgvInstallFilePaths.Size = new System.Drawing.Size(526, 115);
+            this.DgvInstallFilePaths.TabIndex = 29;
+            this.DgvInstallFilePaths.SelectionChanged += new System.EventHandler(this.DgvInstallFilePaths_SelectionChanged);
+            // 
+            // ColumnLocalFilePath
+            // 
+            this.ColumnLocalFilePath.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnLocalFilePath.HeaderText = "Local File Path";
+            this.ColumnLocalFilePath.Name = "ColumnLocalFilePath";
+            this.ColumnLocalFilePath.ReadOnly = true;
+            // 
+            // ColumnConsoleFilePath
+            // 
+            this.ColumnConsoleFilePath.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnConsoleFilePath.HeaderText = "Console File Path";
+            this.ColumnConsoleFilePath.Name = "ColumnConsoleFilePath";
+            this.ColumnConsoleFilePath.ReadOnly = true;
             // 
             // ButtonRemoveInstallFile
             // 
             this.ButtonRemoveInstallFile.Enabled = false;
-            this.ButtonRemoveInstallFile.Location = new System.Drawing.Point(8, 260);
+            this.ButtonRemoveInstallFile.Location = new System.Drawing.Point(8, 283);
             this.ButtonRemoveInstallFile.Name = "ButtonRemoveInstallFile";
             this.ButtonRemoveInstallFile.Size = new System.Drawing.Size(94, 24);
             this.ButtonRemoveInstallFile.TabIndex = 13;
@@ -237,32 +275,31 @@
             this.ButtonAddInstall.Text = "Add File";
             this.ButtonAddInstall.Click += new System.EventHandler(this.ButtonAddInstall_Click);
             // 
-            // EditModDetails
+            // EditCustomModDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(475, 515);
-            this.Controls.Add(this.darkSectionPanel2);
-            this.Controls.Add(this.darkSectionPanel1);
+            this.ClientSize = new System.Drawing.Size(566, 541);
+            this.Controls.Add(this.SectionInstallFiles);
+            this.Controls.Add(this.SectionModDetails);
             this.Controls.Add(this.ButtonSaveMod);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Gainsboro;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EditModDetails";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
+            this.Name = "EditCustomModDetails";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Mod Details";
             this.Load += new System.EventHandler(this.EditCustomMod_Load);
-            this.darkSectionPanel1.ResumeLayout(false);
-            this.darkSectionPanel1.PerformLayout();
-            this.darkSectionPanel2.ResumeLayout(false);
-            this.darkSectionPanel2.PerformLayout();
+            this.SectionModDetails.ResumeLayout(false);
+            this.SectionModDetails.PerformLayout();
+            this.SectionInstallFiles.ResumeLayout(false);
+            this.SectionInstallFiles.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvInstallFilePaths)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,10 +318,12 @@
         private DarkUI.Controls.DarkTextBox TextBoxDescription;
         private DarkUI.Controls.DarkButton ButtonLocalPath;
         private DarkUI.Controls.DarkComboBox ComboBoxCategoryTitle;
-        private DarkUI.Controls.DarkListView ListViewInstallFiles;
-        private DarkUI.Controls.DarkSectionPanel darkSectionPanel1;
-        private DarkUI.Controls.DarkSectionPanel darkSectionPanel2;
+        private DarkUI.Controls.DarkSectionPanel SectionModDetails;
+        private DarkUI.Controls.DarkSectionPanel SectionInstallFiles;
         private DarkUI.Controls.DarkButton ButtonRemoveInstallFile;
         private DarkUI.Controls.DarkButton ButtonAddInstall;
+        private DarkUI.Controls.DarkDataGridView DgvInstallFilePaths;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLocalFilePath;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnConsoleFilePath;
     }
 }

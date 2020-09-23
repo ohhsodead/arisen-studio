@@ -17,7 +17,7 @@ namespace ModioX.Windows
         public string SelectedItem { get; private set; }
 
         private void ListViewDialog_Load(object sender, EventArgs e)
-        {            
+        {
             SectionItems.SectionHeader = Text;
             Text = "Choose Item...";
 

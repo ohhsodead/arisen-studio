@@ -29,38 +29,38 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditGameRegions));
-            this.ButtonSaveGameRegions = new DarkUI.Controls.DarkButton();
+            this.ButtonSaveAll = new DarkUI.Controls.DarkButton();
             this.SectionGameRegions = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoGameRegionsSaved = new System.Windows.Forms.Label();
             this.DgvGameRegions = new DarkUI.Controls.DarkDataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToolStripGameRegions = new DarkUI.Controls.DarkToolStrip();
             this.ToolItemDeleteAll = new System.Windows.Forms.ToolStripButton();
             this.LabelTotalGameRegions = new System.Windows.Forms.ToolStripLabel();
             this.ColumnGameRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.darkSectionPanel1 = new DarkUI.Controls.DarkSectionPanel();
+            this.ButtonAddGame = new DarkUI.Controls.DarkButton();
             this.LabelGameRegion = new DarkUI.Controls.DarkLabel();
             this.ComboBoxGameTitle = new DarkUI.Controls.DarkComboBox();
             this.LabelGameTitle = new DarkUI.Controls.DarkLabel();
-            this.ButtonAddGame = new DarkUI.Controls.DarkButton();
             this.ComboBoxGameRegion = new DarkUI.Controls.DarkComboBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SectionGameRegions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGameRegions)).BeginInit();
             this.ToolStripGameRegions.SuspendLayout();
             this.darkSectionPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ButtonSaveGameRegions
+            // ButtonSaveAll
             // 
-            this.ButtonSaveGameRegions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSaveGameRegions.Location = new System.Drawing.Point(347, 369);
-            this.ButtonSaveGameRegions.Name = "ButtonSaveGameRegions";
-            this.ButtonSaveGameRegions.Size = new System.Drawing.Size(79, 24);
-            this.ButtonSaveGameRegions.TabIndex = 3;
-            this.ButtonSaveGameRegions.Text = "Save All";
-            this.ButtonSaveGameRegions.Click += new System.EventHandler(this.ButtonSaveGameRegions_Click);
+            this.ButtonSaveAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonSaveAll.Location = new System.Drawing.Point(347, 371);
+            this.ButtonSaveAll.Name = "ButtonSaveAll";
+            this.ButtonSaveAll.Size = new System.Drawing.Size(79, 24);
+            this.ButtonSaveAll.TabIndex = 3;
+            this.ButtonSaveAll.Text = "Save All";
+            this.ButtonSaveAll.Click += new System.EventHandler(this.ButtonSaveAll_Click);
             // 
             // SectionGameRegions
             // 
@@ -74,8 +74,8 @@
             this.SectionGameRegions.Location = new System.Drawing.Point(12, 12);
             this.SectionGameRegions.Margin = new System.Windows.Forms.Padding(4);
             this.SectionGameRegions.Name = "SectionGameRegions";
-            this.SectionGameRegions.SectionHeader = "Saved Game Regions";
-            this.SectionGameRegions.Size = new System.Drawing.Size(414, 228);
+            this.SectionGameRegions.SectionHeader = "GAME REGIONS";
+            this.SectionGameRegions.Size = new System.Drawing.Size(414, 230);
             this.SectionGameRegions.TabIndex = 0;
             // 
             // LabelNoGameRegionsSaved
@@ -86,12 +86,12 @@
             this.LabelNoGameRegionsSaved.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelNoGameRegionsSaved.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelNoGameRegionsSaved.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelNoGameRegionsSaved.Location = new System.Drawing.Point(133, 79);
+            this.LabelNoGameRegionsSaved.Location = new System.Drawing.Point(151, 79);
             this.LabelNoGameRegionsSaved.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelNoGameRegionsSaved.Name = "LabelNoGameRegionsSaved";
-            this.LabelNoGameRegionsSaved.Size = new System.Drawing.Size(149, 15);
+            this.LabelNoGameRegionsSaved.Size = new System.Drawing.Size(113, 15);
             this.LabelNoGameRegionsSaved.TabIndex = 1178;
-            this.LabelNoGameRegionsSaved.Text = "NO SAVED GAME REGIONS";
+            this.LabelNoGameRegionsSaved.Text = "NO REGIONS SAVED";
             // 
             // DgvGameRegions
             // 
@@ -116,9 +116,24 @@
             this.DgvGameRegions.RowTemplate.Height = 24;
             this.DgvGameRegions.RowTemplate.ReadOnly = true;
             this.DgvGameRegions.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvGameRegions.Size = new System.Drawing.Size(412, 166);
+            this.DgvGameRegions.Size = new System.Drawing.Size(412, 168);
             this.DgvGameRegions.TabIndex = 0;
             this.DgvGameRegions.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGameRegions_CellClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Game Title";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Game Region";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 110;
             // 
             // ToolStripGameRegions
             // 
@@ -131,7 +146,7 @@
             this.ToolStripGameRegions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolItemDeleteAll,
             this.LabelTotalGameRegions});
-            this.ToolStripGameRegions.Location = new System.Drawing.Point(1, 191);
+            this.ToolStripGameRegions.Location = new System.Drawing.Point(1, 193);
             this.ToolStripGameRegions.Name = "ToolStripGameRegions";
             this.ToolStripGameRegions.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.ToolStripGameRegions.Size = new System.Drawing.Size(412, 36);
@@ -164,7 +179,7 @@
             this.LabelTotalGameRegions.Name = "LabelTotalGameRegions";
             this.LabelTotalGameRegions.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.LabelTotalGameRegions.Size = new System.Drawing.Size(98, 33);
-            this.LabelTotalGameRegions.Text = "0 Game Regions";
+            this.LabelTotalGameRegions.Text = "0 Regions Saved";
             // 
             // ColumnGameRegion
             // 
@@ -189,12 +204,23 @@
             this.darkSectionPanel1.Controls.Add(this.LabelGameTitle);
             this.darkSectionPanel1.Controls.Add(this.ComboBoxGameRegion);
             this.darkSectionPanel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.darkSectionPanel1.Location = new System.Drawing.Point(12, 248);
+            this.darkSectionPanel1.Location = new System.Drawing.Point(12, 250);
             this.darkSectionPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.darkSectionPanel1.Name = "darkSectionPanel1";
-            this.darkSectionPanel1.SectionHeader = "Add Game Region";
+            this.darkSectionPanel1.SectionHeader = "UPDATE GAME REGIONS";
             this.darkSectionPanel1.Size = new System.Drawing.Size(414, 113);
             this.darkSectionPanel1.TabIndex = 1179;
+            // 
+            // ButtonAddGame
+            // 
+            this.ButtonAddGame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonAddGame.Location = new System.Drawing.Point(8, 81);
+            this.ButtonAddGame.Name = "ButtonAddGame";
+            this.ButtonAddGame.Size = new System.Drawing.Size(398, 24);
+            this.ButtonAddGame.TabIndex = 1180;
+            this.ButtonAddGame.Text = "Update Region for Game";
+            this.ButtonAddGame.Click += new System.EventHandler(this.ButtonAddGame_Click);
             // 
             // LabelGameRegion
             // 
@@ -230,17 +256,6 @@
             this.LabelGameTitle.TabIndex = 16;
             this.LabelGameTitle.Text = "Game Title:";
             // 
-            // ButtonAddGame
-            // 
-            this.ButtonAddGame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAddGame.Location = new System.Drawing.Point(8, 81);
-            this.ButtonAddGame.Name = "ButtonAddGame";
-            this.ButtonAddGame.Size = new System.Drawing.Size(398, 24);
-            this.ButtonAddGame.TabIndex = 1180;
-            this.ButtonAddGame.Text = "Update Region for Game Title";
-            this.ButtonAddGame.Click += new System.EventHandler(this.ButtonAddGame_Click);
-            // 
             // ComboBoxGameRegion
             // 
             this.ComboBoxGameRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -250,39 +265,22 @@
             this.ComboBoxGameRegion.Size = new System.Drawing.Size(112, 24);
             this.ComboBoxGameRegion.TabIndex = 1181;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Game Title";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Game Region";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 110;
-            // 
             // EditGameRegions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(438, 405);
+            this.ClientSize = new System.Drawing.Size(438, 407);
             this.Controls.Add(this.darkSectionPanel1);
             this.Controls.Add(this.SectionGameRegions);
-            this.Controls.Add(this.ButtonSaveGameRegions);
+            this.Controls.Add(this.ButtonSaveAll);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Gainsboro;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditGameRegions";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Game Regions";
@@ -299,7 +297,7 @@
         }
 
         #endregion
-        private DarkUI.Controls.DarkButton ButtonSaveGameRegions;
+        private DarkUI.Controls.DarkButton ButtonSaveAll;
         private DarkUI.Controls.DarkSectionPanel SectionGameRegions;
         private System.Windows.Forms.Label LabelNoGameRegionsSaved;
         private DarkUI.Controls.DarkDataGridView DgvGameRegions;

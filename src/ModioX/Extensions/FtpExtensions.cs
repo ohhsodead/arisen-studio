@@ -9,7 +9,7 @@ namespace ModioX.Extensions
     internal abstract class FtpExtensions
     {
         /// <summary>
-        ///     Upload a desired local file to the specified location on the console
+        ///     Upload a local file to the specified location on the console
         /// </summary>
         /// <param name="hostAddress">PS3 IP address</param>
         /// <param name="localFile">Path of the local file</param>
@@ -40,8 +40,7 @@ namespace ModioX.Extensions
 
 
         /// <summary>
-        ///     Uninstall modded files specified in the InstallPath from the users console, ignore game specific files as this
-        ///     could cause game to stop working (only .sprx files)
+        ///     Uninstall a specified file from the console
         /// </summary>
         /// <param name="hostAddress">Console address to connect to</param>
         /// <param name="consoleFile">Mod to uninstall</param>
@@ -149,7 +148,7 @@ namespace ModioX.Extensions
 
                 ftpConnection.SetCurrentDirectory(dirPath);
 
-                foreach (var path in ftpConnection.GetDirectories(dirPath))
+                foreach (FtpDirectoryInfo path in ftpConnection.GetDirectories(dirPath))
                 {
                     folderNames.Add(path.Name);
                 }
@@ -161,7 +160,7 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        ///     Prompts the user with their account id's and returns the specified userId
+        ///     Prompts the user to choose their user id
         /// </summary>
         /// <param name="hostAddress">Console IP Address</param>
         /// <returns></returns>
@@ -171,17 +170,17 @@ namespace ModioX.Extensions
 
             if (userIds.Count < 1)
             {
-                _ = DarkMessageBox.Show(MainForm.mainForm, "Could not find any userId's on your console. Make sure you have created at least one user profile.", "No Users Found", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(MainForm.mainForm, "Could not find any users on your console. Make sure you have created at least one user profile and then try again.", "No Users Found", MessageBoxIcon.Error);
                 return null;
             }
             else
             {
-                return Utilities.GetItemFromList("Profile IDs", userIds);
+                return Utilities.GetItemFromList("User Profile IDs", userIds);
             }
         }
 
         /// <summary>
-        ///     Prompts the user with their account id's and returns the specified userId
+        ///     Returns the USB path if one is connected to the console port
         /// </summary>
         /// <param name="hostAddress">Console IP Address</param>
         /// <returns></returns>

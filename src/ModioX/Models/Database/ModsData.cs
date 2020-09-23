@@ -1,14 +1,11 @@
-﻿using DarkUI.Forms;
-using ModioX.Extensions;
+﻿using ModioX.Extensions;
 using ModioX.Forms;
-using ModioX.Windows;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
-using System.Windows.Forms;
 
 namespace ModioX.Models.Database
 {
@@ -57,7 +54,7 @@ namespace ModioX.Models.Database
             /// <returns></returns>
             public CategoryType GetCategoryType(CategoriesData categoriesData)
             {
-                foreach (var category in categoriesData.Categories)
+                foreach (CategoriesData.Category category in categoriesData.Categories)
                 {
                     if (category.Id.ToLower().Equals(GameId.ToLower()))
                     {
@@ -251,7 +248,7 @@ namespace ModioX.Models.Database
                     File.Delete(archiveFilePath);
                 }
 
-                Directory.CreateDirectory(DirectoryDownloadData);
+                _ = Directory.CreateDirectory(DirectoryDownloadData);
 
                 using (WebClient wc = new WebClient())
                 {
@@ -268,7 +265,7 @@ namespace ModioX.Models.Database
             /// <param name="localPath">Path to downloads mods archive at folder</param>
             public void DownloadArchiveAtPath(string localPath)
             {
-                string zipFileName = $"{StringExtensions.ReplaceInvalidChars(Name)} v{Version}.zip";
+                string zipFileName = $"{StringExtensions.ReplaceInvalidChars(Name)} v{Version} for {GameId.ToUpper()}.zip";
                 string zipFilePath = Path.Combine(localPath, zipFileName);
 
                 GenerateReadMeAtPath(DirectoryDownloadData);
@@ -290,24 +287,26 @@ namespace ModioX.Models.Database
             {
                 if (!Directory.Exists(directoryPath))
                 {
-                    Directory.CreateDirectory(directoryPath);
+                    _ = Directory.CreateDirectory(directoryPath);
                 }
 
                 // Create contents and write them to readme file 
                 File.WriteAllLines(Path.Combine(directoryPath, "README.txt"), new string[]
                 {
-                    Id.ToString(),
-                    GameId,
-                    Name,
-                    Firmware,
-                    Type,
-                    Version,
-                    Author,
-                    SubmittedBy,
-                    Configuration,
-                    Description,
-                    string.Join(", ", InstallPaths),
-                    Url
+                    "Mod Id: #" + Id.ToString(),
+                    "Title: " + MainForm.Categories.GetCategoryById(GameId).Title,
+                    "Name: " + Name,
+                    "System Type: " + string.Join(", ", Firmwares),
+                    "Mod Type: " + Type,
+                    "Version: " + Version,
+                    "Region: " + string.Join(", ", GameRegions),
+                    "Created By: " + Author,
+                    "Submitted By: " + SubmittedBy,
+                    "Game Type: " + string.Join(", ", GameModes),
+                    "Installation File Paths: " + string.Join(", ", InstallPaths),
+                    "Archive Download URL: " + Url,
+                    "-------------------------------------------------",
+                    "Description:\n" + Description
                 });
             }
         }

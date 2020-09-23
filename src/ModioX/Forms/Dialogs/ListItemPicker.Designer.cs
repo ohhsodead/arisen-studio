@@ -41,7 +41,7 @@
             this.ListViewItems.ItemHeight = 22;
             this.ListViewItems.Location = new System.Drawing.Point(1, 25);
             this.ListViewItems.Name = "ListViewItems";
-            this.ListViewItems.Size = new System.Drawing.Size(159, 169);
+            this.ListViewItems.Size = new System.Drawing.Size(166, 176);
             this.ListViewItems.TabIndex = 1;
             this.ListViewItems.Text = "darkListView1";
             this.ListViewItems.SelectedIndicesChanged += new System.EventHandler(this.ListViewRegions_SelectedIndicesChanged);
@@ -56,22 +56,21 @@
             this.SectionItems.Location = new System.Drawing.Point(14, 14);
             this.SectionItems.Name = "SectionItems";
             this.SectionItems.SectionHeader = "Choose Item...";
-            this.SectionItems.Size = new System.Drawing.Size(161, 195);
+            this.SectionItems.Size = new System.Drawing.Size(168, 202);
             this.SectionItems.TabIndex = 0;
             // 
             // ListItemPicker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(189, 223);
+            this.ClientSize = new System.Drawing.Size(196, 230);
             this.Controls.Add(this.SectionItems);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListItemPicker";
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

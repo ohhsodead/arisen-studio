@@ -194,7 +194,7 @@
             this.SectionLocalFileExplorer.Location = new System.Drawing.Point(0, 0);
             this.SectionLocalFileExplorer.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.SectionLocalFileExplorer.Name = "SectionLocalFileExplorer";
-            this.SectionLocalFileExplorer.SectionHeader = "Local File Explorer";
+            this.SectionLocalFileExplorer.SectionHeader = "LOCAL FILE EXPLORER";
             this.SectionLocalFileExplorer.Size = new System.Drawing.Size(595, 340);
             this.SectionLocalFileExplorer.TabIndex = 17;
             // 
@@ -411,7 +411,7 @@
             this.SectionConsoleFileExplorer.Location = new System.Drawing.Point(605, 0);
             this.SectionConsoleFileExplorer.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.SectionConsoleFileExplorer.Name = "SectionConsoleFileExplorer";
-            this.SectionConsoleFileExplorer.SectionHeader = "Console File Explorer";
+            this.SectionConsoleFileExplorer.SectionHeader = "CONSOLE FILE EXPLORER";
             this.SectionConsoleFileExplorer.Size = new System.Drawing.Size(596, 340);
             this.SectionConsoleFileExplorer.TabIndex = 1157;
             // 
@@ -624,11 +624,11 @@
             this.Controls.Add(this.MenuStripHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MenuStripHeader;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FileExplorer";
-            this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "File Explorer";

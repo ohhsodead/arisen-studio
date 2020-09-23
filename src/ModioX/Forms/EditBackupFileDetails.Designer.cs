@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Forms
 {
-    partial class EditBackupFile
+    partial class EditBackupFileDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBackupFile));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBackupFileDetails));
             this.ButtonSaveBackup = new DarkUI.Controls.DarkButton();
             this.LabelLocalFilePath = new DarkUI.Controls.DarkLabel();
             this.TextBoxLocalPath = new DarkUI.Controls.DarkTextBox();
@@ -168,7 +168,7 @@
             this.SectionBackupDetails.Location = new System.Drawing.Point(12, 12);
             this.SectionBackupDetails.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.SectionBackupDetails.Name = "SectionBackupDetails";
-            this.SectionBackupDetails.SectionHeader = "Backup File Details";
+            this.SectionBackupDetails.SectionHeader = "BACKUP FILE DETAILS";
             this.SectionBackupDetails.Size = new System.Drawing.Size(310, 242);
             this.SectionBackupDetails.TabIndex = 0;
             // 
@@ -192,7 +192,7 @@
             this.TextBoxName.Size = new System.Drawing.Size(295, 23);
             this.TextBoxName.TabIndex = 0;
             // 
-            // EditBackupFile
+            // EditBackupFileDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -202,13 +202,12 @@
             this.Controls.Add(this.ButtonSaveBackup);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Gainsboro;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EditBackupFile";
-            this.ShowIcon = false;
+            this.Name = "EditBackupFileDetails";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
