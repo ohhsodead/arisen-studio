@@ -6,10 +6,10 @@ An open source desktop application designed to easily browse through a regularly
 
 ![Main Form](https://github.com/ohhsoash/ModioX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
 
-**Comments, ideas, suggestions?** You can contact [me](https://github.com/ohhsodead/) via [Email](mailto:bettercodes1@gmail.com).
+**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/FTCS3Xu) for support from our community!
 
 ## Note
-- It's recommend to reinstall updates for games that will be modded. So the tool can create backups of original game files, and then can be restored when uninstalling mods.
+- It's recommend to update games before installing mods. In case any mods don't work for you, they can be uninstalled using the original game files.
 
 ## Features
 * Fast, lightweight and simple to use
@@ -34,7 +34,7 @@ Download and run the latest version of the Windows installer, "ModioX.Installer.
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
  
 ## Requesting Mods
-I understand that not every mod is available, you can use the **REQUEST MOD** feature to open an issue with the details and they will be submitted to our database.
+I'm sure that not all mods are available in this app. I encourage you to open an issue with the details, so that they can be submitted to our database.
  
 ## Credits / Libraries
 - Appropriate Authors of all Mods
