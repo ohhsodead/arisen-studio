@@ -6,7 +6,7 @@ An open source desktop application designed to easily browse through a regularly
 
 ![Main Form](https://github.com/ohhsoash/ModioX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
 
-**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/FTCS3Xu) for support and requesting mods.
+**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/FTCS3Xu) for support from our community!
 
 ## Note
 - It's recommend to update games before installing mods. In case any mods don't work for you, they can be uninstalled using the original game files.
