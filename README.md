@@ -8,9 +8,6 @@ An open source desktop application designed to easily browse through a regularly
 
 **Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/FTCS3Xu) for support from our community!
 
-## Note
-- It's recommend to update games before installing mods. In case any mods don't work for you, they can be uninstalled using the original game files.
-
 ## Features
 * Fast, lightweight and simple to use
 * Browse a large database of ps3 mods
