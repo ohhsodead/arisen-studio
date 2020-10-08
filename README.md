@@ -16,7 +16,7 @@ An open source desktop application designed to easily browse through a regularly
 * Install and uninstall mods to games
 * Automatically detect game region
 * Backup and restore original game files
-* Directory listings with basic commands
+* File explorer with basic commands
 * Save multiple console profiles
 
 ## Requirements
@@ -31,7 +31,7 @@ Download and run the latest version of the Windows installer, "ModioX.Installer.
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
  
 ## Requesting Mods
-I'm sure that not all mods are available in this app. I encourage you to open an issue with the details, then they can be submitted to our database.
+I know that not all mods aren't on our database yet. But it you open an issue with the details, they will be added for you.
  
 ## Credits / Libraries
 - Appropriate Authors of all Mods
