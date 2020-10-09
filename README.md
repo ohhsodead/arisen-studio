@@ -13,11 +13,11 @@ An open source desktop application designed to easily browse through a regularly
 * Browse a large database of ps3 mods
 * Complete with info, creator, version, etc.
 * Filter by firmware, mod type and region
-* Install and uninstall mods
-* Automatical game region detection
-* Backup and restore original game files
-* File manager for local/console files
-* Save multiple console profiles
+* Download, install and uninstall mods
+* Automatic game region detection
+* Backup and restore game files
+* Built-in FTP file manager
+* Add multiple console profiles
 
 ## Requirements
 * An internet connection
