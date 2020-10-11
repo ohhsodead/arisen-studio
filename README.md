@@ -1,6 +1,6 @@
 <h1 align="left">ModioX</h1>
  
-An open source desktop application designed to easily browse through a regularly updated database of game mods, homebrew, resources and themes for the PlayStation 3. A library that is populated by myself, few friends and awesome contributors, so that all mods have been tested and verified. It also uses an FTP client to be able to install and uninstall files directly to your console. Without the need for digging up old threads or using file managers - this aims to do everything for you. 
+An open source desktop application designed to easily browse through a regularly updated database of game mods, homebrew, resources and themes for the PlayStation 3. A library that is populated by myself, few friends and awesome contributors, so that all mods have been tested and verified. It also acts as an FTP client to be able to install and uninstall files directly to your console. Without the need for digging up old threads or using file managers - this aims to do everything for you. 
 
 <h4 align="left">the only one of its kind (i think)</h4>
 
@@ -31,7 +31,7 @@ Download and run the latest version of the Windows installer, "ModioX.Installer.
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
  
 ## Requesting Mods
-I know that not all mods aren't on our database yet. But it you open an issue with the details, they will be added for you.
+I know that not all mods aren't on our database yet. But if you open an issue including the details they will be added for you.
  
 ## Credits / Libraries
 - Appropriate Authors of all Mods
@@ -40,7 +40,7 @@ I know that not all mods aren't on our database yet. But it you open an issue wi
 - [Apache log4net](https://logging.apache.org/log4net/)
  
 ## Disclaimer
-I can accept no responsibility for any damage you cause to your system by using this tool. Follow the instructions so you shouldn't have any issues.
+I can accept no responsibility for any damage you cause to your system by using this tool.
 
 ## License
 This project is released under the GNU General Public License v3.
