@@ -1,6 +1,23 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## Beta 1.4.4
+- Installed mods are now downloaded to Documents folder
+- Added a link to the discord community server
+- Added more helpful comments to code
+- Fixed a possible error with installing/uninstalling mods
+
+## Beta 1.4.3
+- Instruction message will show on first time use
+- Backup files are now saved to Documents folder
+- You can now add external applications
+- You can now reset all settings to default
+- You can now manually check for updates
+- You can now see game mods installed date/time
+- A changelog window will now show after an update
+- Added direct Github API for retrieving new release data
+- Other minor improvements 
+
 ## Beta 1.4.2
 - Added support for installing game saves
 - Added support for installing files to both console USB ports
