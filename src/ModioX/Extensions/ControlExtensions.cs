@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace ModioX.Extensions
 {
-    internal abstract class ControlExtensions
+    internal static class ControlExtensions
     {
         /// <summary>
         /// Change button text and auto size

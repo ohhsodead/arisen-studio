@@ -11,7 +11,7 @@ namespace ModioX.Models.Database
     public partial class CategoriesData
     {
         /// <summary>
-        ///     
+        ///     Contains all of the suppored categories/games from the database
         /// </summary>
         public List<Category> Categories { get; set; }
 
@@ -22,19 +22,10 @@ namespace ModioX.Models.Database
         {
             public string Id { get; set; }
 
-            /// <summary>
-            ///     
-            /// </summary>
             public string Title { get; set; }
 
-            /// <summary>
-            ///     
-            /// </summary>
             public string Type { get; set; }
 
-            /// <summary>
-            ///     
-            /// </summary>
             public string[] Regions { get; set; }
 
             /// <summary>
@@ -61,11 +52,11 @@ namespace ModioX.Models.Database
             /// <param name="hostAddress">Console ip address</param>
             /// <param name="gameId">Game Id</param>
             /// <returns></returns>
-            public string GetGameRegion(string hostAddress, string gameId)
+            public string GetGameRegion(Form owner, string gameId)
             {
-                if (MainForm.SettingsData.RememberGameRegions)
+                if (MainWindow.SettingsData.RememberGameRegions)
                 {
-                    string gameRegion = MainForm.SettingsData.GetGameRegion(gameId);
+                    string gameRegion = MainWindow.SettingsData.GetGameRegion(gameId);
 
                     if (!string.IsNullOrEmpty(gameRegion))
                     {
@@ -73,35 +64,36 @@ namespace ModioX.Models.Database
                     }
                 }
 
-                if (MainForm.SettingsData.AutoDetectGameRegion)
+                if (MainWindow.SettingsData.AutoDetectGameRegion)
                 {
                     List<string> detectedRegions = new List<string>();
 
-                    using (FtpConnection ftpConnection = new FtpConnection(hostAddress))
+                    FtpConnection ftpConnection = MainWindow.GetFtpConnection();
+                    ftpConnection.Open();
+
+                    foreach (string region in Regions)
                     {
-                        foreach (string region in Regions)
+                        if (ftpConnection.DirectoryExists($"/dev_hdd0/game/{region}"))
                         {
-                            if (ftpConnection.DirectoryExists($"/dev_hdd0/game/{region}"))
-                            {
-                                detectedRegions.Add(region);
-                            }
+                            detectedRegions.Add(region);
                         }
                     }
 
+
                     foreach (string region in detectedRegions)
                     {
-                        if (DarkMessageBox.Show(MainForm.mainForm, $"Game Region: {region} has been found for: {Title}\nIs this the correct game region?", "Found Game Region", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (DarkMessageBox.Show(MainWindow.mainForm, $"Game Region: {region} has been found for: {Title}\nIs this the correct game region?", "Found Game Region", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             return region;
                         }
                     }
 
-                    _ = DarkMessageBox.Show(MainForm.mainForm, "Could not find any regions on your console for this game title. Make sure you have updated your game correctly, updates will be found under 'Game Data Utility' if you have this installed already.", "No Game Region Found", MessageBoxIcon.Error);
+                    _ = DarkMessageBox.Show(MainWindow.mainForm, "Could not find any regions on your console for this game title. Make sure you have updated your game correctly, updates will be found under 'Game Data Utility' if you have this installed already.", "No Game Region Found", MessageBoxIcon.Error);
                     return null;
                 }
                 else
                 {
-                    return Utilities.GetItemFromList("Game Regions", Regions.ToList());
+                    return DialogExtensions.ShowListInputDialog(owner, "Game Regions", Regions.ToList());
                 }
             }
         }

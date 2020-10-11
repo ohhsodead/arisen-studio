@@ -60,17 +60,115 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=2.0.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.11\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.Internal, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Cryptography.Internal.3.1.8\lib\netstandard2.0\Microsoft.AspNetCore.Cryptography.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.DataProtection.3.1.8\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.DataProtection.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.3.1.8\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Session, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Session.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Session.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Hosting.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Pipelines, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.4.7.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.4.7.0\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.7.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -81,134 +179,146 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\ControlExtensions.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\DialogExtensions.cs" />
     <Compile Include="Extensions\FtpConnection.cs" />
     <Compile Include="Extensions\FtpExtensions.cs" />
     <Compile Include="Extensions\ImageExtensions.cs" />
     <Compile Include="Extensions\HttpExtensions.cs" />
     <Compile Include="Extensions\KnownFolders.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Forms\EditExternalApplications.cs">
+    <Compile Include="Extensions\UpdateExtensions.cs" />
+    <Compile Include="Forms\Dialogs\LoginDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditExternalApplications.Designer.cs">
+    <Compile Include="Forms\Dialogs\LoginDialog.Designer.cs">
+      <DependentUpon>LoginDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputDialog.Designer.cs">
+      <DependentUpon>InputDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\EditExternalApplications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\EditExternalApplications.Designer.cs">
       <DependentUpon>EditExternalApplications.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditGameRegions.cs">
+    <Compile Include="Forms\Settings\EditGameRegions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditGameRegions.Designer.cs">
+    <Compile Include="Forms\Settings\EditGameRegions.Designer.cs">
       <DependentUpon>EditGameRegions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DataViewWindow.cs">
+    <Compile Include="Forms\Dialogs\DataViewDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DataViewWindow.Designer.cs">
-      <DependentUpon>DataViewWindow.cs</DependentUpon>
+    <Compile Include="Forms\Dialogs\DataViewDialog.Designer.cs">
+      <DependentUpon>DataViewDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RequestMods.cs">
+    <Compile Include="Forms\Windows\RequestModsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RequestMods.Designer.cs">
-      <DependentUpon>RequestMods.cs</DependentUpon>
+    <Compile Include="Forms\Windows\RequestModsWindow.Designer.cs">
+      <DependentUpon>RequestModsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FileExplorer.cs">
+    <Compile Include="Forms\Windows\FileManagerWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FileExplorer.Designer.cs">
-      <DependentUpon>FileExplorer.cs</DependentUpon>
+    <Compile Include="Forms\Windows\FileManagerWindow.Designer.cs">
+      <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions\Worker.cs" />
     <Compile Include="Models\Release Data\GitHubData.cs" />
     <Compile Include="Models\Resources\SettingsData.cs" />
-    <Compile Include="Forms\ConnectConsole.cs">
+    <Compile Include="Forms\Dialogs\ConnectionDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ConnectConsole.Designer.cs">
-      <DependentUpon>ConnectConsole.cs</DependentUpon>
+    <Compile Include="Forms\Dialogs\ConnectionDialog.Designer.cs">
+      <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditCustomModDetails.cs">
+    <Compile Include="Forms\Windows\BackupFilesWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditCustomModDetails.Designer.cs">
-      <DependentUpon>EditCustomModDetails.cs</DependentUpon>
+    <Compile Include="Forms\Windows\BackupFilesWindow.Designer.cs">
+      <DependentUpon>BackupFilesWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditCustomMods.cs">
+    <Compile Include="Forms\Dialogs\BackupFileDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditCustomMods.Designer.cs">
-      <DependentUpon>EditCustomMods.cs</DependentUpon>
+    <Compile Include="Forms\Dialogs\BackupFileDialog.Designer.cs">
+      <DependentUpon>BackupFileDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditBackupFiles.cs">
+    <Compile Include="Forms\Windows\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditBackupFiles.Designer.cs">
-      <DependentUpon>EditBackupFiles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\EditBackupFileDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\EditBackupFileDetails.Designer.cs">
-      <DependentUpon>EditBackupFileDetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Forms\Windows\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Database\CategoriesData.cs" />
     <Compile Include="Models\Database\ModsData.cs" />
     <Compile Include="Extensions\Utilities.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\EditConsoleProfiles.cs">
+    <Compile Include="Forms\Dialogs\NewConnectionDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditConsoleProfiles.Designer.cs">
-      <DependentUpon>EditConsoleProfiles.cs</DependentUpon>
+    <Compile Include="Forms\Dialogs\NewConnectionDialog.Designer.cs">
+      <DependentUpon>NewConnectionDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Dialogs\ListItemPicker.cs">
+    <Compile Include="Forms\Dialogs\ListItemDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Dialogs\ListItemPicker.Designer.cs">
-      <DependentUpon>ListItemPicker.cs</DependentUpon>
+    <Compile Include="Forms\Dialogs\ListItemDialog.Designer.cs">
+      <DependentUpon>ListItemDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppUpdate\AppUpdate.cs" />
-    <EmbeddedResource Include="Forms\ConnectConsole.resx">
-      <DependentUpon>ConnectConsole.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Dialogs\ConnectionDialog.resx">
+      <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditExternalApplications.resx">
+    <EmbeddedResource Include="Forms\Dialogs\AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\InputDialog.resx">
+      <DependentUpon>InputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\LoginDialog.resx">
+      <DependentUpon>LoginDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\EditExternalApplications.resx">
       <DependentUpon>EditExternalApplications.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditGameRegions.resx">
+    <EmbeddedResource Include="Forms\Settings\EditGameRegions.resx">
       <DependentUpon>EditGameRegions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DataViewWindow.resx">
-      <DependentUpon>DataViewWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Dialogs\DataViewDialog.resx">
+      <DependentUpon>DataViewDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RequestMods.resx">
-      <DependentUpon>RequestMods.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Windows\RequestModsWindow.resx">
+      <DependentUpon>RequestModsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditCustomModDetails.resx">
-      <DependentUpon>EditCustomModDetails.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Windows\BackupFilesWindow.resx">
+      <DependentUpon>BackupFilesWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditCustomMods.resx">
-      <DependentUpon>EditCustomMods.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Dialogs\BackupFileDialog.resx">
+      <DependentUpon>BackupFileDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditBackupFiles.resx">
-      <DependentUpon>EditBackupFiles.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Windows\FileManagerWindow.resx">
+      <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditBackupFileDetails.resx">
-      <DependentUpon>EditBackupFileDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FileExplorer.resx">
-      <DependentUpon>FileExplorer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Windows\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -220,11 +330,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Forms\EditConsoleProfiles.resx">
-      <DependentUpon>EditConsoleProfiles.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Dialogs\NewConnectionDialog.resx">
+      <DependentUpon>NewConnectionDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dialogs\ListItemPicker.resx">
-      <DependentUpon>ListItemPicker.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Dialogs\ListItemDialog.resx">
+      <DependentUpon>ListItemDialog.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -241,6 +351,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-add-folder-22.png" />
     <None Include="Resources\icons8-heart-outline-22.png" />
     <None Include="Resources\icons8-heart-fill-22.png" />
     <None Include="Resources\icons8-software-installer-22.png" />
@@ -295,6 +406,9 @@
       <Project>{f19472f5-8c44-4c51-a8a0-b9de5f555255}</Project>
       <Name>DarkUI</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Backup Files\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

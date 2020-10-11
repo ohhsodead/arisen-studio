@@ -12,7 +12,7 @@ namespace ModioX.Models.Resources
         /// <summary>
         ///     Local path at where the settings file will be stored on the machine
         /// </summary>
-        public static readonly string SettingsDataFile = Path.Combine(KnownFolders.GetPath(KnownFolder.Documents), "ModioX", "SettingsData.json");
+        public static readonly string SettingsDataFile = $@"{Utilities.DocumentsFolder}\SettingsData.json";
 
         public bool FirstTimeUse { get; set; } = true;
 
@@ -47,7 +47,7 @@ namespace ModioX.Models.Resources
         /// <summary>
         ///     Gets the users external applications file location for the specified application name
         /// </summary>
-        /// <param name="name">Game Id</param>
+        /// <param name="name">Name of the app</param>
         /// <returns>Game Region</returns>
         public string GetApplicationLocation(string name)
         {
@@ -66,11 +66,11 @@ namespace ModioX.Models.Resources
         /// </summary>
         /// <param name="name">Application Name</param>
         /// <param name="fileLocation">Application File Location</param>
-        public void UpdateApplication(string name, string fileLocation)
+        public void UpdateApplication(string appName, string fileLocation)
         {
-            ExternalApplication applicationIndex = ExternalApplications.Find(x => string.Equals(x.Name, name, StringComparison.CurrentCultureIgnoreCase));
+            ExternalApplication applicationIndex = ExternalApplications.Find(x => string.Equals(x.Name, appName, StringComparison.CurrentCultureIgnoreCase));
 
-            ExternalApplication externalApplcation = new ExternalApplication(name, fileLocation);
+            ExternalApplication externalApplcation = new ExternalApplication(appName, fileLocation);
 
             if (applicationIndex == null)
             {
@@ -84,7 +84,7 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        ///     Gets the users game region for the specified game id
+        ///     Gets the user's saved game region for the specified <see cref="ModsData.ModItem.GameId"/>
         /// </summary>
         /// <param name="gameId">Game Id</param>
         /// <returns>Game Region</returns>
@@ -103,8 +103,8 @@ namespace ModioX.Models.Resources
         /// <summary>
         ///     Either update or add the region to the specified game id
         /// </summary>
-        /// <param name="gameId">Game Id</param>
-        /// <param name="region">Game Region</param>
+        /// <param name="gameId">Specifies the <see cref="ModsData.ModItem.GameId"/></param>
+        /// <param name="region">Specifies the Game Region</param>
         public void UpdateGameRegion(string gameId, string region)
         {
             int gameIdIndex = GameRegions.FindIndex(x => string.Equals(x.GameId, gameId, StringComparison.CurrentCultureIgnoreCase));
@@ -186,7 +186,7 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        ///     
+        ///     Add a user's<see cref="CustomMod"/> details to settings
         /// </summary>
         /// <param name="customMod"></param>
         public void AddCustomMod(CustomMod customMod)
@@ -195,7 +195,7 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        ///     
+        ///     Updates the user's <see cref="CustomMod"/> details at the specified index 
         /// </summary>
         /// <param name="index"></param>
         /// <param name="customMod"></param>
@@ -220,7 +220,7 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        ///     
+        ///     Updates the installed game mods
         /// </summary>
         /// <param name="gameId"></param>
         /// <param name="gameRegion"></param>
@@ -235,7 +235,7 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        ///     
+        ///     Removes the installed mods matching the <see cref="ModsData.ModItem.GameId"/>
         /// </summary>
         /// <param name="gameId"></param>
         public void RemoveInstalledGame(string gameId)
@@ -254,7 +254,7 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        ///     
+        ///     Gets the current <see cref="GameModInstalled"/> the <see cref="ModsData.ModItem.GameId"/>
         /// </summary>
         /// <param name="gameId"></param>
         /// <returns></returns>
@@ -272,7 +272,7 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        ///     
+        ///     Returns the game region of which the mod was used to installed to game matching the <see cref="ModsData.ModItem.GameId"/>
         /// </summary>
         /// <param name="gameId"></param>
         /// <returns></returns>
@@ -291,19 +291,21 @@ namespace ModioX.Models.Resources
     }
 
     /// <summary>
-    /// 
+    ///     Create a console profile with the details
     /// </summary>
     public class ConsoleProfile
     {
-        public ConsoleProfile(string name, string address)
-        {
-            Name = name;
-            Address = address;
-        }
-
         public string Name { get; set; }
 
         public string Address { get; set; }
+
+        public int Port { get; set; } = 21;
+
+        public string Username { get; set; }
+
+        public string Password { get; set; }
+
+        public bool UseDefaultCredentials { get; set; } = true;
 
         public override string ToString()
         {
@@ -312,7 +314,7 @@ namespace ModioX.Models.Resources
     }
 
     /// <summary>
-    ///     
+    ///     Creates a backup file with the details
     /// </summary>
     public class BackupFile
     {
@@ -353,6 +355,12 @@ namespace ModioX.Models.Resources
         {
             return InstallFiles.Any(x => x.ConsolePath.ToUpper().Contains("{USERID}"));
         }
+
+        public bool RequiresUsbDevice()
+        {
+            return InstallFiles.Any(x => x.ConsolePath.ToUpper().Contains("{USBDEV}"));
+        }
+
 
         public DateTime CreatedDate { get; set; } = DateTime.Now;
     }
@@ -395,7 +403,7 @@ namespace ModioX.Models.Resources
 
         public int Files { get; set; }
 
-        public DateTime DateInstalled { get; set; } = DateTime.Now;
+        public DateTime DateInstalled { get; set; }
     }
 
     /// <summary>

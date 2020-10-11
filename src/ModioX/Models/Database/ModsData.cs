@@ -12,12 +12,12 @@ namespace ModioX.Models.Database
     public partial class ModsData
     {
         /// <summary>
-        ///     Contains all of the mods
+        ///     Contains all of the mods from the database
         /// </summary>
         public List<ModItem> Mods { get; set; }
 
         /// <summary>
-        ///     Contains all of the mod information; Id, Name, Type, etc.
+        ///     Contains the useful mod information, id, name, mod type, author, etc.
         /// </summary>
         public class ModItem
         {
@@ -87,7 +87,7 @@ namespace ModioX.Models.Database
             public bool IsGameSave => Type.Equals("GAMESAVE");
 
             /// <summary>
-            ///     Checks whether any file installs are at the 'dev_rebug' (firmware) folder
+            ///     Check whether any files are installed at the 'dev_rebug' (firmware) folder
             /// </summary>
             /// <returns></returns>
             public bool IsInstallToRebugFolder => InstallPaths.Any(x => x.Contains("dev_rebug/"));
@@ -166,7 +166,7 @@ namespace ModioX.Models.Database
             }
 
             /// <summary>
-            ///     Gets the mod game modes 
+            ///     Returns the abbreviated game modes to their actual names
             /// </summary>
             /// <returns></returns>
             public List<string> GameModes
@@ -213,27 +213,26 @@ namespace ModioX.Models.Database
 
 
             /// <summary>
-            ///     Gets the directory structure for extracting modded files to
+            ///     Gets the directory for extracting modded files to.
             /// </summary>
             /// <returns></returns>
-            public string DirectoryDownloadData => $@"{Utilities.AppDataPath}{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} (v{Version}) ({Id})\";
+            public string DownloadDataDirectory => $@"{Utilities.DocumentsFolder}\Mods\{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} (v{Version}) (#{Id})\";
 
             /// <summary>
-            ///     Gets the downloaded mods archive file path
+            ///     Gets the downloaded mods archive file path.
             /// </summary>
             /// <returns>Mods Archive File Path</returns>
-            public string ArchiveZipFile => $@"{Utilities.AppDataPath}{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} (v{Version}) ({Id}).zip";
-
+            public string ArchiveZipFile => $@"{Utilities.DocumentsFolder}\Mods\{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} (v{Version}) (#{Id}).zip";
 
             /// <summary>
-            ///     Downloads the modded files archive and extracts the files to the user's appdata path
+            ///     Downloads the modded files archive and extracts all files to <see cref="DownloadDataDirectory"/>
             /// </summary>
             public void DownloadInstallFiles()
             {
-                string archivePath = DirectoryDownloadData;
+                string archivePath = DownloadDataDirectory;
                 string archiveFilePath = ArchiveZipFile;
 
-                if (!MainForm.SettingsData.AlwaysDownloadInstallFiles && File.Exists(archiveFilePath))
+                if (!MainWindow.SettingsData.AlwaysDownloadInstallFiles && File.Exists(archiveFilePath))
                 {
                     return;
                 }
@@ -248,7 +247,7 @@ namespace ModioX.Models.Database
                     File.Delete(archiveFilePath);
                 }
 
-                _ = Directory.CreateDirectory(DirectoryDownloadData);
+                _ = Directory.CreateDirectory(DownloadDataDirectory);
 
                 using (WebClient wc = new WebClient())
                 {
@@ -268,14 +267,14 @@ namespace ModioX.Models.Database
                 string zipFileName = $"{StringExtensions.ReplaceInvalidChars(Name)} v{Version} for {GameId.ToUpper()}.zip";
                 string zipFilePath = Path.Combine(localPath, zipFileName);
 
-                GenerateReadMeAtPath(DirectoryDownloadData);
+                GenerateReadMeAtPath(DownloadDataDirectory);
 
                 using (WebClient wc = new WebClient())
                 {
                     wc.Headers.Add("Accept: application/zip");
                     wc.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
                     wc.DownloadFile(new Uri(Url), zipFilePath);
-                    Utilities.AddFilesToZip(zipFilePath, new string[] { Path.Combine(DirectoryDownloadData, "README.txt") });
+                    Utilities.AddFilesToZip(zipFilePath, new string[] { Path.Combine(DownloadDataDirectory, "README.txt") });
                 }
             }
 
@@ -294,7 +293,7 @@ namespace ModioX.Models.Database
                 File.WriteAllLines(Path.Combine(directoryPath, "README.txt"), new string[]
                 {
                     "Mod Id: #" + Id.ToString(),
-                    "Title: " + MainForm.Categories.GetCategoryById(GameId).Title,
+                    "Title: " + MainWindow.Categories.GetCategoryById(GameId).Title,
                     "Name: " + Name,
                     "System Type: " + string.Join(", ", Firmwares),
                     "Mod Type: " + Type,
@@ -303,7 +302,7 @@ namespace ModioX.Models.Database
                     "Created By: " + Author,
                     "Submitted By: " + SubmittedBy,
                     "Game Type: " + string.Join(", ", GameModes),
-                    "Installation File Paths: " + string.Join(", ", InstallPaths),
+                    "InstallationFile Paths: " + string.Join(", ", InstallPaths),
                     "Archive Download URL: " + Url,
                     "-------------------------------------------------",
                     "Description:\n" + Description
@@ -314,7 +313,7 @@ namespace ModioX.Models.Database
         /// <summary>
         ///     
         /// </summary>
-        /// <param name="categoryId"></param>
+        /// <param name="categoryId"><see cref="CategoriesData.Category.Id"/></param>
         /// <returns></returns>
         public List<string> AllModTypesForCategoryId(string categoryId)
         {
@@ -371,7 +370,7 @@ namespace ModioX.Models.Database
             if (categoryId.Equals("fvrt"))
             {
                 return (from ModItem modItem in Mods
-                        where MainForm.SettingsData.FavoritedIds.Contains(modItem.Id.ToString())
+                        where MainWindow.SettingsData.FavoritedIds.Contains(modItem.Id.ToString())
                         && modItem.Name.ToLower().Contains(name.ToLower())
                         && modItem.Firmwares.Exists(x => x.ToLower().Contains(firmware.ToLower()))
                         && modItem.Type.ToLower().Contains(type.ToLower())
@@ -393,7 +392,7 @@ namespace ModioX.Models.Database
         /// <summary>
         ///     Get the <see cref="modItem"/> matching the specified modId
         /// </summary>
-        /// <param name="modId">Name of the mod</param>
+        /// <param name="modId"><see cref="modId"/></param>
         /// <returns>Mod information</returns>
         public ModItem GetModById(long modId)
         {

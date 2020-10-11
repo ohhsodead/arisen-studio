@@ -20,19 +20,14 @@ namespace ModioX.Extensions
     internal static class Utilities
     {
         /// <summary>
-        ///     Application user's data roaming directory
+        ///     Retrieves the user's documents folder.
         /// </summary>
-        internal static string AppDataPath { get; } = $@"{Application.UserAppDataPath}\";
+        internal static string DocumentsFolder { get; } = $@"{KnownFolders.GetPath(KnownFolder.Documents)}\ModioX\";
 
         /// <summary>
         ///     Web URL for this projects repository on GitHub.
         /// </summary>
         internal const string GitHubRepo = "https://github.com/ohhsodead/ModioX/";
-
-        /// <summary>
-        ///     Web API for this projects repository on GitHub with the latest release information.
-        /// </summary>
-        internal const string GitHubRelease = "https://api.github.com/repos/ohhsodead/ModioX/releases/latest";
 
         /// <summary>
         ///     Get the current application product version.
@@ -44,7 +39,7 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        ///     Download and return the mods information.
+        ///     Download and return the data for mods.
         /// </summary>
         /// <returns></returns>
         internal static ModsData GetModsData()
@@ -73,7 +68,7 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        ///     Download and return the information for categories and games.
+        ///     Download and return the data for categories and games.
         /// </summary>
         /// <returns></returns>
         internal static CategoriesData GetCategoriesData()
@@ -102,28 +97,13 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        ///         Returns the item selected from the list item picker.
-        /// </summary>
-        /// <param name="title">Window title</param>
-        /// <param name="items">Items to select from</param>
-        /// <returns></returns>
-        public static string GetItemFromList(string title, List<string> items)
-        {
-            using (ListItemPicker listViewDialog = new ListItemPicker() { Text = title, Items = items })
-            {
-                _ = listViewDialog.ShowDialog();
-                return listViewDialog.SelectedItem;
-            }
-        }
-
-        /// <summary>
         ///     Depth-first recursive delete, with handling for descendant directories open in Windows Explorer.
         /// </summary>
         internal static void DeleteDirectory(string path)
         {
             foreach (string directory in Directory.GetDirectories(path))
             {
-                DeleteDirectory(directory);
+                Directory.Delete(directory, true);
             }
 
             try
@@ -152,7 +132,7 @@ namespace ModioX.Extensions
                                     + $"title=%5BMOD REPORT%5D {formatModName} ({modItem.GameId.ToUpper()})"
                                     + $"&labels=mod report&"
                                     + $"body=- Mod Name: {formatModName} (ID%23{modItem.Id})%0A"
-                                    + $"- Category: {MainForm.Categories.GetCategoryById(modItem.GameId).Title}%0A"
+                                    + $"- Category: {MainWindow.Categories.GetCategoryById(modItem.GameId).Title}%0A"
                                     + $"- Mod Type: {modItem.Type}%0A"
                                     + $"- Author: {modItem.Author}%0A"
                                     + $"- Version: {modItem.Version}%0A"
@@ -232,82 +212,6 @@ namespace ModioX.Extensions
             {
                 return false;
             }
-        }
-
-        /// <summary>
-        ///     
-        /// </summary>
-        /// <param name="time"></param>
-        /// <returns></returns>
-        public static DateTime? ToDateTime(this WINAPI.FILETIME time)
-        {
-            if ((time.dwHighDateTime == 0) && (time.dwLowDateTime == 0))
-            {
-                return null;
-            }
-
-            uint dwLowDateTime = (uint)time.dwLowDateTime;
-#pragma warning disable CS0675 // Bitwise-or operator used on a sign-extended operand
-            long fileTime = (time.dwHighDateTime << 0x20) | dwLowDateTime;
-#pragma warning restore CS0675 // Bitwise-or operator used on a sign-extended operand
-            return new DateTime?(DateTime.FromFileTimeUtc(fileTime));
-        }
-
-        /// <summary>
-        ///     Shows the data view window with the specified parameters
-        /// </summary>
-        /// <param name="owner"></param>
-        /// <param name="title"></param>
-        /// <param name="subtitle"></param>
-        /// <param name="body"></param>
-        public static void ShowDataViewWindow(Form owner, string title, string subtitle, string body)
-        {
-            using (DataViewWindow dataViewWindow = new DataViewWindow { Text =  title })
-            {
-                dataViewWindow.LabelTitle.Text = subtitle;
-                dataViewWindow.LabelData.Text = body;
-
-                dataViewWindow.MaximumSize = new Size(dataViewWindow.MaximumSize.Width, owner.Height + 100);
-                dataViewWindow.Size = new Size(dataViewWindow.Width, dataViewWindow.Height + 15);
-                _ = dataViewWindow.ShowDialog(owner);
-            }
-        }
-
-        /// <summary>
-        ///     Shows the changelog form with the new Github release data
-        /// </summary>
-        /// <param name="owner">Parent owner of the data view window</param>
-        public static void ShowWhatsNewWindow(Form owner)
-        {
-            try
-            {
-                GitHubData GitHubData = GetGitHubReleaseData();
-
-                string releaseBody = GitHubData.Body;
-                string releaseBodyWithoutLastLine = releaseBody.Substring(0, releaseBody.Trim().LastIndexOf(Environment.NewLine));
-
-                ShowDataViewWindow(owner, GitHubData.Name + " - What's New", "Change Log", releaseBodyWithoutLastLine.Replace("-", "•"));
-            }
-            catch (Exception ex)
-            {
-                Program.Log.Error("Unable to load github release data.", ex);
-            }
-        }
-
-        /// <summary>
-        ///     
-        /// </summary>
-        /// <returns></returns>
-        public static GitHubData GetGitHubReleaseData()
-        {
-            GitHubData GitHubReleaseData;
-
-            using (StreamReader streamReader = new StreamReader(HttpExtensions.GetStream(GitHubRelease)))
-            {
-                GitHubReleaseData = JsonConvert.DeserializeObject<GitHubData>(streamReader.ReadToEnd());
-            }
-
-            return GitHubReleaseData;
         }
     }
 }
