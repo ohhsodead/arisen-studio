@@ -1,5 +1,11 @@
 <h1 align="left">ModioX</h1>
- 
+
+[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/ModioX.svg)](https://github.com/ohhsodead/ModioX/releases/)
+[![Github Downloads](https://img.shields.io/github/downloads/ohhsodead/ModioX/total.svg)](https://github.com/ohhsodead/ModioX/releases/)
+[![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/ModioX.svg)](https://gitHub.com/ohhsodead/ModioX/issues/)
+[![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/ModioX.svg)](https://github.com/ohhsodead/ModioX/issues?q=is%3Aissue+is%3Aclosed)
+[![GitHub Stargazers](https://img.shields.io/github/stars/ohhsodead/ModioX.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/ohhsodead/ModioX/stargazers/)
+
 An open source desktop application designed to easily browse through a regularly updated database of mods, game saves, homebrew, resources and themes for the PlayStation 3. A library that is populated by myself, few friends and awesome contributors, so that all mods have been tested and verified. ModioX also acts as an FTP client to be able to install and uninstall files directly to your console. Without the need for digging up old threads or using file managers - this aims to do everything for you. 
 
 <h4 align="left">the only one of its kind (i think)</h4>
