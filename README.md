@@ -31,7 +31,11 @@ An open source desktop application designed to easily browse through a regularly
 * PlayStation 3 with MFW
  
 ## Installation
+### Windows
 Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/ModioX/releases/latest) page.
+
+### Linux
+![Linux Users](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/linux/note-for-linux-users.png)
  
 ## Contributing
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
