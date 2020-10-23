@@ -40,7 +40,7 @@
             this.ButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.ButtonCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonCancel.Location = new System.Drawing.Point(265, 48);
+            this.ButtonCancel.Location = new System.Drawing.Point(170, 48);
             this.ButtonCancel.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.Size = new System.Drawing.Size(85, 25);
@@ -54,7 +54,7 @@
             this.ButtonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ButtonOK.Enabled = false;
             this.ButtonOK.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonOK.Location = new System.Drawing.Point(170, 48);
+            this.ButtonOK.Location = new System.Drawing.Point(265, 48);
             this.ButtonOK.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonOK.Name = "ButtonOK";
             this.ButtonOK.Size = new System.Drawing.Size(85, 25);
@@ -86,7 +86,7 @@
             this.TextBoxName.TabIndex = 0;
             this.TextBoxName.TextChanged += new System.EventHandler(this.TextBoxUsername_TextChanged);
             // 
-            // NameWindow
+            // InputDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -101,13 +101,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "NameWindow";
+            this.Name = "InputDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add New Folder";
-            this.Load += new System.EventHandler(this.ConsoleCredentials_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

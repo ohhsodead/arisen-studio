@@ -1,5 +1,6 @@
 ﻿using ModioX.Extensions;
 using ModioX.Forms;
+using ModioX.Io;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,12 +13,17 @@ namespace ModioX.Models.Database
     public partial class ModsData
     {
         /// <summary>
-        ///     Contains all of the mods from the database
+        ///     Get the date/time the database was last updated.
+        /// </summary>
+        public DateTime LastUpdated { get; set; }
+
+        /// <summary>
+        ///     Get the mods from the database.
         /// </summary>
         public List<ModItem> Mods { get; set; }
 
         /// <summary>
-        ///     Contains the useful mod information, id, name, mod type, author, etc.
+        ///     Get the mod's details such as the id, name, author, etc.
         /// </summary>
         public class ModItem
         {
@@ -48,7 +54,7 @@ namespace ModioX.Models.Database
             public string[] InstallPaths { get; set; }
 
             /// <summary>
-            ///     Get the mods' category type
+            ///     Get the category type.
             /// </summary>
             /// <param name="categoriesData"></param>
             /// <returns></returns>
@@ -67,38 +73,38 @@ namespace ModioX.Models.Database
 
 
             /// <summary>
-            ///     Check whether install requires a game region to be specified
+            ///     Check whether install requires a game region to be specified.
             /// </summary>
             public bool RequiresGameRegion => InstallPaths.Any(x => x.Contains("{REGION}"));
 
             /// <summary>
-            ///     Check whether install requires a user id to be specified
+            ///     Check whether install requires a user id to be specified.
             /// </summary>
             public bool RequiresUserId => InstallPaths.Any(x => x.Contains("{USERID}"));
 
             /// <summary>
-            ///     Check whether install requires a usb device to be connected to console
+            ///     Check whether install requires a USB device to be connected to console
             /// </summary>
             public bool RequiresUsbDevice => InstallPaths.Any(x => x.Contains("{USBDEV}"));
 
             /// <summary>
-            ///     Check whether this mod is a game save
+            ///     Check whether this mod is a game save.
             /// </summary>
             public bool IsGameSave => Type.Equals("GAMESAVE");
 
             /// <summary>
-            ///     Check whether any files are installed at the 'dev_rebug' (firmware) folder
+            ///     Check whether any files are installed at the 'dev_rebug' (firmware) folder.
             /// </summary>
             /// <returns></returns>
-            public bool IsInstallToRebugFolder => InstallPaths.Any(x => x.Contains("dev_rebug/"));
+            public bool IsInstallToRebugFolder => InstallPaths.Any(x => x.StartsWith("/dev_rebug/"));
 
             /// <summary>
-            ///     Check whether mod is for any region
+            ///     Check whether mod is for any region.
             /// </summary>
             public bool IsAnyRegion => Region.Equals("ALL") || Region.Equals("-");
 
             /// <summary>
-            ///     Get all the supported firmwares
+            ///     Get all the mod types.
             /// </summary>
             /// <returns></returns>
             public List<string> ModTypes
@@ -117,7 +123,7 @@ namespace ModioX.Models.Database
             }
 
             /// <summary>
-            ///     Get all the supported firmwares
+            ///     Get all the supported firmwares.
             /// </summary>
             /// <returns></returns>
             public List<string> Firmwares
@@ -136,7 +142,7 @@ namespace ModioX.Models.Database
             }
 
             /// <summary>
-            ///     Get the supported game regions
+            ///     Get the supported game regions.
             /// </summary>
             /// <returns></returns>
             public List<string> GameRegions
@@ -166,7 +172,7 @@ namespace ModioX.Models.Database
             }
 
             /// <summary>
-            ///     Returns the abbreviated game modes to their actual names
+            ///     Get the game modes actual names from their abbreviated names.
             /// </summary>
             /// <returns></returns>
             public List<string> GameModes
@@ -211,18 +217,17 @@ namespace ModioX.Models.Database
                 }
             }
 
-
             /// <summary>
             ///     Gets the directory for extracting modded files to.
             /// </summary>
             /// <returns></returns>
-            public string DownloadDataDirectory => $@"{Utilities.DocumentsFolder}\Mods\{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} (v{Version}) (#{Id})\";
+            public string DownloadDataDirectory => $@"{UserFolders.AppModsData}{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} (v{Version}) (#{Id})\";
 
             /// <summary>
             ///     Gets the downloaded mods archive file path.
             /// </summary>
             /// <returns>Mods Archive File Path</returns>
-            public string ArchiveZipFile => $@"{Utilities.DocumentsFolder}\Mods\{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} (v{Version}) (#{Id}).zip";
+            public string ArchiveZipFile => $@"{UserFolders.AppModsData}{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} (v{Version}) (#{Id}).zip";
 
             /// <summary>
             ///     Downloads the modded files archive and extracts all files to <see cref="DownloadDataDirectory"/>
@@ -239,7 +244,12 @@ namespace ModioX.Models.Database
 
                 if (Directory.Exists(archivePath))
                 {
-                    Utilities.DeleteDirectory(archivePath);
+                    UserFolders.DeleteDirectory(archivePath);
+                }
+
+                if (!Directory.Exists(archivePath))
+                {
+                    _ = Directory.CreateDirectory(archivePath);
                 }
 
                 if (File.Exists(archiveFilePath))
@@ -247,7 +257,7 @@ namespace ModioX.Models.Database
                     File.Delete(archiveFilePath);
                 }
 
-                _ = Directory.CreateDirectory(DownloadDataDirectory);
+                _ = Directory.CreateDirectory(archivePath);
 
                 using (WebClient wc = new WebClient())
                 {
@@ -262,27 +272,28 @@ namespace ModioX.Models.Database
             ///     Download mods archive to the specified local folder path
             /// </summary>
             /// <param name="localPath">Path to downloads mods archive at folder</param>
-            public void DownloadArchiveAtPath(string localPath)
+            public void DownloadArchiveAtPath(CategoriesData categoriesData, string localPath)
             {
                 string zipFileName = $"{StringExtensions.ReplaceInvalidChars(Name)} v{Version} for {GameId.ToUpper()}.zip";
                 string zipFilePath = Path.Combine(localPath, zipFileName);
 
-                GenerateReadMeAtPath(DownloadDataDirectory);
+                GenerateReadMeAtPath(categoriesData, DownloadDataDirectory);
 
                 using (WebClient wc = new WebClient())
                 {
                     wc.Headers.Add("Accept: application/zip");
                     wc.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
                     wc.DownloadFile(new Uri(Url), zipFilePath);
-                    Utilities.AddFilesToZip(zipFilePath, new string[] { Path.Combine(DownloadDataDirectory, "README.txt") });
+                    Archives.AddFilesToZip(zipFilePath, new string[] { Path.Combine(DownloadDataDirectory, "README.txt") });
                 }
             }
 
             /// <summary>
             ///     Creates and writes the mod information to a text file at the specified path
             /// </summary>
+            /// <param name="categoriesData"></param>
             /// <param name="directoryPath"></param>
-            public void GenerateReadMeAtPath(string directoryPath)
+            public void GenerateReadMeAtPath(CategoriesData categoriesData, string directoryPath)
             {
                 if (!Directory.Exists(directoryPath))
                 {
@@ -293,7 +304,7 @@ namespace ModioX.Models.Database
                 File.WriteAllLines(Path.Combine(directoryPath, "README.txt"), new string[]
                 {
                     "Mod Id: #" + Id.ToString(),
-                    "Title: " + MainWindow.Categories.GetCategoryById(GameId).Title,
+                    "Title: " + categoriesData.GetCategoryById(GameId).Title,
                     "Name: " + Name,
                     "System Type: " + string.Join(", ", Firmwares),
                     "Mod Type: " + Type,
@@ -302,7 +313,7 @@ namespace ModioX.Models.Database
                     "Created By: " + Author,
                     "Submitted By: " + SubmittedBy,
                     "Game Type: " + string.Join(", ", GameModes),
-                    "InstallationFile Paths: " + string.Join(", ", InstallPaths),
+                    "Installation File Paths: " + string.Join(", ", InstallPaths),
                     "Archive Download URL: " + Url,
                     "-------------------------------------------------",
                     "Description:\n" + Description
@@ -311,7 +322,7 @@ namespace ModioX.Models.Database
         }
 
         /// <summary>
-        ///     
+        ///     Get all of the mod types from the specified <see cref="CategoriesData.Category.Id"/>
         /// </summary>
         /// <param name="categoryId"><see cref="CategoriesData.Category.Id"/></param>
         /// <returns></returns>
@@ -327,11 +338,12 @@ namespace ModioX.Models.Database
                 }
             }
 
+            modTypes.Sort();
             return modTypes.Distinct().ToList();
         }
 
         /// <summary>
-        ///     Gets the supported firmwares from all the mods
+        ///     Get the supported firmwares from all of the mods.
         /// </summary>
         /// <returns>Firmwares Supported</returns>
         public List<string> AllFirmwares
@@ -390,88 +402,53 @@ namespace ModioX.Models.Database
         }
 
         /// <summary>
-        ///     Get the <see cref="modItem"/> matching the specified modId
+        ///     Get the <see cref="ModItem"/> matching the specified <see cref="ModItem.Id"/>
         /// </summary>
-        /// <param name="modId"><see cref="modId"/></param>
-        /// <returns>Mod information</returns>
+        /// <param name="modId"><see cref="ModItem.Id"/></param>
+        /// <returns>Mod details for the <see cref="ModItem.Id"/></returns>
         public ModItem GetModById(long modId)
         {
-            foreach (ModItem modItem in from ModItem modItem in Mods
-                                        where modItem.Id.Equals(modId)
-                                        select modItem)
-            {
-                return modItem;
-            }
+            return Mods.First(modItem => modItem.Id.Equals(modId));
 
-            throw new Exception($"Unable to match a mod matching with this id : {modId}");
+            throw new Exception($"Unable to match a mod with this id : {modId}");
         }
 
         /// <summary>
-        ///     Gets all the mods matching the specified gameId
+        ///     Get all the <see cref="ModItem"/> matching the specified <see cref="CategoriesData.Category.Id"/>.
         /// </summary>
         /// <returns></returns>
-        public ModItem[] GetModsByCategoryId(string gameId) => (from ModItem modItem in Mods
-                                                                where modItem.GameId.Equals(gameId)
-                                                                select modItem).ToArray();
+        public ModItem[] GetModsByCategoryId(string gameId)
+        {
+            return (from ModItem modItem in Mods
+                    where modItem.GameId.Equals(gameId)
+                    select modItem).ToArray();
+        }
 
         /// <summary>
-        ///     Gets the total number of game mods
+        ///     Get the total number of game mods
         /// </summary>
         /// <returns></returns>
-        public int TotalGameMods => (from ModItem modItem in Mods
-                                     where !modItem.GameId.Equals("fvrt")
-                                     && !modItem.GameId.Equals("accr")
-                                     && !modItem.GameId.Equals("cb")
-                                     && !modItem.GameId.Equals("gu")
-                                     && !modItem.GameId.Equals("hhr")
-                                     && !modItem.GameId.Equals("ha")
-                                     && !modItem.GameId.Equals("hg")
-                                     && !modItem.GameId.Equals("th")
-                                     && !modItem.GameId.Equals("xmbr")
-                                     select modItem).Count();
+        public int TotalGameMods(CategoriesData categoriesData)
+        {
+            return (from ModItem modItem in Mods
+                    where modItem.GetCategoryType(categoriesData) == CategoryType.Game
+                    && modItem.GetCategoryType(categoriesData) != CategoryType.Resource
+                    && modItem.GetCategoryType(categoriesData) != CategoryType.Favorite
+                    select modItem).Count();
+        }
+
 
         /// <summary>
-        ///     Gets the total number of game mods
+        ///     Get the total number of resources.
         /// </summary>
         /// <returns></returns>
-        public int TotalGameSaves => (from ModItem modItem in Mods
-                                      where modItem.Type.Equals("GAMESAVE")
-                                      select modItem).Count();
-
-        /// <summary>
-        ///     Gets the total number of homebrew packages
-        /// </summary>
-        /// <returns></returns>
-        public int TotalHomebrew => (from ModItem modItem in Mods
-                                     where modItem.GameId.Equals("ha")
-                                     || modItem.GameId.Equals("hg")
-                                     select modItem).Count();
-
-        /// <summary>
-        /// Gets the total number of game update packages
-        /// </summary>
-        /// <returns></returns>
-        public int TotalGameUpdates => (from ModItem modItem in Mods
-                                        where modItem.GameId.Equals("gu")
-                                        select modItem).Count();
-
-        /// <summary>
-        ///     Gets the total number of themes
-        /// </summary>
-        /// <returns></returns>
-        public int TotalThemes => (from ModItem modItem in Mods
-                                   where modItem.GameId.Equals("th")
-                                   select modItem).Count();
-
-        /// <summary>
-        ///     Gets the total number of resources
-        /// </summary>
-        /// <returns></returns>
-        public int TotalResources => (from ModItem modItem in Mods
-                                      where modItem.GameId.Equals("accr")
-                                      || modItem.GameId.Equals("cb")
-                                      || modItem.GameId.Equals("hhr")
-                                      || modItem.GameId.Equals("xmbr")
-                                      select modItem).Count();
+        public int TotalResources(CategoriesData categoriesData)
+        {
+            return (from ModItem modItem in Mods
+                    where modItem.GetCategoryType(categoriesData) == CategoryType.Resource
+                    && modItem.GetCategoryType(categoriesData) != CategoryType.Game
+                    && modItem.GetCategoryType(categoriesData) != CategoryType.Favorite
+                    select modItem).Count();
+        }
     }
 }

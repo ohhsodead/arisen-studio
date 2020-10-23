@@ -1,4 +1,5 @@
 ﻿using ModioX.Extensions;
+using ModioX.Io;
 using ModioX.Models.Database;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace ModioX.Models.Resources
         /// <summary>
         ///     Local path at where the settings file will be stored on the machine
         /// </summary>
-        public static readonly string SettingsDataFile = $@"{Utilities.DocumentsFolder}\SettingsData.json";
+        public static readonly string SettingsDataFile = $@"{UserFolders.AppData}\SettingsData.json";
 
         public bool FirstTimeUse { get; set; } = true;
 
@@ -26,33 +27,82 @@ namespace ModioX.Models.Resources
 
         public bool AutoDetectGameRegion { get; set; } = false;
 
-        public bool SaveLocalDirectoryPath { get; set; } = false;
+        public bool SaveLocalPath { get; set; } = false;
 
-        public string LocalDirectory { get; set; } = KnownFolders.GetPath(KnownFolder.Documents);
+        public string LocalPath { get; set; } = KnownFolders.GetPath(KnownFolder.Documents);
+
+        public bool SaveConsolePath { get; set; } = false;
+
+        public string ConsolePath { get; set; } = "/dev_hdd0/";
 
         public bool AlwaysDownloadInstallFiles { get; set; } = false;
 
         public List<string> FavoritedIds { get; set; } = new List<string>();
 
-        public List<GameRegion> GameRegions { get; set; } = new List<GameRegion>();
-
         public List<BackupFile> BackupFiles { get; set; } = new List<BackupFile>();
 
-        public List<CustomMod> CustomMods { get; set; } = new List<CustomMod>();
+        public List<GameRegion> GameRegions { get; set; } = new List<GameRegion>();
 
         public List<ExternalApplication> ExternalApplications { get; set; } = new List<ExternalApplication>();
 
-        public List<GameModInstalled> InstalledGameMods { get; set; } = new List<GameModInstalled>();
+        public List<InstalledGameMod> InstalledGameMods { get; set; } = new List<InstalledGameMod>();
+
+        /// <summary>
+        ///     Create/store a backup of the specified file, and then downloads it locally to a known path
+        /// </summary>
+        /// <param name="settingsData"></param>
+        /// <param name="modItem"></param>
+        /// <param name="fileName"></param>
+        /// <param name="installFilePath"></param>
+        public void CreateBackupFile(ModsData.ModItem modItem, string fileName, string installFilePath)
+        {
+            string fileBackupFolder = GetBackupFileFolder(modItem);
+
+            _ = Directory.CreateDirectory(fileBackupFolder);
+
+            BackupFile backupFile = new BackupFile()
+            {
+                CategoryId = modItem.GameId,
+                FileName = fileName,
+                LocalPath = Path.Combine(fileBackupFolder, fileName),
+                InstallPath = installFilePath
+            };
+
+            BackupFiles.Add(backupFile);
+
+            FtpExtensions.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
+        }
+
+        /// <summary>
+        ///     Gets the <see cref="BackupFile"/> information for the specified game id, file name and install path
+        /// </summary>
+        /// <param name="gameId">Game Id</param>
+        /// <param name="fileName">File Name</param>
+        /// <param name="installPath">File Install Path</param>
+        /// <returns></returns>
+        public BackupFile GetGameFileBackup(string gameId, string fileName, string installPath)
+        {
+            foreach (BackupFile backupFile in from BackupFile backupFile in BackupFiles
+                                              where backupFile.CategoryId.ToLower().Equals(gameId.ToLower()) &&
+                                              backupFile.FileName.ToLower().Contains(fileName.ToLower()) &&
+                                              backupFile.InstallPath.ToLower().Contains(installPath.ToLower())
+                                              select backupFile)
+            {
+                return backupFile;
+            }
+
+            return null;
+        }
 
         /// <summary>
         ///     Gets the users external applications file location for the specified application name
         /// </summary>
-        /// <param name="name">Name of the app</param>
+        /// <param name="appName">Application name with extension.</param>
         /// <returns>Game Region</returns>
-        public string GetApplicationLocation(string name)
+        public string GetApplicationLocation(string appName)
         {
             foreach (ExternalApplication application in from ExternalApplication application in ExternalApplications
-                                                        where string.Equals(application.Name, name, StringComparison.CurrentCultureIgnoreCase)
+                                                        where string.Equals(application.Name, appName, StringComparison.CurrentCultureIgnoreCase)
                                                         select application)
             {
                 return application.FileLocation;
@@ -64,7 +114,7 @@ namespace ModioX.Models.Resources
         /// <summary>
         ///     Either update or add the application name and file location
         /// </summary>
-        /// <param name="name">Application Name</param>
+        /// <param name="appName">Application Name</param>
         /// <param name="fileLocation">Application File Location</param>
         public void UpdateApplication(string appName, string fileLocation)
         {
@@ -119,58 +169,17 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        ///     Gets the backup file information for the specified game id, file name and install path
-        /// </summary>
-        /// <param name="gameId">Game Id</param>
-        /// <param name="fileName">File Name</param>
-        /// <param name="installPath">File Install Path</param>
-        /// <returns></returns>
-        public BackupFile GetGameFileBackup(string gameId, string fileName, string installPath)
-        {
-            foreach (BackupFile backupFile in from BackupFile backupFile in BackupFiles
-                                              where backupFile.CategoryId.ToLower().Equals(gameId.ToLower()) &&
-                                              backupFile.FileName.ToLower().Contains(fileName.ToLower()) &&
-                                              backupFile.InstallPath.ToLower().Contains(installPath.ToLower())
-                                              select backupFile)
-            {
-                return backupFile;
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        ///     Create a folder for the specified game id
+        ///     Creates and returns the backup folder for the specified <see cref="ModsData.ModItem"/>.
         /// </summary>
         /// <param name="modItem"></param>
         /// <returns></returns>
-        public static string CreateBackupFileFolder(ModsData.ModItem modItem)
+        public static string GetBackupFileFolder(ModsData.ModItem modItem)
         {
-            return Path.Combine(KnownFolders.GetPath(KnownFolder.Documents), "ModioX", "Backup Files", modItem.GameId);
+            return Path.Combine(UserFolders.AppGameBackupFiles, modItem.GameId);
         }
 
         /// <summary>
-        ///     Creates and returns the backup file for the specified modded file name
-        /// </summary>
-        /// <param name="modItem"></param>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
-        public static string CreateBackupFilePath(ModsData.ModItem modItem, string fileName)
-        {
-            return Path.Combine(CreateBackupFileFolder(modItem), fileName);
-        }
-
-        /// <summary>
-        ///     Adds a backup file to the collection
-        /// </summary>
-        /// <param name="backupFile"></param>
-        public void AddBackupFile(BackupFile backupFile)
-        {
-            BackupFiles.Add(backupFile);
-        }
-
-        /// <summary>
-        ///     Updates the collection of a backup file of index is present, or adds the backup file to the collection
+        ///     Updates the collection of backup files at index if it's exists, otherwise adds a new one.
         /// </summary>
         /// <param name="index"></param>
         /// <param name="backupFile"></param>
@@ -186,52 +195,18 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        ///     Add a user's<see cref="CustomMod"/> details to settings
-        /// </summary>
-        /// <param name="customMod"></param>
-        public void AddCustomMod(CustomMod customMod)
-        {
-            CustomMods.Add(customMod);
-        }
-
-        /// <summary>
-        ///     Updates the user's <see cref="CustomMod"/> details at the specified index 
-        /// </summary>
-        /// <param name="index"></param>
-        /// <param name="customMod"></param>
-        public void UpdateCustomMod(int index, CustomMod customMod)
-        {
-            if (CustomMods[index] == null)
-            {
-                CustomMods.Add(customMod);
-                return;
-            }
-
-            CustomMods[index] = customMod;
-        }
-
-        /// <summary>
-        ///     
-        /// </summary>
-        /// <param name="index"></param>
-        public void RemoveCustomMod(int index)
-        {
-            CustomMods.RemoveAt(index);
-        }
-
-        /// <summary>
-        ///     Updates the installed game mods
+        ///     Updates the installed game mods.
         /// </summary>
         /// <param name="gameId"></param>
         /// <param name="gameRegion"></param>
         /// <param name="modId"></param>
         /// <param name="filesInstalled"></param>
         /// <param name="dateInstalled"></param>
-        public void UpdateInstalledGameMod(string gameId, string gameRegion, long modId, int filesInstalled, DateTime dateInstalled)
+        public void UpdateInstalledGameMod(string gameId, string gameRegion, long modId, int noOfFiles, DateTime dateInstalled)
         {
             RemoveInstalledGame(gameId);
 
-            InstalledGameMods.Add(new GameModInstalled(gameId, gameRegion, modId, filesInstalled, dateInstalled));
+            InstalledGameMods.Add(new InstalledGameMod() { GameId = gameId, GameRegion = gameRegion, ModId = modId, Files = noOfFiles, DateInstalled = dateInstalled });
         }
 
         /// <summary>
@@ -240,29 +215,29 @@ namespace ModioX.Models.Resources
         /// <param name="gameId"></param>
         public void RemoveInstalledGame(string gameId)
         {
-            _ = InstalledGameMods.RemoveAll(x => x.GameId.ToLower().Equals(gameId.ToLower()));
+            _ = InstalledGameMods.RemoveAll(x => string.Equals(x.GameId, gameId, StringComparison.CurrentCultureIgnoreCase));
         }
 
         /// <summary>
-        ///     
+        ///     Removes the installed game mod matching the <see cref="ModsData.ModItem.GameId"/> and <see cref="ModsData.ModItem.Id"/>
         /// </summary>
         /// <param name="gameId"></param>
         /// <param name="modId"></param>
         public void RemoveInstalledGameMod(string gameId, long modId)
         {
-            _ = InstalledGameMods.RemoveAll(x => x.GameId.ToLower().Equals(gameId) && x.ModId.Equals(modId));
+            _ = InstalledGameMods.RemoveAll(x => string.Equals(x.GameId.ToLower(), gameId) && x.ModId.Equals(modId));
         }
 
         /// <summary>
-        ///     Gets the current <see cref="GameModInstalled"/> the <see cref="ModsData.ModItem.GameId"/>
+        ///     Gets the current <see cref="InstalledGameMod"/> the <see cref="ModsData.ModItem.GameId"/>
         /// </summary>
         /// <param name="gameId"></param>
         /// <returns></returns>
-        public GameModInstalled GetInstalledGameMod(string gameId)
+        public InstalledGameMod GetInstalledGameMod(string gameId)
         {
-            foreach (GameModInstalled modInstalled in InstalledGameMods)
+            foreach (InstalledGameMod modInstalled in InstalledGameMods)
             {
-                if (modInstalled.GameId.ToLower().Equals(gameId.ToLower()))
+                if (string.Equals(modInstalled.GameId, gameId, StringComparison.CurrentCultureIgnoreCase))
                 {
                     return modInstalled;
                 }
@@ -272,13 +247,13 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        ///     Returns the game region of which the mod was used to installed to game matching the <see cref="ModsData.ModItem.GameId"/>
+        ///     Returns the game region of which the mod was used to installed to game matching the <see cref="ModsData.ModItem.GameId"/>.
         /// </summary>
-        /// <param name="gameId"></param>
+        /// <param name="gameId"><see cref="CategoriesData.Category.Id"/> to match with the <see cref="InstalledGameMod"/></param>
         /// <returns></returns>
         public string GetInstalledGameModRegion(string gameId)
         {
-            foreach (GameModInstalled gameMod in InstalledGameMods)
+            foreach (InstalledGameMod gameMod in InstalledGameMods)
             {
                 if (string.Equals(gameMod.GameId, gameId, StringComparison.CurrentCultureIgnoreCase))
                 {
@@ -291,7 +266,7 @@ namespace ModioX.Models.Resources
     }
 
     /// <summary>
-    ///     Create a console profile with the details
+    ///     Create a console profile class with the details.
     /// </summary>
     public class ConsoleProfile
     {
@@ -314,12 +289,10 @@ namespace ModioX.Models.Resources
     }
 
     /// <summary>
-    ///     Creates a backup file with the details
+    ///     Create a backup file class with the details.
     /// </summary>
     public class BackupFile
     {
-        public string Name { get; set; }
-
         public string CategoryId { get; set; }
 
         public string FileName { get; set; }
@@ -332,69 +305,10 @@ namespace ModioX.Models.Resources
     }
 
     /// <summary>
-    ///     
+    ///     Create a new installed game mod class with the details.
     /// </summary>
-    public class CustomMod
+    public class InstalledGameMod
     {
-        public string Name { get; set; }
-
-        public string CategoryId { get; set; }
-
-        public string CategoryTitle { get; set; }
-
-        public string Description { get; set; }
-
-        public List<InstallFile> InstallFiles { get; set; } = new List<InstallFile>();
-
-        public bool RequiresRegion()
-        {
-            return InstallFiles.Any(x => x.ConsolePath.ToUpper().Contains("{REGION}"));
-        }
-
-        public bool RequiresUserId()
-        {
-            return InstallFiles.Any(x => x.ConsolePath.ToUpper().Contains("{USERID}"));
-        }
-
-        public bool RequiresUsbDevice()
-        {
-            return InstallFiles.Any(x => x.ConsolePath.ToUpper().Contains("{USBDEV}"));
-        }
-
-
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-    }
-
-    /// <summary>
-    ///     
-    /// </summary>
-    public class InstallFile
-    {
-        public InstallFile(string localPath, string consolePath)
-        {
-            LocalPath = localPath;
-            ConsolePath = consolePath;
-        }
-
-        public string LocalPath { get; set; }
-
-        public string ConsolePath { get; set; }
-    }
-
-    /// <summary>
-    ///     
-    /// </summary>
-    public class GameModInstalled
-    {
-        public GameModInstalled(string gameId, string gameRegion, long modId, int files, DateTime dateInstalled)
-        {
-            GameId = gameId;
-            GameRegion = gameRegion;
-            ModId = modId;
-            Files = files;
-            DateInstalled = dateInstalled;
-        }
-
         public string GameId { get; set; }
 
         public string GameRegion { get; set; }
@@ -407,7 +321,7 @@ namespace ModioX.Models.Resources
     }
 
     /// <summary>
-    ///     Saved region for game id
+    ///     Create a new game region class with the specified <see cref="CategoriesData.Category.Id"/> and <see cref="ModsData.ModItem.Region"/>.
     /// </summary>
     public class GameRegion
     {
@@ -423,7 +337,7 @@ namespace ModioX.Models.Resources
     }
 
     /// <summary>
-    ///     
+    ///     Create a new external application class with the specified name and file location.
     /// </summary>
     public class ExternalApplication
     {

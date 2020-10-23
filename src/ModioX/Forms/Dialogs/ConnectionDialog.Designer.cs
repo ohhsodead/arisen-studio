@@ -42,6 +42,7 @@
             this.ButtonConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonConnect.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ButtonConnect.Enabled = false;
             this.ButtonConnect.Location = new System.Drawing.Point(156, 228);
             this.ButtonConnect.Name = "ButtonConnect";

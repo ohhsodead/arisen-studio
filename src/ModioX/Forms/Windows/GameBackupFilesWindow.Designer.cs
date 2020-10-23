@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Forms
 {
-    partial class BackupFilesWindow
+    partial class GameBackupFilesWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupFilesWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameBackupFilesWindow));
             this.DgvBackups = new DarkUI.Controls.DarkDataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SectionBackupFiles = new DarkUI.Controls.DarkSectionPanel();
             this.ToolStripArchiveInformation = new DarkUI.Controls.DarkToolStrip();
             this.ToolItemEditBackup = new System.Windows.Forms.ToolStripButton();
@@ -43,17 +38,15 @@
             this.ToolItemRestoreFile = new System.Windows.Forms.ToolStripButton();
             this.SectionBackupDetails = new DarkUI.Controls.DarkSectionPanel();
             this.FlowPanelDetails = new System.Windows.Forms.FlowLayoutPanel();
-            this.LabelHeaderName = new System.Windows.Forms.Label();
-            this.LabelName = new System.Windows.Forms.Label();
             this.LabelHeaderGameTitle = new System.Windows.Forms.Label();
             this.LabelGameTitle = new System.Windows.Forms.Label();
-            this.LabelHeaderCreatedDate = new System.Windows.Forms.Label();
+            this.LabelHeaderCreatedOn = new System.Windows.Forms.Label();
             this.LabelCreatedDate = new System.Windows.Forms.Label();
             this.LabelHeaderFileName = new System.Windows.Forms.Label();
             this.LabelFileName = new System.Windows.Forms.Label();
             this.LabelHeaderLocalPath = new System.Windows.Forms.Label();
             this.LabelLocalPath = new System.Windows.Forms.Label();
-            this.LabelHeaderInstallPath = new System.Windows.Forms.Label();
+            this.LabelHeaderInstallFilePath = new System.Windows.Forms.Label();
             this.LabelConsolePath = new System.Windows.Forms.Label();
             this.ColumnSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +56,12 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LabelHeaderFileSize = new System.Windows.Forms.Label();
+            this.LabelFileSize = new System.Windows.Forms.Label();
+            this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCreatedOn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBackups)).BeginInit();
             this.SectionBackupFiles.SuspendLayout();
             this.ToolStripArchiveInformation.SuspendLayout();
@@ -79,11 +78,10 @@
             this.DgvBackups.AllowUserToResizeColumns = false;
             this.DgvBackups.ColumnHeadersHeight = 19;
             this.DgvBackups.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.ColumnCreatedDate});
+            this.ColumnGameTitle,
+            this.ColumnFileName,
+            this.ColumnFileSize,
+            this.ColumnCreatedOn});
             this.DgvBackups.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvBackups.Location = new System.Drawing.Point(1, 25);
             this.DgvBackups.MultiSelect = false;
@@ -94,43 +92,9 @@
             this.DgvBackups.RowTemplate.Height = 24;
             this.DgvBackups.RowTemplate.ReadOnly = true;
             this.DgvBackups.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvBackups.Size = new System.Drawing.Size(637, 189);
+            this.DgvBackups.Size = new System.Drawing.Size(620, 198);
             this.DgvBackups.TabIndex = 12;
             this.DgvBackups.SelectionChanged += new System.EventHandler(this.DgvBackupFiles_SelectionChanged);
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Name";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Game Title";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 190;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "File Name";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "File Size";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 90;
-            // 
-            // ColumnCreatedDate
-            // 
-            this.ColumnCreatedDate.HeaderText = "Created Date";
-            this.ColumnCreatedDate.Name = "ColumnCreatedDate";
-            this.ColumnCreatedDate.ReadOnly = true;
-            this.ColumnCreatedDate.Width = 120;
             // 
             // SectionBackupFiles
             // 
@@ -139,10 +103,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SectionBackupFiles.Controls.Add(this.DgvBackups);
             this.SectionBackupFiles.Controls.Add(this.ToolStripArchiveInformation);
+            this.SectionBackupFiles.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SectionBackupFiles.Location = new System.Drawing.Point(12, 12);
             this.SectionBackupFiles.Name = "SectionBackupFiles";
-            this.SectionBackupFiles.SectionHeader = "GAME BACKUP FILES";
-            this.SectionBackupFiles.Size = new System.Drawing.Size(639, 251);
+            this.SectionBackupFiles.SectionHeader = "BACKUP FILES";
+            this.SectionBackupFiles.Size = new System.Drawing.Size(622, 260);
             this.SectionBackupFiles.TabIndex = 15;
             // 
             // ToolStripArchiveInformation
@@ -158,10 +123,10 @@
             this.ToolItemDeleteBackup,
             this.ToolItemBackupFile,
             this.ToolItemRestoreFile});
-            this.ToolStripArchiveInformation.Location = new System.Drawing.Point(1, 214);
+            this.ToolStripArchiveInformation.Location = new System.Drawing.Point(1, 223);
             this.ToolStripArchiveInformation.Name = "ToolStripArchiveInformation";
             this.ToolStripArchiveInformation.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.ToolStripArchiveInformation.Size = new System.Drawing.Size(637, 36);
+            this.ToolStripArchiveInformation.Size = new System.Drawing.Size(620, 36);
             this.ToolStripArchiveInformation.TabIndex = 17;
             this.ToolStripArchiveInformation.TabStop = true;
             this.ToolStripArchiveInformation.Text = "darkToolStrip2";
@@ -172,7 +137,7 @@
             this.ToolItemEditBackup.Enabled = false;
             this.ToolItemEditBackup.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolItemEditBackup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolItemEditBackup.Image = global::ModioX.Properties.Resources.icons8_edit_22;
+            this.ToolItemEditBackup.Image = global::ModioX.Properties.Resources.edit;
             this.ToolItemEditBackup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolItemEditBackup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolItemEditBackup.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -187,7 +152,7 @@
             this.ToolItemDeleteBackup.Enabled = false;
             this.ToolItemDeleteBackup.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolItemDeleteBackup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolItemDeleteBackup.Image = global::ModioX.Properties.Resources.icons8_delete_22;
+            this.ToolItemDeleteBackup.Image = global::ModioX.Properties.Resources.delete;
             this.ToolItemDeleteBackup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolItemDeleteBackup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolItemDeleteBackup.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -202,7 +167,7 @@
             this.ToolItemBackupFile.Enabled = false;
             this.ToolItemBackupFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolItemBackupFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolItemBackupFile.Image = global::ModioX.Properties.Resources.icons8_download_22;
+            this.ToolItemBackupFile.Image = global::ModioX.Properties.Resources.download;
             this.ToolItemBackupFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolItemBackupFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolItemBackupFile.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -217,7 +182,7 @@
             this.ToolItemRestoreFile.Enabled = false;
             this.ToolItemRestoreFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolItemRestoreFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolItemRestoreFile.Image = global::ModioX.Properties.Resources.icons8_restore_page_22;
+            this.ToolItemRestoreFile.Image = global::ModioX.Properties.Resources.restore_file;
             this.ToolItemRestoreFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolItemRestoreFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolItemRestoreFile.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -231,62 +196,36 @@
             this.SectionBackupDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SectionBackupDetails.Controls.Add(this.FlowPanelDetails);
-            this.SectionBackupDetails.Location = new System.Drawing.Point(12, 269);
+            this.SectionBackupDetails.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.SectionBackupDetails.Location = new System.Drawing.Point(12, 278);
             this.SectionBackupDetails.Name = "SectionBackupDetails";
             this.SectionBackupDetails.SectionHeader = "BACKUP FILE DETAILS";
-            this.SectionBackupDetails.Size = new System.Drawing.Size(639, 216);
+            this.SectionBackupDetails.Size = new System.Drawing.Size(622, 207);
             this.SectionBackupDetails.TabIndex = 16;
             // 
             // FlowPanelDetails
             // 
             this.FlowPanelDetails.AutoScroll = true;
             this.FlowPanelDetails.AutoSize = true;
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderName);
-            this.FlowPanelDetails.Controls.Add(this.LabelName);
             this.FlowPanelDetails.Controls.Add(this.LabelHeaderGameTitle);
             this.FlowPanelDetails.Controls.Add(this.LabelGameTitle);
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderCreatedDate);
-            this.FlowPanelDetails.Controls.Add(this.LabelCreatedDate);
             this.FlowPanelDetails.Controls.Add(this.LabelHeaderFileName);
             this.FlowPanelDetails.Controls.Add(this.LabelFileName);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderFileSize);
+            this.FlowPanelDetails.Controls.Add(this.LabelFileSize);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderCreatedOn);
+            this.FlowPanelDetails.Controls.Add(this.LabelCreatedDate);
             this.FlowPanelDetails.Controls.Add(this.LabelHeaderLocalPath);
             this.FlowPanelDetails.Controls.Add(this.LabelLocalPath);
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderInstallPath);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderInstallFilePath);
             this.FlowPanelDetails.Controls.Add(this.LabelConsolePath);
             this.FlowPanelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FlowPanelDetails.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.FlowPanelDetails.Location = new System.Drawing.Point(1, 25);
             this.FlowPanelDetails.Name = "FlowPanelDetails";
-            this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(4, 4, 18, 2);
-            this.FlowPanelDetails.Size = new System.Drawing.Size(637, 190);
+            this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(4, 5, 18, 2);
+            this.FlowPanelDetails.Size = new System.Drawing.Size(620, 181);
             this.FlowPanelDetails.TabIndex = 15;
-            // 
-            // LabelHeaderName
-            // 
-            this.LabelHeaderName.AutoSize = true;
-            this.LabelHeaderName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderName.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelHeaderName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderName.Location = new System.Drawing.Point(7, 7);
-            this.LabelHeaderName.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
-            this.LabelHeaderName.Name = "LabelHeaderName";
-            this.LabelHeaderName.Size = new System.Drawing.Size(43, 15);
-            this.LabelHeaderName.TabIndex = 2;
-            this.LabelHeaderName.Text = "Name:";
-            // 
-            // LabelName
-            // 
-            this.LabelName.AutoSize = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelName, true);
-            this.LabelName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelName.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelName.Location = new System.Drawing.Point(52, 7);
-            this.LabelName.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(16, 15);
-            this.LabelName.TabIndex = 25;
-            this.LabelName.Text = "...";
             // 
             // LabelHeaderGameTitle
             // 
@@ -294,7 +233,7 @@
             this.LabelHeaderGameTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelHeaderGameTitle.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderGameTitle.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderGameTitle.Location = new System.Drawing.Point(7, 28);
+            this.LabelHeaderGameTitle.Location = new System.Drawing.Point(7, 8);
             this.LabelHeaderGameTitle.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
             this.LabelHeaderGameTitle.Name = "LabelHeaderGameTitle";
             this.LabelHeaderGameTitle.Size = new System.Drawing.Size(71, 15);
@@ -308,25 +247,25 @@
             this.LabelGameTitle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelGameTitle.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelGameTitle.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameTitle.Location = new System.Drawing.Point(80, 28);
+            this.LabelGameTitle.Location = new System.Drawing.Point(80, 8);
             this.LabelGameTitle.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelGameTitle.Name = "LabelGameTitle";
             this.LabelGameTitle.Size = new System.Drawing.Size(16, 15);
             this.LabelGameTitle.TabIndex = 23;
             this.LabelGameTitle.Text = "...";
             // 
-            // LabelHeaderCreatedDate
+            // LabelHeaderCreatedOn
             // 
-            this.LabelHeaderCreatedDate.AutoSize = true;
-            this.LabelHeaderCreatedDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderCreatedDate.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelHeaderCreatedDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderCreatedDate.Location = new System.Drawing.Point(7, 49);
-            this.LabelHeaderCreatedDate.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
-            this.LabelHeaderCreatedDate.Name = "LabelHeaderCreatedDate";
-            this.LabelHeaderCreatedDate.Size = new System.Drawing.Size(84, 15);
-            this.LabelHeaderCreatedDate.TabIndex = 27;
-            this.LabelHeaderCreatedDate.Text = "Created Date:";
+            this.LabelHeaderCreatedOn.AutoSize = true;
+            this.LabelHeaderCreatedOn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderCreatedOn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderCreatedOn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderCreatedOn.Location = new System.Drawing.Point(7, 71);
+            this.LabelHeaderCreatedOn.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
+            this.LabelHeaderCreatedOn.Name = "LabelHeaderCreatedOn";
+            this.LabelHeaderCreatedOn.Size = new System.Drawing.Size(73, 15);
+            this.LabelHeaderCreatedOn.TabIndex = 27;
+            this.LabelHeaderCreatedOn.Text = "Created On:";
             // 
             // LabelCreatedDate
             // 
@@ -335,7 +274,7 @@
             this.LabelCreatedDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelCreatedDate.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelCreatedDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelCreatedDate.Location = new System.Drawing.Point(93, 49);
+            this.LabelCreatedDate.Location = new System.Drawing.Point(82, 71);
             this.LabelCreatedDate.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelCreatedDate.Name = "LabelCreatedDate";
             this.LabelCreatedDate.Size = new System.Drawing.Size(16, 15);
@@ -348,7 +287,7 @@
             this.LabelHeaderFileName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelHeaderFileName.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderFileName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderFileName.Location = new System.Drawing.Point(7, 70);
+            this.LabelHeaderFileName.Location = new System.Drawing.Point(7, 29);
             this.LabelHeaderFileName.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
             this.LabelHeaderFileName.Name = "LabelHeaderFileName";
             this.LabelHeaderFileName.Size = new System.Drawing.Size(65, 15);
@@ -362,7 +301,7 @@
             this.LabelFileName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelFileName.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelFileName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileName.Location = new System.Drawing.Point(74, 70);
+            this.LabelFileName.Location = new System.Drawing.Point(74, 29);
             this.LabelFileName.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelFileName.Name = "LabelFileName";
             this.LabelFileName.Size = new System.Drawing.Size(16, 15);
@@ -376,7 +315,7 @@
             this.LabelHeaderLocalPath.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelHeaderLocalPath.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderLocalPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderLocalPath.Location = new System.Drawing.Point(7, 91);
+            this.LabelHeaderLocalPath.Location = new System.Drawing.Point(7, 92);
             this.LabelHeaderLocalPath.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
             this.LabelHeaderLocalPath.Name = "LabelHeaderLocalPath";
             this.LabelHeaderLocalPath.Size = new System.Drawing.Size(66, 15);
@@ -390,26 +329,26 @@
             this.LabelLocalPath.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelLocalPath.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelLocalPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelLocalPath.Location = new System.Drawing.Point(7, 112);
+            this.LabelLocalPath.Location = new System.Drawing.Point(7, 113);
             this.LabelLocalPath.Margin = new System.Windows.Forms.Padding(3);
             this.LabelLocalPath.Name = "LabelLocalPath";
             this.LabelLocalPath.Size = new System.Drawing.Size(16, 15);
             this.LabelLocalPath.TabIndex = 4;
             this.LabelLocalPath.Text = "...";
             // 
-            // LabelHeaderInstallPath
+            // LabelHeaderInstallFilePath
             // 
-            this.LabelHeaderInstallPath.AutoSize = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelHeaderInstallPath, true);
-            this.LabelHeaderInstallPath.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderInstallPath.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelHeaderInstallPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderInstallPath.Location = new System.Drawing.Point(7, 133);
-            this.LabelHeaderInstallPath.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
-            this.LabelHeaderInstallPath.Name = "LabelHeaderInstallPath";
-            this.LabelHeaderInstallPath.Size = new System.Drawing.Size(68, 15);
-            this.LabelHeaderInstallPath.TabIndex = 6;
-            this.LabelHeaderInstallPath.Text = "Install Path";
+            this.LabelHeaderInstallFilePath.AutoSize = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelHeaderInstallFilePath, true);
+            this.LabelHeaderInstallFilePath.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderInstallFilePath.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderInstallFilePath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderInstallFilePath.Location = new System.Drawing.Point(7, 134);
+            this.LabelHeaderInstallFilePath.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
+            this.LabelHeaderInstallFilePath.Name = "LabelHeaderInstallFilePath";
+            this.LabelHeaderInstallFilePath.Size = new System.Drawing.Size(68, 15);
+            this.LabelHeaderInstallFilePath.TabIndex = 6;
+            this.LabelHeaderInstallFilePath.Text = "Install Path";
             // 
             // LabelConsolePath
             // 
@@ -418,7 +357,7 @@
             this.LabelConsolePath.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelConsolePath.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelConsolePath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelConsolePath.Location = new System.Drawing.Point(7, 154);
+            this.LabelConsolePath.Location = new System.Drawing.Point(7, 155);
             this.LabelConsolePath.Margin = new System.Windows.Forms.Padding(3);
             this.LabelConsolePath.Name = "LabelConsolePath";
             this.LabelConsolePath.Size = new System.Drawing.Size(16, 15);
@@ -490,26 +429,79 @@
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 95;
             // 
-            // BackupFilesWindow
+            // LabelHeaderFileSize
+            // 
+            this.LabelHeaderFileSize.AutoSize = true;
+            this.LabelHeaderFileSize.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderFileSize.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderFileSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderFileSize.Location = new System.Drawing.Point(7, 50);
+            this.LabelHeaderFileSize.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
+            this.LabelHeaderFileSize.Name = "LabelHeaderFileSize";
+            this.LabelHeaderFileSize.Size = new System.Drawing.Size(55, 15);
+            this.LabelHeaderFileSize.TabIndex = 28;
+            this.LabelHeaderFileSize.Text = "File Size:";
+            // 
+            // LabelFileSize
+            // 
+            this.LabelFileSize.AutoSize = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelFileSize, true);
+            this.LabelFileSize.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelFileSize.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelFileSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelFileSize.Location = new System.Drawing.Point(64, 50);
+            this.LabelFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelFileSize.Name = "LabelFileSize";
+            this.LabelFileSize.Size = new System.Drawing.Size(16, 15);
+            this.LabelFileSize.TabIndex = 29;
+            this.LabelFileSize.Text = "...";
+            // 
+            // ColumnGameTitle
+            // 
+            this.ColumnGameTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnGameTitle.HeaderText = "Game Title";
+            this.ColumnGameTitle.Name = "ColumnGameTitle";
+            this.ColumnGameTitle.ReadOnly = true;
+            // 
+            // ColumnFileName
+            // 
+            this.ColumnFileName.HeaderText = "File Name";
+            this.ColumnFileName.Name = "ColumnFileName";
+            this.ColumnFileName.ReadOnly = true;
+            this.ColumnFileName.Width = 120;
+            // 
+            // ColumnFileSize
+            // 
+            this.ColumnFileSize.HeaderText = "File Size";
+            this.ColumnFileSize.Name = "ColumnFileSize";
+            this.ColumnFileSize.ReadOnly = true;
+            this.ColumnFileSize.Width = 120;
+            // 
+            // ColumnCreatedOn
+            // 
+            this.ColumnCreatedOn.HeaderText = "Created On";
+            this.ColumnCreatedOn.Name = "ColumnCreatedOn";
+            this.ColumnCreatedOn.ReadOnly = true;
+            this.ColumnCreatedOn.Width = 120;
+            // 
+            // GameBackupFilesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(662, 497);
+            this.ClientSize = new System.Drawing.Size(645, 497);
             this.Controls.Add(this.SectionBackupDetails);
             this.Controls.Add(this.SectionBackupFiles);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "BackupFilesWindow";
+            this.Name = "GameBackupFilesWindow";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Game Backup Files";
-            this.Load += new System.EventHandler(this.BackupManagerForm_Load);
+            this.Load += new System.EventHandler(this.GameBackupFilesWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvBackups)).EndInit();
             this.SectionBackupFiles.ResumeLayout(false);
             this.ToolStripArchiveInformation.ResumeLayout(false);
@@ -528,20 +520,18 @@
         private DarkUI.Controls.DarkSectionPanel SectionBackupFiles;
         private DarkUI.Controls.DarkSectionPanel SectionBackupDetails;
         private System.Windows.Forms.FlowLayoutPanel FlowPanelDetails;
-        private System.Windows.Forms.Label LabelHeaderName;
         private System.Windows.Forms.Label LabelHeaderGameTitle;
         private System.Windows.Forms.Label LabelGameTitle;
         private System.Windows.Forms.Label LabelHeaderFileName;
         private System.Windows.Forms.Label LabelHeaderLocalPath;
         private System.Windows.Forms.Label LabelLocalPath;
-        private System.Windows.Forms.Label LabelHeaderInstallPath;
+        private System.Windows.Forms.Label LabelHeaderInstallFilePath;
         private System.Windows.Forms.Label LabelConsolePath;
         private DarkUI.Controls.DarkToolStrip ToolStripArchiveInformation;
         private System.Windows.Forms.ToolStripButton ToolItemEditBackup;
         private System.Windows.Forms.ToolStripButton ToolItemDeleteBackup;
         private System.Windows.Forms.ToolStripButton ToolItemBackupFile;
         private System.Windows.Forms.ToolStripButton ToolItemRestoreFile;
-        private System.Windows.Forms.Label LabelName;
         private System.Windows.Forms.Label LabelFileName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnType;
@@ -551,12 +541,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCreatedDate;
-        private System.Windows.Forms.Label LabelHeaderCreatedDate;
+        private System.Windows.Forms.Label LabelHeaderCreatedOn;
         private System.Windows.Forms.Label LabelCreatedDate;
+        private System.Windows.Forms.Label LabelHeaderFileSize;
+        private System.Windows.Forms.Label LabelFileSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCreatedOn;
     }
 }

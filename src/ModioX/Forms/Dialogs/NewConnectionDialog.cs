@@ -1,8 +1,6 @@
-﻿using DarkUI.Controls;
-using DarkUI.Forms;
+﻿using DarkUI.Forms;
 using ModioX.Models.Resources;
 using System;
-using System.Linq.Expressions;
 using System.Net;
 using System.Windows.Forms;
 
@@ -15,8 +13,9 @@ namespace ModioX.Forms
             InitializeComponent();
         }
 
-        public ConsoleProfile ConsoleProfile = new ConsoleProfile();
-        public bool IsEditingConsole = false;
+        public ConsoleProfile ConsoleProfile { get; set; } = new ConsoleProfile();
+
+        public bool IsEditingProfile { get; set; } = false;
 
         private void ConsolesWindow_Load(object sender, EventArgs e)
         {
@@ -69,21 +68,21 @@ namespace ModioX.Forms
 
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(TextBoxConnectionName.Text))
+            if (string.IsNullOrWhiteSpace(TextBoxConnectionName.Text))
             {
                 _ = DarkMessageBox.Show(this, @"You must enter a connection name.", "Error", MessageBoxIcon.Error);
                 return;
             }
 
-            if (string.IsNullOrEmpty(TextBoxConsoleAddress.Text))
+            if (string.IsNullOrWhiteSpace(TextBoxConsoleAddress.Text))
             {
                 _ = DarkMessageBox.Show(this, @"You must enter an IP Address.", "Error", MessageBoxIcon.Error);
                 return;
             }
 
-            if (string.IsNullOrEmpty(TextBoxConsolePort.Text))
+            if (string.IsNullOrWhiteSpace(TextBoxConsolePort.Text))
             {
-                _ = DarkMessageBox.Show(this, @"Please enter a port value. The default value is 21.", "Error", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, @"You must enter a port value. The default value is 21.", "Error", MessageBoxIcon.Error);
                 return;
             }
 
@@ -95,7 +94,7 @@ namespace ModioX.Forms
             {
                 if (isPortValid)
                 {
-                    if (IsEditingConsole)
+                    if (IsEditingProfile)
                     {
                         ConsoleProfile.Name = TextBoxConnectionName.Text;
                         ConsoleProfile.Address = address.ToString();
@@ -106,7 +105,7 @@ namespace ModioX.Forms
                     {
                         if (ProfileExists(TextBoxConnectionName.Text))
                         {
-                            _ = DarkMessageBox.Show(this, @"A console with this connection name already exists.", "Connection 3 Exists", MessageBoxIcon.Error);
+                            _ = DarkMessageBox.Show(this, @"A console with this connection name already exists.", "Name Already Exists", MessageBoxIcon.Error);
                             return;
                         }
                         else
@@ -125,7 +124,7 @@ namespace ModioX.Forms
             }
             else
             {
-                _ = DarkMessageBox.Show(this, @"IP Address isn't in the correct format. Make sure it's copied exactly from the System Information displayed on your console.", "Invalid IP Address", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, @"IP Address isn't the correct format.", "Invalid IP Address", MessageBoxIcon.Error);
             }
         }
 

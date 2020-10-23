@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
+using FluentFTP;
 
 namespace ModioX.Extensions
 {
@@ -18,25 +19,26 @@ namespace ModioX.Extensions
         /// <param name="consoleFile">Path of the uploading file directory</param>
         internal static void UploadFile(string localFile, string consoleFile)
         {
-            FtpConnection ftpConnection = MainWindow.GetFtpConnection();
+            FtpConnection ftpConnection = MainWindow.FtpConnection;
 
             string dirPath = consoleFile.Contains("/")
                     ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
-                    : "dev_hdd0/";
+                    : "/dev_hdd0/";
 
-                string fileName = consoleFile.Contains("/")
-                        ? consoleFile.Substring(consoleFile.LastIndexOf('/')).Replace("/", "").Replace("//", "")
-                        : consoleFile;
+            string fileName = consoleFile.Contains("/")
+                    ? consoleFile.Substring(consoleFile.LastIndexOf('/')).Replace("/", "").Replace("//", "")
+                    : consoleFile;
 
-                if (!ftpConnection.DirectoryExists(dirPath))
-                {
-                    FtpExtensions.CreateDirectory(dirPath);
-                }
+            string parentDirectory = Path.GetDirectoryName(consoleFile).Replace(@"\", "/");
 
-                ftpConnection.SetCurrentDirectory(dirPath);
-                ftpConnection.PutFile(localFile, fileName);
+            if (!ftpConnection.DirectoryExists(dirPath))
+            {
+                _ = CreateDirectory(dirPath);
             }
 
+            ftpConnection.SetCurrentDirectory(dirPath);
+            ftpConnection.PutFile(localFile, fileName);
+        }
 
         /// <summary>
         ///     Uninstall a specified file from the console
@@ -45,7 +47,7 @@ namespace ModioX.Extensions
         /// <param name="consoleFile">Mod to uninstall</param>
         internal static void DeleteFile(string consoleFile)
         {
-            FtpConnection ftpConnection = MainWindow.GetFtpConnection();
+            FtpConnection ftpConnection = MainWindow.FtpConnection;
 
             string dirPath = consoleFile.Contains("/")
                 ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
@@ -71,7 +73,7 @@ namespace ModioX.Extensions
         /// <param name="consoleFile">Path of the uploading file directory</param>
         internal static void DownloadFile(string localFile, string consoleFile)
         {
-            FtpConnection ftpConnection = MainWindow.GetFtpConnection();
+            FtpConnection ftpConnection = MainWindow.FtpConnection;
 
             string dirPath = consoleFile.Contains("/")
             ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
@@ -94,7 +96,7 @@ namespace ModioX.Extensions
         /// <param name="consoleFile">Path of the uploading file directory</param>
         internal static bool FileExists(string consoleFile)
         {
-            FtpConnection ftpConnection = MainWindow.GetFtpConnection();
+            FtpConnection ftpConnection = MainWindow.FtpConnection;
 
             string dirPath = consoleFile.Contains("/")
             ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
@@ -103,6 +105,21 @@ namespace ModioX.Extensions
             ftpConnection.SetCurrentDirectory(dirPath);
 
             return ftpConnection.FileExists(consoleFile);
+        }
+
+        /// <summary>
+        ///     Renames the specified file to a new name
+        /// </summary>
+        /// <param name="consoleFilePath"></param>
+        /// <param name="newName"></param>
+        internal static void RenameFile(string consoleFilePath, string newName)
+        {
+            // Use the WebRequest method because FtpConnection throws an error and this doesn't, strange
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://" + MainWindow.ConsoleProfile.Address + consoleFilePath);
+            request.Method = WebRequestMethods.Ftp.Rename;
+            request.Credentials = new NetworkCredential(MainWindow.ConsoleProfile.Username, MainWindow.ConsoleProfile.Password);
+            request.RenameTo = newName;
+            _ = request.GetResponse();
         }
 
         /// <summary>
@@ -119,7 +136,7 @@ namespace ModioX.Extensions
             request.Method = WebRequestMethods.Ftp.MakeDirectory;
             request.Credentials = new NetworkCredential(MainWindow.ConsoleProfile.Username, MainWindow.ConsoleProfile.Password);
 
-            using (var resp = (FtpWebResponse)request.GetResponse())
+            using (FtpWebResponse resp = (FtpWebResponse)request.GetResponse())
             {
                 if (resp.StatusCode == FtpStatusCode.PathnameCreated)
                     return true;
@@ -128,12 +145,27 @@ namespace ModioX.Extensions
             }
         }
 
-        public static void DeleteDirectory(string consolePath)
+        /// <summary>
+        ///     Downloads the specified console file to the computer
+        /// </summary>
+        /// <param name="hostAddress">PS3 IP address</param>
+        /// <param name="consolePath">Path of the uploading file directory</param>
+        internal static bool DirectoryExists(string consolePath)
         {
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://" + MainWindow.ConsoleProfile.Address + consolePath);
-            request.EnableSsl = false;
+            FtpConnection ftpConnection = MainWindow.FtpConnection;
+
+            return ftpConnection.DirectoryExists(consolePath);
+        }
+
+        internal static void DownloadDirectory(string consolePath, string localPath)
+        {
+            string url = "ftp://" + MainWindow.ConsoleProfile.Address + consolePath;
+            NetworkCredential credentials = new NetworkCredential(MainWindow.ConsoleProfile.Username, MainWindow.ConsoleProfile.Password);
+
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(url);
             request.Method = WebRequestMethods.Ftp.ListDirectoryDetails;
-            request.Credentials = new NetworkCredential(MainWindow.ConsoleProfile.Username, MainWindow.ConsoleProfile.Password);
+            request.Credentials = credentials;
+            request.Timeout = -1;
 
             List<string> lines = new List<string>();
 
@@ -154,39 +186,38 @@ namespace ModioX.Extensions
                 string name = tokens[8];
                 string permissions = tokens[0];
 
-                string fileUrl = "ftp://" + MainWindow.ConsoleProfile.Address + consolePath + name;
+                string localFilePath = Path.Combine(localPath, name);
+                string fileUrl = url + name;
 
                 if (permissions[0] == 'd')
                 {
-                    DeleteDirectory(fileUrl + "/");
+                    if (!Directory.Exists(localFilePath))
+                    {
+                        _ = Directory.CreateDirectory(localFilePath);
+                    }
+
+                    DownloadDirectory(fileUrl, localFilePath);
                 }
                 else
                 {
-                    FtpWebRequest deleteRequest = (FtpWebRequest)WebRequest.Create(fileUrl);
-                    deleteRequest.Method = WebRequestMethods.Ftp.DeleteFile;
-                    deleteRequest.Credentials = request.Credentials;
+                    FtpWebRequest downloadRequest = (FtpWebRequest)WebRequest.Create(fileUrl);
+                    downloadRequest.Method = WebRequestMethods.Ftp.DownloadFile;
+                    downloadRequest.Credentials = credentials;
+                    downloadRequest.Timeout = -1;
 
-                    deleteRequest.GetResponse();
+                    using (FtpWebResponse downloadResponse = (FtpWebResponse)downloadRequest.GetResponse())
+                    using (Stream sourceStream = downloadResponse.GetResponseStream())
+                    using (Stream targetStream = File.Create(localFilePath))
+                    {
+                        byte[] buffer = new byte[10240];
+                        int read;
+                        while ((read = sourceStream.Read(buffer, 0, buffer.Length)) > 0)
+                        {
+                            targetStream.Write(buffer, 0, read);
+                        }
+                    }
                 }
             }
-
-            FtpWebRequest removeRequest = (FtpWebRequest)WebRequest.Create("ftp://" + MainWindow.ConsoleProfile.Address + consolePath);
-            removeRequest.Method = WebRequestMethods.Ftp.RemoveDirectory;
-            removeRequest.Credentials = request.Credentials;
-
-            removeRequest.GetResponse();
-        }
-
-        /// <summary>
-        ///     Downloads the specified console file to the computer
-        /// </summary>
-        /// <param name="hostAddress">PS3 IP address</param>
-        /// <param name="consolePath">Path of the uploading file directory</param>
-        internal static bool DirectoryExists(string consolePath)
-        {
-            FtpConnection ftpConnection = MainWindow.GetFtpConnection();
-
-            return ftpConnection.DirectoryExists(consolePath);
         }
 
         /// <summary>
@@ -194,21 +225,24 @@ namespace ModioX.Extensions
         /// </summary>
         /// <param name="hostAddress">PS3 IP address</param>
         /// <param name="consolePath">Path of the uploading file directory</param>
-        internal static List<string> GetFolderNames(string consolePath)
+        internal static List<string> GetFolderNames(FtpClient ftpClient, string consolePath)
         {
-            FtpConnection ftpConnection = MainWindow.GetFtpConnection();
-
             List<string> folderNames = new List<string>();
 
             string dirPath = consolePath.Contains("/")
             ? consolePath.Substring(0, consolePath.LastIndexOf('/')) + '/'
             : "/dev_hdd0/";
 
-            ftpConnection.SetCurrentDirectory(dirPath);
+            ftpClient.SetWorkingDirectory(dirPath);
 
-            foreach (FtpDirectoryInfo path in ftpConnection.GetDirectories(dirPath))
+            foreach (FtpListItem listItem in ftpClient.GetListing(dirPath))
             {
-                folderNames.Add(path.Name);
+                switch (listItem.Type)
+                {
+                    case FtpFileSystemObjectType.Directory:
+                        folderNames.Add(listItem.Name);
+                        break;
+                }
             }
 
             folderNames.RemoveRange(0, 2);
@@ -221,13 +255,13 @@ namespace ModioX.Extensions
         /// </summary>
         /// <param name="hostAddress">Console IP Address</param>
         /// <returns></returns>
-        public static string GetUserId(Form owner)
+        public static string GetUserId(FtpClient FtpClient, Form owner)
         {
-            List<string> userIds = GetFolderNames("/dev_hdd0/home/");
+            List<string> userIds = GetFolderNames(FtpClient, "/dev_hdd0/home/");
 
             if (userIds.Count < 1)
             {
-                _ = DarkMessageBox.Show(MainWindow.mainForm, "Could not find any users on your console. Make sure you have created at least one user profile and then try again.", "No Users Found", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(MainWindow.mainWindow, "Could not find any users on your console. Make sure you have created at least one user profile and then try again.", "No Users Found", MessageBoxIcon.Error);
                 return null;
             }
             else
@@ -239,7 +273,6 @@ namespace ModioX.Extensions
         /// <summary>
         ///     Returns the USB path if one is connected to the console port
         /// </summary>
-        /// <param name="hostAddress">Console IP Address</param>
         /// <returns></returns>
         internal static string GetUsbPath()
         {
@@ -257,7 +290,7 @@ namespace ModioX.Extensions
                 }
             }
 
-            _ = DarkMessageBox.Show(MainWindow.mainForm, "No USB devices are connected to your console. Make sure there is at least one device connected for installing mods.", "No USB Device", MessageBoxIcon.Error);
+            _ = DarkMessageBox.Show(MainWindow.mainWindow, "No USB devices are connected to your console. Make sure there is at least one device connected for installing mods.", "No USB Device", MessageBoxIcon.Error);
             return null;
         }
     }

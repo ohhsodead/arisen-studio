@@ -1,5 +1,5 @@
 ﻿using DarkUI.Forms;
-using ModioX.Extensions;
+using ModioX.Templates;
 using System;
 using System.Windows.Forms;
 
@@ -14,7 +14,7 @@ namespace ModioX.Forms
 
         private void RequestMods_Load(object sender, EventArgs e)
         {
-            foreach (Models.Database.CategoriesData.Category category in MainWindow.Categories.Categories)
+            foreach (Models.Database.CategoriesData.Category category in MainWindow.Database.Categories.Categories)
             {
                 if (category.CategoryType != Models.Database.CategoryType.Favorite)
                 {
@@ -29,7 +29,7 @@ namespace ModioX.Forms
             {
                 string categoryTitle = ComboBoxCategoryTitle.GetItemText(ComboBoxCategoryTitle.SelectedItem);
 
-                TextBoxGameRegions.Enabled = MainWindow.Categories.GetCategoryByTitle(categoryTitle).CategoryType == Models.Database.CategoryType.Game;
+                TextBoxGameRegions.Enabled = MainWindow.Database.Categories.GetCategoryByTitle(categoryTitle).CategoryType == Models.Database.CategoryType.Game;
             }
         }
 
@@ -67,7 +67,7 @@ namespace ModioX.Forms
 
             _ = DarkMessageBox.Show(this, "You will be re-directed to the GitHub Issues tracking page for ModioX. All the information you have provided will be auto-filled for you. Create or login with your GitHub account and click the 'Submit' button to open the mod request. It will be added for you as soon as we're able to find it.", "Opening GitHub Issues", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            Utilities.OpenRequestTemplate(TextBoxName.Text, TextBoxModType.Text, ComboBoxCategoryTitle.GetItemText(ComboBoxCategoryTitle.SelectedItem), TextBoxAuthor.Text, TextBoxVersion.Text, TextBoxSystemType.Text, TextBoxDescription.Text, TextBoxLinks.Text);
+            GitHubTemplates.OpenRequestTemplate(TextBoxName.Text, TextBoxModType.Text, ComboBoxCategoryTitle.GetItemText(ComboBoxCategoryTitle.SelectedItem), TextBoxAuthor.Text, TextBoxVersion.Text, TextBoxSystemType.Text, TextBoxDescription.Text, TextBoxLinks.Text);
             Close();
         }
     }

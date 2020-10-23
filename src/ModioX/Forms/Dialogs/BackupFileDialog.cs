@@ -17,17 +17,18 @@ namespace ModioX.Forms
 
         private void EditBackupForm_Load(object sender, EventArgs e)
         {
-            TextBoxName.Text = BackupFile.Name;
             TextBoxFileName.Text = BackupFile.FileName;
             TextBoxGameId.Text = BackupFile.CategoryId;
-            TextBoxLocalPath.Text = BackupFile.LocalPath;
             TextBoxConsolePath.Text = BackupFile.InstallPath;
+            TextBoxLocalPath.Text = BackupFile.LocalPath;
         }
 
         private void ButtonLocalPath_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog() { CheckFileExists = true, Multiselect = false })
             {
+                openFileDialog.InitialDirectory = Path.GetDirectoryName(TextBoxLocalPath.Text);
+
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     TextBoxLocalPath.Text = openFileDialog.FileName;
@@ -42,12 +43,6 @@ namespace ModioX.Forms
 
         private void ButtonBackupSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TextBoxName.Text))
-            {
-                _ = DarkMessageBox.Show(this, "You must include a name for the game file backup..", "Empty Name", MessageBoxIcon.Exclamation);
-                return;
-            }
-
             if (string.IsNullOrWhiteSpace(TextBoxLocalPath.Text) || TextBoxLocalPath.Text.IndexOfAny(Path.GetInvalidPathChars()) != -1)
             {
                 _ = DarkMessageBox.Show(this, "You must include a local file path for the game file backup.", "Empty Local Path", MessageBoxIcon.Exclamation);
@@ -60,7 +55,6 @@ namespace ModioX.Forms
                 return;
             }
 
-            BackupFile.Name = TextBoxName.Text;
             BackupFile.CategoryId = TextBoxGameId.Text;
             BackupFile.FileName = Path.GetFileName(TextBoxConsolePath.Text);
             BackupFile.LocalPath = TextBoxLocalPath.Text;

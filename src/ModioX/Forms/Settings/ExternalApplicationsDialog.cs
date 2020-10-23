@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace ModioX.Forms
 {
-    public partial class EditExternalApplications : DarkForm
+    public partial class ExternalApplicationsDialog : DarkForm
     {
-        public EditExternalApplications()
+        public ExternalApplicationsDialog()
         {
             InitializeComponent();
         }
@@ -59,14 +59,16 @@ namespace ModioX.Forms
 
         private void ToolStripDelete_Click(object sender, EventArgs e)
         {
-            int selectedItem = DgvApplications.SelectedRows[0].Index;
-            MainWindow.SettingsData.ExternalApplications.RemoveAt(selectedItem);
-            UpdateUI();
+            if (DarkMessageBox.Show(this, $"Do you really want delete the selected item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                MainWindow.SettingsData.ExternalApplications.RemoveAt(DgvApplications.SelectedRows[0].Index);
+                UpdateUI();
+            }                
         }
 
         private void ToolStripDeleteAll_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.Show(this, $"Are you sure that you would like to delete of all your specified applications?", "Delete All Game Regions", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (DarkMessageBox.Show(this, $"Are you sure that you would like to delete of all your specified applications?", "Delete All Game Regions", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 MainWindow.SettingsData.ExternalApplications.Clear();
                 _ = DarkMessageBox.Show(this, $"All specified regions for games have now been deleted.", "Deleted All Game Regions", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -89,7 +91,7 @@ namespace ModioX.Forms
         {
             TextBoxFileName.Text = "";
             TextBoxFileLocation.Text = "";
-            TextBoxFileName.Focus();
+            _ = TextBoxFileName.Focus();
         }
 
         private void ButtonAddApplication_Click(object sender, EventArgs e)
@@ -99,13 +101,13 @@ namespace ModioX.Forms
 
             if (string.IsNullOrWhiteSpace(appName))
             {
-                _ = DarkMessageBox.Show(this, $"You must enter a name for this application.", "No Name", MessageBoxIcon.Exclamation);
+                _ = DarkMessageBox.Show(this, $"You must enter a name for this application.", "Empty Name", MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(fileLocation))
             {
-                _ = DarkMessageBox.Show(this, $"You must enter the file path for this application.", "No File Location", MessageBoxIcon.Exclamation);
+                _ = DarkMessageBox.Show(this, $"You must enter the file path for this application.", "Empty File Location", MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -123,14 +125,13 @@ namespace ModioX.Forms
         {
             foreach (DataGridViewRow row in DgvApplications.Rows)
             {
-                string name = row.Cells[0].Value.ToString();
+                string appName = row.Cells[0].Value.ToString();
                 string fileLocation = row.Cells[1].Value.ToString();
 
-                MainWindow.SettingsData.UpdateApplication(name, fileLocation);
+                MainWindow.SettingsData.UpdateApplication(appName, fileLocation);
             }
 
-            MainWindow.SaveSettingsData();
-            _ = DarkMessageBox.Show(this, $"All external applications have now been saved.", "External Applications Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _ = DarkMessageBox.Show(this, $"All external applications have now been saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
         }
     }

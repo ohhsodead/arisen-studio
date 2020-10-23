@@ -1,8 +1,8 @@
 ﻿using DarkUI.Controls;
 using DarkUI.Forms;
-using Microsoft.Extensions.Logging.Abstractions;
+using ModioX.Database;
+using ModioX.Constants;
 using ModioX.Extensions;
-using ModioX.Forms.Dialogs;
 using ModioX.Models.Database;
 using ModioX.Models.Resources;
 using ModioX.Properties;
@@ -14,8 +14,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using ModioX.Io;
+using ModioX.Templates;
+using FluentFTP;
 
 namespace ModioX.Forms
 {
@@ -26,51 +28,64 @@ namespace ModioX.Forms
         /// </summary>
         public MainWindow()
         {
-            mainForm = this;
+            mainWindow = this;
             InitializeComponent();
         }
 
         /// <summary>
-        ///     Get/set the 
+        ///     Get/set the current instance of the MainWindow
         /// </summary>
-        public static MainWindow mainForm;
+        public static MainWindow mainWindow;
 
         /// <summary>
-        ///     Contains the users settings data.
+        ///     Contains the users settings Database.
         /// </summary>
         public static SettingsData SettingsData { get; set; } = new SettingsData();
+
+        /// <summary>
+        ///     Contains the dropbox data for the mods and categories.
+        /// </summary>
+        public static DropboxData Database { get; set; }
 
         /// <summary>
         ///     Form loading event.
         /// </summary>
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Text = $"ModioX - Beta v{Utilities.GetCurrentVersion().ToString().Remove(0, 2)}";
-
-            SetStatus($"Initializing application data...");
+            Text = $"ModioX - {UpdateExtensions.CurrentVersionName}";
 
             LoadSettingsData();
-            UpdateExtensions.CheckApplicationVersion();
 
-            if (SettingsData.FirstTimeOpenAfterUpdate)
+            SetStatus($"Checking for Internet connection...");
+            if (HttpExtensions.IsConnectedToInternet())
             {
-                SettingsData.FirstTimeOpenAfterUpdate = false;
-                DialogExtensions.ShowWhatsNewWindow(this, UpdateExtensions.GitHubData);
-            }
+                UpdateExtensions.CheckApplicationVersion();
 
-            if (SettingsData.FirstTimeUse)
+                if (SettingsData.FirstTimeOpenAfterUpdate)
+                {
+                    SettingsData.FirstTimeOpenAfterUpdate = false;
+                    DialogExtensions.ShowWhatsNewWindow(this, UpdateExtensions.GitHubData);
+                }
+
+                if (SettingsData.FirstTimeUse)
+                {
+                    SettingsData.FirstTimeUse = false;
+                    _ = DarkMessageBox.Show(this, "It is important to read the information about this using tool before installing/uninstalling mods so that you don't have any issues. Go to Help Menu > More Information.", "First Time Use", MessageBoxIcon.Information);
+                }
+
+                SetStatus($"Initializing the application database...");
+                WorkerExtensions.RunWorkAsync(LoadData, InitializeFinished);
+                EnableConsoleActions();
+            }
+            else
             {
-                SettingsData.FirstTimeUse = false;
-                DarkMessageBox.Show(this, "Before using this tool, it is important to read the information about this tool so you don't have any issues. Go to HELP > More Information.", "First Time Use", MessageBoxIcon.Information);
+                _ = DarkMessageBox.Show(this, "You must be connected to the Internet to use this application.", "No Internet", MessageBoxIcon.Warning);
+                Application.Exit();
             }
-
-            Worker.RunWorkAsync(LoadData, InitializeFinished);
-
-            EnableConsoleActions();
         }
 
         /// <summary>
-        ///     Save application settings on form close event.
+        ///     Save application settings on form closing event.
         /// </summary>
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -78,7 +93,7 @@ namespace ModioX.Forms
         }
 
         /// <summary>
-        ///     Update scrollbar properties when form resized
+        ///     Update scrollbars when the form is resized.
         /// </summary>
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
@@ -87,45 +102,34 @@ namespace ModioX.Forms
         }
 
         /// <summary>
-        ///     Contains the latest games data retrieved from the database
-        /// </summary>
-        public static CategoriesData Categories;
-
-        /// <summary>
-        ///     Contains the latest mods data retrieved from the database
-        /// </summary>
-        public static ModsData Mods;
-
-        /// <summary>
-        ///     Retrieves the games and mods data into the application
+        ///     Retrieves the categories and mods into the application.
         /// </summary>
         private static void LoadData()
         {
             try
             {
-                Categories = Utilities.GetCategoriesData();
-                Mods = Utilities.GetModsData();
+                Database = new DropboxData();
             }
             catch (Exception ex)
             {
-                Program.Log.Error(ex.Message, ex);
+                Program.Log.Error($"Unable to load database. Error: {ex.Message}", ex);
+                _ = DarkMessageBox.Show(mainWindow, $"Unable to retrieve the database at this moment. It could be because our hosting provided is either undergoing maintenance or it's offline for a while. I suggest you try runnining ModioX again in a few moments. But if you keep getting this message then please create a new issue on our GitHub page at {Urls.GitHubRepo}issues - so we can investigate and fix this as soon as possible.", "Can't Load Database", MessageBoxIcon.Warning);
+                Application.Exit();
             }
         }
 
         /// <summary>
-        ///     Finalize application data properties after being initialized
+        ///     Finalize application data after being initialized.
         /// </summary>
         private void InitializeFinished(object sender, RunWorkerCompletedEventArgs e)
         {
-            SetStatus($"Successfully loaded the database - Finalizing data...");
+            SetStatus($"Successfully loaded the database - Finalizing application data...");
 
-            Categories.Categories = Categories.Categories.OrderBy(o => o.Title).ToList();
-
-            LoadModsCategories();
+            LoadCategories();
 
             ComboBoxSystemType.Items.Clear(); _ = ComboBoxSystemType.Items.Add("ANY");
 
-            foreach (string firmware in Mods.AllFirmwares)
+            foreach (string firmware in Database.Mods.AllFirmwares)
             {
                 if (!ComboBoxSystemType.Items.Contains(firmware))
                 {
@@ -133,7 +137,7 @@ namespace ModioX.Forms
                 }
             }
 
-            SelectedCategory = Categories.Categories.First(x => x.CategoryType == CategoryType.Game);
+            SelectedCategory = Database.Categories.Categories.OrderBy(x => x.Title).First(x => x.CategoryType == CategoryType.Game);
 
             LoadModsByCategoryId(SelectedCategory.Id,
                                  "",
@@ -143,40 +147,48 @@ namespace ModioX.Forms
 
             ComboBoxSystemType.SelectedIndex = 0;
 
-            ToolStripLabelStats.Text = $"{Mods.TotalGameMods} Mods for {Categories.TotalGames} Games, {Mods.TotalGameSaves} Game Saves, {Mods.TotalGameUpdates} Game Updates, {Mods.TotalHomebrew} Homebrew, {Mods.TotalResources} Resources && {Mods.TotalThemes} Themes";
+            ToolStripLabelStats.Text = $"{Database.Mods.TotalGameMods(Database.Categories)} Mods for {Database.Categories.TotalGames} Games, {Database.Mods.TotalResources(Database.Categories)} Resources (Last Updated: {Database.Mods.LastUpdated.ToLocalTime().ToShortDateString()})";
 
-            SetStatus($"Initialized ModioX (Beta v{UpdateExtensions.CurrentVersion.ToString().Remove(0, 2)}) - Ready to connect to console...");
+            SetStatus($"Initialized ModioX ({UpdateExtensions.CurrentVersionName}) - Ready to connect to console...");
 
-            Focus();
+            _ = Focus();
         }
 
         /// <summary>
-        ///     Contains the selected console profile name
+        ///     Contains the console profile data.
         /// </summary>
         public static ConsoleProfile ConsoleProfile { get; set; }
 
         /// <summary>
-        ///    Determines the connection status for the console
+        ///    Determines whether the console is currently connected.
         /// </summary>
         public static bool IsConsoleConnected { get; set; }
 
         /// <summary>
-        ///     
+        ///     Conntains the FtpClient for use with the built-in file manager.
+        /// </summary>
+        public static FtpClient FtpClient { get; set; }
+
+        /// <summary>
+        ///     Creates an FTP connection for use with uploading mods, not reliable for the built-in file manager.
         /// </summary>
         /// <returns></returns>
-        public static FtpConnection GetFtpConnection()
+        public static FtpConnection FtpConnection
         {
-            FtpConnection ftpConnection = new FtpConnection(ConsoleProfile.Address, ConsoleProfile.Port);
-            NetworkCredential ftpCredentials = ConsoleProfile.UseDefaultCredentials
+            get
+            {
+                FtpConnection ftpConnection = new FtpConnection(ConsoleProfile.Address, ConsoleProfile.Port);
+                NetworkCredential ftpCredentials = ConsoleProfile.UseDefaultCredentials
                     ? new NetworkCredential("anonymous", "anonymous")
                     : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password);
-            ftpConnection.Login(ftpCredentials.UserName, ftpCredentials.Password);
-            ftpConnection.Open();
-            return ftpConnection;            
+                ftpConnection.Login(ftpCredentials.UserName, ftpCredentials.Password);
+                ftpConnection.Open();
+                return ftpConnection;
+            }
         }
 
         /// <summary>
-        ///     Test and verify the connection to the console address
+        ///     Connect to the console profile and opens the FTP connections.
         /// </summary>
         public void ConnectConsole()
         {
@@ -184,7 +196,21 @@ namespace ModioX.Forms
             {
                 SetStatus($"Connecting to {ConsoleProfile.Name} ({ConsoleProfile.Address})...");
 
-                GetFtpConnection();
+                using (FtpConnection ftpConnection = FtpConnection)
+                {
+                    ;
+                }
+
+                FtpClient = new FtpClient
+                {
+                    Host = ConsoleProfile.Address,
+                    Port = ConsoleProfile.Port,
+                    Credentials = ConsoleProfile.UseDefaultCredentials
+                    ? new NetworkCredential("anonymous", "anonymous")
+                    : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password)
+                };
+
+                FtpClient.Connect();
 
                 SetStatusConsole(ConsoleProfile);
                 IsConsoleConnected = true;
@@ -198,19 +224,20 @@ namespace ModioX.Forms
             catch (Exception ex)
             {
                 SetStatus($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address}).", ex);
-                _ = DarkMessageBox.Show(this, string.Format("Can't connect to {0}. Error: {1}", ConsoleProfile.Name, ex.Message), "Connection Failed", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, $"Can't connect to {ConsoleProfile.Name}. Error: {ex.Message}", "Connection Failed", MessageBoxIcon.Error);
             }
         }
 
         /// <summary>
-        ///     
+        ///     Disconnects from the console and releases all resources from the FTP connections.
         /// </summary>
         private void DisconnectConsole()
         {
             SetStatus($"Disconnecting from {ConsoleProfile.Name} ({ConsoleProfile.Address})...");
 
-            GetFtpConnection().Dispose();
-            GetFtpConnection().Close();
+            FtpConnection.Dispose();
+            FtpConnection.Close();
+            FtpClient.Dispose();
 
             IsConsoleConnected = false;
             SetStatusConsole(null);
@@ -229,18 +256,44 @@ namespace ModioX.Forms
             }
             else
             {
-                DialogExtensions.ShowConnectionDialog(this);
+                ConsoleProfile consoleProfile = DialogExtensions.ShowConnectionDialog(this);
+
+                if (consoleProfile != null)
+                {
+                    ConsoleProfile = consoleProfile;
+                    ConnectConsole();
+                }
             }
         }
 
         private void MenuItemToolsBackupFileManager_Click(object sender, EventArgs e)
         {
-            DialogExtensions.ShowBackupFiles(this);
+            DialogExtensions.ShowGameBackupFiles(this);
         }
 
         private void MenuItemToolsFileManager_Click(object sender, EventArgs e)
         {
             DialogExtensions.ShowFileManager(this);
+        }
+
+        private void MenuItemApplications_Click(object sender, EventArgs e)
+        {
+            string menuItemText = ((ToolStripMenuItem)sender).Text;
+
+            foreach (ExternalApplication application in SettingsData.ExternalApplications)
+            {
+                if (application.Name.Equals(menuItemText))
+                {
+                    if (File.Exists(application.FileLocation))
+                    {
+                        _ = Process.Start(application.FileLocation);
+                    }
+                    else
+                    {
+                        _ = DarkMessageBox.Show(this, $"Could not locate file at location: {application.FileLocation} for application: {application.Name}\n\nGo to Settings > Edit Applications and set the correct file path for this application.", "Application File Not Found", MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void MenuStripResourcesForumsPsxPlacePs3Mods_Click(object sender, EventArgs e)
@@ -250,7 +303,7 @@ namespace ModioX.Forms
 
         private void MenuStripResourcesForumsPsxPlaceGameMods_Click(object sender, EventArgs e)
         {
-            _ = Process.Start("https://www.psx-place.com/forums/game-mods.91/");
+            _ = Process.Start("https://www.psx-place.com/forums/game-Data.Mods.91/");
         }
 
         private void MenuStripResourcesForumsPsxScenePs3Mods_Click(object sender, EventArgs e)
@@ -323,19 +376,14 @@ namespace ModioX.Forms
             _ = Process.Start("http://nopaystation.com/");
         }
 
-        private void MenuStripContribute_Click(object sender, EventArgs e)
-        {
-            _ = Process.Start(Utilities.GitHubRepo);
-        }
-
         private void MenuItemSettingsShowModID_Click(object sender, EventArgs e)
         {
             SettingsData.ShowModIds = MenuItemSettingsShowModID.Checked;
         }
 
-        private void MenuItemSettingsAutoDetectGameRegion_Click(object sender, EventArgs e)
+        private void MenuItemSettingsAutoDetectGameRegions_Click(object sender, EventArgs e)
         {
-            SettingsData.AutoDetectGameRegion = MenuItemSettingsAutoDetectGameRegion.Checked;
+            SettingsData.AutoDetectGameRegion = MenuItemSettingsAutoDetectGameRegions.Checked;
         }
 
         private void MenuItemSettingsRememberGameRegions_Click(object sender, EventArgs e)
@@ -352,7 +400,7 @@ namespace ModioX.Forms
         {
             SaveSettingsData();
 
-            ConsoleProfile consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile());
+            ConsoleProfile consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
 
             if (consoleProfile != null)
             {
@@ -360,32 +408,32 @@ namespace ModioX.Forms
             }
 
             SaveSettingsData();
+            LoadSettingsData();
         }
 
         private void MenuItemSettingsEditGameRegions_Click(object sender, EventArgs e)
         {
             SaveSettingsData();
 
-            using (EditGameRegions gameRegions = new EditGameRegions())
-            {
-                _ = gameRegions.ShowDialog(this);
-            }
+            DialogExtensions.ShowGameRegionsDialog(this);
+
+            SaveSettingsData();
+            LoadSettingsData();
         }
 
         private void MenuItemSettingsEditExternalApplications_Click(object sender, EventArgs e)
         {
             SaveSettingsData();
 
-            using (EditExternalApplications applications = new EditExternalApplications())
-            {
-                _ = applications.ShowDialog(this);
-                LoadSettingsData();
-            }
+            DialogExtensions.ShowExternalApplicationsDialog(this);
+
+            SaveSettingsData();
+            LoadSettingsData();
         }
 
         private void MenuItemSettingsResetAllOptions_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.Show(this, "Are you sure that you want to reset all of your settings to default? This cannot be undone.", "Reset Settings", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (DarkMessageBox.Show(this, "Do you really want to reset all of your settings to default? This cannot be undone.", "Reset Settings", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 SettingsData OldSettingsData = SettingsData; // Current user settings
                 SettingsData NewSettingsData = new SettingsData(); // New user settings
@@ -394,13 +442,13 @@ namespace ModioX.Forms
                 {
                     if (SettingsData.InstalledGameMods.Count > 0)
                     {
-                        if (DarkMessageBox.Show(this, "You have mods installed to games that won't be remembered after you reset your settings. Would you like to uninstall the mods? (Recommended)", "Game Mods Installed", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        if (DarkMessageBox.Show(this, "You have game mods installed and will not besaved  after you reset your settings. Would you like to uninstall the mods? (Recommended)", "Game Mods Installed", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
                             try
                             {
-                                foreach (GameModInstalled modInstalled in SettingsData.InstalledGameMods)
+                                foreach (InstalledGameMod modInstalled in SettingsData.InstalledGameMods)
                                 {
-                                    ModsData.ModItem modItem = Mods.GetModById(modInstalled.ModId);
+                                    ModsData.ModItem modItem = Database.Mods.GetModById(modInstalled.ModId);
 
                                     UninstallMods(modItem, SettingsData.GetInstalledGameModRegion(modItem.GameId));
                                 }
@@ -420,19 +468,19 @@ namespace ModioX.Forms
                 }
 
                 SettingsData = NewSettingsData;
-                _ = DarkMessageBox.Show(this, "Your settings have been reset. ModioX will now restart to apply changes.", "Settings Reset", MessageBoxIcon.Information);
+                _ = DarkMessageBox.Show(this, "Your settings have been reset. ModioX will now restart to apply these changes.", "Settings Reset", MessageBoxIcon.Information);
                 Application.Restart();
             }
         }
 
-        private void MenuStripHelpSourceCode_Click(object sender, EventArgs e)
-        {
-            _ = Process.Start("https://github.com/ohhsoash/ModioX");
-        }
-
         private void MenuStripHelpReportBugSuggestions_Click(object sender, EventArgs e)
         {
-            _ = Process.Start("https://github.com/ohhsoash/ModioX/issues/new");
+            _ = Process.Start($"{Urls.GitHubRepo}issues/new");
+        }
+
+        private void MenuStripHelpSourceCode_Click(object sender, EventArgs e)
+        {
+            _ = Process.Start(Urls.GitHubRepo);
         }
 
         private void MenuItemHelpDiscordServer_Click(object sender, EventArgs e)
@@ -445,29 +493,27 @@ namespace ModioX.Forms
             UpdateExtensions.CheckApplicationVersion();
         }
 
-        private void MenuItemInstallUninstallNotes_Click(object sender, EventArgs e)
+        private void MenuItemMoreInformation_Click(object sender, EventArgs e)
         {
             _ = DarkMessageBox.Show(this, "Installing/Uninstalling Mods:\n"
-                                          + "You must have Multiman or Rebug Toolbox open before installing/uninstalling any files to your PS3. Do NOT install/uninstall files while you're in game. You shouldn't be signed into PSN while connected to this app.\n\n"
-                                          + "Installing to USB devices:\n"
-                                          + "You must use a USB device that has a minimum capacity of ~3GB. Some files (except for game-saves) are optional. But some mods may not work as they were inteded by the creator if they're not installed to your USB device. Read the full description for mods about USB files.\n\n"
-                                          + "Uninstalling Game Saves:\n"
-                                          + "For removing installed game saves, you must either delete the game save through the XMB menu or connect the USB device into your computer and delete the save you installed earlier.\n\n"
-                                          + "Uninstalling from REBUG folders:\n"
-                                          + "It's not recommended to uninstall any files from the firmware folder as this can cause major problems. Before installing mods to the 'dev_rebug' folder, it's recommended to create a backup of this folder so have the original files which you can be restored in the case any files get corrupted.",
-                                          "More Information", MessageBoxIcon.Information);
+                                      + "You must have Multiman or Rebug Toolbox to connect to your PS3 and before installing/uninstalling any files to your PS3. Do NOT do this while you're in game. It's also recommended to not be signed into PSN while using this app to avoid being banned.\n\n"
+                                      + "Installing to USB devices:\n"
+                                      + "You must use a USB device that has a capacity of ~3GB. Some files (except for game-saves) can be optionally installed to a USB device. But some mods may not work as they were inteded by the creator if they're not installed. I suggest reading the full description for more information as it may explain what the files are.\n\n"
+                                      + "Uninstalling Game Saves:\n"
+                                      + "For removing installed game saves, you must either delete the game save through the XMB menu or reconnect the same USB device into your computer and delete the game save that you installed before.\n\n"
+                                      + "Uninstalling from REBUG folder:\n"
+                                      + "It's not recommended to uninstall any files from the firmware folder as this can cause major problems. Before installing mods to the 'dev_rebug' folder, it's recommended to create a backup of the entire folder so you have the original files that you can be restored in the case any files get corrupted.",
+                                      "More Information", MessageBoxIcon.Information);
         }
 
         private void MenuStripHelpAbout_Click(object sender, EventArgs e)
         {
-            //_ = DarkMessageBox.Show(this, "ModioX was developed by @ohhsodead and few friends, with the only intention of providing an efficient tool for browsing, downloading and installing mods directly to your console. All credits are given to those appropriate creators/authors of the mods used in this application. If you have any questions please send a message at my Discord: ohhsodead#2519 with your much welcomed comments, suggestions and feedback to help support this project.", "Information", MessageBoxIcon.Information);
-
             DialogExtensions.ShowAboutWindow(this);
         }
 
         private void MenuStripItemRefreshData_Click(object sender, EventArgs e)
         {
-            SetStatus($"Initializing application data...");
+            SetStatus($"Initializing application database...");
 
             if (IsConsoleConnected)
             {
@@ -477,7 +523,7 @@ namespace ModioX.Forms
             SaveSettingsData();
             LoadSettingsData();
 
-            Worker.RunWorkAsync(LoadData, InitializeFinished);
+            WorkerExtensions.RunWorkAsync(LoadData, InitializeFinished);
         }
 
         private void MenuStripRequestMod_Click(object sender, EventArgs e)
@@ -490,32 +536,32 @@ namespace ModioX.Forms
 
 
         /// <summary>
-        ///     Contains the selected game data selected by the user
+        ///     Get/set the selected game data selected by the user.
         /// </summary>
         public static CategoriesData.Category SelectedCategory { get; set; }
 
         /// <summary>
-        ///     Contains the selected mods info selected by the user
+        ///     Get/set the selected mods info selected by the user.
         /// </summary>
         public static ModsData.ModItem SelectedModItem { get; set; }
 
         /// <summary>
-        ///     
+        ///     Get/set the name for filtering mods.
         /// </summary>
         private string FilterModsName { get; set; } = "";
 
         /// <summary>
-        ///     
+        ///     Get/set the firmware for filtering mods.
         /// </summary>
         private string FilterModsFirmware { get; set; } = "";
 
         /// <summary>
-        ///     
+        ///     Get/set the type for filtering mods.
         /// </summary>
         private string FilterModsType { get; set; } = "";
 
         /// <summary>
-        ///     
+        ///     Get/set the region for filtering mods.
         /// </summary>
         private string FilterModsRegion { get; set; } = "";
 
@@ -588,25 +634,37 @@ namespace ModioX.Forms
         {
             if (DgvMods.CurrentRow != null)
             {
-                DisplayModDetails(int.Parse(DgvMods.CurrentRow.Cells[0].Value.ToString()));
+                ModsData.ModItem modItem = Database.Mods.GetModById(int.Parse(DgvMods.CurrentRow.Cells[0].Value.ToString()));
+
+                if (modItem != null)
+                {
+                    DisplayModDetails(modItem.Id);
+                }
+
+                ToolItemUninstallMod.Enabled = SettingsData.GetInstalledGameMod(modItem.GameId) != null
+                    ? IsConsoleConnected && SettingsData.GetInstalledGameMod(modItem.GameId).ModId.Equals(modItem.Id)
+                    : false;
+
+                ContextMenuModsUninstallFiles.Enabled = SettingsData.GetInstalledGameMod(modItem.GameId) != null
+                    ? IsConsoleConnected && SettingsData.GetInstalledGameMod(modItem.GameId).ModId.Equals(modItem.Id)
+                    : false;
             }
 
-            ToolItemInstallMod.Enabled = DgvMods.SelectedRows.Count != 0 && IsConsoleConnected;
-            ToolItemDownloadMod.Enabled = DgvMods.SelectedRows.Count != 0;
-            ToolItemFavoriteMod.Enabled = DgvMods.SelectedRows.Count != 0;
+            ToolItemInstallMod.Enabled = DgvMods.CurrentRow != null && IsConsoleConnected;
+            ToolItemDownloadMod.Enabled = DgvMods.CurrentRow != null;
+            ToolItemFavoriteMod.Enabled = DgvMods.CurrentRow != null;
         }
 
         private void DgvMods_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (DgvMods.CurrentRow != null)
             {
-                ToolItemInstallMod.Enabled = e.RowIndex != -1 && IsConsoleConnected;
-                ToolItemDownloadMod.Enabled = e.RowIndex != -1;
-                ToolItemFavoriteMod.Enabled = e.RowIndex != -1;
+                ModsData.ModItem modItem = Database.Mods.GetModById(int.Parse(DgvMods.CurrentRow.Cells[0].Value.ToString()));
 
-                ModsData.ModItem modItem = Mods.GetModById(int.Parse(DgvMods.CurrentRow.Cells[0].Value.ToString()));
-
-                if (modItem != null) DisplayModDetails(modItem.Id);
+                if (modItem != null)
+                {
+                    DisplayModDetails(modItem.Id);
+                }
 
                 if (DgvMods.CurrentCell.ColumnIndex.Equals(8) && e.RowIndex != -1)
                 {
@@ -625,14 +683,18 @@ namespace ModioX.Forms
 
                     if (SettingsData.FavoritedIds.Contains(modItem.ToString()))
                     {
-                        DgvMods.CurrentRow.Cells[10].Value = ImageExtensions.ResizeBitmap(Resources.icons8_heart_fill_22, 19, 19);
+                        DgvMods.CurrentRow.Cells[10].Value = ImageExtensions.ResizeBitmap(Resources.heart_fill, 19, 19);
                     }
                     else
                     {
-                        DgvMods.CurrentRow.Cells[10].Value = ImageExtensions.ResizeBitmap(Resources.icons8_heart_outline_22, 19, 19);
+                        DgvMods.CurrentRow.Cells[10].Value = ImageExtensions.ResizeBitmap(Resources.heart_outline, 19, 19);
                     }
                 }
             }
+
+            ToolItemInstallMod.Enabled = DgvMods.CurrentRow != null && IsConsoleConnected;
+            ToolItemDownloadMod.Enabled = DgvMods.CurrentRow != null;
+            ToolItemFavoriteMod.Enabled = DgvMods.CurrentRow != null;
         }
 
         private void ContextMenuModsInstallToConsole_Click(object sender, EventArgs e)
@@ -652,13 +714,13 @@ namespace ModioX.Forms
 
         private void ContextMenuModsExtractInformation_Click(object sender, EventArgs e)
         {
-            CategoriesData.Category category = Categories.GetCategoryById(SelectedModItem.GameId);
+            CategoriesData.Category category = Database.Categories.GetCategoryById(SelectedModItem.GameId);
 
             string folderPath = DialogExtensions.ShowFolderBrowseDialog(this, "Select the folder where you want the README to be extracted");
 
             if (folderPath != null)
             {
-                SelectedModItem.GenerateReadMeAtPath(folderPath);
+                SelectedModItem.GenerateReadMeAtPath(Database.Categories, folderPath);
                 SetStatus($"{SelectedModItem.Name} ({SelectedModItem.Type}) for {category.Title} - Successfully created readme file at path: '{folderPath}'");
             }
         }
@@ -666,14 +728,14 @@ namespace ModioX.Forms
         private void ContextMenuModsReportOnGitHub_Click(object sender, EventArgs e)
         {
             _ = DarkMessageBox.Show(this, "You will be directed to the GitHub Issues tracking page for ModioX. All of the details will be auto-filled for you. Create or login with your GitHub account and click the 'Submit' button to open a new issue for us to investigate this issue.", "Opening GitHub Issues", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Utilities.OpenReportTemplate(SelectedModItem);
+            GitHubTemplates.OpenReportTemplate(SelectedModItem, Database.Categories.GetCategoryById(SelectedModItem.GameId));
         }
 
         private void DgvModsInstalled_SelectionChanged(object sender, EventArgs e)
         {
             if (DgvModsInstalled.CurrentRow != null)
             {
-                ModsData.ModItem modItem = Mods.GetModById(int.Parse(DgvModsInstalled.CurrentRow.Cells[0].Value.ToString()));
+                ModsData.ModItem modItem = Database.Mods.GetModById(int.Parse(DgvModsInstalled.CurrentRow.Cells[0].Value.ToString()));
 
                 DisplayModDetails(modItem.Id);
             }
@@ -683,7 +745,7 @@ namespace ModioX.Forms
         {
             if (e.RowIndex != -1)
             {
-                ModsData.ModItem modItem = Mods.GetModById(int.Parse(DgvModsInstalled.CurrentRow.Cells[0].Value.ToString()));
+                ModsData.ModItem modItem = Database.Mods.GetModById(int.Parse(DgvModsInstalled.CurrentRow.Cells[0].Value.ToString()));
 
                 DisplayModDetails(modItem.Id);
 
@@ -701,9 +763,9 @@ namespace ModioX.Forms
         {
             if (IsConsoleConnected)
             {
-                foreach (GameModInstalled installedMod in SettingsData.InstalledGameMods)
+                foreach (InstalledGameMod installedGameMod in SettingsData.InstalledGameMods)
                 {
-                    ModsData.ModItem modItem = Mods.GetModById(installedMod.ModId);
+                    ModsData.ModItem modItem = Database.Mods.GetModById(installedGameMod.ModId);
 
                     UninstallMods(modItem, SettingsData.GetInstalledGameModRegion(modItem.GameId));
                 }
@@ -730,15 +792,17 @@ namespace ModioX.Forms
             AddModToFavorites(SelectedModItem);
         }
 
-        private void LoadModsCategories()
+        private void LoadCategories()
         {
             PanelGames.Controls.Clear();
             PanelResources.Controls.Clear();
             PanelLists.Controls.Clear();
 
-            foreach (CategoriesData.Category category in Categories.Categories)
+            foreach (CategoriesData.Category category in Database.Categories.Categories.OrderBy(x => x.Title))
             {
-                if (Mods.GetModsByCategoryId(category.Id).Length > 0 || category.Id.Equals("fvrt"))
+                ModsData.ModItem[] modsByCategory = Database.Mods.GetModsByCategoryId(category.Id);
+
+                if (modsByCategory.Length > 0 || category.Id.Equals("fvrt"))
                 {
                     // Mods Category Title
                     Label CategoryTitle = new Label
@@ -752,7 +816,7 @@ namespace ModioX.Forms
                         Cursor = Cursors.Hand,
                         BackColor = Color.Transparent,
                         ForeColor = Color.Gainsboro,
-                        Text = category.Id.Equals("fvrt") ? string.Format("{0} ({1})", category.Title.Replace("&", "&&"), SettingsData.FavoritedIds.Count) : string.Format("{0} ({1})", category.Title.Replace("&", "&&"), Mods.GetModsByCategoryId(category.Id).Length)
+                        Text = $"{category.Title.Replace("&", "&&")} ({(category.Id.Equals("fvrt") ? SettingsData.FavoritedIds.Count : modsByCategory.Length)})"
                     };
 
                     CategoryTitle.Click += new EventHandler(CategoryTitle_Click);
@@ -774,13 +838,12 @@ namespace ModioX.Forms
                 }
             }
 
-
             UpdateScrollBarCategories();
         }
 
         private void CategoryTitle_Click(object sender, EventArgs e)
         {
-            SelectedCategory = Categories.GetCategoryById(((Label)sender).Name);
+            SelectedCategory = Database.Categories.GetCategoryById(((Label)sender).Name);
 
             FilterModsType = "";
             FilterModsRegion = "";
@@ -807,12 +870,12 @@ namespace ModioX.Forms
         /// <summary>
         ///     Loads all the mods for the specified gameId, matching with filters: name, firmware, type and region
         /// </summary>
-        /// <param name="gameId">Filter GameId</param>
+        /// <param name="categoryId">Filter by GameId</param>
         /// <param name="name">Filter by Name</param>
         /// <param name="firmware">Filter by Firmware</param>
         /// <param name="type">Filter by Type</param>
         /// <param name="region">Filter by Region</param>
-        private void LoadModsByCategoryId(string gameId, string name, string firmware, string type, string region)
+        private void LoadModsByCategoryId(string categoryId, string name, string firmware, string type, string region)
         {
             UpdateCategoryTitles();
             LoadInstalledMods();
@@ -821,35 +884,31 @@ namespace ModioX.Forms
 
             ComboBoxModType.Items.Clear();
             _ = ComboBoxModType.Items.Add("ANY");
-
-            ComboBoxModType.Items.AddRange(Mods.AllModTypesForCategoryId(gameId).ToArray());
+            ComboBoxModType.Items.AddRange(Database.Mods.AllModTypesForCategoryId(categoryId).ToArray());
 
             ComboBoxRegion.Items.Clear();
             _ = ComboBoxRegion.Items.Add("ANY");
-
             ComboBoxRegion.Items.AddRange(SelectedCategory.Regions.ToArray());
 
-            foreach (ModsData.ModItem modItem in Mods.GetModItems(gameId, name, firmware, type, region))
+            foreach (ModsData.ModItem modItem in Database.Mods.GetModItems(categoryId, name, firmware, type, region).OrderBy(x => x.Name))
             {
                 _ = DgvMods.Rows.Add(modItem.Id,
-                                     modItem.Name,
-                                     modItem.Firmware,
-                                     modItem.Type,
-                                     modItem.Region,
-                                     modItem.Version == "n/a" || modItem.Version == "-" || modItem.Version == "" ? "-" : "v" + modItem.Version,
-                                     modItem.Author,
-                                     modItem.InstallPaths.Length + (modItem.InstallPaths.Length > 1 ? " Files" : " File"),
-                                     ImageExtensions.ResizeBitmap(Resources.icons8_software_installer_22, 19, 19),
-                                     ImageExtensions.ResizeBitmap(Resources.icons8_download_from_the_cloud_22, 19, 19),
-                                     SettingsData.FavoritedIds.Contains(modItem.Id.ToString()) ?
-                                     ImageExtensions.ResizeBitmap(Resources.icons8_heart_fill_22, 20, 20) :
-                                     ImageExtensions.ResizeBitmap(Resources.icons8_heart_outline_22, 19, 19));
+                    modItem.Name,
+                    modItem.Firmware,
+                    modItem.Type,
+                    modItem.Region,
+                    modItem.Version == "n/a" || modItem.Version == "-" || modItem.Version == "" ? "-" : modItem.Version,
+                    modItem.Author,
+                    modItem.InstallPaths.Length + (modItem.InstallPaths.Length > 1 ? " Files" : " File"),
+                    ImageExtensions.ResizeBitmap(Resources.install, 19, 19),
+                    ImageExtensions.ResizeBitmap(Resources.download_from_the_cloud, 19, 19),
+                    SettingsData.FavoritedIds.Contains(modItem.Id.ToString()) ?
+                    ImageExtensions.ResizeBitmap(Resources.heart_fill, 20, 20) :
+                    ImageExtensions.ResizeBitmap(Resources.heart_outline, 19, 19));
 
             }
 
             LabelNoModsFound.Visible = DgvMods.Rows.Count == 0;
-
-            DgvMods.Sort(DgvMods.Columns[1], ListSortDirection.Ascending);
 
             if (DgvMods.Rows.Count > 0)
             {
@@ -872,7 +931,7 @@ namespace ModioX.Forms
         }
 
         /// <summary>
-        ///     Loads all of the currently installed game mods
+        ///     Load all of the currently installed game mods
         /// </summary>
         private void LoadInstalledMods()
         {
@@ -880,21 +939,21 @@ namespace ModioX.Forms
 
             int totalFiles = 0;
 
-            foreach (GameModInstalled installedMod in SettingsData.InstalledGameMods)
+            foreach (InstalledGameMod installedMod in SettingsData.InstalledGameMods)
             {
-                CategoriesData.Category modCategory = Categories.GetCategoryById(installedMod.GameId);
+                CategoriesData.Category modCategory = Database.Categories.GetCategoryById(installedMod.GameId);
 
-                ModsData.ModItem modInstalled = Mods.GetModById(installedMod.ModId);
+                ModsData.ModItem modInstalled = Database.Mods.GetModById(installedMod.ModId);
 
                 _ = DgvModsInstalled.Rows.Add(modInstalled.Id.ToString(),
-                                              modCategory.Title,
-                                              installedMod.GameRegion,
-                                              modInstalled.Name,
-                                              modInstalled.Type,
-                                              modInstalled.Version == "n/a" ? "-" : "v" + modInstalled.Version,
-                                              installedMod.Files + (installedMod.Files > 1 ? " Files" : " File"),
-                                              string.Format("{0:g}", installedMod.DateInstalled),
-                                              ImageExtensions.ResizeBitmap(Resources.icons8_uninstall_programs_22, 19, 19));
+                    modCategory.Title,
+                    installedMod.GameRegion,
+                    modInstalled.Name,
+                    modInstalled.Type,
+                    modInstalled.Version == "n/a" ? "-" : modInstalled.Version,
+                    installedMod.Files + (installedMod.Files > 1 ? " Files" : " File"),
+                    string.Format("{0:g}", installedMod.DateInstalled),
+                    ImageExtensions.ResizeBitmap(Resources.uninstall, 19, 19));
 
                 totalFiles += installedMod.Files;
             }
@@ -907,12 +966,12 @@ namespace ModioX.Forms
         }
 
         /// <summary>
-        ///     Sets the UI to display the selected mod's details
+        ///     Set the UI to display the specified mod details
         /// </summary>
         /// <param name="modId">Specifies the <see cref="ModsData.ModItem.Id"/></param>
         private void DisplayModDetails(long modId)
         {
-            ModsData.ModItem modItem = Mods.GetModById(modId);
+            ModsData.ModItem modItem = Database.Mods.GetModById(modId);
 
             if (modItem == null)
             {
@@ -924,7 +983,7 @@ namespace ModioX.Forms
 
             // Display details in UI
             LabelHeaderNameNo.Text = string.Format("{0} {1}", modItem.Name.Replace("&", "&&"), SettingsData.ShowModIds ? "(ID # " + modItem.Id.ToString() + ")" : "");
-            LabelCategory.Text = Categories.GetCategoryById(Mods.GetModById(modId).GameId).Title;
+            LabelCategory.Text = Database.Categories.GetCategoryById(Database.Mods.GetModById(modId).GameId).Title;
             LabelType.Text = modItem.Type;
             LabelVersion.Text = modItem.Version;
             LabelFirmware.Text = modItem.Firmware;
@@ -949,18 +1008,18 @@ namespace ModioX.Forms
 
             ToolItemInstallMod.Enabled = IsConsoleConnected;
 
-            if (modItem.GetCategoryType(Categories) == CategoryType.Game)
+            if (modItem.GetCategoryType(Database.Categories) == CategoryType.Game)
             {
                 ToolItemUninstallMod.Enabled = SettingsData.GetInstalledGameMod(modItem.GameId) != null
                     ? IsConsoleConnected && SettingsData.GetInstalledGameMod(modItem.GameId).ModId.Equals(modItem.Id)
                     : false;
             }
-            else if (modItem.GetCategoryType(Categories) == CategoryType.Resource)
+            else if (modItem.GetCategoryType(Database.Categories) == CategoryType.Resource)
             {
                 ToolItemUninstallMod.Enabled = !modItem.IsInstallToRebugFolder && IsConsoleConnected;
             }
 
-            ToolItemFavoriteMod.Image = SettingsData.FavoritedIds.Contains(modItem.Id.ToString()) ? ImageExtensions.ResizeBitmap(Resources.icons8_heart_fill_22, 19, 19) : ImageExtensions.ResizeBitmap(Resources.icons8_heart_outline_22, 19, 19);
+            ToolItemFavoriteMod.Image = SettingsData.FavoritedIds.Contains(modItem.Id.ToString()) ? ImageExtensions.ResizeBitmap(Resources.heart_fill, 19, 19) : ImageExtensions.ResizeBitmap(Resources.heart_outline, 19, 19);
             ToolItemFavoriteMod.Text = SettingsData.FavoritedIds.Contains(modItem.Id.ToString()) ? "Unfavorite" : "Favorite";
             ToolItemFavoriteMod.AutoSize = false;
             ToolItemFavoriteMod.AutoSize = true;
@@ -969,7 +1028,7 @@ namespace ModioX.Forms
         }
 
         /// <summary>
-        ///     
+        ///     Changes the category titles to the selected/non-selected colours
         /// </summary>
         public void UpdateCategoryTitles()
         {
@@ -990,7 +1049,7 @@ namespace ModioX.Forms
         }
 
         /// <summary>
-        ///     
+        ///     Update the categories scrollbar properties.
         /// </summary>
         public void UpdateScrollBarCategories()
         {
@@ -1002,7 +1061,7 @@ namespace ModioX.Forms
         }
 
         /// <summary>
-        ///     
+        ///     Update the mods details scrollbar properties.
         /// </summary>
         public void UpdateScrollBarDetails()
         {
@@ -1023,9 +1082,6 @@ namespace ModioX.Forms
             try { ScrollBarCategories.Value = FlowPanelCategories.VerticalScroll.Value + 10; } catch { }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
         private void ScrollBarCategories_ValueChanged(object sender, ScrollValueEventArgs e)
         {
             try 
@@ -1036,9 +1092,6 @@ namespace ModioX.Forms
             catch { }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
         private void ScrollBarDetails_ValueChanged(object sender, ScrollValueEventArgs e)
         {
             try
@@ -1049,26 +1102,23 @@ namespace ModioX.Forms
             catch { }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
         private void FlowPanelDetails_Scroll(object sender, ScrollEventArgs e)
         {
             try { ScrollBarDetails.Value = FlowPanelDetails.VerticalScroll.Value; } catch { }
         }
 
         /// <summary>
-        ///     Installs the specified <paramref name="modItem"/> files to the connected console
+        ///     Install the specified <paramref name="modItem"/> files to the connected console
         /// </summary>
-        /// <param name="modItem">Contains the mod details, such as name, download files, install locations, etc.</param>
+        /// <param name="modItem"><see cref="ModsData.ModItem"/></param>
         public void InstallMods(ModsData.ModItem modItem)
         {
-            CategoriesData.Category category = Categories.GetCategoryById(SelectedModItem.GameId);
+            CategoriesData.Category category = Database.Categories.GetCategoryById(SelectedModItem.GameId);
 
             SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {category.Title} - Preparing to install files...");
 
             // Check whether this mod is already installed
-            foreach (GameModInstalled installedGameMod in SettingsData.InstalledGameMods)
+            foreach (InstalledGameMod installedGameMod in SettingsData.InstalledGameMods)
             {
                 if (installedGameMod.GameId.Equals(modItem.GameId) && installedGameMod.ModId.Equals(modItem.Id))
                 {
@@ -1130,7 +1180,7 @@ namespace ModioX.Forms
                 {
                     SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {category.Title} - Fetching user id...");
 
-                    userId = FtpExtensions.GetUserId(this);
+                    userId = Extensions.FtpExtensions.GetUserId(FtpClient, this);
                     gameTitle = $"{category.Title} ({userId})";
 
                     if (string.IsNullOrEmpty(userId))
@@ -1151,7 +1201,7 @@ namespace ModioX.Forms
                         {
                             SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {category.Title} - Fetching USB device...");
 
-                            usbDevice = FtpExtensions.GetUsbPath();
+                            usbDevice = Extensions.FtpExtensions.GetUsbPath();
                             gameTitle = $"{category.Title} ({usbDevice})";
 
                             if (string.IsNullOrEmpty(usbDevice))
@@ -1174,7 +1224,7 @@ namespace ModioX.Forms
                         {
                             SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {category.Title} - Fetching USB device...");
 
-                            usbDevice = FtpExtensions.GetUsbPath();
+                            usbDevice = Extensions.FtpExtensions.GetUsbPath();
                             gameTitle = $"{category.Title} ({gameRegion})";
 
                             if (string.IsNullOrEmpty(usbDevice))
@@ -1193,11 +1243,11 @@ namespace ModioX.Forms
                 // Checks whether it's a game mod, and if mod is already installed to the same game then ask whether to uninstall the current one
                 if (category.CategoryType == CategoryType.Game)
                 {
-                    GameModInstalled modInstalled = SettingsData.GetInstalledGameMod(category.Id);
+                    InstalledGameMod modInstalled = SettingsData.GetInstalledGameMod(category.Id);
 
                     if (modInstalled != null)
                     {
-                        ModsData.ModItem currentModItem = Mods.GetModById(modInstalled.ModId);
+                        ModsData.ModItem currentModItem = Database.Mods.GetModById(modInstalled.ModId);
 
                         if (DarkMessageBox.Show(this, $"'{currentModItem.Name} v{currentModItem.Version} ({currentModItem.Type})' is currently installed to: {category.Title}."
                                                       + "\nAny previous mods must be uninstalled before installing new mods, this is to prevent conflict between mods and having an affect on game performance.\n\nDo you want to cancel this install?",
@@ -1210,7 +1260,7 @@ namespace ModioX.Forms
                         }
                         else
                         {
-                            UninstallMods(Mods.GetModById(modInstalled.ModId), gameRegion);
+                            UninstallMods(Database.Mods.GetModById(modInstalled.ModId), gameRegion);
                         }
                     }
                 }
@@ -1235,28 +1285,28 @@ namespace ModioX.Forms
 
                         string installPathWithoutFileName = Path.GetDirectoryName(installPath);//.Replace(@"\", "/");
 
-                        // Whether install file matches the specified install file
+                        // Check whether install file matches the specified install file
                         if (string.Equals(installFileName, Path.GetFileName(localFilePath), StringComparison.CurrentCultureIgnoreCase))
                         {
-                            // Whether this file is being istalled to a game folder (can be sesnsitive)
+                            // Check whether this file is istalled to a game folder
                             if (installPath.Contains("/dev_hdd0/game/"))
                             {
-                                // Gets the backup details for this game file
+                                // Get the backup details for this game file if one has been created
                                 BackupFile backupFile = SettingsData.GetGameFileBackup(modItem.GameId, installFileName, installPath);
 
                                 // A backup hasn't been created for this file, so it will be ignored and kept alone - in case issues occur with the game
                                 if (backupFile == null)
                                 {
                                     // Alert the user there is no backup for this file and it will be skipped due to crashing the game
-                                    if (DarkMessageBox.Show(this, "There is no backup for this file. Would you like to create a backup for the current game file? You can then revert the mods at anytime when uninstalling, or using 'TOOLS > Backup Files' to restore the file the original state.\n\nGame File Name: " + Path.GetFileName(installFilePath), "Backup Game File", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                    if (DarkMessageBox.Show(this, "There isn't a backup for this file. Would you like to create a backup for the current game file? This will be restored when you choose to uninstall.\n\nGame File Name: " + Path.GetFileName(installFilePath), "Backup Game File", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                                     {
-                                        SetStatus($"{modItem.Name} v{modItem.Version} v{modItem.Version} ({modItem.Type}) for {gameTitle} - Creating backup file: {installFileName}...");
+                                        SetStatus($"{modItem.Name} v{modItem.Version} v{modItem.Version} ({modItem.Type}) for {gameTitle} - Creating backup of file: {installFileName}...");
 
-                                        CreateBackupFile(modItem, installFileName, installPath);
+                                        SettingsData.CreateBackupFile(modItem, installFileName, installPath);
 
                                         SetStatus($"{modItem.Name} v{modItem.Version}  v{modItem.Version} ({modItem.Type}) for {gameTitle} - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {installPathWithoutFileName}");
 
-                                        FtpExtensions.UploadFile( localFilePath, installPath);
+                                        Extensions.FtpExtensions.UploadFile(localFilePath, installPath);
                                         indexFiles++;
                                     }
                                     // A backup for the this file does exists, so it will be installed to the game
@@ -1264,7 +1314,7 @@ namespace ModioX.Forms
                                     {
                                         SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {gameTitle} - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {installPathWithoutFileName}");
 
-                                        FtpExtensions.UploadFile(localFilePath, installPath);
+                                        Extensions.FtpExtensions.UploadFile(localFilePath, installPath);
                                         indexFiles++;
                                     }
                                 }
@@ -1273,7 +1323,7 @@ namespace ModioX.Forms
                                 {
                                     SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {gameTitle} - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {installPathWithoutFileName}");
 
-                                    FtpExtensions.UploadFile(localFilePath, installPath);
+                                    Extensions.FtpExtensions.UploadFile(localFilePath, installPath);
                                     indexFiles++;
                                 }
                             }
@@ -1284,7 +1334,7 @@ namespace ModioX.Forms
                                 {
                                     SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {gameTitle} - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {installPathWithoutFileName}");
 
-                                    FtpExtensions.UploadFile( localFilePath, installPath);
+                                    Extensions.FtpExtensions.UploadFile(localFilePath, installPath);
                                     indexFiles++;
                                 }
                             }
@@ -1293,14 +1343,14 @@ namespace ModioX.Forms
                             {
                                 SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {gameTitle} - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {installPathWithoutFileName}");
 
-                                FtpExtensions.UploadFile(localFilePath, installPath);
+                                Extensions.FtpExtensions.UploadFile(localFilePath, installPath);
                                 indexFiles++;
                             }
                         }
                     }
                 }
 
-                // Determines whether it's a game and not a game save
+                // Updates the installed game mods if it's a game and not a game save.
                 if (category.CategoryType == CategoryType.Game && !modItem.IsGameSave)
                 {
                     SettingsData.UpdateInstalledGameMod(category.Id, gameRegion, modItem.Id, indexFiles - 1, DateTime.Now);
@@ -1310,25 +1360,25 @@ namespace ModioX.Forms
 
                 // Log status
                 SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {gameTitle} - Successfully installed {indexFiles - 1} files");
-                _ = DarkMessageBox.Show(this, string.Format("Installed {0} ({1} files) for {2}{3}.", modItem.Name, indexFiles - 1, category.Title, category.CategoryType == CategoryType.Game ? "\nReady to start game" : ""), "Mods Installed", MessageBoxIcon.Information);
+                _ = DarkMessageBox.Show(this, $"Installed { modItem.Name} ({ indexFiles - 1} files) for { category.Title}{(category.CategoryType == CategoryType.Game ? "\nReady to start game" : "")}", "Mods Installed", MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 // Log status
                 SetStatus($"Error installing files for {modItem.Name} v{modItem.Version} (#{modItem.Id}) for {category.Title} ({category.Id.ToUpper()}) - {ex.Message}", ex);
-                _ = DarkMessageBox.Show(this, $"An error occurred installing files for {modItem.Name} (#{modItem.Id}). See menu 'HELP > Report Bug' to open an issue about this, you can also attach the log file so it can be quickly investigated and fixed." +
-                    "\nError Message: " + ex.Message, "Unable to Install", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, $"An error occurred installing files for {modItem.Name} (#{modItem.Id}). See menu 'HELP > Report Bug' to open an issue and attach the log.txt file, which will be found in the program's installation path, so it can be investigated." +
+                    "\nError Message: " + ex.Message, "Unable to Install Files", MessageBoxIcon.Error);
             }
         }
 
         /// <summary>
         ///     Uninstall all of the files for the <paramref name="modItem"/>.
         /// </summary>
-        /// <param name="modItem">Contains the mod details object <see cref="ModsData.modItem"/></param>
-        /// <param name="region">Contains the game region</param>
+        /// <param name="modItem">Mod details from the <see cref="ModsData.ModItem"/></param>
+        /// <param name="region">Game region</param>
         public void UninstallMods(ModsData.ModItem modItem, string region = null)
         {
-            CategoriesData.Category category = Categories.GetCategoryById(modItem.GameId);
+            CategoriesData.Category category = Database.Categories.GetCategoryById(modItem.GameId);
 
             SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {category.Title} - Preparing to uninstall files...");
 
@@ -1384,7 +1434,7 @@ namespace ModioX.Forms
                 {
                     SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {category.Title} - Fetching user id...");
 
-                    userId = FtpExtensions.GetUserId(this);
+                    userId = Extensions.FtpExtensions.GetUserId(FtpClient, this);
 
                     gameTitle = $"{category.Title} ({userId})";
                     gameRegion = null;
@@ -1413,14 +1463,14 @@ namespace ModioX.Forms
                     }
                     else
                     {
-                        if (DarkMessageBox.Show(this, "Some modded files may have been installed to a usb device connected to your console if you specified when installing mods. You can choose to uninstall them now or manually delete them yourself." +
+                        if (DarkMessageBox.Show(this, "Some modded files may have been installed to a usb device connected to your console if you specified when installing Database.Mods. You can choose to uninstall them now or manually delete them yourself." +
                             "\nIf you would like to uninstall the files from your USB now, you must connect the same USB device into the front of console then click 'YES' to continue." +
                             "\nIf you specified not to install any files to your USB device, then click 'NO' and the files will be ignored.",
                             "Uninstall USB File", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {category.Title} - Fetching USB device...");
 
-                            usbDevice = FtpExtensions.GetUsbPath();
+                            usbDevice = Extensions.FtpExtensions.GetUsbPath();
                             gameTitle = $"{category.Title} ({usbDevice})";
 
                             if (string.IsNullOrEmpty(usbDevice))
@@ -1456,14 +1506,14 @@ namespace ModioX.Forms
                         // Get the backup data if one has been created for this file matching: game id, file name and install path
                         BackupFile backupFile = SettingsData.GetGameFileBackup(modItem.GameId, Path.GetFileName(installPath), installPath);
 
-                        if (backupFile != null) // Check whether a backup has been created for this file
+                        if (backupFile != null) // Check whether a backup has been created for this game file
                         {
                             if (File.Exists(backupFile.LocalPath)) // If the backup file still exists on the users computer
                             {
                                 SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {gameTitle} - Installing backup file: {Path.GetFileName(installPath)} ({indexFiles}/{totalFiles}) to {installPathWithoutFileName})");
 
                                 // Install the backup file to the original game file path
-                                FtpExtensions.UploadFile(backupFile.LocalPath, installPath);
+                                Extensions.FtpExtensions.UploadFile(backupFile.LocalPath, installPath);
                                 indexFiles++;
                             }
                             else
@@ -1485,7 +1535,7 @@ namespace ModioX.Forms
                                 SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {gameTitle} - Uninstalling file: {Path.GetFileName(installPath)} ({indexFiles}/{totalFiles}) from {installPathWithoutFileName}");
 
                                 // Uninstall modded file from usb device
-                                FtpExtensions.DeleteFile(installPath);
+                                Extensions.FtpExtensions.DeleteFile(installPath);
                                 indexFiles++;
                             }
                         }
@@ -1495,13 +1545,13 @@ namespace ModioX.Forms
                         SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {gameTitle} - Uninstalling file: {Path.GetFileName(installPath)} ({indexFiles}/{totalFiles}) from {installPathWithoutFileName}");
 
                         // Uninstall modded file from console install path
-                        FtpExtensions.DeleteFile(installPath);
+                        Extensions.FtpExtensions.DeleteFile(installPath);
                         indexFiles++;
                     }
                 }
 
-                // If it's a game mod, remove data from settings
-                if (category.CategoryType == CategoryType.Game)
+                // Remove data from settings if it's a game mod and not a game save.
+                if (category.CategoryType == CategoryType.Game && !modItem.IsGameSave)
                 {
                     try
                     {
@@ -1513,23 +1563,23 @@ namespace ModioX.Forms
                 }
 
                 SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) for {gameTitle} - Successfully uninstalled {indexFiles - 1} files");
-                _ = DarkMessageBox.Show(this, string.Format("Uninstalled {0} ({1} files) for {2}", modItem.Name, indexFiles - 1, category.Title), "Mods Uninstalled", MessageBoxIcon.Information);
+                _ = DarkMessageBox.Show(this, $"Uninstalled {modItem.Name} ({indexFiles - 1} files) for {category.Title}", "Mods Uninstalled", MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 SetStatus($"Error uninstalling '{modItem.Name} v{modItem.Version} (#{modItem.Id}) for {category.Title} ({category.Id.ToUpper()}) - {ex.Message}", ex);
-                _ = DarkMessageBox.Show(this, $"An error occurred uninstalling the files for {modItem.Name} (#{modItem.Id}).. See Help > Report Issue/Suggestions to submit an issue, and attach the log.txt file found in the program's installation path." +
-                   "\nError Message: " + ex.Message, "Unable to Uninstall", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, $"An error occurred uninstalling files for {modItem.Name} (#{modItem.Id}). See Help > Report Issue/Suggestions to submit an issue and attach the log.txt file, which will be found in the program's installation path, so that we can investigate this." +
+                   "\nError Message: " + ex.Message, "Unable to Uninstall Files", MessageBoxIcon.Error);
             }
         }
 
         /// <summary>
-        ///     Download the mod archive to the user specified path
+        ///     Download the modded files archive to the user's specified path.
         /// </summary>
         /// <param name="modItem"></param>
         public void DownloadModArchive(ModsData.ModItem modItem)
         {
-            CategoriesData.Category category = Categories.GetCategoryById(modItem.GameId);
+            CategoriesData.Category category = Database.Categories.GetCategoryById(modItem.GameId);
 
             try
             {
@@ -1539,7 +1589,7 @@ namespace ModioX.Forms
 
                 if (folderPath != null)
                 {
-                    modItem.DownloadArchiveAtPath(folderPath);
+                    modItem.DownloadArchiveAtPath(Database.Categories, folderPath);
                     SetStatus($"{modItem.Name} ({modItem.Type}) for {category.Title} - Successfully downloaded archive at path: {folderPath}");
                     _ = Process.Start(folderPath);
                 }
@@ -1550,19 +1600,19 @@ namespace ModioX.Forms
             }
             catch (Exception ex)
             {
-                SetStatus($"Unable to download archive {modItem.Name} ({modItem.Id}) for {category.Title} - {ex.Message}", ex);
-                _ = DarkMessageBox.Show(this, "An error occurred downloading archive. (Access maybe denied at this path, so try a different folder). See log file for more information about this issue." +
+                SetStatus($"Unable to download archive {modItem.Name} ({modItem.Id}) for {category.Title}. Error:  {ex.Message}", ex);
+                _ = DarkMessageBox.Show(this, "An error occurred downloading archive. (Access maybe denied at this path, try a different folder). See log file for more information about this issue." +
                    "\nError Message: " + ex.Message, "Unable to Download Archive", MessageBoxIcon.Error);
             }
         }
 
         /// <summary>
-        ///     Adds/removes the specified mod to the users favorites list
+        ///     Adds or removes the specified <see cref="ModsData.ModItem"/> to the users favorites list.
         /// </summary>
         /// <param name="modItem"></param>
         private void AddModToFavorites(ModsData.ModItem modItem)
         {
-            CategoriesData.Category category = Categories.GetCategoryById(modItem.GameId);
+            CategoriesData.Category category = Database.Categories.GetCategoryById(modItem.GameId);
 
             if (SettingsData.FavoritedIds.Contains(modItem.Id.ToString()))
             {
@@ -1575,7 +1625,7 @@ namespace ModioX.Forms
                     DgvMods.Rows.RemoveAt(DgvMods.CurrentRow.Index);
                 }
 
-                SetStatus($"{modItem.Name} ({modItem.Type}) for {category.Title} - Removed from your favorites");
+                SetStatus($"{modItem.Name} ({modItem.Type}) for {category.Title} - Removed from your favorites.");
             }
             else
             {
@@ -1583,7 +1633,7 @@ namespace ModioX.Forms
 
                 DisplayModDetails(SelectedModItem.Id);
 
-                SetStatus($"{modItem.Name} ({modItem.Type}) for {category.Title} - Added to your favorites");
+                SetStatus($"{modItem.Name} ({modItem.Type}) for {category.Title} - Added to your favorites.");
             }
 
             ToolItemFavoriteMod.AutoSize = false;
@@ -1593,31 +1643,7 @@ namespace ModioX.Forms
         }
 
         /// <summary>
-        ///     Create/store a backup of the specified file, and then downloads it locally to a known path
-        /// </summary>
-        /// <param name="modItem"></param>
-        /// <param name="fileName"></param>
-        /// <param name="installFilePath"></param>
-        public static void CreateBackupFile(ModsData.ModItem modItem, string fileName, string installFilePath)
-        {
-            _ = Directory.CreateDirectory(SettingsData.CreateBackupFileFolder(modItem));
-
-            BackupFile backupFile = new BackupFile()
-            {
-                Name = "Current Game File",
-                CategoryId = modItem.GameId,
-                FileName = fileName,
-                LocalPath = SettingsData.CreateBackupFilePath(modItem, fileName),
-                InstallPath = installFilePath
-            };
-
-            SettingsData.BackupFiles.Add(backupFile);
-
-            FtpExtensions.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
-        }
-
-        /// <summary>
-        ///     Set the current connected console status in the tool strip
+        ///     Set the current connected console status in the tool strip.
         /// </summary>
         /// <param name="consoleProfile"></param>
         private void SetStatusConsole(ConsoleProfile consoleProfile)
@@ -1626,7 +1652,7 @@ namespace ModioX.Forms
         }
 
         /// <summary>
-        ///     Set the current process status in the tool strip
+        ///     Set the current process status in the tool strip.
         /// </summary>
         /// <param name="status"></param>
         /// <param name="ex"></param>
@@ -1647,15 +1673,25 @@ namespace ModioX.Forms
         }
 
         /// <summary>
-        ///     Enable/disable console actions
+        ///     Enable or disable console-only actions.
         /// </summary>
         private void EnableConsoleActions()
         {
             MenuItemToolsFileManager.Enabled = IsConsoleConnected;
             ToolItemInstallMod.Enabled = IsConsoleConnected;
             ToolItemDownloadMod.Enabled = IsConsoleConnected;
-            ContextMenuModsInstallToConsole.Enabled = IsConsoleConnected;
-            ContextMenuModsUninstallFromConsole.Enabled = IsConsoleConnected;
+            ContextMenuModsInstallFiles.Enabled = IsConsoleConnected;
+            ContextMenuModsUninstallFiles.Enabled = IsConsoleConnected;
+
+            if (ToolItemUninstallMod.Enabled)
+            {
+                ToolItemUninstallMod.Enabled = IsConsoleConnected;
+            }
+
+            if (ContextMenuModsUninstallFiles.Enabled)
+            {
+                ContextMenuModsUninstallFiles.Enabled = IsConsoleConnected;
+            }
         }
 
         private void Dgv_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -1671,17 +1707,17 @@ namespace ModioX.Forms
         }
 
         /// <summary>
-        ///     Save application settings json data file
+        ///     Save application settings json data file.
         /// </summary>
-        public static void SaveSettingsData()
+        public void SaveSettingsData()
         {
             try
             {
-                Program.Log.Info("Saving settings data to file...");
+                SetStatus("Saving settings data...");
 
-                if (!Directory.Exists(Utilities.DocumentsFolder))
+                if (!Directory.Exists(UserFolders.AppData))
                 {
-                    _ = Directory.CreateDirectory(Utilities.DocumentsFolder);
+                    _ = Directory.CreateDirectory(UserFolders.AppData);
                 }
 
                 using (StreamWriter streamWriter = new StreamWriter(SettingsData.SettingsDataFile))
@@ -1689,22 +1725,22 @@ namespace ModioX.Forms
                     streamWriter.Write(JsonConvert.SerializeObject(SettingsData));
                 }
 
-                Program.Log.Info("Successfully saved settings data");
+                SetStatus("Successfully saved settings data.");
             }
             catch (Exception ex)
             {
-                Program.Log.Error("Unable to save settings data : " + ex.Message, ex);
+                SetStatus("Unable to save settings data. Error: " + ex.Message, ex);
             }
         }
 
         /// <summary>
-        ///     Load application settings json data file
+        ///     Load application settings json data file.
         /// </summary>
         public void LoadSettingsData()
         {
             try
             {
-                Program.Log.Info("Loading settings data from file...");
+                SetStatus($"Loading settings data...");
 
                 if (File.Exists(SettingsData.SettingsDataFile))
                 {
@@ -1714,11 +1750,11 @@ namespace ModioX.Forms
                     }
                 }
 
-                Program.Log.Info("Successfully loaded settings data");
+                SetStatus("Successfully loaded settings data.");
             }
             catch (Exception ex)
             {
-                Program.Log.Error("Unable to load settings data : " + ex.Message, ex);
+                SetStatus("Unable to load settings data. Error: " + ex.Message, ex);
                 return;
             }
 
@@ -1736,12 +1772,13 @@ namespace ModioX.Forms
 
                 SettingsData.ExternalApplications.Add(
                     new ExternalApplication("FileZilla",
-                                            @"C:\Program Files\FileZilla FTP Client\filezilla.exe")
+                                            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), @"FileZilla FTP Client\filezilla.exe"))
                     );
             }
 
             // Update UI Properties from Settings
             MenuItemApplications.DropDownItems.Clear();
+
             foreach (ExternalApplication application in SettingsData.ExternalApplications)
             {
                 ToolStripMenuItem menuItem = new ToolStripMenuItem(application.Name, null, MenuItemApplications_Click);
@@ -1749,29 +1786,9 @@ namespace ModioX.Forms
             }
 
             MenuItemSettingsShowModID.Checked = SettingsData.ShowModIds;
-            MenuItemSettingsAutoDetectGameRegion.Checked = SettingsData.AutoDetectGameRegion;
+            MenuItemSettingsAutoDetectGameRegions.Checked = SettingsData.AutoDetectGameRegion;
             MenuItemSettingsRememberGameRegions.Checked = SettingsData.RememberGameRegions;
             MenuItemSettingsAlwaysDownloadInstallFiles.Checked = SettingsData.AlwaysDownloadInstallFiles;
-        }
-
-        private void MenuItemApplications_Click(object sender, EventArgs e)
-        {
-            string menuItemText = ((ToolStripMenuItem)sender).Text;
-
-            foreach (ExternalApplication application in SettingsData.ExternalApplications)
-            {
-                if (application.Name.Equals(menuItemText))
-                {
-                    if (File.Exists(application.FileLocation))
-                    {
-                        _ = Process.Start(application.FileLocation);
-                    }
-                    else
-                    {
-                        _ = DarkMessageBox.Show(this, $"Could not locate the file at location: {application.FileLocation} for application: {application.Name}\n\nGo to Settings > Edit Applications and set the correct file path for this application.", "Application Not Found", MessageBoxIcon.Error);
-                    }
-                }
-            }
         }
     }
 }

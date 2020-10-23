@@ -1,4 +1,5 @@
-﻿using DarkUI.Win32;
+﻿using DarkUI.Forms;
+using DarkUI.Win32;
 using log4net;
 using ModioX.Forms;
 using System;
@@ -21,7 +22,7 @@ namespace ModioX
         {
             // Initialize log4net.
             _ = log4net.Config.XmlConfigurator.Configure();
-            Log.Info("Configured logging settings");
+            Log.Info("Configured logging settings.");
 
             Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
@@ -34,12 +35,14 @@ namespace ModioX
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            MainWindow.mainForm.SetStatus(string.Format("An unknown error occurred : {0} - See log file for more details", e.Exception.Message), e.Exception);
+            MainWindow.mainWindow.SetStatus($"An unknown error occurred: {e.Exception.Message}", e.Exception);
+            _ = DarkMessageBox.Show(MainWindow.mainWindow, $"An unknown error occurred: {e.Exception.Message}. If you keep receiving this issue when then report it on GitHub so we can investigate.");
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            MainWindow.mainForm.SetStatus(string.Format("An unknown error occurred : {0} - See log file for more details", ((Exception)e.ExceptionObject).Message), (Exception)e.ExceptionObject);
+            MainWindow.mainWindow.SetStatus($"An unknown error occurred: {((Exception)e.ExceptionObject).Message}", (Exception)e.ExceptionObject);
+            _ = DarkMessageBox.Show(MainWindow.mainWindow, $"An unknown error occurred: {((Exception)e.ExceptionObject).Message}. If you keep receiving this issue when then report it on GitHub so we can investigate.");
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Forms
 {
-    partial class EditExternalApplications
+    partial class ExternalApplicationsDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditExternalApplications));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExternalApplicationsDialog));
             this.ButtonSaveAll = new DarkUI.Controls.DarkButton();
             this.SectionApplications = new DarkUI.Controls.DarkSectionPanel();
             this.DgvApplications = new DarkUI.Controls.DarkDataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnApplicationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToolStripGameRegions = new DarkUI.Controls.DarkToolStrip();
             this.ToolStripDeleteAll = new System.Windows.Forms.ToolStripButton();
             this.ToolStripDelete = new System.Windows.Forms.ToolStripButton();
@@ -47,6 +45,8 @@
             this.ButtonAddApplication = new DarkUI.Controls.DarkButton();
             this.LabelFileLocation = new DarkUI.Controls.DarkLabel();
             this.LabelName = new DarkUI.Controls.DarkLabel();
+            this.ColumnApplicationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SectionApplications.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvApplications)).BeginInit();
             this.ToolStripGameRegions.SuspendLayout();
@@ -56,7 +56,8 @@
             // ButtonSaveAll
             // 
             this.ButtonSaveAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSaveAll.Location = new System.Drawing.Point(584, 375);
+            this.ButtonSaveAll.Location = new System.Drawing.Point(582, 403);
+            this.ButtonSaveAll.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonSaveAll.Name = "ButtonSaveAll";
             this.ButtonSaveAll.Size = new System.Drawing.Size(79, 24);
             this.ButtonSaveAll.TabIndex = 3;
@@ -76,7 +77,7 @@
             this.SectionApplications.Margin = new System.Windows.Forms.Padding(4);
             this.SectionApplications.Name = "SectionApplications";
             this.SectionApplications.SectionHeader = "EXTERNAL APPLICATIONS";
-            this.SectionApplications.Size = new System.Drawing.Size(651, 234);
+            this.SectionApplications.Size = new System.Drawing.Size(651, 256);
             this.SectionApplications.TabIndex = 0;
             // 
             // DgvApplications
@@ -86,8 +87,8 @@
             this.DgvApplications.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.DgvApplications.ColumnHeadersHeight = 19;
             this.DgvApplications.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.ColumnApplicationName});
+            this.ColumnApplicationName,
+            this.ColumnFileLocation});
             this.DgvApplications.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvApplications.Location = new System.Drawing.Point(1, 25);
             this.DgvApplications.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
@@ -99,24 +100,9 @@
             this.DgvApplications.RowTemplate.Height = 24;
             this.DgvApplications.RowTemplate.ReadOnly = true;
             this.DgvApplications.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvApplications.Size = new System.Drawing.Size(649, 172);
+            this.DgvApplications.Size = new System.Drawing.Size(649, 194);
             this.DgvApplications.TabIndex = 0;
             this.DgvApplications.SelectionChanged += new System.EventHandler(this.DgvApplications_SelectionChanged);
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Application Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 172;
-            // 
-            // ColumnApplicationName
-            // 
-            this.ColumnApplicationName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnApplicationName.HeaderText = "File Location";
-            this.ColumnApplicationName.Name = "ColumnApplicationName";
-            this.ColumnApplicationName.ReadOnly = true;
-            this.ColumnApplicationName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // ToolStripGameRegions
             // 
@@ -130,7 +116,7 @@
             this.ToolStripDeleteAll,
             this.ToolStripDelete,
             this.LabelTotalApplications});
-            this.ToolStripGameRegions.Location = new System.Drawing.Point(1, 197);
+            this.ToolStripGameRegions.Location = new System.Drawing.Point(1, 219);
             this.ToolStripGameRegions.Name = "ToolStripGameRegions";
             this.ToolStripGameRegions.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.ToolStripGameRegions.Size = new System.Drawing.Size(649, 36);
@@ -145,7 +131,7 @@
             this.ToolStripDeleteAll.Enabled = false;
             this.ToolStripDeleteAll.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolStripDeleteAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripDeleteAll.Image = global::ModioX.Properties.Resources.icons8_delete_22;
+            this.ToolStripDeleteAll.Image = global::ModioX.Properties.Resources.delete;
             this.ToolStripDeleteAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ToolStripDeleteAll.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripDeleteAll.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -163,7 +149,7 @@
             this.ToolStripDelete.Enabled = false;
             this.ToolStripDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolStripDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripDelete.Image = global::ModioX.Properties.Resources.icons8_delete_22;
+            this.ToolStripDelete.Image = global::ModioX.Properties.Resources.delete;
             this.ToolStripDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ToolStripDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -203,11 +189,11 @@
             this.SectionAddApplication.Controls.Add(this.LabelName);
             this.SectionAddApplication.Cursor = System.Windows.Forms.Cursors.Default;
             this.SectionAddApplication.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SectionAddApplication.Location = new System.Drawing.Point(12, 254);
+            this.SectionAddApplication.Location = new System.Drawing.Point(12, 276);
             this.SectionAddApplication.Margin = new System.Windows.Forms.Padding(4);
             this.SectionAddApplication.Name = "SectionAddApplication";
             this.SectionAddApplication.SectionHeader = "APPLICATION DETAILS";
-            this.SectionAddApplication.Size = new System.Drawing.Size(651, 112);
+            this.SectionAddApplication.Size = new System.Drawing.Size(651, 118);
             this.SectionAddApplication.TabIndex = 1179;
             // 
             // ButtonNewApplication
@@ -215,7 +201,8 @@
             this.ButtonNewApplication.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonNewApplication.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonNewApplication.Location = new System.Drawing.Point(381, 80);
+            this.ButtonNewApplication.Location = new System.Drawing.Point(376, 84);
+            this.ButtonNewApplication.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonNewApplication.Name = "ButtonNewApplication";
             this.ButtonNewApplication.Size = new System.Drawing.Size(128, 24);
             this.ButtonNewApplication.TabIndex = 1185;
@@ -225,6 +212,7 @@
             // ButtonLocalFilePath
             // 
             this.ButtonLocalFilePath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonLocalFilePath.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonLocalFilePath.Location = new System.Drawing.Point(600, 51);
             this.ButtonLocalFilePath.Name = "ButtonLocalFilePath";
             this.ButtonLocalFilePath.Size = new System.Drawing.Size(42, 23);
@@ -236,16 +224,18 @@
             // 
             this.TextBoxFileLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxFileLocation.Location = new System.Drawing.Point(186, 51);
+            this.TextBoxFileLocation.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxFileLocation.Location = new System.Drawing.Point(198, 51);
             this.TextBoxFileLocation.Name = "TextBoxFileLocation";
-            this.TextBoxFileLocation.Size = new System.Drawing.Size(408, 23);
+            this.TextBoxFileLocation.Size = new System.Drawing.Size(396, 23);
             this.TextBoxFileLocation.TabIndex = 1183;
             // 
             // TextBoxFileName
             // 
+            this.TextBoxFileName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxFileName.Location = new System.Drawing.Point(8, 51);
             this.TextBoxFileName.Name = "TextBoxFileName";
-            this.TextBoxFileName.Size = new System.Drawing.Size(172, 23);
+            this.TextBoxFileName.Size = new System.Drawing.Size(184, 23);
             this.TextBoxFileName.TabIndex = 1182;
             // 
             // ButtonAddApplication
@@ -253,7 +243,8 @@
             this.ButtonAddApplication.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonAddApplication.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonAddApplication.Location = new System.Drawing.Point(515, 80);
+            this.ButtonAddApplication.Location = new System.Drawing.Point(514, 84);
+            this.ButtonAddApplication.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonAddApplication.Name = "ButtonAddApplication";
             this.ButtonAddApplication.Size = new System.Drawing.Size(128, 24);
             this.ButtonAddApplication.TabIndex = 1180;
@@ -265,12 +256,12 @@
             this.LabelFileLocation.AutoSize = true;
             this.LabelFileLocation.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelFileLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelFileLocation.Location = new System.Drawing.Point(184, 31);
+            this.LabelFileLocation.Location = new System.Drawing.Point(196, 31);
             this.LabelFileLocation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelFileLocation.Name = "LabelFileLocation";
-            this.LabelFileLocation.Size = new System.Drawing.Size(106, 15);
+            this.LabelFileLocation.Size = new System.Drawing.Size(77, 15);
             this.LabelFileLocation.TabIndex = 15;
-            this.LabelFileLocation.Text = "File Location (exe):";
+            this.LabelFileLocation.Text = "File Location:";
             // 
             // LabelName
             // 
@@ -284,12 +275,27 @@
             this.LabelName.TabIndex = 16;
             this.LabelName.Text = "Application Name:";
             // 
-            // EditExternalApplications
+            // ColumnApplicationName
+            // 
+            this.ColumnApplicationName.HeaderText = "Application Name";
+            this.ColumnApplicationName.Name = "ColumnApplicationName";
+            this.ColumnApplicationName.ReadOnly = true;
+            this.ColumnApplicationName.Width = 190;
+            // 
+            // ColumnFileLocation
+            // 
+            this.ColumnFileLocation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnFileLocation.HeaderText = "File Location";
+            this.ColumnFileLocation.Name = "ColumnFileLocation";
+            this.ColumnFileLocation.ReadOnly = true;
+            this.ColumnFileLocation.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ExternalApplicationsDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(675, 411);
+            this.ClientSize = new System.Drawing.Size(675, 441);
             this.Controls.Add(this.SectionAddApplication);
             this.Controls.Add(this.SectionApplications);
             this.Controls.Add(this.ButtonSaveAll);
@@ -299,12 +305,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EditExternalApplications";
+            this.Name = "ExternalApplicationsDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Edit External Applications";
+            this.Text = "External Applications";
             this.Load += new System.EventHandler(this.EditExternalApplications_Load);
             this.SectionApplications.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvApplications)).EndInit();
@@ -331,9 +337,9 @@
         private DarkUI.Controls.DarkTextBox TextBoxFileLocation;
         private DarkUI.Controls.DarkTextBox TextBoxFileName;
         private DarkUI.Controls.DarkButton ButtonLocalFilePath;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnApplicationName;
         private System.Windows.Forms.ToolStripButton ToolStripDelete;
         private DarkUI.Controls.DarkButton ButtonNewApplication;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnApplicationName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileLocation;
     }
 }

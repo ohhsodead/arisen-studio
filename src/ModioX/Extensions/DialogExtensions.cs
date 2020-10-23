@@ -7,15 +7,27 @@ using ModioX.Windows;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ModioX.Extensions
 {
     internal static class DialogExtensions
     {
+        public static void ShowWhatsNewWindow(Form owner, GitHubData gitHubData)
+        {
+            try
+            {
+                string releaseBody = gitHubData.Body;
+                string releaseBodyWithoutLastLine = releaseBody.Substring(0, releaseBody.Trim().LastIndexOf(Environment.NewLine));
+
+                ShowDataViewDialog(owner, gitHubData.Name + " - What's New", "Change Log", releaseBodyWithoutLastLine.Replace("-", "•"));
+            }
+            catch (Exception ex)
+            {
+                Program.Log.Error("Unable to load github release data.", ex);
+            }
+        }
+
         public static void ShowDataViewDialog(Form owner, string title, string subtitle, string body)
         {
             using (DataViewDialog dataViewDialog = new DataViewDialog { Text = title })
@@ -26,23 +38,6 @@ namespace ModioX.Extensions
                 dataViewDialog.MaximumSize = new Size(dataViewDialog.MaximumSize.Width, owner.Height + 100);
                 dataViewDialog.Size = new Size(dataViewDialog.Width, dataViewDialog.Height + 15);
                 _ = dataViewDialog.ShowDialog(owner);
-            }
-        }
-
-        public static void ShowWhatsNewWindow(Form owner, GitHubData gitHubData)
-        {
-            try
-            {
-                GitHubData GitHubData = gitHubData;
-
-                string releaseBody = GitHubData.Body;
-                string releaseBodyWithoutLastLine = releaseBody.Substring(0, releaseBody.Trim().LastIndexOf(Environment.NewLine));
-
-                ShowDataViewDialog(owner, GitHubData.Name + " - What's New", "Change Log", releaseBodyWithoutLastLine.Replace("-", "•"));
-            }
-            catch (Exception ex)
-            {
-                Program.Log.Error("Unable to load github release data.", ex);
             }
         }
 
@@ -65,27 +60,27 @@ namespace ModioX.Extensions
             }
         }
 
-        public static void ShowConnectionDialog(Form owner)
+        public static ConsoleProfile ShowConnectionDialog(Form owner)
         {
             using (ConnectionDialog connectConsole = new ConnectionDialog())
             {
-                connectConsole.ShowDialog(owner);
+                return connectConsole.ShowDialog(owner) == DialogResult.OK ? connectConsole.ConsoleProfile : null;
             }
         }
 
-        public static ConsoleProfile ShowNewConnectionWindow(Form owner, ConsoleProfile consoleProfile)
+        public static ConsoleProfile ShowNewConnectionWindow(Form owner, ConsoleProfile consoleProfile, bool isEditingProfile)
         {
-            using (NewConnectionDialog newConnectionDialog = new NewConnectionDialog() { ConsoleProfile = consoleProfile, IsEditingConsole = consoleProfile != null})
+            using (NewConnectionDialog newConnectionDialog = new NewConnectionDialog() { ConsoleProfile = consoleProfile, IsEditingProfile = isEditingProfile })
             {
                 return newConnectionDialog.ShowDialog(owner) == DialogResult.OK ? newConnectionDialog.ConsoleProfile : null;
             }
         }
 
-        public static void ShowBackupFiles(Form owner)
+        public static void ShowGameBackupFiles(Form owner)
         {
-            using (BackupFilesWindow backupFilesWindow = new BackupFilesWindow())
+            using (GameBackupFilesWindow gameBackupFilesWindow = new GameBackupFilesWindow())
             {
-                backupFilesWindow.ShowDialog(owner);
+                _ = gameBackupFilesWindow.ShowDialog(owner);
             }
         }
 
@@ -118,6 +113,22 @@ namespace ModioX.Extensions
             using (FolderBrowserDialog folderBrowser = new FolderBrowserDialog() { Description = description, ShowNewFolderButton = true })
             {
                 return folderBrowser.ShowDialog(owner) == DialogResult.OK ? folderBrowser.SelectedPath : null;
+            }
+        }
+
+        public static void ShowGameRegionsDialog(Form owner)
+        {
+            using (GameRegionsDialog gameRegions = new GameRegionsDialog())
+            {
+                _ = gameRegions.ShowDialog(owner);
+            }
+        }
+
+        public static void ShowExternalApplicationsDialog(Form owner)
+        {
+            using (ExternalApplicationsDialog externalApplications = new ExternalApplicationsDialog())
+            {
+                _ = externalApplications.ShowDialog(owner);
             }
         }
 

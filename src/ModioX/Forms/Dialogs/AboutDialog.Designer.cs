@@ -39,12 +39,17 @@
             this.PanelCredits = new System.Windows.Forms.Panel();
             this.SectionPanelThanks = new DarkUI.Controls.DarkSectionPanel();
             this.PanelThanks = new System.Windows.Forms.Panel();
+            this.SectionPanelInformation = new DarkUI.Controls.DarkSectionPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SectionPanelLicense.SuspendLayout();
             this.PanelLicense.SuspendLayout();
             this.SectionPanelCredits.SuspendLayout();
             this.PanelCredits.SuspendLayout();
             this.SectionPanelThanks.SuspendLayout();
             this.PanelThanks.SuspendLayout();
+            this.SectionPanelInformation.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // RichTextBoxThanks
@@ -59,11 +64,12 @@
             this.RichTextBoxThanks.Name = "RichTextBoxThanks";
             this.RichTextBoxThanks.ReadOnly = true;
             this.RichTextBoxThanks.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.RichTextBoxThanks.Size = new System.Drawing.Size(255, 80);
+            this.RichTextBoxThanks.Size = new System.Drawing.Size(272, 78);
             this.RichTextBoxThanks.TabIndex = 2;
+            this.RichTextBoxThanks.TabStop = false;
             this.RichTextBoxThanks.Text = "Appropriate Authors of all Mods\nRobinPerris for DarkUI for WinForms\nJamesNK for N" +
-    "ewtonsoft.Json\nApache for Apache log4net\nBISOON for file-to-ps3";
-            this.RichTextBoxThanks.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RichTextBoxLicence_MouseDown);
+    "ewtonsoft.Json\nApache for Apache log4net\nBISOON for FtpConnection.cs";
+            this.RichTextBoxThanks.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RichTextBox_MouseDown);
             // 
             // RichTextBoxCredits
             // 
@@ -77,11 +83,12 @@
             this.RichTextBoxCredits.Name = "RichTextBoxCredits";
             this.RichTextBoxCredits.ReadOnly = true;
             this.RichTextBoxCredits.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.RichTextBoxCredits.Size = new System.Drawing.Size(254, 80);
-            this.RichTextBoxCredits.TabIndex = 0;
+            this.RichTextBoxCredits.Size = new System.Drawing.Size(272, 78);
+            this.RichTextBoxCredits.TabIndex = 1;
+            this.RichTextBoxCredits.TabStop = false;
             this.RichTextBoxCredits.Text = "Developer: ohhsodead\n\n\nWebsite:\nhttps://github.com/ohhsodead/ModioX";
             this.RichTextBoxCredits.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.RichTextBoxCredits_LinkClicked);
-            this.RichTextBoxCredits.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RichTextBoxLicence_MouseDown);
+            this.RichTextBoxCredits.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RichTextBox_MouseDown);
             // 
             // RichTextBoxLicence
             // 
@@ -95,16 +102,17 @@
             this.RichTextBoxLicence.Name = "RichTextBoxLicence";
             this.RichTextBoxLicence.ReadOnly = true;
             this.RichTextBoxLicence.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.RichTextBoxLicence.Size = new System.Drawing.Size(533, 157);
+            this.RichTextBoxLicence.Size = new System.Drawing.Size(568, 150);
             this.RichTextBoxLicence.TabIndex = 3;
+            this.RichTextBoxLicence.TabStop = false;
             this.RichTextBoxLicence.Text = resources.GetString("RichTextBoxLicence.Text");
             this.RichTextBoxLicence.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.RichTextBoxLicence_LinkClicked);
-            this.RichTextBoxLicence.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RichTextBoxLicence_MouseDown);
+            this.RichTextBoxLicence.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RichTextBox_MouseDown);
             // 
             // ButtonClose
             // 
-            this.ButtonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonClose.Location = new System.Drawing.Point(242, 352);
+            this.ButtonClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.ButtonClose.Location = new System.Drawing.Point(268, 476);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.Size = new System.Drawing.Size(74, 24);
             this.ButtonClose.TabIndex = 4;
@@ -113,14 +121,13 @@
             // 
             // SectionPanelLicense
             // 
-            this.SectionPanelLicense.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SectionPanelLicense.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.SectionPanelLicense.Controls.Add(this.PanelLicense);
             this.SectionPanelLicense.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SectionPanelLicense.Location = new System.Drawing.Point(12, 140);
+            this.SectionPanelLicense.Location = new System.Drawing.Point(12, 264);
             this.SectionPanelLicense.Name = "SectionPanelLicense";
-            this.SectionPanelLicense.SectionHeader = "License:";
-            this.SectionPanelLicense.Size = new System.Drawing.Size(551, 199);
+            this.SectionPanelLicense.SectionHeader = "License";
+            this.SectionPanelLicense.Size = new System.Drawing.Size(586, 192);
             this.SectionPanelLicense.TabIndex = 13;
             // 
             // PanelLicense
@@ -130,22 +137,19 @@
             this.PanelLicense.Location = new System.Drawing.Point(1, 25);
             this.PanelLicense.Name = "PanelLicense";
             this.PanelLicense.Padding = new System.Windows.Forms.Padding(8);
-            this.PanelLicense.Size = new System.Drawing.Size(549, 173);
+            this.PanelLicense.Size = new System.Drawing.Size(584, 166);
             this.PanelLicense.TabIndex = 0;
             // 
             // SectionPanelCredits
             // 
-            this.SectionPanelCredits.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SectionPanelCredits.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.SectionPanelCredits.Controls.Add(this.PanelCredits);
             this.SectionPanelCredits.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SectionPanelCredits.Location = new System.Drawing.Point(12, 12);
+            this.SectionPanelCredits.Location = new System.Drawing.Point(12, 138);
             this.SectionPanelCredits.Name = "SectionPanelCredits";
-            this.SectionPanelCredits.SectionHeader = "Credits:";
-            this.SectionPanelCredits.Size = new System.Drawing.Size(272, 122);
+            this.SectionPanelCredits.SectionHeader = "Credits";
+            this.SectionPanelCredits.Size = new System.Drawing.Size(290, 120);
             this.SectionPanelCredits.TabIndex = 0;
-            this.SectionPanelCredits.Paint += new System.Windows.Forms.PaintEventHandler(this.xcx);
             // 
             // PanelCredits
             // 
@@ -154,20 +158,18 @@
             this.PanelCredits.Location = new System.Drawing.Point(1, 25);
             this.PanelCredits.Name = "PanelCredits";
             this.PanelCredits.Padding = new System.Windows.Forms.Padding(8);
-            this.PanelCredits.Size = new System.Drawing.Size(270, 96);
+            this.PanelCredits.Size = new System.Drawing.Size(288, 94);
             this.PanelCredits.TabIndex = 0;
             // 
             // SectionPanelThanks
             // 
-            this.SectionPanelThanks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SectionPanelThanks.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.SectionPanelThanks.Controls.Add(this.PanelThanks);
             this.SectionPanelThanks.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SectionPanelThanks.Location = new System.Drawing.Point(290, 12);
+            this.SectionPanelThanks.Location = new System.Drawing.Point(308, 138);
             this.SectionPanelThanks.Name = "SectionPanelThanks";
-            this.SectionPanelThanks.SectionHeader = "Thanks:";
-            this.SectionPanelThanks.Size = new System.Drawing.Size(273, 122);
+            this.SectionPanelThanks.SectionHeader = "Thanks";
+            this.SectionPanelThanks.Size = new System.Drawing.Size(290, 120);
             this.SectionPanelThanks.TabIndex = 15;
             // 
             // PanelThanks
@@ -177,15 +179,54 @@
             this.PanelThanks.Location = new System.Drawing.Point(1, 25);
             this.PanelThanks.Name = "PanelThanks";
             this.PanelThanks.Padding = new System.Windows.Forms.Padding(8);
-            this.PanelThanks.Size = new System.Drawing.Size(271, 96);
+            this.PanelThanks.Size = new System.Drawing.Size(288, 94);
             this.PanelThanks.TabIndex = 0;
             // 
-            // AboutWindow
+            // SectionPanelInformation
+            // 
+            this.SectionPanelInformation.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.SectionPanelInformation.Controls.Add(this.panel1);
+            this.SectionPanelInformation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SectionPanelInformation.Location = new System.Drawing.Point(12, 12);
+            this.SectionPanelInformation.Name = "SectionPanelInformation";
+            this.SectionPanelInformation.SectionHeader = "Information";
+            this.SectionPanelInformation.Size = new System.Drawing.Size(586, 120);
+            this.SectionPanelInformation.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(1, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(8);
+            this.panel1.Size = new System.Drawing.Size(584, 94);
+            this.panel1.TabIndex = 0;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.richTextBox1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.richTextBox1.Location = new System.Drawing.Point(8, 8);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox1.Size = new System.Drawing.Size(568, 78);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.TabStop = false;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
+            // AboutDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(575, 388);
+            this.ClientSize = new System.Drawing.Size(610, 512);
+            this.Controls.Add(this.SectionPanelInformation);
             this.Controls.Add(this.SectionPanelThanks);
             this.Controls.Add(this.SectionPanelCredits);
             this.Controls.Add(this.SectionPanelLicense);
@@ -196,10 +237,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AboutWindow";
+            this.Name = "AboutDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "About";
             this.Load += new System.EventHandler(this.AboutWindow_Load);
@@ -209,6 +250,8 @@
             this.PanelCredits.ResumeLayout(false);
             this.SectionPanelThanks.ResumeLayout(false);
             this.PanelThanks.ResumeLayout(false);
+            this.SectionPanelInformation.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -224,5 +267,8 @@
         private System.Windows.Forms.Panel PanelCredits;
         private DarkUI.Controls.DarkSectionPanel SectionPanelThanks;
         private System.Windows.Forms.Panel PanelThanks;
+        private DarkUI.Controls.DarkSectionPanel SectionPanelInformation;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

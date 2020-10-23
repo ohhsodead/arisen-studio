@@ -59,7 +59,7 @@
             this.SectionItems.Size = new System.Drawing.Size(168, 202);
             this.SectionItems.TabIndex = 0;
             // 
-            // ListItemPicker
+            // ListItemDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -70,12 +70,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ListItemPicker";
+            this.Name = "ListItemDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Game Regions";
+            this.Text = "ListItemDialog";
             this.Load += new System.EventHandler(this.ListViewDialog_Load);
             this.SectionItems.ResumeLayout(false);
             this.ResumeLayout(false);

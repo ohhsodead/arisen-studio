@@ -14,6 +14,8 @@ namespace ModioX.Forms
             InitializeComponent();
         }
 
+        public ConsoleProfile ConsoleProfile { get; set; }
+
         private void ConnectConsole_Load(object sender, EventArgs e)
         {
             LoadConsoles();
@@ -28,7 +30,7 @@ namespace ModioX.Forms
                 ListViewConsoleProfiles.Items.Add(new DarkListItem(console.ToString()));
             }
 
-            ListViewConsoleProfiles.Focus();
+            _ = ListViewConsoleProfiles.Focus();
         }
 
         private void ListViewConsoleProfiles_SelectedIndicesChanged(object sender, EventArgs e)
@@ -46,8 +48,7 @@ namespace ModioX.Forms
         private void ButtonConnect_Click(object sender, EventArgs e)
         {
             DarkListItem selectedItem = ListViewConsoleProfiles.Items[ListViewConsoleProfiles.SelectedIndices[0]];
-            MainWindow.ConsoleProfile = MainWindow.SettingsData.ConsoleProfiles[ListViewConsoleProfiles.Items.IndexOf(selectedItem)];
-            MainWindow.mainForm.ConnectConsole();
+            ConsoleProfile = MainWindow.SettingsData.ConsoleProfiles[ListViewConsoleProfiles.Items.IndexOf(selectedItem)];
             Close();
         }
 
@@ -74,7 +75,7 @@ namespace ModioX.Forms
             int selectedIndex = ListViewConsoleProfiles.Items.IndexOf(selectedItem);
             ConsoleProfile oldConsoleProfile = MainWindow.SettingsData.ConsoleProfiles[selectedIndex];
 
-            ConsoleProfile newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile);
+            ConsoleProfile newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
 
             if (newConsoleProfile != null)
             {

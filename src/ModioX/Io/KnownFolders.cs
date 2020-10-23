@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace ModioX.Extensions
+namespace ModioX.Io
 {
     public static class KnownFolders
     {

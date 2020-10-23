@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Net;
+using System.Runtime.InteropServices;
 
 namespace ModioX.Extensions
 {
@@ -34,6 +35,13 @@ namespace ModioX.Extensions
         public static Bitmap GetImageFromUrl(string url)
         {
             return new Bitmap(GetStream(url));
+        }
+
+        [DllImport("wininet.dll")]
+        private extern static bool InternetGetConnectedState(out int Description, int ReservedValue);
+        public static bool IsConnectedToInternet()
+        {
+            return InternetGetConnectedState(out _, 0);
         }
     }
 }

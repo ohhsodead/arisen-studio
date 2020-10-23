@@ -13,9 +13,14 @@ namespace ModioX.Forms
             InitializeComponent();
         }
 
-        private void DataViewWindow_Scroll(object sender, ScrollEventArgs e)
+        private void DataViewDialog_Load(object sender, System.EventArgs e)
         {
-            panelItems.Update(); // Removes 'Lag/Bad Drawing' when scrolling
+
+        }
+
+        private void DataViewDialog_Scroll(object sender, ScrollEventArgs e)
+        {
+            PanelDetails.Update(); // Removes lag when scrolling
         }
     }
 }

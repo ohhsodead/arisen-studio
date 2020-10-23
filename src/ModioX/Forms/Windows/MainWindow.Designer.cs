@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.ContextMenuMods = new DarkUI.Controls.DarkContextMenu();
-            this.ContextMenuModsInstallToConsole = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextMenuModsUninstallFromConsole = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextMenuModsInstallFiles = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextMenuModsUninstallFiles = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuModsDownloadArchive = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuModsSeperator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ContextMenuModsExtractInformation = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,13 +61,9 @@
             this.LabelTitleModDescription = new DarkUI.Controls.DarkTitle();
             this.LabelDescription = new System.Windows.Forms.Label();
             this.SectionModsInstallFilePaths = new DarkUI.Controls.DarkSectionPanel();
-            this.darkTitle7 = new DarkUI.Controls.DarkTitle();
+            this.LabelHeaderInstallationFiles = new DarkUI.Controls.DarkTitle();
             this.DgvInstallPaths = new DarkUI.Controls.DarkDataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContextMenuConsoleFile = new DarkUI.Controls.DarkContextMenu();
-            this.ContextMenuConsoleDownloadFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextMenuConsoleDeleteFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextMenuConsoleRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.ColumnInstallationPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ScrollBarDetails = new DarkUI.Controls.DarkScrollBar();
             this.SectionArchiveInformation = new DarkUI.Controls.DarkSectionPanel();
             this.PanelModsInstallationPaths = new System.Windows.Forms.Panel();
@@ -83,7 +79,7 @@
             this.MenuStripFileSeparator0 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuStripConnectOfflineMode = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemTools = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemToolsBackupFiles = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemToolsGameBackupFiles = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemToolsSeperator0 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemToolsFileManager = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemResources = new System.Windows.Forms.ToolStripMenuItem();
@@ -115,7 +111,7 @@
             this.MenuItemApplications = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettingsShowModID = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSettingsAutoDetectGameRegion = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemSettingsAutoDetectGameRegions = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettingsRememberGameRegions = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettingsAlwaysDownloadInstallFiles = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSeperator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -141,9 +137,6 @@
             this.ToolStripStatusSeperator0 = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripLabelStatus = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripLabelStats = new System.Windows.Forms.ToolStripLabel();
-            this.ContextMenuLocalFile = new DarkUI.Controls.DarkContextMenu();
-            this.ContextMenuStripLocalUploadFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextMenuStripLocalDeleteFile = new System.Windows.Forms.ToolStripMenuItem();
             this.LabelSelectSystemType = new System.Windows.Forms.Label();
             this.SectionModsLibrary = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoModsFound = new System.Windows.Forms.Label();
@@ -156,9 +149,9 @@
             this.ColumnModsVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsNoFiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnModsInstall = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnModsDownload = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnModsFavourite = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelModsLibraryFilters = new System.Windows.Forms.Panel();
             this.ComboBoxRegion = new DarkUI.Controls.DarkComboBox();
             this.LabelSelectRegion = new System.Windows.Forms.Label();
@@ -180,19 +173,17 @@
             this.SectionInstalledGameMods = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoModsInstalled = new System.Windows.Forms.Label();
             this.DgvModsInstalled = new DarkUI.Controls.DarkDataGridView();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnModsInstalledId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsInstalledGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsInstalledRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsInstalledModName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsInstalledModType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsInstalledVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsInstalledNoOfFiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsInstalledDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsInstalledUninstall = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelModsInstalledHeader = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.darkTitle12 = new DarkUI.Controls.DarkTitle();
+            this.LabelHeaderGameMods = new DarkUI.Controls.DarkTitle();
             this.MenuGameModsStrip = new DarkUI.Controls.DarkToolStrip();
             this.ToolItemUninstallAllGameMods = new System.Windows.Forms.ToolStripButton();
             this.LabelInstalledGameModsStatus = new System.Windows.Forms.ToolStripLabel();
@@ -200,13 +191,11 @@
             this.FlowPanelDetails.SuspendLayout();
             this.SectionModsInstallFilePaths.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvInstallPaths)).BeginInit();
-            this.ContextMenuConsoleFile.SuspendLayout();
             this.SectionArchiveInformation.SuspendLayout();
             this.PanelModsInstallationPaths.SuspendLayout();
             this.ToolStripArchiveInformation.SuspendLayout();
             this.MenuStrip.SuspendLayout();
             this.MenuStatusStrip.SuspendLayout();
-            this.ContextMenuLocalFile.SuspendLayout();
             this.SectionModsLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).BeginInit();
             this.PanelModsLibraryFilters.SuspendLayout();
@@ -224,8 +213,8 @@
             this.ContextMenuMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ContextMenuMods.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ContextMenuMods.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ContextMenuModsInstallToConsole,
-            this.ContextMenuModsUninstallFromConsole,
+            this.ContextMenuModsInstallFiles,
+            this.ContextMenuModsUninstallFiles,
             this.ContextMenuModsDownloadArchive,
             this.ContextMenuModsSeperator1,
             this.ContextMenuModsExtractInformation,
@@ -234,23 +223,23 @@
             this.ContextMenuMods.Name = "ContextMenuConsole";
             this.ContextMenuMods.Size = new System.Drawing.Size(200, 128);
             // 
-            // ContextMenuModsInstallToConsole
+            // ContextMenuModsInstallFiles
             // 
-            this.ContextMenuModsInstallToConsole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ContextMenuModsInstallToConsole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuModsInstallToConsole.Name = "ContextMenuModsInstallToConsole";
-            this.ContextMenuModsInstallToConsole.Size = new System.Drawing.Size(199, 22);
-            this.ContextMenuModsInstallToConsole.Text = "Install to Console";
-            this.ContextMenuModsInstallToConsole.Click += new System.EventHandler(this.ContextMenuModsInstallToConsole_Click);
+            this.ContextMenuModsInstallFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ContextMenuModsInstallFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ContextMenuModsInstallFiles.Name = "ContextMenuModsInstallFiles";
+            this.ContextMenuModsInstallFiles.Size = new System.Drawing.Size(199, 22);
+            this.ContextMenuModsInstallFiles.Text = "Install Files...";
+            this.ContextMenuModsInstallFiles.Click += new System.EventHandler(this.ContextMenuModsInstallToConsole_Click);
             // 
-            // ContextMenuModsUninstallFromConsole
+            // ContextMenuModsUninstallFiles
             // 
-            this.ContextMenuModsUninstallFromConsole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ContextMenuModsUninstallFromConsole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuModsUninstallFromConsole.Name = "ContextMenuModsUninstallFromConsole";
-            this.ContextMenuModsUninstallFromConsole.Size = new System.Drawing.Size(199, 22);
-            this.ContextMenuModsUninstallFromConsole.Text = "Uninstall from Console";
-            this.ContextMenuModsUninstallFromConsole.Click += new System.EventHandler(this.ContextMenuModsUninstallFromConsole_Click);
+            this.ContextMenuModsUninstallFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ContextMenuModsUninstallFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ContextMenuModsUninstallFiles.Name = "ContextMenuModsUninstallFiles";
+            this.ContextMenuModsUninstallFiles.Size = new System.Drawing.Size(199, 22);
+            this.ContextMenuModsUninstallFiles.Text = "Uninstall Files...";
+            this.ContextMenuModsUninstallFiles.Click += new System.EventHandler(this.ContextMenuModsUninstallFromConsole_Click);
             // 
             // ContextMenuModsDownloadArchive
             // 
@@ -303,7 +292,7 @@
             this.LabelSelectType.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSelectType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectType.Location = new System.Drawing.Point(567, 42);
+            this.LabelSelectType.Location = new System.Drawing.Point(558, 42);
             this.LabelSelectType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelSelectType.Name = "LabelSelectType";
             this.LabelSelectType.Size = new System.Drawing.Size(64, 15);
@@ -630,7 +619,7 @@
             // 
             // SectionModsInstallFilePaths
             // 
-            this.SectionModsInstallFilePaths.Controls.Add(this.darkTitle7);
+            this.SectionModsInstallFilePaths.Controls.Add(this.LabelHeaderInstallationFiles);
             this.SectionModsInstallFilePaths.Controls.Add(this.DgvInstallPaths);
             this.SectionModsInstallFilePaths.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SectionModsInstallFilePaths.Location = new System.Drawing.Point(0, 11);
@@ -640,16 +629,16 @@
             this.SectionModsInstallFilePaths.Size = new System.Drawing.Size(375, 125);
             this.SectionModsInstallFilePaths.TabIndex = 26;
             // 
-            // darkTitle7
+            // LabelHeaderInstallationFiles
             // 
-            this.darkTitle7.BackColor = System.Drawing.Color.Transparent;
-            this.darkTitle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.darkTitle7.Location = new System.Drawing.Point(6, 5);
-            this.darkTitle7.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.darkTitle7.Name = "darkTitle7";
-            this.darkTitle7.Size = new System.Drawing.Size(362, 16);
-            this.darkTitle7.TabIndex = 1163;
-            this.darkTitle7.Text = "INSTALLATION FILES";
+            this.LabelHeaderInstallationFiles.BackColor = System.Drawing.Color.Transparent;
+            this.LabelHeaderInstallationFiles.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderInstallationFiles.Location = new System.Drawing.Point(6, 5);
+            this.LabelHeaderInstallationFiles.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.LabelHeaderInstallationFiles.Name = "LabelHeaderInstallationFiles";
+            this.LabelHeaderInstallationFiles.Size = new System.Drawing.Size(362, 16);
+            this.LabelHeaderInstallationFiles.TabIndex = 1163;
+            this.LabelHeaderInstallationFiles.Text = "INSTALLATION FILES";
             // 
             // DgvInstallPaths
             // 
@@ -661,8 +650,7 @@
             this.DgvInstallPaths.ColumnHeadersHeight = 23;
             this.DgvInstallPaths.ColumnHeadersVisible = false;
             this.DgvInstallPaths.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            this.DgvInstallPaths.ContextMenuStrip = this.ContextMenuConsoleFile;
+            this.ColumnInstallationPath});
             this.DgvInstallPaths.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvInstallPaths.Location = new System.Drawing.Point(1, 25);
             this.DgvInstallPaths.Margin = new System.Windows.Forms.Padding(6, 4, 6, 0);
@@ -679,49 +667,13 @@
             this.DgvInstallPaths.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
             this.DgvInstallPaths.SelectionChanged += new System.EventHandler(this.Dgv_SelectionChanged);
             // 
-            // Column1
+            // ColumnInstallationPath
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Install File Path";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // ContextMenuConsoleFile
-            // 
-            this.ContextMenuConsoleFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ContextMenuConsoleFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuConsoleFile.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ContextMenuConsoleFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ContextMenuConsoleDownloadFile,
-            this.ContextMenuConsoleDeleteFile,
-            this.ContextMenuConsoleRefresh});
-            this.ContextMenuConsoleFile.Name = "ContextMenuConsole";
-            this.ContextMenuConsoleFile.Size = new System.Drawing.Size(150, 70);
-            // 
-            // ContextMenuConsoleDownloadFile
-            // 
-            this.ContextMenuConsoleDownloadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ContextMenuConsoleDownloadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuConsoleDownloadFile.Name = "ContextMenuConsoleDownloadFile";
-            this.ContextMenuConsoleDownloadFile.Size = new System.Drawing.Size(149, 22);
-            this.ContextMenuConsoleDownloadFile.Text = "Download File";
-            // 
-            // ContextMenuConsoleDeleteFile
-            // 
-            this.ContextMenuConsoleDeleteFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ContextMenuConsoleDeleteFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuConsoleDeleteFile.Name = "ContextMenuConsoleDeleteFile";
-            this.ContextMenuConsoleDeleteFile.Size = new System.Drawing.Size(149, 22);
-            this.ContextMenuConsoleDeleteFile.Text = "Delete File";
-            // 
-            // ContextMenuConsoleRefresh
-            // 
-            this.ContextMenuConsoleRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ContextMenuConsoleRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuConsoleRefresh.Name = "ContextMenuConsoleRefresh";
-            this.ContextMenuConsoleRefresh.Size = new System.Drawing.Size(149, 22);
-            this.ContextMenuConsoleRefresh.Text = "Refresh";
+            this.ColumnInstallationPath.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnInstallationPath.HeaderText = "Install File Path";
+            this.ColumnInstallationPath.MinimumWidth = 6;
+            this.ColumnInstallationPath.Name = "ColumnInstallationPath";
+            this.ColumnInstallationPath.ReadOnly = true;
             // 
             // ScrollBarDetails
             // 
@@ -790,7 +742,7 @@
             this.ToolItemInstallMod.Enabled = false;
             this.ToolItemInstallMod.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolItemInstallMod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolItemInstallMod.Image = global::ModioX.Properties.Resources.icons8_software_installer_22;
+            this.ToolItemInstallMod.Image = global::ModioX.Properties.Resources.install;
             this.ToolItemInstallMod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ToolItemInstallMod.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolItemInstallMod.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -807,7 +759,7 @@
             this.ToolItemUninstallMod.Enabled = false;
             this.ToolItemUninstallMod.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolItemUninstallMod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolItemUninstallMod.Image = global::ModioX.Properties.Resources.icons8_uninstall_programs_22;
+            this.ToolItemUninstallMod.Image = global::ModioX.Properties.Resources.uninstall;
             this.ToolItemUninstallMod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ToolItemUninstallMod.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolItemUninstallMod.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -823,7 +775,7 @@
             this.ToolItemDownloadMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ToolItemDownloadMod.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolItemDownloadMod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolItemDownloadMod.Image = global::ModioX.Properties.Resources.icons8_download_from_the_cloud_22;
+            this.ToolItemDownloadMod.Image = ((System.Drawing.Image)(resources.GetObject("ToolItemDownloadMod.Image")));
             this.ToolItemDownloadMod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ToolItemDownloadMod.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolItemDownloadMod.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -839,7 +791,7 @@
             this.ToolItemFavoriteMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ToolItemFavoriteMod.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolItemFavoriteMod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolItemFavoriteMod.Image = global::ModioX.Properties.Resources.icons8_heart_outline_22;
+            this.ToolItemFavoriteMod.Image = global::ModioX.Properties.Resources.heart_outline;
             this.ToolItemFavoriteMod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ToolItemFavoriteMod.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolItemFavoriteMod.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -924,7 +876,7 @@
             // 
             this.MenuItemTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemToolsBackupFiles,
+            this.MenuItemToolsGameBackupFiles,
             this.MenuItemToolsSeperator0,
             this.MenuItemToolsFileManager});
             this.MenuItemTools.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
@@ -932,14 +884,14 @@
             this.MenuItemTools.Size = new System.Drawing.Size(54, 19);
             this.MenuItemTools.Text = "TOOLS";
             // 
-            // MenuItemToolsBackupFiles
+            // MenuItemToolsGameBackupFiles
             // 
-            this.MenuItemToolsBackupFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsBackupFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsBackupFiles.Name = "MenuItemToolsBackupFiles";
-            this.MenuItemToolsBackupFiles.Size = new System.Drawing.Size(172, 22);
-            this.MenuItemToolsBackupFiles.Text = "Backup Files";
-            this.MenuItemToolsBackupFiles.Click += new System.EventHandler(this.MenuItemToolsBackupFileManager_Click);
+            this.MenuItemToolsGameBackupFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemToolsGameBackupFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemToolsGameBackupFiles.Name = "MenuItemToolsGameBackupFiles";
+            this.MenuItemToolsGameBackupFiles.Size = new System.Drawing.Size(173, 22);
+            this.MenuItemToolsGameBackupFiles.Text = "Game Backup Files";
+            this.MenuItemToolsGameBackupFiles.Click += new System.EventHandler(this.MenuItemToolsBackupFileManager_Click);
             // 
             // MenuItemToolsSeperator0
             // 
@@ -947,15 +899,15 @@
             this.MenuItemToolsSeperator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemToolsSeperator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.MenuItemToolsSeperator0.Name = "MenuItemToolsSeperator0";
-            this.MenuItemToolsSeperator0.Size = new System.Drawing.Size(169, 6);
+            this.MenuItemToolsSeperator0.Size = new System.Drawing.Size(170, 6);
             // 
             // MenuItemToolsFileManager
             // 
             this.MenuItemToolsFileManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemToolsFileManager.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemToolsFileManager.Name = "MenuItemToolsFileManager";
-            this.MenuItemToolsFileManager.Size = new System.Drawing.Size(172, 22);
-            this.MenuItemToolsFileManager.Text = "File Manager (FTP)";
+            this.MenuItemToolsFileManager.Size = new System.Drawing.Size(173, 22);
+            this.MenuItemToolsFileManager.Text = "File Manager";
             this.MenuItemToolsFileManager.Click += new System.EventHandler(this.MenuItemToolsFileManager_Click);
             // 
             // MenuItemResources
@@ -1230,7 +1182,7 @@
             this.MenuItemSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItemSettingsShowModID,
-            this.MenuItemSettingsAutoDetectGameRegion,
+            this.MenuItemSettingsAutoDetectGameRegions,
             this.MenuItemSettingsRememberGameRegions,
             this.MenuItemSettingsAlwaysDownloadInstallFiles,
             this.MenuItemSeperator2,
@@ -1255,15 +1207,15 @@
             this.MenuItemSettingsShowModID.Text = "Show Mod ID #";
             this.MenuItemSettingsShowModID.Click += new System.EventHandler(this.MenuItemSettingsShowModID_Click);
             // 
-            // MenuItemSettingsAutoDetectGameRegion
+            // MenuItemSettingsAutoDetectGameRegions
             // 
-            this.MenuItemSettingsAutoDetectGameRegion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSettingsAutoDetectGameRegion.CheckOnClick = true;
-            this.MenuItemSettingsAutoDetectGameRegion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSettingsAutoDetectGameRegion.Name = "MenuItemSettingsAutoDetectGameRegion";
-            this.MenuItemSettingsAutoDetectGameRegion.Size = new System.Drawing.Size(228, 22);
-            this.MenuItemSettingsAutoDetectGameRegion.Text = "Detect Game Regions";
-            this.MenuItemSettingsAutoDetectGameRegion.Click += new System.EventHandler(this.MenuItemSettingsAutoDetectGameRegion_Click);
+            this.MenuItemSettingsAutoDetectGameRegions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemSettingsAutoDetectGameRegions.CheckOnClick = true;
+            this.MenuItemSettingsAutoDetectGameRegions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemSettingsAutoDetectGameRegions.Name = "MenuItemSettingsAutoDetectGameRegions";
+            this.MenuItemSettingsAutoDetectGameRegions.Size = new System.Drawing.Size(228, 22);
+            this.MenuItemSettingsAutoDetectGameRegions.Text = "Detect Game Regions";
+            this.MenuItemSettingsAutoDetectGameRegions.Click += new System.EventHandler(this.MenuItemSettingsAutoDetectGameRegions_Click);
             // 
             // MenuItemSettingsRememberGameRegions
             // 
@@ -1272,7 +1224,7 @@
             this.MenuItemSettingsRememberGameRegions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemSettingsRememberGameRegions.Name = "MenuItemSettingsRememberGameRegions";
             this.MenuItemSettingsRememberGameRegions.Size = new System.Drawing.Size(228, 22);
-            this.MenuItemSettingsRememberGameRegions.Text = "Save Game Regions";
+            this.MenuItemSettingsRememberGameRegions.Text = "Remember Game Regions";
             this.MenuItemSettingsRememberGameRegions.Click += new System.EventHandler(this.MenuItemSettingsRememberGameRegions_Click);
             // 
             // MenuItemSettingsAlwaysDownloadInstallFiles
@@ -1403,7 +1355,7 @@
             this.MenuItemMoreInformation.Name = "MenuItemMoreInformation";
             this.MenuItemMoreInformation.Size = new System.Drawing.Size(207, 22);
             this.MenuItemMoreInformation.Text = "More Information";
-            this.MenuItemMoreInformation.Click += new System.EventHandler(this.MenuItemInstallUninstallNotes_Click);
+            this.MenuItemMoreInformation.Click += new System.EventHandler(this.MenuItemMoreInformation_Click);
             // 
             // MenuItemSeperator4
             // 
@@ -1502,36 +1454,8 @@
             this.ToolStripLabelStats.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ToolStripLabelStats.Margin = new System.Windows.Forms.Padding(0, 1, 3, 2);
             this.ToolStripLabelStats.Name = "ToolStripLabelStats";
-            this.ToolStripLabelStats.Size = new System.Drawing.Size(567, 24);
-            this.ToolStripLabelStats.Text = "## Mods for ## Games, ## Game Updates, ## Homebrew Packages, ## Resources && ## A" +
-    "wesome Themes";
-            // 
-            // ContextMenuLocalFile
-            // 
-            this.ContextMenuLocalFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ContextMenuLocalFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuLocalFile.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ContextMenuLocalFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ContextMenuStripLocalUploadFile,
-            this.ContextMenuStripLocalDeleteFile});
-            this.ContextMenuLocalFile.Name = "ContextMenuConsole";
-            this.ContextMenuLocalFile.Size = new System.Drawing.Size(134, 48);
-            // 
-            // ContextMenuStripLocalUploadFile
-            // 
-            this.ContextMenuStripLocalUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ContextMenuStripLocalUploadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuStripLocalUploadFile.Name = "ContextMenuStripLocalUploadFile";
-            this.ContextMenuStripLocalUploadFile.Size = new System.Drawing.Size(133, 22);
-            this.ContextMenuStripLocalUploadFile.Text = "Upload File";
-            // 
-            // ContextMenuStripLocalDeleteFile
-            // 
-            this.ContextMenuStripLocalDeleteFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ContextMenuStripLocalDeleteFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuStripLocalDeleteFile.Name = "ContextMenuStripLocalDeleteFile";
-            this.ContextMenuStripLocalDeleteFile.Size = new System.Drawing.Size(133, 22);
-            this.ContextMenuStripLocalDeleteFile.Text = "Delete File";
+            this.ToolStripLabelStats.Size = new System.Drawing.Size(348, 24);
+            this.ToolStripLabelStats.Text = "## Mods for ## Games, ## Resources (Last Updated: 00/00/0000)";
             // 
             // LabelSelectSystemType
             // 
@@ -1541,7 +1465,7 @@
             this.LabelSelectSystemType.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSelectSystemType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectSystemType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectSystemType.Location = new System.Drawing.Point(415, 42);
+            this.LabelSelectSystemType.Location = new System.Drawing.Point(406, 42);
             this.LabelSelectSystemType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelSelectSystemType.Name = "LabelSelectSystemType";
             this.LabelSelectSystemType.Size = new System.Drawing.Size(78, 15);
@@ -1597,9 +1521,9 @@
             this.ColumnModsVersion,
             this.ColumnModsAuthor,
             this.ColumnModsNoFiles,
-            this.Column9,
-            this.Column10,
-            this.Column13});
+            this.ColumnModsInstall,
+            this.ColumnModsDownload,
+            this.ColumnModsFavourite});
             this.DgvMods.ContextMenuStrip = this.ContextMenuMods;
             this.DgvMods.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvMods.Location = new System.Drawing.Point(1, 121);
@@ -1687,29 +1611,29 @@
             this.ColumnModsNoFiles.ReadOnly = true;
             this.ColumnModsNoFiles.Width = 60;
             // 
-            // Column9
+            // ColumnModsInstall
             // 
-            this.Column9.HeaderText = "";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 28;
+            this.ColumnModsInstall.HeaderText = "";
+            this.ColumnModsInstall.MinimumWidth = 6;
+            this.ColumnModsInstall.Name = "ColumnModsInstall";
+            this.ColumnModsInstall.ReadOnly = true;
+            this.ColumnModsInstall.Width = 28;
             // 
-            // Column10
+            // ColumnModsDownload
             // 
-            this.Column10.HeaderText = "";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 28;
+            this.ColumnModsDownload.HeaderText = "";
+            this.ColumnModsDownload.MinimumWidth = 6;
+            this.ColumnModsDownload.Name = "ColumnModsDownload";
+            this.ColumnModsDownload.ReadOnly = true;
+            this.ColumnModsDownload.Width = 28;
             // 
-            // Column13
+            // ColumnModsFavourite
             // 
-            this.Column13.HeaderText = "";
-            this.Column13.MinimumWidth = 6;
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Width = 28;
+            this.ColumnModsFavourite.HeaderText = "";
+            this.ColumnModsFavourite.MinimumWidth = 6;
+            this.ColumnModsFavourite.Name = "ColumnModsFavourite";
+            this.ColumnModsFavourite.ReadOnly = true;
+            this.ColumnModsFavourite.Width = 28;
             // 
             // PanelModsLibraryFilters
             // 
@@ -1735,10 +1659,10 @@
             this.ComboBoxRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBoxRegion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComboBoxRegion.FormattingEnabled = true;
-            this.ComboBoxRegion.Location = new System.Drawing.Point(796, 39);
+            this.ComboBoxRegion.Location = new System.Drawing.Point(787, 39);
             this.ComboBoxRegion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ComboBoxRegion.Name = "ComboBoxRegion";
-            this.ComboBoxRegion.Size = new System.Drawing.Size(95, 24);
+            this.ComboBoxRegion.Size = new System.Drawing.Size(104, 24);
             this.ComboBoxRegion.TabIndex = 5;
             this.ComboBoxRegion.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRegion_SelectedIndexChanged);
             // 
@@ -1750,7 +1674,7 @@
             this.LabelSelectRegion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSelectRegion.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectRegion.Location = new System.Drawing.Point(741, 42);
+            this.LabelSelectRegion.Location = new System.Drawing.Point(732, 42);
             this.LabelSelectRegion.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelSelectRegion.Name = "LabelSelectRegion";
             this.LabelSelectRegion.Size = new System.Drawing.Size(49, 15);
@@ -1787,7 +1711,7 @@
             this.TextBoxSearch.Location = new System.Drawing.Point(61, 38);
             this.TextBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxSearch.Name = "TextBoxSearch";
-            this.TextBoxSearch.Size = new System.Drawing.Size(345, 23);
+            this.TextBoxSearch.Size = new System.Drawing.Size(337, 23);
             this.TextBoxSearch.TabIndex = 1158;
             this.TextBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
             // 
@@ -1810,7 +1734,7 @@
             this.ComboBoxModType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBoxModType.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComboBoxModType.FormattingEnabled = true;
-            this.ComboBoxModType.Location = new System.Drawing.Point(637, 38);
+            this.ComboBoxModType.Location = new System.Drawing.Point(628, 38);
             this.ComboBoxModType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ComboBoxModType.Name = "ComboBoxModType";
             this.ComboBoxModType.Size = new System.Drawing.Size(96, 24);
@@ -1822,7 +1746,7 @@
             this.ComboBoxSystemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBoxSystemType.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComboBoxSystemType.FormattingEnabled = true;
-            this.ComboBoxSystemType.Location = new System.Drawing.Point(499, 38);
+            this.ComboBoxSystemType.Location = new System.Drawing.Point(490, 38);
             this.ComboBoxSystemType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ComboBoxSystemType.Name = "ComboBoxSystemType";
             this.ComboBoxSystemType.Size = new System.Drawing.Size(60, 24);
@@ -1985,15 +1909,15 @@
             this.DgvModsInstalled.ColumnHeadersHeight = 21;
             this.DgvModsInstalled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DgvModsInstalled.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column14,
-            this.Column3,
-            this.Column16,
-            this.Column2,
-            this.Column5,
-            this.Column6,
-            this.Column4,
-            this.ColumnCreatedDate,
-            this.Column12});
+            this.ColumnModsInstalledId,
+            this.ColumnModsInstalledGameTitle,
+            this.ColumnModsInstalledRegion,
+            this.ColumnModsInstalledModName,
+            this.ColumnModsInstalledModType,
+            this.ColumnModsInstalledVersion,
+            this.ColumnModsInstalledNoOfFiles,
+            this.ColumnModsInstalledDateTime,
+            this.ColumnModsInstalledUninstall});
             this.DgvModsInstalled.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvModsInstalled.Location = new System.Drawing.Point(1, 61);
             this.DgvModsInstalled.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
@@ -2011,82 +1935,80 @@
             this.DgvModsInstalled.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
             this.DgvModsInstalled.SelectionChanged += new System.EventHandler(this.DgvModsInstalled_SelectionChanged);
             // 
-            // Column14
+            // ColumnModsInstalledId
             // 
-            this.Column14.HeaderText = "Mod Id";
-            this.Column14.MinimumWidth = 6;
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Visible = false;
-            this.Column14.Width = 125;
+            this.ColumnModsInstalledId.HeaderText = "Mod Id";
+            this.ColumnModsInstalledId.MinimumWidth = 6;
+            this.ColumnModsInstalledId.Name = "ColumnModsInstalledId";
+            this.ColumnModsInstalledId.ReadOnly = true;
+            this.ColumnModsInstalledId.Visible = false;
+            this.ColumnModsInstalledId.Width = 125;
             // 
-            // Column3
+            // ColumnModsInstalledGameTitle
             // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Game Title";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.ColumnModsInstalledGameTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnModsInstalledGameTitle.HeaderText = "Game Title";
+            this.ColumnModsInstalledGameTitle.MinimumWidth = 6;
+            this.ColumnModsInstalledGameTitle.Name = "ColumnModsInstalledGameTitle";
+            this.ColumnModsInstalledGameTitle.ReadOnly = true;
             // 
-            // Column16
+            // ColumnModsInstalledRegion
             // 
-            this.Column16.HeaderText = "Region";
-            this.Column16.MinimumWidth = 6;
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            this.Column16.Width = 74;
+            this.ColumnModsInstalledRegion.HeaderText = "Region";
+            this.ColumnModsInstalledRegion.MinimumWidth = 6;
+            this.ColumnModsInstalledRegion.Name = "ColumnModsInstalledRegion";
+            this.ColumnModsInstalledRegion.ReadOnly = true;
+            this.ColumnModsInstalledRegion.Width = 74;
             // 
-            // Column2
+            // ColumnModsInstalledModName
             // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Mod Name";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.ColumnModsInstalledModName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnModsInstalledModName.HeaderText = "Mod Name";
+            this.ColumnModsInstalledModName.MinimumWidth = 6;
+            this.ColumnModsInstalledModName.Name = "ColumnModsInstalledModName";
+            this.ColumnModsInstalledModName.ReadOnly = true;
             // 
-            // Column5
+            // ColumnModsInstalledModType
             // 
-            this.Column5.HeaderText = "Mod Type";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 86;
+            this.ColumnModsInstalledModType.HeaderText = "Mod Type";
+            this.ColumnModsInstalledModType.MinimumWidth = 6;
+            this.ColumnModsInstalledModType.Name = "ColumnModsInstalledModType";
+            this.ColumnModsInstalledModType.ReadOnly = true;
+            this.ColumnModsInstalledModType.Width = 86;
             // 
-            // Column6
+            // ColumnModsInstalledVersion
             // 
-            this.Column6.HeaderText = "Version";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 68;
+            this.ColumnModsInstalledVersion.HeaderText = "Version";
+            this.ColumnModsInstalledVersion.MinimumWidth = 6;
+            this.ColumnModsInstalledVersion.Name = "ColumnModsInstalledVersion";
+            this.ColumnModsInstalledVersion.ReadOnly = true;
+            this.ColumnModsInstalledVersion.Width = 68;
             // 
-            // Column4
+            // ColumnModsInstalledNoOfFiles
             // 
-            this.Column4.HeaderText = "# Files";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 60;
+            this.ColumnModsInstalledNoOfFiles.HeaderText = "# Files";
+            this.ColumnModsInstalledNoOfFiles.MinimumWidth = 6;
+            this.ColumnModsInstalledNoOfFiles.Name = "ColumnModsInstalledNoOfFiles";
+            this.ColumnModsInstalledNoOfFiles.ReadOnly = true;
+            this.ColumnModsInstalledNoOfFiles.Width = 60;
             // 
-            // ColumnCreatedDate
+            // ColumnModsInstalledDateTime
             // 
-            this.ColumnCreatedDate.HeaderText = "Installed On";
-            this.ColumnCreatedDate.Name = "ColumnCreatedDate";
-            this.ColumnCreatedDate.ReadOnly = true;
+            this.ColumnModsInstalledDateTime.HeaderText = "Installed On";
+            this.ColumnModsInstalledDateTime.Name = "ColumnModsInstalledDateTime";
+            this.ColumnModsInstalledDateTime.ReadOnly = true;
             // 
-            // Column12
+            // ColumnModsInstalledUninstall
             // 
-            this.Column12.HeaderText = "";
-            this.Column12.MinimumWidth = 6;
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Width = 28;
+            this.ColumnModsInstalledUninstall.HeaderText = "";
+            this.ColumnModsInstalledUninstall.MinimumWidth = 6;
+            this.ColumnModsInstalledUninstall.Name = "ColumnModsInstalledUninstall";
+            this.ColumnModsInstalledUninstall.ReadOnly = true;
+            this.ColumnModsInstalledUninstall.Width = 28;
             // 
             // PanelModsInstalledHeader
             // 
-            this.PanelModsInstalledHeader.Controls.Add(this.label7);
-            this.PanelModsInstalledHeader.Controls.Add(this.label8);
-            this.PanelModsInstalledHeader.Controls.Add(this.darkTitle12);
+            this.PanelModsInstalledHeader.Controls.Add(this.LabelHeaderGameMods);
             this.PanelModsInstalledHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelModsInstalledHeader.Location = new System.Drawing.Point(1, 25);
             this.PanelModsInstalledHeader.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -2094,42 +2016,16 @@
             this.PanelModsInstalledHeader.Size = new System.Drawing.Size(899, 36);
             this.PanelModsInstalledHeader.TabIndex = 1177;
             // 
-            // label7
+            // LabelHeaderGameMods
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(520, 71);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 4, 2, 4);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 15);
-            this.label7.TabIndex = 1177;
-            this.label7.Text = "Mod Version:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label8.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(601, 71);
-            this.label8.Margin = new System.Windows.Forms.Padding(0, 4, 3, 4);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(25, 15);
-            this.label8.TabIndex = 1176;
-            this.label8.Text = "n/a";
-            // 
-            // darkTitle12
-            // 
-            this.darkTitle12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.LabelHeaderGameMods.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.darkTitle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.darkTitle12.Location = new System.Drawing.Point(7, 10);
-            this.darkTitle12.Name = "darkTitle12";
-            this.darkTitle12.Size = new System.Drawing.Size(887, 17);
-            this.darkTitle12.TabIndex = 1160;
-            this.darkTitle12.Text = "GAME MODS";
+            this.LabelHeaderGameMods.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderGameMods.Location = new System.Drawing.Point(7, 10);
+            this.LabelHeaderGameMods.Name = "LabelHeaderGameMods";
+            this.LabelHeaderGameMods.Size = new System.Drawing.Size(887, 17);
+            this.LabelHeaderGameMods.TabIndex = 1160;
+            this.LabelHeaderGameMods.Text = "GAME MODS";
             // 
             // MenuGameModsStrip
             // 
@@ -2157,7 +2053,7 @@
             this.ToolItemUninstallAllGameMods.Enabled = false;
             this.ToolItemUninstallAllGameMods.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolItemUninstallAllGameMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolItemUninstallAllGameMods.Image = global::ModioX.Properties.Resources.icons8_uninstall_programs_22;
+            this.ToolItemUninstallAllGameMods.Image = global::ModioX.Properties.Resources.uninstall;
             this.ToolItemUninstallAllGameMods.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ToolItemUninstallAllGameMods.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolItemUninstallAllGameMods.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -2208,7 +2104,6 @@
             this.FlowPanelDetails.PerformLayout();
             this.SectionModsInstallFilePaths.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvInstallPaths)).EndInit();
-            this.ContextMenuConsoleFile.ResumeLayout(false);
             this.SectionArchiveInformation.ResumeLayout(false);
             this.SectionArchiveInformation.PerformLayout();
             this.PanelModsInstallationPaths.ResumeLayout(false);
@@ -2218,7 +2113,6 @@
             this.MenuStrip.PerformLayout();
             this.MenuStatusStrip.ResumeLayout(false);
             this.MenuStatusStrip.PerformLayout();
-            this.ContextMenuLocalFile.ResumeLayout(false);
             this.SectionModsLibrary.ResumeLayout(false);
             this.SectionModsLibrary.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).EndInit();
@@ -2231,7 +2125,6 @@
             this.SectionInstalledGameMods.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvModsInstalled)).EndInit();
             this.PanelModsInstalledHeader.ResumeLayout(false);
-            this.PanelModsInstalledHeader.PerformLayout();
             this.MenuGameModsStrip.ResumeLayout(false);
             this.MenuGameModsStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -2269,13 +2162,6 @@
         private System.Windows.Forms.Label LabelHeaderModType;
         private System.Windows.Forms.Label LabelType;
         private System.Windows.Forms.Label LabelSelectSystemType;
-        private DarkUI.Controls.DarkContextMenu ContextMenuConsoleFile;
-        private System.Windows.Forms.ToolStripMenuItem ContextMenuConsoleDownloadFile;
-        private System.Windows.Forms.ToolStripMenuItem ContextMenuConsoleDeleteFile;
-        private System.Windows.Forms.ToolStripMenuItem ContextMenuConsoleRefresh;
-        private DarkUI.Controls.DarkContextMenu ContextMenuLocalFile;
-        private System.Windows.Forms.ToolStripMenuItem ContextMenuStripLocalUploadFile;
-        private System.Windows.Forms.ToolStripMenuItem ContextMenuStripLocalDeleteFile;
         private System.Windows.Forms.Label LabelHeaderFirmware;
         private System.Windows.Forms.Label LabelFirmware;
         private System.Windows.Forms.Label LabelCategory;
@@ -2308,8 +2194,8 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemCustomFirmware;
         private System.Windows.Forms.ToolStripMenuItem MenuStripResourcesCustomFirmwareRebug;
         private DarkUI.Controls.DarkContextMenu ContextMenuMods;
-        private System.Windows.Forms.ToolStripMenuItem ContextMenuModsInstallToConsole;
-        private System.Windows.Forms.ToolStripMenuItem ContextMenuModsUninstallFromConsole;
+        private System.Windows.Forms.ToolStripMenuItem ContextMenuModsInstallFiles;
+        private System.Windows.Forms.ToolStripMenuItem ContextMenuModsUninstallFiles;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsDownloadArchive;
         private System.Windows.Forms.ToolStripSeparator ContextMenuModsSeperator1;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsExtractInformation;
@@ -2328,7 +2214,7 @@
         private DarkUI.Controls.DarkComboBox ComboBoxModType;
         private DarkUI.Controls.DarkDataGridView DgvMods;
         private DarkUI.Controls.DarkSectionPanel SectionModsInstallFilePaths;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsBackupFiles;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsGameBackupFiles;
         private System.Windows.Forms.ToolStripButton ToolItemUninstallMod;
         private System.Windows.Forms.ToolStripButton ToolItemFavoriteMod;
         private System.Windows.Forms.Panel PanelModsInstallationPaths;
@@ -2338,14 +2224,14 @@
         private System.Windows.Forms.ToolStripMenuItem MenuStripRequestMod;
         private System.Windows.Forms.ToolStripMenuItem MenuStripConnectPS3Console;
         private DarkUI.Controls.DarkDataGridView DgvInstallPaths;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnInstallationPath;
         private System.Windows.Forms.ToolStripSeparator MenuItemToolsSeperator0;
         private System.Windows.Forms.ToolStripMenuItem MenuItemToolsFileManager;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettings;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsAddNewConsole;
         private System.Windows.Forms.ToolStripSeparator MenuItemSeperator2;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsShowModID;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsAutoDetectGameRegion;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsAutoDetectGameRegions;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsAlwaysDownloadInstallFiles;
         private System.Windows.Forms.Panel PanelModsLibraryFilters;
         private DarkUI.Controls.DarkTextBox TextBoxSearch;
@@ -2365,10 +2251,8 @@
         private DarkUI.Controls.DarkSectionPanel SectionInstalledGameMods;
         private DarkUI.Controls.DarkDataGridView DgvModsInstalled;
         private System.Windows.Forms.Panel PanelModsInstalledHeader;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private DarkUI.Controls.DarkTitle darkTitle12;
-        private DarkUI.Controls.DarkTitle darkTitle7;
+        private DarkUI.Controls.DarkTitle LabelHeaderGameMods;
+        private DarkUI.Controls.DarkTitle LabelHeaderInstallationFiles;
         private DarkUI.Controls.DarkToolStrip MenuGameModsStrip;
         private System.Windows.Forms.ToolStripButton ToolItemUninstallAllGameMods;
         private System.Windows.Forms.ToolStripLabel LabelInstalledGameModsStatus;
@@ -2384,15 +2268,6 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsEditGameRegions;
         private System.Windows.Forms.ToolStripSeparator MenuItemSeperator5;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsEditExternalApplications;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCreatedDate;
-        private System.Windows.Forms.DataGridViewImageColumn Column12;
         private System.Windows.Forms.ToolStripSeparator MenuItemSeperator6;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsResetAllSettings;
         private System.Windows.Forms.ToolStripMenuItem MenuItemHelpDiscordServer;
@@ -2404,8 +2279,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsVersion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsAuthor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsNoFiles;
-        private System.Windows.Forms.DataGridViewImageColumn Column9;
-        private System.Windows.Forms.DataGridViewImageColumn Column10;
-        private System.Windows.Forms.DataGridViewImageColumn Column13;
+        private System.Windows.Forms.DataGridViewImageColumn ColumnModsInstall;
+        private System.Windows.Forms.DataGridViewImageColumn ColumnModsDownload;
+        private System.Windows.Forms.DataGridViewImageColumn ColumnModsFavourite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledGameTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledRegion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledModName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledModType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledVersion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledNoOfFiles;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledDateTime;
+        private System.Windows.Forms.DataGridViewImageColumn ColumnModsInstalledUninstall;
     }
 }

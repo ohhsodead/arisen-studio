@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ModioX")]
-[assembly: AssemblyDescription("Browse, Download and Install Game Mods for the PlayStation 3")]
+[assembly: AssemblyDescription("Browse, Download & Install Game Mods for the PlayStation 3")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ohhsodead")]
 [assembly: AssemblyProduct("ModioX")]
@@ -31,7 +31,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.4.4")]
-[assembly: AssemblyFileVersion("0.1.4.4")]
+[assembly: AssemblyVersion("0.1.4.5")]
+[assembly: AssemblyFileVersion("0.1.4.5")]
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]

@@ -49,7 +49,7 @@
             this.ButtonChangeCredentials.Location = new System.Drawing.Point(283, 72);
             this.ButtonChangeCredentials.Name = "ButtonChangeCredentials";
             this.ButtonChangeCredentials.Size = new System.Drawing.Size(80, 25);
-            this.ButtonChangeCredentials.TabIndex = 1143;
+            this.ButtonChangeCredentials.TabIndex = 3;
             this.ButtonChangeCredentials.Text = "Change";
             this.ButtonChangeCredentials.Click += new System.EventHandler(this.ButtonChangeCredentials_Click);
             // 
@@ -82,10 +82,11 @@
             this.ButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.ButtonCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonCancel.Location = new System.Drawing.Point(283, 128);
+            this.ButtonCancel.Location = new System.Drawing.Point(283, 126);
+            this.ButtonCancel.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.Size = new System.Drawing.Size(80, 25);
-            this.ButtonCancel.TabIndex = 1140;
+            this.ButtonCancel.TabIndex = 5;
             this.ButtonCancel.Text = "Cancel";
             this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
@@ -97,7 +98,7 @@
             this.TextBoxConsolePort.Location = new System.Drawing.Point(314, 42);
             this.TextBoxConsolePort.Name = "TextBoxConsolePort";
             this.TextBoxConsolePort.Size = new System.Drawing.Size(49, 23);
-            this.TextBoxConsolePort.TabIndex = 1138;
+            this.TextBoxConsolePort.TabIndex = 2;
             this.TextBoxConsolePort.Text = "21";
             // 
             // darkLabel1
@@ -116,11 +117,13 @@
             // ButtonOK
             // 
             this.ButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ButtonOK.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonOK.Location = new System.Drawing.Point(197, 128);
+            this.ButtonOK.Location = new System.Drawing.Point(193, 126);
+            this.ButtonOK.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonOK.Name = "ButtonOK";
             this.ButtonOK.Size = new System.Drawing.Size(80, 25);
-            this.ButtonOK.TabIndex = 1137;
+            this.ButtonOK.TabIndex = 4;
             this.ButtonOK.Text = "OK";
             this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
@@ -145,7 +148,7 @@
             this.TextBoxConnectionName.Location = new System.Drawing.Point(125, 12);
             this.TextBoxConnectionName.Name = "TextBoxConnectionName";
             this.TextBoxConnectionName.Size = new System.Drawing.Size(238, 23);
-            this.TextBoxConnectionName.TabIndex = 4;
+            this.TextBoxConnectionName.TabIndex = 0;
             // 
             // TextBoxConsoleAddress
             // 
@@ -156,7 +159,7 @@
             this.TextBoxConsoleAddress.Location = new System.Drawing.Point(125, 42);
             this.TextBoxConsoleAddress.Name = "TextBoxConsoleAddress";
             this.TextBoxConsoleAddress.Size = new System.Drawing.Size(145, 23);
-            this.TextBoxConsoleAddress.TabIndex = 13;
+            this.TextBoxConsoleAddress.TabIndex = 1;
             // 
             // LabelDescription
             // 
