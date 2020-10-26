@@ -10,10 +10,12 @@ All notable changes to this project will be documented in this file.
 - You can now edit or delete consoles in the connection window
 - Added what's new dialog which shows after an update
 - Added last updated date attribute to database
+- Added homebrew packages to categories
 - Added instructions for installing/uninstalling mods
 - Added check for Internet connection before loading database
 - Added FluentFTP for faster directory listings
 - Removed custom mods, prioritizing file manager instead
+- Fixed deleting/uninstalling files
 
 ## Beta v1.4.4
 - Installed mods are now downloaded to Documents folder
