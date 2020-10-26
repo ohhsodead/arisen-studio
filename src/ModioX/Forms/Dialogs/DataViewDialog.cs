@@ -1,5 +1,6 @@
-﻿using DarkUI.Forms;
+﻿using System;
 using System.Windows.Forms;
+using DarkUI.Forms;
 
 namespace ModioX.Forms
 {
@@ -13,9 +14,8 @@ namespace ModioX.Forms
             InitializeComponent();
         }
 
-        private void DataViewDialog_Load(object sender, System.EventArgs e)
+        private void DataViewDialog_Load(object sender, EventArgs e)
         {
-
         }
 
         private void DataViewDialog_Scroll(object sender, ScrollEventArgs e)

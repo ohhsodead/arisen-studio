@@ -1,7 +1,7 @@
-﻿using DarkUI.Controls;
-using DarkUI.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using DarkUI.Controls;
+using DarkUI.Forms;
 
 namespace ModioX.Windows
 {
@@ -21,9 +21,9 @@ namespace ModioX.Windows
             SectionItems.SectionHeader = Text;
             Text = "Choose Item...";
 
-            foreach (string item in Items)
+            foreach (var item in Items)
             {
-                ListViewItems.Items.Add(new DarkListItem() { Text = item });
+                ListViewItems.Items.Add(new DarkListItem {Text = item});
             }
         }
 

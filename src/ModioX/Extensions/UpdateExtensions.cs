@@ -1,19 +1,25 @@
-﻿using DarkUI.Forms;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
+using System.Net;
+using System.Reflection;
+using System.Windows.Forms;
+using DarkUI.Forms;
 using ModioX.Constants;
-using ModioX.Forms;
+using ModioX.Forms.Windows;
 using ModioX.Io;
 using ModioX.Models.Release_Data;
 using Newtonsoft.Json;
-using System;
-using System.Diagnostics;
-using System.IO;
-using System.Reflection;
-using System.Windows.Forms;
 
 namespace ModioX.Extensions
 {
     public abstract class UpdateExtensions
     {
+        /// <summary>
+        ///     
+        /// </summary>
+        public static readonly WebClient WebClient = new WebClient();
+
         /// <summary>
         ///     Get the current application version.
         /// </summary>
@@ -35,14 +41,14 @@ namespace ModioX.Extensions
         /// <returns></returns>
         public static GitHubData GetGitHubLatestReleaseData()
         {
-            GitHubData GitHubLatestReleaseData;
+            GitHubData gitHubLatestReleaseData;
 
-            using (StreamReader streamReader = new StreamReader(HttpExtensions.GetStream(Urls.GitHubLatestRelease)))
+            using (var streamReader = new StreamReader(HttpExtensions.GetStream(Urls.GitHubLatestRelease)))
             {
-                GitHubLatestReleaseData = JsonConvert.DeserializeObject<GitHubData>(streamReader.ReadToEnd());
+                gitHubLatestReleaseData = JsonConvert.DeserializeObject<GitHubData>(streamReader.ReadToEnd());
             }
 
-            return GitHubLatestReleaseData;
+            return gitHubLatestReleaseData;
         }
 
         /// <summary>
@@ -53,9 +59,9 @@ namespace ModioX.Extensions
         {
             try
             {
-                MainWindow.mainWindow.SetStatus($"Checking application for new update...");
+                MainWindow.Window.SetStatus("Checking application for new update...");
 
-                Version latestVersion = new Version(GitHubData.TagName);
+                var latestVersion = new Version(GitHubData.TagName);
 
                 if (CurrentVersion.CompareTo(latestVersion) < 0)
                 {
@@ -63,36 +69,37 @@ namespace ModioX.Extensions
                 }
                 else
                 {
-                    MainWindow.mainWindow.SetStatus($"You're currently using the latest version of ModioX ({GitHubData.Name})");
+                    MainWindow.Window.SetStatus($"You're currently using the latest version of ModioX ({GitHubData.Name})");
                 }
             }
             catch (Exception ex)
             {
-                MainWindow.mainWindow.SetStatus($"Unable to check application version at this current time. Error: {ex.Message}", ex);
+                MainWindow.Window.SetStatus($"Unable to check application version at this current time. Error: {ex.Message}", ex);
             }
         }
 
         /// <summary>
-        ///     Download the latest installer from GitHub to the user's downloads folder, run the program and close this instance of the application.
+        ///     Download the latest installer from GitHub to the user's downloads folder, run the program and close this instance
+        ///     of the application.
         /// </summary>
         private static void DownloadAndRunInstaller()
         {
             try
             {
-                string installerFile = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\{GitHubData.Assets[0].Name}";
+                var installerFile = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\{GitHubData.Assets[0].Name}";
 
-                MainWindow.SettingsData.FirstTimeOpenAfterUpdate = true;
-                MainWindow.mainWindow.SetStatus("A new update is available. Downloading the installer...");
-                _ = DarkMessageBox.Show(MainWindow.mainWindow, $@"A new version of ModioX ({GitHubData.Name}) is now available. Click OK to download and run the installer.", @"Update Available", MessageBoxIcon.Information);
-                Program.WebClient.DownloadFile(GitHubData.Assets[0].BrowserDownloadUrl, installerFile);
-                _ = Process.Start(installerFile);
+                MainWindow.Settings.FirstTimeOpenAfterUpdate = true;
+                MainWindow.Window.SetStatus("A new update is available. Downloading the installer...");
+                DarkMessageBox.Show(MainWindow.Window, $@"A new version of ModioX ({GitHubData.Name}) is now available. Click OK to download and run the installer.", @"Update Available", MessageBoxIcon.Information);
+                WebClient.DownloadFile(GitHubData.Assets[0].BrowserDownloadUrl, installerFile);
+                Process.Start(installerFile);
                 Application.Exit();
             }
             catch (Exception ex)
             {
-                MainWindow.mainWindow.SetStatus($"Unable to download or run the installer. Error: {ex.Message})", ex);
-                _ = DarkMessageBox.Show(MainWindow.mainWindow, @"Unable to complete the update. You must manually install the latest available update from the GitHub releases page.", "Error", MessageBoxIcon.Error);
-                _ = Process.Start($"{Urls.GitHubRepo}releases/latest");
+                MainWindow.Window.SetStatus($"Unable to download or run the installer. Error: {ex.Message})", ex);
+                DarkMessageBox.Show(MainWindow.Window, @"Unable to complete the update. You must manually install the latest available update from the GitHub releases page.", "Error", MessageBoxIcon.Error);
+                Process.Start($"{Urls.GitHubRepo}releases/latest");
                 Application.Exit();
             }
         }

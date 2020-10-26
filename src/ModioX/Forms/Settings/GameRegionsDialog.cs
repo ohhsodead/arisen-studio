@@ -1,11 +1,11 @@
-﻿using DarkUI.Forms;
-using ModioX.Models.Database;
-using ModioX.Models.Resources;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using DarkUI.Forms;
+using ModioX.Forms.Windows;
+using ModioX.Models.Database;
 
-namespace ModioX.Forms
+namespace ModioX.Forms.Settings
 {
     public partial class GameRegionsDialog : DarkForm
     {
@@ -16,26 +16,10 @@ namespace ModioX.Forms
 
         private void EditGameRegions_Load(object sender, EventArgs e)
         {
-            UpdateUI();
-        }
-
-        public void UpdateUI()
-        {
-            DgvGameRegions.Rows.Clear();
             ComboBoxGameTitle.Items.Clear();
             ComboBoxGameRegion.Items.Clear();
 
-            foreach (GameRegion gameRegion in MainWindow.SettingsData.GameRegions)
-            {
-                _ = DgvGameRegions.Rows.Add(MainWindow.Database.Categories.GetCategoryById(gameRegion.GameId).Title, gameRegion.Region);
-            }
-
-            LabelTotalGameRegions.Text = $"{DgvGameRegions.Rows.Count} Regions Saved";
-
-            LabelNoGameRegionsSaved.Visible = DgvGameRegions.Rows.Count < 1;
-            ToolItemDeleteAll.Enabled = DgvGameRegions.Rows.Count > 0;
-
-            foreach (CategoriesData.Category category in MainWindow.Database.Categories.GetCategoriesByType(CategoryType.Game))
+            foreach (var category in MainWindow.Database.Categories.GetCategoriesByType(CategoryType.Game))
             {
                 _ = ComboBoxGameTitle.Items.Add(category.Title);
             }
@@ -46,94 +30,131 @@ namespace ModioX.Forms
             {
                 DgvGameRegions.CurrentCell = DgvGameRegions[0, 0];
             }
+
+            LoadSavedRegions();
+        }
+
+        public void LoadSavedRegions()
+        {
+            DgvGameRegions.Rows.Clear();            
+
+            foreach (var gameRegion in MainWindow.Settings.GameRegions)
+            {
+                _ = DgvGameRegions.Rows.Add(MainWindow.Database.Categories.GetCategoryById(gameRegion.GameId).Title, gameRegion.Region);
+            }
+
+            LabelTotalGameRegions.Text = $@"{DgvGameRegions.Rows.Count} Regions Saved";
+
+            LabelNoGameRegionsSaved.Visible = DgvGameRegions.Rows.Count < 1;
+            ToolStripDeleteSelected.Enabled = DgvGameRegions.CurrentRow != null;
+            ToolStripDeleteAll.Enabled = DgvGameRegions.Rows.Count > 0;           
         }
 
         private void DgvGameRegions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (DgvGameRegions.SelectedRows.Count > 0)
+            if (DgvGameRegions.CurrentRow != null)
             {
-                string gameTitle = DgvGameRegions.SelectedRows[0].Cells[0].Value.ToString();
-                string gameRegion = DgvGameRegions.SelectedRows[0].Cells[1].Value.ToString();
+                var gameTitle = DgvGameRegions.SelectedRows[0].Cells[0].Value.ToString();
+                var gameRegion = DgvGameRegions.SelectedRows[0].Cells[1].Value.ToString();
 
                 ComboBoxGameTitle.SelectedItem = gameTitle;
                 ComboBoxGameRegion.SelectedItem = gameRegion;
             }
+
+            ToolStripDeleteSelected.Enabled = DgvGameRegions.CurrentRow != null;
         }
 
-        private void ToolItemDeleteAll_Click(object sender, EventArgs e)
+        private void ToolStripDeleteAll_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.Show(this, $"Do you really want delete of all your saved game regions? This cannot be undone.", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (DarkMessageBox.Show(this,
+                    "Do you really want delete of all your saved game regions?", "Delete All",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                MainWindow.SettingsData.GameRegions.Clear();
+                MainWindow.Settings.GameRegions.Clear();
+                LoadSavedRegions();
+            }
+        }
+
+        private void ToolStripDeleteSelected_Click(object sender, EventArgs e)
+        {
+            if (DarkMessageBox.Show(this,
+                    "Do you really want delete the selected saved game regions?", "Delete",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                MainWindow.Settings.GameRegions.RemoveAt(DgvGameRegions.CurrentRow.Index);
+                LoadSavedRegions();
             }
         }
 
         private void ComboBoxGameTitle_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBoxGameRegion.Enabled = ComboBoxGameTitle.SelectedIndex != -1;
-
             if (ComboBoxGameTitle.SelectedIndex != -1)
             {
                 ComboBoxGameRegion.Items.Clear();
 
-                string gameTitle = ComboBoxGameTitle.GetItemText(ComboBoxGameTitle.SelectedItem);
-                string gameId = MainWindow.Database.Categories.GetCategoryByTitle(gameTitle).Id;
+                var gameTitle = ComboBoxGameTitle.GetItemText(ComboBoxGameTitle.SelectedItem);
+                var gameId = MainWindow.Database.Categories.GetCategoryByTitle(gameTitle).Id;
 
-                ComboBoxGameRegion.Items.AddRange(MainWindow.Database.Categories.GetGameRegions(gameId).ToArray());
+                foreach (var gameRegion in MainWindow.Database.Categories.GetGameRegions(gameId))
+                {
+                    ComboBoxGameRegion.Items.Add(gameRegion);
+                }
             }
+
+            ComboBoxGameRegion.Enabled = ComboBoxGameTitle.SelectedIndex != -1;
         }
 
         private void ButtonAddGame_Click(object sender, EventArgs e)
         {
             if (ComboBoxGameTitle.SelectedIndex == -1)
             {
-                _ = DarkMessageBox.Show(this, $"You must first specify a game title.", "No Game Title", MessageBoxIcon.Exclamation);
+                _ = DarkMessageBox.Show(this, "You must first specify a game title.", "No Game Title",
+                    MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (ComboBoxGameRegion.SelectedIndex == -1)
             {
-                _ = DarkMessageBox.Show(this, $"You must specify a game region to be added to the game.", "No Game Region", MessageBoxIcon.Exclamation);
+                _ = DarkMessageBox.Show(this, "You must specify a game region.", "No Game Region",
+                    MessageBoxIcon.Exclamation);
                 return;
             }
 
-            string gameTitle = ComboBoxGameTitle.GetItemText(ComboBoxGameTitle.SelectedItem);
-            string gameRegion = ComboBoxGameRegion.GetItemText(ComboBoxGameRegion.SelectedItem);
+            var gameTitle = ComboBoxGameTitle.GetItemText(ComboBoxGameTitle.SelectedItem);
+            var gameRegion = ComboBoxGameRegion.GetItemText(ComboBoxGameRegion.SelectedItem);
 
-            string gameId = MainWindow.Database.Categories.GetCategoryByTitle(gameTitle).Id;
+            var gameId = MainWindow.Database.Categories.GetCategoryByTitle(gameTitle).Id;
 
-            MainWindow.SettingsData.UpdateGameRegion(gameId, gameRegion);
-            UpdateUI();
+            DgvGameRegions.Rows.Add(gameTitle, gameRegion);
+            MainWindow.Settings.UpdateGameRegion(gameId, gameRegion);
+            LoadSavedRegions();
         }
 
         private void ButtonSaveAll_Click(object sender, EventArgs e)
         {
-            bool isSuccess = true;
-
             foreach (DataGridViewRow row in DgvGameRegions.Rows)
             {
-                string gameTitle = row.Cells[0].Value.ToString();
-                string gameRegion = row.Cells[1].Value.ToString();
+                var gameTitle = row.Cells[0].Value.ToString();
+                var gameRegion = row.Cells[1].Value.ToString();
 
-                string gameId = MainWindow.Database.Categories.GetCategoryByTitle(gameTitle).Id;
+                var gameId = MainWindow.Database.Categories.GetCategoryByTitle(gameTitle).Id;
 
                 if (MainWindow.Database.Categories.GetGameRegions(gameId).Contains(gameRegion))
                 {
-                    MainWindow.SettingsData.UpdateGameRegion(gameId, gameRegion);
+                    MainWindow.Settings.UpdateGameRegion(gameId, gameRegion);
                 }
                 else
                 {
-                    _ = DarkMessageBox.Show(this, $"Region: {gameRegion} is not supported for game: {gameTitle}\nPlease change the region to one that is supported.", "Invalid Region", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    isSuccess = false;
-                    break;
+                    _ = DarkMessageBox.Show(this,
+                        $"Region: {gameRegion} is not supported for Game: {gameTitle}\nPlease change the region to one that is supported for this game.", "Invalid Region",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
                 }
             }
 
-            if (isSuccess)
-            {
-                _ = DarkMessageBox.Show(this, $"All game regions have now been saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
-            }
+            _ = DarkMessageBox.Show(this, "All game regions have now been saved.", "Saved",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Close();
         }
     }
 }

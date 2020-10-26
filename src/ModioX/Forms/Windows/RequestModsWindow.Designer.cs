@@ -1,4 +1,4 @@
-﻿namespace ModioX.Forms
+﻿namespace ModioX.Forms.Windows
 {
     partial class RequestModsWindow
     {
@@ -306,7 +306,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Request Mods Form";
-            this.Load += new System.EventHandler(this.RequestMods_Load);
+            this.Load += new System.EventHandler(this.RequestModsWindow_Load);
             this.SectionModDetails.ResumeLayout(false);
             this.SectionModDetails.PerformLayout();
             this.ResumeLayout(false);

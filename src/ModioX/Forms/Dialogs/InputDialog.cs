@@ -1,5 +1,6 @@
-﻿using DarkUI.Forms;
-using System;
+﻿using System;
+using System.IO;
+using DarkUI.Forms;
 
 namespace ModioX.Forms
 {
@@ -10,7 +11,19 @@ namespace ModioX.Forms
             InitializeComponent();
         }
 
-        private void TextBoxUsername_TextChanged(object sender, EventArgs e)
+        private void InputDialog_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Path.HasExtension(TextBoxName.Text))
+                {
+                    TextBoxName.Select(0, TextBoxName.Text.IndexOf(Path.GetExtension(TextBoxName.Text)));
+                }
+            }
+            catch { }
+        }
+
+        private void TextBoxName_TextChanged(object sender, EventArgs e)
         {
             ButtonOK.Enabled = !string.IsNullOrWhiteSpace(TextBoxName.Text);
         }

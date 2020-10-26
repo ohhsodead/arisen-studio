@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
+using log4net.Config;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
@@ -34,4 +35,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("0.1.4.5")]
 [assembly: AssemblyFileVersion("0.1.4.5")]
 
-[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+[assembly: XmlConfigurator(Watch = true)]

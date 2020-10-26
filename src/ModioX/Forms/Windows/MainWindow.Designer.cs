@@ -1,4 +1,4 @@
-﻿namespace ModioX.Forms
+﻿namespace ModioX.Forms.Windows
 {
     partial class MainWindow
     {
@@ -128,6 +128,7 @@
             this.MenuItemSeperator3 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemMoreInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSeperator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuStripHelpCheckForUpdates = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripRefreshData = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripRequestMod = new System.Windows.Forms.ToolStripMenuItem();
@@ -166,6 +167,8 @@
             this.FlowPanelCategories = new System.Windows.Forms.FlowLayoutPanel();
             this.LabelTitleGames = new DarkUI.Controls.DarkTitle();
             this.PanelGames = new System.Windows.Forms.FlowLayoutPanel();
+            this.LabelTitleHomebrew = new DarkUI.Controls.DarkTitle();
+            this.PanelHomebrew = new System.Windows.Forms.FlowLayoutPanel();
             this.LabelTitleResources = new DarkUI.Controls.DarkTitle();
             this.PanelResources = new System.Windows.Forms.FlowLayoutPanel();
             this.LabelTitleMyLists = new DarkUI.Controls.DarkTitle();
@@ -1109,7 +1112,7 @@
             this.MenuItemBrewologyStore.Name = "MenuItemBrewologyStore";
             this.MenuItemBrewologyStore.Size = new System.Drawing.Size(160, 22);
             this.MenuItemBrewologyStore.Text = "Brewology Store";
-            this.MenuItemBrewologyStore.Click += new System.EventHandler(this.BrewologyToolStripMenuItem_Click);
+            this.MenuItemBrewologyStore.Click += new System.EventHandler(this.MenuStripResourcesBrewology_Click);
             // 
             // MenuItemGames
             // 
@@ -1307,6 +1310,7 @@
             this.MenuItemSeperator3,
             this.MenuItemMoreInformation,
             this.MenuItemSeperator4,
+            this.MenuStripHelpCheckForUpdates,
             this.MenuItemAbout});
             this.MenuItemHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemHelp.Name = "MenuItemHelp";
@@ -1364,6 +1368,15 @@
             this.MenuItemSeperator4.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.MenuItemSeperator4.Name = "MenuItemSeperator4";
             this.MenuItemSeperator4.Size = new System.Drawing.Size(204, 6);
+            // 
+            // MenuStripHelpCheckForUpdates
+            // 
+            this.MenuStripHelpCheckForUpdates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuStripHelpCheckForUpdates.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuStripHelpCheckForUpdates.Name = "MenuStripHelpCheckForUpdates";
+            this.MenuStripHelpCheckForUpdates.Size = new System.Drawing.Size(207, 22);
+            this.MenuStripHelpCheckForUpdates.Text = "Check for Update";
+            this.MenuStripHelpCheckForUpdates.Click += new System.EventHandler(this.MenuStripHelpCheckForUpdates_Click);
             // 
             // MenuItemAbout
             // 
@@ -1786,6 +1799,8 @@
             this.FlowPanelCategories.AutoScroll = true;
             this.FlowPanelCategories.Controls.Add(this.LabelTitleGames);
             this.FlowPanelCategories.Controls.Add(this.PanelGames);
+            this.FlowPanelCategories.Controls.Add(this.LabelTitleHomebrew);
+            this.FlowPanelCategories.Controls.Add(this.PanelHomebrew);
             this.FlowPanelCategories.Controls.Add(this.LabelTitleResources);
             this.FlowPanelCategories.Controls.Add(this.PanelResources);
             this.FlowPanelCategories.Controls.Add(this.LabelTitleMyLists);
@@ -1823,11 +1838,33 @@
             this.PanelGames.Size = new System.Drawing.Size(244, 0);
             this.PanelGames.TabIndex = 0;
             // 
+            // LabelTitleHomebrew
+            // 
+            this.LabelTitleHomebrew.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LabelTitleHomebrew.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelTitleHomebrew.Location = new System.Drawing.Point(7, 38);
+            this.LabelTitleHomebrew.Margin = new System.Windows.Forms.Padding(5, 0, 3, 3);
+            this.LabelTitleHomebrew.Name = "LabelTitleHomebrew";
+            this.LabelTitleHomebrew.Size = new System.Drawing.Size(236, 16);
+            this.LabelTitleHomebrew.TabIndex = 1167;
+            this.LabelTitleHomebrew.Text = "HOMEBREW PACKAGES";
+            // 
+            // PanelHomebrew
+            // 
+            this.PanelHomebrew.AutoSize = true;
+            this.PanelHomebrew.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelHomebrew.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.PanelHomebrew.Location = new System.Drawing.Point(2, 59);
+            this.PanelHomebrew.Margin = new System.Windows.Forms.Padding(0, 2, 0, 8);
+            this.PanelHomebrew.Name = "PanelHomebrew";
+            this.PanelHomebrew.Size = new System.Drawing.Size(244, 0);
+            this.PanelHomebrew.TabIndex = 1168;
+            // 
             // LabelTitleResources
             // 
             this.LabelTitleResources.Dock = System.Windows.Forms.DockStyle.Left;
             this.LabelTitleResources.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelTitleResources.Location = new System.Drawing.Point(7, 38);
+            this.LabelTitleResources.Location = new System.Drawing.Point(7, 67);
             this.LabelTitleResources.Margin = new System.Windows.Forms.Padding(5, 0, 3, 3);
             this.LabelTitleResources.Name = "LabelTitleResources";
             this.LabelTitleResources.Size = new System.Drawing.Size(236, 16);
@@ -1839,7 +1876,7 @@
             this.PanelResources.AutoSize = true;
             this.PanelResources.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelResources.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.PanelResources.Location = new System.Drawing.Point(2, 59);
+            this.PanelResources.Location = new System.Drawing.Point(2, 88);
             this.PanelResources.Margin = new System.Windows.Forms.Padding(0, 2, 0, 8);
             this.PanelResources.Name = "PanelResources";
             this.PanelResources.Size = new System.Drawing.Size(244, 0);
@@ -1849,7 +1886,7 @@
             // 
             this.LabelTitleMyLists.Dock = System.Windows.Forms.DockStyle.Left;
             this.LabelTitleMyLists.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelTitleMyLists.Location = new System.Drawing.Point(7, 67);
+            this.LabelTitleMyLists.Location = new System.Drawing.Point(7, 96);
             this.LabelTitleMyLists.Margin = new System.Windows.Forms.Padding(5, 0, 3, 3);
             this.LabelTitleMyLists.Name = "LabelTitleMyLists";
             this.LabelTitleMyLists.Size = new System.Drawing.Size(236, 16);
@@ -1861,7 +1898,7 @@
             this.PanelLists.AutoSize = true;
             this.PanelLists.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelLists.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.PanelLists.Location = new System.Drawing.Point(2, 88);
+            this.PanelLists.Location = new System.Drawing.Point(2, 117);
             this.PanelLists.Margin = new System.Windows.Forms.Padding(0, 2, 0, 8);
             this.PanelLists.Name = "PanelLists";
             this.PanelLists.Size = new System.Drawing.Size(244, 0);
@@ -2093,12 +2130,11 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(1600, 860);
             this.Name = "MainWindow";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModioX - Beta v1.0.0";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
-            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
+            this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.SizeChanged += new System.EventHandler(this.MainWindow_SizeChanged);
             this.ContextMenuMods.ResumeLayout(false);
             this.FlowPanelDetails.ResumeLayout(false);
             this.FlowPanelDetails.PerformLayout();
@@ -2291,5 +2327,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledNoOfFiles;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledDateTime;
         private System.Windows.Forms.DataGridViewImageColumn ColumnModsInstalledUninstall;
+        private System.Windows.Forms.ToolStripMenuItem MenuStripHelpCheckForUpdates;
+        private DarkUI.Controls.DarkTitle LabelTitleHomebrew;
+        private System.Windows.Forms.FlowLayoutPanel PanelHomebrew;
     }
 }

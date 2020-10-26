@@ -6,7 +6,7 @@ namespace ModioX.Io
     public class Archives
     {
         /// <summary>
-        ///     
+        ///     Copy files to the the archive ZIP file
         /// </summary>
         /// <param name="zipPath"></param>
         /// <param name="files"></param>
@@ -17,11 +17,11 @@ namespace ModioX.Io
                 return;
             }
 
-            using (ZipArchive zipArchive = ZipFile.Open(zipPath, ZipArchiveMode.Update))
+            using (var zipArchive = ZipFile.Open(zipPath, ZipArchiveMode.Update))
             {
-                foreach (string file in files)
+                foreach (var file in files)
                 {
-                    FileInfo fileInfo = new FileInfo(file);
+                    var fileInfo = new FileInfo(file);
                     _ = zipArchive.CreateEntryFromFile(fileInfo.FullName, fileInfo.Name);
                 }
             }

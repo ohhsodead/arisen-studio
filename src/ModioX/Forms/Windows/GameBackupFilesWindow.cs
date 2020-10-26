@@ -1,12 +1,12 @@
-﻿using DarkUI.Forms;
-using ModioX.Extensions;
-using ModioX.Models.Database;
-using ModioX.Models.Resources;
-using System;
+﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
+using DarkUI.Forms;
+using ModioX.Extensions;
+using ModioX.Models.Resources;
 
-namespace ModioX.Forms
+namespace ModioX.Forms.Windows
 {
     public partial class GameBackupFilesWindow : DarkForm
     {
@@ -24,9 +24,13 @@ namespace ModioX.Forms
         {
             DgvBackups.Rows.Clear();
 
-            foreach (BackupFile backupFile in MainWindow.SettingsData.BackupFiles)
+            foreach (var backupFile in MainWindow.Settings.BackupFiles)
             {
-                _ = DgvBackups.Rows.Add(MainWindow.Database.Categories.GetCategoryById(backupFile.CategoryId).Title, backupFile.FileName, File.Exists(backupFile.LocalPath) ? new FileInfo(backupFile.LocalPath).Length.ToString("n0") + " bytes" : "File Doesn't Exist", backupFile.CreatedDate.ToLocalTime().ToString());
+                _ = DgvBackups.Rows.Add(MainWindow.Database.Categories.GetCategoryById(backupFile.CategoryId).Title,
+                    backupFile.FileName,
+                    File.Exists(backupFile.LocalPath) 
+                        ? new FileInfo(backupFile.LocalPath).Length.ToString("n0") + " bytes"
+                        : "File Doesn't Exist", backupFile.CreatedDate.ToLocalTime().ToString(CultureInfo.CurrentCulture));
             }
         }
 
@@ -34,19 +38,30 @@ namespace ModioX.Forms
         {
             if (DgvBackups.CurrentRow != null)
             {
-                BackupFile backupFile = MainWindow.SettingsData.BackupFiles[DgvBackups.CurrentRow.Index];
-                CategoriesData.Category category = MainWindow.Database.Categories.GetCategoryById(backupFile.CategoryId);
-
-                LabelGameTitle.Text = category.Title;
-                LabelCreatedDate.Text = backupFile.CreatedDate.ToLocalTime().ToString();
-                LabelFileName.Text = backupFile.FileName;
-                LabelFileSize.Text = File.Exists(backupFile.LocalPath) ? new FileInfo(backupFile.LocalPath).Length.ToString("n0") + " bytes" : "File Doesn't Exist";
-                LabelLocalPath.Text = backupFile.LocalPath;
-                LabelConsolePath.Text = backupFile.InstallPath;
-
-                if (!File.Exists(backupFile.LocalPath))
+                try
                 {
-                    _ = DarkMessageBox.Show(this, $"Local file: {backupFile.FileName} for game: {category.Title} can't be found at path: {backupFile.LocalPath}.\n\nIf you have moved this file then edit the backup and choose the locate the file, otherwise re-install your game update and backup the orginal game file again.", "No Local File", MessageBoxIcon.Warning);
+                    var backupFile = MainWindow.Settings.BackupFiles[DgvBackups.CurrentRow.Index];
+                    var category = MainWindow.Database.Categories.GetCategoryById(backupFile.CategoryId);
+
+                    LabelGameTitle.Text = category.Title;
+                    LabelCreatedDate.Text = backupFile.CreatedDate.ToLocalTime().ToString(CultureInfo.CurrentCulture);
+                    LabelFileName.Text = backupFile.FileName;
+                    LabelFileSize.Text = File.Exists(backupFile.LocalPath)
+                        ? new FileInfo(backupFile.LocalPath).Length.ToString("n0") + " bytes"
+                        : "File Doesn't Exist";
+                    LabelLocalPath.Text = backupFile.LocalPath;
+                    LabelConsolePath.Text = backupFile.InstallPath;
+
+                    if (!File.Exists(backupFile.LocalPath))
+                    {
+                        _ = DarkMessageBox.Show(this,
+                            $"Local file: {backupFile.FileName} for game: {category.Title} can't be found at path: {backupFile.LocalPath}.\n\nIf you have moved this file then edit the backup and choose the locate the file, otherwise re-install your game update and backup the orginal game file again.",
+                            "No Local File", MessageBoxIcon.Warning);
+                    }
+                }
+                catch 
+                {
+                    // Will throw index out of range if deleting the last item 
                 }
             }
 
@@ -58,15 +73,15 @@ namespace ModioX.Forms
 
         private void ToolItemEditBackup_Click(object sender, EventArgs e)
         {
-            int backupFileIndex = DgvBackups.CurrentRow.Index;
+            var backupFileIndex = DgvBackups.CurrentRow.Index;
 
-            BackupFile backupFile = MainWindow.SettingsData.BackupFiles[backupFileIndex];
+            var backupFile = MainWindow.Settings.BackupFiles[backupFileIndex];
 
-            BackupFile newBackupFile = DialogExtensions.ShowBackupFileDetails(this, backupFile);
+            var newBackupFile = DialogExtensions.ShowBackupFileDetails(this, backupFile);
 
             if (newBackupFile != null)
             {
-                MainWindow.SettingsData.UpdateBackupFile(backupFileIndex, newBackupFile);
+                MainWindow.Settings.UpdateBackupFile(backupFileIndex, newBackupFile);
             }
 
             LoadBackupFiles();
@@ -74,27 +89,27 @@ namespace ModioX.Forms
 
         private void ToolItemDeleteBackup_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (DarkMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                MainWindow.SettingsData.BackupFiles.RemoveAt(DgvBackups.CurrentRow.Index);
+                MainWindow.Settings.BackupFiles.RemoveAt(DgvBackups.CurrentRow.Index);
                 LoadBackupFiles();
             }
         }
 
         private void ToolItemBackupFile_Click(object sender, EventArgs e)
         {
-            BackupFile backupFile = MainWindow.SettingsData.BackupFiles[DgvBackups.CurrentRow.Index];
+            var backupFile = MainWindow.Settings.BackupFiles[DgvBackups.CurrentRow.Index];
             BackupGameFile(backupFile);
         }
 
         private void ToolItemRestoreFile_Click(object sender, EventArgs e)
         {
-            BackupFile backupFile = MainWindow.SettingsData.BackupFiles[DgvBackups.CurrentRow.Index];
+            var backupFile = MainWindow.Settings.BackupFiles[DgvBackups.CurrentRow.Index];
             RestoreGameFile(backupFile);
         }
 
         /// <summary>
-        ///     
         /// </summary>
         /// <param name="backupFile"></param>
         public void BackupGameFile(BackupFile backupFile)
@@ -102,12 +117,16 @@ namespace ModioX.Forms
             try
             {
                 FtpExtensions.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
-                _ = DarkMessageBox.Show(this, $"Successfully backed up file {backupFile.FileName} from {backupFile.InstallPath}.", "Backup File Downloaded", MessageBoxIcon.Information);
+                _ = DarkMessageBox.Show(this,
+                    $"Successfully backed up file {backupFile.FileName} from {backupFile.InstallPath}.",
+                    "Success", MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 Program.Log.Error($"Unable to backup game file. Error: {ex.Message}", ex);
-                _ = DarkMessageBox.Show(this, "There was a problem downloading the file. Make sure the file exists on your console.", "Can't Download File", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this,
+                    "There was a problem downloading the file. Make sure the file exists on your console.",
+                    "Error", MessageBoxIcon.Error);
             }
         }
 
@@ -121,17 +140,23 @@ namespace ModioX.Forms
             {
                 if (!File.Exists(backupFile.LocalPath))
                 {
-                    _ = DarkMessageBox.Show(this, "This file backup doesn't exist on your computer. If your game doesn't have mods installed, then I would suggest you backup the original files.", "No Backup File", MessageBoxIcon.Information);
+                    _ = DarkMessageBox.Show(this,
+                        "This file backup doesn't exist on your computer. If your game doesn't have mods installed, then I would suggest you backup the original files.",
+                        "No File Found", MessageBoxIcon.Information);
                     return;
                 }
 
-                FtpExtensions.UploadFile(backupFile.LocalPath, backupFile.InstallPath);
-                _ = DarkMessageBox.Show(this, $"Successfully restored file: {backupFile.FileName} to path: {backupFile.InstallPath}", "File Restored", MessageBoxIcon.Information);
+                FtpExtensions.UploadFile(MainWindow.FtpConnection, backupFile.LocalPath, backupFile.InstallPath);
+                _ = DarkMessageBox.Show(this,
+                    $"Successfully restored file: {backupFile.FileName} to path: {backupFile.InstallPath}",
+                    "Success", MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 Program.Log.Error("There was an issue attempting to restore file.", ex);
-                _ = DarkMessageBox.Show(this, $"There was an issue restoring file. Make sure the local file exists on your computer.", "Can't Restore File", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this,
+                    "There was an issue restoring file. Make sure the local file exists on your computer.",
+                    "Error", MessageBoxIcon.Error);
             }
         }
     }

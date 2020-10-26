@@ -1,12 +1,12 @@
-﻿using ModioX.Extensions;
-using ModioX.Forms;
-using ModioX.Io;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
+using ModioX.Extensions;
+using ModioX.Forms.Windows;
+using ModioX.Io;
 
 namespace ModioX.Models.Database
 {
@@ -237,7 +237,7 @@ namespace ModioX.Models.Database
                 string archivePath = DownloadDataDirectory;
                 string archiveFilePath = ArchiveZipFile;
 
-                if (!MainWindow.SettingsData.AlwaysDownloadInstallFiles && File.Exists(archiveFilePath))
+                if (!MainWindow.Settings.AlwaysDownloadInstallFiles && File.Exists(archiveFilePath))
                 {
                     return;
                 }
@@ -382,7 +382,7 @@ namespace ModioX.Models.Database
             if (categoryId.Equals("fvrt"))
             {
                 return (from ModItem modItem in Mods
-                        where MainWindow.SettingsData.FavoritedIds.Contains(modItem.Id.ToString())
+                        where MainWindow.Settings.FavoritedIds.Contains(modItem.Id.ToString())
                         && modItem.Name.ToLower().Contains(name.ToLower())
                         && modItem.Firmwares.Exists(x => x.ToLower().Contains(firmware.ToLower()))
                         && modItem.Type.ToLower().Contains(type.ToLower())
@@ -409,8 +409,6 @@ namespace ModioX.Models.Database
         public ModItem GetModById(long modId)
         {
             return Mods.First(modItem => modItem.Id.Equals(modId));
-
-            throw new Exception($"Unable to match a mod with this id : {modId}");
         }
 
         /// <summary>
@@ -432,6 +430,21 @@ namespace ModioX.Models.Database
         {
             return (from ModItem modItem in Mods
                     where modItem.GetCategoryType(categoriesData) == CategoryType.Game
+                    && modItem.GetCategoryType(categoriesData) != CategoryType.Homebrew
+                    && modItem.GetCategoryType(categoriesData) != CategoryType.Resource
+                    && modItem.GetCategoryType(categoriesData) != CategoryType.Favorite
+                    select modItem).Count();
+        }
+
+        /// <summary>
+        ///     Get the total number of resources.
+        /// </summary>
+        /// <returns></returns>
+        public int TotalHomebrew(CategoriesData categoriesData)
+        {
+            return (from ModItem modItem in Mods
+                    where modItem.GetCategoryType(categoriesData) == CategoryType.Homebrew
+                    && modItem.GetCategoryType(categoriesData) != CategoryType.Game
                     && modItem.GetCategoryType(categoriesData) != CategoryType.Resource
                     && modItem.GetCategoryType(categoriesData) != CategoryType.Favorite
                     select modItem).Count();
@@ -446,6 +459,7 @@ namespace ModioX.Models.Database
         {
             return (from ModItem modItem in Mods
                     where modItem.GetCategoryType(categoriesData) == CategoryType.Resource
+                    && modItem.GetCategoryType(categoriesData) != CategoryType.Homebrew
                     && modItem.GetCategoryType(categoriesData) != CategoryType.Game
                     && modItem.GetCategoryType(categoriesData) != CategoryType.Favorite
                     select modItem).Count();

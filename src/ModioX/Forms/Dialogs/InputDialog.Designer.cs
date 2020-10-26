@@ -84,7 +84,7 @@
             this.TextBoxName.Name = "TextBoxName";
             this.TextBoxName.Size = new System.Drawing.Size(256, 23);
             this.TextBoxName.TabIndex = 0;
-            this.TextBoxName.TextChanged += new System.EventHandler(this.TextBoxUsername_TextChanged);
+            this.TextBoxName.TextChanged += new System.EventHandler(this.TextBoxName_TextChanged);
             // 
             // InputDialog
             // 
@@ -107,6 +107,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add New Folder";
+            this.Load += new System.EventHandler(this.InputDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

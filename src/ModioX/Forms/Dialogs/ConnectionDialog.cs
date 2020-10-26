@@ -1,11 +1,12 @@
-﻿using DarkUI.Controls;
+﻿using System;
+using System.Windows.Forms;
+using DarkUI.Controls;
 using DarkUI.Forms;
 using ModioX.Extensions;
+using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
-using System;
-using System.Windows.Forms;
 
-namespace ModioX.Forms
+namespace ModioX.Forms.Dialogs
 {
     public partial class ConnectionDialog : DarkForm
     {
@@ -14,7 +15,7 @@ namespace ModioX.Forms
             InitializeComponent();
         }
 
-        public ConsoleProfile ConsoleProfile { get; set; }
+        public ConsoleProfile ConsoleProfile { get; private set; }
 
         private void ConnectConsole_Load(object sender, EventArgs e)
         {
@@ -25,7 +26,7 @@ namespace ModioX.Forms
         {
             ListViewConsoleProfiles.Items.Clear();
 
-            foreach (ConsoleProfile console in MainWindow.SettingsData.ConsoleProfiles)
+            foreach (var console in MainWindow.Settings.ConsoleProfiles)
             {
                 ListViewConsoleProfiles.Items.Add(new DarkListItem(console.ToString()));
             }
@@ -47,23 +48,26 @@ namespace ModioX.Forms
 
         private void ButtonConnect_Click(object sender, EventArgs e)
         {
-            DarkListItem selectedItem = ListViewConsoleProfiles.Items[ListViewConsoleProfiles.SelectedIndices[0]];
-            ConsoleProfile = MainWindow.SettingsData.ConsoleProfiles[ListViewConsoleProfiles.Items.IndexOf(selectedItem)];
+            var selectedItem = ListViewConsoleProfiles.Items[ListViewConsoleProfiles.SelectedIndices[0]];
+            ConsoleProfile = MainWindow.Settings.ConsoleProfiles[ListViewConsoleProfiles.Items.IndexOf(selectedItem)];
             Close();
         }
 
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
-            if (MainWindow.SettingsData.ConsoleProfiles.Count == 1)
+            if (MainWindow.Settings.ConsoleProfiles.Count == 1)
             {
-                _ = DarkMessageBox.Show(this, "You can't delete this because there must be at least one console.", "Can't Delete Console", MessageBoxIcon.Warning);
+                _ = DarkMessageBox.Show(this, "You can't delete this because there must be at least one console.",
+                    "Can't Delete Console", MessageBoxIcon.Warning);
             }
             else
             {
-                if (DarkMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete Console", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                if (DarkMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete Console",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
-                    DarkListItem selectedItem = ListViewConsoleProfiles.Items[ListViewConsoleProfiles.SelectedIndices[0]];
-                    MainWindow.SettingsData.ConsoleProfiles.RemoveAt(ListViewConsoleProfiles.Items.IndexOf(selectedItem));
+                    var selectedItem = ListViewConsoleProfiles.Items[ListViewConsoleProfiles.SelectedIndices[0]];
+                    MainWindow.Settings.ConsoleProfiles.RemoveAt(
+                        ListViewConsoleProfiles.Items.IndexOf(selectedItem));
                     LoadConsoles();
                 }
             }
@@ -71,11 +75,11 @@ namespace ModioX.Forms
 
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
-            DarkListItem selectedItem = ListViewConsoleProfiles.Items[ListViewConsoleProfiles.SelectedIndices[0]];
-            int selectedIndex = ListViewConsoleProfiles.Items.IndexOf(selectedItem);
-            ConsoleProfile oldConsoleProfile = MainWindow.SettingsData.ConsoleProfiles[selectedIndex];
+            var selectedItem = ListViewConsoleProfiles.Items[ListViewConsoleProfiles.SelectedIndices[0]];
+            var selectedIndex = ListViewConsoleProfiles.Items.IndexOf(selectedItem);
+            var oldConsoleProfile = MainWindow.Settings.ConsoleProfiles[selectedIndex];
 
-            ConsoleProfile newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
+            var newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
 
             if (newConsoleProfile != null)
             {

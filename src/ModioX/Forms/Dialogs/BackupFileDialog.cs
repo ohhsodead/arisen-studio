@@ -1,19 +1,19 @@
-﻿using DarkUI.Forms;
-using ModioX.Models.Resources;
-using System;
+﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using DarkUI.Forms;
+using ModioX.Models.Resources;
 
 namespace ModioX.Forms
 {
     public partial class BackupFileDialog : DarkForm
     {
-        public BackupFile BackupFile { get; set; } = new BackupFile();
-
         public BackupFileDialog()
         {
             InitializeComponent();
         }
+
+        public BackupFile BackupFile { get; set; } = new BackupFile();
 
         private void EditBackupForm_Load(object sender, EventArgs e)
         {
@@ -25,7 +25,7 @@ namespace ModioX.Forms
 
         private void ButtonLocalPath_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog() { CheckFileExists = true, Multiselect = false })
+            using (var openFileDialog = new OpenFileDialog {CheckFileExists = true, Multiselect = false})
             {
                 openFileDialog.InitialDirectory = Path.GetDirectoryName(TextBoxLocalPath.Text);
 
@@ -43,15 +43,19 @@ namespace ModioX.Forms
 
         private void ButtonBackupSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TextBoxLocalPath.Text) || TextBoxLocalPath.Text.IndexOfAny(Path.GetInvalidPathChars()) != -1)
+            if (string.IsNullOrWhiteSpace(TextBoxLocalPath.Text) ||
+                TextBoxLocalPath.Text.IndexOfAny(Path.GetInvalidPathChars()) != -1)
             {
-                _ = DarkMessageBox.Show(this, "You must include a local file path for the game file backup.", "Empty Local Path", MessageBoxIcon.Exclamation);
+                _ = DarkMessageBox.Show(this, "You must include a local file path for the game file backup.",
+                    "Empty Local Path", MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(TextBoxConsolePath.Text))
             {
-                _ = DarkMessageBox.Show(this, "You must include a console path for for the game file backup. This is where the file will be restored at on the console.", "Empty Console Path", MessageBoxIcon.Exclamation);
+                _ = DarkMessageBox.Show(this,
+                    "You must include a console path for for the game file backup. This is where the file will be restored at on the console.",
+                    "Empty Console Path", MessageBoxIcon.Exclamation);
                 return;
             }
 

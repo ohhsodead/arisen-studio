@@ -1,56 +1,33 @@
-﻿using ModioX.Constants;
-using ModioX.Models.Database;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using ModioX.Constants;
+using ModioX.Models.Database;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ModioX.Database
 {
     public class DropboxData
     {
-        public ModsData Mods { get; set; }
-
-        public CategoriesData Categories { get; set; }
-
         public DropboxData()
         {
-            Mods = GetMods();
             Categories = GetCategories();
+            Mods = GetMods();
 
-            Categories.Categories = Categories.Categories.OrderBy(o => o.Title).ToList();
+            //Categories.Categories = Categories.Categories.OrderBy(o => o.Title).ToList();
         }
 
         /// <summary>
-        ///     Download and return the data for mods.
+        ///     Contains the categories from the database.
         /// </summary>
-        /// <returns></returns>
-        private static ModsData GetMods()
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                using (HttpResponseMessage response = client.GetAsync(Urls.ModsData).Result)
-                {
-                    if (response.StatusCode != HttpStatusCode.OK)
-                    {
-                        throw new Exception($"Bad response {response.StatusCode}");
-                    }
+        public CategoriesData Categories { get; private set; }
 
-                    string responseData = response.Content.ReadAsStringAsync().Result;
-
-                    if (IsValidJson(responseData))
-                    {
-                        return JsonConvert.DeserializeObject<ModsData>(responseData);
-                    }
-
-                    dynamic data = JsonConvert.DeserializeObject(responseData);
-
-                    throw new Exception(data.data.Message.ToString());
-                }
-            }
-        }
+        /// <summary>
+        ///     Contains the mods from database.
+        /// </summary>
+        public ModsData Mods { get; private set; }
 
         /// <summary>
         ///     Download and return the data for categories and games.
@@ -58,16 +35,16 @@ namespace ModioX.Database
         /// <returns></returns>
         private static CategoriesData GetCategories()
         {
-            using (HttpClient client = new HttpClient())
+            using (var client = new HttpClient())
             {
-                using (HttpResponseMessage response = client.GetAsync(Urls.CategoriesData).Result)
+                using (var response = client.GetAsync(Urls.CategoriesData).Result)
                 {
                     if (response.StatusCode != HttpStatusCode.OK)
                     {
                         throw new Exception($"Bad response {response.StatusCode}");
                     }
 
-                    string responseData = response.Content.ReadAsStringAsync().Result;
+                    var responseData = response.Content.ReadAsStringAsync().Result;
 
                     if (IsValidJson(responseData))
                     {
@@ -81,6 +58,34 @@ namespace ModioX.Database
             }
         }
 
+        /// <summary>
+        ///     Download and return the data for mods.
+        /// </summary>
+        /// <returns></returns>
+        private static ModsData GetMods()
+        {
+            using (var client = new HttpClient())
+            {
+                using (var response = client.GetAsync(Urls.ModsData).Result)
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                    {
+                        throw new Exception($"Bad response {response.StatusCode}");
+                    }
+
+                    var responseData = response.Content.ReadAsStringAsync().Result;
+
+                    if (IsValidJson(responseData))
+                    {
+                        return JsonConvert.DeserializeObject<ModsData>(responseData);
+                    }
+
+                    dynamic data = JsonConvert.DeserializeObject(responseData);
+
+                    throw new Exception(data.data.Message.ToString());
+                }
+            }
+        }
 
 
         /// <summary>
@@ -92,7 +97,7 @@ namespace ModioX.Database
         {
             try
             {
-                JToken unused = JToken.Parse(data);
+                var unused = JToken.Parse(data);
                 return true;
             }
             catch

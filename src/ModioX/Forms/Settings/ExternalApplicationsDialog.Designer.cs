@@ -1,4 +1,4 @@
-﻿namespace ModioX.Forms
+﻿namespace ModioX.Forms.Settings
 {
     partial class ExternalApplicationsDialog
     {

@@ -1,20 +1,20 @@
-﻿using DarkUI.Forms;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using DarkUI.Forms;
 
 namespace ModioX.Forms.Dialogs
 {
     public partial class AboutDialog : DarkForm
     {
-        [DllImport("user32.dll")]
-        private static extern bool HideCaret(IntPtr hWnd);
-
         public AboutDialog()
         {
             InitializeComponent();
         }
+
+        [DllImport("user32.dll")]
+        private static extern bool HideCaret(IntPtr hWnd);
 
         private void AboutWindow_Load(object sender, EventArgs e)
         {
@@ -24,7 +24,7 @@ namespace ModioX.Forms.Dialogs
             _ = HideCaret(RichTextBoxThanks.Handle);
             _ = HideCaret(RichTextBoxLicence.Handle);
         }
-        
+
         private void RichTextBox_MouseDown(object sender, MouseEventArgs e)
         {
             _ = HideCaret(RichTextBoxCredits.Handle);

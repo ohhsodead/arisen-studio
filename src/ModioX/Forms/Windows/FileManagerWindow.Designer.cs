@@ -227,7 +227,7 @@
             this.SectionLocalFileExplorer.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.SectionLocalFileExplorer.Name = "SectionLocalFileExplorer";
             this.SectionLocalFileExplorer.SectionHeader = "LOCAL EXPLORER";
-            this.SectionLocalFileExplorer.Size = new System.Drawing.Size(632, 521);
+            this.SectionLocalFileExplorer.Size = new System.Drawing.Size(632, 510);
             this.SectionLocalFileExplorer.TabIndex = 17;
             // 
             // ComboBoxLocalDrives
@@ -253,7 +253,7 @@
             this.ToolStripLocalNewFolder,
             this.ToolStripLocalRefresh,
             this.ToolStripLocalOpenExplorer});
-            this.ToolStripLocalActions.Location = new System.Drawing.Point(1, 454);
+            this.ToolStripLocalActions.Location = new System.Drawing.Point(1, 443);
             this.ToolStripLocalActions.Name = "ToolStripLocalActions";
             this.ToolStripLocalActions.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.ToolStripLocalActions.Size = new System.Drawing.Size(630, 36);
@@ -348,7 +348,7 @@
             this.ToolStripLocalStatus.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ToolStripLocalStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripLabelLocalStatus});
-            this.ToolStripLocalStatus.Location = new System.Drawing.Point(1, 490);
+            this.ToolStripLocalStatus.Location = new System.Drawing.Point(1, 479);
             this.ToolStripLocalStatus.Name = "ToolStripLocalStatus";
             this.ToolStripLocalStatus.Padding = new System.Windows.Forms.Padding(6, 0, 8, 5);
             this.ToolStripLocalStatus.Size = new System.Drawing.Size(630, 30);
@@ -414,12 +414,13 @@
             this.DgvLocalFiles.RowTemplate.Height = 24;
             this.DgvLocalFiles.RowTemplate.ReadOnly = true;
             this.DgvLocalFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvLocalFiles.Size = new System.Drawing.Size(618, 394);
+            this.DgvLocalFiles.Size = new System.Drawing.Size(618, 383);
             this.DgvLocalFiles.TabIndex = 20;
             this.DgvLocalFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLocalFiles_CellClick);
             this.DgvLocalFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLocalFiles_CellDoubleClick);
             this.DgvLocalFiles.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
             this.DgvLocalFiles.SelectionChanged += new System.EventHandler(this.DgvLocalFiles_SelectionChanged);
+            this.DgvLocalFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvLocalFiles_KeyDown);
             // 
             // ColumnLocalType
             // 
@@ -545,7 +546,7 @@
             this.SectionConsoleFileExplorer.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.SectionConsoleFileExplorer.Name = "SectionConsoleFileExplorer";
             this.SectionConsoleFileExplorer.SectionHeader = "CONSOLE EXPLORER";
-            this.SectionConsoleFileExplorer.Size = new System.Drawing.Size(633, 521);
+            this.SectionConsoleFileExplorer.Size = new System.Drawing.Size(633, 510);
             this.SectionConsoleFileExplorer.TabIndex = 1157;
             // 
             // ComboBoxConsoleDrives
@@ -570,7 +571,7 @@
             this.ToolStripConsoleDelete,
             this.ToolStripConsoleNewFolder,
             this.ToolStripConsoleRefresh});
-            this.ToolStripConsoleActions.Location = new System.Drawing.Point(1, 454);
+            this.ToolStripConsoleActions.Location = new System.Drawing.Point(1, 443);
             this.ToolStripConsoleActions.Name = "ToolStripConsoleActions";
             this.ToolStripConsoleActions.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.ToolStripConsoleActions.Size = new System.Drawing.Size(631, 36);
@@ -650,7 +651,7 @@
             this.ToolStripConsoleStatus.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ToolStripConsoleStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripLabelConsoleStatus});
-            this.ToolStripConsoleStatus.Location = new System.Drawing.Point(1, 490);
+            this.ToolStripConsoleStatus.Location = new System.Drawing.Point(1, 479);
             this.ToolStripConsoleStatus.Name = "ToolStripConsoleStatus";
             this.ToolStripConsoleStatus.Padding = new System.Windows.Forms.Padding(6, 0, 8, 5);
             this.ToolStripConsoleStatus.Size = new System.Drawing.Size(631, 30);
@@ -716,12 +717,13 @@
             this.DgvConsoleFiles.RowTemplate.Height = 24;
             this.DgvConsoleFiles.RowTemplate.ReadOnly = true;
             this.DgvConsoleFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvConsoleFiles.Size = new System.Drawing.Size(620, 394);
+            this.DgvConsoleFiles.Size = new System.Drawing.Size(620, 383);
             this.DgvConsoleFiles.TabIndex = 24;
             this.DgvConsoleFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvConsoleFiles_CellClick);
             this.DgvConsoleFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvConsoleFiles_CellDoubleClick);
             this.DgvConsoleFiles.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
             this.DgvConsoleFiles.SelectionChanged += new System.EventHandler(this.DgvConsoleFiles_SelectionChanged);
+            this.DgvConsoleFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvConsoleFiles_KeyDown);
             // 
             // ColumnConsoleFileType
             // 
@@ -780,7 +782,7 @@
             this.LayoutPanel.Name = "LayoutPanel";
             this.LayoutPanel.RowCount = 1;
             this.LayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.LayoutPanel.Size = new System.Drawing.Size(1275, 521);
+            this.LayoutPanel.Size = new System.Drawing.Size(1275, 510);
             this.LayoutPanel.TabIndex = 12;
             // 
             // WaitLoadConsole
@@ -793,7 +795,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1300, 572);
+            this.ClientSize = new System.Drawing.Size(1300, 561);
             this.Controls.Add(this.LayoutPanel);
             this.Controls.Add(this.MenuStripHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -804,7 +806,7 @@
             this.Name = "FileManagerWindow";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "File Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FileExplorer_FormClosing);

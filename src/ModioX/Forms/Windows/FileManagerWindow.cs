@@ -1,51 +1,80 @@
-﻿using DarkUI.Forms;
-using FluentFTP;
-using Microsoft.VisualBasic.FileIO;
-using ModioX.Extensions;
-using ModioX.Io;
-using ModioX.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using DarkUI.Forms;
+using FluentFTP;
+using Microsoft.VisualBasic.FileIO;
+using ModioX.Extensions;
+using ModioX.Io;
+using ModioX.Models.Resources;
+using ModioX.Net;
+using ModioX.Properties;
+using FtpException = FluentFTP.FtpException;
+using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
 namespace ModioX.Forms.Windows
 {
     public partial class FileManagerWindow : DarkForm
     {
+        private readonly DriveInfo[] localDrives = DriveInfo.GetDrives();
+
         public FileManagerWindow()
         {
             InitializeComponent();
         }
 
-        private readonly DriveInfo[] localDrives = DriveInfo.GetDrives();
+        /// <summary>
+        ///     Contains the console profile data.
+        /// </summary>
+        public static ConsoleProfile ConsoleProfile = MainWindow.ConsoleProfile;
+
+        /// <summary>
+        ///     Creates an FTP connection for use with uploading mods, not reliable for the built-in file manager.
+        /// </summary>
+        public static FtpConnection FtpConnection = MainWindow.FtpConnection;
+
+        /// <summary>
+        ///     Conntains the FtpClient for use with the built-in file manager.
+        /// </summary>
+        public static FtpClient FtpClient { get; set; } = MainWindow.FtpClient;
+
+        /// <summary>
+        ///     Gets/sets the current local directory path
+        /// </summary>
+        public string LocalDirectoryPath { get; set; } = @"C:\";
+
+        /// <summary>
+        ///     Get/sets the current ftp directory path
+        /// </summary>
+        public string FtpDirectoryPath { get; set; } = "/dev_hdd0/";
 
         private void FileExplorer_Load(object sender, EventArgs e)
         {
-            MenuItemSettingsSaveLocalPath.Checked = MainWindow.SettingsData.SaveLocalPath;
-            MenuItemSettingsSaveConsolePath.Checked = MainWindow.SettingsData.SaveConsolePath;
+            MenuItemSettingsSaveLocalPath.Checked = MainWindow.Settings.SaveLocalPath;
+            MenuItemSettingsSaveConsolePath.Checked = MainWindow.Settings.SaveConsolePath;
 
             _ = DgvLocalFiles.Focus();
 
-            SetConsoleStatus($"Fetching drives...");
+            SetConsoleStatus("Fetching drives...");
 
-            foreach (DriveInfo driveInfo in localDrives)
+            foreach (var driveInfo in localDrives)
             {
                 _ = ComboBoxLocalDrives.Items.Add(driveInfo.Name.Replace(@"\", ""));
             }
 
-            if (MainWindow.SettingsData.SaveLocalPath)
+            if (MainWindow.Settings.SaveLocalPath)
             {
-                if (MainWindow.SettingsData.LocalPath.Equals(@"\") || string.IsNullOrEmpty(MainWindow.SettingsData.LocalPath))
+                if (MainWindow.Settings.LocalPath.Equals(@"\") || string.IsNullOrEmpty(MainWindow.Settings.LocalPath))
                 {
                     LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents) + @"\");
                 }
                 else
                 {
-                    LoadLocalDirectory(MainWindow.SettingsData.LocalPath);
+                    LoadLocalDirectory(MainWindow.Settings.LocalPath);
                 }
             }
             else
@@ -58,43 +87,44 @@ namespace ModioX.Forms.Windows
         {
             if (!string.IsNullOrWhiteSpace(TextBoxLocalPath.Text))
             {
-                MainWindow.SettingsData.LocalPath = TextBoxLocalPath.Text;
+                MainWindow.Settings.LocalPath = TextBoxLocalPath.Text;
             }
 
             if (!string.IsNullOrWhiteSpace(TextBoxConsolePath.Text))
             {
-                MainWindow.SettingsData.ConsolePath = TextBoxConsolePath.Text;
+                MainWindow.Settings.ConsolePath = TextBoxConsolePath.Text;
             }
         }
 
         private void MenuItemSettingsSaveLocalDirectoryPath_Click(object sender, EventArgs e)
         {
-            MainWindow.SettingsData.SaveLocalPath = MenuItemSettingsSaveLocalPath.Checked;
+            MainWindow.Settings.SaveLocalPath = MenuItemSettingsSaveLocalPath.Checked;
         }
 
         private void MenuItemSettingsSaveConsolePath_Click(object sender, EventArgs e)
         {
-            MainWindow.SettingsData.SaveConsolePath = MenuItemSettingsSaveConsolePath.Checked;
+            MainWindow.Settings.SaveConsolePath = MenuItemSettingsSaveConsolePath.Checked;
         }
 
         private void WaitLoadConsole_Tick(object sender, EventArgs e)
         {
-            SetConsoleStatus($"Fetching root directories...");
+            SetConsoleStatus("Fetching root directories...");
 
-            foreach (string driveName in Extensions.FtpExtensions.GetFolderNames(MainWindow.FtpClient, "/").ToArray())
+            foreach (var driveName in FtpExtensions.GetFolderNames("/").ToArray())
             {
                 _ = ComboBoxConsoleDrives.Items.Add(driveName.Replace(@"/", ""));
             }
 
-            if (MainWindow.SettingsData.SaveConsolePath)
+            if (MainWindow.Settings.SaveConsolePath)
             {
-                if (MainWindow.SettingsData.LocalPath.Equals(@"/") || string.IsNullOrEmpty(MainWindow.SettingsData.ConsolePath))
+                if (MainWindow.Settings.LocalPath.Equals(@"/") ||
+                    string.IsNullOrEmpty(MainWindow.Settings.ConsolePath))
                 {
                     LoadConsoleDirectory("/dev_hdd0/");
                 }
                 else
                 {
-                    LoadConsoleDirectory(MainWindow.SettingsData.ConsolePath);
+                    LoadConsoleDirectory(MainWindow.Settings.ConsolePath);
                 }
             }
             else
@@ -114,15 +144,13 @@ namespace ModioX.Forms.Windows
 
         private void DgvLocalFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string type = DgvLocalFiles.CurrentRow == null ? "" : DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
-            string name = DgvLocalFiles.CurrentRow == null ? "" : DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
+            var type = DgvLocalFiles.CurrentRow == null ? "" : DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
+            var name = DgvLocalFiles.CurrentRow == null ? "" : DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
 
             if (name == "..")
             {
-                //string parentDirectory = Directory.GetParent(LocalDirectoryPath.TrimEnd(new char[] { '\\' })).FullName;
-
-                string trimLastIndex = Path.GetDirectoryName(LocalDirectoryPath).TrimEnd(new char[] { '\\' });
-                string parentDirectory = trimLastIndex.Substring(0, trimLastIndex.LastIndexOf(@"\")) + @"\";
+                var trimLastIndex = Path.GetDirectoryName(LocalDirectoryPath).TrimEnd('\\');
+                var parentDirectory = trimLastIndex.Substring(0, trimLastIndex.LastIndexOf(@"\")) + @"\";
 
                 if (Directory.Exists(parentDirectory))
                 {
@@ -131,7 +159,7 @@ namespace ModioX.Forms.Windows
             }
             else if (type == "folder")
             {
-                LoadLocalDirectory(LocalDirectoryPath + DgvLocalFiles.CurrentRow.Cells[2].Value.ToString() + @"\");
+                LoadLocalDirectory(LocalDirectoryPath + DgvLocalFiles.CurrentRow.Cells[2].Value + @"\");
             }
 
             ToolStripLocalOpenExplorer.Enabled = Directory.Exists(TextBoxLocalPath.Text);
@@ -139,7 +167,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonLocalDirectory_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog folderBrowser = new FolderBrowserDialog() { ShowNewFolderButton = true })
+            using (var folderBrowser = new FolderBrowserDialog {ShowNewFolderButton = true})
             {
                 if (folderBrowser.ShowDialog() == DialogResult.OK)
                 {
@@ -157,15 +185,15 @@ namespace ModioX.Forms.Windows
         {
             if (DgvLocalFiles.CurrentRow != null)
             {
-                string type = DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
-                string name = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
+                var type = DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
+                var name = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
 
-                ToolStripLocalUpload.Enabled = type == "file" & name != "..";
-                ToolStripLocalDelete.Enabled = type == "file" || type == "folder" & name != "..";
-                ContextMenuLocallUploadFile.Enabled = type == "file"  & type != "..";
-                ContextMenuLocalDeleteFile.Enabled = type == "file" || type == "folder" & name != "..";
-                ContextMenuLocalRenameFile.Enabled = type == "file" & name != "..";
-                ContextMenuLocalRenameFolder.Enabled = type == "folder" & name != "..";
+                ToolStripLocalUpload.Enabled = (type == "file") & (name != "..");
+                ToolStripLocalDelete.Enabled = type == "file" || (type == "folder") & (name != "..");
+                ContextMenuLocallUploadFile.Enabled = (type == "file") & (type != "..");
+                ContextMenuLocalDeleteFile.Enabled = type == "file" || (type == "folder") & (name != "..");
+                ContextMenuLocalRenameFile.Enabled = (type == "file") & (name != "..");
+                ContextMenuLocalRenameFolder.Enabled = (type == "folder") & (name != "..");
             }
         }
 
@@ -173,15 +201,23 @@ namespace ModioX.Forms.Windows
         {
             if (DgvLocalFiles.CurrentRow != null)
             {
-                string type = DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
-                string name = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
+                var type = DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
+                var name = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
 
-                ToolStripLocalUpload.Enabled = type == "file" & name != "..";
-                ToolStripLocalDelete.Enabled = type == "file" || type == "folder" & name != "..";
-                ContextMenuLocallUploadFile.Enabled = type == "file" & name != "..";
-                ContextMenuLocalDeleteFile.Enabled = type == "file" || type == "folder" & name != "..";
-                ContextMenuLocalRenameFile.Enabled = type == "file" & name != "..";
-                ContextMenuLocalRenameFolder.Enabled = type == "folder" & name != "..";
+                ToolStripLocalUpload.Enabled = (type == "file") & (name != "..");
+                ToolStripLocalDelete.Enabled = type == "file" || (type == "folder") & (name != "..");
+                ContextMenuLocallUploadFile.Enabled = (type == "file") & (name != "..");
+                ContextMenuLocalDeleteFile.Enabled = type == "file" || (type == "folder") & (name != "..");
+                ContextMenuLocalRenameFile.Enabled = (type == "file") & (name != "..");
+                ContextMenuLocalRenameFolder.Enabled = (type == "folder") & (name != "..");
+            }
+        }
+
+        private void DgvLocalFiles_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
             }
         }
 
@@ -192,15 +228,12 @@ namespace ModioX.Forms.Windows
 
         private void ToolStripLocalDeleteFile_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                DeleteLocalItem();
-            }
+            DeleteLocalItem();
         }
 
         private void ToolStripLocalNewFolder_Click(object sender, EventArgs e)
         {
-            string newName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder name: ", "");
+            var newName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder name: ", "");
 
             if (newName != null)
             {
@@ -222,7 +255,7 @@ namespace ModioX.Forms.Windows
             }
             catch (Exception ex)
             {
-                SetLocalStatus(string.Format("Error opening file explorer for path: {0} - {1}", TextBoxLocalPath.Text, ex.Message), ex);
+                SetLocalStatus($"Error opening file explorer for path: {TextBoxLocalPath.Text} - {ex.Message}", ex);
             }
         }
 
@@ -233,42 +266,61 @@ namespace ModioX.Forms.Windows
 
         private void ContextMenuLocalDeleteFile_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                DeleteLocalItem();
-            }
+            DeleteLocalItem();
         }
 
         private void ContextMenuLocalRenameFile_Click(object sender, EventArgs e)
         {
             if (DgvLocalFiles.CurrentRow != null)
             {
-                string fileName = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
-                string filePath = TextBoxLocalPath.Text + @"\" + fileName;
+                var oldFileName = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
+                var filePath = TextBoxLocalPath.Text + @"\" + oldFileName;
 
-                string newFileName = DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name: ", fileName);
+                var newFileName = DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name: ", oldFileName);
 
-                if (fileName != newFileName && newFileName != null)
+                var newFilePath = TextBoxLocalPath.Text + @"\" + newFileName;
+
+                if (newFileName != null && newFileName.Equals(oldFileName))
                 {
-                    FileSystem.RenameFile(filePath, newFileName);
-                    LoadLocalDirectory(LocalDirectoryPath);
-                }              
-            }            
+                    if (!File.Exists(newFilePath))
+                    {
+                        SetConsoleStatus($"A file with this name already exists.");
+                    }
+                    else
+                    {
+                        SetConsoleStatus($"Renaming file {filePath} to: {newFileName}");
+                        FileSystem.RenameFile(filePath, newFileName);
+                        SetConsoleStatus($"Successfully renamed file to: {newFileName}");
+                        LoadLocalDirectory(LocalDirectoryPath);
+                    }
+                }
+            }
         }
 
         private void ContextMenuLocalRenameFolder_Click(object sender, EventArgs e)
         {
             if (DgvLocalFiles.CurrentRow != null)
             {
-                string fileName = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
-                string folderPath = TextBoxLocalPath.Text + @"\" + fileName;
+                var oldFolderName = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
+                var folderPath = TextBoxLocalPath.Text + @"\" + oldFolderName;
 
-                string newFolderName = DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name: ", fileName);
+                var newFolderName = DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name: ", oldFolderName);
 
-                if (fileName != newFolderName && newFolderName != null)
+                var newFolderPath = TextBoxLocalPath.Text + @"\" + newFolderName;
+
+                if (newFolderName != null && newFolderName.Equals(oldFolderName))
                 {
-                    FileSystem.RenameDirectory(folderPath, newFolderName);
-                    LoadLocalDirectory(LocalDirectoryPath);
+                    if (!Directory.Exists(newFolderPath))
+                    {
+                        SetLocalStatus($"A folder with this name already exists.");
+                    }
+                    else
+                    {
+                        SetConsoleStatus($"Renaming file {folderPath} to: {newFolderName}");
+                        FileSystem.RenameDirectory(folderPath, newFolderName);
+                        SetConsoleStatus($"Successfully renamed folder to: {newFolderName}");
+                        LoadLocalDirectory(LocalDirectoryPath);
+                    }
                 }
             }
         }
@@ -277,11 +329,6 @@ namespace ModioX.Forms.Windows
         {
             LoadLocalDirectory(LocalDirectoryPath);
         }
-
-        /// <summary>
-        ///     Gets/sets the current local directory path
-        /// </summary>
-        public string LocalDirectoryPath { get; set; } = @"C:\";
 
         /// <summary>
         ///     Loads files and folders into the local datagridview
@@ -302,35 +349,40 @@ namespace ModioX.Forms.Windows
                 ComboBoxLocalDrives.SelectedItem = LocalDirectoryPath.Substring(0, 2);
                 ComboBoxLocalDrives.SelectedIndexChanged += ComboBoxLocalDrives_SelectedIndexChanged;
 
-                bool isParentRoot = localDrives.Any(x => x.Name.Equals(LocalDirectoryPath.Replace(@"\\", @"\")));
+                var isParentRoot = localDrives.Any(x => x.Name.Equals(LocalDirectoryPath.Replace(@"\\", @"\")));
 
                 if (!isParentRoot)
                 {
-                    _ = DgvLocalFiles.Rows.Add("folder", Resources.folder, "..", "<DIRECTORY>", Directory.GetLastWriteTime(LocalDirectoryPath));
+                    _ = DgvLocalFiles.Rows.Add("folder", Resources.folder, "..", "<DIRECTORY>",
+                        Directory.GetLastWriteTime(LocalDirectoryPath));
                 }
-                
-                int totalFolderCount = 0;
-                int totalFileCount = 0;
-                long totalFileBytes = 0;
 
-                foreach (string directoryItem in Directory.GetDirectories(LocalDirectoryPath))
+                int folders = 0;
+                int files = 0;
+                long totalBytes = 0;
+
+                foreach (var directoryItem in Directory.GetDirectories(LocalDirectoryPath))
                 {
                     _ = DgvLocalFiles.Rows.Add("folder", Resources.folder, Path.GetFileName(directoryItem), "<DIRECTORY>", Directory.GetLastWriteTime(directoryItem));
 
-                    totalFolderCount++;
+                    folders++;
                 }
 
-                foreach (string fileItem in Directory.GetFiles(LocalDirectoryPath))
+                foreach (var fileItem in Directory.GetFiles(LocalDirectoryPath))
                 {
-                    long fileBytes = new FileInfo(fileItem).Length;
+                    var fileBytes = new FileInfo(fileItem).Length;
 
                     _ = DgvLocalFiles.Rows.Add("file", Resources.file, Path.GetFileName(fileItem), fileBytes.ToString("n0", CultureInfo.CurrentCulture) + " bytes", File.GetLastWriteTime(fileItem));
 
-                    totalFileCount++;
-                    totalFileBytes += fileBytes;
+                    files++;
+                    totalBytes += fileBytes;
                 }
 
-                SetLocalStatus($"{totalFileBytes.ToString("n0", CultureInfo.CurrentCulture)} bytes in {totalFileCount} {(totalFileCount <= 1 ? "file" : "files")}, {totalFolderCount} {(totalFolderCount <= 1 ? "directory" : "directories")}");
+                string statusFiles = files > 0 ? $"{files} {(files <= 1 ? "file" : "files")} {(files > 0 && folders > 0 ? "and " : "")}" : "" + $"{(folders < 1 ? "." : "")}";
+                string statusFolders = folders > 0 ? $"{folders} {(folders <= 1 ? "directory" : "directories")}. " : "";
+                string statusTotalBytes = files > 0 ? $"Total size: {totalBytes.ToString("n0", CultureInfo.CurrentCulture)} bytes" : "";
+
+                SetLocalStatus($"{statusFiles}{statusFolders}{statusTotalBytes}");
             }
             catch (Exception ex)
             {
@@ -341,7 +393,9 @@ namespace ModioX.Forms.Windows
                     // Attempt to reload the parent directory listing
                     LoadLocalDirectory(Path.GetDirectoryName(LocalDirectoryPath) + @"\");
                 }
-                catch { }
+                catch
+                {
+                }
             }
         }
 
@@ -361,19 +415,19 @@ namespace ModioX.Forms.Windows
         {
             if (DgvConsoleFiles.CurrentRow != null)
             {
-                string type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
-                string name = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
+                var type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
+                var name = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
 
                 if (name == "..") // Go to parent directory
                 {
-                    string trimLastIndex = Path.GetDirectoryName(FtpDirectoryPath).Replace(@"\", "/").TrimEnd(new char[] { '/' });
-                    string parentDirectory = trimLastIndex.Substring(0, trimLastIndex.LastIndexOf("/")) + "/";
+                    var trimLastIndex = Path.GetDirectoryName(FtpDirectoryPath).Replace(@"\", "/").TrimEnd('/');
+                    var parentDirectory = trimLastIndex.Substring(0, trimLastIndex.LastIndexOf("/")) + "/";
 
                     LoadConsoleDirectory(parentDirectory);
                 }
-                else if (type == "folder") // Go to selected directory
+                else if (type == "folder") // Go to selected folder directory
                 {
-                    LoadConsoleDirectory(FtpDirectoryPath + DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString() + "/");
+                    LoadConsoleDirectory(FtpDirectoryPath + DgvConsoleFiles.CurrentRow.Cells[2].Value + "/");
                 }
             }
         }
@@ -382,15 +436,23 @@ namespace ModioX.Forms.Windows
         {
             if (DgvConsoleFiles.CurrentRow != null)
             {
-                string type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
-                string name = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
+                var type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
+                var name = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
 
-                ToolStripConsoleDownload.Enabled = type == "file" & name != "..";
-                ToolStripConsoleDelete.Enabled = type == "file" || type == "folder" & name != "..";
-                ContextMenuItemConsoleDownloadFile.Enabled = type == "file" & name != "..";
-                ContextMenuItemConsoleDeleteFile.Enabled = type == "file" || type == "folder" & name != "..";
-                ContextMenuItemConsoleRenameFile.Enabled = type == "file" & name != "..";
-                ContextMenuItemConsoleRenameFolder.Enabled = type == "folder" & name != "..";
+                ToolStripConsoleDownload.Enabled = (type == "file") & (name != "..");
+                ToolStripConsoleDelete.Enabled = type == "file" || (type == "folder") & (name != "..");
+                ContextMenuItemConsoleDownloadFile.Enabled = (type == "file") & (name != "..");
+                ContextMenuItemConsoleDeleteFile.Enabled = type == "file" || (type == "folder") & (name != "..");
+                ContextMenuItemConsoleRenameFile.Enabled = (type == "file") & (name != "..");
+                ContextMenuItemConsoleRenameFolder.Enabled = (type == "folder") & (name != "..");
+            }
+        }
+
+        private void DgvConsoleFiles_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
             }
         }
 
@@ -398,15 +460,15 @@ namespace ModioX.Forms.Windows
         {
             if (DgvConsoleFiles.CurrentRow != null)
             {
-                string type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
-                string name = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
+                var type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
+                var name = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
 
-                ToolStripConsoleDownload.Enabled = type == "file" & name != "..";
-                ToolStripConsoleDelete.Enabled = type == "file" || type == "folder" & name != "..";
-                ContextMenuItemConsoleDownloadFile.Enabled = type == "file" & name != "..";
-                ContextMenuItemConsoleDeleteFile.Enabled = type == "file" || type == "folder" & name != "..";
-                ContextMenuItemConsoleRenameFile.Enabled = type == "file" & name != "..";
-                ContextMenuItemConsoleRenameFolder.Enabled = type == "folder" & name != "..";
+                ToolStripConsoleDownload.Enabled = (type == "file") & (name != "..");
+                ToolStripConsoleDelete.Enabled = type == "file" || (type == "folder") & (name != "..");
+                ContextMenuItemConsoleDownloadFile.Enabled = (type == "file") & (name != "..");
+                ContextMenuItemConsoleDeleteFile.Enabled = type == "file" || (type == "folder") & (name != "..");
+                ContextMenuItemConsoleRenameFile.Enabled = (type == "file") & (name != "..");
+                ContextMenuItemConsoleRenameFolder.Enabled = (type == "folder") & (name != "..");
             }
         }
 
@@ -417,32 +479,30 @@ namespace ModioX.Forms.Windows
 
         private void ToolStripConsoleDelete_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                DeleteConsoleItem();
-            }
+            DeleteConsoleItem();
         }
 
         private void ToolStripConsoleNewFolder_Click(object sender, EventArgs e)
         {
             try
             {
-                string folderName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder Name: ", "");
+                var folderName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder Name: ", "");
 
                 if (folderName != null)
                 {
-                    _ = Extensions.FtpExtensions.CreateDirectory(FtpDirectoryPath + "/" + folderName);
+                    _ = FtpExtensions.CreateDirectory(FtpDirectoryPath + "/" + folderName);
                     LoadConsoleDirectory(FtpDirectoryPath);
                 }
             }
-            catch (FluentFTP.FtpException ex)
+            catch (FtpException ex)
             {
-                _ = DarkMessageBox.Show(this, $"Unable to create new folder. Error: {ex.Message}", "Error", MessageBoxIcon.Error);
-
+                _ = DarkMessageBox.Show(this, $"Unable to create new folder. Error: {ex.Message}", "Error",
+                    MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                _ = DarkMessageBox.Show(this, $"Unable to create new folder. Error: {ex.Message}", "Error", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, $"Unable to create new folder. Error: {ex.Message}", "Error",
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -458,10 +518,7 @@ namespace ModioX.Forms.Windows
 
         private void ContextMenuConsoleDeleteFile_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                DeleteConsoleItem();
-            }
+            DeleteConsoleItem();
         }
 
         private void ContextMenuConsoleRefresh_Click(object sender, EventArgs e)
@@ -473,17 +530,27 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                string oldFilName = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
-                string consoleFilePath = TextBoxConsolePath.Text + "/" + DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
-                int selectedIndex = DgvConsoleFiles.CurrentRow.Index;
+                var oldFileName = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
+                var filePath = TextBoxConsolePath.Text + oldFileName;
 
-                string newFileName = DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name:", oldFilName);
+                var newFileName = DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name:", oldFileName);
 
-                if (newFileName != null)
+                var newConsoleFilePath = TextBoxConsolePath.Text + newFileName;                
+
+                if (newFileName != null && !newFileName.Equals(oldFileName))
                 {
-                    Extensions.FtpExtensions.RenameFile(consoleFilePath, newFileName);
-                    SetConsoleStatus($"Renamed {oldFilName} file to: {newFileName}");
-                    LoadConsoleDirectory(FtpDirectoryPath);
+                    if (FtpClient.FileExists(newConsoleFilePath))
+                    {
+                        SetConsoleStatus($"A file with this name already exists.");
+                        return;
+                    }
+                    else
+                    {
+                        SetConsoleStatus($"Renaming file {filePath} to {newFileName}");
+                        FtpExtensions.RenameFileOrFolder(FtpConnection, filePath, newFileName);
+                        SetConsoleStatus($"Successfully renamed file to: {newFileName}");
+                        LoadConsoleDirectory(FtpDirectoryPath);
+                    }
                 }
             }
             catch (Exception ex)
@@ -496,28 +563,34 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                string oldFolderName = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
-                string consoleFolderPath = TextBoxConsolePath.Text + "/" + DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
+                var oldFolderName = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
+                var folderPath = TextBoxConsolePath.Text + oldFolderName;
 
-                string newFolderName = DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name:", oldFolderName);
+                var newFolderName = DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name:", oldFolderName);
 
-                if (newFolderName != null)
+                var newFolderPath = TextBoxConsolePath.Text + newFolderName;                
+
+                if (newFolderName != null && !newFolderName.Equals(oldFolderName))
                 {
-                    Extensions.FtpExtensions.RenameFile(consoleFolderPath, newFolderName);
-                    SetConsoleStatus($"Renamed {oldFolderName} folder to: {newFolderName}");
-                    LoadConsoleDirectory(FtpDirectoryPath);
+                    if (FtpClient.DirectoryExists(folderPath))
+                    {
+                        SetConsoleStatus($"A folder with this name already exists.");
+                        return;
+                    }
+                    else
+                    {
+                        SetConsoleStatus($"Renaming folder: {folderPath} to: {newFolderName}");
+                        FtpExtensions.RenameFileOrFolder(FtpConnection, folderPath, newFolderName);
+                        SetConsoleStatus($"Successfully renamed folder to: {newFolderName}");
+                        LoadConsoleDirectory(FtpDirectoryPath);
+                    }
                 }
-            }                
+            }
             catch (Exception ex)
             {
                 SetConsoleStatus($"Unable to rename folder. Error: {ex.Message}", ex);
             }
         }
-
-        /// <summary>
-        ///     Get/sets the current ftp directory path
-        /// </summary>
-        public string FtpDirectoryPath { get; set; } = "/dev_hdd0/";
 
         /// <summary>
         ///     Loads files and folders into the console datagridview
@@ -534,28 +607,28 @@ namespace ModioX.Forms.Windows
 
                 SetConsoleStatus(string.Format("Fetching directory listing of '{0}'...", FtpDirectoryPath));
 
-                int secondIndexOfSlash = FtpDirectoryPath.TrimStart('/').IndexOfNth("/", 0);
-                string rootPath = FtpDirectoryPath.Substring(1, secondIndexOfSlash);
+                var secondIndexOfSlash = FtpDirectoryPath.TrimStart('/').IndexOfNth("/");
+                var rootPath = FtpDirectoryPath.Substring(1, secondIndexOfSlash);
 
                 ComboBoxConsoleDrives.SelectedIndexChanged -= ComboBoxConsoleDrives_SelectedIndexChanged;
                 ComboBoxConsoleDrives.SelectedItem = rootPath;
                 ComboBoxConsoleDrives.SelectedIndexChanged += ComboBoxConsoleDrives_SelectedIndexChanged;
 
-                bool isRoot = ComboBoxConsoleDrives.Items.Contains(FtpDirectoryPath.Replace("/", ""));
+                var isRoot = ComboBoxConsoleDrives.Items.Contains(FtpDirectoryPath.Replace("/", ""));
 
                 if (!isRoot)
                 {
                     _ = DgvConsoleFiles.Rows.Add("folder", Resources.folder, "..", "<DIRECTORY>", DateTime.MinValue);
                 }
 
-                MainWindow.FtpClient.SetWorkingDirectory(FtpDirectoryPath);
+                FtpClient.SetWorkingDirectory(FtpDirectoryPath);
 
                 List<FtpListItem> folders = new List<FtpListItem>();
                 List<FtpListItem> files = new List<FtpListItem>();
 
-                long fileBytes = 0;
+                long totalBytes = 0;
 
-                foreach (FtpListItem listItem in MainWindow.FtpClient.GetListing(FtpDirectoryPath))
+                foreach (FtpListItem listItem in FtpClient.GetListing(FtpDirectoryPath))
                 {
                     switch (listItem.Type)
                     {
@@ -580,12 +653,16 @@ namespace ModioX.Forms.Windows
                 foreach (FtpListItem listItem in files.OrderBy(x => x.Name))
                 {
                     _ = DgvConsoleFiles.Rows.Add("file", Resources.file, listItem.Name, listItem.Size.ToString("n0", CultureInfo.CurrentCulture) + " bytes", listItem.Modified);
-                    fileBytes += listItem.Size;
+                    totalBytes += listItem.Size;
                 }
 
-                SetConsoleStatus($"{fileBytes.ToString("n0", CultureInfo.CurrentCulture)} bytes in {files.Count} {(files.Count == 1 ? "file" : "files")}, {folders.Count} {(folders.Count == 1 ? "directory" : "directories")}");
+                string statusFiles = files.Count > 0 ? $"{files.Count} {(files.Count <= 1 ? "file" : "files")} {(files.Count > 0 && folders.Count > 0 ? "and " : "")}" : "" + $"{(folders.Count < 1 ? "." : "")}";
+                string statusFolders = folders.Count > 0 ? $"{folders.Count} {(folders.Count <= 1 ? "directory" : "directories")}. " : "";
+                string statusTotalBytes = files.Count > 0 ? $"Total size: {totalBytes.ToString("n0", CultureInfo.CurrentCulture)} bytes" : "";
+
+                SetConsoleStatus($"{statusFiles}{statusFolders}{statusTotalBytes}");
             }
-            catch (FluentFTP.FtpException ex)
+            catch (FtpException ex)
             {
                 SetConsoleStatus($"Error fetching directory listing for path: {FtpDirectoryPath}", ex);
             }
@@ -599,33 +676,33 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                string type = DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
-                string localName = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
+                var type = DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
+                var localName = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
 
                 if (type.Equals("file"))
                 {
-                    string localPath = TextBoxLocalPath.Text + localName;
-                    string consolePath = TextBoxConsolePath.Text + localName;
+                    var localPath = TextBoxLocalPath.Text + localName;
+                    var consolePath = TextBoxConsolePath.Text + localName;
 
                     if (File.Exists(localPath))
                     {
                         SetLocalStatus($"Uploading file to {consolePath}...");
-                        Extensions.FtpExtensions.UploadFile(localPath, consolePath);
+                        FtpExtensions.UploadFile(MainWindow.FtpConnection, localPath, consolePath);
                         SetLocalStatus($"Successfully uploaded file: {Path.GetFileName(localPath)}");
                         LoadConsoleDirectory(FtpDirectoryPath);
                     }
                     else
                     {
-                        SetLocalStatus($"Unable to upload file as it doesn't exist on your computer.");
+                        SetLocalStatus("Unable to upload file as it doesn't exist on your computer.");
                     }
                 }
                 else if (type.Equals("folder"))
                 {
-                    string localPath = TextBoxLocalPath.Text + localName + @"\";
-                    string consolePath = TextBoxConsolePath.Text + localName;
+                    var localPath = TextBoxLocalPath.Text + localName + @"\";
+                    var consolePath = TextBoxConsolePath.Text + localName;
 
                     SetLocalStatus($"Uploading folder to {consolePath}...");
-                    _ = MainWindow.FtpClient.UploadDirectory(localPath, consolePath, FtpFolderSyncMode.Update, FtpRemoteExists.Overwrite);
+                    //MainWindow.FtpClient.UploadDirectory(localPath, consolePath, FtpFolderSyncMode.Update, FtpRemoteExists.Overwrite);
                     SetLocalStatus($"Successfully uploaded folder: {localPath}");
                     LoadConsoleDirectory(FtpDirectoryPath);
                 }
@@ -640,31 +717,36 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                string type = DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
-                string name = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
-
-                if (!name.Equals(".."))
+                if (DarkMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    string selectedItem = TextBoxLocalPath.Text + @"\" + DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
 
-                    if (type == "folder")
+
+                    var type = DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
+                    var name = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
+
+                    if (!name.Equals(".."))
                     {
-                        SetLocalStatus($"Deleting folder: {selectedItem}");
-                        UserFolders.DeleteDirectory(selectedItem);
-                        SetLocalStatus($"Successfully deleted folder: {selectedItem}");
-                    }
-                    else if (type == "file")
-                    {
-                        if (File.Exists(selectedItem))
+                        var selectedItem = TextBoxLocalPath.Text + @"\" + DgvLocalFiles.CurrentRow.Cells[2].Value;
+
+                        if (type.Equals("folder"))
                         {
-                            SetLocalStatus($"Deleting file: {selectedItem}");
-                            File.Delete(selectedItem);
-                            SetLocalStatus($"Successfully deleted file: {selectedItem}");
+                            SetLocalStatus($"Deleting folder: {selectedItem}");
+                            UserFolders.DeleteDirectory(selectedItem);
+                            SetLocalStatus($"Successfully deleted folder: {name}");
+                        }
+                        else if (type.Equals("file"))
+                        {
+                            if (File.Exists(selectedItem))
+                            {
+                                SetLocalStatus($"Deleting file: {selectedItem}");
+                                File.Delete(selectedItem);
+                                SetLocalStatus($"Successfully deleted file: {name}");
+                            }
                         }
                     }
-                }
 
-                DgvLocalFiles.Rows.RemoveAt(DgvLocalFiles.CurrentRow.Index);
+                    DgvLocalFiles.Rows.RemoveAt(DgvLocalFiles.CurrentRow.Index);
+                }
             }
             catch (Exception ex)
             {
@@ -676,13 +758,13 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                string type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
-                string name = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
+                var type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
+                var name = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
 
                 if (type.Equals("file"))
                 {
-                    string consoleFile = TextBoxConsolePath.Text + DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
-                    string localFile = TextBoxLocalPath.Text + DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
+                    var consoleFile = TextBoxConsolePath.Text + DgvConsoleFiles.CurrentRow.Cells[2].Value;
+                    var localFile = TextBoxLocalPath.Text + DgvConsoleFiles.CurrentRow.Cells[2].Value;
 
                     if (File.Exists(localFile))
                     {
@@ -690,14 +772,14 @@ namespace ModioX.Forms.Windows
                     }
 
                     SetConsoleStatus($"Downloading file: {Path.GetFileName(localFile)}");
-                    //Extensions.FtpExtensions.DownloadFile(localFile, consoleFile);
-                    _ = MainWindow.FtpClient.DownloadFile(localFile, consoleFile);
+                    FtpExtensions.DownloadFile(localFile, consoleFile);
+                    //_ = MainWindow.FtpClient.DownloadFile(localFile, consoleFile);
                     SetConsoleStatus($"Successfully downloaded file: {Path.GetFileName(localFile)}");
                 }
                 else if (type.Equals("folder"))
                 {
-                    string consolePath = TextBoxConsolePath.Text + DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString() + "/";
-                    string localPath = TextBoxLocalPath.Text + DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
+                    var consolePath = TextBoxConsolePath.Text + DgvConsoleFiles.CurrentRow.Cells[2].Value + "/";
+                    var localPath = TextBoxLocalPath.Text + DgvConsoleFiles.CurrentRow.Cells[2].Value;
 
                     if (Directory.Exists(localPath))
                     {
@@ -705,11 +787,10 @@ namespace ModioX.Forms.Windows
                     }
 
                     SetConsoleStatus($"Downloading folder: {consolePath}");
-                    //Extensions.FtpExtensions.DownloadDirectory(consolePath, localPath);
-                    _ = MainWindow.FtpClient.DownloadDirectory(localPath, consolePath, FtpFolderSyncMode.Update, FtpLocalExists.Overwrite);
+                    //FtpExtensions.DownloadDirectory(consolePath, localPath);
+                    FtpClient.DownloadDirectory(localPath, consolePath, FtpFolderSyncMode.Mirror, FtpLocalExists.Overwrite);
                     SetConsoleStatus($"Successfully downloaded folder to: {localPath}");
                 }
-                else { }
             }
             catch (Exception ex)
             {
@@ -723,27 +804,33 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                string type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
-                string name = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
-
-                string itemPath = TextBoxConsolePath.Text + name;
-
-                if (type.Equals("folder"))
+                if (DarkMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    SetConsoleStatus($"Deleting folder: {itemPath}");
+                    var type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
+                    var name = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
 
-                    MainWindow.FtpClient.DeleteDirectory(itemPath);
+                    var itemPath = TextBoxConsolePath.Text + name;
 
-                    SetConsoleStatus($"Successfully deleted folder.");
+                    if (type.Equals("folder"))
+                    {
+                        SetConsoleStatus($"Deleting folder: {itemPath}");
+
+                        FtpExtensions.DeleteDirectory(MainWindow.FtpConnection, itemPath);
+
+                        SetConsoleStatus("Successfully deleted folder.");
+                    }
+                    else if (type.Equals("file"))
+                    {
+                        SetConsoleStatus($"Deleting file: {itemPath}");
+                        if (FtpClient.FileExists(itemPath))
+                        {
+                            FtpClient.DeleteFile(itemPath);
+                        }
+                        SetConsoleStatus("Successfully deleted file.");
+                    }
+
+                    DgvConsoleFiles.Rows.RemoveAt(DgvConsoleFiles.CurrentRow.Index);
                 }
-                else if (type.Equals("file"))
-                {
-                    SetConsoleStatus($"Deleting file: {itemPath}");
-                    Extensions.FtpExtensions.DeleteFile(itemPath);
-                    SetConsoleStatus($"Successfully deleted file.");
-                }
-
-                DgvConsoleFiles.Rows.RemoveAt(DgvConsoleFiles.CurrentRow.Index);
             }
             catch (Exception ex)
             {

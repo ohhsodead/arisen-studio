@@ -21,11 +21,16 @@ namespace ModioX.Io
         internal static string AppGameBackupFiles { get; } = $@"{AppData}Game Backup Files\";
 
         /// <summary>
+        ///     Local path at where the settings file will be stored on the machine
+        /// </summary>
+        internal static readonly string AppSettingsFile = $@"{AppData}\SettingsData.json";
+
+        /// <summary>
         ///     Depth-first recursive delete, with handling for descendant directories.
         /// </summary>
         internal static void DeleteDirectory(string path)
         {
-            foreach (string directory in Directory.GetDirectories(path))
+            foreach (var directory in Directory.GetDirectories(path))
             {
                 Directory.Delete(directory, true);
             }
