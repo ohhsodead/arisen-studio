@@ -1,13 +1,27 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## Beta 1.4.4
+## Beta v1.4.5
+- Improved code/naming conventions/folder structure
+- Improved the file manager by adding more functions
+- You can now set a username and password for consoles (optional)
+- You can now create new folders in the file manager
+- You can now rename files/folders in the file manager
+- You can now edit or delete consoles in the connection window
+- Added what's new dialog which shows after an update
+- Added last updated date attribute to database
+- Added instructions for installing/uninstalling mods
+- Added check for Internet connection before loading database
+- Added FluentFTP for faster directory listings
+- Removed custom mods, prioritizing file manager instead
+
+## Beta v1.4.4
 - Installed mods are now downloaded to Documents folder
 - Added a link to the discord community server
 - Added more helpful comments to code
 - Fixed a possible error with installing/uninstalling mods
 
-## Beta 1.4.3
+## Beta v1.4.3
 - Instruction message will show on first time use
 - Backup files are now saved to Documents folder
 - You can now add external applications
@@ -18,7 +32,7 @@ All notable changes to this project will be documented in this file.
 - Added direct Github API for retrieving new release data
 - Other minor improvements 
 
-## Beta 1.4.2
+## Beta v1.4.2
 - Added support for installing game saves
 - Added support for installing files to both console USB ports
 - Added automatic uninstall when installing mods to same game
@@ -31,14 +45,14 @@ All notable changes to this project will be documented in this file.
 - Cleaned and documented most of the code
 - Other additional minor improvements
 
-## Beta 1.4.1
+## Beta v1.4.1
 A small update to support installing mods to account resources, allowing the user to choose their specified userId when prompted.
 
 - Added support for specific regions to game mods
 - Added ability to filter mods by game regions
 - Other minor improvements
 
-## Beta 1.4.0
+## Beta v1.4.0
 A small update to support installing mods to account resources, allowing the user to choose their specified userId when prompted.
 
 - Added support for installing to user accounts
@@ -46,7 +60,7 @@ A small update to support installing mods to account resources, allowing the use
 - Disabled uninstall option from 'dev_rebug' folders
 - Removed unnecessary game details section
 
-## Beta 1.3.0
+## Beta v1.3.0
 - Improved game file backups
 - Added file explorer to seperate form
 - Added mods search textbox
@@ -64,7 +78,7 @@ This update mainly includes improvements to the core functionality for installin
 - Added FileZilla option to applications
 - Improved game file backups
 
-## Beta 1.1.0
+## Beta v1.1.0
 Improved and cleaned the user interface, also many new features, advancements and customization for a complete built-in ftp client, with a more useful logging library and some bug fixes. 
 
 * Added ability to navigate through local and console directory listings
@@ -85,5 +99,5 @@ Improved and cleaned the user interface, also many new features, advancements an
 Notes:
 * Loading console files in the file explorer with huge directories can sometimes result in a few files not returning file sizes. Not sure what's causing this, seems like it's a timeout issue for large files.
 
-## Beta 1.0.0
+## Beta v1.0.0
 - Initial Release
