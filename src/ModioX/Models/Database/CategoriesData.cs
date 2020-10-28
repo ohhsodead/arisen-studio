@@ -153,8 +153,8 @@ namespace ModioX.Models.Database
                     }
 
                     _ = DarkMessageBox.Show(MainWindow.Window,
-                        "Could not find any regions on your console for this game title. Make sure you have updated your game correctly, updates will be found under 'Game Data Utility' if you have this installed already.",
-                        "No Game Region Found", MessageBoxIcon.Error);
+                        "Could not find any regions on your console for this game title. You must install the game update for this title first.",
+                        "No Game Update", MessageBoxIcon.Error);
                     return null;
                 }
 

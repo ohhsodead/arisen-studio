@@ -132,6 +132,7 @@
       <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.IO.Pipelines, Version=4.0.2.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -170,6 +171,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -178,7 +180,9 @@
     <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\DialogExtensions.cs" />
-    <Compile Include="Forms\Windows\RequestModsWindow.cs" />
+    <Compile Include="Forms\Windows\RequestModsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Windows\RequestModsWindow.Designer.cs">
       <DependentUpon>RequestModsWindow.cs</DependentUpon>
     </Compile>
@@ -274,11 +278,11 @@
     <Compile Include="Forms\Dialogs\NewConnectionDialog.Designer.cs">
       <DependentUpon>NewConnectionDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Dialogs\ListItemDialog.cs">
+    <Compile Include="Forms\Dialogs\ListViewDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Dialogs\ListItemDialog.Designer.cs">
-      <DependentUpon>ListItemDialog.cs</DependentUpon>
+    <Compile Include="Forms\Dialogs\ListViewDialog.Designer.cs">
+      <DependentUpon>ListViewDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -319,9 +323,6 @@
     <EmbeddedResource Include="Forms\Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\RequestModsWindow.resx">
-      <DependentUpon>RequestModsWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -330,8 +331,8 @@
     <EmbeddedResource Include="Forms\Dialogs\NewConnectionDialog.resx">
       <DependentUpon>NewConnectionDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dialogs\ListItemDialog.resx">
-      <DependentUpon>ListItemDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Dialogs\ListViewDialog.resx">
+      <DependentUpon>ListViewDialog.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
   </ItemGroup>

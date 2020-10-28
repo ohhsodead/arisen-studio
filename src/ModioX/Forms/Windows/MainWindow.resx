@@ -123,12 +123,6 @@
   <metadata name="ColumnInstallationPath.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="ColumnInstallationPath.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ToolStripArchiveInformation.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>217, 2</value>
-  </metadata>
   <metadata name="ToolStripArchiveInformation.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>217, 2</value>
   </metadata>
@@ -136,15 +130,15 @@
   <data name="ToolItemDownloadMod.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVEhL7ZI5SwNRFIUHQQQVxGCrIhYWWtgoCCmj4FJo
-        IViJ/0DQwvwCF7CwsBGsbBX8ASI2iktna2GjiAuuGLNMMvE7w82QOCYk1h64vPfOOffcNy9x/lETPM9r
-        z+fzMdZxqsvov4OQvlwud5BIJDyCA2Sz2XOWqNlqA6ETBH5Z0BkDNqh19qfi0LIsc2avDMIi1CwBKzR+
-        JpPJZ86jJgeAmyL0DU+G/YDRvwPDPMYP3UZgn2OJmRwC/nE8Hpc4NCoMxGULe2dZVRM1ZLIPPHsqO/rQ
-        s1j4Pv4lettMchwOUYVmMplbxG6jQ0ilUo8qO/qgLa7eAni6FzKGfZFpuyIhJnyiDMoEt+kyrP3krHF7
-        l/qE63HS6fQ9k14R68wfAEMTfKuK0CdV4SzNbAHgFtDyDNlxmJByXffKtBJg7GPwg8zFECfNbAGQ6slL
-        6rIOodc6QDaaXoKf4eVCC+C3ulGe3nhTDfoM00JA61WghfYaHQJal7L4t1zq0KkH15OwnzFPCAqsFEpe
-        C5c8sksuFshJBYtk2gWGdcSlaoqWOP5tvubO+k/gG/xggcMg5LHEv4CLuQzYYttskaVA6GDIGOt0tYV/
-        hIpYxD+K4TjfL9arKdv/gOYAAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHQSURBVEhL7ZK7SgNhFIQXQQQVxGCrIhYWsbBRECxV8FJo
+        IViJbyBoYZ7AC1hY2AhWtgo+gIiN4qWztbBRxAte2ZhNNtn4zXKyGNeIWjtw+PfMzJnz7ybOP36FIAia
+        i8ViP+cI1Wb030FIZ6FQ2HVdNyA4Qj6fP+HoM9vvQOgogW8WdMyCVWqF5yNxaHmOabN/D8IS1BQBiwy6
+        mUzmgX7I5Ahw44Q+Y8nx3G3018Awk06nX3UbgaECR7/JMeAfwRNwiT2j4kBcUBjBLxxLGqJ6TQ6BZ1tl
+        bQh9FgvfwT/PbJNJjkPTp9BcLneF2G50DJ7n3amsDcFYSrMl8OkeyRgIRbZtiYQYDYkKqBDcpMtwdpGz
+        zO19yoXrcLLZ7A2bnhCrzB8BQx18o4rQe1Wpl2a2CHCzaEWWbDos8HzfPzetDBg7WXwr80eIk2a2CEjV
+        5GV0WYfQCzWQtaaX4XN4pdAS+K0uladvvKYBvYZpMaAlFWihSaNjQGtTFv+WMzWtbBA8nifNE4MCvwsl
+        r4FL7tsl50rkmIJFsu0Uwwri/E+KkRT+Dd7m2uYP4WvCYIGmB/JA4l/AxXwWrPNYb5HlQGhhyTDnxE8L
+        /yCVsIh/fITjvANY9qrzaiSQqAAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="MenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -184,36 +178,6 @@
     <value>True</value>
   </metadata>
   <metadata name="ColumnModsFavourite.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="MenuGameModsStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>536, 5</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledGameTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledRegion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledModName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledModType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledVersion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledNoOfFiles.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledDateTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledUninstall.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="ColumnModsInstalledId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

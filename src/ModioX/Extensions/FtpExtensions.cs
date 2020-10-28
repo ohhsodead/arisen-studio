@@ -43,17 +43,11 @@ namespace ModioX.Extensions
         /// </summary>
         /// <param name="ftpConnection">Mod to uninstall</param>
         /// <param name="consoleFile">Mod to uninstall</param>
-        internal static void DeleteFile(FtpConnection ftpConnection, string consoleFile)
+        internal static void DeleteFile(FtpClient ftpClient, string consoleFile)
         {
-            var dirPath = consoleFile.Contains("/")
-                ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
-                : "dev_hdd0/";
-
-            ftpConnection.SetCurrentDirectory(dirPath);
-
-            if (ftpConnection.FileExists(consoleFile))
+            if (ftpClient.FileExists(consoleFile))
             {
-                ftpConnection.RemoveFile(consoleFile);
+                ftpClient.DeleteFile(consoleFile);
             }
         }
 
@@ -62,17 +56,17 @@ namespace ModioX.Extensions
         /// </summary>
         /// <param name="ftpConnection">Mod to uninstall</param>
         /// <param name="consolePath">Mod to uninstall</param>
-        internal static void DeleteDirectory(FtpConnection ftpConnection, string consolePath)
+        internal static void DeleteDirectory(FtpClient ftpClient, string consolePath)
         {
             var dirPath = consolePath.Contains("/")
                 ? consolePath.Substring(0, consolePath.LastIndexOf('/')) + '/'
                 : "dev_hdd0/";
 
-            ftpConnection.SetCurrentDirectory(dirPath);
+            ftpClient.SetWorkingDirectory(dirPath);
 
-            if (ftpConnection.DirectoryExists(consolePath))
+            if (ftpClient.DirectoryExists(consolePath))
             {
-                ftpConnection.RemoveDirectory(consolePath);
+                ftpClient.DeleteDirectory(consolePath);
             }
         }
 
@@ -92,6 +86,30 @@ namespace ModioX.Extensions
             ftpConnection.SetLocalDirectory(Path.GetDirectoryName(localFile));
             ftpConnection.SetCurrentDirectory(dirPath);
             ftpConnection.GetFile(consoleFile, localFile, false);
+        }
+
+        internal static bool IsDirectoryEmpty(FtpClient ftpClient, string consolePath)
+        {
+            int itemCount = 0;
+
+            foreach (FtpListItem listItem in ftpClient.GetListing(consolePath))
+            {
+                switch (listItem.Type)
+                {
+                    case FtpFileSystemObjectType.Directory:
+                        itemCount++;
+                        break;
+
+                    case FtpFileSystemObjectType.File:
+                        itemCount++;
+                        break;
+
+                    case FtpFileSystemObjectType.Link:
+                        break;
+                }
+            }
+
+            return itemCount == 0;
         }
 
         /// <summary>
@@ -253,7 +271,7 @@ namespace ModioX.Extensions
                 return DialogExtensions.ShowListInputDialog(owner, "User Profile IDs", userIds);
             }
             _ = DarkMessageBox.Show(owner,
-                "Could not find any users on your console. Make sure you have created at least one user profile and then try again.",
+                "Could not find any users on your console. Make sure you have at least one user profile and then try again.",
                 "No Users Found", MessageBoxIcon.Error);
             return null;
         }
@@ -267,7 +285,9 @@ namespace ModioX.Extensions
             string[] usbPaths =
             {
                 "dev_usb000",
-                "dev_usb001"
+                "dev_usb001",
+                "dev_usb002",
+                "dev_usb003"
             };
 
             var folderNames = GetFolderNames("/");

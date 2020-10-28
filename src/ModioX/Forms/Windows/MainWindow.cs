@@ -533,15 +533,15 @@ namespace ModioX.Forms.Windows
 
         private void MenuItemMoreInformation_Click(object sender, EventArgs e)
         {
-            _ = DarkMessageBox.Show(this, "Installing/Uninstalling Mods:\n"
-                                          + "You must have Multiman or Rebug Toolbox to connect to your PS3 and before installing/uninstalling any files to your PS3. Do NOT do this while you're in game. It's also recommended to not be signed into PSN while using this app to avoid being banned.\n\n"
-                                          + "Installing to USB devices:\n"
-                                          + "You must use a USB device that has a capacity of ~3GB. Some files (except for game-saves) can be optionally installed to a USB device. But some mods may not work as they were intended by the creator if they're not installed. I suggest reading the full description for more information as it may explain what the files are.\n\n"
+            _ = DarkMessageBox.Show(this, "Installing && Uninstalling Mods:\n"
+                                          + "You must have Multiman or Rebug Toolbox open to connect to your PS3 and before installing/uninstalling any files. Do NOT install/uninstall while you're in a game. It's also recommended to not be signed into PSN while using this app to avoid being banned.\n\n"
+                                          + "Installing Mods to USB devices:\n"
+                                          + "Some files might be installed to USB device, for this you must use a USB device that has a capacity of ~3GB. Some files (except for game-saves) can be optionally installed to a USB device. But the mods might not work as they were intended by the creator if they're not installed there. I suggest you read the full description for more information as it may explain what the files are.\n\n"
                                           + "Uninstalling Game Saves:\n"
-                                          + "For removing installed game saves, you must either delete the game save through the XMB menu or reconnect the same USB device into your computer and delete the game save that you installed before.\n\n"
+                                          + "For removing installed game saves, you must either delete the game save through the XMB menu or connect the same USB device into your computer and delete the game save that you installed.\n\n"
                                           + "Uninstalling from REBUG folder:\n"
-                                          + "It's not recommended to uninstall any files from the firmware folder as this can cause major problems. Before installing mods to the 'dev_rebug' folder, it's recommended to create a backup of the entire folder so you have the original files that you can be restored in the case any files get corrupted.",
-                "More Information", MessageBoxIcon.Information);
+                                          + "Uninstalling files from the firmware folder is disabled. Before installing mods to the firmware folder, it's recommended to create an entire backup of this folder so you have the original files and can be restored in the case any files get corrupted.",
+                                          "More Information", MessageBoxIcon.Information);
         }
 
         private void MenuStripHelpAbout_Click(object sender, EventArgs e)
@@ -1300,8 +1300,7 @@ Important Notes for Installing Game Saves:
 
                             if (string.IsNullOrEmpty(usbDevice))
                             {
-                                SetStatus(
-                                    $"{modItem.Name} v{modItem.Version} ({modItem.Type}) - No USB device connected. Installation cancelled.");
+                                SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - No USB device connected. Installation cancelled.");
                                 return;
                             }
                         }
@@ -1341,8 +1340,23 @@ Important Notes for Installing Game Saves:
 
                 foreach (var installFilePath in modItem.InstallPaths)
                 {
-                    foreach (var localFilePath in Directory.GetFiles(modItem.DownloadDataDirectory, "*.*",
-                        SearchOption.AllDirectories))
+                    // Install the folders
+                    foreach (var localFolderPath in Directory.GetDirectories(modItem.DownloadDataDirectory, "*.*", SearchOption.AllDirectories))
+                    {
+                        if (string.Equals(Path.GetFileName(localFolderPath), Path.GetFileName(installFilePath), StringComparison.CurrentCultureIgnoreCase))
+                        {
+                            if (!FtpClient.DirectoryExists(installFilePath))
+                            {
+                                if (FtpExtensions.CreateDirectory(installFilePath))
+                                {
+                                    SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Created folder.");
+                                }
+                            }
+                        }    
+                    }
+
+                    // Install the files
+                    foreach (var localFilePath in Directory.GetFiles(modItem.DownloadDataDirectory, "*.*", SearchOption.AllDirectories))
                     {
                         var installFileName = Path.GetFileName(installFilePath);
 
@@ -1352,6 +1366,12 @@ Important Notes for Installing Game Saves:
                                 .Replace("{USBDEV}", $"{usbDevice}");
 
                         var installPathWithoutFileName = Path.GetDirectoryName(installPath).Replace(@"\", "/");
+
+                        // Create parent directory if it doesn't exist on the console
+                        if (!FtpClient.DirectoryExists(installPathWithoutFileName))
+                        {
+                            FtpExtensions.CreateDirectory(installPathWithoutFileName);
+                        }
 
                         // Check whether install file matches the specified install file
                         if (string.Equals(installFileName, Path.GetFileName(localFilePath), StringComparison.CurrentCultureIgnoreCase))
@@ -1433,9 +1453,9 @@ Important Notes for Installing Game Saves:
                 }
 
                 // Log status
-                SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed {indexFiles - 1} files{(category.CategoryType == CategoryType.Game ? $" for {gameTitle})." : ".")}");
+                SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed {indexFiles - 1} files{(category.CategoryType == CategoryType.Game ? $" for {gameTitle}." : ".")}");
                 _ = DarkMessageBox.Show(this,
-                    $"Successfully installed {modItem.Name} ({indexFiles - 1} files){(category.CategoryType == CategoryType.Game ? $" for {gameTitle})." : ".")}{(category.CategoryType == CategoryType.Game ? "\nReady to start game." : "")}",
+                    $"Successfully installed {modItem.Name} ({indexFiles - 1} files){(category.CategoryType == CategoryType.Game ? $" for {gameTitle}." : ".")}{(category.CategoryType == CategoryType.Game ? "\nReady to start game." : "")}",
                     "Success", MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -1480,22 +1500,15 @@ Important Notes for Installing Game Saves:
                 if (!string.IsNullOrEmpty(region))
                 {
                     gameRegion = region;
-                    gameTitle = $"{category.Title} ({gameRegion})";
-                    userId = null;
-
                     SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Found region ({gameRegion}).");
                 }
 
-                // Check whether a game region needs to be provided, if one hasn't already
+                // Check whether a game region needs to be provided and if one hasn't already
                 if (modItem.RequiresGameRegion && string.IsNullOrEmpty(region))
                 {
                     SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching region...");
-
                     gameRegion = category.GetGameRegion(this, modItem.GameId);
-                    gameTitle = $"{category.Title} ({gameRegion})";
-                    userId = null;
-
-                    SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Found region: ({gameRegion})");
+                    SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Found region: {gameRegion}");
 
                     if (string.IsNullOrEmpty(gameRegion))
                     {
@@ -1512,20 +1525,17 @@ Important Notes for Installing Game Saves:
                 // Whether or not a UserId is required and prompt the user to choose one
                 if (modItem.RequiresUserId)
                 {
-                    SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching user id...");
+                    SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching user ID...");
 
-                    //userId = FtpExtensions.GetUserId(FtpClient, this);
                     userId = FtpExtensions.GetUserId(this);
-                    gameTitle = $"{category.Title} ({userId})";
-                    gameRegion = null;
 
                     if (string.IsNullOrEmpty(userId))
                     {
-                        SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - No userId selected. Cancelled installation.");
+                        SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - No user ID selected. Cancelled installation.");
                         return;
                     }
 
-                    SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Found user id: ({userId})");
+                    SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Found user ID: ({userId})");
                 }
 
                 // If this mod requires a usb device to be connected to console, ask the user whether they want to continue with this
@@ -1544,16 +1554,13 @@ Important Notes for Installing Game Saves:
                     {
                         // Inform the user a USB device must be connected 
                         if (DarkMessageBox.Show(this,
-                            "Some modded files may have been installed to a usb device connected to your console if you specified when installing Database.Mods. You can choose to uninstall them now or manually delete them yourself." +
-                            "\nIf you would like to uninstall the files from your USB now, you must connect the same USB device into the front of console then click 'YES' to continue." +
-                            "\nIf you specified not to install any files to your USB device, then click 'NO' and the files will be ignored.",
+                            "Some files may have been files to be installed to a USB device. You can either choose to uninstall them now or manually delete them yourself." +
+                            "\n\nIf you would like to uninstall the files from your USB device, then connect the same USB device to your console and click 'Yes' to continue." +
+                            "\n\nIf you woudln't like to uninstall the files from your USB device, then click 'No' and these files will be ignored.",
                             "Uninstall USB File", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching USB device...");
-
                             usbDevice = FtpExtensions.GetUsbPath();
-                            gameTitle = $"{category.Title} ({usbDevice})";
-
                             SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Found USB device.");
 
                             if (string.IsNullOrEmpty(usbDevice))
@@ -1577,65 +1584,86 @@ Important Notes for Installing Game Saves:
                 // Loop through specified install file paths
                 foreach (var installFilePath in modItem.InstallPaths)
                 {
-                    // Format install file path with specified info: region/userId
+                    // Format install file path with specified info: region/userId/USB
                     var installPath = installFilePath
                         .Replace("{REGION}", $"{gameRegion}")
                         .Replace("{USERID}", $"{userId}")
                         .Replace("{USBDEV}", $"{usbDevice}");
 
-                    var installPathWithoutFileName = Path.GetDirectoryName(installPath);
+                    var installPathWithoutFileName = Path.GetDirectoryName(installPath).Replace(@"\", "/");
 
-                    // Check whether file is being installed to game update folder
-                    if (installPath.Contains("/dev_hdd0/game/"))
+                    // Uninstall files
+                    if (Path.HasExtension(installPath))
                     {
-                        // Get the backup details for this game file if one has been created
-                        var backupFile = Settings.GetGameFileBackup(modItem.GameId, Path.GetFileName(installPath), installPath);
-
-                        // Check whether a backup has been created for this game file
-                        if (backupFile != null)
+                        // Check whether file is being installed to game update folder
+                        if (installPath.Contains("dev_hdd0/game/"))
                         {
-                            // Check whether the backup file exists on users computer
-                            if (File.Exists(backupFile.LocalPath))
+                            // Get the backup details for this game file if one has been created
+                            var backupFile = Settings.GetGameFileBackup(modItem.GameId, Path.GetFileName(installPath), installPath);
+
+                            // Check whether a backup has been created for this game file
+                            if (backupFile != null)
                             {
-                                // Install the backup file to the original game file path
-                                SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing backup file: {Path.GetFileName(installPath)} ({indexFiles}/{totalFiles}) to {installPathWithoutFileName})");
-                                FtpExtensions.UploadFile(FtpConnection, backupFile.LocalPath, installPath);
-                                SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed backup file.");
-                                indexFiles++;
+                                // Check whether the backup file exists on users computer
+                                if (File.Exists(backupFile.LocalPath))
+                                {
+                                    // Install the backup file to the original game file path
+                                    SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing backup file: {Path.GetFileName(installPath)} ({indexFiles}/{totalFiles}) to {installPathWithoutFileName})");
+                                    FtpExtensions.UploadFile(FtpConnection, backupFile.LocalPath, installPath);
+                                    SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Installed backup file.");
+                                    indexFiles++;
+                                }
+                                else
+                                {
+                                    _ = DarkMessageBox.Show(this,
+                                        $"You have created a game file backup, but the file: {Path.GetFileName(installPath)} can't be found on your computer. If you have moved this file then navigate to Tools > Game Backup Files and set the local file again. If this file has been deleted, you should delete the game backup file data and re-backup the file again. For now, this file will be not be uninstalled to prevent any issues with missing game files for the game.",
+                                        "No File Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                }
                             }
                             else
                             {
                                 _ = DarkMessageBox.Show(this,
-                                    $"There is data for a game file backup, but the file '{Path.GetFileName(installPath)}' can't be found on your computer. If this file has been moved then go to Tools > Backup Files, and then locate and set the local file again. If this file has been deleted, you must backup the file again. This file will be ignored to prevent any issues with missing game files.",
-                                    "No Backup File Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    $"There is no backup for file: {Path.GetFileName(installPath)} so it can't be uninstalled. This file will be ignored to prevent any issues with missing game files. To restore the file to original then you must reinstall the game update.",
+                                    "No Game Backup File", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                        }
+                        else if (installFilePath.Contains("{USBDEV}"))
+                        {
+                            if (!modItem.IsGameSave && !string.IsNullOrEmpty(usbDevice))
+                            {
+                                SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Uninstalling file: {Path.GetFileName(installPath)} ({indexFiles}/{totalFiles}) from {installPathWithoutFileName}");
+                                FtpExtensions.DeleteFile(FtpClient, installFilePath);
+                                SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Uninstalled file.");
+                                indexFiles++;
                             }
                         }
                         else
                         {
-                            _ = DarkMessageBox.Show(this,
-                                $"There is no backup file for '{Path.GetFileName(installPath)}' so it can't be uninstalled. This file will be ignored to prevent any issues with missing game files. To restore the file to original then you must reinstall the game update.",
-                                "No Backup File Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Uninstalling file: {Path.GetFileName(installPath)} ({indexFiles}/{totalFiles}) from {installPathWithoutFileName}");
+                            FtpExtensions.DeleteFile(FtpClient, installFilePath);
+                            SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Uninstalled file.");
+                            indexFiles++;
                         }
                     }
-                    else if (installFilePath.Contains("{USBDEV}"))
+                    else // Uninstall folders
                     {
-                        if (!modItem.IsGameSave)
+                        SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Deleting folder: {installFilePath}");
+                        FtpExtensions.DeleteDirectory(FtpClient, installFilePath);
+                        SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Deleted folder.");
+                    }
+                }
+
+                // Delete empty folders from the /tmp folder
+                foreach (string installPath in modItem.InstallPaths.Where(x => x.Contains("dev_hdd0/tmp/")))
+                {
+                    var installPathWithoutFileName = Path.GetDirectoryName(installPath).Replace(@"\", "/");
+
+                    if (!installPathWithoutFileName.Equals("/dev_hdd0/tmp/"))
+                    {
+                        if (FtpClient.DirectoryExists(installPathWithoutFileName) && FtpExtensions.IsDirectoryEmpty(FtpClient, installPathWithoutFileName))
                         {
-                            if (!string.IsNullOrEmpty(usbDevice))
-                            {
-                                SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Uninstalling file: {Path.GetFileName(installPath)} ({indexFiles}/{totalFiles}) from {installPathWithoutFileName}");
-                                FtpClient.DeleteFile(installPath);
-                                SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully uninstalled file.");
-                                indexFiles++;
-                            }
+                            FtpExtensions.DeleteDirectory(FtpClient, installPathWithoutFileName);
                         }
-                    }
-                    else
-                    {
-                        SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Uninstalling file: {Path.GetFileName(installPath)} ({indexFiles}/{totalFiles}) from {installPathWithoutFileName}");
-                        FtpClient.DeleteFile(installPath);
-                        SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully uninstalled file.");
-                        indexFiles++;
                     }
                 }
 
@@ -1654,9 +1682,9 @@ Important Notes for Installing Game Saves:
                     }
                 }
 
-                SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully uninstalled {indexFiles - 1} files{(category.CategoryType == CategoryType.Game ? $" for {gameTitle})." : ".")}");
+                SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully uninstalled {indexFiles - 1} files{(category.CategoryType == CategoryType.Game ? $" for {gameTitle}." : ".")}");
                 _ = DarkMessageBox.Show(this,
-                    $"Successfully uninstalled: {modItem.Name} ({indexFiles - 1} files){(category.CategoryType == CategoryType.Game ? $" for {gameTitle})." : ".")}", "Success",
+                    $"Successfully uninstalled: {modItem.Name} ({indexFiles - 1} files){(category.CategoryType == CategoryType.Game ? $" for {gameTitle}." : "")}", "Success",
                     MessageBoxIcon.Information);
             }
             catch (Exception ex)

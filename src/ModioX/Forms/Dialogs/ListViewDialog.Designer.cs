@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Windows
 {
-    partial class ListItemDialog
+    partial class ListViewDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListItemDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListViewDialog));
             this.ListViewItems = new DarkUI.Controls.DarkListView();
             this.SectionItems = new DarkUI.Controls.DarkSectionPanel();
             this.SectionItems.SuspendLayout();
@@ -52,7 +52,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SectionItems.Controls.Add(this.ListViewItems);
-            this.SectionItems.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SectionItems.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.SectionItems.Location = new System.Drawing.Point(14, 14);
             this.SectionItems.Name = "SectionItems";
             this.SectionItems.SectionHeader = "Choose Item...";
@@ -85,6 +85,6 @@
         #endregion
 
         public DarkUI.Controls.DarkListView ListViewItems;
-        private DarkUI.Controls.DarkSectionPanel SectionItems;
+        public DarkUI.Controls.DarkSectionPanel SectionItems;
     }
 }

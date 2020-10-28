@@ -106,7 +106,7 @@
             // 
             // TextBoxDescription
             // 
-            this.TextBoxDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TextBoxDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxDescription.Location = new System.Drawing.Point(8, 241);
@@ -195,7 +195,7 @@
             // 
             // TextBoxLinks
             // 
-            this.TextBoxLinks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TextBoxLinks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxLinks.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxLinks.Location = new System.Drawing.Point(8, 323);

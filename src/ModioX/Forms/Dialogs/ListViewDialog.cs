@@ -5,9 +5,9 @@ using DarkUI.Forms;
 
 namespace ModioX.Windows
 {
-    public partial class ListItemDialog : DarkForm
+    public partial class ListViewDialog : DarkForm
     {
-        public ListItemDialog()
+        public ListViewDialog()
         {
             InitializeComponent();
         }
@@ -18,9 +18,6 @@ namespace ModioX.Windows
 
         private void ListViewDialog_Load(object sender, EventArgs e)
         {
-            SectionItems.SectionHeader = Text;
-            Text = "Choose Item...";
-
             foreach (var item in Items)
             {
                 ListViewItems.Items.Add(new DarkListItem {Text = item});

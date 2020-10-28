@@ -71,7 +71,7 @@
             this.SectionItems.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.SectionItems.Location = new System.Drawing.Point(12, 12);
             this.SectionItems.Name = "SectionItems";
-            this.SectionItems.SectionHeader = "Choose Profile...";
+            this.SectionItems.SectionHeader = "Choose Profile";
             this.SectionItems.Size = new System.Drawing.Size(224, 210);
             this.SectionItems.TabIndex = 2;
             // 

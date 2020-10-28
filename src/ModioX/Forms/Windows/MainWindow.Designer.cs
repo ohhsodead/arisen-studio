@@ -114,20 +114,20 @@
             this.MenuItemSettingsAutoDetectGameRegions = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettingsRememberGameRegions = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettingsAlwaysDownloadInstallFiles = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSeperator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuItemSettingsSeperator0 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemSettingsEditGameRegions = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettingsEditExternalApplications = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSeperator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuItemSettingsSeperator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemSettingsAddNewConsole = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSeperator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuItemSettingsSeperator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemSettingsResetAllSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemReportIssue = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSourceCode = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemHelpDiscordServer = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSeperator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuItemHelpSeperator0 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemMoreInformation = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSeperator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuItemHelpSeperator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuStripHelpCheckForUpdates = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripRefreshData = new System.Windows.Forms.ToolStripMenuItem();
@@ -190,6 +190,7 @@
             this.MenuGameModsStrip = new DarkUI.Controls.DarkToolStrip();
             this.ToolItemUninstallAllGameMods = new System.Windows.Forms.ToolStripButton();
             this.LabelInstalledGameModsStatus = new System.Windows.Forms.ToolStripLabel();
+            this.MenuItemHelpSeperator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
             this.SectionModsInstallFilePaths.SuspendLayout();
@@ -846,7 +847,7 @@
             this.MenuStripConnectPS3Console});
             this.MenuStripConnectPS3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripConnectPS3.Name = "MenuStripConnectPS3";
-            this.MenuStripConnectPS3.Size = new System.Drawing.Size(144, 22);
+            this.MenuStripConnectPS3.Size = new System.Drawing.Size(180, 22);
             this.MenuStripConnectPS3.Text = "PS3";
             // 
             // MenuStripConnectPS3Console
@@ -864,7 +865,7 @@
             this.MenuStripFileSeparator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripFileSeparator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.MenuStripFileSeparator0.Name = "MenuStripFileSeparator0";
-            this.MenuStripFileSeparator0.Size = new System.Drawing.Size(141, 6);
+            this.MenuStripFileSeparator0.Size = new System.Drawing.Size(177, 6);
             // 
             // MenuStripConnectOfflineMode
             // 
@@ -872,7 +873,7 @@
             this.MenuStripConnectOfflineMode.CheckOnClick = true;
             this.MenuStripConnectOfflineMode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripConnectOfflineMode.Name = "MenuStripConnectOfflineMode";
-            this.MenuStripConnectOfflineMode.Size = new System.Drawing.Size(144, 22);
+            this.MenuStripConnectOfflineMode.Size = new System.Drawing.Size(180, 22);
             this.MenuStripConnectOfflineMode.Text = "Offline Mode";
             // 
             // MenuItemTools
@@ -892,7 +893,7 @@
             this.MenuItemToolsGameBackupFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemToolsGameBackupFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemToolsGameBackupFiles.Name = "MenuItemToolsGameBackupFiles";
-            this.MenuItemToolsGameBackupFiles.Size = new System.Drawing.Size(173, 22);
+            this.MenuItemToolsGameBackupFiles.Size = new System.Drawing.Size(180, 22);
             this.MenuItemToolsGameBackupFiles.Text = "Game Backup Files";
             this.MenuItemToolsGameBackupFiles.Click += new System.EventHandler(this.MenuItemToolsBackupFileManager_Click);
             // 
@@ -902,14 +903,14 @@
             this.MenuItemToolsSeperator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemToolsSeperator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.MenuItemToolsSeperator0.Name = "MenuItemToolsSeperator0";
-            this.MenuItemToolsSeperator0.Size = new System.Drawing.Size(170, 6);
+            this.MenuItemToolsSeperator0.Size = new System.Drawing.Size(177, 6);
             // 
             // MenuItemToolsFileManager
             // 
             this.MenuItemToolsFileManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemToolsFileManager.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemToolsFileManager.Name = "MenuItemToolsFileManager";
-            this.MenuItemToolsFileManager.Size = new System.Drawing.Size(173, 22);
+            this.MenuItemToolsFileManager.Size = new System.Drawing.Size(180, 22);
             this.MenuItemToolsFileManager.Text = "File Manager";
             this.MenuItemToolsFileManager.Click += new System.EventHandler(this.MenuItemToolsFileManager_Click);
             // 
@@ -934,7 +935,7 @@
             this.MenuStripResourcesCustomFirmwareRebug});
             this.MenuItemCustomFirmware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemCustomFirmware.Name = "MenuItemCustomFirmware";
-            this.MenuItemCustomFirmware.Size = new System.Drawing.Size(168, 22);
+            this.MenuItemCustomFirmware.Size = new System.Drawing.Size(180, 22);
             this.MenuItemCustomFirmware.Text = "Custom Firmware";
             // 
             // MenuStripResourcesCustomFirmwareRebug
@@ -957,7 +958,7 @@
             this.MenuItemTTG});
             this.MenuItemModdingForums.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemModdingForums.Name = "MenuItemModdingForums";
-            this.MenuItemModdingForums.Size = new System.Drawing.Size(168, 22);
+            this.MenuItemModdingForums.Size = new System.Drawing.Size(180, 22);
             this.MenuItemModdingForums.Text = "Modding Forums";
             // 
             // MenuItemPsxPlace
@@ -1102,7 +1103,7 @@
             this.MenuItemBrewologyStore});
             this.MenuItemHomebrew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemHomebrew.Name = "MenuItemHomebrew";
-            this.MenuItemHomebrew.Size = new System.Drawing.Size(168, 22);
+            this.MenuItemHomebrew.Size = new System.Drawing.Size(180, 22);
             this.MenuItemHomebrew.Text = "Homebrew";
             // 
             // MenuItemBrewologyStore
@@ -1122,7 +1123,7 @@
             this.MenuStripResourcesGamesNoPsv2});
             this.MenuItemGames.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemGames.Name = "MenuItemGames";
-            this.MenuItemGames.Size = new System.Drawing.Size(168, 22);
+            this.MenuItemGames.Size = new System.Drawing.Size(180, 22);
             this.MenuItemGames.Text = "Games";
             // 
             // MenuStripResourcesGamesPsnDLv3
@@ -1151,7 +1152,7 @@
             this.MenuItemRedditPS3Homebrew});
             this.MenuItemReddit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemReddit.Name = "MenuItemReddit";
-            this.MenuItemReddit.Size = new System.Drawing.Size(168, 22);
+            this.MenuItemReddit.Size = new System.Drawing.Size(180, 22);
             this.MenuItemReddit.Text = "Reddit";
             // 
             // MenuItemRedditPS3Hacks
@@ -1188,12 +1189,12 @@
             this.MenuItemSettingsAutoDetectGameRegions,
             this.MenuItemSettingsRememberGameRegions,
             this.MenuItemSettingsAlwaysDownloadInstallFiles,
-            this.MenuItemSeperator2,
+            this.MenuItemSettingsSeperator0,
             this.MenuItemSettingsEditGameRegions,
             this.MenuItemSettingsEditExternalApplications,
-            this.MenuItemSeperator5,
+            this.MenuItemSettingsSeperator1,
             this.MenuItemSettingsAddNewConsole,
-            this.MenuItemSeperator6,
+            this.MenuItemSettingsSeperator2,
             this.MenuItemSettingsResetAllSettings});
             this.MenuItemSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemSettings.Name = "MenuItemSettings";
@@ -1240,13 +1241,13 @@
             this.MenuItemSettingsAlwaysDownloadInstallFiles.Text = "Always Download Install Files";
             this.MenuItemSettingsAlwaysDownloadInstallFiles.Click += new System.EventHandler(this.MenuItemSettingsAlwaysDownloadInstallFiles_Click);
             // 
-            // MenuItemSeperator2
+            // MenuItemSettingsSeperator0
             // 
-            this.MenuItemSeperator2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSeperator2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSeperator2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuItemSeperator2.Name = "MenuItemSeperator2";
-            this.MenuItemSeperator2.Size = new System.Drawing.Size(225, 6);
+            this.MenuItemSettingsSeperator0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemSettingsSeperator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemSettingsSeperator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.MenuItemSettingsSeperator0.Name = "MenuItemSettingsSeperator0";
+            this.MenuItemSettingsSeperator0.Size = new System.Drawing.Size(225, 6);
             // 
             // MenuItemSettingsEditGameRegions
             // 
@@ -1266,13 +1267,13 @@
             this.MenuItemSettingsEditExternalApplications.Text = "Edit Applications...";
             this.MenuItemSettingsEditExternalApplications.Click += new System.EventHandler(this.MenuItemSettingsEditExternalApplications_Click);
             // 
-            // MenuItemSeperator5
+            // MenuItemSettingsSeperator1
             // 
-            this.MenuItemSeperator5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSeperator5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSeperator5.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuItemSeperator5.Name = "MenuItemSeperator5";
-            this.MenuItemSeperator5.Size = new System.Drawing.Size(225, 6);
+            this.MenuItemSettingsSeperator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemSettingsSeperator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemSettingsSeperator1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.MenuItemSettingsSeperator1.Name = "MenuItemSettingsSeperator1";
+            this.MenuItemSettingsSeperator1.Size = new System.Drawing.Size(225, 6);
             // 
             // MenuItemSettingsAddNewConsole
             // 
@@ -1283,13 +1284,13 @@
             this.MenuItemSettingsAddNewConsole.Text = "Add New Console...";
             this.MenuItemSettingsAddNewConsole.Click += new System.EventHandler(this.MenuItemSettingsAddNewConsole_Click);
             // 
-            // MenuItemSeperator6
+            // MenuItemSettingsSeperator2
             // 
-            this.MenuItemSeperator6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSeperator6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSeperator6.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuItemSeperator6.Name = "MenuItemSeperator6";
-            this.MenuItemSeperator6.Size = new System.Drawing.Size(225, 6);
+            this.MenuItemSettingsSeperator2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemSettingsSeperator2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemSettingsSeperator2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.MenuItemSettingsSeperator2.Name = "MenuItemSettingsSeperator2";
+            this.MenuItemSettingsSeperator2.Size = new System.Drawing.Size(225, 6);
             // 
             // MenuItemSettingsResetAllSettings
             // 
@@ -1307,10 +1308,11 @@
             this.MenuItemReportIssue,
             this.MenuItemSourceCode,
             this.MenuItemHelpDiscordServer,
-            this.MenuItemSeperator3,
+            this.MenuItemHelpSeperator0,
             this.MenuItemMoreInformation,
-            this.MenuItemSeperator4,
+            this.MenuItemHelpSeperator1,
             this.MenuStripHelpCheckForUpdates,
+            this.MenuItemHelpSeperator2,
             this.MenuItemAbout});
             this.MenuItemHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemHelp.Name = "MenuItemHelp";
@@ -1344,13 +1346,13 @@
             this.MenuItemHelpDiscordServer.Text = "Discord Server";
             this.MenuItemHelpDiscordServer.Click += new System.EventHandler(this.MenuItemHelpDiscordServer_Click);
             // 
-            // MenuItemSeperator3
+            // MenuItemHelpSeperator0
             // 
-            this.MenuItemSeperator3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSeperator3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSeperator3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuItemSeperator3.Name = "MenuItemSeperator3";
-            this.MenuItemSeperator3.Size = new System.Drawing.Size(204, 6);
+            this.MenuItemHelpSeperator0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemHelpSeperator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemHelpSeperator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.MenuItemHelpSeperator0.Name = "MenuItemHelpSeperator0";
+            this.MenuItemHelpSeperator0.Size = new System.Drawing.Size(204, 6);
             // 
             // MenuItemMoreInformation
             // 
@@ -1361,13 +1363,13 @@
             this.MenuItemMoreInformation.Text = "More Information";
             this.MenuItemMoreInformation.Click += new System.EventHandler(this.MenuItemMoreInformation_Click);
             // 
-            // MenuItemSeperator4
+            // MenuItemHelpSeperator1
             // 
-            this.MenuItemSeperator4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSeperator4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSeperator4.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuItemSeperator4.Name = "MenuItemSeperator4";
-            this.MenuItemSeperator4.Size = new System.Drawing.Size(204, 6);
+            this.MenuItemHelpSeperator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemHelpSeperator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemHelpSeperator1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.MenuItemHelpSeperator1.Name = "MenuItemHelpSeperator1";
+            this.MenuItemHelpSeperator1.Size = new System.Drawing.Size(204, 6);
             // 
             // MenuStripHelpCheckForUpdates
             // 
@@ -2110,6 +2112,14 @@
             this.LabelInstalledGameModsStatus.Size = new System.Drawing.Size(170, 33);
             this.LabelInstalledGameModsStatus.Text = "0 Mods Installed (0 Files Total)";
             // 
+            // MenuItemHelpSeperator2
+            // 
+            this.MenuItemHelpSeperator2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemHelpSeperator2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemHelpSeperator2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.MenuItemHelpSeperator2.Name = "MenuItemHelpSeperator2";
+            this.MenuItemHelpSeperator2.Size = new System.Drawing.Size(204, 6);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -2226,7 +2236,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuStripResourcesGamesNoPsv2;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSourceCode;
         private System.Windows.Forms.ToolStripMenuItem MenuItemReportIssue;
-        private System.Windows.Forms.ToolStripSeparator MenuItemSeperator3;
+        private System.Windows.Forms.ToolStripSeparator MenuItemHelpSeperator0;
         private System.Windows.Forms.ToolStripMenuItem MenuItemAbout;
         private System.Windows.Forms.ToolStripMenuItem MenuItemCustomFirmware;
         private System.Windows.Forms.ToolStripMenuItem MenuStripResourcesCustomFirmwareRebug;
@@ -2266,7 +2276,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemToolsFileManager;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettings;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsAddNewConsole;
-        private System.Windows.Forms.ToolStripSeparator MenuItemSeperator2;
+        private System.Windows.Forms.ToolStripSeparator MenuItemSettingsSeperator0;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsShowModID;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsAutoDetectGameRegions;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsAlwaysDownloadInstallFiles;
@@ -2300,12 +2310,12 @@
         private System.Windows.Forms.Label LabelNoModsFound;
         private System.Windows.Forms.Label LabelNoModsInstalled;
         private System.Windows.Forms.ToolStripMenuItem MenuItemMoreInformation;
-        private System.Windows.Forms.ToolStripSeparator MenuItemSeperator4;
+        private System.Windows.Forms.ToolStripSeparator MenuItemHelpSeperator1;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsRememberGameRegions;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsEditGameRegions;
-        private System.Windows.Forms.ToolStripSeparator MenuItemSeperator5;
+        private System.Windows.Forms.ToolStripSeparator MenuItemSettingsSeperator1;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsEditExternalApplications;
-        private System.Windows.Forms.ToolStripSeparator MenuItemSeperator6;
+        private System.Windows.Forms.ToolStripSeparator MenuItemSettingsSeperator2;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsResetAllSettings;
         private System.Windows.Forms.ToolStripMenuItem MenuItemHelpDiscordServer;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsId;
@@ -2331,5 +2341,6 @@
         private System.Windows.Forms.ToolStripMenuItem MenuStripHelpCheckForUpdates;
         private DarkUI.Controls.DarkTitle LabelTitleHomebrew;
         private System.Windows.Forms.FlowLayoutPanel PanelHomebrew;
+        private System.Windows.Forms.ToolStripSeparator MenuItemHelpSeperator2;
     }
 }

@@ -47,9 +47,10 @@ namespace ModioX.Extensions
 
         public static string ShowListInputDialog(Form owner, string title, List<string> items)
         {
-            using (var listViewDialog = new ListItemDialog {Text = title, Items = items})
+            using (var listViewDialog = new ListViewDialog { Text = title, Items = items})
             {
-                return listViewDialog.ShowDialog(owner) == DialogResult.OK ? listViewDialog.SelectedItem : null;
+                listViewDialog.ShowDialog(owner);
+                return listViewDialog.SelectedItem;
             }
         }
 

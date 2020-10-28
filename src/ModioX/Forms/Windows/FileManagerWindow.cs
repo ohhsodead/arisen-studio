@@ -117,8 +117,7 @@ namespace ModioX.Forms.Windows
 
             if (MainWindow.Settings.SaveConsolePath)
             {
-                if (MainWindow.Settings.LocalPath.Equals(@"/") ||
-                    string.IsNullOrEmpty(MainWindow.Settings.ConsolePath))
+                if (MainWindow.Settings.ConsolePath.Equals(@"/") || string.IsNullOrEmpty(MainWindow.Settings.ConsolePath))
                 {
                     LoadConsoleDirectory("/dev_hdd0/");
                 }
@@ -142,6 +141,22 @@ namespace ModioX.Forms.Windows
             LoadLocalDirectory(ComboBoxLocalDrives.GetItemText(ComboBoxLocalDrives.SelectedItem) + @"\");
         }
 
+        private void ButtonLocalDirectory_Click(object sender, EventArgs e)
+        {
+            using (var folderBrowser = new FolderBrowserDialog { ShowNewFolderButton = true })
+            {
+                if (folderBrowser.ShowDialog() == DialogResult.OK)
+                {
+                    LocalDirectoryPath = folderBrowser.SelectedPath;
+
+                    if (Directory.Exists(folderBrowser.SelectedPath))
+                    {
+                        LoadLocalDirectory(LocalDirectoryPath);
+                    }
+                }
+            }
+        }
+
         private void DgvLocalFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var type = DgvLocalFiles.CurrentRow == null ? "" : DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
@@ -163,22 +178,6 @@ namespace ModioX.Forms.Windows
             }
 
             ToolStripLocalOpenExplorer.Enabled = Directory.Exists(TextBoxLocalPath.Text);
-        }
-
-        private void ButtonLocalDirectory_Click(object sender, EventArgs e)
-        {
-            using (var folderBrowser = new FolderBrowserDialog {ShowNewFolderButton = true})
-            {
-                if (folderBrowser.ShowDialog() == DialogResult.OK)
-                {
-                    LocalDirectoryPath = folderBrowser.SelectedPath;
-
-                    if (Directory.Exists(folderBrowser.SelectedPath))
-                    {
-                        LoadLocalDirectory(LocalDirectoryPath);
-                    }
-                }
-            }
         }
 
         private void DgvLocalFiles_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -210,14 +209,6 @@ namespace ModioX.Forms.Windows
                 ContextMenuLocalDeleteFile.Enabled = type == "file" || (type == "folder") & (name != "..");
                 ContextMenuLocalRenameFile.Enabled = (type == "file") & (name != "..");
                 ContextMenuLocalRenameFolder.Enabled = (type == "folder") & (name != "..");
-            }
-        }
-
-        private void DgvLocalFiles_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
             }
         }
 
@@ -382,7 +373,14 @@ namespace ModioX.Forms.Windows
                 string statusFolders = folders > 0 ? $"{folders} {(folders <= 1 ? "directory" : "directories")}. " : "";
                 string statusTotalBytes = files > 0 ? $"Total size: {totalBytes.ToString("n0", CultureInfo.CurrentCulture)} bytes" : "";
 
-                SetLocalStatus($"{statusFiles}{statusFolders}{statusTotalBytes}");
+                if (files < 1 && folders < 1)
+                {
+                    SetLocalStatus("Empty directory.");
+                }
+                else
+                {
+                    SetLocalStatus($"{statusFiles}{statusFolders}{statusTotalBytes}");
+                }
             }
             catch (Exception ex)
             {
@@ -445,14 +443,6 @@ namespace ModioX.Forms.Windows
                 ContextMenuItemConsoleDeleteFile.Enabled = type == "file" || (type == "folder") & (name != "..");
                 ContextMenuItemConsoleRenameFile.Enabled = (type == "file") & (name != "..");
                 ContextMenuItemConsoleRenameFolder.Enabled = (type == "folder") & (name != "..");
-            }
-        }
-
-        private void DgvConsoleFiles_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
             }
         }
 
@@ -660,7 +650,14 @@ namespace ModioX.Forms.Windows
                 string statusFolders = folders.Count > 0 ? $"{folders.Count} {(folders.Count <= 1 ? "directory" : "directories")}. " : "";
                 string statusTotalBytes = files.Count > 0 ? $"Total size: {totalBytes.ToString("n0", CultureInfo.CurrentCulture)} bytes" : "";
 
-                SetConsoleStatus($"{statusFiles}{statusFolders}{statusTotalBytes}");
+                if (files.Count < 1 && folders.Count < 1)
+                {
+                    SetConsoleStatus("Empty directory.");
+                }
+                else
+                {
+                    SetConsoleStatus($"{statusFiles}{statusFolders}{statusTotalBytes}");
+                }
             }
             catch (FtpException ex)
             {
@@ -815,17 +812,14 @@ namespace ModioX.Forms.Windows
                     {
                         SetConsoleStatus($"Deleting folder: {itemPath}");
 
-                        FtpExtensions.DeleteDirectory(MainWindow.FtpConnection, itemPath);
+                        FtpExtensions.DeleteDirectory(FtpClient, itemPath);
 
                         SetConsoleStatus("Successfully deleted folder.");
                     }
                     else if (type.Equals("file"))
                     {
                         SetConsoleStatus($"Deleting file: {itemPath}");
-                        if (FtpClient.FileExists(itemPath))
-                        {
-                            FtpClient.DeleteFile(itemPath);
-                        }
+                        FtpExtensions.DeleteFile(FtpClient, itemPath);
                         SetConsoleStatus("Successfully deleted file.");
                     }
 

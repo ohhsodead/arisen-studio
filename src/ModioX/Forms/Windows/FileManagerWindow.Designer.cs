@@ -420,7 +420,6 @@
             this.DgvLocalFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLocalFiles_CellDoubleClick);
             this.DgvLocalFiles.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
             this.DgvLocalFiles.SelectionChanged += new System.EventHandler(this.DgvLocalFiles_SelectionChanged);
-            this.DgvLocalFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvLocalFiles_KeyDown);
             // 
             // ColumnLocalType
             // 
@@ -723,7 +722,6 @@
             this.DgvConsoleFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvConsoleFiles_CellDoubleClick);
             this.DgvConsoleFiles.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
             this.DgvConsoleFiles.SelectionChanged += new System.EventHandler(this.DgvConsoleFiles_SelectionChanged);
-            this.DgvConsoleFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvConsoleFiles_KeyDown);
             // 
             // ColumnConsoleFileType
             // 
