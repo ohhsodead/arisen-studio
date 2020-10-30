@@ -398,16 +398,6 @@ namespace ModioX.Forms.Windows
             _ = Process.Start("https://store.brewology.com/homebrew.php?lang=");
         }
 
-        private void MenuStripResourcesGamesPsnDLv3_Click(object sender, EventArgs e)
-        {
-            _ = Process.Start("http://psndl.net/packages");
-        }
-
-        private void MenuStripResourcesGamesNoPsv2_Click(object sender, EventArgs e)
-        {
-            _ = Process.Start("http://nopaystation.com/");
-        }
-
         private void MenuItemSettingsShowModID_Click(object sender, EventArgs e)
         {
             Settings.ShowModIds = MenuItemSettingsShowModID.Checked;
@@ -1555,8 +1545,8 @@ Important Notes for Installing Game Saves:
                         // Inform the user a USB device must be connected 
                         if (DarkMessageBox.Show(this,
                             "Some files may have been files to be installed to a USB device. You can either choose to uninstall them now or manually delete them yourself." +
-                            "\n\nIf you would like to uninstall the files from your USB device, then connect the same USB device to your console and click 'Yes' to continue." +
-                            "\n\nIf you woudln't like to uninstall the files from your USB device, then click 'No' and these files will be ignored.",
+                            "\n\nIf you would like to uninstall the files, then connect the same USB device to your console and click 'Yes' to continue." +
+                            "\n\nIf you wouldn't like to uninstall the files from your USB device, then click 'No' and these files will be ignored.",
                             "Uninstall USB File", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching USB device...");
@@ -1632,7 +1622,7 @@ Important Notes for Installing Game Saves:
                             if (!modItem.IsGameSave && !string.IsNullOrEmpty(usbDevice))
                             {
                                 SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Uninstalling file: {Path.GetFileName(installPath)} ({indexFiles}/{totalFiles}) from {installPathWithoutFileName}");
-                                FtpExtensions.DeleteFile(FtpClient, installFilePath);
+                                FtpExtensions.DeleteFile(FtpClient, installPath);
                                 SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Uninstalled file.");
                                 indexFiles++;
                             }
@@ -1640,15 +1630,15 @@ Important Notes for Installing Game Saves:
                         else
                         {
                             SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Uninstalling file: {Path.GetFileName(installPath)} ({indexFiles}/{totalFiles}) from {installPathWithoutFileName}");
-                            FtpExtensions.DeleteFile(FtpClient, installFilePath);
+                            FtpExtensions.DeleteFile(FtpClient, installPath);
                             SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Uninstalled file.");
                             indexFiles++;
                         }
                     }
                     else // Uninstall folders
                     {
-                        SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Deleting folder: {installFilePath}");
-                        FtpExtensions.DeleteDirectory(FtpClient, installFilePath);
+                        SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Deleting folder: {installPath}");
+                        FtpExtensions.DeleteDirectory(FtpClient, installPath);
                         SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Deleted folder.");
                     }
                 }

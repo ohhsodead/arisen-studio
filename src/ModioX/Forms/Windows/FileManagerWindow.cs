@@ -646,8 +646,8 @@ namespace ModioX.Forms.Windows
                     totalBytes += listItem.Size;
                 }
 
-                string statusFiles = files.Count > 0 ? $"{files.Count} {(files.Count <= 1 ? "file" : "files")} {(files.Count > 0 && folders.Count > 0 ? "and " : "")}" : "" + $"{(folders.Count < 1 ? "." : "")}";
-                string statusFolders = folders.Count > 0 ? $"{folders.Count} {(folders.Count <= 1 ? "directory" : "directories")}. " : "";
+                string statusFiles = files.Count > 0 ? $"{files.Count} {(files.Count == 1 ? "file" : "files")} {(files.Count > 0 && folders.Count > 0 ? "and " : "")}" : "" + $"{(folders.Count == 0 ? "." : "")}";
+                string statusFolders = folders.Count > 0 ? $"{folders.Count} {(folders.Count == 1 ? "directory" : "directories")}. " : "";
                 string statusTotalBytes = files.Count > 0 ? $"Total size: {totalBytes.ToString("n0", CultureInfo.CurrentCulture)} bytes" : "";
 
                 if (files.Count < 1 && folders.Count < 1)
