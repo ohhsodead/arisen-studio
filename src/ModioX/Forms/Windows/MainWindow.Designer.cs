@@ -82,6 +82,29 @@
             this.MenuItemToolsGameBackupFiles = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemToolsSeperator0 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemToolsFileManager = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemResources = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemCustomFirmware = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStripResourcesCustomFirmwareRebug = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemModdingForums = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemPsxPlace = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemPSXPlacePs3Mods = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemPSXPlaceGameMods = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemPSXScene = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemPSXScenePS3Mods = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemPSXSceneGameMods = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemNGU = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemNGUPS3Mods = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemSe7enSins = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemSe7enSinsPS3Mods = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemSe7enSinsGameMods = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemTTG = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemTTGPS3Mods = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemTTGGameMods = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemHomebrew = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemBrewologyStore = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemReddit = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemRedditPS3Hacks = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemRedditPS3Homebrew = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemApplications = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettingsShowModID = new System.Windows.Forms.ToolStripMenuItem();
@@ -165,29 +188,6 @@
             this.MenuGameModsStrip = new DarkUI.Controls.DarkToolStrip();
             this.ToolItemUninstallAllGameMods = new System.Windows.Forms.ToolStripButton();
             this.LabelInstalledGameModsStatus = new System.Windows.Forms.ToolStripLabel();
-            this.MenuItemCustomFirmware = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripResourcesCustomFirmwareRebug = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemModdingForums = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemPsxPlace = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemPSXPlacePs3Mods = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemPSXPlaceGameMods = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemPSXScene = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemPSXScenePS3Mods = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemPSXSceneGameMods = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemNGU = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemNGUPS3Mods = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSe7enSins = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSe7enSinsPS3Mods = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSe7enSinsGameMods = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemTTG = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemTTGPS3Mods = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemTTGGameMods = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemHomebrew = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemBrewologyStore = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemReddit = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemRedditPS3Hacks = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemRedditPS3Homebrew = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemResources = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
             this.SectionModsInstallFilePaths.SuspendLayout();
@@ -890,7 +890,7 @@
             this.MenuItemToolsGameBackupFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemToolsGameBackupFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemToolsGameBackupFiles.Name = "MenuItemToolsGameBackupFiles";
-            this.MenuItemToolsGameBackupFiles.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemToolsGameBackupFiles.Size = new System.Drawing.Size(173, 22);
             this.MenuItemToolsGameBackupFiles.Text = "Game Backup Files";
             this.MenuItemToolsGameBackupFiles.Click += new System.EventHandler(this.MenuItemToolsBackupFileManager_Click);
             // 
@@ -900,16 +900,245 @@
             this.MenuItemToolsSeperator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemToolsSeperator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.MenuItemToolsSeperator0.Name = "MenuItemToolsSeperator0";
-            this.MenuItemToolsSeperator0.Size = new System.Drawing.Size(177, 6);
+            this.MenuItemToolsSeperator0.Size = new System.Drawing.Size(170, 6);
             // 
             // MenuItemToolsFileManager
             // 
             this.MenuItemToolsFileManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemToolsFileManager.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemToolsFileManager.Name = "MenuItemToolsFileManager";
-            this.MenuItemToolsFileManager.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemToolsFileManager.Size = new System.Drawing.Size(173, 22);
             this.MenuItemToolsFileManager.Text = "File Manager";
             this.MenuItemToolsFileManager.Click += new System.EventHandler(this.MenuItemToolsFileManager_Click);
+            // 
+            // MenuItemResources
+            // 
+            this.MenuItemResources.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemResources.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemCustomFirmware,
+            this.MenuItemModdingForums,
+            this.MenuItemHomebrew,
+            this.MenuItemReddit});
+            this.MenuItemResources.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemResources.Name = "MenuItemResources";
+            this.MenuItemResources.Size = new System.Drawing.Size(82, 19);
+            this.MenuItemResources.Text = "RESOURCES";
+            // 
+            // MenuItemCustomFirmware
+            // 
+            this.MenuItemCustomFirmware.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemCustomFirmware.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuStripResourcesCustomFirmwareRebug});
+            this.MenuItemCustomFirmware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemCustomFirmware.Name = "MenuItemCustomFirmware";
+            this.MenuItemCustomFirmware.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemCustomFirmware.Text = "Custom Firmware";
+            // 
+            // MenuStripResourcesCustomFirmwareRebug
+            // 
+            this.MenuStripResourcesCustomFirmwareRebug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuStripResourcesCustomFirmwareRebug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuStripResourcesCustomFirmwareRebug.Name = "MenuStripResourcesCustomFirmwareRebug";
+            this.MenuStripResourcesCustomFirmwareRebug.Size = new System.Drawing.Size(128, 22);
+            this.MenuStripResourcesCustomFirmwareRebug.Text = "Rebug.me";
+            this.MenuStripResourcesCustomFirmwareRebug.Click += new System.EventHandler(this.MenuStripResourcesCustomFirmwareRebug_Click);
+            // 
+            // MenuItemModdingForums
+            // 
+            this.MenuItemModdingForums.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemModdingForums.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemPsxPlace,
+            this.MenuItemPSXScene,
+            this.MenuItemNGU,
+            this.MenuItemSe7enSins,
+            this.MenuItemTTG});
+            this.MenuItemModdingForums.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemModdingForums.Name = "MenuItemModdingForums";
+            this.MenuItemModdingForums.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemModdingForums.Text = "Modding Forums";
+            // 
+            // MenuItemPsxPlace
+            // 
+            this.MenuItemPsxPlace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemPsxPlace.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemPSXPlacePs3Mods,
+            this.MenuItemPSXPlaceGameMods});
+            this.MenuItemPsxPlace.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemPsxPlace.Name = "MenuItemPsxPlace";
+            this.MenuItemPsxPlace.Size = new System.Drawing.Size(158, 22);
+            this.MenuItemPsxPlace.Text = "PSX Place";
+            // 
+            // MenuItemPSXPlacePs3Mods
+            // 
+            this.MenuItemPSXPlacePs3Mods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemPSXPlacePs3Mods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemPSXPlacePs3Mods.Name = "MenuItemPSXPlacePs3Mods";
+            this.MenuItemPSXPlacePs3Mods.Size = new System.Drawing.Size(143, 22);
+            this.MenuItemPSXPlacePs3Mods.Text = "PS3 Mods";
+            this.MenuItemPSXPlacePs3Mods.Click += new System.EventHandler(this.MenuStripResourcesForumsPsxPlacePs3Mods_Click);
+            // 
+            // MenuItemPSXPlaceGameMods
+            // 
+            this.MenuItemPSXPlaceGameMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemPSXPlaceGameMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemPSXPlaceGameMods.Name = "MenuItemPSXPlaceGameMods";
+            this.MenuItemPSXPlaceGameMods.Size = new System.Drawing.Size(143, 22);
+            this.MenuItemPSXPlaceGameMods.Text = "Games Mods";
+            this.MenuItemPSXPlaceGameMods.Click += new System.EventHandler(this.MenuStripResourcesForumsPsxPlaceGameMods_Click);
+            // 
+            // MenuItemPSXScene
+            // 
+            this.MenuItemPSXScene.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemPSXScene.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemPSXScenePS3Mods,
+            this.MenuItemPSXSceneGameMods});
+            this.MenuItemPSXScene.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemPSXScene.Name = "MenuItemPSXScene";
+            this.MenuItemPSXScene.Size = new System.Drawing.Size(158, 22);
+            this.MenuItemPSXScene.Text = "PSX Scene";
+            // 
+            // MenuItemPSXScenePS3Mods
+            // 
+            this.MenuItemPSXScenePS3Mods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemPSXScenePS3Mods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemPSXScenePS3Mods.Name = "MenuItemPSXScenePS3Mods";
+            this.MenuItemPSXScenePS3Mods.Size = new System.Drawing.Size(138, 22);
+            this.MenuItemPSXScenePS3Mods.Text = "PS3 Mods";
+            this.MenuItemPSXScenePS3Mods.Click += new System.EventHandler(this.MenuStripResourcesForumsPsxScenePs3Mods_Click);
+            // 
+            // MenuItemPSXSceneGameMods
+            // 
+            this.MenuItemPSXSceneGameMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemPSXSceneGameMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemPSXSceneGameMods.Name = "MenuItemPSXSceneGameMods";
+            this.MenuItemPSXSceneGameMods.Size = new System.Drawing.Size(138, 22);
+            this.MenuItemPSXSceneGameMods.Text = "Game Mods";
+            this.MenuItemPSXSceneGameMods.Click += new System.EventHandler(this.MenuStripResourcesForumsPsxSceneGameMods_Click);
+            // 
+            // MenuItemNGU
+            // 
+            this.MenuItemNGU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemNGU.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemNGUPS3Mods});
+            this.MenuItemNGU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemNGU.Name = "MenuItemNGU";
+            this.MenuItemNGU.Size = new System.Drawing.Size(158, 22);
+            this.MenuItemNGU.Text = "NextGenUpdate";
+            // 
+            // MenuItemNGUPS3Mods
+            // 
+            this.MenuItemNGUPS3Mods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemNGUPS3Mods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemNGUPS3Mods.Name = "MenuItemNGUPS3Mods";
+            this.MenuItemNGUPS3Mods.Size = new System.Drawing.Size(178, 22);
+            this.MenuItemNGUPS3Mods.Text = "PS3 Mods && Cheats";
+            this.MenuItemNGUPS3Mods.Click += new System.EventHandler(this.MenuStripResourcesForumsNguPs3Mods_Click);
+            // 
+            // MenuItemSe7enSins
+            // 
+            this.MenuItemSe7enSins.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemSe7enSins.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemSe7enSinsPS3Mods,
+            this.MenuItemSe7enSinsGameMods});
+            this.MenuItemSe7enSins.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemSe7enSins.Name = "MenuItemSe7enSins";
+            this.MenuItemSe7enSins.Size = new System.Drawing.Size(158, 22);
+            this.MenuItemSe7enSins.Text = "Se7enSins";
+            // 
+            // MenuItemSe7enSinsPS3Mods
+            // 
+            this.MenuItemSe7enSinsPS3Mods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemSe7enSinsPS3Mods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemSe7enSinsPS3Mods.Name = "MenuItemSe7enSinsPS3Mods";
+            this.MenuItemSe7enSinsPS3Mods.Size = new System.Drawing.Size(138, 22);
+            this.MenuItemSe7enSinsPS3Mods.Text = "PS3 Mods";
+            this.MenuItemSe7enSinsPS3Mods.Click += new System.EventHandler(this.PS3ModsToolStripMenuItem_Click);
+            // 
+            // MenuItemSe7enSinsGameMods
+            // 
+            this.MenuItemSe7enSinsGameMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemSe7enSinsGameMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemSe7enSinsGameMods.Name = "MenuItemSe7enSinsGameMods";
+            this.MenuItemSe7enSinsGameMods.Size = new System.Drawing.Size(138, 22);
+            this.MenuItemSe7enSinsGameMods.Text = "Game Mods";
+            this.MenuItemSe7enSinsGameMods.Click += new System.EventHandler(this.GameModsToolStripMenuItem_Click);
+            // 
+            // MenuItemTTG
+            // 
+            this.MenuItemTTG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemTTG.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemTTGPS3Mods,
+            this.MenuItemTTGGameMods});
+            this.MenuItemTTG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemTTG.Name = "MenuItemTTG";
+            this.MenuItemTTG.Size = new System.Drawing.Size(158, 22);
+            this.MenuItemTTG.Text = "TheTechGame";
+            // 
+            // MenuItemTTGPS3Mods
+            // 
+            this.MenuItemTTGPS3Mods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemTTGPS3Mods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemTTGPS3Mods.Name = "MenuItemTTGPS3Mods";
+            this.MenuItemTTGPS3Mods.Size = new System.Drawing.Size(138, 22);
+            this.MenuItemTTGPS3Mods.Text = "PS3 Mods";
+            this.MenuItemTTGPS3Mods.Click += new System.EventHandler(this.PS3ModsToolStripMenuItem3_Click);
+            // 
+            // MenuItemTTGGameMods
+            // 
+            this.MenuItemTTGGameMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemTTGGameMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemTTGGameMods.Name = "MenuItemTTGGameMods";
+            this.MenuItemTTGGameMods.Size = new System.Drawing.Size(138, 22);
+            this.MenuItemTTGGameMods.Text = "Game Mods";
+            this.MenuItemTTGGameMods.Click += new System.EventHandler(this.GameModsToolStripMenuItem2_Click);
+            // 
+            // MenuItemHomebrew
+            // 
+            this.MenuItemHomebrew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemHomebrew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemBrewologyStore});
+            this.MenuItemHomebrew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemHomebrew.Name = "MenuItemHomebrew";
+            this.MenuItemHomebrew.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemHomebrew.Text = "Homebrew";
+            // 
+            // MenuItemBrewologyStore
+            // 
+            this.MenuItemBrewologyStore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemBrewologyStore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemBrewologyStore.Name = "MenuItemBrewologyStore";
+            this.MenuItemBrewologyStore.Size = new System.Drawing.Size(160, 22);
+            this.MenuItemBrewologyStore.Text = "Brewology Store";
+            this.MenuItemBrewologyStore.Click += new System.EventHandler(this.MenuStripResourcesBrewology_Click);
+            // 
+            // MenuItemReddit
+            // 
+            this.MenuItemReddit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemReddit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemRedditPS3Hacks,
+            this.MenuItemRedditPS3Homebrew});
+            this.MenuItemReddit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemReddit.Name = "MenuItemReddit";
+            this.MenuItemReddit.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemReddit.Text = "Reddit";
+            // 
+            // MenuItemRedditPS3Hacks
+            // 
+            this.MenuItemRedditPS3Hacks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemRedditPS3Hacks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemRedditPS3Hacks.Name = "MenuItemRedditPS3Hacks";
+            this.MenuItemRedditPS3Hacks.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemRedditPS3Hacks.Text = "PS3 Hacks";
+            this.MenuItemRedditPS3Hacks.Click += new System.EventHandler(this.MenuStripResourcesRedditPs3Hacks_Click);
+            // 
+            // MenuItemRedditPS3Homebrew
+            // 
+            this.MenuItemRedditPS3Homebrew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuItemRedditPS3Homebrew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.MenuItemRedditPS3Homebrew.Name = "MenuItemRedditPS3Homebrew";
+            this.MenuItemRedditPS3Homebrew.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemRedditPS3Homebrew.Text = "PS3 Homebrew";
+            this.MenuItemRedditPS3Homebrew.Click += new System.EventHandler(this.MenuStripResourcesRedditPs3Homebrew_Click);
             // 
             // MenuItemApplications
             // 
@@ -923,15 +1152,15 @@
             // 
             this.MenuItemSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemSettingsAddNewConsole,
+            this.MenuItemSettingsSeperator0,
             this.MenuItemSettingsShowModID,
             this.MenuItemSettingsAutoDetectGameRegions,
             this.MenuItemSettingsRememberGameRegions,
             this.MenuItemSettingsAlwaysDownloadInstallFiles,
-            this.MenuItemSettingsSeperator0,
+            this.MenuItemSettingsSeperator1,
             this.MenuItemSettingsEditGameRegions,
             this.MenuItemSettingsEditExternalApplications,
-            this.MenuItemSettingsSeperator1,
-            this.MenuItemSettingsAddNewConsole,
             this.MenuItemSettingsSeperator2,
             this.MenuItemSettingsResetAllSettings});
             this.MenuItemSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
@@ -1857,235 +2086,6 @@
             this.LabelInstalledGameModsStatus.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.LabelInstalledGameModsStatus.Size = new System.Drawing.Size(170, 33);
             this.LabelInstalledGameModsStatus.Text = "0 Mods Installed (0 Files Total)";
-            // 
-            // MenuItemCustomFirmware
-            // 
-            this.MenuItemCustomFirmware.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemCustomFirmware.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuStripResourcesCustomFirmwareRebug});
-            this.MenuItemCustomFirmware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemCustomFirmware.Name = "MenuItemCustomFirmware";
-            this.MenuItemCustomFirmware.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemCustomFirmware.Text = "Custom Firmware";
-            // 
-            // MenuStripResourcesCustomFirmwareRebug
-            // 
-            this.MenuStripResourcesCustomFirmwareRebug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripResourcesCustomFirmwareRebug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripResourcesCustomFirmwareRebug.Name = "MenuStripResourcesCustomFirmwareRebug";
-            this.MenuStripResourcesCustomFirmwareRebug.Size = new System.Drawing.Size(128, 22);
-            this.MenuStripResourcesCustomFirmwareRebug.Text = "Rebug.me";
-            this.MenuStripResourcesCustomFirmwareRebug.Click += new System.EventHandler(this.MenuStripResourcesCustomFirmwareRebug_Click);
-            // 
-            // MenuItemModdingForums
-            // 
-            this.MenuItemModdingForums.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemModdingForums.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemPsxPlace,
-            this.MenuItemPSXScene,
-            this.MenuItemNGU,
-            this.MenuItemSe7enSins,
-            this.MenuItemTTG});
-            this.MenuItemModdingForums.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemModdingForums.Name = "MenuItemModdingForums";
-            this.MenuItemModdingForums.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemModdingForums.Text = "Modding Forums";
-            // 
-            // MenuItemPsxPlace
-            // 
-            this.MenuItemPsxPlace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemPsxPlace.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemPSXPlacePs3Mods,
-            this.MenuItemPSXPlaceGameMods});
-            this.MenuItemPsxPlace.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemPsxPlace.Name = "MenuItemPsxPlace";
-            this.MenuItemPsxPlace.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemPsxPlace.Text = "PSX Place";
-            // 
-            // MenuItemPSXPlacePs3Mods
-            // 
-            this.MenuItemPSXPlacePs3Mods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemPSXPlacePs3Mods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemPSXPlacePs3Mods.Name = "MenuItemPSXPlacePs3Mods";
-            this.MenuItemPSXPlacePs3Mods.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemPSXPlacePs3Mods.Text = "PS3 Mods";
-            this.MenuItemPSXPlacePs3Mods.Click += new System.EventHandler(this.MenuStripResourcesForumsPsxPlacePs3Mods_Click);
-            // 
-            // MenuItemPSXPlaceGameMods
-            // 
-            this.MenuItemPSXPlaceGameMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemPSXPlaceGameMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemPSXPlaceGameMods.Name = "MenuItemPSXPlaceGameMods";
-            this.MenuItemPSXPlaceGameMods.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemPSXPlaceGameMods.Text = "Games Mods";
-            this.MenuItemPSXPlaceGameMods.Click += new System.EventHandler(this.MenuStripResourcesForumsPsxPlaceGameMods_Click);
-            // 
-            // MenuItemPSXScene
-            // 
-            this.MenuItemPSXScene.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemPSXScene.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemPSXScenePS3Mods,
-            this.MenuItemPSXSceneGameMods});
-            this.MenuItemPSXScene.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemPSXScene.Name = "MenuItemPSXScene";
-            this.MenuItemPSXScene.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemPSXScene.Text = "PSX Scene";
-            // 
-            // MenuItemPSXScenePS3Mods
-            // 
-            this.MenuItemPSXScenePS3Mods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemPSXScenePS3Mods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemPSXScenePS3Mods.Name = "MenuItemPSXScenePS3Mods";
-            this.MenuItemPSXScenePS3Mods.Size = new System.Drawing.Size(138, 22);
-            this.MenuItemPSXScenePS3Mods.Text = "PS3 Mods";
-            this.MenuItemPSXScenePS3Mods.Click += new System.EventHandler(this.MenuStripResourcesForumsPsxScenePs3Mods_Click);
-            // 
-            // MenuItemPSXSceneGameMods
-            // 
-            this.MenuItemPSXSceneGameMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemPSXSceneGameMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemPSXSceneGameMods.Name = "MenuItemPSXSceneGameMods";
-            this.MenuItemPSXSceneGameMods.Size = new System.Drawing.Size(138, 22);
-            this.MenuItemPSXSceneGameMods.Text = "Game Mods";
-            this.MenuItemPSXSceneGameMods.Click += new System.EventHandler(this.MenuStripResourcesForumsPsxSceneGameMods_Click);
-            // 
-            // MenuItemNGU
-            // 
-            this.MenuItemNGU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemNGU.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemNGUPS3Mods});
-            this.MenuItemNGU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemNGU.Name = "MenuItemNGU";
-            this.MenuItemNGU.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemNGU.Text = "NextGenUpdate";
-            // 
-            // MenuItemNGUPS3Mods
-            // 
-            this.MenuItemNGUPS3Mods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemNGUPS3Mods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemNGUPS3Mods.Name = "MenuItemNGUPS3Mods";
-            this.MenuItemNGUPS3Mods.Size = new System.Drawing.Size(178, 22);
-            this.MenuItemNGUPS3Mods.Text = "PS3 Mods && Cheats";
-            this.MenuItemNGUPS3Mods.Click += new System.EventHandler(this.MenuStripResourcesForumsNguPs3Mods_Click);
-            // 
-            // MenuItemSe7enSins
-            // 
-            this.MenuItemSe7enSins.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSe7enSins.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemSe7enSinsPS3Mods,
-            this.MenuItemSe7enSinsGameMods});
-            this.MenuItemSe7enSins.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSe7enSins.Name = "MenuItemSe7enSins";
-            this.MenuItemSe7enSins.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemSe7enSins.Text = "Se7enSins";
-            // 
-            // MenuItemSe7enSinsPS3Mods
-            // 
-            this.MenuItemSe7enSinsPS3Mods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSe7enSinsPS3Mods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSe7enSinsPS3Mods.Name = "MenuItemSe7enSinsPS3Mods";
-            this.MenuItemSe7enSinsPS3Mods.Size = new System.Drawing.Size(138, 22);
-            this.MenuItemSe7enSinsPS3Mods.Text = "PS3 Mods";
-            this.MenuItemSe7enSinsPS3Mods.Click += new System.EventHandler(this.PS3ModsToolStripMenuItem_Click);
-            // 
-            // MenuItemSe7enSinsGameMods
-            // 
-            this.MenuItemSe7enSinsGameMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSe7enSinsGameMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSe7enSinsGameMods.Name = "MenuItemSe7enSinsGameMods";
-            this.MenuItemSe7enSinsGameMods.Size = new System.Drawing.Size(138, 22);
-            this.MenuItemSe7enSinsGameMods.Text = "Game Mods";
-            this.MenuItemSe7enSinsGameMods.Click += new System.EventHandler(this.GameModsToolStripMenuItem_Click);
-            // 
-            // MenuItemTTG
-            // 
-            this.MenuItemTTG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemTTG.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemTTGPS3Mods,
-            this.MenuItemTTGGameMods});
-            this.MenuItemTTG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemTTG.Name = "MenuItemTTG";
-            this.MenuItemTTG.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemTTG.Text = "TheTechGame";
-            // 
-            // MenuItemTTGPS3Mods
-            // 
-            this.MenuItemTTGPS3Mods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemTTGPS3Mods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemTTGPS3Mods.Name = "MenuItemTTGPS3Mods";
-            this.MenuItemTTGPS3Mods.Size = new System.Drawing.Size(138, 22);
-            this.MenuItemTTGPS3Mods.Text = "PS3 Mods";
-            this.MenuItemTTGPS3Mods.Click += new System.EventHandler(this.PS3ModsToolStripMenuItem3_Click);
-            // 
-            // MenuItemTTGGameMods
-            // 
-            this.MenuItemTTGGameMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemTTGGameMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemTTGGameMods.Name = "MenuItemTTGGameMods";
-            this.MenuItemTTGGameMods.Size = new System.Drawing.Size(138, 22);
-            this.MenuItemTTGGameMods.Text = "Game Mods";
-            this.MenuItemTTGGameMods.Click += new System.EventHandler(this.GameModsToolStripMenuItem2_Click);
-            // 
-            // MenuItemHomebrew
-            // 
-            this.MenuItemHomebrew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemHomebrew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemBrewologyStore});
-            this.MenuItemHomebrew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemHomebrew.Name = "MenuItemHomebrew";
-            this.MenuItemHomebrew.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemHomebrew.Text = "Homebrew";
-            // 
-            // MenuItemBrewologyStore
-            // 
-            this.MenuItemBrewologyStore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemBrewologyStore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemBrewologyStore.Name = "MenuItemBrewologyStore";
-            this.MenuItemBrewologyStore.Size = new System.Drawing.Size(160, 22);
-            this.MenuItemBrewologyStore.Text = "Brewology Store";
-            this.MenuItemBrewologyStore.Click += new System.EventHandler(this.MenuStripResourcesBrewology_Click);
-            // 
-            // MenuItemReddit
-            // 
-            this.MenuItemReddit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemReddit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemRedditPS3Hacks,
-            this.MenuItemRedditPS3Homebrew});
-            this.MenuItemReddit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemReddit.Name = "MenuItemReddit";
-            this.MenuItemReddit.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemReddit.Text = "Reddit";
-            // 
-            // MenuItemRedditPS3Hacks
-            // 
-            this.MenuItemRedditPS3Hacks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemRedditPS3Hacks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemRedditPS3Hacks.Name = "MenuItemRedditPS3Hacks";
-            this.MenuItemRedditPS3Hacks.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemRedditPS3Hacks.Text = "PS3 Hacks";
-            this.MenuItemRedditPS3Hacks.Click += new System.EventHandler(this.MenuStripResourcesRedditPs3Hacks_Click);
-            // 
-            // MenuItemRedditPS3Homebrew
-            // 
-            this.MenuItemRedditPS3Homebrew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemRedditPS3Homebrew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemRedditPS3Homebrew.Name = "MenuItemRedditPS3Homebrew";
-            this.MenuItemRedditPS3Homebrew.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemRedditPS3Homebrew.Text = "PS3 Homebrew";
-            this.MenuItemRedditPS3Homebrew.Click += new System.EventHandler(this.MenuStripResourcesRedditPs3Homebrew_Click);
-            // 
-            // MenuItemResources
-            // 
-            this.MenuItemResources.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemResources.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemCustomFirmware,
-            this.MenuItemModdingForums,
-            this.MenuItemHomebrew,
-            this.MenuItemReddit});
-            this.MenuItemResources.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemResources.Name = "MenuItemResources";
-            this.MenuItemResources.Size = new System.Drawing.Size(82, 19);
-            this.MenuItemResources.Text = "RESOURCES";
             // 
             // MainWindow
             // 
