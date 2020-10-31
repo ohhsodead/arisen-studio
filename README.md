@@ -12,7 +12,7 @@ An open source desktop application designed to easily browse through a regularly
 
 ## Features
 - Fast, lightweight and simple to use
-- Browse a large database of ps3 mods
+- Browse a large database of PS3 mods
 - Complete with info, creator, version, etc.
 - Filter by firmware, mod type and region
 - Download, install and uninstall mods
@@ -40,7 +40,7 @@ You're also welcome to submit any pull requests with fixes and suggestions, like
 I know that not all mods aren't on our database yet. But if you open an issue including the details they will be added for you.
  
 ## Credits & Libraries
-- Appropriate Authors of all Mods
+- Appropriate Creators of all Mods
 - [DarkUI for WinForms](https://github.com/RobinPerris/DarkUI)
 - [Newtonsoft.Json](https://www.newtonsoft.com/json)
 - [Apache log4net](https://logging.apache.org/log4net/)
