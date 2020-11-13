@@ -42,9 +42,11 @@ I know that not all mods aren't on our database yet. But if you open an issue in
  
 ## Credits & Libraries
 - Appropriate Creators of all Mods
-- [DarkUI for WinForms](https://github.com/RobinPerris/DarkUI)
+- [DarkUI for WinForms](https://github.com/RobinPerris/DarkUI/)
 - [Newtonsoft.Json](https://www.newtonsoft.com/json)
 - [Apache log4net](https://logging.apache.org/log4net/)
+- [WebMAN API](https://github.com/FxckingCoder/WebmanAPI/)
+- [Icons8](https://icons8.com/)
  
 ## Disclaimer
 I can accept no responsibility for any damage you cause to your system by using this tool.
