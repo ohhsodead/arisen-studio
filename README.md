@@ -19,6 +19,7 @@ An open source desktop application designed to easily browse through a regularly
 - Automatic game region detection
 - Backup and restore game files
 - Built-in FTP file manager
+- Built-in game updates finder
 - Add multiple console profiles
 
 ## Requirements
