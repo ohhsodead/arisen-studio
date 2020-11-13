@@ -20,7 +20,7 @@ An open source desktop application designed to easily browse through a regularly
 - Backup and restore game files
 - Built-in FTP file manager
 - Built-in game updates finder
-- Built-in WebMAN Controls
+- Built-in WebMAN API controls
 - Add multiple console profiles
 
 ## Requirements
