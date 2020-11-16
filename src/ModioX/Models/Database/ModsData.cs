@@ -27,7 +27,7 @@ namespace ModioX.Models.Database
         /// </summary>
         public class ModItem
         {
-            public long Id { get; set; }
+            public int Id { get; set; }
 
             public string GameId { get; set; }
 
@@ -49,9 +49,7 @@ namespace ModioX.Models.Database
 
             public string Description { get; set; }
 
-            public string Url { get; set; }
-
-            public string[] InstallPaths { get; set; }
+            public List<DownloadFiles> DownloadFiles { get; set; }
 
             /// <summary>
             ///     Get the category type.
@@ -71,37 +69,36 @@ namespace ModioX.Models.Database
                 return CategoryType.Game;
             }
 
-
             /// <summary>
             ///     Check whether install requires a game region to be specified.
             /// </summary>
-            public bool RequiresGameRegion => InstallPaths.Any(x => x.Contains("{REGION}"));
+            public bool RequiresGameRegion => DownloadFiles.Any(x => x.RequiresGameRegion);
 
             /// <summary>
             ///     Check whether install requires a user id to be specified.
             /// </summary>
-            public bool RequiresUserId => InstallPaths.Any(x => x.Contains("{USERID}"));
+            public bool RequiresUserId => DownloadFiles.Any(x => x.RequiresGameRegion);
 
             /// <summary>
             ///     Check whether install requires a USB device to be connected to console
             /// </summary>
-            public bool RequiresUsbDevice => InstallPaths.Any(x => x.Contains("{USBDEV}"));
-
-            /// <summary>
-            ///     Check whether this mod is a game save.
-            /// </summary>
-            public bool IsGameSave => Type.Equals("GAMESAVE");
+            public bool RequiresUsbDevice => DownloadFiles.Any(x => x.RequiresUsbDevice);
 
             /// <summary>
             ///     Check whether any files are installed at the 'dev_rebug' (firmware) folder.
             /// </summary>
             /// <returns></returns>
-            public bool IsInstallToRebugFolder => InstallPaths.Any(x => x.StartsWith("/dev_rebug/"));
+            public bool IsInstallToRebugFolder => DownloadFiles.Any(x => x.IsInstallToRebugFolder);
 
             /// <summary>
             ///     Check whether mod is for any region.
             /// </summary>
             public bool IsAnyRegion => Region.Equals("ALL") || Region.Equals("-");
+
+            /// <summary>
+            ///     Check whether this mod is a game save.
+            /// </summary>
+            public bool IsGameSave => Type.Equals("GAMESAVE");
 
             /// <summary>
             ///     Get all the mod types.
@@ -119,6 +116,40 @@ namespace ModioX.Models.Database
                     }
 
                     return modTypes;
+                }
+            }
+
+            /// <summary>
+            ///     Get all the mod versions if there are multiple.
+            /// </summary>
+            /// <returns></returns>
+            public List<string> Versions
+            {
+                get
+                {
+                    List<string> versions = new List<string>();
+
+                    if (Version == "n/a")
+                    {
+                        versions.Add("n/a");
+                    }
+                    else if (Version == "-")
+                    {
+                        versions.Add("-");
+                    }
+                    else if (Version == "")
+                    {
+                        versions.Add("-");
+                    }
+                    else
+                    {
+                        foreach (string version in Version.Split('/'))
+                        {
+                            versions.Add("v" + version);
+                        }
+                    }
+
+                    return versions;
                 }
             }
 
@@ -218,24 +249,48 @@ namespace ModioX.Models.Database
             }
 
             /// <summary>
-            ///     Gets the directory for extracting modded files to.
+            ///     Get the download url specified by the user if there are multiple types
+            /// </summary>
+            /// <returns>Download Archive URL</returns>
+            public DownloadFiles GetDownloadFiles(System.Windows.Forms.Form owner)
+            {
+                if (DownloadFiles.Count > 1)
+                {
+                    var downloadNames = DownloadFiles.Select(x => x.Name).ToList();
+                    var downloadName = DialogExtensions.ShowListInputDialog(owner, "Install Downloads", downloadNames);
+
+                    if (string.IsNullOrEmpty(downloadName))
+                    {
+                        return null;
+                    }
+
+                    return DownloadFiles.First(x => x.Name.Equals(downloadName));
+                }
+                else
+                {
+                    return DownloadFiles.First();
+                }
+            }
+
+            /// <summary>
+            ///     Get the directory for extracting modded files to.
             /// </summary>
             /// <returns></returns>
-            public string DownloadDataDirectory => $@"{UserFolders.AppModsData}{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} (v{Version}) (#{Id})\";
+            public string DownloadDataDirectory(DownloadFiles download) => $@"{UserFolders.AppModsData}{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} ({StringExtensions.ReplaceInvalidChars(download.Name)}) (#{Id})\";
 
             /// <summary>
             ///     Gets the downloaded mods archive file path.
             /// </summary>
             /// <returns>Mods Archive File Path</returns>
-            public string ArchiveZipFile => $@"{UserFolders.AppModsData}{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} (v{Version}) (#{Id}).zip";
+            public string ArchiveZipFile(DownloadFiles download) => $@"{UserFolders.AppModsData}{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} ({StringExtensions.ReplaceInvalidChars(download.Name)}) (#{Id}).zip";
 
             /// <summary>
             ///     Downloads the modded files archive and extracts all files to <see cref="DownloadDataDirectory"/>
             /// </summary>
-            public void DownloadInstallFiles()
+            public void DownloadInstallFiles(DownloadFiles download)
             {
-                string archivePath = DownloadDataDirectory;
-                string archiveFilePath = ArchiveZipFile;
+                string archivePath = DownloadDataDirectory(download);
+                string archiveFilePath = ArchiveZipFile(download);
 
                 if (!MainWindow.Settings.AlwaysDownloadInstallFiles && File.Exists(archiveFilePath))
                 {
@@ -259,11 +314,21 @@ namespace ModioX.Models.Database
 
                 _ = Directory.CreateDirectory(archivePath);
 
-                using (WebClient wc = new WebClient())
+                /*
+                using (WebClient webClient = new WebClient())
                 {
-                    wc.Headers.Add("Accept: application/zip");
-                    wc.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
-                    wc.DownloadFile(new Uri(Url), archiveFilePath);
+                    webClient.Headers.Add("Accept: application/zip");
+                    webClient.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
+                    webClient.DownloadFile(new Uri(Url), archiveFilePath);
+                    ZipFile.ExtractToDirectory(archiveFilePath, archivePath);
+                }
+                */
+
+                using (WebClient webClient = new WebClient())
+                {
+                    webClient.Headers.Add("Accept: application/zip");
+                    webClient.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
+                    webClient.DownloadFile(new Uri(download.URL), archiveFilePath);
                     ZipFile.ExtractToDirectory(archiveFilePath, archivePath);
                 }
             }
@@ -271,20 +336,22 @@ namespace ModioX.Models.Database
             /// <summary>
             ///     Download mods archive to the specified local folder path
             /// </summary>
+            /// <param name="categoriesData"></param>
+            /// <param name="download"></param>
             /// <param name="localPath">Path to downloads mods archive at folder</param>
-            public void DownloadArchiveAtPath(CategoriesData categoriesData, string localPath)
+            public void DownloadArchiveAtPath(CategoriesData categoriesData, DownloadFiles download, string localPath)
             {
                 string zipFileName = $"{StringExtensions.ReplaceInvalidChars(Name)} v{Version} for {GameId.ToUpper()}.zip";
                 string zipFilePath = Path.Combine(localPath, zipFileName);
 
-                GenerateReadMeAtPath(categoriesData, DownloadDataDirectory);
+                GenerateReadMeAtPath(categoriesData, DownloadDataDirectory(download));
 
-                using (WebClient wc = new WebClient())
+                using (WebClient webClient = new WebClient())
                 {
-                    wc.Headers.Add("Accept: application/zip");
-                    wc.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
-                    wc.DownloadFile(new Uri(Url), zipFilePath);
-                    Archives.AddFilesToZip(zipFilePath, new string[] { Path.Combine(DownloadDataDirectory, "README.txt") });
+                    webClient.Headers.Add("Accept: application/zip");
+                    webClient.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
+                    webClient.DownloadFile(new Uri(download.URL), zipFilePath);
+                    Archives.AddFilesToZip(zipFilePath, new string[] { Path.Combine(DownloadDataDirectory(download), "README.txt") });
                 }
             }
 
@@ -303,8 +370,8 @@ namespace ModioX.Models.Database
                 // Create contents and write them to readme file 
                 File.WriteAllLines(Path.Combine(directoryPath, "README.txt"), new string[]
                 {
-                    "Mod Id: #" + Id.ToString(),
-                    "Title: " + categoriesData.GetCategoryById(GameId).Title,
+                    "Mod ID: #" + Id.ToString(),
+                    "Category: " + categoriesData.GetCategoryById(GameId).Title,
                     "Name: " + Name,
                     "System Type: " + string.Join(", ", Firmwares),
                     "Mod Type: " + Type,
@@ -313,12 +380,41 @@ namespace ModioX.Models.Database
                     "Created By: " + Author,
                     "Submitted By: " + SubmittedBy,
                     "Game Type: " + string.Join(", ", GameModes),
-                    "Installation File Paths: " + string.Join(", ", InstallPaths),
-                    "Archive Download URL: " + Url,
+                    "Downloads: " + string.Join(", ", DownloadFiles.Select(x => x.URL)),
                     "-------------------------------------------------",
                     "Description:\n" + Description
                 });
             }
+        }
+
+        public partial class DownloadFiles
+        {
+            public string Name { get; set; }
+
+            public string URL { get; set; }
+
+            public List<string> InstallPaths { get; set; }
+
+            /// <summary>
+            ///     Check whether any files are being installed to a game folder.
+            /// </summary>
+            public bool RequiresGameRegion => InstallPaths.Any(x => x.Contains("{REGION}"));
+
+            /// <summary>
+            ///     Check whether any files are being installed to a profile user's folder.
+            /// </summary>
+            public bool RequiresUserId => InstallPaths.Any(x => x.Contains("{USERID}"));
+
+            /// <summary>
+            ///     Check whether any files are being installed to a USB device.
+            /// </summary>
+            public bool RequiresUsbDevice => InstallPaths.Any(x => x.Contains("{USBDEV}"));
+            
+            /// <summary>
+            ///     Check whether any files are installed at the 'dev_rebug' (firmware) folder.
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInstallToRebugFolder => InstallPaths.Any(x => x.StartsWith("/dev_rebug/"));
         }
 
         /// <summary>
@@ -406,7 +502,7 @@ namespace ModioX.Models.Database
         /// </summary>
         /// <param name="modId"><see cref="ModItem.Id"/></param>
         /// <returns>Mod details for the <see cref="ModItem.Id"/></returns>
-        public ModItem GetModById(long modId)
+        public ModItem GetModById(int modId)
         {
             return Mods.First(modItem => modItem.Id.Equals(modId));
         }

@@ -6,7 +6,7 @@ using log4net.Config;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ModioX")]
-[assembly: AssemblyDescription("Browse, Download & Install Game Mods for the PlayStation 3")]
+[assembly: AssemblyDescription("Browse, Download & Install Mods for PlayStation 3")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ohhsodead")]
 [assembly: AssemblyProduct("ModioX")]
@@ -32,7 +32,7 @@ using log4net.Config;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.4.7")]
-[assembly: AssemblyFileVersion("0.1.4.7")]
+[assembly: AssemblyVersion("0.1.4.8")]
+[assembly: AssemblyFileVersion("0.1.4.8")]
 
 [assembly: XmlConfigurator(Watch = true)]

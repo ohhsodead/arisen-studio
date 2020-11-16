@@ -46,7 +46,7 @@
             // 
             this.ButtonSaveBackup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSaveBackup.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.ButtonSaveBackup.Location = new System.Drawing.Point(231, 171);
+            this.ButtonSaveBackup.Location = new System.Drawing.Point(231, 173);
             this.ButtonSaveBackup.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonSaveBackup.Name = "ButtonSaveBackup";
             this.ButtonSaveBackup.Size = new System.Drawing.Size(80, 25);
@@ -58,7 +58,7 @@
             // 
             this.LabelLocalFilePath.AutoSize = true;
             this.LabelLocalFilePath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelLocalFilePath.Location = new System.Drawing.Point(12, 116);
+            this.LabelLocalFilePath.Location = new System.Drawing.Point(12, 118);
             this.LabelLocalFilePath.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelLocalFilePath.Name = "LabelLocalFilePath";
             this.LabelLocalFilePath.Size = new System.Drawing.Size(86, 15);
@@ -68,7 +68,7 @@
             // TextBoxLocalPath
             // 
             this.TextBoxLocalPath.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBoxLocalPath.Location = new System.Drawing.Point(12, 138);
+            this.TextBoxLocalPath.Location = new System.Drawing.Point(12, 140);
             this.TextBoxLocalPath.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.TextBoxLocalPath.Name = "TextBoxLocalPath";
             this.TextBoxLocalPath.Size = new System.Drawing.Size(248, 23);
@@ -78,7 +78,7 @@
             // 
             this.LabelInstallFilePath.AutoSize = true;
             this.LabelInstallFilePath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelInstallFilePath.Location = new System.Drawing.Point(12, 63);
+            this.LabelInstallFilePath.Location = new System.Drawing.Point(12, 65);
             this.LabelInstallFilePath.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelInstallFilePath.Name = "LabelInstallFilePath";
             this.LabelInstallFilePath.Size = new System.Drawing.Size(89, 15);
@@ -89,7 +89,7 @@
             // 
             this.TextBoxConsolePath.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxConsolePath.Enabled = false;
-            this.TextBoxConsolePath.Location = new System.Drawing.Point(12, 85);
+            this.TextBoxConsolePath.Location = new System.Drawing.Point(12, 87);
             this.TextBoxConsolePath.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.TextBoxConsolePath.Name = "TextBoxConsolePath";
             this.TextBoxConsolePath.ReadOnly = true;
@@ -112,7 +112,7 @@
             // 
             this.TextBoxGameId.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxGameId.Enabled = false;
-            this.TextBoxGameId.Location = new System.Drawing.Point(176, 32);
+            this.TextBoxGameId.Location = new System.Drawing.Point(176, 34);
             this.TextBoxGameId.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.TextBoxGameId.Name = "TextBoxGameId";
             this.TextBoxGameId.ReadOnly = true;
@@ -134,7 +134,7 @@
             // 
             this.TextBoxFileName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxFileName.Enabled = false;
-            this.TextBoxFileName.Location = new System.Drawing.Point(12, 32);
+            this.TextBoxFileName.Location = new System.Drawing.Point(12, 34);
             this.TextBoxFileName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.TextBoxFileName.Name = "TextBoxFileName";
             this.TextBoxFileName.ReadOnly = true;
@@ -143,7 +143,7 @@
             // 
             // ButtonLocalPath
             // 
-            this.ButtonLocalPath.Location = new System.Drawing.Point(266, 138);
+            this.ButtonLocalPath.Location = new System.Drawing.Point(266, 140);
             this.ButtonLocalPath.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ButtonLocalPath.Name = "ButtonLocalPath";
             this.ButtonLocalPath.Size = new System.Drawing.Size(45, 23);
@@ -155,7 +155,7 @@
             // 
             this.ButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonCancel.Location = new System.Drawing.Point(141, 171);
+            this.ButtonCancel.Location = new System.Drawing.Point(141, 173);
             this.ButtonCancel.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.Size = new System.Drawing.Size(80, 25);
@@ -168,7 +168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(323, 210);
+            this.ClientSize = new System.Drawing.Size(323, 212);
             this.Controls.Add(this.LabelInstallFilePath);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.TextBoxLocalPath);
@@ -188,8 +188,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BackupFileDialog";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Backup File Details";

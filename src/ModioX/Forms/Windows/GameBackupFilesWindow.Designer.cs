@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameBackupFilesWindow));
             this.DgvBackups = new DarkUI.Controls.DarkDataGridView();
+            this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCreatedOn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SectionBackupFiles = new DarkUI.Controls.DarkSectionPanel();
             this.ToolStripArchiveInformation = new DarkUI.Controls.DarkToolStrip();
             this.ToolItemEditBackup = new System.Windows.Forms.ToolStripButton();
@@ -40,10 +44,12 @@
             this.FlowPanelDetails = new System.Windows.Forms.FlowLayoutPanel();
             this.LabelHeaderGameTitle = new System.Windows.Forms.Label();
             this.LabelGameTitle = new System.Windows.Forms.Label();
-            this.LabelHeaderCreatedOn = new System.Windows.Forms.Label();
-            this.LabelCreatedDate = new System.Windows.Forms.Label();
             this.LabelHeaderFileName = new System.Windows.Forms.Label();
             this.LabelFileName = new System.Windows.Forms.Label();
+            this.LabelHeaderFileSize = new System.Windows.Forms.Label();
+            this.LabelFileSize = new System.Windows.Forms.Label();
+            this.LabelHeaderCreatedOn = new System.Windows.Forms.Label();
+            this.LabelCreatedDate = new System.Windows.Forms.Label();
             this.LabelHeaderLocalPath = new System.Windows.Forms.Label();
             this.LabelLocalPath = new System.Windows.Forms.Label();
             this.LabelHeaderInstallFilePath = new System.Windows.Forms.Label();
@@ -56,12 +62,6 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LabelHeaderFileSize = new System.Windows.Forms.Label();
-            this.LabelFileSize = new System.Windows.Forms.Label();
-            this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCreatedOn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBackups)).BeginInit();
             this.SectionBackupFiles.SuspendLayout();
             this.ToolStripArchiveInformation.SuspendLayout();
@@ -95,6 +95,34 @@
             this.DgvBackups.Size = new System.Drawing.Size(620, 198);
             this.DgvBackups.TabIndex = 12;
             this.DgvBackups.SelectionChanged += new System.EventHandler(this.DgvBackupFiles_SelectionChanged);
+            // 
+            // ColumnGameTitle
+            // 
+            this.ColumnGameTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnGameTitle.HeaderText = "Game Title";
+            this.ColumnGameTitle.Name = "ColumnGameTitle";
+            this.ColumnGameTitle.ReadOnly = true;
+            // 
+            // ColumnFileName
+            // 
+            this.ColumnFileName.HeaderText = "File Name";
+            this.ColumnFileName.Name = "ColumnFileName";
+            this.ColumnFileName.ReadOnly = true;
+            this.ColumnFileName.Width = 120;
+            // 
+            // ColumnFileSize
+            // 
+            this.ColumnFileSize.HeaderText = "File Size";
+            this.ColumnFileSize.Name = "ColumnFileSize";
+            this.ColumnFileSize.ReadOnly = true;
+            this.ColumnFileSize.Width = 120;
+            // 
+            // ColumnCreatedOn
+            // 
+            this.ColumnCreatedOn.HeaderText = "Created On";
+            this.ColumnCreatedOn.Name = "ColumnCreatedOn";
+            this.ColumnCreatedOn.ReadOnly = true;
+            this.ColumnCreatedOn.Width = 120;
             // 
             // SectionBackupFiles
             // 
@@ -254,33 +282,6 @@
             this.LabelGameTitle.TabIndex = 23;
             this.LabelGameTitle.Text = "...";
             // 
-            // LabelHeaderCreatedOn
-            // 
-            this.LabelHeaderCreatedOn.AutoSize = true;
-            this.LabelHeaderCreatedOn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderCreatedOn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelHeaderCreatedOn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderCreatedOn.Location = new System.Drawing.Point(7, 71);
-            this.LabelHeaderCreatedOn.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
-            this.LabelHeaderCreatedOn.Name = "LabelHeaderCreatedOn";
-            this.LabelHeaderCreatedOn.Size = new System.Drawing.Size(73, 15);
-            this.LabelHeaderCreatedOn.TabIndex = 27;
-            this.LabelHeaderCreatedOn.Text = "Created On:";
-            // 
-            // LabelCreatedDate
-            // 
-            this.LabelCreatedDate.AutoSize = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelCreatedDate, true);
-            this.LabelCreatedDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelCreatedDate.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelCreatedDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelCreatedDate.Location = new System.Drawing.Point(82, 71);
-            this.LabelCreatedDate.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelCreatedDate.Name = "LabelCreatedDate";
-            this.LabelCreatedDate.Size = new System.Drawing.Size(16, 15);
-            this.LabelCreatedDate.TabIndex = 26;
-            this.LabelCreatedDate.Text = "...";
-            // 
             // LabelHeaderFileName
             // 
             this.LabelHeaderFileName.AutoSize = true;
@@ -307,6 +308,60 @@
             this.LabelFileName.Size = new System.Drawing.Size(16, 15);
             this.LabelFileName.TabIndex = 17;
             this.LabelFileName.Text = "...";
+            // 
+            // LabelHeaderFileSize
+            // 
+            this.LabelHeaderFileSize.AutoSize = true;
+            this.LabelHeaderFileSize.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderFileSize.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderFileSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderFileSize.Location = new System.Drawing.Point(7, 50);
+            this.LabelHeaderFileSize.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
+            this.LabelHeaderFileSize.Name = "LabelHeaderFileSize";
+            this.LabelHeaderFileSize.Size = new System.Drawing.Size(55, 15);
+            this.LabelHeaderFileSize.TabIndex = 28;
+            this.LabelHeaderFileSize.Text = "File Size:";
+            // 
+            // LabelFileSize
+            // 
+            this.LabelFileSize.AutoSize = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelFileSize, true);
+            this.LabelFileSize.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelFileSize.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelFileSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelFileSize.Location = new System.Drawing.Point(64, 50);
+            this.LabelFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelFileSize.Name = "LabelFileSize";
+            this.LabelFileSize.Size = new System.Drawing.Size(16, 15);
+            this.LabelFileSize.TabIndex = 29;
+            this.LabelFileSize.Text = "...";
+            // 
+            // LabelHeaderCreatedOn
+            // 
+            this.LabelHeaderCreatedOn.AutoSize = true;
+            this.LabelHeaderCreatedOn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderCreatedOn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderCreatedOn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderCreatedOn.Location = new System.Drawing.Point(7, 71);
+            this.LabelHeaderCreatedOn.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
+            this.LabelHeaderCreatedOn.Name = "LabelHeaderCreatedOn";
+            this.LabelHeaderCreatedOn.Size = new System.Drawing.Size(73, 15);
+            this.LabelHeaderCreatedOn.TabIndex = 27;
+            this.LabelHeaderCreatedOn.Text = "Created On:";
+            // 
+            // LabelCreatedDate
+            // 
+            this.LabelCreatedDate.AutoSize = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelCreatedDate, true);
+            this.LabelCreatedDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelCreatedDate.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelCreatedDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelCreatedDate.Location = new System.Drawing.Point(82, 71);
+            this.LabelCreatedDate.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelCreatedDate.Name = "LabelCreatedDate";
+            this.LabelCreatedDate.Size = new System.Drawing.Size(16, 15);
+            this.LabelCreatedDate.TabIndex = 26;
+            this.LabelCreatedDate.Text = "...";
             // 
             // LabelHeaderLocalPath
             // 
@@ -429,61 +484,6 @@
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 95;
             // 
-            // LabelHeaderFileSize
-            // 
-            this.LabelHeaderFileSize.AutoSize = true;
-            this.LabelHeaderFileSize.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderFileSize.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelHeaderFileSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderFileSize.Location = new System.Drawing.Point(7, 50);
-            this.LabelHeaderFileSize.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
-            this.LabelHeaderFileSize.Name = "LabelHeaderFileSize";
-            this.LabelHeaderFileSize.Size = new System.Drawing.Size(55, 15);
-            this.LabelHeaderFileSize.TabIndex = 28;
-            this.LabelHeaderFileSize.Text = "File Size:";
-            // 
-            // LabelFileSize
-            // 
-            this.LabelFileSize.AutoSize = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelFileSize, true);
-            this.LabelFileSize.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelFileSize.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelFileSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileSize.Location = new System.Drawing.Point(64, 50);
-            this.LabelFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelFileSize.Name = "LabelFileSize";
-            this.LabelFileSize.Size = new System.Drawing.Size(16, 15);
-            this.LabelFileSize.TabIndex = 29;
-            this.LabelFileSize.Text = "...";
-            // 
-            // ColumnGameTitle
-            // 
-            this.ColumnGameTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnGameTitle.HeaderText = "Game Title";
-            this.ColumnGameTitle.Name = "ColumnGameTitle";
-            this.ColumnGameTitle.ReadOnly = true;
-            // 
-            // ColumnFileName
-            // 
-            this.ColumnFileName.HeaderText = "File Name";
-            this.ColumnFileName.Name = "ColumnFileName";
-            this.ColumnFileName.ReadOnly = true;
-            this.ColumnFileName.Width = 120;
-            // 
-            // ColumnFileSize
-            // 
-            this.ColumnFileSize.HeaderText = "File Size";
-            this.ColumnFileSize.Name = "ColumnFileSize";
-            this.ColumnFileSize.ReadOnly = true;
-            this.ColumnFileSize.Width = 120;
-            // 
-            // ColumnCreatedOn
-            // 
-            this.ColumnCreatedOn.HeaderText = "Created On";
-            this.ColumnCreatedOn.Name = "ColumnCreatedOn";
-            this.ColumnCreatedOn.ReadOnly = true;
-            this.ColumnCreatedOn.Width = 120;
-            // 
             // GameBackupFilesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -497,8 +497,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameBackupFilesWindow";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Game Backup Files";
             this.Load += new System.EventHandler(this.GameBackupFilesWindow_Load);

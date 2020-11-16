@@ -37,10 +37,6 @@
             this.ContextMenuConsoleSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.ContextMenuItemConsoleRenameFile = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuItemConsoleRenameFolder = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripHeader = new DarkUI.Controls.DarkMenuStrip();
-            this.MenuItemSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSettingsSaveLocalPath = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSettingsSaveConsolePath = new System.Windows.Forms.ToolStripMenuItem();
             this.SectionLocalFileExplorer = new DarkUI.Controls.DarkSectionPanel();
             this.ComboBoxLocalDrives = new DarkUI.Controls.DarkComboBox();
             this.ToolStripLocalActions = new DarkUI.Controls.DarkToolStrip();
@@ -86,7 +82,6 @@
             this.LayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.WaitLoadConsole = new System.Windows.Forms.Timer(this.components);
             this.ContextMenuConsole.SuspendLayout();
-            this.MenuStripHeader.SuspendLayout();
             this.SectionLocalFileExplorer.SuspendLayout();
             this.ToolStripLocalActions.SuspendLayout();
             this.ToolStripLocalStatus.SuspendLayout();
@@ -103,7 +98,7 @@
             // 
             this.ContextMenuConsole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuConsole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuConsole.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ContextMenuConsole.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.ContextMenuConsole.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ContextMenuItemConsoleDownloadFile,
             this.ContextMenuItemConsoleDeleteFile,
@@ -112,14 +107,15 @@
             this.ContextMenuItemConsoleRenameFile,
             this.ContextMenuItemConsoleRenameFolder});
             this.ContextMenuConsole.Name = "ContextMenuConsole";
-            this.ContextMenuConsole.Size = new System.Drawing.Size(154, 121);
+            this.ContextMenuConsole.Size = new System.Drawing.Size(156, 131);
             // 
             // ContextMenuItemConsoleDownloadFile
             // 
             this.ContextMenuItemConsoleDownloadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuItemConsoleDownloadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ContextMenuItemConsoleDownloadFile.Image = global::ModioX.Properties.Resources.download;
             this.ContextMenuItemConsoleDownloadFile.Name = "ContextMenuItemConsoleDownloadFile";
-            this.ContextMenuItemConsoleDownloadFile.Size = new System.Drawing.Size(153, 22);
+            this.ContextMenuItemConsoleDownloadFile.Size = new System.Drawing.Size(155, 24);
             this.ContextMenuItemConsoleDownloadFile.Text = "Download";
             this.ContextMenuItemConsoleDownloadFile.Click += new System.EventHandler(this.ContextMenuConsoleDownloadFile_Click);
             // 
@@ -127,8 +123,9 @@
             // 
             this.ContextMenuItemConsoleDeleteFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuItemConsoleDeleteFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ContextMenuItemConsoleDeleteFile.Image = global::ModioX.Properties.Resources.delete;
             this.ContextMenuItemConsoleDeleteFile.Name = "ContextMenuItemConsoleDeleteFile";
-            this.ContextMenuItemConsoleDeleteFile.Size = new System.Drawing.Size(153, 22);
+            this.ContextMenuItemConsoleDeleteFile.Size = new System.Drawing.Size(155, 24);
             this.ContextMenuItemConsoleDeleteFile.Text = "Delete";
             this.ContextMenuItemConsoleDeleteFile.Click += new System.EventHandler(this.ContextMenuConsoleDeleteFile_Click);
             // 
@@ -136,8 +133,9 @@
             // 
             this.ContextMenuItemConsoleRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuItemConsoleRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ContextMenuItemConsoleRefresh.Image = global::ModioX.Properties.Resources.refresh;
             this.ContextMenuItemConsoleRefresh.Name = "ContextMenuItemConsoleRefresh";
-            this.ContextMenuItemConsoleRefresh.Size = new System.Drawing.Size(153, 22);
+            this.ContextMenuItemConsoleRefresh.Size = new System.Drawing.Size(155, 24);
             this.ContextMenuItemConsoleRefresh.Text = "Refresh";
             this.ContextMenuItemConsoleRefresh.Click += new System.EventHandler(this.ContextMenuConsoleRefresh_Click);
             // 
@@ -147,14 +145,15 @@
             this.ContextMenuConsoleSeparator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ContextMenuConsoleSeparator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.ContextMenuConsoleSeparator.Name = "ContextMenuConsoleSeparator";
-            this.ContextMenuConsoleSeparator.Size = new System.Drawing.Size(150, 6);
+            this.ContextMenuConsoleSeparator.Size = new System.Drawing.Size(152, 6);
             // 
             // ContextMenuItemConsoleRenameFile
             // 
             this.ContextMenuItemConsoleRenameFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuItemConsoleRenameFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ContextMenuItemConsoleRenameFile.Image = global::ModioX.Properties.Resources.rename;
             this.ContextMenuItemConsoleRenameFile.Name = "ContextMenuItemConsoleRenameFile";
-            this.ContextMenuItemConsoleRenameFile.Size = new System.Drawing.Size(153, 22);
+            this.ContextMenuItemConsoleRenameFile.Size = new System.Drawing.Size(155, 24);
             this.ContextMenuItemConsoleRenameFile.Text = "Rename File";
             this.ContextMenuItemConsoleRenameFile.Click += new System.EventHandler(this.ContextMenuItemConsoleRenameFile_Click);
             // 
@@ -162,56 +161,11 @@
             // 
             this.ContextMenuItemConsoleRenameFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuItemConsoleRenameFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ContextMenuItemConsoleRenameFolder.Image = global::ModioX.Properties.Resources.rename;
             this.ContextMenuItemConsoleRenameFolder.Name = "ContextMenuItemConsoleRenameFolder";
-            this.ContextMenuItemConsoleRenameFolder.Size = new System.Drawing.Size(153, 22);
+            this.ContextMenuItemConsoleRenameFolder.Size = new System.Drawing.Size(155, 24);
             this.ContextMenuItemConsoleRenameFolder.Text = "Rename Folder";
             this.ContextMenuItemConsoleRenameFolder.Click += new System.EventHandler(this.ContextMenuItemConsoleRenameFolder_Click);
-            // 
-            // MenuStripHeader
-            // 
-            this.MenuStripHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripHeader.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.MenuStripHeader.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemSettings});
-            this.MenuStripHeader.Location = new System.Drawing.Point(0, 0);
-            this.MenuStripHeader.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
-            this.MenuStripHeader.Name = "MenuStripHeader";
-            this.MenuStripHeader.Padding = new System.Windows.Forms.Padding(8, 9, 8, 0);
-            this.MenuStripHeader.Size = new System.Drawing.Size(1300, 28);
-            this.MenuStripHeader.TabIndex = 1140;
-            this.MenuStripHeader.Text = "darkMenuStrip1";
-            // 
-            // MenuItemSettings
-            // 
-            this.MenuItemSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemSettingsSaveLocalPath,
-            this.MenuItemSettingsSaveConsolePath});
-            this.MenuItemSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSettings.Name = "MenuItemSettings";
-            this.MenuItemSettings.Size = new System.Drawing.Size(69, 19);
-            this.MenuItemSettings.Text = "SETTINGS";
-            // 
-            // MenuItemSettingsSaveLocalPath
-            // 
-            this.MenuItemSettingsSaveLocalPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSettingsSaveLocalPath.CheckOnClick = true;
-            this.MenuItemSettingsSaveLocalPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSettingsSaveLocalPath.Name = "MenuItemSettingsSaveLocalPath";
-            this.MenuItemSettingsSaveLocalPath.Size = new System.Drawing.Size(171, 22);
-            this.MenuItemSettingsSaveLocalPath.Text = "Save Local Path";
-            this.MenuItemSettingsSaveLocalPath.Click += new System.EventHandler(this.MenuItemSettingsSaveLocalDirectoryPath_Click);
-            // 
-            // MenuItemSettingsSaveConsolePath
-            // 
-            this.MenuItemSettingsSaveConsolePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSettingsSaveConsolePath.CheckOnClick = true;
-            this.MenuItemSettingsSaveConsolePath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSettingsSaveConsolePath.Name = "MenuItemSettingsSaveConsolePath";
-            this.MenuItemSettingsSaveConsolePath.Size = new System.Drawing.Size(171, 22);
-            this.MenuItemSettingsSaveConsolePath.Text = "Save Console Path";
-            this.MenuItemSettingsSaveConsolePath.Click += new System.EventHandler(this.MenuItemSettingsSaveConsolePath_Click);
             // 
             // SectionLocalFileExplorer
             // 
@@ -226,8 +180,8 @@
             this.SectionLocalFileExplorer.Location = new System.Drawing.Point(0, 0);
             this.SectionLocalFileExplorer.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.SectionLocalFileExplorer.Name = "SectionLocalFileExplorer";
-            this.SectionLocalFileExplorer.SectionHeader = "LOCAL EXPLORER";
-            this.SectionLocalFileExplorer.Size = new System.Drawing.Size(632, 510);
+            this.SectionLocalFileExplorer.SectionHeader = "LOCAL FILE EXPLORER";
+            this.SectionLocalFileExplorer.Size = new System.Drawing.Size(632, 535);
             this.SectionLocalFileExplorer.TabIndex = 17;
             // 
             // ComboBoxLocalDrives
@@ -253,7 +207,7 @@
             this.ToolStripLocalNewFolder,
             this.ToolStripLocalRefresh,
             this.ToolStripLocalOpenExplorer});
-            this.ToolStripLocalActions.Location = new System.Drawing.Point(1, 443);
+            this.ToolStripLocalActions.Location = new System.Drawing.Point(1, 468);
             this.ToolStripLocalActions.Name = "ToolStripLocalActions";
             this.ToolStripLocalActions.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.ToolStripLocalActions.Size = new System.Drawing.Size(630, 36);
@@ -313,7 +267,7 @@
             this.ToolStripLocalRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ToolStripLocalRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolStripLocalRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLocalRefresh.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripLocalRefresh.Image")));
+            this.ToolStripLocalRefresh.Image = global::ModioX.Properties.Resources.refresh;
             this.ToolStripLocalRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ToolStripLocalRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripLocalRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -328,7 +282,7 @@
             this.ToolStripLocalOpenExplorer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ToolStripLocalOpenExplorer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolStripLocalOpenExplorer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLocalOpenExplorer.Image = global::ModioX.Properties.Resources.opened_folder;
+            this.ToolStripLocalOpenExplorer.Image = global::ModioX.Properties.Resources.file_explorer;
             this.ToolStripLocalOpenExplorer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ToolStripLocalOpenExplorer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripLocalOpenExplorer.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -348,7 +302,7 @@
             this.ToolStripLocalStatus.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ToolStripLocalStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripLabelLocalStatus});
-            this.ToolStripLocalStatus.Location = new System.Drawing.Point(1, 479);
+            this.ToolStripLocalStatus.Location = new System.Drawing.Point(1, 504);
             this.ToolStripLocalStatus.Name = "ToolStripLocalStatus";
             this.ToolStripLocalStatus.Padding = new System.Windows.Forms.Padding(6, 0, 8, 5);
             this.ToolStripLocalStatus.Size = new System.Drawing.Size(630, 30);
@@ -414,7 +368,7 @@
             this.DgvLocalFiles.RowTemplate.Height = 24;
             this.DgvLocalFiles.RowTemplate.ReadOnly = true;
             this.DgvLocalFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvLocalFiles.Size = new System.Drawing.Size(618, 383);
+            this.DgvLocalFiles.Size = new System.Drawing.Size(618, 408);
             this.DgvLocalFiles.TabIndex = 20;
             this.DgvLocalFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLocalFiles_CellClick);
             this.DgvLocalFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLocalFiles_CellDoubleClick);
@@ -467,7 +421,7 @@
             // 
             this.ContextMenuLocal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuLocal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuLocal.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ContextMenuLocal.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.ContextMenuLocal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ContextMenuLocallUploadFile,
             this.ContextMenuLocalDeleteFile,
@@ -476,14 +430,15 @@
             this.ContextMenuLocalRenameFile,
             this.ContextMenuLocalRenameFolder});
             this.ContextMenuLocal.Name = "ContextMenuConsole";
-            this.ContextMenuLocal.Size = new System.Drawing.Size(154, 121);
+            this.ContextMenuLocal.Size = new System.Drawing.Size(156, 131);
             // 
             // ContextMenuLocallUploadFile
             // 
             this.ContextMenuLocallUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuLocallUploadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ContextMenuLocallUploadFile.Image = global::ModioX.Properties.Resources.upload;
             this.ContextMenuLocallUploadFile.Name = "ContextMenuLocallUploadFile";
-            this.ContextMenuLocallUploadFile.Size = new System.Drawing.Size(153, 22);
+            this.ContextMenuLocallUploadFile.Size = new System.Drawing.Size(155, 24);
             this.ContextMenuLocallUploadFile.Text = "Upload";
             this.ContextMenuLocallUploadFile.Click += new System.EventHandler(this.ContextMenuLocalFileUpload_Click);
             // 
@@ -491,8 +446,9 @@
             // 
             this.ContextMenuLocalDeleteFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuLocalDeleteFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ContextMenuLocalDeleteFile.Image = global::ModioX.Properties.Resources.delete;
             this.ContextMenuLocalDeleteFile.Name = "ContextMenuLocalDeleteFile";
-            this.ContextMenuLocalDeleteFile.Size = new System.Drawing.Size(153, 22);
+            this.ContextMenuLocalDeleteFile.Size = new System.Drawing.Size(155, 24);
             this.ContextMenuLocalDeleteFile.Text = "Delete";
             this.ContextMenuLocalDeleteFile.Click += new System.EventHandler(this.ContextMenuLocalDeleteFile_Click);
             // 
@@ -500,8 +456,9 @@
             // 
             this.ContextMenuLocalRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuLocalRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ContextMenuLocalRefresh.Image = global::ModioX.Properties.Resources.refresh;
             this.ContextMenuLocalRefresh.Name = "ContextMenuLocalRefresh";
-            this.ContextMenuLocalRefresh.Size = new System.Drawing.Size(153, 22);
+            this.ContextMenuLocalRefresh.Size = new System.Drawing.Size(155, 24);
             this.ContextMenuLocalRefresh.Text = "Refresh";
             this.ContextMenuLocalRefresh.Click += new System.EventHandler(this.ContextMenuLocalRefresh_Click);
             // 
@@ -511,14 +468,15 @@
             this.ContextMenuLocalSeparator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ContextMenuLocalSeparator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.ContextMenuLocalSeparator.Name = "ContextMenuLocalSeparator";
-            this.ContextMenuLocalSeparator.Size = new System.Drawing.Size(150, 6);
+            this.ContextMenuLocalSeparator.Size = new System.Drawing.Size(152, 6);
             // 
             // ContextMenuLocalRenameFile
             // 
             this.ContextMenuLocalRenameFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuLocalRenameFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ContextMenuLocalRenameFile.Image = global::ModioX.Properties.Resources.rename;
             this.ContextMenuLocalRenameFile.Name = "ContextMenuLocalRenameFile";
-            this.ContextMenuLocalRenameFile.Size = new System.Drawing.Size(153, 22);
+            this.ContextMenuLocalRenameFile.Size = new System.Drawing.Size(155, 24);
             this.ContextMenuLocalRenameFile.Text = "Rename File";
             this.ContextMenuLocalRenameFile.Click += new System.EventHandler(this.ContextMenuLocalRenameFile_Click);
             // 
@@ -526,8 +484,9 @@
             // 
             this.ContextMenuLocalRenameFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuLocalRenameFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ContextMenuLocalRenameFolder.Image = global::ModioX.Properties.Resources.rename;
             this.ContextMenuLocalRenameFolder.Name = "ContextMenuLocalRenameFolder";
-            this.ContextMenuLocalRenameFolder.Size = new System.Drawing.Size(153, 22);
+            this.ContextMenuLocalRenameFolder.Size = new System.Drawing.Size(155, 24);
             this.ContextMenuLocalRenameFolder.Text = "Rename Folder";
             this.ContextMenuLocalRenameFolder.Click += new System.EventHandler(this.ContextMenuLocalRenameFolder_Click);
             // 
@@ -544,8 +503,8 @@
             this.SectionConsoleFileExplorer.Location = new System.Drawing.Point(642, 0);
             this.SectionConsoleFileExplorer.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.SectionConsoleFileExplorer.Name = "SectionConsoleFileExplorer";
-            this.SectionConsoleFileExplorer.SectionHeader = "CONSOLE EXPLORER";
-            this.SectionConsoleFileExplorer.Size = new System.Drawing.Size(633, 510);
+            this.SectionConsoleFileExplorer.SectionHeader = "CONSOLE FILE EXPLORER";
+            this.SectionConsoleFileExplorer.Size = new System.Drawing.Size(633, 535);
             this.SectionConsoleFileExplorer.TabIndex = 1157;
             // 
             // ComboBoxConsoleDrives
@@ -570,7 +529,7 @@
             this.ToolStripConsoleDelete,
             this.ToolStripConsoleNewFolder,
             this.ToolStripConsoleRefresh});
-            this.ToolStripConsoleActions.Location = new System.Drawing.Point(1, 443);
+            this.ToolStripConsoleActions.Location = new System.Drawing.Point(1, 468);
             this.ToolStripConsoleActions.Name = "ToolStripConsoleActions";
             this.ToolStripConsoleActions.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.ToolStripConsoleActions.Size = new System.Drawing.Size(631, 36);
@@ -630,7 +589,7 @@
             this.ToolStripConsoleRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ToolStripConsoleRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolStripConsoleRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripConsoleRefresh.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripConsoleRefresh.Image")));
+            this.ToolStripConsoleRefresh.Image = global::ModioX.Properties.Resources.refresh;
             this.ToolStripConsoleRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ToolStripConsoleRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripConsoleRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -650,7 +609,7 @@
             this.ToolStripConsoleStatus.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ToolStripConsoleStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripLabelConsoleStatus});
-            this.ToolStripConsoleStatus.Location = new System.Drawing.Point(1, 479);
+            this.ToolStripConsoleStatus.Location = new System.Drawing.Point(1, 504);
             this.ToolStripConsoleStatus.Name = "ToolStripConsoleStatus";
             this.ToolStripConsoleStatus.Padding = new System.Windows.Forms.Padding(6, 0, 8, 5);
             this.ToolStripConsoleStatus.Size = new System.Drawing.Size(631, 30);
@@ -716,7 +675,7 @@
             this.DgvConsoleFiles.RowTemplate.Height = 24;
             this.DgvConsoleFiles.RowTemplate.ReadOnly = true;
             this.DgvConsoleFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvConsoleFiles.Size = new System.Drawing.Size(620, 383);
+            this.DgvConsoleFiles.Size = new System.Drawing.Size(620, 408);
             this.DgvConsoleFiles.TabIndex = 24;
             this.DgvConsoleFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvConsoleFiles_CellClick);
             this.DgvConsoleFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvConsoleFiles_CellDoubleClick);
@@ -775,12 +734,12 @@
             this.LayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.LayoutPanel.Controls.Add(this.SectionConsoleFileExplorer, 1, 0);
             this.LayoutPanel.Controls.Add(this.SectionLocalFileExplorer, 0, 0);
-            this.LayoutPanel.Location = new System.Drawing.Point(12, 38);
+            this.LayoutPanel.Location = new System.Drawing.Point(12, 13);
             this.LayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.LayoutPanel.Name = "LayoutPanel";
             this.LayoutPanel.RowCount = 1;
             this.LayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.LayoutPanel.Size = new System.Drawing.Size(1275, 510);
+            this.LayoutPanel.Size = new System.Drawing.Size(1275, 535);
             this.LayoutPanel.TabIndex = 12;
             // 
             // WaitLoadConsole
@@ -795,23 +754,18 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1300, 561);
             this.Controls.Add(this.LayoutPanel);
-            this.Controls.Add(this.MenuStripHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.MenuStripHeader;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FileManagerWindow";
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "File Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FileExplorer_FormClosing);
-            this.Load += new System.EventHandler(this.FileExplorer_Load);
+            this.Load += new System.EventHandler(this.FileManagerWindow_Load);
             this.ContextMenuConsole.ResumeLayout(false);
-            this.MenuStripHeader.ResumeLayout(false);
-            this.MenuStripHeader.PerformLayout();
             this.SectionLocalFileExplorer.ResumeLayout(false);
             this.SectionLocalFileExplorer.PerformLayout();
             this.ToolStripLocalActions.ResumeLayout(false);
@@ -829,12 +783,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvConsoleFiles)).EndInit();
             this.LayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private DarkUI.Controls.DarkMenuStrip MenuStripHeader;
         private DarkUI.Controls.DarkSectionPanel SectionLocalFileExplorer;
         private DarkUI.Controls.DarkButton ButtonLocalDirectory;
         private DarkUI.Controls.DarkToolStrip ToolStripLocalActions;
@@ -858,8 +810,6 @@
         private DarkUI.Controls.DarkDataGridView DgvConsoleFiles;
         private DarkUI.Controls.DarkTextBox TextBoxConsolePath;
         private System.Windows.Forms.TableLayoutPanel LayoutPanel;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemSettings;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsSaveLocalPath;
         private System.Windows.Forms.Timer WaitLoadConsole;
         private DarkUI.Controls.DarkToolStrip ToolStripLocalStatus;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelLocalStatus;
@@ -881,7 +831,6 @@
         private DarkUI.Controls.DarkComboBox ComboBoxConsoleDrives;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuLocalRenameFile;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuLocalRefresh;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsSaveConsolePath;
         private System.Windows.Forms.ToolStripSeparator ContextMenuConsoleSeparator;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuItemConsoleRenameFile;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuItemConsoleRenameFolder;

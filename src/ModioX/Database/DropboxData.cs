@@ -16,7 +16,7 @@ namespace ModioX.Database
             Categories = GetCategories();
             Mods = GetMods();
 
-            //Categories.Categories = Categories.Categories.OrderBy(o => o.Title).ToList();
+            Categories.Categories = Categories.Categories.OrderBy(o => o.Title).ToList();
         }
 
         /// <summary>
@@ -86,7 +86,6 @@ namespace ModioX.Database
                 }
             }
         }
-
 
         /// <summary>
         ///     Determines a valid json response

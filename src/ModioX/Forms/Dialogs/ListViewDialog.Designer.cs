@@ -41,7 +41,7 @@
             this.ListViewItems.ItemHeight = 22;
             this.ListViewItems.Location = new System.Drawing.Point(1, 25);
             this.ListViewItems.Name = "ListViewItems";
-            this.ListViewItems.Size = new System.Drawing.Size(166, 176);
+            this.ListViewItems.Size = new System.Drawing.Size(217, 176);
             this.ListViewItems.TabIndex = 1;
             this.ListViewItems.Text = "darkListView1";
             this.ListViewItems.SelectedIndicesChanged += new System.EventHandler(this.ListViewRegions_SelectedIndicesChanged);
@@ -56,23 +56,22 @@
             this.SectionItems.Location = new System.Drawing.Point(14, 14);
             this.SectionItems.Name = "SectionItems";
             this.SectionItems.SectionHeader = "Choose Item...";
-            this.SectionItems.Size = new System.Drawing.Size(168, 202);
+            this.SectionItems.Size = new System.Drawing.Size(219, 202);
             this.SectionItems.TabIndex = 0;
             // 
-            // ListItemDialog
+            // ListViewDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(196, 230);
+            this.ClientSize = new System.Drawing.Size(247, 230);
             this.Controls.Add(this.SectionItems);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ListItemDialog";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
+            this.Name = "ListViewDialog";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ListItemDialog";

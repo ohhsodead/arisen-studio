@@ -58,7 +58,7 @@ namespace ModioX.Extensions
         /// <param name="consolePath">Mod to uninstall</param>
         internal static void DeleteDirectory(FtpClient ftpClient, string consolePath)
         {
-            var dirPath = consolePath.Contains("/")
+            string dirPath = consolePath.Contains("/")
                 ? consolePath.Substring(0, consolePath.LastIndexOf('/')) + '/'
                 : "dev_hdd0/";
 
@@ -77,9 +77,9 @@ namespace ModioX.Extensions
         /// <param name="consoleFile">Path of the uploading file directory</param>
         internal static void DownloadFile(string localFile, string consoleFile)
         {
-            var ftpConnection = MainWindow.FtpConnection;
+            FtpConnection ftpConnection = MainWindow.FtpConnection;
 
-            var dirPath = consoleFile.Contains("/")
+            string dirPath = consoleFile.Contains("/")
                 ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
                 : "dev_hdd0/";
 
@@ -118,9 +118,9 @@ namespace ModioX.Extensions
         /// <param name="filePath">Path of the uploading file directory</param>
         internal static bool FileExists(string filePath)
         {
-            var ftpConnection = MainWindow.FtpConnection;
+            FtpConnection ftpConnection = MainWindow.FtpConnection;
 
-            var dirPath = filePath.Contains("/")
+            string dirPath = filePath.Contains("/")
                 ? filePath.Substring(0, filePath.LastIndexOf('/')) + '/'
                 : "dev_hdd0/";
 
@@ -138,7 +138,7 @@ namespace ModioX.Extensions
         internal static void RenameFileOrFolder(FtpConnection ftpConnection, string filePath, string newName)
         {
             // Use the WebRequest method because FtpConnection throws an error and this doesn't, strange
-            var request = (FtpWebRequest) WebRequest.Create("ftp://" + ftpConnection.Host + filePath);
+            FtpWebRequest request = (FtpWebRequest) WebRequest.Create("ftp://" + ftpConnection.Host + filePath);
             request.Method = WebRequestMethods.Ftp.Rename;
             request.Credentials = new NetworkCredential(MainWindow.ConsoleProfile.Username, MainWindow.ConsoleProfile.Password);
             request.RenameTo = newName;
@@ -153,12 +153,12 @@ namespace ModioX.Extensions
         internal static bool CreateDirectory(string consolePath)
         {
             // Use the WebRequest method because FtpConnection throws an error and this doesn't, strange
-            var request = WebRequest.Create("ftp://" + MainWindow.ConsoleProfile.Address + consolePath);
+            WebRequest request = WebRequest.Create("ftp://" + MainWindow.ConsoleProfile.Address + consolePath);
             request.Method = WebRequestMethods.Ftp.MakeDirectory;
             request.Credentials =
                 new NetworkCredential(MainWindow.ConsoleProfile.Username, MainWindow.ConsoleProfile.Password);
 
-            using (var resp = (FtpWebResponse) request.GetResponse())
+            using (FtpWebResponse resp = (FtpWebResponse) request.GetResponse())
             {
                 if (resp.StatusCode == FtpStatusCode.PathnameCreated)
                 {
@@ -171,20 +171,20 @@ namespace ModioX.Extensions
 
         internal static void DownloadDirectory(string consolePath, string localPath)
         {
-            var url = "ftp://" + MainWindow.ConsoleProfile.Address + consolePath;
-            var credentials =
+            string url = "ftp://" + MainWindow.ConsoleProfile.Address + consolePath;
+            NetworkCredential credentials =
                 new NetworkCredential(MainWindow.ConsoleProfile.Username, MainWindow.ConsoleProfile.Password);
 
-            var request = (FtpWebRequest) WebRequest.Create(url);
+            FtpWebRequest request = (FtpWebRequest) WebRequest.Create(url);
             request.Method = WebRequestMethods.Ftp.ListDirectoryDetails;
             request.Credentials = credentials;
             request.Timeout = -1;
 
-            var lines = new List<string>();
+            List<string> lines = new List<string>();
 
-            using (var listResponse = (FtpWebResponse) request.GetResponse())
-            using (var listStream = listResponse.GetResponseStream())
-            using (var listReader = new StreamReader(listStream))
+            using (FtpWebResponse listResponse = (FtpWebResponse) request.GetResponse())
+            using (Stream listStream = listResponse.GetResponseStream())
+            using (StreamReader listReader = new StreamReader(listStream))
             {
                 while (!listReader.EndOfStream)
                 {
@@ -192,15 +192,15 @@ namespace ModioX.Extensions
                 }
             }
 
-            foreach (var line in lines)
+            foreach (string line in lines)
             {
-                var tokens =
+                string[] tokens =
                     line.Split(new[] {' '}, 9, StringSplitOptions.RemoveEmptyEntries);
-                var name = tokens[8];
-                var permissions = tokens[0];
+                string name = tokens[8];
+                string permissions = tokens[0];
 
-                var localFilePath = Path.Combine(localPath, name);
-                var fileUrl = url + name;
+                string localFilePath = Path.Combine(localPath, name);
+                string fileUrl = url + name;
 
                 if (permissions[0] == 'd')
                 {
@@ -213,16 +213,16 @@ namespace ModioX.Extensions
                 }
                 else
                 {
-                    var downloadRequest = (FtpWebRequest) WebRequest.Create(fileUrl);
+                    FtpWebRequest downloadRequest = (FtpWebRequest) WebRequest.Create(fileUrl);
                     downloadRequest.Method = WebRequestMethods.Ftp.DownloadFile;
                     downloadRequest.Credentials = credentials;
                     downloadRequest.Timeout = -1;
 
-                    using (var downloadResponse = (FtpWebResponse) downloadRequest.GetResponse())
-                    using (var sourceStream = downloadResponse.GetResponseStream())
+                    using (FtpWebResponse downloadResponse = (FtpWebResponse) downloadRequest.GetResponse())
+                    using (Stream sourceStream = downloadResponse.GetResponseStream())
                     using (Stream targetStream = File.Create(localFilePath))
                     {
-                        var buffer = new byte[10240];
+                        byte[] buffer = new byte[10240];
                         int read;
                         while (sourceStream != null && (read = sourceStream.Read(buffer, 0, buffer.Length)) > 0)
                         {
@@ -239,17 +239,17 @@ namespace ModioX.Extensions
         /// <param name="consolePath">Path of the uploading file directory</param>
         internal static List<string> GetFolderNames(string consolePath)
         {
-            var ftpConnection = MainWindow.FtpConnection;
+            FtpConnection ftpConnection = MainWindow.FtpConnection;
 
-            var folderNames = new List<string>();
+            List<string> folderNames = new List<string>();
 
-            var dirPath = consolePath.Contains("/")
+            string dirPath = consolePath.Contains("/")
                 ? consolePath.Substring(0, consolePath.LastIndexOf('/')) + '/'
                 : "/dev_hdd0/";
 
             ftpConnection.SetCurrentDirectory(dirPath);
 
-            foreach (var directoryInfo in ftpConnection.GetDirectories(dirPath).Skip(2))
+            foreach (FtpDirectoryInfo directoryInfo in ftpConnection.GetDirectories(dirPath).Skip(2))
             {
                 folderNames.Add(directoryInfo.Name);
             }
@@ -264,16 +264,41 @@ namespace ModioX.Extensions
         /// <returns></returns>
         public static string GetUserId(Form owner)
         {
-            var userIds = GetFolderNames("/dev_hdd0/home/");
+            List<string> userIds = GetFolderNames("/dev_hdd0/home/");
 
-            if (userIds.Count >= 1)
+            List<string> userNames = (from userId in userIds
+                                      select $"{userId} ({GetUserNameFromUserId(userId)})").ToList();
+
+            if (userIds.Count > 0)
             {
-                return DialogExtensions.ShowListInputDialog(owner, "User Profile IDs", userIds);
+                string userId = DialogExtensions.ShowListInputDialog(owner, "User Profile IDs", userNames).Split()[0];
+
+                if (userId != null)
+                {
+                    return userId;
+                }
             }
-            _ = DarkMessageBox.Show(owner,
-                "Could not find any users on your console. Make sure you have at least one user profile and then try again.",
-                "No Users Found", MessageBoxIcon.Error);
+
+            DarkMessageBox.Show(owner, "Could not find any users. Make sure you have created at least one user profile.", "No Users Found", MessageBoxIcon.Error);
             return null;
+        }
+
+        /// <summary>
+        ///     Prompts the user to choose their user id
+        /// </summary>
+        /// <param name="userId">Console IP Address</param>
+        /// <returns></returns>
+        public static string GetUserNameFromUserId(string userId)
+        {
+            FtpClient ftpClient = MainWindow.FtpClient;
+
+            string usernameFile = $"/dev_hdd0/home/{userId}/localusername";
+
+            using (Stream stream = ftpClient.OpenRead(usernameFile))
+            using (StreamReader streamReader = new StreamReader(stream))
+            {
+                return streamReader.ReadToEnd();
+            }
         }
 
         /// <summary>
@@ -290,9 +315,9 @@ namespace ModioX.Extensions
                 "dev_usb003"
             };
 
-            var folderNames = GetFolderNames("/");
+            List<string> folderNames = GetFolderNames("/");
 
-            foreach (var usbPath in usbPaths)
+            foreach (string usbPath in usbPaths)
             {
                 if (folderNames.Contains(usbPath))
                 {

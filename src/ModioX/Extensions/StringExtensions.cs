@@ -30,5 +30,26 @@ namespace ModioX.Extensions
 
             return offset;
         }
+
+        public static string RemoveFirstInstanceOfString(this string value, string removeString)
+        {
+            int index = value.IndexOf(removeString, StringComparison.Ordinal);
+            return index < 0 ? value : value.Remove(index, removeString.Length);
+        }
+
+        // Load all suffixes in an array  
+        static readonly string[] suffixes = { "Bytes", "KB", "MB", "GB", "TB", "PB" };
+
+        public static string FormatSize(this string bytes)
+        {
+            int counter = 0;
+            decimal number = long.Parse(bytes);
+            while (Math.Round(number / 1024) >= 1)
+            {
+                number /= 1024;
+                counter++;
+            }
+            return string.Format("{0:n1} {1}", number, suffixes[counter]);
+        }
     }
 }

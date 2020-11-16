@@ -88,7 +88,6 @@
             this.ButtonCancel.Size = new System.Drawing.Size(80, 25);
             this.ButtonCancel.TabIndex = 5;
             this.ButtonCancel.Text = "Cancel";
-            this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // TextBoxConsolePort
             // 
@@ -117,7 +116,6 @@
             // ButtonOK
             // 
             this.ButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ButtonOK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonOK.Location = new System.Drawing.Point(193, 126);
             this.ButtonOK.Margin = new System.Windows.Forms.Padding(5);
@@ -196,8 +194,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewConnectionDialog";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Connection Details";

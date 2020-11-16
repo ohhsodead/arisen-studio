@@ -16,11 +16,11 @@ namespace ModioX.Models.Resources
 
         public List<ConsoleProfile> ConsoleProfiles { get; set; } = new List<ConsoleProfile>();
 
-        public bool ShowModIds { get; set; } = false;
-
         public bool RememberGameRegions { get; set; } = false;
 
-        public bool AutoDetectGameRegion { get; set; } = false;
+        public bool AutoDetectGameRegions { get; set; } = false;
+
+        public bool AutoDetectGameTitles { get; set; } = true;
 
         public bool SaveLocalPath { get; set; } = false;
 
@@ -40,7 +40,7 @@ namespace ModioX.Models.Resources
 
         public List<ExternalApplication> ExternalApplications { get; set; } = new List<ExternalApplication>();
 
-        public List<InstalledGameMod> InstalledGameMods { get; set; } = new List<InstalledGameMod>();
+        public List<InstalledMod> InstalledGameMods { get; set; } = new List<InstalledMod>();
 
         /// <summary>
         ///     Create/store a backup of the specified file, and then downloads it locally to a known path
@@ -50,7 +50,7 @@ namespace ModioX.Models.Resources
         /// <param name="installFilePath"></param>
         public void CreateBackupFile(ModsData.ModItem modItem, string fileName, string installFilePath)
         {
-            var fileBackupFolder = GetBackupFileFolder(modItem);
+            var fileBackupFolder = GetGameBackupFolder(modItem);
 
             _ = Directory.CreateDirectory(fileBackupFolder);
 
@@ -77,10 +77,11 @@ namespace ModioX.Models.Resources
         public BackupFile GetGameFileBackup(string gameId, string fileName, string installPath)
         {
             foreach (var backupFile in from BackupFile backupFile in BackupFiles
-                where backupFile.CategoryId.ToLower().Equals(gameId.ToLower()) &&
-                      backupFile.FileName.ToLower().Contains(fileName.ToLower()) &&
-                      backupFile.InstallPath.ToLower().Contains(installPath.ToLower())
-                select backupFile)
+                                       where
+backupFile.CategoryId.ToLower().Equals(gameId.ToLower()) &&
+backupFile.FileName.ToLower().Contains(fileName.ToLower()) &&
+backupFile.InstallPath.ToLower().Contains(installPath.ToLower())
+                                       select backupFile)
             {
                 return backupFile;
             }
@@ -96,8 +97,8 @@ namespace ModioX.Models.Resources
         public string GetApplicationLocation(string appName)
         {
             foreach (var application in from ExternalApplication application in ExternalApplications
-                where string.Equals(application.Name, appName, StringComparison.CurrentCultureIgnoreCase)
-                select application)
+                                        where string.Equals(application.Name, appName, StringComparison.CurrentCultureIgnoreCase)
+                                        select application)
             {
                 return application.FileLocation;
             }
@@ -112,8 +113,7 @@ namespace ModioX.Models.Resources
         /// <param name="fileLocation">Application File Location</param>
         public void UpdateApplication(string appName, string fileLocation)
         {
-            var applicationIndex = ExternalApplications.Find(x =>
-                string.Equals(x.Name, appName, StringComparison.CurrentCultureIgnoreCase));
+            var applicationIndex = ExternalApplications.Find(x => string.Equals(x.Name, appName, StringComparison.CurrentCultureIgnoreCase));
 
             var externalApplcation = new ExternalApplication(appName, fileLocation);
 
@@ -135,8 +135,8 @@ namespace ModioX.Models.Resources
         public string GetGameRegion(string gameId)
         {
             foreach (var gameRegion in from GameRegion gameRegion in GameRegions
-                where string.Equals(gameRegion.GameId, gameId, StringComparison.CurrentCultureIgnoreCase)
-                select gameRegion)
+                                       where string.Equals(gameRegion.GameId, gameId, StringComparison.CurrentCultureIgnoreCase)
+                                       select gameRegion)
             {
                 return gameRegion.Region;
             }
@@ -164,11 +164,11 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        ///     Creates and returns the backup folder for the specified <see cref="ModsData.ModItem" />.
+        ///     Creates and returns the games backup folder for the specified <see cref="ModsData.ModItem" />.
         /// </summary>
         /// <param name="modItem"></param>
         /// <returns></returns>
-        public static string GetBackupFileFolder(ModsData.ModItem modItem)
+        public static string GetGameBackupFolder(ModsData.ModItem modItem)
         {
             return Path.Combine(UserFolders.AppGameBackupFiles, modItem.GameId);
         }
@@ -192,54 +192,56 @@ namespace ModioX.Models.Resources
         /// <summary>
         ///     Updates the installed game mods.
         /// </summary>
-        /// <param name="gameId"></param>
-        /// <param name="gameRegion"></param>
+        /// <param name="categoryId"></param>
         /// <param name="modId"></param>
+        /// <param name="region"></param>
         /// <param name="noOfFiles"></param>
         /// <param name="dateInstalled"></param>
-        public void UpdateInstalledGameMod(string gameId, string gameRegion, long modId, int noOfFiles,
-            DateTime dateInstalled)
+        /// <param name="downloadFiles"></param>
+        public void UpdateInstalledGameMod(string categoryId, int modId, string region, int noOfFiles, DateTime dateInstalled, ModsData.DownloadFiles downloadFiles)
         {
-            RemoveInstalledGame(gameId);
+            RemoveInstalledGameMod(categoryId);
 
-            InstalledGameMods.Add(new InstalledGameMod
+            InstalledGameMods.Add(new InstalledMod
             {
-                GameId = gameId, GameRegion = gameRegion, ModId = modId, Files = noOfFiles,
-                DateInstalled = dateInstalled
+                CategoryId = categoryId,
+                ModId = modId,
+                Region = region,
+                Files = noOfFiles,
+                DateInstalled = dateInstalled,
+                DownloadFiles = downloadFiles
             });
         }
 
         /// <summary>
         ///     Removes the installed mods matching the <see cref="ModsData.ModItem.GameId" />
         /// </summary>
-        /// <param name="gameId"></param>
-        public void RemoveInstalledGame(string gameId)
+        /// <param name="categoryId"></param>
+        public void RemoveInstalledGameMod(string categoryId)
         {
-            _ = InstalledGameMods.RemoveAll(x =>
-                string.Equals(x.GameId, gameId, StringComparison.CurrentCultureIgnoreCase));
+            _ = InstalledGameMods.RemoveAll(x => string.Equals(x.CategoryId, categoryId, StringComparison.CurrentCultureIgnoreCase));
         }
 
         /// <summary>
-        ///     Removes the installed game mod matching the <see cref="ModsData.ModItem.GameId" /> and
-        ///     <see cref="ModsData.ModItem.Id" />
+        ///     Removes the installed game mod matching the <see cref="ModsData.ModItem.GameId" /> and <see cref="ModsData.ModItem.Id" />
         /// </summary>
-        /// <param name="gameId"></param>
+        /// <param name="categoryId"></param>
         /// <param name="modId"></param>
-        public void RemoveInstalledGameMod(string gameId, long modId)
+        public void RemoveInstalledGameMod(string categoryId, long modId)
         {
-            _ = InstalledGameMods.RemoveAll(x => string.Equals(x.GameId.ToLower(), gameId) && x.ModId.Equals(modId));
+            _ = InstalledGameMods.RemoveAll(x => string.Equals(x.CategoryId, categoryId, StringComparison.CurrentCultureIgnoreCase) && x.ModId.Equals(modId));
         }
 
         /// <summary>
-        ///     Gets the current <see cref="InstalledGameMod" /> the <see cref="ModsData.ModItem.GameId" />
+        ///     Gets the current <see cref="InstalledGameMod" /> the <see cref="ModsData.ModItem.Id" />
         /// </summary>
-        /// <param name="gameId"></param>
+        /// <param name="categoryId"></param>
         /// <returns></returns>
-        public InstalledGameMod GetInstalledGameMod(string gameId)
+        public InstalledMod GetInstalledGameMod(string categoryId)
         {
             foreach (var modInstalled in InstalledGameMods)
             {
-                if (string.Equals(modInstalled.GameId, gameId, StringComparison.CurrentCultureIgnoreCase))
+                if (string.Equals(modInstalled.CategoryId, categoryId, StringComparison.CurrentCultureIgnoreCase))
                 {
                     return modInstalled;
                 }
@@ -252,17 +254,17 @@ namespace ModioX.Models.Resources
         ///     Returns the game region of which the mod was used to installed to game matching the
         ///     <see cref="ModsData.ModItem.GameId" />.
         /// </summary>
-        /// <param name="gameId">
+        /// <param name="categoryId">
         ///     <see cref="CategoriesData.Category.Id" /> to match with the <see cref="InstalledGameMod" />
         /// </param>
         /// <returns></returns>
-        public string GetInstalledGameModRegion(string gameId)
+        public string GetInstalledGameModRegion(string categoryId)
         {
             foreach (var gameMod in InstalledGameMods)
             {
-                if (string.Equals(gameMod.GameId, gameId, StringComparison.CurrentCultureIgnoreCase))
+                if (string.Equals(gameMod.CategoryId, categoryId, StringComparison.CurrentCultureIgnoreCase))
                 {
-                    return gameMod.GameRegion;
+                    return gameMod.Region;
                 }
             }
 
@@ -310,24 +312,25 @@ namespace ModioX.Models.Resources
     }
 
     /// <summary>
-    ///     Create a new installed game mod class with the details.
+    ///     Create a new installed mod class with the details.
     /// </summary>
-    public class InstalledGameMod
+    public class InstalledMod
     {
-        public string GameId { get; set; }
+        public string CategoryId { get; set; }
 
-        public string GameRegion { get; set; }
+        public int ModId { get; set; }
 
-        public long ModId { get; set; }
+        public string Region { get; set; }
 
         public int Files { get; set; }
 
         public DateTime DateInstalled { get; set; }
+
+        public ModsData.DownloadFiles DownloadFiles { get; set; }
     }
 
     /// <summary>
-    ///     Create a new game region class with the specified <see cref="CategoriesData.Category.Id" /> and
-    ///     <see cref="ModsData.ModItem.Region" />.
+    ///     Create a new game region class with the specified <see cref="CategoriesData.Category.Id" /> and <see cref="ModsData.ModItem.Region" />.
     /// </summary>
     public class GameRegion
     {

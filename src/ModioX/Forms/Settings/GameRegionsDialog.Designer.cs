@@ -37,6 +37,7 @@
             this.ColumnRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToolStripGameRegions = new DarkUI.Controls.DarkToolStrip();
             this.ToolStripDeleteAll = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripDeleteSelected = new System.Windows.Forms.ToolStripButton();
             this.LabelTotalGameRegions = new System.Windows.Forms.ToolStripLabel();
             this.ColumnGameRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +47,6 @@
             this.ComboBoxGameTitle = new DarkUI.Controls.DarkComboBox();
             this.LabelGameTitle = new DarkUI.Controls.DarkLabel();
             this.ComboBoxGameRegion = new DarkUI.Controls.DarkComboBox();
-            this.ToolStripDeleteSelected = new System.Windows.Forms.ToolStripButton();
             this.SectionPanelGameRegions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGameRegions)).BeginInit();
             this.ToolStripGameRegions.SuspendLayout();
@@ -176,6 +176,24 @@
             this.ToolStripDeleteAll.ToolTipText = "Delete All Saved Game Regions";
             this.ToolStripDeleteAll.Click += new System.EventHandler(this.ToolStripDeleteAll_Click);
             // 
+            // ToolStripDeleteSelected
+            // 
+            this.ToolStripDeleteSelected.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.ToolStripDeleteSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ToolStripDeleteSelected.Enabled = false;
+            this.ToolStripDeleteSelected.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ToolStripDeleteSelected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ToolStripDeleteSelected.Image = global::ModioX.Properties.Resources.delete;
+            this.ToolStripDeleteSelected.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ToolStripDeleteSelected.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripDeleteSelected.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripDeleteSelected.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.ToolStripDeleteSelected.Name = "ToolStripDeleteSelected";
+            this.ToolStripDeleteSelected.Size = new System.Drawing.Size(71, 26);
+            this.ToolStripDeleteSelected.Text = "Delete";
+            this.ToolStripDeleteSelected.ToolTipText = "Delete Selected";
+            this.ToolStripDeleteSelected.Click += new System.EventHandler(this.ToolStripDeleteSelected_Click);
+            // 
             // LabelTotalGameRegions
             // 
             this.LabelTotalGameRegions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
@@ -277,24 +295,6 @@
             this.ComboBoxGameRegion.Size = new System.Drawing.Size(112, 24);
             this.ComboBoxGameRegion.TabIndex = 3;
             // 
-            // ToolStripDeleteSelected
-            // 
-            this.ToolStripDeleteSelected.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.ToolStripDeleteSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripDeleteSelected.Enabled = false;
-            this.ToolStripDeleteSelected.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripDeleteSelected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripDeleteSelected.Image = global::ModioX.Properties.Resources.delete;
-            this.ToolStripDeleteSelected.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripDeleteSelected.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripDeleteSelected.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripDeleteSelected.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripDeleteSelected.Name = "ToolStripDeleteSelected";
-            this.ToolStripDeleteSelected.Size = new System.Drawing.Size(71, 26);
-            this.ToolStripDeleteSelected.Text = "Delete";
-            this.ToolStripDeleteSelected.ToolTipText = "Delete Selected";
-            this.ToolStripDeleteSelected.Click += new System.EventHandler(this.ToolStripDeleteSelected_Click);
-            // 
             // GameRegionsDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -311,8 +311,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameRegionsDialog";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Game Regions";

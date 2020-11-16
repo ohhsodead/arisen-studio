@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -20,8 +21,6 @@ namespace ModioX.Forms.Windows
 {
     public partial class FileManagerWindow : DarkForm
     {
-        private readonly DriveInfo[] localDrives = DriveInfo.GetDrives();
-
         public FileManagerWindow()
         {
             InitializeComponent();
@@ -43,16 +42,21 @@ namespace ModioX.Forms.Windows
         public static FtpClient FtpClient { get; set; } = MainWindow.FtpClient;
 
         /// <summary>
-        ///     Gets/sets the current local directory path
+        ///     Gets/sets the current local directory path.
         /// </summary>
         public string LocalDirectoryPath { get; set; } = @"C:\";
 
         /// <summary>
-        ///     Get/sets the current ftp directory path
+        ///     Get/sets the current ftp directory path.
         /// </summary>
         public string FtpDirectoryPath { get; set; } = "/dev_hdd0/";
 
-        private void FileExplorer_Load(object sender, EventArgs e)
+        /// <summary>
+        ///     Contains the local computer drives.
+        /// </summary>
+        private readonly DriveInfo[] localDrives = DriveInfo.GetDrives();
+
+        private void FileManagerWindow_Load(object sender, EventArgs e)
         {
             MenuItemSettingsSaveLocalPath.Checked = MainWindow.Settings.SaveLocalPath;
             MenuItemSettingsSaveConsolePath.Checked = MainWindow.Settings.SaveConsolePath;
@@ -68,7 +72,7 @@ namespace ModioX.Forms.Windows
 
             if (MainWindow.Settings.SaveLocalPath)
             {
-                if (MainWindow.Settings.LocalPath.Equals(@"\") || string.IsNullOrEmpty(MainWindow.Settings.LocalPath))
+                if (MainWindow.Settings.LocalPath.Equals(@"\") || string.IsNullOrWhiteSpace(MainWindow.Settings.LocalPath))
                 {
                     LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents) + @"\");
                 }
@@ -134,7 +138,7 @@ namespace ModioX.Forms.Windows
             WaitLoadConsole.Enabled = false;
         }
 
-        /* Local Explorer */
+        /************* Local File Explorer *************/
 
         private void ComboBoxLocalDrives_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -224,13 +228,7 @@ namespace ModioX.Forms.Windows
 
         private void ToolStripLocalNewFolder_Click(object sender, EventArgs e)
         {
-            var newName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder name: ", "");
-
-            if (newName != null)
-            {
-                _ = Directory.CreateDirectory(TextBoxLocalPath.Text + @"\" + newName);
-                LoadLocalDirectory(LocalDirectoryPath);
-            }
+            CreateLocalFolder();
         }
 
         private void ToolStripLocalRefresh_Click(object sender, EventArgs e)
@@ -262,58 +260,12 @@ namespace ModioX.Forms.Windows
 
         private void ContextMenuLocalRenameFile_Click(object sender, EventArgs e)
         {
-            if (DgvLocalFiles.CurrentRow != null)
-            {
-                var oldFileName = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
-                var filePath = TextBoxLocalPath.Text + @"\" + oldFileName;
-
-                var newFileName = DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name: ", oldFileName);
-
-                var newFilePath = TextBoxLocalPath.Text + @"\" + newFileName;
-
-                if (newFileName != null && newFileName.Equals(oldFileName))
-                {
-                    if (!File.Exists(newFilePath))
-                    {
-                        SetConsoleStatus($"A file with this name already exists.");
-                    }
-                    else
-                    {
-                        SetConsoleStatus($"Renaming file {filePath} to: {newFileName}");
-                        FileSystem.RenameFile(filePath, newFileName);
-                        SetConsoleStatus($"Successfully renamed file to: {newFileName}");
-                        LoadLocalDirectory(LocalDirectoryPath);
-                    }
-                }
-            }
+            RenameLocalFile();
         }
 
         private void ContextMenuLocalRenameFolder_Click(object sender, EventArgs e)
         {
-            if (DgvLocalFiles.CurrentRow != null)
-            {
-                var oldFolderName = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
-                var folderPath = TextBoxLocalPath.Text + @"\" + oldFolderName;
-
-                var newFolderName = DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name: ", oldFolderName);
-
-                var newFolderPath = TextBoxLocalPath.Text + @"\" + newFolderName;
-
-                if (newFolderName != null && newFolderName.Equals(oldFolderName))
-                {
-                    if (!Directory.Exists(newFolderPath))
-                    {
-                        SetLocalStatus($"A folder with this name already exists.");
-                    }
-                    else
-                    {
-                        SetConsoleStatus($"Renaming file {folderPath} to: {newFolderName}");
-                        FileSystem.RenameDirectory(folderPath, newFolderName);
-                        SetConsoleStatus($"Successfully renamed folder to: {newFolderName}");
-                        LoadLocalDirectory(LocalDirectoryPath);
-                    }
-                }
-            }
+            RenameLocalFolder();
         }
 
         private void ContextMenuLocalRefresh_Click(object sender, EventArgs e)
@@ -344,7 +296,7 @@ namespace ModioX.Forms.Windows
 
                 if (!isParentRoot)
                 {
-                    _ = DgvLocalFiles.Rows.Add("folder", Resources.folder, "..", "<DIRECTORY>",
+                    _ = DgvLocalFiles.Rows.Add("folder", ImageFolder, "..", "<DIRECTORY>",
                         Directory.GetLastWriteTime(LocalDirectoryPath));
                 }
 
@@ -354,7 +306,7 @@ namespace ModioX.Forms.Windows
 
                 foreach (var directoryItem in Directory.GetDirectories(LocalDirectoryPath))
                 {
-                    _ = DgvLocalFiles.Rows.Add("folder", Resources.folder, Path.GetFileName(directoryItem), "<DIRECTORY>", Directory.GetLastWriteTime(directoryItem));
+                    _ = DgvLocalFiles.Rows.Add("folder", ImageFolder, Path.GetFileName(directoryItem), "<DIRECTORY>", Directory.GetLastWriteTime(directoryItem));
 
                     folders++;
                 }
@@ -363,7 +315,7 @@ namespace ModioX.Forms.Windows
                 {
                     var fileBytes = new FileInfo(fileItem).Length;
 
-                    _ = DgvLocalFiles.Rows.Add("file", Resources.file, Path.GetFileName(fileItem), fileBytes.ToString("n0", CultureInfo.CurrentCulture) + " bytes", File.GetLastWriteTime(fileItem));
+                    _ = DgvLocalFiles.Rows.Add("file", ImageFile, Path.GetFileName(fileItem), fileBytes.ToString("n0", CultureInfo.CurrentCulture) + " bytes", File.GetLastWriteTime(fileItem));
 
                     files++;
                     totalBytes += fileBytes;
@@ -397,7 +349,7 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        /* Console Explorer */
+        /************* Console File Explorer *************/
 
         private void ComboBoxConsoleDrives_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -425,7 +377,18 @@ namespace ModioX.Forms.Windows
                 }
                 else if (type == "folder") // Go to selected folder directory
                 {
-                    LoadConsoleDirectory(FtpDirectoryPath + DgvConsoleFiles.CurrentRow.Cells[2].Value + "/");
+                    if (FtpDirectoryPath == "/dev_hdd0/home/")
+                    {
+                        LoadConsoleDirectory(FtpDirectoryPath + name.Split()[0] + "/");
+                    }
+                    else if (FtpDirectoryPath == "/dev_hdd0/game/")
+                    {
+                        LoadConsoleDirectory(FtpDirectoryPath + name.Split()[0] + "/");
+                    }
+                    else
+                    {
+                        LoadConsoleDirectory(FtpDirectoryPath + name + "/");
+                    }
                 }
             }
         }
@@ -474,26 +437,7 @@ namespace ModioX.Forms.Windows
 
         private void ToolStripConsoleNewFolder_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var folderName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder Name: ", "");
-
-                if (folderName != null)
-                {
-                    _ = FtpExtensions.CreateDirectory(FtpDirectoryPath + "/" + folderName);
-                    LoadConsoleDirectory(FtpDirectoryPath);
-                }
-            }
-            catch (FtpException ex)
-            {
-                _ = DarkMessageBox.Show(this, $"Unable to create new folder. Error: {ex.Message}", "Error",
-                    MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                _ = DarkMessageBox.Show(this, $"Unable to create new folder. Error: {ex.Message}", "Error",
-                    MessageBoxIcon.Error);
-            }
+            CreateConsoleFolder();
         }
 
         private void ToolStripConsoleFileRefresh_Click(object sender, EventArgs e)
@@ -518,69 +462,16 @@ namespace ModioX.Forms.Windows
 
         private void ContextMenuItemConsoleRenameFile_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var oldFileName = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
-                var filePath = TextBoxConsolePath.Text + oldFileName;
-
-                var newFileName = DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name:", oldFileName);
-
-                var newConsoleFilePath = TextBoxConsolePath.Text + newFileName;                
-
-                if (newFileName != null && !newFileName.Equals(oldFileName))
-                {
-                    if (FtpClient.FileExists(newConsoleFilePath))
-                    {
-                        SetConsoleStatus($"A file with this name already exists.");
-                        return;
-                    }
-                    else
-                    {
-                        SetConsoleStatus($"Renaming file {filePath} to {newFileName}");
-                        FtpExtensions.RenameFileOrFolder(FtpConnection, filePath, newFileName);
-                        SetConsoleStatus($"Successfully renamed file to: {newFileName}");
-                        LoadConsoleDirectory(FtpDirectoryPath);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                SetConsoleStatus($"Unable to rename file. Error: {ex.Message}", ex);
-            }
+            RenameConsoleFile();
         }
 
         private void ContextMenuItemConsoleRenameFolder_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var oldFolderName = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
-                var folderPath = TextBoxConsolePath.Text + oldFolderName;
-
-                var newFolderName = DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name:", oldFolderName);
-
-                var newFolderPath = TextBoxConsolePath.Text + newFolderName;                
-
-                if (newFolderName != null && !newFolderName.Equals(oldFolderName))
-                {
-                    if (FtpClient.DirectoryExists(folderPath))
-                    {
-                        SetConsoleStatus($"A folder with this name already exists.");
-                        return;
-                    }
-                    else
-                    {
-                        SetConsoleStatus($"Renaming folder: {folderPath} to: {newFolderName}");
-                        FtpExtensions.RenameFileOrFolder(FtpConnection, folderPath, newFolderName);
-                        SetConsoleStatus($"Successfully renamed folder to: {newFolderName}");
-                        LoadConsoleDirectory(FtpDirectoryPath);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                SetConsoleStatus($"Unable to rename folder. Error: {ex.Message}", ex);
-            }
+            RenameConsoleFolder();
         }
+
+        private Image ImageFolder = ImageExtensions.ResizeBitmap(Resources.folder, 20, 20);
+        private Image ImageFile = ImageExtensions.ResizeBitmap(Resources.file, 20, 20);
 
         /// <summary>
         ///     Loads files and folders into the console datagridview
@@ -593,9 +484,9 @@ namespace ModioX.Forms.Windows
                 DgvConsoleFiles.Rows.Clear();
 
                 FtpDirectoryPath = directoryPath.Replace("//", "/");
-                TextBoxConsolePath.Text = directoryPath.Replace("//", "/");
+                TextBoxConsolePath.Text = FtpDirectoryPath;
 
-                SetConsoleStatus(string.Format("Fetching directory listing of '{0}'...", FtpDirectoryPath));
+                SetConsoleStatus($"Fetching directory listing of '{FtpDirectoryPath}'...");
 
                 var secondIndexOfSlash = FtpDirectoryPath.TrimStart('/').IndexOfNth("/");
                 var rootPath = FtpDirectoryPath.Substring(1, secondIndexOfSlash);
@@ -608,7 +499,7 @@ namespace ModioX.Forms.Windows
 
                 if (!isRoot)
                 {
-                    _ = DgvConsoleFiles.Rows.Add("folder", Resources.folder, "..", "<DIRECTORY>", DateTime.MinValue);
+                    _ = DgvConsoleFiles.Rows.Add("folder", ImageFolder, "..", "<DIRECTORY>", DateTime.MinValue);
                 }
 
                 FtpClient.SetWorkingDirectory(FtpDirectoryPath);
@@ -637,14 +528,27 @@ namespace ModioX.Forms.Windows
 
                 foreach (FtpListItem listItem in folders.OrderBy(x => x.Name))
                 {
-                    _ = DgvConsoleFiles.Rows.Add("folder", Resources.folder, listItem.Name, "<DIRECTORY>", listItem.Modified);
+                    if (FtpDirectoryPath == "/dev_hdd0/home/")
+                    {
+                        string profileName = FtpExtensions.GetUserNameFromUserId(listItem.Name);
+                        _ = DgvConsoleFiles.Rows.Add("folder", ImageFolder, $"{listItem.Name} ({profileName})", "<PROFILE>", listItem.Modified);
+                    }
+                    else if (FtpDirectoryPath == "/dev_hdd0/game/")
+                    {
+                        string gameTitle = MainWindow.Settings.AutoDetectGameTitles ? $" ({HttpExtensions.GetGameTitleFromTitleID(listItem.Name)})" : "";
+                        _ = DgvConsoleFiles.Rows.Add("folder", ImageFolder, $"{listItem.Name}{gameTitle}", "<GAMEUPDATE>", listItem.Modified);
+                    }
+                    else
+                    {
+                        _ = DgvConsoleFiles.Rows.Add("folder", ImageFolder, listItem.Name, "<DIRECTORY>", listItem.Modified);
+                    }
                 }
 
                 foreach (FtpListItem listItem in files.OrderBy(x => x.Name))
                 {
-                    _ = DgvConsoleFiles.Rows.Add("file", Resources.file, listItem.Name, listItem.Size.ToString("n0", CultureInfo.CurrentCulture) + " bytes", listItem.Modified);
-                    totalBytes += listItem.Size;
+                    _ = DgvConsoleFiles.Rows.Add("file", ImageFile, listItem.Name, listItem.Size.ToString("n0", CultureInfo.CurrentCulture) + " bytes", listItem.Modified);
                 }
+            
 
                 string statusFiles = files.Count > 0 ? $"{files.Count} {(files.Count == 1 ? "file" : "files")} {(files.Count > 0 && folders.Count > 0 ? "and " : "")}" : "" + $"{(folders.Count == 0 ? "." : "")}";
                 string statusFolders = folders.Count > 0 ? $"{folders.Count} {(folders.Count == 1 ? "directory" : "directories")}. " : "";
@@ -667,6 +571,74 @@ namespace ModioX.Forms.Windows
             {
                 SetConsoleStatus($"Error fetching directory listing for path: {FtpDirectoryPath}", ex);
             }
+        }
+
+        public void CreateLocalFolder()
+        {
+            try
+            {
+                var newName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder name: ", "");
+
+                if (newName != null)
+                {
+                    string folderPath = TextBoxLocalPath.Text + @"\" + newName;
+
+                    if (Directory.Exists(folderPath))
+                    {
+                        _ = DarkMessageBox.Show(this, $"A folder with this name already exists.", "Error", MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    else
+                    {
+                        _ = Directory.CreateDirectory(folderPath);
+                        LoadLocalDirectory(LocalDirectoryPath);
+                    }
+                }
+            }
+            catch (FtpException ex)
+            {
+                _ = DarkMessageBox.Show(this, $"Unable to create new folder. Error: {ex.Message}", "Error",
+                    MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                _ = DarkMessageBox.Show(this, $"Unable to create new folder. Error: {ex.Message}", "Error",
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        public void CreateConsoleFolder()
+        {
+            try
+            {
+                var folderName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder Name: ", "");
+
+                if (folderName != null)
+                {
+                    string folderPath = FtpDirectoryPath + "/" + folderName;
+
+                    if (FtpClient.DirectoryExists(folderPath))
+                    {
+                        _ = DarkMessageBox.Show(this, $"A folder with this name already exists.", "Error", MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    else
+                    {
+                        _ = FtpExtensions.CreateDirectory(folderPath);
+                        LoadConsoleDirectory(FtpDirectoryPath);
+                    }
+                }
+            }
+            catch (FtpException ex)
+            {
+                _ = DarkMessageBox.Show(this, $"Unable to create new folder. Error: {ex.Message}", "Error",
+                    MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                _ = DarkMessageBox.Show(this, $"Unable to create new folder. Error: {ex.Message}", "Error",
+                    MessageBoxIcon.Error);
+            }            
         }
 
         public void UploadLocalFile()
@@ -760,8 +732,8 @@ namespace ModioX.Forms.Windows
 
                 if (type.Equals("file"))
                 {
-                    var consoleFile = TextBoxConsolePath.Text + DgvConsoleFiles.CurrentRow.Cells[2].Value;
-                    var localFile = TextBoxLocalPath.Text + DgvConsoleFiles.CurrentRow.Cells[2].Value;
+                    var consoleFile = FtpDirectoryPath + name;
+                    var localFile = LocalDirectoryPath + name;
 
                     if (File.Exists(localFile))
                     {
@@ -770,17 +742,16 @@ namespace ModioX.Forms.Windows
 
                     SetConsoleStatus($"Downloading file: {Path.GetFileName(localFile)}");
                     FtpExtensions.DownloadFile(localFile, consoleFile);
-                    //_ = MainWindow.FtpClient.DownloadFile(localFile, consoleFile);
                     SetConsoleStatus($"Successfully downloaded file: {Path.GetFileName(localFile)}");
                 }
                 else if (type.Equals("folder"))
                 {
-                    var consolePath = TextBoxConsolePath.Text + DgvConsoleFiles.CurrentRow.Cells[2].Value + "/";
-                    var localPath = TextBoxLocalPath.Text + DgvConsoleFiles.CurrentRow.Cells[2].Value;
+                    var consolePath = FtpDirectoryPath + name + "/";
+                    var localPath = LocalDirectoryPath + name;
 
                     if (Directory.Exists(localPath))
                     {
-                        Directory.Delete(localPath, true);
+                        UserFolders.DeleteDirectory(localPath);
                     }
 
                     SetConsoleStatus($"Downloading folder: {consolePath}");
@@ -806,14 +777,17 @@ namespace ModioX.Forms.Windows
                     var type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
                     var name = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
 
-                    var itemPath = TextBoxConsolePath.Text + name;
+                    var itemPath = FtpDirectoryPath + name;
 
                     if (type.Equals("folder"))
                     {
+                        if (FtpDirectoryPath == "/dev_hdd0/home/")
+                        {
+                            itemPath = FtpDirectoryPath + name.Split()[0];
+                        }
+
                         SetConsoleStatus($"Deleting folder: {itemPath}");
-
                         FtpExtensions.DeleteDirectory(FtpClient, itemPath);
-
                         SetConsoleStatus("Successfully deleted folder.");
                     }
                     else if (type.Equals("file"))
@@ -829,6 +803,128 @@ namespace ModioX.Forms.Windows
             catch (Exception ex)
             {
                 SetConsoleStatus($"Unable to delete item. Error: {ex.Message}", ex);
+            }
+        }
+
+        private void RenameConsoleFile()
+        {
+            try
+            {
+                var oldFileName = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
+                var oldFilePath = TextBoxConsolePath.Text + oldFileName;
+
+                var newFileName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name:", oldFileName));
+
+                var newConsoleFilePath = TextBoxConsolePath.Text + newFileName;
+
+                if (newFileName != null && !newFileName.Equals(oldFileName))
+                {
+                    if (FtpClient.FileExists(newConsoleFilePath))
+                    {
+                        SetConsoleStatus($"A file with this name already exists.");
+                        return;
+                    }
+                    else
+                    {
+                        SetConsoleStatus($"Renaming file to: {newFileName}");
+                        FtpExtensions.RenameFileOrFolder(FtpConnection, oldFilePath, newFileName);
+                        SetConsoleStatus($"Successfully renamed file to: {newFileName}");
+                        LoadConsoleDirectory(FtpDirectoryPath);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                SetConsoleStatus($"Unable to rename file. Error: {ex.Message}", ex);
+            }
+        }
+
+        private void RenameConsoleFolder()
+        {
+            try
+            {
+                var oldFolderName = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
+                var oldFileName = TextBoxConsolePath.Text + oldFolderName;
+
+                var newFolderName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name:", oldFolderName));
+
+                var newFolderPath = TextBoxConsolePath.Text + newFolderName;
+
+                if (newFolderName != null && !newFolderName.Equals(oldFolderName))
+                {
+                    if (FtpClient.DirectoryExists(oldFileName))
+                    {
+                        SetConsoleStatus($"A folder with this name already exists.");
+                        return;
+                    }
+                    else
+                    {
+                        SetConsoleStatus($"Renaming folder: {oldFileName} to: {newFolderName}");
+                        FtpExtensions.RenameFileOrFolder(FtpConnection, oldFileName, newFolderName);
+                        SetConsoleStatus($"Successfully renamed folder to: {newFolderName}");
+                        LoadConsoleDirectory(FtpDirectoryPath);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                SetConsoleStatus($"Unable to rename folder. Error: {ex.Message}", ex);
+            }
+        }
+
+        private void RenameLocalFile()
+        {
+            if (DgvLocalFiles.CurrentRow != null)
+            {
+                var oldFileName = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
+                var oldFilePath = TextBoxLocalPath.Text + @"\" + oldFileName;
+
+                var newFileName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name:", oldFileName));
+
+                var newFilePath = TextBoxLocalPath.Text + @"\" + newFileName;
+
+                if (newFileName != null && !newFileName.Equals(oldFileName))
+                {
+                    if (!File.Exists(newFilePath))
+                    {
+                        SetConsoleStatus($"A file with this name already exists.");
+                    }
+                    else
+                    {
+                        SetConsoleStatus($"Renaming file to: {newFileName}");
+                        FileSystem.RenameFile(oldFilePath, newFileName);
+                        SetConsoleStatus($"Successfully renamed file to: {newFileName}");
+                        LoadLocalDirectory(LocalDirectoryPath);
+                    }
+                }
+            }
+        }
+
+        private void RenameLocalFolder()
+        {
+            if (DgvLocalFiles.CurrentRow != null)
+            {
+                var oldFolderName = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
+                var oldFolderPath = TextBoxLocalPath.Text + @"\" + oldFolderName;
+
+                var newFolderName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name:", oldFolderName));
+
+                var newFolderPath = TextBoxLocalPath.Text + @"\" + newFolderName;
+
+                if (newFolderName != null && !newFolderName.Equals(oldFolderName))
+                {
+                    if (!Directory.Exists(newFolderPath))
+                    {
+                        SetLocalStatus($"A folder with this name already exists.");
+                    }
+                    else
+                    {
+                        SetConsoleStatus($"Renaming folder to: {newFolderName}");
+                        FileSystem.RenameDirectory(oldFolderPath, newFolderName);
+                        SetConsoleStatus($"Successfully renamed folder to: {newFolderName}");
+                        LoadLocalDirectory(LocalDirectoryPath);
+                    }
+                }
             }
         }
 

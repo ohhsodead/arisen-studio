@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
+using System.Xml.Serialization;
 
 namespace ModioX.Extensions
 {
@@ -31,6 +34,71 @@ namespace ModioX.Extensions
         public static Stream GetStream(string url)
         {
             return ((HttpWebResponse) GetRequest(url).GetResponse()).GetResponseStream();
+        }
+
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <param name="titleId"></param>
+        /// <returns></returns>
+        public static string GetGameTitleFromTitleID(string titleId)
+        {
+            try
+            {
+                ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+                var webClient = new WebClient();
+                var serializer = new XmlSerializer(typeof(Models.Game_Updates.Titlepatch));
+                var titlePath = webClient.DownloadString("https://a0.ww.np.dl.playstation.net/tpl/np/" + titleId + "/" + titleId + "-ver.xml");
+                using (TextReader textReader = new StringReader(titlePath))
+                {
+                    var data = (Models.Game_Updates.Titlepatch)serializer.Deserialize(textReader);
+                    var removeId = Regex.Replace(data.Tag.Package.Last().Paramsfo.TITLE, @"\(.*?\)", "").Trim().Replace("Â®", "®");
+                    return removeId;
+                }
+            }
+            catch (Exception ex)
+            {
+                Program.Log.Error("Unable to fetch game title from ID: " + titleId, ex);
+                return "Not Recognized";
+            }
+        }
+
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="titleId"></param>
+        /// <returns></returns>
+        public static Models.Game_Updates.Titlepatch GetGameUpdatesFromTitleID(string url, string titleId)
+        {
+            try
+            {
+                ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+                var webClient = new WebClient();
+                var serializer = new XmlSerializer(typeof(Models.Game_Updates.Titlepatch));
+                var titlePath = webClient.DownloadString(url + titleId + "/" + titleId + "-ver.xml");
+                using (TextReader textReader = new StringReader(titlePath))
+                {
+                   return (Models.Game_Updates.Titlepatch)serializer.Deserialize(textReader);
+                }
+            }
+            catch (Exception ex)
+            {
+                Program.Log.Error("Unable to fetch game update from title ID: " + titleId, ex);
+                return null;
+            }
+        }
+
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="folderPath"></param>
+        public static void DownloadFile(string url, string folderPath)
+        {
+            ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+            var webClient = new WebClient();
+            webClient.DownloadFile(url, folderPath);
         }
 
         public static Bitmap GetImageFromUrl(string url)

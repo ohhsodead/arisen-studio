@@ -141,18 +141,18 @@ namespace ModioX.Models.Database
                     }
                 }
 
-                if (MainWindow.Settings.AutoDetectGameRegion)
+                if (MainWindow.Settings.AutoDetectGameRegions)
                 {
                     var foundRegions = Regions.Where(region => MainWindow.FtpConnection.DirectoryExists($"/dev_hdd0/game/{region}")).ToList();
 
-                    foreach (var region in foundRegions.Where(region => DarkMessageBox.Show(MainWindow.Window,
+                    foreach (var region in foundRegions.Where(region => DarkMessageBox.Show(owner,
                         $"Game Region: {region} has been found for: {Title}\nIs this correct?", "Found Game Region",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                     {
                         return region;
                     }
 
-                    _ = DarkMessageBox.Show(MainWindow.Window,
+                    _ = DarkMessageBox.Show(owner,
                         "Could not find any regions on your console for this game title. You must install the game update for this title first.",
                         "No Game Update", MessageBoxIcon.Error);
                     return null;

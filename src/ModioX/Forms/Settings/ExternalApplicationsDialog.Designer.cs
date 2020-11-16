@@ -32,6 +32,8 @@
             this.ButtonSaveAll = new DarkUI.Controls.DarkButton();
             this.SectionApplications = new DarkUI.Controls.DarkSectionPanel();
             this.DgvApplications = new DarkUI.Controls.DarkDataGridView();
+            this.ColumnApplicationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToolStripGameRegions = new DarkUI.Controls.DarkToolStrip();
             this.ToolStripDeleteAll = new System.Windows.Forms.ToolStripButton();
             this.ToolStripDelete = new System.Windows.Forms.ToolStripButton();
@@ -45,8 +47,6 @@
             this.ButtonAddApplication = new DarkUI.Controls.DarkButton();
             this.LabelFileLocation = new DarkUI.Controls.DarkLabel();
             this.LabelName = new DarkUI.Controls.DarkLabel();
-            this.ColumnApplicationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFileLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SectionApplications.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvApplications)).BeginInit();
             this.ToolStripGameRegions.SuspendLayout();
@@ -103,6 +103,21 @@
             this.DgvApplications.Size = new System.Drawing.Size(649, 194);
             this.DgvApplications.TabIndex = 0;
             this.DgvApplications.SelectionChanged += new System.EventHandler(this.DgvApplications_SelectionChanged);
+            // 
+            // ColumnApplicationName
+            // 
+            this.ColumnApplicationName.HeaderText = "Application Name";
+            this.ColumnApplicationName.Name = "ColumnApplicationName";
+            this.ColumnApplicationName.ReadOnly = true;
+            this.ColumnApplicationName.Width = 190;
+            // 
+            // ColumnFileLocation
+            // 
+            this.ColumnFileLocation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnFileLocation.HeaderText = "File Location";
+            this.ColumnFileLocation.Name = "ColumnFileLocation";
+            this.ColumnFileLocation.ReadOnly = true;
+            this.ColumnFileLocation.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // ToolStripGameRegions
             // 
@@ -275,21 +290,6 @@
             this.LabelName.TabIndex = 16;
             this.LabelName.Text = "Application Name:";
             // 
-            // ColumnApplicationName
-            // 
-            this.ColumnApplicationName.HeaderText = "Application Name";
-            this.ColumnApplicationName.Name = "ColumnApplicationName";
-            this.ColumnApplicationName.ReadOnly = true;
-            this.ColumnApplicationName.Width = 190;
-            // 
-            // ColumnFileLocation
-            // 
-            this.ColumnFileLocation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnFileLocation.HeaderText = "File Location";
-            this.ColumnFileLocation.Name = "ColumnFileLocation";
-            this.ColumnFileLocation.ReadOnly = true;
-            this.ColumnFileLocation.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // ExternalApplicationsDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -306,8 +306,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ExternalApplicationsDialog";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "External Applications";

@@ -20,7 +20,7 @@ namespace ModioX.Windows
         {
             foreach (var item in Items)
             {
-                ListViewItems.Items.Add(new DarkListItem {Text = item});
+                ListViewItems.Items.Add(new DarkListItem { Text = item });
             }
         }
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using ModioX.Forms;
 using ModioX.Forms.Dialogs;
@@ -20,11 +20,9 @@ namespace ModioX.Extensions
             try
             {
                 var releaseBody = gitHubData.Body;
-                var releaseBodyWithoutLastLine =
-                    releaseBody.Substring(0, releaseBody.Trim().LastIndexOf(Environment.NewLine));
+                var releaseBodyWithoutLastLine = releaseBody.Substring(0, releaseBody.Trim().LastIndexOf(Environment.NewLine));
 
-                ShowDataViewDialog(owner, gitHubData.Name + " - What's New", "Change Log",
-                    releaseBodyWithoutLastLine.Replace("-", "•"));
+                ShowDataViewDialog(owner, gitHubData.Name + " - What's New", "Change Log", releaseBodyWithoutLastLine.Replace("-", "•"));
             }
             catch (Exception ex)
             {
@@ -41,16 +39,19 @@ namespace ModioX.Extensions
 
                 dataViewDialog.MaximumSize = new Size(dataViewDialog.MaximumSize.Width, owner.Height + 100);
                 dataViewDialog.Size = new Size(dataViewDialog.Width, dataViewDialog.Height + 15);
-                _ = dataViewDialog.ShowDialog(owner);
+                dataViewDialog.ShowDialog(owner);
             }
         }
 
         public static string ShowListInputDialog(Form owner, string title, List<string> items)
         {
-            using (var listViewDialog = new ListViewDialog { Text = title, Items = items})
+            using (var listViewDialog = new ListViewDialog { Text = title, Items = items })
             {
+                listViewDialog.MinimumSize = new Size(items.Max(x => x.Length) + 225, listViewDialog.Height);
+                listViewDialog.Size = new Size(items.Max(x => x.Length) + 225, listViewDialog.Height);
                 listViewDialog.ShowDialog(owner);
-                return listViewDialog.SelectedItem;
+
+                return listViewDialog.SelectedItem ?? "";
             }
         }
 
@@ -61,7 +62,7 @@ namespace ModioX.Extensions
                 inputDialog.LabelName.Text = labelText;
                 inputDialog.TextBoxName.Text = inputText;
 
-                return inputDialog.ShowDialog(owner) == DialogResult.OK ? StringExtensions.ReplaceInvalidChars(inputDialog.TextBoxName.Text.Trim()) : null;
+                return inputDialog.ShowDialog(owner) == DialogResult.OK ? inputDialog.TextBoxName.Text.Trim() : null;
             }
         }
 
@@ -73,15 +74,11 @@ namespace ModioX.Extensions
             }
         }
 
-        public static ConsoleProfile ShowNewConnectionWindow(Form owner, ConsoleProfile consoleProfile,
-            bool isEditingProfile)
+        public static ConsoleProfile ShowNewConnectionWindow(Form owner, ConsoleProfile consoleProfile, bool isEditingProfile)
         {
-            using (var newConnectionDialog = new NewConnectionDialog
-                {ConsoleProfile = consoleProfile, IsEditingProfile = isEditingProfile})
+            using (var newConnectionDialog = new NewConnectionDialog { ConsoleProfile = consoleProfile, IsEditingProfile = isEditingProfile })
             {
-                return newConnectionDialog.ShowDialog(owner) == DialogResult.OK
-                    ? newConnectionDialog.ConsoleProfile
-                    : null;
+                return newConnectionDialog.ShowDialog(owner) == DialogResult.OK ? newConnectionDialog.ConsoleProfile : null;
             }
         }
 
@@ -100,12 +97,27 @@ namespace ModioX.Extensions
                 return backupFileDialog.ShowDialog(owner) == DialogResult.OK ? backupFileDialog.BackupFile : null;
             }
         }
+        public static void ShowGameUpdatesFinderDialog(Form owner)
+        {
+            using (var gameUpdatesDialog = new GameUpdatesDialog())
+            {
+                _ = gameUpdatesDialog.ShowDialog(owner);
+            }
+        }
 
         public static void ShowFileManager(Form owner)
         {
-            using (var fileManager = new FileManagerWindow())
+            using (var fileManagerWindow = new FileManagerWindow())
             {
-                _ = fileManager.ShowDialog(owner);
+                _ = fileManagerWindow.ShowDialog(owner);
+            }
+        }
+
+        public static void ShowSettingsWindow(Form owner)
+        {
+            using (var settingsWindow = new SettingsWindow())
+            {
+                _ = settingsWindow.ShowDialog(owner);
             }
         }
 
@@ -138,14 +150,6 @@ namespace ModioX.Extensions
             using (var externalApplications = new ExternalApplicationsDialog())
             {
                 _ = externalApplications.ShowDialog(owner);
-            }
-        }
-
-        public static void ShowRequestModsWindow(Form owner)
-        {
-            using (var requestMods = new RequestModsWindow())
-            {
-                _ = requestMods.ShowDialog(owner);
             }
         }
     }
