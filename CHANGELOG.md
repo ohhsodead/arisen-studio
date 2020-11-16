@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## Beta v1.4.7
+- Removed Games from Resources menu
+- Rearranged options in Settings menu
+
 ## Beta v1.4.6
 - Folders will be created if the files install path doesn't exist
 - Folders will be deleted if empty after uninstalling files
