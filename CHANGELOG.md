@@ -2,6 +2,7 @@
 All notable changes to this project will be documented in this file.
 
 ## Beta v1.4.8
+- Improved some user interface elements
 - Mods can now have multiple downloads instead of multiple mods
 - Previous mods to the same game won't automatically be uninstalled
 - User profile names will now be shown
