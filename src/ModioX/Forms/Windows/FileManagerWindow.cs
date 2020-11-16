@@ -58,10 +58,7 @@ namespace ModioX.Forms.Windows
 
         private void FileManagerWindow_Load(object sender, EventArgs e)
         {
-            MenuItemSettingsSaveLocalPath.Checked = MainWindow.Settings.SaveLocalPath;
-            MenuItemSettingsSaveConsolePath.Checked = MainWindow.Settings.SaveConsolePath;
-
-            _ = DgvLocalFiles.Focus();
+            DgvLocalFiles.Focus();
 
             SetConsoleStatus("Fetching drives...");
 
@@ -98,16 +95,6 @@ namespace ModioX.Forms.Windows
             {
                 MainWindow.Settings.ConsolePath = TextBoxConsolePath.Text;
             }
-        }
-
-        private void MenuItemSettingsSaveLocalDirectoryPath_Click(object sender, EventArgs e)
-        {
-            MainWindow.Settings.SaveLocalPath = MenuItemSettingsSaveLocalPath.Checked;
-        }
-
-        private void MenuItemSettingsSaveConsolePath_Click(object sender, EventArgs e)
-        {
-            MainWindow.Settings.SaveConsolePath = MenuItemSettingsSaveConsolePath.Checked;
         }
 
         private void WaitLoadConsole_Tick(object sender, EventArgs e)
@@ -470,8 +457,8 @@ namespace ModioX.Forms.Windows
             RenameConsoleFolder();
         }
 
-        private Image ImageFolder = ImageExtensions.ResizeBitmap(Resources.folder, 20, 20);
-        private Image ImageFile = ImageExtensions.ResizeBitmap(Resources.file, 20, 20);
+        private readonly Image ImageFolder = ImageExtensions.ResizeBitmap(Resources.folder, 20, 20);
+        private readonly Image ImageFile = ImageExtensions.ResizeBitmap(Resources.file, 20, 20);
 
         /// <summary>
         ///     Loads files and folders into the console datagridview
