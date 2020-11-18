@@ -8,19 +8,21 @@ An open source desktop application designed to easily browse through a regularly
 
 ![Main Form](https://github.com/ohhsodead/ModioX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
 
-**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/FTCS3Xu) for news and updates!
+**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/FTCS3Xu)!
 
 ## Features
 - Fast, lightweight and simple to use
-- Browse a large database of PS3 mods
+- Browse a large database of PS3 mods (300+)
 - Complete with info, creator, version, etc.
 - Filter by firmware, mod type and region
 - Download, install and uninstall mods
-- Automatic game region detection
+- Automatically detect game regions
 - Backup and restore game files
-- Built-in FTP file manager
-- Built-in game updates finder
-- Built-in WebMAN API controls
+- Create and add mods to your own lists
+- Includes a Game Updates Finder
+- Includes a File Manager
+- Includes a Package Manager
+- Includes basic WebMAN controls
 - Add multiple console profiles
 
 ## Requirements
@@ -33,13 +35,13 @@ An open source desktop application designed to easily browse through a regularly
 Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/ModioX/releases/latest) page.
 
 ### Linux
-![Linux Users](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/linux/note-for-linux-users.png)
+![Note for Linux Users](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/linux/note-for-linux-users.png)
  
 ## Contributing
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
  
 ## Requesting Mods
-I know that not all mods aren't on our database yet. But if you open an issue including the details they will be added for you.
+I know that not all mods aren't on our database, yet. But if you open an issue including the details they will be added for you.
  
 ## Credits & Libraries
 - Appropriate Creators of all Mods
