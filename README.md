@@ -19,11 +19,13 @@ An open source desktop application designed to easily browse through a regularly
 - Automatically detect game regions
 - Backup and restore game files
 - Create and add mods to your own lists
-- Includes a Game Updates Finder
-- Includes a File Manager
-- Includes a Package Manager
-- Includes basic WebMAN controls
+- Includes a built-in Game Updates Finder*
+- Includes a built-in File Manager
+- Includes a built-in Package Manager*
+- Includes basic WebMAN controls*
 - Add multiple console profiles
+
+** Coming in the next release
 
 ## Requirements
 - An internet connection
