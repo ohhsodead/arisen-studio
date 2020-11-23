@@ -46,7 +46,7 @@ You're also welcome to submit any pull requests with fixes and suggestions, like
 I know that not all mods aren't on our database, yet. But if you open an issue including the details they will be added for you.
 
 ## Donations
-Our database is only limited on capacity, so in future we may not be able to add any more new mods. But, you can help by donating using my [Patreon page](https://www.patreon.com/ohhsodead) which every donation will go towards increasing our database size. At the time of writing this, we're using 62% (11.4 GB) of our total database quota (18.4 GB) and it's increasing every time we add new mods for our users. Please consider donating to keep this project growing, there's no limit on how much to donate and so every little bit helps out a lot! I will keep updating the screenshot below so everyone can see how much your're support helps.
+Our database is only limited on capacity, so in future we may not be able to add any more new mods. But, you can help by donating using my [Patreon page](https://www.patreon.com/ohhsodead) which every donation will go towards increasing the database size. At the time of writing this, we're using 62% (11.4 GB) of our total database quota (18.4 GB) and it's increasing every time we add new mods for our users. Please consider donating to keep this project growing, there's no limit on how much to donate and so every little bit helps out a lot! I will keep updating the screenshot below so everyone can see how much your're support helps.
 
 ![Current Database Size](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/database/quota/db-quota.png)
  
