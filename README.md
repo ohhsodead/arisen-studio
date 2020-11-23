@@ -18,11 +18,11 @@ An open source desktop application designed to easily browse through a regularly
 - Download, install and uninstall mods
 - Automatically detect game regions
 - Backup and restore game files
-- Create and add mods to your own lists
+- Create and add mods to your own lists*
 - Includes a built-in Game Updates Finder*
 - Includes a built-in File Manager
 - Includes a built-in Package Manager*
-- Includes basic WebMAN controls*
+- Includes basic WebMAN controls
 - Add multiple console profiles
 
 ** Coming in the next release
@@ -44,11 +44,6 @@ You're also welcome to submit any pull requests with fixes and suggestions, like
 
 ## Requesting Mods
 I know that not all mods aren't on our database, yet. But if you open an issue including the details they will be added for you.
-
-## Donations
-Our database is only limited on capacity, so in future we may not be able to add any more new mods. But, you can help by donating using my [Patreon page](https://www.patreon.com/ohhsodead) which every donation will go towards increasing the database size. At the time of writing this, we're using 62% (11.4 GB) of our total database quota (18.4 GB) and it's increasing every time we add new mods for our users. Please consider donating to keep this project growing, there's no limit on how much to donate and so every little bit helps out a lot! I will keep updating the screenshot below so everyone can see how much your're support helps.
-
-![Current Database Size](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/database/quota/db-quota.png)
  
 ## Credits & Libraries
 - Appropriate Creators of all Mods
@@ -56,7 +51,7 @@ Our database is only limited on capacity, so in future we may not be able to add
 - [Newtonsoft.Json](https://www.newtonsoft.com/json)
 - [Apache log4net](https://logging.apache.org/log4net/)
 - [WebMAN API](https://github.com/FxckingCoder/WebmanAPI/)
-- [Icons8](https://icons8.com/)
+- [Icons8.com](https://icons8.com/)
  
 ## Disclaimer
 I can accept no responsibility for any damage you cause to your system by using this tool.
