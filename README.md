@@ -31,16 +31,13 @@ Please give this project a ⭐ if you find this tool useful!
 
 ## Requirements
 - An internet connection
-- NET Framework 4.6.2
+- NET Framework 4.8
 - PlayStation 3 with MFW
  
 ## Installation
 ### Windows
 Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/ModioX/releases/latest) page.
 
-### Linux
-![Note for Linux Users](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/linux/note-for-linux-users.png)
- 
 ## Contributing
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
 
@@ -54,6 +51,9 @@ I know that not all mods aren't on our database, yet. But if you open an issue i
 - [Apache log4net](https://logging.apache.org/log4net/)
 - [WebMAN API](https://github.com/FxckingCoder/WebmanAPI/)
 - [Icons8.com](https://icons8.com/)
+
+## Contributors
+- [KayGart](https://github.com/KayGart/)
  
 ## Disclaimer
 I can accept no responsibility for any damage you cause to your system by using this tool.
