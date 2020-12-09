@@ -10,7 +10,7 @@ An open source desktop application designed to easily browse through a regularly
 
 **Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/FTCS3Xu) for more news and updates!
 
-Please give this project a ⭐ if you find this tool useful!
+Please give this project a ⭐ if you find it useful!
 
 ## Features
 - Fast, lightweight and simple to use
