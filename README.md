@@ -16,7 +16,7 @@ Please give this project a ⭐ if you find it useful!
 - Fast, lightweight and simple to use
 - Browse a large database of PS3 mods (300+)
 - Complete with details, creator, version, etc.
-- Filter by firmware, console type, mod type and region
+- Filter by console type, mod type and region
 - Download, install and uninstall mods
 - Automatically detect game regions
 - Backup and restore game files
