@@ -8,7 +8,7 @@ An open source desktop application designed to easily browse through a regularly
 
 ![Main Form](https://github.com/ohhsodead/ModioX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
 
-**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/FTCS3Xu) for help and support from our community!
+**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/FTCS3Xu)
 
 Please give this project a ⭐ if you find it useful!
 
