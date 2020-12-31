@@ -31,7 +31,7 @@ Please give this project a ⭐ if you find it useful!
 
 ## Requirements
 - An internet connection
-- NET Framework 4.8 (Download [here](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer))
+- NET Framework 4.8 (Download [here](https://dotnet.microsoft.com/download/dotnet-framework/net48))
 - PlayStation 3 with MFW
  
 ## Installation
@@ -49,8 +49,9 @@ I know that not all mods aren't on our database, yet. But if you open an issue i
 - [DarkUI for WinForms](https://github.com/RobinPerris/DarkUI/)
 - [Newtonsoft.Json](https://www.newtonsoft.com/json)
 - [Apache log4net](https://logging.apache.org/log4net/)
+- [NLog](https://nlog-project.org/)
 - [WebMAN API](https://github.com/FxckingCoder/WebmanAPI/)
-- [Icons8.com](https://icons8.com/)
+- [Icons8](https://icons8.com/)
 
 ## Contributors
 - [KayGart](https://github.com/KayGart/)
