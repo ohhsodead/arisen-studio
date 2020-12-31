@@ -4,7 +4,7 @@
 
 An open source desktop application designed to easily browse through a regularly updated database of mods, game saves, homebrew, resources and themes for the PlayStation 3. A library that is populated by myself, few friends and awesome contributors, so that all mods have been tested and verified. ModioX also acts as an FTP client to be able to install and uninstall files directly to your console. Without the need for digging up old threads or using file managers - this aims to do everything for you. 
 
-#### the only one of its kind (i think)
+#### the only one of its kind...
 
 ![Main Form](https://github.com/ohhsodead/ModioX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
 
