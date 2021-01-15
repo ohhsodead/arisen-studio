@@ -70,9 +70,6 @@
     <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraBars.v13.1">
-      <HintPath>..\..\..\..\Plugins\DevExpress\DevExpress.XtraBars.v13.1.dll</HintPath>
-    </Reference>
     <Reference Include="DevExpress.XtraBars.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
