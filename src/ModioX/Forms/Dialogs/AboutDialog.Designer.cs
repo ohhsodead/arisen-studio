@@ -63,12 +63,12 @@
             this.RichTextBoxThanks.Location = new System.Drawing.Point(8, 8);
             this.RichTextBoxThanks.Name = "RichTextBoxThanks";
             this.RichTextBoxThanks.ReadOnly = true;
-            this.RichTextBoxThanks.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.RichTextBoxThanks.Size = new System.Drawing.Size(271, 77);
             this.RichTextBoxThanks.TabIndex = 2;
             this.RichTextBoxThanks.TabStop = false;
             this.RichTextBoxThanks.Text = "Appropriate Creators for all Mods\nRobinPerris for DarkUI for WinForms\nJamesNK for" +
-    " Newtonsoft.Json\nApache for Apache log4net\nBISOON for FtpConnection.cs";
+    " Newtonsoft.Json\nApache for Apache log4net\nBISOON for FtpConnection.cs\nTeddyHamm" +
+    "er for XDevkit";
             this.RichTextBoxThanks.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RichTextBox_MouseDown);
             // 
             // RichTextBoxCredits
