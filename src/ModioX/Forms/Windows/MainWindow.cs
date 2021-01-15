@@ -1246,7 +1246,7 @@ namespace ModioX.Forms.Windows
             {
                 // ignored
             }
-        }
+        }//fixed
 
         private void FlowPanelCategories_MouseWheel(object sender, MouseEventArgs e)
         {
