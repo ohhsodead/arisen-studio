@@ -1,4 +1,6 @@
-﻿namespace ModioX.Forms.Windows
+﻿using DevExpress.XtraBars;
+
+namespace ModioX.Forms.Windows
 {
     partial class MainWindow
     {
