@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using DarkUI.Forms;
+using DevExpress.XtraEditors;
 using FluentFTP;
 using Microsoft.VisualBasic.FileIO;
 using ModioX.Extensions;
@@ -20,7 +21,7 @@ using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
 namespace ModioX.Forms.Tools
 {
-    public partial class FileManagerWindow : DarkForm
+    public partial class FileManagerWindow : XtraForm
     {
         /// <summary>
         /// Creates an FTP connection for use with uploading mods, not reliable for uploading files.

@@ -49,6 +49,7 @@
             this.ButtonSaveBackup.Location = new System.Drawing.Point(231, 173);
             this.ButtonSaveBackup.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonSaveBackup.Name = "ButtonSaveBackup";
+            this.ButtonSaveBackup.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonSaveBackup.Size = new System.Drawing.Size(80, 25);
             this.ButtonSaveBackup.TabIndex = 6;
             this.ButtonSaveBackup.Text = "OK";
@@ -67,7 +68,10 @@
             // 
             // TextBoxLocalPath
             // 
+            this.TextBoxLocalPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.TextBoxLocalPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxLocalPath.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxLocalPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxLocalPath.Location = new System.Drawing.Point(12, 140);
             this.TextBoxLocalPath.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.TextBoxLocalPath.Name = "TextBoxLocalPath";
@@ -87,8 +91,11 @@
             // 
             // TextBoxConsolePath
             // 
+            this.TextBoxConsolePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.TextBoxConsolePath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxConsolePath.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxConsolePath.Enabled = false;
+            this.TextBoxConsolePath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxConsolePath.Location = new System.Drawing.Point(12, 87);
             this.TextBoxConsolePath.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.TextBoxConsolePath.Name = "TextBoxConsolePath";
@@ -110,8 +117,11 @@
             // 
             // TextBoxGameId
             // 
+            this.TextBoxGameId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.TextBoxGameId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxGameId.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxGameId.Enabled = false;
+            this.TextBoxGameId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxGameId.Location = new System.Drawing.Point(176, 34);
             this.TextBoxGameId.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.TextBoxGameId.Name = "TextBoxGameId";
@@ -132,8 +142,11 @@
             // 
             // TextBoxFileName
             // 
+            this.TextBoxFileName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.TextBoxFileName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxFileName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxFileName.Enabled = false;
+            this.TextBoxFileName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxFileName.Location = new System.Drawing.Point(12, 34);
             this.TextBoxFileName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.TextBoxFileName.Name = "TextBoxFileName";
@@ -146,6 +159,7 @@
             this.ButtonLocalPath.Location = new System.Drawing.Point(266, 140);
             this.ButtonLocalPath.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ButtonLocalPath.Name = "ButtonLocalPath";
+            this.ButtonLocalPath.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonLocalPath.Size = new System.Drawing.Size(45, 23);
             this.ButtonLocalPath.TabIndex = 5;
             this.ButtonLocalPath.Text = "...";
@@ -158,6 +172,7 @@
             this.ButtonCancel.Location = new System.Drawing.Point(141, 173);
             this.ButtonCancel.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonCancel.Name = "ButtonCancel";
+            this.ButtonCancel.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonCancel.Size = new System.Drawing.Size(80, 25);
             this.ButtonCancel.TabIndex = 7;
             this.ButtonCancel.Text = "Cancel";
@@ -165,6 +180,9 @@
             // 
             // BackupFileDialog
             // 
+            this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Appearance.Options.UseFont = true;
+            this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -181,9 +199,8 @@
             this.Controls.Add(this.TextBoxFileName);
             this.Controls.Add(this.TextBoxConsolePath);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.Gainsboro;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("BackupFileDialog.IconOptions.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

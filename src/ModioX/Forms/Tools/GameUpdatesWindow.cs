@@ -2,13 +2,14 @@
 using System.IO;
 using System.Windows.Forms;
 using DarkUI.Forms;
+using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Io;
 
 namespace ModioX.Forms.Tools
 {
-    public partial class GameUpdatesWindow : DarkForm
+    public partial class GameUpdatesWindow : XtraForm
     {
         public GameUpdatesWindow()
         {

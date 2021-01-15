@@ -48,6 +48,7 @@
             this.ButtonChangeCredentials.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonChangeCredentials.Location = new System.Drawing.Point(283, 72);
             this.ButtonChangeCredentials.Name = "ButtonChangeCredentials";
+            this.ButtonChangeCredentials.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonChangeCredentials.Size = new System.Drawing.Size(80, 25);
             this.ButtonChangeCredentials.TabIndex = 3;
             this.ButtonChangeCredentials.Text = "Change";
@@ -85,6 +86,7 @@
             this.ButtonCancel.Location = new System.Drawing.Point(283, 126);
             this.ButtonCancel.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonCancel.Name = "ButtonCancel";
+            this.ButtonCancel.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonCancel.Size = new System.Drawing.Size(80, 25);
             this.ButtonCancel.TabIndex = 5;
             this.ButtonCancel.Text = "Cancel";
@@ -92,8 +94,11 @@
             // TextBoxConsolePort
             // 
             this.TextBoxConsolePort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxConsolePort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.TextBoxConsolePort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxConsolePort.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxConsolePort.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxConsolePort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxConsolePort.Location = new System.Drawing.Point(314, 42);
             this.TextBoxConsolePort.Name = "TextBoxConsolePort";
             this.TextBoxConsolePort.Size = new System.Drawing.Size(49, 23);
@@ -120,6 +125,7 @@
             this.ButtonOK.Location = new System.Drawing.Point(193, 126);
             this.ButtonOK.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonOK.Size = new System.Drawing.Size(80, 25);
             this.ButtonOK.TabIndex = 4;
             this.ButtonOK.Text = "OK";
@@ -141,8 +147,11 @@
             // 
             this.TextBoxConnectionName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxConnectionName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.TextBoxConnectionName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxConnectionName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxConnectionName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxConnectionName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxConnectionName.Location = new System.Drawing.Point(125, 12);
             this.TextBoxConnectionName.Name = "TextBoxConnectionName";
             this.TextBoxConnectionName.Size = new System.Drawing.Size(238, 23);
@@ -152,8 +161,11 @@
             // 
             this.TextBoxConsoleAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxConsoleAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.TextBoxConsoleAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxConsoleAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxConsoleAddress.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxConsoleAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxConsoleAddress.Location = new System.Drawing.Point(125, 42);
             this.TextBoxConsoleAddress.Name = "TextBoxConsoleAddress";
             this.TextBoxConsoleAddress.Size = new System.Drawing.Size(145, 23);
@@ -173,6 +185,7 @@
             // 
             // NewConnectionDialog
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -190,7 +203,7 @@
             this.Controls.Add(this.ButtonOK);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("NewConnectionDialog.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewConnectionDialog";

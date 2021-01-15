@@ -1,9 +1,10 @@
 ﻿using System;
 using DarkUI.Forms;
+using DevExpress.XtraEditors;
 
 namespace ModioX.Forms
 {
-    public partial class LoginDialog : DarkForm
+    public partial class LoginDialog : XtraForm
     {
         public LoginDialog()
         {

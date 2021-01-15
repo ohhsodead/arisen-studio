@@ -2,12 +2,13 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 using DarkUI.Forms;
+using DevExpress.XtraEditors;
 using ModioX.Forms.Windows;
 using ModioX.Models.Database;
 
 namespace ModioX.Forms.Settings
 {
-    public partial class GameRegionsDialog : DarkForm
+    public partial class GameRegionsDialog : XtraForm
     {
         public GameRegionsDialog()
         {

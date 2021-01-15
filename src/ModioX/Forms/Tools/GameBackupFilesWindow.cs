@@ -3,13 +3,14 @@ using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using DarkUI.Forms;
+using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
 
 namespace ModioX.Forms.Tools
 {
-    public partial class GameBackupFilesWindow : DarkForm
+    public partial class GameBackupFilesWindow : XtraForm
     {
         public GameBackupFilesWindow()
         {

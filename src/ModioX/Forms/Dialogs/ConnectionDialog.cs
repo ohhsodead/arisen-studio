@@ -2,13 +2,14 @@
 using System.Windows.Forms;
 using DarkUI.Controls;
 using DarkUI.Forms;
+using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
 
 namespace ModioX.Forms.Dialogs
 {
-    public partial class ConnectionDialog : DarkForm
+    public partial class ConnectionDialog : XtraForm
     {
         public ConnectionDialog()
         {

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.IO;
 using DarkUI.Forms;
+using DevExpress.XtraEditors;
 
 namespace ModioX.Forms
 {
-    public partial class InputTextDialog : DarkForm
+    public partial class InputTextDialog : XtraForm
     {
         public InputTextDialog()
         {

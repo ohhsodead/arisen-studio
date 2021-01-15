@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using DarkUI.Controls;
 using DarkUI.Forms;
+using DevExpress.XtraEditors;
 
 namespace ModioX.Windows
 {
-    public partial class ListViewDialog : DarkForm
+    public partial class ListViewDialog : XtraForm
     {
         public ListViewDialog()
         {

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
 using DarkUI.Forms;
+using DevExpress.XtraEditors;
 
 namespace ModioX.Forms
 {
-    public partial class DataViewDialog : DarkForm
+    public partial class DataViewDialog : XtraForm
     {
         /// <summary>
         /// Initialize application form

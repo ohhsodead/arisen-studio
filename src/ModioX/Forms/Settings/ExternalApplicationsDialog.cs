@@ -3,11 +3,12 @@ using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 using DarkUI.Forms;
+using DevExpress.XtraEditors;
 using ModioX.Forms.Windows;
 
 namespace ModioX.Forms.Settings
 {
-    public partial class ExternalApplicationsDialog : DarkForm
+    public partial class ExternalApplicationsDialog : XtraForm
     {
         public ExternalApplicationsDialog()
         {

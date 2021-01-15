@@ -43,6 +43,7 @@
             this.ButtonCancel.Location = new System.Drawing.Point(170, 48);
             this.ButtonCancel.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonCancel.Name = "ButtonCancel";
+            this.ButtonCancel.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonCancel.Size = new System.Drawing.Size(85, 25);
             this.ButtonCancel.TabIndex = 3;
             this.ButtonCancel.Text = "Cancel";
@@ -57,6 +58,7 @@
             this.ButtonOK.Location = new System.Drawing.Point(265, 48);
             this.ButtonOK.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonOK.Size = new System.Drawing.Size(85, 25);
             this.ButtonOK.TabIndex = 2;
             this.ButtonOK.Text = "OK";
@@ -78,16 +80,20 @@
             // 
             this.TextBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.TextBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxName.Location = new System.Drawing.Point(94, 13);
             this.TextBoxName.Name = "TextBoxName";
             this.TextBoxName.Size = new System.Drawing.Size(256, 23);
             this.TextBoxName.TabIndex = 0;
             this.TextBoxName.TextChanged += new System.EventHandler(this.TextBoxName_TextChanged);
             // 
-            // InputDialog
+            // InputTextDialog
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -98,10 +104,10 @@
             this.Controls.Add(this.TextBoxName);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("InputTextDialog.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "InputDialog";
+            this.Name = "InputTextDialog";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add New Folder";
