@@ -158,7 +158,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Login Details";
-            this.ResumeLayout(false);
+            this.ResumeLayout(false);//error
             this.PerformLayout();
 
         }
