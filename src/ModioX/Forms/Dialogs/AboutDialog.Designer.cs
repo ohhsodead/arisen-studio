@@ -54,7 +54,7 @@
             // 
             // RichTextBoxThanks
             // 
-            this.RichTextBoxThanks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.RichTextBoxThanks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.RichTextBoxThanks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RichTextBoxThanks.Cursor = System.Windows.Forms.Cursors.Default;
             this.RichTextBoxThanks.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -73,7 +73,7 @@
             // 
             // RichTextBoxCredits
             // 
-            this.RichTextBoxCredits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.RichTextBoxCredits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.RichTextBoxCredits.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RichTextBoxCredits.Cursor = System.Windows.Forms.Cursors.Default;
             this.RichTextBoxCredits.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -93,7 +93,7 @@
             // 
             // RichTextBoxLicence
             // 
-            this.RichTextBoxLicence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.RichTextBoxLicence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.RichTextBoxLicence.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RichTextBoxLicence.Cursor = System.Windows.Forms.Cursors.Default;
             this.RichTextBoxLicence.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -115,6 +115,7 @@
             this.ButtonClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ButtonClose.Location = new System.Drawing.Point(268, 476);
             this.ButtonClose.Name = "ButtonClose";
+            this.ButtonClose.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonClose.Size = new System.Drawing.Size(74, 24);
             this.ButtonClose.TabIndex = 0;
             this.ButtonClose.Text = "Close";
@@ -210,7 +211,7 @@
             // 
             // RichTextBoxInformation
             // 
-            this.RichTextBoxInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.RichTextBoxInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.RichTextBoxInformation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RichTextBoxInformation.Cursor = System.Windows.Forms.Cursors.Default;
             this.RichTextBoxInformation.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -228,6 +229,9 @@
             // 
             // AboutDialog
             // 
+            this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Appearance.Options.UseFont = true;
+            this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -238,9 +242,8 @@
             this.Controls.Add(this.SectionPanelLicense);
             this.Controls.Add(this.ButtonClose);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.Gainsboro;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("AboutDialog.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutDialog";

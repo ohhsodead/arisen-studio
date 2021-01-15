@@ -1,8 +1,9 @@
 ﻿using DarkUI.Forms;
+using DevExpress.XtraEditors;
 
 namespace ModioX.Forms
 {
-    partial class DataViewDialog : DarkForm
+    partial class DataViewDialog : XtraForm
     {
         /// <summary>
         /// Required designer variable.

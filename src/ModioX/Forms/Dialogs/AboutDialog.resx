@@ -128,7 +128,7 @@ You should have received a copy of the GNU General Public License along with thi
     <value>ModioX was developed by ohhsodead and few friends, with the only intention of providing an efficient tool for browsing, downloading and installing mods directly to your console. All credits are given to those appropriate creators/authors of the mods used in this application. For more information or any other comments, suggestions or feedback to help support this project, you can contact me via Discord: ohhsodead#2519 or Twitter: ohhsodead</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="AboutDialog.IconOptions.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIABvNwAAZgAAAICAAAABACAAKAgBANU3AABAQAAAAQAgAChCAAD9PwEAMDAAAAEA
         IACoJQAAJYIBACAgAAABACAAqBAAAM2nAQAQEAAAAQAgAGgEAAB1uAEAiVBORw0KGgoAAAANSUhEUgAA

@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 using DarkUI.Forms;
+using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Database;
@@ -9,7 +10,7 @@ using ModioX.Models.Resources;
 
 namespace ModioX.Forms.Settings
 {
-    public partial class CustomListsDialog : DarkForm
+    public partial class CustomListsDialog : XtraForm
     {
         public CustomListsDialog()
         {

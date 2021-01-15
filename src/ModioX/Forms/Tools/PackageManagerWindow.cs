@@ -6,6 +6,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using DarkUI.Forms;
+using DevExpress.XtraEditors;
 using FluentFTP;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
@@ -15,7 +16,7 @@ using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
 namespace ModioX.Forms.Tools
 {
-    public partial class PackageManagerWindow : DarkForm
+    public partial class PackageManagerWindow : XtraForm
     {
         public PackageManagerWindow()
         {

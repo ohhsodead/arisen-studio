@@ -2,11 +2,12 @@
 using System.IO;
 using System.Windows.Forms;
 using DarkUI.Forms;
+using DevExpress.XtraEditors;
 using ModioX.Models.Resources;
 
 namespace ModioX.Forms
 {
-    public partial class BackupFileDialog : DarkForm
+    public partial class BackupFileDialog : XtraForm
     {
         public BackupFileDialog()
         {

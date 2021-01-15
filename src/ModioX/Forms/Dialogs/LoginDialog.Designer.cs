@@ -46,6 +46,7 @@
             this.ButtonUseDefault.Location = new System.Drawing.Point(90, 78);
             this.ButtonUseDefault.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonUseDefault.Name = "ButtonUseDefault";
+            this.ButtonUseDefault.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonUseDefault.Size = new System.Drawing.Size(88, 25);
             this.ButtonUseDefault.TabIndex = 2;
             this.ButtonUseDefault.Text = "Use Default";
@@ -59,6 +60,7 @@
             this.ButtonCancel.Location = new System.Drawing.Point(188, 78);
             this.ButtonCancel.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonCancel.Name = "ButtonCancel";
+            this.ButtonCancel.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonCancel.Size = new System.Drawing.Size(86, 25);
             this.ButtonCancel.TabIndex = 3;
             this.ButtonCancel.Text = "Cancel";
@@ -73,6 +75,7 @@
             this.ButtonOK.Location = new System.Drawing.Point(284, 78);
             this.ButtonOK.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonOK.Size = new System.Drawing.Size(86, 25);
             this.ButtonOK.TabIndex = 4;
             this.ButtonOK.Text = "OK";
@@ -94,8 +97,11 @@
             // 
             this.TextBoxUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.TextBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxUsername.Location = new System.Drawing.Point(90, 12);
             this.TextBoxUsername.Name = "TextBoxUsername";
             this.TextBoxUsername.Size = new System.Drawing.Size(280, 23);
@@ -106,8 +112,11 @@
             // 
             this.TextBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.TextBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxPassword.Location = new System.Drawing.Point(90, 41);
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.Size = new System.Drawing.Size(280, 23);
@@ -128,6 +137,7 @@
             // 
             // LoginDialog
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -141,7 +151,7 @@
             this.Controls.Add(this.TextBoxUsername);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("LoginDialog.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginDialog";
