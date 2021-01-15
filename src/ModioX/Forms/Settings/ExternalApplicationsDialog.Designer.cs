@@ -73,11 +73,11 @@
             this.SectionApplications.Controls.Add(this.ToolStripGameRegions);
             this.SectionApplications.Cursor = System.Windows.Forms.Cursors.Default;
             this.SectionApplications.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SectionApplications.Location = new System.Drawing.Point(12, 12);
+            this.SectionApplications.Location = new System.Drawing.Point(12, 13);
             this.SectionApplications.Margin = new System.Windows.Forms.Padding(4);
             this.SectionApplications.Name = "SectionApplications";
             this.SectionApplications.SectionHeader = "EXTERNAL APPLICATIONS";
-            this.SectionApplications.Size = new System.Drawing.Size(651, 256);
+            this.SectionApplications.Size = new System.Drawing.Size(651, 255);
             this.SectionApplications.TabIndex = 0;
             // 
             // DgvApplications
@@ -100,7 +100,7 @@
             this.DgvApplications.RowTemplate.Height = 24;
             this.DgvApplications.RowTemplate.ReadOnly = true;
             this.DgvApplications.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvApplications.Size = new System.Drawing.Size(649, 194);
+            this.DgvApplications.Size = new System.Drawing.Size(649, 193);
             this.DgvApplications.TabIndex = 0;
             this.DgvApplications.SelectionChanged += new System.EventHandler(this.DgvApplications_SelectionChanged);
             // 
@@ -131,7 +131,7 @@
             this.ToolStripDeleteAll,
             this.ToolStripDelete,
             this.LabelTotalApplications});
-            this.ToolStripGameRegions.Location = new System.Drawing.Point(1, 219);
+            this.ToolStripGameRegions.Location = new System.Drawing.Point(1, 218);
             this.ToolStripGameRegions.Name = "ToolStripGameRegions";
             this.ToolStripGameRegions.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.ToolStripGameRegions.Size = new System.Drawing.Size(649, 36);

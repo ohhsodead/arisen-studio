@@ -6,23 +6,23 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
+using ModioX.Models.Game_Updates;
 
 namespace ModioX.Extensions
 {
     internal static class HttpExtensions
     {
         /// <summary>
-        ///     Initialize new http web request
+        /// Initialize new http web request
         /// </summary>
         /// <param name="requestUriString">File URL</param>
         /// <param name="httpMethod">Method for the request</param>
         /// <param name="allowAutoRedirect">Whether request should follow redirection responses</param>
         /// <param name="contentType">Sets content-type http header</param>
         /// <returns>Returns a new HTTP Web Request to Get Response from file</returns>
-        public static HttpWebRequest GetRequest(string requestUriString, string httpMethod = "GET",
-            bool allowAutoRedirect = true, string contentType = "text/plain")
+        public static HttpWebRequest GetRequest(string requestUriString, string httpMethod = "GET", bool allowAutoRedirect = true, string contentType = "text/plain")
         {
-            var request = (HttpWebRequest) WebRequest.Create(requestUriString);
+            var request = (HttpWebRequest)WebRequest.Create(requestUriString);
             request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko";
             request.ContentType = contentType;
             request.Timeout = Convert.ToInt32(new TimeSpan(0, 5, 0).TotalMilliseconds);
@@ -33,11 +33,10 @@ namespace ModioX.Extensions
 
         public static Stream GetStream(string url)
         {
-            return ((HttpWebResponse) GetRequest(url).GetResponse()).GetResponseStream();
+            return ((HttpWebResponse)GetRequest(url).GetResponse()).GetResponseStream();
         }
 
         /// <summary>
-        ///     
         /// </summary>
         /// <param name="titleId"></param>
         /// <returns></returns>
@@ -46,51 +45,47 @@ namespace ModioX.Extensions
             try
             {
                 ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
-                var webClient = new WebClient();
-                var serializer = new XmlSerializer(typeof(Models.Game_Updates.Titlepatch));
+
+                using var webClient = new WebClient();
+                var serializer = new XmlSerializer(typeof(Titlepatch));
                 var titlePath = webClient.DownloadString("https://a0.ww.np.dl.playstation.net/tpl/np/" + titleId + "/" + titleId + "-ver.xml");
-                using (TextReader textReader = new StringReader(titlePath))
-                {
-                    var data = (Models.Game_Updates.Titlepatch)serializer.Deserialize(textReader);
-                    var removeId = Regex.Replace(data.Tag.Package.Last().Paramsfo.TITLE, @"\(.*?\)", "").Trim().Replace("Â®", "®");
-                    return removeId;
-                }
+                using TextReader textReader = new StringReader(titlePath);
+                var data = (Titlepatch)serializer.Deserialize(textReader);
+                var removeId = Regex.Replace(data.Tag.Package.Last().Paramsfo.TITLE, @"\(.*?\)", "").Trim().Replace("Â®", "®");
+                return removeId;
             }
             catch (Exception ex)
             {
-                Program.Log.Error("Unable to fetch game title from ID: " + titleId, ex);
+                Program.Log.Error(ex, "Unable to fetch game title from ID: " + titleId);
                 return "Not Recognized";
             }
         }
 
         /// <summary>
-        ///     
         /// </summary>
         /// <param name="url"></param>
         /// <param name="titleId"></param>
         /// <returns></returns>
-        public static Models.Game_Updates.Titlepatch GetGameUpdatesFromTitleID(string url, string titleId)
+        public static Titlepatch GetGameUpdatesFromTitleID(string url, string titleId)
         {
             try
             {
                 ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
-                var webClient = new WebClient();
-                var serializer = new XmlSerializer(typeof(Models.Game_Updates.Titlepatch));
+
+                using var webClient = new WebClient();
+                var serializer = new XmlSerializer(typeof(Titlepatch));
                 var titlePath = webClient.DownloadString(url + titleId + "/" + titleId + "-ver.xml");
-                using (TextReader textReader = new StringReader(titlePath))
-                {
-                   return (Models.Game_Updates.Titlepatch)serializer.Deserialize(textReader);
-                }
+                using TextReader textReader = new StringReader(titlePath);
+                return (Titlepatch)serializer.Deserialize(textReader);
             }
             catch (Exception ex)
             {
-                Program.Log.Error("Unable to fetch game update from title ID: " + titleId, ex);
+                Program.Log.Error(ex, "Unable to fetch game update from title ID: " + titleId);
                 return null;
             }
         }
 
         /// <summary>
-        ///     
         /// </summary>
         /// <param name="url"></param>
         /// <param name="folderPath"></param>
@@ -103,7 +98,7 @@ namespace ModioX.Extensions
 
         public static Bitmap GetImageFromUrl(string url)
         {
-            return new Bitmap(GetStream(url));
+            return new(GetStream(url));
         }
 
         [DllImport("wininet.dll")]

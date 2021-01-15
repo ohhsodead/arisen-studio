@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Forms
 {
-    partial class InputDialog
+    partial class InputTextDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputTextDialog));
             this.ButtonCancel = new DarkUI.Controls.DarkButton();
             this.ButtonOK = new DarkUI.Controls.DarkButton();
             this.LabelName = new DarkUI.Controls.DarkLabel();
@@ -105,7 +105,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add New Folder";
-            this.Load += new System.EventHandler(this.InputDialog_Load);
+            this.Load += new System.EventHandler(this.InputTextDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

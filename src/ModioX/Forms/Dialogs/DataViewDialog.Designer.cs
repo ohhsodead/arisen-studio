@@ -45,9 +45,9 @@ namespace ModioX.Forms
             this.PanelDetails.Controls.Add(this.LabelTitle);
             this.PanelDetails.Controls.Add(this.LabelData);
             this.PanelDetails.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.PanelDetails.Location = new System.Drawing.Point(12, 12);
+            this.PanelDetails.Location = new System.Drawing.Point(12, 11);
             this.PanelDetails.Name = "PanelDetails";
-            this.PanelDetails.Size = new System.Drawing.Size(460, 74);
+            this.PanelDetails.Size = new System.Drawing.Size(460, 76);
             this.PanelDetails.TabIndex = 1;
             // 
             // LabelTitle

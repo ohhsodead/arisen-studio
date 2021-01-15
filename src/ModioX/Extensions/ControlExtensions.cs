@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModioX.Models.Database;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -8,8 +9,24 @@ namespace ModioX.Extensions
 {
     internal static class ControlExtensions
     {
+        public static Label GetCategoryTitle()
+        {
+            return new Label()
+            {
+                TextAlign = ContentAlignment.MiddleLeft,
+                AutoSize = false,
+                Margin = new Padding(0, 0, 0, 0),
+                Padding = new Padding(2, 0, 0, 0),
+                Font = new Font("Segoe UI", 9F),
+                Cursor = Cursors.Hand,
+                BackColor = Color.FromArgb(38, 38, 38),
+                ForeColor = Color.Gainsboro,
+                AutoEllipsis = true,
+            };
+        }
+
         /// <summary>
-        ///     Change button text and auto size
+        /// Change button size to fit text and resizes to fit content.
         /// </summary>
         /// <param name="ctrl">Control to set text</param>
         /// <param name="text">Text to set to control</param>
@@ -18,20 +35,22 @@ namespace ModioX.Extensions
             ctrl.Text = text;
             var myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
             var mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
-            ctrl.Width = (int) Math.Round(mySize.Width, 0) + 16;
+            ctrl.Width = (int)Math.Round(mySize.Width, 0) + 16;
             ctrl.Refresh();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="items"></param>
         public static void SetValuesOnSubItems(List<ToolStripMenuItem> items)
         {
             items.ForEach(item =>
             {
-                var dropdown = (ToolStripDropDownMenu)item.DropDown;
-                if (dropdown != null)
-                {
-                    dropdown.ShowImageMargin = false;
-                    SetValuesOnSubItems(item.DropDownItems.OfType<ToolStripMenuItem>().ToList());
-                }
+                if (item.DropDown is not ToolStripDropDownMenu dropdown) return;
+
+                dropdown.ShowImageMargin = false;
+                SetValuesOnSubItems(item.DropDownItems.OfType<ToolStripMenuItem>().ToList());
             });
         }
     }

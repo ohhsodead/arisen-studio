@@ -20,6 +20,7 @@ namespace ModioX.Forms.Dialogs
         {
             _ = ButtonClose.Focus();
 
+            _ = HideCaret(RichTextBoxInformation.Handle);
             _ = HideCaret(RichTextBoxCredits.Handle);
             _ = HideCaret(RichTextBoxThanks.Handle);
             _ = HideCaret(RichTextBoxLicence.Handle);
@@ -27,6 +28,7 @@ namespace ModioX.Forms.Dialogs
 
         private void RichTextBox_MouseDown(object sender, MouseEventArgs e)
         {
+            _ = HideCaret(RichTextBoxInformation.Handle);
             _ = HideCaret(RichTextBoxCredits.Handle);
             _ = HideCaret(RichTextBoxThanks.Handle);
             _ = HideCaret(RichTextBoxLicence.Handle);
@@ -34,12 +36,12 @@ namespace ModioX.Forms.Dialogs
 
         private void RichTextBoxCredits_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            _ = Process.Start("https://github.com/ohhsodead/ModioX");
+            _ = Process.Start(e.LinkText);
         }
 
         private void RichTextBoxLicence_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            _ = Process.Start("http://www.gnu.org/licenses/");
+            _ = Process.Start(e.LinkText);
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿namespace ModioX.Forms.Windows
+﻿namespace ModioX.Forms.Tools
 {
     partial class FileManagerWindow
     {
@@ -181,7 +181,7 @@
             this.SectionLocalFileExplorer.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.SectionLocalFileExplorer.Name = "SectionLocalFileExplorer";
             this.SectionLocalFileExplorer.SectionHeader = "LOCAL FILE EXPLORER";
-            this.SectionLocalFileExplorer.Size = new System.Drawing.Size(632, 535);
+            this.SectionLocalFileExplorer.Size = new System.Drawing.Size(652, 539);
             this.SectionLocalFileExplorer.TabIndex = 17;
             // 
             // ComboBoxLocalDrives
@@ -207,10 +207,10 @@
             this.ToolStripLocalNewFolder,
             this.ToolStripLocalRefresh,
             this.ToolStripLocalOpenExplorer});
-            this.ToolStripLocalActions.Location = new System.Drawing.Point(1, 468);
+            this.ToolStripLocalActions.Location = new System.Drawing.Point(1, 472);
             this.ToolStripLocalActions.Name = "ToolStripLocalActions";
             this.ToolStripLocalActions.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.ToolStripLocalActions.Size = new System.Drawing.Size(630, 36);
+            this.ToolStripLocalActions.Size = new System.Drawing.Size(650, 36);
             this.ToolStripLocalActions.TabIndex = 21;
             this.ToolStripLocalActions.TabStop = true;
             this.ToolStripLocalActions.Text = "darkToolStrip3";
@@ -302,10 +302,10 @@
             this.ToolStripLocalStatus.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ToolStripLocalStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripLabelLocalStatus});
-            this.ToolStripLocalStatus.Location = new System.Drawing.Point(1, 504);
+            this.ToolStripLocalStatus.Location = new System.Drawing.Point(1, 508);
             this.ToolStripLocalStatus.Name = "ToolStripLocalStatus";
             this.ToolStripLocalStatus.Padding = new System.Windows.Forms.Padding(6, 0, 8, 5);
-            this.ToolStripLocalStatus.Size = new System.Drawing.Size(630, 30);
+            this.ToolStripLocalStatus.Size = new System.Drawing.Size(650, 30);
             this.ToolStripLocalStatus.TabIndex = 1147;
             this.ToolStripLocalStatus.Text = "darkToolStrip1";
             // 
@@ -327,14 +327,14 @@
             this.TextBoxLocalPath.Location = new System.Drawing.Point(55, 31);
             this.TextBoxLocalPath.Name = "TextBoxLocalPath";
             this.TextBoxLocalPath.ReadOnly = true;
-            this.TextBoxLocalPath.Size = new System.Drawing.Size(524, 23);
+            this.TextBoxLocalPath.Size = new System.Drawing.Size(544, 23);
             this.TextBoxLocalPath.TabIndex = 18;
             this.TextBoxLocalPath.Text = "\\";
             // 
             // ButtonLocalDirectory
             // 
             this.ButtonLocalDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonLocalDirectory.Location = new System.Drawing.Point(585, 31);
+            this.ButtonLocalDirectory.Location = new System.Drawing.Point(605, 31);
             this.ButtonLocalDirectory.Name = "ButtonLocalDirectory";
             this.ButtonLocalDirectory.Size = new System.Drawing.Size(40, 23);
             this.ButtonLocalDirectory.TabIndex = 19;
@@ -368,7 +368,7 @@
             this.DgvLocalFiles.RowTemplate.Height = 24;
             this.DgvLocalFiles.RowTemplate.ReadOnly = true;
             this.DgvLocalFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvLocalFiles.Size = new System.Drawing.Size(618, 408);
+            this.DgvLocalFiles.Size = new System.Drawing.Size(638, 412);
             this.DgvLocalFiles.TabIndex = 20;
             this.DgvLocalFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLocalFiles_CellClick);
             this.DgvLocalFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLocalFiles_CellDoubleClick);
@@ -500,11 +500,11 @@
             this.SectionConsoleFileExplorer.Controls.Add(this.DgvConsoleFiles);
             this.SectionConsoleFileExplorer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SectionConsoleFileExplorer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SectionConsoleFileExplorer.Location = new System.Drawing.Point(642, 0);
+            this.SectionConsoleFileExplorer.Location = new System.Drawing.Point(662, 0);
             this.SectionConsoleFileExplorer.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.SectionConsoleFileExplorer.Name = "SectionConsoleFileExplorer";
             this.SectionConsoleFileExplorer.SectionHeader = "CONSOLE FILE EXPLORER";
-            this.SectionConsoleFileExplorer.Size = new System.Drawing.Size(633, 535);
+            this.SectionConsoleFileExplorer.Size = new System.Drawing.Size(653, 539);
             this.SectionConsoleFileExplorer.TabIndex = 1157;
             // 
             // ComboBoxConsoleDrives
@@ -529,10 +529,10 @@
             this.ToolStripConsoleDelete,
             this.ToolStripConsoleNewFolder,
             this.ToolStripConsoleRefresh});
-            this.ToolStripConsoleActions.Location = new System.Drawing.Point(1, 468);
+            this.ToolStripConsoleActions.Location = new System.Drawing.Point(1, 472);
             this.ToolStripConsoleActions.Name = "ToolStripConsoleActions";
             this.ToolStripConsoleActions.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.ToolStripConsoleActions.Size = new System.Drawing.Size(631, 36);
+            this.ToolStripConsoleActions.Size = new System.Drawing.Size(651, 36);
             this.ToolStripConsoleActions.TabIndex = 25;
             this.ToolStripConsoleActions.TabStop = true;
             this.ToolStripConsoleActions.Text = "darkToolStrip4";
@@ -609,10 +609,10 @@
             this.ToolStripConsoleStatus.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ToolStripConsoleStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripLabelConsoleStatus});
-            this.ToolStripConsoleStatus.Location = new System.Drawing.Point(1, 504);
+            this.ToolStripConsoleStatus.Location = new System.Drawing.Point(1, 508);
             this.ToolStripConsoleStatus.Name = "ToolStripConsoleStatus";
             this.ToolStripConsoleStatus.Padding = new System.Windows.Forms.Padding(6, 0, 8, 5);
-            this.ToolStripConsoleStatus.Size = new System.Drawing.Size(631, 30);
+            this.ToolStripConsoleStatus.Size = new System.Drawing.Size(651, 30);
             this.ToolStripConsoleStatus.TabIndex = 1147;
             this.ToolStripConsoleStatus.Text = "darkToolStrip1";
             // 
@@ -630,7 +630,7 @@
             // 
             this.ButtonConsoleNavigate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonConsoleNavigate.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
-            this.ButtonConsoleNavigate.Location = new System.Drawing.Point(587, 31);
+            this.ButtonConsoleNavigate.Location = new System.Drawing.Point(607, 31);
             this.ButtonConsoleNavigate.Name = "ButtonConsoleNavigate";
             this.ButtonConsoleNavigate.Size = new System.Drawing.Size(40, 23);
             this.ButtonConsoleNavigate.TabIndex = 23;
@@ -644,7 +644,7 @@
             this.TextBoxConsolePath.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxConsolePath.Location = new System.Drawing.Point(109, 31);
             this.TextBoxConsolePath.Name = "TextBoxConsolePath";
-            this.TextBoxConsolePath.Size = new System.Drawing.Size(472, 23);
+            this.TextBoxConsolePath.Size = new System.Drawing.Size(492, 23);
             this.TextBoxConsolePath.TabIndex = 22;
             this.TextBoxConsolePath.Text = "/";
             // 
@@ -675,7 +675,7 @@
             this.DgvConsoleFiles.RowTemplate.Height = 24;
             this.DgvConsoleFiles.RowTemplate.ReadOnly = true;
             this.DgvConsoleFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvConsoleFiles.Size = new System.Drawing.Size(620, 408);
+            this.DgvConsoleFiles.Size = new System.Drawing.Size(640, 412);
             this.DgvConsoleFiles.TabIndex = 24;
             this.DgvConsoleFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvConsoleFiles_CellClick);
             this.DgvConsoleFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvConsoleFiles_CellDoubleClick);
@@ -739,7 +739,7 @@
             this.LayoutPanel.Name = "LayoutPanel";
             this.LayoutPanel.RowCount = 1;
             this.LayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.LayoutPanel.Size = new System.Drawing.Size(1275, 535);
+            this.LayoutPanel.Size = new System.Drawing.Size(1315, 539);
             this.LayoutPanel.TabIndex = 12;
             // 
             // WaitLoadConsole
@@ -752,7 +752,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1300, 561);
+            this.ClientSize = new System.Drawing.Size(1340, 565);
             this.Controls.Add(this.LayoutPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.Color.White;

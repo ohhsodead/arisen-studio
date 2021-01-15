@@ -10,6 +10,7 @@ using DarkUI.Forms;
 using FluentFTP;
 using Microsoft.VisualBasic.FileIO;
 using ModioX.Extensions;
+using ModioX.Forms.Windows;
 using ModioX.Io;
 using ModioX.Models.Resources;
 using ModioX.Net;
@@ -17,44 +18,49 @@ using ModioX.Properties;
 using FtpException = FluentFTP.FtpException;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
-namespace ModioX.Forms.Windows
+namespace ModioX.Forms.Tools
 {
     public partial class FileManagerWindow : DarkForm
     {
-        public FileManagerWindow()
-        {
-            InitializeComponent();
-        }
-
         /// <summary>
-        ///     Contains the console profile data.
+        /// Creates an FTP connection for use with uploading mods, not reliable for uploading files.
         /// </summary>
-        public static ConsoleProfile ConsoleProfile = MainWindow.ConsoleProfile;
+        public static FtpConnection FtpConnection { get; } = MainWindow.FtpConnection;
 
         /// <summary>
-        ///     Creates an FTP connection for use with uploading mods, not reliable for the built-in file manager.
+        /// Conntains the FtpClient for getting directory listing and some other commands.
         /// </summary>
-        public static FtpConnection FtpConnection = MainWindow.FtpConnection;
+        public static FtpClient FtpClient { get; } = MainWindow.FtpClient;
 
         /// <summary>
-        ///     Conntains the FtpClient for use with the built-in file manager.
-        /// </summary>
-        public static FtpClient FtpClient { get; set; } = MainWindow.FtpClient;
-
-        /// <summary>
-        ///     Gets/sets the current local directory path.
+        /// Gets/set the current local directory path.
         /// </summary>
         public string LocalDirectoryPath { get; set; } = @"C:\";
 
         /// <summary>
-        ///     Get/sets the current ftp directory path.
+        /// Get/sets the current ftp directory path.
         /// </summary>
         public string FtpDirectoryPath { get; set; } = "/dev_hdd0/";
 
         /// <summary>
-        ///     Contains the local computer drives.
+        /// 
+        /// </summary>
+        private readonly Image ImageFile = ImageExtensions.ResizeBitmap(Resources.file, 20, 20);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private readonly Image ImageFolder = ImageExtensions.ResizeBitmap(Resources.folder, 20, 20);
+
+        /// <summary>
+        /// Contains the local computer drives.
         /// </summary>
         private readonly DriveInfo[] localDrives = DriveInfo.GetDrives();
+
+        public FileManagerWindow()
+        {
+            InitializeComponent();
+        }
 
         private void FileManagerWindow_Load(object sender, EventArgs e)
         {
@@ -62,10 +68,7 @@ namespace ModioX.Forms.Windows
 
             SetConsoleStatus("Fetching drives...");
 
-            foreach (var driveInfo in localDrives)
-            {
-                _ = ComboBoxLocalDrives.Items.Add(driveInfo.Name.Replace(@"\", ""));
-            }
+            foreach (var driveInfo in localDrives) _ = ComboBoxLocalDrives.Items.Add(driveInfo.Name.Replace(@"\", ""));
 
             if (MainWindow.Settings.SaveLocalPath)
             {
@@ -134,16 +137,14 @@ namespace ModioX.Forms.Windows
 
         private void ButtonLocalDirectory_Click(object sender, EventArgs e)
         {
-            using (var folderBrowser = new FolderBrowserDialog { ShowNewFolderButton = true })
+            using var folderBrowser = new FolderBrowserDialog { ShowNewFolderButton = true };
+            if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
-                if (folderBrowser.ShowDialog() == DialogResult.OK)
-                {
-                    LocalDirectoryPath = folderBrowser.SelectedPath;
+                LocalDirectoryPath = folderBrowser.SelectedPath;
 
-                    if (Directory.Exists(folderBrowser.SelectedPath))
-                    {
-                        LoadLocalDirectory(LocalDirectoryPath);
-                    }
+                if (Directory.Exists(folderBrowser.SelectedPath))
+                {
+                    LoadLocalDirectory(LocalDirectoryPath);
                 }
             }
         }
@@ -261,7 +262,7 @@ namespace ModioX.Forms.Windows
         }
 
         /// <summary>
-        ///     Loads files and folders into the local datagridview
+        /// Loads files and folders into the local datagridview
         /// </summary>
         /// <param name="directoryPath"></param>
         public void LoadLocalDirectory(string directoryPath)
@@ -302,7 +303,7 @@ namespace ModioX.Forms.Windows
                 {
                     var fileBytes = new FileInfo(fileItem).Length;
 
-                    _ = DgvLocalFiles.Rows.Add("file", ImageFile, Path.GetFileName(fileItem), fileBytes.ToString("n0", CultureInfo.CurrentCulture) + " bytes", File.GetLastWriteTime(fileItem));
+                    _ = DgvLocalFiles.Rows.Add("file", ImageFile, Path.GetFileName(fileItem), MainWindow.Settings.ShowFileSizeInBytes ? fileBytes.ToString("#,0") + " bytes" : fileBytes.ToString().FormatSize(), File.GetLastWriteTime(fileItem));
 
                     files++;
                     totalBytes += fileBytes;
@@ -310,7 +311,7 @@ namespace ModioX.Forms.Windows
 
                 string statusFiles = files > 0 ? $"{files} {(files <= 1 ? "file" : "files")} {(files > 0 && folders > 0 ? "and " : "")}" : "" + $"{(folders < 1 ? "." : "")}";
                 string statusFolders = folders > 0 ? $"{folders} {(folders <= 1 ? "directory" : "directories")}. " : "";
-                string statusTotalBytes = files > 0 ? $"Total size: {totalBytes.ToString("n0", CultureInfo.CurrentCulture)} bytes" : "";
+                string statusTotalBytes = files > 0 ? $"Total size: {(MainWindow.Settings.ShowFileSizeInBytes ? totalBytes.ToString("#,0") + " bytes" : StringExtensions.FormatSize(totalBytes.ToString()))}" : "";
 
                 if (files < 1 && folders < 1)
                 {
@@ -332,6 +333,7 @@ namespace ModioX.Forms.Windows
                 }
                 catch
                 {
+                    SetLocalStatus($"Error fetching directory listing for path: {Path.GetDirectoryName(LocalDirectoryPath) + @"\"} - {ex.Message}", ex);
                 }
             }
         }
@@ -457,11 +459,8 @@ namespace ModioX.Forms.Windows
             RenameConsoleFolder();
         }
 
-        private readonly Image ImageFolder = ImageExtensions.ResizeBitmap(Resources.folder, 20, 20);
-        private readonly Image ImageFile = ImageExtensions.ResizeBitmap(Resources.file, 20, 20);
-
         /// <summary>
-        ///     Loads files and folders into the console datagridview
+        /// Loads files and folders into the console datagridview
         /// </summary>
         /// <param name="directoryPath">Console path to retrieve</param>
         public void LoadConsoleDirectory(string directoryPath)
@@ -533,13 +532,14 @@ namespace ModioX.Forms.Windows
 
                 foreach (FtpListItem listItem in files.OrderBy(x => x.Name))
                 {
-                    _ = DgvConsoleFiles.Rows.Add("file", ImageFile, listItem.Name, listItem.Size.ToString("n0", CultureInfo.CurrentCulture) + " bytes", listItem.Modified);
+                    _ = DgvConsoleFiles.Rows.Add("file", ImageFile, listItem.Name, MainWindow.Settings.ShowFileSizeInBytes ? listItem.Size.ToString("#,0") + " bytes" : StringExtensions.FormatSize(listItem.Size.ToString()), listItem.Modified);
+                    totalBytes += listItem.Size;
                 }
             
 
                 string statusFiles = files.Count > 0 ? $"{files.Count} {(files.Count == 1 ? "file" : "files")} {(files.Count > 0 && folders.Count > 0 ? "and " : "")}" : "" + $"{(folders.Count == 0 ? "." : "")}";
                 string statusFolders = folders.Count > 0 ? $"{folders.Count} {(folders.Count == 1 ? "directory" : "directories")}. " : "";
-                string statusTotalBytes = files.Count > 0 ? $"Total size: {totalBytes.ToString("n0", CultureInfo.CurrentCulture)} bytes" : "";
+                string statusTotalBytes = totalBytes > 0 ? $"Total size: {(MainWindow.Settings.ShowFileSizeInBytes ? totalBytes.ToString("#,0") + " bytes" : StringExtensions.FormatSize(totalBytes.ToString()))}" : "";
 
                 if (files.Count < 1 && folders.Count < 1)
                 {
@@ -572,7 +572,7 @@ namespace ModioX.Forms.Windows
 
                     if (Directory.Exists(folderPath))
                     {
-                        _ = DarkMessageBox.Show(this, $"A folder with this name already exists.", "Error", MessageBoxIcon.Exclamation);
+                        DarkMessageBox.ShowExclamation($"A folder with this name already exists.", "Error");
                         return;
                     }
                     else
@@ -584,13 +584,11 @@ namespace ModioX.Forms.Windows
             }
             catch (FtpException ex)
             {
-                _ = DarkMessageBox.Show(this, $"Unable to create new folder. Error: {ex.Message}", "Error",
-                    MessageBoxIcon.Error);
+                DarkMessageBox.ShowError($"Unable to create new folder. Error: {ex.Message}", "Error");
             }
             catch (Exception ex)
             {
-                _ = DarkMessageBox.Show(this, $"Unable to create new folder. Error: {ex.Message}", "Error",
-                    MessageBoxIcon.Error);
+                DarkMessageBox.ShowError($"Unable to create new folder. Error: {ex.Message}", "Error");
             }
         }
 
@@ -606,7 +604,7 @@ namespace ModioX.Forms.Windows
 
                     if (FtpClient.DirectoryExists(folderPath))
                     {
-                        _ = DarkMessageBox.Show(this, $"A folder with this name already exists.", "Error", MessageBoxIcon.Exclamation);
+                        DarkMessageBox.ShowExclamation($"A folder with this name already exists.", "Error");
                         return;
                     }
                     else
@@ -618,14 +616,12 @@ namespace ModioX.Forms.Windows
             }
             catch (FtpException ex)
             {
-                _ = DarkMessageBox.Show(this, $"Unable to create new folder. Error: {ex.Message}", "Error",
-                    MessageBoxIcon.Error);
+                DarkMessageBox.ShowError($"Unable to create new folder. Error: {ex.Message}", "Error");
             }
             catch (Exception ex)
             {
-                _ = DarkMessageBox.Show(this, $"Unable to create new folder. Error: {ex.Message}", "Error",
-                    MessageBoxIcon.Error);
-            }            
+                DarkMessageBox.ShowError($"Unable to create new folder. Error: {ex.Message}", "Error");
+            }
         }
 
         public void UploadLocalFile()
@@ -643,7 +639,7 @@ namespace ModioX.Forms.Windows
                     if (File.Exists(localPath))
                     {
                         SetLocalStatus($"Uploading file to {consolePath}...");
-                        FtpExtensions.UploadFile(MainWindow.FtpConnection, localPath, consolePath);
+                        FtpExtensions.UploadFile(localPath, consolePath);
                         SetLocalStatus($"Successfully uploaded file: {Path.GetFileName(localPath)}");
                         LoadConsoleDirectory(FtpDirectoryPath);
                     }
@@ -673,10 +669,8 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                if (DarkMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (DarkMessageBox.ShowWarning("Do you really want to delete the selected item?", "Delete", DarkDialogButton.YesNo) == DialogResult.Yes)
                 {
-
-
                     var type = DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
                     var name = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
 
@@ -759,7 +753,7 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                if (DarkMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (DarkMessageBox.ShowWarning("Do you really want to delete the selected item?", "Delete", DarkDialogButton.YesNo) == DialogResult.Yes)
                 {
                     var type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
                     var name = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
@@ -916,7 +910,7 @@ namespace ModioX.Forms.Windows
         }
 
         /// <summary>
-        ///     Set the current status in the local tool strip
+        /// Set the current status in the local tool strip
         /// </summary>
         /// <param name="status"></param>
         /// <param name="ex"></param>
@@ -930,14 +924,14 @@ namespace ModioX.Forms.Windows
             }
             else
             {
-                Program.Log.Error(status, ex);
+                Program.Log.Error(ex, status);
             }
 
             Refresh();
         }
 
         /// <summary>
-        ///     Set the current process status in the console tool strip
+        /// Set the current process status in the console tool strip
         /// </summary>
         /// <param name="status"></param>
         /// <param name="ex"></param>
@@ -945,13 +939,14 @@ namespace ModioX.Forms.Windows
         {
             ToolStripLabelConsoleStatus.Text = status;
 
-            if (ex == null)
+            switch (ex)
             {
-                Program.Log.Info(status);
-            }
-            else
-            {
-                Program.Log.Error(status, ex);
+                case null:
+                    Program.Log.Info(status);
+                    break;
+                default:
+                    Program.Log.Error(ex, status);
+                    break;
             }
 
             Refresh();

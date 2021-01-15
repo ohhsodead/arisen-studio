@@ -11,17 +11,17 @@ namespace ModioX.Models.Database
     public class CategoriesData
     {
         /// <summary>
-        ///     Get the date/time the database was last updated.
+        /// Get the date/time the database was last updated.
         /// </summary>
         public DateTime LastUpdated { get; set; }
 
         /// <summary>
-        ///     Get all of the supported categories/games from the database.
+        /// Get all of the supported categories/games from the database.
         /// </summary>
         public List<Category> Categories { get; set; }
 
         /// <summary>
-        ///     Get the total number of games.
+        /// Get the total number of games.
         /// </summary>
         /// <returns></returns>
         public int TotalGames => (from Category category in Categories
@@ -29,7 +29,7 @@ namespace ModioX.Models.Database
                                   select category).Count();
 
         /// <summary>
-        ///     Get the game regions for the specified <see cref="Category.Id" />.
+        /// Get the game regions for the specified <see cref="Category.Id" />.
         /// </summary>
         /// <param name="gameId"></param>
         /// <returns></returns>
@@ -46,7 +46,7 @@ namespace ModioX.Models.Database
         }
 
         /// <summary>
-        ///     Get all of the categories that is of <see cref="CategoryType" />.
+        /// Get all of the categories that is of <see cref="CategoryType" />.
         /// </summary>
         /// <param name="categoryType"></param>
         /// <returns></returns>
@@ -58,7 +58,7 @@ namespace ModioX.Models.Database
         }
 
         /// <summary>
-        ///     Get the game data matching the specified title
+        /// Get the game data matching the specified title
         /// </summary>
         /// <param name="categoryId">Title of the game</param>
         /// <returns>Game information</returns>
@@ -75,7 +75,7 @@ namespace ModioX.Models.Database
         }
 
         /// <summary>
-        ///     Get the game data matching the specified title
+        /// Get the game data matching the specified title
         /// </summary>
         /// <param name="title">Title of the game</param>
         /// <returns>Game information</returns>
@@ -90,81 +90,10 @@ namespace ModioX.Models.Database
 
             throw new Exception("Unable to find game data for the specified title: " + title);
         }
-
-        /// <summary>
-        ///     Get the category details, such as id, title, region and type.
-        /// </summary>
-        public class Category
-        {
-            public string Id { get; set; }
-
-            public string Title { get; set; }
-
-            public string Type { get; set; }
-
-            public string[] Regions { get; set; }
-
-            /// <summary>
-            ///     Get the category type.
-            /// </summary>
-            public CategoryType CategoryType
-            {
-                get
-                {
-                    switch (Type)
-                    {
-                        case "game": return CategoryType.Game;
-                        case "homebrew": return CategoryType.Homebrew;
-                        case "resource": return CategoryType.Resource;
-                        case "favorite": return CategoryType.Favorite;
-                        default: return CategoryType.Game;
-                    }
-                }
-            }
-
-            /// <summary>
-            ///     Return the user's game region, either automatically by searching existing console directories or prompt
-            ///     the user to select one.
-            /// </summary>
-            /// <param name="owner">Parent form</param>
-            /// <param name="gameId">Game Id</param>
-            /// <returns></returns>
-            public string GetGameRegion(Form owner, string gameId)
-            {
-                if (MainWindow.Settings.RememberGameRegions)
-                {
-                    var gameRegion = MainWindow.Settings.GetGameRegion(gameId);
-
-                    if (!string.IsNullOrEmpty(gameRegion))
-                    {
-                        return gameRegion;
-                    }
-                }
-
-                if (MainWindow.Settings.AutoDetectGameRegions)
-                {
-                    var foundRegions = Regions.Where(region => MainWindow.FtpConnection.DirectoryExists($"/dev_hdd0/game/{region}")).ToList();
-
-                    foreach (var region in foundRegions.Where(region => DarkMessageBox.Show(owner,
-                        $"Game Region: {region} has been found for: {Title}\nIs this correct?", "Found Game Region",
-                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
-                    {
-                        return region;
-                    }
-
-                    _ = DarkMessageBox.Show(owner,
-                        "Could not find any regions on your console for this game title. You must install the game update for this title first.",
-                        "No Game Update", MessageBoxIcon.Error);
-                    return null;
-                }
-
-                return DialogExtensions.ShowListInputDialog(owner, "Game Regions", Regions.ToList());
-            }
-        }
     }
 
     /// <summary>
-    ///     Category types
+    /// Category types
     /// </summary>
     public enum CategoryType
     {

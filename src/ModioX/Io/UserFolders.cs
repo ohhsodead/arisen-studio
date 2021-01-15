@@ -6,27 +6,32 @@ namespace ModioX.Io
     public class UserFolders
     {
         /// <summary>
-        ///     Get the user's Documents folder.
+        /// Get the user's Documents folder.
         /// </summary>
-        internal static string AppData { get; } = $@"{KnownFolders.GetPath(KnownFolder.Documents)}\ModioX\";
+        internal static readonly string AppDataDirectory = $@"{KnownFolders.GetPath(KnownFolder.Documents)}\ModioX\";
 
         /// <summary>
-        ///     Get the directory to download modded files at.
+        /// Get the directory to download modded files at.
         /// </summary>
-        internal static string AppModsData { get; } = $@"{AppData}Mods\";
+        internal static readonly string AppModsDataDirectory = $@"{AppDataDirectory}Mods\";
 
         /// <summary>
-        ///     Get the game backup files directory for downloading backup files to.
+        /// Get the game backup files directory for downloading backup files to.
         /// </summary>
-        internal static string AppGameBackupFiles { get; } = $@"{AppData}Game Backup Files\";
+        internal static readonly string AppGameBackupFilesDirectory = $@"{AppDataDirectory}Game Backup Files\";
 
         /// <summary>
-        ///     Local path at where the settings file will be stored on the machine
+        /// Get the Logs directory where the app's logs reside.
         /// </summary>
-        internal static readonly string AppSettingsFile = $@"{AppData}\SettingsData.json";
+        internal static readonly string AppLogsDirectory = $@"{AppDataDirectory}Logs\";
 
         /// <summary>
-        ///     Depth-first recursive delete, with handling for descendant directories.
+        /// Local path at where the settings file will be stored on the machine
+        /// </summary>
+        internal static readonly string AppSettingsFile = $@"{AppDataDirectory}SettingsData.json";
+
+        /// <summary>
+        /// Depth-first recursive delete, with handling for descendant directories.
         /// </summary>
         internal static void DeleteDirectory(string path)
         {

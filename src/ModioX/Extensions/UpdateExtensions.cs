@@ -16,27 +16,27 @@ namespace ModioX.Extensions
     public abstract class UpdateExtensions
     {
         /// <summary>
-        ///     
+        /// 
         /// </summary>
-        public static readonly WebClient WebClient = new WebClient();
+        public static readonly WebClient WebClient = new();
 
         /// <summary>
-        ///     Get the current application version.
-        /// </summary>
-        public static Version CurrentVersion { get; } = Assembly.GetExecutingAssembly().GetName().Version;
-
-        /// <summary>
-        ///     Get the current application version name.
-        /// </summary>
-        public static string CurrentVersionName { get; } = $"Beta v{CurrentVersion.ToString().Remove(0, 2)}";
-
-        /// <summary>
-        ///     Get the latest release data from GitHub.
+        /// Get the latest release data from GitHub.
         /// </summary>
         public static GitHubData GitHubData { get; } = GetGitHubLatestReleaseData();
 
         /// <summary>
-        ///     Get the latest release information from the GitHub API.
+        /// Get the current application version.
+        /// </summary>
+        public static Version CurrentVersion { get; } = Assembly.GetExecutingAssembly().GetName().Version;
+
+        /// <summary>
+        /// Get the current application version name.
+        /// </summary>
+        public static string CurrentVersionName { get; } = GitHubData.Name;
+
+        /// <summary>
+        /// Get the latest release information from the GitHub API.
         /// </summary>
         /// <returns></returns>
         public static GitHubData GetGitHubLatestReleaseData()
@@ -52,18 +52,18 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        ///     Check the current application version against the latest version hosted on GitHub. If this version is outdated,
-        ///     then download and run the latest version installer.
+        /// Check the current application version against the latest version hosted on GitHub. If this version is outdated,
+        /// then download and run the latest version installer.
         /// </summary>
         public static void CheckApplicationVersion()
         {
             try
             {
-                MainWindow.Window.SetStatus("Checking application for new update...");
+                MainWindow.Window.SetStatus("Checking application for new updates...");
 
                 var latestVersion = new Version(GitHubData.TagName);
 
-                if (CurrentVersion.CompareTo(latestVersion) < 0)
+                if (CurrentVersion < latestVersion)
                 {
                     DownloadAndRunInstaller();
                 }
@@ -79,8 +79,8 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        ///     Download the latest installer from GitHub to the user's downloads folder, run the program and close this instance
-        ///     of the application.
+        /// Download the latest installer from GitHub to the user's downloads folder, run the program and close this instance
+        /// of the application.
         /// </summary>
         private static void DownloadAndRunInstaller()
         {
@@ -90,7 +90,7 @@ namespace ModioX.Extensions
 
                 MainWindow.Settings.FirstTimeOpenAfterUpdate = true;
                 MainWindow.Window.SetStatus("A new update is available. Downloading the installer...");
-                DarkMessageBox.Show(MainWindow.Window, $@"A new version of ModioX ({GitHubData.Name}) is now available. Click OK to download and run the installer.", @"Update Available", MessageBoxIcon.Information);
+                DarkMessageBox.ShowInformation($"A new version of ModioX ({GitHubData.Name}) is now available. Click OK to download and run the installer.", @"Update Available");
                 WebClient.DownloadFile(GitHubData.Assets[0].BrowserDownloadUrl, installerFile);
                 Process.Start(installerFile);
                 Application.Exit();
@@ -98,7 +98,7 @@ namespace ModioX.Extensions
             catch (Exception ex)
             {
                 MainWindow.Window.SetStatus($"Unable to download or run the installer. Error: {ex.Message})", ex);
-                DarkMessageBox.Show(MainWindow.Window, @"Unable to complete the update. You must manually install the latest available update from the GitHub releases page.", "Error", MessageBoxIcon.Error);
+                DarkMessageBox.ShowError("Unable to complete the update. You must manually install the latest available update from the GitHub releases page.", "Error");
                 Process.Start($"{Urls.GitHubRepo}releases/latest");
                 Application.Exit();
             }

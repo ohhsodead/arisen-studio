@@ -1,4 +1,4 @@
-﻿namespace ModioX.Forms.Windows
+﻿namespace ModioX.Forms.Tools
 {
     partial class GameBackupFilesWindow
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameBackupFilesWindow));
-            this.DgvBackups = new DarkUI.Controls.DarkDataGridView();
+            this.DgvBackupFiles = new DarkUI.Controls.DarkDataGridView();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,39 +62,40 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvBackups)).BeginInit();
+            this.LabelNoBackupFiles = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvBackupFiles)).BeginInit();
             this.SectionBackupFiles.SuspendLayout();
             this.ToolStripArchiveInformation.SuspendLayout();
             this.SectionBackupDetails.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
             this.SuspendLayout();
             // 
-            // DgvBackups
+            // DgvBackupFiles
             // 
-            this.DgvBackups.AllowUserToAddRows = false;
-            this.DgvBackups.AllowUserToDeleteRows = false;
-            this.DgvBackups.AllowUserToDragDropRows = false;
-            this.DgvBackups.AllowUserToPasteCells = false;
-            this.DgvBackups.AllowUserToResizeColumns = false;
-            this.DgvBackups.ColumnHeadersHeight = 19;
-            this.DgvBackups.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvBackupFiles.AllowUserToAddRows = false;
+            this.DgvBackupFiles.AllowUserToDeleteRows = false;
+            this.DgvBackupFiles.AllowUserToDragDropRows = false;
+            this.DgvBackupFiles.AllowUserToPasteCells = false;
+            this.DgvBackupFiles.AllowUserToResizeColumns = false;
+            this.DgvBackupFiles.ColumnHeadersHeight = 19;
+            this.DgvBackupFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnGameTitle,
             this.ColumnFileName,
             this.ColumnFileSize,
             this.ColumnCreatedOn});
-            this.DgvBackups.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvBackups.Location = new System.Drawing.Point(1, 25);
-            this.DgvBackups.MultiSelect = false;
-            this.DgvBackups.Name = "DgvBackups";
-            this.DgvBackups.ReadOnly = true;
-            this.DgvBackups.RowHeadersWidth = 41;
-            this.DgvBackups.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvBackups.RowTemplate.Height = 24;
-            this.DgvBackups.RowTemplate.ReadOnly = true;
-            this.DgvBackups.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvBackups.Size = new System.Drawing.Size(620, 198);
-            this.DgvBackups.TabIndex = 12;
-            this.DgvBackups.SelectionChanged += new System.EventHandler(this.DgvBackupFiles_SelectionChanged);
+            this.DgvBackupFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvBackupFiles.Location = new System.Drawing.Point(1, 25);
+            this.DgvBackupFiles.MultiSelect = false;
+            this.DgvBackupFiles.Name = "DgvBackupFiles";
+            this.DgvBackupFiles.ReadOnly = true;
+            this.DgvBackupFiles.RowHeadersWidth = 41;
+            this.DgvBackupFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DgvBackupFiles.RowTemplate.Height = 24;
+            this.DgvBackupFiles.RowTemplate.ReadOnly = true;
+            this.DgvBackupFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DgvBackupFiles.Size = new System.Drawing.Size(617, 197);
+            this.DgvBackupFiles.TabIndex = 12;
+            this.DgvBackupFiles.SelectionChanged += new System.EventHandler(this.DgvBackupFiles_SelectionChanged);
             // 
             // ColumnGameTitle
             // 
@@ -129,13 +130,15 @@
             this.SectionBackupFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SectionBackupFiles.Controls.Add(this.DgvBackups);
+            this.SectionBackupFiles.Controls.Add(this.LabelNoBackupFiles);
+            this.SectionBackupFiles.Controls.Add(this.DgvBackupFiles);
             this.SectionBackupFiles.Controls.Add(this.ToolStripArchiveInformation);
             this.SectionBackupFiles.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SectionBackupFiles.Location = new System.Drawing.Point(12, 12);
+            this.SectionBackupFiles.Location = new System.Drawing.Point(13, 13);
+            this.SectionBackupFiles.Margin = new System.Windows.Forms.Padding(4);
             this.SectionBackupFiles.Name = "SectionBackupFiles";
             this.SectionBackupFiles.SectionHeader = "BACKUP FILES";
-            this.SectionBackupFiles.Size = new System.Drawing.Size(622, 260);
+            this.SectionBackupFiles.Size = new System.Drawing.Size(619, 259);
             this.SectionBackupFiles.TabIndex = 15;
             // 
             // ToolStripArchiveInformation
@@ -151,10 +154,10 @@
             this.ToolItemDeleteBackup,
             this.ToolItemBackupFile,
             this.ToolItemRestoreFile});
-            this.ToolStripArchiveInformation.Location = new System.Drawing.Point(1, 223);
+            this.ToolStripArchiveInformation.Location = new System.Drawing.Point(1, 222);
             this.ToolStripArchiveInformation.Name = "ToolStripArchiveInformation";
             this.ToolStripArchiveInformation.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.ToolStripArchiveInformation.Size = new System.Drawing.Size(620, 36);
+            this.ToolStripArchiveInformation.Size = new System.Drawing.Size(617, 36);
             this.ToolStripArchiveInformation.TabIndex = 17;
             this.ToolStripArchiveInformation.TabStop = true;
             this.ToolStripArchiveInformation.Text = "darkToolStrip2";
@@ -170,8 +173,8 @@
             this.ToolItemEditBackup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolItemEditBackup.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ToolItemEditBackup.Name = "ToolItemEditBackup";
-            this.ToolItemEditBackup.Size = new System.Drawing.Size(54, 26);
-            this.ToolItemEditBackup.Text = "Edit";
+            this.ToolItemEditBackup.Size = new System.Drawing.Size(117, 26);
+            this.ToolItemEditBackup.Text = "Edit File Details";
             this.ToolItemEditBackup.Click += new System.EventHandler(this.ToolItemEditBackup_Click);
             // 
             // ToolItemDeleteBackup
@@ -185,8 +188,8 @@
             this.ToolItemDeleteBackup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolItemDeleteBackup.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ToolItemDeleteBackup.Name = "ToolItemDeleteBackup";
-            this.ToolItemDeleteBackup.Size = new System.Drawing.Size(71, 26);
-            this.ToolItemDeleteBackup.Text = "Delete";
+            this.ToolItemDeleteBackup.Size = new System.Drawing.Size(93, 26);
+            this.ToolItemDeleteBackup.Text = "Delete File";
             this.ToolItemDeleteBackup.Click += new System.EventHandler(this.ToolItemDeleteBackup_Click);
             // 
             // ToolItemBackupFile
@@ -200,8 +203,8 @@
             this.ToolItemBackupFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolItemBackupFile.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ToolItemBackupFile.Name = "ToolItemBackupFile";
-            this.ToolItemBackupFile.Size = new System.Drawing.Size(74, 26);
-            this.ToolItemBackupFile.Text = "Backup";
+            this.ToolItemBackupFile.Size = new System.Drawing.Size(96, 26);
+            this.ToolItemBackupFile.Text = "Backup File";
             this.ToolItemBackupFile.Click += new System.EventHandler(this.ToolItemBackupFile_Click);
             // 
             // ToolItemRestoreFile
@@ -215,8 +218,8 @@
             this.ToolItemRestoreFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolItemRestoreFile.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ToolItemRestoreFile.Name = "ToolItemRestoreFile";
-            this.ToolItemRestoreFile.Size = new System.Drawing.Size(77, 26);
-            this.ToolItemRestoreFile.Text = "Restore";
+            this.ToolItemRestoreFile.Size = new System.Drawing.Size(99, 26);
+            this.ToolItemRestoreFile.Text = "Restore File";
             this.ToolItemRestoreFile.Click += new System.EventHandler(this.ToolItemRestoreFile_Click);
             // 
             // SectionBackupDetails
@@ -225,10 +228,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SectionBackupDetails.Controls.Add(this.FlowPanelDetails);
             this.SectionBackupDetails.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.SectionBackupDetails.Location = new System.Drawing.Point(12, 278);
+            this.SectionBackupDetails.Location = new System.Drawing.Point(13, 280);
+            this.SectionBackupDetails.Margin = new System.Windows.Forms.Padding(4);
             this.SectionBackupDetails.Name = "SectionBackupDetails";
             this.SectionBackupDetails.SectionHeader = "BACKUP FILE DETAILS";
-            this.SectionBackupDetails.Size = new System.Drawing.Size(622, 207);
+            this.SectionBackupDetails.Size = new System.Drawing.Size(619, 204);
             this.SectionBackupDetails.TabIndex = 16;
             // 
             // FlowPanelDetails
@@ -252,7 +256,7 @@
             this.FlowPanelDetails.Location = new System.Drawing.Point(1, 25);
             this.FlowPanelDetails.Name = "FlowPanelDetails";
             this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(4, 5, 18, 2);
-            this.FlowPanelDetails.Size = new System.Drawing.Size(620, 181);
+            this.FlowPanelDetails.Size = new System.Drawing.Size(617, 178);
             this.FlowPanelDetails.TabIndex = 15;
             // 
             // LabelHeaderGameTitle
@@ -484,6 +488,21 @@
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 95;
             // 
+            // LabelNoBackupFiles
+            // 
+            this.LabelNoBackupFiles.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelNoBackupFiles.AutoSize = true;
+            this.LabelNoBackupFiles.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelNoBackupFiles.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelNoBackupFiles.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelNoBackupFiles.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelNoBackupFiles.Location = new System.Drawing.Point(256, 93);
+            this.LabelNoBackupFiles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.LabelNoBackupFiles.Name = "LabelNoBackupFiles";
+            this.LabelNoBackupFiles.Size = new System.Drawing.Size(107, 15);
+            this.LabelNoBackupFiles.TabIndex = 1179;
+            this.LabelNoBackupFiles.Text = "NO BACKUP FILES";
+            // 
             // GameBackupFilesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -501,8 +520,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Game Backup Files";
             this.Load += new System.EventHandler(this.GameBackupFilesWindow_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvBackups)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvBackupFiles)).EndInit();
             this.SectionBackupFiles.ResumeLayout(false);
+            this.SectionBackupFiles.PerformLayout();
             this.ToolStripArchiveInformation.ResumeLayout(false);
             this.ToolStripArchiveInformation.PerformLayout();
             this.SectionBackupDetails.ResumeLayout(false);
@@ -515,7 +535,7 @@
 
         #endregion
 
-        private DarkUI.Controls.DarkDataGridView DgvBackups;
+        private DarkUI.Controls.DarkDataGridView DgvBackupFiles;
         private DarkUI.Controls.DarkSectionPanel SectionBackupFiles;
         private DarkUI.Controls.DarkSectionPanel SectionBackupDetails;
         private System.Windows.Forms.FlowLayoutPanel FlowPanelDetails;
@@ -548,5 +568,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCreatedOn;
+        private System.Windows.Forms.Label LabelNoBackupFiles;
     }
 }

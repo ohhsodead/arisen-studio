@@ -7,7 +7,7 @@ namespace ModioX.Forms
     public partial class DataViewDialog : DarkForm
     {
         /// <summary>
-        ///     Initialize application form
+        /// Initialize application form
         /// </summary>
         public DataViewDialog()
         {

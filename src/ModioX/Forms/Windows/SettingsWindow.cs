@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Windows.Forms;
-using DarkUI.Forms;
+using DevExpress.XtraEditors;
+using ModioX.Models.Resources;
 
 namespace ModioX.Forms.Windows
 {
-    public partial class SettingsWindow : DarkForm
+    public partial class SettingsWindow : XtraForm
     {
         public SettingsWindow()
         {
             InitializeComponent();
         }
 
-        private readonly Models.Resources.SettingsData Settings = MainWindow.Settings;
+        public static SettingsData Settings = MainWindow.Settings;
 
         private void SettingsWindow_Load(object sender, EventArgs e)
         {
@@ -23,13 +23,9 @@ namespace ModioX.Forms.Windows
             // File Manager
             CheckBoxSaveLocalPath.Checked = Settings.SaveLocalPath;
             CheckBoxSaveConsolePath.Checked = Settings.SaveConsolePath;
-        }
 
-        private void Dgv_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            // Removes dotted borders from the cells on focus
-            e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Focus);
-            e.Handled = true;
+            // File Size
+            CheckBoxShowFileSizeInBytes.Checked = Settings.ShowFileSizeInBytes;
         }
 
         private void ButtonOK_Click(object sender, EventArgs e)
@@ -42,6 +38,9 @@ namespace ModioX.Forms.Windows
             // File Manager
             Settings.SaveLocalPath = CheckBoxSaveLocalPath.Checked;
             Settings.SaveConsolePath = CheckBoxSaveConsolePath.Checked;
+
+            // File Size
+            Settings.ShowFileSizeInBytes = CheckBoxShowFileSizeInBytes.Checked;
         }
     }
 }

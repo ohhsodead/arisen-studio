@@ -1,15 +1,16 @@
 ﻿using System.Xml.Serialization;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace ModioX.Models.Game_Updates
 {
     [XmlRoot(ElementName = "package")]
-	public class Package
+	public partial class Package
 	{
 		[XmlAttribute(AttributeName = "version")]
 		public string Version { get; set; }
 		[XmlAttribute(AttributeName = "size")]
-		public string Size { get; set; }
+        public string Size { get; set; }
 		[XmlAttribute(AttributeName = "sha1sum")]
 		public string Sha1sum { get; set; }
 		[XmlAttribute(AttributeName = "url")]
@@ -21,14 +22,14 @@ namespace ModioX.Models.Game_Updates
 	}
 
 	[XmlRoot(ElementName = "paramsfo")]
-	public class Paramsfo
+	public partial class Paramsfo
 	{
 		[XmlElement(ElementName = "TITLE")]
 		public string TITLE { get; set; }
 	}
 
 	[XmlRoot(ElementName = "tag")]
-	public class Tag
+	public partial class Tag
 	{
 		[XmlElement(ElementName = "package")]
 		public List<Package> Package { get; set; }
@@ -41,7 +42,7 @@ namespace ModioX.Models.Game_Updates
 	}
 
 	[XmlRoot(ElementName = "titlepatch")]
-	public class Titlepatch
+	public partial class Titlepatch
 	{
 		[XmlElement(ElementName = "tag")]
 		public Tag Tag { get; set; }

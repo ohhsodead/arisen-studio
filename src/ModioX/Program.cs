@@ -1,51 +1,99 @@
 ﻿using System;
-using System.Reflection;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using DarkUI.Forms;
-using DarkUI.Win32;
-using log4net;
-using log4net.Config;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
+using ModioX.Io;
 using ModioX.Forms.Windows;
+using DevExpress.XtraEditors;
 
 namespace ModioX
 {
     internal static class Program
     {
-        public static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        public static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
         /// <summary>
-        ///     The main entry point for the application.
+        /// The main entry point for the application.
         /// </summary>
         [STAThread]
         private static void Main()
         {
-            // Initialize log4net.
-            _ = XmlConfigurator.Configure();
-            Log.Info("Configured logging settings.");
+            ConfigureLogger();
 
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.AddMessageFilter(new ControlScrollFilter());
             Application.Run(new MainWindow());
+        }
+
+        private static void ConfigureLogger()
+        {
+            var config = new LoggingConfiguration();
+
+            // String to use for exceptions
+            const string exc = @"${exception:format=ToString:seperator=\n}";
+
+            // String for getting thread name and id;
+            const string threadInfo = @"<${threadname\::whenEmpty=}${threadid}>";
+
+            // String to use as a layout for logged messages.
+            var layout = $@"${{date:format=HH\:mm\:ss}} [${{level:uppercase=true}}] {threadInfo}: ${{message}} ${{onexception:inner={exc}}}";
+
+            // Target where to log to.
+            var file = new FileTarget("file")
+            {
+                FileName = $"{UserFolders.AppLogsDirectory}latest.txt",
+                AutoFlush = true,
+                ArchiveOldFileOnStartup = true,
+                EnableArchiveFileCompression = true,
+                MaxArchiveFiles = 7,
+                ArchiveDateFormat = "${shortdate}",
+                ArchiveFileName = UserFolders.AppLogsDirectory + "ModioX-${shortdate}.zip",
+                ArchiveNumbering = ArchiveNumberingMode.Date,
+                Layout = layout,
+                CreateDirs = true
+            };
+
+#if DEBUG
+            // Rules for mapping loggers to targets
+            config.AddRule(LogLevel.Debug, LogLevel.Fatal, file);
+#else
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, file);
+#endif
+            // Apply config
+            LogManager.Configuration = config;
         }
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
+            var message = new StringBuilder()
+                .AppendLine("Should ModioX exit?\n")
+                .Append("If you keep receiving this error, please make a report on GitHub or join our Discord Server.");
+
             MainWindow.Window.SetStatus($"An unknown error occurred: {e.Exception.Message}", e.Exception);
-            _ = DarkMessageBox.Show(MainWindow.Window,
-                $"An unknown error occurred: {e.Exception.Message}. If you keep receiving this issue when then report it on GitHub so we can investigate.");
+
+            var resume = XtraMessageBox.Show(MainWindow.Window, $"An error occurred: {e.Exception.Message}.", message.ToString(), MessageBoxButtons.YesNo);
+
+            if (resume == DialogResult.Yes) Application.Exit();
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            MainWindow.Window.SetStatus($"An unknown error occurred: {((Exception) e.ExceptionObject).Message}",
-                (Exception) e.ExceptionObject);
-            _ = DarkMessageBox.Show(MainWindow.Window,
-                $"An unknown error occurred: {((Exception) e.ExceptionObject).Message}. If you keep receiving this issue when then report it on GitHub so we can investigate.");
+            var exception = e.ExceptionObject as Exception;
+            var message = new StringBuilder()
+                .AppendLine("Should ModioX exit?\n")
+                .Append("If you keep receiving this error, please make a report on GitHub or join our Discord Server.");
+
+            MainWindow.Window.SetStatus($"An unknown error occurred: {exception?.Message}", exception);
+
+            var resume = XtraMessageBox.Show(MainWindow.Window, $"An error occurred: {exception?.Message}.", message.ToString(), MessageBoxButtons.YesNo);
+
+            if (resume == DialogResult.Yes) Application.Exit();
         }
     }
 }

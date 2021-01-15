@@ -4,14 +4,14 @@ using DarkUI.Forms;
 
 namespace ModioX.Forms
 {
-    public partial class InputDialog : DarkForm
+    public partial class InputTextDialog : DarkForm
     {
-        public InputDialog()
+        public InputTextDialog()
         {
             InitializeComponent();
         }
 
-        private void InputDialog_Load(object sender, EventArgs e)
+        private void InputTextDialog_Load(object sender, EventArgs e)
         {
             try
             {

@@ -1,5 +1,5 @@
-﻿using ModioX.Net;
-using System;
+﻿using System;
+using ModioX.Net;
 
 namespace ModioX.Extensions
 {
@@ -16,10 +16,12 @@ namespace ModioX.Extensions
                 return null;
             }
 
+            if (time.dwHighDateTime == 0 && time.dwLowDateTime == 0) return null;
+
             unchecked
             {
-                uint low = (uint)time.dwLowDateTime;
-                long ft = (((long)time.dwHighDateTime) << 32 | low);
+                var low = (uint)time.dwLowDateTime;
+                var ft = ((long)time.dwHighDateTime << 32) | low;
                 return DateTime.FromFileTimeUtc(ft);
             }
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DarkUI.Controls;
 using DarkUI.Forms;
 
@@ -18,10 +19,11 @@ namespace ModioX.Windows
 
         private void ListViewDialog_Load(object sender, EventArgs e)
         {
-            foreach (var item in Items)
-            {
-                ListViewItems.Items.Add(new DarkListItem { Text = item });
-            }
+            foreach (var item in Items) ListViewItems.Items.Add(new DarkListItem { Text = item });
+
+            // Increase form size to fit listview contents
+            Width = ListViewItems.Width + Items.Max(w => w.Length) + 70;
+            Refresh();
         }
 
         private void ListViewRegions_SelectedIndicesChanged(object sender, EventArgs e)

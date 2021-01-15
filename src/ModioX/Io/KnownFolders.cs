@@ -21,13 +21,13 @@ namespace ModioX.Io
         };
 
         /// <summary>
-        ///     Gets the current path to the specified known folder as currently configured. This does
-        ///     not require the folder to be existent.
+        /// Gets the current path to the specified known folder as currently configured. This does
+        /// not require the folder to be existent.
         /// </summary>
         /// <param name="knownFolder">The known folder which current path will be returned.</param>
         /// <param name="defaultUser">
-        ///     Specifies if the paths of the default user (user profile template) will be used.
-        ///     This requires administrative rights.
+        /// Specifies if the paths of the default user (user profile template) will be used.
+        /// This requires administrative rights.
         /// </param>
         /// <returns>The default path of the known folder.</returns>
         /// <exception cref="ExternalException">Thrown if the path could not be retrieved.</exception>
@@ -39,15 +39,14 @@ namespace ModioX.Io
         private static string GetPath(KnownFolder knownFolder, KnownFolderFlags flags,
             bool defaultUser)
         {
-            var result = SHGetKnownFolderPath(new Guid(KnownFoldersGuid[(int) knownFolder]),
-                (uint) flags, new IntPtr(defaultUser ? -1 : 0), out var outPath);
+            var result = SHGetKnownFolderPath(new Guid(KnownFoldersGuid[(int)knownFolder]),
+                (uint)flags, new IntPtr(defaultUser ? -1 : 0), out var outPath);
             if (result >= 0)
             {
                 return Marshal.PtrToStringUni(outPath);
             }
 
-            throw new ExternalException("Unable to retrieve the known folder path. It may not "
-                                        + "be available on this system.", result);
+            throw new ExternalException("Unable to retrieve the known folder path. It may not be available on this system.", result);
         }
 
         [DllImport("Shell32.dll")]
@@ -71,8 +70,8 @@ namespace ModioX.Io
     }
 
     /// <summary>
-    ///     Standard folders registered with the system. These folders are installed with Windows Vista
-    ///     and later operating systems, and a computer will have only folders appropriate to it installed.
+    /// Standard folders registered with the system. These folders are installed with Windows Vista
+    /// and later operating systems, and a computer will have only folders appropriate to it installed.
     /// </summary>
     public enum KnownFolder
     {

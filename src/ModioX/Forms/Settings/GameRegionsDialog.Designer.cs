@@ -86,13 +86,13 @@
             this.LabelNoGameRegionsSaved.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LabelNoGameRegionsSaved.AutoSize = true;
             this.LabelNoGameRegionsSaved.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelNoGameRegionsSaved.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelNoGameRegionsSaved.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelNoGameRegionsSaved.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelNoGameRegionsSaved.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelNoGameRegionsSaved.Location = new System.Drawing.Point(151, 79);
+            this.LabelNoGameRegionsSaved.Location = new System.Drawing.Point(147, 79);
             this.LabelNoGameRegionsSaved.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelNoGameRegionsSaved.Name = "LabelNoGameRegionsSaved";
-            this.LabelNoGameRegionsSaved.Size = new System.Drawing.Size(113, 15);
+            this.LabelNoGameRegionsSaved.Size = new System.Drawing.Size(120, 15);
             this.LabelNoGameRegionsSaved.TabIndex = 1178;
             this.LabelNoGameRegionsSaved.Text = "NO REGIONS SAVED";
             // 

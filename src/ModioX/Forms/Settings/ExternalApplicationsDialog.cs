@@ -37,10 +37,7 @@ namespace ModioX.Forms.Settings
 
             DgvApplications.Sort(DgvApplications.Columns[0], ListSortDirection.Ascending);
 
-            if (DgvApplications.Rows.Count > 0)
-            {
-                DgvApplications.CurrentCell = DgvApplications[0, 0];
-            }
+            if (DgvApplications.Rows.Count > 0) DgvApplications.CurrentCell = DgvApplications[0, 0];
         }
 
         private void DgvApplications_SelectionChanged(object sender, EventArgs e)
@@ -59,8 +56,7 @@ namespace ModioX.Forms.Settings
 
         private void ToolStripDelete_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.Show(this, "Do you really want delete the selected item?", "Delete",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (DarkMessageBox.ShowWarning("Do you really want delete the selected item?", "Delete", DarkDialogButton.YesNo) == DialogResult.Yes)
             {
                 MainWindow.Settings.ExternalApplications.RemoveAt(DgvApplications.SelectedRows[0].Index);
                 LoadExternalApplications();
@@ -69,30 +65,24 @@ namespace ModioX.Forms.Settings
 
         private void ToolStripDeleteAll_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.Show(this,
-                "Are you sure that you would like to delete of all your specified applications?",
-                "Delete All Game Regions", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (DarkMessageBox.ShowWarning("Are you sure that you would like to delete of all your specified applications?", "Delete All Game Regions", DarkDialogButton.YesNo) == DialogResult.Yes)
             {
                 MainWindow.Settings.ExternalApplications.Clear();
-                _ = DarkMessageBox.Show(this, "All specified regions for games have now been deleted.",
-                    "Deleted All Game Regions", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DarkMessageBox.ShowInformation("All specified regions for games have now been deleted.", "Deleted All Game Regions");
                 Close();
             }
         }
 
         private void ButtonLocalFilePath_Click(object sender, EventArgs e)
         {
-            using (var openFileDialog = new OpenFileDialog
+            using var openFileDialog = new OpenFileDialog
             {
-                CheckFileExists = true, Multiselect = false,
+                CheckFileExists = true,
+                Multiselect = false,
                 Filter = @"Executable Files (*.exe)|*.exe|All files (*.*)|*."
-            })
-            {
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    TextBoxFileLocation.Text = openFileDialog.FileName;
-                }
-            }
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK) TextBoxFileLocation.Text = openFileDialog.FileName;
         }
 
         private void ButtonNewApplication_Click(object sender, EventArgs e)
@@ -109,23 +99,19 @@ namespace ModioX.Forms.Settings
 
             if (string.IsNullOrWhiteSpace(appName))
             {
-                _ = DarkMessageBox.Show(this, "You must enter a name for this application.", "Empty Name",
-                    MessageBoxIcon.Exclamation);
+                DarkMessageBox.ShowExclamation("You must enter a name for this application.", "Empty Name");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(fileLocation))
             {
-                _ = DarkMessageBox.Show(this, "You must enter the file path for this application.",
-                    "Empty File Location", MessageBoxIcon.Exclamation);
+                DarkMessageBox.ShowExclamation("You must enter the file path for this application.", "Empty File Location");
                 return;
             }
 
             if (!File.Exists(fileLocation))
             {
-                _ = DarkMessageBox.Show(this,
-                    "The file for this application doesn't exist on your computer. Please choose another file.",
-                    "File Doesn't Exist", MessageBoxIcon.Exclamation);
+                DarkMessageBox.ShowExclamation("The file for this application doesn't exist on your computer. Please choose another file.", "File Doesn't Exist");
                 return;
             }
 
@@ -143,8 +129,7 @@ namespace ModioX.Forms.Settings
                 MainWindow.Settings.UpdateApplication(appName, fileLocation);
             }
 
-            _ = DarkMessageBox.Show(this, "All external applications have now been saved.", "Saved",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DarkMessageBox.ShowInformation( "All external applications have now been saved.", "Saved");
             Close();
         }
     }

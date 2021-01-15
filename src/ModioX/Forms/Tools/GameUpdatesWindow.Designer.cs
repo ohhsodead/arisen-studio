@@ -1,6 +1,6 @@
-﻿namespace ModioX.Forms.Dialogs
+﻿namespace ModioX.Forms.Tools
 {
-    partial class GameUpdatesDialog
+    partial class GameUpdatesWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameUpdatesDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameUpdatesWindow));
             this.SectionPanelInformation = new DarkUI.Controls.DarkSectionPanel();
+            this.LabelNoGameUpdatesFound = new System.Windows.Forms.Label();
             this.DgvGameUpdates = new DarkUI.Controls.DarkDataGridView();
-            this.ColumnURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSHA1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFirmware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDownload = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnInstall = new System.Windows.Forms.DataGridViewImageColumn();
             this.ContextMenuGameUpdates = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuDownloadToComputer = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuInstallToConsole = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +47,14 @@
             this.ToolStripFooter = new DarkUI.Controls.DarkToolStrip();
             this.ToolStripLabelHeaderStatus = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripLabelStatus = new System.Windows.Forms.ToolStripLabel();
+            this.ColumnURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSHA1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFirmware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDownload = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnInstall = new System.Windows.Forms.DataGridViewImageColumn();
             this.SectionPanelInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGameUpdates)).BeginInit();
             this.ContextMenuGameUpdates.SuspendLayout();
@@ -66,6 +67,7 @@
             this.SectionPanelInformation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.SectionPanelInformation.Controls.Add(this.LabelNoGameUpdatesFound);
             this.SectionPanelInformation.Controls.Add(this.DgvGameUpdates);
             this.SectionPanelInformation.Controls.Add(this.PanelSearch);
             this.SectionPanelInformation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,8 +75,23 @@
             this.SectionPanelInformation.Margin = new System.Windows.Forms.Padding(4);
             this.SectionPanelInformation.Name = "SectionPanelInformation";
             this.SectionPanelInformation.SectionHeader = "SEARCH FOR GAME UPDATES";
-            this.SectionPanelInformation.Size = new System.Drawing.Size(602, 336);
+            this.SectionPanelInformation.Size = new System.Drawing.Size(688, 346);
             this.SectionPanelInformation.TabIndex = 0;
+            // 
+            // LabelNoGameUpdatesFound
+            // 
+            this.LabelNoGameUpdatesFound.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelNoGameUpdatesFound.AutoSize = true;
+            this.LabelNoGameUpdatesFound.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelNoGameUpdatesFound.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelNoGameUpdatesFound.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelNoGameUpdatesFound.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelNoGameUpdatesFound.Location = new System.Drawing.Point(263, 144);
+            this.LabelNoGameUpdatesFound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.LabelNoGameUpdatesFound.Name = "LabelNoGameUpdatesFound";
+            this.LabelNoGameUpdatesFound.Size = new System.Drawing.Size(162, 15);
+            this.LabelNoGameUpdatesFound.TabIndex = 1180;
+            this.LabelNoGameUpdatesFound.Text = "NO GAME UPDATES FOUND";
             // 
             // DgvGameUpdates
             // 
@@ -103,63 +120,11 @@
             this.DgvGameUpdates.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DgvGameUpdates.RowTemplate.ReadOnly = true;
             this.DgvGameUpdates.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvGameUpdates.Size = new System.Drawing.Size(600, 266);
+            this.DgvGameUpdates.ShowEditingIcon = false;
+            this.DgvGameUpdates.Size = new System.Drawing.Size(686, 276);
             this.DgvGameUpdates.TabIndex = 3;
             this.DgvGameUpdates.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGameUpdates_CellClick);
             this.DgvGameUpdates.SelectionChanged += new System.EventHandler(this.DgvGameUpdates_SelectionChanged);
-            // 
-            // ColumnURL
-            // 
-            this.ColumnURL.HeaderText = "URL";
-            this.ColumnURL.Name = "ColumnURL";
-            this.ColumnURL.ReadOnly = true;
-            this.ColumnURL.Visible = false;
-            // 
-            // ColumnSHA1
-            // 
-            this.ColumnSHA1.HeaderText = "SHA1";
-            this.ColumnSHA1.Name = "ColumnSHA1";
-            this.ColumnSHA1.ReadOnly = true;
-            this.ColumnSHA1.Visible = false;
-            // 
-            // ColumnGameTitle
-            // 
-            this.ColumnGameTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnGameTitle.HeaderText = "Game Title";
-            this.ColumnGameTitle.Name = "ColumnGameTitle";
-            this.ColumnGameTitle.ReadOnly = true;
-            // 
-            // ColumnVersion
-            // 
-            this.ColumnVersion.HeaderText = "Version";
-            this.ColumnVersion.Name = "ColumnVersion";
-            this.ColumnVersion.ReadOnly = true;
-            // 
-            // ColumnSize
-            // 
-            this.ColumnSize.HeaderText = "Size";
-            this.ColumnSize.Name = "ColumnSize";
-            this.ColumnSize.ReadOnly = true;
-            // 
-            // ColumnFirmware
-            // 
-            this.ColumnFirmware.HeaderText = "Firmware";
-            this.ColumnFirmware.Name = "ColumnFirmware";
-            this.ColumnFirmware.ReadOnly = true;
-            // 
-            // ColumnDownload
-            // 
-            this.ColumnDownload.HeaderText = "";
-            this.ColumnDownload.Name = "ColumnDownload";
-            this.ColumnDownload.ReadOnly = true;
-            this.ColumnDownload.Width = 28;
-            // 
-            // ColumnInstall
-            // 
-            this.ColumnInstall.HeaderText = "";
-            this.ColumnInstall.Name = "ColumnInstall";
-            this.ColumnInstall.ReadOnly = true;
-            this.ColumnInstall.Width = 28;
             // 
             // ContextMenuGameUpdates
             // 
@@ -237,13 +202,13 @@
             this.PanelSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSearch.Location = new System.Drawing.Point(1, 25);
             this.PanelSearch.Name = "PanelSearch";
-            this.PanelSearch.Size = new System.Drawing.Size(600, 44);
+            this.PanelSearch.Size = new System.Drawing.Size(686, 44);
             this.PanelSearch.TabIndex = 2;
             // 
             // ButtonSearch
             // 
             this.ButtonSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonSearch.Location = new System.Drawing.Point(317, 10);
+            this.ButtonSearch.Location = new System.Drawing.Point(343, 10);
             this.ButtonSearch.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonSearch.Name = "ButtonSearch";
             this.ButtonSearch.Size = new System.Drawing.Size(78, 24);
@@ -257,7 +222,7 @@
             this.TextBoxTitleID.Location = new System.Drawing.Point(59, 10);
             this.TextBoxTitleID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxTitleID.Name = "TextBoxTitleID";
-            this.TextBoxTitleID.Size = new System.Drawing.Size(136, 23);
+            this.TextBoxTitleID.Size = new System.Drawing.Size(117, 23);
             this.TextBoxTitleID.TabIndex = 0;
             this.TextBoxTitleID.Text = "e.g. BLES01807";
             // 
@@ -282,12 +247,12 @@
             this.LabelSelectType.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSelectType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectType.Location = new System.Drawing.Point(203, 14);
+            this.LabelSelectType.Location = new System.Drawing.Point(184, 14);
             this.LabelSelectType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelSelectType.Name = "LabelSelectType";
-            this.LabelSelectType.Size = new System.Drawing.Size(33, 15);
+            this.LabelSelectType.Size = new System.Drawing.Size(78, 15);
             this.LabelSelectType.TabIndex = 1160;
-            this.LabelSelectType.Text = "TYPE";
+            this.LabelSelectType.Text = "UPDATE TYPE";
             // 
             // ComboBoxType
             // 
@@ -296,7 +261,7 @@
             this.ComboBoxType.Items.AddRange(new object[] {
             "Retail",
             "Debug"});
-            this.ComboBoxType.Location = new System.Drawing.Point(242, 10);
+            this.ComboBoxType.Location = new System.Drawing.Point(268, 10);
             this.ComboBoxType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ComboBoxType.Name = "ComboBoxType";
             this.ComboBoxType.Size = new System.Drawing.Size(67, 24);
@@ -312,10 +277,10 @@
             this.ToolStripFooter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripLabelHeaderStatus,
             this.ToolStripLabelStatus});
-            this.ToolStripFooter.Location = new System.Drawing.Point(0, 353);
+            this.ToolStripFooter.Location = new System.Drawing.Point(0, 363);
             this.ToolStripFooter.Name = "ToolStripFooter";
             this.ToolStripFooter.Padding = new System.Windows.Forms.Padding(3, 0, 8, 5);
-            this.ToolStripFooter.Size = new System.Drawing.Size(628, 28);
+            this.ToolStripFooter.Size = new System.Drawing.Size(714, 28);
             this.ToolStripFooter.TabIndex = 5;
             this.ToolStripFooter.Text = "darkToolStrip1";
             // 
@@ -335,12 +300,72 @@
             this.ToolStripLabelStatus.Size = new System.Drawing.Size(26, 20);
             this.ToolStripLabelStatus.Text = "Idle";
             // 
-            // GameUpdatesDialog
+            // ColumnURL
+            // 
+            this.ColumnURL.HeaderText = "URL";
+            this.ColumnURL.Name = "ColumnURL";
+            this.ColumnURL.ReadOnly = true;
+            this.ColumnURL.Visible = false;
+            // 
+            // ColumnSHA1
+            // 
+            this.ColumnSHA1.HeaderText = "SHA1";
+            this.ColumnSHA1.Name = "ColumnSHA1";
+            this.ColumnSHA1.ReadOnly = true;
+            this.ColumnSHA1.Visible = false;
+            // 
+            // ColumnGameTitle
+            // 
+            this.ColumnGameTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnGameTitle.HeaderText = "Game Title";
+            this.ColumnGameTitle.Name = "ColumnGameTitle";
+            this.ColumnGameTitle.ReadOnly = true;
+            // 
+            // ColumnVersion
+            // 
+            this.ColumnVersion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnVersion.HeaderText = "Version";
+            this.ColumnVersion.Name = "ColumnVersion";
+            this.ColumnVersion.ReadOnly = true;
+            this.ColumnVersion.Width = 72;
+            // 
+            // ColumnSize
+            // 
+            this.ColumnSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnSize.HeaderText = "Size";
+            this.ColumnSize.MinimumWidth = 70;
+            this.ColumnSize.Name = "ColumnSize";
+            this.ColumnSize.ReadOnly = true;
+            this.ColumnSize.Width = 70;
+            // 
+            // ColumnFirmware
+            // 
+            this.ColumnFirmware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnFirmware.HeaderText = "Firmware";
+            this.ColumnFirmware.Name = "ColumnFirmware";
+            this.ColumnFirmware.ReadOnly = true;
+            this.ColumnFirmware.Width = 84;
+            // 
+            // ColumnDownload
+            // 
+            this.ColumnDownload.HeaderText = "";
+            this.ColumnDownload.Name = "ColumnDownload";
+            this.ColumnDownload.ReadOnly = true;
+            this.ColumnDownload.Width = 28;
+            // 
+            // ColumnInstall
+            // 
+            this.ColumnInstall.HeaderText = "";
+            this.ColumnInstall.Name = "ColumnInstall";
+            this.ColumnInstall.ReadOnly = true;
+            this.ColumnInstall.Width = 28;
+            // 
+            // GameUpdatesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(628, 381);
+            this.ClientSize = new System.Drawing.Size(714, 391);
             this.Controls.Add(this.ToolStripFooter);
             this.Controls.Add(this.SectionPanelInformation);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -349,12 +374,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "GameUpdatesDialog";
+            this.Name = "GameUpdatesWindow";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Game Update Finder";
             this.Load += new System.EventHandler(this.GameUpdateFinder_Load);
             this.SectionPanelInformation.ResumeLayout(false);
+            this.SectionPanelInformation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGameUpdates)).EndInit();
             this.ContextMenuGameUpdates.ResumeLayout(false);
             this.PanelSearch.ResumeLayout(false);
@@ -383,6 +409,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuCopyURLToClipboard;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuCopySHA1ToClipboard;
+        private System.Windows.Forms.Label LabelNoGameUpdatesFound;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnURL;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSHA1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameTitle;

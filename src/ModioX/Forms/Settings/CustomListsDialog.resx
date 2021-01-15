@@ -117,185 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ContextMenuMods.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>433, -2</value>
+  <metadata name="ContextMenuCustomLists.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>187, -4</value>
+  </metadata>
+  <metadata name="ToolStripGameRegions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>11, -4</value>
+  </metadata>
+  <metadata name="ColumnGameRegion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ColumnGameTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ContextMenuModsInstallFiles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAT5JREFUSEvtk71KA0EUhRcECfjzGtuphXUasfQBfIiAYJE2ZbpYpclDBLRJaWMq
-        IZ1d0MrSQDDtrt8ZjsvCGDMJW4kHPnbuveeeLEsm+7sqiuJUuGxOhI6Fy+bUSHBZlmeEdM2NevVg9Tzr
-        yqteklgYwSfMYeZePXjmmTwj9ZKE+ZU36bsMohd9Cnnovbn8XRhzFkqeFzz2eA7hHEKwz0PP5JE39/p6
-        YerACn8LDjlPYQEvRuepZvJwXkHH6+uF6QEmLlUfEPAIQdT6oWOPNZ/Avcufxd4+piXcuhWkIHgyVagk
-        Lyy161YsDG2/1YlblegdCZeV5PVO261YzHs26Tt+JLLQDuo5JhamAbzD9+VIRTsDx8TSEMKF2CR813Dn
-        sy5MY8E5XPqcFKz/8PM2aGdT8BXG/i5o1zH/qivLvgCI1Eouc+MdfQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ContextMenuModsUninstallFiles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAiBJREFUSEvdlDsvRFEUhSdIDAodIiJCFF6V6BQI0VKKXktI+AGepSimQ5QURKGg
-        8gOQeBRexXh0xKvxysz41rGva1yPS2klK3uftfde98y5507kfyKZTBamUql6UbnJfwMmUUz6E4nELnka
-        0Hao9cFsaw8HBmoYPoKPcAavDrRaYyfarNUOWFfb2PeQKUY3cAOWwyy0NthvLQ6sKzDehNfkVSZ/Dkyi
-        NB7JlOY8YiPrQ6J+/oW1vUE96FtQO//6WCjqTB/x0U5l+gBX0eusJQBqlfQ8EXtNCoKGXagzzSIewjXy
-        TNUUvfwj6JuD27ZMB0/UlRL0otqUeDsldjN4B2/Ju9zAO6B1Wn+BST7QdU9V1JsfwOTS9EwZwnnyBagX
-        m+GGDPTXoQn1Jvmg2KCKmkxyQHLGRJl6xmVoMXgC7+E5mmbbbcwHej7soVhs0hvQmlUTMRmGOpY4HDFt
-        FOohV/S22NgraNAtuArBZ7iIQY6NOjCfi76kHvJSk12hCQoTDA19Rob2YJw8hzhNHNSsotbMyvwUTjlT
-        AdEzLjMpABsaUS4zNbNeUfQewnoMHit3oBbG+Il6jy21dqaKJslHZ35vS98YcYeg/4kAqQlhdhxX7kBN
-        n/HED1xn6ISoswycMVH/HWcw5kzDAsMihvSxLMncZAczXVadmn8rwoIhXctrqBc5zlpnOg61U5m2Wuvv
-        we5KMJmE+1Bfnj6OmL/TSOQFwAdjOITkblUAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ContextMenuModsDownloadArchive.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABGdBTUEAALGPC/xhBQAAAXxJREFUSEvt
-        lD8ohHEYx++uKxl0ZXAli4FRCYNLKZMsFnZ1t4iBGV2yXGY3kiwWJQurzUDJcCijLAYW5Uqcz/e9752u
-        u+O8833qU7/n+/x+z3u9fy7SpmVKpVInzuMWruEsxt0OBwOm8Ak/8QEfUWid8rb/wcFxfMdD7HOsvB9P
-        8A3HHLcOh27wCKOOqpDF8QwvscPx37B5GMWAozroDZW3BLfpHCfcaow2oH7Ns6MA6k3pMoB6EtOowR84
-        51YtNBbwCy8w5ziA+li6rIE8hrv4it2OyxCk8AW3HdVA3nSwoNeFRcxUAj2IPRTX2Bs0DHUWBzEY7HXW
-        7RrIr/AUYypWUVeadr8KWQILqHdZF5VaK0t4WxWyGdS9XlFxh3n36qCXRA2qoHXS7Tro5fFeC30ES84b
-        okGogb8OFZqFRS1ucd95U9jTI102hT0HWNBiGfWSp90LDTMynrWoIoq6L0Kvm55sGHVW38AO/vwNUIzi
-        BuZCuo4jHtemQiTyDW5/REbszu+NAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="ColumnInstallationFiles.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ToolStripArchiveInformation.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>250, -2</value>
-  </metadata>
-  <data name="ToolItemModInstall.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFaSURBVEhL7ZO9SsRQFIQDggj+vEY6tbDeRix9AB9CECxs
-        t9xOq218CEGbLW20EuzsRCtLFxJDyL/zhZMQiLteJZU4MOSec2Ym914S7++iLMsdaOVwKIriClo5HAYJ
-        rqpqV8c+M57Q6wbTa+Zo6TlBAZdhGH5kWfac5/mj9dpgeszQoKXnBJletJOJlTW6wQ3QpGn6auVy6Hi+
-        DJWe+3qsKGyq9V4TbOspM9Og9c2+GBIdB0EQSb8mbujY93Ecz3WKJ8iaHjM0aPGYfTG0mxtxZiUvWlfA
-        rViDUPW2bIx+Jl5b+TXkW42iKJDx1Fo1CFLgHeyGArR48FqrD4lG7ErPbWu1UG8TWtkCrXlG1upD8zEi
-        7lF8d+QcjzC2mD50V+dJkrzp7c3P4UQ8eC2mD4a6x/qH+A4KPJL+gjWeIYN98YC1U7B9ww8/IZ6lwdrB
-        oYST3xCvxfyjC8/7BFYzRxBtZeEcAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ToolItemModUninstall.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJRSURBVEhL3ZS9a1NhFMaDLdiPwU1FpJSKgx+dilsGFUtX
-        O4p7ViWC/gFW21Ecsqk46mBx6GCX+AdYwepQPyBWzRAMXhVCYj79Pa/P7bXeaqKjDxzOOc8557kn931v
-        Mv8nut3uvl6vNyNTbPrfgMgIIvl2u/2ceBvg1qldxHa7fTAwcKzVar2uVCrfOp3ObbTOwh23zcPdUY2e
-        l+RHPfZnSBShz9gTbAobhpvF8m4JID/E5mv1ej0iPmJ6ZyAyok0lSvM4Pkv+Ct9rNBof3bYF9SD+1Jv/
-        /rVQzOsnoqNNs9VqtcHPfgQ/7ZYUqB0ul8tN/AVTaeig/E6HtSnxKvGQavJx/Cvou8vsM6fbwRN1pQQd
-        1KyCeFP8+Vqt9hX7QnwuDPwEuHn37zWVAF73VEWd/CXeadX8kATZ6h7xfUwHuysMGfRPwwkzphJQPKGK
-        mkwFQAVhvERj4UkeVGg2m5tRFNXxH+A0O+exBPB7sBzFA6a2AHdKNRmCV/VaEHtLvGDumh7C1ftE72mP
-        /QANWRX6WalUaiH0AIFRjwYwPwa/rB7iCdOhcBITlhi6spNx8i+0KfEoIrfwlzUrr5zZMerviG8GUQEy
-        Fp40lYKHFhRLTM3kK/LxQ8ivc1XfKA6g1ldYHwL1nFOJBFF5U9LJ6UCdJsL83HWc/idSViwW0ei/sV6X
-        4gBq+oyX+thjnT5eB5V6x/hx6u+JC0F0UCC43x/LssRNB0gU/qHvfHIrBgVDupaRD3KRXPd4UZta9Ixb
-        /x5sdxCxG5z+hr+8TfJCsmkm8x0xGl2qGjqEWgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ToolItemModDownload.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHnSURBVEhL7ZI/S1thGMUvghSsIA1ZrQQHBx1cFARHFdQM
-        dhCcit9A0MF8grZCBocugpNkU+gHKJKlxT9bIZODGWxK1WjSpjH/k/7O5cnFeI0kzh54eO9zznnP8973
-        XucFXaFerw82Go0Z1kUqZPTzQchYrVb7GovF6gR7qFarJyzTZusOhIaz2eydBR0zYJuK8nwkLpFIVFlW
-        zf40CAtQ7wn4mMvl/hUKhRv6eZM9wL0jNJtKpco8Txj9ODCs5fP5vzqNEI/HaywzJvuAf1FXxCEOjfID
-        8YPCCP7D8kmbqCmTXeA5UFnrQtdi4V/wb7I3aJLj0EwrtFwu/0QcNtqHYrF4pbLWBdsi2tsEV3dLxqwr
-        Mm1fJETYJdqgTXBQh2EdJ2crmUxW9G3gRpxSqfSbSRnEHvN7wPAa/o2K0GtVs5dmNg9w62gNhuw56XS6
-        WKlUzkxrAcYxBl/KfB/ipJnNA1JvJpMp6LAOoedqIPtMb8HD8HahTfCtLpSnO/6sDXoN03xAG1WghY4a
-        7QNaSFn8LT/UDOnCdSU8r5jHBwU+FUreAIeM2yE3muSSgkUy7RRDFHGzk2JLBP8ub/PL9n+Hf+UGCzST
-        kN8kPgf61Riww2O/RbYC4S1DFliXOy38c1TAIl5wH47zH2ZJpe/+VUbUAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="MenuStripHeader.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>2, 0</value>
-  </metadata>
-  <metadata name="ToolStripFooter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>133, 0</value>
-  </metadata>
-  <metadata name="ColumnModsId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsFirmware.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsRegion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsVersion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsAuthor.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsNoFiles.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstall.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsDownload.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsFavourite.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledGameTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledRegion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledModName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledModType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledVersion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledNoOfFiles.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledDateTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnModsInstalledUninstall.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="MenuStripGameMods.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>569, -2</value>
-  </metadata>
-  <data name="ToolItemGameModsUninstallAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJRSURBVEhL3ZS9a1NhFMaDLdiPwU1FpJSKgx+dilsGFUtX
-        O4p7ViWC/gFW21Ecsqk46mBx6GCX+AdYwepQPyBWzRAMXhVCYj79Pa/P7bXeaqKjDxzOOc8557kn931v
-        Mv8nut3uvl6vNyNTbPrfgMgIIvl2u/2ceBvg1qldxHa7fTAwcKzVar2uVCrfOp3ObbTOwh23zcPdUY2e
-        l+RHPfZnSBShz9gTbAobhpvF8m4JID/E5mv1ej0iPmJ6ZyAyok0lSvM4Pkv+Ct9rNBof3bYF9SD+1Jv/
-        /rVQzOsnoqNNs9VqtcHPfgQ/7ZYUqB0ul8tN/AVTaeig/E6HtSnxKvGQavJx/Cvou8vsM6fbwRN1pQQd
-        1KyCeFP8+Vqt9hX7QnwuDPwEuHn37zWVAF73VEWd/CXeadX8kATZ6h7xfUwHuysMGfRPwwkzphJQPKGK
-        mkwFQAVhvERj4UkeVGg2m5tRFNXxH+A0O+exBPB7sBzFA6a2AHdKNRmCV/VaEHtLvGDumh7C1ftE72mP
-        /QANWRX6WalUaiH0AIFRjwYwPwa/rB7iCdOhcBITlhi6spNx8i+0KfEoIrfwlzUrr5zZMerviG8GUQEy
-        Fp40lYKHFhRLTM3kK/LxQ8ivc1XfKA6g1ldYHwL1nFOJBFF5U9LJ6UCdJsL83HWc/idSViwW0ei/sV6X
-        4gBq+oyX+thjnT5eB5V6x/hx6u+JC0F0UCC43x/LssRNB0gU/qHvfHIrBgVDupaRD3KRXPd4UZta9Ixb
-        /x5sdxCxG5z+hr+8TfJCsmkm8x0xGl2qGjqEWgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>93</value>
-  </metadata>
-  <data name="MainWindow.IconOptions.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIABvNwAAZgAAAICAAAABACAAKAgBANU3AABAQAAAAQAgAChCAAD9PwEAMDAAAAEA
         IACoJQAAJYIBACAgAAABACAAqBAAAM2nAQAQEAAAAQAgAGgEAAB1uAEAiVBORw0KGgoAAAANSUhEUgAA

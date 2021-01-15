@@ -14,7 +14,7 @@ namespace ModioX.Forms.Dialogs
             InitializeComponent();
         }
 
-        public ConsoleProfile ConsoleProfile { get; set; } = new ConsoleProfile();
+        public ConsoleProfile ConsoleProfile { get; set; } = new();
 
         public bool IsEditingProfile { get; set; } = false;
 
@@ -34,38 +34,32 @@ namespace ModioX.Forms.Dialogs
         private static bool ProfileExists(string name)
         {
             foreach (var console in MainWindow.Settings.ConsoleProfiles)
-            {
                 if (console.Name.Equals(name))
-                {
                     return true;
-                }
-            }
 
             return false;
         }
 
         private void ButtonChangeCredentials_Click(object sender, EventArgs e)
         {
-            using (var consoleCredentials = new LoginDialog())
+            using var consoleCredentials = new LoginDialog();
+            var setCredentials = consoleCredentials.ShowDialog(this);
+
+            if (setCredentials == DialogResult.OK)
             {
-                var setCredentials = consoleCredentials.ShowDialog(this);
+                LabelUserPass.Text = ConsoleProfile.Username + @" / " + ConsoleProfile.Password;
 
-                if (setCredentials == DialogResult.OK)
-                {
-                    LabelUserPass.Text = ConsoleProfile.Username + @" / " + ConsoleProfile.Password;
+                ConsoleProfile.Username = consoleCredentials.TextBoxUsername.Text;
+                ConsoleProfile.Password = consoleCredentials.TextBoxPassword.Text;
+                ConsoleProfile.UseDefaultCredentials = false;
+            }
+            else if (setCredentials == DialogResult.Abort)
+            {
+                LabelUserPass.Text = @"Default";
 
-                    ConsoleProfile.Username = consoleCredentials.TextBoxUsername.Text;
-                    ConsoleProfile.Password = consoleCredentials.TextBoxPassword.Text;
-                    ConsoleProfile.UseDefaultCredentials = false;
-                }
-                else if (setCredentials == DialogResult.Abort)
-                {
-                    LabelUserPass.Text = @"Default";
-
-                    ConsoleProfile.Username = "";
-                    ConsoleProfile.Password = "";
-                    ConsoleProfile.UseDefaultCredentials = true;
-                }
+                ConsoleProfile.Username = "";
+                ConsoleProfile.Password = "";
+                ConsoleProfile.UseDefaultCredentials = true;
             }
         }
 
@@ -73,19 +67,19 @@ namespace ModioX.Forms.Dialogs
         {
             if (string.IsNullOrWhiteSpace(TextBoxConnectionName.Text))
             {
-                _ = DarkMessageBox.Show(this, @"You must enter a connection name.", "Empty Field", MessageBoxIcon.Exclamation);
+                DarkMessageBox.ShowExclamation("You must enter a connection name.", "Empty Field");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(TextBoxConsoleAddress.Text))
             {
-                _ = DarkMessageBox.Show(this, @"You must enter an IP Address.", "Empty Field", MessageBoxIcon.Exclamation);
+                DarkMessageBox.ShowExclamation("You must enter an IP Address.", "Empty Field");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(TextBoxConsolePort.Text))
             {
-                _ = DarkMessageBox.Show(this, @"You must enter a port value. The default value is 21.", "Empty Field", MessageBoxIcon.Exclamation);
+                DarkMessageBox.ShowExclamation("You must enter a port value. The default value is 21.", "Empty Field");
                 return;
             }
 
@@ -101,7 +95,7 @@ namespace ModioX.Forms.Dialogs
                     {
                         if (ConsoleProfile.Name != TextBoxConnectionName.Text && ProfileExists(TextBoxConnectionName.Text))
                         {
-                            _ = DarkMessageBox.Show(this, @"A console with this name already exists.", "Console Name Exists", MessageBoxIcon.Exclamation);
+                            DarkMessageBox.ShowExclamation("A console with this name already exists.", "Console Name Exists");
                         }
                         else
                         {
@@ -115,7 +109,7 @@ namespace ModioX.Forms.Dialogs
                     {
                         if (ProfileExists(TextBoxConnectionName.Text))
                         {
-                            _ = DarkMessageBox.Show(this, @"A console with this name already exists.", "Console Name Exists", MessageBoxIcon.Exclamation);
+                             DarkMessageBox.ShowExclamation("A console with this name already exists.", "Console Name Exists");
                         }
                         else
                         {
@@ -128,14 +122,12 @@ namespace ModioX.Forms.Dialogs
                 }
                 else
                 {
-                    _ = DarkMessageBox.Show(this, @"Port isn't an integer value.", "Invalid Port",
-                        MessageBoxIcon.Error);
+                    DarkMessageBox.ShowError("Port isn't an integer value.", "Invalid Port");
                 }
             }
             else
             {
-                _ = DarkMessageBox.Show(this, @"IP Address isn't the correct format.", "Invalid IP Address",
-                    MessageBoxIcon.Error);
+                DarkMessageBox.ShowError("IP Address isn't the correct format.", "Invalid IP Address");
             }
         }
     }

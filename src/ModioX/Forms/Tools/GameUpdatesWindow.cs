@@ -1,33 +1,25 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using DarkUI.Forms;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Io;
 
-namespace ModioX.Forms.Dialogs
+namespace ModioX.Forms.Tools
 {
-    public partial class GameUpdatesDialog : DarkForm
+    public partial class GameUpdatesWindow : DarkForm
     {
-        public GameUpdatesDialog()
+        public GameUpdatesWindow()
         {
             InitializeComponent();
         }
 
-        public enum UpdateType
-        {
-            Retail,
-            Debug
-        }
+        private string RetailUpdatesURL => "https://a0.ww.np.dl.playstation.net/tpl/np/";
 
-        private string RetailUpdatesURL { get; } = "https://a0.ww.np.dl.playstation.net/tpl/np/";
+        private string DebugUpdatesURL => "https://a0.ww.sp-int.dl.playstation.net/tpl/sp-int/";
 
-        private string DebugUpdatesURL { get; } = "https://a0.ww.sp-int.dl.playstation.net/tpl/sp-int/";
-
-        private string UpdateTypeURL { get; set; } 
+        private string UpdateTypeURL { get; set; }
 
         private void GameUpdateFinder_Load(object sender, EventArgs e)
         {
@@ -44,8 +36,6 @@ namespace ModioX.Forms.Dialogs
                 case 1:
                     UpdateTypeURL = DebugUpdatesURL;
                     break;
-                default:
-                    break;
             }
         }
 
@@ -53,7 +43,7 @@ namespace ModioX.Forms.Dialogs
         {
             if (string.IsNullOrWhiteSpace(TextBoxTitleID.Text))
             {
-                DarkMessageBox.Show(this, "You haven't specified a title ID.", "Empty Field", MessageBoxIcon.Warning);
+                DarkMessageBox.ShowExclamation("You haven't specified a title ID.", "Empty Field");
                 return;
             }
 
@@ -62,7 +52,7 @@ namespace ModioX.Forms.Dialogs
 
             if (gameUpdates == null)
             {
-                DarkMessageBox.Show(this, "Unable to find details for this title ID.", "Error", MessageBoxIcon.Error);
+                DarkMessageBox.ShowError("Unable to find details for this title ID.", "Error");
                 return;
             }
             else
@@ -75,12 +65,14 @@ namespace ModioX.Forms.Dialogs
                                             update.Sha1sum,
                                             gameTitle,
                                             "v" + update.Version.RemoveFirstInstanceOfString("0"),
-                                            update.Size.FormatSize(),
-                                            "v" + update.Ps3_system_ver.RemoveFirstInstanceOfString("0"),
+                                            MainWindow.Settings.ShowFileSizeInBytes ? long.Parse(update.Size).ToString("#,0") + " bytes" : update.Size.FormatSize(),
+                                            "v" + update.Ps3_system_ver.RemoveFirstInstanceOfString("0").Replace("000", "00"),
                                             ImageExtensions.ResizeBitmap(Properties.Resources.install, 20, 20),
                                             ImageExtensions.ResizeBitmap(Properties.Resources.download_from_the_cloud, 20, 20));
                 }
             }
+
+            LabelNoGameUpdatesFound.Visible = DgvGameUpdates.Rows.Count < 1;
         }
 
         private void DgvGameUpdates_SelectionChanged(object sender, EventArgs e)
@@ -97,7 +89,7 @@ namespace ModioX.Forms.Dialogs
             {
                 if (DgvGameUpdates.CurrentCell.ColumnIndex.Equals(6))
                 {
-                    InstallToConsole();                
+                    InstallToConsole();
                 }
                 else if (DgvGameUpdates.CurrentCell.ColumnIndex.Equals(7))
                 {
@@ -122,7 +114,7 @@ namespace ModioX.Forms.Dialogs
             {
                 string updateUrl = DgvGameUpdates.CurrentRow.Cells[0].Value.ToString();
                 Clipboard.SetText(updateUrl);
-                DarkMessageBox.Show(this, "Update URL has been copied to clipboard.", "Copied", MessageBoxIcon.Information);
+                DarkMessageBox.ShowInformation("Update URL has been copied to clipboard.", "Copied");
             }
         }
 
@@ -132,7 +124,7 @@ namespace ModioX.Forms.Dialogs
             {
                 string updateSHA1 = DgvGameUpdates.CurrentRow.Cells[1].Value.ToString();
                 Clipboard.SetText(updateSHA1);
-                DarkMessageBox.Show(this, "Update SHA1 has been copied to clipboard.", "Copied", MessageBoxIcon.Information);
+                DarkMessageBox.ShowInformation("Update SHA1 has been copied to clipboard.", "Copied");
             }
         }
 
@@ -150,12 +142,12 @@ namespace ModioX.Forms.Dialogs
                     HttpExtensions.DownloadFile(updateUrl, filePath);
 
                     UpdateStatus("Installing file: " + fileName);
-                    FtpExtensions.UploadFile(MainWindow.FtpConnection, filePath, "/dev_hdd0/packages/" + fileName);
-                    UpdateStatus("Installed file to your Packages folder.");
+                    FtpExtensions.UploadFile(filePath, "/dev_hdd0/packages/" + fileName);
+                    UpdateStatus("Successfully installed package file to your Packages folder.");
                 }
                 else
                 {
-                    DarkMessageBox.Show(this, "You must be connected to your console to install the update package file.", "Copied", MessageBoxIcon.Information);
+                    DarkMessageBox.ShowInformation("You must be connected to your console to install the update package file.", "Not Connected");
                 }
             }
         }
@@ -170,9 +162,9 @@ namespace ModioX.Forms.Dialogs
 
                 if (folderPath != null)
                 {
-                    UpdateStatus("Downloading file: " + fileName);
+                    UpdateStatus("Downloading package: " + fileName);
                     HttpExtensions.DownloadFile(updateUrl, folderPath + "/" + fileName);
-                    UpdateStatus("Downloaded file to the specified folder.");
+                    UpdateStatus("Successfully downloaded package file to the specified folder.");
                 }
             }
         }

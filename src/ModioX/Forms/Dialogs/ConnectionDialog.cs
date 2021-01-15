@@ -40,10 +40,7 @@ namespace ModioX.Forms.Dialogs
             ButtonDelete.Enabled = ListViewConsoleProfiles.SelectedIndices.Count > 0;
             ButtonConnect.Enabled = ListViewConsoleProfiles.SelectedIndices.Count > 0;
 
-            if (ListViewConsoleProfiles.SelectedIndices.Count > 0)
-            {
-                _ = ButtonConnect.Focus();
-            }
+            if (ListViewConsoleProfiles.SelectedIndices.Count > 0) _ = ButtonConnect.Focus();
         }
 
         private void ButtonConnect_Click(object sender, EventArgs e)
@@ -57,17 +54,14 @@ namespace ModioX.Forms.Dialogs
         {
             if (MainWindow.Settings.ConsoleProfiles.Count == 1)
             {
-                _ = DarkMessageBox.Show(this, "You can't delete this because there must be at least one console.",
-                    "Can't Delete Console", MessageBoxIcon.Warning);
+                DarkMessageBox.ShowWarning("You can't delete this because there must be at least one console.", "Can't Delete Console");
             }
             else
             {
-                if (DarkMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete Console",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                if (DarkMessageBox.ShowExclamation("Do you really want to delete the selected item?", "Delete Console", DarkDialogButton.YesNo) == DialogResult.Yes)
                 {
                     var selectedItem = ListViewConsoleProfiles.Items[ListViewConsoleProfiles.SelectedIndices[0]];
-                    MainWindow.Settings.ConsoleProfiles.RemoveAt(
-                        ListViewConsoleProfiles.Items.IndexOf(selectedItem));
+                    MainWindow.Settings.ConsoleProfiles.RemoveAt(ListViewConsoleProfiles.Items.IndexOf(selectedItem));
                     LoadConsoles();
                 }
             }
@@ -81,10 +75,7 @@ namespace ModioX.Forms.Dialogs
 
             var newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
 
-            if (newConsoleProfile != null)
-            {
-                oldConsoleProfile = newConsoleProfile;
-            }
+            if (newConsoleProfile != null) oldConsoleProfile = newConsoleProfile;
 
             LoadConsoles();
         }

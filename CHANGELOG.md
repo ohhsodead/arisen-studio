@@ -1,6 +1,22 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## Beta v1.5 (Unreleased)
+- Improved code readability
+- Optimized parts of the application
+- Moved Logs from Application folder to Documents\ModioX\Logs
+- Upgraded Application to .NET Framework 4.8
+- Upgraded dependencies and removed redundant\unused ones
+- You can now create and add mods to your own lists
+- Added Transfer Dialog for installing/uninstalling mods
+- Added View Log button to Help menu
+- Added Open Log Folder button to Help menu
+- Added What's New button to Help menu
+- Added Package Manager to Tools menu
+- Fixed some UI bugs and added all missing icons
+- Fixed an issue with creating folders when installing mods
+- Fixed an issue with deleting folders when uninstalling mods
+
 ## Beta v1.4.8
 - Improved some user interface elements
 - Mods can now have multiple downloads instead of multiple mods
