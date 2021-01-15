@@ -2,36 +2,34 @@
 
 [![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/ModioX.svg)](https://github.com/ohhsodead/ModioX/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/ModioX/total.svg)](https://github.com/ohhsodead/ModioX/releases/) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/ModioX.svg)](https://gitHub.com/ohhsodead/ModioX/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/ModioX.svg)](https://github.com/ohhsodead/ModioX/issues?q=is%3Aissue+is%3Aclosed) [![GitHub Stargazers](https://img.shields.io/github/stars/ohhsodead/ModioX.svg?style=social&label=Star&maxAge=2592000)](https://github.com/ohhsodead/ModioX/stargazers/) [![Discord](https://img.shields.io/discord/591914197219016707.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/FTCS3Xu)
 
-An open source desktop application designed to easily browse through a regularly updated database of mods, game saves, homebrew, resources and themes for the PlayStation 3. A library that is populated by myself, few friends and awesome contributors, so that all mods have been tested and verified. ModioX also acts as an FTP client to be able to install and uninstall files directly to your console. Without the need for digging up old threads or using file managers - this aims to do everything for you. 
+An open source desktop application designed to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes and much more for the PlayStation 3. A library that is populated by myself, few friends and awesome contributors, so that all mods have been tested and verified. ModioX also acts as an FTP client to be able to install and uninstall files on-the-fly to your console. Without the need for digging up old threads or using file managers - this aims to do everything for you. 
 
-#### the only one of its kind (i think)
+#### the only one of its kind...
 
 ![Main Form](https://github.com/ohhsodead/ModioX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
 
-**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/FTCS3Xu) for help and support from our community!
+**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/FTCS3Xu)!
 
-Please give this project a ⭐ if you find it useful!
+Please give this project a ⭐ if you find it useful.
 
 ## Features
 - Fast, lightweight and simple to use
 - Browse a large database of PS3 mods (300+)
 - Complete with details, creator, version, etc.
-- Filter by firmware, console type, mod type and region
+- Filter by console type, mod type and region
 - Download, install and uninstall mods
 - Automatically detect game regions
 - Backup and restore game files
-- Create and add mods to your own lists*
+- Create and add mods to your own lists
 - Includes a built-in Game Updates Finder
 - Includes a built-in File Manager
-- Includes a built-in Package Manager*
+- Includes a built-in Package Manager
 - Includes basic WebMAN controls
 - Add multiple console profiles
 
-** Coming in the next release
-
 ## Requirements
 - An internet connection
-- NET Framework 4.8 (Download [here](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer))
+- NET Framework 4.8 (Download [here](https://dotnet.microsoft.com/download/dotnet-framework/net48))
 - PlayStation 3 with MFW
  
 ## Installation
@@ -49,8 +47,9 @@ I know that not all mods aren't on our database, yet. But if you open an issue i
 - [DarkUI for WinForms](https://github.com/RobinPerris/DarkUI/)
 - [Newtonsoft.Json](https://www.newtonsoft.com/json)
 - [Apache log4net](https://logging.apache.org/log4net/)
+- [NLog](https://nlog-project.org/)
 - [WebMAN API](https://github.com/FxckingCoder/WebmanAPI/)
-- [Icons8.com](https://icons8.com/)
+- [Icons8](https://icons8.com/)
 
 ## Contributors
 - [KayGart](https://github.com/KayGart/)
