@@ -153,6 +153,7 @@ namespace ModioX.Forms.Windows
             this.WhatsNewButton = new DevExpress.XtraBars.BarButtonItem();
             this.HelpSpacer3 = new DevExpress.XtraBars.BarButtonItem();
             this.AboutBar = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -202,7 +203,6 @@ namespace ModioX.Forms.Windows
             this.ToolItemGameModsUninstallAll = new System.Windows.Forms.ToolStripButton();
             this.LabelInstalledGameModsStatus = new System.Windows.Forms.ToolStripLabel();
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
             this.SectionModsInstallFilePaths.SuspendLayout();
@@ -1603,6 +1603,13 @@ namespace ModioX.Forms.Windows
             this.AboutBar.Name = "AboutBar";
             this.AboutBar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AboutBar_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Winv2";
+            this.barButtonItem1.Id = 52;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // bar3
             // 
             this.bar3.BarName = "Status bar";
@@ -2160,13 +2167,6 @@ namespace ModioX.Forms.Windows
             this.bar1.DockRow = 1;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.Text = "Custom 4";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Winv2";
-            this.barButtonItem1.Id = 52;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // MainWindow
             // 
