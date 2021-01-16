@@ -53,7 +53,8 @@ I know that not all mods aren't on our database, yet. But if you open an issue i
 
 ## Contributors
 - [KayGart](https://github.com/KayGart/)
- 
+- [TeddyHammer](https://github.com/TeddyHammer/)
+
 ## Disclaimer
 I can accept no responsibility for any damage you cause to your system by using this tool.
 
