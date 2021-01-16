@@ -675,7 +675,6 @@ namespace ModioX.Forms.Windows
         /// </summary>
         private void InitializeFinished()
         {
-            XtraDgvMods.CreateView("bla");
             SetStatus($"Successfully loaded the database - Finalizing application data...");
 
             LoadCategories();
@@ -912,17 +911,17 @@ string.Empty,
                     ? ImageExtensions.ResizeBitmap(Resources.filled_heart, 20, 20)
                     : ImageExtensions.ResizeBitmap(Resources.heart, 20, 20));
 
-                gridView1.AddNewRow();
-                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModId, modItem.Id);
-                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModName, modItem.Name);
-                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModSystemType, modItem.Firmware);
-                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModType, modItem.Type);
-                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModRegion, modItem.Region);
-                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModVersion, modItem.Version);
-                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModCreator, modItem.Author);
-                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModNoOfFiles, installFiles.Count() + (installFiles.Count() > 1 ? " Files" : " File"));
-                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModDownload, ImageExtensions.ResizeBitmap(Resources.install, 20, 20));
-                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModInstall, ImageExtensions.ResizeBitmap(Resources.download_from_the_cloud, 20, 20));
+                //gridView1.AddNewRow();
+                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModId, modItem.Id);
+                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModName, modItem.Name);
+                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModSystemType, modItem.Firmware);
+                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModType, modItem.Type);
+                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModRegion, modItem.Region);
+                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModVersion, modItem.Version);
+                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModCreator, modItem.Author);
+                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModNoOfFiles, installFiles.Count() + (installFiles.Count() > 1 ? " Files" : " File"));
+                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModDownload, ImageExtensions.ResizeBitmap(Resources.install, 20, 20));
+                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModInstall, ImageExtensions.ResizeBitmap(Resources.download_from_the_cloud, 20, 20));
             }
 
             LabelNoModsFound.Visible = DgvMods.Rows.Count == 0;
@@ -1840,12 +1839,12 @@ string.Empty,
                 }
 
                 // Update UI Properties from Settings
-                MenuItemApplications.DropDownItems.Clear();//TODO: MUST FIX!!!!
+                //MenuItemApplications.DropDownItems.Clear();//TODO: MUST FIX!!!!
 
                 foreach (ExternalApplication application in Settings.ExternalApplications)
                 {
                     var menuItem = new ToolStripMenuItem(application.Name, null, MenuItemApplications_Click);
-                    ApplicationsMenu.DropDownItems.Add(menuItem);
+                   // ApplicationsMenu.DropDownItems.Add(menuItem);
                 }
             }
             catch (Exception ex)
@@ -2221,5 +2220,12 @@ string.Empty,
         /// Get/set the current instance of the MainWindow
         /// </summary>
         public static MainWindow Window { get; private set; }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            MainWindowv2 Main = new MainWindowv2();
+            Main.Show();
+            Main.Focus();
+        }
     }
 }
