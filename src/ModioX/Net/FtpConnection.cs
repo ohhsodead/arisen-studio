@@ -1,10 +1,10 @@
-﻿using System;
+﻿using ModioX.Extensions;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using System.IO;
 using System.ComponentModel;
+using System.IO;
 using System.Runtime.InteropServices;
-using ModioX.Extensions;
+using System.Text;
 
 namespace ModioX.Net
 {
@@ -67,7 +67,7 @@ namespace ModioX.Net
         /// <exception cref="ArgumentNullException">If Host is null or empty.</exception>
         public void Open()
         {
-            if(String.IsNullOrEmpty(Host))
+            if (String.IsNullOrEmpty(Host))
             {
                 throw new ArgumentNullException("Host");
             }
@@ -112,7 +112,7 @@ namespace ModioX.Net
             }
 
             {
-                
+
             }
             _hConnect = WININET.InternetConnect(_hInternet,
                 Host,
@@ -153,7 +153,7 @@ namespace ModioX.Net
         /// <param name="directory"></param>
         public void SetLocalDirectory(string directory)
         {
-            if(Directory.Exists(directory))
+            if (Directory.Exists(directory))
             {
                 System.Environment.CurrentDirectory = directory;
             }
@@ -203,7 +203,7 @@ namespace ModioX.Net
                 WININET.FtpOpenFile(_hConnect, file, WINAPI.GENERIC_READ, WININET.FTP_TRANSFER_TYPE_BINARY, IntPtr.Zero)
             );
 
-            if(hFile == IntPtr.Zero)
+            if (hFile == IntPtr.Zero)
             {
                 Error();
             }
@@ -221,7 +221,7 @@ namespace ModioX.Net
                 catch (Exception)
                 {
                     Error();
-                    
+
                 }
                 finally
                 {
@@ -323,7 +323,7 @@ namespace ModioX.Net
                 Error();
             }
         }
-        
+
         /// <summary>
         /// Deletes a directory from the FTP server
         /// </summary>
@@ -336,7 +336,7 @@ namespace ModioX.Net
                 Error();
             }
         }
-       
+
         /// <summary>
         /// List all files and directories in the current working directory.
         /// </summary>
@@ -422,7 +422,7 @@ namespace ModioX.Net
             }
             finally
             {
-                if(hFindFile != IntPtr.Zero)
+                if (hFindFile != IntPtr.Zero)
                 {
                     WININET.InternetCloseHandle(hFindFile);
                 }
@@ -435,7 +435,7 @@ namespace ModioX.Net
         /// <returns>A <see cref="FtpFileInfo[]"/> representing the files in the current working directory.</returns>
         public FtpFileInfo[] GetFiles()
         {
-            return GetFiles(GetCurrentDirectory()); 
+            return GetFiles(GetCurrentDirectory());
         }
 
         /// <summary>
@@ -443,7 +443,7 @@ namespace ModioX.Net
         /// </summary>
         /// <param name="mask">A <see cref="String"/> representing the file mask to match files.</param>
         /// <returns>A <see cref="FtpFileInfo[]"/> representing the files in the current working directory.</returns>
-        public FtpFileInfo[] GetFiles(string mask) 
+        public FtpFileInfo[] GetFiles(string mask)
         {
             WINAPI.WIN32_FIND_DATA findData = new WINAPI.WIN32_FIND_DATA();
 
@@ -528,10 +528,10 @@ namespace ModioX.Net
         /// Gets details of all directories and their available FTP directory information from the current working FTP directory that match the directory mask.
         /// </summary>
         /// <returns>A <see cref="FtpDirectoryInfo[]"/> representing the directories in the current working directory that match the mask.</returns>
-        public FtpDirectoryInfo[] GetDirectories(string path) 
+        public FtpDirectoryInfo[] GetDirectories(string path)
         {
             WINAPI.WIN32_FIND_DATA findData = new WINAPI.WIN32_FIND_DATA();
-            
+
             IntPtr hFindFile = WININET.FtpFindFirstFile(
                 _hConnect,
                 path,
@@ -690,7 +690,7 @@ namespace ModioX.Net
         {
             int result;
             IntPtr dataSocket = new IntPtr();
-            switch(cmd)
+            switch (cmd)
             {
                 case "PASV":
                     result = WININET.FtpCommand(_hConnect, false, WININET.FTP_TRANSFER_TYPE_ASCII, cmd, IntPtr.Zero, ref dataSocket);
@@ -702,10 +702,11 @@ namespace ModioX.Net
 
             int BUFFER_SIZE = 8192;
 
-            if(result == 0){
+            if (result == 0)
+            {
                 Error();
             }
-            else if(dataSocket != IntPtr.Zero)
+            else if (dataSocket != IntPtr.Zero)
             {
                 StringBuilder buffer = new StringBuilder(BUFFER_SIZE);
                 int bytesRead = 0;
@@ -716,7 +717,7 @@ namespace ModioX.Net
                 } while (result == 1 && bytesRead > 1);
 
                 return buffer.ToString();
-                
+
             }
 
             return "";

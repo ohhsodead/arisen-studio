@@ -1,12 +1,10 @@
-﻿using System;
-using System.ComponentModel;
-using System.Windows.Forms;
-using DarkUI.Forms;
+﻿using DarkUI.Forms;
 using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
-using ModioX.Models.Database;
 using ModioX.Models.Resources;
+using System;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Settings
 {
@@ -24,7 +22,7 @@ namespace ModioX.Forms.Settings
 
         public void LoadCustomLists()
         {
-            DgvCustomLists.Rows.Clear();            
+            DgvCustomLists.Rows.Clear();
 
             foreach (CustomList customList in MainWindow.Settings.CustomLists)
             {

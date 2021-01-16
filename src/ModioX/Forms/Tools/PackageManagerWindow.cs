@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
-using System.IO;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
-using DarkUI.Forms;
+﻿using DarkUI.Forms;
 using DevExpress.XtraEditors;
 using FluentFTP;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
-using ModioX.Io;
-using ModioX.Models.Resources;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Windows.Forms;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
 namespace ModioX.Forms.Tools

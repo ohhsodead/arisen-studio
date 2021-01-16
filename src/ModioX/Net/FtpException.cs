@@ -10,7 +10,7 @@ namespace ModioX.Net
             _error = error;
         }
 
-        private int _error;
+        private readonly int _error;
 
         public int ErrorCode
         {

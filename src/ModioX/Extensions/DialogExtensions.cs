@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-using ModioX.Forms;
+﻿using ModioX.Forms;
 using ModioX.Forms.Dialogs;
 using ModioX.Forms.Settings;
 using ModioX.Forms.Tools;
@@ -11,6 +6,10 @@ using ModioX.Forms.Windows;
 using ModioX.Models.Release_Data;
 using ModioX.Models.Resources;
 using ModioX.Windows;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ModioX.Extensions
 {
@@ -44,10 +43,10 @@ namespace ModioX.Extensions
 
         public static string ShowListInputDialog(string title, List<string> items)
         {
-            using var listViewDialog = new ListViewDialog 
+            using var listViewDialog = new ListViewDialog
             {
                 Text = title,
-                Items = items 
+                Items = items
             };
 
             listViewDialog.ShowDialog();

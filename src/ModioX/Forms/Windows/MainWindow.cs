@@ -43,6 +43,20 @@ namespace ModioX.Forms.Windows
             DialogExtensions.ShowAboutWindow(this);
         }
 
+        private void AddConsoleButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaveSettings();
+
+            var consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
+
+            if (consoleProfile != null)
+            {
+                Settings.ConsoleProfiles.Add(consoleProfile);
+            }
+
+            SaveSettings();
+        }
+
         /// <summary>
         /// Adds or removes the specified <see cref="ModsData.ModItem" /> to the users favorites list.
         /// </summary>
@@ -81,9 +95,59 @@ namespace ModioX.Forms.Windows
             ToolStripArchiveInformation.Update();
         }
 
-        private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void AppExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            SaveSettings();
             Application.Exit();
+        }
+
+        private void barButtonItem15_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
+
+            if (!string.IsNullOrWhiteSpace(notifyMessage))
+            {
+                WebManExtensions.NotifyPopup(ConsoleProfile.Address, notifyMessage);
+                SetStatus($"WebMAN Controls: Message Notified - {notifyMessage}");
+            }
+
+
+        }
+
+        private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Process.Start("http://pad.aldostools.org/pad.html");
+
+        }
+
+        private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            WebManExtensions.RebootSoft(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+        private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            WebManExtensions.RebootHard(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+
+        private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifySystemInformation(ConsoleProfile.Address);
+        }
+
+        private void barButtonItem24_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifyCPURSXTemperature(ConsoleProfile.Address);
+
+        }
+
+        private void barButtonItem26_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
+
         }
 
         private void CategoryTitle_Click(object sender, EventArgs e)
@@ -366,6 +430,11 @@ namespace ModioX.Forms.Windows
             DarkMessageBox.ShowInformation("Successfully disconnected from console.", "Success");
         }
 
+        private void DiscordServerButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Process.Start(Urls.DiscordServer);
+        }
+
         /// <summary>
         /// Set the UI to display the specified mod details
         /// </summary>
@@ -490,6 +559,18 @@ namespace ModioX.Forms.Windows
             }
         }
 
+        private void EditApplicationsButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowExternalApplicationsDialog(this);
+            LoadSettings();
+        }
+
+        private void EditGameRegionButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowGameRegionsDialog(this);
+            LoadSettings();
+        }
+
         private void EditYourLists_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DialogExtensions.ShowCustomListsDialog(this);
@@ -517,6 +598,11 @@ namespace ModioX.Forms.Windows
             {
                 ContextMenuModsUninstallFiles.Enabled = IsConsoleConnected;
             }
+        }
+
+        private void FileManagerButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowFileManager(this);
         }
 
         private void FlowPanelCategories_MouseWheel(object sender, MouseEventArgs e)
@@ -553,6 +639,19 @@ namespace ModioX.Forms.Windows
             {
                 // ignored
             }
+        }
+
+        private void GameBackupFilesButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaveSettings();
+            DialogExtensions.ShowGameBackupFiles(this);
+            SaveSettings();
+        }
+
+        private void GameUpdateFinderButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowGameUpdatesFinderDialog(this);
+
         }
 
         /// <summary>
@@ -906,50 +1005,7 @@ string.Empty,
             }
         }
 
-        private void MenuItemConnectPS3Console_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void MenuItemHelpAbout_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuItemHelpCheckForUpdates_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuItemHelpDiscordServer_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuItemHelpOfficialSourceCode_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuItemHelpOpenLogFile_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuItemHelpOpenLogFolder_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuItemHelpReportBugSuggestions_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuItemHelpWhatsNew_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private async void MenuItemRefreshData_Click(object sender, EventArgs e)
         {
@@ -967,72 +1023,45 @@ string.Empty,
             InitializeFinished();
         }
 
-        private void MenuItemSettingsAddNewConsole_Click(object sender, EventArgs e)
+        private void OfficailSourceButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Process.Start(Urls.GitHubRepo);
         }
 
-        private void MenuItemSettingsEditExternalApplications_Click(object sender, EventArgs e)
+        private void OpenLogFileButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            SetStatus("Opening Log file...");
+            var logFile = $"{UserFolders.AppLogsDirectory}latest.txt";
+            if (File.Exists(logFile))
+            {
+                try
+                {
+                    Process.Start(logFile);
+                }
+                catch (Exception ex)
+                {
+                    SetStatus("Failed to open Log file...", ex);
+                    DarkMessageBox.ShowError("Failed to open the log file.\nIt may have been deleted, that's ok.", "Failed to open log.");
+                }
+            }
+            else
+            {
+                SetStatus("Failed to find Log file...");
+                DarkMessageBox.ShowError("Failed to find the log file.\nIt may have been deleted, that's ok.", "Failed to find log.");
+            }
         }
 
-        private void MenuItemSettingsEditGameRegions_Click(object sender, EventArgs e)
+        private void OpenLogFolderButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            SetStatus("Opening Log folder...");
+            if (!Directory.Exists(UserFolders.AppLogsDirectory)) Directory.CreateDirectory(UserFolders.AppLogsDirectory);
+            Process.Start(UserFolders.AppLogsDirectory);
         }
 
-        private void MenuItemToolsBackupFileManager_Click(object sender, EventArgs e)
+        private void PackageManagerButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DialogExtensions.ShowPackageManagerWindow(this);
 
-        }
-
-        private void MenuItemToolsFileManager_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void MenuItemToolsGameUpdatesFinder_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void MenuItemToolsPackageManager_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void MenuItemToolsWebManHardReboot_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuItemToolsWebManNotify_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuItemToolsWebManRestart_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void MenuItemToolsWebManShutdown_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuItemToolsWebManSoftReboot_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuItemToolsWebManVirtualController_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void MenuStripConnectExit_Click(object sender, EventArgs e)
-        {
-            SaveSettings();
-            Application.Exit();
         }
 
         private void PS3ConnectButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1051,6 +1080,17 @@ string.Empty,
                     ConnectConsole();
                 }
             }
+        }
+
+        private void ReportBugButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Process.Start($"{Urls.GitHubRepo}issues/new");
+        }
+
+        private void RestartButtonBar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            WebManExtensions.Restart(ConsoleProfile.Address);
+            DisconnectConsole();
         }
 
         private void ScrollBarCategories_ValueChanged(object sender, ScrollValueEventArgs e)
@@ -1094,6 +1134,12 @@ string.Empty,
             LoadSettings();
         }
 
+        private void ShutDownButtonBar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            WebManExtensions.Shutdown(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
         private void TextBoxSearch_TextChanged(object sender, EventArgs e)
         {
             FilterModsName = TextBoxSearch.Text;
@@ -1118,6 +1164,11 @@ string.Empty,
                     UninstallMods(modItem, installedMod == null ? string.Empty : installedMod.Region);
                 }
             }
+        }
+
+        private void ToolsMenuBar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
 
         private void ToolStripDownloadArchive_Click(object sender, EventArgs e)
@@ -1216,6 +1267,12 @@ string.Empty,
             ScrollBarDetails.ViewSize = FlowPanelDetails.VerticalScroll.LargeChange - 30;
             ScrollBarDetails.Value = 0;
             ScrollBarDetails.UpdateScrollBar();
+        }
+
+        private void WhatsNewButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SetStatus("Showing latest Changelog...");
+            DialogExtensions.ShowWhatsNewWindow(this, UpdateExtensions.GitHubData);
         }
 
         /// <summary>
@@ -2133,172 +2190,5 @@ string.Empty,
         /// Get/set the current instance of the MainWindow
         /// </summary>
         public static MainWindow Window { get; private set; }
-
-        private void WhatsNewButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            SetStatus("Showing latest Changelog...");
-            DialogExtensions.ShowWhatsNewWindow(this, UpdateExtensions.GitHubData);
-        }
-
-        private void OpenLogFolderButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            SetStatus("Opening Log folder...");
-            if (!Directory.Exists(UserFolders.AppLogsDirectory)) Directory.CreateDirectory(UserFolders.AppLogsDirectory);
-            Process.Start(UserFolders.AppLogsDirectory);
-        }
-
-        private void OpenLogFileButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            SetStatus("Opening Log file...");
-            var logFile = $"{UserFolders.AppLogsDirectory}latest.txt";
-            if (File.Exists(logFile))
-            {
-                try
-                {
-                    Process.Start(logFile);
-                }
-                catch (Exception ex)
-                {
-                    SetStatus("Failed to open Log file...", ex);
-                    DarkMessageBox.ShowError("Failed to open the log file.\nIt may have been deleted, that's ok.", "Failed to open log.");
-                }
-            }
-            else
-            {
-                SetStatus("Failed to find Log file...");
-                DarkMessageBox.ShowError("Failed to find the log file.\nIt may have been deleted, that's ok.", "Failed to find log.");
-            }
-        }
-
-        private void OfficailSourceButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Process.Start(Urls.GitHubRepo);
-        }
-
-        private void DiscordServerButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Process.Start(Urls.DiscordServer);
-        }
-
-        private void ReportBugButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Process.Start($"{Urls.GitHubRepo}issues/new");
-        }
-
-        private void AddConsoleButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            SaveSettings();
-
-            var consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
-
-            if (consoleProfile != null)
-            {
-                Settings.ConsoleProfiles.Add(consoleProfile);
-            }
-
-            SaveSettings();
-        }
-
-        private void EditGameRegionButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowGameRegionsDialog(this);
-            LoadSettings();
-        }
-
-        private void EditApplicationsButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowExternalApplicationsDialog(this);
-            LoadSettings();
-        }
-
-        private void GameBackupFilesButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            SaveSettings();
-            DialogExtensions.ShowGameBackupFiles(this);
-            SaveSettings();
-        }
-
-        private void GameUpdateFinderButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowGameUpdatesFinderDialog(this);
-
-        }
-
-        private void FileManagerButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowFileManager(this);
-        }
-
-        private void PackageManagerButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowPackageManagerWindow(this);
-
-        }
-
-        private void ShutDownButtonBar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WebManExtensions.Shutdown(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void ToolsMenuBar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void RestartButtonBar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WebManExtensions.Restart(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WebManExtensions.RebootSoft(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WebManExtensions.RebootHard(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-
-        private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifySystemInformation(ConsoleProfile.Address);
-        }
-
-        private void barButtonItem24_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifyCPURSXTemperature(ConsoleProfile.Address);
-
-        }
-
-        private void barButtonItem26_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
-
-        }
-
-        private void barButtonItem15_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            var notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
-
-            if (!string.IsNullOrWhiteSpace(notifyMessage))
-            {
-                WebManExtensions.NotifyPopup(ConsoleProfile.Address, notifyMessage);
-                SetStatus($"WebMAN Controls: Message Notified - {notifyMessage}");
-            }
-
-
-        }
-
-        private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Process.Start("http://pad.aldostools.org/pad.html");
-
-        }
     }
 }

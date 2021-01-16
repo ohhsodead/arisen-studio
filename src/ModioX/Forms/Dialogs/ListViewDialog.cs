@@ -1,9 +1,8 @@
-﻿using System;
+﻿using DarkUI.Controls;
+using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using DarkUI.Controls;
-using DarkUI.Forms;
-using DevExpress.XtraEditors;
 
 namespace ModioX.Windows
 {

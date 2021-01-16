@@ -1,11 +1,11 @@
-﻿using System;
-using System.Windows.Forms;
-using DarkUI.Controls;
+﻿using DarkUI.Controls;
 using DarkUI.Forms;
 using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
+using System;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Dialogs
 {

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Net;
-using System.Windows.Forms;
-using DarkUI.Forms;
+﻿using DarkUI.Forms;
 using DevExpress.XtraEditors;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
+using System;
+using System.Net;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Dialogs
 {
@@ -110,7 +110,7 @@ namespace ModioX.Forms.Dialogs
                     {
                         if (ProfileExists(TextBoxConnectionName.Text))
                         {
-                             DarkMessageBox.ShowExclamation("A console with this name already exists.", "Console Name Exists");
+                            DarkMessageBox.ShowExclamation("A console with this name already exists.", "Console Name Exists");
                         }
                         else
                         {

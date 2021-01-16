@@ -1,10 +1,10 @@
-﻿using System;
+﻿using DarkUI.Forms;
+using DevExpress.XtraEditors;
+using ModioX.Forms.Windows;
+using System;
 using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
-using DarkUI.Forms;
-using DevExpress.XtraEditors;
-using ModioX.Forms.Windows;
 
 namespace ModioX.Forms.Settings
 {
@@ -130,7 +130,7 @@ namespace ModioX.Forms.Settings
                 MainWindow.Settings.UpdateApplication(appName, fileLocation);
             }
 
-            DarkMessageBox.ShowInformation( "All external applications have now been saved.", "Saved");
+            DarkMessageBox.ShowInformation("All external applications have now been saved.", "Saved");
             Close();
         }
     }

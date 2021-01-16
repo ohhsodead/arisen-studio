@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
-using ModioX.Extensions;
-using ModioX.Forms.Windows;
 
 namespace ModioX.Models.Database
 {
@@ -35,8 +32,8 @@ namespace ModioX.Models.Database
         public List<string> GetGameRegions(string gameId)
         {
             foreach (var category in from Category category in Categories
-                where category.Id.Equals(gameId)
-                select category)
+                                     where category.Id.Equals(gameId)
+                                     select category)
             {
                 return category.Regions.ToList();
             }
@@ -52,8 +49,8 @@ namespace ModioX.Models.Database
         public List<Category> GetCategoriesByType(CategoryType categoryType)
         {
             return (from Category game in Categories
-                where game.CategoryType == categoryType
-                select game).ToList();
+                    where game.CategoryType == categoryType
+                    select game).ToList();
         }
 
         /// <summary>
@@ -64,8 +61,8 @@ namespace ModioX.Models.Database
         public Category GetCategoryById(string categoryId)
         {
             foreach (var category in from Category category in Categories
-                where category.Id.ToLower().Equals(categoryId.ToLower())
-                select category)
+                                     where category.Id.ToLower().Equals(categoryId.ToLower())
+                                     select category)
             {
                 return category;
             }
@@ -81,8 +78,8 @@ namespace ModioX.Models.Database
         public Category GetCategoryByTitle(string title)
         {
             foreach (var game in from Category game in Categories
-                where game.Title.ToLower().Equals(title.ToLower())
-                select game)
+                                 where game.Title.ToLower().Equals(title.ToLower())
+                                 select game)
             {
                 return game;
             }

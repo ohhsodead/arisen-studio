@@ -1,7 +1,6 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Windows.Forms;
-using DarkUI.Forms;
-using DevExpress.XtraEditors;
 
 namespace ModioX.Forms
 {

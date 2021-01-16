@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModioX.Models.Game_Updates;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -6,7 +7,6 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
-using ModioX.Models.Game_Updates;
 
 namespace ModioX.Extensions
 {

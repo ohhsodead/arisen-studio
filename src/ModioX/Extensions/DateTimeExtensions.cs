@@ -1,5 +1,5 @@
-﻿using System;
-using ModioX.Net;
+﻿using ModioX.Net;
+using System;
 
 namespace ModioX.Extensions
 {

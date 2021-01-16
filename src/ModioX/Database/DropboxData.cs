@@ -1,13 +1,13 @@
-﻿using System;
+﻿using ModioX.Constants;
+using ModioX.Models.Database;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
-using ModioX.Constants;
-using ModioX.Models.Database;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace ModioX.Database
 {
@@ -76,7 +76,7 @@ namespace ModioX.Database
             using var client = new HttpClient();
             using var response = await client.GetAsync(Urls.ModsData);
 
-            if (response.StatusCode != HttpStatusCode.OK) 
+            if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Bad response {response.StatusCode}");
 
             var responseData = response.Content.ReadAsStringAsync().Result;

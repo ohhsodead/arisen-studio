@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Text;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace ModioX.Net
 {
@@ -68,7 +68,7 @@ namespace ModioX.Net
                 }
                 else
                 {
-                    System.Diagnostics.Debug.Write("Error:: " + Marshal.GetLastWin32Error() );
+                    System.Diagnostics.Debug.Write("Error:: " + Marshal.GetLastWin32Error());
                     return string.Empty;
                 }
             }
@@ -93,7 +93,7 @@ namespace ModioX.Net
         private static extern uint FormatMessage(uint dwFlags, IntPtr lpSource, uint dwMessageId, uint dwLanguageId, [MarshalAs(UnmanagedType.LPTStr)] StringBuilder lpBuffer, uint nSize, IntPtr Arguments);
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern IntPtr LoadLibrary([In()] [MarshalAs(UnmanagedType.LPTStr)] string lpLibFileName);
+        private static extern IntPtr LoadLibrary([In()][MarshalAs(UnmanagedType.LPTStr)] string lpLibFileName);
 
 
     }
@@ -129,7 +129,7 @@ namespace ModioX.Net
         public const int ERROR_INTERNET_EXTENDED_ERROR = (INTERNET_ERROR_BASE + 3);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static IntPtr InternetOpen(
+        public static extern IntPtr InternetOpen(
             [In] string agent,
             [In] int dwAccessType,
             [In] string proxyName,
@@ -137,7 +137,7 @@ namespace ModioX.Net
             [In] int dwFlags);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static IntPtr InternetConnect(
+        public static extern IntPtr InternetConnect(
             [In] IntPtr hInternet,
             [In] string serverName,
             [In] int serverPort,
@@ -148,30 +148,30 @@ namespace ModioX.Net
             [In] IntPtr dwContext);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static int InternetCloseHandle(
+        public static extern int InternetCloseHandle(
             [In] IntPtr hInternet);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static int FtpCommand(
-            [In]  IntPtr hConnect,
-            [In]  bool fExpectResponse,
-            [In]  int dwFlags,
-            [In]  string command,
-            [In]  IntPtr dwContext,
-            [In][Out]  ref IntPtr ftpCommand);
+        public static extern int FtpCommand(
+            [In] IntPtr hConnect,
+            [In] bool fExpectResponse,
+            [In] int dwFlags,
+            [In] string command,
+            [In] IntPtr dwContext,
+            [In][Out] ref IntPtr ftpCommand);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static int FtpCreateDirectory(
+        public static extern int FtpCreateDirectory(
             [In] IntPtr hConnect,
             [In] string directory);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static int FtpDeleteFile(
+        public static extern int FtpDeleteFile(
             [In] IntPtr hConnect,
             [In] string fileName);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static IntPtr FtpFindFirstFile(
+        public static extern IntPtr FtpFindFirstFile(
             [In] IntPtr hConnect,
             [In] string searchFile,
             [In][Out] ref WINAPI.WIN32_FIND_DATA findFileData,
@@ -179,13 +179,13 @@ namespace ModioX.Net
             [In] IntPtr dwContext);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static int FtpGetCurrentDirectory(
+        public static extern int FtpGetCurrentDirectory(
             [In] IntPtr hConnect,
             [In][Out] StringBuilder currentDirectory,
             [In][Out] ref int dwCurrentDirectory); //specifies buffer length
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static int FtpGetFile(
+        public static extern int FtpGetFile(
             [In] IntPtr hConnect,
             [In] string remoteFile,
             [In] string newFile,
@@ -195,12 +195,12 @@ namespace ModioX.Net
             [In] IntPtr dwContext);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static int FtpGetFileSize(
+        public static extern int FtpGetFileSize(
             [In] IntPtr hConnect,
             [In][Out] ref int dwFileSizeHigh);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static int FtpOpenFile(
+        public static extern int FtpOpenFile(
             [In] IntPtr hConnect,
             [In] string fileName,
             [In] uint dwAccess,
@@ -208,7 +208,7 @@ namespace ModioX.Net
             [In] IntPtr dwContext);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static int FtpPutFile(
+        public static extern int FtpPutFile(
             [In] IntPtr hConnect,
             [In] string localFile,
             [In] string newRemoteFile,
@@ -216,35 +216,35 @@ namespace ModioX.Net
             [In] IntPtr dwContext);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static int FtpRemoveDirectory(
+        public static extern int FtpRemoveDirectory(
             [In] IntPtr hConnect,
             [In] string directory);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static int FtpRenameFile(
+        public static extern int FtpRenameFile(
             [In] IntPtr hConnect,
             [In] string existingName,
             [In] string newName);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static int FtpSetCurrentDirectory(
+        public static extern int FtpSetCurrentDirectory(
             [In] IntPtr hConnect,
             [In] string directory);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static int InternetFindNextFile(
+        public static extern int InternetFindNextFile(
             [In] IntPtr hInternet,
             [In][Out] ref WINAPI.WIN32_FIND_DATA findData);
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        extern public static int InternetGetLastResponseInfo(
+        public static extern int InternetGetLastResponseInfo(
             [In][Out] ref int dwError,
             [MarshalAs(UnmanagedType.LPTStr)]
             [Out] StringBuilder buffer,
             [In][Out] ref int bufferLength);
 
         [DllImport("wininet.dll", CharSet = CharSet.Ansi, SetLastError = true)]
-        extern public static int InternetReadFile(
+        public static extern int InternetReadFile(
             [In] IntPtr hConnect,
             [MarshalAs(UnmanagedType.LPTStr)]
             [In][Out] StringBuilder buffer,
@@ -252,7 +252,7 @@ namespace ModioX.Net
             [In][Out] ref int bytesRead);
 
         [DllImport("wininet.dll", CharSet = CharSet.Ansi, SetLastError = true)]
-        extern public static int InternetReadFileEx(
+        public static extern int InternetReadFileEx(
             [In] IntPtr hFile,
             [In][Out] ref WINAPI.INTERNET_BUFFERS lpBuffersOut,
             [In] int dwFlags,

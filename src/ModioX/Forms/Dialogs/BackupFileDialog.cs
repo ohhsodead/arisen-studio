@@ -1,9 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Windows.Forms;
-using DarkUI.Forms;
+﻿using DarkUI.Forms;
 using DevExpress.XtraEditors;
 using ModioX.Models.Resources;
+using System;
+using System.IO;
+using System.Windows.Forms;
 
 namespace ModioX.Forms
 {

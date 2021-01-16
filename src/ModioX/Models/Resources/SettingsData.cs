@@ -1,10 +1,10 @@
-﻿using System;
+﻿using ModioX.Extensions;
+using ModioX.Io;
+using ModioX.Models.Database;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using ModioX.Extensions;
-using ModioX.Io;
-using ModioX.Models.Database;
 
 namespace ModioX.Models.Resources
 {
@@ -385,10 +385,10 @@ namespace ModioX.Models.Resources
                                 return true;
                             }
                         }
-                        catch 
-                        { 
+                        catch
+                        {
 
-                            return false; 
+                            return false;
                         }
                     }
                 }

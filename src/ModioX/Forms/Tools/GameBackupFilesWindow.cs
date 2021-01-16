@@ -1,12 +1,12 @@
-﻿using System;
-using System.Globalization;
-using System.IO;
-using System.Windows.Forms;
-using DarkUI.Forms;
+﻿using DarkUI.Forms;
 using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
+using System;
+using System.Globalization;
+using System.IO;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Tools
 {
@@ -67,7 +67,7 @@ namespace ModioX.Forms.Tools
                             "No Local File");
                     }
                 }
-                catch 
+                catch
                 {
                     // Will throw index out of range if deleting the last item 
                 }

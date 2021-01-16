@@ -1,9 +1,8 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using DarkUI.Forms;
-using DevExpress.XtraEditors;
 
 namespace ModioX.Forms.Dialogs
 {

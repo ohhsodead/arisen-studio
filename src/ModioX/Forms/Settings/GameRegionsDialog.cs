@@ -1,10 +1,9 @@
-﻿using System;
-using System.ComponentModel;
-using System.Windows.Forms;
-using DarkUI.Forms;
+﻿using DarkUI.Forms;
 using DevExpress.XtraEditors;
 using ModioX.Forms.Windows;
 using ModioX.Models.Database;
+using System;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Settings
 {
@@ -109,7 +108,7 @@ namespace ModioX.Forms.Settings
 
             if (ComboBoxGameRegion.SelectedIndex == -1)
             {
-                DarkMessageBox.ShowExclamation( "You must specify a game region for this game.", "No Game Region");
+                DarkMessageBox.ShowExclamation("You must specify a game region for this game.", "No Game Region");
                 return;
             }
 

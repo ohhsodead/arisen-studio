@@ -21,18 +21,18 @@ namespace ModioX.Net
             this._name = Path.GetFileName(filePath);
         }
 
-        private FtpConnection _ftp;
-        private string _filePath;
-        private string _name;
+        private readonly FtpConnection _ftp;
+        private readonly string _filePath;
+        private readonly string _name;
 
         private DateTime? _lastAccessTime;
         private DateTime? _creationTime;
         private DateTime? _lastWriteTime;
         private FileAttributes _attribues;
 
-        public FtpConnection FtpConnection 
-        { 
-            get { return _ftp; } 
+        public FtpConnection FtpConnection
+        {
+            get { return _ftp; }
         }
 
         public new DateTime? LastAccessTime

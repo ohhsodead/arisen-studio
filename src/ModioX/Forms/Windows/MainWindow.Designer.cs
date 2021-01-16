@@ -1432,7 +1432,7 @@ namespace ModioX.Forms.Windows
             this.Exitbutton.Caption = "Exit  Application Alt + F4";
             this.Exitbutton.Id = 20;
             this.Exitbutton.Name = "Exitbutton";
-            this.Exitbutton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem15_ItemClick);
+            this.Exitbutton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AppExit_ItemClick);
             // 
             // HelpMenuBar
             // 

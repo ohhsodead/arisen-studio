@@ -11,8 +11,8 @@ namespace ModioX.Net
             base.FullPath = path;
         }
 
-        private FtpConnection _ftp;
-        private string _dirPath;
+        private readonly FtpConnection _ftp;
+        private readonly string _dirPath;
         private DateTime? _lastAccessTime;
         private DateTime? _creationTime;
         private DateTime? _lastWriteTime;

@@ -1,7 +1,7 @@
-﻿using System;
+﻿using ModioX.Forms.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using ModioX.Forms.Windows;
 
 namespace ModioX.Models.Database
 {
@@ -39,7 +39,7 @@ namespace ModioX.Models.Database
             /// Check whether any files are being installed to a USB device.
             /// </summary>
             public bool RequiresUsbDevice => InstallPaths.Any(x => x.Contains("{USBDEV}"));
-            
+
             /// <summary>
             /// Check whether any files are installed at the 'dev_rebug' (firmware) folder.
             /// </summary>

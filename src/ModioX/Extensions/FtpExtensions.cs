@@ -1,13 +1,12 @@
-﻿using System;
+﻿using DarkUI.Forms;
+using FluentFTP;
+using ModioX.Forms.Windows;
+using ModioX.Net;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Windows.Forms;
-using DarkUI.Forms;
-using FluentFTP;
-using ModioX.Forms.Windows;
-using ModioX.Net;
 
 namespace ModioX.Extensions
 {
@@ -205,7 +204,7 @@ namespace ModioX.Extensions
 
             foreach (string line in lines)
             {
-                string[] tokens = line.Split(new[] { ' ' }, 9, StringSplitOptions.RemoveEmptyEntries); 
+                string[] tokens = line.Split(new[] { ' ' }, 9, StringSplitOptions.RemoveEmptyEntries);
                 string name = tokens[8];
                 string permissions = tokens[0];
 
@@ -271,7 +270,7 @@ namespace ModioX.Extensions
         {
             List<string> userIds = GetFolderNames("/dev_hdd0/home/");
 
-            List<string> userNames = (from userId in userIds 
+            List<string> userNames = (from userId in userIds
                                       select $"{userId} ({GetUserNameFromUserId(userId)})").ToList();
 
             if (userIds.Count > 0)
