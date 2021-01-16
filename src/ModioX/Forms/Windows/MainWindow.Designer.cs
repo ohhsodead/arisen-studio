@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 
 namespace ModioX.Forms.Windows
 {
@@ -32,6 +33,7 @@ namespace ModioX.Forms.Windows
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
+            DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
             this.ContextMenuMods = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuModsInstallFiles = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuModsUninstallFiles = new System.Windows.Forms.ToolStripMenuItem();
@@ -147,6 +149,34 @@ namespace ModioX.Forms.Windows
             this.ColumnModsDownload = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnModsFavourite = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelModsLibraryFilters = new System.Windows.Forms.Panel();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu3 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu4 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu5 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
+            this.barWorkspaceMenuItem1 = new DevExpress.XtraBars.BarWorkspaceMenuItem();
+            this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager(this.components);
             this.ComboBoxRegion = new DarkUI.Controls.DarkComboBox();
             this.LabelSelectRegion = new System.Windows.Forms.Label();
             this.LabelTitleMods = new DarkUI.Controls.DarkTitle();
@@ -183,25 +213,11 @@ namespace ModioX.Forms.Windows
             this.MenuStripGameMods = new DarkUI.Controls.DarkToolStrip();
             this.ToolItemGameModsUninstallAll = new System.Windows.Forms.ToolStripButton();
             this.LabelInstalledGameModsStatus = new System.Windows.Forms.ToolStripLabel();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu5 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu4 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu3 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.bar3 = new DevExpress.XtraBars.Bar();
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
             this.SectionModsInstallFilePaths.SuspendLayout();
@@ -214,18 +230,19 @@ namespace ModioX.Forms.Windows
             this.SectionModsLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).BeginInit();
             this.PanelModsLibraryFilters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu5)).BeginInit();
             this.SectionGames.SuspendLayout();
             this.FlowPanelCategories.SuspendLayout();
             this.SectionInstalledGameMods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGameModsInstalled)).BeginInit();
             this.PanelModsInstalledHeader.SuspendLayout();
             this.MenuStripGameMods.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // ContextMenuMods
@@ -858,7 +875,6 @@ namespace ModioX.Forms.Windows
             this.MenuStripHeader.Size = new System.Drawing.Size(1584, 29);
             this.MenuStripHeader.TabIndex = 1140;
             this.MenuStripHeader.Text = "darkMenuStrip1";
-            this.MenuStripHeader.Visible = false;
             // 
             // MenuStripFile
             // 
@@ -1572,6 +1588,7 @@ namespace ModioX.Forms.Windows
             // 
             // PanelModsLibraryFilters
             // 
+            this.PanelModsLibraryFilters.Controls.Add(this.comboBoxEdit1);
             this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxRegion);
             this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectRegion);
             this.PanelModsLibraryFilters.Controls.Add(this.LabelTitleMods);
@@ -1588,6 +1605,257 @@ namespace ModioX.Forms.Windows
             this.PanelModsLibraryFilters.Name = "PanelModsLibraryFilters";
             this.PanelModsLibraryFilters.Size = new System.Drawing.Size(899, 96);
             this.PanelModsLibraryFilters.TabIndex = 12;
+            // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.Location = new System.Drawing.Point(490, 39);
+            this.comboBoxEdit1.MenuManager = this.barManager1;
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.comboBoxEdit1.Size = new System.Drawing.Size(60, 20);
+            this.comboBoxEdit1.TabIndex = 1164;
+            // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar2,
+            this.bar3});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barButtonItem6,
+            this.barButtonItem7,
+            this.barButtonItem8,
+            this.barButtonItem9,
+            this.barSubItem1,
+            this.barToolbarsListItem1,
+            this.barWorkspaceMenuItem1,
+            this.barButtonItem10,
+            this.barButtonItem11,
+            this.barButtonItem12,
+            this.barButtonItem13,
+            this.barButtonItem14,
+            this.barButtonItem15,
+            this.barButtonItem16});
+            this.barManager1.MainMenu = this.bar2;
+            this.barManager1.MaxItemId = 19;
+            this.barManager1.StatusBar = this.bar3;
+            // 
+            // bar2
+            // 
+            this.bar2.BarItemVertIndent = 5;
+            this.bar2.BarName = "Main menu";
+            this.bar2.DockCol = 0;
+            this.bar2.DockRow = 0;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5)});
+            this.bar2.OptionsBar.DrawBorder = false;
+            this.bar2.OptionsBar.MultiLine = true;
+            this.bar2.OptionsBar.UseWholeRow = true;
+            this.bar2.Text = "Main menu";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.ActAsDropDown = true;
+            this.barButtonItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.barButtonItem1.Caption = "CONNECT";
+            this.barButtonItem1.DropDownControl = this.popupMenu1;
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7)});
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "PS3";
+            this.barButtonItem6.Id = 5;
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "XBOX";
+            this.barButtonItem7.Id = 6;
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.ActAsDropDown = true;
+            this.barButtonItem2.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.barButtonItem2.Caption = "TOOLS";
+            this.barButtonItem2.DropDownControl = this.popupMenu2;
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // popupMenu2
+            // 
+            this.popupMenu2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11)});
+            this.popupMenu2.Manager = this.barManager1;
+            this.popupMenu2.Name = "popupMenu2";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Game Backup Files...";
+            this.barButtonItem8.Id = 7;
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Game Update Finder...";
+            this.barButtonItem9.Id = 8;
+            this.barButtonItem9.Name = "barButtonItem9";
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "File Manager...";
+            this.barButtonItem10.Id = 12;
+            this.barButtonItem10.Name = "barButtonItem10";
+            // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "Package Manager...";
+            this.barButtonItem11.Id = 13;
+            this.barButtonItem11.Name = "barButtonItem11";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.ActAsDropDown = true;
+            this.barButtonItem3.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.barButtonItem3.Caption = "APPLICATIONS";
+            this.barButtonItem3.DropDownControl = this.popupMenu3;
+            this.barButtonItem3.Id = 2;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // popupMenu3
+            // 
+            this.popupMenu3.Manager = this.barManager1;
+            this.popupMenu3.Name = "popupMenu3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.ActAsDropDown = true;
+            this.barButtonItem4.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.barButtonItem4.Caption = "OPTIONS";
+            this.barButtonItem4.DropDownControl = this.popupMenu4;
+            this.barButtonItem4.Id = 3;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // popupMenu4
+            // 
+            this.popupMenu4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem13, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem14),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem15),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem16, true)});
+            this.popupMenu4.Manager = this.barManager1;
+            this.popupMenu4.Name = "popupMenu4";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.ActAsDropDown = true;
+            this.barButtonItem5.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.barButtonItem5.Caption = "HELP";
+            this.barButtonItem5.DropDownControl = this.popupMenu5;
+            this.barButtonItem5.Id = 4;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // popupMenu5
+            // 
+            this.popupMenu5.Manager = this.barManager1;
+            this.popupMenu5.Name = "popupMenu5";
+            // 
+            // bar3
+            // 
+            this.bar3.BarName = "Status bar";
+            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.OptionsBar.AllowQuickCustomization = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.Text = "Status bar";
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1584, 25);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 802);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1584, 19);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 777);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1584, 25);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 777);
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "barSubItem1";
+            this.barSubItem1.Id = 9;
+            this.barSubItem1.Name = "barSubItem1";
+            // 
+            // barToolbarsListItem1
+            // 
+            this.barToolbarsListItem1.Caption = "barToolbarsListItem1";
+            this.barToolbarsListItem1.Id = 10;
+            this.barToolbarsListItem1.Name = "barToolbarsListItem1";
+            // 
+            // barWorkspaceMenuItem1
+            // 
+            this.barWorkspaceMenuItem1.Caption = "barWorkspaceMenuItem1";
+            this.barWorkspaceMenuItem1.Id = 11;
+            this.barWorkspaceMenuItem1.Name = "barWorkspaceMenuItem1";
+            this.barWorkspaceMenuItem1.WorkspaceManager = this.workspaceManager1;
+            // 
+            // workspaceManager1
+            // 
+            this.workspaceManager1.TargetControl = this;
+            this.workspaceManager1.TransitionType = pushTransition1;
             // 
             // ComboBoxRegion
             // 
@@ -2049,174 +2317,35 @@ namespace ModioX.Forms.Windows
             this.LabelInstalledGameModsStatus.Size = new System.Drawing.Size(170, 33);
             this.LabelInstalledGameModsStatus.Text = "0 Mods Installed (0 Files Total)";
             // 
-            // barManager1
+            // barButtonItem12
             // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar2,
-            this.bar3});
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
-            this.barButtonItem5,
-            this.barButtonItem6,
-            this.barButtonItem7});
-            this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 7;
-            this.barManager1.StatusBar = this.bar3;
+            this.barButtonItem12.Caption = "Add New Console...";
+            this.barButtonItem12.Id = 14;
+            this.barButtonItem12.Name = "barButtonItem12";
             // 
-            // bar2
+            // barButtonItem13
             // 
-            this.bar2.BarItemVertIndent = 5;
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5)});
-            this.bar2.OptionsBar.DrawBorder = false;
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
+            this.barButtonItem13.Caption = "Edit Game Regions...";
+            this.barButtonItem13.Id = 15;
+            this.barButtonItem13.Name = "barButtonItem13";
             // 
-            // barButtonItem1
+            // barButtonItem14
             // 
-            this.barButtonItem1.ActAsDropDown = true;
-            this.barButtonItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem1.Caption = "CONNECT";
-            this.barButtonItem1.DropDownControl = this.popupMenu1;
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem14.Caption = "Edit Applications...";
+            this.barButtonItem14.Id = 16;
+            this.barButtonItem14.Name = "barButtonItem14";
             // 
-            // popupMenu5
+            // barButtonItem15
             // 
-            this.popupMenu5.Manager = this.barManager1;
-            this.popupMenu5.Name = "popupMenu5";
+            this.barButtonItem15.Caption = "Edit Your Lists...";
+            this.barButtonItem15.Id = 17;
+            this.barButtonItem15.Name = "barButtonItem15";
             // 
-            // barButtonItem2
+            // barButtonItem16
             // 
-            this.barButtonItem2.ActAsDropDown = true;
-            this.barButtonItem2.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem2.Caption = "TOOLS";
-            this.barButtonItem2.DropDownControl = this.popupMenu4;
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // popupMenu4
-            // 
-            this.popupMenu4.Manager = this.barManager1;
-            this.popupMenu4.Name = "popupMenu4";
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.ActAsDropDown = true;
-            this.barButtonItem3.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem3.Caption = "APPLICATIONS";
-            this.barButtonItem3.DropDownControl = this.popupMenu3;
-            this.barButtonItem3.Id = 2;
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
-            // popupMenu3
-            // 
-            this.popupMenu3.Manager = this.barManager1;
-            this.popupMenu3.Name = "popupMenu3";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.ActAsDropDown = true;
-            this.barButtonItem4.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem4.Caption = "OPTIONS";
-            this.barButtonItem4.DropDownControl = this.popupMenu2;
-            this.barButtonItem4.Id = 3;
-            this.barButtonItem4.Name = "barButtonItem4";
-            // 
-            // popupMenu2
-            // 
-            this.popupMenu2.Manager = this.barManager1;
-            this.popupMenu2.Name = "popupMenu2";
-            // 
-            // barButtonItem5
-            // 
-            this.barButtonItem5.ActAsDropDown = true;
-            this.barButtonItem5.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem5.Caption = "HELP";
-            this.barButtonItem5.DropDownControl = this.popupMenu1;
-            this.barButtonItem5.Id = 4;
-            this.barButtonItem5.Name = "barButtonItem5";
-            // 
-            // popupMenu1
-            // 
-            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7)});
-            this.popupMenu1.Manager = this.barManager1;
-            this.popupMenu1.Name = "popupMenu1";
-            // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1584, 25);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 802);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1584, 19);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 777);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1584, 25);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 777);
-            // 
-            // barButtonItem6
-            // 
-            this.barButtonItem6.Caption = "PS3";
-            this.barButtonItem6.Id = 5;
-            this.barButtonItem6.Name = "barButtonItem6";
-            // 
-            // barButtonItem7
-            // 
-            this.barButtonItem7.Caption = "XBOX";
-            this.barButtonItem7.Id = 6;
-            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem16.Caption = "Settings...";
+            this.barButtonItem16.Id = 18;
+            this.barButtonItem16.Name = "barButtonItem16";
             // 
             // MainWindow
             // 
@@ -2269,6 +2398,13 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).EndInit();
             this.PanelModsLibraryFilters.ResumeLayout(false);
             this.PanelModsLibraryFilters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu5)).EndInit();
             this.SectionGames.ResumeLayout(false);
             this.FlowPanelCategories.ResumeLayout(false);
             this.FlowPanelCategories.PerformLayout();
@@ -2278,12 +2414,6 @@ namespace ModioX.Forms.Windows
             this.PanelModsInstalledHeader.ResumeLayout(false);
             this.MenuStripGameMods.ResumeLayout(false);
             this.MenuStripGameMods.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2460,5 +2590,19 @@ namespace ModioX.Forms.Windows
         private BarDockControl barDockControlRight;
         private BarButtonItem barButtonItem6;
         private BarButtonItem barButtonItem7;
+        private ComboBoxEdit comboBoxEdit1;
+        private BarButtonItem barButtonItem8;
+        private BarButtonItem barButtonItem9;
+        private BarButtonItem barButtonItem10;
+        private BarButtonItem barButtonItem11;
+        private BarSubItem barSubItem1;
+        private BarToolbarsListItem barToolbarsListItem1;
+        private BarWorkspaceMenuItem barWorkspaceMenuItem1;
+        private DevExpress.Utils.WorkspaceManager workspaceManager1;
+        private BarButtonItem barButtonItem12;
+        private BarButtonItem barButtonItem13;
+        private BarButtonItem barButtonItem14;
+        private BarButtonItem barButtonItem15;
+        private BarButtonItem barButtonItem16;
     }
 }
