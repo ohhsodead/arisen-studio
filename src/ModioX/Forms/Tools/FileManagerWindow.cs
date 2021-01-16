@@ -738,7 +738,7 @@ namespace ModioX.Forms.Tools
 
                     SetConsoleStatus($"Downloading folder: {consolePath}");
                     //FtpExtensions.DownloadDirectory(consolePath, localPath);
-                    FtpClient.DownloadDirectory(localPath, consolePath, FtpFolderSyncMode.Mirror, FtpLocalExists.Overwrite);
+                    //FtpClient.DownloadDirectory(localPath, consolePath, FtpFolderSyncMode.Mirror, FtpLocalExists.Overwrite);
                     SetConsoleStatus($"Successfully downloaded folder to: {localPath}");
                 }
             }
