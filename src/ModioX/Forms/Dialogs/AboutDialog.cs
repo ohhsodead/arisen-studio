@@ -49,5 +49,6 @@ namespace ModioX.Forms.Dialogs
         {
             Close();
         }
+
     }
 }

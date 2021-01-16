@@ -196,24 +196,21 @@
   <data name="ToolItemModDownload.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHpSURBVEhL7ZI/SxxRFMUHIQhJQBRbE8QihRZpIgQsNWDc
-        QgshVfAbBLTQT5BEsLCwWbCyNZAPEMI0hmi6wFYWbpGsxGTjjtlsZv/M7Pg7w93BdbKLbr0HLm/uOeed
-        ++bNOH3cCs1mcyyKolnWBWrc6N5ByFQYhh+y2WyT4ARBEByxzJjtdiA043nePws6ZMA2tcXzZ3G5XC5g
-        WTF7dxA2Qr0k4E25XP7r+/5v+nmTE8AtEeoVCoU6z0+M/j8wvKpUKn90GsF13ZBl1uQU8C/oijjER6PS
-        QHytMIIvWN5qE/XU5Bh43qmsjaFrsfD3+NfZO2qS49DMKLRer39HnDA6hWq1+lNlbQy2bWhvC1zdORlz
-        sci0fZEQmZjogA7BozoM62NyNvP5fEPfBu6RU6vVfjCphDhg/gQY7sEPqwj9pWr10syWAG4VLWLInlMs
-        FquNRuPYtDZgnGLwmcxXIU6a2RIg3SmVSr4O6xB6ogbyrultuB7eKbQFvtU35emOd7RBr2FaCmiTCrTQ
-        SaNTQBtXFn/LVzUPdeG6Ep5fmCcFBXYLJW+IQ7p2yLUWuahgkUz7gmELcf0mxZYN/Lu8zant/wQ/GAcL
-        NNOQBxJ7gX41BmR5vG+R7UB4wJDnrMs3LfzPqBGL6OMqHOcSYFqljPobIW0AAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHnSURBVEhL7ZK9S1thGMUvQhFqoSiutQSHDnHoolBwtEKb
+        DDoIncT/QLCDbtm0BQcHl0Knrgr+AVKyKK1uQiYHM9SIH9FEY8x34u9cnlySXhMS5xx4eO9zznnP8973
+        XqeHrlCtVt/UarUp1hAVMPr5IGSsUqnsRiKRKsEeyuXyAcuk2boDoeF0Ov1gQX8ZsEGt8/xHXCwWK7Ms
+        mL09CBui5glYy2Qy97lc7pr+k8ke4GYJTScSiSLP40Y/DQyL2Wz2TqcRotFohWXKZB/wh3RFHOK3UX4g
+        riqM4FuWb9pEfTDZBZ5tlbUudC0WvoN/mb3DJjkOzaRCi8XiKeKo0T7k8/lLlbUu2LaivXVwdTdkfHRF
+        pm2JhAi7RAu0CB7WYVjfk/M9Ho+X9G3g3jmFQuGcSSnEPvN7wDAAP6gi9EpV76WZzQPcElqNIb+cZDKZ
+        L5VKx6Y1AeMYgy9kboQ4aWbzgPQilUrldFiH0BM1kC9Nb8L/4a1C6+Bb/VOe7nhTG/QapvmAFlSghQaN
+        9gEtoCz+liM1b3XhuhKev5jHBwW2CyXvNYeM2iG/1skZBYtk2iGGdcTlTootK/h/8jZntn8fvt8NFmgm
+        IPckPgf61Rjwg8dXFtkMhBGGfGad67TwT1NDFtFDIxznEZghpKLJLVE8AAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="MenuStripHeader.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>2, 0</value>
-  </metadata>
   <metadata name="ToolStripFooter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>133, 0</value>
   </metadata>
-  <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="MainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>740, -2</value>
   </metadata>
   <metadata name="ConnectMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

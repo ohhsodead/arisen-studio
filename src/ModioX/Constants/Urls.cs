@@ -26,5 +26,9 @@
         /// Direct download for the mods database file hosted on Dropbox. (Maybe move to GitHub soon)
         /// </summary>
         internal const string ModsData = "https://dl.dropbox.com/s/9kzqk21hkz2nt14/mods.json?raw=true";
+        /// <summary>
+        /// Links To The Official Discord Server.
+        /// </summary>
+        internal const string DiscordServer = "https://discord.gg/6TBtu8b";
     }
 }

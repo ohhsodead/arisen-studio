@@ -68,7 +68,7 @@ namespace ModioX.Forms.Dialogs
             }
         }
 
-        private void ButtonEdit_Click(object sender, EventArgs e)
+        private void ButtonEdit1_Click(object sender, EventArgs e)
         {
             var selectedItem = ListViewConsoleProfiles.Items[ListViewConsoleProfiles.SelectedIndices[0]];
             var selectedIndex = ListViewConsoleProfiles.Items.IndexOf(selectedItem);

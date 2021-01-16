@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="richTextBox1.Text" xml:space="preserve">
+  <data name="RichTextBoxInformation.Text" xml:space="preserve">
     <value>ModioX was developed by ohhsodead and few friends, with the only intention of providing an efficient tool for browsing, downloading and installing mods directly to your console. All credits are given to those appropriate creators/authors of the mods used in this application. For more information or any other comments, suggestions or feedback to help support this project, you can contact me via Discord: ohhsodead#2519 or Twitter: ohhsodead</value>
   </data>
-  <data name="richTextBox3.Text" xml:space="preserve">
+  <data name="RichTextBoxLicence.Text" xml:space="preserve">
     <value>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.

@@ -78,53 +78,6 @@ namespace ModioX.Forms.Windows
             this.ToolItemModUninstall = new System.Windows.Forms.ToolStripButton();
             this.ToolItemModDownload = new System.Windows.Forms.ToolStripButton();
             this.ToolItemModAddToFavorite = new System.Windows.Forms.ToolStripButton();
-            this.MenuStripHeader = new DarkUI.Controls.DarkMenuStrip();
-            this.MenuStripFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemConnectPS3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripConnectPS3Console = new System.Windows.Forms.ToolStripMenuItem();
-            this.xBOXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripFileSeparator0 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuStripConnectExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemTools = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemToolsGameBackupFiles = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemToolsGameUpdatesFinder = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemToolsSeperator0 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuItemToolsFileManager = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemToolsPackageManager = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemToolsSeperator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuItemToolsWebManControls = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuToolStripWebManPowerFunctions = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemToolsWebManShutdown = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemToolsWebManRestart = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuItemToolsWebManSoftReboot = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemToolsWebManHardReboot = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuToolStripWebManSystemInformation = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuToolStripWebManShowSystemInformation = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemToolsWebManShowCPURSX = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemToolsWebManShowMinVersion = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemToolsWebManNotify = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemToolsWebManVirtualController = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemApplications = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemOptions = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSettingsAddNewConsole = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSettingsSeperator0 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuItemSettingsEditGameRegions = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSettingsEditExternalApplications = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSettingsSeperator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemReportIssue = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemHelpDiscordServer = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemOfficialSourceCode = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemHelpSeperator0 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuStripHelpOpenLogFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripHelpOpenLogFolder = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemHelpSeperator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuStripHelpCheckForUpdates = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripHelpWhatsNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemHelpSeperator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuStripHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripRefreshData = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripFooter = new DarkUI.Controls.DarkToolStrip();
             this.ToolStripLabelConnectedConsole = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripLabelConsole = new System.Windows.Forms.ToolStripLabel();
@@ -145,39 +98,70 @@ namespace ModioX.Forms.Windows
             this.ColumnModNoOfFiles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColumnModDownload = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColumnModInstall = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.MainMenu = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.ConnectMenuBar = new DevExpress.XtraBars.BarButtonItem();
             this.ConnectMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.PS3ConnectMenu = new DevExpress.XtraBars.BarSubItem();
+            this.PS3ConnectButton = new DevExpress.XtraBars.BarButtonItem();
+            this.XBConsole = new DevExpress.XtraBars.BarSubItem();
+            this.Xbox360ConnectButton = new DevExpress.XtraBars.BarButtonItem();
+            this.ToolsMenuBar = new DevExpress.XtraBars.BarButtonItem();
             this.ToolsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.GameBackupFilesButton = new DevExpress.XtraBars.BarButtonItem();
+            this.GameUpdateFinderButton = new DevExpress.XtraBars.BarButtonItem();
+            this.FileManagerButton = new DevExpress.XtraBars.BarButtonItem();
+            this.PackageManagerButton = new DevExpress.XtraBars.BarButtonItem();
+            this.WebManControlsMenu = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.ShutDownButtonBar = new DevExpress.XtraBars.BarButtonItem();
+            this.RestartButtonBar = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            this.ApplicationMenuBar = new DevExpress.XtraBars.BarButtonItem();
             this.ApplicationsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem27 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem28 = new DevExpress.XtraBars.BarButtonItem();
+            this.OptionsMenuBar = new DevExpress.XtraBars.BarButtonItem();
             this.OptionsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
+            this.AddConsoleButton = new DevExpress.XtraBars.BarButtonItem();
+            this.EditGameRegionButton = new DevExpress.XtraBars.BarButtonItem();
+            this.EditApplicationsButton = new DevExpress.XtraBars.BarButtonItem();
             this.EditYourLists = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.Exitbutton = new DevExpress.XtraBars.BarButtonItem();
+            this.HelpMenuBar = new DevExpress.XtraBars.BarButtonItem();
             this.HelpMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.ReportBugButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DiscordServerButton = new DevExpress.XtraBars.BarButtonItem();
+            this.OfficailSourceButton = new DevExpress.XtraBars.BarButtonItem();
             this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
+            this.HelpSpacer1 = new DevExpress.XtraBars.BarButtonItem();
+            this.OpenLogFileButton = new DevExpress.XtraBars.BarButtonItem();
+            this.OpenLogFolderButton = new DevExpress.XtraBars.BarButtonItem();
+            this.HelpSpacer2 = new DevExpress.XtraBars.BarButtonItem();
+            this.CheckForUpdateButton = new DevExpress.XtraBars.BarButtonItem();
+            this.WhatsNewButton = new DevExpress.XtraBars.BarButtonItem();
+            this.HelpSpacer3 = new DevExpress.XtraBars.BarButtonItem();
+            this.AboutBar = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
             this.barWorkspaceMenuItem1 = new DevExpress.XtraBars.BarWorkspaceMenuItem();
             this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager(this.components);
+            this.barDockingMenuItem1 = new DevExpress.XtraBars.BarDockingMenuItem();
             this.LabelNoModsFound = new System.Windows.Forms.Label();
             this.DgvMods = new XDevkit.XtraDataGridView();
             this.ColumnModsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -229,6 +213,7 @@ namespace ModioX.Forms.Windows
             this.MenuStripGameMods = new DarkUI.Controls.DarkToolStrip();
             this.ToolItemGameModsUninstallAll = new System.Windows.Forms.ToolStripButton();
             this.LabelInstalledGameModsStatus = new System.Windows.Forms.ToolStripLabel();
+            this.bar1 = new DevExpress.XtraBars.Bar();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
             this.SectionModsInstallFilePaths.SuspendLayout();
@@ -236,12 +221,11 @@ namespace ModioX.Forms.Windows
             this.SectionArchiveInformation.SuspendLayout();
             this.PanelModsInstallationPaths.SuspendLayout();
             this.ToolStripArchiveInformation.SuspendLayout();
-            this.MenuStripHeader.SuspendLayout();
             this.ToolStripFooter.SuspendLayout();
             this.SectionModsLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.XtraDgvMods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConnectMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolsMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationsMenu)).BeginInit();
@@ -869,472 +853,6 @@ namespace ModioX.Forms.Windows
             this.ToolItemModAddToFavorite.ToolTipText = "Add/Remove from Favorites";
             this.ToolItemModAddToFavorite.Click += new System.EventHandler(this.ToolStripFavorite_Click);
             // 
-            // MenuStripHeader
-            // 
-            this.MenuStripHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.MenuStripHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripHeader.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.MenuStripHeader.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuStripFile,
-            this.MenuItemTools,
-            this.MenuItemApplications,
-            this.MenuItemOptions,
-            this.MenuItemHelp,
-            this.MenuStripRefreshData});
-            this.MenuStripHeader.Location = new System.Drawing.Point(0, 25);
-            this.MenuStripHeader.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
-            this.MenuStripHeader.Name = "MenuStripHeader";
-            this.MenuStripHeader.Padding = new System.Windows.Forms.Padding(8, 10, 8, 0);
-            this.MenuStripHeader.Size = new System.Drawing.Size(1584, 29);
-            this.MenuStripHeader.TabIndex = 1140;
-            this.MenuStripHeader.Text = "darkMenuStrip1";
-            // 
-            // MenuStripFile
-            // 
-            this.MenuStripFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemConnectPS3,
-            this.xBOXToolStripMenuItem,
-            this.MenuStripFileSeparator0,
-            this.MenuStripConnectExit});
-            this.MenuStripFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripFile.Name = "MenuStripFile";
-            this.MenuStripFile.Size = new System.Drawing.Size(74, 19);
-            this.MenuStripFile.Text = "CONNECT";
-            // 
-            // MenuItemConnectPS3
-            // 
-            this.MenuItemConnectPS3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemConnectPS3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuStripConnectPS3Console});
-            this.MenuItemConnectPS3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemConnectPS3.Name = "MenuItemConnectPS3";
-            this.MenuItemConnectPS3.Size = new System.Drawing.Size(135, 22);
-            this.MenuItemConnectPS3.Text = "PS3";
-            // 
-            // MenuStripConnectPS3Console
-            // 
-            this.MenuStripConnectPS3Console.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripConnectPS3Console.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripConnectPS3Console.Name = "MenuStripConnectPS3Console";
-            this.MenuStripConnectPS3Console.Size = new System.Drawing.Size(186, 22);
-            this.MenuStripConnectPS3Console.Text = "Connect to console...";
-            this.MenuStripConnectPS3Console.Click += new System.EventHandler(this.MenuItemConnectPS3Console_Click);
-            // 
-            // xBOXToolStripMenuItem
-            // 
-            this.xBOXToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.xBOXToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.xBOXToolStripMenuItem.Name = "xBOXToolStripMenuItem";
-            this.xBOXToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.xBOXToolStripMenuItem.Text = "XBOX";
-            // 
-            // MenuStripFileSeparator0
-            // 
-            this.MenuStripFileSeparator0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripFileSeparator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripFileSeparator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuStripFileSeparator0.Name = "MenuStripFileSeparator0";
-            this.MenuStripFileSeparator0.Size = new System.Drawing.Size(132, 6);
-            // 
-            // MenuStripConnectExit
-            // 
-            this.MenuStripConnectExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripConnectExit.CheckOnClick = true;
-            this.MenuStripConnectExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripConnectExit.Name = "MenuStripConnectExit";
-            this.MenuStripConnectExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.MenuStripConnectExit.Size = new System.Drawing.Size(135, 22);
-            this.MenuStripConnectExit.Text = "Exit";
-            this.MenuStripConnectExit.Click += new System.EventHandler(this.MenuStripConnectExit_Click);
-            // 
-            // MenuItemTools
-            // 
-            this.MenuItemTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemToolsGameBackupFiles,
-            this.MenuItemToolsGameUpdatesFinder,
-            this.MenuItemToolsSeperator0,
-            this.MenuItemToolsFileManager,
-            this.MenuItemToolsPackageManager,
-            this.MenuItemToolsSeperator1,
-            this.MenuItemToolsWebManControls});
-            this.MenuItemTools.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemTools.Name = "MenuItemTools";
-            this.MenuItemTools.Size = new System.Drawing.Size(54, 19);
-            this.MenuItemTools.Text = "TOOLS";
-            // 
-            // MenuItemToolsGameBackupFiles
-            // 
-            this.MenuItemToolsGameBackupFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsGameBackupFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsGameBackupFiles.Name = "MenuItemToolsGameBackupFiles";
-            this.MenuItemToolsGameBackupFiles.Size = new System.Drawing.Size(196, 22);
-            this.MenuItemToolsGameBackupFiles.Text = "Game Backup Files...";
-            this.MenuItemToolsGameBackupFiles.Click += new System.EventHandler(this.MenuItemToolsBackupFileManager_Click);
-            // 
-            // MenuItemToolsGameUpdatesFinder
-            // 
-            this.MenuItemToolsGameUpdatesFinder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsGameUpdatesFinder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsGameUpdatesFinder.Name = "MenuItemToolsGameUpdatesFinder";
-            this.MenuItemToolsGameUpdatesFinder.Size = new System.Drawing.Size(196, 22);
-            this.MenuItemToolsGameUpdatesFinder.Text = "Game Updates Finder...";
-            this.MenuItemToolsGameUpdatesFinder.Click += new System.EventHandler(this.MenuItemToolsGameUpdatesFinder_Click);
-            // 
-            // MenuItemToolsSeperator0
-            // 
-            this.MenuItemToolsSeperator0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsSeperator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsSeperator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuItemToolsSeperator0.Name = "MenuItemToolsSeperator0";
-            this.MenuItemToolsSeperator0.Size = new System.Drawing.Size(193, 6);
-            // 
-            // MenuItemToolsFileManager
-            // 
-            this.MenuItemToolsFileManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsFileManager.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsFileManager.Name = "MenuItemToolsFileManager";
-            this.MenuItemToolsFileManager.Size = new System.Drawing.Size(196, 22);
-            this.MenuItemToolsFileManager.Text = "File Manager...";
-            this.MenuItemToolsFileManager.Click += new System.EventHandler(this.MenuItemToolsFileManager_Click);
-            // 
-            // MenuItemToolsPackageManager
-            // 
-            this.MenuItemToolsPackageManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsPackageManager.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsPackageManager.Name = "MenuItemToolsPackageManager";
-            this.MenuItemToolsPackageManager.Size = new System.Drawing.Size(196, 22);
-            this.MenuItemToolsPackageManager.Text = "Package Manager...";
-            this.MenuItemToolsPackageManager.Click += new System.EventHandler(this.MenuItemToolsPackageManager_Click);
-            // 
-            // MenuItemToolsSeperator1
-            // 
-            this.MenuItemToolsSeperator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsSeperator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsSeperator1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuItemToolsSeperator1.Name = "MenuItemToolsSeperator1";
-            this.MenuItemToolsSeperator1.Size = new System.Drawing.Size(193, 6);
-            // 
-            // MenuItemToolsWebManControls
-            // 
-            this.MenuItemToolsWebManControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsWebManControls.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuToolStripWebManPowerFunctions,
-            this.MenuToolStripWebManSystemInformation,
-            this.MenuItemToolsWebManNotify,
-            this.MenuItemToolsWebManVirtualController});
-            this.MenuItemToolsWebManControls.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsWebManControls.Name = "MenuItemToolsWebManControls";
-            this.MenuItemToolsWebManControls.Size = new System.Drawing.Size(196, 22);
-            this.MenuItemToolsWebManControls.Text = "WebMAN Controls...";
-            // 
-            // MenuToolStripWebManPowerFunctions
-            // 
-            this.MenuToolStripWebManPowerFunctions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuToolStripWebManPowerFunctions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemToolsWebManShutdown,
-            this.MenuItemToolsWebManRestart,
-            this.toolStripSeparator1,
-            this.MenuItemToolsWebManSoftReboot,
-            this.MenuItemToolsWebManHardReboot});
-            this.MenuToolStripWebManPowerFunctions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuToolStripWebManPowerFunctions.Name = "MenuToolStripWebManPowerFunctions";
-            this.MenuToolStripWebManPowerFunctions.Size = new System.Drawing.Size(178, 22);
-            this.MenuToolStripWebManPowerFunctions.Text = "Power Functions";
-            // 
-            // MenuItemToolsWebManShutdown
-            // 
-            this.MenuItemToolsWebManShutdown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsWebManShutdown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsWebManShutdown.Name = "MenuItemToolsWebManShutdown";
-            this.MenuItemToolsWebManShutdown.Size = new System.Drawing.Size(150, 22);
-            this.MenuItemToolsWebManShutdown.Text = "Shutdown...";
-            this.MenuItemToolsWebManShutdown.Click += new System.EventHandler(this.MenuItemToolsWebManShutdown_Click);
-            // 
-            // MenuItemToolsWebManRestart
-            // 
-            this.MenuItemToolsWebManRestart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsWebManRestart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsWebManRestart.Name = "MenuItemToolsWebManRestart";
-            this.MenuItemToolsWebManRestart.Size = new System.Drawing.Size(150, 22);
-            this.MenuItemToolsWebManRestart.Text = "Restart...";
-            this.MenuItemToolsWebManRestart.Click += new System.EventHandler(this.MenuItemToolsWebManRestart_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.toolStripSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(147, 6);
-            // 
-            // MenuItemToolsWebManSoftReboot
-            // 
-            this.MenuItemToolsWebManSoftReboot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsWebManSoftReboot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsWebManSoftReboot.Name = "MenuItemToolsWebManSoftReboot";
-            this.MenuItemToolsWebManSoftReboot.Size = new System.Drawing.Size(150, 22);
-            this.MenuItemToolsWebManSoftReboot.Text = "Soft Reboot...";
-            this.MenuItemToolsWebManSoftReboot.Click += new System.EventHandler(this.MenuItemToolsWebManSoftReboot_Click);
-            // 
-            // MenuItemToolsWebManHardReboot
-            // 
-            this.MenuItemToolsWebManHardReboot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsWebManHardReboot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsWebManHardReboot.Name = "MenuItemToolsWebManHardReboot";
-            this.MenuItemToolsWebManHardReboot.Size = new System.Drawing.Size(150, 22);
-            this.MenuItemToolsWebManHardReboot.Text = "Hard Reboot...";
-            this.MenuItemToolsWebManHardReboot.Click += new System.EventHandler(this.MenuItemToolsWebManHardReboot_Click);
-            // 
-            // MenuToolStripWebManSystemInformation
-            // 
-            this.MenuToolStripWebManSystemInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuToolStripWebManSystemInformation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuToolStripWebManShowSystemInformation,
-            this.MenuItemToolsWebManShowCPURSX,
-            this.MenuItemToolsWebManShowMinVersion});
-            this.MenuToolStripWebManSystemInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuToolStripWebManSystemInformation.Name = "MenuToolStripWebManSystemInformation";
-            this.MenuToolStripWebManSystemInformation.Size = new System.Drawing.Size(178, 22);
-            this.MenuToolStripWebManSystemInformation.Text = "System Information";
-            // 
-            // MenuToolStripWebManShowSystemInformation
-            // 
-            this.MenuToolStripWebManShowSystemInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuToolStripWebManShowSystemInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuToolStripWebManShowSystemInformation.Name = "MenuToolStripWebManShowSystemInformation";
-            this.MenuToolStripWebManShowSystemInformation.Size = new System.Drawing.Size(232, 22);
-            this.MenuToolStripWebManShowSystemInformation.Text = "Show System Information...";
-            this.MenuToolStripWebManShowSystemInformation.Click += new System.EventHandler(this.MenuItemToolsWebManShowSystemInformation_Click);
-            // 
-            // MenuItemToolsWebManShowCPURSX
-            // 
-            this.MenuItemToolsWebManShowCPURSX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsWebManShowCPURSX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsWebManShowCPURSX.Name = "MenuItemToolsWebManShowCPURSX";
-            this.MenuItemToolsWebManShowCPURSX.Size = new System.Drawing.Size(232, 22);
-            this.MenuItemToolsWebManShowCPURSX.Text = "Show CPU/RSX Temperature...";
-            this.MenuItemToolsWebManShowCPURSX.Click += new System.EventHandler(this.MenuItemToolsWebManShowCPURSX_Click);
-            // 
-            // MenuItemToolsWebManShowMinVersion
-            // 
-            this.MenuItemToolsWebManShowMinVersion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsWebManShowMinVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsWebManShowMinVersion.Name = "MenuItemToolsWebManShowMinVersion";
-            this.MenuItemToolsWebManShowMinVersion.Size = new System.Drawing.Size(232, 22);
-            this.MenuItemToolsWebManShowMinVersion.Text = "Show Minimum Version...";
-            this.MenuItemToolsWebManShowMinVersion.Click += new System.EventHandler(this.MenuItemToolsWebManShowMinVersion_Click);
-            // 
-            // MenuItemToolsWebManNotify
-            // 
-            this.MenuItemToolsWebManNotify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsWebManNotify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsWebManNotify.Name = "MenuItemToolsWebManNotify";
-            this.MenuItemToolsWebManNotify.Size = new System.Drawing.Size(178, 22);
-            this.MenuItemToolsWebManNotify.Text = "Notify Message...";
-            this.MenuItemToolsWebManNotify.Click += new System.EventHandler(this.MenuItemToolsWebManNotify_Click);
-            // 
-            // MenuItemToolsWebManVirtualController
-            // 
-            this.MenuItemToolsWebManVirtualController.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemToolsWebManVirtualController.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemToolsWebManVirtualController.Name = "MenuItemToolsWebManVirtualController";
-            this.MenuItemToolsWebManVirtualController.Size = new System.Drawing.Size(178, 22);
-            this.MenuItemToolsWebManVirtualController.Text = "Virtual Controller...";
-            this.MenuItemToolsWebManVirtualController.Click += new System.EventHandler(this.MenuItemToolsWebManVirtualController_Click);
-            // 
-            // MenuItemApplications
-            // 
-            this.MenuItemApplications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemApplications.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemApplications.Name = "MenuItemApplications";
-            this.MenuItemApplications.Size = new System.Drawing.Size(98, 19);
-            this.MenuItemApplications.Text = "APPLICATIONS";
-            // 
-            // MenuItemOptions
-            // 
-            this.MenuItemOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemSettingsAddNewConsole,
-            this.MenuItemSettingsSeperator0,
-            this.MenuItemSettingsEditGameRegions,
-            this.MenuItemSettingsEditExternalApplications,
-            this.MenuItemSettingsSeperator1});
-            this.MenuItemOptions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemOptions.Name = "MenuItemOptions";
-            this.MenuItemOptions.Size = new System.Drawing.Size(68, 19);
-            this.MenuItemOptions.Text = "OPTIONS";
-            // 
-            // MenuItemSettingsAddNewConsole
-            // 
-            this.MenuItemSettingsAddNewConsole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSettingsAddNewConsole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSettingsAddNewConsole.Name = "MenuItemSettingsAddNewConsole";
-            this.MenuItemSettingsAddNewConsole.Size = new System.Drawing.Size(182, 22);
-            this.MenuItemSettingsAddNewConsole.Text = "Add New Console...";
-            this.MenuItemSettingsAddNewConsole.Click += new System.EventHandler(this.MenuItemSettingsAddNewConsole_Click);
-            // 
-            // MenuItemSettingsSeperator0
-            // 
-            this.MenuItemSettingsSeperator0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSettingsSeperator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSettingsSeperator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuItemSettingsSeperator0.Name = "MenuItemSettingsSeperator0";
-            this.MenuItemSettingsSeperator0.Size = new System.Drawing.Size(179, 6);
-            // 
-            // MenuItemSettingsEditGameRegions
-            // 
-            this.MenuItemSettingsEditGameRegions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSettingsEditGameRegions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSettingsEditGameRegions.Name = "MenuItemSettingsEditGameRegions";
-            this.MenuItemSettingsEditGameRegions.Size = new System.Drawing.Size(182, 22);
-            this.MenuItemSettingsEditGameRegions.Text = "Edit Game Regions...";
-            this.MenuItemSettingsEditGameRegions.Click += new System.EventHandler(this.MenuItemSettingsEditGameRegions_Click);
-            // 
-            // MenuItemSettingsEditExternalApplications
-            // 
-            this.MenuItemSettingsEditExternalApplications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSettingsEditExternalApplications.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSettingsEditExternalApplications.Name = "MenuItemSettingsEditExternalApplications";
-            this.MenuItemSettingsEditExternalApplications.Size = new System.Drawing.Size(182, 22);
-            this.MenuItemSettingsEditExternalApplications.Text = "Edit Applications...";
-            this.MenuItemSettingsEditExternalApplications.Click += new System.EventHandler(this.MenuItemSettingsEditExternalApplications_Click);
-            // 
-            // MenuItemSettingsSeperator1
-            // 
-            this.MenuItemSettingsSeperator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSettingsSeperator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSettingsSeperator1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuItemSettingsSeperator1.Name = "MenuItemSettingsSeperator1";
-            this.MenuItemSettingsSeperator1.Size = new System.Drawing.Size(179, 6);
-            // 
-            // MenuItemHelp
-            // 
-            this.MenuItemHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemReportIssue,
-            this.MenuItemHelpDiscordServer,
-            this.MenuItemOfficialSourceCode,
-            this.MenuItemHelpSeperator0,
-            this.MenuStripHelpOpenLogFile,
-            this.MenuStripHelpOpenLogFolder,
-            this.MenuItemHelpSeperator1,
-            this.MenuStripHelpCheckForUpdates,
-            this.MenuStripHelpWhatsNew,
-            this.MenuItemHelpSeperator2,
-            this.MenuStripHelpAbout});
-            this.MenuItemHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemHelp.Name = "MenuItemHelp";
-            this.MenuItemHelp.Size = new System.Drawing.Size(47, 19);
-            this.MenuItemHelp.Text = "HELP";
-            // 
-            // MenuItemReportIssue
-            // 
-            this.MenuItemReportIssue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemReportIssue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemReportIssue.Name = "MenuItemReportIssue";
-            this.MenuItemReportIssue.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemReportIssue.Text = "Report Bug...";
-            this.MenuItemReportIssue.Click += new System.EventHandler(this.MenuItemHelpReportBugSuggestions_Click);
-            // 
-            // MenuItemHelpDiscordServer
-            // 
-            this.MenuItemHelpDiscordServer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemHelpDiscordServer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemHelpDiscordServer.Name = "MenuItemHelpDiscordServer";
-            this.MenuItemHelpDiscordServer.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemHelpDiscordServer.Text = "Discord Server...";
-            this.MenuItemHelpDiscordServer.Click += new System.EventHandler(this.MenuItemHelpDiscordServer_Click);
-            // 
-            // MenuItemOfficialSourceCode
-            // 
-            this.MenuItemOfficialSourceCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemOfficialSourceCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemOfficialSourceCode.Name = "MenuItemOfficialSourceCode";
-            this.MenuItemOfficialSourceCode.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemOfficialSourceCode.Text = "Official Source...";
-            this.MenuItemOfficialSourceCode.Click += new System.EventHandler(this.MenuItemHelpOfficialSourceCode_Click);
-            // 
-            // MenuItemHelpSeperator0
-            // 
-            this.MenuItemHelpSeperator0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemHelpSeperator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemHelpSeperator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuItemHelpSeperator0.Name = "MenuItemHelpSeperator0";
-            this.MenuItemHelpSeperator0.Size = new System.Drawing.Size(177, 6);
-            // 
-            // MenuStripHelpOpenLogFile
-            // 
-            this.MenuStripHelpOpenLogFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripHelpOpenLogFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripHelpOpenLogFile.Name = "MenuStripHelpOpenLogFile";
-            this.MenuStripHelpOpenLogFile.Size = new System.Drawing.Size(180, 22);
-            this.MenuStripHelpOpenLogFile.Text = "Open Log File...";
-            this.MenuStripHelpOpenLogFile.Click += new System.EventHandler(this.MenuItemHelpOpenLogFile_Click);
-            // 
-            // MenuStripHelpOpenLogFolder
-            // 
-            this.MenuStripHelpOpenLogFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripHelpOpenLogFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripHelpOpenLogFolder.Name = "MenuStripHelpOpenLogFolder";
-            this.MenuStripHelpOpenLogFolder.Size = new System.Drawing.Size(180, 22);
-            this.MenuStripHelpOpenLogFolder.Text = "Open Log Folder...";
-            this.MenuStripHelpOpenLogFolder.Click += new System.EventHandler(this.MenuItemHelpOpenLogFolder_Click);
-            // 
-            // MenuItemHelpSeperator1
-            // 
-            this.MenuItemHelpSeperator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemHelpSeperator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemHelpSeperator1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuItemHelpSeperator1.Name = "MenuItemHelpSeperator1";
-            this.MenuItemHelpSeperator1.Size = new System.Drawing.Size(177, 6);
-            // 
-            // MenuStripHelpCheckForUpdates
-            // 
-            this.MenuStripHelpCheckForUpdates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripHelpCheckForUpdates.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripHelpCheckForUpdates.Name = "MenuStripHelpCheckForUpdates";
-            this.MenuStripHelpCheckForUpdates.Size = new System.Drawing.Size(180, 22);
-            this.MenuStripHelpCheckForUpdates.Text = "Check for Updates...";
-            this.MenuStripHelpCheckForUpdates.Click += new System.EventHandler(this.MenuItemHelpCheckForUpdates_Click);
-            // 
-            // MenuStripHelpWhatsNew
-            // 
-            this.MenuStripHelpWhatsNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripHelpWhatsNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripHelpWhatsNew.Name = "MenuStripHelpWhatsNew";
-            this.MenuStripHelpWhatsNew.Size = new System.Drawing.Size(180, 22);
-            this.MenuStripHelpWhatsNew.Text = "What\'s New...";
-            this.MenuStripHelpWhatsNew.Click += new System.EventHandler(this.MenuItemHelpWhatsNew_Click);
-            // 
-            // MenuItemHelpSeperator2
-            // 
-            this.MenuItemHelpSeperator2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemHelpSeperator2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemHelpSeperator2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.MenuItemHelpSeperator2.Name = "MenuItemHelpSeperator2";
-            this.MenuItemHelpSeperator2.Size = new System.Drawing.Size(177, 6);
-            // 
-            // MenuStripHelpAbout
-            // 
-            this.MenuStripHelpAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripHelpAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripHelpAbout.Name = "MenuStripHelpAbout";
-            this.MenuStripHelpAbout.Size = new System.Drawing.Size(180, 22);
-            this.MenuStripHelpAbout.Text = "About...";
-            this.MenuStripHelpAbout.Click += new System.EventHandler(this.MenuItemHelpAbout_Click);
-            // 
-            // MenuStripRefreshData
-            // 
-            this.MenuStripRefreshData.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.MenuStripRefreshData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripRefreshData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripRefreshData.Name = "MenuStripRefreshData";
-            this.MenuStripRefreshData.Size = new System.Drawing.Size(97, 19);
-            this.MenuStripRefreshData.Text = "REFRESH DATA";
-            this.MenuStripRefreshData.Click += new System.EventHandler(this.MenuItemRefreshData_Click);
-            // 
             // ToolStripFooter
             // 
             this.ToolStripFooter.AutoSize = false;
@@ -1434,7 +952,7 @@ namespace ModioX.Forms.Windows
             // 
             this.XtraDgvMods.Location = new System.Drawing.Point(62, 184);
             this.XtraDgvMods.MainView = this.gridView1;
-            this.XtraDgvMods.MenuManager = this.barManager1;
+            this.XtraDgvMods.MenuManager = this.MainMenu;
             this.XtraDgvMods.Name = "XtraDgvMods";
             this.XtraDgvMods.Size = new System.Drawing.Size(781, 305);
             this.XtraDgvMods.TabIndex = 1160;
@@ -1548,40 +1066,71 @@ namespace ModioX.Forms.Windows
             this.ColumnModInstall.VisibleIndex = 8;
             this.ColumnModInstall.Width = 30;
             // 
-            // barManager1
+            // MainMenu
             // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.MainMenu.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.bar2,
             this.bar3});
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
-            this.barButtonItem5,
+            this.MainMenu.DockControls.Add(this.barDockControlTop);
+            this.MainMenu.DockControls.Add(this.barDockControlBottom);
+            this.MainMenu.DockControls.Add(this.barDockControlLeft);
+            this.MainMenu.DockControls.Add(this.barDockControlRight);
+            this.MainMenu.Form = this;
+            this.MainMenu.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ConnectMenuBar,
+            this.ToolsMenuBar,
+            this.ApplicationMenuBar,
+            this.OptionsMenuBar,
+            this.HelpMenuBar,
             this.barButtonItem6,
             this.barButtonItem7,
-            this.barButtonItem8,
-            this.barButtonItem9,
+            this.GameBackupFilesButton,
+            this.GameUpdateFinderButton,
             this.barSubItem1,
             this.barToolbarsListItem1,
             this.barWorkspaceMenuItem1,
-            this.barButtonItem10,
-            this.barButtonItem11,
-            this.barButtonItem12,
-            this.barButtonItem13,
-            this.barButtonItem14,
+            this.FileManagerButton,
+            this.PackageManagerButton,
+            this.AddConsoleButton,
+            this.EditGameRegionButton,
+            this.EditApplicationsButton,
             this.EditYourLists,
             this.barButtonItem16,
-            this.skinBarSubItem1});
-            this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 20;
-            this.barManager1.StatusBar = this.bar3;
+            this.skinBarSubItem1,
+            this.Exitbutton,
+            this.ReportBugButton,
+            this.DiscordServerButton,
+            this.OfficailSourceButton,
+            this.OpenLogFileButton,
+            this.OpenLogFolderButton,
+            this.HelpSpacer1,
+            this.HelpSpacer2,
+            this.AboutBar,
+            this.WhatsNewButton,
+            this.CheckForUpdateButton,
+            this.HelpSpacer3,
+            this.PS3ConnectMenu,
+            this.XBConsole,
+            this.PS3ConnectButton,
+            this.Xbox360ConnectButton,
+            this.barDockingMenuItem1,
+            this.WebManControlsMenu,
+            this.barButtonItem15,
+            this.barButtonItem17,
+            this.barSubItem3,
+            this.ShutDownButtonBar,
+            this.RestartButtonBar,
+            this.barButtonItem20,
+            this.barButtonItem21,
+            this.barSubItem4,
+            this.barButtonItem23,
+            this.barButtonItem24,
+            this.barButtonItem26,
+            this.barButtonItem27,
+            this.barButtonItem28});
+            this.MainMenu.MainMenu = this.bar2;
+            this.MainMenu.MaxItemId = 52;
+            this.MainMenu.StatusBar = this.bar3;
             // 
             // bar2
             // 
@@ -1593,139 +1142,276 @@ namespace ModioX.Forms.Windows
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.ConnectMenuBar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ToolsMenuBar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ApplicationMenuBar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.OptionsMenuBar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.HelpMenuBar)});
             this.bar2.OptionsBar.DrawBorder = false;
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
             // 
-            // barButtonItem1
+            // ConnectMenuBar
             // 
-            this.barButtonItem1.ActAsDropDown = true;
-            this.barButtonItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem1.Caption = "CONNECT";
-            this.barButtonItem1.DropDownControl = this.ConnectMenu;
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.ConnectMenuBar.ActAsDropDown = true;
+            this.ConnectMenuBar.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.ConnectMenuBar.Caption = "CONNECT";
+            this.ConnectMenuBar.DropDownControl = this.ConnectMenu;
+            this.ConnectMenuBar.Id = 0;
+            this.ConnectMenuBar.Name = "ConnectMenuBar";
             // 
             // ConnectMenu
             // 
             this.ConnectMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7)});
-            this.ConnectMenu.Manager = this.barManager1;
+            new DevExpress.XtraBars.LinkPersistInfo(this.PS3ConnectMenu),
+            new DevExpress.XtraBars.LinkPersistInfo(this.XBConsole)});
+            this.ConnectMenu.Manager = this.MainMenu;
             this.ConnectMenu.Name = "ConnectMenu";
             // 
-            // barButtonItem6
+            // PS3ConnectMenu
             // 
-            this.barButtonItem6.Caption = "PS3";
-            this.barButtonItem6.Id = 5;
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.PS3ConnectMenu.Caption = "PS3";
+            this.PS3ConnectMenu.Id = 32;
+            this.PS3ConnectMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.PS3ConnectButton)});
+            this.PS3ConnectMenu.Name = "PS3ConnectMenu";
             // 
-            // barButtonItem7
+            // PS3ConnectButton
             // 
-            this.barButtonItem7.Caption = "XBOX 360";
-            this.barButtonItem7.Id = 6;
-            this.barButtonItem7.Name = "barButtonItem7";
+            this.PS3ConnectButton.Caption = "Connect To Console...";
+            this.PS3ConnectButton.Id = 34;
+            this.PS3ConnectButton.Name = "PS3ConnectButton";
+            this.PS3ConnectButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.PS3ConnectButton_ItemClick);
             // 
-            // barButtonItem2
+            // XBConsole
             // 
-            this.barButtonItem2.ActAsDropDown = true;
-            this.barButtonItem2.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem2.Caption = "TOOLS";
-            this.barButtonItem2.DropDownControl = this.ToolsMenu;
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.XBConsole.Caption = "Xbox 360";
+            this.XBConsole.Id = 33;
+            this.XBConsole.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.Xbox360ConnectButton)});
+            this.XBConsole.Name = "XBConsole";
+            // 
+            // Xbox360ConnectButton
+            // 
+            this.Xbox360ConnectButton.Caption = "Connect To Console...";
+            this.Xbox360ConnectButton.Id = 35;
+            this.Xbox360ConnectButton.Name = "Xbox360ConnectButton";
+            // 
+            // ToolsMenuBar
+            // 
+            this.ToolsMenuBar.ActAsDropDown = true;
+            this.ToolsMenuBar.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.ToolsMenuBar.Caption = "TOOLS";
+            this.ToolsMenuBar.DropDownControl = this.ToolsMenu;
+            this.ToolsMenuBar.Id = 1;
+            this.ToolsMenuBar.Name = "ToolsMenuBar";
+            this.ToolsMenuBar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ToolsMenuBar_ItemClick);
             // 
             // ToolsMenu
             // 
             this.ToolsMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11)});
-            this.ToolsMenu.Manager = this.barManager1;
+            new DevExpress.XtraBars.LinkPersistInfo(this.GameBackupFilesButton, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.GameUpdateFinderButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.FileManagerButton, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.PackageManagerButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.WebManControlsMenu)});
+            this.ToolsMenu.Manager = this.MainMenu;
             this.ToolsMenu.Name = "ToolsMenu";
             // 
-            // barButtonItem8
+            // GameBackupFilesButton
             // 
-            this.barButtonItem8.Caption = "Game Backup Files...";
-            this.barButtonItem8.Id = 7;
-            this.barButtonItem8.Name = "barButtonItem8";
+            this.GameBackupFilesButton.Caption = "Game Backup Files...";
+            this.GameBackupFilesButton.Id = 7;
+            this.GameBackupFilesButton.Name = "GameBackupFilesButton";
+            this.GameBackupFilesButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.GameBackupFilesButton_ItemClick);
             // 
-            // barButtonItem9
+            // GameUpdateFinderButton
             // 
-            this.barButtonItem9.Caption = "Game Update Finder...";
-            this.barButtonItem9.Id = 8;
-            this.barButtonItem9.Name = "barButtonItem9";
+            this.GameUpdateFinderButton.Caption = "Game Update Finder...";
+            this.GameUpdateFinderButton.Id = 8;
+            this.GameUpdateFinderButton.Name = "GameUpdateFinderButton";
+            this.GameUpdateFinderButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.GameUpdateFinderButton_ItemClick);
             // 
-            // barButtonItem10
+            // FileManagerButton
             // 
-            this.barButtonItem10.Caption = "File Manager...";
-            this.barButtonItem10.Id = 12;
-            this.barButtonItem10.Name = "barButtonItem10";
+            this.FileManagerButton.Caption = "File Manager...";
+            this.FileManagerButton.Id = 12;
+            this.FileManagerButton.Name = "FileManagerButton";
+            this.FileManagerButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FileManagerButton_ItemClick);
             // 
-            // barButtonItem11
+            // PackageManagerButton
             // 
-            this.barButtonItem11.Caption = "Package Manager...";
-            this.barButtonItem11.Id = 13;
-            this.barButtonItem11.Name = "barButtonItem11";
+            this.PackageManagerButton.Caption = "Package Manager...";
+            this.PackageManagerButton.Id = 13;
+            this.PackageManagerButton.Name = "PackageManagerButton";
+            this.PackageManagerButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.PackageManagerButton_ItemClick);
             // 
-            // barButtonItem3
+            // WebManControlsMenu
             // 
-            this.barButtonItem3.ActAsDropDown = true;
-            this.barButtonItem3.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem3.Caption = "APPLICATIONS";
-            this.barButtonItem3.DropDownControl = this.ApplicationsMenu;
-            this.barButtonItem3.Id = 2;
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.WebManControlsMenu.Caption = "WebMAN Controls...";
+            this.WebManControlsMenu.Id = 37;
+            this.WebManControlsMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem15),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem17)});
+            this.WebManControlsMenu.Name = "WebManControlsMenu";
+            // 
+            // barSubItem3
+            // 
+            this.barSubItem3.Caption = "Power Functions";
+            this.barSubItem3.Id = 40;
+            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.ShutDownButtonBar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RestartButtonBar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem20),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem21)});
+            this.barSubItem3.Name = "barSubItem3";
+            // 
+            // ShutDownButtonBar
+            // 
+            this.ShutDownButtonBar.Caption = "Shutdown...";
+            this.ShutDownButtonBar.Id = 41;
+            this.ShutDownButtonBar.Name = "ShutDownButtonBar";
+            this.ShutDownButtonBar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ShutDownButtonBar_ItemClick);
+            // 
+            // RestartButtonBar
+            // 
+            this.RestartButtonBar.Caption = "Restart...";
+            this.RestartButtonBar.Id = 42;
+            this.RestartButtonBar.Name = "RestartButtonBar";
+            this.RestartButtonBar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RestartButtonBar_ItemClick);
+            // 
+            // barButtonItem20
+            // 
+            this.barButtonItem20.Caption = "Cold Reboot...";
+            this.barButtonItem20.Id = 43;
+            this.barButtonItem20.Name = "barButtonItem20";
+            this.barButtonItem20.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem20_ItemClick);
+            // 
+            // barButtonItem21
+            // 
+            this.barButtonItem21.Caption = "Hard Reboot...";
+            this.barButtonItem21.Id = 44;
+            this.barButtonItem21.Name = "barButtonItem21";
+            this.barButtonItem21.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem21_ItemClick);
+            // 
+            // barSubItem4
+            // 
+            this.barSubItem4.Caption = "System Info";
+            this.barSubItem4.Id = 45;
+            this.barSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem23),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem24),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem26)});
+            this.barSubItem4.Name = "barSubItem4";
+            // 
+            // barButtonItem23
+            // 
+            this.barButtonItem23.Caption = "Show System Information...";
+            this.barButtonItem23.Id = 46;
+            this.barButtonItem23.Name = "barButtonItem23";
+            this.barButtonItem23.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem23_ItemClick);
+            // 
+            // barButtonItem24
+            // 
+            this.barButtonItem24.Caption = "Show CPU/RSX Temperature...";
+            this.barButtonItem24.Id = 47;
+            this.barButtonItem24.Name = "barButtonItem24";
+            this.barButtonItem24.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem24_ItemClick);
+            // 
+            // barButtonItem26
+            // 
+            this.barButtonItem26.Caption = "Show Minimum Version...";
+            this.barButtonItem26.Id = 48;
+            this.barButtonItem26.Name = "barButtonItem26";
+            this.barButtonItem26.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem26_ItemClick);
+            // 
+            // barButtonItem15
+            // 
+            this.barButtonItem15.Caption = "Notify Message...";
+            this.barButtonItem15.Id = 38;
+            this.barButtonItem15.Name = "barButtonItem15";
+            this.barButtonItem15.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem15_ItemClick_1);
+            // 
+            // barButtonItem17
+            // 
+            this.barButtonItem17.Caption = "Virtual Controller...";
+            this.barButtonItem17.Id = 39;
+            this.barButtonItem17.Name = "barButtonItem17";
+            this.barButtonItem17.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem17_ItemClick);
+            // 
+            // ApplicationMenuBar
+            // 
+            this.ApplicationMenuBar.ActAsDropDown = true;
+            this.ApplicationMenuBar.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.ApplicationMenuBar.Caption = "APPLICATIONS";
+            this.ApplicationMenuBar.DropDownControl = this.ApplicationsMenu;
+            this.ApplicationMenuBar.Id = 2;
+            this.ApplicationMenuBar.Name = "ApplicationMenuBar";
             // 
             // ApplicationsMenu
             // 
-            this.ApplicationsMenu.Manager = this.barManager1;
+            this.ApplicationsMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem27),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem28)});
+            this.ApplicationsMenu.Manager = this.MainMenu;
             this.ApplicationsMenu.Name = "ApplicationsMenu";
             // 
-            // barButtonItem4
+            // barButtonItem27
             // 
-            this.barButtonItem4.ActAsDropDown = true;
-            this.barButtonItem4.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem4.Caption = "OPTIONS";
-            this.barButtonItem4.DropDownControl = this.OptionsMenu;
-            this.barButtonItem4.Id = 3;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem27.Caption = "Control Console (CCAPI)";
+            this.barButtonItem27.Id = 49;
+            this.barButtonItem27.Name = "barButtonItem27";
+            // 
+            // barButtonItem28
+            // 
+            this.barButtonItem28.Caption = "FileZilla";
+            this.barButtonItem28.Id = 50;
+            this.barButtonItem28.Name = "barButtonItem28";
+            // 
+            // OptionsMenuBar
+            // 
+            this.OptionsMenuBar.ActAsDropDown = true;
+            this.OptionsMenuBar.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.OptionsMenuBar.Caption = "OPTIONS";
+            this.OptionsMenuBar.DropDownControl = this.OptionsMenu;
+            this.OptionsMenuBar.Id = 3;
+            this.OptionsMenuBar.Name = "OptionsMenuBar";
             // 
             // OptionsMenu
             // 
             this.OptionsMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem13, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem14),
+            new DevExpress.XtraBars.LinkPersistInfo(this.AddConsoleButton, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditGameRegionButton, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditApplicationsButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.EditYourLists),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem16, true)});
-            this.OptionsMenu.Manager = this.barManager1;
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem16, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.Exitbutton)});
+            this.OptionsMenu.Manager = this.MainMenu;
             this.OptionsMenu.Name = "OptionsMenu";
             // 
-            // barButtonItem12
+            // AddConsoleButton
             // 
-            this.barButtonItem12.Caption = "Add New Console...";
-            this.barButtonItem12.Id = 14;
-            this.barButtonItem12.Name = "barButtonItem12";
+            this.AddConsoleButton.Caption = "Add New Console...";
+            this.AddConsoleButton.Id = 14;
+            this.AddConsoleButton.Name = "AddConsoleButton";
+            this.AddConsoleButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AddConsoleButton_ItemClick);
             // 
-            // barButtonItem13
+            // EditGameRegionButton
             // 
-            this.barButtonItem13.Caption = "Edit Game Regions...";
-            this.barButtonItem13.Id = 15;
-            this.barButtonItem13.Name = "barButtonItem13";
+            this.EditGameRegionButton.Caption = "Edit Game Regions...";
+            this.EditGameRegionButton.Id = 15;
+            this.EditGameRegionButton.Name = "EditGameRegionButton";
+            this.EditGameRegionButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditGameRegionButton_ItemClick);
             // 
-            // barButtonItem14
+            // EditApplicationsButton
             // 
-            this.barButtonItem14.Caption = "Edit Applications...";
-            this.barButtonItem14.Id = 16;
-            this.barButtonItem14.Name = "barButtonItem14";
+            this.EditApplicationsButton.Caption = "Edit Applications...";
+            this.EditApplicationsButton.Id = 16;
+            this.EditApplicationsButton.Name = "EditApplicationsButton";
+            this.EditApplicationsButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditApplicationsButton_ItemClick);
             // 
             // EditYourLists
             // 
@@ -1741,27 +1427,123 @@ namespace ModioX.Forms.Windows
             this.barButtonItem16.Name = "barButtonItem16";
             this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Settings_ItemClick);
             // 
-            // barButtonItem5
+            // Exitbutton
             // 
-            this.barButtonItem5.ActAsDropDown = true;
-            this.barButtonItem5.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem5.Caption = "HELP";
-            this.barButtonItem5.DropDownControl = this.HelpMenu;
-            this.barButtonItem5.Id = 4;
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.Exitbutton.Caption = "Exit  Application Alt + F4";
+            this.Exitbutton.Id = 20;
+            this.Exitbutton.Name = "Exitbutton";
+            this.Exitbutton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem15_ItemClick);
+            // 
+            // HelpMenuBar
+            // 
+            this.HelpMenuBar.ActAsDropDown = true;
+            this.HelpMenuBar.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.HelpMenuBar.Caption = "HELP";
+            this.HelpMenuBar.DropDownControl = this.HelpMenu;
+            this.HelpMenuBar.Id = 4;
+            this.HelpMenuBar.Name = "HelpMenuBar";
             // 
             // HelpMenu
             // 
             this.HelpMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.skinBarSubItem1)});
-            this.HelpMenu.Manager = this.barManager1;
+            new DevExpress.XtraBars.LinkPersistInfo(this.ReportBugButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DiscordServerButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.OfficailSourceButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.skinBarSubItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.HelpSpacer1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.OpenLogFileButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.OpenLogFolderButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.HelpSpacer2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.CheckForUpdateButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.WhatsNewButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.HelpSpacer3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.AboutBar)});
+            this.HelpMenu.Manager = this.MainMenu;
             this.HelpMenu.Name = "HelpMenu";
+            // 
+            // ReportBugButton
+            // 
+            this.ReportBugButton.Caption = "Report Bug...";
+            this.ReportBugButton.Id = 21;
+            this.ReportBugButton.Name = "ReportBugButton";
+            this.ReportBugButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ReportBugButton_ItemClick);
+            // 
+            // DiscordServerButton
+            // 
+            this.DiscordServerButton.Caption = "Discord Server...";
+            this.DiscordServerButton.Id = 22;
+            this.DiscordServerButton.Name = "DiscordServerButton";
+            this.DiscordServerButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DiscordServerButton_ItemClick);
+            // 
+            // OfficailSourceButton
+            // 
+            this.OfficailSourceButton.Caption = "Officail Source...";
+            this.OfficailSourceButton.Id = 23;
+            this.OfficailSourceButton.Name = "OfficailSourceButton";
+            this.OfficailSourceButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.OfficailSourceButton_ItemClick);
             // 
             // skinBarSubItem1
             // 
-            this.skinBarSubItem1.Caption = "Skin Changer";
+            this.skinBarSubItem1.Caption = "Skin Changer...";
             this.skinBarSubItem1.Id = 19;
             this.skinBarSubItem1.Name = "skinBarSubItem1";
+            // 
+            // HelpSpacer1
+            // 
+            this.HelpSpacer1.Caption = "_________________________";
+            this.HelpSpacer1.DropDownEnabled = false;
+            this.HelpSpacer1.Enabled = false;
+            this.HelpSpacer1.Id = 26;
+            this.HelpSpacer1.Name = "HelpSpacer1";
+            // 
+            // OpenLogFileButton
+            // 
+            this.OpenLogFileButton.Caption = "Open Log File...";
+            this.OpenLogFileButton.Id = 24;
+            this.OpenLogFileButton.Name = "OpenLogFileButton";
+            this.OpenLogFileButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.OpenLogFileButton_ItemClick);
+            // 
+            // OpenLogFolderButton
+            // 
+            this.OpenLogFolderButton.Caption = "Open Log Folder";
+            this.OpenLogFolderButton.Id = 25;
+            this.OpenLogFolderButton.Name = "OpenLogFolderButton";
+            this.OpenLogFolderButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.OpenLogFolderButton_ItemClick);
+            // 
+            // HelpSpacer2
+            // 
+            this.HelpSpacer2.Caption = "_________________________";
+            this.HelpSpacer2.Enabled = false;
+            this.HelpSpacer2.Id = 27;
+            this.HelpSpacer2.Name = "HelpSpacer2";
+            // 
+            // CheckForUpdateButton
+            // 
+            this.CheckForUpdateButton.Caption = "Check For Updates...";
+            this.CheckForUpdateButton.Id = 30;
+            this.CheckForUpdateButton.Name = "CheckForUpdateButton";
+            this.CheckForUpdateButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.CheckForUpdateButton_ItemClick);
+            // 
+            // WhatsNewButton
+            // 
+            this.WhatsNewButton.Caption = "What\'s New...";
+            this.WhatsNewButton.Id = 29;
+            this.WhatsNewButton.Name = "WhatsNewButton";
+            this.WhatsNewButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.WhatsNewButton_ItemClick);
+            // 
+            // HelpSpacer3
+            // 
+            this.HelpSpacer3.Caption = "_________________________";
+            this.HelpSpacer3.Enabled = false;
+            this.HelpSpacer3.Id = 31;
+            this.HelpSpacer3.Name = "HelpSpacer3";
+            // 
+            // AboutBar
+            // 
+            this.AboutBar.Caption = "About...";
+            this.AboutBar.Id = 28;
+            this.AboutBar.Name = "AboutBar";
+            this.AboutBar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AboutBar_ItemClick);
             // 
             // bar3
             // 
@@ -1780,7 +1562,7 @@ namespace ModioX.Forms.Windows
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Manager = this.MainMenu;
             this.barDockControlTop.Size = new System.Drawing.Size(1584, 25);
             // 
             // barDockControlBottom
@@ -1788,7 +1570,7 @@ namespace ModioX.Forms.Windows
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 802);
-            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Manager = this.MainMenu;
             this.barDockControlBottom.Size = new System.Drawing.Size(1584, 19);
             // 
             // barDockControlLeft
@@ -1796,7 +1578,7 @@ namespace ModioX.Forms.Windows
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
-            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Manager = this.MainMenu;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 777);
             // 
             // barDockControlRight
@@ -1804,8 +1586,20 @@ namespace ModioX.Forms.Windows
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1584, 25);
-            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Manager = this.MainMenu;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 777);
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "PS3";
+            this.barButtonItem6.Id = 5;
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "XBOX 360";
+            this.barButtonItem7.Id = 6;
+            this.barButtonItem7.Name = "barButtonItem7";
             // 
             // barSubItem1
             // 
@@ -1830,6 +1624,12 @@ namespace ModioX.Forms.Windows
             // 
             this.workspaceManager1.TargetControl = this;
             this.workspaceManager1.TransitionType = pushTransition1;
+            // 
+            // barDockingMenuItem1
+            // 
+            this.barDockingMenuItem1.Caption = "barDockingMenuItem1";
+            this.barDockingMenuItem1.Id = 36;
+            this.barDockingMenuItem1.Name = "barDockingMenuItem1";
             // 
             // LabelNoModsFound
             // 
@@ -2005,7 +1805,7 @@ namespace ModioX.Forms.Windows
             // comboBoxEdit1
             // 
             this.comboBoxEdit1.Location = new System.Drawing.Point(490, 39);
-            this.comboBoxEdit1.MenuManager = this.barManager1;
+            this.comboBoxEdit1.MenuManager = this.MainMenu;
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -2474,6 +2274,14 @@ namespace ModioX.Forms.Windows
             this.LabelInstalledGameModsStatus.Size = new System.Drawing.Size(170, 33);
             this.LabelInstalledGameModsStatus.Text = "0 Mods Installed (0 Files Total)";
             // 
+            // bar1
+            // 
+            this.bar1.BarName = "Custom 4";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 1;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.Text = "Custom 4";
+            // 
             // MainWindow
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
@@ -2485,7 +2293,6 @@ namespace ModioX.Forms.Windows
             this.ClientSize = new System.Drawing.Size(1584, 821);
             this.Controls.Add(this.SectionInstalledGameMods);
             this.Controls.Add(this.ToolStripFooter);
-            this.Controls.Add(this.MenuStripHeader);
             this.Controls.Add(this.SectionArchiveInformation);
             this.Controls.Add(this.SectionModsLibrary);
             this.Controls.Add(this.SectionGames);
@@ -2496,7 +2303,6 @@ namespace ModioX.Forms.Windows
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("MainWindow.IconOptions.Icon")));
-            this.MainMenuStrip = this.MenuStripHeader;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(1586, 853);
             this.Name = "MainWindow";
@@ -2516,15 +2322,13 @@ namespace ModioX.Forms.Windows
             this.PanelModsInstallationPaths.ResumeLayout(false);
             this.ToolStripArchiveInformation.ResumeLayout(false);
             this.ToolStripArchiveInformation.PerformLayout();
-            this.MenuStripHeader.ResumeLayout(false);
-            this.MenuStripHeader.PerformLayout();
             this.ToolStripFooter.ResumeLayout(false);
             this.ToolStripFooter.PerformLayout();
             this.SectionModsLibrary.ResumeLayout(false);
             this.SectionModsLibrary.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.XtraDgvMods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConnectMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolsMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationsMenu)).EndInit();
@@ -2560,11 +2364,6 @@ namespace ModioX.Forms.Windows
         private System.Windows.Forms.Label LabelDescription;
         private DarkUI.Controls.DarkScrollBar ScrollBarDetails;
         private DarkUI.Controls.DarkSectionPanel SectionArchiveInformation;
-        private DarkUI.Controls.DarkMenuStrip MenuStripHeader;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripFile;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemHelp;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemConnectPS3;
-        private System.Windows.Forms.ToolStripSeparator MenuStripFileSeparator0;
         private DarkUI.Controls.DarkToolStrip ToolStripFooter;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelConnectedConsole;
         private System.Windows.Forms.ToolStripSeparator ToolStripStatusSeperator0;
@@ -2582,18 +2381,12 @@ namespace ModioX.Forms.Windows
         private System.Windows.Forms.Label LabelFirmware;
         private System.Windows.Forms.Label LabelCategory;
         private System.Windows.Forms.Label LabelHeaderCategory;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemOfficialSourceCode;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemReportIssue;
-        private System.Windows.Forms.ToolStripSeparator MenuItemHelpSeperator0;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripHelpAbout;
         private DarkUI.Controls.DarkContextMenu ContextMenuMods;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsInstallFiles;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsUninstallFiles;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsDownloadArchive;
         private System.Windows.Forms.ToolStripSeparator ContextMenuModsSeparator0;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsReportOnGitHub;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemApplications;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemTools;
         private System.Windows.Forms.ToolStripButton ToolItemModInstall;
         private System.Windows.Forms.ToolStripButton ToolItemModDownload;
         private DarkUI.Controls.DarkSectionPanel SectionModsLibrary;
@@ -2602,19 +2395,10 @@ namespace ModioX.Forms.Windows
         private DarkUI.Controls.DarkComboBox ComboBoxModType;
         private XDevkit.XtraDataGridView DgvMods;
         private DarkUI.Controls.DarkSectionPanel SectionModsInstallFilePaths;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsGameBackupFiles;
         private System.Windows.Forms.ToolStripButton ToolItemModUninstall;
         private System.Windows.Forms.ToolStripButton ToolItemModAddToFavorite;
         private System.Windows.Forms.Panel PanelModsInstallationPaths;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripConnectExit;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripRefreshData;
         private System.Windows.Forms.Label LabelHeaderName;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripConnectPS3Console;
-        private System.Windows.Forms.ToolStripSeparator MenuItemToolsSeperator1;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsFileManager;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemOptions;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsAddNewConsole;
-        private System.Windows.Forms.ToolStripSeparator MenuItemSettingsSeperator0;
         private System.Windows.Forms.Panel PanelModsLibraryFilters;
         private DarkUI.Controls.DarkTextBox TextBoxSearch;
         private System.Windows.Forms.Label LabelSearch;
@@ -2644,35 +2428,13 @@ namespace ModioX.Forms.Windows
         private System.Windows.Forms.Label LabelSelectRegion;
         private System.Windows.Forms.Label LabelNoModsFound;
         private System.Windows.Forms.Label LabelNoModsInstalled;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsEditGameRegions;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsEditExternalApplications;
-        private System.Windows.Forms.ToolStripSeparator MenuItemSettingsSeperator1;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemHelpDiscordServer;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripHelpCheckForUpdates;
         private DarkUI.Controls.DarkTitle LabelTitleHomebrew;
         private System.Windows.Forms.FlowLayoutPanel PanelHomebrew;
-        private System.Windows.Forms.ToolStripSeparator MenuItemHelpSeperator1;
         private XDevkit.XtraDataGridView DgvInstallationFiles;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnInstallationFiles;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsGameUpdatesFinder;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsWebManControls;
-        private System.Windows.Forms.ToolStripSeparator MenuItemToolsSeperator0;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsWebManNotify;
-        private System.Windows.Forms.ToolStripMenuItem MenuToolStripWebManSystemInformation;
-        private System.Windows.Forms.ToolStripMenuItem MenuToolStripWebManPowerFunctions;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsWebManShutdown;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsWebManRestart;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsWebManShowMinVersion;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsWebManShowCPURSX;
-        private System.Windows.Forms.ToolStripMenuItem MenuToolStripWebManShowSystemInformation;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsWebManVirtualController;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsWebManSoftReboot;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsWebManHardReboot;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsAddToList;
         private System.Windows.Forms.ToolStripSeparator ContextMenuModsSeparator1;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsRemoveFromList;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemToolsPackageManager;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsFirmware;
@@ -2693,22 +2455,17 @@ namespace ModioX.Forms.Windows
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledNoOfFiles;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledDateTime;
         private System.Windows.Forms.DataGridViewImageColumn ColumnModsInstalledUninstall;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripHelpWhatsNew;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripHelpOpenLogFile;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripHelpOpenLogFolder;
-        private System.Windows.Forms.ToolStripSeparator MenuItemHelpSeperator2;
-        private System.Windows.Forms.ToolStripMenuItem xBOXToolStripMenuItem;
-        private BarManager barManager1;
+        private BarManager MainMenu;
         private Bar bar2;
-        private BarButtonItem barButtonItem1;
+        private BarButtonItem ConnectMenuBar;
         private PopupMenu HelpMenu;
-        private BarButtonItem barButtonItem2;
+        private BarButtonItem ToolsMenuBar;
         private PopupMenu OptionsMenu;
-        private BarButtonItem barButtonItem3;
+        private BarButtonItem ApplicationMenuBar;
         private PopupMenu ApplicationsMenu;
-        private BarButtonItem barButtonItem4;
+        private BarButtonItem OptionsMenuBar;
         private PopupMenu ToolsMenu;
-        private BarButtonItem barButtonItem5;
+        private BarButtonItem HelpMenuBar;
         private PopupMenu ConnectMenu;
         private Bar bar3;
         private BarDockControl barDockControlTop;
@@ -2718,17 +2475,17 @@ namespace ModioX.Forms.Windows
         private BarButtonItem barButtonItem6;
         private BarButtonItem barButtonItem7;
         private ComboBoxEdit comboBoxEdit1;
-        private BarButtonItem barButtonItem8;
-        private BarButtonItem barButtonItem9;
-        private BarButtonItem barButtonItem10;
-        private BarButtonItem barButtonItem11;
+        private BarButtonItem GameBackupFilesButton;
+        private BarButtonItem GameUpdateFinderButton;
+        private BarButtonItem FileManagerButton;
+        private BarButtonItem PackageManagerButton;
         private BarSubItem barSubItem1;
         private BarToolbarsListItem barToolbarsListItem1;
         private BarWorkspaceMenuItem barWorkspaceMenuItem1;
         private DevExpress.Utils.WorkspaceManager workspaceManager1;
-        private BarButtonItem barButtonItem12;
-        private BarButtonItem barButtonItem13;
-        private BarButtonItem barButtonItem14;
+        private BarButtonItem AddConsoleButton;
+        private BarButtonItem EditGameRegionButton;
+        private BarButtonItem EditApplicationsButton;
         private BarButtonItem EditYourLists;
         private BarButtonItem barButtonItem16;
         private SkinBarSubItem skinBarSubItem1;
@@ -2744,5 +2501,37 @@ namespace ModioX.Forms.Windows
         private DevExpress.XtraGrid.Columns.GridColumn ColumnModNoOfFiles;
         private DevExpress.XtraGrid.Columns.GridColumn ColumnModDownload;
         private DevExpress.XtraGrid.Columns.GridColumn ColumnModInstall;
+        private BarButtonItem Exitbutton;
+        private BarButtonItem ReportBugButton;
+        private BarButtonItem DiscordServerButton;
+        private BarButtonItem HelpSpacer1;
+        private BarButtonItem OfficailSourceButton;
+        private BarButtonItem OpenLogFileButton;
+        private BarButtonItem OpenLogFolderButton;
+        private BarButtonItem HelpSpacer2;
+        private BarButtonItem CheckForUpdateButton;
+        private BarButtonItem WhatsNewButton;
+        private BarButtonItem HelpSpacer3;
+        private BarButtonItem AboutBar;
+        private BarSubItem PS3ConnectMenu;
+        private BarButtonItem PS3ConnectButton;
+        private BarSubItem XBConsole;
+        private BarButtonItem Xbox360ConnectButton;
+        private BarDockingMenuItem barDockingMenuItem1;
+        private BarSubItem WebManControlsMenu;
+        private BarSubItem barSubItem3;
+        private BarButtonItem ShutDownButtonBar;
+        private BarButtonItem RestartButtonBar;
+        private BarButtonItem barButtonItem20;
+        private BarButtonItem barButtonItem21;
+        private BarSubItem barSubItem4;
+        private BarButtonItem barButtonItem23;
+        private BarButtonItem barButtonItem24;
+        private BarButtonItem barButtonItem26;
+        private BarButtonItem barButtonItem15;
+        private BarButtonItem barButtonItem17;
+        private BarButtonItem barButtonItem27;
+        private BarButtonItem barButtonItem28;
+        private Bar bar1;
     }
 }
