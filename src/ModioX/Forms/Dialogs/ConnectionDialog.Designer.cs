@@ -29,27 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConnectionDialog));
-            this.ButtonConnect = new DarkUI.Controls.DarkButton();
             this.ListViewConsoleProfiles = new DarkUI.Controls.DarkListView();
             this.SectionItems = new DarkUI.Controls.DarkSectionPanel();
             this.ButtonDelete = new DarkUI.Controls.DarkButton();
             this.ButtonEdit = new DarkUI.Controls.DarkButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.SectionItems.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ButtonConnect
-            // 
-            this.ButtonConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonConnect.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.ButtonConnect.Enabled = false;
-            this.ButtonConnect.Location = new System.Drawing.Point(156, 228);
-            this.ButtonConnect.Name = "ButtonConnect";
-            this.ButtonConnect.Size = new System.Drawing.Size(80, 25);
-            this.ButtonConnect.TabIndex = 1;
-            this.ButtonConnect.Text = "Connect";
-            this.ButtonConnect.Click += new System.EventHandler(this.ButtonConnect_Click);
             // 
             // ListViewConsoleProfiles
             // 
@@ -83,6 +69,7 @@
             this.ButtonDelete.Enabled = false;
             this.ButtonDelete.Location = new System.Drawing.Point(77, 228);
             this.ButtonDelete.Name = "ButtonDelete";
+            this.ButtonDelete.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonDelete.Size = new System.Drawing.Size(73, 25);
             this.ButtonDelete.TabIndex = 2;
             this.ButtonDelete.Text = "Delete";
@@ -96,25 +83,36 @@
             this.ButtonEdit.Enabled = false;
             this.ButtonEdit.Location = new System.Drawing.Point(12, 228);
             this.ButtonEdit.Name = "ButtonEdit";
+            this.ButtonEdit.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonEdit.Size = new System.Drawing.Size(60, 25);
             this.ButtonEdit.TabIndex = 3;
             this.ButtonEdit.Text = "Edit";
             this.ButtonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(156, 228);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(80, 25);
+            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.Text = "Connect";
+            // 
             // ConnectionDialog
             // 
+            this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Appearance.Options.UseFont = true;
+            this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(248, 265);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.ButtonEdit);
             this.Controls.Add(this.ButtonDelete);
             this.Controls.Add(this.SectionItems);
-            this.Controls.Add(this.ButtonConnect);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.Gainsboro;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("ConnectionDialog.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ConnectionDialog";
@@ -128,10 +126,10 @@
         }
 
         #endregion
-        private DarkUI.Controls.DarkButton ButtonConnect;
         private DarkUI.Controls.DarkListView ListViewConsoleProfiles;
         private DarkUI.Controls.DarkSectionPanel SectionItems;
         private DarkUI.Controls.DarkButton ButtonDelete;
         private DarkUI.Controls.DarkButton ButtonEdit;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
