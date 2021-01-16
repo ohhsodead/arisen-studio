@@ -8,7 +8,6 @@ All notable changes to this project will be documented in this file.
 - Upgraded Application to .NET Framework 4.8
 - Upgraded dependencies and removed redundant\unused ones
 - You can now create and add mods to your own lists
-- Added Transfer Dialog for installing/uninstalling mods
 - Added View Log button to Help menu
 - Added Open Log Folder button to Help menu
 - Added What's New button to Help menu
