@@ -25,6 +25,7 @@ using FtpExtensions = ModioX.Extensions.FtpExtensions;
 using ModioX.Forms.Dialogs;
 using System.Threading.Tasks;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
 
 namespace ModioX.Forms.Windows
 {
@@ -1024,6 +1025,18 @@ namespace ModioX.Forms.Windows
                     Settings.FavoritedIds.Contains(modItem.Id)
                     ? ImageExtensions.ResizeBitmap(Resources.filled_heart, 20, 20)
                     : ImageExtensions.ResizeBitmap(Resources.heart, 20, 20));
+
+                gridView1.AddNewRow();
+                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModId, modItem.Id);
+                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModName, modItem.Name);
+                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModSystemType, modItem.Firmware);
+                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModType, modItem.Type);
+                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModRegion, modItem.Region);
+                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModVersion, modItem.Version);
+                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModCreator, modItem.Author);
+                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModNoOfFiles, installFiles.Count() + (installFiles.Count() > 1 ? " Files" : " File"));
+                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModDownload, ImageExtensions.ResizeBitmap(Resources.install, 20, 20));
+                gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModInstall, ImageExtensions.ResizeBitmap(Resources.download_from_the_cloud, 20, 20));
             }
 
             LabelNoModsFound.Visible = DgvMods.Rows.Count == 0;

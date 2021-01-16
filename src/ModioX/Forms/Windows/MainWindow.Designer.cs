@@ -133,21 +133,18 @@ namespace ModioX.Forms.Windows
             this.ToolStripLabelStats = new System.Windows.Forms.ToolStripLabel();
             this.LabelSelectSystemType = new System.Windows.Forms.Label();
             this.SectionModsLibrary = new DarkUI.Controls.DarkSectionPanel();
-            this.LabelNoModsFound = new System.Windows.Forms.Label();
-            this.DgvMods = new XDevkit.XtraDataGridView();
-            this.ColumnModsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsFirmware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsNoFiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsInstall = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnModsDownload = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnModsFavourite = new System.Windows.Forms.DataGridViewImageColumn();
-            this.PanelModsLibraryFilters = new System.Windows.Forms.Panel();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.XtraDgvMods = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ColumnModId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColumnModName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColumnModSystemType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColumnModType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColumnModRegion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColumnModVersion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColumnModCreator = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColumnModNoOfFiles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColumnModDownload = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColumnModInstall = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -181,6 +178,21 @@ namespace ModioX.Forms.Windows
             this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
             this.barWorkspaceMenuItem1 = new DevExpress.XtraBars.BarWorkspaceMenuItem();
             this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager(this.components);
+            this.LabelNoModsFound = new System.Windows.Forms.Label();
+            this.DgvMods = new XDevkit.XtraDataGridView();
+            this.ColumnModsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsFirmware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsNoFiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsInstall = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnModsDownload = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnModsFavourite = new System.Windows.Forms.DataGridViewImageColumn();
+            this.PanelModsLibraryFilters = new System.Windows.Forms.Panel();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ComboBoxRegion = new DarkUI.Controls.DarkComboBox();
             this.LabelSelectRegion = new System.Windows.Forms.Label();
             this.LabelTitleMods = new DarkUI.Controls.DarkTitle();
@@ -227,15 +239,17 @@ namespace ModioX.Forms.Windows
             this.MenuStripHeader.SuspendLayout();
             this.ToolStripFooter.SuspendLayout();
             this.SectionModsLibrary.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).BeginInit();
-            this.PanelModsLibraryFilters.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XtraDgvMods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConnectMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolsMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationsMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OptionsMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HelpMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).BeginInit();
+            this.PanelModsLibraryFilters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             this.SectionGames.SuspendLayout();
             this.FlowPanelCategories.SuspendLayout();
             this.SectionInstalledGameMods.SuspendLayout();
@@ -1404,6 +1418,7 @@ namespace ModioX.Forms.Windows
             this.SectionModsLibrary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.SectionModsLibrary.Controls.Add(this.XtraDgvMods);
             this.SectionModsLibrary.Controls.Add(this.LabelNoModsFound);
             this.SectionModsLibrary.Controls.Add(this.DgvMods);
             this.SectionModsLibrary.Controls.Add(this.PanelModsLibraryFilters);
@@ -1415,187 +1430,123 @@ namespace ModioX.Forms.Windows
             this.SectionModsLibrary.Size = new System.Drawing.Size(901, 493);
             this.SectionModsLibrary.TabIndex = 10;
             // 
-            // LabelNoModsFound
+            // XtraDgvMods
             // 
-            this.LabelNoModsFound.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelNoModsFound.AutoSize = true;
-            this.LabelNoModsFound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.LabelNoModsFound.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelNoModsFound.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelNoModsFound.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelNoModsFound.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelNoModsFound.Location = new System.Drawing.Point(396, 193);
-            this.LabelNoModsFound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
-            this.LabelNoModsFound.Name = "LabelNoModsFound";
-            this.LabelNoModsFound.Size = new System.Drawing.Size(109, 15);
-            this.LabelNoModsFound.TabIndex = 1159;
-            this.LabelNoModsFound.Text = "NO MODS FOUND";
+            this.XtraDgvMods.Location = new System.Drawing.Point(62, 184);
+            this.XtraDgvMods.MainView = this.gridView1;
+            this.XtraDgvMods.MenuManager = this.barManager1;
+            this.XtraDgvMods.Name = "XtraDgvMods";
+            this.XtraDgvMods.Size = new System.Drawing.Size(781, 305);
+            this.XtraDgvMods.TabIndex = 1160;
+            this.XtraDgvMods.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
-            // DgvMods
+            // gridView1
             // 
-            this.DgvMods.AllowUserToAddRows = false;
-            this.DgvMods.AllowUserToDeleteRows = false;
-            this.DgvMods.AllowUserToDragDropRows = false;
-            this.DgvMods.AllowUserToPasteCells = false;
-            this.DgvMods.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.DgvMods.ColumnHeadersHeight = 21;
-            this.DgvMods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DgvMods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnModsId,
-            this.ColumnModsName,
-            this.ColumnModsFirmware,
-            this.ColumnModsType,
-            this.ColumnModsRegion,
-            this.ColumnModsVersion,
-            this.ColumnModsAuthor,
-            this.ColumnModsNoFiles,
-            this.ColumnModsInstall,
-            this.ColumnModsDownload,
-            this.ColumnModsFavourite});
-            this.DgvMods.ContextMenuStrip = this.ContextMenuMods;
-            this.DgvMods.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvMods.Location = new System.Drawing.Point(1, 121);
-            this.DgvMods.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.DgvMods.MultiSelect = false;
-            this.DgvMods.Name = "DgvMods";
-            this.DgvMods.ReadOnly = true;
-            this.DgvMods.RowHeadersWidth = 41;
-            this.DgvMods.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvMods.RowTemplate.Height = 24;
-            this.DgvMods.RowTemplate.ReadOnly = true;
-            this.DgvMods.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvMods.ShowEditingIcon = false;
-            this.DgvMods.Size = new System.Drawing.Size(899, 371);
-            this.DgvMods.TabIndex = 6;
-            this.DgvMods.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMods_CellClick);
-            this.DgvMods.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
-            this.DgvMods.SelectionChanged += new System.EventHandler(this.DgvMods_SelectionChanged);
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ColumnModId,
+            this.ColumnModName,
+            this.ColumnModSystemType,
+            this.ColumnModType,
+            this.ColumnModRegion,
+            this.ColumnModVersion,
+            this.ColumnModCreator,
+            this.ColumnModNoOfFiles,
+            this.ColumnModDownload,
+            this.ColumnModInstall});
+            this.gridView1.GridControl = this.XtraDgvMods;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             // 
-            // ColumnModsId
+            // ColumnModId
             // 
-            this.ColumnModsId.HeaderText = "Id";
-            this.ColumnModsId.MinimumWidth = 6;
-            this.ColumnModsId.Name = "ColumnModsId";
-            this.ColumnModsId.ReadOnly = true;
-            this.ColumnModsId.Visible = false;
-            this.ColumnModsId.Width = 125;
+            this.ColumnModId.Caption = "Id";
+            this.ColumnModId.Name = "ColumnModId";
             // 
-            // ColumnModsName
+            // ColumnModName
             // 
-            this.ColumnModsName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnModsName.HeaderText = "Mod Name";
-            this.ColumnModsName.MinimumWidth = 6;
-            this.ColumnModsName.Name = "ColumnModsName";
-            this.ColumnModsName.ReadOnly = true;
+            this.ColumnModName.Caption = "Name";
+            this.ColumnModName.Name = "ColumnModName";
+            this.ColumnModName.OptionsColumn.AllowEdit = false;
+            this.ColumnModName.OptionsColumn.AllowMove = false;
+            this.ColumnModName.OptionsColumn.AllowShowHide = false;
+            this.ColumnModName.OptionsColumn.AllowSize = false;
+            this.ColumnModName.OptionsColumn.ReadOnly = true;
+            this.ColumnModName.Visible = true;
+            this.ColumnModName.VisibleIndex = 0;
+            this.ColumnModName.Width = 84;
             // 
-            // ColumnModsFirmware
+            // ColumnModSystemType
             // 
-            this.ColumnModsFirmware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsFirmware.HeaderText = "System Type";
-            this.ColumnModsFirmware.MinimumWidth = 6;
-            this.ColumnModsFirmware.Name = "ColumnModsFirmware";
-            this.ColumnModsFirmware.ReadOnly = true;
-            this.ColumnModsFirmware.Width = 101;
+            this.ColumnModSystemType.Caption = "System Type";
+            this.ColumnModSystemType.Name = "ColumnModSystemType";
+            this.ColumnModSystemType.OptionsColumn.ReadOnly = true;
+            this.ColumnModSystemType.Visible = true;
+            this.ColumnModSystemType.VisibleIndex = 1;
+            this.ColumnModSystemType.Width = 84;
             // 
-            // ColumnModsType
+            // ColumnModType
             // 
-            this.ColumnModsType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsType.HeaderText = "Mod Type";
-            this.ColumnModsType.MinimumWidth = 6;
-            this.ColumnModsType.Name = "ColumnModsType";
-            this.ColumnModsType.ReadOnly = true;
-            this.ColumnModsType.Width = 85;
+            this.ColumnModType.Caption = "Mod Type";
+            this.ColumnModType.Name = "ColumnModType";
+            this.ColumnModType.OptionsColumn.ReadOnly = true;
+            this.ColumnModType.Visible = true;
+            this.ColumnModType.VisibleIndex = 2;
+            this.ColumnModType.Width = 84;
             // 
-            // ColumnModsRegion
+            // ColumnModRegion
             // 
-            this.ColumnModsRegion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsRegion.HeaderText = "Region";
-            this.ColumnModsRegion.MinimumWidth = 6;
-            this.ColumnModsRegion.Name = "ColumnModsRegion";
-            this.ColumnModsRegion.ReadOnly = true;
-            this.ColumnModsRegion.Width = 70;
+            this.ColumnModRegion.Caption = "Region";
+            this.ColumnModRegion.Name = "ColumnModRegion";
+            this.ColumnModRegion.OptionsColumn.ReadOnly = true;
+            this.ColumnModRegion.Visible = true;
+            this.ColumnModRegion.VisibleIndex = 3;
+            this.ColumnModRegion.Width = 84;
             // 
-            // ColumnModsVersion
+            // ColumnModVersion
             // 
-            this.ColumnModsVersion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsVersion.HeaderText = "Version";
-            this.ColumnModsVersion.MinimumWidth = 6;
-            this.ColumnModsVersion.Name = "ColumnModsVersion";
-            this.ColumnModsVersion.ReadOnly = true;
-            this.ColumnModsVersion.Width = 72;
+            this.ColumnModVersion.Caption = "Version";
+            this.ColumnModVersion.Name = "ColumnModVersion";
+            this.ColumnModVersion.OptionsColumn.ReadOnly = true;
+            this.ColumnModVersion.Visible = true;
+            this.ColumnModVersion.VisibleIndex = 4;
+            this.ColumnModVersion.Width = 84;
             // 
-            // ColumnModsAuthor
+            // ColumnModCreator
             // 
-            this.ColumnModsAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsAuthor.HeaderText = "Creator";
-            this.ColumnModsAuthor.MinimumWidth = 124;
-            this.ColumnModsAuthor.Name = "ColumnModsAuthor";
-            this.ColumnModsAuthor.ReadOnly = true;
-            this.ColumnModsAuthor.Width = 124;
+            this.ColumnModCreator.Caption = "Creator";
+            this.ColumnModCreator.Name = "ColumnModCreator";
+            this.ColumnModCreator.OptionsColumn.ReadOnly = true;
+            this.ColumnModCreator.Visible = true;
+            this.ColumnModCreator.VisibleIndex = 5;
+            this.ColumnModCreator.Width = 84;
             // 
-            // ColumnModsNoFiles
+            // ColumnModNoOfFiles
             // 
-            this.ColumnModsNoFiles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsNoFiles.HeaderText = "# of Files";
-            this.ColumnModsNoFiles.MinimumWidth = 6;
-            this.ColumnModsNoFiles.Name = "ColumnModsNoFiles";
-            this.ColumnModsNoFiles.ReadOnly = true;
-            this.ColumnModsNoFiles.Width = 80;
+            this.ColumnModNoOfFiles.Caption = "# of Files";
+            this.ColumnModNoOfFiles.Name = "ColumnModNoOfFiles";
+            this.ColumnModNoOfFiles.OptionsColumn.ReadOnly = true;
+            this.ColumnModNoOfFiles.Visible = true;
+            this.ColumnModNoOfFiles.VisibleIndex = 6;
+            this.ColumnModNoOfFiles.Width = 84;
             // 
-            // ColumnModsInstall
+            // ColumnModDownload
             // 
-            this.ColumnModsInstall.HeaderText = "";
-            this.ColumnModsInstall.MinimumWidth = 6;
-            this.ColumnModsInstall.Name = "ColumnModsInstall";
-            this.ColumnModsInstall.ReadOnly = true;
-            this.ColumnModsInstall.Width = 28;
+            this.ColumnModDownload.Name = "ColumnModDownload";
+            this.ColumnModDownload.OptionsColumn.ReadOnly = true;
+            this.ColumnModDownload.Visible = true;
+            this.ColumnModDownload.VisibleIndex = 7;
+            this.ColumnModDownload.Width = 30;
             // 
-            // ColumnModsDownload
+            // ColumnModInstall
             // 
-            this.ColumnModsDownload.HeaderText = "";
-            this.ColumnModsDownload.MinimumWidth = 6;
-            this.ColumnModsDownload.Name = "ColumnModsDownload";
-            this.ColumnModsDownload.ReadOnly = true;
-            this.ColumnModsDownload.Width = 28;
-            // 
-            // ColumnModsFavourite
-            // 
-            this.ColumnModsFavourite.HeaderText = "";
-            this.ColumnModsFavourite.MinimumWidth = 6;
-            this.ColumnModsFavourite.Name = "ColumnModsFavourite";
-            this.ColumnModsFavourite.ReadOnly = true;
-            this.ColumnModsFavourite.Width = 28;
-            // 
-            // PanelModsLibraryFilters
-            // 
-            this.PanelModsLibraryFilters.Controls.Add(this.comboBoxEdit1);
-            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxRegion);
-            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectRegion);
-            this.PanelModsLibraryFilters.Controls.Add(this.LabelTitleMods);
-            this.PanelModsLibraryFilters.Controls.Add(this.LabelTitleFilterMods);
-            this.PanelModsLibraryFilters.Controls.Add(this.TextBoxSearch);
-            this.PanelModsLibraryFilters.Controls.Add(this.LabelSearch);
-            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxModType);
-            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectSystemType);
-            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectType);
-            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxSystemType);
-            this.PanelModsLibraryFilters.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelModsLibraryFilters.Location = new System.Drawing.Point(1, 25);
-            this.PanelModsLibraryFilters.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PanelModsLibraryFilters.Name = "PanelModsLibraryFilters";
-            this.PanelModsLibraryFilters.Size = new System.Drawing.Size(899, 96);
-            this.PanelModsLibraryFilters.TabIndex = 12;
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(490, 39);
-            this.comboBoxEdit1.MenuManager = this.barManager1;
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit1.Size = new System.Drawing.Size(60, 20);
-            this.comboBoxEdit1.TabIndex = 1164;
+            this.ColumnModInstall.Name = "ColumnModInstall";
+            this.ColumnModInstall.OptionsColumn.ReadOnly = true;
+            this.ColumnModInstall.Visible = true;
+            this.ColumnModInstall.VisibleIndex = 8;
+            this.ColumnModInstall.Width = 30;
             // 
             // barManager1
             // 
@@ -1879,6 +1830,188 @@ namespace ModioX.Forms.Windows
             // 
             this.workspaceManager1.TargetControl = this;
             this.workspaceManager1.TransitionType = pushTransition1;
+            // 
+            // LabelNoModsFound
+            // 
+            this.LabelNoModsFound.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelNoModsFound.AutoSize = true;
+            this.LabelNoModsFound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.LabelNoModsFound.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelNoModsFound.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelNoModsFound.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelNoModsFound.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelNoModsFound.Location = new System.Drawing.Point(396, 193);
+            this.LabelNoModsFound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.LabelNoModsFound.Name = "LabelNoModsFound";
+            this.LabelNoModsFound.Size = new System.Drawing.Size(109, 15);
+            this.LabelNoModsFound.TabIndex = 1159;
+            this.LabelNoModsFound.Text = "NO MODS FOUND";
+            // 
+            // DgvMods
+            // 
+            this.DgvMods.AllowUserToAddRows = false;
+            this.DgvMods.AllowUserToDeleteRows = false;
+            this.DgvMods.AllowUserToDragDropRows = false;
+            this.DgvMods.AllowUserToPasteCells = false;
+            this.DgvMods.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.DgvMods.ColumnHeadersHeight = 21;
+            this.DgvMods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DgvMods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnModsId,
+            this.ColumnModsName,
+            this.ColumnModsFirmware,
+            this.ColumnModsType,
+            this.ColumnModsRegion,
+            this.ColumnModsVersion,
+            this.ColumnModsAuthor,
+            this.ColumnModsNoFiles,
+            this.ColumnModsInstall,
+            this.ColumnModsDownload,
+            this.ColumnModsFavourite});
+            this.DgvMods.ContextMenuStrip = this.ContextMenuMods;
+            this.DgvMods.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvMods.Location = new System.Drawing.Point(1, 121);
+            this.DgvMods.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.DgvMods.MultiSelect = false;
+            this.DgvMods.Name = "DgvMods";
+            this.DgvMods.ReadOnly = true;
+            this.DgvMods.RowHeadersWidth = 41;
+            this.DgvMods.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DgvMods.RowTemplate.Height = 24;
+            this.DgvMods.RowTemplate.ReadOnly = true;
+            this.DgvMods.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DgvMods.ShowEditingIcon = false;
+            this.DgvMods.Size = new System.Drawing.Size(899, 371);
+            this.DgvMods.TabIndex = 6;
+            this.DgvMods.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMods_CellClick);
+            this.DgvMods.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
+            this.DgvMods.SelectionChanged += new System.EventHandler(this.DgvMods_SelectionChanged);
+            // 
+            // ColumnModsId
+            // 
+            this.ColumnModsId.HeaderText = "Id";
+            this.ColumnModsId.MinimumWidth = 6;
+            this.ColumnModsId.Name = "ColumnModsId";
+            this.ColumnModsId.ReadOnly = true;
+            this.ColumnModsId.Visible = false;
+            this.ColumnModsId.Width = 125;
+            // 
+            // ColumnModsName
+            // 
+            this.ColumnModsName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnModsName.HeaderText = "Mod Name";
+            this.ColumnModsName.MinimumWidth = 6;
+            this.ColumnModsName.Name = "ColumnModsName";
+            this.ColumnModsName.ReadOnly = true;
+            // 
+            // ColumnModsFirmware
+            // 
+            this.ColumnModsFirmware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsFirmware.HeaderText = "System Type";
+            this.ColumnModsFirmware.MinimumWidth = 6;
+            this.ColumnModsFirmware.Name = "ColumnModsFirmware";
+            this.ColumnModsFirmware.ReadOnly = true;
+            this.ColumnModsFirmware.Width = 101;
+            // 
+            // ColumnModsType
+            // 
+            this.ColumnModsType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsType.HeaderText = "Mod Type";
+            this.ColumnModsType.MinimumWidth = 6;
+            this.ColumnModsType.Name = "ColumnModsType";
+            this.ColumnModsType.ReadOnly = true;
+            this.ColumnModsType.Width = 85;
+            // 
+            // ColumnModsRegion
+            // 
+            this.ColumnModsRegion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsRegion.HeaderText = "Region";
+            this.ColumnModsRegion.MinimumWidth = 6;
+            this.ColumnModsRegion.Name = "ColumnModsRegion";
+            this.ColumnModsRegion.ReadOnly = true;
+            this.ColumnModsRegion.Width = 70;
+            // 
+            // ColumnModsVersion
+            // 
+            this.ColumnModsVersion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsVersion.HeaderText = "Version";
+            this.ColumnModsVersion.MinimumWidth = 6;
+            this.ColumnModsVersion.Name = "ColumnModsVersion";
+            this.ColumnModsVersion.ReadOnly = true;
+            this.ColumnModsVersion.Width = 72;
+            // 
+            // ColumnModsAuthor
+            // 
+            this.ColumnModsAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsAuthor.HeaderText = "Creator";
+            this.ColumnModsAuthor.MinimumWidth = 124;
+            this.ColumnModsAuthor.Name = "ColumnModsAuthor";
+            this.ColumnModsAuthor.ReadOnly = true;
+            this.ColumnModsAuthor.Width = 124;
+            // 
+            // ColumnModsNoFiles
+            // 
+            this.ColumnModsNoFiles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsNoFiles.HeaderText = "# of Files";
+            this.ColumnModsNoFiles.MinimumWidth = 6;
+            this.ColumnModsNoFiles.Name = "ColumnModsNoFiles";
+            this.ColumnModsNoFiles.ReadOnly = true;
+            this.ColumnModsNoFiles.Width = 80;
+            // 
+            // ColumnModsInstall
+            // 
+            this.ColumnModsInstall.HeaderText = "";
+            this.ColumnModsInstall.MinimumWidth = 6;
+            this.ColumnModsInstall.Name = "ColumnModsInstall";
+            this.ColumnModsInstall.ReadOnly = true;
+            this.ColumnModsInstall.Width = 28;
+            // 
+            // ColumnModsDownload
+            // 
+            this.ColumnModsDownload.HeaderText = "";
+            this.ColumnModsDownload.MinimumWidth = 6;
+            this.ColumnModsDownload.Name = "ColumnModsDownload";
+            this.ColumnModsDownload.ReadOnly = true;
+            this.ColumnModsDownload.Width = 28;
+            // 
+            // ColumnModsFavourite
+            // 
+            this.ColumnModsFavourite.HeaderText = "";
+            this.ColumnModsFavourite.MinimumWidth = 6;
+            this.ColumnModsFavourite.Name = "ColumnModsFavourite";
+            this.ColumnModsFavourite.ReadOnly = true;
+            this.ColumnModsFavourite.Width = 28;
+            // 
+            // PanelModsLibraryFilters
+            // 
+            this.PanelModsLibraryFilters.Controls.Add(this.comboBoxEdit1);
+            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxRegion);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectRegion);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelTitleMods);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelTitleFilterMods);
+            this.PanelModsLibraryFilters.Controls.Add(this.TextBoxSearch);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelSearch);
+            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxModType);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectSystemType);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectType);
+            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxSystemType);
+            this.PanelModsLibraryFilters.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelModsLibraryFilters.Location = new System.Drawing.Point(1, 25);
+            this.PanelModsLibraryFilters.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PanelModsLibraryFilters.Name = "PanelModsLibraryFilters";
+            this.PanelModsLibraryFilters.Size = new System.Drawing.Size(899, 96);
+            this.PanelModsLibraryFilters.TabIndex = 12;
+            // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.Location = new System.Drawing.Point(490, 39);
+            this.comboBoxEdit1.MenuManager = this.barManager1;
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.comboBoxEdit1.Size = new System.Drawing.Size(60, 20);
+            this.comboBoxEdit1.TabIndex = 1164;
             // 
             // ComboBoxRegion
             // 
@@ -2389,16 +2522,18 @@ namespace ModioX.Forms.Windows
             this.ToolStripFooter.PerformLayout();
             this.SectionModsLibrary.ResumeLayout(false);
             this.SectionModsLibrary.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).EndInit();
-            this.PanelModsLibraryFilters.ResumeLayout(false);
-            this.PanelModsLibraryFilters.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XtraDgvMods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConnectMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolsMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationsMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OptionsMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HelpMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).EndInit();
+            this.PanelModsLibraryFilters.ResumeLayout(false);
+            this.PanelModsLibraryFilters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             this.SectionGames.ResumeLayout(false);
             this.FlowPanelCategories.ResumeLayout(false);
             this.FlowPanelCategories.PerformLayout();
@@ -2597,5 +2732,17 @@ namespace ModioX.Forms.Windows
         private BarButtonItem EditYourLists;
         private BarButtonItem barButtonItem16;
         private SkinBarSubItem skinBarSubItem1;
+        private DevExpress.XtraGrid.GridControl XtraDgvMods;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn ColumnModId;
+        private DevExpress.XtraGrid.Columns.GridColumn ColumnModName;
+        private DevExpress.XtraGrid.Columns.GridColumn ColumnModSystemType;
+        private DevExpress.XtraGrid.Columns.GridColumn ColumnModType;
+        private DevExpress.XtraGrid.Columns.GridColumn ColumnModRegion;
+        private DevExpress.XtraGrid.Columns.GridColumn ColumnModVersion;
+        private DevExpress.XtraGrid.Columns.GridColumn ColumnModCreator;
+        private DevExpress.XtraGrid.Columns.GridColumn ColumnModNoOfFiles;
+        private DevExpress.XtraGrid.Columns.GridColumn ColumnModDownload;
+        private DevExpress.XtraGrid.Columns.GridColumn ColumnModInstall;
     }
 }
