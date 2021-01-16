@@ -122,14 +122,30 @@ namespace ModioX.Forms.Windows
 
         private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if(IsConsoleConnected)
+            {
             WebManExtensions.RebootSoft(ConsoleProfile.Address);
             DisconnectConsole();
+            }
+            else
+            {
+
+                XtraMessageBox.Show("No Connection Detected...");
+            }
+
         }
 
         private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            WebManExtensions.RebootHard(ConsoleProfile.Address);
-            DisconnectConsole();
+            if (IsConsoleConnected)
+            {
+                WebManExtensions.RebootHard(ConsoleProfile.Address);
+                DisconnectConsole();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Connection Detected...");
+            }
         }
 
 
@@ -946,7 +962,7 @@ string.Empty,
         {
             Text = $@"ModioX - {UpdateExtensions.CurrentVersionName}";
 
-            ControlExtensions.SetValuesOnSubItems(MainMenuStrip.Items.OfType<ToolStripMenuItem>().ToList());
+            ControlExtensions.SetValuesOnSubItems(MainMenu.Items.OfType<ToolStripMenuItem>().ToList());
 
             LoadSettings();
             EnableConsoleActions();
@@ -1089,8 +1105,16 @@ string.Empty,
 
         private void RestartButtonBar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            WebManExtensions.Restart(ConsoleProfile.Address);
-            DisconnectConsole();
+            if (IsConsoleConnected)
+            {
+                WebManExtensions.Restart(ConsoleProfile.Address);
+                DisconnectConsole();
+            }
+            else
+            {
+
+                XtraMessageBox.Show("No Connection Detected");
+            }
         }
 
         private void ScrollBarCategories_ValueChanged(object sender, ScrollValueEventArgs e)
@@ -1136,8 +1160,15 @@ string.Empty,
 
         private void ShutDownButtonBar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (IsConsoleConnected)
+            {       
             WebManExtensions.Shutdown(ConsoleProfile.Address);
             DisconnectConsole();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Connection Detected...");
+            }
         }
 
         private void TextBoxSearch_TextChanged(object sender, EventArgs e)
@@ -1809,12 +1840,12 @@ string.Empty,
                 }
 
                 // Update UI Properties from Settings
-                //MenuItemApplications.DropDownItems.Clear();//TODO: MUST FIX!!!!
+                MenuItemApplications.DropDownItems.Clear();//TODO: MUST FIX!!!!
 
                 foreach (ExternalApplication application in Settings.ExternalApplications)
                 {
                     var menuItem = new ToolStripMenuItem(application.Name, null, MenuItemApplications_Click);
-                    //ApplicationsMenu.DropDownItems.Add(menuItem);
+                    ApplicationsMenu.DropDownItems.Add(menuItem);
                 }
             }
             catch (Exception ex)
