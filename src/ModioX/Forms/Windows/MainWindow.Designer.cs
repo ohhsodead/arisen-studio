@@ -33,7 +33,7 @@ namespace ModioX.Forms.Windows
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            DevExpress.Utils.Animation.PushTransition pushTransition2 = new DevExpress.Utils.Animation.PushTransition();
+            DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
             this.ContextMenuMods = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuModsInstallFiles = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuModsUninstallFiles = new System.Windows.Forms.ToolStripMenuItem();
@@ -171,6 +171,7 @@ namespace ModioX.Forms.Windows
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.HelpMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -216,7 +217,6 @@ namespace ModioX.Forms.Windows
             this.MenuStripGameMods = new DarkUI.Controls.DarkToolStrip();
             this.ToolItemGameModsUninstallAll = new System.Windows.Forms.ToolStripButton();
             this.LabelInstalledGameModsStatus = new System.Windows.Forms.ToolStripLabel();
-            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
             this.SectionModsInstallFilePaths.SuspendLayout();
@@ -895,7 +895,7 @@ namespace ModioX.Forms.Windows
             this.MenuStripConnectPS3Console});
             this.MenuItemConnectPS3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemConnectPS3.Name = "MenuItemConnectPS3";
-            this.MenuItemConnectPS3.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemConnectPS3.Size = new System.Drawing.Size(135, 22);
             this.MenuItemConnectPS3.Text = "PS3";
             // 
             // MenuStripConnectPS3Console
@@ -912,7 +912,7 @@ namespace ModioX.Forms.Windows
             this.xBOXToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.xBOXToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.xBOXToolStripMenuItem.Name = "xBOXToolStripMenuItem";
-            this.xBOXToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.xBOXToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.xBOXToolStripMenuItem.Text = "XBOX";
             // 
             // MenuStripFileSeparator0
@@ -921,7 +921,7 @@ namespace ModioX.Forms.Windows
             this.MenuStripFileSeparator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripFileSeparator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.MenuStripFileSeparator0.Name = "MenuStripFileSeparator0";
-            this.MenuStripFileSeparator0.Size = new System.Drawing.Size(177, 6);
+            this.MenuStripFileSeparator0.Size = new System.Drawing.Size(132, 6);
             // 
             // MenuStripConnectExit
             // 
@@ -930,7 +930,7 @@ namespace ModioX.Forms.Windows
             this.MenuStripConnectExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripConnectExit.Name = "MenuStripConnectExit";
             this.MenuStripConnectExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.MenuStripConnectExit.Size = new System.Drawing.Size(180, 22);
+            this.MenuStripConnectExit.Size = new System.Drawing.Size(135, 22);
             this.MenuStripConnectExit.Text = "Exit";
             this.MenuStripConnectExit.Click += new System.EventHandler(this.MenuStripConnectExit_Click);
             // 
@@ -1806,6 +1806,12 @@ namespace ModioX.Forms.Windows
             this.HelpMenu.Manager = this.barManager1;
             this.HelpMenu.Name = "HelpMenu";
             // 
+            // skinBarSubItem1
+            // 
+            this.skinBarSubItem1.Caption = "Skin Changer";
+            this.skinBarSubItem1.Id = 19;
+            this.skinBarSubItem1.Name = "skinBarSubItem1";
+            // 
             // bar3
             // 
             this.bar3.BarName = "Status bar";
@@ -1872,7 +1878,7 @@ namespace ModioX.Forms.Windows
             // workspaceManager1
             // 
             this.workspaceManager1.TargetControl = this;
-            this.workspaceManager1.TransitionType = pushTransition2;
+            this.workspaceManager1.TransitionType = pushTransition1;
             // 
             // ComboBoxRegion
             // 
@@ -2334,12 +2340,6 @@ namespace ModioX.Forms.Windows
             this.LabelInstalledGameModsStatus.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.LabelInstalledGameModsStatus.Size = new System.Drawing.Size(170, 33);
             this.LabelInstalledGameModsStatus.Text = "0 Mods Installed (0 Files Total)";
-            // 
-            // skinBarSubItem1
-            // 
-            this.skinBarSubItem1.Caption = "Skin Changer";
-            this.skinBarSubItem1.Id = 19;
-            this.skinBarSubItem1.Name = "skinBarSubItem1";
             // 
             // MainWindow
             // 
