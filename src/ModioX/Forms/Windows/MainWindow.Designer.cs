@@ -111,9 +111,7 @@ namespace ModioX.Forms.Windows
             this.MenuItemSettingsSeperator0 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemSettingsEditGameRegions = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettingsEditExternalApplications = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSettingsEditYourLists = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSettingsSeperator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuItemOptionsSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemReportIssue = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemHelpDiscordServer = new System.Windows.Forms.ToolStripMenuItem();
@@ -153,21 +151,26 @@ namespace ModioX.Forms.Windows
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.ConnectMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.ToolsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu3 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.ApplicationsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu4 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.OptionsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
+            this.EditYourLists = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu5 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.HelpMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -213,11 +216,7 @@ namespace ModioX.Forms.Windows
             this.MenuStripGameMods = new DarkUI.Controls.DarkToolStrip();
             this.ToolItemGameModsUninstallAll = new System.Windows.Forms.ToolStripButton();
             this.LabelInstalledGameModsStatus = new System.Windows.Forms.ToolStripLabel();
-            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
+            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
             this.SectionModsInstallFilePaths.SuspendLayout();
@@ -232,11 +231,11 @@ namespace ModioX.Forms.Windows
             this.PanelModsLibraryFilters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConnectMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ToolsMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ApplicationsMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OptionsMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HelpMenu)).BeginInit();
             this.SectionGames.SuspendLayout();
             this.FlowPanelCategories.SuspendLayout();
             this.SectionInstalledGameMods.SuspendLayout();
@@ -1147,9 +1146,7 @@ namespace ModioX.Forms.Windows
             this.MenuItemSettingsSeperator0,
             this.MenuItemSettingsEditGameRegions,
             this.MenuItemSettingsEditExternalApplications,
-            this.MenuItemSettingsEditYourLists,
-            this.MenuItemSettingsSeperator1,
-            this.MenuItemOptionsSettings});
+            this.MenuItemSettingsSeperator1});
             this.MenuItemOptions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemOptions.Name = "MenuItemOptions";
             this.MenuItemOptions.Size = new System.Drawing.Size(68, 19);
@@ -1190,15 +1187,6 @@ namespace ModioX.Forms.Windows
             this.MenuItemSettingsEditExternalApplications.Text = "Edit Applications...";
             this.MenuItemSettingsEditExternalApplications.Click += new System.EventHandler(this.MenuItemSettingsEditExternalApplications_Click);
             // 
-            // MenuItemSettingsEditYourLists
-            // 
-            this.MenuItemSettingsEditYourLists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemSettingsEditYourLists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemSettingsEditYourLists.Name = "MenuItemSettingsEditYourLists";
-            this.MenuItemSettingsEditYourLists.Size = new System.Drawing.Size(182, 22);
-            this.MenuItemSettingsEditYourLists.Text = "Edit Your Lists...";
-            this.MenuItemSettingsEditYourLists.Click += new System.EventHandler(this.MenuItemSettingsEditYourLists_Click);
-            // 
             // MenuItemSettingsSeperator1
             // 
             this.MenuItemSettingsSeperator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
@@ -1206,15 +1194,6 @@ namespace ModioX.Forms.Windows
             this.MenuItemSettingsSeperator1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.MenuItemSettingsSeperator1.Name = "MenuItemSettingsSeperator1";
             this.MenuItemSettingsSeperator1.Size = new System.Drawing.Size(179, 6);
-            // 
-            // MenuItemOptionsSettings
-            // 
-            this.MenuItemOptionsSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuItemOptionsSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuItemOptionsSettings.Name = "MenuItemOptionsSettings";
-            this.MenuItemOptionsSettings.Size = new System.Drawing.Size(182, 22);
-            this.MenuItemOptionsSettings.Text = "Settings...";
-            this.MenuItemOptionsSettings.Click += new System.EventHandler(this.MenuItemOptionsSettings_Click);
             // 
             // MenuItemHelp
             // 
@@ -1645,16 +1624,19 @@ namespace ModioX.Forms.Windows
             this.barButtonItem12,
             this.barButtonItem13,
             this.barButtonItem14,
-            this.barButtonItem15,
-            this.barButtonItem16});
+            this.EditYourLists,
+            this.barButtonItem16,
+            this.skinBarSubItem1});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 19;
+            this.barManager1.MaxItemId = 20;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
             // 
+            this.bar2.AutoUpdateMergedBars = DevExpress.Utils.DefaultBoolean.True;
             this.bar2.BarItemVertIndent = 5;
             this.bar2.BarName = "Main menu";
+            this.bar2.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Top;
             this.bar2.DockCol = 0;
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
@@ -1674,17 +1656,17 @@ namespace ModioX.Forms.Windows
             this.barButtonItem1.ActAsDropDown = true;
             this.barButtonItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
             this.barButtonItem1.Caption = "CONNECT";
-            this.barButtonItem1.DropDownControl = this.popupMenu1;
+            this.barButtonItem1.DropDownControl = this.ConnectMenu;
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // popupMenu1
+            // ConnectMenu
             // 
-            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.ConnectMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7)});
-            this.popupMenu1.Manager = this.barManager1;
-            this.popupMenu1.Name = "popupMenu1";
+            this.ConnectMenu.Manager = this.barManager1;
+            this.ConnectMenu.Name = "ConnectMenu";
             // 
             // barButtonItem6
             // 
@@ -1694,7 +1676,7 @@ namespace ModioX.Forms.Windows
             // 
             // barButtonItem7
             // 
-            this.barButtonItem7.Caption = "XBOX";
+            this.barButtonItem7.Caption = "XBOX 360";
             this.barButtonItem7.Id = 6;
             this.barButtonItem7.Name = "barButtonItem7";
             // 
@@ -1703,19 +1685,19 @@ namespace ModioX.Forms.Windows
             this.barButtonItem2.ActAsDropDown = true;
             this.barButtonItem2.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
             this.barButtonItem2.Caption = "TOOLS";
-            this.barButtonItem2.DropDownControl = this.popupMenu2;
+            this.barButtonItem2.DropDownControl = this.ToolsMenu;
             this.barButtonItem2.Id = 1;
             this.barButtonItem2.Name = "barButtonItem2";
             // 
-            // popupMenu2
+            // ToolsMenu
             // 
-            this.popupMenu2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.ToolsMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11)});
-            this.popupMenu2.Manager = this.barManager1;
-            this.popupMenu2.Name = "popupMenu2";
+            this.ToolsMenu.Manager = this.barManager1;
+            this.ToolsMenu.Name = "ToolsMenu";
             // 
             // barButtonItem8
             // 
@@ -1746,48 +1728,82 @@ namespace ModioX.Forms.Windows
             this.barButtonItem3.ActAsDropDown = true;
             this.barButtonItem3.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
             this.barButtonItem3.Caption = "APPLICATIONS";
-            this.barButtonItem3.DropDownControl = this.popupMenu3;
+            this.barButtonItem3.DropDownControl = this.ApplicationsMenu;
             this.barButtonItem3.Id = 2;
             this.barButtonItem3.Name = "barButtonItem3";
             // 
-            // popupMenu3
+            // ApplicationsMenu
             // 
-            this.popupMenu3.Manager = this.barManager1;
-            this.popupMenu3.Name = "popupMenu3";
+            this.ApplicationsMenu.Manager = this.barManager1;
+            this.ApplicationsMenu.Name = "ApplicationsMenu";
             // 
             // barButtonItem4
             // 
             this.barButtonItem4.ActAsDropDown = true;
             this.barButtonItem4.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
             this.barButtonItem4.Caption = "OPTIONS";
-            this.barButtonItem4.DropDownControl = this.popupMenu4;
+            this.barButtonItem4.DropDownControl = this.OptionsMenu;
             this.barButtonItem4.Id = 3;
             this.barButtonItem4.Name = "barButtonItem4";
             // 
-            // popupMenu4
+            // OptionsMenu
             // 
-            this.popupMenu4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.OptionsMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem13, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem14),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem15),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditYourLists),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem16, true)});
-            this.popupMenu4.Manager = this.barManager1;
-            this.popupMenu4.Name = "popupMenu4";
+            this.OptionsMenu.Manager = this.barManager1;
+            this.OptionsMenu.Name = "OptionsMenu";
+            // 
+            // barButtonItem12
+            // 
+            this.barButtonItem12.Caption = "Add New Console...";
+            this.barButtonItem12.Id = 14;
+            this.barButtonItem12.Name = "barButtonItem12";
+            // 
+            // barButtonItem13
+            // 
+            this.barButtonItem13.Caption = "Edit Game Regions...";
+            this.barButtonItem13.Id = 15;
+            this.barButtonItem13.Name = "barButtonItem13";
+            // 
+            // barButtonItem14
+            // 
+            this.barButtonItem14.Caption = "Edit Applications...";
+            this.barButtonItem14.Id = 16;
+            this.barButtonItem14.Name = "barButtonItem14";
+            // 
+            // EditYourLists
+            // 
+            this.EditYourLists.Caption = "Edit Your Lists...";
+            this.EditYourLists.Id = 17;
+            this.EditYourLists.Name = "EditYourLists";
+            this.EditYourLists.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditYourLists_ItemClick);
+            // 
+            // barButtonItem16
+            // 
+            this.barButtonItem16.Caption = "Settings...";
+            this.barButtonItem16.Id = 18;
+            this.barButtonItem16.Name = "barButtonItem16";
+            this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Settings_ItemClick);
             // 
             // barButtonItem5
             // 
             this.barButtonItem5.ActAsDropDown = true;
             this.barButtonItem5.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
             this.barButtonItem5.Caption = "HELP";
-            this.barButtonItem5.DropDownControl = this.popupMenu5;
+            this.barButtonItem5.DropDownControl = this.HelpMenu;
             this.barButtonItem5.Id = 4;
             this.barButtonItem5.Name = "barButtonItem5";
             // 
-            // popupMenu5
+            // HelpMenu
             // 
-            this.popupMenu5.Manager = this.barManager1;
-            this.popupMenu5.Name = "popupMenu5";
+            this.HelpMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.skinBarSubItem1)});
+            this.HelpMenu.Manager = this.barManager1;
+            this.HelpMenu.Name = "HelpMenu";
             // 
             // bar3
             // 
@@ -2317,35 +2333,11 @@ namespace ModioX.Forms.Windows
             this.LabelInstalledGameModsStatus.Size = new System.Drawing.Size(170, 33);
             this.LabelInstalledGameModsStatus.Text = "0 Mods Installed (0 Files Total)";
             // 
-            // barButtonItem12
+            // skinBarSubItem1
             // 
-            this.barButtonItem12.Caption = "Add New Console...";
-            this.barButtonItem12.Id = 14;
-            this.barButtonItem12.Name = "barButtonItem12";
-            // 
-            // barButtonItem13
-            // 
-            this.barButtonItem13.Caption = "Edit Game Regions...";
-            this.barButtonItem13.Id = 15;
-            this.barButtonItem13.Name = "barButtonItem13";
-            // 
-            // barButtonItem14
-            // 
-            this.barButtonItem14.Caption = "Edit Applications...";
-            this.barButtonItem14.Id = 16;
-            this.barButtonItem14.Name = "barButtonItem14";
-            // 
-            // barButtonItem15
-            // 
-            this.barButtonItem15.Caption = "Edit Your Lists...";
-            this.barButtonItem15.Id = 17;
-            this.barButtonItem15.Name = "barButtonItem15";
-            // 
-            // barButtonItem16
-            // 
-            this.barButtonItem16.Caption = "Settings...";
-            this.barButtonItem16.Id = 18;
-            this.barButtonItem16.Name = "barButtonItem16";
+            this.skinBarSubItem1.Caption = "Skin Changer";
+            this.skinBarSubItem1.Id = 19;
+            this.skinBarSubItem1.Name = "skinBarSubItem1";
             // 
             // MainWindow
             // 
@@ -2400,11 +2392,11 @@ namespace ModioX.Forms.Windows
             this.PanelModsLibraryFilters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConnectMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ToolsMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ApplicationsMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OptionsMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HelpMenu)).EndInit();
             this.SectionGames.ResumeLayout(false);
             this.FlowPanelCategories.ResumeLayout(false);
             this.FlowPanelCategories.PerformLayout();
@@ -2525,7 +2517,6 @@ namespace ModioX.Forms.Windows
         private System.Windows.Forms.ToolStripSeparator MenuItemHelpSeperator1;
         private DarkUI.Controls.DarkDataGridView DgvInstallationFiles;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnInstallationFiles;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemOptionsSettings;
         private System.Windows.Forms.ToolStripMenuItem MenuItemToolsGameUpdatesFinder;
         private System.Windows.Forms.ToolStripMenuItem MenuItemToolsWebManControls;
         private System.Windows.Forms.ToolStripSeparator MenuItemToolsSeperator0;
@@ -2541,7 +2532,6 @@ namespace ModioX.Forms.Windows
         private System.Windows.Forms.ToolStripMenuItem MenuItemToolsWebManSoftReboot;
         private System.Windows.Forms.ToolStripMenuItem MenuItemToolsWebManHardReboot;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemSettingsEditYourLists;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsAddToList;
         private System.Windows.Forms.ToolStripSeparator ContextMenuModsSeparator1;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsRemoveFromList;
@@ -2574,15 +2564,15 @@ namespace ModioX.Forms.Windows
         private BarManager barManager1;
         private Bar bar2;
         private BarButtonItem barButtonItem1;
-        private PopupMenu popupMenu5;
+        private PopupMenu HelpMenu;
         private BarButtonItem barButtonItem2;
-        private PopupMenu popupMenu4;
+        private PopupMenu OptionsMenu;
         private BarButtonItem barButtonItem3;
-        private PopupMenu popupMenu3;
+        private PopupMenu ApplicationsMenu;
         private BarButtonItem barButtonItem4;
-        private PopupMenu popupMenu2;
+        private PopupMenu ToolsMenu;
         private BarButtonItem barButtonItem5;
-        private PopupMenu popupMenu1;
+        private PopupMenu ConnectMenu;
         private Bar bar3;
         private BarDockControl barDockControlTop;
         private BarDockControl barDockControlBottom;
@@ -2602,7 +2592,8 @@ namespace ModioX.Forms.Windows
         private BarButtonItem barButtonItem12;
         private BarButtonItem barButtonItem13;
         private BarButtonItem barButtonItem14;
-        private BarButtonItem barButtonItem15;
+        private BarButtonItem EditYourLists;
         private BarButtonItem barButtonItem16;
+        private SkinBarSubItem skinBarSubItem1;
     }
 }

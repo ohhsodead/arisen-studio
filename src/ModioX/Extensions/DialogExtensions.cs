@@ -109,7 +109,7 @@ namespace ModioX.Extensions
 
         public static void ShowSettingsWindow(Form owner)
         {
-            using var settingsWindow = new oldSettingsWindow();
+            using var settingsWindow = new SettingsWindow();
             settingsWindow.ShowDialog(owner);
         }
 

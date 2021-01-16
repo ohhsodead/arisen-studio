@@ -459,19 +459,6 @@ namespace ModioX.Forms.Windows
             LoadSettings();
         }
 
-        private void MenuItemSettingsEditYourLists_Click(object sender, EventArgs e)
-        {
-            DialogExtensions.ShowCustomListsDialog(this);
-            LoadSettings();
-            LoadListsCategories();
-        }
-
-        private void MenuItemOptionsSettings_Click(object sender, EventArgs e)
-        {
-            DialogExtensions.ShowSettingsWindow(this);
-            LoadSettings();
-        }
-
         private void MenuItemHelpReportBugSuggestions_Click(object sender, EventArgs e)
         {
             Process.Start($"{Urls.GitHubRepo}issues/new");
@@ -2162,6 +2149,19 @@ namespace ModioX.Forms.Windows
                 SaveSettings();
                 Application.Restart();
             }
+        }
+
+        private void Settings_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowSettingsWindow(this);
+            LoadSettings();
+        }
+
+        private void EditYourLists_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowCustomListsDialog(this);
+            LoadSettings();
+            LoadListsCategories();
         }
     }
 }

@@ -32,6 +32,7 @@ namespace ModioX.Forms.Windows
 
             // File Size
             Settings.ShowFileSizeInBytes = CheckBoxShowFileSizeInBytes.Checked;
+            Close();
         }
 
         private void SettingsWindow_Load(object sender, EventArgs e)

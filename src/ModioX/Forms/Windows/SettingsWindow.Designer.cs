@@ -30,19 +30,20 @@ namespace ModioX.Forms.Windows
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.CheckBoxAutoDetectGameRegions = new DevExpress.XtraEditors.CheckEdit();
+            this.CheckBoxRememberGameRegions = new DevExpress.XtraEditors.CheckEdit();
             this.CheckBoxAutoDetectGameTitles = new DevExpress.XtraEditors.CheckEdit();
+            this.CheckBoxAutoDetectGameRegions = new DevExpress.XtraEditors.CheckEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.CheckBoxSaveConsolePath = new DevExpress.XtraEditors.CheckEdit();
             this.CheckBoxSaveLocalPath = new DevExpress.XtraEditors.CheckEdit();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.CheckBoxShowFileSizeInBytes = new DevExpress.XtraEditors.CheckEdit();
             this.ButtonOK = new DevExpress.XtraEditors.SimpleButton();
-            this.CheckBoxRememberGameRegions = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectGameRegions.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxRememberGameRegions.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectGameTitles.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectGameRegions.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxSaveConsolePath.Properties)).BeginInit();
@@ -50,7 +51,6 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxShowFileSizeInBytes.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxRememberGameRegions.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -64,13 +64,13 @@ namespace ModioX.Forms.Windows
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Content Recognition";
             // 
-            // CheckBoxAutoDetectGameRegions
+            // CheckBoxRememberGameRegions
             // 
-            this.CheckBoxAutoDetectGameRegions.Location = new System.Drawing.Point(5, 24);
-            this.CheckBoxAutoDetectGameRegions.Name = "CheckBoxAutoDetectGameRegions";
-            this.CheckBoxAutoDetectGameRegions.Properties.Caption = "Automatically detect game regions";
-            this.CheckBoxAutoDetectGameRegions.Size = new System.Drawing.Size(212, 18);
-            this.CheckBoxAutoDetectGameRegions.TabIndex = 1;
+            this.CheckBoxRememberGameRegions.Location = new System.Drawing.Point(5, 72);
+            this.CheckBoxRememberGameRegions.Name = "CheckBoxRememberGameRegions";
+            this.CheckBoxRememberGameRegions.Properties.Caption = "Remember game regions";
+            this.CheckBoxRememberGameRegions.Size = new System.Drawing.Size(212, 18);
+            this.CheckBoxRememberGameRegions.TabIndex = 3;
             // 
             // CheckBoxAutoDetectGameTitles
             // 
@@ -79,6 +79,14 @@ namespace ModioX.Forms.Windows
             this.CheckBoxAutoDetectGameTitles.Properties.Caption = "Automatically detect game titles";
             this.CheckBoxAutoDetectGameTitles.Size = new System.Drawing.Size(212, 18);
             this.CheckBoxAutoDetectGameTitles.TabIndex = 2;
+            // 
+            // CheckBoxAutoDetectGameRegions
+            // 
+            this.CheckBoxAutoDetectGameRegions.Location = new System.Drawing.Point(5, 24);
+            this.CheckBoxAutoDetectGameRegions.Name = "CheckBoxAutoDetectGameRegions";
+            this.CheckBoxAutoDetectGameRegions.Properties.Caption = "Automatically detect game regions";
+            this.CheckBoxAutoDetectGameRegions.Size = new System.Drawing.Size(212, 18);
+            this.CheckBoxAutoDetectGameRegions.TabIndex = 1;
             // 
             // groupControl2
             // 
@@ -114,7 +122,7 @@ namespace ModioX.Forms.Windows
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(356, 66);
             this.groupControl3.TabIndex = 4;
-            this.groupControl3.Text = "File Manager";
+            this.groupControl3.Text = "File Sizes";
             // 
             // CheckBoxShowFileSizeInBytes
             // 
@@ -128,18 +136,11 @@ namespace ModioX.Forms.Windows
             // 
             this.ButtonOK.Location = new System.Drawing.Point(154, 293);
             this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonOK.Size = new System.Drawing.Size(75, 23);
             this.ButtonOK.TabIndex = 3;
             this.ButtonOK.Text = "OK";
             this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
-            // 
-            // CheckBoxRememberGameRegions
-            // 
-            this.CheckBoxRememberGameRegions.Location = new System.Drawing.Point(5, 72);
-            this.CheckBoxRememberGameRegions.Name = "CheckBoxRememberGameRegions";
-            this.CheckBoxRememberGameRegions.Properties.Caption = "Remember game regions";
-            this.CheckBoxRememberGameRegions.Size = new System.Drawing.Size(212, 18);
-            this.CheckBoxRememberGameRegions.TabIndex = 3;
             // 
             // SettingsWindow
             // 
@@ -160,8 +161,9 @@ namespace ModioX.Forms.Windows
             this.Load += new System.EventHandler(this.SettingsWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectGameRegions.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxRememberGameRegions.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectGameTitles.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectGameRegions.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxSaveConsolePath.Properties)).EndInit();
@@ -169,7 +171,6 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxShowFileSizeInBytes.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxRememberGameRegions.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
