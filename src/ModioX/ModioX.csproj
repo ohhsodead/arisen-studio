@@ -282,14 +282,14 @@
     <EmbeddedResource Include="Forms\Tools\PackageManagerWindow.resx">
       <DependentUpon>PackageManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\BackupFileDialog.resx">
       <DependentUpon>BackupFileDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.resx">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -305,6 +305,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\app_large.png" />
     <None Include="App.config" />
     <None Include="Resources\Icons\copy_to_clipboard.png" />
     <None Include="Resources\Icons\bug.png" />
