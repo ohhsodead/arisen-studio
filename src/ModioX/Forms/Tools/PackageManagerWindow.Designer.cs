@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PackageManagerWindow));
             this.SectionPackages = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoPackageFiles = new System.Windows.Forms.Label();
-            this.DgvPackages = new DarkUI.Controls.DarkDataGridView();
+            this.DgvPackages = new XDevkit.XtraDataGridView();
             this.ColumnPackageName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDownload = new System.Windows.Forms.DataGridViewImageColumn();
@@ -364,7 +364,7 @@
 
         #endregion
         private DarkUI.Controls.DarkSectionPanel SectionPackages;
-        private DarkUI.Controls.DarkDataGridView DgvPackages;
+        private XDevkit.XtraDataGridView DgvPackages;
         private System.Windows.Forms.Panel PanelSearch;
         private DarkUI.Controls.DarkTextBox TextBoxSearch;
         private System.Windows.Forms.Label LabelSearch;

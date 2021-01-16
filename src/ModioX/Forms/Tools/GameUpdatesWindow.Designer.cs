@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameUpdatesWindow));
             this.SectionPanelInformation = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoGameUpdatesFound = new System.Windows.Forms.Label();
-            this.DgvGameUpdates = new DarkUI.Controls.DarkDataGridView();
+            this.DgvGameUpdates = new XDevkit.XtraDataGridView();
             this.ContextMenuGameUpdates = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuDownloadToComputer = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuInstallToConsole = new System.Windows.Forms.ToolStripMenuItem();
@@ -393,7 +393,7 @@
 
         #endregion
         private DarkUI.Controls.DarkSectionPanel SectionPanelInformation;
-        private DarkUI.Controls.DarkDataGridView DgvGameUpdates;
+        private XDevkit.XtraDataGridView DgvGameUpdates;
         private System.Windows.Forms.Panel PanelSearch;
         private DarkUI.Controls.DarkTextBox TextBoxTitleID;
         private System.Windows.Forms.Label LabelSearch;

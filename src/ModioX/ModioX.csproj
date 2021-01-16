@@ -98,15 +98,13 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
-    <Reference Include="XDevkit">
+    <Reference Include="XDevkit, Version=2.0.8000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\XDevkit\bin\Debug\XDevkit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Urls.cs" />
-    <Compile Include="Controls\DarkDataGridView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Database\Category.cs" />
     <Compile Include="Database\DownloadFiles.cs" />
     <Compile Include="Database\DropboxData.cs" />
@@ -243,9 +241,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Templates\GitHubTemplates.cs" />
-    <EmbeddedResource Include="Controls\DarkDataGridView.resx">
-      <DependentUpon>DarkDataGridView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\ConnectionDialog.resx">
       <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +348,9 @@
     <PackageReference Include="System.Text.Encodings.Web">
       <Version>5.0.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

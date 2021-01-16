@@ -1,4 +1,5 @@
-﻿namespace ModioX.Forms.Settings
+﻿using ModioX;
+namespace ModioX.Forms.Settings
 {
     partial class GameRegionsDialog
     {
@@ -32,7 +33,7 @@
             this.ButtonSaveAll = new DarkUI.Controls.DarkButton();
             this.SectionPanelGameRegions = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoGameRegionsSaved = new System.Windows.Forms.Label();
-            this.DgvGameRegions = new DarkUI.Controls.DarkDataGridView();
+            this.DgvGameRegions = new XDevkit.XtraDataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToolStripGameRegions = new DarkUI.Controls.DarkToolStrip();
@@ -330,7 +331,7 @@
         private DarkUI.Controls.DarkButton ButtonSaveAll;
         private DarkUI.Controls.DarkSectionPanel SectionPanelGameRegions;
         private System.Windows.Forms.Label LabelNoGameRegionsSaved;
-        private DarkUI.Controls.DarkDataGridView DgvGameRegions;
+        private XDevkit.XtraDataGridView DgvGameRegions;
         private DarkUI.Controls.DarkToolStrip ToolStripGameRegions;
         private System.Windows.Forms.ToolStripButton ToolStripDeleteAll;
         private System.Windows.Forms.ToolStripLabel LabelTotalGameRegions;

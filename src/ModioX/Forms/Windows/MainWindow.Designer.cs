@@ -33,7 +33,7 @@ namespace ModioX.Forms.Windows
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
+            DevExpress.Utils.Animation.PushTransition pushTransition2 = new DevExpress.Utils.Animation.PushTransition();
             this.ContextMenuMods = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuModsInstallFiles = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuModsUninstallFiles = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,7 +67,7 @@ namespace ModioX.Forms.Windows
             this.LabelTitleModDescription = new DarkUI.Controls.DarkTitle();
             this.LabelDescription = new System.Windows.Forms.Label();
             this.SectionModsInstallFilePaths = new DarkUI.Controls.DarkSectionPanel();
-            this.DgvInstallationFiles = new DarkUI.Controls.DarkDataGridView();
+            this.DgvInstallationFiles = new XDevkit.XtraDataGridView();
             this.ColumnInstallationFiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LabelHeaderInstallationFiles = new DarkUI.Controls.DarkTitle();
             this.ScrollBarDetails = new DarkUI.Controls.DarkScrollBar();
@@ -134,7 +134,7 @@ namespace ModioX.Forms.Windows
             this.LabelSelectSystemType = new System.Windows.Forms.Label();
             this.SectionModsLibrary = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoModsFound = new System.Windows.Forms.Label();
-            this.DgvMods = new DarkUI.Controls.DarkDataGridView();
+            this.DgvMods = new XDevkit.XtraDataGridView();
             this.ColumnModsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsFirmware = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -201,7 +201,7 @@ namespace ModioX.Forms.Windows
             this.PanelLists = new System.Windows.Forms.FlowLayoutPanel();
             this.SectionInstalledGameMods = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoModsInstalled = new System.Windows.Forms.Label();
-            this.DgvGameModsInstalled = new DarkUI.Controls.DarkDataGridView();
+            this.DgvGameModsInstalled = new XDevkit.XtraDataGridView();
             this.ColumnModsInstalledId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsInstalledGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsInstalledRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -895,7 +895,7 @@ namespace ModioX.Forms.Windows
             this.MenuStripConnectPS3Console});
             this.MenuItemConnectPS3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemConnectPS3.Name = "MenuItemConnectPS3";
-            this.MenuItemConnectPS3.Size = new System.Drawing.Size(135, 22);
+            this.MenuItemConnectPS3.Size = new System.Drawing.Size(180, 22);
             this.MenuItemConnectPS3.Text = "PS3";
             // 
             // MenuStripConnectPS3Console
@@ -912,7 +912,7 @@ namespace ModioX.Forms.Windows
             this.xBOXToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.xBOXToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.xBOXToolStripMenuItem.Name = "xBOXToolStripMenuItem";
-            this.xBOXToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.xBOXToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.xBOXToolStripMenuItem.Text = "XBOX";
             // 
             // MenuStripFileSeparator0
@@ -921,7 +921,7 @@ namespace ModioX.Forms.Windows
             this.MenuStripFileSeparator0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripFileSeparator0.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.MenuStripFileSeparator0.Name = "MenuStripFileSeparator0";
-            this.MenuStripFileSeparator0.Size = new System.Drawing.Size(132, 6);
+            this.MenuStripFileSeparator0.Size = new System.Drawing.Size(177, 6);
             // 
             // MenuStripConnectExit
             // 
@@ -930,7 +930,7 @@ namespace ModioX.Forms.Windows
             this.MenuStripConnectExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripConnectExit.Name = "MenuStripConnectExit";
             this.MenuStripConnectExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.MenuStripConnectExit.Size = new System.Drawing.Size(135, 22);
+            this.MenuStripConnectExit.Size = new System.Drawing.Size(180, 22);
             this.MenuStripConnectExit.Text = "Exit";
             this.MenuStripConnectExit.Click += new System.EventHandler(this.MenuStripConnectExit_Click);
             // 
@@ -1419,6 +1419,7 @@ namespace ModioX.Forms.Windows
             // 
             this.LabelNoModsFound.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LabelNoModsFound.AutoSize = true;
+            this.LabelNoModsFound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.LabelNoModsFound.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelNoModsFound.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelNoModsFound.ForeColor = System.Drawing.Color.Gainsboro;
@@ -1871,7 +1872,7 @@ namespace ModioX.Forms.Windows
             // workspaceManager1
             // 
             this.workspaceManager1.TargetControl = this;
-            this.workspaceManager1.TransitionType = pushTransition1;
+            this.workspaceManager1.TransitionType = pushTransition2;
             // 
             // ComboBoxRegion
             // 
@@ -1927,7 +1928,7 @@ namespace ModioX.Forms.Windows
             // 
             this.TextBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.TextBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.TextBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
@@ -2141,6 +2142,7 @@ namespace ModioX.Forms.Windows
             // 
             this.LabelNoModsInstalled.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LabelNoModsInstalled.AutoSize = true;
+            this.LabelNoModsInstalled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.LabelNoModsInstalled.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelNoModsInstalled.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelNoModsInstalled.ForeColor = System.Drawing.Color.Gainsboro;
@@ -2463,7 +2465,7 @@ namespace ModioX.Forms.Windows
         private DarkUI.Controls.DarkSectionPanel SectionGames;
         private DarkUI.Controls.DarkComboBox ComboBoxSystemType;
         private DarkUI.Controls.DarkComboBox ComboBoxModType;
-        private DarkUI.Controls.DarkDataGridView DgvMods;
+        private XDevkit.XtraDataGridView DgvMods;
         private DarkUI.Controls.DarkSectionPanel SectionModsInstallFilePaths;
         private System.Windows.Forms.ToolStripMenuItem MenuItemToolsGameBackupFiles;
         private System.Windows.Forms.ToolStripButton ToolItemModUninstall;
@@ -2494,7 +2496,7 @@ namespace ModioX.Forms.Windows
         private DarkUI.Controls.DarkTitle LabelTitleModDetails;
         private DarkUI.Controls.DarkTitle LabelTitleModDescription;
         private DarkUI.Controls.DarkSectionPanel SectionInstalledGameMods;
-        private DarkUI.Controls.DarkDataGridView DgvGameModsInstalled;
+        private XDevkit.XtraDataGridView DgvGameModsInstalled;
         private System.Windows.Forms.Panel PanelModsInstalledHeader;
         private DarkUI.Controls.DarkTitle LabelHeaderGameMods;
         private DarkUI.Controls.DarkTitle LabelHeaderInstallationFiles;
@@ -2515,7 +2517,7 @@ namespace ModioX.Forms.Windows
         private DarkUI.Controls.DarkTitle LabelTitleHomebrew;
         private System.Windows.Forms.FlowLayoutPanel PanelHomebrew;
         private System.Windows.Forms.ToolStripSeparator MenuItemHelpSeperator1;
-        private DarkUI.Controls.DarkDataGridView DgvInstallationFiles;
+        private XDevkit.XtraDataGridView DgvInstallationFiles;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnInstallationFiles;
         private System.Windows.Forms.ToolStripMenuItem MenuItemToolsGameUpdatesFinder;
         private System.Windows.Forms.ToolStripMenuItem MenuItemToolsWebManControls;

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExternalApplicationsDialog));
             this.ButtonSaveAll = new DarkUI.Controls.DarkButton();
             this.SectionApplications = new DarkUI.Controls.DarkSectionPanel();
-            this.DgvApplications = new DarkUI.Controls.DarkDataGridView();
+            this.DgvApplications = new XDevkit.XtraDataGridView();
             this.ColumnApplicationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToolStripGameRegions = new DarkUI.Controls.DarkToolStrip();
@@ -323,7 +323,7 @@
         #endregion
         private DarkUI.Controls.DarkButton ButtonSaveAll;
         private DarkUI.Controls.DarkSectionPanel SectionApplications;
-        private DarkUI.Controls.DarkDataGridView DgvApplications;
+        private XDevkit.XtraDataGridView DgvApplications;
         private DarkUI.Controls.DarkToolStrip ToolStripGameRegions;
         private System.Windows.Forms.ToolStripButton ToolStripDeleteAll;
         private System.Windows.Forms.ToolStripLabel LabelTotalApplications;

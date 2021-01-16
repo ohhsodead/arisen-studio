@@ -49,7 +49,7 @@
             this.ToolStripLabelLocalStatus = new System.Windows.Forms.ToolStripLabel();
             this.TextBoxLocalPath = new DarkUI.Controls.DarkTextBox();
             this.ButtonLocalDirectory = new DarkUI.Controls.DarkButton();
-            this.DgvLocalFiles = new DarkUI.Controls.DarkDataGridView();
+            this.DgvLocalFiles = new XDevkit.XtraDataGridView();
             this.ColumnLocalType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnLocalIcon = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnLocalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,7 +73,7 @@
             this.ToolStripLabelConsoleStatus = new System.Windows.Forms.ToolStripLabel();
             this.ButtonConsoleNavigate = new DarkUI.Controls.DarkButton();
             this.TextBoxConsolePath = new DarkUI.Controls.DarkTextBox();
-            this.DgvConsoleFiles = new DarkUI.Controls.DarkDataGridView();
+            this.DgvConsoleFiles = new XDevkit.XtraDataGridView();
             this.ColumnConsoleFileType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnConsoleFileImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnConsoleFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -801,13 +801,13 @@
         private System.Windows.Forms.ToolStripButton ToolStripLocalUpload;
         private System.Windows.Forms.ToolStripButton ToolStripLocalDelete;
         private System.Windows.Forms.ToolStripButton ToolStripLocalOpenExplorer;
-        private DarkUI.Controls.DarkDataGridView DgvLocalFiles;
+        private XDevkit.XtraDataGridView DgvLocalFiles;
         private DarkUI.Controls.DarkSectionPanel SectionConsoleFileExplorer;
         private DarkUI.Controls.DarkToolStrip ToolStripConsoleActions;
         private System.Windows.Forms.ToolStripButton ToolStripConsoleDownload;
         private System.Windows.Forms.ToolStripButton ToolStripConsoleDelete;
         private System.Windows.Forms.ToolStripButton ToolStripConsoleRefresh;
-        private DarkUI.Controls.DarkDataGridView DgvConsoleFiles;
+        private XDevkit.XtraDataGridView DgvConsoleFiles;
         private DarkUI.Controls.DarkTextBox TextBoxConsolePath;
         private System.Windows.Forms.TableLayoutPanel LayoutPanel;
         private System.Windows.Forms.Timer WaitLoadConsole;

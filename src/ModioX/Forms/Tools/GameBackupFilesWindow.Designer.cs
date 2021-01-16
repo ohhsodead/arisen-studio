@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameBackupFilesWindow));
-            this.DgvBackupFiles = new DarkUI.Controls.DarkDataGridView();
+            this.DgvBackupFiles = new XDevkit.XtraDataGridView();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -535,7 +535,7 @@
 
         #endregion
 
-        private DarkUI.Controls.DarkDataGridView DgvBackupFiles;
+        private XDevkit.XtraDataGridView DgvBackupFiles;
         private DarkUI.Controls.DarkSectionPanel SectionBackupFiles;
         private DarkUI.Controls.DarkSectionPanel SectionBackupDetails;
         private System.Windows.Forms.FlowLayoutPanel FlowPanelDetails;

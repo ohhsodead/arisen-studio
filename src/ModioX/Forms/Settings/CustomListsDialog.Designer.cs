@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomListsDialog));
             this.SectionPanelCustomLists = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoListsCreated = new System.Windows.Forms.Label();
-            this.DgvCustomLists = new DarkUI.Controls.DarkDataGridView();
+            this.DgvCustomLists = new XDevkit.XtraDataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContextMenuCustomLists = new DarkUI.Controls.DarkContextMenu();
@@ -297,7 +297,7 @@
         #endregion
         private DarkUI.Controls.DarkSectionPanel SectionPanelCustomLists;
         private System.Windows.Forms.Label LabelNoListsCreated;
-        private DarkUI.Controls.DarkDataGridView DgvCustomLists;
+        private XDevkit.XtraDataGridView DgvCustomLists;
         private DarkUI.Controls.DarkToolStrip ToolStripGameRegions;
         private System.Windows.Forms.ToolStripButton ToolStripDeleteAll;
         private System.Windows.Forms.ToolStripLabel LabelTotalCustomLists;
