@@ -162,6 +162,12 @@
   <metadata name="ColumnInstallationFiles.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="ColumnInstallationFiles.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ToolStripArchiveInformation.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>250, -2</value>
+  </metadata>
   <metadata name="ToolStripArchiveInformation.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>250, -2</value>
   </metadata>
@@ -196,15 +202,15 @@
   <data name="ToolItemModDownload.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHnSURBVEhL7ZI/S1thGMUvghSsIA1ZrQQHBx1cFARHFdQM
-        dhCcit9A0MF8grZCBocugpMZFfoBimRp8c9WyORgBptSNZq0acz/pL9zeXIxXiOJswce3vucc97zvPe9
-        13lBV6jX64ONRmOGdZEKGf18EDJWq9W+xmKxOsEeqtXqCcu02boDoeFsNntnQccM2KaiPB+JSyQSVZZV
-        sz8NwgLUewI+5nK5f4VC4YZ+3mQPcO8IzaZSqTLPE0Y/Dgxr+Xz+r04jxOPxGsuMyT7gX9QVcYhDo/xA
-        /KAwgv+wfNImaspkF3gOVNa60LVY+Bf8m+wNmuQ4NNMKLZfLPxGHjfahWCxeqax1wbaI9jbB1d2SMeuK
-        TNsXCRF2iTZoExzUYVjHydlKJpMVfRu4EadUKv1mUgaxx/weMLyGf6Mi9FrV7KWZzQPcOlqDIXtOOp0u
-        ViqVM9NagHGMwZcy34c4aWbzgNSbyWQKOqxD6LkayD7TW/AwvF1oE3yrC+Xpjj9rg17DNB/QRhVooaNG
-        +4AWUhZ/yw81Q7pwXQnPK+bxQYFPhZI3wCHjdsiNJrmkYJFMO8UQRdzspNgSwb/L2/yy/d/hX7nBAs0k
-        5DeJz4F+NQbs8Nhvka1AeMuQBdblTgv/HBWwiBfch+P8Bzc2peb/Q4IkAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHpSURBVEhL7ZI/SxxRFMUHIQhJQBRbE8QihRZpIgQsNWDc
+        QgshVfAbBLTQT5BEsLCwEay2NZAPEMI0hmi6wFYWbpGsxGTjjtlsZv/M7Pg7w93BdbKLbr0HLm/uOeed
+        ++bNOH3cCs1mcyyKolnWBWrc6N5ByFQYhh+y2WyT4ARBEByxzJjtdiA043nePws6ZMA2tcXzZ3G5XC5g
+        WTF7dxA2Qr0k4E25XP7r+/5v+nmTE8AtEeoVCoU6z0+M/j8wvKpUKn90GsF13ZBl1uQU8C/oijjER6PS
+        QHytMIIvWN5qE/XU5Bh43qmsjaFrsfD3+NfZO2qS49DMKLRer39HnDA6hWq1+lNlbQy2bWhvC1zdORlz
+        sci0fZEQmZjogA7BozoM62NyNvP5fEPfBu6RU6vVfjCphDhg/gQY7sEPqwj9pWr10syWAG4VLWJI1ikW
+        i9VGo3FsWhswTjH4TOarECfNbAmQ7pRKJV+HdQg9UQN51/Q2XA/vFNoC3+qb8nTHO9qg1zAtBbRJBVro
+        pNEpoI0ri7/lq5qHunBdCc8vzJOCAruFkjfEIV075FqLXFSwSKZ9wbCFuH6TYssG/j3e5tT2f4IfjIMF
+        mmnIA4m9QL8aA3Z5vG+R7UB4wJDnrMs3LfzPqBGL6OMqHOcSCCOl3RzYIL4AAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="MenuStripHeader.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -244,6 +250,36 @@
     <value>True</value>
   </metadata>
   <metadata name="ColumnModsFavourite.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="MenuStripGameMods.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>569, -2</value>
+  </metadata>
+  <metadata name="ColumnModsInstalledId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ColumnModsInstalledGameTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ColumnModsInstalledRegion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ColumnModsInstalledModName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ColumnModsInstalledModType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ColumnModsInstalledVersion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ColumnModsInstalledNoOfFiles.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ColumnModsInstalledDateTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ColumnModsInstalledUninstall.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="ColumnModsInstalledId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -295,8 +331,8 @@
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>740, -2</value>
   </metadata>
-  <metadata name="popupMenu5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1369, -2</value>
+  <metadata name="popupMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>865, -2</value>
   </metadata>
   <metadata name="popupMenu4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1243, -2</value>
@@ -2216,4 +2252,16 @@
         AJ/xAAA=
 </value>
   </data>
+  <metadata name="popupMenu5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1369, -2</value>
+  </metadata>
+  <metadata name="popupMenu4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1243, -2</value>
+  </metadata>
+  <metadata name="popupMenu3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1117, -2</value>
+  </metadata>
+  <metadata name="popupMenu2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>991, -2</value>
+  </metadata>
 </root>
