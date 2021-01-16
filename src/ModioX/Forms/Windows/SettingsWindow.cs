@@ -1,5 +1,13 @@
-﻿using System;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using ModioX.Models.Resources;
 
 namespace ModioX.Forms.Windows
@@ -10,8 +18,21 @@ namespace ModioX.Forms.Windows
         {
             InitializeComponent();
         }
-
         public static SettingsData Settings = MainWindow.Settings;
+        private void ButtonOK_Click(object sender, EventArgs e)
+        {
+            // Content Recognized
+            Settings.AutoDetectGameRegions = CheckBoxAutoDetectGameRegions.Checked;
+            Settings.AutoDetectGameTitles = CheckBoxAutoDetectGameTitles.Checked;
+            Settings.RememberGameRegions = CheckBoxRememberGameRegions.Checked;
+
+            // File Manager
+            Settings.SaveLocalPath = CheckBoxSaveLocalPath.Checked;
+            Settings.SaveConsolePath = CheckBoxSaveConsolePath.Checked;
+
+            // File Size
+            Settings.ShowFileSizeInBytes = CheckBoxShowFileSizeInBytes.Checked;
+        }
 
         private void SettingsWindow_Load(object sender, EventArgs e)
         {
@@ -26,21 +47,6 @@ namespace ModioX.Forms.Windows
 
             // File Size
             CheckBoxShowFileSizeInBytes.Checked = Settings.ShowFileSizeInBytes;
-        }
-
-        private void ButtonOK_Click(object sender, EventArgs e)
-        {
-            // Content Recognized
-            Settings.AutoDetectGameRegions = CheckBoxAutoDetectGameRegions.Checked;
-            Settings.AutoDetectGameTitles = CheckBoxAutoDetectGameTitles.Checked;
-            Settings.RememberGameRegions = CheckBoxRememberGameRegions.Checked;
-
-            // File Manager
-            Settings.SaveLocalPath = CheckBoxSaveLocalPath.Checked;
-            Settings.SaveConsolePath = CheckBoxSaveConsolePath.Checked;
-
-            // File Size
-            Settings.ShowFileSizeInBytes = CheckBoxShowFileSizeInBytes.Checked;
         }
     }
 }
