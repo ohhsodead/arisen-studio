@@ -949,7 +949,7 @@ namespace ModioX.Forms.Windows
                 //add a new row
                 GridViewMods.AddNewRow();
                 //set a new row cell value. The static GridControl.NewItemRowHandle field allows you to retrieve the added row
-                GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[0], modItem.Id.ToString());
+                GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[0], modItem.Id);
                 GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[1], modItem.Name);
                 GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[2], modItem.Firmware);
                 GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[3], modItem.Type);
