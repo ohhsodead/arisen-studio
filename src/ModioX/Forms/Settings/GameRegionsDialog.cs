@@ -29,6 +29,7 @@ namespace ModioX.Forms.Settings
 
         public void LoadSavedGameRegions()
         {
+            /*
             DgvGameRegions.Rows.Clear();
 
             foreach (var gameRegion in MainWindow.Settings.GameRegions)
@@ -46,10 +47,12 @@ namespace ModioX.Forms.Settings
             LabelNoGameRegionsSaved.Visible = DgvGameRegions.Rows.Count < 1;
             ToolStripDeleteSelected.Enabled = DgvGameRegions.CurrentRow != null;
             ToolStripDeleteAll.Enabled = DgvGameRegions.Rows.Count > 0;
+            */
         }
 
         private void DgvGameRegions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            /*
             if (DgvGameRegions.CurrentRow != null)
             {
                 var gameTitle = DgvGameRegions.SelectedRows[0].Cells[0].Value.ToString();
@@ -60,13 +63,14 @@ namespace ModioX.Forms.Settings
             }
 
             ToolStripDeleteSelected.Enabled = DgvGameRegions.CurrentRow != null;
+            */
         }
 
         private void ToolStripDeleteSelected_Click(object sender, EventArgs e)
         {
             if (DarkMessageBox.ShowWarning("Do you really want to delete the selected saved game region?", "Delete", DarkDialogButton.YesNo) == DialogResult.Yes)
             {
-                MainWindow.Settings.GameRegions.RemoveAt(DgvGameRegions.CurrentRow.Index);
+                //MainWindow.Settings.GameRegions.RemoveAt(DgvGameRegions.CurrentRow.Index);
                 LoadSavedGameRegions();
             }
         }
@@ -123,6 +127,7 @@ namespace ModioX.Forms.Settings
 
         private void ButtonSaveAll_Click(object sender, EventArgs e)
         {
+            /*
             foreach (DataGridViewRow row in DgvGameRegions.Rows)
             {
                 var gameTitle = row.Cells[0].Value.ToString();
@@ -141,7 +146,9 @@ namespace ModioX.Forms.Settings
                 }
             }
 
-            _ = DarkMessageBox.ShowInformation("All game regions have now been saved.", "Saved");
+            */
+
+            XtraMessageBox.Show("All game regions have now been saved.", "Saved");
             Close();
         }
     }

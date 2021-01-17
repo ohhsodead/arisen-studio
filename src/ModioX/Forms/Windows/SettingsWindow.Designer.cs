@@ -58,23 +58,24 @@ namespace ModioX.Forms.Windows
             this.groupControl1.Controls.Add(this.CheckBoxRememberGameRegions);
             this.groupControl1.Controls.Add(this.CheckBoxAutoDetectGameTitles);
             this.groupControl1.Controls.Add(this.CheckBoxAutoDetectGameRegions);
-            this.groupControl1.Location = new System.Drawing.Point(12, 12);
+            this.groupControl1.Location = new System.Drawing.Point(14, 10);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(356, 96);
+            this.groupControl1.Size = new System.Drawing.Size(354, 103);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Content Recognition";
             // 
             // CheckBoxRememberGameRegions
             // 
-            this.CheckBoxRememberGameRegions.Location = new System.Drawing.Point(5, 72);
+            this.CheckBoxRememberGameRegions.Location = new System.Drawing.Point(6, 76);
             this.CheckBoxRememberGameRegions.Name = "CheckBoxRememberGameRegions";
             this.CheckBoxRememberGameRegions.Properties.Caption = "Remember game regions";
-            this.CheckBoxRememberGameRegions.Size = new System.Drawing.Size(212, 18);
+            this.CheckBoxRememberGameRegions.Size = new System.Drawing.Size(164, 18);
             this.CheckBoxRememberGameRegions.TabIndex = 3;
             // 
             // CheckBoxAutoDetectGameTitles
             // 
-            this.CheckBoxAutoDetectGameTitles.Location = new System.Drawing.Point(5, 48);
+            this.CheckBoxAutoDetectGameTitles.Location = new System.Drawing.Point(6, 52);
             this.CheckBoxAutoDetectGameTitles.Name = "CheckBoxAutoDetectGameTitles";
             this.CheckBoxAutoDetectGameTitles.Properties.Caption = "Automatically detect game titles";
             this.CheckBoxAutoDetectGameTitles.Size = new System.Drawing.Size(212, 18);
@@ -82,7 +83,7 @@ namespace ModioX.Forms.Windows
             // 
             // CheckBoxAutoDetectGameRegions
             // 
-            this.CheckBoxAutoDetectGameRegions.Location = new System.Drawing.Point(5, 24);
+            this.CheckBoxAutoDetectGameRegions.Location = new System.Drawing.Point(6, 28);
             this.CheckBoxAutoDetectGameRegions.Name = "CheckBoxAutoDetectGameRegions";
             this.CheckBoxAutoDetectGameRegions.Properties.Caption = "Automatically detect game regions";
             this.CheckBoxAutoDetectGameRegions.Size = new System.Drawing.Size(212, 18);
@@ -92,16 +93,16 @@ namespace ModioX.Forms.Windows
             // 
             this.groupControl2.Controls.Add(this.CheckBoxSaveConsolePath);
             this.groupControl2.Controls.Add(this.CheckBoxSaveLocalPath);
-            this.groupControl2.Location = new System.Drawing.Point(12, 114);
-            this.groupControl2.MinimumSize = new System.Drawing.Size(356, 84);
+            this.groupControl2.Location = new System.Drawing.Point(14, 124);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(358, 84);
+            this.groupControl2.Size = new System.Drawing.Size(354, 76);
             this.groupControl2.TabIndex = 3;
             this.groupControl2.Text = "File Manager";
             // 
             // CheckBoxSaveConsolePath
             // 
-            this.CheckBoxSaveConsolePath.Location = new System.Drawing.Point(5, 52);
+            this.CheckBoxSaveConsolePath.Location = new System.Drawing.Point(6, 52);
             this.CheckBoxSaveConsolePath.Name = "CheckBoxSaveConsolePath";
             this.CheckBoxSaveConsolePath.Properties.Caption = "Save current console directory path";
             this.CheckBoxSaveConsolePath.Size = new System.Drawing.Size(212, 18);
@@ -109,7 +110,7 @@ namespace ModioX.Forms.Windows
             // 
             // CheckBoxSaveLocalPath
             // 
-            this.CheckBoxSaveLocalPath.Location = new System.Drawing.Point(5, 28);
+            this.CheckBoxSaveLocalPath.Location = new System.Drawing.Point(6, 28);
             this.CheckBoxSaveLocalPath.Name = "CheckBoxSaveLocalPath";
             this.CheckBoxSaveLocalPath.Properties.Caption = "Save current local directory path";
             this.CheckBoxSaveLocalPath.Size = new System.Drawing.Size(212, 18);
@@ -118,15 +119,16 @@ namespace ModioX.Forms.Windows
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.CheckBoxShowFileSizeInBytes);
-            this.groupControl3.Location = new System.Drawing.Point(12, 204);
+            this.groupControl3.Location = new System.Drawing.Point(14, 209);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(356, 66);
+            this.groupControl3.Size = new System.Drawing.Size(354, 60);
             this.groupControl3.TabIndex = 4;
             this.groupControl3.Text = "File Sizes";
             // 
             // CheckBoxShowFileSizeInBytes
             // 
-            this.CheckBoxShowFileSizeInBytes.Location = new System.Drawing.Point(5, 33);
+            this.CheckBoxShowFileSizeInBytes.Location = new System.Drawing.Point(6, 28);
             this.CheckBoxShowFileSizeInBytes.Name = "CheckBoxShowFileSizeInBytes";
             this.CheckBoxShowFileSizeInBytes.Properties.Caption = "Show file size in bytes";
             this.CheckBoxShowFileSizeInBytes.Size = new System.Drawing.Size(212, 18);
@@ -134,7 +136,7 @@ namespace ModioX.Forms.Windows
             // 
             // ButtonOK
             // 
-            this.ButtonOK.Location = new System.Drawing.Point(154, 293);
+            this.ButtonOK.Location = new System.Drawing.Point(154, 304);
             this.ButtonOK.Name = "ButtonOK";
             this.ButtonOK.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonOK.Size = new System.Drawing.Size(75, 23);
@@ -152,7 +154,7 @@ namespace ModioX.Forms.Windows
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.IconOptions.Image = global::ModioX.Properties.Resources.app_large;
+            this.IconOptions.Image = global::ModioX.Properties.Resources.app_logo;
             this.MaximumSize = new System.Drawing.Size(384, 371);
             this.MinimumSize = new System.Drawing.Size(384, 371);
             this.Name = "SettingsWindow";

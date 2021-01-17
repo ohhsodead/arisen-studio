@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PackageManagerWindow));
             this.SectionPackages = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoPackageFiles = new System.Windows.Forms.Label();
-            this.DgvPackages = new XDevkit.XtraDataGridView();
+            this.DgvPackages = new DevExpress.XtraGrid.GridControl();
             this.ColumnPackageName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDownload = new System.Windows.Forms.DataGridViewImageColumn();
@@ -93,31 +93,12 @@
             // 
             // DgvPackages
             // 
-            this.DgvPackages.AllowUserToAddRows = false;
-            this.DgvPackages.AllowUserToDeleteRows = false;
-            this.DgvPackages.AllowUserToDragDropRows = false;
-            this.DgvPackages.AllowUserToPasteCells = false;
-            this.DgvPackages.AllowUserToResizeColumns = false;
-            this.DgvPackages.ColumnHeadersHeight = 19;
-            this.DgvPackages.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnPackageName,
-            this.ColumnSize,
-            this.ColumnDownload});
             this.DgvPackages.ContextMenuStrip = this.ContextMenuPackages;
             this.DgvPackages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvPackages.Location = new System.Drawing.Point(1, 69);
-            this.DgvPackages.MultiSelect = false;
             this.DgvPackages.Name = "DgvPackages";
-            this.DgvPackages.ReadOnly = true;
-            this.DgvPackages.RowHeadersWidth = 41;
-            this.DgvPackages.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DgvPackages.RowTemplate.Height = 24;
-            this.DgvPackages.RowTemplate.ReadOnly = true;
-            this.DgvPackages.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DgvPackages.Size = new System.Drawing.Size(600, 239);
             this.DgvPackages.TabIndex = 3;
-            this.DgvPackages.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPackages_CellClick);
-            this.DgvPackages.SelectionChanged += new System.EventHandler(this.DgvPackages_SelectionChanged);
             // 
             // ColumnPackageName
             // 
@@ -364,7 +345,7 @@
 
         #endregion
         private DarkUI.Controls.DarkSectionPanel SectionPackages;
-        private XDevkit.XtraDataGridView DgvPackages;
+        private DevExpress.XtraGrid.GridControl DgvPackages;
         private System.Windows.Forms.Panel PanelSearch;
         private DarkUI.Controls.DarkTextBox TextBoxSearch;
         private System.Windows.Forms.Label LabelSearch;

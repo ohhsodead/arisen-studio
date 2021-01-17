@@ -24,6 +24,7 @@ namespace ModioX.Forms.Tools
 
         private void LoadBackupFiles()
         {
+            /*
             DgvBackupFiles.Rows.Clear();
 
             foreach (var backupFile in MainWindow.Settings.BackupFiles)
@@ -38,10 +39,12 @@ namespace ModioX.Forms.Tools
             }
 
             LabelNoBackupFiles.Visible = DgvBackupFiles.Rows.Count < 1;
+            */
         }
 
         private void DgvBackupFiles_SelectionChanged(object sender, EventArgs e)
         {
+            /*
             if (DgvBackupFiles.CurrentRow != null)
             {
                 try
@@ -77,10 +80,13 @@ namespace ModioX.Forms.Tools
             ToolItemDeleteBackup.Enabled = DgvBackupFiles.CurrentRow != null;
             ToolItemBackupFile.Enabled = DgvBackupFiles.CurrentRow != null && MainWindow.IsConsoleConnected;
             ToolItemRestoreFile.Enabled = DgvBackupFiles.CurrentRow != null && MainWindow.IsConsoleConnected;
+
+            */
         }
 
         private void ToolItemEditBackup_Click(object sender, EventArgs e)
         {
+            /*
             var backupFileIndex = DgvBackupFiles.CurrentRow.Index;
 
             var backupFile = MainWindow.Settings.BackupFiles[backupFileIndex];
@@ -92,28 +98,30 @@ namespace ModioX.Forms.Tools
                 MainWindow.Settings.UpdateBackupFile(backupFileIndex, newBackupFile);
             }
 
+            */
+
             LoadBackupFiles();
         }
 
         private void ToolItemDeleteBackup_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.ShowWarning("Do you really want to delete the selected item?", "Delete", DarkDialogButton.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really want to delete the selected item?", "Delete Item", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MainWindow.Settings.BackupFiles.RemoveAt(DgvBackupFiles.CurrentRow.Index);
+                //MainWindow.Settings.BackupFiles.RemoveAt(DgvBackupFiles.CurrentRow.Index);
                 LoadBackupFiles();
             }
         }
 
         private void ToolItemBackupFile_Click(object sender, EventArgs e)
         {
-            var backupFile = MainWindow.Settings.BackupFiles[DgvBackupFiles.CurrentRow.Index];
-            BackupGameFile(backupFile);
+            //var backupFile = MainWindow.Settings.BackupFiles[DgvBackupFiles.CurrentRow.Index];
+            //BackupGameFile(backupFile);
         }
 
         private void ToolItemRestoreFile_Click(object sender, EventArgs e)
         {
-            var backupFile = MainWindow.Settings.BackupFiles[DgvBackupFiles.CurrentRow.Index];
-            RestoreGameFile(backupFile);
+            //var backupFile = MainWindow.Settings.BackupFiles[DgvBackupFiles.CurrentRow.Index];
+            //RestoreGameFile(backupFile);
         }
 
         /// <summary>

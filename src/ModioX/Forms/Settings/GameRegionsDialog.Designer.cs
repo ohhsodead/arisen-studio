@@ -33,7 +33,7 @@ namespace ModioX.Forms.Settings
             this.ButtonSaveAll = new DarkUI.Controls.DarkButton();
             this.SectionPanelGameRegions = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoGameRegionsSaved = new System.Windows.Forms.Label();
-            this.DgvGameRegions = new XDevkit.XtraDataGridView();
+            this.DgvGameRegions = new DevExpress.XtraGrid.GridControl();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToolStripGameRegions = new DarkUI.Controls.DarkToolStrip();
@@ -99,30 +99,12 @@ namespace ModioX.Forms.Settings
             // 
             // DgvGameRegions
             // 
-            this.DgvGameRegions.AllowUserToAddRows = false;
-            this.DgvGameRegions.AllowUserToDragDropRows = false;
-            this.DgvGameRegions.AllowUserToPasteCells = false;
-            this.DgvGameRegions.AllowUserToResizeColumns = false;
-            this.DgvGameRegions.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.DgvGameRegions.ColumnHeadersHeight = 21;
-            this.DgvGameRegions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DgvGameRegions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.ColumnRegion});
             this.DgvGameRegions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvGameRegions.Location = new System.Drawing.Point(1, 25);
             this.DgvGameRegions.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.DgvGameRegions.MultiSelect = false;
             this.DgvGameRegions.Name = "DgvGameRegions";
-            this.DgvGameRegions.ReadOnly = true;
-            this.DgvGameRegions.RowHeadersWidth = 41;
-            this.DgvGameRegions.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvGameRegions.RowTemplate.Height = 24;
-            this.DgvGameRegions.RowTemplate.ReadOnly = true;
-            this.DgvGameRegions.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DgvGameRegions.Size = new System.Drawing.Size(412, 175);
             this.DgvGameRegions.TabIndex = 0;
-            this.DgvGameRegions.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGameRegions_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -331,7 +313,7 @@ namespace ModioX.Forms.Settings
         private DarkUI.Controls.DarkButton ButtonSaveAll;
         private DarkUI.Controls.DarkSectionPanel SectionPanelGameRegions;
         private System.Windows.Forms.Label LabelNoGameRegionsSaved;
-        private XDevkit.XtraDataGridView DgvGameRegions;
+        private DevExpress.XtraGrid.GridControl DgvGameRegions;
         private DarkUI.Controls.DarkToolStrip ToolStripGameRegions;
         private System.Windows.Forms.ToolStripButton ToolStripDeleteAll;
         private System.Windows.Forms.ToolStripLabel LabelTotalGameRegions;

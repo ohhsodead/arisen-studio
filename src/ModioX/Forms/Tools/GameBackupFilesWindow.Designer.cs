@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameBackupFilesWindow));
-            this.DgvBackupFiles = new XDevkit.XtraDataGridView();
+            this.DgvBackupFiles = new DevExpress.XtraGrid.GridControl();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,30 +72,11 @@
             // 
             // DgvBackupFiles
             // 
-            this.DgvBackupFiles.AllowUserToAddRows = false;
-            this.DgvBackupFiles.AllowUserToDeleteRows = false;
-            this.DgvBackupFiles.AllowUserToDragDropRows = false;
-            this.DgvBackupFiles.AllowUserToPasteCells = false;
-            this.DgvBackupFiles.AllowUserToResizeColumns = false;
-            this.DgvBackupFiles.ColumnHeadersHeight = 19;
-            this.DgvBackupFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnGameTitle,
-            this.ColumnFileName,
-            this.ColumnFileSize,
-            this.ColumnCreatedOn});
             this.DgvBackupFiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvBackupFiles.Location = new System.Drawing.Point(1, 25);
-            this.DgvBackupFiles.MultiSelect = false;
             this.DgvBackupFiles.Name = "DgvBackupFiles";
-            this.DgvBackupFiles.ReadOnly = true;
-            this.DgvBackupFiles.RowHeadersWidth = 41;
-            this.DgvBackupFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvBackupFiles.RowTemplate.Height = 24;
-            this.DgvBackupFiles.RowTemplate.ReadOnly = true;
-            this.DgvBackupFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DgvBackupFiles.Size = new System.Drawing.Size(617, 197);
             this.DgvBackupFiles.TabIndex = 12;
-            this.DgvBackupFiles.SelectionChanged += new System.EventHandler(this.DgvBackupFiles_SelectionChanged);
             // 
             // ColumnGameTitle
             // 
@@ -535,7 +516,7 @@
 
         #endregion
 
-        private XDevkit.XtraDataGridView DgvBackupFiles;
+        private DevExpress.XtraGrid.GridControl DgvBackupFiles;
         private DarkUI.Controls.DarkSectionPanel SectionBackupFiles;
         private DarkUI.Controls.DarkSectionPanel SectionBackupDetails;
         private System.Windows.Forms.FlowLayoutPanel FlowPanelDetails;

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExternalApplicationsDialog));
             this.ButtonSaveAll = new DarkUI.Controls.DarkButton();
             this.SectionApplications = new DarkUI.Controls.DarkSectionPanel();
-            this.DgvApplications = new XDevkit.XtraDataGridView();
+            this.DgvApplications = new DevExpress.XtraGrid.GridControl();
             this.ColumnApplicationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToolStripGameRegions = new DarkUI.Controls.DarkToolStrip();
@@ -82,27 +82,12 @@
             // 
             // DgvApplications
             // 
-            this.DgvApplications.AllowUserToAddRows = false;
-            this.DgvApplications.AllowUserToPasteCells = false;
-            this.DgvApplications.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.DgvApplications.ColumnHeadersHeight = 19;
-            this.DgvApplications.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnApplicationName,
-            this.ColumnFileLocation});
             this.DgvApplications.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvApplications.Location = new System.Drawing.Point(1, 25);
             this.DgvApplications.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.DgvApplications.MultiSelect = false;
             this.DgvApplications.Name = "DgvApplications";
-            this.DgvApplications.ReadOnly = true;
-            this.DgvApplications.RowHeadersWidth = 41;
-            this.DgvApplications.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvApplications.RowTemplate.Height = 24;
-            this.DgvApplications.RowTemplate.ReadOnly = true;
-            this.DgvApplications.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DgvApplications.Size = new System.Drawing.Size(649, 193);
             this.DgvApplications.TabIndex = 0;
-            this.DgvApplications.SelectionChanged += new System.EventHandler(this.DgvApplications_SelectionChanged);
             // 
             // ColumnApplicationName
             // 
@@ -323,7 +308,7 @@
         #endregion
         private DarkUI.Controls.DarkButton ButtonSaveAll;
         private DarkUI.Controls.DarkSectionPanel SectionApplications;
-        private XDevkit.XtraDataGridView DgvApplications;
+        private DevExpress.XtraGrid.GridControl DgvApplications;
         private DarkUI.Controls.DarkToolStrip ToolStripGameRegions;
         private System.Windows.Forms.ToolStripButton ToolStripDeleteAll;
         private System.Windows.Forms.ToolStripLabel LabelTotalApplications;

@@ -38,6 +38,7 @@ namespace ModioX.Forms.Tools
 
         private void LoadPackages()
         {
+            /*
             DgvPackages.Rows.Clear();
 
             FtpClient.SetWorkingDirectory(PackageFilesPath);
@@ -75,12 +76,15 @@ namespace ModioX.Forms.Tools
                 {
                     if (MainWindow.Settings.IsPackageFileOldVersion(MainWindow.Database.Mods, MainWindow.Database.CategoriesData, installedPackageFile))
                     {
-                        DarkMessageBox.ShowQuestion($"There is a new homebrew version for package file: {packageFile.Name}.\n\nWould you like to update it now?", "New Homebrew Version");
-                        //MainWindow.Window.UninstallMods(MainWindow.Database.Mods.GetModById(pkgFile.Id));
-                        //MainWindow.Window.InstallMods(MainWindow.Database.Mods.GetModById(pkgFile.Id));
+                        if (XtraMessageBox.Show($"There is a new homebrew version for package file: {packageFile.Name}.\n\nWould you like to update it now?", "New Homebrew Version", MessageBoxButtons.YesNo) == MessageBoxButtons.Yes)
+                        {
+                            //MainWindow.Window.UninstallMods(MainWindow.Database.Mods.GetModById(pkgFile.Id));
+                            //MainWindow.Window.InstallMods(MainWindow.Database.Mods.GetModById(pkgFile.Id));
+                        }                        
                     }
                 }
             }
+            */
         }
 
         private void TextBoxSearch_TextChanged(object sender, EventArgs e)
@@ -92,18 +96,19 @@ namespace ModioX.Forms.Tools
         {
             foreach (FtpListItem package in PackageFiles.FindAll(x => x.Name.Contains(TextBoxSearch.Text)))
             {
-                DgvPackages.Rows.Add(package.Name, MainWindow.Settings.ShowFileSizeInBytes ? package.Size.ToString("{n0}", CultureInfo.CurrentCulture) + " bytes" : StringExtensions.FormatSize(package.Size.ToString()), ImageExtensions.ResizeBitmap(Properties.Resources.download_from_the_cloud, 20, 20));
+                //DgvPackages.Rows.Add(package.Name, MainWindow.Settings.ShowFileSizeInBytes ? package.Size.ToString("{n0}", CultureInfo.CurrentCulture) + " bytes" : StringExtensions.FormatSize(package.Size.ToString()), ImageExtensions.ResizeBitmap(Properties.Resources.download_from_the_cloud, 20, 20));
             }
         }
 
         private void DgvPackages_SelectionChanged(object sender, EventArgs e)
         {
-            ToolStripDeleteSelected.Enabled = DgvPackages.CurrentRow != null;
-            ContextMenuDownloadToComputer.Enabled = DgvPackages.CurrentRow != null;
+            //ToolStripDeleteSelected.Enabled = DgvPackages.CurrentRow != null;
+            //ContextMenuDownloadToComputer.Enabled = DgvPackages.CurrentRow != null;
         }
 
         private void DgvPackages_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            /*
             if (DgvPackages.CurrentRow != null)
             {
                 if (DgvPackages.CurrentCell.ColumnIndex.Equals(2))
@@ -111,6 +116,7 @@ namespace ModioX.Forms.Tools
                     DownloadToComputer();
                 }
             }
+            */
         }
 
         private void ToolStripInstallPackageFile_Click(object sender, EventArgs e)
@@ -120,6 +126,7 @@ namespace ModioX.Forms.Tools
 
         private void ToolStripDeleteSelected_Click(object sender, EventArgs e)
         {
+            /*
             if (DarkMessageBox.ShowQuestion("Do you really want to delete the selected package file from your console?", "Delete Selected", DarkDialogButton.YesNo) == DialogResult.Yes)
             {
                 string packageFileName = DgvPackages.Rows[DgvPackages.CurrentRow.Index].Cells[0].Value.ToString();
@@ -129,10 +136,12 @@ namespace ModioX.Forms.Tools
                 UpdateStatus($"Successfully deleted package file.");
                 LoadPackages();
             }
+            */
         }
 
         private void ToolStripDeleteAll_Click(object sender, EventArgs e)
         {
+            /*
             if (DarkMessageBox.ShowQuestion("Do you really to delete all of your package files from your console?", "Delete All", DarkDialogButton.YesNo) == DialogResult.Yes)
             {
                 foreach (FtpListItem package in PackageFiles)
@@ -143,6 +152,7 @@ namespace ModioX.Forms.Tools
                     LoadPackages();
                 }
             }
+            */
         }
 
         private void ContextMenuDownloadToComptuer_Click(object sender, EventArgs e)
@@ -155,6 +165,7 @@ namespace ModioX.Forms.Tools
         /// </summary>
         private void DownloadToComputer()
         {
+            /*
             if (DgvPackages.CurrentRow != null)
             {
                 string updateUrl = DgvPackages.CurrentRow.Cells[0].Value.ToString();
@@ -169,6 +180,7 @@ namespace ModioX.Forms.Tools
                     LoadPackages();
                 }
             }
+            */
         }
 
         /// <summary>

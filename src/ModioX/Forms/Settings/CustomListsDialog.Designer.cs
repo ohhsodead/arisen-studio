@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomListsDialog));
             this.SectionPanelCustomLists = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoListsCreated = new System.Windows.Forms.Label();
-            this.DgvCustomLists = new XDevkit.XtraDataGridView();
+            this.DgvCustomLists = new DevExpress.XtraGrid.GridControl();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContextMenuCustomLists = new DarkUI.Controls.DarkContextMenu();
@@ -85,31 +85,13 @@
             // 
             // DgvCustomLists
             // 
-            this.DgvCustomLists.AllowUserToAddRows = false;
-            this.DgvCustomLists.AllowUserToDragDropRows = false;
-            this.DgvCustomLists.AllowUserToPasteCells = false;
-            this.DgvCustomLists.AllowUserToResizeColumns = false;
-            this.DgvCustomLists.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.DgvCustomLists.ColumnHeadersHeight = 21;
-            this.DgvCustomLists.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DgvCustomLists.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.ColumnRegion});
             this.DgvCustomLists.ContextMenuStrip = this.ContextMenuCustomLists;
             this.DgvCustomLists.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvCustomLists.Location = new System.Drawing.Point(1, 25);
             this.DgvCustomLists.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.DgvCustomLists.MultiSelect = false;
             this.DgvCustomLists.Name = "DgvCustomLists";
-            this.DgvCustomLists.ReadOnly = true;
-            this.DgvCustomLists.RowHeadersWidth = 41;
-            this.DgvCustomLists.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvCustomLists.RowTemplate.Height = 24;
-            this.DgvCustomLists.RowTemplate.ReadOnly = true;
-            this.DgvCustomLists.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DgvCustomLists.Size = new System.Drawing.Size(405, 191);
             this.DgvCustomLists.TabIndex = 0;
-            this.DgvCustomLists.SelectionChanged += new System.EventHandler(this.DgvCustomLists_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -297,7 +279,7 @@
         #endregion
         private DarkUI.Controls.DarkSectionPanel SectionPanelCustomLists;
         private System.Windows.Forms.Label LabelNoListsCreated;
-        private XDevkit.XtraDataGridView DgvCustomLists;
+        private DevExpress.XtraGrid.GridControl DgvCustomLists;
         private DarkUI.Controls.DarkToolStrip ToolStripGameRegions;
         private System.Windows.Forms.ToolStripButton ToolStripDeleteAll;
         private System.Windows.Forms.ToolStripLabel LabelTotalCustomLists;

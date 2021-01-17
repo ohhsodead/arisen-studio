@@ -58,6 +58,7 @@ namespace ModioX.Forms.Tools
             }
             else
             {
+                /*
                 DgvGameUpdates.Rows.Clear();
 
                 foreach (var update in gameUpdates.Tag.Package)
@@ -71,21 +72,23 @@ namespace ModioX.Forms.Tools
                                             ImageExtensions.ResizeBitmap(Properties.Resources.install, 20, 20),
                                             ImageExtensions.ResizeBitmap(Properties.Resources.download_from_the_cloud, 20, 20));
                 }
+                */
             }
 
-            LabelNoGameUpdatesFound.Visible = DgvGameUpdates.Rows.Count < 1;
+            LabelNoGameUpdatesFound.Visible = DgvGameUpdates.MainView.RowCount < 1;             
         }
 
         private void DgvGameUpdates_SelectionChanged(object sender, EventArgs e)
         {
-            ContextMenuDownloadToComputer.Enabled = DgvGameUpdates.CurrentRow != null;
-            ContextMenuInstallToConsole.Enabled = DgvGameUpdates.CurrentRow != null;
-            ContextMenuCopyURLToClipboard.Enabled = DgvGameUpdates.CurrentRow != null;
-            ContextMenuCopySHA1ToClipboard.Enabled = DgvGameUpdates.CurrentRow != null;
+            //ContextMenuDownloadToComputer.Enabled = DgvGameUpdates.CurrentRow != null;
+            //ContextMenuInstallToConsole.Enabled = DgvGameUpdates.CurrentRow != null;
+            //ContextMenuCopyURLToClipboard.Enabled = DgvGameUpdates.CurrentRow != null;
+            //ContextMenuCopySHA1ToClipboard.Enabled = DgvGameUpdates.CurrentRow != null;
         }
 
         private void DgvGameUpdates_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            /*
             if (DgvGameUpdates.CurrentRow != null)
             {
                 if (DgvGameUpdates.CurrentCell.ColumnIndex.Equals(6))
@@ -97,6 +100,7 @@ namespace ModioX.Forms.Tools
                     DownloadToComputer();
                 }
             }
+            */
         }
 
         private void ContextMenuDownloadToComptuer_Click(object sender, EventArgs e)
@@ -111,26 +115,31 @@ namespace ModioX.Forms.Tools
 
         private void ContextMenuCopyToClipboard_Click(object sender, EventArgs e)
         {
+            /*
             if (DgvGameUpdates.CurrentRow != null)
             {
                 string updateUrl = DgvGameUpdates.CurrentRow.Cells[0].Value.ToString();
                 Clipboard.SetText(updateUrl);
                 DarkMessageBox.ShowInformation("Update URL has been copied to clipboard.", "Copied");
             }
+            */
         }
 
         private void ContextMenuCopySHA1ToClipboard_Click(object sender, EventArgs e)
         {
+            /*
             if (DgvGameUpdates.CurrentRow != null)
             {
                 string updateSHA1 = DgvGameUpdates.CurrentRow.Cells[1].Value.ToString();
                 Clipboard.SetText(updateSHA1);
                 DarkMessageBox.ShowInformation("Update SHA1 has been copied to clipboard.", "Copied");
             }
+            */
         }
 
         private void InstallToConsole()
         {
+            /*
             if (DgvGameUpdates.CurrentRow != null)
             {
                 if (MainWindow.IsConsoleConnected)
@@ -151,10 +160,12 @@ namespace ModioX.Forms.Tools
                     DarkMessageBox.ShowInformation("You must be connected to your console to install the update package file.", "Not Connected");
                 }
             }
+            */
         }
 
         private void DownloadToComputer()
         {
+            /*
             if (DgvGameUpdates.CurrentRow != null)
             {
                 string updateUrl = DgvGameUpdates.CurrentRow.Cells[0].Value.ToString();
@@ -168,6 +179,7 @@ namespace ModioX.Forms.Tools
                     UpdateStatus("Successfully downloaded package file to the specified folder.");
                 }
             }
+            */
         }
 
         private void UpdateStatus(string text)

@@ -49,7 +49,7 @@
             this.ToolStripLabelLocalStatus = new System.Windows.Forms.ToolStripLabel();
             this.TextBoxLocalPath = new DarkUI.Controls.DarkTextBox();
             this.ButtonLocalDirectory = new DarkUI.Controls.DarkButton();
-            this.DgvLocalFiles = new XDevkit.XtraDataGridView();
+            this.DgvLocalFiles = new DevExpress.XtraGrid.GridControl();
             this.ColumnLocalType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnLocalIcon = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnLocalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,7 +73,7 @@
             this.ToolStripLabelConsoleStatus = new System.Windows.Forms.ToolStripLabel();
             this.ButtonConsoleNavigate = new DarkUI.Controls.DarkButton();
             this.TextBoxConsolePath = new DarkUI.Controls.DarkTextBox();
-            this.DgvConsoleFiles = new XDevkit.XtraDataGridView();
+            this.DgvConsoleFiles = new DevExpress.XtraGrid.GridControl();
             this.ColumnConsoleFileType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnConsoleFileImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnConsoleFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -343,37 +343,15 @@
             // 
             // DgvLocalFiles
             // 
-            this.DgvLocalFiles.AllowUserToAddRows = false;
-            this.DgvLocalFiles.AllowUserToDeleteRows = false;
-            this.DgvLocalFiles.AllowUserToDragDropRows = false;
-            this.DgvLocalFiles.AllowUserToPasteCells = false;
             this.DgvLocalFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgvLocalFiles.ColumnHeadersHeight = 19;
-            this.DgvLocalFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnLocalType,
-            this.ColumnLocalIcon,
-            this.ColumnLocalName,
-            this.ColumnLocalSize,
-            this.ColumnLocalDateTime});
             this.DgvLocalFiles.ContextMenuStrip = this.ContextMenuLocal;
             this.DgvLocalFiles.Location = new System.Drawing.Point(7, 60);
             this.DgvLocalFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 0);
-            this.DgvLocalFiles.MultiSelect = false;
             this.DgvLocalFiles.Name = "DgvLocalFiles";
-            this.DgvLocalFiles.ReadOnly = true;
-            this.DgvLocalFiles.RowHeadersWidth = 41;
-            this.DgvLocalFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvLocalFiles.RowTemplate.Height = 24;
-            this.DgvLocalFiles.RowTemplate.ReadOnly = true;
-            this.DgvLocalFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DgvLocalFiles.Size = new System.Drawing.Size(638, 412);
             this.DgvLocalFiles.TabIndex = 20;
-            this.DgvLocalFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLocalFiles_CellClick);
-            this.DgvLocalFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLocalFiles_CellDoubleClick);
-            this.DgvLocalFiles.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
-            this.DgvLocalFiles.SelectionChanged += new System.EventHandler(this.DgvLocalFiles_SelectionChanged);
             // 
             // ColumnLocalType
             // 
@@ -650,37 +628,15 @@
             // 
             // DgvConsoleFiles
             // 
-            this.DgvConsoleFiles.AllowUserToAddRows = false;
-            this.DgvConsoleFiles.AllowUserToDeleteRows = false;
-            this.DgvConsoleFiles.AllowUserToDragDropRows = false;
-            this.DgvConsoleFiles.AllowUserToPasteCells = false;
             this.DgvConsoleFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgvConsoleFiles.ColumnHeadersHeight = 19;
-            this.DgvConsoleFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnConsoleFileType,
-            this.ColumnConsoleFileImage,
-            this.ColumnConsoleFileName,
-            this.ColumnConsoleFileSize,
-            this.ColumnConsoleLastModified});
             this.DgvConsoleFiles.ContextMenuStrip = this.ContextMenuConsole;
             this.DgvConsoleFiles.Location = new System.Drawing.Point(7, 60);
             this.DgvConsoleFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 0);
-            this.DgvConsoleFiles.MultiSelect = false;
             this.DgvConsoleFiles.Name = "DgvConsoleFiles";
-            this.DgvConsoleFiles.ReadOnly = true;
-            this.DgvConsoleFiles.RowHeadersWidth = 41;
-            this.DgvConsoleFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvConsoleFiles.RowTemplate.Height = 24;
-            this.DgvConsoleFiles.RowTemplate.ReadOnly = true;
-            this.DgvConsoleFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DgvConsoleFiles.Size = new System.Drawing.Size(640, 412);
             this.DgvConsoleFiles.TabIndex = 24;
-            this.DgvConsoleFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvConsoleFiles_CellClick);
-            this.DgvConsoleFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvConsoleFiles_CellDoubleClick);
-            this.DgvConsoleFiles.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
-            this.DgvConsoleFiles.SelectionChanged += new System.EventHandler(this.DgvConsoleFiles_SelectionChanged);
             // 
             // ColumnConsoleFileType
             // 
@@ -801,13 +757,13 @@
         private System.Windows.Forms.ToolStripButton ToolStripLocalUpload;
         private System.Windows.Forms.ToolStripButton ToolStripLocalDelete;
         private System.Windows.Forms.ToolStripButton ToolStripLocalOpenExplorer;
-        private XDevkit.XtraDataGridView DgvLocalFiles;
+        private DevExpress.XtraGrid.GridControl DgvLocalFiles;
         private DarkUI.Controls.DarkSectionPanel SectionConsoleFileExplorer;
         private DarkUI.Controls.DarkToolStrip ToolStripConsoleActions;
         private System.Windows.Forms.ToolStripButton ToolStripConsoleDownload;
         private System.Windows.Forms.ToolStripButton ToolStripConsoleDelete;
         private System.Windows.Forms.ToolStripButton ToolStripConsoleRefresh;
-        private XDevkit.XtraDataGridView DgvConsoleFiles;
+        private DevExpress.XtraGrid.GridControl DgvConsoleFiles;
         private DarkUI.Controls.DarkTextBox TextBoxConsolePath;
         private System.Windows.Forms.TableLayoutPanel LayoutPanel;
         private System.Windows.Forms.Timer WaitLoadConsole;

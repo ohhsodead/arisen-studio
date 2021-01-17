@@ -34,6 +34,7 @@ namespace ModioX.Forms.Windows
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             this.ContextMenuMods = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuModsInstallFiles = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuModsUninstallFiles = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,9 +68,10 @@ namespace ModioX.Forms.Windows
             this.LabelTitleModDescription = new DarkUI.Controls.DarkTitle();
             this.LabelDescription = new System.Windows.Forms.Label();
             this.SectionModsInstallFilePaths = new DarkUI.Controls.DarkSectionPanel();
-            this.DgvInstallationFiles = new XDevkit.XtraDataGridView();
-            this.ColumnInstallationFiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridControlModsInstallFiles = new DevExpress.XtraGrid.GridControl();
+            this.GridViewModsInstallFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.LabelHeaderInstallationFiles = new DarkUI.Controls.DarkTitle();
+            this.ColumnInstallationFiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ScrollBarDetails = new DarkUI.Controls.DarkScrollBar();
             this.SectionArchiveInformation = new DarkUI.Controls.DarkSectionPanel();
             this.PanelModsInstallationPaths = new System.Windows.Forms.Panel();
@@ -78,29 +80,17 @@ namespace ModioX.Forms.Windows
             this.ToolItemModUninstall = new System.Windows.Forms.ToolStripButton();
             this.ToolItemModDownload = new System.Windows.Forms.ToolStripButton();
             this.ToolItemModAddToFavorite = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripFooter = new DarkUI.Controls.DarkToolStrip();
             this.ToolStripLabelConnectedConsole = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripLabelConsole = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripStatusSeperator0 = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripLabelStatus = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripLabelStats = new System.Windows.Forms.ToolStripLabel();
             this.LabelSelectSystemType = new System.Windows.Forms.Label();
-            this.SectionModsLibrary = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoModsFound = new System.Windows.Forms.Label();
-            this.DgvMods = new XDevkit.XtraDataGridView();
-            this.ColumnModsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsFirmware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsNoFiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnModsInstall = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnModsDownload = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnModsFavourite = new System.Windows.Forms.DataGridViewImageColumn();
+            this.GridControlMods = new DevExpress.XtraGrid.GridControl();
+            this.GridViewMods = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.PanelModsLibraryFilters = new System.Windows.Forms.Panel();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.ComboBoxRegion = new DevExpress.XtraEditors.ComboBoxEdit();
             this.MainMenu = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.ConnectMenuBar = new DevExpress.XtraBars.BarButtonItem();
@@ -144,17 +134,16 @@ namespace ModioX.Forms.Windows
             this.ReportBugButton = new DevExpress.XtraBars.BarButtonItem();
             this.DiscordServerButton = new DevExpress.XtraBars.BarButtonItem();
             this.OfficailSourceButton = new DevExpress.XtraBars.BarButtonItem();
-            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
-            this.HelpSpacer1 = new DevExpress.XtraBars.BarButtonItem();
             this.OpenLogFileButton = new DevExpress.XtraBars.BarButtonItem();
             this.OpenLogFolderButton = new DevExpress.XtraBars.BarButtonItem();
-            this.HelpSpacer2 = new DevExpress.XtraBars.BarButtonItem();
             this.CheckForUpdateButton = new DevExpress.XtraBars.BarButtonItem();
             this.WhatsNewButton = new DevExpress.XtraBars.BarButtonItem();
-            this.HelpSpacer3 = new DevExpress.XtraBars.BarButtonItem();
+            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
             this.AboutBar = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
+            this.HeaderConsoleConnected = new DevExpress.XtraBars.BarHeaderItem();
+            this.LabelConsoleConnected = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -165,15 +154,29 @@ namespace ModioX.Forms.Windows
             this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
             this.barWorkspaceMenuItem1 = new DevExpress.XtraBars.BarWorkspaceMenuItem();
             this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager(this.components);
+            this.HelpSpacer1 = new DevExpress.XtraBars.BarButtonItem();
+            this.HelpSpacer2 = new DevExpress.XtraBars.BarButtonItem();
+            this.HelpSpacer3 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockingMenuItem1 = new DevExpress.XtraBars.BarDockingMenuItem();
-            this.ComboBoxRegion = new DarkUI.Controls.DarkComboBox();
+            this.barToolbarsListItem2 = new DevExpress.XtraBars.BarToolbarsListItem();
+            this.ComboBoxModType = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.ComboBoxSystemType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.LabelSelectRegion = new System.Windows.Forms.Label();
             this.LabelTitleMods = new DarkUI.Controls.DarkTitle();
             this.LabelTitleFilterMods = new DarkUI.Controls.DarkTitle();
             this.TextBoxSearch = new DarkUI.Controls.DarkTextBox();
             this.LabelSearch = new System.Windows.Forms.Label();
-            this.ComboBoxModType = new DarkUI.Controls.DarkComboBox();
-            this.ComboBoxSystemType = new DarkUI.Controls.DarkComboBox();
+            this.ColumnModsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsFirmware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsNoFiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnModsInstall = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnModsDownload = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnModsFavourite = new System.Windows.Forms.DataGridViewImageColumn();
             this.SectionGames = new DarkUI.Controls.DarkSectionPanel();
             this.ScrollBarCategories = new DarkUI.Controls.DarkScrollBar();
             this.FlowPanelCategories = new System.Windows.Forms.FlowLayoutPanel();
@@ -185,9 +188,11 @@ namespace ModioX.Forms.Windows
             this.PanelResources = new System.Windows.Forms.FlowLayoutPanel();
             this.LabelTitleMyLists = new DarkUI.Controls.DarkTitle();
             this.PanelLists = new System.Windows.Forms.FlowLayoutPanel();
-            this.SectionInstalledGameMods = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoModsInstalled = new System.Windows.Forms.Label();
-            this.DgvGameModsInstalled = new XDevkit.XtraDataGridView();
+            this.GridControlGameModsInstalled = new DevExpress.XtraGrid.GridControl();
+            this.GridViewGameModsInstalled = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ToolItemGameModsUninstallAll = new System.Windows.Forms.ToolStripButton();
+            this.LabelInstalledGameModsStatus = new System.Windows.Forms.ToolStripLabel();
             this.ColumnModsInstalledId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsInstalledGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsInstalledRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -197,36 +202,53 @@ namespace ModioX.Forms.Windows
             this.ColumnModsInstalledNoOfFiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsInstalledDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsInstalledUninstall = new System.Windows.Forms.DataGridViewImageColumn();
-            this.PanelModsInstalledHeader = new System.Windows.Forms.Panel();
-            this.LabelHeaderGameMods = new DarkUI.Controls.DarkTitle();
-            this.MenuStripGameMods = new DarkUI.Controls.DarkToolStrip();
-            this.ToolItemGameModsUninstallAll = new System.Windows.Forms.ToolStripButton();
-            this.LabelInstalledGameModsStatus = new System.Windows.Forms.ToolStripLabel();
             this.bar1 = new DevExpress.XtraBars.Bar();
+            this.GroupModsLibrary = new DevExpress.XtraEditors.GroupControl();
+            this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
+            this.NavGroupGames = new DevExpress.XtraNavBar.NavBarGroup();
+            this.NavGroupHomebrewApps = new DevExpress.XtraNavBar.NavBarGroup();
+            this.NavGroupResources = new DevExpress.XtraNavBar.NavBarGroup();
+            this.NavGroupMyLists = new DevExpress.XtraNavBar.NavBarGroup();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.bar4 = new DevExpress.XtraBars.Bar();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar7 = new DevExpress.XtraBars.Bar();
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
             this.SectionModsInstallFilePaths.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvInstallationFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlModsInstallFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewModsInstallFiles)).BeginInit();
             this.SectionArchiveInformation.SuspendLayout();
             this.PanelModsInstallationPaths.SuspendLayout();
-            this.ToolStripArchiveInformation.SuspendLayout();
-            this.ToolStripFooter.SuspendLayout();
-            this.SectionModsLibrary.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlMods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewMods)).BeginInit();
             this.PanelModsLibraryFilters.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxRegion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConnectMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolsMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationsMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OptionsMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HelpMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxModType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxSystemType.Properties)).BeginInit();
             this.SectionGames.SuspendLayout();
             this.FlowPanelCategories.SuspendLayout();
-            this.SectionInstalledGameMods.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvGameModsInstalled)).BeginInit();
-            this.PanelModsInstalledHeader.SuspendLayout();
-            this.MenuStripGameMods.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlGameModsInstalled)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewGameModsInstalled)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupModsLibrary)).BeginInit();
+            this.GroupModsLibrary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ContextMenuMods
@@ -330,7 +352,7 @@ namespace ModioX.Forms.Windows
             this.LabelSelectType.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSelectType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectType.Location = new System.Drawing.Point(558, 42);
+            this.LabelSelectType.Location = new System.Drawing.Point(556, 42);
             this.LabelSelectType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelSelectType.Name = "LabelSelectType";
             this.LabelSelectType.Size = new System.Drawing.Size(64, 15);
@@ -657,7 +679,7 @@ namespace ModioX.Forms.Windows
             // 
             // SectionModsInstallFilePaths
             // 
-            this.SectionModsInstallFilePaths.Controls.Add(this.DgvInstallationFiles);
+            this.SectionModsInstallFilePaths.Controls.Add(this.GridControlModsInstallFiles);
             this.SectionModsInstallFilePaths.Controls.Add(this.LabelHeaderInstallationFiles);
             this.SectionModsInstallFilePaths.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SectionModsInstallFilePaths.Location = new System.Drawing.Point(0, 11);
@@ -667,43 +689,23 @@ namespace ModioX.Forms.Windows
             this.SectionModsInstallFilePaths.Size = new System.Drawing.Size(375, 125);
             this.SectionModsInstallFilePaths.TabIndex = 26;
             // 
-            // DgvInstallationFiles
+            // GridControlModsInstallFiles
             // 
-            this.DgvInstallationFiles.AllowUserToAddRows = false;
-            this.DgvInstallationFiles.AllowUserToDeleteRows = false;
-            this.DgvInstallationFiles.AllowUserToDragDropRows = false;
-            this.DgvInstallationFiles.AllowUserToPasteCells = false;
-            this.DgvInstallationFiles.AllowUserToResizeColumns = false;
-            this.DgvInstallationFiles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.DgvInstallationFiles.ColumnHeadersHeight = 21;
-            this.DgvInstallationFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DgvInstallationFiles.ColumnHeadersVisible = false;
-            this.DgvInstallationFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnInstallationFiles});
-            this.DgvInstallationFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvInstallationFiles.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.DgvInstallationFiles.Location = new System.Drawing.Point(1, 25);
-            this.DgvInstallationFiles.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.DgvInstallationFiles.MultiSelect = false;
-            this.DgvInstallationFiles.Name = "DgvInstallationFiles";
-            this.DgvInstallationFiles.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.DgvInstallationFiles.ReadOnly = true;
-            this.DgvInstallationFiles.RowHeadersWidth = 41;
-            this.DgvInstallationFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvInstallationFiles.RowTemplate.Height = 24;
-            this.DgvInstallationFiles.RowTemplate.ReadOnly = true;
-            this.DgvInstallationFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvInstallationFiles.Size = new System.Drawing.Size(373, 99);
-            this.DgvInstallationFiles.TabIndex = 3;
-            this.DgvInstallationFiles.SelectionChanged += new System.EventHandler(this.Dgv_SelectionChanged);
+            this.GridControlModsInstallFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridControlModsInstallFiles.Location = new System.Drawing.Point(1, 25);
+            this.GridControlModsInstallFiles.MainView = this.GridViewModsInstallFiles;
+            this.GridControlModsInstallFiles.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.GridControlModsInstallFiles.Name = "GridControlModsInstallFiles";
+            this.GridControlModsInstallFiles.Size = new System.Drawing.Size(373, 99);
+            this.GridControlModsInstallFiles.TabIndex = 3;
+            this.GridControlModsInstallFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewModsInstallFiles});
             // 
-            // ColumnInstallationFiles
+            // GridViewModsInstallFiles
             // 
-            this.ColumnInstallationFiles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnInstallationFiles.HeaderText = "Installation Files";
-            this.ColumnInstallationFiles.Name = "ColumnInstallationFiles";
-            this.ColumnInstallationFiles.ReadOnly = true;
-            this.ColumnInstallationFiles.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridViewModsInstallFiles.GridControl = this.GridControlModsInstallFiles;
+            this.GridViewModsInstallFiles.Name = "GridViewModsInstallFiles";
+            this.GridViewModsInstallFiles.OptionsView.ShowGroupPanel = false;
             // 
             // LabelHeaderInstallationFiles
             // 
@@ -715,6 +717,14 @@ namespace ModioX.Forms.Windows
             this.LabelHeaderInstallationFiles.Size = new System.Drawing.Size(362, 16);
             this.LabelHeaderInstallationFiles.TabIndex = 1163;
             this.LabelHeaderInstallationFiles.Text = "INSTALL FILES";
+            // 
+            // ColumnInstallationFiles
+            // 
+            this.ColumnInstallationFiles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnInstallationFiles.HeaderText = "Installation Files";
+            this.ColumnInstallationFiles.Name = "ColumnInstallationFiles";
+            this.ColumnInstallationFiles.ReadOnly = true;
+            this.ColumnInstallationFiles.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // ScrollBarDetails
             // 
@@ -764,11 +774,6 @@ namespace ModioX.Forms.Windows
             this.ToolStripArchiveInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ToolStripArchiveInformation.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.ToolStripArchiveInformation.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ToolStripArchiveInformation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolItemModInstall,
-            this.ToolItemModUninstall,
-            this.ToolItemModDownload,
-            this.ToolItemModAddToFavorite});
             this.ToolStripArchiveInformation.Location = new System.Drawing.Point(1, 706);
             this.ToolStripArchiveInformation.Name = "ToolStripArchiveInformation";
             this.ToolStripArchiveInformation.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -843,27 +848,6 @@ namespace ModioX.Forms.Windows
             this.ToolItemModAddToFavorite.ToolTipText = "Add/Remove from Favorites";
             this.ToolItemModAddToFavorite.Click += new System.EventHandler(this.ToolStripFavorite_Click);
             // 
-            // ToolStripFooter
-            // 
-            this.ToolStripFooter.AutoSize = false;
-            this.ToolStripFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ToolStripFooter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripFooter.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.ToolStripFooter.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ToolStripFooter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripLabelConnectedConsole,
-            this.ToolStripLabelConsole,
-            this.ToolStripStatusSeperator0,
-            this.ToolStripLabelStatus,
-            this.ToolStripLabelStats});
-            this.ToolStripFooter.Location = new System.Drawing.Point(0, 770);
-            this.ToolStripFooter.Name = "ToolStripFooter";
-            this.ToolStripFooter.Padding = new System.Windows.Forms.Padding(11, 0, 8, 5);
-            this.ToolStripFooter.Size = new System.Drawing.Size(1584, 32);
-            this.ToolStripFooter.TabIndex = 1146;
-            this.ToolStripFooter.Text = "darkToolStrip1";
-            // 
             // ToolStripLabelConnectedConsole
             // 
             this.ToolStripLabelConnectedConsole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
@@ -914,213 +898,80 @@ namespace ModioX.Forms.Windows
             this.LabelSelectSystemType.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSelectSystemType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectSystemType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectSystemType.Location = new System.Drawing.Point(406, 42);
+            this.LabelSelectSystemType.Location = new System.Drawing.Point(404, 42);
             this.LabelSelectSystemType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelSelectSystemType.Name = "LabelSelectSystemType";
             this.LabelSelectSystemType.Size = new System.Drawing.Size(78, 15);
             this.LabelSelectSystemType.TabIndex = 1156;
             this.LabelSelectSystemType.Text = "SYSTEM TYPE";
             // 
-            // SectionModsLibrary
-            // 
-            this.SectionModsLibrary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SectionModsLibrary.Controls.Add(this.LabelNoModsFound);
-            this.SectionModsLibrary.Controls.Add(this.DgvMods);
-            this.SectionModsLibrary.Controls.Add(this.PanelModsLibraryFilters);
-            this.SectionModsLibrary.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.SectionModsLibrary.Location = new System.Drawing.Point(286, 39);
-            this.SectionModsLibrary.Margin = new System.Windows.Forms.Padding(4);
-            this.SectionModsLibrary.Name = "SectionModsLibrary";
-            this.SectionModsLibrary.SectionHeader = "MODS LIBRARY";
-            this.SectionModsLibrary.Size = new System.Drawing.Size(901, 493);
-            this.SectionModsLibrary.TabIndex = 10;
-            // 
             // LabelNoModsFound
             // 
             this.LabelNoModsFound.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LabelNoModsFound.AutoSize = true;
-            this.LabelNoModsFound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.LabelNoModsFound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.LabelNoModsFound.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelNoModsFound.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelNoModsFound.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelNoModsFound.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelNoModsFound.Location = new System.Drawing.Point(396, 193);
+            this.LabelNoModsFound.Location = new System.Drawing.Point(396, 197);
             this.LabelNoModsFound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelNoModsFound.Name = "LabelNoModsFound";
             this.LabelNoModsFound.Size = new System.Drawing.Size(109, 15);
             this.LabelNoModsFound.TabIndex = 1159;
             this.LabelNoModsFound.Text = "NO MODS FOUND";
             // 
-            // DgvMods
+            // GridControlMods
             // 
-            this.DgvMods.AllowUserToAddRows = false;
-            this.DgvMods.AllowUserToDeleteRows = false;
-            this.DgvMods.AllowUserToDragDropRows = false;
-            this.DgvMods.AllowUserToPasteCells = false;
-            this.DgvMods.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.DgvMods.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.DgvMods.ColumnHeadersHeight = 21;
-            this.DgvMods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DgvMods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnModsId,
-            this.ColumnModsName,
-            this.ColumnModsFirmware,
-            this.ColumnModsType,
-            this.ColumnModsRegion,
-            this.ColumnModsVersion,
-            this.ColumnModsAuthor,
-            this.ColumnModsNoFiles,
-            this.ColumnModsInstall,
-            this.ColumnModsDownload,
-            this.ColumnModsFavourite});
-            this.DgvMods.ContextMenuStrip = this.ContextMenuMods;
-            this.DgvMods.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvMods.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.DgvMods.Location = new System.Drawing.Point(1, 121);
-            this.DgvMods.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.DgvMods.MultiSelect = false;
-            this.DgvMods.Name = "DgvMods";
-            this.DgvMods.OutlineColor = System.Drawing.Color.Transparent;
-            this.DgvMods.ReadOnly = true;
-            this.DgvMods.RowHeadersWidth = 41;
-            this.DgvMods.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvMods.RowTemplate.Height = 24;
-            this.DgvMods.RowTemplate.ReadOnly = true;
-            this.DgvMods.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvMods.ShowEditingIcon = false;
-            this.DgvMods.Size = new System.Drawing.Size(899, 371);
-            this.DgvMods.TabIndex = 6;
-            this.DgvMods.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMods_CellClick);
-            this.DgvMods.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
-            this.DgvMods.SelectionChanged += new System.EventHandler(this.DgvMods_SelectionChanged);
+            this.GridControlMods.ContextMenuStrip = this.ContextMenuMods;
+            this.GridControlMods.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridControlMods.Location = new System.Drawing.Point(2, 119);
+            this.GridControlMods.MainView = this.GridViewMods;
+            this.GridControlMods.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.GridControlMods.Name = "GridControlMods";
+            this.GridControlMods.Size = new System.Drawing.Size(897, 413);
+            this.GridControlMods.TabIndex = 6;
+            this.GridControlMods.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewMods});
             // 
-            // ColumnModsId
+            // GridViewMods
             // 
-            this.ColumnModsId.HeaderText = "Id";
-            this.ColumnModsId.MinimumWidth = 6;
-            this.ColumnModsId.Name = "ColumnModsId";
-            this.ColumnModsId.ReadOnly = true;
-            this.ColumnModsId.Visible = false;
-            this.ColumnModsId.Width = 125;
-            // 
-            // ColumnModsName
-            // 
-            this.ColumnModsName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnModsName.HeaderText = "Mod Name";
-            this.ColumnModsName.MinimumWidth = 6;
-            this.ColumnModsName.Name = "ColumnModsName";
-            this.ColumnModsName.ReadOnly = true;
-            // 
-            // ColumnModsFirmware
-            // 
-            this.ColumnModsFirmware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsFirmware.HeaderText = "System Type";
-            this.ColumnModsFirmware.MinimumWidth = 6;
-            this.ColumnModsFirmware.Name = "ColumnModsFirmware";
-            this.ColumnModsFirmware.ReadOnly = true;
-            this.ColumnModsFirmware.Width = 101;
-            // 
-            // ColumnModsType
-            // 
-            this.ColumnModsType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsType.HeaderText = "Mod Type";
-            this.ColumnModsType.MinimumWidth = 6;
-            this.ColumnModsType.Name = "ColumnModsType";
-            this.ColumnModsType.ReadOnly = true;
-            this.ColumnModsType.Width = 85;
-            // 
-            // ColumnModsRegion
-            // 
-            this.ColumnModsRegion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsRegion.HeaderText = "Region";
-            this.ColumnModsRegion.MinimumWidth = 6;
-            this.ColumnModsRegion.Name = "ColumnModsRegion";
-            this.ColumnModsRegion.ReadOnly = true;
-            this.ColumnModsRegion.Width = 70;
-            // 
-            // ColumnModsVersion
-            // 
-            this.ColumnModsVersion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsVersion.HeaderText = "Version";
-            this.ColumnModsVersion.MinimumWidth = 6;
-            this.ColumnModsVersion.Name = "ColumnModsVersion";
-            this.ColumnModsVersion.ReadOnly = true;
-            this.ColumnModsVersion.Width = 72;
-            // 
-            // ColumnModsAuthor
-            // 
-            this.ColumnModsAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsAuthor.HeaderText = "Creator";
-            this.ColumnModsAuthor.MinimumWidth = 124;
-            this.ColumnModsAuthor.Name = "ColumnModsAuthor";
-            this.ColumnModsAuthor.ReadOnly = true;
-            this.ColumnModsAuthor.Width = 124;
-            // 
-            // ColumnModsNoFiles
-            // 
-            this.ColumnModsNoFiles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsNoFiles.HeaderText = "# of Files";
-            this.ColumnModsNoFiles.MinimumWidth = 6;
-            this.ColumnModsNoFiles.Name = "ColumnModsNoFiles";
-            this.ColumnModsNoFiles.ReadOnly = true;
-            this.ColumnModsNoFiles.Width = 80;
-            // 
-            // ColumnModsInstall
-            // 
-            this.ColumnModsInstall.HeaderText = "";
-            this.ColumnModsInstall.MinimumWidth = 6;
-            this.ColumnModsInstall.Name = "ColumnModsInstall";
-            this.ColumnModsInstall.ReadOnly = true;
-            this.ColumnModsInstall.Width = 28;
-            // 
-            // ColumnModsDownload
-            // 
-            this.ColumnModsDownload.HeaderText = "";
-            this.ColumnModsDownload.MinimumWidth = 6;
-            this.ColumnModsDownload.Name = "ColumnModsDownload";
-            this.ColumnModsDownload.ReadOnly = true;
-            this.ColumnModsDownload.Width = 28;
-            // 
-            // ColumnModsFavourite
-            // 
-            this.ColumnModsFavourite.HeaderText = "";
-            this.ColumnModsFavourite.MinimumWidth = 6;
-            this.ColumnModsFavourite.Name = "ColumnModsFavourite";
-            this.ColumnModsFavourite.ReadOnly = true;
-            this.ColumnModsFavourite.Width = 28;
+            this.GridViewMods.GridControl = this.GridControlMods;
+            this.GridViewMods.Name = "GridViewMods";
+            this.GridViewMods.OptionsView.ShowGroupPanel = false;
             // 
             // PanelModsLibraryFilters
             // 
-            this.PanelModsLibraryFilters.Controls.Add(this.comboBoxEdit1);
             this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxRegion);
+            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxModType);
+            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxSystemType);
             this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectRegion);
             this.PanelModsLibraryFilters.Controls.Add(this.LabelTitleMods);
             this.PanelModsLibraryFilters.Controls.Add(this.LabelTitleFilterMods);
             this.PanelModsLibraryFilters.Controls.Add(this.TextBoxSearch);
             this.PanelModsLibraryFilters.Controls.Add(this.LabelSearch);
-            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxModType);
             this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectSystemType);
             this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectType);
-            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxSystemType);
             this.PanelModsLibraryFilters.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelModsLibraryFilters.Location = new System.Drawing.Point(1, 25);
+            this.PanelModsLibraryFilters.Location = new System.Drawing.Point(2, 23);
             this.PanelModsLibraryFilters.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PanelModsLibraryFilters.Name = "PanelModsLibraryFilters";
-            this.PanelModsLibraryFilters.Size = new System.Drawing.Size(899, 96);
+            this.PanelModsLibraryFilters.Size = new System.Drawing.Size(897, 96);
             this.PanelModsLibraryFilters.TabIndex = 12;
             // 
-            // comboBoxEdit1
+            // ComboBoxRegion
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(490, 39);
-            this.comboBoxEdit1.MenuManager = this.MainMenu;
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ComboBoxRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxRegion.Location = new System.Drawing.Point(787, 38);
+            this.ComboBoxRegion.MenuManager = this.MainMenu;
+            this.ComboBoxRegion.Name = "ComboBoxRegion";
+            this.ComboBoxRegion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ComboBoxRegion.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxRegion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit1.Size = new System.Drawing.Size(60, 20);
-            this.comboBoxEdit1.TabIndex = 1164;
+            this.ComboBoxRegion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ComboBoxRegion.Size = new System.Drawing.Size(104, 22);
+            this.ComboBoxRegion.TabIndex = 1166;
             // 
             // MainMenu
             // 
@@ -1184,9 +1035,12 @@ namespace ModioX.Forms.Windows
             this.barButtonItem26,
             this.barButtonItem27,
             this.barButtonItem28,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.HeaderConsoleConnected,
+            this.LabelConsoleConnected,
+            this.barToolbarsListItem2});
             this.MainMenu.MainMenu = this.bar2;
-            this.MainMenu.MaxItemId = 53;
+            this.MainMenu.MaxItemId = 56;
             this.MainMenu.StatusBar = this.bar3;
             // 
             // bar2
@@ -1264,7 +1118,6 @@ namespace ModioX.Forms.Windows
             this.ToolsMenuBar.DropDownControl = this.ToolsMenu;
             this.ToolsMenuBar.Id = 1;
             this.ToolsMenuBar.Name = "ToolsMenuBar";
-            this.ToolsMenuBar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ToolsMenuBar_ItemClick);
             // 
             // ToolsMenu
             // 
@@ -1273,7 +1126,7 @@ namespace ModioX.Forms.Windows
             new DevExpress.XtraBars.LinkPersistInfo(this.GameUpdateFinderButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.FileManagerButton, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.PackageManagerButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.WebManControlsMenu)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.WebManControlsMenu, true)});
             this.ToolsMenu.Manager = this.MainMenu;
             this.ToolsMenu.Name = "ToolsMenu";
             // 
@@ -1446,7 +1299,7 @@ namespace ModioX.Forms.Windows
             new DevExpress.XtraBars.LinkPersistInfo(this.EditApplicationsButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.EditYourLists),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem16, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.Exitbutton)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.Exitbutton, true)});
             this.OptionsMenu.Manager = this.MainMenu;
             this.OptionsMenu.Name = "OptionsMenu";
             // 
@@ -1487,9 +1340,11 @@ namespace ModioX.Forms.Windows
             // 
             // Exitbutton
             // 
-            this.Exitbutton.Caption = "Exit  Application Alt + F4";
+            this.Exitbutton.Caption = "Exit Application";
             this.Exitbutton.Id = 20;
+            this.Exitbutton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4));
             this.Exitbutton.Name = "Exitbutton";
+            this.Exitbutton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
             this.Exitbutton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AppExit_ItemClick);
             // 
             // HelpMenuBar
@@ -1507,15 +1362,12 @@ namespace ModioX.Forms.Windows
             new DevExpress.XtraBars.LinkPersistInfo(this.ReportBugButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.DiscordServerButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.OfficailSourceButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.skinBarSubItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.HelpSpacer1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.OpenLogFileButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.OpenLogFileButton, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.OpenLogFolderButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.HelpSpacer2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.CheckForUpdateButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.CheckForUpdateButton, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.WhatsNewButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.HelpSpacer3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.AboutBar)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.skinBarSubItem1, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.AboutBar, true)});
             this.HelpMenu.Manager = this.MainMenu;
             this.HelpMenu.Name = "HelpMenu";
             // 
@@ -1540,20 +1392,6 @@ namespace ModioX.Forms.Windows
             this.OfficailSourceButton.Name = "OfficailSourceButton";
             this.OfficailSourceButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.OfficailSourceButton_ItemClick);
             // 
-            // skinBarSubItem1
-            // 
-            this.skinBarSubItem1.Caption = "Skin Changer...";
-            this.skinBarSubItem1.Id = 19;
-            this.skinBarSubItem1.Name = "skinBarSubItem1";
-            // 
-            // HelpSpacer1
-            // 
-            this.HelpSpacer1.Caption = "_________________________";
-            this.HelpSpacer1.DropDownEnabled = false;
-            this.HelpSpacer1.Enabled = false;
-            this.HelpSpacer1.Id = 26;
-            this.HelpSpacer1.Name = "HelpSpacer1";
-            // 
             // OpenLogFileButton
             // 
             this.OpenLogFileButton.Caption = "Open Log File...";
@@ -1567,13 +1405,6 @@ namespace ModioX.Forms.Windows
             this.OpenLogFolderButton.Id = 25;
             this.OpenLogFolderButton.Name = "OpenLogFolderButton";
             this.OpenLogFolderButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.OpenLogFolderButton_ItemClick);
-            // 
-            // HelpSpacer2
-            // 
-            this.HelpSpacer2.Caption = "_________________________";
-            this.HelpSpacer2.Enabled = false;
-            this.HelpSpacer2.Id = 27;
-            this.HelpSpacer2.Name = "HelpSpacer2";
             // 
             // CheckForUpdateButton
             // 
@@ -1589,12 +1420,11 @@ namespace ModioX.Forms.Windows
             this.WhatsNewButton.Name = "WhatsNewButton";
             this.WhatsNewButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.WhatsNewButton_ItemClick);
             // 
-            // HelpSpacer3
+            // skinBarSubItem1
             // 
-            this.HelpSpacer3.Caption = "_________________________";
-            this.HelpSpacer3.Enabled = false;
-            this.HelpSpacer3.Id = 31;
-            this.HelpSpacer3.Name = "HelpSpacer3";
+            this.skinBarSubItem1.Caption = "Skin Changer...";
+            this.skinBarSubItem1.Id = 19;
+            this.skinBarSubItem1.Name = "skinBarSubItem1";
             // 
             // AboutBar
             // 
@@ -1612,15 +1442,31 @@ namespace ModioX.Forms.Windows
             // 
             // bar3
             // 
+            this.bar3.BarItemVertIndent = 6;
             this.bar3.BarName = "Status bar";
             this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
             this.bar3.DockCol = 0;
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.HeaderConsoleConnected),
+            new DevExpress.XtraBars.LinkPersistInfo(this.LabelConsoleConnected)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
+            // 
+            // HeaderConsoleConnected
+            // 
+            this.HeaderConsoleConnected.Caption = "Console Connected  :";
+            this.HeaderConsoleConnected.Id = 53;
+            this.HeaderConsoleConnected.Name = "HeaderConsoleConnected";
+            // 
+            // LabelConsoleConnected
+            // 
+            this.LabelConsoleConnected.Caption = "Idle";
+            this.LabelConsoleConnected.Id = 54;
+            this.LabelConsoleConnected.Name = "LabelConsoleConnected";
             // 
             // barDockControlTop
             // 
@@ -1634,9 +1480,9 @@ namespace ModioX.Forms.Windows
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 802);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 775);
             this.barDockControlBottom.Manager = this.MainMenu;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1584, 19);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1584, 27);
             // 
             // barDockControlLeft
             // 
@@ -1644,7 +1490,7 @@ namespace ModioX.Forms.Windows
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
             this.barDockControlLeft.Manager = this.MainMenu;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 777);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 750);
             // 
             // barDockControlRight
             // 
@@ -1652,7 +1498,7 @@ namespace ModioX.Forms.Windows
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1584, 25);
             this.barDockControlRight.Manager = this.MainMenu;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 777);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 750);
             // 
             // barButtonItem6
             // 
@@ -1690,24 +1536,67 @@ namespace ModioX.Forms.Windows
             this.workspaceManager1.TargetControl = this;
             this.workspaceManager1.TransitionType = pushTransition1;
             // 
+            // HelpSpacer1
+            // 
+            this.HelpSpacer1.Caption = "_________________________";
+            this.HelpSpacer1.DropDownEnabled = false;
+            this.HelpSpacer1.Enabled = false;
+            this.HelpSpacer1.Id = 26;
+            this.HelpSpacer1.Name = "HelpSpacer1";
+            // 
+            // HelpSpacer2
+            // 
+            this.HelpSpacer2.Caption = "______";
+            this.HelpSpacer2.Enabled = false;
+            this.HelpSpacer2.Id = 27;
+            this.HelpSpacer2.Name = "HelpSpacer2";
+            // 
+            // HelpSpacer3
+            // 
+            this.HelpSpacer3.Caption = "______________________";
+            this.HelpSpacer3.Enabled = false;
+            this.HelpSpacer3.Id = 31;
+            this.HelpSpacer3.Name = "HelpSpacer3";
+            // 
             // barDockingMenuItem1
             // 
             this.barDockingMenuItem1.Caption = "barDockingMenuItem1";
             this.barDockingMenuItem1.Id = 36;
             this.barDockingMenuItem1.Name = "barDockingMenuItem1";
             // 
-            // ComboBoxRegion
+            // barToolbarsListItem2
             // 
-            this.ComboBoxRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxRegion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.ComboBoxRegion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ComboBoxRegion.FormattingEnabled = true;
-            this.ComboBoxRegion.Location = new System.Drawing.Point(787, 39);
-            this.ComboBoxRegion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ComboBoxRegion.Name = "ComboBoxRegion";
-            this.ComboBoxRegion.Size = new System.Drawing.Size(104, 24);
-            this.ComboBoxRegion.TabIndex = 5;
-            this.ComboBoxRegion.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRegion_SelectedIndexChanged);
+            this.barToolbarsListItem2.Caption = "barToolbarsListItem2";
+            this.barToolbarsListItem2.Id = 55;
+            this.barToolbarsListItem2.Name = "barToolbarsListItem2";
+            // 
+            // ComboBoxModType
+            // 
+            this.ComboBoxModType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxModType.Location = new System.Drawing.Point(628, 38);
+            this.ComboBoxModType.MenuManager = this.MainMenu;
+            this.ComboBoxModType.Name = "ComboBoxModType";
+            this.ComboBoxModType.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ComboBoxModType.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxModType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ComboBoxModType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ComboBoxModType.Size = new System.Drawing.Size(96, 22);
+            this.ComboBoxModType.TabIndex = 1165;
+            // 
+            // ComboBoxSystemType
+            // 
+            this.ComboBoxSystemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxSystemType.Location = new System.Drawing.Point(490, 38);
+            this.ComboBoxSystemType.MenuManager = this.MainMenu;
+            this.ComboBoxSystemType.Name = "ComboBoxSystemType";
+            this.ComboBoxSystemType.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ComboBoxSystemType.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxSystemType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ComboBoxSystemType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ComboBoxSystemType.Size = new System.Drawing.Size(60, 22);
+            this.ComboBoxSystemType.TabIndex = 1164;
             // 
             // LabelSelectRegion
             // 
@@ -1717,7 +1606,7 @@ namespace ModioX.Forms.Windows
             this.LabelSelectRegion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSelectRegion.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectRegion.Location = new System.Drawing.Point(732, 42);
+            this.LabelSelectRegion.Location = new System.Drawing.Point(730, 42);
             this.LabelSelectRegion.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelSelectRegion.Name = "LabelSelectRegion";
             this.LabelSelectRegion.Size = new System.Drawing.Size(49, 15);
@@ -1731,7 +1620,7 @@ namespace ModioX.Forms.Windows
             this.LabelTitleMods.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelTitleMods.Location = new System.Drawing.Point(7, 70);
             this.LabelTitleMods.Name = "LabelTitleMods";
-            this.LabelTitleMods.Size = new System.Drawing.Size(884, 17);
+            this.LabelTitleMods.Size = new System.Drawing.Size(882, 17);
             this.LabelTitleMods.TabIndex = 1161;
             this.LabelTitleMods.Text = "MODS";
             // 
@@ -1742,7 +1631,7 @@ namespace ModioX.Forms.Windows
             this.LabelTitleFilterMods.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelTitleFilterMods.Location = new System.Drawing.Point(7, 10);
             this.LabelTitleFilterMods.Name = "LabelTitleFilterMods";
-            this.LabelTitleFilterMods.Size = new System.Drawing.Size(884, 17);
+            this.LabelTitleFilterMods.Size = new System.Drawing.Size(882, 17);
             this.LabelTitleFilterMods.TabIndex = 1159;
             this.LabelTitleFilterMods.Text = "FILTER MODS";
             // 
@@ -1757,7 +1646,7 @@ namespace ModioX.Forms.Windows
             this.TextBoxSearch.Location = new System.Drawing.Point(61, 38);
             this.TextBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxSearch.Name = "TextBoxSearch";
-            this.TextBoxSearch.Size = new System.Drawing.Size(337, 23);
+            this.TextBoxSearch.Size = new System.Drawing.Size(335, 23);
             this.TextBoxSearch.TabIndex = 1158;
             this.TextBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
             // 
@@ -1775,31 +1664,94 @@ namespace ModioX.Forms.Windows
             this.LabelSearch.TabIndex = 1157;
             this.LabelSearch.Text = "SEARCH";
             // 
-            // ComboBoxModType
+            // ColumnModsId
             // 
-            this.ComboBoxModType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxModType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.ComboBoxModType.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ComboBoxModType.FormattingEnabled = true;
-            this.ComboBoxModType.Location = new System.Drawing.Point(628, 38);
-            this.ComboBoxModType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ComboBoxModType.Name = "ComboBoxModType";
-            this.ComboBoxModType.Size = new System.Drawing.Size(96, 24);
-            this.ComboBoxModType.TabIndex = 4;
-            this.ComboBoxModType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxType_SelectedIndexChanged);
+            this.ColumnModsId.HeaderText = "Id";
+            this.ColumnModsId.MinimumWidth = 6;
+            this.ColumnModsId.Name = "ColumnModsId";
+            this.ColumnModsId.ReadOnly = true;
+            this.ColumnModsId.Visible = false;
+            this.ColumnModsId.Width = 125;
             // 
-            // ComboBoxSystemType
+            // ColumnModsName
             // 
-            this.ComboBoxSystemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxSystemType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.ComboBoxSystemType.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ComboBoxSystemType.FormattingEnabled = true;
-            this.ComboBoxSystemType.Location = new System.Drawing.Point(490, 38);
-            this.ComboBoxSystemType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ComboBoxSystemType.Name = "ComboBoxSystemType";
-            this.ComboBoxSystemType.Size = new System.Drawing.Size(60, 24);
-            this.ComboBoxSystemType.TabIndex = 3;
-            this.ComboBoxSystemType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxFirmware_SelectedIndexChanged);
+            this.ColumnModsName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnModsName.HeaderText = "Mod Name";
+            this.ColumnModsName.MinimumWidth = 6;
+            this.ColumnModsName.Name = "ColumnModsName";
+            this.ColumnModsName.ReadOnly = true;
+            // 
+            // ColumnModsFirmware
+            // 
+            this.ColumnModsFirmware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsFirmware.HeaderText = "System Type";
+            this.ColumnModsFirmware.MinimumWidth = 6;
+            this.ColumnModsFirmware.Name = "ColumnModsFirmware";
+            this.ColumnModsFirmware.ReadOnly = true;
+            // 
+            // ColumnModsType
+            // 
+            this.ColumnModsType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsType.HeaderText = "Mod Type";
+            this.ColumnModsType.MinimumWidth = 6;
+            this.ColumnModsType.Name = "ColumnModsType";
+            this.ColumnModsType.ReadOnly = true;
+            // 
+            // ColumnModsRegion
+            // 
+            this.ColumnModsRegion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsRegion.HeaderText = "Region";
+            this.ColumnModsRegion.MinimumWidth = 6;
+            this.ColumnModsRegion.Name = "ColumnModsRegion";
+            this.ColumnModsRegion.ReadOnly = true;
+            // 
+            // ColumnModsVersion
+            // 
+            this.ColumnModsVersion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsVersion.HeaderText = "Version";
+            this.ColumnModsVersion.MinimumWidth = 6;
+            this.ColumnModsVersion.Name = "ColumnModsVersion";
+            this.ColumnModsVersion.ReadOnly = true;
+            // 
+            // ColumnModsAuthor
+            // 
+            this.ColumnModsAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsAuthor.HeaderText = "Creator";
+            this.ColumnModsAuthor.MinimumWidth = 124;
+            this.ColumnModsAuthor.Name = "ColumnModsAuthor";
+            this.ColumnModsAuthor.ReadOnly = true;
+            // 
+            // ColumnModsNoFiles
+            // 
+            this.ColumnModsNoFiles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsNoFiles.HeaderText = "# of Files";
+            this.ColumnModsNoFiles.MinimumWidth = 6;
+            this.ColumnModsNoFiles.Name = "ColumnModsNoFiles";
+            this.ColumnModsNoFiles.ReadOnly = true;
+            // 
+            // ColumnModsInstall
+            // 
+            this.ColumnModsInstall.HeaderText = "";
+            this.ColumnModsInstall.MinimumWidth = 6;
+            this.ColumnModsInstall.Name = "ColumnModsInstall";
+            this.ColumnModsInstall.ReadOnly = true;
+            this.ColumnModsInstall.Width = 28;
+            // 
+            // ColumnModsDownload
+            // 
+            this.ColumnModsDownload.HeaderText = "";
+            this.ColumnModsDownload.MinimumWidth = 6;
+            this.ColumnModsDownload.Name = "ColumnModsDownload";
+            this.ColumnModsDownload.ReadOnly = true;
+            this.ColumnModsDownload.Width = 28;
+            // 
+            // ColumnModsFavourite
+            // 
+            this.ColumnModsFavourite.HeaderText = "";
+            this.ColumnModsFavourite.MinimumWidth = 6;
+            this.ColumnModsFavourite.Name = "ColumnModsFavourite";
+            this.ColumnModsFavourite.ReadOnly = true;
+            this.ColumnModsFavourite.Width = 28;
             // 
             // SectionGames
             // 
@@ -1815,6 +1767,7 @@ namespace ModioX.Forms.Windows
             this.SectionGames.SectionHeader = "CATEGORIES";
             this.SectionGames.Size = new System.Drawing.Size(265, 743);
             this.SectionGames.TabIndex = 0;
+            this.SectionGames.Visible = false;
             // 
             // ScrollBarCategories
             // 
@@ -1943,195 +1896,39 @@ namespace ModioX.Forms.Windows
             this.PanelLists.Size = new System.Drawing.Size(244, 0);
             this.PanelLists.TabIndex = 1166;
             // 
-            // SectionInstalledGameMods
-            // 
-            this.SectionInstalledGameMods.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SectionInstalledGameMods.Controls.Add(this.LabelNoModsInstalled);
-            this.SectionInstalledGameMods.Controls.Add(this.DgvGameModsInstalled);
-            this.SectionInstalledGameMods.Controls.Add(this.PanelModsInstalledHeader);
-            this.SectionInstalledGameMods.Controls.Add(this.MenuStripGameMods);
-            this.SectionInstalledGameMods.Cursor = System.Windows.Forms.Cursors.Default;
-            this.SectionInstalledGameMods.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.SectionInstalledGameMods.Location = new System.Drawing.Point(286, 539);
-            this.SectionInstalledGameMods.Margin = new System.Windows.Forms.Padding(4);
-            this.SectionInstalledGameMods.Name = "SectionInstalledGameMods";
-            this.SectionInstalledGameMods.SectionHeader = "MODS INSTALLED";
-            this.SectionInstalledGameMods.Size = new System.Drawing.Size(901, 243);
-            this.SectionInstalledGameMods.TabIndex = 1175;
-            // 
             // LabelNoModsInstalled
             // 
             this.LabelNoModsInstalled.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LabelNoModsInstalled.AutoSize = true;
-            this.LabelNoModsInstalled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.LabelNoModsInstalled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.LabelNoModsInstalled.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelNoModsInstalled.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelNoModsInstalled.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelNoModsInstalled.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelNoModsInstalled.Location = new System.Drawing.Point(386, 114);
+            this.LabelNoModsInstalled.Location = new System.Drawing.Point(386, 72);
             this.LabelNoModsInstalled.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelNoModsInstalled.Name = "LabelNoModsInstalled";
             this.LabelNoModsInstalled.Size = new System.Drawing.Size(128, 15);
             this.LabelNoModsInstalled.TabIndex = 1178;
             this.LabelNoModsInstalled.Text = "NO MODS INSTALLED";
             // 
-            // DgvGameModsInstalled
+            // GridControlGameModsInstalled
             // 
-            this.DgvGameModsInstalled.AllowUserToAddRows = false;
-            this.DgvGameModsInstalled.AllowUserToDeleteRows = false;
-            this.DgvGameModsInstalled.AllowUserToDragDropRows = false;
-            this.DgvGameModsInstalled.AllowUserToPasteCells = false;
-            this.DgvGameModsInstalled.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.DgvGameModsInstalled.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.DgvGameModsInstalled.ColumnHeadersHeight = 21;
-            this.DgvGameModsInstalled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DgvGameModsInstalled.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnModsInstalledId,
-            this.ColumnModsInstalledGameTitle,
-            this.ColumnModsInstalledRegion,
-            this.ColumnModsInstalledModName,
-            this.ColumnModsInstalledModType,
-            this.ColumnModsInstalledVersion,
-            this.ColumnModsInstalledNoOfFiles,
-            this.ColumnModsInstalledDateTime,
-            this.ColumnModsInstalledUninstall});
-            this.DgvGameModsInstalled.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvGameModsInstalled.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.DgvGameModsInstalled.Location = new System.Drawing.Point(1, 61);
-            this.DgvGameModsInstalled.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.DgvGameModsInstalled.MultiSelect = false;
-            this.DgvGameModsInstalled.Name = "DgvGameModsInstalled";
-            this.DgvGameModsInstalled.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.DgvGameModsInstalled.ReadOnly = true;
-            this.DgvGameModsInstalled.RowHeadersWidth = 41;
-            this.DgvGameModsInstalled.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvGameModsInstalled.RowTemplate.Height = 24;
-            this.DgvGameModsInstalled.RowTemplate.ReadOnly = true;
-            this.DgvGameModsInstalled.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvGameModsInstalled.ShowEditingIcon = false;
-            this.DgvGameModsInstalled.Size = new System.Drawing.Size(899, 145);
-            this.DgvGameModsInstalled.TabIndex = 7;
-            this.DgvGameModsInstalled.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvModsInstalled_CellClick);
-            this.DgvGameModsInstalled.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv_CellPainting);
-            this.DgvGameModsInstalled.SelectionChanged += new System.EventHandler(this.DgvModsInstalled_SelectionChanged);
+            this.GridControlGameModsInstalled.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridControlGameModsInstalled.Location = new System.Drawing.Point(2, 23);
+            this.GridControlGameModsInstalled.MainView = this.GridViewGameModsInstalled;
+            this.GridControlGameModsInstalled.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.GridControlGameModsInstalled.Name = "GridControlGameModsInstalled";
+            this.GridControlGameModsInstalled.Size = new System.Drawing.Size(897, 178);
+            this.GridControlGameModsInstalled.TabIndex = 7;
+            this.GridControlGameModsInstalled.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewGameModsInstalled});
             // 
-            // ColumnModsInstalledId
+            // GridViewGameModsInstalled
             // 
-            this.ColumnModsInstalledId.HeaderText = "Mod Id";
-            this.ColumnModsInstalledId.MinimumWidth = 6;
-            this.ColumnModsInstalledId.Name = "ColumnModsInstalledId";
-            this.ColumnModsInstalledId.ReadOnly = true;
-            this.ColumnModsInstalledId.Visible = false;
-            this.ColumnModsInstalledId.Width = 125;
-            // 
-            // ColumnModsInstalledGameTitle
-            // 
-            this.ColumnModsInstalledGameTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnModsInstalledGameTitle.HeaderText = "Game Title";
-            this.ColumnModsInstalledGameTitle.MinimumWidth = 6;
-            this.ColumnModsInstalledGameTitle.Name = "ColumnModsInstalledGameTitle";
-            this.ColumnModsInstalledGameTitle.ReadOnly = true;
-            // 
-            // ColumnModsInstalledRegion
-            // 
-            this.ColumnModsInstalledRegion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsInstalledRegion.HeaderText = "Region";
-            this.ColumnModsInstalledRegion.MinimumWidth = 6;
-            this.ColumnModsInstalledRegion.Name = "ColumnModsInstalledRegion";
-            this.ColumnModsInstalledRegion.ReadOnly = true;
-            this.ColumnModsInstalledRegion.Width = 70;
-            // 
-            // ColumnModsInstalledModName
-            // 
-            this.ColumnModsInstalledModName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnModsInstalledModName.HeaderText = "Mod Name";
-            this.ColumnModsInstalledModName.MinimumWidth = 6;
-            this.ColumnModsInstalledModName.Name = "ColumnModsInstalledModName";
-            this.ColumnModsInstalledModName.ReadOnly = true;
-            // 
-            // ColumnModsInstalledModType
-            // 
-            this.ColumnModsInstalledModType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsInstalledModType.HeaderText = "Mod Type";
-            this.ColumnModsInstalledModType.MinimumWidth = 6;
-            this.ColumnModsInstalledModType.Name = "ColumnModsInstalledModType";
-            this.ColumnModsInstalledModType.ReadOnly = true;
-            this.ColumnModsInstalledModType.Width = 85;
-            // 
-            // ColumnModsInstalledVersion
-            // 
-            this.ColumnModsInstalledVersion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsInstalledVersion.HeaderText = "Version";
-            this.ColumnModsInstalledVersion.MinimumWidth = 6;
-            this.ColumnModsInstalledVersion.Name = "ColumnModsInstalledVersion";
-            this.ColumnModsInstalledVersion.ReadOnly = true;
-            this.ColumnModsInstalledVersion.Width = 72;
-            // 
-            // ColumnModsInstalledNoOfFiles
-            // 
-            this.ColumnModsInstalledNoOfFiles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsInstalledNoOfFiles.HeaderText = "# Files";
-            this.ColumnModsInstalledNoOfFiles.MinimumWidth = 6;
-            this.ColumnModsInstalledNoOfFiles.Name = "ColumnModsInstalledNoOfFiles";
-            this.ColumnModsInstalledNoOfFiles.ReadOnly = true;
-            this.ColumnModsInstalledNoOfFiles.Width = 65;
-            // 
-            // ColumnModsInstalledDateTime
-            // 
-            this.ColumnModsInstalledDateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnModsInstalledDateTime.HeaderText = "Installed On";
-            this.ColumnModsInstalledDateTime.Name = "ColumnModsInstalledDateTime";
-            this.ColumnModsInstalledDateTime.ReadOnly = true;
-            this.ColumnModsInstalledDateTime.Width = 97;
-            // 
-            // ColumnModsInstalledUninstall
-            // 
-            this.ColumnModsInstalledUninstall.HeaderText = "";
-            this.ColumnModsInstalledUninstall.MinimumWidth = 6;
-            this.ColumnModsInstalledUninstall.Name = "ColumnModsInstalledUninstall";
-            this.ColumnModsInstalledUninstall.ReadOnly = true;
-            this.ColumnModsInstalledUninstall.Width = 28;
-            // 
-            // PanelModsInstalledHeader
-            // 
-            this.PanelModsInstalledHeader.Controls.Add(this.LabelHeaderGameMods);
-            this.PanelModsInstalledHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelModsInstalledHeader.Location = new System.Drawing.Point(1, 25);
-            this.PanelModsInstalledHeader.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PanelModsInstalledHeader.Name = "PanelModsInstalledHeader";
-            this.PanelModsInstalledHeader.Size = new System.Drawing.Size(899, 36);
-            this.PanelModsInstalledHeader.TabIndex = 1177;
-            // 
-            // LabelHeaderGameMods
-            // 
-            this.LabelHeaderGameMods.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelHeaderGameMods.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderGameMods.Location = new System.Drawing.Point(7, 10);
-            this.LabelHeaderGameMods.Name = "LabelHeaderGameMods";
-            this.LabelHeaderGameMods.Size = new System.Drawing.Size(887, 17);
-            this.LabelHeaderGameMods.TabIndex = 1160;
-            this.LabelHeaderGameMods.Text = "GAME MODS";
-            // 
-            // MenuStripGameMods
-            // 
-            this.MenuStripGameMods.AutoSize = false;
-            this.MenuStripGameMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.MenuStripGameMods.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.MenuStripGameMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.MenuStripGameMods.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.MenuStripGameMods.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.MenuStripGameMods.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolItemGameModsUninstallAll,
-            this.LabelInstalledGameModsStatus});
-            this.MenuStripGameMods.Location = new System.Drawing.Point(1, 206);
-            this.MenuStripGameMods.Name = "MenuStripGameMods";
-            this.MenuStripGameMods.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.MenuStripGameMods.Size = new System.Drawing.Size(899, 36);
-            this.MenuStripGameMods.TabIndex = 8;
-            this.MenuStripGameMods.TabStop = true;
-            this.MenuStripGameMods.Text = "darkToolStrip2";
+            this.GridViewGameModsInstalled.GridControl = this.GridControlGameModsInstalled;
+            this.GridViewGameModsInstalled.Name = "GridViewGameModsInstalled";
+            this.GridViewGameModsInstalled.OptionsView.ShowGroupPanel = false;
             // 
             // ToolItemGameModsUninstallAll
             // 
@@ -2160,6 +1957,78 @@ namespace ModioX.Forms.Windows
             this.LabelInstalledGameModsStatus.Size = new System.Drawing.Size(170, 33);
             this.LabelInstalledGameModsStatus.Text = "0 Mods Installed (0 Files Total)";
             // 
+            // ColumnModsInstalledId
+            // 
+            this.ColumnModsInstalledId.HeaderText = "Mod Id";
+            this.ColumnModsInstalledId.MinimumWidth = 6;
+            this.ColumnModsInstalledId.Name = "ColumnModsInstalledId";
+            this.ColumnModsInstalledId.ReadOnly = true;
+            this.ColumnModsInstalledId.Visible = false;
+            this.ColumnModsInstalledId.Width = 125;
+            // 
+            // ColumnModsInstalledGameTitle
+            // 
+            this.ColumnModsInstalledGameTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnModsInstalledGameTitle.HeaderText = "Game Title";
+            this.ColumnModsInstalledGameTitle.MinimumWidth = 6;
+            this.ColumnModsInstalledGameTitle.Name = "ColumnModsInstalledGameTitle";
+            this.ColumnModsInstalledGameTitle.ReadOnly = true;
+            // 
+            // ColumnModsInstalledRegion
+            // 
+            this.ColumnModsInstalledRegion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsInstalledRegion.HeaderText = "Region";
+            this.ColumnModsInstalledRegion.MinimumWidth = 6;
+            this.ColumnModsInstalledRegion.Name = "ColumnModsInstalledRegion";
+            this.ColumnModsInstalledRegion.ReadOnly = true;
+            // 
+            // ColumnModsInstalledModName
+            // 
+            this.ColumnModsInstalledModName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnModsInstalledModName.HeaderText = "Mod Name";
+            this.ColumnModsInstalledModName.MinimumWidth = 6;
+            this.ColumnModsInstalledModName.Name = "ColumnModsInstalledModName";
+            this.ColumnModsInstalledModName.ReadOnly = true;
+            // 
+            // ColumnModsInstalledModType
+            // 
+            this.ColumnModsInstalledModType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsInstalledModType.HeaderText = "Mod Type";
+            this.ColumnModsInstalledModType.MinimumWidth = 6;
+            this.ColumnModsInstalledModType.Name = "ColumnModsInstalledModType";
+            this.ColumnModsInstalledModType.ReadOnly = true;
+            // 
+            // ColumnModsInstalledVersion
+            // 
+            this.ColumnModsInstalledVersion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsInstalledVersion.HeaderText = "Version";
+            this.ColumnModsInstalledVersion.MinimumWidth = 6;
+            this.ColumnModsInstalledVersion.Name = "ColumnModsInstalledVersion";
+            this.ColumnModsInstalledVersion.ReadOnly = true;
+            // 
+            // ColumnModsInstalledNoOfFiles
+            // 
+            this.ColumnModsInstalledNoOfFiles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsInstalledNoOfFiles.HeaderText = "# Files";
+            this.ColumnModsInstalledNoOfFiles.MinimumWidth = 6;
+            this.ColumnModsInstalledNoOfFiles.Name = "ColumnModsInstalledNoOfFiles";
+            this.ColumnModsInstalledNoOfFiles.ReadOnly = true;
+            // 
+            // ColumnModsInstalledDateTime
+            // 
+            this.ColumnModsInstalledDateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnModsInstalledDateTime.HeaderText = "Installed On";
+            this.ColumnModsInstalledDateTime.Name = "ColumnModsInstalledDateTime";
+            this.ColumnModsInstalledDateTime.ReadOnly = true;
+            // 
+            // ColumnModsInstalledUninstall
+            // 
+            this.ColumnModsInstalledUninstall.HeaderText = "";
+            this.ColumnModsInstalledUninstall.MinimumWidth = 6;
+            this.ColumnModsInstalledUninstall.Name = "ColumnModsInstalledUninstall";
+            this.ColumnModsInstalledUninstall.ReadOnly = true;
+            this.ColumnModsInstalledUninstall.Width = 28;
+            // 
             // bar1
             // 
             this.bar1.BarName = "Custom 4";
@@ -2167,6 +2036,160 @@ namespace ModioX.Forms.Windows
             this.bar1.DockRow = 1;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.Text = "Custom 4";
+            // 
+            // GroupModsLibrary
+            // 
+            this.GroupModsLibrary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupModsLibrary.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupModsLibrary.AppearanceCaption.Options.UseFont = true;
+            this.GroupModsLibrary.Controls.Add(this.LabelNoModsFound);
+            this.GroupModsLibrary.Controls.Add(this.GridControlMods);
+            this.GroupModsLibrary.Controls.Add(this.PanelModsLibraryFilters);
+            this.GroupModsLibrary.Location = new System.Drawing.Point(287, 39);
+            this.GroupModsLibrary.Name = "GroupModsLibrary";
+            this.GroupModsLibrary.Size = new System.Drawing.Size(901, 534);
+            this.GroupModsLibrary.TabIndex = 1167;
+            this.GroupModsLibrary.Text = "MODS LIBRARY";
+            // 
+            // navBarControl1
+            // 
+            this.navBarControl1.ActiveGroup = this.NavGroupGames;
+            this.navBarControl1.Appearance.GroupHeader.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.navBarControl1.Appearance.GroupHeader.Options.UseFont = true;
+            this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
+            this.NavGroupGames,
+            this.NavGroupHomebrewApps,
+            this.NavGroupResources,
+            this.NavGroupMyLists});
+            this.navBarControl1.Location = new System.Drawing.Point(2, 23);
+            this.navBarControl1.Name = "navBarControl1";
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 262;
+            this.navBarControl1.Size = new System.Drawing.Size(262, 718);
+            this.navBarControl1.SkinExplorerBarViewScrollStyle = DevExpress.XtraNavBar.SkinExplorerBarViewScrollStyle.ScrollBar;
+            this.navBarControl1.TabIndex = 1180;
+            this.navBarControl1.Text = "navBarControl1";
+            this.navBarControl1.View = new DevExpress.XtraNavBar.ViewInfo.StandardSkinExplorerBarViewInfoRegistrator("Office 2019 Black");
+            // 
+            // NavGroupGames
+            // 
+            this.NavGroupGames.Caption = "GAMES";
+            this.NavGroupGames.Expanded = true;
+            this.NavGroupGames.Name = "NavGroupGames";
+            // 
+            // NavGroupHomebrewApps
+            // 
+            this.NavGroupHomebrewApps.Caption = "HOMEBREW APPLICATIONS";
+            this.NavGroupHomebrewApps.Expanded = true;
+            this.NavGroupHomebrewApps.Name = "NavGroupHomebrewApps";
+            // 
+            // NavGroupResources
+            // 
+            this.NavGroupResources.Caption = "RESOURCES";
+            this.NavGroupResources.Expanded = true;
+            this.NavGroupResources.Name = "NavGroupResources";
+            // 
+            // NavGroupMyLists
+            // 
+            this.NavGroupMyLists.Caption = "MY LISTS";
+            this.NavGroupMyLists.Expanded = true;
+            this.NavGroupMyLists.Name = "NavGroupMyLists";
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.navBarControl1);
+            this.groupControl1.Location = new System.Drawing.Point(12, 39);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(266, 743);
+            this.groupControl1.TabIndex = 1185;
+            this.groupControl1.Text = "CATEGORIES";
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.Controls.Add(this.LabelNoModsInstalled);
+            this.groupControl2.Controls.Add(this.GridControlGameModsInstalled);
+            buttonImageOptions1.Location = DevExpress.XtraEditors.ButtonPanel.ImageLocation.AfterText;
+            this.groupControl2.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Uninstall All", true, buttonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", 2, true, null, false, false, true, null, 2)});
+            this.groupControl2.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
+            this.groupControl2.Location = new System.Drawing.Point(287, 579);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(901, 203);
+            this.groupControl2.TabIndex = 1179;
+            this.groupControl2.Text = "MODS INSTALLED";
+            // 
+            // bar4
+            // 
+            this.bar4.BarName = "Custom 4";
+            this.bar4.DockCol = 0;
+            this.bar4.DockRow = 1;
+            this.bar4.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar4.Text = "Custom 4";
+            // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar7});
+            this.barManager1.DockControls.Add(this.barDockControl1);
+            this.barManager1.DockControls.Add(this.barDockControl2);
+            this.barManager1.DockControls.Add(this.barDockControl3);
+            this.barManager1.DockControls.Add(this.barDockControl4);
+            this.barManager1.Form = this;
+            this.barManager1.StatusBar = this.bar7;
+            // 
+            // bar7
+            // 
+            this.bar7.BarName = "Status bar";
+            this.bar7.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar7.DockCol = 0;
+            this.bar7.DockRow = 0;
+            this.bar7.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar7.OptionsBar.AllowQuickCustomization = false;
+            this.bar7.OptionsBar.DrawDragBorder = false;
+            this.bar7.OptionsBar.UseWholeRow = true;
+            this.bar7.Text = "Status bar";
+            // 
+            // barDockControl1
+            // 
+            this.barDockControl1.CausesValidation = false;
+            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl1.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl1.Manager = this.barManager1;
+            this.barDockControl1.Size = new System.Drawing.Size(1584, 0);
+            // 
+            // barDockControl2
+            // 
+            this.barDockControl2.CausesValidation = false;
+            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl2.Location = new System.Drawing.Point(0, 802);
+            this.barDockControl2.Manager = this.barManager1;
+            this.barDockControl2.Size = new System.Drawing.Size(1584, 19);
+            // 
+            // barDockControl3
+            // 
+            this.barDockControl3.CausesValidation = false;
+            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl3.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl3.Manager = this.barManager1;
+            this.barDockControl3.Size = new System.Drawing.Size(0, 802);
+            // 
+            // barDockControl4
+            // 
+            this.barDockControl4.CausesValidation = false;
+            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl4.Location = new System.Drawing.Point(1584, 0);
+            this.barDockControl4.Manager = this.barManager1;
+            this.barDockControl4.Size = new System.Drawing.Size(0, 802);
             // 
             // MainWindow
             // 
@@ -2177,18 +2200,24 @@ namespace ModioX.Forms.Windows
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1584, 821);
-            this.Controls.Add(this.SectionInstalledGameMods);
-            this.Controls.Add(this.ToolStripFooter);
+            this.Controls.Add(this.groupControl2);
+            this.Controls.Add(this.groupControl1);
+            this.Controls.Add(this.GroupModsLibrary);
             this.Controls.Add(this.SectionArchiveInformation);
-            this.Controls.Add(this.SectionModsLibrary);
             this.Controls.Add(this.SectionGames);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Controls.Add(this.barDockControl3);
+            this.Controls.Add(this.barDockControl4);
+            this.Controls.Add(this.barDockControl2);
+            this.Controls.Add(this.barDockControl1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("MainWindow.IconOptions.Icon")));
+            this.IconOptions.Image = global::ModioX.Properties.Resources.app_logo;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(1586, 853);
             this.Name = "MainWindow";
@@ -2202,35 +2231,39 @@ namespace ModioX.Forms.Windows
             this.FlowPanelDetails.ResumeLayout(false);
             this.FlowPanelDetails.PerformLayout();
             this.SectionModsInstallFilePaths.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvInstallationFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlModsInstallFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewModsInstallFiles)).EndInit();
             this.SectionArchiveInformation.ResumeLayout(false);
             this.SectionArchiveInformation.PerformLayout();
             this.PanelModsInstallationPaths.ResumeLayout(false);
-            this.ToolStripArchiveInformation.ResumeLayout(false);
-            this.ToolStripArchiveInformation.PerformLayout();
-            this.ToolStripFooter.ResumeLayout(false);
-            this.ToolStripFooter.PerformLayout();
-            this.SectionModsLibrary.ResumeLayout(false);
-            this.SectionModsLibrary.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvMods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlMods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewMods)).EndInit();
             this.PanelModsLibraryFilters.ResumeLayout(false);
             this.PanelModsLibraryFilters.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxRegion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConnectMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolsMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationsMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OptionsMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HelpMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxModType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxSystemType.Properties)).EndInit();
             this.SectionGames.ResumeLayout(false);
             this.FlowPanelCategories.ResumeLayout(false);
             this.FlowPanelCategories.PerformLayout();
-            this.SectionInstalledGameMods.ResumeLayout(false);
-            this.SectionInstalledGameMods.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvGameModsInstalled)).EndInit();
-            this.PanelModsInstalledHeader.ResumeLayout(false);
-            this.MenuStripGameMods.ResumeLayout(false);
-            this.MenuStripGameMods.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlGameModsInstalled)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewGameModsInstalled)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupModsLibrary)).EndInit();
+            this.GroupModsLibrary.ResumeLayout(false);
+            this.GroupModsLibrary.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2248,7 +2281,6 @@ namespace ModioX.Forms.Windows
         private System.Windows.Forms.Label LabelDescription;
         private DarkUI.Controls.DarkScrollBar ScrollBarDetails;
         private DarkUI.Controls.DarkSectionPanel SectionArchiveInformation;
-        private DarkUI.Controls.DarkToolStrip ToolStripFooter;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelConnectedConsole;
         private System.Windows.Forms.ToolStripSeparator ToolStripStatusSeperator0;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelStatus;
@@ -2273,11 +2305,8 @@ namespace ModioX.Forms.Windows
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsReportOnGitHub;
         private System.Windows.Forms.ToolStripButton ToolItemModInstall;
         private System.Windows.Forms.ToolStripButton ToolItemModDownload;
-        private DarkUI.Controls.DarkSectionPanel SectionModsLibrary;
         private DarkUI.Controls.DarkSectionPanel SectionGames;
-        private DarkUI.Controls.DarkComboBox ComboBoxSystemType;
-        private DarkUI.Controls.DarkComboBox ComboBoxModType;
-        private XDevkit.XtraDataGridView DgvMods;
+        private DevExpress.XtraGrid.GridControl GridControlMods;
         private DarkUI.Controls.DarkSectionPanel SectionModsInstallFilePaths;
         private System.Windows.Forms.ToolStripButton ToolItemModUninstall;
         private System.Windows.Forms.ToolStripButton ToolItemModAddToFavorite;
@@ -2298,23 +2327,18 @@ namespace ModioX.Forms.Windows
         private System.Windows.Forms.FlowLayoutPanel PanelLists;
         private DarkUI.Controls.DarkTitle LabelTitleModDetails;
         private DarkUI.Controls.DarkTitle LabelTitleModDescription;
-        private DarkUI.Controls.DarkSectionPanel SectionInstalledGameMods;
-        private XDevkit.XtraDataGridView DgvGameModsInstalled;
-        private System.Windows.Forms.Panel PanelModsInstalledHeader;
-        private DarkUI.Controls.DarkTitle LabelHeaderGameMods;
+        private DevExpress.XtraGrid.GridControl GridControlGameModsInstalled;
         private DarkUI.Controls.DarkTitle LabelHeaderInstallationFiles;
-        private DarkUI.Controls.DarkToolStrip MenuStripGameMods;
         private System.Windows.Forms.ToolStripButton ToolItemGameModsUninstallAll;
         private System.Windows.Forms.ToolStripLabel LabelInstalledGameModsStatus;
         private System.Windows.Forms.Label LabelHeaderRegion;
         private System.Windows.Forms.Label LabelRegion;
-        private DarkUI.Controls.DarkComboBox ComboBoxRegion;
         private System.Windows.Forms.Label LabelSelectRegion;
         private System.Windows.Forms.Label LabelNoModsFound;
         private System.Windows.Forms.Label LabelNoModsInstalled;
         private DarkUI.Controls.DarkTitle LabelTitleHomebrew;
         private System.Windows.Forms.FlowLayoutPanel PanelHomebrew;
-        private XDevkit.XtraDataGridView DgvInstallationFiles;
+        private DevExpress.XtraGrid.GridControl GridControlModsInstallFiles;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnInstallationFiles;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsAddToList;
         private System.Windows.Forms.ToolStripSeparator ContextMenuModsSeparator1;
@@ -2358,7 +2382,7 @@ namespace ModioX.Forms.Windows
         private BarDockControl barDockControlRight;
         private BarButtonItem barButtonItem6;
         private BarButtonItem barButtonItem7;
-        private ComboBoxEdit comboBoxEdit1;
+        private ComboBoxEdit ComboBoxSystemType;
         private BarButtonItem GameBackupFilesButton;
         private BarButtonItem GameUpdateFinderButton;
         private BarButtonItem FileManagerButton;
@@ -2406,5 +2430,28 @@ namespace ModioX.Forms.Windows
         private BarButtonItem barButtonItem28;
         private Bar bar1;
         private BarButtonItem barButtonItem1;
+        private DevExpress.XtraGrid.Views.Grid.GridView GridViewModsInstallFiles;
+        private DevExpress.XtraGrid.Views.Grid.GridView GridViewMods;
+        private DevExpress.XtraGrid.Views.Grid.GridView GridViewGameModsInstalled;
+        private ComboBoxEdit ComboBoxRegion;
+        private ComboBoxEdit ComboBoxModType;
+        private BarHeaderItem HeaderConsoleConnected;
+        private BarStaticItem LabelConsoleConnected;
+        private BarToolbarsListItem barToolbarsListItem2;
+        private DevExpress.XtraNavBar.NavBarControl navBarControl1;
+        private DevExpress.XtraNavBar.NavBarGroup NavGroupGames;
+        private DevExpress.XtraNavBar.NavBarGroup NavGroupHomebrewApps;
+        private DevExpress.XtraNavBar.NavBarGroup NavGroupResources;
+        private DevExpress.XtraNavBar.NavBarGroup NavGroupMyLists;
+        private GroupControl GroupModsLibrary;
+        private GroupControl groupControl2;
+        private GroupControl groupControl1;
+        private Bar bar4;
+        private BarDockControl barDockControl3;
+        private BarManager barManager1;
+        private Bar bar7;
+        private BarDockControl barDockControl1;
+        private BarDockControl barDockControl2;
+        private BarDockControl barDockControl4;
     }
 }

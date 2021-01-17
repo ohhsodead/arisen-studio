@@ -22,6 +22,7 @@ namespace ModioX.Forms.Settings
 
         private void LoadExternalApplications()
         {
+            /*
             DgvApplications.Rows.Clear();
 
             TextBoxFileName.Clear();
@@ -39,10 +40,12 @@ namespace ModioX.Forms.Settings
             DgvApplications.Sort(DgvApplications.Columns[0], ListSortDirection.Ascending);
 
             if (DgvApplications.Rows.Count > 0) DgvApplications.CurrentCell = DgvApplications[0, 0];
+            */
         }
 
         private void DgvApplications_SelectionChanged(object sender, EventArgs e)
         {
+            /*
             if (DgvApplications.SelectedRows.Count > 0)
             {
                 var name = DgvApplications.SelectedRows[0].Cells[0].Value.ToString();
@@ -53,13 +56,14 @@ namespace ModioX.Forms.Settings
             }
 
             ToolStripDelete.Enabled = DgvApplications.SelectedRows.Count > 0;
+            */
         }
 
         private void ToolStripDelete_Click(object sender, EventArgs e)
         {
             if (DarkMessageBox.ShowWarning("Do you really want delete the selected item?", "Delete", DarkDialogButton.YesNo) == DialogResult.Yes)
             {
-                MainWindow.Settings.ExternalApplications.RemoveAt(DgvApplications.SelectedRows[0].Index);
+                //MainWindow.Settings.ExternalApplications.RemoveAt(DgvApplications.SelectedRows[0].Index);
                 LoadExternalApplications();
             }
         }
@@ -122,6 +126,7 @@ namespace ModioX.Forms.Settings
 
         private void ButtonSaveAll_Click(object sender, EventArgs e)
         {
+            /*
             foreach (DataGridViewRow row in DgvApplications.Rows)
             {
                 var appName = row.Cells[0].Value.ToString();
@@ -129,8 +134,9 @@ namespace ModioX.Forms.Settings
 
                 MainWindow.Settings.UpdateApplication(appName, fileLocation);
             }
+            */
 
-            DarkMessageBox.ShowInformation("All external applications have now been saved.", "Saved");
+            XtraMessageBox.Show("All external applications have now been saved.", "Saved");
             Close();
         }
     }

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameUpdatesWindow));
             this.SectionPanelInformation = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoGameUpdatesFound = new System.Windows.Forms.Label();
-            this.DgvGameUpdates = new XDevkit.XtraDataGridView();
+            this.DgvGameUpdates = new DevExpress.XtraGrid.GridControl();
             this.ContextMenuGameUpdates = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuDownloadToComputer = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuInstallToConsole = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,36 +95,12 @@
             // 
             // DgvGameUpdates
             // 
-            this.DgvGameUpdates.AllowUserToAddRows = false;
-            this.DgvGameUpdates.AllowUserToDeleteRows = false;
-            this.DgvGameUpdates.AllowUserToDragDropRows = false;
-            this.DgvGameUpdates.AllowUserToPasteCells = false;
-            this.DgvGameUpdates.AllowUserToResizeColumns = false;
-            this.DgvGameUpdates.ColumnHeadersHeight = 19;
-            this.DgvGameUpdates.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnURL,
-            this.ColumnSHA1,
-            this.ColumnGameTitle,
-            this.ColumnVersion,
-            this.ColumnSize,
-            this.ColumnFirmware,
-            this.ColumnDownload,
-            this.ColumnInstall});
             this.DgvGameUpdates.ContextMenuStrip = this.ContextMenuGameUpdates;
             this.DgvGameUpdates.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvGameUpdates.Location = new System.Drawing.Point(1, 69);
-            this.DgvGameUpdates.MultiSelect = false;
             this.DgvGameUpdates.Name = "DgvGameUpdates";
-            this.DgvGameUpdates.ReadOnly = true;
-            this.DgvGameUpdates.RowHeadersWidth = 41;
-            this.DgvGameUpdates.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DgvGameUpdates.RowTemplate.ReadOnly = true;
-            this.DgvGameUpdates.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DgvGameUpdates.ShowEditingIcon = false;
             this.DgvGameUpdates.Size = new System.Drawing.Size(686, 276);
             this.DgvGameUpdates.TabIndex = 3;
-            this.DgvGameUpdates.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGameUpdates_CellClick);
-            this.DgvGameUpdates.SelectionChanged += new System.EventHandler(this.DgvGameUpdates_SelectionChanged);
             // 
             // ContextMenuGameUpdates
             // 
@@ -393,7 +369,7 @@
 
         #endregion
         private DarkUI.Controls.DarkSectionPanel SectionPanelInformation;
-        private XDevkit.XtraDataGridView DgvGameUpdates;
+        private DevExpress.XtraGrid.GridControl DgvGameUpdates;
         private System.Windows.Forms.Panel PanelSearch;
         private DarkUI.Controls.DarkTextBox TextBoxTitleID;
         private System.Windows.Forms.Label LabelSearch;

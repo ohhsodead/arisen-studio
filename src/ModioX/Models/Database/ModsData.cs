@@ -147,7 +147,7 @@ namespace ModioX.Models.Database
         /// <returns>Mod details for the <see cref="ModItem.Id"/></returns>
         public ModItem GetModById(int modId)
         {
-            return Mods.First(modItem => modItem.Id.Equals(modId));
+            return Mods.FirstOrDefault(modItem => modItem.Id.Equals(modId));
         }
 
         /// <summary>

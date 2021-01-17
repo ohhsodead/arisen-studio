@@ -148,8 +148,10 @@ namespace ModioX.Forms.Tools
             }
         }
 
+        /*
         private void DgvLocalFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             var type = DgvLocalFiles.CurrentRow == null ? "" : DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
             var name = DgvLocalFiles.CurrentRow == null ? "" : DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
 
@@ -169,6 +171,7 @@ namespace ModioX.Forms.Tools
             }
 
             ToolStripLocalOpenExplorer.Enabled = Directory.Exists(TextBoxLocalPath.Text);
+            
         }
 
         private void DgvLocalFiles_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -202,6 +205,8 @@ namespace ModioX.Forms.Tools
                 ContextMenuLocalRenameFolder.Enabled = (type == "folder") & (name != "..");
             }
         }
+
+        */
 
         private void ToolStripLocalUploadFile_Click(object sender, EventArgs e)
         {
@@ -266,6 +271,7 @@ namespace ModioX.Forms.Tools
         /// <param name="directoryPath"></param>
         public void LoadLocalDirectory(string directoryPath)
         {
+            /*
             try
             {
                 DgvLocalFiles.Rows.Clear();
@@ -335,6 +341,7 @@ namespace ModioX.Forms.Tools
                     SetLocalStatus($"Error fetching directory listing for path: {Path.GetDirectoryName(LocalDirectoryPath) + @"\"} - {ex.Message}", ex);
                 }
             }
+            */
         }
 
         /************* Console File Explorer *************/
@@ -351,6 +358,7 @@ namespace ModioX.Forms.Tools
 
         private void DgvConsoleFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            /*
             if (DgvConsoleFiles.CurrentRow != null)
             {
                 var type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
@@ -379,10 +387,12 @@ namespace ModioX.Forms.Tools
                     }
                 }
             }
+            */
         }
 
         private void DgvConsoleFiles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            /*
             if (DgvConsoleFiles.CurrentRow != null)
             {
                 var type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
@@ -395,10 +405,12 @@ namespace ModioX.Forms.Tools
                 ContextMenuItemConsoleRenameFile.Enabled = (type == "file") & (name != "..");
                 ContextMenuItemConsoleRenameFolder.Enabled = (type == "folder") & (name != "..");
             }
+            */
         }
 
         private void DgvConsoleFiles_SelectionChanged(object sender, EventArgs e)
         {
+            /*
             if (DgvConsoleFiles.CurrentRow != null)
             {
                 var type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
@@ -411,6 +423,7 @@ namespace ModioX.Forms.Tools
                 ContextMenuItemConsoleRenameFile.Enabled = (type == "file") & (name != "..");
                 ContextMenuItemConsoleRenameFolder.Enabled = (type == "folder") & (name != "..");
             }
+            */
         }
 
         private void ToolStripConsoleDownload_Click(object sender, EventArgs e)
@@ -464,6 +477,7 @@ namespace ModioX.Forms.Tools
         /// <param name="directoryPath">Console path to retrieve</param>
         public void LoadConsoleDirectory(string directoryPath)
         {
+            /*
             try
             {
                 DgvConsoleFiles.Rows.Clear();
@@ -557,6 +571,7 @@ namespace ModioX.Forms.Tools
             {
                 SetConsoleStatus($"Error fetching directory listing for path: {FtpDirectoryPath}", ex);
             }
+            */
         }
 
         public void CreateLocalFolder()
@@ -625,6 +640,7 @@ namespace ModioX.Forms.Tools
 
         public void UploadLocalFile()
         {
+            /*
             try
             {
                 var type = DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
@@ -662,10 +678,12 @@ namespace ModioX.Forms.Tools
             {
                 SetLocalStatus($"Unable to upload to console. Error: {ex.Message}", ex);
             }
+            */
         }
 
         public void DeleteLocalItem()
         {
+            /*
             try
             {
                 if (DarkMessageBox.ShowWarning("Do you really want to delete the selected item?", "Delete", DarkDialogButton.YesNo) == DialogResult.Yes)
@@ -701,10 +719,12 @@ namespace ModioX.Forms.Tools
             {
                 SetLocalStatus($"Unable to delete item. Error: {ex.Message}", ex);
             }
+            */
         }
 
         public void DownloadFromConsole()
         {
+            /*
             try
             {
                 var type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
@@ -744,12 +764,14 @@ namespace ModioX.Forms.Tools
             {
                 SetConsoleStatus($"Error downloading console file. {ex.Message}", ex);
             }
+            */
 
             LoadLocalDirectory(LocalDirectoryPath);
         }
 
         public void DeleteConsoleItem()
         {
+            /*
             try
             {
                 if (DarkMessageBox.ShowWarning("Do you really want to delete the selected item?", "Delete", DarkDialogButton.YesNo) == DialogResult.Yes)
@@ -784,10 +806,12 @@ namespace ModioX.Forms.Tools
             {
                 SetConsoleStatus($"Unable to delete item. Error: {ex.Message}", ex);
             }
+            */
         }
 
         private void RenameConsoleFile()
         {
+            /*
             try
             {
                 var oldFileName = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
@@ -817,10 +841,12 @@ namespace ModioX.Forms.Tools
             {
                 SetConsoleStatus($"Unable to rename file. Error: {ex.Message}", ex);
             }
+            */
         }
 
         private void RenameConsoleFolder()
         {
+            /*
             try
             {
                 var oldFolderName = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();
@@ -850,10 +876,12 @@ namespace ModioX.Forms.Tools
             {
                 SetConsoleStatus($"Unable to rename folder. Error: {ex.Message}", ex);
             }
+            */
         }
 
         private void RenameLocalFile()
         {
+            /*
             if (DgvLocalFiles.CurrentRow != null)
             {
                 var oldFileName = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
@@ -878,10 +906,12 @@ namespace ModioX.Forms.Tools
                     }
                 }
             }
+            */
         }
 
         private void RenameLocalFolder()
         {
+            /*
             if (DgvLocalFiles.CurrentRow != null)
             {
                 var oldFolderName = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
@@ -906,6 +936,7 @@ namespace ModioX.Forms.Tools
                     }
                 }
             }
+            */
         }
 
         /// <summary>

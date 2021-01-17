@@ -52,8 +52,10 @@
             // 
             this.groupControl1.Controls.Add(this.RichTextBoxInformation);
             this.groupControl1.Location = new System.Drawing.Point(14, 10);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(585, 117);
+            this.groupControl1.Padding = new System.Windows.Forms.Padding(3);
+            this.groupControl1.Size = new System.Drawing.Size(585, 106);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "INFORMATION";
             // 
@@ -65,11 +67,11 @@
             this.RichTextBoxInformation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RichTextBoxInformation.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RichTextBoxInformation.ForeColor = System.Drawing.Color.Gainsboro;
-            this.RichTextBoxInformation.Location = new System.Drawing.Point(2, 23);
+            this.RichTextBoxInformation.Location = new System.Drawing.Point(5, 26);
             this.RichTextBoxInformation.Name = "RichTextBoxInformation";
             this.RichTextBoxInformation.ReadOnly = true;
             this.RichTextBoxInformation.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.RichTextBoxInformation.Size = new System.Drawing.Size(581, 92);
+            this.RichTextBoxInformation.Size = new System.Drawing.Size(575, 75);
             this.RichTextBoxInformation.TabIndex = 2;
             this.RichTextBoxInformation.TabStop = false;
             this.RichTextBoxInformation.Text = resources.GetString("RichTextBoxInformation.Text");
@@ -77,9 +79,11 @@
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.RichTextBoxThanks);
-            this.groupControl2.Location = new System.Drawing.Point(310, 135);
+            this.groupControl2.Location = new System.Drawing.Point(310, 126);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(5);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(289, 132);
+            this.groupControl2.Padding = new System.Windows.Forms.Padding(3);
+            this.groupControl2.Size = new System.Drawing.Size(289, 124);
             this.groupControl2.TabIndex = 4;
             this.groupControl2.Text = "SPECIAL THANKS";
             // 
@@ -91,10 +95,10 @@
             this.RichTextBoxThanks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RichTextBoxThanks.Font = new System.Drawing.Font("Segoe UI", 9.3F);
             this.RichTextBoxThanks.ForeColor = System.Drawing.Color.Gainsboro;
-            this.RichTextBoxThanks.Location = new System.Drawing.Point(2, 23);
+            this.RichTextBoxThanks.Location = new System.Drawing.Point(5, 26);
             this.RichTextBoxThanks.Name = "RichTextBoxThanks";
             this.RichTextBoxThanks.ReadOnly = true;
-            this.RichTextBoxThanks.Size = new System.Drawing.Size(285, 107);
+            this.RichTextBoxThanks.Size = new System.Drawing.Size(279, 93);
             this.RichTextBoxThanks.TabIndex = 3;
             this.RichTextBoxThanks.TabStop = false;
             this.RichTextBoxThanks.Text = "Appropriate Creators for all Mods\nRobinPerris for DarkUI for WinForms\nJamesNK for" +
@@ -104,9 +108,11 @@
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.RichTextBoxLicence);
-            this.groupControl3.Location = new System.Drawing.Point(14, 275);
+            this.groupControl3.Location = new System.Drawing.Point(14, 260);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(5);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(585, 193);
+            this.groupControl3.Padding = new System.Windows.Forms.Padding(3);
+            this.groupControl3.Size = new System.Drawing.Size(585, 185);
             this.groupControl3.TabIndex = 14;
             this.groupControl3.Text = "LICENSE";
             // 
@@ -118,11 +124,11 @@
             this.RichTextBoxLicence.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RichTextBoxLicence.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RichTextBoxLicence.ForeColor = System.Drawing.Color.Gainsboro;
-            this.RichTextBoxLicence.Location = new System.Drawing.Point(2, 23);
+            this.RichTextBoxLicence.Location = new System.Drawing.Point(5, 26);
             this.RichTextBoxLicence.Name = "RichTextBoxLicence";
             this.RichTextBoxLicence.ReadOnly = true;
             this.RichTextBoxLicence.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.RichTextBoxLicence.Size = new System.Drawing.Size(581, 168);
+            this.RichTextBoxLicence.Size = new System.Drawing.Size(575, 154);
             this.RichTextBoxLicence.TabIndex = 4;
             this.RichTextBoxLicence.TabStop = false;
             this.RichTextBoxLicence.Text = resources.GetString("RichTextBoxLicence.Text");
@@ -130,9 +136,11 @@
             // groupControl4
             // 
             this.groupControl4.Controls.Add(this.RichTextBoxCredits);
-            this.groupControl4.Location = new System.Drawing.Point(14, 135);
+            this.groupControl4.Location = new System.Drawing.Point(14, 126);
+            this.groupControl4.Margin = new System.Windows.Forms.Padding(5);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(290, 132);
+            this.groupControl4.Padding = new System.Windows.Forms.Padding(3);
+            this.groupControl4.Size = new System.Drawing.Size(288, 124);
             this.groupControl4.TabIndex = 4;
             this.groupControl4.Text = "CREDITS";
             // 
@@ -144,19 +152,19 @@
             this.RichTextBoxCredits.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RichTextBoxCredits.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RichTextBoxCredits.ForeColor = System.Drawing.Color.Gainsboro;
-            this.RichTextBoxCredits.Location = new System.Drawing.Point(2, 23);
+            this.RichTextBoxCredits.Location = new System.Drawing.Point(5, 26);
             this.RichTextBoxCredits.Name = "RichTextBoxCredits";
             this.RichTextBoxCredits.ReadOnly = true;
             this.RichTextBoxCredits.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.RichTextBoxCredits.Size = new System.Drawing.Size(286, 107);
+            this.RichTextBoxCredits.Size = new System.Drawing.Size(278, 93);
             this.RichTextBoxCredits.TabIndex = 2;
             this.RichTextBoxCredits.TabStop = false;
-            this.RichTextBoxCredits.Text = "Developer: ohhsodead\nContributor: KayGart\n\nWebsite:\nhttps://github.com/ohhsodead/" +
-    "ModioX";
+            this.RichTextBoxCredits.Text = "Developer: ohhsodead\nContributor: KayGart\nContributor: TeddyHammer\n\nWebsite:\nhttp" +
+    "s://github.com/ohhsodead/ModioX";
             // 
             // ButtonClose
             // 
-            this.ButtonClose.Location = new System.Drawing.Point(270, 487);
+            this.ButtonClose.Location = new System.Drawing.Point(270, 472);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.Size = new System.Drawing.Size(74, 24);
             this.ButtonClose.TabIndex = 15;
@@ -171,7 +179,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(615, 530);
+            this.ClientSize = new System.Drawing.Size(615, 508);
             this.Controls.Add(this.ButtonClose);
             this.Controls.Add(this.groupControl4);
             this.Controls.Add(this.groupControl3);

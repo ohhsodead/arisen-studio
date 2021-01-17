@@ -22,6 +22,7 @@ namespace ModioX.Forms.Settings
 
         public void LoadCustomLists()
         {
+            /*
             DgvCustomLists.Rows.Clear();
 
             foreach (CustomList customList in MainWindow.Settings.CustomLists)
@@ -34,17 +35,19 @@ namespace ModioX.Forms.Settings
             LabelTotalCustomLists.Text = $@"{DgvCustomLists.Rows.Count} Lists";
 
             ToolStripDeleteAll.Enabled = DgvCustomLists.Rows.Count > 0;
+            */
         }
 
         private void DgvCustomLists_SelectionChanged(object sender, EventArgs e)
         {
-            ContextMenuCustomListsRename.Enabled = DgvCustomLists.CurrentRow != null;
-            ContextMenuCustomListsDelete.Enabled = DgvCustomLists.CurrentRow != null;
-            ToolStripDeleteSelected.Enabled = DgvCustomLists.CurrentRow != null;
+            //ContextMenuCustomListsRename.Enabled = DgvCustomLists.CurrentRow != null;
+            //ContextMenuCustomListsDelete.Enabled = DgvCustomLists.CurrentRow != null;
+            //ToolStripDeleteSelected.Enabled = DgvCustomLists.CurrentRow != null;
         }
 
         private void ContextMenuCustomListsRename_Click(object sender, EventArgs e)
         {
+            /*
             string currentListName = DgvCustomLists.Rows[DgvCustomLists.CurrentRow.Index].Cells[0].Value.ToString();
             string newListName = DialogExtensions.ShowTextInputDialog(this, "Rename List", "List Name:", currentListName);
 
@@ -60,6 +63,7 @@ namespace ModioX.Forms.Settings
                     LoadCustomLists();
                 }
             }
+            */
         }
 
         private void ContextMenuCustomListsDelete_Click(object sender, EventArgs e)
@@ -89,7 +93,7 @@ namespace ModioX.Forms.Settings
         {
             if (DarkMessageBox.ShowExclamation("Do you really want to delete the selected list?", "Confirm", DarkDialogButton.YesNo) == DialogResult.Yes)
             {
-                MainWindow.Settings.CustomLists.RemoveAt(DgvCustomLists.CurrentRow.Index);
+                //MainWindow.Settings.CustomLists.RemoveAt(DgvCustomLists.CurrentRow.Index);
                 LoadCustomLists();
             }
         }
