@@ -83,14 +83,13 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="XDevkit">
-      <HintPath>..\References\XDevkit.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Urls.cs" />
@@ -102,6 +101,12 @@
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\DialogExtensions.cs" />
     <Compile Include="Extensions\WebManExtensions.cs" />
+    <Compile Include="Forms\Dialogs\XBConnectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\XBConnectionDialog.Designer.cs">
+      <DependentUpon>XBConnectionDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Settings\CustomListsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,7 +234,69 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Templates\GitHubTemplates.cs" />
+    <Compile Include="Xbox\XDevkit\Controls\ByteArray.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Xbox\XDevkit\Controls\ByteArray.Designer.cs">
+      <DependentUpon>ByteArray.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xbox\XDevkit\Controls\Fan_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Xbox\XDevkit\Controls\Fan_Control.Designer.cs">
+      <DependentUpon>Fan_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xbox\XDevkit\Controls\MemDump.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Xbox\XDevkit\Controls\MemDump.Designer.cs">
+      <DependentUpon>MemDump.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xbox\XDevkit\Controls\xex_slider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Xbox\XDevkit\Controls\xex_slider.Designer.cs">
+      <DependentUpon>xex_slider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xbox\XDevkit\Controls\xex_value.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Xbox\XDevkit\Controls\xex_value.designer.cs">
+      <DependentUpon>xex_value.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xbox\XDevkit\Devkit\Filesystem.cs" />
+    <Compile Include="Xbox\XDevkit\Devkit\Xbox.Memory.cs" />
+    <Compile Include="Xbox\XDevkit\Devkit\XboxAutomation.cs" />
+    <Compile Include="Xbox\XDevkit\Devkit\XboxEnums.cs" />
+    <Compile Include="Xbox\XDevkit\Devkit\XboxExtention.cs" />
+    <Compile Include="Xbox\XDevkit\Devkit\XboxFeatures.cs" />
+    <Compile Include="Xbox\XDevkit\Devkit\XboxMemoryStream.cs" />
+    <Compile Include="Xbox\XDevkit\Devkit\XboxNetworking.cs" />
+    <Compile Include="Xbox\XDevkit\Devkit\XboxStructs.cs" />
+    <Compile Include="Xbox\XDevkit\Devkit\XboxTypes.cs" />
+    <Compile Include="Xbox\XDevkit\Devkit\XMessageBoxUI.cs" />
+    <Compile Include="Xbox\XDevkit\Devkit\XNotify.cs" />
+    <Compile Include="Xbox\XDevkit\Functions\Bitmaps\BitmapFunctions.cs" />
+    <Compile Include="Xbox\XDevkit\Functions\Bitmaps\BitmapInfo.cs" />
+    <Compile Include="Xbox\XDevkit\Functions\Bitmaps\BitmapSubmap.cs" />
+    <Compile Include="Xbox\XDevkit\Functions\Bitmaps\DDS.cs" />
+    <Compile Include="Xbox\XDevkit\Functions\Bitmaps\DXTDecoder.cs" />
+    <Compile Include="Xbox\XDevkit\Functions\Bitmaps\TextureFormat.cs" />
+    <Compile Include="Xbox\XDevkit\Functions\Functions.cs" />
+    <Compile Include="Xbox\XDevkit\Functions\IO\ContentStorage.cs" />
+    <Compile Include="Xbox\XDevkit\Functions\IO\EndianIO.cs" />
+    <Compile Include="Xbox\XDevkit\Functions\IO\EndianReader.cs" />
+    <Compile Include="Xbox\XDevkit\Functions\IO\EndianType.cs" />
+    <Compile Include="Xbox\XDevkit\Functions\IO\EndianWriter.cs" />
+    <Compile Include="Xbox\XDevkit\Functions\IO\RWStream.cs" />
+    <Compile Include="Xbox\XDevkit\Functions\Items.cs" />
+    <Compile Include="Xbox\XDevkit\Xbox.cs" />
     <EmbeddedResource Include="Forms\Dialogs\ConnectionDialog.resx">
       <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\LoginDialog.resx">
       <DependentUpon>LoginDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\XBConnectionDialog.resx">
+      <DependentUpon>XBConnectionDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\CustomListsDialog.resx">
       <DependentUpon>CustomListsDialog.cs</DependentUpon>
@@ -287,8 +357,22 @@
     <EmbeddedResource Include="Forms\Dialogs\ListViewDialog.resx">
       <DependentUpon>ListViewDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Xbox\XDevkit\Controls\ByteArray.resx">
+      <DependentUpon>ByteArray.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xbox\XDevkit\Controls\MemDump.resx">
+      <DependentUpon>MemDump.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xbox\XDevkit\Controls\xex_value.resx">
+      <DependentUpon>xex_value.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Xbox\XDevkit\About XDevkit.txt" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\Icons\app_logo.png" />
     <None Include="App.config" />
     <None Include="Resources\Icons\copy_to_clipboard.png" />
