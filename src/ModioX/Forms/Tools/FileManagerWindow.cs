@@ -1,18 +1,15 @@
 ﻿using DarkUI.Forms;
 using DevExpress.XtraEditors;
 using FluentFTP;
-using Microsoft.VisualBasic.FileIO;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Io;
 using ModioX.Net;
 using ModioX.Properties;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using FtpException = FluentFTP.FtpException;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
@@ -586,7 +583,7 @@ namespace ModioX.Forms.Tools
 
                     if (Directory.Exists(folderPath))
                     {
-                        DarkMessageBox.ShowExclamation($"A folder with this name already exists.", "Error");
+                        XtraMessageBox.Show($"A folder with this name already exists.", "Error");
                         return;
                     }
                     else
@@ -618,7 +615,7 @@ namespace ModioX.Forms.Tools
 
                     if (FtpClient.DirectoryExists(folderPath))
                     {
-                        DarkMessageBox.ShowExclamation($"A folder with this name already exists.", "Error");
+                        XtraMessageBox.Show($"A folder with this name already exists.", "Error");
                         return;
                     }
                     else
@@ -686,7 +683,7 @@ namespace ModioX.Forms.Tools
             /*
             try
             {
-                if (DarkMessageBox.ShowWarning("Do you really want to delete the selected item?", "Delete", DarkDialogButton.YesNo) == DialogResult.Yes)
+                if (XtraMessageBox.Show("Do you really want to delete the selected item?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     var type = DgvLocalFiles.CurrentRow.Cells[0].Value.ToString();
                     var name = DgvLocalFiles.CurrentRow.Cells[2].Value.ToString();
@@ -774,7 +771,7 @@ namespace ModioX.Forms.Tools
             /*
             try
             {
-                if (DarkMessageBox.ShowWarning("Do you really want to delete the selected item?", "Delete", DarkDialogButton.YesNo) == DialogResult.Yes)
+                if (XtraMessageBox.Show("Do you really want to delete the selected item?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     var type = DgvConsoleFiles.CurrentRow.Cells[0].Value.ToString();
                     var name = DgvConsoleFiles.CurrentRow.Cells[2].Value.ToString();

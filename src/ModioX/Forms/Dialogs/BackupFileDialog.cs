@@ -42,14 +42,14 @@ namespace ModioX.Forms
             if (string.IsNullOrWhiteSpace(TextBoxLocalPath.Text) ||
                 TextBoxLocalPath.Text.IndexOfAny(Path.GetInvalidPathChars()) != -1)
             {
-                _ = DarkMessageBox.ShowExclamation("You must include a local file path for the game file backup.",
+                _ = XtraMessageBox.Show("You must include a local file path for the game file backup.",
                     "Empty Local Path");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(TextBoxConsolePath.Text))
             {
-                _ = DarkMessageBox.ShowExclamation(
+                _ = XtraMessageBox.Show(
                     "You must include a console path for for the game file backup. This is where the file will be restored at on the console.",
                     "Empty Console Path");
                 return;

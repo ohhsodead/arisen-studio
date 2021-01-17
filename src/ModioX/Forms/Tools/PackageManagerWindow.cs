@@ -127,7 +127,7 @@ namespace ModioX.Forms.Tools
         private void ToolStripDeleteSelected_Click(object sender, EventArgs e)
         {
             /*
-            if (DarkMessageBox.ShowQuestion("Do you really want to delete the selected package file from your console?", "Delete Selected", DarkDialogButton.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really want to delete the selected package file from your console?", "Delete Selected", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 string packageFileName = DgvPackages.Rows[DgvPackages.CurrentRow.Index].Cells[0].Value.ToString();
 
@@ -142,7 +142,7 @@ namespace ModioX.Forms.Tools
         private void ToolStripDeleteAll_Click(object sender, EventArgs e)
         {
             /*
-            if (DarkMessageBox.ShowQuestion("Do you really to delete all of your package files from your console?", "Delete All", DarkDialogButton.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really to delete all of your package files from your console?", "Delete All", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 foreach (FtpListItem package in PackageFiles)
                 {

@@ -65,7 +65,7 @@ namespace ModioX.Forms.Tools
 
                     if (!File.Exists(backupFile.LocalPath))
                     {
-                        _ = DarkMessageBox.ShowWarning(
+                        _ = XtraMessageBox.Show(
                             $"Local file: {backupFile.FileName} for game: {category.Title} can't be found at path: {backupFile.LocalPath}.\n\nIf you have moved this file then edit the backup and choose the locate the file, otherwise re-install your game update and backup the orginal game file again.",
                             "No Local File");
                     }
@@ -132,7 +132,7 @@ namespace ModioX.Forms.Tools
             try
             {
                 FtpExtensions.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
-                _ = DarkMessageBox.ShowInformation($"Successfully backed up file {backupFile.FileName} from {backupFile.InstallPath}.", "Success");
+                _ = XtraMessageBox.Show($"Successfully backed up file {backupFile.FileName} from {backupFile.InstallPath}.", "Success");
             }
             catch (Exception ex)
             {
@@ -151,14 +151,14 @@ namespace ModioX.Forms.Tools
             {
                 if (!File.Exists(backupFile.LocalPath))
                 {
-                    _ = DarkMessageBox.ShowInformation(
+                    _ = XtraMessageBox.Show(
                         "This file backup doesn't exist on your computer. If your game doesn't have mods installed, then I would suggest you backup the original files.",
                         "No File Found");
                     return;
                 }
 
                 FtpExtensions.UploadFile(backupFile.LocalPath, backupFile.InstallPath);
-                _ = DarkMessageBox.ShowInformation(
+                _ = XtraMessageBox.Show(
                     $"Successfully restored file: {backupFile.FileName} to path: {backupFile.InstallPath}",
                     "Success");
             }

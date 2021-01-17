@@ -1,4 +1,5 @@
 ﻿using DarkUI.Forms;
+using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using System.Linq;
@@ -60,9 +61,9 @@ namespace ModioX.Models.Database
             {
                 var foundRegions = Regions.Where(region => MainWindow.FtpConnection.DirectoryExists($"/dev_hdd0/game/{region}")).ToList();
 
-                foreach (var region in foundRegions.Where(region => DarkMessageBox.ShowQuestion(
+                foreach (var region in foundRegions.Where(region => XtraMessageBox.Show(
                     $"Game Region: {region} has been found for: {Title}\nIs this correct?", "Found Game Region",
-                    DarkDialogButton.YesNo) == DialogResult.Yes))
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                 {
                     return region;
                 }

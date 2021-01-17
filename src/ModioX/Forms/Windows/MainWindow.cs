@@ -2,7 +2,9 @@
 using DarkUI.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraNavBar;
+using DevExpress.XtraGrid.Views.Grid;
 using FluentFTP;
 using ModioX.Constants;
 using ModioX.Database;
@@ -129,7 +131,7 @@ namespace ModioX.Forms.Windows
                 if (Settings.FirstTimeUse)
                 {
                     Settings.FirstTimeUse = false;
-                    DarkMessageBox.ShowInformation("It is important to read the information about this using tool before installing/uninstalling mods so that you don't have any issues. Go to Help Menu > More Information.", "First Time Use");
+                    XtraMessageBox.Show("It is important to read the information about this using tool before installing/uninstalling mods so that you don't have any issues. Go to Help Menu > More Information.", "First Time Use");
                 }
 
                 SetStatus("Initializing the application database...");
@@ -141,15 +143,6 @@ namespace ModioX.Forms.Windows
                 DarkMessageBox.ShowError("You must be connected to the Internet to use this application.", "No Internet");
                 Application.Exit();
             }
-        }
-
-        /// <summary>
-        /// Update scrollbars when the form is resized.
-        /// </summary>
-        private void MainWindow_SizeChanged(object sender, EventArgs e)
-        {
-            UpdateScrollBarCategories();
-            UpdateScrollBarDetails();
         }
 
         /// <summary>
@@ -173,6 +166,8 @@ namespace ModioX.Forms.Windows
         /// </summary>
         private void InitializeFinished()
         {
+
+
             SetStatus($"Successfully loaded the database - Finalizing application data...");
 
             LoadCategories();
@@ -242,35 +237,18 @@ namespace ModioX.Forms.Windows
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Process.Start("http://pad.aldostools.org/pad.html");
-
         }
 
         private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(IsConsoleConnected)
-            {
             WebManExtensions.RebootSoft(ConsoleProfile.Address);
             DisconnectConsole();
-            }
-            else
-            {
-
-                XtraMessageBox.Show("No Connection Detected...");
-            }
-
         }
 
         private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (IsConsoleConnected)
-            {
-                WebManExtensions.RebootHard(ConsoleProfile.Address);
-                DisconnectConsole();
-            }
-            else
-            {
-                XtraMessageBox.Show("No Connection Detected...");
-            }
+            WebManExtensions.RebootHard(ConsoleProfile.Address);
+            DisconnectConsole();
         }
 
 
@@ -288,59 +266,6 @@ namespace ModioX.Forms.Windows
         private void barButtonItem26_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
-
-        }
-
-        private void CategoryTitle_Click(object sender, EventArgs e)
-        {
-            SelectedCategory = Database.CategoriesData.GetCategoryById(((Label)sender).Name);
-            IsCustomListSelected = false;
-
-            FilterModsType = string.Empty;
-            FilterModsRegion = string.Empty;
-
-            LoadModsByCategoryId(SelectedCategory.Id,
-                FilterModsName,
-                FilterModsFirmware,
-                FilterModsType,
-                FilterModsRegion,
-                IsCustomListSelected);
-
-            //ComboBoxModType.SelectedIndex = string.IsNullOrEmpty(FilterModsType)
-            //    ? 0
-            //    : ComboBoxModType.FindStringExact(FilterModsType);
-
-            foreach (var item in ComboBoxModType.Properties.Items)
-            {
-                if (string.IsNullOrEmpty(FilterModsType))
-                {
-                    ComboBoxModType.SelectedIndex = 0;
-                    return;
-                }
-
-                if (item.Equals(FilterModsType))
-                {
-                    ComboBoxModType.SelectedIndex = ComboBoxModType.Properties.Items.IndexOf(FilterModsType);
-                    return;
-                }
-                else
-                {
-                    ComboBoxModType.SelectedIndex = 0;
-                    return;
-                }
-            }
-        }
-
-        private void CategoryTitle_MouseEnter(object sender, EventArgs e)
-        {
-            ((Label)sender).BackColor = Color.FromArgb(75, 110, 175);
-        }
-
-        private void CategoryTitle_MouseLeave(object sender, EventArgs e)
-        {
-            ((Label)sender).BackColor = SelectedCategory.Id.Equals(((Label)sender).Name)
-                ? Color.FromArgb(75, 110, 175)
-                : Color.Transparent;
         }
 
         private void CheckForUpdateButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -425,7 +350,7 @@ namespace ModioX.Forms.Windows
                .AppendLine("All details will be filled automatically.")
                .Append("Log in to GitHub and click the 'Submit' button to open a new issue so we can investigate it.");
 
-            DarkMessageBox.ShowInformation(message.ToString(), "Opening GitHub Issues");
+            XtraMessageBox.Show(message.ToString(), "Opening GitHub Issues");
             GitHubTemplates.OpenReportTemplate(SelectedModItem, Database.CategoriesData.GetCategoryById(SelectedModItem.GameId));
         }
 
@@ -434,53 +359,53 @@ namespace ModioX.Forms.Windows
             ToolItemModUninstall.PerformClick();
         }
 
-        private void Dgv_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void GridViewMods_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            // Removes dotted borders from the cells upon focus
-            e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Focus);
-            e.Handled = true;
-        }
-
-        private void Dgv_SelectionChanged(object sender, EventArgs e)
-        {
-            ((DataGridView)sender).ClearSelection();
-        }
-
-        private void DgvMods_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            /*
-            if (GridControlMods.CurrentRow != null)
+            if (GridViewMods.SelectedRowsCount != 0)
             {
-                var modItem = Database.Mods.GetModById(int.Parse(GridControlMods.CurrentRow.Cells[0].Value.ToString()));
+                var selectedRows = GridViewMods.GetSelectedRows();
+
+                foreach (int rowHandle in selectedRows)
+                {
+                    if (rowHandle >= 0)
+                    {
+                        var cellValue = GridViewMods.GetRowCellValue(rowHandle, "Id");
+                    }
+                }
+
+                var modItem = Database.Mods.GetModById(int.Parse(GridViewMods.GetRowCellDisplayText(GridViewMods.GetSelectedRows()[0], "Id")));
+                XtraMessageBox.Show(GridViewMods.GetRowCellDisplayText(GridViewMods.GetSelectedRows()[0], "Id"));
+                //var modItem = Database.Mods.GetModById(int.Parse(cellValue.ToString()));
 
                 if (modItem != null)
                 {
                     DisplayModDetails(modItem.Id);
                 }
 
-                if (GridControlMods.CurrentCell.ColumnIndex.Equals(8) && e.RowIndex != -1)
+                /*
+                if (GridViewMods.CurrentCell.ColumnIndex.Equals(8) && e.RowIndex != -1)
                 {
                     if (IsConsoleConnected)
                     {
                         InstallMods(modItem);
                     }
                 }
-                else if (GridControlMods.CurrentCell.ColumnIndex.Equals(9) && e.RowIndex != -1)
+                else if (GridViewMods.CurrentCell.ColumnIndex.Equals(9) && e.RowIndex != -1)
                 {
                     DownloadModArchive(modItem);
                 }
-                else if (GridControlMods.CurrentCell.ColumnIndex.Equals(10) && e.RowIndex != -1)
+                else if (GridViewMods.CurrentCell.ColumnIndex.Equals(10) && e.RowIndex != -1)
                 {
                     AddModToFavorites(modItem);
 
-                    GridControlMods.CurrentRow.Cells[10].Value = ImageExtensions.ResizeBitmap(Settings.FavoritedIds.Contains(modItem.Id) ? Resources.filled_heart : Resources.heart, 20, 20);
+                    GridViewMods.CurrentRow.Cells[10].Value = ImageExtensions.ResizeBitmap(Settings.FavoritedIds.Contains(modItem.Id) ? Resources.filled_heart : Resources.heart, 20, 20);
                 }
+                */
             }
 
-            ToolItemModInstall.Enabled = GridControlMods.CurrentRow != null && IsConsoleConnected;
-            ToolItemModDownload.Enabled = GridControlMods.CurrentRow != null;
-            ToolItemModAddToFavorite.Enabled = GridControlMods.CurrentRow != null;
-            */
+            ToolItemModInstall.Enabled = GridViewMods.SelectedRowsCount != 0 && IsConsoleConnected;
+            ToolItemModDownload.Enabled = GridViewMods.SelectedRowsCount != 0;
+            ToolItemModAddToFavorite.Enabled = GridViewMods.SelectedRowsCount != 0;
         }
 
         private void DgvMods_SelectionChanged(object sender, EventArgs e)
@@ -561,7 +486,7 @@ namespace ModioX.Forms.Windows
 
             SetStatus("Disconnected from console.");
 
-            DarkMessageBox.ShowInformation("Successfully disconnected from console.", "Success");
+            XtraMessageBox.Show("Successfully disconnected from console.", "Success");
         }
 
         private void DiscordServerButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -617,12 +542,12 @@ namespace ModioX.Forms.Windows
 
             if (modItem.DownloadFiles.Count > 1)
             {
-                LabelHeaderInstallationFiles.Text = $"DOWNLOADS ({modItem.DownloadFiles.Count()})";
+                GroupInstallFiles.Text = $"DOWNLOADS ({modItem.DownloadFiles.Count()})";
                 modItem.DownloadFiles.ForEach(x => dt.Rows.Add($"{x.Name} ({x.InstallPaths.Count} {(x.InstallPaths.Count() == 1 ? "File" : "Files")})"));
             }
             else
             {
-                LabelHeaderInstallationFiles.Text = $"INSTALL FILES ({modItem.DownloadFiles.First().InstallPaths.Count()})";
+                GroupInstallFiles.Text = $"INSTALL FILES ({modItem.DownloadFiles.First().InstallPaths.Count()})";
                 modItem.DownloadFiles.First().InstallPaths.ForEach(x => dt.Rows.Add(x));
             }
 
@@ -652,8 +577,6 @@ namespace ModioX.Forms.Windows
             ToolItemModAddToFavorite.Text = Settings.FavoritedIds.Contains(modItem.Id) ? "Unfavorite" : "Favorite";
             ToolItemModAddToFavorite.AutoSize = false;
             ToolItemModAddToFavorite.AutoSize = true;
-
-            UpdateScrollBarDetails();
         }
 
         /// <summary>
@@ -744,11 +667,11 @@ namespace ModioX.Forms.Windows
             DialogExtensions.ShowFileManager(this);
         }
 
-        private void FlowPanelCategories_MouseWheel(object sender, MouseEventArgs e)
+        private void FlowPanelDetails_MouseWheel(object sender, MouseEventArgs e)
         {
             try
             {
-                ScrollBarCategories.Value = FlowPanelCategories.VerticalScroll.Value + 10;
+                //ScrollBarDetails.Value = FlowPanelDetails.VerticalScroll.Value + 10;
             }
             catch
             {
@@ -756,23 +679,11 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        private void FlowPanelDetails_MouseWheel(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                ScrollBarDetails.Value = FlowPanelDetails.VerticalScroll.Value + 10;
-            }
-            catch
-            {
-                // ignored
-            }
-        }//fixed
-
         private void FlowPanelDetails_Scroll(object sender, ScrollEventArgs e)
         {
             try
             {
-                ScrollBarDetails.Value = FlowPanelDetails.VerticalScroll.Value;
+                //ScrollBarDetails.Value = FlowPanelDetails.VerticalScroll.Value;
             }
             catch
             {
@@ -795,10 +706,10 @@ namespace ModioX.Forms.Windows
 
         private void LoadCategories()
         {
-            PanelGames.Controls.Clear();
-            PanelHomebrew.Controls.Clear();
-            PanelResources.Controls.Clear();
-            PanelLists.Controls.Clear();
+            NavGroupGames.ItemLinks.Clear();
+            NavGroupHomebrewApps.ItemLinks.Clear();
+            NavGroupResources.ItemLinks.Clear();
+            NavGroupMyLists.ItemLinks.Clear();
 
             foreach (var category in Database.CategoriesData.Categories.OrderBy(x => x.Title))
             {
@@ -806,78 +717,36 @@ namespace ModioX.Forms.Windows
 
                 if (modsByCategory.Length > 0 || category.Id.Equals("fvrt"))
                 {
-                    // Category Title
-                    Label categoryTitle = ControlExtensions.GetCategoryTitle();
-                    categoryTitle.Name = category.Id;
-                    categoryTitle.Size = new Size(PanelGames.Width, 24);
-                    categoryTitle.MaximumSize = new Size(PanelGames.Width, 24);
-                    categoryTitle.Text = $@"{category.Title.Replace("&", "&&")} ({(category.Id.Equals("fvrt") ? Settings.FavoritedIds.Count : modsByCategory.Length)})";
-
-                    categoryTitle.Click += CategoryTitle_Click;
-                    categoryTitle.MouseEnter += CategoryTitle_MouseEnter;
-                    categoryTitle.MouseLeave += CategoryTitle_MouseLeave;
+                    NavBarItem categoryItem = NavigationBar.Items.Add();
+                    categoryItem.Caption = $@"{category.Title.Replace("&", "&&")} ({(category.Id.Equals("fvrt") ? Settings.FavoritedIds.Count : modsByCategory.Length)})";
+                    categoryItem.Name = category.Id;
 
                     if (category.CategoryType == CategoryType.Game)
                     {
-                        PanelGames.Controls.Add(categoryTitle);
-                        //NavGroupGames.NavBar.Items.Add(new NavBarItem() { Caption = categoryTitle.Text, Name = category.Id });
-                        NavBarItem gameItem = navBarControl1.Items.Add();
-                        gameItem.Caption = category.Title;
-                        gameItem.Name = category.Id;
-                        NavGroupGames.ItemLinks.Add(gameItem);
+                        NavGroupGames.ItemLinks.Add(categoryItem);
                     }
                     else if (category.CategoryType == CategoryType.Homebrew)
                     {
-                        PanelHomebrew.Controls.Add(categoryTitle);
-                        //NavGroupHomebrewApps.NavBar.Items.Add(new NavBarItem() { Caption = categoryTitle.Text, Name = category.Id });
-                        NavBarItem gameItem = navBarControl1.Items.Add();
-                        gameItem.Caption = category.Title;
-                        gameItem.Name = category.Id;
-                        NavGroupHomebrewApps.ItemLinks.Add(gameItem);
+                        NavGroupHomebrewApps.ItemLinks.Add(categoryItem);
                     }
                     else if (category.CategoryType == CategoryType.Resource)
                     {
-                        PanelResources.Controls.Add(categoryTitle);
-                        //NavGroupResources.NavBar.Items.Add(new NavBarItem() { Caption = categoryTitle.Text, Name = category.Id });
-                        NavBarItem gameItem = navBarControl1.Items.Add();
-                        gameItem.Caption = category.Title;
-                        gameItem.Name = category.Id;
-                        NavGroupResources.ItemLinks.Add(gameItem);
+                        NavGroupResources.ItemLinks.Add(categoryItem);
                     }
                     else if (category.CategoryType == CategoryType.Favorite)
                     {
-                        PanelLists.Controls.Add(categoryTitle);
-                        //NavGroupMyLists.NavBar.Items.Add(new NavBarItem() { Caption = categoryTitle.Text, Name = category.Id });
-                        NavBarItem gameItem = navBarControl1.Items.Add();
-                        gameItem.Caption = category.Title;
-                        gameItem.Name = category.Id;
-                        NavGroupMyLists.ItemLinks.Add(gameItem);
+                        NavGroupMyLists.ItemLinks.Add(categoryItem);
                     }
                 }
             }
 
             foreach (CustomList customList in Settings.CustomLists)
             {
-                // Custom List Category Title
-                Label categoryTitle = ControlExtensions.GetCategoryTitle();
-                categoryTitle.Name = customList.Name;
-                categoryTitle.Size = new Size(PanelGames.Width, 24);
-                categoryTitle.MaximumSize = new Size(PanelGames.Width, 24);
-                categoryTitle.Text = $@"{customList.Name.Replace("&", "&&")} ({customList.ModIds.Count})";
-
-                categoryTitle.Click += CustomListTitle_Click;
-                categoryTitle.MouseEnter += CustomListTitle_MouseEnter;
-                categoryTitle.MouseLeave += CustomListTitle_MouseLeave;
-
-                PanelLists.Controls.Add(categoryTitle);
-
-                NavBarItem gameItem = navBarControl1.Items.Add();
+                NavBarItem gameItem = NavigationBar.Items.Add();
                 gameItem.Caption = $@"{customList.Name.Replace("&", "&&")} ({customList.ModIds.Count})";
                 gameItem.Name = customList.Name;
                 NavGroupMyLists.ItemLinks.Add(gameItem);
             }
-
-            UpdateScrollBarCategories();
         }
 
         private void CustomListTitle_Click(object sender, EventArgs e)
@@ -937,7 +806,7 @@ namespace ModioX.Forms.Windows
 
         private void LoadListsCategories()
         {
-            PanelLists.Controls.Clear();
+            NavGroupMyLists.ItemLinks.Clear();
 
             foreach (var category in Database.CategoriesData.Categories)
             {
@@ -945,38 +814,20 @@ namespace ModioX.Forms.Windows
 
                 if (category.Id.Equals("fvrt"))
                 {
-                    // Custom List Category Title
-                    Label categoryTitle = ControlExtensions.GetCategoryTitle();
-                    categoryTitle.Name = category.Id;
-                    categoryTitle.Size = new Size(PanelGames.Width, 24);
-                    categoryTitle.MaximumSize = new Size(PanelGames.Width, 24);
-                    categoryTitle.Text = $@"{category.Title.Replace("&", "&&")} ({Settings.FavoritedIds.Count})";
-
-                    categoryTitle.Click += CategoryTitle_Click;
-                    categoryTitle.MouseEnter += CategoryTitle_MouseEnter;
-                    categoryTitle.MouseLeave += CategoryTitle_MouseLeave;
-
-                    PanelLists.Controls.Add(categoryTitle);
+                    NavBarItem gameItem = NavigationBar.Items.Add();
+                    gameItem.Caption = $@"{category.Title.Replace("&", "&&")} ({Settings.FavoritedIds.Count})";
+                    gameItem.Name = category.Id;
+                    NavGroupMyLists.ItemLinks.Add(gameItem);
                 }
             }
 
             foreach (CustomList customList in Settings.CustomLists)
             {
-                // Custom Category Title
-                Label categoryTitle = ControlExtensions.GetCategoryTitle();
-                categoryTitle.Name = customList.Name;
-                categoryTitle.Size = new Size(PanelGames.Width, 24);
-                categoryTitle.MaximumSize = new Size(PanelGames.Width, 24);
-                categoryTitle.Text = $@"{customList.Name.Replace("&", "&&")} ({customList.ModIds.Count})";
-
-                categoryTitle.Click += CustomListTitle_Click;
-                categoryTitle.MouseEnter += CustomListTitle_MouseEnter;
-                categoryTitle.MouseLeave += CustomListTitle_MouseLeave;
-
-                PanelLists.Controls.Add(categoryTitle);
+                NavBarItem gameItem = NavigationBar.Items.Add();
+                gameItem.Caption = $@"{customList.Name.Replace("&", "&&")} ({customList.ModIds.Count})";
+                gameItem.Name = customList.Name;
+                NavGroupMyLists.ItemLinks.Add(gameItem);
             }
-
-            UpdateScrollBarCategories();
         }
 
         /// <summary>
@@ -990,7 +841,6 @@ namespace ModioX.Forms.Windows
         /// <param name="isCustomList">Filter by Region</param>
         private void LoadModsByCategoryId(string categoryId, string name, string firmware, string type, string region, bool isCustomList)
         {
-            UpdateCategoryTitles();
             LoadInstalledGameMods();
 
             GridControlMods.DataSource = null;
@@ -1043,8 +893,8 @@ namespace ModioX.Forms.Windows
             dt.Columns.Add("Version", typeof(string));
             dt.Columns.Add("Creator", typeof(string));
             dt.Columns.Add("# of Files", typeof(string));
-            dt.Columns.Add("", typeof(Bitmap));
-            dt.Columns.Add("", typeof(Bitmap));
+            dt.Columns.Add("Install", typeof(Bitmap));
+            dt.Columns.Add("Download", typeof(Bitmap));
 
             foreach (var modItem in Database.Mods.GetModItems(categoryId, name, firmware, type, region, isCustomList).OrderBy(x => x.Name))
             {
@@ -1078,6 +928,7 @@ namespace ModioX.Forms.Windows
                     : ImageExtensions.ResizeBitmap(Resources.heart, 20, 20));
                 */
 
+                
                 dt.Rows.Add(modItem.Id,
                     modItem.Name,
                     modItem.Firmware,
@@ -1092,24 +943,29 @@ namespace ModioX.Forms.Windows
                     //Settings.FavoritedIds.Contains(modItem.Id)
                     //? ImageExtensions.ResizeBitmap(Resources.filled_heart, 20, 20)
                     //: ImageExtensions.ResizeBitmap(Resources.heart, 20, 20));
+                
 
-                //gridView1.AddNewRow();
-                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModId, modItem.Id);
-                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModName, modItem.Name);
-                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModSystemType, modItem.Firmware);
-                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModType, modItem.Type);
-                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModRegion, modItem.Region);
-                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModVersion, modItem.Version);
-                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModCreator, modItem.Author);
-                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModNoOfFiles, installFiles.Count() + (installFiles.Count() > 1 ? " Files" : " File"));
-                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModDownload, ImageExtensions.ResizeBitmap(Resources.install, 20, 20));
-                //gridView1.SetRowCellValue(GridControl.NewItemRowHandle, ColumnModInstall, ImageExtensions.ResizeBitmap(Resources.download_from_the_cloud, 20, 20));
+                
+                //add a new row
+                GridViewMods.AddNewRow();
+                //set a new row cell value. The static GridControl.NewItemRowHandle field allows you to retrieve the added row
+                GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[0], modItem.Id.ToString());
+                GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[1], modItem.Name);
+                GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[2], modItem.Firmware);
+                GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[3], modItem.Type);
+                GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[4], modItem.Region);
+                GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[5], modItem.Version);
+                GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[6], modItem.Author);
+                GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[7], installFiles.Count() + (installFiles.Count() > 1 ? " Files" : " File"));
+                GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[8], ImageExtensions.ResizeBitmap(Resources.install, 20, 20));
+                GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[9], ImageExtensions.ResizeBitmap(Resources.download_from_the_cloud, 20, 20));
+
             }
 
             GridControlMods.DataSource = dt;
             GridViewMods.Columns[0].Visible = false;
 
-            LabelNoModsFound.Visible = GridViewMods.RowCount == 0;
+            ProgressMods.Visible = GridViewMods.RowCount == 0;
 
             if (GridViewMods.RowCount > 0)
             {
@@ -1230,42 +1086,8 @@ namespace ModioX.Forms.Windows
 
         private void RestartButtonBar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (IsConsoleConnected)
-            {
-                WebManExtensions.Restart(ConsoleProfile.Address);
-                DisconnectConsole();
-            }
-            else
-            {
-
-                XtraMessageBox.Show("No Connection Detected");
-            }
-        }
-
-        private void ScrollBarCategories_ValueChanged(object sender, ScrollValueEventArgs e)
-        {
-            try
-            {
-                FlowPanelCategories.VerticalScroll.Value = ScrollBarCategories.Value;
-                FlowPanelCategories.Update();
-            }
-            catch
-            {
-                // ignored
-            }
-        }
-
-        private void ScrollBarDetails_ValueChanged(object sender, ScrollValueEventArgs e)
-        {
-            try
-            {
-                FlowPanelDetails.VerticalScroll.Value = ScrollBarDetails.Value;
-                FlowPanelDetails.Update();
-            }
-            catch
-            {
-                // ignored
-            }
+            WebManExtensions.Restart(ConsoleProfile.Address);
+            DisconnectConsole();
         }
 
         private void Settings_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1276,15 +1098,8 @@ namespace ModioX.Forms.Windows
 
         private void ShutDownButtonBar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (IsConsoleConnected)
-            {       
-                WebManExtensions.Shutdown(ConsoleProfile.Address);
-                DisconnectConsole();
-            }
-            else
-            {
-                XtraMessageBox.Show("No Connection Detected...");
-            }
+            WebManExtensions.Shutdown(ConsoleProfile.Address);
+            DisconnectConsole();
         }
 
         private void TextBoxSearch_TextChanged(object sender, EventArgs e)
@@ -1351,64 +1166,6 @@ namespace ModioX.Forms.Windows
             {
                 UninstallMods(SelectedModItem, installedMod.Region);
             }
-        }
-
-        /// <summary>
-        /// Updates the category titles to the selected/non-selected colors.
-        /// </summary>
-        private void UpdateCategoryTitles()
-        {
-            foreach (object ctrl in PanelGames.Controls)
-            {
-                ((Label)ctrl).BackColor = SelectedCategory.Id.Equals(((Label)ctrl).Name)
-                    ? Color.FromArgb(75, 110, 175)
-                    : Color.Transparent;
-            }
-
-            foreach (object ctrl in PanelHomebrew.Controls)
-            {
-                ((Label)ctrl).BackColor = SelectedCategory.Id.Equals(((Label)ctrl).Name)
-                    ? Color.FromArgb(75, 110, 175)
-                    : Color.Transparent;
-            }
-
-            foreach (object ctrl in PanelResources.Controls)
-            {
-                ((Label)ctrl).BackColor = SelectedCategory.Id.Equals(((Label)ctrl).Name)
-                    ? Color.FromArgb(75, 110, 175)
-                    : Color.Transparent;
-            }
-
-            foreach (object ctrl in PanelLists.Controls)
-            {
-                ((Label)ctrl).BackColor = SelectedCategory.Id.Equals(((Label)ctrl).Name)
-                    ? Color.FromArgb(75, 110, 175)
-                    : Color.Transparent;
-            }
-        }
-
-        /// <summary>
-        /// Update the categories scrollbar properties.
-        /// </summary>
-        private void UpdateScrollBarCategories()
-        {
-            ScrollBarCategories.Minimum = FlowPanelCategories.VerticalScroll.Minimum;
-            ScrollBarCategories.Maximum = FlowPanelCategories.VerticalScroll.Maximum;
-            ScrollBarCategories.ViewSize = FlowPanelCategories.VerticalScroll.LargeChange - 30;
-            ScrollBarCategories.Value = 0;
-            ScrollBarCategories.UpdateScrollBar();
-        }
-
-        /// <summary>
-        /// Update the mods details scrollbar properties.
-        /// </summary>
-        private void UpdateScrollBarDetails()
-        {
-            ScrollBarDetails.Minimum = FlowPanelDetails.VerticalScroll.Minimum;
-            ScrollBarDetails.Maximum = FlowPanelDetails.VerticalScroll.Maximum;
-            ScrollBarDetails.ViewSize = FlowPanelDetails.VerticalScroll.LargeChange - 30;
-            ScrollBarDetails.Value = 0;
-            ScrollBarDetails.UpdateScrollBar();
         }
 
         private void WhatsNewButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1493,7 +1250,7 @@ namespace ModioX.Forms.Windows
                 EnableConsoleActions();
                 LoadInstalledGameMods();
 
-                DarkMessageBox.ShowInformation("Successfully connected to console.", "Success");
+                XtraMessageBox.Show("Successfully connected to console.", "Success");
             }
             catch (Exception ex)
             {
@@ -1523,7 +1280,7 @@ namespace ModioX.Forms.Windows
                     .AppendLine($"'{modItem.Name} v{modItem.Version}' to '{category.Title}'")
                     .Append("Do you want to reinstall the files again?");
 
-                if (DarkMessageBox.ShowQuestion(message.ToString(), "Files Already Installed", DarkDialogButton.YesNo) == DialogResult.No)
+                if (XtraMessageBox.Show(message.ToString(), "Files Already Installed", MessageBoxButtons.YesNo) == DialogResult.No)
                 {
                     SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installation cancelled.");
                     return;
@@ -1541,7 +1298,7 @@ namespace ModioX.Forms.Windows
                     .AppendLine($" is currently installed to: {category.Title}\n")
                     .Append("Previous mods could conflict with each other. Do you want to uninstall the current one?");
 
-                if (DarkMessageBox.ShowQuestion(message.ToString(), "Mods Already Installed", DarkDialogButton.YesNo) == DialogResult.Yes)
+                if (XtraMessageBox.Show(message.ToString(), "Mods Already Installed", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     UninstallMods(Database.Mods.GetModById(modInstalled.ModId), modInstalled.Region);
                 }
@@ -1574,7 +1331,7 @@ namespace ModioX.Forms.Windows
                         .AppendLine("Only continue at your own risk and only if you know what you're doing.\n")
                         .Append("Do you still want to install the files?");
 
-                if (DarkMessageBox.ShowExclamation(message.ToString(), "Important Message", DarkDialogButton.YesNo) == DialogResult.No)
+                if (XtraMessageBox.Show(message.ToString(), "Important Message", MessageBoxButtons.YesNo) == DialogResult.No)
                 {
                     SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installation cancelled.");
                     return;
@@ -1612,7 +1369,7 @@ namespace ModioX.Forms.Windows
                     // Check whether the game update for this region exists
                     if (!FtpExtensions.GetFolderNames($"/dev_hdd0/game/").Contains(gameRegion))
                     {
-                        DarkMessageBox.ShowWarning("Game update folder for this region cannot be found on your console.\nYou must install the correct update for this game or maybe you specified the wrong region.", "Can't Find Game Update");
+                        XtraMessageBox.Show("Game update folder for this region cannot be found on your console.\nYou must install the correct update for this game or maybe you specified the wrong region.", "Can't Find Game Update");
                         return;
                     }
 
@@ -1651,9 +1408,9 @@ namespace ModioX.Forms.Windows
                 {
                     if (modItem.IsGameSave)
                     {
-                        if (DarkMessageBox.ShowAsterisk("Before installing this game save you must have completed the following steps:\n- Insert your USB device to any port on the console.\n- Install the Apollo Tool PKG from the Homebrew Packages category on your console to unlock, patch and resign save-game files directly on your PS3."
+                        if (XtraMessageBox.Show("Before installing this game save you must have completed the following steps:\n- Insert your USB device to any port on the console.\n- Install the Apollo Tool PKG from the Homebrew Packages category on your console to unlock, patch and resign save-game files directly on your PS3."
                                 + "\nThis will only work if you have your USB device connected. Click 'Yes' if you have done this. Otherwise click 'No' and this game-save will not be installed.",
-                                "Install Game Save to USB Device", DarkDialogButton.YesNo) ==
+                                "Install Game Save to USB Device", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
                             DialogResult.Yes)
                         {
                             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching USB device...");
@@ -1677,10 +1434,10 @@ namespace ModioX.Forms.Windows
                     }
                     else
                     {
-                        if (DarkMessageBox.ShowInformation(
+                        if (XtraMessageBox.Show(
                                 "One or more files needs to be installed at a USB device that is connected to your console. It could be required for the mods to work, such as a configuration or plugin file. I suggest you read the complete description for more details on this."
                                 + "\nTo allow for these files to be installed, you must have a USB inserted before you continue. Would you like to proceed, click 'Yes' to continue. Otherwise click 'No' and all USB files will be ignored.",
-                                "Install Files to USB", DarkDialogButton.YesNo) == DialogResult.Yes)
+                                "Install Files to USB", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                         {
                             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching USB device...");
 
@@ -1779,8 +1536,8 @@ namespace ModioX.Forms.Windows
                                 if (backupFile == null)
                                 {
                                     // Alert the user there is no backup for this file and ask the user if one would like to be created
-                                    if (DarkMessageBox.ShowQuestion("Would you like to backup the current game file? This will be restored when you choose to uninstall.\n\nGame File Name: " +
-                                        Path.GetFileName(installFilePath), "Backup File", DarkDialogButton.YesNo) == DialogResult.Yes)
+                                    if (XtraMessageBox.Show("Would you like to backup the current game file? This will be restored when you choose to uninstall.\n\nGame File Name: " +
+                                        Path.GetFileName(installFilePath), "Backup File", MessageBoxButtons.YesNo) == DialogResult.Yes)
                                     {
                                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Creating backup of file: {installFileName}...");
                                         Settings.CreateBackupFile(modItem, installFileName, installPath);
@@ -1856,7 +1613,7 @@ namespace ModioX.Forms.Windows
 
                 // Log status
                 SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed {indexFiles - 1} files.");
-                DarkMessageBox.ShowInformation($"Successfully installed {modItem.Name} ({indexFiles - 1} files){(category.CategoryType == CategoryType.Game ? $" for {categoryTitle}." : ".")}{(category.CategoryType == CategoryType.Game ? "\nReady to start game." : string.Empty)}", "Success");
+                XtraMessageBox.Show($"Successfully installed {modItem.Name} ({indexFiles - 1} files){(category.CategoryType == CategoryType.Game ? $" for {categoryTitle}." : ".")}{(category.CategoryType == CategoryType.Game ? "\nReady to start game." : string.Empty)}", "Success");
             }
             catch (Exception ex)
             {
@@ -1922,7 +1679,7 @@ namespace ModioX.Forms.Windows
 
             ToolItemGameModsUninstallAll.Enabled = IsConsoleConnected && Settings.InstalledGameMods.Count > 0;
 
-            LabelNoModsInstalled.Visible = GridViewGameModsInstalled.RowCount == 0;
+            ProgressModsInstalled.Visible = GridViewGameModsInstalled.RowCount == 0;
         }
 
 
@@ -1960,8 +1717,6 @@ namespace ModioX.Forms.Windows
 
             ToolItemModAddToFavorite.AutoSize = false;
             ToolItemModAddToFavorite.AutoSize = true;
-
-            ToolStripArchiveInformation.Update();
         }
 
         /// <summary>
@@ -2129,9 +1884,9 @@ namespace ModioX.Forms.Windows
             // Alerts the user that uninstalling files from dev_rebug folders isn't allowed
             if (modItem.IsInstallToRebugFolder)
             {
-                _ = DarkMessageBox.ShowWarning(
+                XtraMessageBox.Show(
                     "You cannot uninstall files from the firmware folder. Any missing files could affect your console performance.",
-                    "Not Allowed", DarkDialogButton.Ok);
+                    "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Cancelled installation.");
                 return;
             }
@@ -2194,17 +1949,17 @@ namespace ModioX.Forms.Windows
                     // If this is a modded gamesave then inform the user they must remove the gamesave from their usb themselves
                     if (modItem.IsGameSave)
                     {
-                        DarkMessageBox.ShowExclamation("You can't uninstall games saves. You must remove the game save folder from your USB device or use the XMB menu.", "Can't Uninstall");
+                        XtraMessageBox.Show("You can't uninstall games saves. You must remove the game save folder from your USB device or use the XMB menu.", "Can't Uninstall");
                         return;
                     }
                     else
                     {
                         // Inform the user a USB device must be connected for the mods
-                        if (DarkMessageBox.ShowQuestion(
+                        if (XtraMessageBox.Show(
                             "Some files may have been files to be installed to a USB device. You can either choose to uninstall them now or manually delete them yourself." +
                             "\n\nIf you would like to uninstall the files, then connect the same USB device to your console and click 'Yes' to continue." +
                             "\n\nIf you wouldn't like to uninstall the files from your USB device, then click 'No' and all of these files will be ignored.",
-                            "Uninstall USB File", DarkDialogButton.YesNo) == DialogResult.Yes)
+                            "Uninstall USB File", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching USB device...");
                             usbDevice = FtpExtensions.GetUsbPath();
@@ -2266,16 +2021,16 @@ namespace ModioX.Forms.Windows
                                 }
                                 else
                                 {
-                                    DarkMessageBox.ShowExclamation($"You have created a game file backup, but the file: {Path.GetFileName(installPath)} can't be found on your computer. " +
+                                    XtraMessageBox.Show($"You have created a game file backup, but the file: {Path.GetFileName(installPath)} can't be found on your computer. " +
                                         $"If you have moved this file then navigate to Tools > Game Backup Files and set the local file again. If this file has been deleted, " +
                                         $"you should delete the game backup file data and re-backup the file again. For now, this file will be not be uninstalled to prevent any issues with missing game files for the game.",
-                                        "No File Exists", DarkDialogButton.Ok);
+                                        "No File Exists");
                                 }
                             }
                             else
                             {
-                                DarkMessageBox.ShowExclamation($"There is no backup for file: {Path.GetFileName(installPath)} so it can't be uninstalled. This file will be ignored to prevent any issues with missing game files. To restore the file to original then you must reinstall the game update.",
-                                    "No Game Backup File", DarkDialogButton.Ok);
+                                XtraMessageBox.Show($"There is no backup for file: {Path.GetFileName(installPath)} so it can't be uninstalled. This file will be ignored to prevent any issues with missing game files. To restore the file to original then you must reinstall the game update.",
+                                    "No Game Backup File");
                             }
                         }
                         else
@@ -2335,12 +2090,12 @@ namespace ModioX.Forms.Windows
                 }
 
                 SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully uninstalled {indexFiles - 1} files.");
-                DarkMessageBox.ShowExclamation($"Successfully uninstalled: {modItem.Name} ({indexFiles - 1} files){(category.CategoryType == CategoryType.Game ? $" for {categoryTitle}." : string.Empty)}", "Success");
+                XtraMessageBox.Show($"Successfully uninstalled: {modItem.Name} ({indexFiles - 1} files){(category.CategoryType == CategoryType.Game ? $" for {categoryTitle}." : string.Empty)}", "Success");
             }
             catch (Exception ex)
             {
                 SetStatus($"Error uninstalling files for {categoryTitle}: {modItem.Name} v{modItem.Version} (#{modItem.Id}) ({category.Id.ToUpper()}) - {ex.Message}", ex);
-                DarkMessageBox.ShowError($"An error occurred uninstalling files for {modItem.Name} (#{modItem.Id}). See Help > Report Issue/Suggestions to submit an issue and attach the log.txt file, which will be found in the program's installation path, so that we can investigate this." + "\nError Message: " + ex.Message, "Error");
+                XtraMessageBox.Show($"An error occurred uninstalling files for {modItem.Name} (#{modItem.Id}). See Help > Report Issue/Suggestions to submit an issue and attach the log.txt file, which will be found in the program's installation path, so that we can investigate this." + "\nError Message: " + ex.Message, "Error");
             }
         }
 
@@ -2358,6 +2113,58 @@ namespace ModioX.Forms.Windows
             //MainWindowv2 Main = new MainWindowv2();
             //Main.Show();
             //Main.Focus();
+        }
+
+        private void NavigationBar_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            string categoryId = e.Link.ItemName;
+
+            // Check whether item is a custom list
+            bool isCustomList = Settings.CustomLists.Any(customList => customList.Name.Equals(categoryId));
+
+            if (isCustomList)
+            {
+                CustomList customList = Settings.GetCustomListByName(categoryId);
+                SelectedCategory = new Category() { Id = categoryId, Title = categoryId, Regions = Settings.GetRegionsForModIDs(Database.Mods, customList.ModIds).ToArray() };
+            }
+            else
+            {
+                SelectedCategory = Database.CategoriesData.GetCategoryById(categoryId);
+            }
+
+            FilterModsType = string.Empty;
+            FilterModsRegion = string.Empty;
+
+            LoadModsByCategoryId(SelectedCategory.Id,
+                FilterModsName,
+                FilterModsFirmware,
+                FilterModsType,
+                FilterModsRegion,
+                isCustomList);
+
+            //ComboBoxModType.SelectedIndex = string.IsNullOrEmpty(FilterModsType)
+            //    ? 0
+            //    : ComboBoxModType.FindStringExact(FilterModsType);
+
+            if (string.IsNullOrEmpty(FilterModsType))
+            {
+                ComboBoxModType.SelectedIndex = 0;
+                return;
+            }
+
+            foreach (var item in ComboBoxModType.Properties.Items)
+            {
+                if (item.Equals(FilterModsType))
+                {
+                    ComboBoxModType.SelectedIndex = ComboBoxModType.Properties.Items.IndexOf(FilterModsType);
+                    return;
+                }
+                else
+                {
+                    ComboBoxModType.SelectedIndex = 0;
+                    return;
+                }
+            }
         }
     }
 }

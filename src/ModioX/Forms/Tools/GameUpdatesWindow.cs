@@ -44,7 +44,7 @@ namespace ModioX.Forms.Tools
         {
             if (string.IsNullOrWhiteSpace(TextBoxTitleID.Text))
             {
-                DarkMessageBox.ShowExclamation("You haven't specified a title ID.", "Empty Field");
+                XtraMessageBox.Show("You haven't specified a title ID.", "Empty Field");
                 return;
             }
 
@@ -120,7 +120,7 @@ namespace ModioX.Forms.Tools
             {
                 string updateUrl = DgvGameUpdates.CurrentRow.Cells[0].Value.ToString();
                 Clipboard.SetText(updateUrl);
-                DarkMessageBox.ShowInformation("Update URL has been copied to clipboard.", "Copied");
+                XtraMessageBox.Show("Update URL has been copied to clipboard.", "Copied");
             }
             */
         }
@@ -132,7 +132,7 @@ namespace ModioX.Forms.Tools
             {
                 string updateSHA1 = DgvGameUpdates.CurrentRow.Cells[1].Value.ToString();
                 Clipboard.SetText(updateSHA1);
-                DarkMessageBox.ShowInformation("Update SHA1 has been copied to clipboard.", "Copied");
+                XtraMessageBox.Show("Update SHA1 has been copied to clipboard.", "Copied");
             }
             */
         }
@@ -157,7 +157,7 @@ namespace ModioX.Forms.Tools
                 }
                 else
                 {
-                    DarkMessageBox.ShowInformation("You must be connected to your console to install the update package file.", "Not Connected");
+                    XtraMessageBox.Show("You must be connected to your console to install the update package file.", "Not Connected");
                 }
             }
             */

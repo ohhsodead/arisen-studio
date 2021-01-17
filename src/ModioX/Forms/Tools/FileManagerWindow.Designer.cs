@@ -50,11 +50,6 @@
             this.TextBoxLocalPath = new DarkUI.Controls.DarkTextBox();
             this.ButtonLocalDirectory = new DarkUI.Controls.DarkButton();
             this.DgvLocalFiles = new DevExpress.XtraGrid.GridControl();
-            this.ColumnLocalType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLocalIcon = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnLocalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLocalSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLocalDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContextMenuLocal = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuLocallUploadFile = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuLocalDeleteFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +57,12 @@
             this.ContextMenuLocalSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.ContextMenuLocalRenameFile = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuLocalRenameFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ColumnLocalType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLocalIcon = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnLocalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLocalSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLocalDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SectionConsoleFileExplorer = new DarkUI.Controls.DarkSectionPanel();
             this.ComboBoxConsoleDrives = new DarkUI.Controls.DarkComboBox();
             this.ToolStripConsoleActions = new DarkUI.Controls.DarkToolStrip();
@@ -74,6 +75,7 @@
             this.ButtonConsoleNavigate = new DarkUI.Controls.DarkButton();
             this.TextBoxConsolePath = new DarkUI.Controls.DarkTextBox();
             this.DgvConsoleFiles = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColumnConsoleFileType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnConsoleFileImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnConsoleFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,10 +89,12 @@
             this.ToolStripLocalStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLocalFiles)).BeginInit();
             this.ContextMenuLocal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SectionConsoleFileExplorer.SuspendLayout();
             this.ToolStripConsoleActions.SuspendLayout();
             this.ToolStripConsoleStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvConsoleFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.LayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -186,6 +190,7 @@
             // 
             // ComboBoxLocalDrives
             // 
+            this.ComboBoxLocalDrives.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.ComboBoxLocalDrives.FormattingEnabled = true;
             this.ComboBoxLocalDrives.Location = new System.Drawing.Point(7, 30);
             this.ComboBoxLocalDrives.Name = "ComboBoxLocalDrives";
@@ -323,7 +328,10 @@
             // 
             this.TextBoxLocalPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxLocalPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.TextBoxLocalPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxLocalPath.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxLocalPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxLocalPath.Location = new System.Drawing.Point(55, 31);
             this.TextBoxLocalPath.Name = "TextBoxLocalPath";
             this.TextBoxLocalPath.ReadOnly = true;
@@ -336,6 +344,7 @@
             this.ButtonLocalDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonLocalDirectory.Location = new System.Drawing.Point(605, 31);
             this.ButtonLocalDirectory.Name = "ButtonLocalDirectory";
+            this.ButtonLocalDirectory.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonLocalDirectory.Size = new System.Drawing.Size(40, 23);
             this.ButtonLocalDirectory.TabIndex = 19;
             this.ButtonLocalDirectory.Text = "...";
@@ -348,52 +357,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvLocalFiles.ContextMenuStrip = this.ContextMenuLocal;
             this.DgvLocalFiles.Location = new System.Drawing.Point(7, 60);
+            this.DgvLocalFiles.MainView = this.gridView1;
             this.DgvLocalFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 0);
             this.DgvLocalFiles.Name = "DgvLocalFiles";
             this.DgvLocalFiles.Size = new System.Drawing.Size(638, 412);
             this.DgvLocalFiles.TabIndex = 20;
-            // 
-            // ColumnLocalType
-            // 
-            this.ColumnLocalType.HeaderText = "Type";
-            this.ColumnLocalType.MinimumWidth = 6;
-            this.ColumnLocalType.Name = "ColumnLocalType";
-            this.ColumnLocalType.ReadOnly = true;
-            this.ColumnLocalType.Visible = false;
-            this.ColumnLocalType.Width = 125;
-            // 
-            // ColumnLocalIcon
-            // 
-            this.ColumnLocalIcon.HeaderText = "";
-            this.ColumnLocalIcon.MinimumWidth = 6;
-            this.ColumnLocalIcon.Name = "ColumnLocalIcon";
-            this.ColumnLocalIcon.ReadOnly = true;
-            this.ColumnLocalIcon.Width = 28;
-            // 
-            // ColumnLocalName
-            // 
-            this.ColumnLocalName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnLocalName.HeaderText = "Name";
-            this.ColumnLocalName.MinimumWidth = 6;
-            this.ColumnLocalName.Name = "ColumnLocalName";
-            this.ColumnLocalName.ReadOnly = true;
-            this.ColumnLocalName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ColumnLocalSize
-            // 
-            this.ColumnLocalSize.HeaderText = "Size";
-            this.ColumnLocalSize.MinimumWidth = 6;
-            this.ColumnLocalSize.Name = "ColumnLocalSize";
-            this.ColumnLocalSize.ReadOnly = true;
-            this.ColumnLocalSize.Width = 115;
-            // 
-            // ColumnLocalDateTime
-            // 
-            this.ColumnLocalDateTime.HeaderText = "Last Modified";
-            this.ColumnLocalDateTime.MinimumWidth = 6;
-            this.ColumnLocalDateTime.Name = "ColumnLocalDateTime";
-            this.ColumnLocalDateTime.ReadOnly = true;
-            this.ColumnLocalDateTime.Width = 120;
+            this.DgvLocalFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
             // ContextMenuLocal
             // 
@@ -468,6 +438,55 @@
             this.ContextMenuLocalRenameFolder.Text = "Rename Folder";
             this.ContextMenuLocalRenameFolder.Click += new System.EventHandler(this.ContextMenuLocalRenameFolder_Click);
             // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.DgvLocalFiles;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // ColumnLocalType
+            // 
+            this.ColumnLocalType.HeaderText = "Type";
+            this.ColumnLocalType.MinimumWidth = 6;
+            this.ColumnLocalType.Name = "ColumnLocalType";
+            this.ColumnLocalType.ReadOnly = true;
+            this.ColumnLocalType.Visible = false;
+            this.ColumnLocalType.Width = 125;
+            // 
+            // ColumnLocalIcon
+            // 
+            this.ColumnLocalIcon.HeaderText = "";
+            this.ColumnLocalIcon.MinimumWidth = 6;
+            this.ColumnLocalIcon.Name = "ColumnLocalIcon";
+            this.ColumnLocalIcon.ReadOnly = true;
+            this.ColumnLocalIcon.Width = 28;
+            // 
+            // ColumnLocalName
+            // 
+            this.ColumnLocalName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnLocalName.HeaderText = "Name";
+            this.ColumnLocalName.MinimumWidth = 6;
+            this.ColumnLocalName.Name = "ColumnLocalName";
+            this.ColumnLocalName.ReadOnly = true;
+            this.ColumnLocalName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ColumnLocalSize
+            // 
+            this.ColumnLocalSize.HeaderText = "Size";
+            this.ColumnLocalSize.MinimumWidth = 6;
+            this.ColumnLocalSize.Name = "ColumnLocalSize";
+            this.ColumnLocalSize.ReadOnly = true;
+            this.ColumnLocalSize.Width = 115;
+            // 
+            // ColumnLocalDateTime
+            // 
+            this.ColumnLocalDateTime.HeaderText = "Last Modified";
+            this.ColumnLocalDateTime.MinimumWidth = 6;
+            this.ColumnLocalDateTime.Name = "ColumnLocalDateTime";
+            this.ColumnLocalDateTime.ReadOnly = true;
+            this.ColumnLocalDateTime.Width = 120;
+            // 
             // SectionConsoleFileExplorer
             // 
             this.SectionConsoleFileExplorer.Controls.Add(this.ComboBoxConsoleDrives);
@@ -487,6 +506,7 @@
             // 
             // ComboBoxConsoleDrives
             // 
+            this.ComboBoxConsoleDrives.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.ComboBoxConsoleDrives.FormattingEnabled = true;
             this.ComboBoxConsoleDrives.Location = new System.Drawing.Point(7, 30);
             this.ComboBoxConsoleDrives.Name = "ComboBoxConsoleDrives";
@@ -610,6 +630,7 @@
             this.ButtonConsoleNavigate.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.ButtonConsoleNavigate.Location = new System.Drawing.Point(607, 31);
             this.ButtonConsoleNavigate.Name = "ButtonConsoleNavigate";
+            this.ButtonConsoleNavigate.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonConsoleNavigate.Size = new System.Drawing.Size(40, 23);
             this.ButtonConsoleNavigate.TabIndex = 23;
             this.ButtonConsoleNavigate.Text = ">";
@@ -619,7 +640,10 @@
             // 
             this.TextBoxConsolePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxConsolePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.TextBoxConsolePath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxConsolePath.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxConsolePath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxConsolePath.Location = new System.Drawing.Point(109, 31);
             this.TextBoxConsolePath.Name = "TextBoxConsolePath";
             this.TextBoxConsolePath.Size = new System.Drawing.Size(492, 23);
@@ -633,10 +657,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvConsoleFiles.ContextMenuStrip = this.ContextMenuConsole;
             this.DgvConsoleFiles.Location = new System.Drawing.Point(7, 60);
+            this.DgvConsoleFiles.MainView = this.gridView2;
             this.DgvConsoleFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 0);
             this.DgvConsoleFiles.Name = "DgvConsoleFiles";
             this.DgvConsoleFiles.Size = new System.Drawing.Size(640, 412);
             this.DgvConsoleFiles.TabIndex = 24;
+            this.DgvConsoleFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.DgvConsoleFiles;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // ColumnConsoleFileType
             // 
@@ -705,14 +738,16 @@
             // 
             // FileManagerWindow
             // 
+            this.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseFont = true;
+            this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1340, 565);
             this.Controls.Add(this.LayoutPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ForeColor = System.Drawing.Color.White;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("FileManagerWindow.IconOptions.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FileManagerWindow";
             this.ShowInTaskbar = false;
@@ -730,6 +765,7 @@
             this.ToolStripLocalStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLocalFiles)).EndInit();
             this.ContextMenuLocal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.SectionConsoleFileExplorer.ResumeLayout(false);
             this.SectionConsoleFileExplorer.PerformLayout();
             this.ToolStripConsoleActions.ResumeLayout(false);
@@ -737,6 +773,7 @@
             this.ToolStripConsoleStatus.ResumeLayout(false);
             this.ToolStripConsoleStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvConsoleFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.LayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -794,5 +831,7 @@
         private System.Windows.Forms.ToolStripMenuItem ContextMenuLocalRenameFolder;
         private DarkUI.Controls.DarkButton ButtonConsoleNavigate;
         private System.Windows.Forms.ToolStripButton ToolStripLocalRefresh;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }

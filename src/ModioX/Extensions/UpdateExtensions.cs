@@ -1,4 +1,5 @@
 ﻿using DarkUI.Forms;
+using DevExpress.XtraEditors;
 using ModioX.Constants;
 using ModioX.Forms.Windows;
 using ModioX.Io;
@@ -90,7 +91,7 @@ namespace ModioX.Extensions
 
                 MainWindow.Settings.FirstTimeOpenAfterUpdate = true;
                 MainWindow.Window.SetStatus("A new update is available. Downloading the installer...");
-                DarkMessageBox.ShowInformation($"A new version of ModioX ({GitHubData.Name}) is now available. Click OK to download and run the installer.", @"Update Available");
+                XtraMessageBox.Show($"A new version of ModioX ({GitHubData.Name}) is now available. Click OK to download and run the installer.", @"Update Available");
                 WebClient.DownloadFile(GitHubData.Assets[0].BrowserDownloadUrl, installerFile);
                 Process.Start(installerFile);
                 Application.Exit();

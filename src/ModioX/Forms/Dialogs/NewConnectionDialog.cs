@@ -68,19 +68,19 @@ namespace ModioX.Forms.Dialogs
         {
             if (string.IsNullOrWhiteSpace(TextBoxConnectionName.Text))
             {
-                DarkMessageBox.ShowExclamation("You must enter a connection name.", "Empty Field");
+                XtraMessageBox.Show("You must enter a connection name.", "Empty Field");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(TextBoxConsoleAddress.Text))
             {
-                DarkMessageBox.ShowExclamation("You must enter an IP Address.", "Empty Field");
+                XtraMessageBox.Show("You must enter an IP Address.", "Empty Field");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(TextBoxConsolePort.Text))
             {
-                DarkMessageBox.ShowExclamation("You must enter a port value. The default value is 21.", "Empty Field");
+                XtraMessageBox.Show("You must enter a port value. The default value is 21.", "Empty Field");
                 return;
             }
 
@@ -96,7 +96,7 @@ namespace ModioX.Forms.Dialogs
                     {
                         if (ConsoleProfile.Name != TextBoxConnectionName.Text && ProfileExists(TextBoxConnectionName.Text))
                         {
-                            DarkMessageBox.ShowExclamation("A console with this name already exists.", "Console Name Exists");
+                            XtraMessageBox.Show("A console with this name already exists.", "Console Name Exists");
                         }
                         else
                         {
@@ -110,7 +110,7 @@ namespace ModioX.Forms.Dialogs
                     {
                         if (ProfileExists(TextBoxConnectionName.Text))
                         {
-                            DarkMessageBox.ShowExclamation("A console with this name already exists.", "Console Name Exists");
+                            XtraMessageBox.Show("A console with this name already exists.", "Console Name Exists");
                         }
                         else
                         {

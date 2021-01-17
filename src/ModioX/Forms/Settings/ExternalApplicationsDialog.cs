@@ -61,7 +61,7 @@ namespace ModioX.Forms.Settings
 
         private void ToolStripDelete_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.ShowWarning("Do you really want delete the selected item?", "Delete", DarkDialogButton.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really want delete the selected item?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 //MainWindow.Settings.ExternalApplications.RemoveAt(DgvApplications.SelectedRows[0].Index);
                 LoadExternalApplications();
@@ -70,10 +70,10 @@ namespace ModioX.Forms.Settings
 
         private void ToolStripDeleteAll_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.ShowWarning("Are you sure that you would like to delete of all your specified applications?", "Delete All Game Regions", DarkDialogButton.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Are you sure that you would like to delete of all your specified applications?", "Delete All Game Regions", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 MainWindow.Settings.ExternalApplications.Clear();
-                DarkMessageBox.ShowInformation("All specified regions for games have now been deleted.", "Deleted All Game Regions");
+                XtraMessageBox.Show("All specified regions for games have now been deleted.", "Deleted All Game Regions");
                 Close();
             }
         }
@@ -104,19 +104,19 @@ namespace ModioX.Forms.Settings
 
             if (string.IsNullOrWhiteSpace(appName))
             {
-                DarkMessageBox.ShowExclamation("You must enter a name for this application.", "Empty Name");
+                XtraMessageBox.Show("You must enter a name for this application.", "Empty Name");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(fileLocation))
             {
-                DarkMessageBox.ShowExclamation("You must enter the file path for this application.", "Empty File Location");
+                XtraMessageBox.Show("You must enter the file path for this application.", "Empty File Location");
                 return;
             }
 
             if (!File.Exists(fileLocation))
             {
-                DarkMessageBox.ShowExclamation("The file for this application doesn't exist on your computer. Please choose another file.", "File Doesn't Exist");
+                XtraMessageBox.Show("The file for this application doesn't exist on your computer. Please choose another file.", "File Doesn't Exist");
                 return;
             }
 

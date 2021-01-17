@@ -55,7 +55,7 @@ namespace ModioX.Forms.Settings
             {
                 if (currentListName != newListName && CustomListNameExists(newListName))
                 {
-                    DarkMessageBox.ShowWarning("A list with this name already exists.", "List Name Exists");
+                    XtraMessageBox.Show("A list with this name already exists.", "List Name Exists");
                 }
                 else
                 {
@@ -79,7 +79,7 @@ namespace ModioX.Forms.Settings
             {
                 if (CustomListNameExists(listName))
                 {
-                    DarkMessageBox.ShowWarning("A list with this name already exists.", "List Name Exists");
+                    XtraMessageBox.Show("A list with this name already exists.", "List Name Exists");
                 }
                 else
                 {
@@ -91,7 +91,7 @@ namespace ModioX.Forms.Settings
 
         private void ToolStripDeleteSelected_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.ShowExclamation("Do you really want to delete the selected list?", "Confirm", DarkDialogButton.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really want to delete the selected list?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 //MainWindow.Settings.CustomLists.RemoveAt(DgvCustomLists.CurrentRow.Index);
                 LoadCustomLists();
@@ -100,7 +100,7 @@ namespace ModioX.Forms.Settings
 
         private void ToolStripDeleteAll_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.ShowExclamation("Do you really to delete all of your created lists?", "Confirm", DarkDialogButton.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really to delete all of your created lists?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 MainWindow.Settings.CustomLists.Clear();
                 LoadCustomLists();

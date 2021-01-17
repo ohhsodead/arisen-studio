@@ -68,7 +68,7 @@ namespace ModioX.Forms.Settings
 
         private void ToolStripDeleteSelected_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.ShowWarning("Do you really want to delete the selected saved game region?", "Delete", DarkDialogButton.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really want to delete the selected saved game region?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 //MainWindow.Settings.GameRegions.RemoveAt(DgvGameRegions.CurrentRow.Index);
                 LoadSavedGameRegions();
@@ -77,7 +77,7 @@ namespace ModioX.Forms.Settings
 
         private void ToolStripDeleteAll_Click(object sender, EventArgs e)
         {
-            if (DarkMessageBox.ShowWarning("Do you really want to delete all of your saved game regions?", "Delete All", DarkDialogButton.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really want to delete all of your saved game regions?", "Delete All", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 MainWindow.Settings.GameRegions.Clear();
                 LoadSavedGameRegions();
@@ -106,13 +106,13 @@ namespace ModioX.Forms.Settings
         {
             if (ComboBoxGameTitle.SelectedIndex == -1)
             {
-                DarkMessageBox.ShowExclamation("You must first specify a game title.", "No Game Title");
+                XtraMessageBox.Show("You must first specify a game title.", "No Game Title");
                 return;
             }
 
             if (ComboBoxGameRegion.SelectedIndex == -1)
             {
-                DarkMessageBox.ShowExclamation("You must specify a game region for this game.", "No Game Region");
+                XtraMessageBox.Show("You must specify a game region for this game.", "No Game Region");
                 return;
             }
 
@@ -141,7 +141,7 @@ namespace ModioX.Forms.Settings
                 }
                 else
                 {
-                    _ = DarkMessageBox.ShowExclamation($"Region: {gameRegion} is not supported for Game: {gameTitle}\nPlease change the region to one that is supported for this game.", "Invalid Region");
+                    _ = XtraMessageBox.Show($"Region: {gameRegion} is not supported for Game: {gameTitle}\nPlease change the region to one that is supported for this game.", "Invalid Region");
                     return;
                 }
             }
