@@ -48,7 +48,7 @@ namespace XDevkit
         public XboxMemoryStream(Xbox client)
         {
             Xbox = client;
-            if (client == null || !client.Connected)
+            if (client == null || !Xbox.Connected)
                 throw new Exception("Not Connected!");
             position = 0x10000; // start at a valid memory address
         }
@@ -80,8 +80,8 @@ namespace XDevkit
         {
             // only check base address - would add too much overhead to check range
             // plus, it's much more likely that the entire range will be valid if the base address is
-            if (safeMode & !Xbox.IsValidAddress(address))
-                throw new Exception("Safe Mode detected invalid base address");
+            //if (safeMode & !Xbox.IsValidAddress(address))
+            //    throw new Exception("Safe Mode detected invalid base address");
 
             int iterations = (int)length / bufferSize;
             int remainder = (int)length % bufferSize;
@@ -90,7 +90,7 @@ namespace XDevkit
 
             for (int i = 0; i < iterations; i++)
             {
-                Xbox.SendCommand("getmem2 addr=0x{0} length={1}", Convert.ToString(address + read, 16).PadLeft(8, '0'), bufferSize);
+                Xbox.SendTextCommand("getmem2 addr=0x{0} length={1}", Convert.ToString(address + read, 16).PadLeft(8, '0'), bufferSize);
                 Xbox.Wait(bufferSize);
                 Xbox.XboxName.Client.Receive(buffer, (int)(offset + read), bufferSize, SocketFlags.None);
                 read += bufferSize;
@@ -98,7 +98,7 @@ namespace XDevkit
 
             if (remainder > 0)
             {
-                Xbox.SendCommand("getmem2 addr=0x{0} length={1}", Convert.ToString(address + read, 16).PadLeft(8, '0'), remainder);
+                Xbox.SendTextCommand("getmem2 addr=0x{0} length={1}", Convert.ToString(address + read, 16).PadLeft(8, '0'), remainder);
                 Xbox.Wait(remainder);
                 Xbox.XboxName.Client.Receive(buffer, (int)(offset + read), remainder, SocketFlags.None);
                 read += remainder;
@@ -116,8 +116,8 @@ namespace XDevkit
         {
             // only check base address - would add too much overhead to check range
             // plus, it's much more likely that the entire range will be valid anyways
-            if (safeMode & !Xbox.IsValidAddress(address))
-                throw new Exception("Safe Mode detected invalid base address");
+            //if (safeMode & !Xbox.IsValidAddress(address))
+            //    throw new Exception("Safe Mode detected invalid base address");
 
             int iterations = length / bufferSize;
             int remainder = length % bufferSize;

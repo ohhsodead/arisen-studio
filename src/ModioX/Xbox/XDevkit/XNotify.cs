@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace XDevkit
 {
@@ -7,7 +8,6 @@ namespace XDevkit
     /// </summary>
     public class XNotify 
     {
-        public static Xbox Con = new Xbox();
         public static void Show(string Message)
         {
             Show(Message, true);
@@ -248,9 +248,7 @@ namespace XDevkit
                     command += "\\\"";
                     break;
             }
-            Con.SendTextCommand(command);
+            Xbox.SendTextCommand(command);
         }
-
-
     }
 }
