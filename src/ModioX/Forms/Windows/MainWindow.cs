@@ -1049,12 +1049,14 @@ namespace ModioX.Forms.Windows
 
             if (GridViewMods.RowCount > 0)
             {
+                ProgressMods.BackColor = Color.FromArgb(50, 50, 50);
                 GridViewMods.SelectRow(0);
                 DisplayModDetails(GridViewMods.GetSelectedRows().First());
                 GridControlMods.Enabled = true;
             }
             else
             {
+                ProgressMods.BackColor = Color.FromArgb(41, 41, 41);
                 GridControlMods.Enabled = false;
             }
 
@@ -2123,5 +2125,6 @@ namespace ModioX.Forms.Windows
             var Main = new Dialogs.ConnectionDialogTest();
             Main.ShowDialog(this);
         }
+
     }
 }
