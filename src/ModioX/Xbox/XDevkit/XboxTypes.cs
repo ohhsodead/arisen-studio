@@ -26,6 +26,8 @@ namespace XDevkit
         #region Bool {Get; Set;}
         public bool SetBool(uint Address) { return GetMemory(Address, 1)[0] != 0; }
 
+
+
         public void SetBool(uint Address, bool Value)
         {
             object obj;
@@ -43,6 +45,8 @@ namespace XDevkit
             numArray1[0] = (byte)obj;
             SetMemory(address, numArray);
         }
+
+
 
         public void SetBool(uint Address, bool[] Value)
         {
@@ -98,6 +102,9 @@ namespace XDevkit
                 return 0;
             }
         }
+
+
+
         /// <summary>
         /// Gets A Float From Address And Returns it as String.
         /// </summary>
@@ -162,8 +169,6 @@ namespace XDevkit
         /// <param name="data"></param>
         public void SendBinaryData(byte[] data)
         {
-            ConnectionCheck();
-            FlushSocketBuffer();
             XboxName.Client.Send(data);
         }
 
@@ -174,8 +179,6 @@ namespace XDevkit
         /// <param name="length"></param>
         public void SendBinaryData(byte[] data, int length)
         {
-            ConnectionCheck();
-            FlushSocketBuffer();
             XboxName.Client.Send(data, length, SocketFlags.None);
         }
 
@@ -647,6 +650,8 @@ namespace XDevkit
             return BitConverter.ToSingle(myBuff, 0);
         }
 
+
+
         public string ReadString(uint Offset, byte[] readBuffer)
         {
             GetMemory(Offset, (uint)readBuffer.Length, readBuffer, out outInt);
@@ -705,6 +710,8 @@ namespace XDevkit
             Array.Reverse(myBuff, 0, 2);
             SetMemory(Offset, 2, myBuff, out outInt);
         }
+
+
 
         public void WriteUInt32(uint Offset, uint input)
         {

@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.Net.Sockets;
 using System.Text;
@@ -18,25 +19,22 @@ namespace XDevkit
     /// </summary>
     public partial class Xbox
     {
+        private uint _startDumpOffset { set; get; }
+        private bool _stopSearch { set; get; }
+        private RwStream _readWriter { set; get; }
 
+
+        [Browsable(false)]
         /// <summary>
-        /// Determines whether or not the specified address exists in xbox memory.
+        /// Set or Get the dump length
         /// </summary>
-        /// <param name="address"></param>
-        /// <returns></returns>
-        public bool IsValidAddress(uint address)
-        {
-            SendCommand("getmem addr=0x{0} length=1", Convert.ToString(address, 16));
-            string mem = ReceiveSocketLine();
-            ReceiveSocketLine();
-            return mem != "??";
-        }
+        public uint DumpLength { set; get; }
 
         public void SendCommand(string command, params object[] args)
         {
             if (XboxName != null)
             {
-                FlushSocketBuffer();
+                
 
                 try
                 {
@@ -44,7 +42,6 @@ namespace XDevkit
                 }
                 catch (Exception /*ex*/)
                 {
-                    Disconnect();
                     throw new Exception("No Connection Detected");
                 }
 
@@ -72,7 +69,7 @@ namespace XDevkit
         {
             if (!Functions.IsHex(value))
                 throw new Exception("Not a valid Hex String!");
-            if (!CheckConnection())
+            if (!Connected)
                 return; //Call function - If not connected return
             try
             {
@@ -111,7 +108,7 @@ namespace XDevkit
             if (memoryAddress > (startDumpAddress + dumpLength) || memoryAddress < startDumpAddress)
                 throw new Exception("Memory Address Out of Bounds");
 
-            if (!CheckConnection())
+            if (!Connected)
                 return null; //Call function - If not connected return
 
             var readWriter = new RwStream();
@@ -165,7 +162,7 @@ namespace XDevkit
                 throw new Exception("Empty Search string!");
             if (!Functions.IsHex(pointer))
                 throw new Exception(string.Format("{0} is not a valid Hex string.", pointer));
-            if (!CheckConnection())
+            if (!Connected)
                 return null; //Call function - If not connected return
             BindingList<SearchResults> values;
             try
@@ -265,7 +262,7 @@ namespace XDevkit
 
         public void SetMemory(uint address, string data)
         {
-            FlushSocketBuffer();
+            
             int sent = 0;
             try
             {
@@ -292,7 +289,7 @@ namespace XDevkit
 
         public void SetMemory(uint Address, uint BytesToWrite, byte[] Data, out uint BytesWritten)//aka response
         {
-            FlushSocketBuffer();
+            
             // Send the setmem command
             XboxName.Client
                 .Send(Encoding.ASCII
@@ -312,7 +309,6 @@ namespace XDevkit
 
         public byte[] GetMemory(uint Address, uint Length)
         {
-            FlushSocketBuffer();
             byte[] numArray = new byte[Length];
             GetMemory(Address, Length, numArray, out _);
             InvalidateMemoryCache(true, Address, Length);
@@ -321,7 +317,7 @@ namespace XDevkit
         }
         public void GetMemory(uint Address, uint BytesToRead, byte[] Data, out uint BytesRead)
         {
-            FlushSocketBuffer();
+            
             BytesRead = 0;
             List<byte> ReturnData = new List<byte>();
             byte[] Packet = new byte[1026];
@@ -355,6 +351,138 @@ namespace XDevkit
         }
 
         /// <summary>
+        /// Waits for a specified amount of data to be received.  Use with file IO.
+        /// </summary>
+        /// <param name="targetLength">Amount of data to wait for</param>
+        public static void Wait(int targetLength)
+        {
+            if (XboxName != null)
+            {
+                if (XboxName.Available < targetLength) // avoid waiting if we already have data in our buffer...
+                {
+                    Stopwatch sw = Stopwatch.StartNew();
+                    while (XboxName.Available < targetLength)
+                    {
+                        Thread.Sleep(0);
+                        if (sw.ElapsedMilliseconds > 5000)
+                        {
+
+                        }
+                    }
+                }
+            }
+            else
+                throw new Exception("No Connection Detected");
+        }
+
+        /// <summary>
+        /// Waits for data to be received.  During execution this method will enter a spin-wait loop and appear to use
+        /// 100% cpu when in fact it is just a suspended thread.   This is much more efficient than waiting a
+        /// millisecond since most commands take fractions of a millisecond. It will either resume after the condition
+        /// is met or throw a timeout exception.
+        /// </summary>
+        /// <param name="type">Wait type</param>
+        public void Wait(WaitType type)
+        {
+            if (XboxName != null)
+            {
+                Stopwatch sw = Stopwatch.StartNew();
+                switch (type)
+                {
+                    // waits for data to start being received
+                    case WaitType.Partial:
+                        while (XboxName.Available == 0)
+                        {
+                            Thread.Sleep(0);
+                            if (sw.ElapsedMilliseconds > 5000)
+                            {
+
+                            }
+                        }
+                        break;
+
+                    // waits for data to start and then stop being received
+                    case WaitType.Full:
+
+                        // do a partial wait first
+                        while (XboxName.Available == 0)
+                        {
+                            Thread.Sleep(0);
+                            if (sw.ElapsedMilliseconds > 5000)
+                            {
+
+                            }
+                        }
+
+                        // wait for rest of data to be received
+                        int avail = XboxName.Available;
+                        Thread.Sleep(0);
+                        while (XboxName.Available != avail)
+                        {
+                            avail = XboxName.Available;
+                            Thread.Sleep(0);
+                        }
+                        break;
+
+                    // waits for data to stop being received
+                    case WaitType.Idle:
+                        int before = XboxName.Available;
+                        Thread.Sleep(0);
+                        while (XboxName.Available != before)
+                        {
+                            before = XboxName.Available;
+                            Thread.Sleep(0);
+                            if (sw.ElapsedMilliseconds > 5000)
+                            {
+
+                            }
+                        }
+                        break;
+                }
+            }
+            else
+                throw new Exception("No Connection Detected");
+        }
+
+        /// <summary>
+        /// Waits for the receive buffer to stop receiving, then clears it. Call this before you send anything to the
+        /// xbox to help keep the channel in sync.
+        /// </summary>
+        public void FlushSocketBuffer()
+        {
+            Wait(WaitType.Idle);    // waits for the link to be idle...
+            try
+            {
+                if (XboxName.Available > 0)
+                    XboxName.Client.Receive(new byte[XboxName.Available]);
+            }
+            catch
+            {
+                Connected = false;
+            }
+        }
+
+        /// <summary>
+        /// Waits for a specified amount and then flushes it from the socket buffer.
+        /// </summary>
+        /// <param name="size">Size to flush</param>
+        public void FlushSocketBuffer(int size)
+        {
+            if (size > 0)
+            {
+                Wait(size);
+                try
+                {
+                    XboxName.Client.Receive(new byte[size]);
+                }
+                catch
+                {
+                    Connected = false;
+                }
+            }
+        }
+
+        /// <summary>
         /// Dump the memory
         /// </summary>
         /// <param name="filename">The file to save to</param>
@@ -371,8 +499,8 @@ namespace XDevkit
         /// <param name="dumpLength">The dump length</param>
         public void Dump(string filename, uint startDumpAddress, uint dumpLength)
         {
-            FlushSocketBuffer();
-            if (!CheckConnection())
+            
+            if (!Connected)
                 return; //Call function - If not connected return
 
             var readWriter = new RwStream(filename);
@@ -412,13 +540,61 @@ namespace XDevkit
         /// <returns></returns>
         public uint ResolveFunction(string ModuleName, uint Ordinal)
         {
-            FlushSocketBuffer();
+            
             object[] XBDMVersion = new object[] { "consolefeatures ver= 2", " type=9 params=\"A\\0\\A\\2\\0",  "/",  ModuleName.Length,  "\\", ModuleName.ToHexString(), "\\0", "\\", Ordinal,  "\\\""
             };
             string str = SendTextCommand(string.Concat(XBDMVersion));
             return uint.Parse(str.Substring(str.find(" ") + 1), NumberStyles.HexNumber);
         }
+        /// <summary>
+        /// Receives multiple lines of text from the xbox.
+        /// </summary>
+        /// <returns></returns>
+        public string ReceiveMultilineResponse()
+        {
+            StringBuilder response = new StringBuilder();
+            while (true)
+            {
+                string line = ReceiveSocketLine() + " ";//change here if any issue accurs
+                if (line[0] == '.')
+                    break;
+                else
+                    response.Append(line);
+            }
+            return response.ToString();
+        }
 
+        public string ReceiveSocketLine()
+        {
+            string Line;
+            byte[] textBuffer = new byte[256];  // buffer large enough to contain a line of text
+
+            Thread.Sleep(0);
+            while (true)
+            {
+                int avail = XboxName.Available;   // only get once
+                if (avail < textBuffer.Length)
+                {
+                    XboxName.Client.Receive(textBuffer, avail, SocketFlags.Peek);
+                    Line = Encoding.ASCII.GetString(textBuffer, 0, avail);
+                }
+                else
+                {
+                    XboxName.Client.Receive(textBuffer, textBuffer.Length, SocketFlags.Peek);
+                    Line = Encoding.ASCII.GetString(textBuffer);
+                }
+
+                int eolIndex = Line.IndexOf("\r\n");
+                if (eolIndex != -1)
+                {
+                    XboxName.Client.Receive(textBuffer, eolIndex + 2, SocketFlags.None);
+                    return Encoding.ASCII.GetString(textBuffer, 0, eolIndex);
+                }
+
+                // end of line not found yet, lets wait some more...
+                Thread.Sleep(0);
+            }
+        }
         /// <summary>
         ///
         /// </summary>

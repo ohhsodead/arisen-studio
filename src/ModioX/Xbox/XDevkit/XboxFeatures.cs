@@ -21,6 +21,7 @@ namespace XDevkit
     public partial class Xbox
     {
         private const string XAMModule = "xam.xex";
+        private const string krnlModule = "xboxkrnl.exe";
         #region Features
         public string GetAvatarURL(string gamertag)
         {
@@ -140,7 +141,7 @@ namespace XDevkit
 
         public void NOP(uint address)
         {
-            FlushSocketBuffer();
+            
             byte[] buffer1 = new byte[4];
             buffer1[0] = 0x60;
             byte[] data = buffer1;
@@ -162,7 +163,7 @@ namespace XDevkit
         /// <param name="Flags"></param>
         public void Reboot(string Name, string MediaDirectory, string CmdLine, XboxRebootFlags Flags)
         {
-            FlushSocketBuffer();
+            
             string[] lines = Name.Split("\\".ToCharArray());
             for (int i = 0; i < lines.Length - 1; i++)
                 MediaDirectory += lines[i] + "\\";
@@ -176,7 +177,7 @@ namespace XDevkit
         /// <param name="Color"></param>
         public void XboxShortcut(XboxShortcuts UI)
         {
-            FlushSocketBuffer();
+            
             if (XboxName.Connected)
                 switch (UI)//works by getting the int of the UI and matches the numbers to execute things
                 {
@@ -313,7 +314,7 @@ namespace XDevkit
         /// <param name="fileName">File to delete.</param>
         public string GetBoxID()
         {
-            FlushSocketBuffer();
+            
             return SendTextCommand("BOXID").Replace("200- ", string.Empty);
         }
 
@@ -324,7 +325,7 @@ namespace XDevkit
         /// <param name="Color"></param>
         public void SetConsoleColor(XboxColor Color)
         {
-            FlushSocketBuffer();
+            
             SendTextCommand("setcolor name=" + Enum.GetName(typeof(int), Color).ToLower());
         }
 
@@ -334,7 +335,7 @@ namespace XDevkit
         /// <returns></returns>
         public string GetConsoleID()
         {
-            FlushSocketBuffer();
+            
             return SendTextCommand(string.Concat("getconsoleid")).Replace("200- consoleid=", string.Empty);
         }
 
@@ -343,7 +344,7 @@ namespace XDevkit
         /// </summary>
         public string GetDMVersion()
         {
-            FlushSocketBuffer();
+            
             return SendTextCommand("dmversion").Replace("200- ", string.Empty);
 
         }
@@ -490,7 +491,7 @@ namespace XDevkit
         /// </summary>
         public void Reboot(XboxReboot Warm_or_Cold)
         {
-            FlushSocketBuffer();
+            
             if (Warm_or_Cold == XboxReboot.Cold)
             {
                 SendTextCommand("magicboot cold");
@@ -506,7 +507,7 @@ namespace XDevkit
         /// </summary>
         public void Freeze_Console(XboxSwitch Freeze)
         {
-            FlushSocketBuffer();
+            
             if (Freeze == XboxSwitch.True)
             {
                 SendTextCommand("stop");
@@ -521,7 +522,7 @@ namespace XDevkit
         /// </summary>
         public string XBEINFO()
         {
-            FlushSocketBuffer();
+            
             SendTextCommand("XBEINFO RUNNING");
             string str1 = ReceiveMultilineResponse();
             return str1.Substring(str1.find("name"));
@@ -532,7 +533,7 @@ namespace XDevkit
         /// <returns></returns>
         public string ConsoleType()
         {
-            FlushSocketBuffer();
+            
             string str = string.Concat("consolefeatures ver=", 2, " type=17 params=\"A\\0\\A\\0\\\"");
             string str1 = SendTextCommand(str);
             return str1.Substring(str1.find(" ") + 1);
@@ -543,7 +544,7 @@ namespace XDevkit
         /// </summary>
         public string GetCPUKey()
         {
-            FlushSocketBuffer();
+            
             string str = string.Concat("consolefeatures ver=", 2, " type=10 params=\"A\\0\\A\\0\\\"");
             return SendTextCommand(str).Replace("200- ", string.Empty);
         }
@@ -555,7 +556,7 @@ namespace XDevkit
         /// <returns></returns>
         public uint GetKernalVersion()
         {
-            FlushSocketBuffer();
+            
             string str = string.Concat("consolefeatures ver=", 2, " type=13 params=\"A\\0\\A\\0\\\"");
             string str1 = SendTextCommand(str);
             return uint.Parse(str1.Substring(str1.find(" ") + 1));
@@ -568,7 +569,7 @@ namespace XDevkit
         /// <returns></returns>
         public uint GetTemperature(TemperatureFlag TemperatureType)
         {
-            FlushSocketBuffer();
+            
             object[] Version = new object[]
             { "consolefeatures ver=", 2, " type=15 params=\"A\\0\\A\\1\\", 1, "\\", (int)TemperatureType, "\\\"" };
             string str = SendTextCommand(string.Concat(Version));
@@ -591,7 +592,7 @@ namespace XDevkit
         /// <param name="Bottom_Right"></param>
         public void SetLeds(LEDState Top_Left, LEDState Top_Right, LEDState Bottom_Left, LEDState Bottom_Right)
         {
-            FlushSocketBuffer();
+            
             object[] Resolver = new object[]
             {
                 "consolefeatures ver=",
@@ -662,21 +663,24 @@ namespace XDevkit
         /// </summary>
         public List<ModuleInfo> Modules { get { return modules; } }
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private readonly List<ModuleInfo> modules;
+        private readonly List<ModuleInfo> modules = null;
         /// <summary>
         /// Gets the notification listener registered with the xbox that listens for incoming notification session requests.
         /// </summary>
         [Browsable(false)]
         public TcpListener NotificationListener { get { return notificationListener; } }
+
+
+
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private readonly TcpListener notificationListener;
+        private readonly TcpListener notificationListener = null;
         /// <summary>
         ///
         /// </summary>
         /// <returns></returns>
         public uint XamGetCurrentTitleId()
         {
-            FlushSocketBuffer();
+            
             string str = string.Concat("consolefeatures ver=", 2, " type=16 params=\"A\\0\\A\\0\\\"");
             string str1 = SendTextCommand(str);
             return uint.Parse(str1.Substring(str1.find(" ") + 1), NumberStyles.HexNumber);
@@ -687,7 +691,6 @@ namespace XDevkit
         /// </summary>
         public void ShutDownConsole()
         {
-            FlushSocketBuffer();
             try
             {
                 string str = string.Concat("consolefeatures ver=", 2, " type=11 params=\"A\\0\\A\\0\\\"");

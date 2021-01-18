@@ -101,12 +101,6 @@
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\DialogExtensions.cs" />
     <Compile Include="Extensions\WebManExtensions.cs" />
-    <Compile Include="Forms\Dialogs\XBConnectionDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Dialogs\XBConnectionDialog.Designer.cs">
-      <DependentUpon>XBConnectionDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Settings\CustomListsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,33 +264,24 @@
     <Compile Include="Xbox\XDevkit\Controls\xex_value.designer.cs">
       <DependentUpon>xex_value.cs</DependentUpon>
     </Compile>
-    <Compile Include="Xbox\XDevkit\Devkit\Filesystem.cs" />
-    <Compile Include="Xbox\XDevkit\Devkit\Xbox.Memory.cs" />
-    <Compile Include="Xbox\XDevkit\Devkit\XboxAutomation.cs" />
-    <Compile Include="Xbox\XDevkit\Devkit\XboxEnums.cs" />
-    <Compile Include="Xbox\XDevkit\Devkit\XboxExtention.cs" />
-    <Compile Include="Xbox\XDevkit\Devkit\XboxFeatures.cs" />
-    <Compile Include="Xbox\XDevkit\Devkit\XboxMemoryStream.cs" />
-    <Compile Include="Xbox\XDevkit\Devkit\XboxNetworking.cs" />
-    <Compile Include="Xbox\XDevkit\Devkit\XboxStructs.cs" />
-    <Compile Include="Xbox\XDevkit\Devkit\XboxTypes.cs" />
-    <Compile Include="Xbox\XDevkit\Devkit\XMessageBoxUI.cs" />
-    <Compile Include="Xbox\XDevkit\Devkit\XNotify.cs" />
-    <Compile Include="Xbox\XDevkit\Functions\Bitmaps\BitmapFunctions.cs" />
-    <Compile Include="Xbox\XDevkit\Functions\Bitmaps\BitmapInfo.cs" />
-    <Compile Include="Xbox\XDevkit\Functions\Bitmaps\BitmapSubmap.cs" />
-    <Compile Include="Xbox\XDevkit\Functions\Bitmaps\DDS.cs" />
-    <Compile Include="Xbox\XDevkit\Functions\Bitmaps\DXTDecoder.cs" />
-    <Compile Include="Xbox\XDevkit\Functions\Bitmaps\TextureFormat.cs" />
-    <Compile Include="Xbox\XDevkit\Functions\Functions.cs" />
-    <Compile Include="Xbox\XDevkit\Functions\IO\ContentStorage.cs" />
-    <Compile Include="Xbox\XDevkit\Functions\IO\EndianIO.cs" />
-    <Compile Include="Xbox\XDevkit\Functions\IO\EndianReader.cs" />
-    <Compile Include="Xbox\XDevkit\Functions\IO\EndianType.cs" />
-    <Compile Include="Xbox\XDevkit\Functions\IO\EndianWriter.cs" />
-    <Compile Include="Xbox\XDevkit\Functions\IO\RWStream.cs" />
-    <Compile Include="Xbox\XDevkit\Functions\Items.cs" />
-    <Compile Include="Xbox\XDevkit\Xbox.cs" />
+    <Compile Include="Xbox\XDevkit\DevkitPlusPlus\Functions.cs" />
+    <Compile Include="Xbox\XDevkit\DevkitPlusPlus\IO\EndianIO.cs" />
+    <Compile Include="Xbox\XDevkit\DevkitPlusPlus\IO\EndianReader.cs" />
+    <Compile Include="Xbox\XDevkit\DevkitPlusPlus\IO\EndianType.cs" />
+    <Compile Include="Xbox\XDevkit\DevkitPlusPlus\IO\EndianWriter.cs" />
+    <Compile Include="Xbox\XDevkit\DevkitPlusPlus\IO\RWStream.cs" />
+    <Compile Include="Xbox\XDevkit\DevkitPlusPlus\Items.cs" />
+    <Compile Include="Xbox\XDevkit\Filesystem.cs" />
+    <Compile Include="Xbox\XDevkit\Xbox.Memory.cs" />
+    <Compile Include="Xbox\XDevkit\XboxEnums.cs" />
+    <Compile Include="Xbox\XDevkit\XboxExtention.cs" />
+    <Compile Include="Xbox\XDevkit\XboxFeatures.cs" />
+    <Compile Include="Xbox\XDevkit\XboxMemoryStream.cs" />
+    <Compile Include="Xbox\XDevkit\XboxNetworking.cs" />
+    <Compile Include="Xbox\XDevkit\XboxStructs.cs" />
+    <Compile Include="Xbox\XDevkit\XboxTypes.cs" />
+    <Compile Include="Xbox\XDevkit\XNotify.cs" />
+    <Compile Include="Xbox\Xbox.cs" />
     <EmbeddedResource Include="Forms\Dialogs\ConnectionDialog.resx">
       <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,9 +293,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\LoginDialog.resx">
       <DependentUpon>LoginDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dialogs\XBConnectionDialog.resx">
-      <DependentUpon>XBConnectionDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\CustomListsDialog.resx">
       <DependentUpon>CustomListsDialog.cs</DependentUpon>
@@ -368,7 +350,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Xbox\XDevkit\About XDevkit.txt" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

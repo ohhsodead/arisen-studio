@@ -8,7 +8,6 @@ namespace XDevkit
 {
     public static class XboxExtention
     {
-        public static Xbox Con = new Xbox();
         private static HashSet<Type> ValidReturnTypes { get; set; }
         public static void CallVoid(string module, int ordinal, params object[] Arguments)
         {
@@ -238,13 +237,13 @@ namespace XDevkit
                     }
                 }
                 str2 = string.Concat(str2, "\"");
-                string str5 = Con.SendTextCommand(str2);
+                string str5 = Xbox.SendTextCommand(str2);
                 string str6 = "buf_addr=";
                 while (str5.Contains(str6))
                 {
                     Thread.Sleep(250);
                     uint num6 = uint.Parse(str5.Substring(str5.find(str6) + str6.Length), NumberStyles.HexNumber);
-                    str5 = Con.SendTextCommand(string.Concat("consolefeatures ", str6, "0x", num6.ToString("X")));
+                    str5 = Xbox.SendTextCommand(string.Concat("consolefeatures ", str6, "0x", num6.ToString("X")));
                 }
                 switch (Type)
                 {

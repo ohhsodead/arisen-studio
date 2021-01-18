@@ -6,12 +6,7 @@ namespace XDevkit
 {
     public class FileSystem
     {
-        public static Xbox XConsole;
 
-        public FileSystem()
-        {
-            XConsole = new Xbox();
-        }
         #region XboxFile System
         /// <summary>
         /// Creates a directory on the xbox.
@@ -20,7 +15,7 @@ namespace XDevkit
         public void CreateDirectory(string name)
         {
             string sdr = string.Concat("mkdir name=\"{0}\"", name);
-            XConsole.SendTextCommand(sdr, out Xbox.Response);
+            Xbox.SendTextCommand(sdr, out Xbox.Response);
         }
         /// <summary>
         /// Creates a directory on the xbox.
@@ -38,7 +33,7 @@ namespace XDevkit
         public void DeleteFile(string fileName)
         {
             string dre = string.Concat("delete name=\"{0}\"", fileName);
-            XConsole.SendTextCommand(dre);
+            Xbox.SendTextCommand(dre);
         }
 
         /// <summary>
@@ -50,7 +45,7 @@ namespace XDevkit
         {
 
             string ren = string.Concat("rename name=\"{0}\" newname=\"{1}\"", OldFileName, NewFileName);
-            XConsole.SendTextCommand(ren);
+            Xbox.SendTextCommand(ren);
         }
         public void UploadDirectory(string localFolder, string remoteFolderToSaveIn)
         {
@@ -96,7 +91,6 @@ namespace XDevkit
         /// <param name="length"></param>
         public void SendBinaryData(byte[] data, int length)
         {
-            XConsole.FlushSocketBuffer();
             Xbox.XboxName.Client.Send(data, length, SocketFlags.None);
         }
         /// <summary>
@@ -121,7 +115,7 @@ namespace XDevkit
         /// <returns></returns>
         public byte[] ReceiveBinaryData(int size)
         {
-            XConsole.Wait(size);
+            Xbox.Wait(size);
             byte[] binData = new byte[size];
             Xbox.XboxName.Client.Receive(binData, binData.Length, SocketFlags.None);
             return binData;
@@ -132,7 +126,7 @@ namespace XDevkit
         /// <param name="data"></param>
         public void ReceiveBinaryData(byte[] data)
         {
-            XConsole.Wait(data.Length);
+            Xbox.Wait(data.Length);
             Xbox.XboxName.Client.Receive(data, data.Length, SocketFlags.None);
         }
 
@@ -142,7 +136,7 @@ namespace XDevkit
         /// <param name="data"></param>
         public void ReceiveBinaryData(byte[] data, int offset, int size)
         {
-            XConsole.Wait(size);
+            Xbox.Wait(size);
             Xbox.XboxName.Client.Receive(data, offset, size, SocketFlags.None);
         }
         /// <summary>
@@ -154,7 +148,7 @@ namespace XDevkit
         {
             FileStream lfs = new FileStream(localName, FileMode.Open);
             byte[] fileData = new byte[Xbox.XboxName.Client.SendBufferSize];
-            XConsole.SendTextCommand("sendfile name=\"{0}\" length={1}" + remoteName + lfs.Length);
+            Xbox.SendTextCommand("sendfile name=\"{0}\" length={1}" + remoteName + lfs.Length);
 
             int mainIterations = (int)lfs.Length / Xbox.XboxName.Client.SendBufferSize;
             int remainder = (int)lfs.Length % Xbox.XboxName.Client.SendBufferSize;
@@ -176,7 +170,6 @@ namespace XDevkit
         /// <param name="data"></param>
         public void SendBinaryData(byte[] data)
         {
-            XConsole.FlushSocketBuffer();
             Xbox.XboxName.Client.Send(data);
         }
 
@@ -192,7 +185,7 @@ namespace XDevkit
         /// <param name="remoteName">Xbox file name.</param>
         public void ReceiveFile(string localName, string remoteName)
         {
-            XConsole.SendTextCommand("getfile name=\"{0}\"" + remoteName);
+            Xbox.SendTextCommand("getfile name=\"{0}\"" + remoteName);
             int fileSize = BitConverter.ToInt32(ReceiveBinaryData(4), 0);
             using (var lfs = new System.IO.FileStream(localName, FileMode.Create))
             {

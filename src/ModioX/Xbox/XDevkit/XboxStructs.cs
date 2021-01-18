@@ -22,19 +22,6 @@
         public string Text;
     }
 
-    /// <summary>
-    /// Xbox debug connection information.
-    /// </summary>
-    public struct DebugConnection
-    {
-        public System.Net.IPAddress IP;
-        public string Name;
-        public DebugConnection(System.Net.IPAddress ip, string name)
-        {
-            IP = ip;
-            Name = name;
-        }
-    };
     public struct XBOX_SECTION_INFO
     {
         public string Name;
