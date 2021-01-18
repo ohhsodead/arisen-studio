@@ -31,6 +31,7 @@ Please give this project a ⭐ if you find it useful.
 - An internet connection
 - NET Framework 4.8 (Download [here](https://dotnet.microsoft.com/download/dotnet-framework/net48))
 - PlayStation 3 with MFW
+- RGH/Jtag Xbox 360 (With DashLaunch Installed Also Xbdm.xex as Plugin #1)
  
 ## Installation
 ### Windows
