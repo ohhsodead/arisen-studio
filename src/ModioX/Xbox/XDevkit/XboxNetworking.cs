@@ -21,8 +21,8 @@ namespace XDevkit
     /// </summary>
     public partial class Xbox  //Networking Class
     {
+        private const int listenPort = 730;
         public static string Response;
-
         public static bool Connected { get; set; }
         public static TcpClient XboxName { get; set; }
         [Browsable(false)]
@@ -30,6 +30,7 @@ namespace XDevkit
         public static uint ConnectTimeout { get; set; }
         public static uint ConversationTimeout { get; set; }
         public static string IPAddress { get; set; }
+
 
         /// <summary>
         /// Connects Local Tcp Connection From Device To Xbox Console
@@ -64,14 +65,14 @@ namespace XDevkit
                 XboxName = new TcpClient();
                 if (FindConsole())//if true then continue
                 {
-                    XboxName = new TcpClient(System.Net.IPAddress.Any.ToString(), listenPort);
+                    XboxName = new TcpClient(System.Net.IPAddress.Any.ToString(), listenPort);//test...
                     Reader = new StreamReader(XboxName.GetStream());
-                    Console.WriteLine("/Connection - F01/....(" + IPAddress + ")");
+                    Console.WriteLine("/Connection - F01/....(" + IPAddress + ")");//debugging purposes..
                     return Connected = true;
                 }
                 else// if top fails
                 {
-                    return false;
+                    return Connected = false;
                 }
             }
             // If User Supply's IP To US.
@@ -86,26 +87,12 @@ namespace XDevkit
             //Get IP Via Name
             else if (XboxNameOrIP.ToCharArray().Any(char.IsLetter))//uses ip to find console makes user think it finds it via name 
             {
-
-                if (FindConsole())//if true then continue
-                {
-                    XboxName = new TcpClient(IPAddress, 730);
-                    Reader = new StreamReader(XboxName.GetStream());
-                    Console.WriteLine("/Connection - Letter/....(" + "Manual Connection Mode" + ")");
-                    return Connected = true;
-                }
-                else
-                {
-                    Console.WriteLine("/Connection - Letter/....(" + "Manual Connection Mode Failed" + ")");
-                    return false;
-                }
-
+                new Exception("Not Yet Supported");
+                return false;
             }
-
             else
             {
-                Console.WriteLine("/Connection - SkyFall/....(" + "Unknown Bug" + ")");
-                return false;
+                return Connected;
             }
         }
         /// <summary>
@@ -147,7 +134,6 @@ namespace XDevkit
                 else
                 {
                     Console.WriteLine("SendTextCommand ==> " + Assembly.GetEntryAssembly().GetName().Name + " Connection = " + Connected);
-                    Console.WriteLine("Failed to SendTextCommand ==> All Checks Failed.. <==");
                 }
 
             }
@@ -161,7 +147,6 @@ namespace XDevkit
         {
             if (XboxName != null)
             {
-                FlushSocketBuffer();
 
                 try
                 {
@@ -175,7 +160,10 @@ namespace XDevkit
             else throw new Exception("No Connection Detected");
         }
         #region test Area
-        private const int listenPort = 730;
+
+        /// <summary>
+        /// Working On a Way Detect IPS 
+        /// </summary>
         private static void StartListener()
         {
 
@@ -204,7 +192,7 @@ namespace XDevkit
         }
         private bool FindConsole()
         {
-
+            StartListener();
             return true;
         }
         #endregion
