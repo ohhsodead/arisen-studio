@@ -1,5 +1,5 @@
-﻿using DarkUI.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
+using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
 using System;
@@ -22,6 +22,7 @@ namespace ModioX.Forms.Dialogs
         private void ConsolesWindow_Load(object sender, EventArgs e)
         {
             TextBoxConnectionName.Text = ConsoleProfile.Name;
+            ComboBoxConsoleType.Text = EnumExtensions.GetDescription(ConsoleProfile.Type);
             TextBoxConsoleAddress.Text = ConsoleProfile.Address;
             TextBoxConsolePort.Text = ConsoleProfile.Port.ToString();
 
@@ -32,13 +33,31 @@ namespace ModioX.Forms.Dialogs
             TextBoxConnectionName.SelectionStart = 0;
         }
 
-        private static bool ProfileExists(string name)
+        private void ComboBoxConsoleType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var console in MainWindow.Settings.ConsoleProfiles)
-                if (console.Name.Equals(name))
-                    return true;
-
-            return false;
+            switch (ComboBoxConsoleType.SelectedIndex)
+            {
+                case 0:
+                    ConsoleProfile.Type = ConsoleType.PlayStation3;
+                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.PS3;
+                    break;
+                case 1:
+                    ConsoleProfile.Type = ConsoleType.Xbox360FatWhite;
+                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
+                    break;
+                case 2:
+                    ConsoleProfile.Type = ConsoleType.Xbox360EliteFatBlack;
+                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
+                    break;
+                case 3:
+                    ConsoleProfile.Type = ConsoleType.Xbox360Slim;
+                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
+                    break;
+                case 4:
+                    ConsoleProfile.Type = ConsoleType.Xbox360SlimE;
+                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
+                    break;
+            }
         }
 
         private void ButtonChangeCredentials_Click(object sender, EventArgs e)
@@ -58,8 +77,8 @@ namespace ModioX.Forms.Dialogs
             {
                 LabelUserPass.Text = @"Default";
 
-                ConsoleProfile.Username = "";
-                ConsoleProfile.Password = "";
+                ConsoleProfile.Username = string.Empty;
+                ConsoleProfile.Password = string.Empty;
                 ConsoleProfile.UseDefaultCredentials = true;
             }
         }
@@ -96,7 +115,7 @@ namespace ModioX.Forms.Dialogs
                     {
                         if (ConsoleProfile.Name != TextBoxConnectionName.Text && ProfileExists(TextBoxConnectionName.Text))
                         {
-                            XtraMessageBox.Show("A console with this name already exists.", "Console Name Exists");
+                            XtraMessageBox.Show(this, "A console with this name already exists.", "Console Name Exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
@@ -110,7 +129,7 @@ namespace ModioX.Forms.Dialogs
                     {
                         if (ProfileExists(TextBoxConnectionName.Text))
                         {
-                            XtraMessageBox.Show("A console with this name already exists.", "Console Name Exists");
+                            XtraMessageBox.Show(this, "A console with this name already exists.", "Console Name Exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
@@ -123,13 +142,22 @@ namespace ModioX.Forms.Dialogs
                 }
                 else
                 {
-                    DarkMessageBox.ShowError("Port isn't an integer value.", "Invalid Port");
+                    XtraMessageBox.Show("Port isn't an integer value.", "Invalid Port", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                DarkMessageBox.ShowError("IP Address isn't the correct format.", "Invalid IP Address");
+                XtraMessageBox.Show("IP Address isn't the correct format.", "Invalid IP Address", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private static bool ProfileExists(string name)
+        {
+            foreach (var console in MainWindow.Settings.ConsoleProfiles)
+                if (console.Name.Equals(name))
+                    return true;
+
+            return false;
         }
     }
 }

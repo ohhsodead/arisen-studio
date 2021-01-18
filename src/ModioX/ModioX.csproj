@@ -93,6 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Urls.cs" />
+    <Compile Include="Controls\TileViewConsoleItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TileViewConsoleItem.Designer.cs">
+      <DependentUpon>TileViewConsoleItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database\Category.cs" />
     <Compile Include="Database\DownloadFiles.cs" />
     <Compile Include="Database\DropboxData.cs" />
@@ -100,7 +106,14 @@
     <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\DialogExtensions.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\WebManExtensions.cs" />
+    <Compile Include="Forms\Dialogs\ConnectionDialogTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\ConnectionDialogTest.Designer.cs">
+      <DependentUpon>ConnectionDialogTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Settings\CustomListsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,73 +242,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Templates\GitHubTemplates.cs" />
-    <Compile Include="Xbox\XDevkit\Controls\ByteArray.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Xbox\XDevkit\Controls\ByteArray.Designer.cs">
-      <DependentUpon>ByteArray.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Xbox\XDevkit\Controls\Fan_Control.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Xbox\XDevkit\Controls\Fan_Control.Designer.cs">
-      <DependentUpon>Fan_Control.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Xbox\XDevkit\Controls\MemDump.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Xbox\XDevkit\Controls\MemDump.Designer.cs">
-      <DependentUpon>MemDump.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Xbox\XDevkit\Controls\xex_slider.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Xbox\XDevkit\Controls\xex_slider.Designer.cs">
-      <DependentUpon>xex_slider.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Xbox\XDevkit\Controls\xex_value.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Xbox\XDevkit\Controls\xex_value.designer.cs">
-      <DependentUpon>xex_value.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Xbox\XDevkit\DevkitPlusPlus\Functions.cs" />
-    <Compile Include="Xbox\XDevkit\DevkitPlusPlus\IO\EndianIO.cs" />
-    <Compile Include="Xbox\XDevkit\DevkitPlusPlus\IO\EndianReader.cs" />
-    <Compile Include="Xbox\XDevkit\DevkitPlusPlus\IO\EndianType.cs" />
-    <Compile Include="Xbox\XDevkit\DevkitPlusPlus\IO\EndianWriter.cs" />
-    <Compile Include="Xbox\XDevkit\DevkitPlusPlus\IO\RWStream.cs" />
-    <Compile Include="Xbox\XDevkit\DevkitPlusPlus\Items.cs" />
-    <Compile Include="Xbox\XDevkit\Filesystem.cs" />
-    <Compile Include="Xbox\XDevkit\Xbox.Memory.cs" />
-    <Compile Include="Xbox\XDevkit\XboxEnums.cs" />
-    <Compile Include="Xbox\XDevkit\XboxExtention.cs" />
-    <Compile Include="Xbox\XDevkit\XboxFeatures.cs" />
-    <Compile Include="Xbox\XDevkit\XboxMemoryStream.cs" />
-    <Compile Include="Xbox\XDevkit\XboxNetworking.cs" />
-    <Compile Include="Xbox\XDevkit\XboxStructs.cs" />
-    <Compile Include="Xbox\XDevkit\XboxTypes.cs" />
-    <Compile Include="Xbox\XDevkit\XNotify.cs" />
-    <Compile Include="Xbox\Xbox.cs" />
+    <EmbeddedResource Include="Controls\TileViewConsoleItem.resx">
+      <DependentUpon>TileViewConsoleItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\ConnectionDialogTest.resx">
+      <DependentUpon>ConnectionDialogTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\ConnectionDialog.resx">
       <DependentUpon>ConnectionDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AboutDialog.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\InputTextDialog.resx">
       <DependentUpon>InputTextDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\LoginDialog.resx">
       <DependentUpon>LoginDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\CustomListsDialog.resx">
       <DependentUpon>CustomListsDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\ExternalApplicationsDialog.resx">
       <DependentUpon>ExternalApplicationsDialog.cs</DependentUpon>
@@ -305,7 +271,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\DataViewDialog.resx">
       <DependentUpon>DataViewDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\FileManagerWindow.resx">
       <DependentUpon>FileManagerWindow.cs</DependentUpon>
@@ -321,7 +286,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\BackupFileDialog.resx">
       <DependentUpon>BackupFileDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -337,23 +301,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\NewConnectionDialog.resx">
       <DependentUpon>NewConnectionDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\ListViewDialog.resx">
       <DependentUpon>ListViewDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Xbox\XDevkit\Controls\ByteArray.resx">
-      <DependentUpon>ByteArray.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Xbox\XDevkit\Controls\MemDump.resx">
-      <DependentUpon>MemDump.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Xbox\XDevkit\Controls\xex_value.resx">
-      <DependentUpon>xex_value.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Icons\Fat.png" />
+    <None Include="Resources\Icons\FatElite.png" />
+    <None Include="Resources\Icons\PlayStation3.png" />
+    <None Include="Resources\Icons\Slim.png" />
+    <None Include="Resources\Icons\SlimE.png" />
     <None Include="Resources\Icons\app_logo.png" />
     <None Include="App.config" />
     <None Include="Resources\Icons\copy_to_clipboard.png" />

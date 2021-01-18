@@ -69,7 +69,7 @@
             this.ButtonEdit.Size = new System.Drawing.Size(60, 25);
             this.ButtonEdit.TabIndex = 6;
             this.ButtonEdit.Text = "Edit";
-            this.ButtonEdit.Click += new System.EventHandler(this.ButtonEdit1_Click);
+            this.ButtonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
             // 
             // ButtonConnect
             // 

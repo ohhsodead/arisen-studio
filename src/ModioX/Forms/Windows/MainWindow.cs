@@ -28,13 +28,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
+using DevExpress.XtraBars;
 
 namespace ModioX.Forms.Windows
 {
     public partial class MainWindow : XtraForm
     {
         /// <summary>
-        /// Initialize application
+        /// Initialize application.
         /// </summary>
         public MainWindow()
         {
@@ -42,12 +43,10 @@ namespace ModioX.Forms.Windows
             InitializeComponent();
         }
 
-
         /// <summary>
-        /// Get/set the current instance of the MainWindow
+        /// Get/set the current instance of the MainWindow.
         /// </summary>
         public static MainWindow Window { get; private set; }
-
 
         /// <summary>
         /// Contains the users settings Database.
@@ -98,21 +97,11 @@ namespace ModioX.Forms.Windows
         }
 
         /// <summary>
-        /// Save application settings on form closing event.
-        /// </summary>
-        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            SaveSettings();
-        }
-
-        /// <summary>
         /// Form loading event.
         /// </summary>
         private async void MainWindow_Load(object sender, EventArgs e)
         {
             Text = $@"ModioX - {UpdateExtensions.CurrentVersionName}";
-
-            //ControlExtensions.SetValuesOnSubItems(MainMenu.Items.OfType<ToolStripMenuItem>().ToList());
 
             LoadSettings();
             EnableConsoleActions();
@@ -146,6 +135,14 @@ namespace ModioX.Forms.Windows
         }
 
         /// <summary>
+        /// Save application settings on form closing event.
+        /// </summary>
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveSettings();
+        }
+
+        /// <summary>
         /// Retrieves the categories and mods into the application.
         /// </summary>
         private static async Task LoadData()
@@ -166,8 +163,6 @@ namespace ModioX.Forms.Windows
         /// </summary>
         private void InitializeFinished()
         {
-
-
             SetStatus($"Successfully loaded the database - Finalizing application data...");
 
             LoadCategories();
@@ -198,12 +193,149 @@ namespace ModioX.Forms.Windows
             Focus();
         }
 
-        private void AboutBar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        #region Header Menu Bar
+
+        // CONNECT
+
+        private void ButtonConnectPS3_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogExtensions.ShowAboutWindow(this);
+            if (IsConsoleConnected)
+            {
+                DisconnectConsole();
+            }
+            else
+            {
+                var consoleProfile = DialogExtensions.ShowConnectionDialog(this);
+
+                if (consoleProfile != null)
+                {
+                    ConsoleProfile = consoleProfile;
+                    ConnectConsole();
+                }
+            }
         }
 
-        private void AddConsoleButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void ButtonConnectXBOX_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (IsConsoleConnected)
+            {
+                DisconnectConsole();
+            }
+            else
+            {
+                var consoleProfile = DialogExtensions.ShowConnectionDialog(this);
+
+                if (consoleProfile != null)
+                {
+                    ConsoleProfile = consoleProfile;
+                    ConnectConsole();
+                }
+            }
+        }
+
+        // TOOLS MENU
+
+        private void ButtonGameBackupFiles_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SaveSettings();
+            DialogExtensions.ShowGameBackupFiles(this);
+            SaveSettings();
+        }
+
+        private void ButtonGameUpdateFinder_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowGameUpdatesFinderDialog(this);
+        }
+
+        private void ButtonFileManager_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowFileManager(this);
+        }
+
+        private void ButtonPackageManager_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowPackageManagerWindow(this);
+        }
+
+        // APPLICATIONS MENU
+
+        private void MenuItemApplications_Click(object sender, EventArgs e)
+        {
+            var menuItemText = ((ToolStripMenuItem)sender).Text;
+
+            foreach (var application in Settings.ExternalApplications.Where(application => application.Name.Equals(menuItemText, StringComparison.OrdinalIgnoreCase)))
+            {
+                if (File.Exists(application.FileLocation))
+                {
+                    Process.Start(application.FileLocation);
+                }
+                else
+                {
+                    XtraMessageBox.Show(this, $"Could not locate application: {application.Name} at location: {application.FileLocation}\n\nGo to Settings > Edit Applications and set the correct file path for this application.", "Application Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        // TOOLS MENU
+
+        private void ButtonNotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
+
+            if (!string.IsNullOrWhiteSpace(notifyMessage))
+            {
+                WebManExtensions.NotifyPopup(ConsoleProfile.Address, notifyMessage);
+                SetStatus($"WebMAN Controls: Message Notified - {notifyMessage}");
+            }
+        }
+
+        private void ButtonVirtualController_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Process.Start("http://pad.aldostools.org/pad.html");
+        }
+
+        private void ButtonSoftReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.RebootSoft(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+        private void ButtonHardReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.RebootHard(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+        private void ButtonRestart_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.Restart(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+        private void ButtonShutdown_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.Shutdown(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+        private void ButtonSystemInformation_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifySystemInformation(ConsoleProfile.Address);
+        }
+
+        private void ButtonCPURSXTemperature_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifyCPURSXTemperature(ConsoleProfile.Address);
+        }
+
+        private void ButtonMinimumVersion_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
+        }
+
+        // OPTIONS MENU
+
+        private void ButtonAddNewConsole_ItemClick(object sender, ItemClickEventArgs e)
         {
             SaveSettings();
 
@@ -217,60 +349,113 @@ namespace ModioX.Forms.Windows
             SaveSettings();
         }
 
-        private void AppExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void ButtonEditApplications_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowExternalApplicationsDialog(this);
+            LoadSettings();
+        }
+
+        private void ButtonEditGameRegion_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowGameRegionsDialog(this);
+            LoadSettings();
+        }
+
+        private void ButtonEditYourLists_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowCustomListsDialog(this);
+            LoadSettings();
+            LoadListsCategories();
+        }
+
+        private void ButtonSettings_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowSettingsWindow(this);
+            LoadSettings();
+        }
+
+        // HELP MENU
+
+        private void ButtonReportBug_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Process.Start($"{Urls.GitHubRepo}issues/new");
+        }
+
+        private void ButtonOfficialSource_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Process.Start(Urls.GitHubRepo);
+        }
+
+        private void ButtonDiscordServer_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Process.Start(Urls.DiscordServer);
+        }
+
+        private void ButtonCheckForUpdate_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UpdateExtensions.CheckApplicationVersion();
+        }
+
+        private void ButtonWhatsNew_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus("Showing latest Changelog...");
+            DialogExtensions.ShowWhatsNewWindow(this, UpdateExtensions.GitHubData);
+        }
+        private void ButtonOpenLogFile_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus("Opening Log file...");
+            var logFile = $"{UserFolders.AppLogsDirectory}latest.txt";
+            if (File.Exists(logFile))
+            {
+                try
+                {
+                    Process.Start(logFile);
+                }
+                catch (Exception ex)
+                {
+                    SetStatus("Failed to open Log file...", ex);
+                    DarkMessageBox.ShowError("Failed to open the log file.\nIt may have been deleted, that's ok.", "Failed to open log.");
+                }
+            }
+            else
+            {
+                SetStatus("Failed to find Log file...");
+                DarkMessageBox.ShowError("Failed to find the log file.\nIt may have been deleted, that's ok.", "Failed to find log.");
+            }
+        }
+
+        private void ButtonOpenLogFolder_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus("Opening Log folder...");
+            if (!Directory.Exists(UserFolders.AppLogsDirectory)) Directory.CreateDirectory(UserFolders.AppLogsDirectory);
+            Process.Start(UserFolders.AppLogsDirectory);
+        }
+
+        private void ButtonAbout_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowAboutWindow(this);
+        }
+
+        private void ButtonExit_ItemClick(object sender, ItemClickEventArgs e)
         {
             SaveSettings();
             Application.Exit();
         }
 
-        private void barButtonItem15_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        #endregion
+
+        #region Search & Filtering Mods
+
+        private void TextBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            var notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
+            FilterModsName = TextBoxSearch.Text;
 
-            if (!string.IsNullOrWhiteSpace(notifyMessage))
-            {
-                WebManExtensions.NotifyPopup(ConsoleProfile.Address, notifyMessage);
-                SetStatus($"WebMAN Controls: Message Notified - {notifyMessage}");
-            }
-        }
-
-        private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Process.Start("http://pad.aldostools.org/pad.html");
-        }
-
-        private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WebManExtensions.RebootSoft(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WebManExtensions.RebootHard(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-
-        private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifySystemInformation(ConsoleProfile.Address);
-        }
-
-        private void barButtonItem24_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifyCPURSXTemperature(ConsoleProfile.Address);
-
-        }
-
-        private void barButtonItem26_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
-        }
-
-        private void CheckForUpdateButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UpdateExtensions.CheckApplicationVersion();
+            LoadModsByCategoryId(SelectedCategory.Id,
+                FilterModsName,
+                FilterModsFirmware,
+                FilterModsType,
+                FilterModsRegion,
+                IsCustomListSelected);
         }
 
         private void ComboBoxFirmware_SelectedIndexChanged(object sender, EventArgs e)
@@ -308,6 +493,10 @@ namespace ModioX.Forms.Windows
                 FilterModsRegion,
                 IsCustomListSelected);
         }
+
+        #endregion
+
+        #region NEEDED OLD CONTEXT MENU FUNCTIONS
 
         private void ContextMenuModsAddToList_Click(object sender, EventArgs e)
         {
@@ -358,6 +547,10 @@ namespace ModioX.Forms.Windows
         {
             ToolItemModUninstall.PerformClick();
         }
+
+        #endregion
+
+        #region STILL NEED 
 
         private void GridViewMods_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -459,40 +652,7 @@ namespace ModioX.Forms.Windows
             */
         }
 
-        /// <summary>
-        /// Disconnects from the console and flushes all resources from the FTP connections.
-        /// </summary>
-        private void DisconnectConsole()
-        {
-            SetStatus($"Disconnecting from console...");
-
-            try
-            {
-                FtpConnection.Dispose();
-                FtpConnection.Close();
-
-                FtpClient.Dispose();
-            }
-            catch
-            {
-                // False positive, if console is powered off then an error will be thrown.
-            }
-
-            IsConsoleConnected = false;
-            SetStatusConsole(null);
-            EnableConsoleActions();
-
-            PS3ConnectButton.Caption = "Connect to console...";
-
-            SetStatus("Disconnected from console.");
-
-            XtraMessageBox.Show("Successfully disconnected from console.", "Success");
-        }
-
-        private void DiscordServerButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Process.Start(Urls.DiscordServer);
-        }
+        #endregion
 
         /// <summary>
         /// Set the UI to display the specified mod details
@@ -621,88 +781,7 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        private void EditApplicationsButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowExternalApplicationsDialog(this);
-            LoadSettings();
-        }
-
-        private void EditGameRegionButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowGameRegionsDialog(this);
-            LoadSettings();
-        }
-
-        private void EditYourLists_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowCustomListsDialog(this);
-            LoadSettings();
-            LoadListsCategories();
-        }
-
-        /// <summary>
-        /// Enable or disable console-only actions.
-        /// </summary>
-        private void EnableConsoleActions()
-        {
-            PackageManagerButton.Enabled = IsConsoleConnected;
-            FileManagerButton.Enabled = IsConsoleConnected;
-            WebManControlsMenu.Enabled = IsConsoleConnected && IsWebManInstalled;
-            ToolItemModInstall.Enabled = IsConsoleConnected;
-            ContextMenuModsInstallFiles.Enabled = IsConsoleConnected;
-
-            if (ToolItemModUninstall.Enabled)
-            {
-                ToolItemModUninstall.Enabled = IsConsoleConnected;
-            }
-
-            if (ContextMenuModsUninstallFiles.Enabled)
-            {
-                ContextMenuModsUninstallFiles.Enabled = IsConsoleConnected;
-            }
-        }
-
-        private void FileManagerButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowFileManager(this);
-        }
-
-        private void FlowPanelDetails_MouseWheel(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                //ScrollBarDetails.Value = FlowPanelDetails.VerticalScroll.Value + 10;
-            }
-            catch
-            {
-                // ignored
-            }
-        }
-
-        private void FlowPanelDetails_Scroll(object sender, ScrollEventArgs e)
-        {
-            try
-            {
-                //ScrollBarDetails.Value = FlowPanelDetails.VerticalScroll.Value;
-            }
-            catch
-            {
-                // ignored
-            }
-        }
-
-        private void GameBackupFilesButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            SaveSettings();
-            DialogExtensions.ShowGameBackupFiles(this);
-            SaveSettings();
-        }
-
-        private void GameUpdateFinderButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowGameUpdatesFinderDialog(this);
-
-        }
+        #region Categories
 
         private void LoadCategories()
         {
@@ -749,61 +828,6 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        private void CustomListTitle_Click(object sender, EventArgs e)
-        {
-            string customListName = ((Label)sender).Name;
-            CustomList customList = Settings.GetCustomListByName(customListName);
-
-            SelectedCategory = new Category() { Id = customListName, Title = customListName, Regions = Settings.GetRegionsForModIDs(Database.Mods, customList.ModIds).ToArray() };
-            IsCustomListSelected = true;
-
-            FilterModsType = string.Empty;
-            FilterModsRegion = string.Empty;
-
-            LoadModsByCategoryId(customListName,
-                FilterModsName,
-                FilterModsFirmware,
-                FilterModsType,
-                FilterModsRegion,
-                IsCustomListSelected);
-
-            //ComboBoxModType.SelectedIndex = string.IsNullOrEmpty(FilterModsType)
-            //    ? 0
-            //    : ComboBoxModType.FindStringExact(FilterModsType);
-
-            foreach (var item in ComboBoxModType.Properties.Items)
-            {
-                if (string.IsNullOrEmpty(FilterModsType))
-                {
-                    ComboBoxModType.SelectedIndex = 0;
-                    return;
-                }
-
-                if (item.Equals(FilterModsType))
-                {
-                    ComboBoxModType.SelectedIndex = ComboBoxModType.Properties.Items.IndexOf(FilterModsType);
-                    return;
-                }
-                else
-                {
-                    ComboBoxModType.SelectedIndex = 0;
-                    return;
-                }
-            }
-        }
-
-        private void CustomListTitle_MouseEnter(object sender, EventArgs e)
-        {
-            ((Label)sender).BackColor = Color.FromArgb(75, 110, 175);
-        }
-
-        private void CustomListTitle_MouseLeave(object sender, EventArgs e)
-        {
-            ((Label)sender).BackColor = SelectedCategory.Id.Equals(((Label)sender).Name)
-                ? Color.FromArgb(75, 110, 175)
-                : Color.Transparent;
-        }
-
         private void LoadListsCategories()
         {
             NavGroupMyLists.ItemLinks.Clear();
@@ -829,6 +853,62 @@ namespace ModioX.Forms.Windows
                 NavGroupMyLists.ItemLinks.Add(gameItem);
             }
         }
+
+        private void NavigationBar_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            string categoryId = e.Link.ItemName;
+
+            // Check whether item is a custom list
+            bool isCustomList = Settings.CustomLists.Any(customList => customList.Name.Equals(categoryId));
+
+            if (isCustomList)
+            {
+                CustomList customList = Settings.GetCustomListByName(categoryId);
+                SelectedCategory = new Category() { Id = categoryId, Title = categoryId, Regions = Settings.GetRegionsForModIDs(Database.Mods, customList.ModIds).ToArray() };
+            }
+            else
+            {
+                SelectedCategory = Database.CategoriesData.GetCategoryById(categoryId);
+            }
+
+            FilterModsType = string.Empty;
+            FilterModsRegion = string.Empty;
+
+            LoadModsByCategoryId(SelectedCategory.Id,
+                FilterModsName,
+                FilterModsFirmware,
+                FilterModsType,
+                FilterModsRegion,
+                isCustomList);
+
+            //ComboBoxModType.SelectedIndex = string.IsNullOrEmpty(FilterModsType)
+            //    ? 0
+            //    : ComboBoxModType.FindStringExact(FilterModsType);
+
+            if (string.IsNullOrEmpty(FilterModsType))
+            {
+                ComboBoxModType.SelectedIndex = 0;
+                return;
+            }
+
+            foreach (var item in ComboBoxModType.Properties.Items)
+            {
+                if (item.Equals(FilterModsType))
+                {
+                    ComboBoxModType.SelectedIndex = ComboBoxModType.Properties.Items.IndexOf(FilterModsType);
+                    return;
+                }
+                else
+                {
+                    ComboBoxModType.SelectedIndex = 0;
+                    return;
+                }
+            }
+        }
+
+        #endregion
+
+        #region Load/Display Mods into Grid
 
         /// <summary>
         /// Loads all the mods for the specified gameId, matching with filters: name, firmware, type and region
@@ -987,132 +1067,9 @@ namespace ModioX.Forms.Windows
             ComboBoxRegion.SelectedIndexChanged += ComboBoxRegion_SelectedIndexChanged;
         }
 
-        private void MenuItemApplications_Click(object sender, EventArgs e)
-        {
-            var menuItemText = ((ToolStripMenuItem)sender).Text;
+        #endregion
 
-            foreach (var application in Settings.ExternalApplications.Where(application => application.Name.Equals(menuItemText, StringComparison.OrdinalIgnoreCase)))
-            {
-                if (File.Exists(application.FileLocation))
-                {
-                    Process.Start(application.FileLocation);
-                }
-                else
-                {
-                    DarkMessageBox.ShowError($"Could not locate application: {application.Name} at location: {application.FileLocation}\n\nGo to Settings > Edit Applications and set the correct file path for this application.", "Application Not Found");
-                }
-            }
-        }
-
-        private async void MenuItemRefreshData_Click(object sender, EventArgs e)
-        {
-            SetStatus("Initializing application database...");
-
-            if (IsConsoleConnected)
-            {
-                DisconnectConsole();
-            }
-
-            SaveSettings();
-            LoadSettings();
-
-            await Task.Run(async () => await LoadData());
-            InitializeFinished();
-        }
-
-        private void OfficailSourceButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Process.Start(Urls.GitHubRepo);
-        }
-
-        private void OpenLogFileButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            SetStatus("Opening Log file...");
-            var logFile = $"{UserFolders.AppLogsDirectory}latest.txt";
-            if (File.Exists(logFile))
-            {
-                try
-                {
-                    Process.Start(logFile);
-                }
-                catch (Exception ex)
-                {
-                    SetStatus("Failed to open Log file...", ex);
-                    DarkMessageBox.ShowError("Failed to open the log file.\nIt may have been deleted, that's ok.", "Failed to open log.");
-                }
-            }
-            else
-            {
-                SetStatus("Failed to find Log file...");
-                DarkMessageBox.ShowError("Failed to find the log file.\nIt may have been deleted, that's ok.", "Failed to find log.");
-            }
-        }
-
-        private void OpenLogFolderButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            SetStatus("Opening Log folder...");
-            if (!Directory.Exists(UserFolders.AppLogsDirectory)) Directory.CreateDirectory(UserFolders.AppLogsDirectory);
-            Process.Start(UserFolders.AppLogsDirectory);
-        }
-
-        private void PackageManagerButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowPackageManagerWindow(this);
-
-        }
-
-        private void PS3ConnectButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (IsConsoleConnected)
-            {
-                DisconnectConsole();
-            }
-            else
-            {
-                var consoleProfile = DialogExtensions.ShowConnectionDialog(this);
-
-                if (consoleProfile != null)
-                {
-                    ConsoleProfile = consoleProfile;
-                    ConnectConsole();
-                }
-            }
-        }
-
-        private void ReportBugButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Process.Start($"{Urls.GitHubRepo}issues/new");
-        }
-
-        private void RestartButtonBar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WebManExtensions.Restart(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void Settings_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowSettingsWindow(this);
-            LoadSettings();
-        }
-
-        private void ShutDownButtonBar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WebManExtensions.Shutdown(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void TextBoxSearch_TextChanged(object sender, EventArgs e)
-        {
-            FilterModsName = TextBoxSearch.Text;
-
-            LoadModsByCategoryId(SelectedCategory.Id,
-                FilterModsName,
-                FilterModsFirmware,
-                FilterModsType,
-                FilterModsRegion,
-                IsCustomListSelected);
-        }
+        #region NEEDED OLD INSTALL/UNINSTALL/DOWNLOAD/FAVORITE FUNCTIONS
 
         private void ToolItemUninstallAllGameMods_Click(object sender, EventArgs e)
         {
@@ -1168,11 +1125,7 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        private void WhatsNewButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            SetStatus("Showing latest Changelog...");
-            DialogExtensions.ShowWhatsNewWindow(this, UpdateExtensions.GitHubData);
-        }
+        #endregion
 
         /// <summary>
         /// Get/set the firmware for filtering mods.
@@ -1210,7 +1163,7 @@ namespace ModioX.Forms.Windows
         private static ModItem SelectedModItem { get; set; }
 
         /// <summary>
-        /// Attempt to connect to the console profile by opening the FTP connections.
+        /// Attempt to connect to the console profile by opening the FTP connection.
         /// </summary>
         public void ConnectConsole()
         {
@@ -1237,14 +1190,14 @@ namespace ModioX.Forms.Windows
                 IsConsoleConnected = true;
                 SetStatusConsole(ConsoleProfile);
 
-                IsWebManInstalled = WebManExtensions.IsWebManInstalled(ConsoleProfile.Address, ConsoleProfile.Port);
+                IsWebManInstalled = ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3 ? WebManExtensions.IsWebManInstalled(ConsoleProfile.Address, ConsoleProfile.Port) : false;
 
-                if (IsWebManInstalled)
+                if (IsWebManInstalled && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
                 {
                     WebManExtensions.NotifyPopup(ConsoleProfile.Address, "You are now connected to ModioX ★");
                 }
 
-                PS3ConnectButton.Caption = "Disconnect from console...";
+                ButtonConnectToPS3.Caption = "Disconnect from console...";
                 SetStatus($"Successfully connected to console.");
 
                 EnableConsoleActions();
@@ -1258,6 +1211,274 @@ namespace ModioX.Forms.Windows
                 DarkMessageBox.ShowError($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address})\n\nError: {ex.Message}", "Connection Failed");
             }
         }
+
+        /// <summary>
+        /// Disconnects from the console and flushes all resources from the FTP connections.
+        /// </summary>
+        private void DisconnectConsole()
+        {
+            SetStatus($"Disconnecting from console...");
+
+            try
+            {
+                FtpConnection.Dispose();
+                FtpConnection.Close();
+
+                FtpClient.Dispose();
+            }
+            catch
+            {
+                // False positive, if console is powered off then an error will be thrown.
+            }
+
+            IsConsoleConnected = false;
+            SetStatusConsole(null);
+            EnableConsoleActions();
+
+            ButtonConnectToPS3.Caption = "Connect to console...";
+            ButtonConnectToXBOX.Caption = "Connect to console...";
+
+            SetStatus("Disconnected from console.");
+
+            XtraMessageBox.Show("Successfully disconnected from console.", "Success");
+        }
+
+        /// <summary>
+        /// Load all of the currently installed game mods
+        /// </summary>
+        public void LoadInstalledGameMods()
+        {
+            GridControlGameModsInstalled.DataSource = null;
+
+            int totalFiles = 0;
+
+            var dt = new DataTable();
+            dt.Columns.Add("Id", typeof(int));
+            dt.Columns.Add("Game Title", typeof(string));
+            dt.Columns.Add("Game Region", typeof(string));
+            dt.Columns.Add("Mod Name", typeof(string));
+            dt.Columns.Add("Mod Type", typeof(string));
+            dt.Columns.Add("Version", typeof(string));
+            dt.Columns.Add("# Files", typeof(string));
+            dt.Columns.Add("Date Installed", typeof(string));
+            dt.Columns.Add("", typeof(Bitmap));
+
+            foreach (InstalledMod installedMod in Settings.InstalledGameMods)
+            {
+                var modCategory = Database.CategoriesData.GetCategoryById(installedMod.CategoryId);
+
+                var modInstalled = Database.Mods.GetModById(installedMod.ModId);
+
+                /*
+                _ = GridControlGameModsInstalled.Rows.Add(modInstalled.Id.ToString(),
+                    modCategory.Title,
+                    installedMod.Region,
+                    modInstalled.Name,
+                    modInstalled.Type,
+                    modInstalled.Version == "n/a" ? "-" : modInstalled.Version,
+                    installedMod.Files + (installedMod.Files > 1 ? " Files" : " File"),
+                    $"{installedMod.DateInstalled:g}",
+                    ImageExtensions.ResizeBitmap(Resources.uninstall, 20, 20));
+                */
+
+                dt.Rows.Add(modInstalled.Id.ToString(),
+                    modCategory.Title,
+                    installedMod.Region,
+                    modInstalled.Name,
+                    modInstalled.Type,
+                    modInstalled.Version == "n/a" ? "-" : modInstalled.Version,
+                    installedMod.Files + (installedMod.Files > 1 ? " Files" : " File"),
+                    $"{installedMod.DateInstalled:g}",
+                    ImageExtensions.ResizeBitmap(Resources.uninstall, 20, 20));
+
+                totalFiles += installedMod.Files;
+            }
+
+            GridControlGameModsInstalled.DataSource = dt;
+            GridViewGameModsInstalled.Columns[0].Visible = false;
+
+            LabelInstalledGameModsStatus.Text = $@"{Settings.InstalledGameMods.Count} Mods Installed ({totalFiles} {(Settings.InstalledGameMods.Count > 1 ? "Files" : "File")} Total)";
+
+            ToolItemGameModsUninstallAll.Enabled = IsConsoleConnected && Settings.InstalledGameMods.Count > 0;
+
+            ProgressModsInstalled.Visible = GridViewGameModsInstalled.RowCount == 0;
+        }
+
+        /// <summary>
+        /// Adds or removes the specified <see cref="ModsData.ModItem" /> to the users favorites list.
+        /// </summary>
+        /// <param name="modItem"></param>
+        private void AddModToFavorites(ModItem modItem)
+        {
+            var category = Database.CategoriesData.GetCategoryById(modItem.GameId);
+
+            string categoryTitle = category.Title;
+
+            if (Settings.FavoritedIds.Contains(modItem.Id))
+            {
+                _ = Settings.FavoritedIds.Remove(modItem.Id);
+
+                DisplayModDetails(SelectedModItem.Id);
+
+                if (SelectedCategory.Id.Equals("fvrt"))
+                {
+                    // GridControlMods.Rows.RemoveAt(GridViewMods.GetSelectedRows[0]);
+                }
+
+                SetStatus($"{categoryTitle}: {modItem.Name} ({ modItem.Type}) - Removed from favorites list.");
+            }
+            else
+            {
+                Settings.FavoritedIds.Add(modItem.Id);
+
+                DisplayModDetails(SelectedModItem.Id);
+
+                SetStatus($"{categoryTitle}: {modItem.Name} ({modItem.Type}) - Added to favorites list.");
+            }
+
+            ToolItemModAddToFavorite.AutoSize = false;
+            ToolItemModAddToFavorite.AutoSize = true;
+        }
+
+        /// <summary>
+        /// Enable or disable console-only actions.
+        /// </summary>
+        private void EnableConsoleActions()
+        {
+            ButtonPackageManager.Enabled = IsConsoleConnected;
+            ButtonFileManager.Enabled = IsConsoleConnected;
+            ButtonWebManControls.Enabled = IsConsoleConnected && IsWebManInstalled;
+            ToolItemModInstall.Enabled = IsConsoleConnected;
+            ContextMenuModsInstallFiles.Enabled = IsConsoleConnected;
+
+            if (ToolItemModUninstall.Enabled)
+            {
+                ToolItemModUninstall.Enabled = IsConsoleConnected;
+            }
+
+            if (ContextMenuModsUninstallFiles.Enabled)
+            {
+                ContextMenuModsUninstallFiles.Enabled = IsConsoleConnected;
+            }
+        }
+
+        /// <summary>
+        /// Load application settings from a json data file.
+        /// </summary>
+        public void LoadSettings()
+        {
+            try
+            {
+                SetStatus("Loading settings data...");
+
+                if (File.Exists(UserFolders.AppSettingsFile))
+                {
+                    using StreamReader streamReader = new StreamReader(UserFolders.AppSettingsFile);
+                    Settings = JsonConvert.DeserializeObject<SettingsData>(streamReader.ReadToEnd());
+                }
+                else
+                {
+                    return;
+                }
+
+                SetStatus("Successfully loaded settings data.");
+
+                if (Settings.ConsoleProfiles.Count < 1)
+                {
+                    Settings.ConsoleProfiles.Add(
+                        new ConsoleProfile
+                        {
+                            Name = "Default Console",
+                            Address = "192.168.0.42",
+                            Port = 21,
+                            Username = "anonymous",
+                            Password = string.Empty,
+                            UseDefaultCredentials = true
+                        });
+                }
+
+                if (Settings.ExternalApplications.Count < 1)
+                {
+                    Settings.ExternalApplications.Add(
+                        new ExternalApplication(
+                            "Control Console (CCAPI)",
+                            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"ControlConsoleAPI\CCAPIConsoleManager.exe"))
+                    );
+
+                    Settings.ExternalApplications.Add(
+                        new ExternalApplication(
+                            "FileZilla",
+                            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), @"FileZilla FTP Client\filezilla.exe"))
+                    );
+                }
+
+                // Update UI Properties from Settings
+                //MenuItemApplications.DropDownItems.Clear();//TODO: MUST FIX!!!!
+
+                foreach (ExternalApplication application in Settings.ExternalApplications)
+                {
+                    var menuItem = new ToolStripMenuItem(application.Name, null, MenuItemApplications_Click);
+                   // ApplicationsMenu.DropDownItems.Add(menuItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                SetStatus("Unable to load settings data. A new settings file will be created to fix this. Error: " + ex.Message, ex);
+                Settings = new SettingsData();
+                SaveSettings();
+                Application.Restart();
+            }
+        }
+
+        /// <summary>
+        /// Save application settings to a json data file.
+        /// </summary>
+        public void SaveSettings()
+        {
+            try
+            {
+                SetStatus("Saving settings data...");
+
+                if (!Directory.Exists(UserFolders.AppDataDirectory))
+                {
+                    _ = Directory.CreateDirectory(UserFolders.AppDataDirectory);
+                }
+
+                using (StreamWriter streamWriter = new StreamWriter(UserFolders.AppSettingsFile))
+                {
+                    streamWriter.Write(JsonConvert.SerializeObject(Settings));
+                }
+
+                SetStatus("Successfully saved settings data.");
+            }
+            catch (Exception ex)
+            {
+                SetStatus("Unable to save settings data. Error: " + ex.Message, ex);
+            }
+        }
+
+        /// <summary>
+        /// Set the current process status in the tool strip.
+        /// </summary>
+        /// <param name="status"></param>
+        /// <param name="ex"></param>
+        public void SetStatus(string status, Exception ex = null)
+        {
+            ToolStripLabelStatus.Text = status;
+            //Refresh();
+
+            switch (ex)
+            {
+                case null:
+                    Program.Log.Info(status);
+                    break;
+                default:
+                    Program.Log.Error(ex, status);
+                    break;
+            }
+        }
+
+        #region Install/Uninstall Mods to Console
 
         /// <summary>
         /// Install the specified <paramref name="modItem"/> files.
@@ -1623,219 +1844,6 @@ namespace ModioX.Forms.Windows
         }
 
         /// <summary>
-        /// Load all of the currently installed game mods
-        /// </summary>
-        public void LoadInstalledGameMods()
-        {
-            //GridControlGameModsInstalled.Rows.Clear();
-
-            int totalFiles = 0;
-
-            var dt = new DataTable();
-            dt.Columns.Add("Id", typeof(int));
-            dt.Columns.Add("Game Title", typeof(string));
-            dt.Columns.Add("Game Region", typeof(string));
-            dt.Columns.Add("Mod Name", typeof(string));
-            dt.Columns.Add("Mod Type", typeof(string));
-            dt.Columns.Add("Version", typeof(string));
-            dt.Columns.Add("# Files", typeof(string));
-            dt.Columns.Add("Date Installed", typeof(string));
-            dt.Columns.Add("", typeof(Bitmap));
-
-            foreach (InstalledMod installedMod in Settings.InstalledGameMods)
-            {
-                var modCategory = Database.CategoriesData.GetCategoryById(installedMod.CategoryId);
-
-                var modInstalled = Database.Mods.GetModById(installedMod.ModId);
-
-                /*
-                _ = GridControlGameModsInstalled.Rows.Add(modInstalled.Id.ToString(),
-                    modCategory.Title,
-                    installedMod.Region,
-                    modInstalled.Name,
-                    modInstalled.Type,
-                    modInstalled.Version == "n/a" ? "-" : modInstalled.Version,
-                    installedMod.Files + (installedMod.Files > 1 ? " Files" : " File"),
-                    $"{installedMod.DateInstalled:g}",
-                    ImageExtensions.ResizeBitmap(Resources.uninstall, 20, 20));
-                */
-
-                dt.Rows.Add(modInstalled.Id.ToString(),
-                    modCategory.Title,
-                    installedMod.Region,
-                    modInstalled.Name,
-                    modInstalled.Type,
-                    modInstalled.Version == "n/a" ? "-" : modInstalled.Version,
-                    installedMod.Files + (installedMod.Files > 1 ? " Files" : " File"),
-                    $"{installedMod.DateInstalled:g}",
-                    ImageExtensions.ResizeBitmap(Resources.uninstall, 20, 20));
-
-                totalFiles += installedMod.Files;
-            }
-
-            GridControlGameModsInstalled.DataSource = dt;
-
-            LabelInstalledGameModsStatus.Text = $@"{Settings.InstalledGameMods.Count} Mods Installed ({totalFiles} {(Settings.InstalledGameMods.Count > 1 ? "Files" : "File")} Total)";
-
-            ToolItemGameModsUninstallAll.Enabled = IsConsoleConnected && Settings.InstalledGameMods.Count > 0;
-
-            ProgressModsInstalled.Visible = GridViewGameModsInstalled.RowCount == 0;
-        }
-
-
-        /// <summary>
-        /// Adds or removes the specified <see cref="ModsData.ModItem" /> to the users favorites list.
-        /// </summary>
-        /// <param name="modItem"></param>
-        private void AddModToFavorites(ModItem modItem)
-        {
-            var category = Database.CategoriesData.GetCategoryById(modItem.GameId);
-
-            string categoryTitle = category.Title;
-
-            if (Settings.FavoritedIds.Contains(modItem.Id))
-            {
-                _ = Settings.FavoritedIds.Remove(modItem.Id);
-
-                DisplayModDetails(SelectedModItem.Id);
-
-                if (SelectedCategory.Id.Equals("fvrt"))
-                {
-                    // GridControlMods.Rows.RemoveAt(GridViewMods.GetSelectedRows[0]);
-                }
-
-                SetStatus($"{categoryTitle}: {modItem.Name} ({ modItem.Type}) - Removed from favorites list.");
-            }
-            else
-            {
-                Settings.FavoritedIds.Add(modItem.Id);
-
-                DisplayModDetails(SelectedModItem.Id);
-
-                SetStatus($"{categoryTitle}: {modItem.Name} ({modItem.Type}) - Added to favorites list.");
-            }
-
-            ToolItemModAddToFavorite.AutoSize = false;
-            ToolItemModAddToFavorite.AutoSize = true;
-        }
-
-        /// <summary>
-        /// Load application settings from a json data file.
-        /// </summary>
-        public void LoadSettings()
-        {
-            try
-            {
-                SetStatus("Loading settings data...");
-
-                if (File.Exists(UserFolders.AppSettingsFile))
-                {
-                    using StreamReader streamReader = new StreamReader(UserFolders.AppSettingsFile);
-                    Settings = JsonConvert.DeserializeObject<SettingsData>(streamReader.ReadToEnd());
-                }
-                else
-                {
-                    return;
-                }
-
-                SetStatus("Successfully loaded settings data.");
-
-                if (Settings.ConsoleProfiles.Count < 1)
-                {
-                    Settings.ConsoleProfiles.Add(
-                        new ConsoleProfile
-                        {
-                            Name = "Default Console",
-                            Address = "192.168.0.42",
-                            Port = 21,
-                            Username = "anonymous",
-                            Password = string.Empty,
-                            UseDefaultCredentials = true
-                        });
-                }
-
-                if (Settings.ExternalApplications.Count < 1)
-                {
-                    Settings.ExternalApplications.Add(
-                        new ExternalApplication(
-                            "Control Console (CCAPI)",
-                            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"ControlConsoleAPI\CCAPIConsoleManager.exe"))
-                    );
-
-                    Settings.ExternalApplications.Add(
-                        new ExternalApplication(
-                            "FileZilla",
-                            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), @"FileZilla FTP Client\filezilla.exe"))
-                    );
-                }
-
-                // Update UI Properties from Settings
-                //MenuItemApplications.DropDownItems.Clear();//TODO: MUST FIX!!!!
-
-                foreach (ExternalApplication application in Settings.ExternalApplications)
-                {
-                    var menuItem = new ToolStripMenuItem(application.Name, null, MenuItemApplications_Click);
-                   // ApplicationsMenu.DropDownItems.Add(menuItem);
-                }
-            }
-            catch (Exception ex)
-            {
-                SetStatus("Unable to load settings data. A new settings file will be created to fix this. Error: " + ex.Message, ex);
-                Settings = new SettingsData();
-                SaveSettings();
-                Application.Restart();
-            }
-        }
-
-        /// <summary>
-        /// Save application settings to a json data file.
-        /// </summary>
-        public void SaveSettings()
-        {
-            try
-            {
-                SetStatus("Saving settings data...");
-
-                if (!Directory.Exists(UserFolders.AppDataDirectory))
-                {
-                    _ = Directory.CreateDirectory(UserFolders.AppDataDirectory);
-                }
-
-                using (StreamWriter streamWriter = new StreamWriter(UserFolders.AppSettingsFile))
-                {
-                    streamWriter.Write(JsonConvert.SerializeObject(Settings));
-                }
-
-                SetStatus("Successfully saved settings data.");
-            }
-            catch (Exception ex)
-            {
-                SetStatus("Unable to save settings data. Error: " + ex.Message, ex);
-            }
-        }
-
-        /// <summary>
-        /// Set the current process status in the tool strip.
-        /// </summary>
-        /// <param name="status"></param>
-        /// <param name="ex"></param>
-        public void SetStatus(string status, Exception ex = null)
-        {
-            ToolStripLabelStatus.Text = status;
-            //Refresh();
-
-            switch (ex)
-            {
-                case null:
-                    Program.Log.Info(status);
-                    break;
-                default:
-                    Program.Log.Error(ex, status);
-                    break;
-            }
-        }
-
-        /// <summary>
         /// Uninstall all of the files for the <paramref name="modItem" />.
         /// </summary>
         /// <param name="modItem">Mod details from the <see cref="ModsData.ModItem" /></param>
@@ -2099,6 +2107,8 @@ namespace ModioX.Forms.Windows
             }
         }
 
+        #endregion
+
         /// <summary>
         /// Set the current connected console status in the tool strip.
         /// </summary>
@@ -2108,63 +2118,10 @@ namespace ModioX.Forms.Windows
             LabelConsoleConnected.Caption = consoleProfile == null ? "Idle" : $"{consoleProfile.Name} ({consoleProfile.Address})";
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //MainWindowv2 Main = new MainWindowv2();
-            //Main.Show();
-            //Main.Focus();
-        }
-
-        private void NavigationBar_LinkClicked(object sender, NavBarLinkEventArgs e)
-        {
-            string categoryId = e.Link.ItemName;
-
-            // Check whether item is a custom list
-            bool isCustomList = Settings.CustomLists.Any(customList => customList.Name.Equals(categoryId));
-
-            if (isCustomList)
-            {
-                CustomList customList = Settings.GetCustomListByName(categoryId);
-                SelectedCategory = new Category() { Id = categoryId, Title = categoryId, Regions = Settings.GetRegionsForModIDs(Database.Mods, customList.ModIds).ToArray() };
-            }
-            else
-            {
-                SelectedCategory = Database.CategoriesData.GetCategoryById(categoryId);
-            }
-
-            FilterModsType = string.Empty;
-            FilterModsRegion = string.Empty;
-
-            LoadModsByCategoryId(SelectedCategory.Id,
-                FilterModsName,
-                FilterModsFirmware,
-                FilterModsType,
-                FilterModsRegion,
-                isCustomList);
-
-            //ComboBoxModType.SelectedIndex = string.IsNullOrEmpty(FilterModsType)
-            //    ? 0
-            //    : ComboBoxModType.FindStringExact(FilterModsType);
-
-            if (string.IsNullOrEmpty(FilterModsType))
-            {
-                ComboBoxModType.SelectedIndex = 0;
-                return;
-            }
-
-            foreach (var item in ComboBoxModType.Properties.Items)
-            {
-                if (item.Equals(FilterModsType))
-                {
-                    ComboBoxModType.SelectedIndex = ComboBoxModType.Properties.Items.IndexOf(FilterModsType);
-                    return;
-                }
-                else
-                {
-                    ComboBoxModType.SelectedIndex = 0;
-                    return;
-                }
-            }
+            var Main = new Dialogs.ConnectionDialogTest();
+            Main.ShowDialog(this);
         }
     }
 }
