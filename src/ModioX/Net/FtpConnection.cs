@@ -214,7 +214,9 @@ namespace ModioX.Net
                     int sizeHigh = 0;
                     int sizeLo = WININET.FtpGetFileSize(hFile, ref sizeHigh);
 
+#pragma warning disable CS0675 // Bitwise-or operator used on a sign-extended operand
                     long fileSize = ((long)sizeHigh << 32) | sizeLo;
+#pragma warning restore CS0675 // Bitwise-or operator used on a sign-extended operand
 
                     return fileSize;
                 }

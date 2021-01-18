@@ -12,7 +12,7 @@ namespace ModioX.Net
         }
 
         private readonly FtpConnection _ftp;
-        private readonly string _dirPath;
+        private readonly string _dirPath = string.Empty;
         private DateTime? _lastAccessTime;
         private DateTime? _creationTime;
         private DateTime? _lastWriteTime;

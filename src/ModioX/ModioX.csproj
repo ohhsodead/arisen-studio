@@ -228,11 +228,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
     <Compile Include="Templates\GitHubTemplates.cs" />
     <Compile Include="Xbox\XDevkit\Controls\ByteArray.cs">
       <SubType>UserControl</SubType>
@@ -284,18 +279,23 @@
     <Compile Include="Xbox\Xbox.cs" />
     <EmbeddedResource Include="Forms\Dialogs\ConnectionDialog.resx">
       <DependentUpon>ConnectionDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AboutDialog.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\InputTextDialog.resx">
       <DependentUpon>InputTextDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\LoginDialog.resx">
       <DependentUpon>LoginDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\CustomListsDialog.resx">
       <DependentUpon>CustomListsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\ExternalApplicationsDialog.resx">
       <DependentUpon>ExternalApplicationsDialog.cs</DependentUpon>
@@ -305,6 +305,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\DataViewDialog.resx">
       <DependentUpon>DataViewDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\FileManagerWindow.resx">
       <DependentUpon>FileManagerWindow.cs</DependentUpon>
@@ -320,6 +321,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\BackupFileDialog.resx">
       <DependentUpon>BackupFileDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -335,9 +337,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\NewConnectionDialog.resx">
       <DependentUpon>NewConnectionDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\ListViewDialog.resx">
       <DependentUpon>ListViewDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Xbox\XDevkit\Controls\ByteArray.resx">
       <DependentUpon>ByteArray.cs</DependentUpon>
@@ -350,10 +354,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <None Include="Resources\Icons\app_logo.png" />
     <None Include="App.config" />
     <None Include="Resources\Icons\copy_to_clipboard.png" />

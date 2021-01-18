@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
@@ -24,17 +25,32 @@ namespace XDevkit
 
         public static bool Connected { get; set; }
         public static TcpClient XboxName { get; set; }
-        public uint ConnectTimeout { get; private set; }
-        public uint ConversationTimeout { get; private set; }
+        [Browsable(false)]
+        public static StreamReader Reader { get; set; }
+        public static uint ConnectTimeout { get; set; }
+        public static uint ConversationTimeout { get; set; }
+        public static string IPAddress { get; set; }
 
         /// <summary>
         /// Connects Local Tcp Connection From Device To Xbox Console
         /// 
         /// </summary>
-        public bool Connect(string XboxNameOrIP = "default")
+        public bool Connect(string XboxNameOrIP = "default")//NOTE: Edit if specified String is read then it will return true
         {
-            return Connected;
+            //User Enter's Nothing
+            if (XboxNameOrIP == "default")
+            {
+                return Connect("default", 730);
+            }
+            // If User Supply's IP To US.
+            else
+            {
+                return Connect(XboxNameOrIP, 730);
+            }
         }
+
+
+    
 
         /// <summary>
         /// Connects Local Tcp Connection From Device To Xbox Console
@@ -42,7 +58,55 @@ namespace XDevkit
         /// </summary>
         public bool Connect(string XboxNameOrIP = "default", int Port = 730)
         {
-            return Connected;
+            //User Enter's Nothing
+            if (XboxNameOrIP == "default")
+            {
+                XboxName = new TcpClient();
+                if (FindConsole())//if true then continue
+                {
+                    XboxName = new TcpClient(System.Net.IPAddress.Any.ToString(), listenPort);
+                    Reader = new StreamReader(XboxName.GetStream());
+                    Console.WriteLine("/Connection - F01/....(" + IPAddress + ")");
+                    return Connected = true;
+                }
+                else// if top fails
+                {
+                    return false;
+                }
+            }
+            // If User Supply's IP To US.
+            else if (XboxNameOrIP.ToCharArray().Any(char.IsDigit))
+            {
+                string IPAddress = XboxNameOrIP;
+                XboxName = new TcpClient(XboxNameOrIP, Port);
+                Reader = new StreamReader(XboxName.GetStream());
+                Console.WriteLine("/Connection - Degits/....(" + "Manual Connection Mode" + ")");
+                return Connected = true;
+            }
+            //Get IP Via Name
+            else if (XboxNameOrIP.ToCharArray().Any(char.IsLetter))//uses ip to find console makes user think it finds it via name 
+            {
+
+                if (FindConsole())//if true then continue
+                {
+                    XboxName = new TcpClient(IPAddress, 730);
+                    Reader = new StreamReader(XboxName.GetStream());
+                    Console.WriteLine("/Connection - Letter/....(" + "Manual Connection Mode" + ")");
+                    return Connected = true;
+                }
+                else
+                {
+                    Console.WriteLine("/Connection - Letter/....(" + "Manual Connection Mode Failed" + ")");
+                    return false;
+                }
+
+            }
+
+            else
+            {
+                Console.WriteLine("/Connection - SkyFall/....(" + "Unknown Bug" + ")");
+                return false;
+            }
         }
         /// <summary>
         ///
@@ -110,6 +174,40 @@ namespace XDevkit
             }
             else throw new Exception("No Connection Detected");
         }
+        #region test Area
+        private const int listenPort = 730;
+        private static void StartListener()
+        {
+
+            UdpClient listener = new UdpClient(listenPort);
+            IPEndPoint groupEP = new IPEndPoint(System.Net.IPAddress.Any, listenPort);
+
+            try
+            {
+                while (true)
+                {
+                    Console.WriteLine("Waiting for broadcast");
+                    byte[] bytes = listener.Receive(ref groupEP);
+
+                    Console.WriteLine($"Received broadcast from {groupEP} :");
+                    Console.WriteLine($" {Encoding.ASCII.GetString(bytes, 0, bytes.Length)}");
+                }
+            }
+            catch (SocketException e)
+            {
+                Console.WriteLine(e);
+            }
+            finally
+            {
+                listener.Close();
+            }
+        }
+        private bool FindConsole()
+        {
+
+            return true;
+        }
+        #endregion
 
 
     }

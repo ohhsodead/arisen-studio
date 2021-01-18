@@ -15,7 +15,7 @@ namespace XDevkit
     public partial class Xbox
     {
         private static readonly byte[] myBuff = new byte[0x20];
-        private static uint outInt;
+        private static uint outInt = 0;
         private static uint uTemp32;
         private static UInt16 uTemp16;
         private static UInt64 uTemp64;
@@ -24,6 +24,11 @@ namespace XDevkit
         private static Int64 Temp64;
 
         #region Bool {Get; Set;}
+        public bool ReadBool(uint Offset)
+        {
+            GetMemory(Offset, 1, myBuff, out outInt);
+            return myBuff[0] != 0;
+        }
         public bool SetBool(uint Address) { return GetMemory(Address, 1)[0] != 0; }
 
 
@@ -261,6 +266,10 @@ namespace XDevkit
         #endregion
 
         #region Int16 {Get; Set;}
+        public short ReadInt16(uint Offset)
+        {
+           return GetInt16(Offset);
+        }
         public short GetInt16(uint Address)
         {
             byte[] memory = GetMemory(Address, 2);
@@ -589,18 +598,9 @@ namespace XDevkit
             GetMemory(Offset, 1, myBuff, out outInt);
             return (sbyte)myBuff[0];
         }
-        public bool ReadBool(uint Offset)
-        {
-            GetMemory(Offset, 1, myBuff, out outInt);
-            return myBuff[0] != 0;
-        }
 
-        public short ReadInt16(uint Offset)
-        {
-            GetMemory(Offset, 2, myBuff, out outInt);
-            Array.Reverse(myBuff, 0, 2);
-            return BitConverter.ToInt16(myBuff, 0);
-        }
+
+
 
         public int ReadInt32(uint Offset)
         {
@@ -611,9 +611,7 @@ namespace XDevkit
 
         public long ReadInt64(uint Offset)
         {
-            GetMemory(Offset, 8, myBuff, out outInt);
-            Array.Reverse(myBuff, 0, 8);
-            return BitConverter.ToInt64(myBuff, 0);
+            return GetInt64(Offset);
         }
 
         public byte ReadByte(uint Offset)

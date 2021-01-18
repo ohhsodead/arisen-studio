@@ -10,7 +10,7 @@ namespace XDevkit
     {
         static Xbox()
         {
-            Console.WriteLine(string.Format("Hey {0} is using me!", Environment.UserName));
+            Console.WriteLine(string.Format("Hey {0} is using me!"));
         }
     }
 }

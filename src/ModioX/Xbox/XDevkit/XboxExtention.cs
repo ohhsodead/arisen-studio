@@ -9,6 +9,285 @@ namespace XDevkit
     public static class XboxExtention
     {
         private static HashSet<Type> ValidReturnTypes { get; set; }
+        private static object CallArgs(bool SystemThread, uint Type, Type t, string module, int ordinal, uint Address, uint ArraySize, params object[] Arguments)
+        {
+            uint Void = 0;
+            uint Int = 1;
+            uint Float = 3;
+            uint ByteArray = 7;
+            uint Uint64 = 8;
+            uint Uint64Array = 9;
+            uint Version = 2;
+            if (!IsValidReturnType(t))
+                throw new Exception("Invalid type " + t.Name + Environment.NewLine + "supports Only: bool, byte, short, int, long, ushort, uint, ulong, float, double");
+            Xbox.ConnectTimeout = Xbox.ConversationTimeout = 4000000U;
+            object[] objArray1 = new object[13];
+            objArray1[0] = "consolefeatures ver=";
+            objArray1[1] = Version;
+            objArray1[2] = " type=";
+            objArray1[3] = Type;
+            objArray1[4] = SystemThread ? " system" : "";
+            object[] objArray2 = objArray1;
+            string str1;
+            if (module == null)
+                str1 = "";
+            else
+                str1 = " module=\"" + module + "\" ord=" + ordinal;
+            objArray2[5] = str1;
+            objArray1[6] = " as=";
+            objArray1[7] = ArraySize;
+            objArray1[8] = " params=\"A\\";
+            objArray1[9] = Address.ToString("X");
+            objArray1[10] = "\\A\\";
+            objArray1[11] = Arguments.Length;
+            objArray1[12] = "\\";
+            string str2 = string.Concat(objArray1);
+            if (Arguments.Length > 37)
+                throw new Exception("Can not use more than 37 paramaters in a call");
+            foreach (object o in Arguments)
+            {
+                bool flag1 = false;
+                if (o is uint num)
+                {
+
+                    str2 = str2 + Int + "\\" + Functions.UIntToInt(num) + "\\";
+                    flag1 = true;
+                }
+                if (o is int || o is bool || o is byte)
+                {
+                    if (o is bool flag)
+                        str2 = str2 + Int + "/" + Convert.ToInt32(flag) + "\\";
+                    else
+                        str2 = str2 + Int + "\\" + (o is byte ? Convert.ToByte(o).ToString() : Convert.ToInt32(o).ToString()) + "\\";
+                    flag1 = true;
+                }
+                else if (o is int[] || o is uint[])
+                {
+                    byte[] numArray = Functions.IntArrayToByte((int[])o);
+                    string str3 = str2 + ByteArray.ToString() + "/" + numArray.Length + "\\";
+                    for (int index = 0; index < numArray.Length; ++index)
+                        str3 += numArray[index].ToString("X2");
+                    str2 = str3 + "\\";
+                    flag1 = true;
+                }
+                else if (o is string)
+                {
+                    string str3 = (string)o;
+                    str2 = str2 + ByteArray.ToString() + "/" + str3.Length + "\\" + ((string)o).ToHexString() + "\\";
+                    flag1 = true;
+                }
+                else if (o is double)
+                {
+                    str2 = str2 + Float.ToString() + "\\" + o.ToString() + "\\";
+                    flag1 = true;
+                }
+                else if (o is float)
+                {
+                    str2 = str2 + Float.ToString() + "\\" + o.ToString() + "\\";
+                    flag1 = true;
+                }
+                else if (o is float[])
+                {
+                    float[] numArray = (float[])o;
+                    string str3 = str2 + ByteArray.ToString() + "/" + (numArray.Length * 4).ToString() + "\\";
+                    for (int index1 = 0; index1 < numArray.Length; ++index1)
+                    {
+                        byte[] bytes = BitConverter.GetBytes(numArray[index1]);
+                        Array.Reverse(bytes);
+                        for (int index2 = 0; index2 < 4; ++index2)
+                            str3 += bytes[index2].ToString("X2");
+                    }
+                    str2 = str3 + "\\";
+                    flag1 = true;
+                }
+                else if (o is byte[])
+                {
+                    byte[] numArray = (byte[])o;
+                    string str3 = str2 + ByteArray.ToString() + "/" + numArray.Length + "\\";
+                    for (int index = 0; index < numArray.Length; ++index)
+                        str3 += numArray[index].ToString("X2");
+                    str2 = str3 + "\\";
+                    flag1 = true;
+                }
+                if (!flag1)
+                    str2 = str2 + Uint64.ToString() + "\\" + Functions.ConvertToUInt64(o).ToString() + "\\";
+            }
+            string Command = str2 + "\"";
+            string String = Xbox.SendTextCommand(Command);
+            uint num1;
+            for (string _Ptr = "buf_addr="; String.Contains(_Ptr); String = Xbox.SendTextCommand("consolefeatures " + _Ptr + "0x" + num1.ToString("X")))
+            {
+                Thread.Sleep(250);
+                num1 = uint.Parse(String.Substring(String.find(_Ptr) + _Ptr.Length), NumberStyles.HexNumber);
+            }
+            Xbox.ConversationTimeout = 2000U;
+            Xbox.ConnectTimeout = 5000U;
+            switch (Type)
+            {
+                case 1:
+                    uint num2 = uint.Parse(String.Substring(String.find(" ") + 1), NumberStyles.HexNumber);
+                    if (t == typeof(uint))
+                        return num2;
+                    if (t == typeof(int))
+                        return Functions.UIntToInt(num2);
+                    if (t == typeof(short))
+                        return short.Parse(String.Substring(String.find(" ") + 1), NumberStyles.HexNumber);
+                    if (t == typeof(ushort))
+                        return ushort.Parse(String.Substring(String.find(" ") + 1), NumberStyles.HexNumber);
+                    break;
+                case 2:
+                    string str4 = String.Substring(String.find(" ") + 1);
+                    if (t == typeof(string))
+                        return str4;
+                    if (t == typeof(char[]))
+                        return str4.ToCharArray();
+                    break;
+                case 3:
+                    if (t == typeof(double))
+                        return double.Parse(String.Substring(String.find(" ") + 1));
+                    if (t == typeof(float))
+                        return float.Parse(String.Substring(String.find(" ") + 1));
+                    break;
+                case 4:
+                    byte num3 = byte.Parse(String.Substring(String.find(" ") + 1), NumberStyles.HexNumber);
+                    if (t == typeof(byte))
+                        return num3;
+                    if (t == typeof(char))
+                        return (char)num3;
+                    break;
+                case 8:
+                    if (t == typeof(long))
+                        return long.Parse(String.Substring(String.find(" ") + 1), NumberStyles.HexNumber);
+                    if (t == typeof(ulong))
+                        return ulong.Parse(String.Substring(String.find(" ") + 1), NumberStyles.HexNumber);
+                    break;
+            }
+            switch (Type)
+            {
+                case 5:
+                    string str5 = String.Substring(String.find(" ") + 1);
+                    int index3 = 0;
+                    string s1 = "";
+                    uint[] numArray1 = new uint[8];
+                    foreach (char ch in str5)
+                    {
+                        switch (ch)
+                        {
+                            case ',':
+                            case ';':
+                                numArray1[index3] = uint.Parse(s1, NumberStyles.HexNumber);
+                                ++index3;
+                                s1 = "";
+                                break;
+                            default:
+                                s1 += ch.ToString();
+                                break;
+                        }
+                        if (ch == ';')
+                            break;
+                    }
+                    return numArray1;
+                case 6:
+                    string str6 = String.Substring(String.find(" ") + 1);
+                    int index4 = 0;
+                    string s2 = "";
+                    float[] numArray2 = new float[ArraySize];
+                    foreach (char ch in str6)
+                    {
+                        switch (ch)
+                        {
+                            case ',':
+                            case ';':
+                                numArray2[index4] = float.Parse(s2);
+                                ++index4;
+                                s2 = "";
+                                break;
+                            default:
+                                s2 += ch.ToString();
+                                break;
+                        }
+                        if (ch == ';')
+                            break;
+                    }
+                    return numArray2;
+                case 7:
+                    string str7 = String.Substring(String.find(" ") + 1);
+                    int index5 = 0;
+                    string s3 = "";
+                    byte[] numArray3 = new byte[ArraySize];
+                    foreach (char ch in str7)
+                    {
+                        switch (ch)
+                        {
+                            case ',':
+                            case ';':
+                                numArray3[index5] = byte.Parse(s3);
+                                ++index5;
+                                s3 = "";
+                                break;
+                            default:
+                                s3 += ch.ToString();
+                                break;
+                        }
+                        if (ch == ';')
+                            break;
+                    }
+                    return numArray3;
+                default:
+                    if ((int)Type == (int)Uint64Array)
+                    {
+                        string str3 = String.Substring(String.find(" ") + 1);
+                        int index1 = 0;
+                        string s4 = "";
+                        ulong[] numArray4 = new ulong[ArraySize];
+                        foreach (char ch in str3)
+                        {
+                            switch (ch)
+                            {
+                                case ',':
+                                case ';':
+                                    numArray4[index1] = ulong.Parse(s4);
+                                    ++index1;
+                                    s4 = "";
+                                    break;
+                                default:
+                                    s4 += ch.ToString();
+                                    break;
+                            }
+                            if (ch == ';')
+                                break;
+                        }
+                        if (t == typeof(ulong))
+                            return numArray4;
+                        if (t == typeof(long))
+                        {
+                            long[] numArray5 = new long[ArraySize];
+                            for (int index2 = 0; index2 < ArraySize; ++index2)
+                                numArray5[index2] = BitConverter.ToInt64(BitConverter.GetBytes(numArray4[index2]), 0);
+                            return numArray5;
+                        }
+                    }
+                    return (int)Type == (int)Void ? 0 : ulong.Parse(String.Substring(String.find(" ") + 1), NumberStyles.HexNumber);
+            }
+        }
+        private static uint TypeToType<T>(bool Array) where T : struct
+        {
+            uint Int = 1;
+            uint String = 2;
+            uint Float = 3;
+            uint Byte = 4;
+            uint IntArray = 5;
+            uint FloatArray = 6;
+            uint ByteArray = 7;
+            uint Uint64 = 8;
+            uint Uint64Array = 9;
+            Type type = typeof(T);
+            if (type == typeof(int) || type == typeof(uint) || (type == typeof(short) || type == typeof(ushort)))
+                return Array ? IntArray : Int;
+            if (type == typeof(string) || type == typeof(char[]))
+                return String;
+            return type == typeof(float) || type == typeof(double) ? (Array ? FloatArray : Float) : (type == typeof(byte) || type == typeof(char) ? (Array ? ByteArray : Byte) : ((type == typeof(ulong) || type == typeof(long)) && Array ? Uint64Array : Uint64));
+        }
         public static void CallVoid(string module, int ordinal, params object[] Arguments)
         {
             uint Void = 0;
@@ -49,418 +328,17 @@ namespace XDevkit
 
         internal static bool IsValidReturnType(Type t) { return ValidReturnTypes.Contains(t); }
 
-        /// <summary>
-        /// EDITED:  Do Not Use
-        /// </summary>
-        private static object CallArgs(bool SystemThread,
-                                       uint Type,
-                                       Type t,
-                                       string module,
-                                       int ordinal,
-                                       uint Address,
-                                       uint ArraySize,
-                                       params object[] Arguments)
-        {
-
-            {
-                object[] name;
-                int i;
-                object obj;
-                string str;
-                string[] strArrays;
-                string str1;
-                object obj1;
-                if (!IsValidReturnType(t))
-                {
-                    name = new object[]
-                    {
-                        "Invalid type ",
-                        t.Name,
-                        Environment.NewLine,
-                        "XBDM only supports: bool, byte, short, int, long, ushort, uint, ulong, float, double"
-                    };
-                    throw new Exception(string.Concat(name));
-                }
-
-                object[] XBDMVersion = new object[]
-                {
-                    "consolefeatures ver=",
-                    2/*version*/,
-                    " type=",
-                    Type,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null
-                };
-                XBDMVersion[4] = (SystemThread ? " system" : string.Empty);
-                object[] objArray = XBDMVersion;
-                if (module != null)
-                {
-                    object[] objArray1 = new object[] { " module=\"", module, "\" ord=", ordinal };
-                    obj1 = string.Concat(objArray1);
-                }
-                else
-                {
-                    obj1 = string.Empty;
-                }
-                objArray[5] = obj1;
-                XBDMVersion[6] = " as=";
-                XBDMVersion[7] = ArraySize;
-                XBDMVersion[8] = " params=\"A\\";
-                XBDMVersion[9] = Address.ToString("X");
-                XBDMVersion[10] = "\\A\\";
-                XBDMVersion[11] = Arguments.Length;
-                XBDMVersion[12] = "\\";
-                string str2 = string.Concat(XBDMVersion);
-                if (Arguments.Length > 37)
-                {
-                    throw new Exception("Can not use more than 37 paramaters in a call");
-                }
-                object[] arguments = Arguments;
-                for (i = 0; i < arguments.Length; i++)
-                {
-                    object obj2 = arguments[i];
-                    bool flag = false;
-                    if (obj2 is uint)
-                    {
-                        obj = str2;
-                        object[] num2 = new object[] { obj, /*Int*/ 0, "\\", Functions.UIntToInt((uint)obj2), "\\" };
-                        str2 = string.Concat(num2);
-                        flag = true;
-                    }
-                    if (obj2 is int || obj2 is bool || obj2 is byte)
-                    {
-                        if (!(obj2 is bool))
-                        {
-                            object obj3 = str2;
-                            object[] objArray2 = new object[] { obj3, /*Int*/ 0, "\\", null, null };
-                            objArray2[3] = (obj2 is byte
-                                ? Convert.ToByte(obj2).ToString()
-                                : Convert.ToInt32(obj2).ToString());
-                            objArray2[4] = "\\";
-                            str2 = string.Concat(objArray2);
-                        }
-                        else
-                        {
-                            object obj4 = str2;
-                            object[] num3 = new object[] { obj4, /*Int*/ 0, "/", Convert.ToInt32((bool)obj2), "\\" };
-                            str2 = string.Concat(num3);
-                        }
-                        flag = true;
-                    }
-                    else if (obj2 is int[] || obj2 is uint[])
-                    {
-                        byte[] numArray = Functions.IntArrayToByte((int[])obj2);
-                        object obj5 = str2;
-                        object[] str3 = new object[] { obj5, 0.ToString(), "/", numArray.Length, "\\" };
-                        str2 = string.Concat(str3);
-                        for (int j = 0; j < numArray.Length; j++)
-                        {
-                            str2 = string.Concat(str2, numArray[j].ToString("X2"));
-                        }
-                        str2 = string.Concat(str2, "\\");
-                        flag = true;
-                    }
-                    else if (obj2 is string)
-                    {
-                        string str4 = (string)obj2;
-                        object obj6 = str2;
-                        object[] objArray3 = new object[]
-                        { obj6, 0.ToString(), "/", str4.Length, "\\", ((string)obj2).ToHexString(), "\\" };
-                        str2 = string.Concat(objArray3);
-                        flag = true;
-                    }
-                    else if (obj2 is double)
-                    {
-                        double num4 = (double)obj2;
-                        str = str2;
-                        strArrays = new string[] { str, 0.ToString(), "\\", num4.ToString(), "\\" };
-                        str2 = string.Concat(strArrays);
-                        flag = true;
-                    }
-                    else if (obj2 is float)
-                    {
-                        float single = (float)obj2;
-                        str = str2;
-                        strArrays = new string[] { str, 0.ToString(), "\\", single.ToString(), "\\" };
-                        str2 = string.Concat(strArrays);
-                        flag = true;
-                    }
-                    else if (obj2 is float[])
-                    {
-                        float[] singleArray = (float[])obj2;
-                        str = str2;
-                        strArrays = new string[] { str, 0.ToString(), "/", null, null };
-                        int length = singleArray.Length * 4;
-                        strArrays[3] = length.ToString();
-                        strArrays[4] = "\\";
-                        str2 = string.Concat(strArrays);
-                        for (int k = 0; k < singleArray.Length; k++)
-                        {
-                            byte[] bytes = BitConverter.GetBytes(singleArray[k]);
-                            Array.Reverse(bytes);
-                            for (int l = 0; l < 4; l++)
-                            {
-                                str2 = string.Concat(str2, bytes[l].ToString("X2"));
-                            }
-                        }
-                        str2 = string.Concat(str2, "\\");
-                        flag = true;
-                    }
-                    else if (obj2 is byte[])
-                    {
-                        byte[] numArray1 = (byte[])obj2;
-                        obj = str2;
-                        name = new object[] { obj, 0.ToString(), "/", numArray1.Length, "\\" };
-                        str2 = string.Concat(name);
-                        for (int m = 0; m < numArray1.Length; m++)
-                        {
-                            str2 = string.Concat(str2, numArray1[m].ToString("X2"));
-                        }
-                        str2 = string.Concat(str2, "\\");
-                        flag = true;
-                    }
-                    if (!flag)
-                    {
-                        str = str2;
-                        strArrays = new string[] { str, 0.ToString(), "\\", null, null };
-                        ulong num5 = Functions.ConvertToUInt64(obj2);
-                        strArrays[3] = num5.ToString();
-                        strArrays[4] = "\\";
-                        str2 = string.Concat(strArrays);
-                    }
-                }
-                str2 = string.Concat(str2, "\"");
-                string str5 = Xbox.SendTextCommand(str2);
-                string str6 = "buf_addr=";
-                while (str5.Contains(str6))
-                {
-                    Thread.Sleep(250);
-                    uint num6 = uint.Parse(str5.Substring(str5.find(str6) + str6.Length), NumberStyles.HexNumber);
-                    str5 = Xbox.SendTextCommand(string.Concat("consolefeatures ", str6, "0x", num6.ToString("X")));
-                }
-                switch (Type)
-                {
-                    case 1:
-                        {
-                            uint num7 = uint.Parse(str5.Substring(str5.find(" ") + 1), NumberStyles.HexNumber);
-                            if (t == typeof(uint))
-                            {
-                                return num7;
-                            }
-                            if (t == typeof(int))
-                            {
-                                return Functions.UIntToInt(num7);
-                            }
-                            if (t == typeof(short))
-                            {
-                                return short.Parse(str5.Substring(str5.find(" ") + 1), NumberStyles.HexNumber);
-                            }
-                            if (t != typeof(ushort))
-                            {
-                                goto case 7;
-                            }
-                            return ushort.Parse(str5.Substring(str5.find(" ") + 1), NumberStyles.HexNumber);
-                        }
-                    case 2:
-                        {
-                            string str7 = str5.Substring(str5.find(" ") + 1);
-                            if (t == typeof(string))
-                            {
-                                return str7;
-                            }
-                            if (t != typeof(char[]))
-                            {
-                                goto case 7;
-                            }
-                            return str7.ToCharArray();
-                        }
-                    case 3:
-                        {
-                            if (t == typeof(double))
-                            {
-                                return double.Parse(str5.Substring(str5.find(" ") + 1));
-                            }
-                            if (t != typeof(float))
-                            {
-                                goto case 7;
-                            }
-                            return float.Parse(str5.Substring(str5.find(" ") + 1));
-                        }
-                    case 4:
-                        {
-                            byte num8 = byte.Parse(str5.Substring(str5.find(" ") + 1), NumberStyles.HexNumber);
-                            if (t == typeof(byte))
-                            {
-                                return num8;
-                            }
-                            if (t != typeof(char))
-                            {
-                                goto case 7;
-                            }
-                            return (char)num8;
-                        }
-                    case 5:
-                    case 6:
-                    case 7:
-                        {
-                            if (Type == 5)
-                            {
-                                string str8 = str5.Substring(str5.find(" ") + 1);
-                                int num9 = 0;
-                                string str9 = string.Empty;
-                                uint[] numArray2 = new uint[8];
-                                str1 = str8;
-                                for (i = 0; i < str1.Length; i++)
-                                {
-                                    char chr = str1[i];
-                                    if (chr == ',' || chr == ';')
-                                    {
-                                        numArray2[num9] = uint.Parse(str9, NumberStyles.HexNumber);
-                                        num9++;
-                                        str9 = string.Empty;
-                                    }
-                                    else
-                                    {
-                                        str9 = string.Concat(str9, chr.ToString());
-                                    }
-                                    if (chr == ';')
-                                    {
-                                        break;
-                                    }
-                                }
-                                return numArray2;
-                            }
-                            if (Type == 6)
-                            {
-                                string str10 = str5.Substring(str5.find(" ") + 1);
-                                int num10 = 0;
-                                string str11 = string.Empty;
-                                float[] singleArray1 = new float[ArraySize];
-                                str1 = str10;
-                                for (i = 0; i < str1.Length; i++)
-                                {
-                                    char chr1 = str1[i];
-                                    if (chr1 == ',' || chr1 == ';')
-                                    {
-                                        singleArray1[num10] = float.Parse(str11);
-                                        num10++;
-                                        str11 = string.Empty;
-                                    }
-                                    else
-                                    {
-                                        str11 = string.Concat(str11, chr1.ToString());
-                                    }
-                                    if (chr1 == ';')
-                                    {
-                                        break;
-                                    }
-                                }
-                                return singleArray1;
-                            }
-                            if (Type == 7)
-                            {
-                                string str12 = str5.Substring(str5.find(" ") + 1);
-                                int num11 = 0;
-                                string str13 = string.Empty;
-                                byte[] numArray3 = new byte[ArraySize];
-                                str1 = str12;
-                                for (i = 0; i < str1.Length; i++)
-                                {
-                                    char chr2 = str1[i];
-                                    if (chr2 == ',' || chr2 == ';')
-                                    {
-                                        numArray3[num11] = byte.Parse(str13);
-                                        num11++;
-                                        str13 = string.Empty;
-                                    }
-                                    else
-                                    {
-                                        str13 = string.Concat(str13, chr2.ToString());
-                                    }
-                                    if (chr2 == ';')
-                                    {
-                                        break;
-                                    }
-                                }
-                                return numArray3;
-                            }
-                            if (Type == 0)
-                            {
-                                string str14 = str5.Substring(str5.find(" ") + 1);
-                                int num12 = 0;
-                                string str15 = string.Empty;
-                                ulong[] numArray4 = new ulong[ArraySize];
-                                str1 = str14;
-                                for (i = 0; i < str1.Length; i++)
-                                {
-                                    char chr3 = str1[i];
-                                    if (chr3 == ',' || chr3 == ';')
-                                    {
-                                        numArray4[num12] = ulong.Parse(str15);
-                                        num12++;
-                                        str15 = string.Empty;
-                                    }
-                                    else
-                                    {
-                                        str15 = string.Concat(str15, chr3.ToString());
-                                    }
-                                    if (chr3 == ';')
-                                    {
-                                        break;
-                                    }
-                                }
-                                if (t == typeof(ulong))
-                                {
-                                    return numArray4;
-                                }
-                                if (t == typeof(long))
-                                {
-                                    long[] numArray5 = new long[ArraySize];
-                                    for (int n = 0; n < ArraySize; n++)
-                                    {
-                                        numArray5[n] = BitConverter.ToInt64(BitConverter.GetBytes(numArray4[n]), 0);
-                                    }
-                                    return numArray5;
-                                }
-                            }
-                            if (Type == 0)
-                            {
-                                return 0;
-                            }
-                            return ulong.Parse(str5.Substring(str5.find(" ") + 1), NumberStyles.HexNumber);
-                        }
-                    case 8:
-                        {
-                            if (t == typeof(long))
-                            {
-                                return long.Parse(str5.Substring(str5.find(" ") + 1), NumberStyles.HexNumber);
-                            }
-                            if (t != typeof(ulong))
-                            {
-                                goto case 7;
-                            }
-                            return ulong.Parse(str5.Substring(str5.find(" ") + 1), NumberStyles.HexNumber);
-                        }
-                    default:
-                        {
-                            goto case 7;
-                        }
-                }
-            }
-        }
 
         public static void Push(this byte[] InArray, out byte[] OutArray, byte Value)
         {
             OutArray = new byte[InArray.Length + 1];
             InArray.CopyTo(OutArray, 0);
             OutArray[InArray.Length] = Value;
+        }
+
+        public static T Call<T>(string module,int ordinal,params object[] Arguments) where T : struct
+        {
+            return (T)CallArgs(true, TypeToType<T>(false), typeof(T), module, ordinal, 0U, 0U, Arguments);
         }
     }
 }
