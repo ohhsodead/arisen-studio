@@ -3,6 +3,7 @@ using ModioX.Io;
 using ModioX.Models.Database;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 
@@ -405,6 +406,10 @@ namespace ModioX.Models.Resources
     {
         public string Name { get; set; }
 
+        public ConsoleType Type { get; set; } = ConsoleType.PlayStation3;
+
+        public ConsoleTypePrefix TypePrefix { get; set; } = ConsoleTypePrefix.PS3;
+
         public string Address { get; set; }
 
         public int Port { get; set; } = 21;
@@ -419,6 +424,39 @@ namespace ModioX.Models.Resources
         {
             return Name + " : " + Address;
         }
+    }
+
+    /// <summary>
+    /// Determines the type of console.
+    /// </summary>
+    public enum ConsoleType
+    {
+        [Description("PlayStation 3")]
+        PlayStation3,
+
+        [Description("Xbox 360 (Fat/White)")]
+        Xbox360FatWhite,
+
+        [Description("Xbox 360 Elite (Fat/Black)")]
+        Xbox360EliteFatBlack,
+
+        [Description("Xbox 360 S (Slim)")]
+        Xbox360Slim,
+
+        [Description("Xbox 360 E (Slim E)")]
+        Xbox360SlimE
+    }
+
+    /// <summary>
+    /// Determines the prefix for the type of console.
+    /// </summary>
+    public enum ConsoleTypePrefix
+    {
+        [Description("PlayStation 3")]
+        PS3,
+
+        [Description("Xbox 360")]
+        XBOX
     }
 
     /// <summary>

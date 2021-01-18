@@ -93,6 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Urls.cs" />
+    <Compile Include="Controls\TileViewConsoleItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TileViewConsoleItem.Designer.cs">
+      <DependentUpon>TileViewConsoleItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database\Category.cs" />
     <Compile Include="Database\DownloadFiles.cs" />
     <Compile Include="Database\DropboxData.cs" />
@@ -100,12 +106,13 @@
     <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\DialogExtensions.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\WebManExtensions.cs" />
-    <Compile Include="Forms\Dialogs\XBConnectionDialog.cs">
+    <Compile Include="Forms\Dialogs\ConnectionDialogTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Dialogs\XBConnectionDialog.Designer.cs">
-      <DependentUpon>XBConnectionDialog.cs</DependentUpon>
+    <Compile Include="Forms\Dialogs\ConnectionDialogTest.Designer.cs">
+      <DependentUpon>ConnectionDialogTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Settings\CustomListsDialog.cs">
       <SubType>Form</SubType>
@@ -234,11 +241,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
     <Compile Include="Templates\GitHubTemplates.cs" />
     <Compile Include="Xbox\XDevkit\Controls\ByteArray.cs">
       <SubType>UserControl</SubType>
@@ -297,6 +299,12 @@
     <Compile Include="Xbox\XDevkit\Functions\IO\RWStream.cs" />
     <Compile Include="Xbox\XDevkit\Functions\Items.cs" />
     <Compile Include="Xbox\XDevkit\Xbox.cs" />
+    <EmbeddedResource Include="Controls\TileViewConsoleItem.resx">
+      <DependentUpon>TileViewConsoleItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\ConnectionDialogTest.resx">
+      <DependentUpon>ConnectionDialogTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\ConnectionDialog.resx">
       <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,9 +316,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\LoginDialog.resx">
       <DependentUpon>LoginDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dialogs\XBConnectionDialog.resx">
-      <DependentUpon>XBConnectionDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\CustomListsDialog.resx">
       <DependentUpon>CustomListsDialog.cs</DependentUpon>
@@ -368,11 +373,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Icons\Fat.png" />
+    <None Include="Resources\Icons\FatElite.png" />
+    <None Include="Resources\Icons\PlayStation3.png" />
+    <None Include="Resources\Icons\Slim.png" />
+    <None Include="Resources\Icons\SlimE.png" />
     <Content Include="Xbox\XDevkit\About XDevkit.txt" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <None Include="Resources\Icons\app_logo.png" />
     <None Include="App.config" />
     <None Include="Resources\Icons\copy_to_clipboard.png" />

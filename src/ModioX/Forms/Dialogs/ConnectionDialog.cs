@@ -55,11 +55,11 @@ namespace ModioX.Forms.Dialogs
         {
             if (MainWindow.Settings.ConsoleProfiles.Count == 1)
             {
-                XtraMessageBox.Show("You can't delete this because there must be at least one console.", "Can't Delete Console");
+                XtraMessageBox.Show(this, "You can't delete this because there must be at least one console.", "Can't Delete Console");
             }
             else
             {
-                if (XtraMessageBox.Show("Do you really want to delete the selected item?", "Delete Console", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (XtraMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete Console", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     var selectedItem = ListViewConsoleProfiles.Items[ListViewConsoleProfiles.SelectedIndices[0]];
                     MainWindow.Settings.ConsoleProfiles.RemoveAt(ListViewConsoleProfiles.Items.IndexOf(selectedItem));
@@ -68,7 +68,7 @@ namespace ModioX.Forms.Dialogs
             }
         }
 
-        private void ButtonEdit1_Click(object sender, EventArgs e)
+        private void ButtonEdit_Click(object sender, EventArgs e)
         {
             var selectedItem = ListViewConsoleProfiles.Items[ListViewConsoleProfiles.SelectedIndices[0]];
             var selectedIndex = ListViewConsoleProfiles.Items.IndexOf(selectedItem);

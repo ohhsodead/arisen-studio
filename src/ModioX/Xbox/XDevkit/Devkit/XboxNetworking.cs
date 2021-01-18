@@ -138,7 +138,6 @@ namespace XDevkit
         }
         private DoWorkEventHandler FindConsole_OnBackground()
         {
-
             while (on)
             {
                 int i = 0;
