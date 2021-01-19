@@ -98,10 +98,9 @@
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.LabelControl LabelName;
-        private DevExpress.XtraEditors.TextEdit TextBoxName;
         private DevExpress.XtraEditors.SimpleButton ButtonOK;
         private DevExpress.XtraEditors.SimpleButton ButtonCancel;
+        public DevExpress.XtraEditors.LabelControl LabelName;
+        public DevExpress.XtraEditors.TextEdit TextBoxName;
     }
 }
