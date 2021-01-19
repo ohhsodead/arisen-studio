@@ -38,10 +38,12 @@
             this.ButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonChangeCredentials = new DevExpress.XtraEditors.SimpleButton();
             this.darkLabel2 = new DarkUI.Controls.DarkLabel();
+            this.ImageConsole = new DevExpress.XtraEditors.PictureEdit();
             this.ComboBoxConsoleType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.TextBoxConsolePort = new DevExpress.XtraEditors.TextEdit();
             this.TextBoxConsoleAddress = new DevExpress.XtraEditors.TextEdit();
             this.TextBoxConnectionName = new DevExpress.XtraEditors.TextEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageConsole.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxConsoleType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsolePort.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsoleAddress.Properties)).BeginInit();
@@ -53,7 +55,7 @@
             this.LabelUserPass.AutoEllipsis = true;
             this.LabelUserPass.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelUserPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelUserPass.Location = new System.Drawing.Point(122, 102);
+            this.LabelUserPass.Location = new System.Drawing.Point(261, 102);
             this.LabelUserPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelUserPass.Name = "LabelUserPass";
             this.LabelUserPass.Size = new System.Drawing.Size(158, 15);
@@ -65,7 +67,7 @@
             this.LabelLogin.AutoSize = true;
             this.LabelLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelLogin.Location = new System.Drawing.Point(12, 102);
+            this.LabelLogin.Location = new System.Drawing.Point(151, 102);
             this.LabelLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelLogin.Name = "LabelLogin";
             this.LabelLogin.Size = new System.Drawing.Size(40, 15);
@@ -74,11 +76,10 @@
             // 
             // darkLabel1
             // 
-            this.darkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.darkLabel1.AutoSize = true;
             this.darkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel1.Location = new System.Drawing.Point(276, 71);
+            this.darkLabel1.Location = new System.Drawing.Point(415, 71);
             this.darkLabel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.darkLabel1.Name = "darkLabel1";
             this.darkLabel1.Size = new System.Drawing.Size(32, 15);
@@ -90,7 +91,7 @@
             this.LabelName.AutoSize = true;
             this.LabelName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelName.Location = new System.Drawing.Point(12, 15);
+            this.LabelName.Location = new System.Drawing.Point(151, 15);
             this.LabelName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(107, 15);
@@ -102,7 +103,7 @@
             this.LabelDescription.AutoSize = true;
             this.LabelDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelDescription.Location = new System.Drawing.Point(12, 71);
+            this.LabelDescription.Location = new System.Drawing.Point(151, 71);
             this.LabelDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelDescription.Name = "LabelDescription";
             this.LabelDescription.Size = new System.Drawing.Size(98, 15);
@@ -112,7 +113,7 @@
             // ButtonOK
             // 
             this.ButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOK.Location = new System.Drawing.Point(193, 148);
+            this.ButtonOK.Location = new System.Drawing.Point(332, 165);
             this.ButtonOK.Name = "ButtonOK";
             this.ButtonOK.Size = new System.Drawing.Size(80, 23);
             this.ButtonOK.TabIndex = 5;
@@ -123,7 +124,7 @@
             // 
             this.ButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonCancel.Location = new System.Drawing.Point(283, 148);
+            this.ButtonCancel.Location = new System.Drawing.Point(422, 165);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.Size = new System.Drawing.Size(80, 23);
             this.ButtonCancel.TabIndex = 6;
@@ -131,8 +132,7 @@
             // 
             // ButtonChangeCredentials
             // 
-            this.ButtonChangeCredentials.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonChangeCredentials.Location = new System.Drawing.Point(283, 98);
+            this.ButtonChangeCredentials.Location = new System.Drawing.Point(422, 98);
             this.ButtonChangeCredentials.Name = "ButtonChangeCredentials";
             this.ButtonChangeCredentials.Size = new System.Drawing.Size(80, 23);
             this.ButtonChangeCredentials.TabIndex = 4;
@@ -144,26 +144,42 @@
             this.darkLabel2.AutoSize = true;
             this.darkLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel2.Location = new System.Drawing.Point(12, 43);
+            this.darkLabel2.Location = new System.Drawing.Point(151, 43);
             this.darkLabel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.darkLabel2.Name = "darkLabel2";
             this.darkLabel2.Size = new System.Drawing.Size(80, 15);
             this.darkLabel2.TabIndex = 1146;
             this.darkLabel2.Text = "Console Type:";
             // 
+            // ImageConsole
+            // 
+            this.ImageConsole.EditValue = ((object)(resources.GetObject("ImageConsole.EditValue")));
+            this.ImageConsole.Location = new System.Drawing.Point(12, 12);
+            this.ImageConsole.Name = "ImageConsole";
+            this.ImageConsole.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.ImageConsole.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.ImageConsole.Properties.Appearance.Options.UseBackColor = true;
+            this.ImageConsole.Properties.Appearance.Options.UseForeColor = true;
+            this.ImageConsole.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.ImageConsole.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.ImageConsole.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.ImageConsole.Size = new System.Drawing.Size(132, 132);
+            this.ImageConsole.TabIndex = 1147;
+            // 
             // ComboBoxConsoleType
             // 
-            this.ComboBoxConsoleType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxConsoleType.EditValue = "PlayStation 3";
-            this.ComboBoxConsoleType.Location = new System.Drawing.Point(125, 40);
+            this.ComboBoxConsoleType.EditValue = "PlayStation 3 (Fat)";
+            this.ComboBoxConsoleType.Location = new System.Drawing.Point(264, 40);
             this.ComboBoxConsoleType.Name = "ComboBoxConsoleType";
+            this.ComboBoxConsoleType.Properties.AllowFocused = false;
             this.ComboBoxConsoleType.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComboBoxConsoleType.Properties.Appearance.Options.UseFont = true;
             this.ComboBoxConsoleType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ComboBoxConsoleType.Properties.Items.AddRange(new object[] {
-            "PlayStation 3",
+            "PlayStation 3 (Fat)",
+            "PlayStation 3 (Slim)",
+            "PlayStation 3 (Super Slim)",
             "Xbox 360 (Fat/White)",
             "Xbox 360 Elite (Flat/Black)",
             "Xbox 360 S (Slim)",
@@ -175,9 +191,8 @@
             // 
             // TextBoxConsolePort
             // 
-            this.TextBoxConsolePort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxConsolePort.EditValue = "21";
-            this.TextBoxConsolePort.Location = new System.Drawing.Point(314, 68);
+            this.TextBoxConsolePort.Location = new System.Drawing.Point(453, 68);
             this.TextBoxConsolePort.Name = "TextBoxConsolePort";
             this.TextBoxConsolePort.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxConsolePort.Properties.Appearance.Options.UseFont = true;
@@ -186,7 +201,7 @@
             // 
             // TextBoxConsoleAddress
             // 
-            this.TextBoxConsoleAddress.Location = new System.Drawing.Point(125, 68);
+            this.TextBoxConsoleAddress.Location = new System.Drawing.Point(264, 68);
             this.TextBoxConsoleAddress.Name = "TextBoxConsoleAddress";
             this.TextBoxConsoleAddress.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxConsoleAddress.Properties.Appearance.Options.UseFont = true;
@@ -195,9 +210,7 @@
             // 
             // TextBoxConnectionName
             // 
-            this.TextBoxConnectionName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxConnectionName.Location = new System.Drawing.Point(125, 12);
+            this.TextBoxConnectionName.Location = new System.Drawing.Point(264, 12);
             this.TextBoxConnectionName.Name = "TextBoxConnectionName";
             this.TextBoxConnectionName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxConnectionName.Properties.Appearance.Options.UseFont = true;
@@ -206,11 +219,14 @@
             // 
             // NewConnectionDialog
             // 
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(375, 183);
+            this.ClientSize = new System.Drawing.Size(514, 200);
+            this.Controls.Add(this.ImageConsole);
             this.Controls.Add(this.ComboBoxConsoleType);
             this.Controls.Add(this.darkLabel2);
             this.Controls.Add(this.ButtonChangeCredentials);
@@ -236,6 +252,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Connection Details";
             this.Load += new System.EventHandler(this.ConsolesWindow_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ImageConsole.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxConsoleType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsolePort.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsoleAddress.Properties)).EndInit();
@@ -259,5 +276,6 @@
         private DevExpress.XtraEditors.SimpleButton ButtonChangeCredentials;
         private DarkUI.Controls.DarkLabel darkLabel2;
         private DevExpress.XtraEditors.ComboBoxEdit ComboBoxConsoleType;
+        private DevExpress.XtraEditors.PictureEdit ImageConsole;
     }
 }

@@ -29,66 +29,91 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConnectionDialog));
-            this.ListViewConsoleProfiles = new DarkUI.Controls.DarkListView();
-            this.SectionItems = new DarkUI.Controls.DarkSectionPanel();
             this.ButtonEdit = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonConnect = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.SectionItems.SuspendLayout();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.ScrollBarConsoleProfiles = new DevExpress.XtraEditors.VScrollBar();
+            this.PanelConsoleProfiles = new System.Windows.Forms.FlowLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ListViewConsoleProfiles
-            // 
-            this.ListViewConsoleProfiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListViewConsoleProfiles.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ListViewConsoleProfiles.Location = new System.Drawing.Point(1, 25);
-            this.ListViewConsoleProfiles.Name = "ListViewConsoleProfiles";
-            this.ListViewConsoleProfiles.Size = new System.Drawing.Size(222, 184);
-            this.ListViewConsoleProfiles.TabIndex = 0;
-            this.ListViewConsoleProfiles.Text = "darkListView1";
-            this.ListViewConsoleProfiles.SelectedIndicesChanged += new System.EventHandler(this.ListViewConsoleProfiles_SelectedIndicesChanged);
-            // 
-            // SectionItems
-            // 
-            this.SectionItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SectionItems.Controls.Add(this.ListViewConsoleProfiles);
-            this.SectionItems.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.SectionItems.Location = new System.Drawing.Point(12, 12);
-            this.SectionItems.Name = "SectionItems";
-            this.SectionItems.SectionHeader = "Choose Profile";
-            this.SectionItems.Size = new System.Drawing.Size(224, 210);
-            this.SectionItems.TabIndex = 2;
             // 
             // ButtonEdit
             // 
             this.ButtonEdit.AllowFocus = false;
-            this.ButtonEdit.Location = new System.Drawing.Point(12, 228);
+            this.ButtonEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonEdit.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonEdit.Appearance.Options.UseFont = true;
+            this.ButtonEdit.Enabled = false;
+            this.ButtonEdit.Location = new System.Drawing.Point(249, 357);
             this.ButtonEdit.Name = "ButtonEdit";
             this.ButtonEdit.Size = new System.Drawing.Size(60, 25);
-            this.ButtonEdit.TabIndex = 6;
+            this.ButtonEdit.TabIndex = 1;
             this.ButtonEdit.Text = "Edit";
             this.ButtonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
             // 
             // ButtonConnect
             // 
             this.ButtonConnect.AllowFocus = false;
-            this.ButtonConnect.Location = new System.Drawing.Point(156, 228);
+            this.ButtonConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonConnect.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonConnect.Appearance.Options.UseFont = true;
+            this.ButtonConnect.Enabled = false;
+            this.ButtonConnect.Location = new System.Drawing.Point(393, 357);
             this.ButtonConnect.Name = "ButtonConnect";
             this.ButtonConnect.Size = new System.Drawing.Size(80, 25);
-            this.ButtonConnect.TabIndex = 4;
+            this.ButtonConnect.TabIndex = 3;
             this.ButtonConnect.Text = "Connect";
+            this.ButtonConnect.Click += new System.EventHandler(this.ButtonConnect_Click);
             // 
             // ButtonDelete
             // 
             this.ButtonDelete.AllowFocus = false;
-            this.ButtonDelete.Location = new System.Drawing.Point(78, 228);
+            this.ButtonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonDelete.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonDelete.Appearance.Options.UseFont = true;
+            this.ButtonDelete.Enabled = false;
+            this.ButtonDelete.Location = new System.Drawing.Point(315, 357);
             this.ButtonDelete.Name = "ButtonDelete";
             this.ButtonDelete.Size = new System.Drawing.Size(72, 25);
-            this.ButtonDelete.TabIndex = 5;
+            this.ButtonDelete.TabIndex = 2;
             this.ButtonDelete.Text = "Delete";
             this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl1.Controls.Add(this.ScrollBarConsoleProfiles);
+            this.groupControl1.Controls.Add(this.PanelConsoleProfiles);
+            this.groupControl1.Location = new System.Drawing.Point(12, 12);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(461, 339);
+            this.groupControl1.TabIndex = 7;
+            this.groupControl1.Text = "Console Profiles";
+            // 
+            // ScrollBarConsoleProfiles
+            // 
+            this.ScrollBarConsoleProfiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ScrollBarConsoleProfiles.Location = new System.Drawing.Point(441, 23);
+            this.ScrollBarConsoleProfiles.Name = "ScrollBarConsoleProfiles";
+            this.ScrollBarConsoleProfiles.Size = new System.Drawing.Size(17, 314);
+            this.ScrollBarConsoleProfiles.TabIndex = 1;
+            this.ScrollBarConsoleProfiles.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollBarConsoleProfiles_Scroll);
+            // 
+            // PanelConsoleProfiles
+            // 
+            this.PanelConsoleProfiles.AutoScroll = true;
+            this.PanelConsoleProfiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelConsoleProfiles.Location = new System.Drawing.Point(2, 23);
+            this.PanelConsoleProfiles.Name = "PanelConsoleProfiles";
+            this.PanelConsoleProfiles.Size = new System.Drawing.Size(457, 314);
+            this.PanelConsoleProfiles.TabIndex = 0;
+            this.PanelConsoleProfiles.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.PanelConsoleProfiles_ControlAddedOrRemoved);
+            this.PanelConsoleProfiles.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.PanelConsoleProfiles_ControlAddedOrRemoved);
             // 
             // ConnectionDialog
             // 
@@ -98,11 +123,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(248, 265);
+            this.ClientSize = new System.Drawing.Size(485, 394);
+            this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.ButtonEdit);
             this.Controls.Add(this.ButtonDelete);
             this.Controls.Add(this.ButtonConnect);
-            this.Controls.Add(this.SectionItems);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("ConnectionDialog.IconOptions.Icon")));
@@ -113,16 +139,19 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Connections";
             this.Load += new System.EventHandler(this.ConnectConsole_Load);
-            this.SectionItems.ResumeLayout(false);
+            this.SizeChanged += new System.EventHandler(this.ConnectionDialogTest_SizeChanged);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private DarkUI.Controls.DarkListView ListViewConsoleProfiles;
-        private DarkUI.Controls.DarkSectionPanel SectionItems;
         private DevExpress.XtraEditors.SimpleButton ButtonConnect;
         private DevExpress.XtraEditors.SimpleButton ButtonEdit;
         private DevExpress.XtraEditors.SimpleButton ButtonDelete;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.VScrollBar ScrollBarConsoleProfiles;
+        private System.Windows.Forms.FlowLayoutPanel PanelConsoleProfiles;
     }
 }

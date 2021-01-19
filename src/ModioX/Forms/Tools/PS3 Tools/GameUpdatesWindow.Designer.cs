@@ -1,4 +1,4 @@
-﻿namespace ModioX.Forms.Tools
+﻿namespace ModioX.Forms.Tools.PS3_Tools
 {
     partial class GameUpdatesWindow
     {

@@ -163,26 +163,6 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Fat {
-            get {
-                object obj = ResourceManager.GetObject("Fat", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FatElite {
-            get {
-                object obj = ResourceManager.GetObject("FatElite", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap file {
             get {
                 object obj = ResourceManager.GetObject("file", resourceCulture);
@@ -243,9 +223,29 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PlayStation3 {
+        internal static System.Drawing.Bitmap PlayStation3Fat {
             get {
-                object obj = ResourceManager.GetObject("PlayStation3", resourceCulture);
+                object obj = ResourceManager.GetObject("PlayStation3Fat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PlayStation3Slim {
+            get {
+                object obj = ResourceManager.GetObject("PlayStation3Slim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PlayStation3SuperSlim {
+            get {
+                object obj = ResourceManager.GetObject("PlayStation3SuperSlim", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,26 +283,6 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Slim {
-            get {
-                object obj = ResourceManager.GetObject("Slim", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SlimE {
-            get {
-                object obj = ResourceManager.GetObject("SlimE", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap uninstall {
             get {
                 object obj = ResourceManager.GetObject("uninstall", resourceCulture);
@@ -316,6 +296,46 @@ namespace ModioX.Properties {
         internal static System.Drawing.Bitmap upload {
             get {
                 object obj = ResourceManager.GetObject("upload", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XboxFat {
+            get {
+                object obj = ResourceManager.GetObject("XboxFat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XboxFatElite {
+            get {
+                object obj = ResourceManager.GetObject("XboxFatElite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XboxSlim {
+            get {
+                object obj = ResourceManager.GetObject("XboxSlim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XboxSlimE {
+            get {
+                object obj = ResourceManager.GetObject("XboxSlimE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

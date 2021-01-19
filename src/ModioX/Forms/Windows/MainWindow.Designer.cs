@@ -45,29 +45,29 @@ namespace ModioX.Forms.Windows
             this.ContextMenuModsRemoveFromList = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuModsSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ContextMenuModsReportOnGitHub = new System.Windows.Forms.ToolStripMenuItem();
-            this.LabelSelectType = new System.Windows.Forms.Label();
+            this.LabelSelectType = new DevExpress.XtraEditors.LabelControl();
             this.FlowPanelDetails = new System.Windows.Forms.FlowLayoutPanel();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.LabelHeaderName = new System.Windows.Forms.Label();
-            this.LabelName = new System.Windows.Forms.Label();
-            this.LabelHeaderCategory = new System.Windows.Forms.Label();
-            this.LabelCategory = new System.Windows.Forms.Label();
-            this.LabelHeaderFirmware = new System.Windows.Forms.Label();
-            this.LabelFirmware = new System.Windows.Forms.Label();
-            this.LabelHeaderModType = new System.Windows.Forms.Label();
-            this.LabelType = new System.Windows.Forms.Label();
-            this.LabelHeaderVersion = new System.Windows.Forms.Label();
-            this.LabelVersion = new System.Windows.Forms.Label();
-            this.LabelHeaderRegion = new System.Windows.Forms.Label();
-            this.LabelRegion = new System.Windows.Forms.Label();
-            this.LabelHeaderGameType = new System.Windows.Forms.Label();
-            this.LabelConfig = new System.Windows.Forms.Label();
-            this.LabelHeaderAuthor = new System.Windows.Forms.Label();
-            this.LabelAuthor = new System.Windows.Forms.Label();
-            this.LabelHeaderSubmittedBy = new System.Windows.Forms.Label();
-            this.LabelSubmittedBy = new System.Windows.Forms.Label();
+            this.LabelHeaderName = new DevExpress.XtraEditors.LabelControl();
+            this.LabelName = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderCategory = new DevExpress.XtraEditors.LabelControl();
+            this.LabelCategory = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderFirmware = new DevExpress.XtraEditors.LabelControl();
+            this.LabelFirmware = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderModType = new DevExpress.XtraEditors.LabelControl();
+            this.LabelType = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderVersion = new DevExpress.XtraEditors.LabelControl();
+            this.LabelVersion = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderRegion = new DevExpress.XtraEditors.LabelControl();
+            this.LabelRegion = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderGameType = new DevExpress.XtraEditors.LabelControl();
+            this.LabelConfig = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderAuthor = new DevExpress.XtraEditors.LabelControl();
+            this.LabelAuthor = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderSubmittedBy = new DevExpress.XtraEditors.LabelControl();
+            this.LabelSubmittedBy = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.LabelDescription = new System.Windows.Forms.Label();
+            this.LabelDescription = new DevExpress.XtraEditors.LabelControl();
             this.GridControlModsInstallFiles = new DevExpress.XtraGrid.GridControl();
             this.GridViewModsInstallFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColumnInstallationFiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,18 +80,18 @@ namespace ModioX.Forms.Windows
             this.ToolStripStatusSeperator0 = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripLabelStatus = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripLabelStats = new System.Windows.Forms.ToolStripLabel();
-            this.LabelSelectSystemType = new System.Windows.Forms.Label();
+            this.LabelSelectSystemType = new DevExpress.XtraEditors.LabelControl();
             this.PanelModsLibraryFilters = new System.Windows.Forms.Panel();
             this.TextBoxSearch = new DevExpress.XtraEditors.TextEdit();
             this.MainMenu = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.ConnectMenuBar = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuBarItemConnect = new DevExpress.XtraBars.BarButtonItem();
             this.ConnectMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ButtonPS3 = new DevExpress.XtraBars.BarSubItem();
             this.ButtonConnectToPS3 = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXbox360 = new DevExpress.XtraBars.BarSubItem();
             this.ButtonConnectToXBOX = new DevExpress.XtraBars.BarButtonItem();
-            this.ToolsMenuBar = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuBarItemTools = new DevExpress.XtraBars.BarButtonItem();
             this.ToolsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ButtonGameBackupFiles = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonGameUpdateFinder = new DevExpress.XtraBars.BarButtonItem();
@@ -109,11 +109,9 @@ namespace ModioX.Forms.Windows
             this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonNotifyMessage = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonVirtualController = new DevExpress.XtraBars.BarButtonItem();
-            this.ApplicationMenuBar = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuBarItemApplications = new DevExpress.XtraBars.BarButtonItem();
             this.ApplicationsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem27 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem28 = new DevExpress.XtraBars.BarButtonItem();
-            this.OptionsMenuBar = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuBarItemOptions = new DevExpress.XtraBars.BarButtonItem();
             this.OptionsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ButtonAddNewConsole = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonEditGameRegions = new DevExpress.XtraBars.BarButtonItem();
@@ -121,7 +119,7 @@ namespace ModioX.Forms.Windows
             this.ButtonEditLists = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonSettings = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonExit = new DevExpress.XtraBars.BarButtonItem();
-            this.HelpMenuBar = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuBarItemHelp = new DevExpress.XtraBars.BarButtonItem();
             this.HelpMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ReportBugButton = new DevExpress.XtraBars.BarButtonItem();
             this.DiscordServerButton = new DevExpress.XtraBars.BarButtonItem();
@@ -130,19 +128,20 @@ namespace ModioX.Forms.Windows
             this.OpenLogFolderButton = new DevExpress.XtraBars.BarButtonItem();
             this.CheckForUpdateButton = new DevExpress.XtraBars.BarButtonItem();
             this.WhatsNewButton = new DevExpress.XtraBars.BarButtonItem();
-            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
+            this.ButtonSkinManager = new DevExpress.XtraBars.SkinBarSubItem();
             this.AboutBar = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
-            this.HeaderConsoleConnected = new DevExpress.XtraBars.BarHeaderItem();
+            this.LabelHeaderConsoleConnected = new DevExpress.XtraBars.BarHeaderItem();
             this.LabelConsoleConnected = new DevExpress.XtraBars.BarStaticItem();
+            this.LabelHeaderStatus = new DevExpress.XtraBars.BarHeaderItem();
+            this.LabelStatus = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.DockModInformation = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
             this.barWorkspaceMenuItem1 = new DevExpress.XtraBars.BarWorkspaceMenuItem();
             this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager(this.components);
@@ -150,20 +149,23 @@ namespace ModioX.Forms.Windows
             this.HelpSpacer2 = new DevExpress.XtraBars.BarButtonItem();
             this.HelpSpacer3 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockingMenuItem1 = new DevExpress.XtraBars.BarDockingMenuItem();
+            this.barButtonItem27 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem28 = new DevExpress.XtraBars.BarButtonItem();
             this.barToolbarsListItem2 = new DevExpress.XtraBars.BarToolbarsListItem();
-            this.ButtonInstallFiles = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonUninstallFiles = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonDownloadArchive = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonAddToList = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonRemoveFromList = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonReportAnIssue = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonModInstallFiles = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonModUninstallFiles = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonModDownloadArchive = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonModAddToList = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonModRemoveFromList = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonModReportAnIssue = new DevExpress.XtraBars.BarButtonItem();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.ComboBoxRegion = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ComboBoxModType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ComboBoxSystemType = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.LabelSelectRegion = new System.Windows.Forms.Label();
-            this.LabelSearch = new System.Windows.Forms.Label();
+            this.LabelSelectRegion = new DevExpress.XtraEditors.LabelControl();
+            this.LabelSearch = new DevExpress.XtraEditors.LabelControl();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.ColumnModsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsFirmware = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -193,28 +195,30 @@ namespace ModioX.Forms.Windows
             this.ProgressMods = new DevExpress.XtraWaitForm.ProgressPanel();
             this.GridControlMods = new DevExpress.XtraGrid.GridControl();
             this.GridViewMods = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NavigationBar = new DevExpress.XtraNavBar.NavBarControl();
             this.NavGroupGames = new DevExpress.XtraNavBar.NavBarGroup();
             this.NavGroupHomebrewApps = new DevExpress.XtraNavBar.NavBarGroup();
             this.NavGroupResources = new DevExpress.XtraNavBar.NavBarGroup();
             this.NavGroupMyLists = new DevExpress.XtraNavBar.NavBarGroup();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.GroupModsInstalled = new DevExpress.XtraEditors.GroupControl();
             this.ProgressModsInstalled = new DevExpress.XtraWaitForm.ProgressPanel();
             this.bar4 = new DevExpress.XtraBars.Bar();
             this.GroupModInformation = new DevExpress.XtraEditors.GroupControl();
+            this.ScrollBarModInformation = new DevExpress.XtraEditors.VScrollBar();
             this.GroupInstallFiles = new DevExpress.XtraEditors.GroupControl();
             this.ModsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.BarMenuModInformation = new DevExpress.XtraBars.Bar();
+            this.ButtonModInstall = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonModUninstall = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonModDownload = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonModFavorite = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ButtonConnectXbox = new DevExpress.XtraBars.BarButtonItem();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
@@ -240,13 +244,14 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.NavigationBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupModsInstalled)).BeginInit();
+            this.GroupModsInstalled.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GroupModInformation)).BeginInit();
             this.GroupModInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GroupInstallFiles)).BeginInit();
             this.GroupInstallFiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ModsMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonConnectXbox
@@ -351,22 +356,22 @@ namespace ModioX.Forms.Windows
             // LabelSelectType
             // 
             this.LabelSelectType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelSelectType.AutoSize = true;
+            this.LabelSelectType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSelectType.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelSelectType.Appearance.Options.UseFont = true;
+            this.LabelSelectType.Appearance.Options.UseForeColor = true;
             this.LabelSelectType.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelSelectType.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSelectType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectType.Location = new System.Drawing.Point(525, 42);
+            this.LabelSelectType.Location = new System.Drawing.Point(541, 42);
             this.LabelSelectType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelSelectType.Name = "LabelSelectType";
-            this.LabelSelectType.Size = new System.Drawing.Size(64, 15);
+            this.LabelSelectType.Size = new System.Drawing.Size(57, 15);
             this.LabelSelectType.TabIndex = 1122;
             this.LabelSelectType.Text = "MOD TYPE";
             // 
             // FlowPanelDetails
             // 
             this.FlowPanelDetails.AutoScroll = true;
-            this.FlowPanelDetails.AutoSize = true;
             this.FlowPanelDetails.Controls.Add(this.labelControl3);
             this.FlowPanelDetails.Controls.Add(this.LabelHeaderName);
             this.FlowPanelDetails.Controls.Add(this.LabelName);
@@ -392,9 +397,10 @@ namespace ModioX.Forms.Windows
             this.FlowPanelDetails.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.FlowPanelDetails.Location = new System.Drawing.Point(2, 23);
             this.FlowPanelDetails.Margin = new System.Windows.Forms.Padding(0);
+            this.FlowPanelDetails.MaximumSize = new System.Drawing.Size(373, 0);
             this.FlowPanelDetails.Name = "FlowPanelDetails";
             this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(3, 8, 18, 4);
-            this.FlowPanelDetails.Size = new System.Drawing.Size(373, 603);
+            this.FlowPanelDetails.Size = new System.Drawing.Size(373, 580);
             this.FlowPanelDetails.TabIndex = 0;
             this.FlowPanelDetails.TabStop = true;
             // 
@@ -403,8 +409,8 @@ namespace ModioX.Forms.Windows
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.labelControl3.Appearance.Options.UseFont = true;
             this.FlowPanelDetails.SetFlowBreak(this.labelControl3, true);
-            this.labelControl3.Location = new System.Drawing.Point(8, 11);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(5, 3, 3, 5);
+            this.labelControl3.Location = new System.Drawing.Point(9, 11);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(6, 3, 3, 5);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(47, 15);
             this.labelControl3.TabIndex = 1168;
@@ -412,246 +418,264 @@ namespace ModioX.Forms.Windows
             // 
             // LabelHeaderName
             // 
-            this.LabelHeaderName.AutoSize = true;
-            this.LabelHeaderName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderName.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderName.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderName.Appearance.Options.UseFont = true;
+            this.LabelHeaderName.Appearance.Options.UseForeColor = true;
             this.LabelHeaderName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderName.Location = new System.Drawing.Point(5, 34);
-            this.LabelHeaderName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LabelHeaderName.Location = new System.Drawing.Point(9, 34);
+            this.LabelHeaderName.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
             this.LabelHeaderName.Name = "LabelHeaderName";
-            this.LabelHeaderName.Size = new System.Drawing.Size(43, 15);
+            this.LabelHeaderName.Size = new System.Drawing.Size(36, 15);
             this.LabelHeaderName.TabIndex = 26;
             this.LabelHeaderName.Text = "Name:";
             // 
             // LabelName
             // 
+            this.LabelName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelName.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelName.Appearance.Options.UseFont = true;
+            this.LabelName.Appearance.Options.UseForeColor = true;
             this.LabelName.AutoEllipsis = true;
-            this.LabelName.AutoSize = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelName, true);
-            this.LabelName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelName.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelName.Location = new System.Drawing.Point(50, 34);
             this.LabelName.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelName.MaximumSize = new System.Drawing.Size(300, 15);
             this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(16, 15);
+            this.LabelName.Size = new System.Drawing.Size(9, 15);
             this.LabelName.TabIndex = 2;
             this.LabelName.Text = "...";
             // 
             // LabelHeaderCategory
             // 
-            this.LabelHeaderCategory.AutoSize = true;
-            this.LabelHeaderCategory.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderCategory.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderCategory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderCategory.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderCategory.Appearance.Options.UseFont = true;
+            this.LabelHeaderCategory.Appearance.Options.UseForeColor = true;
             this.LabelHeaderCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderCategory.Location = new System.Drawing.Point(5, 55);
-            this.LabelHeaderCategory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LabelHeaderCategory.Location = new System.Drawing.Point(9, 55);
+            this.LabelHeaderCategory.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
             this.LabelHeaderCategory.Name = "LabelHeaderCategory";
-            this.LabelHeaderCategory.Size = new System.Drawing.Size(60, 15);
+            this.LabelHeaderCategory.Size = new System.Drawing.Size(53, 15);
             this.LabelHeaderCategory.TabIndex = 24;
             this.LabelHeaderCategory.Text = "Category:";
             // 
             // LabelCategory
             // 
-            this.LabelCategory.AutoSize = true;
+            this.LabelCategory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelCategory.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelCategory.Appearance.Options.UseFont = true;
+            this.LabelCategory.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelCategory, true);
-            this.LabelCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelCategory.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelCategory.Location = new System.Drawing.Point(67, 55);
             this.LabelCategory.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelCategory.Name = "LabelCategory";
-            this.LabelCategory.Size = new System.Drawing.Size(16, 15);
+            this.LabelCategory.Size = new System.Drawing.Size(9, 15);
             this.LabelCategory.TabIndex = 23;
             this.LabelCategory.Text = "...";
             // 
             // LabelHeaderFirmware
             // 
-            this.LabelHeaderFirmware.AutoSize = true;
-            this.LabelHeaderFirmware.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderFirmware.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderFirmware.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderFirmware.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderFirmware.Appearance.Options.UseFont = true;
+            this.LabelHeaderFirmware.Appearance.Options.UseForeColor = true;
             this.LabelHeaderFirmware.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderFirmware.Location = new System.Drawing.Point(5, 76);
-            this.LabelHeaderFirmware.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LabelHeaderFirmware.Location = new System.Drawing.Point(9, 76);
+            this.LabelHeaderFirmware.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
             this.LabelHeaderFirmware.Name = "LabelHeaderFirmware";
-            this.LabelHeaderFirmware.Size = new System.Drawing.Size(80, 15);
+            this.LabelHeaderFirmware.Size = new System.Drawing.Size(74, 15);
             this.LabelHeaderFirmware.TabIndex = 20;
             this.LabelHeaderFirmware.Text = "System Type:";
             // 
             // LabelFirmware
             // 
-            this.LabelFirmware.AutoSize = true;
+            this.LabelFirmware.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelFirmware.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelFirmware.Appearance.Options.UseFont = true;
+            this.LabelFirmware.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelFirmware, true);
-            this.LabelFirmware.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelFirmware.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelFirmware.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFirmware.Location = new System.Drawing.Point(87, 76);
+            this.LabelFirmware.Location = new System.Drawing.Point(88, 76);
             this.LabelFirmware.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelFirmware.Name = "LabelFirmware";
-            this.LabelFirmware.Size = new System.Drawing.Size(16, 15);
+            this.LabelFirmware.Size = new System.Drawing.Size(9, 15);
             this.LabelFirmware.TabIndex = 21;
             this.LabelFirmware.Text = "...";
             // 
             // LabelHeaderModType
             // 
-            this.LabelHeaderModType.AutoSize = true;
-            this.LabelHeaderModType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderModType.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderModType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderModType.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderModType.Appearance.Options.UseFont = true;
+            this.LabelHeaderModType.Appearance.Options.UseForeColor = true;
             this.LabelHeaderModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderModType.Location = new System.Drawing.Point(5, 97);
-            this.LabelHeaderModType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LabelHeaderModType.Location = new System.Drawing.Point(9, 97);
+            this.LabelHeaderModType.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
             this.LabelHeaderModType.Name = "LabelHeaderModType";
-            this.LabelHeaderModType.Size = new System.Drawing.Size(64, 15);
+            this.LabelHeaderModType.Size = new System.Drawing.Size(58, 15);
             this.LabelHeaderModType.TabIndex = 16;
             this.LabelHeaderModType.Text = "Mod Type:";
             // 
             // LabelType
             // 
-            this.LabelType.AutoSize = true;
+            this.LabelType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelType.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelType.Appearance.Options.UseFont = true;
+            this.LabelType.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelType, true);
-            this.LabelType.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelType.Location = new System.Drawing.Point(71, 97);
+            this.LabelType.Location = new System.Drawing.Point(72, 97);
             this.LabelType.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelType.Name = "LabelType";
-            this.LabelType.Size = new System.Drawing.Size(16, 15);
+            this.LabelType.Size = new System.Drawing.Size(9, 15);
             this.LabelType.TabIndex = 17;
             this.LabelType.Text = "...";
             // 
             // LabelHeaderVersion
             // 
-            this.LabelHeaderVersion.AutoSize = true;
-            this.LabelHeaderVersion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeaderVersion.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHeaderVersion.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderVersion.Appearance.Options.UseFont = true;
+            this.LabelHeaderVersion.Appearance.Options.UseForeColor = true;
             this.LabelHeaderVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderVersion.Location = new System.Drawing.Point(5, 118);
-            this.LabelHeaderVersion.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LabelHeaderVersion.Location = new System.Drawing.Point(9, 118);
+            this.LabelHeaderVersion.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
             this.LabelHeaderVersion.Name = "LabelHeaderVersion";
-            this.LabelHeaderVersion.Size = new System.Drawing.Size(51, 15);
+            this.LabelHeaderVersion.Size = new System.Drawing.Size(45, 15);
             this.LabelHeaderVersion.TabIndex = 3;
             this.LabelHeaderVersion.Text = "Version:";
             // 
             // LabelVersion
             // 
-            this.LabelVersion.AutoSize = true;
+            this.LabelVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelVersion.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelVersion.Appearance.Options.UseFont = true;
+            this.LabelVersion.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelVersion, true);
-            this.LabelVersion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelVersion.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelVersion.Location = new System.Drawing.Point(58, 118);
+            this.LabelVersion.Location = new System.Drawing.Point(59, 118);
             this.LabelVersion.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelVersion.Name = "LabelVersion";
-            this.LabelVersion.Size = new System.Drawing.Size(16, 15);
+            this.LabelVersion.Size = new System.Drawing.Size(9, 15);
             this.LabelVersion.TabIndex = 4;
             this.LabelVersion.Text = "...";
             // 
             // LabelHeaderRegion
             // 
-            this.LabelHeaderRegion.AutoSize = true;
-            this.LabelHeaderRegion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderRegion.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderRegion.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderRegion.Appearance.Options.UseFont = true;
+            this.LabelHeaderRegion.Appearance.Options.UseForeColor = true;
             this.LabelHeaderRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderRegion.Location = new System.Drawing.Point(5, 139);
-            this.LabelHeaderRegion.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LabelHeaderRegion.Location = new System.Drawing.Point(9, 139);
+            this.LabelHeaderRegion.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
             this.LabelHeaderRegion.Name = "LabelHeaderRegion";
-            this.LabelHeaderRegion.Size = new System.Drawing.Size(85, 15);
+            this.LabelHeaderRegion.Size = new System.Drawing.Size(78, 15);
             this.LabelHeaderRegion.TabIndex = 1164;
             this.LabelHeaderRegion.Text = "Game Region:";
             // 
             // LabelRegion
             // 
-            this.LabelRegion.AutoSize = true;
+            this.LabelRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelRegion.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelRegion.Appearance.Options.UseFont = true;
+            this.LabelRegion.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelRegion, true);
-            this.LabelRegion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelRegion.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelRegion.Location = new System.Drawing.Point(92, 139);
             this.LabelRegion.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelRegion.Name = "LabelRegion";
-            this.LabelRegion.Size = new System.Drawing.Size(16, 15);
+            this.LabelRegion.Size = new System.Drawing.Size(9, 15);
             this.LabelRegion.TabIndex = 1165;
             this.LabelRegion.Text = "...";
             // 
             // LabelHeaderGameType
             // 
-            this.LabelHeaderGameType.AutoSize = true;
-            this.LabelHeaderGameType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeaderGameType.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderGameType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHeaderGameType.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderGameType.Appearance.Options.UseFont = true;
+            this.LabelHeaderGameType.Appearance.Options.UseForeColor = true;
             this.LabelHeaderGameType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderGameType.Location = new System.Drawing.Point(5, 160);
-            this.LabelHeaderGameType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LabelHeaderGameType.Location = new System.Drawing.Point(9, 160);
+            this.LabelHeaderGameType.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
             this.LabelHeaderGameType.Name = "LabelHeaderGameType";
-            this.LabelHeaderGameType.Size = new System.Drawing.Size(72, 15);
+            this.LabelHeaderGameType.Size = new System.Drawing.Size(66, 15);
             this.LabelHeaderGameType.TabIndex = 9;
             this.LabelHeaderGameType.Text = "Game Type:";
             // 
             // LabelConfig
             // 
-            this.LabelConfig.AutoSize = true;
+            this.LabelConfig.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelConfig.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelConfig.Appearance.Options.UseFont = true;
+            this.LabelConfig.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelConfig, true);
-            this.LabelConfig.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelConfig.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelConfig.Location = new System.Drawing.Point(79, 160);
+            this.LabelConfig.Location = new System.Drawing.Point(80, 160);
             this.LabelConfig.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelConfig.Name = "LabelConfig";
-            this.LabelConfig.Size = new System.Drawing.Size(16, 15);
+            this.LabelConfig.Size = new System.Drawing.Size(9, 15);
             this.LabelConfig.TabIndex = 10;
             this.LabelConfig.Text = "...";
             // 
             // LabelHeaderAuthor
             // 
-            this.LabelHeaderAuthor.AutoSize = true;
-            this.LabelHeaderAuthor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderAuthor.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderAuthor.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderAuthor.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderAuthor.Appearance.Options.UseFont = true;
+            this.LabelHeaderAuthor.Appearance.Options.UseForeColor = true;
             this.LabelHeaderAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderAuthor.Location = new System.Drawing.Point(5, 181);
-            this.LabelHeaderAuthor.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LabelHeaderAuthor.Location = new System.Drawing.Point(9, 181);
+            this.LabelHeaderAuthor.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
             this.LabelHeaderAuthor.Name = "LabelHeaderAuthor";
-            this.LabelHeaderAuthor.Size = new System.Drawing.Size(71, 15);
+            this.LabelHeaderAuthor.Size = new System.Drawing.Size(64, 15);
             this.LabelHeaderAuthor.TabIndex = 6;
             this.LabelHeaderAuthor.Text = "Created By:";
             // 
             // LabelAuthor
             // 
-            this.LabelAuthor.AutoSize = true;
+            this.LabelAuthor.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelAuthor.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelAuthor.Appearance.Options.UseFont = true;
+            this.LabelAuthor.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelAuthor, true);
-            this.LabelAuthor.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelAuthor.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelAuthor.Location = new System.Drawing.Point(78, 181);
             this.LabelAuthor.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelAuthor.Name = "LabelAuthor";
-            this.LabelAuthor.Size = new System.Drawing.Size(16, 15);
+            this.LabelAuthor.Size = new System.Drawing.Size(9, 15);
             this.LabelAuthor.TabIndex = 15;
             this.LabelAuthor.Text = "...";
             // 
             // LabelHeaderSubmittedBy
             // 
-            this.LabelHeaderSubmittedBy.AutoSize = true;
-            this.LabelHeaderSubmittedBy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeaderSubmittedBy.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderSubmittedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHeaderSubmittedBy.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelHeaderSubmittedBy.Appearance.Options.UseFont = true;
+            this.LabelHeaderSubmittedBy.Appearance.Options.UseForeColor = true;
             this.LabelHeaderSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderSubmittedBy.Location = new System.Drawing.Point(5, 202);
-            this.LabelHeaderSubmittedBy.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LabelHeaderSubmittedBy.Location = new System.Drawing.Point(9, 202);
+            this.LabelHeaderSubmittedBy.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
             this.LabelHeaderSubmittedBy.Name = "LabelHeaderSubmittedBy";
-            this.LabelHeaderSubmittedBy.Size = new System.Drawing.Size(86, 15);
+            this.LabelHeaderSubmittedBy.Size = new System.Drawing.Size(79, 15);
             this.LabelHeaderSubmittedBy.TabIndex = 13;
             this.LabelHeaderSubmittedBy.Text = "Submitted By:";
             // 
             // LabelSubmittedBy
             // 
-            this.LabelSubmittedBy.AutoSize = true;
+            this.LabelSubmittedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSubmittedBy.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelSubmittedBy.Appearance.Options.UseFont = true;
+            this.LabelSubmittedBy.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelSubmittedBy, true);
-            this.LabelSubmittedBy.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSubmittedBy.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelSubmittedBy.Location = new System.Drawing.Point(93, 202);
             this.LabelSubmittedBy.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelSubmittedBy.Name = "LabelSubmittedBy";
-            this.LabelSubmittedBy.Size = new System.Drawing.Size(16, 15);
+            this.LabelSubmittedBy.Size = new System.Drawing.Size(9, 15);
             this.LabelSubmittedBy.TabIndex = 14;
             this.LabelSubmittedBy.Text = "...";
             // 
@@ -660,8 +684,8 @@ namespace ModioX.Forms.Windows
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.labelControl4.Appearance.Options.UseFont = true;
             this.FlowPanelDetails.SetFlowBreak(this.labelControl4, true);
-            this.labelControl4.Location = new System.Drawing.Point(8, 225);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(5, 5, 3, 0);
+            this.labelControl4.Location = new System.Drawing.Point(9, 225);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(6, 5, 3, 0);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(80, 15);
             this.labelControl4.TabIndex = 1169;
@@ -669,17 +693,20 @@ namespace ModioX.Forms.Windows
             // 
             // LabelDescription
             // 
-            this.LabelDescription.AutoSize = true;
+            this.LabelDescription.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelDescription.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelDescription.Appearance.Options.UseFont = true;
+            this.LabelDescription.Appearance.Options.UseForeColor = true;
+            this.LabelDescription.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
             this.FlowPanelDetails.SetFlowBreak(this.LabelDescription, true);
-            this.LabelDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelDescription.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelDescription.Location = new System.Drawing.Point(5, 250);
-            this.LabelDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 3);
-            this.LabelDescription.MaximumSize = new System.Drawing.Size(410, 0);
+            this.LabelDescription.Location = new System.Drawing.Point(9, 243);
+            this.LabelDescription.Margin = new System.Windows.Forms.Padding(6, 3, 2, 3);
+            this.LabelDescription.MaximumSize = new System.Drawing.Size(340, 0);
+            this.LabelDescription.MinimumSize = new System.Drawing.Size(340, 0);
             this.LabelDescription.Name = "LabelDescription";
             this.LabelDescription.Padding = new System.Windows.Forms.Padding(0, 0, 0, 12);
-            this.LabelDescription.Size = new System.Drawing.Size(16, 27);
+            this.LabelDescription.Size = new System.Drawing.Size(340, 27);
             this.LabelDescription.TabIndex = 12;
             this.LabelDescription.Text = "...";
             // 
@@ -824,15 +851,16 @@ namespace ModioX.Forms.Windows
             // LabelSelectSystemType
             // 
             this.LabelSelectSystemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelSelectSystemType.AutoSize = true;
+            this.LabelSelectSystemType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSelectSystemType.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelSelectSystemType.Appearance.Options.UseFont = true;
+            this.LabelSelectSystemType.Appearance.Options.UseForeColor = true;
             this.LabelSelectSystemType.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelSelectSystemType.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSelectSystemType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectSystemType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectSystemType.Location = new System.Drawing.Point(373, 42);
+            this.LabelSelectSystemType.Location = new System.Drawing.Point(396, 42);
             this.LabelSelectSystemType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelSelectSystemType.Name = "LabelSelectSystemType";
-            this.LabelSelectSystemType.Size = new System.Drawing.Size(78, 15);
+            this.LabelSelectSystemType.Size = new System.Drawing.Size(71, 15);
             this.LabelSelectSystemType.TabIndex = 1156;
             this.LabelSelectSystemType.Text = "SYSTEM TYPE";
             // 
@@ -860,14 +888,15 @@ namespace ModioX.Forms.Windows
             // 
             this.TextBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxSearch.Location = new System.Drawing.Point(61, 39);
+            this.TextBoxSearch.Location = new System.Drawing.Point(57, 39);
             this.TextBoxSearch.MenuManager = this.MainMenu;
             this.TextBoxSearch.Name = "TextBoxSearch";
             this.TextBoxSearch.Properties.AllowFocused = false;
             this.TextBoxSearch.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxSearch.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxSearch.Size = new System.Drawing.Size(304, 22);
+            this.TextBoxSearch.Size = new System.Drawing.Size(331, 22);
             this.TextBoxSearch.TabIndex = 1169;
+            this.TextBoxSearch.EditValueChanged += new System.EventHandler(this.TextBoxSearch_EditValueChanged);
             // 
             // MainMenu
             // 
@@ -878,18 +907,18 @@ namespace ModioX.Forms.Windows
             this.MainMenu.DockControls.Add(this.barDockControlBottom);
             this.MainMenu.DockControls.Add(this.barDockControlLeft);
             this.MainMenu.DockControls.Add(this.barDockControlRight);
+            this.MainMenu.DockControls.Add(this.DockModInformation);
             this.MainMenu.Form = this;
             this.MainMenu.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ConnectMenuBar,
-            this.ToolsMenuBar,
-            this.ApplicationMenuBar,
-            this.OptionsMenuBar,
-            this.HelpMenuBar,
+            this.MenuBarItemConnect,
+            this.MenuBarItemTools,
+            this.MenuBarItemApplications,
+            this.MenuBarItemOptions,
+            this.MenuBarItemHelp,
             this.barButtonItem6,
             this.barButtonItem7,
             this.ButtonGameBackupFiles,
             this.ButtonGameUpdateFinder,
-            this.barSubItem1,
             this.barToolbarsListItem1,
             this.barWorkspaceMenuItem1,
             this.ButtonFileManager,
@@ -899,7 +928,7 @@ namespace ModioX.Forms.Windows
             this.ButtonEditApplications,
             this.ButtonEditLists,
             this.ButtonSettings,
-            this.skinBarSubItem1,
+            this.ButtonSkinManager,
             this.ButtonExit,
             this.ReportBugButton,
             this.DiscordServerButton,
@@ -931,19 +960,21 @@ namespace ModioX.Forms.Windows
             this.barButtonItem26,
             this.barButtonItem27,
             this.barButtonItem28,
-            this.barButtonItem1,
-            this.HeaderConsoleConnected,
+            this.LabelHeaderConsoleConnected,
             this.LabelConsoleConnected,
             this.barToolbarsListItem2,
             this.ButtonConnectToXBOX,
-            this.ButtonInstallFiles,
-            this.ButtonUninstallFiles,
-            this.ButtonDownloadArchive,
-            this.ButtonAddToList,
-            this.ButtonRemoveFromList,
-            this.ButtonReportAnIssue});
+            this.ButtonModInstallFiles,
+            this.ButtonModUninstallFiles,
+            this.ButtonModDownloadArchive,
+            this.ButtonModAddToList,
+            this.ButtonModRemoveFromList,
+            this.ButtonModReportAnIssue,
+            this.LabelStatus,
+            this.LabelHeaderStatus,
+            this.barButtonItem1});
             this.MainMenu.MainMenu = this.bar2;
-            this.MainMenu.MaxItemId = 63;
+            this.MainMenu.MaxItemId = 66;
             this.MainMenu.StatusBar = this.bar3;
             // 
             // bar2
@@ -956,25 +987,24 @@ namespace ModioX.Forms.Windows
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.ConnectMenuBar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ToolsMenuBar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ApplicationMenuBar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.OptionsMenuBar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.HelpMenuBar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemConnect),
+            new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemTools),
+            new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemApplications),
+            new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemOptions),
+            new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemHelp)});
             this.bar2.OptionsBar.DrawBorder = false;
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
             // 
-            // ConnectMenuBar
+            // MenuBarItemConnect
             // 
-            this.ConnectMenuBar.ActAsDropDown = true;
-            this.ConnectMenuBar.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.ConnectMenuBar.Caption = "CONNECT";
-            this.ConnectMenuBar.DropDownControl = this.ConnectMenu;
-            this.ConnectMenuBar.Id = 0;
-            this.ConnectMenuBar.Name = "ConnectMenuBar";
+            this.MenuBarItemConnect.ActAsDropDown = true;
+            this.MenuBarItemConnect.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.MenuBarItemConnect.Caption = "CONNECT";
+            this.MenuBarItemConnect.DropDownControl = this.ConnectMenu;
+            this.MenuBarItemConnect.Id = 0;
+            this.MenuBarItemConnect.Name = "MenuBarItemConnect";
             // 
             // ConnectMenu
             // 
@@ -1014,14 +1044,14 @@ namespace ModioX.Forms.Windows
             this.ButtonConnectToXBOX.Name = "ButtonConnectToXBOX";
             this.ButtonConnectToXBOX.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonConnectXBOX_ItemClick);
             // 
-            // ToolsMenuBar
+            // MenuBarItemTools
             // 
-            this.ToolsMenuBar.ActAsDropDown = true;
-            this.ToolsMenuBar.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.ToolsMenuBar.Caption = "TOOLS";
-            this.ToolsMenuBar.DropDownControl = this.ToolsMenu;
-            this.ToolsMenuBar.Id = 1;
-            this.ToolsMenuBar.Name = "ToolsMenuBar";
+            this.MenuBarItemTools.ActAsDropDown = true;
+            this.MenuBarItemTools.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.MenuBarItemTools.Caption = "TOOLS";
+            this.MenuBarItemTools.DropDownControl = this.ToolsMenu;
+            this.MenuBarItemTools.Id = 1;
+            this.MenuBarItemTools.Name = "MenuBarItemTools";
             // 
             // ToolsMenu
             // 
@@ -1030,7 +1060,8 @@ namespace ModioX.Forms.Windows
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonGameUpdateFinder),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonFileManager, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPackageManager),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonWebManControls, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonWebManControls, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1, true)});
             this.ToolsMenu.Manager = this.MainMenu;
             this.ToolsMenu.Name = "ToolsMenu";
             // 
@@ -1157,43 +1188,28 @@ namespace ModioX.Forms.Windows
             this.ButtonVirtualController.Name = "ButtonVirtualController";
             this.ButtonVirtualController.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonVirtualController_ItemClick);
             // 
-            // ApplicationMenuBar
+            // MenuBarItemApplications
             // 
-            this.ApplicationMenuBar.ActAsDropDown = true;
-            this.ApplicationMenuBar.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.ApplicationMenuBar.Caption = "APPLICATIONS";
-            this.ApplicationMenuBar.DropDownControl = this.ApplicationsMenu;
-            this.ApplicationMenuBar.Id = 2;
-            this.ApplicationMenuBar.Name = "ApplicationMenuBar";
+            this.MenuBarItemApplications.ActAsDropDown = true;
+            this.MenuBarItemApplications.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.MenuBarItemApplications.Caption = "APPLICATIONS";
+            this.MenuBarItemApplications.DropDownControl = this.ApplicationsMenu;
+            this.MenuBarItemApplications.Id = 2;
+            this.MenuBarItemApplications.Name = "MenuBarItemApplications";
             // 
             // ApplicationsMenu
             // 
-            this.ApplicationsMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem27),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem28)});
             this.ApplicationsMenu.Manager = this.MainMenu;
             this.ApplicationsMenu.Name = "ApplicationsMenu";
             // 
-            // barButtonItem27
+            // MenuBarItemOptions
             // 
-            this.barButtonItem27.Caption = "Control Console (CCAPI)";
-            this.barButtonItem27.Id = 49;
-            this.barButtonItem27.Name = "barButtonItem27";
-            // 
-            // barButtonItem28
-            // 
-            this.barButtonItem28.Caption = "FileZilla";
-            this.barButtonItem28.Id = 50;
-            this.barButtonItem28.Name = "barButtonItem28";
-            // 
-            // OptionsMenuBar
-            // 
-            this.OptionsMenuBar.ActAsDropDown = true;
-            this.OptionsMenuBar.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.OptionsMenuBar.Caption = "OPTIONS";
-            this.OptionsMenuBar.DropDownControl = this.OptionsMenu;
-            this.OptionsMenuBar.Id = 3;
-            this.OptionsMenuBar.Name = "OptionsMenuBar";
+            this.MenuBarItemOptions.ActAsDropDown = true;
+            this.MenuBarItemOptions.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.MenuBarItemOptions.Caption = "OPTIONS";
+            this.MenuBarItemOptions.DropDownControl = this.OptionsMenu;
+            this.MenuBarItemOptions.Id = 3;
+            this.MenuBarItemOptions.Name = "MenuBarItemOptions";
             // 
             // OptionsMenu
             // 
@@ -1251,14 +1267,14 @@ namespace ModioX.Forms.Windows
             this.ButtonExit.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
             this.ButtonExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonExit_ItemClick);
             // 
-            // HelpMenuBar
+            // MenuBarItemHelp
             // 
-            this.HelpMenuBar.ActAsDropDown = true;
-            this.HelpMenuBar.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.HelpMenuBar.Caption = "HELP";
-            this.HelpMenuBar.DropDownControl = this.HelpMenu;
-            this.HelpMenuBar.Id = 4;
-            this.HelpMenuBar.Name = "HelpMenuBar";
+            this.MenuBarItemHelp.ActAsDropDown = true;
+            this.MenuBarItemHelp.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.MenuBarItemHelp.Caption = "HELP";
+            this.MenuBarItemHelp.DropDownControl = this.HelpMenu;
+            this.MenuBarItemHelp.Id = 4;
+            this.MenuBarItemHelp.Name = "MenuBarItemHelp";
             // 
             // HelpMenu
             // 
@@ -1270,7 +1286,7 @@ namespace ModioX.Forms.Windows
             new DevExpress.XtraBars.LinkPersistInfo(this.OpenLogFolderButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.CheckForUpdateButton, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.WhatsNewButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.skinBarSubItem1, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonSkinManager, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.AboutBar, true)});
             this.HelpMenu.Manager = this.MainMenu;
             this.HelpMenu.Name = "HelpMenu";
@@ -1324,11 +1340,11 @@ namespace ModioX.Forms.Windows
             this.WhatsNewButton.Name = "WhatsNewButton";
             this.WhatsNewButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonWhatsNew_ItemClick);
             // 
-            // skinBarSubItem1
+            // ButtonSkinManager
             // 
-            this.skinBarSubItem1.Caption = "Skin Changer...";
-            this.skinBarSubItem1.Id = 19;
-            this.skinBarSubItem1.Name = "skinBarSubItem1";
+            this.ButtonSkinManager.Caption = "Skin Changer...";
+            this.ButtonSkinManager.Id = 19;
+            this.ButtonSkinManager.Name = "ButtonSkinManager";
             // 
             // AboutBar
             // 
@@ -1337,40 +1353,47 @@ namespace ModioX.Forms.Windows
             this.AboutBar.Name = "AboutBar";
             this.AboutBar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonAbout_ItemClick);
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Winv2";
-            this.barButtonItem1.Id = 52;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
-            // 
             // bar3
             // 
-            this.bar3.BarItemVertIndent = 6;
+            this.bar3.BarItemVertIndent = 5;
             this.bar3.BarName = "Status bar";
             this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
             this.bar3.DockCol = 0;
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.HeaderConsoleConnected),
-            new DevExpress.XtraBars.LinkPersistInfo(this.LabelConsoleConnected)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.LabelHeaderConsoleConnected),
+            new DevExpress.XtraBars.LinkPersistInfo(this.LabelConsoleConnected),
+            new DevExpress.XtraBars.LinkPersistInfo(this.LabelHeaderStatus),
+            new DevExpress.XtraBars.LinkPersistInfo(this.LabelStatus)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
             // 
-            // HeaderConsoleConnected
+            // LabelHeaderConsoleConnected
             // 
-            this.HeaderConsoleConnected.Caption = "Console Connected   :";
-            this.HeaderConsoleConnected.Id = 53;
-            this.HeaderConsoleConnected.Name = "HeaderConsoleConnected";
+            this.LabelHeaderConsoleConnected.Caption = "Console Connected:";
+            this.LabelHeaderConsoleConnected.Id = 53;
+            this.LabelHeaderConsoleConnected.Name = "LabelHeaderConsoleConnected";
             // 
             // LabelConsoleConnected
             // 
             this.LabelConsoleConnected.Caption = "Idle";
             this.LabelConsoleConnected.Id = 54;
             this.LabelConsoleConnected.Name = "LabelConsoleConnected";
+            // 
+            // LabelHeaderStatus
+            // 
+            this.LabelHeaderStatus.Caption = "Status:";
+            this.LabelHeaderStatus.Id = 64;
+            this.LabelHeaderStatus.Name = "LabelHeaderStatus";
+            // 
+            // LabelStatus
+            // 
+            this.LabelStatus.Caption = "Status";
+            this.LabelStatus.Id = 63;
+            this.LabelStatus.Name = "LabelStatus";
             // 
             // barDockControlTop
             // 
@@ -1384,9 +1407,9 @@ namespace ModioX.Forms.Windows
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 794);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 796);
             this.barDockControlBottom.Manager = this.MainMenu;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1584, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1584, 25);
             // 
             // barDockControlLeft
             // 
@@ -1394,7 +1417,7 @@ namespace ModioX.Forms.Windows
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
             this.barDockControlLeft.Manager = this.MainMenu;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 769);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 771);
             // 
             // barDockControlRight
             // 
@@ -1402,7 +1425,17 @@ namespace ModioX.Forms.Windows
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1584, 25);
             this.barDockControlRight.Manager = this.MainMenu;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 769);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 771);
+            // 
+            // DockModInformation
+            // 
+            this.DockModInformation.CausesValidation = false;
+            this.DockModInformation.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.DockModInformation.Location = new System.Drawing.Point(2, 718);
+            this.DockModInformation.Manager = this.MainMenu;
+            this.DockModInformation.Name = "DockModInformation";
+            this.DockModInformation.Size = new System.Drawing.Size(373, 23);
+            this.DockModInformation.Text = "standaloneBarDockControl1";
             // 
             // barButtonItem6
             // 
@@ -1415,12 +1448,6 @@ namespace ModioX.Forms.Windows
             this.barButtonItem7.Caption = "XBOX 360";
             this.barButtonItem7.Id = 6;
             this.barButtonItem7.Name = "barButtonItem7";
-            // 
-            // barSubItem1
-            // 
-            this.barSubItem1.Caption = "barSubItem1";
-            this.barSubItem1.Id = 9;
-            this.barSubItem1.Name = "barSubItem1";
             // 
             // barToolbarsListItem1
             // 
@@ -1468,47 +1495,59 @@ namespace ModioX.Forms.Windows
             this.barDockingMenuItem1.Id = 36;
             this.barDockingMenuItem1.Name = "barDockingMenuItem1";
             // 
+            // barButtonItem27
+            // 
+            this.barButtonItem27.Caption = "Control Console (CCAPI)";
+            this.barButtonItem27.Id = 49;
+            this.barButtonItem27.Name = "barButtonItem27";
+            // 
+            // barButtonItem28
+            // 
+            this.barButtonItem28.Caption = "FileZilla";
+            this.barButtonItem28.Id = 50;
+            this.barButtonItem28.Name = "barButtonItem28";
+            // 
             // barToolbarsListItem2
             // 
             this.barToolbarsListItem2.Caption = "barToolbarsListItem2";
             this.barToolbarsListItem2.Id = 55;
             this.barToolbarsListItem2.Name = "barToolbarsListItem2";
             // 
-            // ButtonInstallFiles
+            // ButtonModInstallFiles
             // 
-            this.ButtonInstallFiles.Caption = "Install Files...";
-            this.ButtonInstallFiles.Id = 57;
-            this.ButtonInstallFiles.Name = "ButtonInstallFiles";
+            this.ButtonModInstallFiles.Caption = "Install Files...";
+            this.ButtonModInstallFiles.Id = 57;
+            this.ButtonModInstallFiles.Name = "ButtonModInstallFiles";
             // 
-            // ButtonUninstallFiles
+            // ButtonModUninstallFiles
             // 
-            this.ButtonUninstallFiles.Caption = "Uninstall Files...";
-            this.ButtonUninstallFiles.Id = 58;
-            this.ButtonUninstallFiles.Name = "ButtonUninstallFiles";
+            this.ButtonModUninstallFiles.Caption = "Uninstall Files...";
+            this.ButtonModUninstallFiles.Id = 58;
+            this.ButtonModUninstallFiles.Name = "ButtonModUninstallFiles";
             // 
-            // ButtonDownloadArchive
+            // ButtonModDownloadArchive
             // 
-            this.ButtonDownloadArchive.Caption = "Download Archive to...";
-            this.ButtonDownloadArchive.Id = 59;
-            this.ButtonDownloadArchive.Name = "ButtonDownloadArchive";
+            this.ButtonModDownloadArchive.Caption = "Download Archive to...";
+            this.ButtonModDownloadArchive.Id = 59;
+            this.ButtonModDownloadArchive.Name = "ButtonModDownloadArchive";
             // 
-            // ButtonAddToList
+            // ButtonModAddToList
             // 
-            this.ButtonAddToList.Caption = "Add to List...";
-            this.ButtonAddToList.Id = 60;
-            this.ButtonAddToList.Name = "ButtonAddToList";
+            this.ButtonModAddToList.Caption = "Add to List...";
+            this.ButtonModAddToList.Id = 60;
+            this.ButtonModAddToList.Name = "ButtonModAddToList";
             // 
-            // ButtonRemoveFromList
+            // ButtonModRemoveFromList
             // 
-            this.ButtonRemoveFromList.Caption = "Remove from List...";
-            this.ButtonRemoveFromList.Id = 61;
-            this.ButtonRemoveFromList.Name = "ButtonRemoveFromList";
+            this.ButtonModRemoveFromList.Caption = "Remove from List...";
+            this.ButtonModRemoveFromList.Id = 61;
+            this.ButtonModRemoveFromList.Name = "ButtonModRemoveFromList";
             // 
-            // ButtonReportAnIssue
+            // ButtonModReportAnIssue
             // 
-            this.ButtonReportAnIssue.Caption = "Report an Issue...";
-            this.ButtonReportAnIssue.Id = 62;
-            this.ButtonReportAnIssue.Name = "ButtonReportAnIssue";
+            this.ButtonModReportAnIssue.Caption = "Report an Issue...";
+            this.ButtonModReportAnIssue.Id = 62;
+            this.ButtonModReportAnIssue.Name = "ButtonModReportAnIssue";
             // 
             // labelControl2
             // 
@@ -1553,11 +1592,12 @@ namespace ModioX.Forms.Windows
             this.ComboBoxRegion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ComboBoxRegion.Size = new System.Drawing.Size(104, 22);
             this.ComboBoxRegion.TabIndex = 1166;
+            this.ComboBoxRegion.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRegion_SelectedIndexChanged);
             // 
             // ComboBoxModType
             // 
             this.ComboBoxModType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxModType.Location = new System.Drawing.Point(597, 39);
+            this.ComboBoxModType.Location = new System.Drawing.Point(604, 39);
             this.ComboBoxModType.MenuManager = this.MainMenu;
             this.ComboBoxModType.Name = "ComboBoxModType";
             this.ComboBoxModType.Properties.AllowFocused = false;
@@ -1568,11 +1608,12 @@ namespace ModioX.Forms.Windows
             this.ComboBoxModType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ComboBoxModType.Size = new System.Drawing.Size(96, 22);
             this.ComboBoxModType.TabIndex = 1165;
+            this.ComboBoxModType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxModType_SelectedIndexChanged);
             // 
             // ComboBoxSystemType
             // 
             this.ComboBoxSystemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxSystemType.Location = new System.Drawing.Point(459, 39);
+            this.ComboBoxSystemType.Location = new System.Drawing.Point(473, 39);
             this.ComboBoxSystemType.MenuManager = this.MainMenu;
             this.ComboBoxSystemType.Name = "ComboBoxSystemType";
             this.ComboBoxSystemType.Properties.AllowFocused = false;
@@ -1583,35 +1624,44 @@ namespace ModioX.Forms.Windows
             this.ComboBoxSystemType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ComboBoxSystemType.Size = new System.Drawing.Size(60, 22);
             this.ComboBoxSystemType.TabIndex = 1164;
+            this.ComboBoxSystemType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSystemType_SelectedIndexChanged);
             // 
             // LabelSelectRegion
             // 
             this.LabelSelectRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelSelectRegion.AutoSize = true;
+            this.LabelSelectRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSelectRegion.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelSelectRegion.Appearance.Options.UseFont = true;
+            this.LabelSelectRegion.Appearance.Options.UseForeColor = true;
             this.LabelSelectRegion.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelSelectRegion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSelectRegion.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectRegion.Location = new System.Drawing.Point(699, 42);
+            this.LabelSelectRegion.Location = new System.Drawing.Point(708, 42);
             this.LabelSelectRegion.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelSelectRegion.Name = "LabelSelectRegion";
-            this.LabelSelectRegion.Size = new System.Drawing.Size(49, 15);
+            this.LabelSelectRegion.Size = new System.Drawing.Size(42, 15);
             this.LabelSelectRegion.TabIndex = 1163;
             this.LabelSelectRegion.Text = "REGION";
             // 
             // LabelSearch
             // 
-            this.LabelSearch.AutoSize = true;
+            this.LabelSearch.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSearch.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelSearch.Appearance.Options.UseFont = true;
+            this.LabelSearch.Appearance.Options.UseForeColor = true;
             this.LabelSearch.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSearch.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSearch.Location = new System.Drawing.Point(4, 42);
+            this.LabelSearch.Location = new System.Drawing.Point(7, 42);
             this.LabelSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelSearch.Name = "LabelSearch";
-            this.LabelSearch.Size = new System.Drawing.Size(51, 15);
+            this.LabelSearch.Size = new System.Drawing.Size(44, 15);
             this.LabelSearch.TabIndex = 1157;
             this.LabelSearch.Text = "SEARCH";
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "barSubItem1";
+            this.barSubItem1.Id = 9;
+            this.barSubItem1.Name = "barSubItem1";
             // 
             // ColumnModsId
             // 
@@ -1850,6 +1900,7 @@ namespace ModioX.Forms.Windows
             // 
             // ProgressMods
             // 
+            this.ProgressMods.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ProgressMods.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ProgressMods.Appearance.Options.UseBackColor = true;
             this.ProgressMods.AppearanceCaption.Options.UseTextOptions = true;
@@ -1880,17 +1931,6 @@ namespace ModioX.Forms.Windows
             // 
             // GridViewMods
             // 
-            this.GridViewMods.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10});
             this.GridViewMods.GridControl = this.GridControlMods;
             this.GridViewMods.Name = "GridViewMods";
             this.GridViewMods.OptionsBehavior.Editable = false;
@@ -1900,76 +1940,7 @@ namespace ModioX.Forms.Windows
             this.GridViewMods.OptionsSelection.EnableAppearanceFocusedRow = false;
             this.GridViewMods.OptionsView.ShowGroupPanel = false;
             this.GridViewMods.OptionsView.ShowIndicator = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "gridColumn1";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "gridColumn2";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "gridColumn3";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "gridColumn4";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "gridColumn5";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "gridColumn6";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "gridColumn7";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "gridColumn8";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "gridColumn9";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 8;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "gridColumn10";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 9;
+            this.GridViewMods.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewMods_FocusedRowChanged);
             // 
             // NavigationBar
             // 
@@ -2029,26 +2000,27 @@ namespace ModioX.Forms.Windows
             this.groupControl1.TabIndex = 1185;
             this.groupControl1.Text = "CATEGORIES";
             // 
-            // groupControl2
+            // GroupModsInstalled
             // 
-            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.GroupModsInstalled.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.groupControl2.AppearanceCaption.Options.UseFont = true;
-            this.groupControl2.Controls.Add(this.ProgressModsInstalled);
-            this.groupControl2.Controls.Add(this.GridControlGameModsInstalled);
+            this.GroupModsInstalled.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.GroupModsInstalled.AppearanceCaption.Options.UseFont = true;
+            this.GroupModsInstalled.Controls.Add(this.ProgressModsInstalled);
+            this.GroupModsInstalled.Controls.Add(this.GridControlGameModsInstalled);
             buttonImageOptions1.Location = DevExpress.XtraEditors.ButtonPanel.ImageLocation.AfterText;
-            this.groupControl2.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            this.GroupModsInstalled.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Uninstall All", true, buttonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", 2, true, null, false, false, true, null, 2)});
-            this.groupControl2.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-            this.groupControl2.Location = new System.Drawing.Point(318, 579);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(870, 203);
-            this.groupControl2.TabIndex = 1179;
-            this.groupControl2.Text = "MODS INSTALLED";
+            this.GroupModsInstalled.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
+            this.GroupModsInstalled.Location = new System.Drawing.Point(318, 579);
+            this.GroupModsInstalled.Name = "GroupModsInstalled";
+            this.GroupModsInstalled.Size = new System.Drawing.Size(870, 203);
+            this.GroupModsInstalled.TabIndex = 1179;
+            this.GroupModsInstalled.Text = "MODS/PLUGINS INSTALLED";
             // 
             // ProgressModsInstalled
             // 
+            this.ProgressModsInstalled.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ProgressModsInstalled.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ProgressModsInstalled.Appearance.Options.UseBackColor = true;
             this.ProgressModsInstalled.AppearanceCaption.Options.UseTextOptions = true;
@@ -2077,19 +2049,30 @@ namespace ModioX.Forms.Windows
             // 
             this.GroupModInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupModInformation.Controls.Add(this.ScrollBarModInformation);
             this.GroupModInformation.Controls.Add(this.FlowPanelDetails);
             this.GroupModInformation.Controls.Add(this.GroupInstallFiles);
+            this.GroupModInformation.Controls.Add(this.DockModInformation);
             this.GroupModInformation.Location = new System.Drawing.Point(1195, 39);
             this.GroupModInformation.Name = "GroupModInformation";
             this.GroupModInformation.Size = new System.Drawing.Size(377, 743);
             this.GroupModInformation.TabIndex = 1160;
             this.GroupModInformation.Text = "MOD INFORMATION";
             // 
+            // ScrollBarModInformation
+            // 
+            this.ScrollBarModInformation.Location = new System.Drawing.Point(358, 23);
+            this.ScrollBarModInformation.Name = "ScrollBarModInformation";
+            this.ScrollBarModInformation.Size = new System.Drawing.Size(17, 580);
+            this.ScrollBarModInformation.TabIndex = 3;
+            this.ScrollBarModInformation.Visible = false;
+            this.ScrollBarModInformation.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollBarModInformation_Scroll);
+            // 
             // GroupInstallFiles
             // 
             this.GroupInstallFiles.Controls.Add(this.GridControlModsInstallFiles);
             this.GroupInstallFiles.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.GroupInstallFiles.Location = new System.Drawing.Point(2, 626);
+            this.GroupInstallFiles.Location = new System.Drawing.Point(2, 603);
             this.GroupInstallFiles.Name = "GroupInstallFiles";
             this.GroupInstallFiles.Size = new System.Drawing.Size(373, 115);
             this.GroupInstallFiles.TabIndex = 1;
@@ -2098,14 +2081,113 @@ namespace ModioX.Forms.Windows
             // ModsMenu
             // 
             this.ModsMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonInstallFiles),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonUninstallFiles),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonDownloadArchive),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonAddToList, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonRemoveFromList),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonReportAnIssue, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonModInstallFiles),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonModUninstallFiles),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonModDownloadArchive),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonModAddToList, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonModRemoveFromList),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonModReportAnIssue, true)});
             this.ModsMenu.Manager = this.MainMenu;
             this.ModsMenu.Name = "ModsMenu";
+            // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.BarMenuModInformation});
+            this.barManager1.DockControls.Add(this.barDockControl1);
+            this.barManager1.DockControls.Add(this.barDockControl2);
+            this.barManager1.DockControls.Add(this.barDockControl3);
+            this.barManager1.DockControls.Add(this.barDockControl4);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ButtonModInstall,
+            this.ButtonModUninstall,
+            this.ButtonModDownload,
+            this.ButtonModFavorite});
+            this.barManager1.MainMenu = this.BarMenuModInformation;
+            this.barManager1.MaxItemId = 4;
+            // 
+            // BarMenuModInformation
+            // 
+            this.BarMenuModInformation.BarItemVertIndent = 5;
+            this.BarMenuModInformation.BarName = "Main menu";
+            this.BarMenuModInformation.DockCol = 0;
+            this.BarMenuModInformation.DockRow = 0;
+            this.BarMenuModInformation.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.BarMenuModInformation.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonModInstall),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonModUninstall),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonModDownload),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonModFavorite)});
+            this.BarMenuModInformation.OptionsBar.DrawBorder = false;
+            this.BarMenuModInformation.OptionsBar.DrawDragBorder = false;
+            this.BarMenuModInformation.OptionsBar.UseWholeRow = true;
+            this.BarMenuModInformation.StandaloneBarDockControl = this.DockModInformation;
+            this.BarMenuModInformation.Text = "Main menu";
+            // 
+            // ButtonModInstall
+            // 
+            this.ButtonModInstall.Caption = "Install";
+            this.ButtonModInstall.Id = 0;
+            this.ButtonModInstall.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
+            this.ButtonModInstall.Name = "ButtonModInstall";
+            // 
+            // ButtonModUninstall
+            // 
+            this.ButtonModUninstall.Caption = "Uninstall";
+            this.ButtonModUninstall.Id = 1;
+            this.ButtonModUninstall.Name = "ButtonModUninstall";
+            // 
+            // ButtonModDownload
+            // 
+            this.ButtonModDownload.Caption = "Download";
+            this.ButtonModDownload.Id = 2;
+            this.ButtonModDownload.Name = "ButtonModDownload";
+            // 
+            // ButtonModFavorite
+            // 
+            this.ButtonModFavorite.Caption = "Favorite";
+            this.ButtonModFavorite.Id = 3;
+            this.ButtonModFavorite.Name = "ButtonModFavorite";
+            // 
+            // barDockControl1
+            // 
+            this.barDockControl1.CausesValidation = false;
+            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl1.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl1.Manager = this.barManager1;
+            this.barDockControl1.Size = new System.Drawing.Size(1584, 0);
+            // 
+            // barDockControl2
+            // 
+            this.barDockControl2.CausesValidation = false;
+            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl2.Location = new System.Drawing.Point(0, 821);
+            this.barDockControl2.Manager = this.barManager1;
+            this.barDockControl2.Size = new System.Drawing.Size(1584, 0);
+            // 
+            // barDockControl3
+            // 
+            this.barDockControl3.CausesValidation = false;
+            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl3.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl3.Manager = this.barManager1;
+            this.barDockControl3.Size = new System.Drawing.Size(0, 821);
+            // 
+            // barDockControl4
+            // 
+            this.barDockControl4.CausesValidation = false;
+            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl4.Location = new System.Drawing.Point(1584, 0);
+            this.barDockControl4.Manager = this.barManager1;
+            this.barDockControl4.Size = new System.Drawing.Size(0, 821);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "File Manager (Xbox)";
+            this.barButtonItem1.Id = 65;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // MainWindow
             // 
@@ -2117,13 +2199,17 @@ namespace ModioX.Forms.Windows
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1584, 821);
             this.Controls.Add(this.GroupModInformation);
-            this.Controls.Add(this.groupControl2);
+            this.Controls.Add(this.GroupModsInstalled);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.GroupModsLibrary);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Controls.Add(this.barDockControl3);
+            this.Controls.Add(this.barDockControl4);
+            this.Controls.Add(this.barDockControl2);
+            this.Controls.Add(this.barDockControl1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
@@ -2135,6 +2221,7 @@ namespace ModioX.Forms.Windows
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModioX - Beta v1.0.0";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.ContextMenuMods.ResumeLayout(false);
@@ -2163,44 +2250,44 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.NavigationBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GroupModsInstalled)).EndInit();
+            this.GroupModsInstalled.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GroupModInformation)).EndInit();
             this.GroupModInformation.ResumeLayout(false);
-            this.GroupModInformation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GroupInstallFiles)).EndInit();
             this.GroupInstallFiles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ModsMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label LabelSelectType;
+        private DevExpress.XtraEditors.LabelControl LabelSelectType;
         private System.Windows.Forms.FlowLayoutPanel FlowPanelDetails;
-        private System.Windows.Forms.Label LabelName;
-        private System.Windows.Forms.Label LabelHeaderAuthor;
-        private System.Windows.Forms.Label LabelHeaderVersion;
-        private System.Windows.Forms.Label LabelVersion;
-        private System.Windows.Forms.Label LabelHeaderGameType;
-        private System.Windows.Forms.Label LabelConfig;
-        private System.Windows.Forms.Label LabelDescription;
+        private DevExpress.XtraEditors.LabelControl LabelName;
+        private DevExpress.XtraEditors.LabelControl LabelHeaderAuthor;
+        private DevExpress.XtraEditors.LabelControl LabelHeaderVersion;
+        private DevExpress.XtraEditors.LabelControl LabelVersion;
+        private DevExpress.XtraEditors.LabelControl LabelHeaderGameType;
+        private DevExpress.XtraEditors.LabelControl LabelConfig;
+        private DevExpress.XtraEditors.LabelControl LabelDescription;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelConnectedConsole;
         private System.Windows.Forms.ToolStripSeparator ToolStripStatusSeperator0;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelStatus;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelConsole;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelStats;
-        private System.Windows.Forms.Label LabelHeaderSubmittedBy;
-        private System.Windows.Forms.Label LabelSubmittedBy;
-        private System.Windows.Forms.Label LabelAuthor;
-        private System.Windows.Forms.Label LabelHeaderModType;
-        private System.Windows.Forms.Label LabelType;
-        private System.Windows.Forms.Label LabelSelectSystemType;
-        private System.Windows.Forms.Label LabelHeaderFirmware;
-        private System.Windows.Forms.Label LabelFirmware;
-        private System.Windows.Forms.Label LabelCategory;
-        private System.Windows.Forms.Label LabelHeaderCategory;
+        private DevExpress.XtraEditors.LabelControl LabelHeaderSubmittedBy;
+        private DevExpress.XtraEditors.LabelControl LabelSubmittedBy;
+        private DevExpress.XtraEditors.LabelControl LabelAuthor;
+        private DevExpress.XtraEditors.LabelControl LabelHeaderModType;
+        private DevExpress.XtraEditors.LabelControl LabelType;
+        private DevExpress.XtraEditors.LabelControl LabelSelectSystemType;
+        private DevExpress.XtraEditors.LabelControl LabelHeaderFirmware;
+        private DevExpress.XtraEditors.LabelControl LabelFirmware;
+        private DevExpress.XtraEditors.LabelControl LabelCategory;
+        private DevExpress.XtraEditors.LabelControl LabelHeaderCategory;
         private DarkUI.Controls.DarkContextMenu ContextMenuMods;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsInstallFiles;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsUninstallFiles;
@@ -2211,15 +2298,15 @@ namespace ModioX.Forms.Windows
         private System.Windows.Forms.ToolStripButton ToolItemModDownload;
         private System.Windows.Forms.ToolStripButton ToolItemModUninstall;
         private System.Windows.Forms.ToolStripButton ToolItemModAddToFavorite;
-        private System.Windows.Forms.Label LabelHeaderName;
+        private DevExpress.XtraEditors.LabelControl LabelHeaderName;
         private System.Windows.Forms.Panel PanelModsLibraryFilters;
-        private System.Windows.Forms.Label LabelSearch;
+        private DevExpress.XtraEditors.LabelControl LabelSearch;
         private DevExpress.XtraGrid.GridControl GridControlGameModsInstalled;
         private System.Windows.Forms.ToolStripButton ToolItemGameModsUninstallAll;
         private System.Windows.Forms.ToolStripLabel LabelInstalledGameModsStatus;
-        private System.Windows.Forms.Label LabelHeaderRegion;
-        private System.Windows.Forms.Label LabelRegion;
-        private System.Windows.Forms.Label LabelSelectRegion;
+        private DevExpress.XtraEditors.LabelControl LabelHeaderRegion;
+        private DevExpress.XtraEditors.LabelControl LabelRegion;
+        private DevExpress.XtraEditors.LabelControl LabelSelectRegion;
         private DevExpress.XtraGrid.GridControl GridControlModsInstallFiles;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnInstallationFiles;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuModsAddToList;
@@ -2247,15 +2334,15 @@ namespace ModioX.Forms.Windows
         private System.Windows.Forms.DataGridViewImageColumn ColumnModsInstalledUninstall;
         private BarManager MainMenu;
         private Bar bar2;
-        private BarButtonItem ConnectMenuBar;
+        private BarButtonItem MenuBarItemConnect;
         private PopupMenu HelpMenu;
-        private BarButtonItem ToolsMenuBar;
+        private BarButtonItem MenuBarItemTools;
         private PopupMenu OptionsMenu;
-        private BarButtonItem ApplicationMenuBar;
+        private BarButtonItem MenuBarItemApplications;
         private PopupMenu ApplicationsMenu;
-        private BarButtonItem OptionsMenuBar;
+        private BarButtonItem MenuBarItemOptions;
         private PopupMenu ToolsMenu;
-        private BarButtonItem HelpMenuBar;
+        private BarButtonItem MenuBarItemHelp;
         private PopupMenu ConnectMenu;
         private Bar bar3;
         private BarDockControl barDockControlTop;
@@ -2277,7 +2364,7 @@ namespace ModioX.Forms.Windows
         private BarButtonItem ButtonEditApplications;
         private BarButtonItem ButtonEditLists;
         private BarButtonItem ButtonSettings;
-        private SkinBarSubItem skinBarSubItem1;
+        private SkinBarSubItem ButtonSkinManager;
         private BarButtonItem ButtonExit;
         private BarButtonItem ReportBugButton;
         private BarButtonItem DiscordServerButton;
@@ -2309,12 +2396,11 @@ namespace ModioX.Forms.Windows
         private BarButtonItem barButtonItem27;
         private BarButtonItem barButtonItem28;
         private Bar bar1;
-        private BarButtonItem barButtonItem1;
         private DevExpress.XtraGrid.Views.Grid.GridView GridViewModsInstallFiles;
         private DevExpress.XtraGrid.Views.Grid.GridView GridViewGameModsInstalled;
         private ComboBoxEdit ComboBoxRegion;
         private ComboBoxEdit ComboBoxModType;
-        private BarHeaderItem HeaderConsoleConnected;
+        private BarHeaderItem LabelHeaderConsoleConnected;
         private BarStaticItem LabelConsoleConnected;
         private BarToolbarsListItem barToolbarsListItem2;
         private DevExpress.XtraNavBar.NavBarControl NavigationBar;
@@ -2323,7 +2409,7 @@ namespace ModioX.Forms.Windows
         private DevExpress.XtraNavBar.NavBarGroup NavGroupResources;
         private DevExpress.XtraNavBar.NavBarGroup NavGroupMyLists;
         private GroupControl GroupModsLibrary;
-        private GroupControl groupControl2;
+        private GroupControl GroupModsInstalled;
         private GroupControl groupControl1;
         private Bar bar4;
         private GroupControl GroupModInformation;
@@ -2338,23 +2424,28 @@ namespace ModioX.Forms.Windows
         private DevExpress.XtraWaitForm.ProgressPanel ProgressModsInstalled;
         private DevExpress.XtraGrid.GridControl GridControlMods;
         private DevExpress.XtraGrid.Views.Grid.GridView GridViewMods;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private BarButtonItem ButtonConnectToXBOX;
-        private BarButtonItem ButtonInstallFiles;
-        private BarButtonItem ButtonUninstallFiles;
-        private BarButtonItem ButtonDownloadArchive;
-        private BarButtonItem ButtonAddToList;
-        private BarButtonItem ButtonRemoveFromList;
-        private BarButtonItem ButtonReportAnIssue;
+        private BarButtonItem ButtonModInstallFiles;
+        private BarButtonItem ButtonModUninstallFiles;
+        private BarButtonItem ButtonModDownloadArchive;
+        private BarButtonItem ButtonModAddToList;
+        private BarButtonItem ButtonModRemoveFromList;
+        private BarButtonItem ButtonModReportAnIssue;
         private PopupMenu ModsMenu;
+        private BarHeaderItem LabelHeaderStatus;
+        private BarStaticItem LabelStatus;
+        private StandaloneBarDockControl DockModInformation;
+        private BarDockControl barDockControl3;
+        private BarManager barManager1;
+        private Bar BarMenuModInformation;
+        private BarButtonItem ButtonModInstall;
+        private BarButtonItem ButtonModUninstall;
+        private BarButtonItem ButtonModDownload;
+        private BarButtonItem ButtonModFavorite;
+        private BarDockControl barDockControl1;
+        private BarDockControl barDockControl2;
+        private BarDockControl barDockControl4;
+        private VScrollBar ScrollBarModInformation;
+        private BarButtonItem barButtonItem1;
     }
 }

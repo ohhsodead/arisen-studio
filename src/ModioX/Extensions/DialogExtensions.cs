@@ -1,7 +1,7 @@
 ﻿using ModioX.Forms;
 using ModioX.Forms.Dialogs;
 using ModioX.Forms.Settings;
-using ModioX.Forms.Tools;
+using ModioX.Forms.Tools.PS3_Tools;
 using ModioX.Forms.Windows;
 using ModioX.Models.Release_Data;
 using ModioX.Models.Resources;
@@ -34,7 +34,7 @@ namespace ModioX.Extensions
         {
             using var dataViewDialog = new DataViewDialog { Text = title };
             dataViewDialog.LabelTitle.Text = subtitle;
-            dataViewDialog.LabelData.Text = body;
+            dataViewDialog.LabelBody.Text = body;
 
             dataViewDialog.MaximumSize = new Size(dataViewDialog.MaximumSize.Width, owner.Height + 100);
             dataViewDialog.Size = new Size(dataViewDialog.Width, dataViewDialog.Height + 15);

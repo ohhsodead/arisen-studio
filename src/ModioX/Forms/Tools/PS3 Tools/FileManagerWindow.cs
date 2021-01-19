@@ -14,7 +14,7 @@ using System.Windows.Forms;
 using FtpException = FluentFTP.FtpException;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
-namespace ModioX.Forms.Tools
+namespace ModioX.Forms.Tools.PS3_Tools
 {
     public partial class FileManagerWindow : XtraForm
     {

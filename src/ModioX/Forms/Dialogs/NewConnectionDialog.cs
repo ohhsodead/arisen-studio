@@ -22,7 +22,7 @@ namespace ModioX.Forms.Dialogs
         private void ConsolesWindow_Load(object sender, EventArgs e)
         {
             TextBoxConnectionName.Text = ConsoleProfile.Name;
-            ComboBoxConsoleType.Text = EnumExtensions.GetDescription(ConsoleProfile.Type);
+            ComboBoxConsoleType.SelectedIndex = ComboBoxConsoleType.Properties.Items.IndexOf(EnumExtensions.GetDescription(ConsoleProfile.Type));
             TextBoxConsoleAddress.Text = ConsoleProfile.Address;
             TextBoxConsolePort.Text = ConsoleProfile.Port.ToString();
 
@@ -38,24 +38,46 @@ namespace ModioX.Forms.Dialogs
             switch (ComboBoxConsoleType.SelectedIndex)
             {
                 case 0:
-                    ConsoleProfile.Type = ConsoleType.PlayStation3;
+                    ConsoleProfile.Type = ConsoleType.PlayStation3Fat;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.PS3;
+                    ImageConsole.Image = Properties.Resources.PlayStation3Fat;
+                    TextBoxConsolePort.Text = "21";
                     break;
                 case 1:
-                    ConsoleProfile.Type = ConsoleType.Xbox360FatWhite;
-                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
+                    ConsoleProfile.Type = ConsoleType.PlayStation3Slim;
+                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.PS3;
+                    ImageConsole.Image = Properties.Resources.PlayStation3Slim;
+                    TextBoxConsolePort.Text = "21";
                     break;
                 case 2:
-                    ConsoleProfile.Type = ConsoleType.Xbox360EliteFatBlack;
-                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
+                    ConsoleProfile.Type = ConsoleType.PlayStation3SuperSlim;
+                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.PS3;
+                    ImageConsole.Image = Properties.Resources.PlayStation3SuperSlim;
+                    TextBoxConsolePort.Text = "21";
                     break;
                 case 3:
-                    ConsoleProfile.Type = ConsoleType.Xbox360Slim;
+                    ConsoleProfile.Type = ConsoleType.Xbox360FatWhite;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
+                    ImageConsole.Image = Properties.Resources.XboxFat;
+                    TextBoxConsolePort.Text = "730";
                     break;
                 case 4:
+                    ConsoleProfile.Type = ConsoleType.Xbox360EliteFatBlack;
+                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
+                    ImageConsole.Image = Properties.Resources.XboxFatElite;
+                    TextBoxConsolePort.Text = "730";
+                    break;
+                case 5:
+                    ConsoleProfile.Type = ConsoleType.Xbox360Slim;
+                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
+                    ImageConsole.Image = Properties.Resources.XboxSlim;
+                    TextBoxConsolePort.Text = "730";
+                    break;
+                case 6:
                     ConsoleProfile.Type = ConsoleType.Xbox360SlimE;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
+                    ImageConsole.Image = Properties.Resources.XboxSlimE;
+                    TextBoxConsolePort.Text = "730";
                     break;
             }
         }

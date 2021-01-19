@@ -181,19 +181,25 @@
   <data name="app_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\Icons\app_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Fat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icons\Fat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="XboxFat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons\XboxFat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FatElite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icons\FatElite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="XboxFatElite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons\XboxFatElite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayStation3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icons\PlayStation3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayStation3Slim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons\PlayStation3Slim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Slim" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icons\Slim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="XboxSlim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons\XboxSlim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SlimE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icons\SlimE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayStation3SuperSlim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons\PlayStation3SuperSlim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayStation3Fat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons\PlayStation3Fat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XboxSlimE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons\XboxSlimE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

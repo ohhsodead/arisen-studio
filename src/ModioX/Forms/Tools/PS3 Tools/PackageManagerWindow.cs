@@ -10,7 +10,7 @@ using System.IO;
 using System.Windows.Forms;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
-namespace ModioX.Forms.Tools
+namespace ModioX.Forms.Tools.PS3_Tools
 {
     public partial class PackageManagerWindow : XtraForm
     {

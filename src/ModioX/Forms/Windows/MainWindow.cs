@@ -29,6 +29,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 using DevExpress.XtraBars;
+using XDevkit;
 
 namespace ModioX.Forms.Windows
 {
@@ -95,6 +96,11 @@ namespace ModioX.Forms.Windows
                 return ftpConnection;
             }
         }
+
+        /// <summary>
+        /// Conntains the Xbox console information.
+        /// </summary>
+        public static Xbox XboxConsole { get; private set; } = new Xbox();
 
         /// <summary>
         /// Form loading event.
@@ -191,6 +197,10 @@ namespace ModioX.Forms.Windows
             SetStatus($"Initialized ModioX ({UpdateExtensions.CurrentVersionName}) - Ready to connect to console...");
 
             Focus();
+
+#if DEBUG
+            XtraMessageBox.Show("Welcome! You are in debuggging mode for ModioX! :)");
+#endif
         }
 
         #region Header Menu Bar
@@ -259,9 +269,9 @@ namespace ModioX.Forms.Windows
 
         // APPLICATIONS MENU
 
-        private void MenuItemApplications_Click(object sender, EventArgs e)
+        private void MenuItemApplications_Click(object sender, ItemClickEventArgs e)
         {
-            var menuItemText = ((ToolStripMenuItem)sender).Text;
+            var menuItemText = ((BarButtonItem)sender).Caption;
 
             foreach (var application in Settings.ExternalApplications.Where(application => application.Name.Equals(menuItemText, StringComparison.OrdinalIgnoreCase)))
             {
@@ -446,7 +456,42 @@ namespace ModioX.Forms.Windows
 
         #region Search & Filtering Mods
 
-        private void TextBoxSearch_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Get/set the firmware for filtering mods.
+        /// </summary>
+        private string FilterModsFirmware { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Get/set the name for filtering mods.
+        /// </summary>
+        private string FilterModsName { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Get/set the region for filtering mods.
+        /// </summary>
+        private string FilterModsRegion { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Get/set the type for filtering mods.
+        /// </summary>
+        private string FilterModsType { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Get/set whether a custom list is selected by the user.
+        /// </summary>
+        private static bool IsCustomListSelected { get; set; } = false;
+
+        /// <summary>
+        /// Get/set the selected game data selected by the user.
+        /// </summary>
+        private static Category SelectedCategory { get; set; }
+
+        /// <summary>
+        /// Get/set the selected mods info selected by the user.
+        /// </summary>
+        private static ModItem SelectedModItem { get; set; }
+
+        private void TextBoxSearch_EditValueChanged(object sender, EventArgs e)
         {
             FilterModsName = TextBoxSearch.Text;
 
@@ -458,9 +503,21 @@ namespace ModioX.Forms.Windows
                 IsCustomListSelected);
         }
 
-        private void ComboBoxFirmware_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxSystemType_SelectedIndexChanged(object sender, EventArgs e)
         {
             FilterModsFirmware = ComboBoxSystemType.SelectedIndex == 0 ? string.Empty : ComboBoxSystemType.SelectedText;
+
+            LoadModsByCategoryId(SelectedCategory.Id,
+                FilterModsName,
+                FilterModsFirmware,
+                FilterModsType,
+                FilterModsRegion,
+                IsCustomListSelected);
+        }
+
+        private void ComboBoxModType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterModsType = ComboBoxModType.SelectedIndex == 0 ? string.Empty : ComboBoxModType.SelectedText;
 
             LoadModsByCategoryId(SelectedCategory.Id,
                 FilterModsName,
@@ -473,18 +530,6 @@ namespace ModioX.Forms.Windows
         private void ComboBoxRegion_SelectedIndexChanged(object sender, EventArgs e)
         {
             FilterModsRegion = ComboBoxRegion.SelectedIndex == 0 ? string.Empty : ComboBoxRegion.SelectedText;
-
-            LoadModsByCategoryId(SelectedCategory.Id,
-                FilterModsName,
-                FilterModsFirmware,
-                FilterModsType,
-                FilterModsRegion,
-                IsCustomListSelected);
-        }
-
-        private void ComboBoxType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FilterModsType = ComboBoxModType.SelectedIndex == 0 ? string.Empty : ComboBoxModType.SelectedText;
 
             LoadModsByCategoryId(SelectedCategory.Id,
                 FilterModsName,
@@ -556,19 +601,7 @@ namespace ModioX.Forms.Windows
         {
             if (GridViewMods.SelectedRowsCount != 0)
             {
-                var selectedRows = GridViewMods.GetSelectedRows();
-
-                foreach (int rowHandle in selectedRows)
-                {
-                    if (rowHandle >= 0)
-                    {
-                        var cellValue = GridViewMods.GetRowCellValue(rowHandle, "Id");
-                    }
-                }
-
                 var modItem = Database.Mods.GetModById(int.Parse(GridViewMods.GetRowCellDisplayText(GridViewMods.GetSelectedRows()[0], "Id")));
-                XtraMessageBox.Show(GridViewMods.GetRowCellDisplayText(GridViewMods.GetSelectedRows()[0], "Id"));
-                //var modItem = Database.Mods.GetModById(int.Parse(cellValue.ToString()));
 
                 if (modItem != null)
                 {
@@ -713,30 +746,27 @@ namespace ModioX.Forms.Windows
 
             GridControlModsInstallFiles.DataSource = dt;
 
-            ToolItemModInstall.Enabled = IsConsoleConnected;
+            ButtonModInstall.Enabled = IsConsoleConnected;
 
             if (modItem.GetCategoryType(Database.CategoriesData) == CategoryType.Game)
             {
-                ToolItemModUninstall.Enabled = Settings.GetInstalledGameMod(modItem.GameId) != null && Settings.GetInstalledGameMod(modItem.GameId).ModId.Equals(modItem.Id) && IsConsoleConnected;
-                ContextMenuModsUninstallFiles.Enabled = Settings.GetInstalledGameMod(modItem.GameId) != null && Settings.GetInstalledGameMod(modItem.GameId).ModId.Equals(modItem.Id) && IsConsoleConnected;
+                ButtonModUninstall.Enabled = Settings.GetInstalledGameMod(modItem.GameId) != null && Settings.GetInstalledGameMod(modItem.GameId).ModId.Equals(modItem.Id) && IsConsoleConnected;
+                ButtonModUninstallFiles.Enabled = Settings.GetInstalledGameMod(modItem.GameId) != null && Settings.GetInstalledGameMod(modItem.GameId).ModId.Equals(modItem.Id) && IsConsoleConnected;
             }
             else if (modItem.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew)
             {
-                ToolItemModUninstall.Enabled = IsConsoleConnected;
-                ContextMenuModsUninstallFiles.Enabled = IsConsoleConnected;
+                ButtonModUninstall.Enabled = IsConsoleConnected;
+                ButtonModUninstallFiles.Enabled = IsConsoleConnected;
             }
             else if (modItem.GetCategoryType(Database.CategoriesData) == CategoryType.Resource)
             {
-                ToolItemModUninstall.Enabled = !modItem.DownloadFiles.Any(x => x.InstallsToRebugFolder) && IsConsoleConnected;
-                ContextMenuModsUninstallFiles.Enabled = !modItem.DownloadFiles.Any(x => x.InstallsToRebugFolder) && IsConsoleConnected;
+                ButtonModUninstall.Enabled = !modItem.DownloadFiles.Any(x => x.InstallsToRebugFolder) && IsConsoleConnected;
+                ButtonModUninstallFiles.Enabled = !modItem.DownloadFiles.Any(x => x.InstallsToRebugFolder) && IsConsoleConnected;
             }
 
-            ToolItemModAddToFavorite.Image = Settings.FavoritedIds.Contains(modItem.Id)
-                ? ImageExtensions.ResizeBitmap(Resources.filled_heart, 20, 20)
-                : ImageExtensions.ResizeBitmap(Resources.heart, 20, 20);
-            ToolItemModAddToFavorite.Text = Settings.FavoritedIds.Contains(modItem.Id) ? "Unfavorite" : "Favorite";
-            ToolItemModAddToFavorite.AutoSize = false;
-            ToolItemModAddToFavorite.AutoSize = true;
+            ButtonModFavorite.Caption = Settings.FavoritedIds.Contains(modItem.Id) ? "Unfavorite" : "Favorite";
+
+            UpdateScrollBars();
         }
 
         /// <summary>
@@ -860,6 +890,7 @@ namespace ModioX.Forms.Windows
 
             // Check whether item is a custom list
             bool isCustomList = Settings.CustomLists.Any(customList => customList.Name.Equals(categoryId));
+            IsCustomListSelected = isCustomList;
 
             if (isCustomList)
             {
@@ -1007,7 +1038,6 @@ namespace ModioX.Forms.Windows
                     ? ImageExtensions.ResizeBitmap(Resources.filled_heart, 20, 20)
                     : ImageExtensions.ResizeBitmap(Resources.heart, 20, 20));
                 */
-
                 
                 dt.Rows.Add(modItem.Id,
                     modItem.Name,
@@ -1024,8 +1054,7 @@ namespace ModioX.Forms.Windows
                     //? ImageExtensions.ResizeBitmap(Resources.filled_heart, 20, 20)
                     //: ImageExtensions.ResizeBitmap(Resources.heart, 20, 20));
                 
-
-                
+                /*
                 //add a new row
                 GridViewMods.AddNewRow();
                 //set a new row cell value. The static GridControl.NewItemRowHandle field allows you to retrieve the added row
@@ -1039,11 +1068,27 @@ namespace ModioX.Forms.Windows
                 GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[7], installFiles.Count() + (installFiles.Count() > 1 ? " Files" : " File"));
                 GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[8], ImageExtensions.ResizeBitmap(Resources.install, 20, 20));
                 GridViewMods.SetRowCellValue(GridControl.NewItemRowHandle, GridViewMods.Columns[9], ImageExtensions.ResizeBitmap(Resources.download_from_the_cloud, 20, 20));
-
+                */
             }
 
             GridControlMods.DataSource = dt;
+
             GridViewMods.Columns[0].Visible = false;
+
+            //GridViewMods.Columns[1].GetHeaderBestWidth();
+            GridViewMods.Columns[2].Width = 50;
+            GridViewMods.Columns[3].Width = 50;
+            GridViewMods.Columns[4].Width = 45;
+            GridViewMods.Columns[5].Width = 35;
+            GridViewMods.Columns[6].Width = 50;
+            GridViewMods.Columns[7].Width = 35;
+            GridViewMods.Columns[8].Width = 30;
+            GridViewMods.Columns[8].MinWidth = 30;
+            GridViewMods.Columns[9].Width = 30;
+            GridViewMods.Columns[9].MinWidth = 30;
+
+            GridViewMods.Columns[8].Caption = " ";
+            GridViewMods.Columns[9].Caption = " ";
 
             ProgressMods.Visible = GridViewMods.RowCount == 0;
 
@@ -1060,9 +1105,9 @@ namespace ModioX.Forms.Windows
                 GridControlMods.Enabled = false;
             }
 
-            ComboBoxModType.SelectedIndexChanged -= ComboBoxType_SelectedIndexChanged;
+            ComboBoxModType.SelectedIndexChanged -= ComboBoxModType_SelectedIndexChanged;
             ComboBoxModType.SelectedIndex = string.IsNullOrEmpty(type) ? 0 : ComboBoxModType.Properties.Items.IndexOf(type);
-            ComboBoxModType.SelectedIndexChanged += ComboBoxType_SelectedIndexChanged;
+            ComboBoxModType.SelectedIndexChanged += ComboBoxModType_SelectedIndexChanged;
 
             ComboBoxRegion.SelectedIndexChanged -= ComboBoxRegion_SelectedIndexChanged;
             ComboBoxRegion.SelectedIndex = string.IsNullOrEmpty(region) ? 0 : ComboBoxRegion.Properties.Items.IndexOf(region);
@@ -1129,40 +1174,7 @@ namespace ModioX.Forms.Windows
 
         #endregion
 
-        /// <summary>
-        /// Get/set the firmware for filtering mods.
-        /// </summary>
-        private string FilterModsFirmware { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Get/set the name for filtering mods.
-        /// </summary>
-        private string FilterModsName { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Get/set the region for filtering mods.
-        /// </summary>
-        private string FilterModsRegion { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Get/set the type for filtering mods.
-        /// </summary>
-        private string FilterModsType { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Get/set whether a custom list is selected by the user.
-        /// </summary>
-        private static bool IsCustomListSelected { get; set; } = false;
-
-        /// <summary>
-        /// Get/set the selected game data selected by the user.
-        /// </summary>
-        private static Category SelectedCategory { get; set; }
-
-        /// <summary>
-        /// Get/set the selected mods info selected by the user.
-        /// </summary>
-        private static ModItem SelectedModItem { get; set; }
+        #region Connect & Disconnect Console (Soon to add XBOX)
 
         /// <summary>
         /// Attempt to connect to the console profile by opening the FTP connection.
@@ -1173,33 +1185,47 @@ namespace ModioX.Forms.Windows
             {
                 SetStatus($"Connecting to {ConsoleProfile.Name} ({ConsoleProfile.Address})...");
 
-                using (var ftpConnection = FtpConnection)
+                if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
                 {
-                    ;
+                    using (var ftpConnection = FtpConnection)
+                    {
+                        ;
+                    }
+
+                    FtpClient = new FtpClient
+                    {
+                        Host = ConsoleProfile.Address,
+                        Port = ConsoleProfile.Port,
+                        Credentials = ConsoleProfile.UseDefaultCredentials
+                        ? new NetworkCredential("anonymous", "anonymous")
+                        : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password)
+                    };
+
+                    FtpClient.Connect();
+
+                    IsConsoleConnected = true;
+                    SetStatusConsole(ConsoleProfile);
+
+                    IsWebManInstalled = ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3 ? WebManExtensions.IsWebManInstalled(ConsoleProfile.Address, ConsoleProfile.Port) : false;
+
+                    if (IsWebManInstalled && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+                    {
+                        WebManExtensions.NotifyPopup(ConsoleProfile.Address, "You are now connected to ModioX ★");
+                    }
+
+                    ButtonConnectToPS3.Caption = "Disconnect from console...";
+                }
+                else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+                {
+                    if (XboxConsole.Connect(ConsoleProfile.Address, ConsoleProfile.Port))
+                    {
+                        IsConsoleConnected = true;
+                        SetStatusConsole(ConsoleProfile);
+
+                        ButtonConnectToXBOX.Caption = "Disconnect from console...";
+                    }
                 }
 
-                FtpClient = new FtpClient
-                {
-                    Host = ConsoleProfile.Address,
-                    Port = ConsoleProfile.Port,
-                    Credentials = ConsoleProfile.UseDefaultCredentials
-                    ? new NetworkCredential("anonymous", "anonymous")
-                    : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password)
-                };
-
-                FtpClient.Connect();
-
-                IsConsoleConnected = true;
-                SetStatusConsole(ConsoleProfile);
-
-                IsWebManInstalled = ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3 ? WebManExtensions.IsWebManInstalled(ConsoleProfile.Address, ConsoleProfile.Port) : false;
-
-                if (IsWebManInstalled && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
-                {
-                    WebManExtensions.NotifyPopup(ConsoleProfile.Address, "You are now connected to ModioX ★");
-                }
-
-                ButtonConnectToPS3.Caption = "Disconnect from console...";
                 SetStatus($"Successfully connected to console.");
 
                 EnableConsoleActions();
@@ -1244,6 +1270,8 @@ namespace ModioX.Forms.Windows
 
             XtraMessageBox.Show("Successfully disconnected from console.", "Success");
         }
+
+        #endregion
 
         /// <summary>
         /// Load all of the currently installed game mods
@@ -1340,144 +1368,6 @@ namespace ModioX.Forms.Windows
 
             ToolItemModAddToFavorite.AutoSize = false;
             ToolItemModAddToFavorite.AutoSize = true;
-        }
-
-        /// <summary>
-        /// Enable or disable console-only actions.
-        /// </summary>
-        private void EnableConsoleActions()
-        {
-            ButtonPackageManager.Enabled = IsConsoleConnected;
-            ButtonFileManager.Enabled = IsConsoleConnected;
-            ButtonWebManControls.Enabled = IsConsoleConnected && IsWebManInstalled;
-            ToolItemModInstall.Enabled = IsConsoleConnected;
-            ContextMenuModsInstallFiles.Enabled = IsConsoleConnected;
-
-            if (ToolItemModUninstall.Enabled)
-            {
-                ToolItemModUninstall.Enabled = IsConsoleConnected;
-            }
-
-            if (ContextMenuModsUninstallFiles.Enabled)
-            {
-                ContextMenuModsUninstallFiles.Enabled = IsConsoleConnected;
-            }
-        }
-
-        /// <summary>
-        /// Load application settings from a json data file.
-        /// </summary>
-        public void LoadSettings()
-        {
-            try
-            {
-                SetStatus("Loading settings data...");
-
-                if (File.Exists(UserFolders.AppSettingsFile))
-                {
-                    using StreamReader streamReader = new StreamReader(UserFolders.AppSettingsFile);
-                    Settings = JsonConvert.DeserializeObject<SettingsData>(streamReader.ReadToEnd());
-                }
-                else
-                {
-                    return;
-                }
-
-                SetStatus("Successfully loaded settings data.");
-
-                if (Settings.ConsoleProfiles.Count < 1)
-                {
-                    Settings.ConsoleProfiles.Add(
-                        new ConsoleProfile
-                        {
-                            Name = "Default Console",
-                            Address = "192.168.0.42",
-                            Port = 21,
-                            Username = "anonymous",
-                            Password = string.Empty,
-                            UseDefaultCredentials = true
-                        });
-                }
-
-                if (Settings.ExternalApplications.Count < 1)
-                {
-                    Settings.ExternalApplications.Add(
-                        new ExternalApplication(
-                            "Control Console (CCAPI)",
-                            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"ControlConsoleAPI\CCAPIConsoleManager.exe"))
-                    );
-
-                    Settings.ExternalApplications.Add(
-                        new ExternalApplication(
-                            "FileZilla",
-                            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), @"FileZilla FTP Client\filezilla.exe"))
-                    );
-                }
-
-                // Update UI Properties from Settings
-                //MenuItemApplications.DropDownItems.Clear();//TODO: MUST FIX!!!!
-
-                foreach (ExternalApplication application in Settings.ExternalApplications)
-                {
-                    var menuItem = new ToolStripMenuItem(application.Name, null, MenuItemApplications_Click);
-                   // ApplicationsMenu.DropDownItems.Add(menuItem);
-                }
-            }
-            catch (Exception ex)
-            {
-                SetStatus("Unable to load settings data. A new settings file will be created to fix this. Error: " + ex.Message, ex);
-                Settings = new SettingsData();
-                SaveSettings();
-                Application.Restart();
-            }
-        }
-
-        /// <summary>
-        /// Save application settings to a json data file.
-        /// </summary>
-        public void SaveSettings()
-        {
-            try
-            {
-                SetStatus("Saving settings data...");
-
-                if (!Directory.Exists(UserFolders.AppDataDirectory))
-                {
-                    _ = Directory.CreateDirectory(UserFolders.AppDataDirectory);
-                }
-
-                using (StreamWriter streamWriter = new StreamWriter(UserFolders.AppSettingsFile))
-                {
-                    streamWriter.Write(JsonConvert.SerializeObject(Settings));
-                }
-
-                SetStatus("Successfully saved settings data.");
-            }
-            catch (Exception ex)
-            {
-                SetStatus("Unable to save settings data. Error: " + ex.Message, ex);
-            }
-        }
-
-        /// <summary>
-        /// Set the current process status in the tool strip.
-        /// </summary>
-        /// <param name="status"></param>
-        /// <param name="ex"></param>
-        public void SetStatus(string status, Exception ex = null)
-        {
-            ToolStripLabelStatus.Text = status;
-            //Refresh();
-
-            switch (ex)
-            {
-                case null:
-                    Program.Log.Info(status);
-                    break;
-                default:
-                    Program.Log.Error(ex, status);
-                    break;
-            }
         }
 
         #region Install/Uninstall Mods to Console
@@ -2112,6 +2002,28 @@ namespace ModioX.Forms.Windows
         #endregion
 
         /// <summary>
+        /// Enable or disable console-only actions.
+        /// </summary>
+        private void EnableConsoleActions()
+        {
+            ButtonPackageManager.Enabled = IsConsoleConnected;
+            ButtonFileManager.Enabled = IsConsoleConnected;
+            ButtonWebManControls.Enabled = IsConsoleConnected && IsWebManInstalled;
+            ToolItemModInstall.Enabled = IsConsoleConnected;
+            ContextMenuModsInstallFiles.Enabled = IsConsoleConnected;
+
+            if (ToolItemModUninstall.Enabled)
+            {
+                ToolItemModUninstall.Enabled = IsConsoleConnected;
+            }
+
+            if (ContextMenuModsUninstallFiles.Enabled)
+            {
+                ContextMenuModsUninstallFiles.Enabled = IsConsoleConnected;
+            }
+        }
+
+        /// <summary>
         /// Set the current connected console status in the tool strip.
         /// </summary>
         /// <param name="consoleProfile"></param>
@@ -2120,11 +2032,143 @@ namespace ModioX.Forms.Windows
             LabelConsoleConnected.Caption = consoleProfile == null ? "Idle" : $"{consoleProfile.Name} ({consoleProfile.Address})";
         }
 
-        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        /// <summary>
+        /// Set the current process status in the tool strip.
+        /// </summary>
+        /// <param name="status"></param>
+        /// <param name="ex"></param>
+        public void SetStatus(string status, Exception ex = null)
         {
-            var Main = new Dialogs.ConnectionDialogTest();
-            Main.ShowDialog(this);
+            LabelStatus.Caption = status;
+            //Refresh();
+
+            switch (ex)
+            {
+                case null:
+                    Program.Log.Info(status);
+                    break;
+                default:
+                    Program.Log.Error(ex, status);
+                    break;
+            }
         }
 
+        /// <summary>
+        /// Load application settings from a Json file.
+        /// </summary>
+        public void LoadSettings()
+        {
+            try
+            {
+                SetStatus("Loading settings data...");
+
+                if (File.Exists(UserFolders.AppSettingsFile))
+                {
+                    using StreamReader streamReader = new StreamReader(UserFolders.AppSettingsFile);
+                    Settings = JsonConvert.DeserializeObject<SettingsData>(streamReader.ReadToEnd());
+                }
+                else
+                {
+                    return;
+                }
+
+                SetStatus("Successfully loaded settings data.");
+
+                if (Settings.ConsoleProfiles.Count < 1)
+                {
+                    Settings.ConsoleProfiles.Add(
+                        new ConsoleProfile
+                        {
+                            Name = "Default Console",
+                            Address = "192.168.0.42",
+                            Port = 21,
+                            Username = "anonymous",
+                            Password = string.Empty,
+                            UseDefaultCredentials = true
+                        });
+                }
+
+                if (Settings.ExternalApplications.Count < 1)
+                {
+                    Settings.ExternalApplications.Add(
+                        new ExternalApplication(
+                            "Control Console (CCAPI)",
+                            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"ControlConsoleAPI\CCAPIConsoleManager.exe"))
+                    );
+
+                    Settings.ExternalApplications.Add(
+                        new ExternalApplication(
+                            "FileZilla",
+                            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), @"FileZilla FTP Client\filezilla.exe"))
+                    );
+                }
+
+                ApplicationsMenu.ItemLinks.Clear();
+
+                foreach (ExternalApplication application in Settings.ExternalApplications)
+                {
+                    var barButtonItem = new BarButtonItem() { Caption = application.Name };
+                    barButtonItem.ItemClick += new ItemClickEventHandler(MenuItemApplications_Click);
+                    ApplicationsMenu.AddItem(barButtonItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                SetStatus("Unable to load settings data. A new settings file will be created to fix this. Error: " + ex.Message, ex);
+                Settings = new SettingsData();
+                SaveSettings();
+                Application.Restart();
+            }
+        }
+
+        /// <summary>
+        /// Save application settings to a Json file.
+        /// </summary>
+        public void SaveSettings()
+        {
+            try
+            {
+                SetStatus("Saving settings data...");
+
+                if (!Directory.Exists(UserFolders.AppDataDirectory))
+                {
+                    _ = Directory.CreateDirectory(UserFolders.AppDataDirectory);
+                }
+
+                using (StreamWriter streamWriter = new StreamWriter(UserFolders.AppSettingsFile))
+                {
+                    streamWriter.Write(JsonConvert.SerializeObject(Settings));
+                }
+
+                SetStatus("Successfully saved settings data.");
+            }
+            catch (Exception ex)
+            {
+                SetStatus("Unable to save settings data. Error: " + ex.Message, ex);
+            }
+        }
+
+        private void ScrollBarModInformation_Scroll(object sender, ScrollEventArgs e)
+        {
+            FlowPanelDetails.VerticalScroll.Value = ScrollBarModInformation.Value;
+        }
+
+        private void UpdateScrollBars()
+        {
+            FlowPanelDetails.HorizontalScroll.Visible = false;
+
+            ScrollBarModInformation.Visible = FlowPanelDetails.VerticalScroll.Visible;
+            ScrollBarModInformation.Minimum = FlowPanelDetails.VerticalScroll.Minimum;
+            ScrollBarModInformation.Maximum = FlowPanelDetails.VerticalScroll.Maximum;
+            ScrollBarModInformation.SmallChange = FlowPanelDetails.VerticalScroll.SmallChange;
+            ScrollBarModInformation.LargeChange = FlowPanelDetails.VerticalScroll.LargeChange;
+            ScrollBarModInformation.Value = FlowPanelDetails.VerticalScroll.Value;
+        }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var a = new Tools.XBOX_Tools.FileManagerWindow();
+            a.ShowDialog(this);
+        }
     }
 }

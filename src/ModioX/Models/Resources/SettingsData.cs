@@ -406,7 +406,7 @@ namespace ModioX.Models.Resources
     {
         public string Name { get; set; }
 
-        public ConsoleType Type { get; set; } = ConsoleType.PlayStation3;
+        public ConsoleType Type { get; set; } = ConsoleType.PlayStation3Fat;
 
         public ConsoleTypePrefix TypePrefix { get; set; } = ConsoleTypePrefix.PS3;
 
@@ -431,8 +431,14 @@ namespace ModioX.Models.Resources
     /// </summary>
     public enum ConsoleType
     {
-        [Description("PlayStation 3")]
-        PlayStation3,
+        [Description("PlayStation 3 (Fat)")]
+        PlayStation3Fat,
+
+        [Description("PlayStation 3 (Slim)")]
+        PlayStation3Slim,
+
+        [Description("PlayStation 3 (Super Slim)")]
+        PlayStation3SuperSlim,
 
         [Description("Xbox 360 (Fat/White)")]
         Xbox360FatWhite,

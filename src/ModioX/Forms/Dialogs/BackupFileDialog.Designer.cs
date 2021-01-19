@@ -29,31 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupFileDialog));
-            this.ButtonSaveBackup = new DarkUI.Controls.DarkButton();
             this.LabelLocalFilePath = new DarkUI.Controls.DarkLabel();
-            this.TextBoxLocalPath = new DarkUI.Controls.DarkTextBox();
             this.LabelInstallFilePath = new DarkUI.Controls.DarkLabel();
-            this.TextBoxConsolePath = new DarkUI.Controls.DarkTextBox();
             this.LabelGameId = new DarkUI.Controls.DarkLabel();
-            this.TextBoxGameId = new DarkUI.Controls.DarkTextBox();
             this.LabelFilename = new DarkUI.Controls.DarkLabel();
-            this.TextBoxFileName = new DarkUI.Controls.DarkTextBox();
-            this.ButtonLocalPath = new DarkUI.Controls.DarkButton();
-            this.ButtonCancel = new DarkUI.Controls.DarkButton();
+            this.TextBoxFileName = new DevExpress.XtraEditors.TextEdit();
+            this.TextBoxGameId = new DevExpress.XtraEditors.TextEdit();
+            this.TextBoxConsolePath = new DevExpress.XtraEditors.TextEdit();
+            this.TextBoxLocalPath = new DevExpress.XtraEditors.TextEdit();
+            this.ButtonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonOK = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonBrowseLocalPath = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxFileName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxGameId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsolePath.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxLocalPath.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ButtonSaveBackup
-            // 
-            this.ButtonSaveBackup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSaveBackup.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.ButtonSaveBackup.Location = new System.Drawing.Point(231, 173);
-            this.ButtonSaveBackup.Margin = new System.Windows.Forms.Padding(5);
-            this.ButtonSaveBackup.Name = "ButtonSaveBackup";
-            this.ButtonSaveBackup.Padding = new System.Windows.Forms.Padding(5);
-            this.ButtonSaveBackup.Size = new System.Drawing.Size(80, 25);
-            this.ButtonSaveBackup.TabIndex = 6;
-            this.ButtonSaveBackup.Text = "OK";
-            this.ButtonSaveBackup.Click += new System.EventHandler(this.ButtonBackupSave_Click);
             // 
             // LabelLocalFilePath
             // 
@@ -66,18 +57,6 @@
             this.LabelLocalFilePath.TabIndex = 7;
             this.LabelLocalFilePath.Text = "Local File Path:";
             // 
-            // TextBoxLocalPath
-            // 
-            this.TextBoxLocalPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.TextBoxLocalPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxLocalPath.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBoxLocalPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxLocalPath.Location = new System.Drawing.Point(12, 140);
-            this.TextBoxLocalPath.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.TextBoxLocalPath.Name = "TextBoxLocalPath";
-            this.TextBoxLocalPath.Size = new System.Drawing.Size(248, 23);
-            this.TextBoxLocalPath.TabIndex = 4;
-            // 
             // LabelInstallFilePath
             // 
             this.LabelInstallFilePath.AutoSize = true;
@@ -89,21 +68,6 @@
             this.LabelInstallFilePath.TabIndex = 9;
             this.LabelInstallFilePath.Text = "Install File Path:";
             // 
-            // TextBoxConsolePath
-            // 
-            this.TextBoxConsolePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.TextBoxConsolePath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxConsolePath.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBoxConsolePath.Enabled = false;
-            this.TextBoxConsolePath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxConsolePath.Location = new System.Drawing.Point(12, 87);
-            this.TextBoxConsolePath.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.TextBoxConsolePath.Name = "TextBoxConsolePath";
-            this.TextBoxConsolePath.ReadOnly = true;
-            this.TextBoxConsolePath.Size = new System.Drawing.Size(299, 23);
-            this.TextBoxConsolePath.TabIndex = 3;
-            this.TextBoxConsolePath.TextChanged += new System.EventHandler(this.TextBoxConsolePath_TextChanged);
-            // 
             // LabelGameId
             // 
             this.LabelGameId.AutoSize = true;
@@ -114,20 +78,6 @@
             this.LabelGameId.Size = new System.Drawing.Size(54, 15);
             this.LabelGameId.TabIndex = 12;
             this.LabelGameId.Text = "Game Id:";
-            // 
-            // TextBoxGameId
-            // 
-            this.TextBoxGameId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.TextBoxGameId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxGameId.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBoxGameId.Enabled = false;
-            this.TextBoxGameId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxGameId.Location = new System.Drawing.Point(176, 34);
-            this.TextBoxGameId.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.TextBoxGameId.Name = "TextBoxGameId";
-            this.TextBoxGameId.ReadOnly = true;
-            this.TextBoxGameId.Size = new System.Drawing.Size(135, 23);
-            this.TextBoxGameId.TabIndex = 2;
             // 
             // LabelFilename
             // 
@@ -142,41 +92,82 @@
             // 
             // TextBoxFileName
             // 
-            this.TextBoxFileName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.TextBoxFileName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxFileName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxFileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxFileName.Enabled = false;
-            this.TextBoxFileName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxFileName.Location = new System.Drawing.Point(12, 34);
-            this.TextBoxFileName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.TextBoxFileName.Location = new System.Drawing.Point(12, 32);
             this.TextBoxFileName.Name = "TextBoxFileName";
-            this.TextBoxFileName.ReadOnly = true;
-            this.TextBoxFileName.Size = new System.Drawing.Size(158, 23);
-            this.TextBoxFileName.TabIndex = 1;
+            this.TextBoxFileName.Properties.AllowFocused = false;
+            this.TextBoxFileName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxFileName.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxFileName.Size = new System.Drawing.Size(158, 22);
+            this.TextBoxFileName.TabIndex = 0;
             // 
-            // ButtonLocalPath
+            // TextBoxGameId
             // 
-            this.ButtonLocalPath.Location = new System.Drawing.Point(266, 140);
-            this.ButtonLocalPath.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ButtonLocalPath.Name = "ButtonLocalPath";
-            this.ButtonLocalPath.Padding = new System.Windows.Forms.Padding(5);
-            this.ButtonLocalPath.Size = new System.Drawing.Size(45, 23);
-            this.ButtonLocalPath.TabIndex = 5;
-            this.ButtonLocalPath.Text = "...";
-            this.ButtonLocalPath.Click += new System.EventHandler(this.ButtonLocalPath_Click);
+            this.TextBoxGameId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxGameId.Enabled = false;
+            this.TextBoxGameId.Location = new System.Drawing.Point(176, 32);
+            this.TextBoxGameId.Name = "TextBoxGameId";
+            this.TextBoxGameId.Properties.AllowFocused = false;
+            this.TextBoxGameId.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxGameId.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxGameId.Size = new System.Drawing.Size(135, 22);
+            this.TextBoxGameId.TabIndex = 1;
+            // 
+            // TextBoxConsolePath
+            // 
+            this.TextBoxConsolePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxConsolePath.Enabled = false;
+            this.TextBoxConsolePath.Location = new System.Drawing.Point(12, 85);
+            this.TextBoxConsolePath.Name = "TextBoxConsolePath";
+            this.TextBoxConsolePath.Properties.AllowFocused = false;
+            this.TextBoxConsolePath.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxConsolePath.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxConsolePath.Size = new System.Drawing.Size(299, 22);
+            this.TextBoxConsolePath.TabIndex = 2;
+            // 
+            // TextBoxLocalPath
+            // 
+            this.TextBoxLocalPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxLocalPath.Location = new System.Drawing.Point(12, 138);
+            this.TextBoxLocalPath.Name = "TextBoxLocalPath";
+            this.TextBoxLocalPath.Properties.AllowFocused = false;
+            this.TextBoxLocalPath.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxLocalPath.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxLocalPath.Size = new System.Drawing.Size(248, 22);
+            this.TextBoxLocalPath.TabIndex = 3;
             // 
             // ButtonCancel
             // 
-            this.ButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonCancel.Location = new System.Drawing.Point(141, 173);
-            this.ButtonCancel.Margin = new System.Windows.Forms.Padding(5);
+            this.ButtonCancel.Location = new System.Drawing.Point(236, 177);
             this.ButtonCancel.Name = "ButtonCancel";
-            this.ButtonCancel.Padding = new System.Windows.Forms.Padding(5);
-            this.ButtonCancel.Size = new System.Drawing.Size(80, 25);
-            this.ButtonCancel.TabIndex = 7;
+            this.ButtonCancel.Size = new System.Drawing.Size(75, 23);
+            this.ButtonCancel.TabIndex = 6;
             this.ButtonCancel.Text = "Cancel";
             this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
+            // 
+            // ButtonOK
+            // 
+            this.ButtonOK.Location = new System.Drawing.Point(155, 177);
+            this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.Size = new System.Drawing.Size(75, 23);
+            this.ButtonOK.TabIndex = 5;
+            this.ButtonOK.Text = "OK";
+            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
+            // 
+            // ButtonBrowseLocalPath
+            // 
+            this.ButtonBrowseLocalPath.Location = new System.Drawing.Point(266, 138);
+            this.ButtonBrowseLocalPath.Name = "ButtonBrowseLocalPath";
+            this.ButtonBrowseLocalPath.Size = new System.Drawing.Size(45, 22);
+            this.ButtonBrowseLocalPath.TabIndex = 4;
+            this.ButtonBrowseLocalPath.Text = "...";
+            this.ButtonBrowseLocalPath.Click += new System.EventHandler(this.ButtonBrowseLocalPath_Click);
             // 
             // BackupFileDialog
             // 
@@ -187,17 +178,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(323, 212);
-            this.Controls.Add(this.LabelInstallFilePath);
+            this.Controls.Add(this.ButtonBrowseLocalPath);
+            this.Controls.Add(this.ButtonOK);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.TextBoxLocalPath);
-            this.Controls.Add(this.ButtonLocalPath);
-            this.Controls.Add(this.ButtonSaveBackup);
+            this.Controls.Add(this.TextBoxConsolePath);
             this.Controls.Add(this.TextBoxGameId);
+            this.Controls.Add(this.TextBoxFileName);
+            this.Controls.Add(this.LabelInstallFilePath);
             this.Controls.Add(this.LabelLocalFilePath);
             this.Controls.Add(this.LabelGameId);
             this.Controls.Add(this.LabelFilename);
-            this.Controls.Add(this.TextBoxFileName);
-            this.Controls.Add(this.TextBoxConsolePath);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("BackupFileDialog.IconOptions.Icon")));
@@ -209,22 +200,26 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Backup File Details";
             this.Load += new System.EventHandler(this.EditBackupForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxFileName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxGameId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsolePath.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxLocalPath.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private DarkUI.Controls.DarkButton ButtonSaveBackup;
         private DarkUI.Controls.DarkLabel LabelLocalFilePath;
-        private DarkUI.Controls.DarkTextBox TextBoxLocalPath;
         private DarkUI.Controls.DarkLabel LabelInstallFilePath;
-        private DarkUI.Controls.DarkTextBox TextBoxConsolePath;
         private DarkUI.Controls.DarkLabel LabelGameId;
-        private DarkUI.Controls.DarkTextBox TextBoxGameId;
         private DarkUI.Controls.DarkLabel LabelFilename;
-        private DarkUI.Controls.DarkTextBox TextBoxFileName;
-        private DarkUI.Controls.DarkButton ButtonLocalPath;
-        private DarkUI.Controls.DarkButton ButtonCancel;
+        private DevExpress.XtraEditors.TextEdit TextBoxFileName;
+        private DevExpress.XtraEditors.TextEdit TextBoxGameId;
+        private DevExpress.XtraEditors.TextEdit TextBoxConsolePath;
+        private DevExpress.XtraEditors.TextEdit TextBoxLocalPath;
+        private DevExpress.XtraEditors.SimpleButton ButtonCancel;
+        private DevExpress.XtraEditors.SimpleButton ButtonOK;
+        private DevExpress.XtraEditors.SimpleButton ButtonBrowseLocalPath;
     }
 }

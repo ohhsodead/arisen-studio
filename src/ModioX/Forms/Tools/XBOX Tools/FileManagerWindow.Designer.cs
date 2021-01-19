@@ -1,4 +1,4 @@
-﻿namespace ModioX.Forms.Tools
+﻿namespace ModioX.Forms.Tools.XBOX_Tools
 {
     partial class FileManagerWindow
     {
@@ -753,7 +753,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "File Manager";
+            this.Text = "File Manager (Xbox)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FileExplorer_FormClosing);
             this.Load += new System.EventHandler(this.FileManagerWindow_Load);
             this.ContextMenuConsole.ResumeLayout(false);

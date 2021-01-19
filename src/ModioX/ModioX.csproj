@@ -90,6 +90,9 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="XDevkit">
+      <HintPath>..\References\XDevkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Urls.cs" />
@@ -108,11 +111,11 @@
     <Compile Include="Extensions\DialogExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\WebManExtensions.cs" />
-    <Compile Include="Forms\Dialogs\ConnectionDialogTest.cs">
+    <Compile Include="Forms\Dialogs\ConnectionDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Dialogs\ConnectionDialogTest.Designer.cs">
-      <DependentUpon>ConnectionDialogTest.cs</DependentUpon>
+    <Compile Include="Forms\Dialogs\ConnectionDialog.Designer.cs">
+      <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Settings\CustomListsDialog.cs">
       <SubType>Form</SubType>
@@ -120,29 +123,35 @@
     <Compile Include="Forms\Settings\CustomListsDialog.Designer.cs">
       <DependentUpon>CustomListsDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\FileManagerWindow.cs">
+    <Compile Include="Forms\Tools\PS3 Tools\FileManagerWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\FileManagerWindow.Designer.cs">
+    <Compile Include="Forms\Tools\PS3 Tools\FileManagerWindow.Designer.cs">
       <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\GameBackupFilesWindow.cs">
+    <Compile Include="Forms\Tools\PS3 Tools\GameBackupFilesWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\GameBackupFilesWindow.Designer.cs">
+    <Compile Include="Forms\Tools\PS3 Tools\GameBackupFilesWindow.Designer.cs">
       <DependentUpon>GameBackupFilesWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\GameUpdatesWindow.cs">
+    <Compile Include="Forms\Tools\PS3 Tools\GameUpdatesWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\GameUpdatesWindow.Designer.cs">
+    <Compile Include="Forms\Tools\PS3 Tools\GameUpdatesWindow.Designer.cs">
       <DependentUpon>GameUpdatesWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\PackageManagerWindow.cs">
+    <Compile Include="Forms\Tools\PS3 Tools\PackageManagerWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\PackageManagerWindow.Designer.cs">
+    <Compile Include="Forms\Tools\PS3 Tools\PackageManagerWindow.Designer.cs">
       <DependentUpon>PackageManagerWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tools\XBOX Tools\FileManagerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tools\XBOX Tools\FileManagerWindow.Designer.cs">
+      <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Windows\SettingsWindow.cs">
       <SubType>Form</SubType>
@@ -198,12 +207,6 @@
     </Compile>
     <Compile Include="Models\Release Data\GitHubData.cs" />
     <Compile Include="Models\Resources\SettingsData.cs" />
-    <Compile Include="Forms\Dialogs\ConnectionDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Dialogs\ConnectionDialog.Designer.cs">
-      <DependentUpon>ConnectionDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Dialogs\BackupFileDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,9 +248,6 @@
     <EmbeddedResource Include="Controls\TileViewConsoleItem.resx">
       <DependentUpon>TileViewConsoleItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dialogs\ConnectionDialogTest.resx">
-      <DependentUpon>ConnectionDialogTest.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\ConnectionDialog.resx">
       <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,20 +272,23 @@
     <EmbeddedResource Include="Forms\Dialogs\DataViewDialog.resx">
       <DependentUpon>DataViewDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\FileManagerWindow.resx">
+    <EmbeddedResource Include="Forms\Tools\PS3 Tools\FileManagerWindow.resx">
       <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\GameBackupFilesWindow.resx">
+    <EmbeddedResource Include="Forms\Tools\PS3 Tools\GameBackupFilesWindow.resx">
       <DependentUpon>GameBackupFilesWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\GameUpdatesWindow.resx">
+    <EmbeddedResource Include="Forms\Tools\PS3 Tools\GameUpdatesWindow.resx">
       <DependentUpon>GameUpdatesWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\PackageManagerWindow.resx">
+    <EmbeddedResource Include="Forms\Tools\PS3 Tools\PackageManagerWindow.resx">
       <DependentUpon>PackageManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\BackupFileDialog.resx">
       <DependentUpon>BackupFileDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tools\XBOX Tools\FileManagerWindow.resx">
+      <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -307,11 +310,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icons\Fat.png" />
-    <None Include="Resources\Icons\FatElite.png" />
-    <None Include="Resources\Icons\PlayStation3.png" />
-    <None Include="Resources\Icons\Slim.png" />
-    <None Include="Resources\Icons\SlimE.png" />
+    <None Include="Resources\Icons\XboxSlimE.png" />
+    <None Include="Resources\Icons\PlayStation3Fat.png" />
+    <None Include="Resources\Icons\PlayStation3SuperSlim.png" />
+    <None Include="Resources\Icons\XboxFat.png" />
+    <None Include="Resources\Icons\XboxFatElite.png" />
+    <None Include="Resources\Icons\PlayStation3Slim.png" />
+    <None Include="Resources\Icons\XboxSlim.png" />
     <None Include="Resources\Icons\app_logo.png" />
     <None Include="App.config" />
     <None Include="Resources\Icons\copy_to_clipboard.png" />

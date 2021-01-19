@@ -24,7 +24,7 @@ namespace ModioX.Forms
             TextBoxLocalPath.Text = BackupFile.LocalPath;
         }
 
-        private void ButtonLocalPath_Click(object sender, EventArgs e)
+        private void ButtonBrowseLocalPath_Click(object sender, EventArgs e)
         {
             using var openFileDialog = new OpenFileDialog { CheckFileExists = true, Multiselect = false };
             openFileDialog.InitialDirectory = Path.GetDirectoryName(TextBoxLocalPath.Text);
@@ -32,12 +32,7 @@ namespace ModioX.Forms
             if (openFileDialog.ShowDialog() == DialogResult.OK) TextBoxLocalPath.Text = openFileDialog.FileName;
         }
 
-        private void TextBoxConsolePath_TextChanged(object sender, EventArgs e)
-        {
-            TextBoxFileName.Text = Path.GetFileName(TextBoxConsolePath.Text);
-        }
-
-        private void ButtonBackupSave_Click(object sender, EventArgs e)
+        private void ButtonOK_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(TextBoxLocalPath.Text) ||
                 TextBoxLocalPath.Text.IndexOfAny(Path.GetInvalidPathChars()) != -1)
