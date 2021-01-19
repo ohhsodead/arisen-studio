@@ -91,6 +91,7 @@ namespace ModioX.Forms.Windows
             this.ButtonConnectToPS3 = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXbox360 = new DevExpress.XtraBars.BarSubItem();
             this.ButtonConnectToXBOX = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.MenuBarItemTools = new DevExpress.XtraBars.BarButtonItem();
             this.ToolsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ButtonGameBackupFiles = new DevExpress.XtraBars.BarButtonItem();
@@ -109,6 +110,16 @@ namespace ModioX.Forms.Windows
             this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonNotifyMessage = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonVirtualController = new DevExpress.XtraBars.BarButtonItem();
+            this.XBDMMenu = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.xbdmShutdown = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.MenuBarItemApplications = new DevExpress.XtraBars.BarButtonItem();
             this.ApplicationsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.MenuBarItemOptions = new DevExpress.XtraBars.BarButtonItem();
@@ -158,6 +169,9 @@ namespace ModioX.Forms.Windows
             this.ButtonModAddToList = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonModRemoveFromList = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonModReportAnIssue = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.ComboBoxRegion = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -218,7 +232,6 @@ namespace ModioX.Forms.Windows
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ButtonConnectXbox = new DevExpress.XtraBars.BarButtonItem();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
@@ -972,9 +985,22 @@ namespace ModioX.Forms.Windows
             this.ButtonModReportAnIssue,
             this.LabelStatus,
             this.LabelHeaderStatus,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.XBDMMenu,
+            this.barSubItem3,
+            this.xbdmShutdown,
+            this.barButtonItem3,
+            this.barSubItem2,
+            this.barButtonItem2,
+            this.barSubItem4,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barButtonItem8,
+            this.barButtonItem9,
+            this.barButtonItem10,
+            this.barButtonItem11});
             this.MainMenu.MainMenu = this.bar2;
-            this.MainMenu.MaxItemId = 66;
+            this.MainMenu.MaxItemId = 79;
             this.MainMenu.StatusBar = this.bar3;
             // 
             // bar2
@@ -1034,7 +1060,8 @@ namespace ModioX.Forms.Windows
             this.ButtonXbox360.Caption = "XBOX";
             this.ButtonXbox360.Id = 33;
             this.ButtonXbox360.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonConnectToXBOX)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonConnectToXBOX),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11)});
             this.ButtonXbox360.Name = "ButtonXbox360";
             // 
             // ButtonConnectToXBOX
@@ -1043,6 +1070,13 @@ namespace ModioX.Forms.Windows
             this.ButtonConnectToXBOX.Id = 56;
             this.ButtonConnectToXBOX.Name = "ButtonConnectToXBOX";
             this.ButtonConnectToXBOX.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonConnectXBOX_ItemClick);
+            // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "Find Console...";
+            this.barButtonItem11.Id = 78;
+            this.barButtonItem11.Name = "barButtonItem11";
+            this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XBDMFindConsole_ItemClick);
             // 
             // MenuBarItemTools
             // 
@@ -1061,7 +1095,8 @@ namespace ModioX.Forms.Windows
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonFileManager, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPackageManager),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonWebManControls, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.XBDMMenu, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
             this.ToolsMenu.Manager = this.MainMenu;
             this.ToolsMenu.Name = "ToolsMenu";
             // 
@@ -1187,6 +1222,83 @@ namespace ModioX.Forms.Windows
             this.ButtonVirtualController.Id = 39;
             this.ButtonVirtualController.Name = "ButtonVirtualController";
             this.ButtonVirtualController.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonVirtualController_ItemClick);
+            // 
+            // XBDMMenu
+            // 
+            this.XBDMMenu.Caption = "XBDM Controls... (Xbox)";
+            this.XBDMMenu.Id = 66;
+            this.XBDMMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4)});
+            this.XBDMMenu.Name = "XBDMMenu";
+            // 
+            // barSubItem3
+            // 
+            this.barSubItem3.Caption = "Power Functions";
+            this.barSubItem3.Id = 67;
+            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.xbdmShutdown),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9)});
+            this.barSubItem3.Name = "barSubItem3";
+            // 
+            // xbdmShutdown
+            // 
+            this.xbdmShutdown.Caption = "Shutdown...";
+            this.xbdmShutdown.Id = 68;
+            this.xbdmShutdown.Name = "xbdmShutdown";
+            this.xbdmShutdown.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XBDMShutdown_ItemClick);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Restart...";
+            this.barButtonItem3.Id = 69;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XBDMReboot_ItemClick);
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Soft Reboot...";
+            this.barButtonItem8.Id = 75;
+            this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XBDMSoftReboot_ItemClick);
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Hard Reboot...";
+            this.barButtonItem9.Id = 76;
+            this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XBDMHardReboot_ItemClick);
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "System Info";
+            this.barSubItem2.Id = 70;
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // barSubItem4
+            // 
+            this.barSubItem4.Caption = "XNotify";
+            this.barSubItem4.Id = 72;
+            this.barSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4)});
+            this.barSubItem4.Name = "barSubItem4";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "XMessagebox UI";
+            this.barButtonItem4.Id = 73;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XBDM_XMessageboxUI_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "File Manager... (Xbox)";
+            this.barButtonItem1.Id = 65;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // MenuBarItemApplications
             // 
@@ -1548,6 +1660,23 @@ namespace ModioX.Forms.Windows
             this.ButtonModReportAnIssue.Caption = "Report an Issue...";
             this.ButtonModReportAnIssue.Id = 62;
             this.ButtonModReportAnIssue.Name = "ButtonModReportAnIssue";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "XNo";
+            this.barButtonItem2.Id = 71;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Id = 74;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "barButtonItem10";
+            this.barButtonItem10.Id = 77;
+            this.barButtonItem10.Name = "barButtonItem10";
             // 
             // labelControl2
             // 
@@ -2182,13 +2311,6 @@ namespace ModioX.Forms.Windows
             this.barDockControl4.Manager = this.barManager1;
             this.barDockControl4.Size = new System.Drawing.Size(0, 821);
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "File Manager (Xbox)";
-            this.barButtonItem1.Id = 65;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
-            // 
             // MainWindow
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
@@ -2447,5 +2569,18 @@ namespace ModioX.Forms.Windows
         private BarDockControl barDockControl4;
         private VScrollBar ScrollBarModInformation;
         private BarButtonItem barButtonItem1;
+        private BarSubItem XBDMMenu;
+        private BarSubItem barSubItem3;
+        private BarButtonItem xbdmShutdown;
+        private BarButtonItem barButtonItem3;
+        private BarButtonItem barButtonItem8;
+        private BarButtonItem barButtonItem9;
+        private BarSubItem barSubItem2;
+        private BarSubItem barSubItem4;
+        private BarButtonItem barButtonItem4;
+        private BarButtonItem barButtonItem2;
+        private BarButtonItem barButtonItem5;
+        private BarButtonItem barButtonItem10;
+        private BarButtonItem barButtonItem11;
     }
 }

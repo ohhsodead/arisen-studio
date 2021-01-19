@@ -66,7 +66,11 @@
     </Reference>
     <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -75,6 +79,7 @@
     <Reference Include="DevExpress.XtraLayout.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="FluentFTP">
       <HintPath>..\References\FluentFTP.dll</HintPath>
     </Reference>
@@ -152,6 +157,12 @@
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\FileManagerWindow.Designer.cs">
       <DependentUpon>FileManagerWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tools\XBOX Tools\XMessageboxUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tools\XBOX Tools\XMessageboxUI.Designer.cs">
+      <DependentUpon>XMessageboxUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Windows\SettingsWindow.cs">
       <SubType>Form</SubType>
@@ -290,6 +301,9 @@
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\FileManagerWindow.resx">
       <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tools\XBOX Tools\XMessageboxUI.resx">
+      <DependentUpon>XMessageboxUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +324,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Icons\Xbox_Logo.ico" />
+    <None Include="Resources\Xbox_Logo.ico" />
     <None Include="Resources\Icons\XboxSlimE.png" />
     <None Include="Resources\Icons\PlayStation3Fat.png" />
     <None Include="Resources\Icons\PlayStation3SuperSlim.png" />

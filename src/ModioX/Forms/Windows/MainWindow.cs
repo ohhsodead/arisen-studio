@@ -30,6 +30,7 @@ using System.Windows.Forms;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 using DevExpress.XtraBars;
 using XDevkit;
+using ModioX.Forms.Tools.XBOX_Tools;
 
 namespace ModioX.Forms.Windows
 {
@@ -43,9 +44,12 @@ namespace ModioX.Forms.Windows
             Window = this;
             InitializeComponent();
         }
-
         /// <summary>
-        /// Get/set the current instance of the MainWindow.
+        /// Xbox 360 
+        /// </summary>
+        public static Xbox XBDM { get; private set; } = new();
+        /// <summary>
+        /// Creates an TCP Connection, For Console's Memory Features...
         /// </summary>
         public static MainWindow Window { get; private set; }
 
@@ -199,7 +203,7 @@ namespace ModioX.Forms.Windows
             Focus();
 
 #if DEBUG
-            XtraMessageBox.Show("Welcome! You are in debuggging mode for ModioX! :)");
+            Window.Text += " - Welcome! You are in debuggging mode for ModioX! :)";
 #endif
         }
 
@@ -2169,6 +2173,53 @@ namespace ModioX.Forms.Windows
         {
             var a = new Tools.XBOX_Tools.FileManagerWindow();
             a.ShowDialog(this);
+        }
+
+        private void XBDMShutdown_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XBDM.ShutDownConsole();
+        }
+
+        private void XBDMReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XBDM.Reboot(string.Empty, string.Empty, string.Empty, XboxRebootFlags.Title);
+        }
+
+        private void XBDMSoftReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XBDM.Reboot(XboxReboot.Cold);
+        }
+
+        private void XBDMHardReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XBDM.Reboot(XboxReboot.Warm);
+        }
+
+        private void XBDM_XMessageboxUI_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var XMessageBoxUI = new XMessageboxUI("Some Title", "Some Body Text To Go Here\n\nNew Line\n\nAnother New Line", XMessageboxUI.Buttons.YesNoCancel);
+
+            if (XMessageBoxUI.ShowDialog(this) == DialogResult.OK)
+            {
+                // do whatever
+            }
+        }
+
+        private void XBDMFindConsole_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if(XBDM.Connect())
+            {
+                XNotify.Show(Application.ProductName + "- Has Been Connected..");
+            }
+            else 
+            {
+                var dialogResult = XtraMessageBox.Show("No Connection Has Been Found..", "Would You Like To Retry?", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+
+                if (dialogResult == DialogResult.Retry)
+                {
+                    XBDM.Connect();
+                }
+            }
         }
     }
 }

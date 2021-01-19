@@ -303,6 +303,16 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Xbox_Logo {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap XboxFat {
             get {
                 object obj = ResourceManager.GetObject("XboxFat", resourceCulture);
