@@ -6,7 +6,7 @@ the only one of its kind...
 
 ![Main Form](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/MainForm.png?raw=true)
 
-Comments, ideas, suggestions? Join the Discord Server !
+Comments, ideas, suggestions? Join the [Discord Server](https://discord.gg/FTCS3Xu)!
 
 Please give this project a ⭐ if you find it useful.
 
