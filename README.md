@@ -1,13 +1,10 @@
 
 # ModioX
-
-
-
 An open source desktop application designed to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes and much more for the PlayStation 3. A library that is populated by myself, few friends and awesome contributors, so that all mods have been tested and verified. ModioX also acts as an FTP client to be able to install and uninstall files on-the-fly to your console. Without the need for digging up old threads or using file managers - this aims to do everything for you.
 
 the only one of its kind...
 
-
+![Main Form](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/MainForm.png?raw=true)
 
 Comments, ideas, suggestions? Join the Discord Server !
 
@@ -50,16 +47,16 @@ I know that not all mods aren't on our database, yet. But if you open an issue i
 
 ## Credits & Libraries
 * Appropriate Creators of all Mods
-* DevExpress
-* Newtonsoft.Json
-* NLog
-* WebMAN API
-* XDevkit
-* Icons8
+* [DevExpress](https://devexpress.com/)
+* [Newtonsoft.Json](https://newtonsoft.com/json)
+* [NLog](https://nlog-project.org/)
+* [WebMAN API](https://github.com/FxckingCoder/WebmanAPI)
+* [XDevkit](https://github.com/TeddyHammer)
+* [Icons8](https://icons8.com/)
 
 ## Contributors
-* KayGart
-* TeddyHammer
+* [KayGart](https://github.com/KayGart)
+* [TeddyHammer](https://github.com/TeddyHammer)
 
 ## Disclaimer
 
