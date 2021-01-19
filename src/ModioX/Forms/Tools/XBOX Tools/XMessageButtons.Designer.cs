@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace ModioX
 {
-    partial class Buttons
+    partial class XMessageButtons
     {
         /// <summary> 
         /// Required designer variable.
@@ -51,7 +51,7 @@ namespace ModioX
             this.ButtonExtra.Name = "ButtonExtra";
             this.ButtonExtra.Size = new System.Drawing.Size(695, 51);
             this.ButtonExtra.TabIndex = 6;
-            this.ButtonExtra.Paint += new System.Windows.Forms.PaintEventHandler(this.ButtonExtra_Paint);
+            this.ButtonExtra.Click += new System.EventHandler(this.ButtonExtra_Click);
             this.ButtonExtra.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             this.ButtonExtra.MouseHover += new System.EventHandler(this.Button_MouseHover);
             // 
@@ -80,7 +80,7 @@ namespace ModioX
             this.ButtonYes.Name = "ButtonYes";
             this.ButtonYes.Size = new System.Drawing.Size(695, 51);
             this.ButtonYes.TabIndex = 5;
-            this.ButtonYes.Paint += new System.Windows.Forms.PaintEventHandler(this.ButtonYes_Paint);
+            this.ButtonYes.Click += new System.EventHandler(this.ButtonYes_Click);
             this.ButtonYes.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             this.ButtonYes.MouseHover += new System.EventHandler(this.Button_MouseHover);
             // 
@@ -109,7 +109,7 @@ namespace ModioX
             this.ButtonNo.Name = "ButtonNo";
             this.ButtonNo.Size = new System.Drawing.Size(695, 51);
             this.ButtonNo.TabIndex = 4;
-            this.ButtonNo.Paint += new System.Windows.Forms.PaintEventHandler(this.ButtonNo_Paint);
+            this.ButtonNo.Click += new System.EventHandler(this.ButtonNo_Click);
             this.ButtonNo.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             this.ButtonNo.MouseHover += new System.EventHandler(this.Button_MouseHover);
             // 
@@ -129,7 +129,7 @@ namespace ModioX
             this.ButtonText3.MouseLeave += new System.EventHandler(this.ButtonText_MouseLeave);
             this.ButtonText3.MouseHover += new System.EventHandler(this.ButtonText_MouseHover);
             // 
-            // Buttons
+            // XMessageButtons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -137,8 +137,9 @@ namespace ModioX
             this.Controls.Add(this.ButtonExtra);
             this.Controls.Add(this.ButtonYes);
             this.Controls.Add(this.ButtonNo);
-            this.Name = "Buttons";
+            this.Name = "XMessageButtons";
             this.Size = new System.Drawing.Size(695, 153);
+            this.Load += new System.EventHandler(this.XMessageButtons_Load);
             this.ButtonExtra.ResumeLayout(false);
             this.ButtonExtra.PerformLayout();
             this.ButtonYes.ResumeLayout(false);
@@ -150,12 +151,11 @@ namespace ModioX
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel ButtonExtra;
         private DevExpress.XtraEditors.LabelControl ButtonText1;
-        private System.Windows.Forms.Panel ButtonYes;
         private DevExpress.XtraEditors.LabelControl ButtonText2;
-        private System.Windows.Forms.Panel ButtonNo;
         private DevExpress.XtraEditors.LabelControl ButtonText3;
+        public System.Windows.Forms.Panel ButtonExtra;
+        public System.Windows.Forms.Panel ButtonYes;
+        public System.Windows.Forms.Panel ButtonNo;
     }
 }

@@ -134,8 +134,8 @@ namespace ModioX.Forms.Windows
                 }
 
                 SetStatus("Initializing the application database...");
-                await Task.Run(async () => await LoadData());
-                InitializeFinished();
+                //await Task.Run(async () => await LoadData());
+                //InitializeFinished();
             }
             else
             {
@@ -2197,11 +2197,28 @@ namespace ModioX.Forms.Windows
 
         private void XBDM_XMessageboxUI_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var XMessageBoxUI = new XMessageboxUI("Some Title", "Some Body Text To Go Here\n\nNew Line\n\nAnother New Line", XMessageboxUI.Buttons.YesNoCancel);
+            var XMessageBoxUI = new XMessageboxUI("Some Title", "Some Body Text To Go Here\n\nNew Line\n\nAnother New Line", XMessageboxUI.ButtonOptions.YesNoCancel);
+            var dialogResult = XMessageBoxUI.ShowDialog(this);
 
-            if (XMessageBoxUI.ShowDialog(this) == DialogResult.OK)
+            if (dialogResult == DialogResult.OK)
             {
                 // do whatever
+                XtraMessageBox.Show("ok was clicked");
+            }
+            else if (dialogResult == DialogResult.Yes)
+            {
+                // do whatever
+                XtraMessageBox.Show("yes was clicked");
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                // do whatever
+                XtraMessageBox.Show("no was clicked");
+            }
+            else if (dialogResult == DialogResult.Cancel)
+            {
+                // do whatever
+                XtraMessageBox.Show("cancel was clicked");
             }
         }
 

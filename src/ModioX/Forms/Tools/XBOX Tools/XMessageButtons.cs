@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using ModioX.Forms.Tools.XBOX_Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,13 +12,20 @@ using System.Windows.Forms;
 
 namespace ModioX
 {
-    public partial class Buttons : UserControl
+    public partial class XMessageButtons : UserControl, IMessageFilter
     {
-        public Options options { get; set; } = Options.YesNoCancel;
-        public Buttons()
+        public Options options { get; set; } = Options.YesNo;
+
+        public XMessageButtons()
         {
             InitializeComponent();
+            Application.AddMessageFilter(this);
 
+            UpdateButtons();
+        }
+
+        private void UpdateButtons()
+        {
             if (options == Options.YesNo)//panels and text must visible = false etc
             {
                 ButtonExtra.Visible = false;
@@ -46,7 +54,80 @@ namespace ModioX
                 ButtonHover(ButtonNo);
             }
         }
-        Panel SelectedPanel;
+
+        public bool PreFilterMessage(ref Message m)
+        {
+            if (!IsDisposed && ClientRectangle.Contains(PointToClient(MousePosition)))
+            {
+                BackColor = Color.FromArgb(108, 165, 14);
+            }
+            else
+            {
+                BackColor = Color.FromArgb(218, 225, 227);
+            }
+            return false;
+        }
+
+        public void NavigateButtonUp()
+        {
+            if (SelectedPanel == ButtonExtra)
+            {
+                // do nothing as this is the top button
+            }
+            else if (SelectedPanel == ButtonYes)
+            {
+                if (ButtonExtra.Visible)
+                {
+                    SelectedPanel = ButtonExtra;
+                }
+            }
+            else if (SelectedPanel == ButtonNo)
+            {
+                SelectedPanel = ButtonYes;
+            }
+
+            RefreshButtons();
+        }
+
+        public void NavigateButtonDown()
+        {
+            if (SelectedPanel == ButtonExtra)
+            {
+                SelectedPanel = ButtonYes;
+            }
+            else if (SelectedPanel == ButtonYes)
+            {
+                SelectedPanel = ButtonNo;
+            }
+            else if (SelectedPanel == ButtonNo)
+            {
+                // do nothing as this is the bottom button
+            }
+
+            RefreshButtons();
+        }
+
+        private void RefreshButtons()
+        {
+            ButtonExtra.BackColor = Color.FromArgb(212, 220, 220);
+            ButtonText1.ForeColor = Color.Black;
+            ButtonYes.BackColor = Color.FromArgb(212, 220, 220);
+            ButtonText2.ForeColor = Color.Black;
+            ButtonNo.BackColor = Color.FromArgb(212, 220, 220);
+            ButtonText3.ForeColor = Color.Black;
+
+            foreach (var ctrl in Controls)
+            {
+                if (SelectedPanel == ctrl)
+                {
+                    ButtonHover(SelectedPanel);
+                }
+            }
+
+            Refresh();
+        }
+
+        public Panel SelectedPanel;
         Label SelectedLabel;
         public enum Options
         {
@@ -64,6 +145,9 @@ namespace ModioX
                 var panel = (Panel)sender;
                 SelectedPanel = panel;
 
+                RefreshButtons();
+
+                /*
                 panel.BackColor = Color.FromArgb(108, 165, 14); // green
 
                 if (SelectedPanel != panel)
@@ -84,6 +168,7 @@ namespace ModioX
                         ((LabelControl)ctrl).ForeColor = Color.Transparent;
                     }
                 }
+                */
             }
             catch
             {
@@ -98,24 +183,7 @@ namespace ModioX
                 var panel = (Panel)sender;
                 SelectedPanel = panel;
 
-                if (SelectedPanel != panel)
-                {
-
-                    panel.BackColor = Color.FromArgb(108, 165, 14);//green
-
-                    foreach (var ctrl in panel.Controls)
-                    {
-                        ((LabelControl)ctrl).ForeColor = Color.Transparent;
-                    }
-                }
-                else
-                {
-                    foreach (var ctrl in panel.Controls)
-                    {
-                        panel.BackColor = Color.FromArgb(212, 220, 220);//white
-                        ((LabelControl)ctrl).ForeColor = Color.Black;
-                    }
-                }
+                RefreshButtons();
             }
             catch
             {
@@ -125,27 +193,14 @@ namespace ModioX
 
         private void ButtonHover(Panel panel)
         {
+            SelectedPanel = panel;
+
             panel.BackColor = Color.FromArgb(108, 165, 14);
 
             foreach (var ctrl in panel.Controls)
             {
                 ((LabelControl)ctrl).ForeColor = Color.Transparent;
             }
-        }
-
-        private void ButtonExtra_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void ButtonNo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void ButtonYes_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void ButtonText_MouseHover(object sender, EventArgs e)
@@ -212,6 +267,37 @@ namespace ModioX
             {
 
             }
+        }
+
+        private void ButtonYes_Click(object sender, EventArgs e)
+        {
+            XMessageboxUI parent = Parent as XMessageboxUI;
+            parent.DialogResult = DialogResult.Yes;
+            parent.ButtonNo.PerformClick();
+
+            //ButtonHolderYes.PerformClick();
+        }
+
+        private void ButtonNo_Click(object sender, EventArgs e)
+        {
+            //if (ButtonText3.Text == "Ok")
+            //{
+            //    ButtonHolderOK.PerformClick();
+            //}
+            //else
+            //{
+            //    ButtonHolderNo.PerformClick();
+            //}
+        }
+
+        private void ButtonExtra_Click(object sender, EventArgs e)
+        {
+            //ButtonHolderCancel.PerformClick();
+        }
+
+        private void XMessageButtons_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
