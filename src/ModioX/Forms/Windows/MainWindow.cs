@@ -412,7 +412,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonWhatsNew_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SetStatus("Showing latest Changelog...");
+            SetStatus("Showing latest Change Log...");
             DialogExtensions.ShowWhatsNewWindow(this, UpdateExtensions.GitHubData);
         }
         private void ButtonOpenLogFile_ItemClick(object sender, ItemClickEventArgs e)
