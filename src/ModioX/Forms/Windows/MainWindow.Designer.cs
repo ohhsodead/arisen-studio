@@ -34,8 +34,8 @@ namespace ModioX.Forms.Windows
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraBars.BarButtonItem ButtonConnectXbox;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
-            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
+            DevExpress.Utils.Animation.PushTransition pushTransition2 = new DevExpress.Utils.Animation.PushTransition();
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions2 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             this.ContextMenuMods = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuModsInstallFiles = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuModsUninstallFiles = new System.Windows.Forms.ToolStripMenuItem();
@@ -1635,7 +1635,7 @@ namespace ModioX.Forms.Windows
             // workspaceManager1
             // 
             this.workspaceManager1.TargetControl = this;
-            this.workspaceManager1.TransitionType = pushTransition1;
+            this.workspaceManager1.TransitionType = pushTransition2;
             // 
             // HelpSpacer1
             // 
@@ -1744,6 +1744,8 @@ namespace ModioX.Forms.Windows
             // 
             // labelControl2
             // 
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
@@ -2201,9 +2203,9 @@ namespace ModioX.Forms.Windows
             this.GroupModsInstalled.AppearanceCaption.Options.UseFont = true;
             this.GroupModsInstalled.Controls.Add(this.ProgressModsInstalled);
             this.GroupModsInstalled.Controls.Add(this.GridControlGameModsInstalled);
-            buttonImageOptions1.Location = DevExpress.XtraEditors.ButtonPanel.ImageLocation.AfterText;
+            buttonImageOptions2.Location = DevExpress.XtraEditors.ButtonPanel.ImageLocation.AfterText;
             this.GroupModsInstalled.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Uninstall All", true, buttonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", 2, true, null, false, false, true, null, 2)});
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Uninstall All", true, buttonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", 2, true, null, false, false, true, null, 2)});
             this.GroupModsInstalled.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
             this.GroupModsInstalled.Location = new System.Drawing.Point(318, 579);
             this.GroupModsInstalled.Name = "GroupModsInstalled";
