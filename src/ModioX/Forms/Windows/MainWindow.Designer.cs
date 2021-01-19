@@ -724,10 +724,15 @@ namespace ModioX.Forms.Windows
             // 
             // GridViewModsInstallFiles
             // 
+            this.GridViewModsInstallFiles.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewModsInstallFiles.GridControl = this.GridControlModsInstallFiles;
             this.GridViewModsInstallFiles.Name = "GridViewModsInstallFiles";
+            this.GridViewModsInstallFiles.OptionsBehavior.Editable = false;
             this.GridViewModsInstallFiles.OptionsBehavior.ReadOnly = true;
             this.GridViewModsInstallFiles.OptionsMenu.EnableGroupPanelMenu = false;
+            this.GridViewModsInstallFiles.OptionsNavigation.AutoMoveRowFocus = false;
+            this.GridViewModsInstallFiles.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.GridViewModsInstallFiles.OptionsSelection.EnableAppearanceFocusedRow = false;
             this.GridViewModsInstallFiles.OptionsView.ShowColumnHeaders = false;
             this.GridViewModsInstallFiles.OptionsView.ShowGroupPanel = false;
             this.GridViewModsInstallFiles.OptionsView.ShowIndicator = false;
@@ -1766,12 +1771,12 @@ namespace ModioX.Forms.Windows
             // 
             // GridViewGameModsInstalled
             // 
+            this.GridViewGameModsInstalled.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewGameModsInstalled.GridControl = this.GridControlGameModsInstalled;
             this.GridViewGameModsInstalled.Name = "GridViewGameModsInstalled";
             this.GridViewGameModsInstalled.OptionsBehavior.Editable = false;
             this.GridViewGameModsInstalled.OptionsBehavior.ReadOnly = true;
             this.GridViewGameModsInstalled.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.GridViewGameModsInstalled.OptionsSelection.EnableAppearanceFocusedRow = false;
             this.GridViewGameModsInstalled.OptionsView.ShowGroupPanel = false;
             this.GridViewGameModsInstalled.OptionsView.ShowIndicator = false;
             // 
@@ -1931,13 +1936,13 @@ namespace ModioX.Forms.Windows
             // 
             // GridViewMods
             // 
+            this.GridViewMods.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewMods.GridControl = this.GridControlMods;
             this.GridViewMods.Name = "GridViewMods";
             this.GridViewMods.OptionsBehavior.Editable = false;
             this.GridViewMods.OptionsBehavior.ReadOnly = true;
             this.GridViewMods.OptionsMenu.EnableGroupPanelMenu = false;
             this.GridViewMods.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.GridViewMods.OptionsSelection.EnableAppearanceFocusedRow = false;
             this.GridViewMods.OptionsView.ShowGroupPanel = false;
             this.GridViewMods.OptionsView.ShowIndicator = false;
             this.GridViewMods.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewMods_FocusedRowChanged);
@@ -2061,6 +2066,8 @@ namespace ModioX.Forms.Windows
             // 
             // ScrollBarModInformation
             // 
+            this.ScrollBarModInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ScrollBarModInformation.Location = new System.Drawing.Point(358, 23);
             this.ScrollBarModInformation.Name = "ScrollBarModInformation";
             this.ScrollBarModInformation.Size = new System.Drawing.Size(17, 580);
