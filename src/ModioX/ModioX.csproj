@@ -152,16 +152,22 @@
     <Compile Include="Forms\Tools\PS3 Tools\PackageManagerWindow.Designer.cs">
       <DependentUpon>PackageManagerWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\FileManagerWindow.cs">
+    <Compile Include="XBOX Tools\XMessageButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XBOX Tools\XMessageButtons.Designer.cs">
+      <DependentUpon>XMessageButtons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XBOX Tools\FileManagerWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\FileManagerWindow.Designer.cs">
+    <Compile Include="XBOX Tools\FileManagerWindow.Designer.cs">
       <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\XMessageboxUI.cs">
+    <Compile Include="XBOX Tools\XMessageboxUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\XMessageboxUI.Designer.cs">
+    <Compile Include="XBOX Tools\XMessageboxUI.Designer.cs">
       <DependentUpon>XMessageboxUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Windows\SettingsWindow.cs">
@@ -298,10 +304,13 @@
     <EmbeddedResource Include="Forms\Dialogs\BackupFileDialog.resx">
       <DependentUpon>BackupFileDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\XBOX Tools\FileManagerWindow.resx">
+    <EmbeddedResource Include="XBOX Tools\XMessageButtons.resx">
+      <DependentUpon>XMessageButtons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XBOX Tools\FileManagerWindow.resx">
       <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\XBOX Tools\XMessageboxUI.resx">
+    <EmbeddedResource Include="XBOX Tools\XMessageboxUI.resx">
       <DependentUpon>XMessageboxUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\MainWindow.resx">
@@ -325,6 +334,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Icons\Xbox_Logo.ico" />
+    <None Include="Resources\Xbox_button_Y.svg.png" />
+    <None Include="Resources\Xbox_button_X.svg.png" />
+    <None Include="Resources\Xbox_button_B.svg.png" />
+    <None Include="Resources\Xbox_button_A.svg.png" />
     <None Include="Resources\Xbox_Logo.ico" />
     <None Include="Resources\Icons\XboxSlimE.png" />
     <None Include="Resources\Icons\PlayStation3Fat.png" />

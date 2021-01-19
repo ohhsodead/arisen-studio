@@ -18,36 +18,8 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             InitializeComponent();
             LabelTitle.Text = title;
             LabelBody.Text = body;
-            //if only 1 button it will be set the color as you have selected by default ... sorry, i mean have the buttons text as they would be buttontext1/2/3
-            // noo, like the actual buttons text e.g. YES, NO, OK, CANCEL or what? for now yes/no
-            
-            if (buttons == Buttons.YesNo)//panels and text must visible = false etc
-            {
-                ButtonExtra.Visible = false;
-                ButtonYes.Visible = true;
-                ButtonNo.Visible = true;
-                ButtonText3.Text = "No";
-                SelectedPanel = ButtonNo;
-                ButtonHover(ButtonNo);
-            }
-            else if (buttons == Buttons.YesNoCancel)//by default if 3 buttons bottom one is green
-            {
-                ButtonExtra.Visible = true;
-                ButtonYes.Visible = true;
-                ButtonNo.Visible = true;
-                ButtonText3.Text = "No";
-                SelectedPanel = ButtonNo;
-                ButtonHover(ButtonNo);
-            }
-            else if (buttons == Buttons.Ok)
-            {
-                ButtonExtra.Visible = false;
-                ButtonYes.Visible = false;
-                ButtonNo.Visible = true;
-                ButtonText3.Text = "Ok";
-                SelectedPanel = ButtonNo;
-                ButtonHover(ButtonNo);
-            }
+            this.TransparencyKey = Color.FromName("MenuBar");
+
         }
 
         Panel SelectedPanel;
@@ -68,7 +40,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
             if (SelectedPanel != panel)
             {
-                panel.BackColor = Color.FromArgb(218, 225, 225);
+                panel.BackColor = Color.FromArgb(218, 225, 227);
 
                 foreach (var ctrl in panel.Controls)
                 {
@@ -91,7 +63,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
             if (SelectedPanel != panel)
             {
-                panel.BackColor = Color.FromArgb(218, 225, 225);
+                panel.BackColor = Color.FromArgb(218, 225, 227);
 
                 foreach (var ctrl in panel.Controls)
                 {
@@ -127,11 +99,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         //    }
         //}
 
-        private void Button_MouseDown(object sender, MouseEventArgs e)
-        {
-            XtraMessageBox.Show("Width: " + Width + " Height: " + Height);
-            Close();
-        }
 
  
     }
