@@ -2221,5 +2221,15 @@ namespace ModioX.Forms.Windows
                 }
             }
         }
+
+        private void AvatarEditor_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XboxConsole.XboxShortcut(XboxShortcuts.AvatarEditor);
+        }
+
+        private void XboxVirtualController_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

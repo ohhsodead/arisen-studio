@@ -152,6 +152,24 @@
     <Compile Include="Forms\Tools\PS3 Tools\PackageManagerWindow.Designer.cs">
       <DependentUpon>PackageManagerWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="XBOX Tools\GameLauncher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XBOX Tools\GameLauncher.Designer.cs">
+      <DependentUpon>GameLauncher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XBOX Tools\iniEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XBOX Tools\iniEditor.Designer.cs">
+      <DependentUpon>iniEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XBOX Tools\Xbox Virtual Controler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XBOX Tools\Xbox Virtual Controler.Designer.cs">
+      <DependentUpon>Xbox Virtual Controler.cs</DependentUpon>
+    </Compile>
     <Compile Include="XBOX Tools\XMessageButtons.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -304,6 +322,15 @@
     <EmbeddedResource Include="Forms\Dialogs\BackupFileDialog.resx">
       <DependentUpon>BackupFileDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XBOX Tools\GameLauncher.resx">
+      <DependentUpon>GameLauncher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XBOX Tools\iniEditor.resx">
+      <DependentUpon>iniEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XBOX Tools\Xbox Virtual Controler.resx">
+      <DependentUpon>Xbox Virtual Controler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XBOX Tools\XMessageButtons.resx">
       <DependentUpon>XMessageButtons.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,7 +360,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\avatar.png" />
+    <None Include="Resources\avatar120p.png" />
+    <None Include="Resources\avatar120pp.png" />
+    <None Include="Resources\1200px-Xbox_Controller.svg.png" />
     <Content Include="Resources\Icons\Xbox_Logo.ico" />
+    <None Include="Resources\original.png" />
     <None Include="Resources\Xbox_button_Y.svg.png" />
     <None Include="Resources\Xbox_button_X.svg.png" />
     <None Include="Resources\Xbox_button_B.svg.png" />
