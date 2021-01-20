@@ -29,46 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListViewDialog));
-            this.ListViewItems = new DarkUI.Controls.DarkListView();
-            this.SectionItems = new DarkUI.Controls.DarkSectionPanel();
-            this.SectionItems.SuspendLayout();
+            this.ListBoxItems = new DevExpress.XtraEditors.ListBoxControl();
+            this.GroupListItems = new DevExpress.XtraEditors.GroupControl();
+            ((System.ComponentModel.ISupportInitialize)(this.ListBoxItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupListItems)).BeginInit();
+            this.GroupListItems.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ListViewItems
+            // ListBoxItems
             // 
-            this.ListViewItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListViewItems.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListViewItems.ItemHeight = 22;
-            this.ListViewItems.Location = new System.Drawing.Point(1, 25);
-            this.ListViewItems.Name = "ListViewItems";
-            this.ListViewItems.Size = new System.Drawing.Size(217, 176);
-            this.ListViewItems.TabIndex = 1;
-            this.ListViewItems.Text = "darkListView1";
-            this.ListViewItems.SelectedIndicesChanged += new System.EventHandler(this.ListViewRegions_SelectedIndicesChanged);
+            this.ListBoxItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListBoxItems.Location = new System.Drawing.Point(2, 23);
+            this.ListBoxItems.Name = "ListBoxItems";
+            this.ListBoxItems.Size = new System.Drawing.Size(219, 181);
+            this.ListBoxItems.TabIndex = 2;
+            this.ListBoxItems.SelectedIndexChanged += new System.EventHandler(this.ListBoxItems_SelectedIndexChanged);
             // 
-            // SectionItems
+            // GroupListItems
             // 
-            this.SectionItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SectionItems.Controls.Add(this.ListViewItems);
-            this.SectionItems.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.SectionItems.Location = new System.Drawing.Point(14, 14);
-            this.SectionItems.Name = "SectionItems";
-            this.SectionItems.SectionHeader = "Choose Item...";
-            this.SectionItems.Size = new System.Drawing.Size(219, 202);
-            this.SectionItems.TabIndex = 0;
+            this.GroupListItems.Controls.Add(this.ListBoxItems);
+            this.GroupListItems.Location = new System.Drawing.Point(12, 12);
+            this.GroupListItems.Name = "GroupListItems";
+            this.GroupListItems.Size = new System.Drawing.Size(223, 206);
+            this.GroupListItems.TabIndex = 3;
+            this.GroupListItems.Text = "Choose Item...";
             // 
             // ListViewDialog
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(247, 230);
-            this.Controls.Add(this.SectionItems);
+            this.Controls.Add(this.GroupListItems);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("ListViewDialog.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListViewDialog";
@@ -76,14 +72,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ListItemDialog";
             this.Load += new System.EventHandler(this.ListViewDialog_Load);
-            this.SectionItems.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ListBoxItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupListItems)).EndInit();
+            this.GroupListItems.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public DarkUI.Controls.DarkListView ListViewItems;
-        public DarkUI.Controls.DarkSectionPanel SectionItems;
+        private DevExpress.XtraEditors.ListBoxControl ListBoxItems;
+        private DevExpress.XtraEditors.GroupControl GroupListItems;
     }
 }

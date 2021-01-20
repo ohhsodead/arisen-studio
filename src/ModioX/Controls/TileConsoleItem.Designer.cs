@@ -1,7 +1,7 @@
 ﻿
 namespace ModioX.Controls
 {
-    partial class TileViewConsoleItem
+    partial class TileConsoleItem
     {
         /// <summary> 
         /// Required designer variable.
@@ -51,7 +51,7 @@ namespace ModioX.Controls
             this.LabelConsoleName.Name = "LabelConsoleName";
             this.LabelConsoleName.Size = new System.Drawing.Size(138, 16);
             this.LabelConsoleName.TabIndex = 1;
-            this.LabelConsoleName.Text = "Ashley\'s Console";
+            this.LabelConsoleName.Text = "Console Name";
             // 
             // ImageConsole
             // 
@@ -66,7 +66,7 @@ namespace ModioX.Controls
             this.ImageConsole.Size = new System.Drawing.Size(135, 135);
             this.ImageConsole.TabIndex = 0;
             // 
-            // TileViewConsoleItem
+            // TileConsoleItem
             // 
             this.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.Appearance.Options.UseBackColor = true;
@@ -74,7 +74,7 @@ namespace ModioX.Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.LabelConsoleName);
             this.Controls.Add(this.ImageConsole);
-            this.Name = "TileViewConsoleItem";
+            this.Name = "TileConsoleItem";
             this.Size = new System.Drawing.Size(144, 162);
             ((System.ComponentModel.ISupportInitialize)(this.ImageConsole.Properties)).EndInit();
             this.ResumeLayout(false);

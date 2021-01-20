@@ -19,17 +19,20 @@ namespace ModioX.Windows
 
         private void ListViewDialog_Load(object sender, EventArgs e)
         {
-            foreach (var item in Items) ListViewItems.Items.Add(new DarkListItem { Text = item });
+            foreach (var item in Items) ListBoxItems.Items.Add(Text = item);
 
             // Increase form size to fit listview contents
-            Width = ListViewItems.Width + Items.Max(w => w.Length) + 70;
+            Width = ListBoxItems.Width + Items.Max(w => w.Length) + 70;
             Refresh();
         }
 
-        private void ListViewRegions_SelectedIndicesChanged(object sender, EventArgs e)
+        private void ListBoxItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SelectedItem = ListViewItems.Items[ListViewItems.SelectedIndices[0]].Text;
-            Close();
+            if (ListBoxItems.SelectedIndex != -1)
+            {
+                SelectedItem = ListBoxItems.SelectedItem.ToString();
+                Close();
+            }
         }
     }
 }

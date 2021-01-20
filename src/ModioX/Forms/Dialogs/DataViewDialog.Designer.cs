@@ -60,8 +60,8 @@ namespace ModioX.Forms
             this.LabelTitle.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelTitle.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.LabelTitle.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
-            this.LabelTitle.Location = new System.Drawing.Point(3, 3);
-            this.LabelTitle.Margin = new System.Windows.Forms.Padding(3, 3, 3, 4);
+            this.LabelTitle.Location = new System.Drawing.Point(3, 0);
+            this.LabelTitle.Margin = new System.Windows.Forms.Padding(3, 0, 3, 4);
             this.LabelTitle.Name = "LabelTitle";
             this.LabelTitle.Size = new System.Drawing.Size(452, 18);
             this.LabelTitle.TabIndex = 1168;
@@ -71,7 +71,8 @@ namespace ModioX.Forms
             // 
             this.LabelBody.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelBody.Appearance.Options.UseFont = true;
-            this.LabelBody.Location = new System.Drawing.Point(3, 28);
+            this.LabelBody.Location = new System.Drawing.Point(3, 25);
+            this.LabelBody.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LabelBody.Name = "LabelBody";
             this.LabelBody.Size = new System.Drawing.Size(27, 15);
             this.LabelBody.TabIndex = 1169;

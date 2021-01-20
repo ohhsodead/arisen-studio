@@ -1,5 +1,4 @@
-﻿
-namespace ModioX.Forms.Tools.XBOX_Tools
+﻿namespace ModioX.Forms.Tools.XBOX_Tools
 {
     partial class XMessageboxUI
     {

@@ -23,9 +23,15 @@
         internal const string CategoriesData = "https://dl.dropbox.com/s/98bp8y8ii1o7y64/categories.json?raw=true";
 
         /// <summary>
-        /// Direct download for the mods database file hosted on Dropbox. (Maybe move to GitHub soon)
+        /// Direct download for the PS3 mods database file hosted on Dropbox. (Maybe move to GitHub soon)
         /// </summary>
-        internal const string ModsData = "https://dl.dropbox.com/s/9kzqk21hkz2nt14/mods.json?raw=true";
+        internal const string ModsDataPS3 = "https://dl.dropbox.com/s/9kzqk21hkz2nt14/mods.json?raw=true";
+
+        /// <summary>
+        /// Direct download for the XBOX mods database file hosted on Dropbox. (Maybe move to GitHub soon)
+        /// </summary>
+        internal const string ModsDataXBOX = "https://dl.dropbox.com/s/qx2meo4zmtgsrt2/xbox-mods.json?raw=true";
+
         /// <summary>
         /// Links To The Official Discord Server.
         /// </summary>

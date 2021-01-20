@@ -13,41 +13,24 @@ namespace ModioX.Forms.Dialogs
             InitializeComponent();
         }
 
-        [DllImport("user32.dll")]
-        private static extern bool HideCaret(IntPtr hWnd);
-
         private void AboutWindow_Load(object sender, EventArgs e)
         {
-            _ = ButtonClose.Focus();
-
-            _ = HideCaret(RichTextBoxInformation.Handle);
-            _ = HideCaret(RichTextBoxCredits.Handle);
-            _ = HideCaret(RichTextBoxThanks.Handle);
-            _ = HideCaret(RichTextBoxLicence.Handle);
+            ButtonClose.Focus();
         }
 
-        private void RichTextBox_MouseDown(object sender, MouseEventArgs e)
+        private void LabelCredits_HyperlinkClick(object sender, DevExpress.Utils.HyperlinkClickEventArgs e)
         {
-            _ = HideCaret(RichTextBoxInformation.Handle);
-            _ = HideCaret(RichTextBoxCredits.Handle);
-            _ = HideCaret(RichTextBoxThanks.Handle);
-            _ = HideCaret(RichTextBoxLicence.Handle);
+            Process.Start(e.Text);
         }
 
-        private void RichTextBoxCredits_LinkClicked(object sender, LinkClickedEventArgs e)
+        private void LabelLicense_HyperlinkClick(object sender, DevExpress.Utils.HyperlinkClickEventArgs e)
         {
-            _ = Process.Start(e.LinkText);
-        }
-
-        private void RichTextBoxLicence_LinkClicked(object sender, LinkClickedEventArgs e)
-        {
-            _ = Process.Start(e.LinkText);
+            Process.Start(e.Text);
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)
         {
             Close();
         }
-
     }
 }

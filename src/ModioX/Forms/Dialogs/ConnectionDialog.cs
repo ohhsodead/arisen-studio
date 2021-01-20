@@ -18,6 +18,8 @@ namespace ModioX.Forms.Dialogs
 
         public ConsoleProfile ConsoleProfile { get; private set; }
 
+        public TileConsoleItem SelectedConsole { get; private set; }
+
         private void ConnectConsole_Load(object sender, EventArgs e)
         {
             LoadConsoles();
@@ -31,14 +33,15 @@ namespace ModioX.Forms.Dialogs
         private void LoadConsoles()
         {
             PanelConsoleProfiles.Controls.Clear();
+            SelectedConsole = null;
 
             int consoleIndex = 0;
 
-            foreach (var console in MainWindow.Settings.ConsoleProfiles)
+            foreach (var consoleProfile in MainWindow.Settings.ConsoleProfiles)
             {
-                Image consoleImage = Properties.Resources.PlayStation3Slim;
+                Image consoleImage = consoleImage = Properties.Resources.PlayStation3Fat;
 
-                switch (console.Type)
+                switch (consoleProfile.Type)
                 {
                     case ConsoleType.PlayStation3Fat:
                         consoleImage = Properties.Resources.PlayStation3Fat;
@@ -63,35 +66,45 @@ namespace ModioX.Forms.Dialogs
                         break;
                 }
 
-                var consoleItem = new TileViewConsoleItem(console.Name, consoleImage) { Name = consoleIndex.ToString() };                
+                var consoleItem = new TileConsoleItem(consoleProfile.Name, consoleImage) { ConsoleProfile = consoleProfile };
                 consoleItem.OnClick += new EventHandler(ConsoleItem_Click);
                 PanelConsoleProfiles.Controls.Add(consoleItem);
                 consoleIndex++;
             }
         }
 
-        Control SelectedItem;
-
         private void ConsoleItem_Click(object sender, EventArgs e)
         {
-            if (((Control)sender) is not TileViewConsoleItem)
+            ResetConsoleItems();
+
+            Control SelectedItem;
+
+            if (((Control)sender) is not TileConsoleItem)
             {
                 SelectedItem = ((Control)sender).Parent;
             }
             else
             {
-                SelectedItem = (Control)sender as TileViewConsoleItem;
+                SelectedItem = (Control)sender as TileConsoleItem;
             }
 
-            var consoleProfile = MainWindow.Settings.ConsoleProfiles[int.Parse(SelectedItem.Name)];
+            SelectedConsole = SelectedItem as TileConsoleItem;
+            SelectedConsole.IsSelected = true;
 
-            ConsoleProfile = consoleProfile;
-
-            XtraMessageBox.Show("Selected Console: " + ConsoleProfile.Name);
+            ConsoleProfile = SelectedConsole.ConsoleProfile;
 
             ButtonEdit.Enabled = ConsoleProfile != null;
             ButtonDelete.Enabled = ConsoleProfile != null;
             ButtonConnect.Enabled = ConsoleProfile != null;
+        }
+
+        private void ResetConsoleItems()
+        {
+            foreach (var ctrl in PanelConsoleProfiles.Controls)
+            {
+                var item = ctrl as TileConsoleItem;
+                item.IsSelected = false;
+            }
         }
 
         private void ButtonConnect_Click(object sender, EventArgs e)
@@ -103,7 +116,7 @@ namespace ModioX.Forms.Dialogs
         {
             if (MainWindow.Settings.ConsoleProfiles.Count == 1)
             {
-                XtraMessageBox.Show("You can't delete this because there must be at least one console.", "Can't Delete Console");
+                XtraMessageBox.Show("You must have at least one console saved.", "Cannot Delete");
             }
             else
             {

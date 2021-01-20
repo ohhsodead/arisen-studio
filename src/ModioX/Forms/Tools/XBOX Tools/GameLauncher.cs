@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ModioX.XBOX_Tools
+namespace ModioX.Forms.Tools.XBOX_Tools
 {
     public partial class GameLauncher : DevExpress.XtraEditors.XtraForm
     {

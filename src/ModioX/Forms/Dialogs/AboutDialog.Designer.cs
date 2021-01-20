@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutDialog));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.RichTextBoxInformation = new System.Windows.Forms.RichTextBox();
+            this.LabelInformation = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.RichTextBoxThanks = new System.Windows.Forms.RichTextBox();
+            this.LabelSpecialThanks = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.RichTextBoxLicence = new System.Windows.Forms.RichTextBox();
+            this.LabelLicense = new DevExpress.XtraEditors.LabelControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.RichTextBoxCredits = new System.Windows.Forms.RichTextBox();
+            this.LabelCredits = new DevExpress.XtraEditors.LabelControl();
             this.ButtonClose = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -50,125 +50,118 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.RichTextBoxInformation);
+            this.groupControl1.Controls.Add(this.LabelInformation);
             this.groupControl1.Location = new System.Drawing.Point(14, 10);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(5);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Padding = new System.Windows.Forms.Padding(3);
-            this.groupControl1.Size = new System.Drawing.Size(585, 106);
+            this.groupControl1.Size = new System.Drawing.Size(585, 102);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "INFORMATION";
             // 
-            // RichTextBoxInformation
+            // LabelInformation
             // 
-            this.RichTextBoxInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.RichTextBoxInformation.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RichTextBoxInformation.Cursor = System.Windows.Forms.Cursors.Default;
-            this.RichTextBoxInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RichTextBoxInformation.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RichTextBoxInformation.ForeColor = System.Drawing.Color.Gainsboro;
-            this.RichTextBoxInformation.Location = new System.Drawing.Point(5, 26);
-            this.RichTextBoxInformation.Name = "RichTextBoxInformation";
-            this.RichTextBoxInformation.ReadOnly = true;
-            this.RichTextBoxInformation.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.RichTextBoxInformation.Size = new System.Drawing.Size(575, 75);
-            this.RichTextBoxInformation.TabIndex = 2;
-            this.RichTextBoxInformation.TabStop = false;
-            this.RichTextBoxInformation.Text = resources.GetString("RichTextBoxInformation.Text");
+            this.LabelInformation.AllowHtmlString = true;
+            this.LabelInformation.Appearance.Options.UseTextOptions = true;
+            this.LabelInformation.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.LabelInformation.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LabelInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelInformation.Location = new System.Drawing.Point(5, 26);
+            this.LabelInformation.Name = "LabelInformation";
+            this.LabelInformation.Padding = new System.Windows.Forms.Padding(3);
+            this.LabelInformation.Size = new System.Drawing.Size(575, 71);
+            this.LabelInformation.TabIndex = 19;
+            this.LabelInformation.Text = resources.GetString("LabelInformation.Text");
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.RichTextBoxThanks);
-            this.groupControl2.Location = new System.Drawing.Point(310, 126);
+            this.groupControl2.Controls.Add(this.LabelSpecialThanks);
+            this.groupControl2.Location = new System.Drawing.Point(310, 122);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(5);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Padding = new System.Windows.Forms.Padding(3);
-            this.groupControl2.Size = new System.Drawing.Size(289, 124);
+            this.groupControl2.Size = new System.Drawing.Size(289, 116);
             this.groupControl2.TabIndex = 4;
             this.groupControl2.Text = "SPECIAL THANKS";
             // 
-            // RichTextBoxThanks
+            // LabelSpecialThanks
             // 
-            this.RichTextBoxThanks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.RichTextBoxThanks.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RichTextBoxThanks.Cursor = System.Windows.Forms.Cursors.Default;
-            this.RichTextBoxThanks.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RichTextBoxThanks.Font = new System.Drawing.Font("Segoe UI", 9.3F);
-            this.RichTextBoxThanks.ForeColor = System.Drawing.Color.Gainsboro;
-            this.RichTextBoxThanks.Location = new System.Drawing.Point(5, 26);
-            this.RichTextBoxThanks.Name = "RichTextBoxThanks";
-            this.RichTextBoxThanks.ReadOnly = true;
-            this.RichTextBoxThanks.Size = new System.Drawing.Size(279, 93);
-            this.RichTextBoxThanks.TabIndex = 3;
-            this.RichTextBoxThanks.TabStop = false;
-            this.RichTextBoxThanks.Text = "Appropriate Creators for all Mods\nRobinPerris for DarkUI for WinForms\nJamesNK for" +
+            this.LabelSpecialThanks.AllowHtmlString = true;
+            this.LabelSpecialThanks.Appearance.Options.UseTextOptions = true;
+            this.LabelSpecialThanks.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.LabelSpecialThanks.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LabelSpecialThanks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelSpecialThanks.Location = new System.Drawing.Point(5, 26);
+            this.LabelSpecialThanks.Name = "LabelSpecialThanks";
+            this.LabelSpecialThanks.Padding = new System.Windows.Forms.Padding(3);
+            this.LabelSpecialThanks.Size = new System.Drawing.Size(279, 85);
+            this.LabelSpecialThanks.TabIndex = 18;
+            this.LabelSpecialThanks.Text = "Appropriate Creators for all Mods\nRobinPerris for DarkUI for WinForms\nJamesNK for" +
     " Newtonsoft.Json\nApache for Apache log4net\nBISOON for FtpConnection.cs\nTeddyHamm" +
     "er for XDevkit";
             // 
             // groupControl3
             // 
-            this.groupControl3.Controls.Add(this.RichTextBoxLicence);
-            this.groupControl3.Location = new System.Drawing.Point(14, 260);
+            this.groupControl3.Controls.Add(this.LabelLicense);
+            this.groupControl3.Location = new System.Drawing.Point(14, 248);
             this.groupControl3.Margin = new System.Windows.Forms.Padding(5);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Padding = new System.Windows.Forms.Padding(3);
-            this.groupControl3.Size = new System.Drawing.Size(585, 185);
+            this.groupControl3.Size = new System.Drawing.Size(585, 171);
             this.groupControl3.TabIndex = 14;
             this.groupControl3.Text = "LICENSE";
             // 
-            // RichTextBoxLicence
+            // LabelLicense
             // 
-            this.RichTextBoxLicence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.RichTextBoxLicence.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RichTextBoxLicence.Cursor = System.Windows.Forms.Cursors.Default;
-            this.RichTextBoxLicence.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RichTextBoxLicence.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RichTextBoxLicence.ForeColor = System.Drawing.Color.Gainsboro;
-            this.RichTextBoxLicence.Location = new System.Drawing.Point(5, 26);
-            this.RichTextBoxLicence.Name = "RichTextBoxLicence";
-            this.RichTextBoxLicence.ReadOnly = true;
-            this.RichTextBoxLicence.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.RichTextBoxLicence.Size = new System.Drawing.Size(575, 154);
-            this.RichTextBoxLicence.TabIndex = 4;
-            this.RichTextBoxLicence.TabStop = false;
-            this.RichTextBoxLicence.Text = resources.GetString("RichTextBoxLicence.Text");
+            this.LabelLicense.AllowHtmlString = true;
+            this.LabelLicense.Appearance.Options.UseTextOptions = true;
+            this.LabelLicense.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.LabelLicense.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LabelLicense.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelLicense.Location = new System.Drawing.Point(5, 26);
+            this.LabelLicense.Name = "LabelLicense";
+            this.LabelLicense.Padding = new System.Windows.Forms.Padding(3);
+            this.LabelLicense.Size = new System.Drawing.Size(575, 140);
+            this.LabelLicense.TabIndex = 18;
+            this.LabelLicense.Text = resources.GetString("LabelLicense.Text");
+            this.LabelLicense.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelLicense_HyperlinkClick);
             // 
             // groupControl4
             // 
-            this.groupControl4.Controls.Add(this.RichTextBoxCredits);
-            this.groupControl4.Location = new System.Drawing.Point(14, 126);
+            this.groupControl4.Controls.Add(this.LabelCredits);
+            this.groupControl4.Location = new System.Drawing.Point(14, 122);
             this.groupControl4.Margin = new System.Windows.Forms.Padding(5);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Padding = new System.Windows.Forms.Padding(3);
-            this.groupControl4.Size = new System.Drawing.Size(288, 124);
+            this.groupControl4.Size = new System.Drawing.Size(286, 116);
             this.groupControl4.TabIndex = 4;
             this.groupControl4.Text = "CREDITS";
             // 
-            // RichTextBoxCredits
+            // LabelCredits
             // 
-            this.RichTextBoxCredits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.RichTextBoxCredits.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RichTextBoxCredits.Cursor = System.Windows.Forms.Cursors.Default;
-            this.RichTextBoxCredits.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RichTextBoxCredits.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RichTextBoxCredits.ForeColor = System.Drawing.Color.Gainsboro;
-            this.RichTextBoxCredits.Location = new System.Drawing.Point(5, 26);
-            this.RichTextBoxCredits.Name = "RichTextBoxCredits";
-            this.RichTextBoxCredits.ReadOnly = true;
-            this.RichTextBoxCredits.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.RichTextBoxCredits.Size = new System.Drawing.Size(278, 93);
-            this.RichTextBoxCredits.TabIndex = 2;
-            this.RichTextBoxCredits.TabStop = false;
-            this.RichTextBoxCredits.Text = "Developer: ohhsodead\nContributor: KayGart\nContributor: TeddyHammer\n\nWebsite:\nhttp" +
-    "s://github.com/ohhsodead/ModioX";
+            this.LabelCredits.AllowHtmlString = true;
+            this.LabelCredits.Appearance.Options.UseTextOptions = true;
+            this.LabelCredits.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.LabelCredits.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LabelCredits.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelCredits.Location = new System.Drawing.Point(5, 26);
+            this.LabelCredits.Name = "LabelCredits";
+            this.LabelCredits.Padding = new System.Windows.Forms.Padding(3);
+            this.LabelCredits.Size = new System.Drawing.Size(276, 85);
+            this.LabelCredits.TabIndex = 17;
+            this.LabelCredits.Text = "Developer: ohhsodead\r\nContributor: KayGart\r\nContributor: TeddyHammer\r\n\r\nWebsite:\r" +
+    "\n<href=\\\"https://github.com/ohhsodead/ModioX /\\\">https://github.com/ohhsodead/Mo" +
+    "dioX ";
+            this.LabelCredits.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelCredits_HyperlinkClick);
             // 
             // ButtonClose
             // 
-            this.ButtonClose.Location = new System.Drawing.Point(270, 472);
+            this.ButtonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.ButtonClose.Location = new System.Drawing.Point(270, 450);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.Size = new System.Drawing.Size(74, 24);
             this.ButtonClose.TabIndex = 15;
-            this.ButtonClose.Text = "Close";
+            this.ButtonClose.Text = "OK";
             this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // AboutDialog
@@ -179,7 +172,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(615, 508);
+            this.ClientSize = new System.Drawing.Size(615, 486);
             this.Controls.Add(this.ButtonClose);
             this.Controls.Add(this.groupControl4);
             this.Controls.Add(this.groupControl3);
@@ -209,13 +202,13 @@
 
         #endregion
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.RichTextBox RichTextBoxInformation;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private System.Windows.Forms.RichTextBox RichTextBoxThanks;
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private System.Windows.Forms.RichTextBox RichTextBoxLicence;
         private DevExpress.XtraEditors.GroupControl groupControl4;
-        private System.Windows.Forms.RichTextBox RichTextBoxCredits;
         private DevExpress.XtraEditors.SimpleButton ButtonClose;
+        private DevExpress.XtraEditors.LabelControl LabelCredits;
+        private DevExpress.XtraEditors.LabelControl LabelInformation;
+        private DevExpress.XtraEditors.LabelControl LabelSpecialThanks;
+        private DevExpress.XtraEditors.LabelControl LabelLicense;
     }
 }

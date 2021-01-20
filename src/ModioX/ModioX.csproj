@@ -101,11 +101,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Urls.cs" />
-    <Compile Include="Controls\TileViewConsoleItem.cs">
+    <Compile Include="Controls\TileConsoleItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\TileViewConsoleItem.Designer.cs">
-      <DependentUpon>TileViewConsoleItem.cs</DependentUpon>
+    <Compile Include="Controls\TileConsoleItem.Designer.cs">
+      <DependentUpon>TileConsoleItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\Category.cs" />
     <Compile Include="Database\DownloadFiles.cs" />
@@ -169,12 +169,6 @@
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\Xbox Virtual Controler.Designer.cs">
       <DependentUpon>Xbox Virtual Controler.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\XMessageButtons.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\XMessageButtons.Designer.cs">
-      <DependentUpon>XMessageButtons.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\FileManagerWindow.cs">
       <SubType>Form</SubType>
@@ -280,8 +274,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Templates\GitHubTemplates.cs" />
-    <EmbeddedResource Include="Controls\TileViewConsoleItem.resx">
-      <DependentUpon>TileViewConsoleItem.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\TileConsoleItem.resx">
+      <DependentUpon>TileConsoleItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\ConnectionDialog.resx">
       <DependentUpon>ConnectionDialog.cs</DependentUpon>
@@ -330,9 +324,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\Xbox Virtual Controler.resx">
       <DependentUpon>Xbox Virtual Controler.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\XBOX Tools\XMessageButtons.resx">
-      <DependentUpon>XMessageButtons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\FileManagerWindow.resx">
       <DependentUpon>FileManagerWindow.cs</DependentUpon>

@@ -121,7 +121,7 @@
     <value>False</value>
   </metadata>
   <metadata name="ContextMenuMods.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>189, 3</value>
+    <value>1, 4</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ContextMenuModsInstallFiles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -165,50 +165,23 @@
   <metadata name="ColumnInstallationFiles.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="ToolItemModInstall.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFaSURBVEhL7ZO9SsRQFIQDggj+vEY6tbDeRix9AB9CECxs
-        t9xOq218CEGbLW20EuzsRCtLFxJDyL/zhZMQiLteJZU4MOSec2Ym914S7++iLMsdaOVwKIriClo5HAYJ
-        rqpqV8c+M57Q6wbTa+Zo6TlBAZdhGH5kWfac5/mj9dpgeszQoKXnBJletJOJlTW6wQ3QpGn6auVy6Hi+
-        DJWe+3qsKGyq9V4TbOspM9Og9c2+GBIdB0EQSb8mbujY93Ecz3WKJ8iaHjM0aPGYfTG0mxtxZiUvWlfA
-        rViDUPW2bIx+Jl5b+TXkW42iKJDx1Fo1CFLgHeyGArR48FqrD4lG7ErPbWu1UG8TWtkCrXlG1upD8zEi
-        7lF8d+QcjzC2mD50V+dJkrzp7c3P4UQ8eC2mD4a6x/qH+A4KPJL+gjWeIYN98YC1U7B9ww8/IZ6lwdrB
-        oYST3xCvxfyjC8/7BFYzRxBtZeEcAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ToolItemModUninstall.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJRSURBVEhL3ZS9a1NhFMaDLdiPwU1FpJSKgx+dilsGFUtX
-        O4p7ViWC/gFW21Ecsqk46mBx6GCX+AdYwepQPyBWzRAMXhVCYj79Pa/P7bXeaqKjDxzOOc8557kn931v
-        Mv8nut3uvl6vNyNTbPrfgMgIIvl2u/2ceBvg1qldxHa7fTAwcKzVar2uVCrfOp3ObbTOwh23zcPdUY2e
-        l+RHPfZnSBShz9gTbAobhpvF8m4JID/E5mv1ej0iPmJ6ZyAyok0lSvM4Pkv+Ct9rNBof3bYF9SD+1Jv/
-        /rVQzOsnoqNNs9VqtcHPfgQ/7ZYUqB0ul8tN/AVTaeig/E6HtSnxKvGQavJx/Cvou8vsM6fbwRN1pQQd
-        1KyCeFP8+Vqt9hX7QnwuDPwEuHn37zWVAF73VEWd/CXeadX8kATZ6h7xfUwHuysMGfRPwwkzphJQPKGK
-        mkwFQAVhvERj4UkeVGg2m5tRFNXxH+A0O+exBPB7sBzFA6a2AHdKNRmCV/VaEHtLvGDumh7C1ftE72mP
-        /QANWRX6WalUaiH0AIFRjwYwPwa/rB7iCdOhcBITlhi6spNx8i+0KfEoIrfwlzUrr5zZMerviG8GUQEy
-        Fp40lYKHFhRLTM3kK/LxQ8ivc1XfKA6g1ldYHwL1nFOJBFF5U9LJ6UCdJsL83HWc/idSViwW0ei/sV6X
-        4gBq+oyX+thjnT5eB5V6x/hx6u+JC0F0UCC43x/LssRNB0gU/qHvfHIrBgVDupaRD3KRXPd4UZta9Ixb
-        /x5sdxCxG5z+hr+8TfJCsmkm8x0xGl2qGjqEWgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ToolItemModDownload.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHnSURBVEhL7ZK9S1thGMUvQhFqoSiutQSHDnHoolBwtEKb
-        DDoIncT/QLCDbtm0BQcHl0Knrgr+AVKyKK1uQiYHM9SIH9FEY8x34u9cnlySXhMS5xx4eO9zznnP8973
-        XqeHrlCtVt/UarUp1hAVMPr5IGSsUqnsRiKRKsEeyuXyAcuk2boDoeF0Ov1gQX8ZsEGt8/xHXCwWK7Ms
-        mL09CBui5glYy2Qy97lc7pr+k8ke4GYJTScSiSLP40Y/DQyL2Wz2TqcRotFohWXKZB/wh3RFHOK3UX4g
-        riqM4FuWb9pEfTDZBZ5tlbUudC0WvoN/mb3DJjkOzaRCi8XiKeKo0T7k8/lLlbUu2LaivXVwdTdkfHRF
-        pm2JhAi7RAu0CB7WYVjfk/M9Ho+X9G3g3jmFQuGcSSnEPvN7wDAAP6gi9EpV76WZzQPcElqNIb+cZDKZ
-        L5VKx6Y1AeMYgy9kboQ4aWbzgPQilUrldFiH0BM1kC9Nb8L/4a1C6+Bb/VOe7nhTG/QapvmAFlSghQaN
-        9gEtoCz+liM1b3XhuhKev5jHBwW2CyXvNYeM2iG/1skZBYtk2iGGdcTlTootK/h/8jZntn8fvt8NFmgm
-        IPckPgf61Rjwg8dXFtkMhBGGfGad67TwT1NDFtFDIxznEZghpKLJLVE8AAAAAElFTkSuQmCC
-</value>
-  </data>
   <metadata name="MainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>332, 4</value>
+    <value>144, 5</value>
+  </metadata>
+  <metadata name="ConnectMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>248, 8</value>
+  </metadata>
+  <metadata name="ToolsMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>374, 8</value>
+  </metadata>
+  <metadata name="ApplicationsMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>476, 10</value>
+  </metadata>
+  <metadata name="OptionsMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>626, 8</value>
+  </metadata>
+  <metadata name="HelpMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>752, 9</value>
   </metadata>
   <metadata name="ConnectMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>436, 7</value>
@@ -226,7 +199,13 @@
     <value>940, 2</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>209</value>
+    <value>28</value>
+  </metadata>
+  <metadata name="BarManagerModInformation.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1113, 8</value>
+  </metadata>
+  <metadata name="BarManagerModsInstalled.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1238, 8</value>
   </metadata>
   <data name="MainWindow.IconOptions.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2131,6 +2110,7 @@
         AJ/xAAA=
 </value>
   </data>
+<<<<<<< Updated upstream
   <metadata name="workspaceManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1172, 1</value>
   </metadata>
@@ -2145,6 +2125,10 @@
   </metadata>
   <metadata name="HelpMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>940, 2</value>
+=======
+  <metadata name="WorkspaceManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>848, 6</value>
+>>>>>>> Stashed changes
   </metadata>
   <metadata name="ColumnModsId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2179,22 +2163,6 @@
   <metadata name="ColumnModsFavourite.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="ToolItemGameModsUninstallAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJRSURBVEhL3ZS9a1NhFMaDLdiPwU1FpJSKgx+dilsGFUtX
-        O4p7ViWC/gFW21Ecsqk46mBx6GCX+AdYwepQPyBWzRAMXhVCYj79Pa/P7bXeaqKjDxzOOc8557kn931v
-        Mv8nut3uvl6vNyNTbPrfgMgIIvl2u/2ceBvg1qldxHa7fTAwcKzVar2uVCrfOp3ObbTOwh23zcPdUY2e
-        l+RHPfZnSBShz9gTbAobhpvF8m4JID/E5mv1ej0iPmJ6ZyAyok0lSvM4Pkv+Ct9rNBof3bYF9SD+1Jv/
-        /rVQzOsnoqNNs9VqtcHPfgQ/7ZYUqB0ul8tN/AVTaeig/E6HtSnxKvGQavJx/Cvou8vsM6fbwRN1pQQd
-        1KyCeFP8+Vqt9hX7QnwuDPwEuHn37zWVAF73VEWd/CXeadX8kATZ6h7xfUwHuysMGfRPwwkzphJQPKGK
-        mkwFQAVhvERj4UkeVGg2m5tRFNXxH+A0O+exBPB7sBzFA6a2AHdKNRmCV/VaEHtLvGDumh7C1ftE72mP
-        /QANWRX6WalUaiH0AIFRjwYwPwa/rB7iCdOhcBITlhi6spNx8i+0KfEoIrfwlzUrr5zZMerviG8GUQEy
-        Fp40lYKHFhRLTM3kK/LxQ8ivc1XfKA6g1ldYHwL1nFOJBFF5U9LJ6UCdJsL83HWc/idSViwW0ei/sV6X
-        4gBq+oyX+thjnT5eB5V6x/hx6u+JC0F0UCC43x/LssRNB0gU/qHvfHIrBgVDupaRD3KRXPd4UZta9Ixb
-        /x5sdxCxG5z+hr+8TfJCsmkm8x0xGl2qGjqEWgAAAABJRU5ErkJggg==
-</value>
-  </data>
   <metadata name="ColumnModsInstalledId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2223,9 +2191,6 @@
     <value>True</value>
   </metadata>
   <metadata name="ModsMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1336, 1</value>
-  </metadata>
-  <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 40</value>
+    <value>1012, 6</value>
   </metadata>
 </root>

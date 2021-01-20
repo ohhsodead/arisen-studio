@@ -1,19 +1,16 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Skins;
+using DevExpress.XtraEditors;
+using ModioX.Forms.Windows;
+using ModioX.Models.Resources;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ModioX.Controls
 {
-    public partial class TileViewConsoleItem : XtraUserControl, IMessageFilter
+    public partial class TileConsoleItem : XtraUserControl, IMessageFilter
     {
-        public TileViewConsoleItem(string consoleName, Image image)
+        public TileConsoleItem(string consoleName, Image image)
         {
             InitializeComponent();
             ImageConsole.Image = image;
@@ -21,15 +18,22 @@ namespace ModioX.Controls
             Application.AddMessageFilter(this);
         }
 
+        public ConsoleProfile ConsoleProfile { get; set; }
+
+        public bool IsSelected { get; set; } = false;
+
         public bool PreFilterMessage(ref Message m)
         {
             if (!IsDisposed && ClientRectangle.Contains(PointToClient(MousePosition)))
             {
-                BackColor = Color.DimGray;
+                BackColor = MainWindow.SkinColors.GetColor("Highlight");
             }
             else
             {
-                BackColor = Color.Transparent;
+                if (!IsSelected)
+                {
+                    BackColor = Color.Transparent;
+                }
             }
             return false;
         }
@@ -38,7 +42,7 @@ namespace ModioX.Controls
         {
             add
             {
-                base.Click += value;
+                Click += value;
                 foreach (Control control in Controls)
                 {
                     control.Click += value;
@@ -46,7 +50,7 @@ namespace ModioX.Controls
             }
             remove
             {
-                base.Click -= value;
+                Click -= value;
                 foreach (Control control in Controls)
                 {
                     control.Click -= value;

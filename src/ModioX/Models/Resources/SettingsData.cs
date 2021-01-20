@@ -486,6 +486,8 @@ namespace ModioX.Models.Resources
     /// </summary>
     public class InstalledMod
     {
+        public ConsoleTypePrefix ConsoleType { get; set; } = ConsoleTypePrefix.PS3;
+
         public string CategoryId { get; set; }
 
         public int ModId { get; set; }

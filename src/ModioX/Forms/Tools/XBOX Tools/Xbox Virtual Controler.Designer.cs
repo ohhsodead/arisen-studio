@@ -1,5 +1,4 @@
-﻿
-namespace ModioX
+﻿namespace ModioX.Forms.Tools.XBOX_Tools
 {
     partial class Xbox_Virtual_Controler
     {

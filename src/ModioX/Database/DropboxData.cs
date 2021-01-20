@@ -74,7 +74,7 @@ namespace ModioX.Database
         private static async Task<ModsData> GetMods()
         {
             using var client = new HttpClient();
-            using var response = await client.GetAsync(Urls.ModsData);
+            using var response = await client.GetAsync(Urls.ModsDataPS3);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Bad response {response.StatusCode}");

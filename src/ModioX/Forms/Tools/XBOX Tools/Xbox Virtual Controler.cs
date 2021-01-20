@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using XDevkit;
 
-namespace ModioX
+namespace ModioX.Forms.Tools.XBOX_Tools
 {
     public partial class Xbox_Virtual_Controler : DevExpress.XtraEditors.XtraForm
     {
