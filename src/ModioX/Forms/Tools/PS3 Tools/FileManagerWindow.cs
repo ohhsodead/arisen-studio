@@ -1,4 +1,5 @@
 ﻿using DarkUI.Forms;
+using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using FluentFTP;
 using ModioX.Extensions;
@@ -60,11 +61,11 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void FileManagerWindow_Load(object sender, EventArgs e)
         {
-            DgvLocalFiles.Focus();
+            GridLocalFiles.Focus();
 
-            SetConsoleStatus("Fetching drives...");
+            SetStatus("Fetching drives...");
 
-            foreach (var driveInfo in localDrives) _ = ComboBoxLocalDrives.Items.Add(driveInfo.Name.Replace(@"\", ""));
+            foreach (var driveInfo in localDrives) _ = ComboBoxLocalDrives.Properties.Items.Add(driveInfo.Name.Replace(@"\", ""));
 
             if (MainWindow.Settings.SaveLocalPath)
             {
@@ -98,11 +99,11 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void WaitLoadConsole_Tick(object sender, EventArgs e)
         {
-            SetConsoleStatus("Fetching root directories...");
+            SetStatus("Fetching root directories...");
 
             foreach (var driveName in FtpExtensions.GetFolderNames("/").ToArray())
             {
-                _ = ComboBoxConsoleDrives.Items.Add(driveName.Replace(@"/", ""));
+                ComboBoxConsoleDrives.Properties.Items.Add(driveName.Replace(@"/", ""));
             }
 
             if (MainWindow.Settings.SaveConsolePath)
@@ -128,12 +129,13 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void ComboBoxLocalDrives_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadLocalDirectory(ComboBoxLocalDrives.GetItemText(ComboBoxLocalDrives.SelectedItem) + @"\");
+            LoadLocalDirectory(ComboBoxLocalDrives.SelectedItem.ToString() + @"\");
         }
 
-        private void ButtonLocalDirectory_Click(object sender, EventArgs e)
+        private void ButtonBrowseLocalDirectory_Click(object sender, EventArgs e)
         {
             using var folderBrowser = new FolderBrowserDialog { ShowNewFolderButton = true };
+
             if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
                 LocalDirectoryPath = folderBrowser.SelectedPath;
@@ -205,41 +207,41 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         */
 
-        private void ToolStripLocalUploadFile_Click(object sender, EventArgs e)
+        private void ButtonLocalUploadFile_ItemClick(object sender, ItemClickEventArgs e)
         {
             UploadLocalFile();
         }
 
-        private void ToolStripLocalDeleteFile_Click(object sender, EventArgs e)
+        private void ButtonLocalDeleteFile_ItemClick(object sender, ItemClickEventArgs e)
         {
             DeleteLocalItem();
         }
 
-        private void ToolStripLocalNewFolder_Click(object sender, EventArgs e)
+        private void ButtonLocalNewFolder_ItemClick(object sender, ItemClickEventArgs e)
         {
             CreateLocalFolder();
         }
 
-        private void ToolStripLocalRefresh_Click(object sender, EventArgs e)
+        private void ButtonLocalRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
             LoadLocalDirectory(LocalDirectoryPath);
         }
 
-        private void ToolStripLocalOpenExplorer_Click(object sender, EventArgs e)
+        private void ButtonLocalOpenExplorer_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
             {
-                _ = Process.Start("explorer.exe", TextBoxLocalPath.Text);
+                Process.Start("explorer.exe", TextBoxLocalPath.Text);
             }
             catch (Exception ex)
             {
-                SetLocalStatus($"Error opening file explorer for path: {TextBoxLocalPath.Text} - {ex.Message}", ex);
+                SetStatus($"Error opening file explorer for path: {TextBoxLocalPath.Text} - {ex.Message}", ex);
             }
         }
 
         private void ContextMenuLocalFileUpload_Click(object sender, EventArgs e)
         {
-            ToolStripLocalUpload.PerformClick();
+            //ToolStripLocalUpload.PerformClick();
         }
 
         private void ContextMenuLocalDeleteFile_Click(object sender, EventArgs e)
@@ -345,7 +347,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void ComboBoxConsoleDrives_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadConsoleDirectory("/" + ComboBoxConsoleDrives.GetItemText(ComboBoxConsoleDrives.SelectedItem) + "/");
+            LoadConsoleDirectory("/" + ComboBoxConsoleDrives.SelectedItem.ToString() + "/");
         }
 
         private void ButtonConsoleNavigate_Click(object sender, EventArgs e)
@@ -423,29 +425,29 @@ namespace ModioX.Forms.Tools.PS3_Tools
             */
         }
 
-        private void ToolStripConsoleDownload_Click(object sender, EventArgs e)
+        private void ButtonConsoleDownloadFile_ItemClick(object sender, ItemClickEventArgs e)
         {
             DownloadFromConsole();
         }
 
-        private void ToolStripConsoleDelete_Click(object sender, EventArgs e)
+        private void ButtonConsoleDeleteFile_ItemClick(object sender, ItemClickEventArgs e)
         {
             DeleteConsoleItem();
         }
 
-        private void ToolStripConsoleNewFolder_Click(object sender, EventArgs e)
+        private void ButtonConsoleNewFolder_ItemClick(object sender, ItemClickEventArgs e)
         {
             CreateConsoleFolder();
         }
 
-        private void ToolStripConsoleFileRefresh_Click(object sender, EventArgs e)
+        private void ButtonConsoleRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
             LoadConsoleDirectory(FtpDirectoryPath);
         }
 
         private void ContextMenuConsoleDownloadFile_Click(object sender, EventArgs e)
         {
-            ToolStripConsoleDownload.PerformClick();
+            //ToolStripConsoleDownload.PerformClick();
         }
 
         private void ContextMenuConsoleDeleteFile_Click(object sender, EventArgs e)
@@ -937,34 +939,13 @@ namespace ModioX.Forms.Tools.PS3_Tools
         }
 
         /// <summary>
-        /// Set the current status in the local tool strip
-        /// </summary>
-        /// <param name="status"></param>
-        /// <param name="ex"></param>
-        public void SetLocalStatus(string status, Exception ex = null)
-        {
-            ToolStripLabelLocalStatus.Text = status;
-
-            if (ex == null)
-            {
-                Program.Log.Info(status);
-            }
-            else
-            {
-                Program.Log.Error(ex, status);
-            }
-
-            Refresh();
-        }
-
-        /// <summary>
         /// Set the current process status in the console tool strip
         /// </summary>
         /// <param name="status"></param>
         /// <param name="ex"></param>
-        public void SetConsoleStatus(string status, Exception ex = null)
+        public void SetStatus(string status, Exception ex = null)
         {
-            ToolStripLabelConsoleStatus.Text = status;
+            LabelStatus.Caption = status;
 
             switch (ex)
             {

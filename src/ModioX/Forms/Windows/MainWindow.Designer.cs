@@ -384,7 +384,7 @@ namespace ModioX.Forms.Windows
             this.LabelSelectType.Appearance.Options.UseForeColor = true;
             this.LabelSelectType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectType.Location = new System.Drawing.Point(538, 42);
+            this.LabelSelectType.Location = new System.Drawing.Point(534, 42);
             this.LabelSelectType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelSelectType.Name = "LabelSelectType";
             this.LabelSelectType.Size = new System.Drawing.Size(57, 15);
@@ -780,7 +780,7 @@ namespace ModioX.Forms.Windows
             this.LabelSelectSystemType.Appearance.Options.UseForeColor = true;
             this.LabelSelectSystemType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelSelectSystemType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectSystemType.Location = new System.Drawing.Point(393, 42);
+            this.LabelSelectSystemType.Location = new System.Drawing.Point(389, 42);
             this.LabelSelectSystemType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelSelectSystemType.Name = "LabelSelectSystemType";
             this.LabelSelectSystemType.Size = new System.Drawing.Size(71, 15);
@@ -804,7 +804,7 @@ namespace ModioX.Forms.Windows
             this.PanelModsLibraryFilters.Location = new System.Drawing.Point(2, 23);
             this.PanelModsLibraryFilters.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PanelModsLibraryFilters.Name = "PanelModsLibraryFilters";
-            this.PanelModsLibraryFilters.Size = new System.Drawing.Size(863, 96);
+            this.PanelModsLibraryFilters.Size = new System.Drawing.Size(859, 96);
             this.PanelModsLibraryFilters.TabIndex = 12;
             // 
             // TextBoxSearch
@@ -817,7 +817,7 @@ namespace ModioX.Forms.Windows
             this.TextBoxSearch.Properties.AllowFocused = false;
             this.TextBoxSearch.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxSearch.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxSearch.Size = new System.Drawing.Size(328, 22);
+            this.TextBoxSearch.Size = new System.Drawing.Size(324, 22);
             this.TextBoxSearch.TabIndex = 1169;
             this.TextBoxSearch.EditValueChanged += new System.EventHandler(this.TextBoxSearch_EditValueChanged);
             // 
@@ -1546,10 +1546,10 @@ namespace ModioX.Forms.Windows
             // 
             this.DockControlModsInstalled.CausesValidation = false;
             this.DockControlModsInstalled.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.DockControlModsInstalled.Location = new System.Drawing.Point(2, 178);
+            this.DockControlModsInstalled.Location = new System.Drawing.Point(2, 176);
             this.DockControlModsInstalled.Manager = this.MainMenu;
             this.DockControlModsInstalled.Name = "DockControlModsInstalled";
-            this.DockControlModsInstalled.Size = new System.Drawing.Size(863, 23);
+            this.DockControlModsInstalled.Size = new System.Drawing.Size(859, 23);
             this.DockControlModsInstalled.Text = "standaloneBarDockControl1";
             // 
             // barButtonItem6
@@ -1710,7 +1710,7 @@ namespace ModioX.Forms.Windows
             this.labelControl2.LineVisible = true;
             this.labelControl2.Location = new System.Drawing.Point(7, 71);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(850, 15);
+            this.labelControl2.Size = new System.Drawing.Size(846, 15);
             this.labelControl2.TabIndex = 1168;
             this.labelControl2.Text = "MODS";
             // 
@@ -1726,14 +1726,14 @@ namespace ModioX.Forms.Windows
             this.labelControl1.LineVisible = true;
             this.labelControl1.Location = new System.Drawing.Point(7, 11);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(850, 15);
+            this.labelControl1.Size = new System.Drawing.Size(846, 15);
             this.labelControl1.TabIndex = 1167;
             this.labelControl1.Text = "FILTER MODS";
             // 
             // ComboBoxRegion
             // 
             this.ComboBoxRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxRegion.Location = new System.Drawing.Point(753, 39);
+            this.ComboBoxRegion.Location = new System.Drawing.Point(749, 39);
             this.ComboBoxRegion.MenuManager = this.MainMenu;
             this.ComboBoxRegion.Name = "ComboBoxRegion";
             this.ComboBoxRegion.Properties.AllowFocused = false;
@@ -1749,7 +1749,7 @@ namespace ModioX.Forms.Windows
             // ComboBoxModType
             // 
             this.ComboBoxModType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxModType.Location = new System.Drawing.Point(601, 39);
+            this.ComboBoxModType.Location = new System.Drawing.Point(597, 39);
             this.ComboBoxModType.MenuManager = this.MainMenu;
             this.ComboBoxModType.Name = "ComboBoxModType";
             this.ComboBoxModType.Properties.AllowFocused = false;
@@ -1765,7 +1765,7 @@ namespace ModioX.Forms.Windows
             // ComboBoxSystemType
             // 
             this.ComboBoxSystemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxSystemType.Location = new System.Drawing.Point(470, 39);
+            this.ComboBoxSystemType.Location = new System.Drawing.Point(466, 39);
             this.ComboBoxSystemType.MenuManager = this.MainMenu;
             this.ComboBoxSystemType.Name = "ComboBoxSystemType";
             this.ComboBoxSystemType.Properties.AllowFocused = false;
@@ -1787,7 +1787,7 @@ namespace ModioX.Forms.Windows
             this.LabelSelectRegion.Appearance.Options.UseForeColor = true;
             this.LabelSelectRegion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelSelectRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectRegion.Location = new System.Drawing.Point(705, 42);
+            this.LabelSelectRegion.Location = new System.Drawing.Point(701, 42);
             this.LabelSelectRegion.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelSelectRegion.Name = "LabelSelectRegion";
             this.LabelSelectRegion.Size = new System.Drawing.Size(42, 15);
@@ -1911,7 +1911,7 @@ namespace ModioX.Forms.Windows
             this.GridControlGameModsInstalled.MainView = this.GridViewGameModsInstalled;
             this.GridControlGameModsInstalled.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.GridControlGameModsInstalled.Name = "GridControlGameModsInstalled";
-            this.GridControlGameModsInstalled.Size = new System.Drawing.Size(863, 155);
+            this.GridControlGameModsInstalled.Size = new System.Drawing.Size(859, 153);
             this.GridControlGameModsInstalled.TabIndex = 7;
             this.GridControlGameModsInstalled.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewGameModsInstalled});
@@ -2017,10 +2017,10 @@ namespace ModioX.Forms.Windows
             this.GroupModsLibrary.Controls.Add(this.ProgressMods);
             this.GroupModsLibrary.Controls.Add(this.GridControlMods);
             this.GroupModsLibrary.Controls.Add(this.PanelModsLibraryFilters);
-            this.GroupModsLibrary.Location = new System.Drawing.Point(320, 39);
-            this.GroupModsLibrary.Margin = new System.Windows.Forms.Padding(4, 3, 4, 4);
+            this.GroupModsLibrary.Location = new System.Drawing.Point(322, 39);
+            this.GroupModsLibrary.Margin = new System.Windows.Forms.Padding(5, 3, 5, 5);
             this.GroupModsLibrary.Name = "GroupModsLibrary";
-            this.GroupModsLibrary.Size = new System.Drawing.Size(867, 532);
+            this.GroupModsLibrary.Size = new System.Drawing.Size(863, 532);
             this.GroupModsLibrary.TabIndex = 1167;
             this.GroupModsLibrary.Text = "MODS LIBRARY";
             // 
@@ -2036,7 +2036,7 @@ namespace ModioX.Forms.Windows
             this.ProgressMods.Caption = "NO MODS FOUND";
             this.ProgressMods.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.ProgressMods.Description = "Loading..";
-            this.ProgressMods.Location = new System.Drawing.Point(325, 187);
+            this.ProgressMods.Location = new System.Drawing.Point(323, 187);
             this.ProgressMods.Name = "ProgressMods";
             this.ProgressMods.Size = new System.Drawing.Size(246, 66);
             this.ProgressMods.TabIndex = 1170;
@@ -2050,7 +2050,7 @@ namespace ModioX.Forms.Windows
             this.GridControlMods.MainView = this.GridViewMods;
             this.GridControlMods.MenuManager = this.MainMenu;
             this.GridControlMods.Name = "GridControlMods";
-            this.GridControlMods.Size = new System.Drawing.Size(863, 411);
+            this.GridControlMods.Size = new System.Drawing.Size(859, 411);
             this.GridControlMods.TabIndex = 1171;
             this.GridControlMods.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewMods});
@@ -2121,7 +2121,7 @@ namespace ModioX.Forms.Windows
             this.GroupCategories.AppearanceCaption.Options.UseFont = true;
             this.GroupCategories.Controls.Add(this.NavigationBar);
             this.GroupCategories.Location = new System.Drawing.Point(12, 39);
-            this.GroupCategories.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.GroupCategories.Margin = new System.Windows.Forms.Padding(4, 3, 5, 3);
             this.GroupCategories.Name = "GroupCategories";
             this.GroupCategories.Size = new System.Drawing.Size(300, 743);
             this.GroupCategories.TabIndex = 1185;
@@ -2137,10 +2137,10 @@ namespace ModioX.Forms.Windows
             this.GroupModsInstalled.Controls.Add(this.GridControlGameModsInstalled);
             this.GroupModsInstalled.Controls.Add(this.DockControlModsInstalled);
             this.GroupModsInstalled.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-            this.GroupModsInstalled.Location = new System.Drawing.Point(320, 579);
-            this.GroupModsInstalled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 3);
+            this.GroupModsInstalled.Location = new System.Drawing.Point(322, 581);
+            this.GroupModsInstalled.Margin = new System.Windows.Forms.Padding(4, 5, 4, 3);
             this.GroupModsInstalled.Name = "GroupModsInstalled";
-            this.GroupModsInstalled.Size = new System.Drawing.Size(867, 203);
+            this.GroupModsInstalled.Size = new System.Drawing.Size(863, 201);
             this.GroupModsInstalled.TabIndex = 1179;
             this.GroupModsInstalled.Text = "MODS/PLUGINS INSTALLED";
             // 
@@ -2156,7 +2156,7 @@ namespace ModioX.Forms.Windows
             this.ProgressModsInstalled.Caption = "NO MODS INSTALLED";
             this.ProgressModsInstalled.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.ProgressModsInstalled.Description = "Loading...";
-            this.ProgressModsInstalled.Location = new System.Drawing.Point(325, 87);
+            this.ProgressModsInstalled.Location = new System.Drawing.Point(323, 87);
             this.ProgressModsInstalled.Name = "ProgressModsInstalled";
             this.ProgressModsInstalled.Size = new System.Drawing.Size(246, 66);
             this.ProgressModsInstalled.TabIndex = 1171;
@@ -2180,7 +2180,7 @@ namespace ModioX.Forms.Windows
             this.GroupModInformation.Controls.Add(this.GroupInstallFiles);
             this.GroupModInformation.Controls.Add(this.DockModInformation);
             this.GroupModInformation.Location = new System.Drawing.Point(1195, 39);
-            this.GroupModInformation.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.GroupModInformation.Margin = new System.Windows.Forms.Padding(5, 3, 4, 3);
             this.GroupModInformation.Name = "GroupModInformation";
             this.GroupModInformation.Size = new System.Drawing.Size(377, 743);
             this.GroupModInformation.TabIndex = 1160;
