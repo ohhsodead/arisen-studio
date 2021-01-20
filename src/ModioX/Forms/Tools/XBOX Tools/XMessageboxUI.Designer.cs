@@ -39,9 +39,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ButtonNo = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonYes = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonExtra = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonNo = new System.Windows.Forms.Button();
+            this.ButtonYes = new System.Windows.Forms.Button();
+            this.ButtonExtra = new System.Windows.Forms.Button();
             this.LabelBody = new DevExpress.XtraEditors.LabelControl();
             this.TopTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -172,70 +172,67 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // ButtonNo
             // 
-            this.ButtonNo.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ButtonNo.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.ButtonNo.Appearance.Options.UseBackColor = true;
-            this.ButtonNo.Appearance.Options.UseFont = true;
-            this.ButtonNo.Appearance.Options.UseImage = true;
-            this.ButtonNo.Appearance.Options.UseTextOptions = true;
-            this.ButtonNo.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.ButtonNo.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(165)))), ((int)(((byte)(14)))));
-            this.ButtonNo.AppearanceHovered.Options.UseBackColor = true;
+            this.ButtonNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(165)))), ((int)(((byte)(14)))));
             this.ButtonNo.DialogResult = System.Windows.Forms.DialogResult.No;
             this.ButtonNo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ButtonNo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.ButtonNo.FlatAppearance.BorderSize = 0;
+            this.ButtonNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonNo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.ButtonNo.ForeColor = System.Drawing.Color.White;
             this.ButtonNo.Location = new System.Drawing.Point(0, 749);
             this.ButtonNo.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonNo.Name = "ButtonNo";
-            this.ButtonNo.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonNo.Size = new System.Drawing.Size(680, 51);
             this.ButtonNo.TabIndex = 16;
             this.ButtonNo.Text = "     No";
+            this.ButtonNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonNo.UseVisualStyleBackColor = false;
             this.ButtonNo.Visible = false;
+            this.ButtonNo.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.ButtonNo.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // ButtonYes
             // 
-            this.ButtonYes.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ButtonYes.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.ButtonYes.Appearance.Options.UseBackColor = true;
-            this.ButtonYes.Appearance.Options.UseFont = true;
-            this.ButtonYes.Appearance.Options.UseImage = true;
-            this.ButtonYes.Appearance.Options.UseTextOptions = true;
-            this.ButtonYes.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.ButtonYes.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(165)))), ((int)(((byte)(14)))));
-            this.ButtonYes.AppearanceHovered.Options.UseBackColor = true;
+            this.ButtonYes.BackColor = System.Drawing.Color.Transparent;
             this.ButtonYes.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.ButtonYes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ButtonYes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.ButtonYes.FlatAppearance.BorderSize = 0;
+            this.ButtonYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonYes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.ButtonYes.Location = new System.Drawing.Point(0, 698);
             this.ButtonYes.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonYes.Name = "ButtonYes";
-            this.ButtonYes.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonYes.Size = new System.Drawing.Size(680, 51);
             this.ButtonYes.TabIndex = 20;
             this.ButtonYes.Text = "     Yes";
+            this.ButtonYes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonYes.UseVisualStyleBackColor = false;
             this.ButtonYes.Visible = false;
+            this.ButtonYes.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.ButtonYes.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // ButtonExtra
             // 
-            this.ButtonExtra.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ButtonExtra.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.ButtonExtra.Appearance.Options.UseBackColor = true;
-            this.ButtonExtra.Appearance.Options.UseFont = true;
-            this.ButtonExtra.Appearance.Options.UseImage = true;
-            this.ButtonExtra.Appearance.Options.UseTextOptions = true;
-            this.ButtonExtra.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.ButtonExtra.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(165)))), ((int)(((byte)(14)))));
-            this.ButtonExtra.AppearanceHovered.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(165)))), ((int)(((byte)(14)))));
-            this.ButtonExtra.AppearanceHovered.Options.UseBackColor = true;
+            this.ButtonExtra.BackColor = System.Drawing.Color.Transparent;
             this.ButtonExtra.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.ButtonExtra.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ButtonExtra.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.ButtonExtra.FlatAppearance.BorderSize = 0;
+            this.ButtonExtra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonExtra.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.ButtonExtra.Location = new System.Drawing.Point(0, 647);
             this.ButtonExtra.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonExtra.Name = "ButtonExtra";
-            this.ButtonExtra.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonExtra.Size = new System.Drawing.Size(680, 51);
             this.ButtonExtra.TabIndex = 21;
             this.ButtonExtra.Text = "     Abort";
+            this.ButtonExtra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonExtra.UseVisualStyleBackColor = false;
             this.ButtonExtra.Visible = false;
+            this.ButtonExtra.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.ButtonExtra.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // LabelBody
             // 
@@ -258,10 +255,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // XMessageboxUI
             // 
-            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ClientSize = new System.Drawing.Size(680, 840);
             this.Controls.Add(this.ButtonExtra);
             this.Controls.Add(this.ButtonYes);
@@ -270,9 +266,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.Controls.Add(this.TopTitle);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("XMessageboxUI.IconOptions.Image")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -302,9 +296,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.Panel panel2;
-        public DevExpress.XtraEditors.SimpleButton ButtonNo;
-        public DevExpress.XtraEditors.SimpleButton ButtonYes;
-        public DevExpress.XtraEditors.SimpleButton ButtonExtra;
+        public System.Windows.Forms.Button ButtonNo;
+        public System.Windows.Forms.Button ButtonYes;
+        public System.Windows.Forms.Button ButtonExtra;
         private DevExpress.XtraEditors.LabelControl LabelBody;
     }
 }

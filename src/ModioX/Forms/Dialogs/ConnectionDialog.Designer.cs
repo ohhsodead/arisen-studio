@@ -59,6 +59,7 @@
             this.ButtonConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonConnect.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonConnect.Appearance.Options.UseFont = true;
+            this.ButtonConnect.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ButtonConnect.Enabled = false;
             this.ButtonConnect.Location = new System.Drawing.Point(393, 357);
             this.ButtonConnect.Name = "ButtonConnect";

@@ -2,6 +2,7 @@
 using ModioX.Forms.Dialogs;
 using ModioX.Forms.Settings;
 using ModioX.Forms.Tools.PS3_Tools;
+using ModioX.Forms.Tools.XBOX_Tools;
 using ModioX.Forms.Windows;
 using ModioX.Models.Release_Data;
 using ModioX.Models.Resources;
@@ -102,7 +103,7 @@ namespace ModioX.Extensions
 
         public static void ShowFileManager(Form owner)
         {
-            using var fileManagerWindow = new FileManagerWindow();
+            using var fileManagerWindow = new Forms.Tools.PS3_Tools.FileManagerWindow();
             fileManagerWindow.ShowDialog(owner);
         }
 
@@ -146,6 +147,12 @@ namespace ModioX.Extensions
         {
             using var customListsDialog = new CustomListsDialog();
             customListsDialog.ShowDialog(owner);
+        }
+
+        public static void ShowCustomXboxDialog(Form owner, string title, string body, XMessageboxUI.ButtonOptions buttons)
+        {
+            using var xMessageboxUI = new XMessageboxUI(title, body, buttons);
+            xMessageboxUI.ShowDialog(owner);
         }
     }
 }

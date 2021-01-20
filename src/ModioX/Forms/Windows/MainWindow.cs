@@ -48,6 +48,7 @@ namespace ModioX.Forms.Windows
         /// Xbox 360 
         /// </summary>
         public static Xbox XBDM { get; private set; } = new();
+
         /// <summary>
         /// Creates an TCP Connection, For Console's Memory Features...
         /// </summary>
@@ -245,6 +246,25 @@ namespace ModioX.Forms.Windows
                     ConnectConsole();
                 }
             }
+        }
+
+        private void ButtonFindXbox_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (XBDM.Connect())
+            {
+                XNotify.Show(Application.ProductName + "- Has Been Connected..");
+            }
+            else
+            {
+                var dialogResult = XtraMessageBox.Show("No Connection Has Been Found..", "Would You Like To Retry?", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+
+                if (dialogResult == DialogResult.Retry)
+                {
+                    XBDM.Connect();
+                }
+            }
+
+            XtraMessageBox.Show(XBDM.IPAddress);
         }
 
         // TOOLS MENU
@@ -1220,13 +1240,19 @@ namespace ModioX.Forms.Windows
                     ButtonConnectToPS3.Caption = "Disconnect from console...";
                 }
                 else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
-                {
+                { 
                     if (XboxConsole.Connect(ConsoleProfile.Address, ConsoleProfile.Port))
                     {
                         IsConsoleConnected = true;
                         SetStatusConsole(ConsoleProfile);
 
                         ButtonConnectToXBOX.Caption = "Disconnect from console...";
+                    }
+                    else
+                    {
+                        SetStatus($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address}).");
+                        DarkMessageBox.ShowError($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address})", "Connection Failed");
+                        return;
                     }
                 }
 
@@ -2222,23 +2248,6 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        private void XBDMFindConsole_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            if(XBDM.Connect())
-            {
-                XNotify.Show(Application.ProductName + "- Has Been Connected..");
-            }
-            else 
-            {
-                var dialogResult = XtraMessageBox.Show("No Connection Has Been Found..", "Would You Like To Retry?", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-
-                if (dialogResult == DialogResult.Retry)
-                {
-                    XBDM.Connect();
-                }
-            }
-        }
-
         private void AvatarEditor_ItemClick(object sender, ItemClickEventArgs e)
         {
             XboxConsole.XboxShortcut(XboxShortcuts.AvatarEditor);
@@ -2246,6 +2255,20 @@ namespace ModioX.Forms.Windows
 
         private void XboxVirtualController_ItemClick(object sender, ItemClickEventArgs e)
         {
+
+        }
+
+        private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
+        {
+           
+        }
+
+        private void barButtonItem16_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+             MessageBox.Show(XBDM.SendTextCommand(string.Concat("systeminfo"), string.Empty));
+            //DialogExtensions.ShowCustomXboxDialog(this, "Console Temperature", "CPU: " + XBDM.CPUTEMP() + "\nGPU: " + XBDM.GPUTEMP() +"\nRAMTEMP: " + XBDM.RAMTEMP() + "\nMOBO: " + XBDM.MOBOTEMP(), XMessageboxUI.ButtonOptions.Ok);
+           // XtraMessageBox.Show(this, "Console Temperature", "CPU: " + XBDM.CPUTEMP() + "\nGPU: " + XBDM.GPUTEMP() + "\nRAMTEMP: " + XBDM.RAMTEMP() + "\nMOBO: " + XBDM.MOBOTEMP());
 
         }
     }

@@ -54,6 +54,8 @@ namespace ModioX
             this.simpleButton24 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton20 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton26 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton25 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -314,11 +316,33 @@ namespace ModioX
             this.simpleButton26.TabIndex = 32;
             this.simpleButton26.Text = "Virtual Controller Settings";
             // 
+            // simpleButton7
+            // 
+            this.simpleButton7.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton7.Appearance.Options.UseBackColor = true;
+            this.simpleButton7.Location = new System.Drawing.Point(100, 117);
+            this.simpleButton7.Name = "simpleButton7";
+            this.simpleButton7.Size = new System.Drawing.Size(99, 35);
+            this.simpleButton7.TabIndex = 33;
+            this.simpleButton7.Text = "simpleButton7";
+            // 
+            // simpleButton25
+            // 
+            this.simpleButton25.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton25.Appearance.Options.UseBackColor = true;
+            this.simpleButton25.Location = new System.Drawing.Point(147, 50);
+            this.simpleButton25.Name = "simpleButton25";
+            this.simpleButton25.Size = new System.Drawing.Size(46, 61);
+            this.simpleButton25.TabIndex = 34;
+            this.simpleButton25.Text = "simpleButton25";
+            // 
             // Xbox_Virtual_Controler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 551);
+            this.Controls.Add(this.simpleButton25);
+            this.Controls.Add(this.simpleButton7);
             this.Controls.Add(this.simpleButton26);
             this.Controls.Add(this.simpleButton20);
             this.Controls.Add(this.simpleButton21);
@@ -379,5 +403,7 @@ namespace ModioX
         private DevExpress.XtraEditors.SimpleButton simpleButton24;
         private DevExpress.XtraEditors.SimpleButton simpleButton20;
         private DevExpress.XtraEditors.SimpleButton simpleButton26;
+        private DevExpress.XtraEditors.SimpleButton simpleButton7;
+        private DevExpress.XtraEditors.SimpleButton simpleButton25;
     }
 }

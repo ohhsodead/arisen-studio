@@ -11,13 +11,14 @@ using System.Windows.Forms;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
-    public partial class XMessageboxUI : DevExpress.XtraEditors.XtraForm
+    public partial class XMessageboxUI : Form
     {
         public XMessageboxUI(string title = "", string body = "", ButtonOptions options = ButtonOptions.YesNo)
         {
             InitializeComponent();
             LabelTitle.Text = title;
             LabelBody.Text = body;
+
             TransparencyKey = Color.FromName("MenuBar");
 
             if (options == ButtonOptions.Ok)
@@ -42,6 +43,14 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             }
         }
 
+        Button FocusedButton = null;
+
+        private void XMessageboxUI_Load(object sender, EventArgs e)
+        {
+            FocusedButton = ButtonNo;
+            DoMouseHover(ButtonNo);
+        }
+
         public enum ButtonOptions
         {
             YesNo,
@@ -51,42 +60,93 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (keyData == Keys.B)
+            if (keyData == Keys.B | keyData == Keys.Escape)
             {
                 Close();
+            }
+            else if (keyData == Keys.Enter | keyData == Keys.A)
+            {
+                FocusedButton.PerformClick();
             }
             else if (keyData == Keys.Up)
             {
                 if (FocusedButton == ButtonNo)
                 {
-                    FocusedButton = ButtonYes;
-                    ButtonYes.Focus();
+                    DoMouseHover(ButtonYes);
                 }
                 else if (FocusedButton == ButtonYes)
                 {
-                    FocusedButton = ButtonExtra;
-                    ButtonExtra.Focus();
+                    DoMouseHover(ButtonExtra);
                 }
                 else if (FocusedButton == ButtonExtra)
                 {
-                    FocusedButton = ButtonExtra;
-                    ButtonExtra.Focus();
+                    DoMouseHover(ButtonExtra);
                 }
             }
             else if (keyData == Keys.Down)
             {
-                //buttons1.NavigateButtonDown();
+                if (FocusedButton == ButtonExtra)
+                {
+                    DoMouseHover(ButtonYes);
+                }
+                else if (FocusedButton == ButtonYes)
+                {
+                    DoMouseHover(ButtonNo);
+                }
+                else if (FocusedButton == ButtonNo)
+                {
+                    DoMouseHover(ButtonNo);
+                }
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        SimpleButton FocusedButton;
-
-        private void XMessageboxUI_Load(object sender, EventArgs e)
+        private void DoMouseHover(Button button)
         {
-            FocusedButton = ButtonNo;
-            ButtonNo.Focus();
+            ResetButtons();
+
+            FocusedButton = button;
+
+            button.BackColor = Color.FromArgb(108, 165, 14);//green
+            button.ForeColor = Color.White;
+        }
+
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            ResetButtons();
+
+            var button = (Button)sender;
+
+            button.BackColor = Color.FromArgb(108, 165, 14);//green
+            button.ForeColor = Color.White;
+
+            FocusedButton = button;
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            ResetButtons();
+
+            var button = (Button)sender;
+
+            if (FocusedButton != button)
+            {
+                button.BackColor = Color.FromArgb(212, 220, 220);//white
+                button.ForeColor = Color.Black;
+            }
+
+            FocusedButton = null;
+        }
+
+        private void ResetButtons()
+        {
+            ButtonExtra.BackColor = Color.FromArgb(212, 220, 220);//white
+            ButtonExtra.ForeColor = Color.Black;
+            ButtonNo.BackColor = Color.FromArgb(212, 220, 220);//white
+            ButtonNo.ForeColor = Color.Black;
+            ButtonYes.BackColor = Color.FromArgb(212, 220, 220);//white
+            ButtonYes.ForeColor = Color.Black;
         }
     }
 }
