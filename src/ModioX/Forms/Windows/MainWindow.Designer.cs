@@ -107,6 +107,7 @@ namespace ModioX.Forms.Windows
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
@@ -230,9 +231,6 @@ namespace ModioX.Forms.Windows
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-<<<<<<< Updated upstream
-            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
-=======
             this.BarManagerModsInstalled = new DevExpress.XtraBars.BarManager(this.components);
             this.BarModsInstalled = new DevExpress.XtraBars.Bar();
             this.LabelModsInstalled = new DevExpress.XtraBars.BarStaticItem();
@@ -242,7 +240,6 @@ namespace ModioX.Forms.Windows
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.HeaderLabelModsInstalled = new DevExpress.XtraBars.BarHeaderItem();
->>>>>>> Stashed changes
             ButtonConnectXbox = new DevExpress.XtraBars.BarButtonItem();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
@@ -919,23 +916,7 @@ namespace ModioX.Forms.Windows
             this.barButtonItem13,
             this.barButtonItem14,
             this.barButtonItem15,
-<<<<<<< Updated upstream
-            this.barButtonItem16});
-            this.MainMenu.MainMenu = this.bar2;
-            this.MainMenu.MaxItemId = 86;
-            this.MainMenu.StatusBar = this.bar3;
-            // 
-            // bar2
-            // 
-            this.bar2.AutoUpdateMergedBars = DevExpress.Utils.DefaultBoolean.True;
-            this.bar2.BarItemVertIndent = 5;
-            this.bar2.BarName = "Main menu";
-            this.bar2.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Top;
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-=======
+            this.barButtonItem16,
             this.LabelHeaderConnectedConsole,
             this.barStaticItem2,
             this.LabelModsStats});
@@ -953,7 +934,6 @@ namespace ModioX.Forms.Windows
             this.BarMenu.DockRow = 0;
             this.BarMenu.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.BarMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
->>>>>>> Stashed changes
             new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemConnect),
             new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemTools),
             new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemApplications),
@@ -1017,11 +997,7 @@ namespace ModioX.Forms.Windows
             this.barButtonItem11.Caption = "Find Console...";
             this.barButtonItem11.Id = 78;
             this.barButtonItem11.Name = "barButtonItem11";
-<<<<<<< Updated upstream
-            this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonFindXbox_ItemClick);
-=======
             this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonFindXBOX_ItemClick);
->>>>>>> Stashed changes
             // 
             // MenuBarItemTools
             // 
@@ -1226,6 +1202,13 @@ namespace ModioX.Forms.Windows
             this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem16)});
             this.barSubItem2.Name = "barSubItem2";
+            // 
+            // barButtonItem16
+            // 
+            this.barButtonItem16.Caption = "Show CPU/GPU/RAM/MOBO Temps...";
+            this.barButtonItem16.Id = 85;
+            this.barButtonItem16.Name = "barButtonItem16";
+            this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem16_ItemClick);
             // 
             // barSubItem4
             // 
@@ -2332,14 +2315,6 @@ namespace ModioX.Forms.Windows
             this.barDockControl4.Manager = this.BarManagerModInformation;
             this.barDockControl4.Size = new System.Drawing.Size(0, 821);
             // 
-<<<<<<< Updated upstream
-            // barButtonItem16
-            // 
-            this.barButtonItem16.Caption = "Show CPU/GPU/RAM/MOBO Temps...";
-            this.barButtonItem16.Id = 85;
-            this.barButtonItem16.Name = "barButtonItem16";
-            this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem16_ItemClick);
-=======
             // BarManagerModsInstalled
             // 
             this.BarManagerModsInstalled.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
@@ -2425,7 +2400,6 @@ namespace ModioX.Forms.Windows
             this.HeaderLabelModsInstalled.Caption = "Mods Installed:";
             this.HeaderLabelModsInstalled.Id = 0;
             this.HeaderLabelModsInstalled.Name = "HeaderLabelModsInstalled";
->>>>>>> Stashed changes
             // 
             // MainWindow
             // 
@@ -2699,9 +2673,7 @@ namespace ModioX.Forms.Windows
         private BarButtonItem barButtonItem13;
         private BarButtonItem barButtonItem14;
         private BarButtonItem barButtonItem15;
-<<<<<<< Updated upstream
         private BarButtonItem barButtonItem16;
-=======
         private StandaloneBarDockControl DockControlModsInstalled;
         private BarDockControl barDockControl7;
         private BarManager BarManagerModsInstalled;
@@ -2715,6 +2687,5 @@ namespace ModioX.Forms.Windows
         private BarStaticItem LabelHeaderConnectedConsole;
         private BarStaticItem barStaticItem2;
         private BarStaticItem LabelModsStats;
->>>>>>> Stashed changes
     }
 }

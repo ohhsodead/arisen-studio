@@ -42,18 +42,11 @@ namespace ModioX.Forms.Windows
         {
             Window = this;
             InitializeComponent();
-            SkinColors = CommonSkins.GetSkin(MainWindow.Window.LookAndFeel).Colors;
+            SkinColors = CommonSkins.GetSkin(Window.LookAndFeel).Colors;
         }
-<<<<<<< Updated upstream
-        /// <summary>
-        /// Xbox 360 
-        /// </summary>
-        public static Xbox XBDM { get; private set; } = new();
-=======
->>>>>>> Stashed changes
 
         /// <summary>
-        /// Creates an TCP Connection, For Console's Memory Features...
+        /// Containts this instance of the form
         /// </summary>
         public static MainWindow Window { get; private set; }
 
@@ -261,25 +254,6 @@ namespace ModioX.Forms.Windows
             }
         }
 
-<<<<<<< Updated upstream
-        private void ButtonFindXbox_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            if (XBDM.Connect())
-            {
-                XNotify.Show(Application.ProductName + "- Has Been Connected..");
-            }
-            else
-            {
-                var dialogResult = XtraMessageBox.Show("No Connection Has Been Found..", "Would You Like To Retry?", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-
-                if (dialogResult == DialogResult.Retry)
-                {
-                    XBDM.Connect();
-                }
-            }
-
-            XtraMessageBox.Show(XBDM.IPAddress);
-=======
         private void ButtonFindXBOX_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (XboxConsole.Connect())
@@ -293,7 +267,6 @@ namespace ModioX.Forms.Windows
                     XboxConsole.Connect();
                 }
             }
->>>>>>> Stashed changes
         }
 
         // TOOLS MENU
@@ -923,7 +896,7 @@ namespace ModioX.Forms.Windows
             }
 
             var dt = new DataTable();
-            
+
             dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("Mod Name", typeof(string));
             dt.Columns.Add("System Type", typeof(string));
@@ -950,7 +923,7 @@ namespace ModioX.Forms.Windows
                 {
                     installFiles.AddRange(modItem.DownloadFiles.First().InstallPaths);
                 }
-                
+
                 dt.Rows.Add(modItem.Id,
                     modItem.Name,
                     modItem.Firmware,
@@ -1094,7 +1067,7 @@ namespace ModioX.Forms.Windows
                     ButtonConnectToPS3.Caption = "Disconnect from console...";
                 }
                 else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
-                { 
+                {
                     if (XboxConsole.Connect(ConsoleProfile.Address, ConsoleProfile.Port))
                     {
                         IsConsoleConnected = true;
@@ -1105,11 +1078,7 @@ namespace ModioX.Forms.Windows
                     else
                     {
                         SetStatus($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address}).");
-<<<<<<< Updated upstream
-                        DarkMessageBox.ShowError($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address})", "Connection Failed");
-=======
                         XtraMessageBox.Show($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address})", "Connection Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
->>>>>>> Stashed changes
                         return;
                     }
                 }
@@ -1216,7 +1185,7 @@ namespace ModioX.Forms.Windows
                     ImageExtensions.ResizeBitmap(Resources.uninstall, 20, 20));
 
                 totalFiles += installedMod.Files;
-            }            
+            }
 
             GridControlGameModsInstalled.DataSource = dt;
             GridViewGameModsInstalled.Columns[0].Visible = false;
@@ -1339,7 +1308,7 @@ namespace ModioX.Forms.Windows
             UpdateScrollBars();
         }
 
-#endregion
+        #endregion
 
         #region Install, Uninstall, Download & Favorite Functions
 
@@ -2267,7 +2236,6 @@ namespace ModioX.Forms.Windows
         }
 
         private void AvatarEditor_ItemClick(object sender, ItemClickEventArgs e)
-<<<<<<< Updated upstream
         {
             XboxConsole.XboxShortcut(XboxShortcuts.AvatarEditor);
         }
@@ -2278,19 +2246,15 @@ namespace ModioX.Forms.Windows
         }
 
         private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
-=======
->>>>>>> Stashed changes
         {
-           
+
         }
 
         private void barButtonItem16_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
-             MessageBox.Show(XBDM.SendTextCommand(string.Concat("systeminfo"), string.Empty));
+            MessageBox.Show(XboxConsole.SendTextCommand(string.Concat("systeminfo"), string.Empty));
             //DialogExtensions.ShowCustomXboxDialog(this, "Console Temperature", "CPU: " + XBDM.CPUTEMP() + "\nGPU: " + XBDM.GPUTEMP() +"\nRAMTEMP: " + XBDM.RAMTEMP() + "\nMOBO: " + XBDM.MOBOTEMP(), XMessageboxUI.ButtonOptions.Ok);
-           // XtraMessageBox.Show(this, "Console Temperature", "CPU: " + XBDM.CPUTEMP() + "\nGPU: " + XBDM.GPUTEMP() + "\nRAMTEMP: " + XBDM.RAMTEMP() + "\nMOBO: " + XBDM.MOBOTEMP());
-
+            // XtraMessageBox.Show(this, "Console Temperature", "CPU: " + XBDM.CPUTEMP() + "\nGPU: " + XBDM.GPUTEMP() + "\nRAMTEMP: " + XBDM.RAMTEMP() + "\nMOBO: " + XBDM.MOBOTEMP());
         }
 
         private void MainWindow_StyleChanged(object sender, EventArgs e)
