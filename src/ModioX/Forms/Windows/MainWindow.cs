@@ -1,12 +1,12 @@
-﻿using DevExpress.XtraEditors;
-using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Columns;
+﻿using DevExpress.Skins;
+using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 using DevExpress.XtraNavBar;
-using DevExpress.XtraGrid.Views.Grid;
 using FluentFTP;
 using ModioX.Constants;
 using ModioX.Database;
 using ModioX.Extensions;
+using ModioX.Forms.Tools.XBOX_Tools;
 using ModioX.Io;
 using ModioX.Models.Database;
 using ModioX.Models.Resources;
@@ -25,11 +25,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FtpExtensions = ModioX.Extensions.FtpExtensions;
-using DevExpress.XtraBars;
 using XDevkit;
-using ModioX.Forms.Tools.XBOX_Tools;
-using DevExpress.Skins;
+using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
 namespace ModioX.Forms.Windows
 {
@@ -46,9 +43,14 @@ namespace ModioX.Forms.Windows
         }
 
         /// <summary>
-        /// Containts this instance of the form
+        /// Contains this instance of the form
         /// </summary>
         public static MainWindow Window { get; private set; }
+
+        /// <summary>
+        /// A Security Feature To Prevent Malicious Attempts To Harm Our Application Name Or Brand
+        /// </summary>
+        private static string CurrentMD5 { get;  set; }
 
         /// <summary>
         /// Contains the users settings Database.
@@ -76,7 +78,7 @@ namespace ModioX.Forms.Windows
         public static ConsoleProfile ConsoleProfile { get; private set; }
 
         /// <summary>
-        /// Conntains the FtpClient for faster and more reliable functions.
+        /// Contains the FtpClient for faster and more reliable functions.
         /// </summary>
         public static FtpClient FtpClient { get; private set; }
 
@@ -99,12 +101,12 @@ namespace ModioX.Forms.Windows
         }
 
         /// <summary>
-        /// Conntains the Xbox console information.
+        /// Contains the Xbox console information.
         /// </summary>
         public static Xbox XboxConsole { get; private set; } = new Xbox();
 
         /// <summary>
-        /// Get the colours for the current skin.
+        /// Get the colors for the current skin.
         /// </summary>
         public static SkinColors SkinColors { get; set; }
 
@@ -118,7 +120,8 @@ namespace ModioX.Forms.Windows
             Text = $@"ModioX - {UpdateExtensions.CurrentVersionName}";
 
 #if DEBUG
-            Text += " - Welcome! You are in debuggging mode for ModioX! :)";
+
+            Text += " - Welcome! You are in debugging mode for ModioX! :)";
 #endif
 
             LoadSettings();
@@ -153,11 +156,13 @@ namespace ModioX.Forms.Windows
         }
 
         /// <summary>
-        /// Save application settings on form closing event.
+        /// Save Application Settings On Form Closing Event,
+        /// Also Closes Xbox Connection.
         /// </summary>
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveSettings();
+            XboxConsole.Disconnect();
         }
 
         /// <summary>
@@ -1165,7 +1170,7 @@ namespace ModioX.Forms.Windows
             dt.Columns.Add("Version", typeof(string));
             dt.Columns.Add("# Files", typeof(string));
             dt.Columns.Add("Installed On", typeof(string));
-            dt.Columns.Add("", typeof(Bitmap));
+            dt.Columns.Add(string.Empty, typeof(Bitmap));
 
             foreach (InstalledMod installedMod in Settings.InstalledGameMods)
             {
@@ -1270,7 +1275,7 @@ namespace ModioX.Forms.Windows
             GridControlModsInstallFiles.DataSource = null;
 
             var dt = new DataTable();
-            dt.Columns.Add("", typeof(string));
+            dt.Columns.Add(string.Empty, typeof(string));
 
             if (modItem.DownloadFiles.Count > 1)
             {
@@ -2023,6 +2028,9 @@ namespace ModioX.Forms.Windows
         /// </summary>
         private void EnableConsoleActions()
         {
+            
+            XBDMMenu.Enabled = IsConsoleConnected;
+            XboxFileManager.Enabled = IsConsoleConnected;
             ButtonPackageManager.Enabled = IsConsoleConnected;
             ButtonFileManager.Enabled = IsConsoleConnected;
             ButtonWebManControls.Enabled = IsConsoleConnected && IsWebManInstalled;
@@ -2182,9 +2190,9 @@ namespace ModioX.Forms.Windows
             ScrollBarModInformation.Value = FlowPanelDetails.VerticalScroll.Value;
         }
 
-        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        private void XboxFileManager_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var a = new Tools.XBOX_Tools.FileManagerWindow();
+            var a = new FileManagerWindow();
             a.ShowDialog(this);
         }
 
@@ -2234,7 +2242,39 @@ namespace ModioX.Forms.Windows
                 XtraMessageBox.Show("cancel was clicked");
             }
         }
+        /// <summary>
+        /// Checks Application Hash To Determine It's legitimacy
+        /// </summary>
+        public static void Check()
+        {
+            if (ComputeHash($"{AppDomain.CurrentDomain.BaseDirectory}" + Application.ProductName) != CurrentMD5)
+            {
+                Environment.Exit(2134);
+            }
+        }
 
+        /// <summary>
+        /// Computes The Hash Of A Selected File Or Extentions.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        private static string ComputeHash(string s)
+        {
+            using (var md5 = System.Security.Cryptography.MD5.Create())
+            {
+                using (var stream = File.OpenRead(s))
+                {
+                    byte[] hash = md5.ComputeHash(stream);
+                    StringBuilder sb = new StringBuilder();
+                    for (int i = 0; i < hash.Length; i++)
+                    {
+                        sb.Append(hash[i].ToString("X2"));
+                    }
+
+                    return sb.ToString();
+                }
+            }
+        }
         private void AvatarEditor_ItemClick(object sender, ItemClickEventArgs e)
         {
             XboxConsole.XboxShortcut(XboxShortcuts.AvatarEditor);
@@ -2250,11 +2290,10 @@ namespace ModioX.Forms.Windows
 
         }
 
-        private void barButtonItem16_ItemClick(object sender, ItemClickEventArgs e)
+        private void QuickSignIn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            MessageBox.Show(XboxConsole.SendTextCommand(string.Concat("systeminfo"), string.Empty));
-            //DialogExtensions.ShowCustomXboxDialog(this, "Console Temperature", "CPU: " + XBDM.CPUTEMP() + "\nGPU: " + XBDM.GPUTEMP() +"\nRAMTEMP: " + XBDM.RAMTEMP() + "\nMOBO: " + XBDM.MOBOTEMP(), XMessageboxUI.ButtonOptions.Ok);
-            // XtraMessageBox.Show(this, "Console Temperature", "CPU: " + XBDM.CPUTEMP() + "\nGPU: " + XBDM.GPUTEMP() + "\nRAMTEMP: " + XBDM.RAMTEMP() + "\nMOBO: " + XBDM.MOBOTEMP());
+            XboxConsole.QuickSignIn();
+            //DialogExtensions.ShowCustomXboxDialog(this, "Console Temperature", "CPU: " + XboxConsole.CPUTEMP() + "\nGPU: " + XboxConsole.GPUTEMP() +"\nRAMTEMP: " + XboxConsole.RAMTEMP() + "\nMOBO: " + XboxConsole.MOBOTEMP(), XMessageboxUI.ButtonOptions.Ok);
         }
 
         private void MainWindow_StyleChanged(object sender, EventArgs e)

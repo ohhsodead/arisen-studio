@@ -110,12 +110,15 @@ namespace ModioX.Forms.Windows
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.XNotifyButton = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
+            this.QuickSignIn = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            this.XboxFileManager = new DevExpress.XtraBars.BarButtonItem();
             this.MenuBarItemApplications = new DevExpress.XtraBars.BarButtonItem();
             this.ApplicationsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.MenuBarItemOptions = new DevExpress.XtraBars.BarButtonItem();
@@ -896,7 +899,7 @@ namespace ModioX.Forms.Windows
             this.ButtonModReportAnIssue,
             this.LabelStatus,
             this.LabelHeaderStatus,
-            this.barButtonItem1,
+            this.XboxFileManager,
             this.XBDMMenu,
             this.barSubItem3,
             this.xbdmShutdown,
@@ -914,14 +917,17 @@ namespace ModioX.Forms.Windows
             this.barSubItem5,
             this.barButtonItem12,
             this.barButtonItem13,
-            this.barButtonItem14,
+            this.QuickSignIn,
             this.barButtonItem15,
             this.barButtonItem16,
             this.LabelHeaderConnectedConsole,
             this.barStaticItem2,
-            this.LabelModsStats});
+            this.LabelModsStats,
+            this.barSubItem6,
+            this.barButtonItem17,
+            this.XNotifyButton});
             this.MainMenu.MainMenu = this.BarMenu;
-            this.MainMenu.MaxItemId = 88;
+            this.MainMenu.MaxItemId = 91;
             this.MainMenu.StatusBar = this.BarStatus;
             // 
             // BarMenu
@@ -1017,7 +1023,7 @@ namespace ModioX.Forms.Windows
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPackageManager),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonWebManControls, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.XBDMMenu, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.XboxFileManager)});
             this.ToolsMenu.Manager = this.MainMenu;
             this.ToolsMenu.Name = "ToolsMenu";
             // 
@@ -1147,13 +1153,15 @@ namespace ModioX.Forms.Windows
             // XBDMMenu
             // 
             this.XBDMMenu.Caption = "XBDM Controls... (Xbox)";
+            this.XBDMMenu.Enabled = false;
             this.XBDMMenu.Id = 66;
             this.XBDMMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem3),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem5),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem15)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem15),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem6)});
             this.XBDMMenu.Name = "XBDMMenu";
             // 
             // barSubItem3
@@ -1208,14 +1216,15 @@ namespace ModioX.Forms.Windows
             this.barButtonItem16.Caption = "Show CPU/GPU/RAM/MOBO Temps...";
             this.barButtonItem16.Id = 85;
             this.barButtonItem16.Name = "barButtonItem16";
-            this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem16_ItemClick);
+            this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.QuickSignIn_ItemClick);
             // 
             // barSubItem4
             // 
             this.barSubItem4.Caption = "XNotify";
             this.barSubItem4.Id = 72;
             this.barSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.XNotifyButton)});
             this.barSubItem4.Name = "barSubItem4";
             // 
             // barButtonItem4
@@ -1225,6 +1234,12 @@ namespace ModioX.Forms.Windows
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XBDM_XMessageboxUI_ItemClick);
             // 
+            // XNotifyButton
+            // 
+            this.XNotifyButton.Caption = "XNotify";
+            this.XNotifyButton.Id = 90;
+            this.XNotifyButton.Name = "XNotifyButton";
+            // 
             // barSubItem5
             // 
             this.barSubItem5.Caption = "Xbox Dashboard";
@@ -1232,7 +1247,7 @@ namespace ModioX.Forms.Windows
             this.barSubItem5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem12, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem13, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem14)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.QuickSignIn)});
             this.barSubItem5.Name = "barSubItem5";
             // 
             // barButtonItem12
@@ -1251,12 +1266,12 @@ namespace ModioX.Forms.Windows
             this.barButtonItem13.ImageOptions.LargeImage = global::ModioX.Properties.Resources.Xbox_Logo;
             this.barButtonItem13.Name = "barButtonItem13";
             // 
-            // barButtonItem14
+            // QuickSignIn
             // 
-            this.barButtonItem14.Caption = "Signin";
-            this.barButtonItem14.Id = 83;
-            this.barButtonItem14.Name = "barButtonItem14";
-            this.barButtonItem14.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem14_ItemClick);
+            this.QuickSignIn.Caption = "Quick Sign In...";
+            this.QuickSignIn.Id = 83;
+            this.QuickSignIn.Name = "QuickSignIn";
+            this.QuickSignIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem14_ItemClick);
             // 
             // barButtonItem15
             // 
@@ -1265,12 +1280,27 @@ namespace ModioX.Forms.Windows
             this.barButtonItem15.Name = "barButtonItem15";
             this.barButtonItem15.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XboxVirtualController_ItemClick);
             // 
-            // barButtonItem1
+            // barSubItem6
             // 
-            this.barButtonItem1.Caption = "File Manager... (Xbox)";
-            this.barButtonItem1.Id = 65;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            this.barSubItem6.Caption = "Debugging Tools";
+            this.barSubItem6.Id = 88;
+            this.barSubItem6.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem17)});
+            this.barSubItem6.Name = "barSubItem6";
+            // 
+            // barButtonItem17
+            // 
+            this.barButtonItem17.Caption = "Memory Peek/Poker";
+            this.barButtonItem17.Id = 89;
+            this.barButtonItem17.Name = "barButtonItem17";
+            // 
+            // XboxFileManager
+            // 
+            this.XboxFileManager.Caption = "File Manager... (Xbox)";
+            this.XboxFileManager.Enabled = false;
+            this.XboxFileManager.Id = 65;
+            this.XboxFileManager.Name = "XboxFileManager";
+            this.XboxFileManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XboxFileManager_ItemClick);
             // 
             // MenuBarItemApplications
             // 
@@ -2436,7 +2466,7 @@ namespace ModioX.Forms.Windows
             this.Name = "MainWindow";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ModioX - Beta v1.0.0";
+            this.Text = "ModioX - Beta v1.4.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
@@ -2653,7 +2683,7 @@ namespace ModioX.Forms.Windows
         private BarDockControl barDockControl2;
         private BarDockControl barDockControl4;
         private VScrollBar ScrollBarModInformation;
-        private BarButtonItem barButtonItem1;
+        private BarButtonItem XboxFileManager;
         private BarSubItem XBDMMenu;
         private BarSubItem barSubItem3;
         private BarButtonItem xbdmShutdown;
@@ -2671,7 +2701,7 @@ namespace ModioX.Forms.Windows
         private BarButtonItem barButtonItem12;
         private BarToolbarsListItem barToolbarsListItem3;
         private BarButtonItem barButtonItem13;
-        private BarButtonItem barButtonItem14;
+        private BarButtonItem QuickSignIn;
         private BarButtonItem barButtonItem15;
         private BarButtonItem barButtonItem16;
         private StandaloneBarDockControl DockControlModsInstalled;
@@ -2687,5 +2717,8 @@ namespace ModioX.Forms.Windows
         private BarStaticItem LabelHeaderConnectedConsole;
         private BarStaticItem barStaticItem2;
         private BarStaticItem LabelModsStats;
+        private BarButtonItem XNotifyButton;
+        private BarSubItem barSubItem6;
+        private BarButtonItem barButtonItem17;
     }
 }
