@@ -95,9 +95,6 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="XDevkit">
-      <HintPath>..\References\XDevkit.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Urls.cs" />
@@ -116,6 +113,61 @@
     <Compile Include="Extensions\DialogExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\WebManExtensions.cs" />
+    <Compile Include="Extensions\XDevkit\Controls\ByteArray.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Extensions\XDevkit\Controls\ByteArray.Designer.cs">
+      <DependentUpon>ByteArray.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\XDevkit\Controls\Fan_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Extensions\XDevkit\Controls\Fan_Control.Designer.cs">
+      <DependentUpon>Fan_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\XDevkit\Controls\MemDump.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Extensions\XDevkit\Controls\MemDump.Designer.cs">
+      <DependentUpon>MemDump.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\XDevkit\Controls\XboxMessagebox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Extensions\XDevkit\Controls\XboxMessagebox.Designer.cs">
+      <DependentUpon>XboxMessagebox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\XDevkit\Controls\xex_slider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Extensions\XDevkit\Controls\xex_slider.Designer.cs">
+      <DependentUpon>xex_slider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\XDevkit\Controls\xex_value.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Extensions\XDevkit\Controls\xex_value.designer.cs">
+      <DependentUpon>xex_value.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\XDevkit\Devkit\Functions.cs" />
+    <Compile Include="Extensions\XDevkit\Devkit\IO\EndianIO.cs" />
+    <Compile Include="Extensions\XDevkit\Devkit\IO\EndianReader.cs" />
+    <Compile Include="Extensions\XDevkit\Devkit\IO\EndianType.cs" />
+    <Compile Include="Extensions\XDevkit\Devkit\IO\EndianWriter.cs" />
+    <Compile Include="Extensions\XDevkit\Devkit\IO\RWStream.cs" />
+    <Compile Include="Extensions\XDevkit\Devkit\Items.cs" />
+    <Compile Include="Extensions\XDevkit\Filesystem.cs" />
+    <Compile Include="Extensions\XDevkit\Xbox.cs" />
+    <Compile Include="Extensions\XDevkit\XboxEnums.cs" />
+    <Compile Include="Extensions\XDevkit\XboxExtention.cs" />
+    <Compile Include="Extensions\XDevkit\XboxFeatures.cs" />
+    <Compile Include="Extensions\XDevkit\XboxMemory.cs" />
+    <Compile Include="Extensions\XDevkit\XboxMemoryStream.cs" />
+    <Compile Include="Extensions\XDevkit\XboxNetworking.cs" />
+    <Compile Include="Extensions\XDevkit\XboxStructs.cs" />
+    <Compile Include="Extensions\XDevkit\XboxTypes.cs" />
+    <Compile Include="Extensions\XDevkit\XMessageBoxUI.cs" />
+    <Compile Include="Extensions\XDevkit\XNotify.cs" />
     <Compile Include="Forms\Dialogs\ConnectionDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +204,12 @@
     <Compile Include="Forms\Tools\PS3 Tools\PackageManagerWindow.Designer.cs">
       <DependentUpon>PackageManagerWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Tools\XBOX Tools\FileManagerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tools\XBOX Tools\FileManagerWindow.Designer.cs">
+      <DependentUpon>FileManagerWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\GameLauncher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,12 +227,6 @@
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\Xbox Virtual Controler.Designer.cs">
       <DependentUpon>Xbox Virtual Controler.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\FileManagerWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\FileManagerWindow.Designer.cs">
-      <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\XMessageboxUI.cs">
       <SubType>Form</SubType>
@@ -283,6 +335,18 @@
     <EmbeddedResource Include="Controls\TileConsoleItem.resx">
       <DependentUpon>TileConsoleItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Extensions\XDevkit\Controls\ByteArray.resx">
+      <DependentUpon>ByteArray.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extensions\XDevkit\Controls\MemDump.resx">
+      <DependentUpon>MemDump.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extensions\XDevkit\Controls\XboxMessagebox.resx">
+      <DependentUpon>XboxMessagebox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extensions\XDevkit\Controls\xex_value.resx">
+      <DependentUpon>xex_value.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\ConnectionDialog.resx">
       <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,6 +386,9 @@
     <EmbeddedResource Include="Forms\Dialogs\BackupFileDialog.resx">
       <DependentUpon>BackupFileDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tools\XBOX Tools\FileManagerWindow.resx">
+      <DependentUpon>FileManagerWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\GameLauncher.resx">
       <DependentUpon>GameLauncher.cs</DependentUpon>
     </EmbeddedResource>
@@ -330,9 +397,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\Xbox Virtual Controler.resx">
       <DependentUpon>Xbox Virtual Controler.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\XBOX Tools\FileManagerWindow.resx">
-      <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\XMessageboxUI.resx">
       <DependentUpon>XMessageboxUI.cs</DependentUpon>
@@ -361,6 +425,7 @@
     <None Include="Resources\avatar120p.png" />
     <None Include="Resources\avatar120pp.png" />
     <None Include="Resources\1200px-Xbox_Controller.svg.png" />
+    <Content Include="Extensions\XDevkit\About XDevkit.txt" />
     <Content Include="Resources\Icons\Xbox_Logo.ico" />
     <None Include="Resources\original.png" />
     <None Include="Resources\Xbox_button_Y.svg.png" />
@@ -405,6 +470,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="ini-parser">
+      <Version>2.5.2</Version>
+    </PackageReference>
     <PackageReference Include="NLog">
       <Version>4.7.6</Version>
     </PackageReference>

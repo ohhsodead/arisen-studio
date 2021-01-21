@@ -101,11 +101,21 @@ namespace ModioX.Extensions
             packageManagerWindow.ShowDialog(owner);
         }
 
-        public static void ShowFileManager(Form owner)
+        public static void ShowFileManagerPS3(Form owner)
         {
             using var fileManagerWindow = new Forms.Tools.PS3_Tools.FileManagerWindow();
             fileManagerWindow.ShowDialog(owner);
         }
+
+        #region Xbox Tools
+
+        public static void ShowFileManagerXbox(Form owner)
+        {
+            using var fileManagerWindow = new Forms.Tools.XBOX_Tools.FileManagerWindow();
+            fileManagerWindow.ShowDialog(owner);
+        }
+
+        #endregion
 
         public static void ShowSettingsWindow(Form owner)
         {

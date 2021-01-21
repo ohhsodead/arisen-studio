@@ -1,4 +1,5 @@
 ﻿using DevExpress.Skins;
+using DevExpress.Utils;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DevExpress.XtraNavBar;
@@ -267,17 +268,37 @@ namespace ModioX.Forms.Windows
 
         private void ButtonFindXBOX_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (XboxConsole.Connect())
+            try
             {
-                XNotify.Show(Application.ProductName + " - Successfully Connected!");
-            }
-            else
-            {
-                if (XtraMessageBox.Show("Unable to Find Console", "Would you like to try again?", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
+                if (IsConsoleConnected)
                 {
-                    XboxConsole.Connect();
+                    DisconnectConsole();
+                }
+                else
+                {
+                    if (XboxConsole.Connect())
+                    {
+                        XNotify.Show(Application.ProductName + " - Successfully Connected!");
+                    }
+                    else
+                    {
+                        if (XtraMessageBox.Show("Would you like to try again?", "Unable to Find Console", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
+                        {
+                            XboxConsole.Connect();
+                        }
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Unable to find console. Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            IsConsoleConnected = true;
+            SetStatusConsole(new ConsoleProfile() { Name = XboxConsole.Name, Address = XboxConsole.IPAddress.ToString() });
+            EnableConsoleActions();
+            ButtonConnectToXBOX.Caption = "Disconnect from console...";
         }
 
         // TOOLS MENU
@@ -296,7 +317,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonFileManager_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogExtensions.ShowFileManager(this);
+            DialogExtensions.ShowFileManagerPS3(this);
         }
 
         private void ButtonPackageManager_ItemClick(object sender, ItemClickEventArgs e)
@@ -1041,7 +1062,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Attempt to connect to the console profile by opening the FTP connection.
         /// </summary>
-        public void ConnectConsole()
+        public void ConnectConsole(bool findConsole = false)
         {
             try
             {
@@ -1083,8 +1104,7 @@ namespace ModioX.Forms.Windows
                     {
                         IsConsoleConnected = true;
                         SetStatusConsole(ConsoleProfile);
-
-                        ButtonConnectToXBOX.Caption = "Disconnect from console...";
+                        ButtonXboxFindConsole.Caption = "Disconnect from console...";
                     }
                     else
                     {
@@ -1185,7 +1205,7 @@ namespace ModioX.Forms.Windows
                 var modInstalled = Database.Mods.GetModById(installedMod.ModId);
 
                 dt.Rows.Add(modInstalled.Id.ToString(),
-                    EnumExtensions.GetDescription(installedMod.ConsoleType),
+                    Extensions.EnumExtensions.GetDescription(installedMod.ConsoleType),
                     modCategory.Title,
                     installedMod.Region,
                     modInstalled.Name,
@@ -2198,13 +2218,12 @@ namespace ModioX.Forms.Windows
 
         private void XboxFileManager_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var a = new FileManagerWindow();
-            a.ShowDialog(this);
+            DialogExtensions.ShowFileManagerXbox(this);
         }
 
         private void XBDMShutdown_ItemClick(object sender, ItemClickEventArgs e)
         {
-            XboxConsole.ShutDownConsole();
+            XboxConsole.ShutDown();
         }
 
         private void XBDMReboot_ItemClick(object sender, ItemClickEventArgs e)
@@ -2304,105 +2323,19 @@ namespace ModioX.Forms.Windows
 
         private void OpenCloseTray_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            if (XboxConsole.IsTrayOpen)
+            {
+                XboxConsole.Tray(TRAY_STATE.OPEN);
+            }
+            else
+            {
+                XboxConsole.Tray(TRAY_STATE.CLOSED);
+            }
         }
 
         private void XNotifySend_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //XNotifyText.
-            if (XNotifyType.Name == "Blank")
-            {
 
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
-            else if (XNotifyType.Name == "")
-            {
-
-            }
 
         }
 

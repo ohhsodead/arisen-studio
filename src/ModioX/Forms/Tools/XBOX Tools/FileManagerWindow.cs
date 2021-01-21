@@ -1,4 +1,5 @@
 ﻿using DarkUI.Forms;
+using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using FluentFTP;
 using ModioX.Extensions;
@@ -13,6 +14,9 @@ using System.IO;
 using System.Windows.Forms;
 using FtpException = FluentFTP.FtpException;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
+using XDevkit;
+using System.Data;
+using System.Linq;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
@@ -21,12 +25,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         /// <summary>
         /// Creates an FTP connection for use with uploading mods, not reliable for uploading files.
         /// </summary>
-        public static FtpConnection FtpConnection { get; } = MainWindow.FtpConnection;
-
-        /// <summary>
-        /// Conntains the FtpClient for getting directory listing and some other commands.
-        /// </summary>
-        public static FtpClient FtpClient { get; } = MainWindow.FtpClient;
+        public static Xbox XboxConsole { get; } = MainWindow.XboxConsole;
 
         /// <summary>
         /// Gets/set the current local directory path.
@@ -60,11 +59,11 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void FileManagerWindow_Load(object sender, EventArgs e)
         {
-            DgvLocalFiles.Focus();
+            GridLocalFiles.Focus();
 
-            SetConsoleStatus("Fetching drives...");
+            SetStatus("Fetching drives...");
 
-            foreach (var driveInfo in localDrives) _ = ComboBoxLocalDrives.Items.Add(driveInfo.Name.Replace(@"\", ""));
+            foreach (var driveInfo in localDrives) _ = ComboBoxLocalDrives.Properties.Items.Add(driveInfo.Name.Replace(@"\", ""));
 
             if (MainWindow.Settings.SaveLocalPath)
             {
@@ -98,11 +97,11 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void WaitLoadConsole_Tick(object sender, EventArgs e)
         {
-            SetConsoleStatus("Fetching root directories...");
+            SetStatus("Fetching root directories...");
 
             foreach (var driveName in FtpExtensions.GetFolderNames("/").ToArray())
             {
-                _ = ComboBoxConsoleDrives.Items.Add(driveName.Replace(@"/", ""));
+                ComboBoxConsoleDrives.Properties.Items.Add(driveName.Replace(@"/", ""));
             }
 
             if (MainWindow.Settings.SaveConsolePath)
@@ -128,12 +127,13 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void ComboBoxLocalDrives_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadLocalDirectory(ComboBoxLocalDrives.GetItemText(ComboBoxLocalDrives.SelectedItem) + @"\");
+            LoadLocalDirectory(ComboBoxLocalDrives.SelectedItem.ToString() + @"\");
         }
 
-        private void ButtonLocalDirectory_Click(object sender, EventArgs e)
+        private void ButtonBrowseLocalDirectory_Click(object sender, EventArgs e)
         {
             using var folderBrowser = new FolderBrowserDialog { ShowNewFolderButton = true };
+
             if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
                 LocalDirectoryPath = folderBrowser.SelectedPath;
@@ -205,41 +205,41 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         */
 
-        private void ToolStripLocalUploadFile_Click(object sender, EventArgs e)
+        private void ButtonLocalUploadFile_ItemClick(object sender, ItemClickEventArgs e)
         {
             UploadLocalFile();
         }
 
-        private void ToolStripLocalDeleteFile_Click(object sender, EventArgs e)
+        private void ButtonLocalDeleteFile_ItemClick(object sender, ItemClickEventArgs e)
         {
             DeleteLocalItem();
         }
 
-        private void ToolStripLocalNewFolder_Click(object sender, EventArgs e)
+        private void ButtonLocalNewFolder_ItemClick(object sender, ItemClickEventArgs e)
         {
             CreateLocalFolder();
         }
 
-        private void ToolStripLocalRefresh_Click(object sender, EventArgs e)
+        private void ButtonLocalRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
             LoadLocalDirectory(LocalDirectoryPath);
         }
 
-        private void ToolStripLocalOpenExplorer_Click(object sender, EventArgs e)
+        private void ButtonLocalOpenExplorer_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
             {
-                _ = Process.Start("explorer.exe", TextBoxLocalPath.Text);
+                Process.Start("explorer.exe", TextBoxLocalPath.Text);
             }
             catch (Exception ex)
             {
-                SetLocalStatus($"Error opening file explorer for path: {TextBoxLocalPath.Text} - {ex.Message}", ex);
+                SetStatus($"Error opening file explorer for path: {TextBoxLocalPath.Text} - {ex.Message}", ex);
             }
         }
 
         private void ContextMenuLocalFileUpload_Click(object sender, EventArgs e)
         {
-            ToolStripLocalUpload.PerformClick();
+            //ToolStripLocalUpload.PerformClick();
         }
 
         private void ContextMenuLocalDeleteFile_Click(object sender, EventArgs e)
@@ -268,15 +268,22 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         /// <param name="directoryPath"></param>
         public void LoadLocalDirectory(string directoryPath)
         {
-            /*
             try
             {
-                DgvLocalFiles.Rows.Clear();
+                GridLocalFiles.DataSource = null;
+
+                var dt = new DataTable();
+                dt.Columns.Add("file-folder", typeof(string));
+                dt.Columns.Add("image", typeof(Image));
+                dt.Columns.Add("name", typeof(string));
+                dt.Columns.Add("size", typeof(string));
+                dt.Columns.Add("type", typeof(string));
+                dt.Columns.Add("date modified", typeof(string));
 
                 LocalDirectoryPath = directoryPath.Replace("\\", @"\");
                 TextBoxLocalPath.Text = LocalDirectoryPath;
 
-                SetLocalStatus($"Fetching directory listing of '{LocalDirectoryPath}'...");
+                SetStatus($"Fetching directory listing of '{LocalDirectoryPath}'...");
 
                 ComboBoxLocalDrives.SelectedIndexChanged -= ComboBoxLocalDrives_SelectedIndexChanged;
                 ComboBoxLocalDrives.SelectedItem = LocalDirectoryPath.Substring(0, 2);
@@ -286,8 +293,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                 if (!isParentRoot)
                 {
-                    _ = DgvLocalFiles.Rows.Add("folder", ImageFolder, "..", "<DIRECTORY>",
-                        Directory.GetLastWriteTime(LocalDirectoryPath));
+                    dt.Rows.Add("folder", ImageFolder, "..", "<DIRECTORY>", Directory.GetLastWriteTime(LocalDirectoryPath));
                 }
 
                 int folders = 0;
@@ -296,7 +302,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                 foreach (var directoryItem in Directory.GetDirectories(LocalDirectoryPath))
                 {
-                    _ = DgvLocalFiles.Rows.Add("folder", ImageFolder, Path.GetFileName(directoryItem), "<DIRECTORY>", Directory.GetLastWriteTime(directoryItem));
+                    dt.Rows.Add("folder", ImageFolder, Path.GetFileName(directoryItem), "<DIRECTORY>", Directory.GetLastWriteTime(directoryItem));
 
                     folders++;
                 }
@@ -305,7 +311,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 {
                     var fileBytes = new FileInfo(fileItem).Length;
 
-                    _ = DgvLocalFiles.Rows.Add("file", ImageFile, Path.GetFileName(fileItem), MainWindow.Settings.ShowFileSizeInBytes ? fileBytes.ToString("#,0") + " bytes" : fileBytes.ToString().FormatSize(), File.GetLastWriteTime(fileItem));
+                    dt.Rows.Add("file", ImageFile, Path.GetFileName(fileItem), MainWindow.Settings.ShowFileSizeInBytes ? fileBytes.ToString("#,0") + " bytes" : fileBytes.ToString().FormatSize(), File.GetLastWriteTime(fileItem));
 
                     files++;
                     totalBytes += fileBytes;
@@ -317,16 +323,16 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                 if (files < 1 && folders < 1)
                 {
-                    SetLocalStatus("Empty directory.");
+                    SetStatus("Empty directory.");
                 }
                 else
                 {
-                    SetLocalStatus($"{statusFiles}{statusFolders}{statusTotalBytes}");
+                    SetStatus($"{statusFiles}{statusFolders}{statusTotalBytes}");
                 }
             }
             catch (Exception ex)
             {
-                SetLocalStatus($"Error fetching directory listing for path: {LocalDirectoryPath} - {ex.Message}", ex);
+                SetStatus($"Error fetching directory listing for path: {LocalDirectoryPath} - {ex.Message}", ex);
 
                 try
                 {
@@ -335,17 +341,16 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 }
                 catch
                 {
-                    SetLocalStatus($"Error fetching directory listing for path: {Path.GetDirectoryName(LocalDirectoryPath) + @"\"} - {ex.Message}", ex);
+                    SetStatus($"Error fetching directory listing for path: {Path.GetDirectoryName(LocalDirectoryPath) + @"\"} - {ex.Message}", ex);
                 }
             }
-            */
         }
 
         /************* Console File Explorer *************/
 
         private void ComboBoxConsoleDrives_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadConsoleDirectory("/" + ComboBoxConsoleDrives.GetItemText(ComboBoxConsoleDrives.SelectedItem) + "/");
+            LoadConsoleDirectory("/" + ComboBoxConsoleDrives.SelectedItem.ToString() + "/");
         }
 
         private void ButtonConsoleNavigate_Click(object sender, EventArgs e)
@@ -423,29 +428,29 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             */
         }
 
-        private void ToolStripConsoleDownload_Click(object sender, EventArgs e)
+        private void ButtonConsoleDownloadFile_ItemClick(object sender, ItemClickEventArgs e)
         {
             DownloadFromConsole();
         }
 
-        private void ToolStripConsoleDelete_Click(object sender, EventArgs e)
+        private void ButtonConsoleDeleteFile_ItemClick(object sender, ItemClickEventArgs e)
         {
             DeleteConsoleItem();
         }
 
-        private void ToolStripConsoleNewFolder_Click(object sender, EventArgs e)
+        private void ButtonConsoleNewFolder_ItemClick(object sender, ItemClickEventArgs e)
         {
             CreateConsoleFolder();
         }
 
-        private void ToolStripConsoleFileRefresh_Click(object sender, EventArgs e)
+        private void ButtonConsoleRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
             LoadConsoleDirectory(FtpDirectoryPath);
         }
 
         private void ContextMenuConsoleDownloadFile_Click(object sender, EventArgs e)
         {
-            ToolStripConsoleDownload.PerformClick();
+            //ToolStripConsoleDownload.PerformClick();
         }
 
         private void ContextMenuConsoleDeleteFile_Click(object sender, EventArgs e)
@@ -468,12 +473,25 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             RenameConsoleFolder();
         }
 
+
         /// <summary>
         /// Loads files and folders into the console datagridview
         /// </summary>
         /// <param name="directoryPath">Console path to retrieve</param>
         public void LoadConsoleDirectory(string directoryPath)
         {
+            FtpDirectoryPath = directoryPath.Replace("//", "/");
+            TextBoxConsolePath.Text = FtpDirectoryPath;
+
+            var dt = new DataTable();
+
+            foreach (var consoleiTems in XboxConsole.Filesystem.GetDirectories(FtpDirectoryPath))
+            {
+                dt.Rows.Add(consoleiTems);
+            }
+
+            GridConsoleFiles.DataSource = dt;
+
             /*
             try
             {
@@ -613,7 +631,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 {
                     string folderPath = FtpDirectoryPath + "/" + folderName;
 
-                    if (FtpClient.DirectoryExists(folderPath))
+                    if (XboxConsole.Filesystem.DirectoryExists(folderPath))
                     {
                         XtraMessageBox.Show($"A folder with this name already exists.", "Error");
                         return;
@@ -650,14 +668,14 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                     if (File.Exists(localPath))
                     {
-                        SetLocalStatus($"Uploading file to {consolePath}...");
+                        SetStatus($"Uploading file to {consolePath}...");
                         FtpExtensions.UploadFile(localPath, consolePath);
-                        SetLocalStatus($"Successfully uploaded file: {Path.GetFileName(localPath)}");
+                        SetStatus($"Successfully uploaded file: {Path.GetFileName(localPath)}");
                         LoadConsoleDirectory(FtpDirectoryPath);
                     }
                     else
                     {
-                        SetLocalStatus("Unable to upload file as it doesn't exist on your computer.");
+                        SetStatus("Unable to upload file as it doesn't exist on your computer.");
                     }
                 }
                 else if (type.Equals("folder"))
@@ -665,15 +683,15 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                     var localPath = TextBoxLocalPath.Text + localName + @"\";
                     var consolePath = TextBoxConsolePath.Text + localName;
 
-                    SetLocalStatus($"Uploading folder to {consolePath}...");
+                    SetStatus($"Uploading folder to {consolePath}...");
                     //MainWindow.FtpClient.UploadDirectory(localPath, consolePath, FtpFolderSyncMode.Update, FtpRemoteExists.Overwrite);
-                    SetLocalStatus($"Successfully uploaded folder: {localPath}");
+                    SetStatus($"Successfully uploaded folder: {localPath}");
                     LoadConsoleDirectory(FtpDirectoryPath);
                 }
             }
             catch (Exception ex)
             {
-                SetLocalStatus($"Unable to upload to console. Error: {ex.Message}", ex);
+                SetStatus($"Unable to upload to console. Error: {ex.Message}", ex);
             }
             */
         }
@@ -694,17 +712,17 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                         if (type.Equals("folder"))
                         {
-                            SetLocalStatus($"Deleting folder: {selectedItem}");
+                            SetStatus($"Deleting folder: {selectedItem}");
                             UserFolders.DeleteDirectory(selectedItem);
-                            SetLocalStatus($"Successfully deleted folder: {name}");
+                            SetStatus($"Successfully deleted folder: {name}");
                         }
                         else if (type.Equals("file"))
                         {
                             if (File.Exists(selectedItem))
                             {
-                                SetLocalStatus($"Deleting file: {selectedItem}");
+                                SetStatus($"Deleting file: {selectedItem}");
                                 File.Delete(selectedItem);
-                                SetLocalStatus($"Successfully deleted file: {name}");
+                                SetStatus($"Successfully deleted file: {name}");
                             }
                         }
                     }
@@ -714,7 +732,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             }
             catch (Exception ex)
             {
-                SetLocalStatus($"Unable to delete item. Error: {ex.Message}", ex);
+                SetStatus($"Unable to delete item. Error: {ex.Message}", ex);
             }
             */
         }
@@ -922,7 +940,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 {
                     if (!Directory.Exists(newFolderPath))
                     {
-                        SetLocalStatus($"A folder with this name already exists.");
+                        SetStatus($"A folder with this name already exists.");
                     }
                     else
                     {
@@ -937,34 +955,13 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         }
 
         /// <summary>
-        /// Set the current status in the local tool strip
-        /// </summary>
-        /// <param name="status"></param>
-        /// <param name="ex"></param>
-        public void SetLocalStatus(string status, Exception ex = null)
-        {
-            ToolStripLabelLocalStatus.Text = status;
-
-            if (ex == null)
-            {
-                Program.Log.Info(status);
-            }
-            else
-            {
-                Program.Log.Error(ex, status);
-            }
-
-            Refresh();
-        }
-
-        /// <summary>
         /// Set the current process status in the console tool strip
         /// </summary>
         /// <param name="status"></param>
         /// <param name="ex"></param>
-        public void SetConsoleStatus(string status, Exception ex = null)
+        public void SetStatus(string status, Exception ex = null)
         {
-            ToolStripLabelConsoleStatus.Text = status;
+            LabelStatus.Caption = status;
 
             switch (ex)
             {

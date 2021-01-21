@@ -37,19 +37,7 @@
             this.ContextMenuConsoleSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.ContextMenuItemConsoleRenameFile = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuItemConsoleRenameFolder = new System.Windows.Forms.ToolStripMenuItem();
-            this.SectionLocalFileExplorer = new DarkUI.Controls.DarkSectionPanel();
-            this.ComboBoxLocalDrives = new DarkUI.Controls.DarkComboBox();
-            this.ToolStripLocalActions = new DarkUI.Controls.DarkToolStrip();
-            this.ToolStripLocalUpload = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripLocalDelete = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripLocalNewFolder = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripLocalRefresh = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripLocalOpenExplorer = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripLocalStatus = new DarkUI.Controls.DarkToolStrip();
-            this.ToolStripLabelLocalStatus = new System.Windows.Forms.ToolStripLabel();
-            this.TextBoxLocalPath = new DarkUI.Controls.DarkTextBox();
-            this.ButtonLocalDirectory = new DarkUI.Controls.DarkButton();
-            this.DgvLocalFiles = new DevExpress.XtraGrid.GridControl();
+            this.GridLocalFiles = new DevExpress.XtraGrid.GridControl();
             this.ContextMenuLocal = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuLocallUploadFile = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuLocalDeleteFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,45 +45,85 @@
             this.ContextMenuLocalSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.ContextMenuLocalRenameFile = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuLocalRenameFolder = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.GridViewLocalFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColumnLocalType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnLocalIcon = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnLocalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnLocalSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnLocalDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SectionConsoleFileExplorer = new DarkUI.Controls.DarkSectionPanel();
-            this.ComboBoxConsoleDrives = new DarkUI.Controls.DarkComboBox();
-            this.ToolStripConsoleActions = new DarkUI.Controls.DarkToolStrip();
-            this.ToolStripConsoleDownload = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripConsoleDelete = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripConsoleNewFolder = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripConsoleRefresh = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripConsoleStatus = new DarkUI.Controls.DarkToolStrip();
-            this.ToolStripLabelConsoleStatus = new System.Windows.Forms.ToolStripLabel();
-            this.ButtonConsoleNavigate = new DarkUI.Controls.DarkButton();
-            this.TextBoxConsolePath = new DarkUI.Controls.DarkTextBox();
-            this.DgvConsoleFiles = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.GridConsoleFiles = new DevExpress.XtraGrid.GridControl();
+            this.GridViewConsoleFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColumnConsoleFileType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnConsoleFileImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnConsoleFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnConsoleFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnConsoleLastModified = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.BarDockConsoleFiles = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.BarDockLocalFiles = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.ButtonConsoleNavigate = new DevExpress.XtraEditors.SimpleButton();
+            this.TextBoxConsolePath = new DevExpress.XtraEditors.TextEdit();
+            this.ComboBoxConsoleDrives = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.ButtonBrowseLocalDirectory = new DevExpress.XtraEditors.SimpleButton();
+            this.ComboBoxLocalDrives = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.TextBoxLocalPath = new DevExpress.XtraEditors.TextEdit();
             this.WaitLoadConsole = new System.Windows.Forms.Timer(this.components);
+            this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.ButtonLocalUploadFile = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonLocalDeleteFile = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonLocalNewFolder = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonLocalRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonLocalOpenExplorer = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
+            this.barManager3 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.ButtonConsoleDownloadFile = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonConsoleDeleteFile = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonConsoleNewFolder = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonConsoleRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
+            this.barManager4 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar5 = new DevExpress.XtraBars.Bar();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.LabelStatus = new DevExpress.XtraBars.BarStaticItem();
+            this.barDockControl9 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl10 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl11 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl12 = new DevExpress.XtraBars.BarDockControl();
+            this.LabelHeaderStatus = new DevExpress.XtraBars.BarHeaderItem();
             this.ContextMenuConsole.SuspendLayout();
-            this.SectionLocalFileExplorer.SuspendLayout();
-            this.ToolStripLocalActions.SuspendLayout();
-            this.ToolStripLocalStatus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvLocalFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridLocalFiles)).BeginInit();
             this.ContextMenuLocal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.SectionConsoleFileExplorer.SuspendLayout();
-            this.ToolStripConsoleActions.SuspendLayout();
-            this.ToolStripConsoleStatus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvConsoleFiles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewLocalFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridConsoleFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewConsoleFiles)).BeginInit();
             this.LayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsolePath.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxConsoleDrives.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxLocalDrives.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxLocalPath.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager4)).BeginInit();
             this.SuspendLayout();
             // 
             // ContextMenuConsole
@@ -171,199 +199,20 @@
             this.ContextMenuItemConsoleRenameFolder.Text = "Rename Folder";
             this.ContextMenuItemConsoleRenameFolder.Click += new System.EventHandler(this.ContextMenuItemConsoleRenameFolder_Click);
             // 
-            // SectionLocalFileExplorer
+            // GridLocalFiles
             // 
-            this.SectionLocalFileExplorer.Controls.Add(this.ComboBoxLocalDrives);
-            this.SectionLocalFileExplorer.Controls.Add(this.ToolStripLocalActions);
-            this.SectionLocalFileExplorer.Controls.Add(this.ToolStripLocalStatus);
-            this.SectionLocalFileExplorer.Controls.Add(this.TextBoxLocalPath);
-            this.SectionLocalFileExplorer.Controls.Add(this.ButtonLocalDirectory);
-            this.SectionLocalFileExplorer.Controls.Add(this.DgvLocalFiles);
-            this.SectionLocalFileExplorer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SectionLocalFileExplorer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.SectionLocalFileExplorer.Location = new System.Drawing.Point(0, 0);
-            this.SectionLocalFileExplorer.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.SectionLocalFileExplorer.Name = "SectionLocalFileExplorer";
-            this.SectionLocalFileExplorer.SectionHeader = "LOCAL FILE EXPLORER";
-            this.SectionLocalFileExplorer.Size = new System.Drawing.Size(652, 539);
-            this.SectionLocalFileExplorer.TabIndex = 17;
-            // 
-            // ComboBoxLocalDrives
-            // 
-            this.ComboBoxLocalDrives.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.ComboBoxLocalDrives.FormattingEnabled = true;
-            this.ComboBoxLocalDrives.Location = new System.Drawing.Point(7, 30);
-            this.ComboBoxLocalDrives.Name = "ComboBoxLocalDrives";
-            this.ComboBoxLocalDrives.Size = new System.Drawing.Size(42, 24);
-            this.ComboBoxLocalDrives.TabIndex = 1148;
-            this.ComboBoxLocalDrives.SelectedIndexChanged += new System.EventHandler(this.ComboBoxLocalDrives_SelectedIndexChanged);
-            // 
-            // ToolStripLocalActions
-            // 
-            this.ToolStripLocalActions.AutoSize = false;
-            this.ToolStripLocalActions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLocalActions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ToolStripLocalActions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLocalActions.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.ToolStripLocalActions.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ToolStripLocalActions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripLocalUpload,
-            this.ToolStripLocalDelete,
-            this.ToolStripLocalNewFolder,
-            this.ToolStripLocalRefresh,
-            this.ToolStripLocalOpenExplorer});
-            this.ToolStripLocalActions.Location = new System.Drawing.Point(1, 472);
-            this.ToolStripLocalActions.Name = "ToolStripLocalActions";
-            this.ToolStripLocalActions.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.ToolStripLocalActions.Size = new System.Drawing.Size(650, 36);
-            this.ToolStripLocalActions.TabIndex = 21;
-            this.ToolStripLocalActions.TabStop = true;
-            this.ToolStripLocalActions.Text = "darkToolStrip3";
-            // 
-            // ToolStripLocalUpload
-            // 
-            this.ToolStripLocalUpload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLocalUpload.Enabled = false;
-            this.ToolStripLocalUpload.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripLocalUpload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLocalUpload.Image = global::ModioX.Properties.Resources.upload;
-            this.ToolStripLocalUpload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripLocalUpload.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripLocalUpload.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLocalUpload.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripLocalUpload.Name = "ToolStripLocalUpload";
-            this.ToolStripLocalUpload.Size = new System.Drawing.Size(72, 26);
-            this.ToolStripLocalUpload.Text = "Upload";
-            this.ToolStripLocalUpload.Click += new System.EventHandler(this.ToolStripLocalUploadFile_Click);
-            // 
-            // ToolStripLocalDelete
-            // 
-            this.ToolStripLocalDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLocalDelete.Enabled = false;
-            this.ToolStripLocalDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripLocalDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLocalDelete.Image = global::ModioX.Properties.Resources.delete;
-            this.ToolStripLocalDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripLocalDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripLocalDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLocalDelete.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripLocalDelete.Name = "ToolStripLocalDelete";
-            this.ToolStripLocalDelete.Size = new System.Drawing.Size(71, 26);
-            this.ToolStripLocalDelete.Text = "Delete";
-            this.ToolStripLocalDelete.Click += new System.EventHandler(this.ToolStripLocalDeleteFile_Click);
-            // 
-            // ToolStripLocalNewFolder
-            // 
-            this.ToolStripLocalNewFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLocalNewFolder.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripLocalNewFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLocalNewFolder.Image = global::ModioX.Properties.Resources.add_folder;
-            this.ToolStripLocalNewFolder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripLocalNewFolder.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripLocalNewFolder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLocalNewFolder.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripLocalNewFolder.Name = "ToolStripLocalNewFolder";
-            this.ToolStripLocalNewFolder.Size = new System.Drawing.Size(97, 26);
-            this.ToolStripLocalNewFolder.Text = "New Folder";
-            this.ToolStripLocalNewFolder.Click += new System.EventHandler(this.ToolStripLocalNewFolder_Click);
-            // 
-            // ToolStripLocalRefresh
-            // 
-            this.ToolStripLocalRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLocalRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripLocalRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLocalRefresh.Image = global::ModioX.Properties.Resources.refresh;
-            this.ToolStripLocalRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripLocalRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripLocalRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLocalRefresh.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripLocalRefresh.Name = "ToolStripLocalRefresh";
-            this.ToolStripLocalRefresh.Size = new System.Drawing.Size(77, 26);
-            this.ToolStripLocalRefresh.Text = "Refresh";
-            this.ToolStripLocalRefresh.Click += new System.EventHandler(this.ToolStripLocalRefresh_Click);
-            // 
-            // ToolStripLocalOpenExplorer
-            // 
-            this.ToolStripLocalOpenExplorer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLocalOpenExplorer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripLocalOpenExplorer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLocalOpenExplorer.Image = global::ModioX.Properties.Resources.file_explorer;
-            this.ToolStripLocalOpenExplorer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripLocalOpenExplorer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripLocalOpenExplorer.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLocalOpenExplorer.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripLocalOpenExplorer.Name = "ToolStripLocalOpenExplorer";
-            this.ToolStripLocalOpenExplorer.Size = new System.Drawing.Size(113, 26);
-            this.ToolStripLocalOpenExplorer.Text = "Open Explorer";
-            this.ToolStripLocalOpenExplorer.Click += new System.EventHandler(this.ToolStripLocalOpenExplorer_Click);
-            // 
-            // ToolStripLocalStatus
-            // 
-            this.ToolStripLocalStatus.AutoSize = false;
-            this.ToolStripLocalStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLocalStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ToolStripLocalStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLocalStatus.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.ToolStripLocalStatus.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ToolStripLocalStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripLabelLocalStatus});
-            this.ToolStripLocalStatus.Location = new System.Drawing.Point(1, 508);
-            this.ToolStripLocalStatus.Name = "ToolStripLocalStatus";
-            this.ToolStripLocalStatus.Padding = new System.Windows.Forms.Padding(6, 0, 8, 5);
-            this.ToolStripLocalStatus.Size = new System.Drawing.Size(650, 30);
-            this.ToolStripLocalStatus.TabIndex = 1147;
-            this.ToolStripLocalStatus.Text = "darkToolStrip1";
-            // 
-            // ToolStripLabelLocalStatus
-            // 
-            this.ToolStripLabelLocalStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLabelLocalStatus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.ToolStripLabelLocalStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLabelLocalStatus.Name = "ToolStripLabelLocalStatus";
-            this.ToolStripLabelLocalStatus.Size = new System.Drawing.Size(85, 22);
-            this.ToolStripLabelLocalStatus.Text = "Loading data...";
-            this.ToolStripLabelLocalStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // TextBoxLocalPath
-            // 
-            this.TextBoxLocalPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxLocalPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.TextBoxLocalPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxLocalPath.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBoxLocalPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxLocalPath.Location = new System.Drawing.Point(55, 31);
-            this.TextBoxLocalPath.Name = "TextBoxLocalPath";
-            this.TextBoxLocalPath.ReadOnly = true;
-            this.TextBoxLocalPath.Size = new System.Drawing.Size(544, 23);
-            this.TextBoxLocalPath.TabIndex = 18;
-            this.TextBoxLocalPath.Text = "\\";
-            // 
-            // ButtonLocalDirectory
-            // 
-            this.ButtonLocalDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonLocalDirectory.Location = new System.Drawing.Point(605, 31);
-            this.ButtonLocalDirectory.Name = "ButtonLocalDirectory";
-            this.ButtonLocalDirectory.Padding = new System.Windows.Forms.Padding(5);
-            this.ButtonLocalDirectory.Size = new System.Drawing.Size(40, 23);
-            this.ButtonLocalDirectory.TabIndex = 19;
-            this.ButtonLocalDirectory.Text = "...";
-            this.ButtonLocalDirectory.Click += new System.EventHandler(this.ButtonLocalDirectory_Click);
-            // 
-            // DgvLocalFiles
-            // 
-            this.DgvLocalFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GridLocalFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgvLocalFiles.ContextMenuStrip = this.ContextMenuLocal;
-            this.DgvLocalFiles.Location = new System.Drawing.Point(7, 60);
-            this.DgvLocalFiles.MainView = this.gridView1;
-            this.DgvLocalFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 0);
-            this.DgvLocalFiles.Name = "DgvLocalFiles";
-            this.DgvLocalFiles.Size = new System.Drawing.Size(638, 412);
-            this.DgvLocalFiles.TabIndex = 20;
-            this.DgvLocalFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.GridLocalFiles.ContextMenuStrip = this.ContextMenuLocal;
+            this.GridLocalFiles.Location = new System.Drawing.Point(11, 60);
+            this.GridLocalFiles.MainView = this.GridViewLocalFiles;
+            this.GridLocalFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 0);
+            this.GridLocalFiles.Name = "GridLocalFiles";
+            this.GridLocalFiles.Size = new System.Drawing.Size(630, 418);
+            this.GridLocalFiles.TabIndex = 20;
+            this.GridLocalFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewLocalFiles});
             // 
             // ContextMenuLocal
             // 
@@ -438,12 +287,14 @@
             this.ContextMenuLocalRenameFolder.Text = "Rename Folder";
             this.ContextMenuLocalRenameFolder.Click += new System.EventHandler(this.ContextMenuLocalRenameFolder_Click);
             // 
-            // gridView1
+            // GridViewLocalFiles
             // 
-            this.gridView1.GridControl = this.DgvLocalFiles;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.GridViewLocalFiles.GridControl = this.GridLocalFiles;
+            this.GridViewLocalFiles.Name = "GridViewLocalFiles";
+            this.GridViewLocalFiles.OptionsBehavior.ReadOnly = true;
+            this.GridViewLocalFiles.OptionsMenu.EnableGroupPanelMenu = false;
+            this.GridViewLocalFiles.OptionsView.ShowGroupPanel = false;
+            this.GridViewLocalFiles.OptionsView.ShowIndicator = false;
             // 
             // ColumnLocalType
             // 
@@ -487,189 +338,28 @@
             this.ColumnLocalDateTime.ReadOnly = true;
             this.ColumnLocalDateTime.Width = 120;
             // 
-            // SectionConsoleFileExplorer
+            // GridConsoleFiles
             // 
-            this.SectionConsoleFileExplorer.Controls.Add(this.ComboBoxConsoleDrives);
-            this.SectionConsoleFileExplorer.Controls.Add(this.ToolStripConsoleActions);
-            this.SectionConsoleFileExplorer.Controls.Add(this.ToolStripConsoleStatus);
-            this.SectionConsoleFileExplorer.Controls.Add(this.ButtonConsoleNavigate);
-            this.SectionConsoleFileExplorer.Controls.Add(this.TextBoxConsolePath);
-            this.SectionConsoleFileExplorer.Controls.Add(this.DgvConsoleFiles);
-            this.SectionConsoleFileExplorer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SectionConsoleFileExplorer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SectionConsoleFileExplorer.Location = new System.Drawing.Point(662, 0);
-            this.SectionConsoleFileExplorer.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.SectionConsoleFileExplorer.Name = "SectionConsoleFileExplorer";
-            this.SectionConsoleFileExplorer.SectionHeader = "CONSOLE FILE EXPLORER";
-            this.SectionConsoleFileExplorer.Size = new System.Drawing.Size(653, 539);
-            this.SectionConsoleFileExplorer.TabIndex = 1157;
-            // 
-            // ComboBoxConsoleDrives
-            // 
-            this.ComboBoxConsoleDrives.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.ComboBoxConsoleDrives.FormattingEnabled = true;
-            this.ComboBoxConsoleDrives.Location = new System.Drawing.Point(7, 30);
-            this.ComboBoxConsoleDrives.Name = "ComboBoxConsoleDrives";
-            this.ComboBoxConsoleDrives.Size = new System.Drawing.Size(96, 24);
-            this.ComboBoxConsoleDrives.TabIndex = 1149;
-            this.ComboBoxConsoleDrives.SelectedIndexChanged += new System.EventHandler(this.ComboBoxConsoleDrives_SelectedIndexChanged);
-            // 
-            // ToolStripConsoleActions
-            // 
-            this.ToolStripConsoleActions.AutoSize = false;
-            this.ToolStripConsoleActions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripConsoleActions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ToolStripConsoleActions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripConsoleActions.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.ToolStripConsoleActions.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ToolStripConsoleActions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripConsoleDownload,
-            this.ToolStripConsoleDelete,
-            this.ToolStripConsoleNewFolder,
-            this.ToolStripConsoleRefresh});
-            this.ToolStripConsoleActions.Location = new System.Drawing.Point(1, 472);
-            this.ToolStripConsoleActions.Name = "ToolStripConsoleActions";
-            this.ToolStripConsoleActions.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.ToolStripConsoleActions.Size = new System.Drawing.Size(651, 36);
-            this.ToolStripConsoleActions.TabIndex = 25;
-            this.ToolStripConsoleActions.TabStop = true;
-            this.ToolStripConsoleActions.Text = "darkToolStrip4";
-            // 
-            // ToolStripConsoleDownload
-            // 
-            this.ToolStripConsoleDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripConsoleDownload.Enabled = false;
-            this.ToolStripConsoleDownload.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripConsoleDownload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripConsoleDownload.Image = global::ModioX.Properties.Resources.download;
-            this.ToolStripConsoleDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripConsoleDownload.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripConsoleDownload.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripConsoleDownload.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripConsoleDownload.Name = "ToolStripConsoleDownload";
-            this.ToolStripConsoleDownload.Size = new System.Drawing.Size(89, 26);
-            this.ToolStripConsoleDownload.Text = "Download";
-            this.ToolStripConsoleDownload.Click += new System.EventHandler(this.ToolStripConsoleDownload_Click);
-            // 
-            // ToolStripConsoleDelete
-            // 
-            this.ToolStripConsoleDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripConsoleDelete.Enabled = false;
-            this.ToolStripConsoleDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripConsoleDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripConsoleDelete.Image = global::ModioX.Properties.Resources.delete;
-            this.ToolStripConsoleDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripConsoleDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripConsoleDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripConsoleDelete.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripConsoleDelete.Name = "ToolStripConsoleDelete";
-            this.ToolStripConsoleDelete.Size = new System.Drawing.Size(71, 26);
-            this.ToolStripConsoleDelete.Text = "Delete";
-            this.ToolStripConsoleDelete.Click += new System.EventHandler(this.ToolStripConsoleDelete_Click);
-            // 
-            // ToolStripConsoleNewFolder
-            // 
-            this.ToolStripConsoleNewFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripConsoleNewFolder.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripConsoleNewFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripConsoleNewFolder.Image = global::ModioX.Properties.Resources.add_folder;
-            this.ToolStripConsoleNewFolder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripConsoleNewFolder.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripConsoleNewFolder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripConsoleNewFolder.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripConsoleNewFolder.Name = "ToolStripConsoleNewFolder";
-            this.ToolStripConsoleNewFolder.Size = new System.Drawing.Size(97, 26);
-            this.ToolStripConsoleNewFolder.Text = "New Folder";
-            this.ToolStripConsoleNewFolder.Click += new System.EventHandler(this.ToolStripConsoleNewFolder_Click);
-            // 
-            // ToolStripConsoleRefresh
-            // 
-            this.ToolStripConsoleRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripConsoleRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripConsoleRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripConsoleRefresh.Image = global::ModioX.Properties.Resources.refresh;
-            this.ToolStripConsoleRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripConsoleRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripConsoleRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripConsoleRefresh.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripConsoleRefresh.Name = "ToolStripConsoleRefresh";
-            this.ToolStripConsoleRefresh.Size = new System.Drawing.Size(77, 26);
-            this.ToolStripConsoleRefresh.Text = "Refresh";
-            this.ToolStripConsoleRefresh.Click += new System.EventHandler(this.ToolStripConsoleFileRefresh_Click);
-            // 
-            // ToolStripConsoleStatus
-            // 
-            this.ToolStripConsoleStatus.AutoSize = false;
-            this.ToolStripConsoleStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripConsoleStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ToolStripConsoleStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripConsoleStatus.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.ToolStripConsoleStatus.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ToolStripConsoleStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripLabelConsoleStatus});
-            this.ToolStripConsoleStatus.Location = new System.Drawing.Point(1, 508);
-            this.ToolStripConsoleStatus.Name = "ToolStripConsoleStatus";
-            this.ToolStripConsoleStatus.Padding = new System.Windows.Forms.Padding(6, 0, 8, 5);
-            this.ToolStripConsoleStatus.Size = new System.Drawing.Size(651, 30);
-            this.ToolStripConsoleStatus.TabIndex = 1147;
-            this.ToolStripConsoleStatus.Text = "darkToolStrip1";
-            // 
-            // ToolStripLabelConsoleStatus
-            // 
-            this.ToolStripLabelConsoleStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLabelConsoleStatus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.ToolStripLabelConsoleStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLabelConsoleStatus.Name = "ToolStripLabelConsoleStatus";
-            this.ToolStripLabelConsoleStatus.Size = new System.Drawing.Size(85, 22);
-            this.ToolStripLabelConsoleStatus.Text = "Loading data...";
-            this.ToolStripLabelConsoleStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ButtonConsoleNavigate
-            // 
-            this.ButtonConsoleNavigate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonConsoleNavigate.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
-            this.ButtonConsoleNavigate.Location = new System.Drawing.Point(607, 31);
-            this.ButtonConsoleNavigate.Name = "ButtonConsoleNavigate";
-            this.ButtonConsoleNavigate.Padding = new System.Windows.Forms.Padding(5);
-            this.ButtonConsoleNavigate.Size = new System.Drawing.Size(40, 23);
-            this.ButtonConsoleNavigate.TabIndex = 23;
-            this.ButtonConsoleNavigate.Text = ">";
-            this.ButtonConsoleNavigate.Click += new System.EventHandler(this.ButtonConsoleNavigate_Click);
-            // 
-            // TextBoxConsolePath
-            // 
-            this.TextBoxConsolePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxConsolePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.TextBoxConsolePath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxConsolePath.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBoxConsolePath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxConsolePath.Location = new System.Drawing.Point(109, 31);
-            this.TextBoxConsolePath.Name = "TextBoxConsolePath";
-            this.TextBoxConsolePath.Size = new System.Drawing.Size(492, 23);
-            this.TextBoxConsolePath.TabIndex = 22;
-            this.TextBoxConsolePath.Text = "/";
-            // 
-            // DgvConsoleFiles
-            // 
-            this.DgvConsoleFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GridConsoleFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgvConsoleFiles.ContextMenuStrip = this.ContextMenuConsole;
-            this.DgvConsoleFiles.Location = new System.Drawing.Point(7, 60);
-            this.DgvConsoleFiles.MainView = this.gridView2;
-            this.DgvConsoleFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 0);
-            this.DgvConsoleFiles.Name = "DgvConsoleFiles";
-            this.DgvConsoleFiles.Size = new System.Drawing.Size(640, 412);
-            this.DgvConsoleFiles.TabIndex = 24;
-            this.DgvConsoleFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.GridConsoleFiles.ContextMenuStrip = this.ContextMenuConsole;
+            this.GridConsoleFiles.Location = new System.Drawing.Point(11, 60);
+            this.GridConsoleFiles.MainView = this.GridViewConsoleFiles;
+            this.GridConsoleFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 0);
+            this.GridConsoleFiles.Name = "GridConsoleFiles";
+            this.GridConsoleFiles.Size = new System.Drawing.Size(630, 418);
+            this.GridConsoleFiles.TabIndex = 24;
+            this.GridConsoleFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewConsoleFiles});
             // 
-            // gridView2
+            // GridViewConsoleFiles
             // 
-            this.gridView2.GridControl = this.DgvConsoleFiles;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.GridViewConsoleFiles.GridControl = this.GridConsoleFiles;
+            this.GridViewConsoleFiles.Name = "GridViewConsoleFiles";
+            this.GridViewConsoleFiles.OptionsBehavior.ReadOnly = true;
+            this.GridViewConsoleFiles.OptionsView.ShowGroupPanel = false;
+            this.GridViewConsoleFiles.OptionsView.ShowIndicator = false;
             // 
             // ColumnConsoleFileType
             // 
@@ -721,20 +411,461 @@
             this.LayoutPanel.ColumnCount = 2;
             this.LayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.LayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.LayoutPanel.Controls.Add(this.SectionConsoleFileExplorer, 1, 0);
-            this.LayoutPanel.Controls.Add(this.SectionLocalFileExplorer, 0, 0);
-            this.LayoutPanel.Location = new System.Drawing.Point(12, 13);
+            this.LayoutPanel.Controls.Add(this.groupControl2, 1, 0);
+            this.LayoutPanel.Controls.Add(this.groupControl1, 0, 0);
+            this.LayoutPanel.Location = new System.Drawing.Point(13, 13);
             this.LayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.LayoutPanel.Name = "LayoutPanel";
             this.LayoutPanel.RowCount = 1;
             this.LayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.LayoutPanel.Size = new System.Drawing.Size(1315, 539);
+            this.LayoutPanel.Size = new System.Drawing.Size(1314, 512);
             this.LayoutPanel.TabIndex = 12;
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.BarDockConsoleFiles);
+            this.groupControl2.Controls.Add(this.ButtonConsoleNavigate);
+            this.groupControl2.Controls.Add(this.TextBoxConsolePath);
+            this.groupControl2.Controls.Add(this.ComboBoxConsoleDrives);
+            this.groupControl2.Controls.Add(this.GridConsoleFiles);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(660, 3);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(651, 506);
+            this.groupControl2.TabIndex = 14;
+            this.groupControl2.Text = "CONSOLE FILE EXPLORER";
+            // 
+            // BarDockConsoleFiles
+            // 
+            this.BarDockConsoleFiles.CausesValidation = false;
+            this.BarDockConsoleFiles.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BarDockConsoleFiles.Location = new System.Drawing.Point(2, 481);
+            this.BarDockConsoleFiles.Manager = this.barManager1;
+            this.BarDockConsoleFiles.Name = "BarDockConsoleFiles";
+            this.BarDockConsoleFiles.Size = new System.Drawing.Size(647, 23);
+            this.BarDockConsoleFiles.Text = "standaloneBarDockControl1";
+            // 
+            // barManager1
+            // 
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.DockControls.Add(this.BarDockLocalFiles);
+            this.barManager1.DockControls.Add(this.BarDockConsoleFiles);
+            this.barManager1.Form = this;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1340, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 540);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1340, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 540);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1340, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 540);
+            // 
+            // BarDockLocalFiles
+            // 
+            this.BarDockLocalFiles.CausesValidation = false;
+            this.BarDockLocalFiles.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BarDockLocalFiles.Location = new System.Drawing.Point(2, 481);
+            this.BarDockLocalFiles.Manager = this.barManager1;
+            this.BarDockLocalFiles.Name = "BarDockLocalFiles";
+            this.BarDockLocalFiles.Size = new System.Drawing.Size(647, 23);
+            this.BarDockLocalFiles.Text = "standaloneBarDockControl1";
+            // 
+            // ButtonConsoleNavigate
+            // 
+            this.ButtonConsoleNavigate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonConsoleNavigate.Location = new System.Drawing.Point(601, 32);
+            this.ButtonConsoleNavigate.Name = "ButtonConsoleNavigate";
+            this.ButtonConsoleNavigate.Size = new System.Drawing.Size(40, 22);
+            this.ButtonConsoleNavigate.TabIndex = 1173;
+            this.ButtonConsoleNavigate.Text = ">>";
+            this.ButtonConsoleNavigate.Click += new System.EventHandler(this.ButtonConsoleNavigate_Click);
+            // 
+            // TextBoxConsolePath
+            // 
+            this.TextBoxConsolePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxConsolePath.Location = new System.Drawing.Point(113, 32);
+            this.TextBoxConsolePath.Name = "TextBoxConsolePath";
+            this.TextBoxConsolePath.Properties.AllowFocused = false;
+            this.TextBoxConsolePath.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxConsolePath.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxConsolePath.Size = new System.Drawing.Size(482, 22);
+            this.TextBoxConsolePath.TabIndex = 1171;
+            // 
+            // ComboBoxConsoleDrives
+            // 
+            this.ComboBoxConsoleDrives.Location = new System.Drawing.Point(11, 32);
+            this.ComboBoxConsoleDrives.Name = "ComboBoxConsoleDrives";
+            this.ComboBoxConsoleDrives.Properties.AllowFocused = false;
+            this.ComboBoxConsoleDrives.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ComboBoxConsoleDrives.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxConsoleDrives.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ComboBoxConsoleDrives.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ComboBoxConsoleDrives.Size = new System.Drawing.Size(96, 22);
+            this.ComboBoxConsoleDrives.TabIndex = 0;
+            this.ComboBoxConsoleDrives.SelectedIndexChanged += new System.EventHandler(this.ComboBoxConsoleDrives_SelectedIndexChanged);
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.BarDockLocalFiles);
+            this.groupControl1.Controls.Add(this.ButtonBrowseLocalDirectory);
+            this.groupControl1.Controls.Add(this.ComboBoxLocalDrives);
+            this.groupControl1.Controls.Add(this.TextBoxLocalPath);
+            this.groupControl1.Controls.Add(this.GridLocalFiles);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(3, 3);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(651, 506);
+            this.groupControl1.TabIndex = 13;
+            this.groupControl1.Text = "LOCAL FILE EXPLORER";
+            // 
+            // ButtonBrowseLocalDirectory
+            // 
+            this.ButtonBrowseLocalDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonBrowseLocalDirectory.Location = new System.Drawing.Point(601, 32);
+            this.ButtonBrowseLocalDirectory.Name = "ButtonBrowseLocalDirectory";
+            this.ButtonBrowseLocalDirectory.Size = new System.Drawing.Size(40, 22);
+            this.ButtonBrowseLocalDirectory.TabIndex = 1172;
+            this.ButtonBrowseLocalDirectory.Text = "...";
+            this.ButtonBrowseLocalDirectory.Click += new System.EventHandler(this.ButtonBrowseLocalDirectory_Click);
+            // 
+            // ComboBoxLocalDrives
+            // 
+            this.ComboBoxLocalDrives.Location = new System.Drawing.Point(11, 32);
+            this.ComboBoxLocalDrives.Name = "ComboBoxLocalDrives";
+            this.ComboBoxLocalDrives.Properties.AllowFocused = false;
+            this.ComboBoxLocalDrives.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ComboBoxLocalDrives.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxLocalDrives.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ComboBoxLocalDrives.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ComboBoxLocalDrives.Size = new System.Drawing.Size(42, 22);
+            this.ComboBoxLocalDrives.TabIndex = 1165;
+            this.ComboBoxLocalDrives.SelectedIndexChanged += new System.EventHandler(this.ComboBoxLocalDrives_SelectedIndexChanged);
+            // 
+            // TextBoxLocalPath
+            // 
+            this.TextBoxLocalPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxLocalPath.Location = new System.Drawing.Point(59, 32);
+            this.TextBoxLocalPath.Name = "TextBoxLocalPath";
+            this.TextBoxLocalPath.Properties.AllowFocused = false;
+            this.TextBoxLocalPath.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxLocalPath.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxLocalPath.Size = new System.Drawing.Size(536, 22);
+            this.TextBoxLocalPath.TabIndex = 1170;
             // 
             // WaitLoadConsole
             // 
             this.WaitLoadConsole.Enabled = true;
             this.WaitLoadConsole.Tick += new System.EventHandler(this.WaitLoadConsole_Tick);
+            // 
+            // barManager2
+            // 
+            this.barManager2.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar1});
+            this.barManager2.DockControls.Add(this.barDockControl1);
+            this.barManager2.DockControls.Add(this.barDockControl2);
+            this.barManager2.DockControls.Add(this.barDockControl3);
+            this.barManager2.DockControls.Add(this.barDockControl4);
+            this.barManager2.Form = this;
+            this.barManager2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ButtonLocalUploadFile,
+            this.ButtonLocalDeleteFile,
+            this.ButtonLocalNewFolder,
+            this.ButtonLocalRefresh,
+            this.ButtonLocalOpenExplorer});
+            this.barManager2.MaxItemId = 5;
+            // 
+            // bar1
+            // 
+            this.bar1.BarItemVertIndent = 5;
+            this.bar1.BarName = "Tools";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonLocalUploadFile),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonLocalDeleteFile),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonLocalNewFolder),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonLocalRefresh),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonLocalOpenExplorer)});
+            this.bar1.OptionsBar.DrawBorder = false;
+            this.bar1.OptionsBar.DrawDragBorder = false;
+            this.bar1.StandaloneBarDockControl = this.BarDockLocalFiles;
+            this.bar1.Text = "Tools";
+            // 
+            // ButtonLocalUploadFile
+            // 
+            this.ButtonLocalUploadFile.Caption = "Upload";
+            this.ButtonLocalUploadFile.Id = 0;
+            this.ButtonLocalUploadFile.Name = "ButtonLocalUploadFile";
+            this.ButtonLocalUploadFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonLocalUploadFile_ItemClick);
+            // 
+            // ButtonLocalDeleteFile
+            // 
+            this.ButtonLocalDeleteFile.Caption = "Delete";
+            this.ButtonLocalDeleteFile.Id = 1;
+            this.ButtonLocalDeleteFile.Name = "ButtonLocalDeleteFile";
+            this.ButtonLocalDeleteFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonLocalDeleteFile_ItemClick);
+            // 
+            // ButtonLocalNewFolder
+            // 
+            this.ButtonLocalNewFolder.Caption = "New Folder";
+            this.ButtonLocalNewFolder.Id = 2;
+            this.ButtonLocalNewFolder.Name = "ButtonLocalNewFolder";
+            this.ButtonLocalNewFolder.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonLocalNewFolder_ItemClick);
+            // 
+            // ButtonLocalRefresh
+            // 
+            this.ButtonLocalRefresh.Caption = "Refresh";
+            this.ButtonLocalRefresh.Id = 3;
+            this.ButtonLocalRefresh.Name = "ButtonLocalRefresh";
+            // 
+            // ButtonLocalOpenExplorer
+            // 
+            this.ButtonLocalOpenExplorer.Caption = "Open Explorer";
+            this.ButtonLocalOpenExplorer.Id = 4;
+            this.ButtonLocalOpenExplorer.Name = "ButtonLocalOpenExplorer";
+            this.ButtonLocalOpenExplorer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonLocalOpenExplorer_ItemClick);
+            // 
+            // barDockControl1
+            // 
+            this.barDockControl1.CausesValidation = false;
+            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl1.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl1.Manager = this.barManager2;
+            this.barDockControl1.Size = new System.Drawing.Size(1340, 0);
+            // 
+            // barDockControl2
+            // 
+            this.barDockControl2.CausesValidation = false;
+            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl2.Location = new System.Drawing.Point(0, 540);
+            this.barDockControl2.Manager = this.barManager2;
+            this.barDockControl2.Size = new System.Drawing.Size(1340, 0);
+            // 
+            // barDockControl3
+            // 
+            this.barDockControl3.CausesValidation = false;
+            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl3.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl3.Manager = this.barManager2;
+            this.barDockControl3.Size = new System.Drawing.Size(0, 540);
+            // 
+            // barDockControl4
+            // 
+            this.barDockControl4.CausesValidation = false;
+            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl4.Location = new System.Drawing.Point(1340, 0);
+            this.barDockControl4.Manager = this.barManager2;
+            this.barDockControl4.Size = new System.Drawing.Size(0, 540);
+            // 
+            // barManager3
+            // 
+            this.barManager3.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar2});
+            this.barManager3.DockControls.Add(this.barDockControl5);
+            this.barManager3.DockControls.Add(this.barDockControl6);
+            this.barManager3.DockControls.Add(this.barDockControl7);
+            this.barManager3.DockControls.Add(this.barDockControl8);
+            this.barManager3.Form = this;
+            this.barManager3.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ButtonConsoleDownloadFile,
+            this.ButtonConsoleDeleteFile,
+            this.ButtonConsoleNewFolder,
+            this.ButtonConsoleRefresh});
+            this.barManager3.MaxItemId = 4;
+            // 
+            // bar2
+            // 
+            this.bar2.BarItemVertIndent = 5;
+            this.bar2.BarName = "Tools";
+            this.bar2.DockCol = 0;
+            this.bar2.DockRow = 0;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonConsoleDownloadFile),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonConsoleDeleteFile),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonConsoleNewFolder),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonConsoleRefresh)});
+            this.bar2.OptionsBar.DrawBorder = false;
+            this.bar2.OptionsBar.DrawDragBorder = false;
+            this.bar2.StandaloneBarDockControl = this.BarDockConsoleFiles;
+            this.bar2.Text = "Tools";
+            // 
+            // ButtonConsoleDownloadFile
+            // 
+            this.ButtonConsoleDownloadFile.Caption = "Download";
+            this.ButtonConsoleDownloadFile.Id = 0;
+            this.ButtonConsoleDownloadFile.Name = "ButtonConsoleDownloadFile";
+            this.ButtonConsoleDownloadFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonConsoleDownloadFile_ItemClick);
+            // 
+            // ButtonConsoleDeleteFile
+            // 
+            this.ButtonConsoleDeleteFile.Caption = "Delete";
+            this.ButtonConsoleDeleteFile.Id = 1;
+            this.ButtonConsoleDeleteFile.Name = "ButtonConsoleDeleteFile";
+            this.ButtonConsoleDeleteFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonConsoleDeleteFile_ItemClick);
+            // 
+            // ButtonConsoleNewFolder
+            // 
+            this.ButtonConsoleNewFolder.Caption = "New Folder";
+            this.ButtonConsoleNewFolder.Id = 2;
+            this.ButtonConsoleNewFolder.Name = "ButtonConsoleNewFolder";
+            this.ButtonConsoleNewFolder.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonConsoleNewFolder_ItemClick);
+            // 
+            // ButtonConsoleRefresh
+            // 
+            this.ButtonConsoleRefresh.Caption = "Refresh";
+            this.ButtonConsoleRefresh.Id = 3;
+            this.ButtonConsoleRefresh.Name = "ButtonConsoleRefresh";
+            this.ButtonConsoleRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonConsoleRefresh_ItemClick);
+            // 
+            // barDockControl5
+            // 
+            this.barDockControl5.CausesValidation = false;
+            this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl5.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl5.Manager = this.barManager3;
+            this.barDockControl5.Size = new System.Drawing.Size(1340, 0);
+            // 
+            // barDockControl6
+            // 
+            this.barDockControl6.CausesValidation = false;
+            this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl6.Location = new System.Drawing.Point(0, 540);
+            this.barDockControl6.Manager = this.barManager3;
+            this.barDockControl6.Size = new System.Drawing.Size(1340, 0);
+            // 
+            // barDockControl7
+            // 
+            this.barDockControl7.CausesValidation = false;
+            this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl7.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl7.Manager = this.barManager3;
+            this.barDockControl7.Size = new System.Drawing.Size(0, 540);
+            // 
+            // barDockControl8
+            // 
+            this.barDockControl8.CausesValidation = false;
+            this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl8.Location = new System.Drawing.Point(1340, 0);
+            this.barDockControl8.Manager = this.barManager3;
+            this.barDockControl8.Size = new System.Drawing.Size(0, 540);
+            // 
+            // barManager4
+            // 
+            this.barManager4.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar5});
+            this.barManager4.DockControls.Add(this.barDockControl9);
+            this.barManager4.DockControls.Add(this.barDockControl10);
+            this.barManager4.DockControls.Add(this.barDockControl11);
+            this.barManager4.DockControls.Add(this.barDockControl12);
+            this.barManager4.Form = this;
+            this.barManager4.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.LabelHeaderStatus,
+            this.LabelStatus,
+            this.barStaticItem1});
+            this.barManager4.MaxItemId = 3;
+            this.barManager4.StatusBar = this.bar5;
+            // 
+            // bar5
+            // 
+            this.bar5.BarItemVertIndent = 5;
+            this.bar5.BarName = "Status bar";
+            this.bar5.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar5.DockCol = 0;
+            this.bar5.DockRow = 0;
+            this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.LabelStatus)});
+            this.bar5.OptionsBar.AllowQuickCustomization = false;
+            this.bar5.OptionsBar.DrawDragBorder = false;
+            this.bar5.OptionsBar.UseWholeRow = true;
+            this.bar5.Text = "Status bar";
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.barStaticItem1.Caption = "Status";
+            this.barStaticItem1.Id = 2;
+            this.barStaticItem1.LeftIndent = 4;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // LabelStatus
+            // 
+            this.LabelStatus.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.LabelStatus.Caption = "Status";
+            this.LabelStatus.Id = 1;
+            this.LabelStatus.Name = "LabelStatus";
+            // 
+            // barDockControl9
+            // 
+            this.barDockControl9.CausesValidation = false;
+            this.barDockControl9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl9.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl9.Manager = this.barManager4;
+            this.barDockControl9.Size = new System.Drawing.Size(1340, 0);
+            // 
+            // barDockControl10
+            // 
+            this.barDockControl10.CausesValidation = false;
+            this.barDockControl10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl10.Location = new System.Drawing.Point(0, 540);
+            this.barDockControl10.Manager = this.barManager4;
+            this.barDockControl10.Size = new System.Drawing.Size(1340, 25);
+            // 
+            // barDockControl11
+            // 
+            this.barDockControl11.CausesValidation = false;
+            this.barDockControl11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl11.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl11.Manager = this.barManager4;
+            this.barDockControl11.Size = new System.Drawing.Size(0, 540);
+            // 
+            // barDockControl12
+            // 
+            this.barDockControl12.CausesValidation = false;
+            this.barDockControl12.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl12.Location = new System.Drawing.Point(1340, 0);
+            this.barDockControl12.Manager = this.barManager4;
+            this.barDockControl12.Size = new System.Drawing.Size(0, 540);
+            // 
+            // LabelHeaderStatus
+            // 
+            this.LabelHeaderStatus.Caption = "Status:";
+            this.LabelHeaderStatus.Id = 0;
+            this.LabelHeaderStatus.Name = "LabelHeaderStatus";
             // 
             // FileManagerWindow
             // 
@@ -746,6 +877,22 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1340, 565);
             this.Controls.Add(this.LayoutPanel);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
+            this.Controls.Add(this.barDockControl3);
+            this.Controls.Add(this.barDockControl4);
+            this.Controls.Add(this.barDockControl2);
+            this.Controls.Add(this.barDockControl1);
+            this.Controls.Add(this.barDockControl7);
+            this.Controls.Add(this.barDockControl8);
+            this.Controls.Add(this.barDockControl6);
+            this.Controls.Add(this.barDockControl5);
+            this.Controls.Add(this.barDockControl11);
+            this.Controls.Add(this.barDockControl12);
+            this.Controls.Add(this.barDockControl10);
+            this.Controls.Add(this.barDockControl9);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("FileManagerWindow.IconOptions.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -753,37 +900,34 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "File Manager (Xbox)";
+            this.Text = "File Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FileExplorer_FormClosing);
             this.Load += new System.EventHandler(this.FileManagerWindow_Load);
             this.ContextMenuConsole.ResumeLayout(false);
-            this.SectionLocalFileExplorer.ResumeLayout(false);
-            this.SectionLocalFileExplorer.PerformLayout();
-            this.ToolStripLocalActions.ResumeLayout(false);
-            this.ToolStripLocalActions.PerformLayout();
-            this.ToolStripLocalStatus.ResumeLayout(false);
-            this.ToolStripLocalStatus.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvLocalFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridLocalFiles)).EndInit();
             this.ContextMenuLocal.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.SectionConsoleFileExplorer.ResumeLayout(false);
-            this.SectionConsoleFileExplorer.PerformLayout();
-            this.ToolStripConsoleActions.ResumeLayout(false);
-            this.ToolStripConsoleActions.PerformLayout();
-            this.ToolStripConsoleStatus.ResumeLayout(false);
-            this.ToolStripConsoleStatus.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvConsoleFiles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewLocalFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridConsoleFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewConsoleFiles)).EndInit();
             this.LayoutPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsolePath.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxConsoleDrives.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxLocalDrives.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxLocalPath.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager4)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private DarkUI.Controls.DarkSectionPanel SectionLocalFileExplorer;
-        private DarkUI.Controls.DarkButton ButtonLocalDirectory;
-        private DarkUI.Controls.DarkToolStrip ToolStripLocalActions;
-        private DarkUI.Controls.DarkTextBox TextBoxLocalPath;
         private DarkUI.Controls.DarkContextMenu ContextMenuConsole;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuItemConsoleDownloadFile;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuItemConsoleDeleteFile;
@@ -791,26 +935,10 @@
         private DarkUI.Controls.DarkContextMenu ContextMenuLocal;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuLocallUploadFile;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuLocalDeleteFile;
-        private System.Windows.Forms.ToolStripButton ToolStripLocalUpload;
-        private System.Windows.Forms.ToolStripButton ToolStripLocalDelete;
-        private System.Windows.Forms.ToolStripButton ToolStripLocalOpenExplorer;
-        private DevExpress.XtraGrid.GridControl DgvLocalFiles;
-        private DarkUI.Controls.DarkSectionPanel SectionConsoleFileExplorer;
-        private DarkUI.Controls.DarkToolStrip ToolStripConsoleActions;
-        private System.Windows.Forms.ToolStripButton ToolStripConsoleDownload;
-        private System.Windows.Forms.ToolStripButton ToolStripConsoleDelete;
-        private System.Windows.Forms.ToolStripButton ToolStripConsoleRefresh;
-        private DevExpress.XtraGrid.GridControl DgvConsoleFiles;
-        private DarkUI.Controls.DarkTextBox TextBoxConsolePath;
+        private DevExpress.XtraGrid.GridControl GridLocalFiles;
+        private DevExpress.XtraGrid.GridControl GridConsoleFiles;
         private System.Windows.Forms.TableLayoutPanel LayoutPanel;
         private System.Windows.Forms.Timer WaitLoadConsole;
-        private DarkUI.Controls.DarkToolStrip ToolStripLocalStatus;
-        private System.Windows.Forms.ToolStripLabel ToolStripLabelLocalStatus;
-        private DarkUI.Controls.DarkToolStrip ToolStripConsoleStatus;
-        private System.Windows.Forms.ToolStripLabel ToolStripLabelConsoleStatus;
-        private System.Windows.Forms.ToolStripButton ToolStripLocalNewFolder;
-        private System.Windows.Forms.ToolStripButton ToolStripConsoleNewFolder;
-        private DarkUI.Controls.DarkComboBox ComboBoxLocalDrives;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLocalType;
         private System.Windows.Forms.DataGridViewImageColumn ColumnLocalIcon;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLocalName;
@@ -821,7 +949,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnConsoleFileName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnConsoleFileSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnConsoleLastModified;
-        private DarkUI.Controls.DarkComboBox ComboBoxConsoleDrives;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuLocalRenameFile;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuLocalRefresh;
         private System.Windows.Forms.ToolStripSeparator ContextMenuConsoleSeparator;
@@ -829,9 +956,52 @@
         private System.Windows.Forms.ToolStripMenuItem ContextMenuItemConsoleRenameFolder;
         private System.Windows.Forms.ToolStripSeparator ContextMenuLocalSeparator;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuLocalRenameFolder;
-        private DarkUI.Controls.DarkButton ButtonConsoleNavigate;
-        private System.Windows.Forms.ToolStripButton ToolStripLocalRefresh;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Views.Grid.GridView GridViewLocalFiles;
+        private DevExpress.XtraGrid.Views.Grid.GridView GridViewConsoleFiles;
+        private DevExpress.XtraEditors.ComboBoxEdit ComboBoxLocalDrives;
+        private DevExpress.XtraEditors.ComboBoxEdit ComboBoxConsoleDrives;
+        private DevExpress.XtraEditors.TextEdit TextBoxLocalPath;
+        private DevExpress.XtraEditors.TextEdit TextBoxConsolePath;
+        private DevExpress.XtraEditors.SimpleButton ButtonBrowseLocalDirectory;
+        private DevExpress.XtraEditors.SimpleButton ButtonConsoleNavigate;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraBars.StandaloneBarDockControl BarDockLocalFiles;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.StandaloneBarDockControl BarDockConsoleFiles;
+        private DevExpress.XtraBars.BarDockControl barDockControl3;
+        private DevExpress.XtraBars.BarManager barManager2;
+        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.BarButtonItem ButtonLocalUploadFile;
+        private DevExpress.XtraBars.BarButtonItem ButtonLocalDeleteFile;
+        private DevExpress.XtraBars.BarButtonItem ButtonLocalNewFolder;
+        private DevExpress.XtraBars.BarButtonItem ButtonLocalRefresh;
+        private DevExpress.XtraBars.BarButtonItem ButtonLocalOpenExplorer;
+        private DevExpress.XtraBars.BarDockControl barDockControl1;
+        private DevExpress.XtraBars.BarDockControl barDockControl2;
+        private DevExpress.XtraBars.BarDockControl barDockControl4;
+        private DevExpress.XtraBars.BarDockControl barDockControl7;
+        private DevExpress.XtraBars.BarManager barManager3;
+        private DevExpress.XtraBars.Bar bar2;
+        private DevExpress.XtraBars.BarButtonItem ButtonConsoleDownloadFile;
+        private DevExpress.XtraBars.BarButtonItem ButtonConsoleDeleteFile;
+        private DevExpress.XtraBars.BarButtonItem ButtonConsoleNewFolder;
+        private DevExpress.XtraBars.BarButtonItem ButtonConsoleRefresh;
+        private DevExpress.XtraBars.BarDockControl barDockControl5;
+        private DevExpress.XtraBars.BarDockControl barDockControl6;
+        private DevExpress.XtraBars.BarDockControl barDockControl8;
+        private DevExpress.XtraBars.BarDockControl barDockControl11;
+        private DevExpress.XtraBars.BarManager barManager4;
+        private DevExpress.XtraBars.Bar bar5;
+        private DevExpress.XtraBars.BarHeaderItem LabelHeaderStatus;
+        private DevExpress.XtraBars.BarStaticItem LabelStatus;
+        private DevExpress.XtraBars.BarDockControl barDockControl9;
+        private DevExpress.XtraBars.BarDockControl barDockControl10;
+        private DevExpress.XtraBars.BarDockControl barDockControl12;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
     }
 }
