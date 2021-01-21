@@ -20,7 +20,6 @@ namespace ModioX.Update
         {
             InitializeComponent();
         }
-        private static string CurrentMD5 = "";
 
 
     }

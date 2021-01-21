@@ -34,6 +34,11 @@ namespace ModioX.Forms.Windows
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraBars.BarButtonItem ButtonConnectXbox;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
             this.ContextMenuMods = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuModsInstallFiles = new System.Windows.Forms.ToolStripMenuItem();
@@ -110,11 +115,17 @@ namespace ModioX.Forms.Windows
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.XNotifyButton = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem7 = new DevExpress.XtraBars.BarSubItem();
+            this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
+            this.XNotifyType = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.XNotifyText = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.XNotifySend = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.QuickSignIn = new DevExpress.XtraBars.BarButtonItem();
+            this.OpenCloseTray = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
@@ -176,6 +187,10 @@ namespace ModioX.Forms.Windows
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barToolbarsListItem3 = new DevExpress.XtraBars.BarToolbarsListItem();
+            this.XNotifyButton = new DevExpress.XtraBars.BarButtonItem();
+            this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barListItem1 = new DevExpress.XtraBars.BarListItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.ComboBoxRegion = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -243,6 +258,7 @@ namespace ModioX.Forms.Windows
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.HeaderLabelModsInstalled = new DevExpress.XtraBars.BarHeaderItem();
+            this.ProfileIDInfo = new DevExpress.XtraBars.BarButtonItem();
             ButtonConnectXbox = new DevExpress.XtraBars.BarButtonItem();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
@@ -253,6 +269,8 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConnectMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolsMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XNotifyType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XNotifyText)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationsMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OptionsMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HelpMenu)).BeginInit();
@@ -925,9 +943,21 @@ namespace ModioX.Forms.Windows
             this.LabelModsStats,
             this.barSubItem6,
             this.barButtonItem17,
-            this.XNotifyButton});
+            this.XNotifyButton,
+            this.OpenCloseTray,
+            this.barHeaderItem1,
+            this.barListItem1,
+            this.barEditItem1,
+            this.barEditItem2,
+            this.barSubItem7,
+            this.barButtonItem1,
+            this.XNotifySend,
+            this.ProfileIDInfo});
             this.MainMenu.MainMenu = this.BarMenu;
-            this.MainMenu.MaxItemId = 91;
+            this.MainMenu.MaxItemId = 100;
+            this.MainMenu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.XNotifyText,
+            this.XNotifyType});
             this.MainMenu.StatusBar = this.BarStatus;
             // 
             // BarMenu
@@ -1216,7 +1246,7 @@ namespace ModioX.Forms.Windows
             this.barButtonItem16.Caption = "Show CPU/GPU/RAM/MOBO Temps...";
             this.barButtonItem16.Id = 85;
             this.barButtonItem16.Name = "barButtonItem16";
-            this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.QuickSignIn_ItemClick);
+            this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ShowTemperature_ItemClick);
             // 
             // barSubItem4
             // 
@@ -1224,7 +1254,7 @@ namespace ModioX.Forms.Windows
             this.barSubItem4.Id = 72;
             this.barSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.XNotifyButton)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem7, true)});
             this.barSubItem4.Name = "barSubItem4";
             // 
             // barButtonItem4
@@ -1234,20 +1264,124 @@ namespace ModioX.Forms.Windows
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XBDM_XMessageboxUI_ItemClick);
             // 
-            // XNotifyButton
+            // barSubItem7
             // 
-            this.XNotifyButton.Caption = "XNotify";
-            this.XNotifyButton.Id = 90;
-            this.XNotifyButton.Name = "XNotifyButton";
+            this.barSubItem7.Caption = "XNotify";
+            this.barSubItem7.Id = 96;
+            this.barSubItem7.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barEditItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barEditItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.XNotifySend)});
+            this.barSubItem7.Name = "barSubItem7";
+            // 
+            // barEditItem2
+            // 
+            this.barEditItem2.Caption = "Type";
+            this.barEditItem2.Description = "x";
+            this.barEditItem2.Edit = this.XNotifyType;
+            this.barEditItem2.Hint = "Type Of icons ";
+            this.barEditItem2.Id = 95;
+            this.barEditItem2.Name = "barEditItem2";
+            this.barEditItem2.Tag = "<Null>";
+            this.barEditItem2.VisibleInSearchMenu = false;
+            // 
+            // XNotifyType
+            // 
+            this.XNotifyType.AccessibleDescription = "";
+            this.XNotifyType.AutoHeight = false;
+            this.XNotifyType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "mnjukjui", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.XNotifyType.Items.AddRange(new object[] {
+            "Blank",
+            "Game Invite",
+            "Friend Request",
+            "Message Logo",
+            "Message",
+            "Signed Out",
+            "Signed In",
+            "Signed In Live",
+            "Signed In Offline",
+            "Chat Request",
+            "Disconnected",
+            "Downloaded",
+            "Music Logo",
+            "Smiley Face",
+            "Sad Face",
+            "Hammer",
+            "Reinsert Memory",
+            "Reconnect Controller",
+            "Joined Chat",
+            "Left Chat",
+            "Game Invite Sent",
+            "Page Sent",
+            "Achievement",
+            "Video Kinect",
+            "Ready to Play",
+            "Can\'t Download",
+            "Download Stopped",
+            "Console Logo",
+            "Game Message",
+            "Device Full",
+            "Achievements",
+            "Family Timer",
+            "Reconnect Time",
+            "Excessive Play Time",
+            "Party Invite Recieved",
+            "Party Invite Sent",
+            "Invite Party to Game",
+            "Party Kicked",
+            "Party Disconnected",
+            "Party Can\'t Connect",
+            "Joined Party",
+            "Left Party",
+            "Gamer pic Unlocked",
+            "Avatar Award Unlocked",
+            "Party Joined",
+            "Reinsert USB",
+            "Player Muted",
+            "Player Unmuted",
+            "Kinect Connected",
+            "Take a Break",
+            "Kinect Recognized",
+            "Console Auto Shut Off",
+            "Signed in Elsewhere",
+            "Last Signed in Elsewhere",
+            "Kinect Not Supported",
+            "Wireless Turn Off",
+            "Updating",
+            "SmartGlass Available"});
+            this.XNotifyType.Name = "XNotifyType";
+            // 
+            // barEditItem1
+            // 
+            this.barEditItem1.AccessibleDescription = "";
+            this.barEditItem1.Caption = "Text";
+            this.barEditItem1.Edit = this.XNotifyText;
+            this.barEditItem1.Id = 94;
+            this.barEditItem1.Name = "barEditItem1";
+            // 
+            // XNotifyText
+            // 
+            this.XNotifyText.AutoHeight = false;
+            this.XNotifyText.Name = "XNotifyText";
+            // 
+            // XNotifySend
+            // 
+            this.XNotifySend.Caption = "Send XNotify";
+            this.XNotifySend.Id = 98;
+            this.XNotifySend.Name = "XNotifySend";
+            this.XNotifySend.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XNotifySend_ItemClick);
             // 
             // barSubItem5
             // 
             this.barSubItem5.Caption = "Xbox Dashboard";
             this.barSubItem5.Id = 80;
             this.barSubItem5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.ProfileIDInfo, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.QuickSignIn, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem12, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem13, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.QuickSignIn)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.OpenCloseTray, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.barSubItem5.Name = "barSubItem5";
             // 
             // barButtonItem12
@@ -1270,8 +1404,19 @@ namespace ModioX.Forms.Windows
             // 
             this.QuickSignIn.Caption = "Quick Sign In...";
             this.QuickSignIn.Id = 83;
+            this.QuickSignIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("QuickSignIn.ImageOptions.Image")));
+            this.QuickSignIn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("QuickSignIn.ImageOptions.LargeImage")));
             this.QuickSignIn.Name = "QuickSignIn";
-            this.QuickSignIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem14_ItemClick);
+            this.QuickSignIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.QuickSignin_ItemClick);
+            // 
+            // OpenCloseTray
+            // 
+            this.OpenCloseTray.Caption = "Open/Close Tray";
+            this.OpenCloseTray.Id = 91;
+            this.OpenCloseTray.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("OpenCloseTray.ImageOptions.Image")));
+            this.OpenCloseTray.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("OpenCloseTray.ImageOptions.LargeImage")));
+            this.OpenCloseTray.Name = "OpenCloseTray";
+            this.OpenCloseTray.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.OpenCloseTray_ItemClick);
             // 
             // barButtonItem15
             // 
@@ -1729,6 +1874,30 @@ namespace ModioX.Forms.Windows
             this.barToolbarsListItem3.Id = 79;
             this.barToolbarsListItem3.Name = "barToolbarsListItem3";
             // 
+            // XNotifyButton
+            // 
+            this.XNotifyButton.Caption = "XNotify";
+            this.XNotifyButton.Id = 90;
+            this.XNotifyButton.Name = "XNotifyButton";
+            // 
+            // barHeaderItem1
+            // 
+            this.barHeaderItem1.Caption = "barHeaderItem1";
+            this.barHeaderItem1.Id = 92;
+            this.barHeaderItem1.Name = "barHeaderItem1";
+            // 
+            // barListItem1
+            // 
+            this.barListItem1.Caption = "barListItem1";
+            this.barListItem1.Id = 93;
+            this.barListItem1.Name = "barListItem1";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 97;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1945,6 +2114,7 @@ namespace ModioX.Forms.Windows
             this.GridControlGameModsInstalled.TabIndex = 7;
             this.GridControlGameModsInstalled.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewGameModsInstalled});
+            this.GridControlGameModsInstalled.BackColorChanged += new System.EventHandler(this.GridControlGameModsInstalled_BackColorChanged);
             // 
             // GridViewGameModsInstalled
             // 
@@ -2431,6 +2601,15 @@ namespace ModioX.Forms.Windows
             this.HeaderLabelModsInstalled.Id = 0;
             this.HeaderLabelModsInstalled.Name = "HeaderLabelModsInstalled";
             // 
+            // ProfileIDInfo
+            // 
+            this.ProfileIDInfo.Caption = "Show Profile ID";
+            this.ProfileIDInfo.Id = 99;
+            this.ProfileIDInfo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
+            this.ProfileIDInfo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
+            this.ProfileIDInfo.Name = "ProfileIDInfo";
+            this.ProfileIDInfo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ProfileIDInfo_ItemClick);
+            // 
             // MainWindow
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
@@ -2482,6 +2661,8 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConnectMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolsMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XNotifyType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XNotifyText)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationsMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OptionsMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HelpMenu)).EndInit();
@@ -2720,5 +2901,16 @@ namespace ModioX.Forms.Windows
         private BarButtonItem XNotifyButton;
         private BarSubItem barSubItem6;
         private BarButtonItem barButtonItem17;
+        private BarButtonItem OpenCloseTray;
+        private BarSubItem barSubItem7;
+        private BarEditItem barEditItem2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox XNotifyType;
+        private BarEditItem barEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit XNotifyText;
+        private BarButtonItem XNotifySend;
+        private BarHeaderItem barHeaderItem1;
+        private BarListItem barListItem1;
+        private BarButtonItem barButtonItem1;
+        private BarButtonItem ProfileIDInfo;
     }
 }

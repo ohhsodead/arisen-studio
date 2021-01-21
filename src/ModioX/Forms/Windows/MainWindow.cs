@@ -115,6 +115,7 @@ namespace ModioX.Forms.Windows
         /// </summary>
         private async void MainWindow_Load(object sender, EventArgs e)
         {
+
             DevExpress.LookAndFeel.UserLookAndFeel.Default.StyleChanged += MainWindow_StyleChanged;
 
             Text = $@"ModioX - {UpdateExtensions.CurrentVersionName}";
@@ -122,8 +123,12 @@ namespace ModioX.Forms.Windows
 #if DEBUG
 
             Text += " - Welcome! You are in debugging mode for ModioX! :)";
+            CurrentMD5 = ComputeHash(Application.ProductName + ".exe");
 #endif
-
+            if (ComputeHash(Application.ProductName+".exe") != CurrentMD5)
+            {
+                Environment.Exit(0);
+            }
             LoadSettings();
             EnableConsoleActions();
 
@@ -187,9 +192,10 @@ namespace ModioX.Forms.Windows
         private void InitializeFinished()
         {
             SetStatus($"Successfully loaded the database - Finalizing application data...");
-
+#if Debug
             LoadCategories();
-
+            
+#endif
             ComboBoxSystemType.Properties.Items.Clear();
             ComboBoxSystemType.Properties.Items.Add("ANY");
 
@@ -219,7 +225,7 @@ namespace ModioX.Forms.Windows
             Focus();
         }
 
-        #region Header Menu Bar
+#region Header Menu Bar
 
         // CONNECT
 
@@ -483,9 +489,9 @@ namespace ModioX.Forms.Windows
             Application.Exit();
         }
 
-        #endregion
+#endregion
 
-        #region Search & Filtering Mods Functions
+#region Search & Filtering Mods Functions
 
         /// <summary>
         /// Get/set the firmware for filtering mods.
@@ -570,9 +576,9 @@ namespace ModioX.Forms.Windows
                 IsCustomListSelected);
         }
 
-        #endregion
+#endregion
 
-        #region NEED OLD CONTEXT MENU FUNCTIONS TO MOVE TO NEW POPUP MENU FOR GRID VIEW MODS
+#region NEED OLD CONTEXT MENU FUNCTIONS TO MOVE TO NEW POPUP MENU FOR GRID VIEW MODS
 
         private void ContextMenuModsAddToList_Click(object sender, EventArgs e)
         {
@@ -623,9 +629,9 @@ namespace ModioX.Forms.Windows
             ButtonModInstall.PerformClick();
         }
 
-        #endregion
+#endregion
 
-        #region STILL NEED 
+#region STILL NEED 
 
         private void GridViewMods_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -715,9 +721,9 @@ namespace ModioX.Forms.Windows
             */
         }
 
-        #endregion
+#endregion
 
-        #region Categories
+#region Categories
 
         private void LoadCategories()
         {
@@ -843,9 +849,9 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        #endregion
+#endregion
 
-        #region Load/Display Mods into Grid
+#region Load/Display Mods into Grid
 
         /// <summary>
         /// Loads all the mods for the specified gameId, matching with filters: name, firmware, type and region
@@ -984,9 +990,9 @@ namespace ModioX.Forms.Windows
             ComboBoxRegion.SelectedIndexChanged += ComboBoxRegion_SelectedIndexChanged;
         }
 
-        #endregion
+#endregion
 
-        #region Install, Uninstall, Download & Favorite Buttons
+#region Install, Uninstall, Download & Favorite Buttons
 
         private void ButtonModInstall_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -1028,9 +1034,9 @@ namespace ModioX.Forms.Windows
             FavoriteMod(SelectedModItem);
         }
 
-        #endregion
+#endregion
 
-        #region Connect & Disconnect Console Functions
+#region Connect & Disconnect Console Functions
 
         /// <summary>
         /// Attempt to connect to the console profile by opening the FTP connection.
@@ -1147,9 +1153,9 @@ namespace ModioX.Forms.Windows
             XtraMessageBox.Show(this, "Success", "Successfully disconnected from console.", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        #endregion
+#endregion
 
-        #region Installed Mods/Plugins
+#region Installed Mods/Plugins
 
         /// <summary>
         /// Load all of the currently installed game mods
@@ -1227,9 +1233,9 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        #endregion
+#endregion
 
-        #region Load Mods Information to Right-Side Panel Function
+#region Load Mods Information to Right-Side Panel Function
 
         /// <summary>
         /// Set the UI to display the specified mod details
@@ -1313,9 +1319,9 @@ namespace ModioX.Forms.Windows
             UpdateScrollBars();
         }
 
-        #endregion
+#endregion
 
-        #region Install, Uninstall, Download & Favorite Functions
+#region Install, Uninstall, Download & Favorite Functions
 
         /// <summary>
         /// Install the specified <paramref name="modItem"/> files.
@@ -2021,7 +2027,7 @@ namespace ModioX.Forms.Windows
             ButtonModFavorite.Caption = Settings.FavoritedIds.Contains(modItem.Id) ? "Unfavorite" : "Favorite";
         }
 
-        #endregion
+#endregion
 
         /// <summary>
         /// Enable or disable console-only actions.
@@ -2242,16 +2248,6 @@ namespace ModioX.Forms.Windows
                 XtraMessageBox.Show("cancel was clicked");
             }
         }
-        /// <summary>
-        /// Checks Application Hash To Determine It's legitimacy
-        /// </summary>
-        public static void Check()
-        {
-            if (ComputeHash($"{AppDomain.CurrentDomain.BaseDirectory}" + Application.ProductName) != CurrentMD5)
-            {
-                Environment.Exit(2134);
-            }
-        }
 
         /// <summary>
         /// Computes The Hash Of A Selected File Or Extentions.
@@ -2285,20 +2281,134 @@ namespace ModioX.Forms.Windows
 
         }
 
-        private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
-        private void QuickSignIn_ItemClick(object sender, ItemClickEventArgs e)
+        private void QuickSignin_ItemClick(object sender, ItemClickEventArgs e)
         {
             XboxConsole.QuickSignIn();
-            //DialogExtensions.ShowCustomXboxDialog(this, "Console Temperature", "CPU: " + XboxConsole.CPUTEMP() + "\nGPU: " + XboxConsole.GPUTEMP() +"\nRAMTEMP: " + XboxConsole.RAMTEMP() + "\nMOBO: " + XboxConsole.MOBOTEMP(), XMessageboxUI.ButtonOptions.Ok);
+        }
+
+        private void ShowTemperature_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            DialogExtensions.ShowCustomXboxDialog(this, "Console Temperature", "CPU: " + XboxConsole.CPUTEMP() + "\nGPU: " + XboxConsole.GPUTEMP() +"\nRAMTEMP: " + XboxConsole.RAMTEMP() + "\nMOBO: " + XboxConsole.MOBOTEMP(), XMessageboxUI.ButtonOptions.Ok);
         }
 
         private void MainWindow_StyleChanged(object sender, EventArgs e)
         {
             SkinColors = CommonSkins.GetSkin(LookAndFeel).Colors;
+        }
+
+        private void GridControlGameModsInstalled_BackColorChanged(object sender, EventArgs e)
+        {
+            ProgressModsInstalled.BackColor = GridControlGameModsInstalled.BackColor;
+        }
+
+        private void OpenCloseTray_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void XNotifySend_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //XNotifyText.
+            if (XNotifyType.Name == "Blank")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+            else if (XNotifyType.Name == "")
+            {
+
+            }
+
+        }
+
+        private void ProfileIDInfo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XtraMessageBox.Show(XboxConsole.ProfileID());
         }
     }
 }
