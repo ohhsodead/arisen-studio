@@ -4,6 +4,7 @@ using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
 using System;
+using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
@@ -24,22 +25,27 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void LoadBackupFiles()
         {
-            /*
-            DgvBackupFiles.Rows.Clear();
+            GridBackupFiles.DataSource = null;
+
+            var dt = new DataTable();
+            dt.Columns.Add("Game Title", typeof(string));
+            dt.Columns.Add("File Name", typeof(string));
+            dt.Columns.Add("File Size", typeof(string));
 
             foreach (var backupFile in MainWindow.Settings.BackupFiles)
             {
                 var fileSize = new FileInfo(backupFile.LocalPath).Length;
 
-                _ = DgvBackupFiles.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId).Title,
-                    backupFile.FileName,
-                    File.Exists(backupFile.LocalPath)
+                dt.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId).Title);
+                dt.Rows.Add(backupFile.FileName);
+                dt.Rows.Add(File.Exists(backupFile.LocalPath)
                     ? (MainWindow.Settings.ShowFileSizeInBytes ? fileSize.ToString("#,0") + " bytes" : StringExtensions.FormatSize(fileSize.ToString()))
                     : "No File Exists", backupFile.CreatedDate.ToLocalTime().ToString(CultureInfo.CurrentCulture));
             }
 
-            LabelNoBackupFiles.Visible = DgvBackupFiles.Rows.Count < 1;
-            */
+            GridBackupFiles.DataSource = dt;
+
+            LabelNoBackupFiles.Visible = dt.Rows.Count < 1;
         }
 
         private void DgvBackupFiles_SelectionChanged(object sender, EventArgs e)

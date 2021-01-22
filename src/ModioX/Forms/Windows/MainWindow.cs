@@ -173,6 +173,7 @@ namespace ModioX.Forms.Windows
         private void MainWindow_StyleChanged(object sender, EventArgs e)
         {
             SkinColors = CommonSkins.GetSkin(LookAndFeel).Colors;
+            UpdateControlColors();
         }
 
         /// <summary>
@@ -226,10 +227,22 @@ namespace ModioX.Forms.Windows
 
             SetStatus($"Initialized ModioX ({UpdateExtensions.CurrentVersionName}) - Ready to connect to console...");
 
+            UpdateControlColors();
             Focus();
         }
 
-#region Header Menu Bar
+        private void UpdateControlColors()
+        {
+            ProgressMods.BackColor = GridControlMods.BackColor;
+            ProgressModsInstalled.BackColor = GridControlModsInstallFiles.BackColor;
+
+            PanelModsLibraryFilters.BackColor = SkinColors.GetColor("Control");
+            PanelModsLibraryFilters.ForeColor = SkinColors.GetColor("HighlightText");
+            FlowPanelDetails.BackColor = SkinColors.GetColor("Control");
+            FlowPanelDetails.ForeColor = SkinColors.GetColor("HighlightText");
+        }
+
+        #region Header Menu Bar
 
         // CONNECT
 
@@ -515,7 +528,7 @@ namespace ModioX.Forms.Windows
 
 #endregion
 
-#region Search & Filtering Mods Functions
+        #region Search & Filtering Mods Functions
 
         /// <summary>
         /// Get/set the firmware for filtering mods.
@@ -602,7 +615,7 @@ namespace ModioX.Forms.Windows
 
 #endregion
 
-#region NEED OLD CONTEXT MENU FUNCTIONS TO MOVE TO NEW POPUP MENU FOR GRID VIEW MODS
+        #region NEED OLD CONTEXT MENU FUNCTIONS TO MOVE TO NEW POPUP MENU FOR GRID VIEW MODS
 
         private void ContextMenuModsAddToList_Click(object sender, EventArgs e)
         {
@@ -655,7 +668,7 @@ namespace ModioX.Forms.Windows
 
 #endregion
 
-#region STILL NEED 
+        #region STILL NEED 
 
         private void GridViewMods_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -747,7 +760,7 @@ namespace ModioX.Forms.Windows
 
 #endregion
 
-#region Categories
+        #region Categories
 
         private void LoadCategories()
         {
@@ -875,7 +888,7 @@ namespace ModioX.Forms.Windows
 
 #endregion
 
-#region Load/Display Mods into Grid
+        #region Load/Display Mods into Grid
 
         /// <summary>
         /// Loads all the mods for the specified gameId, matching with filters: name, firmware, type and region
@@ -1016,7 +1029,7 @@ namespace ModioX.Forms.Windows
 
 #endregion
 
-#region Install, Uninstall, Download & Favorite Buttons
+        #region Install, Uninstall, Download & Favorite Buttons
 
         private void ButtonModInstall_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -1060,7 +1073,7 @@ namespace ModioX.Forms.Windows
 
 #endregion
 
-#region Connect & Disconnect Console Functions
+        #region Connect & Disconnect Console Functions
 
         /// <summary>
         /// Attempt to connect to the console profile by opening the FTP connection.
@@ -1178,7 +1191,7 @@ namespace ModioX.Forms.Windows
 
 #endregion
 
-#region Installed Mods/Plugins
+        #region Installed Mods/Plugins
 
         /// <summary>
         /// Load all of the currently installed game mods
@@ -1258,7 +1271,7 @@ namespace ModioX.Forms.Windows
 
 #endregion
 
-#region Load Mods Information to Right-Side Panel Function
+        #region Load Mods Information to Right-Side Panel Function
 
         /// <summary>
         /// Set the UI to display the specified mod details
@@ -1344,7 +1357,7 @@ namespace ModioX.Forms.Windows
 
 #endregion
 
-#region Install, Uninstall, Download & Favorite Functions
+        #region Install, Uninstall, Download & Favorite Functions
 
         /// <summary>
         /// Install the specified <paramref name="modItem"/> files.

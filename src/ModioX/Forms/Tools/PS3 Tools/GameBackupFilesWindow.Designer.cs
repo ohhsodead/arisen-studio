@@ -72,9 +72,10 @@
             this.LabelHeaderLocalPath = new DevExpress.XtraEditors.LabelControl();
             this.LabelHeaderInstallPath = new DevExpress.XtraEditors.LabelControl();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.ProgressMods = new DevExpress.XtraWaitForm.ProgressPanel();
             ((System.ComponentModel.ISupportInitialize)(this.GridBackupFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewBackupFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupBackupFiles)).BeginInit();
@@ -200,6 +201,7 @@
             // 
             // GroupBackupFiles
             // 
+            this.GroupBackupFiles.Controls.Add(this.ProgressMods);
             this.GroupBackupFiles.Controls.Add(this.GridBackupFiles);
             this.GroupBackupFiles.Controls.Add(this.DockControlBackupFiles);
             this.GroupBackupFiles.Location = new System.Drawing.Point(12, 12);
@@ -530,14 +532,22 @@
             this.tablePanel1.Size = new System.Drawing.Size(617, 181);
             this.tablePanel1.TabIndex = 26;
             // 
-            // groupControl1
+            // labelControl2
             // 
-            this.groupControl1.Controls.Add(this.tablePanel1);
-            this.groupControl1.Location = new System.Drawing.Point(12, 279);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(621, 206);
-            this.groupControl1.TabIndex = 16;
-            this.groupControl1.Text = "BACKUP FILE DETAILS";
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.tablePanel1.SetColumn(this.labelControl2, 1);
+            this.labelControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl2.Location = new System.Drawing.Point(160, 143);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.labelControl2.Name = "labelControl2";
+            this.tablePanel1.SetRow(this.labelControl2, 5);
+            this.labelControl2.Size = new System.Drawing.Size(451, 15);
+            this.labelControl2.TabIndex = 42;
+            this.labelControl2.Text = "...";
             // 
             // labelControl1
             // 
@@ -555,22 +565,32 @@
             this.labelControl1.TabIndex = 39;
             this.labelControl1.Text = "...";
             // 
-            // labelControl2
+            // groupControl1
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.tablePanel1.SetColumn(this.labelControl2, 1);
-            this.labelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl2.Location = new System.Drawing.Point(160, 143);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl2.Name = "labelControl2";
-            this.tablePanel1.SetRow(this.labelControl2, 5);
-            this.labelControl2.Size = new System.Drawing.Size(451, 15);
-            this.labelControl2.TabIndex = 42;
-            this.labelControl2.Text = "...";
+            this.groupControl1.Controls.Add(this.tablePanel1);
+            this.groupControl1.Location = new System.Drawing.Point(12, 279);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(621, 206);
+            this.groupControl1.TabIndex = 16;
+            this.groupControl1.Text = "BACKUP FILE DETAILS";
+            // 
+            // ProgressMods
+            // 
+            this.ProgressMods.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ProgressMods.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ProgressMods.Appearance.Options.UseBackColor = true;
+            this.ProgressMods.AppearanceCaption.Options.UseTextOptions = true;
+            this.ProgressMods.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressMods.AppearanceDescription.Options.UseTextOptions = true;
+            this.ProgressMods.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressMods.Caption = "NO MODS FOUND";
+            this.ProgressMods.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ProgressMods.Description = "Loading..";
+            this.ProgressMods.Location = new System.Drawing.Point(187, 97);
+            this.ProgressMods.Name = "ProgressMods";
+            this.ProgressMods.Size = new System.Drawing.Size(246, 66);
+            this.ProgressMods.TabIndex = 1171;
+            this.ProgressMods.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
             // 
             // GameBackupFilesWindow
             // 
@@ -661,5 +681,6 @@
         private  DevExpress.XtraEditors.LabelControl LabelHeaderInstallPath;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraWaitForm.ProgressPanel ProgressMods;
     }
 }
