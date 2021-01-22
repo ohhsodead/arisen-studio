@@ -121,7 +121,6 @@ namespace ModioX.Forms.Windows
             Text = $@"ModioX - {UpdateExtensions.CurrentVersionName}";
 
 #if DEBUG
-
             Text += " - Welcome! You are in debugging mode for ModioX! :)";
             CurrentMD5 = ComputeHash(Application.ProductName + ".exe");
 #endif
@@ -2201,6 +2200,11 @@ namespace ModioX.Forms.Windows
             {
                 SetStatus("Unable to save settings data. Error: " + ex.Message, ex);
             }
+        }
+
+        private void FlowPanelDetails_Scroll(object sender, ScrollEventArgs e)
+        {
+            ScrollBarModInformation.Value = FlowPanelDetails.VerticalScroll.Value;
         }
 
         private void ScrollBarModInformation_Scroll(object sender, ScrollEventArgs e)
