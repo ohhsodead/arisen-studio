@@ -30,11 +30,6 @@ namespace ModioX.Database
         }
 
         /// <summary>
-        /// Constructor
-        /// </summary>
-        private DropboxData() { }
-
-        /// <summary>
         /// Contains the categories from the database.
         /// </summary>
         public CategoriesData CategoriesData { get; private set; }

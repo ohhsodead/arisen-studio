@@ -116,7 +116,6 @@ namespace ModioX.Forms.Windows
         /// </summary>
         private async void MainWindow_Load(object sender, EventArgs e)
         {
-
             DevExpress.LookAndFeel.UserLookAndFeel.Default.StyleChanged += MainWindow_StyleChanged;
 
             Text = $@"ModioX - {UpdateExtensions.CurrentVersionName}";
@@ -126,10 +125,11 @@ namespace ModioX.Forms.Windows
             Text += " - Welcome! You are in debugging mode for ModioX! :)";
             CurrentMD5 = ComputeHash(Application.ProductName + ".exe");
 #endif
-            if (ComputeHash(Application.ProductName+".exe") != CurrentMD5)
+            if (ComputeHash(Application.ProductName + ".exe") != CurrentMD5)
             {
                 Environment.Exit(0);
             }
+
             LoadSettings();
             EnableConsoleActions();
 
@@ -171,6 +171,11 @@ namespace ModioX.Forms.Windows
             XboxConsole.Disconnect();
         }
 
+        private void MainWindow_StyleChanged(object sender, EventArgs e)
+        {
+            SkinColors = CommonSkins.GetSkin(LookAndFeel).Colors;
+        }
+
         /// <summary>
         /// Retrieves the categories and mods into the application.
         /// </summary>
@@ -193,10 +198,9 @@ namespace ModioX.Forms.Windows
         private void InitializeFinished()
         {
             SetStatus($"Successfully loaded the database - Finalizing application data...");
-#if Debug
+
             LoadCategories();
-            
-#endif
+
             ComboBoxSystemType.Properties.Items.Clear();
             ComboBoxSystemType.Properties.Items.Add("ANY");
 
@@ -2307,13 +2311,7 @@ namespace ModioX.Forms.Windows
 
         private void ShowTemperature_ItemClick(object sender, ItemClickEventArgs e)
         {
-
             DialogExtensions.ShowCustomXboxDialog(this, "Console Temperature", "CPU: " + XboxConsole.CPUTEMP() + "\nGPU: " + XboxConsole.GPUTEMP() +"\nRAMTEMP: " + XboxConsole.RAMTEMP() + "\nMOBO: " + XboxConsole.MOBOTEMP(), XMessageboxUI.ButtonOptions.Ok);
-        }
-
-        private void MainWindow_StyleChanged(object sender, EventArgs e)
-        {
-            SkinColors = CommonSkins.GetSkin(LookAndFeel).Colors;
         }
 
         private void GridControlGameModsInstalled_BackColorChanged(object sender, EventArgs e)
