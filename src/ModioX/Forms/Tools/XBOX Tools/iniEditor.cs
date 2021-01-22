@@ -38,7 +38,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             comboBoxEdit2.Properties.Items.Clear();
 
-            foreach (string str in XboxConsole.Filesystem.Drives.Split(','))
+            foreach (string str in XboxConsole.FileSystem.Drives.Split(','))
             {
                 comboBoxEdit2.Properties.Items.Add(str + @":\");
             }
@@ -60,7 +60,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 FileIniDataParser parser = new FileIniDataParser();
                 try
                 {
-                    XboxConsole.Filesystem.ReceiveFile(AppDomain.CurrentDomain.BaseDirectory + @"\launch.ini", comboBoxEdit2.Text + "launch.ini");
+                    XboxConsole.FileSystem.ReceiveFile(AppDomain.CurrentDomain.BaseDirectory + @"\launch.ini", comboBoxEdit2.Text + "launch.ini");
                     List.Items.Clear();
                     foreach (SectionData data in parser.ReadFile(AppDomain.CurrentDomain.BaseDirectory + @"\launch.ini").Sections)
                     {

@@ -10,13 +10,16 @@ namespace XDevkit
     {
 
 
-        public FileSystem Filesystem { get; set; }
+        public FileSystem FileSystem { get; set; }
+        public Xbox XboxConsole { get; set; } = new();
 
 
         static Xbox()
         {
 
         }
+
+
         private static string StatusMessage(int code)
         {
             string str;

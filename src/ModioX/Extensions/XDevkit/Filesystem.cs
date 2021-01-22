@@ -6,7 +6,7 @@ namespace XDevkit
 {
     public class FileSystem
     {
-        public string  Drives { get; internal set; }
+        public string  Drives { get;  set; }
 
         #region XboxFile System
         /// <summary>

@@ -485,7 +485,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
             var dt = new DataTable();
 
-            foreach (var consoleiTems in XboxConsole.Filesystem.GetDirectories(FtpDirectoryPath))
+            foreach (var consoleiTems in XboxConsole.FileSystem.GetDirectories(FtpDirectoryPath))
             {
                 dt.Rows.Add(consoleiTems);
             }
@@ -631,7 +631,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 {
                     string folderPath = FtpDirectoryPath + "/" + folderName;
 
-                    if (XboxConsole.Filesystem.DirectoryExists(folderPath))
+                    if (XboxConsole.FileSystem.DirectoryExists(folderPath))
                     {
                         XtraMessageBox.Show($"A folder with this name already exists.", "Error");
                         return;
