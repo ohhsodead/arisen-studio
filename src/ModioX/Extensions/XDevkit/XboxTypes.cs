@@ -12,7 +12,7 @@ namespace XDevkit
     /// Xbox Emulation Class
     /// Made By TeddyHammer
     /// </summary>
-    public partial class Xbox
+    public partial class Xbox //XboxTypes
     {
         private static readonly byte[] myBuff = new byte[0x20];
         private static uint outInt;
@@ -170,7 +170,7 @@ namespace XDevkit
         /// <param name="data"></param>
         public void SendBinaryData(byte[] data)
         {
-            XboxName.Client.Send(data);
+            XboxClient.XboxName.Client.Send(data);
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace XDevkit
         /// <param name="length"></param>
         public void SendBinaryData(byte[] data, int length)
         {
-            XboxName.Client.Send(data, length, SocketFlags.None);
+            XboxClient.XboxName.Client.Send(data, length, SocketFlags.None);
         }
 
         /// <summary>
@@ -189,10 +189,10 @@ namespace XDevkit
         /// <returns></returns>
         public byte[] ReceiveBinaryData()
         {
-            if (XboxName.Available > 0)
+            if (XboxClient.XboxName.Available > 0)
             {
-                byte[] binData = new byte[XboxName.Available];
-                XboxName.Client.Receive(binData, binData.Length, SocketFlags.None);
+                byte[] binData = new byte[XboxClient.XboxName.Available];
+                XboxClient.XboxName.Client.Receive(binData, binData.Length, SocketFlags.None);
                 return binData;
             }
             else return null;
@@ -207,7 +207,7 @@ namespace XDevkit
         {
             Wait(size);
             byte[] binData = new byte[size];
-            XboxName.Client.Receive(binData, binData.Length, SocketFlags.None);
+            XboxClient.XboxName.Client.Receive(binData, binData.Length, SocketFlags.None);
             return binData;
         }
 
@@ -218,7 +218,7 @@ namespace XDevkit
         public void ReceiveBinaryData(byte[] data)
         {
             Wait(data.Length);
-            XboxName.Client.Receive(data, data.Length, SocketFlags.None);
+            XboxClient.XboxName.Client.Receive(data, data.Length, SocketFlags.None);
         }
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace XDevkit
         public void ReceiveBinaryData(byte[] data, int offset, int size)
         {
             Wait(size);
-            XboxName.Client.Receive(data, offset, size, SocketFlags.None);
+            XboxClient.XboxName.Client.Receive(data, offset, size, SocketFlags.None);
         }
         #endregion
 

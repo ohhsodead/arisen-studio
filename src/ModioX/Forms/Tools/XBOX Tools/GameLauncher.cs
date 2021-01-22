@@ -23,5 +23,10 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             listView1.BackColor = BackColor;
             listView1.ForeColor = ForeColor;
         }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

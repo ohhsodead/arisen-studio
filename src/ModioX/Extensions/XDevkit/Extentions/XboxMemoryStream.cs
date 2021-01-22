@@ -45,7 +45,7 @@ namespace XDevkit
         /// <param name="client">Connection to use.</param>
         public XboxMemoryStream()
         {
-            if (Xbox.XboxName == null || !Xbox.Connected)
+            if (XboxClient.XboxName == null || !Xbox.Connected)
                 throw new Exception("Not Connected!");
             position = 0x10000; // start at a valid memory address
         }
@@ -89,7 +89,7 @@ namespace XDevkit
             {
                 xbox.SendTextCommand("getmem2 addr=0x{0} length={1}", Convert.ToString(address + read, 16).PadLeft(8, '0'), bufferSize);
                 Xbox.Wait(bufferSize);
-                Xbox.XboxName.Client.Receive(buffer, (int)(offset + read), bufferSize, SocketFlags.None);
+                XboxClient.XboxName.Client.Receive(buffer, (int)(offset + read), bufferSize, SocketFlags.None);
                 read += bufferSize;
             }
 
@@ -97,7 +97,7 @@ namespace XDevkit
             {
                 xbox.SendTextCommand("getmem2 addr=0x{0} length={1}", Convert.ToString(address + read, 16).PadLeft(8, '0'), remainder);
                 Xbox.Wait(remainder);
-                Xbox.XboxName.Client.Receive(buffer, (int)(offset + read), remainder, SocketFlags.None);
+                XboxClient.XboxName.Client.Receive(buffer, (int)(offset + read), remainder, SocketFlags.None);
                 read += remainder;
             }
         }
@@ -126,7 +126,7 @@ namespace XDevkit
                 // hack: hijacked writefile routine in xbdm v7887 so that we can send binary data to memory instead of length-limited ascii
                 Xbox.SendTextCommand("writefile name=| offset=0x" + Convert.ToString(address, 16) + " length=" + bufferSize);
                 //reponse here
-                    Xbox.XboxName.Client.Send(buffer, offset, bufferSize, SocketFlags.None);
+                XboxClient.XboxName.Client.Send(buffer, offset, bufferSize, SocketFlags.None);
                     // check for failure
                     index += bufferSize;
             }
@@ -135,7 +135,7 @@ namespace XDevkit
             {
                 Xbox.SendTextCommand("writefile name=| offset=0x" + Convert.ToString(address, 16) + " length=" + remainder);
                 //response here
-                    Xbox.XboxName.Client.Send(buffer, offset, remainder, SocketFlags.None);
+                XboxClient.XboxName.Client.Send(buffer, offset, remainder, SocketFlags.None);
                     // check for failure - parse message and determine bytes written, then return 
                     index += bufferSize;
             }

@@ -38,7 +38,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             comboBoxEdit2.Properties.Items.Clear();
 
-            foreach (string str in XboxConsole.FileSystem.Drives.Split(','))
+            foreach (string str in XboxConsole.File.Drives.Split(','))
             {
                 comboBoxEdit2.Properties.Items.Add(str + @":\");
             }
@@ -60,7 +60,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 FileIniDataParser parser = new FileIniDataParser();
                 try
                 {
-                    XboxConsole.FileSystem.ReceiveFile(AppDomain.CurrentDomain.BaseDirectory + @"\launch.ini", comboBoxEdit2.Text + "launch.ini");
+                    XboxConsole.File.ReceiveFile(AppDomain.CurrentDomain.BaseDirectory + @"\launch.ini", comboBoxEdit2.Text + "launch.ini");
                     List.Items.Clear();
                     foreach (SectionData data in parser.ReadFile(AppDomain.CurrentDomain.BaseDirectory + @"\launch.ini").Sections)
                     {
@@ -138,7 +138,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                     }
                 }
                 writer.Close();
-                XboxConsole.SendFile(AppDomain.CurrentDomain.BaseDirectory + @"\launch.ini", comboBoxEdit2.Text + "launch.ini");
+                XboxConsole.File.SendFile(AppDomain.CurrentDomain.BaseDirectory + @"\launch.ini", comboBoxEdit2.Text + "launch.ini");
                 File.Delete(AppDomain.CurrentDomain.BaseDirectory + @"\launch.ini");
                 XtraMessageBox.Show("Launch.ini re-wrote to console,\n  reboot for changes to take effect.");
                 bool_2 = true;

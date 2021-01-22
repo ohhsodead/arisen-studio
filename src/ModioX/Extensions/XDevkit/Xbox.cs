@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace XDevkit
 {
-    partial class Xbox
+    public partial class Xbox //Main
     {
 
 
-        public FileSystem FileSystem { get; set; }
-        public Xbox XboxConsole { get; set; } = new();
+        public XboxFileSystem File { get; set; }
 
 
         static Xbox()
@@ -150,9 +149,6 @@ namespace XDevkit
             return str;
         }
 
-        internal void SendFile(string v, object p)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
