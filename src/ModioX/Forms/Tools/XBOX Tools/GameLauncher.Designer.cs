@@ -55,6 +55,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.simpleButton2.Size = new System.Drawing.Size(96, 23);
             this.simpleButton2.TabIndex = 7;
             this.simpleButton2.Text = "Read";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // checkEdit2
             // 

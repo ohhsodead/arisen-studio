@@ -104,7 +104,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Contains the Xbox console information.
         /// </summary>
-        public static Xbox XboxConsole { get; private set; } = new Xbox();
+        public static Xbox XboxConsole;
 
         /// <summary>
         /// Get the colors for the current skin.
@@ -279,17 +279,17 @@ namespace ModioX.Forms.Windows
                 }
                 else
                 {
-                    if (XboxConsole.Connect())
-                    {
-                        XNotify.Show(Application.ProductName + " - Successfully Connected!");
-                    }
-                    else
-                    {
-                        if (XtraMessageBox.Show("Would you like to try again?", "Unable to Find Console", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
-                        {
-                            XboxConsole.Connect();
-                        }
-                    }
+                    //if (XboxConsole.Connect())
+                    //{
+                    //    XNotify.Show(Application.ProductName + " - Successfully Connected!");
+                    //}
+                    //else
+                    //{
+                    //    if (XtraMessageBox.Show("Would you like to try again?", "Unable to Find Console", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
+                    //    {
+                    //        //XboxConsole.Connect();
+                    //    }
+                    //}
                 }
             }
             catch (Exception ex)
@@ -1103,7 +1103,9 @@ namespace ModioX.Forms.Windows
                 }
                 else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
                 {
-                    if (XboxConsole.Connect(ConsoleProfile.Address, ConsoleProfile.Port))
+                    XboxConsole.IPAddress = ConsoleProfile.Address;
+
+                    if (XboxConsole.Connect(out XboxConsole))
                     {
                         IsConsoleConnected = true;
                         SetStatusConsole(ConsoleProfile);

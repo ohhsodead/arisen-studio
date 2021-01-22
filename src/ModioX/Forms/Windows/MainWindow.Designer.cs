@@ -106,6 +106,7 @@ namespace ModioX.Forms.Windows
             this.ButtonNotifyMessage = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonVirtualController = new DevExpress.XtraBars.BarButtonItem();
             this.XBDMMenu = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
             this.xbdmShutdown = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
@@ -114,7 +115,6 @@ namespace ModioX.Forms.Windows
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
             this.ProfileIDInfo = new DevExpress.XtraBars.BarButtonItem();
             this.QuickSignIn = new DevExpress.XtraBars.BarButtonItem();
@@ -1187,6 +1187,7 @@ namespace ModioX.Forms.Windows
             this.XBDMMenu.Enabled = false;
             this.XBDMMenu.Id = 66;
             this.XBDMMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem3),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4),
@@ -1194,6 +1195,13 @@ namespace ModioX.Forms.Windows
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem15),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem6)});
             this.XBDMMenu.Name = "XBDMMenu";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "XMessagebox UI";
+            this.barButtonItem4.Id = 73;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XBDM_XMessageboxUI_ItemClick);
             // 
             // barSubItem3
             // 
@@ -1253,16 +1261,7 @@ namespace ModioX.Forms.Windows
             // 
             this.barSubItem4.Caption = "XNotify";
             this.barSubItem4.Id = 72;
-            this.barSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4)});
             this.barSubItem4.Name = "barSubItem4";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "XMessagebox UI";
-            this.barButtonItem4.Id = 73;
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XBDM_XMessageboxUI_ItemClick);
             // 
             // barSubItem5
             // 

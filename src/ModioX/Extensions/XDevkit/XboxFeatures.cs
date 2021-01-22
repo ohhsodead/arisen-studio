@@ -18,7 +18,7 @@ namespace XDevkit
     /// Xbox Emulation Class
     /// Made By TeddyHammer
     /// </summary>
-    public partial class Xbox
+    public partial class Xbox //XboxFeatures
     {
         private const string XAMModule = "xam.xex";
         private const string krnlModule = "xboxkrnl.exe";
@@ -187,7 +187,7 @@ namespace XDevkit
         public void XboxShortcut(XboxShortcuts UI)
         {
             
-            if (XboxName.Connected)
+            if (XboxClient.Connected)
                 switch (UI)//works by getting the int of the UI and matches the numbers to execute things
                 {
                     case XboxShortcuts.XboxHome:
@@ -369,7 +369,7 @@ namespace XDevkit
         /// <returns>Type Is The System Type Of Information you Want To Retrieve</returns>
         public string GetSystemInfo(Info Type)
         {
-            if (XboxName == null)
+            if (XboxClient.XboxName == null)
             {
                 Console.WriteLine("Console Is Not Connnected...");
             }
@@ -518,7 +518,7 @@ namespace XDevkit
         /// <summary>
         /// Freezes/Stops Console.
         /// </summary>
-        public void Freeze_Console(XboxSwitch Freeze)
+        public void FreezeConsole(XboxSwitch Freeze)
         {
             
             if (Freeze == XboxSwitch.True)

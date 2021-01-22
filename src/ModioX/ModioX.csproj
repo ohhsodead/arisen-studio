@@ -156,17 +156,17 @@
     <Compile Include="Extensions\XDevkit\Devkit\IO\EndianWriter.cs" />
     <Compile Include="Extensions\XDevkit\Devkit\IO\RWStream.cs" />
     <Compile Include="Extensions\XDevkit\Devkit\Items.cs" />
-    <Compile Include="Extensions\XDevkit\Filesystem.cs" />
+    <Compile Include="Extensions\XDevkit\Extentions\XboxFilesystem.cs" />
     <Compile Include="Extensions\XDevkit\Xbox.cs" />
-    <Compile Include="Extensions\XDevkit\XboxEnums.cs" />
-    <Compile Include="Extensions\XDevkit\XboxExtention.cs" />
+    <Compile Include="Extensions\XDevkit\XboxClient\XboxClient.cs" />
+    <Compile Include="Extensions\XDevkit\XboxClient\XboxEnums.cs" />
+    <Compile Include="Extensions\XDevkit\Extentions\XboxExtention.cs" />
     <Compile Include="Extensions\XDevkit\XboxFeatures.cs" />
     <Compile Include="Extensions\XDevkit\XboxMemory.cs" />
-    <Compile Include="Extensions\XDevkit\XboxMemoryStream.cs" />
-    <Compile Include="Extensions\XDevkit\XboxNetworking.cs" />
-    <Compile Include="Extensions\XDevkit\XboxStructs.cs" />
+    <Compile Include="Extensions\XDevkit\Extentions\XboxMemoryStream.cs" />
+    <Compile Include="Extensions\XDevkit\XboxCommands.cs" />
+    <Compile Include="Extensions\XDevkit\XboxClient\XboxStructs.cs" />
     <Compile Include="Extensions\XDevkit\XboxTypes.cs" />
-    <Compile Include="Extensions\XDevkit\XMessageBoxUI.cs" />
     <Compile Include="Extensions\XDevkit\XNotify.cs" />
     <Compile Include="Forms\Dialogs\ConnectionDialog.cs">
       <SubType>Form</SubType>

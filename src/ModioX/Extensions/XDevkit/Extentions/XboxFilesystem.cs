@@ -4,11 +4,10 @@ using System.Net.Sockets;
 
 namespace XDevkit
 {
-    public class FileSystem
+    public class XboxFileSystem
     {
         public string  Drives { get;  set; }
 
-        #region XboxFile System
         /// <summary>
         /// Creates a directory on the xbox.
         /// </summary>
@@ -91,7 +90,7 @@ namespace XDevkit
         /// <param name="length"></param>
         public void SendBinaryData(byte[] data, int length)
         {
-            Xbox.XboxName.Client.Send(data, length, SocketFlags.None);
+            XboxClient.XboxName.Client.Send(data, length, SocketFlags.None);
         }
         /// <summary>
         /// Receives all available binary data sent from the xbox.
@@ -99,10 +98,10 @@ namespace XDevkit
         /// <returns></returns>
         public byte[] ReceiveBinaryData()
         {
-            if (Xbox.XboxName.Available > 0)
+            if (XboxClient.XboxName.Available > 0)
             {
-                byte[] binData = new byte[Xbox.XboxName.Available];
-                Xbox.XboxName.Client.Receive(binData, binData.Length, SocketFlags.None);
+                byte[] binData = new byte[XboxClient.XboxName.Available];
+                XboxClient.XboxName.Client.Receive(binData, binData.Length, SocketFlags.None);
                 return binData;
             }
             else return null;
@@ -117,7 +116,7 @@ namespace XDevkit
         {
             Xbox.Wait(size);
             byte[] binData = new byte[size];
-            Xbox.XboxName.Client.Receive(binData, binData.Length, SocketFlags.None);
+            XboxClient.XboxName.Client.Receive(binData, binData.Length, SocketFlags.None);
             return binData;
         }
         /// <summary>
@@ -127,7 +126,7 @@ namespace XDevkit
         public void ReceiveBinaryData(byte[] data)
         {
             Xbox.Wait(data.Length);
-            Xbox.XboxName.Client.Receive(data, data.Length, SocketFlags.None);
+            XboxClient.XboxName.Client.Receive(data, data.Length, SocketFlags.None);
         }
 
         /// <summary>
@@ -137,7 +136,7 @@ namespace XDevkit
         public void ReceiveBinaryData(byte[] data, int offset, int size)
         {
             Xbox.Wait(size);
-            Xbox.XboxName.Client.Receive(data, offset, size, SocketFlags.None);
+            XboxClient.XboxName.Client.Receive(data, offset, size, SocketFlags.None);
         }
         /// <summary>
         /// Sends a file to the xbox.
@@ -147,11 +146,11 @@ namespace XDevkit
         public void SendFile(string localName, string remoteName)
         {
             FileStream lfs = new FileStream(localName, FileMode.Open);
-            byte[] fileData = new byte[Xbox.XboxName.Client.SendBufferSize];
+            byte[] fileData = new byte[XboxClient.XboxName.Client.SendBufferSize];
             Xbox.SendTextCommand("sendfile name=\"{0}\" length={1}" + remoteName + lfs.Length);
 
-            int mainIterations = (int)lfs.Length / Xbox.XboxName.Client.SendBufferSize;
-            int remainder = (int)lfs.Length % Xbox.XboxName.Client.SendBufferSize;
+            int mainIterations = (int)lfs.Length / XboxClient.XboxName.Client.SendBufferSize;
+            int remainder = (int)lfs.Length % XboxClient.XboxName.Client.SendBufferSize;
 
             for (int i = 0; i < mainIterations; i++)
             {
@@ -170,7 +169,7 @@ namespace XDevkit
         /// <param name="data"></param>
         public void SendBinaryData(byte[] data)
         {
-            Xbox.XboxName.Client.Send(data);
+            XboxClient.XboxName.Client.Send(data);
         }
 
         public void DownloadFile(string localName, string remoteName)
@@ -189,10 +188,10 @@ namespace XDevkit
             int fileSize = BitConverter.ToInt32(ReceiveBinaryData(4), 0);
             using (var lfs = new System.IO.FileStream(localName, FileMode.Create))
             {
-                byte[] fileData = new byte[Xbox.XboxName.Client.ReceiveBufferSize];
+                byte[] fileData = new byte[XboxClient.XboxName.Client.ReceiveBufferSize];
 
-                int mainIterations = fileSize / Xbox.XboxName.Client.ReceiveBufferSize;
-                int remainder = fileSize % Xbox.XboxName.Client.ReceiveBufferSize;
+                int mainIterations = fileSize / XboxClient.XboxName.Client.ReceiveBufferSize;
+                int remainder = fileSize % XboxClient.XboxName.Client.ReceiveBufferSize;
 
                 for (int i = 0; i < mainIterations; i++)
                 {
@@ -252,6 +251,9 @@ namespace XDevkit
         {
             throw new NotImplementedException();
         }
-        #endregion
+        internal void SendFile(string v, object p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
