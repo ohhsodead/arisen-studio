@@ -326,12 +326,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Templates\GitHubTemplates.cs" />
-    <Compile Include="Update\UpdateForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Update\UpdateForm.Designer.cs">
-      <DependentUpon>UpdateForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Controls\TileConsoleItem.resx">
       <DependentUpon>TileConsoleItem.cs</DependentUpon>
     </EmbeddedResource>

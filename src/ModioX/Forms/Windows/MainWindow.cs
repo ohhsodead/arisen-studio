@@ -64,6 +64,11 @@ namespace ModioX.Forms.Windows
         public static DropboxData Database { get; private set; }
 
         /// <summary>
+        /// Contains the mods for either PS3 or XBOX
+        /// </summary>
+        public static ModsData Mods { get; private set; }
+
+        /// <summary>
         /// Determines whether the console is currently connected.
         /// </summary>
         public static bool IsConsoleConnected { get; private set; } = false;
@@ -105,6 +110,11 @@ namespace ModioX.Forms.Windows
         /// Contains the Xbox console information.
         /// </summary>
         public static Xbox XboxConsole;
+
+        /// <summary>
+        /// Contains the selected console type.
+        /// </summary>
+        public static ConsoleTypePrefix ConsoleType { get; set; } = ConsoleTypePrefix.PS3;
 
         /// <summary>
         /// Get the colors for the current skin.
@@ -167,7 +177,11 @@ namespace ModioX.Forms.Windows
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveSettings();
-            XboxConsole.Disconnect();
+
+            if (IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+            {
+                XboxConsole.Disconnect();
+            }
         }
 
         private void MainWindow_StyleChanged(object sender, EventArgs e)
@@ -199,12 +213,14 @@ namespace ModioX.Forms.Windows
         {
             SetStatus($"Successfully loaded the database - Finalizing application data...");
 
+            Mods = Database.ModsXBOX;
+
             LoadCategories();
 
             ComboBoxSystemType.Properties.Items.Clear();
             ComboBoxSystemType.Properties.Items.Add("ANY");
 
-            foreach (var firmware in Database.Mods.AllFirmwares.Where(firmware => !ComboBoxSystemType.Properties.Items.Contains(firmware)))
+            foreach (var firmware in Mods.AllFirmwares.Where(firmware => !ComboBoxSystemType.Properties.Items.Contains(firmware)))
             {
                 ComboBoxSystemType.Properties.Items.Add(firmware);
             }
@@ -223,7 +239,7 @@ namespace ModioX.Forms.Windows
             ComboBoxModType.SelectedIndex = 0;
             ComboBoxRegion.SelectedIndex = 0;
 
-            LabelModsStats.Caption = $"{Database.Mods.TotalGameMods(Database.CategoriesData)} Mods for {Database.CategoriesData.TotalGames} Games, {Database.Mods.TotalHomebrew(Database.CategoriesData)} Homebrew Packages && {Database.Mods.TotalResources(Database.CategoriesData)} Resources (Last Updated: {Database.Mods.LastUpdated.ToLocalTime().ToShortDateString()})";
+            LabelModsStats.Caption = $"{Database.ModsPS3.TotalGameMods(Database.CategoriesData)} Mods for PS3 / {Database.ModsXBOX.TotalGameMods(Database.CategoriesData)} Mods for Xbox 360 (Last Updated: {Database.ModsPS3.LastUpdated.ToLocalTime().ToShortDateString()})";
 
             SetStatus($"Initialized ModioX ({UpdateExtensions.CurrentVersionName}) - Ready to connect to console...");
 
@@ -421,8 +437,6 @@ namespace ModioX.Forms.Windows
 
         private void ButtonAddNewConsole_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SaveSettings();
-
             var consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
 
             if (consoleProfile != null)
@@ -431,23 +445,27 @@ namespace ModioX.Forms.Windows
             }
 
             SaveSettings();
+            LoadSettings();
         }
 
         private void ButtonEditApplications_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowExternalApplicationsDialog(this);
+            SaveSettings();
             LoadSettings();
         }
 
         private void ButtonEditGameRegion_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowGameRegionsDialog(this);
+            SaveSettings();
             LoadSettings();
         }
 
         private void ButtonEditYourLists_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowCustomListsDialog(this);
+            SaveSettings();
             LoadSettings();
             LoadListsCategories();
         }
@@ -455,6 +473,7 @@ namespace ModioX.Forms.Windows
         private void ButtonSettings_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowSettingsWindow(this);
+            SaveSettings();
             LoadSettings();
         }
 
@@ -674,7 +693,7 @@ namespace ModioX.Forms.Windows
         {
             if (GridViewMods.SelectedRowsCount != 0)
             {
-                var modItem = Database.Mods.GetModById(int.Parse(GridViewMods.GetRowCellDisplayText(GridViewMods.GetSelectedRows()[0], "Id")));
+                var modItem = Mods.GetModById(int.Parse(GridViewMods.GetRowCellDisplayText(GridViewMods.GetSelectedRows()[0], "Id")));
 
                 if (modItem != null)
                 {
@@ -705,6 +724,11 @@ namespace ModioX.Forms.Windows
             ButtonModInstall.Enabled = GridViewMods.SelectedRowsCount != 0 && IsConsoleConnected;
             ButtonModDownload.Enabled = GridViewMods.SelectedRowsCount != 0;
             ButtonModFavorite.Enabled = GridViewMods.SelectedRowsCount != 0;
+        }
+
+        private void GridControlMods_BackColorChanged(object sender, EventArgs e)
+        {
+            ProgressMods.BackColor = GridControlMods.BackColor;
         }
 
         private void DgvMods_SelectionChanged(object sender, EventArgs e)
@@ -758,7 +782,7 @@ namespace ModioX.Forms.Windows
             */
         }
 
-#endregion
+        #endregion
 
         #region Categories
 
@@ -771,7 +795,7 @@ namespace ModioX.Forms.Windows
 
             foreach (var category in Database.CategoriesData.Categories.OrderBy(x => x.Title))
             {
-                var modsByCategory = Database.Mods.GetModsByCategoryId(category.Id);
+                var modsByCategory = Mods.GetModsByCategoryId(category.Id);
 
                 if (modsByCategory.Length > 0 || category.Id.Equals("fvrt"))
                 {
@@ -805,6 +829,8 @@ namespace ModioX.Forms.Windows
                 gameItem.Name = customList.Name;
                 NavGroupMyLists.ItemLinks.Add(gameItem);
             }
+
+            NavGroupGames.SelectedLinkIndex = 0;
         }
 
         private void LoadListsCategories()
@@ -813,8 +839,6 @@ namespace ModioX.Forms.Windows
 
             foreach (var category in Database.CategoriesData.Categories)
             {
-                var modsByCategory = Database.Mods.GetModsByCategoryId(category.Id);
-
                 if (category.Id.Equals("fvrt"))
                 {
                     NavBarItem gameItem = NavigationBar.Items.Add();
@@ -844,7 +868,7 @@ namespace ModioX.Forms.Windows
             if (isCustomList)
             {
                 CustomList customList = Settings.GetCustomListByName(categoryId);
-                SelectedCategory = new Category() { Id = categoryId, Title = categoryId, Regions = Settings.GetRegionsForModIDs(Database.Mods, customList.ModIds).ToArray() };
+                SelectedCategory = new Category() { Id = categoryId, Title = categoryId, Regions = Settings.GetRegionsForModIDs(Mods, customList.ModIds).ToArray() };
             }
             else
             {
@@ -886,7 +910,7 @@ namespace ModioX.Forms.Windows
             }
         }
 
-#endregion
+        #endregion
 
         #region Load/Display Mods into Grid
 
@@ -910,15 +934,15 @@ namespace ModioX.Forms.Windows
 
             if (categoryId.Equals("fvrt"))
             {
-                ComboBoxModType.Properties.Items.AddRange(Settings.GetModTypesForModIDs(Database.Mods, Settings.FavoritedIds).ToArray());
+                ComboBoxModType.Properties.Items.AddRange(Settings.GetModTypesForModIDs(Mods, Settings.FavoritedIds).ToArray());
             }
             else if (isCustomList)
             {
-                ComboBoxModType.Properties.Items.AddRange(Settings.GetModTypesForModIDs(Database.Mods, Settings.GetCustomListByName(categoryId).ModIds).ToArray());
+                ComboBoxModType.Properties.Items.AddRange(Settings.GetModTypesForModIDs(Mods, Settings.GetCustomListByName(categoryId).ModIds).ToArray());
             }
             else
             {
-                foreach (string modType in Database.Mods.AllModTypesForCategoryId(categoryId))
+                foreach (string modType in Mods.AllModTypesForCategoryId(categoryId))
                 {
                     ComboBoxModType.Properties.Items.Add(modType);
                 }
@@ -929,11 +953,11 @@ namespace ModioX.Forms.Windows
 
             if (categoryId.Equals("fvrt"))
             {
-                ComboBoxRegion.Properties.Items.AddRange(Settings.GetRegionsForModIDs(Database.Mods, Settings.FavoritedIds).ToArray());
+                ComboBoxRegion.Properties.Items.AddRange(Settings.GetRegionsForModIDs(Mods, Settings.FavoritedIds).ToArray());
             }
             else if (isCustomList)
             {
-                ComboBoxRegion.Properties.Items.AddRange(Settings.GetRegionsForModIDs(Database.Mods, Settings.GetCustomListByName(categoryId).ModIds).ToArray());
+                ComboBoxRegion.Properties.Items.AddRange(Settings.GetRegionsForModIDs(Mods, Settings.GetCustomListByName(categoryId).ModIds).ToArray());
             }
             else
             {
@@ -956,7 +980,7 @@ namespace ModioX.Forms.Windows
             dt.Columns.Add("Install", typeof(Bitmap));
             dt.Columns.Add("Download", typeof(Bitmap));
 
-            foreach (var modItem in Database.Mods.GetModItems(categoryId, name, firmware, type, region, isCustomList).OrderBy(x => x.Name))
+            foreach (var modItem in Mods.GetModItems(categoryId, name, firmware, type, region, isCustomList).OrderBy(x => x.Name))
             {
                 List<string> installFiles = new List<string>();
 
@@ -1027,7 +1051,7 @@ namespace ModioX.Forms.Windows
             ComboBoxRegion.SelectedIndexChanged += ComboBoxRegion_SelectedIndexChanged;
         }
 
-#endregion
+        #endregion
 
         #region Install, Uninstall, Download & Favorite Buttons
 
@@ -1071,14 +1095,14 @@ namespace ModioX.Forms.Windows
             FavoriteMod(SelectedModItem);
         }
 
-#endregion
+        #endregion
 
         #region Connect & Disconnect Console Functions
 
         /// <summary>
         /// Attempt to connect to the console profile by opening the FTP connection.
         /// </summary>
-        public void ConnectConsole(bool findConsole = false)
+        public void ConnectConsole()
         {
             try
             {
@@ -1105,14 +1129,14 @@ namespace ModioX.Forms.Windows
                     IsConsoleConnected = true;
                     SetStatusConsole(ConsoleProfile);
 
-                    IsWebManInstalled = ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3 ? WebManExtensions.IsWebManInstalled(ConsoleProfile.Address, ConsoleProfile.Port) : false;
+                    IsWebManInstalled = WebManExtensions.IsWebManInstalled(ConsoleProfile.Address, ConsoleProfile.Port);
 
-                    if (IsWebManInstalled && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+                    if (IsWebManInstalled)
                     {
                         WebManExtensions.NotifyPopup(ConsoleProfile.Address, "You are now connected to ModioX ★");
                     }
 
-                    ButtonConnectToPS3.Caption = "Disconnect from console...";
+                    ButtonConnectToPS3.Caption = "Disconnect from Console...";
                 }
                 else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
                 {
@@ -1122,7 +1146,7 @@ namespace ModioX.Forms.Windows
                     {
                         IsConsoleConnected = true;
                         SetStatusConsole(ConsoleProfile);
-                        ButtonXboxFindConsole.Caption = "Disconnect from console...";
+                        ButtonConnectToXBOX.Caption = "Disconnect from Console...";
                     }
                     else
                     {
@@ -1191,7 +1215,7 @@ namespace ModioX.Forms.Windows
             XtraMessageBox.Show(this, "Success", "Successfully disconnected from console.", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-#endregion
+        #endregion
 
         #region Installed Mods/Plugins
 
@@ -1220,7 +1244,16 @@ namespace ModioX.Forms.Windows
             {
                 var modCategory = Database.CategoriesData.GetCategoryById(installedMod.CategoryId);
 
-                var modInstalled = Database.Mods.GetModById(installedMod.ModId);
+                ModItem modInstalled;
+
+                if (installedMod.ConsoleType == ConsoleTypePrefix.PS3)
+                {
+                    modInstalled = Database.ModsPS3.GetModById(installedMod.ModId);
+                }
+                else
+                {
+                    modInstalled = Database.ModsXBOX.GetModById(installedMod.ModId);
+                }
 
                 dt.Rows.Add(modInstalled.Id.ToString(),
                     Extensions.EnumExtensions.GetDescription(installedMod.ConsoleType),
@@ -1263,7 +1296,7 @@ namespace ModioX.Forms.Windows
             {
                 foreach (var installedGameMod in Settings.InstalledGameMods)
                 {
-                    var modItem = Database.Mods.GetModById(installedGameMod.ModId);
+                    var modItem = Mods.GetModById(installedGameMod.ModId);
 
                     InstalledMod installedMod = Settings.GetInstalledGameMod(modItem.GameId);
                     UninstallMods(modItem, installedMod == null ? string.Empty : installedMod.Region);
@@ -1281,7 +1314,7 @@ namespace ModioX.Forms.Windows
         /// <param name="modId">Specifies the <see cref="ModsData.ModItem.Id" /></param>
         private void DisplayModDetails(int modId)
         {
-            var modItem = Database.Mods.GetModById(modId);
+            var modItem = Mods.GetModById(modId);
 
             if (modItem == null)
             {
@@ -1293,7 +1326,7 @@ namespace ModioX.Forms.Windows
 
             // Display details in UI
             LabelName.Text = modItem.Name.Replace("&", "&&");
-            LabelCategory.Text = Database.CategoriesData.GetCategoryById(Database.Mods.GetModById(modId).GameId).Title;
+            LabelCategory.Text = Database.CategoriesData.GetCategoryById(Mods.GetModById(modId).GameId).Title;
             LabelType.Text = modItem.Type;
             LabelVersion.Text = modItem.Versions.Join(" & ").Replace("&", "&&");
             LabelFirmware.Text = modItem.Firmware;
@@ -1394,7 +1427,7 @@ namespace ModioX.Forms.Windows
 
             if (modInstalled != null)
             {
-                var currentModItem = Database.Mods.GetModById(modInstalled.ModId);
+                var currentModItem = Mods.GetModById(modInstalled.ModId);
 
                 var message = new StringBuilder($"'{currentModItem.Name} v{currentModItem.Version} ({currentModItem.Type})'")
                     .AppendLine($" is currently installed to: {category.Title}\n")
@@ -1402,7 +1435,7 @@ namespace ModioX.Forms.Windows
 
                 if (XtraMessageBox.Show("Mods Already Installed", message.ToString(), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    UninstallMods(Database.Mods.GetModById(modInstalled.ModId), modInstalled.Region);
+                    UninstallMods(Mods.GetModById(modInstalled.ModId), modInstalled.Region);
                 }
             }
 
@@ -2359,6 +2392,11 @@ namespace ModioX.Forms.Windows
         private void ProfileIDInfo_ItemClick(object sender, ItemClickEventArgs e)
         {
             XtraMessageBox.Show(XboxConsole.ProfileID());
+        }
+
+        private void GridControlMods_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

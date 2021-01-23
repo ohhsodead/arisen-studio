@@ -36,16 +36,20 @@ namespace ModioX.Forms.Tools.PS3_Tools
             {
                 var fileSize = new FileInfo(backupFile.LocalPath).Length;
 
-                dt.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId).Title);
-                dt.Rows.Add(backupFile.FileName);
-                dt.Rows.Add(File.Exists(backupFile.LocalPath)
+                dt.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId).Title, 
+                    backupFile.FileName,
+                    File.Exists(backupFile.LocalPath)
                     ? (MainWindow.Settings.ShowFileSizeInBytes ? fileSize.ToString("#,0") + " bytes" : StringExtensions.FormatSize(fileSize.ToString()))
                     : "No File Exists", backupFile.CreatedDate.ToLocalTime().ToString(CultureInfo.CurrentCulture));
             }
 
             GridBackupFiles.DataSource = dt;
 
-            LabelNoBackupFiles.Visible = dt.Rows.Count < 1;
+            GridViewBackupFiles.Columns[1].Width = 200;
+            GridViewBackupFiles.Columns[2].Width = 50;
+            GridViewBackupFiles.Columns[3].Width = 50;
+
+            ProgressBackupFiles.Visible = dt.Rows.Count < 1;
         }
 
         private void DgvBackupFiles_SelectionChanged(object sender, EventArgs e)

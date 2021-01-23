@@ -4,6 +4,7 @@ using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace ModioX.Forms.Settings
@@ -22,20 +23,28 @@ namespace ModioX.Forms.Settings
 
         public void LoadCustomLists()
         {
-            /*
-            DgvCustomLists.Rows.Clear();
+            GridCustomLists.DataSource = null;
+
+            var dt = new DataTable();
+            dt.Columns.Add("List Name", typeof(string));
+            dt.Columns.Add("# of Mods", typeof(string));
 
             foreach (CustomList customList in MainWindow.Settings.CustomLists)
             {
-                DgvCustomLists.Rows.Add(customList.Name, customList.ModIds.Count + " Mods");
+                dt.Rows.Add(customList.Name, customList.ModIds.Count + " Mods");
             }
 
-            LabelNoListsCreated.Visible = DgvCustomLists.Rows.Count < 1;
+            GridCustomLists.DataSource = dt;
 
-            LabelTotalCustomLists.Text = $@"{DgvCustomLists.Rows.Count} Lists";
+            ProgressCustomLists.Visible = GridViewCustomLists.RowCount < 1;
 
-            ToolStripDeleteAll.Enabled = DgvCustomLists.Rows.Count > 0;
-            */
+            ButtonDeleteAllLists.Enabled = GridViewCustomLists.RowCount > 0;
+        }
+
+        private void GridCustomLists_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e)
+        {
+            ButtonRenameList.Enabled = GridViewCustomLists.SelectedRowsCount > 0;
+            ButtonDeleteList.Enabled = GridViewCustomLists.SelectedRowsCount > 0;
         }
 
         private void DgvCustomLists_SelectionChanged(object sender, EventArgs e)
@@ -45,10 +54,9 @@ namespace ModioX.Forms.Settings
             //ToolStripDeleteSelected.Enabled = DgvCustomLists.CurrentRow != null;
         }
 
-        private void ContextMenuCustomListsRename_Click(object sender, EventArgs e)
+        private void ButtonRenameList_Click(object sender, EventArgs e)
         {
-            /*
-            string currentListName = DgvCustomLists.Rows[DgvCustomLists.CurrentRow.Index].Cells[0].Value.ToString();
+            string currentListName = GridViewCustomLists.GetRowCellDisplayText(GridViewCustomLists.GetSelectedRows()[0], "List Name");
             string newListName = DialogExtensions.ShowTextInputDialog(this, "Rename List", "List Name:", currentListName);
 
             if (!string.IsNullOrWhiteSpace(newListName))
@@ -59,19 +67,18 @@ namespace ModioX.Forms.Settings
                 }
                 else
                 {
-                    MainWindow.Settings.UpdateCustomListName(currentListName, newListName);
+                    MainWindow.Settings.RenameCustomList(currentListName, newListName);
                     LoadCustomLists();
                 }
             }
-            */
         }
 
         private void ContextMenuCustomListsDelete_Click(object sender, EventArgs e)
         {
-            ToolStripDeleteSelected.PerformClick();
+            //ToolStripDeleteSelected.PerformClick();
         }
 
-        private void ToolStripCreateNewList_Click(object sender, EventArgs e)
+        private void ButtonCreateNewList_Click(object sender, EventArgs e)
         {
             string listName = DialogExtensions.ShowTextInputDialog(this, "Create New List", "List Name:", "");
 
@@ -83,13 +90,13 @@ namespace ModioX.Forms.Settings
                 }
                 else
                 {
-                    MainWindow.Settings.CustomLists.Add(new CustomList() { Name = listName });
+                    MainWindow.Settings.AddCustomList(listName);
                     LoadCustomLists();
                 }
             }
         }
 
-        private void ToolStripDeleteSelected_Click(object sender, EventArgs e)
+        private void ButtonDeleteList_Click(object sender, EventArgs e)
         {
             if (XtraMessageBox.Show("Do you really want to delete the selected list?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -98,7 +105,7 @@ namespace ModioX.Forms.Settings
             }
         }
 
-        private void ToolStripDeleteAll_Click(object sender, EventArgs e)
+        private void ButtonDeleteAllLists_Click(object sender, EventArgs e)
         {
             if (XtraMessageBox.Show("Do you really to delete all of your created lists?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -118,11 +125,6 @@ namespace ModioX.Forms.Settings
             }
 
             return false;
-        }
-
-        private void ButtonSaveAll_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

@@ -25,12 +25,12 @@
         /// <summary>
         /// Direct download for the PS3 mods database file hosted on Dropbox. (Maybe move to GitHub soon)
         /// </summary>
-        internal const string ModsDataPS3 = "https://dl.dropbox.com/s/9kzqk21hkz2nt14/mods.json?raw=true";
+        internal const string ModsDataPS3 = "https://www.dropbox.com/s/65pbod3w43lh1p0/mods-ps3.json?raw=true";
 
         /// <summary>
         /// Direct download for the XBOX mods database file hosted on Dropbox. (Maybe move to GitHub soon)
         /// </summary>
-        internal const string ModsDataXBOX = "https://dl.dropbox.com/s/qx2meo4zmtgsrt2/xbox-mods.json?raw=true";
+        internal const string ModsDataXBOX = "https://dl.dropbox.com/s/wo9dljhnqbir5wk/mods-xbox.json?raw=true";
 
         /// <summary>
         /// Links To The Official Discord Server.

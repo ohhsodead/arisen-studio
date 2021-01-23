@@ -177,6 +177,10 @@ namespace ModioX.Models.Database
                     }
                     else if (region.Equals("-"))
                     {
+                        regions.Add("All Regions");
+                    }
+                    else if (region.Equals("n/a"))
+                    {
                         regions.Add("n/a");
                     }
                     else

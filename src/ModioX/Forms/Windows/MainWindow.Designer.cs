@@ -2198,6 +2198,7 @@ namespace ModioX.Forms.Windows
             this.ProgressMods.Name = "ProgressMods";
             this.ProgressMods.Size = new System.Drawing.Size(246, 66);
             this.ProgressMods.TabIndex = 1170;
+            this.ProgressMods.Visible = false;
             this.ProgressMods.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
             // 
             // GridControlMods
@@ -2211,6 +2212,8 @@ namespace ModioX.Forms.Windows
             this.GridControlMods.TabIndex = 1171;
             this.GridControlMods.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewMods});
+            this.GridControlMods.BackColorChanged += new System.EventHandler(this.GridControlMods_BackColorChanged);
+            this.GridControlMods.Click += new System.EventHandler(this.GridControlMods_Click);
             // 
             // GridViewMods
             // 
@@ -2318,6 +2321,7 @@ namespace ModioX.Forms.Windows
             this.ProgressModsInstalled.Size = new System.Drawing.Size(246, 66);
             this.ProgressModsInstalled.TabIndex = 1171;
             this.ProgressModsInstalled.Text = "progressPanel1";
+            this.ProgressModsInstalled.Visible = false;
             this.ProgressModsInstalled.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
             // 
             // bar4
