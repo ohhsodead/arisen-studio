@@ -212,7 +212,7 @@ namespace ModioX.Forms.Windows
         {
             SetStatus($"Successfully loaded the database - Finalizing application data...");
 
-            Mods = Database.ModsXBOX;
+            Mods = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? Database.ModsPS3 : Database.ModsXBOX;
 
             LoadCategories();
 
@@ -1139,9 +1139,7 @@ namespace ModioX.Forms.Windows
                 }
                 else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
                 {
-                    XboxClient.IPAddress = ConsoleProfile.Address;
-
-                    if (XboxConsole.Connect(out XboxConsole)) //hey it works :) now it connects the class and also connects , hope so haha
+                    if (XboxConsole.Connect(out XboxConsole, ConsoleProfile.Address, ConsoleProfile.Port))
                     {
                         IsConsoleConnected = true;
                         SetStatusConsole(ConsoleProfile);
