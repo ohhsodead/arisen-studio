@@ -307,17 +307,18 @@ namespace ModioX.Forms.Windows
                 }
                 else
                 {
-                    //if (XboxConsole.Connect())
-                    //{
-                    //    XNotify.Show(Application.ProductName + " - Successfully Connected!");
-                    //}
-                    //else
-                    //{
-                    //    if (XtraMessageBox.Show("Would you like to try again?", "Unable to Find Console", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
-                    //    {
-                    //        //XboxConsole.Connect();
-                    //    }
-                    //}
+                    if (XboxConsole.Connect(out XboxConsole))
+                    {
+                        XNotify.Show(Application.ProductName + " - Successfully Connected!");
+                        IsConsoleConnected = true;
+                    }
+                    else
+                    {
+                        if (XtraMessageBox.Show("Would you like to try again?", "Unable to Find Console", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
+                        {
+                            XboxConsole.Connect(out XboxConsole);
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -1139,9 +1140,7 @@ namespace ModioX.Forms.Windows
                 }
                 else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
                 {
-                    XboxClient.IPAddress = ConsoleProfile.Address;
-
-                    if (XboxConsole.Connect(out XboxConsole)) //hey it works :) now it connects the class and also connects , hope so haha
+                    if (XboxConsole.Connect(out XboxConsole, ConsoleProfile.Address, ConsoleProfile.Port))
                     {
                         IsConsoleConnected = true;
                         SetStatusConsole(ConsoleProfile);

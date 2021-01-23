@@ -67,6 +67,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // textEdit3
             // 
+            this.textEdit3.EditValue = "Hdd\\\\";
             this.textEdit3.Location = new System.Drawing.Point(114, 435);
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Size = new System.Drawing.Size(244, 20);
