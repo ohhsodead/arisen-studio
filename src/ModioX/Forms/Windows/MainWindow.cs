@@ -167,7 +167,13 @@ namespace ModioX.Forms.Windows
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveSettings();
-            XboxConsole.Disconnect();
+            //Call Xbox Class Since It's Not Set Then Check If Connected
+            if (Xbox.IsConnected)
+            {
+                XboxConsole.Disconnect();
+            }
+            
+
         }
 
         private void MainWindow_StyleChanged(object sender, EventArgs e)

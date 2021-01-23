@@ -17,7 +17,7 @@ namespace XDevkit
         #region Property's
         public static TcpClient XboxName { get; set; } = new TcpClient();
         public static bool Connected { get; set; }
-        private static Xbox xboxConsole;
+        private static Xbox xboxConsole { get; set; } = new Xbox();
         [Browsable(false)]
         public static StreamReader Reader; 
         #endregion
@@ -31,7 +31,6 @@ namespace XDevkit
         /// <returns></returns>
         public static bool Connect(this Xbox console, out Xbox Console, string XboxNameOrIP = "default")
         {
-            Xbox xboxConsole = new Xbox();//sets Class For Client
             Console = xboxConsole;//sets Class For Client
             if (XboxNameOrIP == "default")
             {

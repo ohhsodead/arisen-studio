@@ -90,7 +90,7 @@ namespace XDevkit
         #region Float {Get; Set;}
         public float GetFloat(uint Address)
         {
-            if (Connected == true)
+            if (XboxClient.Connected == true)
             {
                 Console.WriteLine(" Command On Address ==>" + Address + " <== Is Being checked");
                 byte[] memory = GetMemory(Address, 4);

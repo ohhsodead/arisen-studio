@@ -3,12 +3,8 @@
 //Any Code Copied Must Source This Project (its the law (:P)) Please.. i work hard on it 3 years and counting...
 //Thank You for looking love you guys...
 using System;
-using System.ComponentModel;
-using System.IO;
-using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
-using System.Threading;
 
 namespace XDevkit
 {
@@ -18,28 +14,41 @@ namespace XDevkit
     /// </summary>
     public partial class Xbox  //Command Class    
     {
-        public string Name { get; set; } = Connected ? SendTextCommand("dbgname") : "Error";
+        #region Properties
+        public string Name { get; set; } = XboxClient.Connected ? SendTextCommand("dbgname") : "Error";
 
         public static string Response;
 
-        public static bool Connected { get; set; }
+        public static bool IsConnected { get; } = XboxClient.XboxName.Connected;
 
-        public static int ConnectTimeout { get => XboxClient.XboxName.SendTimeout; set => XboxClient.XboxName.SendTimeout = value;
+        public static int ConnectTimeout
+        {
+            get => XboxClient.XboxName.SendTimeout; set => XboxClient.XboxName.SendTimeout = value;
         }
-        public static int ConversationTimeout { get => XboxClient.XboxName.ReceiveTimeout; set => XboxClient.XboxName.ReceiveTimeout = value;
+        public static int ConversationTimeout
+        {
+            get => XboxClient.XboxName.ReceiveTimeout; set => XboxClient.XboxName.ReceiveTimeout = value;
         }
-        public  string IPAddress { get; set; }
+        public string IPAddress { get; set; } = "000.000.000.000";
 
-        public string DefaultConsole { get; set; }
+        public string DefaultConsole { get; set; } = "Not Set...";
+        #endregion
 
 
         public void Disconnect()
         {
-            if (Connected)
+            try
             {
-                this.SendTextCommand("bye");
-                XboxClient.XboxName.Close();
-                Connected = false;
+                if (XboxClient.Connected)
+                {
+                    this.SendTextCommand("bye");
+                    XboxClient.XboxName.Close();
+                    XboxClient.Connected = false;
+                }
+            }
+            catch
+            {
+
             }
         }
 
@@ -99,7 +108,7 @@ namespace XDevkit
                 }
                 else
                 {
-                    Console.WriteLine("SendTextCommand ==> " + Assembly.GetEntryAssembly().GetName().Name + " Connection = " + Connected);
+                    Console.WriteLine("SendTextCommand ==> " + Assembly.GetEntryAssembly().GetName().Name + " Connection = " + XboxClient.XboxName.Connected);
                 }
 
             }

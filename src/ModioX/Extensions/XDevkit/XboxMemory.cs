@@ -50,15 +50,10 @@ namespace XDevkit
                 {
                     XboxClient.XboxName.Client.Send(Encoding.ASCII.GetBytes(string.Format(command, args) + Environment.NewLine));
                 }
-                catch (Exception /*ex*/)
+                catch (SocketException ex)
                 {
-                    throw new Exception("No Connection Detected");
+                    throw new Exception("No Connection Detected -" + ex.Message);
                 }
-
-               // StatusResponse response = ReceiveStatusResponse();
-
-                //if (response.Success) return response;
-               // else throw new ApiException(response.Full);
             }
             else throw new Exception("No Connection Detected");
         }
@@ -79,7 +74,7 @@ namespace XDevkit
         {
             if (!Functions.IsHex(value))
                 throw new Exception("Not a valid Hex String!");
-            if (!Connected)
+            if (!XboxClient.Connected)
                 return; //Call function - If not connected return
             try
             {
@@ -118,7 +113,7 @@ namespace XDevkit
             if (memoryAddress > (startDumpAddress + dumpLength) || memoryAddress < startDumpAddress)
                 throw new Exception("Memory Address Out of Bounds");
 
-            if (!Connected)
+            if (!XboxClient.Connected)
                 return null; //Call function - If not connected return
 
             var readWriter = new RwStream();
@@ -172,7 +167,7 @@ namespace XDevkit
                 throw new Exception("Empty Search string!");
             if (!Functions.IsHex(pointer))
                 throw new Exception(string.Format("{0} is not a valid Hex string.", pointer));
-            if (!Connected)
+            if (!XboxClient.Connected)
                 return null; //Call function - If not connected return
             BindingList<SearchResults> values;
             try
@@ -468,7 +463,7 @@ namespace XDevkit
             }
             catch
             {
-                Connected = false;
+                XboxClient.Connected = false;
             }
         }
 
@@ -487,7 +482,7 @@ namespace XDevkit
                 }
                 catch
                 {
-                    Connected = false;
+                    XboxClient.Connected = false;
                 }
             }
         }
@@ -510,7 +505,7 @@ namespace XDevkit
         public void Dump(string filename, uint startDumpAddress, uint dumpLength)
         {
             
-            if (!Connected)
+            if (!XboxClient.Connected)
                 return; //Call function - If not connected return
 
             var readWriter = new RwStream(filename);

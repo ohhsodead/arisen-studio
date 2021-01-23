@@ -728,7 +728,7 @@ namespace XDevkit
         }
         public void QuickSignIn()
         {
-               // object[] arguments = new object { 0, 0, 0, 0 });
+
                 XboxExtention.CallVoid(ResolveFunction(XAMModule, (int)XboxSignIn.QuickSignin), new object[]{ 0, 0, 0, 0 });
 
         }

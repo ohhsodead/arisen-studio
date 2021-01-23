@@ -83,7 +83,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.Controls.Add(this.listView1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.IconOptions.Image = global::ModioX.Properties.Resources.app_logo;
             this.MinimizeBox = false;
             this.Name = "GameLauncher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

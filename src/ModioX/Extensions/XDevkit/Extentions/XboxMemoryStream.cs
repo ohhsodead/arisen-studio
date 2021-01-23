@@ -33,9 +33,9 @@ namespace XDevkit
             get { return position; }
             set { position = (uint)value; }
         }
-        public override bool CanRead { get { return Xbox.Connected; } }
-        public override bool CanSeek { get { return Xbox.Connected; } }
-        public override bool CanWrite { get { return Xbox.Connected; } }
+        public override bool CanRead { get { return XboxClient.Connected; } }
+        public override bool CanSeek { get { return XboxClient.Connected; } }
+        public override bool CanWrite { get { return XboxClient.Connected; } }
         #endregion
 
         #region Constructor
@@ -45,7 +45,7 @@ namespace XDevkit
         /// <param name="client">Connection to use.</param>
         public XboxMemoryStream()
         {
-            if (XboxClient.XboxName == null || !Xbox.Connected)
+            if (XboxClient.XboxName == null || !XboxClient.Connected)
                 throw new Exception("Not Connected!");
             position = 0x10000; // start at a valid memory address
         }
