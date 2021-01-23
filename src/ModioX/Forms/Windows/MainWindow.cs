@@ -180,7 +180,7 @@ namespace ModioX.Forms.Windows
 
             if (IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
             {
-                XboxConsole.Disconnect();
+                XboxClient.Disconnect();
             }
         }
 
