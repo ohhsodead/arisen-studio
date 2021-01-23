@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomListsDialog));
             this.GridCustomLists = new DevExpress.XtraGrid.GridControl();
-            this.ContextMenuCustomLists = new DarkUI.Controls.DarkContextMenu();
-            this.ContextMenuCustomListsRename = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextMenuCustomListsDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.GridViewCustomLists = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +43,6 @@
             this.ButtonDeleteAllLists = new DevExpress.XtraEditors.SimpleButton();
             this.ProgressCustomLists = new DevExpress.XtraWaitForm.ProgressPanel();
             ((System.ComponentModel.ISupportInitialize)(this.GridCustomLists)).BeginInit();
-            this.ContextMenuCustomLists.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewCustomLists)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -56,7 +52,6 @@
             // 
             // GridCustomLists
             // 
-            this.GridCustomLists.ContextMenuStrip = this.ContextMenuCustomLists;
             this.GridCustomLists.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridCustomLists.Location = new System.Drawing.Point(2, 23);
             this.GridCustomLists.MainView = this.GridViewCustomLists;
@@ -67,37 +62,6 @@
             this.GridCustomLists.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewCustomLists});
             this.GridCustomLists.FocusedViewChanged += new DevExpress.XtraGrid.ViewFocusEventHandler(this.GridCustomLists_FocusedViewChanged);
-            // 
-            // ContextMenuCustomLists
-            // 
-            this.ContextMenuCustomLists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ContextMenuCustomLists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuCustomLists.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ContextMenuCustomLists.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ContextMenuCustomListsRename,
-            this.ContextMenuCustomListsDelete});
-            this.ContextMenuCustomLists.Name = "ContextMenuConsole";
-            this.ContextMenuCustomLists.Size = new System.Drawing.Size(152, 56);
-            // 
-            // ContextMenuCustomListsRename
-            // 
-            this.ContextMenuCustomListsRename.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ContextMenuCustomListsRename.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuCustomListsRename.Image = global::ModioX.Properties.Resources.rename;
-            this.ContextMenuCustomListsRename.Name = "ContextMenuCustomListsRename";
-            this.ContextMenuCustomListsRename.Size = new System.Drawing.Size(151, 26);
-            this.ContextMenuCustomListsRename.Text = "Rename List...";
-            this.ContextMenuCustomListsRename.Click += new System.EventHandler(this.ButtonRenameList_Click);
-            // 
-            // ContextMenuCustomListsDelete
-            // 
-            this.ContextMenuCustomListsDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ContextMenuCustomListsDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuCustomListsDelete.Image = global::ModioX.Properties.Resources.delete_list;
-            this.ContextMenuCustomListsDelete.Name = "ContextMenuCustomListsDelete";
-            this.ContextMenuCustomListsDelete.Size = new System.Drawing.Size(151, 26);
-            this.ContextMenuCustomListsDelete.Text = "Delete List...";
-            this.ContextMenuCustomListsDelete.Click += new System.EventHandler(this.ContextMenuCustomListsDelete_Click);
             // 
             // GridViewCustomLists
             // 
@@ -239,7 +203,6 @@
             this.Text = "Custom Lists";
             this.Load += new System.EventHandler(this.CustomListsDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridCustomLists)).EndInit();
-            this.ContextMenuCustomLists.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridViewCustomLists)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -253,9 +216,6 @@
         private DevExpress.XtraGrid.GridControl GridCustomLists;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameRegion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameTitle;
-        private DarkUI.Controls.DarkContextMenu ContextMenuCustomLists;
-        private System.Windows.Forms.ToolStripMenuItem ContextMenuCustomListsRename;
-        private System.Windows.Forms.ToolStripMenuItem ContextMenuCustomListsDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRegion;
         private DevExpress.XtraGrid.Views.Grid.GridView GridViewCustomLists;
