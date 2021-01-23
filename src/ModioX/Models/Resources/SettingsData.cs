@@ -17,6 +17,8 @@ namespace ModioX.Models.Resources
 
         public List<ConsoleProfile> ConsoleProfiles { get; set; } = new List<ConsoleProfile>();
 
+        public ConsoleTypePrefix LoadConsoleMods { get; set; } = ConsoleTypePrefix.PS3;
+
         public bool RememberGameRegions { get; set; } = false;
 
         public bool AutoDetectGameRegions { get; set; } = false;

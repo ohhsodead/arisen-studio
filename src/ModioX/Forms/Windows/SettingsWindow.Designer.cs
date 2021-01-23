@@ -36,14 +36,14 @@ namespace ModioX.Forms.Windows
             this.CheckBoxSaveConsolePath = new DevExpress.XtraEditors.CheckEdit();
             this.CheckBoxSaveLocalPath = new DevExpress.XtraEditors.CheckEdit();
             this.CheckBoxShowFileSizeInBytes = new DevExpress.XtraEditors.CheckEdit();
-            this.ButtonOK = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonSaveSettings = new DevExpress.XtraEditors.SimpleButton();
             this.TabControl = new DevExpress.XtraTab.XtraTabControl();
             this.TabContentRecognition = new DevExpress.XtraTab.XtraTabPage();
+            this.TabDatabase = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.RadioConsoles = new DevExpress.XtraEditors.RadioGroup();
             this.TabFileManager = new DevExpress.XtraTab.XtraTabPage();
             this.TabFileSizes = new DevExpress.XtraTab.XtraTabPage();
-            this.TabConsoles = new DevExpress.XtraTab.XtraTabPage();
-            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxRememberGameRegions.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectGameTitles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectGameRegions.Properties)).BeginInit();
@@ -53,10 +53,10 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.TabControl)).BeginInit();
             this.TabControl.SuspendLayout();
             this.TabContentRecognition.SuspendLayout();
+            this.TabDatabase.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RadioConsoles.Properties)).BeginInit();
             this.TabFileManager.SuspendLayout();
             this.TabFileSizes.SuspendLayout();
-            this.TabConsoles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // CheckBoxRememberGameRegions
@@ -113,16 +113,16 @@ namespace ModioX.Forms.Windows
             this.CheckBoxShowFileSizeInBytes.Size = new System.Drawing.Size(212, 18);
             this.CheckBoxShowFileSizeInBytes.TabIndex = 1;
             // 
-            // ButtonOK
+            // ButtonSaveSettings
             // 
-            this.ButtonOK.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ButtonOK.Location = new System.Drawing.Point(152, 228);
-            this.ButtonOK.Name = "ButtonOK";
-            this.ButtonOK.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonOK.Size = new System.Drawing.Size(75, 23);
-            this.ButtonOK.TabIndex = 3;
-            this.ButtonOK.Text = "OK";
-            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
+            this.ButtonSaveSettings.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.ButtonSaveSettings.Location = new System.Drawing.Point(141, 227);
+            this.ButtonSaveSettings.Name = "ButtonSaveSettings";
+            this.ButtonSaveSettings.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonSaveSettings.Size = new System.Drawing.Size(97, 24);
+            this.ButtonSaveSettings.TabIndex = 3;
+            this.ButtonSaveSettings.Text = "Save Settings";
+            this.ButtonSaveSettings.Click += new System.EventHandler(this.ButtonSaveSettings_Click);
             // 
             // TabControl
             // 
@@ -132,10 +132,10 @@ namespace ModioX.Forms.Windows
             this.TabControl.Location = new System.Drawing.Point(12, 12);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedTabPage = this.TabContentRecognition;
-            this.TabControl.Size = new System.Drawing.Size(355, 210);
+            this.TabControl.Size = new System.Drawing.Size(355, 209);
             this.TabControl.TabIndex = 5;
             this.TabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.TabConsoles,
+            this.TabDatabase,
             this.TabContentRecognition,
             this.TabFileManager,
             this.TabFileSizes});
@@ -146,52 +146,52 @@ namespace ModioX.Forms.Windows
             this.TabContentRecognition.Controls.Add(this.CheckBoxAutoDetectGameRegions);
             this.TabContentRecognition.Controls.Add(this.CheckBoxAutoDetectGameTitles);
             this.TabContentRecognition.Name = "TabContentRecognition";
-            this.TabContentRecognition.Size = new System.Drawing.Size(353, 187);
+            this.TabContentRecognition.Size = new System.Drawing.Size(353, 186);
             this.TabContentRecognition.Text = "Content Recognition";
+            // 
+            // TabDatabase
+            // 
+            this.TabDatabase.Controls.Add(this.labelControl1);
+            this.TabDatabase.Controls.Add(this.RadioConsoles);
+            this.TabDatabase.Name = "TabDatabase";
+            this.TabDatabase.Size = new System.Drawing.Size(353, 186);
+            this.TabDatabase.Text = "Database";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(11, 10);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(91, 13);
+            this.labelControl1.TabIndex = 4;
+            this.labelControl1.Text = "Default database:";
+            // 
+            // RadioConsoles
+            // 
+            this.RadioConsoles.Location = new System.Drawing.Point(5, 25);
+            this.RadioConsoles.Name = "RadioConsoles";
+            this.RadioConsoles.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.RadioConsoles.Properties.Appearance.Options.UseBackColor = true;
+            this.RadioConsoles.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.RadioConsoles.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "PS3"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Xbox")});
+            this.RadioConsoles.Size = new System.Drawing.Size(117, 56);
+            this.RadioConsoles.TabIndex = 3;
             // 
             // TabFileManager
             // 
             this.TabFileManager.Controls.Add(this.CheckBoxSaveConsolePath);
             this.TabFileManager.Controls.Add(this.CheckBoxSaveLocalPath);
             this.TabFileManager.Name = "TabFileManager";
-            this.TabFileManager.Size = new System.Drawing.Size(353, 187);
+            this.TabFileManager.Size = new System.Drawing.Size(353, 186);
             this.TabFileManager.Text = "File Manager";
             // 
             // TabFileSizes
             // 
             this.TabFileSizes.Controls.Add(this.CheckBoxShowFileSizeInBytes);
             this.TabFileSizes.Name = "TabFileSizes";
-            this.TabFileSizes.Size = new System.Drawing.Size(353, 187);
+            this.TabFileSizes.Size = new System.Drawing.Size(353, 186);
             this.TabFileSizes.Text = "File Sizes";
-            // 
-            // TabConsoles
-            // 
-            this.TabConsoles.Controls.Add(this.labelControl1);
-            this.TabConsoles.Controls.Add(this.radioGroup1);
-            this.TabConsoles.Name = "TabConsoles";
-            this.TabConsoles.Size = new System.Drawing.Size(353, 187);
-            this.TabConsoles.Text = "PS3/XBOX";
-            // 
-            // radioGroup1
-            // 
-            this.radioGroup1.Location = new System.Drawing.Point(5, 27);
-            this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.radioGroup1.Properties.Appearance.Options.UseBackColor = true;
-            this.radioGroup1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "PS3 Mods"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Xbox Mods")});
-            this.radioGroup1.Size = new System.Drawing.Size(117, 58);
-            this.radioGroup1.TabIndex = 3;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(11, 10);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(133, 13);
-            this.labelControl1.TabIndex = 4;
-            this.labelControl1.Text = "Load database by default:";
             // 
             // SettingsWindow
             // 
@@ -199,7 +199,7 @@ namespace ModioX.Forms.Windows
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 263);
             this.Controls.Add(this.TabControl);
-            this.Controls.Add(this.ButtonOK);
+            this.Controls.Add(this.ButtonSaveSettings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("SettingsWindow.IconOptions.Icon")));
             this.MaximizeBox = false;
@@ -217,11 +217,11 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.TabControl)).EndInit();
             this.TabControl.ResumeLayout(false);
             this.TabContentRecognition.ResumeLayout(false);
+            this.TabDatabase.ResumeLayout(false);
+            this.TabDatabase.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RadioConsoles.Properties)).EndInit();
             this.TabFileManager.ResumeLayout(false);
             this.TabFileSizes.ResumeLayout(false);
-            this.TabConsoles.ResumeLayout(false);
-            this.TabConsoles.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -232,14 +232,14 @@ namespace ModioX.Forms.Windows
         private DevExpress.XtraEditors.CheckEdit CheckBoxSaveConsolePath;
         private DevExpress.XtraEditors.CheckEdit CheckBoxSaveLocalPath;
         private DevExpress.XtraEditors.CheckEdit CheckBoxShowFileSizeInBytes;
-        private DevExpress.XtraEditors.SimpleButton ButtonOK;
+        private DevExpress.XtraEditors.SimpleButton ButtonSaveSettings;
         private DevExpress.XtraEditors.CheckEdit CheckBoxRememberGameRegions;
         private DevExpress.XtraTab.XtraTabControl TabControl;
         private DevExpress.XtraTab.XtraTabPage TabContentRecognition;
         private DevExpress.XtraTab.XtraTabPage TabFileManager;
         private DevExpress.XtraTab.XtraTabPage TabFileSizes;
-        private DevExpress.XtraTab.XtraTabPage TabConsoles;
+        private DevExpress.XtraTab.XtraTabPage TabDatabase;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.RadioGroup radioGroup1;
+        private DevExpress.XtraEditors.RadioGroup RadioConsoles;
     }
 }

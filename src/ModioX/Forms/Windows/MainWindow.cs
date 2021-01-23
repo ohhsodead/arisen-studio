@@ -213,7 +213,7 @@ namespace ModioX.Forms.Windows
         {
             SetStatus($"Successfully loaded the database - Finalizing application data...");
 
-            Mods = Database.ModsXBOX;
+            Mods = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? Database.ModsPS3 : Database.ModsXBOX;
 
             LoadCategories();
 
