@@ -22,7 +22,8 @@ namespace ModioX.Database
             var data = new DropboxData
             {
                 CategoriesData = await GetCategories(),
-                Mods = await GetMods()
+                ModsPS3 = await GetModsPS3(),
+                ModsXBOX = await GetModsXBOX()
             };
 
             data.CategoriesData.Categories = data.CategoriesData.Categories.OrderBy(o => o.Title).ToList();
@@ -37,7 +38,12 @@ namespace ModioX.Database
         /// <summary>
         /// Contains the mods from database.
         /// </summary>
-        public ModsData Mods { get; private set; }
+        public ModsData ModsPS3 { get; private set; }
+
+        /// <summary>
+        /// Contains the mods from database.
+        /// </summary>
+        public ModsData ModsXBOX { get; private set; }
 
         /// <summary>
         /// Download and return the data for categories and games.
@@ -66,10 +72,31 @@ namespace ModioX.Database
         /// </summary>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        private static async Task<ModsData> GetMods()
+        private static async Task<ModsData> GetModsPS3()
         {
             using var client = new HttpClient();
             using var response = await client.GetAsync(Urls.ModsDataPS3);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Bad response {response.StatusCode}");
+
+            var responseData = response.Content.ReadAsStringAsync().Result;
+
+            if (!IsValidJson(responseData))
+                throw new JsonSerializationException("Failed to process the data for the Mods.");
+
+            return JsonConvert.DeserializeObject<ModsData>(responseData);
+        }
+
+        /// <summary>
+        /// Download and return the data for mods.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        private static async Task<ModsData> GetModsXBOX()
+        {
+            using var client = new HttpClient();
+            using var response = await client.GetAsync(Urls.ModsDataXBOX);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Bad response {response.StatusCode}");

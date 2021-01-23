@@ -120,21 +120,30 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
+        /// Add a custom list with the specified name.
+        /// </summary>
+        /// <param name="name">Custom list name</param>
+        public void AddCustomList(string name)
+        {
+            CustomLists.Add(new CustomList() { Name = name });
+        }
+
+        /// <summary>
         /// Either update or add the custom list details.
         /// </summary>
         /// <param name="listName">Custom list name</param>
         /// <param name="newListName">Mod Id to add to list</param>
-        public void UpdateCustomListName(string oldListName, string newListName)
+        public void RenameCustomList(string oldName, string newName)
         {
-            var customList = CustomLists.Find(x => string.Equals(x.Name, oldListName, StringComparison.OrdinalIgnoreCase));
+            var customList = CustomLists.Find(x => string.Equals(x.Name, oldName, StringComparison.OrdinalIgnoreCase));
 
             if (customList == null)
             {
-                CustomLists.Add(new CustomList() { Name = newListName });
+                CustomLists.Add(new CustomList() { Name = newName });
             }
             else
             {
-                CustomLists[CustomLists.IndexOf(customList)] = new CustomList() { Name = newListName, ModIds = customList.ModIds };
+                CustomLists[CustomLists.IndexOf(customList)] = new CustomList() { Name = newName, ModIds = customList.ModIds };
             }
         }
 
@@ -143,9 +152,9 @@ namespace ModioX.Models.Resources
         /// </summary>
         /// <param name="listName">Custom list name</param>
         /// <param name="newListName">Mod Id to add to list</param>
-        public void AddModToCustomList(string listName, int modId)
+        public void AddModToCustomList(string name, int modId)
         {
-            var customList = CustomLists.Find(x => string.Equals(x.Name, listName, StringComparison.OrdinalIgnoreCase));
+            var customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
 
             if (!customList.ModIds.Contains(modId))
             {
@@ -158,9 +167,9 @@ namespace ModioX.Models.Resources
         /// </summary>
         /// <param name="listName">Custom list name</param>
         /// <param name="modId">Mod Id to add to list</param>
-        public void RemoveModFromCustomList(string listName, int modId)
+        public void RemoveModFromCustomList(string name, int modId)
         {
-            var customList = CustomLists.Find(x => string.Equals(x.Name, listName, StringComparison.OrdinalIgnoreCase));
+            var customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
             customList.ModIds.Remove(modId);
         }
 
@@ -259,7 +268,7 @@ namespace ModioX.Models.Resources
         /// <param name="modId"></param>
         public void RemoveInstalledGameMod(string categoryId, int modId)
         {
-            _ = InstalledGameMods.RemoveAll(x => string.Equals(x.CategoryId, categoryId, StringComparison.OrdinalIgnoreCase) && x.ModId.Equals(modId));
+            InstalledGameMods.RemoveAll(x => string.Equals(x.CategoryId, categoryId, StringComparison.OrdinalIgnoreCase) && x.ModId.Equals(modId));
         }
 
         /// <summary>
@@ -272,6 +281,12 @@ namespace ModioX.Models.Resources
             return InstalledGameMods.FirstOrDefault(mod => mod.CategoryId.Equals(categoryId, StringComparison.OrdinalIgnoreCase));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="modsData"></param>
+        /// <param name="modIds"></param>
+        /// <returns></returns>
         public List<string> GetModTypesForModIDs(ModsData modsData, List<int> modIds)
         {
             List<string> modTypes = new List<string>();

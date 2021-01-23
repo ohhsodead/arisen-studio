@@ -29,84 +29,44 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomListsDialog));
-            this.SectionPanelCustomLists = new DarkUI.Controls.DarkSectionPanel();
-            this.LabelNoListsCreated = new System.Windows.Forms.Label();
-            this.DgvCustomLists = new DevExpress.XtraGrid.GridControl();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridCustomLists = new DevExpress.XtraGrid.GridControl();
             this.ContextMenuCustomLists = new DarkUI.Controls.DarkContextMenu();
             this.ContextMenuCustomListsRename = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuCustomListsDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripGameRegions = new DarkUI.Controls.DarkToolStrip();
-            this.ToolStripDeleteAll = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripDeleteSelected = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripCreateNewList = new System.Windows.Forms.ToolStripButton();
-            this.LabelTotalCustomLists = new System.Windows.Forms.ToolStripLabel();
+            this.GridViewCustomLists = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGameRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ButtonSaveAll = new DarkUI.Controls.DarkButton();
-            this.SectionPanelCustomLists.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvCustomLists)).BeginInit();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
+            this.ButtonCreateNewList = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonRenameList = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonDeleteList = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonDeleteAllLists = new DevExpress.XtraEditors.SimpleButton();
+            this.ProgressCustomLists = new DevExpress.XtraWaitForm.ProgressPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.GridCustomLists)).BeginInit();
             this.ContextMenuCustomLists.SuspendLayout();
-            this.ToolStripGameRegions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewCustomLists)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
+            this.stackPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // SectionPanelCustomLists
+            // GridCustomLists
             // 
-            this.SectionPanelCustomLists.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SectionPanelCustomLists.Controls.Add(this.LabelNoListsCreated);
-            this.SectionPanelCustomLists.Controls.Add(this.DgvCustomLists);
-            this.SectionPanelCustomLists.Controls.Add(this.ToolStripGameRegions);
-            this.SectionPanelCustomLists.Cursor = System.Windows.Forms.Cursors.Default;
-            this.SectionPanelCustomLists.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.SectionPanelCustomLists.Location = new System.Drawing.Point(12, 13);
-            this.SectionPanelCustomLists.Margin = new System.Windows.Forms.Padding(4);
-            this.SectionPanelCustomLists.Name = "SectionPanelCustomLists";
-            this.SectionPanelCustomLists.SectionHeader = "YOUR LISTS";
-            this.SectionPanelCustomLists.Size = new System.Drawing.Size(407, 253);
-            this.SectionPanelCustomLists.TabIndex = 0;
-            // 
-            // LabelNoListsCreated
-            // 
-            this.LabelNoListsCreated.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelNoListsCreated.AutoSize = true;
-            this.LabelNoListsCreated.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelNoListsCreated.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelNoListsCreated.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelNoListsCreated.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelNoListsCreated.Location = new System.Drawing.Point(147, 79);
-            this.LabelNoListsCreated.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
-            this.LabelNoListsCreated.Name = "LabelNoListsCreated";
-            this.LabelNoListsCreated.Size = new System.Drawing.Size(112, 15);
-            this.LabelNoListsCreated.TabIndex = 1178;
-            this.LabelNoListsCreated.Text = "NO LISTS CREATED";
-            // 
-            // DgvCustomLists
-            // 
-            this.DgvCustomLists.ContextMenuStrip = this.ContextMenuCustomLists;
-            this.DgvCustomLists.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvCustomLists.Location = new System.Drawing.Point(1, 25);
-            this.DgvCustomLists.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.DgvCustomLists.Name = "DgvCustomLists";
-            this.DgvCustomLists.Size = new System.Drawing.Size(405, 191);
-            this.DgvCustomLists.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ColumnRegion
-            // 
-            this.ColumnRegion.HeaderText = "# of Mods";
-            this.ColumnRegion.Name = "ColumnRegion";
-            this.ColumnRegion.ReadOnly = true;
-            this.ColumnRegion.Width = 80;
+            this.GridCustomLists.ContextMenuStrip = this.ContextMenuCustomLists;
+            this.GridCustomLists.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridCustomLists.Location = new System.Drawing.Point(2, 23);
+            this.GridCustomLists.MainView = this.GridViewCustomLists;
+            this.GridCustomLists.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.GridCustomLists.Name = "GridCustomLists";
+            this.GridCustomLists.Size = new System.Drawing.Size(403, 228);
+            this.GridCustomLists.TabIndex = 0;
+            this.GridCustomLists.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewCustomLists});
+            this.GridCustomLists.FocusedViewChanged += new DevExpress.XtraGrid.ViewFocusEventHandler(this.GridCustomLists_FocusedViewChanged);
             // 
             // ContextMenuCustomLists
             // 
@@ -127,7 +87,7 @@
             this.ContextMenuCustomListsRename.Name = "ContextMenuCustomListsRename";
             this.ContextMenuCustomListsRename.Size = new System.Drawing.Size(151, 26);
             this.ContextMenuCustomListsRename.Text = "Rename List...";
-            this.ContextMenuCustomListsRename.Click += new System.EventHandler(this.ContextMenuCustomListsRename_Click);
+            this.ContextMenuCustomListsRename.Click += new System.EventHandler(this.ButtonRenameList_Click);
             // 
             // ContextMenuCustomListsDelete
             // 
@@ -139,89 +99,28 @@
             this.ContextMenuCustomListsDelete.Text = "Delete List...";
             this.ContextMenuCustomListsDelete.Click += new System.EventHandler(this.ContextMenuCustomListsDelete_Click);
             // 
-            // ToolStripGameRegions
+            // GridViewCustomLists
             // 
-            this.ToolStripGameRegions.AutoSize = false;
-            this.ToolStripGameRegions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripGameRegions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ToolStripGameRegions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripGameRegions.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.ToolStripGameRegions.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ToolStripGameRegions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripDeleteAll,
-            this.ToolStripDeleteSelected,
-            this.ToolStripCreateNewList,
-            this.LabelTotalCustomLists});
-            this.ToolStripGameRegions.Location = new System.Drawing.Point(1, 216);
-            this.ToolStripGameRegions.Name = "ToolStripGameRegions";
-            this.ToolStripGameRegions.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.ToolStripGameRegions.Size = new System.Drawing.Size(405, 36);
-            this.ToolStripGameRegions.TabIndex = 2;
-            this.ToolStripGameRegions.TabStop = true;
-            this.ToolStripGameRegions.Text = "darkToolStrip2";
+            this.GridViewCustomLists.GridControl = this.GridCustomLists;
+            this.GridViewCustomLists.Name = "GridViewCustomLists";
+            this.GridViewCustomLists.OptionsView.ShowGroupExpandCollapseButtons = false;
+            this.GridViewCustomLists.OptionsView.ShowGroupPanel = false;
+            this.GridViewCustomLists.OptionsView.ShowIndicator = false;
             // 
-            // ToolStripDeleteAll
+            // dataGridViewTextBoxColumn1
             // 
-            this.ToolStripDeleteAll.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.ToolStripDeleteAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripDeleteAll.Enabled = false;
-            this.ToolStripDeleteAll.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripDeleteAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripDeleteAll.Image = global::ModioX.Properties.Resources.delete;
-            this.ToolStripDeleteAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripDeleteAll.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripDeleteAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripDeleteAll.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripDeleteAll.Name = "ToolStripDeleteAll";
-            this.ToolStripDeleteAll.Size = new System.Drawing.Size(88, 26);
-            this.ToolStripDeleteAll.Text = "Delete All";
-            this.ToolStripDeleteAll.ToolTipText = "Delete All Lists";
-            this.ToolStripDeleteAll.Click += new System.EventHandler(this.ToolStripDeleteAll_Click);
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // ToolStripDeleteSelected
+            // ColumnRegion
             // 
-            this.ToolStripDeleteSelected.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.ToolStripDeleteSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripDeleteSelected.Enabled = false;
-            this.ToolStripDeleteSelected.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripDeleteSelected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripDeleteSelected.Image = global::ModioX.Properties.Resources.delete;
-            this.ToolStripDeleteSelected.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripDeleteSelected.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripDeleteSelected.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripDeleteSelected.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripDeleteSelected.Name = "ToolStripDeleteSelected";
-            this.ToolStripDeleteSelected.Size = new System.Drawing.Size(71, 26);
-            this.ToolStripDeleteSelected.Text = "Delete";
-            this.ToolStripDeleteSelected.ToolTipText = "Delete Selected List";
-            this.ToolStripDeleteSelected.Click += new System.EventHandler(this.ToolStripDeleteSelected_Click);
-            // 
-            // ToolStripCreateNewList
-            // 
-            this.ToolStripCreateNewList.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.ToolStripCreateNewList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripCreateNewList.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripCreateNewList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripCreateNewList.Image = global::ModioX.Properties.Resources.add_list;
-            this.ToolStripCreateNewList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripCreateNewList.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripCreateNewList.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripCreateNewList.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripCreateNewList.Name = "ToolStripCreateNewList";
-            this.ToolStripCreateNewList.Size = new System.Drawing.Size(121, 26);
-            this.ToolStripCreateNewList.Text = "Create New List";
-            this.ToolStripCreateNewList.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.ToolStripCreateNewList.ToolTipText = "Create New List";
-            this.ToolStripCreateNewList.Click += new System.EventHandler(this.ToolStripCreateNewList_Click);
-            // 
-            // LabelTotalCustomLists
-            // 
-            this.LabelTotalCustomLists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.LabelTotalCustomLists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelTotalCustomLists.Name = "LabelTotalCustomLists";
-            this.LabelTotalCustomLists.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.LabelTotalCustomLists.Size = new System.Drawing.Size(45, 33);
-            this.LabelTotalCustomLists.Text = "0 Lists";
+            this.ColumnRegion.HeaderText = "# of Mods";
+            this.ColumnRegion.Name = "ColumnRegion";
+            this.ColumnRegion.ReadOnly = true;
+            this.ColumnRegion.Width = 80;
             // 
             // ColumnGameRegion
             // 
@@ -236,62 +135,134 @@
             this.ColumnGameTitle.Name = "ColumnGameTitle";
             this.ColumnGameTitle.ReadOnly = true;
             // 
-            // ButtonSaveAll
+            // groupControl1
             // 
-            this.ButtonSaveAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSaveAll.Location = new System.Drawing.Point(340, 275);
-            this.ButtonSaveAll.Margin = new System.Windows.Forms.Padding(5);
-            this.ButtonSaveAll.Name = "ButtonSaveAll";
-            this.ButtonSaveAll.Size = new System.Drawing.Size(79, 24);
-            this.ButtonSaveAll.TabIndex = 4;
-            this.ButtonSaveAll.Text = "Save All";
-            this.ButtonSaveAll.Click += new System.EventHandler(this.ButtonSaveAll_Click);
+            this.groupControl1.Controls.Add(this.ProgressCustomLists);
+            this.groupControl1.Controls.Add(this.GridCustomLists);
+            this.groupControl1.Controls.Add(this.stackPanel1);
+            this.groupControl1.Location = new System.Drawing.Point(12, 12);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(407, 289);
+            this.groupControl1.TabIndex = 5;
+            this.groupControl1.Text = "YOUR LISTS";
+            // 
+            // stackPanel1
+            // 
+            this.stackPanel1.Controls.Add(this.ButtonCreateNewList);
+            this.stackPanel1.Controls.Add(this.ButtonRenameList);
+            this.stackPanel1.Controls.Add(this.ButtonDeleteList);
+            this.stackPanel1.Controls.Add(this.ButtonDeleteAllLists);
+            this.stackPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.stackPanel1.Location = new System.Drawing.Point(2, 251);
+            this.stackPanel1.Name = "stackPanel1";
+            this.stackPanel1.Size = new System.Drawing.Size(403, 36);
+            this.stackPanel1.TabIndex = 10;
+            // 
+            // ButtonCreateNewList
+            // 
+            this.ButtonCreateNewList.Location = new System.Drawing.Point(6, 6);
+            this.ButtonCreateNewList.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.ButtonCreateNewList.Name = "ButtonCreateNewList";
+            this.ButtonCreateNewList.Size = new System.Drawing.Size(101, 24);
+            this.ButtonCreateNewList.TabIndex = 10;
+            this.ButtonCreateNewList.Text = "Create New List";
+            this.ButtonCreateNewList.Click += new System.EventHandler(this.ButtonCreateNewList_Click);
+            // 
+            // ButtonRenameList
+            // 
+            this.ButtonRenameList.Enabled = false;
+            this.ButtonRenameList.Location = new System.Drawing.Point(113, 6);
+            this.ButtonRenameList.Name = "ButtonRenameList";
+            this.ButtonRenameList.Size = new System.Drawing.Size(89, 24);
+            this.ButtonRenameList.TabIndex = 11;
+            this.ButtonRenameList.Text = "Rename List";
+            this.ButtonRenameList.Click += new System.EventHandler(this.ButtonRenameList_Click);
+            // 
+            // ButtonDeleteList
+            // 
+            this.ButtonDeleteList.Enabled = false;
+            this.ButtonDeleteList.Location = new System.Drawing.Point(208, 6);
+            this.ButtonDeleteList.Name = "ButtonDeleteList";
+            this.ButtonDeleteList.Size = new System.Drawing.Size(82, 24);
+            this.ButtonDeleteList.TabIndex = 12;
+            this.ButtonDeleteList.Text = "Delete List";
+            this.ButtonDeleteList.Click += new System.EventHandler(this.ButtonDeleteList_Click);
+            // 
+            // ButtonDeleteAllLists
+            // 
+            this.ButtonDeleteAllLists.Enabled = false;
+            this.ButtonDeleteAllLists.Location = new System.Drawing.Point(296, 6);
+            this.ButtonDeleteAllLists.Name = "ButtonDeleteAllLists";
+            this.ButtonDeleteAllLists.Size = new System.Drawing.Size(101, 24);
+            this.ButtonDeleteAllLists.TabIndex = 13;
+            this.ButtonDeleteAllLists.Text = "Delete All Lists";
+            this.ButtonDeleteAllLists.Click += new System.EventHandler(this.ButtonDeleteAllLists_Click);
+            // 
+            // ProgressCustomLists
+            // 
+            this.ProgressCustomLists.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ProgressCustomLists.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ProgressCustomLists.Appearance.Options.UseBackColor = true;
+            this.ProgressCustomLists.AppearanceCaption.Options.UseTextOptions = true;
+            this.ProgressCustomLists.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressCustomLists.AppearanceDescription.Options.UseTextOptions = true;
+            this.ProgressCustomLists.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressCustomLists.Caption = "NO CUSTOM LISTS";
+            this.ProgressCustomLists.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ProgressCustomLists.Description = "Loading..";
+            this.ProgressCustomLists.Location = new System.Drawing.Point(80, 101);
+            this.ProgressCustomLists.Name = "ProgressCustomLists";
+            this.ProgressCustomLists.Size = new System.Drawing.Size(246, 66);
+            this.ProgressCustomLists.TabIndex = 1172;
+            this.ProgressCustomLists.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
             // 
             // CustomListsDialog
             // 
+            this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Appearance.Options.UseFont = true;
+            this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(431, 313);
-            this.Controls.Add(this.ButtonSaveAll);
-            this.Controls.Add(this.SectionPanelCustomLists);
+            this.Controls.Add(this.groupControl1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.Gainsboro;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("CustomListsDialog.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CustomListsDialog";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Your Lists";
+            this.Text = "Custom Lists";
             this.Load += new System.EventHandler(this.CustomListsDialog_Load);
-            this.SectionPanelCustomLists.ResumeLayout(false);
-            this.SectionPanelCustomLists.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvCustomLists)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridCustomLists)).EndInit();
             this.ContextMenuCustomLists.ResumeLayout(false);
-            this.ToolStripGameRegions.ResumeLayout(false);
-            this.ToolStripGameRegions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewCustomLists)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
+            this.stackPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private DarkUI.Controls.DarkSectionPanel SectionPanelCustomLists;
-        private System.Windows.Forms.Label LabelNoListsCreated;
-        private DevExpress.XtraGrid.GridControl DgvCustomLists;
-        private DarkUI.Controls.DarkToolStrip ToolStripGameRegions;
-        private System.Windows.Forms.ToolStripButton ToolStripDeleteAll;
-        private System.Windows.Forms.ToolStripLabel LabelTotalCustomLists;
+        private DevExpress.XtraGrid.GridControl GridCustomLists;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameRegion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameTitle;
-        private System.Windows.Forms.ToolStripButton ToolStripDeleteSelected;
-        private System.Windows.Forms.ToolStripButton ToolStripCreateNewList;
-        private DarkUI.Controls.DarkButton ButtonSaveAll;
         private DarkUI.Controls.DarkContextMenu ContextMenuCustomLists;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuCustomListsRename;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuCustomListsDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRegion;
+        private DevExpress.XtraGrid.Views.Grid.GridView GridViewCustomLists;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.Utils.Layout.StackPanel stackPanel1;
+        private DevExpress.XtraEditors.SimpleButton ButtonCreateNewList;
+        private DevExpress.XtraEditors.SimpleButton ButtonRenameList;
+        private DevExpress.XtraEditors.SimpleButton ButtonDeleteList;
+        private DevExpress.XtraEditors.SimpleButton ButtonDeleteAllLists;
+        private DevExpress.XtraWaitForm.ProgressPanel ProgressCustomLists;
     }
 }

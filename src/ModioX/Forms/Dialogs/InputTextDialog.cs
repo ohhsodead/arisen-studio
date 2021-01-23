@@ -23,7 +23,7 @@ namespace ModioX.Forms
             catch { }
         }
 
-        private void TextBoxName_TextChanged(object sender, EventArgs e)
+        private void TextBoxName_EditValueChanged(object sender, EventArgs e)
         {
             ButtonOK.Enabled = !string.IsNullOrWhiteSpace(TextBoxName.Text);
         }

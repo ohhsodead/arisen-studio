@@ -400,9 +400,7 @@ namespace ModioX.Forms.Windows
             // 
             this.LabelSelectType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelSelectType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSelectType.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectType.Appearance.Options.UseFont = true;
-            this.LabelSelectType.Appearance.Options.UseForeColor = true;
             this.LabelSelectType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelSelectType.Location = new System.Drawing.Point(534, 42);
@@ -451,9 +449,7 @@ namespace ModioX.Forms.Windows
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.labelControl3, true);
             this.labelControl3.Location = new System.Drawing.Point(9, 11);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(6, 3, 3, 5);
@@ -465,9 +461,7 @@ namespace ModioX.Forms.Windows
             // LabelHeaderName
             // 
             this.LabelHeaderName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderName.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelHeaderName.Appearance.Options.UseFont = true;
-            this.LabelHeaderName.Appearance.Options.UseForeColor = true;
             this.LabelHeaderName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelHeaderName.Location = new System.Drawing.Point(9, 34);
             this.LabelHeaderName.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
@@ -479,9 +473,7 @@ namespace ModioX.Forms.Windows
             // LabelName
             // 
             this.LabelName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelName.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelName.Appearance.Options.UseFont = true;
-            this.LabelName.Appearance.Options.UseForeColor = true;
             this.LabelName.AutoEllipsis = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelName, true);
             this.LabelName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -496,9 +488,7 @@ namespace ModioX.Forms.Windows
             // LabelHeaderCategory
             // 
             this.LabelHeaderCategory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderCategory.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelHeaderCategory.Appearance.Options.UseFont = true;
-            this.LabelHeaderCategory.Appearance.Options.UseForeColor = true;
             this.LabelHeaderCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelHeaderCategory.Location = new System.Drawing.Point(9, 55);
             this.LabelHeaderCategory.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
@@ -510,9 +500,7 @@ namespace ModioX.Forms.Windows
             // LabelCategory
             // 
             this.LabelCategory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelCategory.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelCategory.Appearance.Options.UseFont = true;
-            this.LabelCategory.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelCategory, true);
             this.LabelCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelCategory.Location = new System.Drawing.Point(67, 55);
@@ -525,9 +513,7 @@ namespace ModioX.Forms.Windows
             // LabelHeaderFirmware
             // 
             this.LabelHeaderFirmware.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderFirmware.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelHeaderFirmware.Appearance.Options.UseFont = true;
-            this.LabelHeaderFirmware.Appearance.Options.UseForeColor = true;
             this.LabelHeaderFirmware.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelHeaderFirmware.Location = new System.Drawing.Point(9, 76);
             this.LabelHeaderFirmware.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
@@ -539,9 +525,7 @@ namespace ModioX.Forms.Windows
             // LabelFirmware
             // 
             this.LabelFirmware.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelFirmware.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelFirmware.Appearance.Options.UseFont = true;
-            this.LabelFirmware.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelFirmware, true);
             this.LabelFirmware.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelFirmware.Location = new System.Drawing.Point(88, 76);
@@ -554,9 +538,7 @@ namespace ModioX.Forms.Windows
             // LabelHeaderModType
             // 
             this.LabelHeaderModType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderModType.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelHeaderModType.Appearance.Options.UseFont = true;
-            this.LabelHeaderModType.Appearance.Options.UseForeColor = true;
             this.LabelHeaderModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelHeaderModType.Location = new System.Drawing.Point(9, 97);
             this.LabelHeaderModType.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
@@ -568,9 +550,7 @@ namespace ModioX.Forms.Windows
             // LabelType
             // 
             this.LabelType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelType.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelType.Appearance.Options.UseFont = true;
-            this.LabelType.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelType, true);
             this.LabelType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelType.Location = new System.Drawing.Point(72, 97);
@@ -583,9 +563,7 @@ namespace ModioX.Forms.Windows
             // LabelHeaderVersion
             // 
             this.LabelHeaderVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeaderVersion.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelHeaderVersion.Appearance.Options.UseFont = true;
-            this.LabelHeaderVersion.Appearance.Options.UseForeColor = true;
             this.LabelHeaderVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelHeaderVersion.Location = new System.Drawing.Point(9, 118);
             this.LabelHeaderVersion.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
@@ -597,9 +575,7 @@ namespace ModioX.Forms.Windows
             // LabelVersion
             // 
             this.LabelVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelVersion.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelVersion.Appearance.Options.UseFont = true;
-            this.LabelVersion.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelVersion, true);
             this.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelVersion.Location = new System.Drawing.Point(59, 118);
@@ -612,9 +588,7 @@ namespace ModioX.Forms.Windows
             // LabelHeaderRegion
             // 
             this.LabelHeaderRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderRegion.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelHeaderRegion.Appearance.Options.UseFont = true;
-            this.LabelHeaderRegion.Appearance.Options.UseForeColor = true;
             this.LabelHeaderRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelHeaderRegion.Location = new System.Drawing.Point(9, 139);
             this.LabelHeaderRegion.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
@@ -626,9 +600,7 @@ namespace ModioX.Forms.Windows
             // LabelRegion
             // 
             this.LabelRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelRegion.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelRegion.Appearance.Options.UseFont = true;
-            this.LabelRegion.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelRegion, true);
             this.LabelRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelRegion.Location = new System.Drawing.Point(92, 139);
@@ -641,9 +613,7 @@ namespace ModioX.Forms.Windows
             // LabelHeaderGameType
             // 
             this.LabelHeaderGameType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeaderGameType.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelHeaderGameType.Appearance.Options.UseFont = true;
-            this.LabelHeaderGameType.Appearance.Options.UseForeColor = true;
             this.LabelHeaderGameType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelHeaderGameType.Location = new System.Drawing.Point(9, 160);
             this.LabelHeaderGameType.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
@@ -655,9 +625,7 @@ namespace ModioX.Forms.Windows
             // LabelConfig
             // 
             this.LabelConfig.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelConfig.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelConfig.Appearance.Options.UseFont = true;
-            this.LabelConfig.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelConfig, true);
             this.LabelConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelConfig.Location = new System.Drawing.Point(80, 160);
@@ -670,9 +638,7 @@ namespace ModioX.Forms.Windows
             // LabelHeaderAuthor
             // 
             this.LabelHeaderAuthor.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderAuthor.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelHeaderAuthor.Appearance.Options.UseFont = true;
-            this.LabelHeaderAuthor.Appearance.Options.UseForeColor = true;
             this.LabelHeaderAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelHeaderAuthor.Location = new System.Drawing.Point(9, 181);
             this.LabelHeaderAuthor.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
@@ -684,9 +650,7 @@ namespace ModioX.Forms.Windows
             // LabelAuthor
             // 
             this.LabelAuthor.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelAuthor.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelAuthor.Appearance.Options.UseFont = true;
-            this.LabelAuthor.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelAuthor, true);
             this.LabelAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelAuthor.Location = new System.Drawing.Point(78, 181);
@@ -699,9 +663,7 @@ namespace ModioX.Forms.Windows
             // LabelHeaderSubmittedBy
             // 
             this.LabelHeaderSubmittedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeaderSubmittedBy.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelHeaderSubmittedBy.Appearance.Options.UseFont = true;
-            this.LabelHeaderSubmittedBy.Appearance.Options.UseForeColor = true;
             this.LabelHeaderSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelHeaderSubmittedBy.Location = new System.Drawing.Point(9, 202);
             this.LabelHeaderSubmittedBy.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
@@ -713,9 +675,7 @@ namespace ModioX.Forms.Windows
             // LabelSubmittedBy
             // 
             this.LabelSubmittedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSubmittedBy.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelSubmittedBy.Appearance.Options.UseFont = true;
-            this.LabelSubmittedBy.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.LabelSubmittedBy, true);
             this.LabelSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelSubmittedBy.Location = new System.Drawing.Point(93, 202);
@@ -728,9 +688,7 @@ namespace ModioX.Forms.Windows
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Appearance.Options.UseForeColor = true;
             this.FlowPanelDetails.SetFlowBreak(this.labelControl4, true);
             this.labelControl4.Location = new System.Drawing.Point(9, 225);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(6, 5, 3, 0);
@@ -742,9 +700,7 @@ namespace ModioX.Forms.Windows
             // LabelDescription
             // 
             this.LabelDescription.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelDescription.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.LabelDescription.Appearance.Options.UseFont = true;
-            this.LabelDescription.Appearance.Options.UseForeColor = true;
             this.LabelDescription.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
             this.FlowPanelDetails.SetFlowBreak(this.LabelDescription, true);
             this.LabelDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -797,9 +753,7 @@ namespace ModioX.Forms.Windows
             // 
             this.LabelSelectSystemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelSelectSystemType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSelectSystemType.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectSystemType.Appearance.Options.UseFont = true;
-            this.LabelSelectSystemType.Appearance.Options.UseForeColor = true;
             this.LabelSelectSystemType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelSelectSystemType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelSelectSystemType.Location = new System.Drawing.Point(389, 42);
@@ -1989,9 +1943,7 @@ namespace ModioX.Forms.Windows
             // 
             this.LabelSelectRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelSelectRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSelectRegion.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectRegion.Appearance.Options.UseFont = true;
-            this.LabelSelectRegion.Appearance.Options.UseForeColor = true;
             this.LabelSelectRegion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelSelectRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelSelectRegion.Location = new System.Drawing.Point(701, 42);
@@ -2004,9 +1956,7 @@ namespace ModioX.Forms.Windows
             // LabelSearch
             // 
             this.LabelSearch.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSearch.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSearch.Appearance.Options.UseFont = true;
-            this.LabelSearch.Appearance.Options.UseForeColor = true;
             this.LabelSearch.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelSearch.Location = new System.Drawing.Point(7, 42);
@@ -2248,7 +2198,7 @@ namespace ModioX.Forms.Windows
             this.ProgressMods.Name = "ProgressMods";
             this.ProgressMods.Size = new System.Drawing.Size(246, 66);
             this.ProgressMods.TabIndex = 1170;
-            this.ProgressMods.Text = "progressPanel1";
+            this.ProgressMods.Visible = false;
             this.ProgressMods.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
             // 
             // GridControlMods
@@ -2262,6 +2212,8 @@ namespace ModioX.Forms.Windows
             this.GridControlMods.TabIndex = 1171;
             this.GridControlMods.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewMods});
+            this.GridControlMods.BackColorChanged += new System.EventHandler(this.GridControlMods_BackColorChanged);
+            this.GridControlMods.Click += new System.EventHandler(this.GridControlMods_Click);
             // 
             // GridViewMods
             // 
@@ -2369,6 +2321,7 @@ namespace ModioX.Forms.Windows
             this.ProgressModsInstalled.Size = new System.Drawing.Size(246, 66);
             this.ProgressModsInstalled.TabIndex = 1171;
             this.ProgressModsInstalled.Text = "progressPanel1";
+            this.ProgressModsInstalled.Visible = false;
             this.ProgressModsInstalled.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
             // 
             // bar4

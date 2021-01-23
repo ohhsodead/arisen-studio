@@ -50,6 +50,7 @@
             this.TextBoxName.Name = "TextBoxName";
             this.TextBoxName.Size = new System.Drawing.Size(258, 20);
             this.TextBoxName.TabIndex = 0;
+            this.TextBoxName.EditValueChanged += new System.EventHandler(this.TextBoxName_EditValueChanged);
             // 
             // ButtonOK
             // 
@@ -60,6 +61,7 @@
             this.ButtonOK.Size = new System.Drawing.Size(75, 23);
             this.ButtonOK.TabIndex = 1;
             this.ButtonOK.Text = "OK";
+            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
             // ButtonCancel
             // 
@@ -69,6 +71,7 @@
             this.ButtonCancel.Size = new System.Drawing.Size(75, 23);
             this.ButtonCancel.TabIndex = 2;
             this.ButtonCancel.Text = "Cancel";
+            this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // InputTextDialog
             // 
