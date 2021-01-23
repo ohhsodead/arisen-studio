@@ -131,7 +131,7 @@ namespace ModioX.Forms.Windows
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TabControl.Location = new System.Drawing.Point(12, 12);
             this.TabControl.Name = "TabControl";
-            this.TabControl.SelectedTabPage = this.TabContentRecognition;
+            this.TabControl.SelectedTabPage = this.TabDatabase;
             this.TabControl.Size = new System.Drawing.Size(355, 209);
             this.TabControl.TabIndex = 5;
             this.TabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
@@ -161,21 +161,22 @@ namespace ModioX.Forms.Windows
             // 
             this.labelControl1.Location = new System.Drawing.Point(11, 10);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(91, 13);
+            this.labelControl1.Size = new System.Drawing.Size(109, 13);
             this.labelControl1.TabIndex = 4;
-            this.labelControl1.Text = "Default database:";
+            this.labelControl1.Text = "Set default database:";
             // 
             // RadioConsoles
             // 
             this.RadioConsoles.Location = new System.Drawing.Point(5, 25);
             this.RadioConsoles.Name = "RadioConsoles";
+            this.RadioConsoles.Properties.AllowFocused = false;
             this.RadioConsoles.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.RadioConsoles.Properties.Appearance.Options.UseBackColor = true;
             this.RadioConsoles.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.RadioConsoles.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "PS3"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Xbox")});
-            this.RadioConsoles.Size = new System.Drawing.Size(117, 56);
+            this.RadioConsoles.Size = new System.Drawing.Size(113, 56);
             this.RadioConsoles.TabIndex = 3;
             // 
             // TabFileManager
