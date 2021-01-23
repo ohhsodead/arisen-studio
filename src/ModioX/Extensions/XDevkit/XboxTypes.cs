@@ -14,6 +14,7 @@ namespace XDevkit
     /// </summary>
     public partial class Xbox //XboxTypes
     {
+        #region Property's
         private static readonly byte[] myBuff = new byte[0x20];
         private static uint outInt;
         private static uint uTemp32;
@@ -21,11 +22,21 @@ namespace XDevkit
         private static UInt64 uTemp64;
         private static Int16 Temp16;
         private static Int32 Temp32;
-        private static Int64 Temp64;
-
-
+        private static Int64 Temp64; 
+        #endregion
+        
         #region Bool {Get; Set;}
         public bool SetBool(uint Address) { return GetMemory(Address, 1)[0] != 0; }
+        public bool ReadBool(uint Offset)
+        {
+            GetMemory(Offset, 1, myBuff, out outInt);
+            return myBuff[0] != 0;
+        }
+        public void WriteBool(uint Offset, bool input)
+        {
+            myBuff[0] = input ? (byte)1 : (byte)0;
+            SetMemory(Offset, 1, myBuff, out outInt);
+        }
 
 
 
@@ -72,6 +83,15 @@ namespace XDevkit
 
         #region String {Get; Set;}
         public string GetString(uint Address, uint size) { return Encoding.UTF8.GetString(GetMemory(Address, size)); }
+        public string ReadString(uint Offset, byte[] readBuffer)
+        {
+            GetMemory(Offset, (uint)readBuffer.Length, readBuffer, out outInt);
+            return new string(System.Text.Encoding.ASCII.GetChars(readBuffer)).Split('\0')[0];
+        }
+        public string ReadString(uint Offset)
+        {
+            return ReadString(Offset, myBuff);
+        }
 
         public void SetString(uint Address, string String)
         {
@@ -88,6 +108,12 @@ namespace XDevkit
         #endregion
 
         #region Float {Get; Set;}
+        public float ReadFloat(uint Offset)
+        {
+            GetMemory(Offset, 4, myBuff, out outInt);
+            Array.Reverse(myBuff, 0, 4);
+            return BitConverter.ToSingle(myBuff, 0);
+        }
         public float GetFloat(uint Address)
         {
             if (XboxClient.Connected == true)
@@ -163,7 +189,7 @@ namespace XDevkit
         }
         #endregion
 
-        #region BinaryData
+        #region BinaryData {get; Set;}
         /// <summary>
         /// Sends binary data to the xbox.
         /// </summary>
@@ -234,13 +260,34 @@ namespace XDevkit
 
         #region Byte {Get; Set;}
         public byte GetByte(uint Address) { return GetMemory(Address, 1)[0]; }
+        public byte ReadByte(uint Offset)
+        {
+            GetMemory(Offset, 1, myBuff, out outInt);
+            return myBuff[0];
+        }
 
         public void SetByte(uint Address, byte Value) { SetMemory(Address, new byte[] { Value }); }
 
         public void SetByte(uint Address, byte[] Value) { SetMemory(Address, Value); }
+        public void WriteByte(uint Offset, byte input)
+        {
+            myBuff[0] = input;
+            SetMemory(Offset, 1, myBuff, out outInt);
+        }
+
         #endregion
 
         #region SByte {Get; Set;}
+        public sbyte ReadSByte(uint Offset)
+        {
+            GetMemory(Offset, 1, myBuff, out outInt);
+            return (sbyte)myBuff[0];
+        }
+        public void WriteSByte(uint Offset, sbyte input)
+        {
+            myBuff[0] = (byte)input;
+            SetMemory(Offset, 1, myBuff, out outInt);
+        }
         public sbyte GetSByte(uint Address) { return (sbyte)GetMemory(Address, 1)[0]; }
 
         public void SetSByte(uint Address, sbyte Value)
@@ -262,13 +309,24 @@ namespace XDevkit
         #endregion
 
         #region Int16 {Get; Set;}
+        public short ReadInt16(uint Offset)
+        {
+            GetMemory(Offset, 2, myBuff, out outInt);
+            Array.Reverse(myBuff, 0, 2);
+            return BitConverter.ToInt16(myBuff, 0);
+        }
         public short GetInt16(uint Address)
         {
             byte[] memory = GetMemory(Address, 2);
             ReverseBytes(memory, 2);
             return BitConverter.ToInt16(memory, 0);
         }
-
+        public void WriteInt16(uint Offset, short input)
+        {
+            BitConverter.GetBytes(input).CopyTo(myBuff, 0);
+            Array.Reverse(myBuff, 0, 2);
+            SetMemory(Offset, 2, myBuff, out outInt);
+        }
         public short[] GetInt16(uint Address, uint ArraySize)
         {
             {
@@ -303,6 +361,12 @@ namespace XDevkit
         #endregion
 
         #region Int32 {Get; Set;}
+        public int ReadInt32(uint Offset)
+        {
+            GetMemory(Offset, 4, myBuff, out outInt);
+            Array.Reverse(myBuff, 0, 4);
+            return BitConverter.ToInt32(myBuff, 0);
+        }
         public int GetInt32(uint Address)
         {
             byte[] memory = GetMemory(Address, 4);
@@ -323,7 +387,12 @@ namespace XDevkit
                 return num;
             }
         }
-
+        public void WriteInt32(uint Offset, int input)
+        {
+            BitConverter.GetBytes(input).CopyTo(myBuff, 0);
+            Array.Reverse(myBuff, 0, 4);
+            SetMemory(Offset, 4, myBuff, out outInt);
+        }
         public void SetInt32(uint Address, int Value)
         {
             byte[] bytes = BitConverter.GetBytes(Value);
@@ -345,6 +414,25 @@ namespace XDevkit
         #endregion
 
         #region Int64 {Get; Set;}
+        public long ReadInt64(uint Offset)
+        {
+            GetMemory(Offset, 8, myBuff, out outInt);
+            Array.Reverse(myBuff, 0, 8);
+            return BitConverter.ToInt64(myBuff, 0);
+        }
+        public ushort ReadUInt16(uint Offset)
+        {
+            GetMemory(Offset, 2, myBuff, out outInt);
+            Array.Reverse(myBuff, 0, 2);
+            return BitConverter.ToUInt16(myBuff, 0);
+        }
+        public void WriteInt64(uint Offset, long input)
+        {
+            BitConverter.GetBytes(input).CopyTo(myBuff, 0);
+            Array.Reverse(myBuff, 0, 8);
+            SetMemory(Offset, 8, myBuff, out outInt);
+        }
+
         public long GetInt64(uint Address)
         {
             byte[] memory = GetMemory(Address, 8);
@@ -406,7 +494,12 @@ namespace XDevkit
                 return num;
             }
         }
-
+        public void WriteUInt16(uint Offset, ushort input)
+        {
+            BitConverter.GetBytes(input).CopyTo(myBuff, 0);
+            Array.Reverse(myBuff, 0, 2);
+            SetMemory(Offset, 2, myBuff, out outInt);
+        }
         public void SetUInt16(uint Address, ushort Value)
         {
             byte[] bytes = BitConverter.GetBytes(Value);
@@ -428,6 +521,13 @@ namespace XDevkit
         #endregion
 
         #region UInt32 {Get; Set;}
+        public uint ReadUInt32(uint Offset)
+        {
+            GetMemory(Offset, 4, myBuff, out outInt);
+            Array.Reverse(myBuff, 0, 4);
+            return BitConverter.ToUInt32(myBuff, 0);
+        }
+
         public uint GetUInt32(uint Address)
         {
             byte[] memory = GetMemory(Address, 4);
@@ -448,7 +548,12 @@ namespace XDevkit
                 return num;
             }
         }
-
+        public void WriteUInt32(uint Offset, uint input)
+        {
+            BitConverter.GetBytes(input).CopyTo(myBuff, 0);
+            Array.Reverse(myBuff, 0, 4);
+            SetMemory(Offset, 4, myBuff, out outInt);
+        }
         public void SetUInt32(uint Address, uint Value)
         {
             byte[] bytes = BitConverter.GetBytes(Value);
@@ -469,6 +574,13 @@ namespace XDevkit
         #endregion
 
         #region UInt64 {Get; Set;}
+        public ulong ReadUInt64(uint Offset)
+        {
+            GetMemory(Offset, 8, myBuff, out outInt);
+            Array.Reverse(myBuff, 0, 8);
+            return BitConverter.ToUInt64(myBuff, 0);
+        }
+
         public ulong GetUInt64(uint Address)
         {
             byte[] memory = GetMemory(Address, 8);
@@ -489,6 +601,12 @@ namespace XDevkit
                 return num;
             }
         }
+        public void WriteUInt64(uint Offset, ulong input)
+        {
+            BitConverter.GetBytes(input).CopyTo(myBuff, 0);
+            Array.Reverse(myBuff, 0, 8);
+            SetMemory(Offset, 8, myBuff, out outInt);
+        }
 
         public void SetUInt64(uint Address, ulong Value)
         {
@@ -508,9 +626,7 @@ namespace XDevkit
             SetMemory(Address, numArray);
         }
 
-        public void InvalidateMemoryCache(bool v, uint address, uint length)
-        {
-        }
+
         #endregion
 
         #region Double {get; Set;}
@@ -584,152 +700,8 @@ namespace XDevkit
             }
         }
         #endregion
-
-
-        public sbyte ReadSByte(uint Offset)
-        {
-            GetMemory(Offset, 1, myBuff, out outInt);
-            return (sbyte)myBuff[0];
-        }
-        public bool ReadBool(uint Offset)
-        {
-            GetMemory(Offset, 1, myBuff, out outInt);
-            return myBuff[0] != 0;
-        }
-
-        public short ReadInt16(uint Offset)
-        {
-            GetMemory(Offset, 2, myBuff, out outInt);
-            Array.Reverse(myBuff, 0, 2);
-            return BitConverter.ToInt16(myBuff, 0);
-        }
-
-        public int ReadInt32(uint Offset)
-        {
-            GetMemory(Offset, 4, myBuff, out outInt);
-            Array.Reverse(myBuff, 0, 4);
-            return BitConverter.ToInt32(myBuff, 0);
-        }
-
-        public long ReadInt64(uint Offset)
-        {
-            GetMemory(Offset, 8, myBuff, out outInt);
-            Array.Reverse(myBuff, 0, 8);
-            return BitConverter.ToInt64(myBuff, 0);
-        }
-
-        public byte ReadByte(uint Offset)
-        {
-            GetMemory(Offset, 1, myBuff, out outInt);
-            return myBuff[0];
-        }
-
-        public ushort ReadUInt16(uint Offset)
-        {
-            GetMemory(Offset, 2, myBuff, out outInt);
-            Array.Reverse(myBuff, 0, 2);
-            return BitConverter.ToUInt16(myBuff, 0);
-        }
-
-        public uint ReadUInt32(uint Offset)
-        {
-            GetMemory(Offset, 4, myBuff, out outInt);
-            Array.Reverse(myBuff, 0, 4);
-            return BitConverter.ToUInt32(myBuff, 0);
-        }
-
-        public ulong ReadUInt64(uint Offset)
-        {
-            GetMemory(Offset, 8, myBuff, out outInt);
-            Array.Reverse(myBuff, 0, 8);
-            return BitConverter.ToUInt64(myBuff, 0);
-        }
-
-        public float ReadFloat(uint Offset)
-        {
-            GetMemory(Offset, 4, myBuff, out outInt);
-            Array.Reverse(myBuff, 0, 4);
-            return BitConverter.ToSingle(myBuff, 0);
-        }
-
-
-
-        public string ReadString(uint Offset, byte[] readBuffer)
-        {
-            GetMemory(Offset, (uint)readBuffer.Length, readBuffer, out outInt);
-            return new string(System.Text.Encoding.ASCII.GetChars(readBuffer)).Split('\0')[0];
-        }
-
-        public string ReadString(uint Offset)
-        {
-            return ReadString(Offset, myBuff);
-        }
-
-        public void WriteSByte(uint Offset, sbyte input)
-        {
-            myBuff[0] = (byte)input;
-            SetMemory(Offset, 1, myBuff, out outInt);
-        }
-
-        public void WriteBool(uint Offset, bool input)
-        {
-            myBuff[0] = input ? (byte)1 : (byte)0;
-            SetMemory(Offset, 1, myBuff, out outInt);
-        }
-
-
-
-        public void WriteInt16(uint Offset, short input)
-        {
-            BitConverter.GetBytes(input).CopyTo(myBuff, 0);
-            Array.Reverse(myBuff, 0, 2);
-            SetMemory(Offset, 2, myBuff, out outInt);
-        }
-
-        public void WriteInt32(uint Offset, int input)
-        {
-            BitConverter.GetBytes(input).CopyTo(myBuff, 0);
-            Array.Reverse(myBuff, 0, 4);
-            SetMemory(Offset, 4, myBuff, out outInt);
-        }
-
-        public void WriteInt64(uint Offset, long input)
-        {
-            BitConverter.GetBytes(input).CopyTo(myBuff, 0);
-            Array.Reverse(myBuff, 0, 8);
-            SetMemory(Offset, 8, myBuff, out outInt);
-        }
-
-        public void WriteByte(uint Offset, byte input)
-        {
-            myBuff[0] = input;
-            SetMemory(Offset, 1, myBuff, out outInt);
-        }
-
-        public void WriteUInt16(uint Offset, ushort input)
-        {
-            BitConverter.GetBytes(input).CopyTo(myBuff, 0);
-            Array.Reverse(myBuff, 0, 2);
-            SetMemory(Offset, 2, myBuff, out outInt);
-        }
-
-
-
-        public void WriteUInt32(uint Offset, uint input)
-        {
-            BitConverter.GetBytes(input).CopyTo(myBuff, 0);
-            Array.Reverse(myBuff, 0, 4);
-            SetMemory(Offset, 4, myBuff, out outInt);
-        }
-
-        public void WriteUInt64(uint Offset, ulong input)
-        {
-            BitConverter.GetBytes(input).CopyTo(myBuff, 0);
-            Array.Reverse(myBuff, 0, 8);
-            SetMemory(Offset, 8, myBuff, out outInt);
-        }
-
-
+        
+        #region Random Types
         public void XOR_Uint16(uint Offset, ushort input)
         {
             uTemp16 = ReadUInt16(Offset);
@@ -854,7 +826,8 @@ namespace XDevkit
             Temp64 = ReadInt64(Offset);
             Temp64 |= input;
             WriteInt64(Offset, Temp64);
-        }
+        } 
+        #endregion
 
     }
 }

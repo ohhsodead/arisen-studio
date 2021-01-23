@@ -177,6 +177,23 @@ namespace XDevkit
             }
             return false;
         }
+
+        public static void Disconnect()
+        {
+            try
+            {
+                if (Connected)
+                {
+                    Xbox.SendTextCommand("bye");
+                   XboxName.Close();
+                    Connected = false;
+                }
+            }
+            catch
+            {
+
+            }
+        }
         /// <summary>
         /// 
         /// </summary>

@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 
@@ -17,7 +18,7 @@ namespace XDevkit
     /// Xbox Emulation Class
     /// Made By TeddyHammer
     /// </summary>
-    public partial class Xbox //XboxMemory
+    public partial class Xbox //XboxMemory Commands
     {
 
         private uint _startDumpOffset { set; get; }
@@ -53,6 +54,91 @@ namespace XDevkit
                 catch (SocketException ex)
                 {
                     throw new Exception("No Connection Detected -" + ex.Message);
+                }
+            }
+            else throw new Exception("No Connection Detected");
+        }
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="Command"></param>
+        /// <returns></returns>
+        public string SendTextCommand(string Command, string emty)
+        {
+            try
+            {
+                SendTextCommand(Command, out Response);
+            }
+            catch
+            {
+            }
+            return Response;
+        }
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="Command"></param>
+        /// <returns></returns>
+        public static string SendTextCommand(string Command)
+        {
+            try
+            {
+                SendTextCommand(Command, out Response);
+            }
+            catch
+            {
+            }
+            return Response;
+        }
+
+        public void InvalidateMemoryCache(bool v, uint address, uint length)
+        {
+
+        }//TODO:
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="Command"></param>
+        /// <param name="response"></param>
+        public static void SendTextCommand(string Command, out string response)
+        {
+            response = string.Empty;
+            try
+            {
+                // Max packet size is 1026
+                byte[] Packet = new byte[1026];
+                if (XboxClient.XboxName.Connected == true)
+                {
+                    Console.WriteLine("SendTextCommand " + Command + " ==> Sending Command... <==");
+                    XboxClient.XboxName.Client.Send(Encoding.ASCII.GetBytes(Command + Environment.NewLine));
+                    XboxClient.XboxName.Client.Receive(Packet);
+                    response = Encoding.ASCII.GetString(Packet);
+
+                }
+                else
+                {
+                    Console.WriteLine("SendTextCommand ==> " + Assembly.GetEntryAssembly().GetName().Name + " Connection = " + XboxClient.XboxName.Connected);
+                }
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        public void SendTextCommand(string command, params object[] args)
+        {
+            if (XboxClient.XboxName != null)
+            {
+
+                try
+                {
+                    XboxClient.XboxName.Client.Send(Encoding.ASCII.GetBytes(string.Format(command, args) + Environment.NewLine));
+                }
+                catch (Exception /*ex*/)
+                {
+
                 }
             }
             else throw new Exception("No Connection Detected");

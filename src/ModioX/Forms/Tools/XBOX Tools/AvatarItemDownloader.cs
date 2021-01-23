@@ -122,7 +122,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                     fileStream1.Close();
                     break;
                 }
-                catch (IOException ex)
+                catch
                 {
                 }
             }
@@ -143,7 +143,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                     fileStream.Close();
                     break;
                 }
-                catch (IOException ex)
+                catch
                 {
                 }
             }
@@ -159,7 +159,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                     System.IO.File.Move(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", ".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\" + this.ItemIDBox.Text);
                     break;
                 }
-                catch (IOException ex)
+                catch
                 {
                 }
             }

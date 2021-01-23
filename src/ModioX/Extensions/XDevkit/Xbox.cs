@@ -9,8 +9,27 @@ namespace XDevkit
     public partial class Xbox //Main
     {
 
+        #region Properties
+        public string Name { get; set; } = XboxClient.Connected ? SendTextCommand("dbgname") : "Error";
 
-        public XboxFileSystem File { get; set; }
+        public static string Response;
+
+        public static bool IsConnected { get; } = XboxClient.XboxName.Connected;
+
+        public static int ConnectTimeout
+        {
+            get => XboxClient.XboxName.SendTimeout; set => XboxClient.XboxName.SendTimeout = value;
+        }
+        public static int ConversationTimeout
+        {
+            get => XboxClient.XboxName.ReceiveTimeout; set => XboxClient.XboxName.ReceiveTimeout = value;
+        }
+        public string IPAddress { get; set; } = "000.000.000.000";
+
+        public string DefaultConsole { get; set; } = "Not Set...";
+                public XboxFileSystem File { get; set; }
+        #endregion
+
 
 
         static Xbox()
@@ -18,8 +37,7 @@ namespace XDevkit
 
         }
 
-
-        private static string StatusMessage(int code)
+            private static string StatusMessage(int code)
         {
             string str;
             int num = code;

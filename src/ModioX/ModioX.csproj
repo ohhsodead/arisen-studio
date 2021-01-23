@@ -167,7 +167,6 @@
     <Compile Include="Extensions\XDevkit\XboxFeatures.cs" />
     <Compile Include="Extensions\XDevkit\XboxMemory.cs" />
     <Compile Include="Extensions\XDevkit\Extentions\XboxMemoryStream.cs" />
-    <Compile Include="Extensions\XDevkit\XboxCommands.cs" />
     <Compile Include="Extensions\XDevkit\XboxClient\XboxStructs.cs" />
     <Compile Include="Extensions\XDevkit\XboxTypes.cs" />
     <Compile Include="Extensions\XDevkit\XNotify.cs" />

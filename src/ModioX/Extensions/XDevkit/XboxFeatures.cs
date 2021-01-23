@@ -2,6 +2,7 @@
 //Made By TeddyHammer on 08/20/16
 //Any Code Copied Must Source This Project (its the law (:P)) Please.. i work hard on it 3 years and counting...
 //Thank You for looking love you guys...
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +11,6 @@ using System.Globalization;
 using System.Net;
 using System.Net.Sockets;
 using System.Text.RegularExpressions;
-using System.Threading;
 
 namespace XDevkit
 {
@@ -22,7 +22,6 @@ namespace XDevkit
     {
         private const string XAMModule = "xam.xex";
         private const string krnlModule = "xboxkrnl.exe";
-        private static readonly uint Int = 1;
 
         public bool IsTrayOpen { get; set; } = false;
 
@@ -582,7 +581,7 @@ namespace XDevkit
         /// <returns></returns>
         public uint GetTemperature(TemperatureFlag TemperatureType)
         {
-            string Command = "consolefeatures ver=" + (uint)2 + " type=15 params=\"A\\0\\A\\1\\" + Int + "\\" + (int)TemperatureType + "\\\"";
+            string Command = "consolefeatures ver=" + (uint)2 + " type=15 params=\"A\\0\\A\\1\\" + (uint)1 + "\\" + (int)TemperatureType + "\\\"";
             string String = SendTextCommand(Command);
             return uint.Parse(String.Substring(String.find(" ") + 1), NumberStyles.HexNumber);
         }

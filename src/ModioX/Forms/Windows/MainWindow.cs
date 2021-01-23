@@ -170,7 +170,7 @@ namespace ModioX.Forms.Windows
             //Call Xbox Class Since It's Not Set Then Check If Connected
             if (Xbox.IsConnected)
             {
-                XboxConsole.Disconnect();
+                XboxClient.Disconnect();
             }
             
 
@@ -1164,7 +1164,7 @@ namespace ModioX.Forms.Windows
             {
                 try
                 {
-                    XboxConsole.Disconnect();
+                    XboxClient.Disconnect();
                 }
                 catch
                 {
