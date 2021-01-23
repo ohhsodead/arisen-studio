@@ -36,15 +36,23 @@ namespace ModioX.Forms.Settings
 
             GridCustomLists.DataSource = dt;
 
+            GridViewCustomLists.Columns[1].Width = 200;
+            GridViewCustomLists.Columns[2].Width = 50;
+
             ProgressCustomLists.Visible = GridViewCustomLists.RowCount < 1;
 
             ButtonDeleteAllLists.Enabled = GridViewCustomLists.RowCount > 0;
+
+            if (GridViewCustomLists.RowCount > 0)
+            {
+                GridViewCustomLists.SelectRow(0);
+            }
         }
 
         private void GridCustomLists_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e)
         {
-            ButtonRenameList.Enabled = GridViewCustomLists.SelectedRowsCount > 0;
-            ButtonDeleteList.Enabled = GridViewCustomLists.SelectedRowsCount > 0;
+            ButtonRenameList.Enabled = GridViewCustomLists.SelectedRowsCount != 0;
+            ButtonDeleteList.Enabled = GridViewCustomLists.SelectedRowsCount != 0;
         }
 
         private void DgvCustomLists_SelectionChanged(object sender, EventArgs e)

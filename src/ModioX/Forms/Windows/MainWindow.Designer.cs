@@ -2213,7 +2213,6 @@ namespace ModioX.Forms.Windows
             this.GridControlMods.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewMods});
             this.GridControlMods.BackColorChanged += new System.EventHandler(this.GridControlMods_BackColorChanged);
-            this.GridControlMods.Click += new System.EventHandler(this.GridControlMods_Click);
             // 
             // GridViewMods
             // 

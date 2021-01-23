@@ -103,9 +103,11 @@
             // 
             this.GridViewCustomLists.GridControl = this.GridCustomLists;
             this.GridViewCustomLists.Name = "GridViewCustomLists";
+            this.GridViewCustomLists.OptionsBehavior.ReadOnly = true;
             this.GridViewCustomLists.OptionsView.ShowGroupExpandCollapseButtons = false;
             this.GridViewCustomLists.OptionsView.ShowGroupPanel = false;
             this.GridViewCustomLists.OptionsView.ShowIndicator = false;
+            this.GridViewCustomLists.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Indicator;
             // 
             // dataGridViewTextBoxColumn1
             // 
