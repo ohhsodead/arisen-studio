@@ -42,7 +42,6 @@ namespace ModioX.Forms.Windows
             InitializeComponent();
             SkinColors = CommonSkins.GetSkin(Window.LookAndFeel).Colors;
         }
-
         /// <summary>
         /// Contains this instance of the form
         /// </summary>
@@ -213,7 +212,7 @@ namespace ModioX.Forms.Windows
         {
             SetStatus($"Successfully loaded the database - Finalizing application data...");
 
-            Mods = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? Database.ModsPS3 : Database.ModsXBOX;
+            Mods = Database.ModsXBOX;
 
             LoadCategories();
 
@@ -1140,9 +1139,9 @@ namespace ModioX.Forms.Windows
                 }
                 else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
                 {
-                    XboxConsole.IPAddress = ConsoleProfile.Address;
+                    XboxClient.IPAddress = ConsoleProfile.Address;
 
-                    if (XboxConsole.Connect(out XboxConsole))
+                    if (XboxConsole.Connect(out XboxConsole)) //hey it works :) now it connects the class and also connects , hope so haha
                     {
                         IsConsoleConnected = true;
                         SetStatusConsole(ConsoleProfile);

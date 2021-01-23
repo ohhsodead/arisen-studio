@@ -27,7 +27,8 @@ namespace XDevkit
         public string IPAddress { get; set; } = "000.000.000.000";
 
         public string DefaultConsole { get; set; } = "Not Set...";
-                public XboxFileSystem File { get; set; }
+
+        public XboxFileSystem File { get; set; }
         #endregion
 
 

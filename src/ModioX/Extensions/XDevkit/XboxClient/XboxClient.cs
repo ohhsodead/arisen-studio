@@ -18,36 +18,13 @@ namespace XDevkit
         public static TcpClient XboxName { get; set; } = new TcpClient();
         public static bool Connected { get; set; }
         private static Xbox xboxConsole { get; set; } = new Xbox();
+        public static int Port { get; set; } = 730;
+        public static string IPAddress { get; set; } = "000.000.000.000";
         [Browsable(false)]
         public static StreamReader Reader; 
         #endregion
 
-        /// <summary>
-        /// Connect Set's User's Object To XboxClass, Default Attempts To Find Console
-        /// </summary>
-        /// <param name="console"></param>
-        /// <param name="Console"></param>
-        /// <param name="XboxNameOrIP"></param>
-        /// <returns></returns>
-        public static bool Connect(this Xbox console, out Xbox Console, string XboxNameOrIP = "default")
-        {
-            Console = xboxConsole;//sets Class For Client
-            if (XboxNameOrIP == "default")
-            {
-                return TCPConnect(xboxConsole.DefaultConsole);
-            }
-            else
-            {
-                try
-                {
-                    return TCPConnect(XboxNameOrIP);
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-        }
+
 
         #region Networking
         /// <summary>
@@ -55,19 +32,21 @@ namespace XDevkit
         /// </summary>
         /// <param name="ConsoleNameOrIP"></param>
         /// <param name="Port"></param>
-        static bool TCPConnect(string ConsoleNameOrIP = "default", int Port = 730)
+        public static bool Connect(this Xbox console, out Xbox XConsole, string ConsoleNameOrIP = "default", int Port = 730)
         {
+            XConsole = xboxConsole;//sets Class For Client
             //User Enter's Nothing
             if (ConsoleNameOrIP == "")
             {
                 XboxName = new TcpClient();
                 if (FindConsole())//if true then continue
                 {
-                    XboxName = new TcpClient(xboxConsole.IPAddress, 730);//test...
+                    XboxName = new TcpClient(IPAddress, 730);//test...
                     Reader = new StreamReader(XboxName.GetStream());
-                    Console.WriteLine("/Connection - F01/....(" + xboxConsole.IPAddress + ")");//debugging purposes..
+                    Console.WriteLine("/Connection - F01/....(" + IPAddress + ")");//debugging purposes..
                     // set class properties once connected 
                     xboxConsole.IPAddress = ConsoleNameOrIP;
+                    IPAddress = ConsoleNameOrIP;
                     XboxClient.XboxName = XboxName;
                     return Connected = true;
                 }
@@ -79,7 +58,8 @@ namespace XDevkit
             // If User Supply's IP To US.
             else if (ConsoleNameOrIP.ToCharArray().Any(char.IsDigit))
             {
-                string IPAddress = ConsoleNameOrIP;
+                IPAddress = ConsoleNameOrIP;
+                xboxConsole.IPAddress = IPAddress;
                 XboxName = new TcpClient(ConsoleNameOrIP, Port);
                 Reader = new StreamReader(XboxName.GetStream());
                 Console.WriteLine("/Connection - Degits/....(" + "Manual Connection Mode" + ")");
@@ -89,9 +69,10 @@ namespace XDevkit
             else if (ConsoleNameOrIP.ToCharArray().Any(char.IsLetter))//uses ip to find console makes user think it finds it via name 
             {
                 Connected = FindConsole();
-                XboxName = new TcpClient(xboxConsole.IPAddress, 730);//test...
+                xboxConsole.IPAddress = IPAddress;
+                XboxName = new TcpClient(IPAddress, 730);//test...
                 Reader = new StreamReader(XboxName.GetStream());
-                Console.WriteLine("/Connection - F01/....(" + xboxConsole.IPAddress + ")");//debugging purposes..
+                Console.WriteLine("/Connection - F01/....(" + IPAddress + ")");//debugging purposes..
                 return Connected;
             }
             else

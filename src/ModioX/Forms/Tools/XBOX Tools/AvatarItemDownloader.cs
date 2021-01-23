@@ -13,13 +13,13 @@ using X360.STFS;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
-    public partial class Form1 : XtraForm
+    public partial class AvatarItemDownloader : XtraForm
     {
-        private static CultureInfo CI0;
+        private static CultureInfo CI0 { get; set; }
         private static Func<int, bool> func_0;
         private static ResourceManager RM0;
 
-        public Form1()
+        public AvatarItemDownloader()
         {
             InitializeComponent();
         }
@@ -62,7 +62,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             Directory.CreateDirectory(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37));
             System.IO.File.Delete(".\\\\$AvatarItems\\\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\" + this.ItemIDBox.Text);
             System.IO.File.Delete(".\\\\$AvatarItems\\\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate");
-            // ISSUE: reference to a compiler-generated method
             System.IO.File.WriteAllBytes(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", GetBytes());
             System.IO.File.WriteAllText(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\ID.TXT", this.MPURLBox.Text.Substring(this.MPURLBox.Text.Length - 36).ToUpper().Replace("-", string.Empty));
             WebClient webClient1 = new WebClient();
@@ -111,14 +110,14 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                         FileStream fileStream = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
                         BinaryWriter binaryWriter = new BinaryWriter((Stream)fileStream);
                         fileStream.Position = Convert.ToInt64("23c", 16);
-                        binaryWriter.Write(Form1.smethod_1(string_0));
+                        binaryWriter.Write(AvatarItemDownloader.smethod_1(string_0));
                         fileStream.Close();
                         break;
                     }
                     FileStream fileStream1 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
                     BinaryWriter binaryWriter1 = new BinaryWriter((Stream)fileStream1);
                     fileStream1.Position = Convert.ToInt64("23c", 16);
-                    binaryWriter1.Write(Form1.smethod_1(this.XUIDBox.Text));
+                    binaryWriter1.Write(AvatarItemDownloader.smethod_1(this.XUIDBox.Text));
                     fileStream1.Close();
                     break;
                 }
@@ -210,120 +209,120 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             FileStream fileStream1 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter1 = new BinaryWriter((Stream)fileStream1);
             fileStream1.Position = Convert.ToInt64("3E1", 16);
-            binaryWriter1.Write(Form1.smethod_1(this.ItemIDBox.Text + "03"));
+            binaryWriter1.Write(AvatarItemDownloader.smethod_1(this.ItemIDBox.Text + "03"));
             fileStream1.Close();
             FileStream fileStream2 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter2 = new BinaryWriter((Stream)fileStream2);
             fileStream2.Position = Convert.ToInt64("412", 16);
-            binaryWriter2.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter2.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream2.Close();
             FileStream fileStream3 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter3 = new BinaryWriter((Stream)fileStream3);
             fileStream3.Position = Convert.ToInt64("512", 16);
-            binaryWriter3.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter3.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream3.Close();
             FileStream fileStream4 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter4 = new BinaryWriter((Stream)fileStream4);
             fileStream4.Position = Convert.ToInt64("612", 16);
-            binaryWriter4.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter4.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream4.Close();
             FileStream fileStream5 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter5 = new BinaryWriter((Stream)fileStream5);
             fileStream5.Position = Convert.ToInt64("712", 16);
-            binaryWriter5.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter5.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream5.Close();
             FileStream fileStream6 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter6 = new BinaryWriter((Stream)fileStream6);
             fileStream6.Position = Convert.ToInt64("812", 16);
-            binaryWriter6.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter6.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream6.Close();
             FileStream fileStream7 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter7 = new BinaryWriter((Stream)fileStream7);
             fileStream7.Position = Convert.ToInt64("912", 16);
-            binaryWriter7.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter7.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream7.Close();
             FileStream fileStream8 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter8 = new BinaryWriter((Stream)fileStream8);
             fileStream8.Position = Convert.ToInt64("A12", 16);
-            binaryWriter8.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter8.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream8.Close();
             FileStream fileStream9 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter9 = new BinaryWriter((Stream)fileStream9);
             fileStream9.Position = Convert.ToInt64("B12", 16);
-            binaryWriter9.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter9.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream9.Close();
             FileStream fileStream10 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter10 = new BinaryWriter((Stream)fileStream10);
             fileStream10.Position = Convert.ToInt64("C12", 16);
-            binaryWriter10.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter10.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream10.Close();
             FileStream fileStream11 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter11 = new BinaryWriter((Stream)fileStream11);
             fileStream11.Position = Convert.ToInt64("D12", 16);
-            binaryWriter11.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter11.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream11.Close();
             FileStream fileStream12 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter12 = new BinaryWriter((Stream)fileStream12);
             fileStream12.Position = Convert.ToInt64("E12", 16);
-            binaryWriter12.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter12.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream12.Close();
             FileStream fileStream13 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter13 = new BinaryWriter((Stream)fileStream13);
             fileStream13.Position = Convert.ToInt64("F12", 16);
-            binaryWriter13.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter13.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream13.Close();
             FileStream fileStream14 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter14 = new BinaryWriter((Stream)fileStream14);
             fileStream14.Position = Convert.ToInt64("1012", 16);
-            binaryWriter14.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter14.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream14.Close();
             FileStream fileStream15 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter15 = new BinaryWriter((Stream)fileStream15);
             fileStream15.Position = Convert.ToInt64("1112", 16);
-            binaryWriter15.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter15.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream15.Close();
             FileStream fileStream16 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter16 = new BinaryWriter((Stream)fileStream16);
             fileStream16.Position = Convert.ToInt64("1212", 16);
-            binaryWriter16.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter16.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream16.Close();
             FileStream fileStream17 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter17 = new BinaryWriter((Stream)fileStream17);
             fileStream17.Position = Convert.ToInt64("1312", 16);
-            binaryWriter17.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter17.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream17.Close();
             FileStream fileStream18 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter18 = new BinaryWriter((Stream)fileStream18);
             fileStream18.Position = Convert.ToInt64("1412", 16);
-            binaryWriter18.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter18.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream18.Close();
             FileStream fileStream19 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter19 = new BinaryWriter((Stream)fileStream19);
             fileStream19.Position = Convert.ToInt64("1512", 16);
-            binaryWriter19.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter19.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream19.Close();
             FileStream fileStream20 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter20 = new BinaryWriter((Stream)fileStream20);
             fileStream20.Position = Convert.ToInt64("1612", 16);
-            binaryWriter20.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+            binaryWriter20.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
             fileStream20.Close();
             if (this.GameNameBox.Text.Length == 0)
             {
                 FileStream fileStream21 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
                 BinaryWriter binaryWriter21 = new BinaryWriter((Stream)fileStream21);
                 fileStream21.Position = Convert.ToInt64("1692", 16);
-                binaryWriter21.Write(Form1.smethod_1(Form1.smethod_0(this.ItemNameBox.Text)));
+                binaryWriter21.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.ItemNameBox.Text)));
                 fileStream21.Close();
             }
             FileStream fileStream22 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter22 = new BinaryWriter((Stream)fileStream22);
             fileStream22.Position = Convert.ToInt64("1692", 16);
-            binaryWriter22.Write(Form1.smethod_1(Form1.smethod_0(this.GameNameBox.Text)));
+            binaryWriter22.Write(AvatarItemDownloader.smethod_1(AvatarItemDownloader.smethod_0(this.GameNameBox.Text)));
             fileStream22.Close();
             FileStream fileStream23 = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             BinaryWriter binaryWriter23 = new BinaryWriter((Stream)fileStream23);
             fileStream23.Position = Convert.ToInt64("360", 16);
-            binaryWriter23.Write(Form1.smethod_1(this.ItemIDBox.Text.Substring(24)));
+            binaryWriter23.Write(AvatarItemDownloader.smethod_1(this.ItemIDBox.Text.Substring(24)));
             fileStream23.Close();
         }
         private void method_7(object sender, DownloadProgressChangedEventArgs e)
@@ -362,7 +361,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             if (ReferenceEquals(RM0, null))
             {
-                RM0 = new ResourceManager("AvatarTools.Form1", typeof(Form1).Assembly);
+                RM0 = new ResourceManager("AvatarTools.Form1", typeof(AvatarItemDownloader).Assembly);
             }
             return RM0;
         }
@@ -387,7 +386,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             };
             if (func_0 == null)
             {
-                func_0 = new Func<int, bool>(Form1.smethod_2);
+                func_0 = new Func<int, bool>(AvatarItemDownloader.smethod_2);
             }
             return Enumerable.ToArray<byte>(Enumerable.Select<int, byte>(Enumerable.Where<int>(Enumerable.Range(0, class2.string_0.Length), func_0), new Func<int, byte>(class2.method_0)));
         }

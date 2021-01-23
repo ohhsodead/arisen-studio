@@ -362,7 +362,6 @@ namespace ModioX.Forms.Windows
             // 
             this.ContextMenuModsAddToList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuModsAddToList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuModsAddToList.Image = global::ModioX.Properties.Resources.add_list;
             this.ContextMenuModsAddToList.Name = "ContextMenuModsAddToList";
             this.ContextMenuModsAddToList.Size = new System.Drawing.Size(184, 26);
             this.ContextMenuModsAddToList.Text = "Add to List...";
@@ -372,7 +371,6 @@ namespace ModioX.Forms.Windows
             // 
             this.ContextMenuModsRemoveFromList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuModsRemoveFromList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuModsRemoveFromList.Image = global::ModioX.Properties.Resources.delete_list;
             this.ContextMenuModsRemoveFromList.Name = "ContextMenuModsRemoveFromList";
             this.ContextMenuModsRemoveFromList.Size = new System.Drawing.Size(184, 26);
             this.ContextMenuModsRemoveFromList.Text = "Remove from List...";
@@ -390,7 +388,6 @@ namespace ModioX.Forms.Windows
             // 
             this.ContextMenuModsReportOnGitHub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ContextMenuModsReportOnGitHub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuModsReportOnGitHub.Image = global::ModioX.Properties.Resources.bug;
             this.ContextMenuModsReportOnGitHub.Name = "ContextMenuModsReportOnGitHub";
             this.ContextMenuModsReportOnGitHub.Size = new System.Drawing.Size(184, 26);
             this.ContextMenuModsReportOnGitHub.Text = "Report an Issue";
@@ -1251,7 +1248,6 @@ namespace ModioX.Forms.Windows
             // 
             this.barButtonItem12.Caption = "Avatar Editor...";
             this.barButtonItem12.Id = 81;
-            this.barButtonItem12.ImageOptions.LargeImage = global::ModioX.Properties.Resources.avatar;
             this.barButtonItem12.ItemInMenuAppearance.Hovered.Options.UseImage = true;
             this.barButtonItem12.Name = "barButtonItem12";
             this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AvatarEditor_ItemClick);
@@ -1260,7 +1256,6 @@ namespace ModioX.Forms.Windows
             // 
             this.barButtonItem13.Caption = "Xbox Home..";
             this.barButtonItem13.Id = 82;
-            this.barButtonItem13.ImageOptions.LargeImage = global::ModioX.Properties.Resources.Xbox_Logo;
             this.barButtonItem13.Name = "barButtonItem13";
             // 
             // OpenCloseTray
@@ -2590,7 +2585,6 @@ namespace ModioX.Forms.Windows
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("MainWindow.IconOptions.Icon")));
-            this.IconOptions.Image = global::ModioX.Properties.Resources.app_logo;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(1586, 853);
             this.Name = "MainWindow";

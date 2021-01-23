@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Forms.Tools.XBOX_Tools
 {
-    partial class Form1
+    partial class AvatarItemDownloader
     {
         /// <summary>
         /// Required designer variable.
