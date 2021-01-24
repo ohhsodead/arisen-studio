@@ -125,6 +125,7 @@ namespace ModioX.Forms.Windows
             this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
             this.XboxFileManager = new DevExpress.XtraBars.BarButtonItem();
+            this.iniEditorButton = new DevExpress.XtraBars.BarButtonItem();
             this.MenuBarItemApplications = new DevExpress.XtraBars.BarButtonItem();
             this.ApplicationsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.MenuBarItemOptions = new DevExpress.XtraBars.BarButtonItem();
@@ -904,9 +905,10 @@ namespace ModioX.Forms.Windows
             this.barSubItem7,
             this.barButtonItem1,
             this.XNotifySend,
-            this.ProfileIDInfo});
+            this.ProfileIDInfo,
+            this.iniEditorButton});
             this.MainMenu.MainMenu = this.BarMenu;
-            this.MainMenu.MaxItemId = 100;
+            this.MainMenu.MaxItemId = 101;
             this.MainMenu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.XNotifyText,
             this.XNotifyType});
@@ -1005,7 +1007,8 @@ namespace ModioX.Forms.Windows
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPackageManager),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonWebManControls, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.XBDMMenu, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.XboxFileManager)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.XboxFileManager),
+            new DevExpress.XtraBars.LinkPersistInfo(this.iniEditorButton)});
             this.ToolsMenu.Manager = this.MainMenu;
             this.ToolsMenu.Name = "ToolsMenu";
             // 
@@ -1295,6 +1298,14 @@ namespace ModioX.Forms.Windows
             this.XboxFileManager.Id = 65;
             this.XboxFileManager.Name = "XboxFileManager";
             this.XboxFileManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XboxFileManager_ItemClick);
+            // 
+            // iniEditorButton
+            // 
+            this.iniEditorButton.Caption = "Plugin Manager";
+            this.iniEditorButton.Enabled = false;
+            this.iniEditorButton.Id = 100;
+            this.iniEditorButton.Name = "iniEditorButton";
+            this.iniEditorButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iniEditorButton_ItemClick);
             // 
             // MenuBarItemApplications
             // 
@@ -2857,5 +2868,6 @@ namespace ModioX.Forms.Windows
         private BarListItem barListItem1;
         private BarButtonItem barButtonItem1;
         private BarButtonItem ProfileIDInfo;
+        private BarButtonItem iniEditorButton;
     }
 }

@@ -363,6 +363,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Resources\avatar.png" />
     <None Include="Resources\avatar120pp.png" />
     <None Include="Resources\1200px-Xbox_Controller.svg.png" />

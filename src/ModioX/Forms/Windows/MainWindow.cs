@@ -2110,6 +2110,7 @@ namespace ModioX.Forms.Windows
             ButtonFileManager.Enabled = IsConsoleConnected;
             ButtonWebManControls.Enabled = IsConsoleConnected && IsWebManInstalled;
             ButtonModInstall.Enabled = IsConsoleConnected;
+            iniEditorButton.Enabled = IsConsoleConnected;
             ContextMenuModsInstallFiles.Enabled = IsConsoleConnected;
 
             if (ButtonModUninstall.Enabled)
@@ -2395,6 +2396,11 @@ namespace ModioX.Forms.Windows
         private void GridControlMods_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void iniEditorButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowIniEditorXbox(this);
         }
     }
 }
