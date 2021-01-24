@@ -85,13 +85,16 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
             var button = (Button)sender;
 
-            if (FocusedButton != button)
+            if (FocusedButton == button)
+            {
+                button.BackColor = Color.FromArgb(108, 165, 14);//green
+                button.ForeColor = Color.White;
+            }
+            else
             {
                 button.BackColor = Color.FromArgb(212, 220, 220);//white
                 button.ForeColor = Color.Black;
             }
-
-            FocusedButton = null;
         }
 
         private void ResetButtons()
