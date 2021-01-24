@@ -16,6 +16,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         public XMessageboxUI(string title = "", string body = "", ButtonOptions options = ButtonOptions.YesNo)
         {
             InitializeComponent();
+
             LabelTitle.Text = title;
             LabelBody.Text = body;
 
