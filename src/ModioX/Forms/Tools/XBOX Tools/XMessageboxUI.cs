@@ -27,7 +27,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 ButtonYes.Visible = false;
                 ButtonNo.Visible = true;
                 ButtonNo.Text = "OK";
-
+                ButtonNo.DialogResult = DialogResult.OK;
             }
             else if (options == ButtonOptions.YesNo)
             {
