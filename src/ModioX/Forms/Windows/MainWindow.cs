@@ -2427,5 +2427,11 @@ namespace ModioX.Forms.Windows
                 XtraMessageBox.Show("cancel was clicked");
             }
         }
+
+        private void barButtonItem4_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            var a = new CheatEngine();
+            a.ShowDialog(this);
+        }
     }
 }

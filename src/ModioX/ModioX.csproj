@@ -164,6 +164,12 @@
     <Compile Include="Forms\Tools\XBOX Tools\AvatarItemDownloader.Designer.cs">
       <DependentUpon>AvatarItemDownloader.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Tools\XBOX Tools\CheatEngine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tools\XBOX Tools\CheatEngine.Designer.cs">
+      <DependentUpon>CheatEngine.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\FileManagerWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\AvatarItemDownloader.resx">
       <DependentUpon>AvatarItemDownloader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tools\XBOX Tools\CheatEngine.resx">
+      <DependentUpon>CheatEngine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\FileManagerWindow.resx">
       <DependentUpon>FileManagerWindow.cs</DependentUpon>
