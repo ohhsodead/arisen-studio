@@ -1,5 +1,4 @@
 ﻿using DevExpress.Skins;
-using DevExpress.Utils;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DevExpress.XtraNavBar;
@@ -50,7 +49,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// A Security Feature To Prevent Malicious Attempts To Harm Our Application Name Or Brand
         /// </summary>
-        private static string CurrentMD5 { get;  set; }
+        private static string CurrentMD5 { get; set; }
 
         /// <summary>
         /// Contains the users settings Database.
@@ -545,7 +544,7 @@ namespace ModioX.Forms.Windows
             Application.Exit();
         }
 
-#endregion
+        #endregion
 
         #region Search & Filtering Mods Functions
 
@@ -632,7 +631,7 @@ namespace ModioX.Forms.Windows
                 IsCustomListSelected);
         }
 
-#endregion
+        #endregion
 
         #region NEED OLD CONTEXT MENU FUNCTIONS TO MOVE TO NEW POPUP MENU FOR GRID VIEW MODS
 
@@ -685,7 +684,7 @@ namespace ModioX.Forms.Windows
             ButtonModInstall.PerformClick();
         }
 
-#endregion
+        #endregion
 
         #region STILL NEED 
 
@@ -1217,6 +1216,11 @@ namespace ModioX.Forms.Windows
 
         #region Installed Mods/Plugins
 
+        private void GridControlGameModsInstalled_BackColorChanged(object sender, EventArgs e)
+        {
+            ProgressModsInstalled.BackColor = GridControlGameModsInstalled.BackColor;
+        }
+
         /// <summary>
         /// Load all of the currently installed game mods
         /// </summary>
@@ -1302,7 +1306,7 @@ namespace ModioX.Forms.Windows
             }
         }
 
-#endregion
+        #endregion
 
         #region Load Mods Information to Right-Side Panel Function
 
@@ -1388,7 +1392,7 @@ namespace ModioX.Forms.Windows
             UpdateScrollBars();
         }
 
-#endregion
+        #endregion
 
         #region Install, Uninstall, Download & Favorite Functions
 
@@ -2096,19 +2100,31 @@ namespace ModioX.Forms.Windows
             ButtonModFavorite.Caption = Settings.FavoritedIds.Contains(modItem.Id) ? "Unfavorite" : "Favorite";
         }
 
-#endregion
+        #endregion
 
         /// <summary>
         /// Enable or disable console-only actions.
         /// </summary>
         private void EnableConsoleActions()
         {
-            
-            XBDMMenu.Enabled = IsConsoleConnected;
-            XboxFileManager.Enabled = IsConsoleConnected;
-            ButtonPackageManager.Enabled = IsConsoleConnected;
-            ButtonFileManager.Enabled = IsConsoleConnected;
-            ButtonWebManControls.Enabled = IsConsoleConnected && IsWebManInstalled;
+            // PS3 Features
+            ButtonPS3PackageManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
+            ButtonPS3PackageManager.Visibility = ButtonPS3PackageManager.Enabled ? BarItemVisibility.Always : BarItemVisibility.Never;
+
+            ButtonPS3FileManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
+            ButtonPS3FileManager.Visibility = ButtonPS3FileManager.Enabled ? BarItemVisibility.Always : BarItemVisibility.Never;
+
+            ButtonPS3WebManControls.Enabled = IsConsoleConnected && IsWebManInstalled && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
+            ButtonPS3WebManControls.Visibility = ButtonPS3WebManControls.Enabled ? BarItemVisibility.Always : BarItemVisibility.Never;
+
+            // Xbox Features
+            //ButtonXboxXBDMMenu.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
+            //ButtonXboxXBDMMenu.Visibility = ButtonXboxXBDMMenu.Enabled ? BarItemVisibility.Always : BarItemVisibility.Never;
+
+            //ButtonXboxFileManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
+            //ButtonXboxFileManager.Visibility = ButtonXboxFileManager.Enabled ? BarItemVisibility.Always : BarItemVisibility.Never;
+
+            // Install & Uninstall Features
             ButtonModInstall.Enabled = IsConsoleConnected;
             ContextMenuModsInstallFiles.Enabled = IsConsoleConnected;
 
@@ -2140,7 +2156,6 @@ namespace ModioX.Forms.Windows
         public void SetStatus(string status, Exception ex = null)
         {
             LabelStatus.Caption = status;
-            //Refresh();
 
             switch (ex)
             {
@@ -2180,9 +2195,11 @@ namespace ModioX.Forms.Windows
                         new ConsoleProfile
                         {
                             Name = "Default Console",
+                            Type = Models.Resources.ConsoleType.PlayStation3Fat,
+                            TypePrefix = ConsoleTypePrefix.PS3,
                             Address = "192.168.0.42",
                             Port = 21,
-                            Username = "anonymous",
+                            Username = string.Empty,
                             Password = string.Empty,
                             UseDefaultCredentials = true
                         });
@@ -2275,27 +2292,27 @@ namespace ModioX.Forms.Windows
             DialogExtensions.ShowFileManagerXbox(this);
         }
 
-        private void XBDMShutdown_ItemClick(object sender, ItemClickEventArgs e)
+        private void XboxXBDMShutdown_ItemClick(object sender, ItemClickEventArgs e)
         {
             XboxConsole.ShutDown();
         }
 
-        private void XBDMReboot_ItemClick(object sender, ItemClickEventArgs e)
+        private void XboxXBDMReboot_ItemClick(object sender, ItemClickEventArgs e)
         {
             XboxConsole.Reboot(string.Empty, string.Empty, string.Empty, XboxRebootFlags.Title);
         }
 
-        private void XBDMSoftReboot_ItemClick(object sender, ItemClickEventArgs e)
+        private void XboxXBDMSoftReboot_ItemClick(object sender, ItemClickEventArgs e)
         {
             XboxConsole.Reboot(XboxReboot.Cold);
         }
 
-        private void XBDMHardReboot_ItemClick(object sender, ItemClickEventArgs e)
+        private void XboxXBDMHardReboot_ItemClick(object sender, ItemClickEventArgs e)
         {
             XboxConsole.Reboot(XboxReboot.Warm);
         }
 
-        private void XBDM_XMessageboxUI_ItemClick(object sender, ItemClickEventArgs e)
+        private void XboxXBDM_XMessageboxUI_ItemClick(object sender, ItemClickEventArgs e)
         {
             var XMessageBoxUI = new XMessageboxUI("Some Title", "Some Body Text To Go Here\n\nNew Line\n\nAnother New Line", XMessageboxUI.ButtonOptions.YesNoCancel);
             var dialogResult = XMessageBoxUI.ShowDialog(this);
@@ -2329,22 +2346,19 @@ namespace ModioX.Forms.Windows
         /// <returns></returns>
         private static string ComputeHash(string s)
         {
-            using (var md5 = System.Security.Cryptography.MD5.Create())
+            using var md5 = System.Security.Cryptography.MD5.Create();
+            using var stream = File.OpenRead(s);
+            byte[] hash = md5.ComputeHash(stream);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
             {
-                using (var stream = File.OpenRead(s))
-                {
-                    byte[] hash = md5.ComputeHash(stream);
-                    StringBuilder sb = new StringBuilder();
-                    for (int i = 0; i < hash.Length; i++)
-                    {
-                        sb.Append(hash[i].ToString("X2"));
-                    }
-
-                    return sb.ToString();
-                }
+                sb.Append(hash[i].ToString("X2"));
             }
+
+            return sb.ToString();
         }
-        private void AvatarEditor_ItemClick(object sender, ItemClickEventArgs e)
+
+        private void XboxAvatarEditor_ItemClick(object sender, ItemClickEventArgs e)
         {
             XboxConsole.XboxShortcut(XboxShortcuts.AvatarEditor);
         }
@@ -2354,22 +2368,17 @@ namespace ModioX.Forms.Windows
 
         }
 
-        private void QuickSignin_ItemClick(object sender, ItemClickEventArgs e)
+        private void XboxQuickSignIn_ItemClick(object sender, ItemClickEventArgs e)
         {
             XboxConsole.QuickSignIn();
         }
 
-        private void ShowTemperature_ItemClick(object sender, ItemClickEventArgs e)
+        private void XboxShowTemperature_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogExtensions.ShowCustomXboxDialog(this, "Console Temperature", "CPU: " + XboxConsole.CPUTEMP() + "\nGPU: " + XboxConsole.GPUTEMP() +"\nRAMTEMP: " + XboxConsole.RAMTEMP() + "\nMOBO: " + XboxConsole.MOBOTEMP(), XMessageboxUI.ButtonOptions.Ok);
+            DialogExtensions.ShowCustomXboxDialog(this, "Console Temperature", "CPU: " + XboxConsole.CPUTEMP() + "\nGPU: " + XboxConsole.GPUTEMP() + "\nRAMTEMP: " + XboxConsole.RAMTEMP() + "\nMOBO: " + XboxConsole.MOBOTEMP(), XMessageboxUI.ButtonOptions.Ok);
         }
 
-        private void GridControlGameModsInstalled_BackColorChanged(object sender, EventArgs e)
-        {
-            ProgressModsInstalled.BackColor = GridControlGameModsInstalled.BackColor;
-        }
-
-        private void OpenCloseTray_ItemClick(object sender, ItemClickEventArgs e)
+        private void XboxOpenCloseTray_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (XboxConsole.IsTrayOpen)
             {
@@ -2381,20 +2390,15 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        private void XNotifySend_ItemClick(object sender, ItemClickEventArgs e)
+        private void XboxNotifySend_ItemClick(object sender, ItemClickEventArgs e)
         {
 
 
         }
 
-        private void ProfileIDInfo_ItemClick(object sender, ItemClickEventArgs e)
+        private void XboxProfileIDInfo_ItemClick(object sender, ItemClickEventArgs e)
         {
             XtraMessageBox.Show(XboxConsole.ProfileID());
-        }
-
-        private void GridControlMods_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

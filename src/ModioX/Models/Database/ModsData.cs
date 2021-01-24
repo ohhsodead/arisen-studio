@@ -52,7 +52,7 @@ namespace ModioX.Models.Database
                 {
                     foreach (string firmware in modItem.Firmware.Split('/'))
                     {
-                        if (!firmwares.Contains(modItem.Firmware))
+                        if (!firmwares.Equals("-"))
                         {
                             firmwares.Add(firmware);
                         }
@@ -60,7 +60,7 @@ namespace ModioX.Models.Database
                 }
 
                 firmwares.Sort();
-                return firmwares;
+                return firmwares.Distinct().ToList();
             }
         }
 
@@ -111,13 +111,13 @@ namespace ModioX.Models.Database
         }
 
         /// <summary>
-        /// Get the <see cref="ModItem"/> matching the specified <see cref="ModItem.Id"/>
+        /// Get the <see cref="ModItem"/> matching the specified <see cref="ModItem.Id"/>.
         /// </summary>
         /// <param name="modId"><see cref="ModItem.Id"/></param>
         /// <returns>Mod details for the <see cref="ModItem.Id"/></returns>
-        public ModItem GetModById(int modId)
+        public ModItem GetModById(int id)
         {
-            return Mods.FirstOrDefault(modItem => modItem.Id.Equals(modId));
+            return Mods.FirstOrDefault(modItem => modItem.Id.Equals(id));
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace ModioX.Models.Database
         }
 
         /// <summary>
-        /// Get the total number of game mods
+        /// Get the total number of game mods.
         /// </summary>
         /// <returns></returns>
         public int TotalGameMods(CategoriesData categoriesData)
@@ -146,7 +146,7 @@ namespace ModioX.Models.Database
         }
 
         /// <summary>
-        /// Get the total number of resources.
+        /// Get the total number of homebrew applications.
         /// </summary>
         /// <returns></returns>
         public int TotalHomebrew(CategoriesData categoriesData)

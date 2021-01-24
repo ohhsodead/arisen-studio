@@ -553,6 +553,8 @@ namespace ModioX.Models.Resources
     /// </summary>
     public class CustomList
     {
+        public ConsoleTypePrefix ConsoleType { get; set; } = ConsoleTypePrefix.PS3;
+
         public string Name { get; set; }
 
         public List<int> ModIds { get; set; } = new List<int>();
