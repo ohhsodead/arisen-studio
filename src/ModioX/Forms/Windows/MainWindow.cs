@@ -186,6 +186,7 @@ namespace ModioX.Forms.Windows
         private void MainWindow_StyleChanged(object sender, EventArgs e)
         {
             SkinColors = CommonSkins.GetSkin(LookAndFeel).Colors;
+            Settings.SkinName = CommonSkins.GetSkin(LookAndFeel).Name;
             UpdateControlColors();
         }
 
