@@ -114,7 +114,11 @@ namespace ModioX.Extensions
             using var fileManagerWindow = new Forms.Tools.XBOX_Tools.FileManagerWindow();
             fileManagerWindow.ShowDialog(owner);
         }
-
+        public static void ShowIniEditorXbox(Form owner)
+        {
+            using var iniEditorWindow = new iniEditor();
+            iniEditorWindow.ShowDialog(owner);
+        }
         #endregion
 
         public static void ShowSettingsWindow(Form owner)

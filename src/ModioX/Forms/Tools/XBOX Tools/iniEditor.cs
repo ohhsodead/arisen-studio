@@ -1,14 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ModioX;
 using XDevkit;
 using IniParser;
 using IniParser.Model;
@@ -20,7 +12,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
     public partial class iniEditor : XtraForm
     {
         /// <summary>
-        /// Creates an FTP connection for use with uploading mods, not reliable for uploading files.
+        /// Creates an TCP connection for use with uploading mods, uploading files.
         /// </summary>
         public static Xbox XboxConsole { get; } = MainWindow.XboxConsole;
 
