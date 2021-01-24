@@ -11,6 +11,8 @@ namespace ModioX.Models.Resources
 {
     public class SettingsData
     {
+        public string SkinName { get; set; } = "Office 2019 Black";
+
         public bool FirstTimeUse { get; set; } = true;
 
         public bool FirstTimeOpenAfterUpdate { get; set; } = true;
