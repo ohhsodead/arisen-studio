@@ -67,7 +67,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // checkEdit2
             // 
-            this.checkEdit2.Location = new System.Drawing.Point(254, 5);
+            this.checkEdit2.Location = new System.Drawing.Point(254, 4);
             this.checkEdit2.Name = "checkEdit2";
             this.checkEdit2.Properties.Caption = "Close At Launch";
             this.checkEdit2.Size = new System.Drawing.Size(104, 19);
@@ -77,7 +77,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 454);
+            this.ClientSize = new System.Drawing.Size(366, 466);
             this.Controls.Add(this.textEdit3);
             this.Controls.Add(this.checkEdit2);
             this.Controls.Add(this.simpleButton2);

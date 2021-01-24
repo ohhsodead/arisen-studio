@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Be.Windows.Forms;
+using DevExpress.XtraEditors;
+using ModioX.Forms.Windows;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using Be.Windows.Forms;
-using XDevkit;
 using System.IO;
-using ModioX.Forms.Windows;
+using System.Windows.Forms;
+using XDevkit;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
@@ -18,7 +18,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         /// Creates an TCP connection for use with uploading mods, uploading files.
         /// </summary>
         public static Xbox XboxConsole { get; } = MainWindow.XboxConsole;
-        private bool button1WasClicked = false;
+        private readonly bool button1WasClicked = false;
         private byte[] _old;
 
         #endregion variables
@@ -138,7 +138,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         }
 
 
-        
+
 
         private void NewPeek()
         {
@@ -511,8 +511,10 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             {
                 try
                 {
-                    SaveFileDialog sfd = new SaveFileDialog();
-                    sfd.Filter = "Text File|*.txt";
+                    SaveFileDialog sfd = new SaveFileDialog
+                    {
+                        Filter = "Text File|*.txt"
+                    };
                     if (sfd.ShowDialog() == DialogResult.OK)
                     {
                         //disable here

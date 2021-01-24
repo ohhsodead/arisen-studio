@@ -1,11 +1,11 @@
 ﻿using DevExpress.XtraEditors;
-using System;
-using System.Drawing;
-using XDevkit;
 using IniParser;
 using IniParser.Model;
 using ModioX.Forms.Windows;
+using System;
+using System.Drawing;
 using System.IO;
+using XDevkit;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
@@ -182,7 +182,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void ListUserClick(object sender, EventArgs e)
         {
-            if(Bool_3)
+            if (Bool_3)
             {
                 INITextbox.Text = List.Items[List.SelectedIndex].ToString();
 

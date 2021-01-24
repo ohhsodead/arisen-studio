@@ -36,7 +36,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             {
                 var fileSize = new FileInfo(backupFile.LocalPath).Length;
 
-                dt.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId).Title, 
+                dt.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId).Title,
                     backupFile.FileName,
                     File.Exists(backupFile.LocalPath)
                     ? (MainWindow.Settings.ShowFileSizeInBytes ? fileSize.ToString("#,0") + " bytes" : StringExtensions.FormatSize(fileSize.ToString()))

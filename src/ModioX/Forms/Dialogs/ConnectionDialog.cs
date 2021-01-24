@@ -134,7 +134,7 @@ namespace ModioX.Forms.Dialogs
             var oldConsoleProfile = MainWindow.Settings.ConsoleProfiles[selectedIndex];
 
             var newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
-            
+
             if (newConsoleProfile != null) oldConsoleProfile = newConsoleProfile;
 
             LoadConsoles();
