@@ -61,6 +61,9 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Be.Windows.Forms.HexBox">
+      <HintPath>..\References\Be.Windows.Forms.HexBox.dll</HintPath>
+    </Reference>
     <Reference Include="DarkUI">
       <HintPath>..\References\DarkUI.dll</HintPath>
     </Reference>

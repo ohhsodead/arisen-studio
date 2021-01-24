@@ -259,7 +259,6 @@ namespace ModioX.Forms.Windows
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.HeaderLabelModsInstalled = new DevExpress.XtraBars.BarHeaderItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ButtonConnectXbox = new DevExpress.XtraBars.BarButtonItem();
             this.ContextMenuMods.SuspendLayout();
             this.FlowPanelDetails.SuspendLayout();
@@ -905,10 +904,9 @@ namespace ModioX.Forms.Windows
             this.barSubItem7,
             this.barButtonItem1,
             this.XNotifySend,
-            this.ProfileIDInfo,
-            this.barButtonItem4});
+            this.ProfileIDInfo});
             this.MainMenu.MainMenu = this.BarMenu;
-            this.MainMenu.MaxItemId = 101;
+            this.MainMenu.MaxItemId = 100;
             this.MainMenu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.XNotifyText,
             this.XNotifyType});
@@ -947,8 +945,7 @@ namespace ModioX.Forms.Windows
             // 
             this.ConnectMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXbox360),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXbox360)});
             this.ConnectMenu.Manager = this.MainMenu;
             this.ConnectMenu.Name = "ConnectMenu";
             // 
@@ -2557,13 +2554,6 @@ namespace ModioX.Forms.Windows
             this.HeaderLabelModsInstalled.Id = 0;
             this.HeaderLabelModsInstalled.Name = "HeaderLabelModsInstalled";
             // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "barButtonItem4";
-            this.barButtonItem4.Id = 100;
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
-            // 
             // MainWindow
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
@@ -2865,6 +2855,5 @@ namespace ModioX.Forms.Windows
         private BarListItem barListItem1;
         private BarButtonItem barButtonItem1;
         private BarButtonItem ProfileIDInfo;
-        private BarButtonItem barButtonItem4;
     }
 }
