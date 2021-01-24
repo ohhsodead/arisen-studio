@@ -185,12 +185,15 @@
             this.ButtonNo.Name = "ButtonNo";
             this.ButtonNo.Size = new System.Drawing.Size(680, 51);
             this.ButtonNo.TabIndex = 16;
+            this.ButtonNo.TabStop = false;
             this.ButtonNo.Text = "     No";
             this.ButtonNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonNo.UseVisualStyleBackColor = false;
             this.ButtonNo.Visible = false;
+            this.ButtonNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Button_KeyDown);
             this.ButtonNo.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
             this.ButtonNo.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            this.ButtonNo.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Button_PreviewKeyDown);
             // 
             // ButtonYes
             // 
@@ -206,12 +209,15 @@
             this.ButtonYes.Name = "ButtonYes";
             this.ButtonYes.Size = new System.Drawing.Size(680, 51);
             this.ButtonYes.TabIndex = 20;
+            this.ButtonYes.TabStop = false;
             this.ButtonYes.Text = "     Yes";
             this.ButtonYes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonYes.UseVisualStyleBackColor = false;
             this.ButtonYes.Visible = false;
+            this.ButtonYes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Button_KeyDown);
             this.ButtonYes.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
             this.ButtonYes.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            this.ButtonYes.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Button_PreviewKeyDown);
             // 
             // ButtonExtra
             // 
@@ -227,19 +233,22 @@
             this.ButtonExtra.Name = "ButtonExtra";
             this.ButtonExtra.Size = new System.Drawing.Size(680, 51);
             this.ButtonExtra.TabIndex = 21;
+            this.ButtonExtra.TabStop = false;
             this.ButtonExtra.Text = "     Abort";
             this.ButtonExtra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonExtra.UseVisualStyleBackColor = false;
             this.ButtonExtra.Visible = false;
+            this.ButtonExtra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Button_KeyDown);
             this.ButtonExtra.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
             this.ButtonExtra.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            this.ButtonExtra.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Button_PreviewKeyDown);
             // 
             // LabelBody
             // 
             this.LabelBody.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelBody.Appearance.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelBody.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelBody.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(100)))), ((int)(((byte)(101)))));
             this.LabelBody.Appearance.Options.UseFont = true;
             this.LabelBody.Appearance.Options.UseForeColor = true;

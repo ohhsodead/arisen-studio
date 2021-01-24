@@ -58,50 +58,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             Ok
         }
 
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == Keys.B | keyData == Keys.Escape)
-            {
-                Close();
-            }
-            else if (keyData == Keys.Enter | keyData == Keys.A)
-            {
-                FocusedButton.PerformClick();
-            }
-            else if (keyData == Keys.Up)
-            {
-                if (FocusedButton == ButtonNo)
-                {
-                    DoMouseHover(ButtonYes);
-                }
-                else if (FocusedButton == ButtonYes)
-                {
-                    DoMouseHover(ButtonExtra);
-                }
-                else if (FocusedButton == ButtonExtra)
-                {
-                    DoMouseHover(ButtonExtra);
-                }
-            }
-            else if (keyData == Keys.Down)
-            {
-                if (FocusedButton == ButtonExtra)
-                {
-                    DoMouseHover(ButtonYes);
-                }
-                else if (FocusedButton == ButtonYes)
-                {
-                    DoMouseHover(ButtonNo);
-                }
-                else if (FocusedButton == ButtonNo)
-                {
-                    DoMouseHover(ButtonNo);
-                }
-            }
-
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
-
         private void DoMouseHover(Button button)
         {
             ResetButtons();
@@ -147,6 +103,64 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             ButtonNo.ForeColor = Color.Black;
             ButtonYes.BackColor = Color.FromArgb(212, 220, 220);//white
             ButtonYes.ForeColor = Color.Black;
+        }
+
+        private void Button_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = true;
+            e.SuppressKeyPress = true;
+        }
+
+        private void Button_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.IsInputKey = true;
+            }
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.B | keyData == Keys.Escape)
+            {
+                Close();
+            }
+            else if (keyData == Keys.A | keyData == Keys.Enter)
+            {
+                FocusedButton.PerformClick();
+            }
+            else if (keyData == Keys.Up)
+            {
+                if (FocusedButton == ButtonNo)
+                {
+                    DoMouseHover(ButtonYes);
+                }
+                else if (FocusedButton == ButtonYes)
+                {
+                    DoMouseHover(ButtonExtra);
+                }
+                else if (FocusedButton == ButtonExtra)
+                {
+                    DoMouseHover(ButtonExtra);
+                }
+            }
+            else if (keyData == Keys.Down)
+            {
+                if (FocusedButton == ButtonExtra)
+                {
+                    DoMouseHover(ButtonYes);
+                }
+                else if (FocusedButton == ButtonYes)
+                {
+                    DoMouseHover(ButtonNo);
+                }
+                else if (FocusedButton == ButtonNo)
+                {
+                    DoMouseHover(ButtonNo);
+                }
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
