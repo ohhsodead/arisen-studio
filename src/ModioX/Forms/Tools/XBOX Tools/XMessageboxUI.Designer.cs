@@ -283,6 +283,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Xbox Messagebox UI";
+            this.TransparencyKey = System.Drawing.SystemColors.MenuBar;
             this.Load += new System.EventHandler(this.XMessageboxUI_Load);
             this.TopTitle.ResumeLayout(false);
             this.TopTitle.PerformLayout();

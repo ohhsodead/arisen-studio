@@ -19,8 +19,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             LabelTitle.Text = title;
             LabelBody.Text = body;
 
-            TransparencyKey = Color.FromName("MenuBar");
-
             if (options == ButtonOptions.Ok)
             {
                 ButtonExtra.Visible = false;
