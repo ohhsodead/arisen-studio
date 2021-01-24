@@ -107,7 +107,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Contains the Xbox console information.
         /// </summary>
-        public static Xbox XboxConsole;
+        public static Xbox XboxConsole = new Xbox();
 
         /// <summary>
         /// Contains the selected console type.
