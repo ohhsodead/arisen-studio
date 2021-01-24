@@ -1,4 +1,5 @@
-﻿using DevExpress.Skins;
+﻿using DevExpress.LookAndFeel;
+using DevExpress.Skins;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DevExpress.XtraNavBar;
@@ -124,7 +125,7 @@ namespace ModioX.Forms.Windows
         /// </summary>
         private async void MainWindow_Load(object sender, EventArgs e)
         {
-            DevExpress.LookAndFeel.UserLookAndFeel.Default.StyleChanged += MainWindow_StyleChanged;
+            UserLookAndFeel.Default.StyleChanged += MainWindow_StyleChanged;
 
             Text = $@"ModioX - {UpdateExtensions.CurrentVersionName}";
 
@@ -1258,7 +1259,7 @@ namespace ModioX.Forms.Windows
                 }
 
                 dt.Rows.Add(modInstalled.Id.ToString(),
-                    Extensions.EnumExtensions.GetDescription(installedMod.ConsoleType),
+                    EnumExtensions.GetDescription(installedMod.ConsoleType),
                     modCategory.Title,
                     installedMod.Region,
                     modInstalled.Name,
@@ -2188,6 +2189,9 @@ namespace ModioX.Forms.Windows
                 }
 
                 SetStatus("Successfully loaded settings data.");
+
+                UserLookAndFeel defaultLF = UserLookAndFeel.Default;
+                defaultLF.SkinName = Settings.SkinName;
 
                 if (Settings.ConsoleProfiles.Count < 1)
                 {
