@@ -61,6 +61,9 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Be.Windows.Forms.HexBox">
+      <HintPath>..\References\Be.Windows.Forms.HexBox.dll</HintPath>
+    </Reference>
     <Reference Include="DarkUI">
       <HintPath>..\References\DarkUI.dll</HintPath>
     </Reference>
@@ -178,6 +181,12 @@
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\iniEditor.Designer.cs">
       <DependentUpon>iniEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tools\XBOX Tools\MemoryViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tools\XBOX Tools\MemoryViewer.designer.cs">
+      <DependentUpon>MemoryViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\XMessageboxUI.cs">
       <SubType>Form</SubType>
@@ -330,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\iniEditor.resx">
       <DependentUpon>iniEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tools\XBOX Tools\MemoryViewer.resx">
+      <DependentUpon>MemoryViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\XMessageboxUI.resx">
       <DependentUpon>XMessageboxUI.cs</DependentUpon>

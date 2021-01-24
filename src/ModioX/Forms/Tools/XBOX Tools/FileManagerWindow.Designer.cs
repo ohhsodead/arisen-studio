@@ -209,7 +209,7 @@
             this.GridLocalFiles.MainView = this.GridViewLocalFiles;
             this.GridLocalFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 0);
             this.GridLocalFiles.Name = "GridLocalFiles";
-            this.GridLocalFiles.Size = new System.Drawing.Size(630, 418);
+            this.GridLocalFiles.Size = new System.Drawing.Size(623, 402);
             this.GridLocalFiles.TabIndex = 20;
             this.GridLocalFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewLocalFiles});
@@ -348,7 +348,7 @@
             this.GridConsoleFiles.MainView = this.GridViewConsoleFiles;
             this.GridConsoleFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 0);
             this.GridConsoleFiles.Name = "GridConsoleFiles";
-            this.GridConsoleFiles.Size = new System.Drawing.Size(630, 418);
+            this.GridConsoleFiles.Size = new System.Drawing.Size(623, 402);
             this.GridConsoleFiles.TabIndex = 24;
             this.GridConsoleFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewConsoleFiles});
@@ -418,7 +418,7 @@
             this.LayoutPanel.Name = "LayoutPanel";
             this.LayoutPanel.RowCount = 1;
             this.LayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.LayoutPanel.Size = new System.Drawing.Size(1314, 512);
+            this.LayoutPanel.Size = new System.Drawing.Size(1300, 496);
             this.LayoutPanel.TabIndex = 12;
             // 
             // groupControl2
@@ -429,9 +429,9 @@
             this.groupControl2.Controls.Add(this.ComboBoxConsoleDrives);
             this.groupControl2.Controls.Add(this.GridConsoleFiles);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(660, 3);
+            this.groupControl2.Location = new System.Drawing.Point(653, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(651, 506);
+            this.groupControl2.Size = new System.Drawing.Size(644, 490);
             this.groupControl2.TabIndex = 14;
             this.groupControl2.Text = "CONSOLE FILE EXPLORER";
             // 
@@ -439,10 +439,10 @@
             // 
             this.BarDockConsoleFiles.CausesValidation = false;
             this.BarDockConsoleFiles.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BarDockConsoleFiles.Location = new System.Drawing.Point(2, 481);
+            this.BarDockConsoleFiles.Location = new System.Drawing.Point(2, 465);
             this.BarDockConsoleFiles.Manager = this.barManager1;
             this.BarDockConsoleFiles.Name = "BarDockConsoleFiles";
-            this.BarDockConsoleFiles.Size = new System.Drawing.Size(647, 23);
+            this.BarDockConsoleFiles.Size = new System.Drawing.Size(640, 23);
             this.BarDockConsoleFiles.Text = "standaloneBarDockControl1";
             // 
             // barManager1
@@ -461,15 +461,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1340, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1326, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 540);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 521);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1340, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1326, 0);
             // 
             // barDockControlLeft
             // 
@@ -477,30 +477,30 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 540);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 521);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1340, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1326, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 540);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 521);
             // 
             // BarDockLocalFiles
             // 
             this.BarDockLocalFiles.CausesValidation = false;
             this.BarDockLocalFiles.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BarDockLocalFiles.Location = new System.Drawing.Point(2, 481);
+            this.BarDockLocalFiles.Location = new System.Drawing.Point(2, 465);
             this.BarDockLocalFiles.Manager = this.barManager1;
             this.BarDockLocalFiles.Name = "BarDockLocalFiles";
-            this.BarDockLocalFiles.Size = new System.Drawing.Size(647, 23);
+            this.BarDockLocalFiles.Size = new System.Drawing.Size(640, 23);
             this.BarDockLocalFiles.Text = "standaloneBarDockControl1";
             // 
             // ButtonConsoleNavigate
             // 
             this.ButtonConsoleNavigate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonConsoleNavigate.Location = new System.Drawing.Point(601, 32);
+            this.ButtonConsoleNavigate.Location = new System.Drawing.Point(594, 32);
             this.ButtonConsoleNavigate.Name = "ButtonConsoleNavigate";
             this.ButtonConsoleNavigate.Size = new System.Drawing.Size(40, 22);
             this.ButtonConsoleNavigate.TabIndex = 1173;
@@ -516,7 +516,7 @@
             this.TextBoxConsolePath.Properties.AllowFocused = false;
             this.TextBoxConsolePath.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxConsolePath.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxConsolePath.Size = new System.Drawing.Size(482, 22);
+            this.TextBoxConsolePath.Size = new System.Drawing.Size(475, 22);
             this.TextBoxConsolePath.TabIndex = 1171;
             // 
             // ComboBoxConsoleDrives
@@ -543,14 +543,14 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(651, 506);
+            this.groupControl1.Size = new System.Drawing.Size(644, 490);
             this.groupControl1.TabIndex = 13;
             this.groupControl1.Text = "LOCAL FILE EXPLORER";
             // 
             // ButtonBrowseLocalDirectory
             // 
             this.ButtonBrowseLocalDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonBrowseLocalDirectory.Location = new System.Drawing.Point(601, 32);
+            this.ButtonBrowseLocalDirectory.Location = new System.Drawing.Point(594, 32);
             this.ButtonBrowseLocalDirectory.Name = "ButtonBrowseLocalDirectory";
             this.ButtonBrowseLocalDirectory.Size = new System.Drawing.Size(40, 22);
             this.ButtonBrowseLocalDirectory.TabIndex = 1172;
@@ -580,7 +580,7 @@
             this.TextBoxLocalPath.Properties.AllowFocused = false;
             this.TextBoxLocalPath.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxLocalPath.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxLocalPath.Size = new System.Drawing.Size(536, 22);
+            this.TextBoxLocalPath.Size = new System.Drawing.Size(529, 22);
             this.TextBoxLocalPath.TabIndex = 1170;
             // 
             // WaitLoadConsole
@@ -663,15 +663,15 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager2;
-            this.barDockControl1.Size = new System.Drawing.Size(1340, 0);
+            this.barDockControl1.Size = new System.Drawing.Size(1326, 0);
             // 
             // barDockControl2
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 540);
+            this.barDockControl2.Location = new System.Drawing.Point(0, 521);
             this.barDockControl2.Manager = this.barManager2;
-            this.barDockControl2.Size = new System.Drawing.Size(1340, 0);
+            this.barDockControl2.Size = new System.Drawing.Size(1326, 0);
             // 
             // barDockControl3
             // 
@@ -679,15 +679,15 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(0, 540);
+            this.barDockControl3.Size = new System.Drawing.Size(0, 521);
             // 
             // barDockControl4
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(1340, 0);
+            this.barDockControl4.Location = new System.Drawing.Point(1326, 0);
             this.barDockControl4.Manager = this.barManager2;
-            this.barDockControl4.Size = new System.Drawing.Size(0, 540);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 521);
             // 
             // barManager3
             // 
@@ -756,15 +756,15 @@
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl5.Location = new System.Drawing.Point(0, 0);
             this.barDockControl5.Manager = this.barManager3;
-            this.barDockControl5.Size = new System.Drawing.Size(1340, 0);
+            this.barDockControl5.Size = new System.Drawing.Size(1326, 0);
             // 
             // barDockControl6
             // 
             this.barDockControl6.CausesValidation = false;
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl6.Location = new System.Drawing.Point(0, 540);
+            this.barDockControl6.Location = new System.Drawing.Point(0, 521);
             this.barDockControl6.Manager = this.barManager3;
-            this.barDockControl6.Size = new System.Drawing.Size(1340, 0);
+            this.barDockControl6.Size = new System.Drawing.Size(1326, 0);
             // 
             // barDockControl7
             // 
@@ -772,15 +772,15 @@
             this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl7.Location = new System.Drawing.Point(0, 0);
             this.barDockControl7.Manager = this.barManager3;
-            this.barDockControl7.Size = new System.Drawing.Size(0, 540);
+            this.barDockControl7.Size = new System.Drawing.Size(0, 521);
             // 
             // barDockControl8
             // 
             this.barDockControl8.CausesValidation = false;
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl8.Location = new System.Drawing.Point(1340, 0);
+            this.barDockControl8.Location = new System.Drawing.Point(1326, 0);
             this.barDockControl8.Manager = this.barManager3;
-            this.barDockControl8.Size = new System.Drawing.Size(0, 540);
+            this.barDockControl8.Size = new System.Drawing.Size(0, 521);
             // 
             // barManager4
             // 
@@ -835,15 +835,15 @@
             this.barDockControl9.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl9.Location = new System.Drawing.Point(0, 0);
             this.barDockControl9.Manager = this.barManager4;
-            this.barDockControl9.Size = new System.Drawing.Size(1340, 0);
+            this.barDockControl9.Size = new System.Drawing.Size(1326, 0);
             // 
             // barDockControl10
             // 
             this.barDockControl10.CausesValidation = false;
             this.barDockControl10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl10.Location = new System.Drawing.Point(0, 540);
+            this.barDockControl10.Location = new System.Drawing.Point(0, 521);
             this.barDockControl10.Manager = this.barManager4;
-            this.barDockControl10.Size = new System.Drawing.Size(1340, 25);
+            this.barDockControl10.Size = new System.Drawing.Size(1326, 28);
             // 
             // barDockControl11
             // 
@@ -851,15 +851,15 @@
             this.barDockControl11.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl11.Location = new System.Drawing.Point(0, 0);
             this.barDockControl11.Manager = this.barManager4;
-            this.barDockControl11.Size = new System.Drawing.Size(0, 540);
+            this.barDockControl11.Size = new System.Drawing.Size(0, 521);
             // 
             // barDockControl12
             // 
             this.barDockControl12.CausesValidation = false;
             this.barDockControl12.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl12.Location = new System.Drawing.Point(1340, 0);
+            this.barDockControl12.Location = new System.Drawing.Point(1326, 0);
             this.barDockControl12.Manager = this.barManager4;
-            this.barDockControl12.Size = new System.Drawing.Size(0, 540);
+            this.barDockControl12.Size = new System.Drawing.Size(0, 521);
             // 
             // LabelHeaderStatus
             // 
@@ -875,7 +875,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1340, 565);
+            this.ClientSize = new System.Drawing.Size(1326, 549);
             this.Controls.Add(this.LayoutPanel);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

@@ -36,12 +36,12 @@
             this.ColumnGameRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.ProgressCustomLists = new DevExpress.XtraWaitForm.ProgressPanel();
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
             this.ButtonCreateNewList = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonRenameList = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonDeleteList = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonDeleteAllLists = new DevExpress.XtraEditors.SimpleButton();
-            this.ProgressCustomLists = new DevExpress.XtraWaitForm.ProgressPanel();
             ((System.ComponentModel.ISupportInitialize)(this.GridCustomLists)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewCustomLists)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -53,11 +53,11 @@
             // GridCustomLists
             // 
             this.GridCustomLists.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridCustomLists.Location = new System.Drawing.Point(2, 23);
+            this.GridCustomLists.Location = new System.Drawing.Point(2, 21);
             this.GridCustomLists.MainView = this.GridViewCustomLists;
             this.GridCustomLists.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.GridCustomLists.Name = "GridCustomLists";
-            this.GridCustomLists.Size = new System.Drawing.Size(403, 228);
+            this.GridCustomLists.Size = new System.Drawing.Size(403, 230);
             this.GridCustomLists.TabIndex = 0;
             this.GridCustomLists.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewCustomLists});
@@ -112,6 +112,24 @@
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "YOUR LISTS";
             // 
+            // ProgressCustomLists
+            // 
+            this.ProgressCustomLists.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ProgressCustomLists.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ProgressCustomLists.Appearance.Options.UseBackColor = true;
+            this.ProgressCustomLists.AppearanceCaption.Options.UseTextOptions = true;
+            this.ProgressCustomLists.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressCustomLists.AppearanceDescription.Options.UseTextOptions = true;
+            this.ProgressCustomLists.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressCustomLists.Caption = "NO CUSTOM LISTS";
+            this.ProgressCustomLists.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ProgressCustomLists.Description = "Loading..";
+            this.ProgressCustomLists.Location = new System.Drawing.Point(80, 101);
+            this.ProgressCustomLists.Name = "ProgressCustomLists";
+            this.ProgressCustomLists.Size = new System.Drawing.Size(246, 66);
+            this.ProgressCustomLists.TabIndex = 1172;
+            this.ProgressCustomLists.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
+            // 
             // stackPanel1
             // 
             this.stackPanel1.Controls.Add(this.ButtonCreateNewList);
@@ -163,24 +181,6 @@
             this.ButtonDeleteAllLists.TabIndex = 13;
             this.ButtonDeleteAllLists.Text = "Delete All Lists";
             this.ButtonDeleteAllLists.Click += new System.EventHandler(this.ButtonDeleteAllLists_Click);
-            // 
-            // ProgressCustomLists
-            // 
-            this.ProgressCustomLists.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ProgressCustomLists.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ProgressCustomLists.Appearance.Options.UseBackColor = true;
-            this.ProgressCustomLists.AppearanceCaption.Options.UseTextOptions = true;
-            this.ProgressCustomLists.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ProgressCustomLists.AppearanceDescription.Options.UseTextOptions = true;
-            this.ProgressCustomLists.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ProgressCustomLists.Caption = "NO CUSTOM LISTS";
-            this.ProgressCustomLists.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ProgressCustomLists.Description = "Loading..";
-            this.ProgressCustomLists.Location = new System.Drawing.Point(80, 101);
-            this.ProgressCustomLists.Name = "ProgressCustomLists";
-            this.ProgressCustomLists.Size = new System.Drawing.Size(246, 66);
-            this.ProgressCustomLists.TabIndex = 1172;
-            this.ProgressCustomLists.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
             // 
             // CustomListsDialog
             // 
