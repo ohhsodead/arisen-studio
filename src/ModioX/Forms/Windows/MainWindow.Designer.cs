@@ -87,7 +87,6 @@ namespace ModioX.Forms.Windows
             this.ButtonXbox360 = new DevExpress.XtraBars.BarSubItem();
             this.ButtonConnectToXBOX = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxFindConsole = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.MenuBarItemTools = new DevExpress.XtraBars.BarButtonItem();
             this.ToolsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ButtonPS3GameBackupFiles = new DevExpress.XtraBars.BarButtonItem();
@@ -434,12 +433,12 @@ namespace ModioX.Forms.Windows
             this.FlowPanelDetails.Controls.Add(this.LabelDescription);
             this.FlowPanelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FlowPanelDetails.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.FlowPanelDetails.Location = new System.Drawing.Point(2, 21);
+            this.FlowPanelDetails.Location = new System.Drawing.Point(2, 23);
             this.FlowPanelDetails.Margin = new System.Windows.Forms.Padding(0);
             this.FlowPanelDetails.MaximumSize = new System.Drawing.Size(373, 0);
             this.FlowPanelDetails.Name = "FlowPanelDetails";
             this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(3, 8, 18, 4);
-            this.FlowPanelDetails.Size = new System.Drawing.Size(373, 582);
+            this.FlowPanelDetails.Size = new System.Drawing.Size(373, 580);
             this.FlowPanelDetails.TabIndex = 0;
             this.FlowPanelDetails.TabStop = true;
             this.FlowPanelDetails.Scroll += new System.Windows.Forms.ScrollEventHandler(this.FlowPanelDetails_Scroll);
@@ -715,11 +714,11 @@ namespace ModioX.Forms.Windows
             // GridControlModsInstallFiles
             // 
             this.GridControlModsInstallFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridControlModsInstallFiles.Location = new System.Drawing.Point(2, 21);
+            this.GridControlModsInstallFiles.Location = new System.Drawing.Point(2, 23);
             this.GridControlModsInstallFiles.MainView = this.GridViewModsInstallFiles;
             this.GridControlModsInstallFiles.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.GridControlModsInstallFiles.Name = "GridControlModsInstallFiles";
-            this.GridControlModsInstallFiles.Size = new System.Drawing.Size(369, 92);
+            this.GridControlModsInstallFiles.Size = new System.Drawing.Size(369, 90);
             this.GridControlModsInstallFiles.TabIndex = 3;
             this.GridControlModsInstallFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewModsInstallFiles});
@@ -775,7 +774,7 @@ namespace ModioX.Forms.Windows
             this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectSystemType);
             this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectType);
             this.PanelModsLibraryFilters.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelModsLibraryFilters.Location = new System.Drawing.Point(2, 21);
+            this.PanelModsLibraryFilters.Location = new System.Drawing.Point(2, 23);
             this.PanelModsLibraryFilters.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PanelModsLibraryFilters.Name = "PanelModsLibraryFilters";
             this.PanelModsLibraryFilters.Size = new System.Drawing.Size(859, 96);
@@ -987,13 +986,6 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxFindConsole.Id = 78;
             this.ButtonXboxFindConsole.Name = "ButtonXboxFindConsole";
             this.ButtonXboxFindConsole.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonFindXBOX_ItemClick);
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "barButtonItem4";
-            this.barButtonItem4.Id = 100;
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // MenuBarItemTools
             // 
@@ -1536,31 +1528,31 @@ namespace ModioX.Forms.Windows
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.MainMenu;
-            this.barDockControlTop.Size = new System.Drawing.Size(1584, 26);
+            this.barDockControlTop.Size = new System.Drawing.Size(1584, 25);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 793);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 796);
             this.barDockControlBottom.Manager = this.MainMenu;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1584, 28);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1584, 25);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 26);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
             this.barDockControlLeft.Manager = this.MainMenu;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 767);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 771);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1584, 26);
+            this.barDockControlRight.Location = new System.Drawing.Point(1584, 25);
             this.barDockControlRight.Manager = this.MainMenu;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 767);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 771);
             // 
             // DockModInformation
             // 
@@ -2065,11 +2057,11 @@ namespace ModioX.Forms.Windows
             // GridControlGameModsInstalled
             // 
             this.GridControlGameModsInstalled.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridControlGameModsInstalled.Location = new System.Drawing.Point(2, 21);
+            this.GridControlGameModsInstalled.Location = new System.Drawing.Point(2, 23);
             this.GridControlGameModsInstalled.MainView = this.GridViewGameModsInstalled;
             this.GridControlGameModsInstalled.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.GridControlGameModsInstalled.Name = "GridControlGameModsInstalled";
-            this.GridControlGameModsInstalled.Size = new System.Drawing.Size(859, 155);
+            this.GridControlGameModsInstalled.Size = new System.Drawing.Size(859, 153);
             this.GridControlGameModsInstalled.TabIndex = 7;
             this.GridControlGameModsInstalled.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewGameModsInstalled});
@@ -2205,11 +2197,11 @@ namespace ModioX.Forms.Windows
             // GridControlMods
             // 
             this.GridControlMods.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridControlMods.Location = new System.Drawing.Point(2, 117);
+            this.GridControlMods.Location = new System.Drawing.Point(2, 119);
             this.GridControlMods.MainView = this.GridViewMods;
             this.GridControlMods.MenuManager = this.MainMenu;
             this.GridControlMods.Name = "GridControlMods";
-            this.GridControlMods.Size = new System.Drawing.Size(859, 413);
+            this.GridControlMods.Size = new System.Drawing.Size(859, 411);
             this.GridControlMods.TabIndex = 1171;
             this.GridControlMods.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewMods});
@@ -2239,10 +2231,10 @@ namespace ModioX.Forms.Windows
             this.NavGroupHomebrewApps,
             this.NavGroupResources,
             this.NavGroupMyLists});
-            this.NavigationBar.Location = new System.Drawing.Point(2, 21);
+            this.NavigationBar.Location = new System.Drawing.Point(2, 23);
             this.NavigationBar.Name = "NavigationBar";
             this.NavigationBar.OptionsNavPane.ExpandedWidth = 296;
-            this.NavigationBar.Size = new System.Drawing.Size(296, 720);
+            this.NavigationBar.Size = new System.Drawing.Size(296, 718);
             this.NavigationBar.SkinExplorerBarViewScrollStyle = DevExpress.XtraNavBar.SkinExplorerBarViewScrollStyle.ScrollBar;
             this.NavigationBar.TabIndex = 1180;
             this.NavigationBar.Text = "navBarControl1";
@@ -2592,7 +2584,7 @@ namespace ModioX.Forms.Windows
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("MainWindow.IconOptions.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.MinimumSize = new System.Drawing.Size(1600, 869);
+            this.MinimumSize = new System.Drawing.Size(1586, 853);
             this.Name = "MainWindow";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
