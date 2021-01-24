@@ -1138,7 +1138,6 @@ namespace ModioX.Forms.Windows
             // XBDMMenu
             // 
             this.XBDMMenu.Caption = "XBDM Controls... (Xbox)";
-            this.XBDMMenu.Enabled = false;
             this.XBDMMenu.Id = 66;
             this.XBDMMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
@@ -1294,7 +1293,6 @@ namespace ModioX.Forms.Windows
             // XboxFileManager
             // 
             this.XboxFileManager.Caption = "File Manager... (Xbox)";
-            this.XboxFileManager.Enabled = false;
             this.XboxFileManager.Id = 65;
             this.XboxFileManager.Name = "XboxFileManager";
             this.XboxFileManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XboxFileManager_ItemClick);
@@ -1302,7 +1300,6 @@ namespace ModioX.Forms.Windows
             // iniEditorButton
             // 
             this.iniEditorButton.Caption = "Plugin Manager";
-            this.iniEditorButton.Enabled = false;
             this.iniEditorButton.Id = 100;
             this.iniEditorButton.Name = "iniEditorButton";
             this.iniEditorButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iniEditorButton_ItemClick);
