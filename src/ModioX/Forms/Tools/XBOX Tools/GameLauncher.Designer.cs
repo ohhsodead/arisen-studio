@@ -31,10 +31,10 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             this.listView1 = new System.Windows.Forms.ListView();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
+            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // listView1
@@ -57,14 +57,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.simpleButton2.Text = "Read";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
-            // checkEdit2
-            // 
-            this.checkEdit2.Location = new System.Drawing.Point(254, 5);
-            this.checkEdit2.Name = "checkEdit2";
-            this.checkEdit2.Properties.Caption = "Close At Launch";
-            this.checkEdit2.Size = new System.Drawing.Size(104, 18);
-            this.checkEdit2.TabIndex = 8;
-            // 
             // textEdit3
             // 
             this.textEdit3.EditValue = "Hdd\\\\";
@@ -73,11 +65,19 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.textEdit3.Size = new System.Drawing.Size(244, 20);
             this.textEdit3.TabIndex = 9;
             // 
+            // checkEdit2
+            // 
+            this.checkEdit2.Location = new System.Drawing.Point(254, 5);
+            this.checkEdit2.Name = "checkEdit2";
+            this.checkEdit2.Properties.Caption = "Close At Launch";
+            this.checkEdit2.Size = new System.Drawing.Size(104, 19);
+            this.checkEdit2.TabIndex = 8;
+            // 
             // GameLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 470);
+            this.ClientSize = new System.Drawing.Size(356, 454);
             this.Controls.Add(this.textEdit3);
             this.Controls.Add(this.checkEdit2);
             this.Controls.Add(this.simpleButton2);
@@ -89,8 +89,8 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Game Launcher";
             this.BackColorChanged += new System.EventHandler(this.GameLauncher_BackColorChanged);
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

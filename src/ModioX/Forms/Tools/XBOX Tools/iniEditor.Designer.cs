@@ -31,29 +31,29 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             this.List = new DevExpress.XtraEditors.ListBoxControl();
             this.ReadButton = new DevExpress.XtraEditors.SimpleButton();
-            this.INITextbox = new DevExpress.XtraEditors.TextEdit();
-            this.Value = new DevExpress.XtraEditors.TextEdit();
-            this.Settings = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.LiveBlock = new DevExpress.XtraEditors.CheckEdit();
-            this.LiveStrong = new DevExpress.XtraEditors.CheckEdit();
             this.WriteButton = new DevExpress.XtraEditors.SimpleButton();
             this.RebootButton = new DevExpress.XtraEditors.SimpleButton();
             this.InsertButton = new DevExpress.XtraEditors.SimpleButton();
-            this.PathsCombo = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.PathsCombo = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.LiveBlock = new DevExpress.XtraEditors.CheckEdit();
+            this.LiveStrong = new DevExpress.XtraEditors.CheckEdit();
+            this.Settings = new DevExpress.XtraEditors.TextEdit();
+            this.Value = new DevExpress.XtraEditors.TextEdit();
+            this.INITextbox = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.List)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.INITextbox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Value.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Settings.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PathsCombo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LiveBlock.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LiveStrong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PathsCombo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Settings.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Value.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.INITextbox.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // List
@@ -73,28 +73,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.ReadButton.Text = "Read";
             this.ReadButton.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // INITextbox
-            // 
-            this.INITextbox.Location = new System.Drawing.Point(12, 347);
-            this.INITextbox.Name = "INITextbox";
-            this.INITextbox.Size = new System.Drawing.Size(432, 20);
-            this.INITextbox.TabIndex = 2;
-            this.INITextbox.TextChanged += new System.EventHandler(this.INITextbox_TextChanged);
-            // 
-            // Value
-            // 
-            this.Value.Location = new System.Drawing.Point(194, 438);
-            this.Value.Name = "Value";
-            this.Value.Size = new System.Drawing.Size(87, 20);
-            this.Value.TabIndex = 3;
-            // 
-            // Settings
-            // 
-            this.Settings.Location = new System.Drawing.Point(84, 438);
-            this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(87, 20);
-            this.Settings.TabIndex = 4;
-            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.LiveBlock);
@@ -104,24 +82,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.groupControl1.Size = new System.Drawing.Size(97, 80);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "Quick Toggles";
-            // 
-            // LiveBlock
-            // 
-            this.LiveBlock.Location = new System.Drawing.Point(11, 53);
-            this.LiveBlock.Name = "LiveBlock";
-            this.LiveBlock.Properties.Caption = "LiveBlock";
-            this.LiveBlock.Size = new System.Drawing.Size(75, 18);
-            this.LiveBlock.TabIndex = 7;
-            this.LiveBlock.CheckedChanged += new System.EventHandler(this.checkEdit2_CheckedChanged);
-            // 
-            // LiveStrong
-            // 
-            this.LiveStrong.Location = new System.Drawing.Point(11, 29);
-            this.LiveStrong.Name = "LiveStrong";
-            this.LiveStrong.Properties.Caption = "LiveStrong";
-            this.LiveStrong.Size = new System.Drawing.Size(75, 18);
-            this.LiveStrong.TabIndex = 6;
-            this.LiveStrong.CheckedChanged += new System.EventHandler(this.checkEdit1_CheckedChanged);
             // 
             // WriteButton
             // 
@@ -149,21 +109,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.InsertButton.TabIndex = 8;
             this.InsertButton.Text = "Insert";
             this.InsertButton.Click += new System.EventHandler(this.simpleButton4_Click);
-            // 
-            // PathsCombo
-            // 
-            this.PathsCombo.EditValue = "Paths";
-            this.PathsCombo.Location = new System.Drawing.Point(12, 438);
-            this.PathsCombo.Name = "PathsCombo";
-            this.PathsCombo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.PathsCombo.Properties.Items.AddRange(new object[] {
-            "Paths",
-            "Plugins",
-            "Externals",
-            "Settings"});
-            this.PathsCombo.Size = new System.Drawing.Size(66, 20);
-            this.PathsCombo.TabIndex = 9;
             // 
             // labelControl1
             // 
@@ -202,11 +147,66 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.comboBoxEdit2.Size = new System.Drawing.Size(66, 20);
             this.comboBoxEdit2.TabIndex = 12;
             // 
+            // PathsCombo
+            // 
+            this.PathsCombo.EditValue = "Paths";
+            this.PathsCombo.Location = new System.Drawing.Point(12, 438);
+            this.PathsCombo.Name = "PathsCombo";
+            this.PathsCombo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.PathsCombo.Properties.Items.AddRange(new object[] {
+            "Paths",
+            "Plugins",
+            "Externals",
+            "Settings"});
+            this.PathsCombo.Size = new System.Drawing.Size(66, 20);
+            this.PathsCombo.TabIndex = 9;
+            // 
+            // LiveBlock
+            // 
+            this.LiveBlock.Location = new System.Drawing.Point(11, 53);
+            this.LiveBlock.Name = "LiveBlock";
+            this.LiveBlock.Properties.Caption = "LiveBlock";
+            this.LiveBlock.Size = new System.Drawing.Size(75, 19);
+            this.LiveBlock.TabIndex = 7;
+            this.LiveBlock.CheckedChanged += new System.EventHandler(this.checkEdit2_CheckedChanged);
+            // 
+            // LiveStrong
+            // 
+            this.LiveStrong.Location = new System.Drawing.Point(11, 29);
+            this.LiveStrong.Name = "LiveStrong";
+            this.LiveStrong.Properties.Caption = "LiveStrong";
+            this.LiveStrong.Size = new System.Drawing.Size(75, 19);
+            this.LiveStrong.TabIndex = 6;
+            this.LiveStrong.CheckedChanged += new System.EventHandler(this.checkEdit1_CheckedChanged);
+            // 
+            // Settings
+            // 
+            this.Settings.Location = new System.Drawing.Point(84, 438);
+            this.Settings.Name = "Settings";
+            this.Settings.Size = new System.Drawing.Size(87, 20);
+            this.Settings.TabIndex = 4;
+            // 
+            // Value
+            // 
+            this.Value.Location = new System.Drawing.Point(194, 438);
+            this.Value.Name = "Value";
+            this.Value.Size = new System.Drawing.Size(87, 20);
+            this.Value.TabIndex = 3;
+            // 
+            // INITextbox
+            // 
+            this.INITextbox.Location = new System.Drawing.Point(12, 347);
+            this.INITextbox.Name = "INITextbox";
+            this.INITextbox.Size = new System.Drawing.Size(432, 20);
+            this.INITextbox.TabIndex = 2;
+            this.INITextbox.TextChanged += new System.EventHandler(this.INITextbox_TextChanged);
+            // 
             // iniEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 473);
+            this.ClientSize = new System.Drawing.Size(442, 457);
             this.Controls.Add(this.comboBoxEdit2);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
@@ -228,15 +228,15 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.Text = "Xbox File Editor";
             this.Load += new System.EventHandler(this.iniEditor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.List)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.INITextbox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Value.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Settings.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PathsCombo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LiveBlock.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LiveStrong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PathsCombo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Settings.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Value.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.INITextbox.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
