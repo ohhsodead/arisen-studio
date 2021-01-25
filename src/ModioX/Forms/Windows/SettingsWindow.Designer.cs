@@ -77,7 +77,7 @@ namespace ModioX.Forms.Windows
             this.CheckBoxRememberGameRegions.Properties.AllowFocused = false;
             this.CheckBoxRememberGameRegions.Properties.AutoWidth = true;
             this.CheckBoxRememberGameRegions.Properties.Caption = "Remember game regions";
-            this.CheckBoxRememberGameRegions.Size = new System.Drawing.Size(149, 19);
+            this.CheckBoxRememberGameRegions.Size = new System.Drawing.Size(148, 18);
             this.CheckBoxRememberGameRegions.TabIndex = 3;
             // 
             // CheckBoxAutoDetectGameTitles
@@ -87,7 +87,7 @@ namespace ModioX.Forms.Windows
             this.CheckBoxAutoDetectGameTitles.Properties.AllowFocused = false;
             this.CheckBoxAutoDetectGameTitles.Properties.AutoWidth = true;
             this.CheckBoxAutoDetectGameTitles.Properties.Caption = "Automatically detect game titles";
-            this.CheckBoxAutoDetectGameTitles.Size = new System.Drawing.Size(185, 19);
+            this.CheckBoxAutoDetectGameTitles.Size = new System.Drawing.Size(184, 18);
             this.CheckBoxAutoDetectGameTitles.TabIndex = 2;
             // 
             // CheckBoxAutoDetectGameRegions
@@ -97,7 +97,7 @@ namespace ModioX.Forms.Windows
             this.CheckBoxAutoDetectGameRegions.Properties.AllowFocused = false;
             this.CheckBoxAutoDetectGameRegions.Properties.AutoWidth = true;
             this.CheckBoxAutoDetectGameRegions.Properties.Caption = "Automatically detect game regions";
-            this.CheckBoxAutoDetectGameRegions.Size = new System.Drawing.Size(199, 19);
+            this.CheckBoxAutoDetectGameRegions.Size = new System.Drawing.Size(198, 18);
             this.CheckBoxAutoDetectGameRegions.TabIndex = 1;
             // 
             // CheckBoxSaveConsolePath
@@ -107,7 +107,7 @@ namespace ModioX.Forms.Windows
             this.CheckBoxSaveConsolePath.Properties.AllowFocused = false;
             this.CheckBoxSaveConsolePath.Properties.AutoWidth = true;
             this.CheckBoxSaveConsolePath.Properties.Caption = "Save last console directory path";
-            this.CheckBoxSaveConsolePath.Size = new System.Drawing.Size(184, 19);
+            this.CheckBoxSaveConsolePath.Size = new System.Drawing.Size(183, 18);
             this.CheckBoxSaveConsolePath.TabIndex = 2;
             // 
             // CheckBoxSaveLocalPath
@@ -117,7 +117,7 @@ namespace ModioX.Forms.Windows
             this.CheckBoxSaveLocalPath.Properties.AllowFocused = false;
             this.CheckBoxSaveLocalPath.Properties.AutoWidth = true;
             this.CheckBoxSaveLocalPath.Properties.Caption = "Save last local directory path";
-            this.CheckBoxSaveLocalPath.Size = new System.Drawing.Size(168, 19);
+            this.CheckBoxSaveLocalPath.Size = new System.Drawing.Size(167, 18);
             this.CheckBoxSaveLocalPath.TabIndex = 1;
             // 
             // CheckBoxShowFileSizeInBytes
@@ -127,13 +127,13 @@ namespace ModioX.Forms.Windows
             this.CheckBoxShowFileSizeInBytes.Properties.AllowFocused = false;
             this.CheckBoxShowFileSizeInBytes.Properties.AutoWidth = true;
             this.CheckBoxShowFileSizeInBytes.Properties.Caption = "Show file size in bytes";
-            this.CheckBoxShowFileSizeInBytes.Size = new System.Drawing.Size(135, 19);
+            this.CheckBoxShowFileSizeInBytes.Size = new System.Drawing.Size(134, 18);
             this.CheckBoxShowFileSizeInBytes.TabIndex = 1;
             // 
             // ButtonSaveSettings
             // 
             this.ButtonSaveSettings.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ButtonSaveSettings.Location = new System.Drawing.Point(183, 239);
+            this.ButtonSaveSettings.Location = new System.Drawing.Point(174, 239);
             this.ButtonSaveSettings.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.ButtonSaveSettings.Name = "ButtonSaveSettings";
             this.ButtonSaveSettings.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
@@ -150,7 +150,7 @@ namespace ModioX.Forms.Windows
             this.TabControl.Location = new System.Drawing.Point(12, 12);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedTabPage = this.TabAppearance;
-            this.TabControl.Size = new System.Drawing.Size(413, 214);
+            this.TabControl.Size = new System.Drawing.Size(394, 214);
             this.TabControl.TabIndex = 5;
             this.TabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabAppearance,
@@ -170,7 +170,7 @@ namespace ModioX.Forms.Windows
             this.TabAppearance.Controls.Add(this.LabelXboxDebuggingBackgroundColor);
             this.TabAppearance.Controls.Add(this.labelControl4);
             this.TabAppearance.Name = "TabAppearance";
-            this.TabAppearance.Size = new System.Drawing.Size(411, 187);
+            this.TabAppearance.Size = new System.Drawing.Size(392, 191);
             this.TabAppearance.Text = "Appearance";
             // 
             // LabelXboxDebuggingForeColor
@@ -203,7 +203,7 @@ namespace ModioX.Forms.Windows
             this.labelControl6.LineVisible = true;
             this.labelControl6.Location = new System.Drawing.Point(10, 58);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(387, 15);
+            this.labelControl6.Size = new System.Drawing.Size(368, 15);
             this.labelControl6.TabIndex = 1171;
             this.labelControl6.Text = "File Sizes";
             // 
@@ -224,7 +224,7 @@ namespace ModioX.Forms.Windows
             this.CheckBoxSaveThemeOnClose.Properties.AllowFocused = false;
             this.CheckBoxSaveThemeOnClose.Properties.AutoWidth = true;
             this.CheckBoxSaveThemeOnClose.Properties.Caption = "Save current theme on close";
-            this.CheckBoxSaveThemeOnClose.Size = new System.Drawing.Size(166, 19);
+            this.CheckBoxSaveThemeOnClose.Size = new System.Drawing.Size(165, 18);
             this.CheckBoxSaveThemeOnClose.TabIndex = 1170;
             // 
             // LabelXboxDebugging
@@ -239,7 +239,7 @@ namespace ModioX.Forms.Windows
             this.LabelXboxDebugging.LineVisible = true;
             this.LabelXboxDebugging.Location = new System.Drawing.Point(10, 105);
             this.LabelXboxDebugging.Name = "LabelXboxDebugging";
-            this.LabelXboxDebugging.Size = new System.Drawing.Size(387, 15);
+            this.LabelXboxDebugging.Size = new System.Drawing.Size(368, 15);
             this.LabelXboxDebugging.TabIndex = 1169;
             this.LabelXboxDebugging.Text = "Xbox Debugging (HexBox)";
             // 
@@ -263,7 +263,7 @@ namespace ModioX.Forms.Windows
             this.labelControl4.LineVisible = true;
             this.labelControl4.Location = new System.Drawing.Point(10, 10);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(387, 15);
+            this.labelControl4.Size = new System.Drawing.Size(368, 15);
             this.labelControl4.TabIndex = 1168;
             this.labelControl4.Text = "Theme";
             // 
@@ -272,7 +272,7 @@ namespace ModioX.Forms.Windows
             this.TabDatabase.Controls.Add(this.labelControl1);
             this.TabDatabase.Controls.Add(this.RadioConsoles);
             this.TabDatabase.Name = "TabDatabase";
-            this.TabDatabase.Size = new System.Drawing.Size(386, 197);
+            this.TabDatabase.Size = new System.Drawing.Size(411, 191);
             this.TabDatabase.Text = "Database";
             // 
             // labelControl1
@@ -303,7 +303,7 @@ namespace ModioX.Forms.Windows
             this.TabContentRecognition.Controls.Add(this.CheckBoxAutoDetectGameTitles);
             this.TabContentRecognition.Controls.Add(this.CheckBoxRememberGameRegions);
             this.TabContentRecognition.Name = "TabContentRecognition";
-            this.TabContentRecognition.Size = new System.Drawing.Size(386, 197);
+            this.TabContentRecognition.Size = new System.Drawing.Size(411, 191);
             this.TabContentRecognition.Text = "Content Recognition";
             // 
             // TabFileManager
@@ -311,14 +311,14 @@ namespace ModioX.Forms.Windows
             this.TabFileManager.Controls.Add(this.CheckBoxSaveConsolePath);
             this.TabFileManager.Controls.Add(this.CheckBoxSaveLocalPath);
             this.TabFileManager.Name = "TabFileManager";
-            this.TabFileManager.Size = new System.Drawing.Size(386, 197);
+            this.TabFileManager.Size = new System.Drawing.Size(411, 191);
             this.TabFileManager.Text = "File Manager";
             // 
             // SettingsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 275);
+            this.ClientSize = new System.Drawing.Size(418, 275);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.ButtonSaveSettings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
