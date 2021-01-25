@@ -61,68 +61,68 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void FileManagerWindow_Load(object sender, EventArgs e)
         {
-            GridLocalFiles.Focus();
+            //GridLocalFiles.Focus();
 
-            SetStatus("Fetching drives...");
+            //SetStatus("Fetching drives...");
 
-            foreach (var driveInfo in localDrives) _ = ComboBoxLocalDrives.Properties.Items.Add(driveInfo.Name.Replace(@"\", ""));
+            //foreach (var driveInfo in localDrives) _ = ComboBoxLocalDrives.Properties.Items.Add(driveInfo.Name.Replace(@"\", ""));
 
-            if (MainWindow.Settings.SaveLocalPath)
-            {
-                if (MainWindow.Settings.LocalPathPS3.Equals(@"\") || string.IsNullOrWhiteSpace(MainWindow.Settings.LocalPathPS3))
-                {
-                    LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents) + @"\");
-                }
-                else
-                {
-                    LoadLocalDirectory(MainWindow.Settings.LocalPathPS3);
-                }
-            }
-            else
-            {
-                LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents) + @"\");
-            }
+            //if (MainWindow.Settings.SaveLocalPath)
+            //{
+            //    if (MainWindow.Settings.LocalPath.Equals(@"\") || string.IsNullOrWhiteSpace(MainWindow.Settings.LocalPath))
+            //    {
+            //        LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents) + @"\");
+            //    }
+            //    else
+            //    {
+            //        LoadLocalDirectory(MainWindow.Settings.LocalPath);
+            //    }
+            //}
+            //else
+            //{
+            //    LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents) + @"\");
+            //}
         }
 
         private void FileExplorer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(TextBoxLocalPath.Text))
-            {
-                MainWindow.Settings.LocalPathPS3 = TextBoxLocalPath.Text;
-            }
+            //if (!string.IsNullOrWhiteSpace(TextBoxLocalPath.Text))
+            //{
+            //    MainWindow.Settings.LocalPath = TextBoxLocalPath.Text;
+            //}
 
-            if (!string.IsNullOrWhiteSpace(TextBoxConsolePath.Text))
-            {
-                MainWindow.Settings.ConsolePathPS3 = TextBoxConsolePath.Text;
-            }
+            //if (!string.IsNullOrWhiteSpace(TextBoxConsolePath.Text))
+            //{
+            //    MainWindow.Settings.ConsolePath = TextBoxConsolePath.Text;
+            //}
         }
 
         private void WaitLoadConsole_Tick(object sender, EventArgs e)
         {
-            SetStatus("Fetching root directories...");
+            //SetStatus("Fetching root directories...");
 
-            foreach (var driveName in FtpExtensions.GetFolderNames("/").ToArray())
-            {
-                ComboBoxConsoleDrives.Properties.Items.Add(driveName.Replace(@"/", ""));
-            }
+            //foreach (var driveName in FtpExtensions.GetFolderNames("/").ToArray())
+            //{
+            //    ComboBoxConsoleDrives.Properties.Items.Add(driveName.Replace(@"/", ""));
+            //}
 
-            if (MainWindow.Settings.SaveConsolePath)
-            {
-                if (MainWindow.Settings.ConsolePathPS3.Equals(@"/") || string.IsNullOrEmpty(MainWindow.Settings.ConsolePathPS3))
-                {
-                    LoadConsoleDirectory("/dev_hdd0/");
-                }
-                else
-                {
-                    LoadConsoleDirectory(MainWindow.Settings.ConsolePathPS3);
-                }
-            }
-            else
-            {
-                LoadConsoleDirectory("/dev_hdd0/");
-            }
+            //if (MainWindow.Settings.SaveConsolePath)
+            //{
+            //    if (MainWindow.Settings.ConsolePath.Equals(@"/") || string.IsNullOrEmpty(MainWindow.Settings.ConsolePath))
+            //    {
+            //        LoadConsoleDirectory("/dev_hdd0/");
+            //    }
+            //    else
+            //    {
+            //        LoadConsoleDirectory(MainWindow.Settings.ConsolePath);
+            //    }
+            //}
+            //else
+            //{
+            //    LoadConsoleDirectory("/dev_hdd0/");
+            //}
 
-            WaitLoadConsole.Enabled = false;
+            //WaitLoadConsole.Enabled = false;
         }
 
         /************* Local File Explorer *************/

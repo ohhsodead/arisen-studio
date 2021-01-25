@@ -39,5 +39,14 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
             GridControlModifyValues.DataSource = ModifiedValues;
         }
+
+        private void Quit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Close();
+        }
+
+        private void svgImageBox1_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
