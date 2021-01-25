@@ -23,6 +23,10 @@ namespace ModioX.Forms.Windows
             // File Size
             CheckBoxShowFileSizeInBytes.Checked = Settings.ShowFileSizeInBytes;
 
+            // Xbox Debugging (HexBox)
+            ColorXboxDebuggingFont.Color = Settings.HexBoxForeColor;
+            ColorXboxDebuggingBackground.Color = Settings.HexBoxBackColor;
+
             /* Database */
             switch (Settings.LoadConsoleMods)
             {

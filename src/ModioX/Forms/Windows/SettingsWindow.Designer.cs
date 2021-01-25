@@ -40,7 +40,7 @@ namespace ModioX.Forms.Windows
             this.TabControl = new DevExpress.XtraTab.XtraTabControl();
             this.TabAppearance = new DevExpress.XtraTab.XtraTabPage();
             this.LabelXboxDebuggingForeColor = new DevExpress.XtraEditors.LabelControl();
-            this.ColorXboxDebuggingFore = new DevExpress.XtraEditors.ColorEdit();
+            this.ColorXboxDebuggingFont = new DevExpress.XtraEditors.ColorEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.ColorXboxDebuggingBackground = new DevExpress.XtraEditors.ColorEdit();
             this.CheckBoxSaveThemeOnClose = new DevExpress.XtraEditors.CheckEdit();
@@ -61,7 +61,7 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.TabControl)).BeginInit();
             this.TabControl.SuspendLayout();
             this.TabAppearance.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ColorXboxDebuggingFore.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ColorXboxDebuggingFont.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ColorXboxDebuggingBackground.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxSaveThemeOnClose.Properties)).BeginInit();
             this.TabDatabase.SuspendLayout();
@@ -161,7 +161,7 @@ namespace ModioX.Forms.Windows
             // TabAppearance
             // 
             this.TabAppearance.Controls.Add(this.LabelXboxDebuggingForeColor);
-            this.TabAppearance.Controls.Add(this.ColorXboxDebuggingFore);
+            this.TabAppearance.Controls.Add(this.ColorXboxDebuggingFont);
             this.TabAppearance.Controls.Add(this.labelControl6);
             this.TabAppearance.Controls.Add(this.CheckBoxShowFileSizeInBytes);
             this.TabAppearance.Controls.Add(this.ColorXboxDebuggingBackground);
@@ -177,19 +177,19 @@ namespace ModioX.Forms.Windows
             // 
             this.LabelXboxDebuggingForeColor.Location = new System.Drawing.Point(10, 129);
             this.LabelXboxDebuggingForeColor.Name = "LabelXboxDebuggingForeColor";
-            this.LabelXboxDebuggingForeColor.Size = new System.Drawing.Size(57, 13);
+            this.LabelXboxDebuggingForeColor.Size = new System.Drawing.Size(58, 13);
             this.LabelXboxDebuggingForeColor.TabIndex = 2;
-            this.LabelXboxDebuggingForeColor.Text = "Fore Color:";
+            this.LabelXboxDebuggingForeColor.Text = "Font Color:";
             // 
-            // ColorXboxDebuggingFore
+            // ColorXboxDebuggingFont
             // 
-            this.ColorXboxDebuggingFore.EditValue = System.Drawing.Color.Empty;
-            this.ColorXboxDebuggingFore.Location = new System.Drawing.Point(132, 126);
-            this.ColorXboxDebuggingFore.Name = "ColorXboxDebuggingFore";
-            this.ColorXboxDebuggingFore.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ColorXboxDebuggingFont.EditValue = System.Drawing.Color.Empty;
+            this.ColorXboxDebuggingFont.Location = new System.Drawing.Point(132, 126);
+            this.ColorXboxDebuggingFont.Name = "ColorXboxDebuggingFont";
+            this.ColorXboxDebuggingFont.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ColorXboxDebuggingFore.Size = new System.Drawing.Size(86, 20);
-            this.ColorXboxDebuggingFore.TabIndex = 0;
+            this.ColorXboxDebuggingFont.Size = new System.Drawing.Size(86, 20);
+            this.ColorXboxDebuggingFont.TabIndex = 0;
             // 
             // labelControl6
             // 
@@ -339,7 +339,7 @@ namespace ModioX.Forms.Windows
             this.TabControl.ResumeLayout(false);
             this.TabAppearance.ResumeLayout(false);
             this.TabAppearance.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ColorXboxDebuggingFore.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ColorXboxDebuggingFont.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ColorXboxDebuggingBackground.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxSaveThemeOnClose.Properties)).EndInit();
             this.TabDatabase.ResumeLayout(false);
@@ -367,7 +367,7 @@ namespace ModioX.Forms.Windows
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.RadioGroup RadioConsoles;
         private DevExpress.XtraEditors.LabelControl LabelXboxDebuggingForeColor;
-        private DevExpress.XtraEditors.ColorEdit ColorXboxDebuggingFore;
+        private DevExpress.XtraEditors.ColorEdit ColorXboxDebuggingFont;
         private DevExpress.XtraEditors.LabelControl LabelXboxDebuggingBackgroundColor;
         private DevExpress.XtraEditors.ColorEdit ColorXboxDebuggingBackground;
         private DevExpress.XtraTab.XtraTabPage TabAppearance;
