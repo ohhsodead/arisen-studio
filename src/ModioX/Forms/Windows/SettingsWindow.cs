@@ -15,6 +15,19 @@ namespace ModioX.Forms.Windows
 
         private void SettingsWindow_Load(object sender, EventArgs e)
         {
+            /* Appearance */
+
+            // Theme
+            CheckBoxSaveThemeOnClose.Checked = Settings.SaveSkinOnClose;
+
+            // File Size
+            CheckBoxShowFileSizeInBytes.Checked = Settings.ShowFileSizeInBytes;
+
+            // Xbox Debugging (HexBox)
+            ColorXboxDebuggingFont.Color = Settings.HexBoxForeColor;
+            ColorXboxDebuggingBackground.Color = Settings.HexBoxBackColor;
+
+            /* Database */
             switch (Settings.LoadConsoleMods)
             {
                 case ConsoleTypePrefix.PS3:
@@ -27,22 +40,27 @@ namespace ModioX.Forms.Windows
                     break;
             }
 
-            // Content Recognition
+            /* Content Recognition */
             CheckBoxAutoDetectGameRegions.Checked = Settings.AutoDetectGameRegions;
             CheckBoxAutoDetectGameTitles.Checked = Settings.AutoDetectGameTitles;
             CheckBoxRememberGameRegions.Checked = Settings.RememberGameRegions;
 
-            // File Manager
+            /* File Manager */
             CheckBoxSaveLocalPath.Checked = Settings.SaveLocalPath;
             CheckBoxSaveConsolePath.Checked = Settings.SaveConsolePath;
-
-            // File Size
-            CheckBoxShowFileSizeInBytes.Checked = Settings.ShowFileSizeInBytes;
         }
 
         private void ButtonSaveSettings_Click(object sender, EventArgs e)
         {
-            // Database
+            /* Appearance */
+
+            // Theme
+            Settings.SaveSkinOnClose = CheckBoxSaveThemeOnClose.Checked;
+
+            // File Size
+            Settings.ShowFileSizeInBytes = CheckBoxShowFileSizeInBytes.Checked;
+
+            /* Database */
             switch (RadioConsoles.SelectedIndex)
             {
                 case 0:
@@ -55,17 +73,15 @@ namespace ModioX.Forms.Windows
                     break;
             }
 
-            // Content Recognized
+            /* Content Recognition */
             Settings.AutoDetectGameRegions = CheckBoxAutoDetectGameRegions.Checked;
             Settings.AutoDetectGameTitles = CheckBoxAutoDetectGameTitles.Checked;
             Settings.RememberGameRegions = CheckBoxRememberGameRegions.Checked;
 
-            // File Manager
+            /* File Manager */
             Settings.SaveLocalPath = CheckBoxSaveLocalPath.Checked;
             Settings.SaveConsolePath = CheckBoxSaveConsolePath.Checked;
 
-            // File Size
-            Settings.ShowFileSizeInBytes = CheckBoxShowFileSizeInBytes.Checked;
             Close();
         }
     }

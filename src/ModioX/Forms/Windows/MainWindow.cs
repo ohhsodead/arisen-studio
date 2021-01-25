@@ -2189,6 +2189,11 @@ namespace ModioX.Forms.Windows
 
                 SetStatus("Successfully loaded settings data.");
 
+                if (Settings.SaveSkinOnClose)
+                {
+                    LookAndFeel.SkinName = Settings.SkinName;
+                }
+
                 if (Settings.ConsoleProfiles.Count < 1)
                 {
                     Settings.ConsoleProfiles.Add(

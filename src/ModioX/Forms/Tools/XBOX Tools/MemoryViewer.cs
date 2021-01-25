@@ -10,7 +10,7 @@ using XDevkit;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
-    public partial class Memory : XtraForm
+    public partial class MemoryViewer : XtraForm
     {
         #region variables
         private readonly AutoCompleteStringCollection _data = new AutoCompleteStringCollection();
@@ -23,9 +23,8 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         #endregion variables
 
-        public Memory()
+        public MemoryViewer()
         {
-
             InitializeComponent();
             ChangeNumericMaxMin();
             ChangeNumericColor();
@@ -41,6 +40,13 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
             //}
         }
+
+        private void MemoryViewer_Load(object sender, EventArgs e)
+        {
+            hexBox.ForeColor = MainWindow.Settings.HexBoxForeColor;
+            hexBox.BackColor = MainWindow.Settings.HexBoxBackColor;
+        }
+
         #region Handlers
 
 
@@ -479,12 +485,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         }
 
-        private void MemoryViewer_Load(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void ChangeNumericColor()
         {
             NumericInt8.BackColor = NumericFloatTextBox.BackColor;
@@ -672,11 +672,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         private void peekPokeFeedBackTextBox_DoubleClick(object sender, EventArgs e)
         {
             Clipboard.SetText(peekPokeFeedBackTextBox.Text);
-        }
-
-        private void Memory_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
-    partial class Memory
+    partial class MemoryViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -531,7 +531,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.txtPaste.TabIndex = 141;
             this.txtPaste.Visible = false;
             // 
-            // Memory
+            // MemoryViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -563,11 +563,11 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.IconOptions.Image = global::ModioX.Properties.Resources.app_logo;
             this.MaximumSize = new System.Drawing.Size(862, 568);
             this.MinimumSize = new System.Drawing.Size(862, 568);
-            this.Name = "Memory";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Name = "MemoryViewer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SocketStress - Memory";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MemoryViewer_FormClosing);
-            this.Load += new System.EventHandler(this.Memory_Load);
+            this.Load += new System.EventHandler(this.MemoryViewer_Load);
             this.BackColorChanged += new System.EventHandler(this.MemoryViewer_BackColorChanged);
             ((System.ComponentModel.ISupportInitialize)(this.PeekPokeAddressTextBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peekLengthTextBox.Properties)).EndInit();
