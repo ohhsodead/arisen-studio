@@ -69,13 +69,13 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
             if (MainWindow.Settings.SaveLocalPath)
             {
-                if (MainWindow.Settings.LocalPath.Equals(@"\") || string.IsNullOrWhiteSpace(MainWindow.Settings.LocalPath))
+                if (MainWindow.Settings.LocalPathPS3.Equals(@"\") || string.IsNullOrWhiteSpace(MainWindow.Settings.LocalPathPS3))
                 {
                     LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents) + @"\");
                 }
                 else
                 {
-                    LoadLocalDirectory(MainWindow.Settings.LocalPath);
+                    LoadLocalDirectory(MainWindow.Settings.LocalPathPS3);
                 }
             }
             else
@@ -88,12 +88,12 @@ namespace ModioX.Forms.Tools.PS3_Tools
         {
             if (!string.IsNullOrWhiteSpace(TextBoxLocalPath.Text))
             {
-                MainWindow.Settings.LocalPath = TextBoxLocalPath.Text;
+                MainWindow.Settings.LocalPathPS3 = TextBoxLocalPath.Text;
             }
 
             if (!string.IsNullOrWhiteSpace(TextBoxConsolePath.Text))
             {
-                MainWindow.Settings.ConsolePath = TextBoxConsolePath.Text;
+                MainWindow.Settings.ConsolePathPS3 = TextBoxConsolePath.Text;
             }
         }
 
@@ -108,13 +108,13 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
             if (MainWindow.Settings.SaveConsolePath)
             {
-                if (MainWindow.Settings.ConsolePath.Equals(@"/") || string.IsNullOrEmpty(MainWindow.Settings.ConsolePath))
+                if (MainWindow.Settings.ConsolePathPS3.Equals(@"/") || string.IsNullOrEmpty(MainWindow.Settings.ConsolePathPS3))
                 {
                     LoadConsoleDirectory("/dev_hdd0/");
                 }
                 else
                 {
-                    LoadConsoleDirectory(MainWindow.Settings.ConsolePath);
+                    LoadConsoleDirectory(MainWindow.Settings.ConsolePathPS3);
                 }
             }
             else
