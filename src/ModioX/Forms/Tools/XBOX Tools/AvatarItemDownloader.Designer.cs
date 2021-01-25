@@ -28,26 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GameNameBox = new System.Windows.Forms.TextBox();
-            this.DL_BTN = new System.Windows.Forms.Button();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.ItemIDBox = new System.Windows.Forms.TextBox();
-            this.ItemNameBox = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.XUIDBox = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BLKDTH_LOGO_BOX = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.MPURLBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.GameNameBox = new DevExpress.XtraEditors.TextEdit();
+            this.DL_BTN = new DevExpress.XtraEditors.SimpleButton();
+            this.progressBar = new DevExpress.XtraEditors.ProgressBarControl();
+            this.ItemIDBox = new DevExpress.XtraEditors.TextEdit();
+            this.ItemNameBox = new DevExpress.XtraEditors.TextEdit();
+            this.groupBox4 = new DevExpress.XtraEditors.GroupControl();
+            this.XUIDBox = new DevExpress.XtraEditors.TextEdit();
+            this.groupBox1 = new DevExpress.XtraEditors.GroupControl();
+            this.groupBox3 = new DevExpress.XtraEditors.GroupControl();
+            this.groupBox2 = new DevExpress.XtraEditors.GroupControl();
+            this.MPURLBox = new DevExpress.XtraEditors.TextEdit();
+            this.button1 = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureBox1 = new DevExpress.XtraEditors.ImageListBoxControl();
+            ((System.ComponentModel.ISupportInitialize)(this.GameNameBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemIDBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemNameBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox4)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.XUIDBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BLKDTH_LOGO_BOX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox3)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MPURLBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,18 +62,16 @@
             // 
             this.GameNameBox.Location = new System.Drawing.Point(6, 17);
             this.GameNameBox.Name = "GameNameBox";
-            this.GameNameBox.Size = new System.Drawing.Size(318, 22);
+            this.GameNameBox.Size = new System.Drawing.Size(318, 20);
             this.GameNameBox.TabIndex = 13;
-            this.GameNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DL_BTN
             // 
-            this.DL_BTN.Location = new System.Drawing.Point(527, 229);
+            this.DL_BTN.Location = new System.Drawing.Point(478, 229);
             this.DL_BTN.Name = "DL_BTN";
-            this.DL_BTN.Size = new System.Drawing.Size(105, 23);
+            this.DL_BTN.Size = new System.Drawing.Size(154, 23);
             this.DL_BTN.TabIndex = 19;
             this.DL_BTN.Text = ":: Download Item ::";
-            this.DL_BTN.UseVisualStyleBackColor = true;
             this.DL_BTN.Click += new System.EventHandler(this.DL_BTN_Click);
             // 
             // progressBar
@@ -74,29 +79,28 @@
             this.progressBar.Location = new System.Drawing.Point(3, 26);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(300, 10);
-            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar.TabIndex = 20;
             this.progressBar.Visible = false;
             // 
             // ItemIDBox
             // 
+            this.ItemIDBox.EditValue = "0000100095CEE253CEA4B7824D5308AB";
             this.ItemIDBox.Enabled = false;
             this.ItemIDBox.Location = new System.Drawing.Point(6, 16);
             this.ItemIDBox.Name = "ItemIDBox";
-            this.ItemIDBox.Size = new System.Drawing.Size(318, 22);
+            this.ItemIDBox.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.ItemIDBox.Properties.Appearance.Options.UseForeColor = true;
+            this.ItemIDBox.Size = new System.Drawing.Size(318, 20);
             this.ItemIDBox.TabIndex = 4;
-            this.ItemIDBox.Text = "0000100095CEE253CEA4B7824D5308AB";
-            this.ItemIDBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ItemNameBox
             // 
+            this.ItemNameBox.EditValue = "Lancer";
             this.ItemNameBox.Enabled = false;
             this.ItemNameBox.Location = new System.Drawing.Point(6, 16);
             this.ItemNameBox.Name = "ItemNameBox";
-            this.ItemNameBox.Size = new System.Drawing.Size(318, 22);
+            this.ItemNameBox.Size = new System.Drawing.Size(318, 20);
             this.ItemNameBox.TabIndex = 3;
-            this.ItemNameBox.Text = "Lancer";
-            this.ItemNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox4
             // 
@@ -105,18 +109,18 @@
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(327, 44);
             this.groupBox4.TabIndex = 26;
-            this.groupBox4.TabStop = false;
             this.groupBox4.Text = "XUID";
             // 
             // XUIDBox
             // 
+            this.XUIDBox.EditValue = "0009000000000000";
             this.XUIDBox.Location = new System.Drawing.Point(6, 17);
-            this.XUIDBox.MaxLength = 16;
             this.XUIDBox.Name = "XUIDBox";
-            this.XUIDBox.Size = new System.Drawing.Size(315, 22);
+            this.XUIDBox.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.XUIDBox.Properties.Appearance.Options.UseForeColor = true;
+            this.XUIDBox.Properties.MaxLength = 16;
+            this.XUIDBox.Size = new System.Drawing.Size(315, 20);
             this.XUIDBox.TabIndex = 16;
-            this.XUIDBox.Text = "0009000000000000";
-            this.XUIDBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox1
             // 
@@ -125,27 +129,7 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(330, 44);
             this.groupBox1.TabIndex = 25;
-            this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Game Name";
-            // 
-            // BLKDTH_LOGO_BOX
-            // 
-            this.BLKDTH_LOGO_BOX.ErrorImage = null;
-            this.BLKDTH_LOGO_BOX.InitialImage = null;
-            this.BLKDTH_LOGO_BOX.Location = new System.Drawing.Point(304, 251);
-            this.BLKDTH_LOGO_BOX.Name = "BLKDTH_LOGO_BOX";
-            this.BLKDTH_LOGO_BOX.Size = new System.Drawing.Size(335, 87);
-            this.BLKDTH_LOGO_BOX.TabIndex = 24;
-            this.BLKDTH_LOGO_BOX.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(416, 229);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 23);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "About";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -154,7 +138,6 @@
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(330, 44);
             this.groupBox3.TabIndex = 22;
-            this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Item ID";
             // 
             // groupBox2
@@ -164,41 +147,38 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(330, 44);
             this.groupBox2.TabIndex = 21;
-            this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Item Name";
             // 
             // MPURLBox
             // 
+            this.MPURLBox.EditValue = "http://marketplace.xbox.com/en-US/Product/Lancer/00001000-95ce-e253-cea4-b7824d53" +
+    "08ab";
             this.MPURLBox.Location = new System.Drawing.Point(3, 3);
             this.MPURLBox.Name = "MPURLBox";
-            this.MPURLBox.Size = new System.Drawing.Size(626, 22);
+            this.MPURLBox.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.MPURLBox.Properties.Appearance.Options.UseForeColor = true;
+            this.MPURLBox.Size = new System.Drawing.Size(626, 20);
             this.MPURLBox.TabIndex = 17;
-            this.MPURLBox.Text = "http://marketplace.xbox.com/en-US/Product/Lancer/00001000-95ce-e253-cea4-b7824d53" +
-    "08ab";
             this.MPURLBox.TextChanged += new System.EventHandler(this.MPURLBox_TextChanged);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(306, 229);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 23);
+            this.button1.Size = new System.Drawing.Size(154, 23);
             this.button1.TabIndex = 18;
             this.button1.Text = ":: Check URL ::";
-            this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(3, 38);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(300, 300);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // AvatarItemDownloader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -207,50 +187,51 @@
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.BLKDTH_LOGO_BOX);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.MPURLBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
+            this.Name = "AvatarItemDownloader";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Avatar Item Downloader";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GameNameBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemIDBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemNameBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox4)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.XUIDBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BLKDTH_LOGO_BOX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox3)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MPURLBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox GameNameBox;
-        private System.Windows.Forms.Button DL_BTN;
-        private System.Windows.Forms.ProgressBar progressBar;
-        private System.Windows.Forms.TextBox ItemIDBox;
-        private System.Windows.Forms.TextBox ItemNameBox;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox XUIDBox;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox BLKDTH_LOGO_BOX;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox MPURLBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraEditors.TextEdit GameNameBox;
+        private DevExpress.XtraEditors.SimpleButton DL_BTN;
+        private DevExpress.XtraEditors.ProgressBarControl progressBar;
+        private DevExpress.XtraEditors.TextEdit ItemIDBox;
+        private DevExpress.XtraEditors.TextEdit ItemNameBox;
+        private DevExpress.XtraEditors.GroupControl groupBox4;
+        private DevExpress.XtraEditors.TextEdit XUIDBox;
+        private DevExpress.XtraEditors.GroupControl groupBox1;
+        private DevExpress.XtraEditors.GroupControl groupBox3;
+        private DevExpress.XtraEditors.GroupControl groupBox2;
+        private DevExpress.XtraEditors.TextEdit MPURLBox;
+        private DevExpress.XtraEditors.SimpleButton button1;
+        private DevExpress.XtraEditors.ImageListBoxControl pictureBox1;
+        //imageListBoxControl1
     }
 }
 

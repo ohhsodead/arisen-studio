@@ -26,7 +26,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (this.MPURLBox.TextLength <= 80)
+            if (this.MPURLBox.Properties.MaxLength  <= 80)
             {
                 MessageBox.Show("Please enter correct Marketplace URL like" + Environment.NewLine + "http://marketplace.xbox.com/en-US/Product/Lancer/00001000-95ce-e253-cea4-b7824d5308ab", "Check Marketplace URL", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
             }
@@ -35,9 +35,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 this.ItemIDBox.Text = this.MPURLBox.Text.Substring(this.MPURLBox.Text.Length - 0x24).ToUpper().Replace("-", string.Empty);
                 this.ItemNameBox.Text = this.method_0().Remove(this.method_0().Length - 0x25);
                 string[] strArray = new string[] { "http://avatar.xboxlive.com/global/t.", this.MPURLBox.Text.Substring(this.MPURLBox.Text.Length - 8), "/avataritem/", this.MPURLBox.Text.Substring(this.MPURLBox.Text.Length - 0x24), "/300" };
-                this.pictureBox1.ImageLocation = string.Concat(strArray);
+                this.pictureBox1.HtmlImages = string.Concat(strArray);
             }
-            if (this.MPURLBox.TextLength <= 80)
+            if (this.MPURLBox.Properties.MaxLength <= 80)
             {
                 MessageBox.Show("Please enter correct Marketplace URL like" + Environment.NewLine + "http://marketplace.xbox.com/en-US/Product/Lancer/00001000-95ce-e253-cea4-b7824d5308ab", "Check Marketplace URL", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
             }
@@ -46,7 +46,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 this.ItemIDBox.Text = this.MPURLBox.Text.Substring(this.MPURLBox.Text.Length - 0x24).ToUpper().Replace("-", string.Empty);
                 this.ItemNameBox.Text = this.method_0().Remove(this.method_0().Length - 0x25);
                 string[] strArray = new string[] { "http://avatar.xboxlive.com/global/t.", this.MPURLBox.Text.Substring(this.MPURLBox.Text.Length - 8), "/avataritem/", this.MPURLBox.Text.Substring(this.MPURLBox.Text.Length - 0x24), "/300" };
-                this.pictureBox1.ImageLocation = string.Concat(strArray);
+                this.pictureBox1.HtmlImages = string.Concat(strArray);
             }
 
         }
@@ -327,7 +327,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         }
         private void method_7(object sender, DownloadProgressChangedEventArgs e)
         {
-            this.progressBar.Value = e.ProgressPercentage;
+            //this.progressBar.Value = e.ProgressPercentage;
         }
 
         private void method_8(object sender, AsyncCompletedEventArgs e)
@@ -352,7 +352,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.ItemIDBox.Text = this.MPURLBox.Text.Substring(this.MPURLBox.Text.Length - 0x24).ToUpper().Replace("-", string.Empty);
             this.ItemNameBox.Text = this.method_0().Remove(this.method_0().Length - 0x25);
             string[] strArray = new string[] { "http://avatar.xboxlive.com/global/t.", this.MPURLBox.Text.Substring(this.MPURLBox.Text.Length - 8), "/avataritem/", this.MPURLBox.Text.Substring(this.MPURLBox.Text.Length - 0x24), "/300" };
-            this.pictureBox1.ImageLocation = string.Concat(strArray);
+            this.pictureBox1.HtmlImages = string.Concat(strArray);
         }
         private static bool smethod_2(int int_0) =>
     ((int_0 % 2) == 0);
