@@ -60,16 +60,16 @@
             // 
             // GameNameBox
             // 
-            this.GameNameBox.Location = new System.Drawing.Point(5, 26);
+            this.GameNameBox.Location = new System.Drawing.Point(6, 17);
             this.GameNameBox.Name = "GameNameBox";
-            this.GameNameBox.Size = new System.Drawing.Size(315, 20);
+            this.GameNameBox.Size = new System.Drawing.Size(318, 20);
             this.GameNameBox.TabIndex = 13;
             // 
             // DL_BTN
             // 
-            this.DL_BTN.Location = new System.Drawing.Point(475, 253);
+            this.DL_BTN.Location = new System.Drawing.Point(478, 229);
             this.DL_BTN.Name = "DL_BTN";
-            this.DL_BTN.Size = new System.Drawing.Size(157, 23);
+            this.DL_BTN.Size = new System.Drawing.Size(154, 23);
             this.DL_BTN.TabIndex = 19;
             this.DL_BTN.Text = ":: Download Item ::";
             this.DL_BTN.Click += new System.EventHandler(this.DL_BTN_Click);
@@ -86,35 +86,35 @@
             // 
             this.ItemIDBox.EditValue = "0000100095CEE253CEA4B7824D5308AB";
             this.ItemIDBox.Enabled = false;
-            this.ItemIDBox.Location = new System.Drawing.Point(5, 26);
+            this.ItemIDBox.Location = new System.Drawing.Point(6, 16);
             this.ItemIDBox.Name = "ItemIDBox";
             this.ItemIDBox.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.ItemIDBox.Properties.Appearance.Options.UseForeColor = true;
-            this.ItemIDBox.Size = new System.Drawing.Size(315, 20);
+            this.ItemIDBox.Size = new System.Drawing.Size(318, 20);
             this.ItemIDBox.TabIndex = 4;
             // 
             // ItemNameBox
             // 
             this.ItemNameBox.EditValue = "Lancer";
             this.ItemNameBox.Enabled = false;
-            this.ItemNameBox.Location = new System.Drawing.Point(5, 26);
+            this.ItemNameBox.Location = new System.Drawing.Point(6, 16);
             this.ItemNameBox.Name = "ItemNameBox";
-            this.ItemNameBox.Size = new System.Drawing.Size(315, 20);
+            this.ItemNameBox.Size = new System.Drawing.Size(318, 20);
             this.ItemNameBox.TabIndex = 3;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.XUIDBox);
-            this.groupBox4.Location = new System.Drawing.Point(307, 197);
+            this.groupBox4.Location = new System.Drawing.Point(306, 179);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(325, 50);
+            this.groupBox4.Size = new System.Drawing.Size(327, 44);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.Text = "XUID";
             // 
             // XUIDBox
             // 
             this.XUIDBox.EditValue = "0009000000000000";
-            this.XUIDBox.Location = new System.Drawing.Point(5, 26);
+            this.XUIDBox.Location = new System.Drawing.Point(6, 17);
             this.XUIDBox.Name = "XUIDBox";
             this.XUIDBox.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.XUIDBox.Properties.Appearance.Options.UseForeColor = true;
@@ -125,27 +125,27 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.GameNameBox);
-            this.groupBox1.Location = new System.Drawing.Point(307, 141);
+            this.groupBox1.Location = new System.Drawing.Point(306, 129);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(325, 50);
+            this.groupBox1.Size = new System.Drawing.Size(330, 44);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.Text = "Game Name";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.ItemIDBox);
-            this.groupBox3.Location = new System.Drawing.Point(307, 85);
+            this.groupBox3.Location = new System.Drawing.Point(306, 79);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(325, 50);
+            this.groupBox3.Size = new System.Drawing.Size(330, 44);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.Text = "Item ID";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.ItemNameBox);
-            this.groupBox2.Location = new System.Drawing.Point(307, 29);
+            this.groupBox2.Location = new System.Drawing.Point(305, 29);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(325, 50);
+            this.groupBox2.Size = new System.Drawing.Size(330, 44);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.Text = "Item Name";
             // 
@@ -163,7 +163,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(307, 253);
+            this.button1.Location = new System.Drawing.Point(306, 229);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 23);
             this.button1.TabIndex = 18;

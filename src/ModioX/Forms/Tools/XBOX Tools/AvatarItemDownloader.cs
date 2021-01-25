@@ -133,8 +133,8 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             {
                 try
                 {
-                    File.ReadAllBytes(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate");
-                    byte[] hash = new SHA1CryptoServiceProvider().ComputeHash(File.ReadAllBytes(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate"), 836, 44220);
+                    System.IO.File.ReadAllBytes(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate");
+                    byte[] hash = new SHA1CryptoServiceProvider().ComputeHash(System.IO.File.ReadAllBytes(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate"), 836, 44220);
                     FileStream fileStream = new FileStream(".\\$AvatarItems\\" + this.method_0().Remove(this.method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
                     BinaryWriter binaryWriter = new BinaryWriter(fileStream);
                     fileStream.Position = Convert.ToInt64("32C", 16);
