@@ -450,9 +450,11 @@ namespace ModioX.Models.Resources
 
         public bool UseDefaultCredentials { get; set; } = true;
 
+        public bool AutoDetectIPAddress { get; set; } = false;
+
         public override string ToString()
         {
-            return Name + " : " + Address;
+            return $"{Name} ({Address})";
         }
     }
 

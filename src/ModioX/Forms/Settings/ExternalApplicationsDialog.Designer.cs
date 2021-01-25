@@ -30,14 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExternalApplicationsDialog));
             this.ButtonSaveAll = new DarkUI.Controls.DarkButton();
-            this.SectionApplications = new DarkUI.Controls.DarkSectionPanel();
-            this.DgvApplications = new DevExpress.XtraGrid.GridControl();
             this.ColumnApplicationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ToolStripGameRegions = new DarkUI.Controls.DarkToolStrip();
-            this.ToolStripDeleteAll = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripDelete = new System.Windows.Forms.ToolStripButton();
-            this.LabelTotalApplications = new System.Windows.Forms.ToolStripLabel();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SectionAddApplication = new DarkUI.Controls.DarkSectionPanel();
             this.ButtonNewApplication = new DarkUI.Controls.DarkButton();
@@ -47,10 +41,20 @@
             this.ButtonAddApplication = new DarkUI.Controls.DarkButton();
             this.LabelFileLocation = new DarkUI.Controls.DarkLabel();
             this.LabelName = new DarkUI.Controls.DarkLabel();
-            this.SectionApplications.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvApplications)).BeginInit();
-            this.ToolStripGameRegions.SuspendLayout();
+            this.GroupExternalApplications = new DevExpress.XtraEditors.GroupControl();
+            this.ProgressCustomLists = new DevExpress.XtraWaitForm.ProgressPanel();
+            this.GridControlExternalApplications = new DevExpress.XtraGrid.GridControl();
+            this.GridViewExternalApplications = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
+            this.ButtonDeleteApplication = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonDeleteAllLists = new DevExpress.XtraEditors.SimpleButton();
             this.SectionAddApplication.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupExternalApplications)).BeginInit();
+            this.GroupExternalApplications.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlExternalApplications)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewExternalApplications)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
+            this.stackPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ButtonSaveAll
@@ -59,35 +63,11 @@
             this.ButtonSaveAll.Location = new System.Drawing.Point(582, 403);
             this.ButtonSaveAll.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonSaveAll.Name = "ButtonSaveAll";
+            this.ButtonSaveAll.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonSaveAll.Size = new System.Drawing.Size(79, 24);
             this.ButtonSaveAll.TabIndex = 3;
             this.ButtonSaveAll.Text = "Save All";
             this.ButtonSaveAll.Click += new System.EventHandler(this.ButtonSaveAll_Click);
-            // 
-            // SectionApplications
-            // 
-            this.SectionApplications.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SectionApplications.Controls.Add(this.DgvApplications);
-            this.SectionApplications.Controls.Add(this.ToolStripGameRegions);
-            this.SectionApplications.Cursor = System.Windows.Forms.Cursors.Default;
-            this.SectionApplications.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SectionApplications.Location = new System.Drawing.Point(12, 13);
-            this.SectionApplications.Margin = new System.Windows.Forms.Padding(4);
-            this.SectionApplications.Name = "SectionApplications";
-            this.SectionApplications.SectionHeader = "EXTERNAL APPLICATIONS";
-            this.SectionApplications.Size = new System.Drawing.Size(651, 255);
-            this.SectionApplications.TabIndex = 0;
-            // 
-            // DgvApplications
-            // 
-            this.DgvApplications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvApplications.Location = new System.Drawing.Point(1, 25);
-            this.DgvApplications.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.DgvApplications.Name = "DgvApplications";
-            this.DgvApplications.Size = new System.Drawing.Size(649, 193);
-            this.DgvApplications.TabIndex = 0;
             // 
             // ColumnApplicationName
             // 
@@ -103,71 +83,6 @@
             this.ColumnFileLocation.Name = "ColumnFileLocation";
             this.ColumnFileLocation.ReadOnly = true;
             this.ColumnFileLocation.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ToolStripGameRegions
-            // 
-            this.ToolStripGameRegions.AutoSize = false;
-            this.ToolStripGameRegions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripGameRegions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ToolStripGameRegions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripGameRegions.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.ToolStripGameRegions.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ToolStripGameRegions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripDeleteAll,
-            this.ToolStripDelete,
-            this.LabelTotalApplications});
-            this.ToolStripGameRegions.Location = new System.Drawing.Point(1, 218);
-            this.ToolStripGameRegions.Name = "ToolStripGameRegions";
-            this.ToolStripGameRegions.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.ToolStripGameRegions.Size = new System.Drawing.Size(649, 36);
-            this.ToolStripGameRegions.TabIndex = 2;
-            this.ToolStripGameRegions.TabStop = true;
-            this.ToolStripGameRegions.Text = "darkToolStrip2";
-            // 
-            // ToolStripDeleteAll
-            // 
-            this.ToolStripDeleteAll.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.ToolStripDeleteAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripDeleteAll.Enabled = false;
-            this.ToolStripDeleteAll.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripDeleteAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripDeleteAll.Image = global::ModioX.Properties.Resources.delete;
-            this.ToolStripDeleteAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripDeleteAll.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripDeleteAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripDeleteAll.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripDeleteAll.Name = "ToolStripDeleteAll";
-            this.ToolStripDeleteAll.Size = new System.Drawing.Size(88, 26);
-            this.ToolStripDeleteAll.Text = "Delete All";
-            this.ToolStripDeleteAll.ToolTipText = "Delete All Applications";
-            this.ToolStripDeleteAll.Click += new System.EventHandler(this.ToolStripDeleteAll_Click);
-            // 
-            // ToolStripDelete
-            // 
-            this.ToolStripDelete.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.ToolStripDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripDelete.Enabled = false;
-            this.ToolStripDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripDelete.Image = global::ModioX.Properties.Resources.delete;
-            this.ToolStripDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripDelete.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripDelete.Name = "ToolStripDelete";
-            this.ToolStripDelete.Size = new System.Drawing.Size(71, 26);
-            this.ToolStripDelete.Text = "Delete";
-            this.ToolStripDelete.ToolTipText = "Delete Selected Item";
-            this.ToolStripDelete.Click += new System.EventHandler(this.ToolStripDelete_Click);
-            // 
-            // LabelTotalApplications
-            // 
-            this.LabelTotalApplications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.LabelTotalApplications.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelTotalApplications.Name = "LabelTotalApplications";
-            this.LabelTotalApplications.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.LabelTotalApplications.Size = new System.Drawing.Size(88, 33);
-            this.LabelTotalApplications.Text = "0 Applications";
             // 
             // ColumnGameTitle
             // 
@@ -204,6 +119,7 @@
             this.ButtonNewApplication.Location = new System.Drawing.Point(376, 84);
             this.ButtonNewApplication.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonNewApplication.Name = "ButtonNewApplication";
+            this.ButtonNewApplication.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonNewApplication.Size = new System.Drawing.Size(128, 24);
             this.ButtonNewApplication.TabIndex = 1185;
             this.ButtonNewApplication.Text = "New Application";
@@ -215,6 +131,7 @@
             this.ButtonLocalFilePath.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonLocalFilePath.Location = new System.Drawing.Point(600, 51);
             this.ButtonLocalFilePath.Name = "ButtonLocalFilePath";
+            this.ButtonLocalFilePath.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonLocalFilePath.Size = new System.Drawing.Size(42, 23);
             this.ButtonLocalFilePath.TabIndex = 1184;
             this.ButtonLocalFilePath.Text = "...";
@@ -224,7 +141,10 @@
             // 
             this.TextBoxFileLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxFileLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.TextBoxFileLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxFileLocation.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxFileLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxFileLocation.Location = new System.Drawing.Point(198, 51);
             this.TextBoxFileLocation.Name = "TextBoxFileLocation";
             this.TextBoxFileLocation.Size = new System.Drawing.Size(396, 23);
@@ -232,7 +152,10 @@
             // 
             // TextBoxFileName
             // 
+            this.TextBoxFileName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.TextBoxFileName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxFileName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxFileName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBoxFileName.Location = new System.Drawing.Point(8, 51);
             this.TextBoxFileName.Name = "TextBoxFileName";
             this.TextBoxFileName.Size = new System.Drawing.Size(184, 23);
@@ -246,6 +169,7 @@
             this.ButtonAddApplication.Location = new System.Drawing.Point(514, 84);
             this.ButtonAddApplication.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonAddApplication.Name = "ButtonAddApplication";
+            this.ButtonAddApplication.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonAddApplication.Size = new System.Drawing.Size(128, 24);
             this.ButtonAddApplication.TabIndex = 1180;
             this.ButtonAddApplication.Text = "Add Application";
@@ -275,19 +199,105 @@
             this.LabelName.TabIndex = 16;
             this.LabelName.Text = "Application Name:";
             // 
+            // GroupExternalApplications
+            // 
+            this.GroupExternalApplications.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupExternalApplications.Controls.Add(this.ProgressCustomLists);
+            this.GroupExternalApplications.Controls.Add(this.GridControlExternalApplications);
+            this.GroupExternalApplications.Controls.Add(this.stackPanel1);
+            this.GroupExternalApplications.Location = new System.Drawing.Point(16, 12);
+            this.GroupExternalApplications.Name = "GroupExternalApplications";
+            this.GroupExternalApplications.Size = new System.Drawing.Size(647, 257);
+            this.GroupExternalApplications.TabIndex = 1180;
+            this.GroupExternalApplications.Text = "EXTERNAL APPLICATIONS";
+            // 
+            // ProgressCustomLists
+            // 
+            this.ProgressCustomLists.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ProgressCustomLists.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ProgressCustomLists.Appearance.Options.UseBackColor = true;
+            this.ProgressCustomLists.AppearanceCaption.Options.UseTextOptions = true;
+            this.ProgressCustomLists.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressCustomLists.AppearanceDescription.Options.UseTextOptions = true;
+            this.ProgressCustomLists.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressCustomLists.Caption = "NO EXTERNAL APPLICATIONS";
+            this.ProgressCustomLists.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ProgressCustomLists.Description = "Loading..";
+            this.ProgressCustomLists.Location = new System.Drawing.Point(200, 101);
+            this.ProgressCustomLists.Name = "ProgressCustomLists";
+            this.ProgressCustomLists.Size = new System.Drawing.Size(246, 66);
+            this.ProgressCustomLists.TabIndex = 1172;
+            this.ProgressCustomLists.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
+            // 
+            // GridControlExternalApplications
+            // 
+            this.GridControlExternalApplications.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridControlExternalApplications.Location = new System.Drawing.Point(2, 23);
+            this.GridControlExternalApplications.MainView = this.GridViewExternalApplications;
+            this.GridControlExternalApplications.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.GridControlExternalApplications.Name = "GridControlExternalApplications";
+            this.GridControlExternalApplications.Size = new System.Drawing.Size(643, 196);
+            this.GridControlExternalApplications.TabIndex = 0;
+            this.GridControlExternalApplications.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewExternalApplications});
+            // 
+            // GridViewExternalApplications
+            // 
+            this.GridViewExternalApplications.ActiveFilterEnabled = false;
+            this.GridViewExternalApplications.GridControl = this.GridControlExternalApplications;
+            this.GridViewExternalApplications.Name = "GridViewExternalApplications";
+            this.GridViewExternalApplications.OptionsBehavior.ReadOnly = true;
+            this.GridViewExternalApplications.OptionsView.ShowGroupExpandCollapseButtons = false;
+            this.GridViewExternalApplications.OptionsView.ShowGroupPanel = false;
+            this.GridViewExternalApplications.OptionsView.ShowIndicator = false;
+            this.GridViewExternalApplications.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Indicator;
+            // 
+            // stackPanel1
+            // 
+            this.stackPanel1.Controls.Add(this.ButtonDeleteApplication);
+            this.stackPanel1.Controls.Add(this.ButtonDeleteAllLists);
+            this.stackPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.stackPanel1.Location = new System.Drawing.Point(2, 219);
+            this.stackPanel1.Name = "stackPanel1";
+            this.stackPanel1.Size = new System.Drawing.Size(643, 36);
+            this.stackPanel1.TabIndex = 10;
+            // 
+            // ButtonDeleteApplication
+            // 
+            this.ButtonDeleteApplication.Enabled = false;
+            this.ButtonDeleteApplication.Location = new System.Drawing.Point(6, 6);
+            this.ButtonDeleteApplication.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.ButtonDeleteApplication.Name = "ButtonDeleteApplication";
+            this.ButtonDeleteApplication.Size = new System.Drawing.Size(82, 24);
+            this.ButtonDeleteApplication.TabIndex = 12;
+            this.ButtonDeleteApplication.Text = "Delete List";
+            // 
+            // ButtonDeleteAllLists
+            // 
+            this.ButtonDeleteAllLists.Enabled = false;
+            this.ButtonDeleteAllLists.Location = new System.Drawing.Point(94, 6);
+            this.ButtonDeleteAllLists.Name = "ButtonDeleteAllLists";
+            this.ButtonDeleteAllLists.Size = new System.Drawing.Size(84, 24);
+            this.ButtonDeleteAllLists.TabIndex = 13;
+            this.ButtonDeleteAllLists.Text = "Delete All";
+            // 
             // ExternalApplicationsDialog
             // 
+            this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Appearance.Options.UseFont = true;
+            this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(675, 441);
+            this.Controls.Add(this.GroupExternalApplications);
             this.Controls.Add(this.SectionAddApplication);
-            this.Controls.Add(this.SectionApplications);
             this.Controls.Add(this.ButtonSaveAll);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.Gainsboro;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("ExternalApplicationsDialog.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ExternalApplicationsDialog";
@@ -295,23 +305,20 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "External Applications";
             this.Load += new System.EventHandler(this.EditExternalApplications_Load);
-            this.SectionApplications.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvApplications)).EndInit();
-            this.ToolStripGameRegions.ResumeLayout(false);
-            this.ToolStripGameRegions.PerformLayout();
             this.SectionAddApplication.ResumeLayout(false);
             this.SectionAddApplication.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupExternalApplications)).EndInit();
+            this.GroupExternalApplications.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlExternalApplications)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewExternalApplications)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
+            this.stackPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private DarkUI.Controls.DarkButton ButtonSaveAll;
-        private DarkUI.Controls.DarkSectionPanel SectionApplications;
-        private DevExpress.XtraGrid.GridControl DgvApplications;
-        private DarkUI.Controls.DarkToolStrip ToolStripGameRegions;
-        private System.Windows.Forms.ToolStripButton ToolStripDeleteAll;
-        private System.Windows.Forms.ToolStripLabel LabelTotalApplications;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameTitle;
         private DarkUI.Controls.DarkSectionPanel SectionAddApplication;
         private DarkUI.Controls.DarkLabel LabelFileLocation;
@@ -320,9 +327,15 @@
         private DarkUI.Controls.DarkTextBox TextBoxFileLocation;
         private DarkUI.Controls.DarkTextBox TextBoxFileName;
         private DarkUI.Controls.DarkButton ButtonLocalFilePath;
-        private System.Windows.Forms.ToolStripButton ToolStripDelete;
         private DarkUI.Controls.DarkButton ButtonNewApplication;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnApplicationName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileLocation;
+        private DevExpress.XtraEditors.GroupControl GroupExternalApplications;
+        private DevExpress.XtraWaitForm.ProgressPanel ProgressCustomLists;
+        private DevExpress.XtraGrid.GridControl GridControlExternalApplications;
+        private DevExpress.XtraGrid.Views.Grid.GridView GridViewExternalApplications;
+        private DevExpress.Utils.Layout.StackPanel stackPanel1;
+        private DevExpress.XtraEditors.SimpleButton ButtonDeleteApplication;
+        private DevExpress.XtraEditors.SimpleButton ButtonDeleteAllLists;
     }
 }

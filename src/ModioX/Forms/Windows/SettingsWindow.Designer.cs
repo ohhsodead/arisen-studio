@@ -186,9 +186,10 @@ namespace ModioX.Forms.Windows
             this.ColorXboxDebuggingFont.EditValue = System.Drawing.Color.Empty;
             this.ColorXboxDebuggingFont.Location = new System.Drawing.Point(132, 126);
             this.ColorXboxDebuggingFont.Name = "ColorXboxDebuggingFont";
+            this.ColorXboxDebuggingFont.Properties.AllowFocused = false;
             this.ColorXboxDebuggingFont.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ColorXboxDebuggingFont.Size = new System.Drawing.Size(86, 20);
+            this.ColorXboxDebuggingFont.Size = new System.Drawing.Size(114, 20);
             this.ColorXboxDebuggingFont.TabIndex = 0;
             // 
             // labelControl6
@@ -212,9 +213,10 @@ namespace ModioX.Forms.Windows
             this.ColorXboxDebuggingBackground.EditValue = System.Drawing.Color.Empty;
             this.ColorXboxDebuggingBackground.Location = new System.Drawing.Point(132, 156);
             this.ColorXboxDebuggingBackground.Name = "ColorXboxDebuggingBackground";
+            this.ColorXboxDebuggingBackground.Properties.AllowFocused = false;
             this.ColorXboxDebuggingBackground.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ColorXboxDebuggingBackground.Size = new System.Drawing.Size(86, 20);
+            this.ColorXboxDebuggingBackground.Size = new System.Drawing.Size(114, 20);
             this.ColorXboxDebuggingBackground.TabIndex = 1;
             // 
             // CheckBoxSaveThemeOnClose
@@ -272,7 +274,7 @@ namespace ModioX.Forms.Windows
             this.TabDatabase.Controls.Add(this.labelControl1);
             this.TabDatabase.Controls.Add(this.RadioConsoles);
             this.TabDatabase.Name = "TabDatabase";
-            this.TabDatabase.Size = new System.Drawing.Size(411, 191);
+            this.TabDatabase.Size = new System.Drawing.Size(392, 191);
             this.TabDatabase.Text = "Database";
             // 
             // labelControl1
@@ -303,7 +305,7 @@ namespace ModioX.Forms.Windows
             this.TabContentRecognition.Controls.Add(this.CheckBoxAutoDetectGameTitles);
             this.TabContentRecognition.Controls.Add(this.CheckBoxRememberGameRegions);
             this.TabContentRecognition.Name = "TabContentRecognition";
-            this.TabContentRecognition.Size = new System.Drawing.Size(411, 191);
+            this.TabContentRecognition.Size = new System.Drawing.Size(392, 191);
             this.TabContentRecognition.Text = "Content Recognition";
             // 
             // TabFileManager
@@ -311,7 +313,7 @@ namespace ModioX.Forms.Windows
             this.TabFileManager.Controls.Add(this.CheckBoxSaveConsolePath);
             this.TabFileManager.Controls.Add(this.CheckBoxSaveLocalPath);
             this.TabFileManager.Name = "TabFileManager";
-            this.TabFileManager.Size = new System.Drawing.Size(411, 191);
+            this.TabFileManager.Size = new System.Drawing.Size(392, 191);
             this.TabFileManager.Text = "File Manager";
             // 
             // SettingsWindow

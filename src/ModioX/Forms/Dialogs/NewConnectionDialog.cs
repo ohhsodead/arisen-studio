@@ -41,45 +41,41 @@ namespace ModioX.Forms.Dialogs
                     ConsoleProfile.Type = ConsoleType.PlayStation3Fat;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.PS3;
                     ImageConsole.Image = Properties.Resources.PlayStation3Fat;
-                    TextBoxConsolePort.Text = "21";
                     break;
                 case 1:
                     ConsoleProfile.Type = ConsoleType.PlayStation3Slim;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.PS3;
                     ImageConsole.Image = Properties.Resources.PlayStation3Slim;
-                    TextBoxConsolePort.Text = "21";
                     break;
                 case 2:
                     ConsoleProfile.Type = ConsoleType.PlayStation3SuperSlim;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.PS3;
                     ImageConsole.Image = Properties.Resources.PlayStation3SuperSlim;
-                    TextBoxConsolePort.Text = "21";
                     break;
                 case 3:
                     ConsoleProfile.Type = ConsoleType.Xbox360FatWhite;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
                     ImageConsole.Image = Properties.Resources.XboxFat;
-                    TextBoxConsolePort.Text = "730";
                     break;
                 case 4:
                     ConsoleProfile.Type = ConsoleType.Xbox360EliteFatBlack;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
                     ImageConsole.Image = Properties.Resources.XboxFatElite;
-                    TextBoxConsolePort.Text = "730";
                     break;
                 case 5:
                     ConsoleProfile.Type = ConsoleType.Xbox360Slim;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
                     ImageConsole.Image = Properties.Resources.XboxSlim;
-                    TextBoxConsolePort.Text = "730";
                     break;
                 case 6:
                     ConsoleProfile.Type = ConsoleType.Xbox360SlimE;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
                     ImageConsole.Image = Properties.Resources.XboxSlimE;
-                    TextBoxConsolePort.Text = "730";
                     break;
             }
+
+            TextBoxConsolePort.Text = ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX ? "730" : "21";
+            CheckBoxAutoDetectIPAddress.Visible = ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
         }
 
         private void ButtonChangeCredentials_Click(object sender, EventArgs e)
@@ -105,6 +101,13 @@ namespace ModioX.Forms.Dialogs
             }
         }
 
+        private void CheckBoxAutoDetectIPAddress_CheckedChanged(object sender, EventArgs e)
+        {
+            ConsoleProfile.AutoDetectIPAddress = CheckBoxAutoDetectIPAddress.Checked;
+            TextBoxConsoleAddress.Enabled = CheckBoxAutoDetectIPAddress.Checked;
+            TextBoxConsoleAddress.Text = CheckBoxAutoDetectIPAddress.Checked ? "192.168.0." : string.Empty;
+        }
+
         private void ButtonOK_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(TextBoxConnectionName.Text))
@@ -121,7 +124,7 @@ namespace ModioX.Forms.Dialogs
 
             if (string.IsNullOrWhiteSpace(TextBoxConsolePort.Text))
             {
-                XtraMessageBox.Show("You must enter a port value. The default value is 21.", "Empty Field");
+                XtraMessageBox.Show("You must enter a port value. The default value for PS3 is 21 and Xbox is 730.", "Empty Field");
                 return;
             }
 
@@ -164,7 +167,7 @@ namespace ModioX.Forms.Dialogs
                 }
                 else
                 {
-                    XtraMessageBox.Show("Port isn't an integer value.", "Invalid Port", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Port is not an integer value.", "Invalid Port", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

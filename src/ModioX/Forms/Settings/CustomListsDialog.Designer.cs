@@ -37,7 +37,7 @@
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.ProgressCustomLists = new DevExpress.XtraWaitForm.ProgressPanel();
-            this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
+            this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
             this.ButtonCreateNewList = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonRenameList = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonDeleteList = new DevExpress.XtraEditors.SimpleButton();
@@ -46,18 +46,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridViewCustomLists)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
-            this.stackPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).BeginInit();
+            this.PanelButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // GridCustomLists
             // 
             this.GridCustomLists.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridCustomLists.Location = new System.Drawing.Point(2, 21);
+            this.GridCustomLists.Location = new System.Drawing.Point(2, 23);
             this.GridCustomLists.MainView = this.GridViewCustomLists;
             this.GridCustomLists.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.GridCustomLists.Name = "GridCustomLists";
-            this.GridCustomLists.Size = new System.Drawing.Size(403, 230);
+            this.GridCustomLists.Size = new System.Drawing.Size(403, 228);
             this.GridCustomLists.TabIndex = 0;
             this.GridCustomLists.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewCustomLists});
@@ -65,6 +65,7 @@
             // 
             // GridViewCustomLists
             // 
+            this.GridViewCustomLists.ActiveFilterEnabled = false;
             this.GridViewCustomLists.GridControl = this.GridCustomLists;
             this.GridViewCustomLists.Name = "GridViewCustomLists";
             this.GridViewCustomLists.OptionsBehavior.ReadOnly = true;
@@ -105,7 +106,7 @@
             // 
             this.groupControl1.Controls.Add(this.ProgressCustomLists);
             this.groupControl1.Controls.Add(this.GridCustomLists);
-            this.groupControl1.Controls.Add(this.stackPanel1);
+            this.groupControl1.Controls.Add(this.PanelButtons);
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(407, 289);
@@ -130,17 +131,17 @@
             this.ProgressCustomLists.TabIndex = 1172;
             this.ProgressCustomLists.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
             // 
-            // stackPanel1
+            // PanelButtons
             // 
-            this.stackPanel1.Controls.Add(this.ButtonCreateNewList);
-            this.stackPanel1.Controls.Add(this.ButtonRenameList);
-            this.stackPanel1.Controls.Add(this.ButtonDeleteList);
-            this.stackPanel1.Controls.Add(this.ButtonDeleteAllLists);
-            this.stackPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.stackPanel1.Location = new System.Drawing.Point(2, 251);
-            this.stackPanel1.Name = "stackPanel1";
-            this.stackPanel1.Size = new System.Drawing.Size(403, 36);
-            this.stackPanel1.TabIndex = 10;
+            this.PanelButtons.Controls.Add(this.ButtonCreateNewList);
+            this.PanelButtons.Controls.Add(this.ButtonRenameList);
+            this.PanelButtons.Controls.Add(this.ButtonDeleteList);
+            this.PanelButtons.Controls.Add(this.ButtonDeleteAllLists);
+            this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelButtons.Location = new System.Drawing.Point(2, 251);
+            this.PanelButtons.Name = "PanelButtons";
+            this.PanelButtons.Size = new System.Drawing.Size(403, 36);
+            this.PanelButtons.TabIndex = 10;
             // 
             // ButtonCreateNewList
             // 
@@ -206,8 +207,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridViewCustomLists)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
-            this.stackPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).EndInit();
+            this.PanelButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -220,7 +221,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRegion;
         private DevExpress.XtraGrid.Views.Grid.GridView GridViewCustomLists;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.Utils.Layout.StackPanel stackPanel1;
+        private DevExpress.Utils.Layout.StackPanel PanelButtons;
         private DevExpress.XtraEditors.SimpleButton ButtonCreateNewList;
         private DevExpress.XtraEditors.SimpleButton ButtonRenameList;
         private DevExpress.XtraEditors.SimpleButton ButtonDeleteList;

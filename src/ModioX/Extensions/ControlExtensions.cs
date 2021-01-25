@@ -8,22 +8,6 @@ namespace ModioX.Extensions
 {
     internal static class ControlExtensions
     {
-        public static Label GetCategoryTitle()
-        {
-            return new Label()
-            {
-                TextAlign = ContentAlignment.MiddleLeft,
-                AutoSize = false,
-                Margin = new Padding(0, 0, 0, 0),
-                Padding = new Padding(2, 0, 0, 0),
-                Font = new Font("Segoe UI", 9F),
-                Cursor = Cursors.Hand,
-                BackColor = Color.FromArgb(38, 38, 38),
-                ForeColor = Color.Gainsboro,
-                AutoEllipsis = true,
-            };
-        }
-
         /// <summary>
         /// Change button size to fit text and resizes to fit content.
         /// </summary>

@@ -31,6 +31,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             dt.Columns.Add("Game Title", typeof(string));
             dt.Columns.Add("File Name", typeof(string));
             dt.Columns.Add("File Size", typeof(string));
+            dt.Columns.Add("Created On", typeof(string));
 
             foreach (var backupFile in MainWindow.Settings.BackupFiles)
             {
@@ -40,14 +41,16 @@ namespace ModioX.Forms.Tools.PS3_Tools
                     backupFile.FileName,
                     File.Exists(backupFile.LocalPath)
                     ? (MainWindow.Settings.ShowFileSizeInBytes ? fileSize.ToString("#,0") + " bytes" : StringExtensions.FormatSize(fileSize.ToString()))
-                    : "No File Exists", backupFile.CreatedDate.ToLocalTime().ToString(CultureInfo.CurrentCulture));
+                    : "No File Exists", 
+                    backupFile.CreatedDate.ToLocalTime());
             }
 
             GridBackupFiles.DataSource = dt;
 
+            GridViewBackupFiles.Columns[0].Width = 200;
             GridViewBackupFiles.Columns[1].Width = 200;
-            GridViewBackupFiles.Columns[2].Width = 50;
-            GridViewBackupFiles.Columns[3].Width = 50;
+            GridViewBackupFiles.Columns[2].Width = 110;
+            GridViewBackupFiles.Columns[3].Width = 80;
 
             ProgressBackupFiles.Visible = dt.Rows.Count < 1;
         }

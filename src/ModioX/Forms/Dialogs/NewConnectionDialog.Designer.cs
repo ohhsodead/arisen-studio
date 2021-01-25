@@ -43,11 +43,13 @@
             this.TextBoxConsolePort = new DevExpress.XtraEditors.TextEdit();
             this.TextBoxConsoleAddress = new DevExpress.XtraEditors.TextEdit();
             this.TextBoxConnectionName = new DevExpress.XtraEditors.TextEdit();
+            this.CheckBoxAutoDetectIPAddress = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageConsole.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxConsoleType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsolePort.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsoleAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConnectionName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectIPAddress.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelUserPass
@@ -58,7 +60,7 @@
             this.LabelUserPass.Location = new System.Drawing.Point(261, 102);
             this.LabelUserPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelUserPass.Name = "LabelUserPass";
-            this.LabelUserPass.Size = new System.Drawing.Size(158, 15);
+            this.LabelUserPass.Size = new System.Drawing.Size(155, 15);
             this.LabelUserPass.TabIndex = 1142;
             this.LabelUserPass.Text = "Default";
             // 
@@ -113,10 +115,10 @@
             // ButtonOK
             // 
             this.ButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOK.Location = new System.Drawing.Point(332, 165);
+            this.ButtonOK.Location = new System.Drawing.Point(332, 180);
             this.ButtonOK.Name = "ButtonOK";
-            this.ButtonOK.Size = new System.Drawing.Size(80, 23);
-            this.ButtonOK.TabIndex = 5;
+            this.ButtonOK.Size = new System.Drawing.Size(80, 24);
+            this.ButtonOK.TabIndex = 6;
             this.ButtonOK.Text = "OK";
             this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
@@ -124,17 +126,17 @@
             // 
             this.ButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonCancel.Location = new System.Drawing.Point(422, 165);
+            this.ButtonCancel.Location = new System.Drawing.Point(422, 180);
             this.ButtonCancel.Name = "ButtonCancel";
-            this.ButtonCancel.Size = new System.Drawing.Size(80, 23);
-            this.ButtonCancel.TabIndex = 6;
+            this.ButtonCancel.Size = new System.Drawing.Size(80, 24);
+            this.ButtonCancel.TabIndex = 7;
             this.ButtonCancel.Text = "Cancel";
             // 
             // ButtonChangeCredentials
             // 
             this.ButtonChangeCredentials.Location = new System.Drawing.Point(422, 98);
             this.ButtonChangeCredentials.Name = "ButtonChangeCredentials";
-            this.ButtonChangeCredentials.Size = new System.Drawing.Size(80, 23);
+            this.ButtonChangeCredentials.Size = new System.Drawing.Size(80, 24);
             this.ButtonChangeCredentials.TabIndex = 4;
             this.ButtonChangeCredentials.Text = "Change";
             this.ButtonChangeCredentials.Click += new System.EventHandler(this.ButtonChangeCredentials_Click);
@@ -156,12 +158,14 @@
             this.ImageConsole.EditValue = ((object)(resources.GetObject("ImageConsole.EditValue")));
             this.ImageConsole.Location = new System.Drawing.Point(12, 12);
             this.ImageConsole.Name = "ImageConsole";
+            this.ImageConsole.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.ImageConsole.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.ImageConsole.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.ImageConsole.Properties.Appearance.Options.UseBackColor = true;
             this.ImageConsole.Properties.Appearance.Options.UseForeColor = true;
             this.ImageConsole.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.ImageConsole.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.ImageConsole.Properties.ShowZoomSubMenu = DevExpress.Utils.DefaultBoolean.False;
             this.ImageConsole.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.ImageConsole.Size = new System.Drawing.Size(132, 132);
             this.ImageConsole.TabIndex = 1147;
@@ -217,6 +221,17 @@
             this.TextBoxConnectionName.Size = new System.Drawing.Size(238, 22);
             this.TextBoxConnectionName.TabIndex = 0;
             // 
+            // CheckBoxAutoDetectIPAddress
+            // 
+            this.CheckBoxAutoDetectIPAddress.Location = new System.Drawing.Point(264, 129);
+            this.CheckBoxAutoDetectIPAddress.Name = "CheckBoxAutoDetectIPAddress";
+            this.CheckBoxAutoDetectIPAddress.Properties.AutoWidth = true;
+            this.CheckBoxAutoDetectIPAddress.Properties.Caption = "Automatically detect console IP Address";
+            this.CheckBoxAutoDetectIPAddress.Size = new System.Drawing.Size(224, 18);
+            this.CheckBoxAutoDetectIPAddress.TabIndex = 5;
+            this.CheckBoxAutoDetectIPAddress.Visible = false;
+            this.CheckBoxAutoDetectIPAddress.CheckedChanged += new System.EventHandler(this.CheckBoxAutoDetectIPAddress_CheckedChanged);
+            // 
             // NewConnectionDialog
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
@@ -225,7 +240,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(514, 200);
+            this.ClientSize = new System.Drawing.Size(514, 216);
+            this.Controls.Add(this.CheckBoxAutoDetectIPAddress);
             this.Controls.Add(this.ImageConsole);
             this.Controls.Add(this.ComboBoxConsoleType);
             this.Controls.Add(this.darkLabel2);
@@ -257,6 +273,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsolePort.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsoleAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConnectionName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectIPAddress.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +294,6 @@
         private DarkUI.Controls.DarkLabel darkLabel2;
         private DevExpress.XtraEditors.ComboBoxEdit ComboBoxConsoleType;
         private DevExpress.XtraEditors.PictureEdit ImageConsole;
+        private DevExpress.XtraEditors.CheckEdit CheckBoxAutoDetectIPAddress;
     }
 }
