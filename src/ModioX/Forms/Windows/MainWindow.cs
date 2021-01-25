@@ -41,6 +41,7 @@ namespace ModioX.Forms.Windows
             InitializeComponent();
             SkinColors = CommonSkins.GetSkin(Window.LookAndFeel).Colors;
         }
+
         /// <summary>
         /// Contains this instance of the form
         /// </summary>
