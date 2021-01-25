@@ -30,6 +30,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheatEngine));
             this.GridControlModifyValues = new DevExpress.XtraGrid.GridControl();
             this.GridViewModifyValues = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.GridControlScannedAddresses = new DevExpress.XtraGrid.GridControl();
@@ -38,28 +39,43 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.BarMenu = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar2 = new DevExpress.XtraBars.Bar();
-            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.MainMenu = new DevExpress.XtraBars.Bar();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.Quit = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.CheatEngineSettings = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.imageListBoxControl1 = new DevExpress.XtraEditors.ImageListBoxControl();
+            this.imageListBoxControl2 = new DevExpress.XtraEditors.ImageListBoxControl();
+            this.imageListBoxControl3 = new DevExpress.XtraEditors.ImageListBoxControl();
+            this.imageListBoxControl4 = new DevExpress.XtraEditors.ImageListBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlModifyValues)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewModifyValues)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlScannedAddresses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewScannedAddresses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageListBoxControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageListBoxControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageListBoxControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageListBoxControl4)).BeginInit();
             this.SuspendLayout();
             // 
             // GridControlModifyValues
             // 
-            this.GridControlModifyValues.Location = new System.Drawing.Point(12, 461);
+            this.GridControlModifyValues.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GridControlModifyValues.Location = new System.Drawing.Point(0, 517);
             this.GridControlModifyValues.MainView = this.GridViewModifyValues;
             this.GridControlModifyValues.Name = "GridControlModifyValues";
-            this.GridControlModifyValues.Size = new System.Drawing.Size(583, 217);
+            this.GridControlModifyValues.Size = new System.Drawing.Size(593, 157);
             this.GridControlModifyValues.TabIndex = 1;
             this.GridControlModifyValues.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewModifyValues});
@@ -90,9 +106,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // progressBarControl1
             // 
-            this.progressBarControl1.Location = new System.Drawing.Point(329, 118);
+            this.progressBarControl1.Location = new System.Drawing.Point(260, 39);
             this.progressBarControl1.Name = "progressBarControl1";
-            this.progressBarControl1.Size = new System.Drawing.Size(100, 18);
+            this.progressBarControl1.Size = new System.Drawing.Size(321, 18);
             this.progressBarControl1.TabIndex = 3;
             // 
             // BarMenu
@@ -126,8 +142,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar2,
-            this.bar3});
+            this.MainMenu});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
@@ -135,36 +150,102 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barSubItem1,
-            this.barButtonItem1});
-            this.barManager1.MainMenu = this.bar3;
-            this.barManager1.MaxItemId = 2;
+            this.barSubItem2,
+            this.barSubItem3,
+            this.barSubItem4,
+            this.CheatEngineSettings,
+            this.Quit,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3});
+            this.barManager1.MainMenu = this.MainMenu;
+            this.barManager1.MaxItemId = 12;
             // 
-            // bar2
+            // MainMenu
             // 
-            this.bar2.BarName = "Tools";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 1;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.Text = "Tools";
+            this.MainMenu.BarName = "Main menu";
+            this.MainMenu.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Top;
+            this.MainMenu.DockCol = 0;
+            this.MainMenu.DockRow = 0;
+            this.MainMenu.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.MainMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4)});
+            this.MainMenu.OptionsBar.DrawBorder = false;
+            this.MainMenu.OptionsBar.DrawDragBorder = false;
+            this.MainMenu.OptionsBar.MultiLine = true;
+            this.MainMenu.OptionsBar.UseWholeRow = true;
+            this.MainMenu.Text = "Main menu";
             // 
-            // bar3
+            // barSubItem1
             // 
-            this.bar3.BarName = "Main menu";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Top;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.barSubItem1.Caption = "File";
+            this.barSubItem1.Id = 2;
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.Quit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.barSubItem1.Name = "barSubItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Load File";
+            this.barButtonItem2.Id = 9;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Save FIle";
+            this.barButtonItem3.Id = 10;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // Quit
+            // 
+            this.Quit.Caption = "Quit";
+            this.Quit.Id = 7;
+            this.Quit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Quit.ImageOptions.Image")));
+            this.Quit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Quit.ImageOptions.LargeImage")));
+            this.Quit.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
+            this.Quit.Name = "Quit";
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "Edit";
+            this.barSubItem2.Id = 3;
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.CheatEngineSettings, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // CheatEngineSettings
+            // 
+            this.CheatEngineSettings.Caption = "Settings";
+            this.CheatEngineSettings.Id = 6;
+            this.CheatEngineSettings.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("CheatEngineSettings.ImageOptions.Image")));
+            this.CheatEngineSettings.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("CheatEngineSettings.ImageOptions.LargeImage")));
+            this.CheatEngineSettings.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
+            this.CheatEngineSettings.Name = "CheatEngineSettings";
+            // 
+            // barSubItem3
+            // 
+            this.barSubItem3.Caption = "Table";
+            this.barSubItem3.Id = 4;
+            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
-            this.bar3.OptionsBar.MultiLine = true;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Main menu";
+            this.barSubItem3.Name = "barSubItem3";
             // 
             // barButtonItem1
             // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 1;
+            this.barButtonItem1.Caption = "Make A Cheat Table";
+            this.barButtonItem1.Id = 8;
             this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barSubItem4
+            // 
+            this.barSubItem4.Caption = "Help";
+            this.barSubItem4.Id = 5;
+            this.barSubItem4.Name = "barSubItem4";
             // 
             // barDockControlTop
             // 
@@ -172,7 +253,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(593, 46);
+            this.barDockControlTop.Size = new System.Drawing.Size(593, 22);
             // 
             // barDockControlBottom
             // 
@@ -186,29 +267,55 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 46);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 22);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 628);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 652);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(593, 46);
+            this.barDockControlRight.Location = new System.Drawing.Point(593, 22);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 628);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 652);
             // 
-            // barSubItem1
+            // imageListBoxControl1
             // 
-            this.barSubItem1.Caption = "File";
-            this.barSubItem1.Id = 0;
-            this.barSubItem1.Name = "barSubItem1";
+            this.imageListBoxControl1.Location = new System.Drawing.Point(12, 25);
+            this.imageListBoxControl1.Name = "imageListBoxControl1";
+            this.imageListBoxControl1.Size = new System.Drawing.Size(32, 32);
+            this.imageListBoxControl1.TabIndex = 8;
+            // 
+            // imageListBoxControl2
+            // 
+            this.imageListBoxControl2.Location = new System.Drawing.Point(317, 76);
+            this.imageListBoxControl2.Name = "imageListBoxControl2";
+            this.imageListBoxControl2.Size = new System.Drawing.Size(42, 40);
+            this.imageListBoxControl2.TabIndex = 9;
+            // 
+            // imageListBoxControl3
+            // 
+            this.imageListBoxControl3.Location = new System.Drawing.Point(413, 76);
+            this.imageListBoxControl3.Name = "imageListBoxControl3";
+            this.imageListBoxControl3.Size = new System.Drawing.Size(42, 40);
+            this.imageListBoxControl3.TabIndex = 11;
+            // 
+            // imageListBoxControl4
+            // 
+            this.imageListBoxControl4.Location = new System.Drawing.Point(365, 76);
+            this.imageListBoxControl4.Name = "imageListBoxControl4";
+            this.imageListBoxControl4.Size = new System.Drawing.Size(42, 40);
+            this.imageListBoxControl4.TabIndex = 10;
             // 
             // CheatEngine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 674);
+            this.Controls.Add(this.imageListBoxControl3);
+            this.Controls.Add(this.imageListBoxControl4);
+            this.Controls.Add(this.imageListBoxControl2);
+            this.Controls.Add(this.imageListBoxControl1);
             this.Controls.Add(this.progressBarControl1);
             this.Controls.Add(this.GridControlScannedAddresses);
             this.Controls.Add(this.GridControlModifyValues);
@@ -227,6 +334,10 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             ((System.ComponentModel.ISupportInitialize)(this.GridViewScannedAddresses)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageListBoxControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageListBoxControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageListBoxControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageListBoxControl4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,13 +353,23 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         private DevExpress.XtraBars.Bar BarMenu;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.Bar bar3;
+        private DevExpress.XtraBars.Bar MainMenu;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem Quit;
+        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarButtonItem CheatEngineSettings;
+        private DevExpress.XtraBars.BarSubItem barSubItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarSubItem barSubItem4;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraEditors.ImageListBoxControl imageListBoxControl3;
+        private DevExpress.XtraEditors.ImageListBoxControl imageListBoxControl4;
+        private DevExpress.XtraEditors.ImageListBoxControl imageListBoxControl2;
+        private DevExpress.XtraEditors.ImageListBoxControl imageListBoxControl1;
     }
 }

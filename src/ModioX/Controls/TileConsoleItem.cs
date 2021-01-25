@@ -1,5 +1,4 @@
-﻿using DevExpress.Skins;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
 using System;

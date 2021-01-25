@@ -1,10 +1,7 @@
 ﻿using DarkUI.Forms;
 using DevExpress.XtraEditors;
 using ModioX.Extensions;
-using ModioX.Forms.Windows;
-using ModioX.Io;
 using System;
-using System.IO;
 using System.Windows.Forms;
 
 namespace ModioX.Forms.Tools.PS3_Tools
@@ -75,7 +72,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 */
             }
 
-            LabelNoGameUpdatesFound.Visible = DgvGameUpdates.MainView.RowCount < 1;             
+            LabelNoGameUpdatesFound.Visible = DgvGameUpdates.MainView.RowCount < 1;
         }
 
         private void DgvGameUpdates_SelectionChanged(object sender, EventArgs e)

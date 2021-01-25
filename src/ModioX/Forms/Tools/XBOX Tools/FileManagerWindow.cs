@@ -1,22 +1,20 @@
 ﻿using DarkUI.Forms;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
-using FluentFTP;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Io;
-using ModioX.Net;
 using ModioX.Properties;
 using System;
+using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using XDevkit;
 using FtpException = FluentFTP.FtpException;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
-using XDevkit;
-using System.Data;
-using System.Linq;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {

@@ -194,12 +194,6 @@
     <Compile Include="Forms\Tools\XBOX Tools\MemoryViewer.designer.cs">
       <DependentUpon>MemoryViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\XMessageboxUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\XMessageboxUI.Designer.cs">
-      <DependentUpon>XMessageboxUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Windows\SettingsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,9 +345,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\MemoryViewer.resx">
       <DependentUpon>MemoryViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\XBOX Tools\XMessageboxUI.resx">
-      <DependentUpon>XMessageboxUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

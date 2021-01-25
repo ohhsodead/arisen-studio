@@ -1,8 +1,6 @@
-﻿using DarkUI.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ModioX.Forms.Windows;
 using System;
-using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 

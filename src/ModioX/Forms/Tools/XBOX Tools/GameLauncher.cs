@@ -1,14 +1,5 @@
-﻿using DevExpress.XtraEditors;
-using ModioX.Forms.Windows;
+﻿using ModioX.Forms.Windows;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using XDevkit;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
