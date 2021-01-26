@@ -1,4 +1,7 @@
 ﻿
+using DevExpress.XtraBars;
+using System;
+
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
     partial class CheatEngine
@@ -732,10 +735,10 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 674);
-            this.Controls.Add(this.imageListBoxControl3);
-            this.Controls.Add(this.imageListBoxControl4);
-            this.Controls.Add(this.imageListBoxControl2);
-            this.Controls.Add(this.imageListBoxControl1);
+            //this.Controls.Add(this.imageListBoxControl3);
+            //this.Controls.Add(this.imageListBoxControl4);
+            //this.Controls.Add(this.imageListBoxControl2);
+            //this.Controls.Add(this.imageListBoxControl1);
             this.Controls.Add(this.progressBarControl1);
             this.Controls.Add(this.GridControlModifyValues);
             this.Controls.Add(this.CheatSearch);
@@ -780,6 +783,16 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void Quit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void svgImageBox1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
