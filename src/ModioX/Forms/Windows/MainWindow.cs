@@ -2237,7 +2237,7 @@ namespace ModioX.Forms.Windows
 
                 if (!Directory.Exists(UserFolders.AppDataDirectory))
                 {
-                    _ = Directory.CreateDirectory(UserFolders.AppDataDirectory);
+                    Directory.CreateDirectory(UserFolders.AppDataDirectory);
                 }
 
                 using (StreamWriter streamWriter = new StreamWriter(UserFolders.AppSettingsFile))

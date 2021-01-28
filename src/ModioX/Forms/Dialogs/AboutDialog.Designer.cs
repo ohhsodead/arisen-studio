@@ -159,6 +159,7 @@
             this.ButtonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ButtonClose.Location = new System.Drawing.Point(270, 450);
             this.ButtonClose.Name = "ButtonClose";
+            this.ButtonClose.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonClose.Size = new System.Drawing.Size(74, 24);
             this.ButtonClose.TabIndex = 15;
             this.ButtonClose.Text = "OK";

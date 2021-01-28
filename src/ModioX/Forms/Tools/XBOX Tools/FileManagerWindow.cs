@@ -61,7 +61,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
             SetStatus("Fetching drives...");
 
-            foreach (DriveInfo driveInfo in localDrives) _ = ComboBoxLocalDrives.Properties.Items.Add(driveInfo.Name.Replace(@"\", ""));
+            foreach (DriveInfo driveInfo in localDrives) ComboBoxLocalDrives.Properties.Items.Add(driveInfo.Name.Replace(@"\", ""));
 
             if (MainWindow.Settings.SaveLocalPath)
             {
@@ -511,7 +511,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                 if (!isRoot)
                 {
-                    _ = DgvConsoleFiles.Rows.Add("folder", ImageFolder, "..", "<DIRECTORY>", DateTime.MinValue);
+                    DgvConsoleFiles.Rows.Add("folder", ImageFolder, "..", "<DIRECTORY>", DateTime.MinValue);
                 }
 
                 FtpClient.SetWorkingDirectory(FtpDirectoryPath);
@@ -543,22 +543,22 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                     if (FtpDirectoryPath == "/dev_hdd0/home/")
                     {
                         string profileName = FtpExtensions.GetUserNameFromUserId(listItem.Name);
-                        _ = DgvConsoleFiles.Rows.Add("folder", ImageFolder, $"{listItem.Name} ({profileName})", "<PROFILE>", listItem.Modified);
+                        DgvConsoleFiles.Rows.Add("folder", ImageFolder, $"{listItem.Name} ({profileName})", "<PROFILE>", listItem.Modified);
                     }
                     else if (FtpDirectoryPath == "/dev_hdd0/game/")
                     {
                         string gameTitle = MainWindow.Settings.AutoDetectGameTitles ? $" ({HttpExtensions.GetGameTitleFromTitleID(listItem.Name)})" : "";
-                        _ = DgvConsoleFiles.Rows.Add("folder", ImageFolder, $"{listItem.Name}{gameTitle}", "<GAMEUPDATE>", listItem.Modified);
+                        DgvConsoleFiles.Rows.Add("folder", ImageFolder, $"{listItem.Name}{gameTitle}", "<GAMEUPDATE>", listItem.Modified);
                     }
                     else
                     {
-                        _ = DgvConsoleFiles.Rows.Add("folder", ImageFolder, listItem.Name, "<DIRECTORY>", listItem.Modified);
+                        DgvConsoleFiles.Rows.Add("folder", ImageFolder, listItem.Name, "<DIRECTORY>", listItem.Modified);
                     }
                 }
 
                 foreach (FtpListItem listItem in files.OrderBy(x => x.Name))
                 {
-                    _ = DgvConsoleFiles.Rows.Add("file", ImageFile, listItem.Name, MainWindow.Settings.ShowFileSizeInBytes ? listItem.Size.ToString("#,0") + " bytes" : StringExtensions.FormatSize(listItem.Size.ToString()), listItem.Modified);
+                    DgvConsoleFiles.Rows.Add("file", ImageFile, listItem.Name, MainWindow.Settings.ShowFileSizeInBytes ? listItem.Size.ToString("#,0") + " bytes" : StringExtensions.FormatSize(listItem.Size.ToString()), listItem.Modified);
                     totalBytes += listItem.Size;
                 }
 
@@ -604,7 +604,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                     }
                     else
                     {
-                        _ = Directory.CreateDirectory(folderPath);
+                        Directory.CreateDirectory(folderPath);
                         LoadLocalDirectory(LocalDirectoryPath);
                     }
                 }
@@ -636,7 +636,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                     }
                     else
                     {
-                        _ = FtpExtensions.CreateDirectory(folderPath);
+                        FtpExtensions.CreateDirectory(folderPath);
                         LoadConsoleDirectory(FtpDirectoryPath);
                     }
                 }

@@ -340,7 +340,7 @@ namespace ModioX.Models.Database
         {
             if (!Directory.Exists(directoryPath))
             {
-                _ = Directory.CreateDirectory(directoryPath);
+                Directory.CreateDirectory(directoryPath);
             }
 
             // Create contents and write them to readme file 

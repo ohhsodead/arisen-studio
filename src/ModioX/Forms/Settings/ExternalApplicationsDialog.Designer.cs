@@ -29,45 +29,39 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExternalApplicationsDialog));
-            this.ButtonSaveAll = new DarkUI.Controls.DarkButton();
             this.ColumnApplicationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SectionAddApplication = new DarkUI.Controls.DarkSectionPanel();
-            this.ButtonNewApplication = new DarkUI.Controls.DarkButton();
-            this.ButtonLocalFilePath = new DarkUI.Controls.DarkButton();
-            this.TextBoxFileLocation = new DarkUI.Controls.DarkTextBox();
-            this.TextBoxFileName = new DarkUI.Controls.DarkTextBox();
-            this.ButtonAddApplication = new DarkUI.Controls.DarkButton();
-            this.LabelFileLocation = new DarkUI.Controls.DarkLabel();
-            this.LabelName = new DarkUI.Controls.DarkLabel();
+            this.ButtonBrowseLocalFile = new DevExpress.XtraEditors.SimpleButton();
+            this.TextBoxFileLocation = new DevExpress.XtraEditors.TextEdit();
+            this.TextBoxFileName = new DevExpress.XtraEditors.TextEdit();
+            this.LabelFileLocation = new DevExpress.XtraEditors.LabelControl();
+            this.LabelName = new DevExpress.XtraEditors.LabelControl();
             this.GroupExternalApplications = new DevExpress.XtraEditors.GroupControl();
-            this.ProgressCustomLists = new DevExpress.XtraWaitForm.ProgressPanel();
-            this.GridControlExternalApplications = new DevExpress.XtraGrid.GridControl();
-            this.GridViewExternalApplications = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ProgressLoading = new DevExpress.XtraWaitForm.ProgressPanel();
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
             this.ButtonDeleteApplication = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonDeleteAllLists = new DevExpress.XtraEditors.SimpleButton();
-            this.SectionAddApplication.SuspendLayout();
+            this.ButtonDeleteAll = new DevExpress.XtraEditors.SimpleButton();
+            this.GroupApplicationDetails = new DevExpress.XtraEditors.GroupControl();
+            this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
+            this.ButtonNewApplication = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonAddApplication = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonSaveAll = new DevExpress.XtraEditors.SimpleButton();
+            this.GridApplications = new DevExpress.XtraGrid.GridControl();
+            this.GridViewApplications = new DevExpress.XtraGrid.Views.Grid.GridView();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxFileLocation.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxFileName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupExternalApplications)).BeginInit();
             this.GroupExternalApplications.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridControlExternalApplications)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewExternalApplications)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
             this.stackPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupApplicationDetails)).BeginInit();
+            this.GroupApplicationDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).BeginInit();
+            this.stackPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridApplications)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewApplications)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ButtonSaveAll
-            // 
-            this.ButtonSaveAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSaveAll.Location = new System.Drawing.Point(582, 403);
-            this.ButtonSaveAll.Margin = new System.Windows.Forms.Padding(5);
-            this.ButtonSaveAll.Name = "ButtonSaveAll";
-            this.ButtonSaveAll.Padding = new System.Windows.Forms.Padding(5);
-            this.ButtonSaveAll.Size = new System.Drawing.Size(79, 24);
-            this.ButtonSaveAll.TabIndex = 3;
-            this.ButtonSaveAll.Text = "Save All";
-            this.ButtonSaveAll.Click += new System.EventHandler(this.ButtonSaveAll_Click);
             // 
             // ColumnApplicationName
             // 
@@ -91,111 +85,58 @@
             this.ColumnGameTitle.Name = "ColumnGameTitle";
             this.ColumnGameTitle.ReadOnly = true;
             // 
-            // SectionAddApplication
+            // ButtonBrowseLocalFile
             // 
-            this.SectionAddApplication.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SectionAddApplication.Controls.Add(this.ButtonNewApplication);
-            this.SectionAddApplication.Controls.Add(this.ButtonLocalFilePath);
-            this.SectionAddApplication.Controls.Add(this.TextBoxFileLocation);
-            this.SectionAddApplication.Controls.Add(this.TextBoxFileName);
-            this.SectionAddApplication.Controls.Add(this.ButtonAddApplication);
-            this.SectionAddApplication.Controls.Add(this.LabelFileLocation);
-            this.SectionAddApplication.Controls.Add(this.LabelName);
-            this.SectionAddApplication.Cursor = System.Windows.Forms.Cursors.Default;
-            this.SectionAddApplication.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SectionAddApplication.Location = new System.Drawing.Point(12, 276);
-            this.SectionAddApplication.Margin = new System.Windows.Forms.Padding(4);
-            this.SectionAddApplication.Name = "SectionAddApplication";
-            this.SectionAddApplication.SectionHeader = "APPLICATION DETAILS";
-            this.SectionAddApplication.Size = new System.Drawing.Size(651, 118);
-            this.SectionAddApplication.TabIndex = 1179;
-            // 
-            // ButtonNewApplication
-            // 
-            this.ButtonNewApplication.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonNewApplication.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonNewApplication.Location = new System.Drawing.Point(376, 84);
-            this.ButtonNewApplication.Margin = new System.Windows.Forms.Padding(5);
-            this.ButtonNewApplication.Name = "ButtonNewApplication";
-            this.ButtonNewApplication.Padding = new System.Windows.Forms.Padding(5);
-            this.ButtonNewApplication.Size = new System.Drawing.Size(128, 24);
-            this.ButtonNewApplication.TabIndex = 1185;
-            this.ButtonNewApplication.Text = "New Application";
-            this.ButtonNewApplication.Click += new System.EventHandler(this.ButtonNewApplication_Click);
-            // 
-            // ButtonLocalFilePath
-            // 
-            this.ButtonLocalFilePath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonLocalFilePath.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonLocalFilePath.Location = new System.Drawing.Point(600, 51);
-            this.ButtonLocalFilePath.Name = "ButtonLocalFilePath";
-            this.ButtonLocalFilePath.Padding = new System.Windows.Forms.Padding(5);
-            this.ButtonLocalFilePath.Size = new System.Drawing.Size(42, 23);
-            this.ButtonLocalFilePath.TabIndex = 1184;
-            this.ButtonLocalFilePath.Text = "...";
-            this.ButtonLocalFilePath.Click += new System.EventHandler(this.ButtonLocalFilePath_Click);
+            this.ButtonBrowseLocalFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonBrowseLocalFile.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonBrowseLocalFile.Appearance.Options.UseFont = true;
+            this.ButtonBrowseLocalFile.Location = new System.Drawing.Point(597, 48);
+            this.ButtonBrowseLocalFile.Name = "ButtonBrowseLocalFile";
+            this.ButtonBrowseLocalFile.Padding = new System.Windows.Forms.Padding(5);
+            this.ButtonBrowseLocalFile.Size = new System.Drawing.Size(42, 22);
+            this.ButtonBrowseLocalFile.TabIndex = 5;
+            this.ButtonBrowseLocalFile.Text = "...";
+            this.ButtonBrowseLocalFile.Click += new System.EventHandler(this.ButtonBrowseLocalFile_Click);
             // 
             // TextBoxFileLocation
             // 
             this.TextBoxFileLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxFileLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.TextBoxFileLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxFileLocation.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxFileLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxFileLocation.Location = new System.Drawing.Point(198, 51);
+            this.TextBoxFileLocation.Location = new System.Drawing.Point(197, 48);
             this.TextBoxFileLocation.Name = "TextBoxFileLocation";
-            this.TextBoxFileLocation.Size = new System.Drawing.Size(396, 23);
-            this.TextBoxFileLocation.TabIndex = 1183;
+            this.TextBoxFileLocation.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxFileLocation.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxFileLocation.Size = new System.Drawing.Size(396, 22);
+            this.TextBoxFileLocation.TabIndex = 4;
             // 
             // TextBoxFileName
             // 
-            this.TextBoxFileName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.TextBoxFileName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxFileName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxFileName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBoxFileName.Location = new System.Drawing.Point(8, 51);
+            this.TextBoxFileName.Location = new System.Drawing.Point(7, 48);
             this.TextBoxFileName.Name = "TextBoxFileName";
-            this.TextBoxFileName.Size = new System.Drawing.Size(184, 23);
-            this.TextBoxFileName.TabIndex = 1182;
-            // 
-            // ButtonAddApplication
-            // 
-            this.ButtonAddApplication.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonAddApplication.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonAddApplication.Location = new System.Drawing.Point(514, 84);
-            this.ButtonAddApplication.Margin = new System.Windows.Forms.Padding(5);
-            this.ButtonAddApplication.Name = "ButtonAddApplication";
-            this.ButtonAddApplication.Padding = new System.Windows.Forms.Padding(5);
-            this.ButtonAddApplication.Size = new System.Drawing.Size(128, 24);
-            this.ButtonAddApplication.TabIndex = 1180;
-            this.ButtonAddApplication.Text = "Add Application";
-            this.ButtonAddApplication.Click += new System.EventHandler(this.ButtonAddApplication_Click);
+            this.TextBoxFileName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxFileName.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxFileName.Size = new System.Drawing.Size(184, 22);
+            this.TextBoxFileName.TabIndex = 3;
             // 
             // LabelFileLocation
             // 
-            this.LabelFileLocation.AutoSize = true;
-            this.LabelFileLocation.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelFileLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelFileLocation.Location = new System.Drawing.Point(196, 31);
+            this.LabelFileLocation.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelFileLocation.Appearance.Options.UseFont = true;
+            this.LabelFileLocation.Location = new System.Drawing.Point(197, 28);
             this.LabelFileLocation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelFileLocation.Name = "LabelFileLocation";
-            this.LabelFileLocation.Size = new System.Drawing.Size(77, 15);
+            this.LabelFileLocation.Size = new System.Drawing.Size(70, 15);
             this.LabelFileLocation.TabIndex = 15;
             this.LabelFileLocation.Text = "File Location:";
             // 
             // LabelName
             // 
-            this.LabelName.AutoSize = true;
-            this.LabelName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelName.Location = new System.Drawing.Point(6, 31);
+            this.LabelName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelName.Appearance.Options.UseFont = true;
+            this.LabelName.Location = new System.Drawing.Point(7, 28);
             this.LabelName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(106, 15);
+            this.LabelName.Size = new System.Drawing.Size(99, 15);
             this.LabelName.TabIndex = 16;
             this.LabelName.Text = "Application Name:";
             // 
@@ -204,8 +145,8 @@
             this.GroupExternalApplications.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GroupExternalApplications.Controls.Add(this.ProgressCustomLists);
-            this.GroupExternalApplications.Controls.Add(this.GridControlExternalApplications);
+            this.GroupExternalApplications.Controls.Add(this.ProgressLoading);
+            this.GroupExternalApplications.Controls.Add(this.GridApplications);
             this.GroupExternalApplications.Controls.Add(this.stackPanel1);
             this.GroupExternalApplications.Location = new System.Drawing.Point(16, 12);
             this.GroupExternalApplications.Name = "GroupExternalApplications";
@@ -213,51 +154,28 @@
             this.GroupExternalApplications.TabIndex = 1180;
             this.GroupExternalApplications.Text = "EXTERNAL APPLICATIONS";
             // 
-            // ProgressCustomLists
+            // ProgressLoading
             // 
-            this.ProgressCustomLists.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ProgressCustomLists.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ProgressCustomLists.Appearance.Options.UseBackColor = true;
-            this.ProgressCustomLists.AppearanceCaption.Options.UseTextOptions = true;
-            this.ProgressCustomLists.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ProgressCustomLists.AppearanceDescription.Options.UseTextOptions = true;
-            this.ProgressCustomLists.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ProgressCustomLists.Caption = "NO EXTERNAL APPLICATIONS";
-            this.ProgressCustomLists.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ProgressCustomLists.Description = "Loading..";
-            this.ProgressCustomLists.Location = new System.Drawing.Point(200, 101);
-            this.ProgressCustomLists.Name = "ProgressCustomLists";
-            this.ProgressCustomLists.Size = new System.Drawing.Size(246, 66);
-            this.ProgressCustomLists.TabIndex = 1172;
-            this.ProgressCustomLists.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
-            // 
-            // GridControlExternalApplications
-            // 
-            this.GridControlExternalApplications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridControlExternalApplications.Location = new System.Drawing.Point(2, 23);
-            this.GridControlExternalApplications.MainView = this.GridViewExternalApplications;
-            this.GridControlExternalApplications.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.GridControlExternalApplications.Name = "GridControlExternalApplications";
-            this.GridControlExternalApplications.Size = new System.Drawing.Size(643, 196);
-            this.GridControlExternalApplications.TabIndex = 0;
-            this.GridControlExternalApplications.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.GridViewExternalApplications});
-            // 
-            // GridViewExternalApplications
-            // 
-            this.GridViewExternalApplications.ActiveFilterEnabled = false;
-            this.GridViewExternalApplications.GridControl = this.GridControlExternalApplications;
-            this.GridViewExternalApplications.Name = "GridViewExternalApplications";
-            this.GridViewExternalApplications.OptionsBehavior.ReadOnly = true;
-            this.GridViewExternalApplications.OptionsView.ShowGroupExpandCollapseButtons = false;
-            this.GridViewExternalApplications.OptionsView.ShowGroupPanel = false;
-            this.GridViewExternalApplications.OptionsView.ShowIndicator = false;
-            this.GridViewExternalApplications.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Indicator;
+            this.ProgressLoading.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ProgressLoading.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ProgressLoading.Appearance.Options.UseBackColor = true;
+            this.ProgressLoading.AppearanceCaption.Options.UseTextOptions = true;
+            this.ProgressLoading.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressLoading.AppearanceDescription.Options.UseTextOptions = true;
+            this.ProgressLoading.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressLoading.Caption = "NO EXTERNAL APPLICATIONS";
+            this.ProgressLoading.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ProgressLoading.Description = "Loading..";
+            this.ProgressLoading.Location = new System.Drawing.Point(200, 95);
+            this.ProgressLoading.Name = "ProgressLoading";
+            this.ProgressLoading.Size = new System.Drawing.Size(246, 66);
+            this.ProgressLoading.TabIndex = 1172;
+            this.ProgressLoading.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
             // 
             // stackPanel1
             // 
             this.stackPanel1.Controls.Add(this.ButtonDeleteApplication);
-            this.stackPanel1.Controls.Add(this.ButtonDeleteAllLists);
+            this.stackPanel1.Controls.Add(this.ButtonDeleteAll);
             this.stackPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.stackPanel1.Location = new System.Drawing.Point(2, 219);
             this.stackPanel1.Name = "stackPanel1";
@@ -270,18 +188,99 @@
             this.ButtonDeleteApplication.Location = new System.Drawing.Point(6, 6);
             this.ButtonDeleteApplication.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.ButtonDeleteApplication.Name = "ButtonDeleteApplication";
-            this.ButtonDeleteApplication.Size = new System.Drawing.Size(82, 24);
-            this.ButtonDeleteApplication.TabIndex = 12;
-            this.ButtonDeleteApplication.Text = "Delete List";
+            this.ButtonDeleteApplication.Size = new System.Drawing.Size(67, 24);
+            this.ButtonDeleteApplication.TabIndex = 1;
+            this.ButtonDeleteApplication.Text = "Delete";
+            this.ButtonDeleteApplication.Click += new System.EventHandler(this.ButtonDeleteApplication_Click);
             // 
-            // ButtonDeleteAllLists
+            // ButtonDeleteAll
             // 
-            this.ButtonDeleteAllLists.Enabled = false;
-            this.ButtonDeleteAllLists.Location = new System.Drawing.Point(94, 6);
-            this.ButtonDeleteAllLists.Name = "ButtonDeleteAllLists";
-            this.ButtonDeleteAllLists.Size = new System.Drawing.Size(84, 24);
-            this.ButtonDeleteAllLists.TabIndex = 13;
-            this.ButtonDeleteAllLists.Text = "Delete All";
+            this.ButtonDeleteAll.Location = new System.Drawing.Point(79, 6);
+            this.ButtonDeleteAll.Name = "ButtonDeleteAll";
+            this.ButtonDeleteAll.Size = new System.Drawing.Size(84, 24);
+            this.ButtonDeleteAll.TabIndex = 2;
+            this.ButtonDeleteAll.Text = "Delete All";
+            this.ButtonDeleteAll.Click += new System.EventHandler(this.ButtonDeleteAll_Click);
+            // 
+            // GroupApplicationDetails
+            // 
+            this.GroupApplicationDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupApplicationDetails.Controls.Add(this.stackPanel2);
+            this.GroupApplicationDetails.Controls.Add(this.ButtonBrowseLocalFile);
+            this.GroupApplicationDetails.Controls.Add(this.LabelName);
+            this.GroupApplicationDetails.Controls.Add(this.TextBoxFileLocation);
+            this.GroupApplicationDetails.Controls.Add(this.LabelFileLocation);
+            this.GroupApplicationDetails.Controls.Add(this.TextBoxFileName);
+            this.GroupApplicationDetails.Location = new System.Drawing.Point(16, 275);
+            this.GroupApplicationDetails.Name = "GroupApplicationDetails";
+            this.GroupApplicationDetails.Size = new System.Drawing.Size(647, 114);
+            this.GroupApplicationDetails.TabIndex = 1181;
+            this.GroupApplicationDetails.Text = "APPLICATION DETAILS";
+            // 
+            // stackPanel2
+            // 
+            this.stackPanel2.Controls.Add(this.ButtonNewApplication);
+            this.stackPanel2.Controls.Add(this.ButtonAddApplication);
+            this.stackPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.stackPanel2.Location = new System.Drawing.Point(2, 76);
+            this.stackPanel2.Name = "stackPanel2";
+            this.stackPanel2.Size = new System.Drawing.Size(643, 36);
+            this.stackPanel2.TabIndex = 10;
+            // 
+            // ButtonNewApplication
+            // 
+            this.ButtonNewApplication.Location = new System.Drawing.Point(6, 6);
+            this.ButtonNewApplication.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.ButtonNewApplication.Name = "ButtonNewApplication";
+            this.ButtonNewApplication.Size = new System.Drawing.Size(123, 24);
+            this.ButtonNewApplication.TabIndex = 6;
+            this.ButtonNewApplication.Text = "New Application";
+            this.ButtonNewApplication.Click += new System.EventHandler(this.ButtonNewApplication_Click);
+            // 
+            // ButtonAddApplication
+            // 
+            this.ButtonAddApplication.Location = new System.Drawing.Point(135, 6);
+            this.ButtonAddApplication.Name = "ButtonAddApplication";
+            this.ButtonAddApplication.Size = new System.Drawing.Size(123, 24);
+            this.ButtonAddApplication.TabIndex = 7;
+            this.ButtonAddApplication.Text = "Add Application";
+            this.ButtonAddApplication.Click += new System.EventHandler(this.ButtonAddApplication_Click);
+            // 
+            // ButtonSaveAll
+            // 
+            this.ButtonSaveAll.Location = new System.Drawing.Point(582, 405);
+            this.ButtonSaveAll.Name = "ButtonSaveAll";
+            this.ButtonSaveAll.Size = new System.Drawing.Size(81, 24);
+            this.ButtonSaveAll.TabIndex = 8;
+            this.ButtonSaveAll.Text = "Save All";
+            this.ButtonSaveAll.Click += new System.EventHandler(this.ButtonSaveAll_Click);
+            // 
+            // GridApplications
+            // 
+            this.GridApplications.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridApplications.Location = new System.Drawing.Point(2, 23);
+            this.GridApplications.MainView = this.GridViewApplications;
+            this.GridApplications.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.GridApplications.Name = "GridApplications";
+            this.GridApplications.Size = new System.Drawing.Size(643, 196);
+            this.GridApplications.TabIndex = 1173;
+            this.GridApplications.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewApplications});
+            // 
+            // GridViewApplications
+            // 
+            this.GridViewApplications.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
+            this.GridViewApplications.GridControl = this.GridApplications;
+            this.GridViewApplications.Name = "GridViewApplications";
+            this.GridViewApplications.OptionsBehavior.Editable = false;
+            this.GridViewApplications.OptionsBehavior.ReadOnly = true;
+            this.GridViewApplications.OptionsCustomization.AllowFilter = false;
+            this.GridViewApplications.OptionsFilter.AllowFilterEditor = false;
+            this.GridViewApplications.OptionsMenu.EnableGroupPanelMenu = false;
+            this.GridViewApplications.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.GridViewApplications.OptionsView.ShowGroupPanel = false;
+            this.GridViewApplications.OptionsView.ShowIndicator = false;
             // 
             // ExternalApplicationsDialog
             // 
@@ -291,9 +290,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(675, 441);
+            this.ClientSize = new System.Drawing.Size(675, 438);
+            this.Controls.Add(this.GroupApplicationDetails);
             this.Controls.Add(this.GroupExternalApplications);
-            this.Controls.Add(this.SectionAddApplication);
             this.Controls.Add(this.ButtonSaveAll);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -305,37 +304,43 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "External Applications";
             this.Load += new System.EventHandler(this.EditExternalApplications_Load);
-            this.SectionAddApplication.ResumeLayout(false);
-            this.SectionAddApplication.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxFileLocation.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxFileName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupExternalApplications)).EndInit();
             this.GroupExternalApplications.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridControlExternalApplications)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewExternalApplications)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
             this.stackPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GroupApplicationDetails)).EndInit();
+            this.GroupApplicationDetails.ResumeLayout(false);
+            this.GroupApplicationDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).EndInit();
+            this.stackPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridApplications)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewApplications)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private DarkUI.Controls.DarkButton ButtonSaveAll;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameTitle;
-        private DarkUI.Controls.DarkSectionPanel SectionAddApplication;
-        private DarkUI.Controls.DarkLabel LabelFileLocation;
-        private DarkUI.Controls.DarkLabel LabelName;
-        private DarkUI.Controls.DarkButton ButtonAddApplication;
-        private DarkUI.Controls.DarkTextBox TextBoxFileLocation;
-        private DarkUI.Controls.DarkTextBox TextBoxFileName;
-        private DarkUI.Controls.DarkButton ButtonLocalFilePath;
-        private DarkUI.Controls.DarkButton ButtonNewApplication;
+        private DevExpress.XtraEditors.LabelControl LabelFileLocation;
+        private DevExpress.XtraEditors.LabelControl LabelName;
+        private DevExpress.XtraEditors.TextEdit TextBoxFileLocation;
+        private DevExpress.XtraEditors.TextEdit TextBoxFileName;
+        private DevExpress.XtraEditors.SimpleButton ButtonBrowseLocalFile;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnApplicationName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileLocation;
         private DevExpress.XtraEditors.GroupControl GroupExternalApplications;
-        private DevExpress.XtraWaitForm.ProgressPanel ProgressCustomLists;
-        private DevExpress.XtraGrid.GridControl GridControlExternalApplications;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridViewExternalApplications;
+        private DevExpress.XtraWaitForm.ProgressPanel ProgressLoading;
         private DevExpress.Utils.Layout.StackPanel stackPanel1;
         private DevExpress.XtraEditors.SimpleButton ButtonDeleteApplication;
-        private DevExpress.XtraEditors.SimpleButton ButtonDeleteAllLists;
+        private DevExpress.XtraEditors.SimpleButton ButtonDeleteAll;
+        private DevExpress.XtraEditors.GroupControl GroupApplicationDetails;
+        private DevExpress.Utils.Layout.StackPanel stackPanel2;
+        private DevExpress.XtraEditors.SimpleButton ButtonNewApplication;
+        private DevExpress.XtraEditors.SimpleButton ButtonAddApplication;
+        private DevExpress.XtraEditors.SimpleButton ButtonSaveAll;
+        private DevExpress.XtraGrid.GridControl GridApplications;
+        private DevExpress.XtraGrid.Views.Grid.GridView GridViewApplications;
     }
 }

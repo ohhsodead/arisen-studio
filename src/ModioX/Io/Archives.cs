@@ -21,7 +21,7 @@ namespace ModioX.Io
             foreach (string file in files)
             {
                 FileInfo fileInfo = new FileInfo(file);
-                _ = zipArchive.CreateEntryFromFile(fileInfo.FullName, fileInfo.Name);
+                zipArchive.CreateEntryFromFile(fileInfo.FullName, fileInfo.Name);
             }
         }
     }

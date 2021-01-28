@@ -39,8 +39,8 @@
             this.ContextMenuCopyURLToClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuCopySHA1ToClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelSearch = new System.Windows.Forms.Panel();
-            this.ButtonSearch = new DarkUI.Controls.DarkButton();
-            this.TextBoxTitleID = new DarkUI.Controls.DarkTextBox();
+            this.ButtonSearch = new DevExpress.XtraEditors.SimpleButton();
+            this.TextBoxTitleID = new DevExpress.XtraEditors.TextEdit();
             this.LabelSearch = new System.Windows.Forms.Label();
             this.LabelSelectType = new System.Windows.Forms.Label();
             this.ComboBoxType = new DarkUI.Controls.DarkComboBox();
@@ -371,11 +371,11 @@
         private DarkUI.Controls.DarkSectionPanel SectionPanelInformation;
         private DevExpress.XtraGrid.GridControl DgvGameUpdates;
         private System.Windows.Forms.Panel PanelSearch;
-        private DarkUI.Controls.DarkTextBox TextBoxTitleID;
+        private DevExpress.XtraEditors.TextEdit TextBoxTitleID;
         private System.Windows.Forms.Label LabelSearch;
         private System.Windows.Forms.Label LabelSelectType;
         private DarkUI.Controls.DarkComboBox ComboBoxType;
-        private DarkUI.Controls.DarkButton ButtonSearch;
+        private DevExpress.XtraEditors.SimpleButton ButtonSearch;
         private DarkUI.Controls.DarkToolStrip ToolStripFooter;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelHeaderStatus;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelStatus;

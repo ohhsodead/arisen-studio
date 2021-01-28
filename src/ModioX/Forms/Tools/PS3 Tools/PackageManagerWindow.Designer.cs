@@ -44,8 +44,8 @@
             this.ToolStripInstallPackageFile = new System.Windows.Forms.ToolStripButton();
             this.LabelTotalPackageFiles = new System.Windows.Forms.ToolStripLabel();
             this.PanelSearch = new System.Windows.Forms.Panel();
-            this.ButtonSearch = new DarkUI.Controls.DarkButton();
-            this.TextBoxSearch = new DarkUI.Controls.DarkTextBox();
+            this.ButtonSearch = new DevExpress.XtraEditors.SimpleButton();
+            this.TextBoxSearch = new DevExpress.XtraEditors.TextEdit();
             this.LabelSearch = new System.Windows.Forms.Label();
             this.ToolStripFooter = new DarkUI.Controls.DarkToolStrip();
             this.ToolStripLabelHeaderStatus = new System.Windows.Forms.ToolStripLabel();
@@ -347,9 +347,9 @@
         private DarkUI.Controls.DarkSectionPanel SectionPackages;
         private DevExpress.XtraGrid.GridControl DgvPackages;
         private System.Windows.Forms.Panel PanelSearch;
-        private DarkUI.Controls.DarkTextBox TextBoxSearch;
+        private DevExpress.XtraEditors.TextEdit TextBoxSearch;
         private System.Windows.Forms.Label LabelSearch;
-        private DarkUI.Controls.DarkButton ButtonSearch;
+        private DevExpress.XtraEditors.SimpleButton ButtonSearch;
         private DarkUI.Controls.DarkToolStrip ToolStripFooter;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelHeaderStatus;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelStatus;

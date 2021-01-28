@@ -68,7 +68,7 @@ namespace ModioX.Models.Database
                     return region;
                 }
 
-                _ = DarkMessageBox.ShowError(
+                DarkMessageBox.ShowError(
                     "Could not find any regions on your console for this game title. You must install the game update for this title first.",
                     "No Game Update");
                 return null;

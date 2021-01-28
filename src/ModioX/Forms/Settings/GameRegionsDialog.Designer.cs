@@ -30,7 +30,7 @@ namespace ModioX.Forms.Settings
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameRegionsDialog));
-            this.ButtonSaveAll = new DarkUI.Controls.DarkButton();
+            this.ButtonSaveAll = new DevExpress.XtraEditors.SimpleButton();
             this.SectionPanelGameRegions = new DarkUI.Controls.DarkSectionPanel();
             this.LabelNoGameRegionsSaved = new System.Windows.Forms.Label();
             this.DgvGameRegions = new DevExpress.XtraGrid.GridControl();
@@ -43,10 +43,10 @@ namespace ModioX.Forms.Settings
             this.ColumnGameRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SectionPanelUpdateGameRegions = new DarkUI.Controls.DarkSectionPanel();
-            this.ButtonAddGame = new DarkUI.Controls.DarkButton();
-            this.LabelGameRegion = new DarkUI.Controls.DarkLabel();
+            this.ButtonAddGame = new DevExpress.XtraEditors.SimpleButton();
+            this.LabelGameRegion = new DevExpress.XtraEditors.LabelControl();
             this.ComboBoxGameTitle = new DarkUI.Controls.DarkComboBox();
-            this.LabelGameTitle = new DarkUI.Controls.DarkLabel();
+            this.LabelGameTitle = new DevExpress.XtraEditors.LabelControl();
             this.ComboBoxGameRegion = new DarkUI.Controls.DarkComboBox();
             this.SectionPanelGameRegions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGameRegions)).BeginInit();
@@ -310,7 +310,7 @@ namespace ModioX.Forms.Settings
         }
 
         #endregion
-        private DarkUI.Controls.DarkButton ButtonSaveAll;
+        private DevExpress.XtraEditors.SimpleButton ButtonSaveAll;
         private DarkUI.Controls.DarkSectionPanel SectionPanelGameRegions;
         private System.Windows.Forms.Label LabelNoGameRegionsSaved;
         private DevExpress.XtraGrid.GridControl DgvGameRegions;
@@ -320,10 +320,10 @@ namespace ModioX.Forms.Settings
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameRegion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameTitle;
         private DarkUI.Controls.DarkSectionPanel SectionPanelUpdateGameRegions;
-        private DarkUI.Controls.DarkLabel LabelGameRegion;
+        private DevExpress.XtraEditors.LabelControl LabelGameRegion;
         private DarkUI.Controls.DarkComboBox ComboBoxGameTitle;
-        private DarkUI.Controls.DarkLabel LabelGameTitle;
-        private DarkUI.Controls.DarkButton ButtonAddGame;
+        private DevExpress.XtraEditors.LabelControl LabelGameTitle;
+        private DevExpress.XtraEditors.SimpleButton ButtonAddGame;
         private DarkUI.Controls.DarkComboBox ComboBoxGameRegion;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRegion;

@@ -1,6 +1,11 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
+using ModioX.Extensions;
 using ModioX.Forms.Windows;
+using ModioX.Models.Resources;
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
@@ -13,6 +18,11 @@ namespace ModioX.Forms.Settings
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Get the user's settings data.
+        /// </summary>
+        public static SettingsData Settings { get; } = MainWindow.Settings;
+
         private void EditExternalApplications_Load(object sender, EventArgs e)
         {
             LoadExternalApplications();
@@ -20,63 +30,65 @@ namespace ModioX.Forms.Settings
 
         private void LoadExternalApplications()
         {
-            /*
-            DgvApplications.Rows.Clear();
+            GridApplications.DataSource = null;
 
-            TextBoxFileName.Clear();
-            TextBoxFileLocation.Clear();
+            DataTable applications = DataExtensions.CreateDataTable(new List<DataColumn> { new DataColumn("Name", typeof(string)), new DataColumn("FileLocation", typeof(string)) });
 
-            foreach (var application in MainWindow.Settings.ExternalApplications)
+            TextBoxFileName.ResetText();
+            TextBoxFileLocation.ResetText();
+
+            foreach (var application in Settings.ExternalApplications)
             {
-                _ = DgvApplications.Rows.Add(application.Name, application.FileLocation);
+                applications.Rows.Add(application.Name, application.FileLocation);
             }
 
-            LabelTotalApplications.Text = $@"{DgvApplications.Rows.Count} Applications";
+            GridApplications.DataSource = applications;
 
-            ToolStripDeleteAll.Enabled = DgvApplications.Rows.Count > 0;
+            GridViewApplications.Columns[0].Width = 200;
+            GridViewApplications.Columns[1].Width = 300;
 
-            DgvApplications.Sort(DgvApplications.Columns[0], ListSortDirection.Ascending);
+            ButtonDeleteAll.Enabled = GridViewApplications.RowCount > 0;
 
-            if (DgvApplications.Rows.Count > 0) DgvApplications.CurrentCell = DgvApplications[0, 0];
-            */
+            GridViewApplications.BeginSort();
+
+            if (GridViewApplications.RowCount > 0) GridViewApplications.SelectRow(0);
         }
 
-        private void DgvApplications_SelectionChanged(object sender, EventArgs e)
+        private void GridViewApplications_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            /*
-            if (DgvApplications.SelectedRows.Count > 0)
+            if (GridViewApplications.SelectedRowsCount > 0)
             {
-                var name = DgvApplications.SelectedRows[0].Cells[0].Value.ToString();
-                var fileLocation = DgvApplications.SelectedRows[0].Cells[1].Value.ToString();
+                string name = GridViewApplications.GetRowCellValue(GridViewApplications.FocusedRowHandle, "Name").ToString();
+                string location = GridViewApplications.GetRowCellValue(GridViewApplications.FocusedRowHandle, "FileLocation").ToString();
 
                 TextBoxFileName.Text = name;
-                TextBoxFileLocation.Text = fileLocation;
+                TextBoxFileLocation.Text = location;
             }
 
-            ToolStripDelete.Enabled = DgvApplications.SelectedRows.Count > 0;
-            */
+            ButtonDeleteApplication.Enabled = GridViewApplications.SelectedRowsCount > 0;
         }
 
-        private void ToolStripDelete_Click(object sender, EventArgs e)
+        private void ButtonDeleteAll_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Do you really want delete the selected item?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really want to delete all of the items?", "Confirm Delete All", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                //MainWindow.Settings.ExternalApplications.RemoveAt(DgvApplications.SelectedRows[0].Index);
-                LoadExternalApplications();
-            }
-        }
-
-        private void ToolStripDeleteAll_Click(object sender, EventArgs e)
-        {
-            if (XtraMessageBox.Show("Are you sure that you would like to delete of all your specified applications?", "Delete All Game Regions", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                MainWindow.Settings.ExternalApplications.Clear();
-                XtraMessageBox.Show("All specified regions for games have now been deleted.", "Deleted All Game Regions");
+                Settings.ExternalApplications.Clear();
+                XtraMessageBox.Show("All applications have now been removed from the list.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
         }
 
-        private void ButtonLocalFilePath_Click(object sender, EventArgs e)
+        private void ButtonDeleteApplication_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Do you really want delete the selected item?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Settings.ExternalApplications.RemoveAt(GridViewApplications.FocusedRowHandle);
+                XtraMessageBox.Show("Application has now been removed from the list.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadExternalApplications();
+            }
+        }
+
+        private void ButtonBrowseLocalFile_Click(object sender, EventArgs e)
         {
             using OpenFileDialog openFileDialog = new OpenFileDialog
             {
@@ -85,14 +97,17 @@ namespace ModioX.Forms.Settings
                 Filter = @"Executable Files (*.exe)|*.exe|All files (*.*)|*."
             };
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK) TextBoxFileLocation.Text = openFileDialog.FileName;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                TextBoxFileLocation.Text = openFileDialog.FileName;
+            }
         }
 
         private void ButtonNewApplication_Click(object sender, EventArgs e)
         {
-            TextBoxFileName.Text = "";
-            TextBoxFileLocation.Text = "";
-            _ = TextBoxFileName.Focus();
+            TextBoxFileName.Reset();
+            TextBoxFileLocation.Reset();
+            TextBoxFileName.Focus();
         }
 
         private void ButtonAddApplication_Click(object sender, EventArgs e)
@@ -118,23 +133,21 @@ namespace ModioX.Forms.Settings
                 return;
             }
 
-            MainWindow.Settings.UpdateApplication(appName, fileLocation);
+            Settings.UpdateApplication(appName, fileLocation);
             LoadExternalApplications();
         }
 
         private void ButtonSaveAll_Click(object sender, EventArgs e)
         {
-            /*
-            foreach (DataGridViewRow row in DgvApplications.Rows)
+            for (int i = 0; i < GridViewApplications.RowCount; i++)
             {
-                var appName = row.Cells[0].Value.ToString();
-                var fileLocation = row.Cells[1].Value.ToString();
+                string appName = GridViewApplications.GetRowCellValue(GridViewApplications.FocusedRowHandle, "Name").ToString();
+                string fileLocation = GridViewApplications.GetRowCellValue(GridViewApplications.FocusedRowHandle, "FileLocation").ToString();
 
-                MainWindow.Settings.UpdateApplication(appName, fileLocation);
+                Settings.UpdateApplication(appName, fileLocation);
             }
-            */
 
-            XtraMessageBox.Show("All external applications have now been saved.", "Saved");
+            XtraMessageBox.Show("All external applications have been saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
         }
     }

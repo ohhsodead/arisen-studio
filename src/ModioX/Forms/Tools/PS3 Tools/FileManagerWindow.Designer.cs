@@ -270,9 +270,9 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.stackPanel1);
             this.groupControl2.Controls.Add(this.stackPanel3);
             this.groupControl2.Controls.Add(this.GridConsoleFiles);
-            this.groupControl2.Controls.Add(this.stackPanel1);
             this.groupControl2.Controls.Add(this.ButtonConsoleNavigate);
             this.groupControl2.Controls.Add(this.TextBoxConsolePath);
             this.groupControl2.Controls.Add(this.ComboBoxConsoleDrives);
@@ -287,7 +287,7 @@
             // 
             this.stackPanel3.Controls.Add(this.LabelConsoleStats);
             this.stackPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.stackPanel3.Location = new System.Drawing.Point(2, 438);
+            this.stackPanel3.Location = new System.Drawing.Point(2, 478);
             this.stackPanel3.Name = "stackPanel3";
             this.stackPanel3.Size = new System.Drawing.Size(647, 26);
             this.stackPanel3.TabIndex = 1175;
@@ -308,7 +308,7 @@
             this.stackPanel1.Controls.Add(this.ButtonConsoleNewFolder);
             this.stackPanel1.Controls.Add(this.ButtonConsoleRefresh);
             this.stackPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.stackPanel1.Location = new System.Drawing.Point(2, 464);
+            this.stackPanel1.Location = new System.Drawing.Point(2, 438);
             this.stackPanel1.Name = "stackPanel1";
             this.stackPanel1.Size = new System.Drawing.Size(647, 40);
             this.stackPanel1.TabIndex = 1174;
@@ -405,9 +405,9 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.PanelButtons);
             this.groupControl1.Controls.Add(this.stackPanel2);
             this.groupControl1.Controls.Add(this.GridLocalFiles);
-            this.groupControl1.Controls.Add(this.PanelButtons);
             this.groupControl1.Controls.Add(this.ButtonBrowseLocalDirectory);
             this.groupControl1.Controls.Add(this.ComboBoxLocalDrives);
             this.groupControl1.Controls.Add(this.TextBoxLocalPath);
@@ -422,7 +422,7 @@
             // 
             this.stackPanel2.Controls.Add(this.LabelLocalStatus);
             this.stackPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.stackPanel2.Location = new System.Drawing.Point(2, 438);
+            this.stackPanel2.Location = new System.Drawing.Point(2, 478);
             this.stackPanel2.Name = "stackPanel2";
             this.stackPanel2.Size = new System.Drawing.Size(647, 26);
             this.stackPanel2.TabIndex = 1174;
@@ -444,7 +444,7 @@
             this.PanelButtons.Controls.Add(this.ButtonLocalRefresh);
             this.PanelButtons.Controls.Add(this.ButtonLocalOpenExplorer);
             this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelButtons.Location = new System.Drawing.Point(2, 464);
+            this.PanelButtons.Location = new System.Drawing.Point(2, 438);
             this.PanelButtons.Name = "PanelButtons";
             this.PanelButtons.Size = new System.Drawing.Size(647, 40);
             this.PanelButtons.TabIndex = 1173;

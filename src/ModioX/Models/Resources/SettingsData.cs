@@ -73,7 +73,7 @@ namespace ModioX.Models.Resources
         {
             string fileBackupFolder = GetGameBackupFolder(modItem);
 
-            _ = Directory.CreateDirectory(fileBackupFolder);
+            Directory.CreateDirectory(fileBackupFolder);
 
             BackupFile backupFile = new BackupFile
             {
@@ -273,7 +273,7 @@ namespace ModioX.Models.Resources
         /// <param name="categoryId"></param>
         public void RemoveInstalledGameMod(string categoryId)
         {
-            _ = InstalledGameMods.RemoveAll(x => string.Equals(x.CategoryId, categoryId, StringComparison.OrdinalIgnoreCase));
+            InstalledGameMods.RemoveAll(x => string.Equals(x.CategoryId, categoryId, StringComparison.OrdinalIgnoreCase));
         }
 
         /// <summary>

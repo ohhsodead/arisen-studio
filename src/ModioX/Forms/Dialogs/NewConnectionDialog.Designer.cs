@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewConnectionDialog));
-            this.LabelUserPass = new DarkUI.Controls.DarkLabel();
-            this.LabelLogin = new DarkUI.Controls.DarkLabel();
-            this.darkLabel1 = new DarkUI.Controls.DarkLabel();
-            this.LabelName = new DarkUI.Controls.DarkLabel();
-            this.LabelDescription = new DarkUI.Controls.DarkLabel();
+            this.LabelUserPass = new DevExpress.XtraEditors.LabelControl();
+            this.LabelLogin = new DevExpress.XtraEditors.LabelControl();
+            this.darkLabel1 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelName = new DevExpress.XtraEditors.LabelControl();
+            this.LabelDescription = new DevExpress.XtraEditors.LabelControl();
             this.ButtonOK = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonChangeCredentials = new DevExpress.XtraEditors.SimpleButton();
-            this.darkLabel2 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel2 = new DevExpress.XtraEditors.LabelControl();
             this.ImageConsole = new DevExpress.XtraEditors.PictureEdit();
             this.ComboBoxConsoleType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.TextBoxConsolePort = new DevExpress.XtraEditors.TextEdit();
@@ -282,18 +282,18 @@
         }
 
         #endregion
-        private DarkUI.Controls.DarkLabel LabelName;
-        private DarkUI.Controls.DarkLabel LabelDescription;
-        private DarkUI.Controls.DarkLabel LabelUserPass;
-        private DarkUI.Controls.DarkLabel LabelLogin;
-        private DarkUI.Controls.DarkLabel darkLabel1;
+        private DevExpress.XtraEditors.LabelControl LabelName;
+        private DevExpress.XtraEditors.LabelControl LabelDescription;
+        private DevExpress.XtraEditors.LabelControl LabelUserPass;
+        private DevExpress.XtraEditors.LabelControl LabelLogin;
+        private DevExpress.XtraEditors.LabelControl darkLabel1;
         private DevExpress.XtraEditors.TextEdit TextBoxConnectionName;
         private DevExpress.XtraEditors.TextEdit TextBoxConsoleAddress;
         private DevExpress.XtraEditors.TextEdit TextBoxConsolePort;
         private DevExpress.XtraEditors.SimpleButton ButtonOK;
         private DevExpress.XtraEditors.SimpleButton ButtonCancel;
         private DevExpress.XtraEditors.SimpleButton ButtonChangeCredentials;
-        private DarkUI.Controls.DarkLabel darkLabel2;
+        private DevExpress.XtraEditors.LabelControl darkLabel2;
         private DevExpress.XtraEditors.ComboBoxEdit ComboBoxConsoleType;
         private DevExpress.XtraEditors.PictureEdit ImageConsole;
         private DevExpress.XtraEditors.CheckEdit CheckBoxAutoDetectIPAddress;

@@ -78,7 +78,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
                     if (!File.Exists(backupFile.LocalPath))
                     {
-                        _ = XtraMessageBox.Show(
+                        XtraMessageBox.Show(
                             $"Local file: {backupFile.FileName} for game: {category.Title} can't be found at path: {backupFile.LocalPath}.\n\nIf you have moved this file then edit the backup and choose the locate the file, otherwise re-install your game update and backup the orginal game file again.",
                             "No Local File");
                     }
@@ -145,12 +145,12 @@ namespace ModioX.Forms.Tools.PS3_Tools
             try
             {
                 FtpExtensions.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
-                _ = XtraMessageBox.Show($"Successfully backed up file {backupFile.FileName} from {backupFile.InstallPath}.", "Success");
+                XtraMessageBox.Show($"Successfully backed up file {backupFile.FileName} from {backupFile.InstallPath}.", "Success");
             }
             catch (Exception ex)
             {
                 Program.Log.Error(ex, $"Unable to backup game file. Error: {ex.Message}");
-                _ = DarkMessageBox.ShowError("There was a problem downloading the file. Make sure the file exists on your console.", "Error");
+                DarkMessageBox.ShowError("There was a problem downloading the file. Make sure the file exists on your console.", "Error");
             }
         }
 
@@ -164,21 +164,21 @@ namespace ModioX.Forms.Tools.PS3_Tools
             {
                 if (!File.Exists(backupFile.LocalPath))
                 {
-                    _ = XtraMessageBox.Show(
+                    XtraMessageBox.Show(
                         "This file backup doesn't exist on your computer. If your game doesn't have mods installed, then I would suggest you backup the original files.",
                         "No File Found");
                     return;
                 }
 
                 FtpExtensions.UploadFile(backupFile.LocalPath, backupFile.InstallPath);
-                _ = XtraMessageBox.Show(
+                XtraMessageBox.Show(
                     $"Successfully restored file: {backupFile.FileName} to path: {backupFile.InstallPath}",
                     "Success");
             }
             catch (Exception ex)
             {
                 Program.Log.Error(ex, "There was an issue attempting to restore file.");
-                _ = DarkMessageBox.ShowError(
+                DarkMessageBox.ShowError(
                     "There was an issue restoring file. Make sure the local file exists on your computer.",
                     "Error");
             }

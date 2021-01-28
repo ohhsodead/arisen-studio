@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginDialog));
-            this.LabelUsername = new DarkUI.Controls.DarkLabel();
-            this.LabelPassword = new DarkUI.Controls.DarkLabel();
+            this.LabelUsername = new DevExpress.XtraEditors.LabelControl();
+            this.LabelPassword = new DevExpress.XtraEditors.LabelControl();
             this.TextBoxUsername = new DevExpress.XtraEditors.TextEdit();
             this.TextBoxPassword = new DevExpress.XtraEditors.TextEdit();
             this.ButtonUseDefault = new DevExpress.XtraEditors.SimpleButton();
@@ -139,8 +139,8 @@
         }
 
         #endregion
-        private DarkUI.Controls.DarkLabel LabelUsername;
-        private DarkUI.Controls.DarkLabel LabelPassword;
+        private DevExpress.XtraEditors.LabelControl LabelUsername;
+        private DevExpress.XtraEditors.LabelControl LabelPassword;
         public DevExpress.XtraEditors.SimpleButton ButtonUseDefault;
         public DevExpress.XtraEditors.SimpleButton ButtonCancel;
         public DevExpress.XtraEditors.SimpleButton ButtonOK;

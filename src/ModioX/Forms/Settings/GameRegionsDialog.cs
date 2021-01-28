@@ -20,7 +20,7 @@ namespace ModioX.Forms.Settings
 
             foreach (Category category in MainWindow.Database.CategoriesData.GetCategoriesByType(CategoryType.Game))
             {
-                _ = ComboBoxGameTitle.Items.Add(category.Title);
+                ComboBoxGameTitle.Items.Add(category.Title);
             }
 
             LoadSavedGameRegions();
@@ -33,7 +33,7 @@ namespace ModioX.Forms.Settings
 
             foreach (var gameRegion in MainWindow.Settings.GameRegions)
             {
-                _ = DgvGameRegions.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(gameRegion.GameId).Title, gameRegion.Region);
+                DgvGameRegions.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(gameRegion.GameId).Title, gameRegion.Region);
             }
 
             if (DgvGameRegions.Rows.Count > 0)
@@ -140,7 +140,7 @@ namespace ModioX.Forms.Settings
                 }
                 else
                 {
-                    _ = XtraMessageBox.Show($"Region: {gameRegion} is not supported for Game: {gameTitle}\nPlease change the region to one that is supported for this game.", "Invalid Region");
+                    XtraMessageBox.Show($"Region: {gameRegion} is not supported for Game: {gameTitle}\nPlease change the region to one that is supported for this game.", "Invalid Region");
                     return;
                 }
             }
