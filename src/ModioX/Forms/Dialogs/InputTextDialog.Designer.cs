@@ -58,6 +58,7 @@
             this.ButtonOK.Enabled = false;
             this.ButtonOK.Location = new System.Drawing.Point(277, 52);
             this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonOK.Size = new System.Drawing.Size(75, 23);
             this.ButtonOK.TabIndex = 1;
             this.ButtonOK.Text = "OK";
@@ -68,6 +69,7 @@
             this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.ButtonCancel.Location = new System.Drawing.Point(196, 52);
             this.ButtonCancel.Name = "ButtonCancel";
+            this.ButtonCancel.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCancel.Size = new System.Drawing.Size(75, 23);
             this.ButtonCancel.TabIndex = 2;
             this.ButtonCancel.Text = "Cancel";

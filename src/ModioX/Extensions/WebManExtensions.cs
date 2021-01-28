@@ -17,7 +17,7 @@ namespace ModioX.Extensions
 
         public static bool IsWebManInstalled(string ip, int port)
         {
-            var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             try
             {

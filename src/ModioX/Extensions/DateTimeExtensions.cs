@@ -20,8 +20,8 @@ namespace ModioX.Extensions
 
             unchecked
             {
-                var low = (uint)time.dwLowDateTime;
-                var ft = ((long)time.dwHighDateTime << 32) | low;
+                uint low = (uint)time.dwLowDateTime;
+                long ft = ((long)time.dwHighDateTime << 32) | low;
                 return DateTime.FromFileTimeUtc(ft);
             }
         }

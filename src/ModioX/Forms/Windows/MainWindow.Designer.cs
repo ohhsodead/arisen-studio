@@ -724,11 +724,14 @@ namespace ModioX.Forms.Windows
             // 
             // GridViewModsInstallFiles
             // 
+            this.GridViewModsInstallFiles.ActiveFilterEnabled = false;
             this.GridViewModsInstallFiles.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewModsInstallFiles.GridControl = this.GridControlModsInstallFiles;
             this.GridViewModsInstallFiles.Name = "GridViewModsInstallFiles";
             this.GridViewModsInstallFiles.OptionsBehavior.Editable = false;
             this.GridViewModsInstallFiles.OptionsBehavior.ReadOnly = true;
+            this.GridViewModsInstallFiles.OptionsCustomization.AllowFilter = false;
+            this.GridViewModsInstallFiles.OptionsFilter.AllowFilterEditor = false;
             this.GridViewModsInstallFiles.OptionsMenu.EnableGroupPanelMenu = false;
             this.GridViewModsInstallFiles.OptionsMenu.ShowAutoFilterRowItem = false;
             this.GridViewModsInstallFiles.OptionsNavigation.AutoMoveRowFocus = false;
@@ -971,8 +974,7 @@ namespace ModioX.Forms.Windows
             this.ButtonXbox360.Caption = "XBOX";
             this.ButtonXbox360.Id = 33;
             this.ButtonXbox360.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonConnectToXBOX),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxFindConsole)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonConnectToXBOX)});
             this.ButtonXbox360.Name = "ButtonXbox360";
             // 
             // ButtonConnectToXBOX
@@ -2069,11 +2071,14 @@ namespace ModioX.Forms.Windows
             // 
             // GridViewGameModsInstalled
             // 
+            this.GridViewGameModsInstalled.ActiveFilterEnabled = false;
             this.GridViewGameModsInstalled.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewGameModsInstalled.GridControl = this.GridControlGameModsInstalled;
             this.GridViewGameModsInstalled.Name = "GridViewGameModsInstalled";
             this.GridViewGameModsInstalled.OptionsBehavior.Editable = false;
             this.GridViewGameModsInstalled.OptionsBehavior.ReadOnly = true;
+            this.GridViewGameModsInstalled.OptionsCustomization.AllowFilter = false;
+            this.GridViewGameModsInstalled.OptionsFilter.AllowFilterEditor = false;
             this.GridViewGameModsInstalled.OptionsMenu.ShowAutoFilterRowItem = false;
             this.GridViewGameModsInstalled.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.GridViewGameModsInstalled.OptionsView.ShowGroupPanel = false;
@@ -2202,11 +2207,14 @@ namespace ModioX.Forms.Windows
             // 
             // GridViewMods
             // 
+            this.GridViewMods.ActiveFilterEnabled = false;
             this.GridViewMods.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewMods.GridControl = this.GridControlMods;
             this.GridViewMods.Name = "GridViewMods";
             this.GridViewMods.OptionsBehavior.Editable = false;
             this.GridViewMods.OptionsBehavior.ReadOnly = true;
+            this.GridViewMods.OptionsCustomization.AllowFilter = false;
+            this.GridViewMods.OptionsFilter.AllowFilterEditor = false;
             this.GridViewMods.OptionsMenu.ShowAutoFilterRowItem = false;
             this.GridViewMods.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.GridViewMods.OptionsView.ShowGroupPanel = false;

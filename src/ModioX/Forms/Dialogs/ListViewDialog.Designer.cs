@@ -38,9 +38,11 @@
             // 
             // ListBoxItems
             // 
+            this.ListBoxItems.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.ListBoxItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListBoxItems.Location = new System.Drawing.Point(2, 23);
             this.ListBoxItems.Name = "ListBoxItems";
+            this.ListBoxItems.ShowFocusRect = false;
             this.ListBoxItems.Size = new System.Drawing.Size(219, 181);
             this.ListBoxItems.TabIndex = 2;
             this.ListBoxItems.SelectedIndexChanged += new System.EventHandler(this.ListBoxItems_SelectedIndexChanged);
@@ -70,7 +72,7 @@
             this.Name = "ListViewDialog";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ListItemDialog";
+            this.Text = "ListViewDialog";
             this.Load += new System.EventHandler(this.ListViewDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ListBoxItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupListItems)).EndInit();

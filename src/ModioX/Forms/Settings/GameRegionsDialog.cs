@@ -18,7 +18,7 @@ namespace ModioX.Forms.Settings
             ComboBoxGameTitle.Items.Clear();
             ComboBoxGameRegion.Items.Clear();
 
-            foreach (var category in MainWindow.Database.CategoriesData.GetCategoriesByType(CategoryType.Game))
+            foreach (Category category in MainWindow.Database.CategoriesData.GetCategoriesByType(CategoryType.Game))
             {
                 _ = ComboBoxGameTitle.Items.Add(category.Title);
             }
@@ -89,10 +89,10 @@ namespace ModioX.Forms.Settings
             {
                 ComboBoxGameRegion.Items.Clear();
 
-                var gameTitle = ComboBoxGameTitle.GetItemText(ComboBoxGameTitle.SelectedItem);
-                var gameId = MainWindow.Database.CategoriesData.GetCategoryByTitle(gameTitle).Id;
+                string gameTitle = ComboBoxGameTitle.GetItemText(ComboBoxGameTitle.SelectedItem);
+                string gameId = MainWindow.Database.CategoriesData.GetCategoryByTitle(gameTitle).Id;
 
-                foreach (var gameRegion in MainWindow.Database.CategoriesData.GetGameRegions(gameId))
+                foreach (string gameRegion in MainWindow.Database.CategoriesData.GetGameRegions(gameId))
                 {
                     ComboBoxGameRegion.Items.Add(gameRegion);
                 }
@@ -115,10 +115,10 @@ namespace ModioX.Forms.Settings
                 return;
             }
 
-            var gameTitle = ComboBoxGameTitle.GetItemText(ComboBoxGameTitle.SelectedItem);
-            var gameRegion = ComboBoxGameRegion.GetItemText(ComboBoxGameRegion.SelectedItem);
+            string gameTitle = ComboBoxGameTitle.GetItemText(ComboBoxGameTitle.SelectedItem);
+            string gameRegion = ComboBoxGameRegion.GetItemText(ComboBoxGameRegion.SelectedItem);
 
-            var gameId = MainWindow.Database.CategoriesData.GetCategoryByTitle(gameTitle).Id;
+            string gameId = MainWindow.Database.CategoriesData.GetCategoryByTitle(gameTitle).Id;
 
             MainWindow.Settings.UpdateGameRegion(gameId, gameRegion);
             LoadSavedGameRegions();

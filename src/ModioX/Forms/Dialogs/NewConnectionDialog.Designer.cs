@@ -136,6 +136,7 @@
             // 
             this.ButtonChangeCredentials.Location = new System.Drawing.Point(422, 98);
             this.ButtonChangeCredentials.Name = "ButtonChangeCredentials";
+            this.ButtonChangeCredentials.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonChangeCredentials.Size = new System.Drawing.Size(80, 24);
             this.ButtonChangeCredentials.TabIndex = 4;
             this.ButtonChangeCredentials.Text = "Change";
@@ -225,6 +226,7 @@
             // 
             this.CheckBoxAutoDetectIPAddress.Location = new System.Drawing.Point(264, 129);
             this.CheckBoxAutoDetectIPAddress.Name = "CheckBoxAutoDetectIPAddress";
+            this.CheckBoxAutoDetectIPAddress.Properties.AllowFocused = false;
             this.CheckBoxAutoDetectIPAddress.Properties.AutoWidth = true;
             this.CheckBoxAutoDetectIPAddress.Properties.Caption = "Automatically detect console IP Address";
             this.CheckBoxAutoDetectIPAddress.Size = new System.Drawing.Size(224, 18);

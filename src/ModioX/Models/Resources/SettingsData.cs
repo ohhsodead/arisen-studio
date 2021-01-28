@@ -71,11 +71,11 @@ namespace ModioX.Models.Resources
         /// <param name="installFilePath"></param>
         public void CreateBackupFile(ModItem modItem, string fileName, string installFilePath)
         {
-            var fileBackupFolder = GetGameBackupFolder(modItem);
+            string fileBackupFolder = GetGameBackupFolder(modItem);
 
             _ = Directory.CreateDirectory(fileBackupFolder);
 
-            var backupFile = new BackupFile
+            BackupFile backupFile = new BackupFile
             {
                 CategoryId = modItem.GameId,
                 FileName = fileName,
@@ -120,9 +120,9 @@ namespace ModioX.Models.Resources
         /// <param name="fileLocation">Application File Location</param>
         public void UpdateApplication(string appName, string fileLocation)
         {
-            var applicationIndex = ExternalApplications.Find(x => string.Equals(x.Name, appName, StringComparison.OrdinalIgnoreCase));
+            ExternalApplication applicationIndex = ExternalApplications.Find(x => string.Equals(x.Name, appName, StringComparison.OrdinalIgnoreCase));
 
-            var externalApplication = new ExternalApplication(appName, fileLocation);
+            ExternalApplication externalApplication = new ExternalApplication(appName, fileLocation);
 
             if (applicationIndex == null)
             {
@@ -150,7 +150,7 @@ namespace ModioX.Models.Resources
         /// <param name="newListName">Mod Id to add to list</param>
         public void RenameCustomList(string oldName, string newName)
         {
-            var customList = CustomLists.Find(x => string.Equals(x.Name, oldName, StringComparison.OrdinalIgnoreCase));
+            CustomList customList = CustomLists.Find(x => string.Equals(x.Name, oldName, StringComparison.OrdinalIgnoreCase));
 
             if (customList == null)
             {
@@ -169,7 +169,7 @@ namespace ModioX.Models.Resources
         /// <param name="newListName">Mod Id to add to list</param>
         public void AddModToCustomList(string name, int modId)
         {
-            var customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
+            CustomList customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
 
             if (!customList.ModIds.Contains(modId))
             {
@@ -184,7 +184,7 @@ namespace ModioX.Models.Resources
         /// <param name="modId">Mod Id to add to list</param>
         public void RemoveModFromCustomList(string name, int modId)
         {
-            var customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
+            CustomList customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
             customList.ModIds.Remove(modId);
         }
 
@@ -205,7 +205,7 @@ namespace ModioX.Models.Resources
         /// <param name="region">Specifies the Game Region</param>
         public void UpdateGameRegion(string gameId, string region)
         {
-            var gameIdIndex = GameRegions.FindIndex(x => string.Equals(x.GameId, gameId, StringComparison.OrdinalIgnoreCase));
+            int gameIdIndex = GameRegions.FindIndex(x => string.Equals(x.GameId, gameId, StringComparison.OrdinalIgnoreCase));
 
             if (gameIdIndex == -1)
             {
@@ -306,7 +306,7 @@ namespace ModioX.Models.Resources
         {
             List<string> modTypes = new List<string>();
 
-            foreach (var modItem in modsData.Mods)
+            foreach (ModItem modItem in modsData.Mods)
             {
                 if (modIds.Contains(modItem.Id))
                 {
@@ -321,7 +321,7 @@ namespace ModioX.Models.Resources
         {
             List<string> regions = new List<string>();
 
-            foreach (var modItem in modsData.Mods)
+            foreach (ModItem modItem in modsData.Mods)
             {
                 if (modIds.Contains(modItem.Id))
                 {
@@ -351,7 +351,7 @@ namespace ModioX.Models.Resources
         /// <returns></returns>
         public CustomList GetCustomListByName(string name)
         {
-            foreach (var customList in from CustomList customList in CustomLists
+            foreach (CustomList customList in from CustomList customList in CustomLists
                                        where string.Equals(customList.Name, name, StringComparison.OrdinalIgnoreCase)
                                        select customList)
             {
@@ -400,7 +400,7 @@ namespace ModioX.Models.Resources
         /// <returns></returns>
         public bool IsPackageFileOldVersion(ModsData modsData, CategoriesData categoriesData, PackageFile packageFile)
         {
-            foreach (var modItem in modsData.Mods)
+            foreach (ModItem modItem in modsData.Mods)
             {
                 if (modItem.GetCategoryType(categoriesData) == CategoryType.Homebrew)
                 {

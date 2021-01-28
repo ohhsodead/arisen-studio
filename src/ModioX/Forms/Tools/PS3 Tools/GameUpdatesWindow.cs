@@ -45,8 +45,8 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 return;
             }
 
-            var gameTitle = HttpExtensions.GetGameTitleFromTitleID(TextBoxTitleID.Text);
-            var gameUpdates = HttpExtensions.GetGameUpdatesFromTitleID(UpdateTypeURL, TextBoxTitleID.Text);
+            string gameTitle = HttpExtensions.GetGameTitleFromTitleID(TextBoxTitleID.Text);
+            Models.Game_Updates.Titlepatch gameUpdates = HttpExtensions.GetGameUpdatesFromTitleID(UpdateTypeURL, TextBoxTitleID.Text);
 
             if (gameUpdates == null)
             {

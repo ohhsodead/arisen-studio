@@ -86,6 +86,7 @@
     <Reference Include="FluentFTP">
       <HintPath>..\References\FluentFTP.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\References\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -117,6 +118,7 @@
     <Compile Include="Database\DownloadFiles.cs" />
     <Compile Include="Database\DropboxData.cs" />
     <Compile Include="Database\ModItem.cs" />
+    <Compile Include="Extensions\DataExtensions.cs" />
     <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\DialogExtensions.cs" />

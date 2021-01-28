@@ -21,8 +21,8 @@ namespace ModioX.Extensions
         {
             try
             {
-                var releaseBody = gitHubData.Body;
-                var releaseBodyWithoutLastLine = releaseBody.Substring(0, releaseBody.Trim().LastIndexOf(Environment.NewLine, StringComparison.Ordinal));
+                string releaseBody = gitHubData.Body;
+                string releaseBodyWithoutLastLine = releaseBody.Substring(0, releaseBody.Trim().LastIndexOf(Environment.NewLine, StringComparison.Ordinal));
 
                 ShowDataViewDialog(owner, gitHubData.Name + " - What's New", "Change Log", releaseBodyWithoutLastLine.Replace("-", "•"));
             }
@@ -34,7 +34,7 @@ namespace ModioX.Extensions
 
         public static void ShowDataViewDialog(Form owner, string title, string subtitle, string body)
         {
-            using var dataViewDialog = new DataViewDialog { Text = title };
+            using DataViewDialog dataViewDialog = new DataViewDialog { Text = title };
             dataViewDialog.LabelTitle.Text = subtitle;
             dataViewDialog.LabelBody.Text = body;
 
@@ -45,7 +45,7 @@ namespace ModioX.Extensions
 
         public static string ShowListInputDialog(string title, List<string> items)
         {
-            using var listViewDialog = new ListViewDialog
+            using ListViewDialog listViewDialog = new ListViewDialog
             {
                 Text = title,
                 Items = items
@@ -57,7 +57,7 @@ namespace ModioX.Extensions
 
         public static string ShowTextInputDialog(Form owner, string title, string labelText, string inputText)
         {
-            using var inputTextDialog = new InputTextDialog
+            using InputTextDialog inputTextDialog = new InputTextDialog
             {
                 Text = title,
                 LabelName = { Text = labelText },
@@ -69,42 +69,42 @@ namespace ModioX.Extensions
 
         public static ConsoleProfile ShowConnectionDialog(Form owner)
         {
-            using var connectConsole = new ConnectionDialog();
+            using ConnectionDialog connectConsole = new ConnectionDialog();
             return connectConsole.ShowDialog(owner) == DialogResult.OK ? connectConsole.ConsoleProfile : null;
         }
 
         public static ConsoleProfile ShowNewConnectionWindow(Form owner, ConsoleProfile consoleProfile, bool isEditing)
         {
-            using var newConnectionDialog = new NewConnectionDialog { ConsoleProfile = consoleProfile, IsEditingProfile = isEditing };
+            using NewConnectionDialog newConnectionDialog = new NewConnectionDialog { ConsoleProfile = consoleProfile, IsEditingProfile = isEditing };
             return newConnectionDialog.ShowDialog(owner) == DialogResult.OK ? newConnectionDialog.ConsoleProfile : null;
         }
 
         public static void ShowGameBackupFiles(Form owner)
         {
-            using var gameBackupFilesWindow = new GameBackupFilesWindow();
+            using GameBackupFilesWindow gameBackupFilesWindow = new GameBackupFilesWindow();
             gameBackupFilesWindow.ShowDialog(owner);
         }
 
         public static BackupFile ShowBackupFileDetails(Form owner, BackupFile backupFile)
         {
-            using var backupFileDialog = new BackupFileDialog { BackupFile = backupFile };
+            using BackupFileDialog backupFileDialog = new BackupFileDialog { BackupFile = backupFile };
             return backupFileDialog.ShowDialog(owner) == DialogResult.OK ? backupFileDialog.BackupFile : null;
         }
         public static void ShowGameUpdatesFinderDialog(Form owner)
         {
-            using var gameUpdatesDialog = new GameUpdatesWindow();
+            using GameUpdatesWindow gameUpdatesDialog = new GameUpdatesWindow();
             gameUpdatesDialog.ShowDialog(owner);
         }
 
         public static void ShowPackageManagerWindow(Form owner)
         {
-            using var packageManagerWindow = new PackageManagerWindow();
+            using PackageManagerWindow packageManagerWindow = new PackageManagerWindow();
             packageManagerWindow.ShowDialog(owner);
         }
 
         public static void ShowFileManagerPS3(Form owner)
         {
-            using var fileManagerWindow = new Forms.Tools.PS3_Tools.FileManagerWindow();
+            using Forms.Tools.PS3_Tools.FileManagerWindow fileManagerWindow = new Forms.Tools.PS3_Tools.FileManagerWindow();
             fileManagerWindow.ShowDialog(owner);
         }
 
@@ -112,61 +112,61 @@ namespace ModioX.Extensions
 
         public static void ShowFileManagerXbox(Form owner)
         {
-            using var fileManagerWindow = new Forms.Tools.XBOX_Tools.FileManagerWindow();
+            using Forms.Tools.XBOX_Tools.FileManagerWindow fileManagerWindow = new Forms.Tools.XBOX_Tools.FileManagerWindow();
             fileManagerWindow.ShowDialog(owner);
         }
         public static void ShowIniEditorXbox(Form owner)
         {
-            using var iniEditorWindow = new iniEditor();
+            using iniEditor iniEditorWindow = new iniEditor();
             iniEditorWindow.ShowDialog(owner);
         }
         #endregion
 
         public static void ShowSettingsWindow(Form owner)
         {
-            using var settingsWindow = new SettingsWindow();
+            using SettingsWindow settingsWindow = new SettingsWindow();
             settingsWindow.ShowDialog(owner);
         }
 
         public static void ShowAboutWindow(Form owner)
         {
-            using var aboutDialog = new AboutDialog();
+            using AboutDialog aboutDialog = new AboutDialog();
             aboutDialog.ShowDialog(owner);
         }
 
         public static string ShowFolderBrowseDialog(Form owner, string description)
         {
-            using var folderBrowser = new FolderBrowserDialog { Description = description, ShowNewFolderButton = true };
+            using FolderBrowserDialog folderBrowser = new FolderBrowserDialog { Description = description, ShowNewFolderButton = true };
             return folderBrowser.ShowDialog(owner) == DialogResult.OK ? folderBrowser.SelectedPath : null;
         }
 
         public static string ShowOpenFileDialog(Form owner, string title, string fileTypes)
         {
-            using var openFileDialog = new OpenFileDialog { Title = title, Filter = fileTypes };
+            using OpenFileDialog openFileDialog = new OpenFileDialog { Title = title, Filter = fileTypes };
             return openFileDialog.ShowDialog(owner) == DialogResult.OK ? openFileDialog.FileName : null;
         }
 
         public static void ShowGameRegionsDialog(Form owner)
         {
-            using var gameRegions = new GameRegionsDialog();
+            using GameRegionsDialog gameRegions = new GameRegionsDialog();
             gameRegions.ShowDialog(owner);
         }
 
         public static void ShowExternalApplicationsDialog(Form owner)
         {
-            using var externalApplications = new ExternalApplicationsDialog();
+            using ExternalApplicationsDialog externalApplications = new ExternalApplicationsDialog();
             externalApplications.ShowDialog(owner);
         }
 
         public static void ShowCustomListsDialog(Form owner)
         {
-            using var customListsDialog = new CustomListsDialog();
+            using CustomListsDialog customListsDialog = new CustomListsDialog();
             customListsDialog.ShowDialog(owner);
         }
 
         public static void ShowCustomXboxDialog(Form owner, string title, string body, XMessageboxUI.ButtonOptions buttons)
         {
-            using var xMessageboxUI = new XMessageboxUI(title, body, buttons);
+            using XMessageboxUI xMessageboxUI = new XMessageboxUI(title, body, buttons);
             xMessageboxUI.ShowDialog(owner);
         }
     }

@@ -37,7 +37,7 @@ namespace ModioX.Forms.Dialogs
 
             int consoleIndex = 0;
 
-            foreach (var consoleProfile in MainWindow.Settings.ConsoleProfiles)
+            foreach (ConsoleProfile consoleProfile in MainWindow.Settings.ConsoleProfiles)
             {
                 Image consoleImage = consoleImage = Properties.Resources.PlayStation3Fat;
 
@@ -66,7 +66,7 @@ namespace ModioX.Forms.Dialogs
                         break;
                 }
 
-                var consoleItem = new TileConsoleItem(consoleProfile.Name, consoleImage) { ConsoleProfile = consoleProfile };
+                TileConsoleItem consoleItem = new TileConsoleItem(consoleProfile.Name, consoleImage) { ConsoleProfile = consoleProfile };
                 consoleItem.OnClick += new EventHandler(ConsoleItem_Click);
                 PanelConsoleProfiles.Controls.Add(consoleItem);
                 consoleIndex++;
@@ -100,9 +100,9 @@ namespace ModioX.Forms.Dialogs
 
         private void ResetConsoleItems()
         {
-            foreach (var ctrl in PanelConsoleProfiles.Controls)
+            foreach (object ctrl in PanelConsoleProfiles.Controls)
             {
-                var item = ctrl as TileConsoleItem;
+                TileConsoleItem item = ctrl as TileConsoleItem;
                 item.IsSelected = false;
             }
         }
@@ -130,10 +130,10 @@ namespace ModioX.Forms.Dialogs
 
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
-            var selectedIndex = MainWindow.Settings.ConsoleProfiles.IndexOf(ConsoleProfile);
-            var oldConsoleProfile = MainWindow.Settings.ConsoleProfiles[selectedIndex];
+            int selectedIndex = MainWindow.Settings.ConsoleProfiles.IndexOf(ConsoleProfile);
+            ConsoleProfile oldConsoleProfile = MainWindow.Settings.ConsoleProfiles[selectedIndex];
 
-            var newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
+            ConsoleProfile newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
 
             if (newConsoleProfile != null) oldConsoleProfile = newConsoleProfile;
 

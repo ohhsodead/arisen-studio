@@ -78,7 +78,7 @@ namespace ModioX.Forms.Settings
 
         private void ButtonLocalFilePath_Click(object sender, EventArgs e)
         {
-            using var openFileDialog = new OpenFileDialog
+            using OpenFileDialog openFileDialog = new OpenFileDialog
             {
                 CheckFileExists = true,
                 Multiselect = false,
@@ -97,8 +97,8 @@ namespace ModioX.Forms.Settings
 
         private void ButtonAddApplication_Click(object sender, EventArgs e)
         {
-            var appName = TextBoxFileName.Text;
-            var fileLocation = TextBoxFileLocation.Text;
+            string appName = TextBoxFileName.Text;
+            string fileLocation = TextBoxFileLocation.Text;
 
             if (string.IsNullOrWhiteSpace(appName))
             {

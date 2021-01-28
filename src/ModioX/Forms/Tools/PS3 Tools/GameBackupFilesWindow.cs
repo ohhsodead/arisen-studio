@@ -27,15 +27,15 @@ namespace ModioX.Forms.Tools.PS3_Tools
         {
             GridBackupFiles.DataSource = null;
 
-            var dt = new DataTable();
+            DataTable dt = new DataTable();
             dt.Columns.Add("Game Title", typeof(string));
             dt.Columns.Add("File Name", typeof(string));
             dt.Columns.Add("File Size", typeof(string));
             dt.Columns.Add("Created On", typeof(string));
 
-            foreach (var backupFile in MainWindow.Settings.BackupFiles)
+            foreach (BackupFile backupFile in MainWindow.Settings.BackupFiles)
             {
-                var fileSize = new FileInfo(backupFile.LocalPath).Length;
+                long fileSize = new FileInfo(backupFile.LocalPath).Length;
 
                 dt.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId).Title,
                     backupFile.FileName,

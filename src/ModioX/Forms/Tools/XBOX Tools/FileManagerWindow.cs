@@ -61,7 +61,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
             SetStatus("Fetching drives...");
 
-            foreach (var driveInfo in localDrives) _ = ComboBoxLocalDrives.Properties.Items.Add(driveInfo.Name.Replace(@"\", ""));
+            foreach (DriveInfo driveInfo in localDrives) _ = ComboBoxLocalDrives.Properties.Items.Add(driveInfo.Name.Replace(@"\", ""));
 
             if (MainWindow.Settings.SaveLocalPath)
             {
@@ -97,7 +97,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             SetStatus("Fetching root directories...");
 
-            foreach (var driveName in FtpExtensions.GetFolderNames("/").ToArray())
+            foreach (string driveName in FtpExtensions.GetFolderNames("/").ToArray())
             {
                 ComboBoxConsoleDrives.Properties.Items.Add(driveName.Replace(@"/", ""));
             }
@@ -130,7 +130,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void ButtonBrowseLocalDirectory_Click(object sender, EventArgs e)
         {
-            using var folderBrowser = new FolderBrowserDialog { ShowNewFolderButton = true };
+            using FolderBrowserDialog folderBrowser = new FolderBrowserDialog { ShowNewFolderButton = true };
 
             if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
@@ -270,7 +270,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             {
                 GridLocalFiles.DataSource = null;
 
-                var dt = new DataTable();
+                DataTable dt = new DataTable();
                 dt.Columns.Add("file-folder", typeof(string));
                 dt.Columns.Add("image", typeof(Image));
                 dt.Columns.Add("name", typeof(string));
@@ -287,7 +287,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 ComboBoxLocalDrives.SelectedItem = LocalDirectoryPath.Substring(0, 2);
                 ComboBoxLocalDrives.SelectedIndexChanged += ComboBoxLocalDrives_SelectedIndexChanged;
 
-                var isParentRoot = localDrives.Any(x => x.Name.Equals(LocalDirectoryPath.Replace(@"\\", @"\")));
+                bool isParentRoot = localDrives.Any(x => x.Name.Equals(LocalDirectoryPath.Replace(@"\\", @"\")));
 
                 if (!isParentRoot)
                 {
@@ -298,16 +298,16 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 int files = 0;
                 long totalBytes = 0;
 
-                foreach (var directoryItem in Directory.GetDirectories(LocalDirectoryPath))
+                foreach (string directoryItem in Directory.GetDirectories(LocalDirectoryPath))
                 {
                     dt.Rows.Add("folder", ImageFolder, Path.GetFileName(directoryItem), "<DIRECTORY>", Directory.GetLastWriteTime(directoryItem));
 
                     folders++;
                 }
 
-                foreach (var fileItem in Directory.GetFiles(LocalDirectoryPath))
+                foreach (string fileItem in Directory.GetFiles(LocalDirectoryPath))
                 {
-                    var fileBytes = new FileInfo(fileItem).Length;
+                    long fileBytes = new FileInfo(fileItem).Length;
 
                     dt.Rows.Add("file", ImageFile, Path.GetFileName(fileItem), MainWindow.Settings.ShowFileSizeInBytes ? fileBytes.ToString("#,0") + " bytes" : fileBytes.ToString().FormatSize(), File.GetLastWriteTime(fileItem));
 
@@ -481,9 +481,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             FtpDirectoryPath = directoryPath.Replace("//", "/");
             TextBoxConsolePath.Text = FtpDirectoryPath;
 
-            var dt = new DataTable();
+            DataTable dt = new DataTable();
 
-            foreach (var consoleiTems in XboxConsole.File.GetDirectories(FtpDirectoryPath))
+            foreach (string consoleiTems in XboxConsole.File.GetDirectories(FtpDirectoryPath))
             {
                 dt.Rows.Add(consoleiTems);
             }
@@ -591,7 +591,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             try
             {
-                var newName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder name: ", "");
+                string newName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder name: ", "");
 
                 if (newName != null)
                 {
@@ -623,7 +623,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             try
             {
-                var folderName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder Name: ", "");
+                string folderName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder Name: ", "");
 
                 if (folderName != null)
                 {

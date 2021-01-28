@@ -80,24 +80,30 @@
             // 
             // ButtonUseDefault
             // 
+            this.ButtonUseDefault.DialogResult = System.Windows.Forms.DialogResult.Abort;
             this.ButtonUseDefault.Location = new System.Drawing.Point(90, 80);
             this.ButtonUseDefault.Name = "ButtonUseDefault";
+            this.ButtonUseDefault.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonUseDefault.Size = new System.Drawing.Size(102, 23);
             this.ButtonUseDefault.TabIndex = 19;
             this.ButtonUseDefault.Text = "Use Default";
             // 
             // ButtonCancel
             // 
+            this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.ButtonCancel.Location = new System.Drawing.Point(198, 80);
             this.ButtonCancel.Name = "ButtonCancel";
+            this.ButtonCancel.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCancel.Size = new System.Drawing.Size(84, 23);
             this.ButtonCancel.TabIndex = 20;
             this.ButtonCancel.Text = "Cancel";
             // 
             // ButtonOK
             // 
+            this.ButtonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ButtonOK.Location = new System.Drawing.Point(288, 80);
             this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonOK.Size = new System.Drawing.Size(84, 23);
             this.ButtonOK.TabIndex = 21;
             this.ButtonOK.Text = "OK";

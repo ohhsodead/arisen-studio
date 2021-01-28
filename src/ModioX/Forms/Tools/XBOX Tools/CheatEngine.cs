@@ -16,7 +16,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // example of datatable (im going to add a function to create a datatable with the specified details (columns & rows)
             // so we dont need to create a new one like this everytime, because we're using datatable a lot - it make sense
 
-            var ScannedAddresses = new DataTable();
+            DataTable ScannedAddresses = new DataTable();
             ScannedAddresses.Columns.Add("Address", typeof(string));
             ScannedAddresses.Columns.Add("Value", typeof(string));
             ScannedAddresses.Columns.Add("Previous", typeof(string));
@@ -26,7 +26,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             GridControlScannedAddresses.DataSource = ScannedAddresses;
             GridViewScannedAddresses.Columns[0].OptionsFilter.AllowFilter = false;
 
-            var ModifiedValues = new DataTable();
+            DataTable ModifiedValues = new DataTable();
             ModifiedValues.Columns.Add("Active", typeof(bool));
             ModifiedValues.Columns.Add("Description", typeof(string));
             ModifiedValues.Columns.Add("Address", typeof(string));

@@ -19,40 +19,39 @@ namespace ModioX.Forms
         {
             TextBoxFileName.Text = BackupFile.FileName;
             TextBoxGameId.Text = BackupFile.CategoryId;
-            TextBoxConsolePath.Text = BackupFile.InstallPath;
-            TextBoxLocalPath.Text = BackupFile.LocalPath;
+            TextBoxInstallPathConsole.Text = BackupFile.InstallPath;
+            TextBoxInstallPathLocal.Text = BackupFile.LocalPath;
         }
 
         private void ButtonBrowseLocalPath_Click(object sender, EventArgs e)
         {
-            using var openFileDialog = new OpenFileDialog { CheckFileExists = true, Multiselect = false };
-            openFileDialog.InitialDirectory = Path.GetDirectoryName(TextBoxLocalPath.Text);
+            using OpenFileDialog openFileDialog = new OpenFileDialog { CheckFileExists = true, Multiselect = false };
+            openFileDialog.InitialDirectory = Path.GetDirectoryName(TextBoxInstallPathLocal.Text);
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK) TextBoxLocalPath.Text = openFileDialog.FileName;
+            if (openFileDialog.ShowDialog() == DialogResult.OK) TextBoxInstallPathLocal.Text = openFileDialog.FileName;
         }
 
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TextBoxLocalPath.Text) ||
-                TextBoxLocalPath.Text.IndexOfAny(Path.GetInvalidPathChars()) != -1)
+            if (string.IsNullOrWhiteSpace(TextBoxInstallPathLocal.Text) || TextBoxInstallPathLocal.Text.IndexOfAny(Path.GetInvalidPathChars()) != -1)
             {
-                _ = XtraMessageBox.Show("You must include a local file path for the game file backup.",
+                XtraMessageBox.Show("You must include a local file path for the game file backup.",
                     "Empty Local Path");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(TextBoxConsolePath.Text))
+            if (string.IsNullOrWhiteSpace(TextBoxInstallPathConsole.Text))
             {
-                _ = XtraMessageBox.Show(
+                XtraMessageBox.Show(
                     "You must include a console path for for the game file backup. This is where the file will be restored at on the console.",
                     "Empty Console Path");
                 return;
             }
 
             BackupFile.CategoryId = TextBoxGameId.Text;
-            BackupFile.FileName = Path.GetFileName(TextBoxConsolePath.Text);
-            BackupFile.LocalPath = TextBoxLocalPath.Text;
-            BackupFile.InstallPath = TextBoxConsolePath.Text;
+            BackupFile.FileName = Path.GetFileName(TextBoxInstallPathConsole.Text);
+            BackupFile.LocalPath = TextBoxInstallPathLocal.Text;
+            BackupFile.InstallPath = TextBoxInstallPathConsole.Text;
 
             Close();
         }

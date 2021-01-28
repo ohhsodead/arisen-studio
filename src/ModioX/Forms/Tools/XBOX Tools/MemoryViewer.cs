@@ -83,7 +83,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void FixTheAddresses(object sender, EventArgs e)
         {
-            var Sender = sender as TextEdit;
+            TextEdit Sender = sender as TextEdit;
             {
                 if (Sender != null)
                     try
@@ -106,11 +106,11 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                             //Now we check for addition commands
                             if (adrsample.Length >= 2)
                             {
-                                var adrhex = ((uint)new UInt32Converter().ConvertFromString("0x" + adrsample[0]));
+                                uint adrhex = ((uint)new UInt32Converter().ConvertFromString("0x" + adrsample[0]));
                                 //Formats address to have 4 bytes and be hex.
                                 if (!adrsample[1].Contains("0x"))
                                     adrsample[1] = ("0x" + adrsample[1]); //Preps for conversion.
-                                var adrhex2 = ((uint)new UInt32Converter().ConvertFromString(adrsample[1]));
+                                uint adrhex2 = ((uint)new UInt32Converter().ConvertFromString(adrsample[1]));
                                 //Formats address to have 4 bytes and be hex.
                                 Sender.Text = math == "+"
                                                   ? (adrhex + adrhex2).ToString("X8")
@@ -268,7 +268,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             if (hexBox.SelectionStart >= hexBox.ByteProvider.Bytes.Count) return;
             if (numfield.GetType() == typeof(NumericUpDown))
             {
-                var numeric = (NumericUpDown)numfield;
+                NumericUpDown numeric = (NumericUpDown)numfield;
                 switch (numeric.Name)
                 {
                     case "NumericInt8":
@@ -311,7 +311,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             }
             else
             {
-                var textbox = (TextBox)numfield;
+                TextBox textbox = (TextBox)numfield;
                 for (int i = 0; i < 4; i++)
                 {
                     hexBox.ByteProvider.WriteByte(hexBox.SelectionStart + i,
@@ -361,7 +361,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         private DynamicByteProvider GetHexBoxByteProvider()
         {
             //recursion
-            var returnVal = new DynamicByteProvider(new byte[] { 0, 0, 0, 0 });
+            DynamicByteProvider returnVal = new DynamicByteProvider(new byte[] { 0, 0, 0, 0 });
             if (hexBox.InvokeRequired)
                 hexBox.Invoke((MethodInvoker)
                               delegate { returnVal = GetHexBoxByteProvider(); });
@@ -388,7 +388,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                 byte[] retValue =
                     Functions.StringToByteArray(XboxConsole.Peek(PeekPokeAddressTextBox.Text, peekLengthTextBox.Text, PeekPokeAddressTextBox.Text, peekLengthTextBox.Text));
-                var buffer = new DynamicByteProvider(retValue); //object initilizer
+                DynamicByteProvider buffer = new DynamicByteProvider(retValue); //object initilizer
 
                 _old = new byte[buffer.Bytes.Count];
                 buffer.Bytes.CopyTo(_old);

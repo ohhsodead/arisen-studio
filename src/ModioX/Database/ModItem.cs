@@ -45,7 +45,7 @@ namespace ModioX.Models.Database
         /// <returns></returns>
         public CategoryType GetCategoryType(CategoriesData categoriesData)
         {
-            foreach (var category in categoriesData.Categories)
+            foreach (Category category in categoriesData.Categories)
             {
                 if (category.Id.ToLower().Equals(GameId.ToLower()))
                 {
@@ -247,8 +247,8 @@ namespace ModioX.Models.Database
         {
             if (DownloadFiles.Count > 1)
             {
-                var downloadNames = DownloadFiles.Select(x => x.Name).ToList();
-                var downloadName = DialogExtensions.ShowListInputDialog("Install Downloads", downloadNames);
+                List<string> downloadNames = DownloadFiles.Select(x => x.Name).ToList();
+                string downloadName = DialogExtensions.ShowListInputDialog("Install Downloads", downloadNames);
 
                 if (string.IsNullOrEmpty(downloadName))
                 {

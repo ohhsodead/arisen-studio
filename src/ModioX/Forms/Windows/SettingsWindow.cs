@@ -11,7 +11,10 @@ namespace ModioX.Forms.Windows
             InitializeComponent();
         }
 
-        public static SettingsData Settings = MainWindow.Settings;
+        /// <summary>
+        /// Get the user's current settings data.
+        /// </summary>
+        public static SettingsData Settings { get; } = MainWindow.Settings;
 
         private void SettingsWindow_Load(object sender, EventArgs e)
         {
@@ -28,17 +31,12 @@ namespace ModioX.Forms.Windows
             ColorXboxDebuggingBackground.Color = Settings.HexBoxBackColor;
 
             /* Database */
-            switch (Settings.LoadConsoleMods)
+            RadioConsoles.SelectedIndex = Settings.LoadConsoleMods switch
             {
-                case ConsoleTypePrefix.PS3:
-                    RadioConsoles.SelectedIndex = 0;
-                    break;
-                case ConsoleTypePrefix.XBOX:
-                    RadioConsoles.SelectedIndex = 1;
-                    break;
-                default:
-                    break;
-            }
+                ConsoleTypePrefix.PS3 => 0,
+                ConsoleTypePrefix.XBOX => 1,
+                _ => 0,
+            };
 
             /* Content Recognition */
             CheckBoxAutoDetectGameRegions.Checked = Settings.AutoDetectGameRegions;
@@ -61,17 +59,12 @@ namespace ModioX.Forms.Windows
             Settings.ShowFileSizeInBytes = CheckBoxShowFileSizeInBytes.Checked;
 
             /* Database */
-            switch (RadioConsoles.SelectedIndex)
+            Settings.LoadConsoleMods = RadioConsoles.SelectedIndex switch
             {
-                case 0:
-                    Settings.LoadConsoleMods = ConsoleTypePrefix.PS3;
-                    break;
-                case 1:
-                    Settings.LoadConsoleMods = ConsoleTypePrefix.XBOX;
-                    break;
-                default:
-                    break;
-            }
+                0 => ConsoleTypePrefix.PS3,
+                1 => ConsoleTypePrefix.XBOX,
+                _ => ConsoleTypePrefix.PS3
+            };
 
             /* Content Recognition */
             Settings.AutoDetectGameRegions = CheckBoxAutoDetectGameRegions.Checked;

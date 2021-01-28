@@ -31,7 +31,7 @@ namespace ModioX.Models.Database
         /// <returns></returns>
         public List<string> GetGameRegions(string gameId)
         {
-            foreach (var category in from Category category in Categories
+            foreach (Category category in from Category category in Categories
                                      where category.Id.Equals(gameId)
                                      select category)
             {
@@ -60,7 +60,7 @@ namespace ModioX.Models.Database
         /// <returns>Game information</returns>
         public Category GetCategoryById(string categoryId)
         {
-            foreach (var category in from Category category in Categories
+            foreach (Category category in from Category category in Categories
                                      where category.Id.ToLower().Equals(categoryId.ToLower())
                                      select category)
             {
@@ -77,7 +77,7 @@ namespace ModioX.Models.Database
         /// <returns>Game information</returns>
         public Category GetCategoryByTitle(string title)
         {
-            foreach (var game in from Category game in Categories
+            foreach (Category game in from Category game in Categories
                                  where game.Title.ToLower().Equals(title.ToLower())
                                  select game)
             {

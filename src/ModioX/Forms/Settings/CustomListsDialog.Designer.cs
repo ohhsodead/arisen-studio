@@ -66,9 +66,18 @@
             // GridViewCustomLists
             // 
             this.GridViewCustomLists.ActiveFilterEnabled = false;
+            this.GridViewCustomLists.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewCustomLists.GridControl = this.GridCustomLists;
             this.GridViewCustomLists.Name = "GridViewCustomLists";
+            this.GridViewCustomLists.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.GridViewCustomLists.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.GridViewCustomLists.OptionsBehavior.Editable = false;
             this.GridViewCustomLists.OptionsBehavior.ReadOnly = true;
+            this.GridViewCustomLists.OptionsCustomization.AllowFilter = false;
+            this.GridViewCustomLists.OptionsFilter.AllowFilterEditor = false;
+            this.GridViewCustomLists.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.GridViewCustomLists.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.GridViewCustomLists.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.GridViewCustomLists.OptionsView.ShowGroupExpandCollapseButtons = false;
             this.GridViewCustomLists.OptionsView.ShowGroupPanel = false;
             this.GridViewCustomLists.OptionsView.ShowIndicator = false;
@@ -148,6 +157,7 @@
             this.ButtonCreateNewList.Location = new System.Drawing.Point(6, 6);
             this.ButtonCreateNewList.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.ButtonCreateNewList.Name = "ButtonCreateNewList";
+            this.ButtonCreateNewList.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCreateNewList.Size = new System.Drawing.Size(101, 24);
             this.ButtonCreateNewList.TabIndex = 10;
             this.ButtonCreateNewList.Text = "Create New List";
@@ -158,6 +168,7 @@
             this.ButtonRenameList.Enabled = false;
             this.ButtonRenameList.Location = new System.Drawing.Point(113, 6);
             this.ButtonRenameList.Name = "ButtonRenameList";
+            this.ButtonRenameList.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonRenameList.Size = new System.Drawing.Size(89, 24);
             this.ButtonRenameList.TabIndex = 11;
             this.ButtonRenameList.Text = "Rename List";
@@ -168,6 +179,7 @@
             this.ButtonDeleteList.Enabled = false;
             this.ButtonDeleteList.Location = new System.Drawing.Point(208, 6);
             this.ButtonDeleteList.Name = "ButtonDeleteList";
+            this.ButtonDeleteList.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonDeleteList.Size = new System.Drawing.Size(82, 24);
             this.ButtonDeleteList.TabIndex = 12;
             this.ButtonDeleteList.Text = "Delete List";
@@ -178,6 +190,7 @@
             this.ButtonDeleteAllLists.Enabled = false;
             this.ButtonDeleteAllLists.Location = new System.Drawing.Point(296, 6);
             this.ButtonDeleteAllLists.Name = "ButtonDeleteAllLists";
+            this.ButtonDeleteAllLists.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonDeleteAllLists.Size = new System.Drawing.Size(101, 24);
             this.ButtonDeleteAllLists.TabIndex = 13;
             this.ButtonDeleteAllLists.Text = "Delete All Lists";

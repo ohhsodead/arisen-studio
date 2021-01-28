@@ -44,7 +44,7 @@ namespace ModioX.Extensions
         {
             GitHubData gitHubLatestReleaseData;
 
-            using (var streamReader = new StreamReader(HttpExtensions.GetStream(Urls.GitHubLatestRelease)))
+            using (StreamReader streamReader = new StreamReader(HttpExtensions.GetStream(Urls.GitHubLatestRelease)))
             {
                 gitHubLatestReleaseData = JsonConvert.DeserializeObject<GitHubData>(streamReader.ReadToEnd());
             }
@@ -62,7 +62,7 @@ namespace ModioX.Extensions
             {
                 MainWindow.Window.SetStatus("Checking application for new updates...");
 
-                var latestVersion = new Version(GitHubData.TagName);
+                Version latestVersion = new Version(GitHubData.TagName);
 
                 if (CurrentVersion < latestVersion)
                 {
@@ -87,7 +87,7 @@ namespace ModioX.Extensions
         {
             try
             {
-                var installerFile = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\{GitHubData.Assets[0].Name}";
+                string installerFile = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\{GitHubData.Assets[0].Name}";
 
                 MainWindow.Settings.FirstTimeOpenAfterUpdate = true;
                 MainWindow.Window.SetStatus("A new update is available. Downloading the installer...");

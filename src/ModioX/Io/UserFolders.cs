@@ -35,7 +35,7 @@ namespace ModioX.Io
         /// </summary>
         internal static void DeleteDirectory(string path)
         {
-            foreach (var directory in Directory.GetDirectories(path))
+            foreach (string directory in Directory.GetDirectories(path))
             {
                 Directory.Delete(directory, true);
             }

@@ -80,8 +80,8 @@ namespace ModioX.Forms.Dialogs
 
         private void ButtonChangeCredentials_Click(object sender, EventArgs e)
         {
-            using var consoleCredentials = new LoginDialog();
-            var setCredentials = consoleCredentials.ShowDialog(this);
+            using LoginDialog consoleCredentials = new LoginDialog();
+            DialogResult setCredentials = consoleCredentials.ShowDialog(this);
 
             if (setCredentials == DialogResult.OK)
             {
@@ -104,7 +104,7 @@ namespace ModioX.Forms.Dialogs
         private void CheckBoxAutoDetectIPAddress_CheckedChanged(object sender, EventArgs e)
         {
             ConsoleProfile.AutoDetectIPAddress = CheckBoxAutoDetectIPAddress.Checked;
-            TextBoxConsoleAddress.Enabled = CheckBoxAutoDetectIPAddress.Checked;
+            TextBoxConsoleAddress.Enabled = !CheckBoxAutoDetectIPAddress.Checked;
             TextBoxConsoleAddress.Text = CheckBoxAutoDetectIPAddress.Checked ? "192.168.0." : string.Empty;
         }
 
@@ -129,8 +129,8 @@ namespace ModioX.Forms.Dialogs
             }
 
 
-            var isAddressValid = IPAddress.TryParse(TextBoxConsoleAddress.Text, out var address);
-            var isPortValid = int.TryParse(TextBoxConsolePort.Text, out var port);
+            bool isAddressValid = IPAddress.TryParse(TextBoxConsoleAddress.Text, out IPAddress address);
+            bool isPortValid = int.TryParse(TextBoxConsolePort.Text, out int port);
 
             if (isAddressValid)
             {
@@ -178,7 +178,7 @@ namespace ModioX.Forms.Dialogs
 
         private static bool ProfileExists(string name)
         {
-            foreach (var console in MainWindow.Settings.ConsoleProfiles)
+            foreach (ConsoleProfile console in MainWindow.Settings.ConsoleProfiles)
                 if (console.Name.Equals(name))
                     return true;
 

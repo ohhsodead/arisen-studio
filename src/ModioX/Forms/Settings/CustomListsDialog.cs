@@ -15,6 +15,11 @@ namespace ModioX.Forms.Settings
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Get the user's current settings data.
+        /// </summary>
+        public static SettingsData Settings { get; } = MainWindow.Settings;
+
         private void CustomListsDialog_Load(object sender, EventArgs e)
         {
             LoadCustomLists();
@@ -24,19 +29,19 @@ namespace ModioX.Forms.Settings
         {
             GridCustomLists.DataSource = null;
 
-            var dt = new DataTable();
+            DataTable dt = new DataTable();
             dt.Columns.Add("List Name", typeof(string));
             dt.Columns.Add("# of Mods", typeof(string));
 
-            foreach (CustomList customList in MainWindow.Settings.CustomLists)
+            foreach (CustomList customList in Settings.CustomLists)
             {
                 dt.Rows.Add(customList.Name, customList.ModIds.Count + " Mods");
             }
 
             GridCustomLists.DataSource = dt;
 
-            GridViewCustomLists.Columns[1].Width = 200;
-            GridViewCustomLists.Columns[2].Width = 50;
+            GridViewCustomLists.Columns[0].Width = 200;
+            GridViewCustomLists.Columns[1].Width = 50;
 
             ProgressCustomLists.Visible = GridViewCustomLists.RowCount < 1;
 
@@ -46,19 +51,15 @@ namespace ModioX.Forms.Settings
             {
                 GridViewCustomLists.SelectRow(0);
             }
+
+            ButtonRenameList.Enabled = GridViewCustomLists.SelectedRowsCount > 0;
+            ButtonDeleteList.Enabled = GridViewCustomLists.SelectedRowsCount > 0;
         }
 
         private void GridCustomLists_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e)
         {
-            ButtonRenameList.Enabled = GridViewCustomLists.SelectedRowsCount != 0;
-            ButtonDeleteList.Enabled = GridViewCustomLists.SelectedRowsCount != 0;
-        }
-
-        private void DgvCustomLists_SelectionChanged(object sender, EventArgs e)
-        {
-            //ContextMenuCustomListsRename.Enabled = DgvCustomLists.CurrentRow != null;
-            //ContextMenuCustomListsDelete.Enabled = DgvCustomLists.CurrentRow != null;
-            //ToolStripDeleteSelected.Enabled = DgvCustomLists.CurrentRow != null;
+            ButtonRenameList.Enabled = GridViewCustomLists.SelectedRowsCount > 0;
+            ButtonDeleteList.Enabled = GridViewCustomLists.SelectedRowsCount > 0;
         }
 
         private void ButtonRenameList_Click(object sender, EventArgs e)
@@ -74,15 +75,10 @@ namespace ModioX.Forms.Settings
                 }
                 else
                 {
-                    MainWindow.Settings.RenameCustomList(currentListName, newListName);
+                    Settings.RenameCustomList(currentListName, newListName);
                     LoadCustomLists();
                 }
             }
-        }
-
-        private void ContextMenuCustomListsDelete_Click(object sender, EventArgs e)
-        {
-            //ToolStripDeleteSelected.PerformClick();
         }
 
         private void ButtonCreateNewList_Click(object sender, EventArgs e)
@@ -97,7 +93,7 @@ namespace ModioX.Forms.Settings
                 }
                 else
                 {
-                    MainWindow.Settings.AddCustomList(listName);
+                    Settings.AddCustomList(listName);
                     LoadCustomLists();
                 }
             }
@@ -107,7 +103,7 @@ namespace ModioX.Forms.Settings
         {
             if (XtraMessageBox.Show("Do you really want to delete the selected list?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                //MainWindow.Settings.CustomLists.RemoveAt(DgvCustomLists.CurrentRow.Index);
+                //Settings.CustomLists.RemoveAt(DgvCustomLists.CurrentRow.Index);
                 LoadCustomLists();
             }
         }
@@ -116,14 +112,14 @@ namespace ModioX.Forms.Settings
         {
             if (XtraMessageBox.Show("Do you really to delete all of your created lists?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MainWindow.Settings.CustomLists.Clear();
+                Settings.CustomLists.Clear();
                 LoadCustomLists();
             }
         }
 
         private static bool CustomListNameExists(string name)
         {
-            foreach (CustomList customList in MainWindow.Settings.CustomLists)
+            foreach (CustomList customList in Settings.CustomLists)
             {
                 if (string.Equals(customList.Name, name))
                 {

@@ -18,7 +18,7 @@ namespace ModioX.Windows
 
         private void ListViewDialog_Load(object sender, EventArgs e)
         {
-            foreach (var item in Items) ListBoxItems.Items.Add(Text = item);
+            foreach (string item in Items) ListBoxItems.Items.Add(Text = item);
 
             // Increase form size to fit listview contents
             Width = ListBoxItems.Width + Items.Max(w => w.Length) + 70;
