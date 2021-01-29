@@ -28,209 +28,245 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GameNameBox = new DevExpress.XtraEditors.TextEdit();
-            this.DL_BTN = new DevExpress.XtraEditors.SimpleButton();
-            this.progressBar = new DevExpress.XtraEditors.ProgressBarControl();
-            this.ItemIDBox = new DevExpress.XtraEditors.TextEdit();
-            this.ItemNameBox = new DevExpress.XtraEditors.TextEdit();
-            this.groupBox4 = new DevExpress.XtraEditors.GroupControl();
-            this.XUIDBox = new DevExpress.XtraEditors.TextEdit();
-            this.groupBox1 = new DevExpress.XtraEditors.GroupControl();
-            this.groupBox3 = new DevExpress.XtraEditors.GroupControl();
-            this.groupBox2 = new DevExpress.XtraEditors.GroupControl();
-            this.MPURLBox = new DevExpress.XtraEditors.TextEdit();
-            this.button1 = new DevExpress.XtraEditors.SimpleButton();
-            this.pictureBox1 = new DevExpress.XtraEditors.ImageListBoxControl();
-            ((System.ComponentModel.ISupportInitialize)(this.GameNameBox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemIDBox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemNameBox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBox4)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.XUIDBox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBox3)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBox2)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MPURLBox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.TextBoxGameTitle = new DevExpress.XtraEditors.TextEdit();
+            this.ButtonDownloadItem = new DevExpress.XtraEditors.SimpleButton();
+            this.ProgressBar = new DevExpress.XtraEditors.ProgressBarControl();
+            this.TextBoxItemID = new DevExpress.XtraEditors.TextEdit();
+            this.TextBoxItemName = new DevExpress.XtraEditors.TextEdit();
+            this.TextBoxXUID = new DevExpress.XtraEditors.TextEdit();
+            this.TextBoxMarketplaceURL = new DevExpress.XtraEditors.TextEdit();
+            this.ButtonCheckURL = new DevExpress.XtraEditors.SimpleButton();
+            this.LabelSearch = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.ImageAvatar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxGameTitle.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProgressBar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxItemID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxItemName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxXUID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxMarketplaceURL.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageAvatar)).BeginInit();
             this.SuspendLayout();
             // 
-            // GameNameBox
+            // TextBoxGameTitle
             // 
-            this.GameNameBox.Location = new System.Drawing.Point(6, 17);
-            this.GameNameBox.Name = "GameNameBox";
-            this.GameNameBox.Size = new System.Drawing.Size(318, 20);
-            this.GameNameBox.TabIndex = 13;
+            this.TextBoxGameTitle.Location = new System.Drawing.Point(8, 148);
+            this.TextBoxGameTitle.Name = "TextBoxGameTitle";
+            this.TextBoxGameTitle.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxGameTitle.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxGameTitle.Size = new System.Drawing.Size(346, 22);
+            this.TextBoxGameTitle.TabIndex = 2;
             // 
-            // DL_BTN
+            // ButtonDownloadItem
             // 
-            this.DL_BTN.Location = new System.Drawing.Point(478, 229);
-            this.DL_BTN.Name = "DL_BTN";
-            this.DL_BTN.Size = new System.Drawing.Size(154, 23);
-            this.DL_BTN.TabIndex = 19;
-            this.DL_BTN.Text = ":: Download Item ::";
-            this.DL_BTN.Click += new System.EventHandler(this.DL_BTN_Click);
+            this.ButtonDownloadItem.Location = new System.Drawing.Point(186, 229);
+            this.ButtonDownloadItem.Name = "ButtonDownloadItem";
+            this.ButtonDownloadItem.Size = new System.Drawing.Size(168, 27);
+            this.ButtonDownloadItem.TabIndex = 5;
+            this.ButtonDownloadItem.Text = ":: Download Item ::";
+            this.ButtonDownloadItem.Click += new System.EventHandler(this.ButtonDownloadItem_Click);
             // 
-            // progressBar
+            // ProgressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(3, 26);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(300, 10);
-            this.progressBar.TabIndex = 20;
-            this.progressBar.Visible = false;
+            this.ProgressBar.Location = new System.Drawing.Point(12, 22);
+            this.ProgressBar.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ProgressBar.Name = "ProgressBar";
+            this.ProgressBar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.ProgressBar.Size = new System.Drawing.Size(636, 12);
+            this.ProgressBar.TabIndex = 20;
+            this.ProgressBar.Visible = false;
             // 
-            // ItemIDBox
+            // TextBoxItemID
             // 
-            this.ItemIDBox.EditValue = "0000100095CEE253CEA4B7824D5308AB";
-            this.ItemIDBox.Enabled = false;
-            this.ItemIDBox.Location = new System.Drawing.Point(6, 16);
-            this.ItemIDBox.Name = "ItemIDBox";
-            this.ItemIDBox.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.ItemIDBox.Properties.Appearance.Options.UseForeColor = true;
-            this.ItemIDBox.Size = new System.Drawing.Size(318, 20);
-            this.ItemIDBox.TabIndex = 4;
+            this.TextBoxItemID.EditValue = "0000100095CEE253CEA4B7824D5308AB";
+            this.TextBoxItemID.Enabled = false;
+            this.TextBoxItemID.Location = new System.Drawing.Point(8, 99);
+            this.TextBoxItemID.Name = "TextBoxItemID";
+            this.TextBoxItemID.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxItemID.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxItemID.Size = new System.Drawing.Size(346, 22);
+            this.TextBoxItemID.TabIndex = 1;
             // 
-            // ItemNameBox
+            // TextBoxItemName
             // 
-            this.ItemNameBox.EditValue = "Lancer";
-            this.ItemNameBox.Enabled = false;
-            this.ItemNameBox.Location = new System.Drawing.Point(6, 16);
-            this.ItemNameBox.Name = "ItemNameBox";
-            this.ItemNameBox.Size = new System.Drawing.Size(318, 20);
-            this.ItemNameBox.TabIndex = 3;
+            this.TextBoxItemName.EditValue = "Lancer";
+            this.TextBoxItemName.Enabled = false;
+            this.TextBoxItemName.Location = new System.Drawing.Point(8, 50);
+            this.TextBoxItemName.Name = "TextBoxItemName";
+            this.TextBoxItemName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxItemName.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxItemName.Size = new System.Drawing.Size(346, 22);
+            this.TextBoxItemName.TabIndex = 1;
             // 
-            // groupBox4
+            // TextBoxXUID
             // 
-            this.groupBox4.Controls.Add(this.XUIDBox);
-            this.groupBox4.Location = new System.Drawing.Point(306, 179);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(327, 44);
-            this.groupBox4.TabIndex = 26;
-            this.groupBox4.Text = "XUID";
+            this.TextBoxXUID.EditValue = "0009000000000000";
+            this.TextBoxXUID.Location = new System.Drawing.Point(8, 197);
+            this.TextBoxXUID.Name = "TextBoxXUID";
+            this.TextBoxXUID.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxXUID.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxXUID.Properties.MaxLength = 16;
+            this.TextBoxXUID.Size = new System.Drawing.Size(346, 22);
+            this.TextBoxXUID.TabIndex = 3;
             // 
-            // XUIDBox
+            // TextBoxMarketplaceURL
             // 
-            this.XUIDBox.EditValue = "0009000000000000";
-            this.XUIDBox.Location = new System.Drawing.Point(6, 17);
-            this.XUIDBox.Name = "XUIDBox";
-            this.XUIDBox.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.XUIDBox.Properties.Appearance.Options.UseForeColor = true;
-            this.XUIDBox.Properties.MaxLength = 16;
-            this.XUIDBox.Size = new System.Drawing.Size(315, 20);
-            this.XUIDBox.TabIndex = 16;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.GameNameBox);
-            this.groupBox1.Location = new System.Drawing.Point(306, 129);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(330, 44);
-            this.groupBox1.TabIndex = 25;
-            this.groupBox1.Text = "Game Name";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.ItemIDBox);
-            this.groupBox3.Location = new System.Drawing.Point(306, 79);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(330, 44);
-            this.groupBox3.TabIndex = 22;
-            this.groupBox3.Text = "Item ID";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.ItemNameBox);
-            this.groupBox2.Location = new System.Drawing.Point(305, 29);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(330, 44);
-            this.groupBox2.TabIndex = 21;
-            this.groupBox2.Text = "Item Name";
-            // 
-            // MPURLBox
-            // 
-            this.MPURLBox.EditValue = "http://marketplace.xbox.com/en-US/Product/Lancer/00001000-95ce-e253-cea4-b7824d53" +
+            this.TextBoxMarketplaceURL.EditValue = "http://marketplace.xbox.com/en-US/Product/Lancer/00001000-95ce-e253-cea4-b7824d53" +
     "08ab";
-            this.MPURLBox.Location = new System.Drawing.Point(3, 3);
-            this.MPURLBox.Name = "MPURLBox";
-            this.MPURLBox.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.MPURLBox.Properties.Appearance.Options.UseForeColor = true;
-            this.MPURLBox.Size = new System.Drawing.Size(626, 20);
-            this.MPURLBox.TabIndex = 17;
-            this.MPURLBox.TextChanged += new System.EventHandler(this.MPURLBox_TextChanged);
+            this.TextBoxMarketplaceURL.Location = new System.Drawing.Point(12, 3);
+            this.TextBoxMarketplaceURL.Name = "TextBoxMarketplaceURL";
+            this.TextBoxMarketplaceURL.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.TextBoxMarketplaceURL.Properties.Appearance.Options.UseForeColor = true;
+            this.TextBoxMarketplaceURL.Size = new System.Drawing.Size(636, 20);
+            this.TextBoxMarketplaceURL.TabIndex = 0;
+            this.TextBoxMarketplaceURL.EditValueChanged += new System.EventHandler(this.TextBoxMarketplaceURL_EditValueChanged);
             // 
-            // button1
+            // ButtonCheckURL
             // 
-            this.button1.Location = new System.Drawing.Point(306, 229);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = ":: Check URL ::";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ButtonCheckURL.Location = new System.Drawing.Point(8, 229);
+            this.ButtonCheckURL.Name = "ButtonCheckURL";
+            this.ButtonCheckURL.Size = new System.Drawing.Size(172, 27);
+            this.ButtonCheckURL.TabIndex = 4;
+            this.ButtonCheckURL.Text = ":: Check URL ::";
+            this.ButtonCheckURL.Click += new System.EventHandler(this.ButtonCheckURL_Click);
             // 
-            // pictureBox1
+            // LabelSearch
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 38);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 300);
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
+            this.LabelSearch.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSearch.Appearance.Options.UseFont = true;
+            this.LabelSearch.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelSearch.Location = new System.Drawing.Point(8, 30);
+            this.LabelSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.LabelSearch.Name = "LabelSearch";
+            this.LabelSearch.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelSearch.Size = new System.Drawing.Size(68, 15);
+            this.LabelSearch.TabIndex = 1175;
+            this.LabelSearch.Text = "Item Name:";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl1.Location = new System.Drawing.Point(8, 79);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.labelControl1.Size = new System.Drawing.Size(47, 15);
+            this.labelControl1.TabIndex = 1176;
+            this.labelControl1.Text = "Item ID:";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelControl2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl2.Location = new System.Drawing.Point(8, 128);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.labelControl2.Size = new System.Drawing.Size(65, 15);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "Game Title:";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelControl3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl3.Location = new System.Drawing.Point(8, 177);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.labelControl3.Size = new System.Drawing.Size(35, 15);
+            this.labelControl3.TabIndex = 1178;
+            this.labelControl3.Text = "XUID:";
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.LabelSearch);
+            this.groupControl1.Controls.Add(this.ButtonCheckURL);
+            this.groupControl1.Controls.Add(this.TextBoxXUID);
+            this.groupControl1.Controls.Add(this.ButtonDownloadItem);
+            this.groupControl1.Controls.Add(this.labelControl3);
+            this.groupControl1.Controls.Add(this.TextBoxItemName);
+            this.groupControl1.Controls.Add(this.TextBoxGameTitle);
+            this.groupControl1.Controls.Add(this.labelControl1);
+            this.groupControl1.Controls.Add(this.labelControl2);
+            this.groupControl1.Controls.Add(this.TextBoxItemID);
+            this.groupControl1.Location = new System.Drawing.Point(285, 41);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(363, 266);
+            this.groupControl1.TabIndex = 1180;
+            this.groupControl1.Text = "Avatar Details";
+            // 
+            // ImageAvatar
+            // 
+            this.ImageAvatar.Location = new System.Drawing.Point(12, 40);
+            this.ImageAvatar.Name = "ImageAvatar";
+            this.ImageAvatar.Size = new System.Drawing.Size(267, 267);
+            this.ImageAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImageAvatar.TabIndex = 1181;
+            this.ImageAvatar.TabStop = false;
             // 
             // AvatarItemDownloader
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Appearance.Options.UseFont = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 341);
-            this.Controls.Add(this.DL_BTN);
-            this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.MPURLBox);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.ClientSize = new System.Drawing.Size(660, 319);
+            this.Controls.Add(this.ProgressBar);
+            this.Controls.Add(this.ImageAvatar);
+            this.Controls.Add(this.groupControl1);
+            this.Controls.Add(this.TextBoxMarketplaceURL);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.IconOptions.Image = global::ModioX.Properties.Resources.app_logo;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AvatarItemDownloader";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Avatar Item Downloader";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.GameNameBox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemIDBox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemNameBox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBox4)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.XUIDBox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupBox3)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupBox2)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MPURLBox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.AvatarItemDownloader_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxGameTitle.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProgressBar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxItemID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxItemName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxXUID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxMarketplaceURL.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.TextEdit GameNameBox;
-        private DevExpress.XtraEditors.SimpleButton DL_BTN;
-        private DevExpress.XtraEditors.ProgressBarControl progressBar;
-        private DevExpress.XtraEditors.TextEdit ItemIDBox;
-        private DevExpress.XtraEditors.TextEdit ItemNameBox;
-        private DevExpress.XtraEditors.GroupControl groupBox4;
-        private DevExpress.XtraEditors.TextEdit XUIDBox;
-        private DevExpress.XtraEditors.GroupControl groupBox1;
-        private DevExpress.XtraEditors.GroupControl groupBox3;
-        private DevExpress.XtraEditors.GroupControl groupBox2;
-        private DevExpress.XtraEditors.TextEdit MPURLBox;
-        private DevExpress.XtraEditors.SimpleButton button1;
-        private DevExpress.XtraEditors.ImageListBoxControl pictureBox1;
+        private DevExpress.XtraEditors.TextEdit TextBoxGameTitle;
+        private DevExpress.XtraEditors.SimpleButton ButtonDownloadItem;
+        private DevExpress.XtraEditors.ProgressBarControl ProgressBar;
+        private DevExpress.XtraEditors.TextEdit TextBoxItemID;
+        private DevExpress.XtraEditors.TextEdit TextBoxItemName;
+        private DevExpress.XtraEditors.TextEdit TextBoxXUID;
+        private DevExpress.XtraEditors.TextEdit TextBoxMarketplaceURL;
+        private DevExpress.XtraEditors.SimpleButton ButtonCheckURL;
+        private DevExpress.XtraEditors.LabelControl LabelSearch;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private System.Windows.Forms.PictureBox ImageAvatar;
         //imageListBoxControl1
     }
 }

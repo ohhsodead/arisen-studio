@@ -14,37 +14,46 @@ namespace ModioX.Forms.Tools.XBOX_Tools
     {
         #region variables
         private readonly AutoCompleteStringCollection _data = new AutoCompleteStringCollection();
+
         /// <summary>
-        /// Creates an TCP connection for use with uploading mods, uploading files.
+        /// Get the instance of the current Xbox connection.
         /// </summary>
         public static Xbox XboxConsole { get; } = MainWindow.XboxConsole;
-        private readonly bool button1WasClicked = false;
+
+        private readonly bool ButtonPokeIsPressed = false;
         private byte[] _old;
 
         #endregion variables
+
+        public string GameTitle { get; set; }
 
         public MemoryViewer()
         {
             InitializeComponent();
             ChangeNumericMaxMin();
             ChangeNumericColor();
-            //try
-            //{
-            //    hexBox.ForeColor = Settings.Fore_Color;
-            //    hexBox.BackColor = Settings.Back_Color;
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Not Connected. Please check network");
-            //    MessageBox.Show(ex.Message);
-
-            //}
         }
 
         private void MemoryViewer_Load(object sender, EventArgs e)
         {
-            hexBox.ForeColor = MainWindow.Settings.HexBoxForeColor;
-            hexBox.BackColor = MainWindow.Settings.HexBoxBackColor;
+            HexBox.ForeColor = MainWindow.Settings.HexBoxForeColor;
+            HexBox.BackColor = MainWindow.Settings.HexBoxBackColor;
+        }
+
+        private void MemoryViewer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //if(Xbox.XboxName == null)
+            //{
+            //    string Name = Assembly.GetExecutingAssembly().GetName().Name;
+            //    foreach (var process in Process.GetProcessesByName(Name))
+            //    {
+            //        process.Kill();
+            //    }
+            //}
+            //else
+            //{
+            //    //XConsole.Disconnect();
+            //}
         }
 
         #region Handlers
@@ -56,7 +65,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
             byte[] prev = Functions.HexToBytes(PeekPokeAddressTextBox.Text);
             int address = Functions.BytesToInt32(prev);
-            SelAddress.Text = string.Format((address + (int)hexBox.SelectionStart).ToString("X8"));
+            TextBoxSelectedAddress.Text = string.Format((address + (int)HexBox.SelectionStart).ToString("X8"));
         }
 
         private void IsSignedCheckedChanged(object sender, EventArgs e)
@@ -67,7 +76,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void NumericIntKeyPress(object sender, KeyPressEventArgs e)
         {
-            if (hexBox.ByteProvider != null)
+            if (HexBox.ByteProvider != null)
             {
                 ChangedNumericValue(sender);
             }
@@ -75,7 +84,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void NumericValueChanged(object sender, EventArgs e)
         {
-            if (hexBox.ByteProvider != null)
+            if (HexBox.ByteProvider != null)
             {
                 ChangedNumericValue(sender);
             }
@@ -84,81 +93,76 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         private void FixTheAddresses(object sender, EventArgs e)
         {
             TextEdit Sender = sender as TextEdit;
+
+            try
             {
-                if (Sender != null)
-                    try
-                    {
-                        if (Sender.Text == "") //If the users wiped the box we fill it with 4(00), an empty box is bad.
-                        {
-                            Sender.Text = "00000000";
-                            return;
-                        }
+                if (Sender.Text == "") //If the users wiped the box we fill it with 4(00), an empty box is bad.
+                {
+                    Sender.Text = "00000000";
+                    return;
+                }
 
-                        if (Sender == PeekPokeAddressTextBox) //Address specific formatting. [32 Bit Address, no "0x"]
-                        {
-                            string math = Sender.Text.Contains("+") ? "+" : "-";
-                            //Checks for addition or subtraction symbol, defaults to subtract which is harmless if its not there.
-                            Sender.Text = Sender.Text.ToUpper().StartsWith("0X")
-                                              ? (Sender.Text.ToUpper().Substring(2).Trim())
-                                              : Sender.Text.ToUpper().Trim();
-                            //If has 0x remove it, set to upper and traim spaces.
-                            string[] adrsample = Sender.Text.Split(Convert.ToChar(math));
-                            //Now we check for addition commands
-                            if (adrsample.Length >= 2)
-                            {
-                                uint adrhex = ((uint)new UInt32Converter().ConvertFromString("0x" + adrsample[0]));
-                                //Formats address to have 4 bytes and be hex.
-                                if (!adrsample[1].Contains("0x"))
-                                    adrsample[1] = ("0x" + adrsample[1]); //Preps for conversion.
-                                uint adrhex2 = ((uint)new UInt32Converter().ConvertFromString(adrsample[1]));
-                                //Formats address to have 4 bytes and be hex.
-                                Sender.Text = math == "+"
-                                                  ? (adrhex + adrhex2).ToString("X8")
-                                                  : (adrhex - adrhex2).ToString("X8");
-                            }
-
-                            if (!Functions.IsHex(Sender.Text))
-                            //Last check to see if its usable, if not the users an idiot.
-                            {
-                                while (Sender.Text.Length < 8) //pad out the address
-                                {
-                                    Sender.Text = ("0" + Sender.Text);
-                                }
-                                //Sender.Text = (Sender.Text.ToString("X8"));
-                                //ShowMessageBox("Input must be hex.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            return; //End of Addressbox Specific code
-                        }
-                        if (!Functions.IsHex(Sender.Text))
-                        {
-                            Sender.Text = Sender.Text.ToUpper().StartsWith("0X")
-                                              ? (Sender.Text.ToUpper().Substring(2))
-                                              : ((uint)new UInt32Converter().ConvertFromString(Sender.Text)).ToString(
-                                                  "X");
-                        }
-                    }
-                    catch
+                if (Sender == PeekPokeAddressTextBox) //Address specific formatting. [32 Bit Address, no "0x"]
+                {
+                    string math = Sender.Text.Contains("+") ? "+" : "-";
+                    //Checks for addition or subtraction symbol, defaults to subtract which is harmless if its not there.
+                    Sender.Text = Sender.Text.ToUpper().StartsWith("0X")
+                                      ? (Sender.Text.ToUpper().Substring(2).Trim())
+                                      : Sender.Text.ToUpper().Trim();
+                    //If has 0x remove it, set to upper and traim spaces.
+                    string[] adrsample = Sender.Text.Split(Convert.ToChar(math));
+                    //Now we check for addition commands
+                    if (adrsample.Length >= 2)
                     {
+                        uint adrhex = ((uint)new UInt32Converter().ConvertFromString("0x" + adrsample[0]));
+                        //Formats address to have 4 bytes and be hex.
+                        if (!adrsample[1].Contains("0x"))
+                            adrsample[1] = ("0x" + adrsample[1]); //Preps for conversion.
+                        uint adrhex2 = ((uint)new UInt32Converter().ConvertFromString(adrsample[1]));
+                        //Formats address to have 4 bytes and be hex.
+                        Sender.Text = math == "+"
+                                          ? (adrhex + adrhex2).ToString("X8")
+                                          : (adrhex - adrhex2).ToString("X8");
                     }
+
+                    if (!Functions.IsHex(Sender.Text))
+                    //Last check to see if its usable, if not the users an idiot.
+                    {
+                        while (Sender.Text.Length < 8) //pad out the address
+                        {
+                            Sender.Text = ("0" + Sender.Text);
+                        }
+                        //Sender.Text = (Sender.Text.ToString("X8"));
+                        //ShowMessageBox("Input must be hex.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    return; //End of Addressbox Specific code
+                }
+                if (!Functions.IsHex(Sender.Text))
+                {
+                    Sender.Text = Sender.Text.ToUpper().StartsWith("0X")
+                                      ? (Sender.Text.ToUpper().Substring(2))
+                                      : ((uint)new UInt32Converter().ConvertFromString(Sender.Text)).ToString(
+                                          "X");
+                }
+            }
+            catch
+            {
             }
         }
-
-
-
 
         private void NewPeek()
         {
             //Clean up
             PeekPokeAddressTextBox.Text = "C0000000";
             peekLengthTextBox.Text = "FF";
-            SelAddress.Text = string.Empty;
-            peekPokeFeedBackTextBox.Text = string.Empty;
+            TextBoxSelectedAddress.Text = string.Empty;
+            TextBoxPeekPokeFeedback.Text = string.Empty;
             NumericInt8.Value = 0;
             NumericInt16.Value = 0;
             NumericInt32.Value = 0;
             NumericFloatTextBox.Text = "0";
-            hexBox.ByteProvider = null;
-            hexBox.Refresh();
+            HexBox.ByteProvider = null;
+            HexBox.Refresh();
         }
 
 
@@ -166,12 +170,12 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             if (e.Control && e.KeyCode == Keys.C)
             {
-                hexBox.CopyHex();
+                HexBox.CopyHex();
                 e.SuppressKeyPress = true;
             }
             if (e.Control && e.KeyCode == Keys.A)
             {
-                hexBox.SelectAll();
+                HexBox.SelectAll();
 
                 e.SuppressKeyPress = true;
             }
@@ -182,10 +186,10 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             ChangeNumericValue(); //When you select an offset on the hexbox
 
-            if (hexBox.ByteProvider == null) return;
+            if (HexBox.ByteProvider == null) return;
             byte[] prev = Functions.HexToBytes(PeekPokeAddressTextBox.Text);
             int address = Functions.BytesToInt32(prev);
-            SelAddress.Text = string.Format((address + (int)hexBox.SelectionStart).ToString("X8"));
+            TextBoxSelectedAddress.Text = string.Format((address + (int)HexBox.SelectionStart).ToString("X8"));
         }
 
         #endregion Handlers
@@ -194,117 +198,107 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void ChangeNumericMaxMin()
         {
-            if (isSigned.IsOn)
+            if (SwitchIsSigned.IsOn)
             {
-                NumericInt8.Maximum = SByte.MaxValue;
-                NumericInt8.Minimum = SByte.MinValue;
-                NumericInt16.Maximum = Int16.MaxValue;
-                NumericInt16.Minimum = Int16.MinValue;
-                NumericInt32.Maximum = Int32.MaxValue;
-                NumericInt32.Minimum = Int32.MinValue;
+                NumericInt8.Properties.MaxValue = sbyte.MaxValue;
+                NumericInt8.Properties.MinValue = sbyte.MinValue;
+                NumericInt16.Properties.MaxValue = short.MaxValue;
+                NumericInt16.Properties.MinValue = short.MinValue;
+                NumericInt32.Properties.MaxValue = int.MaxValue;
+                NumericInt32.Properties.MinValue = int.MinValue;
             }
             else
             {
-                NumericInt8.Maximum = Byte.MaxValue;
-                NumericInt8.Minimum = Byte.MinValue;
-                NumericInt16.Maximum = UInt16.MaxValue;
-                NumericInt16.Minimum = UInt16.MinValue;
-                NumericInt32.Maximum = UInt32.MaxValue;
-                NumericInt32.Minimum = UInt32.MinValue;
+                NumericInt8.Properties.MaxValue = byte.MaxValue;
+                NumericInt8.Properties.MinValue = byte.MinValue;
+                NumericInt16.Properties.MaxValue = ushort.MaxValue;
+                NumericInt16.Properties.MinValue = ushort.MinValue;
+                NumericInt32.Properties.MaxValue = uint.MaxValue;
+                NumericInt32.Properties.MinValue = uint.MinValue;
             }
         }
 
         private void ChangeNumericValue()
         {
-            if (hexBox.ByteProvider == null) return;
-            List<byte> buffer = hexBox.ByteProvider.Bytes;
-            if (isSigned.IsOn)
+            if (HexBox.ByteProvider == null) return;
+            List<byte> buffer = HexBox.ByteProvider.Bytes;
+            if (SwitchIsSigned.IsOn)
             {
-                NumericInt8.Value = (buffer.Count - hexBox.SelectionStart) > 0
-                                        ? Functions.ByteToSByte(hexBox.ByteProvider.ReadByte(hexBox.SelectionStart))
+                NumericInt8.Value = (buffer.Count - HexBox.SelectionStart) > 0
+                                        ? Functions.ByteToSByte(HexBox.ByteProvider.ReadByte(HexBox.SelectionStart))
                                         : 0;
-                NumericInt16.Value = (buffer.Count - hexBox.SelectionStart) > 1
+                NumericInt16.Value = (buffer.Count - HexBox.SelectionStart) > 1
                                          ? Functions.BytesToInt16(
-                                             buffer.GetRange((int)hexBox.SelectionStart, 2).ToArray())
+                                             buffer.GetRange((int)HexBox.SelectionStart, 2).ToArray())
                                          : 0;
-                NumericInt32.Value = (buffer.Count - hexBox.SelectionStart) > 3
+                NumericInt32.Value = (buffer.Count - HexBox.SelectionStart) > 3
                                          ? Functions.BytesToInt32(
-                                             buffer.GetRange((int)hexBox.SelectionStart, 4).ToArray())
+                                             buffer.GetRange((int)HexBox.SelectionStart, 4).ToArray())
                                          : 0;
 
                 NumericFloatTextBox.MaskBox.Clear();
-                float f = (buffer.Count - hexBox.SelectionStart) > 3
-                              ? Functions.BytesToSingle(buffer.GetRange((int)hexBox.SelectionStart, 4).ToArray())
+                float f = (buffer.Count - HexBox.SelectionStart) > 3
+                              ? Functions.BytesToSingle(buffer.GetRange((int)HexBox.SelectionStart, 4).ToArray())
                               : 0;
                 NumericFloatTextBox.Text = f.ToString();
             }
             else
             {
-                NumericInt8.Value = (buffer.Count - hexBox.SelectionStart) > 0
-                                        ? buffer[(int)hexBox.SelectionStart]
+                NumericInt8.Value = (buffer.Count - HexBox.SelectionStart) > 0
+                                        ? buffer[(int)HexBox.SelectionStart]
                                         : 0;
-                NumericInt16.Value = (buffer.Count - hexBox.SelectionStart) > 1
+                NumericInt16.Value = (buffer.Count - HexBox.SelectionStart) > 1
                                          ? Functions.BytesToUInt16(
-                                             buffer.GetRange((int)hexBox.SelectionStart, 2).ToArray())
+                                             buffer.GetRange((int)HexBox.SelectionStart, 2).ToArray())
                                          : 0;
-                NumericInt32.Value = (buffer.Count - hexBox.SelectionStart) > 3
+                NumericInt32.Value = (buffer.Count - HexBox.SelectionStart) > 3
                                          ? Functions.BytesToUInt32(
-                                             buffer.GetRange((int)hexBox.SelectionStart, 4).ToArray())
+                                             buffer.GetRange((int)HexBox.SelectionStart, 4).ToArray())
                                          : 0;
 
                 NumericFloatTextBox.MaskBox.Clear();
-                float f = (buffer.Count - hexBox.SelectionStart) > 3
-                              ? Functions.BytesToSingle(buffer.GetRange((int)hexBox.SelectionStart, 4).ToArray())
+                float f = (buffer.Count - HexBox.SelectionStart) > 3
+                              ? Functions.BytesToSingle(buffer.GetRange((int)HexBox.SelectionStart, 4).ToArray())
                               : 0;
                 NumericFloatTextBox.Text = f.ToString();
             }
             byte[] prev = Functions.HexToBytes(PeekPokeAddressTextBox.Text);
             int address = Functions.BytesToInt32(prev);
-            SelAddress.Text = string.Format((address + (int)hexBox.SelectionStart).ToString("X8"));
+            TextBoxSelectedAddress.Text = string.Format((address + (int)HexBox.SelectionStart).ToString("X8"));
         }
 
         private void ChangedNumericValue(object numfield)
         {
-            if (hexBox.SelectionStart >= hexBox.ByteProvider.Bytes.Count) return;
+            if (HexBox.SelectionStart >= HexBox.ByteProvider.Bytes.Count) return;
             if (numfield.GetType() == typeof(NumericUpDown))
             {
                 NumericUpDown numeric = (NumericUpDown)numfield;
                 switch (numeric.Name)
                 {
                     case "NumericInt8":
-                        if (isSigned.IsOn)
+                        if (SwitchIsSigned.IsOn)
                         {
                             Console.WriteLine(((sbyte)numeric.Value).ToString("X2"));
-                            hexBox.ByteProvider.WriteByte(hexBox.SelectionStart,
-                                                          Functions.HexToBytes(((sbyte)numeric.Value).ToString("X2"))[0
-                                                              ]);
+                            HexBox.ByteProvider.WriteByte(HexBox.SelectionStart, Functions.HexToBytes(((sbyte)numeric.Value).ToString("X2"))[0]);
                         }
                         else
                         {
-                            hexBox.ByteProvider.WriteByte(hexBox.SelectionStart,
-                                                          Convert.ToByte((byte)numeric.Value));
+                            HexBox.ByteProvider.WriteByte(HexBox.SelectionStart, Convert.ToByte((byte)numeric.Value));
                         }
                         break;
 
                     case "NumericInt16":
                         for (int i = 0; i < 2; i++)
                         {
-                            hexBox.ByteProvider.WriteByte(hexBox.SelectionStart + i, isSigned.IsOn
-                                                                                         ? Functions.Int16ToBytes(
-                                                                                             (short)numeric.Value)[i]
-                                                                                         : Functions.UInt16ToBytes(
-                                                                                             (ushort)numeric.Value)[i]);
+                            HexBox.ByteProvider.WriteByte(HexBox.SelectionStart + i, SwitchIsSigned.IsOn ? Functions.Int16ToBytes((short)numeric.Value)[i] : Functions.UInt16ToBytes((ushort)numeric.Value)[i]);
                         }
                         break;
 
                     case "NumericInt32":
                         for (int i = 0; i < 4; i++)
                         {
-                            hexBox.ByteProvider.WriteByte(hexBox.SelectionStart + i, isSigned.IsOn
-                                                                                         ? Functions.Int32ToBytes(
-                                                                                             (int)numeric.Value)[i]
-                                                                                         : Functions.UInt32ToBytes(
-                                                                                             (uint)numeric.Value)[i]);
+                            HexBox.ByteProvider.WriteByte(HexBox.SelectionStart + i,
+                                                          SwitchIsSigned.IsOn ? Functions.Int32ToBytes((int)numeric.Value)[i] : Functions.UInt32ToBytes((uint)numeric.Value)[i]);
                         }
                         break;
                 }
@@ -314,11 +308,11 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 TextBox textbox = (TextBox)numfield;
                 for (int i = 0; i < 4; i++)
                 {
-                    hexBox.ByteProvider.WriteByte(hexBox.SelectionStart + i,
-                                                  Functions.FloatToByteArray(Convert.ToSingle(textbox.Text))[i]);
+                    HexBox.ByteProvider.WriteByte(HexBox.SelectionStart + i, Functions.FloatToByteArray(Convert.ToSingle(textbox.Text))[i]);
                 }
             }
-            hexBox.Refresh();
+
+            HexBox.Refresh();
         }
 
         private void AutoComplete()
@@ -340,21 +334,21 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void SetHexBoxByteProvider(DynamicByteProvider value)
         {
-            if (hexBox.InvokeRequired)
+            if (HexBox.InvokeRequired)
                 Invoke((MethodInvoker)(() => SetHexBoxByteProvider(value)));
             else
             {
-                hexBox.ByteProvider = value;
+                HexBox.ByteProvider = value;
             }
         }
 
         private void SetHexBoxRefresh()
         {
-            if (hexBox.InvokeRequired)
+            if (HexBox.InvokeRequired)
                 Invoke((MethodInvoker)(SetHexBoxRefresh));
             else
             {
-                hexBox.Refresh();
+                HexBox.Refresh();
             }
         }
 
@@ -362,11 +356,11 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             //recursion
             DynamicByteProvider returnVal = new DynamicByteProvider(new byte[] { 0, 0, 0, 0 });
-            if (hexBox.InvokeRequired)
-                hexBox.Invoke((MethodInvoker)
+            if (HexBox.InvokeRequired)
+                HexBox.Invoke((MethodInvoker)
                               delegate { returnVal = GetHexBoxByteProvider(); });
             else
-                return (DynamicByteProvider)hexBox.ByteProvider;
+                return (DynamicByteProvider)HexBox.ByteProvider;
             return returnVal;
         }
 
@@ -374,15 +368,14 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         #region Thread Function
 
-        private void Peek(object a)
+        private void Peek()
         {
             try
             {
-                if (string.IsNullOrEmpty(peekLengthTextBox.Text) ||
-                    Convert.ToUInt32(peekLengthTextBox.Text, 16) == 0)
+                if (string.IsNullOrEmpty(peekLengthTextBox.Text) || Convert.ToUInt32(peekLengthTextBox.Text, 16) == 0)
                     throw new Exception("Invalid peek length!");
-                if (string.IsNullOrEmpty(PeekPokeAddressTextBox.Text) ||
-                    Convert.ToUInt32(PeekPokeAddressTextBox.Text, 16) == 0)
+
+                if (string.IsNullOrEmpty(PeekPokeAddressTextBox.Text) || Convert.ToUInt32(PeekPokeAddressTextBox.Text, 16) == 0)
                     throw new Exception("Address cannot be 0 or null");
                 //convert peek result string values to byte
 
@@ -395,7 +388,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                 SetHexBoxByteProvider(buffer);
                 SetHexBoxRefresh();
-
             }
             catch
             {
@@ -403,22 +395,22 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             }
         }
 
-        private void Poke(object a)
+        private void Poke()
         {
             try
             {
-                uint dumplength = (uint)hexBox.ByteProvider.Length / 2;
+                uint dumplength = (uint)HexBox.ByteProvider.Length / 2;
                 XboxConsole.DumpOffset = Functions.Convert(PeekPokeAddressTextBox.Text); //Set the dump offset
                 XboxConsole.DumpLength = dumplength; //The length of data to dump
 
                 DynamicByteProvider buffer = GetHexBoxByteProvider();
-                if (FilltoggleSwitch.IsOn)
+                if (SwitchFillMemory.IsOn)
                 {
                     for (int i = 0; i < dumplength; i++)
                     {
                         uint value = Convert.ToUInt32(PeekPokeAddressTextBox.Text, 16);
                         string address = string.Format((value + i).ToString("X8"));
-                        XboxConsole.Poke(address, String.Format("{0,0:X2}", Convert.ToByte(fillValueTextBox.Text, 16)));
+                        XboxConsole.Poke(address, string.Format("{0,0:X2}", Convert.ToByte(TextBoxFillValue.Text, 16)));
                     }
                 }
                 else
@@ -429,7 +421,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                         uint value = Convert.ToUInt32(PeekPokeAddressTextBox.Text, 16);
                         string address = string.Format((value + i).ToString("X8"));
-                        XboxConsole.Poke(address, String.Format("{0,0:X2}", buffer.Bytes[i]));
+                        XboxConsole.Poke(address, string.Format("{0,0:X2}", buffer.Bytes[i]));
                         //success
                     }
                 }
@@ -442,37 +434,19 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         #endregion Thread Function
 
-        private void simpleButton6_Click(object sender, EventArgs e)
+        private void ButtonPeek_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonPoke_Click(object sender, EventArgs e)
         {
             AutoComplete(); //run function
         }
-        private void PeekPokeAddressTextBox_Click(object sender, EventArgs e)
-        {
 
-
-
-        }
-        private void simpleButton4_Click(object sender, EventArgs e)
+        private void ButtonNew_Click(object sender, EventArgs e)
         {
             NewPeek();
-        }
-
-        private void MemoryViewer_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //if(Xbox.XboxName == null)
-            //{
-            //    string Name = Assembly.GetExecutingAssembly().GetName().Name;
-            //    foreach (var process in Process.GetProcessesByName(Name))
-            //    {
-            //        process.Kill();
-            //    }
-            //}
-            //else
-            //{
-            //    //XConsole.Disconnect();
-            //}
-
-
         }
 
         private void AutoPeek_Tick(object sender, EventArgs e)
@@ -495,19 +469,14 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             NumericInt32.ForeColor = NumericFloatTextBox.ForeColor;
         }
 
-        private void simpleButton3_Click(object sender, EventArgs e)
+        private void ButtonSelectedAddress_DoubleClick(object sender, EventArgs e)
         {
-
+            PeekPokeAddressTextBox.Text = TextBoxSelectedAddress.Text;
         }
 
-        private void SelAddress_DoubleClick(object sender, EventArgs e)
+        private void ButtonDumpMemory_Click(object sender, EventArgs e)
         {
-            PeekPokeAddressTextBox.Text = (SelAddress.Text);
-        }
-
-        private void simpleButton5_Click(object sender, EventArgs e)
-        {
-            if (button1WasClicked == true) //when button poke is press then
+            if (ButtonPokeIsPressed == true) //when button poke is press then
             {
                 try
                 {
@@ -520,45 +489,36 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                         //disable here
                         string path = sfd.FileName;
                         BinaryWriter bw = new BinaryWriter(File.Create(path));
-                        hexBox.SelectAll();//selectsall
-                        hexBox.CopyHex();//copy's hex
-                        txtPaste.Text = Clipboard.GetText();//clipboards it and paste iT to text file
-                        bw.Write(txtPaste.Text);
+                        HexBox.SelectAll();//selectsall
+                        HexBox.CopyHex();//copy's hex
+                        TextBoxPasteClipboard.Text = Clipboard.GetText();//clipboards it and paste iT to text file
+                        bw.Write(TextBoxPasteClipboard.Text);
                         bw.Dispose();
                         //enable here
-                        MessageBox.Show("Your Live Dump Has Been Logged To - " + sfd.FileName, "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        XtraMessageBox.Show("Your Live Dump Has Been Logged To - " + sfd.FileName, "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
                 }
                 catch
                 {
 
                 }
             }
-            if (button1WasClicked == false)
+
+            if (ButtonPokeIsPressed == false)
             {
-                MessageBox.Show("You Must Seek Bytes To Dump The Load");
+                XtraMessageBox.Show("You Must Seek Bytes To Dump The Load");
             }
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-
-        private void toggleSwitch2_Toggled(object sender, EventArgs e)
+        private void SwitchFreezeConsole_Toggled(object sender, EventArgs e)
         {
             if (XboxClient.XboxName == null)
             {
-                toggleSwitch2.IsOn = false;
-
+                SwitchFreezeConsole.IsOn = false;
             }
             else
             {
-                switch (toggleSwitch2.IsOn)
+                switch (SwitchFreezeConsole.IsOn)
                 {
                     case true:
                         XboxConsole.FreezeConsole(XboxSwitch.True);
@@ -570,6 +530,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             }
 
         }
+
         private string GetTextBoxText(Control control)
         {
             //recursion
@@ -581,45 +542,42 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 return control.Text;
             return returnVal;
         }
-        private void isSigned_Toggled(object sender, EventArgs e)
+
+        private void SwitchIsSigned_Toggled(object sender, EventArgs e)
         {
             ChangeNumericMaxMin();
             ChangeNumericValue();
         }
 
-        private void hexBox_KeyDown(object sender, KeyEventArgs e)
+        private void HexBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.C)
             {
-                hexBox.CopyHex();
+                HexBox.CopyHex();
                 e.SuppressKeyPress = true;
             }
         }
 
-        private void hexBox_SelectionStartChanged(object sender, EventArgs e)
+        private void HexBox_SelectionStartChanged(object sender, EventArgs e)
         {
             ChangeNumericValue(); //When you select an offset on the hexbox
 
             byte[] prev = Functions.HexToBytes(PeekPokeAddressTextBox.Text);
             int address = Functions.BytesToInt32(prev);
-            SelAddress.Text = string.Format((address + (int)hexBox.SelectionStart).ToString("X8"));
+            TextBoxSelectedAddress.Text = string.Format((address + (int)HexBox.SelectionStart).ToString("X8"));
         }
 
-        private void hexBox_MouseUp(object sender, MouseEventArgs e)
+        private void HexBox_MouseUp(object sender, MouseEventArgs e)
         {
             ChangeNumericValue(); //When you select an offset on the hexbox
 
-            if (hexBox.ByteProvider == null) return;
+            if (HexBox.ByteProvider == null) return;
             byte[] prev = Functions.HexToBytes(PeekPokeAddressTextBox.Text);
             int address = Functions.BytesToInt32(prev);
-            SelAddress.Text = string.Format((address + (int)hexBox.SelectionStart).ToString("X8"));
-        }
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-
+            TextBoxSelectedAddress.Text = string.Format((address + (int)HexBox.SelectionStart).ToString("X8"));
         }
 
-        private void simpleButton7_Click(object sender, EventArgs e)
+        private void ButtonSet_Click(object sender, EventArgs e)
         {
 
         }
@@ -669,9 +627,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             ChangeNumericColor();
         }
 
-        private void peekPokeFeedBackTextBox_DoubleClick(object sender, EventArgs e)
+        private void TextBoxPeekPokeFeedback_DoubleClick(object sender, EventArgs e)
         {
-            Clipboard.SetText(peekPokeFeedBackTextBox.Text);
+            Clipboard.SetText(TextBoxPeekPokeFeedback.Text);
         }
     }
 }

@@ -352,8 +352,8 @@ namespace ModioX.Models.Resources
         public CustomList GetCustomListByName(string name)
         {
             foreach (CustomList customList in from CustomList customList in CustomLists
-                                       where string.Equals(customList.Name, name, StringComparison.OrdinalIgnoreCase)
-                                       select customList)
+                                              where string.Equals(customList.Name, name, StringComparison.OrdinalIgnoreCase)
+                                              select customList)
             {
                 return customList;
             }

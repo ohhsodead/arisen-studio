@@ -1,6 +1,8 @@
 ﻿using DevExpress.Skins;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraNavBar;
 using FluentFTP;
 using ModioX.Constants;
@@ -176,7 +178,7 @@ namespace ModioX.Forms.Windows
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveSettings();
-            
+
             if (IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
             {
                 FtpClient.Dispose();
@@ -302,26 +304,119 @@ namespace ModioX.Forms.Windows
 
         // TOOLS MENU
 
-        private void ButtonGameBackupFiles_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonPS3GameBackupFiles_ItemClick(object sender, ItemClickEventArgs e)
         {
             SaveSettings();
             DialogExtensions.ShowGameBackupFiles(this);
             SaveSettings();
         }
 
-        private void ButtonGameUpdateFinder_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonPS3GameUpdateFinder_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowGameUpdatesFinderDialog(this);
         }
 
-        private void ButtonFileManager_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonPS3FileManager_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowFileManagerPS3(this);
         }
 
-        private void ButtonPackageManager_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonPS3PackageManager_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowPackageManagerWindow(this);
+        }
+
+        private void ButtonXboxFileManager_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowFileManagerXbox(this);
+        }
+
+        private void ButtonXboxXBDM_XMessageboxUI_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var dialogResult = DialogExtensions.ShowCustomXboxDialog(this, "Some Title", "Some Body Text To Go Here\n\nNew Line\n\nAnother New Line", XMessageboxUI.ButtonOptions.YesNoCancel);
+
+            if (dialogResult == DialogResult.OK)
+            {
+                // do whatever
+                XtraMessageBox.Show("ok was clicked");
+            }
+            else if (dialogResult == DialogResult.Yes)
+            {
+                // do whatever
+                XtraMessageBox.Show("yes was clicked");
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                // do whatever
+                XtraMessageBox.Show("no was clicked");
+            }
+            else if (dialogResult == DialogResult.Cancel)
+            {
+                // do whatever
+                XtraMessageBox.Show("cancel was clicked");
+            }
+        }
+
+        private void ButtonXboxXBDMShutdown_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XboxConsole.ShutDown();
+        }
+
+        private void ButtonXboxXBDMReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XboxConsole.Reboot(string.Empty, string.Empty, string.Empty, XboxRebootFlags.Title);
+        }
+
+        private void ButtonXboxXBDMSoftReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XboxConsole.Reboot(XboxReboot.Cold);
+        }
+
+        private void ButtonXboxXBDMHardReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XboxConsole.Reboot(XboxReboot.Warm);
+        }
+
+        private void ButtonXboxAvatarEditor_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XboxConsole.XboxShortcut(XboxShortcuts.AvatarEditor);
+        }
+
+        private void ButtonXboxVirtualController_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void ButtonXboxQuickSignIn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XboxConsole.QuickSignIn();
+        }
+
+        private void ButtonXboxShowTemperature_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowCustomXboxDialog(this, "Console Temperature", "CPU: " + XboxConsole.CPUTEMP() + "\nGPU: " + XboxConsole.GPUTEMP() + "\nRAMTEMP: " + XboxConsole.RAMTEMP() + "\nMOBO: " + XboxConsole.MOBOTEMP(), XMessageboxUI.ButtonOptions.Ok);
+        }
+
+        private void ButtonXboxOpenCloseTray_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (XboxConsole.IsTrayOpen)
+            {
+                XboxConsole.Tray(TRAY_STATE.OPEN);
+            }
+            else
+            {
+                XboxConsole.Tray(TRAY_STATE.CLOSED);
+            }
+        }
+
+        private void ButtonXboxXNotifySend_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void ButtonXboxShowProfileIDInfo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XtraMessageBox.Show(XboxConsole.ProfileID(), "Profile ID");
         }
 
         // APPLICATIONS MENU
@@ -654,9 +749,9 @@ namespace ModioX.Forms.Windows
 
         #endregion
 
-        #region STILL NEED 
+        #region MODS LIBRARY
 
-        private void GridViewMods_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        private void GridViewMods_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
             if (GridViewMods.SelectedRowsCount != 0)
             {
@@ -664,7 +759,7 @@ namespace ModioX.Forms.Windows
 
                 if (modItem != null)
                 {
-                    DisplayModDetails(modItem.Id);
+                    ShowModInformation(modItem.Id);
                 }
 
                 /*
@@ -693,25 +788,7 @@ namespace ModioX.Forms.Windows
             ButtonModFavorite.Enabled = GridViewMods.SelectedRowsCount != 0;
         }
 
-        private void DgvMods_SelectionChanged(object sender, EventArgs e)
-        {
-            /*
-            if (GridControlMods.CurrentRow != null)
-            {
-                var modItem = Database.Mods.GetModById(int.Parse(GridControlMods.CurrentRow.Cells[0].Value.ToString()));
-
-                if (modItem != null)
-                {
-                    DisplayModDetails(modItem.Id);
-                }
-            }
-
-            ToolItemModInstall.Enabled = GridControlMods.CurrentRow != null && IsConsoleConnected;
-            ToolItemModDownload.Enabled = GridControlMods.CurrentRow != null;
-            ToolItemModAddToFavorite.Enabled = GridControlMods.CurrentRow != null;
-            */
-        }
-
+        // ****************** DO THIS: INSTALL & DOWNLOAD CELL CLICKED *******************//
         private void DgvModsInstalled_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             /*
@@ -732,16 +809,9 @@ namespace ModioX.Forms.Windows
             */
         }
 
-        private void DgvModsInstalled_SelectionChanged(object sender, EventArgs e)
+        private void ButtonOpenPeekPokeTool_Click(object sender, EventArgs e)
         {
-            /*
-            if (GridControlGameModsInstalled.CurrentRow != null)
-            {
-                var modItem = Database.Mods.GetModById(int.Parse(GridControlGameModsInstalled.CurrentRow.Cells[0].Value.ToString()));
-
-                DisplayModDetails(modItem.Id);
-            }
-            */
+            DialogExtensions.ShowMemoryViewer(this, SelectedCategory.Title);
         }
 
         #endregion
@@ -870,7 +940,7 @@ namespace ModioX.Forms.Windows
 
         #endregion
 
-        #region Load & Display Mods
+        #region Load & Display Mods by Category Id with the user's filters
 
         /// <summary>
         /// Loads all the mods for the specified gameId, matching with filters: name, firmware, type and region
@@ -884,6 +954,8 @@ namespace ModioX.Forms.Windows
         private void LoadModsByCategoryId(string categoryId, string name, string firmware, string type, string region, bool isCustomList)
         {
             LoadInstalledGameMods();
+
+            GroupModsLibrary.Text = $"MODS LIBRARY - {(categoryId.Equals("fvrt") || isCustomList ? categoryId : Database.CategoriesData.GetCategoryById(categoryId).Title)}";
 
             GridControlMods.DataSource = null;
 
@@ -990,7 +1062,7 @@ namespace ModioX.Forms.Windows
             if (GridViewMods.RowCount > 0)
             {
                 GridViewMods.SelectRow(0);
-                DisplayModDetails(GridViewMods.GetSelectedRows().First());
+                ShowModInformation(GridViewMods.GetSelectedRows().First());
             }
 
             ComboBoxModType.SelectedIndexChanged -= ComboBoxModType_SelectedIndexChanged;
@@ -1002,7 +1074,7 @@ namespace ModioX.Forms.Windows
             ComboBoxRegion.SelectedIndexChanged += ComboBoxRegion_SelectedIndexChanged;
         }
 
-        #endregion falsef
+        #endregion
 
         #region Install, Uninstall, Download & Favorite Buttons
 
@@ -1205,9 +1277,24 @@ namespace ModioX.Forms.Windows
 
         #region Installed Mods/Plugins
 
-        private void GridControlGameModsInstalled_BackColorChanged(object sender, EventArgs e)
+        private void GridViewInstalledGameMods_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            ProgressModsInstalled.BackColor = GridControlGameModsInstalled.BackColor;
+            if (GridViewInstalledGameMods.SelectedRowsCount > 0)
+            {
+                ModItem modItem = Mods.GetModById(int.Parse(GridViewInstalledGameMods.GetRowCellDisplayText(GridViewInstalledGameMods.GetSelectedRows()[0], "Id")));
+
+                if (modItem != null)
+                {
+                    ShowModInformation(modItem.Id);
+                }
+            }
+
+            ButtonUninstallAllMods.Enabled = GridViewInstalledGameMods.SelectedRowsCount > 0 && IsConsoleConnected;
+        }
+
+        private void GridViewInstalledGameMods_RowClick(object sender, RowClickEventArgs e)
+        {
+            ButtonUninstallAllMods.Enabled = GridViewInstalledGameMods.SelectedRowsCount > 0 && IsConsoleConnected;
         }
 
         /// <summary>
@@ -1215,7 +1302,7 @@ namespace ModioX.Forms.Windows
         /// </summary>
         public void LoadInstalledGameMods()
         {
-            GridControlGameModsInstalled.DataSource = null;
+            GridControlInstalledGameMods.DataSource = null;
 
             int totalFiles = 0;
 
@@ -1260,28 +1347,28 @@ namespace ModioX.Forms.Windows
                 totalFiles += installedMod.Files;
             }
 
-            GridControlGameModsInstalled.DataSource = dt;
-            GridViewGameModsInstalled.Columns[0].Visible = false;
-            GridViewGameModsInstalled.Columns[1].Width = 50;
-            GridViewGameModsInstalled.Columns[2].Width = 100;
-            GridViewGameModsInstalled.Columns[3].Width = 50;
-            GridViewGameModsInstalled.Columns[4].Width = 100;
-            GridViewGameModsInstalled.Columns[5].Width = 50;
-            GridViewGameModsInstalled.Columns[6].Width = 35;
-            GridViewGameModsInstalled.Columns[7].Width = 35;
-            GridViewGameModsInstalled.Columns[8].Width = 50;
-            GridViewGameModsInstalled.Columns[9].Width = 30;
-            GridViewGameModsInstalled.Columns[9].MinWidth = 30;
-            GridViewGameModsInstalled.Columns[9].Caption = " ";
+            GridControlInstalledGameMods.DataSource = dt;
+            GridViewInstalledGameMods.Columns[0].Visible = false;
+            GridViewInstalledGameMods.Columns[1].Width = 50;
+            GridViewInstalledGameMods.Columns[2].Width = 100;
+            GridViewInstalledGameMods.Columns[3].Width = 50;
+            GridViewInstalledGameMods.Columns[4].Width = 100;
+            GridViewInstalledGameMods.Columns[5].Width = 50;
+            GridViewInstalledGameMods.Columns[6].Width = 35;
+            GridViewInstalledGameMods.Columns[7].Width = 35;
+            GridViewInstalledGameMods.Columns[8].Width = 50;
+            GridViewInstalledGameMods.Columns[9].Width = 30;
+            GridViewInstalledGameMods.Columns[9].MinWidth = 30;
+            GridViewInstalledGameMods.Columns[9].Caption = " ";
 
             LabelModsInstalled.Caption = $@"{Settings.InstalledGameMods.Count} Mods Installed ({totalFiles} {(Settings.InstalledGameMods.Count > 1 ? "Files" : "File")} Total)";
 
             ButtonModsUninstallAll.Enabled = IsConsoleConnected && Settings.InstalledGameMods.Count > 0;
 
-            ProgressModsInstalled.Visible = GridViewGameModsInstalled.RowCount == 0;
+            ProgressInstalledMods.Visible = GridViewInstalledGameMods.RowCount == 0;
         }
 
-        private void ButtonModsUninstallAll_ItemClick(object sender, EventArgs e)
+        private void ButtonUninstallAllMods_Click(object sender, EventArgs e)
         {
             if (IsConsoleConnected)
             {
@@ -1303,7 +1390,7 @@ namespace ModioX.Forms.Windows
         /// Set the UI to display the specified mod details
         /// </summary>
         /// <param name="modId">Specifies the <see cref="ModsData.ModItem.Id" /></param>
-        private void DisplayModDetails(int modId)
+        private void ShowModInformation(int modId)
         {
             ModItem modItem = Mods.GetModById(modId);
 
@@ -1379,6 +1466,29 @@ namespace ModioX.Forms.Windows
             ButtonModFavorite.Text = Settings.FavoritedIds.Contains(modItem.Id) ? "Unfavorite" : "Favorite";
 
             UpdateScrollBars();
+        }
+
+        private void FlowPanelDetails_Scroll(object sender, ScrollEventArgs e)
+        {
+            ScrollBarModInformation.Value = FlowPanelDetails.VerticalScroll.Value;
+        }
+
+        private void ScrollBarModInformation_Scroll(object sender, ScrollEventArgs e)
+        {
+            FlowPanelDetails.VerticalScroll.Value = ScrollBarModInformation.Value;
+            FlowPanelDetails.Refresh();
+        }
+
+        private void UpdateScrollBars()
+        {
+            FlowPanelDetails.HorizontalScroll.Visible = false;
+
+            ScrollBarModInformation.Visible = FlowPanelDetails.VerticalScroll.Visible;
+            ScrollBarModInformation.Minimum = FlowPanelDetails.VerticalScroll.Minimum;
+            ScrollBarModInformation.Maximum = FlowPanelDetails.VerticalScroll.Maximum;
+            ScrollBarModInformation.SmallChange = FlowPanelDetails.VerticalScroll.SmallChange;
+            ScrollBarModInformation.LargeChange = FlowPanelDetails.VerticalScroll.LargeChange;
+            ScrollBarModInformation.Value = FlowPanelDetails.VerticalScroll.Value;
         }
 
         #endregion
@@ -2068,7 +2178,7 @@ namespace ModioX.Forms.Windows
 
                 if (SelectedCategory.Id.Equals("fvrt"))
                 {
-                    DisplayModDetails(SelectedModItem.Id);
+                    ShowModInformation(SelectedModItem.Id);
                 }
 
                 SetStatus($"{categoryTitle}: {modItem.Name} ({ modItem.Type}) - Removed from favorites list.");
@@ -2091,35 +2201,44 @@ namespace ModioX.Forms.Windows
         private void EnableConsoleActions()
         {
             // PS3 Features
-            ButtonPS3PackageManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
-            ButtonPS3PackageManager.Visibility = ButtonPS3PackageManager.Enabled ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonPS3GameBackupFiles.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
+            ButtonPS3GameBackupFiles.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
 
-            //ButtonPS3FileManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
-            //ButtonPS3FileManager.Visibility = ButtonPS3FileManager.Enabled ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonPS3GameUpdateFinder.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
+            ButtonPS3GameUpdateFinder.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
+
+            ButtonPS3FileManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
+            ButtonPS3FileManager.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
+
+            ButtonPS3PackageManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
+            ButtonPS3PackageManager.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
 
             ButtonPS3WebManControls.Enabled = IsConsoleConnected && IsWebManInstalled && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
-            ButtonPS3WebManControls.Visibility = ButtonPS3WebManControls.Enabled ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonPS3WebManControls.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
 
             // Xbox Features
-            //ButtonXboxXBDMMenu.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
-            //ButtonXboxXBDMMenu.Visibility = ButtonXboxXBDMMenu.Enabled ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonXboxFileManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
+            ButtonXboxFileManager.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
 
-            //ButtonXboxFileManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
-            //ButtonXboxFileManager.Visibility = ButtonXboxFileManager.Enabled ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonXboxCheatEngine.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
+            ButtonXboxCheatEngine.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
+
+            ButtonXboxXBDMMenu.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
+            ButtonXboxXBDMMenu.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
 
             // Install & Uninstall Features
             ButtonModInstall.Enabled = IsConsoleConnected;
-            ContextMenuModsInstallFiles.Enabled = IsConsoleConnected;
+            //ContextMenuModsInstallFiles.Enabled = IsConsoleConnected;
 
             if (ButtonModUninstall.Enabled)
             {
                 ButtonModUninstall.Enabled = IsConsoleConnected;
             }
 
-            if (ContextMenuModsUninstallFiles.Enabled)
-            {
-                ContextMenuModsUninstallFiles.Enabled = IsConsoleConnected;
-            }
+            //if (ContextMenuModsUninstallFiles.Enabled)
+            //{
+            //    ContextMenuModsUninstallFiles.Enabled = IsConsoleConnected;
+            //}
         }
 
         /// <summary>
@@ -2253,80 +2372,6 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        private void FlowPanelDetails_Scroll(object sender, ScrollEventArgs e)
-        {
-            ScrollBarModInformation.Value = FlowPanelDetails.VerticalScroll.Value;
-        }
-
-        private void ScrollBarModInformation_Scroll(object sender, ScrollEventArgs e)
-        {
-            FlowPanelDetails.VerticalScroll.Value = ScrollBarModInformation.Value;
-        }
-
-        private void UpdateScrollBars()
-        {
-            FlowPanelDetails.HorizontalScroll.Visible = false;
-
-            ScrollBarModInformation.Visible = FlowPanelDetails.VerticalScroll.Visible;
-            ScrollBarModInformation.Minimum = FlowPanelDetails.VerticalScroll.Minimum;
-            ScrollBarModInformation.Maximum = FlowPanelDetails.VerticalScroll.Maximum;
-            ScrollBarModInformation.SmallChange = FlowPanelDetails.VerticalScroll.SmallChange;
-            ScrollBarModInformation.LargeChange = FlowPanelDetails.VerticalScroll.LargeChange;
-            ScrollBarModInformation.Value = FlowPanelDetails.VerticalScroll.Value;
-        }
-
-        private void XboxFileManager_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowFileManagerXbox(this);
-        }
-
-        private void XboxXBDMShutdown_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            XboxConsole.ShutDown();
-        }
-
-        private void XboxXBDMReboot_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            XboxConsole.Reboot(string.Empty, string.Empty, string.Empty, XboxRebootFlags.Title);
-        }
-
-        private void XboxXBDMSoftReboot_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            XboxConsole.Reboot(XboxReboot.Cold);
-        }
-
-        private void XboxXBDMHardReboot_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            XboxConsole.Reboot(XboxReboot.Warm);
-        }
-
-        private void XboxXBDM_XMessageboxUI_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            XMessageboxUI XMessageBoxUI = new XMessageboxUI("Some Title", "Some Body Text To Go Here\n\nNew Line\n\nAnother New Line", XMessageboxUI.ButtonOptions.YesNoCancel);
-            DialogResult dialogResult = XMessageBoxUI.ShowDialog(this);
-
-            if (dialogResult == DialogResult.OK)
-            {
-                // do whatever
-                XtraMessageBox.Show("ok was clicked");
-            }
-            else if (dialogResult == DialogResult.Yes)
-            {
-                // do whatever
-                XtraMessageBox.Show("yes was clicked");
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                // do whatever
-                XtraMessageBox.Show("no was clicked");
-            }
-            else if (dialogResult == DialogResult.Cancel)
-            {
-                // do whatever
-                XtraMessageBox.Show("cancel was clicked");
-            }
-        }
-
         /// <summary>
         /// Computes The Hash Of A Selected File Or Extentions.
         /// </summary>
@@ -2344,54 +2389,6 @@ namespace ModioX.Forms.Windows
             }
 
             return sb.ToString();
-        }
-
-        private void XboxAvatarEditor_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            XboxConsole.XboxShortcut(XboxShortcuts.AvatarEditor);
-        }
-
-        private void XboxVirtualController_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
-        private void XboxQuickSignIn_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            XboxConsole.QuickSignIn();
-        }
-
-        private void XboxShowTemperature_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowCustomXboxDialog(this, "Console Temperature", "CPU: " + XboxConsole.CPUTEMP() + "\nGPU: " + XboxConsole.GPUTEMP() + "\nRAMTEMP: " + XboxConsole.RAMTEMP() + "\nMOBO: " + XboxConsole.MOBOTEMP(), XMessageboxUI.ButtonOptions.Ok);
-        }
-
-        private void XboxOpenCloseTray_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            if (XboxConsole.IsTrayOpen)
-            {
-                XboxConsole.Tray(TRAY_STATE.OPEN);
-            }
-            else
-            {
-                XboxConsole.Tray(TRAY_STATE.CLOSED);
-            }
-        }
-
-        private void XboxNotifySend_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
-        private void XboxProfileIDInfo_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            XtraMessageBox.Show(XboxConsole.ProfileID(), "Profile ID");
-        }
-
-        private void barButtonItem4_ItemClick_1(object sender, ItemClickEventArgs e)
-        {
-            CheatEngine a = new CheatEngine();
-            a.ShowDialog(this);
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ModioX.Extensions
@@ -18,23 +16,8 @@ namespace ModioX.Extensions
             ctrl.Text = text;
             Font myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
             SizeF mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
-            ctrl.Width = (int)Math.Round(mySize.Width, 0) + 16;
+            ctrl.Width = (int)Math.Round(mySize.Width, 0) + 20;
             ctrl.Refresh();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="items"></param>
-        public static void SetValuesOnSubItems(List<ToolStripMenuItem> items)
-        {
-            items.ForEach(item =>
-            {
-                if (item.DropDown is not ToolStripDropDownMenu dropdown) return;
-
-                dropdown.ShowImageMargin = false;
-                SetValuesOnSubItems(item.DropDownItems.OfType<ToolStripMenuItem>().ToList());
-            });
         }
     }
 }

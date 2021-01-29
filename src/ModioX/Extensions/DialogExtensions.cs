@@ -79,55 +79,6 @@ namespace ModioX.Extensions
             return newConnectionDialog.ShowDialog(owner) == DialogResult.OK ? newConnectionDialog.ConsoleProfile : null;
         }
 
-        public static void ShowGameBackupFiles(Form owner)
-        {
-            using GameBackupFilesWindow gameBackupFilesWindow = new GameBackupFilesWindow();
-            gameBackupFilesWindow.ShowDialog(owner);
-        }
-
-        public static BackupFile ShowBackupFileDetails(Form owner, BackupFile backupFile)
-        {
-            using BackupFileDialog backupFileDialog = new BackupFileDialog { BackupFile = backupFile };
-            return backupFileDialog.ShowDialog(owner) == DialogResult.OK ? backupFileDialog.BackupFile : null;
-        }
-        public static void ShowGameUpdatesFinderDialog(Form owner)
-        {
-            using GameUpdatesWindow gameUpdatesDialog = new GameUpdatesWindow();
-            gameUpdatesDialog.ShowDialog(owner);
-        }
-
-        public static void ShowPackageManagerWindow(Form owner)
-        {
-            using PackageManagerWindow packageManagerWindow = new PackageManagerWindow();
-            packageManagerWindow.ShowDialog(owner);
-        }
-
-        public static void ShowFileManagerPS3(Form owner)
-        {
-            using Forms.Tools.PS3_Tools.FileManagerWindow fileManagerWindow = new Forms.Tools.PS3_Tools.FileManagerWindow();
-            fileManagerWindow.ShowDialog(owner);
-        }
-
-        #region Xbox Tools
-
-        public static void ShowFileManagerXbox(Form owner)
-        {
-            using Forms.Tools.XBOX_Tools.FileManagerWindow fileManagerWindow = new Forms.Tools.XBOX_Tools.FileManagerWindow();
-            fileManagerWindow.ShowDialog(owner);
-        }
-        public static void ShowIniEditorXbox(Form owner)
-        {
-            using iniEditor iniEditorWindow = new iniEditor();
-            iniEditorWindow.ShowDialog(owner);
-        }
-        #endregion
-
-        public static void ShowSettingsWindow(Form owner)
-        {
-            using SettingsWindow settingsWindow = new SettingsWindow();
-            settingsWindow.ShowDialog(owner);
-        }
-
         public static void ShowAboutWindow(Form owner)
         {
             using AboutDialog aboutDialog = new AboutDialog();
@@ -144,6 +95,64 @@ namespace ModioX.Extensions
         {
             using OpenFileDialog openFileDialog = new OpenFileDialog { Title = title, Filter = fileTypes };
             return openFileDialog.ShowDialog(owner) == DialogResult.OK ? openFileDialog.FileName : null;
+        }
+
+        #region PS3 Tools
+
+        public static void ShowGameBackupFiles(Form owner)
+        {
+            using GameBackupFilesWindow gameBackupFilesWindow = new GameBackupFilesWindow();
+            gameBackupFilesWindow.ShowDialog(owner);
+        }
+
+        public static void ShowGameUpdatesFinderDialog(Form owner)
+        {
+            using GameUpdatesWindow gameUpdatesDialog = new GameUpdatesWindow();
+            gameUpdatesDialog.ShowDialog(owner);
+        }
+
+        public static void ShowFileManagerPS3(Form owner)
+        {
+            using Forms.Tools.PS3_Tools.FileManagerWindow fileManagerWindow = new Forms.Tools.PS3_Tools.FileManagerWindow();
+            fileManagerWindow.ShowDialog(owner);
+        }
+
+        public static void ShowPackageManagerWindow(Form owner)
+        {
+            using PackageManagerWindow packageManagerWindow = new PackageManagerWindow();
+            packageManagerWindow.ShowDialog(owner);
+        }
+
+        #endregion
+
+        #region Xbox Tools
+
+        public static void ShowFileManagerXbox(Form owner)
+        {
+            using Forms.Tools.XBOX_Tools.FileManagerWindow fileManagerWindow = new Forms.Tools.XBOX_Tools.FileManagerWindow();
+            fileManagerWindow.ShowDialog(owner);
+        }
+
+        public static void ShowIniEditorXbox(Form owner)
+        {
+            using iniEditor iniEditorWindow = new iniEditor();
+            iniEditorWindow.ShowDialog(owner);
+        }
+
+        public static void ShowMemoryViewer(Form owner, string gameTitle)
+        {
+            using MemoryViewer memoryViewer = new MemoryViewer() { GameTitle = gameTitle };
+            memoryViewer.ShowDialog(owner);
+        }
+
+        #endregion
+
+        #region Settings
+
+        public static void ShowSettingsWindow(Form owner)
+        {
+            using SettingsWindow settingsWindow = new SettingsWindow();
+            settingsWindow.ShowDialog(owner);
         }
 
         public static void ShowGameRegionsDialog(Form owner)
@@ -164,10 +173,12 @@ namespace ModioX.Extensions
             customListsDialog.ShowDialog(owner);
         }
 
-        public static void ShowCustomXboxDialog(Form owner, string title, string body, XMessageboxUI.ButtonOptions buttons)
+        #endregion
+
+        public static DialogResult ShowCustomXboxDialog(Form owner, string title, string body, XMessageboxUI.ButtonOptions buttons)
         {
             using XMessageboxUI xMessageboxUI = new XMessageboxUI(title, body, buttons);
-            xMessageboxUI.ShowDialog(owner);
+            return xMessageboxUI.ShowDialog(owner);
         }
     }
 }

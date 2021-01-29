@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
@@ -32,7 +33,7 @@ namespace ModioX.Forms.Settings
         {
             GridApplications.DataSource = null;
 
-            DataTable applications = DataExtensions.CreateDataTable(new List<DataColumn> { new DataColumn("Name", typeof(string)), new DataColumn("FileLocation", typeof(string)) });
+            DataTable applications = DataExtensions.CreateDataTable(new List<DataColumn> { new DataColumn("Name"), new DataColumn("File Location") });
 
             TextBoxFileName.ResetText();
             TextBoxFileLocation.ResetText();
@@ -44,22 +45,38 @@ namespace ModioX.Forms.Settings
 
             GridApplications.DataSource = applications;
 
-            GridViewApplications.Columns[0].Width = 200;
+            GridViewApplications.Columns[0].Width = 125;
             GridViewApplications.Columns[1].Width = 300;
 
+            ProgressLoading.Visible = GridViewApplications.RowCount < 1;
             ButtonDeleteAll.Enabled = GridViewApplications.RowCount > 0;
 
-            GridViewApplications.BeginSort();
-
-            if (GridViewApplications.RowCount > 0) GridViewApplications.SelectRow(0);
+            if (GridViewApplications.RowCount > 0)
+            {
+                GridViewApplications.SelectRow(0);
+            }
         }
 
         private void GridViewApplications_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
             if (GridViewApplications.SelectedRowsCount > 0)
             {
-                string name = GridViewApplications.GetRowCellValue(GridViewApplications.FocusedRowHandle, "Name").ToString();
-                string location = GridViewApplications.GetRowCellValue(GridViewApplications.FocusedRowHandle, "FileLocation").ToString();
+                string name = GridViewApplications.GetRowCellValue(e.FocusedRowHandle, "Name").ToString();
+                string location = GridViewApplications.GetRowCellValue(e.FocusedRowHandle, "File Location").ToString();
+
+                TextBoxFileName.Text = name;
+                TextBoxFileLocation.Text = location;
+            }
+
+            ButtonDeleteApplication.Enabled = GridViewApplications.SelectedRowsCount > 0;
+        }
+
+        private void GridViewApplications_RowClick(object sender, RowClickEventArgs e)
+        {
+            if (GridViewApplications.SelectedRowsCount > 0)
+            {
+                string name = GridViewApplications.GetRowCellValue(e.RowHandle, "Name").ToString();
+                string location = GridViewApplications.GetRowCellValue(e.RowHandle, "File Location").ToString();
 
                 TextBoxFileName.Text = name;
                 TextBoxFileLocation.Text = location;
@@ -73,8 +90,8 @@ namespace ModioX.Forms.Settings
             if (XtraMessageBox.Show("Do you really want to delete all of the items?", "Confirm Delete All", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Settings.ExternalApplications.Clear();
+                LoadExternalApplications();
                 XtraMessageBox.Show("All applications have now been removed from the list.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
             }
         }
 
@@ -83,8 +100,8 @@ namespace ModioX.Forms.Settings
             if (XtraMessageBox.Show("Do you really want delete the selected item?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Settings.ExternalApplications.RemoveAt(GridViewApplications.FocusedRowHandle);
-                XtraMessageBox.Show("Application has now been removed from the list.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadExternalApplications();
+                XtraMessageBox.Show("Application has now been removed from the list.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -105,8 +122,9 @@ namespace ModioX.Forms.Settings
 
         private void ButtonNewApplication_Click(object sender, EventArgs e)
         {
+            TextBoxFileName.Text = string.Empty;
+            TextBoxFileLocation.Text = string.Empty;
             TextBoxFileName.Reset();
-            TextBoxFileLocation.Reset();
             TextBoxFileName.Focus();
         }
 
@@ -141,8 +159,8 @@ namespace ModioX.Forms.Settings
         {
             for (int i = 0; i < GridViewApplications.RowCount; i++)
             {
-                string appName = GridViewApplications.GetRowCellValue(GridViewApplications.FocusedRowHandle, "Name").ToString();
-                string fileLocation = GridViewApplications.GetRowCellValue(GridViewApplications.FocusedRowHandle, "FileLocation").ToString();
+                string appName = GridViewApplications.GetRowCellValue(i, "Name").ToString();
+                string fileLocation = GridViewApplications.GetRowCellValue(i, "File Location").ToString();
 
                 Settings.UpdateApplication(appName, fileLocation);
             }

@@ -44,26 +44,40 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.MainMenu = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.Quit = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.CheatEngineSettings = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.AddItems = new DevExpress.XtraEditors.SvgImageBox();
             this.RemoveItems = new DevExpress.XtraEditors.SvgImageBox();
             this.svgImageBox4 = new DevExpress.XtraEditors.SvgImageBox();
-            this.CheatSearch = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.checkEdit3 = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.MemoryScanOptions = new DevExpress.XtraEditors.GroupControl();
             this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -72,55 +86,31 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.svgImageBox6 = new DevExpress.XtraEditors.SvgImageBox();
-            this.MemoryScanOptions = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
-            this.checkEdit3 = new DevExpress.XtraEditors.CheckEdit();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.svgImageBox2 = new DevExpress.XtraEditors.SvgImageBox();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.LabelGameTitle = new DevExpress.XtraEditors.LabelControl();
+            this.GroupAddresses = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlModifyValues)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewModifyValues)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlScannedAddresses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewScannedAddresses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemoveItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheatSearch)).BeginInit();
-            this.CheatSearch.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemoryScanOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            this.xtraTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MemoryScanOptions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupAddresses)).BeginInit();
+            this.GroupAddresses.SuspendLayout();
             this.SuspendLayout();
             // 
             // GridControlModifyValues
@@ -143,11 +133,10 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // GridControlScannedAddresses
             // 
-            this.GridControlScannedAddresses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridControlScannedAddresses.Location = new System.Drawing.Point(0, 11);
+            this.GridControlScannedAddresses.Location = new System.Drawing.Point(5, 26);
             this.GridControlScannedAddresses.MainView = this.GridViewScannedAddresses;
             this.GridControlScannedAddresses.Name = "GridControlScannedAddresses";
-            this.GridControlScannedAddresses.Size = new System.Drawing.Size(285, 455);
+            this.GridControlScannedAddresses.Size = new System.Drawing.Size(187, 412);
             this.GridControlScannedAddresses.TabIndex = 2;
             this.GridControlScannedAddresses.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewScannedAddresses});
@@ -163,9 +152,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             this.progressBarControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBarControl1.Location = new System.Drawing.Point(127, 41);
+            this.progressBarControl1.Location = new System.Drawing.Point(12, 46);
             this.progressBarControl1.Name = "progressBarControl1";
-            this.progressBarControl1.Size = new System.Drawing.Size(549, 18);
+            this.progressBarControl1.Size = new System.Drawing.Size(569, 15);
             this.progressBarControl1.TabIndex = 3;
             // 
             // BarMenu
@@ -264,6 +253,18 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10)});
             this.barSubItem1.Name = "barSubItem1";
             // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Add Scan Tab";
+            this.barButtonItem5.Id = 13;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Clear List";
+            this.barButtonItem6.Id = 14;
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
             // barButtonItem2
             // 
             this.barButtonItem2.Caption = "Load File";
@@ -285,6 +286,30 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.Quit.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
             this.Quit.Name = "Quit";
             this.Quit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Quit_ItemClick);
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Save State";
+            this.barButtonItem7.Id = 15;
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Load State";
+            this.barButtonItem8.Id = 16;
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
+            // barSubItem5
+            // 
+            this.barSubItem5.Caption = "Load Recent";
+            this.barSubItem5.Id = 18;
+            this.barSubItem5.Name = "barSubItem5";
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "Produce C# File...";
+            this.barButtonItem10.Id = 19;
+            this.barButtonItem10.Name = "barButtonItem10";
             // 
             // barSubItem2
             // 
@@ -317,14 +342,19 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.barButtonItem1.Id = 8;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // barButtonItem4
+            // barSubItem6
             // 
-            this.barButtonItem4.ActAsDropDown = true;
-            this.barButtonItem4.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem4.Caption = "IDA";
-            this.barButtonItem4.DropDownControl = this.popupMenu1;
-            this.barButtonItem4.Id = 12;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.barSubItem6.Caption = "IDA";
+            this.barSubItem6.Id = 21;
+            this.barSubItem6.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12)});
+            this.barSubItem6.Name = "barSubItem6";
+            // 
+            // barButtonItem12
+            // 
+            this.barButtonItem12.Caption = "Prase File";
+            this.barButtonItem12.Id = 22;
+            this.barButtonItem12.Name = "barButtonItem12";
             // 
             // barSubItem4
             // 
@@ -334,13 +364,19 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11)});
             this.barSubItem4.Name = "barSubItem4";
             // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "Tutorial";
+            this.barButtonItem11.Id = 20;
+            this.barButtonItem11.Name = "barButtonItem11";
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(593, 22);
+            this.barDockControlTop.Size = new System.Drawing.Size(593, 23);
             // 
             // barDockControlBottom
             // 
@@ -356,15 +392,35 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 23);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 652);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 651);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(593, 22);
+            this.barDockControlRight.Location = new System.Drawing.Point(593, 23);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 725);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 651);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.ActAsDropDown = true;
+            this.barButtonItem4.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.barButtonItem4.Caption = "IDA";
+            this.barButtonItem4.DropDownControl = this.popupMenu1;
+            this.barButtonItem4.Id = 12;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Loa";
+            this.barButtonItem9.Id = 17;
+            this.barButtonItem9.Name = "barButtonItem9";
             // 
             // svgImageBox1
             // 
@@ -387,8 +443,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // AddItems
             // 
-            this.AddItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddItems.Location = new System.Drawing.Point(291, 423);
+            this.AddItems.Location = new System.Drawing.Point(186, 444);
             this.AddItems.Name = "AddItems";
             this.AddItems.Size = new System.Drawing.Size(29, 25);
             this.AddItems.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("AddItems.SvgImage")));
@@ -414,46 +469,52 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.svgImageBox4.TabIndex = 28;
             this.svgImageBox4.Text = "svgImageBox4";
             // 
-            // CheatSearch
+            // checkEdit3
             // 
-            this.CheatSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CheatSearch.Location = new System.Drawing.Point(12, 67);
-            this.CheatSearch.Name = "CheatSearch";
-            this.CheatSearch.SelectedTabPage = this.xtraTabPage1;
-            this.CheatSearch.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
-            this.CheatSearch.Size = new System.Drawing.Size(676, 474);
-            this.CheatSearch.TabIndex = 29;
-            this.CheatSearch.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.checkEdit3.Location = new System.Drawing.Point(483, 194);
+            this.checkEdit3.MenuManager = this.barManager1;
+            this.checkEdit3.Name = "checkEdit3";
+            this.checkEdit3.Properties.Caption = "checkEdit3";
+            this.checkEdit3.Size = new System.Drawing.Size(75, 18);
+            this.checkEdit3.TabIndex = 42;
             // 
-            // xtraTabPage1
+            // checkEdit2
             // 
-            this.xtraTabPage1.Controls.Add(this.checkEdit3);
-            this.xtraTabPage1.Controls.Add(this.checkEdit2);
-            this.xtraTabPage1.Controls.Add(this.labelControl3);
-            this.xtraTabPage1.Controls.Add(this.labelControl2);
-            this.xtraTabPage1.Controls.Add(this.MemoryScanOptions);
-            this.xtraTabPage1.Controls.Add(this.comboBoxEdit2);
-            this.xtraTabPage1.Controls.Add(this.simpleButton4);
-            this.xtraTabPage1.Controls.Add(this.comboBoxEdit1);
-            this.xtraTabPage1.Controls.Add(this.labelControl1);
-            this.xtraTabPage1.Controls.Add(this.checkEdit1);
-            this.xtraTabPage1.Controls.Add(this.AddItems);
-            this.xtraTabPage1.Controls.Add(this.textEdit1);
-            this.xtraTabPage1.Controls.Add(this.simpleButton3);
-            this.xtraTabPage1.Controls.Add(this.simpleButton2);
-            this.xtraTabPage1.Controls.Add(this.GridControlScannedAddresses);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(674, 472);
-            this.xtraTabPage1.Text = "Scan 1";
+            this.checkEdit2.Location = new System.Drawing.Point(483, 170);
+            this.checkEdit2.MenuManager = this.barManager1;
+            this.checkEdit2.Name = "checkEdit2";
+            this.checkEdit2.Properties.Caption = "checkEdit2";
+            this.checkEdit2.Size = new System.Drawing.Size(75, 18);
+            this.checkEdit2.TabIndex = 41;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(198, 139);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(59, 13);
+            this.labelControl3.TabIndex = 40;
+            this.labelControl3.Text = "Value Type:";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(203, 111);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(54, 13);
+            this.labelControl2.TabIndex = 39;
+            this.labelControl2.Text = "Scan Type:";
+            // 
+            // MemoryScanOptions
+            // 
+            this.MemoryScanOptions.Location = new System.Drawing.Point(215, 172);
+            this.MemoryScanOptions.Name = "MemoryScanOptions";
+            this.MemoryScanOptions.Size = new System.Drawing.Size(237, 266);
+            this.MemoryScanOptions.TabIndex = 38;
+            this.MemoryScanOptions.Text = "Memory Scan Options";
             // 
             // comboBoxEdit2
             // 
-            this.comboBoxEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxEdit2.EditValue = "4 Bytes";
-            this.comboBoxEdit2.Location = new System.Drawing.Point(368, 130);
+            this.comboBoxEdit2.Location = new System.Drawing.Point(263, 136);
             this.comboBoxEdit2.MenuManager = this.barManager1;
             this.comboBoxEdit2.Name = "comboBoxEdit2";
             this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -474,18 +535,16 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // simpleButton4
             // 
             this.simpleButton4.AllowFocus = false;
-            this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton4.Location = new System.Drawing.Point(597, 20);
+            this.simpleButton4.Location = new System.Drawing.Point(479, 26);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(66, 25);
+            this.simpleButton4.Size = new System.Drawing.Size(85, 25);
             this.simpleButton4.TabIndex = 36;
             this.simpleButton4.Text = "Undo Scan";
             // 
             // comboBoxEdit1
             // 
-            this.comboBoxEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxEdit1.EditValue = "Exact Value";
-            this.comboBoxEdit1.Location = new System.Drawing.Point(368, 102);
+            this.comboBoxEdit1.Location = new System.Drawing.Point(263, 108);
             this.comboBoxEdit1.MenuManager = this.barManager1;
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -502,8 +561,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(368, 57);
+            this.labelControl1.Location = new System.Drawing.Point(263, 63);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(32, 13);
             this.labelControl1.TabIndex = 34;
@@ -511,8 +569,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // checkEdit1
             // 
-            this.checkEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkEdit1.Location = new System.Drawing.Point(318, 76);
+            this.checkEdit1.Location = new System.Drawing.Point(213, 82);
             this.checkEdit1.MenuManager = this.barManager1;
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.AllowFocused = false;
@@ -525,8 +582,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // textEdit1
             // 
-            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit1.Location = new System.Drawing.Point(368, 76);
+            this.textEdit1.Location = new System.Drawing.Point(263, 82);
             this.textEdit1.MenuManager = this.barManager1;
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(295, 20);
@@ -535,48 +591,20 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // simpleButton3
             // 
             this.simpleButton3.AllowFocus = false;
-            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton3.Location = new System.Drawing.Point(451, 20);
+            this.simpleButton3.Location = new System.Drawing.Point(348, 26);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(66, 25);
+            this.simpleButton3.Size = new System.Drawing.Size(79, 25);
             this.simpleButton3.TabIndex = 31;
             this.simpleButton3.Text = "Next Scan";
             // 
             // simpleButton2
             // 
             this.simpleButton2.AllowFocus = false;
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.Location = new System.Drawing.Point(368, 20);
+            this.simpleButton2.Location = new System.Drawing.Point(263, 26);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(72, 25);
+            this.simpleButton2.Size = new System.Drawing.Size(79, 25);
             this.simpleButton2.TabIndex = 30;
             this.simpleButton2.Text = "First Scan";
-            // 
-            // xtraTabPage2
-            // 
-            this.xtraTabPage2.Controls.Add(this.svgImageBox2);
-            this.xtraTabPage2.Controls.Add(this.gridControl1);
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(674, 451);
-            this.xtraTabPage2.Text = "Scan 2";
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(285, 455);
-            this.gridControl1.TabIndex = 3;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.OptionsView.ShowIndicator = false;
             // 
             // svgImageBox6
             // 
@@ -586,53 +614,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.svgImageBox6.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox6.SvgImage")));
             this.svgImageBox6.TabIndex = 28;
             this.svgImageBox6.Text = "svgImageBox6";
-            // 
-            // MemoryScanOptions
-            // 
-            this.MemoryScanOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MemoryScanOptions.Location = new System.Drawing.Point(320, 166);
-            this.MemoryScanOptions.Name = "MemoryScanOptions";
-            this.MemoryScanOptions.Size = new System.Drawing.Size(237, 282);
-            this.MemoryScanOptions.TabIndex = 38;
-            this.MemoryScanOptions.Text = "Memory Scan Options";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(308, 105);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(54, 13);
-            this.labelControl2.TabIndex = 39;
-            this.labelControl2.Text = "Scan Type:";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(303, 133);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(59, 13);
-            this.labelControl3.TabIndex = 40;
-            this.labelControl3.Text = "Value Type:";
-            // 
-            // checkEdit2
-            // 
-            this.checkEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkEdit2.Location = new System.Drawing.Point(588, 164);
-            this.checkEdit2.MenuManager = this.barManager1;
-            this.checkEdit2.Name = "checkEdit2";
-            this.checkEdit2.Properties.Caption = "checkEdit2";
-            this.checkEdit2.Size = new System.Drawing.Size(75, 18);
-            this.checkEdit2.TabIndex = 41;
-            // 
-            // checkEdit3
-            // 
-            this.checkEdit3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkEdit3.Location = new System.Drawing.Point(588, 188);
-            this.checkEdit3.MenuManager = this.barManager1;
-            this.checkEdit3.Name = "checkEdit3";
-            this.checkEdit3.Properties.Caption = "checkEdit3";
-            this.checkEdit3.Size = new System.Drawing.Size(75, 18);
-            this.checkEdit3.TabIndex = 42;
             // 
             // simpleButton5
             // 
@@ -644,111 +625,56 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.simpleButton5.TabIndex = 34;
             this.simpleButton5.Text = "Add Address Manually";
             // 
-            // labelControl4
+            // LabelGameTitle
             // 
-            this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl4.Location = new System.Drawing.Point(262, 27);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(164, 13);
-            this.labelControl4.TabIndex = 43;
-            this.labelControl4.Text = "Game Loaded Will Show Here....";
+            this.LabelGameTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelGameTitle.Appearance.Options.UseTextOptions = true;
+            this.LabelGameTitle.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.LabelGameTitle.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LabelGameTitle.Location = new System.Drawing.Point(12, 28);
+            this.LabelGameTitle.Name = "LabelGameTitle";
+            this.LabelGameTitle.Size = new System.Drawing.Size(569, 13);
+            this.LabelGameTitle.TabIndex = 43;
+            this.LabelGameTitle.Text = "Game Loaded Will Show Here....";
             // 
-            // svgImageBox2
+            // GroupAddresses
             // 
-            this.svgImageBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.svgImageBox2.Location = new System.Drawing.Point(291, 423);
-            this.svgImageBox2.Name = "svgImageBox2";
-            this.svgImageBox2.Size = new System.Drawing.Size(29, 25);
-            this.svgImageBox2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox2.SvgImage")));
-            this.svgImageBox2.TabIndex = 27;
-            this.svgImageBox2.Text = "svgImageBox2";
-            // 
-            // barButtonItem5
-            // 
-            this.barButtonItem5.Caption = "Add Scan Tab";
-            this.barButtonItem5.Id = 13;
-            this.barButtonItem5.Name = "barButtonItem5";
-            // 
-            // barButtonItem6
-            // 
-            this.barButtonItem6.Caption = "Clear List";
-            this.barButtonItem6.Id = 14;
-            this.barButtonItem6.Name = "barButtonItem6";
-            // 
-            // barButtonItem7
-            // 
-            this.barButtonItem7.Caption = "Save State";
-            this.barButtonItem7.Id = 15;
-            this.barButtonItem7.Name = "barButtonItem7";
-            // 
-            // barButtonItem8
-            // 
-            this.barButtonItem8.Caption = "Load State";
-            this.barButtonItem8.Id = 16;
-            this.barButtonItem8.Name = "barButtonItem8";
-            // 
-            // barButtonItem9
-            // 
-            this.barButtonItem9.Caption = "Loa";
-            this.barButtonItem9.Id = 17;
-            this.barButtonItem9.Name = "barButtonItem9";
-            // 
-            // barSubItem5
-            // 
-            this.barSubItem5.Caption = "Load Recent";
-            this.barSubItem5.Id = 18;
-            this.barSubItem5.Name = "barSubItem5";
-            // 
-            // barButtonItem10
-            // 
-            this.barButtonItem10.Caption = "Produce C# File...";
-            this.barButtonItem10.Id = 19;
-            this.barButtonItem10.Name = "barButtonItem10";
-            // 
-            // barButtonItem11
-            // 
-            this.barButtonItem11.Caption = "Tutorial";
-            this.barButtonItem11.Id = 20;
-            this.barButtonItem11.Name = "barButtonItem11";
-            // 
-            // popupMenu1
-            // 
-            this.popupMenu1.Manager = this.barManager1;
-            this.popupMenu1.Name = "popupMenu1";
-            // 
-            // barSubItem6
-            // 
-            this.barSubItem6.Caption = "IDA";
-            this.barSubItem6.Id = 21;
-            this.barSubItem6.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12)});
-            this.barSubItem6.Name = "barSubItem6";
-            // 
-            // barButtonItem12
-            // 
-            this.barButtonItem12.Caption = "Prase File";
-            this.barButtonItem12.Id = 22;
-            this.barButtonItem12.Name = "barButtonItem12";
+            this.GroupAddresses.Controls.Add(this.checkEdit3);
+            this.GroupAddresses.Controls.Add(this.GridControlScannedAddresses);
+            this.GroupAddresses.Controls.Add(this.checkEdit2);
+            this.GroupAddresses.Controls.Add(this.simpleButton2);
+            this.GroupAddresses.Controls.Add(this.labelControl3);
+            this.GroupAddresses.Controls.Add(this.simpleButton3);
+            this.GroupAddresses.Controls.Add(this.labelControl2);
+            this.GroupAddresses.Controls.Add(this.textEdit1);
+            this.GroupAddresses.Controls.Add(this.MemoryScanOptions);
+            this.GroupAddresses.Controls.Add(this.AddItems);
+            this.GroupAddresses.Controls.Add(this.comboBoxEdit2);
+            this.GroupAddresses.Controls.Add(this.checkEdit1);
+            this.GroupAddresses.Controls.Add(this.simpleButton4);
+            this.GroupAddresses.Controls.Add(this.labelControl1);
+            this.GroupAddresses.Controls.Add(this.comboBoxEdit1);
+            this.GroupAddresses.Location = new System.Drawing.Point(12, 67);
+            this.GroupAddresses.Name = "GroupAddresses";
+            this.GroupAddresses.Size = new System.Drawing.Size(569, 444);
+            this.GroupAddresses.TabIndex = 48;
+            this.GroupAddresses.Text = "Edit Address Values";
             // 
             // CheatEngine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 674);
-            //this.Controls.Add(this.imageListBoxControl3);
-            //this.Controls.Add(this.imageListBoxControl4);
-            //this.Controls.Add(this.imageListBoxControl2);
-            //this.Controls.Add(this.imageListBoxControl1);
+            this.Controls.Add(this.GroupAddresses);
             this.Controls.Add(this.progressBarControl1);
             this.Controls.Add(this.GridControlModifyValues);
-            this.Controls.Add(this.CheatSearch);
-            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.LabelGameTitle);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.IconOptions.Image = global::ModioX.Properties.Resources.app_logo;
-            this.MinimumSize = new System.Drawing.Size(690, 780);
+            this.MinimumSize = new System.Drawing.Size(595, 706);
             this.Name = "CheatEngine";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cheat Engine";
@@ -759,27 +685,22 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             ((System.ComponentModel.ISupportInitialize)(this.GridViewScannedAddresses)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemoveItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheatSearch)).EndInit();
-            this.CheatSearch.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
-            this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemoryScanOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            this.xtraTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MemoryScanOptions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupAddresses)).EndInit();
+            this.GroupAddresses.ResumeLayout(false);
+            this.GroupAddresses.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -824,12 +745,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         private DevExpress.XtraEditors.SvgImageBox RemoveItems;
         private DevExpress.XtraEditors.SvgImageBox AddItems;
         private DevExpress.XtraEditors.SvgImageBox svgImageBox4;
-        private DevExpress.XtraTab.XtraTabControl CheatSearch;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SvgImageBox svgImageBox6;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
@@ -845,9 +761,8 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         private DevExpress.XtraEditors.CheckEdit checkEdit3;
         private DevExpress.XtraEditors.CheckEdit checkEdit2;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl LabelGameTitle;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraEditors.SvgImageBox svgImageBox2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
@@ -858,5 +773,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private DevExpress.XtraEditors.GroupControl GroupAddresses;
     }
 }

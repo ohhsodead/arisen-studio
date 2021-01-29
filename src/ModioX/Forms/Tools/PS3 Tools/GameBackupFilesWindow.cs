@@ -41,7 +41,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                     backupFile.FileName,
                     File.Exists(backupFile.LocalPath)
                     ? (MainWindow.Settings.ShowFileSizeInBytes ? fileSize.ToString("#,0") + " bytes" : StringExtensions.FormatSize(fileSize.ToString()))
-                    : "No File Exists", 
+                    : "No File Exists",
                     backupFile.CreatedDate.ToLocalTime());
             }
 

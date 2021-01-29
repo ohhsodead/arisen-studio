@@ -32,8 +32,8 @@ namespace ModioX.Models.Database
         public List<string> GetGameRegions(string gameId)
         {
             foreach (Category category in from Category category in Categories
-                                     where category.Id.Equals(gameId)
-                                     select category)
+                                          where category.Id.Equals(gameId)
+                                          select category)
             {
                 return category.Regions.ToList();
             }
@@ -61,8 +61,8 @@ namespace ModioX.Models.Database
         public Category GetCategoryById(string categoryId)
         {
             foreach (Category category in from Category category in Categories
-                                     where category.Id.ToLower().Equals(categoryId.ToLower())
-                                     select category)
+                                          where category.Id.ToLower().Equals(categoryId.ToLower())
+                                          select category)
             {
                 return category;
             }
@@ -78,8 +78,8 @@ namespace ModioX.Models.Database
         public Category GetCategoryByTitle(string title)
         {
             foreach (Category game in from Category game in Categories
-                                 where game.Title.ToLower().Equals(title.ToLower())
-                                 select game)
+                                      where game.Title.ToLower().Equals(title.ToLower())
+                                      select game)
             {
                 return game;
             }
@@ -89,7 +89,7 @@ namespace ModioX.Models.Database
     }
 
     /// <summary>
-    /// Category types
+    /// Category types.
     /// </summary>
     public enum CategoryType
     {
