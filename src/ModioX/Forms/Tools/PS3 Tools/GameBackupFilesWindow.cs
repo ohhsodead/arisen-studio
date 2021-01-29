@@ -1,11 +1,9 @@
-﻿using DarkUI.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
 using System;
 using System.Data;
-using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 
@@ -118,7 +116,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void ToolItemDeleteBackup_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Do you really want to delete the selected item?", "Delete Item", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete Item", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 //MainWindow.Settings.BackupFiles.RemoveAt(DgvBackupFiles.CurrentRow.Index);
                 LoadBackupFiles();
@@ -145,12 +143,12 @@ namespace ModioX.Forms.Tools.PS3_Tools
             try
             {
                 FtpExtensions.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
-                XtraMessageBox.Show($"Successfully backed up file {backupFile.FileName} from {backupFile.InstallPath}.", "Success");
+                XtraMessageBox.Show(this, $"Successfully backed up file {backupFile.FileName} from {backupFile.InstallPath}.", "Success");
             }
             catch (Exception ex)
             {
                 Program.Log.Error(ex, $"Unable to backup game file. Error: {ex.Message}");
-                DarkMessageBox.ShowError("There was a problem downloading the file. Make sure the file exists on your console.", "Error");
+                XtraMessageBox.Show(this, "There was a problem downloading the file. Make sure the file exists on your console.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -164,7 +162,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             {
                 if (!File.Exists(backupFile.LocalPath))
                 {
-                    XtraMessageBox.Show(
+                    XtraMessageBox.Show(this,
                         "This file backup doesn't exist on your computer. If your game doesn't have mods installed, then I would suggest you backup the original files.",
                         "No File Found");
                     return;
@@ -178,9 +176,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             catch (Exception ex)
             {
                 Program.Log.Error(ex, "There was an issue attempting to restore file.");
-                DarkMessageBox.ShowError(
-                    "There was an issue restoring file. Make sure the local file exists on your computer.",
-                    "Error");
+                XtraMessageBox.Show(this, "There was an issue restoring file. Make sure the local file exists on your computer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

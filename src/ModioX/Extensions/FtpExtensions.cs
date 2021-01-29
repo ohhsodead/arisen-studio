@@ -1,4 +1,4 @@
-﻿using DarkUI.Forms;
+﻿using DevExpress.XtraEditors;
 using FluentFTP;
 using ModioX.Forms.Windows;
 using ModioX.Net;
@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Windows.Forms;
 
 namespace ModioX.Extensions
 {
@@ -280,7 +281,7 @@ namespace ModioX.Extensions
                 if (userId != null) return userId;
             }
 
-            DarkMessageBox.ShowError("Could not find any users. Make sure you have created at least one user profile.", "No Users Found");
+            XtraMessageBox.Show("Could not find any users. Make sure you have created at least one user profile.", "No Users Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return null;
         }
 
@@ -324,7 +325,7 @@ namespace ModioX.Extensions
                 }
             }
 
-            DarkMessageBox.ShowError("You do not have a USB device connected to your console.", "Error");
+            XtraMessageBox.Show("You do not have a USB device connected to your console.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return null;
         }
     }

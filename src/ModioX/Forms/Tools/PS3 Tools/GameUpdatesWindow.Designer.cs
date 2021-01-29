@@ -29,22 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameUpdatesWindow));
-            this.SectionPanelInformation = new DarkUI.Controls.DarkSectionPanel();
-            this.LabelNoGameUpdatesFound = new System.Windows.Forms.Label();
+            this.SectionPanelInformation = new DevExpress.XtraEditors.GroupControl();
+            this.LabelNoGameUpdatesFound = new DevExpress.XtraEditors.LabelControl();
             this.DgvGameUpdates = new DevExpress.XtraGrid.GridControl();
-            this.ContextMenuGameUpdates = new DarkUI.Controls.DarkContextMenu();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.PanelSearch = new System.Windows.Forms.Panel();
+            this.ButtonSearch = new DevExpress.XtraEditors.SimpleButton();
+            this.TextBoxTitleID = new DevExpress.XtraEditors.TextEdit();
+            this.LabelSearch = new DevExpress.XtraEditors.LabelControl();
+            this.LabelSelectType = new DevExpress.XtraEditors.LabelControl();
             this.ContextMenuDownloadToComputer = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuInstallToConsole = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ContextMenuCopyURLToClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuCopySHA1ToClipboard = new System.Windows.Forms.ToolStripMenuItem();
-            this.PanelSearch = new System.Windows.Forms.Panel();
-            this.ButtonSearch = new DevExpress.XtraEditors.SimpleButton();
-            this.TextBoxTitleID = new DevExpress.XtraEditors.TextEdit();
-            this.LabelSearch = new System.Windows.Forms.Label();
-            this.LabelSelectType = new System.Windows.Forms.Label();
-            this.ComboBoxType = new DarkUI.Controls.DarkComboBox();
-            this.ToolStripFooter = new DarkUI.Controls.DarkToolStrip();
             this.ToolStripLabelHeaderStatus = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripLabelStatus = new System.Windows.Forms.ToolStripLabel();
             this.ColumnURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,11 +53,19 @@
             this.ColumnFirmware = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDownload = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnInstall = new System.Windows.Forms.DataGridViewImageColumn();
+            this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
+            this.ButtonNewApplication = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonAddApplication = new DevExpress.XtraEditors.SimpleButton();
+            this.ComboBoxType = new DevExpress.XtraEditors.ComboBoxEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.SectionPanelInformation)).BeginInit();
             this.SectionPanelInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGameUpdates)).BeginInit();
-            this.ContextMenuGameUpdates.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.PanelSearch.SuspendLayout();
-            this.ToolStripFooter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxTitleID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).BeginInit();
+            this.stackPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // SectionPanelInformation
@@ -67,54 +73,114 @@
             this.SectionPanelInformation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.SectionPanelInformation.Controls.Add(this.stackPanel2);
             this.SectionPanelInformation.Controls.Add(this.LabelNoGameUpdatesFound);
             this.SectionPanelInformation.Controls.Add(this.DgvGameUpdates);
             this.SectionPanelInformation.Controls.Add(this.PanelSearch);
-            this.SectionPanelInformation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SectionPanelInformation.Location = new System.Drawing.Point(13, 13);
-            this.SectionPanelInformation.Margin = new System.Windows.Forms.Padding(4);
+            this.SectionPanelInformation.Location = new System.Drawing.Point(11, 11);
             this.SectionPanelInformation.Name = "SectionPanelInformation";
-            this.SectionPanelInformation.SectionHeader = "SEARCH FOR GAME UPDATES";
-            this.SectionPanelInformation.Size = new System.Drawing.Size(688, 346);
+            this.SectionPanelInformation.Size = new System.Drawing.Size(590, 300);
             this.SectionPanelInformation.TabIndex = 0;
+            this.SectionPanelInformation.Text = "SEARCH FOR GAME UPDATES";
             // 
             // LabelNoGameUpdatesFound
             // 
             this.LabelNoGameUpdatesFound.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelNoGameUpdatesFound.AutoSize = true;
+            this.LabelNoGameUpdatesFound.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelNoGameUpdatesFound.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelNoGameUpdatesFound.Appearance.Options.UseFont = true;
+            this.LabelNoGameUpdatesFound.Appearance.Options.UseForeColor = true;
             this.LabelNoGameUpdatesFound.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelNoGameUpdatesFound.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelNoGameUpdatesFound.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelNoGameUpdatesFound.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelNoGameUpdatesFound.Location = new System.Drawing.Point(263, 144);
-            this.LabelNoGameUpdatesFound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.LabelNoGameUpdatesFound.Location = new System.Drawing.Point(225, 125);
+            this.LabelNoGameUpdatesFound.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelNoGameUpdatesFound.Name = "LabelNoGameUpdatesFound";
-            this.LabelNoGameUpdatesFound.Size = new System.Drawing.Size(162, 15);
+            this.LabelNoGameUpdatesFound.Size = new System.Drawing.Size(156, 15);
             this.LabelNoGameUpdatesFound.TabIndex = 1180;
             this.LabelNoGameUpdatesFound.Text = "NO GAME UPDATES FOUND";
             // 
             // DgvGameUpdates
             // 
-            this.DgvGameUpdates.ContextMenuStrip = this.ContextMenuGameUpdates;
             this.DgvGameUpdates.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvGameUpdates.Location = new System.Drawing.Point(1, 69);
+            this.DgvGameUpdates.Location = new System.Drawing.Point(2, 58);
+            this.DgvGameUpdates.MainView = this.gridView1;
             this.DgvGameUpdates.Name = "DgvGameUpdates";
-            this.DgvGameUpdates.Size = new System.Drawing.Size(686, 276);
+            this.DgvGameUpdates.Size = new System.Drawing.Size(586, 240);
             this.DgvGameUpdates.TabIndex = 3;
+            this.DgvGameUpdates.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
-            // ContextMenuGameUpdates
+            // gridView1
             // 
-            this.ContextMenuGameUpdates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ContextMenuGameUpdates.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuGameUpdates.ImageScalingSize = new System.Drawing.Size(18, 18);
-            this.ContextMenuGameUpdates.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ContextMenuDownloadToComputer,
-            this.ContextMenuInstallToConsole,
-            this.toolStripSeparator1,
-            this.ContextMenuCopyURLToClipboard,
-            this.ContextMenuCopySHA1ToClipboard});
-            this.ContextMenuGameUpdates.Name = "ContextMenuGameUpdates";
-            this.ContextMenuGameUpdates.Size = new System.Drawing.Size(211, 107);
+            this.gridView1.DetailHeight = 303;
+            this.gridView1.GridControl = this.DgvGameUpdates;
+            this.gridView1.Name = "gridView1";
+            // 
+            // PanelSearch
+            // 
+            this.PanelSearch.BackColor = System.Drawing.Color.Transparent;
+            this.PanelSearch.Controls.Add(this.ButtonSearch);
+            this.PanelSearch.Controls.Add(this.TextBoxTitleID);
+            this.PanelSearch.Controls.Add(this.LabelSearch);
+            this.PanelSearch.Controls.Add(this.LabelSelectType);
+            this.PanelSearch.Controls.Add(this.ComboBoxType);
+            this.PanelSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelSearch.Location = new System.Drawing.Point(2, 20);
+            this.PanelSearch.Name = "PanelSearch";
+            this.PanelSearch.Size = new System.Drawing.Size(586, 38);
+            this.PanelSearch.TabIndex = 2;
+            // 
+            // ButtonSearch
+            // 
+            this.ButtonSearch.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonSearch.Appearance.Options.UseFont = true;
+            this.ButtonSearch.Location = new System.Drawing.Point(306, 9);
+            this.ButtonSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonSearch.Name = "ButtonSearch";
+            this.ButtonSearch.Size = new System.Drawing.Size(67, 21);
+            this.ButtonSearch.TabIndex = 2;
+            this.ButtonSearch.Text = "Search";
+            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
+            // 
+            // TextBoxTitleID
+            // 
+            this.TextBoxTitleID.EditValue = "e.g. BLES01807";
+            this.TextBoxTitleID.Location = new System.Drawing.Point(57, 9);
+            this.TextBoxTitleID.Name = "TextBoxTitleID";
+            this.TextBoxTitleID.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxTitleID.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxTitleID.Size = new System.Drawing.Size(100, 22);
+            this.TextBoxTitleID.TabIndex = 0;
+            // 
+            // LabelSearch
+            // 
+            this.LabelSearch.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSearch.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelSearch.Appearance.Options.UseFont = true;
+            this.LabelSearch.Appearance.Options.UseForeColor = true;
+            this.LabelSearch.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelSearch.Location = new System.Drawing.Point(10, 12);
+            this.LabelSearch.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
+            this.LabelSearch.Name = "LabelSearch";
+            this.LabelSearch.Size = new System.Drawing.Size(41, 15);
+            this.LabelSearch.TabIndex = 1161;
+            this.LabelSearch.Text = "TITLE ID";
+            // 
+            // LabelSelectType
+            // 
+            this.LabelSelectType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSelectType.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LabelSelectType.Appearance.Options.UseFont = true;
+            this.LabelSelectType.Appearance.Options.UseForeColor = true;
+            this.LabelSelectType.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelSelectType.Location = new System.Drawing.Point(164, 12);
+            this.LabelSelectType.Margin = new System.Windows.Forms.Padding(4, 3, 3, 2);
+            this.LabelSelectType.Name = "LabelSelectType";
+            this.LabelSelectType.Size = new System.Drawing.Size(72, 15);
+            this.LabelSelectType.TabIndex = 1160;
+            this.LabelSelectType.Text = "UPDATE TYPE";
             // 
             // ContextMenuDownloadToComputer
             // 
@@ -168,98 +234,6 @@
             this.ContextMenuCopySHA1ToClipboard.Text = "Copy SHA1 to Clipboard";
             this.ContextMenuCopySHA1ToClipboard.Click += new System.EventHandler(this.ContextMenuCopySHA1ToClipboard_Click);
             // 
-            // PanelSearch
-            // 
-            this.PanelSearch.Controls.Add(this.ButtonSearch);
-            this.PanelSearch.Controls.Add(this.TextBoxTitleID);
-            this.PanelSearch.Controls.Add(this.LabelSearch);
-            this.PanelSearch.Controls.Add(this.LabelSelectType);
-            this.PanelSearch.Controls.Add(this.ComboBoxType);
-            this.PanelSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelSearch.Location = new System.Drawing.Point(1, 25);
-            this.PanelSearch.Name = "PanelSearch";
-            this.PanelSearch.Size = new System.Drawing.Size(686, 44);
-            this.PanelSearch.TabIndex = 2;
-            // 
-            // ButtonSearch
-            // 
-            this.ButtonSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonSearch.Location = new System.Drawing.Point(343, 10);
-            this.ButtonSearch.Margin = new System.Windows.Forms.Padding(5);
-            this.ButtonSearch.Name = "ButtonSearch";
-            this.ButtonSearch.Size = new System.Drawing.Size(78, 24);
-            this.ButtonSearch.TabIndex = 2;
-            this.ButtonSearch.Text = "Search";
-            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
-            // 
-            // TextBoxTitleID
-            // 
-            this.TextBoxTitleID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxTitleID.Location = new System.Drawing.Point(59, 10);
-            this.TextBoxTitleID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TextBoxTitleID.Name = "TextBoxTitleID";
-            this.TextBoxTitleID.Size = new System.Drawing.Size(117, 23);
-            this.TextBoxTitleID.TabIndex = 0;
-            this.TextBoxTitleID.Text = "e.g. BLES01807";
-            // 
-            // LabelSearch
-            // 
-            this.LabelSearch.AutoSize = true;
-            this.LabelSearch.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSearch.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSearch.Location = new System.Drawing.Point(5, 14);
-            this.LabelSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
-            this.LabelSearch.Name = "LabelSearch";
-            this.LabelSearch.Size = new System.Drawing.Size(48, 15);
-            this.LabelSearch.TabIndex = 1161;
-            this.LabelSearch.Text = "TITLE ID";
-            // 
-            // LabelSelectType
-            // 
-            this.LabelSelectType.AutoSize = true;
-            this.LabelSelectType.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelSelectType.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSelectType.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectType.Location = new System.Drawing.Point(184, 14);
-            this.LabelSelectType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
-            this.LabelSelectType.Name = "LabelSelectType";
-            this.LabelSelectType.Size = new System.Drawing.Size(78, 15);
-            this.LabelSelectType.TabIndex = 1160;
-            this.LabelSelectType.Text = "UPDATE TYPE";
-            // 
-            // ComboBoxType
-            // 
-            this.ComboBoxType.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ComboBoxType.FormattingEnabled = true;
-            this.ComboBoxType.Items.AddRange(new object[] {
-            "Retail",
-            "Debug"});
-            this.ComboBoxType.Location = new System.Drawing.Point(268, 10);
-            this.ComboBoxType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ComboBoxType.Name = "ComboBoxType";
-            this.ComboBoxType.Size = new System.Drawing.Size(67, 24);
-            this.ComboBoxType.TabIndex = 1;
-            this.ComboBoxType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxType_SelectedIndexChanged);
-            // 
-            // ToolStripFooter
-            // 
-            this.ToolStripFooter.AutoSize = false;
-            this.ToolStripFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ToolStripFooter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripFooter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripLabelHeaderStatus,
-            this.ToolStripLabelStatus});
-            this.ToolStripFooter.Location = new System.Drawing.Point(0, 363);
-            this.ToolStripFooter.Name = "ToolStripFooter";
-            this.ToolStripFooter.Padding = new System.Windows.Forms.Padding(3, 0, 8, 5);
-            this.ToolStripFooter.Size = new System.Drawing.Size(714, 28);
-            this.ToolStripFooter.TabIndex = 5;
-            this.ToolStripFooter.Text = "darkToolStrip1";
-            // 
             // ToolStripLabelHeaderStatus
             // 
             this.ToolStripLabelHeaderStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
@@ -303,7 +277,6 @@
             this.ColumnVersion.HeaderText = "Version";
             this.ColumnVersion.Name = "ColumnVersion";
             this.ColumnVersion.ReadOnly = true;
-            this.ColumnVersion.Width = 72;
             // 
             // ColumnSize
             // 
@@ -312,7 +285,6 @@
             this.ColumnSize.MinimumWidth = 70;
             this.ColumnSize.Name = "ColumnSize";
             this.ColumnSize.ReadOnly = true;
-            this.ColumnSize.Width = 70;
             // 
             // ColumnFirmware
             // 
@@ -320,7 +292,6 @@
             this.ColumnFirmware.HeaderText = "Firmware";
             this.ColumnFirmware.Name = "ColumnFirmware";
             this.ColumnFirmware.ReadOnly = true;
-            this.ColumnFirmware.Width = 84;
             // 
             // ColumnDownload
             // 
@@ -336,18 +307,55 @@
             this.ColumnInstall.ReadOnly = true;
             this.ColumnInstall.Width = 28;
             // 
+            // stackPanel2
+            // 
+            this.stackPanel2.Controls.Add(this.ButtonNewApplication);
+            this.stackPanel2.Controls.Add(this.ButtonAddApplication);
+            this.stackPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.stackPanel2.Location = new System.Drawing.Point(2, 267);
+            this.stackPanel2.Name = "stackPanel2";
+            this.stackPanel2.Size = new System.Drawing.Size(586, 31);
+            this.stackPanel2.TabIndex = 1181;
+            // 
+            // ButtonNewApplication
+            // 
+            this.ButtonNewApplication.Location = new System.Drawing.Point(5, 5);
+            this.ButtonNewApplication.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
+            this.ButtonNewApplication.Name = "ButtonNewApplication";
+            this.ButtonNewApplication.Size = new System.Drawing.Size(105, 21);
+            this.ButtonNewApplication.TabIndex = 6;
+            this.ButtonNewApplication.Text = "New Application";
+            // 
+            // ButtonAddApplication
+            // 
+            this.ButtonAddApplication.Location = new System.Drawing.Point(116, 5);
+            this.ButtonAddApplication.Name = "ButtonAddApplication";
+            this.ButtonAddApplication.Size = new System.Drawing.Size(105, 21);
+            this.ButtonAddApplication.TabIndex = 7;
+            this.ButtonAddApplication.Text = "Add Application";
+            // 
+            // ComboBoxType
+            // 
+            this.ComboBoxType.Location = new System.Drawing.Point(242, 9);
+            this.ComboBoxType.Name = "ComboBoxType";
+            this.ComboBoxType.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ComboBoxType.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ComboBoxType.Size = new System.Drawing.Size(57, 22);
+            this.ComboBoxType.TabIndex = 1;
+            // 
             // GameUpdatesWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Appearance.Options.UseForeColor = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(714, 391);
-            this.Controls.Add(this.ToolStripFooter);
+            this.ClientSize = new System.Drawing.Size(612, 339);
             this.Controls.Add(this.SectionPanelInformation);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.Gainsboro;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("GameUpdatesWindow.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameUpdatesWindow";
@@ -355,37 +363,37 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Game Update Finder";
             this.Load += new System.EventHandler(this.GameUpdateFinder_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.SectionPanelInformation)).EndInit();
             this.SectionPanelInformation.ResumeLayout(false);
             this.SectionPanelInformation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGameUpdates)).EndInit();
-            this.ContextMenuGameUpdates.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.PanelSearch.ResumeLayout(false);
             this.PanelSearch.PerformLayout();
-            this.ToolStripFooter.ResumeLayout(false);
-            this.ToolStripFooter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxTitleID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).EndInit();
+            this.stackPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxType.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private DarkUI.Controls.DarkSectionPanel SectionPanelInformation;
+        private DevExpress.XtraEditors.GroupControl SectionPanelInformation;
         private DevExpress.XtraGrid.GridControl DgvGameUpdates;
         private System.Windows.Forms.Panel PanelSearch;
         private DevExpress.XtraEditors.TextEdit TextBoxTitleID;
-        private System.Windows.Forms.Label LabelSearch;
-        private System.Windows.Forms.Label LabelSelectType;
-        private DarkUI.Controls.DarkComboBox ComboBoxType;
+        private DevExpress.XtraEditors.LabelControl LabelSearch;
+        private DevExpress.XtraEditors.LabelControl LabelSelectType;
         private DevExpress.XtraEditors.SimpleButton ButtonSearch;
-        private DarkUI.Controls.DarkToolStrip ToolStripFooter;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelHeaderStatus;
         private System.Windows.Forms.ToolStripLabel ToolStripLabelStatus;
-        private DarkUI.Controls.DarkContextMenu ContextMenuGameUpdates;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuDownloadToComputer;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuInstallToConsole;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuCopyURLToClipboard;
         private System.Windows.Forms.ToolStripMenuItem ContextMenuCopySHA1ToClipboard;
-        private System.Windows.Forms.Label LabelNoGameUpdatesFound;
+        private DevExpress.XtraEditors.LabelControl LabelNoGameUpdatesFound;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnURL;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSHA1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameTitle;
@@ -394,5 +402,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFirmware;
         private System.Windows.Forms.DataGridViewImageColumn ColumnDownload;
         private System.Windows.Forms.DataGridViewImageColumn ColumnInstall;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.Utils.Layout.StackPanel stackPanel2;
+        private DevExpress.XtraEditors.SimpleButton ButtonNewApplication;
+        private DevExpress.XtraEditors.SimpleButton ButtonAddApplication;
+        private DevExpress.XtraEditors.ComboBoxEdit ComboBoxType;
     }
 }

@@ -1,13 +1,11 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
-using FluentFTP;
 using Microsoft.VisualBasic.FileIO;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Io;
 using ModioX.Models.Resources;
-using ModioX.Net;
 using ModioX.Properties;
 using System;
 using System.Collections.Generic;
