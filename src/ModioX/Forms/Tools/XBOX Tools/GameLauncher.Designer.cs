@@ -77,7 +77,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 466);
+            this.ClientSize = new System.Drawing.Size(367, 472);
             this.Controls.Add(this.textEdit3);
             this.Controls.Add(this.checkEdit2);
             this.Controls.Add(this.simpleButton2);
