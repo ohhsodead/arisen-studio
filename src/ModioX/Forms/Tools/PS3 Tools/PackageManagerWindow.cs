@@ -1,5 +1,4 @@
-﻿using DarkUI.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using FluentFTP;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
@@ -196,7 +195,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
                 if (FtpClient.FileExists(installFilePath))
                 {
-                    DarkMessageBox.ShowError("Package file with this name already exists on your console.", "Package File Exists");
+                    XtraMessageBox.Show("Package file with this name already exists on your console.", "Package File Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 

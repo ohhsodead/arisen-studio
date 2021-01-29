@@ -1,5 +1,4 @@
-﻿using DarkUI.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using System;
 using System.Windows.Forms;
@@ -41,7 +40,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
         {
             if (string.IsNullOrWhiteSpace(TextBoxTitleID.Text))
             {
-                XtraMessageBox.Show("You haven't specified a title ID.", "Empty Field");
+                XtraMessageBox.Show("You haven't specified a title ID.", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -50,8 +49,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
             if (gameUpdates == null)
             {
-                DarkMessageBox.ShowError("Unable to find details for this title ID.", "Error");
-                return;
+                XtraMessageBox.Show("Unable to find details for this title ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

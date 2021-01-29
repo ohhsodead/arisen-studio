@@ -29,77 +29,81 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
+            this.ButtonFetchGames = new DevExpress.XtraEditors.SimpleButton();
+            this.TextBoxGamesPath = new DevExpress.XtraEditors.TextEdit();
+            this.CheckBoxCloseOnLaunch = new DevExpress.XtraEditors.CheckEdit();
+            this.ListBoxGames = new DevExpress.XtraEditors.ListBoxControl();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxGamesPath.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxCloseOnLaunch.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListBoxGames)).BeginInit();
             this.SuspendLayout();
             // 
-            // listView1
+            // ButtonFetchGames
             // 
-            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 29);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(346, 388);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.ButtonFetchGames.Location = new System.Drawing.Point(12, 434);
+            this.ButtonFetchGames.Name = "ButtonFetchGames";
+            this.ButtonFetchGames.Size = new System.Drawing.Size(96, 23);
+            this.ButtonFetchGames.TabIndex = 7;
+            this.ButtonFetchGames.Text = "Fetch Games";
+            this.ButtonFetchGames.Click += new System.EventHandler(this.ButtonFetchGames_Click);
             // 
-            // simpleButton2
+            // TextBoxGamesPath
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(12, 434);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(96, 23);
-            this.simpleButton2.TabIndex = 7;
-            this.simpleButton2.Text = "Read";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.TextBoxGamesPath.EditValue = "Hdd:\\\\";
+            this.TextBoxGamesPath.Location = new System.Drawing.Point(114, 435);
+            this.TextBoxGamesPath.Name = "TextBoxGamesPath";
+            this.TextBoxGamesPath.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxGamesPath.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxGamesPath.Size = new System.Drawing.Size(240, 22);
+            this.TextBoxGamesPath.TabIndex = 9;
             // 
-            // textEdit3
+            // CheckBoxCloseOnLaunch
             // 
-            this.textEdit3.EditValue = "Hdd\\\\";
-            this.textEdit3.Location = new System.Drawing.Point(114, 435);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(244, 20);
-            this.textEdit3.TabIndex = 9;
+            this.CheckBoxCloseOnLaunch.Location = new System.Drawing.Point(12, 5);
+            this.CheckBoxCloseOnLaunch.Name = "CheckBoxCloseOnLaunch";
+            this.CheckBoxCloseOnLaunch.Properties.Caption = "Close On Launch";
+            this.CheckBoxCloseOnLaunch.Size = new System.Drawing.Size(342, 18);
+            this.CheckBoxCloseOnLaunch.TabIndex = 8;
             // 
-            // checkEdit2
+            // ListBoxGames
             // 
-            this.checkEdit2.Location = new System.Drawing.Point(254, 4);
-            this.checkEdit2.Name = "checkEdit2";
-            this.checkEdit2.Properties.Caption = "Close At Launch";
-            this.checkEdit2.Size = new System.Drawing.Size(104, 19);
-            this.checkEdit2.TabIndex = 8;
+            this.ListBoxGames.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListBoxGames.Location = new System.Drawing.Point(12, 29);
+            this.ListBoxGames.Name = "ListBoxGames";
+            this.ListBoxGames.Size = new System.Drawing.Size(342, 400);
+            this.ListBoxGames.TabIndex = 10;
             // 
             // GameLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 472);
-            this.Controls.Add(this.textEdit3);
-            this.Controls.Add(this.checkEdit2);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(366, 466);
+            this.Controls.Add(this.ListBoxGames);
+            this.Controls.Add(this.TextBoxGamesPath);
+            this.Controls.Add(this.CheckBoxCloseOnLaunch);
+            this.Controls.Add(this.ButtonFetchGames);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.IconOptions.Image = global::ModioX.Properties.Resources.app_logo;
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameLauncher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Game Launcher";
-            this.BackColorChanged += new System.EventHandler(this.GameLauncher_BackColorChanged);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.GameLauncher_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxGamesPath.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxCloseOnLaunch.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListBoxGames)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.CheckEdit checkEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.SimpleButton ButtonFetchGames;
+        private DevExpress.XtraEditors.CheckEdit CheckBoxCloseOnLaunch;
+        private DevExpress.XtraEditors.TextEdit TextBoxGamesPath;
+        private DevExpress.XtraEditors.ListBoxControl ListBoxGames;
     }
 }

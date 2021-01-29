@@ -1,5 +1,4 @@
-﻿using DarkUI.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using System.Linq;
@@ -68,9 +67,9 @@ namespace ModioX.Models.Database
                     return region;
                 }
 
-                DarkMessageBox.ShowError(
+                XtraMessageBox.Show(
                     "Could not find any regions on your console for this game title. You must install the game update for this title first.",
-                    "No Game Update");
+                    "No Game Update", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
 

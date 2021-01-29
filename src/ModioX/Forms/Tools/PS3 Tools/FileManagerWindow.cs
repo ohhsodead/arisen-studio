@@ -33,12 +33,12 @@ namespace ModioX.Forms.Tools.PS3_Tools
         /// <summary>
         /// Get the FTP connection for use with uploading mods, not reliable for uploading files.
         /// </summary>
-        public static FtpConnection FtpConnection { get; }// = MainWindow.FtpConnection;
+        public static FtpConnection FtpConnection { get; } = MainWindow.FtpConnection;
 
         /// <summary>
         /// Get the FtpClient for getting directory listings and some other commands.
         /// </summary>
-        public static FtpClient FtpClient { get; }// = MainWindow.FtpClient;
+        public static FtpClient FtpClient { get; } = MainWindow.FtpClient;
 
         /// <summary>
         /// Get/set the current local directory path.
@@ -51,6 +51,11 @@ namespace ModioX.Forms.Tools.PS3_Tools
         public string DirectoryPathConsole { get; set; } = @"C:\";
 
         /// <summary>
+        /// Get the user's local computer drives.
+        /// </summary>
+        private readonly DriveInfo[] LocalDrives = DriveInfo.GetDrives();
+
+        /// <summary>
         /// 
         /// </summary>
         private readonly Image ImageFile = ImageExtensions.ResizeBitmap(Resources.file, 20, 20);
@@ -60,11 +65,6 @@ namespace ModioX.Forms.Tools.PS3_Tools
         /// </summary>
         private readonly Image ImageFolder = ImageExtensions.ResizeBitmap(Resources.folder, 20, 20);
 
-        /// <summary>
-        /// Get the user's local computer drives.
-        /// </summary>
-        private readonly DriveInfo[] localDrives = DriveInfo.GetDrives();
-
         public FileManagerWindow()
         {
             InitializeComponent();
@@ -72,13 +72,11 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void FileManagerWindow_Load(object sender, EventArgs e)
         {
-            WaitLoadConsole.Enabled = false;
-
             GridLocalFiles.Focus();
 
             SetStatus("Fetching drives...");
 
-            foreach (DriveInfo driveInfo in localDrives) ComboBoxLocalDrives.Properties.Items.Add(driveInfo.Name.Replace(@"\", ""));
+            foreach (DriveInfo driveInfo in LocalDrives) ComboBoxLocalDrives.Properties.Items.Add(driveInfo.Name.Replace(@"\", ""));
 
             if (Settings.SaveLocalPath)
             {
@@ -283,45 +281,6 @@ namespace ModioX.Forms.Tools.PS3_Tools
                     }
                 }
             }
-            catch (FtpException ex)
-            {
-                SetStatus($"Unable to create a new folder. Error: {ex.Message}");
-                XtraMessageBox.Show($"Unable to create a new folder. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                SetStatus($"Unable to create a new folder. Error: {ex.Message}");
-                XtraMessageBox.Show($"Unable to create a new folder. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        public void CreateConsoleFolder()
-        {
-            try
-            {
-                string folderName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder Name: ", "");
-
-                if (folderName != null)
-                {
-                    string folderPath = DirectoryPathConsole + "/" + folderName;
-
-                    if (FtpClient.DirectoryExists(folderPath))
-                    {
-                        XtraMessageBox.Show($"A folder with this name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                        FtpExtensions.CreateDirectory(folderPath);
-                        LoadConsoleDirectory(DirectoryPathConsole);
-                    }
-                }
-            }
-            catch (FtpException ex)
-            {
-                SetStatus($"Unable to create a new folder. Error: {ex.Message}");
-                XtraMessageBox.Show($"Unable to create a new folder. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             catch (Exception ex)
             {
                 SetStatus($"Unable to create a new folder. Error: {ex.Message}");
@@ -482,7 +441,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                         new DataColumn() { Caption = "Image", ColumnName = "Image", DataType = typeof(Image) },
                         new DataColumn() { Caption = "Name", ColumnName = "Name", DataType = typeof(string) },
                         new DataColumn() { Caption = "Size", ColumnName = "Size", DataType = typeof(string) },
-                        new DataColumn() { Caption = "Last Modified", ColumnName = "LastModified", DataType = typeof(string) }
+                        new DataColumn() { Caption = "Last Modified", ColumnName = "Last Modified", DataType = typeof(string) }
                     });
 
                 DirectoryPathLocal = directoryPath.Replace(@"\\", @"\");
@@ -494,7 +453,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 ComboBoxLocalDrives.SelectedItem = DirectoryPathLocal.Substring(0, 2);
                 ComboBoxLocalDrives.SelectedIndexChanged += ComboBoxLocalDrives_SelectedIndexChanged;
 
-                bool isParentRoot = localDrives.Any(x => x.Name.Equals(DirectoryPathLocal.Replace(@"\\", @"\")));
+                bool isParentRoot = LocalDrives.Any(x => x.Name.Equals(DirectoryPathLocal.Replace(@"\\", @"\")));
 
                 if (!isParentRoot)
                 {
@@ -543,6 +502,8 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 GridViewLocalFiles.Columns[2].Width = 300;
                 GridViewLocalFiles.Columns[3].Width = 100;
                 GridViewLocalFiles.Columns[4].Width = 100;
+
+                SetStatus($"Successfully fetched directory listing.");
             }
             catch (Exception ex)
             {
@@ -686,7 +647,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                         new DataColumn() { Caption = "Image", ColumnName = "Image", DataType = typeof(Image) },
                         new DataColumn() { Caption = "Name", ColumnName = "Name", DataType = typeof(string) },
                         new DataColumn() { Caption = "Size", ColumnName = "Size", DataType = typeof(string) },
-                        new DataColumn() { Caption = "Last Modified", ColumnName = "LastModified", DataType = typeof(string) }
+                        new DataColumn() { Caption = "Last Modified", ColumnName = "Last Modified", DataType = typeof(string) }
                     });
 
                 DirectoryPathConsole = directoryPath.Replace("//", "/");
@@ -778,6 +739,8 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 GridViewConsoleFiles.Columns[2].Width = 300;
                 GridViewConsoleFiles.Columns[3].Width = 100;
                 GridViewConsoleFiles.Columns[4].Width = 100;
+
+                SetStatus($"Successfully fetched directory listing.");
             }
             catch (FtpException ex)
             {
@@ -935,6 +898,40 @@ namespace ModioX.Forms.Tools.PS3_Tools
             catch (Exception ex)
             {
                 SetStatus($"Unable to rename folder. Error: {ex.Message}", ex);
+            }
+        }
+
+        public void CreateConsoleFolder()
+        {
+            try
+            {
+                string folderName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder Name: ", "");
+
+                if (folderName != null)
+                {
+                    string folderPath = DirectoryPathConsole + "/" + folderName;
+
+                    if (FtpClient.DirectoryExists(folderPath))
+                    {
+                        XtraMessageBox.Show($"A folder with this name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        FtpExtensions.CreateDirectory(folderPath);
+                        LoadConsoleDirectory(DirectoryPathConsole);
+                    }
+                }
+            }
+            catch (FtpException ex)
+            {
+                SetStatus($"Unable to create a new folder. Error: {ex.Message}");
+                XtraMessageBox.Show($"Unable to create a new folder. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                SetStatus($"Unable to create a new folder. Error: {ex.Message}");
+                XtraMessageBox.Show($"Unable to create a new folder. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -1,5 +1,4 @@
-﻿using DarkUI.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ModioX.Constants;
 using ModioX.Forms.Windows;
 using ModioX.Io;
@@ -91,7 +90,7 @@ namespace ModioX.Extensions
 
                 MainWindow.Settings.FirstTimeOpenAfterUpdate = true;
                 MainWindow.Window.SetStatus("A new update is available. Downloading the installer...");
-                XtraMessageBox.Show($"A new version of ModioX ({GitHubData.Name}) is now available. Click OK to download and run the installer.", @"Update Available");
+                XtraMessageBox.Show($"A new version of ModioX ({GitHubData.Name}) is now available. Click OK to download and run the installer.", @"Update Available", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 WebClient.DownloadFile(GitHubData.Assets[0].BrowserDownloadUrl, installerFile);
                 Process.Start(installerFile);
                 Application.Exit();
@@ -99,7 +98,7 @@ namespace ModioX.Extensions
             catch (Exception ex)
             {
                 MainWindow.Window.SetStatus($"Unable to download or run the installer. Error: {ex.Message})", ex);
-                DarkMessageBox.ShowError("Unable to complete the update. You must manually install the latest available update from the GitHub releases page.", "Error");
+                XtraMessageBox.Show("Unable to complete the update. You must manually install the latest available update from the GitHub releases page.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Process.Start($"{Urls.GitHubRepo}releases/latest");
                 Application.Exit();
             }

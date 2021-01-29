@@ -31,11 +31,11 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.hexBox = new Be.Windows.Forms.HexBox();
+            this.HexBox = new Be.Windows.Forms.HexBox();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.PeekB = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonPeek = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.New = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonNew = new DevExpress.XtraEditors.SimpleButton();
             this.PeekPokeAddressTextBox = new DevExpress.XtraEditors.TextEdit();
             this.peekLengthTextBox = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -43,137 +43,121 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.AutoPeek = new System.Windows.Forms.Timer(this.components);
             this.AutoPoke = new System.Windows.Forms.Timer(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.Dumpmem = new DevExpress.XtraEditors.SimpleButton();
-            this.PokeB = new DevExpress.XtraEditors.SimpleButton();
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
-            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
-            this.SelAddress = new DevExpress.XtraEditors.TextEdit();
+            this.ButtonDumpMemory = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonPoke = new DevExpress.XtraEditors.SimpleButton();
+            this.CheckBoxAutoPeek = new DevExpress.XtraEditors.CheckEdit();
+            this.CheckBoxAutoPoke = new DevExpress.XtraEditors.CheckEdit();
+            this.TextBoxSelectedAddress = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch2 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.peekPokeFeedBackTextBox = new DevExpress.XtraEditors.TextEdit();
+            this.SwitchFreezeConsole = new DevExpress.XtraEditors.ToggleSwitch();
+            this.TextBoxPeekPokeFeedback = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.FilltoggleSwitch = new DevExpress.XtraEditors.ToggleSwitch();
-            this.fillValueTextBox = new DevExpress.XtraEditors.TextEdit();
+            this.SwitchFillMemory = new DevExpress.XtraEditors.ToggleSwitch();
+            this.TextBoxFillValue = new DevExpress.XtraEditors.TextEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.isSigned = new DevExpress.XtraEditors.ToggleSwitch();
-            this.NumericInt32 = new System.Windows.Forms.NumericUpDown();
-            this.NumericInt16 = new System.Windows.Forms.NumericUpDown();
+            this.SwitchIsSigned = new DevExpress.XtraEditors.ToggleSwitch();
+            this.NumericInt32 = new DevExpress.XtraEditors.SpinEdit();
+            this.NumericInt16 = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.NumericFloatTextBox = new DevExpress.XtraEditors.TextEdit();
-            this.NumericInt8 = new System.Windows.Forms.NumericUpDown();
+            this.NumericInt8 = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.txtPaste = new DevExpress.XtraEditors.TextEdit();
+            this.ButtonSet = new DevExpress.XtraEditors.SimpleButton();
+            this.TextBoxPasteClipboard = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.PeekPokeAddressTextBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peekLengthTextBox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SelAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoPeek.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoPoke.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSelectedAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peekPokeFeedBackTextBox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FilltoggleSwitch.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fillValueTextBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SwitchFreezeConsole.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxPeekPokeFeedback.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SwitchFillMemory.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxFillValue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.isSigned.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericInt32)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericInt16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SwitchIsSigned.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericInt32.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericInt16.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericFloatTextBox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericInt8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericInt8.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPaste.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxPasteClipboard.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // hexBox
+            // HexBox
             // 
-            this.hexBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.hexBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(48)))), ((int)(((byte)(49)))));
-            this.hexBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.HexBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(48)))), ((int)(((byte)(49)))));
+            this.HexBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             // 
             // 
             // 
-            this.hexBox.BuiltInContextMenu.CopyMenuItemText = "";
-            this.hexBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hexBox.InfoForeColor = System.Drawing.Color.Empty;
-            this.hexBox.LineInfoVisible = true;
-            this.hexBox.Location = new System.Drawing.Point(2, 97);
-            this.hexBox.Name = "hexBox";
-            this.hexBox.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.hexBox.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hexBox.Size = new System.Drawing.Size(637, 412);
-            this.hexBox.StringViewVisible = true;
-            this.hexBox.TabIndex = 34;
-            this.hexBox.UseFixedBytesPerLine = true;
-            this.hexBox.VScrollBarVisible = true;
-            this.hexBox.SelectionStartChanged += new System.EventHandler(this.hexBox_SelectionStartChanged);
-            this.hexBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.hexBox_KeyDown);
-            this.hexBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.hexBox_MouseUp);
+            this.HexBox.BuiltInContextMenu.CopyMenuItemText = "";
+            this.HexBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HexBox.InfoForeColor = System.Drawing.Color.Empty;
+            this.HexBox.LineInfoVisible = true;
+            this.HexBox.Location = new System.Drawing.Point(12, 90);
+            this.HexBox.Name = "HexBox";
+            this.HexBox.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.HexBox.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.HexBox.Size = new System.Drawing.Size(637, 412);
+            this.HexBox.StringViewVisible = true;
+            this.HexBox.TabIndex = 34;
+            this.HexBox.UseFixedBytesPerLine = true;
+            this.HexBox.VScrollBarVisible = true;
+            this.HexBox.SelectionStartChanged += new System.EventHandler(this.HexBox_SelectionStartChanged);
+            this.HexBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HexBox_KeyDown);
+            this.HexBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.HexBox_MouseUp);
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2019 Black";
             // 
-            // PeekB
+            // ButtonPeek
             // 
-            this.PeekB.AllowFocus = false;
-            this.PeekB.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
-            this.PeekB.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.False;
-            this.PeekB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.PeekB.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.PeekB.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.PeekB.Appearance.Options.UseBackColor = true;
-            this.PeekB.Appearance.Options.UseForeColor = true;
-            this.PeekB.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.PeekB.Location = new System.Drawing.Point(191, 19);
-            this.PeekB.Name = "PeekB";
-            this.PeekB.Size = new System.Drawing.Size(76, 24);
-            this.PeekB.TabIndex = 116;
-            this.PeekB.Text = "Peek";
-            this.PeekB.Click += new System.EventHandler(this.PeekPokeAddressTextBox_Click);
+            this.ButtonPeek.AllowFocus = false;
+            this.ButtonPeek.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonPeek.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonPeek.Location = new System.Drawing.Point(201, 12);
+            this.ButtonPeek.Name = "ButtonPeek";
+            this.ButtonPeek.Size = new System.Drawing.Size(66, 24);
+            this.ButtonPeek.TabIndex = 116;
+            this.ButtonPeek.Text = "Peek";
+            this.ButtonPeek.Click += new System.EventHandler(this.ButtonPeek_Click);
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(85, 78);
+            this.labelControl1.Location = new System.Drawing.Point(95, 71);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(384, 16);
             this.labelControl1.TabIndex = 118;
             this.labelControl1.Text = "00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F ";
             // 
-            // New
+            // ButtonNew
             // 
-            this.New.AllowFocus = false;
-            this.New.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
-            this.New.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.False;
-            this.New.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.New.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.New.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.New.Appearance.Options.UseBackColor = true;
-            this.New.Appearance.Options.UseForeColor = true;
-            this.New.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.New.Location = new System.Drawing.Point(191, 49);
-            this.New.Name = "New";
-            this.New.Size = new System.Drawing.Size(76, 24);
-            this.New.TabIndex = 119;
-            this.New.Text = "New";
-            this.New.Click += new System.EventHandler(this.simpleButton4_Click);
+            this.ButtonNew.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonNew.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonNew.Location = new System.Drawing.Point(201, 42);
+            this.ButtonNew.Name = "ButtonNew";
+            this.ButtonNew.Size = new System.Drawing.Size(66, 24);
+            this.ButtonNew.TabIndex = 119;
+            this.ButtonNew.Text = "New";
+            this.ButtonNew.Click += new System.EventHandler(this.ButtonNew_Click);
             // 
             // PeekPokeAddressTextBox
             // 
             this.PeekPokeAddressTextBox.EditValue = "C0000000";
-            this.PeekPokeAddressTextBox.Location = new System.Drawing.Point(85, 21);
+            this.PeekPokeAddressTextBox.Location = new System.Drawing.Point(95, 14);
             this.PeekPokeAddressTextBox.Name = "PeekPokeAddressTextBox";
             this.PeekPokeAddressTextBox.Size = new System.Drawing.Size(100, 20);
             this.PeekPokeAddressTextBox.TabIndex = 120;
@@ -184,7 +168,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // peekLengthTextBox
             // 
             this.peekLengthTextBox.EditValue = "FFFF";
-            this.peekLengthTextBox.Location = new System.Drawing.Point(85, 51);
+            this.peekLengthTextBox.Location = new System.Drawing.Point(95, 44);
             this.peekLengthTextBox.Name = "peekLengthTextBox";
             this.peekLengthTextBox.Size = new System.Drawing.Size(100, 20);
             this.peekLengthTextBox.TabIndex = 121;
@@ -192,7 +176,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(12, 25);
+            this.labelControl2.Location = new System.Drawing.Point(22, 18);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(58, 13);
             this.labelControl2.TabIndex = 122;
@@ -200,7 +184,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(18, 55);
+            this.labelControl3.Location = new System.Drawing.Point(28, 48);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(53, 13);
             this.labelControl3.TabIndex = 123;
@@ -216,78 +200,63 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.AutoPoke.Interval = 3000;
             this.AutoPoke.Tick += new System.EventHandler(this.AutoPoke_Tick);
             // 
-            // Dumpmem
+            // ButtonDumpMemory
             // 
-            this.Dumpmem.AllowFocus = false;
-            this.Dumpmem.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
-            this.Dumpmem.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.False;
-            this.Dumpmem.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Dumpmem.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.Dumpmem.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.Dumpmem.Appearance.Options.UseBackColor = true;
-            this.Dumpmem.Appearance.Options.UseForeColor = true;
-            this.Dumpmem.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.Dumpmem.Location = new System.Drawing.Point(273, 49);
-            this.Dumpmem.Name = "Dumpmem";
-            this.Dumpmem.Size = new System.Drawing.Size(76, 24);
-            this.Dumpmem.TabIndex = 126;
-            this.Dumpmem.Text = "Dump Memory";
-            this.Dumpmem.Click += new System.EventHandler(this.simpleButton5_Click);
+            this.ButtonDumpMemory.AllowFocus = false;
+            this.ButtonDumpMemory.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDumpMemory.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDumpMemory.Location = new System.Drawing.Point(273, 42);
+            this.ButtonDumpMemory.Name = "ButtonDumpMemory";
+            this.ButtonDumpMemory.Size = new System.Drawing.Size(107, 24);
+            this.ButtonDumpMemory.TabIndex = 126;
+            this.ButtonDumpMemory.Text = "Dump Memory";
+            this.ButtonDumpMemory.Click += new System.EventHandler(this.ButtonDumpMemory_Click);
             // 
-            // PokeB
+            // ButtonPoke
             // 
-            this.PokeB.AllowFocus = false;
-            this.PokeB.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
-            this.PokeB.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.False;
-            this.PokeB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.PokeB.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.PokeB.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.PokeB.Appearance.Options.UseBackColor = true;
-            this.PokeB.Appearance.Options.UseForeColor = true;
-            this.PokeB.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.PokeB.Location = new System.Drawing.Point(273, 19);
-            this.PokeB.Name = "PokeB";
-            this.PokeB.Size = new System.Drawing.Size(76, 24);
-            this.PokeB.TabIndex = 125;
-            this.PokeB.Text = "Poke";
-            this.PokeB.Click += new System.EventHandler(this.simpleButton6_Click);
+            this.ButtonPoke.Location = new System.Drawing.Point(273, 12);
+            this.ButtonPoke.Name = "ButtonPoke";
+            this.ButtonPoke.Size = new System.Drawing.Size(66, 24);
+            this.ButtonPoke.TabIndex = 125;
+            this.ButtonPoke.Text = "Poke";
+            this.ButtonPoke.Click += new System.EventHandler(this.ButtonPoke_Click);
             // 
-            // checkEdit1
+            // CheckBoxAutoPeek
             // 
-            this.checkEdit1.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.False;
-            this.checkEdit1.Location = new System.Drawing.Point(355, 16);
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.AllowFocused = false;
-            this.checkEdit1.Properties.Caption = "Auto Peek";
-            this.checkEdit1.Size = new System.Drawing.Size(75, 19);
-            this.checkEdit1.TabIndex = 127;
+            this.CheckBoxAutoPeek.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.False;
+            this.CheckBoxAutoPeek.Location = new System.Drawing.Point(396, 9);
+            this.CheckBoxAutoPeek.Name = "CheckBoxAutoPeek";
+            this.CheckBoxAutoPeek.Properties.AllowFocused = false;
+            this.CheckBoxAutoPeek.Properties.Caption = "Auto Peek";
+            this.CheckBoxAutoPeek.Size = new System.Drawing.Size(75, 18);
+            this.CheckBoxAutoPeek.TabIndex = 127;
             // 
-            // checkEdit2
+            // CheckBoxAutoPoke
             // 
-            this.checkEdit2.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.False;
-            this.checkEdit2.Location = new System.Drawing.Point(355, 41);
-            this.checkEdit2.Name = "checkEdit2";
-            this.checkEdit2.Properties.AllowFocused = false;
-            this.checkEdit2.Properties.Caption = "Auto Poke";
-            this.checkEdit2.Size = new System.Drawing.Size(75, 19);
-            this.checkEdit2.TabIndex = 128;
+            this.CheckBoxAutoPoke.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.False;
+            this.CheckBoxAutoPoke.Location = new System.Drawing.Point(396, 34);
+            this.CheckBoxAutoPoke.Name = "CheckBoxAutoPoke";
+            this.CheckBoxAutoPoke.Properties.AllowFocused = false;
+            this.CheckBoxAutoPoke.Properties.Caption = "Auto Poke";
+            this.CheckBoxAutoPoke.Size = new System.Drawing.Size(75, 18);
+            this.CheckBoxAutoPoke.TabIndex = 128;
             // 
-            // SelAddress
+            // TextBoxSelectedAddress
             // 
-            this.SelAddress.EditValue = "";
-            this.SelAddress.Location = new System.Drawing.Point(718, 6);
-            this.SelAddress.Name = "SelAddress";
-            this.SelAddress.Size = new System.Drawing.Size(108, 20);
-            this.SelAddress.TabIndex = 129;
-            this.SelAddress.DoubleClick += new System.EventHandler(this.SelAddress_DoubleClick);
+            this.TextBoxSelectedAddress.EditValue = "";
+            this.TextBoxSelectedAddress.Location = new System.Drawing.Point(733, 8);
+            this.TextBoxSelectedAddress.Name = "TextBoxSelectedAddress";
+            this.TextBoxSelectedAddress.Size = new System.Drawing.Size(109, 20);
+            this.TextBoxSelectedAddress.TabIndex = 129;
+            this.TextBoxSelectedAddress.DoubleClick += new System.EventHandler(this.ButtonSelectedAddress_DoubleClick);
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.labelControl7);
-            this.groupControl1.Controls.Add(this.toggleSwitch2);
-            this.groupControl1.Location = new System.Drawing.Point(645, 146);
+            this.groupControl1.Controls.Add(this.SwitchFreezeConsole);
+            this.groupControl1.Location = new System.Drawing.Point(660, 148);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(181, 47);
+            this.groupControl1.Size = new System.Drawing.Size(182, 47);
             this.groupControl1.TabIndex = 130;
             this.groupControl1.Text = "Debug Commands";
             // 
@@ -299,28 +268,28 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.labelControl7.TabIndex = 137;
             this.labelControl7.Text = "Freeze Console";
             // 
-            // toggleSwitch2
+            // SwitchFreezeConsole
             // 
-            this.toggleSwitch2.Location = new System.Drawing.Point(103, 20);
-            this.toggleSwitch2.Name = "toggleSwitch2";
-            this.toggleSwitch2.Properties.OffText = "";
-            this.toggleSwitch2.Properties.OnText = "";
-            this.toggleSwitch2.Size = new System.Drawing.Size(69, 25);
-            this.toggleSwitch2.TabIndex = 132;
-            this.toggleSwitch2.Toggled += new System.EventHandler(this.toggleSwitch2_Toggled);
+            this.SwitchFreezeConsole.Location = new System.Drawing.Point(103, 24);
+            this.SwitchFreezeConsole.Name = "SwitchFreezeConsole";
+            this.SwitchFreezeConsole.Properties.OffText = "";
+            this.SwitchFreezeConsole.Properties.OnText = "";
+            this.SwitchFreezeConsole.Size = new System.Drawing.Size(69, 19);
+            this.SwitchFreezeConsole.TabIndex = 132;
+            this.SwitchFreezeConsole.Toggled += new System.EventHandler(this.SwitchFreezeConsole_Toggled);
             // 
-            // peekPokeFeedBackTextBox
+            // TextBoxPeekPokeFeedback
             // 
-            this.peekPokeFeedBackTextBox.EditValue = "";
-            this.peekPokeFeedBackTextBox.Location = new System.Drawing.Point(718, 32);
-            this.peekPokeFeedBackTextBox.Name = "peekPokeFeedBackTextBox";
-            this.peekPokeFeedBackTextBox.Size = new System.Drawing.Size(108, 20);
-            this.peekPokeFeedBackTextBox.TabIndex = 132;
-            this.peekPokeFeedBackTextBox.DoubleClick += new System.EventHandler(this.peekPokeFeedBackTextBox_DoubleClick);
+            this.TextBoxPeekPokeFeedback.EditValue = "";
+            this.TextBoxPeekPokeFeedback.Location = new System.Drawing.Point(733, 34);
+            this.TextBoxPeekPokeFeedback.Name = "TextBoxPeekPokeFeedback";
+            this.TextBoxPeekPokeFeedback.Size = new System.Drawing.Size(109, 20);
+            this.TextBoxPeekPokeFeedback.TabIndex = 132;
+            this.TextBoxPeekPokeFeedback.DoubleClick += new System.EventHandler(this.TextBoxPeekPokeFeedback_DoubleClick);
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(609, 39);
+            this.labelControl4.Location = new System.Drawing.Point(621, 41);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(108, 13);
             this.labelControl4.TabIndex = 134;
@@ -328,7 +297,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(625, 9);
+            this.labelControl5.Location = new System.Drawing.Point(637, 11);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(90, 13);
             this.labelControl5.TabIndex = 133;
@@ -336,34 +305,34 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(645, 97);
+            this.labelControl6.Location = new System.Drawing.Point(660, 99);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(126, 13);
             this.labelControl6.TabIndex = 135;
             this.labelControl6.Text = "Fill The Memory With 0x:";
             // 
-            // FilltoggleSwitch
+            // SwitchFillMemory
             // 
-            this.FilltoggleSwitch.Location = new System.Drawing.Point(645, 116);
-            this.FilltoggleSwitch.Name = "FilltoggleSwitch";
-            this.FilltoggleSwitch.Properties.OffText = "";
-            this.FilltoggleSwitch.Properties.OnText = "";
-            this.FilltoggleSwitch.Size = new System.Drawing.Size(69, 25);
-            this.FilltoggleSwitch.TabIndex = 133;
+            this.SwitchFillMemory.Location = new System.Drawing.Point(660, 118);
+            this.SwitchFillMemory.Name = "SwitchFillMemory";
+            this.SwitchFillMemory.Properties.OffText = "";
+            this.SwitchFillMemory.Properties.OnText = "";
+            this.SwitchFillMemory.Size = new System.Drawing.Size(69, 19);
+            this.SwitchFillMemory.TabIndex = 133;
             // 
-            // fillValueTextBox
+            // TextBoxFillValue
             // 
-            this.fillValueTextBox.EditValue = "";
-            this.fillValueTextBox.Location = new System.Drawing.Point(786, 93);
-            this.fillValueTextBox.Name = "fillValueTextBox";
-            this.fillValueTextBox.Size = new System.Drawing.Size(40, 20);
-            this.fillValueTextBox.TabIndex = 136;
+            this.TextBoxFillValue.EditValue = "";
+            this.TextBoxFillValue.Location = new System.Drawing.Point(802, 96);
+            this.TextBoxFillValue.Name = "TextBoxFillValue";
+            this.TextBoxFillValue.Size = new System.Drawing.Size(40, 20);
+            this.TextBoxFillValue.TabIndex = 136;
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.labelControl12);
             this.groupControl2.Controls.Add(this.labelControl11);
-            this.groupControl2.Controls.Add(this.isSigned);
+            this.groupControl2.Controls.Add(this.SwitchIsSigned);
             this.groupControl2.Controls.Add(this.NumericInt32);
             this.groupControl2.Controls.Add(this.NumericInt16);
             this.groupControl2.Controls.Add(this.labelControl10);
@@ -371,7 +340,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.groupControl2.Controls.Add(this.NumericFloatTextBox);
             this.groupControl2.Controls.Add(this.NumericInt8);
             this.groupControl2.Controls.Add(this.labelControl8);
-            this.groupControl2.Location = new System.Drawing.Point(645, 199);
+            this.groupControl2.Location = new System.Drawing.Point(660, 201);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(182, 196);
             this.groupControl2.TabIndex = 138;
@@ -395,38 +364,47 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.labelControl11.TabIndex = 139;
             this.labelControl11.Text = "Signed Values";
             // 
-            // isSigned
+            // SwitchIsSigned
             // 
-            this.isSigned.Location = new System.Drawing.Point(103, 23);
-            this.isSigned.Name = "isSigned";
-            this.isSigned.Properties.OffText = "";
-            this.isSigned.Properties.OnText = "";
-            this.isSigned.Size = new System.Drawing.Size(69, 25);
-            this.isSigned.TabIndex = 138;
-            this.isSigned.Toggled += new System.EventHandler(this.isSigned_Toggled);
+            this.SwitchIsSigned.Location = new System.Drawing.Point(103, 27);
+            this.SwitchIsSigned.Name = "SwitchIsSigned";
+            this.SwitchIsSigned.Properties.OffText = "";
+            this.SwitchIsSigned.Properties.OnText = "";
+            this.SwitchIsSigned.Size = new System.Drawing.Size(69, 19);
+            this.SwitchIsSigned.TabIndex = 138;
+            this.SwitchIsSigned.Toggled += new System.EventHandler(this.SwitchIsSigned_Toggled);
             // 
             // NumericInt32
             // 
-            this.NumericInt32.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NumericInt32.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.NumericInt32.Location = new System.Drawing.Point(63, 123);
             this.NumericInt32.Name = "NumericInt32";
-            this.NumericInt32.Size = new System.Drawing.Size(109, 18);
+            this.NumericInt32.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.NumericInt32.Properties.MaskSettings.Set("mask", "");
+            this.NumericInt32.Size = new System.Drawing.Size(109, 20);
             this.NumericInt32.TabIndex = 143;
-            this.NumericInt32.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.NumericInt32.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             this.NumericInt32.ValueChanged += new System.EventHandler(this.NumericValueChanged);
             this.NumericInt32.DoubleClick += new System.EventHandler(this.NumericInt32_DoubleClick);
             this.NumericInt32.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericIntKeyPress);
             // 
             // NumericInt16
             // 
-            this.NumericInt16.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NumericInt16.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.NumericInt16.Location = new System.Drawing.Point(63, 91);
             this.NumericInt16.Name = "NumericInt16";
-            this.NumericInt16.Size = new System.Drawing.Size(109, 18);
+            this.NumericInt16.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.NumericInt16.Size = new System.Drawing.Size(109, 20);
             this.NumericInt16.TabIndex = 142;
-            this.NumericInt16.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.NumericInt16.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             this.NumericInt16.ValueChanged += new System.EventHandler(this.NumericValueChanged);
             this.NumericInt16.DoubleClick += new System.EventHandler(this.NumericInt16_DoubleClick);
             this.NumericInt16.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericIntKeyPress);
@@ -465,20 +443,24 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.NumericFloatTextBox.Properties.AppearanceReadOnly.Options.UseTextOptions = true;
             this.NumericFloatTextBox.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.NumericFloatTextBox.Properties.ContextImageOptions.Alignment = DevExpress.XtraEditors.ContextImageAlignment.Far;
-            this.NumericFloatTextBox.Size = new System.Drawing.Size(108, 20);
+            this.NumericFloatTextBox.Size = new System.Drawing.Size(109, 20);
             this.NumericFloatTextBox.TabIndex = 139;
             this.NumericFloatTextBox.DoubleClick += new System.EventHandler(this.NumericFloatTextBox_DoubleClick);
             this.NumericFloatTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericIntKeyPress);
             // 
             // NumericInt8
             // 
-            this.NumericInt8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NumericInt8.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.NumericInt8.Location = new System.Drawing.Point(63, 59);
             this.NumericInt8.Name = "NumericInt8";
-            this.NumericInt8.Size = new System.Drawing.Size(109, 18);
+            this.NumericInt8.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.NumericInt8.Size = new System.Drawing.Size(109, 20);
             this.NumericInt8.TabIndex = 138;
-            this.NumericInt8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.NumericInt8.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             this.NumericInt8.ValueChanged += new System.EventHandler(this.NumericValueChanged);
             this.NumericInt8.Click += new System.EventHandler(this.NumericInt8_Click);
             this.NumericInt8.DoubleClick += new System.EventHandler(this.NumericInt8_DoubleClick);
@@ -497,100 +479,95 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // textEdit5
             // 
             this.textEdit5.EditValue = "2000";
-            this.textEdit5.Location = new System.Drawing.Point(789, 59);
+            this.textEdit5.Location = new System.Drawing.Point(804, 60);
             this.textEdit5.Name = "textEdit5";
             this.textEdit5.Size = new System.Drawing.Size(38, 20);
             this.textEdit5.TabIndex = 139;
             this.textEdit5.Visible = false;
             // 
-            // simpleButton1
+            // ButtonSet
             // 
-            this.simpleButton1.AllowFocus = false;
-            this.simpleButton1.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton1.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.Location = new System.Drawing.Point(718, 59);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(38, 20);
-            this.simpleButton1.TabIndex = 140;
-            this.simpleButton1.Text = "Set";
-            this.simpleButton1.Visible = false;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.ButtonSet.AllowFocus = false;
+            this.ButtonSet.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonSet.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonSet.Location = new System.Drawing.Point(733, 60);
+            this.ButtonSet.Name = "ButtonSet";
+            this.ButtonSet.Size = new System.Drawing.Size(38, 20);
+            this.ButtonSet.TabIndex = 140;
+            this.ButtonSet.Text = "Set";
+            this.ButtonSet.Visible = false;
+            this.ButtonSet.Click += new System.EventHandler(this.ButtonSet_Click);
             // 
-            // txtPaste
+            // TextBoxPasteClipboard
             // 
-            this.txtPaste.EditValue = "";
-            this.txtPaste.Location = new System.Drawing.Point(762, 59);
-            this.txtPaste.Name = "txtPaste";
-            this.txtPaste.Size = new System.Drawing.Size(21, 20);
-            this.txtPaste.TabIndex = 141;
-            this.txtPaste.Visible = false;
+            this.TextBoxPasteClipboard.EditValue = "";
+            this.TextBoxPasteClipboard.Location = new System.Drawing.Point(777, 60);
+            this.TextBoxPasteClipboard.Name = "TextBoxPasteClipboard";
+            this.TextBoxPasteClipboard.Size = new System.Drawing.Size(21, 20);
+            this.TextBoxPasteClipboard.TabIndex = 141;
+            this.TextBoxPasteClipboard.Visible = false;
             // 
             // MemoryViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 520);
-            this.Controls.Add(this.txtPaste);
-            this.Controls.Add(this.simpleButton1);
+            this.ClientSize = new System.Drawing.Size(854, 514);
+            this.Controls.Add(this.TextBoxPasteClipboard);
+            this.Controls.Add(this.ButtonSet);
             this.Controls.Add(this.textEdit5);
             this.Controls.Add(this.groupControl2);
-            this.Controls.Add(this.fillValueTextBox);
-            this.Controls.Add(this.FilltoggleSwitch);
+            this.Controls.Add(this.TextBoxFillValue);
+            this.Controls.Add(this.SwitchFillMemory);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.peekPokeFeedBackTextBox);
+            this.Controls.Add(this.TextBoxPeekPokeFeedback);
             this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.SelAddress);
-            this.Controls.Add(this.checkEdit2);
-            this.Controls.Add(this.checkEdit1);
-            this.Controls.Add(this.Dumpmem);
-            this.Controls.Add(this.PokeB);
+            this.Controls.Add(this.TextBoxSelectedAddress);
+            this.Controls.Add(this.CheckBoxAutoPoke);
+            this.Controls.Add(this.CheckBoxAutoPeek);
+            this.Controls.Add(this.ButtonDumpMemory);
+            this.Controls.Add(this.ButtonPoke);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.peekLengthTextBox);
             this.Controls.Add(this.PeekPokeAddressTextBox);
-            this.Controls.Add(this.New);
+            this.Controls.Add(this.ButtonNew);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.PeekB);
-            this.Controls.Add(this.hexBox);
+            this.Controls.Add(this.ButtonPeek);
+            this.Controls.Add(this.HexBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.Image = global::ModioX.Properties.Resources.app_logo;
-            this.MaximumSize = new System.Drawing.Size(862, 568);
-            this.MinimumSize = new System.Drawing.Size(862, 568);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MemoryViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "SocketStress - Memory";
+            this.Text = "Memory Viewer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MemoryViewer_FormClosing);
             this.Load += new System.EventHandler(this.MemoryViewer_Load);
             this.BackColorChanged += new System.EventHandler(this.MemoryViewer_BackColorChanged);
             ((System.ComponentModel.ISupportInitialize)(this.PeekPokeAddressTextBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peekLengthTextBox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SelAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoPeek.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoPoke.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSelectedAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peekPokeFeedBackTextBox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FilltoggleSwitch.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fillValueTextBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SwitchFreezeConsole.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxPeekPokeFeedback.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SwitchFillMemory.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxFillValue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.isSigned.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericInt32)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericInt16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SwitchIsSigned.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericInt32.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericInt16.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericFloatTextBox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericInt8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericInt8.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPaste.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxPasteClipboard.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -600,11 +577,11 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         #endregion
 
-        public Be.Windows.Forms.HexBox hexBox;
+        public Be.Windows.Forms.HexBox HexBox;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
-        private DevExpress.XtraEditors.SimpleButton PeekB;
+        private DevExpress.XtraEditors.SimpleButton ButtonPeek;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.SimpleButton New;
+        private DevExpress.XtraEditors.SimpleButton ButtonNew;
         private DevExpress.XtraEditors.TextEdit PeekPokeAddressTextBox;
         private DevExpress.XtraEditors.TextEdit peekLengthTextBox;
         private DevExpress.XtraEditors.LabelControl labelControl2;
@@ -612,33 +589,33 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         private System.Windows.Forms.Timer AutoPeek;
         private System.Windows.Forms.Timer AutoPoke;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private DevExpress.XtraEditors.SimpleButton Dumpmem;
-        private DevExpress.XtraEditors.SimpleButton PokeB;
-        private DevExpress.XtraEditors.CheckEdit checkEdit1;
-        private DevExpress.XtraEditors.CheckEdit checkEdit2;
-        private DevExpress.XtraEditors.TextEdit SelAddress;
+        private DevExpress.XtraEditors.SimpleButton ButtonDumpMemory;
+        private DevExpress.XtraEditors.SimpleButton ButtonPoke;
+        private DevExpress.XtraEditors.CheckEdit CheckBoxAutoPeek;
+        private DevExpress.XtraEditors.CheckEdit CheckBoxAutoPoke;
+        private DevExpress.XtraEditors.TextEdit TextBoxSelectedAddress;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.ToggleSwitch toggleSwitch2;
-        private DevExpress.XtraEditors.TextEdit peekPokeFeedBackTextBox;
+        private DevExpress.XtraEditors.ToggleSwitch SwitchFreezeConsole;
+        private DevExpress.XtraEditors.TextEdit TextBoxPeekPokeFeedback;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.ToggleSwitch FilltoggleSwitch;
-        private DevExpress.XtraEditors.TextEdit fillValueTextBox;
+        private DevExpress.XtraEditors.ToggleSwitch SwitchFillMemory;
+        private DevExpress.XtraEditors.TextEdit TextBoxFillValue;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.ToggleSwitch isSigned;
-        private System.Windows.Forms.NumericUpDown NumericInt32;
-        private System.Windows.Forms.NumericUpDown NumericInt16;
+        private DevExpress.XtraEditors.ToggleSwitch SwitchIsSigned;
+        private DevExpress.XtraEditors.SpinEdit NumericInt32;
+        private DevExpress.XtraEditors.SpinEdit NumericInt16;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit NumericFloatTextBox;
-        private System.Windows.Forms.NumericUpDown NumericInt8;
+        private DevExpress.XtraEditors.SpinEdit NumericInt8;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.TextEdit txtPaste;
+        private DevExpress.XtraEditors.SimpleButton ButtonSet;
+        private DevExpress.XtraEditors.TextEdit TextBoxPasteClipboard;
     }
 }

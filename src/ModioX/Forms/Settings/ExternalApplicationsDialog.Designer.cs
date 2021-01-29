@@ -39,6 +39,8 @@
             this.LabelName = new DevExpress.XtraEditors.LabelControl();
             this.GroupExternalApplications = new DevExpress.XtraEditors.GroupControl();
             this.ProgressLoading = new DevExpress.XtraWaitForm.ProgressPanel();
+            this.GridApplications = new DevExpress.XtraGrid.GridControl();
+            this.GridViewApplications = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
             this.ButtonDeleteApplication = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonDeleteAll = new DevExpress.XtraEditors.SimpleButton();
@@ -47,20 +49,18 @@
             this.ButtonNewApplication = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonAddApplication = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonSaveAll = new DevExpress.XtraEditors.SimpleButton();
-            this.GridApplications = new DevExpress.XtraGrid.GridControl();
-            this.GridViewApplications = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxFileLocation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxFileName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupExternalApplications)).BeginInit();
             this.GroupExternalApplications.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridApplications)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewApplications)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
             this.stackPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GroupApplicationDetails)).BeginInit();
             this.GroupApplicationDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).BeginInit();
             this.stackPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridApplications)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewApplications)).BeginInit();
             this.SuspendLayout();
             // 
             // ColumnApplicationName
@@ -90,7 +90,7 @@
             this.ButtonBrowseLocalFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonBrowseLocalFile.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonBrowseLocalFile.Appearance.Options.UseFont = true;
-            this.ButtonBrowseLocalFile.Location = new System.Drawing.Point(597, 48);
+            this.ButtonBrowseLocalFile.Location = new System.Drawing.Point(598, 50);
             this.ButtonBrowseLocalFile.Name = "ButtonBrowseLocalFile";
             this.ButtonBrowseLocalFile.Padding = new System.Windows.Forms.Padding(5);
             this.ButtonBrowseLocalFile.Size = new System.Drawing.Size(42, 22);
@@ -102,7 +102,7 @@
             // 
             this.TextBoxFileLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxFileLocation.Location = new System.Drawing.Point(197, 48);
+            this.TextBoxFileLocation.Location = new System.Drawing.Point(198, 50);
             this.TextBoxFileLocation.Name = "TextBoxFileLocation";
             this.TextBoxFileLocation.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxFileLocation.Properties.Appearance.Options.UseFont = true;
@@ -111,7 +111,7 @@
             // 
             // TextBoxFileName
             // 
-            this.TextBoxFileName.Location = new System.Drawing.Point(7, 48);
+            this.TextBoxFileName.Location = new System.Drawing.Point(8, 50);
             this.TextBoxFileName.Name = "TextBoxFileName";
             this.TextBoxFileName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxFileName.Properties.Appearance.Options.UseFont = true;
@@ -122,7 +122,7 @@
             // 
             this.LabelFileLocation.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelFileLocation.Appearance.Options.UseFont = true;
-            this.LabelFileLocation.Location = new System.Drawing.Point(197, 28);
+            this.LabelFileLocation.Location = new System.Drawing.Point(198, 30);
             this.LabelFileLocation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelFileLocation.Name = "LabelFileLocation";
             this.LabelFileLocation.Size = new System.Drawing.Size(70, 15);
@@ -133,7 +133,7 @@
             // 
             this.LabelName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelName.Appearance.Options.UseFont = true;
-            this.LabelName.Location = new System.Drawing.Point(7, 28);
+            this.LabelName.Location = new System.Drawing.Point(8, 30);
             this.LabelName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(99, 15);
@@ -165,12 +165,40 @@
             this.ProgressLoading.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ProgressLoading.Caption = "NO EXTERNAL APPLICATIONS";
             this.ProgressLoading.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ProgressLoading.Description = "Loading..";
+            this.ProgressLoading.Description = "";
             this.ProgressLoading.Location = new System.Drawing.Point(200, 95);
             this.ProgressLoading.Name = "ProgressLoading";
             this.ProgressLoading.Size = new System.Drawing.Size(246, 66);
             this.ProgressLoading.TabIndex = 1172;
             this.ProgressLoading.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
+            // 
+            // GridApplications
+            // 
+            this.GridApplications.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridApplications.Location = new System.Drawing.Point(2, 23);
+            this.GridApplications.MainView = this.GridViewApplications;
+            this.GridApplications.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.GridApplications.Name = "GridApplications";
+            this.GridApplications.Size = new System.Drawing.Size(643, 196);
+            this.GridApplications.TabIndex = 0;
+            this.GridApplications.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewApplications});
+            // 
+            // GridViewApplications
+            // 
+            this.GridViewApplications.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
+            this.GridViewApplications.GridControl = this.GridApplications;
+            this.GridViewApplications.Name = "GridViewApplications";
+            this.GridViewApplications.OptionsBehavior.Editable = false;
+            this.GridViewApplications.OptionsBehavior.ReadOnly = true;
+            this.GridViewApplications.OptionsCustomization.AllowFilter = false;
+            this.GridViewApplications.OptionsFilter.AllowFilterEditor = false;
+            this.GridViewApplications.OptionsMenu.EnableGroupPanelMenu = false;
+            this.GridViewApplications.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.GridViewApplications.OptionsView.ShowGroupPanel = false;
+            this.GridViewApplications.OptionsView.ShowIndicator = false;
+            this.GridViewApplications.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewApplications_RowClick);
+            this.GridViewApplications.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewApplications_FocusedRowChanged);
             // 
             // stackPanel1
             // 
@@ -214,7 +242,7 @@
             this.GroupApplicationDetails.Controls.Add(this.TextBoxFileName);
             this.GroupApplicationDetails.Location = new System.Drawing.Point(16, 275);
             this.GroupApplicationDetails.Name = "GroupApplicationDetails";
-            this.GroupApplicationDetails.Size = new System.Drawing.Size(647, 114);
+            this.GroupApplicationDetails.Size = new System.Drawing.Size(647, 112);
             this.GroupApplicationDetails.TabIndex = 1181;
             this.GroupApplicationDetails.Text = "APPLICATION DETAILS";
             // 
@@ -223,7 +251,7 @@
             this.stackPanel2.Controls.Add(this.ButtonNewApplication);
             this.stackPanel2.Controls.Add(this.ButtonAddApplication);
             this.stackPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.stackPanel2.Location = new System.Drawing.Point(2, 76);
+            this.stackPanel2.Location = new System.Drawing.Point(2, 74);
             this.stackPanel2.Name = "stackPanel2";
             this.stackPanel2.Size = new System.Drawing.Size(643, 36);
             this.stackPanel2.TabIndex = 10;
@@ -251,36 +279,11 @@
             // 
             this.ButtonSaveAll.Location = new System.Drawing.Point(582, 405);
             this.ButtonSaveAll.Name = "ButtonSaveAll";
+            this.ButtonSaveAll.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonSaveAll.Size = new System.Drawing.Size(81, 24);
             this.ButtonSaveAll.TabIndex = 8;
             this.ButtonSaveAll.Text = "Save All";
             this.ButtonSaveAll.Click += new System.EventHandler(this.ButtonSaveAll_Click);
-            // 
-            // GridApplications
-            // 
-            this.GridApplications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridApplications.Location = new System.Drawing.Point(2, 23);
-            this.GridApplications.MainView = this.GridViewApplications;
-            this.GridApplications.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.GridApplications.Name = "GridApplications";
-            this.GridApplications.Size = new System.Drawing.Size(643, 196);
-            this.GridApplications.TabIndex = 1173;
-            this.GridApplications.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.GridViewApplications});
-            // 
-            // GridViewApplications
-            // 
-            this.GridViewApplications.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.GridViewApplications.GridControl = this.GridApplications;
-            this.GridViewApplications.Name = "GridViewApplications";
-            this.GridViewApplications.OptionsBehavior.Editable = false;
-            this.GridViewApplications.OptionsBehavior.ReadOnly = true;
-            this.GridViewApplications.OptionsCustomization.AllowFilter = false;
-            this.GridViewApplications.OptionsFilter.AllowFilterEditor = false;
-            this.GridViewApplications.OptionsMenu.EnableGroupPanelMenu = false;
-            this.GridViewApplications.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.GridViewApplications.OptionsView.ShowGroupPanel = false;
-            this.GridViewApplications.OptionsView.ShowIndicator = false;
             // 
             // ExternalApplicationsDialog
             // 
@@ -308,6 +311,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxFileName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupExternalApplications)).EndInit();
             this.GroupExternalApplications.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridApplications)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewApplications)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
             this.stackPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GroupApplicationDetails)).EndInit();
@@ -315,8 +320,6 @@
             this.GroupApplicationDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).EndInit();
             this.stackPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridApplications)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewApplications)).EndInit();
             this.ResumeLayout(false);
 
         }
