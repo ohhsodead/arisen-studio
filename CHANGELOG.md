@@ -5,9 +5,13 @@ All notable changes to this project will be documented in this file.
 - Improved code readability
 - Optimized parts of the application
 - Moved Logs from Application folder to Documents\ModioX\Logs
+- Upgraded design to DevExpress forms
 - Upgraded Application to .NET Framework 4.8
 - Upgraded dependencies and removed redundant\unused ones
-- You can now create and add mods to your own lists
+- Added support for Xbox connections
+- Added images for each console
+- 
+- Added ability to create and add mods to your own lists
 - Added View Log button to Help menu
 - Added Open Log Folder button to Help menu
 - Added What's New button to Help menu
