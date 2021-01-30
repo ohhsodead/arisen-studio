@@ -8,10 +8,12 @@ All notable changes to this project will be documented in this file.
 - Upgraded design to DevExpress forms
 - Upgraded Application to .NET Framework 4.8
 - Upgraded dependencies and removed redundant\unused ones
-- Added support for connecting to Xbox 360 consoles
-- Added images for all PS3 and Xbox 360 models
-- 
+- Redesigned Connection and Settings dialogs
+- Added support for connecting to Xbox RGH/JTAG consoles
+- Added images for all PS3 and Xbox models
 - Added ability to create and add mods to your own lists
+- Added Launch File Editor for Xbox to Tools menu
+- Added XBDM features to Tools menu
 - Added Package Files Manager for PS3 to Tools menu
 - Added View Log button to Help menu
 - Added Open Log Folder button to Help menu
