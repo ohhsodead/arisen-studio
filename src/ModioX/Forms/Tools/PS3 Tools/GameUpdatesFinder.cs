@@ -1,13 +1,17 @@
 ﻿using DevExpress.XtraEditors;
 using ModioX.Extensions;
+using ModioX.Forms.Windows;
 using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ModioX.Forms.Tools.PS3_Tools
 {
-    public partial class GameUpdatesWindow : XtraForm
+    public partial class GameUpdatesFinder : XtraForm
     {
-        public GameUpdatesWindow()
+        public GameUpdatesFinder()
         {
             InitializeComponent();
         }
@@ -18,7 +22,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private string UpdateTypeURL { get; set; }
 
-        private void GameUpdateFinder_Load(object sender, EventArgs e)
+        private void GameUpdatesFinder_Load(object sender, EventArgs e)
         {
             ComboBoxType.SelectedIndex = 0;
         }
@@ -53,12 +57,21 @@ namespace ModioX.Forms.Tools.PS3_Tools
             }
             else
             {
-                /*
-                DgvGameUpdates.Rows.Clear();
+                GridGameUpdates.DataSource = null;
+
+                DataTable gameUpdateFiles = DataExtensions.CreateDataTable(new List<DataColumn>()
+                {
+                    new DataColumn("File Name", typeof(string)),
+                    new DataColumn("File Size", typeof(string)),
+                    new DataColumn("File Size", typeof(string)),
+                    new DataColumn("File Size", typeof(string)),
+                    new DataColumn(" ", typeof(string))
+                });
+
 
                 foreach (var update in gameUpdates.Tag.Package)
                 {
-                    DgvGameUpdates.Rows.Add(update.Url,
+                    gameUpdateFiles.Rows.Add(update.Url,
                                             update.Sha1sum,
                                             gameTitle,
                                             "v" + update.Version.RemoveFirstInstanceOfString("0"),
@@ -67,10 +80,18 @@ namespace ModioX.Forms.Tools.PS3_Tools
                                             ImageExtensions.ResizeBitmap(Properties.Resources.install, 20, 20),
                                             ImageExtensions.ResizeBitmap(Properties.Resources.download_from_the_cloud, 20, 20));
                 }
-                */
+
+                GridGameUpdates.DataSource = gameUpdateFiles;
+
+                GridViewGameUpdates.Columns[0].Visible = false;
+                GridViewGameUpdates.Columns[1].Visible = false;
+                GridViewGameUpdates.Columns[2].Width = 350;
+                GridViewGameUpdates.Columns[3].Width = 350;
+                GridViewGameUpdates.Columns[4].Width = 350;
+                GridViewGameUpdates.Columns[5].Width = 125;
             }
 
-            LabelNoGameUpdatesFound.Visible = DgvGameUpdates.MainView.RowCount < 1;
+            ProgressNoGameUpdatesFound.Visible = GridViewGameUpdates.RowCount < 1;
         }
 
         private void DgvGameUpdates_SelectionChanged(object sender, EventArgs e)
@@ -98,43 +119,14 @@ namespace ModioX.Forms.Tools.PS3_Tools
             */
         }
 
-        private void ContextMenuDownloadToComptuer_Click(object sender, EventArgs e)
+        private void UpdateStatus(string text)
         {
-            DownloadToComputer();
+            ToolStripLabelStatus.Text = text;
+            Refresh();
         }
 
-        private void ContextMenuInstallToConsole_Click(object sender, EventArgs e)
+        private void ButtonInstallToConsole_Click(object sender, EventArgs e)
         {
-            InstallToConsole();
-        }
-
-        private void ContextMenuCopyToClipboard_Click(object sender, EventArgs e)
-        {
-            /*
-            if (DgvGameUpdates.CurrentRow != null)
-            {
-                string updateUrl = DgvGameUpdates.CurrentRow.Cells[0].Value.ToString();
-                Clipboard.SetText(updateUrl);
-                XtraMessageBox.Show("Update URL has been copied to clipboard.", "Copied");
-            }
-            */
-        }
-
-        private void ContextMenuCopySHA1ToClipboard_Click(object sender, EventArgs e)
-        {
-            /*
-            if (DgvGameUpdates.CurrentRow != null)
-            {
-                string updateSHA1 = DgvGameUpdates.CurrentRow.Cells[1].Value.ToString();
-                Clipboard.SetText(updateSHA1);
-                XtraMessageBox.Show("Update SHA1 has been copied to clipboard.", "Copied");
-            }
-            */
-        }
-
-        private void InstallToConsole()
-        {
-            /*
             if (DgvGameUpdates.CurrentRow != null)
             {
                 if (MainWindow.IsConsoleConnected)
@@ -155,32 +147,34 @@ namespace ModioX.Forms.Tools.PS3_Tools
                     XtraMessageBox.Show("You must be connected to your console to install the update package file.", "Not Connected");
                 }
             }
-            */
         }
 
-        private void DownloadToComputer()
+        private void ButtonDownloadFile_Click(object sender, EventArgs e)
         {
-            /*
-            if (DgvGameUpdates.CurrentRow != null)
+            string updateUrl = DgvGameUpdates.CurrentRow.Cells[0].Value.ToString();
+            string fileName = Path.GetFileName(updateUrl);
+            string folderPath = DialogExtensions.ShowFolderBrowseDialog(this, "Select the folder where you want to download the game update package.");
+
+            if (folderPath != null)
             {
-                string updateUrl = DgvGameUpdates.CurrentRow.Cells[0].Value.ToString();
-                string fileName = Path.GetFileName(updateUrl);
-                string folderPath = DialogExtensions.ShowFolderBrowseDialog(this, "Select the folder where you want to download the game update package.");
-
-                if (folderPath != null)
-                {
-                    UpdateStatus("Downloading package: " + fileName);
-                    HttpExtensions.DownloadFile(updateUrl, folderPath + "/" + fileName);
-                    UpdateStatus("Successfully downloaded package file to the specified folder.");
-                }
+                UpdateStatus("Downloading package: " + fileName);
+                HttpExtensions.DownloadFile(updateUrl, folderPath + "/" + fileName);
+                UpdateStatus("Successfully downloaded package file to the specified folder.");
             }
-            */
         }
 
-        private void UpdateStatus(string text)
+        private void ButtonCopyURLToClipboard_Click(object sender, EventArgs e)
         {
-            ToolStripLabelStatus.Text = text;
-            Refresh();
+            string updateUrl = DgvGameUpdates.CurrentRow.Cells[0].Value.ToString();
+            Clipboard.SetText(updateUrl);
+            XtraMessageBox.Show("Update URL has been copied to clipboard.", "Copied");
+        }
+
+        private void ButtonCopySHA1ToClipboard_Click(object sender, EventArgs e)
+        {
+            string updateSHA1 = DgvGameUpdates.CurrentRow.Cells[1].Value.ToString();
+            Clipboard.SetText(updateSHA1);
+            XtraMessageBox.Show("Update SHA1 has been copied to clipboard.", "Copied");
         }
     }
 }

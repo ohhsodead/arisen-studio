@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace ModioX.Forms.Tools.PS3_Tools
 {
-    public partial class GameBackupFilesWindow : XtraForm
+    public partial class BackupFiles : XtraForm
     {
-        public GameBackupFilesWindow()
+        public BackupFiles()
         {
             InitializeComponent();
         }
 
-        private void GameBackupFilesWindow_Load(object sender, EventArgs e)
+        private void BackupFiles_Load(object sender, EventArgs e)
         {
             LoadBackupFiles();
         }

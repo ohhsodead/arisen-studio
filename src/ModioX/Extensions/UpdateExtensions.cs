@@ -33,7 +33,7 @@ namespace ModioX.Extensions
         /// <summary>
         /// Get the current application version name.
         /// </summary>
-        public static string CurrentVersionName { get; } = GitHubData.Name;
+        public static string CurrentVersionName { get; } = $"Beta v{CurrentVersion.ToString().TrimEnd('0', '.')}";
 
         /// <summary>
         /// Get the latest release information from the GitHub API.

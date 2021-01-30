@@ -130,29 +130,29 @@
     <Compile Include="Forms\Dialogs\ConnectionDialog.Designer.cs">
       <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Settings\CustomListsDialog.cs">
+    <Compile Include="Forms\Settings\CustomLists.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Settings\CustomListsDialog.Designer.cs">
-      <DependentUpon>CustomListsDialog.cs</DependentUpon>
+    <Compile Include="Forms\Settings\CustomLists.Designer.cs">
+      <DependentUpon>CustomLists.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\PS3 Tools\FileManagerWindow.cs">
+    <Compile Include="Forms\Windows\FileManagerWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\PS3 Tools\FileManagerWindow.Designer.cs">
+    <Compile Include="Forms\Windows\FileManagerWindow.Designer.cs">
       <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\PS3 Tools\GameBackupFilesWindow.cs">
+    <Compile Include="Forms\Tools\PS3 Tools\BackupFiles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\PS3 Tools\GameBackupFilesWindow.Designer.cs">
-      <DependentUpon>GameBackupFilesWindow.cs</DependentUpon>
+    <Compile Include="Forms\Tools\PS3 Tools\BackupFiles.Designer.cs">
+      <DependentUpon>BackupFiles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\PS3 Tools\GameUpdatesWindow.cs">
+    <Compile Include="Forms\Tools\PS3 Tools\GameUpdatesFinder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\PS3 Tools\GameUpdatesWindow.Designer.cs">
-      <DependentUpon>GameUpdatesWindow.cs</DependentUpon>
+    <Compile Include="Forms\Tools\PS3 Tools\GameUpdatesFinder.Designer.cs">
+      <DependentUpon>GameUpdatesFinder.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\PS3 Tools\PackageManagerWindow.cs">
       <SubType>Form</SubType>
@@ -172,23 +172,17 @@
     <Compile Include="Forms\Tools\XBOX Tools\CheatEngine.Designer.cs">
       <DependentUpon>CheatEngine.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\FileManagerWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\FileManagerWindow.Designer.cs">
-      <DependentUpon>FileManagerWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\GameLauncher.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\GameLauncher.Designer.cs">
       <DependentUpon>GameLauncher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\iniEditor.cs">
+    <Compile Include="Forms\Tools\XBOX Tools\LaunchPluginsEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\iniEditor.Designer.cs">
-      <DependentUpon>iniEditor.cs</DependentUpon>
+    <Compile Include="Forms\Tools\XBOX Tools\LaunchPluginsEditor.Designer.cs">
+      <DependentUpon>LaunchPluginsEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\MemoryViewer.cs">
       <SubType>Form</SubType>
@@ -230,17 +224,17 @@
     <Compile Include="Forms\Dialogs\InputTextDialog.Designer.cs">
       <DependentUpon>InputTextDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Settings\ExternalApplicationsDialog.cs">
+    <Compile Include="Forms\Settings\ExternalApplications.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Settings\ExternalApplicationsDialog.Designer.cs">
-      <DependentUpon>ExternalApplicationsDialog.cs</DependentUpon>
+    <Compile Include="Forms\Settings\ExternalApplications.Designer.cs">
+      <DependentUpon>ExternalApplications.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Settings\GameRegionsDialog.cs">
+    <Compile Include="Forms\Settings\SavedGameRegions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Settings\GameRegionsDialog.Designer.cs">
-      <DependentUpon>GameRegionsDialog.cs</DependentUpon>
+    <Compile Include="Forms\Settings\SavedGameRegions.Designer.cs">
+      <DependentUpon>SavedGameRegions.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\DataViewDialog.cs">
       <SubType>Form</SubType>
@@ -303,26 +297,26 @@
     <EmbeddedResource Include="Forms\Dialogs\LoginDialog.resx">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Settings\CustomListsDialog.resx">
-      <DependentUpon>CustomListsDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Settings\CustomLists.resx">
+      <DependentUpon>CustomLists.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Settings\ExternalApplicationsDialog.resx">
-      <DependentUpon>ExternalApplicationsDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Settings\ExternalApplications.resx">
+      <DependentUpon>ExternalApplications.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Settings\GameRegionsDialog.resx">
-      <DependentUpon>GameRegionsDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Settings\SavedGameRegions.resx">
+      <DependentUpon>SavedGameRegions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\DataViewDialog.resx">
       <DependentUpon>DataViewDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\PS3 Tools\FileManagerWindow.resx">
+    <EmbeddedResource Include="Forms\Windows\FileManagerWindow.resx">
       <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\PS3 Tools\GameBackupFilesWindow.resx">
-      <DependentUpon>GameBackupFilesWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Tools\PS3 Tools\BackupFiles.resx">
+      <DependentUpon>BackupFiles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\PS3 Tools\GameUpdatesWindow.resx">
-      <DependentUpon>GameUpdatesWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Tools\PS3 Tools\GameUpdatesFinder.resx">
+      <DependentUpon>GameUpdatesFinder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\PS3 Tools\PackageManagerWindow.resx">
       <DependentUpon>PackageManagerWindow.cs</DependentUpon>
@@ -336,14 +330,11 @@
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\CheatEngine.resx">
       <DependentUpon>CheatEngine.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\XBOX Tools\FileManagerWindow.resx">
-      <DependentUpon>FileManagerWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\GameLauncher.resx">
       <DependentUpon>GameLauncher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\XBOX Tools\iniEditor.resx">
-      <DependentUpon>iniEditor.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Tools\XBOX Tools\LaunchPluginsEditor.resx">
+      <DependentUpon>LaunchPluginsEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\MemoryViewer.resx">
       <DependentUpon>MemoryViewer.cs</DependentUpon>
@@ -419,7 +410,7 @@
       <Version>2.5.2</Version>
     </PackageReference>
     <PackageReference Include="NLog">
-      <Version>4.7.6</Version>
+      <Version>4.7.7</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />

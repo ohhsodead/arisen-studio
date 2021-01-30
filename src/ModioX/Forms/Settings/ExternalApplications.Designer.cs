@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Forms.Settings
 {
-    partial class ExternalApplicationsDialog
+    partial class ExternalApplications
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExternalApplicationsDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExternalApplications));
             this.ColumnApplicationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();

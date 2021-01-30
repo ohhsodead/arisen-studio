@@ -1,4 +1,4 @@
-﻿namespace ModioX.Forms.Tools.PS3_Tools
+﻿namespace ModioX.Forms.Windows
 {
     partial class FileManagerWindow
     {

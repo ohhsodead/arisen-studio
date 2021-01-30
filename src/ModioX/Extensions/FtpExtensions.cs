@@ -16,34 +16,22 @@ namespace ModioX.Extensions
         /// <summary>
         /// Upload a local file to the specified location on the console
         /// </summary>
-        /// <param name="ftpConnection">PS3 IP address</param>
         /// <param name="localFile">Path of the local file</param>
         /// <param name="consoleFile">Path of the uploading file directory</param>
         internal static void UploadFile(string localFile, string consoleFile)
         {
             FtpConnection ftpConnection = MainWindow.FtpConnection;
 
-            string dirPath = consoleFile.Contains("/")
-                    ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
-                    : "dev_hdd0/";
+            string parentDirectory = Path.GetDirectoryName(consoleFile).Replace(@"\", "/");
 
-            string fileName = consoleFile.Contains("/")
-                    ? consoleFile.Substring(consoleFile.LastIndexOf('/')).Replace("/", "").Replace("//", "")
-                    : consoleFile;
-
-            if (!ftpConnection.DirectoryExists(dirPath))
-            {
-                CreateDirectory(dirPath);
-            }
-
-            ftpConnection.SetCurrentDirectory(dirPath);
-            ftpConnection.PutFile(localFile, fileName);
+            ftpConnection.SetCurrentDirectory(parentDirectory);
+            ftpConnection.PutFile(localFile, consoleFile);
         }
 
         /// <summary>
         /// Uninstall a specified file from the console
         /// </summary>
-        /// <param name="ftpConnection">Mod to uninstall</param>
+        /// <param name="ftpClient">Mod to uninstall</param>
         /// <param name="consoleFile">Mod to uninstall</param>
         internal static void DeleteFile(FtpClient ftpClient, string consoleFile)
         {
@@ -53,7 +41,7 @@ namespace ModioX.Extensions
         /// <summary>
         /// Uninstall a specified file from the console
         /// </summary>
-        /// <param name="ftpConnection">Mod to uninstall</param>
+        /// <param name="ftpClient">Mod to uninstall</param>
         /// <param name="consolePath">Mod to uninstall</param>
         internal static void DeleteDirectory(FtpClient ftpClient, string consolePath)
         {
@@ -143,7 +131,7 @@ namespace ModioX.Extensions
         internal static void RenameFileOrFolder(FtpConnection ftpConnection, string filePath, string newName)
         {
             // Use the WebRequest method because FtpConnection throws an error and this doesn't, strange
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://" + ftpConnection.Host + filePath);
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://" + ftpConnection.Host + ":" + ftpConnection.Port + filePath);
             request.Method = WebRequestMethods.Ftp.Rename;
             request.Credentials = new NetworkCredential(MainWindow.ConsoleProfile.Username, MainWindow.ConsoleProfile.Password);
             request.RenameTo = newName;
@@ -158,7 +146,7 @@ namespace ModioX.Extensions
         internal static bool CreateDirectory(string consolePath)
         {
             // Use the WebRequest method because FtpConnection throws an error and this doesn't, strange
-            WebRequest request = WebRequest.Create("ftp://" + MainWindow.ConsoleProfile.Address + consolePath);
+            WebRequest request = WebRequest.Create("ftp://" + MainWindow.ConsoleProfile.Address + ":" + MainWindow.ConsoleProfile.Port + consolePath);
             request.Method = WebRequestMethods.Ftp.MakeDirectory;
             request.Credentials = new NetworkCredential(MainWindow.ConsoleProfile.Username, MainWindow.ConsoleProfile.Password);
 

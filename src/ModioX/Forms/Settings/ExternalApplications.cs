@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace ModioX.Forms.Settings
 {
-    public partial class ExternalApplicationsDialog : XtraForm
+    public partial class ExternalApplications : XtraForm
     {
-        public ExternalApplicationsDialog()
+        public ExternalApplications()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
-    partial class iniEditor
+    partial class LaunchPluginsEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         /// </summary>
         private void InitializeComponent()
         {
-            this.List = new DevExpress.XtraEditors.ListBoxControl();
             this.ReadButton = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.LiveBlock = new DevExpress.XtraEditors.CheckEdit();
@@ -44,7 +43,8 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.Settings = new DevExpress.XtraEditors.TextEdit();
             this.Value = new DevExpress.XtraEditors.TextEdit();
             this.INITextbox = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.List)).BeginInit();
+            this.GridBackupFiles = new DevExpress.XtraGrid.GridControl();
+            this.GridViewBackupFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LiveBlock.Properties)).BeginInit();
@@ -54,15 +54,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             ((System.ComponentModel.ISupportInitialize)(this.Settings.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Value.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.INITextbox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridBackupFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewBackupFiles)).BeginInit();
             this.SuspendLayout();
-            // 
-            // List
-            // 
-            this.List.Location = new System.Drawing.Point(12, 15);
-            this.List.Name = "List";
-            this.List.Size = new System.Drawing.Size(432, 326);
-            this.List.TabIndex = 0;
-            this.List.Click += new System.EventHandler(this.ListUserClick);
             // 
             // ReadButton
             // 
@@ -88,7 +82,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.LiveBlock.Location = new System.Drawing.Point(11, 53);
             this.LiveBlock.Name = "LiveBlock";
             this.LiveBlock.Properties.Caption = "LiveBlock";
-            this.LiveBlock.Size = new System.Drawing.Size(75, 19);
+            this.LiveBlock.Size = new System.Drawing.Size(75, 18);
             this.LiveBlock.TabIndex = 7;
             this.LiveBlock.CheckedChanged += new System.EventHandler(this.checkEdit2_CheckedChanged);
             // 
@@ -97,7 +91,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.LiveStrong.Location = new System.Drawing.Point(11, 29);
             this.LiveStrong.Name = "LiveStrong";
             this.LiveStrong.Properties.Caption = "LiveStrong";
-            this.LiveStrong.Size = new System.Drawing.Size(75, 19);
+            this.LiveStrong.Size = new System.Drawing.Size(75, 18);
             this.LiveStrong.TabIndex = 6;
             this.LiveStrong.CheckedChanged += new System.EventHandler(this.checkEdit1_CheckedChanged);
             // 
@@ -202,11 +196,29 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.INITextbox.TabIndex = 2;
             this.INITextbox.TextChanged += new System.EventHandler(this.INITextbox_TextChanged);
             // 
-            // iniEditor
+            // GridBackupFiles
+            // 
+            this.GridBackupFiles.Location = new System.Drawing.Point(12, 12);
+            this.GridBackupFiles.MainView = this.GridViewBackupFiles;
+            this.GridBackupFiles.Name = "GridBackupFiles";
+            this.GridBackupFiles.Size = new System.Drawing.Size(427, 329);
+            this.GridBackupFiles.TabIndex = 13;
+            this.GridBackupFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewBackupFiles});
+            // 
+            // GridViewBackupFiles
+            // 
+            this.GridViewBackupFiles.GridControl = this.GridBackupFiles;
+            this.GridViewBackupFiles.Name = "GridViewBackupFiles";
+            this.GridViewBackupFiles.OptionsView.ShowGroupPanel = false;
+            this.GridViewBackupFiles.OptionsView.ShowIndicator = false;
+            // 
+            // LaunchPluginsEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 467);
+            this.Controls.Add(this.GridBackupFiles);
             this.Controls.Add(this.comboBoxEdit2);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
@@ -219,15 +231,14 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.Controls.Add(this.Value);
             this.Controls.Add(this.INITextbox);
             this.Controls.Add(this.ReadButton);
-            this.Controls.Add(this.List);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.Image = global::ModioX.Properties.Resources.app_logo;
             this.MaximizeBox = false;
-            this.Name = "iniEditor";
+            this.MinimizeBox = false;
+            this.Name = "LaunchPluginsEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Xbox File Editor";
-            this.Load += new System.EventHandler(this.iniEditor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.List)).EndInit();
+            this.Text = "Launch Plugins Editor";
+            this.Load += new System.EventHandler(this.LaunchPluginsEditor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LiveBlock.Properties)).EndInit();
@@ -237,14 +248,14 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             ((System.ComponentModel.ISupportInitialize)(this.Settings.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Value.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.INITextbox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridBackupFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewBackupFiles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.ListBoxControl List;
         private DevExpress.XtraEditors.SimpleButton ReadButton;
         private DevExpress.XtraEditors.TextEdit INITextbox;
         private DevExpress.XtraEditors.TextEdit Value;
@@ -259,5 +270,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
+        private DevExpress.XtraGrid.GridControl GridBackupFiles;
+        private DevExpress.XtraGrid.Views.Grid.GridView GridViewBackupFiles;
     }
 }

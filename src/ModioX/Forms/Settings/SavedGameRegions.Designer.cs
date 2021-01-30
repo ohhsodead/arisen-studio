@@ -1,7 +1,7 @@
 ﻿using ModioX;
 namespace ModioX.Forms.Settings
 {
-    partial class GameRegionsDialog
+    partial class SavedGameRegions
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace ModioX.Forms.Settings
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameRegionsDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SavedGameRegions));
             this.ButtonSaveAll = new DevExpress.XtraEditors.SimpleButton();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();

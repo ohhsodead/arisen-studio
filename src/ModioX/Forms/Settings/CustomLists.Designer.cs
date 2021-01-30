@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Forms.Settings
 {
-    partial class CustomListsDialog
+    partial class CustomLists
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomListsDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomLists));
             this.GridCustomLists = new DevExpress.XtraGrid.GridControl();
             this.GridViewCustomLists = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();

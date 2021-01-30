@@ -130,14 +130,14 @@ namespace ModioX.Forms.Windows
 
             Text = $@"ModioX - {UpdateExtensions.CurrentVersionName}";
 
-#if DEBUG
-            Text += " - Welcome, Developer! (DEBUG)";
-            CurrentMD5 = ComputeHash(Application.ProductName + ".exe");
-#endif
-            if (ComputeHash(Application.ProductName + ".exe") != CurrentMD5)
-            {
-                Environment.Exit(0);
-            }
+//#if DEBUG
+//            Text += " - Welcome, Developer! (DEBUG)";
+//            CurrentMD5 = ComputeHash(Application.ProductName + ".exe");
+//#endif
+//            if (ComputeHash(Application.ProductName + ".exe") != CurrentMD5)
+//            {
+//                Environment.Exit(0);
+//            }
 
             LoadSettings();
             EnableConsoleActions();
@@ -317,7 +317,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonPS3FileManager_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogExtensions.ShowFileManagerPS3(this);
+            DialogExtensions.ShowFileManager(this);
         }
 
         private void ButtonPS3PackageManager_ItemClick(object sender, ItemClickEventArgs e)
@@ -327,7 +327,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonXboxFileManager_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogExtensions.ShowFileManagerXbox(this);
+            DialogExtensions.ShowFileManager(this);
         }
 
         private void ButtonXboxXBDM_XMessageboxUI_ItemClick(object sender, ItemClickEventArgs e)
@@ -1167,58 +1167,80 @@ namespace ModioX.Forms.Windows
                 }
                 else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
                 {
-                    if (ConsoleProfile.AutoDetectIPAddress)
-                    {
-                        try
-                        {
-                            if (XboxConsole.Connect(out XboxConsole))
-                            {
-                                XNotify.Show("You are now connected to ModioX ★");
-                            }
-                            else
-                            {
-                                if (XtraMessageBox.Show("Would you like to try again?", "Unable to Find Console", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
-                                {
-                                    XboxConsole.Connect(out XboxConsole);
-                                }
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            XtraMessageBox.Show("Unable to find console. Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
+                    //if (ConsoleProfile.AutoDetectIPAddress)
+                    //{
+                    //    try
+                    //    {
+                    //        if (XboxConsole.Connect(out XboxConsole))
+                    //        {
+                    //            XNotify.Show("You are now connected to ModioX ★");
+                    //        }
+                    //        else
+                    //        {
+                    //            if (XtraMessageBox.Show("Would you like to try again?", "Unable to Find Console", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
+                    //            {
+                    //                XboxConsole.Connect(out XboxConsole);
+                    //            }
+                    //        }
+                    //    }
+                    //    catch (Exception ex)
+                    //    {
+                    //        XtraMessageBox.Show("Unable to find console. Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //        return;
+                    //    }
 
-                        IsConsoleConnected = true;
-                        SetStatusConsole(new ConsoleProfile() { Name = XboxConsole.Name, Address = XboxConsole.IPAddress.ToString(), Port = 730, TypePrefix = ConsoleTypePrefix.XBOX });
-                        EnableConsoleActions();
-                        ButtonConnectToXBOX.Caption = "Disconnect from console...";
-                    }
-                    else
+                    //    IsConsoleConnected = true;
+                    //    SetStatusConsole(new ConsoleProfile() { Name = XboxConsole.Name, Address = XboxConsole.IPAddress.ToString(), Port = 730, TypePrefix = ConsoleTypePrefix.XBOX });
+                    //    EnableConsoleActions();
+                    //    ButtonConnectToXBOX.Caption = "Disconnect from console...";
+                    //}
+                    //else
+                    //{
+                    //    if (XboxConsole.Connect(out XboxConsole, ConsoleProfile.Address, ConsoleProfile.Port))
+                    //    {
+                    //        IsConsoleConnected = true;
+                    //        SetStatusConsole(ConsoleProfile);
+                    //        ButtonConnectToXBOX.Caption = "Disconnect from Console...";
+                    //    }
+                    //    else
+                    //    {
+                    //        SetStatus($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address}).");
+                    //        XtraMessageBox.Show($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address})", "Connection Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //        return;
+                    //    }
+                    //}
+
+                    using (FtpConnection ftpConnection = FtpConnection)
                     {
-                        if (XboxConsole.Connect(out XboxConsole, ConsoleProfile.Address, ConsoleProfile.Port))
-                        {
-                            IsConsoleConnected = true;
-                            SetStatusConsole(ConsoleProfile);
-                            ButtonConnectToXBOX.Caption = "Disconnect from Console...";
-                        }
-                        else
-                        {
-                            SetStatus($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address}).");
-                            XtraMessageBox.Show($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address})", "Connection Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
+                        ;
                     }
+
+                    FtpClient = new FtpClient
+                    {
+                        Host = ConsoleProfile.Address,
+                        Port = ConsoleProfile.Port,
+                        Credentials = ConsoleProfile.UseDefaultCredentials
+                        ? new NetworkCredential("anonymous", "anonymous")
+                        : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password)
+                    };
+
+                    FtpClient.Connect();
+
+                    IsConsoleConnected = true;
+                    SetStatusConsole(ConsoleProfile);
+
+                    ButtonConnectToXBOX.Caption = "Disconnect from Console...";
                 }
 
-                PanelButtonsMods.Visible = Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX;
-
                 SetStatus($"Successfully connected to console.");
+                XtraMessageBox.Show("Successfully connected to console.", "Success");
+
+                Mods = ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3 ? Database.ModsPS3 : Database.ModsXBOX;
+                PanelButtonsMods.Visible = ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
 
                 EnableConsoleActions();
                 LoadInstalledGameMods();
-
-                XtraMessageBox.Show("Successfully connected to console.", "Success");
+                LoadCategories();
             }
             catch (Exception ex)
             {
@@ -1506,9 +1528,8 @@ namespace ModioX.Forms.Windows
             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Preparing to install files...");
 
             // Check whether this mod is already installed
-            InstalledMod installedGameMod = Settings.InstalledGameMods.FirstOrDefault(gameMod =>
-                gameMod.CategoryId.Equals(modItem.GameId, StringComparison.OrdinalIgnoreCase) &&
-                gameMod.ModId.Equals(modItem.Id));
+            InstalledMod installedGameMod = Settings.InstalledGameMods.FirstOrDefault(gameMod => gameMod.CategoryId.Equals(modItem.GameId, StringComparison.OrdinalIgnoreCase) && gameMod.ModId.Equals(modItem.Id));
+
             if (installedGameMod != null)
             {
                 StringBuilder message = new StringBuilder("You have already installed ")
@@ -1522,266 +1543,278 @@ namespace ModioX.Forms.Windows
                 }
             }
 
-            // Checks whether a mod is already installed to the same game then uninstall it
-            InstalledMod modInstalled = Settings.GetInstalledGameMod(category.Id);
-
-            if (modInstalled != null)
+            if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
             {
-                ModItem currentModItem = Mods.GetModById(modInstalled.ModId);
+                // Checks whether a mod is already installed to the same game then uninstall it
+                InstalledMod modInstalled = Settings.GetInstalledGameMod(category.Id);
 
-                StringBuilder message = new StringBuilder($"'{currentModItem.Name} v{currentModItem.Version} ({currentModItem.Type})'")
-                    .AppendLine($" is currently installed to: {category.Title}\n")
-                    .Append("Multiple mods installed could possibly conflict with each other. Do you want to uninstall the current one?");
-
-                if (XtraMessageBox.Show(message.ToString(), "Mods Already Installed", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (modInstalled != null)
                 {
-                    UninstallMods(Mods.GetModById(modInstalled.ModId), modInstalled.Region);
+                    ModItem currentModItem = Mods.GetModById(modInstalled.ModId);
+
+                    StringBuilder message = new StringBuilder($"'{currentModItem.Name} v{currentModItem.Version} ({currentModItem.Type})'")
+                        .AppendLine($" is currently installed to: {category.Title}\n")
+                        .Append("Multiple mods installed could possibly conflict with each other. Do you want to uninstall the current one?");
+
+                    if (XtraMessageBox.Show(message.ToString(), "Mods Already Installed", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        UninstallMods(Mods.GetModById(modInstalled.ModId), modInstalled.Region);
+                    }
                 }
-            }
 
-            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Getting archive download link...");
-            DownloadFiles downloadFiles = modItem.GetDownloadFiles();
+                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Getting archive download link...");
+                DownloadFiles downloadFiles = modItem.GetDownloadFiles();
 
-            if (downloadFiles == null)
-            {
-                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No archive download selected. Installation cancelled.");
-                return;
-            }
-
-            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found archive download link.");
-
-            // Check whether mods are being installed to the firmware folder and let the user know if they want to cancel
-            if (downloadFiles.InstallsToRebugFolder)
-            {
-                StringBuilder message = new StringBuilder("Files are being installed to the firmware folder (dev_rebug), ")
-                        .Append("which is for REBUG Custom Firmware only.")
-                        .Append("It's recommended to create a backup of the entire ")
-                        .Append("folder before installing any files.")
-                        .Append("Also ensure that you're running Rebug custom firmware ")
-                        .Append("and that the REBUG TOOLBOX application is open before proceeding.")
-                        .AppendLine("Any missing or incorrect files in this folder ")
-                        .Append("can impact your console performance.")
-                        .AppendLine("If you have issues after rebooting console then you must enter ")
-                        .Append("recovery mode and reinstall your custom firmware. ")
-                        .Append("Only continue at your own risk and only if you know what you're doing.\n")
-                        .AppendLine("Do you want to install the files?");
-
-                if (XtraMessageBox.Show(message.ToString(), "Important Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                if (downloadFiles == null)
                 {
-                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installation cancelled.");
+                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No archive download selected. Installation cancelled.");
                     return;
                 }
-            }
 
-            try
-            {
-                // Check whether a game region must be provided to install
-                string gameRegion;
-                if (downloadFiles.RequiresGameRegion)
+                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found archive download link.");
+
+                // Check whether mods are being installed to the firmware folder and let the user know if they want to cancel
+                if (downloadFiles.InstallsToRebugFolder)
                 {
-                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching region...");
+                    StringBuilder message = new StringBuilder("Files are being installed to the firmware folder (dev_rebug), ")
+                            .Append("which is for REBUG Custom Firmware only.")
+                            .Append("It's recommended to create a backup of the entire ")
+                            .Append("folder before installing any files.")
+                            .Append("Also ensure that you're running Rebug custom firmware ")
+                            .Append("and that the REBUG TOOLBOX application is open before proceeding.")
+                            .AppendLine("Any missing or incorrect files in this folder ")
+                            .Append("can impact your console performance.")
+                            .AppendLine("If you have issues after rebooting console then you must enter ")
+                            .Append("recovery mode and reinstall your custom firmware. ")
+                            .Append("Only continue at your own risk and only if you know what you're doing.\n")
+                            .AppendLine("Do you want to install the files?");
 
-                    gameRegion = category.GetGameRegion(modItem.GameId);
-                    categoryTitle = $"{category.Title} ({gameRegion})";
-
-                    if (string.IsNullOrEmpty(gameRegion))
+                    if (XtraMessageBox.Show(message.ToString(), "Important Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                     {
-                        SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No region selected. Installation cancelled.");
+                        SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installation cancelled.");
                         return;
                     }
-
-                    if (!modItem.IsAnyRegion && !modItem.Region.Equals(gameRegion))
-                    {
-                        SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Region isn't supported. Installation cancelled.");
-                        return;
-                    }
-
-                    if (Settings.RememberGameRegions)
-                    {
-                        Settings.UpdateGameRegion(modItem.GameId, gameRegion);
-                    }
-
-                    // Check whether the game update for this region exists
-                    if (!FtpExtensions.GetFolderNames($"/dev_hdd0/game/").Contains(gameRegion))
-                    {
-                        XtraMessageBox.Show("Game update folder for this region cannot be found on your console.\nYou must install the correct update for this game or maybe you specified the wrong region.", "Can't Find Game Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        return;
-                    }
-
-                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found region.");
-                }
-                else
-                {
-                    gameRegion = string.Empty;
                 }
 
-                // Check whether a user id must be provided and prompts the user to choose one
-                string userId;
-                if (downloadFiles.RequiresUserId)
+                try
                 {
-                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching user id...");
-
-                    userId = FtpExtensions.GetUserId();
-                    categoryTitle = $"{category.Title} ({userId})";
-
-                    if (string.IsNullOrEmpty(userId))
+                    // Check whether a game region must be provided to install
+                    string gameRegion;
+                    if (downloadFiles.RequiresGameRegion)
                     {
-                        SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No user id selected. Installation cancelled.");
-                        return;
-                    }
+                        SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching region...");
 
-                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found user id.");
-                }
-                else
-                {
-                    userId = string.Empty;
-                }
+                        gameRegion = category.GetGameRegion(modItem.GameId);
+                        categoryTitle = $"{category.Title} ({gameRegion})";
 
-                // If it's a game save then alert the user that a USB device must be connected to console.
-                string usbDevice;
-                if (downloadFiles.RequiresUsbDevice)
-                {
-                    if (modItem.IsGameSave)
-                    {
-                        if (XtraMessageBox.Show("Before installing this game save you must have completed the following steps:\n- Insert your USB device to any port on the console.\n- Install the Apollo Tool PKG from the Homebrew Packages category on your console to unlock, patch and resign save-game files directly on your PS3."
-                                + "\nThis will only work if you have your USB device connected. Click 'Yes' if you have done this. Otherwise click 'No' and this game-save will not be installed.", "Installing Game Saves",
-                                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
-                            DialogResult.Yes)
+                        if (string.IsNullOrEmpty(gameRegion))
                         {
-                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching USB device...");
+                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No region selected. Installation cancelled.");
+                            return;
+                        }
 
-                            usbDevice = FtpExtensions.GetUsbPath();
-                            categoryTitle = $"{category.Title} ({usbDevice})";
+                        if (!modItem.IsAnyRegion && !modItem.Region.Equals(gameRegion))
+                        {
+                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Region isn't supported. Installation cancelled.");
+                            return;
+                        }
 
-                            if (string.IsNullOrEmpty(usbDevice))
+                        if (Settings.RememberGameRegions)
+                        {
+                            Settings.UpdateGameRegion(modItem.GameId, gameRegion);
+                        }
+
+                        // Check whether the game update for this region exists
+                        if (!FtpExtensions.GetFolderNames($"/dev_hdd0/game/").Contains(gameRegion))
+                        {
+                            XtraMessageBox.Show("Game update folder for this region cannot be found on your console.\nYou must install the correct update for this game or maybe you specified the wrong region.", "Can't Find Game Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+
+                        SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found region.");
+                    }
+                    else
+                    {
+                        gameRegion = string.Empty;
+                    }
+
+                    // Check whether a user id must be provided and prompts the user to choose one
+                    string userId;
+                    if (downloadFiles.RequiresUserId)
+                    {
+                        SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching user id...");
+
+                        userId = FtpExtensions.GetUserId();
+                        categoryTitle = $"{category.Title} ({userId})";
+
+                        if (string.IsNullOrEmpty(userId))
+                        {
+                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No user id selected. Installation cancelled.");
+                            return;
+                        }
+
+                        SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found user id.");
+                    }
+                    else
+                    {
+                        userId = string.Empty;
+                    }
+
+                    // If it's a game save then alert the user that a USB device must be connected to console.
+                    string usbDevice;
+                    if (downloadFiles.RequiresUsbDevice)
+                    {
+                        if (modItem.IsGameSave)
+                        {
+                            if (XtraMessageBox.Show("Before installing this game save you must have completed the following steps:\n- Insert your USB device to any port on the console.\n- Install the Apollo Tool PKG from the Homebrew Packages category on your console to unlock, patch and resign save-game files directly on your PS3."
+                                    + "\nThis will only work if you have your USB device connected. Click 'Yes' if you have done this. Otherwise click 'No' and this game-save will not be installed.", "Installing Game Saves",
+                                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
+                                DialogResult.Yes)
                             {
-                                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No USB device connected. Installation cancelled.");
+                                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching USB device...");
+
+                                usbDevice = FtpExtensions.GetUsbPath();
+                                categoryTitle = $"{category.Title} ({usbDevice})";
+
+                                if (string.IsNullOrEmpty(usbDevice))
+                                {
+                                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No USB device connected. Installation cancelled.");
+                                    return;
+                                }
+
+                                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found USB device.");
+                            }
+                            else
+                            {
+                                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installation cancelled.");
                                 return;
                             }
-
-                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found USB device.");
                         }
                         else
                         {
-                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installation cancelled.");
-                            return;
+                            if (XtraMessageBox.Show("One or more files needs to be installed at a USB device that is connected to your console. It could be required for the mods to work, such as a configuration or plugin file. I suggest you read the complete description for more details on this."
+                                    + "\nTo allow for these files to be installed, you must have a USB inserted before you continue. Would you like to proceed, click 'Yes' to continue. Otherwise click 'No' and all USB files will be ignored.", "Installing Files to USB",
+                                    MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                            {
+                                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching USB device...");
+
+                                usbDevice = FtpExtensions.GetUsbPath();
+                                categoryTitle = $"{category.Title} ({gameRegion})";
+
+                                if (string.IsNullOrEmpty(usbDevice))
+                                {
+                                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No USB device connected. Installation cancelled.");
+                                    return;
+                                }
+
+                                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found USB device.");
+                            }
+                            else
+                            {
+                                usbDevice = string.Empty;
+                            }
                         }
                     }
                     else
                     {
-                        if (XtraMessageBox.Show("One or more files needs to be installed at a USB device that is connected to your console. It could be required for the mods to work, such as a configuration or plugin file. I suggest you read the complete description for more details on this."
-                                + "\nTo allow for these files to be installed, you must have a USB inserted before you continue. Would you like to proceed, click 'Yes' to continue. Otherwise click 'No' and all USB files will be ignored.", "Installing Files to USB",
-                                MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                        {
-                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching USB device...");
-
-                            usbDevice = FtpExtensions.GetUsbPath();
-                            categoryTitle = $"{category.Title} ({gameRegion})";
-
-                            if (string.IsNullOrEmpty(usbDevice))
-                            {
-                                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No USB device connected. Installation cancelled.");
-                                return;
-                            }
-
-                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found USB device.");
-                        }
-                        else
-                        {
-                            usbDevice = string.Empty;
-                        }
+                        usbDevice = string.Empty;
                     }
-                }
-                else
-                {
-                    usbDevice = string.Empty;
-                }
 
-                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Downloading and extracting files archive...");
-                modItem.DownloadInstallFiles(downloadFiles);
-                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Downloaded and extracted files archive.");
+                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Downloading and extracting files archive...");
+                    modItem.DownloadInstallFiles(downloadFiles);
+                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Downloaded and extracted files archive.");
 
-                int indexFiles = 1;
-                int totalFiles = downloadFiles.InstallPaths.Count;
+                    int indexFiles = 1;
+                    int totalFiles = downloadFiles.InstallPaths.Count;
 
-                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Starting install...");
+                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Starting install...");
 
-                foreach (string installFilePath in downloadFiles.InstallPaths)
-                {
-                    // Install folders
-                    foreach (string localFolderPath in Directory.GetDirectories(modItem.DownloadDataDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
+                    foreach (string installFilePath in downloadFiles.InstallPaths)
                     {
-                        if (!Path.HasExtension(installFilePath))
+                        // Install folders
+                        foreach (string localFolderPath in Directory.GetDirectories(modItem.DownloadDataDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
                         {
-                            if (installFilePath.Contains(localFolderPath.Replace(modItem.DownloadDataDirectory(downloadFiles), string.Empty).Replace(@"\", "/")))
+                            if (!Path.HasExtension(installFilePath))
                             {
-                                if (!FtpClient.DirectoryExists(installFilePath))
+                                if (installFilePath.Contains(localFolderPath.Replace(modItem.DownloadDataDirectory(downloadFiles), string.Empty).Replace(@"\", "/")))
                                 {
-                                    SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Creating folder: {installFilePath}");
-
-                                    if (FtpExtensions.CreateDirectory(installFilePath))
+                                    if (!FtpClient.DirectoryExists(installFilePath))
                                     {
-                                        SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully created folder.");
+                                        SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Creating folder: {installFilePath}");
+
+                                        if (FtpExtensions.CreateDirectory(installFilePath))
+                                        {
+                                            SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully created folder.");
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
 
-                    // Install files
-                    foreach (string localFilePath in Directory.GetFiles(modItem.DownloadDataDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
-                    {
-                        string installFileName = Path.GetFileName(installFilePath);
-
-                        string installPath = installFilePath
-                            .Replace("{REGION}", gameRegion)
-                            .Replace("{USERID}", userId)
-                            .Replace("{USBDEV}", usbDevice);
-
-                        string parentDirectoryPath = Path.GetDirectoryName(installPath).Replace(@"\", "/");
-
-                        // Create parent directory if it doesn't exist on the console
-                        if (!FtpClient.DirectoryExists(parentDirectoryPath))
+                        // Install files
+                        foreach (string localFilePath in Directory.GetFiles(modItem.DownloadDataDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
                         {
-                            FtpExtensions.CreateDirectory(parentDirectoryPath);
-                        }
+                            string installFileName = Path.GetFileName(installFilePath);
 
-                        /*if (installPath.Contains("dev_hdd0/tmp/"))
-                        {
-                            // Create all the parent directories in the /tmp folder
-                            if (!FtpClient.DirectoryExists(installPathWithoutFileName))
+                            string installPath = installFilePath
+                                .Replace("{REGION}", gameRegion)
+                                .Replace("{USERID}", userId)
+                                .Replace("{USBDEV}", usbDevice);
+
+                            string parentDirectoryPath = Path.GetDirectoryName(installPath).Replace(@"\", "/");
+
+                            // Create parent directory if it doesn't exist on the console
+                            if (!FtpClient.DirectoryExists(parentDirectoryPath))
                             {
-                                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Creating directories: {installPathWithoutFileName}");
-                                FtpExtensions.CreateDirectories(installPathWithoutFileName);
-                                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully created directories.");
+                                FtpExtensions.CreateDirectory(parentDirectoryPath);
                             }
-                        }*/
 
-                        // Check whether install file matches the specified install file
-                        if (string.Equals(installFileName, Path.GetFileName(localFilePath), StringComparison.OrdinalIgnoreCase))
-                        {
-                            // Check whether this file is installed to a game folder
-                            if (installPath.Contains("dev_hdd0/game/"))
+                            /*if (installPath.Contains("dev_hdd0/tmp/"))
                             {
-                                // Get the backup details for this game file if one has been created
-                                BackupFile backupFile = Settings.GetGameFileBackup(modItem.GameId, installFileName, installPath);
-
-                                // A backup hasn't been created for this file, so it will be ignored and kept alone - in case issues occur with the game
-                                if (backupFile == null)
+                                // Create all the parent directories in the /tmp folder
+                                if (!FtpClient.DirectoryExists(installPathWithoutFileName))
                                 {
-                                    // Alert the user there is no backup for this file and ask the user if one would like to be created
-                                    if (XtraMessageBox.Show("Would you like to backup the current game file? This will be restored when you choose to uninstall.\n\nGame File Name: " +
-                                        Path.GetFileName(installFilePath), "Backup File", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                                    {
-                                        SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Creating backup of file: {installFileName}...");
-                                        Settings.CreateBackupFile(modItem, installFileName, installPath);
-                                        SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully created backup file.");
+                                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Creating directories: {installPathWithoutFileName}");
+                                    FtpExtensions.CreateDirectories(installPathWithoutFileName);
+                                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully created directories.");
+                                }
+                            }*/
 
-                                        SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                        FtpExtensions.UploadFile(localFilePath, installPath);
-                                        SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
-                                        indexFiles++;
+                            // Check whether install file matches the specified install file
+                            if (string.Equals(installFileName, Path.GetFileName(localFilePath), StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Check whether this file is installed to a game folder
+                                if (installPath.Contains("dev_hdd0/game/"))
+                                {
+                                    // Get the backup details for this game file if one has been created
+                                    BackupFile backupFile = Settings.GetGameFileBackup(modItem.GameId, installFileName, installPath);
+
+                                    // A backup hasn't been created for this file, so it will be ignored and kept alone - in case issues occur with the game
+                                    if (backupFile == null)
+                                    {
+                                        // Alert the user there is no backup for this file and ask the user if one would like to be created
+                                        if (XtraMessageBox.Show("Would you like to backup the current game file? This will be restored when you choose to uninstall.\n\nGame File Name: " +
+                                            Path.GetFileName(installFilePath), "Backup File", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                        {
+                                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Creating backup of file: {installFileName}...");
+                                            Settings.CreateBackupFile(modItem, installFileName, installPath);
+                                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully created backup file.");
+
+                                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
+                                            FtpExtensions.UploadFile(localFilePath, installPath);
+                                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
+                                            indexFiles++;
+                                        }
+                                        else
+                                        {
+                                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
+                                            FtpExtensions.UploadFile(localFilePath, installPath);
+                                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
+
+                                            indexFiles++;
+                                        }
                                     }
+                                    // Install the local file, like SPRX or key files
                                     else
                                     {
                                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
@@ -1791,7 +1824,19 @@ namespace ModioX.Forms.Windows
                                         indexFiles++;
                                     }
                                 }
-                                // Install the local file, like SPRX or key files
+                                // Check whether file is installed to a USB device
+                                else if (installFilePath.Contains("{USBDEV}"))
+                                {
+                                    if (!string.IsNullOrEmpty(usbDevice))
+                                    {
+                                        SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
+                                        FtpExtensions.UploadFile(localFilePath, installPath);
+                                        SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
+
+                                        indexFiles++;
+                                    }
+                                }
+                                // Otherwise, install the file as normal
                                 else
                                 {
                                     SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
@@ -1801,58 +1846,131 @@ namespace ModioX.Forms.Windows
                                     indexFiles++;
                                 }
                             }
-                            // Check whether file is installed to a USB device
-                            else if (installFilePath.Contains("{USBDEV}"))
-                            {
-                                if (!string.IsNullOrEmpty(usbDevice))
-                                {
-                                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                    FtpExtensions.UploadFile(localFilePath, installPath);
-                                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
 
-                                    indexFiles++;
+                            if (category.CategoryType == CategoryType.Homebrew)
+                            {
+                                Settings.UpdateInstalledPackageFile(modItem.Id, installFileName, modItem.Version, downloadFiles);
+                                SaveSettings();
+                            }
+                        }
+                    }
+
+                    // Update the installed game mods, if this isn't for a game save
+                    if (category.CategoryType == CategoryType.Game && !modItem.IsGameSave)
+                    {
+                        Settings.UpdateInstalledGameMod(category.Id, modItem.Id, gameRegion, indexFiles - 1, DateTime.Now, downloadFiles);
+                        SaveSettings();
+                        LoadInstalledGameMods();
+                    }
+
+                    if (IsWebManInstalled)
+                    {
+                        WebManExtensions.NotifyPopup(ConsoleProfile.Address, $"{categoryTitle}\nInstalled: {modItem.Name} ({indexFiles - 1} files)");
+                    }
+
+                    // Log status
+                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed {indexFiles - 1} files.");
+                    XtraMessageBox.Show($"Successfully installed {modItem.Name} ({indexFiles - 1} files){(category.CategoryType == CategoryType.Game ? $" for {categoryTitle}." : ".")}{(category.CategoryType == CategoryType.Game ? "\nReady to start game." : string.Empty)}", "Success");
+                }
+                catch (Exception ex)
+                {
+                    SetStatus($"Error installing files for {categoryTitle}: {modItem.Name} v{modItem.Version} (#{modItem.Id}) ({category.Id.ToUpper()}) - {ex.Message}", ex);
+                    XtraMessageBox.Show($"An error occurred installing files for {modItem.Name} (#{modItem.Id}). You can open an issue to help us fix this by navigating to 'Help > Report Bug' and attach the log.txt file, which can be found in the installation path." + "\nError Message: " + ex.Message, "Unable to Install Files", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+            {
+                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Getting archive download link...");
+                DownloadFiles downloadFiles = modItem.GetDownloadFiles();
+
+                if (downloadFiles == null)
+                {
+                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No archive download selected. Installation cancelled.");
+                    return;
+                }
+
+                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found archive download link.");
+
+                try
+                {
+                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Downloading and extracting files archive...");
+                    modItem.DownloadInstallFiles(downloadFiles);
+                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Downloaded and extracted files archive.");
+
+                    int indexFiles = 1;
+                    int totalFiles = downloadFiles.InstallPaths.Count;
+
+                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Starting install...");
+
+                    foreach (string installFilePath in downloadFiles.InstallPaths)
+                    {
+                        // Install folders
+                        foreach (string localFolderPath in Directory.GetDirectories(modItem.DownloadDataDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
+                        {
+                            if (!Path.HasExtension(installFilePath))
+                            {
+                                if (installFilePath.Contains(localFolderPath.Replace(modItem.DownloadDataDirectory(downloadFiles), string.Empty).Replace(@"\", "/")))
+                                {
+                                    if (!FtpClient.DirectoryExists(installFilePath))
+                                    {
+                                        SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Creating folder: {installFilePath}");
+
+                                        if (FtpExtensions.CreateDirectory(installFilePath))
+                                        {
+                                            SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully created folder.");
+                                        }
+                                    }
                                 }
                             }
-                            // Otherwise, install the file as normal
-                            else
+                        }
+
+                        // Install files
+                        foreach (string localFilePath in Directory.GetFiles(modItem.DownloadDataDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
+                        {
+                            string installFileName = Path.GetFileName(installFilePath);
+
+                            string parentDirectoryPath = Path.GetDirectoryName(installFilePath).Replace(@"\", "/");
+
+                            // Create parent directory if it doesn't exist on the console
+                            if (!FtpClient.DirectoryExists(parentDirectoryPath))
+                            {
+                                FtpExtensions.CreateDirectory(parentDirectoryPath);
+                            }
+
+                            // Check whether install file matches the specified install file
+                            if (string.Equals(installFileName, Path.GetFileName(localFilePath), StringComparison.OrdinalIgnoreCase))
                             {
                                 SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                FtpExtensions.UploadFile(localFilePath, installPath);
+                                FtpExtensions.UploadFile(localFilePath, installFilePath);
                                 SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
 
                                 indexFiles++;
                             }
                         }
-
-                        if (category.CategoryType == CategoryType.Homebrew)
-                        {
-                            Settings.UpdateInstalledPackageFile(modItem.Id, installFileName, modItem.Version, downloadFiles);
-                            SaveSettings();
-                        }
                     }
-                }
 
-                // Update the installed game mods, if this isn't for a game save
-                if (category.CategoryType == CategoryType.Game && !modItem.IsGameSave)
+                    // Update the installed game mods, if this isn't for a game save
+                    if (category.CategoryType == CategoryType.Game)
+                    {
+                        Settings.UpdateInstalledGameMod(category.Id, modItem.Id, "", indexFiles - 1, DateTime.Now, downloadFiles);
+                        SaveSettings();
+                        LoadInstalledGameMods();
+                    }
+
+                    // Log status
+                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed {indexFiles - 1} files.");
+                    XtraMessageBox.Show($"Successfully installed {modItem.Name} ({indexFiles - 1} files){(category.CategoryType == CategoryType.Game ? $" for {categoryTitle}." : ".")}{(category.CategoryType == CategoryType.Game ? "\nReady to start game." : string.Empty)}", "Success");
+                }
+                catch (WebException ex)
                 {
-                    Settings.UpdateInstalledGameMod(category.Id, modItem.Id, gameRegion, indexFiles - 1, DateTime.Now, downloadFiles);
-                    SaveSettings();
-                    LoadInstalledGameMods();
+                    SetStatus($"Error installing files for {categoryTitle}: {modItem.Name} v{modItem.Version} (#{modItem.Id}) ({category.Id.ToUpper()}) - {ex.Message}", ex);
+                    XtraMessageBox.Show($"An error occurred installing files for {modItem.Name} (#{modItem.Id}). You can open an issue to help us fix this by navigating to 'Help > Report Bug' and attaching the log.txt file located in the installation path." + "\n\nError Message: " + ex.Message, "Unable to Install Files", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                if (IsWebManInstalled)
+                catch (Exception ex)
                 {
-                    WebManExtensions.NotifyPopup(ConsoleProfile.Address, $"{categoryTitle}\nInstalled: {modItem.Name} ({indexFiles - 1} files)");
+                    SetStatus($"Error installing files for {categoryTitle}: {modItem.Name} v{modItem.Version} (#{modItem.Id}) ({category.Id.ToUpper()}) - {ex.Message}", ex);
+                    XtraMessageBox.Show($"An error occurred installing files for {modItem.Name} (#{modItem.Id}). You can open an issue to help us fix this by navigating to 'Help > Report Bug' and attaching the log.txt file located in the installation path." + "\n\nError Message: " + ex.Message, "Unable to Install Files", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                // Log status
-                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed {indexFiles - 1} files.");
-                XtraMessageBox.Show($"Successfully installed {modItem.Name} ({indexFiles - 1} files){(category.CategoryType == CategoryType.Game ? $" for {categoryTitle}." : ".")}{(category.CategoryType == CategoryType.Game ? "\nReady to start game." : string.Empty)}", "Success");
-            }
-            catch (Exception ex)
-            {
-                SetStatus($"Error installing files for {categoryTitle}: {modItem.Name} v{modItem.Version} (#{modItem.Id}) ({category.Id.ToUpper()}) - {ex.Message}", ex);
-                XtraMessageBox.Show($"An error occurred installing files for {modItem.Name} (#{modItem.Id}). You can open an issue to help us fix this by navigating to 'Help > Report Bug' and attach the log.txt file, which can be found in the installation path." + "\nError Message: " + ex.Message, "Unable to Install Files", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

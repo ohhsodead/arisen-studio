@@ -79,12 +79,6 @@ namespace ModioX.Extensions
             return newConnectionDialog.ShowDialog(owner) == DialogResult.OK ? newConnectionDialog.ConsoleProfile : null;
         }
 
-        public static void ShowAboutWindow(Form owner)
-        {
-            using AboutDialog aboutDialog = new AboutDialog();
-            aboutDialog.ShowDialog(owner);
-        }
-
         public static string ShowFolderBrowseDialog(Form owner, string description)
         {
             using FolderBrowserDialog folderBrowser = new FolderBrowserDialog { Description = description, ShowNewFolderButton = true };
@@ -97,24 +91,24 @@ namespace ModioX.Extensions
             return openFileDialog.ShowDialog(owner) == DialogResult.OK ? openFileDialog.FileName : null;
         }
 
+        public static void ShowFileManager(Form owner)
+        {
+            using Forms.Windows.FileManagerWindow fileManagerWindow = new Forms.Windows.FileManagerWindow();
+            fileManagerWindow.ShowDialog(owner);
+        }
+
         #region PS3 Tools
 
         public static void ShowGameBackupFiles(Form owner)
         {
-            using GameBackupFilesWindow gameBackupFilesWindow = new GameBackupFilesWindow();
+            using BackupFiles gameBackupFilesWindow = new BackupFiles();
             gameBackupFilesWindow.ShowDialog(owner);
         }
 
         public static void ShowGameUpdatesFinderDialog(Form owner)
         {
-            using GameUpdatesWindow gameUpdatesDialog = new GameUpdatesWindow();
+            using GameUpdatesFinder gameUpdatesDialog = new GameUpdatesFinder();
             gameUpdatesDialog.ShowDialog(owner);
-        }
-
-        public static void ShowFileManagerPS3(Form owner)
-        {
-            using Forms.Tools.PS3_Tools.FileManagerWindow fileManagerWindow = new Forms.Tools.PS3_Tools.FileManagerWindow();
-            fileManagerWindow.ShowDialog(owner);
         }
 
         public static void ShowPackageManagerWindow(Form owner)
@@ -127,16 +121,10 @@ namespace ModioX.Extensions
 
         #region Xbox Tools
 
-        public static void ShowFileManagerXbox(Form owner)
+        public static void ShowLaunchPluginsEditor(Form owner)
         {
-            using Forms.Tools.XBOX_Tools.FileManagerWindow fileManagerWindow = new Forms.Tools.XBOX_Tools.FileManagerWindow();
-            fileManagerWindow.ShowDialog(owner);
-        }
-
-        public static void ShowIniEditorXbox(Form owner)
-        {
-            using iniEditor iniEditorWindow = new iniEditor();
-            iniEditorWindow.ShowDialog(owner);
+            using LaunchPluginsEditor launchPluginsEditor = new LaunchPluginsEditor();
+            launchPluginsEditor.ShowDialog(owner);
         }
 
         public static void ShowMemoryViewer(Form owner, string gameTitle)
@@ -157,23 +145,29 @@ namespace ModioX.Extensions
 
         public static void ShowGameRegionsDialog(Form owner)
         {
-            using GameRegionsDialog gameRegions = new GameRegionsDialog();
+            using SavedGameRegions gameRegions = new SavedGameRegions();
             gameRegions.ShowDialog(owner);
         }
 
         public static void ShowExternalApplicationsDialog(Form owner)
         {
-            using ExternalApplicationsDialog externalApplications = new ExternalApplicationsDialog();
+            using ExternalApplications externalApplications = new ExternalApplications();
             externalApplications.ShowDialog(owner);
         }
 
         public static void ShowCustomListsDialog(Form owner)
         {
-            using CustomListsDialog customListsDialog = new CustomListsDialog();
+            using CustomLists customListsDialog = new CustomLists();
             customListsDialog.ShowDialog(owner);
         }
 
         #endregion
+
+        public static void ShowAboutWindow(Form owner)
+        {
+            using AboutDialog aboutDialog = new AboutDialog();
+            aboutDialog.ShowDialog(owner);
+        }
 
         public static DialogResult ShowCustomXboxDialog(Form owner, string title, string body, XMessageboxUI.ButtonOptions buttons)
         {

@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace ModioX.Forms.Settings
 {
-    public partial class GameRegionsDialog : XtraForm
+    public partial class SavedGameRegions : XtraForm
     {
-        public GameRegionsDialog()
+        public SavedGameRegions()
         {
             InitializeComponent();
         }

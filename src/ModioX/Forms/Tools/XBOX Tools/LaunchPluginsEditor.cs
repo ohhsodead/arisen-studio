@@ -9,24 +9,24 @@ using XDevkit;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
-    public partial class iniEditor : XtraForm
+    public partial class LaunchPluginsEditor : XtraForm
     {
         /// <summary>
-        /// Creates an TCP connection for use with uploading mods, uploading files.
+        /// Get the xbox console connection.
         /// </summary>
         public static Xbox XboxConsole { get; } = MainWindow.XboxConsole;
 
-        private bool bool_0 { get; set; } = false;
-        private bool bool_1 { get; set; } = false;
-        private bool bool_2 { get; set; } = false;
-        private bool Bool_3 { get; set; } = false;
+        /// <summary>
+        /// Get the launch.ini file path located from the console internal hard drive.
+        /// </summary>
+        private static string LaunchFilePath { get; } = "/Hdd1/launch.ini";
 
-        public iniEditor()
+        public LaunchPluginsEditor()
         {
             InitializeComponent();
         }
 
-        private void iniEditor_Load(object sender, EventArgs e)
+        private void LaunchPluginsEditor_Load(object sender, EventArgs e)
         {
             comboBoxEdit2.Properties.Items.Clear();
 
@@ -53,10 +53,10 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 try
                 {
                     XboxConsole.File.ReceiveFile(AppDomain.CurrentDomain.BaseDirectory + @"\launch.ini", comboBoxEdit2.Text + "launch.ini");
-                    List.Items.Clear();
+                    ListBoxLaunchFile.Items.Clear();
                     foreach (SectionData data in parser.ReadFile(AppDomain.CurrentDomain.BaseDirectory + @"\launch.ini").Sections)
                     {
-                        List.Items.Add("------------------[" + data.SectionName + "]------------------");
+                        ListBoxLaunchFile.Items.Add("------------------[" + data.SectionName + "]------------------");
                         foreach (KeyData data2 in data.Keys)
                         {
                             if ((data2.KeyName.ToLower() == "livestrong") && (data2.Value.ToLower() == "true"))
@@ -69,7 +69,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                                 LiveBlock.Checked = true;
                                 bool_1 = true;
                             }
-                            List.Items.Add(data2.KeyName + " = " + data2.Value);
+                            ListBoxLaunchFile.Items.Add(data2.KeyName + " = " + data2.Value);
                         }
                     }
                     Bool_3 = true;
@@ -90,17 +90,17 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             try
             {
-                for (int i = 0; i < List.Items.Count; i++)
+                for (int i = 0; i < ListBoxLaunchFile.Items.Count; i++)
                 {
-                    if (List.Items[i].ToString().Contains("------------------"))
+                    if (ListBoxLaunchFile.Items[i].ToString().Contains("------------------"))
                     {
-                        string item = List.Items[i].ToString().Replace("------------------", string.Empty);
-                        List.Items.RemoveAt(i);
-                        List.Items.Insert(i, item);
+                        string item = ListBoxLaunchFile.Items[i].ToString().Replace("------------------", string.Empty);
+                        ListBoxLaunchFile.Items.RemoveAt(i);
+                        ListBoxLaunchFile.Items.Insert(i, item);
                     }
                 }
                 StreamWriter writer = new StreamWriter("launch.ini");
-                foreach (object obj2 in List.Items)
+                foreach (object obj2 in ListBoxLaunchFile.Items)
                 {
                     if (!obj2.ToString().ToLower().Contains("livestrong"))
                     {
@@ -144,8 +144,8 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            int index = List.Items.IndexOf("------------------[" + PathsCombo.Text + "]------------------") + 1;
-            List.Items.Insert(index, Settings.Text + " = " + Value.Text);
+            int index = ListBoxLaunchFile.Items.IndexOf("------------------[" + PathsCombo.Text + "]------------------") + 1;
+            ListBoxLaunchFile.Items.Insert(index, Settings.Text + " = " + Value.Text);
         }
 
         private void checkEdit1_CheckedChanged(object sender, EventArgs e)
@@ -184,14 +184,14 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             if (Bool_3)
             {
-                INITextbox.Text = List.Items[List.SelectedIndex].ToString();
+                INITextbox.Text = ListBoxLaunchFile.Items[ListBoxLaunchFile.SelectedIndex].ToString();
 
             }
         }
 
         private void INITextbox_TextChanged(object sender, EventArgs e)
         {
-            List.Items[List.SelectedIndex] = INITextbox.Text;
+            ListBoxLaunchFile.Items[ListBoxLaunchFile.SelectedIndex] = INITextbox.Text;
         }
     }
 }

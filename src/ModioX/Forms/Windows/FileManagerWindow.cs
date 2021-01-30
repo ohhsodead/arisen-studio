@@ -1,11 +1,12 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using FluentFTP;
 using Microsoft.VisualBasic.FileIO;
 using ModioX.Extensions;
-using ModioX.Forms.Windows;
 using ModioX.Io;
 using ModioX.Models.Resources;
+using ModioX.Net;
 using ModioX.Properties;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,12 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Net.Sockets;
 using System.Windows.Forms;
-using XDevkit;
+using FtpException = FluentFTP.FtpException;
+using FtpExtensions = ModioX.Extensions.FtpExtensions;
 using StringExtensions = ModioX.Extensions.StringExtensions;
 
-namespace ModioX.Forms.Tools.XBOX_Tools
+namespace ModioX.Forms.Windows
 {
     public partial class FileManagerWindow : XtraForm
     {
@@ -31,12 +32,17 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         /// <summary>
         /// Get the FTP connection for use with uploading mods, not reliable for uploading files.
         /// </summary>
-        public static Xbox Xbox { get; } = MainWindow.XboxConsole;
+        public static FtpConnection FtpConnection { get; } = MainWindow.FtpConnection;
+
+        /// <summary>
+        /// Get the FtpClient for getting directory listings and some other commands.
+        /// </summary>
+        public static FtpClient FtpClient { get; } = MainWindow.FtpClient;
 
         /// <summary>
         /// Get/set the current local directory path.
         /// </summary>
-        public string DirectoryPathLocal { get; set; } = @"Hdd:\";
+        public string DirectoryPathLocal { get; set; } = "/dev_hdd0/";
 
         /// <summary>
         /// Gets/set the current console directory path.
@@ -73,13 +79,13 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
             if (Settings.SaveLocalPath)
             {
-                if (Settings.LocalPathXBOX.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathXBOX))
+                if (Settings.LocalPathPS3.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathPS3))
                 {
                     LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents) + @"\");
                 }
                 else
                 {
-                    LoadLocalDirectory(Settings.LocalPathXBOX);
+                    LoadLocalDirectory(Settings.LocalPathPS3);
                 }
             }
             else
@@ -92,12 +98,12 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             if (!string.IsNullOrWhiteSpace(TextBoxLocalPath.Text))
             {
-                Settings.LocalPathXBOX = TextBoxLocalPath.Text;
+                Settings.LocalPathPS3 = TextBoxLocalPath.Text;
             }
 
             if (!string.IsNullOrWhiteSpace(TextBoxConsolePath.Text))
             {
-                Settings.ConsolePathXBOX = TextBoxConsolePath.Text;
+                Settings.ConsolePathPS3 = TextBoxConsolePath.Text;
             }
         }
 
@@ -105,26 +111,25 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             SetStatus("Fetching root directories...");
 
-            // Get Xbox Drives
-            //foreach (string driveName in Xbox.GetFolderNames("/").ToArray())
-            //{
-            //    ComboBoxConsoleDrives.Properties.Items.Add(driveName.Replace(@"/", ""));
-            //}
+            foreach (string driveName in FtpExtensions.GetFolderNames("/").ToArray())
+            {
+                ComboBoxConsoleDrives.Properties.Items.Add(driveName.Replace(@"/", ""));
+            }
 
             if (Settings.SaveConsolePath)
             {
-                if (Settings.ConsolePathXBOX.Equals(@"/") || string.IsNullOrEmpty(Settings.ConsolePathXBOX))
+                if (Settings.ConsolePathPS3.Equals(@"/") || string.IsNullOrEmpty(Settings.ConsolePathPS3))
                 {
-                    LoadConsoleDirectory(@"Hdd:\");
+                    LoadConsoleDirectory("/dev_hdd0/");
                 }
                 else
                 {
-                    LoadConsoleDirectory(Settings.ConsolePathXBOX);
+                    LoadConsoleDirectory(Settings.ConsolePathPS3);
                 }
             }
             else
             {
-                LoadConsoleDirectory(@"Hdd:\");
+                LoadConsoleDirectory("/dev_hdd0/");
             }
 
             WaitLoadConsole.Enabled = false;
@@ -294,17 +299,17 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                     string localPath = TextBoxLocalPath.Text + name;
                     string consolePath = TextBoxConsolePath.Text + name;
 
-                    //if (File.Exists(localPath))
-                    //{
-                    //    SetStatus($"Uploading file to {consolePath}...");
-                    //    FtpExtensions.UploadFile(localPath, consolePath);
-                    //    SetStatus($"Successfully uploaded file: {Path.GetFileName(localPath)}");
-                    //    LoadConsoleDirectory(DirectoryPathConsole);
-                    //}
-                    //else
-                    //{
-                    //    SetStatus("Unable to upload file as it doesn't exist on your computer.");
-                    //}
+                    if (File.Exists(localPath))
+                    {
+                        SetStatus($"Uploading file to {consolePath}...");
+                        FtpExtensions.UploadFile(localPath, consolePath);
+                        SetStatus($"Successfully uploaded file: {Path.GetFileName(localPath)}");
+                        LoadConsoleDirectory(DirectoryPathConsole);
+                    }
+                    else
+                    {
+                        SetStatus("Unable to upload file as it doesn't exist on your computer.");
+                    }
                 }
                 else if (type.Equals("folder"))
                 {
@@ -632,110 +637,111 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             try
             {
-                //GridConsoleFiles.DataSource = null;
+                GridConsoleFiles.DataSource = null;
 
-                //DataTable consoleFiles = DataExtensions.CreateDataTable(
-                //    new List<DataColumn>
-                //    {
-                //        new DataColumn() { Caption = "Type", ColumnName = "Type", DataType = typeof(string) },
-                //        new DataColumn() { Caption = "Image", ColumnName = "Image", DataType = typeof(Image) },
-                //        new DataColumn() { Caption = "Name", ColumnName = "Name", DataType = typeof(string) },
-                //        new DataColumn() { Caption = "Size", ColumnName = "Size", DataType = typeof(string) },
-                //        new DataColumn() { Caption = "Last Modified", ColumnName = "Last Modified", DataType = typeof(string) }
-                //    });
+                DataTable consoleFiles = DataExtensions.CreateDataTable(
+                    new List<DataColumn>
+                    {
+                        new DataColumn() { Caption = "Type", ColumnName = "Type", DataType = typeof(string) },
+                        new DataColumn() { Caption = "Image", ColumnName = "Image", DataType = typeof(Image) },
+                        new DataColumn() { Caption = "Name", ColumnName = "Name", DataType = typeof(string) },
+                        new DataColumn() { Caption = "Size", ColumnName = "Size", DataType = typeof(string) },
+                        new DataColumn() { Caption = "Last Modified", ColumnName = "Last Modified", DataType = typeof(string) }
+                    });
 
-                //DirectoryPathConsole = directoryPath.Replace("//", "/");
-                //TextBoxConsolePath.Text = DirectoryPathConsole;
+                DirectoryPathConsole = directoryPath.Replace("//", "/");
+                TextBoxConsolePath.Text = DirectoryPathConsole;
 
-                //SetStatus($"Fetching directory listing of '{DirectoryPathConsole}'...");
+                SetStatus($"Fetching directory listing of '{DirectoryPathConsole}'...");
 
-                //int secondIndexOfSlash = DirectoryPathConsole.TrimStart('/').IndexOfNth("/");
-                //string rootPath = DirectoryPathConsole.Substring(1, secondIndexOfSlash);
+                int secondIndexOfSlash = DirectoryPathConsole.TrimStart('/').IndexOfNth("/");
+                string rootPath = DirectoryPathConsole.Substring(1, secondIndexOfSlash);
 
-                //ComboBoxConsoleDrives.SelectedIndexChanged -= ComboBoxConsoleDrives_SelectedIndexChanged;
-                //ComboBoxConsoleDrives.SelectedItem = rootPath;
-                //ComboBoxConsoleDrives.SelectedIndexChanged += ComboBoxConsoleDrives_SelectedIndexChanged;
+                ComboBoxConsoleDrives.SelectedIndexChanged -= ComboBoxConsoleDrives_SelectedIndexChanged;
+                ComboBoxConsoleDrives.SelectedItem = rootPath;
+                ComboBoxConsoleDrives.SelectedIndexChanged += ComboBoxConsoleDrives_SelectedIndexChanged;
 
-                //bool isRoot = ComboBoxConsoleDrives.Properties.Items.Contains(DirectoryPathConsole.Replace("/", ""));
+                bool isRoot = ComboBoxConsoleDrives.Properties.Items.Contains(DirectoryPathConsole.Replace("/", ""));
 
-                //if (!isRoot)
-                //{
-                //    consoleFiles.Rows.Add("folder", ImageFolder, "..", "<DIRECTORY>", DateTime.MinValue);
-                //}
+                if (!isRoot)
+                {
+                    consoleFiles.Rows.Add("folder", ImageFolder, "..", "<DIRECTORY>", DateTime.MinValue);
+                }
 
-                //FtpClient.SetWorkingDirectory(DirectoryPathConsole);
+                FtpClient.SetWorkingDirectory(DirectoryPathConsole);
 
-                //List<FtpListItem> folders = new List<FtpListItem>();
-                //List<FtpListItem> files = new List<FtpListItem>();
+                List<FtpListItem> folders = new List<FtpListItem>();
+                List<FtpListItem> files = new List<FtpListItem>();
 
-                //long totalBytes = 0;
+                long totalBytes = 0;
 
-                //foreach (FtpListItem listItem in FtpClient.GetListing(DirectoryPathConsole))
-                //{
-                //    switch (listItem.Type)
-                //    {
-                //        case FtpFileSystemObjectType.Directory:
-                //            folders.Add(listItem);
-                //            break;
+                foreach (FtpListItem listItem in FtpClient.GetListing(DirectoryPathConsole))
+                {
+                    switch (listItem.Type)
+                    {
+                        case FtpFileSystemObjectType.Directory:
+                            folders.Add(listItem);
+                            break;
 
-                //        case FtpFileSystemObjectType.File:
-                //            files.Add(listItem);
-                //            break;
+                        case FtpFileSystemObjectType.File:
+                            files.Add(listItem);
+                            break;
 
-                //        case FtpFileSystemObjectType.Link:
-                //            break;
-                //    }
-                //}
+                        case FtpFileSystemObjectType.Link:
+                            break;
+                    }
+                }
 
-                //foreach (FtpListItem listItem in folders.OrderBy(x => x.Name))
-                //{
-                //    if (DirectoryPathConsole == "/dev_hdd0/home/")
-                //    {
-                //        string profileName = FtpExtensions.GetUserNameFromUserId(listItem.Name);
-                //        consoleFiles.Rows.Add("folder", ImageFolder, $"{listItem.Name} ({profileName})", "<PROFILE>", listItem.Modified);
-                //    }
-                //    else if (DirectoryPathConsole == "/dev_hdd0/game/")
-                //    {
-                //        string gameTitle = Settings.AutoDetectGameTitles ? $" ({HttpExtensions.GetGameTitleFromTitleID(listItem.Name)})" : "";
-                //        consoleFiles.Rows.Add("folder", ImageFolder, $"{listItem.Name}{gameTitle}", "<GAMEUPDATE>", listItem.Modified);
-                //    }
-                //    else
-                //    {
-                //        consoleFiles.Rows.Add("folder", ImageFolder, listItem.Name, "<DIRECTORY>", listItem.Modified);
-                //    }
-                //}
+                foreach (FtpListItem listItem in folders.OrderBy(x => x.Name))
+                {
+                    if (DirectoryPathConsole == "/dev_hdd0/home/")
+                    {
+                        string profileName = FtpExtensions.GetUserNameFromUserId(listItem.Name);
+                        consoleFiles.Rows.Add("folder", ImageFolder, $"{listItem.Name} ({profileName})", "<PROFILE>", listItem.Modified);
+                    }
+                    else if (DirectoryPathConsole == "/dev_hdd0/game/")
+                    {
+                        string gameTitle = Settings.AutoDetectGameTitles ? $" ({HttpExtensions.GetGameTitleFromTitleID(listItem.Name)})" : "";
+                        consoleFiles.Rows.Add("folder", ImageFolder, $"{listItem.Name}{gameTitle}", "<GAMEUPDATE>", listItem.Modified);
+                    }
+                    else
+                    {
+                        consoleFiles.Rows.Add("folder", ImageFolder, listItem.Name, "<DIRECTORY>", listItem.Modified);
+                    }
+                }
 
-                //foreach (FtpListItem listItem in files.OrderBy(x => x.Name))
-                //{
-                //    consoleFiles.Rows.Add("file", ImageFile, listItem.Name, Settings.ShowFileSizeInBytes ? listItem.Size.ToString("#,0") + " bytes" : StringExtensions.FormatSize(listItem.Size.ToString()), listItem.Modified);
-                //    totalBytes += listItem.Size;
-                //}
+                foreach (FtpListItem listItem in files.OrderBy(x => x.Name))
+                {
+                    consoleFiles.Rows.Add("file", ImageFile, listItem.Name, Settings.ShowFileSizeInBytes ? listItem.Size.ToString("#,0") + " bytes" : StringExtensions.FormatSize(listItem.Size.ToString()), listItem.Modified);
+                    totalBytes += listItem.Size;
+                }
 
-                //string statusFiles = files.Count > 0 ? $"{files.Count} {(files.Count == 1 ? "file" : "files")} {(files.Count > 0 && folders.Count > 0 ? "and " : "")}" : "" + $"{(folders.Count == 0 ? "." : "")}";
-                //string statusFolders = folders.Count > 0 ? $"{folders.Count} {(folders.Count == 1 ? "directory" : "directories")}. " : "";
-                //string statusTotalBytes = totalBytes > 0 ? $"Total size: {(Settings.ShowFileSizeInBytes ? totalBytes.ToString("#,0") + " bytes" : StringExtensions.FormatSize(totalBytes.ToString()))}" : "";
 
-                //if (files.Count < 1 && folders.Count < 1)
-                //{
-                //    SetConsoleStatus("Empty directory.");
-                //}
-                //else
-                //{
-                //    SetConsoleStatus($"{statusFiles}{statusFolders}{statusTotalBytes}");
-                //}
+                string statusFiles = files.Count > 0 ? $"{files.Count} {(files.Count == 1 ? "file" : "files")} {(files.Count > 0 && folders.Count > 0 ? "and " : "")}" : "" + $"{(folders.Count == 0 ? "." : "")}";
+                string statusFolders = folders.Count > 0 ? $"{folders.Count} {(folders.Count == 1 ? "directory" : "directories")}. " : "";
+                string statusTotalBytes = totalBytes > 0 ? $"Total size: {(Settings.ShowFileSizeInBytes ? totalBytes.ToString("#,0") + " bytes" : StringExtensions.FormatSize(totalBytes.ToString()))}" : "";
 
-                //GridConsoleFiles.DataSource = consoleFiles;
+                if (files.Count < 1 && folders.Count < 1)
+                {
+                    SetConsoleStatus("Empty directory.");
+                }
+                else
+                {
+                    SetConsoleStatus($"{statusFiles}{statusFolders}{statusTotalBytes}");
+                }
 
-                //GridViewConsoleFiles.Columns[0].Visible = false;
-                //GridViewConsoleFiles.Columns[1].Caption = " ";
-                //GridViewConsoleFiles.Columns[1].Width = 8;
-                //GridViewConsoleFiles.Columns[2].Width = 300;
-                //GridViewConsoleFiles.Columns[3].Width = 100;
-                //GridViewConsoleFiles.Columns[4].Width = 100;
+                GridConsoleFiles.DataSource = consoleFiles;
 
-                //SetStatus($"Successfully fetched directory listing.");
+                GridViewConsoleFiles.Columns[0].Visible = false;
+                GridViewConsoleFiles.Columns[1].Caption = " ";
+                GridViewConsoleFiles.Columns[1].Width = 8;
+                GridViewConsoleFiles.Columns[2].Width = 300;
+                GridViewConsoleFiles.Columns[3].Width = 100;
+                GridViewConsoleFiles.Columns[4].Width = 100;
+
+                SetStatus($"Successfully fetched directory listing.");
             }
-            catch (SocketException ex)
+            catch (FtpException ex)
             {
                 SetStatus($"Error fetching directory listing for path: {DirectoryPathConsole}", ex);
             }
@@ -754,17 +760,17 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                 if (type.Equals("file"))
                 {
-                    //string consoleFile = DirectoryPathConsole + name;
-                    //string localFile = DirectoryPathLocal + name;
+                    string consoleFile = DirectoryPathConsole + name;
+                    string localFile = DirectoryPathLocal + name;
 
-                    //if (File.Exists(localFile))
-                    //{
-                    //    File.Delete(localFile);
-                    //}
+                    if (File.Exists(localFile))
+                    {
+                        File.Delete(localFile);
+                    }
 
-                    //SetStatus($"Downloading file: {Path.GetFileName(localFile)}");
-                    //FtpExtensions.DownloadFile(localFile, consoleFile);
-                    //SetStatus($"Successfully downloaded file: {Path.GetFileName(localFile)}");
+                    SetStatus($"Downloading file: {Path.GetFileName(localFile)}");
+                    FtpExtensions.DownloadFile(localFile, consoleFile);
+                    SetStatus($"Successfully downloaded file: {Path.GetFileName(localFile)}");
                 }
                 else if (type.Equals("folder"))
                 {
@@ -801,23 +807,23 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                     string itemPath = DirectoryPathConsole + name;
 
-                    //if (type.Equals("folder"))
-                    //{
-                    //    if (DirectoryPathConsole == "/dev_hdd0/home/")
-                    //    {
-                    //        itemPath = DirectoryPathConsole + name.Split()[0];
-                    //    }
+                    if (type.Equals("folder"))
+                    {
+                        if (DirectoryPathConsole == "/dev_hdd0/home/")
+                        {
+                            itemPath = DirectoryPathConsole + name.Split()[0];
+                        }
 
-                    //    SetStatus($"Deleting folder: {itemPath}");
-                    //    FtpExtensions.DeleteDirectory(FtpClient, itemPath);
-                    //    SetStatus("Successfully deleted folder.");
-                    //}
-                    //else if (type.Equals("file"))
-                    //{
-                    //    SetStatus($"Deleting file: {itemPath}");
-                    //    FtpExtensions.DeleteFile(FtpClient, itemPath);
-                    //    SetStatus("Successfully deleted file.");
-                    //}
+                        SetStatus($"Deleting folder: {itemPath}");
+                        FtpExtensions.DeleteDirectory(FtpClient, itemPath);
+                        SetStatus("Successfully deleted folder.");
+                    }
+                    else if (type.Equals("file"))
+                    {
+                        SetStatus($"Deleting file: {itemPath}");
+                        FtpExtensions.DeleteFile(FtpClient, itemPath);
+                        SetStatus("Successfully deleted file.");
+                    }
 
                     GridViewConsoleFiles.DeleteRow(GridViewConsoleFiles.FocusedRowHandle);
                 }
@@ -841,18 +847,18 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                 if (newFileName != null && !newFileName.Equals(oldFileName))
                 {
-                    //if (FtpClient.FileExists(newConsoleFilePath))
-                    //{
-                    //    SetStatus($"A file with this name already exists.");
-                    //    return;
-                    //}
-                    //else
-                    //{
-                    //    SetStatus($"Renaming file to: {newFileName}");
-                    //    FtpExtensions.RenameFileOrFolder(FtpConnection, oldFilePath, newFileName);
-                    //    SetStatus($"Successfully renamed file to: {newFileName}");
-                    //    LoadConsoleDirectory(DirectoryPathConsole);
-                    //}
+                    if (FtpClient.FileExists(newConsoleFilePath))
+                    {
+                        SetStatus($"A file with this name already exists.");
+                        return;
+                    }
+                    else
+                    {
+                        SetStatus($"Renaming file to: {newFileName}");
+                        FtpExtensions.RenameFileOrFolder(FtpConnection, oldFilePath, newFileName);
+                        SetStatus($"Successfully renamed file to: {newFileName}");
+                        LoadConsoleDirectory(DirectoryPathConsole);
+                    }
                 }
             }
             catch (Exception ex)
@@ -874,18 +880,18 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                 if (newFolderName != null && !newFolderName.Equals(oldFolderName))
                 {
-                    //if (FtpClient.DirectoryExists(oldFileName))
-                    //{
-                    //    SetStatus($"A folder with this name already exists.");
-                    //    return;
-                    //}
-                    //else
-                    //{
-                    //    SetStatus($"Renaming folder: {oldFileName} to: {newFolderName}");
-                    //    FtpExtensions.RenameFileOrFolder(FtpConnection, oldFileName, newFolderName);
-                    //    SetStatus($"Successfully renamed folder to: {newFolderName}");
-                    //    LoadConsoleDirectory(DirectoryPathConsole);
-                    //}
+                    if (FtpClient.DirectoryExists(oldFileName))
+                    {
+                        SetStatus($"A folder with this name already exists.");
+                        return;
+                    }
+                    else
+                    {
+                        SetStatus($"Renaming folder: {oldFileName} to: {newFolderName}");
+                        FtpExtensions.RenameFileOrFolder(FtpConnection, oldFileName, newFolderName);
+                        SetStatus($"Successfully renamed folder to: {newFolderName}");
+                        LoadConsoleDirectory(DirectoryPathConsole);
+                    }
                 }
             }
             catch (Exception ex)
@@ -904,19 +910,19 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 {
                     string folderPath = DirectoryPathConsole + "/" + folderName;
 
-                    //if (FtpClient.DirectoryExists(folderPath))
-                    //{
-                    //    XtraMessageBox.Show($"A folder with this name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //    return;
-                    //}
-                    //else
-                    //{
-                    //    FtpExtensions.CreateDirectory(folderPath);
-                    //    LoadConsoleDirectory(DirectoryPathConsole);
-                    //}
+                    if (FtpClient.DirectoryExists(folderPath))
+                    {
+                        XtraMessageBox.Show($"A folder with this name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        FtpExtensions.CreateDirectory(folderPath);
+                        LoadConsoleDirectory(DirectoryPathConsole);
+                    }
                 }
             }
-            catch (SocketException ex)
+            catch (FtpException ex)
             {
                 SetStatus($"Unable to create a new folder. Error: {ex.Message}");
                 XtraMessageBox.Show($"Unable to create a new folder. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

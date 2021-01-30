@@ -31,35 +31,35 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PackageManagerWindow));
             this.SectionPackages = new DevExpress.XtraEditors.GroupControl();
-            this.LabelNoPackageFiles = new DevExpress.XtraEditors.LabelControl();
-            this.DgvPackages = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.PanelSearch = new System.Windows.Forms.Panel();
-            this.ButtonSearch = new DevExpress.XtraEditors.SimpleButton();
-            this.TextBoxSearch = new DevExpress.XtraEditors.TextEdit();
-            this.LabelSearch = new DevExpress.XtraEditors.LabelControl();
+            this.ProgressPackageFiles = new DevExpress.XtraWaitForm.ProgressPanel();
+            this.GridPackageFiles = new DevExpress.XtraGrid.GridControl();
+            this.GridViewPackageFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
+            this.ButtonInstallPackageFile = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonDownloadPackageFile = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonDeletePackageFile = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonDeleteAllPackageFiles = new DevExpress.XtraEditors.SimpleButton();
             this.ColumnPackageName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDownload = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ContextMenuDownloadToComputer = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripDeleteAll = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripDeleteSelected = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripInstallPackageFile = new System.Windows.Forms.ToolStripButton();
-            this.LabelTotalPackageFiles = new System.Windows.Forms.ToolStripLabel();
-            this.ToolStripLabelHeaderStatus = new System.Windows.Forms.ToolStripLabel();
-            this.ToolStripLabelStatus = new System.Windows.Forms.ToolStripLabel();
             this.TimerWait = new System.Windows.Forms.Timer(this.components);
-            this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
-            this.ButtonNewApplication = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonAddApplication = new DevExpress.XtraEditors.SimpleButton();
+            this.BarManagerStatus = new DevExpress.XtraBars.BarManager(this.components);
+            this.BarStatus = new DevExpress.XtraBars.Bar();
+            this.LabelHeaderStatus = new DevExpress.XtraBars.BarStaticItem();
+            this.LabelStatus = new DevExpress.XtraBars.BarStaticItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.SectionPackages)).BeginInit();
             this.SectionPackages.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvPackages)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.PanelSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSearch.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).BeginInit();
-            this.stackPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPackageFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewPackageFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).BeginInit();
+            this.PanelButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BarManagerStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // SectionPackages
@@ -67,98 +67,104 @@
             this.SectionPackages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SectionPackages.Controls.Add(this.stackPanel2);
-            this.SectionPackages.Controls.Add(this.LabelNoPackageFiles);
-            this.SectionPackages.Controls.Add(this.DgvPackages);
-            this.SectionPackages.Controls.Add(this.PanelSearch);
+            this.SectionPackages.Controls.Add(this.ProgressPackageFiles);
+            this.SectionPackages.Controls.Add(this.GridPackageFiles);
+            this.SectionPackages.Controls.Add(this.PanelButtons);
             this.SectionPackages.Location = new System.Drawing.Point(11, 11);
             this.SectionPackages.Name = "SectionPackages";
-            this.SectionPackages.Size = new System.Drawing.Size(516, 286);
+            this.SectionPackages.Size = new System.Drawing.Size(516, 288);
             this.SectionPackages.TabIndex = 0;
             this.SectionPackages.Text = "PACKAGE FILES";
             // 
-            // LabelNoPackageFiles
+            // ProgressPackageFiles
             // 
-            this.LabelNoPackageFiles.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelNoPackageFiles.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelNoPackageFiles.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelNoPackageFiles.Appearance.Options.UseFont = true;
-            this.LabelNoPackageFiles.Appearance.Options.UseForeColor = true;
-            this.LabelNoPackageFiles.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelNoPackageFiles.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelNoPackageFiles.Location = new System.Drawing.Point(210, 115);
-            this.LabelNoPackageFiles.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
-            this.LabelNoPackageFiles.Name = "LabelNoPackageFiles";
-            this.LabelNoPackageFiles.Size = new System.Drawing.Size(106, 15);
-            this.LabelNoPackageFiles.TabIndex = 1179;
-            this.LabelNoPackageFiles.Text = "NO PACKAGE FILES";
+            this.ProgressPackageFiles.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ProgressPackageFiles.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ProgressPackageFiles.Appearance.Options.UseBackColor = true;
+            this.ProgressPackageFiles.AppearanceCaption.Options.UseTextOptions = true;
+            this.ProgressPackageFiles.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressPackageFiles.AppearanceDescription.Options.UseTextOptions = true;
+            this.ProgressPackageFiles.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressPackageFiles.Caption = "NO PACKAGE FILES";
+            this.ProgressPackageFiles.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ProgressPackageFiles.Description = "";
+            this.ProgressPackageFiles.Location = new System.Drawing.Point(135, 109);
+            this.ProgressPackageFiles.Name = "ProgressPackageFiles";
+            this.ProgressPackageFiles.Size = new System.Drawing.Size(246, 66);
+            this.ProgressPackageFiles.TabIndex = 1182;
+            this.ProgressPackageFiles.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
             // 
-            // DgvPackages
+            // GridPackageFiles
             // 
-            this.DgvPackages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvPackages.Location = new System.Drawing.Point(2, 58);
-            this.DgvPackages.MainView = this.gridView1;
-            this.DgvPackages.Name = "DgvPackages";
-            this.DgvPackages.Size = new System.Drawing.Size(513, 226);
-            this.DgvPackages.TabIndex = 3;
-            this.DgvPackages.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.GridPackageFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridPackageFiles.Location = new System.Drawing.Point(2, 23);
+            this.GridPackageFiles.MainView = this.GridViewPackageFiles;
+            this.GridPackageFiles.Name = "GridPackageFiles";
+            this.GridPackageFiles.Size = new System.Drawing.Size(512, 224);
+            this.GridPackageFiles.TabIndex = 0;
+            this.GridPackageFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewPackageFiles});
             // 
-            // gridView1
+            // GridViewPackageFiles
             // 
-            this.gridView1.DetailHeight = 303;
-            this.gridView1.GridControl = this.DgvPackages;
-            this.gridView1.Name = "gridView1";
+            this.GridViewPackageFiles.GridControl = this.GridPackageFiles;
+            this.GridViewPackageFiles.Name = "GridViewPackageFiles";
+            this.GridViewPackageFiles.OptionsView.ShowGroupPanel = false;
+            this.GridViewPackageFiles.OptionsView.ShowIndicator = false;
+            this.GridViewPackageFiles.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewPackageFiles_RowClick);
+            this.GridViewPackageFiles.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewPackageFiles_FocusedRowChanged);
             // 
-            // PanelSearch
+            // PanelButtons
             // 
-            this.PanelSearch.BackColor = System.Drawing.Color.Transparent;
-            this.PanelSearch.Controls.Add(this.ButtonSearch);
-            this.PanelSearch.Controls.Add(this.TextBoxSearch);
-            this.PanelSearch.Controls.Add(this.LabelSearch);
-            this.PanelSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelSearch.Location = new System.Drawing.Point(2, 20);
-            this.PanelSearch.Name = "PanelSearch";
-            this.PanelSearch.Size = new System.Drawing.Size(513, 38);
-            this.PanelSearch.TabIndex = 2;
+            this.PanelButtons.Controls.Add(this.ButtonInstallPackageFile);
+            this.PanelButtons.Controls.Add(this.ButtonDownloadPackageFile);
+            this.PanelButtons.Controls.Add(this.ButtonDeletePackageFile);
+            this.PanelButtons.Controls.Add(this.ButtonDeleteAllPackageFiles);
+            this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelButtons.Location = new System.Drawing.Point(2, 247);
+            this.PanelButtons.Name = "PanelButtons";
+            this.PanelButtons.Size = new System.Drawing.Size(512, 39);
+            this.PanelButtons.TabIndex = 1180;
             // 
-            // ButtonSearch
+            // ButtonInstallPackageFile
             // 
-            this.ButtonSearch.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonSearch.Appearance.Options.UseFont = true;
-            this.ButtonSearch.Enabled = false;
-            this.ButtonSearch.Location = new System.Drawing.Point(440, 9);
-            this.ButtonSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ButtonSearch.Name = "ButtonSearch";
-            this.ButtonSearch.Size = new System.Drawing.Size(67, 20);
-            this.ButtonSearch.TabIndex = 2;
-            this.ButtonSearch.Text = "Search";
-            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
+            this.ButtonInstallPackageFile.Location = new System.Drawing.Point(8, 8);
+            this.ButtonInstallPackageFile.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.ButtonInstallPackageFile.Name = "ButtonInstallPackageFile";
+            this.ButtonInstallPackageFile.Size = new System.Drawing.Size(129, 23);
+            this.ButtonInstallPackageFile.TabIndex = 1;
+            this.ButtonInstallPackageFile.Text = "Install Package File";
+            this.ButtonInstallPackageFile.Click += new System.EventHandler(this.ButtonInstallPackageFile_Click);
             // 
-            // TextBoxSearch
+            // ButtonDownloadPackageFile
             // 
-            this.TextBoxSearch.Location = new System.Drawing.Point(53, 9);
-            this.TextBoxSearch.Name = "TextBoxSearch";
-            this.TextBoxSearch.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxSearch.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxSearch.Size = new System.Drawing.Size(381, 22);
-            this.TextBoxSearch.TabIndex = 0;
-            this.TextBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
+            this.ButtonDownloadPackageFile.Enabled = false;
+            this.ButtonDownloadPackageFile.Location = new System.Drawing.Point(143, 8);
+            this.ButtonDownloadPackageFile.Name = "ButtonDownloadPackageFile";
+            this.ButtonDownloadPackageFile.Size = new System.Drawing.Size(150, 23);
+            this.ButtonDownloadPackageFile.TabIndex = 2;
+            this.ButtonDownloadPackageFile.Text = "Download Package File";
+            this.ButtonDownloadPackageFile.Click += new System.EventHandler(this.ButtonDownloadPackageFile_Click);
             // 
-            // LabelSearch
+            // ButtonDeletePackageFile
             // 
-            this.LabelSearch.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSearch.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LabelSearch.Appearance.Options.UseFont = true;
-            this.LabelSearch.Appearance.Options.UseForeColor = true;
-            this.LabelSearch.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSearch.Location = new System.Drawing.Point(10, 11);
-            this.LabelSearch.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
-            this.LabelSearch.Name = "LabelSearch";
-            this.LabelSearch.Size = new System.Drawing.Size(44, 15);
-            this.LabelSearch.TabIndex = 1161;
-            this.LabelSearch.Text = "SEARCH";
+            this.ButtonDeletePackageFile.Enabled = false;
+            this.ButtonDeletePackageFile.Location = new System.Drawing.Point(299, 8);
+            this.ButtonDeletePackageFile.Name = "ButtonDeletePackageFile";
+            this.ButtonDeletePackageFile.Size = new System.Drawing.Size(69, 23);
+            this.ButtonDeletePackageFile.TabIndex = 3;
+            this.ButtonDeletePackageFile.Text = "Delete";
+            this.ButtonDeletePackageFile.Click += new System.EventHandler(this.ButtonDeletePackageFile_Click);
+            // 
+            // ButtonDeleteAllPackageFiles
+            // 
+            this.ButtonDeleteAllPackageFiles.Enabled = false;
+            this.ButtonDeleteAllPackageFiles.Location = new System.Drawing.Point(374, 8);
+            this.ButtonDeleteAllPackageFiles.Name = "ButtonDeleteAllPackageFiles";
+            this.ButtonDeleteAllPackageFiles.Size = new System.Drawing.Size(86, 23);
+            this.ButtonDeleteAllPackageFiles.TabIndex = 4;
+            this.ButtonDeleteAllPackageFiles.Text = "Delete All";
+            this.ButtonDeleteAllPackageFiles.Click += new System.EventHandler(this.ButtonDeleteAllPackageFiles_Click);
             // 
             // ColumnPackageName
             // 
@@ -181,126 +187,104 @@
             this.ColumnDownload.ReadOnly = true;
             this.ColumnDownload.Width = 28;
             // 
-            // ContextMenuDownloadToComputer
-            // 
-            this.ContextMenuDownloadToComputer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ContextMenuDownloadToComputer.Enabled = false;
-            this.ContextMenuDownloadToComputer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ContextMenuDownloadToComputer.Image = global::ModioX.Properties.Resources.download_from_the_cloud;
-            this.ContextMenuDownloadToComputer.Name = "ContextMenuDownloadToComputer";
-            this.ContextMenuDownloadToComputer.Size = new System.Drawing.Size(210, 24);
-            this.ContextMenuDownloadToComputer.Text = "Download to Computer...";
-            this.ContextMenuDownloadToComputer.Click += new System.EventHandler(this.ContextMenuDownloadToComptuer_Click);
-            // 
-            // ToolStripDeleteAll
-            // 
-            this.ToolStripDeleteAll.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.ToolStripDeleteAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripDeleteAll.Enabled = false;
-            this.ToolStripDeleteAll.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripDeleteAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripDeleteAll.Image = global::ModioX.Properties.Resources.delete;
-            this.ToolStripDeleteAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripDeleteAll.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripDeleteAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripDeleteAll.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripDeleteAll.Name = "ToolStripDeleteAll";
-            this.ToolStripDeleteAll.Size = new System.Drawing.Size(88, 26);
-            this.ToolStripDeleteAll.Text = "Delete All";
-            this.ToolStripDeleteAll.ToolTipText = "Delete All Package Files";
-            this.ToolStripDeleteAll.Click += new System.EventHandler(this.ToolStripDeleteAll_Click);
-            // 
-            // ToolStripDeleteSelected
-            // 
-            this.ToolStripDeleteSelected.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.ToolStripDeleteSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripDeleteSelected.Enabled = false;
-            this.ToolStripDeleteSelected.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripDeleteSelected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripDeleteSelected.Image = global::ModioX.Properties.Resources.delete;
-            this.ToolStripDeleteSelected.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripDeleteSelected.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripDeleteSelected.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripDeleteSelected.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripDeleteSelected.Name = "ToolStripDeleteSelected";
-            this.ToolStripDeleteSelected.Size = new System.Drawing.Size(71, 26);
-            this.ToolStripDeleteSelected.Text = "Delete";
-            this.ToolStripDeleteSelected.ToolTipText = "Delete Selected Package";
-            this.ToolStripDeleteSelected.Click += new System.EventHandler(this.ToolStripDeleteSelected_Click);
-            // 
-            // ToolStripInstallPackageFile
-            // 
-            this.ToolStripInstallPackageFile.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.ToolStripInstallPackageFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripInstallPackageFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ToolStripInstallPackageFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripInstallPackageFile.Image = global::ModioX.Properties.Resources.install;
-            this.ToolStripInstallPackageFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripInstallPackageFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripInstallPackageFile.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripInstallPackageFile.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ToolStripInstallPackageFile.Name = "ToolStripInstallPackageFile";
-            this.ToolStripInstallPackageFile.Size = new System.Drawing.Size(137, 26);
-            this.ToolStripInstallPackageFile.Text = "Install Package File";
-            this.ToolStripInstallPackageFile.ToolTipText = "Install Package File";
-            this.ToolStripInstallPackageFile.Click += new System.EventHandler(this.ToolStripInstallPackageFile_Click);
-            // 
-            // LabelTotalPackageFiles
-            // 
-            this.LabelTotalPackageFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.LabelTotalPackageFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelTotalPackageFiles.Name = "LabelTotalPackageFiles";
-            this.LabelTotalPackageFiles.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.LabelTotalPackageFiles.Size = new System.Drawing.Size(92, 33);
-            this.LabelTotalPackageFiles.Text = "0 Package Files";
-            // 
-            // ToolStripLabelHeaderStatus
-            // 
-            this.ToolStripLabelHeaderStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLabelHeaderStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLabelHeaderStatus.Name = "ToolStripLabelHeaderStatus";
-            this.ToolStripLabelHeaderStatus.Size = new System.Drawing.Size(48, 20);
-            this.ToolStripLabelHeaderStatus.Text = "Status  :";
-            // 
-            // ToolStripLabelStatus
-            // 
-            this.ToolStripLabelStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLabelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLabelStatus.Name = "ToolStripLabelStatus";
-            this.ToolStripLabelStatus.Size = new System.Drawing.Size(26, 20);
-            this.ToolStripLabelStatus.Text = "Idle";
-            // 
             // TimerWait
             // 
             this.TimerWait.Enabled = true;
             this.TimerWait.Tick += new System.EventHandler(this.TimerWait_Tick);
             // 
-            // stackPanel2
+            // BarManagerStatus
             // 
-            this.stackPanel2.Controls.Add(this.ButtonNewApplication);
-            this.stackPanel2.Controls.Add(this.ButtonAddApplication);
-            this.stackPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.stackPanel2.Location = new System.Drawing.Point(2, 253);
-            this.stackPanel2.Name = "stackPanel2";
-            this.stackPanel2.Size = new System.Drawing.Size(513, 31);
-            this.stackPanel2.TabIndex = 1180;
+            this.BarManagerStatus.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.BarStatus});
+            this.BarManagerStatus.DockControls.Add(this.barDockControlTop);
+            this.BarManagerStatus.DockControls.Add(this.barDockControlBottom);
+            this.BarManagerStatus.DockControls.Add(this.barDockControlLeft);
+            this.BarManagerStatus.DockControls.Add(this.barDockControlRight);
+            this.BarManagerStatus.Form = this;
+            this.BarManagerStatus.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.LabelHeaderStatus,
+            this.barHeaderItem1,
+            this.barStaticItem2,
+            this.LabelStatus});
+            this.BarManagerStatus.MaxItemId = 4;
+            this.BarManagerStatus.StatusBar = this.BarStatus;
             // 
-            // ButtonNewApplication
+            // BarStatus
             // 
-            this.ButtonNewApplication.Location = new System.Drawing.Point(5, 5);
-            this.ButtonNewApplication.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
-            this.ButtonNewApplication.Name = "ButtonNewApplication";
-            this.ButtonNewApplication.Size = new System.Drawing.Size(105, 21);
-            this.ButtonNewApplication.TabIndex = 6;
-            this.ButtonNewApplication.Text = "New Application";
+            this.BarStatus.BarItemVertIndent = 5;
+            this.BarStatus.BarName = "Status bar";
+            this.BarStatus.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.BarStatus.DockCol = 0;
+            this.BarStatus.DockRow = 0;
+            this.BarStatus.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.BarStatus.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.LabelHeaderStatus),
+            new DevExpress.XtraBars.LinkPersistInfo(this.LabelStatus)});
+            this.BarStatus.OptionsBar.AllowQuickCustomization = false;
+            this.BarStatus.OptionsBar.DrawDragBorder = false;
+            this.BarStatus.OptionsBar.UseWholeRow = true;
+            this.BarStatus.Text = "Status bar";
             // 
-            // ButtonAddApplication
+            // LabelHeaderStatus
             // 
-            this.ButtonAddApplication.Location = new System.Drawing.Point(116, 5);
-            this.ButtonAddApplication.Name = "ButtonAddApplication";
-            this.ButtonAddApplication.Size = new System.Drawing.Size(105, 21);
-            this.ButtonAddApplication.TabIndex = 7;
-            this.ButtonAddApplication.Text = "Add Application";
+            this.LabelHeaderStatus.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.LabelHeaderStatus.Caption = "Status:";
+            this.LabelHeaderStatus.Id = 0;
+            this.LabelHeaderStatus.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHeaderStatus.ItemAppearance.Normal.Options.UseFont = true;
+            this.LabelHeaderStatus.LeftIndent = 4;
+            this.LabelHeaderStatus.Name = "LabelHeaderStatus";
+            // 
+            // LabelStatus
+            // 
+            this.LabelStatus.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.LabelStatus.Caption = "Status";
+            this.LabelStatus.Id = 3;
+            this.LabelStatus.Name = "LabelStatus";
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.BarManagerStatus;
+            this.barDockControlTop.Size = new System.Drawing.Size(538, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 313);
+            this.barDockControlBottom.Manager = this.BarManagerStatus;
+            this.barDockControlBottom.Size = new System.Drawing.Size(538, 25);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.BarManagerStatus;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 313);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(538, 0);
+            this.barDockControlRight.Manager = this.BarManagerStatus;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 313);
+            // 
+            // barHeaderItem1
+            // 
+            this.barHeaderItem1.Id = 1;
+            this.barHeaderItem1.Name = "barHeaderItem1";
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.barStaticItem2.Caption = "Status";
+            this.barStaticItem2.Id = 2;
+            this.barStaticItem2.Name = "barStaticItem2";
             // 
             // PackageManagerWindow
             // 
@@ -311,6 +295,10 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(538, 338);
             this.Controls.Add(this.SectionPackages);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("PackageManagerWindow.IconOptions.Icon")));
             this.MaximizeBox = false;
@@ -322,40 +310,39 @@
             this.Load += new System.EventHandler(this.PackageManagerWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SectionPackages)).EndInit();
             this.SectionPackages.ResumeLayout(false);
-            this.SectionPackages.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvPackages)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.PanelSearch.ResumeLayout(false);
-            this.PanelSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSearch.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).EndInit();
-            this.stackPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridPackageFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewPackageFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).EndInit();
+            this.PanelButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BarManagerStatus)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private DevExpress.XtraEditors.GroupControl SectionPackages;
-        private DevExpress.XtraGrid.GridControl DgvPackages;
-        private System.Windows.Forms.Panel PanelSearch;
-        private DevExpress.XtraEditors.TextEdit TextBoxSearch;
-        private DevExpress.XtraEditors.LabelControl LabelSearch;
-        private DevExpress.XtraEditors.SimpleButton ButtonSearch;
-        private System.Windows.Forms.ToolStripLabel ToolStripLabelHeaderStatus;
-        private System.Windows.Forms.ToolStripLabel ToolStripLabelStatus;
-        private System.Windows.Forms.ToolStripMenuItem ContextMenuDownloadToComputer;
-        private System.Windows.Forms.ToolStripButton ToolStripDeleteAll;
-        private System.Windows.Forms.ToolStripButton ToolStripDeleteSelected;
-        private System.Windows.Forms.ToolStripLabel LabelTotalPackageFiles;
-        private DevExpress.XtraEditors.LabelControl LabelNoPackageFiles;
         private System.Windows.Forms.Timer TimerWait;
-        private System.Windows.Forms.ToolStripButton ToolStripInstallPackageFile;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPackageName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSize;
         private System.Windows.Forms.DataGridViewImageColumn ColumnDownload;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.Utils.Layout.StackPanel stackPanel2;
-        private DevExpress.XtraEditors.SimpleButton ButtonNewApplication;
-        private DevExpress.XtraEditors.SimpleButton ButtonAddApplication;
+        private DevExpress.Utils.Layout.StackPanel PanelButtons;
+        private DevExpress.XtraEditors.SimpleButton ButtonDeletePackageFile;
+        private DevExpress.XtraEditors.SimpleButton ButtonDeleteAllPackageFiles;
+        private DevExpress.XtraWaitForm.ProgressPanel ProgressPackageFiles;
+        private DevExpress.XtraGrid.GridControl GridPackageFiles;
+        private DevExpress.XtraGrid.Views.Grid.GridView GridViewPackageFiles;
+        private DevExpress.XtraEditors.SimpleButton ButtonInstallPackageFile;
+        private DevExpress.XtraBars.BarManager BarManagerStatus;
+        private DevExpress.XtraBars.Bar BarStatus;
+        private DevExpress.XtraBars.BarStaticItem LabelHeaderStatus;
+        private DevExpress.XtraBars.BarStaticItem LabelStatus;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraEditors.SimpleButton ButtonDownloadPackageFile;
     }
 }

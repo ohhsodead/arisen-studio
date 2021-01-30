@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace ModioX.Forms.Settings
 {
-    public partial class CustomListsDialog : XtraForm
+    public partial class CustomLists : XtraForm
     {
-        public CustomListsDialog()
+        public CustomLists()
         {
             InitializeComponent();
         }
