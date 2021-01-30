@@ -8,14 +8,15 @@ All notable changes to this project will be documented in this file.
 - Upgraded design to DevExpress forms
 - Upgraded Application to .NET Framework 4.8
 - Upgraded dependencies and removed redundant\unused ones
-- Added support for Xbox connections
-- Added images for each console
+- Added support for connecting to Xbox 360 consoles
+- Added images for all PS3 and Xbox 360 models
 - 
 - Added ability to create and add mods to your own lists
+- Added Package Files Manager for PS3 to Tools menu
 - Added View Log button to Help menu
 - Added Open Log Folder button to Help menu
 - Added What's New button to Help menu
-- Added Package Manager to Tools menu
+- Added Skin Manager to Settings menu
 - Fixed some UI bugs and added all missing icons
 - Fixed an issue with creating folders when installing mods
 - Fixed an issue with deleting folders when uninstalling mods
