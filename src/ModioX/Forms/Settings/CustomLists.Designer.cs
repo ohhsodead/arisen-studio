@@ -66,7 +66,7 @@
             // GridViewCustomLists
             // 
             this.GridViewCustomLists.ActiveFilterEnabled = false;
-            this.GridViewCustomLists.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
+            this.GridViewCustomLists.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.GridViewCustomLists.GridControl = this.GridCustomLists;
             this.GridViewCustomLists.Name = "GridViewCustomLists";
             this.GridViewCustomLists.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -133,7 +133,7 @@
             this.ProgressCustomLists.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ProgressCustomLists.Caption = "NO CUSTOM LISTS";
             this.ProgressCustomLists.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ProgressCustomLists.Description = "Loading..";
+            this.ProgressCustomLists.Description = "";
             this.ProgressCustomLists.Location = new System.Drawing.Point(80, 101);
             this.ProgressCustomLists.Name = "ProgressCustomLists";
             this.ProgressCustomLists.Size = new System.Drawing.Size(246, 66);
@@ -196,7 +196,7 @@
             this.ButtonDeleteAllLists.Text = "Delete All Lists";
             this.ButtonDeleteAllLists.Click += new System.EventHandler(this.ButtonDeleteAllLists_Click);
             // 
-            // CustomListsDialog
+            // CustomLists
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.Appearance.Options.UseFont = true;
@@ -208,10 +208,10 @@
             this.Controls.Add(this.groupControl1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("CustomListsDialog.IconOptions.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("CustomLists.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "CustomListsDialog";
+            this.Name = "CustomLists";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Custom Lists";

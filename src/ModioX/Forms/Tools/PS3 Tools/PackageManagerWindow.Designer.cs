@@ -107,6 +107,7 @@
             // 
             // GridViewPackageFiles
             // 
+            this.GridViewPackageFiles.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.GridViewPackageFiles.GridControl = this.GridPackageFiles;
             this.GridViewPackageFiles.Name = "GridViewPackageFiles";
             this.GridViewPackageFiles.OptionsView.ShowGroupPanel = false;

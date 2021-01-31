@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CheckBoxEnableLiveStrong.ToolTip" xml:space="preserve">
+    <value>if liveblock is set to true, this will block the console from resolving all MS related dns
+setting this to TRUE will also block apps like freestyle from accessing things like cover images
+*** note that if NO INI is present for launch.xex, this is set to TRUE
+if not set this value will be FALSE</value>
+  </data>
 </root>

@@ -1,5 +1,6 @@
 ﻿using ModioX.Extensions;
 using ModioX.Io;
+using ModioX.Models.Resources;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,6 +15,7 @@ namespace ModioX.Models.Database
     /// </summary>
     public class ModItem
     {
+        public string ConsoleType { get; set; }
         public int Id { get; set; }
 
         public string GameId { get; set; }
@@ -37,6 +39,19 @@ namespace ModioX.Models.Database
         public string Description { get; set; }
 
         public List<DownloadFiles> DownloadFiles { get; set; }
+
+        public ConsoleTypePrefix GetConsoleType() 
+        {
+            switch (ConsoleType)
+            {
+                case "PS3":
+                    return ConsoleTypePrefix.PS3;
+                case "XBOX":
+                    return ConsoleTypePrefix.XBOX;
+                default:
+                    return ConsoleTypePrefix.PS3;
+            }
+        }
 
         /// <summary>
         /// Get the category type.

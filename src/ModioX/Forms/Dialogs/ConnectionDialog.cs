@@ -16,6 +16,8 @@ namespace ModioX.Forms.Dialogs
             InitializeComponent();
         }
 
+        public static SettingsData Settings { get; } = MainWindow.Settings;
+
         public ConsoleProfile ConsoleProfile { get; private set; }
 
         public TileConsoleItem SelectedConsole { get; private set; }
@@ -37,7 +39,7 @@ namespace ModioX.Forms.Dialogs
 
             int consoleIndex = 0;
 
-            foreach (ConsoleProfile consoleProfile in MainWindow.Settings.ConsoleProfiles)
+            foreach (ConsoleProfile consoleProfile in Settings.ConsoleProfiles)
             {
                 Image consoleImage = consoleImage = Properties.Resources.PlayStation3Fat;
 
@@ -107,6 +109,19 @@ namespace ModioX.Forms.Dialogs
             }
         }
 
+        private void ButtonNewConnection_Click(object sender, EventArgs e)
+        {
+            ConsoleProfile consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
+
+            if (consoleProfile != null)
+            {
+                Settings.ConsoleProfiles.Add(consoleProfile);
+                MainWindow.Window.SaveSettings();
+                MainWindow.Window.LoadSettings();
+                LoadConsoles();
+            }
+        }
+
         private void ButtonConnect_Click(object sender, EventArgs e)
         {
             Close();
@@ -114,7 +129,7 @@ namespace ModioX.Forms.Dialogs
 
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
-            if (MainWindow.Settings.ConsoleProfiles.Count == 1)
+            if (Settings.ConsoleProfiles.Count == 1)
             {
                 XtraMessageBox.Show("You must have at least one console saved.", "Cannot Delete");
             }
@@ -122,7 +137,7 @@ namespace ModioX.Forms.Dialogs
             {
                 if (XtraMessageBox.Show("Do you really want to delete the selected item?", "Delete Console", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MainWindow.Settings.ConsoleProfiles.Remove(ConsoleProfile);
+                    Settings.ConsoleProfiles.Remove(ConsoleProfile);
                     LoadConsoles();
                 }
             }
@@ -130,8 +145,8 @@ namespace ModioX.Forms.Dialogs
 
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
-            int selectedIndex = MainWindow.Settings.ConsoleProfiles.IndexOf(ConsoleProfile);
-            ConsoleProfile oldConsoleProfile = MainWindow.Settings.ConsoleProfiles[selectedIndex];
+            int selectedIndex = Settings.ConsoleProfiles.IndexOf(ConsoleProfile);
+            ConsoleProfile oldConsoleProfile = Settings.ConsoleProfiles[selectedIndex];
 
             ConsoleProfile newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
 

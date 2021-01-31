@@ -1,4 +1,5 @@
-﻿using ModioX.Forms;
+﻿using DevExpress.XtraEditors;
+using ModioX.Forms;
 using ModioX.Forms.Dialogs;
 using ModioX.Forms.Settings;
 using ModioX.Forms.Tools.PS3_Tools;
@@ -81,19 +82,19 @@ namespace ModioX.Extensions
 
         public static string ShowFolderBrowseDialog(Form owner, string description)
         {
-            using FolderBrowserDialog folderBrowser = new FolderBrowserDialog { Description = description, ShowNewFolderButton = true };
+            using XtraFolderBrowserDialog folderBrowser = new XtraFolderBrowserDialog { Description = description, ShowNewFolderButton = true };
             return folderBrowser.ShowDialog(owner) == DialogResult.OK ? folderBrowser.SelectedPath : null;
         }
 
         public static string ShowOpenFileDialog(Form owner, string title, string fileTypes)
         {
-            using OpenFileDialog openFileDialog = new OpenFileDialog { Title = title, Filter = fileTypes };
+            using XtraOpenFileDialog openFileDialog = new XtraOpenFileDialog { Title = title, Filter = fileTypes };
             return openFileDialog.ShowDialog(owner) == DialogResult.OK ? openFileDialog.FileName : null;
         }
 
         public static void ShowFileManager(Form owner)
         {
-            using Forms.Windows.FileManagerWindow fileManagerWindow = new Forms.Windows.FileManagerWindow();
+            using FileManagerWindow fileManagerWindow = new FileManagerWindow();
             fileManagerWindow.ShowDialog(owner);
         }
 
@@ -121,13 +122,13 @@ namespace ModioX.Extensions
 
         #region Xbox Tools
 
-        public static void ShowLaunchPluginsEditor(Form owner)
+        public static void ShowXboxPluginsEditor(Form owner)
         {
-            using LaunchPluginsEditor launchPluginsEditor = new LaunchPluginsEditor();
-            launchPluginsEditor.ShowDialog(owner);
+            using PluginsEditor pluginsEditor = new PluginsEditor();
+            pluginsEditor.ShowDialog(owner);
         }
 
-        public static void ShowMemoryViewer(Form owner, string gameTitle)
+        public static void ShowXboxMemoryViewer(Form owner, string gameTitle)
         {
             using MemoryViewer memoryViewer = new MemoryViewer() { GameTitle = gameTitle };
             memoryViewer.ShowDialog(owner);

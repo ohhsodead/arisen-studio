@@ -36,6 +36,7 @@ namespace ModioX.Forms.Settings
             this.ColumnGameRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupSavedGameRegions = new DevExpress.XtraEditors.GroupControl();
+            this.ProgressLoading = new DevExpress.XtraWaitForm.ProgressPanel();
             this.GridGameRegions = new DevExpress.XtraGrid.GridControl();
             this.GridViewGameRegions = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
@@ -48,7 +49,6 @@ namespace ModioX.Forms.Settings
             this.LabelSearch = new DevExpress.XtraEditors.LabelControl();
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
             this.ButtonAddGameRegion = new DevExpress.XtraEditors.SimpleButton();
-            this.ProgressLoading = new DevExpress.XtraWaitForm.ProgressPanel();
             ((System.ComponentModel.ISupportInitialize)(this.GroupSavedGameRegions)).BeginInit();
             this.GroupSavedGameRegions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridGameRegions)).BeginInit();
@@ -117,6 +117,24 @@ namespace ModioX.Forms.Settings
             this.GroupSavedGameRegions.TabIndex = 1180;
             this.GroupSavedGameRegions.Text = "SAVED GAME REGIONS";
             // 
+            // ProgressLoading
+            // 
+            this.ProgressLoading.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ProgressLoading.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ProgressLoading.Appearance.Options.UseBackColor = true;
+            this.ProgressLoading.AppearanceCaption.Options.UseTextOptions = true;
+            this.ProgressLoading.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressLoading.AppearanceDescription.Options.UseTextOptions = true;
+            this.ProgressLoading.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressLoading.Caption = "NO SAVED GAME REGIONS";
+            this.ProgressLoading.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ProgressLoading.Description = "";
+            this.ProgressLoading.Location = new System.Drawing.Point(84, 86);
+            this.ProgressLoading.Name = "ProgressLoading";
+            this.ProgressLoading.Size = new System.Drawing.Size(246, 66);
+            this.ProgressLoading.TabIndex = 1174;
+            this.ProgressLoading.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
+            // 
             // GridGameRegions
             // 
             this.GridGameRegions.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -131,7 +149,7 @@ namespace ModioX.Forms.Settings
             // 
             // GridViewGameRegions
             // 
-            this.GridViewGameRegions.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
+            this.GridViewGameRegions.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.GridViewGameRegions.GridControl = this.GridGameRegions;
             this.GridViewGameRegions.Name = "GridViewGameRegions";
             this.GridViewGameRegions.OptionsBehavior.Editable = false;
@@ -270,25 +288,7 @@ namespace ModioX.Forms.Settings
             this.ButtonAddGameRegion.Text = "Add Game Region";
             this.ButtonAddGameRegion.Click += new System.EventHandler(this.ButtonAddGameRegion_Click);
             // 
-            // ProgressLoading
-            // 
-            this.ProgressLoading.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ProgressLoading.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ProgressLoading.Appearance.Options.UseBackColor = true;
-            this.ProgressLoading.AppearanceCaption.Options.UseTextOptions = true;
-            this.ProgressLoading.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ProgressLoading.AppearanceDescription.Options.UseTextOptions = true;
-            this.ProgressLoading.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ProgressLoading.Caption = "NO SAVED GAME REGIONS";
-            this.ProgressLoading.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ProgressLoading.Description = "Loading..";
-            this.ProgressLoading.Location = new System.Drawing.Point(84, 86);
-            this.ProgressLoading.Name = "ProgressLoading";
-            this.ProgressLoading.Size = new System.Drawing.Size(246, 66);
-            this.ProgressLoading.TabIndex = 1174;
-            this.ProgressLoading.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
-            // 
-            // GameRegionsDialog
+            // SavedGameRegions
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.Appearance.Options.UseFont = true;
@@ -302,10 +302,10 @@ namespace ModioX.Forms.Settings
             this.Controls.Add(this.ButtonSaveAll);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("GameRegionsDialog.IconOptions.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("SavedGameRegions.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "GameRegionsDialog";
+            this.Name = "SavedGameRegions";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Game Regions";

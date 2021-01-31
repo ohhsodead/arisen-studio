@@ -46,6 +46,9 @@ namespace ModioX.Forms.Windows
             /* File Manager */
             CheckBoxSaveLocalPath.Checked = Settings.SaveLocalPath;
             CheckBoxSaveConsolePath.Checked = Settings.SaveConsolePath;
+
+            /* Plugins Editor */
+            TextBoxLaunchIniFilePath.Text = Settings.LaunchIniFilePath;
         }
 
         private void ButtonSaveSettings_Click(object sender, EventArgs e)
@@ -74,6 +77,9 @@ namespace ModioX.Forms.Windows
             /* File Manager */
             Settings.SaveLocalPath = CheckBoxSaveLocalPath.Checked;
             Settings.SaveConsolePath = CheckBoxSaveConsolePath.Checked;
+
+            /* Plugins Editor */
+            Settings.LaunchIniFilePath = TextBoxLaunchIniFilePath.Text;
 
             Close();
         }

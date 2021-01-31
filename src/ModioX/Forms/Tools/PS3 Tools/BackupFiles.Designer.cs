@@ -40,32 +40,32 @@
             this.ColumnGameId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBackupFiles = new DevExpress.XtraEditors.GroupControl();
-            this.ProgressBackupFiles = new DevExpress.XtraWaitForm.ProgressPanel();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
             this.ButtonNewApplication = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonAddApplication = new DevExpress.XtraEditors.SimpleButton();
+            this.ProgressBackupFiles = new DevExpress.XtraWaitForm.ProgressPanel();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.LabelGameTitle = new DevExpress.XtraEditors.LabelControl();
-            this.LabelFileName = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.LabelFileSize = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.LabelCreatedOn = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.LabelLocaPath = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.LabelInstallPath = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelLocaPath = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelCreatedOn = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelFileSize = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelFileName = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelGameTitle = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.GridBackupFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewBackupFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupBackupFiles)).BeginInit();
             this.GroupBackupFiles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).BeginInit();
             this.PanelButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,7 @@
             // 
             // GridViewBackupFiles
             // 
+            this.GridViewBackupFiles.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.GridViewBackupFiles.GridControl = this.GridBackupFiles;
             this.GridViewBackupFiles.Name = "GridViewBackupFiles";
             this.GridViewBackupFiles.OptionsView.ShowGroupPanel = false;
@@ -158,33 +159,6 @@
             this.GroupBackupFiles.TabIndex = 17;
             this.GroupBackupFiles.Text = "BACKUP FILES";
             // 
-            // ProgressBackupFiles
-            // 
-            this.ProgressBackupFiles.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ProgressBackupFiles.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ProgressBackupFiles.Appearance.Options.UseBackColor = true;
-            this.ProgressBackupFiles.AppearanceCaption.Options.UseTextOptions = true;
-            this.ProgressBackupFiles.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ProgressBackupFiles.AppearanceDescription.Options.UseTextOptions = true;
-            this.ProgressBackupFiles.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ProgressBackupFiles.Caption = "NO BACKUP FILES";
-            this.ProgressBackupFiles.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ProgressBackupFiles.Description = "Loading..";
-            this.ProgressBackupFiles.Location = new System.Drawing.Point(187, 97);
-            this.ProgressBackupFiles.Name = "ProgressBackupFiles";
-            this.ProgressBackupFiles.Size = new System.Drawing.Size(246, 66);
-            this.ProgressBackupFiles.TabIndex = 1171;
-            this.ProgressBackupFiles.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.panelControl1);
-            this.groupControl1.Location = new System.Drawing.Point(12, 279);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(621, 206);
-            this.groupControl1.TabIndex = 16;
-            this.groupControl1.Text = "BACKUP FILE DETAILS";
-            // 
             // PanelButtons
             // 
             this.PanelButtons.Controls.Add(this.ButtonNewApplication);
@@ -212,6 +186,33 @@
             this.ButtonAddApplication.TabIndex = 7;
             this.ButtonAddApplication.Text = "Delete All";
             // 
+            // ProgressBackupFiles
+            // 
+            this.ProgressBackupFiles.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ProgressBackupFiles.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ProgressBackupFiles.Appearance.Options.UseBackColor = true;
+            this.ProgressBackupFiles.AppearanceCaption.Options.UseTextOptions = true;
+            this.ProgressBackupFiles.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressBackupFiles.AppearanceDescription.Options.UseTextOptions = true;
+            this.ProgressBackupFiles.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProgressBackupFiles.Caption = "NO BACKUP FILES";
+            this.ProgressBackupFiles.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ProgressBackupFiles.Description = "Loading..";
+            this.ProgressBackupFiles.Location = new System.Drawing.Point(187, 97);
+            this.ProgressBackupFiles.Name = "ProgressBackupFiles";
+            this.ProgressBackupFiles.Size = new System.Drawing.Size(246, 66);
+            this.ProgressBackupFiles.TabIndex = 1171;
+            this.ProgressBackupFiles.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.panelControl1);
+            this.groupControl1.Location = new System.Drawing.Point(12, 279);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(621, 206);
+            this.groupControl1.TabIndex = 16;
+            this.groupControl1.Text = "BACKUP FILE DETAILS";
+            // 
             // panelControl1
             // 
             this.panelControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -233,133 +234,6 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(617, 181);
             this.panelControl1.TabIndex = 1182;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl4.Location = new System.Drawing.Point(8, 8);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(64, 15);
-            this.labelControl4.TabIndex = 39;
-            this.labelControl4.Text = "Game Title:";
-            // 
-            // LabelGameTitle
-            // 
-            this.LabelGameTitle.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelGameTitle.Appearance.Options.UseFont = true;
-            this.LabelGameTitle.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.LabelGameTitle.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameTitle.Location = new System.Drawing.Point(95, 8);
-            this.LabelGameTitle.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.LabelGameTitle.Name = "LabelGameTitle";
-            this.LabelGameTitle.Size = new System.Drawing.Size(512, 15);
-            this.LabelGameTitle.TabIndex = 40;
-            this.LabelGameTitle.Text = "...";
-            // 
-            // LabelFileName
-            // 
-            this.LabelFileName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelFileName.Appearance.Options.UseFont = true;
-            this.LabelFileName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.LabelFileName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileName.Location = new System.Drawing.Point(95, 29);
-            this.LabelFileName.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.LabelFileName.Name = "LabelFileName";
-            this.LabelFileName.Size = new System.Drawing.Size(512, 15);
-            this.LabelFileName.TabIndex = 42;
-            this.LabelFileName.Text = "...";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl7.Location = new System.Drawing.Point(8, 29);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(58, 15);
-            this.labelControl7.TabIndex = 41;
-            this.labelControl7.Text = "File Name:";
-            // 
-            // LabelFileSize
-            // 
-            this.LabelFileSize.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelFileSize.Appearance.Options.UseFont = true;
-            this.LabelFileSize.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.LabelFileSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileSize.Location = new System.Drawing.Point(95, 50);
-            this.LabelFileSize.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.LabelFileSize.Name = "LabelFileSize";
-            this.LabelFileSize.Size = new System.Drawing.Size(512, 15);
-            this.LabelFileSize.TabIndex = 44;
-            this.LabelFileSize.Text = "...";
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl9.Location = new System.Drawing.Point(8, 50);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(48, 15);
-            this.labelControl9.TabIndex = 43;
-            this.labelControl9.Text = "File Size:";
-            // 
-            // LabelCreatedOn
-            // 
-            this.LabelCreatedOn.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelCreatedOn.Appearance.Options.UseFont = true;
-            this.LabelCreatedOn.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.LabelCreatedOn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelCreatedOn.Location = new System.Drawing.Point(95, 71);
-            this.LabelCreatedOn.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.LabelCreatedOn.Name = "LabelCreatedOn";
-            this.LabelCreatedOn.Size = new System.Drawing.Size(512, 15);
-            this.LabelCreatedOn.TabIndex = 46;
-            this.LabelCreatedOn.Text = "...";
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl11.Location = new System.Drawing.Point(8, 71);
-            this.labelControl11.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(66, 15);
-            this.labelControl11.TabIndex = 45;
-            this.labelControl11.Text = "Created On:";
-            // 
-            // LabelLocaPath
-            // 
-            this.LabelLocaPath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelLocaPath.Appearance.Options.UseFont = true;
-            this.LabelLocaPath.Appearance.Options.UseTextOptions = true;
-            this.LabelLocaPath.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
-            this.LabelLocaPath.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.LabelLocaPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelLocaPath.Location = new System.Drawing.Point(95, 92);
-            this.LabelLocaPath.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.LabelLocaPath.Name = "LabelLocaPath";
-            this.LabelLocaPath.Size = new System.Drawing.Size(512, 34);
-            this.LabelLocaPath.TabIndex = 48;
-            this.LabelLocaPath.Text = "...";
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl13.Location = new System.Drawing.Point(8, 92);
-            this.labelControl13.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(59, 15);
-            this.labelControl13.TabIndex = 47;
-            this.labelControl13.Text = "Local Path:";
             // 
             // LabelInstallPath
             // 
@@ -388,6 +262,133 @@
             this.labelControl2.TabIndex = 49;
             this.labelControl2.Text = "Install Path:";
             // 
+            // LabelLocaPath
+            // 
+            this.LabelLocaPath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelLocaPath.Appearance.Options.UseFont = true;
+            this.LabelLocaPath.Appearance.Options.UseTextOptions = true;
+            this.LabelLocaPath.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+            this.LabelLocaPath.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LabelLocaPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelLocaPath.Location = new System.Drawing.Point(95, 92);
+            this.LabelLocaPath.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.LabelLocaPath.Name = "LabelLocaPath";
+            this.LabelLocaPath.Size = new System.Drawing.Size(512, 34);
+            this.LabelLocaPath.TabIndex = 48;
+            this.LabelLocaPath.Text = "...";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl13.Location = new System.Drawing.Point(8, 92);
+            this.labelControl13.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(59, 15);
+            this.labelControl13.TabIndex = 47;
+            this.labelControl13.Text = "Local Path:";
+            // 
+            // LabelCreatedOn
+            // 
+            this.LabelCreatedOn.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelCreatedOn.Appearance.Options.UseFont = true;
+            this.LabelCreatedOn.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LabelCreatedOn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelCreatedOn.Location = new System.Drawing.Point(95, 71);
+            this.LabelCreatedOn.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.LabelCreatedOn.Name = "LabelCreatedOn";
+            this.LabelCreatedOn.Size = new System.Drawing.Size(512, 15);
+            this.LabelCreatedOn.TabIndex = 46;
+            this.LabelCreatedOn.Text = "...";
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl11.Location = new System.Drawing.Point(8, 71);
+            this.labelControl11.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(66, 15);
+            this.labelControl11.TabIndex = 45;
+            this.labelControl11.Text = "Created On:";
+            // 
+            // LabelFileSize
+            // 
+            this.LabelFileSize.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelFileSize.Appearance.Options.UseFont = true;
+            this.LabelFileSize.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LabelFileSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelFileSize.Location = new System.Drawing.Point(95, 50);
+            this.LabelFileSize.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.LabelFileSize.Name = "LabelFileSize";
+            this.LabelFileSize.Size = new System.Drawing.Size(512, 15);
+            this.LabelFileSize.TabIndex = 44;
+            this.LabelFileSize.Text = "...";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl9.Location = new System.Drawing.Point(8, 50);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(48, 15);
+            this.labelControl9.TabIndex = 43;
+            this.labelControl9.Text = "File Size:";
+            // 
+            // LabelFileName
+            // 
+            this.LabelFileName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelFileName.Appearance.Options.UseFont = true;
+            this.LabelFileName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LabelFileName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelFileName.Location = new System.Drawing.Point(95, 29);
+            this.LabelFileName.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.LabelFileName.Name = "LabelFileName";
+            this.LabelFileName.Size = new System.Drawing.Size(512, 15);
+            this.LabelFileName.TabIndex = 42;
+            this.LabelFileName.Text = "...";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl7.Location = new System.Drawing.Point(8, 29);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(58, 15);
+            this.labelControl7.TabIndex = 41;
+            this.labelControl7.Text = "File Name:";
+            // 
+            // LabelGameTitle
+            // 
+            this.LabelGameTitle.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelGameTitle.Appearance.Options.UseFont = true;
+            this.LabelGameTitle.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LabelGameTitle.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelGameTitle.Location = new System.Drawing.Point(95, 8);
+            this.LabelGameTitle.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.LabelGameTitle.Name = "LabelGameTitle";
+            this.LabelGameTitle.Size = new System.Drawing.Size(512, 15);
+            this.LabelGameTitle.TabIndex = 40;
+            this.LabelGameTitle.Text = "...";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl4.Location = new System.Drawing.Point(8, 8);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(64, 15);
+            this.labelControl4.TabIndex = 39;
+            this.labelControl4.Text = "Game Title:";
+            // 
             // BackupFiles
             // 
             this.Appearance.Options.UseFont = true;
@@ -410,10 +411,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridViewBackupFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupBackupFiles)).EndInit();
             this.GroupBackupFiles.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).EndInit();
             this.PanelButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

@@ -66,15 +66,15 @@
     </Reference>
     <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dialogs.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Pdf.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Pdf.v20.2.Drawing, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -82,7 +82,6 @@
     <Reference Include="DevExpress.XtraPdfViewer.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraTreeList.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="FluentFTP">
       <HintPath>..\References\FluentFTP.dll</HintPath>
     </Reference>
@@ -92,6 +91,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression.FileSystem" />
@@ -178,11 +178,11 @@
     <Compile Include="Forms\Tools\XBOX Tools\GameLauncher.Designer.cs">
       <DependentUpon>GameLauncher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\LaunchPluginsEditor.cs">
+    <Compile Include="Forms\Tools\XBOX Tools\PluginsEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\LaunchPluginsEditor.Designer.cs">
-      <DependentUpon>LaunchPluginsEditor.cs</DependentUpon>
+    <Compile Include="Forms\Tools\XBOX Tools\PluginsEditor.Designer.cs">
+      <DependentUpon>PluginsEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\MemoryViewer.cs">
       <SubType>Form</SubType>
@@ -333,8 +333,8 @@
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\GameLauncher.resx">
       <DependentUpon>GameLauncher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\XBOX Tools\LaunchPluginsEditor.resx">
-      <DependentUpon>LaunchPluginsEditor.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Tools\XBOX Tools\PluginsEditor.resx">
+      <DependentUpon>PluginsEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\MemoryViewer.resx">
       <DependentUpon>MemoryViewer.cs</DependentUpon>

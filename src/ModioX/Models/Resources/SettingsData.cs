@@ -46,7 +46,9 @@ namespace ModioX.Models.Resources
 
         public string ConsolePathPS3 { get; set; } = "/dev_hdd0/";
 
-        public string ConsolePathXBOX { get; set; } = "Hdd:\\";
+        public string ConsolePathXBOX { get; set; } = "/Hdd/";
+
+        public string LaunchIniFilePath { get; set; } = "/Hdd1/launch.ini";
 
         public List<int> FavoritedIds { get; set; } = new List<int>();
 
@@ -224,7 +226,7 @@ namespace ModioX.Models.Resources
         /// <returns></returns>
         public static string GetGameBackupFolder(ModItem modItem)
         {
-            return Path.Combine(UserFolders.AppGameBackupFilesDirectory, modItem.GameId);
+            return Path.Combine(UserFolders.AppBackupFilesDirectory, modItem.GameId);
         }
 
         /// <summary>
@@ -244,20 +246,22 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        /// Updates the installed game mods.
+        /// Update the installed game mods.
         /// </summary>
+        /// <param name="consoleType"></param>
         /// <param name="categoryId"></param>
         /// <param name="modId"></param>
         /// <param name="region"></param>
         /// <param name="noOfFiles"></param>
         /// <param name="dateInstalled"></param>
         /// <param name="downloadFiles"></param>
-        public void UpdateInstalledGameMod(string categoryId, int modId, string region, int noOfFiles, DateTime dateInstalled, DownloadFiles downloadFiles)
+        public void UpdateInstalledGameMod(ConsoleTypePrefix consoleType, string categoryId, int modId, string region, int noOfFiles, DateTime dateInstalled, DownloadFiles downloadFiles)
         {
-            RemoveInstalledGameMod(categoryId);
+            RemoveInstalledGameMod(consoleType, categoryId);
 
             InstalledGameMods.Add(new InstalledMod
             {
+                ConsoleType = consoleType,
                 CategoryId = categoryId,
                 ModId = modId,
                 Region = region,
@@ -268,32 +272,32 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        /// Removes the installed mods matching the <see cref="ModsData.ModItem.GameId" />
+        /// Remove the installed mods matching the <see cref="ModsData.ModItem.GameId" />
         /// </summary>
         /// <param name="categoryId"></param>
-        public void RemoveInstalledGameMod(string categoryId)
+        public void RemoveInstalledGameMod(ConsoleTypePrefix consoleType, string categoryId)
         {
-            InstalledGameMods.RemoveAll(x => string.Equals(x.CategoryId, categoryId, StringComparison.OrdinalIgnoreCase));
+            InstalledGameMods.RemoveAll(x => x.ConsoleType == consoleType && string.Equals(x.CategoryId, categoryId, StringComparison.OrdinalIgnoreCase));
         }
 
         /// <summary>
-        /// Removes the installed game mod matching the <see cref="ModsData.ModItem.GameId" /> and <see cref="ModsData.ModItem.Id" />
+        /// Remove the installed game mod matching the <see cref="ModsData.ModItem.GameId" /> and <see cref="ModsData.ModItem.Id" />
         /// </summary>
         /// <param name="categoryId"></param>
         /// <param name="modId"></param>
-        public void RemoveInstalledGameMod(string categoryId, int modId)
+        public void RemoveInstalledGameMod(ConsoleTypePrefix consoleType, string categoryId, int modId)
         {
-            InstalledGameMods.RemoveAll(x => string.Equals(x.CategoryId, categoryId, StringComparison.OrdinalIgnoreCase) && x.ModId.Equals(modId));
+            InstalledGameMods.RemoveAll(x => x.ConsoleType == consoleType && string.Equals(x.CategoryId, categoryId, StringComparison.OrdinalIgnoreCase) && x.ModId.Equals(modId));
         }
 
         /// <summary>
-        /// Gets the current <see cref="InstalledGameMod" /> the <see cref="ModsData.ModItem.Id" />
+        /// Get the current <see cref="InstalledGameMod" /> the <see cref="ModsData.ModItem.Id" />
         /// </summary>
         /// <param name="categoryId"></param>
         /// <returns></returns>
-        public InstalledMod GetInstalledGameMod(string categoryId)
+        public InstalledMod GetInstalledGameMod(ConsoleTypePrefix consoleType, string categoryId)
         {
-            return InstalledGameMods.FirstOrDefault(mod => mod.CategoryId.Equals(categoryId, StringComparison.OrdinalIgnoreCase));
+            return InstalledGameMods.FirstOrDefault(x => x.ConsoleType == consoleType && x.CategoryId.Equals(categoryId, StringComparison.OrdinalIgnoreCase));
         }
 
         /// <summary>
@@ -317,6 +321,12 @@ namespace ModioX.Models.Resources
             return modTypes.Distinct().ToList();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="modsData"></param>
+        /// <param name="modIds"></param>
+        /// <returns></returns>
         public List<string> GetRegionsForModIDs(ModsData modsData, List<int> modIds)
         {
             List<string> regions = new List<string>();

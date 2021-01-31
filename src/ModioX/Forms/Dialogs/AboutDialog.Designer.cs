@@ -63,6 +63,7 @@
             // 
             this.LabelInformation.AllowHtmlString = true;
             this.LabelInformation.Appearance.Options.UseTextOptions = true;
+            this.LabelInformation.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.LabelInformation.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.LabelInformation.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelInformation.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -77,10 +78,9 @@
             // 
             this.groupControl2.Controls.Add(this.LabelSpecialThanks);
             this.groupControl2.Location = new System.Drawing.Point(310, 122);
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(5);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Padding = new System.Windows.Forms.Padding(3);
-            this.groupControl2.Size = new System.Drawing.Size(289, 116);
+            this.groupControl2.Size = new System.Drawing.Size(289, 130);
             this.groupControl2.TabIndex = 4;
             this.groupControl2.Text = "SPECIAL THANKS";
             // 
@@ -88,22 +88,21 @@
             // 
             this.LabelSpecialThanks.AllowHtmlString = true;
             this.LabelSpecialThanks.Appearance.Options.UseTextOptions = true;
+            this.LabelSpecialThanks.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.LabelSpecialThanks.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.LabelSpecialThanks.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelSpecialThanks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LabelSpecialThanks.Location = new System.Drawing.Point(5, 26);
             this.LabelSpecialThanks.Name = "LabelSpecialThanks";
             this.LabelSpecialThanks.Padding = new System.Windows.Forms.Padding(3);
-            this.LabelSpecialThanks.Size = new System.Drawing.Size(279, 85);
+            this.LabelSpecialThanks.Size = new System.Drawing.Size(279, 99);
             this.LabelSpecialThanks.TabIndex = 18;
-            this.LabelSpecialThanks.Text = "Appropriate Creators for all Mods\nRobinPerris for DarkUI for WinForms\nJamesNK for" +
-    " Newtonsoft.Json\nApache for Apache log4net\nBISOON for FtpConnection.cs\nTeddyHamm" +
-    "er for XDevkit";
+            this.LabelSpecialThanks.Text = resources.GetString("LabelSpecialThanks.Text");
             // 
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.LabelLicense);
-            this.groupControl3.Location = new System.Drawing.Point(14, 248);
+            this.groupControl3.Location = new System.Drawing.Point(14, 262);
             this.groupControl3.Margin = new System.Windows.Forms.Padding(5);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Padding = new System.Windows.Forms.Padding(3);
@@ -115,6 +114,7 @@
             // 
             this.LabelLicense.AllowHtmlString = true;
             this.LabelLicense.Appearance.Options.UseTextOptions = true;
+            this.LabelLicense.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.LabelLicense.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.LabelLicense.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelLicense.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -133,7 +133,7 @@
             this.groupControl4.Margin = new System.Windows.Forms.Padding(5);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Padding = new System.Windows.Forms.Padding(3);
-            this.groupControl4.Size = new System.Drawing.Size(286, 116);
+            this.groupControl4.Size = new System.Drawing.Size(286, 130);
             this.groupControl4.TabIndex = 4;
             this.groupControl4.Text = "CREDITS";
             // 
@@ -141,23 +141,25 @@
             // 
             this.LabelCredits.AllowHtmlString = true;
             this.LabelCredits.Appearance.Options.UseTextOptions = true;
+            this.LabelCredits.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.LabelCredits.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.LabelCredits.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelCredits.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LabelCredits.Location = new System.Drawing.Point(5, 26);
             this.LabelCredits.Name = "LabelCredits";
             this.LabelCredits.Padding = new System.Windows.Forms.Padding(3);
-            this.LabelCredits.Size = new System.Drawing.Size(276, 85);
+            this.LabelCredits.Size = new System.Drawing.Size(276, 99);
             this.LabelCredits.TabIndex = 17;
-            this.LabelCredits.Text = "Developer: ohhsodead\r\nContributor: KayGart\r\nContributor: TeddyHammer\r\n\r\nWebsite:\r" +
-    "\n<href=\\\"https://github.com/ohhsodead/ModioX /\\\">https://github.com/ohhsodead/Mo" +
-    "dioX ";
+            this.LabelCredits.Text = "Developer: ohhsodead\r\nContributor: KayGart\r\nContributor: TeddyHammer\r\n\r\n\r\nWebsite" +
+    ":\r\n<href=\\\"https://github.com/ohhsodead/ModioX /\\\">https://github.com/ohhsodead/" +
+    "ModioX ";
             this.LabelCredits.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelCredits_HyperlinkClick);
             // 
             // ButtonClose
             // 
+            this.ButtonClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ButtonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.ButtonClose.Location = new System.Drawing.Point(270, 450);
+            this.ButtonClose.Location = new System.Drawing.Point(270, 476);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonClose.Size = new System.Drawing.Size(74, 24);
@@ -173,7 +175,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(615, 486);
+            this.ClientSize = new System.Drawing.Size(615, 512);
             this.Controls.Add(this.ButtonClose);
             this.Controls.Add(this.groupControl4);
             this.Controls.Add(this.groupControl3);

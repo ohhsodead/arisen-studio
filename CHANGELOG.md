@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file.
 - Removed redundant and unused dependencies
 - Redesigned Connections and Settings form
 - Added New Connection button to Connection dialog
-- Added support for connecting to Xbox RGH/JTAG consoles
+- Added support for Xbox RGH/JTAG consoles
 - Added images for all PS3 and Xbox models
 - Added ability to create and add mods to your own lists
 - Added Plugins File Editor for Xbox to Tools menu

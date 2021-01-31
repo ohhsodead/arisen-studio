@@ -97,6 +97,7 @@ namespace ModioX.Forms.Windows
             this.ButtonNotifyMessage = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonVirtualController = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxFileManager = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonXboxPluginsEditor = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxCheatEngine = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxXBDMMenu = new DevExpress.XtraBars.BarSubItem();
             this.ButtonXboxMessageBoxUI = new DevExpress.XtraBars.BarButtonItem();
@@ -247,6 +248,7 @@ namespace ModioX.Forms.Windows
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.HeaderLabelModsInstalled = new DevExpress.XtraBars.BarHeaderItem();
             this.ButtonModsUninstallAll = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonUninstallInstalledMods = new DevExpress.XtraEditors.SimpleButton();
             ButtonConnectXbox = new DevExpress.XtraBars.BarButtonItem();
             this.FlowPanelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlModsInstallFiles)).BeginInit();
@@ -812,9 +814,10 @@ namespace ModioX.Forms.Windows
             this.ButtonXNotifySend,
             this.ButtonXboxShowProfileIDInfo,
             this.barButtonItem4,
-            this.ButtonXboxCheatEngine});
+            this.ButtonXboxCheatEngine,
+            this.ButtonXboxPluginsEditor});
             this.MainMenu.MainMenu = this.BarMenu;
-            this.MainMenu.MaxItemId = 102;
+            this.MainMenu.MaxItemId = 103;
             this.MainMenu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.XNotifyText,
             this.XNotifyType});
@@ -912,6 +915,7 @@ namespace ModioX.Forms.Windows
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3PackageManager),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3WebManControls, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxFileManager, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxPluginsEditor),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxCheatEngine),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxXBDMMenu, true)});
             this.ToolsMenu.Manager = this.MainMenu;
@@ -1046,6 +1050,13 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxFileManager.Id = 65;
             this.ButtonXboxFileManager.Name = "ButtonXboxFileManager";
             this.ButtonXboxFileManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxFileManager_ItemClick);
+            // 
+            // ButtonXboxPluginsEditor
+            // 
+            this.ButtonXboxPluginsEditor.Caption = "Plugins Editor...";
+            this.ButtonXboxPluginsEditor.Id = 102;
+            this.ButtonXboxPluginsEditor.Name = "ButtonXboxPluginsEditor";
+            this.ButtonXboxPluginsEditor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxLaunchFileEditor_ItemClick);
             // 
             // ButtonXboxCheatEngine
             // 
@@ -1255,7 +1266,7 @@ namespace ModioX.Forms.Windows
             this.ButtonEditGameRegions.Caption = "Edit Game Regions...";
             this.ButtonEditGameRegions.Id = 15;
             this.ButtonEditGameRegions.Name = "ButtonEditGameRegions";
-            this.ButtonEditGameRegions.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonEditGameRegion_ItemClick);
+            this.ButtonEditGameRegions.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonEditGameRegions_ItemClick);
             // 
             // ButtonEditApplications
             // 
@@ -2244,6 +2255,7 @@ namespace ModioX.Forms.Windows
             // 
             // PanelInstalledModsPlugins
             // 
+            this.PanelInstalledModsPlugins.Controls.Add(this.ButtonUninstallInstalledMods);
             this.PanelInstalledModsPlugins.Controls.Add(this.ButtonUninstallAllMods);
             this.PanelInstalledModsPlugins.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelInstalledModsPlugins.Location = new System.Drawing.Point(2, 159);
@@ -2254,8 +2266,7 @@ namespace ModioX.Forms.Windows
             // ButtonUninstallAllMods
             // 
             this.ButtonUninstallAllMods.Enabled = false;
-            this.ButtonUninstallAllMods.Location = new System.Drawing.Point(8, 8);
-            this.ButtonUninstallAllMods.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.ButtonUninstallAllMods.Location = new System.Drawing.Point(91, 8);
             this.ButtonUninstallAllMods.Name = "ButtonUninstallAllMods";
             this.ButtonUninstallAllMods.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonUninstallAllMods.Size = new System.Drawing.Size(93, 24);
@@ -2451,6 +2462,17 @@ namespace ModioX.Forms.Windows
             this.ButtonModsUninstallAll.Caption = "Uninstall All";
             this.ButtonModsUninstallAll.Id = 2;
             this.ButtonModsUninstallAll.Name = "ButtonModsUninstallAll";
+            // 
+            // ButtonUninstallInstalledMods
+            // 
+            this.ButtonUninstallInstalledMods.Enabled = false;
+            this.ButtonUninstallInstalledMods.Location = new System.Drawing.Point(8, 8);
+            this.ButtonUninstallInstalledMods.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.ButtonUninstallInstalledMods.Name = "ButtonUninstallInstalledMods";
+            this.ButtonUninstallInstalledMods.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonUninstallInstalledMods.Size = new System.Drawing.Size(77, 24);
+            this.ButtonUninstallInstalledMods.TabIndex = 14;
+            this.ButtonUninstallInstalledMods.Text = "Uninstall";
             // 
             // MainWindow
             // 
@@ -2741,5 +2763,7 @@ namespace ModioX.Forms.Windows
         private BarButtonItem ButtonXboxCheatEngine;
         private DevExpress.Utils.Layout.StackPanel PanelInstalledModsPlugins;
         private SimpleButton ButtonUninstallAllMods;
+        private BarButtonItem ButtonXboxPluginsEditor;
+        private SimpleButton ButtonUninstallInstalledMods;
     }
 }

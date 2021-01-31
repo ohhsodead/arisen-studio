@@ -16,9 +16,9 @@ namespace ModioX.Io
         internal static readonly string AppModsDataDirectory = $@"{AppDataDirectory}Mods\";
 
         /// <summary>
-        /// Get the game backup files directory for downloading backup files to.
+        /// Get the directory for downloading backup files to.
         /// </summary>
-        internal static readonly string AppGameBackupFilesDirectory = $@"{AppDataDirectory}Game Backup Files\";
+        internal static readonly string AppBackupFilesDirectory = $@"{AppDataDirectory}Backup Files\";
 
         /// <summary>
         /// Get the Logs directory where the app's logs reside.
@@ -26,7 +26,7 @@ namespace ModioX.Io
         internal static readonly string AppLogsDirectory = $@"{AppDataDirectory}Logs\";
 
         /// <summary>
-        /// Local path at where the settings file will be stored on the machine
+        /// Local path at where the settings file will be stored on the machine.
         /// </summary>
         internal static readonly string AppSettingsFile = $@"{AppDataDirectory}SettingsData.json";
 

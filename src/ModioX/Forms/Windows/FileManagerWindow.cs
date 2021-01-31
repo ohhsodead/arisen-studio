@@ -30,6 +30,11 @@ namespace ModioX.Forms.Windows
         public static SettingsData Settings { get; } = MainWindow.Settings;
 
         /// <summary>
+        /// Get the current user's console profile data.
+        /// </summary>
+        public static ConsoleProfile ConsoleProfile { get; } = MainWindow.ConsoleProfile;
+
+        /// <summary>
         /// Get the FTP connection for use with uploading mods, not reliable for uploading files.
         /// </summary>
         public static FtpConnection FtpConnection { get; } = MainWindow.FtpConnection;
@@ -42,12 +47,12 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Get/set the current local directory path.
         /// </summary>
-        public string DirectoryPathLocal { get; set; } = "/dev_hdd0/";
+        public string DirectoryPathLocal { get; set; } = @"C:\";
 
         /// <summary>
         /// Gets/set the current console directory path.
         /// </summary>
-        public string DirectoryPathConsole { get; set; } = @"C:\";
+        public string DirectoryPathConsole { get; set; } = ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3 ? "/dev_hdd0/" : "/Hdd1";
 
         /// <summary>
         /// Get the user's local computer drives.
@@ -79,13 +84,27 @@ namespace ModioX.Forms.Windows
 
             if (Settings.SaveLocalPath)
             {
-                if (Settings.LocalPathPS3.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathPS3))
+                if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
                 {
-                    LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents) + @"\");
+                    if (Settings.LocalPathPS3.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathPS3))
+                    {
+                        LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents) + @"\");
+                    }
+                    else
+                    {
+                        LoadLocalDirectory(Settings.LocalPathPS3);
+                    }
                 }
-                else
+                else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
                 {
-                    LoadLocalDirectory(Settings.LocalPathPS3);
+                    if (Settings.LocalPathXBOX.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathXBOX))
+                    {
+                        LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents) + @"\");
+                    }
+                    else
+                    {
+                        LoadLocalDirectory(Settings.LocalPathXBOX);
+                    }
                 }
             }
             else
@@ -98,12 +117,26 @@ namespace ModioX.Forms.Windows
         {
             if (!string.IsNullOrWhiteSpace(TextBoxLocalPath.Text))
             {
-                Settings.LocalPathPS3 = TextBoxLocalPath.Text;
+                if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+                {
+                    Settings.LocalPathPS3 = TextBoxLocalPath.Text;
+                }
+                else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+                {
+                    Settings.LocalPathXBOX = TextBoxLocalPath.Text;
+                }
             }
 
             if (!string.IsNullOrWhiteSpace(TextBoxConsolePath.Text))
             {
-                Settings.ConsolePathPS3 = TextBoxConsolePath.Text;
+                if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+                {
+                    Settings.ConsolePathPS3 = TextBoxConsolePath.Text;
+                }
+                else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+                {
+                    Settings.ConsolePathPS3 = TextBoxConsolePath.Text;
+                }
             }
         }
 
@@ -116,20 +149,34 @@ namespace ModioX.Forms.Windows
                 ComboBoxConsoleDrives.Properties.Items.Add(driveName.Replace(@"/", ""));
             }
 
-            if (Settings.SaveConsolePath)
+            if (Settings.SaveLocalPath)
             {
-                if (Settings.ConsolePathPS3.Equals(@"/") || string.IsNullOrEmpty(Settings.ConsolePathPS3))
+                if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
                 {
-                    LoadConsoleDirectory("/dev_hdd0/");
+                    if (Settings.LocalPathPS3.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathPS3))
+                    {
+                        LoadConsoleDirectory("/Hdd1/");
+                    }
+                    else
+                    {
+                        LoadConsoleDirectory(Settings.LocalPathPS3);
+                    }
                 }
-                else
+                else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
                 {
-                    LoadConsoleDirectory(Settings.ConsolePathPS3);
+                    if (Settings.LocalPathXBOX.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathXBOX))
+                    {
+                        LoadConsoleDirectory("/Hdd1/");
+                    }
+                    else
+                    {
+                        LoadConsoleDirectory(Settings.LocalPathXBOX);
+                    }
                 }
             }
             else
             {
-                LoadConsoleDirectory("/dev_hdd0/");
+                LoadConsoleDirectory("/Hdd1/");
             }
 
             WaitLoadConsole.Enabled = false;

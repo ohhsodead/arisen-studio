@@ -31,18 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameUpdatesFinder));
             this.SectionPanelInformation = new DevExpress.XtraEditors.GroupControl();
+            this.ComboBoxType = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.ButtonSearch = new DevExpress.XtraEditors.SimpleButton();
             this.ProgressNoGameUpdatesFound = new DevExpress.XtraWaitForm.ProgressPanel();
+            this.TextBoxTitleID = new DevExpress.XtraEditors.TextEdit();
             this.GridGameUpdates = new DevExpress.XtraGrid.GridControl();
             this.GridViewGameUpdates = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
-            this.ButtonInstallToConsole = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonDownloadFile = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonCopyURLToClipboard = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonCopySHA1ToClipboard = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonSearch = new DevExpress.XtraEditors.SimpleButton();
-            this.TextBoxTitleID = new DevExpress.XtraEditors.TextEdit();
             this.LabelSearch = new DevExpress.XtraEditors.LabelControl();
             this.LabelSelectType = new DevExpress.XtraEditors.LabelControl();
+            this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
+            this.ButtonInstallToConsole = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonDownloadToComputer = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonCopyURLToClipboard = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonCopySHA1ToClipboard = new DevExpress.XtraEditors.SimpleButton();
             this.ContextMenuDownloadToComputer = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuInstallToConsole = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -60,16 +61,15 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
-            this.ComboBoxType = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.SectionPanelInformation)).BeginInit();
             this.SectionPanelInformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxTitleID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridGameUpdates)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewGameUpdates)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).BeginInit();
             this.stackPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxTitleID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManagerStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // SectionPanelInformation
@@ -91,6 +91,31 @@
             this.SectionPanelInformation.TabIndex = 0;
             this.SectionPanelInformation.Text = "SEARCH FOR GAME UPDATES";
             // 
+            // ComboBoxType
+            // 
+            this.ComboBoxType.Location = new System.Drawing.Point(245, 32);
+            this.ComboBoxType.Name = "ComboBoxType";
+            this.ComboBoxType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ComboBoxType.Properties.Items.AddRange(new object[] {
+            "Retail",
+            "Debug"});
+            this.ComboBoxType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ComboBoxType.Size = new System.Drawing.Size(100, 20);
+            this.ComboBoxType.TabIndex = 1185;
+            // 
+            // ButtonSearch
+            // 
+            this.ButtonSearch.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonSearch.Appearance.Options.UseFont = true;
+            this.ButtonSearch.Location = new System.Drawing.Point(352, 31);
+            this.ButtonSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonSearch.Name = "ButtonSearch";
+            this.ButtonSearch.Size = new System.Drawing.Size(67, 22);
+            this.ButtonSearch.TabIndex = 2;
+            this.ButtonSearch.Text = "Search";
+            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
+            // 
             // ProgressNoGameUpdatesFound
             // 
             this.ProgressNoGameUpdatesFound.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -109,6 +134,16 @@
             this.ProgressNoGameUpdatesFound.TabIndex = 1184;
             this.ProgressNoGameUpdatesFound.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
             // 
+            // TextBoxTitleID
+            // 
+            this.TextBoxTitleID.EditValue = "e.g. BLES01807";
+            this.TextBoxTitleID.Location = new System.Drawing.Point(57, 31);
+            this.TextBoxTitleID.Name = "TextBoxTitleID";
+            this.TextBoxTitleID.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxTitleID.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxTitleID.Size = new System.Drawing.Size(100, 22);
+            this.TextBoxTitleID.TabIndex = 0;
+            // 
             // GridGameUpdates
             // 
             this.GridGameUpdates.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -124,81 +159,13 @@
             // 
             // GridViewGameUpdates
             // 
+            this.GridViewGameUpdates.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.GridViewGameUpdates.GridControl = this.GridGameUpdates;
             this.GridViewGameUpdates.Name = "GridViewGameUpdates";
             this.GridViewGameUpdates.OptionsView.ShowGroupPanel = false;
             this.GridViewGameUpdates.OptionsView.ShowIndicator = false;
-            // 
-            // stackPanel2
-            // 
-            this.stackPanel2.Controls.Add(this.ButtonInstallToConsole);
-            this.stackPanel2.Controls.Add(this.ButtonDownloadFile);
-            this.stackPanel2.Controls.Add(this.ButtonCopyURLToClipboard);
-            this.stackPanel2.Controls.Add(this.ButtonCopySHA1ToClipboard);
-            this.stackPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.stackPanel2.Location = new System.Drawing.Point(2, 327);
-            this.stackPanel2.Name = "stackPanel2";
-            this.stackPanel2.Size = new System.Drawing.Size(570, 39);
-            this.stackPanel2.TabIndex = 1181;
-            // 
-            // ButtonInstallToConsole
-            // 
-            this.ButtonInstallToConsole.Location = new System.Drawing.Point(8, 8);
-            this.ButtonInstallToConsole.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
-            this.ButtonInstallToConsole.Name = "ButtonInstallToConsole";
-            this.ButtonInstallToConsole.Size = new System.Drawing.Size(121, 23);
-            this.ButtonInstallToConsole.TabIndex = 6;
-            this.ButtonInstallToConsole.Text = "Install to Console";
-            this.ButtonInstallToConsole.Click += new System.EventHandler(this.ButtonInstallToConsole_Click);
-            // 
-            // ButtonDownloadFile
-            // 
-            this.ButtonDownloadFile.Location = new System.Drawing.Point(135, 8);
-            this.ButtonDownloadFile.Name = "ButtonDownloadFile";
-            this.ButtonDownloadFile.Size = new System.Drawing.Size(108, 23);
-            this.ButtonDownloadFile.TabIndex = 7;
-            this.ButtonDownloadFile.Text = "Download File";
-            this.ButtonDownloadFile.Click += new System.EventHandler(this.ButtonDownloadFile_Click);
-            // 
-            // ButtonCopyURLToClipboard
-            // 
-            this.ButtonCopyURLToClipboard.Location = new System.Drawing.Point(249, 8);
-            this.ButtonCopyURLToClipboard.Name = "ButtonCopyURLToClipboard";
-            this.ButtonCopyURLToClipboard.Size = new System.Drawing.Size(149, 23);
-            this.ButtonCopyURLToClipboard.TabIndex = 8;
-            this.ButtonCopyURLToClipboard.Text = "Copy URL to Clipboard";
-            this.ButtonCopyURLToClipboard.Click += new System.EventHandler(this.ButtonCopyURLToClipboard_Click);
-            // 
-            // ButtonCopySHA1ToClipboard
-            // 
-            this.ButtonCopySHA1ToClipboard.Location = new System.Drawing.Point(404, 8);
-            this.ButtonCopySHA1ToClipboard.Name = "ButtonCopySHA1ToClipboard";
-            this.ButtonCopySHA1ToClipboard.Size = new System.Drawing.Size(157, 23);
-            this.ButtonCopySHA1ToClipboard.TabIndex = 9;
-            this.ButtonCopySHA1ToClipboard.Text = "Copy SHA1 to Clipboard";
-            this.ButtonCopySHA1ToClipboard.Click += new System.EventHandler(this.ButtonCopySHA1ToClipboard_Click);
-            // 
-            // ButtonSearch
-            // 
-            this.ButtonSearch.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonSearch.Appearance.Options.UseFont = true;
-            this.ButtonSearch.Location = new System.Drawing.Point(352, 31);
-            this.ButtonSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.ButtonSearch.Name = "ButtonSearch";
-            this.ButtonSearch.Size = new System.Drawing.Size(67, 22);
-            this.ButtonSearch.TabIndex = 2;
-            this.ButtonSearch.Text = "Search";
-            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
-            // 
-            // TextBoxTitleID
-            // 
-            this.TextBoxTitleID.EditValue = "e.g. BLES01807";
-            this.TextBoxTitleID.Location = new System.Drawing.Point(57, 31);
-            this.TextBoxTitleID.Name = "TextBoxTitleID";
-            this.TextBoxTitleID.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxTitleID.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxTitleID.Size = new System.Drawing.Size(100, 22);
-            this.TextBoxTitleID.TabIndex = 0;
+            this.GridViewGameUpdates.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewGameUpdates_RowClick);
+            this.GridViewGameUpdates.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewGameUpdates_FocusedRowChanged);
             // 
             // LabelSearch
             // 
@@ -229,6 +196,55 @@
             this.LabelSelectType.Size = new System.Drawing.Size(72, 15);
             this.LabelSelectType.TabIndex = 1160;
             this.LabelSelectType.Text = "UPDATE TYPE";
+            // 
+            // stackPanel2
+            // 
+            this.stackPanel2.Controls.Add(this.ButtonInstallToConsole);
+            this.stackPanel2.Controls.Add(this.ButtonDownloadToComputer);
+            this.stackPanel2.Controls.Add(this.ButtonCopyURLToClipboard);
+            this.stackPanel2.Controls.Add(this.ButtonCopySHA1ToClipboard);
+            this.stackPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.stackPanel2.Location = new System.Drawing.Point(2, 327);
+            this.stackPanel2.Name = "stackPanel2";
+            this.stackPanel2.Size = new System.Drawing.Size(570, 39);
+            this.stackPanel2.TabIndex = 1181;
+            // 
+            // ButtonInstallToConsole
+            // 
+            this.ButtonInstallToConsole.Location = new System.Drawing.Point(8, 8);
+            this.ButtonInstallToConsole.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.ButtonInstallToConsole.Name = "ButtonInstallToConsole";
+            this.ButtonInstallToConsole.Size = new System.Drawing.Size(121, 23);
+            this.ButtonInstallToConsole.TabIndex = 6;
+            this.ButtonInstallToConsole.Text = "Install to Console";
+            this.ButtonInstallToConsole.Click += new System.EventHandler(this.ButtonInstallToConsole_Click);
+            // 
+            // ButtonDownloadToComputer
+            // 
+            this.ButtonDownloadToComputer.Location = new System.Drawing.Point(135, 8);
+            this.ButtonDownloadToComputer.Name = "ButtonDownloadToComputer";
+            this.ButtonDownloadToComputer.Size = new System.Drawing.Size(108, 23);
+            this.ButtonDownloadToComputer.TabIndex = 7;
+            this.ButtonDownloadToComputer.Text = "Download File";
+            this.ButtonDownloadToComputer.Click += new System.EventHandler(this.ButtonDownloadFile_Click);
+            // 
+            // ButtonCopyURLToClipboard
+            // 
+            this.ButtonCopyURLToClipboard.Location = new System.Drawing.Point(249, 8);
+            this.ButtonCopyURLToClipboard.Name = "ButtonCopyURLToClipboard";
+            this.ButtonCopyURLToClipboard.Size = new System.Drawing.Size(149, 23);
+            this.ButtonCopyURLToClipboard.TabIndex = 8;
+            this.ButtonCopyURLToClipboard.Text = "Copy URL to Clipboard";
+            this.ButtonCopyURLToClipboard.Click += new System.EventHandler(this.ButtonCopyURLToClipboard_Click);
+            // 
+            // ButtonCopySHA1ToClipboard
+            // 
+            this.ButtonCopySHA1ToClipboard.Location = new System.Drawing.Point(404, 8);
+            this.ButtonCopySHA1ToClipboard.Name = "ButtonCopySHA1ToClipboard";
+            this.ButtonCopySHA1ToClipboard.Size = new System.Drawing.Size(157, 23);
+            this.ButtonCopySHA1ToClipboard.TabIndex = 9;
+            this.ButtonCopySHA1ToClipboard.Text = "Copy SHA1 to Clipboard";
+            this.ButtonCopySHA1ToClipboard.Click += new System.EventHandler(this.ButtonCopySHA1ToClipboard_Click);
             // 
             // ContextMenuDownloadToComputer
             // 
@@ -385,19 +401,6 @@
             this.barStaticItem2.Id = 2;
             this.barStaticItem2.Name = "barStaticItem2";
             // 
-            // ComboBoxType
-            // 
-            this.ComboBoxType.Location = new System.Drawing.Point(245, 32);
-            this.ComboBoxType.Name = "ComboBoxType";
-            this.ComboBoxType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboBoxType.Properties.Items.AddRange(new object[] {
-            "Retail",
-            "Debug"});
-            this.ComboBoxType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxType.Size = new System.Drawing.Size(100, 20);
-            this.ComboBoxType.TabIndex = 1185;
-            // 
             // GameUpdatesFinder
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
@@ -423,13 +426,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.SectionPanelInformation)).EndInit();
             this.SectionPanelInformation.ResumeLayout(false);
             this.SectionPanelInformation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxTitleID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridGameUpdates)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewGameUpdates)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).EndInit();
             this.stackPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxTitleID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManagerStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxType.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,7 +453,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnVersion;
         private DevExpress.Utils.Layout.StackPanel stackPanel2;
         private DevExpress.XtraEditors.SimpleButton ButtonInstallToConsole;
-        private DevExpress.XtraEditors.SimpleButton ButtonDownloadFile;
+        private DevExpress.XtraEditors.SimpleButton ButtonDownloadToComputer;
         private DevExpress.XtraWaitForm.ProgressPanel ProgressNoGameUpdatesFound;
         private DevExpress.XtraGrid.GridControl GridGameUpdates;
         private DevExpress.XtraGrid.Views.Grid.GridView GridViewGameUpdates;

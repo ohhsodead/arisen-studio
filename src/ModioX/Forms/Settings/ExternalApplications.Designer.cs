@@ -186,7 +186,7 @@
             // 
             // GridViewApplications
             // 
-            this.GridViewApplications.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
+            this.GridViewApplications.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.GridViewApplications.GridControl = this.GridApplications;
             this.GridViewApplications.Name = "GridViewApplications";
             this.GridViewApplications.OptionsBehavior.Editable = false;
@@ -285,7 +285,7 @@
             this.ButtonSaveAll.Text = "Save All";
             this.ButtonSaveAll.Click += new System.EventHandler(this.ButtonSaveAll_Click);
             // 
-            // ExternalApplicationsDialog
+            // ExternalApplications
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.Appearance.Options.UseFont = true;
@@ -299,10 +299,10 @@
             this.Controls.Add(this.ButtonSaveAll);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("ExternalApplicationsDialog.IconOptions.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("ExternalApplications.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ExternalApplicationsDialog";
+            this.Name = "ExternalApplications";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "External Applications";

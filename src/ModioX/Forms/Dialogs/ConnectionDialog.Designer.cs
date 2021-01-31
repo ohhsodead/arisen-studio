@@ -35,6 +35,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.ScrollBarConsoleProfiles = new DevExpress.XtraEditors.VScrollBar();
             this.PanelConsoleProfiles = new System.Windows.Forms.FlowLayoutPanel();
+            this.ButtonNewConnection = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.SuspendLayout();
@@ -99,9 +100,9 @@
             // 
             this.ScrollBarConsoleProfiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ScrollBarConsoleProfiles.Location = new System.Drawing.Point(441, 23);
+            this.ScrollBarConsoleProfiles.Location = new System.Drawing.Point(441, 22);
             this.ScrollBarConsoleProfiles.Name = "ScrollBarConsoleProfiles";
-            this.ScrollBarConsoleProfiles.Size = new System.Drawing.Size(17, 314);
+            this.ScrollBarConsoleProfiles.Size = new System.Drawing.Size(17, 315);
             this.ScrollBarConsoleProfiles.TabIndex = 1;
             this.ScrollBarConsoleProfiles.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollBarConsoleProfiles_Scroll);
             // 
@@ -116,6 +117,19 @@
             this.PanelConsoleProfiles.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.PanelConsoleProfiles_ControlAddedOrRemoved);
             this.PanelConsoleProfiles.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.PanelConsoleProfiles_ControlAddedOrRemoved);
             // 
+            // ButtonNewConnection
+            // 
+            this.ButtonNewConnection.AllowFocus = false;
+            this.ButtonNewConnection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonNewConnection.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonNewConnection.Appearance.Options.UseFont = true;
+            this.ButtonNewConnection.Location = new System.Drawing.Point(12, 357);
+            this.ButtonNewConnection.Name = "ButtonNewConnection";
+            this.ButtonNewConnection.Size = new System.Drawing.Size(122, 25);
+            this.ButtonNewConnection.TabIndex = 8;
+            this.ButtonNewConnection.Text = "New Connection";
+            this.ButtonNewConnection.Click += new System.EventHandler(this.ButtonNewConnection_Click);
+            // 
             // ConnectionDialog
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
@@ -125,6 +139,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(485, 394);
+            this.Controls.Add(this.ButtonNewConnection);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.ButtonEdit);
             this.Controls.Add(this.ButtonDelete);
@@ -154,5 +169,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.VScrollBar ScrollBarConsoleProfiles;
         private System.Windows.Forms.FlowLayoutPanel PanelConsoleProfiles;
+        private DevExpress.XtraEditors.SimpleButton ButtonNewConnection;
     }
 }

@@ -45,13 +45,14 @@ namespace ModioX.Extensions
         /// <param name="consolePath">Mod to uninstall</param>
         internal static void DeleteDirectory(FtpClient ftpClient, string consolePath)
         {
-            string dirPath = consolePath.Contains("/")
-                ? consolePath.Substring(0, consolePath.LastIndexOf('/')) + '/'
-                : "dev_hdd0/";
+            string parentDirectory = Path.GetDirectoryName(consolePath).Replace(@"\", "/");
 
-            ftpClient.SetWorkingDirectory(dirPath);
+            ftpClient.SetWorkingDirectory(parentDirectory);
 
-            if (ftpClient.DirectoryExists(consolePath)) ftpClient.DeleteDirectory(consolePath);
+            if (ftpClient.DirectoryExists(consolePath))
+            {
+                ftpClient.DeleteDirectory(consolePath);
+            }
         }
 
         /// <summary>
@@ -63,12 +64,13 @@ namespace ModioX.Extensions
         {
             FtpConnection ftpConnection = MainWindow.FtpConnection;
 
-            string dirPath = consoleFile.Contains("/")
-                ? consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + '/'
-                : "dev_hdd0/";
+            Program.Log.Info("Local file: " + localFile);
+            Program.Log.Info("Console file: " + consoleFile);
+
+            string parentDirectory = Path.GetDirectoryName(consoleFile).Replace(@"\", "/");
 
             ftpConnection.SetLocalDirectory(Path.GetDirectoryName(localFile));
-            ftpConnection.SetCurrentDirectory(dirPath);
+            ftpConnection.SetCurrentDirectory(parentDirectory);
 
             if (File.Exists(localFile))
             {
@@ -113,11 +115,9 @@ namespace ModioX.Extensions
         {
             FtpConnection ftpConnection = MainWindow.FtpConnection;
 
-            string dirPath = filePath.Contains("/")
-                ? filePath.Substring(0, filePath.LastIndexOf('/')) + '/'
-                : "dev_hdd0/";
+            string parentDirectory = Path.GetDirectoryName(filePath).Replace(@"\", "/");
 
-            ftpConnection.SetCurrentDirectory(dirPath);
+            ftpConnection.SetCurrentDirectory(parentDirectory);
 
             return ftpConnection.FileExists(filePath);
         }
@@ -236,13 +236,9 @@ namespace ModioX.Extensions
 
             List<string> folderNames = new List<string>();
 
-            string dirPath = consolePath.Contains("/")
-                ? consolePath.Substring(0, consolePath.LastIndexOf('/')) + '/'
-                : "/dev_hdd0/";
+            ftpConnection.SetCurrentDirectory(consolePath);
 
-            ftpConnection.SetCurrentDirectory(dirPath);
-
-            foreach (FtpDirectoryInfo directoryInfo in ftpConnection.GetDirectories(dirPath).Skip(2))
+            foreach (FtpDirectoryInfo directoryInfo in ftpConnection.GetDirectories(consolePath).Skip(2))
             {
                 folderNames.Add(directoryInfo.Name);
             }
@@ -251,11 +247,11 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        /// Prompts the user to choose their user id
+        /// Prompts the user to choose their profile user id.
         /// </summary>
         /// <param name="owner">Console IP Address</param>
         /// <returns></returns>
-        public static string GetUserId()
+        public static string GetUserProfileId()
         {
             List<string> userIds = GetFolderNames("/dev_hdd0/home/");
 
