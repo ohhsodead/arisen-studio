@@ -4,16 +4,17 @@ All notable changes to this project will be documented in this file.
 ## Beta v1.5 (Unreleased)
 - Improved code readability
 - Optimized parts of the application
-- Moved Logs from Application folder to Documents\ModioX\Logs
-- Upgraded design to DevExpress forms
-- Upgraded Application to .NET Framework 4.8
-- Upgraded dependencies and removed redundant\unused ones
-- Redesigned Connection and Settings dialogs
+- Moved Log files to Documents\ModioX\Logs
+- Upgraded application to DevExpress
+- Upgraded application to .NET Framework 4.8
+- Removed redundant and unused dependencies
+- Redesigned Connections and Settings form
+- Added New Connection button to Connection dialog
 - Added support for connecting to Xbox RGH/JTAG consoles
 - Added images for all PS3 and Xbox models
 - Added ability to create and add mods to your own lists
-- Added Launch File Editor for Xbox to Tools menu
-- Added XBDM features to Tools menu
+- Added Plugins File Editor for Xbox to Tools menu
+- Added XBDM features for Xbox to Tools menu
 - Added Package Files Manager for PS3 to Tools menu
 - Added View Log button to Help menu
 - Added Open Log Folder button to Help menu
