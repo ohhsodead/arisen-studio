@@ -124,7 +124,7 @@ namespace ModioX.Extensions
 
         public static void ShowXboxPluginsEditor(Form owner)
         {
-            using PluginsEditor pluginsEditor = new PluginsEditor();
+            using INIEditor pluginsEditor = new INIEditor();
             pluginsEditor.ShowDialog(owner);
         }
 
