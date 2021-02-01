@@ -19,7 +19,7 @@ using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
-    public partial class INIEditor : XtraForm
+    public partial class PluginsEditor : XtraForm
     {
         /// <summary>
         /// Get the xbox console connection.
@@ -71,7 +71,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         /// </summary>
         public IniData LaunchFileData { get; set; }
 
-        public INIEditor()
+        public PluginsEditor()
         {
             InitializeComponent();
         }
@@ -95,7 +95,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                 ComboBoxSections.Properties.Items.Clear();
 
-                foreach (var section in LaunchFileData.Sections)
+                foreach (SectionData section in LaunchFileData.Sections)
                 {
                     ComboBoxSections.Properties.Items.Add(section.SectionName);
                 }
@@ -120,19 +120,19 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             GridLaunchFile.DataSource = null;
 
-            var launchFileSections = DataExtensions.CreateDataTable(new List<DataColumn>()
+            DataTable launchFileSections = DataExtensions.CreateDataTable(new List<DataColumn>()
             {
                 new DataColumn("Key", typeof(string)),
                 new DataColumn("Value", typeof(string)),
             });
 
-            var launchFile = LaunchFileData;
+            IniData launchFile = LaunchFileData;
 
-            foreach (var section in launchFile.Sections)
+            foreach (SectionData section in launchFile.Sections)
             {
                 if (section.SectionName == sectionName)
                 {
-                    foreach (var key in section.Keys)
+                    foreach (KeyData key in section.Keys)
                     {
                         launchFileSections.Rows.Add(key.KeyName, key.Value);
                     }
@@ -155,9 +155,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void ButtonSetValue_Click(object sender, EventArgs e)
         {
-            var section = ComboBoxSections.SelectedItem.ToString();
-            var key = TextBoxKey.Text;
-            var value = TextBoxValue.Text;
+            string section = ComboBoxSections.SelectedItem.ToString();
+            string key = TextBoxKey.Text;
+            string value = TextBoxValue.Text;
 
             LaunchFileData[section][key] = value;
 
@@ -167,7 +167,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void CheckBoxEnableLiveBlock_CheckedChanged(object sender, EventArgs e)
         {
-            if (ToggleSwitchEnableLiveBlock.Checked)
+            if (CheckBoxEnableLiveBlock.Checked)
             {
                 LaunchFileData["Settings"]["liveblock"] = "true";
             }
@@ -179,7 +179,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void CheckBoxEnableLiveStrong_CheckedChanged(object sender, EventArgs e)
         {
-            if (ToggleSwitchEnableLiveStrong.Checked)
+            if (CheckBoxEnableLiveStrong.Checked)
             {
                 LaunchFileData["Settings"]["livestrong"] = "true";
             }
@@ -193,8 +193,8 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             if (GridViewLaunchFile.SelectedRowsCount > 0)
             {
-                var key = GridViewLaunchFile.GetRowCellValue(e.FocusedRowHandle, GridViewLaunchFile.Columns[0]).ToString();
-                var value = GridViewLaunchFile.GetRowCellValue(e.FocusedRowHandle, GridViewLaunchFile.Columns[1]).ToString();
+                string key = GridViewLaunchFile.GetRowCellValue(e.FocusedRowHandle, GridViewLaunchFile.Columns[0]).ToString();
+                string value = GridViewLaunchFile.GetRowCellValue(e.FocusedRowHandle, GridViewLaunchFile.Columns[1]).ToString();
 
                 TextBoxKey.Text = key;
                 TextBoxValue.Text = value;
@@ -205,19 +205,15 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             if (GridViewLaunchFile.SelectedRowsCount > 0)
             {
-                var key = GridViewLaunchFile.GetRowCellValue(e.RowHandle, GridViewLaunchFile.Columns[0]).ToString();
-                var value = GridViewLaunchFile.GetRowCellValue(e.RowHandle, GridViewLaunchFile.Columns[1]).ToString();
+                string key = GridViewLaunchFile.GetRowCellValue(e.RowHandle, GridViewLaunchFile.Columns[0]).ToString();
+                string value = GridViewLaunchFile.GetRowCellValue(e.RowHandle, GridViewLaunchFile.Columns[1]).ToString();
 
                 TextBoxKey.Text = key;
                 TextBoxValue.Text = value;
             }
         }
 
-        private void ButtonSaveFile_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void ButtonRestoreLaunchFile_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void ButtonRestoreLaunchFile_Click(object sender, EventArgs e)
         {
             if (File.Exists(LocalLaunchBackupFilePath))
             {
@@ -234,7 +230,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             }
         }
 
-        private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void ButtonSaveFile_Click(object sender, EventArgs e)
         {
             try
             {

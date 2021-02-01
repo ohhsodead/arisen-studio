@@ -124,8 +124,8 @@ namespace ModioX.Extensions
 
         public static void ShowXboxPluginsEditor(Form owner)
         {
-            using var pluginsEditor = new INIEditor();
-            pluginsEditor.ShowDialog(owner);
+            using PluginsEditor launchFileEditor = new PluginsEditor();
+            launchFileEditor.ShowDialog(owner);
         }
 
         public static void ShowXboxMemoryViewer(Form owner, string gameTitle)

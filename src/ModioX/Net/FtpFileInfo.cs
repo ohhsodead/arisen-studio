@@ -12,8 +12,8 @@ namespace ModioX.Net
                 throw new ArgumentNullException("fileName");
             }
 
-            base.OriginalPath = filePath;
-            base.FullPath = filePath;
+            OriginalPath = filePath;
+            FullPath = filePath;
 
             _filePath = filePath;
             _ftp = ftp;

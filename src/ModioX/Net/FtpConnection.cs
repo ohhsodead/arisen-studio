@@ -93,7 +93,7 @@ namespace ModioX.Net
             }
 
             _hInternet = WININET.InternetOpen(
-                System.Environment.UserName,
+                Environment.UserName,
                 WININET.INTERNET_OPEN_TYPE_PRECONFIG,
                 null,
                 null,
@@ -184,7 +184,7 @@ namespace ModioX.Net
         {
             if (Directory.Exists(directory))
             {
-                System.Environment.CurrentDirectory = directory;
+                Environment.CurrentDirectory = directory;
             }
             else
             {

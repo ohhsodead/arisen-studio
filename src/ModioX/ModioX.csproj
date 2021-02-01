@@ -178,11 +178,11 @@
     <Compile Include="Forms\Tools\XBOX Tools\GameLauncher.Designer.cs">
       <DependentUpon>GameLauncher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\IniEditor.cs">
+    <Compile Include="Forms\Tools\XBOX Tools\PluginsEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\IniEditor.Designer.cs">
-      <DependentUpon>IniEditor.cs</DependentUpon>
+    <Compile Include="Forms\Tools\XBOX Tools\PluginsEditor.Designer.cs">
+      <DependentUpon>PluginsEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\MemoryViewer.cs">
       <SubType>Form</SubType>
@@ -333,8 +333,8 @@
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\GameLauncher.resx">
       <DependentUpon>GameLauncher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\XBOX Tools\IniEditor.resx">
-      <DependentUpon>IniEditor.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Tools\XBOX Tools\PluginsEditor.resx">
+      <DependentUpon>PluginsEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\MemoryViewer.resx">
       <DependentUpon>MemoryViewer.cs</DependentUpon>
@@ -413,6 +413,8 @@
       <Version>4.7.7</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

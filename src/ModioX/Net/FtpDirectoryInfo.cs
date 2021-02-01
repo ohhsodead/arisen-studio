@@ -8,7 +8,7 @@ namespace ModioX.Net
         public FtpDirectoryInfo(FtpConnection ftp, string path)
         {
             _ftp = ftp;
-            base.FullPath = path;
+            FullPath = path;
         }
 
         private readonly FtpConnection _ftp;
