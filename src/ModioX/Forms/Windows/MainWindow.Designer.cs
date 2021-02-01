@@ -143,8 +143,7 @@ namespace ModioX.Forms.Windows
             this.ButtonModAddToList = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonModRemoveFromList = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonModReportAnIssue = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonXboxVirtualController = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonXboxMemoryPeekPoker = new DevExpress.XtraBars.BarButtonItem();
+            
             this.ButtonXNotifySend = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxCheatEngine = new DevExpress.XtraBars.BarButtonItem();
             this.XNotifyText = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
@@ -156,7 +155,6 @@ namespace ModioX.Forms.Windows
             this.ComboBoxSystemType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.LabelSelectRegion = new DevExpress.XtraEditors.LabelControl();
             this.LabelSearch = new DevExpress.XtraEditors.LabelControl();
-            this.WorkspaceManager = new DevExpress.Utils.WorkspaceManager(this.components);
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.ColumnModsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -1358,19 +1356,6 @@ namespace ModioX.Forms.Windows
             this.ButtonModReportAnIssue.Id = 62;
             this.ButtonModReportAnIssue.Name = "ButtonModReportAnIssue";
             // 
-            // ButtonXboxVirtualController
-            // 
-            this.ButtonXboxVirtualController.Caption = "Virtual Controller...";
-            this.ButtonXboxVirtualController.Id = 84;
-            this.ButtonXboxVirtualController.Name = "ButtonXboxVirtualController";
-            this.ButtonXboxVirtualController.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxVirtualController_ItemClick);
-            // 
-            // ButtonXboxMemoryPeekPoker
-            // 
-            this.ButtonXboxMemoryPeekPoker.Caption = "Memory Peek/Poker";
-            this.ButtonXboxMemoryPeekPoker.Id = 89;
-            this.ButtonXboxMemoryPeekPoker.Name = "ButtonXboxMemoryPeekPoker";
-            // 
             // ButtonXNotifySend
             // 
             this.ButtonXNotifySend.Caption = "Send XNotify";
@@ -1563,11 +1548,6 @@ namespace ModioX.Forms.Windows
             this.LabelSearch.Size = new System.Drawing.Size(50, 15);
             this.LabelSearch.TabIndex = 1157;
             this.LabelSearch.Text = "SEARCH";
-            // 
-            // WorkspaceManager
-            // 
-            this.WorkspaceManager.TargetControl = this;
-            this.WorkspaceManager.TransitionType = pushTransition1;
             // 
             // barSubItem1
             // 
