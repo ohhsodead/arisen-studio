@@ -32,14 +32,13 @@ namespace ModioX.Forms.Windows
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraBars.BarButtonItem ButtonConnectXbox;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            DevExpress.Utils.Animation.PushTransition pushTransition2 = new DevExpress.Utils.Animation.PushTransition();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.LabelSelectType = new DevExpress.XtraEditors.LabelControl();
             this.FlowPanelDetails = new System.Windows.Forms.FlowLayoutPanel();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -147,7 +146,6 @@ namespace ModioX.Forms.Windows
             this.ButtonModAddToList = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonModRemoveFromList = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonModReportAnIssue = new DevExpress.XtraBars.BarButtonItem();
-            this.LabelHeaderStatus = new DevExpress.XtraBars.BarHeaderItem();
             this.XNotifyText = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.XNotifyType = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.ButtonXNotifySend = new DevExpress.XtraBars.BarButtonItem();
@@ -217,7 +215,9 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxXNotifyMessage = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonExit = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3HardReboot = new DevExpress.XtraBars.BarButtonItem();
-            ButtonConnectXbox = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.LabelHeaderStatus = new DevExpress.XtraBars.BarStaticItem();
             this.FlowPanelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlModsInstallFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewModsInstallFiles)).BeginInit();
@@ -256,12 +256,6 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ModsMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManagerModsInstalled)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ButtonConnectXbox
-            // 
-            ButtonConnectXbox.Caption = "Connect to Console...";
-            ButtonConnectXbox.Id = 35;
-            ButtonConnectXbox.Name = "ButtonConnectXbox";
             // 
             // LabelSelectType
             // 
@@ -706,7 +700,6 @@ namespace ModioX.Forms.Windows
             this.ButtonPS3,
             this.ButtonXbox360,
             this.ButtonConnectToPS3,
-            ButtonConnectXbox,
             this.ButtonPS3WebManControls,
             this.ButtonPS3NotifyMessage,
             this.ButtonPS3VirtualController,
@@ -726,7 +719,6 @@ namespace ModioX.Forms.Windows
             this.ButtonModRemoveFromList,
             this.ButtonModReportAnIssue,
             this.LabelStatus,
-            this.LabelHeaderStatus,
             this.ButtonXboxFileManager,
             this.ButtonXboxXBDMMenu,
             this.ButtonXboxPowerFunctions,
@@ -751,9 +743,10 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxPluginsEditor,
             this.ButtonXboxXNotifyMessage,
             this.ButtonExit,
-            this.ButtonPS3HardReboot});
+            this.ButtonPS3HardReboot,
+            this.LabelHeaderStatus});
             this.MainMenu.MainMenu = this.BarMenu;
-            this.MainMenu.MaxItemId = 106;
+            this.MainMenu.MaxItemId = 107;
             this.MainMenu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.XNotifyText,
             this.XNotifyType});
@@ -1258,6 +1251,7 @@ namespace ModioX.Forms.Windows
             this.BarStatus.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.LabelHeaderConnectedConsole),
             new DevExpress.XtraBars.LinkPersistInfo(this.LabelConsoleConnected),
+            new DevExpress.XtraBars.LinkPersistInfo(this.LabelHeaderStatus),
             new DevExpress.XtraBars.LinkPersistInfo(this.LabelStatus),
             new DevExpress.XtraBars.LinkPersistInfo(this.LabelModsStats)});
             this.BarStatus.OptionsBar.AllowQuickCustomization = false;
@@ -1333,7 +1327,7 @@ namespace ModioX.Forms.Windows
             // WorkspaceManager
             // 
             this.WorkspaceManager.TargetControl = this;
-            this.WorkspaceManager.TransitionType = pushTransition2;
+            this.WorkspaceManager.TransitionType = pushTransition1;
             // 
             // LabelHeaderConsoleConnected
             // 
@@ -1377,12 +1371,6 @@ namespace ModioX.Forms.Windows
             this.ButtonModReportAnIssue.Id = 62;
             this.ButtonModReportAnIssue.Name = "ButtonModReportAnIssue";
             // 
-            // LabelHeaderStatus
-            // 
-            this.LabelHeaderStatus.Caption = "Status:";
-            this.LabelHeaderStatus.Id = 64;
-            this.LabelHeaderStatus.Name = "LabelHeaderStatus";
-            // 
             // XNotifyText
             // 
             this.XNotifyText.AutoHeight = false;
@@ -1393,7 +1381,7 @@ namespace ModioX.Forms.Windows
             this.XNotifyType.AccessibleDescription = "";
             this.XNotifyType.AutoHeight = false;
             this.XNotifyType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "mnjukjui", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "mnjukjui", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.XNotifyType.Items.AddRange(new object[] {
             "Blank",
             "Game Invite",
@@ -2168,6 +2156,36 @@ namespace ModioX.Forms.Windows
             this.ButtonPS3HardReboot.Id = 105;
             this.ButtonPS3HardReboot.Name = "ButtonPS3HardReboot";
             // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.barStaticItem1.Caption = "Connected Console:";
+            this.barStaticItem1.Id = 85;
+            this.barStaticItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem1.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem1.LeftIndent = 4;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.barStaticItem2.Caption = "Connected Console:";
+            this.barStaticItem2.Id = 85;
+            this.barStaticItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem2.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem2.LeftIndent = 4;
+            this.barStaticItem2.Name = "barStaticItem2";
+            // 
+            // LabelHeaderStatus
+            // 
+            this.LabelHeaderStatus.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.LabelHeaderStatus.Caption = "Status";
+            this.LabelHeaderStatus.Id = 106;
+            this.LabelHeaderStatus.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderStatus.ItemAppearance.Normal.Options.UseFont = true;
+            this.LabelHeaderStatus.LeftIndent = 2;
+            this.LabelHeaderStatus.Name = "LabelHeaderStatus";
+            // 
             // MainWindow
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
@@ -2378,7 +2396,6 @@ namespace ModioX.Forms.Windows
         private BarButtonItem ButtonModRemoveFromList;
         private BarButtonItem ButtonModReportAnIssue;
         private PopupMenu ModsMenu;
-        private BarHeaderItem LabelHeaderStatus;
         private BarStaticItem LabelStatus;
         private VScrollBar ScrollBarModInformation;
         private BarButtonItem ButtonXboxFileManager;
@@ -2425,5 +2442,8 @@ namespace ModioX.Forms.Windows
         private BarButtonItem ButtonXboxXNotifyMessage;
         private BarButtonItem ButtonExit;
         private BarButtonItem ButtonPS3HardReboot;
+        private BarStaticItem LabelHeaderStatus;
+        private BarStaticItem barStaticItem1;
+        private BarStaticItem barStaticItem2;
     }
 }
