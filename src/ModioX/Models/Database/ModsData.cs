@@ -3,10 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ModioX.Database;
+using ModioX.Extensions;
 
 namespace ModioX.Models.Database
 {
-    public partial class ModsData
+    public class ModsData
     {
         /// <summary>
         /// Get the date/time the database was last updated.
@@ -19,24 +20,15 @@ namespace ModioX.Models.Database
         public List<ModItem> Mods { get; set; }
 
         /// <summary>
-        /// Get all of the mod types from the specified <see cref="CategoriesData.Category.Id" />
+        /// Get all of the mod types from the specified <see cref="Category.Id" />
         /// </summary>
-        /// <param name="categoryId"> <see cref="CategoriesData.Category.Id" /> </param>
+        /// <param name="categoryId"> <see cref="Category.Id" /> </param>
         /// <returns> </returns>
         public List<string> AllModTypesForCategoryId(string categoryId)
         {
-            var modTypes = new List<string>();
-
-            foreach (var modItem in Mods)
-            {
-                if (string.Equals(modItem.GameId, categoryId, StringComparison.CurrentCultureIgnoreCase))
-                {
-                    modTypes.AddRange(modItem.ModTypes);
-                }
-            }
-
+            var modTypes = Mods.Where(x => x.GameId.EqualsIgnoreCase(categoryId)).SelectMany(x => x.ModTypes).Distinct().ToList();
             modTypes.Sort();
-            return modTypes.Distinct().ToList();
+            return modTypes;
         }
 
         /// <summary>
@@ -47,19 +39,7 @@ namespace ModioX.Models.Database
         {
             get
             {
-                var firmwares = new List<string>();
-
-                foreach (var modItem in Mods)
-                {
-                    foreach (var firmware in modItem.Firmware.Split('/'))
-                    {
-                        if (!firmwares.Equals("-"))
-                        {
-                            firmwares.Add(firmware);
-                        }
-                    }
-                }
-
+                var firmwares = Mods.SelectMany(x => x.Firmwares).Where(x => !x.EqualsIgnoreCase("-")).Distinct().ToList();
                 firmwares.Sort();
                 return firmwares.Distinct().ToList();
             }
@@ -80,42 +60,34 @@ namespace ModioX.Models.Database
         {
             if (categoryId.Equals("fvrt"))
             {
-                return (from ModItem modItem in Mods
-                        where MainWindow.Settings.FavoritedIds.Contains(modItem.Id)
-                        && modItem.Name.ToLower().Contains(name.ToLower())
-                        && modItem.Firmwares.Exists(x => x.ToLower().Contains(firmware.ToLower()))
-                        && modItem.Type.ToLower().Contains(type.ToLower())
-                        && modItem.Region.ToLower().Contains(region.ToLower())
-                        select modItem).ToList();
+                return Mods.Where(x => MainWindow.Settings.FavoritedIds.Contains(x.Id)
+                                              && x.Name.ContainsIgnoreCase(name)
+                                              && x.Firmwares.Exists(y => y.ContainsIgnoreCase(firmware))
+                                              && x.Type.ContainsIgnoreCase(type)
+                                              && x.Region.ContainsIgnoreCase(region)).ToList();
             }
-            else if (isCustomList)
+            if (isCustomList)
             {
-                return (from customList in MainWindow.Settings.CustomLists
-                        where customList.Name.Equals(categoryId)
-                        from modItem in Mods
-                        where customList.ModIds.Contains(modItem.Id)
-                        && modItem.Name.ToLower().Contains(name.ToLower())
-                        && modItem.Firmwares.Exists(x => x.ToLower().Contains(firmware.ToLower()))
-                        && modItem.Type.ToLower().Contains(type.ToLower())
-                        && modItem.Region.ToLower().Contains(region.ToLower())
-                        select modItem).ToList();
+                return MainWindow.Settings.CustomLists
+                    .Where(x => x.Name.EqualsIgnoreCase(categoryId))
+                    .SelectMany(y => Mods.Where(x => y.ModIds.Contains(x.Id)
+                                                     && x.Name.ContainsIgnoreCase(name)
+                                                     && x.Firmwares.Exists(y => y.ContainsIgnoreCase(firmware))
+                                                     && x.Type.ContainsIgnoreCase(type)
+                                                     && x.Region.ContainsIgnoreCase(region))).ToList();
             }
-            else
-            {
-                return (from ModItem modItem in Mods
-                        where string.Equals(modItem.GameId.ToLower(), categoryId.ToLower())
-                        && modItem.Name.ToLower().Contains(name.ToLower())
-                        && modItem.Firmwares.Exists(x => x.ToLower().Contains(firmware.ToLower()))
-                        && modItem.Type.ToLower().Contains(type.ToLower())
-                        && modItem.Region.ToLower().Contains(region.ToLower())
-                        select modItem).ToList();
-            }
+
+            return Mods.Where(x => x.GameId.EqualsIgnoreCase(categoryId)
+                                   & x.Name.ContainsIgnoreCase(name)
+                                   && x.Firmwares.Exists(y => y.ContainsIgnoreCase(firmware))
+                                   && x.Type.ContainsIgnoreCase(type)
+                                   && x.Region.ContainsIgnoreCase(region)).ToList();
         }
 
         /// <summary>
         /// Get the <see cref="ModItem" /> matching the specified <see cref="ModItem.Id" />.
         /// </summary>
-        /// <param name="modId"> <see cref="ModItem.Id" /> </param>
+        /// <param name="id"> <see cref="ModItem.Id" /> </param>
         /// <returns> Mod details for the <see cref="ModItem.Id" /> </returns>
         public ModItem GetModById(int id)
         {
@@ -123,15 +95,12 @@ namespace ModioX.Models.Database
         }
 
         /// <summary>
-        /// Get all the <see cref="ModItem" /> matching the specified <see
-        /// cref="CategoriesData.Category.Id" />.
+        /// Get all the <see cref="ModItem" /> matching the specified <see cref="Category.Id" />.
         /// </summary>
         /// <returns> </returns>
         public ModItem[] GetModsByCategoryId(string gameId)
         {
-            return (from ModItem modItem in Mods
-                    where modItem.GameId.Equals(gameId)
-                    select modItem).ToArray();
+            return Mods.Where(x => x.GameId.EqualsIgnoreCase(gameId)).ToArray();
         }
 
         /// <summary>
@@ -140,12 +109,7 @@ namespace ModioX.Models.Database
         /// <returns> </returns>
         public int TotalGameMods(CategoriesData categoriesData)
         {
-            return (from ModItem modItem in Mods
-                    where modItem.GetCategoryType(categoriesData) == CategoryType.Game
-                    && modItem.GetCategoryType(categoriesData) != CategoryType.Homebrew
-                    && modItem.GetCategoryType(categoriesData) != CategoryType.Resource
-                    && modItem.GetCategoryType(categoriesData) != CategoryType.Favorite
-                    select modItem).Count();
+            return Mods.Count(x => x.GetCategoryType(categoriesData) == CategoryType.Game);
         }
 
         /// <summary>
@@ -154,12 +118,7 @@ namespace ModioX.Models.Database
         /// <returns> </returns>
         public int TotalHomebrew(CategoriesData categoriesData)
         {
-            return (from ModItem modItem in Mods
-                    where modItem.GetCategoryType(categoriesData) == CategoryType.Homebrew
-                    && modItem.GetCategoryType(categoriesData) != CategoryType.Game
-                    && modItem.GetCategoryType(categoriesData) != CategoryType.Resource
-                    && modItem.GetCategoryType(categoriesData) != CategoryType.Favorite
-                    select modItem).Count();
+            return Mods.Count(x => x.GetCategoryType(categoriesData) == CategoryType.Homebrew);
         }
 
         /// <summary>
@@ -168,12 +127,7 @@ namespace ModioX.Models.Database
         /// <returns> </returns>
         public int TotalResources(CategoriesData categoriesData)
         {
-            return (from ModItem modItem in Mods
-                    where modItem.GetCategoryType(categoriesData) == CategoryType.Resource
-                    && modItem.GetCategoryType(categoriesData) != CategoryType.Homebrew
-                    && modItem.GetCategoryType(categoriesData) != CategoryType.Game
-                    && modItem.GetCategoryType(categoriesData) != CategoryType.Favorite
-                    select modItem).Count();
+            return Mods.Count(x => x.GetCategoryType(categoriesData) == CategoryType.Resource);
         }
     }
 }
