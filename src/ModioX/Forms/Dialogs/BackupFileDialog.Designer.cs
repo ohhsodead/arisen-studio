@@ -1,4 +1,4 @@
-﻿namespace ModioX.Forms
+﻿namespace ModioX.Forms.Dialogs
 {
     partial class BackupFileDialog
     {

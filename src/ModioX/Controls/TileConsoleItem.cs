@@ -19,7 +19,7 @@ namespace ModioX.Controls
 
         public ConsoleProfile ConsoleProfile { get; set; }
 
-        public bool IsSelected { get; set; } = false;
+        public bool IsSelected { get; set; }
 
         public bool PreFilterMessage(ref Message m)
         {

@@ -32,7 +32,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             TextBoxItemID.Text = TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 0x24).ToUpper().Replace("-", string.Empty);
             TextBoxItemName.Text = Method_0().Remove(Method_0().Length - 0x25);
-            var strArray = new string[] { "http://avatar.xboxlive.com/global/t.", TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 8), "/avataritem/", TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 0x24), "/300" };
+            var strArray = new[] { "http://avatar.xboxlive.com/global/t.", TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 8), "/avataritem/", TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 0x24), "/300" };
             ImageAvatar.Load(string.Concat(strArray));
         }
 
@@ -46,7 +46,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             {
                 TextBoxItemID.Text = TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 0x24).ToUpper().Replace("-", string.Empty);
                 TextBoxItemName.Text = Method_0().Remove(Method_0().Length - 0x25);
-                var strArray = new string[] { "http://avatar.xboxlive.com/global/t.", TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 8), "/avataritem/", TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 0x24), "/300" };
+                var strArray = new[] { "http://avatar.xboxlive.com/global/t.", TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 8), "/avataritem/", TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 0x24), "/300" };
                 ImageAvatar.Load(string.Concat(strArray));
             }
         }

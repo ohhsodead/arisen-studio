@@ -207,7 +207,7 @@ namespace ModioX.Forms.Windows
         /// </summary>
         private void InitializeFinished()
         {
-            SetStatus($"Successfully loaded the database - Finalizing application data...");
+            SetStatus("Successfully loaded the database - Finalizing application data...");
 
             Mods = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? Database.ModsPS3 : Database.ModsXBOX;
             PanelButtonsMods.Visible = Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX;

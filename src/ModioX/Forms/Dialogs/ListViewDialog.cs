@@ -1,9 +1,9 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DevExpress.XtraEditors;
 
-namespace ModioX.Windows
+namespace ModioX.Forms.Dialogs
 {
     public partial class ListViewDialog : XtraForm
     {

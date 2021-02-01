@@ -7,7 +7,6 @@ using ModioX.Forms.Tools.XBOX_Tools;
 using ModioX.Forms.Windows;
 using ModioX.Models.Release_Data;
 using ModioX.Models.Resources;
-using ModioX.Windows;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

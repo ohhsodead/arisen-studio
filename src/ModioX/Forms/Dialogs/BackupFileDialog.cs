@@ -1,10 +1,10 @@
-﻿using DevExpress.XtraEditors;
-using ModioX.Models.Resources;
-using System;
+﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using ModioX.Models.Resources;
 
-namespace ModioX.Forms
+namespace ModioX.Forms.Dialogs
 {
     public partial class BackupFileDialog : XtraForm
     {

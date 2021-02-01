@@ -1,10 +1,11 @@
-﻿using DevExpress.XtraEditors;
+﻿using System.Linq;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
-using System.Linq;
-using System.Windows.Forms;
+using ModioX.Models.Database;
 
-namespace ModioX.Models.Database
+namespace ModioX.Database
 {
     /// <summary>
     /// Get the category information.
