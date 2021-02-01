@@ -11,7 +11,6 @@ using System.IO;
 using System.Windows.Forms;
 using Humanizer;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
-using StringExtensions = ModioX.Extensions.StringExtensions;
 
 namespace ModioX.Forms.Tools.PS3_Tools
 {

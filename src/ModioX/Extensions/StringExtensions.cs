@@ -5,44 +5,21 @@ namespace ModioX.Extensions
 {
     internal static class StringExtensions
     {
-        // Load all suffixes in an array
-        private static readonly string[] SizeSuffixes = { "Bytes", "KB", "MB", "GB", "TB", "PB" };
-
         /// <summary>
-        /// 
         /// </summary>
-        /// <param name="bytes"></param>
-        /// <returns></returns>
-        public static string FormatSize(this string bytes)
-        {
-            int counter = 0;
-            decimal number = long.Parse(bytes);
-            while (Math.Round(number / 1024) >= 1)
-            {
-                number /= 1024;
-                counter++;
-            }
-
-            return $"{number:n1} {SizeSuffixes[counter]}";
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="filename"></param>
-        /// <returns></returns>
+        /// <param name="filename"> </param>
+        /// <returns> </returns>
         public static string ReplaceInvalidChars(string filename)
         {
             return string.Join("_", filename.Split(Path.GetInvalidFileNameChars()));
         }
 
         /// <summary>
-        /// 
         /// </summary>
-        /// <param name="str"></param>
-        /// <param name="value"></param>
-        /// <param name="nth"></param>
-        /// <returns></returns>
+        /// <param name="str"> </param>
+        /// <param name="value"> </param>
+        /// <param name="nth"> </param>
+        /// <returns> </returns>
         public static int IndexOfNth(this string str, string value, int nth = 0)
         {
             if (nth < 0)
@@ -61,11 +38,10 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        /// 
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="removeString"></param>
-        /// <returns></returns>
+        /// <param name="value"> </param>
+        /// <param name="removeString"> </param>
+        /// <returns> </returns>
         public static string RemoveFirstInstanceOfString(this string value, string removeString)
         {
             var index = value.IndexOf(removeString, StringComparison.Ordinal);
