@@ -33,7 +33,7 @@ namespace ModioX.Forms.Settings
         {
             GridApplications.DataSource = null;
 
-            DataTable applications = DataExtensions.CreateDataTable(new List<DataColumn> { new DataColumn("Name"), new DataColumn("File Location") });
+            var applications = DataExtensions.CreateDataTable(new List<DataColumn> { new DataColumn("Name"), new DataColumn("File Location") });
 
             TextBoxFileName.ResetText();
             TextBoxFileLocation.ResetText();
@@ -61,8 +61,8 @@ namespace ModioX.Forms.Settings
         {
             if (GridViewApplications.SelectedRowsCount > 0)
             {
-                string name = GridViewApplications.GetRowCellValue(e.FocusedRowHandle, "Name").ToString();
-                string location = GridViewApplications.GetRowCellValue(e.FocusedRowHandle, "File Location").ToString();
+                var name = GridViewApplications.GetRowCellValue(e.FocusedRowHandle, "Name").ToString();
+                var location = GridViewApplications.GetRowCellValue(e.FocusedRowHandle, "File Location").ToString();
 
                 TextBoxFileName.Text = name;
                 TextBoxFileLocation.Text = location;
@@ -75,8 +75,8 @@ namespace ModioX.Forms.Settings
         {
             if (GridViewApplications.SelectedRowsCount > 0)
             {
-                string name = GridViewApplications.GetRowCellValue(e.RowHandle, "Name").ToString();
-                string location = GridViewApplications.GetRowCellValue(e.RowHandle, "File Location").ToString();
+                var name = GridViewApplications.GetRowCellValue(e.RowHandle, "Name").ToString();
+                var location = GridViewApplications.GetRowCellValue(e.RowHandle, "File Location").ToString();
 
                 TextBoxFileName.Text = name;
                 TextBoxFileLocation.Text = location;
@@ -107,7 +107,7 @@ namespace ModioX.Forms.Settings
 
         private void ButtonBrowseLocalFile_Click(object sender, EventArgs e)
         {
-            using OpenFileDialog openFileDialog = new OpenFileDialog
+            using var openFileDialog = new OpenFileDialog
             {
                 CheckFileExists = true,
                 Multiselect = false,
@@ -130,8 +130,8 @@ namespace ModioX.Forms.Settings
 
         private void ButtonAddApplication_Click(object sender, EventArgs e)
         {
-            string appName = TextBoxFileName.Text;
-            string fileLocation = TextBoxFileLocation.Text;
+            var appName = TextBoxFileName.Text;
+            var fileLocation = TextBoxFileLocation.Text;
 
             if (string.IsNullOrWhiteSpace(appName))
             {
@@ -157,10 +157,10 @@ namespace ModioX.Forms.Settings
 
         private void ButtonSaveAll_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < GridViewApplications.RowCount; i++)
+            for (var i = 0; i < GridViewApplications.RowCount; i++)
             {
-                string appName = GridViewApplications.GetRowCellValue(i, "Name").ToString();
-                string fileLocation = GridViewApplications.GetRowCellValue(i, "File Location").ToString();
+                var appName = GridViewApplications.GetRowCellValue(i, "Name").ToString();
+                var fileLocation = GridViewApplications.GetRowCellValue(i, "File Location").ToString();
 
                 Settings.UpdateApplication(appName, fileLocation);
             }

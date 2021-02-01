@@ -21,20 +21,16 @@ namespace ModioX.Models.Database
         /// Get the total number of games.
         /// </summary>
         /// <returns> </returns>
-        public int TotalGames => (from Category category in Categories
-                                  where category.CategoryType == CategoryType.Game
-                                  select category).Count();
+        public int TotalGames => Categories.Count(x => x.CategoryType == CategoryType.Game);
 
         /// <summary>
         /// Get all of the categories that is of <see cref="CategoryType" />.
         /// </summary>
         /// <param name="categoryType"> </param>
         /// <returns> </returns>
-        public List<Category> GetCategoriesByType(CategoryType categoryType)
+        public IEnumerable<Category> GetCategoriesByType(CategoryType categoryType)
         {
-            return (from Category game in Categories
-                    where game.CategoryType == categoryType
-                    select game).ToList();
+            return Categories.Where(x => x.CategoryType == categoryType);
         }
 
         /// <summary>

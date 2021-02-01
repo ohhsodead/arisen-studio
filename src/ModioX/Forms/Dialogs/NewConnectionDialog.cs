@@ -42,31 +42,37 @@ namespace ModioX.Forms.Dialogs
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.PS3;
                     ImageConsole.Image = Properties.Resources.PlayStation3Fat;
                     break;
+
                 case 1:
                     ConsoleProfile.Type = ConsoleType.PlayStation3Slim;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.PS3;
                     ImageConsole.Image = Properties.Resources.PlayStation3Slim;
                     break;
+
                 case 2:
                     ConsoleProfile.Type = ConsoleType.PlayStation3SuperSlim;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.PS3;
                     ImageConsole.Image = Properties.Resources.PlayStation3SuperSlim;
                     break;
+
                 case 3:
                     ConsoleProfile.Type = ConsoleType.Xbox360FatWhite;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
                     ImageConsole.Image = Properties.Resources.XboxFat;
                     break;
+
                 case 4:
                     ConsoleProfile.Type = ConsoleType.Xbox360EliteFatBlack;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
                     ImageConsole.Image = Properties.Resources.XboxFatElite;
                     break;
+
                 case 5:
                     ConsoleProfile.Type = ConsoleType.Xbox360Slim;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
                     ImageConsole.Image = Properties.Resources.XboxSlim;
                     break;
+
                 case 6:
                     ConsoleProfile.Type = ConsoleType.Xbox360SlimE;
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
@@ -80,8 +86,8 @@ namespace ModioX.Forms.Dialogs
 
         private void ButtonChangeCredentials_Click(object sender, EventArgs e)
         {
-            using LoginDialog consoleCredentials = new LoginDialog();
-            DialogResult setCredentials = consoleCredentials.ShowDialog(this);
+            using var consoleCredentials = new LoginDialog();
+            var setCredentials = consoleCredentials.ShowDialog(this);
 
             if (setCredentials == DialogResult.OK)
             {
@@ -128,9 +134,8 @@ namespace ModioX.Forms.Dialogs
                 return;
             }
 
-
-            bool isAddressValid = IPAddress.TryParse(TextBoxConsoleAddress.Text, out IPAddress address);
-            bool isPortValid = int.TryParse(TextBoxConsolePort.Text, out int port);
+            var isAddressValid = IPAddress.TryParse(TextBoxConsoleAddress.Text, out var address);
+            var isPortValid = int.TryParse(TextBoxConsolePort.Text, out var port);
 
             if (isAddressValid)
             {
@@ -178,7 +183,7 @@ namespace ModioX.Forms.Dialogs
 
         private static bool ProfileExists(string name)
         {
-            foreach (ConsoleProfile console in MainWindow.Settings.ConsoleProfiles)
+            foreach (var console in MainWindow.Settings.ConsoleProfiles)
                 if (console.Name.Equals(name))
                     return true;
 

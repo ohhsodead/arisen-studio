@@ -95,7 +95,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                 ComboBoxSections.Properties.Items.Clear();
 
-                foreach (SectionData section in LaunchFileData.Sections)
+                foreach (var section in LaunchFileData.Sections)
                 {
                     ComboBoxSections.Properties.Items.Add(section.SectionName);
                 }
@@ -120,23 +120,23 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             GridLaunchFile.DataSource = null;
 
-            DataTable launchFileSections = DataExtensions.CreateDataTable(new List<DataColumn>()
+            var launchFileSections = DataExtensions.CreateDataTable(new List<DataColumn>()
             {
                 new DataColumn("Key", typeof(string)),
                 new DataColumn("Value", typeof(string)),
             });
 
-            IniData launchFile = LaunchFileData;
+            var launchFile = LaunchFileData;
 
-            foreach (SectionData section in launchFile.Sections)
+            foreach (var section in launchFile.Sections)
             {
                 if (section.SectionName == sectionName)
                 {
-                    foreach (KeyData key in section.Keys)
+                    foreach (var key in section.Keys)
                     {
                         launchFileSections.Rows.Add(key.KeyName, key.Value);
                     }
-                }                
+                }
             }
 
             GridLaunchFile.DataSource = launchFileSections;
@@ -155,9 +155,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void ButtonSetValue_Click(object sender, EventArgs e)
         {
-            string section = ComboBoxSections.SelectedItem.ToString();
-            string key = TextBoxKey.Text;
-            string value = TextBoxValue.Text;
+            var section = ComboBoxSections.SelectedItem.ToString();
+            var key = TextBoxKey.Text;
+            var value = TextBoxValue.Text;
 
             LaunchFileData[section][key] = value;
 
@@ -193,8 +193,8 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             if (GridViewLaunchFile.SelectedRowsCount > 0)
             {
-                string key = GridViewLaunchFile.GetRowCellValue(e.FocusedRowHandle, GridViewLaunchFile.Columns[0]).ToString();
-                string value = GridViewLaunchFile.GetRowCellValue(e.FocusedRowHandle, GridViewLaunchFile.Columns[1]).ToString();
+                var key = GridViewLaunchFile.GetRowCellValue(e.FocusedRowHandle, GridViewLaunchFile.Columns[0]).ToString();
+                var value = GridViewLaunchFile.GetRowCellValue(e.FocusedRowHandle, GridViewLaunchFile.Columns[1]).ToString();
 
                 TextBoxKey.Text = key;
                 TextBoxValue.Text = value;
@@ -205,8 +205,8 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             if (GridViewLaunchFile.SelectedRowsCount > 0)
             {
-                string key = GridViewLaunchFile.GetRowCellValue(e.RowHandle, GridViewLaunchFile.Columns[0]).ToString();
-                string value = GridViewLaunchFile.GetRowCellValue(e.RowHandle, GridViewLaunchFile.Columns[1]).ToString();
+                var key = GridViewLaunchFile.GetRowCellValue(e.RowHandle, GridViewLaunchFile.Columns[0]).ToString();
+                var value = GridViewLaunchFile.GetRowCellValue(e.RowHandle, GridViewLaunchFile.Columns[1]).ToString();
 
                 TextBoxKey.Text = key;
                 TextBoxValue.Text = value;
@@ -215,7 +215,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void ButtonSaveFile_Click(object sender, EventArgs e)
         {
-
         }
 
         private void ButtonRestoreLaunchFile_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -28,7 +28,6 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void PackageManagerWindow_Load(object sender, EventArgs e)
         {
-
         }
 
         private void TimerWait_Tick(object sender, EventArgs e)
@@ -41,16 +40,16 @@ namespace ModioX.Forms.Tools.PS3_Tools
         {
             GridPackageFiles.DataSource = null;
 
-            DataTable packages = DataExtensions.CreateDataTable(new List<DataColumn>() 
+            var packages = DataExtensions.CreateDataTable(new List<DataColumn>()
             {
-                new DataColumn("File Name", typeof(string)), 
-                new DataColumn("File Size", typeof(string)), 
+                new DataColumn("File Name", typeof(string)),
+                new DataColumn("File Size", typeof(string)),
                 new DataColumn(" ", typeof(string))
             });
 
             FtpClient.SetWorkingDirectory(PackageFilesPath);
 
-            foreach (FtpListItem listItem in FtpClient.GetListing(PackageFilesPath))
+            foreach (var listItem in FtpClient.GetListing(PackageFilesPath))
             {
                 switch (listItem.Type)
                 {
@@ -66,7 +65,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 }
             }
 
-            foreach (FtpListItem package in PackageFiles)
+            foreach (var package in PackageFiles)
             {
                 packages.Rows.Add(package.Name, MainWindow.Settings.ShowFileSizeInBytes ? package.Size.ToString("#,0") + " bytes" : StringExtensions.FormatSize(package.Size.ToString()));
             }
@@ -91,7 +90,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                         {
                             MainWindow.Window.UninstallMods(MainWindow.Database.ModsPS3.GetModById(installedPackageFile.Id));
                             MainWindow.Window.InstallMods(MainWindow.Database.ModsPS3.GetModById(installedPackageFile.Id));
-                        }                        
+                        }
                     }
                 }
             }
@@ -113,12 +112,12 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void ButtonInstallPackageFile_Click(object sender, EventArgs e)
         {
-            string localFilePath = DialogExtensions.ShowOpenFileDialog(this, "Choose Package File", "PKG Files (*.pkg)|*.pkg");
+            var localFilePath = DialogExtensions.ShowOpenFileDialog(this, "Choose Package File", "PKG Files (*.pkg)|*.pkg");
 
             if (!string.IsNullOrWhiteSpace(localFilePath))
             {
-                string fileName = Path.GetFileName(localFilePath);
-                string installFilePath = PackageFilesPath + "/" + fileName;
+                var fileName = Path.GetFileName(localFilePath);
+                var installFilePath = PackageFilesPath + "/" + fileName;
 
                 if (FtpClient.FileExists(installFilePath))
                 {
@@ -137,7 +136,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
         {
             if (XtraMessageBox.Show("Do you really want to delete the selected package file from your console?", "Delete Selected", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                string packageFileName = GridViewPackageFiles.GetRowCellValue(GridViewPackageFiles.FocusedRowHandle, GridViewPackageFiles.Columns[0]).ToString();
+                var packageFileName = GridViewPackageFiles.GetRowCellValue(GridViewPackageFiles.FocusedRowHandle, GridViewPackageFiles.Columns[0]).ToString();
 
                 UpdateStatus($"Deleting package file: {packageFileName}");
                 FtpExtensions.DeleteFile(MainWindow.FtpClient, PackageFilesPath + "/" + packageFileName);
@@ -150,7 +149,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
         {
             if (XtraMessageBox.Show("Do you really to delete all of your package files from your console?", "Delete All", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                foreach (FtpListItem package in PackageFiles)
+                foreach (var package in PackageFiles)
                 {
                     UpdateStatus($"Deleting package file: {package.Name}");
                     FtpExtensions.DeleteFile(MainWindow.FtpClient, PackageFilesPath + "/" + package.Name);
@@ -162,9 +161,9 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void ButtonDownloadPackageFile_Click(object sender, EventArgs e)
         {
-            string updateUrl = PackageFilesPath + "/" + GridViewPackageFiles.GetRowCellValue(GridViewPackageFiles.FocusedRowHandle, GridViewPackageFiles.Columns[0]).ToString();
-            string fileName = Path.GetFileName(updateUrl);
-            string folderPath = DialogExtensions.ShowFolderBrowseDialog(this, "Select the folder where you want to download the package file.");
+            var updateUrl = PackageFilesPath + "/" + GridViewPackageFiles.GetRowCellValue(GridViewPackageFiles.FocusedRowHandle, GridViewPackageFiles.Columns[0]).ToString();
+            var fileName = Path.GetFileName(updateUrl);
+            var folderPath = DialogExtensions.ShowFolderBrowseDialog(this, "Select the folder where you want to download the package file.");
 
             if (!string.IsNullOrWhiteSpace(folderPath))
             {
@@ -178,7 +177,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
         /// <summary>
         /// Set the current status.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text"> </param>
         private void UpdateStatus(string text)
         {
             LabelStatus.Caption = text;

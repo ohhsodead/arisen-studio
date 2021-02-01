@@ -97,10 +97,10 @@ namespace ModioX.Forms.Windows
         {
             get
             {
-                NetworkCredential ftpCredentials = ConsoleProfile.UseDefaultCredentials
+                var ftpCredentials = ConsoleProfile.UseDefaultCredentials
                     ? new NetworkCredential("anonymous", "anonymous")
                     : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password);
-                FtpConnection ftpConnection = new FtpConnection(ConsoleProfile.Address, ConsoleProfile.Port, ftpCredentials.UserName, ftpCredentials.Password);
+                var ftpConnection = new FtpConnection(ConsoleProfile.Address, ConsoleProfile.Port, ftpCredentials.UserName, ftpCredentials.Password);
                 ftpConnection.Open();
                 ftpConnection.Login(ftpCredentials.UserName, ftpCredentials.Password);
                 return ftpConnection;
@@ -226,7 +226,7 @@ namespace ModioX.Forms.Windows
             ComboBoxSystemType.Properties.Items.Clear();
             ComboBoxSystemType.Properties.Items.Add("ANY");
 
-            foreach (string firmware in Mods.AllFirmwares.Where(firmware => !ComboBoxSystemType.Properties.Items.Contains(firmware)))
+            foreach (var firmware in Mods.AllFirmwares.Where(firmware => !ComboBoxSystemType.Properties.Items.Contains(firmware)))
             {
                 ComboBoxSystemType.Properties.Items.Add(firmware);
             }
@@ -273,7 +273,7 @@ namespace ModioX.Forms.Windows
             }
             else
             {
-                ConsoleProfile consoleProfile = DialogExtensions.ShowConnectionDialog(this);
+                var consoleProfile = DialogExtensions.ShowConnectionDialog(this);
 
                 if (consoleProfile != null)
                 {
@@ -291,7 +291,7 @@ namespace ModioX.Forms.Windows
             }
             else
             {
-                ConsoleProfile consoleProfile = DialogExtensions.ShowConnectionDialog(this);
+                var consoleProfile = DialogExtensions.ShowConnectionDialog(this);
 
                 if (consoleProfile != null)
                 {
@@ -418,9 +418,9 @@ namespace ModioX.Forms.Windows
 
         private void MenuItemApplications_ItemClick(object sender, ItemClickEventArgs e)
         {
-            string menuItemText = e.Item.Caption;
+            var menuItemText = e.Item.Caption;
 
-            foreach (ExternalApplication application in Settings.ExternalApplications.Where(application => application.Name.Equals(menuItemText, StringComparison.OrdinalIgnoreCase)))
+            foreach (var application in Settings.ExternalApplications.Where(application => application.Name.Equals(menuItemText, StringComparison.OrdinalIgnoreCase)))
             {
                 if (File.Exists(application.FileLocation))
                 {
@@ -437,7 +437,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonNotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
         {
-            string notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
+            var notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
 
             if (!string.IsNullOrWhiteSpace(notifyMessage))
             {
@@ -494,7 +494,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonAddNewConsole_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ConsoleProfile consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
+            var consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
 
             if (consoleProfile != null)
             {
@@ -565,7 +565,7 @@ namespace ModioX.Forms.Windows
         private void ButtonOpenLogFile_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus("Opening Log file...");
-            string logFile = $"{UserFolders.AppLogsDirectory}latest.txt";
+            var logFile = $"{UserFolders.AppLogsDirectory}latest.txt";
             if (File.Exists(logFile))
             {
                 try
@@ -696,11 +696,11 @@ namespace ModioX.Forms.Windows
 
         private void ContextMenuModsAddToList_Click(object sender, EventArgs e)
         {
-            string listName = DialogExtensions.ShowListInputDialog("Your Lists", Settings.CustomLists.Select(x => x.Name).ToList());
+            var listName = DialogExtensions.ShowListInputDialog("Your Lists", Settings.CustomLists.Select(x => x.Name).ToList());
 
             if (!string.IsNullOrWhiteSpace(listName))
             {
-                Category category = Database.CategoriesData.GetCategoryById(SelectedModItem.GameId);
+                var category = Database.CategoriesData.GetCategoryById(SelectedModItem.GameId);
                 Settings.AddModToCustomList(listName, SelectedModItem.Id);
                 SetStatus($"{category.Title}: {SelectedModItem.Name} ({SelectedModItem.Type}) - Added to '{listName}' list.");
             }
@@ -718,11 +718,11 @@ namespace ModioX.Forms.Windows
 
         private void ContextMenuModsRemoveFromList_Click(object sender, EventArgs e)
         {
-            string listName = DialogExtensions.ShowListInputDialog("Your Lists", Settings.CustomLists.Select(x => x.Name).ToList());
+            var listName = DialogExtensions.ShowListInputDialog("Your Lists", Settings.CustomLists.Select(x => x.Name).ToList());
 
             if (!string.IsNullOrWhiteSpace(listName))
             {
-                Category category = Database.CategoriesData.GetCategoryById(SelectedModItem.GameId);
+                var category = Database.CategoriesData.GetCategoryById(SelectedModItem.GameId);
                 Settings.RemoveModFromCustomList(listName, SelectedModItem.Id);
                 SetStatus($"{category.Title}: {SelectedModItem.Name} ({SelectedModItem.Type}) - Removed from '{listName}' list.");
             }
@@ -730,7 +730,7 @@ namespace ModioX.Forms.Windows
 
         private void ContextMenuModsReportOnGitHub_Click(object sender, EventArgs e)
         {
-            StringBuilder message = new StringBuilder()
+            var message = new StringBuilder()
                .Append("You will be redirected to the GitHub Issues for ModioX. All details will be filled automatically for you.")
                .AppendLine("Log in to GitHub and click the 'Submit' button to open a new issue so we can investigate it.");
 
@@ -751,7 +751,7 @@ namespace ModioX.Forms.Windows
         {
             if (GridViewMods.SelectedRowsCount != 0)
             {
-                ModItem modItem = Mods.GetModById(int.Parse(GridViewMods.GetRowCellDisplayText(GridViewMods.GetSelectedRows()[0], "Id")));
+                var modItem = Mods.GetModById(int.Parse(GridViewMods.GetRowCellDisplayText(GridViewMods.GetSelectedRows()[0], "Id")));
 
                 if (modItem != null)
                 {
@@ -821,13 +821,13 @@ namespace ModioX.Forms.Windows
             NavGroupResources.ItemLinks.Clear();
             NavGroupMyLists.ItemLinks.Clear();
 
-            foreach (Category category in Database.CategoriesData.Categories.OrderBy(x => x.Title))
+            foreach (var category in Database.CategoriesData.Categories.OrderBy(x => x.Title))
             {
-                ModItem[] modsByCategory = Mods.GetModsByCategoryId(category.Id);
+                var modsByCategory = Mods.GetModsByCategoryId(category.Id);
 
                 if (modsByCategory.Length > 0 || category.Id.Equals("fvrt"))
                 {
-                    NavBarItem categoryItem = NavBarCategories.Items.Add();
+                    var categoryItem = NavBarCategories.Items.Add();
                     categoryItem.Caption = $@"{category.Title.Replace("&", "&&")} ({(category.Id.Equals("fvrt") ? Settings.FavoritedIds.Count : modsByCategory.Length)})";
                     categoryItem.Name = category.Id;
 
@@ -850,9 +850,9 @@ namespace ModioX.Forms.Windows
                 }
             }
 
-            foreach (CustomList customList in Settings.CustomLists)
+            foreach (var customList in Settings.CustomLists)
             {
-                NavBarItem gameItem = NavBarCategories.Items.Add();
+                var gameItem = NavBarCategories.Items.Add();
                 gameItem.Caption = $@"{customList.Name.Replace("&", "&&")} ({customList.ModIds.Count})";
                 gameItem.Name = customList.Name;
                 NavGroupMyLists.ItemLinks.Add(gameItem);
@@ -865,20 +865,20 @@ namespace ModioX.Forms.Windows
         {
             NavGroupMyLists.ItemLinks.Clear();
 
-            foreach (Category category in Database.CategoriesData.Categories)
+            foreach (var category in Database.CategoriesData.Categories)
             {
                 if (category.Id.Equals("fvrt"))
                 {
-                    NavBarItem gameItem = NavBarCategories.Items.Add();
+                    var gameItem = NavBarCategories.Items.Add();
                     gameItem.Caption = $@"{category.Title.Replace("&", "&&")} ({Settings.FavoritedIds.Count})";
                     gameItem.Name = category.Id;
                     NavGroupMyLists.ItemLinks.Add(gameItem);
                 }
             }
 
-            foreach (CustomList customList in Settings.CustomLists)
+            foreach (var customList in Settings.CustomLists)
             {
-                NavBarItem gameItem = NavBarCategories.Items.Add();
+                var gameItem = NavBarCategories.Items.Add();
                 gameItem.Caption = $@"{customList.Name.Replace("&", "&&")} ({customList.ModIds.Count})";
                 gameItem.Name = customList.Name;
                 NavGroupMyLists.ItemLinks.Add(gameItem);
@@ -887,15 +887,15 @@ namespace ModioX.Forms.Windows
 
         private void NavigationBar_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            string categoryId = e.Link.ItemName;
+            var categoryId = e.Link.ItemName;
 
             // Check whether item is a custom list
-            bool isCustomList = Settings.CustomLists.Any(customList => customList.Name.Equals(categoryId));
+            var isCustomList = Settings.CustomLists.Any(customList => customList.Name.Equals(categoryId));
             IsCustomListSelected = isCustomList;
 
             if (isCustomList)
             {
-                CustomList customList = Settings.GetCustomListByName(categoryId);
+                var customList = Settings.GetCustomListByName(categoryId);
                 SelectedCategory = new Category() { Id = categoryId, Title = categoryId, Regions = Settings.GetRegionsForModIDs(Mods, customList.ModIds).ToArray() };
             }
             else
@@ -919,7 +919,7 @@ namespace ModioX.Forms.Windows
                 return;
             }
 
-            foreach (object item in ComboBoxModType.Properties.Items)
+            foreach (var item in ComboBoxModType.Properties.Items)
             {
                 if (item.Equals(FilterModsType))
                 {
@@ -969,7 +969,7 @@ namespace ModioX.Forms.Windows
             }
             else
             {
-                foreach (string modType in Mods.AllModTypesForCategoryId(categoryId))
+                foreach (var modType in Mods.AllModTypesForCategoryId(categoryId))
                 {
                     ComboBoxModType.Properties.Items.Add(modType);
                 }
@@ -988,13 +988,13 @@ namespace ModioX.Forms.Windows
             }
             else
             {
-                foreach (string categoryRegion in SelectedCategory.Regions)
+                foreach (var categoryRegion in SelectedCategory.Regions)
                 {
                     ComboBoxRegion.Properties.Items.Add(categoryRegion);
                 }
             }
 
-            DataTable dt = new DataTable();
+            var dt = new DataTable();
 
             dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("Mod Name", typeof(string));
@@ -1007,9 +1007,9 @@ namespace ModioX.Forms.Windows
             dt.Columns.Add("Install", typeof(Bitmap));
             dt.Columns.Add("Download", typeof(Bitmap));
 
-            foreach (ModItem modItem in Mods.GetModItems(categoryId, name, firmware, type, region, isCustomList).OrderBy(x => x.Name))
+            foreach (var modItem in Mods.GetModItems(categoryId, name, firmware, type, region, isCustomList).OrderBy(x => x.Name))
             {
-                List<string> installFiles = new List<string>();
+                var installFiles = new List<string>();
 
                 if (modItem.DownloadFiles.Count > 1)
                 {
@@ -1082,7 +1082,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonModUninstall_Click(object sender, EventArgs e)
         {
-            CategoryType categoryType = SelectedModItem.GetCategoryType(Database.CategoriesData);
+            var categoryType = SelectedModItem.GetCategoryType(Database.CategoriesData);
 
             InstalledMod installedMod;
 
@@ -1135,7 +1135,7 @@ namespace ModioX.Forms.Windows
 
                 if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
                 {
-                    using (FtpConnection ftpConnection = FtpConnection)
+                    using (var ftpConnection = FtpConnection)
                     {
                         ;
                     }
@@ -1165,7 +1165,7 @@ namespace ModioX.Forms.Windows
                 }
                 else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
                 {
-                    using (FtpConnection ftpConnection = FtpConnection)
+                    using (var ftpConnection = FtpConnection)
                     {
                         ;
                     }
@@ -1257,7 +1257,7 @@ namespace ModioX.Forms.Windows
         {
             if (GridViewInstalledGameMods.SelectedRowsCount > 0)
             {
-                ModItem modItem = Mods.GetModById(int.Parse(GridViewInstalledGameMods.GetRowCellDisplayText(GridViewInstalledGameMods.GetSelectedRows()[0], "Id")));
+                var modItem = Mods.GetModById(int.Parse(GridViewInstalledGameMods.GetRowCellDisplayText(GridViewInstalledGameMods.GetSelectedRows()[0], "Id")));
 
                 if (modItem != null)
                 {
@@ -1280,9 +1280,9 @@ namespace ModioX.Forms.Windows
         {
             GridControlInstalledGameMods.DataSource = null;
 
-            int totalFiles = 0;
+            var totalFiles = 0;
 
-            DataTable dt = new DataTable();
+            var dt = new DataTable();
             dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("Platform", typeof(string));
             dt.Columns.Add("Game Title", typeof(string));
@@ -1294,9 +1294,9 @@ namespace ModioX.Forms.Windows
             dt.Columns.Add("Installed On", typeof(string));
             dt.Columns.Add(string.Empty, typeof(Bitmap));
 
-            foreach (InstalledMod installedMod in Settings.InstalledGameMods)
+            foreach (var installedMod in Settings.InstalledGameMods)
             {
-                Category modCategory = Database.CategoriesData.GetCategoryById(installedMod.CategoryId);
+                var modCategory = Database.CategoriesData.GetCategoryById(installedMod.CategoryId);
 
                 ModItem modInstalled;
 
@@ -1348,11 +1348,11 @@ namespace ModioX.Forms.Windows
         {
             if (IsConsoleConnected)
             {
-                foreach (InstalledMod installedGameMod in Settings.InstalledGameMods)
+                foreach (var installedGameMod in Settings.InstalledGameMods)
                 {
-                    ModItem modItem = Mods.GetModById(installedGameMod.ModId);
+                    var modItem = Mods.GetModById(installedGameMod.ModId);
 
-                    InstalledMod installedMod = Settings.GetInstalledGameMod(modItem.GetConsoleType(), modItem.GameId);
+                    var installedMod = Settings.GetInstalledGameMod(modItem.GetConsoleType(), modItem.GameId);
                     UninstallMods(modItem, installedMod == null ? string.Empty : installedMod.Region);
                 }
             }
@@ -1368,7 +1368,7 @@ namespace ModioX.Forms.Windows
         /// <param name="modId"> Specifies the <see cref="ModsData.ModItem.Id" /> </param>
         private void ShowModInformation(int modId)
         {
-            ModItem modItem = Mods.GetModById(modId);
+            var modItem = Mods.GetModById(modId);
 
             if (modItem == null)
             {
@@ -1395,7 +1395,7 @@ namespace ModioX.Forms.Windows
             // Append extra information for modded game saves in the description
             if (modItem.IsGameSave)
             {
-                StringBuilder extraDescription = new StringBuilder("\n---------------------------------------------\n")
+                var extraDescription = new StringBuilder("\n---------------------------------------------\n")
                     .AppendLine("Important Notes for Installing Game Saves:\n")
                     .AppendLine("- You must have at least one USB device connected to the console before installing the game save files.\n")
                     .Append("- It's suggested to use 'Apollo Tool' (Homebrew > Applications) for patching and resigning game save files directly on your console.");
@@ -1405,7 +1405,7 @@ namespace ModioX.Forms.Windows
 
             GridControlModsInstallFiles.DataSource = null;
 
-            DataTable dt = new DataTable();
+            var dt = new DataTable();
             dt.Columns.Add(string.Empty, typeof(string));
 
             if (modItem.DownloadFiles.Count > 1)
@@ -1475,8 +1475,8 @@ namespace ModioX.Forms.Windows
         /// name="modItem">The <see cref="ModsData.ModItem"/> to install.<param>
         public void InstallMods(ModItem modItem)
         {
-            Category category = Database.CategoriesData.GetCategoryById(modItem.GameId);
-            string categoryTitle = category.Title;
+            var category = Database.CategoriesData.GetCategoryById(modItem.GameId);
+            var categoryTitle = category.Title;
 
             string gameRegion;
             string userId;
@@ -1487,11 +1487,11 @@ namespace ModioX.Forms.Windows
             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Preparing to install files...");
 
             // Check whether this mod is already installed
-            InstalledMod installedGameMod = Settings.InstalledGameMods.FirstOrDefault(gameMod => gameMod.CategoryId.Equals(modItem.GameId, StringComparison.OrdinalIgnoreCase) && gameMod.ModId.Equals(modItem.Id));
+            var installedGameMod = Settings.InstalledGameMods.FirstOrDefault(gameMod => gameMod.CategoryId.Equals(modItem.GameId, StringComparison.OrdinalIgnoreCase) && gameMod.ModId.Equals(modItem.Id));
 
             if (installedGameMod != null)
             {
-                StringBuilder message = new StringBuilder("You have already installed ")
+                var message = new StringBuilder("You have already installed ")
                     .AppendLine($"'{modItem.Name} v{modItem.Version}' to '{category.Title}'")
                     .Append("Do you want to reinstall the files again?");
 
@@ -1505,13 +1505,13 @@ namespace ModioX.Forms.Windows
             if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
             {
                 // Checks whether a mod is already installed to the same game then uninstall it
-                InstalledMod modInstalled = Settings.GetInstalledGameMod(modItem.GetConsoleType(), category.Id);
+                var modInstalled = Settings.GetInstalledGameMod(modItem.GetConsoleType(), category.Id);
 
                 if (modInstalled != null)
                 {
-                    ModItem currentModItem = Mods.GetModById(modInstalled.ModId);
+                    var currentModItem = Mods.GetModById(modInstalled.ModId);
 
-                    StringBuilder message = new StringBuilder($"'{currentModItem.Name} v{currentModItem.Version} ({currentModItem.Type})'")
+                    var message = new StringBuilder($"'{currentModItem.Name} v{currentModItem.Version} ({currentModItem.Type})'")
                         .AppendLine($" is currently installed to: {category.Title}\n")
                         .Append("Multiple mods installed could possibly conflict with each other. Do you want to uninstall the current one?");
 
@@ -1536,7 +1536,7 @@ namespace ModioX.Forms.Windows
                 // know if they want to cancel
                 if (downloadFiles.InstallsToRebugFolder)
                 {
-                    StringBuilder message = new StringBuilder("Files are being installed to the firmware folder (dev_rebug), ")
+                    var message = new StringBuilder("Files are being installed to the firmware folder (dev_rebug), ")
                             .Append("which is for REBUG Custom Firmware only.")
                             .Append("It's recommended to create a backup of the entire ")
                             .Append("folder before installing any files.")
@@ -1682,15 +1682,15 @@ namespace ModioX.Forms.Windows
                     modItem.DownloadInstallFiles(downloadFiles);
                     SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Downloaded and extracted files archive.");
 
-                    int indexFiles = 1;
-                    int totalFiles = downloadFiles.InstallPaths.Count;
+                    var indexFiles = 1;
+                    var totalFiles = downloadFiles.InstallPaths.Count;
 
                     SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Starting install...");
 
-                    foreach (string installFilePath in downloadFiles.InstallPaths)
+                    foreach (var installFilePath in downloadFiles.InstallPaths)
                     {
                         // Install folders
-                        foreach (string localFolderPath in Directory.GetDirectories(modItem.DownloadDataDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
+                        foreach (var localFolderPath in Directory.GetDirectories(modItem.DownloadDataDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
                         {
                             if (!Path.HasExtension(installFilePath))
                             {
@@ -1710,16 +1710,16 @@ namespace ModioX.Forms.Windows
                         }
 
                         // Install files
-                        foreach (string localFilePath in Directory.GetFiles(modItem.DownloadDataDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
+                        foreach (var localFilePath in Directory.GetFiles(modItem.DownloadDataDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
                         {
-                            string installFileName = Path.GetFileName(installFilePath);
+                            var installFileName = Path.GetFileName(installFilePath);
 
-                            string installPath = installFilePath
+                            var installPath = installFilePath
                                 .Replace("{REGION}", gameRegion)
                                 .Replace("{USERID}", userId)
                                 .Replace("{USBDEV}", usbDevice);
 
-                            string parentDirectoryPath = Path.GetDirectoryName(installPath).Replace(@"\", "/");
+                            var parentDirectoryPath = Path.GetDirectoryName(installPath).Replace(@"\", "/");
 
                             // Create parent directory if it doesn't exist on the console
                             if (!FtpClient.DirectoryExists(parentDirectoryPath))
@@ -1745,7 +1745,7 @@ namespace ModioX.Forms.Windows
                                 if (installPath.Contains("dev_hdd0/game/"))
                                 {
                                     // Get the backup details for this game file if one has been created
-                                    BackupFile backupFile = Settings.GetGameFileBackup(modItem.GameId, installFileName, installPath);
+                                    var backupFile = Settings.GetGameFileBackup(modItem.GameId, installFileName, installPath);
 
                                     // A backup hasn't been created for this file, so it will be
                                     // ignored and kept alone - in case issues occur with the game
@@ -1857,15 +1857,15 @@ namespace ModioX.Forms.Windows
                     modItem.DownloadInstallFiles(downloadFiles);
                     SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Downloaded and extracted files archive.");
 
-                    int indexFiles = 1;
-                    int totalFiles = downloadFiles.InstallPaths.Count;
+                    var indexFiles = 1;
+                    var totalFiles = downloadFiles.InstallPaths.Count;
 
                     SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Starting install...");
 
-                    foreach (string installFilePath in downloadFiles.InstallPaths)
+                    foreach (var installFilePath in downloadFiles.InstallPaths)
                     {
                         // Install folders
-                        foreach (string localFolderPath in Directory.GetDirectories(modItem.DownloadDataDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
+                        foreach (var localFolderPath in Directory.GetDirectories(modItem.DownloadDataDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
                         {
                             if (!Path.HasExtension(installFilePath))
                             {
@@ -1885,11 +1885,11 @@ namespace ModioX.Forms.Windows
                         }
 
                         // Install files
-                        foreach (string localFilePath in Directory.GetFiles(modItem.DownloadDataDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
+                        foreach (var localFilePath in Directory.GetFiles(modItem.DownloadDataDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
                         {
-                            string installFileName = Path.GetFileName(installFilePath);
+                            var installFileName = Path.GetFileName(installFilePath);
 
-                            string parentDirectoryPath = Path.GetDirectoryName(installFilePath).Replace(@"\", "/");
+                            var parentDirectoryPath = Path.GetDirectoryName(installFilePath).Replace(@"\", "/");
 
                             // Create parent directory if it doesn't exist on the console
                             if (!FtpClient.DirectoryExists(parentDirectoryPath))
@@ -1938,8 +1938,8 @@ namespace ModioX.Forms.Windows
         /// <param name="region"> Game region </param>
         public void UninstallMods(ModItem modItem, string region = "")
         {
-            Category category = Database.CategoriesData.GetCategoryById(modItem.GameId);
-            string categoryTitle = category.Title;
+            var category = Database.CategoriesData.GetCategoryById(modItem.GameId);
+            var categoryTitle = category.Title;
 
             string gameRegion;
             string userId;
@@ -2083,19 +2083,19 @@ namespace ModioX.Forms.Windows
 
                     SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Uninstalling files...");
 
-                    int indexFiles = 1;
-                    int totalFiles = downloadFiles.InstallPaths.Count();
+                    var indexFiles = 1;
+                    var totalFiles = downloadFiles.InstallPaths.Count();
 
                     // Loop through the install file paths
-                    foreach (string installFilePath in downloadFiles.InstallPaths)
+                    foreach (var installFilePath in downloadFiles.InstallPaths)
                     {
                         // Format install file path with specified info: region/userId/USB
-                        string installPath = installFilePath
+                        var installPath = installFilePath
                             .Replace("{REGION}", $"{gameRegion}")
                             .Replace("{USERID}", $"{userId}")
                             .Replace("{USBDEV}", $"{usbDevice}");
 
-                        string installFilePathWithoutFileName = Path.GetDirectoryName(installPath).Replace(@"\", "/");
+                        var installFilePathWithoutFileName = Path.GetDirectoryName(installPath).Replace(@"\", "/");
 
                         // Uninstall files
                         if (Path.HasExtension(installPath))
@@ -2104,7 +2104,7 @@ namespace ModioX.Forms.Windows
                             if (installPath.Contains("dev_hdd0/game/"))
                             {
                                 // Get the backup details for this game file if one has been created
-                                BackupFile backupFile = Settings.GetGameFileBackup(modItem.GameId, Path.GetFileName(installPath), installPath);
+                                var backupFile = Settings.GetGameFileBackup(modItem.GameId, Path.GetFileName(installPath), installPath);
 
                                 // Check whether a backup has been created for this game file
                                 if (backupFile != null)
@@ -2142,7 +2142,7 @@ namespace ModioX.Forms.Windows
                         }
                     }
 
-                    foreach (string installPath in downloadFiles.InstallPaths)
+                    foreach (var installPath in downloadFiles.InstallPaths)
                     {
                         if (!Path.HasExtension(installPath))
                         {
@@ -2160,9 +2160,9 @@ namespace ModioX.Forms.Windows
                     }
 
                     // Delete empty folders from the /tmp folder
-                    foreach (string installPath in downloadFiles.InstallPaths.Where(x => x.Contains("dev_hdd0/tmp/")))
+                    foreach (var installPath in downloadFiles.InstallPaths.Where(x => x.Contains("dev_hdd0/tmp/")))
                     {
-                        string parentFolderPath = Path.GetDirectoryName(installPath).Replace(@"\", "/");
+                        var parentFolderPath = Path.GetDirectoryName(installPath).Replace(@"\", "/");
 
                         if (!parentFolderPath.Equals("/dev_hdd0/tmp/"))
                         {
@@ -2203,13 +2203,13 @@ namespace ModioX.Forms.Windows
                 {
                     SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Uninstalling files...");
 
-                    int indexFiles = 1;
-                    int totalFiles = downloadFiles.InstallPaths.Count();
+                    var indexFiles = 1;
+                    var totalFiles = downloadFiles.InstallPaths.Count();
 
                     // Loop through the install file paths
-                    foreach (string installFilePath in downloadFiles.InstallPaths)
+                    foreach (var installFilePath in downloadFiles.InstallPaths)
                     {
-                        string installFilePathWithoutFileName = Path.GetDirectoryName(installFilePath).Replace(@"\", "/");
+                        var installFilePathWithoutFileName = Path.GetDirectoryName(installFilePath).Replace(@"\", "/");
 
                         // Uninstall files
                         if (Path.HasExtension(installFilePath))
@@ -2223,7 +2223,7 @@ namespace ModioX.Forms.Windows
                     }
 
                     // Uninstall folders
-                    foreach (string installPath in downloadFiles.InstallPaths)
+                    foreach (var installPath in downloadFiles.InstallPaths)
                     {
                         if (!Path.HasExtension(installPath))
                         {
@@ -2262,8 +2262,8 @@ namespace ModioX.Forms.Windows
         /// <param name="modItem"> </param>
         private void DownloadModArchive(ModItem modItem)
         {
-            Category category = Database.CategoriesData.GetCategoryById(modItem.GameId);
-            string categoryTitle = category.Title;
+            var category = Database.CategoriesData.GetCategoryById(modItem.GameId);
+            var categoryTitle = category.Title;
 
             DownloadFiles download;
 
@@ -2279,7 +2279,7 @@ namespace ModioX.Forms.Windows
                     return;
                 }
 
-                string folderPath = DialogExtensions.ShowFolderBrowseDialog(this, "Select the folder where you want to download the archive.");
+                var folderPath = DialogExtensions.ShowFolderBrowseDialog(this, "Select the folder where you want to download the archive.");
 
                 if (folderPath != null)
                 {
@@ -2305,9 +2305,9 @@ namespace ModioX.Forms.Windows
         /// <param name="modItem"> </param>
         private void FavoriteMod(ModItem modItem)
         {
-            Category category = Database.CategoriesData.GetCategoryById(modItem.GameId);
+            var category = Database.CategoriesData.GetCategoryById(modItem.GameId);
 
-            string categoryTitle = category.Title;
+            var categoryTitle = category.Title;
 
             if (Settings.FavoritedIds.Contains(modItem.Id))
             {
@@ -2416,7 +2416,7 @@ namespace ModioX.Forms.Windows
 
                 if (File.Exists(UserFolders.AppSettingsFile))
                 {
-                    using StreamReader streamReader = new StreamReader(UserFolders.AppSettingsFile);
+                    using var streamReader = new StreamReader(UserFolders.AppSettingsFile);
                     Settings = JsonConvert.DeserializeObject<SettingsData>(streamReader.ReadToEnd());
                 }
                 else
@@ -2464,9 +2464,9 @@ namespace ModioX.Forms.Windows
 
                 ApplicationsMenu.ItemLinks.Clear();
 
-                foreach (ExternalApplication application in Settings.ExternalApplications)
+                foreach (var application in Settings.ExternalApplications)
                 {
-                    BarButtonItem barButtonItem = new BarButtonItem() { Caption = application.Name };
+                    var barButtonItem = new BarButtonItem() { Caption = application.Name };
                     barButtonItem.ItemClick += new ItemClickEventHandler(MenuItemApplications_ItemClick);
                     ApplicationsMenu.AddItem(barButtonItem);
                 }
@@ -2494,7 +2494,7 @@ namespace ModioX.Forms.Windows
                     Directory.CreateDirectory(UserFolders.AppDataDirectory);
                 }
 
-                using (StreamWriter streamWriter = new StreamWriter(UserFolders.AppSettingsFile))
+                using (var streamWriter = new StreamWriter(UserFolders.AppSettingsFile))
                 {
                     streamWriter.Write(JsonConvert.SerializeObject(Settings));
                 }
@@ -2514,11 +2514,11 @@ namespace ModioX.Forms.Windows
         /// <returns> </returns>
         private static string ComputeHash(string s)
         {
-            using System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();
-            using FileStream stream = File.OpenRead(s);
-            byte[] hash = md5.ComputeHash(stream);
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < hash.Length; i++)
+            using var md5 = System.Security.Cryptography.MD5.Create();
+            using var stream = File.OpenRead(s);
+            var hash = md5.ComputeHash(stream);
+            var sb = new StringBuilder();
+            for (var i = 0; i < hash.Length; i++)
             {
                 sb.Append(hash[i].ToString("X2"));
             }

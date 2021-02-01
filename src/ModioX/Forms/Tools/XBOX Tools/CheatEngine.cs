@@ -13,10 +13,11 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void CheatEngine_Load(object sender, EventArgs e)
         {
-            // example of datatable (im going to add a function to create a datatable with the specified details (columns & rows)
-            // so we dont need to create a new one like this everytime, because we're using datatable a lot - it make sense
+            // example of datatable (im going to add a function to create a datatable with the
+            // specified details (columns & rows) so we dont need to create a new one like this
+            // everytime, because we're using datatable a lot - it make sense
 
-            DataTable ScannedAddresses = new DataTable();
+            var ScannedAddresses = new DataTable();
             ScannedAddresses.Columns.Add("Address", typeof(string));
             ScannedAddresses.Columns.Add("Value", typeof(string));
             ScannedAddresses.Columns.Add("Previous", typeof(string));
@@ -26,7 +27,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             GridControlScannedAddresses.DataSource = ScannedAddresses;
             GridViewScannedAddresses.Columns[0].OptionsFilter.AllowFilter = false;
 
-            DataTable ModifiedValues = new DataTable();
+            var ModifiedValues = new DataTable();
             ModifiedValues.Columns.Add("Active", typeof(bool));
             ModifiedValues.Columns.Add("Description", typeof(string));
             ModifiedValues.Columns.Add("Address", typeof(string));

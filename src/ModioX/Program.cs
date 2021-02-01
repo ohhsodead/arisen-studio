@@ -33,7 +33,7 @@ namespace ModioX
 
         private static void ConfigureLogger()
         {
-            LoggingConfiguration config = new LoggingConfiguration();
+            var config = new LoggingConfiguration();
 
             // String to use for exceptions
             const string exc = @"${exception:format=ToString:seperator=\n}";
@@ -42,10 +42,10 @@ namespace ModioX
             const string threadInfo = @"<${threadname\::whenEmpty=}${threadid}>";
 
             // String to use as a layout for logged messages.
-            string layout = $@"${{date:format=HH\:mm\:ss}} [${{level:uppercase=true}}] {threadInfo}: ${{message}} ${{onexception:inner={exc}}}";
+            var layout = $@"${{date:format=HH\:mm\:ss}} [${{level:uppercase=true}}] {threadInfo}: ${{message}} ${{onexception:inner={exc}}}";
 
             // Target where to log to.
-            FileTarget file = new FileTarget("file")
+            var file = new FileTarget("file")
             {
                 FileName = $"{UserFolders.AppLogsDirectory}latest.txt",
                 AutoFlush = true,
@@ -71,27 +71,27 @@ namespace ModioX
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            StringBuilder message = new StringBuilder()
+            var message = new StringBuilder()
                 .AppendLine("Should ModioX exit?\n")
                 .Append("If you keep receiving this error, please make a report on GitHub or join our Discord Server.");
 
             MainWindow.Window.SetStatus($"An unknown error occurred: {e.Exception.Message}", e.Exception);
 
-            DialogResult resume = XtraMessageBox.Show(MainWindow.Window, $"An error occurred: {e.Exception.Message}.", message.ToString(), MessageBoxButtons.YesNo);
+            var resume = XtraMessageBox.Show(MainWindow.Window, $"An error occurred: {e.Exception.Message}.", message.ToString(), MessageBoxButtons.YesNo);
 
             if (resume == DialogResult.Yes) Application.Exit();
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            Exception exception = e.ExceptionObject as Exception;
-            StringBuilder message = new StringBuilder()
+            var exception = e.ExceptionObject as Exception;
+            var message = new StringBuilder()
                 .AppendLine("Should ModioX exit?\n")
                 .Append("If you keep receiving this error, please make a report on GitHub or join our Discord Server.");
 
             MainWindow.Window.SetStatus($"An unknown error occurred: {exception?.Message}", exception);
 
-            DialogResult resume = XtraMessageBox.Show(MainWindow.Window, $"An error occurred: {exception?.Message}.", message.ToString(), MessageBoxButtons.YesNo);
+            var resume = XtraMessageBox.Show(MainWindow.Window, $"An error occurred: {exception?.Message}.", message.ToString(), MessageBoxButtons.YesNo);
 
             if (resume == DialogResult.Yes) Application.Exit();
         }

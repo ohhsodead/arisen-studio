@@ -25,15 +25,15 @@ namespace ModioX.Forms.Tools.PS3_Tools
         {
             GridBackupFiles.DataSource = null;
 
-            DataTable dt = new DataTable();
+            var dt = new DataTable();
             dt.Columns.Add("Game Title", typeof(string));
             dt.Columns.Add("File Name", typeof(string));
             dt.Columns.Add("File Size", typeof(string));
             dt.Columns.Add("Created On", typeof(string));
 
-            foreach (BackupFile backupFile in MainWindow.Settings.BackupFiles)
+            foreach (var backupFile in MainWindow.Settings.BackupFiles)
             {
-                long fileSize = new FileInfo(backupFile.LocalPath).Length;
+                var fileSize = new FileInfo(backupFile.LocalPath).Length;
 
                 dt.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId).Title,
                     backupFile.FileName,
@@ -83,7 +83,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 }
                 catch
                 {
-                    // Will throw index out of range if deleting the last item 
+                    // Will throw index out of range if deleting the last item
                 }
             }
 
@@ -137,7 +137,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         /// <summary>
         /// </summary>
-        /// <param name="backupFile"></param>
+        /// <param name="backupFile"> </param>
         public void BackupGameFile(BackupFile backupFile)
         {
             try
@@ -153,9 +153,8 @@ namespace ModioX.Forms.Tools.PS3_Tools
         }
 
         /// <summary>
-        /// 
         /// </summary>
-        /// <param name="backupFile"></param>
+        /// <param name="backupFile"> </param>
         public void RestoreGameFile(BackupFile backupFile)
         {
             try

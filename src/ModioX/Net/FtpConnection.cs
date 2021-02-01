@@ -9,24 +9,30 @@ using System.Text;
 namespace ModioX.Net
 {
     /// <summary>
-    /// The <c>FtpConnection</c> class provides the ability to connect to FTP servers.
+    /// The <c> FtpConnection </c> class provides the ability to connect to FTP servers.
     /// </summary>
     public class FtpConnection : IDisposable
     {
         /// <summary>
-        /// Initializes a new instance of the <c>FtpConnection</c> type.
+        /// Initializes a new instance of the <c> FtpConnection </c> type.
         /// </summary>
-        /// <param name="host">A <see cref="String"/> type representing the server name or IP to connect to.</param>
+        /// <param name="host">
+        /// A <see cref="String" /> type representing the server name or IP to connect to.
+        /// </param>
         public FtpConnection(string host)
         {
             Host = host;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <c>FtpConnection</c> type.
+        /// Initializes a new instance of the <c> FtpConnection </c> type.
         /// </summary>
-        /// <param name="host">A <see cref="String"/> type representing the server name or IP to connect.</param>
-        /// <param name="port">An <see cref="Int32"/> type representing the port on which to connect.</param>
+        /// <param name="host">
+        /// A <see cref="String" /> type representing the server name or IP to connect.
+        /// </param>
+        /// <param name="port">
+        /// An <see cref="Int32" /> type representing the port on which to connect.
+        /// </param>
         public FtpConnection(string host, int port)
         {
             Host = host;
@@ -34,11 +40,17 @@ namespace ModioX.Net
         }
 
         /// <summary>
-        /// Initializes a new instance of the <c>FtpConnection</c> type.
+        /// Initializes a new instance of the <c> FtpConnection </c> type.
         /// </summary>
-        /// <param name="host">A <see cref="String"/> type representing the server name or IP to connect.</param>
-        /// <param name="username">A <see cref="String"/> type representing the username with which to authenticate.</param>
-        /// <param name="password">A <see cref="String"/> type representing the password with which to authenticate.</param>
+        /// <param name="host">
+        /// A <see cref="String" /> type representing the server name or IP to connect.
+        /// </param>
+        /// <param name="username">
+        /// A <see cref="String" /> type representing the username with which to authenticate.
+        /// </param>
+        /// <param name="password">
+        /// A <see cref="String" /> type representing the password with which to authenticate.
+        /// </param>
         public FtpConnection(string host, string username, string password)
         {
             Host = host;
@@ -47,12 +59,20 @@ namespace ModioX.Net
         }
 
         /// <summary>
-        /// Initializes a new instance of the <c>FtpConnection</c> type.
+        /// Initializes a new instance of the <c> FtpConnection </c> type.
         /// </summary>
-        /// <param name="host">A <see cref="String"/> type representing the server name or IP to connect.</param>
-        /// <param name="port">An <see cref="Int32"/> type representing the port on which to connect.</param>
-        /// <param name="username">A <see cref="String"/> type representing the username with which to authenticate.</param>
-        /// <param name="password">A <see cref="String"/> type representing the password with which to authenticate.</param>
+        /// <param name="host">
+        /// A <see cref="String" /> type representing the server name or IP to connect.
+        /// </param>
+        /// <param name="port">
+        /// An <see cref="Int32" /> type representing the port on which to connect.
+        /// </param>
+        /// <param name="username">
+        /// A <see cref="String" /> type representing the username with which to authenticate.
+        /// </param>
+        /// <param name="password">
+        /// A <see cref="String" /> type representing the password with which to authenticate.
+        /// </param>
         public FtpConnection(string host, int port, string username, string password)
         {
             Host = host;
@@ -64,7 +84,7 @@ namespace ModioX.Net
         /// <summary>
         /// Establishes a connection to the host.
         /// </summary>
-        /// <exception cref="ArgumentNullException">If Host is null or empty.</exception>
+        /// <exception cref="ArgumentNullException"> If Host is null or empty. </exception>
         public void Open()
         {
             if (String.IsNullOrEmpty(Host))
@@ -96,9 +116,15 @@ namespace ModioX.Net
         /// <summary>
         /// Logs into the host server using the provided credentials.
         /// </summary>
-        /// <exception cref="ArgumentNullException">If <paramref name="username"/> or <paramref name="password"/> are null.</exception>
-        /// <param name="username">A <see cref="String" /> type representing the user name with which to authenticate.</param>
-        /// <param name="password">A <see cref="String" /> type representing the password with which to authenticate.</param>
+        /// <exception cref="ArgumentNullException">
+        /// If <paramref name="username" /> or <paramref name="password" /> are null.
+        /// </exception>
+        /// <param name="username">
+        /// A <see cref="String" /> type representing the user name with which to authenticate.
+        /// </param>
+        /// <param name="password">
+        /// A <see cref="String" /> type representing the password with which to authenticate.
+        /// </param>
         public void Login(string username, string password)
         {
             if (username == null)
@@ -112,7 +138,6 @@ namespace ModioX.Net
             }
 
             {
-
             }
             _hConnect = WININET.InternetConnect(_hInternet,
                 Host,
@@ -132,11 +157,13 @@ namespace ModioX.Net
         /// <summary>
         /// Changes the current FTP working directory to the specified path.
         /// </summary>
-        /// <exception cref="FtpException">If the directory does not exist on the FTP server.</exception>
-        /// <param name="directory">A <see cref="String"/> representing the file path of the directory.</param>
+        /// <exception cref="FtpException"> If the directory does not exist on the FTP server. </exception>
+        /// <param name="directory">
+        /// A <see cref="String" /> representing the file path of the directory.
+        /// </param>
         public void SetCurrentDirectory(string directory)
         {
-            int ret = WININET.FtpSetCurrentDirectory(
+            var ret = WININET.FtpSetCurrentDirectory(
                 _hConnect,
                 directory);
 
@@ -149,8 +176,10 @@ namespace ModioX.Net
         /// <summary>
         /// Changes the local working directory to the specified path.
         /// </summary>
-        /// <exception cref="InvalidDataException">If the directory does not exist on the local system.</exception>
-        /// <param name="directory"></param>
+        /// <exception cref="InvalidDataException">
+        /// If the directory does not exist on the local system.
+        /// </exception>
+        /// <param name="directory"> </param>
         public void SetLocalDirectory(string directory)
         {
             if (Directory.Exists(directory))
@@ -166,12 +195,12 @@ namespace ModioX.Net
         /// <summary>
         /// Gets the current working FTP directory
         /// </summary>
-        /// <returns>A <see cref="String"> representing the current working directory.</see></returns>
+        /// <returns> A <see cref="String"> representing the current working directory. </see> </returns>
         public string GetCurrentDirectory()
         {
-            int buffLength = WINAPI.MAX_PATH + 1;
-            StringBuilder str = new StringBuilder(buffLength);
-            int ret = WININET.FtpGetCurrentDirectory(_hConnect, str, ref buffLength);
+            var buffLength = WINAPI.MAX_PATH + 1;
+            var str = new StringBuilder(buffLength);
+            var ret = WININET.FtpGetCurrentDirectory(_hConnect, str, ref buffLength);
 
             if (ret == 0)
             {
@@ -185,21 +214,23 @@ namespace ModioX.Net
         /// <summary>
         /// Get the current FtpDirectory information for the current working directory
         /// </summary>
-        /// <returns>A <see cref="FtpDirectoryInfo"/> with available details about the current working directory.</returns>
+        /// <returns>
+        /// A <see cref="FtpDirectoryInfo" /> with available details about the current working directory.
+        /// </returns>
         public FtpDirectoryInfo GetCurrentDirectoryInfo()
         {
-            string dir = GetCurrentDirectory();
+            var dir = GetCurrentDirectory();
             return new FtpDirectoryInfo(this, dir);
         }
 
         /// <summary>
         /// Gets the specified file's size
         /// </summary>
-        /// <param name="file">The file to get the size for</param>
-        /// <returns>The file size in bytes</returns>
+        /// <param name="file"> The file to get the size for </param>
+        /// <returns> The file size in bytes </returns>
         public long GetFileSize(string file)
         {
-            IntPtr hFile = new IntPtr(
+            var hFile = new IntPtr(
                 WININET.FtpOpenFile(_hConnect, file, WINAPI.GENERIC_READ, WININET.FTP_TRANSFER_TYPE_BINARY, IntPtr.Zero)
             );
 
@@ -211,11 +242,11 @@ namespace ModioX.Net
             {
                 try
                 {
-                    int sizeHigh = 0;
-                    int sizeLo = WININET.FtpGetFileSize(hFile, ref sizeHigh);
+                    var sizeHigh = 0;
+                    var sizeLo = WININET.FtpGetFileSize(hFile, ref sizeHigh);
 
 #pragma warning disable CS0675 // Bitwise-or operator used on a sign-extended operand
-                    long fileSize = ((long)sizeHigh << 32) | sizeLo;
+                    var fileSize = ((long)sizeHigh << 32) | sizeLo;
 #pragma warning restore CS0675 // Bitwise-or operator used on a sign-extended operand
 
                     return fileSize;
@@ -223,7 +254,6 @@ namespace ModioX.Net
                 catch (Exception)
                 {
                     Error();
-
                 }
                 finally
                 {
@@ -237,10 +267,17 @@ namespace ModioX.Net
         /// <summary>
         /// Downloads a file from the FTP server to the local system
         /// </summary>
-        /// <remarks>The file will be downloaded to the local working directory with the same name it has on the FTP server.</remarks>
-        /// <exception cref="FtpException">If the file does not exist.</exception>
-        /// <param name="remoteFile">A <see cref="String"/> representing the full or relative path to the file to download.</param>
-        /// <param name="failIfExists">A <see cref="Boolean"/> that determines whether an existing local file should be overwritten.</param>
+        /// <remarks>
+        /// The file will be downloaded to the local working directory with the same name it has on
+        /// the FTP server.
+        /// </remarks>
+        /// <exception cref="FtpException"> If the file does not exist. </exception>
+        /// <param name="remoteFile">
+        /// A <see cref="String" /> representing the full or relative path to the file to download.
+        /// </param>
+        /// <param name="failIfExists">
+        /// A <see cref="Boolean" /> that determines whether an existing local file should be overwritten.
+        /// </param>
         public void GetFile(string remoteFile, bool failIfExists)
         {
             GetFile(remoteFile, remoteFile, failIfExists);
@@ -249,13 +286,19 @@ namespace ModioX.Net
         /// <summary>
         /// Downloads a file from the FTP server to the local system
         /// </summary>
-        /// <exception cref="FtpException">If the file does not exist.</exception>
-        /// <param name="remoteFile">A <see cref="String"/> representing the full or relative path to the file to download.</param>
-        /// <param name="localFile">A <see cref="String"/> representing the local file path to save the file.</param>
-        /// <param name="failIfExists">A <see cref="Boolean"/> that determines whether an existing local file should be overwritten.</param>
+        /// <exception cref="FtpException"> If the file does not exist. </exception>
+        /// <param name="remoteFile">
+        /// A <see cref="String" /> representing the full or relative path to the file to download.
+        /// </param>
+        /// <param name="localFile">
+        /// A <see cref="String" /> representing the local file path to save the file.
+        /// </param>
+        /// <param name="failIfExists">
+        /// A <see cref="Boolean" /> that determines whether an existing local file should be overwritten.
+        /// </param>
         public void GetFile(string remoteFile, string localFile, bool failIfExists)
         {
-            int ret = WININET.FtpGetFile(_hConnect,
+            var ret = WININET.FtpGetFile(_hConnect,
                  remoteFile,
                  localFile,
                  failIfExists,
@@ -272,7 +315,9 @@ namespace ModioX.Net
         /// <summary>
         /// Uploads a file to the FTP server
         /// </summary>
-        /// <param name="fileName">A <see cref="String"> representing the local file path to upload.</see></param>
+        /// <param name="fileName">
+        /// A <see cref="String"> representing the local file path to upload. </see>
+        /// </param>
         public void PutFile(string fileName)
         {
             PutFile(fileName, Path.GetFileName(fileName));
@@ -281,11 +326,15 @@ namespace ModioX.Net
         /// <summary>
         /// Uploads a file to the FTP server
         /// </summary>
-        /// <param name="fileName">A <see cref="String"/> representing the local file path to upload.</param>
-        /// <param name="localFile">A <see cref="String"/> representing the file path to save the file.</param>
+        /// <param name="fileName">
+        /// A <see cref="String" /> representing the local file path to upload.
+        /// </param>
+        /// <param name="localFile">
+        /// A <see cref="String" /> representing the file path to save the file.
+        /// </param>
         public void PutFile(string localFile, string remoteFile)
         {
-            int ret = WININET.FtpPutFile(_hConnect,
+            var ret = WININET.FtpPutFile(_hConnect,
                 localFile,
                 remoteFile,
                 WININET.FTP_TRANSFER_TYPE_BINARY,
@@ -300,11 +349,13 @@ namespace ModioX.Net
         /// <summary>
         /// Renames a file on the FTP server
         /// </summary>
-        /// <param name="existingFile">A <see cref="String"/> representing the current file name</param>
-        /// <param name="newFile">A <see cref="String"/> representing the new file name</param>
+        /// <param name="existingFile">
+        /// A <see cref="String" /> representing the current file name
+        /// </param>
+        /// <param name="newFile"> A <see cref="String" /> representing the new file name </param>
         public void RenameFile(string existingFile, string newFile)
         {
-            int ret = WININET.FtpRenameFile(_hConnect, existingFile, newFile);
+            var ret = WININET.FtpRenameFile(_hConnect, existingFile, newFile);
 
             if (ret == 0)
             {
@@ -315,10 +366,12 @@ namespace ModioX.Net
         /// <summary>
         /// Deletes a file from the FTP server
         /// </summary>
-        /// <param name="fileName">A <see cref="String"/> representing the path of the file to delete.</param>
+        /// <param name="fileName">
+        /// A <see cref="String" /> representing the path of the file to delete.
+        /// </param>
         public void RemoveFile(string fileName)
         {
-            int ret = WININET.FtpDeleteFile(_hConnect, fileName);
+            var ret = WININET.FtpDeleteFile(_hConnect, fileName);
 
             if (ret == 0)
             {
@@ -329,10 +382,12 @@ namespace ModioX.Net
         /// <summary>
         /// Deletes a directory from the FTP server
         /// </summary>
-        /// <param name="directory">A <see cref="String"/> representing the path of the directory to delete.</param>
+        /// <param name="directory">
+        /// A <see cref="String" /> representing the path of the directory to delete.
+        /// </param>
         public void RemoveDirectory(string directory)
         {
-            int ret = WININET.FtpRemoveDirectory(_hConnect, directory);
+            var ret = WININET.FtpRemoveDirectory(_hConnect, directory);
             if (ret == 0)
             {
                 Error();
@@ -342,17 +397,18 @@ namespace ModioX.Net
         /// <summary>
         /// List all files and directories in the current working directory.
         /// </summary>
-        /// <returns>A list of file and directory names.</returns>
+        /// <returns> A list of file and directory names. </returns>
         [Obsolete("Use GetFiles or GetDirectories instead.")]
         public List<string> List()
         {
             return List(null, false);
         }
+
         /// <summary>
         /// Provides backwards compatibility
         /// </summary>
-        /// <param name="mask">The file mask used in the search.</param>
-        /// <returns>A list of file matching the mask.</returns>
+        /// <param name="mask"> The file mask used in the search. </param>
+        /// <returns> A list of file matching the mask. </returns>
         [Obsolete("Use GetFiles or GetDirectories instead.")]
         public List<string> List(string mask)
         {
@@ -368,9 +424,9 @@ namespace ModioX.Net
         [Obsolete("Will be removed in later releases.")]
         private List<string> List(string mask, bool onlyDirectories)
         {
-            WINAPI.WIN32_FIND_DATA findData = new WINAPI.WIN32_FIND_DATA();
+            var findData = new WINAPI.WIN32_FIND_DATA();
 
-            IntPtr hFindFile = WININET.FtpFindFirstFile(
+            var hFindFile = WININET.FtpFindFirstFile(
                 _hConnect,
                 mask,
                 ref findData,
@@ -378,7 +434,7 @@ namespace ModioX.Net
                 IntPtr.Zero);
             try
             {
-                List<string> files = new List<string>();
+                var files = new List<string>();
                 if (hFindFile == IntPtr.Zero)
                 {
                     if (Marshal.GetLastWin32Error() == WINAPI.ERROR_NO_MORE_FILES)
@@ -432,24 +488,30 @@ namespace ModioX.Net
         }
 
         /// <summary>
-        /// Gets details of all files and their available FTP file information from the current working FTP directory.
+        /// Gets details of all files and their available FTP file information from the current
+        /// working FTP directory.
         /// </summary>
-        /// <returns>A <see cref="FtpFileInfo[]"/> representing the files in the current working directory.</returns>
+        /// <returns>
+        /// A <see cref="FtpFileInfo[]" /> representing the files in the current working directory.
+        /// </returns>
         public FtpFileInfo[] GetFiles()
         {
             return GetFiles(GetCurrentDirectory());
         }
 
         /// <summary>
-        /// Gets details of all files and their available FTP file information from the current working FTP directory that match the file mask.
+        /// Gets details of all files and their available FTP file information from the current
+        /// working FTP directory that match the file mask.
         /// </summary>
-        /// <param name="mask">A <see cref="String"/> representing the file mask to match files.</param>
-        /// <returns>A <see cref="FtpFileInfo[]"/> representing the files in the current working directory.</returns>
+        /// <param name="mask"> A <see cref="String" /> representing the file mask to match files. </param>
+        /// <returns>
+        /// A <see cref="FtpFileInfo[]" /> representing the files in the current working directory.
+        /// </returns>
         public FtpFileInfo[] GetFiles(string mask)
         {
-            WINAPI.WIN32_FIND_DATA findData = new WINAPI.WIN32_FIND_DATA();
+            var findData = new WINAPI.WIN32_FIND_DATA();
 
-            IntPtr hFindFile = WININET.FtpFindFirstFile(
+            var hFindFile = WININET.FtpFindFirstFile(
                 _hConnect,
                 mask,
                 ref findData,
@@ -457,7 +519,7 @@ namespace ModioX.Net
                 IntPtr.Zero);
             try
             {
-                List<FtpFileInfo> files = new List<FtpFileInfo>();
+                var files = new List<FtpFileInfo>();
                 if (hFindFile == IntPtr.Zero)
                 {
                     if (Marshal.GetLastWin32Error() == WINAPI.ERROR_NO_MORE_FILES)
@@ -473,7 +535,7 @@ namespace ModioX.Net
 
                 if ((findData.dfFileAttributes & WINAPI.FILE_ATTRIBUTE_DIRECTORY) != WINAPI.FILE_ATTRIBUTE_DIRECTORY)
                 {
-                    FtpFileInfo file = new FtpFileInfo(this, new string(findData.fileName).TrimEnd('\0'))
+                    var file = new FtpFileInfo(this, new string(findData.fileName).TrimEnd('\0'))
                     {
                         LastAccessTime = findData.ftLastAccessTime.ToDateTime(),
                         LastWriteTime = findData.ftLastWriteTime.ToDateTime(),
@@ -488,7 +550,7 @@ namespace ModioX.Net
                 {
                     if ((findData.dfFileAttributes & WINAPI.FILE_ATTRIBUTE_DIRECTORY) != WINAPI.FILE_ATTRIBUTE_DIRECTORY)
                     {
-                        FtpFileInfo file = new FtpFileInfo(this, new string(findData.fileName).TrimEnd('\0'))
+                        var file = new FtpFileInfo(this, new string(findData.fileName).TrimEnd('\0'))
                         {
                             LastAccessTime = findData.ftLastAccessTime.ToDateTime(),
                             LastWriteTime = findData.ftLastWriteTime.ToDateTime(),
@@ -518,23 +580,30 @@ namespace ModioX.Net
         }
 
         /// <summary>
-        /// Gets details of all directories and their available FTP directory information from the current working FTP directory.
+        /// Gets details of all directories and their available FTP directory information from the
+        /// current working FTP directory.
         /// </summary>
-        /// <returns>A <see cref="FtpDirectoryInfo[]"/> representing the directories in the current working directory.</returns>
+        /// <returns>
+        /// A <see cref="FtpDirectoryInfo[]" /> representing the directories in the current working directory.
+        /// </returns>
         public FtpDirectoryInfo[] GetDirectories()
         {
             return GetDirectories(this.GetCurrentDirectory());
         }
 
         /// <summary>
-        /// Gets details of all directories and their available FTP directory information from the current working FTP directory that match the directory mask.
+        /// Gets details of all directories and their available FTP directory information from the
+        /// current working FTP directory that match the directory mask.
         /// </summary>
-        /// <returns>A <see cref="FtpDirectoryInfo[]"/> representing the directories in the current working directory that match the mask.</returns>
+        /// <returns>
+        /// A <see cref="FtpDirectoryInfo[]" /> representing the directories in the current working
+        /// directory that match the mask.
+        /// </returns>
         public FtpDirectoryInfo[] GetDirectories(string path)
         {
-            WINAPI.WIN32_FIND_DATA findData = new WINAPI.WIN32_FIND_DATA();
+            var findData = new WINAPI.WIN32_FIND_DATA();
 
-            IntPtr hFindFile = WININET.FtpFindFirstFile(
+            var hFindFile = WININET.FtpFindFirstFile(
                 _hConnect,
                 path,
                 ref findData,
@@ -542,7 +611,7 @@ namespace ModioX.Net
                 IntPtr.Zero);
             try
             {
-                List<FtpDirectoryInfo> directories = new List<FtpDirectoryInfo>();
+                var directories = new List<FtpDirectoryInfo>();
 
                 if (hFindFile == IntPtr.Zero)
                 {
@@ -559,7 +628,7 @@ namespace ModioX.Net
 
                 if ((findData.dfFileAttributes & WINAPI.FILE_ATTRIBUTE_DIRECTORY) == WINAPI.FILE_ATTRIBUTE_DIRECTORY)
                 {
-                    FtpDirectoryInfo dir = new FtpDirectoryInfo(this, new string(findData.fileName).TrimEnd('\0'))
+                    var dir = new FtpDirectoryInfo(this, new string(findData.fileName).TrimEnd('\0'))
                     {
                         LastAccessTime = findData.ftLastAccessTime.ToDateTime(),
                         LastWriteTime = findData.ftLastWriteTime.ToDateTime(),
@@ -575,7 +644,7 @@ namespace ModioX.Net
                 {
                     if ((findData.dfFileAttributes & WINAPI.FILE_ATTRIBUTE_DIRECTORY) == WINAPI.FILE_ATTRIBUTE_DIRECTORY)
                     {
-                        FtpDirectoryInfo dir = new FtpDirectoryInfo(this, new string(findData.fileName).TrimEnd('\0'))
+                        var dir = new FtpDirectoryInfo(this, new string(findData.fileName).TrimEnd('\0'))
                         {
                             LastAccessTime = findData.ftLastAccessTime.ToDateTime(),
                             LastWriteTime = findData.ftLastWriteTime.ToDateTime(),
@@ -607,7 +676,9 @@ namespace ModioX.Net
         /// <summary>
         /// Creates a directory on the FTP server.
         /// </summary>
-        /// <param name="path">A <see cref="String"/> representing the full or relative path of the directory to create.</param>
+        /// <param name="path">
+        /// A <see cref="String" /> representing the full or relative path of the directory to create.
+        /// </param>
         public void CreateDirectory(string path)
         {
             if (WININET.FtpCreateDirectory(_hConnect, path) == 0)
@@ -619,13 +690,13 @@ namespace ModioX.Net
         /// <summary>
         /// Checks if a directory exists.
         /// </summary>
-        /// <param name="path">A <see cref="String"/> representing the path to check.</param>
-        /// <returns>A <see cref="Boolean"/> indicating whether the directory exists.</returns>
+        /// <param name="path"> A <see cref="String" /> representing the path to check. </param>
+        /// <returns> A <see cref="Boolean" /> indicating whether the directory exists. </returns>
         public bool DirectoryExists(string path)
         {
-            WINAPI.WIN32_FIND_DATA findData = new WINAPI.WIN32_FIND_DATA();
+            var findData = new WINAPI.WIN32_FIND_DATA();
 
-            IntPtr hFindFile = WININET.FtpFindFirstFile(
+            var hFindFile = WININET.FtpFindFirstFile(
                 _hConnect,
                 path,
                 ref findData,
@@ -647,19 +718,18 @@ namespace ModioX.Net
                     WININET.InternetCloseHandle(hFindFile);
                 }
             }
-
         }
 
         /// <summary>
         /// Checks if a file exists.
         /// </summary>
-        /// <param name="path">A <see cref="String"/> representing the path to check.</param>
-        /// <returns>A <see cref="Boolean"/> indicating whether the file exists.</returns>
+        /// <param name="path"> A <see cref="String" /> representing the path to check. </param>
+        /// <returns> A <see cref="Boolean" /> indicating whether the file exists. </returns>
         public bool FileExists(string path)
         {
-            WINAPI.WIN32_FIND_DATA findData = new WINAPI.WIN32_FIND_DATA();
+            var findData = new WINAPI.WIN32_FIND_DATA();
 
-            IntPtr hFindFile = WININET.FtpFindFirstFile(
+            var hFindFile = WININET.FtpFindFirstFile(
                 _hConnect,
                 path,
                 ref findData,
@@ -686,23 +756,24 @@ namespace ModioX.Net
         /// <summary>
         /// Sends a command to the FTP server
         /// </summary>
-        /// <param name="cmd">A <see cref="String"/> representing the command to send.</param>
-        /// <returns>A <see cref="String"/> containing the server response.</returns>
+        /// <param name="cmd"> A <see cref="String" /> representing the command to send. </param>
+        /// <returns> A <see cref="String" /> containing the server response. </returns>
         public string SendCommand(string cmd)
         {
             int result;
-            IntPtr dataSocket = new IntPtr();
+            var dataSocket = new IntPtr();
             switch (cmd)
             {
                 case "PASV":
                     result = WININET.FtpCommand(_hConnect, false, WININET.FTP_TRANSFER_TYPE_ASCII, cmd, IntPtr.Zero, ref dataSocket);
                     break;
+
                 default:
                     result = WININET.FtpCommand(_hConnect, false, WININET.FTP_TRANSFER_TYPE_ASCII, cmd, IntPtr.Zero, ref dataSocket);
                     break;
             }
 
-            int BUFFER_SIZE = 8192;
+            var BUFFER_SIZE = 8192;
 
             if (result == 0)
             {
@@ -710,8 +781,8 @@ namespace ModioX.Net
             }
             else if (dataSocket != IntPtr.Zero)
             {
-                StringBuilder buffer = new StringBuilder(BUFFER_SIZE);
-                int bytesRead = 0;
+                var buffer = new StringBuilder(BUFFER_SIZE);
+                var bytesRead = 0;
 
                 do
                 {
@@ -719,7 +790,6 @@ namespace ModioX.Net
                 } while (result == 1 && bytesRead > 1);
 
                 return buffer.ToString();
-
             }
 
             return "";
@@ -736,13 +806,13 @@ namespace ModioX.Net
         /// <summary>
         /// Retrieves error message text
         /// </summary>
-        /// <param name="code">A <see cref="Int32"/> representing the system error code.</param>
-        /// <returns>A <see cref="String"/> containing the error text.</returns>
+        /// <param name="code"> A <see cref="Int32" /> representing the system error code. </param>
+        /// <returns> A <see cref="String" /> containing the error text. </returns>
         private string InternetLastResponseInfo(ref int code)
         {
-            int BUFFER_SIZE = 8192;
+            var BUFFER_SIZE = 8192;
 
-            StringBuilder buff = new StringBuilder(BUFFER_SIZE);
+            var buff = new StringBuilder(BUFFER_SIZE);
             WININET.InternetGetLastResponseInfo(ref code, buff, ref BUFFER_SIZE);
             return buff.ToString();
         }
@@ -752,11 +822,11 @@ namespace ModioX.Net
         /// </summary>
         private void Error()
         {
-            int code = Marshal.GetLastWin32Error();
+            var code = Marshal.GetLastWin32Error();
 
             if (code == WININET.ERROR_INTERNET_EXTENDED_ERROR)
             {
-                string errorText = InternetLastResponseInfo(ref code);
+                var errorText = InternetLastResponseInfo(ref code);
                 throw new FtpException(code, errorText);
             }
             else
@@ -805,7 +875,7 @@ namespace ModioX.Net
             }
         }
 
-        #endregion
+        #endregion IDisposable Members
 
         ~FtpConnection()
         {

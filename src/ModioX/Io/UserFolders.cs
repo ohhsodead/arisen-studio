@@ -11,7 +11,7 @@ namespace ModioX.Io
         /// </summary>
         internal static readonly string AppDataDirectory = $@"{KnownFolders.GetPath(KnownFolder.Documents)}\ModioX\";
 
-        internal static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>
         /// Get the directory to download modded files at.
@@ -38,15 +38,16 @@ namespace ModioX.Io
         /// </summary>
         internal static void DeleteDirectory(string path)
         {
+            var dir = new DirectoryInfo(path);
             for (var i = 0; i < 3; i++)
             {
                 try
                 {
-                    foreach (var dir in new DirectoryInfo(path).GetDirectories())
+                    foreach (var subdir in dir.GetDirectories())
                     {
-                        dir.Delete(true);
+                        subdir.Delete(true);
                     }
-                    Directory.Delete(path, true);
+                    dir.Delete(true);
                 }
                 catch (Exception ex)
                 {

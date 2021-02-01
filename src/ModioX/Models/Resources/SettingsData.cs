@@ -64,20 +64,19 @@ namespace ModioX.Models.Resources
 
         public List<PackageFile> InstalledPackageFiles { get; set; } = new List<PackageFile>();
 
-
         /// <summary>
         /// Create/store a backup of the specified file, and then downloads it locally to a known path
         /// </summary>
-        /// <param name="modItem"></param>
-        /// <param name="fileName"></param>
-        /// <param name="installFilePath"></param>
+        /// <param name="modItem"> </param>
+        /// <param name="fileName"> </param>
+        /// <param name="installFilePath"> </param>
         public void CreateBackupFile(ModItem modItem, string fileName, string installFilePath)
         {
-            string fileBackupFolder = GetGameBackupFolder(modItem);
+            var fileBackupFolder = GetGameBackupFolder(modItem);
 
             Directory.CreateDirectory(fileBackupFolder);
 
-            BackupFile backupFile = new BackupFile
+            var backupFile = new BackupFile
             {
                 CategoryId = modItem.GameId,
                 FileName = fileName,
@@ -91,12 +90,13 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        /// Gets the <see cref="BackupFile" /> information for the specified game id, file name and install path
+        /// Gets the <see cref="BackupFile" /> information for the specified game id, file name and
+        /// install path
         /// </summary>
-        /// <param name="gameId">Game Id</param>
-        /// <param name="fileName">File Name</param>
-        /// <param name="installPath">File Install Path</param>
-        /// <returns></returns>
+        /// <param name="gameId"> Game Id </param>
+        /// <param name="fileName"> File Name </param>
+        /// <param name="installPath"> File Install Path </param>
+        /// <returns> </returns>
         public BackupFile GetGameFileBackup(string gameId, string fileName, string installPath)
         {
             return BackupFiles.FirstOrDefault(backupFile =>
@@ -108,8 +108,8 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Gets the external applications file location for the specified application name.
         /// </summary>
-        /// <param name="appName">Application name with extension.</param>
-        /// <returns>Game Region</returns>
+        /// <param name="appName"> Application name with extension. </param>
+        /// <returns> Game Region </returns>
         public string GetApplicationLocation(string appName)
         {
             return ExternalApplications.FirstOrDefault(app => app.Name.Equals(appName, StringComparison.OrdinalIgnoreCase))?.FileLocation;
@@ -118,13 +118,13 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Either update or add the application name and file location.
         /// </summary>
-        /// <param name="appName">Application Name</param>
-        /// <param name="fileLocation">Application File Location</param>
+        /// <param name="appName"> Application Name </param>
+        /// <param name="fileLocation"> Application File Location </param>
         public void UpdateApplication(string appName, string fileLocation)
         {
-            ExternalApplication applicationIndex = ExternalApplications.Find(x => string.Equals(x.Name, appName, StringComparison.OrdinalIgnoreCase));
+            var applicationIndex = ExternalApplications.Find(x => string.Equals(x.Name, appName, StringComparison.OrdinalIgnoreCase));
 
-            ExternalApplication externalApplication = new ExternalApplication(appName, fileLocation);
+            var externalApplication = new ExternalApplication(appName, fileLocation);
 
             if (applicationIndex == null)
             {
@@ -139,7 +139,7 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Add a custom list with the specified name.
         /// </summary>
-        /// <param name="name">Custom list name</param>
+        /// <param name="name"> Custom list name </param>
         public void AddCustomList(string name)
         {
             CustomLists.Add(new CustomList() { Name = name });
@@ -148,11 +148,11 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Either update or add the custom list details.
         /// </summary>
-        /// <param name="listName">Custom list name</param>
-        /// <param name="newListName">Mod Id to add to list</param>
+        /// <param name="listName"> Custom list name </param>
+        /// <param name="newListName"> Mod Id to add to list </param>
         public void RenameCustomList(string oldName, string newName)
         {
-            CustomList customList = CustomLists.Find(x => string.Equals(x.Name, oldName, StringComparison.OrdinalIgnoreCase));
+            var customList = CustomLists.Find(x => string.Equals(x.Name, oldName, StringComparison.OrdinalIgnoreCase));
 
             if (customList == null)
             {
@@ -167,11 +167,11 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Either update or add the custom list details.
         /// </summary>
-        /// <param name="listName">Custom list name</param>
-        /// <param name="newListName">Mod Id to add to list</param>
+        /// <param name="listName"> Custom list name </param>
+        /// <param name="newListName"> Mod Id to add to list </param>
         public void AddModToCustomList(string name, int modId)
         {
-            CustomList customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
+            var customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
 
             if (!customList.ModIds.Contains(modId))
             {
@@ -182,19 +182,19 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Either update or add the custom list details.
         /// </summary>
-        /// <param name="listName">Custom list name</param>
-        /// <param name="modId">Mod Id to add to list</param>
+        /// <param name="listName"> Custom list name </param>
+        /// <param name="modId"> Mod Id to add to list </param>
         public void RemoveModFromCustomList(string name, int modId)
         {
-            CustomList customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
+            var customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
             customList.ModIds.Remove(modId);
         }
 
         /// <summary>
         /// Gets the user's saved game region for the specified <see cref="ModsData.ModItem.GameId" />
         /// </summary>
-        /// <param name="gameId">Game Id</param>
-        /// <returns>Game Region</returns>
+        /// <param name="gameId"> Game Id </param>
+        /// <returns> Game Region </returns>
         public string GetGameRegion(string gameId)
         {
             return GameRegions.FirstOrDefault(region => region.GameId.Equals(gameId, StringComparison.OrdinalIgnoreCase))?.Region;
@@ -203,11 +203,11 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Either update or add the region to the specified game id
         /// </summary>
-        /// <param name="gameId">Specifies the <see cref="ModsData.ModItem.GameId" /></param>
-        /// <param name="region">Specifies the Game Region</param>
+        /// <param name="gameId"> Specifies the <see cref="ModsData.ModItem.GameId" /> </param>
+        /// <param name="region"> Specifies the Game Region </param>
         public void UpdateGameRegion(string gameId, string region)
         {
-            int gameIdIndex = GameRegions.FindIndex(x => string.Equals(x.GameId, gameId, StringComparison.OrdinalIgnoreCase));
+            var gameIdIndex = GameRegions.FindIndex(x => string.Equals(x.GameId, gameId, StringComparison.OrdinalIgnoreCase));
 
             if (gameIdIndex == -1)
             {
@@ -220,10 +220,11 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        /// Creates and returns the games backup folder for the specified <see cref="ModsData.ModItem" />.
+        /// Creates and returns the games backup folder for the specified <see
+        /// cref="ModsData.ModItem" />.
         /// </summary>
-        /// <param name="modItem"></param>
-        /// <returns></returns>
+        /// <param name="modItem"> </param>
+        /// <returns> </returns>
         public static string GetGameBackupFolder(ModItem modItem)
         {
             return Path.Combine(UserFolders.AppBackupFilesDirectory, modItem.GameId);
@@ -232,8 +233,8 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Updates the collection of backup files at index if it's exists, otherwise adds a new one.
         /// </summary>
-        /// <param name="index"></param>
-        /// <param name="backupFile"></param>
+        /// <param name="index"> </param>
+        /// <param name="backupFile"> </param>
         public void UpdateBackupFile(int index, BackupFile backupFile)
         {
             if (BackupFiles[index] == null)
@@ -248,13 +249,13 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Update the installed game mods.
         /// </summary>
-        /// <param name="consoleType"></param>
-        /// <param name="categoryId"></param>
-        /// <param name="modId"></param>
-        /// <param name="region"></param>
-        /// <param name="noOfFiles"></param>
-        /// <param name="dateInstalled"></param>
-        /// <param name="downloadFiles"></param>
+        /// <param name="consoleType"> </param>
+        /// <param name="categoryId"> </param>
+        /// <param name="modId"> </param>
+        /// <param name="region"> </param>
+        /// <param name="noOfFiles"> </param>
+        /// <param name="dateInstalled"> </param>
+        /// <param name="downloadFiles"> </param>
         public void UpdateInstalledGameMod(ConsoleTypePrefix consoleType, string categoryId, int modId, string region, int noOfFiles, DateTime dateInstalled, DownloadFiles downloadFiles)
         {
             RemoveInstalledGameMod(consoleType, categoryId);
@@ -274,17 +275,18 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Remove the installed mods matching the <see cref="ModsData.ModItem.GameId" />
         /// </summary>
-        /// <param name="categoryId"></param>
+        /// <param name="categoryId"> </param>
         public void RemoveInstalledGameMod(ConsoleTypePrefix consoleType, string categoryId)
         {
             InstalledGameMods.RemoveAll(x => x.ConsoleType == consoleType && string.Equals(x.CategoryId, categoryId, StringComparison.OrdinalIgnoreCase));
         }
 
         /// <summary>
-        /// Remove the installed game mod matching the <see cref="ModsData.ModItem.GameId" /> and <see cref="ModsData.ModItem.Id" />
+        /// Remove the installed game mod matching the <see cref="ModsData.ModItem.GameId" /> and
+        /// <see cref="ModsData.ModItem.Id" />
         /// </summary>
-        /// <param name="categoryId"></param>
-        /// <param name="modId"></param>
+        /// <param name="categoryId"> </param>
+        /// <param name="modId"> </param>
         public void RemoveInstalledGameMod(ConsoleTypePrefix consoleType, string categoryId, int modId)
         {
             InstalledGameMods.RemoveAll(x => x.ConsoleType == consoleType && string.Equals(x.CategoryId, categoryId, StringComparison.OrdinalIgnoreCase) && x.ModId.Equals(modId));
@@ -293,24 +295,23 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Get the current <see cref="InstalledGameMod" /> the <see cref="ModsData.ModItem.Id" />
         /// </summary>
-        /// <param name="categoryId"></param>
-        /// <returns></returns>
+        /// <param name="categoryId"> </param>
+        /// <returns> </returns>
         public InstalledMod GetInstalledGameMod(ConsoleTypePrefix consoleType, string categoryId)
         {
             return InstalledGameMods.FirstOrDefault(x => x.ConsoleType == consoleType && x.CategoryId.Equals(categoryId, StringComparison.OrdinalIgnoreCase));
         }
 
         /// <summary>
-        /// 
         /// </summary>
-        /// <param name="modsData"></param>
-        /// <param name="modIds"></param>
-        /// <returns></returns>
+        /// <param name="modsData"> </param>
+        /// <param name="modIds"> </param>
+        /// <returns> </returns>
         public List<string> GetModTypesForModIDs(ModsData modsData, List<int> modIds)
         {
-            List<string> modTypes = new List<string>();
+            var modTypes = new List<string>();
 
-            foreach (ModItem modItem in modsData.Mods)
+            foreach (var modItem in modsData.Mods)
             {
                 if (modIds.Contains(modItem.Id))
                 {
@@ -322,16 +323,15 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        /// 
         /// </summary>
-        /// <param name="modsData"></param>
-        /// <param name="modIds"></param>
-        /// <returns></returns>
+        /// <param name="modsData"> </param>
+        /// <param name="modIds"> </param>
+        /// <returns> </returns>
         public List<string> GetRegionsForModIDs(ModsData modsData, List<int> modIds)
         {
-            List<string> regions = new List<string>();
+            var regions = new List<string>();
 
-            foreach (ModItem modItem in modsData.Mods)
+            foreach (var modItem in modsData.Mods)
             {
                 if (modIds.Contains(modItem.Id))
                 {
@@ -357,13 +357,13 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Get the custom list matching the specified name.
         /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
+        /// <param name="name"> </param>
+        /// <returns> </returns>
         public CustomList GetCustomListByName(string name)
         {
-            foreach (CustomList customList in from CustomList customList in CustomLists
-                                              where string.Equals(customList.Name, name, StringComparison.OrdinalIgnoreCase)
-                                              select customList)
+            foreach (var customList in from CustomList customList in CustomLists
+                                       where string.Equals(customList.Name, name, StringComparison.OrdinalIgnoreCase)
+                                       select customList)
             {
                 return customList;
             }
@@ -374,10 +374,10 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Update the installed package file details.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <param name="version"></param>
-        /// <param name="downloadFiles"></param>
+        /// <param name="id"> </param>
+        /// <param name="name"> </param>
+        /// <param name="version"> </param>
+        /// <param name="downloadFiles"> </param>
         public void UpdateInstalledPackageFile(int id, string name, string version, DownloadFiles downloadFiles)
         {
             InstalledPackageFiles.Remove(InstalledPackageFiles.First(x => x.Id.Equals(id)));
@@ -394,23 +394,24 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Get the installed package file matching the specified modId.
         /// </summary>
-        /// <param name="modId"></param>
-        /// <returns></returns>
+        /// <param name="modId"> </param>
+        /// <returns> </returns>
         public PackageFile GetInstalledPackageFile(string name)
         {
             return InstalledPackageFiles.FirstOrDefault(x => x.Name.Equals(name)) ?? null;
         }
 
         /// <summary>
-        /// Determines whether a installed package file is out of date by checking current package files in the database.
+        /// Determines whether a installed package file is out of date by checking current package
+        /// files in the database.
         /// </summary>
-        /// <param name="modsData"></param>
-        /// <param name="categoriesData"></param>
-        /// <param name="packageFile"></param>
-        /// <returns></returns>
+        /// <param name="modsData"> </param>
+        /// <param name="categoriesData"> </param>
+        /// <param name="packageFile"> </param>
+        /// <returns> </returns>
         public bool IsPackageFileOldVersion(ModsData modsData, CategoriesData categoriesData, PackageFile packageFile)
         {
-            foreach (ModItem modItem in modsData.Mods)
+            foreach (var modItem in modsData.Mods)
             {
                 if (modItem.GetCategoryType(categoriesData) == CategoryType.Homebrew)
                 {
@@ -418,8 +419,8 @@ namespace ModioX.Models.Resources
                     {
                         try
                         {
-                            Version oldVersion = Version.Parse(packageFile.Version);
-                            Version newVersion = Version.Parse(modItem.Version);
+                            var oldVersion = Version.Parse(packageFile.Version);
+                            var newVersion = Version.Parse(modItem.Version);
 
                             if (oldVersion.CompareTo(newVersion) < 0)
                             {
@@ -428,7 +429,6 @@ namespace ModioX.Models.Resources
                         }
                         catch
                         {
-
                             return false;
                         }
                     }
@@ -558,7 +558,8 @@ namespace ModioX.Models.Resources
     }
 
     /// <summary>
-    /// Create a new game region class with the specified <see cref="CategoriesData.Category.Id" /> and <see cref="ModsData.ModItem.Region" />.
+    /// Create a new game region class with the specified <see cref="CategoriesData.Category.Id" />
+    /// and <see cref="ModsData.ModItem.Region" />.
     /// </summary>
     public class GameRegion
     {

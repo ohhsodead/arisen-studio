@@ -9,13 +9,13 @@ namespace ModioX.Extensions
         /// <summary>
         /// Change button size to fit text and resizes to fit content.
         /// </summary>
-        /// <param name="ctrl">Control to set text</param>
-        /// <param name="text">Text to set to control</param>
+        /// <param name="ctrl"> Control to set text </param>
+        /// <param name="text"> Text to set to control </param>
         public static void SetControlTextWidth(Control ctrl, string text)
         {
             ctrl.Text = text;
-            Font myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
-            SizeF mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
+            var myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
+            var mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
             ctrl.Width = (int)Math.Round(mySize.Width, 0) + 20;
             ctrl.Refresh();
         }
