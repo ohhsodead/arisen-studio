@@ -24,7 +24,7 @@ namespace ModioX.Models.Database
         /// </summary>
         /// <param name="categoryId"> <see cref="Category.Id" /> </param>
         /// <returns> </returns>
-        public IEnumerable<string> AllModTypesForCategoryId(string categoryId)
+        public List<string> AllModTypesForCategoryId(string categoryId)
         {
             var modTypes = Mods.Where(x => x.GameId.EqualsIgnoreCase(categoryId)).SelectMany(x => x.ModTypes).Distinct().ToList();
             modTypes.Sort();
@@ -41,7 +41,7 @@ namespace ModioX.Models.Database
             {
                 var firmwares = Mods.SelectMany(x => x.Firmwares).Where(x => !x.EqualsIgnoreCase("-")).Distinct().ToList();
                 firmwares.Sort();
-                return firmwares.ToList();
+                return firmwares.Distinct().ToList();
             }
         }
 
@@ -56,32 +56,32 @@ namespace ModioX.Models.Database
         /// <param name="region"> </param>
         /// <param name="isCustomList"> </param>
         /// <returns> </returns>
-        public IEnumerable<ModItem> GetModItems(string categoryId, string name, string firmware, string type, string region, bool isCustomList)
+        public List<ModItem> GetModItems(string categoryId, string name, string firmware, string type, string region, bool isCustomList)
         {
             if (categoryId.Equals("fvrt"))
             {
                 return Mods.Where(x => MainWindow.Settings.FavoritedIds.Contains(x.Id)
-                                       && x.Name.EqualsIgnoreCase(name)
-                                       && x.Firmwares.Contains(firmware)
-                                       && x.Type.EqualsIgnoreCase(type)
-                                       && x.Region.EqualsIgnoreCase(region));
+                                              && x.Name.ContainsIgnoreCase(name)
+                                              && x.Firmwares.Exists(y => y.ContainsIgnoreCase(firmware))
+                                              && x.Type.ContainsIgnoreCase(type)
+                                              && x.Region.ContainsIgnoreCase(region)).ToList();
             }
             if (isCustomList)
             {
                 return MainWindow.Settings.CustomLists
                     .Where(x => x.Name.EqualsIgnoreCase(categoryId))
                     .SelectMany(y => Mods.Where(x => y.ModIds.Contains(x.Id)
-                                                     && x.Name.EqualsIgnoreCase(name)
-                                                     && x.Firmwares.Contains(firmware)
-                                                     && x.Type.EqualsIgnoreCase(type)
-                                                     && x.Region.EqualsIgnoreCase(region)));
+                                                     && x.Name.ContainsIgnoreCase(name)
+                                                     && x.Firmwares.Exists(y => y.ContainsIgnoreCase(firmware))
+                                                     && x.Type.ContainsIgnoreCase(type)
+                                                     && x.Region.ContainsIgnoreCase(region))).ToList();
             }
 
             return Mods.Where(x => x.GameId.EqualsIgnoreCase(categoryId)
-                                   && x.Name.EqualsIgnoreCase(name)
-                                   && x.Firmwares.Contains(firmware)
-                                   && x.Type.EqualsIgnoreCase(type)
-                                   && x.Region.EqualsIgnoreCase(region));
+                                   & x.Name.ContainsIgnoreCase(name)
+                                   && x.Firmwares.Exists(y => y.ContainsIgnoreCase(firmware))
+                                   && x.Type.ContainsIgnoreCase(type)
+                                   && x.Region.ContainsIgnoreCase(region)).ToList();
         }
 
         /// <summary>
@@ -98,9 +98,9 @@ namespace ModioX.Models.Database
         /// Get all the <see cref="ModItem" /> matching the specified <see cref="Category.Id" />.
         /// </summary>
         /// <returns> </returns>
-        public IEnumerable<ModItem> GetModsByCategoryId(string gameId)
+        public ModItem[] GetModsByCategoryId(string gameId)
         {
-            return Mods.Where(x => x.GameId.EqualsIgnoreCase(gameId));
+            return Mods.Where(x => x.GameId.EqualsIgnoreCase(gameId)).ToArray();
         }
 
         /// <summary>
