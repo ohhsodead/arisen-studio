@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
+using Humanizer;
 
 namespace ModioX.Forms.Tools.PS3_Tools
 {
@@ -30,16 +31,12 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void ComboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (ComboBoxType.SelectedIndex)
+            UpdateTypeURL = ComboBoxType.SelectedIndex switch
             {
-                case 0:
-                    UpdateTypeURL = RetailUpdatesURL;
-                    break;
-
-                case 1:
-                    UpdateTypeURL = DebugUpdatesURL;
-                    break;
-            }
+                0 => RetailUpdatesURL,
+                1 => DebugUpdatesURL,
+                _ => UpdateTypeURL
+            };
         }
 
         private void ButtonSearch_Click(object sender, EventArgs e)
@@ -63,21 +60,20 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
                 var gameUpdateFiles = DataExtensions.CreateDataTable(new List<DataColumn>()
                 {
-                    new DataColumn("File URL", typeof(string)),
-                    new DataColumn("File SHA1", typeof(string)),
-                    new DataColumn("File Name", typeof(string)),
-                    new DataColumn("File Version", typeof(string)),
-                    new DataColumn("File Size", typeof(string)),
-                    new DataColumn("System Version", typeof(string)),
+                    new("File URL", typeof(string)),
+                    new("File SHA1", typeof(string)),
+                    new("File Name", typeof(string)),
+                    new("File Version", typeof(string)),
+                    new("File Size", typeof(string)),
+                    new("System Version", typeof(string)),
                 });
 
                 foreach (var update in gameUpdates.Tag.Package)
                 {
-                    gameUpdateFiles.Rows.Add(update.Url,
-                                            update.Sha1sum,
+                    gameUpdateFiles.Rows.Add(update.Url, update.Sha1sum,
                                             gameTitle,
                                             "v" + update.Version.RemoveFirstInstanceOfString("0"),
-                                            MainWindow.Settings.ShowFileSizeInBytes ? long.Parse(update.Size).ToString("#,0") + " bytes" : update.Size.FormatSize(),
+                                            MainWindow.Settings.ShowFileSizeInBytes ? long.Parse(update.Size).Bytes().Humanize() : long.Parse(update.Size).Bytes().Humanize("MB"),
                                             "v" + update.Ps3_system_ver.RemoveFirstInstanceOfString("0").Replace("000", "00"));
                 }
 
@@ -112,26 +108,25 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void ButtonInstallToConsole_Click(object sender, EventArgs e)
         {
-            if (GridViewGameUpdates.SelectedRowsCount > 0)
+            if (GridViewGameUpdates.SelectedRowsCount <= 0) return;
+
+            if (MainWindow.IsConsoleConnected)
             {
-                if (MainWindow.IsConsoleConnected)
-                {
-                    var updateUrl = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[0]);
-                    var fileName = Path.GetFileName(updateUrl);
-                    var filePath = KnownFolders.GetPath(KnownFolder.Downloads) + "/" + fileName;
+                var updateUrl = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[0]);
+                var fileName = Path.GetFileName(updateUrl);
+                var filePath = KnownFolders.GetPath(KnownFolder.Downloads) + "/" + fileName;
 
-                    UpdateStatus("Downloading file: " + fileName);
-                    HttpExtensions.DownloadFile(updateUrl, filePath);
+                UpdateStatus("Downloading file: " + fileName);
+                HttpExtensions.DownloadFile(updateUrl, filePath);
 
-                    UpdateStatus("Installing file: " + fileName);
-                    FtpExtensions.UploadFile(filePath, "/dev_hdd0/packages/" + fileName);
-                    UpdateStatus("Successfully installed package file to your Packages folder.");
-                    XtraMessageBox.Show("Successfully installed package file to your Packages folder.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    XtraMessageBox.Show("You must be connected to your console to install the update package file.", "Not Connected");
-                }
+                UpdateStatus("Installing file: " + fileName);
+                FtpExtensions.UploadFile(filePath, "/dev_hdd0/packages/" + fileName);
+                UpdateStatus("Successfully installed package file to your Packages folder.");
+                XtraMessageBox.Show("Successfully installed package file to your Packages folder.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                XtraMessageBox.Show("You must be connected to your console to install the update package file.", "Not Connected");
             }
         }
 

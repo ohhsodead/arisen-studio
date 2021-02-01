@@ -16,6 +16,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Humanizer;
 using FtpException = FluentFTP.FtpException;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 using StringExtensions = ModioX.Extensions.StringExtensions;
@@ -483,11 +484,11 @@ namespace ModioX.Forms.Windows
                 var localFiles = DataExtensions.CreateDataTable(
                     new List<DataColumn>
                     {
-                        new DataColumn() { Caption = "Type", ColumnName = "Type", DataType = typeof(string) },
-                        new DataColumn() { Caption = "Image", ColumnName = "Image", DataType = typeof(Image) },
-                        new DataColumn() { Caption = "Name", ColumnName = "Name", DataType = typeof(string) },
-                        new DataColumn() { Caption = "Size", ColumnName = "Size", DataType = typeof(string) },
-                        new DataColumn() { Caption = "Last Modified", ColumnName = "Last Modified", DataType = typeof(string) }
+                        new() { Caption = "Type", ColumnName = "Type", DataType = typeof(string) },
+                        new() { Caption = "Image", ColumnName = "Image", DataType = typeof(Image) },
+                        new() { Caption = "Name", ColumnName = "Name", DataType = typeof(string) },
+                        new() { Caption = "Size", ColumnName = "Size", DataType = typeof(string) },
+                        new() { Caption = "Last Modified", ColumnName = "Last Modified", DataType = typeof(string) }
                     });
 
                 DirectoryPathLocal = directoryPath.Replace(@"\\", @"\");
@@ -521,7 +522,7 @@ namespace ModioX.Forms.Windows
                 {
                     var fileBytes = new FileInfo(fileItem).Length;
 
-                    localFiles.Rows.Add("file", ImageFile, Path.GetFileName(fileItem), Settings.ShowFileSizeInBytes ? fileBytes.ToString("#,0") + " bytes" : fileBytes.ToString().FormatSize(), File.GetLastWriteTime(fileItem));
+                    localFiles.Rows.Add("file", ImageFile, Path.GetFileName(fileItem), Settings.ShowFileSizeInBytes ? fileBytes.Bytes().Humanize() : fileBytes.Bytes().Humanize("MB"), File.GetLastWriteTime(fileItem));
 
                     files++;
                     totalBytes += fileBytes;
@@ -529,7 +530,7 @@ namespace ModioX.Forms.Windows
 
                 var statusFiles = files > 0 ? $"{files} {(files <= 1 ? "file" : "files")} {(files > 0 && folders > 0 ? "and " : "")}" : "" + $"{(folders < 1 ? "." : "")}";
                 var statusFolders = folders > 0 ? $"{folders} {(folders <= 1 ? "directory" : "directories")}. " : "";
-                var statusTotalBytes = files > 0 ? $"Total size: {(Settings.ShowFileSizeInBytes ? totalBytes.ToString("#,0") + " bytes" : StringExtensions.FormatSize(totalBytes.ToString()))}" : "";
+                var statusTotalBytes = files > 0 ? $"Total size: {(Settings.ShowFileSizeInBytes ? totalBytes.Bytes().Humanize() : totalBytes.Bytes().Humanize("MB"))}" : "";
 
                 if (files < 1 && folders < 1)
                 {
@@ -691,11 +692,11 @@ namespace ModioX.Forms.Windows
                 var consoleFiles = DataExtensions.CreateDataTable(
                     new List<DataColumn>
                     {
-                        new DataColumn() { Caption = "Type", ColumnName = "Type", DataType = typeof(string) },
-                        new DataColumn() { Caption = "Image", ColumnName = "Image", DataType = typeof(Image) },
-                        new DataColumn() { Caption = "Name", ColumnName = "Name", DataType = typeof(string) },
-                        new DataColumn() { Caption = "Size", ColumnName = "Size", DataType = typeof(string) },
-                        new DataColumn() { Caption = "Last Modified", ColumnName = "Last Modified", DataType = typeof(string) }
+                        new() { Caption = "Type", ColumnName = "Type", DataType = typeof(string) },
+                        new() { Caption = "Image", ColumnName = "Image", DataType = typeof(Image) },
+                        new() { Caption = "Name", ColumnName = "Name", DataType = typeof(string) },
+                        new() { Caption = "Size", ColumnName = "Size", DataType = typeof(string) },
+                        new() { Caption = "Last Modified", ColumnName = "Last Modified", DataType = typeof(string) }
                     });
 
                 DirectoryPathConsole = directoryPath.Replace("//", "/");
@@ -761,13 +762,13 @@ namespace ModioX.Forms.Windows
 
                 foreach (var listItem in files.OrderBy(x => x.Name))
                 {
-                    consoleFiles.Rows.Add("file", ImageFile, listItem.Name, Settings.ShowFileSizeInBytes ? listItem.Size.ToString("#,0") + " bytes" : StringExtensions.FormatSize(listItem.Size.ToString()), listItem.Modified);
+                    consoleFiles.Rows.Add("file", ImageFile, listItem.Name, Settings.ShowFileSizeInBytes ? listItem.Size.Bytes().Humanize() : listItem.Size.Bytes().Humanize("MB"), listItem.Modified);
                     totalBytes += listItem.Size;
                 }
 
                 var statusFiles = files.Count > 0 ? $"{files.Count} {(files.Count == 1 ? "file" : "files")} {(files.Count > 0 && folders.Count > 0 ? "and " : "")}" : "" + $"{(folders.Count == 0 ? "." : "")}";
                 var statusFolders = folders.Count > 0 ? $"{folders.Count} {(folders.Count == 1 ? "directory" : "directories")}. " : "";
-                var statusTotalBytes = totalBytes > 0 ? $"Total size: {(Settings.ShowFileSizeInBytes ? totalBytes.ToString("#,0") + " bytes" : StringExtensions.FormatSize(totalBytes.ToString()))}" : "";
+                var statusTotalBytes = totalBytes > 0 ? $"Total size: {(Settings.ShowFileSizeInBytes ? totalBytes.Bytes().Humanize() : totalBytes.Bytes().Humanize("MB"))}" : "";
 
                 if (files.Count < 1 && folders.Count < 1)
                 {

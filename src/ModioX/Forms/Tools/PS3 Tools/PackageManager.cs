@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
+using Humanizer;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
 namespace ModioX.Forms.Tools.PS3_Tools
@@ -24,7 +25,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private string PackageFilesPath { get; } = "/dev_hdd0/packages";
 
-        private List<FtpListItem> PackageFiles { get; set; } = new List<FtpListItem>();
+        private List<FtpListItem> PackageFiles { get; set; } = new();
 
         private void PackageManager_Load(object sender, EventArgs e)
         {
@@ -42,9 +43,9 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
             var packages = DataExtensions.CreateDataTable(new List<DataColumn>()
             {
-                new DataColumn("File Name", typeof(string)),
-                new DataColumn("File Size", typeof(string)),
-                new DataColumn(" ", typeof(string))
+                new("File Name", typeof(string)),
+                new("File Size", typeof(string)),
+                new(" ", typeof(string))
             });
 
             FtpClient.SetWorkingDirectory(PackageFilesPath);
@@ -53,24 +54,24 @@ namespace ModioX.Forms.Tools.PS3_Tools
             {
                 switch (listItem.Type)
                 {
-                    case FtpFileSystemObjectType.Directory:
+                    case FtpFileSystemObjectType.File when listItem.Name.EndsWith(".pkg"):
+                        PackageFiles.Add(listItem);
                         break;
 
-                    case FtpFileSystemObjectType.File:
-                        if (listItem.Name.EndsWith(".pkg"))
-                        {
-                            PackageFiles.Add(listItem);
-                        }
+                    case FtpFileSystemObjectType.Directory:
                         break;
 
                     case FtpFileSystemObjectType.Link:
                         break;
+
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
             }
 
             foreach (var package in PackageFiles)
             {
-                packages.Rows.Add(package.Name, MainWindow.Settings.ShowFileSizeInBytes ? package.Size.ToString("#,0") + " bytes" : StringExtensions.FormatSize(package.Size.ToString()));
+                packages.Rows.Add(package.Name, MainWindow.Settings.ShowFileSizeInBytes ? package.Size.Bytes().Humanize() : package.Size.Bytes().Humanize("MB"));
             }
 
             GridPackageFiles.DataSource = packages;
