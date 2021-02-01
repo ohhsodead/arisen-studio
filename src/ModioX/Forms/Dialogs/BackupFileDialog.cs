@@ -13,7 +13,7 @@ namespace ModioX.Forms.Dialogs
             InitializeComponent();
         }
 
-        public BackupFile BackupFile { get; set; } = new();
+        public Models.Resources.BackupFile BackupFile { get; set; } = new();
 
         private void EditBackupForm_Load(object sender, EventArgs e)
         {

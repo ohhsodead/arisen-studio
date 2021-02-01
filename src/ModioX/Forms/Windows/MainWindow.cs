@@ -308,6 +308,61 @@ namespace ModioX.Forms.Windows
             DialogExtensions.ShowPackageManagerWindow(this);
         }
 
+        private void ButtonPS3NotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
+
+            if (!string.IsNullOrWhiteSpace(notifyMessage))
+            {
+                WebManExtensions.NotifyPopup(ConsoleProfile.Address, notifyMessage);
+                SetStatus($"WebMAN Controls: Message Notified - {notifyMessage}");
+            }
+        }
+
+        private void ButtonPS3VirtualController_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Process.Start("http://pad.aldostools.org/pad.html");
+        }
+
+        private void ButtonPS3SoftReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.RebootSoft(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+        private void ButtonPS3HardReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.RebootHard(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+        private void ButtonPS3Restart_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.Restart(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+        private void ButtonPS3Shutdown_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.Shutdown(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+        private void ButtonPS3SystemInformation_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifySystemInformation(ConsoleProfile.Address);
+        }
+
+        private void ButtonPS3CPURSXTemperature_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifyCPURSXTemperature(ConsoleProfile.Address);
+        }
+
+        private void ButtonPS3MinimumVersion_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
+        }
+
         private void ButtonXboxFileManager_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowFileManager(this);
@@ -374,7 +429,7 @@ namespace ModioX.Forms.Windows
         {
             var menuItemText = e.Item.Caption;
 
-            foreach (var application in Settings.ExternalApplications.Where(application => application.Name.Equals(menuItemText, StringComparison.OrdinalIgnoreCase)))
+            foreach (var application in Settings.ExternalApplications.Where(application => StringExtensions.EqualsIgnoreCase(application.Name, menuItemText)))
             {
                 if (File.Exists(application.FileLocation))
                 {
@@ -382,66 +437,9 @@ namespace ModioX.Forms.Windows
                 }
                 else
                 {
-                    XtraMessageBox.Show(this, $"Could not locate application: {application.Name} at location: {application.FileLocation}\n\nGo to Settings > Edit Applications and set the correct file path for this application.", "Application Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show(this, $"Could not locate application: {application.Name} at path: {application.FileLocation}\n\nGo to Settings > Edit Applications and set the correct file path for this application.", "Application Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        // TOOLS MENU
-
-        private void ButtonPS3NotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
-
-            if (!string.IsNullOrWhiteSpace(notifyMessage))
-            {
-                WebManExtensions.NotifyPopup(ConsoleProfile.Address, notifyMessage);
-                SetStatus($"WebMAN Controls: Message Notified - {notifyMessage}");
-            }
-        }
-
-        private void ButtonPS3VirtualController_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Process.Start("http://pad.aldostools.org/pad.html");
-        }
-
-        private void ButtonPS3SoftReboot_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.RebootSoft(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void ButtonPS3HardReboot_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.RebootHard(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void ButtonPS3Restart_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.Restart(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void ButtonPS3Shutdown_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.Shutdown(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void ButtonPS3SystemInformation_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifySystemInformation(ConsoleProfile.Address);
-        }
-
-        private void ButtonPS3CPURSXTemperature_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifyCPURSXTemperature(ConsoleProfile.Address);
-        }
-
-        private void ButtonPS3MinimumVersion_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
         }
 
         // OPTIONS MENU
