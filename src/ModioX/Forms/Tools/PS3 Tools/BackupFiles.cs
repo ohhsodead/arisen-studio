@@ -6,6 +6,7 @@ using System;
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
+using Humanizer;
 
 namespace ModioX.Forms.Tools.PS3_Tools
 {
@@ -33,12 +34,12 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
             foreach (var backupFile in MainWindow.Settings.BackupFiles)
             {
-                var fileSize = new FileInfo(backupFile.LocalPath).Length;
+                var file = new FileInfo(backupFile.LocalPath);
 
                 dt.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId).Title,
                     backupFile.FileName,
-                    File.Exists(backupFile.LocalPath)
-                    ? (MainWindow.Settings.ShowFileSizeInBytes ? fileSize.ToString("#,0") + " bytes" : StringExtensions.FormatSize(fileSize.ToString()))
+                    file.Exists
+                    ? MainWindow.Settings.ShowFileSizeInBytes ? file.Length.Bytes().Humanize() : file.Length.Bytes().Humanize("MB")
                     : "No File Exists",
                     backupFile.CreatedDate.ToLocalTime());
             }

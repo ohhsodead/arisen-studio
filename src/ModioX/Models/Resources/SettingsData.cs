@@ -27,7 +27,7 @@ namespace ModioX.Models.Resources
 
         public Color HexBoxBackColor { get; set; } = Color.FromArgb(54, 54, 54);
 
-        public List<ConsoleProfile> ConsoleProfiles { get; set; } = new List<ConsoleProfile>();
+        public List<ConsoleProfile> ConsoleProfiles { get; set; } = new();
 
         public ConsoleTypePrefix LoadConsoleMods { get; set; } = ConsoleTypePrefix.PS3;
 
@@ -51,19 +51,19 @@ namespace ModioX.Models.Resources
 
         public string LaunchIniFilePath { get; set; } = "/Hdd1/launch.ini";
 
-        public List<int> FavoritedIds { get; set; } = new List<int>();
+        public List<int> FavoritedIds { get; set; } = new();
 
-        public List<BackupFile> BackupFiles { get; set; } = new List<BackupFile>();
+        public List<BackupFile> BackupFiles { get; set; } = new();
 
-        public List<GameRegion> GameRegions { get; set; } = new List<GameRegion>();
+        public List<GameRegion> GameRegions { get; set; } = new();
 
-        public List<ExternalApplication> ExternalApplications { get; set; } = new List<ExternalApplication>();
+        public List<ExternalApplication> ExternalApplications { get; set; } = new();
 
-        public List<CustomList> CustomLists { get; set; } = new List<CustomList>();
+        public List<CustomList> CustomLists { get; set; } = new();
 
-        public List<InstalledMod> InstalledGameMods { get; set; } = new List<InstalledMod>();
+        public List<InstalledMod> InstalledGameMods { get; set; } = new();
 
-        public List<PackageFile> InstalledPackageFiles { get; set; } = new List<PackageFile>();
+        public List<PackageFile> InstalledPackageFiles { get; set; } = new();
 
         /// <summary>
         /// Create/store a backup of the specified file, and then downloads it locally to a known path
@@ -584,7 +584,7 @@ namespace ModioX.Models.Resources
 
         public string Name { get; set; }
 
-        public List<int> ModIds { get; set; } = new List<int>();
+        public List<int> ModIds { get; set; } = new();
     }
 
     /// <summary>

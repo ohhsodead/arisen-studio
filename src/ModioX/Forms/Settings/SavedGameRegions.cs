@@ -48,7 +48,7 @@ namespace ModioX.Forms.Settings
         {
             GridGameRegions.DataSource = null;
 
-            var gameRegions = DataExtensions.CreateDataTable(new List<DataColumn> { new DataColumn("Game Title", typeof(string)), new DataColumn("Game Region", typeof(string)) });
+            var gameRegions = DataExtensions.CreateDataTable(new List<DataColumn> { new("Game Title", typeof(string)), new("Game Region", typeof(string)) });
 
             foreach (var gameRegion in Settings.GameRegions)
             {

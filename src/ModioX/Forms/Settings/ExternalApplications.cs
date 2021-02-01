@@ -33,7 +33,7 @@ namespace ModioX.Forms.Settings
         {
             GridApplications.DataSource = null;
 
-            var applications = DataExtensions.CreateDataTable(new List<DataColumn> { new DataColumn("Name"), new DataColumn("File Location") });
+            var applications = DataExtensions.CreateDataTable(new List<DataColumn> { new("Name"), new("File Location") });
 
             TextBoxFileName.ResetText();
             TextBoxFileLocation.ResetText();

@@ -30,9 +30,10 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void TextBoxMarketplaceURL_EditValueChanged(object sender, EventArgs e)
         {
-            TextBoxItemID.Text = TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 0x24).ToUpper().Replace("-", string.Empty);
-            TextBoxItemName.Text = Method_0().Remove(Method_0().Length - 0x25);
-            var strArray = new[] { "http://avatar.xboxlive.com/global/t.", TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 8), "/avataritem/", TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 0x24), "/300" };
+            var url = TextBoxMarketplaceURL.Text;
+            TextBoxItemID.Text = url[..^url.LastIndexOf("/", StringComparison.Ordinal)].ToUpper().Replace("-", string.Empty);
+            TextBoxItemName.Text = url.Remove(url.LastIndexOf("/", StringComparison.Ordinal) - 1)[url.LastIndexOf("/", StringComparison.Ordinal)..];
+            var strArray = new[] { "http://avatar.xboxlive.com/global/t.", TextBoxMarketplaceURL.Text[^8..], "/avataritem/", TextBoxMarketplaceURL.Text[^0x24..], "/300" };
             ImageAvatar.Load(string.Concat(strArray));
         }
 
@@ -44,9 +45,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             }
             else
             {
-                TextBoxItemID.Text = TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 0x24).ToUpper().Replace("-", string.Empty);
+                TextBoxItemID.Text = TextBoxMarketplaceURL.Text[^0x24..].ToUpper().Replace("-", string.Empty);
                 TextBoxItemName.Text = Method_0().Remove(Method_0().Length - 0x25);
-                var strArray = new[] { "http://avatar.xboxlive.com/global/t.", TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 8), "/avataritem/", TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 0x24), "/300" };
+                var strArray = new[] { "http://avatar.xboxlive.com/global/t.", TextBoxMarketplaceURL.Text[^8..], "/avataritem/", TextBoxMarketplaceURL.Text[^0x24..], "/300" };
                 ImageAvatar.Load(string.Concat(strArray));
             }
         }
@@ -58,17 +59,17 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             File.Delete(".\\\\$AvatarItems\\\\" + Method_0().Remove(Method_0().Length - 37) + "\\" + TextBoxItemID.Text);
             File.Delete(".\\\\$AvatarItems\\\\" + Method_0().Remove(Method_0().Length - 37) + "\\AvatarItemTemplate");
             File.WriteAllBytes(".\\$AvatarItems\\" + Method_0().Remove(Method_0().Length - 37) + "\\AvatarItemTemplate", GetBytes());
-            File.WriteAllText(".\\$AvatarItems\\" + Method_0().Remove(Method_0().Length - 37) + "\\ID.TXT", TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 36).ToUpper().Replace("-", string.Empty));
+            File.WriteAllText(".\\$AvatarItems\\" + Method_0().Remove(Method_0().Length - 37) + "\\ID.TXT", TextBoxMarketplaceURL.Text[^36..].ToUpper().Replace("-", string.Empty));
             var webClient1 = new WebClient();
             var webClient2 = new WebClient();
             var webClient3 = new WebClient();
             webClient3.DownloadFileCompleted += new AsyncCompletedEventHandler(Method_8);
             webClient1.DownloadProgressChanged += new DownloadProgressChangedEventHandler(Method_7);
-            webClient1.DownloadFileAsync(new Uri("http://avatar.xboxlive.com/global/t." + TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 8) + "/avataritem/" + TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 36) + "/128"), ".\\\\$AvatarItems\\\\" + Method_0().Remove(Method_0().Length - 37) + "\\ICON.PNG");
+            webClient1.DownloadFileAsync(new Uri("http://avatar.xboxlive.com/global/t." + TextBoxMarketplaceURL.Text[^8..] + "/avataritem/" + TextBoxMarketplaceURL.Text[^36..] + "/128"), ".\\\\$AvatarItems\\\\" + Method_0().Remove(Method_0().Length - 37) + "\\ICON.PNG");
             webClient2.DownloadProgressChanged += new DownloadProgressChangedEventHandler(Method_7);
-            webClient2.DownloadFileAsync(new Uri("http://avatar.xboxlive.com/global/t." + TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 8) + "/avataritem/" + TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 36) + "/64"), ".\\\\$AvatarItems\\\\" + Method_0().Remove(Method_0().Length - 37) + "\\ICON64.PNG");
+            webClient2.DownloadFileAsync(new Uri("http://avatar.xboxlive.com/global/t." + TextBoxMarketplaceURL.Text[^8..] + "/avataritem/" + TextBoxMarketplaceURL.Text[^36..] + "/64"), ".\\\\$AvatarItems\\\\" + Method_0().Remove(Method_0().Length - 37) + "\\ICON64.PNG");
             webClient3.DownloadProgressChanged += new DownloadProgressChangedEventHandler(Method_7);
-            webClient3.DownloadFileAsync(new Uri("http://download.xboxlive.com/content/" + TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 8) + "/avataritems/v2/" + TextBoxMarketplaceURL.Text.Substring(TextBoxMarketplaceURL.Text.Length - 36) + ".bin"), ".\\\\$AvatarItems\\\\" + Method_0().Remove(Method_0().Length - 37) + "\\asset_v2.bin");
+            webClient3.DownloadFileAsync(new Uri("http://download.xboxlive.com/content/" + TextBoxMarketplaceURL.Text[^8..] + "/avataritems/v2/" + TextBoxMarketplaceURL.Text[^36..] + ".bin"), ".\\\\$AvatarItems\\\\" + Method_0().Remove(Method_0().Length - 37) + "\\asset_v2.bin");
         }
 
         private void Method_1()
@@ -109,9 +110,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                     fileStream1.Close();
                     break;
                 }
-                catch
-                {
-                }
+                catch { }
             }
         }
 
@@ -310,7 +309,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             var fileStream23 = new FileStream(".\\$AvatarItems\\" + Method_0().Remove(Method_0().Length - 37) + "\\AvatarItemTemplate", FileMode.OpenOrCreate);
             var binaryWriter23 = new BinaryWriter(fileStream23);
             fileStream23.Position = Convert.ToInt64("360", 16);
-            binaryWriter23.Write(Smethod_1(TextBoxItemID.Text.Substring(24)));
+            binaryWriter23.Write(Smethod_1(TextBoxItemID.Text[24..]));
             fileStream23.Close();
         }
 
@@ -350,7 +349,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         internal static byte[] GetBytes() => ((byte[])CIA().GetObject("AvatarItemTemplate", CI0));
 
-        public string Method_0() => TextBoxMarketplaceURL.Text.Substring(0x2a).Replace('-', ' ');
+        public string Method_0() => TextBoxMarketplaceURL.Text[0x2a..].Replace('-', ' ');
 
         public static string Smethod_0(string string_0)
         {
@@ -371,12 +370,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 string_0 = string_0
             };
 
-            if (func_0 == null)
-            {
-                func_0 = new Func<int, bool>(Smethod_2);
-            }
+            func_0 ??= Smethod_2;
 
-            return Enumerable.ToArray(Enumerable.Select(Enumerable.Where(Enumerable.Range(0, class2.string_0.Length), func_0), new Func<int, byte>(class2.Method_0)));
+            return Enumerable.Range(0, class2.string_0.Length).Where(func_0).Select(class2.Method_0).ToArray();
         }
 
         private sealed class Class2

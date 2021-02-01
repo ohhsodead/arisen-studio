@@ -483,11 +483,11 @@ namespace ModioX.Forms.Windows
                 var localFiles = DataExtensions.CreateDataTable(
                     new List<DataColumn>
                     {
-                        new DataColumn() { Caption = "Type", ColumnName = "Type", DataType = typeof(string) },
-                        new DataColumn() { Caption = "Image", ColumnName = "Image", DataType = typeof(Image) },
-                        new DataColumn() { Caption = "Name", ColumnName = "Name", DataType = typeof(string) },
-                        new DataColumn() { Caption = "Size", ColumnName = "Size", DataType = typeof(string) },
-                        new DataColumn() { Caption = "Last Modified", ColumnName = "Last Modified", DataType = typeof(string) }
+                        new() { Caption = "Type", ColumnName = "Type", DataType = typeof(string) },
+                        new() { Caption = "Image", ColumnName = "Image", DataType = typeof(Image) },
+                        new() { Caption = "Name", ColumnName = "Name", DataType = typeof(string) },
+                        new() { Caption = "Size", ColumnName = "Size", DataType = typeof(string) },
+                        new() { Caption = "Last Modified", ColumnName = "Last Modified", DataType = typeof(string) }
                     });
 
                 DirectoryPathLocal = directoryPath.Replace(@"\\", @"\");
@@ -691,11 +691,11 @@ namespace ModioX.Forms.Windows
                 var consoleFiles = DataExtensions.CreateDataTable(
                     new List<DataColumn>
                     {
-                        new DataColumn() { Caption = "Type", ColumnName = "Type", DataType = typeof(string) },
-                        new DataColumn() { Caption = "Image", ColumnName = "Image", DataType = typeof(Image) },
-                        new DataColumn() { Caption = "Name", ColumnName = "Name", DataType = typeof(string) },
-                        new DataColumn() { Caption = "Size", ColumnName = "Size", DataType = typeof(string) },
-                        new DataColumn() { Caption = "Last Modified", ColumnName = "Last Modified", DataType = typeof(string) }
+                        new() { Caption = "Type", ColumnName = "Type", DataType = typeof(string) },
+                        new() { Caption = "Image", ColumnName = "Image", DataType = typeof(Image) },
+                        new() { Caption = "Name", ColumnName = "Name", DataType = typeof(string) },
+                        new() { Caption = "Size", ColumnName = "Size", DataType = typeof(string) },
+                        new() { Caption = "Last Modified", ColumnName = "Last Modified", DataType = typeof(string) }
                     });
 
                 DirectoryPathConsole = directoryPath.Replace("//", "/");

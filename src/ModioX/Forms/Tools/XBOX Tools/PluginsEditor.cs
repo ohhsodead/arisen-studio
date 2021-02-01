@@ -11,7 +11,6 @@ using ModioX.Net;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using XDevkit;
@@ -122,8 +121,8 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
             DataTable launchFileSections = DataExtensions.CreateDataTable(new List<DataColumn>()
             {
-                new DataColumn("Key", typeof(string)),
-                new DataColumn("Value", typeof(string)),
+                new("Key", typeof(string)),
+                new("Value", typeof(string)),
             });
 
             IniData launchFile = LaunchFileData;

@@ -12,14 +12,12 @@ using ModioX.Io;
 using ModioX.Models.Database;
 using ModioX.Models.Resources;
 using ModioX.Net;
-using ModioX.Properties;
 using ModioX.Templates;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -1389,7 +1387,7 @@ namespace ModioX.Forms.Windows
             ScrollBarModInformation.Value = FlowPanelDetails.VerticalScroll.Value;
         }
 
-        #endregion Load Mods Information to Right-Side Panel Function
+        #endregion Show Mod's Information on the Right-Side Panel Function
 
         #region Install, Uninstall, Download & Favorite Functions
 

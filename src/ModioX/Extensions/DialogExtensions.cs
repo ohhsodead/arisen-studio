@@ -1,5 +1,4 @@
 ﻿using DevExpress.XtraEditors;
-using ModioX.Forms;
 using ModioX.Forms.Dialogs;
 using ModioX.Forms.Settings;
 using ModioX.Forms.Tools.PS3_Tools;
@@ -113,8 +112,7 @@ namespace ModioX.Extensions
 
         public static void ShowPackageManagerWindow(Form owner)
         {
-            using var packageManagerWindow = new PackageManagerWindow();
-            using PackageManager packageManagerWindow = new PackageManager();
+            using var packageManagerWindow = new PackageManager();
             packageManagerWindow.ShowDialog(owner);
         }
 
@@ -140,7 +138,7 @@ namespace ModioX.Extensions
             pluginsEditor.ShowDialog(owner);
         }
 
-        #endregion
+        #endregion Xbox Tools
 
         #region Settings
 
