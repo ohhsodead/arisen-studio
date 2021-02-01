@@ -61,7 +61,7 @@ namespace ModioX.Database
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new HttpException($"Bad response {response.StatusCode}");
 
-            var responseData = response.Content.ReadAsStringAsync().Result;
+            var responseData = await response.Content.ReadAsStringAsync();
 
             if (!IsValidJson(responseData))
                 throw new JsonException("Failed to process the data for the Categories.");
@@ -82,7 +82,7 @@ namespace ModioX.Database
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Bad response {response.StatusCode}");
 
-            var responseData = response.Content.ReadAsStringAsync().Result;
+            var responseData = await response.Content.ReadAsStringAsync();
 
             if (!IsValidJson(responseData))
                 throw new JsonSerializationException("Failed to process the data for the Mods.");
@@ -103,7 +103,7 @@ namespace ModioX.Database
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Bad response {response.StatusCode}");
 
-            var responseData = response.Content.ReadAsStringAsync().Result;
+            var responseData = await response.Content.ReadAsStringAsync();
 
             if (!IsValidJson(responseData))
                 throw new JsonSerializationException("Failed to process the data for the Mods.");

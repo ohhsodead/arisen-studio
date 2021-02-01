@@ -161,15 +161,18 @@ namespace ModioX.Forms.Windows
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveSettings();
+            if (!IsConsoleConnected) return;
 
-            if (IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+            switch (ConsoleProfile.TypePrefix)
             {
-                FtpClient.Dispose();
-                FtpConnection.Dispose();
-            }
-            else if (IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
-            {
-                XboxClient.Disconnect();
+                case ConsoleTypePrefix.PS3:
+                    FtpClient.Dispose();
+                    FtpConnection.Dispose();
+                    break;
+
+                case ConsoleTypePrefix.XBOX:
+                    XboxClient.Disconnect();
+                    break;
             }
         }
 
@@ -844,29 +847,31 @@ namespace ModioX.Forms.Windows
 
             foreach (var category in Database.CategoriesData.Categories.OrderBy(x => x.Title))
             {
-                var modsByCategory = Mods.GetModsByCategoryId(category.Id);
+                var modsByCategory = Mods.GetModsByCategoryId(category.Id).ToList();
 
-                if (modsByCategory.Length > 0 || category.Id.Equals("fvrt"))
+                if (modsByCategory.Any() || category.Id.Equals("fvrt"))
                 {
                     var categoryItem = NavBarCategories.Items.Add();
-                    categoryItem.Caption = $@"{category.Title.Replace("&", "&&")} ({(category.Id.Equals("fvrt") ? Settings.FavoritedIds.Count : modsByCategory.Length)})";
+                    categoryItem.Caption = $@"{category.Title.Replace("&", "&&")} ({(category.Id.Equals("fvrt") ? Settings.FavoritedIds.Count : modsByCategory.Count)})";
                     categoryItem.Name = category.Id;
 
-                    if (category.CategoryType == CategoryType.Game)
+                    switch (category.CategoryType)
                     {
-                        NavGroupGames.ItemLinks.Add(categoryItem);
-                    }
-                    else if (category.CategoryType == CategoryType.Homebrew)
-                    {
-                        NavGroupHomebrewApps.ItemLinks.Add(categoryItem);
-                    }
-                    else if (category.CategoryType == CategoryType.Resource)
-                    {
-                        NavGroupResources.ItemLinks.Add(categoryItem);
-                    }
-                    else if (category.CategoryType == CategoryType.Favorite)
-                    {
-                        NavGroupMyLists.ItemLinks.Add(categoryItem);
+                        case CategoryType.Game:
+                            NavGroupGames.ItemLinks.Add(categoryItem);
+                            break;
+
+                        case CategoryType.Homebrew:
+                            NavGroupHomebrewApps.ItemLinks.Add(categoryItem);
+                            break;
+
+                        case CategoryType.Resource:
+                            NavGroupResources.ItemLinks.Add(categoryItem);
+                            break;
+
+                        case CategoryType.Favorite:
+                            NavGroupMyLists.ItemLinks.Add(categoryItem);
+                            break;
                     }
                 }
             }
@@ -2342,8 +2347,8 @@ namespace ModioX.Forms.Windows
 
                 foreach (var application in Settings.ExternalApplications)
                 {
-                    var barButtonItem = new BarButtonItem() { Caption = application.Name };
-                    barButtonItem.ItemClick += new ItemClickEventHandler(MenuItemApplications_ItemClick);
+                    var barButtonItem = new BarButtonItem { Caption = application.Name };
+                    barButtonItem.ItemClick += MenuItemApplications_ItemClick;
                     ApplicationsMenu.AddItem(barButtonItem);
                 }
             }
