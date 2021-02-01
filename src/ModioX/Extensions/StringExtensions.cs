@@ -65,5 +65,11 @@ namespace ModioX.Extensions
         {
             return string.Equals(value, value2, StringComparison.OrdinalIgnoreCase);
         }
+
+        /// <inheritdoc cref="string.Contains" />
+        public static bool ContainsIgnoreCase(this string value, string value2)
+        {
+            return value.ToLower().Contains(value2.ToLower());
+        }
     }
 }
