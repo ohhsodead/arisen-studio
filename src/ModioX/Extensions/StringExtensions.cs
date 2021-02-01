@@ -6,13 +6,43 @@ namespace ModioX.Extensions
     internal static class StringExtensions
     {
         // Load all suffixes in an array
-        private static readonly string[] suffixes = { "Bytes", "KB", "MB", "GB", "TB", "PB" };
+        private static readonly string[] SizeSuffixes = { "Bytes", "KB", "MB", "GB", "TB", "PB" };
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
+        public static string FormatSize(this string bytes)
+        {
+            int counter = 0;
+            decimal number = long.Parse(bytes);
+            while (Math.Round(number / 1024) >= 1)
+            {
+                number /= 1024;
+                counter++;
+            }
+
+            return $"{number:n1} {SizeSuffixes[counter]}";
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
         public static string ReplaceInvalidChars(string filename)
         {
             return string.Join("_", filename.Split(Path.GetInvalidFileNameChars()));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="value"></param>
+        /// <param name="nth"></param>
+        /// <returns></returns>
         public static int IndexOfNth(this string str, string value, int nth = 0)
         {
             if (nth < 0)
@@ -30,39 +60,32 @@ namespace ModioX.Extensions
             return offset;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="removeString"></param>
+        /// <returns></returns>
         public static string RemoveFirstInstanceOfString(this string value, string removeString)
         {
             var index = value.IndexOf(removeString, StringComparison.Ordinal);
             return index < 0 ? value : value.Remove(index, removeString.Length);
         }
 
-        public static string FormatSize(this string bytes)
-        {
-            var counter = 0;
-            decimal number = long.Parse(bytes);
-            while (Math.Round(number / 1024) >= 1)
-            {
-                number /= 1024;
-                counter++;
-            }
-
-            return $"{number:n1} {suffixes[counter]}";
-        }
-
         /// <inheritdoc cref="IsNullOrEmpty" />
-        public static bool IsNullOrEmpty(this string? value)
+        public static bool IsNullOrEmpty(this string value)
         {
             return string.IsNullOrEmpty(value);
         }
 
         /// <inheritdoc cref="IsNullOrWhiteSpace" />
-        public static bool IsNullOrWhiteSpace(this string? value)
+        public static bool IsNullOrWhiteSpace(this string value)
         {
             return string.IsNullOrWhiteSpace(value);
         }
 
         /// <inheritdoc cref="string.Equals" />
-        public static bool EqualsIgnoreCase(this string? value, string? value2)
+        public static bool EqualsIgnoreCase(this string value, string value2)
         {
             return string.Equals(value, value2, StringComparison.OrdinalIgnoreCase);
         }

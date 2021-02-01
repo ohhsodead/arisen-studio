@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Forms.Tools.XBOX_Tools
 {
-    partial class AvatarItemDownloader
+    partial class AvatarDownloader
     {
         /// <summary>
         /// Required designer variable.
@@ -68,7 +68,7 @@
             this.ButtonDownloadItem.Name = "ButtonDownloadItem";
             this.ButtonDownloadItem.Size = new System.Drawing.Size(168, 27);
             this.ButtonDownloadItem.TabIndex = 5;
-            this.ButtonDownloadItem.Text = ":: Download Item ::";
+            this.ButtonDownloadItem.Text = "Download Item";
             this.ButtonDownloadItem.Click += new System.EventHandler(this.ButtonDownloadItem_Click);
             // 
             // ProgressBar
@@ -132,7 +132,7 @@
             this.ButtonCheckURL.Name = "ButtonCheckURL";
             this.ButtonCheckURL.Size = new System.Drawing.Size(172, 27);
             this.ButtonCheckURL.TabIndex = 4;
-            this.ButtonCheckURL.Text = ":: Check URL ::";
+            this.ButtonCheckURL.Text = "Check URL";
             this.ButtonCheckURL.Click += new System.EventHandler(this.ButtonCheckURL_Click);
             // 
             // LabelSearch
@@ -236,7 +236,7 @@
             this.Name = "AvatarItemDownloader";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Avatar Item Downloader";
-            this.Load += new System.EventHandler(this.AvatarItemDownloader_Load);
+            this.Load += new System.EventHandler(this.AvatarDownloader_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxGameTitle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxItemID.Properties)).EndInit();

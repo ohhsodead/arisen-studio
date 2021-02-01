@@ -13,18 +13,18 @@ using X360.STFS;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
-    public partial class AvatarItemDownloader : XtraForm
+    public partial class AvatarDownloader : XtraForm
     {
         private static CultureInfo CI0 { get; set; }
         private static Func<int, bool> func_0;
         private static ResourceManager RM0;
 
-        public AvatarItemDownloader()
+        public AvatarDownloader()
         {
             InitializeComponent();
         }
 
-        private void AvatarItemDownloader_Load(object sender, EventArgs e)
+        private void AvatarDownloader_Load(object sender, EventArgs e)
         {
         }
 
@@ -342,7 +342,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             if (RM0 is null)
             {
-                RM0 = new ResourceManager("AvatarTools.Form1", typeof(AvatarItemDownloader).Assembly);
+                RM0 = new ResourceManager("AvatarTools.Form1", typeof(AvatarDownloader).Assembly);
             }
 
             return RM0;

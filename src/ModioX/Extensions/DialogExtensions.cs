@@ -114,6 +114,7 @@ namespace ModioX.Extensions
         public static void ShowPackageManagerWindow(Form owner)
         {
             using var packageManagerWindow = new PackageManagerWindow();
+            using PackageManager packageManagerWindow = new PackageManager();
             packageManagerWindow.ShowDialog(owner);
         }
 
@@ -121,19 +122,25 @@ namespace ModioX.Extensions
 
         #region Xbox Tools
 
+        public static void ShowXboxAvatarDownloader(Form owner)
+        {
+            using AvatarDownloader avatarDownloader = new AvatarDownloader();
+            avatarDownloader.ShowDialog(owner);
+        }
+
+        public static void ShowXboxGameLauncher(Form owner)
+        {
+            using GameLauncher gameLauncher = new GameLauncher();
+            gameLauncher.ShowDialog(owner);
+        }
+
         public static void ShowXboxPluginsEditor(Form owner)
         {
-            using PluginsEditor launchFileEditor = new PluginsEditor();
-            launchFileEditor.ShowDialog(owner);
+            using PluginsEditor pluginsEditor = new PluginsEditor();
+            pluginsEditor.ShowDialog(owner);
         }
 
-        public static void ShowXboxMemoryViewer(Form owner, string gameTitle)
-        {
-            using var memoryViewer = new MemoryViewer() { GameTitle = gameTitle };
-            memoryViewer.ShowDialog(owner);
-        }
-
-        #endregion Xbox Tools
+        #endregion
 
         #region Settings
 
