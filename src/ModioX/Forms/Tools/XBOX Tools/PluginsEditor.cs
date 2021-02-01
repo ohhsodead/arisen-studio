@@ -19,7 +19,7 @@ using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
-    public partial class INIEditor : XtraForm
+    public partial class PluginsEditor : XtraForm
     {
         /// <summary>
         /// Get the xbox console connection.
@@ -71,7 +71,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         /// </summary>
         public IniData LaunchFileData { get; set; }
 
-        public INIEditor()
+        public PluginsEditor()
         {
             InitializeComponent();
         }
@@ -136,7 +136,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                     {
                         launchFileSections.Rows.Add(key.KeyName, key.Value);
                     }
-                }                
+                }
             }
 
             GridLaunchFile.DataSource = launchFileSections;
@@ -167,7 +167,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void CheckBoxEnableLiveBlock_CheckedChanged(object sender, EventArgs e)
         {
-            if (ToggleSwitchEnableLiveBlock.Checked)
+            if (CheckBoxEnableLiveBlock.Checked)
             {
                 LaunchFileData["Settings"]["liveblock"] = "true";
             }
@@ -179,7 +179,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void CheckBoxEnableLiveStrong_CheckedChanged(object sender, EventArgs e)
         {
-            if (ToggleSwitchEnableLiveStrong.Checked)
+            if (CheckBoxEnableLiveStrong.Checked)
             {
                 LaunchFileData["Settings"]["livestrong"] = "true";
             }
@@ -213,12 +213,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             }
         }
 
-        private void ButtonSaveFile_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ButtonRestoreLaunchFile_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void ButtonRestoreLaunchFile_Click(object sender, EventArgs e)
         {
             if (File.Exists(LocalLaunchBackupFilePath))
             {
@@ -235,7 +230,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             }
         }
 
-        private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void ButtonSaveFile_Click(object sender, EventArgs e)
         {
             try
             {
