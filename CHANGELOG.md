@@ -23,7 +23,7 @@ All notable changes to this project will be documented in this file.
 - Fixed an issue with creating folders when installing mods
 - Fixed an issue with deleting folders when uninstalling mods
 
-This release couldn't be made possible without the help from all of the awesome contributors that have driven ModioX to what it is now and what's to come in the future. So, whether you're a casual user, contributor, developer or all of them, thank you all for supporting me through everything - it's been a little tough but we got there! <3 u all
+This release couldn't be made possible without the help from all of the awesome contributors that have driven ModioX to what it is now and what's to come in the future. So, whether you're a casual user, contributor, developer or all of them, thank you for supporting me through everything - it's been a little tough but we got there! <3 u all
 
 ## Beta v1.4.8
 - Improved some user interface elements

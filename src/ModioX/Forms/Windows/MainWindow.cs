@@ -156,23 +156,32 @@ namespace ModioX.Forms.Windows
         }
 
         /// <summary>
-        /// Save Application Settings On Form Closing Event, Also Closes Xbox or PS3 Connections.
+        /// Save application settings, and if console is connected then closes connections.
         /// </summary>
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveSettings();
             if (!IsConsoleConnected) return;
 
-            switch (ConsoleProfile.TypePrefix)
+            try
             {
-                case ConsoleTypePrefix.PS3:
-                    FtpClient.Dispose();
-                    FtpConnection.Dispose();
-                    break;
+                switch (ConsoleProfile.TypePrefix)
+                {
+                    case ConsoleTypePrefix.PS3:
+                        FtpClient.Dispose();
+                        FtpConnection.Dispose();
+                        break;
 
-                case ConsoleTypePrefix.XBOX:
-                    XboxClient.Disconnect();
-                    break;
+                    case ConsoleTypePrefix.XBOX:
+                        FtpClient.Dispose();
+                        FtpConnection.Dispose();
+                        XboxClient.Disconnect();
+                        break;
+                }
+            }
+            catch
+            { 
+                // false positive, if console is powered off then an error will be thrown
             }
         }
 
