@@ -17,6 +17,7 @@ namespace ModioX.Database
     public class ModItem
     {
         public string ConsoleType { get; set; }
+
         public int Id { get; set; }
 
         public string GameId { get; set; }
@@ -60,27 +61,6 @@ namespace ModioX.Database
         {
             return categoriesData.Categories.FirstOrDefault(x => x.Id.EqualsIgnoreCase(GameId))?.CategoryType ?? CategoryType.Game;
         }
-
-        /// <summary>
-        /// Check whether install requires a game region to be specified.
-        /// </summary>
-        public bool RequiresGameRegion => DownloadFiles.Any(x => x.RequiresGameRegion);
-
-        /// <summary>
-        /// Check whether install requires a user id to be specified.
-        /// </summary>
-        public bool RequiresUserId => DownloadFiles.Any(x => x.RequiresGameRegion);
-
-        /// <summary>
-        /// Check whether install requires a USB device to be connected to console
-        /// </summary>
-        public bool RequiresUsbDevice => DownloadFiles.Any(x => x.RequiresUsbDevice);
-
-        /// <summary>
-        /// Check whether any files are installed at the 'dev_rebug' (firmware) folder.
-        /// </summary>
-        /// <returns> </returns>
-        public bool IsInstallToRebugFolder => DownloadFiles.Any(x => x.InstallsToRebugFolder);
 
         /// <summary>
         /// Check whether mod is for any region.

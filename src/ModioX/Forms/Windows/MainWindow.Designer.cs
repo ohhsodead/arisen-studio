@@ -218,8 +218,6 @@ namespace ModioX.Forms.Windows
             this.ProgressMods = new DevExpress.XtraWaitForm.ProgressPanel();
             this.GridControlMods = new DevExpress.XtraGrid.GridControl();
             this.GridViewMods = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.PanelButtonsMods = new DevExpress.Utils.Layout.StackPanel();
-            this.ButtonOpenPeekPokeTool = new DevExpress.XtraEditors.SimpleButton();
             this.NavBarCategories = new DevExpress.XtraNavBar.NavBarControl();
             this.NavGroupGames = new DevExpress.XtraNavBar.NavBarGroup();
             this.NavGroupHomebrewApps = new DevExpress.XtraNavBar.NavBarGroup();
@@ -229,6 +227,7 @@ namespace ModioX.Forms.Windows
             this.GroupModsInstalled = new DevExpress.XtraEditors.GroupControl();
             this.ProgressInstalledMods = new DevExpress.XtraWaitForm.ProgressPanel();
             this.PanelInstalledModsPlugins = new DevExpress.Utils.Layout.StackPanel();
+            this.ButtonUninstallInstalledMods = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonUninstallAllMods = new DevExpress.XtraEditors.SimpleButton();
             this.GroupModInformation = new DevExpress.XtraEditors.GroupControl();
             this.ScrollBarModInformation = new DevExpress.XtraEditors.VScrollBar();
@@ -248,7 +247,6 @@ namespace ModioX.Forms.Windows
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.HeaderLabelModsInstalled = new DevExpress.XtraBars.BarHeaderItem();
             this.ButtonModsUninstallAll = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonUninstallInstalledMods = new DevExpress.XtraEditors.SimpleButton();
             ButtonConnectXbox = new DevExpress.XtraBars.BarButtonItem();
             this.FlowPanelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlModsInstallFiles)).BeginInit();
@@ -272,8 +270,6 @@ namespace ModioX.Forms.Windows
             this.GroupModsLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlMods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewMods)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PanelButtonsMods)).BeginInit();
-            this.PanelButtonsMods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NavBarCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupCategories)).BeginInit();
             this.GroupCategories.SuspendLayout();
@@ -2077,7 +2073,6 @@ namespace ModioX.Forms.Windows
             this.GroupModsLibrary.AppearanceCaption.Options.UseFont = true;
             this.GroupModsLibrary.Controls.Add(this.ProgressMods);
             this.GroupModsLibrary.Controls.Add(this.GridControlMods);
-            this.GroupModsLibrary.Controls.Add(this.PanelButtonsMods);
             this.GroupModsLibrary.Controls.Add(this.PanelModsLibraryFilters);
             this.GroupModsLibrary.Location = new System.Drawing.Point(322, 39);
             this.GroupModsLibrary.Margin = new System.Windows.Forms.Padding(5, 3, 5, 5);
@@ -2112,7 +2107,7 @@ namespace ModioX.Forms.Windows
             this.GridControlMods.MainView = this.GridViewMods;
             this.GridControlMods.MenuManager = this.MainMenu;
             this.GridControlMods.Name = "GridControlMods";
-            this.GridControlMods.Size = new System.Drawing.Size(873, 385);
+            this.GridControlMods.Size = new System.Drawing.Size(873, 425);
             this.GridControlMods.TabIndex = 5;
             this.GridControlMods.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewMods});
@@ -2132,27 +2127,6 @@ namespace ModioX.Forms.Windows
             this.GridViewMods.OptionsView.ShowGroupPanel = false;
             this.GridViewMods.OptionsView.ShowIndicator = false;
             this.GridViewMods.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewMods_FocusedRowChanged);
-            // 
-            // PanelButtonsMods
-            // 
-            this.PanelButtonsMods.Controls.Add(this.ButtonOpenPeekPokeTool);
-            this.PanelButtonsMods.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelButtonsMods.Location = new System.Drawing.Point(2, 506);
-            this.PanelButtonsMods.Name = "PanelButtonsMods";
-            this.PanelButtonsMods.Size = new System.Drawing.Size(873, 40);
-            this.PanelButtonsMods.TabIndex = 1172;
-            this.PanelButtonsMods.Visible = false;
-            // 
-            // ButtonOpenPeekPokeTool
-            // 
-            this.ButtonOpenPeekPokeTool.Location = new System.Drawing.Point(8, 8);
-            this.ButtonOpenPeekPokeTool.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
-            this.ButtonOpenPeekPokeTool.Name = "ButtonOpenPeekPokeTool";
-            this.ButtonOpenPeekPokeTool.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonOpenPeekPokeTool.Size = new System.Drawing.Size(147, 24);
-            this.ButtonOpenPeekPokeTool.TabIndex = 6;
-            this.ButtonOpenPeekPokeTool.Text = "Open Peek && Poke Tool";
-            this.ButtonOpenPeekPokeTool.Click += new System.EventHandler(this.ButtonOpenPeekPokeTool_Click);
             // 
             // NavBarCategories
             // 
@@ -2262,6 +2236,17 @@ namespace ModioX.Forms.Windows
             this.PanelInstalledModsPlugins.Name = "PanelInstalledModsPlugins";
             this.PanelInstalledModsPlugins.Size = new System.Drawing.Size(873, 40);
             this.PanelInstalledModsPlugins.TabIndex = 1175;
+            // 
+            // ButtonUninstallInstalledMods
+            // 
+            this.ButtonUninstallInstalledMods.Enabled = false;
+            this.ButtonUninstallInstalledMods.Location = new System.Drawing.Point(8, 8);
+            this.ButtonUninstallInstalledMods.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.ButtonUninstallInstalledMods.Name = "ButtonUninstallInstalledMods";
+            this.ButtonUninstallInstalledMods.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonUninstallInstalledMods.Size = new System.Drawing.Size(77, 24);
+            this.ButtonUninstallInstalledMods.TabIndex = 14;
+            this.ButtonUninstallInstalledMods.Text = "Uninstall";
             // 
             // ButtonUninstallAllMods
             // 
@@ -2463,17 +2448,6 @@ namespace ModioX.Forms.Windows
             this.ButtonModsUninstallAll.Id = 2;
             this.ButtonModsUninstallAll.Name = "ButtonModsUninstallAll";
             // 
-            // ButtonUninstallInstalledMods
-            // 
-            this.ButtonUninstallInstalledMods.Enabled = false;
-            this.ButtonUninstallInstalledMods.Location = new System.Drawing.Point(8, 8);
-            this.ButtonUninstallInstalledMods.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
-            this.ButtonUninstallInstalledMods.Name = "ButtonUninstallInstalledMods";
-            this.ButtonUninstallInstalledMods.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonUninstallInstalledMods.Size = new System.Drawing.Size(77, 24);
-            this.ButtonUninstallInstalledMods.TabIndex = 14;
-            this.ButtonUninstallInstalledMods.Text = "Uninstall";
-            // 
             // MainWindow
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
@@ -2533,8 +2507,6 @@ namespace ModioX.Forms.Windows
             this.GroupModsLibrary.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridControlMods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewMods)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PanelButtonsMods)).EndInit();
-            this.PanelButtonsMods.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.NavBarCategories)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupCategories)).EndInit();
             this.GroupCategories.ResumeLayout(false);
@@ -2758,8 +2730,6 @@ namespace ModioX.Forms.Windows
         private SimpleButton ButtonModUninstall;
         private SimpleButton ButtonModDownload;
         private SimpleButton ButtonModFavorite;
-        private DevExpress.Utils.Layout.StackPanel PanelButtonsMods;
-        private SimpleButton ButtonOpenPeekPokeTool;
         private BarButtonItem ButtonXboxCheatEngine;
         private DevExpress.Utils.Layout.StackPanel PanelInstalledModsPlugins;
         private SimpleButton ButtonUninstallAllMods;

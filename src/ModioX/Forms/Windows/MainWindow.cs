@@ -49,11 +49,6 @@ namespace ModioX.Forms.Windows
         public static MainWindow Window { get; private set; }
 
         /// <summary>
-        /// A Security Feature To Prevent Malicious Attempts To Harm Our Application Name Or Brand
-        /// </summary>
-        private static string CurrentMD5 { get; set; }
-
-        /// <summary>
         /// Contains the users settings Database.
         /// </summary>
         public static SettingsData Settings { get; private set; } = new();
@@ -210,7 +205,6 @@ namespace ModioX.Forms.Windows
             SetStatus("Successfully loaded the database - Finalizing application data...");
 
             Mods = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? Database.ModsPS3 : Database.ModsXBOX;
-            PanelButtonsMods.Visible = Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX;
 
             LoadCategories();
 
@@ -596,6 +590,134 @@ namespace ModioX.Forms.Windows
 
         #endregion Header Menu Bar
 
+        #region Connect & Disconnect Console Functions
+
+        /// <summary>
+        /// Attempt to connect to the console profile by opening the FTP connection.
+        /// </summary>
+        public void ConnectConsole()
+        {
+            try
+            {
+                SetStatus($"Connecting to {ConsoleProfile.Name} ({ConsoleProfile.Address})...");
+
+                if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+                {
+                    using (var ftpConnection = FtpConnection)
+                    {
+                        ;
+                    }
+
+                    FtpClient = new FtpClient
+                    {
+                        Host = ConsoleProfile.Address,
+                        Port = ConsoleProfile.Port,
+                        Credentials = ConsoleProfile.UseDefaultCredentials
+                        ? new NetworkCredential("anonymous", "anonymous")
+                        : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password)
+                    };
+
+                    FtpClient.Connect();
+
+                    IsConsoleConnected = true;
+                    SetStatusConsole(ConsoleProfile);
+
+                    IsWebManInstalled = WebManExtensions.IsWebManInstalled(ConsoleProfile.Address, ConsoleProfile.Port);
+
+                    if (IsWebManInstalled)
+                    {
+                        WebManExtensions.NotifyPopup(ConsoleProfile.Address, "You are now connected to ModioX ★");
+                    }
+
+                    ButtonConnectToPS3.Caption = "Disconnect from Console...";
+                }
+                else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+                {
+                    using (var ftpConnection = FtpConnection)
+                    {
+                        ;
+                    }
+
+                    FtpClient = new FtpClient
+                    {
+                        Host = ConsoleProfile.Address,
+                        Port = ConsoleProfile.Port,
+                        Credentials = ConsoleProfile.UseDefaultCredentials
+                        ? new NetworkCredential("anonymous", "anonymous")
+                        : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password)
+                    };
+
+                    FtpClient.Connect();
+
+                    IsConsoleConnected = true;
+                    SetStatusConsole(ConsoleProfile);
+
+                    ButtonConnectToXBOX.Caption = "Disconnect from Console...";
+                }
+
+                SetStatus($"Successfully connected to console.");
+                XtraMessageBox.Show("Successfully connected to console.", "Success");
+
+                Mods = ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3 ? Database.ModsPS3 : Database.ModsXBOX;
+
+                EnableConsoleActions();
+                LoadInstalledGameMods();
+                LoadCategories();
+            }
+            catch (Exception ex)
+            {
+                SetStatus($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address}).", ex);
+                XtraMessageBox.Show($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address})\n\nError: {ex.Message}", "Connection Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Disconnects from the console and flushes all resources from the FTP connections.
+        /// </summary>
+        private void DisconnectConsole()
+        {
+            SetStatus($"Disconnecting from console...");
+
+            if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+            {
+                try
+                {
+                    FtpConnection.Dispose();
+                    FtpConnection.Close();
+
+                    FtpClient.Dispose();
+                }
+                catch
+                {
+                    // False positive, if console is powered off then an error will be thrown.
+                }
+            }
+            else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+            {
+                try
+                {
+                    XboxClient.Disconnect();
+                }
+                catch
+                {
+                    // False positive, if console is powered off then an error will be thrown.
+                }
+            }
+
+            IsConsoleConnected = false;
+            SetStatusConsole(null);
+            EnableConsoleActions();
+
+            ButtonConnectToPS3.Caption = "Connect to Console...";
+            ButtonConnectToXBOX.Caption = "Connect to Console...";
+
+            SetStatus("Disconnected from console.");
+
+            XtraMessageBox.Show(this, "Successfully disconnected from console.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        #endregion Connect & Disconnect Console Functions
+
         #region Search & Filtering Mods Functions
 
         /// <summary>
@@ -748,57 +870,11 @@ namespace ModioX.Forms.Windows
                 {
                     ShowModInformation(modItem.Id);
                 }
-
-                /*
-                if (GridViewMods.CurrentCell.ColumnIndex.Equals(8) && e.RowIndex != -1)
-                {
-                    if (IsConsoleConnected)
-                    {
-                        InstallMods(modItem);
-                    }
-                }
-                else if (GridViewMods.CurrentCell.ColumnIndex.Equals(9) && e.RowIndex != -1)
-                {
-                    DownloadModArchive(modItem);
-                }
-                else if (GridViewMods.CurrentCell.ColumnIndex.Equals(10) && e.RowIndex != -1)
-                {
-                    AddModToFavorites(modItem);
-
-                    GridViewMods.CurrentRow.Cells[10].Value = ImageExtensions.ResizeBitmap(Settings.FavoritedIds.Contains(modItem.Id) ? Resources.filled_heart : Resources.heart, 20, 20);
-                }
-                */
             }
 
             ButtonModInstall.Enabled = GridViewMods.SelectedRowsCount != 0 && IsConsoleConnected;
             ButtonModDownload.Enabled = GridViewMods.SelectedRowsCount != 0;
             ButtonModFavorite.Enabled = GridViewMods.SelectedRowsCount != 0;
-        }
-
-        // ****************** DO THIS: INSTALL & DOWNLOAD CELL CLICKED *******************//
-        private void DgvModsInstalled_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            /*
-            if (GridControlGameModsInstalled.CurrentRow != null)
-            {
-                var modItem = Database.Mods.GetModById(int.Parse(GridControlGameModsInstalled.CurrentRow.Cells[0].Value.ToString()));
-
-                DisplayModDetails(modItem.Id);
-
-                if (GridControlGameModsInstalled.CurrentCell.ColumnIndex.Equals(8))
-                {
-                    if (IsConsoleConnected)
-                    {
-                        UninstallMods(modItem, Settings.GetInstalledGameMod(modItem.GameId).Region);
-                    }
-                }
-            }
-            */
-        }
-
-        private void ButtonOpenPeekPokeTool_Click(object sender, EventArgs e)
-        {
-            DialogExtensions.ShowXboxMemoryViewer(this, SelectedCategory.Title);
         }
 
         #endregion MODS LIBRARY
@@ -1102,135 +1178,6 @@ namespace ModioX.Forms.Windows
 
         #endregion Install, Uninstall, Download & Favorite Buttons
 
-        #region Connect & Disconnect Console Functions
-
-        /// <summary>
-        /// Attempt to connect to the console profile by opening the FTP connection.
-        /// </summary>
-        public void ConnectConsole()
-        {
-            try
-            {
-                SetStatus($"Connecting to {ConsoleProfile.Name} ({ConsoleProfile.Address})...");
-
-                if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
-                {
-                    using (var ftpConnection = FtpConnection)
-                    {
-                        ;
-                    }
-
-                    FtpClient = new FtpClient
-                    {
-                        Host = ConsoleProfile.Address,
-                        Port = ConsoleProfile.Port,
-                        Credentials = ConsoleProfile.UseDefaultCredentials
-                        ? new NetworkCredential("anonymous", "anonymous")
-                        : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password)
-                    };
-
-                    FtpClient.Connect();
-
-                    IsConsoleConnected = true;
-                    SetStatusConsole(ConsoleProfile);
-
-                    IsWebManInstalled = WebManExtensions.IsWebManInstalled(ConsoleProfile.Address, ConsoleProfile.Port);
-
-                    if (IsWebManInstalled)
-                    {
-                        WebManExtensions.NotifyPopup(ConsoleProfile.Address, "You are now connected to ModioX ★");
-                    }
-
-                    ButtonConnectToPS3.Caption = "Disconnect from Console...";
-                }
-                else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
-                {
-                    using (var ftpConnection = FtpConnection)
-                    {
-                        ;
-                    }
-
-                    FtpClient = new FtpClient
-                    {
-                        Host = ConsoleProfile.Address,
-                        Port = ConsoleProfile.Port,
-                        Credentials = ConsoleProfile.UseDefaultCredentials
-                        ? new NetworkCredential("anonymous", "anonymous")
-                        : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password)
-                    };
-
-                    FtpClient.Connect();
-
-                    IsConsoleConnected = true;
-                    SetStatusConsole(ConsoleProfile);
-
-                    ButtonConnectToXBOX.Caption = "Disconnect from Console...";
-                }
-
-                SetStatus($"Successfully connected to console.");
-                XtraMessageBox.Show("Successfully connected to console.", "Success");
-
-                Mods = ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3 ? Database.ModsPS3 : Database.ModsXBOX;
-                PanelButtonsMods.Visible = ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
-
-                EnableConsoleActions();
-                LoadInstalledGameMods();
-                LoadCategories();
-            }
-            catch (Exception ex)
-            {
-                SetStatus($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address}).", ex);
-                XtraMessageBox.Show($"Can't connect to {ConsoleProfile.Name} ({ConsoleProfile.Address})\n\nError: {ex.Message}", "Connection Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        /// <summary>
-        /// Disconnects from the console and flushes all resources from the FTP connections.
-        /// </summary>
-        private void DisconnectConsole()
-        {
-            SetStatus($"Disconnecting from console...");
-
-            if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
-            {
-                try
-                {
-                    FtpConnection.Dispose();
-                    FtpConnection.Close();
-
-                    FtpClient.Dispose();
-                }
-                catch
-                {
-                    // False positive, if console is powered off then an error will be thrown.
-                }
-            }
-            else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
-            {
-                try
-                {
-                    XboxClient.Disconnect();
-                }
-                catch
-                {
-                    // False positive, if console is powered off then an error will be thrown.
-                }
-            }
-
-            IsConsoleConnected = false;
-            SetStatusConsole(null);
-            EnableConsoleActions();
-
-            ButtonConnectToPS3.Caption = "Connect to Console...";
-            ButtonConnectToXBOX.Caption = "Connect to Console...";
-
-            SetStatus("Disconnected from console.");
-
-            XtraMessageBox.Show(this, "Successfully disconnected from console.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        #endregion Connect & Disconnect Console Functions
-
         #region Installed Mods/Plugins
 
         private void GridViewInstalledGameMods_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
@@ -1335,7 +1282,7 @@ namespace ModioX.Forms.Windows
 
         #endregion Installed Mods/Plugins
 
-        #region Load Mods Information to Right-Side Panel Function
+        #region Show Mod's Information on the Right-Side Panel Function
 
         /// <summary>
         /// Set the UI to display the specified mod details
@@ -1957,7 +1904,7 @@ namespace ModioX.Forms.Windows
                 try
                 {
                     // Alerts the user that uninstalling files from dev_rebug folders isn't allowed
-                    if (modItem.IsInstallToRebugFolder)
+                    if (downloadFiles.InstallsToRebugFolder)
                     {
                         XtraMessageBox.Show("You cannot uninstall files from the firmware folder. Any missing files could affect your console performance.", "Forbidden",
                             MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -2480,25 +2427,6 @@ namespace ModioX.Forms.Windows
             {
                 SetStatus("Unable to save settings data. Error: " + ex.Message, ex);
             }
-        }
-
-        /// <summary>
-        /// Computes The Hash Of A Selected File Or Extentions.
-        /// </summary>
-        /// <param name="s"> </param>
-        /// <returns> </returns>
-        private static string ComputeHash(string s)
-        {
-            using var md5 = System.Security.Cryptography.MD5.Create();
-            using var stream = File.OpenRead(s);
-            var hash = md5.ComputeHash(stream);
-            var sb = new StringBuilder();
-            for (var i = 0; i < hash.Length; i++)
-            {
-                sb.Append(hash[i].ToString("X2"));
-            }
-
-            return sb.ToString();
         }
     }
 }
