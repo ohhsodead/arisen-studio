@@ -131,15 +131,6 @@ namespace ModioX.Forms.Windows
 
             Text = $@"ModioX - {UpdateExtensions.CurrentVersionName}";
 
-            //#if DEBUG
-            //            Text += " - Welcome, Developer! (DEBUG)";
-            //            CurrentMD5 = ComputeHash(Application.ProductName + ".exe");
-            //#endif
-            //            if (ComputeHash(Application.ProductName + ".exe") != CurrentMD5)
-            //            {
-            //                Environment.Exit(0);
-            //            }
-
             LoadSettings();
             EnableConsoleActions();
 
