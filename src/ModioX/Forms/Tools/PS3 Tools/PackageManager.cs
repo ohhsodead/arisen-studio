@@ -13,9 +13,9 @@ using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
 namespace ModioX.Forms.Tools.PS3_Tools
 {
-    public partial class PackageManagerWindow : XtraForm
+    public partial class PackageManager : XtraForm
     {
-        public PackageManagerWindow()
+        public PackageManager()
         {
             InitializeComponent();
         }
@@ -26,7 +26,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private List<FtpListItem> PackageFiles { get; set; } = new List<FtpListItem>();
 
-        private void PackageManagerWindow_Load(object sender, EventArgs e)
+        private void PackageManager_Load(object sender, EventArgs e)
         {
 
         }
@@ -58,7 +58,10 @@ namespace ModioX.Forms.Tools.PS3_Tools
                         break;
 
                     case FtpFileSystemObjectType.File:
-                        PackageFiles.Add(listItem);
+                        if (listItem.Name.EndsWith(".pkg"))
+                        {
+                            PackageFiles.Add(listItem);
+                        }
                         break;
 
                     case FtpFileSystemObjectType.Link:

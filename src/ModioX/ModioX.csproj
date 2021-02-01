@@ -154,11 +154,11 @@
     <Compile Include="Forms\Tools\PS3 Tools\GameUpdatesFinder.Designer.cs">
       <DependentUpon>GameUpdatesFinder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\PS3 Tools\PackageManagerWindow.cs">
+    <Compile Include="Forms\Tools\PS3 Tools\PackageManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\PS3 Tools\PackageManagerWindow.Designer.cs">
-      <DependentUpon>PackageManagerWindow.cs</DependentUpon>
+    <Compile Include="Forms\Tools\PS3 Tools\PackageManager.Designer.cs">
+      <DependentUpon>PackageManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\AvatarItemDownloader.cs">
       <SubType>Form</SubType>
@@ -318,8 +318,8 @@
     <EmbeddedResource Include="Forms\Tools\PS3 Tools\GameUpdatesFinder.resx">
       <DependentUpon>GameUpdatesFinder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\PS3 Tools\PackageManagerWindow.resx">
-      <DependentUpon>PackageManagerWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Tools\PS3 Tools\PackageManager.resx">
+      <DependentUpon>PackageManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\BackupFileDialog.resx">
       <DependentUpon>BackupFileDialog.cs</DependentUpon>

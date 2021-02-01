@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Forms.Tools.PS3_Tools
 {
-    partial class PackageManagerWindow
+    partial class PackageManager
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PackageManagerWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PackageManager));
             this.SectionPackages = new DevExpress.XtraEditors.GroupControl();
             this.ProgressPackageFiles = new DevExpress.XtraWaitForm.ProgressPanel();
             this.GridPackageFiles = new DevExpress.XtraGrid.GridControl();
@@ -308,7 +308,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Package Manger";
-            this.Load += new System.EventHandler(this.PackageManagerWindow_Load);
+            this.Load += new System.EventHandler(this.PackageManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SectionPackages)).EndInit();
             this.SectionPackages.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridPackageFiles)).EndInit();

@@ -114,7 +114,7 @@ namespace ModioX.Extensions
 
         public static void ShowPackageManagerWindow(Form owner)
         {
-            using PackageManagerWindow packageManagerWindow = new PackageManagerWindow();
+            using PackageManager packageManagerWindow = new PackageManager();
             packageManagerWindow.ShowDialog(owner);
         }
 
