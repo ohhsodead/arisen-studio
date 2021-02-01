@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ModioX.Database;
 
 namespace ModioX.Models.Database
 {
@@ -18,15 +19,15 @@ namespace ModioX.Models.Database
         public List<ModItem> Mods { get; set; }
 
         /// <summary>
-        /// Get all of the mod types from the specified <see cref="CategoriesData.Category.Id"/>
+        /// Get all of the mod types from the specified <see cref="CategoriesData.Category.Id" />
         /// </summary>
-        /// <param name="categoryId"><see cref="CategoriesData.Category.Id"/></param>
-        /// <returns></returns>
+        /// <param name="categoryId"> <see cref="CategoriesData.Category.Id" /> </param>
+        /// <returns> </returns>
         public List<string> AllModTypesForCategoryId(string categoryId)
         {
-            List<string> modTypes = new List<string>();
+            var modTypes = new List<string>();
 
-            foreach (ModItem modItem in Mods)
+            foreach (var modItem in Mods)
             {
                 if (string.Equals(modItem.GameId, categoryId, StringComparison.CurrentCultureIgnoreCase))
                 {
@@ -41,16 +42,16 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Get the supported firmwares from all of the mods.
         /// </summary>
-        /// <returns>Firmwares Supported</returns>
+        /// <returns> Firmwares Supported </returns>
         public List<string> AllFirmwares
         {
             get
             {
-                List<string> firmwares = new List<string>();
+                var firmwares = new List<string>();
 
-                foreach (ModItem modItem in Mods)
+                foreach (var modItem in Mods)
                 {
-                    foreach (string firmware in modItem.Firmware.Split('/'))
+                    foreach (var firmware in modItem.Firmware.Split('/'))
                     {
                         if (!firmwares.Equals("-"))
                         {
@@ -65,15 +66,16 @@ namespace ModioX.Models.Database
         }
 
         /// <summary>
-        /// Gets all of the mods for the specified gameId, with results filtered by name, firmware and type
+        /// Gets all of the mods for the specified gameId, with results filtered by name, firmware
+        /// and type
         /// </summary>
-        /// <param name="categoryId"></param>
-        /// <param name="name"></param>
-        /// <param name="firmware"></param>
-        /// <param name="type"></param>
-        /// <param name="region"></param>
-        /// <param name="isCustomList"></param>
-        /// <returns></returns>
+        /// <param name="categoryId"> </param>
+        /// <param name="name"> </param>
+        /// <param name="firmware"> </param>
+        /// <param name="type"> </param>
+        /// <param name="region"> </param>
+        /// <param name="isCustomList"> </param>
+        /// <returns> </returns>
         public List<ModItem> GetModItems(string categoryId, string name, string firmware, string type, string region, bool isCustomList)
         {
             if (categoryId.Equals("fvrt"))
@@ -111,19 +113,20 @@ namespace ModioX.Models.Database
         }
 
         /// <summary>
-        /// Get the <see cref="ModItem"/> matching the specified <see cref="ModItem.Id"/>.
+        /// Get the <see cref="ModItem" /> matching the specified <see cref="ModItem.Id" />.
         /// </summary>
-        /// <param name="modId"><see cref="ModItem.Id"/></param>
-        /// <returns>Mod details for the <see cref="ModItem.Id"/></returns>
+        /// <param name="modId"> <see cref="ModItem.Id" /> </param>
+        /// <returns> Mod details for the <see cref="ModItem.Id" /> </returns>
         public ModItem GetModById(int id)
         {
             return Mods.FirstOrDefault(modItem => modItem.Id.Equals(id));
         }
 
         /// <summary>
-        /// Get all the <see cref="ModItem"/> matching the specified <see cref="CategoriesData.Category.Id"/>.
+        /// Get all the <see cref="ModItem" /> matching the specified <see
+        /// cref="CategoriesData.Category.Id" />.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> </returns>
         public ModItem[] GetModsByCategoryId(string gameId)
         {
             return (from ModItem modItem in Mods
@@ -134,7 +137,7 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Get the total number of game mods.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> </returns>
         public int TotalGameMods(CategoriesData categoriesData)
         {
             return (from ModItem modItem in Mods
@@ -148,7 +151,7 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Get the total number of homebrew applications.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> </returns>
         public int TotalHomebrew(CategoriesData categoriesData)
         {
             return (from ModItem modItem in Mods
@@ -159,11 +162,10 @@ namespace ModioX.Models.Database
                     select modItem).Count();
         }
 
-
         /// <summary>
         /// Get the total number of resources.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> </returns>
         public int TotalResources(CategoriesData categoriesData)
         {
             return (from ModItem modItem in Mods

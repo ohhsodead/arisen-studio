@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ModioX.Models.Database
+namespace ModioX.Database
 {
     public class DownloadFiles
     {
@@ -29,7 +29,7 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Check whether any files are installed at the 'dev_rebug' (firmware) folder.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> </returns>
         public bool InstallsToRebugFolder => InstallPaths.Any(x => x.StartsWith("/dev_rebug/"));
     }
 }

@@ -60,12 +60,10 @@ namespace ModioX.Forms.Windows
         private readonly DriveInfo[] LocalDrives = DriveInfo.GetDrives();
 
         /// <summary>
-        /// 
         /// </summary>
         private readonly Image ImageFile = ImageExtensions.ResizeBitmap(Resources.file, 20, 20);
 
         /// <summary>
-        /// 
         /// </summary>
         private readonly Image ImageFolder = ImageExtensions.ResizeBitmap(Resources.folder, 20, 20);
 
@@ -80,7 +78,7 @@ namespace ModioX.Forms.Windows
 
             SetStatus("Fetching drives...");
 
-            foreach (DriveInfo driveInfo in LocalDrives) ComboBoxLocalDrives.Properties.Items.Add(driveInfo.Name.Replace(@"\", ""));
+            foreach (var driveInfo in LocalDrives) ComboBoxLocalDrives.Properties.Items.Add(driveInfo.Name.Replace(@"\", ""));
 
             if (Settings.SaveLocalPath)
             {
@@ -144,7 +142,7 @@ namespace ModioX.Forms.Windows
         {
             SetStatus("Fetching root directories...");
 
-            foreach (string driveName in FtpExtensions.GetFolderNames("/").ToArray())
+            foreach (var driveName in FtpExtensions.GetFolderNames("/").ToArray())
             {
                 ComboBoxConsoleDrives.Properties.Items.Add(driveName.Replace(@"/", ""));
             }
@@ -191,7 +189,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonBrowseLocalDirectory_Click(object sender, EventArgs e)
         {
-            using FolderBrowserDialog folderBrowser = new FolderBrowserDialog { ShowNewFolderButton = true };
+            using var folderBrowser = new FolderBrowserDialog { ShowNewFolderButton = true };
 
             if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
@@ -208,8 +206,8 @@ namespace ModioX.Forms.Windows
         {
             if (GridViewLocalFiles.SelectedRowsCount > 0)
             {
-                string type = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Type").ToString();
-                string name = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Name").ToString();
+                var type = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Type").ToString();
+                var name = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Name").ToString();
 
                 ButtonLocalUpload.Enabled = type == "file" && name != "..";
                 ButtonLocalDelete.Enabled = type == "file" | type == "folder" && name != "..";
@@ -221,8 +219,8 @@ namespace ModioX.Forms.Windows
         {
             if (GridViewLocalFiles.SelectedRowsCount > 0)
             {
-                string type = GridViewLocalFiles.GetRowCellValue(e.RowHandle, "Type").ToString();
-                string name = GridViewLocalFiles.GetRowCellValue(e.RowHandle, "Name").ToString();
+                var type = GridViewLocalFiles.GetRowCellValue(e.RowHandle, "Type").ToString();
+                var name = GridViewLocalFiles.GetRowCellValue(e.RowHandle, "Name").ToString();
 
                 ButtonLocalUpload.Enabled = type == "file" && name != "..";
                 ButtonLocalDelete.Enabled = type == "file" | type == "folder" && name != "..";
@@ -234,13 +232,13 @@ namespace ModioX.Forms.Windows
         {
             if (GridViewLocalFiles.SelectedRowsCount > 0)
             {
-                string type = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Type").ToString();
-                string name = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Name").ToString();
+                var type = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Type").ToString();
+                var name = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Name").ToString();
 
                 if (name == "..")
                 {
-                    string trimLastIndex = Path.GetDirectoryName(DirectoryPathLocal).TrimEnd('\\');
-                    string parentDirectory = trimLastIndex.Substring(0, trimLastIndex.LastIndexOf(@"\")) + @"\";
+                    var trimLastIndex = Path.GetDirectoryName(DirectoryPathLocal).TrimEnd('\\');
+                    var parentDirectory = trimLastIndex.Substring(0, trimLastIndex.LastIndexOf(@"\")) + @"\";
 
                     if (Directory.Exists(parentDirectory))
                     {
@@ -268,16 +266,18 @@ namespace ModioX.Forms.Windows
 
         private void ButtonLocalRename_Click(object sender, EventArgs e)
         {
-            string type = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Type").ToString();
+            var type = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Type").ToString();
 
             switch (type)
             {
                 case "folder":
                     RenameLocalFolder();
                     break;
+
                 case "file":
                     RenameLocalFile();
                     break;
+
                 default:
                     break;
             }
@@ -309,11 +309,11 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                string newName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder name: ", "");
+                var newName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder name: ", "");
 
                 if (newName != null)
                 {
-                    string folderPath = TextBoxLocalPath.Text + @"\" + newName;
+                    var folderPath = TextBoxLocalPath.Text + @"\" + newName;
 
                     if (Directory.Exists(folderPath))
                     {
@@ -338,13 +338,13 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                string type = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Type").ToString();
-                string name = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Name").ToString();
+                var type = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Type").ToString();
+                var name = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Name").ToString();
 
                 if (type.Equals("file"))
                 {
-                    string localPath = TextBoxLocalPath.Text + name;
-                    string consolePath = TextBoxConsolePath.Text + name;
+                    var localPath = TextBoxLocalPath.Text + name;
+                    var consolePath = TextBoxConsolePath.Text + name;
 
                     if (File.Exists(localPath))
                     {
@@ -360,8 +360,8 @@ namespace ModioX.Forms.Windows
                 }
                 else if (type.Equals("folder"))
                 {
-                    string localPath = TextBoxLocalPath.Text + name + @"\";
-                    string consolePath = TextBoxConsolePath.Text + name;
+                    var localPath = TextBoxLocalPath.Text + name + @"\";
+                    var consolePath = TextBoxConsolePath.Text + name;
 
                     SetStatus($"Uploading folder to {consolePath}...");
                     //FtpClient.UploadDirectory(localPath, consolePath, FtpFolderSyncMode.Update, FtpRemoteExists.Overwrite);
@@ -381,12 +381,12 @@ namespace ModioX.Forms.Windows
             {
                 if (XtraMessageBox.Show("Do you really want to delete the selected item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    string type = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Type").ToString();
-                    string name = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Name").ToString();
+                    var type = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Type").ToString();
+                    var name = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Name").ToString();
 
                     if (!name.Equals(".."))
                     {
-                        string selectedItem = TextBoxLocalPath.Text + @"\" + name;
+                        var selectedItem = TextBoxLocalPath.Text + @"\" + name;
 
                         if (type.Equals("folder"))
                         {
@@ -418,12 +418,12 @@ namespace ModioX.Forms.Windows
         {
             if (GridViewLocalFiles.SelectedRowsCount > 0)
             {
-                string oldFileName = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Name").ToString();
-                string oldFilePath = TextBoxLocalPath.Text + @"\" + oldFileName;
+                var oldFileName = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Name").ToString();
+                var oldFilePath = TextBoxLocalPath.Text + @"\" + oldFileName;
 
-                string newFileName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name:", oldFileName));
+                var newFileName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name:", oldFileName));
 
-                string newFilePath = TextBoxLocalPath.Text + @"\" + newFileName;
+                var newFilePath = TextBoxLocalPath.Text + @"\" + newFileName;
 
                 if (newFileName != null && !newFileName.Equals(oldFileName))
                 {
@@ -446,12 +446,12 @@ namespace ModioX.Forms.Windows
         {
             if (GridViewLocalFiles.SelectedRowsCount > 0)
             {
-                string oldFolderName = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Name").ToString();
-                string oldFolderPath = TextBoxLocalPath.Text + @"\" + oldFolderName;
+                var oldFolderName = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Name").ToString();
+                var oldFolderPath = TextBoxLocalPath.Text + @"\" + oldFolderName;
 
-                string newFolderName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name:", oldFolderName));
+                var newFolderName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name:", oldFolderName));
 
-                string newFolderPath = TextBoxLocalPath.Text + @"\" + newFolderName;
+                var newFolderPath = TextBoxLocalPath.Text + @"\" + newFolderName;
 
                 if (newFolderName != null && !newFolderName.Equals(oldFolderName))
                 {
@@ -473,14 +473,14 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Loads files and folders into the local datagridview
         /// </summary>
-        /// <param name="directoryPath"></param>
+        /// <param name="directoryPath"> </param>
         public void LoadLocalDirectory(string directoryPath)
         {
             try
             {
                 GridLocalFiles.DataSource = null;
 
-                DataTable localFiles = DataExtensions.CreateDataTable(
+                var localFiles = DataExtensions.CreateDataTable(
                     new List<DataColumn>
                     {
                         new DataColumn() { Caption = "Type", ColumnName = "Type", DataType = typeof(string) },
@@ -499,27 +499,27 @@ namespace ModioX.Forms.Windows
                 ComboBoxLocalDrives.SelectedItem = DirectoryPathLocal.Substring(0, 2);
                 ComboBoxLocalDrives.SelectedIndexChanged += ComboBoxLocalDrives_SelectedIndexChanged;
 
-                bool isParentRoot = LocalDrives.Any(x => x.Name.Equals(DirectoryPathLocal.Replace(@"\\", @"\")));
+                var isParentRoot = LocalDrives.Any(x => x.Name.Equals(DirectoryPathLocal.Replace(@"\\", @"\")));
 
                 if (!isParentRoot)
                 {
                     localFiles.Rows.Add("folder", ImageFolder, "..", "<DIRECTORY>", Directory.GetLastWriteTime(DirectoryPathLocal));
                 }
 
-                int folders = 0;
-                int files = 0;
+                var folders = 0;
+                var files = 0;
                 long totalBytes = 0;
 
-                foreach (string directoryItem in Directory.GetDirectories(DirectoryPathLocal))
+                foreach (var directoryItem in Directory.GetDirectories(DirectoryPathLocal))
                 {
                     localFiles.Rows.Add("folder", ImageFolder, Path.GetFileName(directoryItem), "<DIRECTORY>", Directory.GetLastWriteTime(directoryItem));
 
                     folders++;
                 }
 
-                foreach (string fileItem in Directory.GetFiles(DirectoryPathLocal))
+                foreach (var fileItem in Directory.GetFiles(DirectoryPathLocal))
                 {
-                    long fileBytes = new FileInfo(fileItem).Length;
+                    var fileBytes = new FileInfo(fileItem).Length;
 
                     localFiles.Rows.Add("file", ImageFile, Path.GetFileName(fileItem), Settings.ShowFileSizeInBytes ? fileBytes.ToString("#,0") + " bytes" : fileBytes.ToString().FormatSize(), File.GetLastWriteTime(fileItem));
 
@@ -527,9 +527,9 @@ namespace ModioX.Forms.Windows
                     totalBytes += fileBytes;
                 }
 
-                string statusFiles = files > 0 ? $"{files} {(files <= 1 ? "file" : "files")} {(files > 0 && folders > 0 ? "and " : "")}" : "" + $"{(folders < 1 ? "." : "")}";
-                string statusFolders = folders > 0 ? $"{folders} {(folders <= 1 ? "directory" : "directories")}. " : "";
-                string statusTotalBytes = files > 0 ? $"Total size: {(Settings.ShowFileSizeInBytes ? totalBytes.ToString("#,0") + " bytes" : StringExtensions.FormatSize(totalBytes.ToString()))}" : "";
+                var statusFiles = files > 0 ? $"{files} {(files <= 1 ? "file" : "files")} {(files > 0 && folders > 0 ? "and " : "")}" : "" + $"{(folders < 1 ? "." : "")}";
+                var statusFolders = folders > 0 ? $"{folders} {(folders <= 1 ? "directory" : "directories")}. " : "";
+                var statusTotalBytes = files > 0 ? $"Total size: {(Settings.ShowFileSizeInBytes ? totalBytes.ToString("#,0") + " bytes" : StringExtensions.FormatSize(totalBytes.ToString()))}" : "";
 
                 if (files < 1 && folders < 1)
                 {
@@ -567,7 +567,7 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        #endregion
+        #endregion Local File Explorer
 
         #region Console File Explorer
 
@@ -585,8 +585,8 @@ namespace ModioX.Forms.Windows
         {
             if (GridViewConsoleFiles.SelectedRowsCount > 0)
             {
-                string type = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Type").ToString();
-                string name = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
+                var type = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Type").ToString();
+                var name = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
 
                 ButtonConsoleDownload.Enabled = type == "file" && name != "..";
                 ButtonConsoleDelete.Enabled = type == "file" | type == "folder" && name != "..";
@@ -598,8 +598,8 @@ namespace ModioX.Forms.Windows
         {
             if (GridViewConsoleFiles.SelectedRowsCount > 0)
             {
-                string type = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Type").ToString();
-                string name = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
+                var type = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Type").ToString();
+                var name = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
 
                 ButtonConsoleDownload.Enabled = type == "file" && name != "..";
                 ButtonConsoleDelete.Enabled = type == "file" | type == "folder" && name != "..";
@@ -611,13 +611,13 @@ namespace ModioX.Forms.Windows
         {
             if (GridViewConsoleFiles.SelectedRowsCount > 0)
             {
-                string type = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Type").ToString();
-                string name = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
+                var type = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Type").ToString();
+                var name = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
 
                 if (name == "..") // Go to parent directory
                 {
-                    string trimLastIndex = Path.GetDirectoryName(DirectoryPathConsole).Replace(@"\", "/").TrimEnd('/');
-                    string parentDirectory = trimLastIndex.Substring(0, trimLastIndex.LastIndexOf("/")) + "/";
+                    var trimLastIndex = Path.GetDirectoryName(DirectoryPathConsole).Replace(@"\", "/").TrimEnd('/');
+                    var parentDirectory = trimLastIndex.Substring(0, trimLastIndex.LastIndexOf("/")) + "/";
 
                     LoadConsoleDirectory(parentDirectory);
                 }
@@ -651,16 +651,18 @@ namespace ModioX.Forms.Windows
 
         private void ButtonConsoleRename_Click(object sender, EventArgs e)
         {
-            string type = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Type").ToString();
+            var type = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Type").ToString();
 
             switch (type)
             {
                 case "folder":
                     RenameConsoleFolder();
                     break;
+
                 case "file":
                     RenameConsoleFile();
                     break;
+
                 default:
                     break;
             }
@@ -679,14 +681,14 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Loads files and folders into the console datagridview
         /// </summary>
-        /// <param name="directoryPath">Console path to retrieve</param>
+        /// <param name="directoryPath"> Console path to retrieve </param>
         public void LoadConsoleDirectory(string directoryPath)
         {
             try
             {
                 GridConsoleFiles.DataSource = null;
 
-                DataTable consoleFiles = DataExtensions.CreateDataTable(
+                var consoleFiles = DataExtensions.CreateDataTable(
                     new List<DataColumn>
                     {
                         new DataColumn() { Caption = "Type", ColumnName = "Type", DataType = typeof(string) },
@@ -701,14 +703,14 @@ namespace ModioX.Forms.Windows
 
                 SetStatus($"Fetching directory listing of '{DirectoryPathConsole}'...");
 
-                int secondIndexOfSlash = DirectoryPathConsole.TrimStart('/').IndexOfNth("/");
-                string rootPath = DirectoryPathConsole.Substring(1, secondIndexOfSlash);
+                var secondIndexOfSlash = DirectoryPathConsole.TrimStart('/').IndexOfNth("/");
+                var rootPath = DirectoryPathConsole.Substring(1, secondIndexOfSlash);
 
                 ComboBoxConsoleDrives.SelectedIndexChanged -= ComboBoxConsoleDrives_SelectedIndexChanged;
                 ComboBoxConsoleDrives.SelectedItem = rootPath;
                 ComboBoxConsoleDrives.SelectedIndexChanged += ComboBoxConsoleDrives_SelectedIndexChanged;
 
-                bool isRoot = ComboBoxConsoleDrives.Properties.Items.Contains(DirectoryPathConsole.Replace("/", ""));
+                var isRoot = ComboBoxConsoleDrives.Properties.Items.Contains(DirectoryPathConsole.Replace("/", ""));
 
                 if (!isRoot)
                 {
@@ -717,12 +719,12 @@ namespace ModioX.Forms.Windows
 
                 FtpClient.SetWorkingDirectory(DirectoryPathConsole);
 
-                List<FtpListItem> folders = new List<FtpListItem>();
-                List<FtpListItem> files = new List<FtpListItem>();
+                var folders = new List<FtpListItem>();
+                var files = new List<FtpListItem>();
 
                 long totalBytes = 0;
 
-                foreach (FtpListItem listItem in FtpClient.GetListing(DirectoryPathConsole))
+                foreach (var listItem in FtpClient.GetListing(DirectoryPathConsole))
                 {
                     switch (listItem.Type)
                     {
@@ -739,16 +741,16 @@ namespace ModioX.Forms.Windows
                     }
                 }
 
-                foreach (FtpListItem listItem in folders.OrderBy(x => x.Name))
+                foreach (var listItem in folders.OrderBy(x => x.Name))
                 {
                     if (DirectoryPathConsole == "/dev_hdd0/home/")
                     {
-                        string profileName = FtpExtensions.GetUserNameFromUserId(listItem.Name);
+                        var profileName = FtpExtensions.GetUserNameFromUserId(listItem.Name);
                         consoleFiles.Rows.Add("folder", ImageFolder, $"{listItem.Name} ({profileName})", "<PROFILE>", listItem.Modified);
                     }
                     else if (DirectoryPathConsole == "/dev_hdd0/game/")
                     {
-                        string gameTitle = Settings.AutoDetectGameTitles ? $" ({HttpExtensions.GetGameTitleFromTitleID(listItem.Name)})" : "";
+                        var gameTitle = Settings.AutoDetectGameTitles ? $" ({HttpExtensions.GetGameTitleFromTitleID(listItem.Name)})" : "";
                         consoleFiles.Rows.Add("folder", ImageFolder, $"{listItem.Name}{gameTitle}", "<GAMEUPDATE>", listItem.Modified);
                     }
                     else
@@ -757,16 +759,15 @@ namespace ModioX.Forms.Windows
                     }
                 }
 
-                foreach (FtpListItem listItem in files.OrderBy(x => x.Name))
+                foreach (var listItem in files.OrderBy(x => x.Name))
                 {
                     consoleFiles.Rows.Add("file", ImageFile, listItem.Name, Settings.ShowFileSizeInBytes ? listItem.Size.ToString("#,0") + " bytes" : StringExtensions.FormatSize(listItem.Size.ToString()), listItem.Modified);
                     totalBytes += listItem.Size;
                 }
 
-
-                string statusFiles = files.Count > 0 ? $"{files.Count} {(files.Count == 1 ? "file" : "files")} {(files.Count > 0 && folders.Count > 0 ? "and " : "")}" : "" + $"{(folders.Count == 0 ? "." : "")}";
-                string statusFolders = folders.Count > 0 ? $"{folders.Count} {(folders.Count == 1 ? "directory" : "directories")}. " : "";
-                string statusTotalBytes = totalBytes > 0 ? $"Total size: {(Settings.ShowFileSizeInBytes ? totalBytes.ToString("#,0") + " bytes" : StringExtensions.FormatSize(totalBytes.ToString()))}" : "";
+                var statusFiles = files.Count > 0 ? $"{files.Count} {(files.Count == 1 ? "file" : "files")} {(files.Count > 0 && folders.Count > 0 ? "and " : "")}" : "" + $"{(folders.Count == 0 ? "." : "")}";
+                var statusFolders = folders.Count > 0 ? $"{folders.Count} {(folders.Count == 1 ? "directory" : "directories")}. " : "";
+                var statusTotalBytes = totalBytes > 0 ? $"Total size: {(Settings.ShowFileSizeInBytes ? totalBytes.ToString("#,0") + " bytes" : StringExtensions.FormatSize(totalBytes.ToString()))}" : "";
 
                 if (files.Count < 1 && folders.Count < 1)
                 {
@@ -802,13 +803,13 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                string type = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Type").ToString();
-                string name = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
+                var type = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Type").ToString();
+                var name = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
 
                 if (type.Equals("file"))
                 {
-                    string consoleFile = DirectoryPathConsole + name;
-                    string localFile = DirectoryPathLocal + name;
+                    var consoleFile = DirectoryPathConsole + name;
+                    var localFile = DirectoryPathLocal + name;
 
                     if (File.Exists(localFile))
                     {
@@ -821,8 +822,8 @@ namespace ModioX.Forms.Windows
                 }
                 else if (type.Equals("folder"))
                 {
-                    string consolePath = DirectoryPathConsole + name + "/";
-                    string localPath = DirectoryPathLocal + name;
+                    var consolePath = DirectoryPathConsole + name + "/";
+                    var localPath = DirectoryPathLocal + name;
 
                     if (Directory.Exists(localPath))
                     {
@@ -849,10 +850,10 @@ namespace ModioX.Forms.Windows
             {
                 if (XtraMessageBox.Show("Do you really want to delete the selected item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    string type = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Type").ToString();
-                    string name = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
+                    var type = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Type").ToString();
+                    var name = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
 
-                    string itemPath = DirectoryPathConsole + name;
+                    var itemPath = DirectoryPathConsole + name;
 
                     if (type.Equals("folder"))
                     {
@@ -885,12 +886,12 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                string oldFileName = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
-                string oldFilePath = TextBoxConsolePath.Text + oldFileName;
+                var oldFileName = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
+                var oldFilePath = TextBoxConsolePath.Text + oldFileName;
 
-                string newFileName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name:", oldFileName));
+                var newFileName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name:", oldFileName));
 
-                string newConsoleFilePath = TextBoxConsolePath.Text + newFileName;
+                var newConsoleFilePath = TextBoxConsolePath.Text + newFileName;
 
                 if (newFileName != null && !newFileName.Equals(oldFileName))
                 {
@@ -918,12 +919,12 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                string oldFolderName = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
-                string oldFileName = TextBoxConsolePath.Text + oldFolderName;
+                var oldFolderName = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
+                var oldFileName = TextBoxConsolePath.Text + oldFolderName;
 
-                string newFolderName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name:", oldFolderName));
+                var newFolderName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name:", oldFolderName));
 
-                string newFolderPath = TextBoxConsolePath.Text + newFolderName;
+                var newFolderPath = TextBoxConsolePath.Text + newFolderName;
 
                 if (newFolderName != null && !newFolderName.Equals(oldFolderName))
                 {
@@ -951,11 +952,11 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                string folderName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder Name: ", "");
+                var folderName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder Name: ", "");
 
                 if (folderName != null)
                 {
-                    string folderPath = DirectoryPathConsole + "/" + folderName;
+                    var folderPath = DirectoryPathConsole + "/" + folderName;
 
                     if (FtpClient.DirectoryExists(folderPath))
                     {
@@ -981,12 +982,12 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        #endregion
+        #endregion Console File Explorer
 
         /// <summary>
         /// Set the current status in the local panel.
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="status"> </param>
         public void SetLocalStatus(string status)
         {
             LabelLocalStatus.Text = status;
@@ -996,7 +997,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Set the current status in the console panel.
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="status"> </param>
         public void SetConsoleStatus(string status)
         {
             LabelConsoleStats.Text = status;
@@ -1006,8 +1007,8 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Set the current status.
         /// </summary>
-        /// <param name="status"></param>
-        /// <param name="ex"></param>
+        /// <param name="status"> </param>
+        /// <param name="ex"> </param>
         public void SetStatus(string status, Exception ex = null)
         {
             LabelStatus.Caption = status;
@@ -1017,6 +1018,7 @@ namespace ModioX.Forms.Windows
                 case null:
                     Program.Log.Info(status);
                     break;
+
                 default:
                     Program.Log.Error(ex, status);
                     break;

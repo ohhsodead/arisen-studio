@@ -29,11 +29,11 @@ namespace ModioX.Forms.Settings
         {
             GridCustomLists.DataSource = null;
 
-            DataTable dt = new DataTable();
+            var dt = new DataTable();
             dt.Columns.Add("List Name", typeof(string));
             dt.Columns.Add("# of Mods", typeof(string));
 
-            foreach (CustomList customList in Settings.CustomLists)
+            foreach (var customList in Settings.CustomLists)
             {
                 dt.Rows.Add(customList.Name, customList.ModIds.Count + " Mods");
             }
@@ -64,8 +64,8 @@ namespace ModioX.Forms.Settings
 
         private void ButtonRenameList_Click(object sender, EventArgs e)
         {
-            string currentListName = GridViewCustomLists.GetRowCellDisplayText(GridViewCustomLists.GetSelectedRows()[0], "List Name");
-            string newListName = DialogExtensions.ShowTextInputDialog(this, "Rename List", "List Name:", currentListName);
+            var currentListName = GridViewCustomLists.GetRowCellDisplayText(GridViewCustomLists.GetSelectedRows()[0], "List Name");
+            var newListName = DialogExtensions.ShowTextInputDialog(this, "Rename List", "List Name:", currentListName);
 
             if (!string.IsNullOrWhiteSpace(newListName))
             {
@@ -83,7 +83,7 @@ namespace ModioX.Forms.Settings
 
         private void ButtonCreateNewList_Click(object sender, EventArgs e)
         {
-            string listName = DialogExtensions.ShowTextInputDialog(this, "Create New List", "List Name:", "");
+            var listName = DialogExtensions.ShowTextInputDialog(this, "Create New List", "List Name:", "");
 
             if (!string.IsNullOrWhiteSpace(listName))
             {
@@ -119,7 +119,7 @@ namespace ModioX.Forms.Settings
 
         private static bool CustomListNameExists(string name)
         {
-            foreach (CustomList customList in Settings.CustomLists)
+            foreach (var customList in Settings.CustomLists)
             {
                 if (string.Equals(customList.Name, name))
                 {

@@ -37,9 +37,9 @@ namespace ModioX.Forms.Dialogs
             PanelConsoleProfiles.Controls.Clear();
             SelectedConsole = null;
 
-            int consoleIndex = 0;
+            var consoleIndex = 0;
 
-            foreach (ConsoleProfile consoleProfile in Settings.ConsoleProfiles)
+            foreach (var consoleProfile in Settings.ConsoleProfiles)
             {
                 Image consoleImage = consoleImage = Properties.Resources.PlayStation3Fat;
 
@@ -48,21 +48,27 @@ namespace ModioX.Forms.Dialogs
                     case ConsoleType.PlayStation3Fat:
                         consoleImage = Properties.Resources.PlayStation3Fat;
                         break;
+
                     case ConsoleType.PlayStation3Slim:
                         consoleImage = Properties.Resources.PlayStation3Slim;
                         break;
+
                     case ConsoleType.PlayStation3SuperSlim:
                         consoleImage = Properties.Resources.PlayStation3Slim;
                         break;
+
                     case ConsoleType.Xbox360FatWhite:
                         consoleImage = Properties.Resources.XboxFat;
                         break;
+
                     case ConsoleType.Xbox360EliteFatBlack:
                         consoleImage = Properties.Resources.XboxFatElite;
                         break;
+
                     case ConsoleType.Xbox360Slim:
                         consoleImage = Properties.Resources.XboxSlim;
                         break;
+
                     case ConsoleType.Xbox360SlimE:
                         consoleImage = Properties.Resources.XboxSlimE;
                         break;
@@ -102,7 +108,7 @@ namespace ModioX.Forms.Dialogs
 
         private void ResetConsoleItems()
         {
-            foreach (object ctrl in PanelConsoleProfiles.Controls)
+            foreach (var ctrl in PanelConsoleProfiles.Controls)
             {
                 TileConsoleItem item = ctrl as TileConsoleItem;
                 item.IsSelected = false;
@@ -111,7 +117,7 @@ namespace ModioX.Forms.Dialogs
 
         private void ButtonNewConnection_Click(object sender, EventArgs e)
         {
-            ConsoleProfile consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
+            var consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
 
             if (consoleProfile != null)
             {
@@ -145,10 +151,10 @@ namespace ModioX.Forms.Dialogs
 
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
-            int selectedIndex = Settings.ConsoleProfiles.IndexOf(ConsoleProfile);
-            ConsoleProfile oldConsoleProfile = Settings.ConsoleProfiles[selectedIndex];
+            var selectedIndex = Settings.ConsoleProfiles.IndexOf(ConsoleProfile);
+            var oldConsoleProfile = Settings.ConsoleProfiles[selectedIndex];
 
-            ConsoleProfile newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
+            var newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
 
             if (newConsoleProfile != null) oldConsoleProfile = newConsoleProfile;
 

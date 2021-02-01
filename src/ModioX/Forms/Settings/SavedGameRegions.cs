@@ -36,7 +36,7 @@ namespace ModioX.Forms.Settings
             ComboBoxGameTitle.Properties.Items.Clear();
             ComboBoxGameRegion.Properties.Items.Clear();
 
-            foreach (Category category in Database.CategoriesData.GetCategoriesByType(CategoryType.Game))
+            foreach (var category in Database.CategoriesData.GetCategoriesByType(CategoryType.Game))
             {
                 ComboBoxGameTitle.Properties.Items.Add(category.Title);
             }
@@ -48,7 +48,7 @@ namespace ModioX.Forms.Settings
         {
             GridGameRegions.DataSource = null;
 
-            DataTable gameRegions = DataExtensions.CreateDataTable(new List<DataColumn> { new DataColumn("Game Title", typeof(string)), new DataColumn("Game Region", typeof(string)) });
+            var gameRegions = DataExtensions.CreateDataTable(new List<DataColumn> { new DataColumn("Game Title", typeof(string)), new DataColumn("Game Region", typeof(string)) });
 
             foreach (var gameRegion in Settings.GameRegions)
             {
@@ -75,8 +75,8 @@ namespace ModioX.Forms.Settings
         {
             if (GridViewGameRegions.SelectedRowsCount > 0)
             {
-                string gameTitle = GridViewGameRegions.GetRowCellValue(e.FocusedRowHandle, "Game Title").ToString();
-                string gameRegion = GridViewGameRegions.GetRowCellValue(e.FocusedRowHandle, "Game Region").ToString();
+                var gameTitle = GridViewGameRegions.GetRowCellValue(e.FocusedRowHandle, "Game Title").ToString();
+                var gameRegion = GridViewGameRegions.GetRowCellValue(e.FocusedRowHandle, "Game Region").ToString();
 
                 ComboBoxGameTitle.SelectedItem = gameTitle;
                 ComboBoxGameRegion.SelectedItem = gameRegion;
@@ -89,8 +89,8 @@ namespace ModioX.Forms.Settings
         {
             if (GridViewGameRegions.SelectedRowsCount > 0)
             {
-                string gameTitle = GridViewGameRegions.GetRowCellValue(e.RowHandle, "Game Title").ToString();
-                string gameRegion = GridViewGameRegions.GetRowCellValue(e.RowHandle, "Game Region").ToString();
+                var gameTitle = GridViewGameRegions.GetRowCellValue(e.RowHandle, "Game Title").ToString();
+                var gameRegion = GridViewGameRegions.GetRowCellValue(e.RowHandle, "Game Region").ToString();
 
                 ComboBoxGameTitle.SelectedItem = gameTitle;
                 ComboBoxGameRegion.SelectedItem = gameRegion;
@@ -125,10 +125,10 @@ namespace ModioX.Forms.Settings
             {
                 ComboBoxGameRegion.Properties.Items.Clear();
 
-                string gameTitle = ComboBoxGameTitle.SelectedItem.ToString();
-                string gameId = Database.CategoriesData.GetCategoryByTitle(gameTitle).Id;
+                var gameTitle = ComboBoxGameTitle.SelectedItem.ToString();
+                var gameId = Database.CategoriesData.GetCategoryByTitle(gameTitle).Id;
 
-                foreach (string gameRegion in Database.CategoriesData.GetCategoryById(gameId).Regions)
+                foreach (var gameRegion in Database.CategoriesData.GetCategoryById(gameId).Regions)
                 {
                     ComboBoxGameRegion.Properties.Items.Add(gameRegion);
                 }
@@ -151,10 +151,10 @@ namespace ModioX.Forms.Settings
                 return;
             }
 
-            string gameTitle = ComboBoxGameTitle.SelectedItem.ToString();
-            string gameRegion = ComboBoxGameRegion.SelectedItem.ToString();
+            var gameTitle = ComboBoxGameTitle.SelectedItem.ToString();
+            var gameRegion = ComboBoxGameRegion.SelectedItem.ToString();
 
-            string gameId = Database.CategoriesData.GetCategoryByTitle(gameTitle).Id;
+            var gameId = Database.CategoriesData.GetCategoryByTitle(gameTitle).Id;
 
             Settings.UpdateGameRegion(gameId, gameRegion);
             LoadSavedGameRegions();
@@ -162,10 +162,10 @@ namespace ModioX.Forms.Settings
 
         private void ButtonSaveAll_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < GridViewGameRegions.RowCount; i++)
+            for (var i = 0; i < GridViewGameRegions.RowCount; i++)
             {
-                string gameTitle = GridViewGameRegions.GetRowCellValue(i, "Game Title").ToString();
-                string gameRegion = GridViewGameRegions.GetRowCellValue(i, "Game Region").ToString();
+                var gameTitle = GridViewGameRegions.GetRowCellValue(i, "Game Title").ToString();
+                var gameRegion = GridViewGameRegions.GetRowCellValue(i, "Game Region").ToString();
 
                 var gameId = Database.CategoriesData.GetCategoryByTitle(gameTitle).Id;
 

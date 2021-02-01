@@ -1,8 +1,8 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.IO;
+using DevExpress.XtraEditors;
 
-namespace ModioX.Forms
+namespace ModioX.Forms.Dialogs
 {
     public partial class InputTextDialog : XtraForm
     {

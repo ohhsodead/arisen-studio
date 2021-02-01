@@ -7,7 +7,6 @@ using ModioX.Forms.Tools.XBOX_Tools;
 using ModioX.Forms.Windows;
 using ModioX.Models.Release_Data;
 using ModioX.Models.Resources;
-using ModioX.Windows;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -22,8 +21,8 @@ namespace ModioX.Extensions
         {
             try
             {
-                string releaseBody = gitHubData.Body;
-                string releaseBodyWithoutLastLine = releaseBody.Substring(0, releaseBody.Trim().LastIndexOf(Environment.NewLine, StringComparison.Ordinal));
+                var releaseBody = gitHubData.Body;
+                var releaseBodyWithoutLastLine = releaseBody.Substring(0, releaseBody.Trim().LastIndexOf(Environment.NewLine, StringComparison.Ordinal));
 
                 ShowDataViewDialog(owner, gitHubData.Name + " - What's New", "Change Log", releaseBodyWithoutLastLine.Replace("-", "•"));
             }
@@ -35,7 +34,7 @@ namespace ModioX.Extensions
 
         public static void ShowDataViewDialog(Form owner, string title, string subtitle, string body)
         {
-            using DataViewDialog dataViewDialog = new DataViewDialog { Text = title };
+            using var dataViewDialog = new DataViewDialog { Text = title };
             dataViewDialog.LabelTitle.Text = subtitle;
             dataViewDialog.LabelBody.Text = body;
 
@@ -46,7 +45,7 @@ namespace ModioX.Extensions
 
         public static string ShowListInputDialog(string title, List<string> items)
         {
-            using ListViewDialog listViewDialog = new ListViewDialog
+            using var listViewDialog = new ListViewDialog
             {
                 Text = title,
                 Items = items
@@ -58,7 +57,7 @@ namespace ModioX.Extensions
 
         public static string ShowTextInputDialog(Form owner, string title, string labelText, string inputText)
         {
-            using InputTextDialog inputTextDialog = new InputTextDialog
+            using var inputTextDialog = new InputTextDialog
             {
                 Text = title,
                 LabelName = { Text = labelText },
@@ -70,31 +69,31 @@ namespace ModioX.Extensions
 
         public static ConsoleProfile ShowConnectionDialog(Form owner)
         {
-            using ConnectionDialog connectConsole = new ConnectionDialog();
+            using var connectConsole = new ConnectionDialog();
             return connectConsole.ShowDialog(owner) == DialogResult.OK ? connectConsole.ConsoleProfile : null;
         }
 
         public static ConsoleProfile ShowNewConnectionWindow(Form owner, ConsoleProfile consoleProfile, bool isEditing)
         {
-            using NewConnectionDialog newConnectionDialog = new NewConnectionDialog { ConsoleProfile = consoleProfile, IsEditingProfile = isEditing };
+            using var newConnectionDialog = new NewConnectionDialog { ConsoleProfile = consoleProfile, IsEditingProfile = isEditing };
             return newConnectionDialog.ShowDialog(owner) == DialogResult.OK ? newConnectionDialog.ConsoleProfile : null;
         }
 
         public static string ShowFolderBrowseDialog(Form owner, string description)
         {
-            using XtraFolderBrowserDialog folderBrowser = new XtraFolderBrowserDialog { Description = description, ShowNewFolderButton = true };
+            using var folderBrowser = new XtraFolderBrowserDialog { Description = description, ShowNewFolderButton = true };
             return folderBrowser.ShowDialog(owner) == DialogResult.OK ? folderBrowser.SelectedPath : null;
         }
 
         public static string ShowOpenFileDialog(Form owner, string title, string fileTypes)
         {
-            using XtraOpenFileDialog openFileDialog = new XtraOpenFileDialog { Title = title, Filter = fileTypes };
+            using var openFileDialog = new XtraOpenFileDialog { Title = title, Filter = fileTypes };
             return openFileDialog.ShowDialog(owner) == DialogResult.OK ? openFileDialog.FileName : null;
         }
 
         public static void ShowFileManager(Form owner)
         {
-            using FileManagerWindow fileManagerWindow = new FileManagerWindow();
+            using var fileManagerWindow = new FileManagerWindow();
             fileManagerWindow.ShowDialog(owner);
         }
 
@@ -102,23 +101,24 @@ namespace ModioX.Extensions
 
         public static void ShowGameBackupFiles(Form owner)
         {
-            using BackupFiles gameBackupFilesWindow = new BackupFiles();
+            using var gameBackupFilesWindow = new BackupFiles();
             gameBackupFilesWindow.ShowDialog(owner);
         }
 
         public static void ShowGameUpdatesFinderDialog(Form owner)
         {
-            using GameUpdatesFinder gameUpdatesDialog = new GameUpdatesFinder();
+            using var gameUpdatesDialog = new GameUpdatesFinder();
             gameUpdatesDialog.ShowDialog(owner);
         }
 
         public static void ShowPackageManagerWindow(Form owner)
         {
+            using var packageManagerWindow = new PackageManagerWindow();
             using PackageManager packageManagerWindow = new PackageManager();
             packageManagerWindow.ShowDialog(owner);
         }
 
-        #endregion
+        #endregion PS3 Tools
 
         #region Xbox Tools
 
@@ -146,39 +146,39 @@ namespace ModioX.Extensions
 
         public static void ShowSettingsWindow(Form owner)
         {
-            using SettingsWindow settingsWindow = new SettingsWindow();
+            using var settingsWindow = new SettingsWindow();
             settingsWindow.ShowDialog(owner);
         }
 
         public static void ShowGameRegionsDialog(Form owner)
         {
-            using SavedGameRegions gameRegions = new SavedGameRegions();
+            using var gameRegions = new SavedGameRegions();
             gameRegions.ShowDialog(owner);
         }
 
         public static void ShowExternalApplicationsDialog(Form owner)
         {
-            using ExternalApplications externalApplications = new ExternalApplications();
+            using var externalApplications = new ExternalApplications();
             externalApplications.ShowDialog(owner);
         }
 
         public static void ShowCustomListsDialog(Form owner)
         {
-            using CustomLists customListsDialog = new CustomLists();
+            using var customListsDialog = new CustomLists();
             customListsDialog.ShowDialog(owner);
         }
 
-        #endregion
+        #endregion Settings
 
         public static void ShowAboutWindow(Form owner)
         {
-            using AboutDialog aboutDialog = new AboutDialog();
+            using var aboutDialog = new AboutDialog();
             aboutDialog.ShowDialog(owner);
         }
 
         public static DialogResult ShowCustomXboxDialog(Form owner, string title, string body, XMessageboxUI.ButtonOptions buttons)
         {
-            using XMessageboxUI xMessageboxUI = new XMessageboxUI(title, body, buttons);
+            using var xMessageboxUI = new XMessageboxUI(title, body, buttons);
             return xMessageboxUI.ShowDialog(owner);
         }
     }

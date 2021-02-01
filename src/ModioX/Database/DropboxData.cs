@@ -16,10 +16,10 @@ namespace ModioX.Database
         /// <summary>
         /// Initialization of the class.
         /// </summary>
-        /// <returns>instance of the class.</returns>
+        /// <returns> instance of the class. </returns>
         public static async Task<DropboxData> Initialize()
         {
-            DropboxData data = new DropboxData
+            var data = new DropboxData
             {
                 CategoriesData = await GetCategories(),
                 ModsPS3 = await GetModsPS3(),
@@ -48,18 +48,20 @@ namespace ModioX.Database
         /// <summary>
         /// Download and return the data for categories and games.
         /// </summary>
-        /// <returns>CategoriesData</returns>
-        /// <exception cref="HttpException">Thrown when getting a Bad Response</exception>
-        /// <exception cref="JsonSerializationException">Thrown when failing to deserialize the json data.</exception>
+        /// <returns> CategoriesData </returns>
+        /// <exception cref="HttpException"> Thrown when getting a Bad Response </exception>
+        /// <exception cref="JsonSerializationException">
+        /// Thrown when failing to deserialize the json data.
+        /// </exception>
         private static async Task<CategoriesData> GetCategories()
         {
-            using HttpClient client = new HttpClient();
-            using HttpResponseMessage response = await client.GetAsync(Urls.CategoriesData);
+            using var client = new HttpClient();
+            using var response = await client.GetAsync(Urls.CategoriesData);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new HttpException($"Bad response {response.StatusCode}");
 
-            string responseData = response.Content.ReadAsStringAsync().Result;
+            var responseData = response.Content.ReadAsStringAsync().Result;
 
             if (!IsValidJson(responseData))
                 throw new JsonException("Failed to process the data for the Categories.");
@@ -70,17 +72,17 @@ namespace ModioX.Database
         /// <summary>
         /// Download and return the data for mods.
         /// </summary>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        /// <returns> </returns>
+        /// <exception cref="Exception"> </exception>
         private static async Task<ModsData> GetModsPS3()
         {
-            using HttpClient client = new HttpClient();
-            using HttpResponseMessage response = await client.GetAsync(Urls.ModsDataPS3);
+            using var client = new HttpClient();
+            using var response = await client.GetAsync(Urls.ModsDataPS3);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Bad response {response.StatusCode}");
 
-            string responseData = response.Content.ReadAsStringAsync().Result;
+            var responseData = response.Content.ReadAsStringAsync().Result;
 
             if (!IsValidJson(responseData))
                 throw new JsonSerializationException("Failed to process the data for the Mods.");
@@ -91,17 +93,17 @@ namespace ModioX.Database
         /// <summary>
         /// Download and return the data for mods.
         /// </summary>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        /// <returns> </returns>
+        /// <exception cref="Exception"> </exception>
         private static async Task<ModsData> GetModsXBOX()
         {
-            using HttpClient client = new HttpClient();
-            using HttpResponseMessage response = await client.GetAsync(Urls.ModsDataXBOX);
+            using var client = new HttpClient();
+            using var response = await client.GetAsync(Urls.ModsDataXBOX);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Bad response {response.StatusCode}");
 
-            string responseData = response.Content.ReadAsStringAsync().Result;
+            var responseData = response.Content.ReadAsStringAsync().Result;
 
             if (!IsValidJson(responseData))
                 throw new JsonSerializationException("Failed to process the data for the Mods.");
@@ -112,13 +114,13 @@ namespace ModioX.Database
         /// <summary>
         /// Determines a valid json response
         /// </summary>
-        /// <param name="data">Json data to validate</param>
-        /// <returns>Whether text is valid json format</returns>
+        /// <param name="data"> Json data to validate </param>
+        /// <returns> Whether text is valid json format </returns>
         private static bool IsValidJson(string data)
         {
             try
             {
-                JToken unused = JToken.Parse(data);
+                var unused = JToken.Parse(data);
                 return true;
             }
             catch

@@ -7,8 +7,8 @@ namespace ModioX.Extensions
     {
         /// <summary>
         /// </summary>
-        /// <param name="time"></param>
-        /// <returns></returns>
+        /// <param name="time"> </param>
+        /// <returns> </returns>
         public static DateTime? ToDateTime(this WINAPI.FILETIME time)
         {
             if (time.dwHighDateTime == 0 && time.dwLowDateTime == 0)
@@ -20,8 +20,8 @@ namespace ModioX.Extensions
 
             unchecked
             {
-                uint low = (uint)time.dwLowDateTime;
-                long ft = ((long)time.dwHighDateTime << 32) | low;
+                var low = (uint)time.dwLowDateTime;
+                var ft = ((long)time.dwHighDateTime << 32) | low;
                 return DateTime.FromFileTimeUtc(ft);
             }
         }

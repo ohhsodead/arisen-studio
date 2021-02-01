@@ -24,13 +24,13 @@ namespace ModioX.Io
         /// Gets the current path to the specified known folder as currently configured. This does
         /// not require the folder to be existent.
         /// </summary>
-        /// <param name="knownFolder">The known folder which current path will be returned.</param>
+        /// <param name="knownFolder"> The known folder which current path will be returned. </param>
         /// <param name="defaultUser">
-        /// Specifies if the paths of the default user (user profile template) will be used.
-        /// This requires administrative rights.
+        /// Specifies if the paths of the default user (user profile template) will be used. This
+        /// requires administrative rights.
         /// </param>
-        /// <returns>The default path of the known folder.</returns>
-        /// <exception cref="ExternalException">Thrown if the path could not be retrieved.</exception>
+        /// <returns> The default path of the known folder. </returns>
+        /// <exception cref="ExternalException"> Thrown if the path could not be retrieved. </exception>
         public static string GetPath(KnownFolder knownFolder, bool defaultUser = false)
         {
             return GetPath(knownFolder, KnownFolderFlags.DoNotVerify, defaultUser);
@@ -39,8 +39,8 @@ namespace ModioX.Io
         private static string GetPath(KnownFolder knownFolder, KnownFolderFlags flags,
             bool defaultUser)
         {
-            int result = SHGetKnownFolderPath(new Guid(KnownFoldersGuid[(int)knownFolder]),
-                (uint)flags, new IntPtr(defaultUser ? -1 : 0), out IntPtr outPath);
+            var result = SHGetKnownFolderPath(new Guid(KnownFoldersGuid[(int)knownFolder]),
+                (uint)flags, new IntPtr(defaultUser ? -1 : 0), out var outPath);
             if (result >= 0)
             {
                 return Marshal.PtrToStringUni(outPath);

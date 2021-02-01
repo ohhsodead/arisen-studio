@@ -1,10 +1,11 @@
-﻿using DevExpress.XtraEditors;
+﻿using System.Linq;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
-using System.Linq;
-using System.Windows.Forms;
+using ModioX.Models.Database;
 
-namespace ModioX.Models.Database
+namespace ModioX.Database
 {
     /// <summary>
     /// Get the category information.
@@ -38,17 +39,16 @@ namespace ModioX.Models.Database
         }
 
         /// <summary>
-        /// Return the user's game region, either automatically by searching existing console directories or prompt
-        /// the user to select one.
+        /// Return the user's game region, either automatically by searching existing console
+        /// directories or prompt the user to select one.
         /// </summary>
-        /// <param name="owner">Parent form</param>
-        /// <param name="gameId">Game Id</param>
-        /// <returns></returns>
+        /// <param name="gameId"> Game Id </param>
+        /// <returns> </returns>
         public string GetGameRegion(string gameId)
         {
             if (MainWindow.Settings.RememberGameRegions)
             {
-                string gameRegion = MainWindow.Settings.GetGameRegion(gameId);
+                var gameRegion = MainWindow.Settings.GetGameRegion(gameId);
 
                 if (!string.IsNullOrEmpty(gameRegion))
                 {
@@ -58,9 +58,9 @@ namespace ModioX.Models.Database
 
             if (MainWindow.Settings.AutoDetectGameRegions)
             {
-                System.Collections.Generic.List<string> foundRegions = Regions.Where(region => MainWindow.FtpConnection.DirectoryExists($"/dev_hdd0/game/{region}")).ToList();
+                var foundRegions = Regions.Where(region => MainWindow.FtpConnection.DirectoryExists($"/dev_hdd0/game/{region}")).ToList();
 
-                foreach (string region in foundRegions.Where(region => XtraMessageBox.Show(
+                foreach (var region in foundRegions.Where(region => XtraMessageBox.Show(
                     $"Game Region: {region} has been found for: {Title}\nIs this correct?", "Found Game Region",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                 {

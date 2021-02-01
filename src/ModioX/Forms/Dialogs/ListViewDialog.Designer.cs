@@ -1,4 +1,4 @@
-﻿namespace ModioX.Windows
+﻿namespace ModioX.Forms.Dialogs
 {
     partial class ListViewDialog
     {

@@ -1,14 +1,15 @@
-﻿using ModioX.Extensions;
-using ModioX.Io;
-using ModioX.Models.Resources;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
+using ModioX.Extensions;
+using ModioX.Io;
+using ModioX.Models.Database;
+using ModioX.Models.Resources;
 
-namespace ModioX.Models.Database
+namespace ModioX.Database
 {
     /// <summary>
     /// Get the mod information.
@@ -40,35 +41,24 @@ namespace ModioX.Models.Database
 
         public List<DownloadFiles> DownloadFiles { get; set; }
 
-        public ConsoleTypePrefix GetConsoleType() 
+        public ConsoleTypePrefix GetConsoleType()
         {
-            switch (ConsoleType)
+            return ConsoleType switch
             {
-                case "PS3":
-                    return ConsoleTypePrefix.PS3;
-                case "XBOX":
-                    return ConsoleTypePrefix.XBOX;
-                default:
-                    return ConsoleTypePrefix.PS3;
-            }
+                "PS3" => ConsoleTypePrefix.PS3,
+                "XBOX" => ConsoleTypePrefix.XBOX,
+                _ => ConsoleTypePrefix.PS3
+            };
         }
 
         /// <summary>
         /// Get the category type.
         /// </summary>
-        /// <param name="categoriesData"></param>
-        /// <returns></returns>
+        /// <param name="categoriesData"> </param>
+        /// <returns> </returns>
         public CategoryType GetCategoryType(CategoriesData categoriesData)
         {
-            foreach (Category category in categoriesData.Categories)
-            {
-                if (category.Id.ToLower().Equals(GameId.ToLower()))
-                {
-                    return category.CategoryType;
-                }
-            }
-
-            return CategoryType.Game;
+            return categoriesData.Categories.FirstOrDefault(x => x.Id.EqualsIgnoreCase(GameId))?.CategoryType ?? CategoryType.Game;
         }
 
         /// <summary>
@@ -89,7 +79,7 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Check whether any files are installed at the 'dev_rebug' (firmware) folder.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> </returns>
         public bool IsInstallToRebugFolder => DownloadFiles.Any(x => x.InstallsToRebugFolder);
 
         /// <summary>
@@ -105,50 +95,36 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Get all the mod types.
         /// </summary>
-        /// <returns></returns>
-        public List<string> ModTypes
-        {
-            get
-            {
-                List<string> modTypes = new List<string>();
-
-                foreach (string modType in Type.Split('/'))
-                {
-                    modTypes.Add(modType);
-                }
-
-                return modTypes;
-            }
-        }
+        /// <returns> </returns>
+        public IEnumerable<string> ModTypes => Type.Split('/');
 
         /// <summary>
         /// Get all the mod versions if there are multiple.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> </returns>
         public List<string> Versions
         {
             get
             {
-                List<string> versions = new List<string>();
+                var versions = new List<string>();
 
-                if (Version == "n/a")
+                switch (Version)
                 {
-                    versions.Add("n/a");
-                }
-                else if (Version == "-")
-                {
-                    versions.Add("-");
-                }
-                else if (Version == "")
-                {
-                    versions.Add("-");
-                }
-                else
-                {
-                    foreach (string version in Version.Split('/'))
-                    {
-                        versions.Add("v" + version);
-                    }
+                    case "n/a":
+                        versions.Add("n/a");
+                        break;
+
+                    case "-":
+                    case "":
+                        versions.Add("-");
+                        break;
+
+                    default:
+                        {
+                            versions.AddRange(Version.Split('/').Select(version => "v" + version));
+
+                            break;
+                        }
                 }
 
                 return versions;
@@ -158,49 +134,35 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Get all the supported firmwares.
         /// </summary>
-        /// <returns></returns>
-        public List<string> Firmwares
-        {
-            get
-            {
-                List<string> firmwares = new List<string>();
-
-                foreach (string firmware in Firmware.Split('/'))
-                {
-                    firmwares.Add(firmware);
-                }
-
-                return firmwares;
-            }
-        }
+        /// <returns> </returns>
+        public List<string> Firmwares => Firmware.Split('/').ToList();
 
         /// <summary>
         /// Get the supported game regions.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> </returns>
         public List<string> GameRegions
         {
             get
             {
-                List<string> regions = new List<string>();
+                var regions = new List<string>();
 
-                foreach (string region in Region.Split('/'))
+                foreach (var region in Region.Split('/'))
                 {
-                    if (region.Equals("ALL"))
+                    switch (region)
                     {
-                        regions.Add("All Regions");
-                    }
-                    else if (region.Equals("-"))
-                    {
-                        regions.Add("All Regions");
-                    }
-                    else if (region.Equals("n/a"))
-                    {
-                        regions.Add("n/a");
-                    }
-                    else
-                    {
-                        regions.Add(region);
+                        case "ALL":
+                        case "-":
+                            regions.Add("All Regions");
+                            break;
+
+                        case "n/a":
+                            regions.Add("n/a");
+                            break;
+
+                        default:
+                            regions.Add(region);
+                            break;
                     }
                 }
 
@@ -211,42 +173,44 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Get the game modes actual names from their abbreviated names.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> </returns>
         public List<string> GameModes
         {
             get
             {
-                List<string> gameModes = new List<string>();
+                var gameModes = new List<string>();
 
-                foreach (string mode in Configuration.Split('/'))
+                foreach (var mode in Configuration.Split('/'))
                 {
-                    if (mode.Equals("ALL"))
+                    switch (mode)
                     {
-                        gameModes.Add("All Modes");
-                    }
-                    else if (mode.Equals("MP"))
-                    {
-                        gameModes.Add("Multiplayer");
-                    }
-                    else if (mode.Equals("ZM"))
-                    {
-                        gameModes.Add("Zombies");
-                    }
-                    else if (mode.Equals("SP"))
-                    {
-                        gameModes.Add("Singleplayer");
-                    }
-                    else if (mode.Equals("SPEC OPS"))
-                    {
-                        gameModes.Add("Special Ops");
-                    }
-                    else if (mode.Equals("-"))
-                    {
-                        gameModes.Add("n/a");
-                    }
-                    else
-                    {
-                        gameModes.Add("n/a");
+                        case "ALL":
+                            gameModes.Add("All Modes");
+                            break;
+
+                        case "MP":
+                            gameModes.Add("Multiplayer");
+                            break;
+
+                        case "ZM":
+                            gameModes.Add("Zombies");
+                            break;
+
+                        case "SP":
+                            gameModes.Add("Singleplayer");
+                            break;
+
+                        case "SPEC OPS":
+                            gameModes.Add("Special Ops");
+                            break;
+
+                        case "-":
+                            gameModes.Add("n/a");
+                            break;
+
+                        default:
+                            gameModes.Add("n/a");
+                            break;
                     }
                 }
 
@@ -257,47 +221,38 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Get the download url specified by the user if there are multiple types
         /// </summary>
-        /// <returns>Download Archive URL</returns>
+        /// <returns> Download Archive URL </returns>
         public DownloadFiles GetDownloadFiles()
         {
-            if (DownloadFiles.Count > 1)
-            {
-                List<string> downloadNames = DownloadFiles.Select(x => x.Name).ToList();
-                string downloadName = DialogExtensions.ShowListInputDialog("Install Downloads", downloadNames);
+            if (DownloadFiles.Count <= 1) return DownloadFiles.First();
 
-                if (string.IsNullOrEmpty(downloadName))
-                {
-                    return null;
-                }
+            var downloadNames = DownloadFiles.Select(x => x.Name).ToList();
+            var downloadName = DialogExtensions.ShowListInputDialog("Install Downloads", downloadNames);
 
-                return DownloadFiles.First(x => x.Name.Equals(downloadName));
-            }
-            else
-            {
-                return DownloadFiles.First();
-            }
+            return string.IsNullOrEmpty(downloadName) ? null : DownloadFiles.First(x => x.Name.Equals(downloadName));
         }
 
         /// <summary>
         /// Get the directory for extracting modded files to.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> </returns>
         public string DownloadDataDirectory(DownloadFiles downloadFiles) => $@"{UserFolders.AppModsDataDirectory}{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} ({StringExtensions.ReplaceInvalidChars(downloadFiles.Name)}) (#{Id})\";
 
         /// <summary>
         /// Gets the downloaded mods archive file path.
         /// </summary>
-        /// <returns>Mods Archive File Path</returns>
+        /// <returns> Mods Archive File Path </returns>
         public string ArchiveZipFile(DownloadFiles downloadFiles) => $@"{UserFolders.AppModsDataDirectory}{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} ({StringExtensions.ReplaceInvalidChars(downloadFiles.Name)}) (#{Id}).zip";
 
         /// <summary>
-        /// Downloads the modded files archive and extracts all files to <see cref="DownloadDataDirectory"/>
+        /// Downloads the modded files archive and extracts all files to <see
+        /// cref="DownloadDataDirectory" />
         /// </summary>
-        /// <param name="downloadFiles"></param>
+        /// <param name="downloadFiles"> </param>
         public void DownloadInstallFiles(DownloadFiles downloadFiles)
         {
-            string archivePath = DownloadDataDirectory(downloadFiles);
-            string archiveFilePath = ArchiveZipFile(downloadFiles);
+            var archivePath = DownloadDataDirectory(downloadFiles);
+            var archiveFilePath = ArchiveZipFile(downloadFiles);
 
             if (Directory.Exists(archivePath))
             {
@@ -316,7 +271,7 @@ namespace ModioX.Models.Database
 
             Directory.CreateDirectory(archivePath);
 
-            using (WebClient webClient = new WebClient())
+            using (var webClient = new WebClient())
             {
                 webClient.Headers.Add("Accept: application/zip");
                 webClient.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
@@ -329,28 +284,28 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Download mods archive to the specified local folder path
         /// </summary>
-        /// <param name="categoriesData"></param>
-        /// <param name="downloadFiles"></param>
-        /// <param name="localPath">Path to downloads mods archive at folder</param>
+        /// <param name="categoriesData"> </param>
+        /// <param name="downloadFiles"> </param>
+        /// <param name="localPath"> Path to downloads mods archive at folder </param>
         public void DownloadArchiveAtPath(CategoriesData categoriesData, DownloadFiles downloadFiles, string localPath)
         {
-            string zipFileName = $"{StringExtensions.ReplaceInvalidChars(Name)} v{Version} for {GameId.ToUpper()}.zip";
-            string zipFilePath = Path.Combine(localPath, zipFileName);
+            var zipFileName = $"{StringExtensions.ReplaceInvalidChars(Name)} v{Version} for {GameId.ToUpper()}.zip";
+            var zipFilePath = Path.Combine(localPath, zipFileName);
 
             GenerateReadMeAtPath(categoriesData, DownloadDataDirectory(downloadFiles));
 
-            using WebClient webClient = new WebClient();
+            using var webClient = new WebClient();
             webClient.Headers.Add("Accept: application/zip");
             webClient.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
             webClient.DownloadFile(new Uri(downloadFiles.URL), zipFilePath);
-            Archives.AddFilesToZip(zipFilePath, new string[] { Path.Combine(DownloadDataDirectory(downloadFiles), "README.txt") });
+            Archives.AddFilesToZip(zipFilePath, new[] { Path.Combine(DownloadDataDirectory(downloadFiles), "README.txt") });
         }
 
         /// <summary>
         /// Creates and writes the mod information to a text file at the specified path
         /// </summary>
-        /// <param name="categoriesData"></param>
-        /// <param name="directoryPath"></param>
+        /// <param name="categoriesData"> </param>
+        /// <param name="directoryPath"> </param>
         public void GenerateReadMeAtPath(CategoriesData categoriesData, string directoryPath)
         {
             if (!Directory.Exists(directoryPath))
@@ -358,10 +313,10 @@ namespace ModioX.Models.Database
                 Directory.CreateDirectory(directoryPath);
             }
 
-            // Create contents and write them to readme file 
-            File.WriteAllLines(Path.Combine(directoryPath, "README.txt"), new string[]
+            // Create contents and write them to readme file
+            File.WriteAllLines(Path.Combine(directoryPath, "README.txt"), new[]
             {
-                    "Mod ID: #" + Id.ToString(),
+                    "Mod ID: #" + Id,
                     "Category: " + categoriesData.GetCategoryById(GameId).Title,
                     "Name: " + Name,
                     "System Type: " + string.Join(", ", Firmwares),

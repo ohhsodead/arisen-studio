@@ -1,9 +1,9 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DevExpress.XtraEditors;
 
-namespace ModioX.Windows
+namespace ModioX.Forms.Dialogs
 {
     public partial class ListViewDialog : XtraForm
     {
@@ -18,7 +18,7 @@ namespace ModioX.Windows
 
         private void ListViewDialog_Load(object sender, EventArgs e)
         {
-            foreach (string item in Items) ListBoxItems.Items.Add(Text = item);
+            foreach (var item in Items) ListBoxItems.Items.Add(Text = item);
 
             // Increase form size to fit listview contents
             Width = ListBoxItems.Width + Items.Max(w => w.Length) + 70;

@@ -35,6 +35,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 case 0:
                     UpdateTypeURL = RetailUpdatesURL;
                     break;
+
                 case 1:
                     UpdateTypeURL = DebugUpdatesURL;
                     break;
@@ -49,8 +50,8 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 return;
             }
 
-            string gameTitle = HttpExtensions.GetGameTitleFromTitleID(TextBoxTitleID.Text);
-            Models.Game_Updates.Titlepatch gameUpdates = HttpExtensions.GetGameUpdatesFromTitleID(UpdateTypeURL, TextBoxTitleID.Text);
+            var gameTitle = HttpExtensions.GetGameTitleFromTitleID(TextBoxTitleID.Text);
+            var gameUpdates = HttpExtensions.GetGameUpdatesFromTitleID(UpdateTypeURL, TextBoxTitleID.Text);
 
             if (gameUpdates == null)
             {
@@ -60,7 +61,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             {
                 GridGameUpdates.DataSource = null;
 
-                DataTable gameUpdateFiles = DataExtensions.CreateDataTable(new List<DataColumn>()
+                var gameUpdateFiles = DataExtensions.CreateDataTable(new List<DataColumn>()
                 {
                     new DataColumn("File URL", typeof(string)),
                     new DataColumn("File SHA1", typeof(string)),
@@ -69,7 +70,6 @@ namespace ModioX.Forms.Tools.PS3_Tools
                     new DataColumn("File Size", typeof(string)),
                     new DataColumn("System Version", typeof(string)),
                 });
-
 
                 foreach (var update in gameUpdates.Tag.Package)
                 {
@@ -116,9 +116,9 @@ namespace ModioX.Forms.Tools.PS3_Tools
             {
                 if (MainWindow.IsConsoleConnected)
                 {
-                    string updateUrl = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[0]);
-                    string fileName = Path.GetFileName(updateUrl);
-                    string filePath = KnownFolders.GetPath(KnownFolder.Downloads) + "/" + fileName;
+                    var updateUrl = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[0]);
+                    var fileName = Path.GetFileName(updateUrl);
+                    var filePath = KnownFolders.GetPath(KnownFolder.Downloads) + "/" + fileName;
 
                     UpdateStatus("Downloading file: " + fileName);
                     HttpExtensions.DownloadFile(updateUrl, filePath);
@@ -137,9 +137,9 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void ButtonDownloadFile_Click(object sender, EventArgs e)
         {
-            string updateUrl = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[0]);
-            string fileName = Path.GetFileName(updateUrl);
-            string folderPath = DialogExtensions.ShowFolderBrowseDialog(this, "Select the folder where you want to download the game update package.");
+            var updateUrl = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[0]);
+            var fileName = Path.GetFileName(updateUrl);
+            var folderPath = DialogExtensions.ShowFolderBrowseDialog(this, "Select the folder where you want to download the game update package.");
 
             if (folderPath != null)
             {
@@ -152,14 +152,14 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void ButtonCopyURLToClipboard_Click(object sender, EventArgs e)
         {
-            string updateUrl = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[0]);
+            var updateUrl = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[0]);
             Clipboard.SetText(updateUrl);
             XtraMessageBox.Show("Update URL has been copied to clipboard.", "Copied", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ButtonCopySHA1ToClipboard_Click(object sender, EventArgs e)
         {
-            string updateSHA1 = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[1]);
+            var updateSHA1 = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[1]);
             Clipboard.SetText(updateSHA1);
             XtraMessageBox.Show("Update SHA1 has been copied to clipboard.", "Copied", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

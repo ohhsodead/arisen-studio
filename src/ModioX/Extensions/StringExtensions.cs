@@ -48,9 +48,9 @@ namespace ModioX.Extensions
             if (nth < 0)
                 throw new ArgumentException("Can not find a negative index of substring in string. Must start with 0");
 
-            int offset = str.IndexOf(value, StringComparison.Ordinal);
+            var offset = str.IndexOf(value, StringComparison.Ordinal);
 
-            int tries = 0;
+            var tries = 0;
             while (offset != -1 && tries < nth)
             {
                 offset = str.IndexOf(value, offset + 1, StringComparison.Ordinal);
@@ -68,7 +68,7 @@ namespace ModioX.Extensions
         /// <returns></returns>
         public static string RemoveFirstInstanceOfString(this string value, string removeString)
         {
-            int index = value.IndexOf(removeString, StringComparison.Ordinal);
+            var index = value.IndexOf(removeString, StringComparison.Ordinal);
             return index < 0 ? value : value.Remove(index, removeString.Length);
         }
 

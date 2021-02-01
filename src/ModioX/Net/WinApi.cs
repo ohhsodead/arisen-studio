@@ -31,8 +31,10 @@ namespace ModioX.Net
             public int nFileSizeLow;
             public int dwReserved0;
             public int dwReserved1;
+
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = MAX_PATH)]
             public char[] fileName;
+
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 14)]
             public char[] alternateFileName;
         }
@@ -52,15 +54,12 @@ namespace ModioX.Net
             public int dwOffsetHigh;
         }
 
-
-
         public static string TranslateInternetError(uint errorCode)
         {
-            IntPtr hModule = IntPtr.Zero;
+            var hModule = IntPtr.Zero;
             try
             {
-
-                StringBuilder buf = new StringBuilder(255);
+                var buf = new StringBuilder(255);
                 hModule = LoadLibrary("wininet.dll");
                 if (FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, hModule, errorCode, 0U, buf, (uint)buf.Capacity + 1, IntPtr.Zero) != 0)
                 {
@@ -94,9 +93,8 @@ namespace ModioX.Net
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr LoadLibrary([In()][MarshalAs(UnmanagedType.LPTStr)] string lpLibFileName);
-
-
     }
+
     public static class WININET
     {
         public const int INTERNET_SERVICE_FTP = 1;
@@ -257,7 +255,5 @@ namespace ModioX.Net
             [In][Out] ref WINAPI.INTERNET_BUFFERS lpBuffersOut,
             [In] int dwFlags,
             [In][Out] int dwContext);
-
     }
-
 }
