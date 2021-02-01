@@ -3,13 +3,13 @@ using System.IO.Compression;
 
 namespace ModioX.Io
 {
-    public class Archives
+    public static class Archives
     {
         /// <summary>
         /// Copy files to the the archive ZIP file
         /// </summary>
-        /// <param name="zipPath"></param>
-        /// <param name="files"></param>
+        /// <param name="zipPath"> </param>
+        /// <param name="files"> </param>
         public static void AddFilesToZip(string zipPath, string[] files)
         {
             if (files == null || files.Length == 0)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ModioX.Extensions;
 
 namespace ModioX.Models.Database
 {
@@ -19,33 +20,16 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Get the total number of games.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> </returns>
         public int TotalGames => (from Category category in Categories
                                   where category.CategoryType == CategoryType.Game
                                   select category).Count();
 
         /// <summary>
-        /// Get the game regions for the specified <see cref="Category.Id" />.
-        /// </summary>
-        /// <param name="gameId"></param>
-        /// <returns></returns>
-        public List<string> GetGameRegions(string gameId)
-        {
-            foreach (Category category in from Category category in Categories
-                                          where category.Id.Equals(gameId)
-                                          select category)
-            {
-                return category.Regions.ToList();
-            }
-
-            throw new Exception("Unable to find game matching the specified id: " + gameId);
-        }
-
-        /// <summary>
         /// Get all of the categories that is of <see cref="CategoryType" />.
         /// </summary>
-        /// <param name="categoryType"></param>
-        /// <returns></returns>
+        /// <param name="categoryType"> </param>
+        /// <returns> </returns>
         public List<Category> GetCategoriesByType(CategoryType categoryType)
         {
             return (from Category game in Categories
@@ -56,16 +40,12 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Get the game data matching the specified title
         /// </summary>
-        /// <param name="categoryId">Title of the game</param>
-        /// <returns>Game information</returns>
+        /// <param name="categoryId"> Title of the game </param>
+        /// <returns> Game information </returns>
         public Category GetCategoryById(string categoryId)
         {
-            foreach (Category category in from Category category in Categories
-                                          where category.Id.ToLower().Equals(categoryId.ToLower())
-                                          select category)
-            {
-                return category;
-            }
+            var category = Categories.FirstOrDefault(x => x.Id.EqualsIgnoreCase(categoryId));
+            if (category != null) return category;
 
             throw new Exception("Unable to find game data matching the specified id: " + categoryId);
         }
@@ -73,16 +53,12 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Get the game data matching the specified title
         /// </summary>
-        /// <param name="title">Title of the game</param>
-        /// <returns>Game information</returns>
+        /// <param name="title"> Title of the game </param>
+        /// <returns> Game information </returns>
         public Category GetCategoryByTitle(string title)
         {
-            foreach (Category game in from Category game in Categories
-                                      where game.Title.ToLower().Equals(title.ToLower())
-                                      select game)
-            {
-                return game;
-            }
+            var category = Categories.FirstOrDefault(x => x.Title.EqualsIgnoreCase(title));
+            if (category != null) return category;
 
             throw new Exception("Unable to find game data for the specified title: " + title);
         }
