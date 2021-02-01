@@ -9,7 +9,6 @@ All notable changes to this project will be documented in this file.
 - Upgraded application to .NET Framework 4.8
 - Removed redundant and unused dependencies
 - Redesigned Connections and Settings form
-- Added New Connection button to Connection dialog
 - Added support for Xbox RGH/JTAG consoles
 - Added images for all PS3 and Xbox models
 - Added ability to create and add mods to your own lists
@@ -23,6 +22,8 @@ All notable changes to this project will be documented in this file.
 - Fixed some UI bugs and added all missing icons
 - Fixed an issue with creating folders when installing mods
 - Fixed an issue with deleting folders when uninstalling mods
+
+This release couldn't be made possible without the help from all of the awesome contributors that have driven ModioX to what it is now and what's to come in the future. So, whether you're a casual user, contributor or developer, thank you all for supporting me through everything - it's been a little tough but we got there! <3 u all
 
 ## Beta v1.4.8
 - Improved some user interface elements

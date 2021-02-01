@@ -89,9 +89,10 @@ namespace ModioX.Forms.Windows
         public static FtpClient FtpClient { get; private set; }
 
         /// <summary>
-        /// Creates an FTP connection for use with uploading mods, not reliable for the built-in file manager.
+        /// Creates an FTP connection for use with uploading mods, not reliable for the built-in
+        /// file manager.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> </returns>
         public static FtpConnection FtpConnection
         {
             get
@@ -130,14 +131,14 @@ namespace ModioX.Forms.Windows
 
             Text = $@"ModioX - {UpdateExtensions.CurrentVersionName}";
 
-//#if DEBUG
-//            Text += " - Welcome, Developer! (DEBUG)";
-//            CurrentMD5 = ComputeHash(Application.ProductName + ".exe");
-//#endif
-//            if (ComputeHash(Application.ProductName + ".exe") != CurrentMD5)
-//            {
-//                Environment.Exit(0);
-//            }
+            //#if DEBUG
+            //            Text += " - Welcome, Developer! (DEBUG)";
+            //            CurrentMD5 = ComputeHash(Application.ProductName + ".exe");
+            //#endif
+            //            if (ComputeHash(Application.ProductName + ".exe") != CurrentMD5)
+            //            {
+            //                Environment.Exit(0);
+            //            }
 
             LoadSettings();
             EnableConsoleActions();
@@ -171,8 +172,7 @@ namespace ModioX.Forms.Windows
         }
 
         /// <summary>
-        /// Save Application Settings On Form Closing Event,
-        /// Also Closes Xbox or PS3 Connections.
+        /// Save Application Settings On Form Closing Event, Also Closes Xbox or PS3 Connections.
         /// </summary>
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -388,7 +388,6 @@ namespace ModioX.Forms.Windows
 
         private void ButtonXboxVirtualController_ItemClick(object sender, ItemClickEventArgs e)
         {
-
         }
 
         private void ButtonXboxQuickSignIn_ItemClick(object sender, ItemClickEventArgs e)
@@ -403,19 +402,11 @@ namespace ModioX.Forms.Windows
 
         private void ButtonXboxOpenCloseTray_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (XboxConsole.IsTrayOpen)
-            {
-                XboxConsole.Tray(TRAY_STATE.OPEN);
-            }
-            else
-            {
-                XboxConsole.Tray(TRAY_STATE.CLOSED);
-            }
+            XboxConsole.Tray(XboxConsole.IsTrayOpen ? Tray_Options.Open : Tray_Options.Close);
         }
 
         private void ButtonXboxXNotifySend_ItemClick(object sender, ItemClickEventArgs e)
         {
-
         }
 
         private void ButtonXboxShowProfileIDInfo_ItemClick(object sender, ItemClickEventArgs e)
@@ -612,7 +603,7 @@ namespace ModioX.Forms.Windows
             Application.Exit();
         }
 
-        #endregion
+        #endregion Header Menu Bar
 
         #region Search & Filtering Mods Functions
 
@@ -699,7 +690,7 @@ namespace ModioX.Forms.Windows
                 IsCustomListSelected);
         }
 
-        #endregion
+        #endregion Search & Filtering Mods Functions
 
         #region NEED OLD CONTEXT MENU FUNCTIONS TO MOVE TO NEW POPUP MENU FOR GRID VIEW MODS
 
@@ -752,7 +743,7 @@ namespace ModioX.Forms.Windows
             ButtonModInstall.PerformClick();
         }
 
-        #endregion
+        #endregion NEED OLD CONTEXT MENU FUNCTIONS TO MOVE TO NEW POPUP MENU FOR GRID VIEW MODS
 
         #region MODS LIBRARY
 
@@ -819,7 +810,7 @@ namespace ModioX.Forms.Windows
             DialogExtensions.ShowXboxMemoryViewer(this, SelectedCategory.Title);
         }
 
-        #endregion
+        #endregion MODS LIBRARY
 
         #region Categories
 
@@ -943,19 +934,20 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        #endregion
+        #endregion Categories
 
         #region Load & Display Mods by Category Id with the user's filters
 
         /// <summary>
-        /// Loads all the mods for the specified gameId, matching with filters: name, firmware, type and region
+        /// Loads all the mods for the specified gameId, matching with filters: name, firmware, type
+        /// and region
         /// </summary>
-        /// <param name="categoryId">Filter by GameId</param>
-        /// <param name="name">Filter by Name</param>
-        /// <param name="firmware">Filter by Firmware</param>
-        /// <param name="type">Filter by Type</param>
-        /// <param name="region">Filter by Region</param>
-        /// <param name="isCustomList">Filter by Region</param>
+        /// <param name="categoryId"> Filter by GameId </param>
+        /// <param name="name"> Filter by Name </param>
+        /// <param name="firmware"> Filter by Firmware </param>
+        /// <param name="type"> Filter by Type </param>
+        /// <param name="region"> Filter by Region </param>
+        /// <param name="isCustomList"> Filter by Region </param>
         private void LoadModsByCategoryId(string categoryId, string name, string firmware, string type, string region, bool isCustomList)
         {
             LoadInstalledGameMods();
@@ -1068,7 +1060,7 @@ namespace ModioX.Forms.Windows
             ComboBoxRegion.SelectedIndexChanged += ComboBoxRegion_SelectedIndexChanged;
         }
 
-        #endregion
+        #endregion Load & Display Mods by Category Id with the user's filters
 
         #region Install, Uninstall, Download & Favorite Buttons
 
@@ -1117,7 +1109,7 @@ namespace ModioX.Forms.Windows
             ControlExtensions.SetControlTextWidth(ButtonModFavorite, ButtonModFavorite.Text);
         }
 
-        #endregion
+        #endregion Install, Uninstall, Download & Favorite Buttons
 
         #region Connect & Disconnect Console Functions
 
@@ -1246,7 +1238,7 @@ namespace ModioX.Forms.Windows
             XtraMessageBox.Show(this, "Successfully disconnected from console.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        #endregion
+        #endregion Connect & Disconnect Console Functions
 
         #region Installed Mods/Plugins
 
@@ -1350,14 +1342,14 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        #endregion
+        #endregion Installed Mods/Plugins
 
         #region Load Mods Information to Right-Side Panel Function
 
         /// <summary>
         /// Set the UI to display the specified mod details
         /// </summary>
-        /// <param name="modId">Specifies the <see cref="ModsData.ModItem.Id" /></param>
+        /// <param name="modId"> Specifies the <see cref="ModsData.ModItem.Id" /> </param>
         private void ShowModInformation(int modId)
         {
             ModItem modItem = Mods.GetModById(modId);
@@ -1459,14 +1451,12 @@ namespace ModioX.Forms.Windows
             ScrollBarModInformation.Value = FlowPanelDetails.VerticalScroll.Value;
         }
 
-        #endregion
+        #endregion Load Mods Information to Right-Side Panel Function
 
         #region Install, Uninstall, Download & Favorite Functions
 
-        /// <summary>
-        /// Install the specified <paramref name="modItem"/> files.
-        /// </summary>
-        /// <param name="modItem">The <see cref="ModsData.ModItem"/> to install.<param>
+        /// <summary> Install the specified <paramref name="modItem"/> files. </summary> <param
+        /// name="modItem">The <see cref="ModsData.ModItem"/> to install.<param>
         public void InstallMods(ModItem modItem)
         {
             Category category = Database.CategoriesData.GetCategoryById(modItem.GameId);
@@ -1526,7 +1516,8 @@ namespace ModioX.Forms.Windows
 
                 SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found archive download link.");
 
-                // Check whether mods are being installed to the firmware folder and let the user know if they want to cancel
+                // Check whether mods are being installed to the firmware folder and let the user
+                // know if they want to cancel
                 if (downloadFiles.InstallsToRebugFolder)
                 {
                     StringBuilder message = new StringBuilder("Files are being installed to the firmware folder (dev_rebug), ")
@@ -1611,7 +1602,8 @@ namespace ModioX.Forms.Windows
                         userId = string.Empty;
                     }
 
-                    // If it's a game save then alert the user that a USB device must be connected to console.
+                    // If it's a game save then alert the user that a USB device must be connected
+                    // to console.
                     if (downloadFiles.RequiresUsbDevice)
                     {
                         if (modItem.IsGameSave)
@@ -1739,10 +1731,12 @@ namespace ModioX.Forms.Windows
                                     // Get the backup details for this game file if one has been created
                                     BackupFile backupFile = Settings.GetGameFileBackup(modItem.GameId, installFileName, installPath);
 
-                                    // A backup hasn't been created for this file, so it will be ignored and kept alone - in case issues occur with the game
+                                    // A backup hasn't been created for this file, so it will be
+                                    // ignored and kept alone - in case issues occur with the game
                                     if (backupFile == null)
                                     {
-                                        // Alert the user there is no backup for this file and ask the user if one would like to be created
+                                        // Alert the user there is no backup for this file and ask
+                                        // the user if one would like to be created
                                         if (XtraMessageBox.Show("Would you like to backup the current game file? This will be restored when you choose to uninstall.\n\nGame File Name: " +
                                             Path.GetFileName(installFilePath), "Backup File", MessageBoxButtons.YesNo) == DialogResult.Yes)
                                         {
@@ -1924,8 +1918,8 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Uninstall all of the files for the <paramref name="modItem" />.
         /// </summary>
-        /// <param name="modItem">Mod details from the <see cref="ModsData.ModItem" /></param>
-        /// <param name="region">Game region</param>
+        /// <param name="modItem"> Mod details from the <see cref="ModsData.ModItem" /> </param>
+        /// <param name="region"> Game region </param>
         public void UninstallMods(ModItem modItem, string region = "")
         {
             Category category = Database.CategoriesData.GetCategoryById(modItem.GameId);
@@ -2030,10 +2024,12 @@ namespace ModioX.Forms.Windows
                         userId = string.Empty;
                     }
 
-                    // If this mod requires a usb device to be connected to console, ask the user whether they want to continue with this
+                    // If this mod requires a usb device to be connected to console, ask the user
+                    // whether they want to continue with this
                     if (downloadFiles.RequiresUsbDevice)
                     {
-                        // If this is a modded gamesave then inform the user they must remove the gamesave from their usb themselves
+                        // If this is a modded gamesave then inform the user they must remove the
+                        // gamesave from their usb themselves
                         if (modItem.IsGameSave)
                         {
                             XtraMessageBox.Show("You can't uninstall games saves. You must remove the game save folder from your USB device or use the XMB menu.", "Can't Uninstall");
@@ -2243,11 +2239,11 @@ namespace ModioX.Forms.Windows
                 }
             }
         }
-        
+
         /// <summary>
         /// Download the modded files archive to the user's specified path.
         /// </summary>
-        /// <param name="modItem"></param>
+        /// <param name="modItem"> </param>
         private void DownloadModArchive(ModItem modItem)
         {
             Category category = Database.CategoriesData.GetCategoryById(modItem.GameId);
@@ -2290,7 +2286,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Adds or removes the specified <see cref="ModsData.ModItem" /> to the users favorites list.
         /// </summary>
-        /// <param name="modItem"></param>
+        /// <param name="modItem"> </param>
         private void FavoriteMod(ModItem modItem)
         {
             Category category = Database.CategoriesData.GetCategoryById(modItem.GameId);
@@ -2318,7 +2314,7 @@ namespace ModioX.Forms.Windows
             ButtonModFavorite.Text = Settings.FavoritedIds.Contains(modItem.Id) ? "Unfavorite" : "Favorite";
         }
 
-        #endregion
+        #endregion Install, Uninstall, Download & Favorite Functions
 
         /// <summary>
         /// Enable or disable console-only actions.
@@ -2366,7 +2362,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Set the current connected console status in the tool strip.
         /// </summary>
-        /// <param name="consoleProfile"></param>
+        /// <param name="consoleProfile"> </param>
         private void SetStatusConsole(ConsoleProfile consoleProfile)
         {
             LabelConsoleConnected.Caption = consoleProfile == null ? "Idle" : consoleProfile.ToString();
@@ -2375,8 +2371,8 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Set the current process status in the tool strip.
         /// </summary>
-        /// <param name="status"></param>
-        /// <param name="ex"></param>
+        /// <param name="status"> </param>
+        /// <param name="ex"> </param>
         public void SetStatus(string status, Exception ex = null)
         {
             LabelStatus.Caption = status;
@@ -2386,6 +2382,7 @@ namespace ModioX.Forms.Windows
                 case null:
                     Program.Log.Info(status);
                     break;
+
                 default:
                     Program.Log.Error(ex, status);
                     break;
@@ -2497,8 +2494,8 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Computes The Hash Of A Selected File Or Extentions.
         /// </summary>
-        /// <param name="s"></param>
-        /// <returns></returns>
+        /// <param name="s"> </param>
+        /// <returns> </returns>
         private static string ComputeHash(string s)
         {
             using System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();

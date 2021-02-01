@@ -19,7 +19,7 @@ using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
-    public partial class PluginsEditor : XtraForm
+    public partial class INIEditor : XtraForm
     {
         /// <summary>
         /// Get the xbox console connection.
@@ -71,7 +71,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         /// </summary>
         public IniData LaunchFileData { get; set; }
 
-        public PluginsEditor()
+        public INIEditor()
         {
             InitializeComponent();
         }
@@ -167,7 +167,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void CheckBoxEnableLiveBlock_CheckedChanged(object sender, EventArgs e)
         {
-            if (CheckBoxEnableLiveBlock.Checked)
+            if (ToggleSwitchEnableLiveBlock.Checked)
             {
                 LaunchFileData["Settings"]["liveblock"] = "true";
             }
@@ -179,7 +179,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void CheckBoxEnableLiveStrong_CheckedChanged(object sender, EventArgs e)
         {
-            if (CheckBoxEnableLiveStrong.Checked)
+            if (ToggleSwitchEnableLiveStrong.Checked)
             {
                 LaunchFileData["Settings"]["livestrong"] = "true";
             }
@@ -213,7 +213,12 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             }
         }
 
-        private void ButtonRestoreLaunchFile_Click(object sender, EventArgs e)
+        private void ButtonSaveFile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonRestoreLaunchFile_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (File.Exists(LocalLaunchBackupFilePath))
             {
@@ -230,7 +235,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             }
         }
 
-        private void ButtonSaveFile_Click(object sender, EventArgs e)
+        private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
             {

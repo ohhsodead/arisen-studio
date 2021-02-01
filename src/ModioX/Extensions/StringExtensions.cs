@@ -48,5 +48,23 @@ namespace ModioX.Extensions
 
             return $"{number:n1} {suffixes[counter]}";
         }
+
+        /// <inheritdoc cref="IsNullOrEmpty" />
+        public static bool IsNullOrEmpty(this string? value)
+        {
+            return string.IsNullOrEmpty(value);
+        }
+
+        /// <inheritdoc cref="IsNullOrWhiteSpace" />
+        public static bool IsNullOrWhiteSpace(this string? value)
+        {
+            return string.IsNullOrWhiteSpace(value);
+        }
+
+        /// <inheritdoc cref="string.Equals" />
+        public static bool EqualsIgnoreCase(this string? value, string? value2)
+        {
+            return string.Equals(value, value2, StringComparison.OrdinalIgnoreCase);
+        }
     }
 }

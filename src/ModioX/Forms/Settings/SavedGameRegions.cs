@@ -9,6 +9,7 @@ using ModioX.Models.Resources;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ModioX.Forms.Settings
@@ -127,7 +128,7 @@ namespace ModioX.Forms.Settings
                 string gameTitle = ComboBoxGameTitle.SelectedItem.ToString();
                 string gameId = Database.CategoriesData.GetCategoryByTitle(gameTitle).Id;
 
-                foreach (string gameRegion in Database.CategoriesData.GetGameRegions(gameId))
+                foreach (string gameRegion in Database.CategoriesData.GetCategoryById(gameId).Regions)
                 {
                     ComboBoxGameRegion.Properties.Items.Add(gameRegion);
                 }
@@ -168,7 +169,7 @@ namespace ModioX.Forms.Settings
 
                 var gameId = Database.CategoriesData.GetCategoryByTitle(gameTitle).Id;
 
-                if (Database.CategoriesData.GetGameRegions(gameId).Contains(gameRegion))
+                if (Database.CategoriesData.GetCategoryById(gameId).Regions.ToList().Contains(gameRegion))
                 {
                     Settings.UpdateGameRegion(gameId, gameRegion);
                 }

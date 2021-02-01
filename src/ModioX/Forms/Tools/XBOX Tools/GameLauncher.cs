@@ -20,15 +20,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void ButtonFetchGames_Click(object sender, EventArgs e)
         {
-            ListBoxGames.Items.Clear();
 
-            //foreach (IXboxFile file in XboxConsole.File.DirectoryFiles(TextBoxGamesPath.Text.ToUpper()))
-            //{
-            //    if (file.IsDirectory)
-            //    {
-            //        ListBoxGames.Items.Add(file.Name.Replace(TextBoxGamesPath.Text.ToUpper(), string.Empty));
-            //    }
-            //}
         }
     }
 }
