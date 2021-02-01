@@ -601,27 +601,27 @@ namespace ModioX.Forms.Windows
             {
                 SetStatus($"Connecting to {ConsoleProfile.Name} ({ConsoleProfile.Address})...");
 
+                using (var ftpConnection = FtpConnection)
+                {
+                    ;
+                }
+
+                FtpClient = new FtpClient
+                {
+                    Host = ConsoleProfile.Address,
+                    Port = ConsoleProfile.Port,
+                    Credentials = ConsoleProfile.UseDefaultCredentials
+                    ? new NetworkCredential("anonymous", "anonymous")
+                    : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password)
+                };
+
+                FtpClient.Connect();
+
+                IsConsoleConnected = true;
+                SetStatusConsole(ConsoleProfile);
+
                 if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
                 {
-                    using (var ftpConnection = FtpConnection)
-                    {
-                        ;
-                    }
-
-                    FtpClient = new FtpClient
-                    {
-                        Host = ConsoleProfile.Address,
-                        Port = ConsoleProfile.Port,
-                        Credentials = ConsoleProfile.UseDefaultCredentials
-                        ? new NetworkCredential("anonymous", "anonymous")
-                        : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password)
-                    };
-
-                    FtpClient.Connect();
-
-                    IsConsoleConnected = true;
-                    SetStatusConsole(ConsoleProfile);
-
                     IsWebManInstalled = WebManExtensions.IsWebManInstalled(ConsoleProfile.Address, ConsoleProfile.Port);
 
                     if (IsWebManInstalled)
@@ -630,35 +630,16 @@ namespace ModioX.Forms.Windows
                     }
 
                     ButtonConnectToPS3.Caption = "Disconnect from Console...";
+                    Mods = Database.ModsPS3;
                 }
                 else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
                 {
-                    using (var ftpConnection = FtpConnection)
-                    {
-                        ;
-                    }
-
-                    FtpClient = new FtpClient
-                    {
-                        Host = ConsoleProfile.Address,
-                        Port = ConsoleProfile.Port,
-                        Credentials = ConsoleProfile.UseDefaultCredentials
-                        ? new NetworkCredential("anonymous", "anonymous")
-                        : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password)
-                    };
-
-                    FtpClient.Connect();
-
-                    IsConsoleConnected = true;
-                    SetStatusConsole(ConsoleProfile);
-
                     ButtonConnectToXBOX.Caption = "Disconnect from Console...";
+                    Mods = Database.ModsXBOX;
                 }
 
                 SetStatus($"Successfully connected to console.");
-                XtraMessageBox.Show("Successfully connected to console.", "Success");
-
-                Mods = ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3 ? Database.ModsPS3 : Database.ModsXBOX;
+                XtraMessageBox.Show("Successfully connected to console.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 EnableConsoleActions();
                 LoadInstalledGameMods();
