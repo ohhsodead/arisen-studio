@@ -1012,8 +1012,6 @@ namespace ModioX.Forms.Windows
             dt.Columns.Add("Version", typeof(string));
             dt.Columns.Add("Creator", typeof(string));
             dt.Columns.Add("# of Files", typeof(string));
-            dt.Columns.Add("Install", typeof(Bitmap));
-            dt.Columns.Add("Download", typeof(Bitmap));
 
             foreach (ModItem modItem in Mods.GetModItems(categoryId, name, firmware, type, region, isCustomList).OrderBy(x => x.Name))
             {
@@ -1038,9 +1036,7 @@ namespace ModioX.Forms.Windows
                     modItem.Region,
                     modItem.Versions.Join(" & "),
                     modItem.Author,
-                    installFiles.Count() + (installFiles.Count() > 1 ? " Files" : " File"),
-                    ImageExtensions.ResizeBitmap(Resources.install, 20, 20),
-                    ImageExtensions.ResizeBitmap(Resources.download_from_the_cloud, 20, 20));
+                    installFiles.Count() + (installFiles.Count() > 1 ? " Files" : " File"));
             }
 
             GridControlMods.DataSource = dt;
@@ -1054,13 +1050,6 @@ namespace ModioX.Forms.Windows
             GridViewMods.Columns[5].Width = 35;
             GridViewMods.Columns[6].Width = 50;
             GridViewMods.Columns[7].Width = 35;
-            GridViewMods.Columns[8].Width = 30;
-            GridViewMods.Columns[8].MinWidth = 30;
-            GridViewMods.Columns[9].Width = 30;
-            GridViewMods.Columns[9].MinWidth = 30;
-
-            GridViewMods.Columns[8].Caption = " ";
-            GridViewMods.Columns[9].Caption = " ";
 
             ProgressMods.Visible = GridViewMods.RowCount == 0;
 
@@ -1300,7 +1289,6 @@ namespace ModioX.Forms.Windows
             dt.Columns.Add("Version", typeof(string));
             dt.Columns.Add("# Files", typeof(string));
             dt.Columns.Add("Installed On", typeof(string));
-            dt.Columns.Add(string.Empty, typeof(Bitmap));
 
             foreach (InstalledMod installedMod in Settings.InstalledGameMods)
             {
@@ -1318,15 +1306,14 @@ namespace ModioX.Forms.Windows
                 }
 
                 dt.Rows.Add(modInstalled.Id.ToString(),
-                    Extensions.EnumExtensions.GetDescription(installedMod.ConsoleType),
+                    EnumExtensions.GetDescription(installedMod.ConsoleType),
                     modCategory.Title,
                     installedMod.Region,
                     modInstalled.Name,
                     modInstalled.Type,
                     modInstalled.Version == "n/a" ? "-" : modInstalled.Version,
                     installedMod.Files + (installedMod.Files > 1 ? " Files" : " File"),
-                    $"{installedMod.DateInstalled:g}",
-                    ImageExtensions.ResizeBitmap(Resources.uninstall, 20, 20));
+                    $"{installedMod.DateInstalled:g}");
 
                 totalFiles += installedMod.Files;
             }
@@ -1341,9 +1328,6 @@ namespace ModioX.Forms.Windows
             GridViewInstalledGameMods.Columns[6].Width = 35;
             GridViewInstalledGameMods.Columns[7].Width = 35;
             GridViewInstalledGameMods.Columns[8].Width = 50;
-            GridViewInstalledGameMods.Columns[9].Width = 30;
-            GridViewInstalledGameMods.Columns[9].MinWidth = 30;
-            GridViewInstalledGameMods.Columns[9].Caption = " ";
 
             LabelModsInstalled.Caption = $@"{Settings.InstalledGameMods.Count} Mods Installed ({totalFiles} {(Settings.InstalledGameMods.Count > 1 ? "Files" : "File")} Total)";
 
