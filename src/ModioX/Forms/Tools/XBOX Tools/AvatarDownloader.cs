@@ -347,7 +347,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             return RM0;
         }
 
-        internal static byte[] GetBytes() => ((byte[])CIA().GetObject("AvatarItemTemplate", CI0));
+        internal static byte[] GetBytes() => (byte[])CIA().GetObject("AvatarItemTemplate", CI0);
 
         public string Method_0() => TextBoxMarketplaceURL.Text[0x2a..].Replace('-', ' ');
 
