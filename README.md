@@ -6,7 +6,7 @@ the only one of its kind...
 
 ![Main Form](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/MainForm.png?raw=true)
 
-Comments, ideas, suggestions? Join the [Discord Server](https://discord.gg/FTCS3Xu)!
+**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/FTCS3Xu)!
 
 Please give this project a ⭐ if you find it useful.
 
@@ -49,6 +49,7 @@ I know that not all mods aren't on our database, yet. But if you open an issue i
 * Appropriate Creators of all Mods
 * [DevExpress](https://devexpress.com/)
 * [Newtonsoft.Json](https://newtonsoft.com/json)
+* [Humanizer](https://github.com/Humanizr/Humanizer)
 * [NLog](https://nlog-project.org/)
 * [WebMAN API](https://github.com/FxckingCoder/WebmanAPI)
 * [XDevkit](https://github.com/TeddyHammer)
