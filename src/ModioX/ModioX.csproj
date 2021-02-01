@@ -160,17 +160,11 @@
     <Compile Include="Forms\Tools\PS3 Tools\PackageManager.Designer.cs">
       <DependentUpon>PackageManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\AvatarItemDownloader.cs">
+    <Compile Include="Forms\Tools\XBOX Tools\AvatarDownloader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\AvatarItemDownloader.Designer.cs">
-      <DependentUpon>AvatarItemDownloader.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\CheatEngine.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\CheatEngine.Designer.cs">
-      <DependentUpon>CheatEngine.cs</DependentUpon>
+    <Compile Include="Forms\Tools\XBOX Tools\AvatarDownloader.Designer.cs">
+      <DependentUpon>AvatarDownloader.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\GameLauncher.cs">
       <SubType>Form</SubType>
@@ -183,12 +177,6 @@
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\PluginsEditor.Designer.cs">
       <DependentUpon>PluginsEditor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\MemoryViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\MemoryViewer.designer.cs">
-      <DependentUpon>MemoryViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Windows\SettingsWindow.cs">
       <SubType>Form</SubType>
@@ -324,20 +312,14 @@
     <EmbeddedResource Include="Forms\Dialogs\BackupFileDialog.resx">
       <DependentUpon>BackupFileDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\XBOX Tools\AvatarItemDownloader.resx">
-      <DependentUpon>AvatarItemDownloader.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\XBOX Tools\CheatEngine.resx">
-      <DependentUpon>CheatEngine.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Tools\XBOX Tools\AvatarDownloader.resx">
+      <DependentUpon>AvatarDownloader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\GameLauncher.resx">
       <DependentUpon>GameLauncher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\PluginsEditor.resx">
       <DependentUpon>PluginsEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\XBOX Tools\MemoryViewer.resx">
-      <DependentUpon>MemoryViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

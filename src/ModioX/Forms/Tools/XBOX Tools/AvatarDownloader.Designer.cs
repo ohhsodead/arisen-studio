@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Forms.Tools.XBOX_Tools
 {
-    partial class AvatarItemDownloader
+    partial class AvatarDownloader
     {
         /// <summary>
         /// Required designer variable.
@@ -236,7 +236,7 @@
             this.Name = "AvatarItemDownloader";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Avatar Item Downloader";
-            this.Load += new System.EventHandler(this.AvatarItemDownloader_Load);
+            this.Load += new System.EventHandler(this.AvatarDownloader_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxGameTitle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxItemID.Properties)).EndInit();

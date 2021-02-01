@@ -122,16 +122,22 @@ namespace ModioX.Extensions
 
         #region Xbox Tools
 
-        public static void ShowXboxPluginsEditor(Form owner)
+        public static void ShowXboxAvatarDownloader(Form owner)
         {
-            using PluginsEditor launchFileEditor = new PluginsEditor();
-            launchFileEditor.ShowDialog(owner);
+            using AvatarDownloader avatarDownloader = new AvatarDownloader();
+            avatarDownloader.ShowDialog(owner);
         }
 
-        public static void ShowXboxMemoryViewer(Form owner, string gameTitle)
+        public static void ShowXboxGameLauncher(Form owner)
         {
-            using MemoryViewer memoryViewer = new MemoryViewer() { GameTitle = gameTitle };
-            memoryViewer.ShowDialog(owner);
+            using GameLauncher gameLauncher = new GameLauncher();
+            gameLauncher.ShowDialog(owner);
+        }
+
+        public static void ShowXboxPluginsEditor(Form owner)
+        {
+            using PluginsEditor pluginsEditor = new PluginsEditor();
+            pluginsEditor.ShowDialog(owner);
         }
 
         #endregion
