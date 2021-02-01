@@ -1,14 +1,17 @@
 ﻿using System;
 using System.IO;
+using NLog;
 
 namespace ModioX.Io
 {
-    public class UserFolders
+    public static class UserFolders
     {
         /// <summary>
         /// Get the user's Documents folder.
         /// </summary>
         internal static readonly string AppDataDirectory = $@"{KnownFolders.GetPath(KnownFolder.Documents)}\ModioX\";
+
+        internal static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>
         /// Get the directory to download modded files at.
@@ -35,22 +38,21 @@ namespace ModioX.Io
         /// </summary>
         internal static void DeleteDirectory(string path)
         {
-            foreach (string directory in Directory.GetDirectories(path))
+            for (var i = 0; i < 3; i++)
             {
-                Directory.Delete(directory, true);
-            }
-
-            try
-            {
-                Directory.Delete(path, true);
-            }
-            catch (IOException)
-            {
-                Directory.Delete(path, true);
-            }
-            catch (UnauthorizedAccessException)
-            {
-                Directory.Delete(path, true);
+                try
+                {
+                    foreach (var dir in new DirectoryInfo(path).GetDirectories())
+                    {
+                        dir.Delete(true);
+                    }
+                    Directory.Delete(path, true);
+                }
+                catch (Exception ex)
+                {
+                    Logger.Warn(ex);
+                    if (ex is UnauthorizedAccessException || ex is DirectoryNotFoundException) return;
+                }
             }
         }
     }
