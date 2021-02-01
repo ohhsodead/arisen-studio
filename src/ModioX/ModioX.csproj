@@ -342,10 +342,6 @@
     <None Include="Resources\1200px-Xbox_Controller.svg.png" />
     <Content Include="Resources\Icons\Xbox_Logo.ico" />
     <None Include="Resources\original.png" />
-    <None Include="Resources\Xbox_button_Y.svg.png" />
-    <None Include="Resources\Xbox_button_X.svg.png" />
-    <None Include="Resources\Xbox_button_B.svg.png" />
-    <None Include="Resources\Xbox_button_A.svg.png" />
     <None Include="Resources\Xbox_Logo.ico" />
     <None Include="Resources\Icons\XboxSlimE.png" />
     <None Include="Resources\Icons\PlayStation3Fat.png" />

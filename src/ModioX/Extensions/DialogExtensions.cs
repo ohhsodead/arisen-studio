@@ -112,8 +112,8 @@ namespace ModioX.Extensions
 
         public static void ShowPackageManagerWindow(Form owner)
         {
-            using var packageManagerWindow = new PackageManager();
-            packageManagerWindow.ShowDialog(owner);
+            using var packageManager = new PackageManager();
+            packageManager.ShowDialog(owner);
         }
 
         #endregion PS3 Tools
@@ -172,12 +172,6 @@ namespace ModioX.Extensions
         {
             using var aboutDialog = new AboutDialog();
             aboutDialog.ShowDialog(owner);
-        }
-
-        public static DialogResult ShowCustomXboxDialog(Form owner, string title, string body, XMessageboxUI.ButtonOptions buttons)
-        {
-            using var xMessageboxUI = new XMessageboxUI(title, body, buttons);
-            return xMessageboxUI.ShowDialog(owner);
         }
     }
 }

@@ -311,6 +311,61 @@ namespace ModioX.Forms.Windows
             DialogExtensions.ShowPackageManagerWindow(this);
         }
 
+        private void ButtonPS3NotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
+
+            if (!string.IsNullOrWhiteSpace(notifyMessage))
+            {
+                WebManExtensions.NotifyPopup(ConsoleProfile.Address, notifyMessage);
+                SetStatus($"WebMAN Controls: Message Notified - {notifyMessage}");
+            }
+        }
+
+        private void ButtonPS3VirtualController_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Process.Start("http://pad.aldostools.org/pad.html");
+        }
+
+        private void ButtonPS3SoftReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.RebootSoft(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+        private void ButtonPS3HardReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.RebootHard(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+        private void ButtonPS3Restart_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.Restart(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+        private void ButtonPS3Shutdown_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.Shutdown(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+        private void ButtonPS3SystemInformation_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifySystemInformation(ConsoleProfile.Address);
+        }
+
+        private void ButtonPS3CPURSXTemperature_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifyCPURSXTemperature(ConsoleProfile.Address);
+        }
+
+        private void ButtonPS3MinimumVersion_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
+        }
+
         private void ButtonXboxFileManager_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowFileManager(this);
@@ -319,32 +374,6 @@ namespace ModioX.Forms.Windows
         private void ButtonXboxLaunchFileEditor_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowXboxPluginsEditor(this);
-        }
-
-        private void ButtonXboxXBDM_XMessageboxUI_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var dialogResult = DialogExtensions.ShowCustomXboxDialog(this, "Some Title", "Some Body Text To Go Here\n\nNew Line\n\nAnother New Line", XMessageboxUI.ButtonOptions.YesNoCancel);
-
-            if (dialogResult == DialogResult.OK)
-            {
-                // do whatever
-                XtraMessageBox.Show("ok was clicked");
-            }
-            else if (dialogResult == DialogResult.Yes)
-            {
-                // do whatever
-                XtraMessageBox.Show("yes was clicked");
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                // do whatever
-                XtraMessageBox.Show("no was clicked");
-            }
-            else if (dialogResult == DialogResult.Cancel)
-            {
-                // do whatever
-                XtraMessageBox.Show("cancel was clicked");
-            }
         }
 
         private void ButtonXboxXBDMShutdown_ItemClick(object sender, ItemClickEventArgs e)
@@ -372,10 +401,6 @@ namespace ModioX.Forms.Windows
             XboxConsole.XboxShortcut(XboxShortcuts.AvatarEditor);
         }
 
-        private void ButtonXboxVirtualController_ItemClick(object sender, ItemClickEventArgs e)
-        {
-        }
-
         private void ButtonXboxQuickSignIn_ItemClick(object sender, ItemClickEventArgs e)
         {
             XboxConsole.QuickSignIn();
@@ -383,7 +408,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonXboxShowTemperature_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogExtensions.ShowCustomXboxDialog(this, "Console Temperature", "CPU: " + XboxConsole.CPUTEMP() + "\nGPU: " + XboxConsole.GPUTEMP() + "\nRAMTEMP: " + XboxConsole.RAMTEMP() + "\nMOBO: " + XboxConsole.MOBOTEMP(), XMessageboxUI.ButtonOptions.Ok);
+            // todo
         }
 
         private void ButtonXboxOpenCloseTray_ItemClick(object sender, ItemClickEventArgs e)
@@ -393,6 +418,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonXboxXNotifySend_ItemClick(object sender, ItemClickEventArgs e)
         {
+
         }
 
         private void ButtonXboxShowProfileIDInfo_ItemClick(object sender, ItemClickEventArgs e)
@@ -406,7 +432,7 @@ namespace ModioX.Forms.Windows
         {
             var menuItemText = e.Item.Caption;
 
-            foreach (var application in Settings.ExternalApplications.Where(application => application.Name.Equals(menuItemText, StringComparison.OrdinalIgnoreCase)))
+            foreach (var application in Settings.ExternalApplications.Where(application => StringExtensions.EqualsIgnoreCase(application.Name, menuItemText)))
             {
                 if (File.Exists(application.FileLocation))
                 {
@@ -414,66 +440,9 @@ namespace ModioX.Forms.Windows
                 }
                 else
                 {
-                    XtraMessageBox.Show(this, $"Could not locate application: {application.Name} at location: {application.FileLocation}\n\nGo to Settings > Edit Applications and set the correct file path for this application.", "Application Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show(this, $"Could not locate application: {application.Name} at path: {application.FileLocation}\n\nGo to Settings > Edit Applications and set the correct file path for this application.", "Application Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        // TOOLS MENU
-
-        private void ButtonNotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
-
-            if (!string.IsNullOrWhiteSpace(notifyMessage))
-            {
-                WebManExtensions.NotifyPopup(ConsoleProfile.Address, notifyMessage);
-                SetStatus($"WebMAN Controls: Message Notified - {notifyMessage}");
-            }
-        }
-
-        private void ButtonVirtualController_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Process.Start("http://pad.aldostools.org/pad.html");
-        }
-
-        private void ButtonSoftReboot_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.RebootSoft(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void ButtonHardReboot_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.RebootHard(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void ButtonRestart_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.Restart(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void ButtonShutdown_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.Shutdown(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void ButtonSystemInformation_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifySystemInformation(ConsoleProfile.Address);
-        }
-
-        private void ButtonCPURSXTemperature_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifyCPURSXTemperature(ConsoleProfile.Address);
-        }
-
-        private void ButtonMinimumVersion_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
         }
 
         // OPTIONS MENU
@@ -635,6 +604,7 @@ namespace ModioX.Forms.Windows
                 }
                 else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
                 {
+                    XboxConsole.Connect(out XboxConsole, ConsoleProfile.Address, ConsoleProfile.Port);
                     ButtonConnectToXBOX.Caption = "Disconnect from Console...";
                     Mods = Database.ModsXBOX;
                 }
@@ -678,7 +648,12 @@ namespace ModioX.Forms.Windows
             {
                 try
                 {
-                    XboxClient.Disconnect();
+                    //XboxClient.Disconnect();
+
+                    FtpConnection.Dispose();
+                    FtpConnection.Close();
+
+                    FtpClient.Dispose();
                 }
                 catch
                 {
