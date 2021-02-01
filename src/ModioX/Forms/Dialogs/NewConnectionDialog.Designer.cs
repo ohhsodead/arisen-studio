@@ -43,72 +43,76 @@
             this.TextBoxConsolePort = new DevExpress.XtraEditors.TextEdit();
             this.TextBoxConsoleAddress = new DevExpress.XtraEditors.TextEdit();
             this.TextBoxConnectionName = new DevExpress.XtraEditors.TextEdit();
-            this.CheckBoxAutoDetectIPAddress = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageConsole.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxConsoleType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsolePort.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsoleAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConnectionName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectIPAddress.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelUserPass
             // 
+            this.LabelUserPass.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelUserPass.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.LabelUserPass.Appearance.Options.UseFont = true;
+            this.LabelUserPass.Appearance.Options.UseForeColor = true;
             this.LabelUserPass.AutoEllipsis = true;
-            this.LabelUserPass.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelUserPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.LabelUserPass.Location = new System.Drawing.Point(261, 102);
             this.LabelUserPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelUserPass.Name = "LabelUserPass";
-            this.LabelUserPass.Size = new System.Drawing.Size(155, 15);
+            this.LabelUserPass.Size = new System.Drawing.Size(38, 15);
             this.LabelUserPass.TabIndex = 1142;
             this.LabelUserPass.Text = "Default";
             // 
             // LabelLogin
             // 
-            this.LabelLogin.AutoSize = true;
-            this.LabelLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.LabelLogin.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelLogin.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.LabelLogin.Appearance.Options.UseFont = true;
+            this.LabelLogin.Appearance.Options.UseForeColor = true;
             this.LabelLogin.Location = new System.Drawing.Point(151, 102);
             this.LabelLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelLogin.Name = "LabelLogin";
-            this.LabelLogin.Size = new System.Drawing.Size(40, 15);
+            this.LabelLogin.Size = new System.Drawing.Size(33, 15);
             this.LabelLogin.TabIndex = 1141;
             this.LabelLogin.Text = "Login:";
             // 
             // darkLabel1
             // 
-            this.darkLabel1.AutoSize = true;
-            this.darkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.darkLabel1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel1.Appearance.Options.UseFont = true;
+            this.darkLabel1.Appearance.Options.UseForeColor = true;
             this.darkLabel1.Location = new System.Drawing.Point(415, 71);
             this.darkLabel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.darkLabel1.Name = "darkLabel1";
-            this.darkLabel1.Size = new System.Drawing.Size(32, 15);
+            this.darkLabel1.Size = new System.Drawing.Size(25, 15);
             this.darkLabel1.TabIndex = 1139;
             this.darkLabel1.Text = "Port:";
             // 
             // LabelName
             // 
-            this.LabelName.AutoSize = true;
-            this.LabelName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.LabelName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelName.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.LabelName.Appearance.Options.UseFont = true;
+            this.LabelName.Appearance.Options.UseForeColor = true;
             this.LabelName.Location = new System.Drawing.Point(151, 15);
             this.LabelName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(107, 15);
+            this.LabelName.Size = new System.Drawing.Size(100, 15);
             this.LabelName.TabIndex = 5;
             this.LabelName.Text = "Connection Name:";
             // 
             // LabelDescription
             // 
-            this.LabelDescription.AutoSize = true;
-            this.LabelDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.LabelDescription.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelDescription.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.LabelDescription.Appearance.Options.UseFont = true;
+            this.LabelDescription.Appearance.Options.UseForeColor = true;
             this.LabelDescription.Location = new System.Drawing.Point(151, 71);
             this.LabelDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelDescription.Name = "LabelDescription";
-            this.LabelDescription.Size = new System.Drawing.Size(98, 15);
+            this.LabelDescription.Size = new System.Drawing.Size(91, 15);
             this.LabelDescription.TabIndex = 14;
             this.LabelDescription.Text = "Console Address:";
             // 
@@ -144,13 +148,14 @@
             // 
             // darkLabel2
             // 
-            this.darkLabel2.AutoSize = true;
-            this.darkLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.darkLabel2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel2.Appearance.Options.UseFont = true;
+            this.darkLabel2.Appearance.Options.UseForeColor = true;
             this.darkLabel2.Location = new System.Drawing.Point(151, 43);
             this.darkLabel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.darkLabel2.Name = "darkLabel2";
-            this.darkLabel2.Size = new System.Drawing.Size(80, 15);
+            this.darkLabel2.Size = new System.Drawing.Size(74, 15);
             this.darkLabel2.TabIndex = 1146;
             this.darkLabel2.Text = "Console Type:";
             // 
@@ -222,18 +227,6 @@
             this.TextBoxConnectionName.Size = new System.Drawing.Size(238, 22);
             this.TextBoxConnectionName.TabIndex = 0;
             // 
-            // CheckBoxAutoDetectIPAddress
-            // 
-            this.CheckBoxAutoDetectIPAddress.Location = new System.Drawing.Point(264, 129);
-            this.CheckBoxAutoDetectIPAddress.Name = "CheckBoxAutoDetectIPAddress";
-            this.CheckBoxAutoDetectIPAddress.Properties.AllowFocused = false;
-            this.CheckBoxAutoDetectIPAddress.Properties.AutoWidth = true;
-            this.CheckBoxAutoDetectIPAddress.Properties.Caption = "Automatically detect console IP Address";
-            this.CheckBoxAutoDetectIPAddress.Size = new System.Drawing.Size(224, 18);
-            this.CheckBoxAutoDetectIPAddress.TabIndex = 5;
-            this.CheckBoxAutoDetectIPAddress.Visible = false;
-            this.CheckBoxAutoDetectIPAddress.CheckedChanged += new System.EventHandler(this.CheckBoxAutoDetectIPAddress_CheckedChanged);
-            // 
             // NewConnectionDialog
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
@@ -243,7 +236,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(514, 216);
-            this.Controls.Add(this.CheckBoxAutoDetectIPAddress);
             this.Controls.Add(this.ImageConsole);
             this.Controls.Add(this.ComboBoxConsoleType);
             this.Controls.Add(this.darkLabel2);
@@ -275,7 +267,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsolePort.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsoleAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConnectionName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectIPAddress.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,6 +287,5 @@
         private DevExpress.XtraEditors.LabelControl darkLabel2;
         private DevExpress.XtraEditors.ComboBoxEdit ComboBoxConsoleType;
         private DevExpress.XtraEditors.PictureEdit ImageConsole;
-        private DevExpress.XtraEditors.CheckEdit CheckBoxAutoDetectIPAddress;
     }
 }

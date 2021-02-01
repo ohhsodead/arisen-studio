@@ -81,7 +81,6 @@ namespace ModioX.Forms.Dialogs
             }
 
             TextBoxConsolePort.Text = ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX ? "730" : "21";
-            CheckBoxAutoDetectIPAddress.Visible = ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
         }
 
         private void ButtonChangeCredentials_Click(object sender, EventArgs e)
@@ -105,13 +104,6 @@ namespace ModioX.Forms.Dialogs
                 ConsoleProfile.Password = string.Empty;
                 ConsoleProfile.UseDefaultCredentials = true;
             }
-        }
-
-        private void CheckBoxAutoDetectIPAddress_CheckedChanged(object sender, EventArgs e)
-        {
-            ConsoleProfile.AutoDetectIPAddress = CheckBoxAutoDetectIPAddress.Checked;
-            TextBoxConsoleAddress.Enabled = !CheckBoxAutoDetectIPAddress.Checked;
-            TextBoxConsoleAddress.Text = CheckBoxAutoDetectIPAddress.Checked ? "192.168.0." : string.Empty;
         }
 
         private void ButtonOK_Click(object sender, EventArgs e)
