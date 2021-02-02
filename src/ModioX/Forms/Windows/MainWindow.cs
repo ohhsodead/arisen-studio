@@ -412,7 +412,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonXboxTakeScreenshot_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var filePath = DialogExtensions.ShowSaveFileDialog(this, "Save Screenshot File", "Images");
+            var filePath = DialogExtensions.ShowSaveFileDialog(this, "Save Screenshot File", "Bitmap Image (*.bmp)|*.bmp");
 
             if (filePath.IsNullOrWhiteSpace())
             {
@@ -428,16 +428,17 @@ namespace ModioX.Forms.Windows
         private void ButtonXboxShowSystemInfo_ItemClick(object sender, ItemClickEventArgs e)
         {
             XtraMessageBox.Show(
-                $"CPU: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.CPU)}\n" +
-                $"EDRAM: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.EDRAM)}\n" +
-                $"GPU: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.GPU)}\n" +
-                $"Motherboard: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.MotherBoard)}",
+                $"CPU: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.CPU)}°C\n" +
+                $"EDRAM: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.EDRAM)}°C\n" +
+                $"GPU: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.GPU)}°C\n" +
+                $"Motherboard: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.MotherBoard)}°C",
                 "System Temperature", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void idk()
+        private void ButtonXboxXNotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //XtraMessageBox.Show(JRPC.GetCPUKey());
+            var xNotifyMessage = DialogExtensions.ShowTextInputDialog(this, "XNotify Message", "Message:", string.Empty);
+            JRPC.XNotify(XboxConsole, xNotifyMessage);
         }
 
         // APPLICATIONS MENU
