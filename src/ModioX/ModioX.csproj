@@ -76,6 +76,9 @@
     <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="JRPC">
+      <HintPath>..\References\JRPC.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -92,9 +95,6 @@
     </Reference>
     <Reference Include="XDevkit">
       <HintPath>..\References\XDevkit.dll</HintPath>
-    </Reference>
-    <Reference Include="XDRPC">
-      <HintPath>..\References\XDRPC.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
