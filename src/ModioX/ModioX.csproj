@@ -385,7 +385,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.1-beta1</Version>
+      <Version>12.0.3</Version>
     </PackageReference>
     <PackageReference Include="NLog">
       <Version>4.7.7</Version>

@@ -146,7 +146,7 @@ namespace ModioX.Forms.Windows
                 }
 
                 SetStatus("Initializing the application database...");
-                await Task.Run(async () => await LoadData());
+                await Task.Run(async () => await LoadDataAsync());
                 InitializeFinished();
             }
             else
@@ -195,11 +195,11 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Retrieves the categories and mods into the application.
         /// </summary>
-        private static async Task LoadData()
+        private static async Task LoadDataAsync()
         {
             try
             {
-                Database = await DropboxData.Initialize();
+                Database = await DropboxData.InitializeAsync();
             }
             catch (Exception ex)
             {

@@ -32,11 +32,11 @@ namespace ModioX.Forms.Windows
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.LabelSelectType = new DevExpress.XtraEditors.LabelControl();
             this.FlowPanelDetails = new System.Windows.Forms.FlowLayoutPanel();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -108,8 +108,8 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxAvatarEditor = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxDashboardHome = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxOpenCloseTray = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonXboxXNotifyMessage = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxTakeScreenshot = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonXboxXNotifyMessage = new DevExpress.XtraBars.BarButtonItem();
             this.MenuBarItemApplications = new DevExpress.XtraBars.BarButtonItem();
             this.ApplicationsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.MenuBarItemOptions = new DevExpress.XtraBars.BarButtonItem();
@@ -1085,19 +1085,19 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxOpenCloseTray.Id = 91;
             this.ButtonXboxOpenCloseTray.Name = "ButtonXboxOpenCloseTray";
             // 
-            // ButtonXboxXNotifyMessage
-            // 
-            this.ButtonXboxXNotifyMessage.Caption = "XNotify Message...";
-            this.ButtonXboxXNotifyMessage.Id = 103;
-            this.ButtonXboxXNotifyMessage.Name = "ButtonXboxXNotifyMessage";
-            this.ButtonXboxXNotifyMessage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxXNotifyMessage_ItemClick);
-            // 
             // ButtonXboxTakeScreenshot
             // 
             this.ButtonXboxTakeScreenshot.Caption = "Take Screenshot...";
             this.ButtonXboxTakeScreenshot.Id = 108;
             this.ButtonXboxTakeScreenshot.Name = "ButtonXboxTakeScreenshot";
             this.ButtonXboxTakeScreenshot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxTakeScreenshot_ItemClick);
+            // 
+            // ButtonXboxXNotifyMessage
+            // 
+            this.ButtonXboxXNotifyMessage.Caption = "XNotify Message...";
+            this.ButtonXboxXNotifyMessage.Id = 103;
+            this.ButtonXboxXNotifyMessage.Name = "ButtonXboxXNotifyMessage";
+            this.ButtonXboxXNotifyMessage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxXNotifyMessage_ItemClick);
             // 
             // MenuBarItemApplications
             // 
@@ -1413,7 +1413,7 @@ namespace ModioX.Forms.Windows
             this.XNotifyType.AccessibleDescription = "";
             this.XNotifyType.AutoHeight = false;
             this.XNotifyType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "mnjukjui", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "mnjukjui", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.XNotifyType.Items.AddRange(new object[] {
             "Blank",
             "Game Invite",
