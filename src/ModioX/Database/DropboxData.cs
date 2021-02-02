@@ -17,13 +17,13 @@ namespace ModioX.Database
         /// Initialization of the class.
         /// </summary>
         /// <returns> instance of the class. </returns>
-        public static async Task<DropboxData> InitializeAsync()
+        public static async Task<DropboxData> Initialize()
         {
             var data = new DropboxData
             {
-                CategoriesData = await GetCategoriesAsync(),
-                ModsPS3 = await GetPS3ModsAsync(),
-                ModsXBOX = await GetXBOXModsAsync()
+                CategoriesData = await GetCategories(),
+                ModsPS3 = await GetModsPS3(),
+                ModsXBOX = await GetModsXBOX()
             };
 
             data.CategoriesData.Categories = data.CategoriesData.Categories.OrderBy(o => o.Title).ToList();
@@ -53,7 +53,7 @@ namespace ModioX.Database
         /// <exception cref="JsonSerializationException">
         /// Thrown when failing to deserialize the json data.
         /// </exception>
-        private static async Task<CategoriesData> GetCategoriesAsync()
+        private static async Task<CategoriesData> GetCategories()
         {
             using var client = new HttpClient();
             using var response = await client.GetAsync(Urls.CategoriesData);
@@ -74,7 +74,7 @@ namespace ModioX.Database
         /// </summary>
         /// <returns> </returns>
         /// <exception cref="Exception"> </exception>
-        private static async Task<ModsData> GetPS3ModsAsync()
+        private static async Task<ModsData> GetModsPS3()
         {
             using var client = new HttpClient();
             using var response = await client.GetAsync(Urls.ModsDataPS3);
@@ -95,7 +95,7 @@ namespace ModioX.Database
         /// </summary>
         /// <returns> </returns>
         /// <exception cref="Exception"> </exception>
-        private static async Task<ModsData> GetXBOXModsAsync()
+        private static async Task<ModsData> GetModsXBOX()
         {
             using var client = new HttpClient();
             using var response = await client.GetAsync(Urls.ModsDataXBOX);
