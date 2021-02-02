@@ -119,7 +119,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Form loading event.
         /// </summary>
-        private async Task MainWindow_LoadAsync(object sender, EventArgs e)
+        private async void MainWindow_Load(object sender, EventArgs e)
         {
             DevExpress.LookAndFeel.UserLookAndFeel.Default.StyleChanged += MainWindow_StyleChanged;
 

@@ -2215,10 +2215,7 @@ namespace ModioX.Forms.Windows
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModioX - Beta v1.5";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
-            this.Load += new System.EventHandler(async (sender, e) =>
-            {
-                await this.MainWindow_LoadAsync(sender, e);
-            });
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.StyleChanged += new System.EventHandler(this.MainWindow_StyleChanged);
             this.FlowPanelDetails.ResumeLayout(false);
             this.FlowPanelDetails.PerformLayout();
