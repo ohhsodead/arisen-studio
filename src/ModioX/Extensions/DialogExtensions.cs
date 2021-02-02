@@ -90,6 +90,12 @@ namespace ModioX.Extensions
             return openFileDialog.ShowDialog(owner) == DialogResult.OK ? openFileDialog.FileName : null;
         }
 
+        public static string ShowSaveFileDialog(Form owner, string title, string fileTypes)
+        {
+            using var saveFileDialog = new XtraSaveFileDialog { Title = title, Filter = fileTypes };
+            return saveFileDialog.ShowDialog(owner) == DialogResult.OK ? saveFileDialog.FileName : null;
+        }
+
         public static void ShowFileManager(Form owner)
         {
             using var fileManagerWindow = new FileManagerWindow();
@@ -119,12 +125,6 @@ namespace ModioX.Extensions
         #endregion PS3 Tools
 
         #region Xbox Tools
-
-        public static void ShowXboxAvatarDownloader(Form owner)
-        {
-            using AvatarDownloader avatarDownloader = new AvatarDownloader();
-            avatarDownloader.ShowDialog(owner);
-        }
 
         public static void ShowXboxGameLauncher(Form owner)
         {

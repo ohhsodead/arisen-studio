@@ -5,6 +5,7 @@ using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraNavBar;
 using FluentFTP;
+using JRPC_Client;
 using ModioX.Constants;
 using ModioX.Database;
 using ModioX.Extensions;
@@ -103,7 +104,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Contains the Xbox console information.
         /// </summary>
-        public static Xbox XboxConsole = new();
+        public static IXboxConsole XboxConsole { get; set; }
 
         /// <summary>
         /// Contains the selected console type.
@@ -175,7 +176,7 @@ namespace ModioX.Forms.Windows
                     case ConsoleTypePrefix.XBOX:
                         FtpClient.Dispose();
                         FtpConnection.Dispose();
-                        XboxClient.Disconnect();
+                        XboxConsole.CloseConnection(0);
                         break;
                 }
             }
@@ -298,6 +299,8 @@ namespace ModioX.Forms.Windows
 
         // TOOLS MENU
 
+        // PS3
+
         private void ButtonPS3GameBackupFiles_ItemClick(object sender, ItemClickEventArgs e)
         {
             SaveSettings();
@@ -360,20 +363,22 @@ namespace ModioX.Forms.Windows
             DisconnectConsole();
         }
 
-        private void ButtonPS3SystemInformation_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonPS3ShowSystemInformation_ItemClick(object sender, ItemClickEventArgs e)
         {
             WebManExtensions.NotifySystemInformation(ConsoleProfile.Address);
         }
 
-        private void ButtonPS3CPURSXTemperature_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonPS3ShowTemperatures_ItemClick(object sender, ItemClickEventArgs e)
         {
             WebManExtensions.NotifyCPURSXTemperature(ConsoleProfile.Address);
         }
 
-        private void ButtonPS3MinimumVersion_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonPS3ShowMinimumVersion_ItemClick(object sender, ItemClickEventArgs e)
         {
             WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
         }
+        
+        // XBOX
 
         private void ButtonXboxFileManager_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -387,52 +392,52 @@ namespace ModioX.Forms.Windows
 
         private void ButtonXboxXBDMShutdown_ItemClick(object sender, ItemClickEventArgs e)
         {
-            XboxConsole.ShutDown();
+            JRPC.ShutDownConsole(XboxConsole);
         }
 
-        private void ButtonXboxXBDMReboot_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonXboxXBDMRestart_ItemClick(object sender, ItemClickEventArgs e)
         {
             XboxConsole.Reboot(string.Empty, string.Empty, string.Empty, XboxRebootFlags.Title);
         }
 
         private void ButtonXboxXBDMSoftReboot_ItemClick(object sender, ItemClickEventArgs e)
         {
-            XboxConsole.Reboot(XboxReboot.Cold);
+            XboxConsole.Reboot(string.Empty, string.Empty, string.Empty, XboxRebootFlags.Cold);
         }
 
         private void ButtonXboxXBDMHardReboot_ItemClick(object sender, ItemClickEventArgs e)
         {
-            XboxConsole.Reboot(XboxReboot.Warm);
+            XboxConsole.Reboot(string.Empty, string.Empty, string.Empty, XboxRebootFlags.Warm);
         }
 
-        private void ButtonXboxAvatarEditor_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonXboxTakeScreenshot_ItemClick(object sender, ItemClickEventArgs e)
         {
-            XboxConsole.XboxShortcut(XboxShortcuts.AvatarEditor);
+            var filePath = DialogExtensions.ShowSaveFileDialog(this, "Save Screenshot File", "Images");
+
+            if (filePath.IsNullOrWhiteSpace())
+            {
+                XtraMessageBox.Show("You must choose a location to save the screenshot file.", "No File Path", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                XboxConsole.ScreenShot(filePath);
+                XtraMessageBox.Show($"Screenshot file saved to path: {filePath}", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
-        private void ButtonXboxQuickSignIn_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonXboxShowSystemInfo_ItemClick(object sender, ItemClickEventArgs e)
         {
-            XboxConsole.QuickSignIn();
+            XtraMessageBox.Show(
+                $"CPU: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.CPU)}\n" +
+                $"EDRAM: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.EDRAM)}\n" +
+                $"GPU: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.GPU)}\n" +
+                $"Motherboard: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.MotherBoard)}",
+                "System Temperature", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void ButtonXboxShowTemperature_ItemClick(object sender, ItemClickEventArgs e)
+        public void idk()
         {
-            // todo
-        }
-
-        private void ButtonXboxOpenCloseTray_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            XboxConsole.Tray(XboxConsole.IsTrayOpen ? Tray_Options.Open : Tray_Options.Close);
-        }
-
-        private void ButtonXboxXNotifySend_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
-        private void ButtonXboxShowProfileIDInfo_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            XtraMessageBox.Show(XboxConsole.ProfileID(), "Profile ID");
+            //XtraMessageBox.Show(JRPC.GetCPUKey());
         }
 
         // APPLICATIONS MENU
@@ -609,12 +614,16 @@ namespace ModioX.Forms.Windows
                     }
 
                     ButtonConnectToPS3.Caption = "Disconnect from Console...";
+                    ButtonConnectToXBOX.Enabled = false;
                     Mods = Database.ModsPS3;
                 }
                 else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
                 {
-                    XboxConsole.Connect(out XboxConsole, ConsoleProfile.Address, ConsoleProfile.Port);
+                    XboxConsole = new XboxManager().OpenConsole(ConsoleProfile.Address);
+                    JRPC.XNotify(XboxConsole, "You are now connected to ModioX ★");
+
                     ButtonConnectToXBOX.Caption = "Disconnect from Console...";
+                    ButtonConnectToPS3.Enabled = false;
                     Mods = Database.ModsXBOX;
                 }
 
@@ -2228,33 +2237,30 @@ namespace ModioX.Forms.Windows
         private void EnableConsoleActions()
         {
             // PS3 Features
-            ButtonPS3GameBackupFiles.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
-            ButtonPS3GameBackupFiles.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonGameBackupFiles.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonGameBackupFiles.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
 
+            ButtonPS3GameUpdateFinder.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonPS3GameUpdateFinder.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
-            ButtonPS3GameUpdateFinder.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
 
+            ButtonPS3FileManager.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonPS3FileManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
-            ButtonPS3FileManager.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
 
+            ButtonPS3PackageManager.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonPS3PackageManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
-            ButtonPS3PackageManager.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
 
+            ButtonPS3WebManControls.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonPS3WebManControls.Enabled = IsConsoleConnected && IsWebManInstalled && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
-            ButtonPS3WebManControls.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
 
             // Xbox Features
+            ButtonXboxFileManager.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonXboxFileManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
-            ButtonXboxFileManager.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
 
+            ButtonXboxPluginsEditor.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonXboxPluginsEditor.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
-            ButtonXboxPluginsEditor.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
 
-            ButtonXboxCheatEngine.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
-            ButtonXboxCheatEngine.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
-
+            ButtonXboxXBDMMenu.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonXboxXBDMMenu.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
-            ButtonXboxXBDMMenu.Visibility = Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
 
             // Install & Uninstall Features
             ButtonModInstall.Enabled = IsConsoleConnected;

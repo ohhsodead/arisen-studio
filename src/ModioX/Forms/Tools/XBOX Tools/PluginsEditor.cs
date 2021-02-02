@@ -23,7 +23,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         /// <summary>
         /// Get the xbox console connection.
         /// </summary>
-        public static Xbox XboxConsole { get; } = MainWindow.XboxConsole;
+        public static IXboxConsole XboxConsole { get; } = MainWindow.XboxConsole;
 
         /// <summary>
         /// Get the PS3/XBOX FTP connection.
