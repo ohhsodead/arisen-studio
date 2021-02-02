@@ -143,34 +143,43 @@ namespace ModioX.Forms.Windows
         {
             SetStatus("Fetching root directories...");
 
-            foreach (var driveName in FtpExtensions.GetFolderNames("/").ToArray())
+            if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
             {
-                ComboBoxConsoleDrives.Properties.Items.Add(driveName.Replace(@"/", ""));
+                foreach (var driveName in FtpExtensions.GetFolderNames("/").ToArray())
+                {
+                    ComboBoxConsoleDrives.Properties.Items.Add(driveName.Replace(@"/", ""));
+                }
+            }
+            else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+            {
+                var drives = MainWindow.XboxConsole.Drives.Split(',');
+                ComboBoxConsoleDrives.Properties.Items.AddRange(drives);
             }
 
             if (Settings.SaveLocalPath)
             {
-                if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+                switch (ConsoleProfile.TypePrefix)
                 {
-                    if (Settings.LocalPathPS3.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathPS3))
-                    {
-                        LoadConsoleDirectory("/Hdd1/");
-                    }
-                    else
-                    {
-                        LoadConsoleDirectory(Settings.LocalPathPS3);
-                    }
-                }
-                else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
-                {
-                    if (Settings.LocalPathXBOX.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathXBOX))
-                    {
-                        LoadConsoleDirectory("/Hdd1/");
-                    }
-                    else
-                    {
-                        LoadConsoleDirectory(Settings.LocalPathXBOX);
-                    }
+                    case ConsoleTypePrefix.PS3:
+                        if (Settings.LocalPathPS3.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathPS3))
+                        {
+                            LoadConsoleDirectory("/Hdd1/");
+                        }
+                        else
+                        {
+                            LoadConsoleDirectory(Settings.LocalPathPS3);
+                        }
+                        break;
+                    case ConsoleTypePrefix.XBOX:
+                        if (Settings.LocalPathXBOX.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathXBOX))
+                        {
+                            LoadConsoleDirectory("/Hdd1/");
+                        }
+                        else
+                        {
+                            LoadConsoleDirectory(Settings.LocalPathXBOX);
+                        }
+                        break;
                 }
             }
             else
@@ -708,7 +717,7 @@ namespace ModioX.Forms.Windows
                 var rootPath = DirectoryPathConsole.Substring(1, secondIndexOfSlash);
 
                 ComboBoxConsoleDrives.SelectedIndexChanged -= ComboBoxConsoleDrives_SelectedIndexChanged;
-                ComboBoxConsoleDrives.SelectedItem = rootPath;
+                ComboBoxConsoleDrives.SelectedItem = rootPath.Replace("/", string.Empty);
                 ComboBoxConsoleDrives.SelectedIndexChanged += ComboBoxConsoleDrives_SelectedIndexChanged;
 
                 var isRoot = ComboBoxConsoleDrives.Properties.Items.Contains(DirectoryPathConsole.Replace("/", ""));
