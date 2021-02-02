@@ -47,11 +47,12 @@ namespace ModioX
             // Target where to log to.
             var file = new FileTarget("file")
             {
-                FileName = $"{UserFolders.AppLogsDirectory}latest.txt",
+                FileName = $"{UserFolders.AppLogsDirectory}latest.log",
                 AutoFlush = true,
                 ArchiveOldFileOnStartup = true,
                 EnableArchiveFileCompression = true,
                 MaxArchiveFiles = 7,
+                ArchiveEvery = FileArchivePeriod.Day,
                 ArchiveDateFormat = "${shortdate}",
                 ArchiveFileName = UserFolders.AppLogsDirectory + "ModioX-${shortdate}.zip",
                 ArchiveNumbering = ArchiveNumberingMode.Date,

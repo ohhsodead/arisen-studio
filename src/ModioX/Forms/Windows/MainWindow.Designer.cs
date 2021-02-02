@@ -1252,6 +1252,7 @@ namespace ModioX.Forms.Windows
             this.ButtonExit.Caption = "Exit...";
             this.ButtonExit.Id = 104;
             this.ButtonExit.Name = "ButtonExit";
+            this.ButtonExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonExit_ItemClick);
             // 
             // BarStatus
             // 

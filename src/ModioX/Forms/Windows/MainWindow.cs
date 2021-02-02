@@ -181,7 +181,7 @@ namespace ModioX.Forms.Windows
                 }
             }
             catch
-            { 
+            {
                 // false positive, if console is powered off then an error will be thrown
             }
         }
