@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <assembly>
+    <name>DevExpress.XtraDialogs.v20.2</name>
+  </assembly>
+  <members>
+    <member name="N:DevExpress.XtraEditors">
+      <summary>
+        <para>Contains editor classes. They provide the functionality for corresponding controls. Editor specific information is stored within the Persistent classes that are implemented in the <see cref="N:DevExpress.XtraEditors.Persistent"/> namespace.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.XtraEditors.FileDialogBase">
+      <summary>
+        <para>Provides API common for the XtraOpenFileDialog and XtraSaveFileDialog dialogs.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraEditors.FileDialogBase.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraEditors.FileDialogBase"/> class.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraEditors.FileDialogBase.#ctor(System.ComponentModel.IContainer)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraEditors.FileDialogBase"/> class with specified settings.</para>
+      </summary>
+      <param name="container">An object that owns this dialog.</param>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.AddExtension">
+      <summary>
+        <para>Gets or sets whether a dialog should automatically add an extension to a file name if a user omits the extension. This property is identical to the standard FileDialog.AddExtension property.</para>
+      </summary>
+      <value>true, to automatically add an extension; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.AutoUpdateFilterDescription">
+      <summary>
+        <para>Gets or sets whether a dialog with file extension filters (see <see cref="P:DevExpress.XtraEditors.FileDialogBase.Filter"/>) shows filter patterns for each filter option.</para>
+      </summary>
+      <value>true, to display complete filter names (descriptions plus filter templates); false, to display filter names only.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.CheckFileExists">
+      <summary>
+        <para>Gets or sets whether the dialog box displays a warning if a user specifies a file name that does not exist. This property is identical to the standard FileDialog.CheckFileExists property.</para>
+      </summary>
+      <value>true, to display a warning; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.CheckPathExists">
+      <summary>
+        <para>Gets or sets whether the dialog box displays a warning if a user specifies a path that does not exist. This property is identical to the standard FileDialog.CheckPathExists property.</para>
+      </summary>
+      <value>true, if the dialog should display a warning; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.CustomPlaces">
+      <summary>
+        <para>A collection of quick access paths to which a user can navigate. This property is identical to the standard FileDialog.CustomPlaces property.</para>
+      </summary>
+      <value>A collection of quick access locations.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.DefaultExt">
+      <summary>
+        <para>Gets or sets the default file extension (without the dot character). This property is identical to the standard FileDialog.DefaultExt property.</para>
+      </summary>
+      <value>The default file extension.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.DefaultViewMode">
+      <summary>
+        <para>Gets or sets the initial dialog view (&quot;Tiles&quot;, &quot;Table&quot;, &quot;Medium icons&quot;, etc.).</para>
+      </summary>
+      <value>The initial dialog view.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.DereferenceLinks">
+      <summary>
+        <para>If a user selects a shortcut, this property specifies whether the dialog returns this shortcut location, or the location of a file this shortcut references. This property is identical to the standard FileDialog.DereferenceLinks property.</para>
+      </summary>
+      <value>true, if the dialog should return the parent file location; false, if the dialog should return the shortcut location.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.FileName">
+      <summary>
+        <para>Gets or sets the selected file name, or an empty string if no file was selected. This property is identical to the standard FileDialog.FileName property.</para>
+      </summary>
+      <value>The selected file name.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.FileNames">
+      <summary>
+        <para>Returns an array of file names opened in the XtraOpenFileDialog. Has no effect for the XtraSaveFileDialog. This property is identical to the standard FileDialog.FileNames property.</para>
+      </summary>
+      <value>An array that contains opened files&#39; names.</value>
+    </member>
+    <member name="E:DevExpress.XtraEditors.FileDialogBase.FileOk">
+      <summary>
+        <para>Fires when a user presses &quot;Save&quot; or &quot;Open&quot; (depending on the current dialog type).</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.Filter">
+      <summary>
+        <para>Allows you to save or open files only of specific types. This property is identical to the standard FileDialog.Filter property.</para>
+      </summary>
+      <value>A list of allowed file extensions.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.FilterIndex">
+      <summary>
+        <para>Gets or sets the index of the filter currently selected in the file dialog box. This property is identical to the standard FileDialog.FilterIndex property.</para>
+      </summary>
+      <value>The index of the selected filter.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.InitialDirectory">
+      <summary>
+        <para>Gets or sets the location which the dialog shows upon the first launch. This property is identical to the standard FileDialog.InitialDirectory.</para>
+      </summary>
+      <value>The default dialog location.</value>
+    </member>
+    <member name="M:DevExpress.XtraEditors.FileDialogBase.Reset">
+      <summary>
+        <para>Resets all dialog properties to their default values.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.RestoreDirectory">
+      <summary>
+        <para>If a user navigates to a different directory and closes the dialog without saving (opening) a new file, this property specifies whether this new location should be remembered. This property is identical to the standard FileDialog.RestoreDirectory property.</para>
+      </summary>
+      <value>true to restore the previous location; false to remember the new location.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.ShowHelp">
+      <summary>
+        <para>Gets or sets whether the dialog displays the Help button. This property is identical to the standard FileDialog.ShowHelp property.</para>
+      </summary>
+      <value>true, if the dialog should display the Help button; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.SupportMultiDottedExtensions">
+      <summary>
+        <para>Gets or sets whether the dialog supports filters with more than one dot character. This property is identical to the standard FileDialog.SupportMultiDottedExtensions property.</para>
+      </summary>
+      <value>true, if the dialog supports file extensions with multiple dots in their names; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.FileDialogBase.ValidateNames">
+      <summary>
+        <para>Gets or sets whether the dialog supports Win32 file names only (no angle brackets, no colons, 3-character extension, etc.). This property is identical to the standard FileDialog.ValidateNames property.</para>
+      </summary>
+      <value>true to use Win32 file names only; otherwise, false.</value>
+    </member>
+    <member name="T:DevExpress.XtraEditors.XtraFolderBrowserDialog">
+      <summary>
+        <para>A replacement for the standard WinForms FolderBrowserDialog. Supports theming by DevExpress Skins.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraEditors.XtraFolderBrowserDialog.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraEditors.XtraFolderBrowserDialog"/> class with the specified settings.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraEditors.XtraFolderBrowserDialog.#ctor(System.ComponentModel.IContainer)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraEditors.XtraFolderBrowserDialog"/> class with the default settings.</para>
+      </summary>
+      <param name="container">An IContainer descendant that owns this <see cref="T:DevExpress.XtraEditors.XtraFolderBrowserDialog"/>.</param>
+    </member>
+    <member name="P:DevExpress.XtraEditors.XtraFolderBrowserDialog.Description">
+      <summary>
+        <para>Gets or sets the description that is displayed above the folder hierarchy. Note that dialogs with the <see cref="P:DevExpress.XtraEditors.XtraFolderBrowserDialog.DialogStyle"/> property set to Wide do not show their descriptions.</para>
+      </summary>
+      <value>A String value that is the description displayed above the folder hierarchy.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.XtraFolderBrowserDialog.DialogStyle">
+      <summary>
+        <para>Gets or sets the dialog style.</para>
+      </summary>
+      <value>A DevExpress.Utils.CommonDialogs.FolderBrowserDialogStyle enumeration value that specifies the dialog style.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.XtraFolderBrowserDialog.RootFolder">
+      <summary>
+        <para>Gets or sets the root folder from which the navigation starts. Note that this property is in effect only when a <see cref="P:DevExpress.XtraEditors.XtraFolderBrowserDialog.DialogStyle"/> property set to Compact, wide dialogs always start with the root &quot;Desktop&quot; folder.</para>
+      </summary>
+      <value>A <see cref="T:System.Environment.SpecialFolder"/> object that specifies the folder from which the navigation starts.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.XtraFolderBrowserDialog.SelectedPath">
+      <summary>
+        <para>Gets or sets the selected path.</para>
+      </summary>
+      <value>A String value that specifies the selected path.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.XtraFolderBrowserDialog.ShowNewFolderButton">
+      <summary>
+        <para>Gets or sets whether or not this <see cref="T:DevExpress.XtraEditors.XtraFolderBrowserDialog"/> should display the &quot;New Folder&quot; button.</para>
+      </summary>
+      <value>true, if the &quot;New Folder&quot; button is visible; otherwise, false.</value>
+    </member>
+    <member name="T:DevExpress.XtraEditors.XtraOpenFileDialog">
+      <summary>
+        <para>A replacement for the standard WinForms OpenFileDialog. Supports theming by DevExpress Skins.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraEditors.XtraOpenFileDialog.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraEditors.XtraOpenFileDialog"/> class with the default settings.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraEditors.XtraOpenFileDialog.#ctor(System.ComponentModel.IContainer)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraEditors.XtraOpenFileDialog"/> class with the specified settings.</para>
+      </summary>
+      <param name="container">An IContainer descendant that owns this <see cref="T:DevExpress.XtraEditors.XtraOpenFileDialog"/>.</param>
+    </member>
+    <member name="P:DevExpress.XtraEditors.XtraOpenFileDialog.CheckFileExists">
+      <summary>
+        <para>Gets or sets whether or not this <see cref="T:DevExpress.XtraEditors.XtraOpenFileDialog"/> should warn a user if a file with the specified name does not exist.</para>
+      </summary>
+      <value>true, to check file names; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.XtraOpenFileDialog.Multiselect">
+      <summary>
+        <para>Gets or sets whether or not users are allowed to select multiple files in this <see cref="T:DevExpress.XtraEditors.XtraOpenFileDialog"/>.</para>
+      </summary>
+      <value>true, if end-users can select multiple files; otherwise, false.</value>
+    </member>
+    <member name="M:DevExpress.XtraEditors.XtraOpenFileDialog.OpenFile">
+      <summary>
+        <para>Opens the file specified by the FileName property. The file is opened with read-only permission.</para>
+      </summary>
+      <returns>A Stream that stores the selected read-only file.</returns>
+    </member>
+    <member name="P:DevExpress.XtraEditors.XtraOpenFileDialog.SafeFileName">
+      <summary>
+        <para>Returns the selected file name and extension. The returned name does not include the file path.</para>
+      </summary>
+      <value>A String value that is the file name and extension.</value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.XtraOpenFileDialog.SafeFileNames">
+      <summary>
+        <para>Returns an array of file names and extensions for all the selected files in the dialog box. File names do not include paths.</para>
+      </summary>
+      <value>A String array that contains file names and extensions.</value>
+    </member>
+    <member name="T:DevExpress.XtraEditors.XtraSaveFileDialog">
+      <summary>
+        <para>A replacement for the standard WinForms SaveFileDialog. Supports theming by DevExpress Skins.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraEditors.XtraSaveFileDialog.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraEditors.XtraSaveFileDialog"/> class with the default settings.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraEditors.XtraSaveFileDialog.#ctor(System.ComponentModel.IContainer)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraEditors.XtraSaveFileDialog"/> class with the specified settings.</para>
+      </summary>
+      <param name="container">An IContainer descendant that owns this <see cref="T:DevExpress.XtraEditors.XtraSaveFileDialog"/>.</param>
+    </member>
+    <member name="P:DevExpress.XtraEditors.XtraSaveFileDialog.CheckWritePermission">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.XtraSaveFileDialog.CreatePrompt">
+      <summary>
+        <para>Gets or sets whether or not this <see cref="T:DevExpress.XtraEditors.XtraSaveFileDialog"/> should ask users for the permission to create a file if the specified file does not yet exist.</para>
+      </summary>
+      <value>true to display a message; false to automatically create a file without confirmation.</value>
+    </member>
+    <member name="M:DevExpress.XtraEditors.XtraSaveFileDialog.OpenFile">
+      <summary>
+        <para>Opens the user-selected file. The file is opened with read/write permissions.</para>
+      </summary>
+      <returns>A Stream that stores the selected read/write file.</returns>
+    </member>
+    <member name="P:DevExpress.XtraEditors.XtraSaveFileDialog.OverwritePrompt">
+      <summary>
+        <para>Gets or sets whether or not this <see cref="T:DevExpress.XtraEditors.XtraSaveFileDialog"/> should warn users when they try to save a file under an already existing name.</para>
+      </summary>
+      <value>true to display a warning, false to overwrite old files without confirmation.</value>
+    </member>
+  </members>
+</doc>
