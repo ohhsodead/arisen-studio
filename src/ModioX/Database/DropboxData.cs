@@ -36,12 +36,12 @@ namespace ModioX.Database
         public CategoriesData CategoriesData { get; private set; }
 
         /// <summary>
-        /// Contains the mods from database.
+        /// Contains the mods from the PS3 database.
         /// </summary>
         public ModsData ModsPS3 { get; private set; }
 
         /// <summary>
-        /// Contains the mods from database.
+        /// Contains the mods from the Xbox database.
         /// </summary>
         public ModsData ModsXBOX { get; private set; }
 

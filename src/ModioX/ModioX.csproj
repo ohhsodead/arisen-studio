@@ -82,6 +82,9 @@
     <Reference Include="DevExpress.XtraNavBar.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraWizard.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="JRPC">
+      <HintPath>..\References\JRPC.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\References\Newtonsoft.Json.dll</HintPath>
@@ -95,11 +98,10 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="X360">
-      <HintPath>..\References\X360.dll</HintPath>
-    </Reference>
-    <Reference Include="XDevkit">
-      <HintPath>..\References\XDevkit.dll</HintPath>
+    <Reference Include="xdevkit, Version=2.0.21076.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\References\xdevkit.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +122,7 @@
     <Compile Include="Extensions\DialogExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\WebManExtensions.cs" />
+    <Compile Include="Extensions\XboxExtensions.cs" />
     <Compile Include="Forms\Dialogs\ConnectionDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,12 +158,6 @@
     </Compile>
     <Compile Include="Forms\Tools\PS3 Tools\PackageManager.Designer.cs">
       <DependentUpon>PackageManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\AvatarDownloader.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Tools\XBOX Tools\AvatarDownloader.Designer.cs">
-      <DependentUpon>AvatarDownloader.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\XBOX Tools\GameLauncher.cs">
       <SubType>Form</SubType>
@@ -308,9 +305,6 @@
     <EmbeddedResource Include="Forms\Dialogs\BackupFileDialog.resx">
       <DependentUpon>BackupFileDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\XBOX Tools\AvatarDownloader.resx">
-      <DependentUpon>AvatarDownloader.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX Tools\GameLauncher.resx">
       <DependentUpon>GameLauncher.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,12 +331,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\avatar.png" />
-    <None Include="Resources\avatar120pp.png" />
-    <None Include="Resources\1200px-Xbox_Controller.svg.png" />
     <Content Include="Resources\Icons\Xbox_Logo.ico" />
-    <None Include="Resources\original.png" />
-    <None Include="Resources\Xbox_Logo.ico" />
     <None Include="Resources\Icons\XboxSlimE.png" />
     <None Include="Resources\Icons\PlayStation3Fat.png" />
     <None Include="Resources\Icons\PlayStation3SuperSlim.png" />

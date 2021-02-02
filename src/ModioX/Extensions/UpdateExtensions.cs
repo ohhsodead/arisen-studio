@@ -25,14 +25,14 @@ namespace ModioX.Extensions
         public static GitHubData GitHubData { get; } = GetGitHubLatestReleaseData();
 
         /// <summary>
-        /// Get the current application version.
+        /// Get the current version.
         /// </summary>
         public static Version CurrentVersion { get; } = Assembly.GetExecutingAssembly().GetName().Version;
 
         /// <summary>
-        /// Get the current application version name.
+        /// Get the current version name.
         /// </summary>
-        public static string CurrentVersionName { get; } = $"Beta v{CurrentVersion.ToString().TrimEnd('0', '.')}";
+        public static string CurrentVersionName { get; } = $"Beta v{CurrentVersion.ToString().TrimStart('0', '.').TrimEnd('0', '.')}";
 
         /// <summary>
         /// Get the latest release information from the GitHub API.

@@ -32,7 +32,6 @@ namespace ModioX.Forms.Windows
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -77,16 +76,20 @@ namespace ModioX.Forms.Windows
             this.ButtonConnectToXBOX = new DevExpress.XtraBars.BarButtonItem();
             this.MenuBarItemTools = new DevExpress.XtraBars.BarButtonItem();
             this.ToolsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.ButtonPS3GameBackupFiles = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonGameBackupFiles = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3GameUpdateFinder = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3FileManager = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3PackageManager = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3WebManControls = new DevExpress.XtraBars.BarSubItem();
-            this.ButtonPowerFunctions = new DevExpress.XtraBars.BarSubItem();
+            this.ButtonPS3PowerFunctions = new DevExpress.XtraBars.BarSubItem();
             this.ButtonPS3Shutdown = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3Restart = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3SoftReboot = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3HardReboot = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonPS3SystemInfo = new DevExpress.XtraBars.BarSubItem();
+            this.ButtonPS3ShowSystemInformation = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonPS3ShowMinimumVersion = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonPS3ShowTemperatures = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3NotifyMessage = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3VirtualController = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxFileManager = new DevExpress.XtraBars.BarButtonItem();
@@ -98,7 +101,7 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxPowerSoftReboot = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxPowerHardReboot = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxSystemInfo = new DevExpress.XtraBars.BarSubItem();
-            this.ButtonXboxShowSystemInfo = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonXboxShowSystemTemperatures = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxDashboard = new DevExpress.XtraBars.BarSubItem();
             this.ButtonXboxShowProfileIDInfo = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxQuickSignIn = new DevExpress.XtraBars.BarButtonItem();
@@ -106,6 +109,7 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxDashboardHome = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxOpenCloseTray = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxXNotifyMessage = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonXboxTakeScreenshot = new DevExpress.XtraBars.BarButtonItem();
             this.MenuBarItemApplications = new DevExpress.XtraBars.BarButtonItem();
             this.ApplicationsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.MenuBarItemOptions = new DevExpress.XtraBars.BarButtonItem();
@@ -136,8 +140,6 @@ namespace ModioX.Forms.Windows
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.ButtonPS3ShowSystemInformation = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonPS3ShowMinimumVersion = new DevExpress.XtraBars.BarButtonItem();
             this.LabelHeaderConsoleConnected = new DevExpress.XtraBars.BarHeaderItem();
             this.ButtonModInstallFiles = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonModUninstallFiles = new DevExpress.XtraBars.BarButtonItem();
@@ -146,7 +148,7 @@ namespace ModioX.Forms.Windows
             this.ButtonModRemoveFromList = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonModReportAnIssue = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXNotifySend = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonXboxCheatEngine = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.XNotifyText = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.XNotifyType = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -676,7 +678,7 @@ namespace ModioX.Forms.Windows
             this.MenuBarItemApplications,
             this.MenuBarItemOptions,
             this.MenuBarItemHelp,
-            this.ButtonPS3GameBackupFiles,
+            this.ButtonGameBackupFiles,
             this.ButtonPS3GameUpdateFinder,
             this.ButtonPS3FileManager,
             this.ButtonPS3PackageManager,
@@ -699,12 +701,10 @@ namespace ModioX.Forms.Windows
             this.ButtonPS3WebManControls,
             this.ButtonPS3NotifyMessage,
             this.ButtonPS3VirtualController,
-            this.ButtonPowerFunctions,
+            this.ButtonPS3PowerFunctions,
             this.ButtonPS3Shutdown,
             this.ButtonPS3Restart,
             this.ButtonPS3SoftReboot,
-            this.ButtonPS3ShowSystemInformation,
-            this.ButtonPS3ShowMinimumVersion,
             this.LabelHeaderConsoleConnected,
             this.LabelConsoleConnected,
             this.ButtonConnectToXBOX,
@@ -727,20 +727,25 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxAvatarEditor,
             this.ButtonXboxDashboardHome,
             this.ButtonXboxQuickSignIn,
-            this.ButtonXboxShowSystemInfo,
+            this.ButtonXboxShowSystemTemperatures,
             this.LabelHeaderConnectedConsole,
             this.LabelModsStats,
             this.ButtonXboxOpenCloseTray,
             this.ButtonXNotifySend,
             this.ButtonXboxShowProfileIDInfo,
-            this.ButtonXboxCheatEngine,
             this.ButtonXboxPluginsEditor,
             this.ButtonXboxXNotifyMessage,
             this.ButtonExit,
             this.ButtonPS3HardReboot,
-            this.LabelHeaderStatus});
+            this.LabelHeaderStatus,
+            this.ButtonXboxTakeScreenshot,
+            this.barButtonItem1,
+            this.ButtonPS3SystemInfo,
+            this.ButtonPS3ShowMinimumVersion,
+            this.ButtonPS3ShowSystemInformation,
+            this.ButtonPS3ShowTemperatures});
             this.MainMenu.MainMenu = this.BarMenu;
-            this.MainMenu.MaxItemId = 107;
+            this.MainMenu.MaxItemId = 114;
             this.MainMenu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.XNotifyText,
             this.XNotifyType});
@@ -825,23 +830,23 @@ namespace ModioX.Forms.Windows
             // ToolsMenu
             // 
             this.ToolsMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3GameBackupFiles, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonGameBackupFiles, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3GameUpdateFinder),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3FileManager, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3PackageManager),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3WebManControls, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxFileManager, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxFileManager),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxPluginsEditor),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxXBDMMenu, true)});
             this.ToolsMenu.Manager = this.MainMenu;
             this.ToolsMenu.Name = "ToolsMenu";
             // 
-            // ButtonPS3GameBackupFiles
+            // ButtonGameBackupFiles
             // 
-            this.ButtonPS3GameBackupFiles.Caption = "Game Backup Files...";
-            this.ButtonPS3GameBackupFiles.Id = 7;
-            this.ButtonPS3GameBackupFiles.Name = "ButtonPS3GameBackupFiles";
-            this.ButtonPS3GameBackupFiles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3GameBackupFiles_ItemClick);
+            this.ButtonGameBackupFiles.Caption = "Game Backup Files...";
+            this.ButtonGameBackupFiles.Id = 7;
+            this.ButtonGameBackupFiles.Name = "ButtonGameBackupFiles";
+            this.ButtonGameBackupFiles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3GameBackupFiles_ItemClick);
             // 
             // ButtonPS3GameUpdateFinder
             // 
@@ -869,21 +874,22 @@ namespace ModioX.Forms.Windows
             this.ButtonPS3WebManControls.Caption = "WebMAN Controls...";
             this.ButtonPS3WebManControls.Id = 37;
             this.ButtonPS3WebManControls.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPowerFunctions),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3PowerFunctions),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3SystemInfo),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3NotifyMessage),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3VirtualController)});
             this.ButtonPS3WebManControls.Name = "ButtonPS3WebManControls";
             // 
-            // ButtonPowerFunctions
+            // ButtonPS3PowerFunctions
             // 
-            this.ButtonPowerFunctions.Caption = "Power Functions";
-            this.ButtonPowerFunctions.Id = 40;
-            this.ButtonPowerFunctions.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.ButtonPS3PowerFunctions.Caption = "Power Functions";
+            this.ButtonPS3PowerFunctions.Id = 40;
+            this.ButtonPS3PowerFunctions.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3Shutdown),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3Restart),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3SoftReboot),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3HardReboot)});
-            this.ButtonPowerFunctions.Name = "ButtonPowerFunctions";
+            this.ButtonPS3PowerFunctions.Name = "ButtonPS3PowerFunctions";
             // 
             // ButtonPS3Shutdown
             // 
@@ -911,6 +917,37 @@ namespace ModioX.Forms.Windows
             this.ButtonPS3HardReboot.Caption = "Hard Reboot...";
             this.ButtonPS3HardReboot.Id = 105;
             this.ButtonPS3HardReboot.Name = "ButtonPS3HardReboot";
+            // 
+            // ButtonPS3SystemInfo
+            // 
+            this.ButtonPS3SystemInfo.Caption = "System Info";
+            this.ButtonPS3SystemInfo.Id = 110;
+            this.ButtonPS3SystemInfo.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3ShowSystemInformation),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3ShowMinimumVersion),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3ShowTemperatures)});
+            this.ButtonPS3SystemInfo.Name = "ButtonPS3SystemInfo";
+            // 
+            // ButtonPS3ShowSystemInformation
+            // 
+            this.ButtonPS3ShowSystemInformation.Caption = "Show System Information...";
+            this.ButtonPS3ShowSystemInformation.Id = 112;
+            this.ButtonPS3ShowSystemInformation.Name = "ButtonPS3ShowSystemInformation";
+            this.ButtonPS3ShowSystemInformation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3ShowSystemInformation_ItemClick);
+            // 
+            // ButtonPS3ShowMinimumVersion
+            // 
+            this.ButtonPS3ShowMinimumVersion.Caption = "Show Minimum Version...";
+            this.ButtonPS3ShowMinimumVersion.Id = 111;
+            this.ButtonPS3ShowMinimumVersion.Name = "ButtonPS3ShowMinimumVersion";
+            this.ButtonPS3ShowMinimumVersion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3ShowMinimumVersion_ItemClick);
+            // 
+            // ButtonPS3ShowTemperatures
+            // 
+            this.ButtonPS3ShowTemperatures.Caption = "Show Temperatures...";
+            this.ButtonPS3ShowTemperatures.Id = 113;
+            this.ButtonPS3ShowTemperatures.Name = "ButtonPS3ShowTemperatures";
+            this.ButtonPS3ShowTemperatures.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3ShowTemperatures_ItemClick);
             // 
             // ButtonPS3NotifyMessage
             // 
@@ -948,7 +985,8 @@ namespace ModioX.Forms.Windows
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxPowerFunctions),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxSystemInfo),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxDashboard),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxXNotifyMessage)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxXNotifyMessage),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxTakeScreenshot)});
             this.ButtonXboxXBDMMenu.Name = "ButtonXboxXBDMMenu";
             // 
             // ButtonXboxPowerFunctions
@@ -974,7 +1012,7 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxPowerRestart.Caption = "Restart...";
             this.ButtonXboxPowerRestart.Id = 69;
             this.ButtonXboxPowerRestart.Name = "ButtonXboxPowerRestart";
-            this.ButtonXboxPowerRestart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxXBDMReboot_ItemClick);
+            this.ButtonXboxPowerRestart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxXBDMRestart_ItemClick);
             // 
             // ButtonXboxPowerSoftReboot
             // 
@@ -995,15 +1033,15 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxSystemInfo.Caption = "System Info";
             this.ButtonXboxSystemInfo.Id = 70;
             this.ButtonXboxSystemInfo.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxShowSystemInfo)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonXboxShowSystemTemperatures)});
             this.ButtonXboxSystemInfo.Name = "ButtonXboxSystemInfo";
             // 
-            // ButtonXboxShowSystemInfo
+            // ButtonXboxShowSystemTemperatures
             // 
-            this.ButtonXboxShowSystemInfo.Caption = "Show CPU/GPU/RAM/MOBO Temps...";
-            this.ButtonXboxShowSystemInfo.Id = 85;
-            this.ButtonXboxShowSystemInfo.Name = "ButtonXboxShowSystemInfo";
-            this.ButtonXboxShowSystemInfo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxShowTemperature_ItemClick);
+            this.ButtonXboxShowSystemTemperatures.Caption = "Show Temperatures...";
+            this.ButtonXboxShowSystemTemperatures.Id = 85;
+            this.ButtonXboxShowSystemTemperatures.Name = "ButtonXboxShowSystemTemperatures";
+            this.ButtonXboxShowSystemTemperatures.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxShowSystemInfo_ItemClick);
             // 
             // ButtonXboxDashboard
             // 
@@ -1021,19 +1059,12 @@ namespace ModioX.Forms.Windows
             // 
             this.ButtonXboxShowProfileIDInfo.Caption = "Show Profile ID";
             this.ButtonXboxShowProfileIDInfo.Id = 99;
-            this.ButtonXboxShowProfileIDInfo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ButtonXboxShowProfileIDInfo.ImageOptions.Image")));
-            this.ButtonXboxShowProfileIDInfo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ButtonXboxShowProfileIDInfo.ImageOptions.LargeImage")));
             this.ButtonXboxShowProfileIDInfo.Name = "ButtonXboxShowProfileIDInfo";
-            this.ButtonXboxShowProfileIDInfo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxShowProfileIDInfo_ItemClick);
             // 
             // ButtonXboxQuickSignIn
             // 
-            this.ButtonXboxQuickSignIn.Caption = "Quick Sign In...";
-            this.ButtonXboxQuickSignIn.Id = 83;
-            this.ButtonXboxQuickSignIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ButtonXboxQuickSignIn.ImageOptions.Image")));
-            this.ButtonXboxQuickSignIn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ButtonXboxQuickSignIn.ImageOptions.LargeImage")));
+            this.ButtonXboxQuickSignIn.Id = 107;
             this.ButtonXboxQuickSignIn.Name = "ButtonXboxQuickSignIn";
-            this.ButtonXboxQuickSignIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxQuickSignIn_ItemClick);
             // 
             // ButtonXboxAvatarEditor
             // 
@@ -1041,7 +1072,6 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxAvatarEditor.Id = 81;
             this.ButtonXboxAvatarEditor.ItemInMenuAppearance.Hovered.Options.UseImage = true;
             this.ButtonXboxAvatarEditor.Name = "ButtonXboxAvatarEditor";
-            this.ButtonXboxAvatarEditor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxAvatarEditor_ItemClick);
             // 
             // ButtonXboxDashboardHome
             // 
@@ -1053,16 +1083,20 @@ namespace ModioX.Forms.Windows
             // 
             this.ButtonXboxOpenCloseTray.Caption = "Open/Close Tray";
             this.ButtonXboxOpenCloseTray.Id = 91;
-            this.ButtonXboxOpenCloseTray.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ButtonXboxOpenCloseTray.ImageOptions.Image")));
-            this.ButtonXboxOpenCloseTray.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ButtonXboxOpenCloseTray.ImageOptions.LargeImage")));
             this.ButtonXboxOpenCloseTray.Name = "ButtonXboxOpenCloseTray";
-            this.ButtonXboxOpenCloseTray.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxOpenCloseTray_ItemClick);
             // 
             // ButtonXboxXNotifyMessage
             // 
-            this.ButtonXboxXNotifyMessage.Caption = "XNotify Message";
+            this.ButtonXboxXNotifyMessage.Caption = "XNotify Message...";
             this.ButtonXboxXNotifyMessage.Id = 103;
             this.ButtonXboxXNotifyMessage.Name = "ButtonXboxXNotifyMessage";
+            // 
+            // ButtonXboxTakeScreenshot
+            // 
+            this.ButtonXboxTakeScreenshot.Caption = "Take Screenshot...";
+            this.ButtonXboxTakeScreenshot.Id = 108;
+            this.ButtonXboxTakeScreenshot.Name = "ButtonXboxTakeScreenshot";
+            this.ButtonXboxTakeScreenshot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxTakeScreenshot_ItemClick);
             // 
             // MenuBarItemApplications
             // 
@@ -1313,20 +1347,6 @@ namespace ModioX.Forms.Windows
             this.barDockControlRight.Manager = this.MainMenu;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 787);
             // 
-            // ButtonPS3ShowSystemInformation
-            // 
-            this.ButtonPS3ShowSystemInformation.Caption = "Show System Information...";
-            this.ButtonPS3ShowSystemInformation.Id = 46;
-            this.ButtonPS3ShowSystemInformation.Name = "ButtonPS3ShowSystemInformation";
-            this.ButtonPS3ShowSystemInformation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3SystemInformation_ItemClick);
-            // 
-            // ButtonPS3ShowMinimumVersion
-            // 
-            this.ButtonPS3ShowMinimumVersion.Caption = "Show Minimum Version...";
-            this.ButtonPS3ShowMinimumVersion.Id = 48;
-            this.ButtonPS3ShowMinimumVersion.Name = "ButtonPS3ShowMinimumVersion";
-            this.ButtonPS3ShowMinimumVersion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3MinimumVersion_ItemClick);
-            // 
             // LabelHeaderConsoleConnected
             // 
             this.LabelHeaderConsoleConnected.Caption = "Console Connected:";
@@ -1374,13 +1394,12 @@ namespace ModioX.Forms.Windows
             this.ButtonXNotifySend.Caption = "Send XNotify";
             this.ButtonXNotifySend.Id = 98;
             this.ButtonXNotifySend.Name = "ButtonXNotifySend";
-            this.ButtonXNotifySend.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxXNotifySend_ItemClick);
             // 
-            // ButtonXboxCheatEngine
+            // barButtonItem1
             // 
-            this.ButtonXboxCheatEngine.Caption = "Cheat Engine...";
-            this.ButtonXboxCheatEngine.Id = 101;
-            this.ButtonXboxCheatEngine.Name = "ButtonXboxCheatEngine";
+            this.barButtonItem1.Caption = "System Info";
+            this.barButtonItem1.Id = 109;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // XNotifyText
             // 
@@ -2186,7 +2205,7 @@ namespace ModioX.Forms.Windows
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("MainWindow.IconOptions.Icon")));
+            this.IconOptions.Image = global::ModioX.Properties.Resources.app_logo;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(1586, 853);
             this.Name = "MainWindow";
@@ -2307,7 +2326,7 @@ namespace ModioX.Forms.Windows
         private BarDockControl barDockControlLeft;
         private BarDockControl barDockControlRight;
         private ComboBoxEdit ComboBoxSystemType;
-        private BarButtonItem ButtonPS3GameBackupFiles;
+        private BarButtonItem ButtonGameBackupFiles;
         private BarButtonItem ButtonPS3GameUpdateFinder;
         private BarButtonItem ButtonPS3FileManager;
         private BarButtonItem ButtonPS3PackageManager;
@@ -2329,12 +2348,10 @@ namespace ModioX.Forms.Windows
         private BarButtonItem ButtonConnectToPS3;
         private BarSubItem ButtonXbox360;
         private BarSubItem ButtonPS3WebManControls;
-        private BarSubItem ButtonPowerFunctions;
+        private BarSubItem ButtonPS3PowerFunctions;
         private BarButtonItem ButtonPS3Shutdown;
         private BarButtonItem ButtonPS3Restart;
         private BarButtonItem ButtonPS3SoftReboot;
-        private BarButtonItem ButtonPS3ShowSystemInformation;
-        private BarButtonItem ButtonPS3ShowMinimumVersion;
         private BarButtonItem ButtonPS3NotifyMessage;
         private BarButtonItem ButtonPS3VirtualController;
         private DevExpress.XtraGrid.Views.Grid.GridView GridViewModsInstallFiles;
@@ -2384,7 +2401,7 @@ namespace ModioX.Forms.Windows
         private BarButtonItem ButtonXboxAvatarEditor;
         private BarButtonItem ButtonXboxDashboardHome;
         private BarButtonItem ButtonXboxQuickSignIn;
-        private BarButtonItem ButtonXboxShowSystemInfo;
+        private BarButtonItem ButtonXboxShowSystemTemperatures;
         private BarDockControl barDockControl7;
         private BarManager BarManagerModsInstalled;
         private Bar BarModsInstalled;
@@ -2406,7 +2423,6 @@ namespace ModioX.Forms.Windows
         private SimpleButton ButtonModUninstall;
         private SimpleButton ButtonModDownload;
         private SimpleButton ButtonModFavorite;
-        private BarButtonItem ButtonXboxCheatEngine;
         private DevExpress.Utils.Layout.StackPanel PanelInstalledModsPlugins;
         private SimpleButton ButtonUninstallAllMods;
         private BarButtonItem ButtonXboxPluginsEditor;
@@ -2417,5 +2433,11 @@ namespace ModioX.Forms.Windows
         private BarStaticItem LabelHeaderStatus;
         private BarStaticItem barStaticItem1;
         private BarStaticItem barStaticItem2;
+        private BarButtonItem ButtonXboxTakeScreenshot;
+        private BarSubItem ButtonPS3SystemInfo;
+        private BarButtonItem barButtonItem1;
+        private BarButtonItem ButtonPS3ShowMinimumVersion;
+        private BarButtonItem ButtonPS3ShowSystemInformation;
+        private BarButtonItem ButtonPS3ShowTemperatures;
     }
 }

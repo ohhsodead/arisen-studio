@@ -6,7 +6,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 {
     public partial class GameLauncher : DevExpress.XtraEditors.XtraForm
     {
-        public static Xbox XboxConsole { get; } = MainWindow.XboxConsole;
+        public static IXboxConsole XboxConsole { get; } = MainWindow.XboxConsole;
 
         public GameLauncher()
         {
