@@ -119,7 +119,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Form loading event.
         /// </summary>
-        private async void MainWindow_Load(object sender, EventArgs e)
+        private async Task MainWindow_LoadAsync(object sender, EventArgs e)
         {
             DevExpress.LookAndFeel.UserLookAndFeel.Default.StyleChanged += MainWindow_StyleChanged;
 
@@ -146,7 +146,7 @@ namespace ModioX.Forms.Windows
                 }
 
                 SetStatus("Initializing the application database...");
-                await Task.Run(async () => await LoadData());
+                await Task.Run(async () => await LoadDataAsync());
                 InitializeFinished();
             }
             else
@@ -195,7 +195,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Retrieves the categories and mods into the application.
         /// </summary>
-        private static async Task LoadData()
+        private static async Task LoadDataAsync()
         {
             try
             {
@@ -377,7 +377,7 @@ namespace ModioX.Forms.Windows
         {
             WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
         }
-        
+
         // XBOX
 
         private void ButtonXboxFileManager_ItemClick(object sender, ItemClickEventArgs e)
