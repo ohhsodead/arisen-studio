@@ -128,8 +128,7 @@ namespace ModioX.Forms.Windows
             LoadSettings();
             EnableConsoleActions();
 
-            SetStatus("Checking for Internet connection...");
-            if (HttpExtensions.IsConnectedToInternet())
+            if (await HttpExtensions.IsConnectedToInternetAsync())
             {
                 UpdateExtensions.CheckApplicationVersion();
 
@@ -199,7 +198,7 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                Database = await DropboxData.Initialize();
+                Database = await DropboxData.InitializeAsync();
             }
             catch (Exception ex)
             {

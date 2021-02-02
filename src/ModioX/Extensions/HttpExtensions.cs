@@ -4,8 +4,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace ModioX.Extensions
@@ -96,17 +98,40 @@ namespace ModioX.Extensions
             webClient.DownloadFile(url, folderPath);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
         public static Bitmap GetImageFromUrl(string url)
         {
             return new(GetStream(url));
         }
 
-        [DllImport("wininet.dll")]
-        private static extern bool InternetGetConnectedState(out int Description, int ReservedValue);
-
-        public static bool IsConnectedToInternet()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static async Task<bool> IsConnectedToInternetAsync()
         {
-            return InternetGetConnectedState(out _, 0);
+            Ping ping = new Ping();
+
+            try
+            {
+                Program.Log.Info("Checking for Internet connection...");
+
+                if ((await ping.SendPingAsync("dropbox.com", 3000, new byte[32], new PingOptions(64, true)).ConfigureAwait(false)).Status == IPStatus.Success)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Program.Log.Error(ex, "Unable to check for Internet connection");
+                return false;
+            }
+
+            return false;
         }
     }
 }
