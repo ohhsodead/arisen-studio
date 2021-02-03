@@ -172,7 +172,7 @@ namespace ModioX.Forms.Dialogs
         private SimpleButton ButtonConnect;
         private SimpleButton ButtonEdit;
         private SimpleButton ButtonDelete;
-        private GroupControl groupControl1;
+        private GroupControl GroupConsoleProfiles;
         private VScrollBar ScrollBarConsoleProfiles;
         private FlowLayoutPanel PanelConsoleProfiles;
         private SimpleButton ButtonNewConnection;
