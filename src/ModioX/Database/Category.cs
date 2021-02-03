@@ -73,7 +73,7 @@ namespace ModioX.Database
                 return null;
             }
 
-            return DialogExtensions.ShowListInputDialog("Game Regions", Regions.ToList());
+            return DialogExtensions.ShowListInputDialog(MainWindow.Window, "Game Regions", Regions.ToList());
         }
     }
 }

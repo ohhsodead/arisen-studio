@@ -41,40 +41,16 @@ namespace ModioX.Forms.Windows
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.LabelSelectType = new DevExpress.XtraEditors.LabelControl();
-            this.FlowPanelDetails = new System.Windows.Forms.FlowLayoutPanel();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.LabelHeaderName = new DevExpress.XtraEditors.LabelControl();
-            this.LabelName = new DevExpress.XtraEditors.LabelControl();
-            this.LabelHeaderCategory = new DevExpress.XtraEditors.LabelControl();
-            this.LabelCategory = new DevExpress.XtraEditors.LabelControl();
-            this.LabelHeaderFirmware = new DevExpress.XtraEditors.LabelControl();
-            this.LabelFirmware = new DevExpress.XtraEditors.LabelControl();
-            this.LabelHeaderModType = new DevExpress.XtraEditors.LabelControl();
-            this.LabelType = new DevExpress.XtraEditors.LabelControl();
-            this.LabelHeaderVersion = new DevExpress.XtraEditors.LabelControl();
-            this.LabelVersion = new DevExpress.XtraEditors.LabelControl();
-            this.LabelHeaderRegion = new DevExpress.XtraEditors.LabelControl();
-            this.LabelRegion = new DevExpress.XtraEditors.LabelControl();
-            this.LabelHeaderGameType = new DevExpress.XtraEditors.LabelControl();
-            this.LabelConfig = new DevExpress.XtraEditors.LabelControl();
-            this.LabelHeaderAuthor = new DevExpress.XtraEditors.LabelControl();
-            this.LabelAuthor = new DevExpress.XtraEditors.LabelControl();
-            this.LabelHeaderSubmittedBy = new DevExpress.XtraEditors.LabelControl();
-            this.LabelSubmittedBy = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.LabelDescription = new DevExpress.XtraEditors.LabelControl();
-            this.GridControlModsInstallFiles = new DevExpress.XtraGrid.GridControl();
-            this.GridViewModsInstallFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ColumnInstallationFiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LabelSelectSystemType = new DevExpress.XtraEditors.LabelControl();
-            this.PanelModsLibraryFilters = new System.Windows.Forms.Panel();
-            this.TextBoxSearch = new DevExpress.XtraEditors.TextEdit();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.Animation.Transition transition1 = new DevExpress.Utils.Animation.Transition();
+            DevExpress.Utils.Animation.FadeTransition fadeTransition1 = new DevExpress.Utils.Animation.FadeTransition();
+            DevExpress.Utils.Animation.Transition transition2 = new DevExpress.Utils.Animation.Transition();
+            DevExpress.Utils.Animation.FadeTransition fadeTransition2 = new DevExpress.Utils.Animation.FadeTransition();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.MainMenu = new DevExpress.XtraBars.BarManager(this.components);
             this.BarMenu = new DevExpress.XtraBars.Bar();
             this.MenuBarItemConnect = new DevExpress.XtraBars.BarButtonItem();
@@ -90,15 +66,20 @@ namespace ModioX.Forms.Windows
             this.ButtonPS3FileManager = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3PackageManager = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3WebManControls = new DevExpress.XtraBars.BarSubItem();
+            this.ButtonPS3Games = new DevExpress.XtraBars.BarSubItem();
+            this.ButtonPS3MountBD = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonPS3MountISO = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonPS3MountPSN = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonPS3Unmount = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonPS3SystemInfo = new DevExpress.XtraBars.BarSubItem();
+            this.ButtonPS3ShowSystemInformation = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonPS3ShowMinimumVersion = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonPS3ShowTemperatures = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3PowerFunctions = new DevExpress.XtraBars.BarSubItem();
             this.ButtonPS3Shutdown = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3Restart = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3SoftReboot = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3HardReboot = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonPS3SystemInfo = new DevExpress.XtraBars.BarSubItem();
-            this.ButtonPS3ShowSystemInformation = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonPS3ShowMinimumVersion = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonPS3ShowTemperatures = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3NotifyMessage = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3VirtualController = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxFileManager = new DevExpress.XtraBars.BarButtonItem();
@@ -144,7 +125,6 @@ namespace ModioX.Forms.Windows
             this.LabelHeaderStatus = new DevExpress.XtraBars.BarStaticItem();
             this.LabelStatus = new DevExpress.XtraBars.BarStaticItem();
             this.LabelModsStats = new DevExpress.XtraBars.BarStaticItem();
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
@@ -159,6 +139,34 @@ namespace ModioX.Forms.Windows
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.XNotifyText = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.XNotifyType = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.LabelSelectType = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderName = new DevExpress.XtraEditors.LabelControl();
+            this.LabelName = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderCategory = new DevExpress.XtraEditors.LabelControl();
+            this.LabelCategory = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderFirmware = new DevExpress.XtraEditors.LabelControl();
+            this.LabelFirmware = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderModType = new DevExpress.XtraEditors.LabelControl();
+            this.LabelType = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderVersion = new DevExpress.XtraEditors.LabelControl();
+            this.LabelVersion = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderRegion = new DevExpress.XtraEditors.LabelControl();
+            this.LabelRegion = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderGameType = new DevExpress.XtraEditors.LabelControl();
+            this.LabelGameType = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderAuthor = new DevExpress.XtraEditors.LabelControl();
+            this.LabelAuthor = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderSubmittedBy = new DevExpress.XtraEditors.LabelControl();
+            this.LabelSubmittedBy = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelDescription = new DevExpress.XtraEditors.LabelControl();
+            this.GridControlModsInstallFiles = new DevExpress.XtraGrid.GridControl();
+            this.GridViewModsInstallFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ColumnInstallationFiles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LabelSelectSystemType = new DevExpress.XtraEditors.LabelControl();
+            this.PanelModsLibraryFilters = new System.Windows.Forms.Panel();
+            this.TextBoxSearch = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.ComboBoxRegion = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -224,11 +232,8 @@ namespace ModioX.Forms.Windows
             this.ButtonModsUninstallAll = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
-            this.FlowPanelDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridControlModsInstallFiles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewModsInstallFiles)).BeginInit();
-            this.PanelModsLibraryFilters.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSearch.Properties)).BeginInit();
+            this.TransitionManager = new DevExpress.Utils.Animation.TransitionManager(this.components);
+            this.FlowPanelDetails = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConnectMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolsMenu)).BeginInit();
@@ -237,6 +242,10 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.HelpMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XNotifyText)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XNotifyType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlModsInstallFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewModsInstallFiles)).BeginInit();
+            this.PanelModsLibraryFilters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxRegion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxModType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxSystemType.Properties)).BeginInit();
@@ -261,414 +270,16 @@ namespace ModioX.Forms.Windows
             this.PanelButtonsModInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ModsMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManagerModsInstalled)).BeginInit();
+            this.FlowPanelDetails.SuspendLayout();
             this.SuspendLayout();
             // 
-            // LabelSelectType
+            // barDockControlTop
             // 
-            this.LabelSelectType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelSelectType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSelectType.Appearance.Options.UseFont = true;
-            this.LabelSelectType.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectType.Location = new System.Drawing.Point(531, 42);
-            this.LabelSelectType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
-            this.LabelSelectType.Name = "LabelSelectType";
-            this.LabelSelectType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.LabelSelectType.Size = new System.Drawing.Size(63, 15);
-            this.LabelSelectType.TabIndex = 1122;
-            this.LabelSelectType.Text = "MOD TYPE";
-            // 
-            // FlowPanelDetails
-            // 
-            this.FlowPanelDetails.AutoScroll = true;
-            this.FlowPanelDetails.Controls.Add(this.labelControl3);
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderName);
-            this.FlowPanelDetails.Controls.Add(this.LabelName);
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderCategory);
-            this.FlowPanelDetails.Controls.Add(this.LabelCategory);
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderFirmware);
-            this.FlowPanelDetails.Controls.Add(this.LabelFirmware);
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderModType);
-            this.FlowPanelDetails.Controls.Add(this.LabelType);
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderVersion);
-            this.FlowPanelDetails.Controls.Add(this.LabelVersion);
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderRegion);
-            this.FlowPanelDetails.Controls.Add(this.LabelRegion);
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderGameType);
-            this.FlowPanelDetails.Controls.Add(this.LabelConfig);
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderAuthor);
-            this.FlowPanelDetails.Controls.Add(this.LabelAuthor);
-            this.FlowPanelDetails.Controls.Add(this.LabelHeaderSubmittedBy);
-            this.FlowPanelDetails.Controls.Add(this.LabelSubmittedBy);
-            this.FlowPanelDetails.Controls.Add(this.labelControl4);
-            this.FlowPanelDetails.Controls.Add(this.LabelDescription);
-            this.FlowPanelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FlowPanelDetails.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.FlowPanelDetails.Location = new System.Drawing.Point(2, 23);
-            this.FlowPanelDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.FlowPanelDetails.MaximumSize = new System.Drawing.Size(373, 0);
-            this.FlowPanelDetails.Name = "FlowPanelDetails";
-            this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(3, 8, 18, 4);
-            this.FlowPanelDetails.Size = new System.Drawing.Size(373, 570);
-            this.FlowPanelDetails.TabIndex = 0;
-            this.FlowPanelDetails.TabStop = true;
-            this.FlowPanelDetails.Scroll += new System.Windows.Forms.ScrollEventHandler(this.FlowPanelDetails_Scroll);
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.FlowPanelDetails.SetFlowBreak(this.labelControl3, true);
-            this.labelControl3.Location = new System.Drawing.Point(9, 11);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(6, 3, 3, 5);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(47, 15);
-            this.labelControl3.TabIndex = 1168;
-            this.labelControl3.Text = "DETAILS";
-            // 
-            // LabelHeaderName
-            // 
-            this.LabelHeaderName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderName.Appearance.Options.UseFont = true;
-            this.LabelHeaderName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderName.Location = new System.Drawing.Point(9, 34);
-            this.LabelHeaderName.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
-            this.LabelHeaderName.Name = "LabelHeaderName";
-            this.LabelHeaderName.Size = new System.Drawing.Size(36, 15);
-            this.LabelHeaderName.TabIndex = 26;
-            this.LabelHeaderName.Text = "Name:";
-            // 
-            // LabelName
-            // 
-            this.LabelName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelName.Appearance.Options.UseFont = true;
-            this.LabelName.AutoEllipsis = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelName, true);
-            this.LabelName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelName.Location = new System.Drawing.Point(50, 34);
-            this.LabelName.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelName.MaximumSize = new System.Drawing.Size(300, 15);
-            this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(9, 15);
-            this.LabelName.TabIndex = 2;
-            this.LabelName.Text = "...";
-            // 
-            // LabelHeaderCategory
-            // 
-            this.LabelHeaderCategory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderCategory.Appearance.Options.UseFont = true;
-            this.LabelHeaderCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderCategory.Location = new System.Drawing.Point(9, 55);
-            this.LabelHeaderCategory.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
-            this.LabelHeaderCategory.Name = "LabelHeaderCategory";
-            this.LabelHeaderCategory.Size = new System.Drawing.Size(53, 15);
-            this.LabelHeaderCategory.TabIndex = 24;
-            this.LabelHeaderCategory.Text = "Category:";
-            // 
-            // LabelCategory
-            // 
-            this.LabelCategory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelCategory.Appearance.Options.UseFont = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelCategory, true);
-            this.LabelCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelCategory.Location = new System.Drawing.Point(67, 55);
-            this.LabelCategory.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelCategory.Name = "LabelCategory";
-            this.LabelCategory.Size = new System.Drawing.Size(9, 15);
-            this.LabelCategory.TabIndex = 23;
-            this.LabelCategory.Text = "...";
-            // 
-            // LabelHeaderFirmware
-            // 
-            this.LabelHeaderFirmware.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderFirmware.Appearance.Options.UseFont = true;
-            this.LabelHeaderFirmware.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderFirmware.Location = new System.Drawing.Point(9, 76);
-            this.LabelHeaderFirmware.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
-            this.LabelHeaderFirmware.Name = "LabelHeaderFirmware";
-            this.LabelHeaderFirmware.Size = new System.Drawing.Size(74, 15);
-            this.LabelHeaderFirmware.TabIndex = 20;
-            this.LabelHeaderFirmware.Text = "System Type:";
-            // 
-            // LabelFirmware
-            // 
-            this.LabelFirmware.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelFirmware.Appearance.Options.UseFont = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelFirmware, true);
-            this.LabelFirmware.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFirmware.Location = new System.Drawing.Point(88, 76);
-            this.LabelFirmware.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelFirmware.Name = "LabelFirmware";
-            this.LabelFirmware.Size = new System.Drawing.Size(9, 15);
-            this.LabelFirmware.TabIndex = 21;
-            this.LabelFirmware.Text = "...";
-            // 
-            // LabelHeaderModType
-            // 
-            this.LabelHeaderModType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderModType.Appearance.Options.UseFont = true;
-            this.LabelHeaderModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderModType.Location = new System.Drawing.Point(9, 97);
-            this.LabelHeaderModType.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
-            this.LabelHeaderModType.Name = "LabelHeaderModType";
-            this.LabelHeaderModType.Size = new System.Drawing.Size(58, 15);
-            this.LabelHeaderModType.TabIndex = 16;
-            this.LabelHeaderModType.Text = "Mod Type:";
-            // 
-            // LabelType
-            // 
-            this.LabelType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelType.Appearance.Options.UseFont = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelType, true);
-            this.LabelType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelType.Location = new System.Drawing.Point(72, 97);
-            this.LabelType.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelType.Name = "LabelType";
-            this.LabelType.Size = new System.Drawing.Size(9, 15);
-            this.LabelType.TabIndex = 17;
-            this.LabelType.Text = "...";
-            // 
-            // LabelHeaderVersion
-            // 
-            this.LabelHeaderVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeaderVersion.Appearance.Options.UseFont = true;
-            this.LabelHeaderVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderVersion.Location = new System.Drawing.Point(9, 118);
-            this.LabelHeaderVersion.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
-            this.LabelHeaderVersion.Name = "LabelHeaderVersion";
-            this.LabelHeaderVersion.Size = new System.Drawing.Size(45, 15);
-            this.LabelHeaderVersion.TabIndex = 3;
-            this.LabelHeaderVersion.Text = "Version:";
-            // 
-            // LabelVersion
-            // 
-            this.LabelVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelVersion.Appearance.Options.UseFont = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelVersion, true);
-            this.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelVersion.Location = new System.Drawing.Point(59, 118);
-            this.LabelVersion.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelVersion.Name = "LabelVersion";
-            this.LabelVersion.Size = new System.Drawing.Size(9, 15);
-            this.LabelVersion.TabIndex = 4;
-            this.LabelVersion.Text = "...";
-            // 
-            // LabelHeaderRegion
-            // 
-            this.LabelHeaderRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderRegion.Appearance.Options.UseFont = true;
-            this.LabelHeaderRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderRegion.Location = new System.Drawing.Point(9, 139);
-            this.LabelHeaderRegion.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
-            this.LabelHeaderRegion.Name = "LabelHeaderRegion";
-            this.LabelHeaderRegion.Size = new System.Drawing.Size(78, 15);
-            this.LabelHeaderRegion.TabIndex = 1164;
-            this.LabelHeaderRegion.Text = "Game Region:";
-            // 
-            // LabelRegion
-            // 
-            this.LabelRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelRegion.Appearance.Options.UseFont = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelRegion, true);
-            this.LabelRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelRegion.Location = new System.Drawing.Point(92, 139);
-            this.LabelRegion.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelRegion.Name = "LabelRegion";
-            this.LabelRegion.Size = new System.Drawing.Size(9, 15);
-            this.LabelRegion.TabIndex = 1165;
-            this.LabelRegion.Text = "...";
-            // 
-            // LabelHeaderGameType
-            // 
-            this.LabelHeaderGameType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeaderGameType.Appearance.Options.UseFont = true;
-            this.LabelHeaderGameType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderGameType.Location = new System.Drawing.Point(9, 160);
-            this.LabelHeaderGameType.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
-            this.LabelHeaderGameType.Name = "LabelHeaderGameType";
-            this.LabelHeaderGameType.Size = new System.Drawing.Size(66, 15);
-            this.LabelHeaderGameType.TabIndex = 9;
-            this.LabelHeaderGameType.Text = "Game Type:";
-            // 
-            // LabelConfig
-            // 
-            this.LabelConfig.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelConfig.Appearance.Options.UseFont = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelConfig, true);
-            this.LabelConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelConfig.Location = new System.Drawing.Point(80, 160);
-            this.LabelConfig.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelConfig.Name = "LabelConfig";
-            this.LabelConfig.Size = new System.Drawing.Size(9, 15);
-            this.LabelConfig.TabIndex = 10;
-            this.LabelConfig.Text = "...";
-            // 
-            // LabelHeaderAuthor
-            // 
-            this.LabelHeaderAuthor.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderAuthor.Appearance.Options.UseFont = true;
-            this.LabelHeaderAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderAuthor.Location = new System.Drawing.Point(9, 181);
-            this.LabelHeaderAuthor.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
-            this.LabelHeaderAuthor.Name = "LabelHeaderAuthor";
-            this.LabelHeaderAuthor.Size = new System.Drawing.Size(64, 15);
-            this.LabelHeaderAuthor.TabIndex = 6;
-            this.LabelHeaderAuthor.Text = "Created By:";
-            // 
-            // LabelAuthor
-            // 
-            this.LabelAuthor.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelAuthor.Appearance.Options.UseFont = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelAuthor, true);
-            this.LabelAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelAuthor.Location = new System.Drawing.Point(78, 181);
-            this.LabelAuthor.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelAuthor.Name = "LabelAuthor";
-            this.LabelAuthor.Size = new System.Drawing.Size(9, 15);
-            this.LabelAuthor.TabIndex = 15;
-            this.LabelAuthor.Text = "...";
-            // 
-            // LabelHeaderSubmittedBy
-            // 
-            this.LabelHeaderSubmittedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeaderSubmittedBy.Appearance.Options.UseFont = true;
-            this.LabelHeaderSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderSubmittedBy.Location = new System.Drawing.Point(9, 202);
-            this.LabelHeaderSubmittedBy.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
-            this.LabelHeaderSubmittedBy.Name = "LabelHeaderSubmittedBy";
-            this.LabelHeaderSubmittedBy.Size = new System.Drawing.Size(79, 15);
-            this.LabelHeaderSubmittedBy.TabIndex = 13;
-            this.LabelHeaderSubmittedBy.Text = "Submitted By:";
-            // 
-            // LabelSubmittedBy
-            // 
-            this.LabelSubmittedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSubmittedBy.Appearance.Options.UseFont = true;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelSubmittedBy, true);
-            this.LabelSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSubmittedBy.Location = new System.Drawing.Point(93, 202);
-            this.LabelSubmittedBy.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelSubmittedBy.Name = "LabelSubmittedBy";
-            this.LabelSubmittedBy.Size = new System.Drawing.Size(9, 15);
-            this.LabelSubmittedBy.TabIndex = 14;
-            this.LabelSubmittedBy.Text = "...";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.FlowPanelDetails.SetFlowBreak(this.labelControl4, true);
-            this.labelControl4.Location = new System.Drawing.Point(9, 225);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(6, 5, 3, 0);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(80, 15);
-            this.labelControl4.TabIndex = 1169;
-            this.labelControl4.Text = "DESCRIPTION ";
-            // 
-            // LabelDescription
-            // 
-            this.LabelDescription.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelDescription.Appearance.Options.UseFont = true;
-            this.LabelDescription.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.FlowPanelDetails.SetFlowBreak(this.LabelDescription, true);
-            this.LabelDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelDescription.Location = new System.Drawing.Point(9, 246);
-            this.LabelDescription.Margin = new System.Windows.Forms.Padding(6, 6, 2, 3);
-            this.LabelDescription.MaximumSize = new System.Drawing.Size(340, 0);
-            this.LabelDescription.MinimumSize = new System.Drawing.Size(340, 0);
-            this.LabelDescription.Name = "LabelDescription";
-            this.LabelDescription.Padding = new System.Windows.Forms.Padding(0, 0, 0, 12);
-            this.LabelDescription.Size = new System.Drawing.Size(340, 27);
-            this.LabelDescription.TabIndex = 12;
-            this.LabelDescription.Text = "...";
-            // 
-            // GridControlModsInstallFiles
-            // 
-            this.GridControlModsInstallFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridControlModsInstallFiles.Location = new System.Drawing.Point(2, 23);
-            this.GridControlModsInstallFiles.MainView = this.GridViewModsInstallFiles;
-            this.GridControlModsInstallFiles.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.GridControlModsInstallFiles.Name = "GridControlModsInstallFiles";
-            this.GridControlModsInstallFiles.Size = new System.Drawing.Size(369, 99);
-            this.GridControlModsInstallFiles.TabIndex = 3;
-            this.GridControlModsInstallFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.GridViewModsInstallFiles});
-            // 
-            // GridViewModsInstallFiles
-            // 
-            this.GridViewModsInstallFiles.ActiveFilterEnabled = false;
-            this.GridViewModsInstallFiles.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.GridViewModsInstallFiles.GridControl = this.GridControlModsInstallFiles;
-            this.GridViewModsInstallFiles.Name = "GridViewModsInstallFiles";
-            this.GridViewModsInstallFiles.OptionsBehavior.Editable = false;
-            this.GridViewModsInstallFiles.OptionsBehavior.ReadOnly = true;
-            this.GridViewModsInstallFiles.OptionsCustomization.AllowFilter = false;
-            this.GridViewModsInstallFiles.OptionsFilter.AllowFilterEditor = false;
-            this.GridViewModsInstallFiles.OptionsMenu.EnableGroupPanelMenu = false;
-            this.GridViewModsInstallFiles.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.GridViewModsInstallFiles.OptionsNavigation.AutoMoveRowFocus = false;
-            this.GridViewModsInstallFiles.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.GridViewModsInstallFiles.OptionsSelection.EnableAppearanceFocusedRow = false;
-            this.GridViewModsInstallFiles.OptionsView.ShowColumnHeaders = false;
-            this.GridViewModsInstallFiles.OptionsView.ShowGroupPanel = false;
-            this.GridViewModsInstallFiles.OptionsView.ShowIndicator = false;
-            // 
-            // ColumnInstallationFiles
-            // 
-            this.ColumnInstallationFiles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnInstallationFiles.HeaderText = "Installation Files";
-            this.ColumnInstallationFiles.Name = "ColumnInstallationFiles";
-            this.ColumnInstallationFiles.ReadOnly = true;
-            this.ColumnInstallationFiles.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // LabelSelectSystemType
-            // 
-            this.LabelSelectSystemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelSelectSystemType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSelectSystemType.Appearance.Options.UseFont = true;
-            this.LabelSelectSystemType.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelSelectSystemType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectSystemType.Location = new System.Drawing.Point(380, 42);
-            this.LabelSelectSystemType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
-            this.LabelSelectSystemType.Name = "LabelSelectSystemType";
-            this.LabelSelectSystemType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.LabelSelectSystemType.Size = new System.Drawing.Size(77, 15);
-            this.LabelSelectSystemType.TabIndex = 1156;
-            this.LabelSelectSystemType.Text = "SYSTEM TYPE";
-            // 
-            // PanelModsLibraryFilters
-            // 
-            this.PanelModsLibraryFilters.BackColor = System.Drawing.Color.Transparent;
-            this.PanelModsLibraryFilters.Controls.Add(this.TextBoxSearch);
-            this.PanelModsLibraryFilters.Controls.Add(this.labelControl2);
-            this.PanelModsLibraryFilters.Controls.Add(this.labelControl1);
-            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxRegion);
-            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxModType);
-            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxSystemType);
-            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectRegion);
-            this.PanelModsLibraryFilters.Controls.Add(this.LabelSearch);
-            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectSystemType);
-            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectType);
-            this.PanelModsLibraryFilters.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelModsLibraryFilters.Location = new System.Drawing.Point(2, 23);
-            this.PanelModsLibraryFilters.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PanelModsLibraryFilters.Name = "PanelModsLibraryFilters";
-            this.PanelModsLibraryFilters.Size = new System.Drawing.Size(873, 98);
-            this.PanelModsLibraryFilters.TabIndex = 12;
-            // 
-            // TextBoxSearch
-            // 
-            this.TextBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxSearch.Location = new System.Drawing.Point(63, 39);
-            this.TextBoxSearch.MenuManager = this.MainMenu;
-            this.TextBoxSearch.Name = "TextBoxSearch";
-            this.TextBoxSearch.Properties.AllowFocused = false;
-            this.TextBoxSearch.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxSearch.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxSearch.Size = new System.Drawing.Size(309, 22);
-            this.TextBoxSearch.TabIndex = 1;
-            this.TextBoxSearch.EditValueChanged += new System.EventHandler(this.TextBoxSearch_EditValueChanged);
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.MainMenu;
+            this.barDockControlTop.Size = new System.Drawing.Size(1598, 25);
             // 
             // MainMenu
             // 
@@ -750,9 +361,14 @@ namespace ModioX.Forms.Windows
             this.ButtonPS3SystemInfo,
             this.ButtonPS3ShowMinimumVersion,
             this.ButtonPS3ShowSystemInformation,
-            this.ButtonPS3ShowTemperatures});
+            this.ButtonPS3ShowTemperatures,
+            this.ButtonPS3Games,
+            this.ButtonPS3MountBD,
+            this.ButtonPS3Unmount,
+            this.ButtonPS3MountISO,
+            this.ButtonPS3MountPSN});
             this.MainMenu.MainMenu = this.BarMenu;
-            this.MainMenu.MaxItemId = 114;
+            this.MainMenu.MaxItemId = 119;
             this.MainMenu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.XNotifyText,
             this.XNotifyType});
@@ -881,11 +497,82 @@ namespace ModioX.Forms.Windows
             this.ButtonPS3WebManControls.Caption = "WebMAN Controls...";
             this.ButtonPS3WebManControls.Id = 37;
             this.ButtonPS3WebManControls.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3PowerFunctions),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3Games),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3SystemInfo),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3PowerFunctions),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3NotifyMessage),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3VirtualController)});
             this.ButtonPS3WebManControls.Name = "ButtonPS3WebManControls";
+            // 
+            // ButtonPS3Games
+            // 
+            this.ButtonPS3Games.Caption = "Games";
+            this.ButtonPS3Games.Id = 114;
+            this.ButtonPS3Games.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3MountBD),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3MountISO),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3MountPSN),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3Unmount)});
+            this.ButtonPS3Games.Name = "ButtonPS3Games";
+            // 
+            // ButtonPS3MountBD
+            // 
+            this.ButtonPS3MountBD.Caption = "Mount BD Game...";
+            this.ButtonPS3MountBD.Id = 115;
+            this.ButtonPS3MountBD.Name = "ButtonPS3MountBD";
+            this.ButtonPS3MountBD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3MountBD_ItemClick);
+            // 
+            // ButtonPS3MountISO
+            // 
+            this.ButtonPS3MountISO.Caption = "Mount ISO Game...";
+            this.ButtonPS3MountISO.Id = 117;
+            this.ButtonPS3MountISO.Name = "ButtonPS3MountISO";
+            this.ButtonPS3MountISO.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3MountISO_ItemClick);
+            // 
+            // ButtonPS3MountPSN
+            // 
+            this.ButtonPS3MountPSN.Caption = "Mount PSN Game...";
+            this.ButtonPS3MountPSN.Id = 118;
+            this.ButtonPS3MountPSN.Name = "ButtonPS3MountPSN";
+            this.ButtonPS3MountPSN.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3MountPSN_ItemClick);
+            // 
+            // ButtonPS3Unmount
+            // 
+            this.ButtonPS3Unmount.Caption = "Unmount...";
+            this.ButtonPS3Unmount.Id = 116;
+            this.ButtonPS3Unmount.Name = "ButtonPS3Unmount";
+            this.ButtonPS3Unmount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3Unmount_ItemClick);
+            // 
+            // ButtonPS3SystemInfo
+            // 
+            this.ButtonPS3SystemInfo.Caption = "System Info";
+            this.ButtonPS3SystemInfo.Id = 110;
+            this.ButtonPS3SystemInfo.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3ShowSystemInformation),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3ShowMinimumVersion),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3ShowTemperatures)});
+            this.ButtonPS3SystemInfo.Name = "ButtonPS3SystemInfo";
+            // 
+            // ButtonPS3ShowSystemInformation
+            // 
+            this.ButtonPS3ShowSystemInformation.Caption = "Show System Information...";
+            this.ButtonPS3ShowSystemInformation.Id = 112;
+            this.ButtonPS3ShowSystemInformation.Name = "ButtonPS3ShowSystemInformation";
+            this.ButtonPS3ShowSystemInformation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3ShowSystemInformation_ItemClick);
+            // 
+            // ButtonPS3ShowMinimumVersion
+            // 
+            this.ButtonPS3ShowMinimumVersion.Caption = "Show Minimum Version...";
+            this.ButtonPS3ShowMinimumVersion.Id = 111;
+            this.ButtonPS3ShowMinimumVersion.Name = "ButtonPS3ShowMinimumVersion";
+            this.ButtonPS3ShowMinimumVersion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3ShowMinimumVersion_ItemClick);
+            // 
+            // ButtonPS3ShowTemperatures
+            // 
+            this.ButtonPS3ShowTemperatures.Caption = "Show Temperatures...";
+            this.ButtonPS3ShowTemperatures.Id = 113;
+            this.ButtonPS3ShowTemperatures.Name = "ButtonPS3ShowTemperatures";
+            this.ButtonPS3ShowTemperatures.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3ShowTemperatures_ItemClick);
             // 
             // ButtonPS3PowerFunctions
             // 
@@ -924,37 +611,7 @@ namespace ModioX.Forms.Windows
             this.ButtonPS3HardReboot.Caption = "Hard Reboot...";
             this.ButtonPS3HardReboot.Id = 105;
             this.ButtonPS3HardReboot.Name = "ButtonPS3HardReboot";
-            // 
-            // ButtonPS3SystemInfo
-            // 
-            this.ButtonPS3SystemInfo.Caption = "System Info";
-            this.ButtonPS3SystemInfo.Id = 110;
-            this.ButtonPS3SystemInfo.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3ShowSystemInformation),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3ShowMinimumVersion),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonPS3ShowTemperatures)});
-            this.ButtonPS3SystemInfo.Name = "ButtonPS3SystemInfo";
-            // 
-            // ButtonPS3ShowSystemInformation
-            // 
-            this.ButtonPS3ShowSystemInformation.Caption = "Show System Information...";
-            this.ButtonPS3ShowSystemInformation.Id = 112;
-            this.ButtonPS3ShowSystemInformation.Name = "ButtonPS3ShowSystemInformation";
-            this.ButtonPS3ShowSystemInformation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3ShowSystemInformation_ItemClick);
-            // 
-            // ButtonPS3ShowMinimumVersion
-            // 
-            this.ButtonPS3ShowMinimumVersion.Caption = "Show Minimum Version...";
-            this.ButtonPS3ShowMinimumVersion.Id = 111;
-            this.ButtonPS3ShowMinimumVersion.Name = "ButtonPS3ShowMinimumVersion";
-            this.ButtonPS3ShowMinimumVersion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3ShowMinimumVersion_ItemClick);
-            // 
-            // ButtonPS3ShowTemperatures
-            // 
-            this.ButtonPS3ShowTemperatures.Caption = "Show Temperatures...";
-            this.ButtonPS3ShowTemperatures.Id = 113;
-            this.ButtonPS3ShowTemperatures.Name = "ButtonPS3ShowTemperatures";
-            this.ButtonPS3ShowTemperatures.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3ShowTemperatures_ItemClick);
+            this.ButtonPS3HardReboot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3HardReboot_ItemClick);
             // 
             // ButtonPS3NotifyMessage
             // 
@@ -1316,14 +973,6 @@ namespace ModioX.Forms.Windows
             this.LabelModsStats.Name = "LabelModsStats";
             this.LabelModsStats.RightIndent = 4;
             // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.MainMenu;
-            this.barDockControlTop.Size = new System.Drawing.Size(1598, 25);
-            // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
@@ -1412,7 +1061,7 @@ namespace ModioX.Forms.Windows
             this.XNotifyType.AccessibleDescription = "";
             this.XNotifyType.AutoHeight = false;
             this.XNotifyType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "mnjukjui", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "mnjukjui", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.XNotifyType.Items.AddRange(new object[] {
             "Blank",
             "Game Invite",
@@ -1473,6 +1122,377 @@ namespace ModioX.Forms.Windows
             "Updating",
             "SmartGlass Available"});
             this.XNotifyType.Name = "XNotifyType";
+            // 
+            // LabelSelectType
+            // 
+            this.LabelSelectType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelSelectType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSelectType.Appearance.Options.UseFont = true;
+            this.LabelSelectType.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelSelectType.Location = new System.Drawing.Point(531, 42);
+            this.LabelSelectType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
+            this.LabelSelectType.Name = "LabelSelectType";
+            this.LabelSelectType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelSelectType.Size = new System.Drawing.Size(63, 15);
+            this.LabelSelectType.TabIndex = 1122;
+            this.LabelSelectType.Text = "MOD TYPE";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.FlowPanelDetails.SetFlowBreak(this.labelControl3, true);
+            this.labelControl3.Location = new System.Drawing.Point(6, 3);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(6, 3, 3, 5);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(47, 15);
+            this.labelControl3.TabIndex = 1168;
+            this.labelControl3.Text = "DETAILS";
+            // 
+            // LabelHeaderName
+            // 
+            this.LabelHeaderName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderName.Appearance.Options.UseFont = true;
+            this.LabelHeaderName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderName.Location = new System.Drawing.Point(6, 26);
+            this.LabelHeaderName.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
+            this.LabelHeaderName.Name = "LabelHeaderName";
+            this.LabelHeaderName.Size = new System.Drawing.Size(36, 15);
+            this.LabelHeaderName.TabIndex = 26;
+            this.LabelHeaderName.Text = "Name:";
+            // 
+            // LabelName
+            // 
+            this.LabelName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelName.Appearance.Options.UseFont = true;
+            this.LabelName.AutoEllipsis = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelName, true);
+            this.LabelName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelName.Location = new System.Drawing.Point(47, 26);
+            this.LabelName.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelName.MaximumSize = new System.Drawing.Size(300, 15);
+            this.LabelName.Name = "LabelName";
+            this.LabelName.Size = new System.Drawing.Size(9, 15);
+            this.LabelName.TabIndex = 2;
+            this.LabelName.Text = "...";
+            // 
+            // LabelHeaderCategory
+            // 
+            this.LabelHeaderCategory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderCategory.Appearance.Options.UseFont = true;
+            this.LabelHeaderCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderCategory.Location = new System.Drawing.Point(6, 47);
+            this.LabelHeaderCategory.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
+            this.LabelHeaderCategory.Name = "LabelHeaderCategory";
+            this.LabelHeaderCategory.Size = new System.Drawing.Size(53, 15);
+            this.LabelHeaderCategory.TabIndex = 24;
+            this.LabelHeaderCategory.Text = "Category:";
+            // 
+            // LabelCategory
+            // 
+            this.LabelCategory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelCategory.Appearance.Options.UseFont = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelCategory, true);
+            this.LabelCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelCategory.Location = new System.Drawing.Point(64, 47);
+            this.LabelCategory.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelCategory.Name = "LabelCategory";
+            this.LabelCategory.Size = new System.Drawing.Size(9, 15);
+            this.LabelCategory.TabIndex = 23;
+            this.LabelCategory.Text = "...";
+            // 
+            // LabelHeaderFirmware
+            // 
+            this.LabelHeaderFirmware.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderFirmware.Appearance.Options.UseFont = true;
+            this.LabelHeaderFirmware.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderFirmware.Location = new System.Drawing.Point(6, 68);
+            this.LabelHeaderFirmware.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
+            this.LabelHeaderFirmware.Name = "LabelHeaderFirmware";
+            this.LabelHeaderFirmware.Size = new System.Drawing.Size(74, 15);
+            this.LabelHeaderFirmware.TabIndex = 20;
+            this.LabelHeaderFirmware.Text = "System Type:";
+            // 
+            // LabelFirmware
+            // 
+            this.LabelFirmware.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelFirmware.Appearance.Options.UseFont = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelFirmware, true);
+            this.LabelFirmware.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelFirmware.Location = new System.Drawing.Point(85, 68);
+            this.LabelFirmware.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelFirmware.Name = "LabelFirmware";
+            this.LabelFirmware.Size = new System.Drawing.Size(9, 15);
+            this.LabelFirmware.TabIndex = 21;
+            this.LabelFirmware.Text = "...";
+            // 
+            // LabelHeaderModType
+            // 
+            this.LabelHeaderModType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderModType.Appearance.Options.UseFont = true;
+            this.LabelHeaderModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderModType.Location = new System.Drawing.Point(6, 89);
+            this.LabelHeaderModType.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
+            this.LabelHeaderModType.Name = "LabelHeaderModType";
+            this.LabelHeaderModType.Size = new System.Drawing.Size(58, 15);
+            this.LabelHeaderModType.TabIndex = 16;
+            this.LabelHeaderModType.Text = "Mod Type:";
+            // 
+            // LabelType
+            // 
+            this.LabelType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelType.Appearance.Options.UseFont = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelType, true);
+            this.LabelType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelType.Location = new System.Drawing.Point(69, 89);
+            this.LabelType.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelType.Name = "LabelType";
+            this.LabelType.Size = new System.Drawing.Size(9, 15);
+            this.LabelType.TabIndex = 17;
+            this.LabelType.Text = "...";
+            // 
+            // LabelHeaderVersion
+            // 
+            this.LabelHeaderVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHeaderVersion.Appearance.Options.UseFont = true;
+            this.LabelHeaderVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderVersion.Location = new System.Drawing.Point(6, 110);
+            this.LabelHeaderVersion.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
+            this.LabelHeaderVersion.Name = "LabelHeaderVersion";
+            this.LabelHeaderVersion.Size = new System.Drawing.Size(45, 15);
+            this.LabelHeaderVersion.TabIndex = 3;
+            this.LabelHeaderVersion.Text = "Version:";
+            // 
+            // LabelVersion
+            // 
+            this.LabelVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelVersion.Appearance.Options.UseFont = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelVersion, true);
+            this.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelVersion.Location = new System.Drawing.Point(56, 110);
+            this.LabelVersion.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelVersion.Name = "LabelVersion";
+            this.LabelVersion.Size = new System.Drawing.Size(9, 15);
+            this.LabelVersion.TabIndex = 4;
+            this.LabelVersion.Text = "...";
+            // 
+            // LabelHeaderRegion
+            // 
+            this.LabelHeaderRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderRegion.Appearance.Options.UseFont = true;
+            this.LabelHeaderRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderRegion.Location = new System.Drawing.Point(6, 131);
+            this.LabelHeaderRegion.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
+            this.LabelHeaderRegion.Name = "LabelHeaderRegion";
+            this.LabelHeaderRegion.Size = new System.Drawing.Size(78, 15);
+            this.LabelHeaderRegion.TabIndex = 1164;
+            this.LabelHeaderRegion.Text = "Game Region:";
+            // 
+            // LabelRegion
+            // 
+            this.LabelRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelRegion.Appearance.Options.UseFont = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelRegion, true);
+            this.LabelRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelRegion.Location = new System.Drawing.Point(89, 131);
+            this.LabelRegion.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelRegion.Name = "LabelRegion";
+            this.LabelRegion.Size = new System.Drawing.Size(9, 15);
+            this.LabelRegion.TabIndex = 1165;
+            this.LabelRegion.Text = "...";
+            // 
+            // LabelHeaderGameType
+            // 
+            this.LabelHeaderGameType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHeaderGameType.Appearance.Options.UseFont = true;
+            this.LabelHeaderGameType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderGameType.Location = new System.Drawing.Point(6, 152);
+            this.LabelHeaderGameType.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
+            this.LabelHeaderGameType.Name = "LabelHeaderGameType";
+            this.LabelHeaderGameType.Size = new System.Drawing.Size(66, 15);
+            this.LabelHeaderGameType.TabIndex = 9;
+            this.LabelHeaderGameType.Text = "Game Type:";
+            // 
+            // LabelGameType
+            // 
+            this.LabelGameType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelGameType.Appearance.Options.UseFont = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelGameType, true);
+            this.LabelGameType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelGameType.Location = new System.Drawing.Point(77, 152);
+            this.LabelGameType.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelGameType.Name = "LabelGameType";
+            this.LabelGameType.Size = new System.Drawing.Size(9, 15);
+            this.LabelGameType.TabIndex = 10;
+            this.LabelGameType.Text = "...";
+            // 
+            // LabelHeaderAuthor
+            // 
+            this.LabelHeaderAuthor.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderAuthor.Appearance.Options.UseFont = true;
+            this.LabelHeaderAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderAuthor.Location = new System.Drawing.Point(6, 173);
+            this.LabelHeaderAuthor.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
+            this.LabelHeaderAuthor.Name = "LabelHeaderAuthor";
+            this.LabelHeaderAuthor.Size = new System.Drawing.Size(64, 15);
+            this.LabelHeaderAuthor.TabIndex = 6;
+            this.LabelHeaderAuthor.Text = "Created By:";
+            // 
+            // LabelAuthor
+            // 
+            this.LabelAuthor.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelAuthor.Appearance.Options.UseFont = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelAuthor, true);
+            this.LabelAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelAuthor.Location = new System.Drawing.Point(75, 173);
+            this.LabelAuthor.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelAuthor.Name = "LabelAuthor";
+            this.LabelAuthor.Size = new System.Drawing.Size(9, 15);
+            this.LabelAuthor.TabIndex = 15;
+            this.LabelAuthor.Text = "...";
+            // 
+            // LabelHeaderSubmittedBy
+            // 
+            this.LabelHeaderSubmittedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHeaderSubmittedBy.Appearance.Options.UseFont = true;
+            this.LabelHeaderSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderSubmittedBy.Location = new System.Drawing.Point(6, 194);
+            this.LabelHeaderSubmittedBy.Margin = new System.Windows.Forms.Padding(6, 3, 5, 3);
+            this.LabelHeaderSubmittedBy.Name = "LabelHeaderSubmittedBy";
+            this.LabelHeaderSubmittedBy.Size = new System.Drawing.Size(79, 15);
+            this.LabelHeaderSubmittedBy.TabIndex = 13;
+            this.LabelHeaderSubmittedBy.Text = "Submitted By:";
+            // 
+            // LabelSubmittedBy
+            // 
+            this.LabelSubmittedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSubmittedBy.Appearance.Options.UseFont = true;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelSubmittedBy, true);
+            this.LabelSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelSubmittedBy.Location = new System.Drawing.Point(90, 194);
+            this.LabelSubmittedBy.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelSubmittedBy.Name = "LabelSubmittedBy";
+            this.LabelSubmittedBy.Size = new System.Drawing.Size(9, 15);
+            this.LabelSubmittedBy.TabIndex = 14;
+            this.LabelSubmittedBy.Text = "...";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.FlowPanelDetails.SetFlowBreak(this.labelControl4, true);
+            this.labelControl4.Location = new System.Drawing.Point(6, 217);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(6, 5, 3, 0);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(80, 15);
+            this.labelControl4.TabIndex = 1169;
+            this.labelControl4.Text = "DESCRIPTION ";
+            // 
+            // LabelDescription
+            // 
+            this.LabelDescription.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelDescription.Appearance.Options.UseFont = true;
+            this.LabelDescription.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.FlowPanelDetails.SetFlowBreak(this.LabelDescription, true);
+            this.LabelDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelDescription.Location = new System.Drawing.Point(6, 238);
+            this.LabelDescription.Margin = new System.Windows.Forms.Padding(6, 6, 2, 3);
+            this.LabelDescription.MaximumSize = new System.Drawing.Size(340, 0);
+            this.LabelDescription.MinimumSize = new System.Drawing.Size(340, 0);
+            this.LabelDescription.Name = "LabelDescription";
+            this.LabelDescription.Padding = new System.Windows.Forms.Padding(0, 0, 0, 12);
+            this.LabelDescription.Size = new System.Drawing.Size(340, 27);
+            this.LabelDescription.TabIndex = 12;
+            this.LabelDescription.Text = "...";
+            // 
+            // GridControlModsInstallFiles
+            // 
+            this.GridControlModsInstallFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridControlModsInstallFiles.Location = new System.Drawing.Point(2, 23);
+            this.GridControlModsInstallFiles.MainView = this.GridViewModsInstallFiles;
+            this.GridControlModsInstallFiles.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.GridControlModsInstallFiles.Name = "GridControlModsInstallFiles";
+            this.GridControlModsInstallFiles.Size = new System.Drawing.Size(369, 99);
+            this.GridControlModsInstallFiles.TabIndex = 3;
+            this.GridControlModsInstallFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewModsInstallFiles});
+            // 
+            // GridViewModsInstallFiles
+            // 
+            this.GridViewModsInstallFiles.ActiveFilterEnabled = false;
+            this.GridViewModsInstallFiles.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
+            this.GridViewModsInstallFiles.GridControl = this.GridControlModsInstallFiles;
+            this.GridViewModsInstallFiles.Name = "GridViewModsInstallFiles";
+            this.GridViewModsInstallFiles.OptionsBehavior.Editable = false;
+            this.GridViewModsInstallFiles.OptionsBehavior.ReadOnly = true;
+            this.GridViewModsInstallFiles.OptionsCustomization.AllowFilter = false;
+            this.GridViewModsInstallFiles.OptionsFilter.AllowFilterEditor = false;
+            this.GridViewModsInstallFiles.OptionsMenu.EnableGroupPanelMenu = false;
+            this.GridViewModsInstallFiles.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.GridViewModsInstallFiles.OptionsNavigation.AutoMoveRowFocus = false;
+            this.GridViewModsInstallFiles.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.GridViewModsInstallFiles.OptionsSelection.EnableAppearanceFocusedRow = false;
+            this.GridViewModsInstallFiles.OptionsView.ShowColumnHeaders = false;
+            this.GridViewModsInstallFiles.OptionsView.ShowGroupPanel = false;
+            this.GridViewModsInstallFiles.OptionsView.ShowIndicator = false;
+            // 
+            // ColumnInstallationFiles
+            // 
+            this.ColumnInstallationFiles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnInstallationFiles.HeaderText = "Installation Files";
+            this.ColumnInstallationFiles.Name = "ColumnInstallationFiles";
+            this.ColumnInstallationFiles.ReadOnly = true;
+            this.ColumnInstallationFiles.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // LabelSelectSystemType
+            // 
+            this.LabelSelectSystemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelSelectSystemType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSelectSystemType.Appearance.Options.UseFont = true;
+            this.LabelSelectSystemType.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelSelectSystemType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelSelectSystemType.Location = new System.Drawing.Point(380, 42);
+            this.LabelSelectSystemType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
+            this.LabelSelectSystemType.Name = "LabelSelectSystemType";
+            this.LabelSelectSystemType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelSelectSystemType.Size = new System.Drawing.Size(77, 15);
+            this.LabelSelectSystemType.TabIndex = 1156;
+            this.LabelSelectSystemType.Text = "SYSTEM TYPE";
+            // 
+            // PanelModsLibraryFilters
+            // 
+            this.PanelModsLibraryFilters.BackColor = System.Drawing.Color.Transparent;
+            this.PanelModsLibraryFilters.Controls.Add(this.TextBoxSearch);
+            this.PanelModsLibraryFilters.Controls.Add(this.labelControl2);
+            this.PanelModsLibraryFilters.Controls.Add(this.labelControl1);
+            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxRegion);
+            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxModType);
+            this.PanelModsLibraryFilters.Controls.Add(this.ComboBoxSystemType);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectRegion);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelSearch);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectSystemType);
+            this.PanelModsLibraryFilters.Controls.Add(this.LabelSelectType);
+            this.PanelModsLibraryFilters.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelModsLibraryFilters.Location = new System.Drawing.Point(2, 23);
+            this.PanelModsLibraryFilters.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PanelModsLibraryFilters.Name = "PanelModsLibraryFilters";
+            this.PanelModsLibraryFilters.Size = new System.Drawing.Size(873, 98);
+            this.PanelModsLibraryFilters.TabIndex = 12;
+            // 
+            // TextBoxSearch
+            // 
+            this.TextBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxSearch.Location = new System.Drawing.Point(63, 39);
+            this.TextBoxSearch.MenuManager = this.MainMenu;
+            this.TextBoxSearch.Name = "TextBoxSearch";
+            this.TextBoxSearch.Properties.AllowFocused = false;
+            this.TextBoxSearch.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSearch.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSearch.Size = new System.Drawing.Size(309, 22);
+            this.TextBoxSearch.TabIndex = 1;
+            this.TextBoxSearch.EditValueChanged += new System.EventHandler(this.TextBoxSearch_EditValueChanged);
             // 
             // labelControl2
             // 
@@ -1807,7 +1827,7 @@ namespace ModioX.Forms.Windows
             this.ProgressMods.Caption = "NO MODS FOUND";
             this.ProgressMods.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.ProgressMods.Description = "";
-            this.ProgressMods.Location = new System.Drawing.Point(330, 187);
+            this.ProgressMods.Location = new System.Drawing.Point(315, 187);
             this.ProgressMods.Name = "ProgressMods";
             this.ProgressMods.Size = new System.Drawing.Size(246, 66);
             this.ProgressMods.TabIndex = 1170;
@@ -1975,13 +1995,11 @@ namespace ModioX.Forms.Windows
             // 
             // GroupModInformation
             // 
-            this.GroupModInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupModInformation.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.GroupModInformation.AppearanceCaption.Options.UseFont = true;
             this.GroupModInformation.Controls.Add(this.ScrollBarModInformation);
-            this.GroupModInformation.Controls.Add(this.FlowPanelDetails);
             this.GroupModInformation.Controls.Add(this.GroupInstallFiles);
+            this.GroupModInformation.Controls.Add(this.FlowPanelDetails);
             this.GroupModInformation.Location = new System.Drawing.Point(1209, 39);
             this.GroupModInformation.Margin = new System.Windows.Forms.Padding(5, 3, 4, 3);
             this.GroupModInformation.Name = "GroupModInformation";
@@ -2120,7 +2138,7 @@ namespace ModioX.Forms.Windows
             // 
             this.barDockControl5.CausesValidation = false;
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl5.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl5.Location = new System.Drawing.Point(0, 25);
             this.barDockControl5.Manager = this.BarManagerModsInstalled;
             this.barDockControl5.Size = new System.Drawing.Size(1598, 0);
             // 
@@ -2128,7 +2146,7 @@ namespace ModioX.Forms.Windows
             // 
             this.barDockControl6.CausesValidation = false;
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl6.Location = new System.Drawing.Point(0, 837);
+            this.barDockControl6.Location = new System.Drawing.Point(0, 812);
             this.barDockControl6.Manager = this.BarManagerModsInstalled;
             this.barDockControl6.Size = new System.Drawing.Size(1598, 0);
             // 
@@ -2136,17 +2154,17 @@ namespace ModioX.Forms.Windows
             // 
             this.barDockControl7.CausesValidation = false;
             this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl7.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl7.Location = new System.Drawing.Point(0, 25);
             this.barDockControl7.Manager = this.BarManagerModsInstalled;
-            this.barDockControl7.Size = new System.Drawing.Size(0, 837);
+            this.barDockControl7.Size = new System.Drawing.Size(0, 787);
             // 
             // barDockControl8
             // 
             this.barDockControl8.CausesValidation = false;
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl8.Location = new System.Drawing.Point(1598, 0);
+            this.barDockControl8.Location = new System.Drawing.Point(1598, 25);
             this.barDockControl8.Manager = this.BarManagerModsInstalled;
-            this.barDockControl8.Size = new System.Drawing.Size(0, 837);
+            this.barDockControl8.Size = new System.Drawing.Size(0, 787);
             // 
             // HeaderLabelModsInstalled
             // 
@@ -2181,11 +2199,68 @@ namespace ModioX.Forms.Windows
             this.barStaticItem2.LeftIndent = 4;
             this.barStaticItem2.Name = "barStaticItem2";
             // 
+            // TransitionManager
+            // 
+            transition1.BarWaitingIndicatorProperties.Caption = "";
+            transition1.BarWaitingIndicatorProperties.Description = "";
+            transition1.Control = this;
+            transition1.EasingMode = DevExpress.Data.Utils.EasingMode.EaseInOut;
+            transition1.LineWaitingIndicatorProperties.AnimationElementCount = 5;
+            transition1.LineWaitingIndicatorProperties.Caption = "";
+            transition1.LineWaitingIndicatorProperties.Description = "";
+            transition1.RingWaitingIndicatorProperties.AnimationElementCount = 5;
+            transition1.RingWaitingIndicatorProperties.Caption = "";
+            transition1.RingWaitingIndicatorProperties.Description = "";
+            transition1.TransitionType = fadeTransition1;
+            transition1.WaitingIndicatorProperties.Caption = "";
+            transition1.WaitingIndicatorProperties.Description = "";
+            transition2.BarWaitingIndicatorProperties.Caption = "";
+            transition2.BarWaitingIndicatorProperties.Description = "";
+            transition2.Control = this.barDockControlTop;
+            transition2.LineWaitingIndicatorProperties.AnimationElementCount = 5;
+            transition2.LineWaitingIndicatorProperties.Caption = "";
+            transition2.LineWaitingIndicatorProperties.Description = "";
+            transition2.RingWaitingIndicatorProperties.AnimationElementCount = 5;
+            transition2.RingWaitingIndicatorProperties.Caption = "";
+            transition2.RingWaitingIndicatorProperties.Description = "";
+            transition2.TransitionType = fadeTransition2;
+            transition2.WaitingIndicatorProperties.Caption = "";
+            transition2.WaitingIndicatorProperties.Description = "";
+            this.TransitionManager.Transitions.Add(transition1);
+            this.TransitionManager.Transitions.Add(transition2);
+            // 
+            // FlowPanelDetails
+            // 
+            this.FlowPanelDetails.Controls.Add(this.labelControl3);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderName);
+            this.FlowPanelDetails.Controls.Add(this.LabelName);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderCategory);
+            this.FlowPanelDetails.Controls.Add(this.LabelCategory);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderFirmware);
+            this.FlowPanelDetails.Controls.Add(this.LabelFirmware);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderModType);
+            this.FlowPanelDetails.Controls.Add(this.LabelType);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderVersion);
+            this.FlowPanelDetails.Controls.Add(this.LabelVersion);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderRegion);
+            this.FlowPanelDetails.Controls.Add(this.LabelRegion);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderGameType);
+            this.FlowPanelDetails.Controls.Add(this.LabelGameType);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderAuthor);
+            this.FlowPanelDetails.Controls.Add(this.LabelAuthor);
+            this.FlowPanelDetails.Controls.Add(this.LabelHeaderSubmittedBy);
+            this.FlowPanelDetails.Controls.Add(this.LabelSubmittedBy);
+            this.FlowPanelDetails.Controls.Add(this.labelControl4);
+            this.FlowPanelDetails.Controls.Add(this.LabelDescription);
+            this.FlowPanelDetails.Location = new System.Drawing.Point(2, 21);
+            this.FlowPanelDetails.Margin = new System.Windows.Forms.Padding(0);
+            this.FlowPanelDetails.Name = "FlowPanelDetails";
+            this.FlowPanelDetails.Size = new System.Drawing.Size(375, 569);
+            this.FlowPanelDetails.TabIndex = 4;
+            // 
             // MainWindow
             // 
-            this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.Appearance.Options.UseFont = true;
-            this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -2194,14 +2269,14 @@ namespace ModioX.Forms.Windows
             this.Controls.Add(this.GroupModsInstalled);
             this.Controls.Add(this.GroupCategories);
             this.Controls.Add(this.GroupModsLibrary);
-            this.Controls.Add(this.barDockControlLeft);
-            this.Controls.Add(this.barDockControlRight);
-            this.Controls.Add(this.barDockControlBottom);
-            this.Controls.Add(this.barDockControlTop);
             this.Controls.Add(this.barDockControl7);
             this.Controls.Add(this.barDockControl8);
             this.Controls.Add(this.barDockControl6);
             this.Controls.Add(this.barDockControl5);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
@@ -2215,13 +2290,6 @@ namespace ModioX.Forms.Windows
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.StyleChanged += new System.EventHandler(this.MainWindow_StyleChanged);
-            this.FlowPanelDetails.ResumeLayout(false);
-            this.FlowPanelDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridControlModsInstallFiles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewModsInstallFiles)).EndInit();
-            this.PanelModsLibraryFilters.ResumeLayout(false);
-            this.PanelModsLibraryFilters.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConnectMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolsMenu)).EndInit();
@@ -2230,6 +2298,11 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.HelpMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XNotifyText)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XNotifyType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlModsInstallFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewModsInstallFiles)).EndInit();
+            this.PanelModsLibraryFilters.ResumeLayout(false);
+            this.PanelModsLibraryFilters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxRegion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxModType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxSystemType.Properties)).EndInit();
@@ -2254,6 +2327,8 @@ namespace ModioX.Forms.Windows
             this.PanelButtonsModInformation.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ModsMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManagerModsInstalled)).EndInit();
+            this.FlowPanelDetails.ResumeLayout(false);
+            this.FlowPanelDetails.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2261,13 +2336,12 @@ namespace ModioX.Forms.Windows
 
         #endregion
         private LabelControl LabelSelectType;
-        private FlowLayoutPanel FlowPanelDetails;
         private LabelControl LabelName;
         private LabelControl LabelHeaderAuthor;
         private LabelControl LabelHeaderVersion;
         private LabelControl LabelVersion;
         private LabelControl LabelHeaderGameType;
-        private LabelControl LabelConfig;
+        private LabelControl LabelGameType;
         private LabelControl LabelDescription;
         private LabelControl LabelHeaderSubmittedBy;
         private LabelControl LabelSubmittedBy;
@@ -2438,5 +2512,12 @@ namespace ModioX.Forms.Windows
         private BarButtonItem ButtonPS3ShowMinimumVersion;
         private BarButtonItem ButtonPS3ShowSystemInformation;
         private BarButtonItem ButtonPS3ShowTemperatures;
+        private BarSubItem ButtonPS3Games;
+        private BarButtonItem ButtonPS3MountBD;
+        private BarButtonItem ButtonPS3Unmount;
+        private BarButtonItem ButtonPS3MountISO;
+        private BarButtonItem ButtonPS3MountPSN;
+        private DevExpress.Utils.Animation.TransitionManager TransitionManager;
+        private FlowLayoutPanel FlowPanelDetails;
     }
 }

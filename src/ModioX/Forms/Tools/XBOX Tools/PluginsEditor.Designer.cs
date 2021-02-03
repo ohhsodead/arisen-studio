@@ -41,8 +41,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.CheckBoxEnableLiveStrong = new DevExpress.XtraEditors.CheckEdit();
             this.CheckBoxEnableLiveBlock = new DevExpress.XtraEditors.CheckEdit();
             this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
-            this.ButtonRestoreLaunchFile = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonSaveFile = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonRestoreDefault = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonRestoreBackup = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonSave = new DevExpress.XtraEditors.SimpleButton();
             this.TextBoxKey = new DevExpress.XtraEditors.TextEdit();
             this.TextBoxValue = new DevExpress.XtraEditors.TextEdit();
             this.ComboBoxSections = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -76,9 +77,12 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // GridViewLaunchFile
             // 
-            this.GridViewLaunchFile.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.GridViewLaunchFile.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewLaunchFile.GridControl = this.GridLaunchFile;
             this.GridViewLaunchFile.Name = "GridViewLaunchFile";
+            this.GridViewLaunchFile.OptionsBehavior.Editable = false;
+            this.GridViewLaunchFile.OptionsBehavior.ReadOnly = true;
+            this.GridViewLaunchFile.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.GridViewLaunchFile.OptionsView.ShowGroupPanel = false;
             this.GridViewLaunchFile.OptionsView.ShowIndicator = false;
             this.GridViewLaunchFile.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewIniFile_RowClick);
@@ -102,7 +106,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             this.GroupIniFileEditor.Name = "GroupIniFileEditor";
             this.GroupIniFileEditor.Size = new System.Drawing.Size(428, 321);
             this.GroupIniFileEditor.TabIndex = 15;
-            this.GroupIniFileEditor.Text = "Edit Launch File Values";
+            this.GroupIniFileEditor.Text = "Edit File Values";
             // 
             // CheckBoxEnableLiveStrong
             // 
@@ -128,34 +132,45 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             // 
             // PanelButtons
             // 
-            this.PanelButtons.Controls.Add(this.ButtonRestoreLaunchFile);
-            this.PanelButtons.Controls.Add(this.ButtonSaveFile);
+            this.PanelButtons.Controls.Add(this.ButtonRestoreDefault);
+            this.PanelButtons.Controls.Add(this.ButtonRestoreBackup);
+            this.PanelButtons.Controls.Add(this.ButtonSave);
             this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelButtons.Location = new System.Drawing.Point(2, 280);
             this.PanelButtons.Name = "PanelButtons";
             this.PanelButtons.Size = new System.Drawing.Size(424, 39);
             this.PanelButtons.TabIndex = 1181;
             // 
-            // ButtonRestoreLaunchFile
+            // ButtonRestoreDefault
             // 
-            this.ButtonRestoreLaunchFile.Location = new System.Drawing.Point(8, 8);
-            this.ButtonRestoreLaunchFile.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
-            this.ButtonRestoreLaunchFile.Name = "ButtonRestoreLaunchFile";
-            this.ButtonRestoreLaunchFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonRestoreLaunchFile.Size = new System.Drawing.Size(131, 23);
-            this.ButtonRestoreLaunchFile.TabIndex = 7;
-            this.ButtonRestoreLaunchFile.Text = "Restore Backup File";
-            this.ButtonRestoreLaunchFile.Click += new System.EventHandler(this.ButtonRestoreLaunchFile_Click);
+            this.ButtonRestoreDefault.Location = new System.Drawing.Point(8, 8);
+            this.ButtonRestoreDefault.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.ButtonRestoreDefault.Name = "ButtonRestoreDefault";
+            this.ButtonRestoreDefault.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonRestoreDefault.Size = new System.Drawing.Size(116, 23);
+            this.ButtonRestoreDefault.TabIndex = 9;
+            this.ButtonRestoreDefault.Text = "Restore Default";
+            this.ButtonRestoreDefault.Click += new System.EventHandler(this.ButtonRestoreDefault_Click);
             // 
-            // ButtonSaveFile
+            // ButtonRestoreBackup
             // 
-            this.ButtonSaveFile.Location = new System.Drawing.Point(145, 8);
-            this.ButtonSaveFile.Name = "ButtonSaveFile";
-            this.ButtonSaveFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonSaveFile.Size = new System.Drawing.Size(77, 23);
-            this.ButtonSaveFile.TabIndex = 8;
-            this.ButtonSaveFile.Text = "Save File";
-            this.ButtonSaveFile.Click += new System.EventHandler(this.ButtonSaveFile_Click);
+            this.ButtonRestoreBackup.Location = new System.Drawing.Point(130, 8);
+            this.ButtonRestoreBackup.Name = "ButtonRestoreBackup";
+            this.ButtonRestoreBackup.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonRestoreBackup.Size = new System.Drawing.Size(114, 23);
+            this.ButtonRestoreBackup.TabIndex = 7;
+            this.ButtonRestoreBackup.Text = "Restore Backup";
+            this.ButtonRestoreBackup.Click += new System.EventHandler(this.ButtonRestoreBackup_Click);
+            // 
+            // ButtonSave
+            // 
+            this.ButtonSave.Location = new System.Drawing.Point(250, 8);
+            this.ButtonSave.Name = "ButtonSave";
+            this.ButtonSave.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonSave.Size = new System.Drawing.Size(77, 23);
+            this.ButtonSave.TabIndex = 8;
+            this.ButtonSave.Text = "Save File";
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // TextBoxKey
             // 
@@ -254,9 +269,10 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         private LabelControl labelControl1;
         private SimpleButton ButtonSetValue;
         private StackPanel PanelButtons;
-        private SimpleButton ButtonRestoreLaunchFile;
-        private SimpleButton ButtonSaveFile;
+        private SimpleButton ButtonRestoreBackup;
+        private SimpleButton ButtonSave;
         private CheckEdit CheckBoxEnableLiveStrong;
         private CheckEdit CheckBoxEnableLiveBlock;
+        private SimpleButton ButtonRestoreDefault;
     }
 }

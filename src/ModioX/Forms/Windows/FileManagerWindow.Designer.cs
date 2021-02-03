@@ -8,7 +8,7 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace ModioX.Forms.Windows
 {
-    partial class FileManager
+    partial class FileManagerWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,7 @@ namespace ModioX.Forms.Windows
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileManager));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileManagerWindow));
             this.GridLocalFiles = new DevExpress.XtraGrid.GridControl();
             this.GridViewLocalFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColumnLocalType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,6 +89,9 @@ namespace ModioX.Forms.Windows
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.BehaviorManager = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.dragDropEvents1 = new DevExpress.Utils.DragDrop.DragDropEvents(this.components);
+            this.dragDropEvents2 = new DevExpress.Utils.DragDrop.DragDropEvents(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GridLocalFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewLocalFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridConsoleFiles)).BeginInit();
@@ -111,6 +114,7 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxLocalDrives.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxLocalPath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManagerStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BehaviorManager)).BeginInit();
             this.SuspendLayout();
             // 
             // GridLocalFiles
@@ -122,7 +126,7 @@ namespace ModioX.Forms.Windows
             this.GridLocalFiles.MainView = this.GridViewLocalFiles;
             this.GridLocalFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.GridLocalFiles.Name = "GridLocalFiles";
-            this.GridLocalFiles.Size = new System.Drawing.Size(634, 373);
+            this.GridLocalFiles.Size = new System.Drawing.Size(634, 384);
             this.GridLocalFiles.TabIndex = 0;
             this.GridLocalFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewLocalFiles});
@@ -130,6 +134,8 @@ namespace ModioX.Forms.Windows
             // 
             // GridViewLocalFiles
             // 
+            this.BehaviorManager.SetBehaviors(this.GridViewLocalFiles, new DevExpress.Utils.Behaviors.Behavior[] {
+            ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.DragDrop.DragDropBehavior.Create(typeof(DevExpress.XtraGrid.Extensions.ColumnViewDragDropSource), true, true, true, true, this.dragDropEvents1)))});
             this.GridViewLocalFiles.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewLocalFiles.GridControl = this.GridLocalFiles;
             this.GridViewLocalFiles.Name = "GridViewLocalFiles";
@@ -142,6 +148,8 @@ namespace ModioX.Forms.Windows
             this.GridViewLocalFiles.OptionsView.ShowGroupPanel = false;
             this.GridViewLocalFiles.OptionsView.ShowIndicator = false;
             this.GridViewLocalFiles.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewLocalFiles_RowClick);
+            this.GridViewLocalFiles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GridViewLocalFiles_MouseDown);
+            this.GridViewLocalFiles.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GridViewLocalFiles_MouseMove);
             this.GridViewLocalFiles.DoubleClick += new System.EventHandler(this.GridViewLocalFiles_DoubleClick);
             // 
             // ColumnLocalType
@@ -195,15 +203,19 @@ namespace ModioX.Forms.Windows
             this.GridConsoleFiles.MainView = this.GridViewConsoleFiles;
             this.GridConsoleFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.GridConsoleFiles.Name = "GridConsoleFiles";
-            this.GridConsoleFiles.Size = new System.Drawing.Size(634, 373);
+            this.GridConsoleFiles.Size = new System.Drawing.Size(634, 384);
             this.GridConsoleFiles.TabIndex = 7;
             this.GridConsoleFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewConsoleFiles});
             this.GridConsoleFiles.FocusedViewChanged += new DevExpress.XtraGrid.ViewFocusEventHandler(this.GridConsoleFiles_FocusedViewChanged);
+            this.GridConsoleFiles.DragDrop += new System.Windows.Forms.DragEventHandler(this.GridConsoleFiles_DragDrop);
+            this.GridConsoleFiles.DragOver += new System.Windows.Forms.DragEventHandler(this.GridConsoleFiles_DragOver);
             this.GridConsoleFiles.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.GridConsoleFiles_MouseDoubleClick);
             // 
             // GridViewConsoleFiles
             // 
+            this.BehaviorManager.SetBehaviors(this.GridViewConsoleFiles, new DevExpress.Utils.Behaviors.Behavior[] {
+            ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.DragDrop.DragDropBehavior.Create(typeof(DevExpress.XtraGrid.Extensions.ColumnViewDragDropSource), true, true, true, true, this.dragDropEvents2)))});
             this.GridViewConsoleFiles.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewConsoleFiles.GridControl = this.GridConsoleFiles;
             this.GridViewConsoleFiles.Name = "GridViewConsoleFiles";
@@ -707,6 +719,7 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxLocalDrives.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxLocalPath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManagerStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BehaviorManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -764,5 +777,8 @@ namespace ModioX.Forms.Windows
         private StackPanel PanelLocalStatus;
         private LabelControl LabelLocalStatus;
         private GroupControl GroupConsoleFileExplorer;
+        private DevExpress.Utils.Behaviors.BehaviorManager BehaviorManager;
+        private DevExpress.Utils.DragDrop.DragDropEvents dragDropEvents1;
+        private DevExpress.Utils.DragDrop.DragDropEvents dragDropEvents2;
     }
 }

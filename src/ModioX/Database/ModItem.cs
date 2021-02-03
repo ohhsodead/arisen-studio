@@ -5,6 +5,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using ModioX.Extensions;
+using ModioX.Forms.Windows;
 using ModioX.Io;
 using ModioX.Models.Database;
 using ModioX.Models.Resources;
@@ -207,7 +208,7 @@ namespace ModioX.Database
             if (DownloadFiles.Count <= 1) return DownloadFiles.First();
 
             var downloadNames = DownloadFiles.Select(x => x.Name).ToList();
-            var downloadName = DialogExtensions.ShowListInputDialog("Install Downloads", downloadNames);
+            var downloadName = DialogExtensions.ShowListInputDialog(MainWindow.Window, "Install Downloads", downloadNames);
 
             return string.IsNullOrEmpty(downloadName) ? null : DownloadFiles.First(x => x.Name.Equals(downloadName));
         }

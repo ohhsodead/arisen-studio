@@ -1,12 +1,11 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ModioX.Controls;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
-using ModioX.Properties;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Dialogs
 {
@@ -17,10 +16,19 @@ namespace ModioX.Forms.Dialogs
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Get the user's settings data.
+        /// </summary>
         public static SettingsData Settings { get; } = MainWindow.Settings;
 
+        /// <summary>
+        /// Get the user's console profile data.
+        /// </summary>
         public ConsoleProfile ConsoleProfile { get; private set; }
 
+        /// <summary>
+        /// G
+        /// </summary>
         public TileConsoleItem SelectedConsole { get; private set; }
 
         private void ConnectConsole_Load(object sender, EventArgs e)
@@ -42,41 +50,41 @@ namespace ModioX.Forms.Dialogs
 
             foreach (var consoleProfile in Settings.ConsoleProfiles)
             {
-                Image consoleImage = consoleImage = Resources.PlayStation3Fat;
+                Image consoleImage = consoleImage = Properties.Resources.PlayStation3Fat;
 
                 switch (consoleProfile.Type)
                 {
                     case ConsoleType.PlayStation3Fat:
-                        consoleImage = Resources.PlayStation3Fat;
+                        consoleImage = Properties.Resources.PlayStation3Fat;
                         break;
 
                     case ConsoleType.PlayStation3Slim:
-                        consoleImage = Resources.PlayStation3Slim;
+                        consoleImage = Properties.Resources.PlayStation3Slim;
                         break;
 
                     case ConsoleType.PlayStation3SuperSlim:
-                        consoleImage = Resources.PlayStation3Slim;
+                        consoleImage = Properties.Resources.PlayStation3Slim;
                         break;
 
                     case ConsoleType.Xbox360FatWhite:
-                        consoleImage = Resources.XboxFat;
+                        consoleImage = Properties.Resources.XboxFat;
                         break;
 
                     case ConsoleType.Xbox360EliteFatBlack:
-                        consoleImage = Resources.XboxFatElite;
+                        consoleImage = Properties.Resources.XboxFatElite;
                         break;
 
                     case ConsoleType.Xbox360Slim:
-                        consoleImage = Resources.XboxSlim;
+                        consoleImage = Properties.Resources.XboxSlim;
                         break;
 
                     case ConsoleType.Xbox360SlimE:
-                        consoleImage = Resources.XboxSlimE;
+                        consoleImage = Properties.Resources.XboxSlimE;
                         break;
                 }
 
                 TileConsoleItem consoleItem = new TileConsoleItem(consoleProfile.Name, consoleImage) { ConsoleProfile = consoleProfile };
-                consoleItem.OnClick += ConsoleItem_Click;
+                consoleItem.OnClick += new EventHandler(ConsoleItem_Click);
                 PanelConsoleProfiles.Controls.Add(consoleItem);
                 consoleIndex++;
             }
@@ -105,6 +113,11 @@ namespace ModioX.Forms.Dialogs
             ButtonEdit.Enabled = ConsoleProfile != null;
             ButtonDelete.Enabled = ConsoleProfile != null;
             ButtonConnect.Enabled = ConsoleProfile != null;
+
+            if (ConsoleProfile != null)
+            {
+                ButtonConnect.Focus(); 
+            }
         }
 
         private void ResetConsoleItems()
@@ -116,7 +129,7 @@ namespace ModioX.Forms.Dialogs
             }
         }
 
-        private void ButtonNewConnection_Click(object sender, EventArgs e)
+        private void ButtonAddNewConsole_Click(object sender, EventArgs e)
         {
             var consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
 
@@ -127,11 +140,6 @@ namespace ModioX.Forms.Dialogs
                 MainWindow.Window.LoadSettings();
                 LoadConsoles();
             }
-        }
-
-        private void ButtonConnect_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void ButtonDelete_Click(object sender, EventArgs e)
@@ -162,6 +170,11 @@ namespace ModioX.Forms.Dialogs
             LoadConsoles();
         }
 
+        private void ButtonConnect_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void PanelConsoleProfiles_ControlAddedOrRemoved(object sender, ControlEventArgs e)
         {
             UpdateScrollBar();
@@ -170,7 +183,6 @@ namespace ModioX.Forms.Dialogs
         private void PanelConsoleProfiles_Scroll(object sender, ScrollEventArgs e)
         {
             ScrollBarConsoleProfiles.Value = PanelConsoleProfiles.VerticalScroll.Value;
-            Refresh();
         }
 
         private void ScrollBarConsoleProfiles_Scroll(object sender, ScrollEventArgs e)

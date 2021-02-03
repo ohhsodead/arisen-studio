@@ -13,41 +13,39 @@ namespace ModioX.Models.Resources
 {
     public class SettingsData
     {
+        public List<ConsoleProfile> ConsoleProfiles { get; set; } = new();
+
         public bool FirstTimeUse { get; set; } = true;
 
         public bool FirstTimeOpenAfterUpdate { get; set; } = true;
 
-        public bool SaveSkinOnClose { get; set; } = true;
+        public bool RememberSkinOnClose { get; set; } = true;
 
         public string SkinName { get; set; } = "Office 2019 Black";
 
         public bool ShowFileSizeInBytes { get; set; } = true;
 
-        public Color HexBoxForeColor { get; set; } = Color.Green;
-
-        public Color HexBoxBackColor { get; set; } = Color.FromArgb(54, 54, 54);
-
-        public List<ConsoleProfile> ConsoleProfiles { get; set; } = new();
-
         public ConsoleTypePrefix LoadConsoleMods { get; set; } = ConsoleTypePrefix.PS3;
 
-        public bool AutoDetectGameRegions { get; set; } = false;
+        public bool ShowGamesFromExternalDevices { get; set; } = true;
+
+        public bool AutoDetectGameRegions { get; set; } = true;
 
         public bool AutoDetectGameTitles { get; set; } = true;
 
-        public bool RememberGameRegions { get; set; } = false;
+        public bool RememberGameRegions { get; set; } = true;
 
-        public bool SaveLocalPath { get; set; } = false;
+        public bool SaveLocalPath { get; set; } = true;
 
         public string LocalPathPS3 { get; set; } = KnownFolders.GetPath(KnownFolder.Documents);
 
         public string LocalPathXBOX { get; set; } = KnownFolders.GetPath(KnownFolder.Documents);
 
-        public bool SaveConsolePath { get; set; } = false;
+        public bool SaveConsolePath { get; set; } = true;
 
         public string ConsolePathPS3 { get; set; } = "/dev_hdd0/";
 
-        public string ConsolePathXBOX { get; set; } = "/Hdd/";
+        public string ConsolePathXBOX { get; set; } = "/Hdd1/";
 
         public string LaunchIniFilePath { get; set; } = "/Hdd1/launch.ini";
 

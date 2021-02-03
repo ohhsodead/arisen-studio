@@ -213,11 +213,29 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             }
         }
 
-        private void ButtonRestoreLaunchFile_Click(object sender, EventArgs e)
+        private void ButtonRestoreDefault_Click(object sender, EventArgs e)
         {
             if (File.Exists(LocalLaunchBackupFilePath))
             {
-                if (XtraMessageBox.Show("Do you really want to restore your backup file, all edited values will be lost.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                if (XtraMessageBox.Show("Do you really want to restore to the default file, all of the edited values will be lost.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    new FileIniDataParser().WriteFile(LocalLaunchBackupFilePath, LaunchFileData);
+                    File.WriteAllBytes("launch.ini", Properties.Resources.launch);
+                    FtpExtensions.UploadFile("launch.ini", ConsoleLaunchFilePath);
+                    LoadLaunchFileData();
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("You must first create a backup file to restore.", "No File Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void ButtonRestoreBackup_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(LocalLaunchBackupFilePath))
+            {
+                if (XtraMessageBox.Show("Do you really want to restore the backup file, all of the edited values will be lost.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     new FileIniDataParser().WriteFile(LocalLaunchBackupFilePath, LaunchFileData);
                     FtpExtensions.UploadFile(LocalLaunchBackupFilePath, ConsoleLaunchFilePath);
@@ -230,7 +248,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             }
         }
 
-        private void ButtonSaveFile_Click(object sender, EventArgs e)
+        private void ButtonSave_Click(object sender, EventArgs e)
         {
             try
             {

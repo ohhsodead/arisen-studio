@@ -5,13 +5,24 @@ namespace ModioX.Extensions
 {
     internal static class StringExtensions
     {
+        public static string FormatBytes(this long byteCount)
+        {
+            string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" }; //Longs run out around EB
+            if (byteCount == 0)
+                return "0 " + suf[0];
+            long bytes = Math.Abs(byteCount);
+            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
+            return (Math.Sign(byteCount) * num).ToString() + " " + suf[place];
+        }
+
         /// <summary>
         /// </summary>
-        /// <param name="filename"> </param>
+        /// <param name="filePath"> </param>
         /// <returns> </returns>
-        public static string ReplaceInvalidChars(string filename)
+        public static string ReplaceInvalidChars(string filePath)
         {
-            return string.Join("_", filename.Split(Path.GetInvalidFileNameChars()));
+            return string.Join("_", filePath.Split(Path.GetInvalidFileNameChars()));
         }
 
         /// <summary>
@@ -70,6 +81,12 @@ namespace ModioX.Extensions
         public static bool ContainsIgnoreCase(this string value, string value2)
         {
             return value.ToLower().Contains(value2.ToLower());
+        }
+
+        /// <inheritdoc cref="string.Equals" />
+        public static bool EndsWithIgnoreCase(this string value, string value2)
+        {
+            return value.ToLower().EndsWith(value2.ToLower());
         }
     }
 }

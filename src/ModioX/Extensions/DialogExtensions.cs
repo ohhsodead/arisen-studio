@@ -41,7 +41,7 @@ namespace ModioX.Extensions
             dataViewDialog.ShowDialog(owner);
         }
 
-        public static string ShowListInputDialog(string title, List<string> items)
+        public static string ShowListInputDialog(Form owner, string title, List<string> items)
         {
             using var listViewDialog = new ListViewDialog
             {
@@ -49,7 +49,7 @@ namespace ModioX.Extensions
                 Items = items
             };
 
-            listViewDialog.ShowDialog();
+            listViewDialog.ShowDialog(owner);
             return listViewDialog.SelectedItem ?? "";
         }
 
@@ -97,7 +97,7 @@ namespace ModioX.Extensions
 
         public static void ShowFileManager(Form owner)
         {
-            using var fileManagerWindow = new FileManager();
+            using var fileManagerWindow = new FileManagerWindow();
             fileManagerWindow.ShowDialog(owner);
         }
 
@@ -105,14 +105,20 @@ namespace ModioX.Extensions
 
         public static void ShowGameBackupFiles(Form owner)
         {
-            using var gameBackupFilesWindow = new BackupFiles();
-            gameBackupFilesWindow.ShowDialog(owner);
+            using var backupFiles = new BackupFiles();
+            backupFiles.ShowDialog(owner);
+        }
+
+        public static BackupFile ShowBackupFileDetails(Form owner, BackupFile backupFile)
+        {
+            using var backupFileDialog = new BackupFileDialog() { BackupFile = backupFile };
+            return backupFileDialog.ShowDialog(owner) == DialogResult.OK ? backupFileDialog.BackupFile : null;
         }
 
         public static void ShowGameUpdatesFinderDialog(Form owner)
         {
-            using var gameUpdatesDialog = new GameUpdatesFinder();
-            gameUpdatesDialog.ShowDialog(owner);
+            using var gameUpdatesFinder = new GameUpdatesFinder();
+            gameUpdatesFinder.ShowDialog(owner);
         }
 
         public static void ShowPackageManagerWindow(Form owner)

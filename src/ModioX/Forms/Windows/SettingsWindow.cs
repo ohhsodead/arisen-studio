@@ -21,14 +21,10 @@ namespace ModioX.Forms.Windows
             /* Appearance */
 
             // Theme
-            CheckBoxSaveThemeOnClose.Checked = Settings.SaveSkinOnClose;
+            CheckBoxRememberThemeOnClose.Checked = Settings.RememberSkinOnClose;
 
             // File Size
             CheckBoxShowFileSizeInBytes.Checked = Settings.ShowFileSizeInBytes;
-
-            // Xbox Debugging (HexBox)
-            ColorXboxDebuggingFont.Color = Settings.HexBoxForeColor;
-            ColorXboxDebuggingBackground.Color = Settings.HexBoxBackColor;
 
             /* Database */
             RadioConsoles.SelectedIndex = Settings.LoadConsoleMods switch
@@ -39,6 +35,7 @@ namespace ModioX.Forms.Windows
             };
 
             /* Content Recognition */
+            CheckBoxShowGamesFromExternalDevices.Checked = Settings.ShowGamesFromExternalDevices;
             CheckBoxAutoDetectGameRegions.Checked = Settings.AutoDetectGameRegions;
             CheckBoxAutoDetectGameTitles.Checked = Settings.AutoDetectGameTitles;
             CheckBoxRememberGameRegions.Checked = Settings.RememberGameRegions;
@@ -56,7 +53,7 @@ namespace ModioX.Forms.Windows
             /* Appearance */
 
             // Theme
-            Settings.SaveSkinOnClose = CheckBoxSaveThemeOnClose.Checked;
+            Settings.RememberSkinOnClose = CheckBoxRememberThemeOnClose.Checked;
 
             // File Size
             Settings.ShowFileSizeInBytes = CheckBoxShowFileSizeInBytes.Checked;
@@ -70,6 +67,7 @@ namespace ModioX.Forms.Windows
             };
 
             /* Content Recognition */
+            Settings.ShowGamesFromExternalDevices = CheckBoxShowGamesFromExternalDevices.Checked;
             Settings.AutoDetectGameRegions = CheckBoxAutoDetectGameRegions.Checked;
             Settings.AutoDetectGameTitles = CheckBoxAutoDetectGameTitles.Checked;
             Settings.RememberGameRegions = CheckBoxRememberGameRegions.Checked;

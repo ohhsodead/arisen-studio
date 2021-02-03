@@ -395,99 +395,6 @@ namespace ModioX.Net
         }
 
         /// <summary>
-        /// List all files and directories in the current working directory.
-        /// </summary>
-        /// <returns> A list of file and directory names. </returns>
-        [Obsolete("Use GetFiles or GetDirectories instead.")]
-        public List<string> List()
-        {
-            return List(null, false);
-        }
-
-        /// <summary>
-        /// Provides backwards compatibility
-        /// </summary>
-        /// <param name="mask"> The file mask used in the search. </param>
-        /// <returns> A list of file matching the mask. </returns>
-        [Obsolete("Use GetFiles or GetDirectories instead.")]
-        public List<string> List(string mask)
-        {
-            return List(mask, false);
-        }
-
-        [Obsolete("Will be removed in later releases.")]
-        private List<string> List(bool onlyDirectories)
-        {
-            return List(null, onlyDirectories);
-        }
-
-        [Obsolete("Will be removed in later releases.")]
-        private List<string> List(string mask, bool onlyDirectories)
-        {
-            var findData = new WINAPI.WIN32_FIND_DATA();
-
-            var hFindFile = WININET.FtpFindFirstFile(
-                _hConnect,
-                mask,
-                ref findData,
-                WININET.INTERNET_FLAG_NO_CACHE_WRITE,
-                IntPtr.Zero);
-            try
-            {
-                var files = new List<string>();
-                if (hFindFile == IntPtr.Zero)
-                {
-                    if (Marshal.GetLastWin32Error() == WINAPI.ERROR_NO_MORE_FILES)
-                    {
-                        return files;
-                    }
-                    else
-                    {
-                        Error();
-                        return files;
-                    }
-                }
-
-                if (onlyDirectories && (findData.dfFileAttributes & WINAPI.FILE_ATTRIBUTE_DIRECTORY) == WINAPI.FILE_ATTRIBUTE_DIRECTORY)
-                {
-                    files.Add(new string(findData.fileName).TrimEnd('\0'));
-                }
-                else if (!onlyDirectories)
-                {
-                    files.Add(new string(findData.fileName).TrimEnd('\0'));
-                }
-
-                findData = new WINAPI.WIN32_FIND_DATA();
-                while (WININET.InternetFindNextFile(hFindFile, ref findData) != 0)
-                {
-                    if (onlyDirectories && (findData.dfFileAttributes & WINAPI.FILE_ATTRIBUTE_DIRECTORY) == WINAPI.FILE_ATTRIBUTE_DIRECTORY)
-                    {
-                        files.Add(new string(findData.fileName).TrimEnd('\0'));
-                    }
-                    else if (!onlyDirectories)
-                    {
-                        files.Add(new string(findData.fileName).TrimEnd('\0'));
-                    }
-                    findData = new WINAPI.WIN32_FIND_DATA();
-                }
-
-                if (Marshal.GetLastWin32Error() != WINAPI.ERROR_NO_MORE_FILES)
-                {
-                    Error();
-                }
-
-                return files;
-            }
-            finally
-            {
-                if (hFindFile != IntPtr.Zero)
-                {
-                    WININET.InternetCloseHandle(hFindFile);
-                }
-            }
-        }
-
-        /// <summary>
         /// Gets details of all files and their available FTP file information from the current
         /// working FTP directory.
         /// </summary>
@@ -760,18 +667,13 @@ namespace ModioX.Net
         /// <returns> A <see cref="String" /> containing the server response. </returns>
         public string SendCommand(string cmd)
         {
-            int result;
             var dataSocket = new IntPtr();
-            switch (cmd)
-            {
-                case "PASV":
-                    result = WININET.FtpCommand(_hConnect, false, WININET.FTP_TRANSFER_TYPE_ASCII, cmd, IntPtr.Zero, ref dataSocket);
-                    break;
 
-                default:
-                    result = WININET.FtpCommand(_hConnect, false, WININET.FTP_TRANSFER_TYPE_ASCII, cmd, IntPtr.Zero, ref dataSocket);
-                    break;
-            }
+            var result = cmd switch
+            {
+                "PASV" => WININET.FtpCommand(_hConnect, false, WININET.FTP_TRANSFER_TYPE_ASCII, cmd, IntPtr.Zero, ref dataSocket),
+                _ => WININET.FtpCommand(_hConnect, false, WININET.FTP_TRANSFER_TYPE_ASCII, cmd, IntPtr.Zero, ref dataSocket),
+            };
 
             var BUFFER_SIZE = 8192;
 

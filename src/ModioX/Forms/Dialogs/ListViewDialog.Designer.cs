@@ -43,18 +43,24 @@ namespace ModioX.Forms.Dialogs
             // 
             this.ListBoxItems.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.ListBoxItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListBoxItems.Location = new System.Drawing.Point(2, 23);
+            this.ListBoxItems.Location = new System.Drawing.Point(10, 31);
             this.ListBoxItems.Name = "ListBoxItems";
             this.ListBoxItems.ShowFocusRect = false;
-            this.ListBoxItems.Size = new System.Drawing.Size(219, 181);
+            this.ListBoxItems.Size = new System.Drawing.Size(203, 165);
             this.ListBoxItems.TabIndex = 2;
             this.ListBoxItems.SelectedIndexChanged += new System.EventHandler(this.ListBoxItems_SelectedIndexChanged);
+            this.ListBoxItems.SelectedValueChanged += new System.EventHandler(this.ListBoxItems_SelectedValueChanged);
+            this.ListBoxItems.Click += new System.EventHandler(this.ListBoxItems_Click);
             // 
             // GroupListItems
             // 
+            this.GroupListItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupListItems.Controls.Add(this.ListBoxItems);
             this.GroupListItems.Location = new System.Drawing.Point(12, 12);
             this.GroupListItems.Name = "GroupListItems";
+            this.GroupListItems.Padding = new System.Windows.Forms.Padding(8);
             this.GroupListItems.Size = new System.Drawing.Size(223, 206);
             this.GroupListItems.TabIndex = 3;
             this.GroupListItems.Text = "Choose Item...";

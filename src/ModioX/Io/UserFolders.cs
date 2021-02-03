@@ -11,8 +11,6 @@ namespace ModioX.Io
         /// </summary>
         internal static readonly string AppDataDirectory = $@"{KnownFolders.GetPath(KnownFolder.Documents)}\ModioX\";
 
-        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-
         /// <summary>
         /// Get the directory to download modded files at.
         /// </summary>
@@ -51,7 +49,7 @@ namespace ModioX.Io
                 }
                 catch (Exception ex)
                 {
-                    Logger.Warn(ex);
+                    Program.Log.Warn(ex);
                     if (ex is UnauthorizedAccessException || ex is DirectoryNotFoundException) return;
                 }
             }

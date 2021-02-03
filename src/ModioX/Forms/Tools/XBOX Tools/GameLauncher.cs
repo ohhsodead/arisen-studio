@@ -1,13 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using DevExpress.XtraEditors;
-using ModioX.Forms.Windows;
 ﻿using FluentFTP;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Net;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using XDevkit;
 
 namespace ModioX.Forms.Tools.XBOX_Tools

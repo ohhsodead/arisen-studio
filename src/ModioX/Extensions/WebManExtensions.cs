@@ -106,6 +106,17 @@ namespace ModioX.Extensions
         /// </summary>
         /// <param name="ip"> ps3 local ip </param>
         /// <returns> </returns>
+        public static string MountGamePathOrISO(string ip, string path)
+        {
+            using var client = new WebClient();
+            return client.DownloadString($"http://{ip}/mount.ps3/" + path);
+        }
+
+        /// <summary>
+        /// Unmount current game
+        /// </summary>
+        /// <param name="ip"> ps3 local ip </param>
+        /// <returns> </returns>
         public static string Unmount(string ip)
         {
             using var client = new WebClient();
@@ -121,6 +132,17 @@ namespace ModioX.Extensions
         {
             using var client = new WebClient();
             return client.DownloadString($"http://{ip}/extgd.ps3");
+        }
+
+        /// <summary>
+        /// External game data
+        /// </summary>
+        /// <param name="ip"> ps3 local ip </param>
+        /// <returns> </returns>
+        public static string EnableExternal(string ip)
+        {
+            using var client = new WebClient();
+            return client.DownloadString($"http://{ip}/extgd.ps3?enable");
         }
 
         /// <summary>

@@ -97,7 +97,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ProgressPackageFiles.Caption = "NO PACKAGE FILES";
             this.ProgressPackageFiles.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.ProgressPackageFiles.Description = "";
-            this.ProgressPackageFiles.Location = new System.Drawing.Point(135, 109);
+            this.ProgressPackageFiles.Location = new System.Drawing.Point(135, 92);
             this.ProgressPackageFiles.Name = "ProgressPackageFiles";
             this.ProgressPackageFiles.Size = new System.Drawing.Size(246, 66);
             this.ProgressPackageFiles.TabIndex = 1182;
@@ -116,9 +116,12 @@ namespace ModioX.Forms.Tools.PS3_Tools
             // 
             // GridViewPackageFiles
             // 
-            this.GridViewPackageFiles.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.GridViewPackageFiles.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewPackageFiles.GridControl = this.GridPackageFiles;
             this.GridViewPackageFiles.Name = "GridViewPackageFiles";
+            this.GridViewPackageFiles.OptionsBehavior.Editable = false;
+            this.GridViewPackageFiles.OptionsBehavior.ReadOnly = true;
+            this.GridViewPackageFiles.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.GridViewPackageFiles.OptionsView.ShowGroupPanel = false;
             this.GridViewPackageFiles.OptionsView.ShowIndicator = false;
             this.GridViewPackageFiles.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewPackageFiles_RowClick);
@@ -141,6 +144,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ButtonInstallPackageFile.Location = new System.Drawing.Point(8, 8);
             this.ButtonInstallPackageFile.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
             this.ButtonInstallPackageFile.Name = "ButtonInstallPackageFile";
+            this.ButtonInstallPackageFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonInstallPackageFile.Size = new System.Drawing.Size(129, 23);
             this.ButtonInstallPackageFile.TabIndex = 1;
             this.ButtonInstallPackageFile.Text = "Install Package File";
@@ -151,6 +155,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ButtonDownloadPackageFile.Enabled = false;
             this.ButtonDownloadPackageFile.Location = new System.Drawing.Point(143, 8);
             this.ButtonDownloadPackageFile.Name = "ButtonDownloadPackageFile";
+            this.ButtonDownloadPackageFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonDownloadPackageFile.Size = new System.Drawing.Size(150, 23);
             this.ButtonDownloadPackageFile.TabIndex = 2;
             this.ButtonDownloadPackageFile.Text = "Download Package File";
@@ -161,6 +166,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ButtonDeletePackageFile.Enabled = false;
             this.ButtonDeletePackageFile.Location = new System.Drawing.Point(299, 8);
             this.ButtonDeletePackageFile.Name = "ButtonDeletePackageFile";
+            this.ButtonDeletePackageFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonDeletePackageFile.Size = new System.Drawing.Size(69, 23);
             this.ButtonDeletePackageFile.TabIndex = 3;
             this.ButtonDeletePackageFile.Text = "Delete";
@@ -171,6 +177,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ButtonDeleteAllPackageFiles.Enabled = false;
             this.ButtonDeleteAllPackageFiles.Location = new System.Drawing.Point(374, 8);
             this.ButtonDeleteAllPackageFiles.Name = "ButtonDeleteAllPackageFiles";
+            this.ButtonDeleteAllPackageFiles.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonDeleteAllPackageFiles.Size = new System.Drawing.Size(86, 23);
             this.ButtonDeleteAllPackageFiles.TabIndex = 4;
             this.ButtonDeleteAllPackageFiles.Text = "Delete All";
@@ -296,7 +303,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.barStaticItem2.Id = 2;
             this.barStaticItem2.Name = "barStaticItem2";
             // 
-            // PackageManagerWindow
+            // PackageManager
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.Appearance.Options.UseForeColor = true;
@@ -310,10 +317,10 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("PackageManagerWindow.IconOptions.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("PackageManager.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "PackageManagerWindow";
+            this.Name = "PackageManager";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Package Manger";

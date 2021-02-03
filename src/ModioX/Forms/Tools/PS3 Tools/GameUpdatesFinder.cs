@@ -72,11 +72,13 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
                 foreach (var update in gameUpdates.Tag.Package)
                 {
-                    gameUpdateFiles.Rows.Add(update.Url, update.Sha1sum,
-                                            gameTitle,
-                                            "v" + update.Version.RemoveFirstInstanceOfString("0"),
-                                            MainWindow.Settings.ShowFileSizeInBytes ? long.Parse(update.Size).Bytes().Humanize() : long.Parse(update.Size).Bytes().Humanize("MB"),
-                                            "v" + update.Ps3_system_ver.RemoveFirstInstanceOfString("0").Replace("000", "00"));
+                    gameUpdateFiles.Rows.Add(
+                        update.Url, 
+                        update.Sha1sum,
+                        gameTitle,
+                        "v" + update.Version.RemoveFirstInstanceOfString("0"),
+                        MainWindow.Settings.ShowFileSizeInBytes ? update.Size.ToString() + " bytes" : long.Parse(update.Size).FormatBytes(),
+                        "v" + update.Ps3_system_ver.RemoveFirstInstanceOfString("0").Replace("000", "00"));
                 }
 
                 GridGameUpdates.DataSource = gameUpdateFiles;
@@ -94,18 +96,18 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void GridViewGameUpdates_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            ButtonDownloadToComputer.Enabled = GridViewGameUpdates.RowCount > 0;
-            ButtonInstallToConsole.Enabled = GridViewGameUpdates.RowCount > 0;
-            ButtonCopyURLToClipboard.Enabled = GridViewGameUpdates.RowCount > 0;
-            ButtonCopySHA1ToClipboard.Enabled = GridViewGameUpdates.RowCount > 0;
+            ButtonDownloadToComputer.Enabled = GridViewGameUpdates.SelectedRowsCount > 0;
+            ButtonInstallToConsole.Enabled = GridViewGameUpdates.SelectedRowsCount > 0 && MainWindow.IsConsoleConnected;
+            ButtonCopyURLToClipboard.Enabled = GridViewGameUpdates.SelectedRowsCount > 0;
+            ButtonCopySHA1ToClipboard.Enabled = GridViewGameUpdates.SelectedRowsCount > 0;
         }
 
         private void GridViewGameUpdates_RowClick(object sender, RowClickEventArgs e)
         {
-            ButtonDownloadToComputer.Enabled = GridViewGameUpdates.RowCount > 0;
-            ButtonInstallToConsole.Enabled = GridViewGameUpdates.RowCount > 0;
-            ButtonCopyURLToClipboard.Enabled = GridViewGameUpdates.RowCount > 0;
-            ButtonCopySHA1ToClipboard.Enabled = GridViewGameUpdates.RowCount > 0;
+            ButtonDownloadToComputer.Enabled = GridViewGameUpdates.SelectedRowsCount > 0;
+            ButtonInstallToConsole.Enabled = GridViewGameUpdates.SelectedRowsCount > 0 && MainWindow.IsConsoleConnected;
+            ButtonCopyURLToClipboard.Enabled = GridViewGameUpdates.SelectedRowsCount > 0;
+            ButtonCopySHA1ToClipboard.Enabled = GridViewGameUpdates.SelectedRowsCount > 0;
         }
 
         private void ButtonInstallToConsole_Click(object sender, EventArgs e)

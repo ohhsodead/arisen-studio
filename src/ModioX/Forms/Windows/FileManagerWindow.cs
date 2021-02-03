@@ -9,10 +9,12 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using FluentFTP;
 using Humanizer;
 using Microsoft.VisualBasic.FileIO;
 using ModioX.Extensions;
+using ModioX.Forms.Windows;
 using ModioX.Io;
 using ModioX.Models.Resources;
 using ModioX.Net;
@@ -23,37 +25,37 @@ using StringExtensions = ModioX.Extensions.StringExtensions;
 
 namespace ModioX.Forms.Windows
 {
-    public partial class FileManager : XtraForm
+    public partial class FileManagerWindow : XtraForm
     {
         /// <summary>
         /// Get the user's settings data.
         /// </summary>
-        public static SettingsData Settings { get; } = MainWindow.Settings;
+        private static SettingsData Settings { get; } = MainWindow.Settings;
 
         /// <summary>
-        /// Get the current user's console profile data.
+        /// Get the user's connected consoles type.
         /// </summary>
-        public static ConsoleProfile ConsoleProfile { get; } = MainWindow.ConsoleProfile;
+        private static ConsoleTypePrefix ConsoleType { get; } = MainWindow.ConsoleType;
 
         /// <summary>
         /// Get the FTP connection for use with uploading mods, not reliable for uploading files.
         /// </summary>
-        public static FtpConnection FtpConnection { get; } = MainWindow.FtpConnection;
+        private static FtpConnection FtpConnection { get; } = MainWindow.FtpConnection;
 
         /// <summary>
         /// Get the FtpClient for getting directory listings and some other commands.
         /// </summary>
-        public static FtpClient FtpClient { get; } = MainWindow.FtpClient;
+        private static FtpClient FtpClient { get; } = MainWindow.FtpClient;
 
         /// <summary>
         /// Get/set the current local directory path.
         /// </summary>
-        public string DirectoryPathLocal { get; set; } = @"C:\";
+        private string DirectoryPathLocal { get; set; } = @"C:\";
 
         /// <summary>
         /// Gets/set the current console directory path.
         /// </summary>
-        public string DirectoryPathConsole { get; set; } = ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3 ? "/dev_hdd0/" : "/Hdd1";
+        private string DirectoryPathConsole { get; set; } = ConsoleType == ConsoleTypePrefix.PS3 ? "/dev_hdd0/" : "/Hdd1/";
 
         /// <summary>
         /// Get the user's local computer drives.
@@ -68,7 +70,7 @@ namespace ModioX.Forms.Windows
         /// </summary>
         private readonly Image ImageFolder = ImageExtensions.ResizeBitmap(Resources.folder, 20, 20);
 
-        public FileManager()
+        public FileManagerWindow()
         {
             InitializeComponent();
         }
@@ -79,11 +81,14 @@ namespace ModioX.Forms.Windows
 
             SetStatus("Fetching drives...");
 
-            foreach (var driveInfo in LocalDrives) ComboBoxLocalDrives.Properties.Items.Add(driveInfo.Name.Replace(@"\", ""));
+            foreach (var driveInfo in LocalDrives)
+            {
+                ComboBoxLocalDrives.Properties.Items.Add(driveInfo.Name.Replace(@"\", ""));
+            }
 
             if (Settings.SaveLocalPath)
             {
-                if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+                if (ConsoleType == ConsoleTypePrefix.PS3)
                 {
                     if (Settings.LocalPathPS3.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathPS3))
                     {
@@ -94,7 +99,7 @@ namespace ModioX.Forms.Windows
                         LoadLocalDirectory(Settings.LocalPathPS3);
                     }
                 }
-                else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+                else if (ConsoleType == ConsoleTypePrefix.XBOX)
                 {
                     if (Settings.LocalPathXBOX.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathXBOX))
                     {
@@ -114,71 +119,72 @@ namespace ModioX.Forms.Windows
 
         private void FileExplorer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(TextBoxLocalPath.Text))
+            if (!TextBoxLocalPath.Text.IsNullOrWhiteSpace())
             {
-                if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+                if (ConsoleType == ConsoleTypePrefix.PS3)
                 {
                     Settings.LocalPathPS3 = TextBoxLocalPath.Text;
                 }
-                else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+                else if (ConsoleType == ConsoleTypePrefix.XBOX)
                 {
                     Settings.LocalPathXBOX = TextBoxLocalPath.Text;
                 }
             }
 
-            if (!string.IsNullOrWhiteSpace(TextBoxConsolePath.Text))
+            if (!TextBoxConsolePath.Text.IsNullOrWhiteSpace())
             {
-                if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+                if (ConsoleType == ConsoleTypePrefix.PS3)
                 {
                     Settings.ConsolePathPS3 = TextBoxConsolePath.Text;
                 }
-                else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+                else if (ConsoleType == ConsoleTypePrefix.XBOX)
                 {
-                    Settings.ConsolePathPS3 = TextBoxConsolePath.Text;
+                    Settings.ConsolePathXBOX = TextBoxConsolePath.Text;
                 }
             }
         }
 
         private void WaitLoadConsole_Tick(object sender, EventArgs e)
         {
+            WaitLoadConsole.Enabled = false;
+
             SetStatus("Fetching root directories...");
 
-            if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+            if (ConsoleType == ConsoleTypePrefix.PS3)
             {
-                foreach (var driveName in FtpExtensions.GetFolderNames("/").ToArray())
+                foreach (var driveName in FtpExtensions.GetFolderNames("/", false).ToArray())
                 {
                     ComboBoxConsoleDrives.Properties.Items.Add(driveName.Replace(@"/", ""));
                 }
             }
-            else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+            else if (ConsoleType == ConsoleTypePrefix.XBOX)
             {
-                var drives = MainWindow.XboxConsole.Drives.Split(',');
-                ComboBoxConsoleDrives.Properties.Items.AddRange(drives);
+                ComboBoxConsoleDrives.Properties.Items.AddRange(MainWindow.XboxConsole.Drives.Split(','));
             }
 
             if (Settings.SaveLocalPath)
             {
-                switch (ConsoleProfile.TypePrefix)
+                switch (ConsoleType)
                 {
                     case ConsoleTypePrefix.PS3:
-                        if (Settings.LocalPathPS3.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathPS3))
+                        if (Settings.ConsolePathPS3.Equals(@"\") || Settings.ConsolePathPS3.IsNullOrWhiteSpace())
                         {
-                            LoadConsoleDirectory("/Hdd1/");
+                            LoadConsoleDirectory("/dev_hdd0/");
                         }
                         else
                         {
-                            LoadConsoleDirectory(Settings.LocalPathPS3);
+                            LoadConsoleDirectory(Settings.ConsolePathPS3);
                         }
                         break;
 
                     case ConsoleTypePrefix.XBOX:
-                        if (Settings.LocalPathXBOX.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathXBOX))
+                        if (Settings.ConsolePathXBOX.Equals(@"\") || Settings.ConsolePathXBOX.IsNullOrWhiteSpace())
                         {
                             LoadConsoleDirectory("/Hdd1/");
                         }
                         else
                         {
-                            LoadConsoleDirectory(Settings.LocalPathXBOX);
+                            LoadConsoleDirectory(Settings.ConsolePathXBOX);
                         }
                         break;
                 }
@@ -1026,6 +1032,56 @@ namespace ModioX.Forms.Windows
             }
 
             Refresh();
+        }
+
+        GridHitInfo downHitInfo = null;
+
+        private void GridViewLocalFiles_MouseDown(object sender, MouseEventArgs e)
+        {
+            GridView view = sender as GridView;
+            downHitInfo = null;
+            GridHitInfo hitInfo = view.CalcHitInfo(new Point(e.X, e.Y));
+            if (ModifierKeys != Keys.None) return;
+            if (e.Button == MouseButtons.Left && hitInfo.RowHandle >= 0)
+                downHitInfo = hitInfo;
+        }
+
+        private void GridViewLocalFiles_MouseMove(object sender, MouseEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (e.Button == MouseButtons.Left && downHitInfo != null)
+            {
+                Size dragSize = SystemInformation.DragSize;
+                Rectangle dragRect = new Rectangle(new Point(downHitInfo.HitPoint.X - dragSize.Width / 2,
+                    downHitInfo.HitPoint.Y - dragSize.Height / 2), dragSize);
+
+                if (!dragRect.Contains(new Point(e.X, e.Y)))
+                {
+                    DataRow row = view.GetDataRow(downHitInfo.RowHandle);
+                    view.GridControl.DoDragDrop(row, DragDropEffects.Move);
+                    downHitInfo = null;
+                    DevExpress.Utils.DXMouseEventArgs.GetMouseArgs(e).Handled = true;
+                }
+            }
+        }
+
+        private void GridConsoleFiles_DragOver(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(DataRow)))
+                e.Effect = DragDropEffects.Move;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void GridConsoleFiles_DragDrop(object sender, DragEventArgs e)
+        {
+            GridControl grid = sender as GridControl;
+            DataTable table = grid.DataSource as DataTable;
+            DataRow row = e.Data.GetData(typeof(DataRow)) as DataRow;
+            if (row != null && table != null && row.Table != table)
+            {
+                table.ImportRow(row);
+            }
         }
     }
 }

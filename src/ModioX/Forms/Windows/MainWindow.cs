@@ -324,6 +324,74 @@ namespace ModioX.Forms.Windows
             DialogExtensions.ShowPackageManagerWindow(this);
         }
 
+        private void ButtonPS3ShowSystemInformation_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifySystemInformation(ConsoleProfile.Address);
+        }
+
+        private void ButtonPS3ShowTemperatures_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifyCPURSXTemperature(ConsoleProfile.Address);
+        }
+
+        private void ButtonPS3ShowMinimumVersion_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
+        }
+
+        private void ButtonPS3MountBD_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus("Fetching the games list...");
+
+            var games = FtpExtensions.GetGamesBD();
+
+            if (games.Count <= 0)
+            {
+                XtraMessageBox.Show("No games can be found on your console. If you have them on external devices then enable this option in the settings.", "No Games Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var selectedGame = DialogExtensions.ShowListInputDialog(this, "Games List (BD)", FtpExtensions.GetGamesBD());
+            XtraMessageBox.Show(selectedGame);
+        }
+
+        private void ButtonPS3MountISO_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus("Fetching the games list...");
+
+            var games = FtpExtensions.GetGamesISO();
+
+            if (games.Count <= 0)
+            {
+                XtraMessageBox.Show("No games can be found on your console. If you have them on external devices then enable this option in the settings.", "No Games Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var selectedGame = DialogExtensions.ShowListInputDialog(this, "Games List (ISO)", FtpExtensions.GetGamesBD());
+            XtraMessageBox.Show(selectedGame);
+        }
+
+        private void ButtonPS3MountPSN_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus("Fetching the games list...");
+
+            var games = FtpExtensions.GetGamesPSN();
+
+            if (games.Count <= 0)
+            {
+                XtraMessageBox.Show("No games can be found on your console. If you have them on external devices then enable this option in the settings.", "No Games Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var selectedGame = DialogExtensions.ShowListInputDialog(this, "Games List (PSN)", FtpExtensions.GetGamesPSN());
+            XtraMessageBox.Show(selectedGame);
+        }
+
+        private void ButtonPS3Unmount_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.Unmount(ConsoleProfile.Address);
+        }
+
         private void ButtonPS3NotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
         {
             var notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
@@ -335,9 +403,16 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        private void ButtonPS3VirtualController_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonPS3Shutdown_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Process.Start("http://pad.aldostools.org/pad.html");
+            WebManExtensions.Shutdown(ConsoleProfile.Address);
+            DisconnectConsole();
+        }
+
+        private void ButtonPS3Restart_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            WebManExtensions.Restart(ConsoleProfile.Address);
+            DisconnectConsole();
         }
 
         private void ButtonPS3SoftReboot_ItemClick(object sender, ItemClickEventArgs e)
@@ -352,31 +427,9 @@ namespace ModioX.Forms.Windows
             DisconnectConsole();
         }
 
-        private void ButtonPS3Restart_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonPS3VirtualController_ItemClick(object sender, ItemClickEventArgs e)
         {
-            WebManExtensions.Restart(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void ButtonPS3Shutdown_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.Shutdown(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void ButtonPS3ShowSystemInformation_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifySystemInformation(ConsoleProfile.Address);
-        }
-
-        private void ButtonPS3ShowTemperatures_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifyCPURSXTemperature(ConsoleProfile.Address);
-        }
-
-        private void ButtonPS3ShowMinimumVersion_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
+            Process.Start("http://pad.aldostools.org/pad.html");
         }
 
         // XBOX
@@ -607,8 +660,6 @@ namespace ModioX.Forms.Windows
 
                 if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
                 {
-                    ConsoleType = ConsoleProfile.TypePrefix;
-
                     IsWebManInstalled = WebManExtensions.IsWebManInstalled(ConsoleProfile.Address, ConsoleProfile.Port);
 
                     if (IsWebManInstalled)
@@ -616,28 +667,34 @@ namespace ModioX.Forms.Windows
                         WebManExtensions.NotifyPopup(ConsoleProfile.Address, "You are now connected to ModioX ★");
                     }
 
+                    ConsoleType = ConsoleProfile.TypePrefix;
+                    Mods = Database.ModsPS3;
+
                     ButtonConnectToPS3.Caption = "Disconnect from Console...";
                     ButtonConnectToXBOX.Enabled = false;
-                    Mods = Database.ModsPS3;
                 }
                 else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
                 {
-                    ConsoleType = ConsoleProfile.TypePrefix;
-
                     XboxConsole = new XboxManager().OpenConsole(ConsoleProfile.Address);
                     XboxConsole.XNotify("You are now connected to ModioX ★");
 
+                    ConsoleType = ConsoleProfile.TypePrefix;
+                    Mods = Database.ModsXBOX;
+
                     ButtonConnectToXBOX.Caption = "Disconnect from Console...";
                     ButtonConnectToPS3.Enabled = false;
-                    Mods = Database.ModsXBOX;
                 }
 
                 SetStatus("Successfully connected to console.");
                 XtraMessageBox.Show("Successfully connected to console.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 EnableConsoleActions();
-                LoadInstalledGameMods();
-                LoadCategories();
+
+                // Only reload categories if the console type hasn't been changed
+                if (ConsoleType != Settings.LoadConsoleMods) 
+                {
+                    LoadCategories(); 
+                }
             }
             catch (Exception ex)
             {
@@ -789,7 +846,7 @@ namespace ModioX.Forms.Windows
 
         private void ContextMenuModsAddToList_Click(object sender, EventArgs e)
         {
-            var listName = DialogExtensions.ShowListInputDialog("Your Lists", Settings.CustomLists.Select(x => x.Name).ToList());
+            var listName = DialogExtensions.ShowListInputDialog(this, "Your Lists", Settings.CustomLists.Select(x => x.Name).ToList());
 
             if (!string.IsNullOrWhiteSpace(listName))
             {
@@ -811,7 +868,7 @@ namespace ModioX.Forms.Windows
 
         private void ContextMenuModsRemoveFromList_Click(object sender, EventArgs e)
         {
-            var listName = DialogExtensions.ShowListInputDialog("Your Lists", Settings.CustomLists.Select(x => x.Name).ToList());
+            var listName = DialogExtensions.ShowListInputDialog(this, "Your Lists", Settings.CustomLists.Select(x => x.Name).ToList());
 
             if (!string.IsNullOrWhiteSpace(listName))
             {
@@ -1185,6 +1242,8 @@ namespace ModioX.Forms.Windows
         /// </summary>
         public void LoadInstalledGameMods()
         {
+            GridViewInstalledGameMods.FocusedRowChanged -= GridViewInstalledGameMods_FocusedRowChanged;
+
             GridControlInstalledGameMods.DataSource = null;
 
             var totalFiles = 0;
@@ -1244,6 +1303,8 @@ namespace ModioX.Forms.Windows
             ButtonModsUninstallAll.Enabled = IsConsoleConnected && Settings.InstalledGameMods.Count > 0;
 
             ProgressInstalledMods.Visible = GridViewInstalledGameMods.RowCount == 0;
+
+            GridViewInstalledGameMods.FocusedRowChanged += GridViewInstalledGameMods_FocusedRowChanged;
         }
 
         private void ButtonUninstallAllMods_Click(object sender, EventArgs e)
@@ -1289,7 +1350,7 @@ namespace ModioX.Forms.Windows
             LabelRegion.Text = string.Join(", ", modItem.GameRegions);
             LabelAuthor.Text = modItem.Author.Replace("&", "&&");
             LabelSubmittedBy.Text = modItem.SubmittedBy.Replace("&", "&&");
-            LabelConfig.Text = string.Join(", ", modItem.GameModes);
+            LabelGameType.Text = string.Join(", ", modItem.GameModes);
             LabelDescription.Text = string.IsNullOrWhiteSpace(modItem.Description)
                 ? "Can't find any other details yet."
                 : modItem.Description.Replace("&", "&&");
@@ -1487,7 +1548,7 @@ namespace ModioX.Forms.Windows
                         }
 
                         // Check whether the game update for this region exists
-                        if (!FtpExtensions.GetFolderNames("/dev_hdd0/game/").Contains(gameRegion))
+                        if (!FtpExtensions.GetFolderNames("/dev_hdd0/game/", false).Contains(gameRegion))
                         {
                             XtraMessageBox.Show("Game update folder for this region cannot be found on your console.\nYou must install the correct update for this game or maybe you specified the wrong region.", "Can't Find Game Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
@@ -1505,7 +1566,7 @@ namespace ModioX.Forms.Windows
                     {
                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching user id...");
 
-                        userId = FtpExtensions.GetUserProfileId();
+                        userId = FtpExtensions.GetUserProfileId(this);
                         categoryTitle = $"{category.Title} ({userId})";
 
                         if (string.IsNullOrEmpty(userId))
@@ -1865,10 +1926,10 @@ namespace ModioX.Forms.Windows
                 installedMod = null;
             }
 
-            // Mod hasn't been installed
+            // Can't find the previous install details
             if (installedMod == null)
             {
-                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No previous install found. Fetching download...");
+                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No previous install found. Fetching download files...");
                 gameRegion = region;
                 downloadFiles = modItem.GetDownloadFiles();
             }
@@ -1878,7 +1939,7 @@ namespace ModioX.Forms.Windows
                 downloadFiles = installedMod.DownloadFiles;
             }
 
-            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found previous install details.");
+            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found download files.");
 
             if (ConsoleType == ConsoleTypePrefix.PS3)
             {
@@ -1928,7 +1989,7 @@ namespace ModioX.Forms.Windows
                     {
                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching user ID...");
 
-                        userId = FtpExtensions.GetUserProfileId();
+                        userId = FtpExtensions.GetUserProfileId(this);
 
                         if (string.IsNullOrEmpty(userId))
                         {
@@ -2239,29 +2300,29 @@ namespace ModioX.Forms.Windows
         private void EnableConsoleActions()
         {
             // PS3 Features
-            ButtonGameBackupFiles.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonGameBackupFiles.Visibility = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3 || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonGameBackupFiles.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3;
 
-            ButtonPS3GameUpdateFinder.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonPS3GameUpdateFinder.Visibility = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3 || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonPS3GameUpdateFinder.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3;
 
-            ButtonPS3FileManager.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonPS3FileManager.Visibility = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3 || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonPS3FileManager.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3;
 
-            ButtonPS3PackageManager.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonPS3PackageManager.Visibility = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3 || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonPS3PackageManager.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3;
 
-            ButtonPS3WebManControls.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonPS3WebManControls.Visibility = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3 || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonPS3WebManControls.Enabled = IsConsoleConnected && IsWebManInstalled && ConsoleType == ConsoleTypePrefix.PS3;
 
             // Xbox Features
-            ButtonXboxFileManager.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonXboxFileManager.Visibility = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.XBOX || Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonXboxFileManager.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.XBOX;
 
-            ButtonXboxPluginsEditor.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonXboxPluginsEditor.Visibility = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.XBOX || Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonXboxPluginsEditor.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.XBOX;
 
-            ButtonXboxXBDMMenu.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonXboxXBDMMenu.Visibility = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.XBOX || Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonXboxXBDMMenu.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.XBOX;
 
             // Install & Uninstall Features
@@ -2325,12 +2386,12 @@ namespace ModioX.Forms.Windows
 
                 SetStatus("Successfully loaded settings file.");
 
-                if (Settings.SaveSkinOnClose)
+                if (Settings.RememberSkinOnClose)
                 {
                     LookAndFeel.SkinName = Settings.SkinName;
                 }
 
-                if (Settings.ConsoleProfiles.Count < 1)
+                if (Settings.ConsoleProfiles.Count <= 0)
                 {
                     Settings.ConsoleProfiles.Add(
                         new ConsoleProfile

@@ -48,15 +48,18 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ColumnGameId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBackupFiles = new DevExpress.XtraEditors.GroupControl();
-            this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
-            this.ButtonNewApplication = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonAddApplication = new DevExpress.XtraEditors.SimpleButton();
             this.ProgressBackupFiles = new DevExpress.XtraWaitForm.ProgressPanel();
+            this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
+            this.ButtonEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonDeleteAll = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonBackupFile = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonRestoreFile = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.LabelInstallPath = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.LabelLocaPath = new DevExpress.XtraEditors.LabelControl();
+            this.LabelLocalPath = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.LabelCreatedOn = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
@@ -91,11 +94,14 @@ namespace ModioX.Forms.Tools.PS3_Tools
             // 
             // GridViewBackupFiles
             // 
-            this.GridViewBackupFiles.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.GridViewBackupFiles.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewBackupFiles.GridControl = this.GridBackupFiles;
             this.GridViewBackupFiles.Name = "GridViewBackupFiles";
+            this.GridViewBackupFiles.OptionsBehavior.Editable = false;
+            this.GridViewBackupFiles.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.GridViewBackupFiles.OptionsView.ShowGroupPanel = false;
             this.GridViewBackupFiles.OptionsView.ShowIndicator = false;
+            this.GridViewBackupFiles.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewBackupFiles_FocusedRowChanged);
             // 
             // ColumnGameTitle
             // 
@@ -158,41 +164,14 @@ namespace ModioX.Forms.Tools.PS3_Tools
             // 
             // GroupBackupFiles
             // 
+            this.GroupBackupFiles.Controls.Add(this.ProgressBackupFiles);
             this.GroupBackupFiles.Controls.Add(this.GridBackupFiles);
             this.GroupBackupFiles.Controls.Add(this.PanelButtons);
-            this.GroupBackupFiles.Controls.Add(this.ProgressBackupFiles);
             this.GroupBackupFiles.Location = new System.Drawing.Point(12, 12);
             this.GroupBackupFiles.Name = "GroupBackupFiles";
             this.GroupBackupFiles.Size = new System.Drawing.Size(621, 261);
             this.GroupBackupFiles.TabIndex = 17;
             this.GroupBackupFiles.Text = "BACKUP FILES";
-            // 
-            // PanelButtons
-            // 
-            this.PanelButtons.Controls.Add(this.ButtonNewApplication);
-            this.PanelButtons.Controls.Add(this.ButtonAddApplication);
-            this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelButtons.Location = new System.Drawing.Point(2, 220);
-            this.PanelButtons.Name = "PanelButtons";
-            this.PanelButtons.Size = new System.Drawing.Size(617, 39);
-            this.PanelButtons.TabIndex = 1181;
-            // 
-            // ButtonNewApplication
-            // 
-            this.ButtonNewApplication.Location = new System.Drawing.Point(8, 8);
-            this.ButtonNewApplication.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
-            this.ButtonNewApplication.Name = "ButtonNewApplication";
-            this.ButtonNewApplication.Size = new System.Drawing.Size(69, 23);
-            this.ButtonNewApplication.TabIndex = 6;
-            this.ButtonNewApplication.Text = "Delete";
-            // 
-            // ButtonAddApplication
-            // 
-            this.ButtonAddApplication.Location = new System.Drawing.Point(83, 8);
-            this.ButtonAddApplication.Name = "ButtonAddApplication";
-            this.ButtonAddApplication.Size = new System.Drawing.Size(86, 23);
-            this.ButtonAddApplication.TabIndex = 7;
-            this.ButtonAddApplication.Text = "Delete All";
             // 
             // ProgressBackupFiles
             // 
@@ -205,12 +184,76 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ProgressBackupFiles.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ProgressBackupFiles.Caption = "NO BACKUP FILES";
             this.ProgressBackupFiles.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ProgressBackupFiles.Description = "Loading..";
-            this.ProgressBackupFiles.Location = new System.Drawing.Point(187, 97);
+            this.ProgressBackupFiles.Description = "";
+            this.ProgressBackupFiles.Location = new System.Drawing.Point(168, 94);
             this.ProgressBackupFiles.Name = "ProgressBackupFiles";
             this.ProgressBackupFiles.Size = new System.Drawing.Size(246, 66);
             this.ProgressBackupFiles.TabIndex = 1171;
             this.ProgressBackupFiles.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
+            // 
+            // PanelButtons
+            // 
+            this.PanelButtons.Controls.Add(this.ButtonEdit);
+            this.PanelButtons.Controls.Add(this.ButtonDelete);
+            this.PanelButtons.Controls.Add(this.ButtonDeleteAll);
+            this.PanelButtons.Controls.Add(this.ButtonBackupFile);
+            this.PanelButtons.Controls.Add(this.ButtonRestoreFile);
+            this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelButtons.Location = new System.Drawing.Point(2, 220);
+            this.PanelButtons.Name = "PanelButtons";
+            this.PanelButtons.Size = new System.Drawing.Size(617, 39);
+            this.PanelButtons.TabIndex = 1181;
+            // 
+            // ButtonEdit
+            // 
+            this.ButtonEdit.Location = new System.Drawing.Point(8, 8);
+            this.ButtonEdit.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.ButtonEdit.Name = "ButtonEdit";
+            this.ButtonEdit.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonEdit.Size = new System.Drawing.Size(93, 23);
+            this.ButtonEdit.TabIndex = 8;
+            this.ButtonEdit.Text = "Edit Details";
+            this.ButtonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
+            // 
+            // ButtonDelete
+            // 
+            this.ButtonDelete.Location = new System.Drawing.Point(107, 8);
+            this.ButtonDelete.Name = "ButtonDelete";
+            this.ButtonDelete.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDelete.Size = new System.Drawing.Size(69, 23);
+            this.ButtonDelete.TabIndex = 6;
+            this.ButtonDelete.Text = "Delete";
+            this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
+            // 
+            // ButtonDeleteAll
+            // 
+            this.ButtonDeleteAll.Location = new System.Drawing.Point(182, 8);
+            this.ButtonDeleteAll.Name = "ButtonDeleteAll";
+            this.ButtonDeleteAll.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDeleteAll.Size = new System.Drawing.Size(86, 23);
+            this.ButtonDeleteAll.TabIndex = 7;
+            this.ButtonDeleteAll.Text = "Delete All";
+            this.ButtonDeleteAll.Click += new System.EventHandler(this.ButtonDeleteAll_Click);
+            // 
+            // ButtonBackupFile
+            // 
+            this.ButtonBackupFile.Location = new System.Drawing.Point(274, 8);
+            this.ButtonBackupFile.Name = "ButtonBackupFile";
+            this.ButtonBackupFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonBackupFile.Size = new System.Drawing.Size(93, 23);
+            this.ButtonBackupFile.TabIndex = 9;
+            this.ButtonBackupFile.Text = "Backup File";
+            this.ButtonBackupFile.Click += new System.EventHandler(this.ButtonBackupFile_Click);
+            // 
+            // ButtonRestoreFile
+            // 
+            this.ButtonRestoreFile.Location = new System.Drawing.Point(373, 8);
+            this.ButtonRestoreFile.Name = "ButtonRestoreFile";
+            this.ButtonRestoreFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonRestoreFile.Size = new System.Drawing.Size(93, 23);
+            this.ButtonRestoreFile.TabIndex = 10;
+            this.ButtonRestoreFile.Text = "Restore File";
+            this.ButtonRestoreFile.Click += new System.EventHandler(this.ButtonRestoreFile_Click);
             // 
             // groupControl1
             // 
@@ -227,7 +270,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.LabelInstallPath);
             this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.LabelLocaPath);
+            this.panelControl1.Controls.Add(this.LabelLocalPath);
             this.panelControl1.Controls.Add(this.labelControl13);
             this.panelControl1.Controls.Add(this.LabelCreatedOn);
             this.panelControl1.Controls.Add(this.labelControl11);
@@ -270,20 +313,20 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.labelControl2.TabIndex = 49;
             this.labelControl2.Text = "Install Path:";
             // 
-            // LabelLocaPath
+            // LabelLocalPath
             // 
-            this.LabelLocaPath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelLocaPath.Appearance.Options.UseFont = true;
-            this.LabelLocaPath.Appearance.Options.UseTextOptions = true;
-            this.LabelLocaPath.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
-            this.LabelLocaPath.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.LabelLocaPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelLocaPath.Location = new System.Drawing.Point(95, 92);
-            this.LabelLocaPath.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.LabelLocaPath.Name = "LabelLocaPath";
-            this.LabelLocaPath.Size = new System.Drawing.Size(512, 34);
-            this.LabelLocaPath.TabIndex = 48;
-            this.LabelLocaPath.Text = "...";
+            this.LabelLocalPath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelLocalPath.Appearance.Options.UseFont = true;
+            this.LabelLocalPath.Appearance.Options.UseTextOptions = true;
+            this.LabelLocalPath.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+            this.LabelLocalPath.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LabelLocalPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelLocalPath.Location = new System.Drawing.Point(95, 92);
+            this.LabelLocalPath.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.LabelLocalPath.Name = "LabelLocalPath";
+            this.LabelLocalPath.Size = new System.Drawing.Size(512, 34);
+            this.LabelLocalPath.TabIndex = 48;
+            this.LabelLocalPath.Text = "...";
             // 
             // labelControl13
             // 
@@ -446,12 +489,12 @@ namespace ModioX.Forms.Tools.PS3_Tools
         private GroupControl groupControl1;
         private ProgressPanel ProgressBackupFiles;
         private StackPanel PanelButtons;
-        private SimpleButton ButtonNewApplication;
-        private SimpleButton ButtonAddApplication;
+        private SimpleButton ButtonDelete;
+        private SimpleButton ButtonDeleteAll;
         private PanelControl panelControl1;
         private LabelControl LabelInstallPath;
         private LabelControl labelControl2;
-        private LabelControl LabelLocaPath;
+        private LabelControl LabelLocalPath;
         private LabelControl labelControl13;
         private LabelControl LabelCreatedOn;
         private LabelControl labelControl11;
@@ -461,5 +504,8 @@ namespace ModioX.Forms.Tools.PS3_Tools
         private LabelControl labelControl7;
         private LabelControl LabelGameTitle;
         private LabelControl labelControl4;
+        private SimpleButton ButtonEdit;
+        private SimpleButton ButtonBackupFile;
+        private SimpleButton ButtonRestoreFile;
     }
 }

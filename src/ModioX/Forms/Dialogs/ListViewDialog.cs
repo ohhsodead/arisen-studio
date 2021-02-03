@@ -18,14 +18,42 @@ namespace ModioX.Forms.Dialogs
 
         private void ListViewDialog_Load(object sender, EventArgs e)
         {
-            foreach (var item in Items) ListBoxItems.Items.Add(Text = item);
+            ListBoxItems.SelectedIndexChanged -= ListBoxItems_SelectedIndexChanged;
+
+            foreach (var item in Items)
+            {
+                ListBoxItems.Items.Add(Text = item);
+            }
 
             // Increase form size to fit listview contents
-            Width = ListBoxItems.Width + Items.Max(w => w.Length) + 70;
-            Refresh();
+            if (Items.Count > 0)
+            {
+                Width = ListBoxItems.Width + Items.Max(w => w.Length) + 70;
+                Refresh();
+            }
+
+            ListBoxItems.SelectedIndexChanged += ListBoxItems_SelectedIndexChanged;
         }
 
         private void ListBoxItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListBoxItems.SelectedIndex != -1)
+            {
+                SelectedItem = ListBoxItems.SelectedItem.ToString();
+                Close();
+            }
+        }
+
+        private void ListBoxItems_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //if (ListBoxItems.SelectedIndex != -1)
+            //{
+            //    SelectedItem = ListBoxItems.SelectedItem.ToString();
+            //    Close();
+            //}
+        }
+
+        private void ListBoxItems_Click(object sender, EventArgs e)
         {
             if (ListBoxItems.SelectedIndex != -1)
             {

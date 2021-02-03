@@ -7,12 +7,7 @@ namespace ModioX.Net
     {
         public FtpFileInfo(FtpConnection ftp, string filePath)
         {
-            if (filePath == null)
-            {
-                throw new ArgumentNullException("fileName");
-            }
-
-            OriginalPath = filePath;
+            OriginalPath = filePath ?? throw new ArgumentNullException("fileName");
             FullPath = filePath;
             FtpConnection = ftp;
 

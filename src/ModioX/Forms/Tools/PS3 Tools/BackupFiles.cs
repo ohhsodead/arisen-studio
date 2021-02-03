@@ -3,6 +3,7 @@ using System.Data;
 using System.IO;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
 using Humanizer;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
@@ -34,12 +35,12 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
             foreach (var backupFile in MainWindow.Settings.BackupFiles)
             {
-                var file = new FileInfo(backupFile.LocalPath);
+                var fileBytes = File.Exists(backupFile.LocalPath) ? new FileInfo(backupFile.LocalPath).Length : 0;
 
                 dt.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId).Title,
                     backupFile.FileName,
-                    file.Exists
-                    ? MainWindow.Settings.ShowFileSizeInBytes ? file.Length.Bytes().Humanize() : file.Length.Bytes().Humanize("MB")
+                    File.Exists(backupFile.LocalPath)
+                    ? MainWindow.Settings.ShowFileSizeInBytes ? fileBytes.ToString() + " bytes" : fileBytes.FormatBytes()
                     : "No File Exists",
                     backupFile.CreatedDate.ToLocalTime());
             }
@@ -48,32 +49,32 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
             GridViewBackupFiles.Columns[0].Width = 200;
             GridViewBackupFiles.Columns[1].Width = 200;
-            GridViewBackupFiles.Columns[2].Width = 110;
-            GridViewBackupFiles.Columns[3].Width = 80;
+            GridViewBackupFiles.Columns[2].Width = 125;
+            GridViewBackupFiles.Columns[3].Width = 125;
 
             ProgressBackupFiles.Visible = dt.Rows.Count < 1;
         }
 
-        private void DgvBackupFiles_SelectionChanged(object sender, EventArgs e)
+        private void GridViewBackupFiles_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            /*
-            if (DgvBackupFiles.CurrentRow != null)
+            if (GridViewBackupFiles.SelectedRowsCount > 0)
             {
                 try
                 {
-                    var backupFile = MainWindow.Settings.BackupFiles[DgvBackupFiles.CurrentRow.Index];
+                    var backupFile = MainWindow.Settings.BackupFiles[GridViewBackupFiles.FocusedRowHandle];
                     var category = MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId);
 
-                    var fileSize = new FileInfo(backupFile.LocalPath).Length;
+                    var fileSize = File.Exists(backupFile.LocalPath) ? new FileInfo(backupFile.LocalPath).Length : 0;
 
                     LabelGameTitle.Text = category.Title;
-                    LabelCreatedDate.Text = backupFile.CreatedDate.ToLocalTime().ToString(CultureInfo.CurrentCulture);
                     LabelFileName.Text = backupFile.FileName;
                     LabelFileSize.Text = File.Exists(backupFile.LocalPath)
-                    ? (MainWindow.Settings.ShowFileSizeInBytes ? fileSize.ToString("{0:n}") + " bytes" : StringExtensions.FormatSize(fileSize.ToString()))
-                        : "No File Exists";
+                    ? (MainWindow.Settings.ShowFileSizeInBytes ? fileSize.ToString("{0:n}") + " bytes" : fileSize.FormatBytes())
+                    : "No File Exists";
+                    LabelCreatedOn.Text = backupFile.CreatedDate.ToLocalTime().ToString();
                     LabelLocalPath.Text = backupFile.LocalPath;
-                    LabelConsolePath.Text = backupFile.InstallPath;
+                    LabelInstallPath.Text = backupFile.InstallPath;
+
 
                     if (!File.Exists(backupFile.LocalPath))
                     {
@@ -88,18 +89,16 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 }
             }
 
-            ToolItemEditBackup.Enabled = DgvBackupFiles.CurrentRow != null;
-            ToolItemDeleteBackup.Enabled = DgvBackupFiles.CurrentRow != null;
-            ToolItemBackupFile.Enabled = DgvBackupFiles.CurrentRow != null && MainWindow.IsConsoleConnected;
-            ToolItemRestoreFile.Enabled = DgvBackupFiles.CurrentRow != null && MainWindow.IsConsoleConnected;
-
-            */
+            ButtonEdit.Enabled = GridViewBackupFiles.SelectedRowsCount > 0;
+            ButtonDelete.Enabled = GridViewBackupFiles.SelectedRowsCount > 0;
+            ButtonDeleteAll.Enabled = GridViewBackupFiles.SelectedRowsCount > 0;
+            ButtonBackupFile.Enabled = GridViewBackupFiles.SelectedRowsCount > 0 && MainWindow.IsConsoleConnected;
+            ButtonRestoreFile.Enabled = GridViewBackupFiles.SelectedRowsCount > 0 && MainWindow.IsConsoleConnected;
         }
 
-        private void ToolItemEditBackup_Click(object sender, EventArgs e)
+        private void ButtonEdit_Click(object sender, EventArgs e)
         {
-            /*
-            var backupFileIndex = DgvBackupFiles.CurrentRow.Index;
+            var backupFileIndex = GridViewBackupFiles.FocusedRowHandle;
 
             var backupFile = MainWindow.Settings.BackupFiles[backupFileIndex];
 
@@ -110,30 +109,37 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 MainWindow.Settings.UpdateBackupFile(backupFileIndex, newBackupFile);
             }
 
-            */
-
             LoadBackupFiles();
         }
 
-        private void ToolItemDeleteBackup_Click(object sender, EventArgs e)
+        private void ButtonDelete_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete Item", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show(this, "Do you really want to delete the selected item? This cannot be undone.", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                //MainWindow.Settings.BackupFiles.RemoveAt(DgvBackupFiles.CurrentRow.Index);
+                MainWindow.Settings.BackupFiles.RemoveAt(GridViewBackupFiles.FocusedRowHandle);
                 LoadBackupFiles();
             }
         }
 
-        private void ToolItemBackupFile_Click(object sender, EventArgs e)
+        private void ButtonDeleteAll_Click(object sender, EventArgs e)
         {
-            //var backupFile = MainWindow.Settings.BackupFiles[DgvBackupFiles.CurrentRow.Index];
-            //BackupGameFile(backupFile);
+            if (XtraMessageBox.Show(this, "Do you really want to delete all of the backup files? This cannot be undone.", "Delete All", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                MainWindow.Settings.BackupFiles.Clear();
+                LoadBackupFiles();
+            }
         }
 
-        private void ToolItemRestoreFile_Click(object sender, EventArgs e)
+        private void ButtonBackupFile_Click(object sender, EventArgs e)
         {
-            //var backupFile = MainWindow.Settings.BackupFiles[DgvBackupFiles.CurrentRow.Index];
-            //RestoreGameFile(backupFile);
+            var backupFile = MainWindow.Settings.BackupFiles[GridViewBackupFiles.FocusedRowHandle];
+            BackupGameFile(backupFile);
+        }
+
+        private void ButtonRestoreFile_Click(object sender, EventArgs e)
+        {
+            var backupFile = MainWindow.Settings.BackupFiles[GridViewBackupFiles.FocusedRowHandle];
+            RestoreGameFile(backupFile);
         }
 
         /// <summary>

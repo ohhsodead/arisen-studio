@@ -43,27 +43,24 @@ namespace ModioX.Forms.Windows
             this.ButtonSaveSettings = new DevExpress.XtraEditors.SimpleButton();
             this.TabControl = new DevExpress.XtraTab.XtraTabControl();
             this.TabAppearance = new DevExpress.XtraTab.XtraTabPage();
-            this.LabelXboxDebuggingForeColor = new DevExpress.XtraEditors.LabelControl();
-            this.ColorXboxDebuggingFont = new DevExpress.XtraEditors.ColorEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.ColorXboxDebuggingBackground = new DevExpress.XtraEditors.ColorEdit();
-            this.CheckBoxSaveThemeOnClose = new DevExpress.XtraEditors.CheckEdit();
-            this.LabelXboxDebugging = new DevExpress.XtraEditors.LabelControl();
-            this.LabelXboxDebuggingBackgroundColor = new DevExpress.XtraEditors.LabelControl();
+            this.CheckBoxRememberThemeOnClose = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.TabDatabase = new DevExpress.XtraTab.XtraTabPage();
+            this.LabelHeaderDefaultDatabase = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.RadioConsoles = new DevExpress.XtraEditors.RadioGroup();
             this.TabContentRecognition = new DevExpress.XtraTab.XtraTabPage();
-            this.TabFileManager = new DevExpress.XtraTab.XtraTabPage();
-            this.TabXboxTools = new DevExpress.XtraTab.XtraTabPage();
-            this.LabelHeaderDefaultDatabase = new DevExpress.XtraEditors.LabelControl();
-            this.LabelHeaderPluginsEditor = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.TextBoxLaunchIniFilePath = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.TabFileManager = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.TabXboxTools = new DevExpress.XtraTab.XtraTabPage();
             this.LabelHeaderLaunchIniFilePath = new DevExpress.XtraEditors.LabelControl();
+            this.TextBoxLaunchIniFilePath = new DevExpress.XtraEditors.TextEdit();
+            this.LabelHeaderPluginsEditor = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.CheckBoxShowGamesFromExternalDevices = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxRememberGameRegions.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectGameTitles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectGameRegions.Properties)).BeginInit();
@@ -73,20 +70,19 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.TabControl)).BeginInit();
             this.TabControl.SuspendLayout();
             this.TabAppearance.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ColorXboxDebuggingFont.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ColorXboxDebuggingBackground.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxSaveThemeOnClose.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxRememberThemeOnClose.Properties)).BeginInit();
             this.TabDatabase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RadioConsoles.Properties)).BeginInit();
             this.TabContentRecognition.SuspendLayout();
             this.TabFileManager.SuspendLayout();
             this.TabXboxTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxLaunchIniFilePath.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxShowGamesFromExternalDevices.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // CheckBoxRememberGameRegions
             // 
-            this.CheckBoxRememberGameRegions.Location = new System.Drawing.Point(10, 105);
+            this.CheckBoxRememberGameRegions.Location = new System.Drawing.Point(10, 156);
             this.CheckBoxRememberGameRegions.Name = "CheckBoxRememberGameRegions";
             this.CheckBoxRememberGameRegions.Properties.AllowFocused = false;
             this.CheckBoxRememberGameRegions.Properties.AutoWidth = true;
@@ -96,7 +92,7 @@ namespace ModioX.Forms.Windows
             // 
             // CheckBoxAutoDetectGameTitles
             // 
-            this.CheckBoxAutoDetectGameTitles.Location = new System.Drawing.Point(10, 56);
+            this.CheckBoxAutoDetectGameTitles.Location = new System.Drawing.Point(10, 106);
             this.CheckBoxAutoDetectGameTitles.Name = "CheckBoxAutoDetectGameTitles";
             this.CheckBoxAutoDetectGameTitles.Properties.AllowFocused = false;
             this.CheckBoxAutoDetectGameTitles.Properties.AutoWidth = true;
@@ -106,7 +102,7 @@ namespace ModioX.Forms.Windows
             // 
             // CheckBoxAutoDetectGameRegions
             // 
-            this.CheckBoxAutoDetectGameRegions.Location = new System.Drawing.Point(10, 32);
+            this.CheckBoxAutoDetectGameRegions.Location = new System.Drawing.Point(10, 82);
             this.CheckBoxAutoDetectGameRegions.Name = "CheckBoxAutoDetectGameRegions";
             this.CheckBoxAutoDetectGameRegions.Properties.AllowFocused = false;
             this.CheckBoxAutoDetectGameRegions.Properties.AutoWidth = true;
@@ -175,37 +171,13 @@ namespace ModioX.Forms.Windows
             // 
             // TabAppearance
             // 
-            this.TabAppearance.Controls.Add(this.LabelXboxDebuggingForeColor);
-            this.TabAppearance.Controls.Add(this.ColorXboxDebuggingFont);
             this.TabAppearance.Controls.Add(this.labelControl6);
             this.TabAppearance.Controls.Add(this.CheckBoxShowFileSizeInBytes);
-            this.TabAppearance.Controls.Add(this.ColorXboxDebuggingBackground);
-            this.TabAppearance.Controls.Add(this.CheckBoxSaveThemeOnClose);
-            this.TabAppearance.Controls.Add(this.LabelXboxDebugging);
-            this.TabAppearance.Controls.Add(this.LabelXboxDebuggingBackgroundColor);
+            this.TabAppearance.Controls.Add(this.CheckBoxRememberThemeOnClose);
             this.TabAppearance.Controls.Add(this.labelControl4);
             this.TabAppearance.Name = "TabAppearance";
             this.TabAppearance.Size = new System.Drawing.Size(416, 191);
             this.TabAppearance.Text = "Appearance";
-            // 
-            // LabelXboxDebuggingForeColor
-            // 
-            this.LabelXboxDebuggingForeColor.Location = new System.Drawing.Point(10, 134);
-            this.LabelXboxDebuggingForeColor.Name = "LabelXboxDebuggingForeColor";
-            this.LabelXboxDebuggingForeColor.Size = new System.Drawing.Size(58, 13);
-            this.LabelXboxDebuggingForeColor.TabIndex = 2;
-            this.LabelXboxDebuggingForeColor.Text = "Font Color:";
-            // 
-            // ColorXboxDebuggingFont
-            // 
-            this.ColorXboxDebuggingFont.EditValue = System.Drawing.Color.Empty;
-            this.ColorXboxDebuggingFont.Location = new System.Drawing.Point(132, 131);
-            this.ColorXboxDebuggingFont.Name = "ColorXboxDebuggingFont";
-            this.ColorXboxDebuggingFont.Properties.AllowFocused = false;
-            this.ColorXboxDebuggingFont.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ColorXboxDebuggingFont.Size = new System.Drawing.Size(114, 20);
-            this.ColorXboxDebuggingFont.TabIndex = 0;
             // 
             // labelControl6
             // 
@@ -223,50 +195,15 @@ namespace ModioX.Forms.Windows
             this.labelControl6.TabIndex = 1171;
             this.labelControl6.Text = "File Sizes";
             // 
-            // ColorXboxDebuggingBackground
+            // CheckBoxRememberThemeOnClose
             // 
-            this.ColorXboxDebuggingBackground.EditValue = System.Drawing.Color.Empty;
-            this.ColorXboxDebuggingBackground.Location = new System.Drawing.Point(132, 160);
-            this.ColorXboxDebuggingBackground.Name = "ColorXboxDebuggingBackground";
-            this.ColorXboxDebuggingBackground.Properties.AllowFocused = false;
-            this.ColorXboxDebuggingBackground.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ColorXboxDebuggingBackground.Size = new System.Drawing.Size(114, 20);
-            this.ColorXboxDebuggingBackground.TabIndex = 1;
-            // 
-            // CheckBoxSaveThemeOnClose
-            // 
-            this.CheckBoxSaveThemeOnClose.Location = new System.Drawing.Point(10, 32);
-            this.CheckBoxSaveThemeOnClose.Name = "CheckBoxSaveThemeOnClose";
-            this.CheckBoxSaveThemeOnClose.Properties.AllowFocused = false;
-            this.CheckBoxSaveThemeOnClose.Properties.AutoWidth = true;
-            this.CheckBoxSaveThemeOnClose.Properties.Caption = "Save current theme on close";
-            this.CheckBoxSaveThemeOnClose.Size = new System.Drawing.Size(165, 18);
-            this.CheckBoxSaveThemeOnClose.TabIndex = 1170;
-            // 
-            // LabelXboxDebugging
-            // 
-            this.LabelXboxDebugging.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelXboxDebugging.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelXboxDebugging.Appearance.Options.UseFont = true;
-            this.LabelXboxDebugging.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.LabelXboxDebugging.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
-            this.LabelXboxDebugging.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
-            this.LabelXboxDebugging.LineVisible = true;
-            this.LabelXboxDebugging.Location = new System.Drawing.Point(10, 109);
-            this.LabelXboxDebugging.Name = "LabelXboxDebugging";
-            this.LabelXboxDebugging.Size = new System.Drawing.Size(396, 15);
-            this.LabelXboxDebugging.TabIndex = 1169;
-            this.LabelXboxDebugging.Text = "Xbox Debugging (HexBox)";
-            // 
-            // LabelXboxDebuggingBackgroundColor
-            // 
-            this.LabelXboxDebuggingBackgroundColor.Location = new System.Drawing.Point(10, 163);
-            this.LabelXboxDebuggingBackgroundColor.Name = "LabelXboxDebuggingBackgroundColor";
-            this.LabelXboxDebuggingBackgroundColor.Size = new System.Drawing.Size(96, 13);
-            this.LabelXboxDebuggingBackgroundColor.TabIndex = 3;
-            this.LabelXboxDebuggingBackgroundColor.Text = "Background Color:";
+            this.CheckBoxRememberThemeOnClose.Location = new System.Drawing.Point(10, 32);
+            this.CheckBoxRememberThemeOnClose.Name = "CheckBoxRememberThemeOnClose";
+            this.CheckBoxRememberThemeOnClose.Properties.AllowFocused = false;
+            this.CheckBoxRememberThemeOnClose.Properties.AutoWidth = true;
+            this.CheckBoxRememberThemeOnClose.Properties.Caption = "Remember current theme on close";
+            this.CheckBoxRememberThemeOnClose.Size = new System.Drawing.Size(196, 18);
+            this.CheckBoxRememberThemeOnClose.TabIndex = 1170;
             // 
             // labelControl4
             // 
@@ -293,6 +230,22 @@ namespace ModioX.Forms.Windows
             this.TabDatabase.Size = new System.Drawing.Size(416, 191);
             this.TabDatabase.Text = "Database";
             // 
+            // LabelHeaderDefaultDatabase
+            // 
+            this.LabelHeaderDefaultDatabase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelHeaderDefaultDatabase.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderDefaultDatabase.Appearance.Options.UseFont = true;
+            this.LabelHeaderDefaultDatabase.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LabelHeaderDefaultDatabase.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
+            this.LabelHeaderDefaultDatabase.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
+            this.LabelHeaderDefaultDatabase.LineVisible = true;
+            this.LabelHeaderDefaultDatabase.Location = new System.Drawing.Point(10, 10);
+            this.LabelHeaderDefaultDatabase.Name = "LabelHeaderDefaultDatabase";
+            this.LabelHeaderDefaultDatabase.Size = new System.Drawing.Size(396, 15);
+            this.LabelHeaderDefaultDatabase.TabIndex = 1169;
+            this.LabelHeaderDefaultDatabase.Text = "Startup Database";
+            // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(10, 33);
@@ -317,6 +270,8 @@ namespace ModioX.Forms.Windows
             // 
             // TabContentRecognition
             // 
+            this.TabContentRecognition.Controls.Add(this.labelControl7);
+            this.TabContentRecognition.Controls.Add(this.CheckBoxShowGamesFromExternalDevices);
             this.TabContentRecognition.Controls.Add(this.labelControl5);
             this.TabContentRecognition.Controls.Add(this.labelControl3);
             this.TabContentRecognition.Controls.Add(this.CheckBoxAutoDetectGameRegions);
@@ -326,6 +281,38 @@ namespace ModioX.Forms.Windows
             this.TabContentRecognition.Size = new System.Drawing.Size(416, 191);
             this.TabContentRecognition.Text = "Content Recognition";
             // 
+            // labelControl5
+            // 
+            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl5.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
+            this.labelControl5.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
+            this.labelControl5.LineVisible = true;
+            this.labelControl5.Location = new System.Drawing.Point(10, 134);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(396, 15);
+            this.labelControl5.TabIndex = 1171;
+            this.labelControl5.Text = "Game Regions";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
+            this.labelControl3.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
+            this.labelControl3.LineVisible = true;
+            this.labelControl3.Location = new System.Drawing.Point(10, 60);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(396, 15);
+            this.labelControl3.TabIndex = 1170;
+            this.labelControl3.Text = "Game Content";
+            // 
             // TabFileManager
             // 
             this.TabFileManager.Controls.Add(this.labelControl2);
@@ -334,47 +321,6 @@ namespace ModioX.Forms.Windows
             this.TabFileManager.Name = "TabFileManager";
             this.TabFileManager.Size = new System.Drawing.Size(416, 191);
             this.TabFileManager.Text = "File Manager";
-            // 
-            // TabXboxTools
-            // 
-            this.TabXboxTools.Controls.Add(this.LabelHeaderLaunchIniFilePath);
-            this.TabXboxTools.Controls.Add(this.TextBoxLaunchIniFilePath);
-            this.TabXboxTools.Controls.Add(this.LabelHeaderPluginsEditor);
-            this.TabXboxTools.Name = "TabXboxTools";
-            this.TabXboxTools.Size = new System.Drawing.Size(416, 191);
-            this.TabXboxTools.Text = "Xbox Tools";
-            // 
-            // LabelHeaderDefaultDatabase
-            // 
-            this.LabelHeaderDefaultDatabase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelHeaderDefaultDatabase.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderDefaultDatabase.Appearance.Options.UseFont = true;
-            this.LabelHeaderDefaultDatabase.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.LabelHeaderDefaultDatabase.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
-            this.LabelHeaderDefaultDatabase.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
-            this.LabelHeaderDefaultDatabase.LineVisible = true;
-            this.LabelHeaderDefaultDatabase.Location = new System.Drawing.Point(10, 10);
-            this.LabelHeaderDefaultDatabase.Name = "LabelHeaderDefaultDatabase";
-            this.LabelHeaderDefaultDatabase.Size = new System.Drawing.Size(396, 15);
-            this.LabelHeaderDefaultDatabase.TabIndex = 1169;
-            this.LabelHeaderDefaultDatabase.Text = "Startup Database";
-            // 
-            // LabelHeaderPluginsEditor
-            // 
-            this.LabelHeaderPluginsEditor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelHeaderPluginsEditor.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderPluginsEditor.Appearance.Options.UseFont = true;
-            this.LabelHeaderPluginsEditor.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.LabelHeaderPluginsEditor.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
-            this.LabelHeaderPluginsEditor.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
-            this.LabelHeaderPluginsEditor.LineVisible = true;
-            this.LabelHeaderPluginsEditor.Location = new System.Drawing.Point(10, 10);
-            this.LabelHeaderPluginsEditor.Name = "LabelHeaderPluginsEditor";
-            this.LabelHeaderPluginsEditor.Size = new System.Drawing.Size(396, 15);
-            this.LabelHeaderPluginsEditor.TabIndex = 1170;
-            this.LabelHeaderPluginsEditor.Text = "Plugins Editor";
             // 
             // labelControl2
             // 
@@ -392,37 +338,22 @@ namespace ModioX.Forms.Windows
             this.labelControl2.TabIndex = 1170;
             this.labelControl2.Text = "Directories";
             // 
-            // labelControl3
+            // TabXboxTools
             // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
-            this.labelControl3.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
-            this.labelControl3.LineVisible = true;
-            this.labelControl3.Location = new System.Drawing.Point(10, 10);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(396, 15);
-            this.labelControl3.TabIndex = 1170;
-            this.labelControl3.Text = "Game Content";
+            this.TabXboxTools.Controls.Add(this.LabelHeaderLaunchIniFilePath);
+            this.TabXboxTools.Controls.Add(this.TextBoxLaunchIniFilePath);
+            this.TabXboxTools.Controls.Add(this.LabelHeaderPluginsEditor);
+            this.TabXboxTools.Name = "TabXboxTools";
+            this.TabXboxTools.Size = new System.Drawing.Size(416, 191);
+            this.TabXboxTools.Text = "Xbox Tools";
             // 
-            // labelControl5
+            // LabelHeaderLaunchIniFilePath
             // 
-            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
-            this.labelControl5.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
-            this.labelControl5.LineVisible = true;
-            this.labelControl5.Location = new System.Drawing.Point(10, 83);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(396, 15);
-            this.labelControl5.TabIndex = 1171;
-            this.labelControl5.Text = "Game Regions";
+            this.LabelHeaderLaunchIniFilePath.Location = new System.Drawing.Point(10, 32);
+            this.LabelHeaderLaunchIniFilePath.Name = "LabelHeaderLaunchIniFilePath";
+            this.LabelHeaderLaunchIniFilePath.Size = new System.Drawing.Size(103, 13);
+            this.LabelHeaderLaunchIniFilePath.TabIndex = 1172;
+            this.LabelHeaderLaunchIniFilePath.Text = "Launch.ini File Path:";
             // 
             // TextBoxLaunchIniFilePath
             // 
@@ -431,13 +362,47 @@ namespace ModioX.Forms.Windows
             this.TextBoxLaunchIniFilePath.Size = new System.Drawing.Size(396, 20);
             this.TextBoxLaunchIniFilePath.TabIndex = 1171;
             // 
-            // LabelHeaderLaunchIniFilePath
+            // LabelHeaderPluginsEditor
             // 
-            this.LabelHeaderLaunchIniFilePath.Location = new System.Drawing.Point(10, 32);
-            this.LabelHeaderLaunchIniFilePath.Name = "LabelHeaderLaunchIniFilePath";
-            this.LabelHeaderLaunchIniFilePath.Size = new System.Drawing.Size(122, 13);
-            this.LabelHeaderLaunchIniFilePath.TabIndex = 1172;
-            this.LabelHeaderLaunchIniFilePath.Text = "Set Launch.ini File Path:";
+            this.LabelHeaderPluginsEditor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelHeaderPluginsEditor.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderPluginsEditor.Appearance.Options.UseFont = true;
+            this.LabelHeaderPluginsEditor.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LabelHeaderPluginsEditor.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
+            this.LabelHeaderPluginsEditor.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
+            this.LabelHeaderPluginsEditor.LineVisible = true;
+            this.LabelHeaderPluginsEditor.Location = new System.Drawing.Point(10, 10);
+            this.LabelHeaderPluginsEditor.Name = "LabelHeaderPluginsEditor";
+            this.LabelHeaderPluginsEditor.Size = new System.Drawing.Size(396, 15);
+            this.LabelHeaderPluginsEditor.TabIndex = 1170;
+            this.LabelHeaderPluginsEditor.Text = "Plugins Editor";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl7.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
+            this.labelControl7.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
+            this.labelControl7.LineVisible = true;
+            this.labelControl7.Location = new System.Drawing.Point(10, 10);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(396, 15);
+            this.labelControl7.TabIndex = 1173;
+            this.labelControl7.Text = "Games List";
+            // 
+            // CheckBoxShowGamesFromExternalDevices
+            // 
+            this.CheckBoxShowGamesFromExternalDevices.Location = new System.Drawing.Point(10, 32);
+            this.CheckBoxShowGamesFromExternalDevices.Name = "CheckBoxShowGamesFromExternalDevices";
+            this.CheckBoxShowGamesFromExternalDevices.Properties.AllowFocused = false;
+            this.CheckBoxShowGamesFromExternalDevices.Properties.AutoWidth = true;
+            this.CheckBoxShowGamesFromExternalDevices.Properties.Caption = "Show games from external devices";
+            this.CheckBoxShowGamesFromExternalDevices.Size = new System.Drawing.Size(197, 18);
+            this.CheckBoxShowGamesFromExternalDevices.TabIndex = 1172;
             // 
             // SettingsWindow
             // 
@@ -464,9 +429,7 @@ namespace ModioX.Forms.Windows
             this.TabControl.ResumeLayout(false);
             this.TabAppearance.ResumeLayout(false);
             this.TabAppearance.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ColorXboxDebuggingFont.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ColorXboxDebuggingBackground.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxSaveThemeOnClose.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxRememberThemeOnClose.Properties)).EndInit();
             this.TabDatabase.ResumeLayout(false);
             this.TabDatabase.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RadioConsoles.Properties)).EndInit();
@@ -477,6 +440,7 @@ namespace ModioX.Forms.Windows
             this.TabXboxTools.ResumeLayout(false);
             this.TabXboxTools.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxLaunchIniFilePath.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxShowGamesFromExternalDevices.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -494,14 +458,9 @@ namespace ModioX.Forms.Windows
         private XtraTabPage TabDatabase;
         private LabelControl labelControl1;
         private RadioGroup RadioConsoles;
-        private LabelControl LabelXboxDebuggingForeColor;
-        private ColorEdit ColorXboxDebuggingFont;
-        private LabelControl LabelXboxDebuggingBackgroundColor;
-        private ColorEdit ColorXboxDebuggingBackground;
         private XtraTabPage TabAppearance;
         private LabelControl labelControl6;
-        private CheckEdit CheckBoxSaveThemeOnClose;
-        private LabelControl LabelXboxDebugging;
+        private CheckEdit CheckBoxRememberThemeOnClose;
         private LabelControl labelControl4;
         private XtraTabPage TabContentRecognition;
         private LabelControl LabelHeaderDefaultDatabase;
@@ -512,5 +471,7 @@ namespace ModioX.Forms.Windows
         private LabelControl labelControl3;
         private TextEdit TextBoxLaunchIniFilePath;
         private LabelControl LabelHeaderLaunchIniFilePath;
+        private LabelControl labelControl7;
+        private CheckEdit CheckBoxShowGamesFromExternalDevices;
     }
 }

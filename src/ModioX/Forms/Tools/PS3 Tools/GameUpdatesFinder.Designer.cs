@@ -96,28 +96,30 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.SectionPanelInformation.Controls.Add(this.stackPanel2);
             this.SectionPanelInformation.Location = new System.Drawing.Point(11, 11);
             this.SectionPanelInformation.Name = "SectionPanelInformation";
-            this.SectionPanelInformation.Size = new System.Drawing.Size(574, 368);
+            this.SectionPanelInformation.Size = new System.Drawing.Size(622, 368);
             this.SectionPanelInformation.TabIndex = 0;
             this.SectionPanelInformation.Text = "SEARCH FOR GAME UPDATES";
             // 
             // ComboBoxType
             // 
-            this.ComboBoxType.Location = new System.Drawing.Point(245, 32);
+            this.ComboBoxType.Location = new System.Drawing.Point(245, 31);
             this.ComboBoxType.Name = "ComboBoxType";
+            this.ComboBoxType.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ComboBoxType.Properties.Appearance.Options.UseFont = true;
             this.ComboBoxType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ComboBoxType.Properties.Items.AddRange(new object[] {
             "Retail",
             "Debug"});
             this.ComboBoxType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxType.Size = new System.Drawing.Size(100, 20);
+            this.ComboBoxType.Size = new System.Drawing.Size(75, 22);
             this.ComboBoxType.TabIndex = 1185;
             // 
             // ButtonSearch
             // 
             this.ButtonSearch.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonSearch.Appearance.Options.UseFont = true;
-            this.ButtonSearch.Location = new System.Drawing.Point(352, 31);
+            this.ButtonSearch.Location = new System.Drawing.Point(327, 31);
             this.ButtonSearch.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonSearch.Name = "ButtonSearch";
             this.ButtonSearch.Size = new System.Drawing.Size(67, 22);
@@ -137,7 +139,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ProgressNoGameUpdatesFound.Caption = "NO GAME UPDATES FOUND";
             this.ProgressNoGameUpdatesFound.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.ProgressNoGameUpdatesFound.Description = "";
-            this.ProgressNoGameUpdatesFound.Location = new System.Drawing.Point(164, 120);
+            this.ProgressNoGameUpdatesFound.Location = new System.Drawing.Point(188, 123);
             this.ProgressNoGameUpdatesFound.Name = "ProgressNoGameUpdatesFound";
             this.ProgressNoGameUpdatesFound.Size = new System.Drawing.Size(246, 66);
             this.ProgressNoGameUpdatesFound.TabIndex = 1184;
@@ -161,16 +163,19 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.GridGameUpdates.Location = new System.Drawing.Point(2, 61);
             this.GridGameUpdates.MainView = this.GridViewGameUpdates;
             this.GridGameUpdates.Name = "GridGameUpdates";
-            this.GridGameUpdates.Size = new System.Drawing.Size(570, 266);
+            this.GridGameUpdates.Size = new System.Drawing.Size(618, 266);
             this.GridGameUpdates.TabIndex = 1183;
             this.GridGameUpdates.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewGameUpdates});
             // 
             // GridViewGameUpdates
             // 
-            this.GridViewGameUpdates.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.GridViewGameUpdates.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewGameUpdates.GridControl = this.GridGameUpdates;
             this.GridViewGameUpdates.Name = "GridViewGameUpdates";
+            this.GridViewGameUpdates.OptionsBehavior.Editable = false;
+            this.GridViewGameUpdates.OptionsBehavior.ReadOnly = true;
+            this.GridViewGameUpdates.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.GridViewGameUpdates.OptionsView.ShowGroupPanel = false;
             this.GridViewGameUpdates.OptionsView.ShowIndicator = false;
             this.GridViewGameUpdates.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewGameUpdates_RowClick);
@@ -179,9 +184,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             // LabelSearch
             // 
             this.LabelSearch.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSearch.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSearch.Appearance.Options.UseFont = true;
-            this.LabelSearch.Appearance.Options.UseForeColor = true;
             this.LabelSearch.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelSearch.Location = new System.Drawing.Point(10, 34);
@@ -194,9 +197,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             // LabelSelectType
             // 
             this.LabelSelectType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSelectType.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSelectType.Appearance.Options.UseFont = true;
-            this.LabelSelectType.Appearance.Options.UseForeColor = true;
             this.LabelSelectType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelSelectType.Location = new System.Drawing.Point(167, 34);
@@ -215,14 +216,16 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.stackPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.stackPanel2.Location = new System.Drawing.Point(2, 327);
             this.stackPanel2.Name = "stackPanel2";
-            this.stackPanel2.Size = new System.Drawing.Size(570, 39);
+            this.stackPanel2.Size = new System.Drawing.Size(618, 39);
             this.stackPanel2.TabIndex = 1181;
             // 
             // ButtonInstallToConsole
             // 
+            this.ButtonInstallToConsole.Enabled = false;
             this.ButtonInstallToConsole.Location = new System.Drawing.Point(8, 8);
             this.ButtonInstallToConsole.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
             this.ButtonInstallToConsole.Name = "ButtonInstallToConsole";
+            this.ButtonInstallToConsole.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonInstallToConsole.Size = new System.Drawing.Size(121, 23);
             this.ButtonInstallToConsole.TabIndex = 6;
             this.ButtonInstallToConsole.Text = "Install to Console";
@@ -230,8 +233,10 @@ namespace ModioX.Forms.Tools.PS3_Tools
             // 
             // ButtonDownloadToComputer
             // 
+            this.ButtonDownloadToComputer.Enabled = false;
             this.ButtonDownloadToComputer.Location = new System.Drawing.Point(135, 8);
             this.ButtonDownloadToComputer.Name = "ButtonDownloadToComputer";
+            this.ButtonDownloadToComputer.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonDownloadToComputer.Size = new System.Drawing.Size(108, 23);
             this.ButtonDownloadToComputer.TabIndex = 7;
             this.ButtonDownloadToComputer.Text = "Download File";
@@ -239,8 +244,10 @@ namespace ModioX.Forms.Tools.PS3_Tools
             // 
             // ButtonCopyURLToClipboard
             // 
+            this.ButtonCopyURLToClipboard.Enabled = false;
             this.ButtonCopyURLToClipboard.Location = new System.Drawing.Point(249, 8);
             this.ButtonCopyURLToClipboard.Name = "ButtonCopyURLToClipboard";
+            this.ButtonCopyURLToClipboard.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCopyURLToClipboard.Size = new System.Drawing.Size(149, 23);
             this.ButtonCopyURLToClipboard.TabIndex = 8;
             this.ButtonCopyURLToClipboard.Text = "Copy URL to Clipboard";
@@ -248,8 +255,10 @@ namespace ModioX.Forms.Tools.PS3_Tools
             // 
             // ButtonCopySHA1ToClipboard
             // 
+            this.ButtonCopySHA1ToClipboard.Enabled = false;
             this.ButtonCopySHA1ToClipboard.Location = new System.Drawing.Point(404, 8);
             this.ButtonCopySHA1ToClipboard.Name = "ButtonCopySHA1ToClipboard";
+            this.ButtonCopySHA1ToClipboard.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCopySHA1ToClipboard.Size = new System.Drawing.Size(157, 23);
             this.ButtonCopySHA1ToClipboard.TabIndex = 9;
             this.ButtonCopySHA1ToClipboard.Text = "Copy SHA1 to Clipboard";
@@ -372,7 +381,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.BarManagerStatus;
-            this.barDockControlTop.Size = new System.Drawing.Size(596, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(644, 0);
             // 
             // barDockControlBottom
             // 
@@ -380,7 +389,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 393);
             this.barDockControlBottom.Manager = this.BarManagerStatus;
-            this.barDockControlBottom.Size = new System.Drawing.Size(596, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(644, 25);
             // 
             // barDockControlLeft
             // 
@@ -394,7 +403,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(596, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(644, 0);
             this.barDockControlRight.Manager = this.BarManagerStatus;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 393);
             // 
@@ -417,7 +426,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(596, 418);
+            this.ClientSize = new System.Drawing.Size(644, 418);
             this.Controls.Add(this.SectionPanelInformation);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

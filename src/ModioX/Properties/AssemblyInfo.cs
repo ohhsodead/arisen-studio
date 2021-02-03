@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ModioX")]
-[assembly: AssemblyDescription("Browse, Download & Install Mods for PlayStation 3")]
+[assembly: AssemblyDescription("Browse, Download & Install Mods for PS3 & XBOX")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ohhsodead")]
 [assembly: AssemblyProduct("ModioX")]

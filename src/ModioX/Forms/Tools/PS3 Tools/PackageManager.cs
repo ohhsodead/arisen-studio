@@ -46,7 +46,6 @@ namespace ModioX.Forms.Tools.PS3_Tools
             {
                 new("File Name", typeof(string)),
                 new("File Size", typeof(string)),
-                new(" ", typeof(string))
             });
 
             FtpClient.SetWorkingDirectory(PackageFilesPath);
@@ -55,7 +54,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             {
                 switch (listItem.Type)
                 {
-                    case FtpFileSystemObjectType.File when listItem.Name.EndsWith(".pkg"):
+                    case FtpFileSystemObjectType.File when listItem.Name.EndsWithIgnoreCase(".pkg"):
                         PackageFiles.Add(listItem);
                         break;
 
@@ -78,11 +77,11 @@ namespace ModioX.Forms.Tools.PS3_Tools
             GridPackageFiles.DataSource = packages;
 
             GridViewPackageFiles.Columns[0].Width = 350;
-            GridViewPackageFiles.Columns[1].Width = 125;
+            GridViewPackageFiles.Columns[1].Width = 150;
 
             ProgressPackageFiles.Visible = packages.Rows.Count < 1;
 
-            // Check all package files for newer versions
+            // Check package files installed via the app for newer versions
             foreach (var packageFile in PackageFiles)
             {
                 var installedPackageFile = MainWindow.Settings.GetInstalledPackageFile(packageFile.Name);
