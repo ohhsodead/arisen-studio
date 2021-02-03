@@ -1,14 +1,4 @@
-﻿using DevExpress.XtraEditors;
-using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Views.Grid;
-using FluentFTP;
-using Microsoft.VisualBasic.FileIO;
-using ModioX.Extensions;
-using ModioX.Io;
-using ModioX.Models.Resources;
-using ModioX.Net;
-using ModioX.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
@@ -16,7 +6,17 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
+using FluentFTP;
 using Humanizer;
+using Microsoft.VisualBasic.FileIO;
+using ModioX.Extensions;
+using ModioX.Io;
+using ModioX.Models.Resources;
+using ModioX.Net;
+using ModioX.Properties;
 using FtpException = FluentFTP.FtpException;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 using StringExtensions = ModioX.Extensions.StringExtensions;
@@ -170,6 +170,7 @@ namespace ModioX.Forms.Windows
                             LoadConsoleDirectory(Settings.LocalPathPS3);
                         }
                         break;
+
                     case ConsoleTypePrefix.XBOX:
                         if (Settings.LocalPathXBOX.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathXBOX))
                         {
@@ -194,7 +195,7 @@ namespace ModioX.Forms.Windows
 
         private void ComboBoxLocalDrives_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadLocalDirectory(ComboBoxLocalDrives.SelectedItem.ToString() + @"\");
+            LoadLocalDirectory(ComboBoxLocalDrives.SelectedItem + @"\");
         }
 
         private void ButtonBrowseLocalDirectory_Click(object sender, EventArgs e)
@@ -287,9 +288,6 @@ namespace ModioX.Forms.Windows
                 case "file":
                     RenameLocalFile();
                     break;
-
-                default:
-                    break;
             }
         }
 
@@ -327,8 +325,7 @@ namespace ModioX.Forms.Windows
 
                     if (Directory.Exists(folderPath))
                     {
-                        XtraMessageBox.Show($"A folder with this name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
+                        XtraMessageBox.Show("A folder with this name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -439,7 +436,7 @@ namespace ModioX.Forms.Windows
                 {
                     if (!File.Exists(newFilePath))
                     {
-                        SetStatus($"A file with this name already exists.");
+                        SetStatus("A file with this name already exists.");
                     }
                     else
                     {
@@ -467,7 +464,7 @@ namespace ModioX.Forms.Windows
                 {
                     if (!Directory.Exists(newFolderPath))
                     {
-                        SetStatus($"A folder with this name already exists.");
+                        SetStatus("A folder with this name already exists.");
                     }
                     else
                     {
@@ -559,7 +556,7 @@ namespace ModioX.Forms.Windows
                 GridViewLocalFiles.Columns[3].Width = 100;
                 GridViewLocalFiles.Columns[4].Width = 100;
 
-                SetStatus($"Successfully fetched directory listing.");
+                SetStatus("Successfully fetched directory listing.");
             }
             catch (Exception ex)
             {
@@ -583,7 +580,7 @@ namespace ModioX.Forms.Windows
 
         private void ComboBoxConsoleDrives_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadConsoleDirectory("/" + ComboBoxConsoleDrives.SelectedItem.ToString() + "/");
+            LoadConsoleDirectory("/" + ComboBoxConsoleDrives.SelectedItem + "/");
         }
 
         private void ButtonConsoleNavigate_Click(object sender, EventArgs e)
@@ -671,9 +668,6 @@ namespace ModioX.Forms.Windows
 
                 case "file":
                     RenameConsoleFile();
-                    break;
-
-                default:
                     break;
             }
         }
@@ -797,7 +791,7 @@ namespace ModioX.Forms.Windows
                 GridViewConsoleFiles.Columns[3].Width = 100;
                 GridViewConsoleFiles.Columns[4].Width = 100;
 
-                SetStatus($"Successfully fetched directory listing.");
+                SetStatus("Successfully fetched directory listing.");
             }
             catch (FtpException ex)
             {
@@ -907,8 +901,7 @@ namespace ModioX.Forms.Windows
                 {
                     if (FtpClient.FileExists(newConsoleFilePath))
                     {
-                        SetStatus($"A file with this name already exists.");
-                        return;
+                        SetStatus("A file with this name already exists.");
                     }
                     else
                     {
@@ -940,8 +933,7 @@ namespace ModioX.Forms.Windows
                 {
                     if (FtpClient.DirectoryExists(oldFileName))
                     {
-                        SetStatus($"A folder with this name already exists.");
-                        return;
+                        SetStatus("A folder with this name already exists.");
                     }
                     else
                     {
@@ -970,8 +962,7 @@ namespace ModioX.Forms.Windows
 
                     if (FtpClient.DirectoryExists(folderPath))
                     {
-                        XtraMessageBox.Show($"A folder with this name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
+                        XtraMessageBox.Show("A folder with this name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {

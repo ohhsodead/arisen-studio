@@ -1,10 +1,11 @@
-﻿using ModioX.Forms.Windows;
-using System;
+﻿using System;
+using DevExpress.XtraEditors;
+using ModioX.Forms.Windows;
 using XDevkit;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
-    public partial class GameLauncher : DevExpress.XtraEditors.XtraForm
+    public partial class GameLauncher : XtraForm
     {
         public static IXboxConsole XboxConsole { get; } = MainWindow.XboxConsole;
 
@@ -15,12 +16,10 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
         private void GameLauncher_Load(object sender, EventArgs e)
         {
-
         }
 
         private void ButtonFetchGames_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

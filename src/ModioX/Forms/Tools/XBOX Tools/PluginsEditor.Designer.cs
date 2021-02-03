@@ -1,4 +1,10 @@
 ﻿
+using System.ComponentModel;
+using DevExpress.Utils.Layout;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
+
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
     partial class PluginsEditor
@@ -6,7 +12,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -239,18 +245,18 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         }
 
         #endregion
-        private DevExpress.XtraGrid.GridControl GridLaunchFile;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridViewLaunchFile;
-        private DevExpress.XtraEditors.GroupControl GroupIniFileEditor;
-        private DevExpress.XtraEditors.TextEdit TextBoxKey;
-        private DevExpress.XtraEditors.TextEdit TextBoxValue;
-        private DevExpress.XtraEditors.ComboBoxEdit ComboBoxSections;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.SimpleButton ButtonSetValue;
-        private DevExpress.Utils.Layout.StackPanel PanelButtons;
-        private DevExpress.XtraEditors.SimpleButton ButtonRestoreLaunchFile;
-        private DevExpress.XtraEditors.SimpleButton ButtonSaveFile;
-        private DevExpress.XtraEditors.CheckEdit CheckBoxEnableLiveStrong;
-        private DevExpress.XtraEditors.CheckEdit CheckBoxEnableLiveBlock;
+        private GridControl GridLaunchFile;
+        private GridView GridViewLaunchFile;
+        private GroupControl GroupIniFileEditor;
+        private TextEdit TextBoxKey;
+        private TextEdit TextBoxValue;
+        private ComboBoxEdit ComboBoxSections;
+        private LabelControl labelControl1;
+        private SimpleButton ButtonSetValue;
+        private StackPanel PanelButtons;
+        private SimpleButton ButtonRestoreLaunchFile;
+        private SimpleButton ButtonSaveFile;
+        private CheckEdit CheckBoxEnableLiveStrong;
+        private CheckEdit CheckBoxEnableLiveBlock;
     }
 }

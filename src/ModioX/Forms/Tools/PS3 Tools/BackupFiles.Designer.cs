@@ -1,11 +1,19 @@
-﻿namespace ModioX.Forms.Tools.PS3_Tools
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using DevExpress.Utils.Layout;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraWaitForm;
+
+namespace ModioX.Forms.Tools.PS3_Tools
 {
     partial class BackupFiles
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -424,34 +432,34 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl GridBackupFiles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCreatedOn;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridViewBackupFiles;
-        private DevExpress.XtraEditors.GroupControl GroupBackupFiles;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraWaitForm.ProgressPanel ProgressBackupFiles;
-        private DevExpress.Utils.Layout.StackPanel PanelButtons;
-        private DevExpress.XtraEditors.SimpleButton ButtonNewApplication;
-        private DevExpress.XtraEditors.SimpleButton ButtonAddApplication;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.LabelControl LabelInstallPath;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl LabelLocaPath;
-        private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.LabelControl LabelCreatedOn;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.LabelControl LabelFileSize;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.LabelControl LabelFileName;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl LabelGameTitle;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private GridControl GridBackupFiles;
+        private DataGridViewTextBoxColumn ColumnSize;
+        private DataGridViewTextBoxColumn ColumnType;
+        private DataGridViewTextBoxColumn ColumnGameId;
+        private DataGridViewTextBoxColumn ColumnName;
+        private DataGridViewTextBoxColumn ColumnGameTitle;
+        private DataGridViewTextBoxColumn ColumnFileName;
+        private DataGridViewTextBoxColumn ColumnFileSize;
+        private DataGridViewTextBoxColumn ColumnCreatedOn;
+        private GridView GridViewBackupFiles;
+        private GroupControl GroupBackupFiles;
+        private GroupControl groupControl1;
+        private ProgressPanel ProgressBackupFiles;
+        private StackPanel PanelButtons;
+        private SimpleButton ButtonNewApplication;
+        private SimpleButton ButtonAddApplication;
+        private PanelControl panelControl1;
+        private LabelControl LabelInstallPath;
+        private LabelControl labelControl2;
+        private LabelControl LabelLocaPath;
+        private LabelControl labelControl13;
+        private LabelControl LabelCreatedOn;
+        private LabelControl labelControl11;
+        private LabelControl LabelFileSize;
+        private LabelControl labelControl9;
+        private LabelControl LabelFileName;
+        private LabelControl labelControl7;
+        private LabelControl LabelGameTitle;
+        private LabelControl labelControl4;
     }
 }

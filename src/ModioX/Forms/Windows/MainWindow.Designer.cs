@@ -1,5 +1,14 @@
-﻿using DevExpress.XtraBars;
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using DevExpress.Utils.Layout;
+using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraNavBar;
+using DevExpress.XtraWaitForm;
+using VScrollBar = DevExpress.XtraEditors.VScrollBar;
 
 namespace ModioX.Forms.Windows
 {
@@ -8,7 +17,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -2262,54 +2271,54 @@ namespace ModioX.Forms.Windows
         }
 
         #endregion
-        private DevExpress.XtraEditors.LabelControl LabelSelectType;
-        private System.Windows.Forms.FlowLayoutPanel FlowPanelDetails;
-        private DevExpress.XtraEditors.LabelControl LabelName;
-        private DevExpress.XtraEditors.LabelControl LabelHeaderAuthor;
-        private DevExpress.XtraEditors.LabelControl LabelHeaderVersion;
-        private DevExpress.XtraEditors.LabelControl LabelVersion;
-        private DevExpress.XtraEditors.LabelControl LabelHeaderGameType;
-        private DevExpress.XtraEditors.LabelControl LabelConfig;
-        private DevExpress.XtraEditors.LabelControl LabelDescription;
-        private DevExpress.XtraEditors.LabelControl LabelHeaderSubmittedBy;
-        private DevExpress.XtraEditors.LabelControl LabelSubmittedBy;
-        private DevExpress.XtraEditors.LabelControl LabelAuthor;
-        private DevExpress.XtraEditors.LabelControl LabelHeaderModType;
-        private DevExpress.XtraEditors.LabelControl LabelType;
-        private DevExpress.XtraEditors.LabelControl LabelSelectSystemType;
-        private DevExpress.XtraEditors.LabelControl LabelHeaderFirmware;
-        private DevExpress.XtraEditors.LabelControl LabelFirmware;
-        private DevExpress.XtraEditors.LabelControl LabelCategory;
-        private DevExpress.XtraEditors.LabelControl LabelHeaderCategory;
-        private DevExpress.XtraEditors.LabelControl LabelHeaderName;
-        private System.Windows.Forms.Panel PanelModsLibraryFilters;
-        private DevExpress.XtraEditors.LabelControl LabelSearch;
-        private DevExpress.XtraGrid.GridControl GridControlInstalledGameMods;
-        private DevExpress.XtraEditors.LabelControl LabelHeaderRegion;
-        private DevExpress.XtraEditors.LabelControl LabelRegion;
-        private DevExpress.XtraEditors.LabelControl LabelSelectRegion;
-        private DevExpress.XtraGrid.GridControl GridControlModsInstallFiles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnInstallationFiles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsFirmware;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsRegion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsVersion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsAuthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsNoFiles;
-        private System.Windows.Forms.DataGridViewImageColumn ColumnModsInstall;
-        private System.Windows.Forms.DataGridViewImageColumn ColumnModsDownload;
-        private System.Windows.Forms.DataGridViewImageColumn ColumnModsFavourite;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledGameTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledRegion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledModName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledModType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledVersion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledNoOfFiles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnModsInstalledDateTime;
-        private System.Windows.Forms.DataGridViewImageColumn ColumnModsInstalledUninstall;
+        private LabelControl LabelSelectType;
+        private FlowLayoutPanel FlowPanelDetails;
+        private LabelControl LabelName;
+        private LabelControl LabelHeaderAuthor;
+        private LabelControl LabelHeaderVersion;
+        private LabelControl LabelVersion;
+        private LabelControl LabelHeaderGameType;
+        private LabelControl LabelConfig;
+        private LabelControl LabelDescription;
+        private LabelControl LabelHeaderSubmittedBy;
+        private LabelControl LabelSubmittedBy;
+        private LabelControl LabelAuthor;
+        private LabelControl LabelHeaderModType;
+        private LabelControl LabelType;
+        private LabelControl LabelSelectSystemType;
+        private LabelControl LabelHeaderFirmware;
+        private LabelControl LabelFirmware;
+        private LabelControl LabelCategory;
+        private LabelControl LabelHeaderCategory;
+        private LabelControl LabelHeaderName;
+        private Panel PanelModsLibraryFilters;
+        private LabelControl LabelSearch;
+        private GridControl GridControlInstalledGameMods;
+        private LabelControl LabelHeaderRegion;
+        private LabelControl LabelRegion;
+        private LabelControl LabelSelectRegion;
+        private GridControl GridControlModsInstallFiles;
+        private DataGridViewTextBoxColumn ColumnInstallationFiles;
+        private DataGridViewTextBoxColumn ColumnModsId;
+        private DataGridViewTextBoxColumn ColumnModsName;
+        private DataGridViewTextBoxColumn ColumnModsFirmware;
+        private DataGridViewTextBoxColumn ColumnModsType;
+        private DataGridViewTextBoxColumn ColumnModsRegion;
+        private DataGridViewTextBoxColumn ColumnModsVersion;
+        private DataGridViewTextBoxColumn ColumnModsAuthor;
+        private DataGridViewTextBoxColumn ColumnModsNoFiles;
+        private DataGridViewImageColumn ColumnModsInstall;
+        private DataGridViewImageColumn ColumnModsDownload;
+        private DataGridViewImageColumn ColumnModsFavourite;
+        private DataGridViewTextBoxColumn ColumnModsInstalledId;
+        private DataGridViewTextBoxColumn ColumnModsInstalledGameTitle;
+        private DataGridViewTextBoxColumn ColumnModsInstalledRegion;
+        private DataGridViewTextBoxColumn ColumnModsInstalledModName;
+        private DataGridViewTextBoxColumn ColumnModsInstalledModType;
+        private DataGridViewTextBoxColumn ColumnModsInstalledVersion;
+        private DataGridViewTextBoxColumn ColumnModsInstalledNoOfFiles;
+        private DataGridViewTextBoxColumn ColumnModsInstalledDateTime;
+        private DataGridViewImageColumn ColumnModsInstalledUninstall;
         private BarManager MainMenu;
         private Bar BarMenu;
         private BarButtonItem MenuBarItemConnect;
@@ -2356,17 +2365,17 @@ namespace ModioX.Forms.Windows
         private BarButtonItem ButtonPS3SoftReboot;
         private BarButtonItem ButtonPS3NotifyMessage;
         private BarButtonItem ButtonPS3VirtualController;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridViewModsInstallFiles;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridViewInstalledGameMods;
+        private GridView GridViewModsInstallFiles;
+        private GridView GridViewInstalledGameMods;
         private ComboBoxEdit ComboBoxRegion;
         private ComboBoxEdit ComboBoxModType;
         private BarHeaderItem LabelHeaderConsoleConnected;
         private BarStaticItem LabelConsoleConnected;
-        private DevExpress.XtraNavBar.NavBarControl NavBarCategories;
-        private DevExpress.XtraNavBar.NavBarGroup NavGroupGames;
-        private DevExpress.XtraNavBar.NavBarGroup NavGroupHomebrewApps;
-        private DevExpress.XtraNavBar.NavBarGroup NavGroupResources;
-        private DevExpress.XtraNavBar.NavBarGroup NavGroupMyLists;
+        private NavBarControl NavBarCategories;
+        private NavBarGroup NavGroupGames;
+        private NavBarGroup NavGroupHomebrewApps;
+        private NavBarGroup NavGroupResources;
+        private NavBarGroup NavGroupMyLists;
         private GroupControl GroupModsLibrary;
         private GroupControl GroupModsInstalled;
         private GroupControl GroupCategories;
@@ -2377,10 +2386,10 @@ namespace ModioX.Forms.Windows
         private TextEdit TextBoxSearch;
         private LabelControl labelControl3;
         private LabelControl labelControl4;
-        private DevExpress.XtraWaitForm.ProgressPanel ProgressMods;
-        private DevExpress.XtraWaitForm.ProgressPanel ProgressInstalledMods;
-        private DevExpress.XtraGrid.GridControl GridControlMods;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridViewMods;
+        private ProgressPanel ProgressMods;
+        private ProgressPanel ProgressInstalledMods;
+        private GridControl GridControlMods;
+        private GridView GridViewMods;
         private BarButtonItem ButtonConnectToXBOX;
         private BarButtonItem ButtonModInstallFiles;
         private BarButtonItem ButtonModUninstallFiles;
@@ -2416,16 +2425,16 @@ namespace ModioX.Forms.Windows
         private BarStaticItem LabelHeaderConnectedConsole;
         private BarStaticItem LabelModsStats;
         private BarButtonItem ButtonXboxOpenCloseTray;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox XNotifyType;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit XNotifyText;
+        private RepositoryItemComboBox XNotifyType;
+        private RepositoryItemTextEdit XNotifyText;
         private BarButtonItem ButtonXNotifySend;
         private BarButtonItem ButtonXboxShowProfileIDInfo;
-        private DevExpress.Utils.Layout.StackPanel PanelButtonsModInformation;
+        private StackPanel PanelButtonsModInformation;
         private SimpleButton ButtonModInstall;
         private SimpleButton ButtonModUninstall;
         private SimpleButton ButtonModDownload;
         private SimpleButton ButtonModFavorite;
-        private DevExpress.Utils.Layout.StackPanel PanelInstalledModsPlugins;
+        private StackPanel PanelInstalledModsPlugins;
         private SimpleButton ButtonUninstallAllMods;
         private BarButtonItem ButtonXboxPluginsEditor;
         private SimpleButton ButtonUninstallInstalledMods;

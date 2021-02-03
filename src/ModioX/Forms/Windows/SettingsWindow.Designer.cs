@@ -1,4 +1,8 @@
 ﻿
+using System.ComponentModel;
+using DevExpress.XtraEditors;
+using DevExpress.XtraTab;
+
 namespace ModioX.Forms.Windows
 {
     partial class SettingsWindow
@@ -6,7 +10,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -478,35 +482,35 @@ namespace ModioX.Forms.Windows
         }
 
         #endregion
-        private DevExpress.XtraEditors.CheckEdit CheckBoxAutoDetectGameTitles;
-        private DevExpress.XtraEditors.CheckEdit CheckBoxAutoDetectGameRegions;
-        private DevExpress.XtraEditors.CheckEdit CheckBoxSaveConsolePath;
-        private DevExpress.XtraEditors.CheckEdit CheckBoxSaveLocalPath;
-        private DevExpress.XtraEditors.CheckEdit CheckBoxShowFileSizeInBytes;
-        private DevExpress.XtraEditors.SimpleButton ButtonSaveSettings;
-        private DevExpress.XtraEditors.CheckEdit CheckBoxRememberGameRegions;
-        private DevExpress.XtraTab.XtraTabControl TabControl;
-        private DevExpress.XtraTab.XtraTabPage TabFileManager;
-        private DevExpress.XtraTab.XtraTabPage TabDatabase;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.RadioGroup RadioConsoles;
-        private DevExpress.XtraEditors.LabelControl LabelXboxDebuggingForeColor;
-        private DevExpress.XtraEditors.ColorEdit ColorXboxDebuggingFont;
-        private DevExpress.XtraEditors.LabelControl LabelXboxDebuggingBackgroundColor;
-        private DevExpress.XtraEditors.ColorEdit ColorXboxDebuggingBackground;
-        private DevExpress.XtraTab.XtraTabPage TabAppearance;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.CheckEdit CheckBoxSaveThemeOnClose;
-        private DevExpress.XtraEditors.LabelControl LabelXboxDebugging;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraTab.XtraTabPage TabContentRecognition;
-        private DevExpress.XtraEditors.LabelControl LabelHeaderDefaultDatabase;
-        private DevExpress.XtraTab.XtraTabPage TabXboxTools;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl LabelHeaderPluginsEditor;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit TextBoxLaunchIniFilePath;
-        private DevExpress.XtraEditors.LabelControl LabelHeaderLaunchIniFilePath;
+        private CheckEdit CheckBoxAutoDetectGameTitles;
+        private CheckEdit CheckBoxAutoDetectGameRegions;
+        private CheckEdit CheckBoxSaveConsolePath;
+        private CheckEdit CheckBoxSaveLocalPath;
+        private CheckEdit CheckBoxShowFileSizeInBytes;
+        private SimpleButton ButtonSaveSettings;
+        private CheckEdit CheckBoxRememberGameRegions;
+        private XtraTabControl TabControl;
+        private XtraTabPage TabFileManager;
+        private XtraTabPage TabDatabase;
+        private LabelControl labelControl1;
+        private RadioGroup RadioConsoles;
+        private LabelControl LabelXboxDebuggingForeColor;
+        private ColorEdit ColorXboxDebuggingFont;
+        private LabelControl LabelXboxDebuggingBackgroundColor;
+        private ColorEdit ColorXboxDebuggingBackground;
+        private XtraTabPage TabAppearance;
+        private LabelControl labelControl6;
+        private CheckEdit CheckBoxSaveThemeOnClose;
+        private LabelControl LabelXboxDebugging;
+        private LabelControl labelControl4;
+        private XtraTabPage TabContentRecognition;
+        private LabelControl LabelHeaderDefaultDatabase;
+        private XtraTabPage TabXboxTools;
+        private LabelControl labelControl2;
+        private LabelControl LabelHeaderPluginsEditor;
+        private LabelControl labelControl5;
+        private LabelControl labelControl3;
+        private TextEdit TextBoxLaunchIniFilePath;
+        private LabelControl LabelHeaderLaunchIniFilePath;
     }
 }

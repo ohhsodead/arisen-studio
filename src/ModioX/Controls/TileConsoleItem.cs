@@ -1,9 +1,9 @@
-﻿using DevExpress.XtraEditors;
-using ModioX.Forms.Windows;
-using ModioX.Models.Resources;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using ModioX.Forms.Windows;
+using ModioX.Models.Resources;
 
 namespace ModioX.Controls
 {

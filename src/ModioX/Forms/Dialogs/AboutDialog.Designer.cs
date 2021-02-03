@@ -1,11 +1,14 @@
-﻿namespace ModioX.Forms.Dialogs
+﻿using System.ComponentModel;
+using DevExpress.XtraEditors;
+
+namespace ModioX.Forms.Dialogs
 {
     partial class AboutDialog
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -204,14 +207,14 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.GroupControl groupControl3;
-        private DevExpress.XtraEditors.GroupControl groupControl4;
-        private DevExpress.XtraEditors.SimpleButton ButtonClose;
-        private DevExpress.XtraEditors.LabelControl LabelCredits;
-        private DevExpress.XtraEditors.LabelControl LabelInformation;
-        private DevExpress.XtraEditors.LabelControl LabelSpecialThanks;
-        private DevExpress.XtraEditors.LabelControl LabelLicense;
+        private GroupControl groupControl1;
+        private GroupControl groupControl2;
+        private GroupControl groupControl3;
+        private GroupControl groupControl4;
+        private SimpleButton ButtonClose;
+        private LabelControl LabelCredits;
+        private LabelControl LabelInformation;
+        private LabelControl LabelSpecialThanks;
+        private LabelControl LabelLicense;
     }
 }

@@ -1,11 +1,20 @@
-﻿namespace ModioX.Forms.Tools.PS3_Tools
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using DevExpress.Utils.Layout;
+using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraWaitForm;
+
+namespace ModioX.Forms.Tools.PS3_Tools
 {
     partial class PackageManager
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -322,28 +331,28 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.GroupControl SectionPackages;
-        private System.Windows.Forms.Timer TimerWait;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPackageName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSize;
-        private System.Windows.Forms.DataGridViewImageColumn ColumnDownload;
-        private DevExpress.Utils.Layout.StackPanel PanelButtons;
-        private DevExpress.XtraEditors.SimpleButton ButtonDeletePackageFile;
-        private DevExpress.XtraEditors.SimpleButton ButtonDeleteAllPackageFiles;
-        private DevExpress.XtraWaitForm.ProgressPanel ProgressPackageFiles;
-        private DevExpress.XtraGrid.GridControl GridPackageFiles;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridViewPackageFiles;
-        private DevExpress.XtraEditors.SimpleButton ButtonInstallPackageFile;
-        private DevExpress.XtraBars.BarManager BarManagerStatus;
-        private DevExpress.XtraBars.Bar BarStatus;
-        private DevExpress.XtraBars.BarStaticItem LabelHeaderStatus;
-        private DevExpress.XtraBars.BarStaticItem LabelStatus;
-        private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
-        private DevExpress.XtraEditors.SimpleButton ButtonDownloadPackageFile;
+        private GroupControl SectionPackages;
+        private Timer TimerWait;
+        private DataGridViewTextBoxColumn ColumnPackageName;
+        private DataGridViewTextBoxColumn ColumnSize;
+        private DataGridViewImageColumn ColumnDownload;
+        private StackPanel PanelButtons;
+        private SimpleButton ButtonDeletePackageFile;
+        private SimpleButton ButtonDeleteAllPackageFiles;
+        private ProgressPanel ProgressPackageFiles;
+        private GridControl GridPackageFiles;
+        private GridView GridViewPackageFiles;
+        private SimpleButton ButtonInstallPackageFile;
+        private BarManager BarManagerStatus;
+        private Bar BarStatus;
+        private BarStaticItem LabelHeaderStatus;
+        private BarStaticItem LabelStatus;
+        private BarDockControl barDockControlTop;
+        private BarDockControl barDockControlBottom;
+        private BarDockControl barDockControlLeft;
+        private BarDockControl barDockControlRight;
+        private BarHeaderItem barHeaderItem1;
+        private BarStaticItem barStaticItem2;
+        private SimpleButton ButtonDownloadPackageFile;
     }
 }

@@ -1,11 +1,20 @@
-﻿namespace ModioX.Forms.Tools.PS3_Tools
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using DevExpress.Utils.Layout;
+using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraWaitForm;
+
+namespace ModioX.Forms.Tools.PS3_Tools
 {
     partial class GameUpdatesFinder
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -439,36 +448,36 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.GroupControl SectionPanelInformation;
-        private DevExpress.XtraEditors.TextEdit TextBoxTitleID;
-        private DevExpress.XtraEditors.LabelControl LabelSearch;
-        private DevExpress.XtraEditors.LabelControl LabelSelectType;
-        private DevExpress.XtraEditors.SimpleButton ButtonSearch;
-        private System.Windows.Forms.ToolStripLabel ToolStripLabelHeaderStatus;
-        private System.Windows.Forms.ToolStripLabel ToolStripLabelStatus;
-        private System.Windows.Forms.ToolStripMenuItem ContextMenuDownloadToComputer;
-        private System.Windows.Forms.ToolStripMenuItem ContextMenuInstallToConsole;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem ContextMenuCopyURLToClipboard;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnVersion;
-        private DevExpress.Utils.Layout.StackPanel stackPanel2;
-        private DevExpress.XtraEditors.SimpleButton ButtonInstallToConsole;
-        private DevExpress.XtraEditors.SimpleButton ButtonDownloadToComputer;
-        private DevExpress.XtraWaitForm.ProgressPanel ProgressNoGameUpdatesFound;
-        private DevExpress.XtraGrid.GridControl GridGameUpdates;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridViewGameUpdates;
-        private DevExpress.XtraEditors.SimpleButton ButtonCopyURLToClipboard;
-        private DevExpress.XtraEditors.SimpleButton ButtonCopySHA1ToClipboard;
-        private DevExpress.XtraBars.BarManager BarManagerStatus;
-        private DevExpress.XtraBars.Bar BarStatus;
-        private DevExpress.XtraBars.BarStaticItem LabelHeaderStatus;
-        private DevExpress.XtraBars.BarStaticItem LabelStatus;
-        private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
-        private DevExpress.XtraEditors.ComboBoxEdit ComboBoxType;
+        private GroupControl SectionPanelInformation;
+        private TextEdit TextBoxTitleID;
+        private LabelControl LabelSearch;
+        private LabelControl LabelSelectType;
+        private SimpleButton ButtonSearch;
+        private ToolStripLabel ToolStripLabelHeaderStatus;
+        private ToolStripLabel ToolStripLabelStatus;
+        private ToolStripMenuItem ContextMenuDownloadToComputer;
+        private ToolStripMenuItem ContextMenuInstallToConsole;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem ContextMenuCopyURLToClipboard;
+        private DataGridViewTextBoxColumn ColumnVersion;
+        private StackPanel stackPanel2;
+        private SimpleButton ButtonInstallToConsole;
+        private SimpleButton ButtonDownloadToComputer;
+        private ProgressPanel ProgressNoGameUpdatesFound;
+        private GridControl GridGameUpdates;
+        private GridView GridViewGameUpdates;
+        private SimpleButton ButtonCopyURLToClipboard;
+        private SimpleButton ButtonCopySHA1ToClipboard;
+        private BarManager BarManagerStatus;
+        private Bar BarStatus;
+        private BarStaticItem LabelHeaderStatus;
+        private BarStaticItem LabelStatus;
+        private BarDockControl barDockControlTop;
+        private BarDockControl barDockControlBottom;
+        private BarDockControl barDockControlLeft;
+        private BarDockControl barDockControlRight;
+        private BarHeaderItem barHeaderItem1;
+        private BarStaticItem barStaticItem2;
+        private ComboBoxEdit ComboBoxType;
     }
 }

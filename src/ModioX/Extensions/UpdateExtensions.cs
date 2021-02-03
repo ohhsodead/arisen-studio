@@ -1,15 +1,15 @@
-﻿using DevExpress.XtraEditors;
-using ModioX.Constants;
-using ModioX.Forms.Windows;
-using ModioX.Io;
-using ModioX.Models.Release_Data;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using ModioX.Constants;
+using ModioX.Forms.Windows;
+using ModioX.Io;
+using ModioX.Models.Release_Data;
+using Newtonsoft.Json;
 
 namespace ModioX.Extensions
 {

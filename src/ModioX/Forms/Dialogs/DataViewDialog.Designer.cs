@@ -1,4 +1,6 @@
-﻿using DevExpress.XtraEditors;
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace ModioX.Forms.Dialogs
 {
@@ -7,7 +9,7 @@ namespace ModioX.Forms.Dialogs
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -108,7 +110,7 @@ namespace ModioX.Forms.Dialogs
         }
 
         #endregion
-        public System.Windows.Forms.FlowLayoutPanel PanelDetails;
+        public FlowLayoutPanel PanelDetails;
         public LabelControl LabelTitle;
         public LabelControl LabelBody;
     }

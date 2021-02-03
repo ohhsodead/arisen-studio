@@ -1,6 +1,6 @@
-﻿using DevExpress.XtraEditors;
+﻿using System;
+using DevExpress.XtraEditors;
 using ModioX.Models.Resources;
-using System;
 
 namespace ModioX.Forms.Windows
 {

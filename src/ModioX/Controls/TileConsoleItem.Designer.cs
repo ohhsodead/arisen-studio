@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using DevExpress.XtraEditors;
+
 namespace ModioX.Controls
 {
     partial class TileConsoleItem
@@ -6,7 +9,7 @@ namespace ModioX.Controls
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -83,7 +86,7 @@ namespace ModioX.Controls
 
         #endregion
 
-        public DevExpress.XtraEditors.PictureEdit ImageConsole;
-        public DevExpress.XtraEditors.LabelControl LabelConsoleName;
+        public PictureEdit ImageConsole;
+        public LabelControl LabelConsoleName;
     }
 }

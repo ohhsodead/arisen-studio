@@ -1,4 +1,9 @@
-﻿using DevExpress.XtraEditors;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using FluentFTP;
@@ -8,12 +13,8 @@ using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Io;
 using ModioX.Net;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.IO;
-using System.Windows.Forms;
 using XDevkit;
+using FtpException = ModioX.Net.FtpException;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
@@ -101,7 +102,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
 
                 ComboBoxSections.SelectedItem = "Plugins";
             }
-            catch (Net.FtpException ex)
+            catch (FtpException ex)
             {
                 Program.Log.Error(ex, $"There was a problem loading the launch.ini file. Error: {ex.Message}");
                 XtraMessageBox.Show($"There was a problem loading the launch.ini file.\n\nError: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -119,7 +120,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             GridLaunchFile.DataSource = null;
 
-            DataTable launchFileSections = DataExtensions.CreateDataTable(new List<DataColumn>()
+            DataTable launchFileSections = DataExtensions.CreateDataTable(new List<DataColumn>
             {
                 new("Key", typeof(string)),
                 new("Value", typeof(string)),

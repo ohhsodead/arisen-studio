@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -67,7 +68,7 @@ namespace ModioX.Net
                 }
                 else
                 {
-                    System.Diagnostics.Debug.Write("Error:: " + Marshal.GetLastWin32Error());
+                    Debug.Write("Error:: " + Marshal.GetLastWin32Error());
                     return string.Empty;
                 }
             }
@@ -92,7 +93,7 @@ namespace ModioX.Net
         private static extern uint FormatMessage(uint dwFlags, IntPtr lpSource, uint dwMessageId, uint dwLanguageId, [MarshalAs(UnmanagedType.LPTStr)] StringBuilder lpBuffer, uint nSize, IntPtr Arguments);
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern IntPtr LoadLibrary([In()][MarshalAs(UnmanagedType.LPTStr)] string lpLibFileName);
+        private static extern IntPtr LoadLibrary([In][MarshalAs(UnmanagedType.LPTStr)] string lpLibFileName);
     }
 
     public static class WININET

@@ -1,11 +1,14 @@
-﻿namespace ModioX.Forms.Dialogs
+﻿using System.ComponentModel;
+using DevExpress.XtraEditors;
+
+namespace ModioX.Forms.Dialogs
 {
     partial class LoginDialog
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -139,12 +142,12 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.LabelControl LabelUsername;
-        private DevExpress.XtraEditors.LabelControl LabelPassword;
-        public DevExpress.XtraEditors.SimpleButton ButtonUseDefault;
-        public DevExpress.XtraEditors.SimpleButton ButtonCancel;
-        public DevExpress.XtraEditors.SimpleButton ButtonOK;
-        public DevExpress.XtraEditors.TextEdit TextBoxUsername;
-        public DevExpress.XtraEditors.TextEdit TextBoxPassword;
+        private LabelControl LabelUsername;
+        private LabelControl LabelPassword;
+        public SimpleButton ButtonUseDefault;
+        public SimpleButton ButtonCancel;
+        public SimpleButton ButtonOK;
+        public TextEdit TextBoxUsername;
+        public TextEdit TextBoxPassword;
     }
 }

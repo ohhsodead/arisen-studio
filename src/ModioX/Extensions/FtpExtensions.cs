@@ -1,13 +1,13 @@
-﻿using DevExpress.XtraEditors;
-using FluentFTP;
-using ModioX.Forms.Windows;
-using ModioX.Net;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using FluentFTP;
+using ModioX.Forms.Windows;
+using ModioX.Net;
 
 namespace ModioX.Extensions
 {

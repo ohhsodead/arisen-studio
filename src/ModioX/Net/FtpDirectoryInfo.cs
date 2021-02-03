@@ -7,59 +7,31 @@ namespace ModioX.Net
     {
         public FtpDirectoryInfo(FtpConnection ftp, string path)
         {
-            _ftp = ftp;
+            FtpConnection = ftp;
             FullPath = path;
         }
 
-        private readonly FtpConnection _ftp;
-        private readonly string _dirPath = string.Empty;
-        private DateTime? _lastAccessTime;
-        private DateTime? _creationTime;
-        private DateTime? _lastWriteTime;
-        private FileAttributes _attribues;
+        public FtpConnection FtpConnection { get; }
 
-        public FtpConnection FtpConnection { get { return _ftp; } }
+        public new DateTime? LastAccessTime { get; internal set; }
 
-        public new DateTime? LastAccessTime
-        {
-            get { return _lastAccessTime.HasValue ? (DateTime?)_lastAccessTime.Value : null; }
-            internal set { _lastAccessTime = value; }
-        }
-        public new DateTime? CreationTime
-        {
-            get { return _creationTime.HasValue ? (DateTime?)_creationTime.Value : null; }
-            internal set { _creationTime = value; }
-        }
-        public new DateTime? LastWriteTime
-        {
-            get { return _lastWriteTime.HasValue ? (DateTime?)_lastWriteTime.Value : null; }
-            internal set { _lastWriteTime = value; }
-        }
+        public new DateTime? CreationTime { get; internal set; }
 
-        public new DateTime? LastAccessTimeUtc
-        {
-            get { return _lastAccessTime.HasValue ? (DateTime?)_lastAccessTime.Value.ToUniversalTime() : null; }
-        }
-        public new DateTime? CreationTimeUtc
-        {
-            get { return _creationTime.HasValue ? (DateTime?)_creationTime.Value.ToUniversalTime() : null; }
-        }
-        public new DateTime? LastWriteTimeUtc
-        {
-            get { return _lastWriteTime.HasValue ? (DateTime?)_lastWriteTime.Value.ToUniversalTime() : null; }
-        }
+        public new DateTime? LastWriteTime { get; internal set; }
 
-        public new FileAttributes Attributes
-        {
-            get { return _attribues; }
-            internal set { _attribues = value; }
-        }
+        public new DateTime? LastAccessTimeUtc => LastAccessTime?.ToUniversalTime();
+
+        public new DateTime? CreationTimeUtc => CreationTime?.ToUniversalTime();
+
+        public new DateTime? LastWriteTimeUtc => LastWriteTime?.ToUniversalTime();
+
+        public new FileAttributes Attributes { get; internal set; }
 
         public override void Delete()
         {
             try
             {
-                this._ftp.RemoveDirectory(Name);
+                FtpConnection.RemoveDirectory(Name);
             }
             catch (FtpException ex)
             {
@@ -67,34 +39,29 @@ namespace ModioX.Net
             }
         }
 
-        public override bool Exists
-        {
-            get { return this.FtpConnection.DirectoryExists(this.FullName); }
-        }
+        public override bool Exists => FtpConnection.DirectoryExists(FullName);
 
-        public override string Name
-        {
-            get { return Path.GetFileName(this.FullPath); }
-        }
+        public override string Name => Path.GetFileName(FullPath);
 
         public FtpDirectoryInfo[] GetDirectories()
         {
-            return this.FtpConnection.GetDirectories(this.FullPath);
+            return FtpConnection.GetDirectories(FullPath);
         }
+
         public FtpDirectoryInfo[] GetDirectories(string path)
         {
-            path = Path.Combine(this.FullPath, path);
-            return this.FtpConnection.GetDirectories(path);
+            path = Path.Combine(FullPath, path);
+            return FtpConnection.GetDirectories(path);
         }
 
         public FtpFileInfo[] GetFiles()
         {
-            return this.GetFiles(this.FtpConnection.GetCurrentDirectory());
+            return GetFiles(FtpConnection.GetCurrentDirectory());
         }
 
         public FtpFileInfo[] GetFiles(string mask)
         {
-            return this.FtpConnection.GetFiles(mask);
+            return FtpConnection.GetFiles(mask);
         }
     }
 }

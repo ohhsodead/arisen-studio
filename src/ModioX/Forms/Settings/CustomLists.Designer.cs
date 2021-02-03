@@ -1,11 +1,19 @@
-﻿namespace ModioX.Forms.Settings
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using DevExpress.Utils.Layout;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraWaitForm;
+
+namespace ModioX.Forms.Settings
 {
     partial class CustomLists
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -227,18 +235,18 @@
         }
 
         #endregion
-        private DevExpress.XtraGrid.GridControl GridCustomLists;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameRegion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRegion;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridViewCustomLists;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.Utils.Layout.StackPanel PanelButtons;
-        private DevExpress.XtraEditors.SimpleButton ButtonCreateNewList;
-        private DevExpress.XtraEditors.SimpleButton ButtonRenameList;
-        private DevExpress.XtraEditors.SimpleButton ButtonDeleteList;
-        private DevExpress.XtraEditors.SimpleButton ButtonDeleteAllLists;
-        private DevExpress.XtraWaitForm.ProgressPanel ProgressCustomLists;
+        private GridControl GridCustomLists;
+        private DataGridViewTextBoxColumn ColumnGameRegion;
+        private DataGridViewTextBoxColumn ColumnGameTitle;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn ColumnRegion;
+        private GridView GridViewCustomLists;
+        private GroupControl groupControl1;
+        private StackPanel PanelButtons;
+        private SimpleButton ButtonCreateNewList;
+        private SimpleButton ButtonRenameList;
+        private SimpleButton ButtonDeleteList;
+        private SimpleButton ButtonDeleteAllLists;
+        private ProgressPanel ProgressCustomLists;
     }
 }

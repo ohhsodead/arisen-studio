@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using DevExpress.XtraEditors;
+
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
     partial class GameLauncher
@@ -6,7 +9,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -77,7 +80,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         }
 
         #endregion
-        private DevExpress.XtraEditors.ListBoxControl ListBoxGames;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private ListBoxControl ListBoxGames;
+        private GroupControl groupControl1;
     }
 }

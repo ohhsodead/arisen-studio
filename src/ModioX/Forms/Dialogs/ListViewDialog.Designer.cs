@@ -1,11 +1,14 @@
-﻿namespace ModioX.Forms.Dialogs
+﻿using System.ComponentModel;
+using DevExpress.XtraEditors;
+
+namespace ModioX.Forms.Dialogs
 {
     partial class ListViewDialog
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-    private System.ComponentModel.IContainer components = null;
+    private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -83,7 +86,7 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.ListBoxControl ListBoxItems;
-        private DevExpress.XtraEditors.GroupControl GroupListItems;
+        private ListBoxControl ListBoxItems;
+        private GroupControl GroupListItems;
     }
 }
