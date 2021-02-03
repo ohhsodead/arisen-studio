@@ -11,11 +11,11 @@ All notable changes to this project will be documented in this file.
 - Added support for Xbox RGH/JTAG consoles
 - Added images for all PS3 and Xbox models
 - Added ability to create and add mods to your own lists
-- Added Package Files Manager for PS3 to Tools menu
-- Added Launch File Editor for Xbox to Tools menu
+- Added Package Manager for PS3 to Tools menu
 - Added File Manager for Xbox to Tools menu
+- Added Launch File Editor for Xbox to Tools menu
 - Added XBDM Controls for Xbox to Tools menu
-- Added Skin Manager to Settings menu
+- Added Skin Manager to Options menu
 - Added View Log button to Help menu
 - Added Open Log Folder button to Help menu
 - Added What's New button to Help menu
@@ -24,7 +24,7 @@ All notable changes to this project will be documented in this file.
 - Fixed an issue with creating folders when installing mods
 - Fixed an issue with deleting folders when uninstalling mods
 
-This release couldn't be made possible without the help from all of the awesome contributors that have driven ModioX to what it is now and what's to come in the future. So, whether you're a casual user, contributor, developer or all of them, thank you for supporting me through everything - it's been a little tough but we got there! <3 u all
+This release couldn't be made possible without the help from all of the awesome contributors that have driven ModioX to where it is now and what it's going to become in the future. So whether you're a casual user, contributor, developer or even all of them, thank you for supporting me through everything this - it's been a little tough but we got there!
 
 ## Beta v1.4.8
 - Improved some user interface elements
