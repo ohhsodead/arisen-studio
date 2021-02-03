@@ -16,10 +16,6 @@ namespace ModioX.Extensions
     public abstract class UpdateExtensions
     {
         /// <summary>
-        /// </summary>
-        public static readonly WebClient WebClient = new();
-
-        /// <summary>
         /// Get the latest release data from GitHub.
         /// </summary>
         public static GitHubData GitHubData { get; set; } = GetGitHubLatestReleaseData();
@@ -90,7 +86,11 @@ namespace ModioX.Extensions
                 MainWindow.Settings.FirstTimeOpenAfterUpdate = true;
                 MainWindow.Window.SetStatus("A new update is available. Downloading the installer...");
                 XtraMessageBox.Show($"A new version of ModioX ({GitHubData.Name}) is now available. Click OK to download and run the installer.", @"Update Available", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                WebClient.DownloadFile(GitHubData.Assets[0].BrowserDownloadUrl, installerFile);
+                using (var client = new WebClient())
+                {
+                    client.DownloadFileAsync(GitHubData.Assets[0].BrowserDownloadUrl, installerFile);
+                }
+
                 Process.Start(installerFile);
                 Application.Exit();
             }

@@ -11,6 +11,7 @@ namespace ModioX.Forms.Dialogs
         /// Required designer variable.
         /// </summary>
         private IContainer components = null;
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>

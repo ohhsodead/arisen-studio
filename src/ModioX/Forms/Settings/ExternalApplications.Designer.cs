@@ -1,11 +1,19 @@
-﻿namespace ModioX.Forms.Settings
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using DevExpress.Utils.Layout;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraWaitForm;
+
+namespace ModioX.Forms.Settings
 {
     partial class ExternalApplications
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -325,25 +333,25 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameTitle;
-        private DevExpress.XtraEditors.LabelControl LabelFileLocation;
-        private DevExpress.XtraEditors.LabelControl LabelName;
-        private DevExpress.XtraEditors.TextEdit TextBoxFileLocation;
-        private DevExpress.XtraEditors.TextEdit TextBoxFileName;
-        private DevExpress.XtraEditors.SimpleButton ButtonBrowseLocalFile;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnApplicationName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileLocation;
-        private DevExpress.XtraEditors.GroupControl GroupExternalApplications;
-        private DevExpress.XtraWaitForm.ProgressPanel ProgressLoading;
-        private DevExpress.Utils.Layout.StackPanel stackPanel1;
-        private DevExpress.XtraEditors.SimpleButton ButtonDeleteApplication;
-        private DevExpress.XtraEditors.SimpleButton ButtonDeleteAll;
-        private DevExpress.XtraEditors.GroupControl GroupApplicationDetails;
-        private DevExpress.Utils.Layout.StackPanel stackPanel2;
-        private DevExpress.XtraEditors.SimpleButton ButtonNewApplication;
-        private DevExpress.XtraEditors.SimpleButton ButtonAddApplication;
-        private DevExpress.XtraEditors.SimpleButton ButtonSaveAll;
-        private DevExpress.XtraGrid.GridControl GridApplications;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridViewApplications;
+        private DataGridViewTextBoxColumn ColumnGameTitle;
+        private LabelControl LabelFileLocation;
+        private LabelControl LabelName;
+        private TextEdit TextBoxFileLocation;
+        private TextEdit TextBoxFileName;
+        private SimpleButton ButtonBrowseLocalFile;
+        private DataGridViewTextBoxColumn ColumnApplicationName;
+        private DataGridViewTextBoxColumn ColumnFileLocation;
+        private GroupControl GroupExternalApplications;
+        private ProgressPanel ProgressLoading;
+        private StackPanel stackPanel1;
+        private SimpleButton ButtonDeleteApplication;
+        private SimpleButton ButtonDeleteAll;
+        private GroupControl GroupApplicationDetails;
+        private StackPanel stackPanel2;
+        private SimpleButton ButtonNewApplication;
+        private SimpleButton ButtonAddApplication;
+        private SimpleButton ButtonSaveAll;
+        private GridControl GridApplications;
+        private GridView GridViewApplications;
     }
 }

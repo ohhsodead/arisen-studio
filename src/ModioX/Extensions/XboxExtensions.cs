@@ -121,41 +121,48 @@ namespace ModioX.Extensions
             Array.Reverse(memoryBuffer, 0, 2);
             xbCon.DebugTarget.SetMemory(offset, 2, memoryBuffer, out OutInt);
         }
+
         public static void WriteInt32(this IXboxConsole xbCon, uint offset, int input)
         {
             BitConverter.GetBytes(input).CopyTo(memoryBuffer, 0);
             Array.Reverse(memoryBuffer, 0, 4);
             xbCon.DebugTarget.SetMemory(offset, 4, memoryBuffer, out OutInt);
         }
+
         public static void WriteInt64(this IXboxConsole xbCon, uint offset, long input)
         {
             BitConverter.GetBytes(input).CopyTo(memoryBuffer, 0);
             Array.Reverse(memoryBuffer, 0, 8);
             xbCon.DebugTarget.SetMemory(offset, 8, memoryBuffer, out OutInt);
         }
+
         public static void WriteByte(this IXboxConsole xbCon, uint offset, byte input)
         {
             memoryBuffer[0] = input;
             xbCon.DebugTarget.SetMemory(offset, 1, memoryBuffer, out OutInt);
         }
+
         public static void WriteUInt16(this IXboxConsole xbCon, uint offset, ushort input)
         {
             BitConverter.GetBytes(input).CopyTo(memoryBuffer, 0);
             Array.Reverse(memoryBuffer, 0, 2);
             xbCon.DebugTarget.SetMemory(offset, 2, memoryBuffer, out OutInt);
         }
+
         public static void WriteUInt32(this IXboxConsole xbCon, uint offset, uint input)
         {
             BitConverter.GetBytes(input).CopyTo(memoryBuffer, 0);
             Array.Reverse(memoryBuffer, 0, 4);
             xbCon.DebugTarget.SetMemory(offset, 4, memoryBuffer, out OutInt);
         }
+
         public static void WriteUInt64(this IXboxConsole xbCon, uint offset, ulong input)
         {
             BitConverter.GetBytes(input).CopyTo(memoryBuffer, 0);
             Array.Reverse(memoryBuffer, 0, 8);
             xbCon.DebugTarget.SetMemory(offset, 8, memoryBuffer, out OutInt);
         }
+
         public static void WriteFloat(this IXboxConsole xbCon, uint offset, float input)
         {
             BitConverter.GetBytes(input).CopyTo(memoryBuffer, 0);

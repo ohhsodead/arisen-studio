@@ -1,13 +1,13 @@
-﻿using DevExpress.XtraEditors;
+﻿using System;
+using System.Text;
+using System.Threading;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using ModioX.Forms.Windows;
 using ModioX.Io;
 using NLog;
 using NLog.Config;
 using NLog.Targets;
-using System;
-using System.Text;
-using System.Threading;
-using System.Windows.Forms;
 
 namespace ModioX
 {

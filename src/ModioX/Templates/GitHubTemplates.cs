@@ -1,6 +1,6 @@
-﻿using ModioX.Constants;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Text;
+using ModioX.Constants;
 using ModioX.Database;
 
 namespace ModioX.Templates

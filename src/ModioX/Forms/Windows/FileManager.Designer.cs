@@ -1,11 +1,19 @@
-﻿namespace ModioX.Forms.Windows
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using DevExpress.Utils.Layout;
+using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
+
+namespace ModioX.Forms.Windows
 {
     partial class FileManager
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -705,56 +713,56 @@
         }
 
         #endregion
-        private DevExpress.XtraGrid.GridControl GridLocalFiles;
-        private DevExpress.XtraGrid.GridControl GridConsoleFiles;
-        private System.Windows.Forms.TableLayoutPanel LayoutPanel;
-        private System.Windows.Forms.Timer WaitLoadConsole;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLocalType;
-        private System.Windows.Forms.DataGridViewImageColumn ColumnLocalIcon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLocalName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLocalSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLocalDateTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnConsoleFileType;
-        private System.Windows.Forms.DataGridViewImageColumn ColumnConsoleFileImage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnConsoleFileName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnConsoleFileSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnConsoleLastModified;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridViewLocalFiles;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridViewConsoleFiles;
-        private DevExpress.XtraEditors.ComboBoxEdit ComboBoxLocalDrives;
-        private DevExpress.XtraEditors.ComboBoxEdit ComboBoxConsoleDrives;
-        private DevExpress.XtraEditors.TextEdit TextBoxLocalPath;
-        private DevExpress.XtraEditors.TextEdit TextBoxConsolePath;
-        private DevExpress.XtraEditors.SimpleButton ButtonBrowseLocalDirectory;
-        private DevExpress.XtraEditors.SimpleButton ButtonConsoleNavigate;
-        private DevExpress.XtraEditors.GroupControl GroupLocalFileExplorer;
-        private DevExpress.Utils.Layout.StackPanel PanelLocalButtons;
-        private DevExpress.XtraEditors.SimpleButton ButtonLocalUpload;
-        private DevExpress.XtraEditors.SimpleButton ButtonLocalDelete;
-        private DevExpress.XtraEditors.SimpleButton ButtonLocalNewFolder;
-        private DevExpress.XtraEditors.SimpleButton ButtonLocalRefresh;
-        private DevExpress.Utils.Layout.StackPanel PanelConsoleButtons;
-        private DevExpress.XtraEditors.SimpleButton ButtonConsoleDownload;
-        private DevExpress.XtraEditors.SimpleButton ButtonConsoleDelete;
-        private DevExpress.XtraEditors.SimpleButton ButtonConsoleNewFolder;
-        private DevExpress.XtraEditors.SimpleButton ButtonConsoleRefresh;
-        private DevExpress.XtraEditors.SimpleButton ButtonLocalOpenExplorer;
-        private DevExpress.XtraBars.BarManager BarManagerStatus;
-        private DevExpress.XtraBars.Bar BarStatus;
-        private DevExpress.XtraBars.BarStaticItem LabelHeaderStatus;
-        private DevExpress.XtraBars.BarStaticItem LabelStatus;
-        private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
-        private DevExpress.XtraEditors.SimpleButton ButtonConsoleRename;
-        private DevExpress.XtraEditors.SimpleButton ButtonLocalRename;
-        private DevExpress.Utils.Layout.StackPanel PanelConsoleStatus;
-        private DevExpress.XtraEditors.LabelControl LabelConsoleStats;
-        private DevExpress.Utils.Layout.StackPanel PanelLocalStatus;
-        private DevExpress.XtraEditors.LabelControl LabelLocalStatus;
-        private DevExpress.XtraEditors.GroupControl GroupConsoleFileExplorer;
+        private GridControl GridLocalFiles;
+        private GridControl GridConsoleFiles;
+        private TableLayoutPanel LayoutPanel;
+        private Timer WaitLoadConsole;
+        private DataGridViewTextBoxColumn ColumnLocalType;
+        private DataGridViewImageColumn ColumnLocalIcon;
+        private DataGridViewTextBoxColumn ColumnLocalName;
+        private DataGridViewTextBoxColumn ColumnLocalSize;
+        private DataGridViewTextBoxColumn ColumnLocalDateTime;
+        private DataGridViewTextBoxColumn ColumnConsoleFileType;
+        private DataGridViewImageColumn ColumnConsoleFileImage;
+        private DataGridViewTextBoxColumn ColumnConsoleFileName;
+        private DataGridViewTextBoxColumn ColumnConsoleFileSize;
+        private DataGridViewTextBoxColumn ColumnConsoleLastModified;
+        private GridView GridViewLocalFiles;
+        private GridView GridViewConsoleFiles;
+        private ComboBoxEdit ComboBoxLocalDrives;
+        private ComboBoxEdit ComboBoxConsoleDrives;
+        private TextEdit TextBoxLocalPath;
+        private TextEdit TextBoxConsolePath;
+        private SimpleButton ButtonBrowseLocalDirectory;
+        private SimpleButton ButtonConsoleNavigate;
+        private GroupControl GroupLocalFileExplorer;
+        private StackPanel PanelLocalButtons;
+        private SimpleButton ButtonLocalUpload;
+        private SimpleButton ButtonLocalDelete;
+        private SimpleButton ButtonLocalNewFolder;
+        private SimpleButton ButtonLocalRefresh;
+        private StackPanel PanelConsoleButtons;
+        private SimpleButton ButtonConsoleDownload;
+        private SimpleButton ButtonConsoleDelete;
+        private SimpleButton ButtonConsoleNewFolder;
+        private SimpleButton ButtonConsoleRefresh;
+        private SimpleButton ButtonLocalOpenExplorer;
+        private BarManager BarManagerStatus;
+        private Bar BarStatus;
+        private BarStaticItem LabelHeaderStatus;
+        private BarStaticItem LabelStatus;
+        private BarDockControl barDockControlTop;
+        private BarDockControl barDockControlBottom;
+        private BarDockControl barDockControlLeft;
+        private BarDockControl barDockControlRight;
+        private BarHeaderItem barHeaderItem1;
+        private BarStaticItem barStaticItem2;
+        private SimpleButton ButtonConsoleRename;
+        private SimpleButton ButtonLocalRename;
+        private StackPanel PanelConsoleStatus;
+        private LabelControl LabelConsoleStats;
+        private StackPanel PanelLocalStatus;
+        private LabelControl LabelLocalStatus;
+        private GroupControl GroupConsoleFileExplorer;
     }
 }

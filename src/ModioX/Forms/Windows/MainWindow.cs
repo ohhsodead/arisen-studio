@@ -1,4 +1,15 @@
-﻿using DevExpress.Skins;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using DevExpress.LookAndFeel;
+using DevExpress.Skins;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
@@ -15,16 +26,6 @@ using ModioX.Models.Resources;
 using ModioX.Net;
 using ModioX.Templates;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using XDevkit;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
@@ -65,7 +66,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Determines whether the console is currently connected.
         /// </summary>
-        public static bool IsConsoleConnected { get; private set; } = false;
+        public static bool IsConsoleConnected { get; private set; }
 
         /// <summary>
         /// Contains the console profile data.
@@ -122,7 +123,7 @@ namespace ModioX.Forms.Windows
         /// </summary>
         private async void MainWindow_Load(object sender, EventArgs e)
         {
-            DevExpress.LookAndFeel.UserLookAndFeel.Default.StyleChanged += MainWindow_StyleChanged;
+            UserLookAndFeel.Default.StyleChanged += MainWindow_StyleChanged;
 
             Text = $@"ModioX - {UpdateExtensions.CurrentVersionName}";
 
@@ -392,7 +393,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonXboxXBDMShutdown_ItemClick(object sender, ItemClickEventArgs e)
         {
-            JRPC.ShutDownConsole(XboxConsole);
+            XboxConsole.ShutDownConsole();
         }
 
         private void ButtonXboxXBDMRestart_ItemClick(object sender, ItemClickEventArgs e)
@@ -428,17 +429,17 @@ namespace ModioX.Forms.Windows
         private void ButtonXboxShowSystemInfo_ItemClick(object sender, ItemClickEventArgs e)
         {
             XtraMessageBox.Show(
-                $"CPU: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.CPU)}°C\n" +
-                $"EDRAM: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.EDRAM)}°C\n" +
-                $"GPU: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.GPU)}°C\n" +
-                $"Motherboard: {JRPC.GetTemperature(XboxConsole, JRPC.TemperatureType.MotherBoard)}°C",
+                $"CPU: {XboxConsole.GetTemperature(JRPC.TemperatureType.CPU)}°C\n" +
+                $"EDRAM: {XboxConsole.GetTemperature(JRPC.TemperatureType.EDRAM)}°C\n" +
+                $"GPU: {XboxConsole.GetTemperature(JRPC.TemperatureType.GPU)}°C\n" +
+                $"Motherboard: {XboxConsole.GetTemperature(JRPC.TemperatureType.MotherBoard)}°C",
                 "System Temperature", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ButtonXboxXNotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
         {
             var xNotifyMessage = DialogExtensions.ShowTextInputDialog(this, "XNotify Message", "Message:", string.Empty);
-            JRPC.XNotify(XboxConsole, xNotifyMessage);
+            XboxConsole.XNotify(xNotifyMessage);
         }
 
         // APPLICATIONS MENU
@@ -447,7 +448,7 @@ namespace ModioX.Forms.Windows
         {
             var menuItemText = e.Item.Caption;
 
-            foreach (var application in Settings.ExternalApplications.Where(application => StringExtensions.EqualsIgnoreCase(application.Name, menuItemText)))
+            foreach (var application in Settings.ExternalApplications.Where(application => application.Name.EqualsIgnoreCase(menuItemText)))
             {
                 if (File.Exists(application.FileLocation))
                 {
@@ -624,14 +625,14 @@ namespace ModioX.Forms.Windows
                     ConsoleType = ConsoleProfile.TypePrefix;
 
                     XboxConsole = new XboxManager().OpenConsole(ConsoleProfile.Address);
-                    JRPC.XNotify(XboxConsole, "You are now connected to ModioX");
+                    XboxConsole.XNotify("You are now connected to ModioX ★");
 
                     ButtonConnectToXBOX.Caption = "Disconnect from Console...";
                     ButtonConnectToPS3.Enabled = false;
                     Mods = Database.ModsXBOX;
                 }
 
-                SetStatus($"Successfully connected to console.");
+                SetStatus("Successfully connected to console.");
                 XtraMessageBox.Show("Successfully connected to console.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 EnableConsoleActions();
@@ -650,7 +651,7 @@ namespace ModioX.Forms.Windows
         /// </summary>
         private void DisconnectConsole()
         {
-            SetStatus($"Disconnecting from console...");
+            SetStatus("Disconnecting from console...");
 
             if (ConsoleType == ConsoleTypePrefix.PS3)
             {
@@ -722,7 +723,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Get/set whether a custom list is selected by the user.
         /// </summary>
-        private static bool IsCustomListSelected { get; set; } = false;
+        private static bool IsCustomListSelected { get; set; }
 
         /// <summary>
         /// Get/set the selected game data selected by the user.
@@ -944,7 +945,7 @@ namespace ModioX.Forms.Windows
             if (isCustomList)
             {
                 var customList = Settings.GetCustomListByName(categoryId);
-                SelectedCategory = new Category() { Id = categoryId, Title = categoryId, Regions = Settings.GetRegionsForModIDs(Mods, customList.ModIds).ToArray() };
+                SelectedCategory = new Category { Id = categoryId, Title = categoryId, Regions = Settings.GetRegionsForModIDs(Mods, customList.ModIds).ToArray() };
             }
             else
             {
@@ -974,11 +975,9 @@ namespace ModioX.Forms.Windows
                     ComboBoxModType.SelectedIndex = ComboBoxModType.Properties.Items.IndexOf(FilterModsType);
                     return;
                 }
-                else
-                {
-                    ComboBoxModType.SelectedIndex = 0;
-                    return;
-                }
+
+                ComboBoxModType.SelectedIndex = 0;
+                return;
             }
         }
 
@@ -1217,7 +1216,7 @@ namespace ModioX.Forms.Windows
                 }
 
                 dt.Rows.Add(modInstalled.Id.ToString(),
-                    EnumExtensions.GetDescription(installedMod.ConsoleType),
+                    installedMod.ConsoleType.GetDescription(),
                     modCategory.Title,
                     installedMod.Region,
                     modInstalled.Name,
@@ -1488,7 +1487,7 @@ namespace ModioX.Forms.Windows
                         }
 
                         // Check whether the game update for this region exists
-                        if (!FtpExtensions.GetFolderNames($"/dev_hdd0/game/").Contains(gameRegion))
+                        if (!FtpExtensions.GetFolderNames("/dev_hdd0/game/").Contains(gameRegion))
                         {
                             XtraMessageBox.Show("Game update folder for this region cannot be found on your console.\nYou must install the correct update for this game or maybe you specified the wrong region.", "Can't Find Game Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
@@ -1955,29 +1954,27 @@ namespace ModioX.Forms.Windows
                             XtraMessageBox.Show("You can't uninstall games saves. You must remove the game save folder from your USB device or use the XMB menu.", "Can't Uninstall");
                             return;
                         }
+
+                        // Inform the user a USB device must be connected for the mods
+                        if (XtraMessageBox.Show(
+                            "Some files may have been files to be installed to a USB device. You can either choose to uninstall them now or manually delete them yourself." +
+                            "\n\nIf you would like to uninstall the files, then connect the same USB device to your console and click 'Yes' to continue." +
+                            "\n\nIf you wouldn't like to uninstall the files from your USB device, then click 'No' and all of these files will be ignored.", "Uninstalling USB File",
+                            MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching USB device...");
+                            usbDevice = FtpExtensions.GetUsbPath();
+                            SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found USB device.");
+
+                            if (string.IsNullOrEmpty(usbDevice))
+                            {
+                                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No USB device found. Installation cancelled.");
+                                return;
+                            }
+                        }
                         else
                         {
-                            // Inform the user a USB device must be connected for the mods
-                            if (XtraMessageBox.Show(
-                                "Some files may have been files to be installed to a USB device. You can either choose to uninstall them now or manually delete them yourself." +
-                                "\n\nIf you would like to uninstall the files, then connect the same USB device to your console and click 'Yes' to continue." +
-                                "\n\nIf you wouldn't like to uninstall the files from your USB device, then click 'No' and all of these files will be ignored.", "Uninstalling USB File",
-                                MessageBoxButtons.YesNo) == DialogResult.Yes)
-                            {
-                                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Fetching USB device...");
-                                usbDevice = FtpExtensions.GetUsbPath();
-                                SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found USB device.");
-
-                                if (string.IsNullOrEmpty(usbDevice))
-                                {
-                                    SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - No USB device found. Installation cancelled.");
-                                    return;
-                                }
-                            }
-                            else
-                            {
-                                usbDevice = string.Empty;
-                            }
+                            usbDevice = string.Empty;
                         }
                     }
                     else
@@ -2025,8 +2022,8 @@ namespace ModioX.Forms.Windows
                                     else
                                     {
                                         XtraMessageBox.Show($"You have created a game file backup, but the file: {Path.GetFileName(installPath)} can't be found on your computer. " +
-                                            $"If you have moved this file then navigate to Tools > Game Backup Files and set the local file again. If this file has been deleted, " +
-                                            $"you should delete the game backup file data and re-backup the file again. For now, this file will be not be uninstalled to prevent any issues with missing game files for the game.", "No File Exists",
+                                            "If you have moved this file then navigate to Tools > Game Backup Files and set the local file again. If this file has been deleted, " +
+                                            "you should delete the game backup file data and re-backup the file again. For now, this file will be not be uninstalled to prevent any issues with missing game files for the game.", "No File Exists",
                                             MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                     }
                                 }

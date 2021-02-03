@@ -7,14 +7,9 @@ namespace ModioX.Net
         public FtpException(int error, string message)
             : base(message)
         {
-            _error = error;
+            ErrorCode = error;
         }
 
-        private readonly int _error;
-
-        public int ErrorCode
-        {
-            get { return _error; }
-        }
+        public int ErrorCode { get; }
     }
 }

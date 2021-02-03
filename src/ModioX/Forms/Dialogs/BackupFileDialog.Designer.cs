@@ -1,11 +1,14 @@
-﻿namespace ModioX.Forms.Dialogs
+﻿using System.ComponentModel;
+using DevExpress.XtraEditors;
+
+namespace ModioX.Forms.Dialogs
 {
     partial class BackupFileDialog
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -212,16 +215,16 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.LabelControl LabelLocalFilePath;
-        private DevExpress.XtraEditors.LabelControl LabelInstallFilePath;
-        private DevExpress.XtraEditors.LabelControl LabelGameId;
-        private DevExpress.XtraEditors.LabelControl LabelFilename;
-        private DevExpress.XtraEditors.TextEdit TextBoxFileName;
-        private DevExpress.XtraEditors.TextEdit TextBoxGameId;
-        private DevExpress.XtraEditors.TextEdit TextBoxInstallPathConsole;
-        private DevExpress.XtraEditors.TextEdit TextBoxInstallPathLocal;
-        private DevExpress.XtraEditors.SimpleButton ButtonCancel;
-        private DevExpress.XtraEditors.SimpleButton ButtonOK;
-        private DevExpress.XtraEditors.SimpleButton ButtonBrowseLocalPath;
+        private LabelControl LabelLocalFilePath;
+        private LabelControl LabelInstallFilePath;
+        private LabelControl LabelGameId;
+        private LabelControl LabelFilename;
+        private TextEdit TextBoxFileName;
+        private TextEdit TextBoxGameId;
+        private TextEdit TextBoxInstallPathConsole;
+        private TextEdit TextBoxInstallPathLocal;
+        private SimpleButton ButtonCancel;
+        private SimpleButton ButtonOK;
+        private SimpleButton ButtonBrowseLocalPath;
     }
 }

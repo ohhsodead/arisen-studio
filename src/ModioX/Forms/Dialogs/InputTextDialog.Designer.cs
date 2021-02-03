@@ -1,11 +1,14 @@
-﻿namespace ModioX.Forms.Dialogs
+﻿using System.ComponentModel;
+using DevExpress.XtraEditors;
+
+namespace ModioX.Forms.Dialogs
 {
     partial class InputTextDialog
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -103,9 +106,9 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.SimpleButton ButtonOK;
-        private DevExpress.XtraEditors.SimpleButton ButtonCancel;
-        public DevExpress.XtraEditors.LabelControl LabelName;
-        public DevExpress.XtraEditors.TextEdit TextBoxName;
+        private SimpleButton ButtonOK;
+        private SimpleButton ButtonCancel;
+        public LabelControl LabelName;
+        public TextEdit TextBoxName;
     }
 }

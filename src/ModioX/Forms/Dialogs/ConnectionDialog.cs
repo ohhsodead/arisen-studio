@@ -1,11 +1,12 @@
-﻿using DevExpress.XtraEditors;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using ModioX.Controls;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
-using System;
-using System.Drawing;
-using System.Windows.Forms;
+using ModioX.Properties;
 
 namespace ModioX.Forms.Dialogs
 {
@@ -41,41 +42,41 @@ namespace ModioX.Forms.Dialogs
 
             foreach (var consoleProfile in Settings.ConsoleProfiles)
             {
-                Image consoleImage = consoleImage = Properties.Resources.PlayStation3Fat;
+                Image consoleImage = consoleImage = Resources.PlayStation3Fat;
 
                 switch (consoleProfile.Type)
                 {
                     case ConsoleType.PlayStation3Fat:
-                        consoleImage = Properties.Resources.PlayStation3Fat;
+                        consoleImage = Resources.PlayStation3Fat;
                         break;
 
                     case ConsoleType.PlayStation3Slim:
-                        consoleImage = Properties.Resources.PlayStation3Slim;
+                        consoleImage = Resources.PlayStation3Slim;
                         break;
 
                     case ConsoleType.PlayStation3SuperSlim:
-                        consoleImage = Properties.Resources.PlayStation3Slim;
+                        consoleImage = Resources.PlayStation3Slim;
                         break;
 
                     case ConsoleType.Xbox360FatWhite:
-                        consoleImage = Properties.Resources.XboxFat;
+                        consoleImage = Resources.XboxFat;
                         break;
 
                     case ConsoleType.Xbox360EliteFatBlack:
-                        consoleImage = Properties.Resources.XboxFatElite;
+                        consoleImage = Resources.XboxFatElite;
                         break;
 
                     case ConsoleType.Xbox360Slim:
-                        consoleImage = Properties.Resources.XboxSlim;
+                        consoleImage = Resources.XboxSlim;
                         break;
 
                     case ConsoleType.Xbox360SlimE:
-                        consoleImage = Properties.Resources.XboxSlimE;
+                        consoleImage = Resources.XboxSlimE;
                         break;
                 }
 
                 TileConsoleItem consoleItem = new TileConsoleItem(consoleProfile.Name, consoleImage) { ConsoleProfile = consoleProfile };
-                consoleItem.OnClick += new EventHandler(ConsoleItem_Click);
+                consoleItem.OnClick += ConsoleItem_Click;
                 PanelConsoleProfiles.Controls.Add(consoleItem);
                 consoleIndex++;
             }

@@ -1,13 +1,13 @@
-﻿using ModioX.Extensions;
-using ModioX.Io;
-using ModioX.Models.Database;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using ModioX.Database;
+using ModioX.Extensions;
+using ModioX.Io;
+using ModioX.Models.Database;
 
 namespace ModioX.Models.Resources
 {
@@ -143,7 +143,7 @@ namespace ModioX.Models.Resources
         /// <param name="name"> Custom list name </param>
         public void AddCustomList(string name)
         {
-            CustomLists.Add(new CustomList() { Name = name });
+            CustomLists.Add(new CustomList { Name = name });
         }
 
         /// <summary>
@@ -157,11 +157,11 @@ namespace ModioX.Models.Resources
 
             if (customList == null)
             {
-                CustomLists.Add(new CustomList() { Name = newName });
+                CustomLists.Add(new CustomList { Name = newName });
             }
             else
             {
-                CustomLists[CustomLists.IndexOf(customList)] = new CustomList() { Name = newName, ModIds = customList.ModIds };
+                CustomLists[CustomLists.IndexOf(customList)] = new CustomList { Name = newName, ModIds = customList.ModIds };
             }
         }
 

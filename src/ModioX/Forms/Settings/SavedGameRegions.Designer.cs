@@ -1,4 +1,11 @@
-﻿using ModioX;
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using DevExpress.Utils.Layout;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraWaitForm;
+
 namespace ModioX.Forms.Settings
 {
     partial class SavedGameRegions
@@ -6,7 +13,7 @@ namespace ModioX.Forms.Settings
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -328,24 +335,24 @@ namespace ModioX.Forms.Settings
         }
 
         #endregion
-        private DevExpress.XtraEditors.SimpleButton ButtonSaveAll;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameRegion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGameTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRegion;
-        private DevExpress.XtraEditors.GroupControl GroupSavedGameRegions;
-        private DevExpress.XtraGrid.GridControl GridGameRegions;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridViewGameRegions;
-        private DevExpress.Utils.Layout.StackPanel PanelButtons;
-        private DevExpress.XtraEditors.SimpleButton ButtonDelete;
-        private DevExpress.XtraEditors.SimpleButton ButtonDeleteAll;
-        private DevExpress.XtraEditors.ComboBoxEdit ComboBoxGameTitle;
-        private DevExpress.XtraEditors.GroupControl GroupAddGameRegion;
-        private DevExpress.Utils.Layout.StackPanel stackPanel1;
-        private DevExpress.XtraEditors.SimpleButton ButtonAddGameRegion;
-        private DevExpress.XtraEditors.LabelControl LabelGameRegion;
-        private DevExpress.XtraEditors.ComboBoxEdit ComboBoxGameRegion;
-        private DevExpress.XtraEditors.LabelControl LabelSearch;
-        private DevExpress.XtraWaitForm.ProgressPanel ProgressLoading;
+        private SimpleButton ButtonSaveAll;
+        private DataGridViewTextBoxColumn ColumnGameRegion;
+        private DataGridViewTextBoxColumn ColumnGameTitle;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn ColumnRegion;
+        private GroupControl GroupSavedGameRegions;
+        private GridControl GridGameRegions;
+        private GridView GridViewGameRegions;
+        private StackPanel PanelButtons;
+        private SimpleButton ButtonDelete;
+        private SimpleButton ButtonDeleteAll;
+        private ComboBoxEdit ComboBoxGameTitle;
+        private GroupControl GroupAddGameRegion;
+        private StackPanel stackPanel1;
+        private SimpleButton ButtonAddGameRegion;
+        private LabelControl LabelGameRegion;
+        private ComboBoxEdit ComboBoxGameRegion;
+        private LabelControl LabelSearch;
+        private ProgressPanel ProgressLoading;
     }
 }

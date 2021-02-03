@@ -1,11 +1,14 @@
-﻿namespace ModioX.Forms.Dialogs
+﻿using System.ComponentModel;
+using DevExpress.XtraEditors;
+
+namespace ModioX.Forms.Dialogs
 {
     partial class NewConnectionDialog
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -273,19 +276,19 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.LabelControl LabelName;
-        private DevExpress.XtraEditors.LabelControl LabelDescription;
-        private DevExpress.XtraEditors.LabelControl LabelUserPass;
-        private DevExpress.XtraEditors.LabelControl LabelLogin;
-        private DevExpress.XtraEditors.LabelControl darkLabel1;
-        private DevExpress.XtraEditors.TextEdit TextBoxConnectionName;
-        private DevExpress.XtraEditors.TextEdit TextBoxConsoleAddress;
-        private DevExpress.XtraEditors.TextEdit TextBoxConsolePort;
-        private DevExpress.XtraEditors.SimpleButton ButtonOK;
-        private DevExpress.XtraEditors.SimpleButton ButtonCancel;
-        private DevExpress.XtraEditors.SimpleButton ButtonChangeCredentials;
-        private DevExpress.XtraEditors.LabelControl darkLabel2;
-        private DevExpress.XtraEditors.ComboBoxEdit ComboBoxConsoleType;
-        private DevExpress.XtraEditors.PictureEdit ImageConsole;
+        private LabelControl LabelName;
+        private LabelControl LabelDescription;
+        private LabelControl LabelUserPass;
+        private LabelControl LabelLogin;
+        private LabelControl darkLabel1;
+        private TextEdit TextBoxConnectionName;
+        private TextEdit TextBoxConsoleAddress;
+        private TextEdit TextBoxConsolePort;
+        private SimpleButton ButtonOK;
+        private SimpleButton ButtonCancel;
+        private SimpleButton ButtonChangeCredentials;
+        private LabelControl darkLabel2;
+        private ComboBoxEdit ComboBoxConsoleType;
+        private PictureEdit ImageConsole;
     }
 }

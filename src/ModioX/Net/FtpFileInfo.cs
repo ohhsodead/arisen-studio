@@ -14,75 +14,62 @@ namespace ModioX.Net
 
             OriginalPath = filePath;
             FullPath = filePath;
+            FtpConnection = ftp;
 
-            _filePath = filePath;
-            _ftp = ftp;
-
-            this._name = Path.GetFileName(filePath);
+            Name = Path.GetFileName(filePath);
         }
-
-        private readonly FtpConnection _ftp;
-        private readonly string _filePath;
-        private readonly string _name;
 
         private DateTime? _lastAccessTime;
         private DateTime? _creationTime;
         private DateTime? _lastWriteTime;
-        private FileAttributes _attribues;
 
-        public FtpConnection FtpConnection
-        {
-            get { return _ftp; }
-        }
+        public FtpConnection FtpConnection { get; }
 
         public new DateTime? LastAccessTime
         {
-            get { return _lastAccessTime.HasValue ? (DateTime?)_lastAccessTime.Value : null; }
+            get { return _lastAccessTime.HasValue ? _lastAccessTime.Value : null; }
             internal set { _lastAccessTime = value; }
         }
+
         public new DateTime? CreationTime
         {
-            get { return _creationTime.HasValue ? (DateTime?)_creationTime.Value : null; }
+            get { return _creationTime.HasValue ? _creationTime.Value : null; }
             internal set { _creationTime = value; }
         }
+
         public new DateTime? LastWriteTime
         {
-            get { return _lastWriteTime.HasValue ? (DateTime?)_lastWriteTime.Value : null; }
+            get { return _lastWriteTime.HasValue ? _lastWriteTime.Value : null; }
             internal set { _lastWriteTime = value; }
         }
 
         public new DateTime? LastAccessTimeUtc
         {
-            get { return _lastAccessTime.HasValue ? (DateTime?)_lastAccessTime.Value.ToUniversalTime() : null; }
+            get { return _lastAccessTime.HasValue ? _lastAccessTime.Value.ToUniversalTime() : null; }
         }
+
         public new DateTime? CreationTimeUtc
         {
-            get { return _creationTime.HasValue ? (DateTime?)_creationTime.Value.ToUniversalTime() : null; }
+            get { return _creationTime.HasValue ? _creationTime.Value.ToUniversalTime() : null; }
         }
+
         public new DateTime? LastWriteTimeUtc
         {
-            get { return _lastWriteTime.HasValue ? (DateTime?)_lastWriteTime.Value.ToUniversalTime() : null; }
+            get { return _lastWriteTime.HasValue ? _lastWriteTime.Value.ToUniversalTime() : null; }
         }
 
-        public new FileAttributes Attributes
-        {
-            get { return _attribues; }
-            internal set { _attribues = value; }
-        }
+        public new FileAttributes Attributes { get; internal set; }
 
-        public override string Name
-        {
-            get { return _name; }
-        }
+        public override string Name { get; }
 
         public override void Delete()
         {
-            this.FtpConnection.RemoveFile(this.FullName);
+            FtpConnection.RemoveFile(FullName);
         }
 
         public override bool Exists
         {
-            get { return this.FtpConnection.FileExists(this.FullName); }
+            get { return FtpConnection.FileExists(FullName); }
         }
     }
 }

@@ -1,10 +1,10 @@
-﻿using ModioX.Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
+using ModioX.Extensions;
 
 namespace ModioX.Net
 {
@@ -588,7 +588,7 @@ namespace ModioX.Net
         /// </returns>
         public FtpDirectoryInfo[] GetDirectories()
         {
-            return GetDirectories(this.GetCurrentDirectory());
+            return GetDirectories(GetCurrentDirectory());
         }
 
         /// <summary>
@@ -829,10 +829,8 @@ namespace ModioX.Net
                 var errorText = InternetLastResponseInfo(ref code);
                 throw new FtpException(code, errorText);
             }
-            else
-            {
-                throw new Win32Exception(code);
-            }
+
+            throw new Win32Exception(code);
         }
 
         /// <summary>
@@ -849,7 +847,7 @@ namespace ModioX.Net
         private IntPtr _hConnect;
         private readonly string _username = "";
         private readonly string _password = "";
-        private bool _disposed = false;
+        private bool _disposed;
 
         #region IDisposable Members
 

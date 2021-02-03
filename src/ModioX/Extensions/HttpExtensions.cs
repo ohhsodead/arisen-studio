@@ -50,7 +50,7 @@ namespace ModioX.Extensions
         {
             try
             {
-                ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+                ServicePointManager.ServerCertificateValidationCallback = (_, _, _, _) => true;
 
                 using var webClient = new WebClient();
                 var serializer = new XmlSerializer(typeof(Titlepatch));
@@ -62,7 +62,7 @@ namespace ModioX.Extensions
             }
             catch (Exception ex)
             {
-                Program.Log.Error(ex, "Unable to fetch game title from ID: " + titleId);
+                Program.Log.Error(ex, "Unable to fetch game title from ID: {0}", titleId);
                 return "Not Recognized";
             }
         }
@@ -76,7 +76,7 @@ namespace ModioX.Extensions
         {
             try
             {
-                ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+                ServicePointManager.ServerCertificateValidationCallback = (_, _, _, _) => true;
 
                 using var webClient = new WebClient();
                 var serializer = new XmlSerializer(typeof(Titlepatch));
@@ -86,7 +86,7 @@ namespace ModioX.Extensions
             }
             catch (Exception ex)
             {
-                Program.Log.Error(ex, "Unable to fetch game update from title ID: " + titleId);
+                Program.Log.Error(ex, "Unable to fetch game update from title ID: {0}", titleId);
                 return null;
             }
         }
@@ -97,28 +97,26 @@ namespace ModioX.Extensions
         /// <param name="folderPath"> </param>
         public static void DownloadFile(string url, string folderPath)
         {
-            ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+            ServicePointManager.ServerCertificateValidationCallback = (_, _, _, _) => true;
             var webClient = new WebClient();
             webClient.DownloadFile(url, folderPath);
         }
 
         /// <summary>
-        /// 
         /// </summary>
-        /// <param name="url"></param>
-        /// <returns></returns>
+        /// <param name="url"> </param>
+        /// <returns> </returns>
         public static Bitmap GetImageFromUrl(string url)
         {
             return new(GetStream(url));
         }
 
         /// <summary>
-        /// 
         /// </summary>
-        /// <returns></returns>
-        public static async Task<bool> CheckForInternetAsync()
+        /// <returns> </returns>
+        public static async Task<bool> IsConnectedToInternetAsync()
         {
-            Ping ping = new Ping();
+            var ping = new Ping();
 
             try
             {
@@ -131,8 +129,7 @@ namespace ModioX.Extensions
             }
             catch (Exception ex)
             {
-                Program.Log.Error(ex, "Unable to check for Internet connection");
-                return false;
+                Program.Log.Error(ex, "Unable to check for Internet connection.");
             }
 
             return false;

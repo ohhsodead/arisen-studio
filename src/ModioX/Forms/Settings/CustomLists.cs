@@ -1,10 +1,11 @@
-﻿using DevExpress.XtraEditors;
+﻿using System;
+using System.Data;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
-using System;
-using System.Data;
-using System.Windows.Forms;
 
 namespace ModioX.Forms.Settings
 {
@@ -56,7 +57,7 @@ namespace ModioX.Forms.Settings
             ButtonDeleteList.Enabled = GridViewCustomLists.SelectedRowsCount > 0;
         }
 
-        private void GridCustomLists_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e)
+        private void GridCustomLists_FocusedViewChanged(object sender, ViewFocusEventArgs e)
         {
             ButtonRenameList.Enabled = GridViewCustomLists.SelectedRowsCount > 0;
             ButtonDeleteList.Enabled = GridViewCustomLists.SelectedRowsCount > 0;

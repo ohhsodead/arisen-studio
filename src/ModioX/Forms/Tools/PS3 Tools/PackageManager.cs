@@ -1,15 +1,15 @@
-﻿using DevExpress.XtraEditors;
-using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Views.Grid;
-using FluentFTP;
-using ModioX.Extensions;
-using ModioX.Forms.Windows;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
+using FluentFTP;
 using Humanizer;
+using ModioX.Extensions;
+using ModioX.Forms.Windows;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 using System.Threading.Tasks;
 
@@ -42,7 +42,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
         {
             GridPackageFiles.DataSource = null;
 
-            var packages = DataExtensions.CreateDataTable(new List<DataColumn>()
+            var packages = DataExtensions.CreateDataTable(new List<DataColumn>
             {
                 new("File Name", typeof(string)),
                 new("File Size", typeof(string)),
@@ -145,7 +145,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
                 UpdateStatus($"Deleting package file: {packageFileName}");
                 FtpExtensions.DeleteFile(MainWindow.FtpClient, PackageFilesPath + "/" + packageFileName);
-                UpdateStatus($"Successfully deleted package file.");
+                UpdateStatus("Successfully deleted package file.");
                 LoadPackages();
             }
         }
@@ -158,7 +158,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 {
                     UpdateStatus($"Deleting package file: {package.Name}");
                     FtpExtensions.DeleteFile(MainWindow.FtpClient, PackageFilesPath + "/" + package.Name);
-                    UpdateStatus($"Successfully deleted package file.");
+                    UpdateStatus("Successfully deleted package file.");
                     LoadPackages();
                 }
             }
@@ -166,7 +166,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void ButtonDownloadPackageFile_Click(object sender, EventArgs e)
         {
-            var updateUrl = PackageFilesPath + "/" + GridViewPackageFiles.GetRowCellValue(GridViewPackageFiles.FocusedRowHandle, GridViewPackageFiles.Columns[0]).ToString();
+            var updateUrl = PackageFilesPath + "/" + GridViewPackageFiles.GetRowCellValue(GridViewPackageFiles.FocusedRowHandle, GridViewPackageFiles.Columns[0]);
             var fileName = Path.GetFileName(updateUrl);
             var folderPath = DialogExtensions.ShowFolderBrowseDialog(this, "Choose a folder to download the package file.");
 

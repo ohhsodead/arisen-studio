@@ -1,13 +1,15 @@
-﻿using DevExpress.XtraEditors;
-using ModioX.Extensions;
-using ModioX.Forms.Windows;
-using ModioX.Io;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
 using Humanizer;
+using ModioX.Extensions;
+using ModioX.Forms.Windows;
+using ModioX.Io;
 
 namespace ModioX.Forms.Tools.PS3_Tools
 {
@@ -58,7 +60,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             {
                 GridGameUpdates.DataSource = null;
 
-                var gameUpdateFiles = DataExtensions.CreateDataTable(new List<DataColumn>()
+                var gameUpdateFiles = DataExtensions.CreateDataTable(new List<DataColumn>
                 {
                     new("File URL", typeof(string)),
                     new("File SHA1", typeof(string)),
@@ -90,7 +92,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             ProgressNoGameUpdatesFound.Visible = GridViewGameUpdates.RowCount < 1;
         }
 
-        private void GridViewGameUpdates_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        private void GridViewGameUpdates_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
             ButtonDownloadToComputer.Enabled = GridViewGameUpdates.RowCount > 0;
             ButtonInstallToConsole.Enabled = GridViewGameUpdates.RowCount > 0;
@@ -98,7 +100,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             ButtonCopySHA1ToClipboard.Enabled = GridViewGameUpdates.RowCount > 0;
         }
 
-        private void GridViewGameUpdates_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        private void GridViewGameUpdates_RowClick(object sender, RowClickEventArgs e)
         {
             ButtonDownloadToComputer.Enabled = GridViewGameUpdates.RowCount > 0;
             ButtonInstallToConsole.Enabled = GridViewGameUpdates.RowCount > 0;

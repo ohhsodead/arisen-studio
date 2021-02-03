@@ -1,4 +1,9 @@
-﻿using DevExpress.XtraEditors;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using ModioX.Database;
@@ -6,11 +11,6 @@ using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Database;
 using ModioX.Models.Resources;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Windows.Forms;
 
 namespace ModioX.Forms.Settings
 {
