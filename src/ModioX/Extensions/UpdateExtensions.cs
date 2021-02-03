@@ -18,7 +18,7 @@ namespace ModioX.Extensions
         /// <summary>
         /// Get the latest release data from GitHub.
         /// </summary>
-        public static GitHubData GitHubData { get; } = GetGitHubLatestReleaseData();
+        public static GitHubData GitHubData { get; set; } = GetGitHubLatestReleaseData();
 
         /// <summary>
         /// Get the current version.

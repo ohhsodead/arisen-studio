@@ -37,12 +37,12 @@ namespace ModioX.Forms.Dialogs
             this.ButtonEdit = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonConnect = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.GroupConsoleProfiles = new DevExpress.XtraEditors.GroupControl();
             this.ScrollBarConsoleProfiles = new DevExpress.XtraEditors.VScrollBar();
             this.PanelConsoleProfiles = new System.Windows.Forms.FlowLayoutPanel();
             this.ButtonNewConnection = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupConsoleProfiles)).BeginInit();
+            this.GroupConsoleProfiles.SuspendLayout();
             this.SuspendLayout();
             // 
             // ButtonEdit
@@ -52,7 +52,7 @@ namespace ModioX.Forms.Dialogs
             this.ButtonEdit.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonEdit.Appearance.Options.UseFont = true;
             this.ButtonEdit.Enabled = false;
-            this.ButtonEdit.Location = new System.Drawing.Point(249, 357);
+            this.ButtonEdit.Location = new System.Drawing.Point(268, 379);
             this.ButtonEdit.Name = "ButtonEdit";
             this.ButtonEdit.Size = new System.Drawing.Size(60, 25);
             this.ButtonEdit.TabIndex = 1;
@@ -67,7 +67,7 @@ namespace ModioX.Forms.Dialogs
             this.ButtonConnect.Appearance.Options.UseFont = true;
             this.ButtonConnect.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ButtonConnect.Enabled = false;
-            this.ButtonConnect.Location = new System.Drawing.Point(393, 357);
+            this.ButtonConnect.Location = new System.Drawing.Point(412, 379);
             this.ButtonConnect.Name = "ButtonConnect";
             this.ButtonConnect.Size = new System.Drawing.Size(80, 25);
             this.ButtonConnect.TabIndex = 3;
@@ -81,33 +81,33 @@ namespace ModioX.Forms.Dialogs
             this.ButtonDelete.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonDelete.Appearance.Options.UseFont = true;
             this.ButtonDelete.Enabled = false;
-            this.ButtonDelete.Location = new System.Drawing.Point(315, 357);
+            this.ButtonDelete.Location = new System.Drawing.Point(334, 379);
             this.ButtonDelete.Name = "ButtonDelete";
             this.ButtonDelete.Size = new System.Drawing.Size(72, 25);
             this.ButtonDelete.TabIndex = 2;
             this.ButtonDelete.Text = "Delete";
             this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
-            // groupControl1
+            // GroupConsoleProfiles
             // 
-            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GroupConsoleProfiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl1.Controls.Add(this.ScrollBarConsoleProfiles);
-            this.groupControl1.Controls.Add(this.PanelConsoleProfiles);
-            this.groupControl1.Location = new System.Drawing.Point(12, 12);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(461, 339);
-            this.groupControl1.TabIndex = 7;
-            this.groupControl1.Text = "Console Profiles";
+            this.GroupConsoleProfiles.Controls.Add(this.ScrollBarConsoleProfiles);
+            this.GroupConsoleProfiles.Controls.Add(this.PanelConsoleProfiles);
+            this.GroupConsoleProfiles.Location = new System.Drawing.Point(12, 12);
+            this.GroupConsoleProfiles.Name = "GroupConsoleProfiles";
+            this.GroupConsoleProfiles.Size = new System.Drawing.Size(480, 361);
+            this.GroupConsoleProfiles.TabIndex = 7;
+            this.GroupConsoleProfiles.Text = "Console Profiles";
             // 
             // ScrollBarConsoleProfiles
             // 
             this.ScrollBarConsoleProfiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ScrollBarConsoleProfiles.Location = new System.Drawing.Point(441, 22);
+            this.ScrollBarConsoleProfiles.Location = new System.Drawing.Point(461, 22);
             this.ScrollBarConsoleProfiles.Name = "ScrollBarConsoleProfiles";
-            this.ScrollBarConsoleProfiles.Size = new System.Drawing.Size(17, 315);
+            this.ScrollBarConsoleProfiles.Size = new System.Drawing.Size(17, 337);
             this.ScrollBarConsoleProfiles.TabIndex = 1;
             this.ScrollBarConsoleProfiles.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollBarConsoleProfiles_Scroll);
             // 
@@ -117,18 +117,20 @@ namespace ModioX.Forms.Dialogs
             this.PanelConsoleProfiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelConsoleProfiles.Location = new System.Drawing.Point(2, 23);
             this.PanelConsoleProfiles.Name = "PanelConsoleProfiles";
-            this.PanelConsoleProfiles.Size = new System.Drawing.Size(457, 314);
+            this.PanelConsoleProfiles.Padding = new System.Windows.Forms.Padding(4);
+            this.PanelConsoleProfiles.Size = new System.Drawing.Size(476, 336);
             this.PanelConsoleProfiles.TabIndex = 0;
+            this.PanelConsoleProfiles.Scroll += new System.Windows.Forms.ScrollEventHandler(this.PanelConsoleProfiles_Scroll);
             this.PanelConsoleProfiles.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.PanelConsoleProfiles_ControlAddedOrRemoved);
             this.PanelConsoleProfiles.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.PanelConsoleProfiles_ControlAddedOrRemoved);
             // 
             // ButtonNewConnection
             // 
             this.ButtonNewConnection.AllowFocus = false;
-            this.ButtonNewConnection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonNewConnection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonNewConnection.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonNewConnection.Appearance.Options.UseFont = true;
-            this.ButtonNewConnection.Location = new System.Drawing.Point(12, 357);
+            this.ButtonNewConnection.Location = new System.Drawing.Point(12, 379);
             this.ButtonNewConnection.Name = "ButtonNewConnection";
             this.ButtonNewConnection.Size = new System.Drawing.Size(122, 25);
             this.ButtonNewConnection.TabIndex = 8;
@@ -143,9 +145,9 @@ namespace ModioX.Forms.Dialogs
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(485, 394);
+            this.ClientSize = new System.Drawing.Size(504, 416);
             this.Controls.Add(this.ButtonNewConnection);
-            this.Controls.Add(this.groupControl1);
+            this.Controls.Add(this.GroupConsoleProfiles);
             this.Controls.Add(this.ButtonEdit);
             this.Controls.Add(this.ButtonDelete);
             this.Controls.Add(this.ButtonConnect);
@@ -161,8 +163,8 @@ namespace ModioX.Forms.Dialogs
             this.Text = "Connections";
             this.Load += new System.EventHandler(this.ConnectConsole_Load);
             this.SizeChanged += new System.EventHandler(this.ConnectionDialogTest_SizeChanged);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GroupConsoleProfiles)).EndInit();
+            this.GroupConsoleProfiles.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

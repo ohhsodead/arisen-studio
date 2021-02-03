@@ -1,5 +1,4 @@
-﻿
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using DevExpress.XtraEditors;
 
 namespace ModioX.Controls
@@ -39,7 +38,7 @@ namespace ModioX.Controls
             // 
             // LabelConsoleName
             // 
-            this.LabelConsoleName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.LabelConsoleName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelConsoleName.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.LabelConsoleName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);

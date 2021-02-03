@@ -69,14 +69,24 @@ namespace ModioX.Forms.Windows
         public static bool IsConsoleConnected { get; private set; }
 
         /// <summary>
-        /// Determines whether webMAN is installed on the console.
-        /// </summary>
-        public static bool IsWebManInstalled { get; private set; }
-
-        /// <summary>
         /// Contains the console profile data.
         /// </summary>
         public static ConsoleProfile ConsoleProfile { get; private set; }
+
+        /// <summary>
+        /// Contains the selected console type.
+        /// </summary>
+        public static ConsoleTypePrefix ConsoleType { get; private set; } = ConsoleTypePrefix.PS3;
+
+        /// <summary>
+        /// Contains the Xbox console information.
+        /// </summary>
+        public static IXboxConsole XboxConsole { get; set; }
+
+        /// <summary>
+        /// Determines whether webMAN is installed on the console.
+        /// </summary>
+        public static bool IsWebManInstalled { get; private set; }
 
         /// <summary>
         /// Contains the FtpClient for faster and more reliable functions.
@@ -102,15 +112,6 @@ namespace ModioX.Forms.Windows
             }
         }
 
-        /// <summary>
-        /// Contains the Xbox console information.
-        /// </summary>
-        public static IXboxConsole XboxConsole { get; set; }
-
-        /// <summary>
-        /// Contains the selected console type.
-        /// </summary>
-        public static ConsoleTypePrefix ConsoleType { get; private set; } = ConsoleTypePrefix.PS3;
 
         /// <summary>
         /// Get the colors for the current skin.
@@ -129,7 +130,7 @@ namespace ModioX.Forms.Windows
             LoadSettings();
             EnableConsoleActions();
 
-            if (await HttpExtensions.IsConnectedToInternetAsync())
+            if (await HttpExtensions.CheckForInternetAsync().ConfigureAwait(true))
             {
                 UpdateExtensions.CheckApplicationVersion();
 
@@ -146,7 +147,7 @@ namespace ModioX.Forms.Windows
                 }
 
                 SetStatus("Initializing the application database...");
-                await Task.Run(async () => await LoadDataAsync());
+                await Task.Run(async () => await LoadDataAsync().ConfigureAwait(true));
                 InitializeFinished();
             }
             else
@@ -558,19 +559,18 @@ namespace ModioX.Forms.Windows
         private void ButtonOpenLogFolder_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus("Opening Log folder...");
-            if (!Directory.Exists(UserFolders.AppLogsDirectory)) Directory.CreateDirectory(UserFolders.AppLogsDirectory);
+
+            if (!Directory.Exists(UserFolders.AppLogsDirectory))
+            {
+                Directory.CreateDirectory(UserFolders.AppLogsDirectory);
+            }
+
             Process.Start(UserFolders.AppLogsDirectory);
         }
 
         private void ButtonAbout_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowAboutWindow(this);
-        }
-
-        private void ButtonExit_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            SaveSettings();
-            Application.Exit();
         }
 
         #endregion Header Menu Bar
@@ -607,6 +607,8 @@ namespace ModioX.Forms.Windows
 
                 if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
                 {
+                    ConsoleType = ConsoleProfile.TypePrefix;
+
                     IsWebManInstalled = WebManExtensions.IsWebManInstalled(ConsoleProfile.Address, ConsoleProfile.Port);
 
                     if (IsWebManInstalled)
@@ -620,6 +622,8 @@ namespace ModioX.Forms.Windows
                 }
                 else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
                 {
+                    ConsoleType = ConsoleProfile.TypePrefix;
+
                     XboxConsole = new XboxManager().OpenConsole(ConsoleProfile.Address);
                     XboxConsole.XNotify("You are now connected to ModioX ★");
 
@@ -649,7 +653,7 @@ namespace ModioX.Forms.Windows
         {
             SetStatus("Disconnecting from console...");
 
-            if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+            if (ConsoleType == ConsoleTypePrefix.PS3)
             {
                 try
                 {
@@ -663,16 +667,16 @@ namespace ModioX.Forms.Windows
                     // False positive, if console is powered off then an error will be thrown.
                 }
             }
-            else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+            else if (ConsoleType == ConsoleTypePrefix.XBOX)
             {
                 try
                 {
-                    //XboxClient.Disconnect();
-
                     FtpConnection.Dispose();
                     FtpConnection.Close();
 
                     FtpClient.Dispose();
+
+                    XboxConsole.CloseConnection(0);
                 }
                 catch
                 {
@@ -1356,6 +1360,7 @@ namespace ModioX.Forms.Windows
         private void UpdateScrollBars()
         {
             FlowPanelDetails.HorizontalScroll.Visible = false;
+            FlowPanelDetails.VerticalScroll.Visible = false;
 
             ScrollBarModInformation.Visible = FlowPanelDetails.VerticalScroll.Visible;
             ScrollBarModInformation.Minimum = FlowPanelDetails.VerticalScroll.Minimum;
@@ -1400,7 +1405,7 @@ namespace ModioX.Forms.Windows
                 }
             }
 
-            if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+            if (ConsoleType == ConsoleTypePrefix.PS3)
             {
                 // Checks whether a mod is already installed to the same game then uninstall it
                 var modInstalled = Settings.GetInstalledGameMod(modItem.GetConsoleType(), category.Id);
@@ -1736,7 +1741,7 @@ namespace ModioX.Forms.Windows
                     XtraMessageBox.Show($"An error occurred installing files for {modItem.Name} (#{modItem.Id}). You can open an issue to help us fix this by navigating to 'Help > Report Bug' and attach the log.txt file, which can be found in the installation path." + "\nError Message: " + ex.Message, "Unable to Install Files", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+            else if (ConsoleType == ConsoleTypePrefix.XBOX)
             {
                 SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Getting archive download link...");
                 downloadFiles = modItem.GetDownloadFiles();
@@ -1875,7 +1880,7 @@ namespace ModioX.Forms.Windows
 
             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Found previous install details.");
 
-            if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3)
+            if (ConsoleType == ConsoleTypePrefix.PS3)
             {
                 try
                 {
@@ -2093,7 +2098,7 @@ namespace ModioX.Forms.Windows
                     XtraMessageBox.Show($"An error occurred installing files for {modItem.Name} (#{modItem.Id}). You can open an issue to help us fix this by navigating to 'Help > Report Bug' and attach the log.txt file, which can be found in the installation path." + "\nError Message: " + ex.Message, "Unable to Uninstall Files", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX)
+            else if (ConsoleType == ConsoleTypePrefix.XBOX)
             {
                 try
                 {
@@ -2235,29 +2240,29 @@ namespace ModioX.Forms.Windows
         {
             // PS3 Features
             ButtonGameBackupFiles.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
-            ButtonGameBackupFiles.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
+            ButtonGameBackupFiles.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3;
 
             ButtonPS3GameUpdateFinder.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
-            ButtonPS3GameUpdateFinder.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
+            ButtonPS3GameUpdateFinder.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3;
 
             ButtonPS3FileManager.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
-            ButtonPS3FileManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
+            ButtonPS3FileManager.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3;
 
             ButtonPS3PackageManager.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
-            ButtonPS3PackageManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
+            ButtonPS3PackageManager.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3;
 
             ButtonPS3WebManControls.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
-            ButtonPS3WebManControls.Enabled = IsConsoleConnected && IsWebManInstalled && ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3;
+            ButtonPS3WebManControls.Enabled = IsConsoleConnected && IsWebManInstalled && ConsoleType == ConsoleTypePrefix.PS3;
 
             // Xbox Features
             ButtonXboxFileManager.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
-            ButtonXboxFileManager.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
+            ButtonXboxFileManager.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.XBOX;
 
             ButtonXboxPluginsEditor.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
-            ButtonXboxPluginsEditor.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
+            ButtonXboxPluginsEditor.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.XBOX;
 
             ButtonXboxXBDMMenu.Visibility = IsConsoleConnected || Settings.LoadConsoleMods == ConsoleTypePrefix.XBOX ? BarItemVisibility.Always : BarItemVisibility.Never;
-            ButtonXboxXBDMMenu.Enabled = IsConsoleConnected && ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX;
+            ButtonXboxXBDMMenu.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.XBOX;
 
             // Install & Uninstall Features
             ButtonModInstall.Enabled = IsConsoleConnected;
@@ -2307,17 +2312,18 @@ namespace ModioX.Forms.Windows
             {
                 SetStatus("Loading settings data...");
 
-                if (File.Exists(UserFolders.AppSettingsFile))
+                if (!File.Exists(UserFolders.AppSettingsFile))
                 {
-                    using var streamReader = new StreamReader(UserFolders.AppSettingsFile);
-                    Settings = JsonConvert.DeserializeObject<SettingsData>(streamReader.ReadToEnd());
-                }
-                else
-                {
+                    SetStatus("Settings file doesn't exist, a new one has been created.");
                     return;
                 }
 
-                SetStatus("Successfully loaded settings data.");
+                using (var streamReader = new StreamReader(UserFolders.AppSettingsFile))
+                {
+                    Settings = JsonConvert.DeserializeObject<SettingsData>(streamReader.ReadToEnd());
+                }
+
+                SetStatus("Successfully loaded settings file.");
 
                 if (Settings.SaveSkinOnClose)
                 {
@@ -2340,7 +2346,7 @@ namespace ModioX.Forms.Windows
                         });
                 }
 
-                if (Settings.ExternalApplications.Count < 1)
+                if (Settings.ExternalApplications.Count <= 0)
                 {
                     Settings.ExternalApplications.Add(
                         new ExternalApplication(
@@ -2366,7 +2372,8 @@ namespace ModioX.Forms.Windows
             }
             catch (Exception ex)
             {
-                SetStatus("Unable to load settings data. A new settings file will be created to fix this. Error: " + ex.Message, ex);
+                SetStatus("Unable to load settings file. A new one have been created and the application will be restarted. Error: " + ex.Message, ex);
+                XtraMessageBox.Show(this, "There iss a problem loading the settings file. A new one have been created and the application will be restarted.\n\nError: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Settings = new SettingsData();
                 SaveSettings();
                 Application.Restart();
@@ -2380,7 +2387,7 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                SetStatus("Saving settings data...");
+                SetStatus("Saving settings file...");
 
                 if (!Directory.Exists(UserFolders.AppDataDirectory))
                 {
@@ -2392,11 +2399,12 @@ namespace ModioX.Forms.Windows
                     streamWriter.Write(JsonConvert.SerializeObject(Settings));
                 }
 
-                SetStatus("Successfully saved settings data.");
+                SetStatus("Successfully saved settings file.");
             }
             catch (Exception ex)
             {
-                SetStatus("Unable to save settings data. Error: " + ex.Message, ex);
+                SetStatus("Unable to save settings file. Error: " + ex.Message, ex);
+                XtraMessageBox.Show(this, "There is a problem saving the settings file. A new one will be created on the next startup.\n\nError: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -23,7 +23,7 @@ using StringExtensions = ModioX.Extensions.StringExtensions;
 
 namespace ModioX.Forms.Windows
 {
-    public partial class FileManagerWindow : XtraForm
+    public partial class FileManager : XtraForm
     {
         /// <summary>
         /// Get the user's settings data.
@@ -68,12 +68,12 @@ namespace ModioX.Forms.Windows
         /// </summary>
         private readonly Image ImageFolder = ImageExtensions.ResizeBitmap(Resources.folder, 20, 20);
 
-        public FileManagerWindow()
+        public FileManager()
         {
             InitializeComponent();
         }
 
-        private void FileManagerWindow_Load(object sender, EventArgs e)
+        private void FileManager_Load(object sender, EventArgs e)
         {
             GridLocalFiles.Focus();
 

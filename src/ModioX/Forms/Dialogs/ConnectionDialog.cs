@@ -157,7 +157,7 @@ namespace ModioX.Forms.Dialogs
 
             var newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
 
-            if (newConsoleProfile != null) oldConsoleProfile = newConsoleProfile;
+            oldConsoleProfile = newConsoleProfile;
 
             LoadConsoles();
         }
@@ -167,10 +167,16 @@ namespace ModioX.Forms.Dialogs
             UpdateScrollBar();
         }
 
+        private void PanelConsoleProfiles_Scroll(object sender, ScrollEventArgs e)
+        {
+            ScrollBarConsoleProfiles.Value = PanelConsoleProfiles.VerticalScroll.Value;
+            Refresh();
+        }
+
         private void ScrollBarConsoleProfiles_Scroll(object sender, ScrollEventArgs e)
         {
             PanelConsoleProfiles.VerticalScroll.Value = ScrollBarConsoleProfiles.Value;
-            Refresh();
+            PanelConsoleProfiles.Refresh();
         }
 
         private void UpdateScrollBar()

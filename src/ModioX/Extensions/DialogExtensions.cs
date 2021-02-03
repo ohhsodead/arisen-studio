@@ -97,7 +97,7 @@ namespace ModioX.Extensions
 
         public static void ShowFileManager(Form owner)
         {
-            using var fileManagerWindow = new FileManagerWindow();
+            using var fileManagerWindow = new FileManager();
             fileManagerWindow.ShowDialog(owner);
         }
 

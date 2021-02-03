@@ -32,6 +32,11 @@ namespace ModioX.Extensions
             return request;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
         public static Stream GetStream(string url)
         {
             return ((HttpWebResponse)GetRequest(url).GetResponse()).GetResponseStream();
