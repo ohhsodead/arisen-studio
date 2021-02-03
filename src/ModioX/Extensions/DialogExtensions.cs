@@ -1,4 +1,8 @@
-﻿using DevExpress.XtraEditors;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using ModioX.Forms.Dialogs;
 using ModioX.Forms.Settings;
 using ModioX.Forms.Tools.PS3_Tools;
@@ -6,10 +10,6 @@ using ModioX.Forms.Tools.XBOX_Tools;
 using ModioX.Forms.Windows;
 using ModioX.Models.Release_Data;
 using ModioX.Models.Resources;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace ModioX.Extensions
 {

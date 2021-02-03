@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Text;
 using XDevkit;
 
@@ -193,7 +194,7 @@ namespace ModioX.Extensions
 
         public static string GetConsoleIP(this IXboxConsole xbCon)
         {
-            return new System.Net.IPAddress(xbCon.IPAddress).ToString();
+            return new IPAddress(xbCon.IPAddress).ToString();
         }
     }
 }

@@ -1,12 +1,16 @@
-﻿namespace ModioX.Forms.Dialogs
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using VScrollBar = DevExpress.XtraEditors.VScrollBar;
+
+namespace ModioX.Forms.Dialogs
 {
     partial class ConnectionDialog
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
+        private IContainer components = null;
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -165,12 +169,12 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.SimpleButton ButtonConnect;
-        private DevExpress.XtraEditors.SimpleButton ButtonEdit;
-        private DevExpress.XtraEditors.SimpleButton ButtonDelete;
-        private DevExpress.XtraEditors.GroupControl GroupConsoleProfiles;
-        private DevExpress.XtraEditors.VScrollBar ScrollBarConsoleProfiles;
-        private System.Windows.Forms.FlowLayoutPanel PanelConsoleProfiles;
-        private DevExpress.XtraEditors.SimpleButton ButtonNewConnection;
+        private SimpleButton ButtonConnect;
+        private SimpleButton ButtonEdit;
+        private SimpleButton ButtonDelete;
+        private GroupControl groupControl1;
+        private VScrollBar ScrollBarConsoleProfiles;
+        private FlowLayoutPanel PanelConsoleProfiles;
+        private SimpleButton ButtonNewConnection;
     }
 }

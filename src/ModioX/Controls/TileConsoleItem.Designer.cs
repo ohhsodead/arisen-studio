@@ -1,4 +1,6 @@
-﻿
+﻿using System.ComponentModel;
+using DevExpress.XtraEditors;
+
 namespace ModioX.Controls
 {
     partial class TileConsoleItem
@@ -6,7 +8,7 @@ namespace ModioX.Controls
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -36,7 +38,7 @@ namespace ModioX.Controls
             // 
             // LabelConsoleName
             // 
-            this.LabelConsoleName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.LabelConsoleName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelConsoleName.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.LabelConsoleName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -83,7 +85,7 @@ namespace ModioX.Controls
 
         #endregion
 
-        public DevExpress.XtraEditors.PictureEdit ImageConsole;
-        public DevExpress.XtraEditors.LabelControl LabelConsoleName;
+        public PictureEdit ImageConsole;
+        public LabelControl LabelConsoleName;
     }
 }

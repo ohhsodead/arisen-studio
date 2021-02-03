@@ -1,6 +1,7 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Diagnostics;
+using DevExpress.Utils;
+using DevExpress.XtraEditors;
 
 namespace ModioX.Forms.Dialogs
 {
@@ -16,12 +17,12 @@ namespace ModioX.Forms.Dialogs
             ButtonClose.Focus();
         }
 
-        private void LabelCredits_HyperlinkClick(object sender, DevExpress.Utils.HyperlinkClickEventArgs e)
+        private void LabelCredits_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
         {
             Process.Start(e.Text);
         }
 
-        private void LabelLicense_HyperlinkClick(object sender, DevExpress.Utils.HyperlinkClickEventArgs e)
+        private void LabelLicense_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
         {
             Process.Start(e.Text);
         }
