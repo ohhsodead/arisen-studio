@@ -114,7 +114,7 @@ namespace ModioX.Extensions
         /// <summary>
         /// </summary>
         /// <returns> </returns>
-        public static async Task<bool> IsConnectedToInternetAsync()
+        public static async Task<bool> CheckForInternetAsync()
         {
             var ping = new Ping();
 
