@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ModioX.Extensions
@@ -22,7 +23,7 @@ namespace ModioX.Extensions
         /// <summary>
         /// Get the latest release data from GitHub.
         /// </summary>
-        public static GitHubData GitHubData { get; } = GetGitHubLatestReleaseData();
+        public static GitHubData GitHubData { get; set; } = GetGitHubLatestReleaseData();
 
         /// <summary>
         /// Get the current version.

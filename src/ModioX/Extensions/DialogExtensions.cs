@@ -10,7 +10,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using XDevkit;
 
 namespace ModioX.Extensions
 {
@@ -98,7 +97,7 @@ namespace ModioX.Extensions
 
         public static void ShowFileManager(Form owner)
         {
-            using var fileManagerWindow = new FileManagerWindow();
+            using var fileManagerWindow = new FileManager();
             fileManagerWindow.ShowDialog(owner);
         }
 

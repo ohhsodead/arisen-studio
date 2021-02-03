@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
-using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -33,6 +32,11 @@ namespace ModioX.Extensions
             return request;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
         public static Stream GetStream(string url)
         {
             return ((HttpWebResponse)GetRequest(url).GetResponse()).GetResponseStream();
@@ -112,7 +116,7 @@ namespace ModioX.Extensions
         /// 
         /// </summary>
         /// <returns></returns>
-        public static async Task<bool> IsConnectedToInternetAsync()
+        public static async Task<bool> CheckForInternetAsync()
         {
             Ping ping = new Ping();
 

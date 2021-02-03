@@ -32,11 +32,11 @@ namespace ModioX.Forms.Windows
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.LabelSelectType = new DevExpress.XtraEditors.LabelControl();
             this.FlowPanelDetails = new System.Windows.Forms.FlowLayoutPanel();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -129,7 +129,6 @@ namespace ModioX.Forms.Windows
             this.ButtonWhatsNew = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonSkinChanger = new DevExpress.XtraBars.SkinBarSubItem();
             this.ButtonAbout = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonExit = new DevExpress.XtraBars.BarButtonItem();
             this.BarStatus = new DevExpress.XtraBars.Bar();
             this.LabelHeaderConnectedConsole = new DevExpress.XtraBars.BarStaticItem();
             this.LabelConsoleConnected = new DevExpress.XtraBars.BarStaticItem();
@@ -735,7 +734,6 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxShowProfileIDInfo,
             this.ButtonXboxPluginsEditor,
             this.ButtonXboxXNotifyMessage,
-            this.ButtonExit,
             this.ButtonPS3HardReboot,
             this.LabelHeaderStatus,
             this.ButtonXboxTakeScreenshot,
@@ -1187,8 +1185,7 @@ namespace ModioX.Forms.Windows
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonCheckForUpdate, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonWhatsNew),
             new DevExpress.XtraBars.LinkPersistInfo(this.ButtonSkinChanger, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonAbout, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonExit, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonAbout, true)});
             this.HelpMenu.Manager = this.MainMenu;
             this.HelpMenu.Name = "HelpMenu";
             // 
@@ -1246,13 +1243,6 @@ namespace ModioX.Forms.Windows
             this.ButtonAbout.Id = 28;
             this.ButtonAbout.Name = "ButtonAbout";
             this.ButtonAbout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonAbout_ItemClick);
-            // 
-            // ButtonExit
-            // 
-            this.ButtonExit.Caption = "Exit...";
-            this.ButtonExit.Id = 104;
-            this.ButtonExit.Name = "ButtonExit";
-            this.ButtonExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonExit_ItemClick);
             // 
             // BarStatus
             // 
@@ -1413,7 +1403,7 @@ namespace ModioX.Forms.Windows
             this.XNotifyType.AccessibleDescription = "";
             this.XNotifyType.AutoHeight = false;
             this.XNotifyType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "mnjukjui", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "mnjukjui", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.XNotifyType.Items.AddRange(new object[] {
             "Blank",
             "Game Invite",
@@ -1998,7 +1988,6 @@ namespace ModioX.Forms.Windows
             this.ScrollBarModInformation.Name = "ScrollBarModInformation";
             this.ScrollBarModInformation.Size = new System.Drawing.Size(17, 575);
             this.ScrollBarModInformation.TabIndex = 3;
-            this.ScrollBarModInformation.Visible = false;
             this.ScrollBarModInformation.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollBarModInformation_Scroll);
             // 
             // GroupInstallFiles
@@ -2430,7 +2419,6 @@ namespace ModioX.Forms.Windows
         private BarButtonItem ButtonXboxPluginsEditor;
         private SimpleButton ButtonUninstallInstalledMods;
         private BarButtonItem ButtonXboxXNotifyMessage;
-        private BarButtonItem ButtonExit;
         private BarButtonItem ButtonPS3HardReboot;
         private BarStaticItem LabelHeaderStatus;
         private BarStaticItem barStaticItem1;

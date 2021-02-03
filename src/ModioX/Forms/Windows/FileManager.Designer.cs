@@ -1,6 +1,6 @@
 ﻿namespace ModioX.Forms.Windows
 {
-    partial class FileManagerWindow
+    partial class FileManager
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileManagerWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileManager));
             this.GridLocalFiles = new DevExpress.XtraGrid.GridControl();
             this.GridViewLocalFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColumnLocalType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -674,7 +674,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "File Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FileExplorer_FormClosing);
-            this.Load += new System.EventHandler(this.FileManagerWindow_Load);
+            this.Load += new System.EventHandler(this.FileManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridLocalFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewLocalFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridConsoleFiles)).EndInit();

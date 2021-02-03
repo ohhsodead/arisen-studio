@@ -11,6 +11,7 @@ using System.IO;
 using System.Windows.Forms;
 using Humanizer;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
+using System.Threading.Tasks;
 
 namespace ModioX.Forms.Tools.PS3_Tools
 {
@@ -167,7 +168,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
         {
             var updateUrl = PackageFilesPath + "/" + GridViewPackageFiles.GetRowCellValue(GridViewPackageFiles.FocusedRowHandle, GridViewPackageFiles.Columns[0]).ToString();
             var fileName = Path.GetFileName(updateUrl);
-            var folderPath = DialogExtensions.ShowFolderBrowseDialog(this, "Select the folder where you want to download the package file.");
+            var folderPath = DialogExtensions.ShowFolderBrowseDialog(this, "Choose a folder to download the package file.");
 
             if (!string.IsNullOrWhiteSpace(folderPath))
             {
