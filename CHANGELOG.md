@@ -6,20 +6,21 @@ All notable changes to this project will be documented in this file.
 - Optimized parts of the application
 - Moved Log files to Documents\ModioX\Logs
 - Upgraded application to .NET Framework 4.8
-- Upgraded application to DevExpress design
+- Upgraded application to DevExpress Forms
 - Removed redundant and unused dependencies
 - Added support for Xbox RGH/JTAG consoles
 - Added images for all PS3 and Xbox models
 - Added ability to create and add mods to your own lists
 - Added Package Manager for PS3 to Tools menu
+- Added Mount/Unmount Games to Tools menu
 - Added File Manager for Xbox to Tools menu
 - Added Launch File Editor for Xbox to Tools menu
 - Added XBDM Controls for Xbox to Tools menu
 - Added Skin Manager to Options menu
+- Added Settings to Options menu
 - Added View Log button to Help menu
 - Added Open Log Folder button to Help menu
 - Added What's New button to Help menu
-- Added Exit button to Help menu
 - Fixed some UI bugs and added all missing icons
 - Fixed an issue with creating folders when installing mods
 - Fixed an issue with deleting folders when uninstalling mods
