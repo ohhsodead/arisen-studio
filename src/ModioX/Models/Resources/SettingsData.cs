@@ -71,20 +71,20 @@ namespace ModioX.Models.Resources
         /// <param name="installFilePath"> </param>
         public void CreateBackupFile(ModItem modItem, string fileName, string installFilePath)
         {
-            var fileBackupFolder = GetGameBackupFolder(modItem);
+            string gameBackupFolder = GetGameBackupFolder(modItem);
 
-            Directory.CreateDirectory(fileBackupFolder);
+            Directory.CreateDirectory(gameBackupFolder);
 
-            var backupFile = new BackupFile
+            BackupFile backupFile = new BackupFile
             {
                 CategoryId = modItem.GameId,
                 FileName = fileName,
-                LocalPath = Path.Combine(fileBackupFolder, fileName),
-                InstallPath = installFilePath
+                LocalPath = Path.Combine(gameBackupFolder, fileName),
+                InstallPath = installFilePath,
+                CreatedDate = DateTime.Now
             };
 
             FtpExtensions.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
-
             BackupFiles.Add(backupFile);
         }
 
@@ -219,7 +219,7 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        /// Creates and returns the games backup folder for the specified <see
+        /// Create and return the game backup files folder for the specified <see
         /// cref="ModsData.ModItem" />.
         /// </summary>
         /// <param name="modItem"> </param>
@@ -379,7 +379,7 @@ namespace ModioX.Models.Resources
         /// <param name="downloadFiles"> </param>
         public void UpdateInstalledPackageFile(int id, string name, string version, DownloadFiles downloadFiles)
         {
-            InstalledPackageFiles.Remove(InstalledPackageFiles.First(x => x.Id.Equals(id)));
+            InstalledPackageFiles.Remove(InstalledPackageFiles.FirstOrDefault(x => x.Id.Equals(id)));
 
             InstalledPackageFiles.Add(new PackageFile
             {

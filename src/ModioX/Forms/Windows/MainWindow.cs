@@ -102,13 +102,11 @@ namespace ModioX.Forms.Windows
         {
             get
             {
-                var ftpCredentials = ConsoleProfile.UseDefaultCredentials
-                    ? new NetworkCredential("anonymous", "anonymous")
-                    : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password);
-                var ftpConnection = new FtpConnection(ConsoleProfile.Address, ConsoleProfile.Port, ftpCredentials.UserName, ftpCredentials.Password);
-                ftpConnection.Open();
-                ftpConnection.Login(ftpCredentials.UserName, ftpCredentials.Password);
-                return ftpConnection;
+                NetworkCredential credential = ConsoleProfile.UseDefaultCredentials ? new NetworkCredential("anonymous", "anonymous") : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password);
+                FtpConnection connection = new FtpConnection(ConsoleProfile.Address, ConsoleProfile.Port, credential.UserName, credential.Password);
+                connection.Open();
+                connection.Login(credential.UserName, credential.Password);
+                return connection;
             }
         }
 
@@ -124,11 +122,11 @@ namespace ModioX.Forms.Windows
         private async void MainWindow_Load(object sender, EventArgs e)
         {
             UserLookAndFeel.Default.StyleChanged += MainWindow_StyleChanged;
+            WindowsFormsSettings.AllowHoverAnimation = DevExpress.Utils.DefaultBoolean.True;
 
             Text = $@"ModioX - {UpdateExtensions.CurrentVersionName}";
 
             LoadSettings();
-            EnableConsoleActions();
 
             if (await HttpExtensions.CheckForInternetAsync().ConfigureAwait(true))
             {
@@ -246,6 +244,7 @@ namespace ModioX.Forms.Windows
 
             SetStatus($"Initialized ModioX ({UpdateExtensions.CurrentVersionName}) - Ready to connect to console...");
 
+            EnableConsoleActions();
             UpdateControlColors();
             Focus();
         }
@@ -327,109 +326,160 @@ namespace ModioX.Forms.Windows
         private void ButtonPS3ShowSystemInformation_ItemClick(object sender, ItemClickEventArgs e)
         {
             WebManExtensions.NotifySystemInformation(ConsoleProfile.Address);
+            SetStatus($"WebMAN Controls - Successfully Notified: System Information");
         }
 
         private void ButtonPS3ShowTemperatures_ItemClick(object sender, ItemClickEventArgs e)
         {
             WebManExtensions.NotifyCPURSXTemperature(ConsoleProfile.Address);
+            SetStatus($"WebMAN Controls - Successfully Notified: System Temperatures");
         }
 
         private void ButtonPS3ShowMinimumVersion_ItemClick(object sender, ItemClickEventArgs e)
         {
             WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
+            SetStatus($"WebMAN Controls - Successfully Notified: System Minimum Version");
         }
 
         private void ButtonPS3MountBD_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SetStatus("Fetching the games list...");
+            SetStatus("Fetching games list...");
 
             var games = FtpExtensions.GetGamesBD();
 
             if (games.Count <= 0)
             {
+                SetStatus($"WebMAN Controls - No Games Found.");
                 XtraMessageBox.Show("No games can be found on your console. If you have them on external devices then enable this option in the settings.", "No Games Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            var selectedGame = DialogExtensions.ShowListInputDialog(this, "Games List (BD)", FtpExtensions.GetGamesBD());
-            XtraMessageBox.Show(selectedGame);
+            var selectedGame = DialogExtensions.ShowListInputDialog(this, "Games List (BD)", games);
+
+            if (selectedGame.IsNullOrWhiteSpace())
+            {
+                SetStatus($"WebMAN Controls - Mount Game Cancelled.");
+                return;
+            }
+            else
+            {
+                SetStatus($"WebMAN Controls - Mounting Game: {selectedGame}");
+                WebManExtensions.MountGameFromPath(ConsoleProfile.Address, selectedGame);
+                SetStatus($"WebMAN Controls - Successfully Mounted Game: {selectedGame}");
+            }
         }
 
         private void ButtonPS3MountISO_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SetStatus("Fetching the games list...");
+            SetStatus("Fetching games list...");
 
             var games = FtpExtensions.GetGamesISO();
 
             if (games.Count <= 0)
             {
+                SetStatus($"WebMAN Controls - No Games Found.");
                 XtraMessageBox.Show("No games can be found on your console. If you have them on external devices then enable this option in the settings.", "No Games Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            var selectedGame = DialogExtensions.ShowListInputDialog(this, "Games List (ISO)", FtpExtensions.GetGamesBD());
-            XtraMessageBox.Show(selectedGame);
+            var selectedGame = DialogExtensions.ShowListInputDialog(this, "Games List (ISO)", games);
+
+            if (selectedGame.IsNullOrWhiteSpace())
+            {
+                SetStatus($"WebMAN Controls - Mount Game Cancelled.");
+                return;
+            }
+            else
+            {
+                SetStatus($"WebMAN Controls - Mounting Game: {selectedGame}");
+                WebManExtensions.MountGameFromPath(ConsoleProfile.Address, selectedGame);
+                SetStatus($"WebMAN Controls - Successfully Mounted Game: {selectedGame}");
+            }
         }
 
         private void ButtonPS3MountPSN_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SetStatus("Fetching the games list...");
+            SetStatus("Fetching games list...");
 
             var games = FtpExtensions.GetGamesPSN();
 
             if (games.Count <= 0)
             {
+                SetStatus($"WebMAN Controls - No Games Found.");
                 XtraMessageBox.Show("No games can be found on your console. If you have them on external devices then enable this option in the settings.", "No Games Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            var selectedGame = DialogExtensions.ShowListInputDialog(this, "Games List (PSN)", FtpExtensions.GetGamesPSN());
-            XtraMessageBox.Show(selectedGame);
+            var selectedGame = DialogExtensions.ShowListInputDialog(this, "Games List (PSN)", games);
+
+            if (selectedGame.IsNullOrWhiteSpace())
+            {
+                SetStatus($"WebMAN Controls - Mount Game Cancelled.");
+                return;
+            }
+            else
+            {
+                SetStatus($"WebMAN Controls - Mounting Game: {selectedGame}");
+                WebManExtensions.MountGameFromPath(ConsoleProfile.Address, selectedGame);
+                SetStatus($"WebMAN Controls - Successfully Mounted Game: {selectedGame}");
+            }
         }
 
         private void ButtonPS3Unmount_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetStatus($"WebMAN Controls - Unmounting...");
             WebManExtensions.Unmount(ConsoleProfile.Address);
+            SetStatus($"WebMAN Controls - Successfully Unmounted");
+        }
+
+        private void ButtonPS3Shutdown_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus($"WebMAN Controls - Shutting Down Console...");
+            WebManExtensions.Shutdown(ConsoleProfile.Address);
+            DisconnectConsole();
+            SetStatus($"WebMAN Controls - Successfully Shutdown Console.");
+        }
+
+        private void ButtonPS3Restart_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus($"WebMAN Controls - Restarting Console...");
+            WebManExtensions.Restart(ConsoleProfile.Address);
+            DisconnectConsole();
+            SetStatus($"WebMAN Controls - Successfully Restarted Console.");
+        }
+
+        private void ButtonPS3SoftReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus($"WebMAN Controls - Soft Rebooting Console...");
+            WebManExtensions.RebootSoft(ConsoleProfile.Address);
+            DisconnectConsole();
+            SetStatus($"WebMAN Controls - Successfully Soft Rebooted Console.");
+        }
+
+        private void ButtonPS3HardReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus($"WebMAN Controls - Hard Rebooting Console...");
+            WebManExtensions.RebootHard(ConsoleProfile.Address);
+            DisconnectConsole();
+            SetStatus($"WebMAN Controls - Successfully Hard Rebooted Console.");
         }
 
         private void ButtonPS3NotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
         {
             var notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
 
-            if (!string.IsNullOrWhiteSpace(notifyMessage))
+            if (!notifyMessage.IsNullOrWhiteSpace())
             {
                 WebManExtensions.NotifyPopup(ConsoleProfile.Address, notifyMessage);
-                SetStatus($"WebMAN Controls: Message Notified - {notifyMessage}");
+                SetStatus($"WebMAN Controls - Message Notified: {notifyMessage}");
             }
-        }
-
-        private void ButtonPS3Shutdown_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.Shutdown(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void ButtonPS3Restart_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.Restart(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void ButtonPS3SoftReboot_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.RebootSoft(ConsoleProfile.Address);
-            DisconnectConsole();
-        }
-
-        private void ButtonPS3HardReboot_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            WebManExtensions.RebootHard(ConsoleProfile.Address);
-            DisconnectConsole();
         }
 
         private void ButtonPS3VirtualController_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetStatus($"WebMAN Controls - Virtual Controller Opening in Web Browser");
             Process.Start("http://pad.aldostools.org/pad.html");
+            SetStatus($"WebMAN Controls - Virtual Controller Opened in Web Browser");
         }
 
         // XBOX
@@ -470,11 +520,13 @@ namespace ModioX.Forms.Windows
 
             if (filePath.IsNullOrWhiteSpace())
             {
+                SetStatus($"No file path selected. Cancelled.");
                 XtraMessageBox.Show("You must choose a location to save the screenshot file.", "No File Path", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
                 XboxConsole.ScreenShot(filePath);
+                SetStatus($"Screenshot file saved to path: {filePath}");
                 XtraMessageBox.Show($"Screenshot file saved to path: {filePath}", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -1043,10 +1095,10 @@ namespace ModioX.Forms.Windows
         #region Load & Display Mods by Category Id with the user's filters
 
         /// <summary>
-        /// Loads all the mods for the specified gameId, matching with filters: name, firmware, type
+        /// Load all mods for the specified categoryId, matching with filters: name, firmware, type
         /// and region
         /// </summary>
-        /// <param name="categoryId"> Filter by GameId </param>
+        /// <param name="categoryId"> Filter by CategoryId </param>
         /// <param name="name"> Filter by Name </param>
         /// <param name="firmware"> Filter by Firmware </param>
         /// <param name="type"> Filter by Type </param>
@@ -1056,7 +1108,9 @@ namespace ModioX.Forms.Windows
         {
             LoadInstalledGameMods();
 
-            GroupModsLibrary.Text = $"MODS LIBRARY - {(categoryId.Equals("fvrt") || isCustomList ? categoryId : Database.CategoriesData.GetCategoryById(categoryId).Title)}";
+            var categoryTitle = categoryId.Equals("fvrt") || isCustomList ? categoryId : Database.CategoriesData.GetCategoryById(categoryId).Title;
+
+            GroupModsLibrary.Text = $"MODS LIBRARY - {(categoryId.Equals("fvrt") || isCustomList ? categoryId : categoryTitle)}";
 
             GridControlMods.DataSource = null;
 
@@ -1725,14 +1779,14 @@ namespace ModioX.Forms.Windows
                                             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully created backup file.");
 
                                             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                            FtpExtensions.UploadFile(localFilePath, installPath);
+                                            FtpExtensions.UploadFilePS3(localFilePath, installPath);
                                             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
                                             indexFiles++;
                                         }
                                         else
                                         {
                                             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                            FtpExtensions.UploadFile(localFilePath, installPath);
+                                            FtpExtensions.UploadFilePS3(localFilePath, installPath);
                                             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
 
                                             indexFiles++;
@@ -1742,7 +1796,7 @@ namespace ModioX.Forms.Windows
                                     else
                                     {
                                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                        FtpExtensions.UploadFile(localFilePath, installPath);
+                                        FtpExtensions.UploadFilePS3(localFilePath, installPath);
                                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
 
                                         indexFiles++;
@@ -1754,7 +1808,7 @@ namespace ModioX.Forms.Windows
                                     if (!string.IsNullOrEmpty(usbDevice))
                                     {
                                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                        FtpExtensions.UploadFile(localFilePath, installPath);
+                                        FtpExtensions.UploadFilePS3(localFilePath, installPath);
                                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
 
                                         indexFiles++;
@@ -1764,18 +1818,17 @@ namespace ModioX.Forms.Windows
                                 else
                                 {
                                     SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                    FtpExtensions.UploadFile(localFilePath, installPath);
+                                    FtpExtensions.UploadFilePS3(localFilePath, installPath);
                                     SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
 
                                     indexFiles++;
                                 }
                             }
+                        }
 
-                            if (category.CategoryType == CategoryType.Homebrew)
-                            {
-                                Settings.UpdateInstalledPackageFile(modItem.Id, installFileName, modItem.Version, downloadFiles);
-                                SaveSettings();
-                            }
+                        if (category.CategoryType == CategoryType.Homebrew)
+                        {
+                            Settings.UpdateInstalledPackageFile(modItem.Id, installFilePath, modItem.Version, downloadFiles);
                         }
                     }
 
@@ -1783,8 +1836,6 @@ namespace ModioX.Forms.Windows
                     if (category.CategoryType == CategoryType.Game && !modItem.IsGameSave)
                     {
                         Settings.UpdateInstalledGameMod(ConsoleProfile.TypePrefix, category.Id, modItem.Id, gameRegion, indexFiles - 1, DateTime.Now, downloadFiles);
-                        SaveSettings();
-                        LoadInstalledGameMods();
                     }
 
                     if (IsWebManInstalled)
@@ -1794,7 +1845,7 @@ namespace ModioX.Forms.Windows
 
                     // Log status
                     SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed {indexFiles - 1} files.");
-                    XtraMessageBox.Show($"Successfully installed {modItem.Name} ({indexFiles - 1} files){(category.CategoryType == CategoryType.Game ? $" for {categoryTitle}." : ".")}{(category.CategoryType == CategoryType.Game ? "\nReady to start game." : string.Empty)}", "Success");
+                    XtraMessageBox.Show($"Successfully installed {modItem.Name} ({indexFiles - 1} files){(category.CategoryType == CategoryType.Game ? $" for {categoryTitle}" : "")}{(category.CategoryType == CategoryType.Game ? "\nReady to start game." : string.Empty)}", "Success");
                 }
                 catch (Exception ex)
                 {
@@ -1865,7 +1916,7 @@ namespace ModioX.Forms.Windows
                             if (string.Equals(installFileName, Path.GetFileName(localFilePath), StringComparison.OrdinalIgnoreCase))
                             {
                                 SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                FtpExtensions.UploadFile(localFilePath, installFilePath);
+                                FtpExtensions.UploadFileXBOX(localFilePath, installFilePath);
                                 SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
 
                                 indexFiles++;
@@ -2076,7 +2127,7 @@ namespace ModioX.Forms.Windows
                                     {
                                         // Install the backup file to the original game file path
                                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing backup file: {Path.GetFileName(installPath)} ({indexFiles}/{totalFiles}) to {installFilePathWithoutFileName})");
-                                        FtpExtensions.UploadFile(backupFile.LocalPath, installPath);
+                                        FtpExtensions.UploadFilePS3(backupFile.LocalPath, installPath);
                                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed backup file.");
                                         indexFiles++;
                                     }
@@ -2300,8 +2351,8 @@ namespace ModioX.Forms.Windows
         private void EnableConsoleActions()
         {
             // PS3 Features
-            ButtonGameBackupFiles.Visibility = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3 || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
-            ButtonGameBackupFiles.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3;
+            ButtonPS3GameBackupFiles.Visibility = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3 || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonPS3GameBackupFiles.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3;
 
             ButtonPS3GameUpdateFinder.Visibility = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3 || Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? BarItemVisibility.Always : BarItemVisibility.Never;
             ButtonPS3GameUpdateFinder.Enabled = IsConsoleConnected && ConsoleType == ConsoleTypePrefix.PS3;

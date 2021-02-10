@@ -77,7 +77,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                         update.Sha1sum,
                         gameTitle,
                         "v" + update.Version.RemoveFirstInstanceOfString("0"),
-                        MainWindow.Settings.ShowFileSizeInBytes ? update.Size.ToString() + " bytes" : long.Parse(update.Size).FormatBytes(),
+                        MainWindow.Settings.ShowFileSizeInBytes ? update.Size + " bytes" : long.Parse(update.Size).FormatBytes(),
                         "v" + update.Ps3_system_ver.RemoveFirstInstanceOfString("0").Replace("000", "00"));
                 }
 
@@ -124,7 +124,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 HttpExtensions.DownloadFile(updateUrl, filePath);
 
                 UpdateStatus("Installing file: " + fileName);
-                FtpExtensions.UploadFile(filePath, "/dev_hdd0/packages/" + fileName);
+                FtpExtensions.UploadFilePS3(filePath, "/dev_hdd0/packages/" + fileName);
                 UpdateStatus("Successfully installed package file to your Packages folder.");
                 XtraMessageBox.Show("Successfully installed package file to your Packages folder.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

@@ -18,14 +18,30 @@ namespace ModioX.Extensions
         /// </summary>
         /// <param name="localFile"> Path of the local file </param>
         /// <param name="consoleFile"> Path of the uploading file directory </param>
-        internal static void UploadFile(string localFile, string consoleFile)
+        internal static void UploadFileXBOX(string localFile, string consoleFile)
         {
-            var ftpConnection = MainWindow.FtpConnection;
+            FtpConnection ftpConnection = MainWindow.FtpConnection;
 
             var parentDirectory = Path.GetDirectoryName(consoleFile).Replace(@"\", "/");
 
             ftpConnection.SetCurrentDirectory(parentDirectory);
             ftpConnection.PutFile(localFile, consoleFile);
+        }
+
+        internal static void UploadFilePS3(string localFile, string consoleFile)
+        {
+            FtpConnection ftpConnection = MainWindow.FtpConnection;
+
+            string path = consoleFile.Contains("/") ? (consoleFile.Substring(0, consoleFile.LastIndexOf('/')) + "/") : "dev_hdd0/";
+            string remoteFile = consoleFile.Contains("/") ? consoleFile.Substring(consoleFile.LastIndexOf('/')).Replace("/", "").Replace("//", "") : consoleFile;
+
+            if (!ftpConnection.DirectoryExists(path))
+            {
+                CreateDirectory(path);
+            }
+
+            ftpConnection.SetCurrentDirectory(path);
+            ftpConnection.PutFile(localFile, remoteFile);
         }
 
         /// <summary>
@@ -369,7 +385,7 @@ namespace ModioX.Extensions
             games.AddRange(GetFolderNames("/dev_hdd0/GAMES/", true));
             games.AddRange(GetFolderNames("/dev_hdd0/GAMEZ/", true));
 
-            // Games on all USB Devices
+            // Games on all external devices
             if (MainWindow.Settings.ShowGamesFromExternalDevices)
             {
                 foreach (var usbPath in UsbPaths)
@@ -394,7 +410,7 @@ namespace ModioX.Extensions
             games.AddRange(GetFileNames("/dev_hdd0/PS3ISO/", true, true));
             games.AddRange(GetFileNames("/dev_hdd0/PS3ISO/", true, true));
 
-            // Games on all USB Devices
+            // Games on all external devices
             if (MainWindow.Settings.ShowGamesFromExternalDevices)
             {
                 foreach (var usbPath in UsbPaths)
@@ -419,7 +435,7 @@ namespace ModioX.Extensions
             gamesPath.AddRange(GetFolderNames("/dev_hdd0/GAMEI/", true));
             gamesPath.AddRange(GetFolderNames("/dev_hdd0/GAMEI/", true));
 
-            // Games on all USB Devices
+            // Games on all external devices
             if (MainWindow.Settings.ShowGamesFromExternalDevices)
             {
                 foreach (var usbPath in UsbPaths)

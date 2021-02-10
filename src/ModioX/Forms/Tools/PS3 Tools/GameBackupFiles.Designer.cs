@@ -8,7 +8,7 @@ using DevExpress.XtraWaitForm;
 
 namespace ModioX.Forms.Tools.PS3_Tools
 {
-    partial class BackupFiles
+    partial class GameBackupFiles
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupFiles));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameBackupFiles));
             this.GridBackupFiles = new DevExpress.XtraGrid.GridControl();
             this.GridViewBackupFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -457,7 +457,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Backup Files";
-            this.Load += new System.EventHandler(this.BackupFiles_Load);
+            this.Load += new System.EventHandler(this.GameBackupFiles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridBackupFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewBackupFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupBackupFiles)).EndInit();

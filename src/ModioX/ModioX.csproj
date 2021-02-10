@@ -136,11 +136,11 @@
     <Compile Include="Forms\Windows\FileManagerWindow.Designer.cs">
       <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\PS3 Tools\BackupFiles.cs">
+    <Compile Include="Forms\Tools\PS3 Tools\GameBackupFiles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\PS3 Tools\BackupFiles.Designer.cs">
-      <DependentUpon>BackupFiles.cs</DependentUpon>
+    <Compile Include="Forms\Tools\PS3 Tools\GameBackupFiles.Designer.cs">
+      <DependentUpon>GameBackupFiles.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\PS3 Tools\GameUpdatesFinder.cs">
       <SubType>Form</SubType>
@@ -173,13 +173,13 @@
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Io\Archives.cs" />
+    <Compile Include="Io\KnownFolders.cs" />
     <Compile Include="Io\UserFolders.cs" />
     <Compile Include="Models\Game Updates\GameUpdates.cs" />
     <Compile Include="Net\FtpConnection.cs" />
     <Compile Include="Extensions\FtpExtensions.cs" />
     <Compile Include="Extensions\ImageExtensions.cs" />
     <Compile Include="Extensions\HttpExtensions.cs" />
-    <Compile Include="Io\KnownFolders.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\UpdateExtensions.cs" />
     <Compile Include="Forms\Dialogs\LoginDialog.cs">
@@ -288,8 +288,8 @@
     <EmbeddedResource Include="Forms\Windows\FileManagerWindow.resx">
       <DependentUpon>FileManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\PS3 Tools\BackupFiles.resx">
-      <DependentUpon>BackupFiles.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Tools\PS3 Tools\GameBackupFiles.resx">
+      <DependentUpon>GameBackupFiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\PS3 Tools\GameUpdatesFinder.resx">
       <DependentUpon>GameUpdatesFinder.cs</DependentUpon>

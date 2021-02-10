@@ -22,14 +22,14 @@ namespace ModioX.Forms.Dialogs
 
             foreach (var item in Items)
             {
-                ListBoxItems.Items.Add(Text = item);
+                ListBoxItems.Items.Add(item);
             }
 
             // Increase form size to fit listview contents
             if (Items.Count > 0)
             {
                 Width = ListBoxItems.Width + Items.Max(w => w.Length) + 70;
-                Refresh();
+                //Refresh();
             }
 
             ListBoxItems.SelectedIndexChanged += ListBoxItems_SelectedIndexChanged;

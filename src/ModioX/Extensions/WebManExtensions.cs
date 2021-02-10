@@ -102,11 +102,11 @@ namespace ModioX.Extensions
         #region Digital Games
 
         /// <summary>
-        /// Unmount current game
+        /// Mount a game from path
         /// </summary>
         /// <param name="ip"> ps3 local ip </param>
         /// <returns> </returns>
-        public static string MountGamePathOrISO(string ip, string path)
+        public static string MountGameFromPath(string ip, string path)
         {
             using var client = new WebClient();
             return client.DownloadString($"http://{ip}/mount.ps3/" + path);

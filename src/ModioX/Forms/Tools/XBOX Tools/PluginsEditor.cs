@@ -217,11 +217,10 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             if (File.Exists(LocalLaunchBackupFilePath))
             {
-                if (XtraMessageBox.Show("Do you really want to restore to the default file, all of the edited values will be lost.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                if (XtraMessageBox.Show("Do you really want to restore to the default file, all edited values will be lost.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
-                    new FileIniDataParser().WriteFile(LocalLaunchBackupFilePath, LaunchFileData);
                     File.WriteAllBytes("launch.ini", Properties.Resources.launch);
-                    FtpExtensions.UploadFile("launch.ini", ConsoleLaunchFilePath);
+                    FtpExtensions.UploadFileXBOX("launch.ini", ConsoleLaunchFilePath);
                     LoadLaunchFileData();
                 }
             }
@@ -235,16 +234,15 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             if (File.Exists(LocalLaunchBackupFilePath))
             {
-                if (XtraMessageBox.Show("Do you really want to restore the backup file, all of the edited values will be lost.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                if (XtraMessageBox.Show("Do you really want to restore the backup file, all edited values will be lost.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
-                    new FileIniDataParser().WriteFile(LocalLaunchBackupFilePath, LaunchFileData);
-                    FtpExtensions.UploadFile(LocalLaunchBackupFilePath, ConsoleLaunchFilePath);
+                    FtpExtensions.UploadFileXBOX(LocalLaunchBackupFilePath, ConsoleLaunchFilePath);
                     LoadLaunchFileData();
                 }
             }
             else
             {
-                XtraMessageBox.Show("You must first create a backup file to restore.", "No File Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                XtraMessageBox.Show("You must first create a backup file to restore.", "No Backup File", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -253,12 +251,13 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             try
             {
                 new FileIniDataParser().WriteFile(LocalLaunchFilePath, LaunchFileData);
-                FtpExtensions.UploadFile(LocalLaunchFilePath, ConsoleLaunchFilePath);
-                XtraMessageBox.Show("Launch.ini file has been saved and uploaded to your console.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FtpExtensions.UploadFileXBOX(LocalLaunchFilePath, ConsoleLaunchFilePath);
+                XtraMessageBox.Show("launch.ini file has been edited and uploaded to your console.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show("There was a problem saving or uploading the launch.ini file to your console.\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Program.Log.Error(ex, $"Unable to save or upload launch.ini file. Error: {ex.Message}");
+                XtraMessageBox.Show($"There was a problem saving or uploading the launch.ini file.\n\nError: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

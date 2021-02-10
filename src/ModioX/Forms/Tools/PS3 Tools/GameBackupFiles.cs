@@ -11,14 +11,14 @@ using ModioX.Models.Resources;
 
 namespace ModioX.Forms.Tools.PS3_Tools
 {
-    public partial class BackupFiles : XtraForm
+    public partial class GameBackupFiles : XtraForm
     {
-        public BackupFiles()
+        public GameBackupFiles()
         {
             InitializeComponent();
         }
 
-        private void BackupFiles_Load(object sender, EventArgs e)
+        private void GameBackupFiles_Load(object sender, EventArgs e)
         {
             LoadBackupFiles();
         }
@@ -174,7 +174,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                     return;
                 }
 
-                FtpExtensions.UploadFile(backupFile.LocalPath, backupFile.InstallPath);
+                FtpExtensions.UploadFilePS3(backupFile.LocalPath, backupFile.InstallPath);
                 XtraMessageBox.Show(
                     $"Successfully restored file: {backupFile.FileName} to path: {backupFile.InstallPath}",
                     "Success");

@@ -362,7 +362,15 @@ namespace ModioX.Forms.Windows
                     if (File.Exists(localPath))
                     {
                         SetStatus($"Uploading file to {consolePath}...");
-                        FtpExtensions.UploadFile(localPath, consolePath);
+
+                        if (ConsoleType == ConsoleTypePrefix.PS3) 
+                        { FtpExtensions.UploadFilePS3(localPath, consolePath); 
+                        }
+                        else
+                        {
+                            FtpExtensions.UploadFileXBOX(localPath, consolePath);
+                        }
+
                         SetStatus($"Successfully uploaded file: {Path.GetFileName(localPath)}");
                         LoadConsoleDirectory(DirectoryPathConsole);
                     }

@@ -124,6 +124,7 @@ namespace ModioX.Forms.Dialogs
             this.ButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonOK.Location = new System.Drawing.Point(332, 180);
             this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonOK.Size = new System.Drawing.Size(80, 24);
             this.ButtonOK.TabIndex = 6;
             this.ButtonOK.Text = "OK";
@@ -135,6 +136,7 @@ namespace ModioX.Forms.Dialogs
             this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.ButtonCancel.Location = new System.Drawing.Point(422, 180);
             this.ButtonCancel.Name = "ButtonCancel";
+            this.ButtonCancel.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCancel.Size = new System.Drawing.Size(80, 24);
             this.ButtonCancel.TabIndex = 7;
             this.ButtonCancel.Text = "Cancel";

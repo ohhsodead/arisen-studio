@@ -105,7 +105,7 @@ namespace ModioX.Extensions
 
         public static void ShowGameBackupFiles(Form owner)
         {
-            using var backupFiles = new BackupFiles();
+            using var backupFiles = new GameBackupFiles();
             backupFiles.ShowDialog(owner);
         }
 

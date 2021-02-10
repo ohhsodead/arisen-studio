@@ -71,7 +71,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
             foreach (var package in PackageFiles)
             {
-                packages.Rows.Add(package.Name, MainWindow.Settings.ShowFileSizeInBytes ? package.Size.Bytes().Humanize() : package.Size.Bytes().Humanize("MB"));
+                packages.Rows.Add(package.Name, MainWindow.Settings.ShowFileSizeInBytes ? package.Size + " bytes" : package.Size.FormatBytes());
             }
 
             GridPackageFiles.DataSource = packages;
@@ -130,7 +130,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 }
 
                 UpdateStatus("Installing package file: " + fileName);
-                FtpExtensions.UploadFile(localFilePath, installFilePath);
+                FtpExtensions.UploadFilePS3(localFilePath, installFilePath);
                 UpdateStatus("Successfully installed package file.");
                 LoadPackages();
             }

@@ -6,7 +6,7 @@ namespace ModioX.Io
     public static class Archives
     {
         /// <summary>
-        /// Copy files to the the archive ZIP file
+        /// Copy files to an archive Zip file.
         /// </summary>
         /// <param name="zipPath"> </param>
         /// <param name="files"> </param>
