@@ -74,14 +74,14 @@ namespace ModioX.Forms.Windows
         public static ConsoleProfile ConsoleProfile { get; private set; }
 
         /// <summary>
-        /// Contains the selected console type.
+        /// Contains the selected console type prefix.
         /// </summary>
         public static ConsoleTypePrefix ConsoleType { get; private set; } = ConsoleTypePrefix.PS3;
 
         /// <summary>
         /// Contains the Xbox console information.
         /// </summary>
-        public static IXboxConsole XboxConsole { get; set; }
+        public static IXboxConsole XboxConsole { get; private set; }
 
         /// <summary>
         /// Determines whether webMAN is installed on the console.
@@ -198,11 +198,11 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                Database = await DropboxData.InitializeAsync();
+                Database = await DropboxData.InitializeAsync().ConfigureAwait(true);
             }
             catch (Exception ex)
             {
-                Program.Log.Error(ex, $"Unable to load database. Error: {ex.Message}");
+                Program.Log.Error(ex, $"Unable to load the database. Error: {ex.Message}");
                 Application.Exit();
             }
         }
@@ -743,9 +743,9 @@ namespace ModioX.Forms.Windows
                 EnableConsoleActions();
 
                 // Only reload categories if the console type hasn't been changed
-                if (ConsoleType != Settings.LoadConsoleMods) 
+                if (ConsoleType != Settings.LoadConsoleMods)
                 {
-                    LoadCategories(); 
+                    LoadCategories();
                 }
             }
             catch (Exception ex)
@@ -1779,14 +1779,14 @@ namespace ModioX.Forms.Windows
                                             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully created backup file.");
 
                                             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                            FtpExtensions.UploadFilePS3(localFilePath, installPath);
+                                            FtpExtensions.UploadFile(localFilePath, installPath);
                                             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
                                             indexFiles++;
                                         }
                                         else
                                         {
                                             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                            FtpExtensions.UploadFilePS3(localFilePath, installPath);
+                                            FtpExtensions.UploadFile(localFilePath, installPath);
                                             SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
 
                                             indexFiles++;
@@ -1796,7 +1796,7 @@ namespace ModioX.Forms.Windows
                                     else
                                     {
                                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                        FtpExtensions.UploadFilePS3(localFilePath, installPath);
+                                        FtpExtensions.UploadFile(localFilePath, installPath);
                                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
 
                                         indexFiles++;
@@ -1808,7 +1808,7 @@ namespace ModioX.Forms.Windows
                                     if (!string.IsNullOrEmpty(usbDevice))
                                     {
                                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                        FtpExtensions.UploadFilePS3(localFilePath, installPath);
+                                        FtpExtensions.UploadFile(localFilePath, installPath);
                                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
 
                                         indexFiles++;
@@ -1818,7 +1818,7 @@ namespace ModioX.Forms.Windows
                                 else
                                 {
                                     SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                    FtpExtensions.UploadFilePS3(localFilePath, installPath);
+                                    FtpExtensions.UploadFile(localFilePath, installPath);
                                     SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
 
                                     indexFiles++;
@@ -1916,7 +1916,7 @@ namespace ModioX.Forms.Windows
                             if (string.Equals(installFileName, Path.GetFileName(localFilePath), StringComparison.OrdinalIgnoreCase))
                             {
                                 SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentDirectoryPath}");
-                                FtpExtensions.UploadFileXBOX(localFilePath, installFilePath);
+                                XboxConsole.SendFile(localFilePath, installFilePath);
                                 SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed file.");
 
                                 indexFiles++;
@@ -2127,7 +2127,7 @@ namespace ModioX.Forms.Windows
                                     {
                                         // Install the backup file to the original game file path
                                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Installing backup file: {Path.GetFileName(installPath)} ({indexFiles}/{totalFiles}) to {installFilePathWithoutFileName})");
-                                        FtpExtensions.UploadFilePS3(backupFile.LocalPath, installPath);
+                                        FtpExtensions.UploadFile(backupFile.LocalPath, installPath);
                                         SetStatus($"{categoryTitle}: {modItem.Name} v{modItem.Version} ({modItem.Type}) - Successfully installed backup file.");
                                         indexFiles++;
                                     }

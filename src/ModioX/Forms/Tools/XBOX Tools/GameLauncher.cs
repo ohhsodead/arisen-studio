@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DevExpress.XtraEditors;
-﻿using FluentFTP;
+using FluentFTP;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Net;

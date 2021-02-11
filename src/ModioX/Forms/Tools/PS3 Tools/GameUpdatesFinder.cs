@@ -73,7 +73,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 foreach (var update in gameUpdates.Tag.Package)
                 {
                     gameUpdateFiles.Rows.Add(
-                        update.Url, 
+                        update.Url,
                         update.Sha1sum,
                         gameTitle,
                         "v" + update.Version.RemoveFirstInstanceOfString("0"),
@@ -124,7 +124,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 HttpExtensions.DownloadFile(updateUrl, filePath);
 
                 UpdateStatus("Installing file: " + fileName);
-                FtpExtensions.UploadFilePS3(filePath, "/dev_hdd0/packages/" + fileName);
+                FtpExtensions.UploadFile(filePath, "/dev_hdd0/packages/" + fileName);
                 UpdateStatus("Successfully installed package file to your Packages folder.");
                 XtraMessageBox.Show("Successfully installed package file to your Packages folder.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

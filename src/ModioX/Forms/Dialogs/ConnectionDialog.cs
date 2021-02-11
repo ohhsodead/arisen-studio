@@ -116,7 +116,7 @@ namespace ModioX.Forms.Dialogs
 
             if (ConsoleProfile != null)
             {
-                ButtonConnect.Focus(); 
+                ButtonConnect.Focus();
             }
         }
 

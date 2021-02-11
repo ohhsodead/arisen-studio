@@ -19,6 +19,7 @@ using ModioX.Io;
 using ModioX.Models.Resources;
 using ModioX.Net;
 using ModioX.Properties;
+using XDevkit;
 using FtpException = FluentFTP.FtpException;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 using StringExtensions = ModioX.Extensions.StringExtensions;
@@ -46,6 +47,11 @@ namespace ModioX.Forms.Windows
         /// Get the FtpClient for getting directory listings and some other commands.
         /// </summary>
         private static FtpClient FtpClient { get; } = MainWindow.FtpClient;
+
+        /// <summary>
+        /// Get the xbox console connection.
+        /// </summary>
+        public static IXboxConsole XboxConsole { get; } = MainWindow.XboxConsole;
 
         /// <summary>
         /// Get/set the current local directory path.
@@ -363,12 +369,13 @@ namespace ModioX.Forms.Windows
                     {
                         SetStatus($"Uploading file to {consolePath}...");
 
-                        if (ConsoleType == ConsoleTypePrefix.PS3) 
-                        { FtpExtensions.UploadFilePS3(localPath, consolePath); 
+                        if (ConsoleType == ConsoleTypePrefix.PS3)
+                        {
+                            FtpExtensions.UploadFile(localPath, consolePath);
                         }
                         else
                         {
-                            FtpExtensions.UploadFileXBOX(localPath, consolePath);
+                            XboxConsole.SendFile(localPath, consolePath);
                         }
 
                         SetStatus($"Successfully uploaded file: {Path.GetFileName(localPath)}");
@@ -1084,9 +1091,8 @@ namespace ModioX.Forms.Windows
         private void GridConsoleFiles_DragDrop(object sender, DragEventArgs e)
         {
             GridControl grid = sender as GridControl;
-            DataTable table = grid.DataSource as DataTable;
-            DataRow row = e.Data.GetData(typeof(DataRow)) as DataRow;
-            if (row != null && table != null && row.Table != table)
+
+            if (e.Data.GetData(typeof(DataRow)) is DataRow row && grid.DataSource is DataTable table && row.Table != table)
             {
                 table.ImportRow(row);
             }

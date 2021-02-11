@@ -13,22 +13,7 @@ namespace ModioX.Extensions
 {
     internal static class FtpExtensions
     {
-        /// <summary>
-        /// Upload a local file to the specified location on the console
-        /// </summary>
-        /// <param name="localFile"> Path of the local file </param>
-        /// <param name="consoleFile"> Path of the uploading file directory </param>
-        internal static void UploadFileXBOX(string localFile, string consoleFile)
-        {
-            FtpConnection ftpConnection = MainWindow.FtpConnection;
-
-            var parentDirectory = Path.GetDirectoryName(consoleFile).Replace(@"\", "/");
-
-            ftpConnection.SetCurrentDirectory(parentDirectory);
-            ftpConnection.PutFile(localFile, consoleFile);
-        }
-
-        internal static void UploadFilePS3(string localFile, string consoleFile)
+        internal static void UploadFile(string localFile, string consoleFile)
         {
             FtpConnection ftpConnection = MainWindow.FtpConnection;
 

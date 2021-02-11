@@ -174,7 +174,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                     return;
                 }
 
-                FtpExtensions.UploadFilePS3(backupFile.LocalPath, backupFile.InstallPath);
+                FtpExtensions.UploadFile(backupFile.LocalPath, backupFile.InstallPath);
                 XtraMessageBox.Show(
                     $"Successfully restored file: {backupFile.FileName} to path: {backupFile.InstallPath}",
                     "Success");

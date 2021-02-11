@@ -27,16 +27,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         public static IXboxConsole XboxConsole { get; } = MainWindow.XboxConsole;
 
         /// <summary>
-        /// Get the PS3/XBOX FTP connection.
-        /// </summary>
-        public static FtpConnection FtpConnection { get; } = MainWindow.FtpConnection;
-
-        /// <summary>
-        /// Get the PS3/XBOX FTP client.
-        /// </summary>
-        public static FtpClient FtpClient { get; } = MainWindow.FtpClient;
-
-        /// <summary>
         /// Get the local launch.ini file backup directory.
         /// </summary>
         public static string LocalLaunchBackupFileDirectory { get; } = Path.Combine(UserFolders.AppBackupFilesDirectory, @"Launch\");
@@ -88,8 +78,8 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 Directory.CreateDirectory(LocalLaunchBackupFileDirectory);
                 Directory.CreateDirectory(LocalLaunchFileDirectory);
 
-                FtpExtensions.DownloadFile(LocalLaunchBackupFilePath, ConsoleLaunchFilePath);
-                FtpExtensions.DownloadFile(LocalLaunchFilePath, ConsoleLaunchFilePath);
+                XboxConsole.ReceiveFile(LocalLaunchBackupFilePath, ConsoleLaunchFilePath);
+                XboxConsole.ReceiveFile(LocalLaunchFilePath, ConsoleLaunchFilePath);
 
                 LaunchFileData = new FileIniDataParser().ReadFile(LocalLaunchFilePath);
 
@@ -217,10 +207,10 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             if (File.Exists(LocalLaunchBackupFilePath))
             {
-                if (XtraMessageBox.Show("Do you really want to restore to the default file, all edited values will be lost.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                if (XtraMessageBox.Show("Do you really want to restore to the default file? All edited values will be lost.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     File.WriteAllBytes("launch.ini", Properties.Resources.launch);
-                    FtpExtensions.UploadFileXBOX("launch.ini", ConsoleLaunchFilePath);
+                    XboxConsole.SendFile("launch.ini", ConsoleLaunchFilePath);
                     LoadLaunchFileData();
                 }
             }
@@ -234,9 +224,9 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             if (File.Exists(LocalLaunchBackupFilePath))
             {
-                if (XtraMessageBox.Show("Do you really want to restore the backup file, all edited values will be lost.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                if (XtraMessageBox.Show("Do you really want to restore the backup file? All edited values will be lost.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    FtpExtensions.UploadFileXBOX(LocalLaunchBackupFilePath, ConsoleLaunchFilePath);
+                    XboxConsole.SendFile(LocalLaunchBackupFilePath, ConsoleLaunchFilePath);
                     LoadLaunchFileData();
                 }
             }
@@ -251,7 +241,7 @@ namespace ModioX.Forms.Tools.XBOX_Tools
             try
             {
                 new FileIniDataParser().WriteFile(LocalLaunchFilePath, LaunchFileData);
-                FtpExtensions.UploadFileXBOX(LocalLaunchFilePath, ConsoleLaunchFilePath);
+                XboxConsole.SendFile(LocalLaunchFilePath, ConsoleLaunchFilePath);
                 XtraMessageBox.Show("launch.ini file has been edited and uploaded to your console.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

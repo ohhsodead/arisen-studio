@@ -1989,7 +1989,7 @@ namespace ModioX.Forms.Windows
             this.ButtonUninstallInstalledMods.Name = "ButtonUninstallInstalledMods";
             this.ButtonUninstallInstalledMods.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonUninstallInstalledMods.Size = new System.Drawing.Size(77, 24);
-            this.ButtonUninstallInstalledMods.TabIndex = 14;
+            this.ButtonUninstallInstalledMods.TabIndex = 13;
             this.ButtonUninstallInstalledMods.Text = "Uninstall";
             // 
             // ButtonUninstallAllMods
@@ -1999,7 +1999,7 @@ namespace ModioX.Forms.Windows
             this.ButtonUninstallAllMods.Name = "ButtonUninstallAllMods";
             this.ButtonUninstallAllMods.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonUninstallAllMods.Size = new System.Drawing.Size(93, 24);
-            this.ButtonUninstallAllMods.TabIndex = 13;
+            this.ButtonUninstallAllMods.TabIndex = 14;
             this.ButtonUninstallAllMods.Text = "Uninstall All";
             this.ButtonUninstallAllMods.Click += new System.EventHandler(this.ButtonUninstallAllMods_Click);
             // 

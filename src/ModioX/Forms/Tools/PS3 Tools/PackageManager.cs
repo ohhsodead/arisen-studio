@@ -130,7 +130,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 }
 
                 UpdateStatus("Installing package file: " + fileName);
-                FtpExtensions.UploadFilePS3(localFilePath, installFilePath);
+                FtpExtensions.UploadFile(localFilePath, installFilePath);
                 UpdateStatus("Successfully installed package file.");
                 LoadPackages();
             }
