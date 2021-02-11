@@ -27,8 +27,8 @@ Please give this project a ⭐ if you find it useful.
 
 ## Requirements
 * An internet connection
-* NET Framework 4.8 (Download [here](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer))
-* PlayStation 3 with MFW
+* NET Framework 4.8 (Download the official [here](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer))
+* PlayStation 3 (WebMAN, Multiman or Rebug Toolbox Installed)
 * RGH/Jtag Xbox 360 (DashLaunch Installed & Xbdm.xex as Plugin #1)
 
 ## Installation
