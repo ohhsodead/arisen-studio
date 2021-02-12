@@ -1,0 +1,51 @@
+{
+    "LastUpdated": "2021-01-08T00:13:37.126946+00:00",
+    "Mods": [
+        {
+            "ConsoleType": "XBOX",
+            "GameId": "gta5",
+            "Id": 1,
+            "Name": "Legacy Menu",
+            "Firmware": "-",
+            "Region": "-",
+            "Author": "RevDictator",
+            "SubmittedBy": "ohhsodead",
+            "Version": "1.0.0",
+            "Configuration": "SP/MP",
+            "Type": "XEX",
+            "Description": "Open Menu:\nDPAD Right + X\n\nCredit:\nRC4\nTheUnknownCoder\nDark Voyage",
+            "DownloadFiles": [
+                {
+                    "Name": "Legacy Menu",
+                    "URL": "https://dl.dropbox.com/s/dxernpyno7s5u52/Legacy%20Menu%20Beta%20v1.zip?raw=true",
+                    "InstallPaths": [
+                        "Hdd:\\ModioX\\LegacyMenu.xex"
+                    ]
+                }
+            ]
+        },
+        {
+            "ConsoleType": "XBOX",
+            "GameId": "gta5",
+            "Id": 2,
+            "Name": "Destruction Menu",
+            "Firmware": "-",
+            "Region": "-",
+            "Author": "Unknown",
+            "SubmittedBy": "ohhsodead",
+            "Version": "1.0.0",
+            "Configuration": "SP/MP",
+            "Type": "XEX",
+            "Description": "Open Menu:\nLeft Stick + X",
+            "DownloadFiles": [
+                {
+                    "Name": "Destruction Menu",
+                    "URL": "https://dl.dropbox.com/s/oqbzkpy6u59uofz/Destruction%20Menu%20Beta%20v1.zip?raw=true",
+                    "InstallPaths": [
+                        "Hdd:\\ModioX\\Destruction.xex"
+                    ]
+                }
+            ]
+        }
+    ]
+}
