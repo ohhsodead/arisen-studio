@@ -26,7 +26,7 @@ namespace ModioX.Models.Database
         /// <returns> </returns>
         public List<string> AllModTypesForCategoryId(string categoryId)
         {
-            var modTypes = Mods.Where(x => x.GameId.EqualsIgnoreCase(categoryId)).SelectMany(x => x.ModTypes).Distinct().ToList();
+            List<string> modTypes = Mods.Where(x => x.GameId.EqualsIgnoreCase(categoryId)).SelectMany(x => x.ModTypes).Distinct().ToList();
             modTypes.Sort();
             return modTypes;
         }
@@ -39,7 +39,7 @@ namespace ModioX.Models.Database
         {
             get
             {
-                var firmwares = Mods.SelectMany(x => x.Firmwares).Where(x => !x.EqualsIgnoreCase("-")).Distinct().ToList();
+                List<string> firmwares = Mods.SelectMany(x => x.Firmwares).Where(x => !x.EqualsIgnoreCase("-")).Distinct().ToList();
                 firmwares.Sort();
                 return firmwares.Distinct().ToList();
             }

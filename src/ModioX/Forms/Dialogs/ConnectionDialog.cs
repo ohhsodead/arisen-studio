@@ -46,9 +46,9 @@ namespace ModioX.Forms.Dialogs
             PanelConsoleProfiles.Controls.Clear();
             SelectedConsole = null;
 
-            var consoleIndex = 0;
+            int consoleIndex = 0;
 
-            foreach (var consoleProfile in Settings.ConsoleProfiles)
+            foreach (ConsoleProfile consoleProfile in Settings.ConsoleProfiles)
             {
                 Image consoleImage = consoleImage = Properties.Resources.PlayStation3Fat;
 
@@ -122,7 +122,7 @@ namespace ModioX.Forms.Dialogs
 
         private void ResetConsoleItems()
         {
-            foreach (var ctrl in PanelConsoleProfiles.Controls)
+            foreach (object ctrl in PanelConsoleProfiles.Controls)
             {
                 TileConsoleItem item = ctrl as TileConsoleItem;
                 item.IsSelected = false;
@@ -131,7 +131,7 @@ namespace ModioX.Forms.Dialogs
 
         private void ButtonAddNewConsole_Click(object sender, EventArgs e)
         {
-            var consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
+            ConsoleProfile consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
 
             if (consoleProfile != null)
             {
@@ -160,10 +160,10 @@ namespace ModioX.Forms.Dialogs
 
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
-            var selectedIndex = Settings.ConsoleProfiles.IndexOf(ConsoleProfile);
-            var oldConsoleProfile = Settings.ConsoleProfiles[selectedIndex];
+            int selectedIndex = Settings.ConsoleProfiles.IndexOf(ConsoleProfile);
+            ConsoleProfile oldConsoleProfile = Settings.ConsoleProfiles[selectedIndex];
 
-            var newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
+            ConsoleProfile newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
 
             oldConsoleProfile = newConsoleProfile;
 

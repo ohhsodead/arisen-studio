@@ -23,7 +23,7 @@ namespace ModioX.Extensions
         /// <returns> Returns a new HTTP Web Request to Get Response from file </returns>
         public static HttpWebRequest GetRequest(string requestUriString, string httpMethod = "GET", bool allowAutoRedirect = true, string contentType = "text/plain")
         {
-            var request = (HttpWebRequest)WebRequest.Create(requestUriString);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(requestUriString);
             request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko";
             request.ContentType = contentType;
             request.Timeout = Convert.ToInt32(new TimeSpan(0, 5, 0).TotalMilliseconds);
@@ -52,12 +52,12 @@ namespace ModioX.Extensions
             {
                 ServicePointManager.ServerCertificateValidationCallback = (_, _, _, _) => true;
 
-                using var webClient = new WebClient();
-                var serializer = new XmlSerializer(typeof(Titlepatch));
-                var titlePath = webClient.DownloadString("https://a0.ww.np.dl.playstation.net/tpl/np/" + titleId + "/" + titleId + "-ver.xml");
+                using WebClient webClient = new WebClient();
+                XmlSerializer serializer = new XmlSerializer(typeof(Titlepatch));
+                string titlePath = webClient.DownloadString("https://a0.ww.np.dl.playstation.net/tpl/np/" + titleId + "/" + titleId + "-ver.xml");
                 using TextReader textReader = new StringReader(titlePath);
-                var data = (Titlepatch)serializer.Deserialize(textReader);
-                var removeId = Regex.Replace(data.Tag.Package.Last().Paramsfo.TITLE, @"\(.*?\)", "").Trim().Replace("Â®", "®");
+                Titlepatch data = (Titlepatch)serializer.Deserialize(textReader);
+                string removeId = Regex.Replace(data.Tag.Package.Last().Paramsfo.TITLE, @"\(.*?\)", "").Trim().Replace("Â®", "®");
                 return removeId;
             }
             catch (Exception ex)
@@ -78,9 +78,9 @@ namespace ModioX.Extensions
             {
                 ServicePointManager.ServerCertificateValidationCallback = (_, _, _, _) => true;
 
-                using var webClient = new WebClient();
-                var serializer = new XmlSerializer(typeof(Titlepatch));
-                var titlePath = webClient.DownloadString(url + titleId + "/" + titleId + "-ver.xml");
+                using WebClient webClient = new WebClient();
+                XmlSerializer serializer = new XmlSerializer(typeof(Titlepatch));
+                string titlePath = webClient.DownloadString(url + titleId + "/" + titleId + "-ver.xml");
                 using TextReader textReader = new StringReader(titlePath);
                 return (Titlepatch)serializer.Deserialize(textReader);
             }
@@ -98,7 +98,7 @@ namespace ModioX.Extensions
         public static void DownloadFile(string url, string folderPath)
         {
             ServicePointManager.ServerCertificateValidationCallback = (_, _, _, _) => true;
-            var webClient = new WebClient();
+            WebClient webClient = new WebClient();
             webClient.DownloadFile(url, folderPath);
         }
 
@@ -116,7 +116,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static async Task<bool> CheckForInternetAsync()
         {
-            var ping = new Ping();
+            Ping ping = new Ping();
 
             try
             {

@@ -61,7 +61,7 @@ namespace ModioX.Forms.Windows
             this.ButtonConsoleNewFolder = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonConsoleRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.PanelConsoleStatus = new DevExpress.Utils.Layout.StackPanel();
-            this.LabelConsoleStats = new DevExpress.XtraEditors.LabelControl();
+            this.LabelConsoleStatus = new DevExpress.XtraEditors.LabelControl();
             this.ButtonConsoleNavigate = new DevExpress.XtraEditors.SimpleButton();
             this.TextBoxConsolePath = new DevExpress.XtraEditors.TextEdit();
             this.ComboBoxConsoleDrives = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -372,20 +372,20 @@ namespace ModioX.Forms.Windows
             // 
             // PanelConsoleStatus
             // 
-            this.PanelConsoleStatus.Controls.Add(this.LabelConsoleStats);
+            this.PanelConsoleStatus.Controls.Add(this.LabelConsoleStatus);
             this.PanelConsoleStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelConsoleStatus.Location = new System.Drawing.Point(2, 488);
             this.PanelConsoleStatus.Name = "PanelConsoleStatus";
             this.PanelConsoleStatus.Size = new System.Drawing.Size(651, 26);
             this.PanelConsoleStatus.TabIndex = 1175;
             // 
-            // LabelConsoleStats
+            // LabelConsoleStatus
             // 
-            this.LabelConsoleStats.Location = new System.Drawing.Point(10, 6);
-            this.LabelConsoleStats.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.LabelConsoleStats.Name = "LabelConsoleStats";
-            this.LabelConsoleStats.Size = new System.Drawing.Size(0, 13);
-            this.LabelConsoleStats.TabIndex = 11;
+            this.LabelConsoleStatus.Location = new System.Drawing.Point(10, 6);
+            this.LabelConsoleStatus.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.LabelConsoleStatus.Name = "LabelConsoleStatus";
+            this.LabelConsoleStatus.Size = new System.Drawing.Size(0, 13);
+            this.LabelConsoleStatus.TabIndex = 11;
             // 
             // ButtonConsoleNavigate
             // 
@@ -773,7 +773,7 @@ namespace ModioX.Forms.Windows
         private SimpleButton ButtonConsoleRename;
         private SimpleButton ButtonLocalRename;
         private StackPanel PanelConsoleStatus;
-        private LabelControl LabelConsoleStats;
+        private LabelControl LabelConsoleStatus;
         private StackPanel PanelLocalStatus;
         private LabelControl LabelLocalStatus;
         private GroupControl GroupConsoleFileExplorer;

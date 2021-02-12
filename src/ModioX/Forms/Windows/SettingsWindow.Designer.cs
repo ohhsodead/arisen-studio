@@ -51,6 +51,8 @@ namespace ModioX.Forms.Windows
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.RadioConsoles = new DevExpress.XtraEditors.RadioGroup();
             this.TabContentRecognition = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.CheckBoxShowGamesFromExternalDevices = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.TabFileManager = new DevExpress.XtraTab.XtraTabPage();
@@ -59,8 +61,6 @@ namespace ModioX.Forms.Windows
             this.LabelHeaderLaunchIniFilePath = new DevExpress.XtraEditors.LabelControl();
             this.TextBoxLaunchIniFilePath = new DevExpress.XtraEditors.TextEdit();
             this.LabelHeaderPluginsEditor = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.CheckBoxShowGamesFromExternalDevices = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxRememberGameRegions.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectGameTitles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxAutoDetectGameRegions.Properties)).BeginInit();
@@ -74,10 +74,10 @@ namespace ModioX.Forms.Windows
             this.TabDatabase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RadioConsoles.Properties)).BeginInit();
             this.TabContentRecognition.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxShowGamesFromExternalDevices.Properties)).BeginInit();
             this.TabFileManager.SuspendLayout();
             this.TabXboxTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxLaunchIniFilePath.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxShowGamesFromExternalDevices.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // CheckBoxRememberGameRegions
@@ -143,7 +143,7 @@ namespace ModioX.Forms.Windows
             // ButtonSaveSettings
             // 
             this.ButtonSaveSettings.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ButtonSaveSettings.Location = new System.Drawing.Point(186, 239);
+            this.ButtonSaveSettings.Location = new System.Drawing.Point(199, 239);
             this.ButtonSaveSettings.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.ButtonSaveSettings.Name = "ButtonSaveSettings";
             this.ButtonSaveSettings.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
@@ -160,7 +160,7 @@ namespace ModioX.Forms.Windows
             this.TabControl.Location = new System.Drawing.Point(12, 12);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedTabPage = this.TabAppearance;
-            this.TabControl.Size = new System.Drawing.Size(418, 214);
+            this.TabControl.Size = new System.Drawing.Size(444, 214);
             this.TabControl.TabIndex = 5;
             this.TabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabAppearance,
@@ -176,7 +176,7 @@ namespace ModioX.Forms.Windows
             this.TabAppearance.Controls.Add(this.CheckBoxRememberThemeOnClose);
             this.TabAppearance.Controls.Add(this.labelControl4);
             this.TabAppearance.Name = "TabAppearance";
-            this.TabAppearance.Size = new System.Drawing.Size(416, 191);
+            this.TabAppearance.Size = new System.Drawing.Size(442, 191);
             this.TabAppearance.Text = "Appearance";
             // 
             // labelControl6
@@ -191,7 +191,7 @@ namespace ModioX.Forms.Windows
             this.labelControl6.LineVisible = true;
             this.labelControl6.Location = new System.Drawing.Point(10, 60);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(396, 15);
+            this.labelControl6.Size = new System.Drawing.Size(422, 15);
             this.labelControl6.TabIndex = 1171;
             this.labelControl6.Text = "File Sizes";
             // 
@@ -217,7 +217,7 @@ namespace ModioX.Forms.Windows
             this.labelControl4.LineVisible = true;
             this.labelControl4.Location = new System.Drawing.Point(10, 10);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(396, 15);
+            this.labelControl4.Size = new System.Drawing.Size(422, 15);
             this.labelControl4.TabIndex = 1168;
             this.labelControl4.Text = "Theme";
             // 
@@ -227,7 +227,7 @@ namespace ModioX.Forms.Windows
             this.TabDatabase.Controls.Add(this.labelControl1);
             this.TabDatabase.Controls.Add(this.RadioConsoles);
             this.TabDatabase.Name = "TabDatabase";
-            this.TabDatabase.Size = new System.Drawing.Size(416, 191);
+            this.TabDatabase.Size = new System.Drawing.Size(442, 191);
             this.TabDatabase.Text = "Database";
             // 
             // LabelHeaderDefaultDatabase
@@ -242,7 +242,7 @@ namespace ModioX.Forms.Windows
             this.LabelHeaderDefaultDatabase.LineVisible = true;
             this.LabelHeaderDefaultDatabase.Location = new System.Drawing.Point(10, 10);
             this.LabelHeaderDefaultDatabase.Name = "LabelHeaderDefaultDatabase";
-            this.LabelHeaderDefaultDatabase.Size = new System.Drawing.Size(396, 15);
+            this.LabelHeaderDefaultDatabase.Size = new System.Drawing.Size(422, 15);
             this.LabelHeaderDefaultDatabase.TabIndex = 1169;
             this.LabelHeaderDefaultDatabase.Text = "Startup Database";
             // 
@@ -278,8 +278,34 @@ namespace ModioX.Forms.Windows
             this.TabContentRecognition.Controls.Add(this.CheckBoxAutoDetectGameTitles);
             this.TabContentRecognition.Controls.Add(this.CheckBoxRememberGameRegions);
             this.TabContentRecognition.Name = "TabContentRecognition";
-            this.TabContentRecognition.Size = new System.Drawing.Size(416, 191);
+            this.TabContentRecognition.Size = new System.Drawing.Size(442, 191);
             this.TabContentRecognition.Text = "Content Recognition";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl7.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
+            this.labelControl7.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
+            this.labelControl7.LineVisible = true;
+            this.labelControl7.Location = new System.Drawing.Point(10, 10);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(422, 15);
+            this.labelControl7.TabIndex = 1173;
+            this.labelControl7.Text = "Games List";
+            // 
+            // CheckBoxShowGamesFromExternalDevices
+            // 
+            this.CheckBoxShowGamesFromExternalDevices.Location = new System.Drawing.Point(10, 32);
+            this.CheckBoxShowGamesFromExternalDevices.Name = "CheckBoxShowGamesFromExternalDevices";
+            this.CheckBoxShowGamesFromExternalDevices.Properties.AllowFocused = false;
+            this.CheckBoxShowGamesFromExternalDevices.Properties.AutoWidth = true;
+            this.CheckBoxShowGamesFromExternalDevices.Properties.Caption = "Show games from external devices";
+            this.CheckBoxShowGamesFromExternalDevices.Size = new System.Drawing.Size(197, 18);
+            this.CheckBoxShowGamesFromExternalDevices.TabIndex = 1172;
             // 
             // labelControl5
             // 
@@ -293,7 +319,7 @@ namespace ModioX.Forms.Windows
             this.labelControl5.LineVisible = true;
             this.labelControl5.Location = new System.Drawing.Point(10, 134);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(396, 15);
+            this.labelControl5.Size = new System.Drawing.Size(422, 15);
             this.labelControl5.TabIndex = 1171;
             this.labelControl5.Text = "Game Regions";
             // 
@@ -309,7 +335,7 @@ namespace ModioX.Forms.Windows
             this.labelControl3.LineVisible = true;
             this.labelControl3.Location = new System.Drawing.Point(10, 60);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(396, 15);
+            this.labelControl3.Size = new System.Drawing.Size(422, 15);
             this.labelControl3.TabIndex = 1170;
             this.labelControl3.Text = "Game Content";
             // 
@@ -319,7 +345,7 @@ namespace ModioX.Forms.Windows
             this.TabFileManager.Controls.Add(this.CheckBoxSaveConsolePath);
             this.TabFileManager.Controls.Add(this.CheckBoxSaveLocalPath);
             this.TabFileManager.Name = "TabFileManager";
-            this.TabFileManager.Size = new System.Drawing.Size(416, 191);
+            this.TabFileManager.Size = new System.Drawing.Size(442, 191);
             this.TabFileManager.Text = "File Manager";
             // 
             // labelControl2
@@ -334,7 +360,7 @@ namespace ModioX.Forms.Windows
             this.labelControl2.LineVisible = true;
             this.labelControl2.Location = new System.Drawing.Point(10, 10);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(396, 15);
+            this.labelControl2.Size = new System.Drawing.Size(422, 15);
             this.labelControl2.TabIndex = 1170;
             this.labelControl2.Text = "Directories";
             // 
@@ -344,7 +370,7 @@ namespace ModioX.Forms.Windows
             this.TabXboxTools.Controls.Add(this.TextBoxLaunchIniFilePath);
             this.TabXboxTools.Controls.Add(this.LabelHeaderPluginsEditor);
             this.TabXboxTools.Name = "TabXboxTools";
-            this.TabXboxTools.Size = new System.Drawing.Size(416, 191);
+            this.TabXboxTools.Size = new System.Drawing.Size(442, 191);
             this.TabXboxTools.Text = "Xbox Tools";
             // 
             // LabelHeaderLaunchIniFilePath
@@ -357,9 +383,11 @@ namespace ModioX.Forms.Windows
             // 
             // TextBoxLaunchIniFilePath
             // 
+            this.TextBoxLaunchIniFilePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxLaunchIniFilePath.Location = new System.Drawing.Point(10, 51);
             this.TextBoxLaunchIniFilePath.Name = "TextBoxLaunchIniFilePath";
-            this.TextBoxLaunchIniFilePath.Size = new System.Drawing.Size(396, 20);
+            this.TextBoxLaunchIniFilePath.Size = new System.Drawing.Size(422, 20);
             this.TextBoxLaunchIniFilePath.TabIndex = 1171;
             // 
             // LabelHeaderPluginsEditor
@@ -374,41 +402,15 @@ namespace ModioX.Forms.Windows
             this.LabelHeaderPluginsEditor.LineVisible = true;
             this.LabelHeaderPluginsEditor.Location = new System.Drawing.Point(10, 10);
             this.LabelHeaderPluginsEditor.Name = "LabelHeaderPluginsEditor";
-            this.LabelHeaderPluginsEditor.Size = new System.Drawing.Size(396, 15);
+            this.LabelHeaderPluginsEditor.Size = new System.Drawing.Size(422, 15);
             this.LabelHeaderPluginsEditor.TabIndex = 1170;
             this.LabelHeaderPluginsEditor.Text = "Plugins Editor";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl7.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
-            this.labelControl7.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
-            this.labelControl7.LineVisible = true;
-            this.labelControl7.Location = new System.Drawing.Point(10, 10);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(396, 15);
-            this.labelControl7.TabIndex = 1173;
-            this.labelControl7.Text = "Games List";
-            // 
-            // CheckBoxShowGamesFromExternalDevices
-            // 
-            this.CheckBoxShowGamesFromExternalDevices.Location = new System.Drawing.Point(10, 32);
-            this.CheckBoxShowGamesFromExternalDevices.Name = "CheckBoxShowGamesFromExternalDevices";
-            this.CheckBoxShowGamesFromExternalDevices.Properties.AllowFocused = false;
-            this.CheckBoxShowGamesFromExternalDevices.Properties.AutoWidth = true;
-            this.CheckBoxShowGamesFromExternalDevices.Properties.Caption = "Show games from external devices";
-            this.CheckBoxShowGamesFromExternalDevices.Size = new System.Drawing.Size(197, 18);
-            this.CheckBoxShowGamesFromExternalDevices.TabIndex = 1172;
             // 
             // SettingsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 275);
+            this.ClientSize = new System.Drawing.Size(468, 275);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.ButtonSaveSettings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -435,12 +437,12 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.RadioConsoles.Properties)).EndInit();
             this.TabContentRecognition.ResumeLayout(false);
             this.TabContentRecognition.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxShowGamesFromExternalDevices.Properties)).EndInit();
             this.TabFileManager.ResumeLayout(false);
             this.TabFileManager.PerformLayout();
             this.TabXboxTools.ResumeLayout(false);
             this.TabXboxTools.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxLaunchIniFilePath.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxShowGamesFromExternalDevices.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -41,7 +41,7 @@ namespace ModioX.Models.Database
         /// <returns> Game information </returns>
         public Category GetCategoryById(string categoryId)
         {
-            var category = Categories.FirstOrDefault(x => x.Id.EqualsIgnoreCase(categoryId));
+            Category category = Categories.FirstOrDefault(x => x.Id.EqualsIgnoreCase(categoryId));
             if (category != null) return category;
 
             throw new Exception("Unable to find game data matching the specified id: " + categoryId);
@@ -54,7 +54,7 @@ namespace ModioX.Models.Database
         /// <returns> Game information </returns>
         public Category GetCategoryByTitle(string title)
         {
-            var category = Categories.FirstOrDefault(x => x.Title.EqualsIgnoreCase(title));
+            Category category = Categories.FirstOrDefault(x => x.Title.EqualsIgnoreCase(title));
             if (category != null) return category;
 
             throw new Exception("Unable to find game data for the specified title: " + title);

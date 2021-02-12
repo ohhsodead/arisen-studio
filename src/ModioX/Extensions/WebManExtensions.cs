@@ -13,7 +13,7 @@ namespace ModioX.Extensions
 
         public static bool IsWebManInstalled(string ip, int port)
         {
-            var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             try
             {
@@ -41,7 +41,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string MountGame(string ip, string region, string game)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/mount.ps3/dev_hdd0/GAMES/{region}-[{game}]");
         }
 
@@ -56,7 +56,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string Restart(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/restart.ps3");
         }
 
@@ -67,7 +67,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string Shutdown(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/shutdown.ps3");
         }
 
@@ -82,7 +82,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string Eject(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/eject.ps3");
         }
 
@@ -93,7 +93,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string Inject(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/inject.ps3");
         }
 
@@ -108,7 +108,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string MountGameFromPath(string ip, string path)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/mount.ps3/" + path);
         }
 
@@ -119,7 +119,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string Unmount(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/mount.ps3/unmount");
         }
 
@@ -130,7 +130,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string External(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/extgd.ps3");
         }
 
@@ -141,7 +141,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string EnableExternal(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/extgd.ps3?enable");
         }
 
@@ -152,7 +152,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string Refresh(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/refresh.ps3");
         }
 
@@ -168,7 +168,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string SetIdps1(string ip, string id)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/setidps.ps3mapi?idps1={id}");
         }
 
@@ -180,7 +180,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string SetIdps2(string ip, string id)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/setidps.ps3mapi?idps2={id}");
         }
 
@@ -192,7 +192,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string SetPsid1(string ip, string id)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/setidps.ps3mapi?psid1={id}");
         }
 
@@ -204,7 +204,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string SetPsid2(string ip, string id)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/setidps.ps3mapi?psid2={id}");
         }
 
@@ -219,7 +219,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string SingleBuzzer(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/buzzer.ps3mapi?mode=1");
         }
 
@@ -230,7 +230,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string DoubleBuzzer(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/buzzer.ps3mapi?mode=2");
         }
 
@@ -241,7 +241,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string TripleBuzzer(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/buzzer.ps3mapi?mode=3");
         }
 
@@ -256,7 +256,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string RedLED(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/led.ps3mapi?color=0");
         }
 
@@ -267,7 +267,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string GreenLED(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/led.ps3mapi?color=1");
         }
 
@@ -278,7 +278,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string YellowLED(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/led.ps3mapi?color=2");
         }
 
@@ -293,7 +293,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string LEDOff(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/led.ps3mapi?mode=0");
         }
 
@@ -304,7 +304,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string LEDOn(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/led.ps3mapi?mode=1");
         }
 
@@ -315,7 +315,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string LEDBlinkFast(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/led.ps3mapi?mode=2");
         }
 
@@ -326,7 +326,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string LEDBlinkSlow(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/led.ps3mapi?mode=3");
         }
 
@@ -342,7 +342,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string NotifyPopup(string ip, string message)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/popup.ps3/{message}");
         }
 
@@ -354,7 +354,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string NotifyPopupBottom(string ip, string message)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/popup.ps3*{message}");
         }
 
@@ -365,7 +365,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string NotifySystemInformation(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/popup.ps3");
         }
 
@@ -376,7 +376,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string NotifyCPURSXTemperature(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/cpursx.ps3");
         }
 
@@ -387,7 +387,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string NotifyMinimumVersion(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/minver.ps3");
         }
 
@@ -402,7 +402,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string RebootSoft(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/reboot.ps3?soft");
         }
 
@@ -413,7 +413,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string RebootHard(string ip)
         {
-            using var client = new WebClient();
+            using WebClient client = new WebClient();
             return client.DownloadString($"http://{ip}/reboot.ps3?hard");
         }
 

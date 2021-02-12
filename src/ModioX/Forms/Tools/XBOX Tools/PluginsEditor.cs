@@ -6,16 +6,13 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
-using FluentFTP;
 using IniParser;
 using IniParser.Model;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Io;
-using ModioX.Net;
 using XDevkit;
 using FtpException = ModioX.Net.FtpException;
-using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {
@@ -49,12 +46,12 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         /// <summary>
         /// Get the launch.ini directory path located on the console internal hard drive.
         /// </summary>
-        public readonly string ConsoleLaunchFileDirectory = "/Hdd1";
+        public static string ConsoleLaunchFileDirectory { get; } = "Hdd1";
 
         /// <summary>
         /// Get the launch.ini file path located on the console internal hard drive.
         /// </summary>
-        public readonly string ConsoleLaunchFilePath = MainWindow.Settings.LaunchIniFilePath;
+        public static string ConsoleLaunchFilePath { get; } = MainWindow.Settings.LaunchIniFilePath;
 
         /// <summary>
         /// Get the current launch.ini file data on the console.
@@ -91,12 +88,6 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 }
 
                 ComboBoxSections.SelectedItem = "Plugins";
-            }
-            catch (FtpException ex)
-            {
-                Program.Log.Error(ex, $"There was a problem loading the launch.ini file. Error: {ex.Message}");
-                XtraMessageBox.Show($"There was a problem loading the launch.ini file.\n\nError: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Close();
             }
             catch (Exception ex)
             {

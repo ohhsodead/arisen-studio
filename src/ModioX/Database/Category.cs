@@ -48,7 +48,7 @@ namespace ModioX.Database
         {
             if (MainWindow.Settings.RememberGameRegions)
             {
-                var gameRegion = MainWindow.Settings.GetGameRegion(gameId);
+                string gameRegion = MainWindow.Settings.GetGameRegion(gameId);
 
                 if (!string.IsNullOrEmpty(gameRegion))
                 {
@@ -58,9 +58,9 @@ namespace ModioX.Database
 
             if (MainWindow.Settings.AutoDetectGameRegions)
             {
-                var foundRegions = Regions.Where(region => MainWindow.FtpConnection.DirectoryExists($"/dev_hdd0/game/{region}")).ToList();
+                System.Collections.Generic.List<string> foundRegions = Regions.Where(region => MainWindow.FtpConnection.DirectoryExists($"/dev_hdd0/game/{region}")).ToList();
 
-                foreach (var region in foundRegions.Where(region => XtraMessageBox.Show(
+                foreach (string region in foundRegions.Where(region => XtraMessageBox.Show(
                     $"Game Region: {region} has been found for: {Title}\nIs this correct?", "Found Game Region",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                 {

@@ -14,8 +14,8 @@ namespace ModioX.Extensions
         public static void SetControlTextWidth(Control ctrl, string text)
         {
             ctrl.Text = text;
-            var myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
-            var mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
+            Font myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
+            SizeF mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
             ctrl.Width = (int)Math.Round(mySize.Width, 0) + 20;
             ctrl.Refresh();
         }

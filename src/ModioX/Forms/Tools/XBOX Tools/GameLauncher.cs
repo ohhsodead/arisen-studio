@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using DevExpress.XtraEditors;
 using FluentFTP;
-using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Net;
 using XDevkit;
@@ -32,10 +31,10 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             FtpClient.SetWorkingDirectory("/Hdd1/Games/");
 
-            var folders = new List<FtpListItem>();
-            var files = new List<FtpListItem>();
+            List<FtpListItem> folders = new List<FtpListItem>();
+            List<FtpListItem> files = new List<FtpListItem>();
 
-            foreach (var listItem in FtpClient.GetListing("/Hdd1/Games/"))
+            foreach (FtpListItem listItem in FtpClient.GetListing("/Hdd1/Games/"))
             {
                 switch (listItem.Type)
                 {
@@ -52,12 +51,12 @@ namespace ModioX.Forms.Tools.XBOX_Tools
                 }
             }
 
-            foreach (var listItem in folders)
+            foreach (FtpListItem listItem in folders)
             {
                 ListBoxGames.Items.Add("Folder : " + listItem.Name);
             }
 
-            foreach (var listItem in files)
+            foreach (FtpListItem listItem in files)
             {
                 ListBoxGames.Items.Add("File : " + listItem.Name);
             }

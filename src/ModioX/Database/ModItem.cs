@@ -87,7 +87,7 @@ namespace ModioX.Database
         {
             get
             {
-                var versions = new List<string>();
+                List<string> versions = new List<string>();
 
                 switch (Version)
                 {
@@ -126,9 +126,9 @@ namespace ModioX.Database
         {
             get
             {
-                var regions = new List<string>();
+                List<string> regions = new List<string>();
 
-                foreach (var region in Region.Split('/'))
+                foreach (string region in Region.Split('/'))
                 {
                     switch (region)
                     {
@@ -159,9 +159,9 @@ namespace ModioX.Database
         {
             get
             {
-                var gameModes = new List<string>();
+                List<string> gameModes = new List<string>();
 
-                foreach (var mode in Configuration.Split('/'))
+                foreach (string mode in Configuration.Split('/'))
                 {
                     switch (mode)
                     {
@@ -207,8 +207,8 @@ namespace ModioX.Database
         {
             if (DownloadFiles.Count <= 1) return DownloadFiles.First();
 
-            var downloadNames = DownloadFiles.Select(x => x.Name).ToList();
-            var downloadName = DialogExtensions.ShowListInputDialog(MainWindow.Window, "Install Downloads", downloadNames);
+            List<string> downloadNames = DownloadFiles.Select(x => x.Name).ToList();
+            string downloadName = DialogExtensions.ShowListInputDialog(MainWindow.Window, "Install Downloads", downloadNames);
 
             return string.IsNullOrEmpty(downloadName) ? null : DownloadFiles.First(x => x.Name.Equals(downloadName));
         }
@@ -217,13 +217,13 @@ namespace ModioX.Database
         /// Get the directory for extracting modded files to.
         /// </summary>
         /// <returns> </returns>
-        public string DownloadDataDirectory(DownloadFiles downloadFiles) => $@"{UserFolders.AppModsDataDirectory}{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} ({StringExtensions.ReplaceInvalidChars(downloadFiles.Name)}) (#{Id})\";
+        public string DownloadDataDirectory(DownloadFiles downloadFiles) => $@"{UserFolders.AppModsDataDirectory}{GameId}\{Author}\{Name.ReplaceInvalidChars()} ({downloadFiles.Name.ReplaceInvalidChars()}) (#{Id})\";
 
         /// <summary>
         /// Gets the downloaded mods archive file path.
         /// </summary>
         /// <returns> Mods Archive File Path </returns>
-        public string ArchiveZipFile(DownloadFiles downloadFiles) => $@"{UserFolders.AppModsDataDirectory}{GameId}\{Author}\{StringExtensions.ReplaceInvalidChars(Name)} ({StringExtensions.ReplaceInvalidChars(downloadFiles.Name)}) (#{Id}).zip";
+        public string ArchiveZipFile(DownloadFiles downloadFiles) => $@"{UserFolders.AppModsDataDirectory}{GameId}\{Author}\{Name.ReplaceInvalidChars()} ({downloadFiles.Name.ReplaceInvalidChars()}) (#{Id}).zip";
 
         /// <summary>
         /// Downloads the modded files archive and extracts all files to <see
@@ -232,8 +232,8 @@ namespace ModioX.Database
         /// <param name="downloadFiles"> </param>
         public void DownloadInstallFiles(DownloadFiles downloadFiles)
         {
-            var archivePath = DownloadDataDirectory(downloadFiles);
-            var archiveFilePath = ArchiveZipFile(downloadFiles);
+            string archivePath = DownloadDataDirectory(downloadFiles);
+            string archiveFilePath = ArchiveZipFile(downloadFiles);
 
             if (Directory.Exists(archivePath))
             {
@@ -252,7 +252,7 @@ namespace ModioX.Database
 
             Directory.CreateDirectory(archivePath);
 
-            using (var webClient = new WebClient())
+            using (WebClient webClient = new WebClient())
             {
                 webClient.Headers.Add("Accept: application/zip");
                 webClient.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
@@ -270,12 +270,12 @@ namespace ModioX.Database
         /// <param name="localPath"> Path to downloads mods archive at folder </param>
         public void DownloadArchiveAtPath(CategoriesData categoriesData, DownloadFiles downloadFiles, string localPath)
         {
-            var zipFileName = $"{StringExtensions.ReplaceInvalidChars(Name)} v{Version} for {GameId.ToUpper()}.zip";
-            var zipFilePath = Path.Combine(localPath, zipFileName);
+            string zipFileName = $"{downloadFiles.Name.ReplaceInvalidChars()} v{Version.Replace(@"/", " & ")} for {GameId.ToUpper()}.zip";
+            string zipFilePath = Path.Combine(localPath, zipFileName);
 
             GenerateReadMeAtPath(categoriesData, DownloadDataDirectory(downloadFiles));
 
-            using var webClient = new WebClient();
+            using WebClient webClient = new WebClient();
             webClient.Headers.Add("Accept: application/zip");
             webClient.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
             webClient.DownloadFile(new Uri(downloadFiles.URL), zipFilePath);

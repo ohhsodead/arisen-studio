@@ -7,22 +7,27 @@ namespace ModioX.Extensions
     {
         public static string FormatBytes(this long byteCount)
         {
-            string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" }; //Longs run out around EB
-            if (byteCount == 0)
-                return "0 " + suf[0];
-            long bytes = Math.Abs(byteCount);
-            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
-            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
-            return (Math.Sign(byteCount) * num).ToString() + " " + suf[place];
+            string[] suf = { "Bytes", "KB", "MB", "GB", "TB", "PB", "EB" }; //Longs run out around EB
+
+            if (byteCount != 0)
+            {
+                long bytes = Math.Abs(byteCount);
+                int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+                double num = Math.Round(bytes / Math.Pow(1024, place), 1);
+                return (Math.Sign(byteCount) * num).ToString() + " " + suf[place];
+            }
+
+            return "0 " + suf[0];
         }
 
         /// <summary>
+        /// Replace all the invalid characters with the underscore symbol.
         /// </summary>
-        /// <param name="filePath"> </param>
+        /// <param name="path"> </param>
         /// <returns> </returns>
-        public static string ReplaceInvalidChars(string filePath)
+        public static string ReplaceInvalidChars(this string fileName)
         {
-            return string.Join("_", filePath.Split(Path.GetInvalidFileNameChars()));
+            return string.Join("_", fileName.Split(Path.GetInvalidFileNameChars()));
         }
 
         /// <summary>
@@ -36,9 +41,9 @@ namespace ModioX.Extensions
             if (nth < 0)
                 throw new ArgumentException("Can not find a negative index of substring in string. Must start with 0");
 
-            var offset = str.IndexOf(value, StringComparison.Ordinal);
+            int offset = str.IndexOf(value, StringComparison.Ordinal);
 
-            var tries = 0;
+            int tries = 0;
             while (offset != -1 && tries < nth)
             {
                 offset = str.IndexOf(value, offset + 1, StringComparison.Ordinal);
@@ -55,7 +60,7 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string RemoveFirstInstanceOfString(this string value, string removeString)
         {
-            var index = value.IndexOf(removeString, StringComparison.Ordinal);
+            int index = value.IndexOf(removeString, StringComparison.Ordinal);
             return index < 0 ? value : value.Remove(index, removeString.Length);
         }
 

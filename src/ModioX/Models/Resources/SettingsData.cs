@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using ModioX.Database;
@@ -35,19 +34,19 @@ namespace ModioX.Models.Resources
 
         public bool RememberGameRegions { get; set; } = true;
 
-        public bool SaveLocalPath { get; set; } = true;
+        public bool SaveLocalPath { get; set; } = false;
 
         public string LocalPathPS3 { get; set; } = KnownFolders.GetPath(KnownFolder.Documents);
 
         public string LocalPathXBOX { get; set; } = KnownFolders.GetPath(KnownFolder.Documents);
 
-        public bool SaveConsolePath { get; set; } = true;
+        public bool SaveConsolePath { get; set; } = false;
 
         public string ConsolePathPS3 { get; set; } = "/dev_hdd0/";
 
-        public string ConsolePathXBOX { get; set; } = "/Hdd1/";
+        public string ConsolePathXBOX { get; set; } = "/Hdd0/";
 
-        public string LaunchIniFilePath { get; set; } = "/Hdd1/launch.ini";
+        public string LaunchIniFilePath { get; set; } = @"Hdd:\launch.ini";
 
         public List<int> FavoritedIds { get; set; } = new();
 
@@ -121,9 +120,9 @@ namespace ModioX.Models.Resources
         /// <param name="fileLocation"> Application File Location </param>
         public void UpdateApplication(string appName, string fileLocation)
         {
-            var applicationIndex = ExternalApplications.Find(x => string.Equals(x.Name, appName, StringComparison.OrdinalIgnoreCase));
+            ExternalApplication applicationIndex = ExternalApplications.Find(x => string.Equals(x.Name, appName, StringComparison.OrdinalIgnoreCase));
 
-            var externalApplication = new ExternalApplication(appName, fileLocation);
+            ExternalApplication externalApplication = new ExternalApplication(appName, fileLocation);
 
             if (applicationIndex == null)
             {
@@ -151,7 +150,7 @@ namespace ModioX.Models.Resources
         /// <param name="newListName"> Mod Id to add to list </param>
         public void RenameCustomList(string oldName, string newName)
         {
-            var customList = CustomLists.Find(x => string.Equals(x.Name, oldName, StringComparison.OrdinalIgnoreCase));
+            CustomList customList = CustomLists.Find(x => string.Equals(x.Name, oldName, StringComparison.OrdinalIgnoreCase));
 
             if (customList == null)
             {
@@ -170,7 +169,7 @@ namespace ModioX.Models.Resources
         /// <param name="newListName"> Mod Id to add to list </param>
         public void AddModToCustomList(string name, int modId)
         {
-            var customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
+            CustomList customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
 
             if (!customList.ModIds.Contains(modId))
             {
@@ -185,7 +184,7 @@ namespace ModioX.Models.Resources
         /// <param name="modId"> Mod Id to add to list </param>
         public void RemoveModFromCustomList(string name, int modId)
         {
-            var customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
+            CustomList customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
             customList.ModIds.Remove(modId);
         }
 
@@ -206,7 +205,7 @@ namespace ModioX.Models.Resources
         /// <param name="region"> Specifies the Game Region </param>
         public void UpdateGameRegion(string gameId, string region)
         {
-            var gameIdIndex = GameRegions.FindIndex(x => string.Equals(x.GameId, gameId, StringComparison.OrdinalIgnoreCase));
+            int gameIdIndex = GameRegions.FindIndex(x => string.Equals(x.GameId, gameId, StringComparison.OrdinalIgnoreCase));
 
             if (gameIdIndex == -1)
             {
@@ -308,9 +307,9 @@ namespace ModioX.Models.Resources
         /// <returns> </returns>
         public List<string> GetModTypesForModIDs(ModsData modsData, List<int> modIds)
         {
-            var modTypes = new List<string>();
+            List<string> modTypes = new List<string>();
 
-            foreach (var modItem in modsData.Mods)
+            foreach (ModItem modItem in modsData.Mods)
             {
                 if (modIds.Contains(modItem.Id))
                 {
@@ -328,9 +327,9 @@ namespace ModioX.Models.Resources
         /// <returns> </returns>
         public List<string> GetRegionsForModIDs(ModsData modsData, List<int> modIds)
         {
-            var regions = new List<string>();
+            List<string> regions = new List<string>();
 
-            foreach (var modItem in modsData.Mods)
+            foreach (ModItem modItem in modsData.Mods)
             {
                 if (modIds.Contains(modItem.Id))
                 {
@@ -360,7 +359,7 @@ namespace ModioX.Models.Resources
         /// <returns> </returns>
         public CustomList GetCustomListByName(string name)
         {
-            foreach (var customList in from CustomList customList in CustomLists
+            foreach (CustomList customList in from CustomList customList in CustomLists
                                        where string.Equals(customList.Name, name, StringComparison.OrdinalIgnoreCase)
                                        select customList)
             {
@@ -410,7 +409,7 @@ namespace ModioX.Models.Resources
         /// <returns> </returns>
         public bool IsPackageFileOldVersion(ModsData modsData, CategoriesData categoriesData, PackageFile packageFile)
         {
-            foreach (var modItem in modsData.Mods)
+            foreach (ModItem modItem in modsData.Mods)
             {
                 if (modItem.GetCategoryType(categoriesData) == CategoryType.Homebrew)
                 {
@@ -418,8 +417,8 @@ namespace ModioX.Models.Resources
                     {
                         try
                         {
-                            var oldVersion = Version.Parse(packageFile.Version);
-                            var newVersion = Version.Parse(modItem.Version);
+                            Version oldVersion = Version.Parse(packageFile.Version);
+                            Version newVersion = Version.Parse(modItem.Version);
 
                             if (oldVersion.CompareTo(newVersion) < 0)
                             {

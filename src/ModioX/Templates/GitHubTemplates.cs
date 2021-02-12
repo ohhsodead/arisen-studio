@@ -13,7 +13,7 @@ namespace ModioX.Templates
         /// <param name="name"> Mod info to fill with </param>
         internal static void OpenErrorTemplate(string name)
         {
-            var template = new StringBuilder("issues/new?")
+            StringBuilder template = new StringBuilder("issues/new?")
                 .Append("title=%5BERROR REPORT%5D")
                 .Append("&labels=error report&")
                 .Append($"body=- Error Name: {name}%0A")
@@ -28,7 +28,7 @@ namespace ModioX.Templates
         /// name="modItem">Mod Item</param> <param name="category">Mod's Category</param> <summary>
         internal static void OpenReportTemplate(ModItem modItem, Category category)
         {
-            var template = new StringBuilder("issues/new?")
+            StringBuilder template = new StringBuilder("issues/new?")
                 .Append($"title=%5BMOD REPORT%5D {modItem.Name} ({modItem.GameId.ToUpper()})")
                 .Append("&labels=mod report&")
                 .Append($"body=- Mod Name: {modItem.Name} (ID%23{modItem.Id})%0A")

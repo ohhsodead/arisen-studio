@@ -12,13 +12,13 @@ namespace ModioX.Extensions
         /// <param name="rows"> Rows to add to the DataTable </param>
         public static DataTable CreateDataTable(List<DataColumn> columns, List<DataRow> rows = null)
         {
-            var dataTable = new DataTable();
+            DataTable dataTable = new DataTable();
 
             dataTable.Columns.AddRange(columns.ToArray());
 
             if (rows != null)
             {
-                foreach (var row in rows)
+                foreach (DataRow row in rows)
                 {
                     dataTable.Rows.Add(row);
                 }

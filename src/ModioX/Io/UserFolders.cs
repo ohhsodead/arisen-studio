@@ -40,13 +40,13 @@ namespace ModioX.Io
                 return;
             }
 
-            var dir = new DirectoryInfo(path);
+            DirectoryInfo dir = new DirectoryInfo(path);
 
-            for (var i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 try
                 {
-                    foreach (var subdir in dir.GetDirectories())
+                    foreach (DirectoryInfo subdir in dir.GetDirectories())
                     {
                         subdir.Delete(true);
                     }

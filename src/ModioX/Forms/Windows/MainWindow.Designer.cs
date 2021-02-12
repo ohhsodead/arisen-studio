@@ -234,6 +234,7 @@ namespace ModioX.Forms.Windows
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.TransitionManager = new DevExpress.Utils.Animation.TransitionManager(this.components);
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConnectMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolsMenu)).BeginInit();
@@ -271,6 +272,7 @@ namespace ModioX.Forms.Windows
             this.FlowPanelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ModsMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManagerModsInstalled)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // barDockControlTop
@@ -306,7 +308,6 @@ namespace ModioX.Forms.Windows
             this.ButtonEditApplications,
             this.ButtonEditLists,
             this.ButtonSettings,
-            this.ButtonSkinChanger,
             this.ButtonDiscordServer,
             this.ButtonOfficialSource,
             this.OpenLogFileButton,
@@ -366,9 +367,10 @@ namespace ModioX.Forms.Windows
             this.ButtonPS3MountBD,
             this.ButtonPS3UnmountGame,
             this.ButtonPS3MountISO,
-            this.ButtonPS3MountPSN});
+            this.ButtonPS3MountPSN,
+            this.ButtonSkinChanger});
             this.MainMenu.MainMenu = this.BarMenu;
-            this.MainMenu.MaxItemId = 119;
+            this.MainMenu.MaxItemId = 120;
             this.MainMenu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.XNotifyText,
             this.XNotifyType});
@@ -900,7 +902,7 @@ namespace ModioX.Forms.Windows
             // ButtonSkinChanger
             // 
             this.ButtonSkinChanger.Caption = "Skin Changer...";
-            this.ButtonSkinChanger.Id = 19;
+            this.ButtonSkinChanger.Id = 119;
             this.ButtonSkinChanger.Name = "ButtonSkinChanger";
             // 
             // ButtonAbout
@@ -2005,6 +2007,8 @@ namespace ModioX.Forms.Windows
             // 
             // GroupModInformation
             // 
+            this.GroupModInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupModInformation.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.GroupModInformation.AppearanceCaption.Options.UseFont = true;
             this.GroupModInformation.Controls.Add(this.ScrollBarModInformation);
@@ -2246,13 +2250,14 @@ namespace ModioX.Forms.Windows
             transition1.BarWaitingIndicatorProperties.Caption = "";
             transition1.BarWaitingIndicatorProperties.Description = "";
             transition1.Control = this;
-            transition1.EasingMode = DevExpress.Data.Utils.EasingMode.EaseInOut;
+            transition1.EasingMode = DevExpress.Data.Utils.EasingMode.EaseOut;
             transition1.LineWaitingIndicatorProperties.AnimationElementCount = 5;
             transition1.LineWaitingIndicatorProperties.Caption = "";
             transition1.LineWaitingIndicatorProperties.Description = "";
             transition1.RingWaitingIndicatorProperties.AnimationElementCount = 5;
             transition1.RingWaitingIndicatorProperties.Caption = "";
             transition1.RingWaitingIndicatorProperties.Description = "";
+            transition1.ShowWaitingIndicator = DevExpress.Utils.DefaultBoolean.False;
             transition1.TransitionType = fadeTransition1;
             transition1.WaitingIndicatorProperties.Caption = "";
             transition1.WaitingIndicatorProperties.Description = "";
@@ -2274,7 +2279,6 @@ namespace ModioX.Forms.Windows
             // 
             // MainWindow
             // 
-            this.ActiveGlowColor = System.Drawing.Color.White;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -2294,14 +2298,14 @@ namespace ModioX.Forms.Windows
             this.Controls.Add(this.barDockControl5);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.IconOptions.Image = global::ModioX.Properties.Resources.app_logo;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(1586, 853);
             this.Name = "MainWindow";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ModioX - Beta v1.5";
+            this.Text = "ModioX - Beta v1.5.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.StyleChanged += new System.EventHandler(this.MainWindow_StyleChanged);
@@ -2344,6 +2348,7 @@ namespace ModioX.Forms.Windows
             this.FlowPanelDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ModsMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManagerModsInstalled)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2425,7 +2430,6 @@ namespace ModioX.Forms.Windows
         private BarButtonItem ButtonEditApplications;
         private BarButtonItem ButtonEditLists;
         private BarButtonItem ButtonSettings;
-        private SkinBarSubItem ButtonSkinChanger;
         private BarButtonItem ButtonDiscordServer;
         private BarButtonItem ButtonOfficialSource;
         private BarButtonItem OpenLogFileButton;
@@ -2534,5 +2538,7 @@ namespace ModioX.Forms.Windows
         private BarButtonItem ButtonPS3MountPSN;
         private DevExpress.Utils.Animation.TransitionManager TransitionManager;
         private FlowLayoutPanel FlowPanelDetails;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private SkinBarSubItem ButtonSkinChanger;
     }
 }

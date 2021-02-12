@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -19,7 +20,7 @@ namespace ModioX.Database
         /// <returns> instance of the class. </returns>
         public static async Task<DropboxData> InitializeAsync()
         {
-            var data = new DropboxData
+            DropboxData data = new DropboxData
             {
                 CategoriesData = await GetCategoriesAsync(),
                 ModsPS3 = await GetModsPS3Async(),
@@ -55,18 +56,12 @@ namespace ModioX.Database
         /// </exception>
         private static async Task<CategoriesData> GetCategoriesAsync()
         {
-            using var client = new HttpClient();
-            using var response = await client.GetAsync(Urls.CategoriesData);
+            using HttpClient client = new HttpClient();
+            using Stream stream = await client.GetStreamAsync(Urls.CategoriesData).ConfigureAwait(true);
+            using StreamReader streamReader = new StreamReader(stream);
+            using JsonReader jsonReader = new JsonTextReader(streamReader);
 
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new HttpException($"Bad response {response.StatusCode}");
-
-            var responseData = await response.Content.ReadAsStringAsync();
-
-            if (!IsValidJson(responseData))
-                throw new JsonException("Failed to process the data for the Categories.");
-
-            return JsonConvert.DeserializeObject<CategoriesData>(responseData);
+            return new JsonSerializer().Deserialize<CategoriesData>(jsonReader);
         }
 
         /// <summary>
@@ -76,18 +71,12 @@ namespace ModioX.Database
         /// <exception cref="Exception"> </exception>
         private static async Task<ModsData> GetModsPS3Async()
         {
-            using var client = new HttpClient();
-            using var response = await client.GetAsync(Urls.ModsDataPS3);
+            using HttpClient client = new HttpClient();
+            using Stream stream = await client.GetStreamAsync(Urls.ModsDataPS3).ConfigureAwait(true);
+            using StreamReader streamReader = new StreamReader(stream);
+            using JsonReader jsonReader = new JsonTextReader(streamReader);
 
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Bad response {response.StatusCode}");
-
-            var responseData = await response.Content.ReadAsStringAsync();
-
-            if (!IsValidJson(responseData))
-                throw new JsonSerializationException("Failed to process the data for the Mods.");
-
-            return JsonConvert.DeserializeObject<ModsData>(responseData);
+            return new JsonSerializer().Deserialize<ModsData>(jsonReader);
         }
 
         /// <summary>
@@ -97,18 +86,12 @@ namespace ModioX.Database
         /// <exception cref="Exception"> </exception>
         private static async Task<ModsData> GetModsXBOXAsync()
         {
-            using var client = new HttpClient();
-            using var response = await client.GetAsync(Urls.ModsDataXBOX);
+            using HttpClient client = new HttpClient();
+            using Stream stream = await client.GetStreamAsync(Urls.ModsDataXBOX).ConfigureAwait(true);
+            using StreamReader streamReader = new StreamReader(stream);
+            using JsonReader jsonReader = new JsonTextReader(streamReader);
 
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Bad response {response.StatusCode}");
-
-            var responseData = await response.Content.ReadAsStringAsync();
-
-            if (!IsValidJson(responseData))
-                throw new JsonSerializationException("Failed to process the data for the Mods.");
-
-            return JsonConvert.DeserializeObject<ModsData>(responseData);
+            return new JsonSerializer().Deserialize<ModsData>(jsonReader);
         }
 
         /// <summary>
@@ -120,7 +103,7 @@ namespace ModioX.Database
         {
             try
             {
-                var unused = JToken.Parse(data);
+                JToken unused = JToken.Parse(data);
                 return true;
             }
             catch

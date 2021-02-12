@@ -20,7 +20,7 @@ namespace ModioX.Forms.Dialogs
         {
             ListBoxItems.SelectedIndexChanged -= ListBoxItems_SelectedIndexChanged;
 
-            foreach (var item in Items)
+            foreach (string item in Items)
             {
                 ListBoxItems.Items.Add(item);
             }

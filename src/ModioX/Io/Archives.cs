@@ -17,10 +17,10 @@ namespace ModioX.Io
                 return;
             }
 
-            using var zipArchive = ZipFile.Open(zipPath, ZipArchiveMode.Update);
-            foreach (var file in files)
+            using ZipArchive zipArchive = ZipFile.Open(zipPath, ZipArchiveMode.Update);
+            foreach (string file in files)
             {
-                var fileInfo = new FileInfo(file);
+                FileInfo fileInfo = new FileInfo(file);
                 zipArchive.CreateEntryFromFile(fileInfo.FullName, fileInfo.Name);
             }
         }

@@ -57,10 +57,10 @@ namespace ModioX.Net
 
         public static string TranslateInternetError(uint errorCode)
         {
-            var hModule = IntPtr.Zero;
+            IntPtr hModule = IntPtr.Zero;
             try
             {
-                var buf = new StringBuilder(255);
+                StringBuilder buf = new StringBuilder(255);
                 hModule = LoadLibrary("wininet.dll");
                 if (FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, hModule, errorCode, 0U, buf, (uint)buf.Capacity + 1, IntPtr.Zero) != 0)
                 {

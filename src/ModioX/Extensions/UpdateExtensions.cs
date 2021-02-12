@@ -28,7 +28,7 @@ namespace ModioX.Extensions
         /// <summary>
         /// Get the current version name.
         /// </summary>
-        public static string CurrentVersionName { get; } = $"Beta v{CurrentVersion.ToString().TrimStart('0', '.').TrimEnd('0', '.')}";
+        public static string CurrentVersionName { get; } = $"Beta v{CurrentVersion.ToString().TrimStart('0', '.')}";
 
         /// <summary>
         /// Get the latest release information from the GitHub API.
@@ -38,7 +38,7 @@ namespace ModioX.Extensions
         {
             GitHubData gitHubLatestReleaseData;
 
-            using (var streamReader = new StreamReader(HttpExtensions.GetStream(Urls.GitHubLatestRelease)))
+            using (StreamReader streamReader = new StreamReader(HttpExtensions.GetStream(Urls.GitHubLatestRelease)))
             {
                 gitHubLatestReleaseData = JsonConvert.DeserializeObject<GitHubData>(streamReader.ReadToEnd());
             }
@@ -56,7 +56,7 @@ namespace ModioX.Extensions
             {
                 MainWindow.Window.SetStatus("Checking application for new updates...");
 
-                var latestVersion = new Version(GitHubData.TagName);
+                Version latestVersion = new Version(GitHubData.TagName);
 
                 if (CurrentVersion < latestVersion)
                 {
@@ -81,12 +81,12 @@ namespace ModioX.Extensions
         {
             try
             {
-                var installerFile = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\{GitHubData.Assets[0].Name}";
+                string installerFile = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\{GitHubData.Assets[0].Name}";
 
                 MainWindow.Settings.FirstTimeOpenAfterUpdate = true;
                 MainWindow.Window.SetStatus("A new update is available. Downloading the installer...");
                 XtraMessageBox.Show($"A new version of ModioX ({GitHubData.Name}) is now available. Click OK to download and run the installer.", @"Update Available", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                using (var client = new WebClient())
+                using (WebClient client = new WebClient())
                 {
                     client.DownloadFileAsync(GitHubData.Assets[0].BrowserDownloadUrl, installerFile);
                 }
