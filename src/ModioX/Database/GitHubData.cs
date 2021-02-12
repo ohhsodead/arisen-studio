@@ -12,15 +12,15 @@ using Newtonsoft.Json.Linq;
 
 namespace ModioX.Database
 {
-    public class DropboxData
+    public class GitHubData
     {
         /// <summary>
         /// Initialization of the class.
         /// </summary>
         /// <returns> instance of the class. </returns>
-        public static async Task<DropboxData> InitializeAsync()
+        public static async Task<GitHubData> InitializeAsync()
         {
-            DropboxData data = new DropboxData
+            GitHubData data = new GitHubData
             {
                 CategoriesData = await GetCategoriesAsync(),
                 ModsPS3 = await GetModsPS3Async(),
