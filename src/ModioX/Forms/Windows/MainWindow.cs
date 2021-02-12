@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
 using DevExpress.Skins;
+using DevExpress.Utils;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
@@ -124,7 +125,7 @@ namespace ModioX.Forms.Windows
         private async void MainWindow_Load(object sender, EventArgs e)
         {
             UserLookAndFeel.Default.StyleChanged += MainWindow_StyleChanged;
-            WindowsFormsSettings.AllowHoverAnimation = DevExpress.Utils.DefaultBoolean.True;
+            WindowsFormsSettings.AllowHoverAnimation = DefaultBoolean.True;
 
             LoadSettings();
 
@@ -140,7 +141,6 @@ namespace ModioX.Forms.Windows
             );
 
             Text = $@"ModioX - {UpdateExtensions.CurrentVersionName}";
-
 
             if (await HttpExtensions.CheckForInternetAsync().ConfigureAwait(true))
             {

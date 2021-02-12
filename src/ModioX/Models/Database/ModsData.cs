@@ -98,9 +98,9 @@ namespace ModioX.Models.Database
         /// Get all the <see cref="ModItem" /> matching the specified <see cref="Category.Id" />.
         /// </summary>
         /// <returns> </returns>
-        public ModItem[] GetModsByCategoryId(string gameId)
+        public List<ModItem> GetModsByCategoryId(string gameId)
         {
-            return Mods.Where(x => x.GameId.EqualsIgnoreCase(gameId)).ToArray();
+            return Mods.Where(x => x.GameId.EqualsIgnoreCase(gameId)).ToList();
         }
 
         /// <summary>

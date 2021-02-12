@@ -93,23 +93,5 @@ namespace ModioX.Database
 
             return new JsonSerializer().Deserialize<ModsData>(jsonReader);
         }
-
-        /// <summary>
-        /// Determines a valid json response
-        /// </summary>
-        /// <param name="data"> Json data to validate </param>
-        /// <returns> Whether text is valid json format </returns>
-        private static bool IsValidJson(string data)
-        {
-            try
-            {
-                JToken unused = JToken.Parse(data);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
     }
 }
