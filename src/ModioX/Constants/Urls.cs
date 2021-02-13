@@ -18,19 +18,19 @@
         internal const string GitHubLatestRelease = "https://api.github.com/repos/ohhsodead/ModioX/releases/latest";
 
         /// <summary>
-        /// Direct download for the categories database file hosted on Dropbox. (Maybe move to GitHub soon)
+        /// Direct download for the categories database file hosted on GitHub.
         /// </summary>
-        internal const string CategoriesData = "https://dl.dropbox.com/s/98bp8y8ii1o7y64/categories.json?raw=true";
+        internal const string CategoriesData = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/src/ModioX/Database/Categories-db.json";
 
         /// <summary>
-        /// Direct download for the PS3 mods database file hosted on Dropbox. (Maybe move to GitHub soon)
+        /// Direct download for the PS3 mods database file hosted on GitHub.
         /// </summary>
-        internal const string ModsDataPS3 = "https://www.dropbox.com/s/65pbod3w43lh1p0/mods-ps3.json?raw=true";
+        internal const string ModsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/src/ModioX/Database/PS3Mods-db.json";
 
         /// <summary>
-        /// Direct download for the XBOX mods database file hosted on Dropbox. (Maybe move to GitHub soon)
+        /// Direct download for the XBOX mods database file hosted on GitHub.
         /// </summary>
-        internal const string ModsDataXBOX = "https://dl.dropbox.com/s/wo9dljhnqbir5wk/mods-xbox.json?raw=true";
+        internal const string ModsDataXBOX = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/src/ModioX/Database/XboxMods-db.json";
 
         /// <summary>
         /// Links To The Official Discord Server.
