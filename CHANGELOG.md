@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## Beta v1.5 (Unreleased)
 - Improved code readability
 - Optimized parts of the application
+- Moved database files to GitHub
 - Moved Log files to Documents\ModioX\Logs
 - Upgraded application to .NET Framework 4.8
 - Upgraded application to DevExpress Forms

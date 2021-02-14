@@ -29,7 +29,7 @@ namespace ModioX.Forms.Settings
         /// <summary>
         /// Get the user's settings data.
         /// </summary>
-        public static DropboxData Database { get; } = MainWindow.Database;
+        public static GitHubData Database { get; } = MainWindow.Database;
 
         private void EditGameRegions_Load(object sender, EventArgs e)
         {

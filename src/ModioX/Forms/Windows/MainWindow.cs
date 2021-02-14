@@ -59,7 +59,7 @@ namespace ModioX.Forms.Windows
         /// <summary>
         /// Contains the data for the mods and categories.
         /// </summary>
-        public static DropboxData Database { get; private set; }
+        public static GitHubData Database { get; private set; }
 
         /// <summary>
         /// Contains the mods for either PS3 or XBOX.
@@ -221,7 +221,7 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                Database = await DropboxData.InitializeAsync().ConfigureAwait(true);
+                Database = await GitHubData.InitializeAsync().ConfigureAwait(true);
             }
             catch (Exception ex)
             {

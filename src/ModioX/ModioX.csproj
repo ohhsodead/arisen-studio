@@ -113,7 +113,7 @@
     </Compile>
     <Compile Include="Database\Category.cs" />
     <Compile Include="Database\DownloadFiles.cs" />
-    <Compile Include="Database\DropboxData.cs" />
+    <Compile Include="Database\GitHubData.cs" />
     <Compile Include="Database\ModItem.cs" />
     <Compile Include="Extensions\DataExtensions.cs" />
     <Compile Include="Extensions\ControlExtensions.cs" />

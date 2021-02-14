@@ -20,17 +20,17 @@
         /// <summary>
         /// Direct download for the categories database file hosted on GitHub.
         /// </summary>
-        internal const string CategoriesData = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/src/ModioX/Database/Categories-db.json";
+        internal const string CategoriesData = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/.database/Categories.json";
 
         /// <summary>
         /// Direct download for the PS3 mods database file hosted on GitHub.
         /// </summary>
-        internal const string ModsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/src/ModioX/Database/PS3Mods-db.json";
+        internal const string ModsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/.database/PS3Mods.json";
 
         /// <summary>
         /// Direct download for the XBOX mods database file hosted on GitHub.
         /// </summary>
-        internal const string ModsDataXBOX = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/src/ModioX/Database/XboxMods-db.json";
+        internal const string ModsDataXBOX = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/.database/XboxMods.json";
 
         /// <summary>
         /// Links To The Official Discord Server.
