@@ -2,9 +2,9 @@
 All notable changes to this project will be documented in this file.
 
 ## Beta v1.5 (Unreleased)
+- Optimized parts of the application
 - Improved code readability
 - Improved parsing of the database files
-- Optimized parts of the application
 - Moved database files to GitHub
 - Moved Log files to Documents\ModioX\Logs
 - Upgraded application to .NET Framework 4.8
@@ -27,8 +27,6 @@ All notable changes to this project will be documented in this file.
 - Fixed some UI bugs and added all missing icons
 - Fixed an issue with creating folders when installing mods
 - Fixed an issue with deleting folders when uninstalling mods
-
-This release couldn't be made possible without the help from all of the awesome contributors that have driven ModioX to where it is now and what it's going to become in the future. So whether you're a casual user, contributor, developer or even all of them, thank you for supporting me through everything this - it's been a little tough but we got there!
 
 ## Beta v1.4.8
 - Improved some user interface elements
