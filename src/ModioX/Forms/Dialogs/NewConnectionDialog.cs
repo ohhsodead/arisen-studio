@@ -79,19 +79,25 @@ namespace ModioX.Forms.Dialogs
                     ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
                     ImageConsole.Image = Resources.XboxSlimE;
                     break;
+                default:
+                    goto case 0;
             }
 
-            TextBoxConsolePort.Text = ConsoleProfile.TypePrefix == ConsoleTypePrefix.XBOX ? "730" : "21";
+            TextBoxConsolePort.Text = ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3 ? "21" : "730";
         }
 
         private void ButtonChangeCredentials_Click(object sender, EventArgs e)
         {
             using LoginDialog consoleCredentials = new LoginDialog();
+
+            consoleCredentials.TextBoxUsername.Text = ConsoleProfile.Username;
+            consoleCredentials.TextBoxPassword.Text = ConsoleProfile.Password;
+
             DialogResult setCredentials = consoleCredentials.ShowDialog(this);
 
             if (setCredentials == DialogResult.OK)
             {
-                LabelUserPass.Text = ConsoleProfile.Username + @" / " + ConsoleProfile.Password;
+                LabelUserPass.Text = consoleCredentials.TextBoxUsername.Text + @" / " + consoleCredentials.TextBoxPassword.Text;
 
                 ConsoleProfile.Username = consoleCredentials.TextBoxUsername.Text;
                 ConsoleProfile.Password = consoleCredentials.TextBoxPassword.Text;
@@ -111,19 +117,19 @@ namespace ModioX.Forms.Dialogs
         {
             if (string.IsNullOrWhiteSpace(TextBoxConnectionName.Text))
             {
-                XtraMessageBox.Show("You must enter a connection name.", "Empty Field");
+                XtraMessageBox.Show(this, "You must enter a connection name.", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(TextBoxConsoleAddress.Text))
             {
-                XtraMessageBox.Show("You must enter an IP Address.", "Empty Field");
+                XtraMessageBox.Show(this, "You must enter an IP Address.", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(TextBoxConsolePort.Text))
             {
-                XtraMessageBox.Show("You must enter a port value. The default value for PS3 is 21 and Xbox is 730.", "Empty Field");
+                XtraMessageBox.Show(this, "You must enter a port value. The default value for PS3 is 21 and Xbox is 730.", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -138,7 +144,7 @@ namespace ModioX.Forms.Dialogs
                     {
                         if (ConsoleProfile.Name != TextBoxConnectionName.Text && ProfileExists(TextBoxConnectionName.Text))
                         {
-                            XtraMessageBox.Show(this, "A console with this name already exists.", "Console Name Exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            XtraMessageBox.Show(this, "A console with this name already exists.", "Console Name Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                         else
                         {
@@ -152,7 +158,7 @@ namespace ModioX.Forms.Dialogs
                     {
                         if (ProfileExists(TextBoxConnectionName.Text))
                         {
-                            XtraMessageBox.Show(this, "A console with this name already exists.", "Console Name Exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            XtraMessageBox.Show(this, "A console with this name already exists.", "Console Name Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                         else
                         {
@@ -165,12 +171,12 @@ namespace ModioX.Forms.Dialogs
                 }
                 else
                 {
-                    XtraMessageBox.Show("Port is not an integer value.", "Invalid Port", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show(this, "Port is not an integer value.", "Invalid Port", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else
             {
-                XtraMessageBox.Show("IP Address isn't the correct format.", "Invalid IP Address", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(this, "IP Address isn't the correct format.", "Invalid IP Address", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

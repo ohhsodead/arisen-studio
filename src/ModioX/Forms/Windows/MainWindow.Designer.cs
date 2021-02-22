@@ -285,6 +285,9 @@ namespace ModioX.Forms.Windows
             // 
             // MainMenu
             // 
+            this.MainMenu.AllowCustomization = false;
+            this.MainMenu.AllowQuickCustomization = false;
+            this.MainMenu.AllowShowToolbarsPopup = false;
             this.MainMenu.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.BarMenu,
             this.BarStatus});
@@ -371,6 +374,7 @@ namespace ModioX.Forms.Windows
             this.ButtonSkinChanger});
             this.MainMenu.MainMenu = this.BarMenu;
             this.MainMenu.MaxItemId = 120;
+            this.MainMenu.OptionsLayout.AllowAddNewItems = false;
             this.MainMenu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.XNotifyText,
             this.XNotifyType});
@@ -391,6 +395,8 @@ namespace ModioX.Forms.Windows
             new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemApplications),
             new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemOptions),
             new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemHelp)});
+            this.BarMenu.OptionsBar.AllowQuickCustomization = false;
+            this.BarMenu.OptionsBar.DisableCustomization = true;
             this.BarMenu.OptionsBar.DrawBorder = false;
             this.BarMenu.OptionsBar.MultiLine = true;
             this.BarMenu.OptionsBar.UseWholeRow = true;
@@ -928,6 +934,8 @@ namespace ModioX.Forms.Windows
             new DevExpress.XtraBars.LinkPersistInfo(this.LabelStatus),
             new DevExpress.XtraBars.LinkPersistInfo(this.LabelModsStats)});
             this.BarStatus.OptionsBar.AllowQuickCustomization = false;
+            this.BarStatus.OptionsBar.DisableCustomization = true;
+            this.BarStatus.OptionsBar.DrawBorder = false;
             this.BarStatus.OptionsBar.DrawDragBorder = false;
             this.BarStatus.OptionsBar.UseWholeRow = true;
             this.BarStatus.Text = "Status bar";
@@ -1417,7 +1425,7 @@ namespace ModioX.Forms.Windows
             this.GridControlModsInstallFiles.MainView = this.GridViewModsInstallFiles;
             this.GridControlModsInstallFiles.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.GridControlModsInstallFiles.Name = "GridControlModsInstallFiles";
-            this.GridControlModsInstallFiles.Size = new System.Drawing.Size(369, 99);
+            this.GridControlModsInstallFiles.Size = new System.Drawing.Size(369, 107);
             this.GridControlModsInstallFiles.TabIndex = 3;
             this.GridControlModsInstallFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewModsInstallFiles});
@@ -1822,8 +1830,6 @@ namespace ModioX.Forms.Windows
             // ProgressMods
             // 
             this.ProgressMods.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ProgressMods.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ProgressMods.Appearance.Options.UseBackColor = true;
             this.ProgressMods.AppearanceCaption.Options.UseTextOptions = true;
             this.ProgressMods.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ProgressMods.AppearanceDescription.Options.UseTextOptions = true;
@@ -1956,8 +1962,6 @@ namespace ModioX.Forms.Windows
             // ProgressInstalledMods
             // 
             this.ProgressInstalledMods.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ProgressInstalledMods.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ProgressInstalledMods.Appearance.Options.UseBackColor = true;
             this.ProgressInstalledMods.AppearanceCaption.Options.UseTextOptions = true;
             this.ProgressInstalledMods.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ProgressInstalledMods.AppearanceDescription.Options.UseTextOptions = true;
@@ -2027,7 +2031,7 @@ namespace ModioX.Forms.Windows
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ScrollBarModInformation.Location = new System.Drawing.Point(360, 21);
             this.ScrollBarModInformation.Name = "ScrollBarModInformation";
-            this.ScrollBarModInformation.Size = new System.Drawing.Size(17, 575);
+            this.ScrollBarModInformation.Size = new System.Drawing.Size(17, 566);
             this.ScrollBarModInformation.TabIndex = 3;
             this.ScrollBarModInformation.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollBarModInformation_Scroll);
             // 
@@ -2036,9 +2040,9 @@ namespace ModioX.Forms.Windows
             this.GroupInstallFiles.Controls.Add(this.GridControlModsInstallFiles);
             this.GroupInstallFiles.Controls.Add(this.PanelButtonsModInformation);
             this.GroupInstallFiles.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.GroupInstallFiles.Location = new System.Drawing.Point(2, 593);
+            this.GroupInstallFiles.Location = new System.Drawing.Point(2, 585);
             this.GroupInstallFiles.Name = "GroupInstallFiles";
-            this.GroupInstallFiles.Size = new System.Drawing.Size(373, 164);
+            this.GroupInstallFiles.Size = new System.Drawing.Size(373, 172);
             this.GroupInstallFiles.TabIndex = 1;
             this.GroupInstallFiles.Text = "INSTALL FILES";
             // 
@@ -2049,7 +2053,7 @@ namespace ModioX.Forms.Windows
             this.PanelButtonsModInformation.Controls.Add(this.ButtonModDownload);
             this.PanelButtonsModInformation.Controls.Add(this.ButtonModFavorite);
             this.PanelButtonsModInformation.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelButtonsModInformation.Location = new System.Drawing.Point(2, 122);
+            this.PanelButtonsModInformation.Location = new System.Drawing.Point(2, 130);
             this.PanelButtonsModInformation.Name = "PanelButtonsModInformation";
             this.PanelButtonsModInformation.Size = new System.Drawing.Size(369, 40);
             this.PanelButtonsModInformation.TabIndex = 1174;
@@ -2126,7 +2130,7 @@ namespace ModioX.Forms.Windows
             this.FlowPanelDetails.Margin = new System.Windows.Forms.Padding(0);
             this.FlowPanelDetails.Name = "FlowPanelDetails";
             this.FlowPanelDetails.Padding = new System.Windows.Forms.Padding(6);
-            this.FlowPanelDetails.Size = new System.Drawing.Size(375, 567);
+            this.FlowPanelDetails.Size = new System.Drawing.Size(375, 564);
             this.FlowPanelDetails.TabIndex = 4;
             this.FlowPanelDetails.Scroll += new System.Windows.Forms.ScrollEventHandler(this.FlowPanelDetails_Scroll);
             // 
@@ -2144,6 +2148,9 @@ namespace ModioX.Forms.Windows
             // 
             // BarManagerModsInstalled
             // 
+            this.BarManagerModsInstalled.AllowCustomization = false;
+            this.BarManagerModsInstalled.AllowQuickCustomization = false;
+            this.BarManagerModsInstalled.AllowShowToolbarsPopup = false;
             this.BarManagerModsInstalled.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.BarModsInstalled});
             this.BarManagerModsInstalled.DockControls.Add(this.barDockControl5);
@@ -2157,6 +2164,7 @@ namespace ModioX.Forms.Windows
             this.ButtonModsUninstallAll});
             this.BarManagerModsInstalled.MainMenu = this.BarModsInstalled;
             this.BarManagerModsInstalled.MaxItemId = 3;
+            this.BarManagerModsInstalled.OptionsLayout.AllowAddNewItems = false;
             // 
             // BarModsInstalled
             // 

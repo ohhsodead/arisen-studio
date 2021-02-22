@@ -45,25 +45,27 @@ namespace ModioX.Forms.Dialogs
             // 
             // LabelUsername
             // 
-            this.LabelUsername.AutoSize = true;
-            this.LabelUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.LabelUsername.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelUsername.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.LabelUsername.Appearance.Options.UseFont = true;
+            this.LabelUsername.Appearance.Options.UseForeColor = true;
             this.LabelUsername.Location = new System.Drawing.Point(12, 14);
             this.LabelUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelUsername.Name = "LabelUsername";
-            this.LabelUsername.Size = new System.Drawing.Size(63, 15);
+            this.LabelUsername.Size = new System.Drawing.Size(56, 15);
             this.LabelUsername.TabIndex = 15;
             this.LabelUsername.Text = "Username:";
             // 
             // LabelPassword
             // 
-            this.LabelPassword.AutoSize = true;
-            this.LabelPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.LabelPassword.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelPassword.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.LabelPassword.Appearance.Options.UseFont = true;
+            this.LabelPassword.Appearance.Options.UseForeColor = true;
             this.LabelPassword.Location = new System.Drawing.Point(12, 43);
             this.LabelPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.LabelPassword.Name = "LabelPassword";
-            this.LabelPassword.Size = new System.Drawing.Size(60, 15);
+            this.LabelPassword.Size = new System.Drawing.Size(53, 15);
             this.LabelPassword.TabIndex = 16;
             this.LabelPassword.Text = "Password:";
             // 
@@ -72,14 +74,16 @@ namespace ModioX.Forms.Dialogs
             this.TextBoxUsername.Location = new System.Drawing.Point(90, 12);
             this.TextBoxUsername.Name = "TextBoxUsername";
             this.TextBoxUsername.Size = new System.Drawing.Size(282, 20);
-            this.TextBoxUsername.TabIndex = 17;
+            this.TextBoxUsername.TabIndex = 0;
+            this.TextBoxUsername.EditValueChanged += new System.EventHandler(this.TextBoxUsername_EditValueChanged);
             // 
             // TextBoxPassword
             // 
             this.TextBoxPassword.Location = new System.Drawing.Point(90, 41);
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.Size = new System.Drawing.Size(282, 20);
-            this.TextBoxPassword.TabIndex = 18;
+            this.TextBoxPassword.TabIndex = 1;
+            this.TextBoxPassword.EditValueChanged += new System.EventHandler(this.TextBoxPassword_EditValueChanged);
             // 
             // ButtonUseDefault
             // 
@@ -88,7 +92,7 @@ namespace ModioX.Forms.Dialogs
             this.ButtonUseDefault.Name = "ButtonUseDefault";
             this.ButtonUseDefault.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonUseDefault.Size = new System.Drawing.Size(102, 23);
-            this.ButtonUseDefault.TabIndex = 19;
+            this.ButtonUseDefault.TabIndex = 4;
             this.ButtonUseDefault.Text = "Use Default";
             // 
             // ButtonCancel
@@ -98,17 +102,18 @@ namespace ModioX.Forms.Dialogs
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCancel.Size = new System.Drawing.Size(84, 23);
-            this.ButtonCancel.TabIndex = 20;
+            this.ButtonCancel.TabIndex = 3;
             this.ButtonCancel.Text = "Cancel";
             // 
             // ButtonOK
             // 
             this.ButtonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.ButtonOK.Enabled = false;
             this.ButtonOK.Location = new System.Drawing.Point(288, 80);
             this.ButtonOK.Name = "ButtonOK";
             this.ButtonOK.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonOK.Size = new System.Drawing.Size(84, 23);
-            this.ButtonOK.TabIndex = 21;
+            this.ButtonOK.TabIndex = 2;
             this.ButtonOK.Text = "OK";
             // 
             // LoginDialog

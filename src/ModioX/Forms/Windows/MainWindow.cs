@@ -587,8 +587,8 @@ namespace ModioX.Forms.Windows
 
         private void ButtonXboxXNotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
         {
-            string xNotifyMessage = DialogExtensions.ShowTextInputDialog(this, "XNotify Message", "Message:", string.Empty);
-            XboxConsole.XNotify(xNotifyMessage);
+            string notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
+            XboxConsole.XNotify(notifyMessage);
         }
 
         // APPLICATIONS MENU
@@ -685,7 +685,7 @@ namespace ModioX.Forms.Windows
         private void ButtonOpenLogFile_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus("Opening Log file...");
-            string logFile = $"{UserFolders.AppLogsDirectory}latest.txt";
+            string logFile = $"{UserFolders.AppLogsDirectory}latest.log";
             if (File.Exists(logFile))
             {
                 try
