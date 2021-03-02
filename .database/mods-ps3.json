@@ -1,5 +1,5 @@
 {
-    "LastUpdated": "2021-02-01T00:13:37.126946+00:00",
+    "LastUpdated": "2021-03-02T00:13:37.126946+00:00",
     "Mods": [
         {
             "ConsoleType": "PS3",
@@ -3857,7 +3857,7 @@
             "Name": "webMAN MOD",
             "Firmware": "CEX/DEX",
             "Region": "-",
-            "Version": "1.47.32",
+            "Version": "1.47.34",
             "Author": "aldostools",
             "SubmittedBy": "ohhsodead",
             "Configuration": "-",
