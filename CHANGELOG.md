@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 - Upgraded application to .NET Framework 4.8
 - Upgraded application to DevExpress Forms
 - Removed redundant and unused dependencies
+- Added an auto-updater instead of using the installer
 - Added splash screen for loading application
 - Added support for Xbox RGH/JTAG consoles
 - Added images for all PS3 and Xbox models
