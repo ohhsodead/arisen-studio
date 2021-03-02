@@ -7,30 +7,32 @@ An open source desktop application designed to easily browse through a regularly
 
 ![Main Form](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/MainForm.png?raw=true)
 
-**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/FTCS3Xu)!
+**Comments, ideas, suggestions?** Come chat with us in the [Discord Server](https://discord.gg/FTCS3Xu)!
 
 Please give this project a ⭐ if you find it useful.
 
-## Features
+## Main Features
+
 * Fast, lightweight and simple to use
-* Browse a large database of PS3 mods (300+)
+* Browse a large database of PS3 & Xbox 360 mods (300+)
 * Complete with details, creator, version, etc.
 * Filter by console type, mod type and region
-* Download, install and uninstall mods
-* Automatically detect game regions
-* Backup and restore game files
+* Download the mods to your computer
+* Install and uninstall mods directly to your console
+* Automatically detect and remember game regions
+* Backup and restore original game files
 * Create and add mods to your own lists
 * Includes a built-in Game Updates Finder
 * Includes a built-in File Manager
 * Includes a built-in Package Manager
-* Includes basic WebMAN controls
-* Add multiple console profiles
+* Includes webMAN commands (Reboot, Shutdown, Notify, etc.)
 
 ## Requirements
-* An internet connection
+
+* An Internet Connection
 * NET Framework 4.8 (Download the official [here](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer))
-* PlayStation 3 (WebMAN, Multiman or Rebug Toolbox Installed)
-* RGH/Jtag Xbox 360 (DashLaunch Installed & Xbdm.xex as Plugin #1)
+* PlayStation 3 (with webMAN, multiMAN or Rebug Toolbox)
+* Xbox 360 RGH/JTAG (with DashLaunch & Xbdm.xex as Plugin #1)
 
 ## Installation
 
@@ -46,7 +48,12 @@ You're also welcome to submit any pull requests with fixes and suggestions, like
 
 I know that not all mods aren't on our database, yet. But if you open an issue including the details they will be added for you.
 
+## Quick Guide
+
+Nothing here yet, but don't worry - we're working on it.
+
 ## Credits & Libraries
+
 * Appropriate Creators of all Mods
 * [DevExpress](https://devexpress.com/)
 * [Newtonsoft.Json](https://newtonsoft.com/json)
@@ -54,9 +61,9 @@ I know that not all mods aren't on our database, yet. But if you open an issue i
 * [NLog](https://nlog-project.org/)
 * [WebMAN API](https://github.com/FxckingCoder/WebmanAPI)
 * [XDevkit](https://github.com/TeddyHammer)
-* [Icons8](https://icons8.com/)
 
 ## Contributors
+
 * [KayGart](https://github.com/KayGart)
 * [TeddyHammer](https://github.com/TeddyHammer)
 
