@@ -31,7 +31,7 @@ Please give this project a ⭐ if you find it useful.
 
 * An Internet Connection
 * NET Framework 4.8 (Download the official [here](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer))
-* PlayStation 3 (with webMAN, multiMAN or Rebug Toolbox)
+* PlayStation 3 (with webMAN, multiMAN or Rebug Toolbox) OR
 * Xbox 360 RGH/JTAG (with DashLaunch & Xbdm.xex as Plugin #1)
 
 ## Installation
@@ -46,7 +46,7 @@ You're also welcome to submit any pull requests with fixes and suggestions, like
 
 ## Requesting Mods
 
-I know that not all mods aren't on our database, yet. But if you open an issue including the details they will be added for you.
+I know that not all mods aren't on our database, but if you open an issue with the details then we can get them added for you!
 
 ## Quick Guide
 
