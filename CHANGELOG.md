@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 - Improved code readability
 - Improved parsing of the database files
 - Moved database files to GitHub
-- Moved Log files to Documents\ModioX\Logs
+- Moved log files to Documents\ModioX\Logs
 - Upgraded application to .NET Framework 4.8
 - Upgraded application to DevExpress Forms
 - Removed redundant and unused dependencies
