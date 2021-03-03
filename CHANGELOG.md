@@ -16,7 +16,7 @@ All notable changes to this project will be documented in this file.
 - Added images for all PS3 and Xbox models
 - Added ability to create and add mods to your own lists
 - Added Package Manager for PS3 to Tools menu
-- Added Mount/Unmount Games to Tools menu
+- Added Mount/Unmount Games for PS3 to Tools menu
 - Added File Manager for Xbox to Tools menu
 - Added Launch File Editor for Xbox to Tools menu
 - Added XBDM Controls for Xbox to Tools menu
