@@ -14,7 +14,7 @@ Please give this project a ⭐ if you find it useful.
 ## Main Features
 
 * Fast, lightweight and simple to use
-* Browse a large database of PS3 & Xbox 360 mods (300+)
+* Browse a large database of PS3 & Xbox 360 mods
 * Complete with details, creator, version, etc.
 * Filter by console type, mod type and region
 * Download the mods to your computer
@@ -25,7 +25,7 @@ Please give this project a ⭐ if you find it useful.
 * Includes a built-in Game Updates Finder
 * Includes a built-in File Manager
 * Includes a built-in Package Manager
-* Includes webMAN commands (Reboot, Shutdown, Notify, etc.)
+* Includes webMAN commands (Reboot, Shutdown, etc.)
 
 ## Requirements
 
@@ -55,9 +55,10 @@ Nothing here yet, but don't worry - we're working on it.
 ## Credits & Libraries
 
 * Appropriate Creators of all Mods
+* [AutoUpdater.NET](https://github.com/ravibpatel/AutoUpdater.NET)
 * [DevExpress](https://devexpress.com/)
-* [Newtonsoft.Json](https://newtonsoft.com/json)
 * [Humanizer](https://github.com/Humanizr/Humanizer)
+* [Newtonsoft.Json](https://newtonsoft.com/json)
 * [NLog](https://nlog-project.org/)
 * [WebMAN API](https://github.com/FxckingCoder/WebmanAPI)
 * [XDevkit](https://github.com/TeddyHammer)
