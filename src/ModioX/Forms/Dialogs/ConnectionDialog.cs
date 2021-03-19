@@ -83,7 +83,7 @@ namespace ModioX.Forms.Dialogs
                         break;
                 }
 
-                TileConsoleItem consoleItem = new TileConsoleItem(consoleProfile.Name, consoleImage) { ConsoleProfile = consoleProfile };
+                TileConsoleItem consoleItem = new(consoleProfile.Name, consoleImage) { ConsoleProfile = consoleProfile };
                 consoleItem.OnClick += new EventHandler(ConsoleItem_Click);
                 PanelConsoleProfiles.Controls.Add(consoleItem);
                 consoleIndex++;
@@ -165,7 +165,7 @@ namespace ModioX.Forms.Dialogs
 
             ConsoleProfile newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
 
-            oldConsoleProfile = newConsoleProfile;
+            Settings.ConsoleProfiles[selectedIndex] = newConsoleProfile;
 
             LoadConsoles();
         }

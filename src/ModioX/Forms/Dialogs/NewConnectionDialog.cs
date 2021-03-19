@@ -88,7 +88,7 @@ namespace ModioX.Forms.Dialogs
 
         private void ButtonChangeCredentials_Click(object sender, EventArgs e)
         {
-            using LoginDialog consoleCredentials = new LoginDialog();
+            using LoginDialog consoleCredentials = new();
 
             consoleCredentials.TextBoxUsername.Text = ConsoleProfile.Username;
             consoleCredentials.TextBoxPassword.Text = ConsoleProfile.Password;

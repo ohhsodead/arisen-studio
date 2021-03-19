@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## Beta v1.5 (Unreleased)
+## Beta v1.5
 - Optimized parts of the application
 - Improved code readability
 - Improved parsing of the database files

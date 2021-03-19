@@ -40,14 +40,12 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameUpdatesFinder));
             this.SectionPanelInformation = new DevExpress.XtraEditors.GroupControl();
-            this.ComboBoxType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ButtonSearch = new DevExpress.XtraEditors.SimpleButton();
             this.ProgressNoGameUpdatesFound = new DevExpress.XtraWaitForm.ProgressPanel();
             this.TextBoxTitleID = new DevExpress.XtraEditors.TextEdit();
             this.GridGameUpdates = new DevExpress.XtraGrid.GridControl();
             this.GridViewGameUpdates = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.LabelSearch = new DevExpress.XtraEditors.LabelControl();
-            this.LabelSelectType = new DevExpress.XtraEditors.LabelControl();
             this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
             this.ButtonInstallToConsole = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonDownloadToComputer = new DevExpress.XtraEditors.SimpleButton();
@@ -72,7 +70,6 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.SectionPanelInformation)).BeginInit();
             this.SectionPanelInformation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxTitleID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridGameUpdates)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewGameUpdates)).BeginInit();
@@ -86,13 +83,11 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.SectionPanelInformation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SectionPanelInformation.Controls.Add(this.ComboBoxType);
             this.SectionPanelInformation.Controls.Add(this.ButtonSearch);
             this.SectionPanelInformation.Controls.Add(this.ProgressNoGameUpdatesFound);
             this.SectionPanelInformation.Controls.Add(this.TextBoxTitleID);
             this.SectionPanelInformation.Controls.Add(this.GridGameUpdates);
             this.SectionPanelInformation.Controls.Add(this.LabelSearch);
-            this.SectionPanelInformation.Controls.Add(this.LabelSelectType);
             this.SectionPanelInformation.Controls.Add(this.stackPanel2);
             this.SectionPanelInformation.Location = new System.Drawing.Point(11, 11);
             this.SectionPanelInformation.Name = "SectionPanelInformation";
@@ -100,26 +95,11 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.SectionPanelInformation.TabIndex = 0;
             this.SectionPanelInformation.Text = "SEARCH FOR GAME UPDATES";
             // 
-            // ComboBoxType
-            // 
-            this.ComboBoxType.Location = new System.Drawing.Point(245, 31);
-            this.ComboBoxType.Name = "ComboBoxType";
-            this.ComboBoxType.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ComboBoxType.Properties.Appearance.Options.UseFont = true;
-            this.ComboBoxType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboBoxType.Properties.Items.AddRange(new object[] {
-            "Retail",
-            "Debug"});
-            this.ComboBoxType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxType.Size = new System.Drawing.Size(75, 22);
-            this.ComboBoxType.TabIndex = 1185;
-            // 
             // ButtonSearch
             // 
             this.ButtonSearch.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonSearch.Appearance.Options.UseFont = true;
-            this.ButtonSearch.Location = new System.Drawing.Point(327, 31);
+            this.ButtonSearch.Location = new System.Drawing.Point(164, 31);
             this.ButtonSearch.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonSearch.Name = "ButtonSearch";
             this.ButtonSearch.Size = new System.Drawing.Size(67, 22);
@@ -193,19 +173,6 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.LabelSearch.Size = new System.Drawing.Size(41, 15);
             this.LabelSearch.TabIndex = 1161;
             this.LabelSearch.Text = "TITLE ID";
-            // 
-            // LabelSelectType
-            // 
-            this.LabelSelectType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSelectType.Appearance.Options.UseFont = true;
-            this.LabelSelectType.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelSelectType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSelectType.Location = new System.Drawing.Point(167, 34);
-            this.LabelSelectType.Margin = new System.Windows.Forms.Padding(4, 3, 3, 2);
-            this.LabelSelectType.Name = "LabelSelectType";
-            this.LabelSelectType.Size = new System.Drawing.Size(72, 15);
-            this.LabelSelectType.TabIndex = 1160;
-            this.LabelSelectType.Text = "UPDATE TYPE";
             // 
             // stackPanel2
             // 
@@ -444,7 +411,6 @@ namespace ModioX.Forms.Tools.PS3_Tools
             ((System.ComponentModel.ISupportInitialize)(this.SectionPanelInformation)).EndInit();
             this.SectionPanelInformation.ResumeLayout(false);
             this.SectionPanelInformation.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxTitleID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridGameUpdates)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewGameUpdates)).EndInit();
@@ -460,7 +426,6 @@ namespace ModioX.Forms.Tools.PS3_Tools
         private GroupControl SectionPanelInformation;
         private TextEdit TextBoxTitleID;
         private LabelControl LabelSearch;
-        private LabelControl LabelSelectType;
         private SimpleButton ButtonSearch;
         private ToolStripLabel ToolStripLabelHeaderStatus;
         private ToolStripLabel ToolStripLabelStatus;
@@ -487,6 +452,5 @@ namespace ModioX.Forms.Tools.PS3_Tools
         private BarDockControl barDockControlRight;
         private BarHeaderItem barHeaderItem1;
         private BarStaticItem barStaticItem2;
-        private ComboBoxEdit ComboBoxType;
     }
 }

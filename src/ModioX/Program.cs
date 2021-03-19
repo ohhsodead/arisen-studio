@@ -33,7 +33,7 @@ namespace ModioX
 
         private static void ConfigureLogger()
         {
-            LoggingConfiguration config = new LoggingConfiguration();
+            LoggingConfiguration config = new();
 
             // String to use for exceptions
             const string exc = @"${exception:format=ToString:seperator=\n}";
@@ -45,7 +45,7 @@ namespace ModioX
             string layout = $@"${{date:format=HH\:mm\:ss}} [${{level:uppercase=true}}] {threadInfo}: ${{message}} ${{onexception:inner={exc}}}";
 
             // Target where to log to.
-            FileTarget file = new FileTarget("file")
+            FileTarget file = new("file")
             {
                 FileName = $"{UserFolders.AppLogsDirectory}latest.log",
                 AutoFlush = true,

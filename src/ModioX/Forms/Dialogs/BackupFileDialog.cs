@@ -25,7 +25,7 @@ namespace ModioX.Forms.Dialogs
 
         private void ButtonBrowseLocalPath_Click(object sender, EventArgs e)
         {
-            using OpenFileDialog openFileDialog = new OpenFileDialog { CheckFileExists = true, Multiselect = false };
+            using OpenFileDialog openFileDialog = new() { CheckFileExists = true, Multiselect = false };
             openFileDialog.InitialDirectory = Path.GetDirectoryName(TextBoxInstallPathLocal.Text);
 
             if (openFileDialog.ShowDialog() == DialogResult.OK) TextBoxInstallPathLocal.Text = openFileDialog.FileName;

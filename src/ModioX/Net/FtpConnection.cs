@@ -70,7 +70,7 @@ namespace ModioX.Net
         public bool DirectoryExists(string path)
         {
             bool flag;
-            WINAPI.WIN32_FIND_DATA findFileData = new WINAPI.WIN32_FIND_DATA();
+            WINAPI.WIN32_FIND_DATA findFileData = new();
             IntPtr hInternet = WININET.FtpFindFirstFile(_hConnect, path, ref findFileData, 0x400_0000, IntPtr.Zero);
             try
             {
@@ -118,7 +118,7 @@ namespace ModioX.Net
         public bool FileExists(string path)
         {
             bool flag;
-            WINAPI.WIN32_FIND_DATA findFileData = new WINAPI.WIN32_FIND_DATA();
+            WINAPI.WIN32_FIND_DATA findFileData = new();
             IntPtr hInternet = WININET.FtpFindFirstFile(_hConnect, path, ref findFileData, 0x400_0000, IntPtr.Zero);
             try
             {
@@ -142,7 +142,7 @@ namespace ModioX.Net
         public string GetCurrentDirectory()
         {
             int capacity = 0x105;
-            StringBuilder currentDirectory = new StringBuilder(capacity);
+            StringBuilder currentDirectory = new(capacity);
             if (WININET.FtpGetCurrentDirectory(_hConnect, currentDirectory, ref capacity) != 0)
             {
                 return currentDirectory.ToString();
@@ -164,11 +164,11 @@ namespace ModioX.Net
         public FtpDirectoryInfo[] GetDirectories(string path)
         {
             FtpDirectoryInfo[] infoArray;
-            WINAPI.WIN32_FIND_DATA findFileData = new WINAPI.WIN32_FIND_DATA();
+            WINAPI.WIN32_FIND_DATA findFileData = new();
             IntPtr hInternet = WININET.FtpFindFirstFile(_hConnect, path, ref findFileData, 0x400_0000, IntPtr.Zero);
             try
             {
-                List<FtpDirectoryInfo> list = new List<FtpDirectoryInfo>();
+                List<FtpDirectoryInfo> list = new();
                 if (hInternet == IntPtr.Zero)
                 {
                     if (Marshal.GetLastWin32Error() == 0x12)
@@ -185,7 +185,7 @@ namespace ModioX.Net
                 {
                     if ((findFileData.dfFileAttributes & 0x10) == 0x10)
                     {
-                        FtpDirectoryInfo item = new FtpDirectoryInfo(this, new string(findFileData.fileName).TrimEnd(new char[1]))
+                        FtpDirectoryInfo item = new(this, new string(findFileData.fileName).TrimEnd(new char[1]))
                         {
                             LastAccessTime = findFileData.ftLastAccessTime.ToDateTime(),
                             LastWriteTime = findFileData.ftLastWriteTime.ToDateTime(),
@@ -208,7 +208,7 @@ namespace ModioX.Net
                         }
                         if ((findFileData.dfFileAttributes & 0x10) == 0x10)
                         {
-                            FtpDirectoryInfo item = new FtpDirectoryInfo(this, new string(findFileData.fileName).TrimEnd(new char[1]))
+                            FtpDirectoryInfo item = new(this, new string(findFileData.fileName).TrimEnd(new char[1]))
                             {
                                 LastAccessTime = findFileData.ftLastAccessTime.ToDateTime(),
                                 LastWriteTime = findFileData.ftLastWriteTime.ToDateTime(),
@@ -250,11 +250,11 @@ namespace ModioX.Net
         public FtpFileInfo[] GetFiles(string mask)
         {
             FtpFileInfo[] infoArray;
-            WINAPI.WIN32_FIND_DATA findFileData = new WINAPI.WIN32_FIND_DATA();
+            WINAPI.WIN32_FIND_DATA findFileData = new();
             IntPtr hInternet = WININET.FtpFindFirstFile(_hConnect, mask, ref findFileData, 0x400_0000, IntPtr.Zero);
             try
             {
-                List<FtpFileInfo> list = new List<FtpFileInfo>();
+                List<FtpFileInfo> list = new();
                 if (hInternet == IntPtr.Zero)
                 {
                     if (Marshal.GetLastWin32Error() == 0x12)
@@ -271,7 +271,7 @@ namespace ModioX.Net
                 {
                     if ((findFileData.dfFileAttributes & 0x10) != 0x10)
                     {
-                        FtpFileInfo item = new FtpFileInfo(this, new string(findFileData.fileName).TrimEnd(new char[1]))
+                        FtpFileInfo item = new(this, new string(findFileData.fileName).TrimEnd(new char[1]))
                         {
                             LastAccessTime = findFileData.ftLastAccessTime.ToDateTime(),
                             LastWriteTime = findFileData.ftLastWriteTime.ToDateTime(),
@@ -294,7 +294,7 @@ namespace ModioX.Net
                         }
                         if ((findFileData.dfFileAttributes & 0x10) != 0x10)
                         {
-                            FtpFileInfo item = new FtpFileInfo(this, new string(findFileData.fileName).TrimEnd(new char[1]))
+                            FtpFileInfo item = new(this, new string(findFileData.fileName).TrimEnd(new char[1]))
                             {
                                 LastAccessTime = findFileData.ftLastAccessTime.ToDateTime(),
                                 LastWriteTime = findFileData.ftLastWriteTime.ToDateTime(),
@@ -319,14 +319,14 @@ namespace ModioX.Net
 
         public long GetFileSize(string file)
         {
-            IntPtr hConnect = new IntPtr(WININET.FtpOpenFile(_hConnect, file, 0x8000_0000, 2, IntPtr.Zero));
+            IntPtr hConnect = new(WININET.FtpOpenFile(_hConnect, file, 0x8000_0000, 2, IntPtr.Zero));
             if (!(hConnect == IntPtr.Zero))
             {
                 try
                 {
                     int dwFileSizeHigh = 0;
                     int num2 = WININET.FtpGetFileSize(hConnect, ref dwFileSizeHigh);
-                    return ((dwFileSizeHigh << 0x20) | num2);
+                    return (dwFileSizeHigh << 0x20) | num2;
                 }
                 catch (Exception)
                 {
@@ -347,86 +347,9 @@ namespace ModioX.Net
         private string InternetLastResponseInfo(ref int code)
         {
             int capacity = 0x2000;
-            StringBuilder buffer = new StringBuilder(capacity);
+            StringBuilder buffer = new(capacity);
             WININET.InternetGetLastResponseInfo(ref code, buffer, ref capacity);
             return buffer.ToString();
-        }
-
-        [Obsolete("Use GetFiles or GetDirectories instead.")]
-        public List<string> List() =>
-            List(null, false);
-
-        [Obsolete("Will be removed in later releases.")]
-        private List<string> List(bool onlyDirectories) =>
-            List(null, onlyDirectories);
-
-        [Obsolete("Use GetFiles or GetDirectories instead.")]
-        public List<string> List(string mask) =>
-            List(mask, false);
-
-        [Obsolete("Will be removed in later releases.")]
-        private List<string> List(string mask, bool onlyDirectories)
-        {
-            List<string> list2;
-            WINAPI.WIN32_FIND_DATA findFileData = new WINAPI.WIN32_FIND_DATA();
-            IntPtr hInternet = WININET.FtpFindFirstFile(_hConnect, mask, ref findFileData, 0x400_0000, IntPtr.Zero);
-            try
-            {
-                List<string> list = new List<string>();
-                if (hInternet == IntPtr.Zero)
-                {
-                    if (Marshal.GetLastWin32Error() == 0x12)
-                    {
-                        list2 = list;
-                    }
-                    else
-                    {
-                        Error();
-                        list2 = list;
-                    }
-                }
-                else
-                {
-                    if (onlyDirectories && ((findFileData.dfFileAttributes & 0x10) == 0x10))
-                    {
-                        list.Add(new string(findFileData.fileName).TrimEnd(new char[1]));
-                    }
-                    else if (!onlyDirectories)
-                    {
-                        list.Add(new string(findFileData.fileName).TrimEnd(new char[1]));
-                    }
-                    findFileData = new WINAPI.WIN32_FIND_DATA();
-                    while (true)
-                    {
-                        if (WININET.InternetFindNextFile(hInternet, ref findFileData) == 0)
-                        {
-                            if (Marshal.GetLastWin32Error() != 0x12)
-                            {
-                                Error();
-                            }
-                            list2 = list;
-                            break;
-                        }
-                        if (onlyDirectories && ((findFileData.dfFileAttributes & 0x10) == 0x10))
-                        {
-                            list.Add(new string(findFileData.fileName).TrimEnd(new char[1]));
-                        }
-                        else if (!onlyDirectories)
-                        {
-                            list.Add(new string(findFileData.fileName).TrimEnd(new char[1]));
-                        }
-                        findFileData = new WINAPI.WIN32_FIND_DATA();
-                    }
-                }
-            }
-            finally
-            {
-                if (hInternet != IntPtr.Zero)
-                {
-                    WININET.InternetCloseHandle(hInternet);
-                }
-            }
-            return list2;
         }
 
         public void Login()
@@ -503,7 +426,7 @@ namespace ModioX.Net
 
         public string SendCommand(string cmd)
         {
-            IntPtr ftpCommand = new IntPtr();
+            IntPtr ftpCommand = new();
             int num = (cmd != "PASV") ? WININET.FtpCommand(_hConnect, false, 1, cmd, IntPtr.Zero, ref ftpCommand) : WININET.FtpCommand(_hConnect, false, 1, cmd, IntPtr.Zero, ref ftpCommand);
             int capacity = 0x2000;
             if (num == 0)
@@ -512,7 +435,7 @@ namespace ModioX.Net
             }
             else if (ftpCommand != IntPtr.Zero)
             {
-                StringBuilder buffer = new StringBuilder(capacity);
+                StringBuilder buffer = new(capacity);
                 int bytesRead = 0;
                 while (true)
                 {

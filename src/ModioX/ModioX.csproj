@@ -71,7 +71,6 @@
   <ItemGroup>
     <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraDialogs.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -121,7 +120,6 @@
     <Compile Include="Extensions\DialogExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\WebManExtensions.cs" />
-    <Compile Include="Extensions\XboxExtensions.cs" />
     <Compile Include="Forms\Dialogs\ConnectionDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +131,12 @@
     </Compile>
     <Compile Include="Forms\Settings\CustomLists.Designer.cs">
       <DependentUpon>CustomLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\RequestModsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\RequestModsDialog.Designer.cs">
+      <DependentUpon>RequestModsDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Windows\FileManagerWindow.cs">
       <SubType>Form</SubType>
@@ -204,17 +208,11 @@
     <Compile Include="Forms\Dialogs\InputTextDialog.Designer.cs">
       <DependentUpon>InputTextDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Settings\ExternalApplications.cs">
+    <Compile Include="Forms\Settings\GameRegions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Settings\ExternalApplications.Designer.cs">
-      <DependentUpon>ExternalApplications.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Settings\SavedGameRegions.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Settings\SavedGameRegions.Designer.cs">
-      <DependentUpon>SavedGameRegions.cs</DependentUpon>
+    <Compile Include="Forms\Settings\GameRegions.Designer.cs">
+      <DependentUpon>GameRegions.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\DataViewDialog.cs">
       <SubType>Form</SubType>
@@ -277,14 +275,14 @@
     <EmbeddedResource Include="Forms\Dialogs\LoginDialog.resx">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\RequestModsDialog.resx">
+      <DependentUpon>RequestModsDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\CustomLists.resx">
       <DependentUpon>CustomLists.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Settings\ExternalApplications.resx">
-      <DependentUpon>ExternalApplications.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Settings\SavedGameRegions.resx">
-      <DependentUpon>SavedGameRegions.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Settings\GameRegions.resx">
+      <DependentUpon>GameRegions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\DataViewDialog.resx">
       <DependentUpon>DataViewDialog.cs</DependentUpon>
@@ -374,6 +372,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Autoupdater.NET.Official">
+      <Version>1.6.4</Version>
+    </PackageReference>
     <PackageReference Include="FluentFTP">
       <Version>33.0.3</Version>
     </PackageReference>
@@ -395,7 +396,7 @@
       <Version>13.0.1-beta1</Version>
     </PackageReference>
     <PackageReference Include="NLog">
-      <Version>4.7.7</Version>
+      <Version>4.7.8</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

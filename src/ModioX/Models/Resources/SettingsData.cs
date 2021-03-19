@@ -28,9 +28,9 @@ namespace ModioX.Models.Resources
 
         public bool ShowGamesFromExternalDevices { get; set; } = true;
 
-        public bool AutoDetectGameRegions { get; set; } = true;
+        public bool AutoDetectGameRegions { get; set; } = false;
 
-        public bool AutoDetectGameTitles { get; set; } = true;
+        public bool AutoDetectGameTitles { get; set; } = false;
 
         public bool RememberGameRegions { get; set; } = true;
 
@@ -54,8 +54,6 @@ namespace ModioX.Models.Resources
 
         public List<GameRegion> GameRegions { get; set; } = new();
 
-        public List<ExternalApplication> ExternalApplications { get; set; } = new();
-
         public List<CustomList> CustomLists { get; set; } = new();
 
         public List<InstalledMod> InstalledGameMods { get; set; } = new();
@@ -74,7 +72,7 @@ namespace ModioX.Models.Resources
 
             Directory.CreateDirectory(gameBackupFolder);
 
-            BackupFile backupFile = new BackupFile
+            BackupFile backupFile = new()
             {
                 CategoryId = modItem.GameId,
                 FileName = fileName,
@@ -104,61 +102,31 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        /// Gets the external applications file location for the specified application name.
-        /// </summary>
-        /// <param name="appName"> Application name with extension. </param>
-        /// <returns> Game Region </returns>
-        public string GetApplicationLocation(string appName)
-        {
-            return ExternalApplications.FirstOrDefault(app => app.Name.Equals(appName, StringComparison.OrdinalIgnoreCase))?.FileLocation;
-        }
-
-        /// <summary>
-        /// Either update or add the application name and file location.
-        /// </summary>
-        /// <param name="appName"> Application Name </param>
-        /// <param name="fileLocation"> Application File Location </param>
-        public void UpdateApplication(string appName, string fileLocation)
-        {
-            ExternalApplication applicationIndex = ExternalApplications.Find(x => string.Equals(x.Name, appName, StringComparison.OrdinalIgnoreCase));
-
-            ExternalApplication externalApplication = new ExternalApplication(appName, fileLocation);
-
-            if (applicationIndex == null)
-            {
-                ExternalApplications.Add(externalApplication);
-            }
-            else
-            {
-                ExternalApplications[ExternalApplications.IndexOf(applicationIndex)] = externalApplication;
-            }
-        }
-
-        /// <summary>
         /// Add a custom list with the specified name.
         /// </summary>
         /// <param name="name"> Custom list name </param>
-        public void AddCustomList(string name)
+        public void AddCustomList(string name, ConsoleTypePrefix consoleType)
         {
-            CustomLists.Add(new CustomList { Name = name });
+            CustomLists.Add(new CustomList { ConsoleType = consoleType, Name = name });
         }
 
         /// <summary>
         /// Either update or add the custom list details.
         /// </summary>
-        /// <param name="listName"> Custom list name </param>
-        /// <param name="newListName"> Mod Id to add to list </param>
-        public void RenameCustomList(string oldName, string newName)
+        /// <param name="oldName"> Custom list name </param>
+        /// <param name="newName"> Mod Id to add to list </param>
+        /// <param name="consoleType"> Mod Id to add to list </param>
+        public void RenameCustomList(string oldName, string newName, ConsoleTypePrefix consoleType)
         {
-            CustomList customList = CustomLists.Find(x => string.Equals(x.Name, oldName, StringComparison.OrdinalIgnoreCase));
+            CustomList customList = CustomLists.Find(x => x.ConsoleType == consoleType && x.Name.EqualsIgnoreCase(oldName));
 
             if (customList == null)
             {
-                CustomLists.Add(new CustomList { Name = newName });
+                CustomLists.Add(new CustomList { ConsoleType = consoleType, Name = newName });
             }
             else
             {
-                CustomLists[CustomLists.IndexOf(customList)] = new CustomList { Name = newName, ModIds = customList.ModIds };
+                CustomLists[CustomLists.IndexOf(customList)] = new CustomList { ConsoleType = consoleType, Name = newName, ModIds = customList.ModIds };
             }
         }
 
@@ -167,9 +135,9 @@ namespace ModioX.Models.Resources
         /// </summary>
         /// <param name="listName"> Custom list name </param>
         /// <param name="newListName"> Mod Id to add to list </param>
-        public void AddModToCustomList(string name, int modId)
+        public void AddModToCustomList(string name, int modId, ConsoleTypePrefix consoleType)
         {
-            CustomList customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
+            CustomList customList = CustomLists.Find(x => x.ConsoleType == consoleType && x.Name.EqualsIgnoreCase(name));
 
             if (!customList.ModIds.Contains(modId))
             {
@@ -182,9 +150,9 @@ namespace ModioX.Models.Resources
         /// </summary>
         /// <param name="listName"> Custom list name </param>
         /// <param name="modId"> Mod Id to add to list </param>
-        public void RemoveModFromCustomList(string name, int modId)
+        public void RemoveModFromCustomList(string name, int modId, ConsoleTypePrefix consoleType)
         {
-            CustomList customList = CustomLists.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
+            CustomList customList = CustomLists.Find(x => x.ConsoleType == consoleType && x.Name.EqualsIgnoreCase(name));
             customList.ModIds.Remove(modId);
         }
 
@@ -195,7 +163,7 @@ namespace ModioX.Models.Resources
         /// <returns> Game Region </returns>
         public string GetGameRegion(string gameId)
         {
-            return GameRegions.FirstOrDefault(region => region.GameId.Equals(gameId, StringComparison.OrdinalIgnoreCase))?.Region;
+            return GameRegions.FirstOrDefault(region => region.GameId.EqualsIgnoreCase(gameId))?.Region;
         }
 
         /// <summary>
@@ -307,7 +275,7 @@ namespace ModioX.Models.Resources
         /// <returns> </returns>
         public List<string> GetModTypesForModIDs(ModsData modsData, List<int> modIds)
         {
-            List<string> modTypes = new List<string>();
+            List<string> modTypes = new();
 
             foreach (ModItem modItem in modsData.Mods)
             {
@@ -327,7 +295,7 @@ namespace ModioX.Models.Resources
         /// <returns> </returns>
         public List<string> GetRegionsForModIDs(ModsData modsData, List<int> modIds)
         {
-            List<string> regions = new List<string>();
+            List<string> regions = new();
 
             foreach (ModItem modItem in modsData.Mods)
             {
@@ -356,12 +324,13 @@ namespace ModioX.Models.Resources
         /// Get the custom list matching the specified name.
         /// </summary>
         /// <param name="name"> </param>
+        /// <param name="consoleType"> </param>
         /// <returns> </returns>
-        public CustomList GetCustomListByName(string name)
+        public CustomList GetCustomListByName(string name, ConsoleTypePrefix consoleType)
         {
-            foreach (CustomList customList in from CustomList customList in CustomLists
-                                       where string.Equals(customList.Name, name, StringComparison.OrdinalIgnoreCase)
-                                       select customList)
+            foreach (CustomList customList in from CustomList customList in CustomLists.FindAll(x => x.ConsoleType == consoleType)
+                                              where customList.Name.EqualsIgnoreCase(name)
+                                              select customList)
             {
                 return customList;
             }
@@ -580,21 +549,5 @@ namespace ModioX.Models.Resources
         public string Name { get; set; }
 
         public List<int> ModIds { get; set; } = new();
-    }
-
-    /// <summary>
-    /// Create a new external application class with the specified name and file location.
-    /// </summary>
-    public class ExternalApplication
-    {
-        public ExternalApplication(string name, string fileLocation)
-        {
-            Name = name;
-            FileLocation = fileLocation;
-        }
-
-        public string Name { get; set; }
-
-        public string FileLocation { get; set; }
     }
 }

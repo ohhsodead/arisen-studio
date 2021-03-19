@@ -98,7 +98,7 @@ namespace ModioX.Forms.Dialogs
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(486, 43);
             this.Name = "DataViewDialog";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Title";
             this.Load += new System.EventHandler(this.DataViewDialog_Load);
             this.Scroll += new System.Windows.Forms.ScrollEventHandler(this.DataViewDialog_Scroll);

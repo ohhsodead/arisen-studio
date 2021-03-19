@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -21,8 +22,14 @@ namespace ModioX.Forms.Settings
         /// </summary>
         public static SettingsData Settings { get; } = MainWindow.Settings;
 
+        /// <summary>
+        /// Get the current selected console type.
+        /// </summary>
+        public ConsoleTypePrefix ConsoleType { get; set; }
+
         private void CustomListsDialog_Load(object sender, EventArgs e)
         {
+            GroupCustomLists.Text += $" ({ConsoleType.GetDescription()})";
             LoadCustomLists();
         }
 
@@ -30,16 +37,18 @@ namespace ModioX.Forms.Settings
         {
             GridCustomLists.DataSource = null;
 
-            DataTable dt = new DataTable();
-            dt.Columns.Add("List Name", typeof(string));
-            dt.Columns.Add("# of Mods", typeof(string));
-
-            foreach (CustomList customList in Settings.CustomLists)
+            DataTable dataTable = DataExtensions.CreateDataTable(new List<DataColumn>() 
             {
-                dt.Rows.Add(customList.Name, customList.ModIds.Count + " Mods");
+                new DataColumn("List Name", typeof(string)), 
+                new DataColumn("# of Mods", typeof(string)) 
+            });
+
+            foreach (CustomList customList in Settings.CustomLists.FindAll(x => x.ConsoleType == ConsoleType))
+            {
+                dataTable.Rows.Add(customList.Name, customList.ModIds.Count + " Mods");
             }
 
-            GridCustomLists.DataSource = dt;
+            GridCustomLists.DataSource = dataTable;
 
             GridViewCustomLists.Columns[0].Width = 200;
             GridViewCustomLists.Columns[1].Width = 50;
@@ -63,25 +72,6 @@ namespace ModioX.Forms.Settings
             ButtonDeleteList.Enabled = GridViewCustomLists.SelectedRowsCount > 0;
         }
 
-        private void ButtonRenameList_Click(object sender, EventArgs e)
-        {
-            string currentListName = GridViewCustomLists.GetRowCellDisplayText(GridViewCustomLists.GetSelectedRows()[0], "List Name");
-            string newListName = DialogExtensions.ShowTextInputDialog(this, "Rename List", "List Name:", currentListName);
-
-            if (!string.IsNullOrWhiteSpace(newListName))
-            {
-                if (currentListName != newListName && CustomListNameExists(newListName))
-                {
-                    XtraMessageBox.Show("A list with this name already exists.", "List Name Exists");
-                }
-                else
-                {
-                    Settings.RenameCustomList(currentListName, newListName);
-                    LoadCustomLists();
-                }
-            }
-        }
-
         private void ButtonCreateNewList_Click(object sender, EventArgs e)
         {
             string listName = DialogExtensions.ShowTextInputDialog(this, "Create New List", "List Name:", "");
@@ -90,28 +80,57 @@ namespace ModioX.Forms.Settings
             {
                 if (CustomListNameExists(listName))
                 {
-                    XtraMessageBox.Show("A list with this name already exists.", "List Name Exists");
+                    XtraMessageBox.Show("A list with this name already exists.", "List Name Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
                 }
-                else
+
+                if (MainWindow.Database.CategoriesData.Categories.Exists(x => x.Title.EqualsIgnoreCase(listName)))
                 {
-                    Settings.AddCustomList(listName);
-                    LoadCustomLists();
+                    XtraMessageBox.Show("A list name can't be the same as a category title.", "Category Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
                 }
+
+                Settings.AddCustomList(listName, ConsoleType);
+                LoadCustomLists();
+            }
+        }
+
+        private void ButtonRenameList_Click(object sender, EventArgs e)
+        {
+            string currentListName = GridViewCustomLists.GetRowCellDisplayText(GridViewCustomLists.FocusedRowHandle, "List Name");
+            string newListName = DialogExtensions.ShowTextInputDialog(this, "Rename List", "List Name:", currentListName);
+
+            if (!string.IsNullOrWhiteSpace(newListName))
+            {
+                if (currentListName != newListName && CustomListNameExists(newListName))
+                {
+                    XtraMessageBox.Show("A list with this name already exists.", "List Name Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                if (MainWindow.Database.CategoriesData.Categories.Exists(x => x.Title.EqualsIgnoreCase(newListName)))
+                {
+                    XtraMessageBox.Show("A list name can't be the same as a category title.", "Category Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                Settings.RenameCustomList(currentListName, newListName, ConsoleType);
+                LoadCustomLists();
             }
         }
 
         private void ButtonDeleteList_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Do you really want to delete the selected list?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really want to delete the selected list? This can't be undone.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                //Settings.CustomLists.RemoveAt(DgvCustomLists.CurrentRow.Index);
+                Settings.CustomLists.RemoveAt(GridViewCustomLists.FocusedRowHandle);
                 LoadCustomLists();
             }
         }
 
         private void ButtonDeleteAllLists_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Do you really to delete all of your created lists?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really to delete all of your created lists? This can't be undone.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Settings.CustomLists.Clear();
                 LoadCustomLists();
@@ -122,7 +141,7 @@ namespace ModioX.Forms.Settings
         {
             foreach (CustomList customList in Settings.CustomLists)
             {
-                if (string.Equals(customList.Name, name))
+                if (customList.Name.Equals(name))
                 {
                     return true;
                 }

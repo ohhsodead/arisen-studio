@@ -60,7 +60,7 @@ namespace ModioX.Net
             IntPtr hModule = IntPtr.Zero;
             try
             {
-                StringBuilder buf = new StringBuilder(255);
+                StringBuilder buf = new(255);
                 hModule = LoadLibrary("wininet.dll");
                 if (FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, hModule, errorCode, 0U, buf, (uint)buf.Capacity + 1, IntPtr.Zero) != 0)
                 {
@@ -125,7 +125,7 @@ namespace ModioX.Net
         public const int INTERNET_FLAG_PASSIVE = 0x08000000;
 
         public const int INTERNET_ERROR_BASE = 12000;
-        public const int ERROR_INTERNET_EXTENDED_ERROR = (INTERNET_ERROR_BASE + 3);
+        public const int ERROR_INTERNET_EXTENDED_ERROR = INTERNET_ERROR_BASE + 3;
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern IntPtr InternetOpen(

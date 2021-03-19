@@ -8,7 +8,7 @@ using DevExpress.XtraWaitForm;
 
 namespace ModioX.Forms.Settings
 {
-    partial class SavedGameRegions
+    partial class GameRegions
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@ namespace ModioX.Forms.Settings
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SavedGameRegions));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameRegions));
             this.ButtonSaveAll = new DevExpress.XtraEditors.SimpleButton();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -156,7 +156,7 @@ namespace ModioX.Forms.Settings
             // 
             // GridViewGameRegions
             // 
-            this.GridViewGameRegions.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.GridViewGameRegions.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewGameRegions.GridControl = this.GridGameRegions;
             this.GridViewGameRegions.Name = "GridViewGameRegions";
             this.GridViewGameRegions.OptionsBehavior.Editable = false;
@@ -295,7 +295,7 @@ namespace ModioX.Forms.Settings
             this.ButtonAddGameRegion.Text = "Add Game Region";
             this.ButtonAddGameRegion.Click += new System.EventHandler(this.ButtonAddGameRegion_Click);
             // 
-            // SavedGameRegions
+            // GameRegions
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.Appearance.Options.UseFont = true;
@@ -309,14 +309,14 @@ namespace ModioX.Forms.Settings
             this.Controls.Add(this.ButtonSaveAll);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("SavedGameRegions.IconOptions.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("GameRegions.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SavedGameRegions";
+            this.Name = "GameRegions";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Game Regions";
-            this.Load += new System.EventHandler(this.EditGameRegions_Load);
+            this.Load += new System.EventHandler(this.GameRegions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GroupSavedGameRegions)).EndInit();
             this.GroupSavedGameRegions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridGameRegions)).EndInit();

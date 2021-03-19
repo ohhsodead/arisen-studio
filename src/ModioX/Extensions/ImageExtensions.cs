@@ -6,7 +6,7 @@ namespace ModioX.Extensions
     {
         public static Bitmap ResizeBitmap(Bitmap bmp, int width, int height)
         {
-            Bitmap result = new Bitmap(width, height);
+            Bitmap result = new(width, height);
             using Graphics g = Graphics.FromImage(result);
             g.DrawImage(bmp, 0, 0, width, height);
 

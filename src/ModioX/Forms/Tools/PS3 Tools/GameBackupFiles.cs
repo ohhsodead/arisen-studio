@@ -26,7 +26,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
         {
             GridBackupFiles.DataSource = null;
 
-            DataTable dt = new DataTable();
+            DataTable dt = new();
             dt.Columns.Add("Game Title", typeof(string));
             dt.Columns.Add("File Name", typeof(string));
             dt.Columns.Add("File Size", typeof(string));

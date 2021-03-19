@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 
@@ -6,14 +7,18 @@ namespace ModioX.Extensions
 {
     public static class WebManExtensions
     {
-        /// <summary>
-        /// Class By @FxckingCoder Check the below link for updates to this class Thanks for all the
-        /// support :D http://www.GitHub.com/FxckingCoder
-        /// </summary>
+        // Class By @FxckingCoder Check the below link for updates to this class Thanks for all the
+        // support :D http://www.GitHub.com/FxckingCoder
 
+        /// <summary>
+        /// Check if WebMAN is installed on the console.
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <param name="port"></param>
+        /// <returns></returns>
         public static bool IsWebManInstalled(string ip, int port)
         {
-            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            Socket socket = new(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             try
             {
@@ -27,74 +32,106 @@ namespace ModioX.Extensions
             }
         }
 
-        #region Mount HDD Game
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <param name="command">  </param>
+        private static void HandleRequest(string ip, string command)
+        {
+            try
+            {
+                WebRequest request = WebRequest.Create("http://" + ip + "/" + command);
+                WebResponse response = request.GetResponse();
+
+                using (Stream dataStream = response.GetResponseStream())
+                {
+                    StreamReader read = new(dataStream);
+                    read.ReadToEnd();
+                }
+
+                response.Close();
+            }
+            catch (WebException ex)
+            {
+                Program.Log.Error(ex, "Unable to handle webMAN commands. Error Message: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Program.Log.Error(ex, "Unable to handle webMAN commands. Error Message: " + ex.Message);
+            }
+        }
+
+        #region Mount Game
 
         /// <summary>
         /// Mount a game from your HDD
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <param name="region"> games region code Example- blus00000 or bles00000 </param>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <param name="region"> Games region code Example- blus00000 or bles00000 </param>
         /// <param name="game">
-        /// name of the game you want to mount - must be spelled correctly with a space between each
+        /// Game title you want to mount - must be spelled correctly with a space between each
         /// word Example - 'Grand Theft Auto V' or 'Call of Duty Black Ops II'
         /// </param>
         /// <returns> </returns>
-        public static string MountGame(string ip, string region, string game)
+        public static void MountGame(string ip, string region, string game)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/mount.ps3/dev_hdd0/GAMES/{region}-[{game}]");
+            HandleRequest(ip, $"mount.ps3/dev_hdd0/GAMES/{region}-[{game}]");
+        }
+
+        /// <summary>
+        /// Mount a game from path
+        /// </summary>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <param name="path"> ps3 game path </param>
+        /// <returns> </returns>
+        public static void MountGameFromPath(string ip, string path)
+        {
+            HandleRequest(ip, $"mount_ps3/{path}");
+        }
+
+        /// <summary>
+        /// Unmount current game
+        /// </summary>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <returns> </returns>
+        public static void Unmount(string ip)
+        {
+            HandleRequest(ip, "mount.ps3/unmount");
+        }
+
+        /// <summary>
+        /// External game data
+        /// </summary>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <returns> </returns>
+        public static void External(string ip)
+        {
+            HandleRequest(ip, "extgd.ps3");
         }
 
         #endregion Mount HDD Game
-
-        #region Ps3 On - Off
-
-        /// <summary>
-        /// Restarts the current ps3
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string Restart(string ip)
-        {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/restart.ps3");
-        }
-
-        /// <summary>
-        /// Turns off current ps3
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string Shutdown(string ip)
-        {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/shutdown.ps3");
-        }
-
-        #endregion Ps3 On - Off
 
         #region Disc Games
 
         /// <summary>
         /// Ejects current game
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
+        /// <param name="ip"> PS3 Local IP Address </param>
         /// <returns> </returns>
-        public static string Eject(string ip)
+        public static void Eject(string ip)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/eject.ps3");
+            HandleRequest(ip, "eject.ps3");
         }
 
         /// <summary>
         /// Inserts a disc
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
+        /// <param name="ip"> PS3 Local IP Address </param>
         /// <returns> </returns>
-        public static string Inject(string ip)
+        public static void Inject(string ip)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/inject.ps3");
+            HandleRequest(ip, "inject.ps3");
         }
 
         #endregion Disc Games
@@ -102,321 +139,260 @@ namespace ModioX.Extensions
         #region Digital Games
 
         /// <summary>
-        /// Mount a game from path
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string MountGameFromPath(string ip, string path)
-        {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/mount.ps3/" + path);
-        }
-
-        /// <summary>
-        /// Unmount current game
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string Unmount(string ip)
-        {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/mount.ps3/unmount");
-        }
-
-        /// <summary>
         /// External game data
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
+        /// <param name="ip"> PS3 Local IP Address </param>
         /// <returns> </returns>
-        public static string External(string ip)
+        public static void EnableExternal(string ip)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/extgd.ps3");
-        }
-
-        /// <summary>
-        /// External game data
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string EnableExternal(string ip)
-        {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/extgd.ps3?enable");
+            HandleRequest(ip, "extgd.ps3?enable");
         }
 
         /// <summary>
         /// Refresh game files
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
+        /// <param name="ip"> PS3 Local IP Address </param>
         /// <returns> </returns>
-        public static string Refresh(string ip)
+        public static void Refresh(string ip)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/refresh.ps3");
+            HandleRequest(ip, "refresh.ps3");
         }
 
         #endregion Digital Games
+
+        #region Notify Message
+
+        /// <summary>
+        /// Display notification message at the top right corner of the screen.
+        /// </summary>
+        /// <param name="Message"></param>
+        public static void Notify(string ip, string message)
+        {
+            HandleRequest(ip, "notify.ps3mapi?msg=" + message);
+        }
+
+        /// <summary>
+        /// Display notification message at the top right corner of the screen.
+        /// </summary>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <param name="message"> Notify Message </param>
+        /// <returns> </returns>
+        public static void NotifyPopup(string ip, string message)
+        {
+            HandleRequest(ip, $"popup.ps3/{message}");
+        }
+
+        /// <summary>
+        /// Display notification message at the bottom right of the screen.
+        /// </summary>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <param name="message"> Notify Message </param>
+        /// <returns> </returns>
+        public static void NotifyPopupBottom(string ip, string message)
+        {
+            HandleRequest(ip, $"popup.ps3*{message}");
+        }
+
+        /// <summary>
+        /// Custom notify message in bottom of screen
+        /// </summary>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <returns> </returns>
+        public static void NotifySystemInformation(string ip)
+        {
+            HandleRequest(ip, "popup.ps3");
+        }
+
+        /// <summary>
+        /// Custom notify message in bottom of screen
+        /// </summary>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <returns> </returns>
+        public static void NotifyCPURSXTemperature(string ip)
+        {
+            HandleRequest(ip, "cpursx.ps3");
+        }
+
+        /// <summary>
+        /// Custom notify message in bottom of screen
+        /// </summary>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <returns> </returns>
+        public static void NotifyMinimumVersion(string ip)
+        {
+            HandleRequest(ip, "minver.ps3");
+        }
+
+        #endregion Notify Message
 
         #region Set idps & psid
 
         /// <summary>
         /// Set idps
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <param name="id"> Change idps in lv2 memory at system startup </param>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <param name="idps"> Change idps in lv2 memory at system startup </param>
         /// <returns> </returns>
-        public static string SetIdps1(string ip, string id)
+        public static void SetIdps1(string ip, string idps)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/setidps.ps3mapi?idps1={id}");
+            HandleRequest(ip, $"setidps.ps3mapi?idps1={idps}");
         }
 
         /// <summary>
         /// Set idps2
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <param name="id"> Change idps2 in lv2 memory at system startup </param>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <param name="idps"> Change idps2 in lv2 memory at system startup </param>
         /// <returns> </returns>
-        public static string SetIdps2(string ip, string id)
+        public static void SetIdps2(string ip, string idps)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/setidps.ps3mapi?idps2={id}");
+            HandleRequest(ip, $"setidps.ps3mapi?idps2={idps}");
         }
 
         /// <summary>
         /// Set psid
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <param name="id"> Change psid in lv2 memory at system startup </param>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <param name="psid"> Change psid in lv2 memory at system startup </param>
         /// <returns> </returns>
-        public static string SetPsid1(string ip, string id)
+        public static void SetPsid1(string ip, string psid)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/setidps.ps3mapi?psid1={id}");
+            HandleRequest(ip, $"setidps.ps3mapi?psid1={psid}");
         }
 
         /// <summary>
         /// Set psid2
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <param name="id"> Change psid2 in lv2 memory at system startup </param>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <param name="psid"> Change psid2 in lv2 memory at system startup </param>
         /// <returns> </returns>
-        public static string SetPsid2(string ip, string id)
+        public static void SetPsid2(string ip, string psid)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/setidps.ps3mapi?psid2={id}");
+            HandleRequest(ip, $"setidps.ps3mapi?psid2={psid}");
         }
 
         #endregion Set idps & psid
 
         #region Ring Buzzers
 
-        /// <summary>
-        /// Single beep
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string SingleBuzzer(string ip)
+        public enum BuzzerMode
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/buzzer.ps3mapi?mode=1");
+            Single,
+            Double,
+            Triple
         }
 
         /// <summary>
-        /// Double beep
+        /// Triggers the buzzer function to create a beep sound. Use the BuzzerMode structure for the pre-defined modes.
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string DoubleBuzzer(string ip)
+        /// <param name="ip"></param>
+        /// <param name="mode"></param>
+        public static void RingBuzzer(string ip, BuzzerMode mode)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/buzzer.ps3mapi?mode=2");
-        }
-
-        /// <summary>
-        /// Triple beep
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string TripleBuzzer(string ip)
-        {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/buzzer.ps3mapi?mode=3");
+            HandleRequest(ip, "buzzer.ps3mapi?mode=" + mode);
         }
 
         #endregion Ring Buzzers
 
-        #region Led Colors
+        #region Led Colors & Modes
 
-        /// <summary>
-        /// Change ps3 led to red
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string RedLED(string ip)
+        public enum LedColor
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/led.ps3mapi?color=0");
+            Red = 0,
+            Green = 1,
+            Yellow = 2
+        }
+
+        public enum LedMode
+        {
+            Off = 0,
+            On = 1,
+            BlinkFast = 2,
+            BlinkSlow = 3
         }
 
         /// <summary>
-        /// Change ps3 led to green
+        /// Set the console led color and mode.
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string GreenLED(string ip)
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <param name="color"> LED Color </param>
+        /// <param name="mode"> LED Mode </param>
+        public static void SetConsoleLed(string ip, LedColor color, LedMode mode)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/led.ps3mapi?color=1");
+            HandleRequest(ip, "led.ps3mapi?color=" + color + "&mode=" + mode);
         }
 
         /// <summary>
-        /// Change ps3 led to yellow
+        /// Set the console led color.
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string YellowLED(string ip)
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <param name="color"> LED Color </param>
+        public static void SetConsoleLed(string ip, LedColor color)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/led.ps3mapi?color=2");
-        }
-
-        #endregion Led Colors
-
-        #region Led Modes
-
-        /// <summary>
-        /// Ps3 led off
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string LEDOff(string ip)
-        {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/led.ps3mapi?mode=0");
+            HandleRequest(ip, "led.ps3mapi?color=" + color);
         }
 
         /// <summary>
-        /// Ps3 led on
+        /// Set the console led mode.
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <param name="mode"> LED Mode </param>
         /// <returns> </returns>
-        public static string LEDOn(string ip)
+        public static void SetModeLed(string ip, LedMode mode)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/led.ps3mapi?mode=1");
+            HandleRequest(ip, "led.ps3mapi?mode=" + mode);
+        }
+
+        #endregion Led Colors & Modes
+
+        #region Power
+
+        public enum PowerFlags
+        {
+            SoftReboot,
+            HardReboot,
+            QuickReboot,
+            Shutdown,
+            Restart
         }
 
         /// <summary>
-        /// Makes ps3 led blink fast
+        /// Commands to power off the console.
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string LEDBlinkFast(string ip)
+        /// <param name="ip"></param>
+        /// <param name="flag"></param>
+        public static void Power(string ip, PowerFlags flag)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/led.ps3mapi?mode=2");
+            switch (flag)
+            {
+                case PowerFlags.QuickReboot:
+                    HandleRequest(ip, "reboot.ps3?quick");
+                    break;
+                case PowerFlags.SoftReboot:
+                    HandleRequest(ip, "reboot.ps3?soft");
+                    break;
+                case PowerFlags.HardReboot:
+                    HandleRequest(ip, "reboot.ps3?hard");
+                    break;
+                case PowerFlags.Shutdown:
+                    HandleRequest(ip, "shutdown.ps3");
+                    break;
+                case PowerFlags.Restart:
+                    HandleRequest(ip, "restart.ps3");
+                    break;
+                default:
+                    break;
+            }
         }
+
+        #endregion Power
 
         /// <summary>
-        /// Makes ps3 led blink slowly
+        /// Rebuilds the PS3 database.
         /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string LEDBlinkSlow(string ip)
+        public static void RebuildDatabase(string ip)
         {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/led.ps3mapi?mode=3");
+            HandleRequest(ip, "rebuild.ps3");
         }
-
-        #endregion Led Modes
-
-        #region Notify Message
-
-        /// <summary>
-        /// Custom notify message
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <param name="message"> notify message </param>
-        /// <returns> </returns>
-        public static string NotifyPopup(string ip, string message)
-        {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/popup.ps3/{message}");
-        }
-
-        /// <summary>
-        /// Custom notify message in bottom of screen
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <param name="message"> notify message </param>
-        /// <returns> </returns>
-        public static string NotifyPopupBottom(string ip, string message)
-        {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/popup.ps3*{message}");
-        }
-
-        /// <summary>
-        /// Custom notify message in bottom of screen
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string NotifySystemInformation(string ip)
-        {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/popup.ps3");
-        }
-
-        /// <summary>
-        /// Custom notify message in bottom of screen
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string NotifyCPURSXTemperature(string ip)
-        {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/cpursx.ps3");
-        }
-
-        /// <summary>
-        /// Custom notify message in bottom of screen
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string NotifyMinimumVersion(string ip)
-        {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/minver.ps3");
-        }
-
-        #endregion Notify Message
-
-        #region Reboot
-
-        /// <summary>
-        /// Custom notify message in bottom of screen
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string RebootSoft(string ip)
-        {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/reboot.ps3?soft");
-        }
-
-        /// <summary>
-        /// Custom notify message in bottom of screen
-        /// </summary>
-        /// <param name="ip"> ps3 local ip </param>
-        /// <returns> </returns>
-        public static string RebootHard(string ip)
-        {
-            using WebClient client = new WebClient();
-            return client.DownloadString($"http://{ip}/reboot.ps3?hard");
-        }
-
-        #endregion Reboot
     }
 }

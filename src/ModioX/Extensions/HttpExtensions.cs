@@ -52,8 +52,8 @@ namespace ModioX.Extensions
             {
                 ServicePointManager.ServerCertificateValidationCallback = (_, _, _, _) => true;
 
-                using WebClient webClient = new WebClient();
-                XmlSerializer serializer = new XmlSerializer(typeof(Titlepatch));
+                using WebClient webClient = new();
+                XmlSerializer serializer = new(typeof(Titlepatch));
                 string titlePath = webClient.DownloadString("https://a0.ww.np.dl.playstation.net/tpl/np/" + titleId + "/" + titleId + "-ver.xml");
                 using TextReader textReader = new StringReader(titlePath);
                 Titlepatch data = (Titlepatch)serializer.Deserialize(textReader);
@@ -69,24 +69,23 @@ namespace ModioX.Extensions
 
         /// <summary>
         /// </summary>
-        /// <param name="url"> </param>
-        /// <param name="titleId"> </param>
+        /// <param name="titleId">  </param>
         /// <returns> </returns>
-        public static Titlepatch GetGameUpdatesFromTitleID(string url, string titleId)
+        public static Titlepatch GetGameUpdatesFromTitleID(string titleId)
         {
             try
             {
                 ServicePointManager.ServerCertificateValidationCallback = (_, _, _, _) => true;
 
-                using WebClient webClient = new WebClient();
-                XmlSerializer serializer = new XmlSerializer(typeof(Titlepatch));
-                string titlePath = webClient.DownloadString(url + titleId + "/" + titleId + "-ver.xml");
+                using WebClient webClient = new();
+                XmlSerializer serializer = new(typeof(Titlepatch));
+                string titlePath = webClient.DownloadString("https://a0.ww.np.dl.playstation.net/tpl/np/" + titleId + "/" + titleId + "-ver.xml");
                 using TextReader textReader = new StringReader(titlePath);
                 return (Titlepatch)serializer.Deserialize(textReader);
             }
             catch (Exception ex)
             {
-                Program.Log.Error(ex, "Unable to fetch game update from title ID: {0}", titleId);
+                Program.Log.Error(ex, $"Unable to fetch game update for title ID: {titleId} or it wasn't recognized. Error Message: {ex.Message}");
                 return null;
             }
         }
@@ -98,7 +97,7 @@ namespace ModioX.Extensions
         public static void DownloadFile(string url, string folderPath)
         {
             ServicePointManager.ServerCertificateValidationCallback = (_, _, _, _) => true;
-            WebClient webClient = new WebClient();
+            WebClient webClient = new();
             webClient.DownloadFile(url, folderPath);
         }
 
@@ -116,20 +115,19 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static async Task<bool> CheckForInternetAsync()
         {
-            Ping ping = new Ping();
-
             try
             {
                 Program.Log.Info("Checking for Internet connection...");
 
-                if ((await ping.SendPingAsync("dropbox.com", 3000, new byte[32], new PingOptions(64, true)).ConfigureAwait(false)).Status == IPStatus.Success)
+                if ((await new Ping().SendPingAsync("github.com", 3000, new byte[32], new PingOptions(64, true)).ConfigureAwait(false)).Status == IPStatus.Success)
                 {
+                    Program.Log.Info("Internet connection detected.");
                     return true;
                 }
             }
             catch (Exception ex)
             {
-                Program.Log.Error(ex, "Unable to check for Internet connection.");
+                Program.Log.Error(ex, "Unable to check for Internet connection. Error Message: " + ex.Message);
             }
 
             return false;

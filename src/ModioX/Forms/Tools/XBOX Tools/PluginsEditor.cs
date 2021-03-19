@@ -12,7 +12,6 @@ using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Io;
 using XDevkit;
-using FtpException = ModioX.Net.FtpException;
 
 namespace ModioX.Forms.Tools.XBOX_Tools
 {

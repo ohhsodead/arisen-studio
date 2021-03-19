@@ -63,7 +63,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
                         break;
 
                     default:
-                        throw new ArgumentOutOfRangeException();
+                        break;
                 }
             }
 
@@ -136,7 +136,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void ButtonDeletePackageFile_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Do you really want to delete the selected package file from your console?", "Delete Selected", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really want to delete the selected package file from your console?", "Delete Selected", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 string packageFileName = GridViewPackageFiles.GetRowCellValue(GridViewPackageFiles.FocusedRowHandle, GridViewPackageFiles.Columns[0]).ToString();
 
@@ -149,7 +149,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void ButtonDeleteAllPackageFiles_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Do you really to delete all of your package files from your console?", "Delete All", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really to delete all of your package files from your console?", "Delete All", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 foreach (FtpListItem package in PackageFiles)
                 {
@@ -163,16 +163,15 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
         private void ButtonDownloadPackageFile_Click(object sender, EventArgs e)
         {
-            string updateUrl = PackageFilesPath + "/" + GridViewPackageFiles.GetRowCellValue(GridViewPackageFiles.FocusedRowHandle, GridViewPackageFiles.Columns[0]);
-            string fileName = Path.GetFileName(updateUrl);
+            string packageFile = PackageFilesPath + "/" + GridViewPackageFiles.GetRowCellValue(GridViewPackageFiles.FocusedRowHandle, GridViewPackageFiles.Columns[0]);
+            string fileName = Path.GetFileName(packageFile);
             string folderPath = DialogExtensions.ShowFolderBrowseDialog(this, "Choose a folder to download the package file.");
 
             if (!string.IsNullOrWhiteSpace(folderPath))
             {
-                UpdateStatus("Downloading file: " + fileName);
-                HttpExtensions.DownloadFile(updateUrl, folderPath + "/" + fileName);
+                UpdateStatus("Downloading package file: " + fileName);
+                FtpExtensions.DownloadFile(Path.Combine(folderPath, fileName), packageFile);
                 UpdateStatus("Successfully downloaded file to the specified folder.");
-                LoadPackages();
             }
         }
 

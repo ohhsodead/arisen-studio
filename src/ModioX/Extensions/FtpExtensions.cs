@@ -177,18 +177,18 @@ namespace ModioX.Extensions
         internal static void DownloadDirectory(string consolePath, string localPath)
         {
             string url = "ftp://" + MainWindow.ConsoleProfile.Address + consolePath;
-            NetworkCredential credentials = new NetworkCredential(MainWindow.ConsoleProfile.Username, MainWindow.ConsoleProfile.Password);
+            NetworkCredential credentials = new(MainWindow.ConsoleProfile.Username, MainWindow.ConsoleProfile.Password);
 
             FtpWebRequest request = (FtpWebRequest)WebRequest.Create(url);
             request.Method = WebRequestMethods.Ftp.ListDirectoryDetails;
             request.Credentials = credentials;
             request.Timeout = -1;
 
-            List<string> lines = new List<string>();
+            List<string> lines = new();
 
             using (FtpWebResponse listResponse = (FtpWebResponse)request.GetResponse())
             using (Stream listStream = listResponse.GetResponseStream())
-            using (StreamReader listReader = new StreamReader(listStream))
+            using (StreamReader listReader = new(listStream))
             {
                 while (!listReader.EndOfStream) lines.Add(listReader.ReadLine());
             }
@@ -232,11 +232,11 @@ namespace ModioX.Extensions
         /// Gets the folder names inside the specified console path.
         /// </summary>
         /// <param name="consolePath"> Path of the directory to fetch listing from </param>
-        internal static List<string> GetFolderNames(string consolePath, bool includePath)
+        internal static List<ListItem> GetFolderNames(string consolePath)
         {
             FtpClient ftpClient = MainWindow.FtpClient;
 
-            List<string> folderNames = new List<string>();
+            List<ListItem> folderNames = new();
 
             if (!ftpClient.DirectoryExists(consolePath))
             {
@@ -250,7 +250,7 @@ namespace ModioX.Extensions
                 switch (listItem.Type)
                 {
                     case FtpFileSystemObjectType.Directory:
-                        folderNames.Add((includePath ? consolePath : "") + listItem.Name);
+                        folderNames.Add(new ListItem() { Value = listItem.FullName, Name = listItem.Name });
                         break;
                 }
             }
@@ -262,11 +262,12 @@ namespace ModioX.Extensions
         /// Gets the folder names inside the specified console path.
         /// </summary>
         /// <param name="consolePath"> Path of the directory to fetch listing from </param>
-        internal static List<string> GetFileNames(string consolePath, bool includePath, bool recursive)
+        /// <param name="recursive"> Whether to fetch files from subdirectories </param>
+        internal static List<ListItem> GetFileNames(string consolePath, bool recursive = false)
         {
             FtpClient ftpClient = MainWindow.FtpClient;
 
-            List<string> fileNames = new List<string>();
+            List<ListItem> fileNames = new();
 
             if (!ftpClient.DirectoryExists(consolePath))
             {
@@ -275,12 +276,12 @@ namespace ModioX.Extensions
 
             ftpClient.SetWorkingDirectory(consolePath);
 
-            foreach (FtpListItem listItem in ftpClient.GetListing(consolePath, recursive ? FtpListOption.Recursive : FtpListOption.Auto))
+            foreach (FtpListItem listItem in ftpClient.GetListing(consolePath, recursive ? FtpListOption.Recursive : FtpListOption.AllFiles))
             {
                 switch (listItem.Type)
                 {
                     case FtpFileSystemObjectType.File:
-                        fileNames.Add((includePath ? consolePath : "") + listItem.Name);
+                        fileNames.Add(new ListItem() { Value = listItem.FullName, Name = listItem.Name });
                         break;
                 }
             }
@@ -295,24 +296,31 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static string GetUserProfileId(Form owner)
         {
-            List<string> userIds = GetFolderNames("/dev_hdd0/home/", false);
+            List<ListItem> userIds = GetFolderNames("/dev_hdd0/home/");
 
-            List<string> userNames = (from userId in userIds
-                             select $"{userId} ({GetUserNameFromUserId(userId)})").ToList();
+            List<ListItem> userNames = new();
+            
+            foreach (ListItem userId in userIds)
+            {
+                userNames.Add(new ListItem() { Value = userId.Name, Name = $"{userId.Name} ({GetUserNameFromUserId(userId.Name)})" });
+            }
 
             if (userIds.Count > 0)
             {
-                string userId = DialogExtensions.ShowListInputDialog(owner, "User Profile IDs", userNames).Split()[0];
+                string userId = DialogExtensions.ShowListInputDialog(owner, "User Profile IDs", userNames);
 
-                if (userId != null) return userId;
+                if (userId != null)
+                {
+                    return userId;
+                }
             }
 
-            XtraMessageBox.Show("Could not find any users. Make sure you have created at least one user profile.", "No Users Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            XtraMessageBox.Show(owner, "Could not find any users. Make sure there is at least one user profile on the console.", "No Users Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return null;
         }
 
         /// <summary>
-        /// Prompts the user to choose their user id.
+        /// Get the profile name for the userId.
         /// </summary>
         /// <param name="userId"> Console IP Address </param>
         /// <returns> </returns>
@@ -323,7 +331,7 @@ namespace ModioX.Extensions
             string usernameFile = $"/dev_hdd0/home/{userId}/localusername";
 
             using Stream stream = ftpClient.OpenRead(usernameFile);
-            using StreamReader streamReader = new StreamReader(stream);
+            using StreamReader streamReader = new(stream);
             return streamReader.ReadToEnd();
         }
 
@@ -339,44 +347,44 @@ namespace ModioX.Extensions
         };
 
         /// <summary>
-        /// Returns the USB path if one is connected to the console port
+        /// Returns the first USB path if one is connected to the console.
         /// </summary>
         /// <returns> </returns>
         public static string GetUsbPath()
         {
-            List<string> folderNames = GetFolderNames("/", false);
+            List<ListItem> folderNames = GetFolderNames("/");
 
             foreach (string usbPath in UsbPaths)
             {
-                if (folderNames.Contains(usbPath))
+                if (folderNames.Any(x => x.Name.Contains(usbPath)))
                 {
                     return usbPath;
                 }
             }
 
-            XtraMessageBox.Show("You do not have a USB device connected to your console.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            XtraMessageBox.Show("There is no USB device connected to the console.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return null;
         }
 
         /// <summary>
-        /// Get all of the games from the internal drive, and on connected USB devices (if enabled in settings)
+        /// Get all of the games from the internal drive, and on connected USB devices (if enabled in settings).
         /// </summary>
         /// <returns> </returns>
-        public static List<string> GetGamesBD()
+        public static List<ListItem> GetGamesBD()
         {
-            List<string> games = new List<string>();
+            List<ListItem> games = new();
 
             // Games on Interal HDD
-            games.AddRange(GetFolderNames("/dev_hdd0/GAMES/", true));
-            games.AddRange(GetFolderNames("/dev_hdd0/GAMEZ/", true));
+            games.AddRange(GetFolderNames("/dev_hdd0/GAMES/"));
+            games.AddRange(GetFolderNames("/dev_hdd0/GAMEZ/"));
 
             // Games on all external devices
             if (MainWindow.Settings.ShowGamesFromExternalDevices)
             {
                 foreach (string usbPath in UsbPaths)
                 {
-                    games.AddRange(GetFolderNames($"/{usbPath}/GAMES/", true));
-                    games.AddRange(GetFolderNames($"/{usbPath}/GAMEZ/", true));
+                    games.AddRange(GetFolderNames($"/{usbPath}/GAMES/"));
+                    games.AddRange(GetFolderNames($"/{usbPath}/GAMEZ/"));
                 }
             }
 
@@ -384,24 +392,22 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        /// Get all of the games from the internal drive, and on connected USB devices (if enabled in settings)
+        /// Get all of the games from the internal drive, and on connected USB devices (if enabled in settings).
         /// </summary>
         /// <returns> </returns>
-        public static List<string> GetGamesISO()
+        public static List<ListItem> GetGamesISO()
         {
-            List<string> games = new List<string>();
+            List<ListItem> games = new();
 
             // Games on Interal HDD
-            games.AddRange(GetFileNames("/dev_hdd0/PS3ISO/", true, true));
-            games.AddRange(GetFileNames("/dev_hdd0/PS3ISO/", true, true));
+            games.AddRange(GetFileNames("/dev_hdd0/PS3ISO/"));
 
             // Games on all external devices
             if (MainWindow.Settings.ShowGamesFromExternalDevices)
             {
                 foreach (string usbPath in UsbPaths)
                 {
-                    games.AddRange(GetFileNames($"/{usbPath}/PS3ISO/", true, true));
-                    games.AddRange(GetFileNames($"/{usbPath}/PS3ISO/", true, true));
+                    games.AddRange(GetFileNames($"/{usbPath}/PS3ISO/"));
                 }
             }
 
@@ -409,24 +415,22 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        /// Get all of the games from the internal drive, and on connected USB devices (if enabled in settings)
+        /// Get all of the games from the internal drive, and on connected USB devices (if enabled in settings).
         /// </summary>
         /// <returns> </returns>
-        public static List<string> GetGamesPSN()
+        public static List<ListItem> GetGamesPSN()
         {
-            List<string> gamesPath = new List<string>();
+            List<ListItem> gamesPath = new();
 
             // Games on Interal HDD
-            gamesPath.AddRange(GetFolderNames("/dev_hdd0/GAMEI/", true));
-            gamesPath.AddRange(GetFolderNames("/dev_hdd0/GAMEI/", true));
+            gamesPath.AddRange(GetFolderNames("/dev_hdd0/GAMEI/"));
 
             // Games on all external devices
             if (MainWindow.Settings.ShowGamesFromExternalDevices)
             {
                 foreach (string usbPath in UsbPaths)
                 {
-                    gamesPath.AddRange(GetFolderNames($"/{usbPath}/GAMEI/", true));
-                    gamesPath.AddRange(GetFolderNames($"/{usbPath}/GAMEI/", true));
+                    gamesPath.AddRange(GetFolderNames($"/{usbPath}/GAMEI/"));
                 }
             }
 

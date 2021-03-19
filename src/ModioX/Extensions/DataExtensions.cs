@@ -3,7 +3,7 @@ using System.Data;
 
 namespace ModioX.Extensions
 {
-    internal static class DataExtensions
+    internal class DataExtensions
     {
         /// <summary>
         /// Create and return a new DataTable with the specified columns and rows.
@@ -12,7 +12,7 @@ namespace ModioX.Extensions
         /// <param name="rows"> Rows to add to the DataTable </param>
         public static DataTable CreateDataTable(List<DataColumn> columns, List<DataRow> rows = null)
         {
-            DataTable dataTable = new DataTable();
+            DataTable dataTable = new();
 
             dataTable.Columns.AddRange(columns.ToArray());
 
@@ -26,5 +26,12 @@ namespace ModioX.Extensions
 
             return dataTable;
         }
+    }
+
+    public class ListItem
+    {
+        public string Value { get; set; }
+
+        public string Name { get; set; }
     }
 }

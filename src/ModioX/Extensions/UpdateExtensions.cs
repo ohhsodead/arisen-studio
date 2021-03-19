@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
+using AutoUpdaterDotNET;
 using DevExpress.XtraEditors;
 using ModioX.Constants;
 using ModioX.Forms.Windows;
-using ModioX.Io;
 using ModioX.Models.Release_Data;
 using Newtonsoft.Json;
 
@@ -18,10 +17,10 @@ namespace ModioX.Extensions
         /// <summary>
         /// Get the latest release data from GitHub.
         /// </summary>
-        public static GitHubData GitHubData { get; set; } = GetGitHubLatestReleaseData();
+        public static GitHubData GitHubData { get; set; } = GetLatestReleaseData();
 
         /// <summary>
-        /// Get the current version.
+        /// Get the application current version.
         /// </summary>
         public static Version CurrentVersion { get; } = Assembly.GetExecutingAssembly().GetName().Version;
 
@@ -34,11 +33,11 @@ namespace ModioX.Extensions
         /// Get the latest release information from the GitHub API.
         /// </summary>
         /// <returns> </returns>
-        public static GitHubData GetGitHubLatestReleaseData()
+        public static GitHubData GetLatestReleaseData()
         {
             GitHubData gitHubLatestReleaseData;
 
-            using (StreamReader streamReader = new StreamReader(HttpExtensions.GetStream(Urls.GitHubLatestRelease)))
+            using (StreamReader streamReader = new(HttpExtensions.GetStream(Urls.GitHubLatestRelease)))
             {
                 gitHubLatestReleaseData = JsonConvert.DeserializeObject<GitHubData>(streamReader.ReadToEnd());
             }
@@ -52,54 +51,59 @@ namespace ModioX.Extensions
         /// </summary>
         public static void CheckApplicationVersion()
         {
-            try
+            MainWindow.Window.SetStatus("Checking application for new updates...");
+            AutoUpdater.CheckForUpdateEvent += AutoUpdaterOnCheckForUpdateEvent;
+            AutoUpdater.ShowSkipButton = false;
+            AutoUpdater.ShowRemindLaterButton = false;
+            AutoUpdater.Mandatory = true;
+            AutoUpdater.RunUpdateAsAdmin = true;
+            AutoUpdater.UpdateMode = Mode.ForcedDownload;
+            AutoUpdater.Start(Urls.UpdateData);
+        }
+
+        private static void AutoUpdaterOnCheckForUpdateEvent(UpdateInfoEventArgs args)
+        {
+            if (args.Error == null)
             {
-                MainWindow.Window.SetStatus("Checking application for new updates...");
-
-                Version latestVersion = new Version(GitHubData.TagName);
-
-                if (CurrentVersion < latestVersion)
+                if (args.IsUpdateAvailable)
                 {
-                    DownloadAndRunInstaller();
+                    MainWindow.Settings.FirstTimeOpenAfterUpdate = true;
+                    MainWindow.Window.SetStatus("A new update is available. Downloading the installer...");
+                    XtraMessageBox.Show(MainWindow.Window, $"There is a new version of ModioX ({GitHubData.Name}) available.", @"Update Available", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    try
+                    {
+                        if (AutoUpdater.DownloadUpdate(args))
+                        {
+                            Application.Exit();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        XtraMessageBox.Show(MainWindow.Window, ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MainWindow.Window.SetStatus($"You're currently using the latest version of ModioX ({GitHubData.Name})");
+                    MainWindow.Window.SetStatus($"You're currently using the latest version of ModioX ({CurrentVersionName})");
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MainWindow.Window.SetStatus($"Unable to check application version at this current time. Error: {ex.Message}", ex);
-            }
-        }
-
-        /// <summary>
-        /// Download the latest installer from GitHub to the user's downloads folder, run the
-        /// program and close this instance of the application.
-        /// </summary>
-        private static void DownloadAndRunInstaller()
-        {
-            try
-            {
-                string installerFile = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\{GitHubData.Assets[0].Name}";
-
-                MainWindow.Settings.FirstTimeOpenAfterUpdate = true;
-                MainWindow.Window.SetStatus("A new update is available. Downloading the installer...");
-                XtraMessageBox.Show($"A new version of ModioX ({GitHubData.Name}) is now available. Click OK to download and run the installer.", @"Update Available", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                using (WebClient client = new WebClient())
+                if (args.Error is WebException)
                 {
-                    client.DownloadFileAsync(GitHubData.Assets[0].BrowserDownloadUrl, installerFile);
-                }
+                    MainWindow.Window.SetStatus($"Unable to check application version at this current time. Error: {args.Error.Message}", args.Error);
 
-                Process.Start(installerFile);
-                Application.Exit();
-            }
-            catch (Exception ex)
-            {
-                MainWindow.Window.SetStatus($"Unable to download or run the installer. Error: {ex.Message})", ex);
-                XtraMessageBox.Show("Unable to complete the update. You must manually install the latest available update from the GitHub releases page.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Process.Start($"{Urls.GitHubRepo}releases/latest");
-                Application.Exit();
+                    XtraMessageBox.Show(MainWindow.Window,
+                        @"There is a problem reaching update server. Please check your internet connection and try again later.",
+                        @"Update Check Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MainWindow.Window.SetStatus($"Unable to check application for a new version. Error Message: {args.Error.Message}", args.Error);
+
+                    XtraMessageBox.Show(MainWindow.Window, args.Error.Message, args.Error.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

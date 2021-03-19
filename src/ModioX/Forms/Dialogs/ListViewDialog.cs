@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Data;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
+using ModioX.Extensions;
+using static ModioX.Extensions.DataExtensions;
 
 namespace ModioX.Forms.Dialogs
 {
@@ -12,36 +15,54 @@ namespace ModioX.Forms.Dialogs
             InitializeComponent();
         }
 
-        public List<string> Items { get; set; }
+        public List<ListItem> Items { get; set; }
 
-        public string SelectedItem { get; private set; }
+        public string SelectedItem { get; set; }
 
         private void ListViewDialog_Load(object sender, EventArgs e)
         {
-            ListBoxItems.SelectedIndexChanged -= ListBoxItems_SelectedIndexChanged;
+            GridListItems.DataSource = null;
 
-            foreach (string item in Items)
+            DataTable dataTable = CreateDataTable(new List<DataColumn>() 
             {
-                ListBoxItems.Items.Add(item);
+                new DataColumn("Value", typeof(string)),
+                new DataColumn("Name", typeof(string))
+            });
+
+            foreach (ListItem item in Items)
+            {
+                dataTable.Rows.Add(item.Value, item.Name);
             }
+
+            GridListItems.DataSource = dataTable;
+
+            GridViewListItems.Columns[0].Visible = false;
+            GridViewListItems.Columns[1].Width = GridViewListItems.Columns[1].GetBestWidth();
 
             // Increase form size to fit listview contents
             if (Items.Count > 0)
             {
-                Width = ListBoxItems.Width + Items.Max(w => w.Length) + 70;
-                //Refresh();
+                Width = GridViewListItems.Columns[1].GetBestWidth() + 70;
+                Refresh();
             }
+        }
 
-            ListBoxItems.SelectedIndexChanged += ListBoxItems_SelectedIndexChanged;
+        private void GridViewListItems_RowClick(object sender, RowClickEventArgs e)
+        {
+            if (GridViewListItems.SelectedRowsCount > 0)
+            {
+                SelectedItem = GridViewListItems.GetRowCellDisplayText(e.RowHandle, "Value");
+                Close();
+            }
         }
 
         private void ListBoxItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ListBoxItems.SelectedIndex != -1)
-            {
-                SelectedItem = ListBoxItems.SelectedItem.ToString();
-                Close();
-            }
+            //if (ListBoxItems.SelectedIndex != -1)
+            //{
+            //    SelectedItem = ListBoxItems.SelectedItem.ToString();
+            //    Close();
+            //}
         }
 
         private void ListBoxItems_SelectedValueChanged(object sender, EventArgs e)
@@ -55,11 +76,11 @@ namespace ModioX.Forms.Dialogs
 
         private void ListBoxItems_Click(object sender, EventArgs e)
         {
-            if (ListBoxItems.SelectedIndex != -1)
-            {
-                SelectedItem = ListBoxItems.SelectedItem.ToString();
-                Close();
-            }
+            //if (ListBoxItems.SelectedIndex != -1)
+            //{
+            //    SelectedItem = ListBoxItems.SelectedItem.ToString();
+            //    Close();
+            //}
         }
     }
 }

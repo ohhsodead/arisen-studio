@@ -31,8 +31,8 @@ namespace ModioX.Forms.Tools.XBOX_Tools
         {
             FtpClient.SetWorkingDirectory("/Hdd1/Games/");
 
-            List<FtpListItem> folders = new List<FtpListItem>();
-            List<FtpListItem> files = new List<FtpListItem>();
+            List<FtpListItem> folders = new();
+            List<FtpListItem> files = new();
 
             foreach (FtpListItem listItem in FtpClient.GetListing("/Hdd1/Games/"))
             {

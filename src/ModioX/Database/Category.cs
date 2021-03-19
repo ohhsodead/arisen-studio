@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ModioX.Extensions;
@@ -58,9 +59,10 @@ namespace ModioX.Database
 
             if (MainWindow.Settings.AutoDetectGameRegions)
             {
-                System.Collections.Generic.List<string> foundRegions = Regions.Where(region => MainWindow.FtpConnection.DirectoryExists($"/dev_hdd0/game/{region}")).ToList();
+                List<string> foundRegions = Regions.Where(region => MainWindow.FtpConnection.DirectoryExists($"/dev_hdd0/game/{region}")).ToList();
 
                 foreach (string region in foundRegions.Where(region => XtraMessageBox.Show(
+                    MainWindow.Window,
                     $"Game Region: {region} has been found for: {Title}\nIs this correct?", "Found Game Region",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                 {
@@ -68,12 +70,13 @@ namespace ModioX.Database
                 }
 
                 XtraMessageBox.Show(
+                    MainWindow.Window,
                     "Could not find any regions on your console for this game title. You must install the game update for this title first.",
                     "No Game Update", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
 
-            return DialogExtensions.ShowListInputDialog(MainWindow.Window, "Game Regions", Regions.ToList());
+            return DialogExtensions.ShowListInputDialog(MainWindow.Window, "Game Regions", Regions.ToList().ConvertAll(x => new ListItem() { Value = x, Name = x }));
         }
     }
 }

@@ -154,16 +154,23 @@ namespace ModioX.Forms.Windows
 
             SetStatus("Fetching root directories...");
 
-            if (ConsoleType == ConsoleTypePrefix.PS3)
+            switch (ConsoleType)
             {
-                foreach (string driveName in FtpExtensions.GetFolderNames("/", false).ToArray())
-                {
-                    ComboBoxConsoleDrives.Properties.Items.Add(driveName.Replace(@"/", ""));
-                }
-            }
-            else if (ConsoleType == ConsoleTypePrefix.XBOX)
-            {
-                ComboBoxConsoleDrives.Properties.Items.AddRange(MainWindow.XboxConsole.Drives.Split(','));
+                case ConsoleTypePrefix.PS3:
+                    {
+                        foreach (ListItem driveName in FtpExtensions.GetFolderNames("/"))
+                        {
+                            ComboBoxConsoleDrives.Properties.Items.Add(driveName.Name.Replace(@"/", ""));
+                        }
+
+                        break;
+                    }
+
+                case ConsoleTypePrefix.XBOX:
+                    ComboBoxConsoleDrives.Properties.Items.AddRange(MainWindow.XboxConsole.Drives.Split(','));
+                    break;
+                default:
+                    break;
             }
 
             if (Settings.SaveLocalPath)
@@ -191,6 +198,8 @@ namespace ModioX.Forms.Windows
                             LoadConsoleDirectory(Settings.ConsolePathXBOX);
                         }
                         break;
+                    default:
+                        break;
                 }
             }
             else
@@ -210,7 +219,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonBrowseLocalDirectory_Click(object sender, EventArgs e)
         {
-            using FolderBrowserDialog folderBrowser = new FolderBrowserDialog { ShowNewFolderButton = true };
+            using FolderBrowserDialog folderBrowser = new() { ShowNewFolderButton = true };
 
             if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
@@ -744,8 +753,8 @@ namespace ModioX.Forms.Windows
 
                 FtpClient.SetWorkingDirectory(DirectoryPathConsole);
 
-                List<FtpListItem> folders = new List<FtpListItem>();
-                List<FtpListItem> files = new List<FtpListItem>();
+                List<FtpListItem> folders = new();
+                List<FtpListItem> files = new();
 
                 long totalBytes = 0;
 
@@ -776,7 +785,7 @@ namespace ModioX.Forms.Windows
                     else if (DirectoryPathConsole == "/dev_hdd0/game/")
                     {
                         string gameTitle = Settings.AutoDetectGameTitles ? $" ({HttpExtensions.GetGameTitleFromTitleID(listItem.Name)})" : "";
-                        consoleFiles.Rows.Add("folder", ImageFolder, $"{listItem.Name}{gameTitle}", "<GAMEUPDATE>", listItem.Modified);
+                        consoleFiles.Rows.Add("folder", ImageFolder, $"{listItem.Name}{gameTitle}", "<GAME-UPDATE>", listItem.Modified);
                     }
                     else
                     {
@@ -1039,6 +1048,7 @@ namespace ModioX.Forms.Windows
         /// Set the current status in the local panel.
         /// </summary>
         /// <param name="status"> </param>
+        /// <param name="ex"> </param>
         public void SetLocalStatus(string status, Exception ex = null)
         {
             LabelLocalStatus.Text = status;
@@ -1120,7 +1130,7 @@ namespace ModioX.Forms.Windows
             if (e.Button == MouseButtons.Left && downHitInfo != null)
             {
                 Size dragSize = SystemInformation.DragSize;
-                Rectangle dragRect = new Rectangle(new Point(downHitInfo.HitPoint.X - dragSize.Width / 2,
+                Rectangle dragRect = new(new Point(downHitInfo.HitPoint.X - dragSize.Width / 2,
                     downHitInfo.HitPoint.Y - dragSize.Height / 2), dragSize);
 
                 if (!dragRect.Contains(new Point(e.X, e.Y)))

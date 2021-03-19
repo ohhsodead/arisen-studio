@@ -43,7 +43,7 @@ namespace ModioX.Forms.Settings
             this.ColumnRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGameRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.GroupCustomLists = new DevExpress.XtraEditors.GroupControl();
             this.ProgressCustomLists = new DevExpress.XtraWaitForm.ProgressPanel();
             this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
             this.ButtonCreateNewList = new DevExpress.XtraEditors.SimpleButton();
@@ -52,8 +52,8 @@ namespace ModioX.Forms.Settings
             this.ButtonDeleteAllLists = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.GridCustomLists)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewCustomLists)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupCustomLists)).BeginInit();
+            this.GroupCustomLists.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).BeginInit();
             this.PanelButtons.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +74,8 @@ namespace ModioX.Forms.Settings
             // GridViewCustomLists
             // 
             this.GridViewCustomLists.ActiveFilterEnabled = false;
-            this.GridViewCustomLists.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.GridViewCustomLists.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.GridViewCustomLists.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewCustomLists.GridControl = this.GridCustomLists;
             this.GridViewCustomLists.Name = "GridViewCustomLists";
             this.GridViewCustomLists.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -119,16 +120,16 @@ namespace ModioX.Forms.Settings
             this.ColumnGameTitle.Name = "ColumnGameTitle";
             this.ColumnGameTitle.ReadOnly = true;
             // 
-            // groupControl1
+            // GroupCustomLists
             // 
-            this.groupControl1.Controls.Add(this.ProgressCustomLists);
-            this.groupControl1.Controls.Add(this.GridCustomLists);
-            this.groupControl1.Controls.Add(this.PanelButtons);
-            this.groupControl1.Location = new System.Drawing.Point(12, 12);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(407, 289);
-            this.groupControl1.TabIndex = 5;
-            this.groupControl1.Text = "YOUR LISTS";
+            this.GroupCustomLists.Controls.Add(this.ProgressCustomLists);
+            this.GroupCustomLists.Controls.Add(this.GridCustomLists);
+            this.GroupCustomLists.Controls.Add(this.PanelButtons);
+            this.GroupCustomLists.Location = new System.Drawing.Point(12, 12);
+            this.GroupCustomLists.Name = "GroupCustomLists";
+            this.GroupCustomLists.Size = new System.Drawing.Size(407, 289);
+            this.GroupCustomLists.TabIndex = 5;
+            this.GroupCustomLists.Text = "YOUR LISTS";
             // 
             // ProgressCustomLists
             // 
@@ -213,7 +214,7 @@ namespace ModioX.Forms.Settings
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(431, 313);
-            this.Controls.Add(this.groupControl1);
+            this.Controls.Add(this.GroupCustomLists);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("CustomLists.IconOptions.Icon")));
@@ -226,8 +227,8 @@ namespace ModioX.Forms.Settings
             this.Load += new System.EventHandler(this.CustomListsDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridCustomLists)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewCustomLists)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GroupCustomLists)).EndInit();
+            this.GroupCustomLists.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).EndInit();
             this.PanelButtons.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -241,7 +242,7 @@ namespace ModioX.Forms.Settings
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn ColumnRegion;
         private GridView GridViewCustomLists;
-        private GroupControl groupControl1;
+        private GroupControl GroupCustomLists;
         private StackPanel PanelButtons;
         private SimpleButton ButtonCreateNewList;
         private SimpleButton ButtonRenameList;

@@ -40,7 +40,7 @@ namespace ModioX.Io
                 return;
             }
 
-            DirectoryInfo dir = new DirectoryInfo(path);
+            DirectoryInfo dir = new(path);
 
             for (int i = 0; i < 3; i++)
             {

@@ -1,5 +1,5 @@
 {
-   "LastUpdated":"2021-04-02T00:13:37.126946+00:00",
+   "LastUpdated":"2021-03-15T00:13:37.126946+00:00",
    "Mods":[
       {
          "ConsoleType":"PS3",
@@ -2060,13 +2060,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"Menace MW3 Mod Menu / Cracked By Shark. thank you bro <3\n\nEboot is from Godengine its not a fake dont worry :D <3\n\nKurt Fuck you hahaha :D <33333\n\nMenu Instructions.\n\nL1 + Knife - Open Non-Host Menu\nL1 + Knife (In Pre-Game Lobby) - Open Pre-Game Menu\nDPAD Up - Open Host Menu",
-         "URL":"https://dl.dropbox.com/s/rwf0tix8waeegbn/Menace%20%5BCracked%5D.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/MenaceMW3.sprx",
-            "/dev_hdd0/tmp/GodEngineMW3.sprx",
-            "/dev_hdd0/tmp/khKey.txt"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2093,11 +2086,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"Hi, thanks for downloading nay1995's MW3 all client SPRX menu, i hope you enjoy!\n\nSubscribe to www.youtube.com/nay1995x",
-         "URL":"https://dl.dropbox.com/s/yvew3nl4e8fdd08/nay1995.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/nay1995.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2122,10 +2110,6 @@
          "Configuration":"MP",
          "Type":"EBOOT",
          "Description":"Some basic mods only available if you're not the host.",
-         "URL":"https://dl.dropbox.com/s/p6jqie0y5lex6av/Non%20Host%20Mods.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2149,11 +2133,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"First off I would like to say thanks to everyone in the credits, please besure to read the credits.\nNext I would like to thank everyone for trying out my first menu. This menu is for 720p............\n\n\\Credits//\nUnholyTalonTSi = Creator\nDevOps = Teaching and helping me.\nkiwi_modz = Teaching and helping me.\nHostOnly = For menu base and some help.\nExile = For some help.\nJohn Valincius = For some help.\nS63 = Answering a few questions.\nMatrix = Answering a few questions.\n\nSorry if i forgot anyone...\n\n//Testers\\\nSpyderTurbo\nGOD_DAMN_S_O_B\nGOD_DAMN_MLSTUMP\nGOD_DAMN_HOPNLX\n\nSorry if i forgot anyone...\n\nPlace Prometheus folder inside dev_hdd0/tmp/\nThen place eboot inside dev_hdd0/game/your mw3 directory/USRDIR/  Example: dev_hdd0/game/BLUS30838/USRDIR/\n\nIf you are having problems and it's not loading the menu, then try to go into rebug toolbox/ftp and try to\nreload everything again. If you still are having problems after reloading it, make sure you on 720p resolution. \nIf you still continue to have problems and if you can't see the dialog with some credits at mw3 startup, then \nthe eboot isn't working for you. Please try a different eboot. All you have to do is move the MW3.sprx into the\ndev_hdd0/tmp/ and rename MW3.sprx to what ever your new eboot hooks to. Example dev_hdd0/tmp/WHATEVER.sprx.\nIf you still continue to have problems message UnholyTalonTSi on Skype, discord or ngu. http://www.nextgenupdate.com/forums/private.php?do=newpm&u=684070\n\nIf a option has a white box around it you can scroll left and right. You must push square to toggle/select it.\n\n//Ingame & Pregame Menu Controls\\\nD_PadUp + Square = To open the menu\nD_PadUp & D_PadDown = Scrolls up and down\nD_PadLeft & D_PadRight = Scrolls left and right\nSquare = Toggle/Select stuff inside menu\nCircle = To Close/Backup",
-         "URL":"https://dl.dropbox.com/s/pfzq6m9sr1yr3l3/Prometheus.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/MW3.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2178,11 +2157,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"Reckoning V1 Non Host Menu\n\nFeatures\nPregame And In game Menu\nNon Host Mods Such As No Recoils\nPregame Features Such As Name Changer And Stats\nCustomization\nWith Different Colours\n\nButtons\n\nPregame\n\nL1 And R3 - To Open\nL1 And R1 - To Scroll\nStart - To Select\nSquare - To Close\n\nIn Game\nSpoiler:\n\nDPAD Right - To Open\nDPAD UP And Down - To Scroll\nSquare - To Go Back\nX - To Select\n\n\nCredits\n\niMoD1998 - Creating The Menu\nSabotage - Teaching Me Text Engine And General Help\nBlack Panther - For His Thread On Text Engine And Also For Functions From His Menus Base\nShark - Some Addresses\nAnd Any One Else Who Helped",
-         "URL":"https://dl.dropbox.com/s/486qs7bm0lcvps7/Reckoning.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/NonHost.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2207,11 +2181,6 @@
          "Configuration":"SPEC OPS",
          "Type":"EBOOT/SPRX",
          "Description":"Hello!\nHave fun!\n\nReport bugs if you find any.\nAlready founded some from Teleport menu but still desiced to release",
-         "URL":"https://dl.dropbox.com/s/u3f51h63cj44ztl/Resistance.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/ResistanceV3.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2236,11 +2205,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"Put the MW3.SPRX file in > /dev_hdd0/tmp of your PS3.\nPut the EBOOT in your USDIR Folder of your MW3 Game.\n\n\n\nKopiere die MW3.SPRX Datei in das > /dev_hdd0/tmp Verzeichnis deiner PS3.\nKopiere die EBOOT.bin Datei in das USDIR Verzeichnis deines MW3 Spieles.\n\n\nHope you enjoy it:\n\nwww.youtube.com/user/Freeplayer20896",
-         "URL":"https://dl.dropbox.com/s/syoedebm9z4dsgh/SilentShadow.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/MW3.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2265,11 +2229,6 @@
          "Configuration":"SPEC OPS",
          "Type":"EBOOT/SPRX",
          "Description":"No description.",
-         "URL":"https://dl.dropbox.com/s/9gy3li28pvta19l/Simple%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/SpecialOps.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2294,10 +2253,6 @@
          "Configuration":"MP",
          "Type":"EBOOT",
          "Description":"No description.",
-         "URL":"https://dl.dropbox.com/s/nbmxxqp9206cdzk/SnD%20XP%20Lobby.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2321,11 +2276,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"No description.",
-         "URL":"https://dl.dropbox.com/s/14cdlf1eoten697/Snow%20Engine.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/SnowMW3.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2350,10 +2300,6 @@
          "Configuration":"MP",
          "Type":"EBOOT",
          "Description":"Eboot created to load any MW3.sprx file into the game.",
-         "URL":"https://dl.dropbox.com/s/fuhs6dkud6yhaq2/SPRX%20Plugin.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2377,10 +2323,6 @@
          "Configuration":"MP",
          "Type":"EBOOT",
          "Description":"Loads of mods in one lobby.",
-         "URL":"https://dl.dropbox.com/s/di6giqipy3adsgi/Ultimate%20Lobby.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2404,10 +2346,6 @@
          "Configuration":"MP",
          "Type":"EBOOT",
          "Description":"Hey everyone!\n\nThis is my latest, greatest, and maybe last MW3 EBOOT. Since BOII is in full swing, this will be released to everyone instead of just Elite members. I am releasing this since other people seem to have been figuring out how to do things like unlimited ammo.\n\nFeatures of this EBOOT:\n\nAll players:\n-Super jump\n-Super speed\n-No fall damage\n-Unlimited ammo\n-No recoil\n-Move around before match starts\n-Super AC-130\n-Constant super steady aim (no perk needed)\n-Constant super double tap (no perk/attachment needed)\n-Predator missile martydrom\n-Javelin Macross (won't kill you when you shoot)\n-Instant Javelin Impact\n-Sleight of Hand reloads instantly\n-Steady aim has perfect accuracy\n-Quadruple weapon XP in all gamemodes\n-Instant Predator Missile\n-Use Square from far away\n-Use mounted guns from far away\n-Suicide in Domination, Headquarters, Demolition, Capture the Flag, or Kill Confirmed gives 32500 XP\n-MOAB timer is about 8.9 hours\n\nHost only:\n-Custom welcome message upon loading game\n-Broken glass floats up into the sky\n-Dead bodies/care packages/falling objects have low gravity\n-Disabled smoke trail/explosion FX (to prevent lag from unlimited ammo)\n-You can now turn a full 360 degrees while prone\n-No sway while aiming down sight\n-Pink names for you and your party members\n-Vision tweaks (looks like PC promod; reduces lag in game)\n-Pickup prints (game tells you if you pick up ammo)\n-Blue Scoreboard Text Color\n-Changed Scoreboard Text\n-Promod FOV\n-Changed killfeed colors\n-Ragdoll Jitter (dead bodies flip around erratically)\n-Force Host (better than any other)\n-Constant Radar (like MW2 radar hacks)\n\nHow to use:\n\n1. Download the file for your region and FW. Rename to EBOOT.BIN.\n2. Copy the file to /dev_hdd0/game/YOUR REGION/USRDIR/.\n3. Launch MW3, and enjoy!\n\nCredits:\n-iMCSx for helping find some things\n-aerosoul94 for no fall damage\n\nInformation:\n\n-You may get banned using this. Be careful!\n-Arkaaden and Village will not work due to vision tweaks.\n-If you memory edit while using this, your chances of getting banned will increase.\n\nHave fun everyone ",
-         "URL":"https://dl.dropbox.com/s/hvo4z8azahqq731/Ultimate%20Mods%20by%20Choco.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2431,11 +2369,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"This version is very close to the finished menu, I just need to finish messing with the aimbot and forge mode until they fit my standards and then a full release should be on its way! Anyway I am releasing this because so many people asked to try it :p Enjoy!\n\nhow to use it\n\n1. install the eboot\n2. copy the sprx to this location dev_hdd0/tmp/\n\nUpdate Log\n\nUpdate 2.1\n\nAdded a few things like unlimited ammo, weapon menu, explosive bullets, and better stability.\n\nUpdate 2.2\n\n-Added Camo Menu\n-Added Make it Rain\n-Fixed the menu so it will work in public matches\n-Fixed the client list 100%\n-Improved over all stability of the menu\n\nUpdate 2.3\n\n-Added Vibration\n-Added Make it Rain for all clients (un tested)\n-Left ZombieLand enabled for public release(not 100% functional Sorry :()\n-Re designed the menu structure to improve the stability\n-fixed various errors\n\nBug List\n\n1. Make it rain isnt working\n2. The solid models don't work right for every map I need to take some time and find the right indexes for every map\n3. CEX doesn't work\n4.\n\nThings to do\n\n1. Finish Forge Menu(close)\n2. Finish Aimbot (Fair Aimbot is almost working)\n3. Get Super Jump\n4. Get Super Speed\n5. Real explosive bullets\n5. Teleport Gun\n7. Finish Zombie Land(its getting there)\n8. Turrets and flags to the bunker",
-         "URL":"https://dl.dropbox.com/s/zzexw6rl0cimjsl/Virtual%20Energy.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/Virtual_Energy.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2460,10 +2393,6 @@
          "Configuration":"MP",
          "Type":"EBOOT",
          "Description":"No description.",
-         "URL":"https://dl.dropbox.com/s/8mfs6yvh80xecvt/XP%20Lobby.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2487,11 +2416,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"Hi NGU since my Zombieland on C# was a crap, i decided making it again on c++, now its very stable and it has much more options like Doors, Teleport flags, bunkers, ramps.\n\nIt works in all maps but it has map edits only in terminal\n\nHere i left a short video showing what it has (sorry for the bad quality)\n\nRemember, gamemode must be INFECTED, if not it wont work correctly.\n\nNo Virus Scan needed because its sprx.\n\nThanks to Oldschoolmodz for his script thread and SC58 for some addresses.\n\nHope you enjoy using it, and remember this is a BETA, tell me possible bugs here or my Skype : tmh_dev",
-         "URL":"https://dl.dropbox.com/s/vf0uasecmts3lvo/Zombieland.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/Zombieland.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2516,11 +2440,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"I made this a while back, I didn't really add anything to it so I'm like why not release it since I don't use it . The menu is very mini so it will show up in the subtitles.*\nThis sprx is only for [BLES01294] Game of the Year Edition\n\nOpen with R3 + LEFT\n\nFEATURES\nInvulnerability (God mode)*\nInfinite horse stamina\nTeleport to player\nGive all Weapons\nGold Weapons*\nBlazing Bullets\nUnlock all Trophies\nHorse Spawner\n\nCredits*\nDirk for helping with hook\nRoulette for creating the sprx\nRock for SC-CL\nNathan for SC-CL\nXBLToothPik for SC-CL\n\nVersion 1.0\nInitial Release*\n\nVersion 1.1\nAdded Spawn Truck\nAdded Spawn Car\nAdded Spawn Bear\nAdded Spawn Zebra",
-         "URL":"https://dl.dropbox.com/s/fjxm0kbur5tcovm/Mini%20Menu%20SPRX.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/CrushIt.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -3051,10 +2970,6 @@
          "Configuration":"SP/MP",
          "Type":"EBOOT",
          "Description":"Features:\n\n- Increased Damage\n- Wall Hack\n- Wall Hack Vehicle\n- UAV\n- Sniper Breath\n- 1 Hit Kill\n- Name Tags\n- No Recoil\n\nInstructions to Prevent Being Banned:\n\nStep 1. Load Battlefield 3 to XMB\nStep 2. Use PSNINJA\nStep 3. Use PSN PATCH\nStep 4. Load your game up Offline\nStep 5. Sign in PSN through XMB [PSN Button]\nStep 6. Enjoy Gaming Battlefield 3!!!\n\nCredits\n\nLuckeyy\nModded EBOOT.BIN\n\nEddie-Mac\nOffset Thread",
-         "URL":"https://dl.dropbox.com/s/o60yk0r0c86f5of/Increased%20Damage%20Wall%20Hack%20UAV.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -3078,15 +2993,10 @@
          "Configuration":"SP",
          "Type":"EBOOT/SPRX",
          "Description":"Controls:\nOpen: R3 & L1\nGo Back/Close: R3\nSelect: Square\n\nHas a whole lot of stuff\n\nFeatures:\n- ESP\n- Aimbot\n- Boxes\n- OneShot kill\n- UAV\n- Wallhack\netc.",
-         "URL":"https://dl.dropbox.com/s/b0hympsah5mhg7f/TheOutcast%20BF4.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/BF4Hax.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
-               "URL":"https://dl.dropbox.com/s/zvie5gwvhzy75av/Infinite%20Health%20%26%20Ammo.zip?raw=true",
+               "URL":"https://dl.dropbox.com/s/b0hympsah5mhg7f/The%20Outcast%20Menu.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
                   "/dev_hdd0/tmp/BF4Hax.sprx"
@@ -3107,10 +3017,6 @@
          "Configuration":"SP",
          "Type":"PKG",
          "Description":"Just move from side to side and avoid the oncoming cylinders. The high score is automatically saved.\n\nControls:\nAnalog sticks = Move",
-         "URL":"https://dl.dropbox.com/s/d4zavnm6cvqt96l/Scogger%20HD.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/packages/scogger-hd.pkg.455.v0.1_brewology_com.pkg"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -3134,10 +3040,6 @@
          "Configuration":"SP",
          "Type":"PKG",
          "Description":"scognito, a homebrew dev, has released Scogger is a simple puzzle style homebrew game that has been created on various platforms such as PSP, DS, Wii, Gamecube, mobile phones and now your lovely hacked PS3",
-         "URL":"https://dl.dropbox.com/s/iit4vmabn31wjn3/Cylinder%20Dodge.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/packages/CylinderDodge_v1.1.pkg.418.v1.1_brewology_com.pkg"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -3161,92 +3063,6 @@
          "Configuration":"SP/MP",
          "Type":"XXX",
          "Description":"This is version 1.60 of the Trilogy Edition mod for MK9.\nThis is a mod that primarily aims to rebalance the entire cast of MK9, although it's scope will be expanded in the future.\nThe changes done are in a file named Patch changes, which is in the rar.\n\nInstallation\nThe mod is intended to be used on the Komplete Edition of MK9 (doesn't matter if it's the USA/BLUS or European/BLES\nversion) so, no official support is given for non KE users (sorry guys!) and I do not own the PSN version, so I have\nno clue whether or not will it work to a 100%. My recommendation? Stick to the Komplete Edition.\nAnyways, installation is quite simple: simply extract the USRDIR folder into your PS3_GAME folder of your Komplete\nEdition. Overwrite all files, and that's it! Yeah, not very hard. In case you run into any problems following the installation,\nyou might want to try deleting your MKKE install data from your PS3, and then starting the game again.\nI've tested it on version 1.07, but it should work on 1.05 (unpatched Komplete Edition).\nThe changes made are listed on a separate file called Patch changes.txt.\nHope you have fun!\n\nKnown issues:\nMK3 Sektor and Mileena costumes crash the game (PC ONLY) FIXED AS OF TE 1.25\nQuan Chi's Skeletal Boost during Trance buff causes him to only be able to use Trance once (PC ONLY) FIXED AS OF THE TE 1.25 HOTFIX\nNoob Saibot's EX Shadow Charge allows for an unintended 17% combo with the Slide (BOTH PLATFORMS). NOT FIXED YET.\nQuan Chi can do a second Skeletal Boost during Trance if he had already done one before using Trance on an opponent. (BOTH PLATFORMS) NOT FIXED YET\n(Thankfully, buffs do not stack, it simply resets the buff)\n\nSpecial Thanks\nMK9 modding community (in particular, digitaloverdose for his mkscriptextractor, Gniarf for his FNV1 hashes discovery and HowardC for the\nFNV1 string dehasher)\nThe TestYourMight community for their feedback.\nREO, Biggs, RM Atk!, XSmokeX, MIT, DetroitBalln for their balance suggestions (sorry guys if I fucked up too bad the first time around, haha)\nBillStickers for his help with porting to PC.\nWarner Bros and Netherrealm Studios for bringing us such an awesome game.\n\nThis mod was made by futuretime23.\n\nMisc. changes:\n\n    Custom title screen has been added.\n    Medium in Training mode has been changed to Overh. to avoid confusion with mids (it's labelled Overh. due to character limit)\n    HighOrLow (as stated in the coalesced.eng file) has been changed to Mid. Keep in mind that some attacks that are High will show up as Mid\n    (For example, Smoke's 21, defined to be a mid attack but because of the small hitbox, it behaves like a high)\n    Some info on the boot up screen has been changed to credit people who helped with the mod. (Thanks guys!)",
-         "URL":"https://dl.dropbox.com/s/y1fkhr0jeiorxwe/Trilogy%20Edition%20Mod.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/BIHAN_CHARINTRO.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_BARAKA.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_BARAKA_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_CYBERZERO.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_CYBERZERO_C.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_CYRAX.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_CYRAX_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_CYRAX_C.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_ERMAC.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_ERMAC_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_ERMAC_C.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_FREDDYKRUEGER.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_JADE.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_JADE_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_JADE_C.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_JADE_D.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_JAX.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_JAX_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_JOHNNYCAGE.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_JOHNNYCAGE_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_KABAL.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_KABAL_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_KANO.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_KANO_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_KENSHI.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_KITANA.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_KITANA_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_KITANA_C.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_KITANA_D.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_KRATOS.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_KRATOS_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_KUNGLAO.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_KUNGLAO_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_LIUKANG.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_LIUKANG_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_MILEENA.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_MILEENA_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_MILEENA_D.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_MILEENA_E.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_NIGHTWOLF.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_NIGHTWOLF_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_NOOB.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_NOOB_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_NOOB_D.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_QUANCHI.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_QUANCHI_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_RAIDEN.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_RAIDEN_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_RAIN.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_REPTILE.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_REPTILE_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_REPTILE_C.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SCORPION.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SCORPION_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SCORPION_C.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SEKTOR.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SEKTOR_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SEKTOR_C.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SHANGTSUNG.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SHANGTSUNG_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SHEEVA.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SHEEVA_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SINDEL.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SINDEL_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SKARLET.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SMOKE.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SMOKE_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SMOKE_D.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SONYA.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SONYA_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_STRYKER.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_STRYKER_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SUBZERO.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SUBZERO_B.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SUBZERO_C.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/CHAR_SUBZERO_F.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/OLDTSUNG_BOSS_CHARINTRO.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/OLDTSUNG_FEMALE_CHARINTRO.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/OLDTSUNG_MALE_CHARINTRO.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/UI_S_MAINMENU.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/ASSET/UI_S_MAINMENU_N.XXX",
-            "/dev_hdd0/game/{REGION}/USRDIR/LOCALIZATION/COALESCED.ENG",
-            "/dev_hdd0/game/{REGION}/USRDIR/PS3TOC.TXT"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -3352,10 +3168,6 @@
          "Configuration":"SP",
          "Type":"PKG",
          "Description":"A homebrew version of brickbreaker.",
-         "URL":"https://dl.dropbox.com/s/3t724ggazt6x3xy/BreakOutX.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/packages/BreakOutX_brewology_com.pkg"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -3409,10 +3221,6 @@
          "Configuration":"-",
          "Type":"PKG",
          "Description":"Adds options for rebooting, rebuilding database etc. Also installs a Reload XMB pkg to dev_hdd0/packages/, install that if you want that feature on the menu.\n\nNow works on HEN and CEX/DEX so the name changed to 'Advanced Power Options'",
-         "URL":"https://dl.dropbox.com/s/iugwh9l5c7ayyeh/Advanced%20Power%20Options.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/packages/Advanced_Power_Options_v1.10.pkg.402.v1.10_brewology_com.pkg"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -3575,10 +3383,6 @@
          "Configuration":"-",
          "Type":"PKG",
          "Description":"This is another Backup Manager made from the ground. It allows you to mount a backup stored in your USB device or in the internal hdd as a virtual Blue-Ray using 4 differents UI : 'List', 'Grid', 'XMB' and 'Flow'. ",
-         "URL":"https://dl.dropbox.com/s/o630hymjzwf0u2k/ManaGunZ.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/packages/ManaGunZ_v1.38.pkg.444.v1.38_brewology_com.pkg"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -3602,10 +3406,6 @@
          "Configuration":"-",
          "Type":"PKG",
          "Description":"OpenPS3FTP is an open source ftp server for the PS3. It has an implementation of most ftp commands and also supports most ftp clients. It has some compliance to the ftp RFC.\n\nDefault login details:\n- username: root\n- any password is accepted unless if the passwd file (containing the password) exists",
-         "URL":"https://dl.dropbox.com/s/hos293c5qlgof6i/OpenPS3FTP.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/packages/NPXS91337.pkg.846.v4.2a_brewology_com.pkg"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -3629,10 +3429,6 @@
          "Configuration":"-",
          "Type":"PKG",
          "Description":"Prepare NTFS drives for webMAN access. prepNTFS reads the /PS3ISO, /PSXISO, /DVDISO and /BDISO folders (PS3 Games, DVD Video and Blu-ray movies) in your NTFS external drive and allows to mount and play your ISOS using webMAN 1.24 and later. ",
-         "URL":"https://dl.dropbox.com/s/ug729o4zsn4c28q/prepNTFS.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/packages/prepNTFS.pkg.569.v1.01_brewology_com.pkg"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -3656,11 +3452,6 @@
          "Configuration":"-",
          "Type":"PKG",
          "Description":"PS2 Classics Manager is a tool that helps users manage their PS2 games collection and convert them easily to PS2 Classics encrypted format.\n\nMain Features (Quick List)\n- Set PS2 converted games active in PS2 Classics Placeholder\n- Encrypt valid PS2 ISO(s) / BIN(s) as PS2 Classics and automatically patch LIMG segment (no need for anything else, just the ISO / BIN)\n- Import External PS2 games (ISO / BIN / ENC). Split games supported (.ISO.66600 / .BIN.66600 / .ENC.66600)\n- Game List with display of Cover images, Information box, Title ID, Title acquired from a text DB and more.\n- Memory Cards manager to easily switch between your collection of VME, and assign them as SLOT 1 or SLOT 2.\n- Automatic export / decryption of the active Memory Cards to XMB->Memory Card Utility as VM2.\n…more at the change log. ",
-         "URL":"https://dl.dropbox.com/s/wfr4ed4zg6fr7uy/PS2%20Classics%20Manager.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/packages/PS2_CLASSIC_MANAGER_1.02_[20130411]_CEX4XX_UPD.pkg.207.v1.02_brewology_com.pkg",
-            "/dev_hdd0/packages/[PS2U10000]_PS2_Classics_Placeholder_R3.pkg.237.v1.00_brewology_com.pkg"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -3685,10 +3476,6 @@
          "Configuration":"-",
          "Type":"PKG",
          "Description":"This Placeholder is used to launch PS2 ISO or PS2 Classic Format games on nonBC PS3 CEX/DEX enabled Consoles.\n\n**Requires Activation (AIO Download)\nhttps://mega.nz/#!p9QFTBpA!vezmFjP9HvXnx91oMxh6RYksQosEr8NdoAiBCbsM6FY ",
-         "URL":"https://dl.dropbox.com/s/4g6b4w036dhhucw/PS2%20ISO%20Launcher.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/packages/ISO_LAUNCHER_1.03.pkg.231.v1.03_brewology_com.pkg"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -3712,10 +3499,6 @@
          "Configuration":"-",
          "Type":"PKG",
          "Description":"PS2 ISO / Classic Launcher for PS3 consoles non-Backward Compatible (with PS2) is a tool that allows to launch PS2 ISOs and PS2 Classics. It's a work around to fix the wireless pad sync issues on CEX/DEX 4.65.\n\n* PS2 Launcher is equivalent to PS2 Classic Place holder [they both do the same function]. ",
-         "URL":"https://dl.dropbox.com/s/5wady8orvfge77g/PS2%20Launcher%20REBUG%20Edition.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/packages/PS2_Launcher_REBUG_Edition.pkg.192.v1.00_brewology_com.pkg"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -3739,10 +3522,6 @@
          "Configuration":"-",
          "Type":"PKG",
          "Description":"Web portal for PlayStation 3 with links to Homebrew, managers, mods, ...\n\nThis package will allow you access to the PS3 EXTRANET portal in 12 languages to choose:\nArabic, Brasil (Portuguese), Chinese, Dutch, English, French, Italian, Japan, Norwegian, Russian, Spanish, Swedish. ",
-         "URL":"https://dl.dropbox.com/s/pjwygqu4pijl8b2/PS3%20EXTRANET.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/packages/PS3_EXTRANET_Installer_Multi.pkg.398.v2.10_brewology_com.pkg"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -3766,10 +3545,6 @@
          "Configuration":"-",
          "Type":"PKG",
          "Description":"PSNPatch WITH COBRA PLUGIN\nfor 4.XX CEX/DEX COBRA & NON-COBRA Editions\n\nThis is a small app made by KW and inspired in the works of stoker25 (psidpatch) and user (psnope).\n\nThe major objective is to spoof the console Id and disable CEX/DEX syscalls extensions in order to make your system more 'safe' to go into the PSN. (Note that MORE safe doesn't mean IT IS safe !). It also deletes the boot history execution.\n\nThe optional cobra plugins unloads from memory after activation.\n\nHow to Use (Summary by kozarovv)\nGeneral rule is to install psn patch ----> run ----> go to toolbox (select) ----> install psnpatch plugin. After that restart your PS3. Ir's one time process, now your psn access should be locked until you use L3+R3+R2 from the XMB.\n\nSo generally you need to mount game, use combo, run game. That's all, but remember that if you want to change game or run ANY homebrew. You need to first restart your ps3 to lock psn access, and remember there is no 100% that you will don't get ban.\n\n\nA new homebrew blocker is included in the psnpatch plugin - in the plugin only.\nIt is enabled by default.\nIf you don't want to use it, go into psnpatch xmb application, toolbox menu, and disable it there.\nThe homebrew blocker blocks home brew excution when CEX/DEX Syscalls are disabled.\nExecution will be locked until the next reboot.\nThe homebrew blocker runs in cobra, near-cobra (mamba) and non-cobra systems.\nThis implementation is compatible with eventually future cobra updates for core homebrew blockers.\n\nThe approach used is detailed in the homebrew_blocker module source code included in this pasnpatch distribution\n\nIt was heavily tested, namely simulating crashes, forced reboots, recovery menu accesses, file system recovery and database rebuilds. Up to know is failsafe proof, but as usual there is no warranty ;)\n\nDownload PSN Patch 2017.02/B: www.sendspace.com/file/8wbzhf\n\nOFFICIAL SUPPORT FORUM psx-place.com",
-         "URL":"https://dl.dropbox.com/s/0po9zy9nv3mdfxv/PSN%20Patch%20%28Stealth%29.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/packages/psnpatch_2017.02B.pkg.423.v2017.02B_brewology_com.pkg"
-         ],
          "DownloadFiles":[
             {
                "Name":"PSN Patch (Stealth)",
@@ -4250,10 +4025,6 @@
          "Configuration":"-",
          "Type":"QRC",
          "Description":"Custom Green & Yellow Waves",
-         "URL":"https://dl.dropbox.com/s/70sy8fs13mxt4xp/Green%20%26%20Yellow%20Waves.zip?raw=true",
-         "InstallPaths":[
-            "/dev_rebug/vsh/resource/qgl/lines.qrc"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -4277,10 +4048,6 @@
          "Configuration":"-",
          "Type":"QRC",
          "Description":"Original XMB Waves",
-         "URL":"https://dl.dropbox.com/s/3fdm3lkw6yqvx0b/Original%20Waves.zip?raw=true",
-         "InstallPaths":[
-            "/dev_rebug/vsh/resource/qgl/lines.qrc"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -4304,10 +4071,6 @@
          "Configuration":"-",
          "Type":"QRC",
          "Description":"Custom Red to Green XMB Waves with night background.",
-         "URL":"https://dl.dropbox.com/s/yoqhwgjcx6g0viu/Red%20to%20Green%20Waves%20Night%20BG.zip?raw=true",
-         "InstallPaths":[
-            "/dev_rebug/vsh/resource/qgl/lines.qrc"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -20111,7 +19874,7 @@
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
                   "/dev_hdd0/game/tmp/enstone/Reborn_JM.bin",
-                  "/dev_usb000/plugins/MW2_Reborn_Loader.sprx"
+                  "/{USBDEV}/plugins/MW2_Reborn_Loader.sprx"
                ]
             }
          ]
@@ -20184,7 +19947,7 @@
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
                   "/dev_hdd0/tmp/enstone/destiny_by_enstone_120.bin",
-                  "/dev_usb000/plugins/Bo2_Destiny_Loader.sprx"
+                  "/{USBDEV}/plugins/Bo2_Destiny_Loader.sprx"
                ]
             }
          ]

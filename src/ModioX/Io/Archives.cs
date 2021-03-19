@@ -20,7 +20,7 @@ namespace ModioX.Io
             using ZipArchive zipArchive = ZipFile.Open(zipPath, ZipArchiveMode.Update);
             foreach (string file in files)
             {
-                FileInfo fileInfo = new FileInfo(file);
+                FileInfo fileInfo = new(file);
                 zipArchive.CreateEntryFromFile(fileInfo.FullName, fileInfo.Name);
             }
         }

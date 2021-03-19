@@ -14,9 +14,9 @@ using ModioX.Models.Resources;
 
 namespace ModioX.Forms.Settings
 {
-    public partial class SavedGameRegions : XtraForm
+    public partial class GameRegions : XtraForm
     {
-        public SavedGameRegions()
+        public GameRegions()
         {
             InitializeComponent();
         }
@@ -31,7 +31,7 @@ namespace ModioX.Forms.Settings
         /// </summary>
         public static GitHubData Database { get; } = MainWindow.Database;
 
-        private void EditGameRegions_Load(object sender, EventArgs e)
+        private void GameRegions_Load(object sender, EventArgs e)
         {
             ComboBoxGameTitle.Properties.Items.Clear();
             ComboBoxGameRegion.Properties.Items.Clear();

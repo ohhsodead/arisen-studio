@@ -5,6 +5,11 @@ namespace ModioX.Extensions
 {
     internal static class StringExtensions
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="byteCount"></param>
+        /// <returns>  </returns>
         public static string FormatBytes(this long byteCount)
         {
             string[] suf = { "Bytes", "KB", "MB", "GB", "TB", "PB", "EB" }; //Longs run out around EB
@@ -23,8 +28,8 @@ namespace ModioX.Extensions
         /// <summary>
         /// Replace all the invalid characters with the underscore symbol.
         /// </summary>
-        /// <param name="path"> </param>
-        /// <returns> </returns>
+        /// <param name="fileName">  </param>
+        /// <returns>  </returns>
         public static string ReplaceInvalidChars(this string fileName)
         {
             return string.Join("_", fileName.Split(Path.GetInvalidFileNameChars()));

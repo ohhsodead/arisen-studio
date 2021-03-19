@@ -9,6 +9,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Io;
+using ModioX.Models.Game_Updates;
 
 namespace ModioX.Forms.Tools.PS3_Tools
 {
@@ -19,25 +20,9 @@ namespace ModioX.Forms.Tools.PS3_Tools
             InitializeComponent();
         }
 
-        private string RetailUpdatesURL => "https://a0.ww.np.dl.playstation.net/tpl/np/";
-
-        private string DebugUpdatesURL => "https://a0.ww.sp-int.dl.playstation.net/tpl/sp-int/";
-
-        private string UpdateTypeURL { get; set; }
-
         private void GameUpdatesFinder_Load(object sender, EventArgs e)
         {
-            ComboBoxType.SelectedIndex = 0;
-        }
 
-        private void ComboBoxType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            UpdateTypeURL = ComboBoxType.SelectedIndex switch
-            {
-                0 => RetailUpdatesURL,
-                1 => DebugUpdatesURL,
-                _ => UpdateTypeURL
-            };
         }
 
         private void ButtonSearch_Click(object sender, EventArgs e)
@@ -49,7 +34,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             }
 
             string gameTitle = HttpExtensions.GetGameTitleFromTitleID(TextBoxTitleID.Text);
-            Models.Game_Updates.Titlepatch gameUpdates = HttpExtensions.GetGameUpdatesFromTitleID(UpdateTypeURL, TextBoxTitleID.Text);
+            Titlepatch gameUpdates = HttpExtensions.GetGameUpdatesFromTitleID(TextBoxTitleID.Text);
 
             if (gameUpdates == null)
             {
@@ -69,7 +54,9 @@ namespace ModioX.Forms.Tools.PS3_Tools
                     new("System Version", typeof(string)),
                 });
 
-                foreach (Models.Game_Updates.Package update in gameUpdates.Tag.Package)
+                gameUpdates.Tag.Package.Reverse();
+
+                foreach (Package update in gameUpdates.Tag.Package)
                 {
                     gameUpdateFiles.Rows.Add(
                         update.Url,

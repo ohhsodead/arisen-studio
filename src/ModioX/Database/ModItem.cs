@@ -87,7 +87,7 @@ namespace ModioX.Database
         {
             get
             {
-                List<string> versions = new List<string>();
+                List<string> versions = new();
 
                 switch (Version)
                 {
@@ -126,7 +126,7 @@ namespace ModioX.Database
         {
             get
             {
-                List<string> regions = new List<string>();
+                List<string> regions = new();
 
                 foreach (string region in Region.Split('/'))
                 {
@@ -159,7 +159,7 @@ namespace ModioX.Database
         {
             get
             {
-                List<string> gameModes = new List<string>();
+                List<string> gameModes = new();
 
                 foreach (string mode in Configuration.Split('/'))
                 {
@@ -208,26 +208,31 @@ namespace ModioX.Database
             if (DownloadFiles.Count <= 1) return DownloadFiles.First();
 
             List<string> downloadNames = DownloadFiles.Select(x => x.Name).ToList();
-            string downloadName = DialogExtensions.ShowListInputDialog(MainWindow.Window, "Install Downloads", downloadNames);
+            string downloadName = DialogExtensions.ShowListInputDialog(MainWindow.Window, "Install Downloads", downloadNames.ConvertAll(x => new ListItem() { Value = x, Name = x }));
 
             return string.IsNullOrEmpty(downloadName) ? null : DownloadFiles.First(x => x.Name.Equals(downloadName));
         }
 
         /// <summary>
-        /// Get the directory for extracting modded files to.
+        /// Get the directory for extracting modded files.
         /// </summary>
         /// <returns> </returns>
-        public string DownloadDataDirectory(DownloadFiles downloadFiles) => $@"{UserFolders.AppModsDataDirectory}{GameId}\{Author}\{Name.ReplaceInvalidChars()} ({downloadFiles.Name.ReplaceInvalidChars()}) (#{Id})\";
+        public string DownloadDataDirectory(DownloadFiles downloadFiles)
+        {
+            return $@"{UserFolders.AppModsDataDirectory}{GameId}\{Author}\{Name.ReplaceInvalidChars()} ({downloadFiles.Name.ReplaceInvalidChars()}) (#{Id})\";
+        }
 
         /// <summary>
         /// Gets the downloaded mods archive file path.
         /// </summary>
         /// <returns> Mods Archive File Path </returns>
-        public string ArchiveZipFile(DownloadFiles downloadFiles) => $@"{UserFolders.AppModsDataDirectory}{GameId}\{Author}\{Name.ReplaceInvalidChars()} ({downloadFiles.Name.ReplaceInvalidChars()}) (#{Id}).zip";
+        public string ArchiveZipFile(DownloadFiles downloadFiles)
+        {
+            return $@"{UserFolders.AppModsDataDirectory}{GameId}\{Author}\{Name.ReplaceInvalidChars()} ({downloadFiles.Name.ReplaceInvalidChars()}) (#{Id}).zip";
+        }
 
         /// <summary>
-        /// Downloads the modded files archive and extracts all files to <see
-        /// cref="DownloadDataDirectory" />
+        /// Downloads the modded files archive and extracts all files to <see cref="DownloadDataDirectory"/>
         /// </summary>
         /// <param name="downloadFiles"> </param>
         public void DownloadInstallFiles(DownloadFiles downloadFiles)
@@ -252,7 +257,7 @@ namespace ModioX.Database
 
             Directory.CreateDirectory(archivePath);
 
-            using (WebClient webClient = new WebClient())
+            using (WebClient webClient = new())
             {
                 webClient.Headers.Add("Accept: application/zip");
                 webClient.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
@@ -267,15 +272,15 @@ namespace ModioX.Database
         /// </summary>
         /// <param name="categoriesData"> </param>
         /// <param name="downloadFiles"> </param>
-        /// <param name="localPath"> Path to downloads mods archive at folder </param>
+        /// <param name="localPath"> Folder path to download the archive </param>
         public void DownloadArchiveAtPath(CategoriesData categoriesData, DownloadFiles downloadFiles, string localPath)
         {
-            string zipFileName = $"{downloadFiles.Name.ReplaceInvalidChars()} v{Version.Replace(@"/", " & ")} for {GameId.ToUpper()}.zip";
+            string zipFileName = $"{downloadFiles.Name.ReplaceInvalidChars()} v{Version.Replace(@"/", " & ")}.zip";
             string zipFilePath = Path.Combine(localPath, zipFileName);
 
             GenerateReadMeAtPath(categoriesData, DownloadDataDirectory(downloadFiles));
 
-            using WebClient webClient = new WebClient();
+            using WebClient webClient = new();
             webClient.Headers.Add("Accept: application/zip");
             webClient.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
             webClient.DownloadFile(new Uri(downloadFiles.URL), zipFilePath);
@@ -307,7 +312,6 @@ namespace ModioX.Database
                     "Created By: " + Author,
                     "Submitted By: " + SubmittedBy,
                     "Game Type: " + string.Join(", ", GameModes),
-                    "Downloads: " + string.Join(", ", DownloadFiles.Select(x => x.URL)),
                     "-------------------------------------------------",
                     "Description:\n" + Description
             });

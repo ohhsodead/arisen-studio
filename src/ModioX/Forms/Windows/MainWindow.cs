@@ -106,7 +106,7 @@ namespace ModioX.Forms.Windows
             get
             {
                 NetworkCredential credential = ConsoleProfile.UseDefaultCredentials ? new NetworkCredential("anonymous", "anonymous") : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password);
-                FtpConnection connection = new FtpConnection(ConsoleProfile.Address, ConsoleProfile.Port, credential.UserName, credential.Password);
+                FtpConnection connection = new(ConsoleProfile.Address, ConsoleProfile.Port, credential.UserName, credential.Password);
                 connection.Open();
                 connection.Login(credential.UserName, credential.Password);
                 return connection;
@@ -124,15 +124,15 @@ namespace ModioX.Forms.Windows
         /// </summary>
         private async void MainWindow_Load(object sender, EventArgs e)
         {
+            FlowPanelModsDetails.MouseWheel += new MouseEventHandler(FlowPanelModsDetails_MouseWheel);
             UserLookAndFeel.Default.StyleChanged += MainWindow_StyleChanged;
             WindowsFormsSettings.AllowHoverAnimation = DefaultBoolean.True;
 
             LoadSettings();
 
-            // Show a splashscreen.
             SplashScreenManager.ShowSkinSplashScreen(
-                title: "ModioX",
-                subtitle: "Browse, Download and Install Mods for PS3 && XBOX",
+                title: $@"ModioX",
+                subtitle: "Browse, Download and Install Mods\nfor PlayStation 3 && Xbox 360",
                 footer: "Copyright © 2021" + Environment.NewLine + "All Rights Reserved.",
                 loading: "Starting...",
                 parentForm: this,
@@ -155,7 +155,7 @@ namespace ModioX.Forms.Windows
                 if (Settings.FirstTimeUse)
                 {
                     Settings.FirstTimeUse = false;
-                    XtraMessageBox.Show(this, "First Time Use", "It is important to read the information about this using tool before installing/uninstalling mods so that you don't have any issues. Go to Help Menu > More Information.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show(this, "First Time Use", "It is important to read the information about this using tool before installing/uninstalling mods so that you don't have any issues. Go to Help > More Information.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 SetStatus("Initializing the application database...");
@@ -164,7 +164,7 @@ namespace ModioX.Forms.Windows
             }
             else
             {
-                XtraMessageBox.Show(this, "No Internet", "You must be connected to the Internet to use this application.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                XtraMessageBox.Show(this, "No Internet Detected", "You must be connected to the Internet to use this application.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Application.Exit();
             }
         }
@@ -215,7 +215,7 @@ namespace ModioX.Forms.Windows
         }
 
         /// <summary>
-        /// Retrieves the categories and mods into the application.
+        /// Retrieve the categories and mods database.
         /// </summary>
         private static async Task LoadDataAsync()
         {
@@ -238,6 +238,7 @@ namespace ModioX.Forms.Windows
             SetStatus("Successfully loaded the database - Finalizing application data...");
 
             Mods = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? Database.ModsPS3 : Database.ModsXBOX;
+            RadioGroupDatabaseType.SelectedIndex = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? 0 : 1;
 
             LoadCategories();
 
@@ -263,7 +264,7 @@ namespace ModioX.Forms.Windows
             ComboBoxModType.SelectedIndex = 0;
             ComboBoxRegion.SelectedIndex = 0;
 
-            LabelModsStats.Caption = $"{Database.ModsPS3.TotalGameMods(Database.CategoriesData)} Mods for PS3 / {Database.ModsXBOX.TotalGameMods(Database.CategoriesData)} Mods for Xbox 360 (Last Updated: {Database.ModsPS3.LastUpdated.ToLocalTime().ToShortDateString()})";
+            LabelModsStats.Caption = $"{Database.ModsPS3.Mods.Count} Mods for PS3 / {Database.ModsXBOX.Mods.Count} Mods for Xbox 360 (Last Updated: {Database.ModsPS3.LastUpdated.ToLocalTime().ToShortDateString()})";
 
             SetStatus($"Initialized ModioX ({UpdateExtensions.CurrentVersionName}) - Ready to connect to console...");
 
@@ -279,7 +280,7 @@ namespace ModioX.Forms.Windows
             TimerFade.Start();
         }
 
-        private readonly Timer TimerFade = new Timer();
+        private readonly Timer TimerFade = new();
 
         private void FadeIn_Tick(object sender, EventArgs e)
         {
@@ -297,8 +298,8 @@ namespace ModioX.Forms.Windows
         {
             PanelModsLibraryFilters.BackColor = SkinColors.GetColor("Control");
             PanelModsLibraryFilters.ForeColor = SkinColors.GetColor("HighlightText");
-            FlowPanelDetails.BackColor = SkinColors.GetColor("Control");
-            FlowPanelDetails.ForeColor = SkinColors.GetColor("HighlightText");
+            FlowPanelModsDetails.BackColor = SkinColors.GetColor("Control");
+            FlowPanelModsDetails.ForeColor = SkinColors.GetColor("HighlightText");
         }
 
         #region Header Menu Bar
@@ -376,7 +377,7 @@ namespace ModioX.Forms.Windows
         private void ButtonPS3ShowTemperatures_ItemClick(object sender, ItemClickEventArgs e)
         {
             WebManExtensions.NotifyCPURSXTemperature(ConsoleProfile.Address);
-            SetStatus($"WebMAN Controls - Successfully Notified: System Temperatures");
+            SetStatus($"WebMAN Controls - Successfully Notified: System Temperature");
         }
 
         private void ButtonPS3ShowMinimumVersion_ItemClick(object sender, ItemClickEventArgs e)
@@ -389,7 +390,7 @@ namespace ModioX.Forms.Windows
         {
             SetStatus("Fetching games list...");
 
-            List<string> games = FtpExtensions.GetGamesBD();
+            List<ListItem> games = FtpExtensions.GetGamesBD();
 
             if (games.Count <= 0)
             {
@@ -417,7 +418,7 @@ namespace ModioX.Forms.Windows
         {
             SetStatus("Fetching games list...");
 
-            List<string> games = FtpExtensions.GetGamesISO();
+            List<ListItem> games = FtpExtensions.GetGamesISO();
 
             if (games.Count <= 0)
             {
@@ -445,7 +446,7 @@ namespace ModioX.Forms.Windows
         {
             SetStatus("Fetching games list...");
 
-            List<string> games = FtpExtensions.GetGamesPSN();
+            List<ListItem> games = FtpExtensions.GetGamesPSN();
 
             if (games.Count <= 0)
             {
@@ -479,33 +480,41 @@ namespace ModioX.Forms.Windows
         private void ButtonPS3Shutdown_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus($"WebMAN Controls - Shutting Down Console...");
-            WebManExtensions.Shutdown(ConsoleProfile.Address);
-            DisconnectConsole();
+            WebManExtensions.Power(ConsoleProfile.Address, WebManExtensions.PowerFlags.Shutdown);
             SetStatus($"WebMAN Controls - Successfully Shutdown Console.");
+            DisconnectConsole();
         }
 
         private void ButtonPS3Restart_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus($"WebMAN Controls - Restarting Console...");
-            WebManExtensions.Restart(ConsoleProfile.Address);
-            DisconnectConsole();
+            WebManExtensions.Power(ConsoleProfile.Address, WebManExtensions.PowerFlags.Restart);
             SetStatus($"WebMAN Controls - Successfully Restarted Console.");
+            DisconnectConsole();
         }
 
         private void ButtonPS3SoftReboot_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus($"WebMAN Controls - Soft Rebooting Console...");
-            WebManExtensions.RebootSoft(ConsoleProfile.Address);
-            DisconnectConsole();
+            WebManExtensions.Power(ConsoleProfile.Address, WebManExtensions.PowerFlags.SoftReboot);
             SetStatus($"WebMAN Controls - Successfully Soft Rebooted Console.");
+            DisconnectConsole();
         }
 
         private void ButtonPS3HardReboot_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus($"WebMAN Controls - Hard Rebooting Console...");
-            WebManExtensions.RebootHard(ConsoleProfile.Address);
-            DisconnectConsole();
+            WebManExtensions.Power(ConsoleProfile.Address, WebManExtensions.PowerFlags.HardReboot);
             SetStatus($"WebMAN Controls - Successfully Hard Rebooted Console.");
+            DisconnectConsole();
+        }
+
+        private void ButtonPS3QuickReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus($"WebMAN Controls - Quick Rebooting Console...");
+            WebManExtensions.Power(ConsoleProfile.Address, WebManExtensions.PowerFlags.QuickReboot);
+            SetStatus($"WebMAN Controls - Successfully Quick Rebooted Console.");
+            DisconnectConsole();
         }
 
         private void ButtonPS3NotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
@@ -591,25 +600,6 @@ namespace ModioX.Forms.Windows
             XboxConsole.XNotify(notifyMessage);
         }
 
-        // APPLICATIONS MENU
-
-        private void MenuItemApplications_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            string menuItemText = e.Item.Caption;
-
-            foreach (ExternalApplication application in Settings.ExternalApplications.Where(application => application.Name.EqualsIgnoreCase(menuItemText)))
-            {
-                if (File.Exists(application.FileLocation))
-                {
-                    Process.Start(application.FileLocation);
-                }
-                else
-                {
-                    XtraMessageBox.Show(this, $"Could not locate application: {application.Name} at path: {application.FileLocation}\n\nGo to Settings > Edit Applications and set the correct file path for this application.", "Application Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         // OPTIONS MENU
 
         private void ButtonAddNewConsole_ItemClick(object sender, ItemClickEventArgs e)
@@ -625,13 +615,6 @@ namespace ModioX.Forms.Windows
             LoadSettings();
         }
 
-        private void ButtonEditApplications_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowExternalApplicationsDialog(this);
-            SaveSettings();
-            LoadSettings();
-        }
-
         private void ButtonEditGameRegions_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowGameRegionsDialog(this);
@@ -641,7 +624,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonEditYourLists_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogExtensions.ShowCustomListsDialog(this);
+            DialogExtensions.ShowCustomListsDialog(this, IsConsoleConnected ? ConsoleProfile.TypePrefix : Settings.LoadConsoleMods);
             SaveSettings();
             LoadSettings();
             LoadListsCategories();
@@ -722,6 +705,13 @@ namespace ModioX.Forms.Windows
             DialogExtensions.ShowAboutWindow(this);
         }
 
+        // RIGHT MENU
+
+        private void MenuBarItemRequestMods_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowRequestModsDialog(this);
+        }
+
         #endregion Header Menu Bar
 
         #region Connect & Disconnect Console Functions
@@ -780,6 +770,8 @@ namespace ModioX.Forms.Windows
                     ButtonConnectToXBOX.Caption = "Disconnect from Console...";
                     ButtonConnectToPS3.Enabled = false;
                 }
+
+                RadioGroupDatabaseType.SelectedIndex = Settings.LoadConsoleMods == ConsoleTypePrefix.PS3 ? 0 : 1;
 
                 SetStatus("Successfully connected to console.");
                 XtraMessageBox.Show("Successfully connected to console.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -841,7 +833,10 @@ namespace ModioX.Forms.Windows
             SetStatusConsole(null);
             EnableConsoleActions();
 
+            ButtonConnectToPS3.Enabled = true;
             ButtonConnectToPS3.Caption = "Connect to Console...";
+
+            ButtonConnectToXBOX.Enabled = true;
             ButtonConnectToXBOX.Caption = "Connect to Console...";
 
             SetStatus("Disconnected from console.");
@@ -938,58 +933,94 @@ namespace ModioX.Forms.Windows
 
         #endregion Search & Filtering Mods Functions
 
-        #region NEED OLD CONTEXT MENU FUNCTIONS TO MOVE TO NEW POPUP MENU FOR GRID VIEW MODS
+        #region Popup Menu for Mods
 
-        private void ContextMenuModsAddToList_Click(object sender, EventArgs e)
+        private void GridViewMods_PopupMenuShowing(object sender, PopupMenuShowingEventArgs e)
         {
-            string listName = DialogExtensions.ShowListInputDialog(this, "Your Lists", Settings.CustomLists.Select(x => x.Name).ToList());
-
-            if (!string.IsNullOrWhiteSpace(listName))
+            if (e.HitInfo.InRow)
             {
-                Category category = Database.CategoriesData.GetCategoryById(SelectedModItem.GameId);
-                Settings.AddModToCustomList(listName, SelectedModItem.Id);
-                SetStatus($"{category.Title}: {SelectedModItem.Name} ({SelectedModItem.Type}) - Added to '{listName}' list.");
+                GridView view = sender as GridView;
+                view.FocusedRowHandle = e.HitInfo.RowHandle;
+
+                ModsMenu.ShowPopup(Cursor.Position);
             }
         }
 
-        private void ContextMenuModsDownloadArchive_Click(object sender, EventArgs e)
+        private void ModsMenu_BeforePopup(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ModItem modItem = Mods.GetModById(int.Parse(GridViewMods.GetRowCellDisplayText(GridViewMods.FocusedRowHandle, "Id")));
+
+            ButtonModInstallFiles.Enabled = IsConsoleConnected;
+
+            if (modItem != null)
+            {
+                if (modItem.GetCategoryType(Database.CategoriesData) == CategoryType.Game)
+                {
+                    ButtonModUninstallFiles.Enabled = Settings.GetInstalledGameMod(modItem.GetConsoleType(), modItem.GameId) != null && Settings.GetInstalledGameMod(modItem.GetConsoleType(), modItem.GameId).ModId.Equals(modItem.Id) && IsConsoleConnected;
+                }
+                else if (modItem.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew)
+                {
+                    ButtonModUninstallFiles.Enabled = IsConsoleConnected;
+                }
+                else if (modItem.GetCategoryType(Database.CategoriesData) == CategoryType.Resource)
+                {
+                    ButtonModUninstallFiles.Enabled = !modItem.DownloadFiles.Any(x => x.InstallsToRebugFolder) && IsConsoleConnected;
+                }
+            }
+
+            ModsMenu.DrawMenuSideStrip = DefaultBoolean.False;
+        }
+
+        private void ButtonModInstallFiles_ItemClick(object sender, EventArgs e)
+        {
+            ButtonModInstall.PerformClick();
+        }
+
+        private void ButtonModUninstallFiles_ItemClick(object sender, EventArgs e)
+        {
+            ButtonModInstall.PerformClick();
+        }
+
+        private void ButtonModDownloadArchive_ItemClick(object sender, EventArgs e)
         {
             ButtonModDownload.PerformClick();
         }
 
-        private void ContextMenuModsInstallToConsole_Click(object sender, EventArgs e)
+        private void ButtonModAddToList_ItemClick(object sender, EventArgs e)
         {
-            ButtonModInstall.PerformClick();
-        }
-
-        private void ContextMenuModsRemoveFromList_Click(object sender, EventArgs e)
-        {
-            string listName = DialogExtensions.ShowListInputDialog(this, "Your Lists", Settings.CustomLists.Select(x => x.Name).ToList());
+            string listName = DialogExtensions.ShowListInputDialog(this, "Your Lists", Settings.CustomLists.ConvertAll(x => new ListItem() { Value = x.Name, Name = x.Name }));
 
             if (!string.IsNullOrWhiteSpace(listName))
             {
                 Category category = Database.CategoriesData.GetCategoryById(SelectedModItem.GameId);
-                Settings.RemoveModFromCustomList(listName, SelectedModItem.Id);
+                Settings.AddModToCustomList(listName, SelectedModItem.Id, IsConsoleConnected ? ConsoleProfile.TypePrefix : Settings.LoadConsoleMods);
+                SetStatus($"{category.Title}: {SelectedModItem.Name} ({SelectedModItem.Type}) - Added to '{listName}' list.");
+            }
+        }
+
+        private void ButtonModRemoveFromList_ItemClick(object sender, EventArgs e)
+        {
+            string listName = DialogExtensions.ShowListInputDialog(this, "Your Lists", Settings.CustomLists.ConvertAll(x => new ListItem() { Value = x.Name, Name = x.Name }));
+
+            if (!string.IsNullOrWhiteSpace(listName))
+            {
+                Category category = Database.CategoriesData.GetCategoryById(SelectedModItem.GameId);
+                Settings.RemoveModFromCustomList(listName, SelectedModItem.Id, IsConsoleConnected ? ConsoleProfile.TypePrefix : Settings.LoadConsoleMods);
                 SetStatus($"{category.Title}: {SelectedModItem.Name} ({SelectedModItem.Type}) - Removed from '{listName}' list.");
             }
         }
 
-        private void ContextMenuModsReportOnGitHub_Click(object sender, EventArgs e)
+        private void ButtonModReportAnIssue_ItemClick(object sender, EventArgs e)
         {
             StringBuilder message = new StringBuilder()
-               .Append("You will be redirected to the GitHub Issues for ModioX. All details will be filled automatically for you.")
+               .Append("You will be redirected to the GitHub Issues for ModioX. All details will be filled automatically for you.\n")
                .AppendLine("Log in to GitHub and click the 'Submit' button to open a new issue so we can investigate it.");
 
-            XtraMessageBox.Show("Opening GitHub Issues", message.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            XtraMessageBox.Show(message.ToString(), "Opening GitHub Issues", MessageBoxButtons.OK, MessageBoxIcon.Information);
             GitHubTemplates.OpenReportTemplate(SelectedModItem, Database.CategoriesData.GetCategoryById(SelectedModItem.GameId));
         }
 
-        private void ContextMenuModsUninstallFromConsole_Click(object sender, EventArgs e)
-        {
-            ButtonModInstall.PerformClick();
-        }
-
-        #endregion NEED OLD CONTEXT MENU FUNCTIONS TO MOVE TO NEW POPUP MENU FOR GRID VIEW MODS
+        #endregion Popup Menu for Mods
 
         #region MODS LIBRARY
 
@@ -1052,7 +1083,7 @@ namespace ModioX.Forms.Windows
                 }
             }
 
-            foreach (CustomList customList in Settings.CustomLists)
+            foreach (CustomList customList in Settings.CustomLists.Where(x => x.ConsoleType == Settings.LoadConsoleMods))
             {
                 NavBarItem gameItem = NavBarCategories.Items.Add();
                 gameItem.Caption = $@"{customList.Name.Replace("&", "&&")} ({customList.ModIds.Count})";
@@ -1060,7 +1091,11 @@ namespace ModioX.Forms.Windows
                 NavGroupMyLists.ItemLinks.Add(gameItem);
             }
 
+            NavGroupHomebrewApps.Visible = NavGroupHomebrewApps.ItemLinks.Count > 0;
+            NavGroupResources.Visible = NavGroupResources.ItemLinks.Count > 0;
+
             NavGroupGames.SelectedLinkIndex = 0;
+            NavGroupGames.ItemLinks.First().PerformClick();
         }
 
         private void LoadListsCategories()
@@ -1078,7 +1113,7 @@ namespace ModioX.Forms.Windows
                 }
             }
 
-            foreach (CustomList customList in Settings.CustomLists)
+            foreach (CustomList customList in Settings.CustomLists.FindAll(x => x.ConsoleType == Settings.LoadConsoleMods))
             {
                 NavBarItem gameItem = NavBarCategories.Items.Add();
                 gameItem.Caption = $@"{customList.Name.Replace("&", "&&")} ({customList.ModIds.Count})";
@@ -1097,7 +1132,7 @@ namespace ModioX.Forms.Windows
 
             if (isCustomList)
             {
-                CustomList customList = Settings.GetCustomListByName(categoryId);
+                CustomList customList = Settings.GetCustomListByName(categoryId, IsConsoleConnected ? ConsoleProfile.TypePrefix : Settings.LoadConsoleMods);
                 SelectedCategory = new Category { Id = categoryId, Title = categoryId, Regions = Settings.GetRegionsForModIDs(Mods, customList.ModIds).ToArray() };
             }
             else
@@ -1136,10 +1171,38 @@ namespace ModioX.Forms.Windows
 
         #endregion Categories
 
-        #region Load & Display Mods by Category Id with the user's filters
+        #region Display Mods by Category Id with the user's filters
+
+        private void RadioGroupDatabaseType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RadioGroupDatabaseType.SelectedIndex == 0 && ConsoleType == ConsoleTypePrefix.PS3)
+            {
+                return;
+            }
+            else if (RadioGroupDatabaseType.SelectedIndex == 1 && ConsoleType == ConsoleTypePrefix.XBOX)
+            {
+                return;
+            }
+
+            switch (RadioGroupDatabaseType.SelectedIndex)
+            {
+                case 0:
+                    ConsoleType = ConsoleTypePrefix.PS3;
+                    Mods = Database.ModsPS3;
+                    break;
+                case 1:
+                    ConsoleType = ConsoleTypePrefix.XBOX;
+                    Mods = Database.ModsXBOX;
+                    break;
+                default:
+                    break;
+            }
+
+            LoadCategories();
+        }
 
         /// <summary>
-        /// Load all mods for the specified categoryId, matching with filters: name, firmware, type
+        /// Load all mods for the specified categoryId, matching with filters: name, firmware, type, region 
         /// and region
         /// </summary>
         /// <param name="categoryId"> Filter by CategoryId </param>
@@ -1167,7 +1230,7 @@ namespace ModioX.Forms.Windows
             }
             else if (isCustomList)
             {
-                ComboBoxModType.Properties.Items.AddRange(Settings.GetModTypesForModIDs(Mods, Settings.GetCustomListByName(categoryId).ModIds).ToArray());
+                ComboBoxModType.Properties.Items.AddRange(Settings.GetModTypesForModIDs(Mods, Settings.GetCustomListByName(categoryId, IsConsoleConnected ? ConsoleProfile.TypePrefix : Settings.LoadConsoleMods).ModIds).ToArray());
             }
             else
             {
@@ -1186,7 +1249,7 @@ namespace ModioX.Forms.Windows
             }
             else if (isCustomList)
             {
-                ComboBoxRegion.Properties.Items.AddRange(Settings.GetRegionsForModIDs(Mods, Settings.GetCustomListByName(categoryId).ModIds).ToArray());
+                ComboBoxRegion.Properties.Items.AddRange(Settings.GetRegionsForModIDs(Mods, Settings.GetCustomListByName(categoryId, IsConsoleConnected ? ConsoleProfile.TypePrefix : Settings.LoadConsoleMods).ModIds).ToArray());
             }
             else
             {
@@ -1196,7 +1259,7 @@ namespace ModioX.Forms.Windows
                 }
             }
 
-            DataTable dt = new DataTable();
+            DataTable dt = new();
 
             dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("Mod Name", typeof(string));
@@ -1209,7 +1272,7 @@ namespace ModioX.Forms.Windows
 
             foreach (ModItem modItem in Mods.GetModItems(categoryId, name, firmware, type, region, isCustomList).OrderBy(x => x.Name))
             {
-                List<string> installFiles = new List<string>();
+                List<string> installFiles = new();
 
                 if (modItem.DownloadFiles.Count > 1)
                 {
@@ -1250,7 +1313,7 @@ namespace ModioX.Forms.Windows
             if (GridViewMods.RowCount > 0)
             {
                 GridViewMods.SelectRow(0);
-                ShowModInformation(GridViewMods.GetSelectedRows().First());
+                ShowModInformation(int.Parse(GridViewMods.GetRowCellDisplayText(GridViewMods.GetSelectedRows()[0], "Id")));
             }
 
             ComboBoxModType.SelectedIndexChanged -= ComboBoxModType_SelectedIndexChanged;
@@ -1346,7 +1409,7 @@ namespace ModioX.Forms.Windows
 
             int totalFiles = 0;
 
-            DataTable dt = new DataTable();
+            DataTable dt = new();
             dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("Platform", typeof(string));
             dt.Columns.Add("Game Title", typeof(string));
@@ -1396,9 +1459,9 @@ namespace ModioX.Forms.Windows
             GridViewInstalledGameMods.Columns[7].Width = 35;
             GridViewInstalledGameMods.Columns[8].Width = 50;
 
-            LabelModsInstalled.Caption = $@"{Settings.InstalledGameMods.Count} Mods Installed ({totalFiles} {(Settings.InstalledGameMods.Count > 1 ? "Files" : "File")} Total)";
+            LabelModsInstalled.Text = $"{Settings.InstalledGameMods.Count} {(Settings.InstalledGameMods.Count > 1 ? "Mods" : "Mod")} Installed ({totalFiles} {(totalFiles > 1 ? "Files" : "File")} Total)";
 
-            ButtonModsUninstallAll.Enabled = IsConsoleConnected && Settings.InstalledGameMods.Count > 0;
+            ButtonUninstallAllMods.Enabled = IsConsoleConnected && Settings.InstalledGameMods.Count != 0;
 
             ProgressInstalledMods.Visible = GridViewInstalledGameMods.RowCount == 0;
 
@@ -1421,7 +1484,7 @@ namespace ModioX.Forms.Windows
 
         #endregion Installed Mods/Plugins
 
-        #region Show Mod's Information on the Right-Side Panel Function
+        #region Display Mods Information on the Right-Side Panel Function
 
         /// <summary>
         /// Set the UI to display the specified mod details
@@ -1466,7 +1529,7 @@ namespace ModioX.Forms.Windows
 
             GridControlModsInstallFiles.DataSource = null;
 
-            DataTable dt = new DataTable();
+            DataTable dt = new();
             dt.Columns.Add(string.Empty, typeof(string));
 
             if (modItem.DownloadFiles.Count > 1)
@@ -1476,7 +1539,7 @@ namespace ModioX.Forms.Windows
             }
             else
             {
-                GroupInstallFiles.Text = $"INSTALL FILES ({modItem.DownloadFiles.First().InstallPaths.Count()})";
+                GroupInstallFiles.Text = $"FILES ({modItem.DownloadFiles.First().InstallPaths.Count()})";
                 modItem.DownloadFiles.First().InstallPaths.ForEach(x => dt.Rows.Add(x));
             }
 
@@ -1505,28 +1568,33 @@ namespace ModioX.Forms.Windows
             UpdateScrollBars();
         }
 
+        private void FlowPanelModsDetails_MouseWheel(object sender, MouseEventArgs e)
+        {
+            ScrollBarModInformation.Value = FlowPanelModsDetails.VerticalScroll.Value;
+        }
+
         private void FlowPanelDetails_Scroll(object sender, ScrollEventArgs e)
         {
-            ScrollBarModInformation.Value = FlowPanelDetails.VerticalScroll.Value;
+            ScrollBarModInformation.Value = FlowPanelModsDetails.VerticalScroll.Value;
         }
 
         private void ScrollBarModInformation_Scroll(object sender, ScrollEventArgs e)
         {
-            FlowPanelDetails.VerticalScroll.Value = ScrollBarModInformation.Value;
-            FlowPanelDetails.Refresh();
+            FlowPanelModsDetails.VerticalScroll.Value = ScrollBarModInformation.Value;
+            FlowPanelModsDetails.Refresh();
         }
 
         private void UpdateScrollBars()
         {
-            FlowPanelDetails.HorizontalScroll.Visible = false;
-            FlowPanelDetails.VerticalScroll.Visible = false;
+            FlowPanelModsDetails.HorizontalScroll.Visible = false;
+            FlowPanelModsDetails.VerticalScroll.Visible = false;
 
-            ScrollBarModInformation.Visible = FlowPanelDetails.VerticalScroll.Visible;
-            ScrollBarModInformation.Minimum = FlowPanelDetails.VerticalScroll.Minimum;
-            ScrollBarModInformation.Maximum = FlowPanelDetails.VerticalScroll.Maximum;
-            ScrollBarModInformation.SmallChange = FlowPanelDetails.VerticalScroll.SmallChange;
-            ScrollBarModInformation.LargeChange = FlowPanelDetails.VerticalScroll.LargeChange;
-            ScrollBarModInformation.Value = FlowPanelDetails.VerticalScroll.Value;
+            ScrollBarModInformation.Visible = FlowPanelModsDetails.VerticalScroll.Visible;
+            ScrollBarModInformation.Minimum = FlowPanelModsDetails.VerticalScroll.Minimum;
+            ScrollBarModInformation.Maximum = FlowPanelModsDetails.VerticalScroll.Maximum;
+            ScrollBarModInformation.SmallChange = FlowPanelModsDetails.VerticalScroll.SmallChange;
+            ScrollBarModInformation.LargeChange = FlowPanelModsDetails.VerticalScroll.LargeChange;
+            ScrollBarModInformation.Value = FlowPanelModsDetails.VerticalScroll.Value;
         }
 
         #endregion Show Mod's Information on the Right-Side Panel Function
@@ -1646,7 +1714,7 @@ namespace ModioX.Forms.Windows
                         }
 
                         // Check whether the game update for this region exists
-                        if (!FtpExtensions.GetFolderNames("/dev_hdd0/game/", false).Contains(gameRegion))
+                        if (!FtpExtensions.GetFolderNames("/dev_hdd0/game/").Any(x => x.Name.Contains(gameRegion)))
                         {
                             XtraMessageBox.Show("Game update folder for this region cannot be found on your console.\nYou must install the correct update for this game or maybe you specified the wrong region.", "Can't Find Game Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
@@ -2474,7 +2542,7 @@ namespace ModioX.Forms.Windows
                     return;
                 }
 
-                using (StreamReader streamReader = new StreamReader(UserFolders.AppSettingsFile))
+                using (StreamReader streamReader = new(UserFolders.AppSettingsFile))
                 {
                     Settings = JsonConvert.DeserializeObject<SettingsData>(streamReader.ReadToEnd());
                 }
@@ -2501,35 +2569,11 @@ namespace ModioX.Forms.Windows
                             UseDefaultCredentials = true
                         });
                 }
-
-                if (Settings.ExternalApplications.Count <= 0)
-                {
-                    Settings.ExternalApplications.Add(
-                        new ExternalApplication(
-                            "Control Console (CCAPI)",
-                            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"ControlConsoleAPI\CCAPIConsoleManager.exe"))
-                    );
-
-                    Settings.ExternalApplications.Add(
-                        new ExternalApplication(
-                            "FileZilla",
-                            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), @"FileZilla FTP Client\filezilla.exe"))
-                    );
-                }
-
-                ApplicationsMenu.ItemLinks.Clear();
-
-                foreach (ExternalApplication application in Settings.ExternalApplications)
-                {
-                    BarButtonItem barButtonItem = new BarButtonItem { Caption = application.Name };
-                    barButtonItem.ItemClick += MenuItemApplications_ItemClick;
-                    ApplicationsMenu.AddItem(barButtonItem);
-                }
             }
             catch (Exception ex)
             {
                 SetStatus("Unable to load settings file. A new one have been created and the application will be restarted. Error: " + ex.Message, ex);
-                XtraMessageBox.Show(this, "There iss a problem loading the settings file. A new one have been created and the application will be restarted.\n\nError: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(this, "There is a problem loading the settings file. A new one have been created and the application will be restarted.\n\nError: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Settings = new SettingsData();
                 SaveSettings();
                 Application.Restart();
@@ -2550,7 +2594,7 @@ namespace ModioX.Forms.Windows
                     Directory.CreateDirectory(UserFolders.AppDataDirectory);
                 }
 
-                using (StreamWriter streamWriter = new StreamWriter(UserFolders.AppSettingsFile))
+                using (StreamWriter streamWriter = new(UserFolders.AppSettingsFile))
                 {
                     streamWriter.Write(JsonConvert.SerializeObject(Settings));
                 }
