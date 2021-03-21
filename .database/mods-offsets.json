@@ -15,7 +15,7 @@
                   "Address":"0x01F9F11C",
                   "Length":31,
                   "Value":"",
-                  "Type":"string"
+                  "Type":"System.String"
                }
             },
             {
@@ -26,7 +26,7 @@
                   "Address":"0x01FF9A9C",
                   "Length":1,
                   "Value":"",
-				  "Type":"int"
+				  "Type":"System.Int32"
                }
             }
          ]
