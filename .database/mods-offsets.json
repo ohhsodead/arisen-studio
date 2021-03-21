@@ -13,18 +13,20 @@
                "GameType":"Multiplayer",
                "Offset":{
                   "Address":"0x01F9F11C",
-                  "Length":"31",
-                  "Value":""
+                  "Length":31,
+                  "Value":"",
+                  "Type":"string"
                }
             },
             {
                "Name":"Prestige Level",
-               "Description":"Set your account prestige level. Play a game and get a couple of kills/deaths for it stick.",
+               "Description":"Set your account prestige level. Play a game and get a couple of kills/deaths for it to stick.",
                "GameType":"Multiplayer",
                "Offset":{
                   "Address":"0x01FF9A9C",
-                  "Length":"1",
-                  "Value":""
+                  "Length":1,
+                  "Value":"",
+				  "Type":"int"
                }
             }
          ]

@@ -20127,7 +20127,7 @@
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
          "Configuration":"ZM",
-         "Type":"SPRX",
+         "Type":"EBOOT/SPRX",
          "Description":"",
          "DownloadFiles":[
             {
@@ -20151,7 +20151,7 @@
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
          "Configuration":"MP",
-         "Type":"SPRX",
+         "Type":"EBOOT/SPRX",
          "Description":"PRE-GAME/HOST/NON HOST MOD MENU WITH ANTIBAN",
          "DownloadFiles":[
             {
@@ -21056,6 +21056,54 @@
                "URL":"https://dl.dropbox.com/s/s980dy7iqioy18v/Ultimate%20Toolbox%20%28FULL%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/packages/Ultimate_Toolbox_v1.03_FULL.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "ConsoleType":"PS3",
+         "GameId":"codbo2",
+         "Id":370,
+         "Name":"Desire Engine",
+         "Firmware":"CEX/DEX/HEN",
+         "Region":"ALL",
+         "Author":"SC58",
+         "SubmittedBy":"ohhsodead",
+         "Version":"5.5",
+         "Configuration":"SMP",
+         "Type":"EBOOT/SPRX",
+         "Description":"This is a awesome SPRX made by SC58. This is amazing when hosting GSC or RTM Menu's. When you are host no one can end the game on you.",
+         "DownloadFiles":[
+            {
+               "Name":"Desire Engine (DEX)",
+               "URL":"https://dl.dropbox.com/s/ssa5spsu24kocnp/Desire%20Engine%20%28DEX%29.zip?raw=true",
+               "InstallPaths":[
+					"/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
+					"/dev_hdd0/tmp/T6EndGameBlocker.sprx"
+               ]
+            },
+            {
+               "Name":"Desire Engine (CEX) (BLES01717)",
+               "URL":"https://dl.dropbox.com/s/jx469bj9h4nkidc/Desire%20Engine%20%28CEX%29%20%28BLES01717%29.zip?raw=true",
+               "InstallPaths":[
+					"/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
+					"/dev_hdd0/tmp/T6EndGameBlocker.sprx"
+				]
+            },
+            {
+               "Name":"Desire Engine (CEX) (BLUS31011)",
+               "URL":"https://dl.dropbox.com/s/rdmhsbz8pac7zek/Desire%20Engine%20%28CEX%29%20%28BLUS31011%29.zip?raw=true",
+               "InstallPaths":[
+					"/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
+					"/dev_hdd0/tmp/T6EndGameBlocker.sprx"
+				]
+            },
+            {
+               "Name":"Desire Engine (CEX) (NPUB31054)",
+               "URL":"https://dl.dropbox.com/s/4rvth4igkwytsh2/Desire%20Engine%20%28CEX%29%20%28NPUB31054%29.zip?raw=true",
+               "InstallPaths":[
+					"/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
+					"/dev_hdd0/tmp/T6EndGameBlocker.sprx"
                ]
             }
          ]
