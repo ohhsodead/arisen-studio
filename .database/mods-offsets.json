@@ -6,28 +6,81 @@
          "ConsoleType":"PS3",
          "GameId":"codmw2",
          "GameVersion":"1.14",
-         "Offsets":[
+         "Memory":[
             {
                "Name":"Name",
                "Description":"Set your account display name. This doesn't stick.",
-               "GameMode":"Multiplayer",
-               "Offset":{
-                  "Address":"0x01F9F11C",
-                  "Length":31,
-                  "Value":"",
-                  "Type":"System.String"
-               }
+               "GameType":"Multiplayer",
+               "Offsets":[
+                  {
+                     "Address":"0x01F9F11C",
+                     "Toggleable":false,
+                     "Enable":"",
+                     "Disable":"",
+					 "Value":"",
+                     "Type":"string"
+                  }
+               ]
             },
             {
                "Name":"Prestige Level",
                "Description":"Set your account prestige level. Play a game and get a couple of kills/deaths for it to stick.",
-               "GameMode":"Multiplayer",
-               "Offset":{
-                  "Address":"0x01FF9A9C",
-                  "Length":1,
-                  "Value":"",
-				  "Type":"System.Int32"
-               }
+               "GameType":"Multiplayer",
+               "Offsets":[
+                  {
+                     "Address":"0x01FF9A9C",
+					 "Toggleable":false,
+                     "Enable":"",
+                     "Disable":"",
+					 "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Instant Level 70",
+               "Description":"Set your account to level 70. Play a game and get a couple of kills/deaths for it to stick.",
+               "GameType":"Multiplayer",
+               "Offsets":[
+                  {
+                     "Address":"0x01FF9A94",
+					 "Toggleable":false,
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"0x20, 0x64, 0x26, 0x00",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"Red Boxes",
+               "Description":"Show red boxes for users.",
+               "GameType":"Multiplayer",
+               "Offsets":[
+                  {
+                     "Address":"0x014E2213",
+					 "Toggleable":true,
+                     "Enable":"0x55",
+                     "Disable":"0x00",
+                     "Value":"",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"God Mode",
+               "Description":"Show red boxes for users.",
+               "GameType":"Multiplayer",
+               "Offsets":[
+                  {
+                     "Address":"0x014E2213",
+					 "Toggleable":true,
+                     "Enable":"0x55",
+                     "Disable":"0x00",
+                     "Value":"",
+                     "Type":"byte"
+                  }
+               ]
             }
          ]
       }

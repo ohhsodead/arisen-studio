@@ -1129,11 +1129,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"Controls:\nOPEN MENU - DPAD UP + R3\nSCROLL UP / DOWN - DPAD UP / DPAD DOWN\nCLOSE - R3\nSELECT - SQUARE\n\nChange Log: Update 1.\nAdded CEX support! (haven't been tested yet)\nRemoved No Spread since it wasn't working.\nFixed some UI.\n\nBugs:\nUsing the keyboard to change name in the Mod Menu causes you later on to get stuck in the keyboard when changing clantag in pregame lobby.\n\nCredits: TheGreenPlanet for everything , kokole for his original Perfect Autowall code and Mr.Hankey for his Movement Correction source code.\n\nHAVE FUN!!!",
-         "URL":"https://dl.dropbox.com/s/qcp444j0fwrukpd/Forgotten%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT_MP.BIN",
-            "/dev_hdd0/tmp/cod4_Forgotten.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1158,10 +1153,6 @@
          "Configuration":"MP",
          "Type":"PATCH",
          "Description":"UPDATE #9\n\nFrequently Asked Questions\nQ: What is Stealth Mode?\nA: This is for anyone using my patch but don't want everyone else to know they're in a modded game.\nStart a private match then open the menu and select Host Menu. Once you're in Host Menu scroll all the way down and select Stealth Mode. Exit private match and Stealth Mode will be activated.\n\nWhat does Stealth Mode do?\nIt will set all the modified dvars and everything else to default.\nIt will remove the brick gun and default weapon.\nIt will remove the GHOSTfaceKILLr74 text every time a player spawns.\nAnyone joining your match will not know they're in a modded game.\nStealth Mode will always stay on until you turn it off in the menu or you exit COD4.\nStealth Mode works in private match, online, LAN, splitscreen and in any game mode(like Zombieland).\n\n\nQ: What can I do to keep the game from lagging?\nA: Avoid giving to many players Co-Host. Try not to give more than 4 players Co-host especially playing online matches like Ground War.\nDon't spam the options or turn on to many mods at the same time. Try to remember what mods you turned on so you can turn them off if the game starts to lag.\nDon't spawn large object like a Skybase or a Merry Go Round while using bots. If this happens try kicking all the bots to reduce lag.\nSelect Delete/Lockout Objects in the Co-Host Menu and it will delete all spawned objects (Merry Go Round, Sky Base).\nYou can also use the Delete/Lockout Objects feature to lockout large spawnable objects. This will keep other players who has Co-Host from spawning large objects that would lag the game.\nIf you're still having lag issues open the menu go to Host Menu and select Restart or just end the match.\n\n\nQ: D-PAD not working properly?\nA: Try pressing SELECT button or D-PAD down on your controller.\nIf that doesn't work open the menu go to Host Menu then D-PAD Menu and reset your D-pad.\n\n\nQ: What is USB Infection?\nA: This is for those with a custom CFG but can't bypass. First create a folder called MW1 in the root of your USB. Rename your custom CFG to MODS.cfg and place it in MW1 folder. MW1/MODS.cfg\nHave someone who's using my GHOST Patch give you access to the menu so you can infect yourself with the USB Infection. When you're infected backout go to SPLIT SCREEN and choose the map Shipment. Once you're playing in Shipment press the SELECT button and your CFG should be ready to go.\n\n\nQ: I've been using a lot of mods and now the game doesn't run or display properly?\nA: Open the menu then Vision Menu and select Normal Vision.\nIf that doesn't help go to Host Menu then Game Menu and select Reset Game.\nIf you're still having problems then you should restart COD4.\n\n\nQ: Can I join your game?\nA: Yes!!! Send a friend request to GHOSTfaceKILLr74 saying NGU and I'll add you.\n\n\nHope this helps!\n\nPlay SHIPMENT On Any Public Match\nDownload this file GfK.cfg and place it in the root of a USB.\nPlace USB on the right slot of your PS3.\nYou can go on a public match like Team Deathmatch and it will always choose SHIPMENT.\nRemove USB From your PS3 if you want to play other maps.\nYou can edit GfK.cfg if you want another map.\n\n\nCredits\nIVI40A3Fusionz\nAmanda\nChoco\nx_DaftVader_x\nIELIITEMODZX\nGHOSTfaceKILLr74\nHawkin\nSix-Tri-X\nCorrey\nKaroolus\niPROFamily\nxYARDSALEx\nDlBSY993\nFutureOps\nDizePara AKA FParadiseee\nTheBlurzGoHard\njuddylovespizza\nSource Code\nEliteMossy\nQuickSilver\noX-matto-Xo\nnay1995\nTeamTier\nBuC-ShoTz\nNextgenupdate community\n\nI just want to say thanks to everyone for trying out my patch.\nI had fun modding COD4 but it's time for me to retire. This is the final patch update.\nENJOY!!!",
-         "URL":"https://dl.dropbox.com/s/btcrrhcaofmkprb/Ghost%20Legacy%20Edition.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/patch_mp.ff"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1185,10 +1176,6 @@
          "Configuration":"MP",
          "Type":"PATCH",
          "Description":"No description.",
-         "URL":"https://dl.dropbox.com/s/pnd8eisl07xvs4q/Most%20Dope%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/patch_mp.ff"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1212,10 +1199,6 @@
          "Configuration":"MP",
          "Type":"PATCH",
          "Description":"Really fun modded lobby with ability to unlock challenges for all clients.\n\nControls (ingame set to default buttons layout):\nUP = Fast Restart\nDown = Toggle Jump Height\nLeft = Toggle Gravity\nRight = Toggle Timescale",
-         "URL":"https://dl.dropbox.com/s/nicjhceoh72vgm8/Challenge%20Lobby.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/patch_mp.ff"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1239,10 +1222,6 @@
          "Configuration":"MP",
          "Type":"PATCH",
          "Description":"I hope you enjoy! - Taylor ",
-         "URL":"https://dl.dropbox.com/s/lawfuvmira5zcrn/The%20Yardsale.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/patch_mp.ff"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1266,10 +1245,6 @@
          "Configuration":"MP",
          "Type":"PATCH",
          "Description":"It is super stable, has some good features, not buggy, unique, you have never seen something like this before. :wub:\nIt may not be easy for noobs to understand, but it should be adequate. However, the full uncut version of this patch is also provided for pc inside the folder you download. Since the ps3 era is almost over I don't really care for it to be leeched...\nDespite the encrypted stuff in it, I really appreciate that not any edits of this patch have been leaked out there or in other sites!\n\nI decided to release this last update (ver. 4.0) due to many videos i've seen on the internet, showing the patch having some issues with on screen graphics on many HD resolutions. So this release targets mainly for pc players but also comes with some minor improvements for ps3. It's not a big update, but you should download to enjoy it on your brand new PC screen or HD Tv, supporting every possible resolution, both HD and SD !!!\n\nSo with that, here it is.\n\nFull Feature List (over 265 options)\n\n^1ADMIN\nAiming Menu\nTeleport Enemies\nTeleport Enemies to Me\nTeleport Players\nTeleport Players to Me\nFreeze All Unverified\nKick All Unverified\nLobby Vars\nDisable Quit\nChopper Hacker\nDisable Spectate\nLovely Stunt Plane\nUnlimited Airspace\nBots Menu\nExtra Features\nPLAYER SETTINGS\nMy Team\nEnemy Team\nAll Players\nGAME SETTINGS\nForce Host\nAnti-Join\nGame Types\nFun Mode\nFunny Teams\nGame Speed\nFriendly Fire\nFlashing Scoreboard\nLong Games\nRanked Match\nChange Map\nLoad Chosen Map\nFast Restart\nSlow Restart\nEnd Game\nCREATE\nXP Scale\nMirrored Map\nNuke Ends Game\nWalking Models\nDestroy Prison\nFireworks\nWeapon Box\nAmmo Box\nPrestige Station\nCluster Bomb\n1 MIN. Shellshock\nDaylight Brightness\nFog Settings\nForge Options\nUI SETTINGS\nForce UAV\nSelect QuickMesssage\nPlay Message\nMusic Player\nCustom Sights\nToggle Sights\nSelect Vision\nCreate Night\nKill Text\nMatrix Kills\nLife Bar\nHuman Torch\nFreeze Timer\nMenu Background\nKILLSTREAKS\nCare Package\nCounter UAV\nPredator Missile\nSentry Gun\nStrafe Run\nPrecision Airstrike\nAttack Helicopter\nAttack Littlebird\nHarrier Strike\nOsprey Gunner\nAC-130\nAGM Reaper\nAH-6 Overwatch\nTactical Nuke\nFUN\nRemote Sentry\nFlyable Jet\nUFO Mode\nTactical Insertion\nDiving Bomber\nJavi Rain\nJet Pack\nAC-130 Crash\nEarthquake\nNinja Mode\nRemove Killstreaks\nAirdrop Trap\nSuper Soldier\nJavelin Glitch\nWEAPONS\nMagic Bullets\nRemove All Weapons\nCurrent Gun Random Camo\nGive All Guns\nSpawn Turret\nInfinite Ammo\nChange Class\nGolden Guns\nWeapons Selector\nSuper Claymores\nFlamethrower\nPortal Gun\nVariable Zoom\nScavenger Packs\nSELF\nColour Classes\nStats Menu\nInfections Menu\nThird Person\nRed Boxes\nClan Tag - Unbound\nTeleporter\nChange Team\nCreate Clone\nCreate Dead Clone\nMake Suicide\nGod Mode\nAll Perks\nInvisible\n^6PLAYERS\nAIMING MENU\nAim For Head\nAim For Chest\nAim At Random\nSuper Deep Inpact\nRealistic Angles\nAuto 360 Spin\nIgnore ADS\nBOTS MENU\nSpawn 1x Bots\nSpawn 3x Bots\nSpawn 5x Bots\nBots Attack\nBots Move\nKick All Bots\nPLAYER SETTINGS\nGod Mode\nInfinite Ammo\nGive UAV\nUnlock All\nRank 55\nGive Infections\nMake VIP\nVerify\nRed Boxes\nFreeze Controls\nRemove Access\nDerank\nMake Suicide\nGive Drugz\nBomb Player\nGAME TYPES\nPrivate Patch\nHawkin's Zombieland\nSharp Shooter\nElite GunGame\nOne In The Chamber\nThe Bagman\nCapture The Flag\nAdvanced ProMod\nIntel Hunter\nQuickScope Lobby\nPLAYER OPTIONS\nKick\nVerify\nMake VIP\nMake Co-Admin\nRemove Access\nRank 55\nUnlock All\nMake Suicide\nTeleport\nTeleport to Player\nBomb Player\nDerank\nFreeze PS3\nSend to Prison\nGive Player\nGIVE PLAYER\nGod Mode\nInfinite Ammo\nGive UAV\nGive Aimbot\nRed Boxes\nGive Infections\nRemove Infections\nExplosive Bullets\nAll Perks\nGive Drugz\nRandom Killstreak\nFreeze Controls\nFool Player\nDynamic Ban\nPermanent Ban\nEXTRA FEATURES\nStealth Binds\nDisable Launchers\nDisable Camping\nSpawn Trap\nOne & Only\nAdvertise\nHeart Text\nLove EliteMossy\nSmart Status\nDisable Menu\nClantag Checks\nCredits\nSTATS MENU\n+50,000 Kills\n+20,000 Deaths\n+5,000 Wins\n+2,000 Losses\n+1,000,000 Score\n+10,000 Headshots\n+2 Days Played\n+10 Killstreak\n+10 Winstreak\n+50,000 Hits\n+10,000 Misses\n+10,000 Assists\nReset ALL Stats\nStats Editor\nSTATS EDITOR\nEdit Kills\nEdit Deaths\nEdit Wins\nEdit Losses\nEdit Score\nEdit Headshots\nEdit Killstreak\nEdit Winstreak\nEdit Hits\nEdit Misses\nEdit Assists\nPrestige Slider\nINFECTIONS MENU\nGive Infections\nKillcam Time\nVision Editor\nNormal Vision\nElite Vision\nNegative\nChrome Filter\nCartoon Mode\nTrippin Vision\nSnow Shader\nSpeed Scale\nRemove Infections\nFOG SETTINGS\nNormal Fog\nZombierise Fog\nSpooky Map\nDisco Effects\nDisco Sun\nFORGE OPTIONS\nPatty's Bunker\nAnto's Tower\nAmy's Prison\n\n\nWhat's new in version 4.0? (last update)\nLAS DIVINAS REVELATIONS VER 4.0\n\n1. completely realigned all the overlapping texts and misplaced hud elements, to function perfectly for all possible PS3 and PC resolutions.\n2. changed the Pro Mod game mode with a new sharper and smoother vision\n3. fixed a registration bug - false ban alert - that could occur if someone edited the hosts file before register.\n4. a new redesigned and easier to use registration app is now included inside the download folder.\n5. Players with disabled clan tag support can now register using the new tool to auto generate their key.\n6. Some other in game minor fixes and improvements.\n\nVersion 3.5 Change Log (older one)\nLAS DIVINAS REVELATIONS VER 3.5\n\nCHANGE LOG - BUG FIXES\n\nCOMMON BUG FIXES\n1. fixed -Artillery selector overlapping issue while pressing 'X' in menu.\n2. fixed -Auto anti-join while in legit mode.\n3. fixed -Custom menu style doesn't take effect sometimes in online matches.\n4. fixed -If god mode turned off while in menu player can be killed.\n5. fixed -Clan tag validation for other players in legit mode.\n6. fixed -Ban checks are now active even if clan tag validation is disabled.\n7. fixed -Overlapping kill streak notification text.\n\nGAME TYPES FIXES\n1. fixed -Domination not load issue.\n2. fixed -Some ps3 freezing issues in map restart.\n\nZOMBIELAND\n1. fixed -Invalid host bug.\n2. fixed -Host can be picked up as a zombie at start.\n3. fixed -Gameplay for dom, sab, hq.\n4. fixed -Demo mode force ranked match and crashing issues in split-screen.\n\nIN GAME MESSAGES\n1. Improved some objective text messages.\n\nKILLSTREAKS\n1. fixed -A minor issue with remote killstreaks logic.\n\nOther minor fixes and improvements.\n\nIt is highly recommended to download the latest version 4.0 especially if you are a pc user. This will allow you to enjoy this patch in every possible HD resolution with no misaligned hud elements any more.\nIf you are a PS3 user also and had problems trying to have your account verified with the previews version 3.5, then the new version with the updated registration tool may help you!\nThere are not major changes in ver 4.0 and it was originally planned for PCs only but I fixed some this in the PS3 one too. You may never notice some big changes but I think is a must to install if you really liked this patch series!\n\n\nCredits\n\nx_DaftVader_x (The Mexican) - For all Legacy codes\nEliteMossy - For codes\nSatanic American (PREMIER-GAMER) For MW2 UI Codes\nIELIITEMODZX - For codes\nHawkin - For Zombieland v5.0\nBlackStorm - Encryption + Codes\nBuC-ShoTz - FastFile Editor-----\nTheFallen - For Video Recording\nS7 For minor scripts\nAnyone else i missed.\n\nBe warned that this is more than a patch and it uses anti-leeching checks... If you ever encounter load screen freeze issues, or strange unexpected messages then you are in trouble, and this means that either you tried to unsuccessfully edit the patch or your PlayStation®Network Account is permanently banned from using it. Just follow the rules and keep the patch intact and you will never have any problems\n\nNOTE:\nYou may not need to register your account if you are already using another version of Las Divinas 3. ++ (ver. 3.0 or newer) or if you ever had x_DaftVader_x’s Legacy Patch installed.\nRefer to the .pdf file too, for more info and details about this patch. If your question is not there either feel free to comment below! Enjoy :wub:",
-         "URL":"https://dl.dropbox.com/s/982k30pi13y6xy2/Unveil%20Las%20Divinas.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/patch_mp.ff"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1293,11 +1268,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"This is a MW2 1.14 Cylerem SPRX All Clients Mod Menu for DEX users only!",
-         "URL":"https://dl.dropbox.com/s/txe9d7gg92l3big/Cylerem%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/Cylerem.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1322,10 +1292,6 @@
          "Configuration":"MP",
          "Type":"SELF",
          "Description":"Includes:\nRedbox\nDisable Char Check (lets you put ^7 in your classes and make a Unbound Clan Tag without error)\nBypass Cheat Protection\n\np.s. if there's anything you want me to add I'll add it like super steady aim, FPS, no recoil, and laser. Also I use this when using Reborn V4 because on reborn people can see your redbox's. With this they cant\n\nCredits:\nCitadel for help with HxD\nSC58 for offsets\nMango Knife\nSeb5594",
-         "URL":"https://dl.dropbox.com/s/iqi08pdwgibaver/Debug%20%2B%20Mods%20Self.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/default_mp.self"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1349,10 +1315,6 @@
          "Configuration":"MP",
          "Type":"EBOOT",
          "Description":"Includes:\nUnlimited Ammo. (Only works if you are host)\nDebugged (So you can RTM on MW2)\nRedBoxes (Not 100% tested)\nI Am Working On UAV\n\nI will soon add more mods. Enjoy!",
-         "URL":"https://dl.dropbox.com/s/71ec0vzaokn1h8p/Debug%20%2B%20Mods%20Eboot.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1376,10 +1338,6 @@
          "Configuration":"MP",
          "Type":"PATCH",
          "Description":"VERSION 2\n\nHow to use Nacs\nClick on the nac you want to use, the menu should close after you've done so.\nNow press DPAD Left and the rest will happen itself, if you open the menu the NAC is unbound, so you will need to enable the nac again.\n\nWhat is in V2\nI added things that are standard in menus, but i removed the Account and Stats menu's because they are not necessary in a Trickshot Menu.\nSpecial thing is a SND Menu which can make things easier for you in a SND Game. Ofcourse we have the NAC and Specials Infections.\n- New Nac Binds\n- New improved Functions\n- Superman\n\nWhat to add\nx More secret things\n----------------------\nGot any ideas, just comment it!\n\nCredits\nFlavorModz - Nac Codes\nMr-SneakerHeadzz - Menu Base\niTrexk - Teleport Gun\n\nReport any bugs to me\n\nLEAVE ANY SUGGESTIONS IN THE COMMENTS!",
-         "URL":"https://dl.dropbox.com/s/mf82082709enea7/Ultimate%20Trickshot%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/patch_mp.ff"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1403,11 +1361,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"Credits:\nJustin/Shark\nBLB\nBitewise\nFeverDex\nDench\nGFM\nGFC <-- Whole clan itself\nBLM <-- Whole clan itself (appart from leech ethernet(no offense but everyone knows lmao))\niBreezyrecks\nostanky\nand theres more sorry if i forgot you but bye everyone\n\nIts been so long idk who has credits but you know who you all are thanks alot ",
-         "URL":"https://dl.dropbox.com/s/ga4fi6a8wsodx9u/Insidious%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/InsidiousV2.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1432,11 +1385,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"This is a .sprx file that i made to block CFG FF/CFG USB players or anyone cheating such as sprx Aimbot etc.\n\nThis menu gives you the option to kick/ban a client from your game.\n\nThere is a auto system to detect CFG player and if the system see they are using CFG stuff then it will kick them so as long as they don't use the edited stuff on the game then they will not get kicked.\n\nIt also has two checks to see if anyone is 11th prestige or if they have a modded clan name, if so it will kick them from the server saying they cannot have modded prestige or clan name on this server.\n\nThis is meant for legit people only who wanna play it like the old time without having to worry about people cheating in the game.\n\nIf you are playing and you think someone is cheating like using sprx aimbot or if the system didn't pick up the CFG info then you can kick/ban the client.\n\nThe ban option will only ban them from your lobby so they will never be able to join it again, this will reset once you quit the game as its all saved in memory not a txt file.\n\nYou can also clear all server bans in host menu if you happen to get the error message of max bans executed or if you wanna clear them all. The max limit is 1024.\n\nI did not add the option to unban anyone so if you want to unban someone then you will have to quit game or clear all bans in host menu.\n\nI also give you the option to edit your fov if you don't like the default 65 as i don't myself.\n\nThe force host is pretty good i got host every time i played using this so it should do its job.\n\nThere is also a check to toggle on/off DLC maps if you have them installed as when you do you can only connect with people who have them installed aswell so if you disable em you can connect with everyone again but you can't play on DLC maps until you enable them again.\n\nBut anyways that about sums it up, if you have any question about this feel free to ask.\n\n\nWhat not to do\n\nDo not use a Tool, Cheat, Change PSN Name, have 11th Prestige or a Modded Clan name or this will not work properly.\n\nHow to use menu\n\nDPAD-UP + [ ] = Open\nDPAD-UP = Up Scroll\nDPAD-DOWN = Down Scroll\nX = Select\nO = Back\nR3 = Close\n\nNo one can see the menu as its using engine text, so only you\n\n\nHow to use\n\nThis only works on DEX/DECR\n\n\nUpdate 1.2 (Whats New)\n\nAdded MOTD text.\nOption to Unban any client that you have banned.\nOption to Draw FPS.\nRebuilt some functions to make system more stable and fixed misc things that need fixing.\nAdded the option to select any map you want to play when waiting for lobby to start (Press Select button to select new map in pre-game lobby).\n\nIf anyone finds new bugs or problems will try and fix them asap (But if there is any it would be something misc as i have been playing with this for hours).\n\nAnyways enjoy the new update! ",
-         "URL":"https://dl.dropbox.com/s/33j1tab4k9drivj/IW4%20Server.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/IW4Server_1.0.0.1.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"IW4 Server Anti-Cheat Menu v1.2",
@@ -1469,10 +1417,6 @@
          "Configuration":"MP",
          "Type":"PATCH",
          "Description":"Credits:\nxSerialModz\nzFlaVouR\nxGreekModzHD\nxGLoTTeRCriimEx [Big Thanks!]\nAirgun1990\nSiebertoX\nNicoBvB90\n\nIf YOU Helped Me & I Forgot To Add YOU Here, Then Thanks!",
-         "URL":"https://dl.dropbox.com/s/9xth0p0ogcsbw8y/New%20Mods.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/patch_mp.ff"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1496,10 +1440,6 @@
          "Configuration":"MP",
          "Type":"EBOOT",
          "Description":"Debugging eboot file for Call of Duty: Modern Warfare 2",
-         "URL":"https://dl.dropbox.com/s/amcbn4fofcbpj5n/Joka-_-MoDz%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1523,11 +1463,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"Credits:\nS63\nJo-Milk\nMatrixMods\nShark\nSC58\nseb5594",
-         "URL":"https://dl.dropbox.com/s/ayn2ol360cjacrs/Parallax%20Menu%20Remastered.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/ParallaxMW2.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1552,11 +1487,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"No description.",
-         "URL":"https://dl.dropbox.com/s/v9f43rcgoq4ma20/Resurrection%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/Resurrection.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1581,11 +1511,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"CHANGE LOG:\nUPDATE BETA V1.1:\nAdded DoHeart\nFixed Verify All Players Freeze\nFixed Menu Size When Newsbar Is Toggled Off",
-         "URL":"https://dl.dropbox.com/s/ashlpv59tlw3y2r/Rewind%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/Rewindv1.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1610,11 +1535,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"Constant UAV\nRed Boxes\nSteady Aim\nNo Recoil\nGun Laser\nModded Crosshair\nHeath Bar\nFOV Editor\nThird Person\nFPS + Host\nL33T Vision (ui debug)\nCustom Reload Colour Flash\nBig Map\nFloating Objects\nAdvertise (Say)\nLobby Message (Say)\nCustom DVAR Commands\nLeft Gun\nFully Functioning Non-Host Aimbot\nAimbot Aiming Required Selection\nEngine UI\n\nCredits\n\nNickBeHaxing - Designing & Coding Menu, Aimbot Help & Some Addresses\nMilky4444 - Lots of Addresses, Aimbot, Overall Help, Couldn't Make This Witout Him\nSabotage - Finding a Few Addresses, Aimbot Help\nSC58 - Orignal Local Button Monitoring, Addresses & Offsets\nThriefboy - Hooking/Write Process Funcution\nOLDSCHOOLMODZHD - Inspiriation behind Snow Engine\nGeo - Thread Master, Lots of ideas and help, much testing and keeping us company\n\n\nKnown Bugs So Far\n\nIf you have a clantag on your clantag changes whem you set stuff with keyboard\nKeyboard can freeze your PS3\nAimbot thread Crashes Sometimes (rare)\nNeed Slight Of Hand to use Super Slight Of Hand\n\n\nThings Being Added In The Future\n\nStance Check For Aimbot - Having freezing Issues\nAdding Stealth Targeting - Missing Address\nAdding Logical Targeting - Missing Address\nAdding Change Tags - Having freezing Issues\nDoHeart\nMenu Position Editing\n\n\nNotes For Users\n\nPS3 Resolutions MUST be on 720p for HUD to work properly\nUAV Disables Every Match/Round",
-         "URL":"https://dl.dropbox.com/s/w29l1br6ufrsec8/Snow%20Engine%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/SnowMW2.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1639,11 +1559,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"Change Log\nv1.1\n- Fixed bug where the SPRX would freeze when opening\n- Added 1080p version\n- Removed Spawn 3 Bots option (Spawning them 1 by 1 will cause ALOT less freezing)\n- Added Verify & Unverify All (Give Admin and Remove Admin for all clients)\nv1.0\n- Initial release\n\nCredits:\nShark - For various things\nSeb5594\nAnd many",
-         "URL":"https://dl.dropbox.com/s/za2gsx3o9vjng9k/Superman%20Menu%20v1.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/DANK_SUPERMAN.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1668,11 +1583,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"FOR THE HOST :\nThe menu working in 1080p & 720p (resolution), but it's better to play in 720p..\n\nFOR THE CLIENT :\nThey don't have the HOST menu and then, they can play in 720p & 1080p without problem !\n-----\n\nHOST COMMANDS :\nDPAD UP : Open Menu\n- X : Select\n- SQUARE : Close Menu\nDPAD DOWN : Explosive Bullets [ON/OFF] (& change dammage)\nDPAD LEFT : Save position\nDPAD RIGHT : Load position\n\nCLIENT COMMANDS :\nDPAD UP : Quick Menu\n- SQUARE : Validate\n- DPAD UP : Next Modz\n- R3 : Close the menu\nDPAD DOWN : Explosive Bullets [ON/OFF] (& change dammage)\nDPAD LEFT : Save position\nDPAD RIGHT : Load position\n----\n\nSearch and Destroy ...\n\nNow the menu worked on search and destroy:\nwhen the party restart (when you spawn) sometimes\nthe menu won't display, I added a command to restart it :\n-> open the menu then press R3 <-\nUse this command only if you can't see the menu !\n----\n\n\nSUBSCRIBE TO MY YOUTUBE CHANNEL FOR THE UPDATE OF THE MENU :\n->   http://www.youtube.com/SlowModzHD\n\nSKYPE :\n->   slowmodzhd.shop",
-         "URL":"https://dl.dropbox.com/s/yuaj635i4yay016/Superman%20Menu%20v3.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/Mw2SPRX.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1697,11 +1607,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"First, the menu is for the host only. However, you can give the mods to anyone in-game via the toggle client feature.\n\nHow To Toggle Clients\nTo enable client toggle, enter the cheats menu then press L2 to scroll through clients. You can use almost every mod with all clients.\n\nHow To Use\n\nDpad Right - Open\nR3 - Close\nDpad Up/Down - Scroll\nSquare - Select\n\nI know this is a mini release but I was expecting to make this a dual menu to load an off-host menu if you're not the host of a game but I haven't gotten around to that yet. I will add that later probably.\n\nTHIS MENU IS NOT ALLOWED ON ANY OTHER GAMING WEBSITES, EVEN THOUGH PEOPLE WILL IGNORE THIS AND UPLOAD ON THEIR GAY SITES (I.e RDC, PC, CC) Dont.\n\nCredits\n\nTeh1337 - Original Menu Design, Ideas\nSeb5594 - MW2 Functions and Huds\nitsLollo - MW2 Functions + Help\nShark - Help\nBlackPanther - Making.",
-         "URL":"https://dl.dropbox.com/s/dhuwjxwkfmcaugg/Teh1337%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/Loner.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1726,10 +1631,6 @@
          "Configuration":"MP",
          "Type":"PATCH",
          "Description":"NEW Main Menu Style & NEW Quick Menu Style!\n\nControls:\n\nNot In Menu:\nUP = Open Menu\nDOWN = Open Quick Menu\n\nIn Menu:\nX/R3 = Select Option\nO/L3 = Back/Close\nUP/DOWN = Navigate Through Options\nRIGHT/LEFT = Navigate Through Menus\n\nBugs:\n\n- Most of the time when you switch to your Non-Stealth Menu by going to options and switching to the tactical layout it will give you this error and kick you out. This is the error that you will get:\nFrist Picture\nSecond Picture\n- If you have and use the patches without the zone edits, it tends to freeze your ps3 a lot. Idk why and idk on how to fix it. So just use the patches with the zone edits.\n- Let me know if theres any other bugs...\n\nCredits:\n\nT_m_b07 (Big Thanks! This wouldn't be possible without him! <3)\nxRazBaz (His menu style from his patch TheSilent v3 for my little sub menus)\nobamasu (Big Thanks! <3)\nEliteMossy (His v9 menu design)\naerosoul94 (Many things)\nITheFallenI (Many things)\nJonoEfthy (Many things)\ncodfather999 (His aimbot)\nBrinkerzHD (Testing & for the second video! <3)\nAnd any other coder i forgot.\n\nDon't flame just cause I forgot to put someone in the credits.\nIf you think you deserve to be in the credit just tell me.\n\nI worked really hard on this patch so I would be very appreciative if you show your support by thanking this thread. Thanks and hope you ENJOY!\nDownload Link Broken (To download my v4 go to the Editable v4 thread [Only registered and activated users can see links. ])\n\nIf you groan I would love to know why...",
-         "URL":"https://dl.dropbox.com/s/tq0cgch2hi7cg1u/Private%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/patch_mp.ff"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1753,11 +1654,6 @@
          "Configuration":"MP",
          "Type":"PATCH",
          "Description":"This is MW2 Vengeance Mod Menu by s63 for the latest update 1.14!\n\nthis is only a beta release so people can test it for me and report feedback such as bugs, errors etc\n\nthis will help me to fix any bugs witin the menu!\n\nanyways enjoy :P\n\nCredits:\n___________________________________\nS63\nSC58\niMCSx\nSony :D\nOLDSCHOOLMODZHD\nXx James t xX\noStankyModz\nSeb5594\nChoco\nSabatage\nShark\nAnd Anyone else ive missed :D",
-         "URL":"https://dl.dropbox.com/s/md4jvm2lfu4hxw8/Vengeance%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/Vengeance.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1782,10 +1678,6 @@
          "Configuration":"MP",
          "Type":"PATCH",
          "Description":"**Game Patch v1.11 Required!**\n\nWhats New?\nRemoved Blastshield Shader\nAdded WhiteWater v3's Shader\nFixed Some Bugs\nCo-Hosts Now Get Player Menus\nAdded New Patches Menu\nAdded New Fun Menu\nAdded Juggernaut To Fun Menu\nAdded Human Caterpiller To Fun Menu\nAdded UFO Mode To Fun Menu\nMoved Spec Nade To Fun Menu\nMoved Snake Mode To Fun Menu\nMoved Change Appearance To Fun Menu\nMoved Right Throwing Knife To Fun Menu\nDeleted Auto God Mode On Spawn\nMoved Forge Options To Forge Menu\nAdded Remove Killtriggers To Host Menu\nAdded 7 New Messages To The Message Menu\nAdded Flashing Text 1 To Host Menu\nAdded Flashing Text 2 To host Menu\nAdded Message Bar To Host Menu\nAdded Blood Fountain To Fun Menu\nAdded Flood Gun To Weapons [2] Menu\n\nGamemodes & Patches\n- WhiteWater v5.0 Contains 7 Patches.- Roughly 30 Gamemodes.Patches Are:- Super Lemon Haze v1- EliteMossy v8- Hawkins Zombieland- Retarded Robot Zombies- Ai Zombies Extreme v1.8- BigBoyBobby14's EliteMossy v7 Edit- Jarniboi's v9\n\nInfo- This Is A 1.11 Patch- Still Works On Bypass- This Patch Is Very Hard To Edit- We Do Not Want To See People Editing It.\n\nPatch Controls- D-Pad Up = Open Menu- Square = Close Menu- X = Select An Option.- D-Pad Up/Down = Scroll Up/Down- D-Pad Left/Right = Cycle Left/Right\n\nKnown Bugs:Code:\n- Hide & Seek isnt working. It Starts But You Cant Play It.\n- Menu Starts To Disappear If You Rape The Care Package Gun.\n\nCredits: EliteMossy, MrMoss, Blackstorm, DEREKTROTTER, Vampeh, Twist, LightModz, PREMIER-GAMER, lfclegend321, ViolentChick, IVI40A3Fusionz, TheUnkn0wn, xToysBoy, TheFallen, Jarniboi, ODGlitcha, BrinkerzHD, ENZO, FBigBoy, Bobby14, Cmd-X, Hawkin, XxWOLFxX, xePixTvxT, _m_b07TheUnexpectedRestxrt Modzseb5594ThePhantom410HzDz-JoKeRLittleBrother[115]DeathJokerReyxRobertDavisxHepticOnline\n\nTechnically, This Is A Blackstorm Edit. So Thank You Blackstorm & DEREKTROTTER For Their Awesome Work! :wub:\n\nThank You-JokerRey-Robert Davis",
-         "URL":"https://dl.dropbox.com/s/qd50gmf2lmjs1sw/White%20Water%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/patch_mp.ff"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1809,11 +1701,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"No description",
-         "URL":"https://dl.dropbox.com/s/bpy3ibck9mbrvv5/Zircon%20Menu.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/ZIRCONBYWIZIMODZ.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1838,11 +1725,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":":Information About My Menu:\nThis Menu Took Me A Long Time To Make Because Of School\nAnd Family. You Guy's Are The Ones That Motivated Me To\nFinish And Make It As Big And As Customizable As Possible.\nThank You And Enjoy.   -SouthSideModder\n\nAlways Give Credit To Me In Description If You Record:\n\nSouthSideModder\nwww.YouTube.com/SouthSideModder\n\n:Known Bugs:\nIf The Menu Doesnt Load In Game:\n-Quit Game And Retry. It Always Works.\n\nIf You Go Online And You Are Not Host:\n-Start A Private Match And Quit And The Menu Will Load Again\n\nThe Menu Will Freeze If You Spam Options:\n-Moslty: Weapons, Models, and Bullets\n\n",
-         "URL":"https://dl.dropbox.com/s/8acajrrdbt96ouq/Aftermath%20w%20Force%20Host.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/SSM_Aftermath.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"Aftermath Menu",
@@ -1875,10 +1757,6 @@
          "Configuration":"MP",
          "Type":"EBOOT",
          "Description":"No description.",
-         "URL":"https://dl.dropbox.com/s/v2q9aah3lml3wxe/Challenge%20Lobby.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1902,11 +1780,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"Welcome to Crystalized Mw3 Sprx Mod Menu Created By oStankyModz\n\nThanks Enjoy!!\n\nCredits:\nPeople Who Helped With Menu:\nSeb5594\nOLDSCHOOLMODZHD\nFeverDEX\n\nPeople Who Helped Test:\nLaRip8\nPriizma\nUnlimitedModding\nBeastMods\nexeDecption",
-         "URL":"https://dl.dropbox.com/s/5xxuv2drtu6ryem/Crystalized.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/Crystalized.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -1931,10 +1804,6 @@
          "Configuration":"MP",
          "Type":"EBOOT",
          "Description":"Debug eboot useful for modding and location offsets.",
-         "URL":"https://dl.dropbox.com/s/fys2kmrjrjme8k9/Debug.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
-         ],
          "DownloadFiles":[
             {
                "Name":"Debugging Helper Menu",
@@ -1964,12 +1833,7 @@
          "SubmittedBy":"ohhsodead",
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
-         "Description":"Hey guys, I know a lot of you have been \nwaiting for this for a long time so here\nwww.Youtube.com/SouthSideModder\n\nThing that need fixing.\n-----------------------\n\ndoHeart is a little buggy. (Will be fixed whenever I release a update)\n\nThe main thing is aimbot it is very buggy. (Still trying to fix it up)\n\nThe non-host mods crash sometimes. (I don't know what's up with it)\n\n\nThings I plan on adding.\n------------------------\n\n\nI want to add a spawn bunker.\n\nI would aslo like to add some fun little game modes.\n\n\nNote\n----\n\nThis is the first sprx menu I started so there are a few problems with it\nbecause it's not made very well.\n\ncredits\n-------\n\noStankyModzHD\n\nOldSchoolModzHD\n\nFusionModzHD\n\nSeb5594\n\nIf I forgot anyone sorry :'(",
-         "URL":"https://dl.dropbox.com/s/46mvqaiqjd8b89u/Exorcist%20Force%20Host.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/Exorcist.sprx"
-         ],
+         "Description":"Hey guys, I know a lot of you have been waiting for this for a long time so here\nwww.youtube.com/SouthSideModder\n\nThings that need fixing.\n-----------------------\n\ndoHeart is a little buggy. (Will be fixed whenever I release a update)\n\nThe main thing is aimbot it is very buggy. (Still trying to fix it up)\n\nThe non-host mods crash sometimes. (I don't know what's up with it)\n\n\nThings I plan on adding.\n------------------------\n\nI want to add a spawn bunker.\n\nI would aslo like to add some fun little game modes.\n\n\nNote\n----\n\nThis is the first sprx menu I started so there are a few problems with it\nbecause it's not made very well.\n\ncredits\n-------\n\noStankyModzHD\n\nOldSchoolModzHD\n\nFusionModzHD\n\nSeb5594\n\nIf I forgot anyone sorry :'(",
          "DownloadFiles":[
             {
                "Name":"Exorcist Menu",
@@ -2002,11 +1866,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"No description.",
-         "URL":"https://dl.dropbox.com/s/xt3x7uba0ipl1aa/Frost%20Engine.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/NonHost.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -2031,11 +1890,6 @@
          "Configuration":"MP",
          "Type":"EBOOT/SPRX",
          "Description":"Hey guys,\nSo I had a lot of people asking for a beta so here it is.\n\nThis is NOT finished so don't moan about some stuff not working please. I'm working on it.\n\n\nLittle bit of info.\n-------------------\n\nWhen Liberation .3 Host & Non Host are done they will be in one .sprx but for now I'm keeping them in two.\nLiberation .3 Host still needs alot of work, I thought I would have finished it in a few days from the first pre-view\nbut no, I really want to make it as best as I can for you guys.\n\n\n\nThings that don't work.\n-----------------------\n\nNames & Clantags don't update in game.\n\nThe targeting/aimbot info is a little bit slow sometimes.\n\nSilent aimbot is really buggy sometimes but it works for now. (I am making it better well uploading this)\n\n\nEBOOT.\n------\n\nThe eboot that is with the download is a debug eboot so Dex only\n\nif you want a Cex eboot download one and use this tutorial.\nhttps://dl.youtube.com/watch?v=lJWhloIA0MM (Thanks to OldSchoolModzHD)",
-         "URL":"https://dl.dropbox.com/s/7657qywo7uvrqup/Liberation.zip?raw=true",
-         "InstallPaths":[
-            "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-            "/dev_hdd0/tmp/Liberation.sprx"
-         ],
          "DownloadFiles":[
             {
                "Name":"#1",
@@ -21078,32 +20932,32 @@
                "Name":"Desire Engine (DEX)",
                "URL":"https://dl.dropbox.com/s/ssa5spsu24kocnp/Desire%20Engine%20%28DEX%29.zip?raw=true",
                "InstallPaths":[
-					"/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-					"/dev_hdd0/tmp/T6EndGameBlocker.sprx"
+                  "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
+                  "/dev_hdd0/tmp/T6EndGameBlocker.sprx"
                ]
             },
             {
                "Name":"Desire Engine (CEX) (BLES01717)",
                "URL":"https://dl.dropbox.com/s/jx469bj9h4nkidc/Desire%20Engine%20%28CEX%29%20%28BLES01717%29.zip?raw=true",
                "InstallPaths":[
-					"/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-					"/dev_hdd0/tmp/T6EndGameBlocker.sprx"
-				]
+                  "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
+                  "/dev_hdd0/tmp/T6EndGameBlocker.sprx"
+               ]
             },
             {
                "Name":"Desire Engine (CEX) (BLUS31011)",
                "URL":"https://dl.dropbox.com/s/rdmhsbz8pac7zek/Desire%20Engine%20%28CEX%29%20%28BLUS31011%29.zip?raw=true",
                "InstallPaths":[
-					"/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-					"/dev_hdd0/tmp/T6EndGameBlocker.sprx"
-				]
+                  "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
+                  "/dev_hdd0/tmp/T6EndGameBlocker.sprx"
+               ]
             },
             {
                "Name":"Desire Engine (CEX) (NPUB31054)",
                "URL":"https://dl.dropbox.com/s/4rvth4igkwytsh2/Desire%20Engine%20%28CEX%29%20%28NPUB31054%29.zip?raw=true",
                "InstallPaths":[
-					"/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
-					"/dev_hdd0/tmp/T6EndGameBlocker.sprx"
+                  "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
+                  "/dev_hdd0/tmp/T6EndGameBlocker.sprx"
                ]
             }
          ]
