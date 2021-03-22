@@ -47,7 +47,7 @@
                      "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
-                     "Value":"20642600",
+                     "Value":"0x20, 0x64, 0x26, 0x00",
                      "Type":"byte"
                   }
                ]
