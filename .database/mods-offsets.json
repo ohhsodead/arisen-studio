@@ -17,7 +17,7 @@
                      "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
-					 "Value":"",
+                     "Value":"",
                      "Type":"string"
                   }
                ]
@@ -29,37 +29,37 @@
                "Offsets":[
                   {
                      "Address":"0x01FF9A9C",
-					 "Toggleable":false,
+                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
-					 "Value":"",
+                     "Value":"",
                      "Type":"int"
                   }
                ]
             },
             {
                "Name":"Instant Level 70",
-               "Description":"Set your account to level 70. Play a game and get a couple of kills/deaths for it to stick.",
+               "Description":"Set your account to level 70. Play a full game and get a couple of kills/deaths for it to stick.",
                "GameType":"Multiplayer",
                "Offsets":[
                   {
                      "Address":"0x01FF9A94",
-					 "Toggleable":false,
+                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
-                     "Value":"0x20, 0x64, 0x26, 0x00",
+                     "Value":"20, 64, 26, 00",
                      "Type":"byte"
                   }
                ]
             },
             {
                "Name":"Red Boxes",
-               "Description":"Show red boxes for users.",
+               "Description":"Show red boxes over users.",
                "GameType":"Multiplayer",
                "Offsets":[
                   {
                      "Address":"0x014E2213",
-					 "Toggleable":true,
+                     "Toggleable":true,
                      "Enable":"0x55",
                      "Disable":"0x00",
                      "Value":"",
@@ -69,12 +69,12 @@
             },
             {
                "Name":"God Mode",
-               "Description":"Show red boxes for users.",
+               "Description":"Give yourself infinite health.",
                "GameType":"Multiplayer",
                "Offsets":[
                   {
                      "Address":"0x014E2213",
-					 "Toggleable":true,
+                     "Toggleable":true,
                      "Enable":"0x55",
                      "Disable":"0x00",
                      "Value":"",
