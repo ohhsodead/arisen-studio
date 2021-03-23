@@ -332,7 +332,7 @@
                "Category":"In-Game Mods",
                "Description":"Kill yourself.",
                "GameType":"Multiplayer",
-			   "Toggleable":true,
+			   "Toggleable":false,
                "Offsets":[
                   {
                      "Address":"21897760",
