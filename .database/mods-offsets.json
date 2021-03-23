@@ -11,7 +11,7 @@
                "Name":"Name",
                "Category":"Lobby Mods",
                "Description":"Set your account display name. This doesn't stick.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
                "Toggleable":false,
                "Offsets":[
                   {
@@ -27,7 +27,7 @@
                "Name":"Prestige Level",
                "Category":"Account Stats",
                "Description":"Set your account prestige level. Play a game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
                "Toggleable":false,
                "Offsets":[
                   {
@@ -43,7 +43,7 @@
                "Name":"Instant Level 70",
                "Category":"Account Stats",
                "Description":"Set your account to level 70. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
                "Toggleable":false,
                "Offsets":[
                   {
@@ -59,7 +59,7 @@
                "Name":"Score",
                "Category":"Account Stats",
                "Description":"Set your account score. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
                "Toggleable":false,
                "Offsets":[
                   {
@@ -76,7 +76,7 @@
                "Name":"Kills",
                "Category":"Account Stats",
                "Description":"Set your account kills. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
                "Toggleable":false,
                "Offsets":[
                   {
@@ -92,7 +92,7 @@
                "Name":"Deaths",
                "Category":"Account Stats",
                "Description":"Set your account deaths. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
                "Toggleable":false,
                "Offsets":[
                   {
@@ -108,7 +108,7 @@
                "Name":"Assists",
                "Category":"Account Stats",
                "Description":"Set your account assists. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
                "Toggleable":false,
                "Offsets":[
                   {
@@ -124,7 +124,7 @@
                "Name":"Headshots",
                "Category":"Account Stats",
                "Description":"Set your account headshots. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
                "Toggleable":false,
                "Offsets":[
                   {
@@ -140,7 +140,7 @@
                "Name":"Wins",
                "Category":"Account Stats",
                "Description":"Set your account wins. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
                "Toggleable":false,
                "Offsets":[
                   {
@@ -156,7 +156,7 @@
                "Name":"Losses",
                "Category":"Account Stats",
                "Description":"Set your account losses. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
                "Toggleable":false,
                "Offsets":[
                   {
@@ -172,7 +172,7 @@
                "Name":"Ties",
                "Category":"Account Stats",
                "Description":"Set your account ties. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
                "Toggleable":false,
                "Offsets":[
                   {
@@ -188,7 +188,7 @@
                "Name":"Win Streak",
                "Category":"Account Stats",
                "Description":"Set your account win streak. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
                "Toggleable":false,
                "Offsets":[
                   {
@@ -204,7 +204,7 @@
                "Name":"Kill Streak",
                "Category":"Account Stats",
                "Description":"Set your account kill streak. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
                      "Toggleable":false,
                "Offsets":[
                   {
@@ -220,7 +220,7 @@
                "Name":"Unlock All",
                "Category":"Account Stats",
                "Description":"Unlock all challenges. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
 			   "Toggleable":false,
                "Offsets":[
                   {
@@ -299,7 +299,7 @@
                "Name":"Red Boxes",
                "Category":"In-Game Mods",
                "Description":"Show red boxes over users.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
 			   "Toggleable":true,
                "Offsets":[
                   {
@@ -315,7 +315,7 @@
                "Name":"God Mode",
                "Category":"In-Game Mods",
                "Description":"Give yourself infinite health.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
 			   "Toggleable":true,
                "Offsets":[
                   {
@@ -331,7 +331,7 @@
                "Name":"Suicide",
                "Category":"In-Game Mods",
                "Description":"Kill yourself.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
 			   "Toggleable":false,
                "Offsets":[
                   {
@@ -347,7 +347,7 @@
                "Name":"No Recoil",
                "Category":"In-Game Mods",
                "Description":"Give yourself no recoil.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
 			   "Toggleable":true,
                "Offsets":[
                   {
@@ -363,7 +363,7 @@
                "Name":"Force 18 Players",
                "Category":"In-Game Mods",
                "Description":"Force 18 players in the game.",
-               "GameType":"Multiplayer",
+               "GameMode":"Multiplayer",
 			   "Toggleable":true,
                "Offsets":[
                   {
