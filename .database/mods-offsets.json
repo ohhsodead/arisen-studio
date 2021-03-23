@@ -1,189 +1,4013 @@
 {
-   "LastUpdated":"2021-03-20T00:13:37.126946+00:00",
-   "Mods":[
-      {
-         "Id":1,
-         "ConsoleType":"PS3",
-         "GameId":"codmw2",
-         "GameVersion":"1.14",
-         "Memory":[
+  "LastUpdated": "2021-03-20T00:13:37.126946+00:00",
+  "Mods": [
+    {
+      "Id": 1,
+      "ConsoleType": "PS3",
+      "GameId": "codmw2",
+      "GameVersion": "1.14",
+      "Memory": [
+        {
+          "Name": "Name",
+          "Category": "Lobby Mods",
+          "Description": "Set your account display name. This doesn't stick.",
+          "GameType": "Multiplayer",
+          "Offsets": [
             {
-               "Name":"Name",
-               "Category":"Lobby Mods",
-               "Description":"Set your account display name. This doesn't stick.",
-               "GameType":"Multiplayer",
-               "Offsets":[
-                  {
-                     "Address":"33157404",
-                     "Toggleable":false,
-                     "Enable":"",
-                     "Disable":"",
-                     "Value":"",
-                     "Type":"string"
-                  }
-               ]
-            },
-            {
-               "Name":"Prestige Level",
-               "Category":"Account Stats",
-               "Description":"Set your account prestige level. Play a game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
-               "Offsets":[
-                  {
-                     "Address":"33528476",
-                     "Toggleable":false,
-                     "Enable":"",
-                     "Disable":"",
-                     "Value":"",
-                     "Type":"int"
-                  }
-               ]
-            },
-            {
-               "Name":"Instant Level 70",
-               "Category":"Account Stats",
-               "Description":"Set your account to level 70. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
-               "Offsets":[
-                  {
-                     "Address":"33528468",
-                     "Toggleable":false,
-                     "Enable":"",
-                     "Disable":"",
-                     "Value":"20642600",
-                     "Type":"byte"
-                  }
-               ]
-            },
-            {
-               "Name":"Score",
-               "Category":"Account Stats",
-               "Description":"Set your account score. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
-               "Offsets":[
-                  {
-                     "Address":"33528484",
-                     "Toggleable":false,
-                     "Enable":"",
-                     "Disable":"",
-                     "Value":"",
-                     "Type":"int"
-                  }
-               ]
-            },
-            {
-               "Name":"Kills",
-               "Category":"Account Stats",
-               "Description":"Set your account kills. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
-               "Offsets":[
-                  {
-                     "Address":"33528488",
-                     "Toggleable":false,
-                     "Enable":"",
-                     "Disable":"",
-                     "Value":"",
-                     "Type":"int"
-                  }
-               ]
-            },
-            {
-               "Name":"Deaths",
-               "Category":"Account Stats",
-               "Description":"Set your account deaths. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
-               "Offsets":[
-                  {
-                     "Address":"33528496",
-                     "Toggleable":false,
-                     "Enable":"",
-                     "Disable":"",
-                     "Value":"",
-                     "Type":"int"
-                  }
-               ]
-            },
-            {
-               "Name":"Assists",
-               "Category":"Account Stats",
-               "Description":"Set your account assists. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
-               "Offsets":[
-                  {
-                     "Address":"33528504",
-                     "Toggleable":false,
-                     "Enable":"",
-                     "Disable":"",
-                     "Value":"",
-                     "Type":"int"
-                  }
-               ]
-            },
-            {
-               "Name":"Unlock All",
-               "Category":"Account Stats",
-               "Description":"Unlock all challenges. Play a full game and get a couple of kills/deaths for it to stick.",
-               "GameType":"Multiplayer",
-               "Offsets":[
-                  {
-                     "Address":"28884464",
-                     "Toggleable":false,
-                     "Enable":"",
-                     "Disable":"",
-                     "Value":"4278190080",
-                     "Type":"byte"
-                  },
-				  {
-                     "Address":"28887239",
-                     "Toggleable":false,
-                     "Enable":"",
-                     "Disable":"",
-                     "Value":"4278190080",
-                     "Type":"byte"
-                  },
-				  {
-                     "Address":"28887367",
-                     "Toggleable":false,
-                     "Enable":"",
-                     "Disable":"",
-                     "Value":"4278190080",
-                     "Type":"byte"
-                  }
-               ]
-            },
-            {
-               "Name":"Red Boxes",
-               "Category":"In-Game Mods",
-               "Description":"Show red boxes over users.",
-               "GameType":"Multiplayer",
-               "Offsets":[
-                  {
-                     "Address":"21897747",
-                     "Toggleable":true,
-                     "Enable":"55",
-                     "Disable":"00",
-                     "Value":"",
-                     "Type":"byte"
-                  }
-               ]
-            },
-            {
-               "Name":"God Mode",
-               "Category":"In-Game Mods",
-               "Description":"Give yourself infinite health.",
-               "GameType":"Multiplayer",
-               "Offsets":[
-                  {
-                     "Address":"21996634",
-                     "Toggleable":true,
-                     "Enable":"FFFF",
-                     "Disable":"0064",
-                     "Value":"",
-                     "Type":"byte"
-                  }
-               ]
+              "Address": "33157404",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "",
+              "Type": "string"
             }
-         ]
-      }
-   ]
+          ]
+        },
+        {
+          "Name": "Prestige Level",
+          "Category": "Account Stats",
+          "Description": "Set your account prestige level. Play a game and get a couple of kills/deaths for it to stick.",
+          "GameType": "Multiplayer",
+          "Offsets": [
+            {
+              "Address": "33528476",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "",
+              "Type": "int"
+            }
+          ]
+        },
+        {
+          "Name": "Instant Level 70",
+          "Category": "Account Stats",
+          "Description": "Set your account to level 70. Play a full game and get a couple of kills/deaths for it to stick.",
+          "GameType": "Multiplayer",
+          "Offsets": [
+            {
+              "Address": "33528468",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "20642600",
+              "Type": "byte"
+            }
+          ]
+        },
+        {
+          "Name": "Score",
+          "Category": "Account Stats",
+          "Description": "Set your account score. Play a full game and get a couple of kills/deaths for it to stick.",
+          "GameType": "Multiplayer",
+          "Offsets": [
+            {
+              "Address": "33528484",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "",
+              "Type": "int"
+            }
+          ]
+        },
+        {
+          "Name": "Kills",
+          "Category": "Account Stats",
+          "Description": "Set your account kills. Play a full game and get a couple of kills/deaths for it to stick.",
+          "GameType": "Multiplayer",
+          "Offsets": [
+            {
+              "Address": "33528488",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "",
+              "Type": "int"
+            }
+          ]
+        },
+        {
+          "Name": "Deaths",
+          "Category": "Account Stats",
+          "Description": "Set your account deaths. Play a full game and get a couple of kills/deaths for it to stick.",
+          "GameType": "Multiplayer",
+          "Offsets": [
+            {
+              "Address": "33528496",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "",
+              "Type": "int"
+            }
+          ]
+        },
+        {
+          "Name": "Assists",
+          "Category": "Account Stats",
+          "Description": "Set your account assists. Play a full game and get a couple of kills/deaths for it to stick.",
+          "GameType": "Multiplayer",
+          "Offsets": [
+            {
+              "Address": "33528504",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "",
+              "Type": "int"
+            }
+          ]
+        },
+        {
+          "Name": "Unlock All",
+          "Category": "Account Stats",
+          "Description": "Unlock all challenges. Play a full game and get a couple of kills/deaths for it to stick.",
+          "GameType": "Multiplayer",
+          "Offsets": [
+            {
+              "Address": "33530055",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530056",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530057",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530058",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530059",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530060",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530061",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530062",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530063",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530064",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530065",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530066",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530067",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530068",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530069",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530070",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530071",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530072",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530073",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530074",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530075",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530076",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530077",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530078",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530079",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530080",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530081",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530082",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530083",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530084",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530085",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530086",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530087",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530088",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530089",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530090",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530091",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530092",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530093",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530094",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530095",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530096",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530097",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530098",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530099",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530100",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530101",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530102",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530103",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530104",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530105",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530106",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530107",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530108",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530109",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530110",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530111",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530112",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530113",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530114",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530115",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530116",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530117",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530118",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530119",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530120",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530121",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530122",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530123",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530124",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530125",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530126",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530127",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530128",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530129",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530130",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530131",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530132",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530133",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530134",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530135",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530136",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530137",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530138",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530139",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530140",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530141",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530142",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530143",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530144",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530145",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530146",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530147",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530148",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530149",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530150",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530151",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530152",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530153",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530154",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530155",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530156",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530157",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530158",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530159",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530160",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530161",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530162",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530163",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530164",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530165",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530166",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530167",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530168",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530169",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530170",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530171",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530172",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530173",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530174",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530175",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530176",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530177",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530178",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530179",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530180",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530181",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530182",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530183",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530184",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530185",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530186",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530187",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530188",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530189",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530190",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530191",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530192",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530193",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530194",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530195",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530196",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530197",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530198",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530199",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530200",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530201",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530202",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530203",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530204",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530205",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530206",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530207",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530208",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530209",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530210",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530211",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530212",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530213",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530214",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530215",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530216",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530217",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530218",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530219",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530220",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530221",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530222",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530223",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530224",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530225",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530226",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530227",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530228",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530229",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530230",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530231",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530232",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530233",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530234",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530235",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530236",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530237",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530238",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530239",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530240",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530241",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530242",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530243",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530244",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530245",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530246",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530247",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530248",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530249",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530250",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530251",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530252",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530253",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530254",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530255",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530256",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530257",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530258",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530259",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530260",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530261",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530262",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530263",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530264",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530265",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530266",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530267",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530268",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530269",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530270",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530271",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530272",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530273",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530274",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530275",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530276",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530277",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530278",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530279",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530280",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530281",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530282",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530283",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530284",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530285",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530286",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530287",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530288",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530289",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530290",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530291",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530292",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530293",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530294",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530295",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530296",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530297",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530298",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530299",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530300",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530301",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530302",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530303",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530304",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530305",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530306",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530307",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530308",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530309",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530310",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530311",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530312",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530313",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530314",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530315",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530316",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530317",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530318",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530319",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530320",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530321",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530322",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530323",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530324",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530325",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530326",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530327",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530328",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530329",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530330",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530331",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530332",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530333",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530334",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530335",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530336",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530337",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530338",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530339",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530340",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530341",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530342",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530343",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530344",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530345",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530346",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530347",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530348",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530349",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530350",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530351",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530352",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530353",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530354",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530355",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530356",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530357",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530358",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530359",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530360",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530361",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530362",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530363",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530364",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530365",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530366",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530367",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530368",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530369",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530370",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530371",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530372",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530373",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530374",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530375",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530376",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530377",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530378",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530379",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530380",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530381",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530382",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530383",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530384",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530385",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530386",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530387",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530388",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530389",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530390",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530391",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530392",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530393",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530394",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530395",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530396",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530397",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530398",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530399",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530400",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530401",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530402",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530403",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530404",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530405",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530406",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530407",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530408",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530409",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530410",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530411",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530412",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530413",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530414",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530415",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530416",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530417",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530418",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530419",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530420",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530421",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530422",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530423",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530424",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530425",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530426",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530427",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530428",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530429",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530430",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530431",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530432",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530433",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530434",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530435",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530436",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530437",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530438",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530439",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530440",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530441",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530442",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530443",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530444",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530445",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530446",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530447",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530448",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530449",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530450",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530451",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530452",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530453",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530454",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530455",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530456",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530457",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530458",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530459",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530460",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530461",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530462",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530463",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530464",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530465",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530466",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530467",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530468",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530469",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530470",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530471",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530472",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530473",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530474",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530475",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530476",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530477",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530478",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530479",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530480",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530481",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530482",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530483",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530484",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530485",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530486",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530487",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530488",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530489",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530490",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530491",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530492",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530493",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530494",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530495",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530496",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530497",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530498",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530499",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530500",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530501",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530502",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530503",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530504",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530505",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530506",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530507",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530508",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530509",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530510",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530511",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530512",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530513",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530514",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530515",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530516",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530517",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530518",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530519",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530520",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530521",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530522",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530523",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530524",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530525",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530526",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530527",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530528",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530529",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530530",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530531",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530532",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530533",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530534",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            },
+            {
+              "Address": "33530535",
+              "Toggleable": false,
+              "Enable": "",
+              "Disable": "",
+              "Value": "4278190080",
+              "Type": "byte"
+            }
+          ]
+        },
+        {
+          "Name": "Red Boxes",
+          "Category": "In-Game Mods",
+          "Description": "Show red boxes over users.",
+          "GameType": "Multiplayer",
+          "Offsets": [
+            {
+              "Address": "21897747",
+              "Toggleable": true,
+              "Enable": "55",
+              "Disable": "00",
+              "Value": "",
+              "Type": "byte"
+            }
+          ]
+        },
+        {
+          "Name": "God Mode",
+          "Category": "In-Game Mods",
+          "Description": "Give yourself infinite health.",
+          "GameType": "Multiplayer",
+          "Offsets": [
+            {
+              "Address": "21996634",
+              "Toggleable": true,
+              "Enable": "FFFF",
+              "Disable": "0064",
+              "Value": "",
+              "Type": "byte"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
