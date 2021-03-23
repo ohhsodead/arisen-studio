@@ -13,7 +13,7 @@
                "GameType":"Multiplayer",
                "Offsets":[
                   {
-                     "Address":"0x01F9F11C",
+                     "Address":"33157404",
                      "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
@@ -28,7 +28,7 @@
                "GameType":"Multiplayer",
                "Offsets":[
                   {
-                     "Address":"0x01FF9A9C",
+                     "Address":"33528476",
                      "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
@@ -58,10 +58,10 @@
                "GameType":"Multiplayer",
                "Offsets":[
                   {
-                     "Address":"0x014E2213",
+                     "Address":"21897747",
                      "Toggleable":true,
-                     "Enable":"0x55",
-                     "Disable":"0x00",
+                     "Enable":"55",
+                     "Disable":"00",
                      "Value":"",
                      "Type":"byte"
                   }
@@ -73,10 +73,10 @@
                "GameType":"Multiplayer",
                "Offsets":[
                   {
-                     "Address":"0x014E2213",
+                     "Address":"21996634",
                      "Toggleable":true,
-                     "Enable":"0x55",
-                     "Disable":"0x00",
+                     "Enable":"FFFF",
+                     "Disable":"0064",
                      "Value":"",
                      "Type":"byte"
                   }
