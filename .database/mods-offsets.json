@@ -120,6 +120,38 @@
                ]
             },
             {
+               "Name":"Unlock All",
+               "Category":"Account Stats",
+               "Description":"Unlock all challenges. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameType":"Multiplayer",
+               "Offsets":[
+                  {
+                     "Address":"28884464",
+                     "Toggleable":false,
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"16777216",
+                     "Type":"byte"
+                  },
+				  {
+                     "Address":"28887239",
+                     "Toggleable":false,
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"16777216",
+                     "Type":"byte"
+                  },
+				  {
+                     "Address":"28887367",
+                     "Toggleable":false,
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"16777216",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
                "Name":"Red Boxes",
                "Category":"In-Game Mods",
                "Description":"Show red boxes over users.",
