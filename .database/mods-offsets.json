@@ -130,7 +130,7 @@
                      "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
-                     "Value":"16777216",
+                     "Value":"4278190080",
                      "Type":"byte"
                   },
 				  {
@@ -138,7 +138,7 @@
                      "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
-                     "Value":"16777216",
+                     "Value":"4278190080",
                      "Type":"byte"
                   },
 				  {
@@ -146,7 +146,7 @@
                      "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
-                     "Value":"16777216",
+                     "Value":"4278190080",
                      "Type":"byte"
                   }
                ]
