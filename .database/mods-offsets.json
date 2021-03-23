@@ -205,7 +205,7 @@
                "Category":"Account Stats",
                "Description":"Set your account kill streak. Play a full game and get a couple of kills/deaths for it to stick.",
                "GameMode":"Multiplayer",
-                     "Toggleable":false,
+               "Toggleable":false,
                "Offsets":[
                   {
                      "Address":"33528492",
@@ -221,7 +221,7 @@
                "Category":"Account Stats",
                "Description":"Unlock all challenges. Play a full game and get a couple of kills/deaths for it to stick.",
                "GameMode":"Multiplayer",
-			   "Toggleable":false,
+               "Toggleable":false,
                "Offsets":[
                   {
                      "Address":"33530055",
@@ -300,7 +300,7 @@
                "Category":"In-Game Mods",
                "Description":"Show red boxes over users.",
                "GameMode":"Multiplayer",
-			   "Toggleable":true,
+               "Toggleable":true,
                "Offsets":[
                   {
                      "Address":"21897747",
@@ -316,7 +316,7 @@
                "Category":"In-Game Mods",
                "Description":"Give yourself infinite health.",
                "GameMode":"Multiplayer",
-			   "Toggleable":true,
+               "Toggleable":true,
                "Offsets":[
                   {
                      "Address":"21996634",
@@ -332,7 +332,7 @@
                "Category":"In-Game Mods",
                "Description":"Kill yourself.",
                "GameMode":"Multiplayer",
-			   "Toggleable":false,
+               "Toggleable":false,
                "Offsets":[
                   {
                      "Address":"21897760",
@@ -348,7 +348,7 @@
                "Category":"In-Game Mods",
                "Description":"Give yourself no recoil.",
                "GameMode":"Multiplayer",
-			   "Toggleable":true,
+               "Toggleable":true,
                "Offsets":[
                   {
                      "Address":"21898430",
@@ -364,7 +364,7 @@
                "Category":"In-Game Mods",
                "Description":"Force 18 players in the game.",
                "GameMode":"Multiplayer",
-			   "Toggleable":true,
+               "Toggleable":true,
                "Offsets":[
                   {
                      "Address":"30027937",
