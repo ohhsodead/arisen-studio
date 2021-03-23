@@ -12,10 +12,10 @@
                "Category":"Lobby Mods",
                "Description":"Set your account display name. This doesn't stick.",
                "GameType":"Multiplayer",
+               "Toggleable":false,
                "Offsets":[
                   {
                      "Address":"33157404",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"",
@@ -28,10 +28,10 @@
                "Category":"Account Stats",
                "Description":"Set your account prestige level. Play a game and get a couple of kills/deaths for it to stick.",
                "GameType":"Multiplayer",
+               "Toggleable":false,
                "Offsets":[
                   {
                      "Address":"33528476",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"",
@@ -44,10 +44,10 @@
                "Category":"Account Stats",
                "Description":"Set your account to level 70. Play a full game and get a couple of kills/deaths for it to stick.",
                "GameType":"Multiplayer",
+               "Toggleable":false,
                "Offsets":[
                   {
                      "Address":"33528468",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"20642600",
@@ -60,6 +60,7 @@
                "Category":"Account Stats",
                "Description":"Set your account score. Play a full game and get a couple of kills/deaths for it to stick.",
                "GameType":"Multiplayer",
+               "Toggleable":false,
                "Offsets":[
                   {
                      "Address":"33528484",
@@ -76,10 +77,10 @@
                "Category":"Account Stats",
                "Description":"Set your account kills. Play a full game and get a couple of kills/deaths for it to stick.",
                "GameType":"Multiplayer",
+               "Toggleable":false,
                "Offsets":[
                   {
                      "Address":"33528488",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"",
@@ -92,10 +93,10 @@
                "Category":"Account Stats",
                "Description":"Set your account deaths. Play a full game and get a couple of kills/deaths for it to stick.",
                "GameType":"Multiplayer",
+               "Toggleable":false,
                "Offsets":[
                   {
                      "Address":"33528496",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"",
@@ -108,10 +109,106 @@
                "Category":"Account Stats",
                "Description":"Set your account assists. Play a full game and get a couple of kills/deaths for it to stick.",
                "GameType":"Multiplayer",
+               "Toggleable":false,
                "Offsets":[
                   {
                      "Address":"33528504",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Headshots",
+               "Category":"Account Stats",
+               "Description":"Set your account headshots. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameType":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528508",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Wins",
+               "Category":"Account Stats",
+               "Description":"Set your account wins. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameType":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528540",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Losses",
+               "Category":"Account Stats",
+               "Description":"Set your account losses. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameType":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528544",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Ties",
+               "Category":"Account Stats",
+               "Description":"Set your account ties. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameType":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528548",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Win Streak",
+               "Category":"Account Stats",
+               "Description":"Set your account win streak. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameType":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528552",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Kill Streak",
+               "Category":"Account Stats",
+               "Description":"Set your account kill streak. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameType":"Multiplayer",
                      "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528492",
                      "Enable":"",
                      "Disable":"",
                      "Value":"",
@@ -124,10 +221,10 @@
                "Category":"Account Stats",
                "Description":"Unlock all challenges. Play a full game and get a couple of kills/deaths for it to stick.",
                "GameType":"Multiplayer",
+			   "Toggleable":false,
                "Offsets":[
                   {
                      "Address":"33530055",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"0A0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010909020202020202090902020202020209090202020202020909020202020202090902020202020209090202020202090902020202020209090202020202020909020202020202090902020202020209090202020209090202020209090202020209090202020202090902020202020909020202020209090202999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999904020404040204040202030303020305050505050202000000000000000000000000000000000000000000000000000000000000000009000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000E80300000F400000140000003C0000000F00000014000000280000000A000000E80300000F400000140000003C0000000F00000014000000280000000A000000E80300000F400000140000003C0000000F00000014000000280000000A000000E80300000F400000140000003C0000000F00000014000000280000000A000000E8030000F4300000140000003C0000000F00000014000000280000000A000000E80300000F4000003C000000",
@@ -135,7 +232,6 @@
                   },
                   {
                      "Address":"33529415",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"16777216",
@@ -143,7 +239,6 @@
                   },
                   {
                      "Address":"33529479",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"16777216",
@@ -151,7 +246,6 @@
                   },
                   {
                      "Address":"33529543",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"16777216",
@@ -159,7 +253,6 @@
                   },
                   {
                      "Address":"33529607",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"16777216",
@@ -167,7 +260,6 @@
                   },
                   {
                      "Address":"33529671",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"16777216",
@@ -175,7 +267,6 @@
                   },
                   {
                      "Address":"33529735",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"16777216",
@@ -183,7 +274,6 @@
                   },
                   {
                      "Address":"33529799",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"16777216",
@@ -191,7 +281,6 @@
                   },
                   {
                      "Address":"33529863",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"16777216",
@@ -199,7 +288,6 @@
                   },
                   {
                      "Address":"33529927",
-                     "Toggleable":false,
                      "Enable":"",
                      "Disable":"",
                      "Value":"16777216",
@@ -212,10 +300,10 @@
                "Category":"In-Game Mods",
                "Description":"Show red boxes over users.",
                "GameType":"Multiplayer",
+			   "Toggleable":true,
                "Offsets":[
                   {
                      "Address":"21897747",
-                     "Toggleable":true,
                      "Enable":"55",
                      "Disable":"00",
                      "Value":"",
@@ -228,12 +316,60 @@
                "Category":"In-Game Mods",
                "Description":"Give yourself infinite health.",
                "GameType":"Multiplayer",
+			   "Toggleable":true,
                "Offsets":[
                   {
                      "Address":"21996634",
-                     "Toggleable":true,
                      "Enable":"FFFF",
                      "Disable":"0064",
+                     "Value":"",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"Suicide",
+               "Category":"In-Game Mods",
+               "Description":"Kill yourself.",
+               "GameType":"Multiplayer",
+			   "Toggleable":true,
+               "Offsets":[
+                  {
+                     "Address":"21897760",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"3305111552",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"No Recoil",
+               "Category":"In-Game Mods",
+               "Description":"Give yourself no recoil.",
+               "GameType":"Multiplayer",
+			   "Toggleable":true,
+               "Offsets":[
+                  {
+                     "Address":"21898430",
+                     "Enable":"04",
+                     "Disable":"0000",
+                     "Value":"",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"Force 18 Players",
+               "Category":"In-Game Mods",
+               "Description":"Force 18 players in the game.",
+               "GameType":"Multiplayer",
+			   "Toggleable":true,
+               "Offsets":[
+                  {
+                     "Address":"30027937",
+                     "Enable":"38",
+                     "Disable":"32",
                      "Value":"",
                      "Type":"byte"
                   }
