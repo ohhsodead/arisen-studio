@@ -438,7 +438,7 @@ namespace ModioX.Forms.Tools
         private void ButtonEnable_Click(object sender, EventArgs e)
         {
             string name = GridViewModsOffsets.GetRowCellValue(GridViewModsOffsets.FocusedRowHandle, GridViewModsOffsets.Columns[2]).ToString();
-            List<Offset> offsets = ModsOffsets.GetOffsetsByModName(ConsoleType.ToString(), SelectedGameId, SelectedGameMode, name);
+            List<Offset> offsets = ModsOffsets.GetOffsetsByModName(ConsoleType.ToString(), SelectedGameId, name, SelectedGameMode);
 
             if (offsets == null)
             {
@@ -467,7 +467,7 @@ namespace ModioX.Forms.Tools
         private void ButtonDisable_Click(object sender, EventArgs e)
         {
             string name = GridViewModsOffsets.GetRowCellValue(GridViewModsOffsets.FocusedRowHandle, GridViewModsOffsets.Columns[2]).ToString();
-            List<Offset> offsets = ModsOffsets.GetOffsetsByModName(ConsoleType.ToString(), SelectedGameId, SelectedGameMode, name);
+            List<Offset> offsets = ModsOffsets.GetOffsetsByModName(ConsoleType.ToString(), SelectedGameId, name, SelectedGameMode);
 
             if (offsets == null)
             {
