@@ -348,7 +348,7 @@
                "Category":"Host Mods",
                "Description":"Enable force host.",
                "GameMode":"Multiplayer",
-               "Toggleable":false,
+               "Toggleable":true,
                "Offsets":[
 				  {
                      "Address":"624609280",

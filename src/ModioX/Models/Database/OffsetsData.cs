@@ -47,37 +47,6 @@ namespace ModioX.Models.Database
         }
 
         /// <summary>
-        /// Gets all of the mods for the specified Console Type, Game Id and Game Type
-        /// and type
-        /// </summary>
-        /// <param name="consoleType"> </param>
-        /// <param name="gameId"> </param>
-        /// <param name="gameType"> </param>
-        /// <param name="name"> </param>
-        /// <returns> </returns>
-        public Memory GetMemoryByName(string consoleType, string gameId, string gameMode, string name)
-        {
-            //return Mods.Where(
-            //    x => x.ConsoleType.EqualsIgnoreCase(consoleType)
-            //    && x.GameId.EqualsIgnoreCase(gameId)
-            //    && x.Memory.All(y => y.GameType.ContainsIgnoreCase(gameType))
-            //    && x.Memory.All(y => y.Name.ContainsIgnoreCase(name))).ToList();
-            //&& x.Memory.All(y => y.Category.ContainsIgnoreCase(category))).ToList();
-
-            foreach (var memory in
-            from mod in Mods
-            where mod.ConsoleType.EqualsIgnoreCase(consoleType) && mod.GameId.EqualsIgnoreCase(gameId)
-            from memory in mod.Memory
-            where memory.Name.EqualsIgnoreCase(name) && memory.GameMode.EqualsIgnoreCase(gameMode)
-            select memory)
-            {
-                return memory;
-            }
-
-            return null;
-        }
-
-        /// <summary>
         /// Get the <see cref="ModsOffsets" /> matching the specified <see cref="ModsOffsets.Id" />.
         /// </summary>
         /// <param name="id"> <see cref="ModsOffsets.Id" /> </param>
