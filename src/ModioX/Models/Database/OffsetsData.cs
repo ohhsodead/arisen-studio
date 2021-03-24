@@ -120,16 +120,16 @@ namespace ModioX.Models.Database
         /// </summary>
         /// <param name="consoleType"> </param>
         /// <param name="gameId"> </param>
-        /// <param name="gameId"> </param>
+        /// <param name="modName"> </param>
         /// <param name="gameType"> </param>
         /// <returns> </returns>
         public List<Offset> GetOffsetsByModName(string consoleType, string gameId, string modName, string gameMode)
         {
             foreach (Memory memory in from ModsOffsets mod in Mods
-                                   where mod.ConsoleType.EqualsIgnoreCase(consoleType) && mod.GameId.Equals(gameId)
-                                   from Memory memory in mod.Memory
-                                   where memory.Name.EqualsIgnoreCase(modName) && memory.GameMode.ContainsIgnoreCase(gameMode)
-                                   select memory)
+                                      where mod.ConsoleType.EqualsIgnoreCase(consoleType) && mod.GameId.Equals(gameId)
+                                      from Memory memory in mod.Memory
+                                      where memory.Name.EqualsIgnoreCase(modName) && memory.GameMode.ContainsIgnoreCase(gameMode)
+                                      select memory)
             {
                 return memory.Offsets;
             }
