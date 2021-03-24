@@ -20,7 +20,8 @@ namespace ModioX.Database
             {
                 CategoriesData = await GetCategoriesAsync(),
                 ModsPS3 = await GetModsPS3Async(),
-                ModsXBOX = await GetModsXBOXAsync()
+                ModsXBOX = await GetModsXBOXAsync(),
+                ModsOffsets = await GetModsOffsetsAsync(),
             };
 
             data.CategoriesData.Categories = data.CategoriesData.Categories.OrderBy(o => o.Title).ToList();
@@ -41,6 +42,11 @@ namespace ModioX.Database
         /// Contains the mods from the Xbox database.
         /// </summary>
         public ModsData ModsXBOX { get; private set; }
+
+        /// <summary>
+        /// Contains the offsets from the database.
+        /// </summary>
+        public OffsetsData ModsOffsets { get; private set; }
 
         /// <summary>
         /// Download and return the categories data.
@@ -82,6 +88,20 @@ namespace ModioX.Database
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
             return new JsonSerializer().Deserialize<ModsData>(jsonReader);
+        }
+
+        /// <summary>
+        /// Download and return the mods data.
+        /// </summary>
+        /// <returns> ModsData </returns>
+        private static async Task<OffsetsData> GetModsOffsetsAsync()
+        {
+            using HttpClient client = new();
+            using Stream stream = await client.GetStreamAsync(Urls.ModsDataOffsets).ConfigureAwait(true);
+            using StreamReader streamReader = new(stream);
+            using JsonReader jsonReader = new JsonTextReader(streamReader);
+
+            return new JsonSerializer().Deserialize<OffsetsData>(jsonReader);
         }
     }
 }

@@ -76,7 +76,7 @@ namespace ModioX.Database
                 return null;
             }
 
-            return DialogExtensions.ShowListInputDialog(MainWindow.Window, "Game Regions", Regions.ToList().ConvertAll(x => new ListItem() { Value = x, Name = x }));
+            return DialogExtensions.ShowListViewDialog(MainWindow.Window, "Game Regions", Regions.ToList().ConvertAll(x => new ListItem() { Value = x, Name = x }));
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ModioX.Forms.Dialogs;
 using ModioX.Forms.Settings;
+using ModioX.Forms.Tools;
 using ModioX.Forms.Tools.PS3_Tools;
 using ModioX.Forms.Tools.XBOX_Tools;
 using ModioX.Forms.Windows;
@@ -45,7 +46,7 @@ namespace ModioX.Extensions
             dataViewDialog.ShowDialog(owner);
         }
 
-        public static string ShowListInputDialog(Form owner, string title, List<ListItem> items)
+        public static string ShowListViewDialog(Form owner, string title, List<ListItem> items)
         {
             using ListViewDialog listViewDialog = new()
             {
@@ -57,7 +58,7 @@ namespace ModioX.Extensions
             return listViewDialog.SelectedItem ?? "";
         }
 
-        public static string ShowTextInputDialog(Form owner, string title, string labelText, string inputText)
+        public static string ShowTextInputDialog(Form owner, string title, string labelText, string inputText = "")
         {
             using InputTextDialog inputTextDialog = new()
             {
@@ -67,6 +68,18 @@ namespace ModioX.Extensions
             };
 
             return inputTextDialog.ShowDialog(owner) == DialogResult.OK ? inputTextDialog.TextBoxName.Text.Trim() : null;
+        }
+
+        public static string ShowNumberInputDialog(Form owner, string title, string labelText, string inputText = "")
+        {
+            using InputNumberDialog inputNumberDialog = new()
+            {
+                Text = title,
+                LabelName = { Text = labelText },
+                SpinEditValue = { Text = inputText },
+            };
+
+            return inputNumberDialog.ShowDialog(owner) == DialogResult.OK ? inputNumberDialog.SpinEditValue.Text.Trim() : null;
         }
 
         public static ConsoleProfile ShowConnectionDialog(Form owner)
@@ -148,6 +161,12 @@ namespace ModioX.Extensions
         }
 
         #endregion Xbox 360 Tools
+
+        public static void ShowModsOffsetsDialog(Form owner)
+        {
+            using OffsetsPoker offsetsPoker = new();
+            offsetsPoker.ShowDialog(owner);
+        }
 
         #region Settings
 

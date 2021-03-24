@@ -336,7 +336,7 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                string newName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder name: ", "");
+                string newName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder name: ");
 
                 if (newName != null)
                 {
@@ -458,7 +458,7 @@ namespace ModioX.Forms.Windows
                 string oldFileName = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Name").ToString();
                 string oldFilePath = TextBoxLocalPath.Text + @"\" + oldFileName;
 
-                string newFileName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name:", oldFileName));
+                string newFileName = DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name:", oldFileName).ReplaceInvalidChars();
 
                 string newFilePath = TextBoxLocalPath.Text + @"\" + newFileName;
 
@@ -486,7 +486,7 @@ namespace ModioX.Forms.Windows
                 string oldFolderName = GridViewLocalFiles.GetRowCellValue(GridViewLocalFiles.FocusedRowHandle, "Name").ToString();
                 string oldFolderPath = TextBoxLocalPath.Text + @"\" + oldFolderName;
 
-                string newFolderName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name:", oldFolderName));
+                string newFolderName = DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name:", oldFolderName).ReplaceInvalidChars();
 
                 string newFolderPath = TextBoxLocalPath.Text + @"\" + newFolderName;
 
@@ -932,7 +932,7 @@ namespace ModioX.Forms.Windows
                 string oldFileName = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
                 string oldFilePath = TextBoxConsolePath.Text + oldFileName;
 
-                string newFileName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name:", oldFileName));
+                string newFileName = DialogExtensions.ShowTextInputDialog(this, "Rename File", "File Name:", oldFileName).ReplaceInvalidChars();
 
                 string newConsoleFilePath = TextBoxConsolePath.Text + newFileName;
 
@@ -973,7 +973,7 @@ namespace ModioX.Forms.Windows
                 string oldFolderName = GridViewConsoleFiles.GetRowCellValue(GridViewConsoleFiles.FocusedRowHandle, "Name").ToString();
                 string oldFileName = TextBoxConsolePath.Text + oldFolderName;
 
-                string newFolderName = StringExtensions.ReplaceInvalidChars(DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name:", oldFolderName));
+                string newFolderName = DialogExtensions.ShowTextInputDialog(this, "Rename Folder", "Folder Name:", oldFolderName).ReplaceInvalidChars();
 
                 string newFolderPath = TextBoxConsolePath.Text + newFolderName;
 
@@ -1002,7 +1002,7 @@ namespace ModioX.Forms.Windows
         {
             try
             {
-                string folderName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder Name: ", "");
+                string folderName = DialogExtensions.ShowTextInputDialog(this, "Add New Folder", "Folder Name: ");
 
                 if (folderName != null)
                 {

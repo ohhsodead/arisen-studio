@@ -200,7 +200,7 @@ namespace ModioX.Database
         }
 
         /// <summary>
-        /// Get the download url specified by the user if there are multiple types
+        /// Get the download URL specified by the user if there are multiple types.
         /// </summary>
         /// <returns> Download Archive URL </returns>
         public DownloadFiles GetDownloadFiles()
@@ -208,7 +208,7 @@ namespace ModioX.Database
             if (DownloadFiles.Count <= 1) return DownloadFiles.First();
 
             List<string> downloadNames = DownloadFiles.Select(x => x.Name).ToList();
-            string downloadName = DialogExtensions.ShowListInputDialog(MainWindow.Window, "Install Downloads", downloadNames.ConvertAll(x => new ListItem() { Value = x, Name = x }));
+            string downloadName = DialogExtensions.ShowListViewDialog(MainWindow.Window, "Install Downloads", downloadNames.ConvertAll(x => new ListItem() { Value = x, Name = x }));
 
             return string.IsNullOrEmpty(downloadName) ? null : DownloadFiles.First(x => x.Name.Equals(downloadName));
         }

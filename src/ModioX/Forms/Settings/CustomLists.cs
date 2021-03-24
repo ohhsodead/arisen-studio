@@ -74,7 +74,7 @@ namespace ModioX.Forms.Settings
 
         private void ButtonCreateNewList_Click(object sender, EventArgs e)
         {
-            string listName = DialogExtensions.ShowTextInputDialog(this, "Create New List", "List Name:", "");
+            string listName = DialogExtensions.ShowTextInputDialog(this, "Create New List", "List Name:");
 
             if (!string.IsNullOrWhiteSpace(listName))
             {

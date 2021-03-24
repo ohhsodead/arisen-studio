@@ -33,6 +33,8 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 return;
             }
 
+            SetStatus("Searching for game updates...");
+
             string gameTitle = HttpExtensions.GetGameTitleFromTitleID(TextBoxTitleID.Text);
             Titlepatch gameUpdates = HttpExtensions.GetGameUpdatesFromTitleID(TextBoxTitleID.Text);
 
@@ -106,12 +108,12 @@ namespace ModioX.Forms.Tools.PS3_Tools
                 string fileName = Path.GetFileName(updateUrl);
                 string filePath = KnownFolders.GetPath(KnownFolder.Downloads) + "/" + fileName;
 
-                UpdateStatus("Downloading file: " + fileName);
+                SetStatus("Downloading file: " + fileName);
                 HttpExtensions.DownloadFile(updateUrl, filePath);
 
-                UpdateStatus("Installing file: " + fileName);
+                SetStatus("Installing file: " + fileName);
                 FtpExtensions.UploadFile(filePath, "/dev_hdd0/packages/" + fileName);
-                UpdateStatus("Successfully installed package file to your Packages folder.");
+                SetStatus("Successfully installed package file to your Packages folder.");
                 XtraMessageBox.Show("Successfully installed package file to your Packages folder.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -128,9 +130,9 @@ namespace ModioX.Forms.Tools.PS3_Tools
 
             if (folderPath != null)
             {
-                UpdateStatus("Downloading package: " + fileName);
+                SetStatus("Downloading package: " + fileName);
                 HttpExtensions.DownloadFile(updateUrl, folderPath + "/" + fileName);
-                UpdateStatus("Successfully downloaded package file to the specified folder.");
+                SetStatus("Successfully downloaded package file to the specified folder.");
                 XtraMessageBox.Show("Successfully downloaded package file to the specified folder.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -149,9 +151,9 @@ namespace ModioX.Forms.Tools.PS3_Tools
             XtraMessageBox.Show("Update SHA1 has been copied to clipboard.", "Copied", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void UpdateStatus(string text)
+        private void SetStatus(string text)
         {
-            ToolStripLabelStatus.Text = text;
+            LabelStatus.Caption = text;
             Refresh();
         }
     }

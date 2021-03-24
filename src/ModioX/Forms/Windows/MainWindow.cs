@@ -18,7 +18,6 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraNavBar;
 using DevExpress.XtraSplashScreen;
 using FluentFTP;
-using JRPC_Client;
 using ModioX.Constants;
 using ModioX.Database;
 using ModioX.Extensions;
@@ -28,6 +27,7 @@ using ModioX.Models.Resources;
 using ModioX.Net;
 using ModioX.Templates;
 using Newtonsoft.Json;
+using PS3Lib;
 using XDevkit;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
@@ -399,7 +399,7 @@ namespace ModioX.Forms.Windows
                 return;
             }
 
-            string selectedGame = DialogExtensions.ShowListInputDialog(this, "Games List (BD)", games);
+            string selectedGame = DialogExtensions.ShowListViewDialog(this, "Games List (BD)", games);
 
             if (selectedGame.IsNullOrWhiteSpace())
             {
@@ -427,7 +427,7 @@ namespace ModioX.Forms.Windows
                 return;
             }
 
-            string selectedGame = DialogExtensions.ShowListInputDialog(this, "Games List (ISO)", games);
+            string selectedGame = DialogExtensions.ShowListViewDialog(this, "Games List (ISO)", games);
 
             if (selectedGame.IsNullOrWhiteSpace())
             {
@@ -455,7 +455,7 @@ namespace ModioX.Forms.Windows
                 return;
             }
 
-            string selectedGame = DialogExtensions.ShowListInputDialog(this, "Games List (PSN)", games);
+            string selectedGame = DialogExtensions.ShowListViewDialog(this, "Games List (PSN)", games);
 
             if (selectedGame.IsNullOrWhiteSpace())
             {
@@ -519,7 +519,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonPS3NotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
         {
-            string notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
+            string notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:");
 
             if (!notifyMessage.IsNullOrWhiteSpace())
             {
@@ -549,7 +549,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonXboxXBDMShutdown_ItemClick(object sender, ItemClickEventArgs e)
         {
-            XboxConsole.ShutDownConsole();
+            XboxConsole.Shutdown();
         }
 
         private void ButtonXboxXBDMRestart_ItemClick(object sender, ItemClickEventArgs e)
@@ -580,23 +580,23 @@ namespace ModioX.Forms.Windows
             {
                 XboxConsole.ScreenShot(filePath);
                 SetStatus($"Screenshot file saved to path: {filePath}");
-                XtraMessageBox.Show($"Screenshot file saved to path: {filePath}", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show($"Screenshot file saved to path:\n{filePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void ButtonXboxShowSystemInfo_ItemClick(object sender, ItemClickEventArgs e)
         {
             XtraMessageBox.Show(
-                $"CPU: {XboxConsole.GetTemperature(JRPC.TemperatureType.CPU)}°C\n" +
-                $"EDRAM: {XboxConsole.GetTemperature(JRPC.TemperatureType.EDRAM)}°C\n" +
-                $"GPU: {XboxConsole.GetTemperature(JRPC.TemperatureType.GPU)}°C\n" +
-                $"Motherboard: {XboxConsole.GetTemperature(JRPC.TemperatureType.MotherBoard)}°C",
+                $"CPU: {XboxConsole.GetTemperature(TemperatureFlag.CPU)}°C\n" +
+                $"EDRAM: {XboxConsole.GetTemperature(TemperatureFlag.EDRAM)}°C\n" +
+                $"GPU: {XboxConsole.GetTemperature(TemperatureFlag.GPU)}°C\n" +
+                $"Motherboard: {XboxConsole.GetTemperature(TemperatureFlag.MotherBoard)}°C",
                 "System Temperature", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ButtonXboxXNotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
         {
-            string notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:", string.Empty);
+            string notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:");
             XboxConsole.XNotify(notifyMessage);
         }
 
@@ -988,7 +988,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonModAddToList_ItemClick(object sender, EventArgs e)
         {
-            string listName = DialogExtensions.ShowListInputDialog(this, "Your Lists", Settings.CustomLists.ConvertAll(x => new ListItem() { Value = x.Name, Name = x.Name }));
+            string listName = DialogExtensions.ShowListViewDialog(this, "Your Lists", Settings.CustomLists.ConvertAll(x => new ListItem() { Value = x.Name, Name = x.Name }));
 
             if (!string.IsNullOrWhiteSpace(listName))
             {
@@ -1000,7 +1000,7 @@ namespace ModioX.Forms.Windows
 
         private void ButtonModRemoveFromList_ItemClick(object sender, EventArgs e)
         {
-            string listName = DialogExtensions.ShowListInputDialog(this, "Your Lists", Settings.CustomLists.ConvertAll(x => new ListItem() { Value = x.Name, Name = x.Name }));
+            string listName = DialogExtensions.ShowListViewDialog(this, "Your Lists", Settings.CustomLists.ConvertAll(x => new ListItem() { Value = x.Name, Name = x.Name }));
 
             if (!string.IsNullOrWhiteSpace(listName))
             {
@@ -2606,6 +2606,11 @@ namespace ModioX.Forms.Windows
                 SetStatus("Unable to save settings file. Error: " + ex.Message, ex);
                 XtraMessageBox.Show(this, "There is a problem saving the settings file. A new one will be created on the next startup.\n\nError: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ButtonModsOffsets_Click(object sender, EventArgs e)
+        {
+            DialogExtensions.ShowModsOffsetsDialog(this);
         }
     }
 }

@@ -307,7 +307,7 @@ namespace ModioX.Extensions
 
             if (userIds.Count > 0)
             {
-                string userId = DialogExtensions.ShowListInputDialog(owner, "User Profile IDs", userNames);
+                string userId = DialogExtensions.ShowListViewDialog(owner, "User Profile IDs", userNames);
 
                 if (userId != null)
                 {

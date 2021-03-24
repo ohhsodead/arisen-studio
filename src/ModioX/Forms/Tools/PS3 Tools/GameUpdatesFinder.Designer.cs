@@ -53,10 +53,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ButtonCopySHA1ToClipboard = new DevExpress.XtraEditors.SimpleButton();
             this.ContextMenuDownloadToComputer = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuInstallToConsole = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ContextMenuCopyURLToClipboard = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripLabelHeaderStatus = new System.Windows.Forms.ToolStripLabel();
-            this.ToolStripLabelStatus = new System.Windows.Forms.ToolStripLabel();
             this.ColumnVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BarManagerStatus = new DevExpress.XtraBars.BarManager(this.components);
             this.BarStatus = new DevExpress.XtraBars.Bar();
@@ -192,7 +189,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ButtonInstallToConsole.Location = new System.Drawing.Point(8, 8);
             this.ButtonInstallToConsole.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
             this.ButtonInstallToConsole.Name = "ButtonInstallToConsole";
-            this.ButtonInstallToConsole.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonInstallToConsole.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.ButtonInstallToConsole.Size = new System.Drawing.Size(121, 23);
             this.ButtonInstallToConsole.TabIndex = 6;
             this.ButtonInstallToConsole.Text = "Install to Console";
@@ -203,7 +200,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ButtonDownloadToComputer.Enabled = false;
             this.ButtonDownloadToComputer.Location = new System.Drawing.Point(135, 8);
             this.ButtonDownloadToComputer.Name = "ButtonDownloadToComputer";
-            this.ButtonDownloadToComputer.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDownloadToComputer.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.ButtonDownloadToComputer.Size = new System.Drawing.Size(108, 23);
             this.ButtonDownloadToComputer.TabIndex = 7;
             this.ButtonDownloadToComputer.Text = "Download File";
@@ -214,7 +211,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ButtonCopyURLToClipboard.Enabled = false;
             this.ButtonCopyURLToClipboard.Location = new System.Drawing.Point(249, 8);
             this.ButtonCopyURLToClipboard.Name = "ButtonCopyURLToClipboard";
-            this.ButtonCopyURLToClipboard.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonCopyURLToClipboard.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.ButtonCopyURLToClipboard.Size = new System.Drawing.Size(149, 23);
             this.ButtonCopyURLToClipboard.TabIndex = 8;
             this.ButtonCopyURLToClipboard.Text = "Copy URL to Clipboard";
@@ -225,7 +222,7 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ButtonCopySHA1ToClipboard.Enabled = false;
             this.ButtonCopySHA1ToClipboard.Location = new System.Drawing.Point(404, 8);
             this.ButtonCopySHA1ToClipboard.Name = "ButtonCopySHA1ToClipboard";
-            this.ButtonCopySHA1ToClipboard.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonCopySHA1ToClipboard.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.True;
             this.ButtonCopySHA1ToClipboard.Size = new System.Drawing.Size(157, 23);
             this.ButtonCopySHA1ToClipboard.TabIndex = 9;
             this.ButtonCopySHA1ToClipboard.Text = "Copy SHA1 to Clipboard";
@@ -251,14 +248,6 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ContextMenuInstallToConsole.Size = new System.Drawing.Size(210, 24);
             this.ContextMenuInstallToConsole.Text = "Install to Console...";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.toolStripSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(207, 6);
-            // 
             // ContextMenuCopyURLToClipboard
             // 
             this.ContextMenuCopyURLToClipboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
@@ -268,22 +257,6 @@ namespace ModioX.Forms.Tools.PS3_Tools
             this.ContextMenuCopyURLToClipboard.Name = "ContextMenuCopyURLToClipboard";
             this.ContextMenuCopyURLToClipboard.Size = new System.Drawing.Size(210, 24);
             this.ContextMenuCopyURLToClipboard.Text = "Copy URL to Clipboard";
-            // 
-            // ToolStripLabelHeaderStatus
-            // 
-            this.ToolStripLabelHeaderStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLabelHeaderStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLabelHeaderStatus.Name = "ToolStripLabelHeaderStatus";
-            this.ToolStripLabelHeaderStatus.Size = new System.Drawing.Size(48, 20);
-            this.ToolStripLabelHeaderStatus.Text = "Status  :";
-            // 
-            // ToolStripLabelStatus
-            // 
-            this.ToolStripLabelStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ToolStripLabelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripLabelStatus.Name = "ToolStripLabelStatus";
-            this.ToolStripLabelStatus.Size = new System.Drawing.Size(26, 20);
-            this.ToolStripLabelStatus.Text = "Idle";
             // 
             // ColumnVersion
             // 
@@ -427,11 +400,8 @@ namespace ModioX.Forms.Tools.PS3_Tools
         private TextEdit TextBoxTitleID;
         private LabelControl LabelSearch;
         private SimpleButton ButtonSearch;
-        private ToolStripLabel ToolStripLabelHeaderStatus;
-        private ToolStripLabel ToolStripLabelStatus;
         private ToolStripMenuItem ContextMenuDownloadToComputer;
         private ToolStripMenuItem ContextMenuInstallToConsole;
-        private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem ContextMenuCopyURLToClipboard;
         private DataGridViewTextBoxColumn ColumnVersion;
         private StackPanel stackPanel2;

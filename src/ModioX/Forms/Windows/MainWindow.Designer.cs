@@ -53,13 +53,13 @@ namespace ModioX.Forms.Windows
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.MainMenu = new DevExpress.XtraBars.BarManager(this.components);
             this.BarMenu = new DevExpress.XtraBars.Bar();
-            this.MenuBarItemConnect = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuItemConnect = new DevExpress.XtraBars.BarButtonItem();
             this.ConnectMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ButtonPS3 = new DevExpress.XtraBars.BarSubItem();
             this.ButtonConnectToPS3 = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXbox360 = new DevExpress.XtraBars.BarSubItem();
             this.ButtonConnectToXBOX = new DevExpress.XtraBars.BarButtonItem();
-            this.MenuBarItemTools = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuItemTools = new DevExpress.XtraBars.BarButtonItem();
             this.ToolsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ButtonPS3GameBackupFiles = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonPS3GameUpdateFinder = new DevExpress.XtraBars.BarButtonItem();
@@ -95,13 +95,13 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxShowSystemTemperatures = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxNotifyMessage = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXboxTakeScreenshot = new DevExpress.XtraBars.BarButtonItem();
-            this.MenuBarItemOptions = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuItemOptions = new DevExpress.XtraBars.BarButtonItem();
             this.OptionsMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ButtonAddNewConsole = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonEditGameRegions = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonEditLists = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonSettings = new DevExpress.XtraBars.BarButtonItem();
-            this.MenuBarItemHelp = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuItemHelp = new DevExpress.XtraBars.BarButtonItem();
             this.HelpMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ButtonDiscordServer = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonOfficialSource = new DevExpress.XtraBars.BarButtonItem();
@@ -111,7 +111,7 @@ namespace ModioX.Forms.Windows
             this.ButtonWhatsNew = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonSkinChanger = new DevExpress.XtraBars.SkinBarSubItem();
             this.ButtonAbout = new DevExpress.XtraBars.BarButtonItem();
-            this.MenuBarItemRequestMods = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuItemRequestMods = new DevExpress.XtraBars.BarButtonItem();
             this.BarStatus = new DevExpress.XtraBars.Bar();
             this.LabelHeaderConnectedConsole = new DevExpress.XtraBars.BarStaticItem();
             this.LabelConsoleConnected = new DevExpress.XtraBars.BarStaticItem();
@@ -198,6 +198,7 @@ namespace ModioX.Forms.Windows
             this.ColumnModsInstalledDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModsInstalledUninstall = new System.Windows.Forms.DataGridViewImageColumn();
             this.GroupModsLibrary = new DevExpress.XtraEditors.GroupControl();
+            this.ButtonModsOffsets = new DevExpress.XtraEditors.SimpleButton();
             this.RadioGroupDatabaseType = new DevExpress.XtraEditors.RadioGroup();
             this.ProgressMods = new DevExpress.XtraWaitForm.ProgressPanel();
             this.GridControlMods = new DevExpress.XtraGrid.GridControl();
@@ -288,10 +289,10 @@ namespace ModioX.Forms.Windows
             this.MainMenu.DockControls.Add(this.barDockControlRight);
             this.MainMenu.Form = this;
             this.MainMenu.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.MenuBarItemConnect,
-            this.MenuBarItemTools,
-            this.MenuBarItemOptions,
-            this.MenuBarItemHelp,
+            this.MenuItemConnect,
+            this.MenuItemTools,
+            this.MenuItemOptions,
+            this.MenuItemHelp,
             this.ButtonPS3GameBackupFiles,
             this.ButtonPS3GameUpdateFinder,
             this.ButtonPS3FileManager,
@@ -362,7 +363,7 @@ namespace ModioX.Forms.Windows
             this.ButtonPS3MountPSN,
             this.ButtonSkinChanger,
             this.ButtonPS3Restart,
-            this.MenuBarItemRequestMods});
+            this.MenuItemRequestMods});
             this.MainMenu.MainMenu = this.BarMenu;
             this.MainMenu.MaxItemId = 123;
             this.MainMenu.OptionsLayout.AllowAddNewItems = false;
@@ -382,11 +383,11 @@ namespace ModioX.Forms.Windows
             this.BarMenu.DockRow = 0;
             this.BarMenu.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.BarMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemConnect),
-            new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemTools),
-            new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemOptions),
-            new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemHelp),
-            new DevExpress.XtraBars.LinkPersistInfo(this.MenuBarItemRequestMods)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.MenuItemConnect),
+            new DevExpress.XtraBars.LinkPersistInfo(this.MenuItemTools),
+            new DevExpress.XtraBars.LinkPersistInfo(this.MenuItemOptions),
+            new DevExpress.XtraBars.LinkPersistInfo(this.MenuItemHelp),
+            new DevExpress.XtraBars.LinkPersistInfo(this.MenuItemRequestMods)});
             this.BarMenu.OptionsBar.AllowQuickCustomization = false;
             this.BarMenu.OptionsBar.DisableCustomization = true;
             this.BarMenu.OptionsBar.DrawBorder = false;
@@ -394,14 +395,15 @@ namespace ModioX.Forms.Windows
             this.BarMenu.OptionsBar.UseWholeRow = true;
             this.BarMenu.Text = "Main menu";
             // 
-            // MenuBarItemConnect
+            // MenuItemConnect
             // 
-            this.MenuBarItemConnect.ActAsDropDown = true;
-            this.MenuBarItemConnect.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.MenuBarItemConnect.Caption = "CONNECT";
-            this.MenuBarItemConnect.DropDownControl = this.ConnectMenu;
-            this.MenuBarItemConnect.Id = 0;
-            this.MenuBarItemConnect.Name = "MenuBarItemConnect";
+            this.MenuItemConnect.ActAsDropDown = true;
+            this.MenuItemConnect.AllowDrawArrow = false;
+            this.MenuItemConnect.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.MenuItemConnect.Caption = "CONNECT";
+            this.MenuItemConnect.DropDownControl = this.ConnectMenu;
+            this.MenuItemConnect.Id = 0;
+            this.MenuItemConnect.Name = "MenuItemConnect";
             // 
             // ConnectMenu
             // 
@@ -444,14 +446,15 @@ namespace ModioX.Forms.Windows
             this.ButtonConnectToXBOX.Name = "ButtonConnectToXBOX";
             this.ButtonConnectToXBOX.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonConnectXBOX_ItemClick);
             // 
-            // MenuBarItemTools
+            // MenuItemTools
             // 
-            this.MenuBarItemTools.ActAsDropDown = true;
-            this.MenuBarItemTools.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.MenuBarItemTools.Caption = "TOOLS";
-            this.MenuBarItemTools.DropDownControl = this.ToolsMenu;
-            this.MenuBarItemTools.Id = 1;
-            this.MenuBarItemTools.Name = "MenuBarItemTools";
+            this.MenuItemTools.ActAsDropDown = true;
+            this.MenuItemTools.AllowDrawArrow = false;
+            this.MenuItemTools.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.MenuItemTools.Caption = "TOOLS";
+            this.MenuItemTools.DropDownControl = this.ToolsMenu;
+            this.MenuItemTools.Id = 1;
+            this.MenuItemTools.Name = "MenuItemTools";
             // 
             // ToolsMenu
             // 
@@ -739,14 +742,15 @@ namespace ModioX.Forms.Windows
             this.ButtonXboxTakeScreenshot.Name = "ButtonXboxTakeScreenshot";
             this.ButtonXboxTakeScreenshot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxTakeScreenshot_ItemClick);
             // 
-            // MenuBarItemOptions
+            // MenuItemOptions
             // 
-            this.MenuBarItemOptions.ActAsDropDown = true;
-            this.MenuBarItemOptions.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.MenuBarItemOptions.Caption = "OPTIONS";
-            this.MenuBarItemOptions.DropDownControl = this.OptionsMenu;
-            this.MenuBarItemOptions.Id = 3;
-            this.MenuBarItemOptions.Name = "MenuBarItemOptions";
+            this.MenuItemOptions.ActAsDropDown = true;
+            this.MenuItemOptions.AllowDrawArrow = false;
+            this.MenuItemOptions.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.MenuItemOptions.Caption = "OPTIONS";
+            this.MenuItemOptions.DropDownControl = this.OptionsMenu;
+            this.MenuItemOptions.Id = 3;
+            this.MenuItemOptions.Name = "MenuItemOptions";
             // 
             // OptionsMenu
             // 
@@ -787,14 +791,15 @@ namespace ModioX.Forms.Windows
             this.ButtonSettings.Name = "ButtonSettings";
             this.ButtonSettings.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonSettings_ItemClick);
             // 
-            // MenuBarItemHelp
+            // MenuItemHelp
             // 
-            this.MenuBarItemHelp.ActAsDropDown = true;
-            this.MenuBarItemHelp.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.MenuBarItemHelp.Caption = "HELP";
-            this.MenuBarItemHelp.DropDownControl = this.HelpMenu;
-            this.MenuBarItemHelp.Id = 4;
-            this.MenuBarItemHelp.Name = "MenuBarItemHelp";
+            this.MenuItemHelp.ActAsDropDown = true;
+            this.MenuItemHelp.AllowDrawArrow = false;
+            this.MenuItemHelp.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.MenuItemHelp.Caption = "HELP";
+            this.MenuItemHelp.DropDownControl = this.HelpMenu;
+            this.MenuItemHelp.Id = 4;
+            this.MenuItemHelp.Name = "MenuItemHelp";
             // 
             // HelpMenu
             // 
@@ -866,13 +871,14 @@ namespace ModioX.Forms.Windows
             this.ButtonAbout.Name = "ButtonAbout";
             this.ButtonAbout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonAbout_ItemClick);
             // 
-            // MenuBarItemRequestMods
+            // MenuItemRequestMods
             // 
-            this.MenuBarItemRequestMods.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.MenuBarItemRequestMods.Caption = "REQUEST MODS";
-            this.MenuBarItemRequestMods.Id = 121;
-            this.MenuBarItemRequestMods.Name = "MenuBarItemRequestMods";
-            this.MenuBarItemRequestMods.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MenuBarItemRequestMods_ItemClick);
+            this.MenuItemRequestMods.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.MenuItemRequestMods.AllowDrawArrow = false;
+            this.MenuItemRequestMods.Caption = "REQUEST MODS";
+            this.MenuItemRequestMods.Id = 121;
+            this.MenuItemRequestMods.Name = "MenuItemRequestMods";
+            this.MenuItemRequestMods.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MenuBarItemRequestMods_ItemClick);
             // 
             // BarStatus
             // 
@@ -1826,6 +1832,7 @@ namespace ModioX.Forms.Windows
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupModsLibrary.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupModsLibrary.AppearanceCaption.Options.UseFont = true;
+            this.GroupModsLibrary.Controls.Add(this.ButtonModsOffsets);
             this.GroupModsLibrary.Controls.Add(this.RadioGroupDatabaseType);
             this.GroupModsLibrary.Controls.Add(this.ProgressMods);
             this.GroupModsLibrary.Controls.Add(this.GridControlMods);
@@ -1836,6 +1843,17 @@ namespace ModioX.Forms.Windows
             this.GroupModsLibrary.Size = new System.Drawing.Size(877, 548);
             this.GroupModsLibrary.TabIndex = 0;
             this.GroupModsLibrary.Text = "MODS LIBRARY";
+            // 
+            // ButtonModsOffsets
+            // 
+            this.ButtonModsOffsets.Location = new System.Drawing.Point(634, 0);
+            this.ButtonModsOffsets.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.ButtonModsOffsets.Name = "ButtonModsOffsets";
+            this.ButtonModsOffsets.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonModsOffsets.Size = new System.Drawing.Size(98, 24);
+            this.ButtonModsOffsets.TabIndex = 1171;
+            this.ButtonModsOffsets.Text = "Offsets Poker";
+            this.ButtonModsOffsets.Click += new System.EventHandler(this.ButtonModsOffsets_Click);
             // 
             // RadioGroupDatabaseType
             // 
@@ -2360,13 +2378,13 @@ namespace ModioX.Forms.Windows
         private DataGridViewImageColumn ColumnModsInstalledUninstall;
         private BarManager MainMenu;
         private Bar BarMenu;
-        private BarButtonItem MenuBarItemConnect;
+        private BarButtonItem MenuItemConnect;
         private PopupMenu HelpMenu;
-        private BarButtonItem MenuBarItemTools;
+        private BarButtonItem MenuItemTools;
         private PopupMenu OptionsMenu;
-        private BarButtonItem MenuBarItemOptions;
+        private BarButtonItem MenuItemOptions;
         private PopupMenu ToolsMenu;
-        private BarButtonItem MenuBarItemHelp;
+        private BarButtonItem MenuItemHelp;
         private PopupMenu ConnectMenu;
         private Bar BarStatus;
         private BarDockControl barDockControlTop;
@@ -2484,8 +2502,9 @@ namespace ModioX.Forms.Windows
         private SkinBarSubItem ButtonSkinChanger;
         private LabelControl LabelModsInstalled;
         private BarButtonItem ButtonPS3Restart;
-        private BarButtonItem MenuBarItemRequestMods;
+        private BarButtonItem MenuItemRequestMods;
         private RepositoryItemRadioGroup repositoryItemRadioGroup1;
         private RadioGroup RadioGroupDatabaseType;
+        private SimpleButton ButtonModsOffsets;
     }
 }

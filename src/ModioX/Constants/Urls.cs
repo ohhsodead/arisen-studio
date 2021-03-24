@@ -38,6 +38,11 @@
         internal const string ModsDataXBOX = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/.database/mods-xbox.json";
 
         /// <summary>
+        /// Direct download for the mods offsets database file hosted on GitHub.
+        /// </summary>
+        internal const string ModsDataOffsets = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/.database/mods-offsets.json";
+
+        /// <summary>
         /// Direct link to the project Discord server.
         /// </summary>
         internal const string DiscordServer = "https://discord.gg/6TBtu8b";

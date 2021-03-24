@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace ModioX.Extensions
 {
@@ -25,6 +27,43 @@ namespace ModioX.Extensions
             }
 
             return dataTable;
+        }
+
+        /// <summary>
+        /// Get a byte array from a hex string.
+        /// </summary>
+        /// <param name="hex"></param>
+        /// <returns></returns>
+        public static byte[] StringToByteArray(string hex)
+        {
+            return Enumerable.Range(0, hex.Length)
+                             .Where(x => x % 2 == 0)
+                             .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
+                             .ToArray();
+        }
+
+        public static Type GetDataType(string typeName)
+        {
+            if (Type.GetType(typeName, false, true) == typeof(int))
+            {
+                return typeof(int);
+            }
+            else if (Type.GetType(typeName, false, true) == typeof(uint))
+            {
+                return typeof(uint);
+            }
+            else if (Type.GetType(typeName, false, true) == typeof(bool))
+            {
+                return typeof(bool);
+            }
+            else if (Type.GetType(typeName, false, true) == typeof(string))
+            {
+                return typeof(string);
+            }
+            else
+            {
+                return typeof(string);
+            }
         }
     }
 
