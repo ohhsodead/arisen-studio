@@ -1561,6 +1561,7 @@ namespace ModioX.Forms.Windows
             this.ComboBoxRegion.Properties.AllowFocused = false;
             this.ComboBoxRegion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComboBoxRegion.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxRegion.Properties.AutoComplete = false;
             this.ComboBoxRegion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ComboBoxRegion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
@@ -1577,6 +1578,7 @@ namespace ModioX.Forms.Windows
             this.ComboBoxModType.Properties.AllowFocused = false;
             this.ComboBoxModType.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComboBoxModType.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxModType.Properties.AutoComplete = false;
             this.ComboBoxModType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ComboBoxModType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
@@ -1593,6 +1595,7 @@ namespace ModioX.Forms.Windows
             this.ComboBoxSystemType.Properties.AllowFocused = false;
             this.ComboBoxSystemType.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComboBoxSystemType.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxSystemType.Properties.AutoComplete = false;
             this.ComboBoxSystemType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ComboBoxSystemType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;

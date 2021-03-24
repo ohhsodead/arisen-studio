@@ -120,7 +120,7 @@ namespace ModioX.Forms.Settings
             this.GroupSavedGameRegions.Controls.Add(this.PanelButtons);
             this.GroupSavedGameRegions.Location = new System.Drawing.Point(12, 12);
             this.GroupSavedGameRegions.Name = "GroupSavedGameRegions";
-            this.GroupSavedGameRegions.Size = new System.Drawing.Size(414, 238);
+            this.GroupSavedGameRegions.Size = new System.Drawing.Size(414, 236);
             this.GroupSavedGameRegions.TabIndex = 1180;
             this.GroupSavedGameRegions.Text = "SAVED GAME REGIONS";
             // 
@@ -149,7 +149,7 @@ namespace ModioX.Forms.Settings
             this.GridGameRegions.MainView = this.GridViewGameRegions;
             this.GridGameRegions.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.GridGameRegions.Name = "GridGameRegions";
-            this.GridGameRegions.Size = new System.Drawing.Size(410, 177);
+            this.GridGameRegions.Size = new System.Drawing.Size(410, 172);
             this.GridGameRegions.TabIndex = 20;
             this.GridGameRegions.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewGameRegions});
@@ -175,19 +175,19 @@ namespace ModioX.Forms.Settings
             this.PanelButtons.Controls.Add(this.ButtonDelete);
             this.PanelButtons.Controls.Add(this.ButtonDeleteAll);
             this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelButtons.Location = new System.Drawing.Point(2, 200);
+            this.PanelButtons.Location = new System.Drawing.Point(2, 195);
             this.PanelButtons.Name = "PanelButtons";
-            this.PanelButtons.Size = new System.Drawing.Size(410, 36);
+            this.PanelButtons.Size = new System.Drawing.Size(410, 39);
             this.PanelButtons.TabIndex = 1173;
             // 
             // ButtonDelete
             // 
             this.ButtonDelete.Enabled = false;
-            this.ButtonDelete.Location = new System.Drawing.Point(6, 6);
-            this.ButtonDelete.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.ButtonDelete.Location = new System.Drawing.Point(8, 8);
+            this.ButtonDelete.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
             this.ButtonDelete.Name = "ButtonDelete";
             this.ButtonDelete.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonDelete.Size = new System.Drawing.Size(69, 24);
+            this.ButtonDelete.Size = new System.Drawing.Size(69, 23);
             this.ButtonDelete.TabIndex = 10;
             this.ButtonDelete.Text = "Delete";
             this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
@@ -195,10 +195,10 @@ namespace ModioX.Forms.Settings
             // ButtonDeleteAll
             // 
             this.ButtonDeleteAll.Enabled = false;
-            this.ButtonDeleteAll.Location = new System.Drawing.Point(81, 6);
+            this.ButtonDeleteAll.Location = new System.Drawing.Point(83, 8);
             this.ButtonDeleteAll.Name = "ButtonDeleteAll";
             this.ButtonDeleteAll.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonDeleteAll.Size = new System.Drawing.Size(84, 24);
+            this.ButtonDeleteAll.Size = new System.Drawing.Size(84, 23);
             this.ButtonDeleteAll.TabIndex = 11;
             this.ButtonDeleteAll.Text = "Delete All";
             this.ButtonDeleteAll.Click += new System.EventHandler(this.ButtonDeleteAll_Click);
@@ -206,7 +206,6 @@ namespace ModioX.Forms.Settings
             // ComboBoxGameTitle
             // 
             this.ComboBoxGameTitle.Location = new System.Drawing.Point(8, 50);
-            this.ComboBoxGameTitle.Margin = new System.Windows.Forms.Padding(3, 3, 4, 3);
             this.ComboBoxGameTitle.Name = "ComboBoxGameTitle";
             this.ComboBoxGameTitle.Properties.AllowFocused = false;
             this.ComboBoxGameTitle.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -214,7 +213,7 @@ namespace ModioX.Forms.Settings
             this.ComboBoxGameTitle.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ComboBoxGameTitle.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxGameTitle.Size = new System.Drawing.Size(277, 22);
+            this.ComboBoxGameTitle.Size = new System.Drawing.Size(279, 22);
             this.ComboBoxGameTitle.TabIndex = 1165;
             this.ComboBoxGameTitle.SelectedIndexChanged += new System.EventHandler(this.ComboBoxGameTitle_SelectedIndexChanged);
             // 
@@ -227,9 +226,9 @@ namespace ModioX.Forms.Settings
             this.GroupAddGameRegion.Controls.Add(this.LabelSearch);
             this.GroupAddGameRegion.Controls.Add(this.stackPanel1);
             this.GroupAddGameRegion.Controls.Add(this.ComboBoxGameTitle);
-            this.GroupAddGameRegion.Location = new System.Drawing.Point(12, 256);
+            this.GroupAddGameRegion.Location = new System.Drawing.Point(12, 254);
             this.GroupAddGameRegion.Name = "GroupAddGameRegion";
-            this.GroupAddGameRegion.Size = new System.Drawing.Size(414, 112);
+            this.GroupAddGameRegion.Size = new System.Drawing.Size(414, 114);
             this.GroupAddGameRegion.TabIndex = 1181;
             this.GroupAddGameRegion.Text = "ADD GAME REGION";
             // 
@@ -250,7 +249,6 @@ namespace ModioX.Forms.Settings
             // ComboBoxGameRegion
             // 
             this.ComboBoxGameRegion.Location = new System.Drawing.Point(293, 50);
-            this.ComboBoxGameRegion.Margin = new System.Windows.Forms.Padding(4, 3, 3, 3);
             this.ComboBoxGameRegion.Name = "ComboBoxGameRegion";
             this.ComboBoxGameRegion.Properties.AllowFocused = false;
             this.ComboBoxGameRegion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -279,18 +277,18 @@ namespace ModioX.Forms.Settings
             // 
             this.stackPanel1.Controls.Add(this.ButtonAddGameRegion);
             this.stackPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.stackPanel1.Location = new System.Drawing.Point(2, 74);
+            this.stackPanel1.Location = new System.Drawing.Point(2, 73);
             this.stackPanel1.Name = "stackPanel1";
-            this.stackPanel1.Size = new System.Drawing.Size(410, 36);
+            this.stackPanel1.Size = new System.Drawing.Size(410, 39);
             this.stackPanel1.TabIndex = 1173;
             // 
             // ButtonAddGameRegion
             // 
-            this.ButtonAddGameRegion.Location = new System.Drawing.Point(6, 6);
-            this.ButtonAddGameRegion.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.ButtonAddGameRegion.Location = new System.Drawing.Point(8, 8);
+            this.ButtonAddGameRegion.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
             this.ButtonAddGameRegion.Name = "ButtonAddGameRegion";
             this.ButtonAddGameRegion.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonAddGameRegion.Size = new System.Drawing.Size(130, 24);
+            this.ButtonAddGameRegion.Size = new System.Drawing.Size(130, 23);
             this.ButtonAddGameRegion.TabIndex = 10;
             this.ButtonAddGameRegion.Text = "Add Game Region";
             this.ButtonAddGameRegion.Click += new System.EventHandler(this.ButtonAddGameRegion_Click);
