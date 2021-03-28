@@ -5,7 +5,7 @@
         /// <summary>
         /// Direct link to the update data file hosted on Dropbox.
         /// </summary>
-        internal const string UpdateData = "https://www.dropbox.com/s/xmiho4d326syupf/Update.xml?raw=true";
+        internal const string UpdateData = "https://dl.dropbox.com/s/xmiho4d326syupf/Update.xml?raw=true";
 
         /// <summary>
         /// Web URL for the project repository hosted on GitHub.
