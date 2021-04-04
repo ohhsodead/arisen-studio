@@ -40,14 +40,6 @@ Please give this project a ⭐ if you find it useful.
 
 Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/ModioX/releases/latest) page.
 
-## Contributing
-
-You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
-
-## Requesting Mods
-
-I know that not all mods aren't on our database, but if you open an issue with the details then we can get them added for you!
-
 ## Quick Guide
 
 ### Getting Started
@@ -80,6 +72,14 @@ After finding some mods you like, connect to your console and go to the mods inf
 ### Uninstalling Mods
 
 Want to remove the mods? Find the one you installed and click **Uninstall** and the files will be removed. If you have a backup of a game file then the modded file will be replaced with the backup, otherwise it will be ignored to prevent issues with the game working. So, I suggest to always backup your game files when you're prompted. If you didn't backup files, you will need to re-install the game update.
+
+## Contributing
+
+You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
+
+## Requesting Mods
+
+I know that not all mods aren't on our database, but if you open an issue with the details then we can get them added for you!
 
 ## Credits & Libraries
 
