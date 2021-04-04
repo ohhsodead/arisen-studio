@@ -58,7 +58,7 @@ If you want to install mods to your console, then first you need to create your 
 * Login (by default the username/password are usually 'anonymous' for PS3, and for XBOX usually 'xbox', but these can be changed to your own)
 Once you've entered all the details, click **OK** and they will be saved to your settings. If you have more than one console then just do the same.
 
-Before connecting, make sure you have one of the following open:
+Before connecting, make sure you have one of the following open (if you're on PS3):
 * Rebug Toolbox
 * webMAN
 * multiMAN
