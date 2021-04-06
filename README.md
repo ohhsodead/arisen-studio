@@ -55,7 +55,8 @@ If you want to install mods to your console, then first you need to create your 
 * Console Type (is the type of console you're using)
 * Console Address (this is the IP address of the console, for PS3 this will be in **System Information** and for XBOX it's in **Configure Network** menu)
 * Port (by default the port for PS3 is 21 and XBOX is 730)
-* Login (by default the username/password are usually 'anonymous' for PS3, and for XBOX usually 'xbox', but these can be changed to your own)
+* Login (by default the username/password are usually 'anonymous' for PS3, and for XBOX usually 'xbox', but these can be changed to your own).
+
 Once you've entered all the details, click **OK** and they will be saved to your settings. If you have more than one console then just do the same.
 
 Before connecting, make sure you have one of the following open (if you're on PS3):
