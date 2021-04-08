@@ -320,10 +320,10 @@
                "Offsets":[
                   {
                      "Address":"21996634",
-                     "Enable":"FFFF",
-                     "Disable":"0064",
+                     "Enable":"4294901760",
+                     "Disable":"6553600",
                      "Value":"",
-                     "Type":"byte"
+                     "Type":"hex"
                   }
                ]
             },
@@ -336,73 +336,73 @@
                "Offsets":[
                   {
                      "Address":"21898476",
-                     "Enable":"0FFFFFFF",
-                     "Disable":"00000064",
+                     "Enable":"268435455",
+                     "Disable":"100",
                      "Value":"",
-                     "Type":"byte"
+                     "Type":"hex"
                   },
 				  {
                      "Address":"21898604",
-                     "Enable":"0FFFFFFF",
-                     "Disable":"00000064",
+                     "Enable":"268435455",
+                     "Disable":"100",
                      "Value":"",
-                     "Type":"byte"
+                     "Type":"hex"
                   },
 				  {
                      "Address":"21898460",
-                     "Enable":"0FFFFFFF",
-                     "Disable":"00000064",
+                     "Enable":"268435455",
+                     "Disable":"100",
                      "Value":"",
-                     "Type":"byte"
+                     "Type":"hex"
                   },
 				  {
                      "Address":"21898580",
-                     "Enable":"0FFFFFFF",
-                     "Disable":"00000064",
+                     "Enable":"268435455",
+                     "Disable":"100",
                      "Value":"",
-                     "Type":"byte"
+                     "Type":"hex"
                   },
 				  {
                      "Address":"21898616",
-                     "Enable":"0FFFFFFF",
-                     "Disable":"00000064",
+                     "Enable":"268435455",
+                     "Disable":"100",
                      "Value":"",
-                     "Type":"byte"
+                     "Type":"hex"
                   },
 				  {
                      "Address":"21898608",
-                     "Enable":"0FFFFFFF",
-                     "Disable":"00000064",
+                     "Enable":"268435455",
+                     "Disable":"100",
                      "Value":"",
-                     "Type":"byte"
+                     "Type":"hex"
                   },
 				  {
                      "Address":"21898584",
-                     "Enable":"0FFFFFFF",
-                     "Disable":"00000064",
+                     "Enable":"268435455",
+                     "Disable":"100",
                      "Value":"",
-                     "Type":"byte"
+                     "Type":"hex"
                   },
 				  {
                      "Address":"21898616",
-                     "Enable":"0FFFFFFF",
-                     "Disable":"00000064",
+                     "Enable":"268435455",
+                     "Disable":"100",
                      "Value":"",
-                     "Type":"byte"
+                     "Type":"hex"
                   },
 				  {
                      "Address":"21898484",
-                     "Enable":"0FFFFFFF",
-                     "Disable":"00000064",
+                     "Enable":"268435455",
+                     "Disable":"100",
                      "Value":"",
-                     "Type":"byte"
+                     "Type":"hex"
                   },
 				  {
                      "Address":"21898592",
-                     "Enable":"0FFFFFFF",
-                     "Disable":"00000064",
+                     "Enable":"268435455",
+                     "Disable":"100",
                      "Value":"",
-                     "Type":"byte"
+                     "Type":"hex"
                   }
                ]
             },

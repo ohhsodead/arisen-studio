@@ -411,7 +411,7 @@
       },
       {
          "Title":"Favorite Mods",
-         "Id":"fvrt",
+         "Id":"favorite",
          "Type":"favorite",
          "Regions":[
 
