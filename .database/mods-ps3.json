@@ -1,5 +1,5 @@
 {
-   "LastUpdated":"2021-03-20T00:13:37.126946+00:00",
+   "LastUpdated":"2021-04-13T00:13:37.126946+00:00",
    "Mods":[
       {
          "ConsoleType":"PS3",
@@ -17210,7 +17210,7 @@
          "SubmittedBy":"ohhsodead",
          "Version":"1.0/2.0",
          "Configuration":"MP",
-         "Type":"EBOOT/SPRX/GSC/BIN",
+         "Type":"EBOOT/SPRX/GSC",
          "Description":"Controls : L1 + Left\nBugs : \nEnd game doesnt work\nSpin World Bugs the Camera at some places\nName of menu on the bottom left corner might flicker some times\nand maybe some very small other things\n\nif you want to report a bug dm me on discord : Bangg#0494\n\nThere Will be a update with more options added in and bug fixes\n\nEnjoy!\n\nv2:\nChanges : \n- Reworked Autowall (Totally changed)\n- New Autobone Logic\n- Save And Load Config\n- New Design\n- New Binds with instruction text\n- More Anti Aim options\n- Fixed Anti aim bugs\n- Added Flash Name\n- Rainbow Lobby Screen\n- Configurable UI text Color\n- More Bug Fixes\n- PSN Hang fix with new accounts (like the eboot)\n\nNotes : PS Button looks like it only works for Dex Consoles.\nAutowall is massively improved.",
          "DownloadFiles":[
             {

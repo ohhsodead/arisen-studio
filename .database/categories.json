@@ -286,7 +286,7 @@
          ]
       },
       {
-         "Title":"Applications",
+         "Title":"Homebrew Applications",
          "Id":"ha",
          "Type":"homebrew",
          "Regions":[
@@ -294,7 +294,7 @@
          ]
       },
       {
-         "Title":"Games",
+         "Title":"Homebrew Games",
          "Id":"hg",
          "Type":"homebrew",
          "Regions":[
