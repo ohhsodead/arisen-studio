@@ -1,5 +1,5 @@
 {
-   "LastUpdated":"2021-04-13T00:13:37.126946+00:00",
+   "LastUpdated":"2021-04-13T01:13:37.126946+01:00",
    "Mods":[
       {
          "ConsoleType":"PS3",
@@ -17,7 +17,7 @@
          "DownloadFiles":[
             {
                "Name":"Infinite Everything",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/aawinxovapqycbc/Infinite%20Everything.zip?raw=true",
                "InstallPaths":[
@@ -42,7 +42,7 @@
          "DownloadFiles":[
             {
                "Name":"Infinite Health, Infinite Ammo and more",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/s3febe6rm8hc5g1/Infinite%20Health%20Ammo%20%2B%20More.zip?raw=true",
                "InstallPaths":[
@@ -67,7 +67,7 @@
          "DownloadFiles":[
             {
                "Name":"Infinite Health, Infinite Ammo and more",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/v6y1snp9bsuk6uf/Infinite%20Health%20and%20more.zip?raw=true",
                "InstallPaths":[
@@ -92,7 +92,7 @@
          "DownloadFiles":[
             {
                "Name":"Defcon Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/meftmaau7ncel0d/Defcon%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -118,7 +118,7 @@
          "DownloadFiles":[
             {
                "Name":"Zincou45 Aimbot",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/hm03m0o4myx5ubd/Zincou45%20Aimbot.zip?raw=true",
                "InstallPaths":[
@@ -144,7 +144,7 @@
          "DownloadFiles":[
             {
                "Name":"HAX4U Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/887q5azd54m3wl7/HAX4U.zip?raw=true",
                "InstallPaths":[
@@ -169,7 +169,7 @@
          "DownloadFiles":[
             {
                "Name":"MrModderV3 Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/c1pwxkp50nexyqm/MrModderV3%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -195,7 +195,7 @@
          "DownloadFiles":[
             {
                "Name":"New Mods",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/9xth0p0ogcsbw8y/New%20Mods.zip?raw=true",
                "InstallPaths":[
@@ -220,7 +220,7 @@
          "DownloadFiles":[
             {
                "Name":"Firehawk Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/9xth0p0ogcsbw8y/New%20Mods.zip?raw=true",
                "InstallPaths":[
@@ -246,7 +246,7 @@
          "DownloadFiles":[
             {
                "Name":"Gr3Zz Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"3.0",
                "URL":"https://dl.dropbox.com/s/orpp615gs6wkvw9/Gr3Zz%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -274,7 +274,7 @@
          "DownloadFiles":[
             {
                "Name":"Debugger File",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.13",
                "URL":"https://dl.dropbox.com/s/0e1q7gcl2r267a3/Original%20Eboot.zip?raw=true",
                "InstallPaths":[
@@ -299,7 +299,7 @@
          "DownloadFiles":[
             {
                "Name":"Red Devil (Remastered)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/xhdwrneox6wrgn3/Red%20Devil%20Remastered.zip?raw=true",
                "InstallPaths":[
@@ -325,7 +325,7 @@
          "DownloadFiles":[
             {
                "Name":"Undead Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/sxomr1tzcxn870q/Undead%20Beta.zip?raw=true",
                "InstallPaths":[
@@ -351,7 +351,7 @@
          "DownloadFiles":[
             {
                "Name":"Antiban & Laser & VSA",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/6ykqvj9vpr0mwtu/Antiban%20%2B%20Laser%20%2B%20VSAT.zip?raw=true",
                "InstallPaths":[
@@ -376,7 +376,7 @@
          "DownloadFiles":[
             {
                "Name":"Aimbot & Antiban (Off Host)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/6ykqvj9vpr0mwtu/Antiban%20%2B%20Laser%20%2B%20VSAT.zip?raw=true",
                "InstallPaths":[
@@ -401,7 +401,7 @@
          "DownloadFiles":[
             {
                "Name":"Antiban & Mods",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/6mviq1mj9m537ts/Antiban%20%2B%20Mods.zip?raw=true",
                "InstallPaths":[
@@ -426,7 +426,7 @@
          "DownloadFiles":[
             {
                "Name":"Antiban (Zombies)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/4sucoroo98jidsh/Antiban%20%2B%20Force%20Host.zip?raw=true",
                "InstallPaths":[
@@ -451,8 +451,8 @@
          "DownloadFiles":[
             {
                "Name":"Debug Helper (Multiplayer)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.19",
                "URL":"https://dl.dropbox.com/s/16xzmek00m5m59q/Debug%20File%20%28MP%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
@@ -460,8 +460,8 @@
             },
             {
                "Name":"Debug Helper (Zombies)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.19",
                "URL":"https://dl.dropbox.com/s/dk5a0i57m8uxygv/Debug%20File%20%28ZM%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
@@ -485,7 +485,7 @@
          "DownloadFiles":[
             {
                "Name":"Extortion Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/okhd1ftd1xzghdt/Extortion%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -511,7 +511,7 @@
          "DownloadFiles":[
             {
                "Name":"Antiban & Force Host",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.19",
                "URL":"https://dl.dropbox.com/s/4sucoroo98jidsh/Antiban%20%2B%20Force%20Host.zip?raw=true",
                "InstallPaths":[
@@ -536,7 +536,7 @@
          "DownloadFiles":[
             {
                "Name":"Original Game File",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.19",
                "URL":"https://dl.dropbox.com/s/njnql62s85w0qj8/Original%20Eboot.zip?raw=true",
                "InstallPaths":[
@@ -561,7 +561,7 @@
          "DownloadFiles":[
             {
                "Name":"Reincarnation Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/i7e6u55btfw8i5j/Reincarnation%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -587,7 +587,7 @@
          "DownloadFiles":[
             {
                "Name":"Frost Engine",
-               "Region":"",
+               "Region":"ALL",
                "Version":"4.9",
                "URL":"https://dl.dropbox.com/s/793q18ecdggdmil/Frost%20Engine.zip?raw=true",
                "InstallPaths":[
@@ -614,7 +614,7 @@
          "DownloadFiles":[
             {
                "Name":"Sapphire Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/xl9lytfjyjgfbld/Sapphire%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -640,7 +640,7 @@
          "DownloadFiles":[
             {
                "Name":"Ascendance Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/soy6nygwcrg5rjj/Ascendance%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -666,7 +666,7 @@
          "DownloadFiles":[
             {
                "Name":"Anarchy Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.6",
                "URL":"https://dl.dropbox.com/s/re4ycdukkttake2/Anarchy%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -692,7 +692,7 @@
          "DownloadFiles":[
             {
                "Name":"FourtwentyGTA Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"4.0",
                "URL":"https://dl.dropbox.com/s/iqs3xzb7qta5q6s/FourtwentyGTA.zip?raw=true",
                "InstallPaths":[
@@ -717,7 +717,7 @@
          "DownloadFiles":[
             {
                "Name":"Infernus Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"3.1",
                "URL":"https://dl.dropbox.com/s/874cbv2180hv0ms/Infernus%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -744,7 +744,7 @@
          "DownloadFiles":[
             {
                "Name":"JakeModz89 Mod Loader",
-               "Region":"",
+               "Region":"ALL",
                "Version":"11",
                "URL":"https://dl.dropbox.com/s/kbreg36mb79rfys/JakeModz89.zip?raw=true",
                "InstallPaths":[
@@ -769,7 +769,7 @@
          "DownloadFiles":[
             {
                "Name":"Original (Clean) Update File",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.26/1.27",
                "URL":"https://dl.dropbox.com/s/ujrjp20fofthgx7/Original%20Update%20File.zip?raw=true",
                "InstallPaths":[
@@ -794,7 +794,7 @@
          "DownloadFiles":[
             {
                "Name":"Paranormal Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.5",
                "URL":"https://dl.dropbox.com/s/t63svqrs9iq1yod/Paranormal%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -820,7 +820,7 @@
          "DownloadFiles":[
             {
                "Name":"Project Ilusion Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/lpuvna89p6vhn1q/Project%20Ilusion%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -846,7 +846,7 @@
          "DownloadFiles":[
             {
                "Name":"Skip Prologue & Many Mods",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.6",
                "URL":"https://dl.dropbox.com/s/rrjv5yliura6mv4/Skip%20Prologue%20%2B%20Many%20Mods.zip?raw=true",
                "InstallPaths":[
@@ -871,7 +871,7 @@
          "DownloadFiles":[
             {
                "Name":"Salfety Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.3",
                "URL":"https://dl.dropbox.com/s/p4u2i7e2c8n6bbg/Salfety%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -897,7 +897,7 @@
          "DownloadFiles":[
             {
                "Name":"SamModzHD Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.1",
                "URL":"https://dl.dropbox.com/s/6neoqjcfn6w23gz/SamModzHD%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -923,7 +923,7 @@
          "DownloadFiles":[
             {
                "Name":"Tgsaudoiz Mod Loader",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/n2465sritoai2xd/Tgsaudoiz%20Loader.zip?raw=true",
                "InstallPaths":[
@@ -948,7 +948,7 @@
          "DownloadFiles":[
             {
                "Name":"WebHacker",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.8.1",
                "URL":"https://dl.dropbox.com/s/5h9w4g5pxh0rbig/The%20Umbrella%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -974,7 +974,7 @@
          "DownloadFiles":[
             {
                "Name":"WILDEMODZ Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/bp13dwxi0jsi7yw/WILDEMODZ.zip?raw=true",
                "InstallPaths":[
@@ -1000,7 +1000,7 @@
          "DownloadFiles":[
             {
                "Name":"All-In-One Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/xj30ye8wgnjhi54/All-In-One%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1025,7 +1025,7 @@
          "DownloadFiles":[
             {
                "Name":"Anti-Cheat Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/rt9kgpetaqk6k67/Anti-Cheat.zip?raw=true",
                "InstallPaths":[
@@ -1050,7 +1050,7 @@
          "DownloadFiles":[
             {
                "Name":"Ultimate Private Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/kg2hkfzfqaxq5oj/Ultimate%20Private.zip?raw=true",
                "InstallPaths":[
@@ -1075,7 +1075,7 @@
          "DownloadFiles":[
             {
                "Name":"Forgotten Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/qcp444j0fwrukpd/Forgotten%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1101,7 +1101,7 @@
          "DownloadFiles":[
             {
                "Name":"Ghost Legacy Edition Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"9.0",
                "URL":"https://dl.dropbox.com/s/btcrrhcaofmkprb/Ghost%20Legacy%20Edition.zip?raw=true",
                "InstallPaths":[
@@ -1126,7 +1126,7 @@
          "DownloadFiles":[
             {
                "Name":"Most Dope Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/pnd8eisl07xvs4q/Most%20Dope%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1151,7 +1151,7 @@
          "DownloadFiles":[
             {
                "Name":"Challenge Lobby",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/nicjhceoh72vgm8/Challenge%20Lobby.zip?raw=true",
                "InstallPaths":[
@@ -1176,7 +1176,7 @@
          "DownloadFiles":[
             {
                "Name":"The Yardsale Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"7.0",
                "URL":"https://dl.dropbox.com/s/lawfuvmira5zcrn/The%20Yardsale.zip?raw=true",
                "InstallPaths":[
@@ -1201,7 +1201,7 @@
          "DownloadFiles":[
             {
                "Name":"Unveil Las Divinas Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"4.0",
                "URL":"https://dl.dropbox.com/s/982k30pi13y6xy2/Unveil%20Las%20Divinas.zip?raw=true",
                "InstallPaths":[
@@ -1226,7 +1226,7 @@
          "DownloadFiles":[
             {
                "Name":"Cylerem Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/txe9d7gg92l3big/Cylerem%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1252,7 +1252,7 @@
          "DownloadFiles":[
             {
                "Name":"Debugging Helper & Mods",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/iqi08pdwgibaver/Debug%20%2B%20Mods%20Self.zip?raw=true",
                "InstallPaths":[
@@ -1277,7 +1277,7 @@
          "DownloadFiles":[
             {
                "Name":"Debugging Helper & Mods",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.1",
                "URL":"https://dl.dropbox.com/s/71ec0vzaokn1h8p/Debug%20%2B%20Mods%20Eboot.zip?raw=true",
                "InstallPaths":[
@@ -1302,7 +1302,7 @@
          "DownloadFiles":[
             {
                "Name":"Ultimate Trickshot Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/mf82082709enea7/Ultimate%20Trickshot%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1327,7 +1327,7 @@
          "DownloadFiles":[
             {
                "Name":"Insidious Menu (All Clients)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/ga4fi6a8wsodx9u/Insidious%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1353,7 +1353,7 @@
          "DownloadFiles":[
             {
                "Name":"IW4 Server Anti-Cheat Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.2",
                "URL":"https://dl.dropbox.com/s/33j1tab4k9drivj/IW4%20Server.zip?raw=true",
                "InstallPaths":[
@@ -1363,7 +1363,7 @@
             },
             {
                "Name":"IW4 Server Anti-Cheat Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.3",
                "URL":"https://dl.dropbox.com/s/0cyz8u8obwqrj3h/IW4%20Server%20v1.3.zip?raw=true",
                "InstallPaths":[
@@ -1389,7 +1389,7 @@
          "DownloadFiles":[
             {
                "Name":"Private Patch Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"3.2",
                "URL":"https://dl.dropbox.com/s/9xth0p0ogcsbw8y/New%20Mods.zip?raw=true",
                "InstallPaths":[
@@ -1414,7 +1414,7 @@
          "DownloadFiles":[
             {
                "Name":"Debugger File",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.14",
                "URL":"https://dl.dropbox.com/s/amcbn4fofcbpj5n/Joka-_-MoDz%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1439,7 +1439,7 @@
          "DownloadFiles":[
             {
                "Name":"Parallax Menu (Remastered)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/ayn2ol360cjacrs/Parallax%20Menu%20Remastered.zip?raw=true",
                "InstallPaths":[
@@ -1465,7 +1465,7 @@
          "DownloadFiles":[
             {
                "Name":"Resurrection Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/v9f43rcgoq4ma20/Resurrection%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1491,7 +1491,7 @@
          "DownloadFiles":[
             {
                "Name":"Rewind Menu (All Clients)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.1",
                "URL":"https://dl.dropbox.com/s/ashlpv59tlw3y2r/Rewind%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1517,7 +1517,7 @@
          "DownloadFiles":[
             {
                "Name":"Snow Engine Menu (Off Host)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/w29l1br6ufrsec8/Snow%20Engine%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1543,7 +1543,7 @@
          "DownloadFiles":[
             {
                "Name":"Superman Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.1",
                "URL":"https://dl.dropbox.com/s/za2gsx3o9vjng9k/Superman%20Menu%20v1.zip?raw=true",
                "InstallPaths":[
@@ -1553,7 +1553,7 @@
             },
             {
                "Name":"Superman Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"3.0",
                "URL":"https://dl.dropbox.com/s/yuaj635i4yay016/Superman%20Menu%20v3.zip?raw=true",
                "InstallPaths":[
@@ -1579,7 +1579,7 @@
          "DownloadFiles":[
             {
                "Name":"Teh1337 Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/dhuwjxwkfmcaugg/Teh1337%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1605,7 +1605,7 @@
          "DownloadFiles":[
             {
                "Name":"Private Patch Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"4.0",
                "URL":"https://dl.dropbox.com/s/tq0cgch2hi7cg1u/Private%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1630,7 +1630,7 @@
          "DownloadFiles":[
             {
                "Name":"Vengeance Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/md4jvm2lfu4hxw8/Vengeance%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1656,7 +1656,7 @@
          "DownloadFiles":[
             {
                "Name":"White Water Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"4.0",
                "URL":"https://dl.dropbox.com/s/qd50gmf2lmjs1sw/White%20Water%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1681,7 +1681,7 @@
          "DownloadFiles":[
             {
                "Name":"Zircon Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.5",
                "URL":"https://dl.dropbox.com/s/bpy3ibck9mbrvv5/Zircon%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -1707,7 +1707,7 @@
          "DownloadFiles":[
             {
                "Name":"Aftermath Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/hlyhbb9xcf5h6n1/Aftermath.zip?raw=true",
                "InstallPaths":[
@@ -1717,7 +1717,7 @@
             },
             {
                "Name":"Aftermath Menu (Force Host)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/8acajrrdbt96ouq/Aftermath%20w%20Force%20Host.zip?raw=true",
                "InstallPaths":[
@@ -1743,7 +1743,7 @@
          "DownloadFiles":[
             {
                "Name":"Challenge Lobby",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/v2q9aah3lml3wxe/Challenge%20Lobby.zip?raw=true",
                "InstallPaths":[
@@ -1768,7 +1768,7 @@
          "DownloadFiles":[
             {
                "Name":"Crystalized Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/5xxuv2drtu6ryem/Crystalized.zip?raw=true",
                "InstallPaths":[
@@ -1794,7 +1794,7 @@
          "DownloadFiles":[
             {
                "Name":"Debugging Helper Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/fys2kmrjrjme8k9/Debug.zip?raw=true",
                "InstallPaths":[
@@ -1803,7 +1803,7 @@
             },
             {
                "Name":"Debugging Helper Menu (Force Host)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/ubsoi2fifi6hxu1/Debug%20Force%20Host.zip?raw=true",
                "InstallPaths":[
@@ -1828,7 +1828,7 @@
          "DownloadFiles":[
             {
                "Name":"Exorcist Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/uhe47nvojv5n43x/Exorcist.zip?raw=true",
                "InstallPaths":[
@@ -1838,7 +1838,7 @@
             },
             {
                "Name":"Exorcist Menu (Force Host)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/46mvqaiqjd8b89u/Exorcist%20Force%20Host.zip?raw=true",
                "InstallPaths":[
@@ -1864,7 +1864,7 @@
          "DownloadFiles":[
             {
                "Name":"Frost Engine Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"3.0",
                "URL":"https://dl.dropbox.com/s/xt3x7uba0ipl1aa/Frost%20Engine.zip?raw=true",
                "InstallPaths":[
@@ -1890,7 +1890,7 @@
          "DownloadFiles":[
             {
                "Name":"Liberation Menu (Off Host)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"3.0",
                "URL":"https://dl.dropbox.com/s/7657qywo7uvrqup/Liberation.zip?raw=true",
                "InstallPaths":[
@@ -1916,7 +1916,7 @@
          "DownloadFiles":[
             {
                "Name":"Menace Menu (Cracked)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/rwf0tix8waeegbn/Menace%20%5BCracked%5D.zip?raw=true",
                "InstallPaths":[
@@ -1944,7 +1944,7 @@
          "DownloadFiles":[
             {
                "Name":"nay1995's All Clients Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.2.0.1",
                "URL":"https://dl.dropbox.com/s/p6jqie0y5lex6av/Non%20Host%20Mods.zip?raw=true",
                "InstallPaths":[
@@ -1970,7 +1970,7 @@
          "DownloadFiles":[
             {
                "Name":"Basic Mods (Off Host)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/p6jqie0y5lex6av/Non%20Host%20Mods.zip?raw=true",
                "InstallPaths":[
@@ -1995,7 +1995,7 @@
          "DownloadFiles":[
             {
                "Name":"Prometheus Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/pfzq6m9sr1yr3l3/Prometheus.zip?raw=true",
                "InstallPaths":[
@@ -2021,7 +2021,7 @@
          "DownloadFiles":[
             {
                "Name":"Reckoning Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/486qs7bm0lcvps7/Reckoning.zip?raw=true",
                "InstallPaths":[
@@ -2047,7 +2047,7 @@
          "DownloadFiles":[
             {
                "Name":"Resistance Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"3.0",
                "URL":"https://dl.dropbox.com/s/u3f51h63cj44ztl/Resistance.zip?raw=true",
                "InstallPaths":[
@@ -2073,7 +2073,7 @@
          "DownloadFiles":[
             {
                "Name":"SilentShadow Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/syoedebm9z4dsgh/SilentShadow.zip?raw=true",
                "InstallPaths":[
@@ -2099,7 +2099,7 @@
          "DownloadFiles":[
             {
                "Name":"Simple Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/9gy3li28pvta19l/Simple%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -2125,7 +2125,7 @@
          "DownloadFiles":[
             {
                "Name":"SnD XP Lobby",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/nbmxxqp9206cdzk/SnD%20XP%20Lobby.zip?raw=true",
                "InstallPaths":[
@@ -2150,7 +2150,7 @@
          "DownloadFiles":[
             {
                "Name":"Snow Engine Menu (Off Host)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/14cdlf1eoten697/Snow%20Engine.zip?raw=true",
                "InstallPaths":[
@@ -2176,7 +2176,7 @@
          "DownloadFiles":[
             {
                "Name":"SPRX File Plugin",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/fuhs6dkud6yhaq2/SPRX%20Plugin.zip?raw=true",
                "InstallPaths":[
@@ -2201,7 +2201,7 @@
          "DownloadFiles":[
             {
                "Name":"Ultimate Big Modded Lobby for All",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/di6giqipy3adsgi/Ultimate%20Lobby.zip?raw=true",
                "InstallPaths":[
@@ -2226,7 +2226,7 @@
          "DownloadFiles":[
             {
                "Name":"Ultimate Lobby for All",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/hvo4z8azahqq731/Ultimate%20Mods%20by%20Choco.zip?raw=true",
                "InstallPaths":[
@@ -2251,7 +2251,7 @@
          "DownloadFiles":[
             {
                "Name":"Virtual Energy Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.3",
                "URL":"https://dl.dropbox.com/s/zzexw6rl0cimjsl/Virtual%20Energy.zip?raw=true",
                "InstallPaths":[
@@ -2277,7 +2277,7 @@
          "DownloadFiles":[
             {
                "Name":"Big XP, Fun for All",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/8mfs6yvh80xecvt/XP%20Lobby.zip?raw=true",
                "InstallPaths":[
@@ -2302,7 +2302,7 @@
          "DownloadFiles":[
             {
                "Name":"Zombieland",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/vf0uasecmts3lvo/Zombieland.zip?raw=true",
                "InstallPaths":[
@@ -2328,7 +2328,7 @@
          "DownloadFiles":[
             {
                "Name":"Mini Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.1",
                "URL":"https://dl.dropbox.com/s/fjxm0kbur5tcovm/Mini%20Menu%20SPRX.zip?raw=true",
                "InstallPaths":[
@@ -2354,7 +2354,7 @@
          "DownloadFiles":[
             {
                "Name":"Mod Menu / Trainer",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/1r58gk8jguv0p51/Mod%20Menu%20Trainer.zip?raw=true",
                "InstallPaths":[
@@ -2380,7 +2380,7 @@
          "DownloadFiles":[
             {
                "Name":"Red Dead Rekt Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"3.0",
                "URL":"https://dl.dropbox.com/s/j397by26d8dlzqk/Red%20Dead%20Rekt%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -2406,7 +2406,7 @@
          "DownloadFiles":[
             {
                "Name":"Summer Bass Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/btxdw6qalnwecai/Summer%20Bass%20v2.zip?raw=true",
                "InstallPaths":[
@@ -2431,7 +2431,7 @@
          "DownloadFiles":[
             {
                "Name":"The Hidden Gold Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"5.0",
                "URL":"https://dl.dropbox.com/s/4ekhnnr9co7bsam/The%20Hidden%20Gold%20v5%20%5BPATCH%5D.zip?raw=true",
                "InstallPaths":[
@@ -2456,7 +2456,7 @@
          "DownloadFiles":[
             {
                "Name":"Azza Trickshot Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/wzz7x315gvjf5lw/Azza%20Menu%20%5BPATCH%5D.zip?raw=true",
                "InstallPaths":[
@@ -2481,7 +2481,7 @@
          "DownloadFiles":[
             {
                "Name":"Purple Beam Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/2qw0jdl26lv9oxx/Purple%20Beam%20%5BPATCH%5D.zip?raw=true",
                "InstallPaths":[
@@ -2506,7 +2506,7 @@
          "DownloadFiles":[
             {
                "Name":"Purple Kush Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"4.0",
                "URL":"https://dl.dropbox.com/s/d8oo7i3q4wzkkdt/iPROFamily%20Purple%20Kush%20v4%20%5BPATCH%5D.zip?raw=true",
                "InstallPaths":[
@@ -2531,7 +2531,7 @@
          "DownloadFiles":[
             {
                "Name":"Extreme Green Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/2rep2u5hfip135t/Extreme%20Green%20%5BPATCH%5D.zip?raw=true",
                "InstallPaths":[
@@ -2556,7 +2556,7 @@
          "DownloadFiles":[
             {
                "Name":"Jericho Engine Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/30xieanxn49knzj/Jericho%20Engine.zip?raw=true",
                "InstallPaths":[
@@ -2582,7 +2582,7 @@
          "DownloadFiles":[
             {
                "Name":"SkyFall Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/xg0tfaa8wl9goaf/SkyFall%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -2608,7 +2608,7 @@
          "DownloadFiles":[
             {
                "Name":"Retro Client Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/4wlbn71ggg4st8x/Retro%20Client.zip?raw=true",
                "InstallPaths":[
@@ -2634,7 +2634,7 @@
          "DownloadFiles":[
             {
                "Name":"iModz Engine",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/3iiz6d69u6dy3ve/iModz%20Engine.zip?raw=true",
                "InstallPaths":[
@@ -2661,7 +2661,7 @@
          "DownloadFiles":[
             {
                "Name":"Debug Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/b9ukz54djw3gapr/Debug%20Menu%20Eboot.zip?raw=true",
                "InstallPaths":[
@@ -2686,7 +2686,7 @@
          "DownloadFiles":[
             {
                "Name":"Yet Another Engine (Cracked)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/rpwueqwjlcb6ux1/YEA%20v2%20Non%20Host.zip?raw=true",
                "InstallPaths":[
@@ -2712,7 +2712,7 @@
          "DownloadFiles":[
             {
                "Name":"True HD Graphics",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/nngwg1ayfisktno/True%20HD%20Graphics.zip?raw=true",
                "InstallPaths":[
@@ -2739,7 +2739,7 @@
          "DownloadFiles":[
             {
                "Name":"Infinite Health, Ammo, Items, etc.",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/wvn0jhzy7fnpcqy/Infinite%20All%20Mods.zip?raw=true",
                "InstallPaths":[
@@ -2764,7 +2764,7 @@
          "DownloadFiles":[
             {
                "Name":"Infinite Health & Ammo",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/zvie5gwvhzy75av/Infinite%20Health%20%26%20Ammo.zip?raw=true",
                "InstallPaths":[
@@ -2789,7 +2789,7 @@
          "DownloadFiles":[
             {
                "Name":"Default Game File",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/m10c5k2xzf6w5b1/Clean%20Eboot.zip?raw=true",
                "InstallPaths":[
@@ -2814,7 +2814,7 @@
          "DownloadFiles":[
             {
                "Name":"Increased Damage, Wall Hack, UAV and more",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/o60yk0r0c86f5of/Increased%20Damage%20Wall%20Hack%20UAV.zip?raw=true",
                "InstallPaths":[
@@ -2839,7 +2839,7 @@
          "DownloadFiles":[
             {
                "Name":"The Outcast Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/b0hympsah5mhg7f/The%20Outcast%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -2865,7 +2865,7 @@
          "DownloadFiles":[
             {
                "Name":"Scogger HD",
-               "Region":"",
+               "Region":"-",
                "Version":"0.1",
                "URL":"https://dl.dropbox.com/s/d4zavnm6cvqt96l/Scogger%20HD.zip?raw=true",
                "InstallPaths":[
@@ -2890,7 +2890,7 @@
          "DownloadFiles":[
             {
                "Name":"Cylinder Dodge",
-               "Region":"",
+               "Region":"-",
                "Version":"1.1",
                "URL":"https://dl.dropbox.com/s/iit4vmabn31wjn3/Cylinder%20Dodge.zip?raw=true",
                "InstallPaths":[
@@ -2915,7 +2915,7 @@
          "DownloadFiles":[
             {
                "Name":"Mortal Kombat 9 Trilogy Edition Mod",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.60",
                "URL":"https://dl.dropbox.com/s/y1fkhr0jeiorxwe/Trilogy%20Edition%20Mod.zip?raw=true",
                "InstallPaths":[
@@ -3022,7 +3022,7 @@
          "DownloadFiles":[
             {
                "Name":"BreakOutX",
-               "Region":"",
+               "Region":"-",
                "Version":"1.5",
                "URL":"https://dl.dropbox.com/s/3t724ggazt6x3xy/BreakOutX.zip?raw=true",
                "InstallPaths":[
@@ -3047,8 +3047,8 @@
          "DownloadFiles":[
             {
                "Name":"Movian (Official)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"5.0.712 & 5.0.548",
                "URL":"https://dl.dropbox.com/s/7lqszypetmtixcv/Movian%20%28Official%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/packages/movian-5.0.548.pkg.197.v5.0.548_brewology_com.pkg"
@@ -3056,8 +3056,8 @@
             },
             {
                "Name":"Movian (deank)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"5.0.712 & 5.0.548",
                "URL":"https://dl.dropbox.com/s/0z482kzxy9y7jx7/Movian%20%28deank%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/packages/movian-5.0.712-deank-playstation3.pkg.973.v5.0.712_brewology_com.pkg"
@@ -3081,7 +3081,7 @@
          "DownloadFiles":[
             {
                "Name":"Advanced Power Options",
-               "Region":"",
+               "Region":"-",
                "Version":"1.10",
                "URL":"https://dl.dropbox.com/s/iugwh9l5c7ayyeh/Advanced%20Power%20Options.zip?raw=true",
                "InstallPaths":[
@@ -3106,7 +3106,7 @@
          "DownloadFiles":[
             {
                "Name":"Extras Category",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0.1",
                "URL":"https://dl.dropbox.com/s/wcal9ds8t81c5ur/CEX/DEX%20Extras%20Category.zip?raw=true",
                "InstallPaths":[
@@ -3131,7 +3131,7 @@
          "DownloadFiles":[
             {
                "Name":"HAN Toolbox",
-               "Region":"",
+               "Region":"-",
                "Version":"0.10",
                "URL":"https://dl.dropbox.com/s/vosuvlrb9gden6m/HAN%20Toolbox.zip?raw=true",
                "InstallPaths":[
@@ -3156,7 +3156,7 @@
          "DownloadFiles":[
             {
                "Name":"HEN Toolbox",
-               "Region":"",
+               "Region":"-",
                "Version":"1.00 (4.87)",
                "URL":"https://dl.dropbox.com/s/1f4iz2hicdlkxj0/HEN%20Toolbox.zip?raw=true",
                "InstallPaths":[
@@ -3181,7 +3181,7 @@
          "DownloadFiles":[
             {
                "Name":"HENBrew Store",
-               "Region":"",
+               "Region":"-",
                "Version":"2019.06.16",
                "URL":"https://dl.dropbox.com/s/qckrmqll6fw5jea/HENBrew%20Store.zip?raw=true",
                "InstallPaths":[
@@ -3206,7 +3206,7 @@
          "DownloadFiles":[
             {
                "Name":"IRISMAN Full Edition",
-               "Region":"",
+               "Region":"-",
                "Version":"4.87",
                "URL":"https://dl.dropbox.com/s/tpmu019c4smzfz3/IRISMAN%20Full%20Edition.zip?raw=true",
                "InstallPaths":[
@@ -3231,7 +3231,7 @@
          "DownloadFiles":[
             {
                "Name":"MambaPRX Loader (Unofficial)",
-               "Region":"",
+               "Region":"-",
                "Version":"4.84.2",
                "URL":"https://dl.dropbox.com/s/ic40k8a0xkefp3g/MambaPRX%20Loader%20%5Bunofficial%5D.zip?raw=true",
                "InstallPaths":[
@@ -3256,7 +3256,7 @@
          "DownloadFiles":[
             {
                "Name":"ManaGunZ",
-               "Region":"",
+               "Region":"-",
                "Version":"1.38",
                "URL":"https://dl.dropbox.com/s/o630hymjzwf0u2k/ManaGunZ.zip?raw=true",
                "InstallPaths":[
@@ -3281,7 +3281,7 @@
          "DownloadFiles":[
             {
                "Name":"OpenPS3FTP",
-               "Region":"",
+               "Region":"-",
                "Version":"4.2a",
                "URL":"https://dl.dropbox.com/s/hos293c5qlgof6i/OpenPS3FTP.zip?raw=true",
                "InstallPaths":[
@@ -3306,7 +3306,7 @@
          "DownloadFiles":[
             {
                "Name":"prepNTFS",
-               "Region":"",
+               "Region":"-",
                "Version":"1.01",
                "URL":"https://dl.dropbox.com/s/ug729o4zsn4c28q/prepNTFS.zip?raw=true",
                "InstallPaths":[
@@ -3331,7 +3331,7 @@
          "DownloadFiles":[
             {
                "Name":"PS2 Classics Manager",
-               "Region":"",
+               "Region":"-",
                "Version":"1.02",
                "URL":"https://dl.dropbox.com/s/wfr4ed4zg6fr7uy/PS2%20Classics%20Manager.zip?raw=true",
                "InstallPaths":[
@@ -3357,7 +3357,7 @@
          "DownloadFiles":[
             {
                "Name":"PS2 ISO Launcher",
-               "Region":"",
+               "Region":"-",
                "Version":"1.03",
                "URL":"https://dl.dropbox.com/s/4g6b4w036dhhucw/PS2%20ISO%20Launcher.zip?raw=true",
                "InstallPaths":[
@@ -3382,7 +3382,7 @@
          "DownloadFiles":[
             {
                "Name":"PS2 Launcher (REBUG Edition)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.00",
                "URL":"https://dl.dropbox.com/s/5wady8orvfge77g/PS2%20Launcher%20REBUG%20Edition.zip?raw=true",
                "InstallPaths":[
@@ -3407,7 +3407,7 @@
          "DownloadFiles":[
             {
                "Name":"PS3 EXTRANET",
-               "Region":"",
+               "Region":"-",
                "Version":"2.10",
                "URL":"https://dl.dropbox.com/s/pjwygqu4pijl8b2/PS3%20EXTRANET.zip?raw=true",
                "InstallPaths":[
@@ -3432,7 +3432,7 @@
          "DownloadFiles":[
             {
                "Name":"PSN Patch (Stealth)",
-               "Region":"",
+               "Region":"-",
                "Version":"2017.02B",
                "URL":"https://dl.dropbox.com/s/0po9zy9nv3mdfxv/PSN%20Patch%20%28Stealth%29.zip?raw=true",
                "InstallPaths":[
@@ -3457,7 +3457,7 @@
          "DownloadFiles":[
             {
                "Name":"REBUG TOOLBOX Multi",
-               "Region":"",
+               "Region":"-",
                "Version":"02.03.05",
                "URL":"https://dl.dropbox.com/s/5uwfre1uc2b4yy3/REBUG%20TOOLBOX%20Multi.zip?raw=true",
                "InstallPaths":[
@@ -3482,7 +3482,7 @@
          "DownloadFiles":[
             {
                "Name":"SEN Enabler",
-               "Region":"",
+               "Region":"-",
                "Version":"6.2.7",
                "URL":"https://dl.dropbox.com/s/46h9lt0s9vzyc55/SEN%20Enabler.zip?raw=true",
                "InstallPaths":[
@@ -3507,7 +3507,7 @@
          "DownloadFiles":[
             {
                "Name":"Showtime Disc Access",
-               "Region":"",
+               "Region":"-",
                "Version":"11.0",
                "URL":"https://dl.dropbox.com/s/ex8g1fd1opqre6t/Showtime%20Disc%20Access.zip?raw=true",
                "InstallPaths":[
@@ -3532,7 +3532,7 @@
          "DownloadFiles":[
             {
                "Name":"webMAN MOD",
-               "Region":"",
+               "Region":"-",
                "Version":"1.47.34",
                "URL":"https://dl.dropbox.com/s/7va193whg8b8117/webMAN%20MOD.zip?raw=true",
                "InstallPaths":[
@@ -3557,7 +3557,7 @@
          "DownloadFiles":[
             {
                "Name":"What's New on PSX-Place",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/lb6eep1qvsoe9no/Whats%20New%20on%20PSX-Place.zip?raw=true",
                "InstallPaths":[
@@ -3582,7 +3582,7 @@
          "DownloadFiles":[
             {
                "Name":"Retro Homebrew Collection (Nintendo NES)",
-               "Region":"",
+               "Region":"-",
                "Version":"Vol. 2",
                "URL":"https://dl.dropbox.com/s/ec6nkudpqcn0yfw/Retro%20Homebrew%20Collection%20Vol.%202.zip?raw=true",
                "InstallPaths":[
@@ -3607,7 +3607,7 @@
          "DownloadFiles":[
             {
                "Name":"Retro Homebrew Collection (Atari 2600)",
-               "Region":"",
+               "Region":"-",
                "Version":"Vol. 1",
                "URL":"https://dl.dropbox.com/s/cwomn6zx5nl28s6/Retro%20Homebrew%20Collection%20Vol.%201.zip?raw=true",
                "InstallPaths":[
@@ -3632,7 +3632,7 @@
          "DownloadFiles":[
             {
                "Name":"Five Nights at Freddy's",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/uwhgq27dgozgl8p/Five%20Nights%20at%20Freddy%27s.zip?raw=true",
                "InstallPaths":[
@@ -3657,7 +3657,7 @@
          "DownloadFiles":[
             {
                "Name":"Flappy Birds Family",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/t20cgxhjaerw9j9/Flappy%20Birds%20Family.zip?raw=true",
                "InstallPaths":[
@@ -3682,7 +3682,7 @@
          "DownloadFiles":[
             {
                "Name":"Ps3UserCheat",
-               "Region":"",
+               "Region":"-",
                "Version":"2.3",
                "URL":"https://dl.dropbox.com/s/o9a2sgltoncoqa2/Ps3UserCheat.zip?raw=true",
                "InstallPaths":[
@@ -3707,7 +3707,7 @@
          "DownloadFiles":[
             {
                "Name":"Enlightened Theme",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/dbh8murj3q6ubx7/Enlightened%20Theme.zip?raw=true",
                "InstallPaths":[
@@ -3732,7 +3732,7 @@
          "DownloadFiles":[
             {
                "Name":"Diwali Festive Theme 2014",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/jloszacx5enzi3v/Diwali%20Festive%20Theme.zip?raw=true",
                "InstallPaths":[
@@ -3757,7 +3757,7 @@
          "DownloadFiles":[
             {
                "Name":"PS2 Animated Theme",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/ztt5ao1syxj444k/PS2%20Animated%20Theme.zip?raw=true",
                "InstallPaths":[
@@ -3782,7 +3782,7 @@
          "DownloadFiles":[
             {
                "Name":"Call of Duty: Advanced Warfare Dynamic Theme",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/4s5g05udsccv4s9/Call%20of%20Duty%20Advanced%20Warfare%20Dynamic%20Theme.zip?raw=true",
                "InstallPaths":[
@@ -3807,7 +3807,7 @@
          "DownloadFiles":[
             {
                "Name":"Atari Emulator",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/6r12wozw8a8iv4q/Atari%20Emulator.zip?raw=true",
                "InstallPaths":[
@@ -3832,7 +3832,7 @@
          "DownloadFiles":[
             {
                "Name":"Red Waves (2 in 1)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/5ziznopna7adf1z/2%20in%201%20Red%20Waves.zip?raw=true",
                "InstallPaths":[
@@ -3857,7 +3857,7 @@
          "DownloadFiles":[
             {
                "Name":"Blue & Purple Waves",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/29gm5k1rcajfc0i/Blue%20%26%20Purple%20Waves.zip?raw=true",
                "InstallPaths":[
@@ -3882,7 +3882,7 @@
          "DownloadFiles":[
             {
                "Name":"Green to Blue Waves (Night Background)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/m2fh2d7czkemq59/Green%20to%20Blue%20Night%20BG.zip?raw=true",
                "InstallPaths":[
@@ -3907,7 +3907,7 @@
          "DownloadFiles":[
             {
                "Name":"Green & Yellow Waves",
-               "Region":"",
+               "Region":"-",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/04klfuvq1rg9x1v/Green%20%26%20Yellow%20Waves%20v2.zip?raw=true",
                "InstallPaths":[
@@ -3932,7 +3932,7 @@
          "DownloadFiles":[
             {
                "Name":"Green & Yellow Waves",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/70sy8fs13mxt4xp/Green%20%26%20Yellow%20Waves.zip?raw=true",
                "InstallPaths":[
@@ -3957,7 +3957,7 @@
          "DownloadFiles":[
             {
                "Name":"Original Waves",
-               "Region":"",
+               "Region":"-",
                "Version":"-",
                "URL":"https://dl.dropbox.com/s/3fdm3lkw6yqvx0b/Original%20Waves.zip?raw=true",
                "InstallPaths":[
@@ -3982,7 +3982,7 @@
          "DownloadFiles":[
             {
                "Name":"Red to Green Waves (Night Background)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/yoqhwgjcx6g0viu/Red%20to%20Green%20Waves%20Night%20BG.zip?raw=true",
                "InstallPaths":[
@@ -4007,7 +4007,7 @@
          "DownloadFiles":[
             {
                "Name":"Zebra Transition (Blue to Red)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/1hpunzb970gt7as/Zebra%20Transition%20also%20Blue%20to%20Red.zip?raw=true",
                "InstallPaths":[
@@ -4032,7 +4032,7 @@
          "DownloadFiles":[
             {
                "Name":"Zebra Wide Blue to Purple",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/mfid3xl0kt25ksl/Zebra%20Wide%20Blue%20to%20Purple.zip?raw=true",
                "InstallPaths":[
@@ -4057,7 +4057,7 @@
          "DownloadFiles":[
             {
                "Name":"Zebra Wide Red",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/rjsskkggb1rnyne/Zebra%20Wide%20Red.zip?raw=true",
                "InstallPaths":[
@@ -4082,7 +4082,7 @@
          "DownloadFiles":[
             {
                "Name":"Supreme Engine Menu (Off Host)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/n2b194gu6iptlhj/Supreme%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -4108,7 +4108,7 @@
          "DownloadFiles":[
             {
                "Name":"Perxy Menu (Off Host)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"3.0.0",
                "URL":"https://dl.dropbox.com/s/esmwh6askilksl4/Perxy%20Non%20Host%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -4151,8 +4151,8 @@
          "DownloadFiles":[
             {
                "Name":"EliteBot Menu v1.1",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.1/3.3",
                "URL":"https://dl.dropbox.com/s/zetrk4hp0ajsilf/EliteBot%20Menu.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -4164,8 +4164,8 @@
             },
             {
                "Name":"EliteBot Menu v3.3",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.1/3.3",
                "URL":"https://dl.dropbox.com/s/sb6t91nu5z4vkuz/EliteBot%20Menu%20v3.3.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -4194,7 +4194,7 @@
          "DownloadFiles":[
             {
                "Name":"Single Player Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/jq6j0gfbyqj1bky/Singleplayer%20Menu%20v2%20%5BSP%5D%20%5BPATCH%5D.zip?raw=true",
                "InstallPaths":[
@@ -4219,8 +4219,8 @@
          "DownloadFiles":[
             {
                "Name":"Discarded Menu v3",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"3.0",
                "URL":"https://dl.dropbox.com/s/vk7qy0c83psuaz1/Discarded%20v3%20%5BZM%5D%20%5BPATCH%5D.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/english/patch.ff"
@@ -4228,8 +4228,8 @@
             },
             {
                "Name":"Discarded Menu v4",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"3.0",
                "URL":"https://dl.dropbox.com/s/e9ujpv56pr3yfml/Discarded%20v4%20%5BZM%5D%20%5BPATCH%5D.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/english/patch.ff"
@@ -4253,7 +4253,7 @@
          "DownloadFiles":[
             {
                "Name":"VortexGaming Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/bbsolnp3j4e0dzs/VortexGaming%20Menu%20%5BPATCH%5D.zip?raw=true",
                "InstallPaths":[
@@ -4278,7 +4278,7 @@
          "DownloadFiles":[
             {
                "Name":"Gold Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/bbsolnp3j4e0dzs/VortexGaming%20Menu%20%5BPATCH%5D.zip?raw=true",
                "InstallPaths":[
@@ -4303,7 +4303,7 @@
          "DownloadFiles":[
             {
                "Name":"x2EzYx--'s Private Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.2",
                "URL":"https://dl.dropbox.com/s/zj0rvmaaa4a68h2/x2EzYx--%27s%20Private%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -4328,7 +4328,7 @@
          "DownloadFiles":[
             {
                "Name":"Arkadia Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.1",
                "URL":"https://dl.dropbox.com/s/e1jj76ypkb1msfh/Arkadia%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -4354,7 +4354,7 @@
          "DownloadFiles":[
             {
                "Name":"Purple XMB & Icons",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/cxtvl7pdp3mnoqn/Purple%20XMB%20v1.zip?raw=true",
                "InstallPaths":[
@@ -4387,7 +4387,7 @@
          "DownloadFiles":[
             {
                "Name":"Purple Theme (XMB, Icons & Wave)",
-               "Region":"",
+               "Region":"-",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/cxtvl7pdp3mnoqn/Purple%20XMB%20v1.zip?raw=true",
                "InstallPaths":[
@@ -4438,7 +4438,7 @@
          "DownloadFiles":[
             {
                "Name":"Green Theme (XMB, Icons & Wave)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.2",
                "URL":"https://dl.dropbox.com/s/fxm61udadlwyxhi/Green%20Theme%20by%20Veqz.zip?raw=true",
                "InstallPaths":[
@@ -4498,7 +4498,7 @@
          "DownloadFiles":[
             {
                "Name":"Physics 'n' Flex Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/g9tmtrsu6ea6ec0/Physics%20n%20Flex%20v2%20%5BZM%5D%20%5BPATCH%5D.zip?raw=true",
                "InstallPaths":[
@@ -4523,7 +4523,7 @@
          "DownloadFiles":[
             {
                "Name":"PSN Avatars Pack (300+)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/x06gyqx8gnidskj/Avatars%20Pack%20%28300%2B%29.zip?raw=true",
                "InstallPaths":[
@@ -4848,7 +4848,7 @@
          "DownloadFiles":[
             {
                "Name":"PSN Avatars Pack (Old Unreleased)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/6z50wlp6kazmh3a/Unreleased%20Avatars%20Pack%20%28Old%29.zip?raw=true",
                "InstallPaths":[
@@ -5032,7 +5032,7 @@
          "DownloadFiles":[
             {
                "Name":"PSN Avatars Pack (New Unreleased)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/8ocy8pby7kdt9ji/Unreleased%20Avatars%20Pack%20%28New%29.zip?raw=true",
                "InstallPaths":[
@@ -5080,7 +5080,7 @@
          "DownloadFiles":[
             {
                "Name":"PSN Avatars Pack (2600+)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/vjrgydxzussf3zf/Avatars%20Pack%20%282600%2B%29.zip?raw=true",
                "InstallPaths":[
@@ -7730,7 +7730,7 @@
          "DownloadFiles":[
             {
                "Name":"Modded Profile Comment",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/gqngknp88b5buxd/Modded%20Profile%20Comment.zip?raw=true",
                "InstallPaths":[
@@ -7755,7 +7755,7 @@
          "DownloadFiles":[
             {
                "Name":"Choco's Private Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/dwmmvcqj4sjh6gu/Choco%20Private%20Menu%20v2.zip?raw=true",
                "InstallPaths":[
@@ -7780,7 +7780,7 @@
          "DownloadFiles":[
             {
                "Name":"Apollo Save Tool",
-               "Region":"",
+               "Region":"-",
                "Version":"1.4.6",
                "URL":"https://dl.dropbox.com/s/kqwuvt4ktufx8c6/Apollo%20Save%20Tool.zip?raw=true",
                "InstallPaths":[
@@ -7805,7 +7805,7 @@
          "DownloadFiles":[
             {
                "Name":"reActPSN",
-               "Region":"",
+               "Region":"-",
                "Version":"3.20",
                "URL":"https://dl.dropbox.com/s/bwpu0qfmiqx5j6c/reActPSN%20v3.20.zip?raw=true",
                "InstallPaths":[
@@ -7830,7 +7830,7 @@
          "DownloadFiles":[
             {
                "Name":"Hestia Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/9mc7fv62dx9kayj/Hestia%20v2.zip?raw=true",
                "InstallPaths":[
@@ -7857,7 +7857,7 @@
          "DownloadFiles":[
             {
                "Name":"Project Nightmare",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/ijrje7hcuo33h5t/Project%20NIghtmare.zip?raw=true",
                "InstallPaths":[
@@ -7883,7 +7883,7 @@
          "DownloadFiles":[
             {
                "Name":"PKGi",
-               "Region":"",
+               "Region":"-",
                "Version":"1.1.8",
                "URL":"https://dl.dropbox.com/s/p4gbg6tdmqicqrc/PKGi%20Tool.zip?raw=true",
                "InstallPaths":[
@@ -7908,7 +7908,7 @@
          "DownloadFiles":[
             {
                "Name":"ArtemisPS3",
-               "Region":"",
+               "Region":"-",
                "Version":"6.2",
                "URL":"https://dl.dropbox.com/s/agq2wz9cf2jj3vl/ArtemisPS3.zip?raw=true",
                "InstallPaths":[
@@ -7933,7 +7933,7 @@
          "DownloadFiles":[
             {
                "Name":"RetroArch",
-               "Region":"",
+               "Region":"-",
                "Version":"1.8.4",
                "URL":"https://dl.dropbox.com/s/mz2qy7wpdj39qsk/RetroArchPS3.zip?raw=true",
                "InstallPaths":[
@@ -7958,7 +7958,7 @@
          "DownloadFiles":[
             {
                "Name":"ScummVM",
-               "Region":"",
+               "Region":"-",
                "Version":"2.2.0",
                "URL":"https://dl.dropbox.com/s/n9i71mi3hg2nnmw/ScummVM.zip?raw=true",
                "InstallPaths":[
@@ -7983,7 +7983,7 @@
          "DownloadFiles":[
             {
                "Name":"MAME",
-               "Region":"",
+               "Region":"-",
                "Version":"0.125",
                "URL":"https://dl.dropbox.com/s/8urfg5gtfidmlsn/MAME.zip?raw=true",
                "InstallPaths":[
@@ -8008,7 +8008,7 @@
          "DownloadFiles":[
             {
                "Name":"IDPSet",
-               "Region":"",
+               "Region":"-",
                "Version":"0.92",
                "URL":"https://dl.dropbox.com/s/5y9obzydg1fyfmt/IDPSet.zip?raw=true",
                "InstallPaths":[
@@ -8033,7 +8033,7 @@
          "DownloadFiles":[
             {
                "Name":"Control Fan Utility",
-               "Region":"",
+               "Region":"-",
                "Version":"4.86",
                "URL":"https://dl.dropbox.com/s/he3umy1ql090yt3/Control%20Fan%20Utility.zip?raw=true",
                "InstallPaths":[
@@ -8058,7 +8058,7 @@
          "DownloadFiles":[
             {
                "Name":"Mystery Cheats",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0.0",
                "URL":"https://dl.dropbox.com/s/pojwdfmivj58388/Mystery%20Cheats%20SSM.zip?raw=true",
                "InstallPaths":[
@@ -8084,7 +8084,7 @@
          "DownloadFiles":[
             {
                "Name":"gameDATA Tool",
-               "Region":"",
+               "Region":"-",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/rx7h5v2m73aucpx/gameDATA%20Tool.zip?raw=true",
                "InstallPaths":[
@@ -8109,7 +8109,7 @@
          "DownloadFiles":[
             {
                "Name":"Sketch Fight",
-               "Region":"",
+               "Region":"-",
                "Version":"0.1",
                "URL":"https://dl.dropbox.com/s/3ev3lzq9nxg51zo/Sketch%20Fight.zip?raw=true",
                "InstallPaths":[
@@ -8134,7 +8134,7 @@
          "DownloadFiles":[
             {
                "Name":"Reflex Engine (Off Host)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.5",
                "URL":"https://dl.dropbox.com/s/lwsjgbbayvvulkf/Reflex%20Engine.zip?raw=true",
                "InstallPaths":[
@@ -8163,7 +8163,7 @@
          "DownloadFiles":[
             {
                "Name":"Tesseract Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/snm14y0uk21nfgn/Tesseract%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -8189,7 +8189,7 @@
          "DownloadFiles":[
             {
                "Name":"Legendary Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/kjblj4gzturr4x3/Legendary%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -8215,7 +8215,7 @@
          "DownloadFiles":[
             {
                "Name":"Retro Client (Cracked)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/pbza0vo1wf0n6fz/Retro%20Client%20%28Cracked%29.zip?raw=true",
                "InstallPaths":[
@@ -8243,7 +8243,7 @@
          "DownloadFiles":[
             {
                "Name":"God Engine Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/x487gcpcw2ji1pv/God%20Engine%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -8269,7 +8269,7 @@
          "DownloadFiles":[
             {
                "Name":"Super Mario War",
-               "Region":"",
+               "Region":"-",
                "Version":"1.8_r7a",
                "URL":"https://dl.dropbox.com/s/4l5f6xdt1tf4re8/Super%20Mario%20War.zip?raw=true",
                "InstallPaths":[
@@ -8294,7 +8294,7 @@
          "DownloadFiles":[
             {
                "Name":"All DLC Costumes (Crown, Beta, LBP1 & Shirt)",
-               "Region":"",
+               "Region":"BCES00850",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/9tbw6dzp5vkknsm/All%20DLC%20Costumes.zip?raw=true",
                "InstallPaths":[
@@ -8836,7 +8836,7 @@
          "DownloadFiles":[
             {
                "Name":"XMB Mods Collection",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/9hkqd9bx9psi69y/XMB%20Mods%20Collection.zip?raw=true",
                "InstallPaths":[
@@ -8861,7 +8861,7 @@
          "DownloadFiles":[
             {
                "Name":"Adidas Logo",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/xhrrdabeoptmu6c/Adidas%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -8886,8 +8886,8 @@
          "DownloadFiles":[
             {
                "Name":"Ariana Grande",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/t1wz8txsxv346g0/Ariana%20Grande.zip?raw=true",
                "InstallPaths":[
                   "/dev_rebug/vsh/resource/coldboot.raf"
@@ -8895,8 +8895,8 @@
             },
             {
                "Name":"Ariana Grande (LBM)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/ddr5jpoaasmhshm/Ariana%20Grande%20LBM.zip?raw=true",
                "InstallPaths":[
                   "/dev_rebug/vsh/resource/coldboot.raf"
@@ -8920,7 +8920,7 @@
          "DownloadFiles":[
             {
                "Name":"Colorful Weed Logo",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/5sfgnjkspszevb6/Colorful%20Weed%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -8945,7 +8945,7 @@
          "DownloadFiles":[
             {
                "Name":"Ferrari Logo",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/8fco2o2kjvkur75/Ferrari%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -8970,7 +8970,7 @@
          "DownloadFiles":[
             {
                "Name":"Jordan Logo",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/43vzqbltw8f1gzr/Jordan%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -8995,7 +8995,7 @@
          "DownloadFiles":[
             {
                "Name":"Lamborghini Logo",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/1hgay4gefjcqmr0/Lamborghini%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -9020,7 +9020,7 @@
          "DownloadFiles":[
             {
                "Name":"Monster Energy Logo",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/ah0wjg0pjpoxgfq/Monster%20Energy%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -9045,8 +9045,8 @@
          "DownloadFiles":[
             {
                "Name":"Nike Logo (Black)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/ah0wjg0pjpoxgfq/Monster%20Energy%20Logo.zip?raw=true",
                "InstallPaths":[
                   "/dev_rebug/vsh/resource/coldboot.raf"
@@ -9054,8 +9054,8 @@
             },
             {
                "Name":"Nike Logo (Orange)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/e2z9lvpsg2r9iut/Nike%20Logo%20%28Orange%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_rebug/vsh/resource/coldboot.raf"
@@ -9079,7 +9079,7 @@
          "DownloadFiles":[
             {
                "Name":"Nike Swoosh Logo (Black)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/aixkm5j1clu65wd/Nike%20Swoosh%20Logo%20%28Black%29.zip?raw=true",
                "InstallPaths":[
@@ -9104,7 +9104,7 @@
          "DownloadFiles":[
             {
                "Name":"PlayStation 2 Logo & Sound",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/wqb4qy06lmq4snd/PlayStation%201%20Logo%20%2B%20Sound.zip?raw=true",
                "InstallPaths":[
@@ -9131,7 +9131,7 @@
          "DownloadFiles":[
             {
                "Name":"Redbull Logo",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/1k9brerw71t9nn6/Redbull%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -9156,7 +9156,7 @@
          "DownloadFiles":[
             {
                "Name":"Relentless Logo",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/7vjq4wz2d3h9s6t/Relentless%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -9181,8 +9181,8 @@
          "DownloadFiles":[
             {
                "Name":"Rihanna",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/5rn6qjgjnmlq2ft/Rihanna.zip?raw=true",
                "InstallPaths":[
                   "/dev_rebug/vsh/resource/coldboot.raf"
@@ -9190,8 +9190,8 @@
             },
             {
                "Name":"Rihanna (LBM)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/68pchr24a2ulh4a/Rihanna%20LBM.zip?raw=true",
                "InstallPaths":[
                   "/dev_rebug/vsh/resource/coldboot.raf"
@@ -9215,8 +9215,8 @@
          "DownloadFiles":[
             {
                "Name":"Shakira",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/7qxpuf6irpjcx1l/Shakira.zip?raw=true",
                "InstallPaths":[
                   "/dev_rebug/vsh/resource/coldboot.raf"
@@ -9224,8 +9224,8 @@
             },
             {
                "Name":"Shakira (LBM)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/sxsa4j1jqeewxp3/Shakira%20LBM.zip?raw=true",
                "InstallPaths":[
                   "/dev_rebug/vsh/resource/coldboot.raf"
@@ -9249,7 +9249,7 @@
          "DownloadFiles":[
             {
                "Name":"Super Mario Logo & Sound",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/iazrde6qeha73ir/Super%20Mario%20Logo%20%2B%20Sound.zip?raw=true",
                "InstallPaths":[
@@ -9276,7 +9276,7 @@
          "DownloadFiles":[
             {
                "Name":"Weed Stoner Logo",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/vu3w0cz16x1tbof/Weed%20Stoner%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -9301,7 +9301,7 @@
          "DownloadFiles":[
             {
                "Name":"Butterfly (Purple)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/s2kdc53rtmwfu4y/Butterfly%20%28Purple%29.zip?raw=true",
                "InstallPaths":[
@@ -9326,7 +9326,7 @@
          "DownloadFiles":[
             {
                "Name":"Devil Inside",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/g8dwk3dajnowvbx/Devil%20Inside.zip?raw=true",
                "InstallPaths":[
@@ -9351,7 +9351,7 @@
          "DownloadFiles":[
             {
                "Name":"Original PS3",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/susx34pvbuftq7m/Original%20PS3.zip?raw=true",
                "InstallPaths":[
@@ -9378,7 +9378,7 @@
          "DownloadFiles":[
             {
                "Name":"Original Rebug CEX/DEX",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/kesya8vdbz9d9o4/Original%20Rebug%20CEX/DEX.zip?raw=true",
                "InstallPaths":[
@@ -9405,7 +9405,7 @@
          "DownloadFiles":[
             {
                "Name":"Anomaly Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/a856i27672xs817/Anomaly%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -9431,7 +9431,7 @@
          "DownloadFiles":[
             {
                "Name":"Project GT Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"3.1",
                "URL":"https://dl.dropbox.com/s/1depyf92lu1pzld/Project%20GT%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -9457,7 +9457,7 @@
          "DownloadFiles":[
             {
                "Name":"Inception Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/eeuzuy46rk3fh5w/Inception%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -9483,7 +9483,7 @@
          "DownloadFiles":[
             {
                "Name":"Paradise Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/kdjf2jt4bf8tsgw/Paradise%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -9509,7 +9509,7 @@
          "DownloadFiles":[
             {
                "Name":"Aimbot & Anti-Ban (Off Host)",
-               "Region":"",
+               "Region":"BLUS31011",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/t1f68hi4l4azutq/Aimbot%20%2B%20Antiban%20%28Off%20Host%29.zip?raw=true",
                "InstallPaths":[
@@ -9534,7 +9534,7 @@
          "DownloadFiles":[
             {
                "Name":"Infinity Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/xtq75pyuk9qce4l/Infinity%20Menu%20v1.zip?raw=true",
                "InstallPaths":[
@@ -9560,8 +9560,8 @@
          "DownloadFiles":[
             {
                "Name":"The Hustler Menu (BLES)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.9",
                "URL":"https://dl.dropbox.com/s/k52ytuxnugdgxat/The%20Hustler%20Menu%20%28BLES%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -9570,8 +9570,8 @@
             },
             {
                "Name":"The Hustler Menu (BLUS)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.9",
                "URL":"https://dl.dropbox.com/s/9mr3ja9brdsda14/The%20Hustler%20Menu%20%28BLUS%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -9596,8 +9596,8 @@
          "DownloadFiles":[
             {
                "Name":"PS3™ 4K Pro (CEX/DEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"5.1",
                "URL":"https://dl.dropbox.com/s/zwos2a8ko9xjtvu/PS3%204K%20Pro%20%28CEX/DEX%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/packages/[CEX/DEX] PS3 4K Pro v5.1.pkg"
@@ -9605,8 +9605,8 @@
             },
             {
                "Name":"PS3™ 4K Pro (HEN)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"5.1",
                "URL":"https://dl.dropbox.com/s/3en71w8fkk7mtsx/PS3%204K%20Pro%20%28HEN%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/packages/[HEN] PS3 4K Pro v5.1.pkg"
@@ -9630,7 +9630,7 @@
          "DownloadFiles":[
             {
                "Name":"The Shake Package",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/f7ietmmycpoy6mb/The%20Shake%20Package.zip?raw=true",
                "InstallPaths":[
@@ -9657,7 +9657,7 @@
          "DownloadFiles":[
             {
                "Name":"Jo-Milk's Playground",
-               "Region":"",
+               "Region":"ALL",
                "Version":"0.1.0",
                "URL":"https://dl.dropbox.com/s/0bnfw0nvbpua7wi/Jo-Milk%27s%20Playground%20Beta.zip?raw=true",
                "InstallPaths":[
@@ -9683,8 +9683,8 @@
          "DownloadFiles":[
             {
                "Name":"GSC Mods Injector (BLES01717)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/j1e0y2vzrhtu9q4/GSC%20Mods%20Injector%20%28BLES01717%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -9737,8 +9737,8 @@
             },
             {
                "Name":"GSC Mods Injector (BLES01718)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/o3jeh9575d9s247/GSC%20Mods%20Injector%20%28BLES01718%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -9791,8 +9791,8 @@
             },
             {
                "Name":"GSC Mods Injector (BLES01719)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/ohmbn5192q66nkg/GSC%20Mods%20Injector%20%28BLES01719%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -9845,8 +9845,8 @@
             },
             {
                "Name":"GSC Mods Injector (BLES01720)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/7ylbtqiy431sosn/GSC%20Mods%20Injector%20%28BLES01720%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -9899,8 +9899,8 @@
             },
             {
                "Name":"GSC Mods Injector (BLUS31011)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/61ap8ofv4qfl4gr/GSC%20Mods%20Injector%20%28BLUS31011%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -9969,7 +9969,7 @@
          "DownloadFiles":[
             {
                "Name":"FYV7 Mod Loader",
-               "Region":"",
+               "Region":"ALL",
                "Version":"11.0",
                "URL":"https://dl.dropbox.com/s/wmxk36c4rhddcvb/FYV7%20ModLoader.zip?raw=true",
                "InstallPaths":[
@@ -9994,7 +9994,7 @@
          "DownloadFiles":[
             {
                "Name":"Original Opening Animation Song (Wii)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/9ooau0yr4y5iij9/Original%20Opening%20Animation%20Song.zip?raw=true",
                "InstallPaths":[
@@ -10019,7 +10019,7 @@
          "DownloadFiles":[
             {
                "Name":"Dead Space 3 (100% Complete)",
-               "Region":"",
+               "Region":"BLES00310",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/sifefdywi7d5hsu/Complete%20%28100%25%29.zip?raw=true",
                "InstallPaths":[
@@ -10048,7 +10048,7 @@
          "DownloadFiles":[
             {
                "Name":"Main Story Quests Completed (100%)",
-               "Region":"",
+               "Region":"BLES00310",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/6yubtc9bmh30ar3/Main%20Story%20Quests%20Completed.zip?raw=true",
                "InstallPaths":[
@@ -10076,7 +10076,7 @@
          "DownloadFiles":[
             {
                "Name":"Start at Level 90 w/ 10000 Stats",
-               "Region":"",
+               "Region":"BLUS30778",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/zgoborc4oz5yz0p/Level%2090%20%2B%2010000%20Stats.zip?raw=true",
                "InstallPaths":[
@@ -10106,7 +10106,7 @@
          "DownloadFiles":[
             {
                "Name":"Completed Story Mode (100%)",
-               "Region":"",
+               "Region":"BLES01667",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/738lpadhfdhocdj/Complete%20Story%20Mode.zip?raw=true",
                "InstallPaths":[
@@ -10138,7 +10138,7 @@
          "DownloadFiles":[
             {
                "Name":"Story Mode Completed (100%)",
-               "Region":"",
+               "Region":"BLUS30420",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/lwq1queepdnzui3/Story%20Complete.zip?raw=true",
                "InstallPaths":[
@@ -10167,7 +10167,7 @@
          "DownloadFiles":[
             {
                "Name":"Commando Level 50, Max Skill Points, Infinite Ammo + More (100%)",
-               "Region":"",
+               "Region":"BLES01684",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/j8n96bgerkl458z/Story%20Complete.zip?raw=true",
                "InstallPaths":[
@@ -10196,7 +10196,7 @@
          "DownloadFiles":[
             {
                "Name":"Infinite Ammo, Infinite Health, Infinite Points + More",
-               "Region":"",
+               "Region":"BLES014650",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/0ign9t09ar5myma/Infinite%20Ammo%2C%20Infinite%20Health%2C%20Infinite%20Points%20%2B%20More.zip?raw=true",
                "InstallPaths":[
@@ -10225,7 +10225,7 @@
          "DownloadFiles":[
             {
                "Name":"Platinum Save & Some Mods",
-               "Region":"",
+               "Region":"BLES014650",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/w8u7wfithcqo3jg/Platinum%20Save%20%26%20Some%20Mods.zip?raw=true",
                "InstallPaths":[
@@ -10254,7 +10254,7 @@
          "DownloadFiles":[
             {
                "Name":"Story Mode Complete (100%) (Pro Mode, All Weapons, etc.)",
-               "Region":"",
+               "Region":"BLUS30270",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/n1dxih97s3pxm36/Complete%20Story%20Mode.zip?raw=true",
                "InstallPaths":[
@@ -10283,7 +10283,7 @@
          "DownloadFiles":[
             {
                "Name":"Story Mode Complete (100%) (Gold for All Races)",
-               "Region":"",
+               "Region":"BLUS30142",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/1kpkq14gtz4lwdd/Complete%20%28100%25%29.zip?raw=true",
                "InstallPaths":[
@@ -10313,7 +10313,7 @@
          "DownloadFiles":[
             {
                "Name":"Story Mode Complete (100%) (All Race Trophies Gold)",
-               "Region":"",
+               "Region":"BLES00256",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/duoijhog6iot68g/Complete%20%28100%25%29%20-%20All%20Race%20Trophy%20Gold.zip?raw=true",
                "InstallPaths":[
@@ -10343,7 +10343,7 @@
          "DownloadFiles":[
             {
                "Name":"Story Mode Complete (100%) (All cars, Sponsors, etc.)",
-               "Region":"",
+               "Region":"BLES00256",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/8j5zcwxy8b5bva3/Complete%20%28100%25%29%20-%20All%20cars%2C%20All%20sponsors.zip?raw=true",
                "InstallPaths":[
@@ -10373,7 +10373,7 @@
          "DownloadFiles":[
             {
                "Name":"Story Mode Complete (100%) (All Cars, Sponsors, etc.)",
-               "Region":"",
+               "Region":"BLUS30182",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/453yxj6orf6fvai/Complete%20Story%20Mode.zip?raw=true",
                "InstallPaths":[
@@ -10400,7 +10400,7 @@
          "DownloadFiles":[
             {
                "Name":"Story Mode Complete (100%) + All Unlocked",
-               "Region":"",
+               "Region":"NPUB30009",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/9o6ii5d6d39vern/Story%20Mode%20Complete%20%28100%25%29%20%2B%20All%20Unlocked.zip?raw=true",
                "InstallPaths":[
@@ -10429,7 +10429,7 @@
          "DownloadFiles":[
             {
                "Name":"Story Mode Complete (100%)",
-               "Region":"",
+               "Region":"BLES01780",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/qjuymq0s0nmt8xx/Story%20Mode%20Complete%20%28100%25%29.zip?dl=0?raw=true",
                "InstallPaths":[
@@ -10458,7 +10458,7 @@
          "DownloadFiles":[
             {
                "Name":"Modded Starter Save (Salvage 9999, Arrow 40, etc.)",
-               "Region":"",
+               "Region":"BLUS31036",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/tmqz1yeixm2973r/Modded%20Starter%20Save.zip?raw=true",
                "InstallPaths":[
@@ -10487,7 +10487,7 @@
          "DownloadFiles":[
             {
                "Name":"Ultimate Save (All Skills, Weapons, etc.)",
-               "Region":"",
+               "Region":"BLES014650",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/r4fs1o49dwx1vlw/Ultimate%20Save.zip?raw=true",
                "InstallPaths":[
@@ -10516,7 +10516,7 @@
          "DownloadFiles":[
             {
                "Name":"Complete Story Mode (100%)",
-               "Region":"",
+               "Region":"BLES014650",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/71v29cykglcheri/Complete%20Save%20%28100%25%29.zip?raw=true",
                "InstallPaths":[
@@ -10545,7 +10545,7 @@
          "DownloadFiles":[
             {
                "Name":"All Unlocked & All Gallery Items Purchased",
-               "Region":"",
+               "Region":"NPUB30009",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/17v4asur6ekj2g6/All%20Unlocked%2C%20All%20Gallery%20Items%20Purchased.zip?raw=true",
                "InstallPaths":[
@@ -10574,7 +10574,7 @@
          "DownloadFiles":[
             {
                "Name":"Anti-Paradise",
-               "Region":"",
+               "Region":"ALL",
                "Version":"0.1.0",
                "URL":"https://dl.dropbox.com/s/kwct05nxlj619zt/Anti-Paradise%20%5BSPRX%5D.zip?raw=true",
                "InstallPaths":[
@@ -10600,7 +10600,7 @@
          "DownloadFiles":[
             {
                "Name":"FYV7 Mod Loader (Deluxe)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"12.0",
                "URL":"https://dl.dropbox.com/s/yzyvzsq3ilwxusc/FYV7%20ModLoader%20v12.zip?raw=true",
                "InstallPaths":[
@@ -10625,7 +10625,7 @@
          "DownloadFiles":[
             {
                "Name":"Minus 18MB",
-               "Region":"",
+               "Region":"-",
                "Version":"1.00",
                "URL":"https://dl.dropbox.com/s/198ac4obojklxwh/Minus%2018MB.zip?raw=true",
                "InstallPaths":[
@@ -10650,7 +10650,7 @@
          "DownloadFiles":[
             {
                "Name":"Extended Download Plugin",
-               "Region":"",
+               "Region":"-",
                "Version":"1.01",
                "URL":"https://dl.dropbox.com/s/awmml4lzejsnxw8/Extended%20Download%20Plugin.zip?raw=true",
                "InstallPaths":[
@@ -10675,7 +10675,7 @@
          "DownloadFiles":[
             {
                "Name":"Podcast Player",
-               "Region":"",
+               "Region":"-",
                "Version":"1.00",
                "URL":"https://dl.dropbox.com/s/27edjc8bnmzhfwi/Podcast%20Player.zip?raw=true",
                "InstallPaths":[
@@ -10700,8 +10700,8 @@
          "DownloadFiles":[
             {
                "Name":"Project Rain (DEX/HEN/CEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"5.0",
                "URL":"https://dl.dropbox.com/s/5y17apllc30eanf/Project%20Rain%20v5%20%5BDEX-BLES%5D.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -10710,8 +10710,8 @@
             },
             {
                "Name":"Project Rain (CEX) (BLES01807)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"5.0",
                "URL":"https://dl.dropbox.com/s/yf0neymlfbrcnl8/Project%20Rain%20v5%20%5BCEX-BLES%5D.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -10720,8 +10720,8 @@
             },
             {
                "Name":"Project Rain (BLES01807) (XMB FREEZE FIX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"5.0",
                "URL":"https://dl.dropbox.com/s/r10mn2xx13atc4h/Project%20Rain%20v5%20%5BHEN-BLES%5D%20%5BXMB%20FREEZE%20FIX%5D.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -10730,8 +10730,8 @@
             },
             {
                "Name":"Project Rain (HEN) (BLUS31156)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"5.0",
                "URL":"https://dl.dropbox.com/s/gaddg7nhx3yrsq6/Project%20Rain%20v5%20%5BHEN-BLUS%5D.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -10740,8 +10740,8 @@
             },
             {
                "Name":"Project Rain (HEN) (BLES01807)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"5.0",
                "URL":"https://dl.dropbox.com/s/zwiv0nsndgc3507/Project%20Rain%20v5%20%5BHEN-BLES%5D.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -10766,7 +10766,7 @@
          "DownloadFiles":[
             {
                "Name":"OpenSupaplex",
-               "Region":"",
+               "Region":"-",
                "Version":"7.1.2",
                "URL":"https://dl.dropbox.com/s/dppmru17rtr9kk4/OpenSupaplex%20v7.1.2.zip?raw=true",
                "InstallPaths":[
@@ -10791,7 +10791,7 @@
          "DownloadFiles":[
             {
                "Name":"Simple File Manager",
-               "Region":"",
+               "Region":"-",
                "Version":"0.5.2",
                "URL":"https://dl.dropbox.com/s/ccua67m9g2t5bo2/Simple%20File%20Manager.zip?raw=true",
                "InstallPaths":[
@@ -10816,7 +10816,7 @@
          "DownloadFiles":[
             {
                "Name":"MONSTER Manager",
-               "Region":"",
+               "Region":"-",
                "Version":"1.07",
                "URL":"https://dl.dropbox.com/s/nhlng72zh9tktof/MONSTER%20Manager.zip?raw=true",
                "InstallPaths":[
@@ -10841,7 +10841,7 @@
          "DownloadFiles":[
             {
                "Name":"Play Manager",
-               "Region":"",
+               "Region":"-",
                "Version":"1.12",
                "URL":"https://dl.dropbox.com/s/09jw2khnf77czj6/Player%20Manager.zip?raw=true",
                "InstallPaths":[
@@ -10866,7 +10866,7 @@
          "DownloadFiles":[
             {
                "Name":"Fury Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/dyj1xto7h867qi1/Fury%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -10892,7 +10892,7 @@
          "DownloadFiles":[
             {
                "Name":"Paradox Menu (Cracked)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"3.0",
                "URL":"https://dl.dropbox.com/s/v1yx2fhhkaurpd3/Paradox%20Menu%20%5BCracked%5D.zip?raw=true",
                "InstallPaths":[
@@ -10919,7 +10919,7 @@
          "DownloadFiles":[
             {
                "Name":"Fury Menu [Free Version]",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/hx8p1p4z14wjoqz/Fury%20Menu%20v1%20%5BFree%20Version%5D.zip?raw=true",
                "InstallPaths":[
@@ -10945,7 +10945,7 @@
          "DownloadFiles":[
             {
                "Name":"Fury Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/jzpcbwqln28u48s/Fury%20Menu%20v2.zip?raw=true",
                "InstallPaths":[
@@ -10971,7 +10971,7 @@
          "DownloadFiles":[
             {
                "Name":"Hextic Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"r9.5",
                "URL":"https://dl.dropbox.com/s/xl6849vspnlbk84/Hextic%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -10998,7 +10998,7 @@
          "DownloadFiles":[
             {
                "Name":"InfinityCE Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.1",
                "URL":"https://dl.dropbox.com/s/kxcyr4zs6tlkbch/InfinityCE%20Prime%20Edition.zip?raw=true",
                "InstallPaths":[
@@ -11024,7 +11024,7 @@
          "DownloadFiles":[
             {
                "Name":"Anti-Freeze",
-               "Region":"",
+               "Region":"BLUS31011/BLES01717",
                "Version":"1.0.1",
                "URL":"https://dl.dropbox.com/s/6nyazilrjo1oafr/Debug%20%2B%20Crash%20Fix%20%28MP%29.zip?raw=true",
                "InstallPaths":[
@@ -11049,7 +11049,7 @@
          "DownloadFiles":[
             {
                "Name":"Debug + Crash Fix (Multiplayer)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/6nyazilrjo1oafr/Debug%20%2B%20Crash%20Fix%20%28MP%29.zip?raw=true",
                "InstallPaths":[
@@ -11058,7 +11058,7 @@
             },
             {
                "Name":"Debug + Crash Fix (Zombies)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/e7erpm0z1zil2am/Debug%20%2B%20Crash%20Fix%20%28ZM%29.zip?raw=true",
                "InstallPaths":[
@@ -11083,7 +11083,7 @@
          "DownloadFiles":[
             {
                "Name":"Clean Debug (Multiplayer)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/1rkjkn72bfroz4p/Clean%20Debug%20Eboot%20%28MP%29.zip?raw=true",
                "InstallPaths":[
@@ -11092,7 +11092,7 @@
             },
             {
                "Name":"Clean Debug (Zombies)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/upqsq9wwcz3j8jy/Clean%20Debug%20Eboot%20%28ZM%29.zip?raw=true",
                "InstallPaths":[
@@ -11117,8 +11117,8 @@
          "DownloadFiles":[
             {
                "Name":"James Reborn Mod Loader (BLES01807)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"40.1",
                "URL":"https://dl.dropbox.com/s/p7ts9mbf28p4qeg/James%20Reborn%20v40.1%20%28HEN-BLES%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -11127,8 +11127,8 @@
             },
             {
                "Name":"James Reborn Mod Loader (BLUS31156)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"40.1",
                "URL":"https://dl.dropbox.com/s/7o7zg2ahviu3y4d/James%20Reborn%20v40.1%20%28HEN-BLUS%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -11137,8 +11137,8 @@
             },
             {
                "Name":"James Reborn Mod Loader (DEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"40.1",
                "URL":"https://dl.dropbox.com/s/vsoons2efogv53s/James%20Reborn%20v40.1%20%28DEX%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/update.rpf"
@@ -11162,7 +11162,7 @@
          "DownloadFiles":[
             {
                "Name":"Project Undercover",
-               "Region":"",
+               "Region":"BLUS30591",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/wgjt1l1wzlj320x/Project%20Undercover%20v2.zip?raw=true",
                "InstallPaths":[
@@ -11188,7 +11188,7 @@
          "DownloadFiles":[
             {
                "Name":"Trophy Unlock All",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/d4n8vhtbx6lwmij/Trophy%20Unlock%20All.zip?raw=true",
                "InstallPaths":[
@@ -11216,7 +11216,7 @@
          "DownloadFiles":[
             {
                "Name":"Girl Type Avatars Premium Pack (200+)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/dfgdu2um87lgcav/Girl%20Type%20Only%20Avatars%20Premium%20Pack%20%28200%2B%29.zip?raw=true",
                "InstallPaths":[
@@ -11440,7 +11440,7 @@
          "DownloadFiles":[
             {
                "Name":"Dark & Sp00ky Avatar Pack (100+)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/yopbftr3xczoph5/Dark%20%26%20Sp00ky%20Avatars%20Pack.zip?raw=true",
                "InstallPaths":[
@@ -11599,8 +11599,8 @@
          "DownloadFiles":[
             {
                "Name":"WikiStore (CEX/DEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.0.8",
                "URL":"https://dl.dropbox.com/s/hcyo4b49ktodkjb/WikiStore%20%5BCFW%5D.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/packages/WIKISTORE_CFW_1.0.8.pkg",
@@ -11610,8 +11610,8 @@
             },
             {
                "Name":"WikiStore (HEN)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.0.8",
                "URL":"https://dl.dropbox.com/s/axqd1o4m95kixjm/WikiStore%20%5BHEN%5D.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/packages/WIKISTORE_HFW_1.0.8.pkg",
@@ -11637,7 +11637,7 @@
          "DownloadFiles":[
             {
                "Name":"999+ Million Dollars",
-               "Region":"",
+               "Region":"NPUB30781",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/6lf7ovtliq16x4w/999%20Million%20%28CEX%29.zip?raw=true",
                "InstallPaths":[
@@ -11662,7 +11662,7 @@
          "DownloadFiles":[
             {
                "Name":"999+ Million Dollars + Free Shop",
-               "Region":"",
+               "Region":"NPUB30781",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/4524nhe5blrrshe/999%20Million%20%2B%20Free%20Shop%20%28CEX%29.zip?raw=true",
                "InstallPaths":[
@@ -11687,7 +11687,7 @@
          "DownloadFiles":[
             {
                "Name":"999+ Million Dollars + Free Shop + Rapid Fire",
-               "Region":"",
+               "Region":"NPUB30781",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/6vs9s4mdakphd5h/999%20Million%20%2B%20Free%20Shop%20%2B%20Rapid%20Fire%20Weapons%20%28CEX%29.zip?raw=true",
                "InstallPaths":[
@@ -11712,7 +11712,7 @@
          "DownloadFiles":[
             {
                "Name":"999+ Million Dollars + Free Shop + All Missions",
-               "Region":"",
+               "Region":"NPUB30781",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/0ro8lwc567bedb5/999%20Million%20%2B%20Free%20Shop%20%2B%20All%20Missions%20%28CEX%29.zip?raw=true",
                "InstallPaths":[
@@ -11737,7 +11737,7 @@
          "DownloadFiles":[
             {
                "Name":"999+ Million Dollars",
-               "Region":"",
+               "Region":"NPUB30781",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/0w9zbecxct1qpcj/999%20Million%20%28DEX%29.zip?raw=true",
                "InstallPaths":[
@@ -11762,7 +11762,7 @@
          "DownloadFiles":[
             {
                "Name":"999+ Million Dollars + Free Shop",
-               "Region":"",
+               "Region":"NPUB30781",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/cst5gi4fm69ms2s/999%20Million%20%2B%20Free%20Shop%20%28DEX%29.zip?raw=true",
                "InstallPaths":[
@@ -11787,7 +11787,7 @@
          "DownloadFiles":[
             {
                "Name":"999+ Million Dollars + Free Shop + Rapid Fire",
-               "Region":"",
+               "Region":"NPUB30781",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/z3xdzje7x61p5qw/999%20Million%20%2B%20Free%20Shop%20%2B%20Rapid%20Fire%20Weapons%20%28DEX%29.zip?raw=true",
                "InstallPaths":[
@@ -11812,7 +11812,7 @@
          "DownloadFiles":[
             {
                "Name":"999+ Million Dollars + Free Shop + All Missions",
-               "Region":"",
+               "Region":"NPUB30781",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/w77vrljqh8ft3no/999%20Million%20%2B%20Free%20Shop%20%2B%20All%20Missions%20%28DEX%29.zip?raw=true",
                "InstallPaths":[
@@ -11837,8 +11837,8 @@
          "DownloadFiles":[
             {
                "Name":"Paradise Menu (DEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.5",
                "URL":"https://dl.dropbox.com/s/egxnp2cycrl13qh/Paradise%20Menu%20v1.5%20%5BSPRX%5D.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -11847,8 +11847,8 @@
             },
             {
                "Name":"Paradise Menu (CEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.5",
                "URL":"https://dl.dropbox.com/s/a5e6zg81wyx7h05/Paradise%20Menu%20v1.5%20%5BSPRX%5D%20%28CEX%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -11873,7 +11873,7 @@
          "DownloadFiles":[
             {
                "Name":"Debug Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/fm5khxzd6howk3x/Debug%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -11898,7 +11898,7 @@
          "DownloadFiles":[
             {
                "Name":"Debug Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/stfyo3ma06wzjvy/Debug%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -11926,7 +11926,7 @@
          "DownloadFiles":[
             {
                "Name":"Simple Binds",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/r8gevhanevtz214/Simple%20Binds.zip?raw=true",
                "InstallPaths":[
@@ -11952,7 +11952,7 @@
          "DownloadFiles":[
             {
                "Name":"Modified Game Settings",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/7wxp3gx7a2k44ac/Modified%20Game%20Settings.zip?raw=true",
                "InstallPaths":[
@@ -11977,7 +11977,7 @@
          "DownloadFiles":[
             {
                "Name":"Debug Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/ahkofss8gq5pabg/Debug%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -12002,7 +12002,7 @@
          "DownloadFiles":[
             {
                "Name":"Debug Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/1hvipb0qn6cnzdl/Debug%20Menu.zip?raw=true",
                "InstallPaths":[
@@ -12027,7 +12027,7 @@
          "DownloadFiles":[
             {
                "Name":"Binds + Other Stuff",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/diw3tc36pyt6892/Binds%20%2B%20Other%20Stuff.zip?raw=true",
                "InstallPaths":[
@@ -12052,7 +12052,7 @@
          "DownloadFiles":[
             {
                "Name":"Binds (God Mode, No Clip, etc.)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/kq90e07o58xxnzl/Binds%20%2B%20Other%20Stuff.zip?raw=true",
                "InstallPaths":[
@@ -12078,7 +12078,7 @@
          "DownloadFiles":[
             {
                "Name":"God Mode, One Shot + More",
-               "Region":"",
+               "Region":"NPUB30646",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/6xzxk0wf78jn167/God%20Mode%2C%20One%20Shot%20%2B%20More.zip?raw=true",
                "InstallPaths":[
@@ -12104,7 +12104,7 @@
          "DownloadFiles":[
             {
                "Name":"P5IIIXMBTH3M35 Pack (300+)",
-               "Region":"",
+               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/58mpi85rusqsh19/P5IIIXMBTH3M35%20Pack%20%28300%2B%29.zip?raw=true",
                "InstallPaths":[
@@ -12434,7 +12434,7 @@
          "DownloadFiles":[
             {
                "Name":"Project Undercover (ALPHA)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/dlbvxyiwnh3mjtw/Project%20Undercover%20v2%20%5BALPHA%5D.zip?raw=true",
                "InstallPaths":[
@@ -12460,7 +12460,7 @@
          "DownloadFiles":[
             {
                "Name":"Red Devil (Remastered)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0.0",
                "URL":"https://dl.dropbox.com/s/y5tq64vmg5ux1iu/Red%20Devil%20Remastered%20%5BDEX%5D.zip?raw=true",
                "InstallPaths":[
@@ -12486,7 +12486,7 @@
          "DownloadFiles":[
             {
                "Name":"TempessCE (Premium Edition)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/cnkvicag0qsq6mv/TempessCE%20%5BPremium%20Edition%5D.zip?raw=true",
                "InstallPaths":[
@@ -12513,7 +12513,7 @@
          "DownloadFiles":[
             {
                "Name":"Black Genisys Menu (Public Release)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/mcwsdqtdr7knczl/Black%20Genisys%20%5BPublic%20Release%5D.zip?raw=true",
                "InstallPaths":[
@@ -12541,7 +12541,7 @@
          "DownloadFiles":[
             {
                "Name":"G'Henisys Menu (Public Release)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/apl8f47wm9jy26f/G%27Henisys%20Menu%20%5BPublic%20Release%5D.zip?raw=true",
                "InstallPaths":[
@@ -12568,8 +12568,8 @@
          "DownloadFiles":[
             {
                "Name":"Crash Fix (Multiplayer)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/q0ymq6tvkho38hu/Crash%20Fix%20%5BMP%5D.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
@@ -12577,8 +12577,8 @@
             },
             {
                "Name":"Crash Fix (Zombies)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/wibqdg09e5t0uy3/Crash%20Fix%20%5BZM%5D.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
@@ -12602,7 +12602,7 @@
          "DownloadFiles":[
             {
                "Name":"Nuclear Power Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/q5hdhtmogvmbris/Nuclear%20Power%20Menu%20v2.zip?raw=true",
                "InstallPaths":[
@@ -12627,8 +12627,8 @@
          "DownloadFiles":[
             {
                "Name":"Antiban (DEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/tpdpt5fp7x1vk1c/Antiban%20%28DEX%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
@@ -12636,8 +12636,8 @@
             },
             {
                "Name":"Antiban (BLES01807) (CEX/HEN)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/q0c03gg5zcv4rcm/Antiban%20%28BLES%29%20%28CEX-HEN%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
@@ -12661,8 +12661,8 @@
          "DownloadFiles":[
             {
                "Name":"Insanity Menu (CEX/DEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/bz7xjqujrrmtkzs/Insanity%20Menu.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -12671,8 +12671,8 @@
             },
             {
                "Name":"Insanity Menu (HEN)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/kjnupvlwlp5lcsy/Insanity%20Menu%20%28HEN%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -12697,7 +12697,7 @@
          "DownloadFiles":[
             {
                "Name":"Exotic Trainer (Godly Edition)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"3.0",
                "URL":"https://dl.dropbox.com/s/4kerfeogw0yl8qq/Exotic%20Trainer%20v3.zip?raw=true",
                "InstallPaths":[
@@ -12722,8 +12722,8 @@
          "DownloadFiles":[
             {
                "Name":"RCE Menu (DEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/nlafc5auib350fv/RCE%20Menu%20%28DEX%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -12733,8 +12733,8 @@
             },
             {
                "Name":"RCE Menu (HEN)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/q1oujlqdzpb4j82/RCE%20Menu%20%28HEN%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -12760,8 +12760,8 @@
          "DownloadFiles":[
             {
                "Name":"Chickhen Engine v1.0",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0/2.0",
                "URL":"https://dl.dropbox.com/s/uhoait93up2g6n7/Chickhen%20Engine.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -12771,8 +12771,8 @@
             },
             {
                "Name":"Chickhen Engine v2.0",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0/2.0",
                "URL":"https://dl.dropbox.com/s/eyxsm5q4pjefr7a/Chickhen%20Engine%20v2.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -12801,7 +12801,7 @@
          "DownloadFiles":[
             {
                "Name":"PSN Avatars Pack (2300+)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/gmsbr5ev2pvomhl/Avatars%20Pack%20%282300%2B%29.zip?raw=true",
                "InstallPaths":[
@@ -15201,7 +15201,7 @@
          "DownloadFiles":[
             {
                "Name":"Refelex Engine (Cracked)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"3.0",
                "URL":"https://dl.dropbox.com/s/q78df0kict1vc4y/Reflex%20Engine%20%28Cracked%29.zip?raw=true",
                "InstallPaths":[
@@ -15229,7 +15229,7 @@
          "DownloadFiles":[
             {
                "Name":"Paradox Menu (Cracked)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"4.0",
                "URL":"https://dl.dropbox.com/s/5rhemx7qen4uosn/Paradox%20Menu%20%28Cracked%29.zip?raw=true",
                "InstallPaths":[
@@ -15255,7 +15255,7 @@
          "DownloadFiles":[
             {
                "Name":"Paradox Menu (Cracked)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"4.0",
                "URL":"https://dl.dropbox.com/s/jlvwwquhebpil8y/Paradox%20Menu%20%28Cracked%29.zip?raw=true",
                "InstallPaths":[
@@ -15281,7 +15281,7 @@
          "DownloadFiles":[
             {
                "Name":"Reborn Menu (Cracked)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"4.0",
                "URL":"https://dl.dropbox.com/s/8knvyt67nbqo063/Reborn%20Menu%20v4%20%28Cracked%29.zip?raw=true",
                "InstallPaths":[
@@ -15308,7 +15308,7 @@
          "DownloadFiles":[
             {
                "Name":"Paradox Menu (Cracked)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"4.0",
                "URL":"https://dl.dropbox.com/s/lfx8pbf8ctzpsis/Paradox%20Menu%20%28Cracked%29.zip?raw=true",
                "InstallPaths":[
@@ -15334,7 +15334,7 @@
          "DownloadFiles":[
             {
                "Name":"OpGreece Menu (Cracked)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"4.4",
                "URL":"https://dl.dropbox.com/s/prgeou3j0qmknss/OpGreece%20Menu%20%28Cracked%29.zip?raw=true",
                "InstallPaths":[
@@ -15360,7 +15360,7 @@
          "DownloadFiles":[
             {
                "Name":"Refelex Engine (Cracked)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/vlbbrk0c9vnnbu7/Destiny%20Menu%20%28Cracked%29.zip?raw=true",
                "InstallPaths":[
@@ -15387,7 +15387,7 @@
          "DownloadFiles":[
             {
                "Name":"FlexMod",
-               "Region":"",
+               "Region":"BLUS31584 ",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/teqg7c2e0nckdhe/FlexMod%20v1.zip?raw=true",
                "InstallPaths":[
@@ -15461,8 +15461,8 @@
          "DownloadFiles":[
             {
                "Name":"Noclip Mod v1.0",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"BLES00760",
+               "Version":"1.0/1.1",
                "URL":"https://dl.dropbox.com/s/hy66cu2o4ooy2uf/Noclip%20Mod%20v1.0.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -15471,8 +15471,8 @@
             },
             {
                "Name":"Noclip Mod v1.1",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"BLES00760",
+               "Version":"1.0/1.1",
                "URL":"https://dl.dropbox.com/s/w1g0e3td45d3sg4/Noclip%20Mod%20v1.1.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -15497,8 +15497,8 @@
          "DownloadFiles":[
             {
                "Name":"Nightmare Engine (CEX/DEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/36i6txrz3eakvbg/Nightmare%20Engine%20v1%20%28DEX%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -15521,8 +15521,8 @@
             },
             {
                "Name":"Nightmare Engine (HEN)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/85aq20zac7ekvga/Nightmare%20Engine%20v1%20%28HEN%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -15561,7 +15561,7 @@
          "DownloadFiles":[
             {
                "Name":"Licerne Menu v1",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/jf7q1et9e2905x8/Licerne%20Menu%20v1.zip?raw=true",
                "InstallPaths":[
@@ -15587,7 +15587,7 @@
          "DownloadFiles":[
             {
                "Name":"Licerne Menu v1",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/b0h7ehi2gz2dyml/Phoenix%20Menu%20v1.zip?raw=true",
                "InstallPaths":[
@@ -15613,7 +15613,7 @@
          "DownloadFiles":[
             {
                "Name":"Physics 'n' Flex Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/chmfnconp9dltfr/Physics%20%27n%27%20Flex%20Menu%20v2.zip?raw=true",
                "InstallPaths":[
@@ -15682,7 +15682,7 @@
          "DownloadFiles":[
             {
                "Name":"Project EnCoRe Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"8.0",
                "URL":"https://dl.dropbox.com/s/l5k3vkj8jx76hga/EnCoRe%20Menu%20v8.zip?raw=true",
                "InstallPaths":[
@@ -15752,7 +15752,7 @@
          "DownloadFiles":[
             {
                "Name":"Corrosion Menu",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/aetecjf6xc6mcgv/Corrosion%20Menu%20v1.zip?raw=true",
                "InstallPaths":[
@@ -15779,7 +15779,7 @@
          "DownloadFiles":[
             {
                "Name":"ZeroTwo.pw (Off Host)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/8t3ruilob8g5zus/ZeroTwo.pw.zip?raw=true",
                "InstallPaths":[
@@ -15805,7 +15805,7 @@
          "DownloadFiles":[
             {
                "Name":"FB14Z Mod Loader",
-               "Region":"",
+               "Region":"ALL",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/f9b8zidkcwkxyqe/FB14Z%20Mod%20Loader%20v2.zip?raw=true",
                "InstallPaths":[
@@ -15830,7 +15830,7 @@
          "DownloadFiles":[
             {
                "Name":"Infracted Menu (Multiplayer) (CFW)",
-               "Region":"",
+               "Region":"ALL",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/yavmrv8kfvpugnt/Infracted%20Menu%20%28MP%29%20%28CFW%29.zip?raw=true",
                "InstallPaths":[
@@ -15965,8 +15965,8 @@
             },
             {
                "Name":"Infracted Menu (Multiplayer) (HEN)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/xu6zje77rnefckf/Infracted%20Menu%20%28MP%29%20%28HEN%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -16100,8 +16100,8 @@
             },
             {
                "Name":"Infracted Menu (Zombies) (CFW)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/oq46no2msrkqjxt/Infracted%20Menu%20%28ZM%29%20%28CFW%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -16117,8 +16117,8 @@
             },
             {
                "Name":"Infracted Menu (Zombies) (HEN)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/w6joxd30ntmi59i/Infracted%20Menu%20%28ZM%29%20%28HEN%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -16150,7 +16150,7 @@
          "DownloadFiles":[
             {
                "Name":"Omar Ghost Mod Loader",
-               "Region":"",
+               "Region":"ALL",
                "Version":"7.1",
                "URL":"https://dl.dropbox.com/s/3jvvdnml01wo7z9/Omar%20Ghost%20Mod%20Loader%20v7.1.zip?raw=true",
                "InstallPaths":[
@@ -16175,7 +16175,7 @@
          "DownloadFiles":[
             {
                "Name":"Black Saint Mod Loader",
-               "Region":"",
+               "Region":"ALL",
                "Version":"7.1",
                "URL":"https://dl.dropbox.com/s/x858vm3omf21vyw/Black%20Saint%20Mod%20Loader%20v4.8.zip?raw=true",
                "InstallPaths":[
@@ -16200,8 +16200,8 @@
          "DownloadFiles":[
             {
                "Name":"WeAreGhosts Menu (BLES/CEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/h2lx6bwin4in0m5/WeAreGhosts%20%28BLES-CEX%29.zip?dl=0raw=true",
                "InstallPaths":[
                   "/dev_hdd0/tmp/WeAreGhosts",
@@ -16230,8 +16230,8 @@
             },
             {
                "Name":"WeAreGhosts Menu (BLES/DEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/db058zr4z6vuo0e/WeAreGhosts%20%28BLES-DEX%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/tmp/WeAreGhosts",
@@ -16260,8 +16260,8 @@
             },
             {
                "Name":"WeAreGhosts Menu (BLES/HEN)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/l7yqy4d82ir5p24/WeAreGhosts%20%28BLES-HEN%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/tmp/WeAreGhosts",
@@ -16290,8 +16290,8 @@
             },
             {
                "Name":"WeAreGhosts Menu (BLUS/CEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/uuw72wpig38yhb5/WeAreGhosts%20%28BLUS-CEX%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/tmp/WeAreGhosts",
@@ -16320,8 +16320,8 @@
             },
             {
                "Name":"WeAreGhosts Menu (BLUS/DEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/sam7wvjskf6l3a2/WeAreGhosts%20%28BLUS-DEX%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/tmp/WeAreGhosts",
@@ -16350,8 +16350,8 @@
             },
             {
                "Name":"WeAreGhosts Menu (BLUS/HEN)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/5a5pi311zquieh8/WeAreGhosts%20%28BLUS-HEN%29.zip?dl=0raw=true",
                "InstallPaths":[
                   "/dev_hdd0/tmp/WeAreGhosts",
@@ -16396,7 +16396,7 @@
          "DownloadFiles":[
             {
                "Name":"FranCangel Mod Loader",
-               "Region":"",
+               "Region":"ALL",
                "Version":"3.5",
                "URL":"https://dl.dropbox.com/s/3v73lr3ja4mex40/FranCangel%20Mod%20Loader%20v3.5.zip?raw=true",
                "InstallPaths":[
@@ -16421,8 +16421,8 @@
          "DownloadFiles":[
             {
                "Name":"Exotic Trainer Mod Loader (BLES ORG-TEXTURED)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"5.5",
                "URL":"https://dl.dropbox.com/s/et09grttcjh0kfe/Exotic%20Trainer%20v5.5%20%28BLES%29%20%28Textures%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/update.rpf"
@@ -16430,8 +16430,8 @@
             },
             {
                "Name":"Exotic Trainer Mod Loader (BLES NO-TEXTURES)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"5.5",
                "URL":"https://dl.dropbox.com/s/1e8md348iww0exc/Exotic%20Trainer%20v5.5%20%28BLES%29%20%28No%20Textures%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/update.rpf"
@@ -16439,8 +16439,8 @@
             },
             {
                "Name":"Exotic Trainer Mod Loader (BLUS ORG-TEXTURED)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"5.5",
                "URL":"https://dl.dropbox.com/s/j9stufr4yfnkb1g/Exotic%20Trainer%20v5.5%20%28BLUS%29%20%28Textures%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/update.rpf"
@@ -16448,8 +16448,8 @@
             },
             {
                "Name":"Exotic Trainer Mod Loader (BLUS NO-TEXTURES)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"5.5",
                "URL":"https://dl.dropbox.com/s/m2qef4yjd5z7u20/Exotic%20Trainer%20v5.5%20%28BLUS%29%20%28No%20Textures%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -16474,8 +16474,8 @@
          "DownloadFiles":[
             {
                "Name":"Orignal PS3 FW 0.91 (4.xx) (Normal)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/k42yzcfogrlb1wd/Orignal%20PS3%20FW%200.91.zip?raw=true",
                "InstallPaths":[
                   "/dev_blind/vsh/resource/qgl/lines.qrc"
@@ -16483,8 +16483,8 @@
             },
             {
                "Name":"Coldboot2 Preset Forced Always",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/3hcpzgp09rtvw84/Orignal%20PS3%20FW%200.91%20%28Coldboot2%20Preset%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_blind/vsh/resource/qgl/lines.qrc"
@@ -16492,8 +16492,8 @@
             },
             {
                "Name":"Normal Preset Forced Always",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/4uoktd21m1r1zd9/Orignal%20PS3%20FW%200.91%20%28Normal%20Preset%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_blind/vsh/resource/qgl/lines.qrc"
@@ -16517,8 +16517,8 @@
          "DownloadFiles":[
             {
                "Name":"Ultimate Toolbox (BASE)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.03",
                "URL":"https://dl.dropbox.com/s/ommfv07yomw1fxr/Ultimate%20Toolbox%20%28BASE%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/packages/Ultimate_Toolbox_v1.03_BASE.pkg"
@@ -16526,8 +16526,8 @@
             },
             {
                "Name":"Ultimate Toolbox (FULL)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"-",
+               "Version":"1.03",
                "URL":"https://dl.dropbox.com/s/s980dy7iqioy18v/Ultimate%20Toolbox%20%28FULL%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/packages/Ultimate_Toolbox_v1.03_FULL.pkg"
@@ -16551,8 +16551,8 @@
          "DownloadFiles":[
             {
                "Name":"Desire Engine (DEX)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Region":"ALL",
+               "Version":"5.5",
                "URL":"https://dl.dropbox.com/s/ssa5spsu24kocnp/Desire%20Engine%20%28DEX%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -16560,9 +16560,9 @@
                ]
             },
             {
-               "Name":"Desire Engine (CEX) (BLES01717)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Name":"Desire Engine (CEX)",
+               "Region":"BLES01717",
+               "Version":"5.5",
                "URL":"https://dl.dropbox.com/s/jx469bj9h4nkidc/Desire%20Engine%20%28CEX%29%20%28BLES01717%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -16570,9 +16570,9 @@
                ]
             },
             {
-               "Name":"Desire Engine (CEX) (BLUS31011)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Name":"Desire Engine (CEX)",
+               "Region":"BLUS31011",
+               "Version":"5.5",
                "URL":"https://dl.dropbox.com/s/rdmhsbz8pac7zek/Desire%20Engine%20%28CEX%29%20%28BLUS31011%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
@@ -16580,9 +16580,9 @@
                ]
             },
             {
-               "Name":"Desire Engine (CEX) (NPUB31054)",
-               "Region":"",
-               "Version":"1.0.0",
+               "Name":"Desire Engine (CEX)",
+               "Region":"NPUB31054",
+               "Version":"5.5",
                "URL":"https://dl.dropbox.com/s/4rvth4igkwytsh2/Desire%20Engine%20%28CEX%29%20%28NPUB31054%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
