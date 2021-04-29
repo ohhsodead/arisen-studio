@@ -41,7 +41,7 @@
          "DownloadFiles":[
             {
                "Name":"Infinite Health, Infinite Ammo and more",
-               "Version":"1.0.0"
+               "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/s3febe6rm8hc5g1/Infinite%20Health%20Ammo%20%2B%20More.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN"
