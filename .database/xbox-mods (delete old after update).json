@@ -1,9 +1,9 @@
 {
-   "LastUpdated":"2021-05-01T01:13:37.126946+01:00",
+   "LastUpdated":"2021-04-13T00:13:37.126946+00:00",
    "Mods":[
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":1,
          "Name":"Legacy Menu",
          "Firmware":"-",
@@ -28,7 +28,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":2,
          "Name":"Destruction Menu",
          "Firmware":"-",
@@ -53,7 +53,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"codmw2",
+         "CategoryId":"codmw2",
          "Id":3,
          "Name":"Medakas Cock Menu",
          "Firmware":"-",
@@ -78,7 +78,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":4,
          "Name":"Jiggy Menu (Cracked)",
          "Firmware":"-",
@@ -103,7 +103,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":5,
          "Name":"Afrikans Menu (Cracked)",
          "Firmware":"-",
@@ -128,7 +128,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":6,
          "Name":"Alpha Menu",
          "Firmware":"-",
@@ -153,7 +153,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":7,
          "Name":"Charger Menu",
          "Firmware":"-",
@@ -178,7 +178,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":8,
          "Name":"Dragon Menu",
          "Firmware":"-",
@@ -203,7 +203,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":9,
          "Name":"El Host Menu",
          "Firmware":"-",
@@ -228,7 +228,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":10,
          "Name":"Celestial Menu",
          "Firmware":"-",
@@ -253,7 +253,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":11,
          "Name":"Enforcer Menu",
          "Firmware":"-",
@@ -278,7 +278,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":12,
          "Name":"Ghost Menu",
          "Firmware":"-",
@@ -303,7 +303,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":13,
          "Name":"GTA5 Menu",
          "Firmware":"-",
@@ -328,7 +328,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":14,
          "Name":"Havoc Menu",
          "Firmware":"-",
@@ -353,7 +353,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":15,
          "Name":"NiNJA Menu",
          "Firmware":"-",
@@ -378,7 +378,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":16,
          "Name":"The Purge Menu (Cracked)",
          "Firmware":"-",
@@ -403,7 +403,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":17,
          "Name":"The Purge Menu (Private)",
          "Firmware":"-",
@@ -428,7 +428,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":18,
          "Name":"Guardian Menu (Cracked)",
          "Firmware":"-",
@@ -453,7 +453,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":19,
          "Name":"Mega Menu",
          "Firmware":"-",
@@ -478,7 +478,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":20,
          "Name":"Pandora Menu",
          "Firmware":"-",
@@ -503,7 +503,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":21,
          "Name":"Rebel Menu (Cracked)",
          "Firmware":"-",
@@ -528,7 +528,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":22,
          "Name":"Patch Menu (Cracked)",
          "Firmware":"-",
@@ -553,7 +553,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":23,
          "Name":"Rebellion Menu",
          "Firmware":"-",
@@ -578,7 +578,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":24,
          "Name":"SEngine Menu",
          "Firmware":"-",
@@ -603,7 +603,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":25,
          "Name":"Serozoid Menu",
          "Firmware":"-",
@@ -628,7 +628,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":26,
          "Name":"Silk Road Menu",
          "Firmware":"-",
@@ -653,7 +653,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":27,
          "Name":"Simplicimeme Menu",
          "Firmware":"-",
@@ -678,7 +678,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":28,
          "Name":"skidrow360 Menu",
          "Firmware":"-",
@@ -703,7 +703,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":29,
          "Name":"SRB Menu (Cracked)",
          "Firmware":"-",
@@ -728,7 +728,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":30,
          "Name":"Superior V Menu (Private)",
          "Firmware":"-",
@@ -753,7 +753,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":31,
          "Name":"SVT Menu (Cracked)",
          "Firmware":"-",
@@ -778,7 +778,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":32,
          "Name":"The Enforcer Menu",
          "Firmware":"-",
@@ -803,7 +803,7 @@
       },
       {
          "ConsoleType":"XBOX",
-         "GameId":"gta5",
+         "CategoryId":"gta5",
          "Id":33,
          "Name":"XBLRider (Cracked)",
          "Firmware":"-",
@@ -822,56 +822,6 @@
                "URL":"https://dl.dropbox.com/s/83l0iey26sd53dn/XBLRider%20v1%20%28Cracked%29.zip?raw=true",
                "InstallPaths":[
                   "Hdd:\\ModioX\\XBLRiderCrack.xex"
-               ]
-            }
-         ]
-      },
-      {
-         "ConsoleType":"XBOX",
-         "GameId":"dsp2",
-         "Id":34,
-         "Name":"Credits: 999.999 & All Items Unlocked",
-         "Firmware":"-",
-         "Region":"-",
-         "Author":"Unknown",
-         "SubmittedBy":"ohhsodead",
-         "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"GAMESAVE",
-         "Description":"Credits: 999.999\nNodes: 61\nAll wpns unlocked (check the store)\nAll items unlocked (check the store)\nAll suit's unlocked (check the store)",
-         "DownloadFiles":[
-            {
-               "Name":"Credits: 999.999 & All Items Unlocked",
-               "Region":"-",
-               "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/ahbyibkyez8l844/Credits%20999.999%20%26%20All%20Items%20Unlocked.zip?raw=true",
-               "InstallPaths":[
-                  "ds_slot_02"
-               ]
-            }
-         ]
-      },
-      {
-         "ConsoleType":"XBOX",
-         "GameId":"dsf",
-         "Id":35,
-         "Name":"Completed Missions & Unlimited Money",
-         "Firmware":"-",
-         "Region":"-",
-         "Author":"Unknown",
-         "SubmittedBy":"ohhsodead",
-         "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"GAMESAVE",
-         "Description":"Completed Last Mission & Money: 2,999,980,097",
-         "DownloadFiles":[
-            {
-               "Name":"Completed Missions & Unlimited Money",
-               "Region":"-",
-               "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/uedk1foeokainhm/Completed%20Missions%20%26%20Unlimited%20Money.zip?raw=true",
-               "InstallPaths":[
-                  "complete_missions_unlimited_money"
                ]
             }
          ]

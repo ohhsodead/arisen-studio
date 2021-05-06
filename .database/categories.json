@@ -102,6 +102,22 @@
          ]
       },
       {
+         "Title":"Dead Space 2",
+         "Id":"dsp2",
+         "Type":"game",
+         "Regions":[
+            "BLES01040",
+            "BLUS30624",
+            "BLAS50294",
+            "BLES01190",
+            "BLES01041",
+            "NPEB00551",
+            "NPUB30477",
+            "BLAS50470",
+            "BLUS30717GH"
+         ]
+      },
+      {
          "Title":"Dead Space 3",
          "Id":"dsp3",
          "Type":"game",
@@ -111,6 +127,20 @@
             "BLAS50568",
             "BLES01733",
             "NPEB01146"
+         ]
+      },
+      {
+         "Title":"Driver: San Francisco",
+         "Id":"dsf",
+         "Type":"game",
+         "Regions":[
+            "BLES00891",
+            "BLES00892",
+            "BLUS30536",
+            "BLUS30536F",
+            "NPEB00632",
+            "NPJB00183",
+            "BLJM61032"
          ]
       },
       {
