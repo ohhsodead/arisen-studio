@@ -1,6 +1,6 @@
 {
    "LastUpdated":"2021-04-13T00:13:37.126946+00:00",
-   "Plugins":[
+   "Mods":[
       {
          "ConsoleType":"XBOX",
          "CategoryId":"gta5",
@@ -15,7 +15,6 @@
          "DownloadFiles":[
             {
                "Name":"Legacy Menu",
-               "Region":"-",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/dxernpyno7s5u52/Legacy%20Menu%20Beta%20v1.zip?raw=true",
                "InstallPaths":[
@@ -38,7 +37,6 @@
          "DownloadFiles":[
             {
                "Name":"Destruction Menu",
-               "Region":"-",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/oqbzkpy6u59uofz/Destruction%20Menu%20Beta%20v1.zip?raw=true",
                "InstallPaths":[
@@ -61,7 +59,6 @@
          "DownloadFiles":[
             {
                "Name":"Medakas Cock Menu",
-               "Region":"-",
                "Version":"1.0.0",
                "URL":"https://dl.dropbox.com/s/5mpt4wrijr3k2if/Medakas%20Cock%20Menu%20v1.zip?raw=true",
                "InstallPaths":[
@@ -84,7 +81,6 @@
          "DownloadFiles":[
             {
                "Name":"Jiggy Menu (Cracked)",
-               "Region":"-",
                "Version":"4.5",
                "URL":"https://dl.dropbox.com/s/w0foxtpmj6f2773/Jiggy%20Menu%20v4.5%20%28Cracked%29.zip?raw=true",
                "InstallPaths":[
@@ -107,7 +103,6 @@
          "DownloadFiles":[
             {
                "Name":"Afrikans (Cracked)",
-               "Region":"-",
                "Version":"2.0",
                "URL":"https://dl.dropbox.com/s/1fypmubqe8niqh3/Afrikans%20v2%20%28Cracked%29.zip?raw=true",
                "InstallPaths":[
@@ -130,7 +125,6 @@
          "DownloadFiles":[
             {
                "Name":"Alpha Menu",
-               "Region":"-",
                "Version":"3.0",
                "URL":"https://dl.dropbox.com/s/9d44pzcuofzdgfn/Alpha%20Menu%20v3.zip?raw=true",
                "InstallPaths":[
@@ -153,7 +147,6 @@
          "DownloadFiles":[
             {
                "Name":"Charger Menu",
-               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/h3qocvx5o7sgvh6/Charger%20Menu%20v1.zip?raw=true",
                "InstallPaths":[
@@ -176,7 +169,6 @@
          "DownloadFiles":[
             {
                "Name":"Dragon Menu",
-               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/a5qjhzz3zk4ibfl/Dragon%20Menu%20v1.zip?raw=true",
                "InstallPaths":[
@@ -199,7 +191,6 @@
          "DownloadFiles":[
             {
                "Name":"El Host Menu",
-               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/3lnu8wfrn2nb60s/El%20Host%20Menu%20v1.zip?raw=true",
                "InstallPaths":[
@@ -222,7 +213,6 @@
          "DownloadFiles":[
             {
                "Name":"Celestial Menu",
-               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/9dlzl6gac6yykf9/Celestial%20Menu%20v1.zip?raw=true",
                "InstallPaths":[
@@ -245,7 +235,6 @@
          "DownloadFiles":[
             {
                "Name":"Enforcer Menu",
-               "Region":"-",
                "Version":"2.9.4",
                "URL":"https://dl.dropbox.com/s/otcf8syad8w29z2/Enforcer%20Menu%20v2.9.4.zip?raw=true",
                "InstallPaths":[
@@ -268,7 +257,6 @@
          "DownloadFiles":[
             {
                "Name":"Ghost Menu",
-               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/0l4lv9tbktywnjv/Ghost%20Menu%20v1.zip?raw=true",
                "InstallPaths":[
@@ -291,7 +279,6 @@
          "DownloadFiles":[
             {
                "Name":"GTA5 Menu",
-               "Region":"-",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/7a8gv1w6j55n3ch/GTA5%20Menu%20v1.zip?raw=true",
                "InstallPaths":[
