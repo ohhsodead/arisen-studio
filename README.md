@@ -1,11 +1,11 @@
-# ModioX
-[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/ModioX.svg)](https://github.com/ohhsodead/ModioX/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/ModioX/total.svg)](https://github.com/ohhsodead/ModioX/releases/) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/ModioX.svg)](https://gitHub.com/ohhsodead/ModioX/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/ModioX.svg)](https://github.com/ohhsodead/ModioX/issues?q=is%3Aissue+is%3Aclosed) [![Join our Discord](https://img.shields.io/badge/chat%20on-discord-7289DA)](https://discord.gg/FTCS3Xu)
+# NeoModsX
+[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/NeoModsX.svg)](https://github.com/ohhsodead/NeoModsX/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/NeoModsX/total.svg)](https://github.com/ohhsodead/NeoModsX/releases/) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/NeoModsX.svg)](https://gitHub.com/ohhsodead/NeoModsX/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/NeoModsX.svg)](https://github.com/ohhsodead/NeoModsX/issues?q=is%3Aissue+is%3Aclosed) [![Join our Discord](https://img.shields.io/badge/chat%20on-discord-7289DA)](https://discord.gg/FTCS3Xu)
 
-An open source desktop application designed to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes and much more for PlayStation 3 and Xbox 360. A library that is populated by myself, few friends and awesome contributors, so that all mods have been tested and verified. ModioX also acts as an FTP client to be able to install and uninstall directly to your console. Without the need for digging up old threads or using file managers - this aims to do everything for you.
+An open source desktop application designed to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes and much more for PlayStation 3 and Xbox 360. A library that is populated by myself, few friends and awesome contributors, so that all mods have been tested and verified. NeoModsX also acts as an FTP client to be able to install and uninstall directly to your console. Without the need for digging up old threads or using file managers - this aims to do everything for you.
 
 **the only one of its kind...**
 
-![Main Form](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/MainForm.png?raw=true)
+![Main Form](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/demo/MainForm.png?raw=true)
 
 **Comments, ideas, suggestions?** Come chat with us in the [Discord Server](https://discord.gg/FTCS3Xu)!
 
@@ -38,7 +38,7 @@ Please give this project a ⭐ if you find it useful.
 
 ### Windows
 
-Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/ModioX/releases/latest) page.
+Download and run the latest version of the Windows installer, "NeoModsX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/NeoModsX/releases/latest) page.
 
 ## Quick Guide
 
