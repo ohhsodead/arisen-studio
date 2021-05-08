@@ -12236,7 +12236,7 @@
          "GameId":"accr",
          "Name":"PSN Avatars Pack (2300+)",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"ALL",
+         "Region":"-",
          "Author":"Lupos",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
