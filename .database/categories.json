@@ -330,7 +330,15 @@
          "Regions":[
 
          ]
-      },	  
+      },
+      {
+         "Title":"Plugins",
+         "Id":"plugins",
+         "Type":"plugins",
+         "Regions":[
+
+         ]
+      },
       {
          "Title":"Grand Theft Auto: San Andreas",
          "Id":"gtasa",
