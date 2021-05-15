@@ -5,7 +5,7 @@
          "ConsoleType":"PS3",
          "Id":0,
          "CategoryId":"dsp3",
-         "Name":"Dead Space 3 (100% Complete)",
+         "Name":"Story Completed (100%)",
          "Region":"BLES00310",
          "Author":"StealthNinja_87",
          "SubmittedBy":"ohhsodead",
@@ -514,6 +514,52 @@
                   "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/PARAM.SFO",
                   "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/PIC1.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/SYS-DATA"
+               ]
+            }
+         ]
+      },
+      {
+         "ConsoleType":"XBOX",
+         "Id":19,
+         "CategoryId":"dsp2",
+         "Name":"Credits 999.999 & All Items Unlocked",
+         "Region":"ALL",
+         "Author":"Unknown",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "Configuration":"SP",
+         "Description":"Credits 999.999 & All Items Unlocked",
+         "DownloadFiles":[
+            {
+               "Name":"Credits 999.999 & All Items Unlocked",
+               "Region":"ALL",
+               "Version":"1.0",
+               "URL":"https://dl.dropbox.com/s/ahbyibkyez8l844/Credits%20999.999%20%26%20All%20Items%20Unlocked.zip?raw=true",
+               "InstallPaths":[
+                  "Hdd:\\NeoModsX\\Game Saves\\Dead Space 2\\ds_slot_02"
+               ]
+            }
+         ]
+      },
+      {
+         "ConsoleType":"XBOX",
+         "Id":20,
+         "CategoryId":"dsp2",
+         "Name":"Completed Missions & Unlimited Money",
+         "Region":"ALL",
+         "Author":"Unknown",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "Configuration":"SP",
+         "Description":"Completed Missions & Unlimited Money",
+         "DownloadFiles":[
+            {
+               "Name":"Completed Missions & Unlimited Money",
+               "Region":"ALL",
+               "Version":"1.0",
+               "URL":"https://dl.dropbox.com/s/uedk1foeokainhm/Completed%20Missions%20%26%20Unlimited%20Money.zip?raw=true",
+               "InstallPaths":[
+                  "Hdd:\\NeoModsX\\Game Saves\\Dead Space 2\\complete_missions_unlimited_money"
                ]
             }
          ]
