@@ -20,8 +20,8 @@ Please give this project a ⭐ if you find it useful.
 * Filter by console type, mod type and region
 * Download the mods to your computer
 * Install and uninstall mods directly to your console
-* Manage your downloads and installed mods
 * Automatically detect and remember game regions
+* Manage your downloads and installed mods
 * Backup and restore original game files
 * Create and add mods to your own lists
 * Includes a built-in Game Updates Finder
