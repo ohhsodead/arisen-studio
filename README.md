@@ -14,11 +14,13 @@ Please give this project a ⭐ if you find it useful.
 ## Main Features
 
 * Fast, lightweight and simple to use
+* Beautiful and simple design layout
 * Browse a large database of PS3 & Xbox 360 mods
 * Complete with details, creator, version, etc.
 * Filter by console type, mod type and region
 * Download the mods to your computer
 * Install and uninstall mods directly to your console
+* Manage your downloads and installed mods
 * Automatically detect and remember game regions
 * Backup and restore original game files
 * Create and add mods to your own lists
