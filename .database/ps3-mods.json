@@ -3035,12 +3035,12 @@
          "ConsoleType":"PS3",
          "Id":121,
          "CategoryId":"ha",
-         "Name":"Movian",
+         "Name":"Movian (Official/deank)",
          "Firmware":"CEX/DEX",
          "Region":"-",
          "Author":"Andreas Smas / deank",
          "SubmittedBy":"ohhsodead",
-         "Version":"5.0.712 & 5.0.548",
+         "Version":"5.0.720 & 5.0.548",
          "Configuration":"-",
          "Type":"PKG",
          "Description":"Movian (formerly known as Showtime Media Center) is a media player for use on HTPC media centers. It is primarily intended to be controlled via keypad input such as a IR or bluetooth remote control, keyboards, etc but works also very well with a pointer device.\n\nA quick overview of its features:\n- Playback of video (mkv, mpg, mp4, divx, etc.) and audio files\n- .srt, txt and .sub (Microdvd) subtitles support\n- Per-file and per-folder settings\n- Javascript plugins\n- Unified search\n- View photos and images in slideshow mode\n- Live TV streaming from Tvheadend\n- Icecast/Shoutcast radio streaming\n- Navi-X, YouTube, Opensubtitles integration\n- FTP Server, NTFS support, Temperature monitor\n- FTP client support (Stream content directly from FTP servers)\n- Custom background (via plugin)\n- Support for BIG5 character encoding, On Screen Keyboard layouts.\n\nAvailable on Android, Linux, OS/X, Raspberry Pi and PS3\n\nNote: Movian has its own project site where you can learn and even participate. Also you can download the latest releases in the download page.",
@@ -3048,19 +3048,19 @@
             {
                "Name":"Movian (Official)",
                "Region":"-",
-               "Version":"5.0.712 & 5.0.548",
+               "Version":"5.0.548",
                "URL":"https://dl.dropbox.com/s/7lqszypetmtixcv/Movian%20%28Official%29.zip?raw=true",
                "InstallPaths":[
-                  "/dev_hdd0/packages/movian-5.0.548.pkg.197.v5.0.548_brewology_com.pkg"
+                  "/dev_hdd0/packages/movian-5.0.548.pkg.197.v5.0.548.pkg"
                ]
             },
             {
                "Name":"Movian (deank)",
                "Region":"-",
-               "Version":"5.0.712 & 5.0.548",
+               "Version":"5.0.720",
                "URL":"https://dl.dropbox.com/s/0z482kzxy9y7jx7/Movian%20%28deank%29.zip?raw=true",
                "InstallPaths":[
-                  "/dev_hdd0/packages/movian-5.0.712-deank-playstation3.pkg.973.v5.0.712_brewology_com.pkg"
+                  "/dev_hdd0/packages/movian-5.0.720-deank-playstation3.pkg.684.v5.0.720.pkg"
                ]
             }
          ]
@@ -3199,18 +3199,18 @@
          "Region":"-",
          "Author":"various",
          "SubmittedBy":"ohhsodead",
-         "Version":"4.87",
+         "Version":"4.87.1",
          "Configuration":"-",
          "Type":"PKG",
-         "Description":"Iris Manager fork including latest mamba from NzV..\n\nCredits:\n- Iris Manager: Estwald / D_skywalk\n- IRISMAN: aldostools\n- Unofficial IRISMAN Updates: Joonie / Alexander\n\n- Mamba support by Estwald, NzV, Rancid-O, Joonie, Habib, aldostools, Zar, littlebalup, KW, Alexander, Haxxxen, Evilnat, deank, Team Cobra ",
+         "Description":"Iris Manager fork including latest mamba from NzV..\n\nCredits:\n- Iris Manager: Estwald / D_skywalk\n- IRISMAN: aldostools\n- Unofficial IRISMAN Updates: Joonie / Alexander\n\n- Mamba support by Estwald, NzV, Rancid-O, Joonie, Habib, aldostools, Zar, littlebalup, KW, Alexander, Haxxxen, Evilnat, deank, Team Cobra\n- Zip, rar, 7z support by bucanero",
          "DownloadFiles":[
             {
                "Name":"IRISMAN Full Edition",
                "Region":"-",
-               "Version":"4.87",
+               "Version":"4.87.1",
                "URL":"https://dl.dropbox.com/s/tpmu019c4smzfz3/IRISMAN%20Full%20Edition.zip?raw=true",
                "InstallPaths":[
-                  "/dev_hdd0/packages/IRISMAN_4.87.pkg.128.v4.87_brewology_com.pkg"
+                  "/dev_hdd0/packages/IRISMAN_4.87.1.pkg.641.v4.87.1.pkg"
                ]
             }
          ]
@@ -3249,7 +3249,7 @@
          "Region":"-",
          "Author":"zar",
          "SubmittedBy":"ohhsodead",
-         "Version":"1.38",
+         "Version":"1.39",
          "Configuration":"-",
          "Type":"PKG",
          "Description":"This is another Backup Manager made from the ground. It allows you to mount a backup stored in your USB device or in the internal hdd as a virtual Blue-Ray using 4 differents UI : 'List', 'Grid', 'XMB' and 'Flow'. ",
@@ -3260,7 +3260,7 @@
                "Version":"1.38",
                "URL":"https://dl.dropbox.com/s/o630hymjzwf0u2k/ManaGunZ.zip?raw=true",
                "InstallPaths":[
-                  "/dev_hdd0/packages/ManaGunZ_v1.38.pkg.444.v1.38_brewology_com.pkg"
+                  "/dev_hdd0/packages/ManaGunZ_v1.39.pkg.324.v1.39.pkg"
                ]
             }
          ]
@@ -3525,7 +3525,7 @@
          "Region":"-",
          "Author":"aldostools",
          "SubmittedBy":"ohhsodead",
-         "Version":"1.47.34",
+         "Version":"1.47.35",
          "Configuration":"-",
          "Type":"PKG",
          "Description":"webMAN MOD is a homebrew plugin with many features added on the original webMAN/sMAN by Deank. We wanted to integrate most of the existing features available on the PS3 Scene like an AIO plugin, and webMAN MOD was born.\n\n\n- For content stored remotely on PC use ps3netsrv_20190701.zip\n- For ROMS support install ROMS/PKG Launcher and RetroArch.\n- For NTFS support on lite edition, scan content with prepNTFS\n- For PS2 Classics games install the CONFIG database & PS2 Classics Launcher\n- For PSP ISO install both PSP launchers for Minis & Remasters\n\n\nVisit the Official GitHub repository for additional add-ons, source code and previous versions",
@@ -3536,7 +3536,7 @@
                "Version":"1.47.34",
                "URL":"https://dl.dropbox.com/s/7va193whg8b8117/webMAN%20MOD.zip?raw=true",
                "InstallPaths":[
-                  "/dev_hdd0/packages/webMAN_MOD_1.47.34_Installer.pkg.987.v1.47.34_brewology_com.pkg"
+                  "/dev_hdd0/packages/webMAN_MOD_1.47.35_Installer.pkg.118.v1.47.35.pkg"
                ]
             }
          ]
@@ -7773,10 +7773,10 @@
          "Region":"-",
          "Author":"Bucanero",
          "SubmittedBy":"ohhsodead",
-         "Version":"1.4.6",
+         "Version":"1.5.8",
          "Configuration":"-",
          "Type":"PKG",
-         "Description":"Apollo Save Tool (PS3)\n\nApollo Save Tool is an application to manage save-game files on the PlayStation 3.\n\nThe apollo-ps3 homebrew app allows to download, unlock, patch and resign save-game files directly on your PS3.\n\nComments, ideas, suggestions? You can contact me on Twitter and on my website.\n\nFeatures\n\nn\nEasy to use: no crypto-key configuration or advanced setup needed.\nStandalone: no computer required, everything happens on the PS3.\nSave files listing: quick access to all the save files on USB and the internal PS3 HDD (+ file details)\nSave SFO unlocking: allows the user to remove the copy-lock flag, enabling transfer of Copying Prohibited save files.\nSave PFD resigning: allows the user to resign save files made by other users and consoles.\nSave downloading: access to an Online Database of save-game files to download straight to your PlayStation.\nAutomatic settings: auto-detection of PSID and Account-ID settings.\n\nNo special setup is needed. Just download the latest apollo-ps3.pkg package and install it on your PlayStation 3. On first run, the application will detect and setup the required user settings.\n\nnUsage\n\nUsing the application is simple and straight-forward:\n\nMove UP/DOWN to select the save-game file you want to patch, and press X button. The patch screen will show the available fixes for the file. Select the patches and click Apply.\nTo see the item's details, press Square. It will open the context menu on the screen. Press O button to return to the list.\nTo reload the list, press Triangle.\nPress left (L1/L2) or right trigger buttons (R1/R2) to move pages up or down.\n\nNotes\n\nUSB saves: your files must be placed on /{USBDEV}/PS3/SAVEDATA/ or /dev_usb001/PS3/SAVEDATA/.\nHDD saves: files will be scanned from /dev_hdd0/home/000000XX/savedata/, where XX is the current User ID.\n\nOnline Database\n\nThe application also provides direct access to the Apollo online database of save-game files for PlayStation 3 games. These usually offer additional features such as completed games that can save you many hours of playing.\n\nCurrently, the list of available games and files is limited, but the project aims to add more save-games shared by the community.\n\nNote: Downloaded save files must be resigned using Apollo before loading them in your games.\n\nFAQs\n\nWhere I can get a save-game for XYZ game?\n\nYou can check sites like Brewology.com, and GameFAQs. Also, searching on Google might help.\n\nI have a save-game file that I want to share. How can I upload it?\n\nIf you have a save file that is not currently available on the Online Database and want to share it, please check this link for instructions.\n\nWhy is it called Apollo?\n\nApollo was the twin brother of Artemis, goddess of the hunt. Since this project was born using the Artemis-GUI codebase, I decided to respect that heritage by calling it Apollo.\n\nCredits\n\n- Bucanero: Project developer\n- Dnawrkshp: Artemis GUI code\n- Berion: Artemis GUI design\n- flatz: SFO/PFD tools\n\nBuilding\n\nYou need to have installed:\n\n- PS3 toolchain\n- PSL1GHT library\n- Tiny3D library (from Estwald)\n- polarSSL library\n- dbglogger lib (my own debug logging library)\n\nRun make to create a release build. After that, run make pkg to create a .pkg install file.\n\nYou can also set the PS3LOAD environment variable to the PS3 IP address: export PS3LOAD=tcp:x.x.x.x. This will allow you to use make run and send apollo-ps3.self directly to the PS3Load listener.\n\nTo enable debug logging, build Apollo Save Tool with make DEBUGLOG=1. The application will send debug messages to UDP multicast address 239.255.0.100:30000. To receive them you can use socat on your computer:\n\n$ socat udp4-recv:30000,ip-add-membership=239.255.0.100:0.0.0.0 -\n\nLicense\n\napollo-ps3 is released under the MIT License.",
+         "Description":"Apollo Save Tool is an application to manage save-game files on the PlayStation 3.\n\nThe apollo-ps3 homebrew app allows to download, unlock, patch and resign save-game files directly on your PS3.",
          "DownloadFiles":[
             {
                "Name":"Apollo Save Tool",
@@ -7784,7 +7784,32 @@
                "Version":"1.4.6",
                "URL":"https://dl.dropbox.com/s/kqwuvt4ktufx8c6/Apollo%20Save%20Tool.zip?raw=true",
                "InstallPaths":[
-                  "/dev_hdd0/packages/apollo-ps3.pkg.778.v1.5.0_brewology_com.pkg"
+                  "/dev_hdd0/packages/apollo-ps3.pkg.790.v1.5.8.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "ConsoleType":"PS3",
+         "Id":195,
+         "CategoryId":"ha",
+         "Name":"Unlock HDD Space",
+         "Firmware":"CEX/DEX/HEN",
+         "Region":"-",
+         "Author":"3141card",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "Configuration":"-",
+         "Type":"PKG",
+         "Description":"This tool by 3141card unlocks up to 8% extra of the total space on the internal HDD of the PS3. Run it again to restore the original settings if necessary.\n\nYou use this app at your own risk! It works on CFW and HEN.\n\nAll credits to einsteinx2 on psx-place.com for his great tutorial.",
+         "DownloadFiles":[
+            {
+               "Name":"Apollo Save Tool",
+               "Region":"-",
+               "Version":"1.4.6",
+               "URL":"https://dl.dropbox.com/s/gy79fsf8hn4jif8/Unlock%20HDD%20Space.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/Unlock_HDD_Space.pkg.372.v1.0.pkg"
                ]
             }
          ]
@@ -15951,14 +15976,14 @@
          "Id":369,
          "CategoryId":"ha",
          "Name":"Ultimate Toolbox",
-         "Firmware":"CEX/DEX",
+         "Firmware":"CEX/DEX/HEN",
          "Region":"-",
          "Author":"DeViL303",
          "SubmittedBy":"ohhsodead",
-         "Version":"1.03",
+         "Version":"2.0",
          "Configuration":"-",
          "Type":"PKG",
-         "Description":"It's basically XMBM+ with HEN Toolbox for CFW but with new stuff added.\n\nIt's for CFW Only!!! HEN users use HEN Toolbox",
+         "Description":"This is a collection of new and old mods and patches/ A lot made by DeViL303 and some gathered from all over the PS3 scene. This Toolbox makes it easier to apply lots of common firmware patches and visual XMB modifications and more.",
          "DownloadFiles":[
             {
                "Name":"Ultimate Toolbox (BASE)",
@@ -15966,7 +15991,7 @@
                "Version":"1.03",
                "URL":"https://dl.dropbox.com/s/ommfv07yomw1fxr/Ultimate%20Toolbox%20%28BASE%29.zip?raw=true",
                "InstallPaths":[
-                  "/dev_hdd0/packages/Ultimate_Toolbox_v1.03_BASE.pkg"
+                  "/dev_hdd0/packages/Ultimate_Toolbox_v2.00_BASE_version.pkg"
                ]
             },
             {
@@ -15975,7 +16000,7 @@
                "Version":"1.03",
                "URL":"https://dl.dropbox.com/s/s980dy7iqioy18v/Ultimate%20Toolbox%20%28FULL%29.zip?raw=true",
                "InstallPaths":[
-                  "/dev_hdd0/packages/Ultimate_Toolbox_v1.03_FULL.pkg"
+                  "/dev_hdd0/packages/Ultimate_Toolbox_v2.00_FULL_version.pkg"
                ]
             }
          ]
