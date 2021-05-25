@@ -17,7 +17,7 @@
                "Name":"Dead Space 3 (100% Complete)",
                "Region":"BLES00310",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/sifefdywi7d5hsu/Complete%20%28100%25%29.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/sifefdywi7d5hsu/Complete%20%28100%25%29.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLES00310-SAVE2758750202117218/HED-DATA",
                   "/{USBDEV}/PS3/SAVEDATA/BLES00310-SAVE2758750202117218/ICON0.PNG",
@@ -44,7 +44,7 @@
                "Name":"Main Story Quests Completed (100%)",
                "Region":"BLES00310",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/6yubtc9bmh30ar3/Main%20Story%20Quests%20Completed.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/6yubtc9bmh30ar3/Main%20Story%20Quests%20Completed.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLES01329-SAVE-PLAYER-3/ICON0.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/BLES01329-SAVE-PLAYER-3/PARAM.PFD",
@@ -70,7 +70,7 @@
                "Name":"Start at Level 90 w/ 10000 Stats",
                "Region":"BLUS30778",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/zgoborc4oz5yz0p/Level%2090%20%2B%2010000%20Stats.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/zgoborc4oz5yz0p/Level%2090%20%2B%2010000%20Stats.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLUS30778-SAVE-PLAYER-2/_gspinfo.dat",
                   "/{USBDEV}/PS3/SAVEDATA/BLUS30778-SAVE-PLAYER-2/ICON0.PNG",
@@ -98,7 +98,7 @@
                "Name":"Completed Story Mode (100%)",
                "Region":"BLES01667",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/738lpadhfdhocdj/Complete%20Story%20Mode.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/738lpadhfdhocdj/Complete%20Story%20Mode.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLES01667AC3AC3_0/AC3_0.SAV",
                   "/{USBDEV}/PS3/SAVEDATA/BLES01667AC3AC3_0/BK_0.SAV",
@@ -128,7 +128,7 @@
                "Name":"Story Mode Completed (100%)",
                "Region":"BLUS30420",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/lwq1queepdnzui3/Story%20Complete.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/lwq1queepdnzui3/Story%20Complete.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLUS30420-AUTOSAVE/DLCINFO.PKG",
                   "/{USBDEV}/PS3/SAVEDATA/BLUS30420-AUTOSAVE/ICON0.PNG",
@@ -155,7 +155,7 @@
                "Name":"Commando Level 50, Max Skill Points, Infinite Ammo + More (100%)",
                "Region":"BLES01684",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/j8n96bgerkl458z/Story%20Complete.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/j8n96bgerkl458z/Story%20Complete.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLES01684-SAVE-SAVE0007/PIC1.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/BLES01684-SAVE-SAVE0007/ICON0.PNG",
@@ -182,7 +182,7 @@
                "Name":"Infinite Ammo, Infinite Health, Infinite Points + More",
                "Region":"BLES014650",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/0ign9t09ar5myma/Infinite%20Ammo%2C%20Infinite%20Health%2C%20Infinite%20Points%20%2B%20More.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/0ign9t09ar5myma/Infinite%20Ammo%2C%20Infinite%20Health%2C%20Infinite%20Points%20%2B%20More.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLES014650/PIC1.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/BLES014650/ICON0.PNG",
@@ -209,7 +209,7 @@
                "Name":"Platinum Save & Some Mods",
                "Region":"BLES014650",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/w8u7wfithcqo3jg/Platinum%20Save%20%26%20Some%20Mods.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/w8u7wfithcqo3jg/Platinum%20Save%20%26%20Some%20Mods.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLES014650/PIC1.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/BLES014650/ICON0.PNG",
@@ -236,7 +236,7 @@
                "Name":"Story Mode Complete (100%) (Pro Mode, All Weapons, etc.)",
                "Region":"BLUS30270",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/n1dxih97s3pxm36/Complete%20Story%20Mode.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/n1dxih97s3pxm36/Complete%20Story%20Mode.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLUS3027010/PIC1.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/BLUS3027010/ICON0.PNG",
@@ -263,7 +263,7 @@
                "Name":"Story Mode Complete (100%) (Gold for All Races)",
                "Region":"BLUS30142",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/1kpkq14gtz4lwdd/Complete%20%28100%25%29.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/1kpkq14gtz4lwdd/Complete%20%28100%25%29.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLUS30142AUTOSAVE/ICON0.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/BLUS30142AUTOSAVE/ICON1.PAM",
@@ -291,7 +291,7 @@
                "Name":"Story Mode Complete (100%) (All Race Trophies Gold)",
                "Region":"BLES00256",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/duoijhog6iot68g/Complete%20%28100%25%29%20-%20All%20Race%20Trophy%20Gold.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/duoijhog6iot68g/Complete%20%28100%25%29%20-%20All%20Race%20Trophy%20Gold.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/ICON0.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/ICON1.PAM",
@@ -319,7 +319,7 @@
                "Name":"Story Mode Complete (100%) (All cars, Sponsors, etc.)",
                "Region":"BLES00256",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/8j5zcwxy8b5bva3/Complete%20%28100%25%29%20-%20All%20cars%2C%20All%20sponsors.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/8j5zcwxy8b5bva3/Complete%20%28100%25%29%20-%20All%20cars%2C%20All%20sponsors.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/ICON0.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/ICON1.PAM",
@@ -347,7 +347,7 @@
                "Name":"Story Mode Complete (100%) (All Cars, Sponsors, etc.)",
                "Region":"BLUS30182",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/453yxj6orf6fvai/Complete%20Story%20Mode.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/453yxj6orf6fvai/Complete%20Story%20Mode.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLUS30182_SAVE/ICON0.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/BLUS30182_SAVE/PARAM.PFD",
@@ -372,7 +372,7 @@
                "Name":"Story Mode Complete (100%) + All Unlocked",
                "Region":"NPUB30009",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/9o6ii5d6d39vern/Story%20Mode%20Complete%20%28100%25%29%20%2B%20All%20Unlocked.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/9o6ii5d6d39vern/Story%20Mode%20Complete%20%28100%25%29%20%2B%20All%20Unlocked.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/ICON0.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/PARAM.PFD",
@@ -399,7 +399,7 @@
                "Name":"Story Mode Complete (100%)",
                "Region":"BLES01780",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/qjuymq0s0nmt8xx/Story%20Mode%20Complete%20%28100%25%29.zip?dl=0?raw=true",
+               "Url":"https://dl.dropbox.com/s/qjuymq0s0nmt8xx/Story%20Mode%20Complete%20%28100%25%29.zip?dl=0?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLES01780-SAVE-1/ICON0.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/BLES01780-SAVE-1/PARAM.PFD",
@@ -426,7 +426,7 @@
                "Name":"Modded Starter Save (Salvage 9999, Arrow 40, etc.)",
                "Region":"BLUS31036",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/tmqz1yeixm2973r/Modded%20Starter%20Save.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/tmqz1yeixm2973r/Modded%20Starter%20Save.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLUS31036-SAVE-1/ICON0.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/BLUS31036-SAVE-1/PARAM.PFD",
@@ -453,7 +453,7 @@
                "Name":"Ultimate Save (All Skills, Weapons, etc.)",
                "Region":"BLES014650",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/r4fs1o49dwx1vlw/Ultimate%20Save.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/r4fs1o49dwx1vlw/Ultimate%20Save.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLES014650/PIC1.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/BLES014650/ICON0.PNG",
@@ -480,7 +480,7 @@
                "Name":"Complete Story Mode (100%)",
                "Region":"BLES014650",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/71v29cykglcheri/Complete%20Save%20%28100%25%29.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/71v29cykglcheri/Complete%20Save%20%28100%25%29.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/BLES014650/PIC1.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/BLES014650/ICON0.PNG",
@@ -507,7 +507,7 @@
                "Name":"All Unlocked & All Gallery Items Purchased",
                "Region":"NPUB30009",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/17v4asur6ekj2g6/All%20Unlocked%2C%20All%20Gallery%20Items%20Purchased.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/17v4asur6ekj2g6/All%20Unlocked%2C%20All%20Gallery%20Items%20Purchased.zip?raw=true",
                "InstallPaths":[
                   "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/ICON0.PNG",
                   "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/PARAM.PFD",
@@ -534,7 +534,7 @@
                "Name":"Credits 999.999 & All Items Unlocked",
                "Region":"ALL",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/ahbyibkyez8l844/Credits%20999.999%20%26%20All%20Items%20Unlocked.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/ahbyibkyez8l844/Credits%20999.999%20%26%20All%20Items%20Unlocked.zip?raw=true",
                "InstallPaths":[
                   "Hdd:\\NeoModsX\\Game Saves\\Dead Space 2\\ds_slot_02"
                ]
@@ -557,7 +557,7 @@
                "Name":"Completed Missions & Unlimited Money",
                "Region":"ALL",
                "Version":"1.0",
-               "URL":"https://dl.dropbox.com/s/uedk1foeokainhm/Completed%20Missions%20%26%20Unlimited%20Money.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/uedk1foeokainhm/Completed%20Missions%20%26%20Unlimited%20Money.zip?raw=true",
                "InstallPaths":[
                   "Hdd:\\NeoModsX\\Game Saves\\Dead Space 2\\complete_missions_unlimited_money"
                ]
