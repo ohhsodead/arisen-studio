@@ -565,6 +565,37 @@
                ]
             }
          ]
+      },
+	  {
+         "Id":2,
+         "ConsoleType":"XBOX",
+         "GameId":"codmw2",
+         "GameVersion":"TU8",
+         "Memory":[
+            {
+               "Name":"Super Jump",
+               "Category":"Lobby Mods",
+               "Description":"Set your account display name. This doesn't stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"2181044284",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"71801856",
+                     "Type":"byte"
+                  },
+				  {
+                     "Address":"2181040216",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"71801856",
+                     "Type":"byte"
+                  }
+               ]
+            }
+         ]
       }
    ]
 }
