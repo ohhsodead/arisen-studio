@@ -575,7 +575,7 @@
             {
                "Name":"Super Jump",
                "Category":"Lobby Mods",
-               "Description":"Set your account display name. This doesn't stick.",
+               "Description":"Give all players super jump.",
                "GameMode":"Multiplayer",
                "Toggleable":false,
                "Offsets":[
