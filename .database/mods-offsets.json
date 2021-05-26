@@ -574,7 +574,7 @@
          "Memory":[
             {
                "Name":"Super Jump",
-               "Category":"Lobby Mods",
+               "Category":"Host Mods",
                "Description":"Give all players super jump.",
                "GameMode":"Multiplayer",
                "Toggleable":false,
@@ -583,15 +583,15 @@
                      "Address":"2181044284",
                      "Enable":"",
                      "Disable":"",
-                     "Value":"71801856",
-                     "Type":"hex"
+                     "Value":"4479c00",
+                     "Type":"byte"
                   },
 				  {
                      "Address":"2181040216",
                      "Enable":"",
                      "Disable":"",
-                     "Value":"71801856",
-                     "Type":"hex"
+                     "Value":"4479c00",
+                     "Type":"byte"
                   }
                ]
             }
