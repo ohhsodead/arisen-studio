@@ -584,14 +584,14 @@
                      "Enable":"",
                      "Disable":"",
                      "Value":"71801856",
-                     "Type":"byte"
+                     "Type":"hex"
                   },
 				  {
                      "Address":"2181040216",
                      "Enable":"",
                      "Disable":"",
                      "Value":"71801856",
-                     "Type":"byte"
+                     "Type":"hex"
                   }
                ]
             }
