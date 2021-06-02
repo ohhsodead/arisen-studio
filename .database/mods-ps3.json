@@ -2318,7 +2318,7 @@
          "GameId":"rdr",
          "Name":"Mini Menu",
          "Firmware":"DEX",
-         "Region":"ALL",
+         "Region":"BLES01294",
          "Author":"RouletteBoi",
          "SubmittedBy":"ohhsodead",
          "Version":"1.1",
@@ -2328,7 +2328,7 @@
          "DownloadFiles":[
             {
                "Name":"Mini Menu",
-               "Region":"ALL",
+               "Region":"BLES01294",
                "Version":"1.1",
                "URL":"https://dl.dropbox.com/s/fjxm0kbur5tcovm/Mini%20Menu%20SPRX.zip?raw=true",
                "InstallPaths":[
@@ -2804,7 +2804,7 @@
          "GameId":"bf3",
          "Name":"Increased Damage, Wall Hack, UAV and more",
          "Firmware":"DEX",
-         "Region":"ALL",
+         "Region":"BLES01275",
          "Author":"Luckeyy",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -2814,7 +2814,7 @@
          "DownloadFiles":[
             {
                "Name":"Increased Damage, Wall Hack, UAV and more",
-               "Region":"ALL",
+               "Region":"BLES01275",
                "Version":"1.0",
                "URL":"https://dl.dropbox.com/s/o60yk0r0c86f5of/Increased%20Damage%20Wall%20Hack%20UAV.zip?raw=true",
                "InstallPaths":[
