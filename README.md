@@ -27,7 +27,7 @@ Please give this project a ⭐ if you find it useful.
 * Includes a built-in Game Updates Finder
 * Includes a built-in File Manager
 * Includes a built-in Package Manager
-* Includes webMAN commands (Reboot, Shutdown, etc.)
+* Includes webMAN/XBDM commands (Reboot, Shutdown, etc.)
 
 ## Requirements
 
