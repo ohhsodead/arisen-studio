@@ -46,6 +46,9 @@ Download and run the latest version of the Windows installer, "ModioX.Installer.
 
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
 
+## Bug Reports
+ModioX isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/ModioX/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
+
 ## Requesting Mods
 
 I know that not all mods aren't on our database, but if you open an issue with the details then we can get them added for you!
