@@ -3525,7 +3525,7 @@
          "Region":"-",
          "Author":"aldostools",
          "SubmittedBy":"ohhsodead",
-         "Version":"1.47.35",
+         "Version":"1.47.36",
          "Configuration":"-",
          "Type":"PKG",
          "Description":"webMAN MOD is a homebrew plugin with many features added on the original webMAN/sMAN by Deank. We wanted to integrate most of the existing features available on the PS3 Scene like an AIO plugin, and webMAN MOD was born.\n\n\n- For content stored remotely on PC use ps3netsrv_20190701.zip\n- For ROMS support install ROMS/PKG Launcher and RetroArch.\n- For NTFS support on lite edition, scan content with prepNTFS\n- For PS2 Classics games install the CONFIG database & PS2 Classics Launcher\n- For PSP ISO install both PSP launchers for Minis & Remasters\n\n\nVisit the Official GitHub repository for additional add-ons, source code and previous versions",
@@ -3533,10 +3533,10 @@
             {
                "Name":"webMAN MOD",
                "Region":"-",
-               "Version":"1.47.35",
+               "Version":"1.47.36",
                "Url":"https://dl.dropbox.com/s/7va193whg8b8117/webMAN%20MOD.zip?raw=true",
                "InstallPaths":[
-                  "/dev_hdd0/packages/webMAN_MOD_1.47.35_Installer.pkg.888.v1.47.35.pkg"
+                  "/dev_hdd0/packages/webMAN_MOD_1.47.36_Installer.pkg.447.v1.47.36_brewology_com.pkg"
                ]
             }
          ]
@@ -7773,7 +7773,7 @@
          "Region":"-",
          "Author":"Bucanero",
          "SubmittedBy":"ohhsodead",
-         "Version":"1.5.8",
+         "Version":"1.6.4",
          "Configuration":"-",
          "Type":"PKG",
          "Description":"Apollo Save Tool is an application to manage save-game files on the PlayStation 3.\n\nThe apollo-ps3 homebrew app allows to download, unlock, patch and resign save-game files directly on your PS3.",
@@ -7781,10 +7781,10 @@
             {
                "Name":"Apollo Save Tool",
                "Region":"-",
-               "Version":"1.4.6",
+               "Version":"1.6.4",
                "Url":"https://dl.dropbox.com/s/kqwuvt4ktufx8c6/Apollo%20Save%20Tool.zip?raw=true",
                "InstallPaths":[
-                  "/dev_hdd0/packages/apollo-ps3.pkg.790.v1.5.8.pkg"
+                  "/dev_hdd0/packages/apollo-ps3.pkg.170.v1.6.4_brewology_com.pkg"
                ]
             }
          ]
@@ -7804,7 +7804,7 @@
          "Description":"This tool by 3141card unlocks up to 8% extra of the total space on the internal HDD of the PS3. Run it again to restore the original settings if necessary.\n\nYou use this app at your own risk! It works on CFW and HEN.\n\nAll credits to einsteinx2 on psx-place.com for his great tutorial.",
          "DownloadFiles":[
             {
-               "Name":"Apollo Save Tool",
+               "Name":"Unlock HDD Space",
                "Region":"-",
                "Version":"1.4.6",
                "Url":"https://dl.dropbox.com/s/gy79fsf8hn4jif8/Unlock%20HDD%20Space.zip?raw=true",
@@ -15980,24 +15980,15 @@
          "Region":"-",
          "Author":"DeViL303",
          "SubmittedBy":"ohhsodead",
-         "Version":"2.01",
+         "Version":"2.03",
          "Configuration":"-",
          "Type":"PKG",
          "Description":"This is a collection of new and old mods and patches/ A lot made by DeViL303 and some gathered from all over the PS3 scene. This Toolbox makes it easier to apply lots of common firmware patches and visual XMB modifications and more.",
          "DownloadFiles":[
             {
-               "Name":"Ultimate Toolbox (BASE)",
-               "Region":"-",
-               "Version":"2.01",
-               "Url":"https://dl.dropbox.com/s/ommfv07yomw1fxr/Ultimate%20Toolbox%20%28BASE%29.zip?raw=true",
-               "InstallPaths":[
-                  "/dev_hdd0/packages/Ultimate_Toolbox_v2.01_BASE_version.pkg"
-               ]
-            },
-            {
                "Name":"Ultimate Toolbox (FULL)",
                "Region":"-",
-               "Version":"2.01",
+               "Version":"2.03",
                "Url":"https://dl.dropbox.com/s/s980dy7iqioy18v/Ultimate%20Toolbox%20%28FULL%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/packages/Ultimate_Toolbox_v2.01_FULL_version.pkg"
