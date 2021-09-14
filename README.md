@@ -13,7 +13,7 @@ Please give this project a ⭐ if you find it useful.
 
 ## Main Features
 
-* Fast, lightweight and simple to use
+* Fast, lightweight and easy  to use
 * Beautiful and simple design layout
 * Browse a large database of PS3 & Xbox 360 mods
 * Complete with details, creator, version, etc.
