@@ -2855,7 +2855,7 @@
          "CategoryId":"hg",
          "Name":"Scogger HD",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"ThatOtherDev",
          "SubmittedBy":"ohhsodead",
          "Version":"0.1",
@@ -2865,7 +2865,7 @@
          "DownloadFiles":[
             {
                "Name":"Scogger HD",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"0.1",
                "Url":"https://dl.dropbox.com/s/d4zavnm6cvqt96l/Scogger%20HD.zip?raw=true",
                "InstallPaths":[
@@ -2880,7 +2880,7 @@
          "CategoryId":"hg",
          "Name":"Cylinder Dodge",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"scognito",
          "SubmittedBy":"ohhsodead",
          "Version":"1.1",
@@ -2890,7 +2890,7 @@
          "DownloadFiles":[
             {
                "Name":"Cylinder Dodge",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.1",
                "Url":"https://dl.dropbox.com/s/iit4vmabn31wjn3/Cylinder%20Dodge.zip?raw=true",
                "InstallPaths":[
@@ -3012,7 +3012,7 @@
          "CategoryId":"hg",
          "Name":"BreakOutX",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Island-Time",
          "SubmittedBy":"ohhsodead",
          "Version":"1.5",
@@ -3022,7 +3022,7 @@
          "DownloadFiles":[
             {
                "Name":"BreakOutX",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.5",
                "Url":"https://dl.dropbox.com/s/3t724ggazt6x3xy/BreakOutX.zip?raw=true",
                "InstallPaths":[
@@ -3037,7 +3037,7 @@
          "CategoryId":"ha",
          "Name":"Movian (Official/deank)",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Andreas Smas / deank",
          "SubmittedBy":"ohhsodead",
          "Version":"5.0.548 & 5.0.722",
@@ -3047,7 +3047,7 @@
          "DownloadFiles":[
             {
                "Name":"Movian (Official)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"5.0.548",
                "Url":"https://dl.dropbox.com/s/7lqszypetmtixcv/Movian%20%28Official%29.zip?raw=true",
                "InstallPaths":[
@@ -3056,7 +3056,7 @@
             },
             {
                "Name":"Movian (deank)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"5.0.720",
                "Url":"https://dl.dropbox.com/s/0z482kzxy9y7jx7/Movian%20%28deank%29.zip?raw=true",
                "InstallPaths":[
@@ -3071,7 +3071,7 @@
          "CategoryId":"ha",
          "Name":"Advanced Power Options",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"DeViL303",
          "SubmittedBy":"ohhsodead",
          "Version":"1.10",
@@ -3081,7 +3081,7 @@
          "DownloadFiles":[
             {
                "Name":"Advanced Power Options",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.10",
                "Url":"https://dl.dropbox.com/s/iugwh9l5c7ayyeh/Advanced%20Power%20Options.zip?raw=true",
                "InstallPaths":[
@@ -3096,7 +3096,7 @@
          "CategoryId":"ha",
          "Name":"Extras Category",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"DeViL303",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0.1",
@@ -3106,7 +3106,7 @@
          "DownloadFiles":[
             {
                "Name":"Extras Category",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0.1",
                "Url":"https://dl.dropbox.com/s/wcal9ds8t81c5ur/CEX/DEX%20Extras%20Category.zip?raw=true",
                "InstallPaths":[
@@ -3121,7 +3121,7 @@
          "CategoryId":"ha",
          "Name":"HAN Toolbox",
          "Firmware":"HAN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"DeViL303 & pink1",
          "SubmittedBy":"ohhsodead",
          "Version":"0.10",
@@ -3131,7 +3131,7 @@
          "DownloadFiles":[
             {
                "Name":"HAN Toolbox",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"0.10",
                "Url":"https://dl.dropbox.com/s/vosuvlrb9gden6m/HAN%20Toolbox.zip?raw=true",
                "InstallPaths":[
@@ -3146,7 +3146,7 @@
          "CategoryId":"ha",
          "Name":"HEN Toolbox",
          "Firmware":"HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"DeViL303",
          "SubmittedBy":"ohhsodead",
          "Version":"1.00 (4.87)",
@@ -3156,7 +3156,7 @@
          "DownloadFiles":[
             {
                "Name":"HEN Toolbox",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.00 (4.87)",
                "Url":"https://dl.dropbox.com/s/1f4iz2hicdlkxj0/HEN%20Toolbox.zip?raw=true",
                "InstallPaths":[
@@ -3171,7 +3171,7 @@
          "CategoryId":"ha",
          "Name":"HENBrew Store",
          "Firmware":"HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"ShaolinAssassin",
          "SubmittedBy":"ohhsodead",
          "Version":"2019.06.16",
@@ -3181,7 +3181,7 @@
          "DownloadFiles":[
             {
                "Name":"HENBrew Store",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"2019.06.16",
                "Url":"https://dl.dropbox.com/s/qckrmqll6fw5jea/HENBrew%20Store.zip?raw=true",
                "InstallPaths":[
@@ -3196,7 +3196,7 @@
          "CategoryId":"ha",
          "Name":"IRISMAN Full Edition",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"various",
          "SubmittedBy":"ohhsodead",
          "Version":"4.88",
@@ -3206,7 +3206,7 @@
          "DownloadFiles":[
             {
                "Name":"IRISMAN Full Edition",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"4.88",
                "Url":"https://dl.dropbox.com/s/tpmu019c4smzfz3/IRISMAN%20Full%20Edition.zip?raw=true",
                "InstallPaths":[
@@ -3221,7 +3221,7 @@
          "CategoryId":"ha",
          "Name":"MambaPRX Loader (Unofficial)",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"various",
          "SubmittedBy":"ohhsodead",
          "Version":"4.84.2",
@@ -3231,7 +3231,7 @@
          "DownloadFiles":[
             {
                "Name":"MambaPRX Loader (Unofficial)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"4.84.2",
                "Url":"https://dl.dropbox.com/s/ic40k8a0xkefp3g/MambaPRX%20Loader%20%5Bunofficial%5D.zip?raw=true",
                "InstallPaths":[
@@ -3246,7 +3246,7 @@
          "CategoryId":"ha",
          "Name":"ManaGunZ",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"zar",
          "SubmittedBy":"ohhsodead",
          "Version":"1.39",
@@ -3256,7 +3256,7 @@
          "DownloadFiles":[
             {
                "Name":"ManaGunZ",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.38",
                "Url":"https://dl.dropbox.com/s/o630hymjzwf0u2k/ManaGunZ.zip?raw=true",
                "InstallPaths":[
@@ -3271,7 +3271,7 @@
          "CategoryId":"ha",
          "Name":"OpenPS3FTP",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"jjolano",
          "SubmittedBy":"ohhsodead",
          "Version":"4.2a",
@@ -3281,7 +3281,7 @@
          "DownloadFiles":[
             {
                "Name":"OpenPS3FTP",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"4.2a",
                "Url":"https://dl.dropbox.com/s/hos293c5qlgof6i/OpenPS3FTP.zip?raw=true",
                "InstallPaths":[
@@ -3296,7 +3296,7 @@
          "CategoryId":"ha",
          "Name":"prepNTFS",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"deank",
          "SubmittedBy":"ohhsodead",
          "Version":"1.01",
@@ -3306,7 +3306,7 @@
          "DownloadFiles":[
             {
                "Name":"prepNTFS",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.01",
                "Url":"https://dl.dropbox.com/s/ug729o4zsn4c28q/prepNTFS.zip?raw=true",
                "InstallPaths":[
@@ -3321,7 +3321,7 @@
          "CategoryId":"ha",
          "Name":"PS2 Classics Manager",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"CaptainCPS-X",
          "SubmittedBy":"ohhsodead",
          "Version":"1.02",
@@ -3331,7 +3331,7 @@
          "DownloadFiles":[
             {
                "Name":"PS2 Classics Manager",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.02",
                "Url":"https://dl.dropbox.com/s/wfr4ed4zg6fr7uy/PS2%20Classics%20Manager.zip?raw=true",
                "InstallPaths":[
@@ -3347,7 +3347,7 @@
          "CategoryId":"ha",
          "Name":"PS2 ISO Launcher",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"HABIB",
          "SubmittedBy":"ohhsodead",
          "Version":"1.03",
@@ -3357,7 +3357,7 @@
          "DownloadFiles":[
             {
                "Name":"PS2 ISO Launcher",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.03",
                "Url":"https://dl.dropbox.com/s/4g6b4w036dhhucw/PS2%20ISO%20Launcher.zip?raw=true",
                "InstallPaths":[
@@ -3372,7 +3372,7 @@
          "CategoryId":"ha",
          "Name":"PS2 Launcher (REBUG Edition)",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Rebug Team",
          "SubmittedBy":"ohhsodead",
          "Version":"1.00",
@@ -3382,7 +3382,7 @@
          "DownloadFiles":[
             {
                "Name":"PS2 Launcher (REBUG Edition)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.00",
                "Url":"https://dl.dropbox.com/s/5wady8orvfge77g/PS2%20Launcher%20REBUG%20Edition.zip?raw=true",
                "InstallPaths":[
@@ -3397,7 +3397,7 @@
          "CategoryId":"ha",
          "Name":"PS3 EXTRANET",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"0_obeWAN",
          "SubmittedBy":"ohhsodead",
          "Version":"2.10",
@@ -3407,7 +3407,7 @@
          "DownloadFiles":[
             {
                "Name":"PS3 EXTRANET",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"2.10",
                "Url":"https://dl.dropbox.com/s/pjwygqu4pijl8b2/PS3%20EXTRANET.zip?raw=true",
                "InstallPaths":[
@@ -3422,7 +3422,7 @@
          "CategoryId":"ha",
          "Name":"PSN Patch (Stealth)",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"KW",
          "SubmittedBy":"ohhsodead",
          "Version":"2017.02B",
@@ -3432,7 +3432,7 @@
          "DownloadFiles":[
             {
                "Name":"PSN Patch (Stealth)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"2017.02B",
                "Url":"https://dl.dropbox.com/s/0po9zy9nv3mdfxv/PSN%20Patch%20%28Stealth%29.zip?raw=true",
                "InstallPaths":[
@@ -3447,7 +3447,7 @@
          "CategoryId":"ha",
          "Name":"REBUG TOOLBOX Multi",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Joonie86",
          "SubmittedBy":"ohhsodead",
          "Version":"02.03.05",
@@ -3457,7 +3457,7 @@
          "DownloadFiles":[
             {
                "Name":"REBUG TOOLBOX Multi",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"02.03.05",
                "Url":"https://dl.dropbox.com/s/5uwfre1uc2b4yy3/REBUG%20TOOLBOX%20Multi.zip?raw=true",
                "InstallPaths":[
@@ -3472,7 +3472,7 @@
          "CategoryId":"ha",
          "Name":"SEN Enabler",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Evilnat",
          "SubmittedBy":"ohhsodead",
          "Version":"6.2.7",
@@ -3482,7 +3482,7 @@
          "DownloadFiles":[
             {
                "Name":"SEN Enabler",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"6.2.7",
                "Url":"https://dl.dropbox.com/s/46h9lt0s9vzyc55/SEN%20Enabler.zip?raw=true",
                "InstallPaths":[
@@ -3497,7 +3497,7 @@
          "CategoryId":"ha",
          "Name":"Showtime Disc Access",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"andbey0nd",
          "SubmittedBy":"ohhsodead",
          "Version":"11.0",
@@ -3507,7 +3507,7 @@
          "DownloadFiles":[
             {
                "Name":"Showtime Disc Access",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"11.0",
                "Url":"https://dl.dropbox.com/s/ex8g1fd1opqre6t/Showtime%20Disc%20Access.zip?raw=true",
                "InstallPaths":[
@@ -3522,7 +3522,7 @@
          "CategoryId":"ha",
          "Name":"webMAN MOD",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"aldostools",
          "SubmittedBy":"ohhsodead",
          "Version":"1.47.36",
@@ -3532,7 +3532,7 @@
          "DownloadFiles":[
             {
                "Name":"webMAN MOD",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.47.36",
                "Url":"https://dl.dropbox.com/s/7va193whg8b8117/webMAN%20MOD.zip?raw=true",
                "InstallPaths":[
@@ -3547,7 +3547,7 @@
          "CategoryId":"ha",
          "Name":"What's New on PSX-Place",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"DeViL303",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -3557,7 +3557,7 @@
          "DownloadFiles":[
             {
                "Name":"What's New on PSX-Place",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/lb6eep1qvsoe9no/Whats%20New%20on%20PSX-Place.zip?raw=true",
                "InstallPaths":[
@@ -3572,7 +3572,7 @@
          "CategoryId":"ha",
          "Name":"Retro Homebrew Collection (Nintendo NES)",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"STLcardsWS",
          "SubmittedBy":"ohhsodead",
          "Version":"Vol. 2",
@@ -3582,7 +3582,7 @@
          "DownloadFiles":[
             {
                "Name":"Retro Homebrew Collection (Nintendo NES)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"Vol. 2",
                "Url":"https://dl.dropbox.com/s/ec6nkudpqcn0yfw/Retro%20Homebrew%20Collection%20Vol.%202.zip?raw=true",
                "InstallPaths":[
@@ -3597,7 +3597,7 @@
          "CategoryId":"ha",
          "Name":"Retro Homebrew Collection (Atari 2600)",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"STLcardsWS",
          "SubmittedBy":"ohhsodead",
          "Version":"Vol. 1",
@@ -3607,7 +3607,7 @@
          "DownloadFiles":[
             {
                "Name":"Retro Homebrew Collection (Atari 2600)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"Vol. 1",
                "Url":"https://dl.dropbox.com/s/cwomn6zx5nl28s6/Retro%20Homebrew%20Collection%20Vol.%201.zip?raw=true",
                "InstallPaths":[
@@ -3622,7 +3622,7 @@
          "CategoryId":"hg",
          "Name":"Five Nights at Freddy's",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Sandroron",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -3632,7 +3632,7 @@
          "DownloadFiles":[
             {
                "Name":"Five Nights at Freddy's",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/uwhgq27dgozgl8p/Five%20Nights%20at%20Freddy%27s.zip?raw=true",
                "InstallPaths":[
@@ -3647,7 +3647,7 @@
          "CategoryId":"hg",
          "Name":"Flappy Birds Family",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Sandroron",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -3657,7 +3657,7 @@
          "DownloadFiles":[
             {
                "Name":"Flappy Birds Family",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/t20cgxhjaerw9j9/Flappy%20Birds%20Family.zip?raw=true",
                "InstallPaths":[
@@ -3672,7 +3672,7 @@
          "CategoryId":"hg",
          "Name":"Ps3UserCheat",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"oct0xor",
          "SubmittedBy":"ohhsodead",
          "Version":"2.3",
@@ -3682,7 +3682,7 @@
          "DownloadFiles":[
             {
                "Name":"Ps3UserCheat",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"2.3",
                "Url":"https://dl.dropbox.com/s/o9a2sgltoncoqa2/Ps3UserCheat.zip?raw=true",
                "InstallPaths":[
@@ -3697,7 +3697,7 @@
          "CategoryId":"th",
          "Name":"Enlightened Theme",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"AyRod-ThaGod",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -3707,7 +3707,7 @@
          "DownloadFiles":[
             {
                "Name":"Enlightened Theme",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/dbh8murj3q6ubx7/Enlightened%20Theme.zip?raw=true",
                "InstallPaths":[
@@ -3722,7 +3722,7 @@
          "CategoryId":"th",
          "Name":"Diwali Festive Theme 2014",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"HollowBattousai",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -3732,7 +3732,7 @@
          "DownloadFiles":[
             {
                "Name":"Diwali Festive Theme 2014",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/jloszacx5enzi3v/Diwali%20Festive%20Theme.zip?raw=true",
                "InstallPaths":[
@@ -3747,7 +3747,7 @@
          "CategoryId":"th",
          "Name":"PS2 Animated Theme",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"lnnlrocklnnl",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -3757,7 +3757,7 @@
          "DownloadFiles":[
             {
                "Name":"PS2 Animated Theme",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/ztt5ao1syxj444k/PS2%20Animated%20Theme.zip?raw=true",
                "InstallPaths":[
@@ -3772,7 +3772,7 @@
          "CategoryId":"th",
          "Name":"Call of Duty: Advanced Warfare Dynamic Theme",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"uLtRaMa6nEt1c",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -3782,7 +3782,7 @@
          "DownloadFiles":[
             {
                "Name":"Call of Duty: Advanced Warfare Dynamic Theme",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/4s5g05udsccv4s9/Call%20of%20Duty%20Advanced%20Warfare%20Dynamic%20Theme.zip?raw=true",
                "InstallPaths":[
@@ -3797,7 +3797,7 @@
          "CategoryId":"ha",
          "Name":"Atari Emulator",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Strange-Clouds",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -3807,7 +3807,7 @@
          "DownloadFiles":[
             {
                "Name":"Atari Emulator",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/6r12wozw8a8iv4q/Atari%20Emulator.zip?raw=true",
                "InstallPaths":[
@@ -3822,7 +3822,7 @@
          "CategoryId":"xmbr",
          "Name":"Red Waves (2 in 1)",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"AppleXDevice",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -3832,7 +3832,7 @@
          "DownloadFiles":[
             {
                "Name":"Red Waves (2 in 1)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/5ziznopna7adf1z/2%20in%201%20Red%20Waves.zip?raw=true",
                "InstallPaths":[
@@ -3847,7 +3847,7 @@
          "CategoryId":"xmbr",
          "Name":"Blue & Purple Waves",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"AppleXDevice",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -3857,7 +3857,7 @@
          "DownloadFiles":[
             {
                "Name":"Blue & Purple Waves",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/29gm5k1rcajfc0i/Blue%20%26%20Purple%20Waves.zip?raw=true",
                "InstallPaths":[
@@ -3872,7 +3872,7 @@
          "CategoryId":"xmbr",
          "Name":"Green to Blue Waves (Night Background)",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"AppleXDevice",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -3882,7 +3882,7 @@
          "DownloadFiles":[
             {
                "Name":"Green to Blue Waves (Night Background)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/m2fh2d7czkemq59/Green%20to%20Blue%20Night%20BG.zip?raw=true",
                "InstallPaths":[
@@ -3897,7 +3897,7 @@
          "CategoryId":"xmbr",
          "Name":"Green & Yellow Waves",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"AppleXDevice",
          "SubmittedBy":"ohhsodead",
          "Version":"2.0",
@@ -3907,7 +3907,7 @@
          "DownloadFiles":[
             {
                "Name":"Green & Yellow Waves",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"2.0",
                "Url":"https://dl.dropbox.com/s/04klfuvq1rg9x1v/Green%20%26%20Yellow%20Waves%20v2.zip?raw=true",
                "InstallPaths":[
@@ -3922,7 +3922,7 @@
          "CategoryId":"xmbr",
          "Name":"Green & Yellow Waves",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"AppleXDevice",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -3932,7 +3932,7 @@
          "DownloadFiles":[
             {
                "Name":"Green & Yellow Waves",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/70sy8fs13mxt4xp/Green%20%26%20Yellow%20Waves.zip?raw=true",
                "InstallPaths":[
@@ -3947,7 +3947,7 @@
          "CategoryId":"xmbr",
          "Name":"Original Waves",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"AppleXDevice",
          "SubmittedBy":"ohhsodead",
          "Version":"-",
@@ -3957,7 +3957,7 @@
          "DownloadFiles":[
             {
                "Name":"Original Waves",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"-",
                "Url":"https://dl.dropbox.com/s/3fdm3lkw6yqvx0b/Original%20Waves.zip?raw=true",
                "InstallPaths":[
@@ -3972,7 +3972,7 @@
          "CategoryId":"xmbr",
          "Name":"Red to Green Waves (Night Background)",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"AppleXDevice",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -3982,7 +3982,7 @@
          "DownloadFiles":[
             {
                "Name":"Red to Green Waves (Night Background)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/yoqhwgjcx6g0viu/Red%20to%20Green%20Waves%20Night%20BG.zip?raw=true",
                "InstallPaths":[
@@ -3997,7 +3997,7 @@
          "CategoryId":"xmbr",
          "Name":"Zebra Transition (Blue to Red)",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"AppleXDevice",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -4007,7 +4007,7 @@
          "DownloadFiles":[
             {
                "Name":"Zebra Transition (Blue to Red)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/1hpunzb970gt7as/Zebra%20Transition%20also%20Blue%20to%20Red.zip?raw=true",
                "InstallPaths":[
@@ -4022,7 +4022,7 @@
          "CategoryId":"xmbr",
          "Name":"Zebra Wide Blue to Purple",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"AppleXDevice",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -4032,7 +4032,7 @@
          "DownloadFiles":[
             {
                "Name":"Zebra Wide Blue to Purple",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/mfid3xl0kt25ksl/Zebra%20Wide%20Blue%20to%20Purple.zip?raw=true",
                "InstallPaths":[
@@ -4047,7 +4047,7 @@
          "CategoryId":"xmbr",
          "Name":"Zebra Wide Red",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"AppleXDevice",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -4057,7 +4057,7 @@
          "DownloadFiles":[
             {
                "Name":"Zebra Wide Red",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/rjsskkggb1rnyne/Zebra%20Wide%20Red.zip?raw=true",
                "InstallPaths":[
@@ -4344,7 +4344,7 @@
          "CategoryId":"xmbr",
          "Name":"Purple XMB & Icons",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Infumy",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -4354,7 +4354,7 @@
          "DownloadFiles":[
             {
                "Name":"Purple XMB & Icons",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/cxtvl7pdp3mnoqn/Purple%20XMB%20v1.zip?raw=true",
                "InstallPaths":[
@@ -4377,7 +4377,7 @@
          "CategoryId":"xmbr",
          "Name":"Purple Theme (XMB, Icons & Wave)",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Infumy",
          "SubmittedBy":"ohhsodead",
          "Version":"2.0",
@@ -4387,7 +4387,7 @@
          "DownloadFiles":[
             {
                "Name":"Purple Theme (XMB, Icons & Wave)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"2.0",
                "Url":"https://dl.dropbox.com/s/cxtvl7pdp3mnoqn/Purple%20XMB%20v1.zip?raw=true",
                "InstallPaths":[
@@ -4428,7 +4428,7 @@
          "CategoryId":"xmbr",
          "Name":"Green Theme (XMB, Icons & Wave)",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Veqzie",
          "SubmittedBy":"ohhsodead",
          "Version":"1.2",
@@ -4438,7 +4438,7 @@
          "DownloadFiles":[
             {
                "Name":"Green Theme (XMB, Icons & Wave)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.2",
                "Url":"https://dl.dropbox.com/s/fxm61udadlwyxhi/Green%20Theme%20by%20Veqz.zip?raw=true",
                "InstallPaths":[
@@ -4513,7 +4513,7 @@
          "CategoryId":"accr",
          "Name":"PSN Avatars Pack (300+)",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Bimahs",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -4523,7 +4523,7 @@
          "DownloadFiles":[
             {
                "Name":"PSN Avatars Pack (300+)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/x06gyqx8gnidskj/Avatars%20Pack%20%28300%2B%29.zip?raw=true",
                "InstallPaths":[
@@ -4838,7 +4838,7 @@
          "CategoryId":"accr",
          "Name":"PSN Avatars Pack (Old Unreleased)",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Stunz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -4848,7 +4848,7 @@
          "DownloadFiles":[
             {
                "Name":"PSN Avatars Pack (Old Unreleased)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/6z50wlp6kazmh3a/Unreleased%20Avatars%20Pack%20%28Old%29.zip?raw=true",
                "InstallPaths":[
@@ -5022,7 +5022,7 @@
          "CategoryId":"accr",
          "Name":"PSN Avatars Pack (New Unreleased)",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Stunz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -5032,7 +5032,7 @@
          "DownloadFiles":[
             {
                "Name":"PSN Avatars Pack (New Unreleased)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/8ocy8pby7kdt9ji/Unreleased%20Avatars%20Pack%20%28New%29.zip?raw=true",
                "InstallPaths":[
@@ -5070,7 +5070,7 @@
          "CategoryId":"accr",
          "Name":"PSN Avatars Pack (2600+)",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"PassiveModding",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -5080,7 +5080,7 @@
          "DownloadFiles":[
             {
                "Name":"PSN Avatars Pack (2600+)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/vjrgydxzussf3zf/Avatars%20Pack%20%282600%2B%29.zip?raw=true",
                "InstallPaths":[
@@ -7720,7 +7720,7 @@
          "CategoryId":"accr",
          "Name":"Modded Profile Comment",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"ohhsodead",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -7730,7 +7730,7 @@
          "DownloadFiles":[
             {
                "Name":"Modded Profile Comment",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/gqngknp88b5buxd/Modded%20Profile%20Comment.zip?raw=true",
                "InstallPaths":[
@@ -7770,7 +7770,7 @@
          "CategoryId":"ha",
          "Name":"Apollo Save Tool",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Bucanero",
          "SubmittedBy":"ohhsodead",
          "Version":"1.6.4",
@@ -7780,7 +7780,7 @@
          "DownloadFiles":[
             {
                "Name":"Apollo Save Tool",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.6.4",
                "Url":"https://dl.dropbox.com/s/kqwuvt4ktufx8c6/Apollo%20Save%20Tool.zip?raw=true",
                "InstallPaths":[
@@ -7795,7 +7795,7 @@
          "CategoryId":"ha",
          "Name":"Unlock HDD Space",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"3141card",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -7805,7 +7805,7 @@
          "DownloadFiles":[
             {
                "Name":"Unlock HDD Space",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.4.6",
                "Url":"https://dl.dropbox.com/s/gy79fsf8hn4jif8/Unlock%20HDD%20Space.zip?raw=true",
                "InstallPaths":[
@@ -7820,7 +7820,7 @@
          "CategoryId":"ha",
          "Name":"reActPSN",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"ccregame",
          "SubmittedBy":"ohhsodead",
          "Version":"3.20",
@@ -7830,7 +7830,7 @@
          "DownloadFiles":[
             {
                "Name":"reActPSN",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"3.20",
                "Url":"https://dl.dropbox.com/s/bwpu0qfmiqx5j6c/reActPSN%20v3.20.zip?raw=true",
                "InstallPaths":[
@@ -7898,7 +7898,7 @@
          "CategoryId":"ha",
          "Name":"PKGi",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"bucanero",
          "SubmittedBy":"ohhsodead",
          "Version":"1.1.8",
@@ -7908,7 +7908,7 @@
          "DownloadFiles":[
             {
                "Name":"PKGi",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.1.8",
                "Url":"https://dl.dropbox.com/s/p4gbg6tdmqicqrc/PKGi%20Tool.zip?raw=true",
                "InstallPaths":[
@@ -7923,7 +7923,7 @@
          "CategoryId":"ha",
          "Name":"ArtemisPS3",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Dnawrkshp",
          "SubmittedBy":"ohhsodead",
          "Version":"6.2",
@@ -7933,7 +7933,7 @@
          "DownloadFiles":[
             {
                "Name":"ArtemisPS3",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"6.2",
                "Url":"https://dl.dropbox.com/s/agq2wz9cf2jj3vl/ArtemisPS3.zip?raw=true",
                "InstallPaths":[
@@ -7948,7 +7948,7 @@
          "CategoryId":"ha",
          "Name":"RetroArch",
          "Firmware":"DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Themaister/TwinAphex",
          "SubmittedBy":"ohhsodead",
          "Version":"1.8.4",
@@ -7958,7 +7958,7 @@
          "DownloadFiles":[
             {
                "Name":"RetroArch",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.8.4",
                "Url":"https://dl.dropbox.com/s/mz2qy7wpdj39qsk/RetroArchPS3.zip?raw=true",
                "InstallPaths":[
@@ -7973,7 +7973,7 @@
          "CategoryId":"ha",
          "Name":"ScummVM",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"ScummVM Team",
          "SubmittedBy":"ohhsodead",
          "Version":"2.2.0",
@@ -7983,7 +7983,7 @@
          "DownloadFiles":[
             {
                "Name":"ScummVM",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"2.2.0",
                "Url":"https://dl.dropbox.com/s/n9i71mi3hg2nnmw/ScummVM.zip?raw=true",
                "InstallPaths":[
@@ -7998,7 +7998,7 @@
          "CategoryId":"ha",
          "Name":"MAME",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Ole",
          "SubmittedBy":"ohhsodead",
          "Version":"0.125",
@@ -8008,7 +8008,7 @@
          "DownloadFiles":[
             {
                "Name":"MAME",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"0.125",
                "Url":"https://dl.dropbox.com/s/8urfg5gtfidmlsn/MAME.zip?raw=true",
                "InstallPaths":[
@@ -8023,7 +8023,7 @@
          "CategoryId":"ha",
          "Name":"IDPSet",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"zar",
          "SubmittedBy":"ohhsodead",
          "Version":"0.92",
@@ -8033,7 +8033,7 @@
          "DownloadFiles":[
             {
                "Name":"IDPSet",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"0.92",
                "Url":"https://dl.dropbox.com/s/5y9obzydg1fyfmt/IDPSet.zip?raw=true",
                "InstallPaths":[
@@ -8048,7 +8048,7 @@
          "CategoryId":"ha",
          "Name":"Control Fan Utility",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Estwald",
          "SubmittedBy":"ohhsodead",
          "Version":"4.86",
@@ -8058,7 +8058,7 @@
          "DownloadFiles":[
             {
                "Name":"Control Fan Utility",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"4.86",
                "Url":"https://dl.dropbox.com/s/he3umy1ql090yt3/Control%20Fan%20Utility.zip?raw=true",
                "InstallPaths":[
@@ -8099,7 +8099,7 @@
          "CategoryId":"ha",
          "Name":"gameDATA Tool",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"andbey0nd",
          "SubmittedBy":"ohhsodead",
          "Version":"2.0",
@@ -8109,7 +8109,7 @@
          "DownloadFiles":[
             {
                "Name":"gameDATA Tool",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"2.0",
                "Url":"https://dl.dropbox.com/s/rx7h5v2m73aucpx/gameDATA%20Tool.zip?raw=true",
                "InstallPaths":[
@@ -8124,7 +8124,7 @@
          "CategoryId":"hg",
          "Name":"Sketch Fight",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"andbey0nd",
          "SubmittedBy":"ohhsodead",
          "Version":"0.1",
@@ -8134,7 +8134,7 @@
          "DownloadFiles":[
             {
                "Name":"Sketch Fight",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"0.1",
                "Url":"https://dl.dropbox.com/s/3ev3lzq9nxg51zo/Sketch%20Fight.zip?raw=true",
                "InstallPaths":[
@@ -8284,7 +8284,7 @@
          "CategoryId":"hg",
          "Name":"Super Mario War",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"blckbearx",
          "SubmittedBy":"ohhsodead",
          "Version":"1.8_r7a",
@@ -8294,7 +8294,7 @@
          "DownloadFiles":[
             {
                "Name":"Super Mario War",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.8_r7a",
                "Url":"https://dl.dropbox.com/s/4l5f6xdt1tf4re8/Super%20Mario%20War.zip?raw=true",
                "InstallPaths":[
@@ -8851,7 +8851,7 @@
          "CategoryId":"ha",
          "Name":"XMB Mods Collection",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"0_obeWAN",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -8861,7 +8861,7 @@
          "DownloadFiles":[
             {
                "Name":"XMB Mods Collection",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/9hkqd9bx9psi69y/XMB%20Mods%20Collection.zip?raw=true",
                "InstallPaths":[
@@ -8876,7 +8876,7 @@
          "CategoryId":"cb",
          "Name":"Adidas Logo",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -8886,7 +8886,7 @@
          "DownloadFiles":[
             {
                "Name":"Adidas Logo",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/xhrrdabeoptmu6c/Adidas%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -8901,7 +8901,7 @@
          "CategoryId":"cb",
          "Name":"Ariana Grande LBM",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -8911,7 +8911,7 @@
          "DownloadFiles":[
             {
                "Name":"Ariana Grande",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/t1wz8txsxv346g0/Ariana%20Grande.zip?raw=true",
                "InstallPaths":[
@@ -8920,7 +8920,7 @@
             },
             {
                "Name":"Ariana Grande (LBM)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/ddr5jpoaasmhshm/Ariana%20Grande%20LBM.zip?raw=true",
                "InstallPaths":[
@@ -8935,7 +8935,7 @@
          "CategoryId":"cb",
          "Name":"Colorful Weed Logo",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -8945,7 +8945,7 @@
          "DownloadFiles":[
             {
                "Name":"Colorful Weed Logo",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/5sfgnjkspszevb6/Colorful%20Weed%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -8960,7 +8960,7 @@
          "CategoryId":"cb",
          "Name":"Ferrari Logo",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -8970,7 +8970,7 @@
          "DownloadFiles":[
             {
                "Name":"Ferrari Logo",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/8fco2o2kjvkur75/Ferrari%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -8985,7 +8985,7 @@
          "CategoryId":"cb",
          "Name":"Jordan Logo",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -8995,7 +8995,7 @@
          "DownloadFiles":[
             {
                "Name":"Jordan Logo",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/43vzqbltw8f1gzr/Jordan%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -9010,7 +9010,7 @@
          "CategoryId":"cb",
          "Name":"Lamborghini Logo",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9020,7 +9020,7 @@
          "DownloadFiles":[
             {
                "Name":"Lamborghini Logo",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/1hgay4gefjcqmr0/Lamborghini%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -9035,7 +9035,7 @@
          "CategoryId":"cb",
          "Name":"Monster Energy Logo",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9045,7 +9045,7 @@
          "DownloadFiles":[
             {
                "Name":"Monster Energy Logo",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/ah0wjg0pjpoxgfq/Monster%20Energy%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -9060,7 +9060,7 @@
          "CategoryId":"cb",
          "Name":"Nike Logo (Black)",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9070,7 +9070,7 @@
          "DownloadFiles":[
             {
                "Name":"Nike Logo (Black)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/ah0wjg0pjpoxgfq/Monster%20Energy%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -9079,7 +9079,7 @@
             },
             {
                "Name":"Nike Logo (Orange)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/e2z9lvpsg2r9iut/Nike%20Logo%20%28Orange%29.zip?raw=true",
                "InstallPaths":[
@@ -9094,7 +9094,7 @@
          "CategoryId":"cb",
          "Name":"Nike Swoosh Logo (Black)",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9104,7 +9104,7 @@
          "DownloadFiles":[
             {
                "Name":"Nike Swoosh Logo (Black)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/aixkm5j1clu65wd/Nike%20Swoosh%20Logo%20%28Black%29.zip?raw=true",
                "InstallPaths":[
@@ -9119,7 +9119,7 @@
          "CategoryId":"cb",
          "Name":"PlayStation 2 Logo & Sound",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9129,7 +9129,7 @@
          "DownloadFiles":[
             {
                "Name":"PlayStation 2 Logo & Sound",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/wqb4qy06lmq4snd/PlayStation%201%20Logo%20%2B%20Sound.zip?raw=true",
                "InstallPaths":[
@@ -9146,7 +9146,7 @@
          "CategoryId":"cb",
          "Name":"Redbull Logo",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9156,7 +9156,7 @@
          "DownloadFiles":[
             {
                "Name":"Redbull Logo",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/1k9brerw71t9nn6/Redbull%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -9171,7 +9171,7 @@
          "CategoryId":"cb",
          "Name":"Relentless Logo",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9181,7 +9181,7 @@
          "DownloadFiles":[
             {
                "Name":"Relentless Logo",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/7vjq4wz2d3h9s6t/Relentless%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -9196,7 +9196,7 @@
          "CategoryId":"cb",
          "Name":"Rihanna",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9206,7 +9206,7 @@
          "DownloadFiles":[
             {
                "Name":"Rihanna",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/5rn6qjgjnmlq2ft/Rihanna.zip?raw=true",
                "InstallPaths":[
@@ -9215,7 +9215,7 @@
             },
             {
                "Name":"Rihanna (LBM)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/68pchr24a2ulh4a/Rihanna%20LBM.zip?raw=true",
                "InstallPaths":[
@@ -9230,7 +9230,7 @@
          "CategoryId":"cb",
          "Name":"Shakira",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9240,7 +9240,7 @@
          "DownloadFiles":[
             {
                "Name":"Shakira",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/7qxpuf6irpjcx1l/Shakira.zip?raw=true",
                "InstallPaths":[
@@ -9249,7 +9249,7 @@
             },
             {
                "Name":"Shakira (LBM)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/sxsa4j1jqeewxp3/Shakira%20LBM.zip?raw=true",
                "InstallPaths":[
@@ -9264,7 +9264,7 @@
          "CategoryId":"cb",
          "Name":"Super Mario Logo & Sound",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9274,7 +9274,7 @@
          "DownloadFiles":[
             {
                "Name":"Super Mario Logo & Sound",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/iazrde6qeha73ir/Super%20Mario%20Logo%20%2B%20Sound.zip?raw=true",
                "InstallPaths":[
@@ -9291,7 +9291,7 @@
          "CategoryId":"cb",
          "Name":"Weed Stoner Logo",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LesBelcherModz",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9301,7 +9301,7 @@
          "DownloadFiles":[
             {
                "Name":"Weed Stoner Logo",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/vu3w0cz16x1tbof/Weed%20Stoner%20Logo.zip?raw=true",
                "InstallPaths":[
@@ -9316,7 +9316,7 @@
          "CategoryId":"cb",
          "Name":"Butterfly (Purple)",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LizZo",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9326,7 +9326,7 @@
          "DownloadFiles":[
             {
                "Name":"Butterfly (Purple)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/s2kdc53rtmwfu4y/Butterfly%20%28Purple%29.zip?raw=true",
                "InstallPaths":[
@@ -9341,7 +9341,7 @@
          "CategoryId":"cb",
          "Name":"Devil Inside",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LizZo",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9351,7 +9351,7 @@
          "DownloadFiles":[
             {
                "Name":"Devil Inside",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/g8dwk3dajnowvbx/Devil%20Inside.zip?raw=true",
                "InstallPaths":[
@@ -9366,7 +9366,7 @@
          "CategoryId":"cb",
          "Name":"Original PS3",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LizZo",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9376,7 +9376,7 @@
          "DownloadFiles":[
             {
                "Name":"Original PS3",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/susx34pvbuftq7m/Original%20PS3.zip?raw=true",
                "InstallPaths":[
@@ -9393,7 +9393,7 @@
          "CategoryId":"cb",
          "Name":"Original Rebug CEX/DEX",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"LizZo",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -9403,7 +9403,7 @@
          "DownloadFiles":[
             {
                "Name":"Original Rebug CEX/DEX",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/kesya8vdbz9d9o4/Original%20Rebug%20CEX/DEX.zip?raw=true",
                "InstallPaths":[
@@ -9611,7 +9611,7 @@
          "CategoryId":"ha",
          "Name":"PS3™ 4K Pro",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Luan Teles",
          "SubmittedBy":"ohhsodead",
          "Version":"5.1",
@@ -9621,7 +9621,7 @@
          "DownloadFiles":[
             {
                "Name":"PS3™ 4K Pro (CEX/DEX)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"5.1",
                "Url":"https://dl.dropbox.com/s/zwos2a8ko9xjtvu/PS3%204K%20Pro%20%28CEX/DEX%29.zip?raw=true",
                "InstallPaths":[
@@ -9630,7 +9630,7 @@
             },
             {
                "Name":"PS3™ 4K Pro (HEN)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"5.1",
                "Url":"https://dl.dropbox.com/s/3en71w8fkk7mtsx/PS3%204K%20Pro%20%28HEN%29.zip?raw=true",
                "InstallPaths":[
@@ -10085,7 +10085,7 @@
          "CategoryId":"ha",
          "Name":"Minus 18MB",
          "Firmware":"DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Sean",
          "SubmittedBy":"ohhsodead",
          "Version":"1.00",
@@ -10095,7 +10095,7 @@
          "DownloadFiles":[
             {
                "Name":"Minus 18MB",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.00",
                "Url":"https://dl.dropbox.com/s/198ac4obojklxwh/Minus%2018MB.zip?raw=true",
                "InstallPaths":[
@@ -10110,7 +10110,7 @@
          "CategoryId":"ha",
          "Name":"Extended Download Plugin",
          "Firmware":"HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Sean",
          "SubmittedBy":"ohhsodead",
          "Version":"1.01",
@@ -10120,7 +10120,7 @@
          "DownloadFiles":[
             {
                "Name":"Extended Download Plugin",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.01",
                "Url":"https://dl.dropbox.com/s/awmml4lzejsnxw8/Extended%20Download%20Plugin.zip?raw=true",
                "InstallPaths":[
@@ -10135,7 +10135,7 @@
          "CategoryId":"ha",
          "Name":"Podcast Player",
          "Firmware":"CEX/DEX/HEN/HAN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Sean",
          "SubmittedBy":"ohhsodead",
          "Version":"1.00",
@@ -10145,7 +10145,7 @@
          "DownloadFiles":[
             {
                "Name":"Podcast Player",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.00",
                "Url":"https://dl.dropbox.com/s/27edjc8bnmzhfwi/Podcast%20Player.zip?raw=true",
                "InstallPaths":[
@@ -10226,7 +10226,7 @@
          "CategoryId":"hg",
          "Name":"OpenSupaplex",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"sergiou87",
          "SubmittedBy":"ohhsodead",
          "Version":"7.1.2",
@@ -10236,7 +10236,7 @@
          "DownloadFiles":[
             {
                "Name":"OpenSupaplex",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"7.1.2",
                "Url":"https://dl.dropbox.com/s/dppmru17rtr9kk4/OpenSupaplex%20v7.1.2.zip?raw=true",
                "InstallPaths":[
@@ -10251,7 +10251,7 @@
          "CategoryId":"ha",
          "Name":"Simple File Manager",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"sergiou87",
          "SubmittedBy":"ohhsodead",
          "Version":"0.5.2",
@@ -10261,7 +10261,7 @@
          "DownloadFiles":[
             {
                "Name":"Simple File Manager",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"0.5.2",
                "Url":"https://dl.dropbox.com/s/ccua67m9g2t5bo2/Simple%20File%20Manager.zip?raw=true",
                "InstallPaths":[
@@ -10276,7 +10276,7 @@
          "CategoryId":"ha",
          "Name":"MONSTER Manager",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"sergiou87",
          "SubmittedBy":"ohhsodead",
          "Version":"1.07",
@@ -10286,7 +10286,7 @@
          "DownloadFiles":[
             {
                "Name":"MONSTER Manager",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.07",
                "Url":"https://dl.dropbox.com/s/nhlng72zh9tktof/MONSTER%20Manager.zip?raw=true",
                "InstallPaths":[
@@ -10301,7 +10301,7 @@
          "CategoryId":"ha",
          "Name":"Play Manager",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"_Slash_",
          "SubmittedBy":"ohhsodead",
          "Version":"1.12",
@@ -10311,7 +10311,7 @@
          "DownloadFiles":[
             {
                "Name":"Play Manager",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.12",
                "Url":"https://dl.dropbox.com/s/09jw2khnf77czj6/Player%20Manager.zip?raw=true",
                "InstallPaths":[
@@ -10648,7 +10648,7 @@
          "CategoryId":"accr",
          "Name":"Trophy Unlock All",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"SC58",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -10658,7 +10658,7 @@
          "DownloadFiles":[
             {
                "Name":"Trophy Unlock All",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/d4n8vhtbx6lwmij/Trophy%20Unlock%20All.zip?raw=true",
                "InstallPaths":[
@@ -10676,7 +10676,7 @@
          "CategoryId":"accr",
          "Name":"Girl Type Avatars Premium Pack (200+)",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Genova",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -10686,7 +10686,7 @@
          "DownloadFiles":[
             {
                "Name":"Girl Type Avatars Premium Pack (200+)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/dfgdu2um87lgcav/Girl%20Type%20Only%20Avatars%20Premium%20Pack%20%28200%2B%29.zip?raw=true",
                "InstallPaths":[
@@ -10900,7 +10900,7 @@
          "CategoryId":"accr",
          "Name":"Dark & Sp00ky Avatar Pack (100+)",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Genova",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -10910,7 +10910,7 @@
          "DownloadFiles":[
             {
                "Name":"Dark & Sp00ky Avatar Pack (100+)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/yopbftr3xczoph5/Dark%20%26%20Sp00ky%20Avatars%20Pack.zip?raw=true",
                "InstallPaths":[
@@ -11059,7 +11059,7 @@
          "CategoryId":"ha",
          "Name":"WikiStore",
          "Firmware":"CEX/DEX",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"TheWizWikii",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0.8",
@@ -11069,7 +11069,7 @@
          "DownloadFiles":[
             {
                "Name":"WikiStore (CEX/DEX)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0.8",
                "Url":"https://dl.dropbox.com/s/hcyo4b49ktodkjb/WikiStore%20%5BCFW%5D.zip?raw=true",
                "InstallPaths":[
@@ -11080,7 +11080,7 @@
             },
             {
                "Name":"WikiStore (HEN)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0.8",
                "Url":"https://dl.dropbox.com/s/axqd1o4m95kixjm/WikiStore%20%5BHEN%5D.zip?raw=true",
                "InstallPaths":[
@@ -11564,7 +11564,7 @@
          "CategoryId":"th",
          "Name":"P5IIIXMBTH3M35 Pack (300+)",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"Sync",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -11574,7 +11574,7 @@
          "DownloadFiles":[
             {
                "Name":"P5IIIXMBTH3M35 Pack (300+)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/58mpi85rusqsh19/P5IIIXMBTH3M35%20Pack%20%28300%2B%29.zip?raw=true",
                "InstallPaths":[
@@ -15934,7 +15934,7 @@
          "CategoryId":"xmbr",
          "Name":"Orignal PS3 FW 0.91 (4.xx) (Waves & Coldboot)",
          "Firmware":"CEX/DEX/HEN/HAN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"DeViL303",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
@@ -15944,7 +15944,7 @@
          "DownloadFiles":[
             {
                "Name":"Orignal PS3 FW 0.91 (4.xx) (Normal)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/k42yzcfogrlb1wd/Orignal%20PS3%20FW%200.91.zip?raw=true",
                "InstallPaths":[
@@ -15953,7 +15953,7 @@
             },
             {
                "Name":"Coldboot2 Preset Forced Always",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/3hcpzgp09rtvw84/Orignal%20PS3%20FW%200.91%20%28Coldboot2%20Preset%29.zip?raw=true",
                "InstallPaths":[
@@ -15962,7 +15962,7 @@
             },
             {
                "Name":"Normal Preset Forced Always",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"1.0",
                "Url":"https://dl.dropbox.com/s/4uoktd21m1r1zd9/Orignal%20PS3%20FW%200.91%20%28Normal%20Preset%29.zip?raw=true",
                "InstallPaths":[
@@ -15977,7 +15977,7 @@
          "CategoryId":"ha",
          "Name":"Ultimate Toolbox",
          "Firmware":"CEX/DEX/HEN",
-         "Region":"-",
+         "Region":"n/a",
          "Author":"DeViL303",
          "SubmittedBy":"ohhsodead",
          "Version":"2.03",
@@ -15987,7 +15987,7 @@
          "DownloadFiles":[
             {
                "Name":"Ultimate Toolbox (FULL)",
-               "Region":"-",
+               "Region":"n/a",
                "Version":"2.03",
                "Url":"https://dl.dropbox.com/s/s980dy7iqioy18v/Ultimate%20Toolbox%20%28FULL%29.zip?raw=true",
                "InstallPaths":[
