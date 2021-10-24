@@ -7901,7 +7901,7 @@
          "Region":"n/a",
          "Author":"bucanero",
          "SubmittedBy":"ohhsodead",
-         "Version":"1.1.8",
+         "Version":"1.2.2",
          "Configuration":"-",
          "Type":"PKG",
          "Description":"PKGi PS3 is a PlayStation 3 port of PSVita pkgi.",
@@ -7909,10 +7909,10 @@
             {
                "Name":"PKGi",
                "Region":"n/a",
-               "Version":"1.1.8",
+               "Version":"1.2.2",
                "Url":"https://dl.dropbox.com/s/p4gbg6tdmqicqrc/PKGi%20Tool.zip?raw=true",
                "InstallPaths":[
-                  "/dev_hdd0/packages/pkgi-ps3.pkg.604.v1.1.8_brewology_com.pkg"
+                  "/dev_hdd0/packages/pkgi-ps3.pkg.485.v1.2.2_brewology_com.pkg"
                ]
             }
          ]
