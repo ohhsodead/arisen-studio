@@ -7,6 +7,12 @@ An open source desktop application designed to easily browse through a regularly
 
 ![Main Form](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/MainForm.png?raw=true)
 
+#### Preview for Beta v2
+
+![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/DashboardPage.png?raw=true)
+
+![Mods Page](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/ModsPage.png?raw=true)
+
 **Comments, ideas, suggestions?** Come chat with us in the [Discord Server](https://discord.gg/FTCS3Xu)!
 
 Please give this project a ⭐ if you find it useful.
