@@ -2,10 +2,18 @@
    "LastUpdated":"2021-05-20T01:13:37.126946+01:00",
    "Categories":[
       {
-         "Title":"Account Resources",
+         "Title":"Accounts",
          "Id":"accr",
          "Type":"resource",
          "Regions":[ ]
+      },
+      {
+         "Title":"Applications",
+         "Id":"ha",
+         "Type":"homebrew",
+         "Regions":[
+
+         ]
       },
       {
          "Id":"ac3",
@@ -316,15 +324,7 @@
          ]
       },
       {
-         "Title":"Homebrew Applications",
-         "Id":"ha",
-         "Type":"homebrew",
-         "Regions":[
-
-         ]
-      },
-      {
-         "Title":"Homebrew Games",
+         "Title":"Games",
          "Id":"hg",
          "Type":"homebrew",
          "Regions":[
