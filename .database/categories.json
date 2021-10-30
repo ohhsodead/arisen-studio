@@ -448,14 +448,6 @@
          ]
       },
       {
-         "Title":"Favorite Mods",
-         "Id":"fvrt",
-         "Type":"favorite",
-         "Regions":[
-
-         ]
-      },
-      {
          "Title":"Red Dead Redemption: GOTYE",
          "Id":"rdr",
          "Type":"game",
