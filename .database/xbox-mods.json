@@ -2,15 +2,15 @@
    "LastUpdated":"2021-09-11T01:13:37.126946+01:00",
    "Mods":[
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":1,
          "Name":"Legacy Menu",
-         "Author":"RevDictator",
+         "CreatedBy":"RevDictator",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0.0",
-         "Configuration":"MP",
-         "Type":"XEX",
+         "GameMode":"MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nDPAD Right + X\n\nCredit:\nRC4\nTheUnknownCoder\nDark Voyage",
          "DownloadFiles":[
             {
@@ -24,15 +24,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":2,
          "Name":"Destruction Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0.0",
-         "Configuration":"MP",
-         "Type":"XEX",
+         "GameMode":"MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nLeft Stick + X",
          "DownloadFiles":[
             {
@@ -46,15 +46,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codmw2",
          "Id":3,
          "Name":"Medakas Cock Menu",
-         "Author":"Blasts Mods",
+         "CreatedBy":"Blasts Mods",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0.0",
-         "Configuration":"MP",
-         "Type":"XEX",
+         "GameMode":"MP",
+         "ModType":"XEX",
          "Description":"This is a free alternative menu to some of the premium ones on the marked atm. It has premium features of paid menus. If you experience any issues or bugs, please contact Blasts Mods via the methods below, thanks.\nTwitter @trickshotter\nDiscord Blasts Mods#4435",
          "DownloadFiles":[
             {
@@ -68,15 +68,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":4,
          "Name":"Jiggy Menu (Cracked)",
-         "Author":"Jiggy",
+         "CreatedBy":"Jiggy",
          "SubmittedBy":"NCKwolf",
          "Version":"4.5",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Cracked by Team Clapped.",
          "DownloadFiles":[
             {
@@ -90,15 +90,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":5,
          "Name":"Afrikans Menu (Cracked)",
-         "Author":"xbls ninja",
+         "CreatedBy":"xbls ninja",
          "SubmittedBy":"NCKwolf",
          "Version":"2.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"",
          "DownloadFiles":[
             {
@@ -112,15 +112,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":6,
          "Name":"Alpha Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"3.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -134,15 +134,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":7,
          "Name":"Charger Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -156,15 +156,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":8,
          "Name":"Dragon Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -178,15 +178,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":9,
          "Name":"El Host Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -200,15 +200,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":10,
          "Name":"Celestial Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XIII",
+         "GameMode":"SP/MP",
+         "ModType":"XIII",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -222,15 +222,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":11,
          "Name":"Enforcer Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"2.9.4",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -244,15 +244,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":12,
          "Name":"Ghost Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -266,15 +266,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":13,
          "Name":"GTA5 Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -288,15 +288,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":14,
          "Name":"Havoc Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -310,15 +310,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":15,
          "Name":"NiNJA Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -332,15 +332,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":16,
          "Name":"The Purge Menu (Cracked)",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"This is a crack from the original version.",
          "DownloadFiles":[
             {
@@ -354,15 +354,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":17,
          "Name":"The Purge Menu (Private)",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"This is a private menu and may require a authentication (login/password) to work.\n\nHint: You can use the crack instead.",
          "DownloadFiles":[
             {
@@ -376,15 +376,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":18,
          "Name":"Guardian Menu (Cracked)",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -398,15 +398,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":19,
          "Name":"Mega Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -420,15 +420,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":20,
          "Name":"Pandora Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"2.7",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -442,15 +442,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":21,
          "Name":"Rebel Menu (Cracked)",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"This is a cracked version of the menu.\n\nOpen Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -464,15 +464,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":22,
          "Name":"Patch Menu (Cracked)",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"This is a cracked version of the menu.\n\nOpen Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -486,15 +486,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":23,
          "Name":"Rebellion Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -508,15 +508,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":24,
          "Name":"SEngine Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -530,15 +530,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":25,
          "Name":"Serozoid Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -552,15 +552,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":26,
          "Name":"Silk Road Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"2.6",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -574,15 +574,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":27,
          "Name":"Simplicimeme Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -596,15 +596,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":28,
          "Name":"skidrow360 Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"svt",
+         "GameMode":"SP/MP",
+         "ModType":"svt",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -618,15 +618,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":29,
          "Name":"SRB Menu (Cracked)",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"This is a cracked version of the menu.\n\nOpen Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -640,15 +640,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":30,
          "Name":"Superior V Menu (Private)",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"v",
+         "GameMode":"SP/MP",
+         "ModType":"v",
          "Description":"You must have a license for it work. You can purchase at: http://superiorv.net/",
          "DownloadFiles":[
             {
@@ -662,15 +662,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":31,
          "Name":"SVT Menu (Cracked)",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"This is a cracked version of the menu.\n\nOpen Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -684,15 +684,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":32,
          "Name":"The Enforcer Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -706,15 +706,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"gta5",
          "Id":33,
          "Name":"XBLRider (Cracked)",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"NCKwolf",
          "Version":"1.0",
-         "Configuration":"SP/MP",
-         "Type":"XEX",
+         "GameMode":"SP/MP",
+         "ModType":"XEX",
          "Description":"Open Menu:\nYou will be prompted to bind buttons upon launch.",
          "DownloadFiles":[
             {
@@ -728,15 +728,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codmw2",
          "Id":34,
          "Name":"Velonia Menu",
-         "Author":"Liam",
+         "CreatedBy":"Liam",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0.1",
-         "Configuration":"MP",
-         "Type":"XEX",
+         "GameMode":"MP",
+         "ModType":"XEX",
          "Description":"Off host cheat menu.\n\nCredits\n-Liam\n-Zone\n-Joker\n-Dread\n-Smokey xKoVx",
          "DownloadFiles":[
             {
@@ -750,15 +750,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codmw3",
          "Id":35,
          "Name":"Velonia Menu",
-         "Author":"Liam",
+         "CreatedBy":"Liam",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0.1",
-         "Configuration":"MP",
-         "Type":"XEX",
+         "GameMode":"MP",
+         "ModType":"XEX",
          "Description":"Off host cheat menu.\n\nCredits\n-Liam\n-Zone\n-Joker\n-Dread\n-Smokey xKoVx",
          "DownloadFiles":[
             {
@@ -772,15 +772,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codghosts",
          "Id":36,
          "Name":"Velonia Menu",
-         "Author":"Liam",
+         "CreatedBy":"Liam",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0.1",
-         "Configuration":"MP",
-         "Type":"XEX",
+         "GameMode":"MP",
+         "ModType":"XEX",
          "Description":"Off host cheat menu.\nAlso works for Extinction\n\nCredits\n-Liam\n-Zone\n-Joker\n-Dread\n-Smokey xKoVx",
          "DownloadFiles":[
             {
@@ -794,15 +794,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codwaw",
          "Id":37,
          "Name":"Appendum Menu",
-         "Author":"DeathRGH",
+         "CreatedBy":"DeathRGH",
          "SubmittedBy":"ohhsodead",
          "Version":"2.11",
-         "Configuration":"MP",
-         "Type":"XEX",
+         "GameMode":"MP",
+         "ModType":"XEX",
          "Description":"Off host cheat menu.\n\n-Dev-\n\n-DeathRGH https://www.youtube.com/channel/UCNYCdkiEa9BNivnd_gXmCPw\n\n-Private Access/Testers Users-\n\n-RS GLITCHING https://www.youtube.com/channel/UCDH99_Np_HQcR24PXo0Z_Eg\n\n-MrxDMxCFW https://www.youtube.com/channel/UCVl8CeYu77KZ3hGQbPunMVQ",
          "DownloadFiles":[
             {
@@ -816,15 +816,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codbo",
          "Id":38,
          "Name":"Appendum Menu",
-         "Author":"DeathRGH",
+         "CreatedBy":"DeathRGH",
          "SubmittedBy":"ohhsodead",
          "Version":"2.11",
-         "Configuration":"MP",
-         "Type":"XEX",
+         "GameMode":"MP",
+         "ModType":"XEX",
          "Description":"Off host cheat menu.\n\n-Dev-\n\n-DeathRGH https://www.youtube.com/channel/UCNYCdkiEa9BNivnd_gXmCPw\n\n-Private Access/Testers Users-\n\n-RS GLITCHING https://www.youtube.com/channel/UCDH99_Np_HQcR24PXo0Z_Eg\n\n-MrxDMxCFW https://www.youtube.com/channel/UCVl8CeYu77KZ3hGQbPunMVQ",
          "DownloadFiles":[
             {
@@ -838,15 +838,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codmw2",
          "Id":39,
          "Name":"Appendum Menu",
-         "Author":"DeathRGH",
+         "CreatedBy":"DeathRGH",
          "SubmittedBy":"ohhsodead",
          "Version":"2.11",
-         "Configuration":"MP",
-         "Type":"XEX",
+         "GameMode":"MP",
+         "ModType":"XEX",
          "Description":"Off host cheat menu.\n\n-Dev-\n\n-DeathRGH https://www.youtube.com/channel/UCNYCdkiEa9BNivnd_gXmCPw\n\n-Private Access/Testers Users-\n\n-RS GLITCHING https://www.youtube.com/channel/UCDH99_Np_HQcR24PXo0Z_Eg\n\n-MrxDMxCFW https://www.youtube.com/channel/UCVl8CeYu77KZ3hGQbPunMVQ",
          "DownloadFiles":[
             {
@@ -860,15 +860,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codmw3",
          "Id":40,
          "Name":"Appendum Menu",
-         "Author":"DeathRGH",
+         "CreatedBy":"DeathRGH",
          "SubmittedBy":"ohhsodead",
          "Version":"2.11",
-         "Configuration":"MP",
-         "Type":"XEX",
+         "GameMode":"MP",
+         "ModType":"XEX",
          "Description":"Off host cheat menu.\n\n-Dev-\n\n-DeathRGH https://www.youtube.com/channel/UCNYCdkiEa9BNivnd_gXmCPw\n\n-Private Access/Testers Users-\n\n-RS GLITCHING https://www.youtube.com/channel/UCDH99_Np_HQcR24PXo0Z_Eg\n\n-MrxDMxCFW https://www.youtube.com/channel/UCVl8CeYu77KZ3hGQbPunMVQ",
          "DownloadFiles":[
             {
@@ -882,15 +882,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codbo2",
          "Id":41,
          "Name":"Appendum Menu",
-         "Author":"DeathRGH",
+         "CreatedBy":"DeathRGH",
          "SubmittedBy":"ohhsodead",
          "Version":"2.11",
-         "Configuration":"MP/ZM",
-         "Type":"XEX",
+         "GameMode":"MP/ZM",
+         "ModType":"XEX",
          "Description":"Off host cheat menu.\n\n-Dev-\n\n-DeathRGH https://www.youtube.com/channel/UCNYCdkiEa9BNivnd_gXmCPw\n\n-Private Access/Testers Users-\n\n-RS GLITCHING https://www.youtube.com/channel/UCDH99_Np_HQcR24PXo0Z_Eg\n\n-MrxDMxCFW https://www.youtube.com/channel/UCVl8CeYu77KZ3hGQbPunMVQ",
          "DownloadFiles":[
             {
@@ -904,15 +904,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codghosts",
          "Id":42,
          "Name":"Appendum Menu",
-         "Author":"DeathRGH",
+         "CreatedBy":"DeathRGH",
          "SubmittedBy":"ohhsodead",
          "Version":"2.11",
-         "Configuration":"MP/EXT",
-         "Type":"XEX",
+         "GameMode":"MP/EXT",
+         "ModType":"XEX",
          "Description":"Off host cheat menu.\nSupports Extinction too.\n\n-Dev-\n\n-DeathRGH https://www.youtube.com/channel/UCNYCdkiEa9BNivnd_gXmCPw\n\n-Private Access/Testers Users-\n\n-RS GLITCHING https://www.youtube.com/channel/UCDH99_Np_HQcR24PXo0Z_Eg\n\n-MrxDMxCFW https://www.youtube.com/channel/UCVl8CeYu77KZ3hGQbPunMVQ",
          "DownloadFiles":[
             {
@@ -926,15 +926,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codaw",
          "Id":43,
          "Name":"Appendum Menu",
-         "Author":"DeathRGH",
+         "CreatedBy":"DeathRGH",
          "SubmittedBy":"ohhsodead",
          "Version":"2.11",
-         "Configuration":"MP",
-         "Type":"XEX",
+         "GameMode":"MP",
+         "ModType":"XEX",
          "Description":"Off host cheat menu.\nSupports Extinction too.\n\n-Dev-\n\n-DeathRGH https://www.youtube.com/channel/UCNYCdkiEa9BNivnd_gXmCPw\n\n-Private Access/Testers Users-\n\n-RS GLITCHING https://www.youtube.com/channel/UCDH99_Np_HQcR24PXo0Z_Eg\n\n-MrxDMxCFW https://www.youtube.com/channel/UCVl8CeYu77KZ3hGQbPunMVQ",
          "DownloadFiles":[
             {
@@ -948,15 +948,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codbo3",
          "Id":44,
          "Name":"Appendum Menu",
-         "Author":"DeathRGH",
+         "CreatedBy":"DeathRGH",
          "SubmittedBy":"ohhsodead",
          "Version":"2.11",
-         "Configuration":"MP/ZM",
-         "Type":"XEX",
+         "GameMode":"MP/ZM",
+         "ModType":"XEX",
          "Description":"Off host cheat menu.\n\n-Dev-\n\n-DeathRGH https://www.youtube.com/channel/UCNYCdkiEa9BNivnd_gXmCPw\n\n-Private Access/Testers Users-\n\n-RS GLITCHING https://www.youtube.com/channel/UCDH99_Np_HQcR24PXo0Z_Eg\n\n-MrxDMxCFW https://www.youtube.com/channel/UCVl8CeYu77KZ3hGQbPunMVQ",
          "DownloadFiles":[
             {
@@ -970,15 +970,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codbo",
          "Id":45,
          "Name":"Purple Kush Menu",
-         "Author":"Unknown",
+         "CreatedBy":"Unknown",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
-         "Configuration":"MP",
-         "Type":"XEX",
+         "GameMode":"MP",
+         "ModType":"XEX",
          "Description":"",
          "DownloadFiles":[
             {
@@ -992,15 +992,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codbo",
          "Id":46,
          "Name":"Off Host Menu",
-         "Author":"FALKOR",
+         "CreatedBy":"FALKOR",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
-         "Configuration":"ZM",
-         "Type":"XEX",
+         "GameMode":"ZM",
+         "ModType":"XEX",
          "Description":"",
          "DownloadFiles":[
             {
@@ -1014,15 +1014,15 @@
          ]
       },
       {
-         "ConsoleType":"XBOX",
+         "Platform":"XBOX",
          "CategoryId":"codbo",
          "Id":47,
          "Name":"Revival Project Menu",
-         "Author":"DiiTz xKoVx",
+         "CreatedBy":"DiiTz xKoVx",
          "SubmittedBy":"ohhsodead",
          "Version":"1.0",
-         "Configuration":"MP",
-         "Type":"XEX",
+         "GameMode":"MP",
+         "ModType":"XEX",
          "Description":"For more updates check out my youtube or join my discord server\nNo auto updating as i do not have a server.\n\nYoutube: https://www.youtube.com/channel/UCYfGYnNQ25S9AIiDEgQa3GQ\nDiscord: https://discord.gg/GbHQ5yc",
          "DownloadFiles":[
             {
