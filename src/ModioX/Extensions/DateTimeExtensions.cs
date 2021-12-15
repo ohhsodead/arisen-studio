@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using ModioX.Net;
 
 namespace ModioX.Extensions
@@ -11,19 +12,24 @@ namespace ModioX.Extensions
         /// <returns> </returns>
         public static DateTime? ToDateTime(this WINAPI.FILETIME time)
         {
-            if (time.dwHighDateTime == 0 && time.dwLowDateTime == 0)
+            switch (time.dwHighDateTime)
             {
-                return null;
+                case 0 when time.dwLowDateTime == 0:
+                case 0 when time.dwLowDateTime == 0:
+                    return null;
+                default:
+                    unchecked
+                    {
+                        uint low = (uint)time.dwLowDateTime;
+                        long ft = ((long)time.dwHighDateTime << 32) | low;
+                        return DateTime.FromFileTimeUtc(ft);
+                    }
             }
+        }
 
-            if (time.dwHighDateTime == 0 && time.dwLowDateTime == 0) return null;
-
-            unchecked
-            {
-                uint low = (uint)time.dwLowDateTime;
-                long ft = ((long)time.dwHighDateTime << 32) | low;
-                return DateTime.FromFileTimeUtc(ft);
-            }
+        public static bool IsValidDate(this string value, string dateFormat)
+        {
+            return DateTime.TryParseExact(value, dateFormat, DateTimeFormatInfo.CurrentInfo, DateTimeStyles.None, out _);
         }
     }
 }

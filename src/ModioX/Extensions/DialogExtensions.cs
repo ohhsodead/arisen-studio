@@ -3,37 +3,133 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraEditors.Mask;
+using Humanizer;
+using ModioX.Database;
 using ModioX.Forms.Dialogs;
+using ModioX.Forms.Dialogs.Details;
 using ModioX.Forms.Settings;
-using ModioX.Forms.Tools;
-using ModioX.Forms.Tools.PS3_Tools;
-using ModioX.Forms.Tools.XBOX_Tools;
+using ModioX.Forms.Tools.PS3;
+using ModioX.Forms.Tools.XBOX;
 using ModioX.Forms.Windows;
-using ModioX.Models.Release_Data;
+using ModioX.Models.Database;
 using ModioX.Models.Resources;
 
 namespace ModioX.Extensions
 {
     internal static class DialogExtensions
     {
-        public static void ShowWhatsNewWindow(Form owner, GitHubData gitHubData)
-        {
-            try
-            {
-                string releaseBody = gitHubData.Body;
-                string releaseBodyWithoutLastLine = releaseBody.Substring(0, releaseBody.Trim().LastIndexOf(Environment.NewLine, StringComparison.Ordinal));
+        #region Details
 
-                ShowDataViewDialog(owner, gitHubData.Name + " - What's New", "Change Log", releaseBodyWithoutLastLine.Replace("-", "•"));
-            }
-            catch (Exception ex)
+        public static void ShowItemDetailsDialog(Form owner, PlatformPrefix consoleType, CategoriesData categories, ModItemData modItem)
+        {
+            XtraForm detailsDialog = new();
+
+            switch (consoleType)
             {
-                Program.Log.Error(ex, "Unable to fetch release data from GitHub.");
+                case PlatformPrefix.PS3:
+                    if (modItem.GetCategoryType(categories) == CategoryType.Game)
+                    {
+                        detailsDialog = new GameModDialog
+                        {
+                            ModItem = modItem
+                        };
+                    }
+                    else if (modItem.GetCategoryType(categories) == CategoryType.Homebrew)
+                    {
+                        detailsDialog = new HomebrewDialog
+                        {
+                            ModItem = modItem
+                        };
+                    }
+                    else if (modItem.GetCategoryType(categories) == CategoryType.Resource)
+                    {
+                        detailsDialog = new ResourceDialog
+                        {
+                            ModItem = modItem
+                        };
+                    }
+                    break;
+
+                case PlatformPrefix.XBOX:
+                    detailsDialog = new PluginDialog
+                    {
+                        ModItem = modItem
+                    };
+                    break;
+
+                default:
+                    break;
+
             }
+
+            XtraForm overlayForm = new();
+            overlayForm.StartPosition = FormStartPosition.Manual;
+            overlayForm.FormBorderStyle = FormBorderStyle.None;
+            overlayForm.Opacity = .50d;
+            overlayForm.BackColor = Color.Black;
+            overlayForm.Size = owner.Size;
+            overlayForm.Location = owner.Location;
+            overlayForm.ShowInTaskbar = false;
+            overlayForm.Show(owner);
+
+            detailsDialog.Owner = owner;
+            detailsDialog.ShowDialog();
+
+            //Get rid of the overlay form  
+            overlayForm.Dispose();
         }
+
+        public static void ShowItemPackageDetailsDialog(Form owner, PackageItemData packageItem)
+        {
+            using PackageDialog detailsDialog = new();
+            detailsDialog.PackageItem = packageItem;
+
+            XtraForm overlayForm = new();
+            overlayForm.StartPosition = FormStartPosition.Manual;
+            overlayForm.FormBorderStyle = FormBorderStyle.None;
+            overlayForm.Opacity = .50d;
+            overlayForm.BackColor = Color.Black;
+            overlayForm.Size = owner.Size;
+            overlayForm.Location = owner.Location;
+            overlayForm.ShowInTaskbar = false;
+            overlayForm.Show(owner);
+
+            detailsDialog.Owner = owner;
+            detailsDialog.ShowDialog();
+
+            //Get rid of the overlay form  
+            overlayForm.Dispose();
+        }
+
+        public static void ShowItemGameSaveDetailsDialog(Form owner, GameSaveItemData gameSaveItem)
+        {
+            using GameSaveDialog detailsDialog = new();
+            detailsDialog.GameSaveItem = gameSaveItem;
+
+            XtraForm overlayForm = new();
+            overlayForm.StartPosition = FormStartPosition.Manual;
+            overlayForm.FormBorderStyle = FormBorderStyle.None;
+            overlayForm.Opacity = .50d;
+            overlayForm.BackColor = Color.Black;
+            overlayForm.Size = owner.Size;
+            overlayForm.Location = owner.Location;
+            overlayForm.ShowInTaskbar = false;
+            overlayForm.Show(owner);
+
+            detailsDialog.Owner = owner;
+            detailsDialog.ShowDialog();
+
+            //Get rid of the overlay form  
+            overlayForm.Dispose();
+        }
+
+        #endregion
 
         public static void ShowDataViewDialog(Form owner, string title, string subtitle, string body)
         {
-            using DataViewDialog dataViewDialog = new() 
+            using DataViewDialog dataViewDialog = new()
             {
                 Text = title
             };
@@ -43,55 +139,226 @@ namespace ModioX.Extensions
 
             dataViewDialog.MaximumSize = new Size(dataViewDialog.MaximumSize.Width, owner.Height + 100);
             dataViewDialog.Size = new Size(dataViewDialog.Width, dataViewDialog.Height + 15);
-            dataViewDialog.ShowDialog(owner);
+            dataViewDialog.Owner = owner;
+            dataViewDialog.ShowDialog();
         }
 
-        public static string ShowListViewDialog(Form owner, string title, List<ListItem> items)
+        public static ListItem ShowListViewDialog(Form owner, string title, List<ListItem> items)
         {
             using ListViewDialog listViewDialog = new()
             {
+                Owner = owner,
                 Text = title,
                 Items = items
             };
 
-            listViewDialog.ShowDialog(owner);
-            return listViewDialog.SelectedItem ?? "";
+            MethodInvoker dialog = new(() =>
+            {
+                listViewDialog.ShowDialog();
+            });
+
+            if (owner.InvokeRequired)
+            {
+                owner.Invoke(dialog);
+            }
+            else
+            {
+                dialog.Invoke();
+            }
+
+            return listViewDialog.SelectedItem ?? null;
         }
 
-        public static string ShowTextInputDialog(Form owner, string title, string labelText, string inputText = "")
+        public static string ShowListItemDialog(Form owner, string title, string labelText, string[] items)
         {
-            using InputTextDialog inputTextDialog = new()
+            using ComboBoxEdit comboBoxEdit = new();
+            comboBoxEdit.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
+            comboBoxEdit.Properties.ShowNullValuePrompt = ShowNullValuePromptOptions.Default;
+            comboBoxEdit.Properties.NullValuePrompt = "Select...";
+            comboBoxEdit.Properties.Items.AddRange(items);
+            comboBoxEdit.SelectedIndex = -1;
+
+            XtraInputBoxArgs args = new();
+            args.Owner = owner;
+            args.Caption = title;
+            args.Prompt = labelText;
+            args.DefaultResponse = null;
+            args.Editor = comboBoxEdit;
+
+            return (string)XtraInputBox.Show(args);
+        }
+
+        public static string ShowTextInputDialog(Form owner, string title, string labelText, string inputText = "", int maxLength = 0)
+        {
+            using TextEdit textEdit = new();
+            textEdit.Text = inputText;
+            textEdit.EditValue = inputText;
+            textEdit.Properties.MaxLength = maxLength == 0 ? int.MaxValue : maxLength;
+            textEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+
+            XtraInputBoxArgs args = new();
+            args.Owner = owner;
+            args.Caption = title;
+            args.Prompt = labelText;
+            args.DefaultResponse = inputText;
+            args.Editor = textEdit;
+
+            return (string)XtraInputBox.Show(args);
+        }
+
+        public static string[] ShowMultiTextInputDialog(Form owner, string title, string labelText, string[] inputText = null, int maxLength = 0)
+        {
+            MemoEdit textEdit = new();
+            //textEdit.Text = inputText;
+            //textEdit.Properties.LinesCount = 12;
+            //textEdit.EditValue = inputText;
+            textEdit.Properties.MaxLength = maxLength == 0 ? int.MaxValue : maxLength;
+            textEdit.Lines = inputText;
+
+            XtraInputBoxArgs args = new();
+            args.Owner = owner;
+            args.Caption = title;
+            args.Prompt = labelText;
+            args.DefaultResponse = null;
+            args.Editor = textEdit;
+
+            return (string[])XtraInputBox.Show(args);
+        }
+
+        public static int ShowNumberInputDialog(Form owner, string title, string labelText, int inputValue = 0, int maxValue = 0)
+        {
+            using TextEdit textEdit = new();
+            textEdit.EditValue = inputValue;
+            textEdit.Properties.Mask.MaskType = MaskType.Numeric;
+            textEdit.Properties.MaxLength = maxValue == 0 ? int.MaxValue : maxValue;
+            textEdit.Properties.MaskSettings.DataType = typeof(int);
+
+            XtraInputBoxArgs args = new();
+            args.Owner = owner;
+            args.Caption = title;
+            args.Prompt = labelText;
+            args.DefaultResponse = null;
+            args.Editor = textEdit;
+
+            return (int)XtraInputBox.Show(args);
+        }
+
+        public static void ShowTransferModsDialog(Form owner, TransferType transferType, Category category, ModItemData modItem, string region = "")
+        {
+            using TransferDialog transferDialog = new()
             {
-                Text = title,
-                LabelName = { Text = labelText },
-                TextBoxName = { Text = inputText }
+                TransferType = transferType,
+                Category = category,
+                ModItem = modItem,
+                GameRegion = region
             };
 
-            return inputTextDialog.ShowDialog(owner) == DialogResult.OK ? inputTextDialog.TextBoxName.Text.Trim() : null;
+            transferDialog.Owner = owner;
+            transferDialog.ShowDialog();
         }
 
-        public static string ShowNumberInputDialog(Form owner, string title, string labelText, string inputText = "")
+        public static void ShowTransferPackagesDialog(Form owner, TransferType transferType, PackageItemData packageItem)
         {
-            using InputNumberDialog inputNumberDialog = new()
+            using TransferDialog transferDialog = new()
             {
-                Text = title,
-                LabelName = { Text = labelText },
-                SpinEditValue = { Text = inputText },
+                TransferType = transferType,
+                PackageItem = packageItem
             };
 
-            return inputNumberDialog.ShowDialog(owner) == DialogResult.OK ? inputNumberDialog.SpinEditValue.Text.Trim() : null;
+            transferDialog.Owner = owner;
+            transferDialog.ShowDialog();
         }
 
-        public static ConsoleProfile ShowConnectionDialog(Form owner)
+        public static void ShowTransferGameSavesDialog(Form owner, TransferType transferType, Category category, GameSaveItemData gameSaveItem)
         {
-            using ConnectionDialog connectConsole = new();
+            using TransferDialog transferDialog = new()
+            {
+                TransferType = transferType,
+                Category = category,
+                GameSaveItem = gameSaveItem
+            };
+
+            transferDialog.Owner = owner;
+            transferDialog.ShowDialog();
+        }
+
+        public static DialogResult ShowCustomMessageBox(Form owner, string caption, string text, DialogResult[] results, Icon icon, string cancelButton = "Cancel", string abortButton = "Abort", string okButton = "OK", string yesButton = "Yes", string noButton = "No", string retryButton = "Retry")
+        {
+            XtraMessageBoxArgs args = new()
+            {
+                Icon = icon,
+                Caption = caption,
+                Text = text,
+                Buttons = results
+            };
+
+            args.DefaultButtonIndex = 0;
+
+            args.Showing += (o, e) =>
+            {
+                e.Form.Owner = owner;
+
+                foreach (object control in e.Form.Controls)
+                {
+                    if (control is SimpleButton button)
+                    {
+                        switch (button.DialogResult.ToString())
+                        {
+                            case "OK":
+                                button.Text = okButton;
+                                break;
+                            case "Cancel":
+                                button.Text = cancelButton;
+
+                                if (button.Text is not "Cancel")
+                                {
+                                    button.SetControlTextWidth();
+                                }
+
+                                break;
+                            case "Retry":
+                                button.Text = retryButton;
+                                break;
+                            case "Yes":
+                                button.Text = yesButton;
+                                break;
+                            case "No":
+                                button.Text = noButton;
+                                break;
+                            case "Abort":
+                                button.Text = abortButton;
+                                break;
+                        }
+
+                    }
+                }
+            };
+
+            return XtraMessageBox.Show(args);
+        }
+
+        public static ConsoleProfile ShowConnectionsDialog(Form owner, PlatformPrefix consoleType)
+        {
+            using ConnectionsDialog connectConsole = new() { ConsoleType = consoleType };
             return connectConsole.ShowDialog(owner) == DialogResult.OK ? connectConsole.ConsoleProfile : null;
+        }
+
+        public static void ShowEditConnectionsDialog(Form owner, bool isEditing)
+        {
+            using ConnectionsDialog connectConsole = new() { IsEditing = isEditing };
+            connectConsole.ShowDialog(owner);
         }
 
         public static ConsoleProfile ShowNewConnectionWindow(Form owner, ConsoleProfile consoleProfile, bool isEditing)
         {
             using NewConnectionDialog newConnectionDialog = new() { ConsoleProfile = consoleProfile, IsEditingProfile = isEditing };
-            return newConnectionDialog.ShowDialog(owner) == DialogResult.OK ? newConnectionDialog.ConsoleProfile : null;
+
+            if (newConnectionDialog.ShowDialog(owner) == DialogResult.OK)
+            {
+                return newConnectionDialog.ConsoleProfile;
+            }
+
+            return isEditing ? consoleProfile : null;
         }
 
         public static string ShowFolderBrowseDialog(Form owner, string description)
@@ -112,10 +379,106 @@ namespace ModioX.Extensions
             return saveFileDialog.ShowDialog(owner) == DialogResult.OK ? saveFileDialog.FileName : null;
         }
 
+        public static SortOptionsDialog ShowSortOptions(Form owner, string sortOption, List<string> sortOptions, DevExpress.Data.ColumnSortOrder sortOrder)
+        {
+            using SortOptionsDialog sortOptionsDialog = new() { SortOption = sortOption, SortOptions = sortOptions, SortOrder = sortOrder };
+            return sortOptionsDialog.ShowDialog(owner) == DialogResult.OK ? sortOptionsDialog : null;
+        }
+
         public static void ShowFileManager(Form owner)
         {
             using FileManagerWindow fileManagerWindow = new();
             fileManagerWindow.ShowDialog(owner);
+        }
+
+        public static void ShowOffsetsPoker(Form owner)
+        {
+            using OffsetsPokerWindow offsetsPokerWindow = new();
+            offsetsPokerWindow.ShowDialog(owner);
+        }
+
+        public static void ShowImportOffsetsDialog(Form owner, ModsOffsetValues modsOffsetValues)
+        {
+            using ImportOffsetsDialog importOffsetsDialog = new() { ModsOffsetValues = modsOffsetValues };
+            importOffsetsDialog.ShowDialog(owner);
+        }
+
+        public static OffsetValue ShowImportOffsetsValuesDialog(Form owner, OffsetValue offsetValue)
+        {
+            using ImportOffsetsValuesDialog importOffsetsValuesDialog = new() { OffsetValue = offsetValue };
+            return importOffsetsValuesDialog.ShowDialog(owner) == DialogResult.OK ? importOffsetsValuesDialog.OffsetValue : null;
+        }
+
+        #region Help
+
+        public static void ShowWhatsNewDialog(Form owner, Models.Release_Data.GitHubData gitHubData)
+        {
+            try
+            {
+                string releaseBody = gitHubData.Body;
+                string releaseBodyWithoutLastLine = releaseBody.Substring(0, releaseBody.Trim().LastIndexOf(Environment.NewLine, StringComparison.Ordinal));
+
+                ShowDataViewDialog(owner, $"{gitHubData.Name} - What's New", $"Latest Change Log ({gitHubData.PublishedAt.DateTime.ToOrdinalWords()})", releaseBodyWithoutLastLine.Replace("- ", "• "));
+            }
+            catch (Exception ex)
+            {
+                Program.Log.Error(ex, "Unable to fetch latest release data from GitHub.");
+            }
+        }
+
+        public static void ShowAboutWindow(Form owner)
+        {
+            using AboutDialog aboutDialog = new();
+            aboutDialog.ShowDialog(owner);
+        }
+
+        #endregion
+
+        public static void ShowChatRoom(Form owner)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                switch (form)
+                {
+                    case ChatRoomWindow:
+                        form.Focus();
+                        return;
+                }
+            }
+
+            string UserName = MainWindow.Settings.ChatUserName;
+
+            if (UserName.IsNullOrEmpty())
+            {
+                string userName = ShowTextInputDialog(owner, "Set User Name", "User Name:", DataExtensions.LocalUserName,
+                    16);
+
+                if (userName.IsNullOrWhiteSpace())
+                {
+                    XtraMessageBox.Show("You must enter a username.", "Invalid Username", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                switch (Environment.UserName.Equals("ohhsodead"))
+                {
+                    case false when MainWindow.Settings.BlackListUserNames.AnyContainsIgnoreCase(UserName):
+                        XtraMessageBox.Show("Your username can't include the project or the owner's name.", "Invalid Username", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    default:
+                        UserName = userName;
+                        break;
+                }
+            }
+
+            MainWindow.Settings.ChatUserName = UserName.FormatUserName();
+
+            new ChatRoomWindow().Show();
+        }
+
+        public static void ShowSubmitModsDialog(Form owner)
+        {
+            using SubmitModsDialog requestModsDialog = new();
+            requestModsDialog.ShowDialog(owner);
         }
 
         #region PS3 Tools
@@ -132,19 +495,25 @@ namespace ModioX.Extensions
             return backupFileDialog.ShowDialog(owner) == DialogResult.OK ? backupFileDialog.BackupFile : null;
         }
 
-        public static void ShowGameUpdatesFinderDialog(Form owner)
+        public static void ShowConsoleManager(Form owner)
+        {
+            using ConsoleManager consoleManager = new();
+            consoleManager.ShowDialog(owner);
+        }
+
+        public static void ShowGameUpdatesFinder(Form owner)
         {
             using GameUpdatesFinder gameUpdatesFinder = new();
             gameUpdatesFinder.ShowDialog(owner);
         }
 
-        public static void ShowPackageManagerWindow(Form owner)
+        public static void ShowPackageManager(Form owner)
         {
             using PackageManager packageManager = new();
             packageManager.ShowDialog(owner);
         }
 
-        #endregion PS3 Tools
+        #endregion
 
         #region Xbox 360 Tools
 
@@ -160,50 +529,28 @@ namespace ModioX.Extensions
             pluginsEditor.ShowDialog(owner);
         }
 
-        #endregion Xbox 360 Tools
-
-        public static void ShowModsOffsetsDialog(Form owner)
+        public static void ShowXboxGameSaveResigner(Form owner)
         {
-            using OffsetsPoker offsetsPoker = new();
-            offsetsPoker.ShowDialog(owner);
+            using GameSaveResigner gameSaveResigner = new();
+            gameSaveResigner.ShowDialog(owner);
         }
 
-        #region Settings
+        #endregion
 
-        public static void ShowSettingsWindow(Form owner)
-        {
-            using SettingsWindow settingsWindow = new();
-            settingsWindow.ShowDialog(owner);
-        }
+        #region Options
 
         public static void ShowGameRegionsDialog(Form owner)
         {
-            using GameRegions gameRegions = new();
-            gameRegions.ShowDialog(owner);
+            using GameRegions gameRegionsDialog = new();
+            gameRegionsDialog.ShowDialog(owner);
         }
 
-        public static void ShowCustomListsDialog(Form owner, ConsoleTypePrefix consoleType)
+        public static void ShowCustomListsDialog(Form owner, PlatformPrefix consoleType)
         {
             using CustomLists customListsDialog = new() { ConsoleType = consoleType };
             customListsDialog.ShowDialog(owner);
         }
 
-        #endregion Settings
-
-        #region Help
-
-        public static void ShowAboutWindow(Form owner)
-        {
-            using AboutDialog aboutDialog = new();
-            aboutDialog.ShowDialog(owner);
-        }
-
-        #endregion Help
-
-        public static void ShowRequestModsDialog(Form owner)
-        {
-            using RequestModsDialog requestModsDialog = new();
-            requestModsDialog.ShowDialog(owner);
-        }
+        #endregion
     }
 }

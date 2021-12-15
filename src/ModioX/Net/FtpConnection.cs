@@ -1,20 +1,20 @@
-﻿using ModioX.Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
+using ModioX.Extensions;
 
 namespace ModioX.Net
 {
     public class FtpConnection : IDisposable
     {
-        private IntPtr _hInternet;
-        private IntPtr _hConnect;
-        private readonly string _username;
         private readonly string _password;
+        private readonly string _username;
         private bool _disposed;
+        private IntPtr _hConnect;
+        private IntPtr _hInternet;
 
         public FtpConnection(string host)
         {
@@ -54,6 +54,27 @@ namespace ModioX.Net
             _password = password;
         }
 
+        public int Port { get; }
+
+        public string Host { get; }
+
+        public void Dispose()
+        {
+            switch (_disposed)
+            {
+                case false:
+                    {
+                        if (_hConnect != IntPtr.Zero) WININET.InternetCloseHandle(_hConnect);
+                        if (_hInternet != IntPtr.Zero) WININET.InternetCloseHandle(_hInternet);
+                        _hInternet = IntPtr.Zero;
+                        _hConnect = IntPtr.Zero;
+                        _disposed = true;
+                        GC.SuppressFinalize(this);
+                        break;
+                    }
+            }
+        }
+
         public void Close()
         {
             Dispose();
@@ -61,10 +82,7 @@ namespace ModioX.Net
 
         public void CreateDirectory(string path)
         {
-            if (WININET.FtpCreateDirectory(_hConnect, path) == 0)
-            {
-                Error();
-            }
+            if (WININET.FtpCreateDirectory(_hConnect, path) == 0) Error();
         }
 
         public bool DirectoryExists(string path)
@@ -78,41 +96,20 @@ namespace ModioX.Net
             }
             finally
             {
-                if (hInternet != IntPtr.Zero)
-                {
-                    WININET.InternetCloseHandle(hInternet);
-                }
+                if (hInternet != IntPtr.Zero) WININET.InternetCloseHandle(hInternet);
             }
-            return flag;
-        }
 
-        public void Dispose()
-        {
-            if (!_disposed)
-            {
-                if (_hConnect != IntPtr.Zero)
-                {
-                    WININET.InternetCloseHandle(_hConnect);
-                }
-                if (_hInternet != IntPtr.Zero)
-                {
-                    WININET.InternetCloseHandle(_hInternet);
-                }
-                _hInternet = IntPtr.Zero;
-                _hConnect = IntPtr.Zero;
-                _disposed = true;
-                GC.SuppressFinalize(this);
-            }
+            return flag;
         }
 
         private void Error()
         {
             int error = Marshal.GetLastWin32Error();
-            if (error == 0x2ee3)
+            throw error switch
             {
-                throw new FtpException(error, InternetLastResponseInfo(ref error));
-            }
-            throw new Win32Exception(error);
+                0x2ee3 => new FtpException(error, InternetLastResponseInfo(ref error)),
+                _ => new Win32Exception(error)
+            };
         }
 
         public bool FileExists(string path)
@@ -126,11 +123,9 @@ namespace ModioX.Net
             }
             finally
             {
-                if (hInternet != IntPtr.Zero)
-                {
-                    WININET.InternetCloseHandle(hInternet);
-                }
+                if (hInternet != IntPtr.Zero) WININET.InternetCloseHandle(hInternet);
             }
+
             return flag;
         }
 
@@ -144,16 +139,14 @@ namespace ModioX.Net
             int capacity = 0x105;
             StringBuilder currentDirectory = new(capacity);
             if (WININET.FtpGetCurrentDirectory(_hConnect, currentDirectory, ref capacity) != 0)
-            {
                 return currentDirectory.ToString();
-            }
             Error();
             return null;
         }
 
         public FtpDirectoryInfo GetCurrentDirectoryInfo()
         {
-            return new FtpDirectoryInfo(this, GetCurrentDirectory());
+            return new(this, GetCurrentDirectory());
         }
 
         public FtpDirectoryInfo[] GetDirectories()
@@ -183,51 +176,57 @@ namespace ModioX.Net
                 }
                 else
                 {
-                    if ((findFileData.dfFileAttributes & 0x10) == 0x10)
+                    switch (findFileData.dfFileAttributes & 0x10)
                     {
-                        FtpDirectoryInfo item = new(this, new string(findFileData.fileName).TrimEnd(new char[1]))
-                        {
-                            LastAccessTime = findFileData.ftLastAccessTime.ToDateTime(),
-                            LastWriteTime = findFileData.ftLastWriteTime.ToDateTime(),
-                            CreationTime = findFileData.ftCreationTime.ToDateTime(),
-                            Attributes = (FileAttributes)findFileData.dfFileAttributes
-                        };
-                        list.Add(item);
+                        case 0x10:
+                            {
+                                FtpDirectoryInfo item = new(this, new string(findFileData.fileName).TrimEnd(new char[1]))
+                                {
+                                    LastAccessTime = findFileData.ftLastAccessTime.ToDateTime(),
+                                    LastWriteTime = findFileData.ftLastWriteTime.ToDateTime(),
+                                    CreationTime = findFileData.ftCreationTime.ToDateTime(),
+                                    Attributes = (FileAttributes)findFileData.dfFileAttributes
+                                };
+                                list.Add(item);
+                                break;
+                            }
                     }
+
                     findFileData = new WINAPI.WIN32_FIND_DATA();
                     while (true)
                     {
                         if (WININET.InternetFindNextFile(hInternet, ref findFileData) == 0)
                         {
-                            if (Marshal.GetLastWin32Error() != 0x12)
-                            {
-                                Error();
-                            }
+                            if (Marshal.GetLastWin32Error() != 0x12) Error();
                             infoArray = list.ToArray();
                             break;
                         }
-                        if ((findFileData.dfFileAttributes & 0x10) == 0x10)
+
+                        switch (findFileData.dfFileAttributes & 0x10)
                         {
-                            FtpDirectoryInfo item = new(this, new string(findFileData.fileName).TrimEnd(new char[1]))
-                            {
-                                LastAccessTime = findFileData.ftLastAccessTime.ToDateTime(),
-                                LastWriteTime = findFileData.ftLastWriteTime.ToDateTime(),
-                                CreationTime = findFileData.ftCreationTime.ToDateTime(),
-                                Attributes = (FileAttributes)findFileData.dfFileAttributes
-                            };
-                            list.Add(item);
+                            case 0x10:
+                                {
+                                    FtpDirectoryInfo item = new(this, new string(findFileData.fileName).TrimEnd(new char[1]))
+                                    {
+                                        LastAccessTime = findFileData.ftLastAccessTime.ToDateTime(),
+                                        LastWriteTime = findFileData.ftLastWriteTime.ToDateTime(),
+                                        CreationTime = findFileData.ftCreationTime.ToDateTime(),
+                                        Attributes = (FileAttributes)findFileData.dfFileAttributes
+                                    };
+                                    list.Add(item);
+                                    break;
+                                }
                         }
+
                         findFileData = new WINAPI.WIN32_FIND_DATA();
                     }
                 }
             }
             finally
             {
-                if (hInternet != IntPtr.Zero)
-                {
-                    WININET.InternetCloseHandle(hInternet);
-                }
+                if (hInternet != IntPtr.Zero) WININET.InternetCloseHandle(hInternet);
             }
+
             return infoArray;
         }
 
@@ -238,14 +237,13 @@ namespace ModioX.Net
 
         public void GetFile(string remoteFile, string localFile, bool failIfExists)
         {
-            if (WININET.FtpGetFile(_hConnect, remoteFile, localFile, failIfExists, 0x80, 2, IntPtr.Zero) == 0)
-            {
-                Error();
-            }
+            if (WININET.FtpGetFile(_hConnect, remoteFile, localFile, failIfExists, 0x80, 2, IntPtr.Zero) == 0) Error();
         }
 
-        public FtpFileInfo[] GetFiles() =>
-            GetFiles(GetCurrentDirectory());
+        public FtpFileInfo[] GetFiles()
+        {
+            return GetFiles(GetCurrentDirectory());
+        }
 
         public FtpFileInfo[] GetFiles(string mask)
         {
@@ -280,18 +278,17 @@ namespace ModioX.Net
                         };
                         list.Add(item);
                     }
+
                     findFileData = new WINAPI.WIN32_FIND_DATA();
                     while (true)
                     {
                         if (WININET.InternetFindNextFile(hInternet, ref findFileData) == 0)
                         {
-                            if (Marshal.GetLastWin32Error() != 0x12)
-                            {
-                                Error();
-                            }
+                            if (Marshal.GetLastWin32Error() != 0x12) Error();
                             infoArray = list.ToArray();
                             break;
                         }
+
                         if ((findFileData.dfFileAttributes & 0x10) != 0x10)
                         {
                             FtpFileInfo item = new(this, new string(findFileData.fileName).TrimEnd(new char[1]))
@@ -303,44 +300,46 @@ namespace ModioX.Net
                             };
                             list.Add(item);
                         }
+
                         findFileData = new WINAPI.WIN32_FIND_DATA();
                     }
                 }
             }
             finally
             {
-                if (hInternet != IntPtr.Zero)
-                {
-                    WININET.InternetCloseHandle(hInternet);
-                }
+                if (hInternet != IntPtr.Zero) WININET.InternetCloseHandle(hInternet);
             }
+
             return infoArray;
         }
 
         public long GetFileSize(string file)
         {
             IntPtr hConnect = new(WININET.FtpOpenFile(_hConnect, file, 0x8000_0000, 2, IntPtr.Zero));
-            if (!(hConnect == IntPtr.Zero))
+            switch ((hConnect == IntPtr.Zero))
             {
-                try
-                {
-                    int dwFileSizeHigh = 0;
-                    int num2 = WININET.FtpGetFileSize(hConnect, ref dwFileSizeHigh);
-                    return (dwFileSizeHigh << 0x20) | num2;
-                }
-                catch (Exception)
-                {
+                case false:
+                    try
+                    {
+                        int dwFileSizeHigh = 0;
+                        int num2 = WININET.FtpGetFileSize(hConnect, ref dwFileSizeHigh);
+                        return (dwFileSizeHigh << 0x20) | num2;
+                    }
+                    catch (Exception)
+                    {
+                        Error();
+                    }
+                    finally
+                    {
+                        WININET.InternetCloseHandle(hConnect);
+                    }
+
+                    break;
+                default:
                     Error();
-                }
-                finally
-                {
-                    WININET.InternetCloseHandle(hConnect);
-                }
+                    break;
             }
-            else
-            {
-                Error();
-            }
+
             return 0L;
         }
 
@@ -359,32 +358,25 @@ namespace ModioX.Net
 
         public void Login(string username, string password)
         {
-            if (username == null)
+            switch (username)
             {
-                throw new ArgumentNullException("username");
+                case null:
+                    throw new ArgumentNullException("username");
             }
-            if (password == null)
+            switch (password)
             {
-                throw new ArgumentNullException("password");
+                case null:
+                    throw new ArgumentNullException("password");
             }
             _hConnect = WININET.InternetConnect(_hInternet, Host, Port, username, password, 1, 0x800_0000, IntPtr.Zero);
-            if (_hConnect == IntPtr.Zero)
-            {
-                Error();
-            }
+            if (_hConnect == IntPtr.Zero) Error();
         }
 
         public void Open()
         {
-            if (string.IsNullOrEmpty(Host))
-            {
-                throw new ArgumentNullException("Host");
-            }
+            if (string.IsNullOrEmpty(Host)) throw new ArgumentNullException("Host");
             _hInternet = WININET.InternetOpen(Environment.UserName, 0, null, null, 4);
-            if (_hInternet == IntPtr.Zero)
-            {
-                Error();
-            }
+            if (_hInternet == IntPtr.Zero) Error();
         }
 
         public void PutFile(string fileName)
@@ -394,80 +386,65 @@ namespace ModioX.Net
 
         public void PutFile(string localFile, string remoteFile)
         {
-            if (WININET.FtpPutFile(_hConnect, localFile, remoteFile, 2, IntPtr.Zero) == 0)
-            {
-                Error();
-            }
+            if (WININET.FtpPutFile(_hConnect, localFile, remoteFile, 2, IntPtr.Zero) == 0) Error();
         }
 
         public void RemoveDirectory(string directory)
         {
-            if (WININET.FtpRemoveDirectory(_hConnect, directory) == 0)
-            {
-                Error();
-            }
+            if (WININET.FtpRemoveDirectory(_hConnect, directory) == 0) Error();
         }
 
         public void RemoveFile(string fileName)
         {
-            if (WININET.FtpDeleteFile(_hConnect, fileName) == 0)
-            {
-                Error();
-            }
+            if (WININET.FtpDeleteFile(_hConnect, fileName) == 0) Error();
         }
 
         public void RenameFile(string existingFile, string newFile)
         {
-            if (WININET.FtpRenameFile(_hConnect, existingFile, newFile) == 0)
-            {
-                Error();
-            }
+            if (WININET.FtpRenameFile(_hConnect, existingFile, newFile) == 0) Error();
         }
 
         public string SendCommand(string cmd)
         {
             IntPtr ftpCommand = new();
-            int num = (cmd != "PASV") ? WININET.FtpCommand(_hConnect, false, 1, cmd, IntPtr.Zero, ref ftpCommand) : WININET.FtpCommand(_hConnect, false, 1, cmd, IntPtr.Zero, ref ftpCommand);
+            int num = cmd != "PASV"
+                ? WININET.FtpCommand(_hConnect, false, 1, cmd, IntPtr.Zero, ref ftpCommand)
+                : WININET.FtpCommand(_hConnect, false, 1, cmd, IntPtr.Zero, ref ftpCommand);
             int capacity = 0x2000;
-            if (num == 0)
+            switch (num)
             {
-                Error();
-            }
-            else if (ftpCommand != IntPtr.Zero)
-            {
-                StringBuilder buffer = new(capacity);
-                int bytesRead = 0;
-                while (true)
-                {
-                    num = WININET.InternetReadFile(ftpCommand, buffer, capacity, ref bytesRead);
-                    if ((num != 1) || (bytesRead <= 1))
+                case 0:
+                    Error();
+                    break;
+                default:
                     {
-                        return buffer.ToString();
+                        if (ftpCommand != IntPtr.Zero)
+                        {
+                            StringBuilder buffer = new(capacity);
+                            int bytesRead = 0;
+                            while (true)
+                            {
+                                num = WININET.InternetReadFile(ftpCommand, buffer, capacity, ref bytesRead);
+                                if (num != 1 || bytesRead <= 1) return buffer.ToString();
+                            }
+                        }
+
+                        break;
                     }
-                }
             }
+
             return "";
         }
 
         public void SetCurrentDirectory(string directory)
         {
-            if (WININET.FtpSetCurrentDirectory(_hConnect, directory) == 0)
-            {
-                Error();
-            }
+            if (WININET.FtpSetCurrentDirectory(_hConnect, directory) == 0) Error();
         }
 
         public void SetLocalDirectory(string directory)
         {
-            if (!Directory.Exists(directory))
-            {
-                throw new InvalidDataException($"{directory} is not a directory!");
-            }
+            if (!Directory.Exists(directory)) throw new InvalidDataException($"{directory} is not a directory!");
             Environment.CurrentDirectory = directory;
         }
-
-        public int Port { get; }
-
-        public string Host { get; }
     }
 }

@@ -42,19 +42,20 @@ namespace ModioX
             const string threadInfo = @"<${threadname\::whenEmpty=}${threadid}>";
 
             // String to use as a layout for logged messages.
-            string layout = $@"${{date:format=HH\:mm\:ss}} [${{level:uppercase=true}}] {threadInfo}: ${{message}} ${{onexception:inner={exc}}}";
+            string layout =
+                $@"${{date:format=HH\:mm\:ss}} [${{level:uppercase=true}}] {threadInfo}: ${{message}} ${{onexception:inner={exc}}}";
 
             // Target where to log to.
             FileTarget file = new("file")
             {
-                FileName = $"{UserFolders.AppLogsDirectory}latest.log",
+                FileName = $"{UserFolders.Logs}latest.log",
                 AutoFlush = true,
                 ArchiveOldFileOnStartup = true,
                 EnableArchiveFileCompression = true,
                 MaxArchiveFiles = 7,
                 ArchiveEvery = FileArchivePeriod.Day,
                 ArchiveDateFormat = "${shortdate}",
-                ArchiveFileName = UserFolders.AppLogsDirectory + "ModioX-${shortdate}.zip",
+                ArchiveFileName = UserFolders.Logs + "ModioX-${shortdate}.zip",
                 ArchiveNumbering = ArchiveNumberingMode.Date,
                 Layout = layout,
                 CreateDirs = true
@@ -73,28 +74,41 @@ namespace ModioX
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
             StringBuilder message = new StringBuilder()
-                .AppendLine("Should ModioX exit?\n")
-                .Append("If you keep receiving this error, please make a report on GitHub or join our Discord Server.");
+                .Append("Should ModioX exit?")
+                .AppendLine("\nIf you keep receiving this error, please open a new issue on GitHub or a open ticket in our Discord Server.");
 
             MainWindow.Window.SetStatus($"An unknown error occurred: {e.Exception.Message}", e.Exception);
 
-            DialogResult resume = XtraMessageBox.Show(MainWindow.Window, $"An error occurred: {e.Exception.Message}.", message.ToString(), MessageBoxButtons.YesNo);
+            DialogResult closeResult = XtraMessageBox.Show(MainWindow.Window, $"An error occurred: {e.Exception.Message}\n\n" + message.ToString(), "Unhandled Exception", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 
-            if (resume == DialogResult.Yes) Application.Exit();
+            switch (closeResult)
+            {
+                case DialogResult.Yes:
+                    Application.Exit();
+                    break;
+            }
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             Exception exception = e.ExceptionObject as Exception;
+
             StringBuilder message = new StringBuilder()
-                .AppendLine("Should ModioX exit?\n")
-                .Append("If you keep receiving this error, please make a report on GitHub or join our Discord Server.");
+                .Append("Should ModioX exit?")
+                .AppendLine("\nIf you keep receiving this error, please open a new issue on GitHub or a open ticket in our Discord Server.");
 
-            MainWindow.Window.SetStatus($"An unknown error occurred: {exception?.Message}", exception);
+            MainWindow.Window.SetStatus($"An unknown error occurred: {exception.Message}", exception);
 
-            DialogResult resume = XtraMessageBox.Show(MainWindow.Window, $"An error occurred: {exception?.Message}.", message.ToString(), MessageBoxButtons.YesNo);
+            DialogResult closeResult = XtraMessageBox.Show(MainWindow.Window, $"An error occurred: {exception.Message}\n\n" + message.ToString(), "Unhandled Exception", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 
-            if (resume == DialogResult.Yes) Application.Exit();
+            switch (closeResult)
+            {
+                case DialogResult.Yes:
+                    Application.Exit();
+                    break;
+            }
         }
+
+
     }
 }

@@ -63,9 +63,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_folder {
+        internal static System.Drawing.Bitmap add_file {
             get {
-                object obj = ResourceManager.GetObject("add_folder", resourceCulture);
+                object obj = ResourceManager.GetObject("add_file", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_list {
+        internal static System.Drawing.Bitmap add_profile {
             get {
-                object obj = ResourceManager.GetObject("add_list", resourceCulture);
+                object obj = ResourceManager.GetObject("add_profile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap app_logo {
+        internal static System.Drawing.Bitmap announcement {
             get {
-                object obj = ResourceManager.GetObject("app_logo", resourceCulture);
+                object obj = ResourceManager.GetObject("announcement", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bug {
+        internal static System.Drawing.Bitmap backup_restore {
             get {
-                object obj = ResourceManager.GetObject("bug", resourceCulture);
+                object obj = ResourceManager.GetObject("backup_restore", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap copy_to_clipboard {
+        internal static System.Drawing.Bitmap dots {
             get {
-                object obj = ResourceManager.GetObject("copy_to_clipboard", resourceCulture);
+                object obj = ResourceManager.GetObject("dots", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap delete {
+        internal static System.Drawing.Bitmap downloads {
             get {
-                object obj = ResourceManager.GetObject("delete", resourceCulture);
+                object obj = ResourceManager.GetObject("downloads", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap delete_list {
+        internal static System.Drawing.Bitmap edit_file {
             get {
-                object obj = ResourceManager.GetObject("delete_list", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_file", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap download {
+        internal static System.Drawing.Bitmap edit_profile {
             get {
-                object obj = ResourceManager.GetObject("download", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_profile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap download_from_the_cloud {
+        internal static System.Drawing.Bitmap equal_sign {
             get {
-                object obj = ResourceManager.GetObject("download_from_the_cloud", resourceCulture);
+                object obj = ResourceManager.GetObject("equal_sign", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap edit {
+        internal static System.Drawing.Bitmap find_file {
             get {
-                object obj = ResourceManager.GetObject("edit", resourceCulture);
+                object obj = ResourceManager.GetObject("find_file", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap file {
+        internal static System.Drawing.Bitmap find_profile {
             get {
-                object obj = ResourceManager.GetObject("file", resourceCulture);
+                object obj = ResourceManager.GetObject("find_profile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap file_explorer {
+        internal static System.Drawing.Bitmap folder_settings {
             get {
-                object obj = ResourceManager.GetObject("file_explorer", resourceCulture);
+                object obj = ResourceManager.GetObject("folder_settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap filled_heart {
+        internal static System.Drawing.Bitmap game_controller {
             get {
-                object obj = ResourceManager.GetObject("filled_heart", resourceCulture);
+                object obj = ResourceManager.GetObject("game_controller", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,19 +193,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap folder {
+        internal static System.Drawing.Bitmap homebrew {
             get {
-                object obj = ResourceManager.GetObject("folder", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap heart {
-            get {
-                object obj = ResourceManager.GetObject("heart", resourceCulture);
+                object obj = ResourceManager.GetObject("homebrew", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -221,12 +211,72 @@ namespace ModioX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to ; launch.xex V3.0 config file
+        ///; parsed by simpleIni http://code.jellycan.com/simpleini/
+        ///; currently supported devices and paths:
+        ///; internal hard disk    Hdd:\
+        ///; usb memory stick      Usb:\
+        ///; memory unit           Mu:\
+        ///; USB memory unit       UsbMu:\
+        ///; big block NAND mu     FlashMu:\
+        ///; internal slim 4G mu	IntMu:\
+        ///; internal corona 4g mu MmcMu:\
+        ///; CD/DVD                Dvd:\     (not recommended to use this one)
+        ///; buttons can point to any xex, or any CON with default.xex in it on any of the above d [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] launch {
+        internal static string launch {
             get {
-                object obj = ResourceManager.GetObject("launch", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("launch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap less_or_equal {
+            get {
+                object obj = ResourceManager.GetObject("less_or_equal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap library {
+            get {
+                object obj = ResourceManager.GetObject("library", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap more_or_equal {
+            get {
+                object obj = ResourceManager.GetObject("more_or_equal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap package {
+            get {
+                object obj = ResourceManager.GetObject("package", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap packages {
+            get {
+                object obj = ResourceManager.GetObject("packages", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -263,9 +313,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap refresh {
+        internal static System.Drawing.Bitmap profile {
             get {
-                object obj = ResourceManager.GetObject("refresh", resourceCulture);
+                object obj = ResourceManager.GetObject("profile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +323,9 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap rename {
+        internal static System.Drawing.Bitmap resources {
             get {
-                object obj = ResourceManager.GetObject("rename", resourceCulture);
+                object obj = ResourceManager.GetObject("resources", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +333,19 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap restore_file {
+        internal static System.Drawing.Bitmap smile_icon {
             get {
-                object obj = ResourceManager.GetObject("restore_file", resourceCulture);
+                object obj = ResourceManager.GetObject("smile_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap three_dots {
+            get {
+                object obj = ResourceManager.GetObject("three_dots", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +363,19 @@ namespace ModioX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap upload {
+        internal static System.Drawing.Bitmap update_file {
             get {
-                object obj = ResourceManager.GetObject("upload", resourceCulture);
+                object obj = ResourceManager.GetObject("update_file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap world {
+            get {
+                object obj = ResourceManager.GetObject("world", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -30,9 +30,9 @@ namespace ModioX.Models.Database
         {
             return Mods.Where(
                 x => x.ConsoleType.EqualsIgnoreCase(consoleType)
-                && x.GameId.EqualsIgnoreCase(gameId)
-                && x.Memory.Any(y => y.GameMode.ContainsIgnoreCase(gameMode))
-                && x.Memory.Any(y => y.Category.ContainsIgnoreCase(category))).ToList();
+                     && x.GameId.EqualsIgnoreCase(gameId)
+                     && x.Memory.Any(y => y.GameMode.ContainsIgnoreCase(gameMode))
+                     && x.Memory.Any(y => y.Category.ContainsIgnoreCase(category))).ToList();
 
             //return (from mod in Mods
             //        where mod.ConsoleType.EqualsIgnoreCase(consoleType) && mod.GameId.EqualsIgnoreCase(gameId)
@@ -49,7 +49,9 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Get the <see cref="ModsOffsets" /> matching the specified <see cref="ModsOffsets.Id" />.
         /// </summary>
-        /// <param name="id"> <see cref="ModsOffsets.Id" /> </param>
+        /// <param name="id">
+        /// <see cref="ModsOffsets.Id" />
+        /// </param>
         /// <returns> Mod details for the <see cref="ModsOffsets.Id" /> </returns>
         public ModsOffsets GetModsById(int id)
         {
@@ -71,7 +73,8 @@ namespace ModioX.Models.Database
         /// <returns> </returns>
         public List<ModsOffsets> GetModsByConsoleTypeAndGameId(string consoleType, string gameId)
         {
-            return Mods.Where(x => x.ConsoleType.EqualsIgnoreCase(consoleType) && x.GameId.EqualsIgnoreCase(gameId)).ToList();
+            return Mods.Where(x => x.ConsoleType.EqualsIgnoreCase(consoleType) && x.GameId.EqualsIgnoreCase(gameId))
+                .ToList();
         }
 
         /// <summary>
@@ -112,7 +115,7 @@ namespace ModioX.Models.Database
         /// <returns> </returns>
         public int GetTotalMods()
         {
-            return Mods.Count();
+            return Mods.Count;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using ModioX.Extensions;
@@ -17,70 +18,60 @@ namespace ModioX.Forms.Dialogs
 
         public List<ListItem> Items { get; set; }
 
-        public string SelectedItem { get; set; }
+        public ListItem SelectedItem { get; set; }
 
         private void ListViewDialog_Load(object sender, EventArgs e)
         {
-            GridListItems.DataSource = null;
+            GroupListItems.AppearanceCaption.ForeColor = Color.White;
 
-            DataTable dataTable = CreateDataTable(new List<DataColumn>() 
+            using (DataTable dataTable = CreateDataTable(new List<DataColumn>
             {
-                new DataColumn("Value", typeof(string)),
-                new DataColumn("Name", typeof(string))
-            });
+                new("Value", typeof(string)),
+                new("Name", typeof(string))
+            }))
+            {
+                foreach (ListItem item in Items)
+                {
+                    dataTable.Rows.Add(item.Value, item.Name);
+                }
 
-            foreach (ListItem item in Items)
-            {
-                dataTable.Rows.Add(item.Value, item.Name);
+                GridControlListItems.DataSource = dataTable;
             }
-
-            GridListItems.DataSource = dataTable;
 
             GridViewListItems.Columns[0].Visible = false;
             GridViewListItems.Columns[1].Width = GridViewListItems.Columns[1].GetBestWidth();
 
-            // Increase form size to fit listview contents
-            if (Items.Count > 0)
+            switch (Items.Count)
             {
-                Width = GridViewListItems.Columns[1].GetBestWidth() + 70;
-                Refresh();
+                // Increase form size to fit list contents
+                case > 0:
+                    Width = GridViewListItems.Columns[1].GetBestWidth() + 70;
+                    Refresh();
+                    break;
             }
+
+            //GridViewListItems.InvertRowSelection(0);
+            //GridViewListItems.ClearSelection();
+            GridViewListItems.FocusedRowHandle = -1;
+            GridViewListItems.UnselectRow(0);
         }
 
         private void GridViewListItems_RowClick(object sender, RowClickEventArgs e)
         {
-            if (GridViewListItems.SelectedRowsCount > 0)
+            switch (GridViewListItems.SelectedRowsCount)
             {
-                SelectedItem = GridViewListItems.GetRowCellDisplayText(e.RowHandle, "Value");
-                Close();
+                case > 0:
+                    SelectedItem = new ListItem
+                    {
+                        Name = GridViewListItems.GetRowCellDisplayText(e.RowHandle, "Name"),
+                        Value = GridViewListItems.GetRowCellDisplayText(e.RowHandle, "Value")
+                    };
+
+                    Close();
+                    break;
+                default:
+                    break;
             }
-        }
-
-        private void ListBoxItems_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //if (ListBoxItems.SelectedIndex != -1)
-            //{
-            //    SelectedItem = ListBoxItems.SelectedItem.ToString();
-            //    Close();
-            //}
-        }
-
-        private void ListBoxItems_SelectedValueChanged(object sender, EventArgs e)
-        {
-            //if (ListBoxItems.SelectedIndex != -1)
-            //{
-            //    SelectedItem = ListBoxItems.SelectedItem.ToString();
-            //    Close();
-            //}
-        }
-
-        private void ListBoxItems_Click(object sender, EventArgs e)
-        {
-            //if (ListBoxItems.SelectedIndex != -1)
-            //{
-            //    SelectedItem = ListBoxItems.SelectedItem.ToString();
-            //    Close();
-            //}
         }
     }
 }

@@ -60,7 +60,7 @@ namespace ModioX.Forms.Dialogs
             this.GroupInformation.Margin = new System.Windows.Forms.Padding(5);
             this.GroupInformation.Name = "GroupInformation";
             this.GroupInformation.Padding = new System.Windows.Forms.Padding(3);
-            this.GroupInformation.Size = new System.Drawing.Size(500, 105);
+            this.GroupInformation.Size = new System.Drawing.Size(518, 105);
             this.GroupInformation.TabIndex = 2;
             this.GroupInformation.Text = "INFORMATION";
             // 
@@ -75,7 +75,7 @@ namespace ModioX.Forms.Dialogs
             this.LabelInformation.Location = new System.Drawing.Point(5, 26);
             this.LabelInformation.Name = "LabelInformation";
             this.LabelInformation.Padding = new System.Windows.Forms.Padding(3);
-            this.LabelInformation.Size = new System.Drawing.Size(490, 74);
+            this.LabelInformation.Size = new System.Drawing.Size(508, 74);
             this.LabelInformation.TabIndex = 19;
             this.LabelInformation.Text = resources.GetString("LabelInformation.Text");
             // 
@@ -84,10 +84,10 @@ namespace ModioX.Forms.Dialogs
             this.GroupSpecialThanks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupSpecialThanks.Controls.Add(this.LabelSpecialThanks);
-            this.GroupSpecialThanks.Location = new System.Drawing.Point(268, 127);
+            this.GroupSpecialThanks.Location = new System.Drawing.Point(276, 127);
             this.GroupSpecialThanks.Name = "GroupSpecialThanks";
             this.GroupSpecialThanks.Padding = new System.Windows.Forms.Padding(3);
-            this.GroupSpecialThanks.Size = new System.Drawing.Size(246, 131);
+            this.GroupSpecialThanks.Size = new System.Drawing.Size(256, 158);
             this.GroupSpecialThanks.TabIndex = 4;
             this.GroupSpecialThanks.Text = "SPECIAL THANKS";
             // 
@@ -102,7 +102,7 @@ namespace ModioX.Forms.Dialogs
             this.LabelSpecialThanks.Location = new System.Drawing.Point(5, 26);
             this.LabelSpecialThanks.Name = "LabelSpecialThanks";
             this.LabelSpecialThanks.Padding = new System.Windows.Forms.Padding(3);
-            this.LabelSpecialThanks.Size = new System.Drawing.Size(236, 100);
+            this.LabelSpecialThanks.Size = new System.Drawing.Size(246, 127);
             this.LabelSpecialThanks.TabIndex = 18;
             this.LabelSpecialThanks.Text = resources.GetString("LabelSpecialThanks.Text");
             // 
@@ -111,11 +111,11 @@ namespace ModioX.Forms.Dialogs
             this.GroupLicense.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupLicense.Controls.Add(this.LabelLicense);
-            this.GroupLicense.Location = new System.Drawing.Point(14, 268);
+            this.GroupLicense.Location = new System.Drawing.Point(14, 295);
             this.GroupLicense.Margin = new System.Windows.Forms.Padding(5);
             this.GroupLicense.Name = "GroupLicense";
             this.GroupLicense.Padding = new System.Windows.Forms.Padding(3);
-            this.GroupLicense.Size = new System.Drawing.Size(500, 171);
+            this.GroupLicense.Size = new System.Drawing.Size(518, 171);
             this.GroupLicense.TabIndex = 14;
             this.GroupLicense.Text = "LICENSE";
             // 
@@ -130,7 +130,7 @@ namespace ModioX.Forms.Dialogs
             this.LabelLicense.Location = new System.Drawing.Point(5, 26);
             this.LabelLicense.Name = "LabelLicense";
             this.LabelLicense.Padding = new System.Windows.Forms.Padding(3);
-            this.LabelLicense.Size = new System.Drawing.Size(490, 140);
+            this.LabelLicense.Size = new System.Drawing.Size(508, 140);
             this.LabelLicense.TabIndex = 18;
             this.LabelLicense.Text = resources.GetString("LabelLicense.Text");
             this.LabelLicense.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelLicense_HyperlinkClick);
@@ -144,7 +144,7 @@ namespace ModioX.Forms.Dialogs
             this.GroupCredits.Margin = new System.Windows.Forms.Padding(5);
             this.GroupCredits.Name = "GroupCredits";
             this.GroupCredits.Padding = new System.Windows.Forms.Padding(3);
-            this.GroupCredits.Size = new System.Drawing.Size(246, 131);
+            this.GroupCredits.Size = new System.Drawing.Size(254, 158);
             this.GroupCredits.TabIndex = 4;
             this.GroupCredits.Text = "CREDITS";
             // 
@@ -159,18 +159,18 @@ namespace ModioX.Forms.Dialogs
             this.LabelCredits.Location = new System.Drawing.Point(5, 26);
             this.LabelCredits.Name = "LabelCredits";
             this.LabelCredits.Padding = new System.Windows.Forms.Padding(3);
-            this.LabelCredits.Size = new System.Drawing.Size(236, 100);
+            this.LabelCredits.Size = new System.Drawing.Size(244, 127);
             this.LabelCredits.TabIndex = 17;
             this.LabelCredits.Text = "Developer: ohhsodead\r\nContributor: KayGart\r\nContributor: TeddyHammer\r\nContributor" +
-    ": Doregon\r\n\r\nWebsite:\r\n<href=\\\"https://github.com/ohhsodead/ModioX /\\\">https://g" +
-    "ithub.com/ohhsodead/ModioX ";
+    ": Doregon\r\n\r\n\r\n\r\nWebsite:\r\n<href=\\\"https://github.com/ohhsodead/ModioX /\\\">https" +
+    "://github.com/ohhsodead/ModioX ";
             this.LabelCredits.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelCredits_HyperlinkClick);
             // 
             // ButtonClose
             // 
             this.ButtonClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ButtonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.ButtonClose.Location = new System.Drawing.Point(228, 466);
+            this.ButtonClose.Location = new System.Drawing.Point(237, 492);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonClose.Size = new System.Drawing.Size(74, 24);
@@ -186,7 +186,7 @@ namespace ModioX.Forms.Dialogs
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(530, 502);
+            this.ClientSize = new System.Drawing.Size(548, 528);
             this.Controls.Add(this.ButtonClose);
             this.Controls.Add(this.GroupCredits);
             this.Controls.Add(this.GroupLicense);
@@ -194,10 +194,13 @@ namespace ModioX.Forms.Dialogs
             this.Controls.Add(this.GroupInformation);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("AboutDialog.IconOptions.Icon")));
+            this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutDialog";
+            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "About";

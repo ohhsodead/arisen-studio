@@ -14,6 +14,48 @@ namespace ModioX.Net
         public const int ERROR_NO_MORE_FILES = 18;
         public const uint GENERIC_READ = 0x80000000;
 
+        private const uint FORMAT_MESSAGE_IGNORE_INSERTS = 512;
+        private const uint FORMAT_MESSAGE_FROM_HMODULE = 2048;
+        private const uint FORMAT_MESSAGE_FROM_SYSTEM = 4096;
+
+        public static string TranslateInternetError(uint errorCode)
+        {
+            IntPtr hModule = IntPtr.Zero;
+            try
+            {
+                StringBuilder buf = new(255);
+                hModule = LoadLibrary("wininet.dll");
+                if (FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, hModule, errorCode, 0U,
+                    buf, (uint)buf.Capacity + 1, IntPtr.Zero) != 0)
+                {
+                    return buf.ToString();
+                }
+                else
+                {
+                    Debug.Write("Error:: " + Marshal.GetLastWin32Error());
+                    return string.Empty;
+                }
+            }
+            catch
+            {
+                return "Unknown Error";
+            }
+            finally
+            {
+                FreeLibrary(hModule);
+            }
+        }
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern int FreeLibrary(IntPtr hModule);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern uint FormatMessage(uint dwFlags, IntPtr lpSource, uint dwMessageId, uint dwLanguageId,
+            [MarshalAs(UnmanagedType.LPTStr)] StringBuilder lpBuffer, uint nSize, IntPtr Arguments);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern IntPtr LoadLibrary([In][MarshalAs(UnmanagedType.LPTStr)] string lpLibFileName);
+
         [StructLayout(LayoutKind.Sequential)]
         public struct FILETIME
         {
@@ -54,46 +96,6 @@ namespace ModioX.Net
             public int dwOffsetLow;
             public int dwOffsetHigh;
         }
-
-        public static string TranslateInternetError(uint errorCode)
-        {
-            IntPtr hModule = IntPtr.Zero;
-            try
-            {
-                StringBuilder buf = new(255);
-                hModule = LoadLibrary("wininet.dll");
-                if (FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, hModule, errorCode, 0U, buf, (uint)buf.Capacity + 1, IntPtr.Zero) != 0)
-                {
-                    return buf.ToString();
-                }
-                else
-                {
-                    Debug.Write("Error:: " + Marshal.GetLastWin32Error());
-                    return string.Empty;
-                }
-            }
-            catch
-            {
-                return "Unknown Error";
-            }
-            finally
-            {
-                FreeLibrary(hModule);
-            }
-        }
-
-        private const uint FORMAT_MESSAGE_IGNORE_INSERTS = 512;
-        private const uint FORMAT_MESSAGE_FROM_HMODULE = 2048;
-        private const uint FORMAT_MESSAGE_FROM_SYSTEM = 4096;
-
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern int FreeLibrary(IntPtr hModule);
-
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern uint FormatMessage(uint dwFlags, IntPtr lpSource, uint dwMessageId, uint dwLanguageId, [MarshalAs(UnmanagedType.LPTStr)] StringBuilder lpBuffer, uint nSize, IntPtr Arguments);
-
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern IntPtr LoadLibrary([In][MarshalAs(UnmanagedType.LPTStr)] string lpLibFileName);
     }
 
     public static class WININET
@@ -238,15 +240,15 @@ namespace ModioX.Net
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern int InternetGetLastResponseInfo(
             [In][Out] ref int dwError,
-            [MarshalAs(UnmanagedType.LPTStr)]
-            [Out] StringBuilder buffer,
+            [MarshalAs(UnmanagedType.LPTStr)] [Out]
+            StringBuilder buffer,
             [In][Out] ref int bufferLength);
 
         [DllImport("wininet.dll", CharSet = CharSet.Ansi, SetLastError = true)]
         public static extern int InternetReadFile(
             [In] IntPtr hConnect,
-            [MarshalAs(UnmanagedType.LPTStr)]
-            [In][Out] StringBuilder buffer,
+            [MarshalAs(UnmanagedType.LPTStr)] [In] [Out]
+            StringBuilder buffer,
             [In] int buffCount,
             [In][Out] ref int bytesRead);
 

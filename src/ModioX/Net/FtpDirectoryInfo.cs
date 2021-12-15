@@ -27,6 +27,10 @@ namespace ModioX.Net
 
         public new FileAttributes Attributes { get; internal set; }
 
+        public override bool Exists => FtpConnection.DirectoryExists(FullName);
+
+        public override string Name => Path.GetFileName(FullPath);
+
         public override void Delete()
         {
             try
@@ -38,10 +42,6 @@ namespace ModioX.Net
                 throw new Exception("Unable to delete directory.", ex);
             }
         }
-
-        public override bool Exists => FtpConnection.DirectoryExists(FullName);
-
-        public override string Name => Path.GetFileName(FullPath);
 
         public FtpDirectoryInfo[] GetDirectories()
         {

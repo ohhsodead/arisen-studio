@@ -132,10 +132,13 @@ namespace ModioX.Forms.Dialogs
             this.Controls.Add(this.LabelUsername);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("LoginDialog.IconOptions.Icon")));
+            this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginDialog";
+            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Login Details";

@@ -44,7 +44,6 @@ namespace ModioX.Forms.Settings
             this.ColumnGameRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupCustomLists = new DevExpress.XtraEditors.GroupControl();
-            this.ProgressCustomLists = new DevExpress.XtraWaitForm.ProgressPanel();
             this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
             this.ButtonCreateNewList = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonRenameList = new DevExpress.XtraEditors.SimpleButton();
@@ -84,6 +83,7 @@ namespace ModioX.Forms.Settings
             this.GridViewCustomLists.OptionsBehavior.ReadOnly = true;
             this.GridViewCustomLists.OptionsCustomization.AllowFilter = false;
             this.GridViewCustomLists.OptionsFilter.AllowFilterEditor = false;
+            this.GridViewCustomLists.OptionsFilter.AllowFilterIncrementalSearch = false;
             this.GridViewCustomLists.OptionsMenu.ShowAutoFilterRowItem = false;
             this.GridViewCustomLists.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.GridViewCustomLists.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
@@ -122,7 +122,6 @@ namespace ModioX.Forms.Settings
             // 
             // GroupCustomLists
             // 
-            this.GroupCustomLists.Controls.Add(this.ProgressCustomLists);
             this.GroupCustomLists.Controls.Add(this.GridCustomLists);
             this.GroupCustomLists.Controls.Add(this.PanelButtons);
             this.GroupCustomLists.Location = new System.Drawing.Point(12, 12);
@@ -130,24 +129,6 @@ namespace ModioX.Forms.Settings
             this.GroupCustomLists.Size = new System.Drawing.Size(407, 289);
             this.GroupCustomLists.TabIndex = 5;
             this.GroupCustomLists.Text = "YOUR LISTS";
-            // 
-            // ProgressCustomLists
-            // 
-            this.ProgressCustomLists.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ProgressCustomLists.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ProgressCustomLists.Appearance.Options.UseBackColor = true;
-            this.ProgressCustomLists.AppearanceCaption.Options.UseTextOptions = true;
-            this.ProgressCustomLists.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ProgressCustomLists.AppearanceDescription.Options.UseTextOptions = true;
-            this.ProgressCustomLists.AppearanceDescription.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ProgressCustomLists.Caption = "NO CUSTOM LISTS";
-            this.ProgressCustomLists.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ProgressCustomLists.Description = "";
-            this.ProgressCustomLists.Location = new System.Drawing.Point(80, 101);
-            this.ProgressCustomLists.Name = "ProgressCustomLists";
-            this.ProgressCustomLists.Size = new System.Drawing.Size(246, 66);
-            this.ProgressCustomLists.TabIndex = 1172;
-            this.ProgressCustomLists.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
             // 
             // PanelButtons
             // 
@@ -217,10 +198,13 @@ namespace ModioX.Forms.Settings
             this.Controls.Add(this.GroupCustomLists);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("CustomLists.IconOptions.Icon")));
+            this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CustomLists";
+            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Custom Lists";
@@ -248,6 +232,5 @@ namespace ModioX.Forms.Settings
         private SimpleButton ButtonRenameList;
         private SimpleButton ButtonDeleteList;
         private SimpleButton ButtonDeleteAllLists;
-        private ProgressPanel ProgressCustomLists;
     }
 }

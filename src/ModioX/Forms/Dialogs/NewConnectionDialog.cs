@@ -2,10 +2,10 @@
 using System.Net;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using ModioX.Extensions;
+using DevExpress.XtraEditors.Controls;
+using Humanizer;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
-using ModioX.Properties;
 
 namespace ModioX.Forms.Dialogs
 {
@@ -23,15 +23,21 @@ namespace ModioX.Forms.Dialogs
         private void ConsolesWindow_Load(object sender, EventArgs e)
         {
             TextBoxConnectionName.Text = ConsoleProfile.Name;
-            ComboBoxConsoleType.SelectedIndex = ComboBoxConsoleType.Properties.Items.IndexOf(ConsoleProfile.Type.GetDescription());
+            ComboBoxConsoleType.SelectedIndex = ComboBoxConsoleType.Properties.Items.IndexOf(ConsoleProfile.Type.Humanize());
             TextBoxConsoleAddress.Text = ConsoleProfile.Address;
-            TextBoxConsolePort.Text = ConsoleProfile.Port.ToString();
 
             LabelUserPass.Text = ConsoleProfile.UseDefaultCredentials
                 ? "Default"
                 : ConsoleProfile.Username + " / " + ConsoleProfile.Password;
 
-            TextBoxConnectionName.SelectionStart = 0;
+            TextBoxConnectionName.SelectionStart = TextBoxConnectionName.Text.Length;
+
+            LabelUserPass.Visible = ConsoleProfile.TypePrefix == PlatformPrefix.PS3;
+            ButtonChangeCredentials.Visible = ConsoleProfile.TypePrefix == PlatformPrefix.PS3;
+
+            CheckBoxUseDefaultConsole.Visible = ConsoleProfile.TypePrefix == PlatformPrefix.XBOX;
+            CheckBoxUseDefaultConsole.CheckState = ConsoleProfile.UseDefaultConsole ? CheckState.Checked : CheckState.Unchecked;
+            //CheckBoxUseDefaultConsole.Checked = ConsoleProfile.UseDefaultConsole;
         }
 
         private void ComboBoxConsoleType_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,51 +45,92 @@ namespace ModioX.Forms.Dialogs
             switch (ComboBoxConsoleType.SelectedIndex)
             {
                 case 0:
-                    ConsoleProfile.Type = ConsoleType.PlayStation3Fat;
-                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.PS3;
-                    ImageConsole.Image = Resources.PlayStation3Fat;
+                    ConsoleProfile.Type = PlatformType.PlayStation3Fat;
+                    ConsoleProfile.TypePrefix = PlatformPrefix.PS3;
+                    ImageConsole.Image = Properties.Resources.PlayStation3Fat;
                     break;
 
                 case 1:
-                    ConsoleProfile.Type = ConsoleType.PlayStation3Slim;
-                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.PS3;
-                    ImageConsole.Image = Resources.PlayStation3Slim;
+                    ConsoleProfile.Type = PlatformType.PlayStation3Slim;
+                    ConsoleProfile.TypePrefix = PlatformPrefix.PS3;
+                    ImageConsole.Image = Properties.Resources.PlayStation3Slim;
                     break;
 
                 case 2:
-                    ConsoleProfile.Type = ConsoleType.PlayStation3SuperSlim;
-                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.PS3;
-                    ImageConsole.Image = Resources.PlayStation3SuperSlim;
+                    ConsoleProfile.Type = PlatformType.PlayStation3SuperSlim;
+                    ConsoleProfile.TypePrefix = PlatformPrefix.PS3;
+                    ImageConsole.Image = Properties.Resources.PlayStation3SuperSlim;
                     break;
 
                 case 3:
-                    ConsoleProfile.Type = ConsoleType.Xbox360FatWhite;
-                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
-                    ImageConsole.Image = Resources.XboxFat;
+                    ConsoleProfile.Type = PlatformType.Xbox360FatWhite;
+                    ConsoleProfile.TypePrefix = PlatformPrefix.XBOX;
+                    ImageConsole.Image = Properties.Resources.XboxFat;
                     break;
 
                 case 4:
-                    ConsoleProfile.Type = ConsoleType.Xbox360EliteFatBlack;
-                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
-                    ImageConsole.Image = Resources.XboxFatElite;
+                    ConsoleProfile.Type = PlatformType.Xbox360EliteFatBlack;
+                    ConsoleProfile.TypePrefix = PlatformPrefix.XBOX;
+                    ImageConsole.Image = Properties.Resources.XboxFatElite;
                     break;
 
                 case 5:
-                    ConsoleProfile.Type = ConsoleType.Xbox360Slim;
-                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
-                    ImageConsole.Image = Resources.XboxSlim;
+                    ConsoleProfile.Type = PlatformType.Xbox360Slim;
+                    ConsoleProfile.TypePrefix = PlatformPrefix.XBOX;
+                    ImageConsole.Image = Properties.Resources.XboxSlim;
                     break;
 
                 case 6:
-                    ConsoleProfile.Type = ConsoleType.Xbox360SlimE;
-                    ConsoleProfile.TypePrefix = ConsoleTypePrefix.XBOX;
-                    ImageConsole.Image = Resources.XboxSlimE;
+                    ConsoleProfile.Type = PlatformType.Xbox360SlimE;
+                    ConsoleProfile.TypePrefix = PlatformPrefix.XBOX;
+                    ImageConsole.Image = Properties.Resources.XboxSlimE;
                     break;
                 default:
                     goto case 0;
             }
 
-            TextBoxConsolePort.Text = ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3 ? "21" : "730";
+            LabelConsoleAddress.Text = ConsoleProfile.TypePrefix == PlatformPrefix.PS3 ? "Address" : "Address/Name";
+
+            LabelLogin.Text = ConsoleProfile.TypePrefix == PlatformPrefix.PS3 ? "Login" : "Use Default";
+            LabelUserPass.Visible = ConsoleProfile.TypePrefix == PlatformPrefix.PS3;
+            ButtonChangeCredentials.Visible = ConsoleProfile.TypePrefix == PlatformPrefix.PS3;
+
+            CheckBoxUseDefaultConsole.Visible = ConsoleProfile.TypePrefix == PlatformPrefix.XBOX;
+        }
+
+
+        private void CheckBoxUseDefaultConsole_CheckStateChanged(object sender, EventArgs e)
+        {
+            //CheckBoxUseDefaultConsole.Checked = (bool)e.NewValue;
+
+            ConsoleProfile.UseDefaultConsole = CheckBoxUseDefaultConsole.Checked;
+
+            LabelConsoleAddress.Enabled = !CheckBoxUseDefaultConsole.Checked;
+            TextBoxConsoleAddress.Enabled = !CheckBoxUseDefaultConsole.Checked;
+
+            //TextBoxConsoleAddress.Text = ConsoleProfile.TypePrefix == ConsoleTypePrefix.PS3 ? ConsoleProfile.Address : "Default";
+            TextBoxConsoleAddress.Text = CheckBoxUseDefaultConsole.Checked ? "Default Console" : ConsoleProfile.Address;
+        }
+
+        private void CheckBoxUseDefaultConsole_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void CheckBoxUseDefaultConsole_Properties_EditValueChanging(object sender, ChangingEventArgs e)
+        {
+            foreach (ConsoleProfile consoleProfile in MainWindow.Settings.ConsoleProfiles.FindAll(x => x.TypePrefix == PlatformPrefix.XBOX))
+            {
+                if (consoleProfile != ConsoleProfile)
+                {
+                    if (consoleProfile.UseDefaultConsole)
+                    {
+                        e.Cancel = true;
+                        XtraMessageBox.Show(this, $"You have already marked: '{consoleProfile.Name}' as your default console.\n\nPlease edit that console and uncheck the 'Use Default' option to mark this one as default.", "Default Console", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                }
+            }
         }
 
         private void ButtonChangeCredentials_Click(object sender, EventArgs e)
@@ -95,21 +142,22 @@ namespace ModioX.Forms.Dialogs
 
             DialogResult setCredentials = consoleCredentials.ShowDialog(this);
 
-            if (setCredentials == DialogResult.OK)
+            switch (setCredentials)
             {
-                LabelUserPass.Text = consoleCredentials.TextBoxUsername.Text + @" / " + consoleCredentials.TextBoxPassword.Text;
+                case DialogResult.OK:
+                    LabelUserPass.Text = consoleCredentials.TextBoxUsername.Text + @" / " + consoleCredentials.TextBoxPassword.Text;
 
-                ConsoleProfile.Username = consoleCredentials.TextBoxUsername.Text;
-                ConsoleProfile.Password = consoleCredentials.TextBoxPassword.Text;
-                ConsoleProfile.UseDefaultCredentials = false;
-            }
-            else if (setCredentials == DialogResult.Abort)
-            {
-                LabelUserPass.Text = @"Default";
+                    ConsoleProfile.Username = consoleCredentials.TextBoxUsername.Text;
+                    ConsoleProfile.Password = consoleCredentials.TextBoxPassword.Text;
+                    ConsoleProfile.UseDefaultCredentials = false;
+                    break;
+                case DialogResult.Abort:
+                    LabelUserPass.Text = @"Default";
 
-                ConsoleProfile.Username = string.Empty;
-                ConsoleProfile.Password = string.Empty;
-                ConsoleProfile.UseDefaultCredentials = true;
+                    ConsoleProfile.Username = string.Empty;
+                    ConsoleProfile.Password = string.Empty;
+                    ConsoleProfile.UseDefaultCredentials = true;
+                    break;
             }
         }
 
@@ -123,68 +171,72 @@ namespace ModioX.Forms.Dialogs
 
             if (string.IsNullOrWhiteSpace(TextBoxConsoleAddress.Text))
             {
-                XtraMessageBox.Show(this, "You must enter an IP Address.", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                XtraMessageBox.Show(this, ConsoleProfile.TypePrefix == PlatformPrefix.PS3 ? "You must enter an IP Address." : "You must enter an IP Address or Console Name.", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(TextBoxConsolePort.Text))
+            switch (ConsoleProfile.UseDefaultCredentials)
             {
-                XtraMessageBox.Show(this, "You must enter a port value. The default value for PS3 is 21 and Xbox is 730.", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
+                case true when ConsoleProfile.TypePrefix == PlatformPrefix.PS3:
+                    ConsoleProfile.Username = "anonymous";
+                    ConsoleProfile.Password = "anonymous";
+                    break;
+                case true when ConsoleProfile.TypePrefix == PlatformPrefix.XBOX:
+                    ConsoleProfile.Username = "xboxftp";
+                    ConsoleProfile.Password = "xboxftp";
+                    break;
             }
 
-            bool isAddressValid = IPAddress.TryParse(TextBoxConsoleAddress.Text, out IPAddress address);
-            bool isPortValid = int.TryParse(TextBoxConsolePort.Text, out int port);
+            bool isAddressValid = ConsoleProfile.TypePrefix == PlatformPrefix.XBOX ? true : IPAddress.TryParse(TextBoxConsoleAddress.Text, out _);
 
-            if (isAddressValid)
+            switch (isAddressValid)
             {
-                if (isPortValid)
-                {
-                    if (IsEditingProfile)
+                case true:
                     {
-                        if (ConsoleProfile.Name != TextBoxConnectionName.Text && ProfileExists(TextBoxConnectionName.Text))
+                        switch (IsEditingProfile)
                         {
-                            XtraMessageBox.Show(this, "A console with this name already exists.", "Console Name Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            case true when ConsoleProfile.Name != TextBoxConnectionName.Text && ProfileExists(TextBoxConnectionName.Text):
+                                XtraMessageBox.Show(this, "A console with this name already exists.", "Console Name Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                break;
+                            case true:
+                                ConsoleProfile.Name = TextBoxConnectionName.Text;
+                                ConsoleProfile.Address = TextBoxConsoleAddress.Text;
+                                DialogResult = DialogResult.OK;
+                                break;
+                            default:
+                                {
+                                    if (ProfileExists(TextBoxConnectionName.Text))
+                                    {
+                                        XtraMessageBox.Show(this, "A console with this name already exists.", "Console Name Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    }
+                                    else
+                                    {
+                                        ConsoleProfile.Name = TextBoxConnectionName.Text;
+                                        ConsoleProfile.Address = TextBoxConsoleAddress.Text;
+                                        DialogResult = DialogResult.OK;
+                                    }
+
+                                    break;
+                                }
                         }
-                        else
-                        {
-                            ConsoleProfile.Name = TextBoxConnectionName.Text;
-                            ConsoleProfile.Address = address.ToString();
-                            ConsoleProfile.Port = port;
-                            DialogResult = DialogResult.OK;
-                        }
+
+                        break;
                     }
-                    else
-                    {
-                        if (ProfileExists(TextBoxConnectionName.Text))
-                        {
-                            XtraMessageBox.Show(this, "A console with this name already exists.", "Console Name Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        else
-                        {
-                            ConsoleProfile.Name = TextBoxConnectionName.Text;
-                            ConsoleProfile.Address = address.ToString();
-                            ConsoleProfile.Port = port;
-                            DialogResult = DialogResult.OK;
-                        }
-                    }
-                }
-                else
-                {
-                    XtraMessageBox.Show(this, "Port is not an integer value.", "Invalid Port", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-            }
-            else
-            {
-                XtraMessageBox.Show(this, "IP Address isn't the correct format.", "Invalid IP Address", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                default:
+                    XtraMessageBox.Show(this, "IP Address isn't the correct format.", "Invalid IP Address", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    break;
             }
         }
 
         private static bool ProfileExists(string name)
         {
             foreach (ConsoleProfile console in MainWindow.Settings.ConsoleProfiles)
+            {
                 if (console.Name.Equals(name))
+                {
                     return true;
+                }
+            }
 
             return false;
         }

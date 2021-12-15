@@ -42,7 +42,11 @@ namespace ModioX.Models.Database
         public Category GetCategoryById(string categoryId)
         {
             Category category = Categories.FirstOrDefault(x => x.Id.EqualsIgnoreCase(categoryId));
-            if (category != null) return category;
+
+            if (category != null)
+            {
+                return category;
+            }
 
             throw new Exception("Unable to find game data matching the specified id: " + categoryId);
         }
@@ -55,20 +59,12 @@ namespace ModioX.Models.Database
         public Category GetCategoryByTitle(string title)
         {
             Category category = Categories.FirstOrDefault(x => x.Title.EqualsIgnoreCase(title));
-            if (category != null) return category;
+            if (category != null)
+            {
+                return category;
+            }
 
             throw new Exception("Unable to find game data for the specified title: " + title);
         }
-    }
-
-    /// <summary>
-    /// Category types.
-    /// </summary>
-    public enum CategoryType
-    {
-        Game,
-        Homebrew,
-        Resource,
-        Favorite
     }
 }

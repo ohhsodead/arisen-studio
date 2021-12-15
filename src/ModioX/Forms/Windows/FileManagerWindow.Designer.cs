@@ -60,6 +60,7 @@ namespace ModioX.Forms.Windows
             this.ButtonConsoleRename = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonConsoleNewFolder = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonConsoleRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonConsoleAddToGames = new DevExpress.XtraEditors.SimpleButton();
             this.PanelConsoleStatus = new DevExpress.Utils.Layout.StackPanel();
             this.LabelConsoleStatus = new DevExpress.XtraEditors.LabelControl();
             this.ButtonConsoleNavigate = new DevExpress.XtraEditors.SimpleButton();
@@ -92,6 +93,7 @@ namespace ModioX.Forms.Windows
             this.BehaviorManager = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.dragDropEvents1 = new DevExpress.Utils.DragDrop.DragDropEvents(this.components);
             this.dragDropEvents2 = new DevExpress.Utils.DragDrop.DragDropEvents(this.components);
+            this.ImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GridLocalFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewLocalFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridConsoleFiles)).BeginInit();
@@ -115,6 +117,7 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxLocalPath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManagerStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BehaviorManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageCollection)).BeginInit();
             this.SuspendLayout();
             // 
             // GridLocalFiles
@@ -122,6 +125,9 @@ namespace ModioX.Forms.Windows
             this.GridLocalFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridLocalFiles.EmbeddedNavigator.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.GridLocalFiles.EmbeddedNavigator.Appearance.Options.UseFont = true;
+            this.GridLocalFiles.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.GridLocalFiles.Location = new System.Drawing.Point(11, 60);
             this.GridLocalFiles.MainView = this.GridViewLocalFiles;
             this.GridLocalFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
@@ -134,6 +140,10 @@ namespace ModioX.Forms.Windows
             // 
             // GridViewLocalFiles
             // 
+            this.GridViewLocalFiles.Appearance.HeaderPanel.FontSizeDelta = 1;
+            this.GridViewLocalFiles.Appearance.HeaderPanel.Options.UseFont = true;
+            this.GridViewLocalFiles.Appearance.Row.FontSizeDelta = 1;
+            this.GridViewLocalFiles.Appearance.Row.Options.UseFont = true;
             this.BehaviorManager.SetBehaviors(this.GridViewLocalFiles, new DevExpress.Utils.Behaviors.Behavior[] {
             ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.DragDrop.DragDropBehavior.Create(typeof(DevExpress.XtraGrid.Extensions.ColumnViewDragDropSource), true, true, true, true, this.dragDropEvents1)))});
             this.GridViewLocalFiles.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
@@ -148,6 +158,7 @@ namespace ModioX.Forms.Windows
             this.GridViewLocalFiles.OptionsView.ShowGroupPanel = false;
             this.GridViewLocalFiles.OptionsView.ShowIndicator = false;
             this.GridViewLocalFiles.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewLocalFiles_RowClick);
+            this.GridViewLocalFiles.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewLocalFiles_FocusedRowChanged);
             this.GridViewLocalFiles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GridViewLocalFiles_MouseDown);
             this.GridViewLocalFiles.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GridViewLocalFiles_MouseMove);
             this.GridViewLocalFiles.DoubleClick += new System.EventHandler(this.GridViewLocalFiles_DoubleClick);
@@ -199,6 +210,9 @@ namespace ModioX.Forms.Windows
             this.GridConsoleFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridConsoleFiles.EmbeddedNavigator.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.GridConsoleFiles.EmbeddedNavigator.Appearance.Options.UseFont = true;
+            this.GridConsoleFiles.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.GridConsoleFiles.Location = new System.Drawing.Point(11, 60);
             this.GridConsoleFiles.MainView = this.GridViewConsoleFiles;
             this.GridConsoleFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
@@ -214,6 +228,10 @@ namespace ModioX.Forms.Windows
             // 
             // GridViewConsoleFiles
             // 
+            this.GridViewConsoleFiles.Appearance.HeaderPanel.FontSizeDelta = 1;
+            this.GridViewConsoleFiles.Appearance.HeaderPanel.Options.UseFont = true;
+            this.GridViewConsoleFiles.Appearance.Row.FontSizeDelta = 1;
+            this.GridViewConsoleFiles.Appearance.Row.Options.UseFont = true;
             this.BehaviorManager.SetBehaviors(this.GridViewConsoleFiles, new DevExpress.Utils.Behaviors.Behavior[] {
             ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.DragDrop.DragDropBehavior.Create(typeof(DevExpress.XtraGrid.Extensions.ColumnViewDragDropSource), true, true, true, true, this.dragDropEvents2)))});
             this.GridViewConsoleFiles.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
@@ -227,6 +245,7 @@ namespace ModioX.Forms.Windows
             this.GridViewConsoleFiles.OptionsView.ShowGroupPanel = false;
             this.GridViewConsoleFiles.OptionsView.ShowIndicator = false;
             this.GridViewConsoleFiles.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewConsoleFiles_RowClick);
+            this.GridViewConsoleFiles.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewConsoleFiles_FocusedRowChanged);
             // 
             // ColumnConsoleFileType
             // 
@@ -283,7 +302,7 @@ namespace ModioX.Forms.Windows
             this.LayoutPanel.Location = new System.Drawing.Point(12, 12);
             this.LayoutPanel.Name = "LayoutPanel";
             this.LayoutPanel.RowCount = 1;
-            this.LayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.LayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.LayoutPanel.Size = new System.Drawing.Size(1316, 516);
             this.LayoutPanel.TabIndex = 12;
             // 
@@ -310,16 +329,23 @@ namespace ModioX.Forms.Windows
             this.PanelConsoleButtons.Controls.Add(this.ButtonConsoleRename);
             this.PanelConsoleButtons.Controls.Add(this.ButtonConsoleNewFolder);
             this.PanelConsoleButtons.Controls.Add(this.ButtonConsoleRefresh);
+            this.PanelConsoleButtons.Controls.Add(this.ButtonConsoleAddToGames);
             this.PanelConsoleButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelConsoleButtons.Location = new System.Drawing.Point(2, 448);
+            this.PanelConsoleButtons.Location = new System.Drawing.Point(2, 444);
             this.PanelConsoleButtons.Name = "PanelConsoleButtons";
-            this.PanelConsoleButtons.Size = new System.Drawing.Size(651, 40);
+            this.PanelConsoleButtons.Size = new System.Drawing.Size(651, 42);
             this.PanelConsoleButtons.TabIndex = 3;
             // 
             // ButtonConsoleDownload
             // 
+            this.ButtonConsoleDownload.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.ButtonConsoleDownload.Appearance.Options.UseFont = true;
             this.ButtonConsoleDownload.Enabled = false;
-            this.ButtonConsoleDownload.Location = new System.Drawing.Point(9, 8);
+            this.ButtonConsoleDownload.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonConsoleDownload.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonConsoleDownload.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonConsoleDownload.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.ButtonConsoleDownload.Location = new System.Drawing.Point(9, 9);
             this.ButtonConsoleDownload.Margin = new System.Windows.Forms.Padding(9, 3, 3, 3);
             this.ButtonConsoleDownload.Name = "ButtonConsoleDownload";
             this.ButtonConsoleDownload.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
@@ -330,8 +356,14 @@ namespace ModioX.Forms.Windows
             // 
             // ButtonConsoleDelete
             // 
+            this.ButtonConsoleDelete.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.ButtonConsoleDelete.Appearance.Options.UseFont = true;
             this.ButtonConsoleDelete.Enabled = false;
-            this.ButtonConsoleDelete.Location = new System.Drawing.Point(104, 8);
+            this.ButtonConsoleDelete.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonConsoleDelete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonConsoleDelete.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonConsoleDelete.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.ButtonConsoleDelete.Location = new System.Drawing.Point(104, 9);
             this.ButtonConsoleDelete.Name = "ButtonConsoleDelete";
             this.ButtonConsoleDelete.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonConsoleDelete.Size = new System.Drawing.Size(67, 24);
@@ -341,8 +373,14 @@ namespace ModioX.Forms.Windows
             // 
             // ButtonConsoleRename
             // 
+            this.ButtonConsoleRename.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.ButtonConsoleRename.Appearance.Options.UseFont = true;
             this.ButtonConsoleRename.Enabled = false;
-            this.ButtonConsoleRename.Location = new System.Drawing.Point(177, 8);
+            this.ButtonConsoleRename.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonConsoleRename.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonConsoleRename.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonConsoleRename.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.ButtonConsoleRename.Location = new System.Drawing.Point(177, 9);
             this.ButtonConsoleRename.Name = "ButtonConsoleRename";
             this.ButtonConsoleRename.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonConsoleRename.Size = new System.Drawing.Size(76, 24);
@@ -352,7 +390,13 @@ namespace ModioX.Forms.Windows
             // 
             // ButtonConsoleNewFolder
             // 
-            this.ButtonConsoleNewFolder.Location = new System.Drawing.Point(259, 8);
+            this.ButtonConsoleNewFolder.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.ButtonConsoleNewFolder.Appearance.Options.UseFont = true;
+            this.ButtonConsoleNewFolder.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonConsoleNewFolder.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonConsoleNewFolder.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonConsoleNewFolder.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.ButtonConsoleNewFolder.Location = new System.Drawing.Point(259, 9);
             this.ButtonConsoleNewFolder.Name = "ButtonConsoleNewFolder";
             this.ButtonConsoleNewFolder.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonConsoleNewFolder.Size = new System.Drawing.Size(91, 24);
@@ -362,7 +406,13 @@ namespace ModioX.Forms.Windows
             // 
             // ButtonConsoleRefresh
             // 
-            this.ButtonConsoleRefresh.Location = new System.Drawing.Point(356, 8);
+            this.ButtonConsoleRefresh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.ButtonConsoleRefresh.Appearance.Options.UseFont = true;
+            this.ButtonConsoleRefresh.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonConsoleRefresh.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonConsoleRefresh.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonConsoleRefresh.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.ButtonConsoleRefresh.Location = new System.Drawing.Point(356, 9);
             this.ButtonConsoleRefresh.Name = "ButtonConsoleRefresh";
             this.ButtonConsoleRefresh.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonConsoleRefresh.Size = new System.Drawing.Size(72, 24);
@@ -370,22 +420,42 @@ namespace ModioX.Forms.Windows
             this.ButtonConsoleRefresh.Text = "Refresh";
             this.ButtonConsoleRefresh.Click += new System.EventHandler(this.ButtonConsoleRefresh_Click);
             // 
+            // ButtonConsoleAddToGames
+            // 
+            this.ButtonConsoleAddToGames.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.ButtonConsoleAddToGames.Appearance.Options.UseFont = true;
+            this.ButtonConsoleAddToGames.Enabled = false;
+            this.ButtonConsoleAddToGames.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonConsoleAddToGames.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonConsoleAddToGames.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonConsoleAddToGames.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.ButtonConsoleAddToGames.Location = new System.Drawing.Point(434, 9);
+            this.ButtonConsoleAddToGames.Name = "ButtonConsoleAddToGames";
+            this.ButtonConsoleAddToGames.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonConsoleAddToGames.Size = new System.Drawing.Size(111, 24);
+            this.ButtonConsoleAddToGames.TabIndex = 13;
+            this.ButtonConsoleAddToGames.Text = "Add to Games";
+            this.ButtonConsoleAddToGames.Click += new System.EventHandler(this.ButtonConsoleAddToGames_Click);
+            // 
             // PanelConsoleStatus
             // 
             this.PanelConsoleStatus.Controls.Add(this.LabelConsoleStatus);
             this.PanelConsoleStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelConsoleStatus.Location = new System.Drawing.Point(2, 488);
+            this.PanelConsoleStatus.Location = new System.Drawing.Point(2, 486);
             this.PanelConsoleStatus.Name = "PanelConsoleStatus";
-            this.PanelConsoleStatus.Size = new System.Drawing.Size(651, 26);
+            this.PanelConsoleStatus.Size = new System.Drawing.Size(651, 28);
             this.PanelConsoleStatus.TabIndex = 1175;
             // 
             // LabelConsoleStatus
             // 
+            this.LabelConsoleStatus.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.LabelConsoleStatus.Appearance.Options.UseFont = true;
             this.LabelConsoleStatus.Location = new System.Drawing.Point(10, 6);
             this.LabelConsoleStatus.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.LabelConsoleStatus.Name = "LabelConsoleStatus";
-            this.LabelConsoleStatus.Size = new System.Drawing.Size(0, 13);
+            this.LabelConsoleStatus.Size = new System.Drawing.Size(144, 15);
             this.LabelConsoleStatus.TabIndex = 11;
+            this.LabelConsoleStatus.Text = "Not Connected to Console.";
             // 
             // ButtonConsoleNavigate
             // 
@@ -405,7 +475,7 @@ namespace ModioX.Forms.Windows
             this.TextBoxConsolePath.Location = new System.Drawing.Point(113, 32);
             this.TextBoxConsolePath.Name = "TextBoxConsolePath";
             this.TextBoxConsolePath.Properties.AllowFocused = false;
-            this.TextBoxConsolePath.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxConsolePath.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.TextBoxConsolePath.Properties.Appearance.Options.UseFont = true;
             this.TextBoxConsolePath.Size = new System.Drawing.Size(486, 22);
             this.TextBoxConsolePath.TabIndex = 1171;
@@ -449,15 +519,21 @@ namespace ModioX.Forms.Windows
             this.PanelLocalButtons.Controls.Add(this.ButtonLocalRefresh);
             this.PanelLocalButtons.Controls.Add(this.ButtonLocalOpenExplorer);
             this.PanelLocalButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelLocalButtons.Location = new System.Drawing.Point(2, 448);
+            this.PanelLocalButtons.Location = new System.Drawing.Point(2, 444);
             this.PanelLocalButtons.Name = "PanelLocalButtons";
-            this.PanelLocalButtons.Size = new System.Drawing.Size(651, 40);
+            this.PanelLocalButtons.Size = new System.Drawing.Size(651, 42);
             this.PanelLocalButtons.TabIndex = 1;
             // 
             // ButtonLocalUpload
             // 
+            this.ButtonLocalUpload.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.ButtonLocalUpload.Appearance.Options.UseFont = true;
             this.ButtonLocalUpload.Enabled = false;
-            this.ButtonLocalUpload.Location = new System.Drawing.Point(9, 8);
+            this.ButtonLocalUpload.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonLocalUpload.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonLocalUpload.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonLocalUpload.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.ButtonLocalUpload.Location = new System.Drawing.Point(9, 9);
             this.ButtonLocalUpload.Margin = new System.Windows.Forms.Padding(9, 3, 3, 3);
             this.ButtonLocalUpload.Name = "ButtonLocalUpload";
             this.ButtonLocalUpload.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
@@ -468,8 +544,14 @@ namespace ModioX.Forms.Windows
             // 
             // ButtonLocalDelete
             // 
+            this.ButtonLocalDelete.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.ButtonLocalDelete.Appearance.Options.UseFont = true;
             this.ButtonLocalDelete.Enabled = false;
-            this.ButtonLocalDelete.Location = new System.Drawing.Point(88, 8);
+            this.ButtonLocalDelete.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonLocalDelete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonLocalDelete.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonLocalDelete.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.ButtonLocalDelete.Location = new System.Drawing.Point(88, 9);
             this.ButtonLocalDelete.Name = "ButtonLocalDelete";
             this.ButtonLocalDelete.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonLocalDelete.Size = new System.Drawing.Size(68, 24);
@@ -479,8 +561,14 @@ namespace ModioX.Forms.Windows
             // 
             // ButtonLocalRename
             // 
+            this.ButtonLocalRename.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.ButtonLocalRename.Appearance.Options.UseFont = true;
             this.ButtonLocalRename.Enabled = false;
-            this.ButtonLocalRename.Location = new System.Drawing.Point(162, 8);
+            this.ButtonLocalRename.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonLocalRename.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonLocalRename.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonLocalRename.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.ButtonLocalRename.Location = new System.Drawing.Point(162, 9);
             this.ButtonLocalRename.Name = "ButtonLocalRename";
             this.ButtonLocalRename.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonLocalRename.Size = new System.Drawing.Size(76, 24);
@@ -490,7 +578,13 @@ namespace ModioX.Forms.Windows
             // 
             // ButtonLocalNewFolder
             // 
-            this.ButtonLocalNewFolder.Location = new System.Drawing.Point(244, 8);
+            this.ButtonLocalNewFolder.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.ButtonLocalNewFolder.Appearance.Options.UseFont = true;
+            this.ButtonLocalNewFolder.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonLocalNewFolder.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonLocalNewFolder.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonLocalNewFolder.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.ButtonLocalNewFolder.Location = new System.Drawing.Point(244, 9);
             this.ButtonLocalNewFolder.Name = "ButtonLocalNewFolder";
             this.ButtonLocalNewFolder.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonLocalNewFolder.Size = new System.Drawing.Size(91, 24);
@@ -500,7 +594,13 @@ namespace ModioX.Forms.Windows
             // 
             // ButtonLocalRefresh
             // 
-            this.ButtonLocalRefresh.Location = new System.Drawing.Point(341, 8);
+            this.ButtonLocalRefresh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.ButtonLocalRefresh.Appearance.Options.UseFont = true;
+            this.ButtonLocalRefresh.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonLocalRefresh.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonLocalRefresh.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonLocalRefresh.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.ButtonLocalRefresh.Location = new System.Drawing.Point(341, 9);
             this.ButtonLocalRefresh.Name = "ButtonLocalRefresh";
             this.ButtonLocalRefresh.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonLocalRefresh.Size = new System.Drawing.Size(72, 24);
@@ -510,7 +610,13 @@ namespace ModioX.Forms.Windows
             // 
             // ButtonLocalOpenExplorer
             // 
-            this.ButtonLocalOpenExplorer.Location = new System.Drawing.Point(419, 8);
+            this.ButtonLocalOpenExplorer.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.ButtonLocalOpenExplorer.Appearance.Options.UseFont = true;
+            this.ButtonLocalOpenExplorer.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonLocalOpenExplorer.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonLocalOpenExplorer.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonLocalOpenExplorer.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.ButtonLocalOpenExplorer.Location = new System.Drawing.Point(419, 9);
             this.ButtonLocalOpenExplorer.Name = "ButtonLocalOpenExplorer";
             this.ButtonLocalOpenExplorer.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonLocalOpenExplorer.Size = new System.Drawing.Size(105, 24);
@@ -522,18 +628,21 @@ namespace ModioX.Forms.Windows
             // 
             this.PanelLocalStatus.Controls.Add(this.LabelLocalStatus);
             this.PanelLocalStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelLocalStatus.Location = new System.Drawing.Point(2, 488);
+            this.PanelLocalStatus.Location = new System.Drawing.Point(2, 486);
             this.PanelLocalStatus.Name = "PanelLocalStatus";
-            this.PanelLocalStatus.Size = new System.Drawing.Size(651, 26);
+            this.PanelLocalStatus.Size = new System.Drawing.Size(651, 28);
             this.PanelLocalStatus.TabIndex = 1174;
             // 
             // LabelLocalStatus
             // 
+            this.LabelLocalStatus.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.LabelLocalStatus.Appearance.Options.UseFont = true;
             this.LabelLocalStatus.Location = new System.Drawing.Point(10, 6);
             this.LabelLocalStatus.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.LabelLocalStatus.Name = "LabelLocalStatus";
-            this.LabelLocalStatus.Size = new System.Drawing.Size(0, 13);
+            this.LabelLocalStatus.Size = new System.Drawing.Size(55, 15);
             this.LabelLocalStatus.TabIndex = 11;
+            this.LabelLocalStatus.Text = "Fetching...";
             // 
             // ButtonBrowseLocalDirectory
             // 
@@ -615,7 +724,7 @@ namespace ModioX.Forms.Windows
             this.LabelHeaderStatus.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.LabelHeaderStatus.Caption = "Status:";
             this.LabelHeaderStatus.Id = 0;
-            this.LabelHeaderStatus.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHeaderStatus.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelHeaderStatus.ItemAppearance.Normal.Options.UseFont = true;
             this.LabelHeaderStatus.LeftIndent = 4;
             this.LabelHeaderStatus.Name = "LabelHeaderStatus";
@@ -625,6 +734,8 @@ namespace ModioX.Forms.Windows
             this.LabelStatus.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.LabelStatus.Caption = "Status";
             this.LabelStatus.Id = 3;
+            this.LabelStatus.ItemAppearance.Normal.FontSizeDelta = 1;
+            this.LabelStatus.ItemAppearance.Normal.Options.UseFont = true;
             this.LabelStatus.Name = "LabelStatus";
             // 
             // barDockControlTop
@@ -639,9 +750,9 @@ namespace ModioX.Forms.Windows
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 541);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 539);
             this.barDockControlBottom.Manager = this.BarManagerStatus;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1340, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1340, 27);
             // 
             // barDockControlLeft
             // 
@@ -649,7 +760,7 @@ namespace ModioX.Forms.Windows
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.BarManagerStatus;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 541);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 539);
             // 
             // barDockControlRight
             // 
@@ -657,7 +768,7 @@ namespace ModioX.Forms.Windows
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1340, 0);
             this.barDockControlRight.Manager = this.BarManagerStatus;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 541);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 539);
             // 
             // barHeaderItem1
             // 
@@ -670,6 +781,18 @@ namespace ModioX.Forms.Windows
             this.barStaticItem2.Caption = "Status";
             this.barStaticItem2.Id = 2;
             this.barStaticItem2.Name = "barStaticItem2";
+            // 
+            // ImageCollection
+            // 
+            this.ImageCollection.ImageSize = new System.Drawing.Size(16, 16);
+            this.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("ImageCollection.ImageStream")));
+            this.ImageCollection.IsDpiAware = DevExpress.Utils.DefaultBoolean.True;
+            this.ImageCollection.InsertGalleryImage("file", "images/actions/new_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/new_32x32.png"), 0);
+            this.ImageCollection.Images.SetKeyName(0, "file");
+            this.ImageCollection.InsertGalleryImage("folder", "images/actions/open_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/open_32x32.png"), 1);
+            this.ImageCollection.Images.SetKeyName(1, "folder");
+            this.ImageCollection.InsertGalleryImage("folder up", "images/navigation/up_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/navigation/up_32x32.png"), 2);
+            this.ImageCollection.Images.SetKeyName(2, "folder up");
             // 
             // FileManagerWindow
             // 
@@ -685,8 +808,10 @@ namespace ModioX.Forms.Windows
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("FileManagerWindow.IconOptions.Icon")));
+            this.IconOptions.ShowIcon = false;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FileManagerWindow";
             this.ShowInTaskbar = false;
@@ -720,6 +845,7 @@ namespace ModioX.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxLocalPath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManagerStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BehaviorManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageCollection)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -780,5 +906,7 @@ namespace ModioX.Forms.Windows
         private DevExpress.Utils.Behaviors.BehaviorManager BehaviorManager;
         private DevExpress.Utils.DragDrop.DragDropEvents dragDropEvents1;
         private DevExpress.Utils.DragDrop.DragDropEvents dragDropEvents2;
+        public DevExpress.Utils.ImageCollection ImageCollection;
+        private SimpleButton ButtonConsoleAddToGames;
     }
 }

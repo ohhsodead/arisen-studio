@@ -34,90 +34,68 @@ namespace ModioX.Forms.Dialogs
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewConnectionDialog));
             this.LabelUserPass = new DevExpress.XtraEditors.LabelControl();
             this.LabelLogin = new DevExpress.XtraEditors.LabelControl();
-            this.darkLabel1 = new DevExpress.XtraEditors.LabelControl();
             this.LabelName = new DevExpress.XtraEditors.LabelControl();
-            this.LabelDescription = new DevExpress.XtraEditors.LabelControl();
+            this.LabelConsoleAddress = new DevExpress.XtraEditors.LabelControl();
             this.ButtonOK = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonChangeCredentials = new DevExpress.XtraEditors.SimpleButton();
-            this.darkLabel2 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelConsoleType = new DevExpress.XtraEditors.LabelControl();
             this.ImageConsole = new DevExpress.XtraEditors.PictureEdit();
             this.ComboBoxConsoleType = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.TextBoxConsolePort = new DevExpress.XtraEditors.TextEdit();
             this.TextBoxConsoleAddress = new DevExpress.XtraEditors.TextEdit();
             this.TextBoxConnectionName = new DevExpress.XtraEditors.TextEdit();
+            this.CheckBoxUseDefaultConsole = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageConsole.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxConsoleType.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsolePort.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsoleAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConnectionName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxUseDefaultConsole.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelUserPass
             // 
             this.LabelUserPass.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelUserPass.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.LabelUserPass.Appearance.Options.UseFont = true;
-            this.LabelUserPass.Appearance.Options.UseForeColor = true;
             this.LabelUserPass.AutoEllipsis = true;
-            this.LabelUserPass.Location = new System.Drawing.Point(261, 102);
-            this.LabelUserPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.LabelUserPass.Location = new System.Drawing.Point(264, 102);
+            this.LabelUserPass.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelUserPass.Name = "LabelUserPass";
             this.LabelUserPass.Size = new System.Drawing.Size(38, 15);
-            this.LabelUserPass.TabIndex = 1142;
+            this.LabelUserPass.TabIndex = 3;
             this.LabelUserPass.Text = "Default";
             // 
             // LabelLogin
             // 
             this.LabelLogin.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelLogin.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.LabelLogin.Appearance.Options.UseFont = true;
-            this.LabelLogin.Appearance.Options.UseForeColor = true;
-            this.LabelLogin.Location = new System.Drawing.Point(151, 102);
-            this.LabelLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.LabelLogin.Location = new System.Drawing.Point(150, 102);
+            this.LabelLogin.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelLogin.Name = "LabelLogin";
-            this.LabelLogin.Size = new System.Drawing.Size(33, 15);
+            this.LabelLogin.Size = new System.Drawing.Size(30, 15);
             this.LabelLogin.TabIndex = 1141;
-            this.LabelLogin.Text = "Login:";
-            // 
-            // darkLabel1
-            // 
-            this.darkLabel1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.darkLabel1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel1.Appearance.Options.UseFont = true;
-            this.darkLabel1.Appearance.Options.UseForeColor = true;
-            this.darkLabel1.Location = new System.Drawing.Point(415, 71);
-            this.darkLabel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
-            this.darkLabel1.Name = "darkLabel1";
-            this.darkLabel1.Size = new System.Drawing.Size(25, 15);
-            this.darkLabel1.TabIndex = 1139;
-            this.darkLabel1.Text = "Port:";
+            this.LabelLogin.Text = "Login";
             // 
             // LabelName
             // 
             this.LabelName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelName.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.LabelName.Appearance.Options.UseFont = true;
-            this.LabelName.Appearance.Options.UseForeColor = true;
-            this.LabelName.Location = new System.Drawing.Point(151, 15);
-            this.LabelName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.LabelName.Location = new System.Drawing.Point(150, 15);
+            this.LabelName.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(100, 15);
+            this.LabelName.Size = new System.Drawing.Size(97, 15);
             this.LabelName.TabIndex = 5;
-            this.LabelName.Text = "Connection Name:";
+            this.LabelName.Text = "Connection Name";
             // 
-            // LabelDescription
+            // LabelConsoleAddress
             // 
-            this.LabelDescription.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelDescription.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.LabelDescription.Appearance.Options.UseFont = true;
-            this.LabelDescription.Appearance.Options.UseForeColor = true;
-            this.LabelDescription.Location = new System.Drawing.Point(151, 71);
-            this.LabelDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
-            this.LabelDescription.Name = "LabelDescription";
-            this.LabelDescription.Size = new System.Drawing.Size(91, 15);
-            this.LabelDescription.TabIndex = 14;
-            this.LabelDescription.Text = "Console Address:";
+            this.LabelConsoleAddress.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelConsoleAddress.Appearance.Options.UseFont = true;
+            this.LabelConsoleAddress.Location = new System.Drawing.Point(150, 72);
+            this.LabelConsoleAddress.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
+            this.LabelConsoleAddress.Name = "LabelConsoleAddress";
+            this.LabelConsoleAddress.Size = new System.Drawing.Size(42, 15);
+            this.LabelConsoleAddress.TabIndex = 14;
+            this.LabelConsoleAddress.Text = "Address";
             // 
             // ButtonOK
             // 
@@ -151,39 +129,36 @@ namespace ModioX.Forms.Dialogs
             this.ButtonChangeCredentials.Text = "Change";
             this.ButtonChangeCredentials.Click += new System.EventHandler(this.ButtonChangeCredentials_Click);
             // 
-            // darkLabel2
+            // LabelConsoleType
             // 
-            this.darkLabel2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.darkLabel2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel2.Appearance.Options.UseFont = true;
-            this.darkLabel2.Appearance.Options.UseForeColor = true;
-            this.darkLabel2.Location = new System.Drawing.Point(151, 43);
-            this.darkLabel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
-            this.darkLabel2.Name = "darkLabel2";
-            this.darkLabel2.Size = new System.Drawing.Size(74, 15);
-            this.darkLabel2.TabIndex = 1146;
-            this.darkLabel2.Text = "Console Type:";
+            this.LabelConsoleType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelConsoleType.Appearance.Options.UseFont = true;
+            this.LabelConsoleType.Location = new System.Drawing.Point(150, 43);
+            this.LabelConsoleType.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
+            this.LabelConsoleType.Name = "LabelConsoleType";
+            this.LabelConsoleType.Size = new System.Drawing.Size(71, 15);
+            this.LabelConsoleType.TabIndex = 1146;
+            this.LabelConsoleType.Text = "Console Type";
             // 
             // ImageConsole
             // 
             this.ImageConsole.EditValue = ((object)(resources.GetObject("ImageConsole.EditValue")));
             this.ImageConsole.Location = new System.Drawing.Point(12, 12);
             this.ImageConsole.Name = "ImageConsole";
-            this.ImageConsole.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.ImageConsole.Properties.AllowFocused = false;
+            this.ImageConsole.Properties.AllowZoom = DevExpress.Utils.DefaultBoolean.False;
             this.ImageConsole.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.ImageConsole.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.ImageConsole.Properties.Appearance.Options.UseBackColor = true;
-            this.ImageConsole.Properties.Appearance.Options.UseForeColor = true;
             this.ImageConsole.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.ImageConsole.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.ImageConsole.Properties.ShowZoomSubMenu = DevExpress.Utils.DefaultBoolean.False;
             this.ImageConsole.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.ImageConsole.Size = new System.Drawing.Size(132, 132);
-            this.ImageConsole.TabIndex = 1147;
+            this.ImageConsole.TabIndex = 0;
             // 
             // ComboBoxConsoleType
             // 
-            this.ComboBoxConsoleType.EditValue = "PlayStation 3 (Fat)";
+            this.ComboBoxConsoleType.EditValue = "";
             this.ComboBoxConsoleType.Location = new System.Drawing.Point(264, 40);
             this.ComboBoxConsoleType.Name = "ComboBoxConsoleType";
             this.ComboBoxConsoleType.Properties.AllowFocused = false;
@@ -196,7 +171,7 @@ namespace ModioX.Forms.Dialogs
             "PlayStation 3 (Slim)",
             "PlayStation 3 (Super Slim)",
             "Xbox 360 (Fat/White)",
-            "Xbox 360 Elite (Flat/Black)",
+            "Xbox 360 Elite (Fat/Black)",
             "Xbox 360 S (Slim)",
             "Xbox 360 E (Slim E)"});
             this.ComboBoxConsoleType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
@@ -204,23 +179,13 @@ namespace ModioX.Forms.Dialogs
             this.ComboBoxConsoleType.TabIndex = 1;
             this.ComboBoxConsoleType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxConsoleType_SelectedIndexChanged);
             // 
-            // TextBoxConsolePort
-            // 
-            this.TextBoxConsolePort.EditValue = "21";
-            this.TextBoxConsolePort.Location = new System.Drawing.Point(453, 68);
-            this.TextBoxConsolePort.Name = "TextBoxConsolePort";
-            this.TextBoxConsolePort.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxConsolePort.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxConsolePort.Size = new System.Drawing.Size(49, 22);
-            this.TextBoxConsolePort.TabIndex = 3;
-            // 
             // TextBoxConsoleAddress
             // 
             this.TextBoxConsoleAddress.Location = new System.Drawing.Point(264, 68);
             this.TextBoxConsoleAddress.Name = "TextBoxConsoleAddress";
             this.TextBoxConsoleAddress.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxConsoleAddress.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxConsoleAddress.Size = new System.Drawing.Size(145, 22);
+            this.TextBoxConsoleAddress.Size = new System.Drawing.Size(238, 22);
             this.TextBoxConsoleAddress.TabIndex = 2;
             // 
             // TextBoxConnectionName
@@ -231,6 +196,21 @@ namespace ModioX.Forms.Dialogs
             this.TextBoxConnectionName.Properties.Appearance.Options.UseFont = true;
             this.TextBoxConnectionName.Size = new System.Drawing.Size(238, 22);
             this.TextBoxConnectionName.TabIndex = 0;
+            // 
+            // CheckBoxUseDefaultConsole
+            // 
+            this.CheckBoxUseDefaultConsole.Location = new System.Drawing.Point(264, 100);
+            this.CheckBoxUseDefaultConsole.Name = "CheckBoxUseDefaultConsole";
+            this.CheckBoxUseDefaultConsole.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.CheckBoxUseDefaultConsole.Properties.Appearance.Options.UseFont = true;
+            this.CheckBoxUseDefaultConsole.Properties.AutoWidth = true;
+            this.CheckBoxUseDefaultConsole.Properties.Caption = "";
+            this.CheckBoxUseDefaultConsole.Properties.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.CheckBoxUseDefaultConsole_Properties_EditValueChanging);
+            this.CheckBoxUseDefaultConsole.Size = new System.Drawing.Size(18, 18);
+            this.CheckBoxUseDefaultConsole.TabIndex = 3;
+            this.CheckBoxUseDefaultConsole.Visible = false;
+            this.CheckBoxUseDefaultConsole.CheckedChanged += new System.EventHandler(this.CheckBoxUseDefaultConsole_CheckedChanged);
+            this.CheckBoxUseDefaultConsole.CheckStateChanged += new System.EventHandler(this.CheckBoxUseDefaultConsole_CheckStateChanged);
             // 
             // NewConnectionDialog
             // 
@@ -243,35 +223,36 @@ namespace ModioX.Forms.Dialogs
             this.ClientSize = new System.Drawing.Size(514, 216);
             this.Controls.Add(this.ImageConsole);
             this.Controls.Add(this.ComboBoxConsoleType);
-            this.Controls.Add(this.darkLabel2);
+            this.Controls.Add(this.LabelConsoleType);
             this.Controls.Add(this.ButtonChangeCredentials);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonOK);
-            this.Controls.Add(this.TextBoxConsolePort);
             this.Controls.Add(this.TextBoxConsoleAddress);
             this.Controls.Add(this.TextBoxConnectionName);
-            this.Controls.Add(this.LabelUserPass);
             this.Controls.Add(this.LabelName);
             this.Controls.Add(this.LabelLogin);
-            this.Controls.Add(this.LabelDescription);
-            this.Controls.Add(this.darkLabel1);
+            this.Controls.Add(this.LabelConsoleAddress);
+            this.Controls.Add(this.CheckBoxUseDefaultConsole);
+            this.Controls.Add(this.LabelUserPass);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("NewConnectionDialog.IconOptions.Icon")));
-            this.IconOptions.Image = global::ModioX.Properties.Resources.app_logo;
+            this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewConnectionDialog";
+            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Connection Details";
             this.Load += new System.EventHandler(this.ConsolesWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ImageConsole.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxConsoleType.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsolePort.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsoleAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConnectionName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxUseDefaultConsole.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,18 +260,17 @@ namespace ModioX.Forms.Dialogs
 
         #endregion
         private LabelControl LabelName;
-        private LabelControl LabelDescription;
+        private LabelControl LabelConsoleAddress;
         private LabelControl LabelUserPass;
         private LabelControl LabelLogin;
-        private LabelControl darkLabel1;
         private TextEdit TextBoxConnectionName;
         private TextEdit TextBoxConsoleAddress;
-        private TextEdit TextBoxConsolePort;
         private SimpleButton ButtonOK;
         private SimpleButton ButtonCancel;
         private SimpleButton ButtonChangeCredentials;
-        private LabelControl darkLabel2;
+        private LabelControl LabelConsoleType;
         private ComboBoxEdit ComboBoxConsoleType;
         private PictureEdit ImageConsole;
+        private CheckEdit CheckBoxUseDefaultConsole;
     }
 }

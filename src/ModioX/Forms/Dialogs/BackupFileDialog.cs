@@ -28,12 +28,16 @@ namespace ModioX.Forms.Dialogs
             using OpenFileDialog openFileDialog = new() { CheckFileExists = true, Multiselect = false };
             openFileDialog.InitialDirectory = Path.GetDirectoryName(TextBoxInstallPathLocal.Text);
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK) TextBoxInstallPathLocal.Text = openFileDialog.FileName;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                TextBoxInstallPathLocal.Text = openFileDialog.FileName;
+            }
         }
 
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TextBoxInstallPathLocal.Text) || TextBoxInstallPathLocal.Text.IndexOfAny(Path.GetInvalidPathChars()) != -1)
+            if (string.IsNullOrWhiteSpace(TextBoxInstallPathLocal.Text) ||
+                TextBoxInstallPathLocal.Text.IndexOfAny(Path.GetInvalidPathChars()) != -1)
             {
                 XtraMessageBox.Show("You must include a local file path for the game file backup.",
                     "Empty Local Path");

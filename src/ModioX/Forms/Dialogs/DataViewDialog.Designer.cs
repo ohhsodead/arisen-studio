@@ -44,6 +44,7 @@ namespace ModioX.Forms.Dialogs
             this.PanelDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelDetails.AutoSize = true;
+            this.PanelDetails.BackColor = System.Drawing.Color.Transparent;
             this.PanelDetails.Controls.Add(this.LabelTitle);
             this.PanelDetails.Controls.Add(this.LabelBody);
             this.PanelDetails.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -84,7 +85,6 @@ namespace ModioX.Forms.Dialogs
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(484, 99);
@@ -92,12 +92,14 @@ namespace ModioX.Forms.Dialogs
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DataViewDialog.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(500, 744);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(486, 43);
             this.Name = "DataViewDialog";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Title";
             this.Load += new System.EventHandler(this.DataViewDialog_Load);

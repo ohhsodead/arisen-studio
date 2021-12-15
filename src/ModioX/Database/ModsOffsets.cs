@@ -1,21 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.IO.Compression;
-using System.Linq;
-using System.Net;
-using ModioX.Extensions;
-using ModioX.Forms.Windows;
-using ModioX.Io;
-using ModioX.Models.Database;
-using ModioX.Models.Resources;
+﻿using System.Collections.Generic;
 
 namespace ModioX.Database
 {
     /// <summary>
     /// Get the mod information.
     /// </summary>
-
     public class ModsOffsets
     {
         public int Id { get; set; }
@@ -27,6 +16,16 @@ namespace ModioX.Database
         public string GameVersion { get; set; }
 
         public List<Memory> Memory { get; set; }
+
+        public PlatformPrefix GetPlatform()
+        {
+            return ConsoleType switch
+            {
+                "PS3" => PlatformPrefix.PS3,
+                "XBOX" => PlatformPrefix.XBOX,
+                _ => PlatformPrefix.PS3
+            };
+        }
     }
 
     public class Memory

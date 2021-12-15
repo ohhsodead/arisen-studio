@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
 using System.Linq;
 using ModioX.Database;
 using ModioX.Extensions;
@@ -12,147 +10,199 @@ namespace ModioX.Models.Resources
 {
     public class SettingsData
     {
-        public List<ConsoleProfile> ConsoleProfiles { get; set; } = new();
+        public string[] BlackListUserNames { get; } = { "@ChanServ", "ChanServ", "@ModioX", "ModioX", "ModioX-Owner", "ohhsodead", "admin", "developer" };
 
-        public bool FirstTimeUse { get; set; } = true;
+        public List<ConsoleProfile> ConsoleProfiles { get; set; } = new();
 
         public bool FirstTimeOpenAfterUpdate { get; set; } = true;
 
-        public bool RememberSkinOnClose { get; set; } = true;
+        public List<int> DismissedAnnouncements { get; set; } = new();
 
-        public string SkinName { get; set; } = "Office 2019 Black";
+        public string Language { get; set; } = "English";
 
-        public bool ShowFileSizeInBytes { get; set; } = true;
+        public PlatformPrefix StartupLibrary { get; set; } = PlatformPrefix.PS3;
 
-        public ConsoleTypePrefix LoadConsoleMods { get; set; } = ConsoleTypePrefix.PS3;
+        public bool UseFormattedFileSizes { get; set; } = true;
 
-        public bool ShowGamesFromExternalDevices { get; set; } = true;
+        public bool UseRelativeTimes { get; set; } = true;
+
+        public bool EnableHardwareAcceleration { get; set; } = false;
+
+        public bool InstallModsToUsbDevice { get; set; } = false;
+
+        public bool InstallHomebrewToUsbDevice { get; set; } = false;
+
+        public bool InstallResourcesToUsbDevice { get; set; } = false;
+
+        public bool InstallPackagesToUsbDevice { get; set; } = false;
+
+        public bool InstallGameSavesToUsbDevice { get; set; } = false;
 
         public bool AutoDetectGameRegions { get; set; } = false;
 
         public bool AutoDetectGameTitles { get; set; } = false;
 
+        public bool ShowGamesFromExternalDevices { get; set; } = false;
+
         public bool RememberGameRegions { get; set; } = true;
 
-        public bool SaveLocalPath { get; set; } = false;
+        public bool AutoLoadDirectoryListings { get; set; } = false;
+
+        public bool RememberLocalPath { get; set; } = false;
+
+        public bool RememberConsolePath { get; set; } = false;
 
         public string LocalPathPS3 { get; set; } = KnownFolders.GetPath(KnownFolder.Documents);
 
         public string LocalPathXBOX { get; set; } = KnownFolders.GetPath(KnownFolder.Documents);
 
-        public bool SaveConsolePath { get; set; } = false;
-
         public string ConsolePathPS3 { get; set; } = "/dev_hdd0/";
 
-        public string ConsolePathXBOX { get; set; } = "/Hdd0/";
+        public string ConsolePathXBOX { get; set; } = @"HDD:\";
 
         public string LaunchIniFilePath { get; set; } = @"Hdd:\launch.ini";
 
-        public List<int> FavoritedIds { get; set; } = new();
+        public string PackagesInstallPath { get; set; } = "/dev_hdd0/packages/";
 
-        public List<BackupFile> BackupFiles { get; set; } = new();
+        public List<FavoritesList> FavoriteIds { get; set; } = new()
+        {
+            new FavoritesList() { Platform = PlatformPrefix.PS3, Ids = new() },
+            new FavoritesList() { Platform = PlatformPrefix.XBOX, Ids = new() }
+        };
 
-        public List<GameRegion> GameRegions { get; set; } = new();
+        public List<string> FavoritePackages { get; set; } = new();
+
+        public string DownloadsLocation { get; set; } = UserFolders.AppData;
+
+        public List<DownloadedItem> DownloadedMods { get; set; } = new();
+
+        public List<InstalledModInfo> InstalledMods { get; set; } = new();
+
+        public List<UserImport> ImportedItems { get; set; } = new();
 
         public List<CustomList> CustomLists { get; set; } = new();
 
-        public List<InstalledMod> InstalledGameMods { get; set; } = new();
+        public List<ModsOffsetValues> CustomOffsetsValues { get; set; } = new();
 
-        public List<PackageFile> InstalledPackageFiles { get; set; } = new();
+        // PS3 
 
-        /// <summary>
-        /// Create/store a backup of the specified file, and then downloads it locally to a known path
-        /// </summary>
-        /// <param name="modItem"> </param>
-        /// <param name="fileName"> </param>
-        /// <param name="installFilePath"> </param>
-        public void CreateBackupFile(ModItem modItem, string fileName, string installFilePath)
+        public List<GameRegion> GameRegionsPS3 { get; set; } = new();
+
+        public List<InstalledPackageInfo> InstalledPackages { get; set; } = new();
+
+        // Xbox 360
+
+        public List<ListItem> GameFilesXBOX { get; set; } = new();
+
+        // Chat Room Settings
+
+        public string ChatUserName { get; set; } = DataExtensions.LocalUserName.Length > 16
+            ? DataExtensions.LocalUserName.Substring(0, 16)
+            : DataExtensions.LocalUserName;
+
+        public ChatNotificationType ChatNotificationType { get; set; } = ChatNotificationType.Mentioned;
+
+        public bool ChatBlockPrivateMessages { get; set; } = false;
+
+        public bool ChatMuteSounds { get; set; } = false;
+
+        public bool ChatHideUnreadCount { get; set; } = false;
+
+        public List<string> ChatIgnoredUsers { get; set; } = new();
+
+        public List<string> ChatWhiteListUsers { get; set; } = new();
+
+        public void AddFavorite(PlatformPrefix consoleType, int modId)
         {
-            string gameBackupFolder = GetGameBackupFolder(modItem);
+            FavoritesList favoritesList = FavoriteIds.Find(x => x.Platform == consoleType);
 
-            Directory.CreateDirectory(gameBackupFolder);
-
-            BackupFile backupFile = new()
-            {
-                CategoryId = modItem.GameId,
-                FileName = fileName,
-                LocalPath = Path.Combine(gameBackupFolder, fileName),
-                InstallPath = installFilePath,
-                CreatedDate = DateTime.Now
-            };
-
-            FtpExtensions.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
-            BackupFiles.Add(backupFile);
+            FavoriteIds[FavoriteIds.IndexOf(favoritesList)].Ids.Add(modId);
         }
 
-        /// <summary>
-        /// Gets the <see cref="BackupFile" /> information for the specified game id, file name and
-        /// install path
-        /// </summary>
-        /// <param name="gameId"> Game Id </param>
-        /// <param name="fileName"> File Name </param>
-        /// <param name="installPath"> File Install Path </param>
-        /// <returns> </returns>
-        public BackupFile GetGameFileBackup(string gameId, string fileName, string installPath)
+        public void RemoveFavorite(PlatformPrefix consoleType, int modId)
         {
-            return BackupFiles.FirstOrDefault(backupFile =>
-            backupFile.CategoryId.Equals(gameId, StringComparison.OrdinalIgnoreCase)
-            && backupFile.FileName.ToLower().Contains(fileName.ToLower())
-            && backupFile.InstallPath.ToLower().Contains(installPath.ToLower()));
+            FavoritesList favoritesList = FavoriteIds.Find(x => x.Platform == consoleType);
+
+            FavoriteIds[FavoriteIds.IndexOf(favoritesList)].Ids.RemoveAll(x => x == modId);
+        }
+
+        public void AddFavoriteOackage(string modId)
+        {
+            FavoritePackages.Add(modId);
+        }
+
+        public void RemoveFavoritePackage(string modId)
+        {
+            FavoritePackages.RemoveAll(x => x == modId);
         }
 
         /// <summary>
         /// Add a custom list with the specified name.
         /// </summary>
+        /// <param name="name"> Custom List Name </param>
+        /// <param name="consoleType"> Console Type </param>
+        public void AddCustomList(string name, PlatformPrefix consoleType)
+        {
+            CustomLists.Add(new CustomList
+            {
+                Platform = consoleType,
+                Name = name
+            });
+        }
+
+        /// <summary>
+        /// Either update or add the custom list details.
+        /// </summary>
+        /// <param name="oldName"> Old list name </param>
+        /// <param name="newName"> New list name </param>
+        /// <param name="consoleType"> Console Type </param>
+        public void RenameCustomList(string oldName, string newName, PlatformPrefix consoleType)
+        {
+            CustomList customList = CustomLists.Find(x => x.Platform == consoleType && x.Name.EqualsIgnoreCase(oldName));
+
+            switch (customList)
+            {
+                case null:
+                    CustomLists.Add(new CustomList { Platform = consoleType, Name = newName });
+                    break;
+                default:
+                    CustomLists[CustomLists.IndexOf(customList)] = new CustomList
+                    {
+                        Platform = consoleType,
+                        Name = newName,
+                        ModIds = customList.ModIds
+                    };
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Add modId to a custom list for the console type.
+        /// </summary>
         /// <param name="name"> Custom list name </param>
-        public void AddCustomList(string name, ConsoleTypePrefix consoleType)
+        /// <param name="modId"> Mod Id to add </param>
+        /// <param name="consoleType"> Console type </param>
+        public void AddModToCustomList(string name, int modId, PlatformPrefix consoleType)
         {
-            CustomLists.Add(new CustomList { ConsoleType = consoleType, Name = name });
-        }
+            CustomList customList = CustomLists.Find(x => x.Platform == consoleType && x.Name.EqualsIgnoreCase(name));
 
-        /// <summary>
-        /// Either update or add the custom list details.
-        /// </summary>
-        /// <param name="oldName"> Custom list name </param>
-        /// <param name="newName"> Mod Id to add to list </param>
-        /// <param name="consoleType"> Mod Id to add to list </param>
-        public void RenameCustomList(string oldName, string newName, ConsoleTypePrefix consoleType)
-        {
-            CustomList customList = CustomLists.Find(x => x.ConsoleType == consoleType && x.Name.EqualsIgnoreCase(oldName));
-
-            if (customList == null)
+            switch (customList.ModIds.Contains(modId))
             {
-                CustomLists.Add(new CustomList { ConsoleType = consoleType, Name = newName });
-            }
-            else
-            {
-                CustomLists[CustomLists.IndexOf(customList)] = new CustomList { ConsoleType = consoleType, Name = newName, ModIds = customList.ModIds };
+                case false:
+                    customList.ModIds.Add(modId);
+                    break;
             }
         }
 
         /// <summary>
-        /// Either update or add the custom list details.
+        /// Remove modId from a custom list for the console type.
         /// </summary>
-        /// <param name="listName"> Custom list name </param>
-        /// <param name="newListName"> Mod Id to add to list </param>
-        public void AddModToCustomList(string name, int modId, ConsoleTypePrefix consoleType)
+        /// <param name="name"> Custom list name </param>
+        /// <param name="modId"> Mod Id to remove </param>
+        /// <param name="consoleType"> Console type </param>
+        public void RemoveModFromCustomList(string name, int modId, PlatformPrefix consoleType)
         {
-            CustomList customList = CustomLists.Find(x => x.ConsoleType == consoleType && x.Name.EqualsIgnoreCase(name));
-
-            if (!customList.ModIds.Contains(modId))
-            {
-                customList.ModIds.Add(modId);
-            }
-        }
-
-        /// <summary>
-        /// Either update or add the custom list details.
-        /// </summary>
-        /// <param name="listName"> Custom list name </param>
-        /// <param name="modId"> Mod Id to add to list </param>
-        public void RemoveModFromCustomList(string name, int modId, ConsoleTypePrefix consoleType)
-        {
-            CustomList customList = CustomLists.Find(x => x.ConsoleType == consoleType && x.Name.EqualsIgnoreCase(name));
+            CustomList customList = CustomLists.Find(x => x.Platform == consoleType && x.Name.EqualsIgnoreCase(name));
             customList.ModIds.Remove(modId);
         }
 
@@ -163,7 +213,7 @@ namespace ModioX.Models.Resources
         /// <returns> Game Region </returns>
         public string GetGameRegion(string gameId)
         {
-            return GameRegions.FirstOrDefault(region => region.GameId.EqualsIgnoreCase(gameId))?.Region;
+            return GameRegionsPS3.FirstOrDefault(region => region.GameId.EqualsIgnoreCase(gameId))?.Region;
         }
 
         /// <summary>
@@ -173,47 +223,22 @@ namespace ModioX.Models.Resources
         /// <param name="region"> Specifies the Game Region </param>
         public void UpdateGameRegion(string gameId, string region)
         {
-            int gameIdIndex = GameRegions.FindIndex(x => string.Equals(x.GameId, gameId, StringComparison.OrdinalIgnoreCase));
+            int gameIdIndex =
+                GameRegionsPS3.FindIndex(x => string.Equals(x.GameId, gameId, StringComparison.OrdinalIgnoreCase));
 
-            if (gameIdIndex == -1)
+            switch (gameIdIndex)
             {
-                GameRegions.Add(new GameRegion(gameId, region));
-            }
-            else
-            {
-                GameRegions[gameIdIndex].Region = region;
+                case -1:
+                    GameRegionsPS3.Add(new GameRegion() { GameId = gameId, Region = region });
+                    break;
+                default:
+                    GameRegionsPS3[gameIdIndex].Region = region;
+                    break;
             }
         }
 
         /// <summary>
-        /// Create and return the game backup files folder for the specified <see
-        /// cref="ModsData.ModItem" />.
-        /// </summary>
-        /// <param name="modItem"> </param>
-        /// <returns> </returns>
-        public static string GetGameBackupFolder(ModItem modItem)
-        {
-            return Path.Combine(UserFolders.AppBackupFilesDirectory, modItem.GameId);
-        }
-
-        /// <summary>
-        /// Updates the collection of backup files at index if it's exists, otherwise adds a new one.
-        /// </summary>
-        /// <param name="index"> </param>
-        /// <param name="backupFile"> </param>
-        public void UpdateBackupFile(int index, BackupFile backupFile)
-        {
-            if (BackupFiles[index] == null)
-            {
-                BackupFiles.Add(backupFile);
-                return;
-            }
-
-            BackupFiles[index] = backupFile;
-        }
-
-        /// <summary>
-        /// Update the installed game mods.
+        /// Update the installed mods.
         /// </summary>
         /// <param name="consoleType"> </param>
         /// <param name="categoryId"> </param>
@@ -222,62 +247,67 @@ namespace ModioX.Models.Resources
         /// <param name="noOfFiles"> </param>
         /// <param name="dateInstalled"> </param>
         /// <param name="downloadFiles"> </param>
-        public void UpdateInstalledGameMod(ConsoleTypePrefix consoleType, string categoryId, int modId, string region, int noOfFiles, DateTime dateInstalled, DownloadFiles downloadFiles)
+        public void UpdateInstalledMods(PlatformPrefix consoleType, string categoryId, int modId, int totalFiles, DateTime dateInstalled, DownloadFiles downloadFiles)
         {
-            RemoveInstalledGameMod(consoleType, categoryId);
+            RemoveInstalledMods(consoleType, categoryId, modId);
 
-            InstalledGameMods.Add(new InstalledMod
+            InstalledMods.Add(new InstalledModInfo
             {
-                ConsoleType = consoleType,
+                Platform = consoleType,
                 CategoryId = categoryId,
                 ModId = modId,
-                Region = region,
-                Files = noOfFiles,
+                TotalFiles = totalFiles,
                 DateInstalled = dateInstalled,
-                DownloadFiles = downloadFiles
+                DownloadFiles = downloadFiles,
             });
         }
 
         /// <summary>
-        /// Remove the installed mods matching the <see cref="ModsData.ModItem.GameId" />
+        /// Remove the installed mod matching the <see cref="ModItemData.GameId" /> and <see cref="ModsData.ModItem.Id" />
         /// </summary>
-        /// <param name="categoryId"> </param>
-        public void RemoveInstalledGameMod(ConsoleTypePrefix consoleType, string categoryId)
-        {
-            InstalledGameMods.RemoveAll(x => x.ConsoleType == consoleType && string.Equals(x.CategoryId, categoryId, StringComparison.OrdinalIgnoreCase));
-        }
-
-        /// <summary>
-        /// Remove the installed game mod matching the <see cref="ModsData.ModItem.GameId" /> and
-        /// <see cref="ModsData.ModItem.Id" />
-        /// </summary>
+        /// <param name="consoleType"> </param>
         /// <param name="categoryId"> </param>
         /// <param name="modId"> </param>
-        public void RemoveInstalledGameMod(ConsoleTypePrefix consoleType, string categoryId, int modId)
+        public void RemoveInstalledMods(PlatformPrefix consoleType, string categoryId, int modId)
         {
-            InstalledGameMods.RemoveAll(x => x.ConsoleType == consoleType && string.Equals(x.CategoryId, categoryId, StringComparison.OrdinalIgnoreCase) && x.ModId.Equals(modId));
+            InstalledMods.RemoveAll(x => x.Platform == consoleType && x.CategoryId.EqualsIgnoreCase(categoryId) && x.ModId.Equals(modId));
         }
 
         /// <summary>
-        /// Get the current <see cref="InstalledGameMod" /> the <see cref="ModsData.ModItem.Id" />
+        /// Get the <see cref="InstalledModInfo" /> for the <see cref="ModsData.ModItem.Id" /> if one exists.
         /// </summary>
+        /// <param name="consoleType"> </param>
         /// <param name="categoryId"> </param>
+        /// <param name="modId"> </param>
         /// <returns> </returns>
-        public InstalledMod GetInstalledGameMod(ConsoleTypePrefix consoleType, string categoryId)
+        public InstalledModInfo GetInstalledMods(PlatformPrefix consoleType, string categoryId, int modId)
         {
-            return InstalledGameMods.FirstOrDefault(x => x.ConsoleType == consoleType && x.CategoryId.Equals(categoryId, StringComparison.OrdinalIgnoreCase));
+            return InstalledMods.FirstOrDefault(x => x.Platform == consoleType && x.CategoryId.EqualsIgnoreCase(categoryId) && x.ModId.Equals(modId));
         }
 
         /// <summary>
+        /// Get the <see cref="InstalledModInfo" /> for the <see cref="ModsData.ModItem.Id" /> if one exists.
+        /// </summary>
+        /// <param name="consoleType"> </param>
+        /// <param name="categoryId"> </param>
+        /// <param name="modId"> </param>
+        /// <returns> </returns>
+        public InstalledModInfo GetInstalledMods(PlatformPrefix consoleType, string categoryId)
+        {
+            return InstalledMods.FirstOrDefault(x => x.Platform == consoleType && x.CategoryId.EqualsIgnoreCase(categoryId));
+        }
+
+        /// <summary>
+        /// 
         /// </summary>
         /// <param name="modsData"> </param>
         /// <param name="modIds"> </param>
         /// <returns> </returns>
-        public List<string> GetModTypesForModIDs(ModsData modsData, List<int> modIds)
+        public List<string> GetModTypesForMods(ModsData modsData, List<int> modIds)
         {
             List<string> modTypes = new();
 
-            foreach (ModItem modItem in modsData.Mods)
+            foreach (ModItemData modItem in modsData.Mods)
             {
                 if (modIds.Contains(modItem.Id))
                 {
@@ -293,31 +323,83 @@ namespace ModioX.Models.Resources
         /// <param name="modsData"> </param>
         /// <param name="modIds"> </param>
         /// <returns> </returns>
-        public List<string> GetRegionsForModIDs(ModsData modsData, List<int> modIds)
+        public List<string> GetRegionsForMods(ModsData modsData, List<int> modIds)
         {
             List<string> regions = new();
 
-            foreach (ModItem modItem in modsData.Mods)
-            {
+            foreach (ModItemData modItem in modsData.Mods)
                 if (modIds.Contains(modItem.Id))
-                {
-                    if (!modItem.Region.Equals("ALL") || !modItem.GameRegions.Contains("All Regions") || !modItem.GameRegions.Contains("-") || !modItem.GameRegions.Contains("n/a") || !modItem.GameRegions.Contains(""))
-                    {
-                        if (!regions.Any(x => modItem.GameRegions.Any(y => y == x)))
+                    if (!modItem.Region.Equals("ALL") || !modItem.Regions.Contains("All Regions") ||
+                        !modItem.Regions.Contains("-") || !modItem.Regions.Contains("n/a") ||
+                        !modItem.Regions.Contains(""))
+                        switch (regions.Any(x => modItem.Regions.Any(y => y == x)))
                         {
-                            if (!modItem.GameRegions.Contains("All Regions"))
-                            {
-                                if (!modItem.GameRegions.Contains("n/a"))
+                            case false:
                                 {
-                                    regions.AddRange(modItem.GameRegions);
+                                    switch (modItem.Regions.Contains("All Regions"))
+                                    {
+                                        case false:
+                                            {
+                                                switch (modItem.Regions.Contains("n/a"))
+                                                {
+                                                    case false:
+                                                        regions.AddRange(modItem.Regions);
+                                                        break;
+                                                }
+
+                                                break;
+                                            }
+                                    }
+
+                                    break;
                                 }
-                            }
                         }
-                    }
-                }
-            }
 
             return regions.Distinct().ToList();
+        }
+
+        /// <summary>
+        /// Get the <see cref="InstalledModInfo" /> for the <see cref="PackageItemData" /> if one exists.
+        /// </summary>
+        /// <param name="consoleType"> </param>
+        /// <param name="categoryId"> </param>
+        /// <param name="modId"> </param>
+        /// <returns> </returns>
+        public InstalledPackageInfo GetInstalledPackage(PackageItemData package)
+        {
+            return InstalledPackages.FirstOrDefault(x => x.Category.Equals(package.Category) && x.Url.Equals(package.Url));
+        }
+
+        /// <summary>
+        /// Remove the installed mod matching the <see cref="ModItemData.GameId" /> and <see cref="ModsData.ModItem.Id" />
+        /// </summary>
+        /// <param name="consoleType"> </param>
+        /// <param name="categoryId"> </param>
+        /// <param name="modId"> </param>
+        public void RemoveInstalledPackage(PackageItemData package)
+        {
+            InstalledPackages.RemoveAll(x => x.Category.Equals(package.Category) && x.Url.Equals(package.Url));
+        }
+
+        /// <summary>
+        /// Update the installed mods.
+        /// </summary>
+        /// <param name="package"> </param>
+        /// <param name="dateInstalled"> </param>
+        public void UpdateInstalledPackage(PackageItemData package, string localFilePath, DateTime dateInstalled)
+        {
+            RemoveInstalledPackage(package);
+
+            InstalledPackages.Add(new InstalledPackageInfo
+            {
+                Category = package.Category,
+                Name = package.Name,
+                TitleId = package.TitleId,
+                Region = package.Region,
+                Url = package.Url,
+                LocalFile = localFilePath,
+                DateTime = dateInstalled
+            });
         }
 
         /// <summary>
@@ -326,9 +408,9 @@ namespace ModioX.Models.Resources
         /// <param name="name"> </param>
         /// <param name="consoleType"> </param>
         /// <returns> </returns>
-        public CustomList GetCustomListByName(string name, ConsoleTypePrefix consoleType)
+        public CustomList GetCustomListByName(string name, PlatformPrefix consoleType)
         {
-            foreach (CustomList customList in from CustomList customList in CustomLists.FindAll(x => x.ConsoleType == consoleType)
+            foreach (CustomList customList in from CustomList customList in CustomLists.FindAll(x => x.Platform == consoleType)
                                               where customList.Name.EqualsIgnoreCase(name)
                                               select customList)
             {
@@ -339,70 +421,20 @@ namespace ModioX.Models.Resources
         }
 
         /// <summary>
-        /// Update the installed package file details.
+        /// Update the mods offsets and values.
         /// </summary>
-        /// <param name="id"> </param>
-        /// <param name="name"> </param>
-        /// <param name="version"> </param>
-        /// <param name="downloadFiles"> </param>
-        public void UpdateInstalledPackageFile(int id, string name, string version, DownloadFiles downloadFiles)
+        /// <param name="modsOffsetValues"> </param>
+        public void UpdateOffsetValues(ModsOffsetValues modsOffsetValues)
         {
-            InstalledPackageFiles.Remove(InstalledPackageFiles.FirstOrDefault(x => x.Id.Equals(id)));
+            CustomOffsetsValues.RemoveAll(x => x.ConsoleType == modsOffsetValues.ConsoleType && x.Name == modsOffsetValues.Name && x.Game == modsOffsetValues.Game && x.OffsetsValues == modsOffsetValues.OffsetsValues);
 
-            InstalledPackageFiles.Add(new PackageFile
+            CustomOffsetsValues.Add(new ModsOffsetValues
             {
-                Id = id,
-                Name = name,
-                Version = version,
-                DownloadFiles = downloadFiles
+                ConsoleType = modsOffsetValues.ConsoleType,
+                Name = modsOffsetValues.Name,
+                Game = modsOffsetValues.Game,
+                OffsetsValues = modsOffsetValues.OffsetsValues
             });
-        }
-
-        /// <summary>
-        /// Get the installed package file matching the specified modId.
-        /// </summary>
-        /// <param name="modId"> </param>
-        /// <returns> </returns>
-        public PackageFile GetInstalledPackageFile(string name)
-        {
-            return InstalledPackageFiles.FirstOrDefault(x => x.Name.Equals(name)) ?? null;
-        }
-
-        /// <summary>
-        /// Determines whether a installed package file is out of date by checking current package
-        /// files in the database.
-        /// </summary>
-        /// <param name="modsData"> </param>
-        /// <param name="categoriesData"> </param>
-        /// <param name="packageFile"> </param>
-        /// <returns> </returns>
-        public bool IsPackageFileOldVersion(ModsData modsData, CategoriesData categoriesData, PackageFile packageFile)
-        {
-            foreach (ModItem modItem in modsData.Mods)
-            {
-                if (modItem.GetCategoryType(categoriesData) == CategoryType.Homebrew)
-                {
-                    if (packageFile.Id.Equals(modItem.Id))
-                    {
-                        try
-                        {
-                            Version oldVersion = Version.Parse(packageFile.Version);
-                            Version newVersion = Version.Parse(modItem.Version);
-
-                            if (oldVersion.CompareTo(newVersion) < 0)
-                            {
-                                return true;
-                            }
-                        }
-                        catch
-                        {
-                            return false;
-                        }
-                    }
-                }
-            }
-
-            return false;
         }
     }
 
@@ -413,9 +445,9 @@ namespace ModioX.Models.Resources
     {
         public string Name { get; set; }
 
-        public ConsoleType Type { get; set; } = ConsoleType.PlayStation3Fat;
+        public PlatformType Type { get; set; } = PlatformType.PlayStation3Fat;
 
-        public ConsoleTypePrefix TypePrefix { get; set; } = ConsoleTypePrefix.PS3;
+        public PlatformPrefix TypePrefix { get; set; } = PlatformPrefix.PS3;
 
         public string Address { get; set; }
 
@@ -427,6 +459,12 @@ namespace ModioX.Models.Resources
 
         public bool UseDefaultCredentials { get; set; } = true;
 
+        public bool UseDefaultConsole { get; set; } = false;
+
+        /// <summary>
+        /// Get the profile as format: Name (Address)
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{Name} ({Address})";
@@ -434,66 +472,13 @@ namespace ModioX.Models.Resources
     }
 
     /// <summary>
-    /// Determines the type of console.
-    /// </summary>
-    public enum ConsoleType
-    {
-        [Description("PlayStation 3 (Fat)")]
-        PlayStation3Fat,
-
-        [Description("PlayStation 3 (Slim)")]
-        PlayStation3Slim,
-
-        [Description("PlayStation 3 (Super Slim)")]
-        PlayStation3SuperSlim,
-
-        [Description("Xbox 360 (Fat/White)")]
-        Xbox360FatWhite,
-
-        [Description("Xbox 360 Elite (Fat/Black)")]
-        Xbox360EliteFatBlack,
-
-        [Description("Xbox 360 S (Slim)")]
-        Xbox360Slim,
-
-        [Description("Xbox 360 E (Slim E)")]
-        Xbox360SlimE
-    }
-
-    /// <summary>
-    /// Determines the prefix for the type of console.
-    /// </summary>
-    public enum ConsoleTypePrefix
-    {
-        [Description("PlayStation 3")]
-        PS3,
-
-        [Description("Xbox 360")]
-        XBOX
-    }
-
-    /// <summary>
-    /// Create a backup file class with the details.
-    /// </summary>
-    public class BackupFile
-    {
-        public string CategoryId { get; set; }
-
-        public string FileName { get; set; }
-
-        public string LocalPath { get; set; }
-
-        public string InstallPath { get; set; }
-
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-    }
-
-    /// <summary>
     /// Create a new installed mod class with the details.
     /// </summary>
-    public class InstalledMod
+    public class InstalledModInfo
     {
-        public ConsoleTypePrefix ConsoleType { get; set; } = ConsoleTypePrefix.PS3;
+        public string Type { get; set; }
+
+        public PlatformPrefix Platform { get; set; } = PlatformPrefix.PS3;
 
         public string CategoryId { get; set; }
 
@@ -501,25 +486,32 @@ namespace ModioX.Models.Resources
 
         public string Region { get; set; }
 
-        public int Files { get; set; }
+        public int TotalFiles { get; set; }
 
         public DateTime DateInstalled { get; set; }
 
         public DownloadFiles DownloadFiles { get; set; }
     }
 
-    /// <summary>
-    /// Create a new installed mod class with the details.
-    /// </summary>
-    public class PackageFile
+    public class UserImport
     {
-        public int Id { get; set; }
+        public string Type { get; set; }
+
+        public PlatformPrefix Platform { get; set; } = PlatformPrefix.PS3;
+
+        public string CategoryId { get; set; }
 
         public string Name { get; set; }
 
+        public string SystemType { get; set; }
+
+        public string ModType { get; set; }
+
         public string Version { get; set; }
 
-        public DownloadFiles DownloadFiles { get; set; }
+        public string Creator { get; set; }
+
+        public List<ListItem> Files { get; set; }
     }
 
     /// <summary>
@@ -528,15 +520,26 @@ namespace ModioX.Models.Resources
     /// </summary>
     public class GameRegion
     {
-        public GameRegion(string gameId, string region)
-        {
-            GameId = gameId;
-            Region = region;
-        }
-
         public string GameId { get; set; }
 
         public string Region { get; set; }
+    }
+
+    public class InstalledPackageInfo
+    {
+        public string Category { get; set; }
+
+        public string Name { get; set; }
+
+        public string TitleId { get; set; }
+
+        public string Region { get; set; }
+
+        public string Url { get; set; }
+
+        public string LocalFile { get; set; }
+
+        public DateTime DateTime { get; set; } = DateTime.Now;
     }
 
     /// <summary>
@@ -544,10 +547,52 @@ namespace ModioX.Models.Resources
     /// </summary>
     public class CustomList
     {
-        public ConsoleTypePrefix ConsoleType { get; set; } = ConsoleTypePrefix.PS3;
+        public PlatformPrefix Platform { get; set; } = PlatformPrefix.PS3;
 
         public string Name { get; set; }
 
         public List<int> ModIds { get; set; } = new();
+    }
+
+    public class FavoritesList
+    {
+        public PlatformPrefix Platform { get; set; } = PlatformPrefix.PS3;
+
+        public List<int> Ids { get; set; } = new();
+    }
+
+    public class DownloadedItem
+    {
+        public string Type { get; set; }
+
+        public PlatformPrefix Platform { get; set; } = PlatformPrefix.PS3;
+
+        public int ModId { get; set; }
+
+        public string CategoryId { get; set; }
+
+        public string FilePath { get; set; }
+
+        public DownloadFiles DownloadFile { get; set; }
+
+        public DateTime DateTime { get; set; }
+    }
+
+    public class ModsOffsetValues
+    {
+        public PlatformPrefix ConsoleType { get; set; } = PlatformPrefix.PS3;
+
+        public string Name { get; set; }
+
+        public string Game { get; set; }
+
+        public List<OffsetValue> OffsetsValues { get; set; } = new();
+    }
+
+    public class OffsetValue
+    {
+        public string Offset { get; set; }
+
+        public string Value { get; set; }
     }
 }

@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 
 namespace ModioX.Extensions
 {
     internal class DataExtensions
     {
+        /// <summary>
+        /// Get the current logged-in users name.
+        /// </summary>
+        /// <returns>Current User Name</returns>
+        public static string LocalUserName => Environment.UserName.FormatUserName();
+
         /// <summary>
         /// Create and return a new DataTable with the specified columns and rows.
         /// </summary>
@@ -29,41 +34,29 @@ namespace ModioX.Extensions
             return dataTable;
         }
 
-        /// <summary>
-        /// Get a byte array from a hex string.
-        /// </summary>
-        /// <param name="hex"></param>
-        /// <returns></returns>
-        public static byte[] StringToByteArray(string hex)
-        {
-            return Enumerable.Range(0, hex.Length)
-                             .Where(x => x % 2 == 0)
-                             .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
-                             .ToArray();
-        }
-
         public static Type GetDataType(string typeName)
         {
             if (Type.GetType(typeName, false, true) == typeof(int))
             {
                 return typeof(int);
             }
-            else if (Type.GetType(typeName, false, true) == typeof(uint))
+
+            if (Type.GetType(typeName, false, true) == typeof(uint))
             {
                 return typeof(uint);
             }
-            else if (Type.GetType(typeName, false, true) == typeof(bool))
+
+            if (Type.GetType(typeName, false, true) == typeof(bool))
             {
                 return typeof(bool);
             }
-            else if (Type.GetType(typeName, false, true) == typeof(string))
+
+            if (Type.GetType(typeName, false, true) == typeof(string))
             {
                 return typeof(string);
             }
-            else
-            {
-                return typeof(string);
-            }
+
+            return typeof(string);
         }
     }
 

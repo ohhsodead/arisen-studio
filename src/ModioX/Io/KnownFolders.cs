@@ -41,12 +41,12 @@ namespace ModioX.Io
         {
             int result = SHGetKnownFolderPath(new Guid(KnownFoldersGuid[(int)knownFolder]),
                 (uint)flags, new IntPtr(defaultUser ? -1 : 0), out IntPtr outPath);
-            if (result >= 0)
+            return result switch
             {
-                return Marshal.PtrToStringUni(outPath);
-            }
-
-            throw new ExternalException("Unable to retrieve the known folder path. It may not be available on this system.", result);
+                >= 0 => Marshal.PtrToStringUni(outPath),
+                _ => throw new ExternalException(
+                    "Unable to retrieve the known folder path. It may not be available on this system.", result)
+            };
         }
 
         [DllImport("Shell32.dll")]

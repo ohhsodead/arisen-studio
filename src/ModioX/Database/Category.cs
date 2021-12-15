@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
-using ModioX.Models.Database;
 
 namespace ModioX.Database
 {
@@ -24,20 +23,13 @@ namespace ModioX.Database
         /// <summary>
         /// Get the category type.
         /// </summary>
-        public CategoryType CategoryType
+        public CategoryType CategoryType => Type switch
         {
-            get
-            {
-                return Type switch
-                {
-                    "game" => CategoryType.Game,
-                    "homebrew" => CategoryType.Homebrew,
-                    "resource" => CategoryType.Resource,
-                    "favorite" => CategoryType.Favorite,
-                    _ => CategoryType.Game,
-                };
-            }
-        }
+            "game" => CategoryType.Game,
+            "homebrew" => CategoryType.Homebrew,
+            "resource" => CategoryType.Resource,
+            _ => CategoryType.Game
+        };
 
         /// <summary>
         /// Return the user's game region, either automatically by searching existing console
@@ -45,38 +37,46 @@ namespace ModioX.Database
         /// </summary>
         /// <param name="gameId"> Game Id </param>
         /// <returns> </returns>
-        public string GetGameRegion(string gameId)
+        public string GetGameRegion(Form owner, string gameId)
         {
-            if (MainWindow.Settings.RememberGameRegions)
+            switch (MainWindow.Settings.RememberGameRegions)
             {
-                string gameRegion = MainWindow.Settings.GetGameRegion(gameId);
+                case true:
+                    {
+                        string gameRegion = MainWindow.Settings.GetGameRegion(gameId);
 
-                if (!string.IsNullOrEmpty(gameRegion))
-                {
-                    return gameRegion;
-                }
+                        switch (string.IsNullOrEmpty(gameRegion))
+                        {
+                            case false:
+                                return gameRegion;
+                        }
+                        break;
+                    }
             }
 
-            if (MainWindow.Settings.AutoDetectGameRegions)
+            switch (MainWindow.Settings.AutoDetectGameRegions)
             {
-                List<string> foundRegions = Regions.Where(region => MainWindow.FtpConnection.DirectoryExists($"/dev_hdd0/game/{region}")).ToList();
+                case true:
+                    {
+                        List<string> foundRegions = Regions.Where(region => FtpExtensions.DirectoryExists($"/dev_hdd0/game/{region}")).ToList();
 
-                foreach (string region in foundRegions.Where(region => XtraMessageBox.Show(
-                    MainWindow.Window,
-                    $"Game Region: {region} has been found for: {Title}\nIs this correct?", "Found Game Region",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
-                {
-                    return region;
-                }
+                        foreach (string region in foundRegions.Where(region => XtraMessageBox.Show($"Game Region: {region} has been found for: {Title}\n\nIs this correct?", "Game Region",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                        {
+                            return region;
+                        }
 
-                XtraMessageBox.Show(
-                    MainWindow.Window,
-                    "Could not find any regions on your console for this game title. You must install the game update for this title first.",
-                    "No Game Update", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
+                        XtraMessageBox.Show(
+                            MainWindow.Window.LookAndFeel,
+                            "Could not find any regions on your console for this game title. You must install the game update for this title first.",
+                            "No Game Update", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        return null;
+                    }
+                default:
+                    ListItem selectedItem = DialogExtensions.ShowListViewDialog(owner, "Game Regions", Regions.ToList().ConvertAll(x => new ListItem { Value = x, Name = x }));
+                    return selectedItem?.Value;
             }
-
-            return DialogExtensions.ShowListViewDialog(MainWindow.Window, "Game Regions", Regions.ToList().ConvertAll(x => new ListItem() { Value = x, Name = x }));
         }
     }
 }

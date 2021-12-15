@@ -1,13 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.Serialization;
 
 namespace ModioX.Database
 {
+    // Get the downloads information.
     public class DownloadFiles
     {
         public string Name { get; set; }
 
-        public string URL { get; set; }
+        [DataMember]
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Populate)]
+        [DefaultValue("n/a")]
+        public string Region { get; set; } = "n/a";
+
+        public string Version { get; set; }
+
+        public string Url { get; set; }
 
         public List<string> InstallPaths { get; set; }
 

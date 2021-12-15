@@ -1,7 +1,56 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## Beta v1.5
+## Beta v2.0.0
+- Upgraded DevExpress to v21.1
+- Upgraded FluentFTP package to v35.0.5
+- Upgraded NLog package to v4.7.11
+- Added CodeHollow.FeedReader package
+- Added Profanity.Detector package
+- Added Humanizer package
+- Added navigation side menu for pages
+- Added Dashboard page
+- Added Setup section
+- Added Tools section
+- Added Announcements section
+- Added News Feed via RSS section
+- Added Credits/Contributors section
+- Added Downloads page
+- Added Installed Mods page
+- Added File Manager page
+- Added Settings page
+- Added Mods page
+- Added Packages page
+- Added Plugins page
+- Added Game Saves page
+- Added Transfer Files Dialog
+- Added Game Save Resigner for Xbox
+- Added Game Launcher for Xbox
+- Added Offsets Poker (Real Time Modding)
+- Added Chat Room for general discussions
+- Added base support for other Languages
+- Added filtering options for all columns
+- Added sorting options for all columns
+- Added option to backup all games files at once
+- Added option to use relative date times
+- Added option to install mods to local USB device
+- Added option to enable hardware acceleration
+- Added option to set packages install path
+- Added option to set downloads folder
+- Removed Settings Dialog
+- Removed all redundant resources
+- Fixed issue when clicking cancel in the connection details
+- Fixed issue with certificates when fetching release data
+- Replaced InputTextDialog with XtraInputBox
+- Improved overall performance using async functions
+- Improved installing and uninstalling files
+- Main menu is now in the title bar
+- Backup file's data are now saved separately to Settings
+- Game titles are now extracted from PARAM.SFO file
+- Google Forms are now used for requesting mods
+- Lots of bug fixes and improvements
+
+## Beta v1.5.0
 - Optimized parts of the application
 - Improved code readability
 - Improved parsing of the database files
