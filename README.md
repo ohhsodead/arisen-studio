@@ -5,10 +5,6 @@ An open source desktop application designed to easily browse through a regularly
 
 **the only one of its kind...**
 
-![Main Form](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/MainForm.png?raw=true)
-
-#### Preview for Beta v2
-
 ![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/DashboardPage.png?raw=true)
 
 ![Mods Page](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/ModsPage.png?raw=true)
