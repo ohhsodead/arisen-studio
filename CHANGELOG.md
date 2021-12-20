@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## Beta v2.0.1
+A small update to fix some bugs.
+
+- Fixed sorting game saves by platform
+- Fixed sorting game saves by category
+- Fixed templates for reporting mods
+
 ## Beta v2.0.0
 - Upgraded DevExpress to v21.1
 - Upgraded FluentFTP package to v35.0.5
@@ -189,23 +196,23 @@ This update mainly includes improvements to the core functionality for installin
 ## Beta v1.1.0
 Improved and cleaned the user interface, also many new features, advancements and customization for a complete built-in ftp client, with a more useful logging library and some bug fixes. 
 
-* Added ability to navigate through local and console directory listings
-* Added ability to create and manage game file backups
-* Added ability to backup original game files
-* Added ability to detect uploads of USB files, and prompt the user of so
-* Added attribute _Submitted by_ to mods for submitters
-* Added modding resources menu, includes popular forum sites, etc.
-* Added applications menu, including external installed applications, e.g. CCAPI
-* Added context-menu's for more options 
-* Added the ability to favorite mods id's
-* Added ability to filter mods by firmware
-* Added ability to select random mods from library
-* Added ability to query and search mods library
-* Settings data is now saved to JSON file, instead of application settings
-* Removed many unnecessary controls and code
+- Added ability to navigate through local and console directory listings
+- Added ability to create and manage game file backups
+- Added ability to backup original game files
+- Added ability to detect uploads of USB files, and prompt the user of so
+- Added attribute _Submitted by_ to mods for submitters
+- Added modding resources menu, includes popular forum sites, etc.
+- Added applications menu, including external installed applications, e.g. CCAPI
+- Added context-menu's for more options 
+- Added the ability to favorite mods id's
+- Added ability to filter mods by firmware
+- Added ability to select random mods from library
+- Added ability to query and search mods library
+- Settings data is now saved to JSON file, instead of application settings
+- Removed many unnecessary controls and code
 
 Notes:
-* Loading console files in the file explorer with huge directories can sometimes result in a few files not returning file sizes. Not sure what's causing this, seems like it's a timeout issue for large files.
+- Loading console files in the file explorer with huge directories can sometimes result in a few files not returning file sizes. Not sure what's causing this, seems like it's a timeout issue for large files.
 
 ## Beta v1.0.0
 - Initial Release
