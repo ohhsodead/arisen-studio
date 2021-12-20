@@ -26,7 +26,6 @@ All notable changes to this project will be documented in this file.
 - Added Transfer Files Dialog
 - Added Game Save Resigner for Xbox
 - Added Game Launcher for Xbox
-- Added Offsets Poker (Real Time Modding)
 - Added Chat Room for general discussions
 - Added base support for other Languages
 - Added filtering options for all columns
