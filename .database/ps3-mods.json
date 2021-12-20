@@ -9609,7 +9609,7 @@
          "Platform":"PS3",
          "Id":249,
          "CategoryId":"ha",
-         "Name":"PS3™ 4K Pro",
+         "Name":"PS3 4K Pro",
          "FirmwareType":"CEX/DEX/HEN",
          "Region":"n/a",
          "CreatedBy":"Luan Teles",
@@ -9620,16 +9620,16 @@
          "Description":"It's a Collection Of Mods that Changes the PS3™ System Look:​\n\n- PS4™ Boot Sounds.\n- PS4™ GameBoot Sounds.\n- PS4™ XMB Sounds.\n- PS4™ PS Store Icon.\n- PS4™ System Fonts.\n- PS4™ Browser Navigation Buttons.\n- PS4™ Game Format Tags.\n- PS3™ 4K Pro Boot Logo.\n- PS3™ 4K Pro GameBoot Logo.\n- PS3™ 4K Pro System Texts.\n- PSP™ Wave Background.\n- PSP™ Colors Background.\n- PSP™ System Colors.\n- PS Vita™ Music Controls Background.\n- PS Vita™ Video Controls Background.\n- PS Vita™ Photos Controls Background.\n- Added: Improved Particles in The Wave Background.\n- Added: New Background Clock Bar\n- Added: New Animated Clock Icon\n- Added: Facebook Icon under Network.\n- Added: Advanced Reboot Options under Users Category.\n- Added: PS3™ 4K Pro Theme under Themes.\n- Added: '2160p'* Resolution Option in Output Resolutions.\n- Added: PS3™ 4K Pro Logo in About Game Options.\n- Added: PS3™ 4K Pro in System Credits.\n- Added: PS4™ Loading Style Animation in Information Page.\n- Added: Boost Mode.\n- Added: Side Menu Animations.\n- Added: Buttons Animations.\n- Added: New Impose Screen.\n- Added: New Battery Level Indicators\n- ~ Full=Green, Half=Yellow, Weak=Orange, Empty=Red.\n- - New Controller Indicators.\n- ~ 1=Red, 2=Blue, 3=Green, 4=Yellow.\n- Added: Music Online Player.\n- Added: PodCast Online Player.\n- Added: Video Online Player.\n- Added: TV Online Player.\n- Added: Manga Reader.\n- Added: Screen Saver Mode.\n- New Notification Background.\n- New Icon for PSN.\n- New Icon for Throphies.\n- New Icon for Online Folder\n- New Icon for My Games.\n- New Icon for File Manager.\n- New Icon for RetroArch XMB.\n- New Icon for Pkg Launcher.\n- New Icon for PSP™ Launcher.\n- New Icon for MultiMan.\n- Translated Debug Options for All Languages.\n- Translated System Reboot for All Languages.\n- Priority Apps Bubbles.Read Me:\n\n#Possible Issues:\n\n-Issue #1 : Not Enough Space\n-Fix:\n      CEX/DEX: Go to dev_blind/rebug/package/ and delete the PKG\n      HEN: Reinstall the HFW\n\nReason:\n      CEX/DEX: Cobra includes the REBUG TOOLBOX inside the flash, not having free space.\n      HEN: Some mods install flash files, leaving it full.\n\n\n-Issue #2 : Size and Destination Files are Different\n-Fix:  \n      HEN/CEX/DEX: Go to dev_hdd0/game/PROTOOLBX and delete it\n\nReason: It checks every file beeing installed, if different it will not allow it, since the installer isn't mine\ni can't disable this.\n\nEVERY NEW VERSION NUMBER VERSION, 5.XX to 5,X+1.X THIS STEP NEEDS TO BE DONE.\n\n======================================================================================\n\nDEX USERS\n\ndelete dev_blind/rebug/packages/ The rebug toolbox.pkg inside of it\n\ndev_blind/vsh/modules:\n\nvsh.self.cexsp\nvsh.self.swap\nxmb_plugin.cex\nsysconf_plugin.cex\n\nMAKE SURE THAT YOU SELECTED YOUR DESIRED VSH/DEBUG SETTINGS TYPE IN THE REBUG TOOLBOX.\n\nSince you won't be able to swap it again,\n\nThere isn't really a thing that i can do about it, since DEX has swap files inside the flash and 0MB available.\n\n\nI don't feel like replacing then with 0byte files, but maybe i can do it, since most of normal users will not touch it",
          "DownloadFiles":[
             {
-               "Name":"PS3™ 4K Pro (CEX/DEX)",
+               "Name":"PS3 4K Pro (CFW)",
                "Region":"n/a",
                "Version":"5.1",
-               "Url":"https://dl.dropbox.com/s/zwos2a8ko9xjtvu/PS3%204K%20Pro%20%28CEX/DEX%29.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/zwos2a8ko9xjtvu/PS3%204K%20Pro%20%28CFW%29.zip?raw=true",
                "InstallPaths":[
-                  "/dev_hdd0/packages/[CEX/DEX] PS3 4K Pro v5.1.pkg"
+                  "/dev_hdd0/packages/[CFW] PS3 4K Pro v5.1.pkg"
                ]
             },
             {
-               "Name":"PS3™ 4K Pro (HEN)",
+               "Name":"PS3 4K Pro (HEN)",
                "Region":"n/a",
                "Version":"5.1",
                "Url":"https://dl.dropbox.com/s/3en71w8fkk7mtsx/PS3%204K%20Pro%20%28HEN%29.zip?raw=true",
