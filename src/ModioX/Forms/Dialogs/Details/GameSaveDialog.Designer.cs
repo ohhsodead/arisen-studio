@@ -34,6 +34,8 @@ namespace ModioX.Forms.Dialogs.Details
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameSaveDialog));
             this.PanelDetails = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.LabelHeaderVersion = new DevExpress.XtraEditors.LabelControl();
+            this.LabelVersion = new DevExpress.XtraEditors.LabelControl();
             this.PanelHeader = new DevExpress.XtraEditors.PanelControl();
             this.SeparatorHeader = new DevExpress.XtraEditors.SeparatorControl();
             this.ImageCloseDetails = new DevExpress.XtraEditors.SvgImageBox();
@@ -64,8 +66,6 @@ namespace ModioX.Forms.Dialogs.Details
             this.ButtonFavorite = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonReport = new DevExpress.XtraEditors.SimpleButton();
             this.Images = new DevExpress.Utils.SvgImageCollection(this.components);
-            this.LabelHeaderVersion = new DevExpress.XtraEditors.LabelControl();
-            this.LabelVersion = new DevExpress.XtraEditors.LabelControl();
             this.PanelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelHeader)).BeginInit();
             this.PanelHeader.SuspendLayout();
@@ -100,6 +100,29 @@ namespace ModioX.Forms.Dialogs.Details
             this.PanelDetails.Name = "PanelDetails";
             this.PanelDetails.Size = new System.Drawing.Size(509, 556);
             this.PanelDetails.TabIndex = 1;
+            // 
+            // LabelHeaderVersion
+            // 
+            this.LabelHeaderVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHeaderVersion.Appearance.Options.UseFont = true;
+            this.LabelHeaderVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderVersion.Location = new System.Drawing.Point(15, 104);
+            this.LabelHeaderVersion.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
+            this.LabelHeaderVersion.Name = "LabelHeaderVersion";
+            this.LabelHeaderVersion.Size = new System.Drawing.Size(42, 15);
+            this.LabelHeaderVersion.TabIndex = 1193;
+            this.LabelHeaderVersion.Text = "Version";
+            // 
+            // LabelVersion
+            // 
+            this.LabelVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelVersion.Appearance.Options.UseFont = true;
+            this.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelVersion.Location = new System.Drawing.Point(15, 127);
+            this.LabelVersion.Name = "LabelVersion";
+            this.LabelVersion.Size = new System.Drawing.Size(9, 15);
+            this.LabelVersion.TabIndex = 1192;
+            this.LabelVersion.Text = "...";
             // 
             // PanelHeader
             // 
@@ -311,9 +334,9 @@ namespace ModioX.Forms.Dialogs.Details
             this.LabelModType.Location = new System.Drawing.Point(180, 179);
             this.LabelModType.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LabelModType.Name = "LabelModType";
-            this.LabelModType.Size = new System.Drawing.Size(9, 15);
+            this.LabelModType.Size = new System.Drawing.Size(63, 15);
             this.LabelModType.TabIndex = 1181;
-            this.LabelModType.Text = "...";
+            this.LabelModType.Text = "GAME SAVE";
             // 
             // LabelHeaderMode
             // 
@@ -486,29 +509,6 @@ namespace ModioX.Forms.Dialogs.Details
             // 
             this.Images.Add("delete", "image://svgimages/outlook inspired/delete.svg");
             this.Images.Add("check", "image://svgimages/icon builder/actions_check.svg");
-            // 
-            // LabelHeaderVersion
-            // 
-            this.LabelHeaderVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeaderVersion.Appearance.Options.UseFont = true;
-            this.LabelHeaderVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderVersion.Location = new System.Drawing.Point(15, 104);
-            this.LabelHeaderVersion.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
-            this.LabelHeaderVersion.Name = "LabelHeaderVersion";
-            this.LabelHeaderVersion.Size = new System.Drawing.Size(42, 15);
-            this.LabelHeaderVersion.TabIndex = 1193;
-            this.LabelHeaderVersion.Text = "Version";
-            // 
-            // LabelVersion
-            // 
-            this.LabelVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelVersion.Appearance.Options.UseFont = true;
-            this.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelVersion.Location = new System.Drawing.Point(15, 127);
-            this.LabelVersion.Name = "LabelVersion";
-            this.LabelVersion.Size = new System.Drawing.Size(9, 15);
-            this.LabelVersion.TabIndex = 1192;
-            this.LabelVersion.Text = "...";
             // 
             // GameSaveDialog
             // 

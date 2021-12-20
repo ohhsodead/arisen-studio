@@ -5995,7 +5995,7 @@ namespace ModioX.Forms.Windows
             new List<DataColumn>()
             {
                 new("Id", typeof(int)),
-                new("Game", typeof(string)),
+                new("Category", typeof(string)),
                 new("Name", typeof(string)),
                 new("Region", typeof(string)),
                 new("Version", typeof(string)),
@@ -6982,7 +6982,7 @@ namespace ModioX.Forms.Windows
 
         private void GridViewGameSaves_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
         {
-            if (e.Column.FieldName == "Game")
+            if (e.Column.FieldName == "Category")
             {
                 GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
 

@@ -25,14 +25,9 @@ namespace ModioX.Models.Database
         /// <param name="consoleType"></param>
         /// <param name="categoryId"></param>
         /// <param name="name"></param>
-        /// <param name="firmware"></param>
-        /// <param name="type"></param>
         /// <param name="region"></param>
         /// <param name="version"></param>
         /// <param name="author"></param>
-        /// <param name="status"></param>
-        /// <param name="categoryTypes"></param>
-        /// <param name="isCustomList"></param>
         /// <returns></returns>
         public List<GameSaveItemData> GetGameSaveItems(PlatformPrefix consoleType, string categoryId, string name, string region, string version, string author)
         {
@@ -46,6 +41,7 @@ namespace ModioX.Models.Database
                 x.Creators.ToArray().AnyContainsIgnoreCase(author))
                 .ToList(),
                 _ => GameSaves.Where(x =>
+                    x.GetPlatform() == consoleType &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
                     x.Region.ContainsIgnoreCase(region) &&

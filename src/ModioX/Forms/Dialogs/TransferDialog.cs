@@ -1480,7 +1480,7 @@ namespace ModioX.Forms.Dialogs
 
                     string downloadLocation = downloadFolder + @"\" + gameSaveItem.Name.RemoveInvalidChars() + ".pkg";
 
-                    UpdateStatus($"Downloading game savearchive: {gameSaveItem.Name}.pkg to {downloadFolder}");
+                    UpdateStatus($"Downloading game save archive: {gameSaveItem.Name}.pkg to {downloadFolder}");
                     HttpExtensions.DownloadFile(gameSaveItem.DownloadFiles[0].Url, downloadLocation);
                     UpdateStatus($"Successfully downloaded game save archive.");
 

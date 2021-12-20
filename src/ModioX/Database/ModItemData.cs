@@ -249,7 +249,7 @@ namespace ModioX.Database
         /// <returns> </returns>
         public string DownloadDataDirectory(DownloadFiles downloadFiles)
         {
-            return $@"{UserFolders.DownloadsLocationMods}{Platform}\{CategoryId}\{CreatedBy}\{downloadFiles.Name.RemoveInvalidChars()} (#{Id})\";
+            return $@"{UserFolders.DownloadsLocationMods}{Platform}\{CategoryId}\{CreatedBy}\{downloadFiles.Name.RemoveInvalidChars()}\";
         }
 
         /// <summary>
@@ -258,7 +258,7 @@ namespace ModioX.Database
         /// <returns> Mods Archive File Path </returns>
         public string ArchiveZipFile(DownloadFiles downloadFiles)
         {
-            return $@"{UserFolders.DownloadsLocationMods}{Platform}\{CategoryId}\{CreatedBy}\{downloadFiles.Name.RemoveInvalidChars()} (#{Id}).zip";
+            return $@"{UserFolders.DownloadsLocationMods}{Platform}\{CategoryId}\{CreatedBy}\{downloadFiles.Name.RemoveInvalidChars()}.zip";
         }
 
         /// <summary>
