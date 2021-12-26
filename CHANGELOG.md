@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## Beta v2.0.2
+- Minor improvements to interface (#52)
+- Added FAQ dialog for using Packages
+
 ## Beta v2.0.1
 A small update to fix some bugs.
 
