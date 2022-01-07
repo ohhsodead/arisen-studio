@@ -3628,7 +3628,7 @@
          "Version":"1.0",
          "GameMode":"SP",
          "ModType":"PKG",
-         "Description":"This is Work in Progress Port of the popular Survival Horror Five Nights at Freddy's, which is a point and click style game. Originally developed by Scott Cawthon for Android, IOS and other devices back in August of 2014. The game was developed using Lua Player for PS3, just like other recent ports Flappy Bird Family and Swing Copters by Sandroron. ",
+         "Description":"This is Work in Progress Port of the popular Survival Horror Five Nights at Freddy's, which is a point and click style game. Originally developed by Scott Cawthon for Android, IOS and other devices back in August of 2014. The game was developed using Lua Player for PS3, just like other recent ports Flappy Bird Family and Swing Copters by Sandroron.",
          "DownloadFiles":[
             {
                "Name":"Five Nights at Freddy's",
@@ -7879,7 +7879,7 @@
          "GameMode":"MP",
          "ModType":"EBOOT/SPRX",
          "Description":"ALL CREDITS TO THE CREATOR: QuantumModding",
-		 \"https://youtube.com/imakemodsforfun\">youtube.com/imakemodsforfun</a>\n\n///////////////////IMPORTANT//////////////////////\nYou cant change your name or have any clantag\n//////////////////////////////////////////////////\n\nCredits To\nQuantumModding\nThraxModz\nMayhemModding\n0x00\nseb5594\nConnerg123",
+		 "<a href=\"https://youtube.com/imakemodsforfun\">youtube.com/imakemodsforfun</a>\n\n///////////////////IMPORTANT//////////////////////\nYou cant change your name or have any clantag\n//////////////////////////////////////////////////\n\nCredits To\nQuantumModding\nThraxModz\nMayhemModding\n0x00\nseb5594\nConnerg123",
          "DownloadFiles":[
             {
                "Name":"Project Nightmare",
