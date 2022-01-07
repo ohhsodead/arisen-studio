@@ -1,5 +1,5 @@
 {
-   "LastUpdated":"2021-05-20T01:13:37.126946+01:00",
+   "LastUpdated":"2022-07-01T01:13:37.126946+01:00",
    "Categories":[
       {
          "Title":"Accounts",
@@ -175,6 +175,20 @@
             "BLAS50613",
             "BLJM67016",
             "BLJM55059"
+         ]
+      },
+      {
+         "Title":"Batman: Arkham Origins",
+         "Id":"bao",
+         "Type":"game",
+         "Regions":[
+            "BLUS31147",
+            "NPUB31261",
+            "BLES01784",
+            "BLES01784",
+            "BLAS50649",
+            "BLJM61096",
+            "NPJB00461"
          ]
       },
       {

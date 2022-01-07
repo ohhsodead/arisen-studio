@@ -1,5 +1,5 @@
 {
-   "LastUpdated":"2021-09-11T01:13:37.126946+01:00",
+   "LastUpdated":"2022-07-01T01:13:37.126946+01:00",
    "Mods":[
       {
          "Platform":"PS3",
@@ -3653,7 +3653,7 @@
          "Version":"1.0",
          "GameMode":"SP",
          "ModType":"PKG",
-         "Description":"This is a PS3Lua Port Flappy Bird (by sandroron), the first known PS3 Game to be developed on the PS3Lua Player. Flappy Bird is a very popular indie game that has been ported to nearly every gaming console ranging from the Atari 2600 to now the PlayStation 3.\n\nhttp://www.psx-place.com/ps3-news/366/flappy-birds-family-v10-by-sandroron.html",
+         "Description":"This is a PS3Lua Port Flappy Bird (by sandroron), the first known PS3 Game to be developed on the PS3Lua Player. Flappy Bird is a very popular indie game that has been ported to nearly every gaming console ranging from the Atari 2600 to now the PlayStation 3.\n\n<a href=\"https://psx-place.com/ps3-news/366/flappy-birds-family-v10-by-sandroron.html\">psx-place.com/ps3-news/366/flappy-birds-family-v10-by-sandroron.html</a>",
          "DownloadFiles":[
             {
                "Name":"Flappy Birds Family",
@@ -4147,7 +4147,7 @@
          "Version":"1.1/3.3",
          "GameMode":"MP",
          "ModType":"EBOOT/SPRX",
-         "Description":"MUST BE ON DEX!!!\nMust use 720p or menu will not display properly!\n\nIf you wish to use the CFG Aimbots from this menu, install the CFG files from to your USB device when prompted.\n\nControls:\nIn Game Controls\nDpad Up + R3: Open the menu\nDpad Up / Down: Scroll Up and Down\nDpad Left: Select Options\nCircle: Exit sub menus and menu\n\nPreGame Controls\nDpad Up + L1: Open\nSquare: Select Options\nL1 + R1 to scroll\nR3: Exit sub menus and menu\n\nIF YOU SHOWCASE THIS MENU YOU MUST USE THE LINK FROM MY YOUTUBE VIDEO!\nDO NOT REMOVE MY AD.FLY LINK PLEASE OR I WILL FILE A COMPLAINT!\n\nAlso don't spam the host options or you will freeze! \n\nChangelog:\n\nv3.3:\n-Autowall Sensitivity adjusts more relevant factors\n-Menu base adjustment changes\n-Added more menu animations\n-Added some helpful messages to print to console where I thought where needed\n-Added kill icons\n-Added custom kill spam. (Edit in CustomKillSpam.cfg file)\n-Fixed more freezing issues.\n\nv3.2:\n-Improved Autowall\n-Fixed scrolling issue where it would take you to top when not of bottom of list\n-Added option to increase options displayed (if scroll bar is not aligned with text, scroll to the bottom of menu)\n-Added Autowall scan\n-Organized some menus\n-Added Load Preferrred Settings to give good setup for new Elite Bot users\n-Added more settings to target scanner\n-Added Elite Bot console for menu to communicate with users\n-Added disabling of some op-tions in server and target info\n-Added aimbot queue\n-Removed multipoint since it caused more harm than good\n\nv3.1:\n-Changed menu scrolling\n-Changed ESP name design\n-Added Target Scanner\n-Reorganized menus\n-Fixed saving bugs\n-Removed CFG DEX Aimbot because it was broken\n-Fixed some anti-aims not working\n\nv3.0:\n-Changed menu design\n-Added Snap Aimbot\n-Added FOV Aimbot\n-Added Save/Load Configs\n-Added Compass\n-Added Custom Keyboard\n-Added RGB Slider\n-Added Zone Edits\n-Aimbot was completely redone\n-Improved No Spread\n-Improved Auto Wall\n-Added Spinbot\n-Added Radar\n-Added Draw Entities\n-Improved FPS\n-Added Riot Shield Methods\n-Removed Fast Restart\n-Optional auto anti-end game\n-Enabled Anti-End Game by Default\n-Fixed Anti Aim Up and Down\n\nv2.5:\n-Changed menu design\n-Reorganized some options\n-Fixed Scroll Rememberance\n-Improved Aimbot Speed\n-Added Name Changer\n-Added Reset name\n-Added Custom say (Currently you can't type more than 16 character)\n-Client Menu only draws players in lobby (doesn't say 'not connected')\n-Slowed Rainbow Mode down\n-Fixed Filled ESP\n\nv2.0:\n-Changed menu design\n-Added much more menu customizations\n-Added Autobone\n-Added 3D ESP\n-Added Invert Targets\n-Added More Snaplin Positions\n-Added Draw Bones\n-Added Draw Crosshair HUD\n-Auto Aim and Auto Shoot no longer prevent you from aiming or shooting\n-Added Different Rainbow ESP\n\nv1.7:\n-Added Prioritize Player in Aimbot Client Menu\n-Added Ignore Player in Aimbot Client Menu\n-Moved Server HUDs again\n-Fixed Auto Aim not unaiming\n-Fixed Level 70\n-Fixed Unlock All (credits to DevOps)\n\nv1.5:\n-Menu base logic completely redone for much more speed\n-Menu scrolling is now infinite scroll\n-Put No Recoil in aimbot menu\n\nv1.1:\n-Aimbot now prefers visible players over autowall players\n-Adjusted server and target HUDS\n-Fixed some settings not turning back on when back in pre-game lobby\n\nv1:\n-Added ESP\n-Added Server Info\n-Added Pregame Menu\n-Added Target Info\n-Updated menu design\n-Added Aimbot Target Tag Selection\n-Fixed player menus freezing\n-Removed Keyboard options as it was freezing\n\nv0.7: \n-CFG Aimbots no longer need to be selected twice to be used\n-Added Rainbow Mode\n-Added Another Autowall Sensitivity Level\n-Made it easier to see what option you are on\n-Changed Title Look\n-Fixed client menu in aimbot options\n-Added force host\n\nv0.5: \n-Initial Release\n\n\nCurrent Bugs:\n-You are not notified about being host if you have a clan tag on\n-Aimbot sometimes locks on to someone on your team (current workaround is enable and disable aimbot for a few times)\n\nIf you wish to help me finish developing this menu, my skype is e7ite-\n\nReport bugs, compliments, suggestions, or anything else on the my channel and I will read it!\n\nCredits:\nDevOps: Helping me get the ESP, server info, anti-aims and Pre-Game Menu spawning!\nhttps://dl.youtube.com/channel/UCALLdIq9hrdtDnI2nJ53GqA\n\nkiwi_modz: Helped with save/load, sdk button monitoring and radar positioning\nwww.twitter.com/kiwi_modz\n\nCMT_Frosty: for helping me begin making this SPRX Menu!\nhttps://dl.youtube.com/channel/UC99razer-uGcAS0CMfkGRbA\n\ngopro_2027: For his source of Paradise MW2! And a little bit of one-on-one help\nhttps://dl.youtube.com/user/gopro2027\n\nNickBeHaxing: For source of Snow Engine MW2!\nhttps://dl.youtube.com/user/iHaCkNiCkE\n\nMilky4444: For source of Snow Engine MW2!\nhttps://dl.youtube.com/user/milky4444/\n\nConnorg123: For source of Insidious MW2!\nSorry man I couldn't find your youtube...\n\nMayhemModding: For most of the CFG Aimbots on this menu and the Anti End Game Address!\nhttps://dl.youtube.com/channel/UC1CbaMIhLtyou_qHMwJ6VXg\n\nAtlas Modding: For helping me get the aimbot working!\nhttps://dl.youtube.com/channel/UCvZAYtP4HLkFc1hln7OZg2Q\n\nShark: Sources\nSC58: Sources\nMatrix: Sources\n0x0000000: Sources\nseb5594: Sources\n\nEnjoy!",
+         "Description":"MUST BE ON DEX!!!\nMust use 720p or menu will not display properly!\n\nIf you wish to use the CFG Aimbots from this menu, install the CFG files from to your USB device when prompted.\n\nControls:\nIn Game Controls\nDpad Up + R3: Open the menu\nDpad Up / Down: Scroll Up and Down\nDpad Left: Select Options\nCircle: Exit sub menus and menu\n\nPreGame Controls\nDpad Up + L1: Open\nSquare: Select Options\nL1 + R1 to scroll\nR3: Exit sub menus and menu\n\nIF YOU SHOWCASE THIS MENU YOU MUST USE THE LINK FROM MY YOUTUBE VIDEO!\nDO NOT REMOVE MY AD.FLY LINK PLEASE OR I WILL FILE A COMPLAINT!\n\nAlso don't spam the host options or you will freeze! \n\nChangelog:\n\nv3.3:\n-Autowall Sensitivity adjusts more relevant factors\n-Menu base adjustment changes\n-Added more menu animations\n-Added some helpful messages to print to console where I thought where needed\n-Added kill icons\n-Added custom kill spam. (Edit in CustomKillSpam.cfg file)\n-Fixed more freezing issues.\n\nv3.2:\n-Improved Autowall\n-Fixed scrolling issue where it would take you to top when not of bottom of list\n-Added option to increase options displayed (if scroll bar is not aligned with text, scroll to the bottom of menu)\n-Added Autowall scan\n-Organized some menus\n-Added Load Preferrred Settings to give good setup for new Elite Bot users\n-Added more settings to target scanner\n-Added Elite Bot console for menu to communicate with users\n-Added disabling of some op-tions in server and target info\n-Added aimbot queue\n-Removed multipoint since it caused more harm than good\n\nv3.1:\n-Changed menu scrolling\n-Changed ESP name design\n-Added Target Scanner\n-Reorganized menus\n-Fixed saving bugs\n-Removed CFG DEX Aimbot because it was broken\n-Fixed some anti-aims not working\n\nv3.0:\n-Changed menu design\n-Added Snap Aimbot\n-Added FOV Aimbot\n-Added Save/Load Configs\n-Added Compass\n-Added Custom Keyboard\n-Added RGB Slider\n-Added Zone Edits\n-Aimbot was completely redone\n-Improved No Spread\n-Improved Auto Wall\n-Added Spinbot\n-Added Radar\n-Added Draw Entities\n-Improved FPS\n-Added Riot Shield Methods\n-Removed Fast Restart\n-Optional auto anti-end game\n-Enabled Anti-End Game by Default\n-Fixed Anti Aim Up and Down\n\nv2.5:\n-Changed menu design\n-Reorganized some options\n-Fixed Scroll Rememberance\n-Improved Aimbot Speed\n-Added Name Changer\n-Added Reset name\n-Added Custom say (Currently you can't type more than 16 character)\n-Client Menu only draws players in lobby (doesn't say 'not connected')\n-Slowed Rainbow Mode down\n-Fixed Filled ESP\n\nv2.0:\n-Changed menu design\n-Added much more menu customizations\n-Added Autobone\n-Added 3D ESP\n-Added Invert Targets\n-Added More Snaplin Positions\n-Added Draw Bones\n-Added Draw Crosshair HUD\n-Auto Aim and Auto Shoot no longer prevent you from aiming or shooting\n-Added Different Rainbow ESP\n\nv1.7:\n-Added Prioritize Player in Aimbot Client Menu\n-Added Ignore Player in Aimbot Client Menu\n-Moved Server HUDs again\n-Fixed Auto Aim not unaiming\n-Fixed Level 70\n-Fixed Unlock All (credits to DevOps)\n\nv1.5:\n-Menu base logic completely redone for much more speed\n-Menu scrolling is now infinite scroll\n-Put No Recoil in aimbot menu\n\nv1.1:\n-Aimbot now prefers visible players over autowall players\n-Adjusted server and target HUDS\n-Fixed some settings not turning back on when back in pre-game lobby\n\nv1:\n-Added ESP\n-Added Server Info\n-Added Pregame Menu\n-Added Target Info\n-Updated menu design\n-Added Aimbot Target Tag Selection\n-Fixed player menus freezing\n-Removed Keyboard options as it was freezing\n\nv0.7: \n-CFG Aimbots no longer need to be selected twice to be used\n-Added Rainbow Mode\n-Added Another Autowall Sensitivity Level\n-Made it easier to see what option you are on\n-Changed Title Look\n-Fixed client menu in aimbot options\n-Added force host\n\nv0.5: \n-Initial Release\n\n\nCurrent Bugs:\n-You are not notified about being host if you have a clan tag on\n-Aimbot sometimes locks on to someone on your team (current workaround is enable and disable aimbot for a few times)\n\nIf you wish to help me finish developing this menu, my skype is e7ite-\n\nReport bugs, compliments, suggestions, or anything else on the my channel and I will read it!\n\nCredits:\nDevOps: Helping me get the ESP, server info, anti-aims and Pre-Game Menu spawning!\nhttps://dl.youtube.com/channel/UCALLdIq9hrdtDnI2nJ53GqA\n\nkiwi_modz: Helped with save/load, sdk button monitoring and radar positioning\n<a href=\"https://twitter.com/kiwi_modz\">twitter.com/kiwi_modz</a>\n\nCMT_Frosty: for helping me begin making this SPRX Menu!\nhttps://dl.youtube.com/channel/UC99razer-uGcAS0CMfkGRbA\n\ngopro_2027: For his source of Paradise MW2! And a little bit of one-on-one help\nhttps://dl.youtube.com/user/gopro2027\n\nNickBeHaxing: For source of Snow Engine MW2!\nhttps://dl.youtube.com/user/iHaCkNiCkE\n\nMilky4444: For source of Snow Engine MW2!\nhttps://dl.youtube.com/user/milky4444/\n\nConnorg123: For source of Insidious MW2!\nSorry man I couldn't find your youtube...\n\nMayhemModding: For most of the CFG Aimbots on this menu and the Anti End Game Address!\nhttps://dl.youtube.com/channel/UC1CbaMIhLtyou_qHMwJ6VXg\n\nAtlas Modding: For helping me get the aimbot working!\nhttps://dl.youtube.com/channel/UCvZAYtP4HLkFc1hln7OZg2Q\n\nShark: Sources\nSC58: Sources\nMatrix: Sources\n0x0000000: Sources\nseb5594: Sources\n\nEnjoy!",
          "DownloadFiles":[
             {
                "Name":"EliteBot Menu v1.1",
@@ -4844,7 +4844,7 @@
          "Version":"1.0",
          "GameMode":"-",
          "ModType":"EDAT",
-         "Description":"Hey guys, title says it all, these are some of my collected & Requested PSN Avatars, i'd say 88% of them I haven't seen released before, as I purchased majority of the new ones, there are currently 184 Avatars, most topics about Avatars are leeched, this release is 100% credits to myself. I will of course be continuing to update this with majority of brand new US PSN Avatars within the US PSN Store :p.\n\nUPDATE: ADDED 25-30 NEW AVATARS ON THE 9/4/2015 - MORE TO COME!\n\nWhoever I have helped with this release, please give me some feed back/vouch here: Stunz's Refferals Thread\n\n100% Credits to Stunz of NextGenUpdate for this PSN Avatars Pack.\nFeedback and a big thanks would be appreciated, I went to a lot of work and cost to bring these to you guys.\nFor purchasing ALL these Avatars and releasing them to the NextGenUpdate for free!\nNOBODY try taking credit for my hard work, if you want to request anymore Premium Avatars\nAdd me on Skype: StunzTehGod.\nOr Private Message me on NextGenUpdate Here: http://www.nextgenupdate.com/forums/members/1093728-stunz.html\nThis Avatars Pack is from the following thread: http://www.nextgenupdate.com/forums/ps3-cheats-customization/801492-stunzs-premium-avatars-pack-9.html?posted=1#post6313092",
+         "Description":"Hey guys, title says it all, these are some of my collected & Requested PSN Avatars, i'd say 88% of them I haven't seen released before, as I purchased majority of the new ones, there are currently 184 Avatars, most topics about Avatars are leeched, this release is 100% credits to myself. I will of course be continuing to update this with majority of brand new US PSN Avatars within the US PSN Store :p.\n\nUPDATE: ADDED 25-30 NEW AVATARS ON THE 9/4/2015 - MORE TO COME!\n\nWhoever I have helped with this release, please give me some feed back/vouch here: Stunz's Refferals Thread\n\n100% Credits to Stunz of NextGenUpdate for this PSN Avatars Pack.\nFeedback and a big thanks would be appreciated, I went to a lot of work and cost to bring these to you guys.\nFor purchasing ALL these Avatars and releasing them to the NextGenUpdate for free!\nNOBODY try taking credit for my hard work, if you want to request anymore Premium Avatars\nAdd me on Skype: StunzTehGod.\nOr Private Message me on NextGenUpdate Here: <a href=\"http://www.nextgenupdate.com/forums/members/1093728-stunz.html\">www.nextgenupdate.com/forums/members/1093728-stunz.html</a>\nThis Avatars Pack is from the following thread: <a href=\"http://www.nextgenupdate.com/forums/ps3-cheats-customization/801492-stunzs-premium-avatars-pack-9.html?posted=1#post6313092\">www.nextgenupdate.com/forums/ps3-cheats-customization/801492-stunzs-premium-avatars-pack-9.html?posted=1#post6313092</a>",
          "DownloadFiles":[
             {
                "Name":"PSN Avatars Pack (Old Unreleased)",
@@ -5028,7 +5028,7 @@
          "Version":"1.0",
          "GameMode":"-",
          "ModType":"EDAT",
-         "Description":"Hey guys, title says it all, these are some of my collected & Requested PSN Avatars, i'd say 88% of them I haven't seen released before, as I purchased majority of the new ones, there are currently 184 Avatars, most topics about Avatars are leeched, this release is 100% credits to myself. I will of course be continuing to update this with majority of brand new US PSN Avatars within the US PSN Store :p.\n\nUPDATE: ADDED 25-30 NEW AVATARS ON THE 9/4/2015 - MORE TO COME!\n\nWhoever I have helped with this release, please give me some feed back/vouch here: Stunz's Refferals Thread\n\n100% Credits to Stunz of NextGenUpdate for this PSN Avatars Pack.\nFeedback and a big thanks would be appreciated, I went to a lot of work and cost to bring these to you guys.\nFor purchasing ALL these Avatars and releasing them to the NextGenUpdate for free!\nNOBODY try taking credit for my hard work, if you want to request anymore Premium Avatars\nAdd me on Skype: StunzTehGod.\nOr Private Message me on NextGenUpdate Here: http://www.nextgenupdate.com/forums/members/1093728-stunz.html\nThis Avatars Pack is from the following thread: http://www.nextgenupdate.com/forums/ps3-cheats-customization/801492-stunzs-premium-avatars-pack-9.html?posted=1#post6313092",
+         "Description":"Hey guys, title says it all, these are some of my collected & Requested PSN Avatars, i'd say 88% of them I haven't seen released before, as I purchased majority of the new ones, there are currently 184 Avatars, most topics about Avatars are leeched, this release is 100% credits to myself. I will of course be continuing to update this with majority of brand new US PSN Avatars within the US PSN Store :p.\n\nUPDATE: ADDED 25-30 NEW AVATARS ON THE 9/4/2015 - MORE TO COME!\n\nWhoever I have helped with this release, please give me some feed back/vouch here: Stunz's Refferals Thread\n\n100% Credits to Stunz of NextGenUpdate for this PSN Avatars Pack.\nFeedback and a big thanks would be appreciated, I went to a lot of work and cost to bring these to you guys.\nFor purchasing ALL these Avatars and releasing them to the NextGenUpdate for free!\nNOBODY try taking credit for my hard work, if you want to request anymore Premium Avatars\nAdd me on Skype: StunzTehGod.\nOr Private Message me on NextGenUpdate Here: <a href=\"http://www.nextgenupdate.com/forums/members/1093728-stunz.html\">www.nextgenupdate.com/forums/members/1093728-stunz.html</a>\nThis Avatars Pack is from the following thread: <a href=\"http://www.nextgenupdate.com/forums/ps3-cheats-customization/801492-stunzs-premium-avatars-pack-9.html?posted=1#post6313092\">www.nextgenupdate.com/forums/ps3-cheats-customization/801492-stunzs-premium-avatars-pack-9.html?posted=1#post6313092</a>",
          "DownloadFiles":[
             {
                "Name":"PSN Avatars Pack (New Unreleased)",
@@ -7878,7 +7878,8 @@
          "Version":"1.0",
          "GameMode":"MP",
          "ModType":"EBOOT/SPRX",
-         "Description":"ALL CREDITS TO THE CREATOR: QuantumModding\nwww.youtube.com/imakemodsforfun\n\n///////////////////IMPORTANT//////////////////////\nYou cant change your name or have any clantag\n//////////////////////////////////////////////////\n\nCredits To\nQuantumModding\nThraxModz\nMayhemModding\n0x00\nseb5594\nConnerg123",
+         "Description":"ALL CREDITS TO THE CREATOR: QuantumModding",
+		 \"https://youtube.com/imakemodsforfun\">youtube.com/imakemodsforfun</a>\n\n///////////////////IMPORTANT//////////////////////\nYou cant change your name or have any clantag\n//////////////////////////////////////////////////\n\nCredits To\nQuantumModding\nThraxModz\nMayhemModding\n0x00\nseb5594\nConnerg123",
          "DownloadFiles":[
             {
                "Name":"Project Nightmare",
@@ -8079,7 +8080,7 @@
          "Version":"2.0.0",
          "GameMode":"MP",
          "ModType":"EBOOT/SPRX",
-         "Description":"-Mystery Cheats v2-\nCreated By: SouthSideModder\n\nDPAD_UP + R3 = Open\nDPAD_UP / DPAD_DOWN = Scroll\nDPAD_LEFT = Select\nCircle = Back / Close\n\nPre-Game:\nDPAD_LEFT + R1 = Open\nL1 / R1 = Scroll\nSquare = Select\nR3 = Back / Close\n\nAbout The Menu:\n- Very Stable\n- Clean Design\n- Very Customizable\n- Aimbot & ESP\n- Working Account Menu\n- Client Kick Menu\n- 100 plus Functions / Options To Choose From\n* Best Free Off Host Mw2 Menu Out! *\n\nChange Log:\n- DPAD_UP + R3 To Open (Intead Of R3)\n- Works For CEX User's\nPre-Game Menu:\n- Pre-Set Names\n- Pre-Set Custom Classes\n- Account Menu\n- Infections\nAimbot Menu:\n- Added Auto Wall\n- Added Auto Aim\n- Tag Selector (Took Out Submenu)\nESP Menu:\n- Added Visible Check\n- Added Enemy Visible\n- Fixed ESP Snaplines\n- Added Target Color Selector\n- Added Ally Color Selector\n- Added Visible Color Selector\nModifications:\n- Constant UAV (Stay's On Throughout Matches)\n- Super Steady Aim Works With All Perks\n- Added Real Pro Mod\n- Added Force Host Selector (Regular or FFA)\n- Added FOV Selector\n- Added Weapon Axis Editor\n- Say Menu\nHUD Menu:\n- Added Health bar\n- Added Server Info\n- Added Target Info\n- Added Client List\n- Crosshair\nMenu Setting's\n- Added Info Text Toggle\nHost Menu:\n- 15 Overall Host Options\n- Game Modes\n- Map Menu\n- Anti CFG\n- Anti End Game\n- All Client Kick Menu\n\nCredit's:\nBig thank's to my nigga oStankyModz for actually taking the time out and to teach / show me how to code ESP & Aimbot. I truly don't think I would have released Mystery Cheats if it wasn't for him!\n\noStankyModz Channel:\nwww.youtube.com/user/StankyModzHD",
+         "Description":"-Mystery Cheats v2-\nCreated By: SouthSideModder\n\nDPAD_UP + R3 = Open\nDPAD_UP / DPAD_DOWN = Scroll\nDPAD_LEFT = Select\nCircle = Back / Close\n\nPre-Game:\nDPAD_LEFT + R1 = Open\nL1 / R1 = Scroll\nSquare = Select\nR3 = Back / Close\n\nAbout The Menu:\n- Very Stable\n- Clean Design\n- Very Customizable\n- Aimbot & ESP\n- Working Account Menu\n- Client Kick Menu\n- 100 plus Functions / Options To Choose From\n* Best Free Off Host Mw2 Menu Out! *\n\nChange Log:\n- DPAD_UP + R3 To Open (Intead Of R3)\n- Works For CEX User's\nPre-Game Menu:\n- Pre-Set Names\n- Pre-Set Custom Classes\n- Account Menu\n- Infections\nAimbot Menu:\n- Added Auto Wall\n- Added Auto Aim\n- Tag Selector (Took Out Submenu)\nESP Menu:\n- Added Visible Check\n- Added Enemy Visible\n- Fixed ESP Snaplines\n- Added Target Color Selector\n- Added Ally Color Selector\n- Added Visible Color Selector\nModifications:\n- Constant UAV (Stay's On Throughout Matches)\n- Super Steady Aim Works With All Perks\n- Added Real Pro Mod\n- Added Force Host Selector (Regular or FFA)\n- Added FOV Selector\n- Added Weapon Axis Editor\n- Say Menu\nHUD Menu:\n- Added Health bar\n- Added Server Info\n- Added Target Info\n- Added Client List\n- Crosshair\nMenu Setting's\n- Added Info Text Toggle\nHost Menu:\n- 15 Overall Host Options\n- Game Modes\n- Map Menu\n- Anti CFG\n- Anti End Game\n- All Client Kick Menu\n\nCredit's:\nBig thank's to my nigga oStankyModz for actually taking the time out and to teach / show me how to code ESP & Aimbot. I truly don't think I would have released Mystery Cheats if it wasn't for him!\n\noStankyModz Channel:\n<a href=\"https://youtube.com/user/StankyModzHD\">youtube.com/user/StankyModzHD</a>",
          "DownloadFiles":[
             {
                "Name":"Mystery Cheats",
@@ -16048,6 +16049,92 @@
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
                   "/dev_hdd0/tmp/T6EndGameBlocker.sprx"
+               ]
+            }
+         ]
+      },
+	  {
+         "Platform":"PS3",
+         "Id":371,
+         "CategoryId":"th",
+         "Name":"XXXTENTACION Theme",
+         "FirmwareType":"CEX/DEX/HEN",
+         "Region":"n/a",
+         "CreatedBy":"Trxshy",
+         "SubmittedBy":"Trxshy",
+         "Version":"1.0",
+         "GameMode":"-",
+         "ModType":"P3T",
+         "Description":"",
+         "DownloadFiles":[
+            {
+               "Name":"XXXTENTACION Theme",
+               "Region":"n/a",
+               "Version":"1.0",
+               "Url":"https://dl.dropbox.com/s/8o300jkgdu6g0f1/XXXTENTACION%20Theme.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/theme/xxxtentacion theme.P3T"
+               ]
+            }
+         ]
+      },
+	  {
+         "Platform":"PS3",
+         "Id":372,
+         "CategoryId":"gta5",
+         "Name":"Ultimate Teleport",
+         "FirmwareType":"CEX/HEN",
+         "Region":"BLES01807",
+         "CreatedBy":"Tgsaudoiz && NotYourDope",
+         "SubmittedBy":"Matheiu",
+         "Version":"3.8.6",
+         "GameMode":"SP",
+         "ModType":"SCRIPT",
+         "Description":"An all purpose mod menu for PS3, featuring many fun and unique options\n\nOpen with: R1 + Circle\nStackSize: 1820\n\nCredits:\nDeveloper: Tgsaudoiz\nSemjases Dev\nSalfety Dev\nNotYourDope\nRAGEzMODZ: Tester\ngopro_2027\ntherouletteboi\nAll Tgsaudoiz's Friends",
+         "DownloadFiles":[
+            {
+               "Name":"Ultimate Teleport",
+               "Region":"BLES01807",
+               "Version":"3.8.6",
+               "Url":"https://dl.dropbox.com/s/omevazxspxb2igd/Ultimate%20Teleport%20v3.8.6%20%28BLES%29.zip?raw=true",
+               "InstallPaths":[
+                  "Tgsaudoiz.csc"
+               ]
+            }
+         ]
+      },
+	  {
+         "Platform":"PS3",
+         "Id":373,
+         "CategoryId":"codmw1",
+         "Name":"Retribution Menu (Non Host)",
+         "FirmwareType":"DEX/CEX/HEN",
+         "Region":"BLES/BLUS",
+         "CreatedBy":"Apo-_-Karma",
+         "SubmittedBy":"ohhsodead",
+         "Version":"2.0",
+         "GameMode":"MP",
+         "ModType":"SPRX",
+         "Description":"No recoil\n-Wallhack\n-Aimbot",
+         "DownloadFiles":[
+            {
+               "Name":"Retribution Menu (BLES)",
+               "Region":"BLES00156",
+               "Version":"2.0",
+               "Url":"https://dl.dropbox.com/s/y97a9vl8xi0bd2o/Retribution%20v2%20%28BLES%29.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
+                  "/dev_hdd0/tmp/Retribution.sprx"
+               ]
+            },
+			{
+               "Name":"Retribution Menu (BLUS30072)",
+               "Region":"BLUS30072",
+               "Version":"2.0",
+               "Url":"https://dl.dropbox.com/s/wyllicbl9jpxdbl/Retribution%20v2%20%28BLUS%29.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
+                  "/dev_hdd0/tmp/Retribution.sprx"
                ]
             }
          ]
