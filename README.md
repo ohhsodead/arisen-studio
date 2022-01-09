@@ -9,7 +9,7 @@ An open source desktop application designed to easily browse through a regularly
 
 ![Mods Page](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/ModsPage.png?raw=true)
 
-**Comments, ideas, suggestions?** Come chat with us in the [Discord Server](https://discord.gg/FTCS3Xu)!
+**Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/FTCS3Xu)!
 
 Please give this project a ⭐ if you find it useful.
 
@@ -63,7 +63,7 @@ You're also welcome to submit any pull requests with fixes and suggestions, like
 
 ## Requesting Mods
 
-I know that not all mods aren't on our database, but if you open an issue with the details then we can get them added for you!
+I know that not all mods aren't on our database, but if you open an issue with the details then we can get them added for you! You can also use this Google Forms
 
 ## Credits & Libraries
 
