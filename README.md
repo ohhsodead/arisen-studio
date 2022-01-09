@@ -9,7 +9,7 @@ An open source desktop application designed to easily browse through a regularly
 
 ![Mods Page](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/ModsPage.png?raw=true)
 
-**Comments, ideas, suggestions?** Come chat with us in the [Discord Server](https://discord.gg/FTCS3Xu)!
+**Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/FTCS3Xu)!
 
 Please give this project a ⭐ if you find it useful.
 
@@ -22,14 +22,24 @@ Please give this project a ⭐ if you find it useful.
 * Filter by console type, mod type and region
 * Download the mods to your computer
 * Install and uninstall mods directly to your console
-* Automatically detect and remember game regions
 * Manage your downloads and installed mods
+* File Manager with local and console listings
+
+PlayStation 3 Features:
+* Automatically detect and remember game regions
 * Backup and restore original game files
-* Create and add mods to your own lists
-* Includes a built-in Game Updates Finder
-* Includes a built-in File Manager
-* Includes a built-in Package Manager
-* Includes webMAN/XBDM commands (Reboot, Shutdown, etc.)
+* Download official game updates
+* Browse/mount/unmount games
+* Package Manager
+* Console Manager (Similar to CCAPI)
+* webMAN commands (Reboot, Show Version, etc.)
+
+Xbox 360 Features:
+* Launch games using the XEX file
+* Edit and resign game saves
+* Edit the launch file
+* Edit the launch plugins
+* XBDM commands (Reboot, Shutdown, etc.)
 
 ## Requirements
 
@@ -53,7 +63,7 @@ You're also welcome to submit any pull requests with fixes and suggestions, like
 
 ## Requesting Mods
 
-I know that not all mods aren't on our database, but if you open an issue with the details then we can get them added for you!
+I know that not all mods aren't on our database, but if you open an issue with the details then we can get them added for you! You can also use this Google Forms
 
 ## Credits & Libraries
 
