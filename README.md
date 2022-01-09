@@ -25,7 +25,8 @@ Please give this project a ⭐ if you find it useful.
 * Manage your downloads and installed mods
 * File Manager with local and console listings
 
-PlayStation 3 Features:
+### PlayStation 3
+
 * Automatically detect and remember game regions
 * Backup and restore original game files
 * Download official game updates
@@ -34,7 +35,8 @@ PlayStation 3 Features:
 * Console Manager (Similar to CCAPI)
 * webMAN commands (Reboot, Show Version, etc.)
 
-Xbox 360 Features:
+### Xbox 360
+
 * Launch games using the XEX file
 * Edit and resign game saves
 * Edit the launch file
