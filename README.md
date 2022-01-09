@@ -22,14 +22,24 @@ Please give this project a ⭐ if you find it useful.
 * Filter by console type, mod type and region
 * Download the mods to your computer
 * Install and uninstall mods directly to your console
-* Automatically detect and remember game regions
 * Manage your downloads and installed mods
+* File Manager with local and console listings
+
+PlayStation 3 Features:
+* Automatically detect and remember game regions
 * Backup and restore original game files
-* Create and add mods to your own lists
-* Includes a built-in Game Updates Finder
-* Includes a built-in File Manager
-* Includes a built-in Package Manager
-* Includes webMAN/XBDM commands (Reboot, Shutdown, etc.)
+* Download official game updates
+* Browse/mount/unmount games
+* Package Manager
+* Console Manager (Similar to CCAPI)
+* webMAN commands (Reboot, Show Version, etc.)
+
+Xbox 360 Features:
+* Launch games using the XEX file
+* Edit and resign game saves
+* Edit the launch file
+* Edit the launch plugins
+* XBDM commands (Reboot, Shutdown, etc.)
 
 ## Requirements
 
