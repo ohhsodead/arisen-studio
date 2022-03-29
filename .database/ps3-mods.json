@@ -1,5 +1,5 @@
 {
-   "LastUpdated":"2022-07-01T01:13:37.126946+01:00",
+   "LastUpdated":"2022-02-23T01:13:37.126946+01:00",
    "Mods":[
       {
          "Platform":"PS3",
@@ -4389,7 +4389,7 @@
                "Name":"Purple Theme (XMB, Icons & Wave)",
                "Region":"n/a",
                "Version":"2.0",
-               "Url":"https://dl.dropbox.com/s/cxtvl7pdp3mnoqn/Purple%20XMB%20v1.zip?raw=true",
+               "Url":"https://dl.dropbox.com/s/ffc2htm1m7qj0xx/Purple%20XMB%20v2.zip?raw=true",
                "InstallPaths":[
                   "/dev_rebug/vsh/resource/auth_plugin.rco",
                   "/dev_rebug/vsh/resource/category_setting_plugin.rco",
