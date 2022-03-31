@@ -24,20 +24,21 @@ Please give this project a ⭐ if you find it useful.
 * Install and uninstall mods directly to your console
 * Manage your downloads and installed mods
 * File Manager with local and console listings
+* Discord rich presence to show game playing
 
 ### PlayStation 3
 * Automatically detect and remember game regions
 * Backup and restore original game files
 * Download official game updates
 * Browse/mount/unmount games
-* Package Files Manager
-* Console Manager (Set IDPS/PSID, LEDs, etc.)
+* Package File Manager
+* Console Manager (IDPS/PSID, LEDs, etc.)
 * webMAN commands (Reboot, Show Version, etc.)
 
 ### Xbox 360
 * Launch games using XEX files
 * Resign game saves to profiles
-* Backup and edit the launch file
+* Backup and edit the launch.ini file
 * XBDM commands (Reboot, Shutdown, etc.)
 
 ## Requirements
