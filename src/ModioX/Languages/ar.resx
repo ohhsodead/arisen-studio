@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add New Console Profile" xml:space="preserve">
+    <value>Add New Console Profile</value>
+  </data>
+  <data name="Add Your Games" xml:space="preserve">
+    <value>Add Your Games</value>
+  </data>
+  <data name="ANNOUNCEMENTS" xml:space="preserve">
+    <value>ANNOUNCEMENTS</value>
+  </data>
+  <data name="CHANGE LOG" xml:space="preserve">
+    <value>CHANGE LOG</value>
+  </data>
+  <data name="Click 'Add New Console' to create a profile" xml:space="preserve">
+    <value>Click 'Add New Console' to create a profile</value>
+  </data>
+  <data name="CONNECT" xml:space="preserve">
+    <value>CONNECT</value>
+  </data>
+  <data name="Connect to console" xml:space="preserve">
+    <value>Connect to console</value>
+  </data>
+  <data name="Connecting to" xml:space="preserve">
+    <value>Connecting to</value>
+  </data>
+  <data name="Connection Failed" xml:space="preserve">
+    <value>Connection Failed</value>
+  </data>
+  <data name="CONTRIBUTORS" xml:space="preserve">
+    <value>CONTRIBUTORS</value>
+  </data>
+  <data name="CREDITS" xml:space="preserve">
+    <value>CREDITS</value>
+  </data>
+  <data name="DASHBOARD" xml:space="preserve">
+    <value>DASHBOARD</value>
+  </data>
+  <data name="Default Game Regions" xml:space="preserve">
+    <value>Default Game Regions</value>
+  </data>
+  <data name="Directory can't find" xml:space="preserve">
+    <value>Can't Find Directory</value>
+  </data>
+  <data name="Directory does not exist" xml:space="preserve">
+    <value>This directory doesn't exist on your computer</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="Disconnect from console" xml:space="preserve">
+    <value>Disconnect from console</value>
+  </data>
+  <data name="Disconnecting from console" xml:space="preserve">
+    <value>Disconnecting from console</value>
+  </data>
+  <data name="Downloaded" xml:space="preserve">
+    <value>Downloaded</value>
+  </data>
+  <data name="Downloading..." xml:space="preserve">
+    <value>Downloading...</value>
+  </data>
+  <data name="DOWNLOADS" xml:space="preserve">
+    <value>DOWNLOADS</value>
+  </data>
+  <data name="Downloads Location" xml:space="preserve">
+    <value>Downloads Location</value>
+  </data>
+  <data name="Edit Console Profiles" xml:space="preserve">
+    <value>Edit Console Profiles</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Favorite" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="Fetching drives" xml:space="preserve">
+    <value>Fetching drives</value>
+  </data>
+  <data name="Fetching root directories" xml:space="preserve">
+    <value>Fetching root directories</value>
+  </data>
+  <data name="FILE MANAGER" xml:space="preserve">
+    <value>FILE MANAGER</value>
+  </data>
+  <data name="GAME MODS" xml:space="preserve">
+    <value>GAME MODS</value>
+  </data>
+  <data name="GAME SAVES" xml:space="preserve">
+    <value>GAME SAVES</value>
+  </data>
+  <data name="Game Saves Total" xml:space="preserve">
+    <value>Game Saves Total</value>
+  </data>
+  <data name="GAMES" xml:space="preserve">
+    <value>GAMES</value>
+  </data>
+  <data name="HELP" xml:space="preserve">
+    <value>HELP</value>
+  </data>
+  <data name="Hide Favorites" xml:space="preserve">
+    <value>Hide Favorites</value>
+  </data>
+  <data name="HOMEBREW" xml:space="preserve">
+    <value>HOMEBREW</value>
+  </data>
+  <data name="Initialized" xml:space="preserve">
+    <value>Initialized</value>
+  </data>
+  <data name="Initializing the application database..." xml:space="preserve">
+    <value>Initializing the application database...</value>
+  </data>
+  <data name="Install File" xml:space="preserve">
+    <value>Install File</value>
+  </data>
+  <data name="Install Files" xml:space="preserve">
+    <value>Install Files</value>
+  </data>
+  <data name="Installed" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="INSTALLED MODS" xml:space="preserve">
+    <value>INSTALLED MODS</value>
+  </data>
+  <data name="Installing..." xml:space="preserve">
+    <value>Installing...</value>
+  </data>
+  <data name="Introduction Details" xml:space="preserve">
+    <value>See Introduction Details</value>
+  </data>
+  <data name="Language Not Supported" xml:space="preserve">
+    <value>Language Not Supported</value>
+  </data>
+  <data name="Language not supported, can help" xml:space="preserve">
+    <value>Sorry, but this language is currently not supported yet. If you would like to help us add this language, please join our Discord Server and let us know!</value>
+  </data>
+  <data name="Last Updated" xml:space="preserve">
+    <value>Last Updated</value>
+  </data>
+  <data name="LATEST NEWS" xml:space="preserve">
+    <value>LATEST NEWS</value>
+  </data>
+  <data name="LET'S GET YOU SETUP" xml:space="preserve">
+    <value>LET'S GET YOU SETUP</value>
+  </data>
+  <data name="Make sure Neighborhood is installed on your computer" xml:space="preserve">
+    <value>Make sure Neighborhood is installed on your computer</value>
+  </data>
+  <data name="MODS" xml:space="preserve">
+    <value>MODS</value>
+  </data>
+  <data name="Mods Total" xml:space="preserve">
+    <value>Mods Total</value>
+  </data>
+  <data name="NO ANNOUNCEMENTS" xml:space="preserve">
+    <value>NO ANNOUNCEMENTS</value>
+  </data>
+  <data name="No Console Connected" xml:space="preserve">
+    <value>No Console Connected</value>
+  </data>
+  <data name="NO CONSOLE PROFILES" xml:space="preserve">
+    <value>NO CONSOLE PROFILES</value>
+  </data>
+  <data name="No Internet connection detected" xml:space="preserve">
+    <value>No Internet connection detected.</value>
+  </data>
+  <data name="No Internet Detected" xml:space="preserve">
+    <value>No Internet Detected</value>
+  </data>
+  <data name="No news is good news!" xml:space="preserve">
+    <value>No news is good news!</value>
+  </data>
+  <data name="Not Connected" xml:space="preserve">
+    <value>Not Connected</value>
+  </data>
+  <data name="Not Installed" xml:space="preserve">
+    <value>Not Installed</value>
+  </data>
+  <data name="OPTIONS" xml:space="preserve">
+    <value>OPTIONS</value>
+  </data>
+  <data name="PACKAGES" xml:space="preserve">
+    <value>PACKAGES</value>
+  </data>
+  <data name="Packages Total" xml:space="preserve">
+    <value>Packages Total</value>
+  </data>
+  <data name="PLUGINS" xml:space="preserve">
+    <value>PLUGINS</value>
+  </data>
+  <data name="Plugins Total" xml:space="preserve">
+    <value>Plugins Total</value>
+  </data>
+  <data name="Ready to connect to console" xml:space="preserve">
+    <value>Ready to connect to console</value>
+  </data>
+  <data name="RESOURCES" xml:space="preserve">
+    <value>RESOURCES</value>
+  </data>
+  <data name="Restart Required" xml:space="preserve">
+    <value>Restart Required</value>
+  </data>
+  <data name="Scan For Xbox Consoles" xml:space="preserve">
+    <value>Scan For Xbox Consoles</value>
+  </data>
+  <data name="Set Downloads Location" xml:space="preserve">
+    <value>Set Downloads Location</value>
+  </data>
+  <data name="SETTINGS" xml:space="preserve">
+    <value>SETTINGS</value>
+  </data>
+  <data name="Show Favorites" xml:space="preserve">
+    <value>Show Favorites</value>
+  </data>
+  <data name="SPECIAL THANKS" xml:space="preserve">
+    <value>SPECIAL THANKS</value>
+  </data>
+  <data name="Startup Library" xml:space="preserve">
+    <value>Startup Library</value>
+  </data>
+  <data name="STATISTICS" xml:space="preserve">
+    <value>STATISTICS</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="Successfully connected to console" xml:space="preserve">
+    <value>Successfully connected to console</value>
+  </data>
+  <data name="Successfully disconnected from console" xml:space="preserve">
+    <value>Successfully disconnected from console</value>
+  </data>
+  <data name="Successfully fetched root directories" xml:space="preserve">
+    <value>Successfully fetched root directories</value>
+  </data>
+  <data name="Successfully loaded the database - Finalizing application data..." xml:space="preserve">
+    <value>Successfully loaded the database - Finalizing application data...</value>
+  </data>
+  <data name="TOOLS" xml:space="preserve">
+    <value>TOOLS</value>
+  </data>
+  <data name="Unable to connect to" xml:space="preserve">
+    <value>Unable to connect to</value>
+  </data>
+  <data name="Unfavorite" xml:space="preserve">
+    <value>Unfavorite</value>
+  </data>
+  <data name="Uninstall File" xml:space="preserve">
+    <value>Uninstall File</value>
+  </data>
+  <data name="Uninstall Files" xml:space="preserve">
+    <value>Uninstall Files</value>
+  </data>
+  <data name="Uninstalled" xml:space="preserve">
+    <value>Uninstalled</value>
+  </data>
+  <data name="Uninstalling..." xml:space="preserve">
+    <value>Uninstalling...</value>
+  </data>
+  <data name="You are now connected to" xml:space="preserve">
+    <value>You are now connected to</value>
+  </data>
+  <data name="You Have No Lists" xml:space="preserve">
+    <value>You Have No Lists</value>
+  </data>
+  <data name="You must be connected to the Internet to use this application." xml:space="preserve">
+    <value>You must be connected to the Internet to use this application.</value>
+  </data>
+  <data name="You must be connected to your console to use this feature." xml:space="preserve">
+    <value>You must be connected to your console to use this feature.</value>
+  </data>
+  <data name="You must restart the application for this change to take effect. Would you like to restart now?" xml:space="preserve">
+    <value>You must restart the application for this change to take effect. Would you like to restart now?</value>
+  </data>
+  <data name="Your Lists" xml:space="preserve">
+    <value>Your Lists</value>
+  </data>
+</root>
