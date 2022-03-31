@@ -117,32 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add New Console Profile" xml:space="preserve">
-    <value>Add New Console Profile</value>
-  </data>
-  <data name="Add Your Games" xml:space="preserve">
-    <value>Add Your Games</value>
-  </data>
   <data name="ANNOUNCEMENTS" xml:space="preserve">
     <value>ANNOUNCEMENTS</value>
   </data>
-  <data name="CHANGE LOG" xml:space="preserve">
+  <data name="CHANGE_LOG" xml:space="preserve">
     <value>CHANGE LOG</value>
   </data>
-  <data name="Click 'Add New Console' to create a profile" xml:space="preserve">
-    <value>Click 'Add New Console' to create a profile</value>
+  <data name="CONFIRM_DELETE" xml:space="preserve">
+    <value>Confirm Delete</value>
+  </data>
+  <data name="CONFIRM_DELETE_ALL_DOWNLOADS" xml:space="preserve">
+    <value>Do you really want to delete all of your downloads?</value>
+  </data>
+  <data name="CONFIRM_DELETE_ALL_TITLE" xml:space="preserve">
+    <value>Confirm Delete All</value>
+  </data>
+  <data name="CONFIRM_DELETE_ITEM_DOWNLOADS" xml:space="preserve">
+    <value>Do you really want to delete the selected item from your downloads?</value>
   </data>
   <data name="CONNECT" xml:space="preserve">
     <value>CONNECT</value>
   </data>
-  <data name="Connect to console" xml:space="preserve">
-    <value>Connect to console</value>
-  </data>
-  <data name="Connecting to" xml:space="preserve">
+  <data name="CONNECTING_TO" xml:space="preserve">
     <value>Connecting to</value>
   </data>
-  <data name="Connection Failed" xml:space="preserve">
+  <data name="CONNECTION_FAILED" xml:space="preserve">
     <value>Connection Failed</value>
+  </data>
+  <data name="CONNECT_TO_CONSOLE" xml:space="preserve">
+    <value>Connect to console</value>
+  </data>
+  <data name="CONSOLE_PROFILES_EDIT" xml:space="preserve">
+    <value>Edit Console Profiles</value>
+  </data>
+  <data name="CONSOLE_PROFILE_ADD" xml:space="preserve">
+    <value>Add Console Profile</value>
+  </data>
+  <data name="CONSOLE_PROFILE_ADD_INSTRUCTION" xml:space="preserve">
+    <value>Click 'Add New Console' to create a profile</value>
   </data>
   <data name="CONTRIBUTORS" xml:space="preserve">
     <value>CONTRIBUTORS</value>
@@ -153,146 +165,176 @@
   <data name="DASHBOARD" xml:space="preserve">
     <value>DASHBOARD</value>
   </data>
-  <data name="Default Game Regions" xml:space="preserve">
+  <data name="DEFAULT_GAME_REGIONS" xml:space="preserve">
     <value>Default Game Regions</value>
   </data>
-  <data name="Directory can't find" xml:space="preserve">
-    <value>Can't Find Directory</value>
+  <data name="DIRECTORY_NOT_EXIST" xml:space="preserve">
+    <value>This directory doesn't exist on your computer.</value>
   </data>
-  <data name="Directory does not exist" xml:space="preserve">
-    <value>This directory doesn't exist on your computer</value>
+  <data name="DIRECTORY_NOT_FOUND" xml:space="preserve">
+    <value>Directory Not Found</value>
   </data>
-  <data name="Disconnect" xml:space="preserve">
-    <value>Disconnect</value>
-  </data>
-  <data name="Disconnect from console" xml:space="preserve">
-    <value>Disconnect from console</value>
-  </data>
-  <data name="Disconnecting from console" xml:space="preserve">
+  <data name="DISCONNECTING_FROM_CONSOLE" xml:space="preserve">
     <value>Disconnecting from console</value>
   </data>
-  <data name="Downloaded" xml:space="preserve">
+  <data name="DISCONNECT_FROM_CONSOLE" xml:space="preserve">
+    <value>Disconnect from console</value>
+  </data>
+  <data name="DISCONNECT_LOWERCASE" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="DOWNLOADED" xml:space="preserve">
     <value>Downloaded</value>
   </data>
-  <data name="Downloading..." xml:space="preserve">
+  <data name="DOWNLOADING" xml:space="preserve">
     <value>Downloading...</value>
   </data>
   <data name="DOWNLOADS" xml:space="preserve">
     <value>DOWNLOADS</value>
   </data>
-  <data name="Downloads Location" xml:space="preserve">
+  <data name="DOWNLOADS_LOCATION" xml:space="preserve">
     <value>Downloads Location</value>
   </data>
-  <data name="Edit Console Profiles" xml:space="preserve">
-    <value>Edit Console Profiles</value>
-  </data>
-  <data name="Error" xml:space="preserve">
+  <data name="ERROR" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="Favorite" xml:space="preserve">
+  <data name="FAVORITES_ADD" xml:space="preserve">
     <value>Favorite</value>
   </data>
-  <data name="Fetching drives" xml:space="preserve">
+  <data name="FAVORITES_HIDE" xml:space="preserve">
+    <value>Hide Favorites</value>
+  </data>
+  <data name="FAVORITES_SHOW" xml:space="preserve">
+    <value>Show Favorites</value>
+  </data>
+  <data name="FETCHING_DRIVES" xml:space="preserve">
     <value>Fetching drives</value>
   </data>
-  <data name="Fetching root directories" xml:space="preserve">
+  <data name="FETCHING_ROOT_DIRECTORIES" xml:space="preserve">
     <value>Fetching root directories</value>
   </data>
-  <data name="FILE MANAGER" xml:space="preserve">
+  <data name="FILE" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="FILES" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="FILES_NOT_INSTALLED_TO_CONNECTED_CONSOLE" xml:space="preserve">
+    <value>These files weren't installed to the connected console.</value>
+  </data>
+  <data name="FILE_MANAGER" xml:space="preserve">
     <value>FILE MANAGER</value>
   </data>
-  <data name="GAME MODS" xml:space="preserve">
-    <value>GAME MODS</value>
-  </data>
-  <data name="GAME SAVES" xml:space="preserve">
-    <value>GAME SAVES</value>
-  </data>
-  <data name="Game Saves Total" xml:space="preserve">
-    <value>Game Saves Total</value>
+  <data name="FILE_MISSING" xml:space="preserve">
+    <value>File Missing</value>
   </data>
   <data name="GAMES" xml:space="preserve">
     <value>GAMES</value>
   </data>
+  <data name="GAME_CHEATS" xml:space="preserve">
+    <value>GAME CHEATS</value>
+  </data>
+  <data name="GAME_MODS" xml:space="preserve">
+    <value>GAME MODS</value>
+  </data>
+  <data name="GAME_SAVES" xml:space="preserve">
+    <value>GAME SAVES</value>
+  </data>
   <data name="HELP" xml:space="preserve">
     <value>HELP</value>
-  </data>
-  <data name="Hide Favorites" xml:space="preserve">
-    <value>Hide Favorites</value>
   </data>
   <data name="HOMEBREW" xml:space="preserve">
     <value>HOMEBREW</value>
   </data>
-  <data name="Initialized" xml:space="preserve">
+  <data name="INITIALIZED" xml:space="preserve">
     <value>Initialized</value>
   </data>
-  <data name="Initializing the application database..." xml:space="preserve">
-    <value>Initializing the application database...</value>
+  <data name="INITIALIZING_APP_DB" xml:space="preserve">
+    <value>Initializing the application database</value>
   </data>
-  <data name="Install File" xml:space="preserve">
-    <value>Install File</value>
-  </data>
-  <data name="Install Files" xml:space="preserve">
-    <value>Install Files</value>
-  </data>
-  <data name="Installed" xml:space="preserve">
+  <data name="INSTALLED" xml:space="preserve">
     <value>Installed</value>
   </data>
-  <data name="INSTALLED MODS" xml:space="preserve">
+  <data name="INSTALLED_MODS" xml:space="preserve">
     <value>INSTALLED MODS</value>
   </data>
-  <data name="Installing..." xml:space="preserve">
-    <value>Installing...</value>
+  <data name="INSTALLING" xml:space="preserve">
+    <value>Installing</value>
   </data>
-  <data name="Introduction Details" xml:space="preserve">
-    <value>See Introduction Details</value>
+  <data name="INSTALL_FILE" xml:space="preserve">
+    <value>Install File</value>
   </data>
-  <data name="Language Not Supported" xml:space="preserve">
-    <value>Language Not Supported</value>
+  <data name="INSTALL_FILES" xml:space="preserve">
+    <value>Install Files</value>
   </data>
-  <data name="Language not supported, can help" xml:space="preserve">
+  <data name="LABEL_CATEGORY" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="LABEL_DOWNLOADED_ON" xml:space="preserve">
+    <value>Downloaded On</value>
+  </data>
+  <data name="LABEL_MOD_TYPE" xml:space="preserve">
+    <value>Mod Type</value>
+  </data>
+  <data name="LABEL_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="LABEL_PLATFORM" xml:space="preserve">
+    <value>Platform</value>
+  </data>
+  <data name="LABEL_REGION" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="LABEL_VERSION" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="LANGUAGE_HELP" xml:space="preserve">
     <value>Sorry, but this language is currently not supported yet. If you would like to help us add this language, please join our Discord Server and let us know!</value>
   </data>
-  <data name="Last Updated" xml:space="preserve">
+  <data name="LANGUAGE_NOT_SUPPORTED_TITLE" xml:space="preserve">
+    <value>Language Not Supported</value>
+  </data>
+  <data name="LAST_UPDATED" xml:space="preserve">
     <value>Last Updated</value>
   </data>
-  <data name="LATEST NEWS" xml:space="preserve">
+  <data name="LATEST_NEWS" xml:space="preserve">
     <value>LATEST NEWS</value>
-  </data>
-  <data name="LET'S GET YOU SETUP" xml:space="preserve">
-    <value>LET'S GET YOU SETUP</value>
-  </data>
-  <data name="Make sure Neighborhood is installed on your computer" xml:space="preserve">
-    <value>Make sure Neighborhood is installed on your computer</value>
   </data>
   <data name="MODS" xml:space="preserve">
     <value>MODS</value>
   </data>
-  <data name="Mods Total" xml:space="preserve">
-    <value>Mods Total</value>
+  <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
+    <value>Make sure Neighborhood is installed on your computer</value>
   </data>
-  <data name="NO ANNOUNCEMENTS" xml:space="preserve">
-    <value>NO ANNOUNCEMENTS</value>
-  </data>
-  <data name="No Console Connected" xml:space="preserve">
-    <value>No Console Connected</value>
-  </data>
-  <data name="NO CONSOLE PROFILES" xml:space="preserve">
-    <value>NO CONSOLE PROFILES</value>
-  </data>
-  <data name="No Internet connection detected" xml:space="preserve">
-    <value>No Internet connection detected.</value>
-  </data>
-  <data name="No Internet Detected" xml:space="preserve">
-    <value>No Internet Detected</value>
-  </data>
-  <data name="No news is good news!" xml:space="preserve">
-    <value>No news is good news!</value>
-  </data>
-  <data name="Not Connected" xml:space="preserve">
+  <data name="NOT_CONNECTED" xml:space="preserve">
     <value>Not Connected</value>
   </data>
-  <data name="Not Installed" xml:space="preserve">
+  <data name="NOT_INSTALLED" xml:space="preserve">
     <value>Not Installed</value>
+  </data>
+  <data name="NO_ANNOUNCEMENTS" xml:space="preserve">
+    <value>NO ANNOUNCEMENTS</value>
+  </data>
+  <data name="NO_CONSOLE_CONNECTED" xml:space="preserve">
+    <value>No Console Connected</value>
+  </data>
+  <data name="NO_CONSOLE_PROFILE" xml:space="preserve">
+    <value>No Console Profile</value>
+  </data>
+  <data name="NO_CONSOLE_PROFILES" xml:space="preserve">
+    <value>NO CONSOLE PROFILES</value>
+  </data>
+  <data name="NO_INTERNET_CONNECTION" xml:space="preserve">
+    <value>You must be connected to the Internet to use this application.</value>
+  </data>
+  <data name="NO_INTERNET_CONNECTION_TITLE" xml:space="preserve">
+    <value>No Internet Detected</value>
+  </data>
+  <data name="NO_LISTS" xml:space="preserve">
+    <value>You Have No Lists</value>
+  </data>
+  <data name="NO_NEWS_IS_GOOD_NEWS" xml:space="preserve">
+    <value>No news is good news!</value>
   </data>
   <data name="OPTIONS" xml:space="preserve">
     <value>OPTIONS</value>
@@ -300,97 +342,119 @@
   <data name="PACKAGES" xml:space="preserve">
     <value>PACKAGES</value>
   </data>
-  <data name="Packages Total" xml:space="preserve">
-    <value>Packages Total</value>
-  </data>
   <data name="PLUGINS" xml:space="preserve">
     <value>PLUGINS</value>
   </data>
-  <data name="Plugins Total" xml:space="preserve">
-    <value>Plugins Total</value>
-  </data>
-  <data name="Ready to connect to console" xml:space="preserve">
-    <value>Ready to connect to console</value>
+  <data name="READY_TO_CONNECT" xml:space="preserve">
+    <value>Ready to connect...</value>
   </data>
   <data name="RESOURCES" xml:space="preserve">
     <value>RESOURCES</value>
   </data>
-  <data name="Restart Required" xml:space="preserve">
+  <data name="RESTART_REQUIRED" xml:space="preserve">
     <value>Restart Required</value>
   </data>
-  <data name="Scan For Xbox Consoles" xml:space="preserve">
-    <value>Scan For Xbox Consoles</value>
+  <data name="RESTART_TAKE_AFFECT" xml:space="preserve">
+    <value>You must restart the application for this change to take effect. Would you like to restart now?</value>
   </data>
-  <data name="Set Downloads Location" xml:space="preserve">
-    <value>Set Downloads Location</value>
+  <data name="SCANNING_XBOX_CONSOLES" xml:space="preserve">
+    <value>Scanning for Xbox consoles...</value>
+  </data>
+  <data name="SCANNING_XBOX_FINISHED" xml:space="preserve">
+    <value>Finished scanning for Xbox consoles.</value>
+  </data>
+  <data name="SCAN_XBOX_CONSOLES" xml:space="preserve">
+    <value>Scan For Xbox Consoles</value>
   </data>
   <data name="SETTINGS" xml:space="preserve">
     <value>SETTINGS</value>
   </data>
-  <data name="Show Favorites" xml:space="preserve">
-    <value>Show Favorites</value>
+  <data name="SETUP_TITLE" xml:space="preserve">
+    <value>LET'S GET YOU SETUP</value>
   </data>
-  <data name="SPECIAL THANKS" xml:space="preserve">
+  <data name="SET_DOWNLOADS_LOCATION" xml:space="preserve">
+    <value>Set Downloads Location</value>
+  </data>
+  <data name="SPECIAL_THANKS" xml:space="preserve">
     <value>SPECIAL THANKS</value>
   </data>
-  <data name="Startup Library" xml:space="preserve">
+  <data name="STARTUP_LIBRARY" xml:space="preserve">
     <value>Startup Library</value>
   </data>
   <data name="STATISTICS" xml:space="preserve">
     <value>STATISTICS</value>
   </data>
-  <data name="Success" xml:space="preserve">
+  <data name="SUCCESS" xml:space="preserve">
     <value>Success</value>
   </data>
-  <data name="Successfully connected to console" xml:space="preserve">
+  <data name="SUCCESS_CONNECTED" xml:space="preserve">
     <value>Successfully connected to console</value>
   </data>
-  <data name="Successfully disconnected from console" xml:space="preserve">
+  <data name="SUCCESS_DISCONNECTED" xml:space="preserve">
     <value>Successfully disconnected from console</value>
   </data>
-  <data name="Successfully fetched root directories" xml:space="preserve">
-    <value>Successfully fetched root directories</value>
-  </data>
-  <data name="Successfully loaded the database - Finalizing application data..." xml:space="preserve">
+  <data name="SUCCESS_LOADED_DB" xml:space="preserve">
     <value>Successfully loaded the database - Finalizing application data...</value>
+  </data>
+  <data name="SUCCESS_ROOT_DIRECTORIES" xml:space="preserve">
+    <value>Successfully fetched root directories</value>
   </data>
   <data name="TOOLS" xml:space="preserve">
     <value>TOOLS</value>
   </data>
-  <data name="Unable to connect to" xml:space="preserve">
+  <data name="TOTAL_GAME_CHEATS" xml:space="preserve">
+    <value>Game Cheats</value>
+  </data>
+  <data name="TOTAL_GAME_MODS" xml:space="preserve">
+    <value>Game Mods</value>
+  </data>
+  <data name="TOTAL_GAME_SAVES" xml:space="preserve">
+    <value>Game Saves</value>
+  </data>
+  <data name="TOTAL_HOMEBREW" xml:space="preserve">
+    <value>Homebrew</value>
+  </data>
+  <data name="TOTAL_PACKAGES" xml:space="preserve">
+    <value>Packages</value>
+  </data>
+  <data name="TOTAL_PLUGINS" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="TOTAL_RESOURCES" xml:space="preserve">
+    <value>Resources</value>
+  </data>
+  <data name="UNABLE_CONNECT" xml:space="preserve">
     <value>Unable to connect to</value>
   </data>
-  <data name="Unfavorite" xml:space="preserve">
+  <data name="UNABLE_LOAD_DATABASE" xml:space="preserve">
+    <value>Unable to load database.</value>
+  </data>
+  <data name="UNFAVORITE" xml:space="preserve">
     <value>Unfavorite</value>
   </data>
-  <data name="Uninstall File" xml:space="preserve">
-    <value>Uninstall File</value>
-  </data>
-  <data name="Uninstall Files" xml:space="preserve">
-    <value>Uninstall Files</value>
-  </data>
-  <data name="Uninstalled" xml:space="preserve">
+  <data name="UNINSTALLED" xml:space="preserve">
     <value>Uninstalled</value>
   </data>
-  <data name="Uninstalling..." xml:space="preserve">
+  <data name="UNINSTALLING" xml:space="preserve">
     <value>Uninstalling...</value>
   </data>
-  <data name="You are now connected to" xml:space="preserve">
+  <data name="UNINSTALL_FILE" xml:space="preserve">
+    <value>Uninstall File</value>
+  </data>
+  <data name="UNINSTALL_FILES" xml:space="preserve">
+    <value>Uninstall Files</value>
+  </data>
+  <data name="YOUR_LISTS" xml:space="preserve">
+    <value>Your Lists</value>
+  </data>
+  <data name="YOU_ARE_NOW_CONNECTED_TO" xml:space="preserve">
     <value>You are now connected to</value>
   </data>
-  <data name="You Have No Lists" xml:space="preserve">
-    <value>You Have No Lists</value>
+  <data name="YOU_MUST_BE_CONNECTED_TO_UNINSTALL_FILES" xml:space="preserve">
+    <value>You must be connected to {0} to uninstall the files.</value>
+    <comment>Full Sentence: You must be connected to (console) to uninstall the files.</comment>
   </data>
-  <data name="You must be connected to the Internet to use this application." xml:space="preserve">
-    <value>You must be connected to the Internet to use this application.</value>
-  </data>
-  <data name="You must be connected to your console to use this feature." xml:space="preserve">
+  <data name="YOU_MUST_BE_CONNECTED_TO_USE_FEATURE" xml:space="preserve">
     <value>You must be connected to your console to use this feature.</value>
-  </data>
-  <data name="You must restart the application for this change to take effect. Would you like to restart now?" xml:space="preserve">
-    <value>You must restart the application for this change to take effect. Would you like to restart now?</value>
-  </data>
-  <data name="Your Lists" xml:space="preserve">
-    <value>Your Lists</value>
   </data>
 </root>
