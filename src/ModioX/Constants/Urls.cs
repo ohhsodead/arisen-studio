@@ -20,7 +20,8 @@
         /// <summary>
         /// Direct download to the news feed file hosted via Lyfe's web server.
         /// </summary>
-        internal const string RssFeedData = "https://rss.brewtools.dev/news.xml";
+        //internal const string RssFeedData = "https://rss.brewtools.dev/news.xml";
+        internal const string RssFeedData = "https://dl.dropbox.com/s/y2m8fhrih1whrn3/news.xml?raw=true";
 
         /// <summary>
         /// Direct link to the project repo hosted on GitHub.
@@ -83,8 +84,8 @@
         internal const string GameSavesData = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/.database/game-saves.json";
 
         /// <summary>
-        /// Direct link to the mods offsets database file hosted on GitHub.
+        /// Direct link to the ps3 game offsets database file hosted on GitHub.
         /// </summary>
-        internal const string ModsDataOffsets = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/.database/mods-offsets.json";
+        internal const string GameCheatsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/.database/ps3-cheats.json";
     }
 }
