@@ -70,6 +70,15 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Backup/Restore Game Files.
+        /// </summary>
+        internal static string BACKUP_FILES {
+            get {
+                return ResourceManager.GetString("BACKUP_FILES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CHANGE LOG.
         /// </summary>
         internal static string CHANGE_LOG {
@@ -102,6 +111,15 @@ namespace ModioX.Languages {
         internal static string CONFIRM_DELETE_ALL_TITLE {
             get {
                 return ResourceManager.GetString("CONFIRM_DELETE_ALL_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you really want to delete the selected item?.
+        /// </summary>
+        internal static string CONFIRM_DELETE_ITEM {
+            get {
+                return ResourceManager.GetString("CONFIRM_DELETE_ITEM", resourceCulture);
             }
         }
         
@@ -147,6 +165,15 @@ namespace ModioX.Languages {
         internal static string CONNECTION_FAILED {
             get {
                 return ResourceManager.GetString("CONNECTION_FAILED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Console Manager.
+        /// </summary>
+        internal static string CONSOLE_MANAGER {
+            get {
+                return ResourceManager.GetString("CONSOLE_MANAGER", resourceCulture);
             }
         }
         
@@ -210,6 +237,51 @@ namespace ModioX.Languages {
         internal static string DEFAULT_GAME_REGIONS {
             get {
                 return ResourceManager.GetString("DEFAULT_GAME_REGIONS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string DELETE {
+            get {
+                return ResourceManager.GetString("DELETE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete All Items.
+        /// </summary>
+        internal static string DELETE_ALL_ITEMS {
+            get {
+                return ResourceManager.GetString("DELETE_ALL_ITEMS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Item.
+        /// </summary>
+        internal static string DELETE_ITEM {
+            get {
+                return ResourceManager.GetString("DELETE_ITEM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to delete item. Error: {0}.
+        /// </summary>
+        internal static string DELETE_ITEM_ERROR {
+            get {
+                return ResourceManager.GetString("DELETE_ITEM_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Empty Directory.
+        /// </summary>
+        internal static string DIRECTORY_EMPTY {
+            get {
+                return ResourceManager.GetString("DIRECTORY_EMPTY", resourceCulture);
             }
         }
         
@@ -331,11 +403,38 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Successfully fetched directory listing..
+        /// </summary>
+        internal static string FETCHED_LISTING {
+            get {
+                return ResourceManager.GetString("FETCHED_LISTING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fetching drives.
         /// </summary>
         internal static string FETCHING_DRIVES {
             get {
                 return ResourceManager.GetString("FETCHING_DRIVES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fetching directory listing of: {0}.
+        /// </summary>
+        internal static string FETCHING_LISTING {
+            get {
+                return ResourceManager.GetString("FETCHING_LISTING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error fetching directory listing for path: {0} - Error: {1}.
+        /// </summary>
+        internal static string FETCHING_LISTING_ERROR {
+            get {
+                return ResourceManager.GetString("FETCHING_LISTING_ERROR", resourceCulture);
             }
         }
         
@@ -358,6 +457,42 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Successfully deleted file: {0}.
+        /// </summary>
+        internal static string FILE_DELETED {
+            get {
+                return ResourceManager.GetString("FILE_DELETED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deleting file: {0}.
+        /// </summary>
+        internal static string FILE_DELETING {
+            get {
+                return ResourceManager.GetString("FILE_DELETING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully downloaded file: {0}.
+        /// </summary>
+        internal static string FILE_DOWNLOADED {
+            get {
+                return ResourceManager.GetString("FILE_DOWNLOADED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Downloading file: {0}.
+        /// </summary>
+        internal static string FILE_DOWNLOADING {
+            get {
+                return ResourceManager.GetString("FILE_DOWNLOADING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FILE MANAGER.
         /// </summary>
         internal static string FILE_MANAGER {
@@ -372,6 +507,123 @@ namespace ModioX.Languages {
         internal static string FILE_MISSING {
             get {
                 return ResourceManager.GetString("FILE_MISSING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File Name:.
+        /// </summary>
+        internal static string FILE_NAME {
+            get {
+                return ResourceManager.GetString("FILE_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duplicate Name.
+        /// </summary>
+        internal static string FILE_NAME_DUPLICATE {
+            get {
+                return ResourceManager.GetString("FILE_NAME_DUPLICATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The file name can&apos;t be empty..
+        /// </summary>
+        internal static string FILE_NAME_EMPTY {
+            get {
+                return ResourceManager.GetString("FILE_NAME_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A file with this name already exists..
+        /// </summary>
+        internal static string FILE_NAME_EXISTS {
+            get {
+                return ResourceManager.GetString("FILE_NAME_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You already have a file with this name in your games..
+        /// </summary>
+        internal static string FILE_NAME_EXISTS_IN_GAMES {
+            get {
+                return ResourceManager.GetString("FILE_NAME_EXISTS_IN_GAMES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rename File.
+        /// </summary>
+        internal static string FILE_RENAME {
+            get {
+                return ResourceManager.GetString("FILE_RENAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to rename file. Error: {0}.
+        /// </summary>
+        internal static string FILE_RENAME_ERROR {
+            get {
+                return ResourceManager.GetString("FILE_RENAME_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to rename this file?\n\nNote: It will not affect being able to load the game..
+        /// </summary>
+        internal static string FILE_RENAME_GAME {
+            get {
+                return ResourceManager.GetString("FILE_RENAME_GAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully renamed file to: {0}.
+        /// </summary>
+        internal static string FILE_RENAMED {
+            get {
+                return ResourceManager.GetString("FILE_RENAMED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Renaming file to: {0}.
+        /// </summary>
+        internal static string FILE_RENAMING {
+            get {
+                return ResourceManager.GetString("FILE_RENAMING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This file doesn&apos;t exist on your computer..
+        /// </summary>
+        internal static string FILE_UPLOAD_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("FILE_UPLOAD_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully uploaded file: {0}.
+        /// </summary>
+        internal static string FILE_UPLOADED {
+            get {
+                return ResourceManager.GetString("FILE_UPLOADED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uploading file to: {0}.
+        /// </summary>
+        internal static string FILE_UPLOADING {
+            get {
+                return ResourceManager.GetString("FILE_UPLOADING", resourceCulture);
             }
         }
         
@@ -394,11 +646,173 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add New Folder.
+        /// </summary>
+        internal static string FOLDER_CREATE {
+            get {
+                return ResourceManager.GetString("FOLDER_CREATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to create new folder. Error: {0}.
+        /// </summary>
+        internal static string FOLDER_CREATE_ERROR {
+            get {
+                return ResourceManager.GetString("FOLDER_CREATE_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully created folder: {0}.
+        /// </summary>
+        internal static string FOLDER_CREATED {
+            get {
+                return ResourceManager.GetString("FOLDER_CREATED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creating folder: {0}.
+        /// </summary>
+        internal static string FOLDER_CREATING {
+            get {
+                return ResourceManager.GetString("FOLDER_CREATING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully deleted folder: {0}.
+        /// </summary>
+        internal static string FOLDER_DELETED {
+            get {
+                return ResourceManager.GetString("FOLDER_DELETED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deleting folder: {0}.
+        /// </summary>
+        internal static string FOLDER_DELETING {
+            get {
+                return ResourceManager.GetString("FOLDER_DELETING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to download folder. Error: {0}.
+        /// </summary>
+        internal static string FOLDER_DOWNLOAD_ERROR {
+            get {
+                return ResourceManager.GetString("FOLDER_DOWNLOAD_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully downloaded folder: {0}.
+        /// </summary>
+        internal static string FOLDER_DOWNLOADED {
+            get {
+                return ResourceManager.GetString("FOLDER_DOWNLOADED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Downloading folder: {0}.
+        /// </summary>
+        internal static string FOLDER_DOWNLOADING {
+            get {
+                return ResourceManager.GetString("FOLDER_DOWNLOADING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder Name:.
+        /// </summary>
+        internal static string FOLDER_NAME {
+            get {
+                return ResourceManager.GetString("FOLDER_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A folder with this name already exists.
+        /// </summary>
+        internal static string FOLDER_NAME_EXISTS {
+            get {
+                return ResourceManager.GetString("FOLDER_NAME_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rename Folder.
+        /// </summary>
+        internal static string FOLDER_RENAME {
+            get {
+                return ResourceManager.GetString("FOLDER_RENAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to rename folder. Error: {0}.
+        /// </summary>
+        internal static string FOLDER_RENAME_ERROR {
+            get {
+                return ResourceManager.GetString("FOLDER_RENAME_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully renamed folder: {0}.
+        /// </summary>
+        internal static string FOLDER_RENAMED {
+            get {
+                return ResourceManager.GetString("FOLDER_RENAMED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Renaming folder: {0}.
+        /// </summary>
+        internal static string FOLDER_RENAMING {
+            get {
+                return ResourceManager.GetString("FOLDER_RENAMING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully uploaded folder: {0}.
+        /// </summary>
+        internal static string FOLDER_UPLOADED {
+            get {
+                return ResourceManager.GetString("FOLDER_UPLOADED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uploading folder to: {0}.
+        /// </summary>
+        internal static string FOLDER_UPLOADING {
+            get {
+                return ResourceManager.GetString("FOLDER_UPLOADING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GAME CHEATS.
         /// </summary>
         internal static string GAME_CHEATS {
             get {
                 return ResourceManager.GetString("GAME_CHEATS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Game Launcher.
+        /// </summary>
+        internal static string GAME_LAUNCHER {
+            get {
+                return ResourceManager.GetString("GAME_LAUNCHER", resourceCulture);
             }
         }
         
@@ -412,6 +826,24 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Default Game Regions.
+        /// </summary>
+        internal static string GAME_REGIONS {
+            get {
+                return ResourceManager.GetString("GAME_REGIONS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Game Save Resigner.
+        /// </summary>
+        internal static string GAME_SAVE_RESIGNER {
+            get {
+                return ResourceManager.GetString("GAME_SAVE_RESIGNER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GAME SAVES.
         /// </summary>
         internal static string GAME_SAVES {
@@ -421,11 +853,29 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Game Update Finder.
+        /// </summary>
+        internal static string GAME_UPDATE_FINDER {
+            get {
+                return ResourceManager.GetString("GAME_UPDATE_FINDER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GAMES.
         /// </summary>
         internal static string GAMES {
             get {
                 return ResourceManager.GetString("GAMES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GET STARTED.
+        /// </summary>
+        internal static string GET_STARTED {
+            get {
+                return ResourceManager.GetString("GET_STARTED", resourceCulture);
             }
         }
         
@@ -444,6 +894,15 @@ namespace ModioX.Languages {
         internal static string HOMEBREW {
             get {
                 return ResourceManager.GetString("HOMEBREW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How-To Guides for ModioX.
+        /// </summary>
+        internal static string HOWTO_GUIDE {
+            get {
+                return ResourceManager.GetString("HOWTO_GUIDE", resourceCulture);
             }
         }
         
@@ -511,6 +970,24 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add to Games.
+        /// </summary>
+        internal static string LABEL_ADD_TO_GAMES {
+            get {
+                return ResourceManager.GetString("LABEL_ADD_TO_GAMES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bytes.
+        /// </summary>
+        internal static string LABEL_BYTES {
+            get {
+                return ResourceManager.GetString("LABEL_BYTES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Category.
         /// </summary>
         internal static string LABEL_CATEGORY {
@@ -520,11 +997,83 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string LABEL_DELETE {
+            get {
+                return ResourceManager.GetString("LABEL_DELETE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Directories.
+        /// </summary>
+        internal static string LABEL_DIRECTORIES {
+            get {
+                return ResourceManager.GetString("LABEL_DIRECTORIES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Directory.
+        /// </summary>
+        internal static string LABEL_DIRECTORY {
+            get {
+                return ResourceManager.GetString("LABEL_DIRECTORY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download.
+        /// </summary>
+        internal static string LABEL_DOWNLOAD {
+            get {
+                return ResourceManager.GetString("LABEL_DOWNLOAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Downloaded On.
         /// </summary>
         internal static string LABEL_DOWNLOADED_ON {
             get {
                 return ResourceManager.GetString("LABEL_DOWNLOADED_ON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File.
+        /// </summary>
+        internal static string LABEL_FILE {
+            get {
+                return ResourceManager.GetString("LABEL_FILE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Files.
+        /// </summary>
+        internal static string LABEL_FILES {
+            get {
+                return ResourceManager.GetString("LABEL_FILES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        internal static string LABEL_IMAGE {
+            get {
+                return ResourceManager.GetString("LABEL_IMAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modified On.
+        /// </summary>
+        internal static string LABEL_LAST_MODIFIED {
+            get {
+                return ResourceManager.GetString("LABEL_LAST_MODIFIED", resourceCulture);
             }
         }
         
@@ -547,6 +1096,24 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New Folder.
+        /// </summary>
+        internal static string LABEL_NEW_FOLDER {
+            get {
+                return ResourceManager.GetString("LABEL_NEW_FOLDER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open Explorer.
+        /// </summary>
+        internal static string LABEL_OPEN_EXPLORER {
+            get {
+                return ResourceManager.GetString("LABEL_OPEN_EXPLORER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Platform.
         /// </summary>
         internal static string LABEL_PLATFORM {
@@ -556,11 +1123,56 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Refresh.
+        /// </summary>
+        internal static string LABEL_REFRESH {
+            get {
+                return ResourceManager.GetString("LABEL_REFRESH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Region.
         /// </summary>
         internal static string LABEL_REGION {
             get {
                 return ResourceManager.GetString("LABEL_REGION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rename.
+        /// </summary>
+        internal static string LABEL_RENAME {
+            get {
+                return ResourceManager.GetString("LABEL_RENAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size.
+        /// </summary>
+        internal static string LABEL_SIZE {
+            get {
+                return ResourceManager.GetString("LABEL_SIZE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        internal static string LABEL_TYPE {
+            get {
+                return ResourceManager.GetString("LABEL_TYPE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload.
+        /// </summary>
+        internal static string LABEL_UPLOAD {
+            get {
+                return ResourceManager.GetString("LABEL_UPLOAD", resourceCulture);
             }
         }
         
@@ -585,9 +1197,9 @@ namespace ModioX.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Language Not Supported.
         /// </summary>
-        internal static string LANGUAGE_NOT_SUPPORTED_TITLE {
+        internal static string LANGUAGE_NOT_SUPPORTED {
             get {
-                return ResourceManager.GetString("LANGUAGE_NOT_SUPPORTED_TITLE", resourceCulture);
+                return ResourceManager.GetString("LANGUAGE_NOT_SUPPORTED", resourceCulture);
             }
         }
         
@@ -606,6 +1218,24 @@ namespace ModioX.Languages {
         internal static string LATEST_NEWS {
             get {
                 return ResourceManager.GetString("LATEST_NEWS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Launch File Editor.
+        /// </summary>
+        internal static string LAUNCH_FILE_EDITOR {
+            get {
+                return ResourceManager.GetString("LAUNCH_FILE_EDITOR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage Imported Mods.
+        /// </summary>
+        internal static string MANAGE_IMPORTED_MODS {
+            get {
+                return ResourceManager.GetString("MANAGE_IMPORTED_MODS", resourceCulture);
             }
         }
         
@@ -664,6 +1294,15 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Input.
+        /// </summary>
+        internal static string NO_INPUT {
+            get {
+                return ResourceManager.GetString("NO_INPUT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You must be connected to the Internet to use this application..
         /// </summary>
         internal static string NO_INTERNET_CONNECTION {
@@ -718,11 +1357,38 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open File.
+        /// </summary>
+        internal static string OPEN_FILE {
+            get {
+                return ResourceManager.GetString("OPEN_FILE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open Folder.
+        /// </summary>
+        internal static string OPEN_FOLDER {
+            get {
+                return ResourceManager.GetString("OPEN_FOLDER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OPTIONS.
         /// </summary>
         internal static string OPTIONS {
             get {
                 return ResourceManager.GetString("OPTIONS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Package File Manager.
+        /// </summary>
+        internal static string PACKAGE_MANAGER {
+            get {
+                return ResourceManager.GetString("PACKAGE_MANAGER", resourceCulture);
             }
         }
         
@@ -826,15 +1492,6 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LET&apos;S GET YOU SETUP.
-        /// </summary>
-        internal static string SETUP_TITLE {
-            get {
-                return ResourceManager.GetString("SETUP_TITLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to SPECIAL THANKS.
         /// </summary>
         internal static string SPECIAL_THANKS {
@@ -858,6 +1515,15 @@ namespace ModioX.Languages {
         internal static string STATISTICS {
             get {
                 return ResourceManager.GetString("STATISTICS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SUBMIT MODS.
+        /// </summary>
+        internal static string SUBMIT_MODS {
+            get {
+                return ResourceManager.GetString("SUBMIT_MODS", resourceCulture);
             }
         }
         
@@ -997,11 +1663,29 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to open File Explorer for directory: {0} - Error {1}.
+        /// </summary>
+        internal static string UNABLE_TO_OPEN_EXPLORER {
+            get {
+                return ResourceManager.GetString("UNABLE_TO_OPEN_EXPLORER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unfavorite.
         /// </summary>
         internal static string UNFAVORITE {
             get {
                 return ResourceManager.GetString("UNFAVORITE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uninstall All Items.
+        /// </summary>
+        internal static string UNINSTALL_ALL_ITEMS {
+            get {
+                return ResourceManager.GetString("UNINSTALL_ALL_ITEMS", resourceCulture);
             }
         }
         
@@ -1024,6 +1708,15 @@ namespace ModioX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Uninstall Item.
+        /// </summary>
+        internal static string UNINSTALL_ITEMS {
+            get {
+                return ResourceManager.GetString("UNINSTALL_ITEMS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Uninstalled.
         /// </summary>
         internal static string UNINSTALLED {
@@ -1038,6 +1731,33 @@ namespace ModioX.Languages {
         internal static string UNINSTALLING {
             get {
                 return ResourceManager.GetString("UNINSTALLING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to upload to console. Error: {0}.
+        /// </summary>
+        internal static string UPLOAD_ERROR {
+            get {
+                return ResourceManager.GetString("UPLOAD_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Details.
+        /// </summary>
+        internal static string VIEW_DETAILS {
+            get {
+                return ResourceManager.GetString("VIEW_DETAILS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This feature requires webMAN installed on your console..
+        /// </summary>
+        internal static string WEBMAN_REQUIRED {
+            get {
+                return ResourceManager.GetString("WEBMAN_REQUIRED", resourceCulture);
             }
         }
         
