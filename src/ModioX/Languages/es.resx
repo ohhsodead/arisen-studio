@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ANNOUNCEMENTS" xml:space="preserve">
-    <value>ANNOUNCEMENTS</value>
+    <value>ANUNCIOS</value>
   </data>
   <data name="CHANGE_LOG" xml:space="preserve">
     <value>CHANGE LOG</value>
@@ -136,7 +136,7 @@
     <value>Do you really want to delete the selected item from your downloads?</value>
   </data>
   <data name="CONNECT" xml:space="preserve">
-    <value>CONNECT</value>
+    <value>CONECTAR</value>
   </data>
   <data name="CONNECTING_TO" xml:space="preserve">
     <value>Connecting to</value>
@@ -157,13 +157,13 @@
     <value>Click 'Add New Console' to create a profile</value>
   </data>
   <data name="CONTRIBUTORS" xml:space="preserve">
-    <value>CONTRIBUTORS</value>
+    <value>CONTRIBUYENTES</value>
   </data>
   <data name="CREDITS" xml:space="preserve">
-    <value>CREDITS</value>
+    <value>CREDITOS</value>
   </data>
   <data name="DASHBOARD" xml:space="preserve">
-    <value>DASHBOARD</value>
+    <value>TABLERO</value>
   </data>
   <data name="DEFAULT_GAME_REGIONS" xml:space="preserve">
     <value>Default Game Regions</value>
@@ -190,7 +190,7 @@
     <value>Downloading...</value>
   </data>
   <data name="DOWNLOADS" xml:space="preserve">
-    <value>DOWNLOADS</value>
+    <value>DESCARGAS</value>
   </data>
   <data name="DOWNLOADS_LOCATION" xml:space="preserve">
     <value>Downloads Location</value>
@@ -229,7 +229,7 @@
     <value>File Missing</value>
   </data>
   <data name="GAMES" xml:space="preserve">
-    <value>GAMES</value>
+    <value>JUEGOS</value>
   </data>
   <data name="GAME_CHEATS" xml:space="preserve">
     <value>GAME CHEATS</value>
@@ -241,7 +241,7 @@
     <value>GAME SAVES</value>
   </data>
   <data name="HELP" xml:space="preserve">
-    <value>HELP</value>
+    <value>AYUDA</value>
   </data>
   <data name="HOMEBREW" xml:space="preserve">
     <value>HOMEBREW</value>
@@ -337,10 +337,10 @@
     <value>No news is good news!</value>
   </data>
   <data name="OPTIONS" xml:space="preserve">
-    <value>OPTIONS</value>
+    <value>OPCIONES</value>
   </data>
   <data name="PACKAGES" xml:space="preserve">
-    <value>PACKAGES</value>
+    <value>PAQUETES</value>
   </data>
   <data name="PLUGINS" xml:space="preserve">
     <value>PLUGINS</value>
@@ -349,7 +349,7 @@
     <value>Ready to connect...</value>
   </data>
   <data name="RESOURCES" xml:space="preserve">
-    <value>RESOURCES</value>
+    <value>RECURSOS</value>
   </data>
   <data name="RESTART_REQUIRED" xml:space="preserve">
     <value>Restart Required</value>
@@ -367,7 +367,7 @@
     <value>Scan For Xbox Consoles</value>
   </data>
   <data name="SETTINGS" xml:space="preserve">
-    <value>SETTINGS</value>
+    <value>AJUSTES</value>
   </data>
   <data name="SETUP_TITLE" xml:space="preserve">
     <value>LET'S GET YOU SETUP</value>
@@ -382,7 +382,7 @@
     <value>Startup Library</value>
   </data>
   <data name="STATISTICS" xml:space="preserve">
-    <value>STATISTICS</value>
+    <value>ESTADÍSTICAS</value>
   </data>
   <data name="SUCCESS" xml:space="preserve">
     <value>Success</value>
@@ -400,7 +400,7 @@
     <value>Successfully fetched root directories</value>
   </data>
   <data name="TOOLS" xml:space="preserve">
-    <value>TOOLS</value>
+    <value>HERRAMIENTAS</value>
   </data>
   <data name="TOTAL_GAME_CHEATS" xml:space="preserve">
     <value>Game Cheats</value>
