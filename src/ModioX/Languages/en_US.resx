@@ -165,8 +165,11 @@
   <data name="CONNECT" xml:space="preserve">
     <value>CONNECT</value>
   </data>
-  <data name="CONNECTING_TO" xml:space="preserve">
-    <value>Connecting to</value>
+  <data name="CONNECTED_NOTIFICATION" xml:space="preserve">
+    <value>You are not connected to ModioX ★</value>
+  </data>
+  <data name="CONNECTING_TO_CONSOLE" xml:space="preserve">
+    <value>Connecting to {0}</value>
   </data>
   <data name="CONNECTION_FAILED" xml:space="preserve">
     <value>Connection Failed</value>
