@@ -172,7 +172,7 @@
     <value>You are now connected to ModioX ★</value>
   </data>
   <data name="CONNECTING_TO_CONSOLE" xml:space="preserve">
-    <value>Connecting to {0}</value>
+    <value>Connecting to: {0}</value>
   </data>
   <data name="CONNECTIONS" xml:space="preserve">
     <value>Connections</value>
