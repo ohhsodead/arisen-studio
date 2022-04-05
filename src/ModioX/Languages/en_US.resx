@@ -126,9 +126,6 @@
   <data name="ALL_GAMES" xml:space="preserve">
     <value>All Games</value>
   </data>
-  <data name="ANNOUNCEMENTS" xml:space="preserve">
-    <value>ANNOUNCEMENTS</value>
-  </data>
   <data name="ANY" xml:space="preserve">
     <value>ANY</value>
   </data>
@@ -144,9 +141,6 @@
   <data name="BACKUP_FILES" xml:space="preserve">
     <value>Backup/Restore Game Files</value>
   </data>
-  <data name="CHANGE_LOG" xml:space="preserve">
-    <value>CHANGE LOG</value>
-  </data>
   <data name="CHEAT_APPLIED" xml:space="preserve">
     <value>Successfully applied cheat to game.</value>
   </data>
@@ -155,6 +149,9 @@
   </data>
   <data name="CHEAT_NOT_SUPPORTED" xml:space="preserve">
     <value>This cheat can't be applied because it contains opcode that hasn't been implemented yet.</value>
+  </data>
+  <data name="CONFIRM" xml:space="preserve">
+    <value>Confirm</value>
   </data>
   <data name="CONFIRM_DELETE" xml:space="preserve">
     <value>Confirm Delete</value>
@@ -171,44 +168,29 @@
   <data name="CONFIRM_DELETE_ITEM_DOWNLOADS" xml:space="preserve">
     <value>Do you really want to delete the selected item from your downloads?</value>
   </data>
-  <data name="CONNECT" xml:space="preserve">
-    <value>CONNECT</value>
-  </data>
   <data name="CONNECTED_NOTIFICATION" xml:space="preserve">
     <value>You are now connected to ModioX ★</value>
   </data>
   <data name="CONNECTING_TO_CONSOLE" xml:space="preserve">
     <value>Connecting to {0}</value>
   </data>
+  <data name="CONNECTIONS" xml:space="preserve">
+    <value>Connections</value>
+  </data>
   <data name="CONNECTION_FAILED" xml:space="preserve">
     <value>Connection Failed</value>
   </data>
   <data name="CONNECT_TO_CONSOLE" xml:space="preserve">
-    <value>Connect to console</value>
+    <value>Connect to console...</value>
   </data>
   <data name="CONSOLE_MANAGER" xml:space="preserve">
     <value>Console Manager</value>
   </data>
-  <data name="CONSOLE_PROFILES_EDIT" xml:space="preserve">
-    <value>Edit Console Profiles</value>
-  </data>
-  <data name="CONSOLE_PROFILE_ADD" xml:space="preserve">
-    <value>Add Console Profile</value>
-  </data>
-  <data name="CONSOLE_PROFILE_ADD_INSTRUCTION" xml:space="preserve">
-    <value>Click 'Add New Console' to create a profile</value>
-  </data>
-  <data name="CONTRIBUTORS" xml:space="preserve">
-    <value>CONTRIBUTORS</value>
-  </data>
-  <data name="CREDITS" xml:space="preserve">
-    <value>CREDITS</value>
+  <data name="CONSOLE_PROFILES" xml:space="preserve">
+    <value>Console Profiles</value>
   </data>
   <data name="CUSTOMIZATION" xml:space="preserve">
-    <value>Cutstomization</value>
-  </data>
-  <data name="DASHBOARD" xml:space="preserve">
-    <value>DASHBOARD</value>
+    <value>Customization</value>
   </data>
   <data name="DATA_MISSING" xml:space="preserve">
     <value>DATA MISSING</value>
@@ -238,7 +220,7 @@
     <value>Directory Not Found</value>
   </data>
   <data name="DISCONNECTING_FROM_CONSOLE" xml:space="preserve">
-    <value>Disconnecting from console</value>
+    <value>Disconnecting from console.</value>
   </data>
   <data name="DISCONNECT_FROM_CONSOLE" xml:space="preserve">
     <value>Disconnect from console</value>
@@ -255,8 +237,8 @@
   <data name="DOWNLOADING_ARCHIVE" xml:space="preserve">
     <value>Downloading archive...</value>
   </data>
-  <data name="DOWNLOADS" xml:space="preserve">
-    <value>DOWNLOADS</value>
+  <data name="DOWNLOADING_FILE" xml:space="preserve">
+    <value>Downloading file: {0}</value>
   </data>
   <data name="DOWNLOADS_FOLDER" xml:space="preserve">
     <value>Downloads Folder</value>
@@ -317,9 +299,6 @@
   </data>
   <data name="FILE_DOWNLOADING" xml:space="preserve">
     <value>Downloading file: {0}</value>
-  </data>
-  <data name="FILE_MANAGER" xml:space="preserve">
-    <value>FILE MANAGER</value>
   </data>
   <data name="FILE_MISSING" xml:space="preserve">
     <value>File Missing</value>
@@ -414,17 +393,8 @@
   <data name="FOLDER_UPLOADING" xml:space="preserve">
     <value>Uploading folder to: {0}</value>
   </data>
-  <data name="GAMES" xml:space="preserve">
-    <value>GAMES</value>
-  </data>
-  <data name="GAME_CHEATS" xml:space="preserve">
-    <value>GAME CHEATS</value>
-  </data>
   <data name="GAME_LAUNCHER" xml:space="preserve">
     <value>Game Launcher</value>
-  </data>
-  <data name="GAME_MODS" xml:space="preserve">
-    <value>GAME MODS</value>
   </data>
   <data name="GAME_REGIONS" xml:space="preserve">
     <value>Default Game Regions</value>
@@ -438,14 +408,8 @@
   <data name="GAME_UPDATE_FINDER" xml:space="preserve">
     <value>Game Update Finder</value>
   </data>
-  <data name="GET_STARTED" xml:space="preserve">
-    <value>GET STARTED</value>
-  </data>
   <data name="HELP" xml:space="preserve">
     <value>HELP</value>
-  </data>
-  <data name="HOMEBREW" xml:space="preserve">
-    <value>HOMEBREW</value>
   </data>
   <data name="HOWTO_GUIDE" xml:space="preserve">
     <value>How-To Guides for ModioX</value>
@@ -462,11 +426,11 @@
   <data name="INSTALLED" xml:space="preserve">
     <value>Installed</value>
   </data>
-  <data name="INSTALLED_MODS" xml:space="preserve">
-    <value>INSTALLED MODS</value>
-  </data>
   <data name="INSTALLING" xml:space="preserve">
     <value>Installing</value>
+  </data>
+  <data name="INSTALLING_FILE" xml:space="preserve">
+    <value>Installing file: {0}</value>
   </data>
   <data name="INSTALL_FILE" xml:space="preserve">
     <value>Install File</value>
@@ -489,8 +453,14 @@
   <data name="INSTALL_RESOURCES_TO_LOCAL_USB" xml:space="preserve">
     <value>Install Resources to local USB device*</value>
   </data>
+  <data name="LABEL_ADDRESS_NAME" xml:space="preserve">
+    <value>IP Address/Name</value>
+  </data>
   <data name="LABEL_ADD_TO_GAMES" xml:space="preserve">
     <value>Add to Games</value>
+  </data>
+  <data name="LABEL_ALL_REGIONS" xml:space="preserve">
+    <value>All Regions</value>
   </data>
   <data name="LABEL_APPLY" xml:space="preserve">
     <value>Apply</value>
@@ -498,14 +468,44 @@
   <data name="LABEL_BYTES" xml:space="preserve">
     <value>Bytes</value>
   </data>
+  <data name="LABEL_CANCEL" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="LABEL_CATEGORY" xml:space="preserve">
     <value>Category</value>
+  </data>
+  <data name="LABEL_CHANGE" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="LABEL_CONNECTION_DETAILS" xml:space="preserve">
+    <value>Connection Details</value>
+  </data>
+  <data name="LABEL_CONNECTION_NAME" xml:space="preserve">
+    <value>Connection Name</value>
+  </data>
+  <data name="LABEL_CONTENT_ID" xml:space="preserve">
+    <value>Content ID</value>
+  </data>
+  <data name="LABEL_COPIED" xml:space="preserve">
+    <value>Copied</value>
+  </data>
+  <data name="LABEL_CREATED_BY" xml:space="preserve">
+    <value>Created By</value>
   </data>
   <data name="LABEL_CREATOR" xml:space="preserve">
     <value>Creator</value>
   </data>
+  <data name="LABEL_DEFAULT" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="LABEL_DEFAULT_CONSOLE" xml:space="preserve">
+    <value>Default Console</value>
+  </data>
   <data name="LABEL_DELETE" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="LABEL_DESCRIPTION" xml:space="preserve">
+    <value>Description</value>
   </data>
   <data name="LABEL_DIRECTORIES" xml:space="preserve">
     <value>Directories</value>
@@ -528,6 +528,24 @@
   <data name="LABEL_FILES" xml:space="preserve">
     <value>Files</value>
   </data>
+  <data name="LABEL_FILE_SIZE" xml:space="preserve">
+    <value>File Size</value>
+  </data>
+  <data name="LABEL_GAME_CHEATS" xml:space="preserve">
+    <value>Game Cheats</value>
+  </data>
+  <data name="LABEL_GAME_MODE" xml:space="preserve">
+    <value>Game Mode</value>
+  </data>
+  <data name="LABEL_GAME_MODS" xml:space="preserve">
+    <value>Game Mods</value>
+  </data>
+  <data name="LABEL_GAME_SAVES" xml:space="preserve">
+    <value>Game Saves</value>
+  </data>
+  <data name="LABEL_HOMEBREW" xml:space="preserve">
+    <value>Homebrew</value>
+  </data>
   <data name="LABEL_IMAGE" xml:space="preserve">
     <value>Image</value>
   </data>
@@ -537,8 +555,20 @@
   <data name="LABEL_INSTALLED" xml:space="preserve">
     <value>Installed</value>
   </data>
+  <data name="LABEL_IP_ADDRESS" xml:space="preserve">
+    <value>IP Address</value>
+  </data>
   <data name="LABEL_LAST_MODIFIED" xml:space="preserve">
     <value>Modified On</value>
+  </data>
+  <data name="LABEL_LOGIN" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LABEL_LOGIN_DETAILS" xml:space="preserve">
+    <value>Login Details</value>
+  </data>
+  <data name="LABEL_MODIFIED_DATE" xml:space="preserve">
+    <value>Modified Date</value>
   </data>
   <data name="LABEL_MOD_TYPE" xml:space="preserve">
     <value>Mod Type</value>
@@ -552,11 +582,26 @@
   <data name="LABEL_NOT_INSTALLED" xml:space="preserve">
     <value>Not Installed</value>
   </data>
+  <data name="LABEL_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
   <data name="LABEL_OPEN_EXPLORER" xml:space="preserve">
     <value>Open Explorer</value>
   </data>
+  <data name="LABEL_PACKAGES" xml:space="preserve">
+    <value>Packages</value>
+  </data>
+  <data name="LABEL_PASSWORD" xml:space="preserve">
+    <value>Password</value>
+  </data>
   <data name="LABEL_PLATFORM" xml:space="preserve">
     <value>Platform</value>
+  </data>
+  <data name="LABEL_PLATFORM_TYPE" xml:space="preserve">
+    <value>Platform Type</value>
+  </data>
+  <data name="LABEL_PLUGINS" xml:space="preserve">
+    <value>Plugins</value>
   </data>
   <data name="LABEL_REFRESH" xml:space="preserve">
     <value>Refresh</value>
@@ -570,11 +615,17 @@
   <data name="LABEL_REPORT" xml:space="preserve">
     <value>Report</value>
   </data>
+  <data name="LABEL_RESOURCES" xml:space="preserve">
+    <value>Resources</value>
+  </data>
   <data name="LABEL_SIZE" xml:space="preserve">
     <value>Size</value>
   </data>
   <data name="LABEL_STATUS" xml:space="preserve">
     <value>Status</value>
+  </data>
+  <data name="LABEL_SUBMITTED_BY" xml:space="preserve">
+    <value>Submitted By</value>
   </data>
   <data name="LABEL_SYSTEM_TYPE" xml:space="preserve">
     <value>System Type</value>
@@ -587,6 +638,12 @@
   </data>
   <data name="LABEL_UPLOAD" xml:space="preserve">
     <value>Upload</value>
+  </data>
+  <data name="LABEL_USERNAME" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="LABEL_USE_DEFAULT" xml:space="preserve">
+    <value>Use Default</value>
   </data>
   <data name="LABEL_VERSION" xml:space="preserve">
     <value>Version</value>
@@ -603,9 +660,6 @@
   <data name="LAST_UPDATED" xml:space="preserve">
     <value>Last Updated</value>
   </data>
-  <data name="LATEST_NEWS" xml:space="preserve">
-    <value>LATEST NEWS</value>
-  </data>
   <data name="LAUNCH_FILE_EDITOR" xml:space="preserve">
     <value>Launch File Editor</value>
   </data>
@@ -617,9 +671,6 @@
   </data>
   <data name="MISSING" xml:space="preserve">
     <value>MISSING</value>
-  </data>
-  <data name="MODS" xml:space="preserve">
-    <value>MODS</value>
   </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Make sure Neighborhood is installed on your computer</value>
@@ -666,20 +717,23 @@
   <data name="OPEN_FOLDER" xml:space="preserve">
     <value>Open Folder</value>
   </data>
-  <data name="OPTIONS" xml:space="preserve">
-    <value>OPTIONS</value>
-  </data>
-  <data name="PACKAGES" xml:space="preserve">
-    <value>PACKAGES</value>
-  </data>
   <data name="PACKAGES_INSTALL_FILE_PATH" xml:space="preserve">
     <value>Packages Install File Path</value>
   </data>
   <data name="PACKAGE_MANAGER" xml:space="preserve">
     <value>Package File Manager</value>
   </data>
-  <data name="PLUGINS" xml:space="preserve">
-    <value>PLUGINS</value>
+  <data name="PROFILE_ADD_INSTRUCTION" xml:space="preserve">
+    <value>Click 'Add New Profile' to create one</value>
+  </data>
+  <data name="PROFILE_ADD_NEW" xml:space="preserve">
+    <value>Add New Profile</value>
+  </data>
+  <data name="PROFILE_DELETE" xml:space="preserve">
+    <value>Delete Profile</value>
+  </data>
+  <data name="PROFILE_EDIT" xml:space="preserve">
+    <value>Edit Profile</value>
   </data>
   <data name="READY_TO_CONNECT" xml:space="preserve">
     <value>Ready to connect...</value>
@@ -689,9 +743,6 @@
   </data>
   <data name="REDIRECT_TO_GITHUB_ISSUES" xml:space="preserve">
     <value>You will now be redirected to our GitHub Issues page and all details will be automatically filled for you. Please provide information about the issue to help us fix your problem.\nClick the 'Submit' button to open a new issue which can help us fix any problems.</value>
-  </data>
-  <data name="RESOURCES" xml:space="preserve">
-    <value>RESOURCES</value>
   </data>
   <data name="RESTART_REQUIRED" xml:space="preserve">
     <value>Restart Required</value>
@@ -708,17 +759,23 @@
   <data name="SCANNING_XBOX_FINISHED" xml:space="preserve">
     <value>Finished scanning for Xbox consoles.</value>
   </data>
-  <data name="SCAN_XBOX_CONSOLES" xml:space="preserve">
-    <value>Scan For Xbox Consoles</value>
-  </data>
   <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
     <value>This mod type (Script) can't be installed on the PS3 because it needs the user manual addition.</value>
   </data>
-  <data name="SETTINGS" xml:space="preserve">
-    <value>SETTINGS</value>
+  <data name="SETUP_PROFILES_EDIT" xml:space="preserve">
+    <value>Edit Console Profiles</value>
   </data>
-  <data name="SET_DOWNLOADS_LOCATION" xml:space="preserve">
+  <data name="SETUP_PROFILE_ADD" xml:space="preserve">
+    <value>Add Console Profile</value>
+  </data>
+  <data name="SETUP_SCAN_XBOX_CONSOLES" xml:space="preserve">
+    <value>Scan For Xbox Consoles</value>
+  </data>
+  <data name="SETUP_SET_DOWNLOADS_LOCATION" xml:space="preserve">
     <value>Set Downloads Location</value>
+  </data>
+  <data name="SETUP_STARTUP_LIBRARY" xml:space="preserve">
+    <value>Startup Library</value>
   </data>
   <data name="SHOW_CURRENT_GAME_PLAYING" xml:space="preserve">
     <value>Show current game playing</value>
@@ -726,26 +783,14 @@
   <data name="SHOW_GAMES_IN_EXTERNAL_DEVICES" xml:space="preserve">
     <value>Show games list from external device*</value>
   </data>
-  <data name="SPECIAL_THANKS" xml:space="preserve">
-    <value>SPECIAL THANKS</value>
-  </data>
-  <data name="STARTUP_LIBRARY" xml:space="preserve">
-    <value>Startup Library</value>
-  </data>
-  <data name="STATISTICS" xml:space="preserve">
-    <value>STATISTICS</value>
-  </data>
-  <data name="SUBMIT_MODS" xml:space="preserve">
-    <value>SUBMIT MODS</value>
-  </data>
   <data name="SUCCESS" xml:space="preserve">
     <value>Success</value>
   </data>
   <data name="SUCCESS_CONNECTED" xml:space="preserve">
-    <value>Successfully connected to console</value>
+    <value>Successfully connected to console.</value>
   </data>
   <data name="SUCCESS_DISCONNECTED" xml:space="preserve">
-    <value>Successfully disconnected from console</value>
+    <value>Successfully disconnected from console.</value>
   </data>
   <data name="SUCCESS_LOADED_DB" xml:space="preserve">
     <value>Successfully loaded the database - Finalizing application data...</value>
@@ -753,38 +798,89 @@
   <data name="SUCCESS_ROOT_DIRECTORIES" xml:space="preserve">
     <value>Successfully fetched root directories</value>
   </data>
+  <data name="TITLE_ANNOUNCEMENTS" xml:space="preserve">
+    <value>ANNOUNCEMENTS</value>
+  </data>
+  <data name="TITLE_CHANGE_LOG" xml:space="preserve">
+    <value>CHANGE LOG</value>
+  </data>
+  <data name="TITLE_CONNECT" xml:space="preserve">
+    <value>CONNECT</value>
+  </data>
+  <data name="TITLE_CONTRIBUTORS" xml:space="preserve">
+    <value>CONTRIBUTORS</value>
+  </data>
+  <data name="TITLE_CREDITS" xml:space="preserve">
+    <value>CREDITS</value>
+  </data>
+  <data name="TITLE_DASHBOARD" xml:space="preserve">
+    <value>DASHBOARD</value>
+  </data>
+  <data name="TITLE_DOWNLOADS" xml:space="preserve">
+    <value>DOWNLOADS</value>
+  </data>
+  <data name="TITLE_FILE_MANAGER" xml:space="preserve">
+    <value>FILE MANAGER</value>
+  </data>
+  <data name="TITLE_GAMES" xml:space="preserve">
+    <value>GAMES</value>
+  </data>
+  <data name="TITLE_GAME_CHEATS" xml:space="preserve">
+    <value>GAME CHEATS</value>
+  </data>
+  <data name="TITLE_GAME_MODS" xml:space="preserve">
+    <value>GAME MODS</value>
+  </data>
+  <data name="TITLE_GET_STARTED" xml:space="preserve">
+    <value>GET STARTED</value>
+  </data>
+  <data name="TITLE_HOMEBREW" xml:space="preserve">
+    <value>HOMEBREW</value>
+  </data>
+  <data name="TITLE_INSTALLED_MODS" xml:space="preserve">
+    <value>INSTALLED MODS</value>
+  </data>
   <data name="TITLE_INTERFACE" xml:space="preserve">
     <value>INTERFACE</value>
   </data>
-  <data name="TOOLS" xml:space="preserve">
+  <data name="TITLE_LATEST_NEWS" xml:space="preserve">
+    <value>LATEST NEWS</value>
+  </data>
+  <data name="TITLE_OPTIONS" xml:space="preserve">
+    <value>OPTIONS</value>
+  </data>
+  <data name="TITLE_PACKAGES" xml:space="preserve">
+    <value>PACKAGES</value>
+  </data>
+  <data name="TITLE_PLUGINS" xml:space="preserve">
+    <value>PLUGINS</value>
+  </data>
+  <data name="TITLE_RESOURCES" xml:space="preserve">
+    <value>RESOURCES</value>
+  </data>
+  <data name="TITLE_SETTINGS" xml:space="preserve">
+    <value>SETTINGS</value>
+  </data>
+  <data name="TITLE_SPECIAL_THANKS" xml:space="preserve">
+    <value>SPECIAL THANKS</value>
+  </data>
+  <data name="TITLE_STATISTICS" xml:space="preserve">
+    <value>STATISTICS</value>
+  </data>
+  <data name="TITLE_SUBMIT_MODS" xml:space="preserve">
+    <value>SUBMIT MODS</value>
+  </data>
+  <data name="TITLE_TOOLS" xml:space="preserve">
     <value>TOOLS</value>
   </data>
-  <data name="TOTAL_GAME_CHEATS" xml:space="preserve">
-    <value>Game Cheats</value>
-  </data>
-  <data name="TOTAL_GAME_MODS" xml:space="preserve">
-    <value>Game Mods</value>
-  </data>
-  <data name="TOTAL_GAME_SAVES" xml:space="preserve">
-    <value>Game Saves</value>
-  </data>
-  <data name="TOTAL_HOMEBREW" xml:space="preserve">
-    <value>Homebrew</value>
-  </data>
-  <data name="TOTAL_PACKAGES" xml:space="preserve">
-    <value>Packages</value>
-  </data>
-  <data name="TOTAL_PLUGINS" xml:space="preserve">
-    <value>Plugins</value>
-  </data>
-  <data name="TOTAL_RESOURCES" xml:space="preserve">
-    <value>Resources</value>
-  </data>
   <data name="UNABLE_CONNECT" xml:space="preserve">
-    <value>Unable to connect to</value>
+    <value>Unable to connect to console.</value>
   </data>
   <data name="UNABLE_LOAD_DATABASE" xml:space="preserve">
     <value>Unable to load database.</value>
+  </data>
+  <data name="UNABLE_TO_CONNECT" xml:space="preserve">
+    <value>Unable to connect to console.</value>
   </data>
   <data name="UNABLE_TO_OPEN_EXPLORER" xml:space="preserve">
     <value>Unable to open File Explorer for directory: {0} - Error {1}</value>
@@ -825,11 +921,8 @@
   <data name="WEBMAN_REQUIRED" xml:space="preserve">
     <value>This feature requires webMAN installed on your console.</value>
   </data>
-  <data name="YOUR_LISTS" xml:space="preserve">
-    <value>Your Lists</value>
-  </data>
   <data name="YOU_ARE_NOW_CONNECTED_TO" xml:space="preserve">
-    <value>You are now connected to</value>
+    <value>You are now connected to: {0}</value>
   </data>
   <data name="YOU_MUST_BE_CONNECTED_TO_UNINSTALL_FILES" xml:space="preserve">
     <value>You must be connected to {0} to uninstall the files.</value>
