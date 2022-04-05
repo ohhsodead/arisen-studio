@@ -62,13 +62,9 @@ ModioX isn't perfect. If you encounter any issues, you are encouraged to submit 
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
 
 ### Translations
-Translating the app into your own language has never been easier. The project makes use of a powerful online tool called [Crowdin](https://crowdin.com/) to help manage translations and updates made to the app.
-
-If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to the link below and get started!
-
 For the localization process we use the collaborative platform from [CrowdIn](https://crowdin.com/), thanks to their generosity for providing a professional service to Open Source projects free of charge. Please read the [introduction for new translators](https://support.crowdin.com/crowdin-intro/) and [guide for using the online editor](https://support.crowdin.com/online-editor/) to understand how it works.
 
-If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to our [Crowdin page](https://crowdin.com/projects/modiox) to get started.
+If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to our [Crowdin project](https://crowdin.com/projects/modiox) to get started.
 
 ## Requesting Mods
 
