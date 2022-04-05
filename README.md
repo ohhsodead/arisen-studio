@@ -61,9 +61,14 @@ ModioX isn't perfect. If you encounter any issues, you are encouraged to submit 
 
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
 
+### Translations
+For the localization process we use the collaborative platform from [Crowdin](https://crowdin.com/), thanks to their generosity for providing a professional service to Open Source projects free of charge. Please read the [introduction for new translators](https://support.crowdin.com/crowdin-intro/) and [guide for using the online editor](https://support.crowdin.com/online-editor/) to understand how it works.
+
+If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to our [Crowdin project](https://crowdin.com/projects/modiox) to get started.
+
 ## Requesting Mods
 
-I know that not all mods aren't on our database, but if you open an issue with the details then we can get them added for you! You can also use this Google Forms
+I know that not all mods aren't on our database, but if you open an issue with the details then we can get them added for you!
 
 ## Credits & Libraries
 
@@ -76,6 +81,8 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [ProfanityDetector](https://github.com/stephenhaunts/ProfanityDetector/)
 * [WebMAN API](https://github.com/FxckingCoder/WebmanAPI)
 * [XDevkit](https://microsoft.com/)
+
+[<a href="https://crowdin.com/?utm_source=badge&utm_medium=referral&utm_campaign=badge-add-on" rel="nofollow"><img style="width:140;height:40px" src="https://badges.crowdin.net/badge/light/crowdin-on-dark.png" srcset="https://badges.crowdin.net/badge/light/crowdin-on-dark.png 1x,https://badges.crowdin.net/badge/light/crowdin-on-dark@2x.png 2x" alt="Crowdin | Agile localization for tech companies" /></a>](https://crowdin.com)
 
 ## Contributors
 
