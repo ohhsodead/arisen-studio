@@ -139,6 +139,9 @@
     <value>Automatically detect game titles</value>
   </data>
   <data name="BACKUP_FILES" xml:space="preserve">
+    <value>Backup Files</value>
+  </data>
+  <data name="BACKUP_RESTORE_GAME_FILES" xml:space="preserve">
     <value>Backup/Restore Game Files</value>
   </data>
   <data name="CHEAT_APPLIED" xml:space="preserve">
@@ -237,6 +240,9 @@
   <data name="DOWNLOADING_ARCHIVE" xml:space="preserve">
     <value>Downloading archive...</value>
   </data>
+  <data name="DOWNLOADING_EXTRACTING_ARCHIVE" xml:space="preserve">
+    <value>Downloading and extracting archive...</value>
+  </data>
   <data name="DOWNLOADING_FILE" xml:space="preserve">
     <value>Downloading file: {0}</value>
   </data>
@@ -285,8 +291,23 @@
   <data name="FILES" xml:space="preserve">
     <value>Files</value>
   </data>
+  <data name="FILES_INSTALL_ERROR" xml:space="preserve">
+    <value>Unable to install files. Error: {0}</value>
+  </data>
+  <data name="FILES_INSTALL_SUCCESS" xml:space="preserve">
+    <value>Successfully installed {0} files.</value>
+  </data>
   <data name="FILES_NOT_INSTALLED_TO_CONNECTED_CONSOLE" xml:space="preserve">
     <value>These files weren't installed to the connected console.</value>
+  </data>
+  <data name="FILES_UNINSTALL_SUCCESS" xml:space="preserve">
+    <value>Successfully uninstalled {0} files.</value>
+  </data>
+  <data name="FILE_BACKUP_CREATED" xml:space="preserve">
+    <value>Successfully created backup file.</value>
+  </data>
+  <data name="FILE_BACKUP_CREATING" xml:space="preserve">
+    <value>Creating backup of file: {0}</value>
   </data>
   <data name="FILE_DELETED" xml:space="preserve">
     <value>Successfully deleted file: {0}</value>
@@ -299,6 +320,12 @@
   </data>
   <data name="FILE_DOWNLOADING" xml:space="preserve">
     <value>Downloading file: {0}</value>
+  </data>
+  <data name="FILE_INSTALL_LOCATION" xml:space="preserve">
+    <value>Installing file: {0} to {1}</value>
+  </data>
+  <data name="FILE_INSTALL_SUCCESS" xml:space="preserve">
+    <value>Successfully installed file.</value>
   </data>
   <data name="FILE_MISSING" xml:space="preserve">
     <value>File Missing</value>
@@ -333,6 +360,15 @@
   <data name="FILE_RENAMING" xml:space="preserve">
     <value>Renaming file to: {0}</value>
   </data>
+  <data name="FILE_UNINSTALL_ERROR" xml:space="preserve">
+    <value>Unable to uninstall files. Error: {0}</value>
+  </data>
+  <data name="FILE_UNINSTALL_LOCATION" xml:space="preserve">
+    <value>Uninstalling file: {0} from {1}</value>
+  </data>
+  <data name="FILE_UNINSTALL_SUCCESSS" xml:space="preserve">
+    <value>Successfully uninstalled file.</value>
+  </data>
   <data name="FILE_UPLOADED" xml:space="preserve">
     <value>Successfully uploaded file: {0}</value>
   </data>
@@ -356,6 +392,9 @@
   </data>
   <data name="FOLDER_DELETED" xml:space="preserve">
     <value>Successfully deleted folder: {0}</value>
+  </data>
+  <data name="FOLDER_DELETE_SUCCESS" xml:space="preserve">
+    <value>Successfully deleted folder.</value>
   </data>
   <data name="FOLDER_DELETING" xml:space="preserve">
     <value>Deleting folder: {0}</value>
@@ -393,6 +432,18 @@
   <data name="FOLDER_UPLOADING" xml:space="preserve">
     <value>Uploading folder to: {0}</value>
   </data>
+  <data name="FOUND_GAME_REGION" xml:space="preserve">
+    <value>Found game region: {0}</value>
+  </data>
+  <data name="FOUND_PREVIOUS_INSTALL" xml:space="preserve">
+    <value>Found previous installation details.</value>
+  </data>
+  <data name="FOUND_USB_DEVICE" xml:space="preserve">
+    <value>Found USB device: {0}</value>
+  </data>
+  <data name="FOUND_USER_PROFILE" xml:space="preserve">
+    <value>Found user profile: {0}</value>
+  </data>
   <data name="GAME_LAUNCHER" xml:space="preserve">
     <value>Game Launcher</value>
   </data>
@@ -408,14 +459,45 @@
   <data name="GAME_UPDATE_FINDER" xml:space="preserve">
     <value>Game Update Finder</value>
   </data>
+  <data name="GETTING_DOWNLOAD_FILES" xml:space="preserve">
+    <value>Getting archive file download link...</value>
+  </data>
+  <data name="GETTING_GAME_REGION" xml:space="preserve">
+    <value>Getting game region...</value>
+  </data>
+  <data name="GETTING_PREVIOUS_INSTALL" xml:space="preserve">
+    <value>Getting previous install details...</value>
+  </data>
+  <data name="GETTING_USB_DEVICE" xml:space="preserve">
+    <value>Getting USB device...</value>
+  </data>
+  <data name="GETTING_USER_PROFILE" xml:space="preserve">
+    <value>Getting user profile...</value>
+  </data>
   <data name="HELP" xml:space="preserve">
     <value>HELP</value>
   </data>
   <data name="HOWTO_GUIDE" xml:space="preserve">
     <value>How-To Guides for ModioX</value>
   </data>
+  <data name="HOW_TO_ACTIVATE_DEMO" xml:space="preserve">
+    <value>Activating a C00/Demo package is very easy and doesn't require a rap file. It can be done using ReActPSN or PSNPatch.\n\nReActPSN : Run the homebrew while pressing and holding circle on your controller.
+\nPSNPatch : Run PSNPatch and press R1. It should displays a list of the games that have been unlocked.</value>
+  </data>
+  <data name="HOW_TO_ACTIVATE_DEMO_QUESTION" xml:space="preserve">
+    <value>How do I activate a C00/Demo that has a free license?</value>
+  </data>
+  <data name="HOW_TO_ACTIVATE_RAP" xml:space="preserve">
+    <value>Activating a package using a rap file requires few steps. It can be done with ReActPSN or PSNPatch. However, I will only describe how to do it with ReActPSN.\n\n1. Format a USB key in FAT32.\n2. Create the folder 'exdata' at the root of the USB key.\n3. Move the corresponding RAP file for the games you want to activate in the exdata folder.\nWarning: Do not rename rap files ! You need to leave their original ugly name.\n4. Connect the USB key in the right USB port of the PS3 (the closest to the bluray drive).\n5. Delete the ReActPSN user on your PS3 if it exists.\n6. Create the account 'aa' (without quotes) and open the account.\n7. Run ReActPSN and the screen should go black, then you should hear beeps and then the PS3 should reboot.\n8. The user 'aa' should be gone now and the account 'ReActPSN' automatically created.\n9. You're done!</value>
+  </data>
+  <data name="HOW_TO_ACTIVATE_RAP_QUESTION" xml:space="preserve">
+    <value>How do I activate a PSN package with a RAP file?</value>
+  </data>
   <data name="IDLE" xml:space="preserve">
     <value>Idle</value>
+  </data>
+  <data name="IMPORTANT_MESSAGE" xml:space="preserve">
+    <value>Important Message</value>
   </data>
   <data name="INITIALIZED" xml:space="preserve">
     <value>Initialized</value>
@@ -423,14 +505,23 @@
   <data name="INITIALIZING_APP_DB" xml:space="preserve">
     <value>Initializing the application database</value>
   </data>
+  <data name="INSERT_USB_DEVICE" xml:space="preserve">
+    <value>Insert a USB device to your computer first and then install the files again.</value>
+  </data>
   <data name="INSTALLED" xml:space="preserve">
     <value>Installed</value>
   </data>
   <data name="INSTALLING" xml:space="preserve">
     <value>Installing</value>
   </data>
+  <data name="INSTALLING_BACKUP_FILE_LOCATION" xml:space="preserve">
+    <value>Installing backup file: {0} to {1}</value>
+  </data>
   <data name="INSTALLING_FILE" xml:space="preserve">
     <value>Installing file: {0}</value>
+  </data>
+  <data name="INSTALL_CANCELED" xml:space="preserve">
+    <value>Installation canceled.</value>
   </data>
   <data name="INSTALL_FILE" xml:space="preserve">
     <value>Install File</value>
@@ -476,6 +567,9 @@
   </data>
   <data name="LABEL_CHANGE" xml:space="preserve">
     <value>Change</value>
+  </data>
+  <data name="LABEL_CLOSE" xml:space="preserve">
+    <value>Close</value>
   </data>
   <data name="LABEL_CONNECTION_DETAILS" xml:space="preserve">
     <value>Connection Details</value>
@@ -588,6 +682,9 @@
   <data name="LABEL_OPEN_EXPLORER" xml:space="preserve">
     <value>Open Explorer</value>
   </data>
+  <data name="LABEL_OPEN_PATH" xml:space="preserve">
+    <value>Open Path</value>
+  </data>
   <data name="LABEL_PACKAGES" xml:space="preserve">
     <value>Packages</value>
   </data>
@@ -681,6 +778,9 @@
   <data name="NOT_INSTALLED" xml:space="preserve">
     <value>Not Installed</value>
   </data>
+  <data name="NOT_SUPPORTED_GAME_REGION" xml:space="preserve">
+    <value>Game region isn't supported.</value>
+  </data>
   <data name="NO_ANNOUNCEMENTS" xml:space="preserve">
     <value>NO ANNOUNCEMENTS</value>
   </data>
@@ -692,6 +792,12 @@
   </data>
   <data name="NO_CONSOLE_PROFILES" xml:space="preserve">
     <value>NO CONSOLE PROFILES</value>
+  </data>
+  <data name="NO_DOWNLOAD_FILES_SELECTED" xml:space="preserve">
+    <value>No archive file download selected.</value>
+  </data>
+  <data name="NO_GAME_REGION_SELECTED" xml:space="preserve">
+    <value>No game region selected.</value>
   </data>
   <data name="NO_INPUT" xml:space="preserve">
     <value>No Input</value>
@@ -711,6 +817,24 @@
   <data name="NO_NEWS_IS_GOOD_NEWS" xml:space="preserve">
     <value>No news is good news!</value>
   </data>
+  <data name="NO_PREVIOUS_INSTALL_FOUND" xml:space="preserve">
+    <value>No previous installation found.</value>
+  </data>
+  <data name="NO_USB_DEVICES" xml:space="preserve">
+    <value>No USB Devices</value>
+  </data>
+  <data name="NO_USB_DEVICES_CONNECTED" xml:space="preserve">
+    <value>No USB devices connected.</value>
+  </data>
+  <data name="NO_USB_DEVICE_FOUND" xml:space="preserve">
+    <value>No USB device found.</value>
+  </data>
+  <data name="NO_USB_DEVICE_SELECTED" xml:space="preserve">
+    <value>No USB device selected.</value>
+  </data>
+  <data name="NO_USER_PROFILE_SELECTED" xml:space="preserve">
+    <value>No user profile selected.</value>
+  </data>
   <data name="OPEN_FILE" xml:space="preserve">
     <value>Open File</value>
   </data>
@@ -722,6 +846,15 @@
   </data>
   <data name="PACKAGE_MANAGER" xml:space="preserve">
     <value>Package File Manager</value>
+  </data>
+  <data name="PREPARING_DOWNLOAD" xml:space="preserve">
+    <value>Preparing to download archive...</value>
+  </data>
+  <data name="PREPARING_INSTALL" xml:space="preserve">
+    <value>Preparing to install files...</value>
+  </data>
+  <data name="PREPARING_UNINSTALL" xml:space="preserve">
+    <value>Preparing to uninstall files...</value>
   </data>
   <data name="PROFILE_ADD_INSTRUCTION" xml:space="preserve">
     <value>Click 'Add New Profile' to create one</value>
@@ -737,6 +870,9 @@
   </data>
   <data name="READY_TO_CONNECT" xml:space="preserve">
     <value>Ready to connect...</value>
+  </data>
+  <data name="READY_TO_START_GAME" xml:space="preserve">
+    <value>Ready to start game.</value>
   </data>
   <data name="REDIRECTING" xml:space="preserve">
     <value>Redirecting...</value>
@@ -782,6 +918,9 @@
   </data>
   <data name="SHOW_GAMES_IN_EXTERNAL_DEVICES" xml:space="preserve">
     <value>Show games list from external device*</value>
+  </data>
+  <data name="STARTING_INSTALL" xml:space="preserve">
+    <value>Starting install...</value>
   </data>
   <data name="SUCCESS" xml:space="preserve">
     <value>Success</value>
@@ -894,6 +1033,9 @@
   <data name="UNINSTALLING" xml:space="preserve">
     <value>Uninstalling</value>
   </data>
+  <data name="UNINSTALLING_FILES" xml:space="preserve">
+    <value>Uninstalling files...</value>
+  </data>
   <data name="UNINSTALL_ALL_ITEMS" xml:space="preserve">
     <value>Uninstall All Items</value>
   </data>
@@ -909,6 +1051,9 @@
   <data name="UPLOAD_ERROR" xml:space="preserve">
     <value>Unable to upload to console. Error: {0}</value>
   </data>
+  <data name="USB_DEVICES" xml:space="preserve">
+    <value>USB Devices</value>
+  </data>
   <data name="USE_FORMATTED_FILE_SIZES" xml:space="preserve">
     <value>Use formatted file sizes (e.g. "3 MB")</value>
   </data>
@@ -920,9 +1065,6 @@
   </data>
   <data name="WEBMAN_REQUIRED" xml:space="preserve">
     <value>This feature requires webMAN installed on your console.</value>
-  </data>
-  <data name="YOU_ARE_NOW_CONNECTED_TO" xml:space="preserve">
-    <value>You are now connected to: {0}</value>
   </data>
   <data name="YOU_MUST_BE_CONNECTED_TO_UNINSTALL_FILES" xml:space="preserve">
     <value>You must be connected to {0} to uninstall the files.</value>
