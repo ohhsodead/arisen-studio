@@ -126,8 +126,20 @@
   <data name="ALL_GAMES" xml:space="preserve">
     <value>All Games</value>
   </data>
+  <data name="ANOTHER_MOD_INSTALLED" xml:space="preserve">
+    <value>{0} is installed to: {1}\nMore than one mods installed for the same game might cause issues, like conflicts.\n\nWould you like to uninstall the current mods?</value>
+  </data>
   <data name="ANY" xml:space="preserve">
     <value>ANY</value>
+  </data>
+  <data name="ARCHIVE_DOWNLOADING" xml:space="preserve">
+    <value>Downloading archive...</value>
+  </data>
+  <data name="ARCHIVE_DOWNLOADING_EXTRACTING_ARCHIVE" xml:space="preserve">
+    <value>Downloading and extracting archive...</value>
+  </data>
+  <data name="ARCHIVE_DOWNLOAD_SUCCESS" xml:space="preserve">
+    <value>Successfully downloaded archive file.</value>
   </data>
   <data name="AUTOMATION" xml:space="preserve">
     <value>Automation</value>
@@ -141,8 +153,17 @@
   <data name="BACKUP_FILES" xml:space="preserve">
     <value>Backup Files</value>
   </data>
+  <data name="BACKUP_GAME_FILES" xml:space="preserve">
+    <value>Would you like to backup the current game files? These files can be restored when uninstalling the mods.</value>
+  </data>
   <data name="BACKUP_RESTORE_GAME_FILES" xml:space="preserve">
     <value>Backup/Restore Game Files</value>
+  </data>
+  <data name="CANT_FIND_BACKUP_FILE" xml:space="preserve">
+    <value>You have created a backup for the {0} file, but it's either missing or has been deleted.\n\nIf this file has been moved, open Tools &gt; Game Backup Files and set the local file path again. If this file has been deleted, then delete the game backup file data and backup the file again.\n\nFor now, this file will be ignored to prevent issues with missing game files.</value>
+  </data>
+  <data name="CANT_UNINSTALL_CFW_FILES" xml:space="preserve">
+    <value>You cannot uninstall files from the firmware folder. Any missing files could impact your console performance.</value>
   </data>
   <data name="CHEAT_APPLIED" xml:space="preserve">
     <value>Successfully applied cheat to game.</value>
@@ -152,6 +173,9 @@
   </data>
   <data name="CHEAT_NOT_SUPPORTED" xml:space="preserve">
     <value>This cheat can't be applied because it contains opcode that hasn't been implemented yet.</value>
+  </data>
+  <data name="CHOOSE_ITEM" xml:space="preserve">
+    <value>Choose Item...</value>
   </data>
   <data name="CONFIRM" xml:space="preserve">
     <value>Confirm</value>
@@ -204,14 +228,23 @@
   <data name="DELETE" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="DELETED" xml:space="preserve">
+    <value>Deleted</value>
+  </data>
   <data name="DELETE_ALL_ITEMS" xml:space="preserve">
     <value>Delete All Items</value>
   </data>
   <data name="DELETE_ITEM" xml:space="preserve">
     <value>Delete Item</value>
   </data>
+  <data name="DELETE_ITEMS_SUCCESS" xml:space="preserve">
+    <value>Successfully deleted all items.</value>
+  </data>
   <data name="DELETE_ITEM_ERROR" xml:space="preserve">
     <value>Unable to delete item. Error: {0}</value>
+  </data>
+  <data name="DELETE_ITEM_SUCCESS" xml:space="preserve">
+    <value>Successfully deleted item.</value>
   </data>
   <data name="DIRECTORY_EMPTY" xml:space="preserve">
     <value>Empty Directory</value>
@@ -237,20 +270,26 @@
   <data name="DOWNLOADING" xml:space="preserve">
     <value>Downloading</value>
   </data>
-  <data name="DOWNLOADING_ARCHIVE" xml:space="preserve">
-    <value>Downloading archive...</value>
+  <data name="DOWNLOADING_GAME_SAVE" xml:space="preserve">
+    <value>Downloading Game Save</value>
   </data>
-  <data name="DOWNLOADING_EXTRACTING_ARCHIVE" xml:space="preserve">
-    <value>Downloading and extracting archive...</value>
+  <data name="DOWNLOADING_MODS" xml:space="preserve">
+    <value>Downloading Mods</value>
   </data>
-  <data name="DOWNLOADING_FILE" xml:space="preserve">
-    <value>Downloading file: {0}</value>
+  <data name="DOWNLOADING_PACKAGE" xml:space="preserve">
+    <value>Downloading Package</value>
   </data>
   <data name="DOWNLOADS_FOLDER" xml:space="preserve">
     <value>Downloads Folder</value>
   </data>
   <data name="DOWNLOADS_LOCATION" xml:space="preserve">
     <value>Downloads Location</value>
+  </data>
+  <data name="DOWNLOAD_CANCELED" xml:space="preserve">
+    <value>Download canceled.</value>
+  </data>
+  <data name="DOWNLOAD_FOLDER_NOT_FOUND" xml:space="preserve">
+    <value>Download folder doesn't exist on your computer. You can change the download location in your settings.</value>
   </data>
   <data name="ENABLE_HARDWARE_ACCELERATION" xml:space="preserve">
     <value>Enable Hardware Acceleration</value>
@@ -280,7 +319,7 @@
     <value>Fetching directory listing of: {0}</value>
   </data>
   <data name="FETCHING_LISTING_ERROR" xml:space="preserve">
-    <value>Error fetching directory listing for path: {0} - Error: {1}</value>
+    <value>Unable to fetch directory listing for path: {0} - Error: {1}</value>
   </data>
   <data name="FETCHING_ROOT_DIRECTORIES" xml:space="preserve">
     <value>Fetching root directories</value>
@@ -299,6 +338,12 @@
   </data>
   <data name="FILES_NOT_INSTALLED_TO_CONNECTED_CONSOLE" xml:space="preserve">
     <value>These files weren't installed to the connected console.</value>
+  </data>
+  <data name="FILES_REINSTALL" xml:space="preserve">
+    <value>{0} is already installed to: {1}\n\nWould you like to reinstall the files?</value>
+  </data>
+  <data name="FILES_UNINSTALLING" xml:space="preserve">
+    <value>Uninstalling files...</value>
   </data>
   <data name="FILES_UNINSTALL_SUCCESS" xml:space="preserve">
     <value>Successfully uninstalled {0} files.</value>
@@ -321,11 +366,23 @@
   <data name="FILE_DOWNLOADING" xml:space="preserve">
     <value>Downloading file: {0}</value>
   </data>
+  <data name="FILE_DOWNLOAD_ERROR" xml:space="preserve">
+    <value>Unable to download file. Error: {0}</value>
+  </data>
+  <data name="FILE_DOWNLOAD_LOCATION" xml:space="preserve">
+    <value>Downloading file: {0} to {1}</value>
+  </data>
+  <data name="FILE_DOWNLOAD_SUCCESS" xml:space="preserve">
+    <value>Successfully downloaded file.</value>
+  </data>
+  <data name="FILE_INSTALL_ERROR" xml:space="preserve">
+    <value>Unable to install file. Error: {0}</value>
+  </data>
   <data name="FILE_INSTALL_LOCATION" xml:space="preserve">
     <value>Installing file: {0} to {1}</value>
   </data>
   <data name="FILE_INSTALL_SUCCESS" xml:space="preserve">
-    <value>Successfully installed file.</value>
+    <value>Successfully installed file(s).</value>
   </data>
   <data name="FILE_MISSING" xml:space="preserve">
     <value>File Missing</value>
@@ -344,6 +401,9 @@
   </data>
   <data name="FILE_NAME_EXISTS_IN_GAMES" xml:space="preserve">
     <value>You already have a file with this name in your games.</value>
+  </data>
+  <data name="FILE_REINSTALL" xml:space="preserve">
+    <value>{0} is already installed.\n\nWould you like to reinstall the file?</value>
   </data>
   <data name="FILE_RENAME" xml:space="preserve">
     <value>Rename File</value>
@@ -432,6 +492,9 @@
   <data name="FOLDER_UPLOADING" xml:space="preserve">
     <value>Uploading folder to: {0}</value>
   </data>
+  <data name="FORBIDDEN" xml:space="preserve">
+    <value>Forbidden</value>
+  </data>
   <data name="FOUND_GAME_REGION" xml:space="preserve">
     <value>Found game region: {0}</value>
   </data>
@@ -508,6 +571,9 @@
   <data name="INSERT_USB_DEVICE" xml:space="preserve">
     <value>Insert a USB device to your computer first and then install the files again.</value>
   </data>
+  <data name="INSERT_USB_DEVICE_TO_CONSOLE" xml:space="preserve">
+    <value>One or more files needs to be installed to a USB device whch is connected to your console.\nInsert a USB device to your console and click 'Yes' to continue. Otherwise click 'No' to ignore the USB files.</value>
+  </data>
   <data name="INSTALLED" xml:space="preserve">
     <value>Installed</value>
   </data>
@@ -520,6 +586,15 @@
   <data name="INSTALLING_FILE" xml:space="preserve">
     <value>Installing file: {0}</value>
   </data>
+  <data name="INSTALLING_GAME_SAVE" xml:space="preserve">
+    <value>Installing Game Save</value>
+  </data>
+  <data name="INSTALLING_MODS" xml:space="preserve">
+    <value>Installing Mods</value>
+  </data>
+  <data name="INSTALLING_PACKAGE_FILE" xml:space="preserve">
+    <value>Installing Package</value>
+  </data>
   <data name="INSTALL_CANCELED" xml:space="preserve">
     <value>Installation canceled.</value>
   </data>
@@ -528,6 +603,9 @@
   </data>
   <data name="INSTALL_FILES" xml:space="preserve">
     <value>Install Files</value>
+  </data>
+  <data name="INSTALL_FILES_TO_USB_DEVICE" xml:space="preserve">
+    <value>Install Files to USB</value>
   </data>
   <data name="INSTALL_GAME_SAVES_TO_LOCAL_USB" xml:space="preserve">
     <value>Install Game Saves to local USB device</value>
@@ -769,8 +847,14 @@
   <data name="MISSING" xml:space="preserve">
     <value>MISSING</value>
   </data>
+  <data name="MOD_NOT_INSTALLED" xml:space="preserve">
+    <value>{0} is not installed on your console.\n\nWould you like to attempt to uninstall the file anyway?</value>
+  </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Make sure Neighborhood is installed on your computer</value>
+  </data>
+  <data name="NOTICE_INSTALL_REBUG_FILES" xml:space="preserve">
+    <value>These files are being installed to the firmware folder (dev_rebug) which is for REBUG Custom Firmware only. Please read everything below before proceeding.\n\n- It's recommended to first create a backup of the entire folder before installing any files.\n- Your console must be running Rebug custom firmware.\n- REBUG TOOLBOX must be open during installation\n- Any missing or corrupt files in this folder can impact your console performance.\n- If you have issues after rebooting console, enter recovery mode and reinstall the custom firmware.\n\nOnly continue at your own risk and only if you know what you're doing.\n\nDo you want to continue?</value>
   </data>
   <data name="NOT_CONNECTED" xml:space="preserve">
     <value>Not Connected</value>
@@ -784,6 +868,12 @@
   <data name="NO_ANNOUNCEMENTS" xml:space="preserve">
     <value>NO ANNOUNCEMENTS</value>
   </data>
+  <data name="NO_BACKUP_FILE" xml:space="preserve">
+    <value>No Backup File</value>
+  </data>
+  <data name="NO_BACKUP_FILE_FOUND" xml:space="preserve">
+    <value>You don't have a backup for the: {0} file. This file will be ignored to prevent issues with missing game files. You must install the game update to restore the original file.</value>
+  </data>
   <data name="NO_CONSOLE_CONNECTED" xml:space="preserve">
     <value>No Console Connected</value>
   </data>
@@ -795,6 +885,12 @@
   </data>
   <data name="NO_DOWNLOAD_FILES_SELECTED" xml:space="preserve">
     <value>No archive file download selected.</value>
+  </data>
+  <data name="NO_GAME_REGION_FOLDER_FOUND" xml:space="preserve">
+    <value>Unable to find the game update folder for this region.\nInstall the correct mods for this game or choose a different game region.</value>
+  </data>
+  <data name="NO_GAME_REGION_FOUND" xml:space="preserve">
+    <value>Game region cannot be found on console.</value>
   </data>
   <data name="NO_GAME_REGION_SELECTED" xml:space="preserve">
     <value>No game region selected.</value>
@@ -841,6 +937,9 @@
   <data name="OPEN_FOLDER" xml:space="preserve">
     <value>Open Folder</value>
   </data>
+  <data name="OVERWRITE_MODS" xml:space="preserve">
+    <value>Overwrite Mods</value>
+  </data>
   <data name="PACKAGES_INSTALL_FILE_PATH" xml:space="preserve">
     <value>Packages Install File Path</value>
   </data>
@@ -879,6 +978,12 @@
   </data>
   <data name="REDIRECT_TO_GITHUB_ISSUES" xml:space="preserve">
     <value>You will now be redirected to our GitHub Issues page and all details will be automatically filled for you. Please provide information about the issue to help us fix your problem.\nClick the 'Submit' button to open a new issue which can help us fix any problems.</value>
+  </data>
+  <data name="REINSTALL_FILE" xml:space="preserve">
+    <value>Reinstall File</value>
+  </data>
+  <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
+    <value>Files have been installed to a USB device connected to your console. You can either uninstall them now or manually delete them.\n\nIf you would like to uninstall the files now, connect the same USB device you installed the mods to into the same port of your console and click 'Yes' to continue.\nIf you don't want to uninstall the files, click 'No' and all of these files will be ignored.</value>
   </data>
   <data name="RESTART_REQUIRED" xml:space="preserve">
     <value>Restart Required</value>
@@ -997,9 +1102,6 @@
   <data name="TITLE_RESOURCES" xml:space="preserve">
     <value>RESOURCES</value>
   </data>
-  <data name="TITLE_SETTINGS" xml:space="preserve">
-    <value>SETTINGS</value>
-  </data>
   <data name="TITLE_SPECIAL_THANKS" xml:space="preserve">
     <value>SPECIAL THANKS</value>
   </data>
@@ -1011,9 +1113,6 @@
   </data>
   <data name="TITLE_TOOLS" xml:space="preserve">
     <value>TOOLS</value>
-  </data>
-  <data name="UNABLE_CONNECT" xml:space="preserve">
-    <value>Unable to connect to console.</value>
   </data>
   <data name="UNABLE_LOAD_DATABASE" xml:space="preserve">
     <value>Unable to load database.</value>
@@ -1033,11 +1132,17 @@
   <data name="UNINSTALLING" xml:space="preserve">
     <value>Uninstalling</value>
   </data>
-  <data name="UNINSTALLING_FILES" xml:space="preserve">
-    <value>Uninstalling files...</value>
+  <data name="UNINSTALLING_MODS" xml:space="preserve">
+    <value>Uninstalling Mods</value>
+  </data>
+  <data name="UNINSTALLING_PACKAGE" xml:space="preserve">
+    <value>Uninstalling Package</value>
   </data>
   <data name="UNINSTALL_ALL_ITEMS" xml:space="preserve">
     <value>Uninstall All Items</value>
+  </data>
+  <data name="UNINSTALL_CANCELED" xml:space="preserve">
+    <value>Uninstallation canceled.</value>
   </data>
   <data name="UNINSTALL_FILE" xml:space="preserve">
     <value>Uninstall File</value>
@@ -1047,6 +1152,9 @@
   </data>
   <data name="UNINSTALL_ITEM" xml:space="preserve">
     <value>Uninstall Item</value>
+  </data>
+  <data name="UNINSTALL_USB_FILES" xml:space="preserve">
+    <value>Uninstall USB Files</value>
   </data>
   <data name="UPLOAD_ERROR" xml:space="preserve">
     <value>Unable to upload to console. Error: {0}</value>
@@ -1065,6 +1173,9 @@
   </data>
   <data name="WEBMAN_REQUIRED" xml:space="preserve">
     <value>This feature requires webMAN installed on your console.</value>
+  </data>
+  <data name="XBOX_CONSOLES" xml:space="preserve">
+    <value>Xbox Consoles</value>
   </data>
   <data name="YOU_MUST_BE_CONNECTED_TO_UNINSTALL_FILES" xml:space="preserve">
     <value>You must be connected to {0} to uninstall the files.</value>
