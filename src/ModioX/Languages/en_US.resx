@@ -649,6 +649,9 @@
   <data name="LABEL_CHANGE" xml:space="preserve">
     <value>Change</value>
   </data>
+  <data name="LABEL_CHEATS" xml:space="preserve">
+    <value>Cheats</value>
+  </data>
   <data name="LABEL_CLOSE" xml:space="preserve">
     <value>Close</value>
   </data>
@@ -754,6 +757,9 @@
   <data name="LABEL_NEW_FOLDER" xml:space="preserve">
     <value>New Folder</value>
   </data>
+  <data name="LABEL_NEXT" xml:space="preserve">
+    <value>Next</value>
+  </data>
   <data name="LABEL_NOT_INSTALLED" xml:space="preserve">
     <value>Not Installed</value>
   </data>
@@ -780,6 +786,9 @@
   </data>
   <data name="LABEL_PLUGINS" xml:space="preserve">
     <value>Plugins</value>
+  </data>
+  <data name="LABEL_PREVIOUS" xml:space="preserve">
+    <value>Previous</value>
   </data>
   <data name="LABEL_REFRESH" xml:space="preserve">
     <value>Refresh</value>
