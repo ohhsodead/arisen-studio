@@ -93,7 +93,7 @@ I know that not all mods aren't on our database, but if you open an issue with t
 
 * [crystall1nedev ](https://github.com/crystall1nedev)
 * [EgoMaw](https://github.com/EgoMaw)
-* [goldug](https://github.com/goldug)
+* [goldug](http://djopposite.se/)
 * [oSerenity](https://github.com/oSerenity)
 
 ## Disclaimer
