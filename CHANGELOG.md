@@ -1,6 +1,31 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## Beta v2.1.0
+- Updated FluentFTP package to 37.0.2
+- Updated Humanizer package to 2.14.1
+- Updated NLog package to 4.7.15
+- Added Discord Rich Presence option
+- Added Game Cheats page for RTM
+- Added Swedish language (Thanks goldug!)
+- Added delete buttons to Installed Mods page
+- Added status to the footer
+- Added connection status to the footer
+- Added extra details when viewing scripts
+- Added FAQ help for using packages
+- Added hyperlink support for descriptions
+- Changed DPI awareness to system
+- Fixed webMAN package detection
+- Fixed dismissing announcements
+- Removed Custom Lists, use Favorites
+- Removed Chat Room, might be a separate project
+- Updated messages for more clarification
+- Only one instance of the application can be open
+- Installed Mods now saved to current console profile
+- Other improvements to code and design
+
+Note: Sorting Packages by file size doesn't work correctly. I'm working on a fix for this.
+
 ## Beta v2.0.2
 - Minor improvements to interface (#52)
 - Added FAQ dialog for using Packages
