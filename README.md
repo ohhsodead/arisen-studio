@@ -1,7 +1,7 @@
 # ModioX
 [![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/ModioX.svg)](https://github.com/ohhsodead/ModioX/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/ModioX/total.svg)](https://github.com/ohhsodead/ModioX/releases/) [![Crowdin](https://badges.crowdin.net/modiox/localized.svg)](https://crowdin.com/project/modiox) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/ModioX.svg)](https://gitHub.com/ohhsodead/ModioX/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/ModioX.svg)](https://github.com/ohhsodead/ModioX/issues?q=is%3Aissue+is%3Aclosed)  [![Join our Discord](https://img.shields.io/badge/chat%20on-discord-7289DA)](https://discord.gg/FTCS3Xu)
 
-An open source desktop application designed to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes and much more for PlayStation 3 and Xbox 360. A library that is populated by myself, few friends and awesome contributors, so that all mods have been tested and verified. ModioX also acts as an FTP client to be able to install and uninstall directly to your console. Without the need for digging up old threads or using file managers - this aims to do everything for you.
+The elegant, powerful, and open-source mod manager. ModioX allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by myself, a few friends, and awesome contributors. ModioX can also be used as an FTP client to install and uninstall mods directly from your console. Without the need to search up old posts or use file managers - this will do everything for you.
 
 **the only one of its kind...**
 
@@ -74,11 +74,16 @@ I know that not all mods aren't on our database, but if you open an issue with t
 
 * Appropriate Creators of all Mods
 * [AutoUpdater.NET](https://github.com/ravibpatel/AutoUpdater.NET)
+* [CodeHollow.FeedReader](https://github.com/arminreiter/FeedReader/)
+* [Discord Rich Presence](https://github.com/Lachee/discord-rpc-csharp)
 * [DevExpress](https://devexpress.com/)
+* [FluentFTP](https://github.com/robinrodricks/FluentFTP)
+* [HtmlAgilityPack](https://html-agility-pack.net/)
 * [Humanizer](https://github.com/Humanizr/Humanizer)
+* [INI File Parser](https://github.com/rickyah/ini-parser)
 * [Newtonsoft.Json](https://newtonsoft.com/json)
 * [NLog](https://nlog-project.org/)
-* [ProfanityDetector](https://github.com/stephenhaunts/ProfanityDetector/)
+* [PS3Lib](https://github.com/iMCSx/PS3Lib)
 * [WebMAN API](https://github.com/FxckingCoder/WebmanAPI)
 * [XDevkit](https://microsoft.com/)
 
@@ -86,9 +91,10 @@ I know that not all mods aren't on our database, but if you open an issue with t
 
 ## Contributors
 
-* [Doregon](https://github.com/Doregon)
-* [KayGart](https://github.com/KayGart)
-* [TeddyHammer](https://github.com/TeddyHammer)
+* [crystall1nedev ](https://github.com/crystall1nedev)
+* [EgoMaw](https://github.com/EgoMaw)
+* [goldug](https://github.com/goldug)
+* [oSerenity](https://github.com/oSerenity)
 
 ## Disclaimer
 
