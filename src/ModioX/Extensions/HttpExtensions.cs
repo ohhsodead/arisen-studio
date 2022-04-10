@@ -1,10 +1,10 @@
-﻿using System;
+﻿using ModioX.Models.Game_Updates;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Xml.Serialization;
-using ModioX.Models.Game_Updates;
 
 namespace ModioX.Extensions
 {

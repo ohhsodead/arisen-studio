@@ -142,6 +142,7 @@ namespace ModioX.Forms.Dialogs
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Login Details";
+            this.Load += new System.EventHandler(this.LoginDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxUsername.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxPassword.Properties)).EndInit();
             this.ResumeLayout(false);

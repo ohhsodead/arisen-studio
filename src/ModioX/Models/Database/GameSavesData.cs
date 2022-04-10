@@ -1,9 +1,8 @@
-﻿using System;
+﻿using ModioX.Database;
+using ModioX.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using ModioX.Database;
-using ModioX.Extensions;
-using ModioX.Forms.Windows;
 
 namespace ModioX.Models.Database
 {
@@ -22,31 +21,31 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Get all of the mods matching the specified filters.
         /// </summary>
-        /// <param name="consoleType"></param>
+        /// <param name="consoleProfile"></param>
         /// <param name="categoryId"></param>
         /// <param name="name"></param>
         /// <param name="region"></param>
         /// <param name="version"></param>
-        /// <param name="author"></param>
+        /// <param name="creator"></param>
         /// <returns></returns>
-        public List<GameSaveItemData> GetGameSaveItems(PlatformPrefix consoleType, string categoryId, string name, string region, string version, string author)
+        public List<GameSaveItemData> GetGameSaveItems(Platform platform, string categoryId, string name, string region, string version, string creator)
         {
             return categoryId switch
             {
                 "fvrt" => GameSaves.Where(x =>
-                MainWindow.Settings.FavoriteIds.Any(y => y.Platform.Equals(consoleType) && y.Ids.Contains(x.Id)) &&
+                //consoleProfile.FavoriteIds.Any(y => y == x.Id) &&
                 x.Name.ContainsIgnoreCase(name) &&
                 x.Region.ContainsIgnoreCase(region) &&
                 x.Version.ContainsIgnoreCase(version) &&
-                x.Creators.ToArray().AnyContainsIgnoreCase(author))
+                x.Creators.ToArray().AnyContainsIgnoreCase(creator))
                 .ToList(),
                 _ => GameSaves.Where(x =>
-                    x.GetPlatform() == consoleType &&
+                    x.GetPlatform() == platform &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
                     x.Region.ContainsIgnoreCase(region) &&
                     x.Version.ContainsIgnoreCase(version) &&
-                    x.Creators.ToArray().AnyContainsIgnoreCase(author))
+                    x.Creators.ToArray().AnyContainsIgnoreCase(creator))
                     .ToList()
             };
         }
@@ -56,9 +55,9 @@ namespace ModioX.Models.Database
         /// </summary>
         /// <param name="id"> <see cref="ModItemData.Id" /> </param>
         /// <returns> Mod details for the <see cref="ModItemData.Id" /> </returns>
-        public GameSaveItemData GetModById(PlatformPrefix consoleType, int id)
+        public GameSaveItemData GetModById(Platform platform, int id)
         {
-            return GameSaves.FirstOrDefault(x => x.GetPlatform() == consoleType && x.Id.Equals(id));
+            return GameSaves.FirstOrDefault(x => x.GetPlatform() == platform && x.Id.Equals(id));
         }
 
         /// <summary>

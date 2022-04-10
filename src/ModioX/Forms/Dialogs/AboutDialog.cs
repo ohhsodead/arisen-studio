@@ -1,7 +1,8 @@
-﻿using System;
-using System.Diagnostics;
-using DevExpress.Utils;
+﻿using DevExpress.Utils;
 using DevExpress.XtraEditors;
+using System;
+using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Dialogs
 {
@@ -12,7 +13,7 @@ namespace ModioX.Forms.Dialogs
             InitializeComponent();
         }
 
-        private void AboutWindow_Load(object sender, EventArgs e)
+        private void AboutDialog_Load(object sender, EventArgs e)
         {
             ButtonClose.Focus();
         }
@@ -30,6 +31,17 @@ namespace ModioX.Forms.Dialogs
         private void ButtonClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (ModifierKeys == Keys.None && keyData == Keys.Escape)
+            {
+                Close();
+                return true;
+            }
+
+            return base.ProcessDialogKey(keyData);
         }
     }
 }

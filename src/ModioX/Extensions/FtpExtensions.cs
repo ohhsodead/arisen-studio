@@ -1,14 +1,14 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using FluentFTP;
+using ModioX.Forms.Windows;
+using ModioX.Io;
+using Param_SFO;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using FluentFTP;
-using ModioX.Forms.Windows;
-using ModioX.Io;
-using Param_SFO;
 
 namespace ModioX.Extensions
 {
@@ -471,7 +471,7 @@ namespace ModioX.Extensions
                 }
             }
 
-            XtraMessageBox.Show(MainWindow.Window, "There is no USB device connected to the console.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            XtraMessageBox.Show(MainWindow.Window, "There is no USB device connected to the console.", MainWindow.ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             return null;
         }
 

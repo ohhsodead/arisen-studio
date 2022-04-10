@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Globalization;
-using System.IO;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using FluentFTP;
 using Humanizer;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Globalization;
+using System.IO;
+using System.Resources;
+using System.Windows.Forms;
 using FtpExtensions = ModioX.Extensions.FtpExtensions;
 
 namespace ModioX.Forms.Tools.PS3
@@ -21,6 +22,8 @@ namespace ModioX.Forms.Tools.PS3
         {
             InitializeComponent();
         }
+
+        public ResourceManager Language = MainWindow.ResourceLanguage;
 
         private FtpClient FtpClient { get; } = MainWindow.FtpClient;
 
@@ -71,7 +74,7 @@ namespace ModioX.Forms.Tools.PS3
             {
                 packages.Rows.Add(package.Name,
                                   MainWindow.Settings.UseRelativeTimes ? package.Modified.Humanize() : package.Modified.ToString("MM/dd/yyyy", CultureInfo.CurrentCulture),
-                                  MainWindow.Settings.UseFormattedFileSizes ? package.Size.Bytes().Humanize("#") : package.Size + " Bytes");
+                                  MainWindow.Settings.UseFormattedFileSizes ? package.Size.Bytes().Humanize("#") : package.Size + " " + Language.GetString("LABEL_BYTES"));
             }
 
             GridPackageFiles.DataSource = packages;
@@ -137,7 +140,7 @@ namespace ModioX.Forms.Tools.PS3
 
         private void ButtonDeleteAllPackageFiles_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Do you really to delete all of your package files from your console?", "Delete All", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really want to delete all of your package files from your console?", "Delete All", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 foreach (FtpListItem package in PackageFiles)
                 {

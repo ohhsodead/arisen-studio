@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using ModioX.Database;
+﻿using ModioX.Database;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Io;
 using ModioX.Models.Database;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace ModioX.Models.Resources
 {
@@ -28,7 +28,7 @@ namespace ModioX.Models.Resources
 
             BackupFile backupFile = new()
             {
-                ConsoleType = modItem.GetPlatform(),
+                Platform = modItem.GetPlatform(),
                 CategoryId = modItem.CategoryId,
                 FileName = fileName,
                 LocalPath = Path.Combine(gameBackupFolder, fileName),
@@ -48,11 +48,11 @@ namespace ModioX.Models.Resources
         /// <param name="fileName"> File Name </param>
         /// <param name="installPath"> File Install Path </param>
         /// <returns> </returns>
-        public BackupFile GetGameFileBackup(PlatformPrefix consoleType, string gameId, string fileName, string installPath)
+        public BackupFile GetGameFileBackup(Platform platform, string gameId, string fileName, string installPath)
         {
             return
                 BackupFiles.FirstOrDefault(backupFile =>
-                backupFile.ConsoleType == consoleType &&
+                backupFile.Platform == platform &&
                 backupFile.CategoryId.EqualsIgnoreCase(gameId) &&
                 backupFile.FileName.ContainsIgnoreCase(fileName) &&
                 backupFile.InstallPath.ContainsIgnoreCase(installPath));
@@ -92,7 +92,7 @@ namespace ModioX.Models.Resources
     /// </summary>
     public class BackupFile
     {
-        public PlatformPrefix ConsoleType { get; set; }
+        public Platform Platform { get; set; }
 
         public string CategoryId { get; set; }
 

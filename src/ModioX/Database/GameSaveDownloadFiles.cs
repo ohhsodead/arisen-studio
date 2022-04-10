@@ -19,13 +19,13 @@ namespace ModioX.Database
         /// </summary>
         public bool RequiresUsbDevice => InstallPaths.Any(x => x.Contains("{USBDEV}"));
 
-        public List<string> LocalInstallPaths(PlatformPrefix consoleType)
+        public List<string> LocalInstallPaths(Platform platform)
         {
             List<string> localInstallPaths = new();
 
             foreach (string installPath in InstallPaths)
             {
-                if (consoleType == PlatformPrefix.PS3)
+                if (platform == Platform.PS3)
                 {
                     localInstallPaths.Add(installPath.Replace("/{USBDEV}/", @"PS3\").Replace("/", @"\"));
                 }

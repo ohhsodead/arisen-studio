@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
-using ModioX.Constants;
+﻿using ModioX.Constants;
 using ModioX.Database;
+using System.Diagnostics;
 
 namespace ModioX.Templates
 {
@@ -105,6 +105,42 @@ namespace ModioX.Templates
                 + $"- Creator: {modItem.CreatedBy.Replace("&", "and")}%0D%0A"
                 + $"- Version: {modItem.Version.Replace("&", "and")}%0D%0A"
                 + $"- Region: {modItem.Region.Replace("&", "and")}%0D%0A"
+                + "----------------------- %0D%0A"
+                + "*Please include additional information about the issue, details such as how to reproduce the problem, what happened before this occurred, etc...";
+
+            Process.Start(Urls.GitHubRepo + "issues/new?" + template
+                .Replace("/", "%2F")
+                .Replace(@"\", "%5C")
+                .Replace("(", "%28")
+                .Replace(")", "%29"));
+        }
+
+        /// <summary>
+        /// Open a new issue template for reporting game saves.
+        /// </summary>
+        /// <param name="category"></param>
+        /// <param name="modItem"></param>
+        internal static void OpenReportTemplateGameCheat(GameCheatItemData gameCheatItem, Cheats cheat, Offsets offset)
+        {
+            string formatModName = gameCheatItem.Game
+                .Replace("&", "and")
+                .Replace("%", "%25")
+                .Replace("(", "%28")
+                .Replace(")", "%29")
+                .Replace("/", "%2F")
+                .Replace(@"\", "%5C");
+
+            string template =
+                $"assignees=ohhsodead&" +
+                $"title=[CHEAT REPORT] {formatModName.Replace("&", "and")}&"
+                + "body="
+                + $"- Game: {gameCheatItem.Game}%0D%0A"
+                + $"- Region: {gameCheatItem.Region}%0D%0A"
+                + $"- Version: {gameCheatItem.Version}%0D%0A"
+                + $"- Cheat Name: {cheat.Name}%0D%0A"
+                + $"- Cheat Opcode: {offset.Opcode}%0D%0A"
+                + $"- Cheat Offset: {offset.Param1}%0D%0A"
+                + $"- Cheat Value: {offset.Param2}%0D%0A"
                 + "----------------------- %0D%0A"
                 + "*Please include additional information about the issue, details such as how to reproduce the problem, what happened before this occurred, etc...";
 

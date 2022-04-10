@@ -1,8 +1,8 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using ModioX.Models.Resources;
+using System;
 using System.IO;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using ModioX.Models.Resources;
 
 namespace ModioX.Forms.Dialogs
 {
@@ -39,8 +39,7 @@ namespace ModioX.Forms.Dialogs
             if (string.IsNullOrWhiteSpace(TextBoxInstallPathLocal.Text) ||
                 TextBoxInstallPathLocal.Text.IndexOfAny(Path.GetInvalidPathChars()) != -1)
             {
-                XtraMessageBox.Show("You must include a local file path for the game file backup.",
-                    "Empty Local Path");
+                XtraMessageBox.Show("You must include a local file path for the game file backup.", "Empty Local Path", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -48,7 +47,9 @@ namespace ModioX.Forms.Dialogs
             {
                 XtraMessageBox.Show(
                     "You must include a console path for for the game file backup. This is where the file will be restored at on the console.",
-                    "Empty Console Path");
+                    "Empty Console Path",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
                 return;
             }
 

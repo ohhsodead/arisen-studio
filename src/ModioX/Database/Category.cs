@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace ModioX.Database
 {

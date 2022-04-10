@@ -19,7 +19,7 @@ namespace ModioX.Extensions
 
                 foreach (string xbox in xboxManager.Consoles)
                 {
-                    if (MainWindow.Settings.ConsoleProfiles.Exists(x => x.TypePrefix == PlatformPrefix.XBOX && x.Name.Equals(xbox)))
+                    if (MainWindow.Settings.ConsoleProfiles.Exists(x => x.Platform == Platform.XBOX360 && x.Name.Equals(xbox)))
                     {
                         if (XtraMessageBox.Show(owner, $"A console name: {xbox} already exists in your profiles.\n\nWould you like to it again?", "Duplicate Console", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
@@ -28,8 +28,8 @@ namespace ModioX.Extensions
                                 {
                                     Name = xbox,
                                     Address = xbox,
-                                    Type = PlatformType.Xbox360EliteFatBlack,
-                                    TypePrefix = PlatformPrefix.XBOX
+                                    PlatformType = PlatformType.Xbox360EliteFatBlack,
+                                    Platform = Platform.XBOX360
                                 });
 
                             count++;
@@ -42,20 +42,20 @@ namespace ModioX.Extensions
                                {
                                    Name = xbox,
                                    Address = xbox,
-                                   Type = PlatformType.Xbox360EliteFatBlack,
-                                   TypePrefix = PlatformPrefix.XBOX
+                                   PlatformType = PlatformType.Xbox360EliteFatBlack,
+                                   Platform = Platform.XBOX360
                                });
 
                         count++;
                     }
                 }
 
-                XtraMessageBox.Show(owner, $"A total of {count} consoles were added to your profiles.", "Xbox Consoles", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show(owner, $"A total of {count} consoles were added to your profiles.", MainWindow.ResourceLanguage.GetString("XBOX_CONSOLES"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MainWindow.Window.SetStatus("Unable to scan for Xbox consoles.", ex);
-                XtraMessageBox.Show(owner, $"Unable to scan for Xbox consoles.\n\nError: {ex.Message}", "Xbox Consoles", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(owner, $"Unable to scan for Xbox consoles.\n\nError: {ex.Message}", MainWindow.ResourceLanguage.GetString("XBOX_CONSOLES"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -81,7 +81,7 @@ namespace ModioX.Extensions
 
             foreach (string profile in consoleProfilesPaths)
             {
-                string profilePath = @$"Hdd:\Content\{profile.Replace(@"Hdd:\Content\", "")}\FFFE07D1\00010000\";
+                string profilePath = @$"Hdd:\Content\{profile.Replace(@"Hdd:\Content\", string.Empty)}\FFFE07D1\00010000\";
 
                 try
                 {
@@ -89,7 +89,7 @@ namespace ModioX.Extensions
                     {
                         if (!file.IsDirectory)
                         {
-                            string profileName = profile.Replace(@"Hdd:\Content\", "").Replace(@"\FFFE07D1\00010000\", "");
+                            string profileName = profile.Replace(@"Hdd:\Content\", string.Empty).Replace(@"\FFFE07D1\00010000\", string.Empty);
 
                             consoleProfiles.Add(new()
                             {

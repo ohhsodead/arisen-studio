@@ -1,14 +1,15 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using System.Reflection;
-using System.Windows.Forms;
-using AutoUpdaterDotNET;
+﻿using AutoUpdaterDotNET;
 using DevExpress.XtraEditors;
 using ModioX.Constants;
 using ModioX.Forms.Windows;
 using ModioX.Models.Release_Data;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace ModioX.Extensions
 {
@@ -25,18 +26,33 @@ namespace ModioX.Extensions
         public static string CurrentVersionName { get; } = $"Beta v{CurrentVersion.ToString().TrimStart('0', '.')}";
 
         /// <summary>
+        /// Get all release data from GitHub.
+        /// </summary>
+        public static List<GitHubReleaseData> AllReleases { get; set; } = GetAllReleasesData();
+
+        /// <summary>
+        /// Get all release information from the GitHub API.
+        /// </summary>
+        /// <returns> </returns>
+        public static List<GitHubReleaseData> GetAllReleasesData()
+        {
+            using StreamReader streamReader = new(HttpExtensions.GetStream(Urls.GitHubReleases));
+            return JsonConvert.DeserializeObject<List<GitHubReleaseData>>(streamReader.ReadToEnd());
+        }
+
+        /// <summary>
         /// Get the latest release data from GitHub.
         /// </summary>
-        public static GitHubData GitHubData { get; set; } = GetLatestReleaseData();
+        public static GitHubReleaseData LatestRelease { get; set; } = GetLatestReleaseData();
 
         /// <summary>
         /// Get the latest release information from the GitHub API.
         /// </summary>
         /// <returns> </returns>
-        public static GitHubData GetLatestReleaseData()
+        public static GitHubReleaseData GetLatestReleaseData()
         {
             using StreamReader streamReader = new(HttpExtensions.GetStream(Urls.GitHubLatestRelease));
-            return JsonConvert.DeserializeObject<GitHubData>(streamReader.ReadToEnd());
+            return JsonConvert.DeserializeObject<GitHubReleaseData>(streamReader.ReadToEnd());
         }
 
         /// <summary>
@@ -66,7 +82,7 @@ namespace ModioX.Extensions
                 case null when args.IsUpdateAvailable:
                     MainWindow.Settings.FirstTimeOpenAfterUpdate = true;
                     MainWindow.Window.SetStatus("A new update is available. Downloading installer...");
-                    XtraMessageBox.Show(MainWindow.Window, $"There is a new version available ({GitHubData.Name})", @"Update Available", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show(MainWindow.Window, $"There is a new version available ({LatestRelease.Name})", @"Update Available", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     try
                     {

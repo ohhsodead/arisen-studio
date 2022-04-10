@@ -1,16 +1,17 @@
-﻿using System;
-using System.ComponentModel;
-using System.Resources;
-using System.Text;
-using System.Windows.Forms;
+﻿using DevExpress.Utils;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
-using ModioX.Database;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Database;
 using ModioX.Models.Resources;
 using ModioX.Templates;
+using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Resources;
+using System.Text;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Dialogs.Details
 {
@@ -21,6 +22,7 @@ namespace ModioX.Forms.Dialogs.Details
             InitializeComponent();
         }
 
+        public ConsoleProfile ConsoleProfile = MainWindow.ConsoleProfile;
         public ResourceManager Language = MainWindow.ResourceLanguage;
         public SettingsData Settings = MainWindow.Settings;
         public CategoriesData Categories = MainWindow.Database.CategoriesData;
@@ -38,41 +40,47 @@ namespace ModioX.Forms.Dialogs.Details
             LabelCreatedBy.Text = GameSaveItem.CreatedBy.Replace("&", "&&");
             LabelSubmittedBy.Text = GameSaveItem.SubmittedBy.Replace("&", "&&");
             LabelDescription.Text = string.IsNullOrWhiteSpace(GameSaveItem.Description)
-                ? "No other details can be found for this yet."
+                ? Language.GetString("NO_MORE_DETAILS")
                 : GameSaveItem.Description.Replace("&", "&&");
 
             StringBuilder extraDescription = new StringBuilder("\n---------------------------------------------\n")
                             .AppendLine("Important Information:\n")
                             .AppendLine("- You must have at least one USB device connected to the console before installing the game save files.\n")
-                            .Append("- It's suggested to use 'Apollo Tool' (Homebrew > Applications) for patching and resigning game save files directly on your console.");
+                            .Append("- It's suggested to use 'Apollo Tool' (Homebrew Applications) for patching and resigning game save files directly on your console.");
 
             LabelDescription.Text += extraDescription.ToString();
 
-            InstalledModInfo installedModInfo = MainWindow.Settings.GetInstalledMods(GameSaveItem.GetPlatform(), GameSaveItem.CategoryId, GameSaveItem.Id);
+            InstalledModInfo installedModInfo = MainWindow.Settings.GetInstalledMods(ConsoleProfile, GameSaveItem.CategoryId, GameSaveItem.Id);
 
             if (installedModInfo == null)
             {
-                ButtonActions.Text = Language.GetString("Not Installed");
+                ButtonActions.SetControlText(Language.GetString("LABEL_NOT_INSTALLED"), 26);
                 ButtonActions.ImageOptions.SvgImage = Images[0];
-                ButtonActions.SetControlTextWidth(34);
             }
             else
             {
-                ButtonActions.Text = Language.GetString("Installed");
+                ButtonActions.SetControlText(Language.GetString("LABEL_INSTALLED"), 26);;
                 ButtonActions.ImageOptions.SvgImage = Images[1];
-                ButtonActions.SetControlTextWidth(32);
             }
 
-            if (MainWindow.Settings.FavoriteIds.Exists(x => x.Platform == MainWindow.PlatformType && x.Ids.Contains(GameSaveItem.Id)))
+            if (Settings.FavoriteGameSaves.Contains(GameSaveItem.Id))
             {
-                ButtonFavorite.Text = Language.GetString("Unfavorite");
-                ButtonFavorite.SetControlTextWidth(30);
+                ButtonFavorite.SetControlText(Language.GetString("LABEL_UNFAVORITE"), 26);
             }
             else
             {
-                ButtonFavorite.Text = Language.GetString("Favorite");
-                ButtonFavorite.SetControlTextWidth(28);
+                ButtonFavorite.SetControlText(Language.GetString("LABEL_FAVORITE"), 26);;
             }
+
+            LabelHeaderModType.Text = Language.GetString("LABEL_MOD_TYPE");
+            LabelHeaderVersion.Text = Language.GetString("LABEL_VERSION");
+            LabelHeaderGameMode.Text = Language.GetString("LABEL_GAME_MODE");
+            LabelHeaderCreatedBy.Text = Language.GetString("LABEL_CREATED_BY");
+            LabelHeaderSubmittedBy.Text = Language.GetString("LABEL_SUBMITTED_BY");
+            LabelHeaderDescription.Text = Language.GetString("LABEL_DESCRIPTION");
+
+            ButtonDownload.SetControlText(Language.GetString("LABEL_DOWNLOAD"), 26);
+            ButtonReport.SetControlText(Language.GetString("LABEL_REPORT"), 26);
         }
 
         private void ImageCloseDetails_Click(object sender, EventArgs e)
@@ -82,7 +90,7 @@ namespace ModioX.Forms.Dialogs.Details
 
         private void MenuActions_BeforePopup(object sender, CancelEventArgs e)
         {
-            MenuItemInstallFiles.Caption = Language.GetString("Install Files");
+            MenuItemInstallFiles.Caption = Language.GetString("INSTALL_FILES");
             MenuItemInstallFiles.Enabled = MainWindow.Settings.InstallHomebrewToUsbDevice | MainWindow.IsConsoleConnected;
         }
 
@@ -99,28 +107,27 @@ namespace ModioX.Forms.Dialogs.Details
 
         private void ButtonReport_Click(object sender, EventArgs e)
         {
-            StringBuilder message = new StringBuilder()
-                .Append("You will now be redirected to our GitHub Issues page for ModioX. All details will be automatically filled for you. Please provide information about the issue to help us fix your problem.\n")
-                .AppendLine("Click the 'Submit' button to open a new issue which can help us fix any problems.");
-
-            XtraMessageBox.Show(message.ToString(), "Opening GitHub Issues", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            XtraMessageBox.Show(Language.GetString("REDIRECT_TO_GITHUB_ISSUES"), Language.GetString("REDIRECTING"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             GitHubTemplates.OpenReportTemplateGameSave(Categories.GetCategoryById(GameSaveItem.CategoryId), GameSaveItem);
         }
 
         private void ButtonFavorite_Click(object sender, EventArgs e)
         {
-            if (MainWindow.Settings.FavoriteIds.Exists(x => x.Platform == MainWindow.PlatformType && x.Ids.Contains(GameSaveItem.Id)))
+            if (Settings.FavoriteGameSaves.Contains(GameSaveItem.Id))
             {
-                MainWindow.Settings.RemoveFavorite(MainWindow.PlatformType, GameSaveItem.Id);
-                ButtonFavorite.Text = Language.GetString("Favorite");
-                ButtonFavorite.SetControlTextWidth(28);
+                Settings.FavoriteGameSaves.RemoveAll(x => x == GameSaveItem.Id);
+                ButtonFavorite.SetControlText(Language.GetString("LABEL_FAVORITE"), 26);;
             }
             else
             {
-                MainWindow.Settings.AddFavorite(MainWindow.PlatformType, GameSaveItem.Id);
-                ButtonFavorite.Text = Language.GetString("Unfavorite");
-                ButtonFavorite.SetControlTextWidth(30);
+                Settings.FavoriteGameSaves.Add(GameSaveItem.Id);
+                ButtonFavorite.SetControlText(Language.GetString("LABEL_UNFAVORITE"), 26);
             }
+        }
+
+        private void LabelDescription_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
+        {
+            Process.Start(e.Link);
         }
 
         protected override bool ProcessDialogKey(Keys keyData)

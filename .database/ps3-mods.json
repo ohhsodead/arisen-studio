@@ -16114,7 +16114,7 @@
          "Version":"2.0",
          "GameMode":"MP",
          "ModType":"SPRX",
-         "Description":"No recoil\n-Wallhack\n-Aimbot",
+         "Description":"- No recoil\n- Wallhack\n- Aimbot",
          "DownloadFiles":[
             {
                "Name":"Retribution Menu (BLES)",
@@ -16131,6 +16131,58 @@
                "Region":"BLUS30072",
                "Version":"2.0",
                "Url":"https://dl.dropbox.com/s/wyllicbl9jpxdbl/Retribution%20v2%20%28BLUS%29.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
+                  "/dev_hdd0/tmp/Retribution.sprx"
+               ]
+            }
+         ]
+      },
+	  {
+         "Platform":"PS3",
+         "Id":374,
+         "CategoryId":"codmw1",
+         "Name":"Retribution Menu (Pre-Game/Non-Host)",
+         "FirmwareType":"HEN",
+         "Region":"BLES/BLUS",
+         "CreatedBy":"Apo-_-Karma",
+         "SubmittedBy":"ohhsodead",
+         "Version":"2.0",
+         "GameMode":"MP",
+         "ModType":"SPRX",
+         "Description":"Includes:\n- Pre-Game Menu\n- Non-Host Menu",
+         "DownloadFiles":[
+            {
+               "Name":"Retribution Menu (HEN)",
+               "Region":"BLES/BLUS",
+               "Version":"2.0",
+               "Url":"https://dl.dropbox.com/s/sud67d2ij42rco9/Retribution%20v2%20%28HEN%29.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
+                  "/dev_hdd0/tmp/Retribution.sprx"
+               ]
+            }
+         ]
+      },
+	  {
+         "Platform":"PS3",
+         "Id":375,
+         "CategoryId":"codmw1",
+         "Name":"Retribution Menu",
+         "FirmwareType":"CEX/DEX",
+         "Region":"BLES/BLUS",
+         "CreatedBy":"Apo-_-Karma",
+         "SubmittedBy":"ohhsodead",
+         "Version":"2.1",
+         "GameMode":"MP",
+         "ModType":"SPRX",
+         "Description":"Includes:\n- Pre-Game Menu\n-Host Menu\n- Non-Host Menu\n\nControls:\nHost Menu\n- L1 + R3 = Open\n- X = Select\n- R1/L1 = Scroll\n- Square = Back\n\nNo-Host Menu\n- Dpad Left = Open\n- Square = Select\n- L2/R2 = Scroll\n- Circle = Back\n\n~~ Enjoy",
+         "DownloadFiles":[
+            {
+               "Name":"Retribution Menu (CFW)",
+               "Region":"BLES/BLUS",
+               "Version":"2.1",
+               "Url":"https://dl.dropbox.com/s/ct4x96j8hwaycuw/Retribution%20v2.1%20%28CFW%29.zip?raw=true",
                "InstallPaths":[
                   "/dev_hdd0/game/{REGION}/USRDIR/EBOOT.BIN",
                   "/dev_hdd0/tmp/Retribution.sprx"

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using DevExpress.Data;
+﻿using DevExpress.Data;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using ModioX.Extensions;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Dialogs
 {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using System.Globalization;
-using System.Resources;
-using System.Windows.Forms;
-using DevExpress.XtraBars;
+﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using Humanizer;
 using ModioX.Database;
@@ -11,6 +6,11 @@ using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Database;
 using ModioX.Models.Resources;
+using System;
+using System.ComponentModel;
+using System.Globalization;
+using System.Resources;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Dialogs.Details
 {
@@ -34,9 +34,16 @@ namespace ModioX.Forms.Dialogs.Details
             LabelName.Text = PackageItem.Name.Replace("&", "&&");
             LabelTitleIdRegion.Text = $"{PackageItem.TitleId} ({PackageItem.Region})";
             LabelContentId.Text = PackageItem.ContentId;
-            LabelModifiedDate.Text = PackageItem.IsDateMissing ? "DATA MISSING" : Settings.UseRelativeTimes ? DateTime.Parse(PackageItem.ModifiedDate).Humanize() : DateTime.Parse(PackageItem.ModifiedDate).ToString("MM/dd/yyyy", CultureInfo.CurrentCulture);
-            LabelFileSize.Text = PackageItem.IsSizeMissing ? "DATA MISSING" : Settings.UseFormattedFileSizes ? long.Parse(PackageItem.Size).Bytes().Humanize("#.##") : PackageItem.Size + " Bytes";
-            LabelSha256.Text = PackageItem.IsSha256Missing ? "DATA MISSING" : PackageItem.Sha256;
+            LabelModifiedDate.Text = PackageItem.IsDateMissing ? Language.GetString("DATA_MISSING") : Settings.UseRelativeTimes ? DateTime.Parse(PackageItem.ModifiedDate).Humanize() : DateTime.Parse(PackageItem.ModifiedDate).ToString("MM/dd/yyyy", CultureInfo.CurrentCulture);
+            LabelFileSize.Text = PackageItem.IsSizeMissing ? Language.GetString("DATA_MISSING") : Settings.UseFormattedFileSizes ? long.Parse(PackageItem.Size).Bytes().Humanize("#.##") : PackageItem.Size + " " + Language.GetString("LABEL_BYTES");
+            LabelSha256.Text = PackageItem.IsSha256Missing ? Language.GetString("DATA_MISSING") : PackageItem.Sha256;
+
+            LabelHeaderModifiedDate.Text = Language.GetString("LABEL_MODIFIED_DATE");
+            LabelHeaderContentId.Text = Language.GetString("LABEL_CONTENT_ID");
+            LabelHeaderFileSize.Text = Language.GetString("LABEL_FILE_SIZE");
+
+            ButtonInstall.SetControlText(Language.GetString("LABEL_INSTALL"), 26);
+            ButtonDownload.SetControlText(Language.GetString("LABEL_DOWNLOAD"), 26);
         }
 
         private void ImageCloseDetails_Click(object sender, EventArgs e)
@@ -54,15 +61,17 @@ namespace ModioX.Forms.Dialogs.Details
 
         private void MenuItemInstallFiles_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (PackageItem != null)
-            {
-                DialogExtensions.ShowTransferPackagesDialog(this, TransferType.InstallPackage, PackageItem);
-            }
+            DialogExtensions.ShowTransferPackagesDialog(this, TransferType.InstallPackage, PackageItem);
         }
 
         private void ButtonDownload_Click(object sender, EventArgs e)
         {
             DialogExtensions.ShowTransferPackagesDialog(this, TransferType.DownloadPackage, PackageItem);
+        }
+
+        private void ButtonFaq_Click(object sender, EventArgs e)
+        {
+            DialogExtensions.ShowPackagesFaqDialog(this);
         }
 
         protected override bool ProcessDialogKey(Keys keyData)

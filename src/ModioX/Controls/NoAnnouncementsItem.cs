@@ -1,6 +1,6 @@
-﻿using System;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ModioX.Forms.Windows;
+using System;
 
 namespace ModioX.Controls
 {
@@ -18,8 +18,8 @@ namespace ModioX.Controls
 
         public void LoadText()
         {
-            LabelTitle.Text = MainWindow.ResourceLanguage.GetString("NO ANNOUNCEMENTS");
-            LabelSubTitle.Text = MainWindow.ResourceLanguage.GetString("No news is good news!");
+            LabelTitle.Text = MainWindow.ResourceLanguage.GetString("NO_ANNOUNCEMENTS");
+            LabelSubTitle.Text = MainWindow.ResourceLanguage.GetString("NO_NEWS_IS_GOOD_NEWS");
         }
     }
 }

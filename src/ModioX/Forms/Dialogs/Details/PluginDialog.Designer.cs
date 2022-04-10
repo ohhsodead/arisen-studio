@@ -34,14 +34,6 @@ namespace ModioX.Forms.Dialogs.Details
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PluginDialog));
             this.PanelDetails = new DevExpress.XtraEditors.XtraScrollableControl();
-            this.PanelHeader = new DevExpress.XtraEditors.PanelControl();
-            this.PanelVersion = new System.Windows.Forms.FlowLayoutPanel();
-            this.LabelVersion = new DevExpress.XtraEditors.LabelControl();
-            this.LabelHeaderVersion = new DevExpress.XtraEditors.LabelControl();
-            this.SeparatorHeader = new DevExpress.XtraEditors.SeparatorControl();
-            this.ImageCloseDetails = new DevExpress.XtraEditors.SvgImageBox();
-            this.LabelCategory = new DevExpress.XtraEditors.LabelControl();
-            this.LabelName = new DevExpress.XtraEditors.LabelControl();
             this.LabelDescription = new DevExpress.XtraEditors.LabelControl();
             this.LabelHeaderDescription = new DevExpress.XtraEditors.LabelControl();
             this.LabelSubmittedBy = new DevExpress.XtraEditors.LabelControl();
@@ -51,7 +43,15 @@ namespace ModioX.Forms.Dialogs.Details
             this.LabelHeaderModType = new DevExpress.XtraEditors.LabelControl();
             this.LabelGameMode = new DevExpress.XtraEditors.LabelControl();
             this.LabelModType = new DevExpress.XtraEditors.LabelControl();
-            this.LabelHeaderMode = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderGameMode = new DevExpress.XtraEditors.LabelControl();
+            this.PanelHeader = new DevExpress.XtraEditors.PanelControl();
+            this.PanelVersion = new System.Windows.Forms.FlowLayoutPanel();
+            this.LabelVersion = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHeaderVersion = new DevExpress.XtraEditors.LabelControl();
+            this.SeparatorHeader = new DevExpress.XtraEditors.SeparatorControl();
+            this.ImageCloseDetails = new DevExpress.XtraEditors.SvgImageBox();
+            this.LabelCategory = new DevExpress.XtraEditors.LabelControl();
+            this.LabelName = new DevExpress.XtraEditors.LabelControl();
             this.PanelActions = new DevExpress.Utils.Layout.StackPanel();
             this.ButtonActions = new DevExpress.XtraEditors.DropDownButton();
             this.MenuActions = new DevExpress.XtraBars.PopupMenu(this.components);
@@ -80,7 +80,6 @@ namespace ModioX.Forms.Dialogs.Details
             // 
             // PanelDetails
             // 
-            this.PanelDetails.Controls.Add(this.PanelHeader);
             this.PanelDetails.Controls.Add(this.LabelDescription);
             this.PanelDetails.Controls.Add(this.LabelHeaderDescription);
             this.PanelDetails.Controls.Add(this.LabelSubmittedBy);
@@ -90,13 +89,146 @@ namespace ModioX.Forms.Dialogs.Details
             this.PanelDetails.Controls.Add(this.LabelHeaderModType);
             this.PanelDetails.Controls.Add(this.LabelGameMode);
             this.PanelDetails.Controls.Add(this.LabelModType);
-            this.PanelDetails.Controls.Add(this.LabelHeaderMode);
+            this.PanelDetails.Controls.Add(this.LabelHeaderGameMode);
             this.PanelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelDetails.Location = new System.Drawing.Point(0, 0);
+            this.PanelDetails.Location = new System.Drawing.Point(0, 80);
             this.PanelDetails.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.PanelDetails.Name = "PanelDetails";
-            this.PanelDetails.Size = new System.Drawing.Size(509, 556);
+            this.PanelDetails.Size = new System.Drawing.Size(509, 476);
             this.PanelDetails.TabIndex = 1;
+            // 
+            // LabelDescription
+            // 
+            this.LabelDescription.AllowHtmlString = true;
+            this.LabelDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelDescription.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelDescription.Appearance.Options.UseFont = true;
+            this.LabelDescription.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.LabelDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelDescription.Location = new System.Drawing.Point(15, 150);
+            this.LabelDescription.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.LabelDescription.MaximumSize = new System.Drawing.Size(542, 0);
+            this.LabelDescription.MinimumSize = new System.Drawing.Size(542, 0);
+            this.LabelDescription.Name = "LabelDescription";
+            this.LabelDescription.Padding = new System.Windows.Forms.Padding(0, 0, 0, 16);
+            this.LabelDescription.Size = new System.Drawing.Size(542, 31);
+            this.LabelDescription.TabIndex = 1176;
+            this.LabelDescription.Text = "...";
+            this.LabelDescription.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelDescription_HyperlinkClick);
+            // 
+            // LabelHeaderDescription
+            // 
+            this.LabelHeaderDescription.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderDescription.Appearance.Options.UseFont = true;
+            this.LabelHeaderDescription.Location = new System.Drawing.Point(15, 126);
+            this.LabelHeaderDescription.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
+            this.LabelHeaderDescription.Name = "LabelHeaderDescription";
+            this.LabelHeaderDescription.Size = new System.Drawing.Size(64, 15);
+            this.LabelHeaderDescription.TabIndex = 1189;
+            this.LabelHeaderDescription.Text = "Description";
+            // 
+            // LabelSubmittedBy
+            // 
+            this.LabelSubmittedBy.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelSubmittedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSubmittedBy.Appearance.Options.UseFont = true;
+            this.LabelSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelSubmittedBy.Location = new System.Drawing.Point(180, 96);
+            this.LabelSubmittedBy.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.LabelSubmittedBy.Name = "LabelSubmittedBy";
+            this.LabelSubmittedBy.Size = new System.Drawing.Size(9, 15);
+            this.LabelSubmittedBy.TabIndex = 1178;
+            this.LabelSubmittedBy.Text = "...";
+            // 
+            // LabelHeaderSubmittedBy
+            // 
+            this.LabelHeaderSubmittedBy.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelHeaderSubmittedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHeaderSubmittedBy.Appearance.Options.UseFont = true;
+            this.LabelHeaderSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderSubmittedBy.Location = new System.Drawing.Point(180, 73);
+            this.LabelHeaderSubmittedBy.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
+            this.LabelHeaderSubmittedBy.Name = "LabelHeaderSubmittedBy";
+            this.LabelHeaderSubmittedBy.Size = new System.Drawing.Size(76, 15);
+            this.LabelHeaderSubmittedBy.TabIndex = 1177;
+            this.LabelHeaderSubmittedBy.Text = "Submitted By";
+            // 
+            // LabelCreatedBy
+            // 
+            this.LabelCreatedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelCreatedBy.Appearance.Options.UseFont = true;
+            this.LabelCreatedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelCreatedBy.Location = new System.Drawing.Point(15, 96);
+            this.LabelCreatedBy.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.LabelCreatedBy.Name = "LabelCreatedBy";
+            this.LabelCreatedBy.Size = new System.Drawing.Size(9, 15);
+            this.LabelCreatedBy.TabIndex = 1179;
+            this.LabelCreatedBy.Text = "...";
+            // 
+            // LabelHeaderCreatedBy
+            // 
+            this.LabelHeaderCreatedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderCreatedBy.Appearance.Options.UseFont = true;
+            this.LabelHeaderCreatedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderCreatedBy.Location = new System.Drawing.Point(15, 73);
+            this.LabelHeaderCreatedBy.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
+            this.LabelHeaderCreatedBy.Name = "LabelHeaderCreatedBy";
+            this.LabelHeaderCreatedBy.Size = new System.Drawing.Size(61, 15);
+            this.LabelHeaderCreatedBy.TabIndex = 1173;
+            this.LabelHeaderCreatedBy.Text = "Created By";
+            // 
+            // LabelHeaderModType
+            // 
+            this.LabelHeaderModType.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelHeaderModType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderModType.Appearance.Options.UseFont = true;
+            this.LabelHeaderModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderModType.Location = new System.Drawing.Point(180, 20);
+            this.LabelHeaderModType.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
+            this.LabelHeaderModType.Name = "LabelHeaderModType";
+            this.LabelHeaderModType.Size = new System.Drawing.Size(55, 15);
+            this.LabelHeaderModType.TabIndex = 1180;
+            this.LabelHeaderModType.Text = "Mod Type";
+            // 
+            // LabelGameMode
+            // 
+            this.LabelGameMode.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelGameMode.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelGameMode.Appearance.Options.UseFont = true;
+            this.LabelGameMode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelGameMode.Location = new System.Drawing.Point(15, 43);
+            this.LabelGameMode.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.LabelGameMode.Name = "LabelGameMode";
+            this.LabelGameMode.Size = new System.Drawing.Size(9, 15);
+            this.LabelGameMode.TabIndex = 1175;
+            this.LabelGameMode.Text = "...";
+            // 
+            // LabelModType
+            // 
+            this.LabelModType.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelModType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelModType.Appearance.Options.UseFont = true;
+            this.LabelModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelModType.Location = new System.Drawing.Point(180, 43);
+            this.LabelModType.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.LabelModType.Name = "LabelModType";
+            this.LabelModType.Size = new System.Drawing.Size(9, 15);
+            this.LabelModType.TabIndex = 1181;
+            this.LabelModType.Text = "...";
+            // 
+            // LabelHeaderGameMode
+            // 
+            this.LabelHeaderGameMode.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelHeaderGameMode.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHeaderGameMode.Appearance.Options.UseFont = true;
+            this.LabelHeaderGameMode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeaderGameMode.Location = new System.Drawing.Point(15, 20);
+            this.LabelHeaderGameMode.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
+            this.LabelHeaderGameMode.Name = "LabelHeaderGameMode";
+            this.LabelHeaderGameMode.Size = new System.Drawing.Size(68, 15);
+            this.LabelHeaderGameMode.TabIndex = 1174;
+            this.LabelHeaderGameMode.Text = "Game Mode";
             // 
             // PanelHeader
             // 
@@ -109,7 +241,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.PanelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelHeader.Location = new System.Drawing.Point(0, 0);
             this.PanelHeader.Name = "PanelHeader";
-            this.PanelHeader.Size = new System.Drawing.Size(509, 89);
+            this.PanelHeader.Size = new System.Drawing.Size(509, 80);
             this.PanelHeader.TabIndex = 1190;
             // 
             // PanelVersion
@@ -118,7 +250,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.PanelVersion.Controls.Add(this.LabelVersion);
             this.PanelVersion.Controls.Add(this.LabelHeaderVersion);
             this.PanelVersion.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.PanelVersion.Location = new System.Drawing.Point(382, 60);
+            this.PanelVersion.Location = new System.Drawing.Point(382, 41);
             this.PanelVersion.Name = "PanelVersion";
             this.PanelVersion.Size = new System.Drawing.Size(117, 22);
             this.PanelVersion.TabIndex = 1189;
@@ -148,11 +280,10 @@ namespace ModioX.Forms.Dialogs.Details
             // 
             // SeparatorHeader
             // 
-            this.SeparatorHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SeparatorHeader.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.SeparatorHeader.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
             this.SeparatorHeader.LineColor = System.Drawing.Color.Gainsboro;
-            this.SeparatorHeader.Location = new System.Drawing.Point(0, 42);
+            this.SeparatorHeader.Location = new System.Drawing.Point(0, 69);
             this.SeparatorHeader.Name = "SeparatorHeader";
             this.SeparatorHeader.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.SeparatorHeader.Size = new System.Drawing.Size(509, 11);
@@ -196,143 +327,12 @@ namespace ModioX.Forms.Dialogs.Details
             this.LabelName.AutoEllipsis = true;
             this.LabelName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelName.Location = new System.Drawing.Point(12, 63);
+            this.LabelName.Location = new System.Drawing.Point(12, 44);
             this.LabelName.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(364, 15);
             this.LabelName.TabIndex = 1170;
             this.LabelName.Text = "Name";
-            // 
-            // LabelDescription
-            // 
-            this.LabelDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelDescription.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelDescription.Appearance.Options.UseFont = true;
-            this.LabelDescription.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.LabelDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelDescription.Location = new System.Drawing.Point(15, 235);
-            this.LabelDescription.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
-            this.LabelDescription.MaximumSize = new System.Drawing.Size(542, 0);
-            this.LabelDescription.MinimumSize = new System.Drawing.Size(542, 0);
-            this.LabelDescription.Name = "LabelDescription";
-            this.LabelDescription.Padding = new System.Windows.Forms.Padding(0, 0, 0, 16);
-            this.LabelDescription.Size = new System.Drawing.Size(542, 31);
-            this.LabelDescription.TabIndex = 1176;
-            this.LabelDescription.Text = "...";
-            // 
-            // LabelHeaderDescription
-            // 
-            this.LabelHeaderDescription.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderDescription.Appearance.Options.UseFont = true;
-            this.LabelHeaderDescription.Location = new System.Drawing.Point(15, 211);
-            this.LabelHeaderDescription.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
-            this.LabelHeaderDescription.Name = "LabelHeaderDescription";
-            this.LabelHeaderDescription.Size = new System.Drawing.Size(64, 15);
-            this.LabelHeaderDescription.TabIndex = 1189;
-            this.LabelHeaderDescription.Text = "Description";
-            // 
-            // LabelSubmittedBy
-            // 
-            this.LabelSubmittedBy.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelSubmittedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSubmittedBy.Appearance.Options.UseFont = true;
-            this.LabelSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSubmittedBy.Location = new System.Drawing.Point(180, 181);
-            this.LabelSubmittedBy.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.LabelSubmittedBy.Name = "LabelSubmittedBy";
-            this.LabelSubmittedBy.Size = new System.Drawing.Size(9, 15);
-            this.LabelSubmittedBy.TabIndex = 1178;
-            this.LabelSubmittedBy.Text = "...";
-            // 
-            // LabelHeaderSubmittedBy
-            // 
-            this.LabelHeaderSubmittedBy.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelHeaderSubmittedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeaderSubmittedBy.Appearance.Options.UseFont = true;
-            this.LabelHeaderSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderSubmittedBy.Location = new System.Drawing.Point(180, 158);
-            this.LabelHeaderSubmittedBy.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
-            this.LabelHeaderSubmittedBy.Name = "LabelHeaderSubmittedBy";
-            this.LabelHeaderSubmittedBy.Size = new System.Drawing.Size(76, 15);
-            this.LabelHeaderSubmittedBy.TabIndex = 1177;
-            this.LabelHeaderSubmittedBy.Text = "Submitted By";
-            // 
-            // LabelCreatedBy
-            // 
-            this.LabelCreatedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelCreatedBy.Appearance.Options.UseFont = true;
-            this.LabelCreatedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelCreatedBy.Location = new System.Drawing.Point(15, 181);
-            this.LabelCreatedBy.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.LabelCreatedBy.Name = "LabelCreatedBy";
-            this.LabelCreatedBy.Size = new System.Drawing.Size(9, 15);
-            this.LabelCreatedBy.TabIndex = 1179;
-            this.LabelCreatedBy.Text = "...";
-            // 
-            // LabelHeaderCreatedBy
-            // 
-            this.LabelHeaderCreatedBy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderCreatedBy.Appearance.Options.UseFont = true;
-            this.LabelHeaderCreatedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderCreatedBy.Location = new System.Drawing.Point(15, 158);
-            this.LabelHeaderCreatedBy.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
-            this.LabelHeaderCreatedBy.Name = "LabelHeaderCreatedBy";
-            this.LabelHeaderCreatedBy.Size = new System.Drawing.Size(61, 15);
-            this.LabelHeaderCreatedBy.TabIndex = 1173;
-            this.LabelHeaderCreatedBy.Text = "Created By";
-            // 
-            // LabelHeaderModType
-            // 
-            this.LabelHeaderModType.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelHeaderModType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderModType.Appearance.Options.UseFont = true;
-            this.LabelHeaderModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderModType.Location = new System.Drawing.Point(180, 105);
-            this.LabelHeaderModType.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
-            this.LabelHeaderModType.Name = "LabelHeaderModType";
-            this.LabelHeaderModType.Size = new System.Drawing.Size(55, 15);
-            this.LabelHeaderModType.TabIndex = 1180;
-            this.LabelHeaderModType.Text = "Mod Type";
-            // 
-            // LabelGameMode
-            // 
-            this.LabelGameMode.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelGameMode.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelGameMode.Appearance.Options.UseFont = true;
-            this.LabelGameMode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameMode.Location = new System.Drawing.Point(15, 128);
-            this.LabelGameMode.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.LabelGameMode.Name = "LabelGameMode";
-            this.LabelGameMode.Size = new System.Drawing.Size(9, 15);
-            this.LabelGameMode.TabIndex = 1175;
-            this.LabelGameMode.Text = "...";
-            // 
-            // LabelModType
-            // 
-            this.LabelModType.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelModType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelModType.Appearance.Options.UseFont = true;
-            this.LabelModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelModType.Location = new System.Drawing.Point(180, 128);
-            this.LabelModType.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.LabelModType.Name = "LabelModType";
-            this.LabelModType.Size = new System.Drawing.Size(9, 15);
-            this.LabelModType.TabIndex = 1181;
-            this.LabelModType.Text = "...";
-            // 
-            // LabelHeaderMode
-            // 
-            this.LabelHeaderMode.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelHeaderMode.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeaderMode.Appearance.Options.UseFont = true;
-            this.LabelHeaderMode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderMode.Location = new System.Drawing.Point(15, 105);
-            this.LabelHeaderMode.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
-            this.LabelHeaderMode.Name = "LabelHeaderMode";
-            this.LabelHeaderMode.Size = new System.Drawing.Size(68, 15);
-            this.LabelHeaderMode.TabIndex = 1174;
-            this.LabelHeaderMode.Text = "Game Mode";
             // 
             // PanelActions
             // 
@@ -506,6 +506,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.ClientSize = new System.Drawing.Size(509, 606);
             this.ControlBox = false;
             this.Controls.Add(this.PanelDetails);
+            this.Controls.Add(this.PanelHeader);
             this.Controls.Add(this.PanelActions);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -566,7 +567,7 @@ namespace ModioX.Forms.Dialogs.Details
         private LabelControl LabelCreatedBy;
         private LabelControl LabelHeaderCreatedBy;
         private LabelControl LabelGameMode;
-        private LabelControl LabelHeaderMode;
+        private LabelControl LabelHeaderGameMode;
         private LabelControl LabelHeaderVersion;
         private LabelControl LabelVersion;
         private LabelControl LabelDescription;

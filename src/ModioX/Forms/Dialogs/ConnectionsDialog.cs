@@ -1,12 +1,13 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ModioX.Controls;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
 using ModioX.Properties;
+using System;
+using System.Drawing;
+using System.Resources;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Dialogs
 {
@@ -17,10 +18,17 @@ namespace ModioX.Forms.Dialogs
             InitializeComponent();
         }
 
+        public ResourceManager Language = MainWindow.ResourceLanguage;
+
         /// <summary>
         /// Get the user's settings data.
         /// </summary>
         public static SettingsData Settings { get; } = MainWindow.Settings;
+
+        /// <summary>
+        /// Get whether dialog is being shown on startup
+        /// </summary>
+        public bool IsStartup { get; set; } = true;
 
         /// <summary>
         /// Get whether user is editing console profiles.
@@ -30,7 +38,7 @@ namespace ModioX.Forms.Dialogs
         /// <summary>
         /// Get the console profile details.
         /// </summary>
-        public PlatformPrefix ConsoleType { get; set; }
+        public Platform Platform { get; set; }
 
         /// <summary>
         /// Get the console profile details.
@@ -40,12 +48,20 @@ namespace ModioX.Forms.Dialogs
         /// <summary>
         /// Get the selected console.
         /// </summary>
-        public ConsoleItem SelectedConsole { get; private set; }
+        public ProfileItem SelectedConsole { get; private set; }
 
         private Control SelectedItem;
 
         private void ConnectionsDialog_Load(object sender, EventArgs e)
         {
+            Text = Language.GetString("CONNECTIONS");
+
+            GroupConsoleProfiles.Text = Language.GetString("CONSOLE_PROFILES");
+
+            ButtonAddNewProfile.SetControlText(Language.GetString("PROFILE_ADD_NEW"), 26);
+            ButtonEditProfile.SetControlText(Language.GetString("PROFILE_EDIT"), 26);
+            ButtonDeleteProfile.SetControlText(Language.GetString("PROFILE_DELETE"), 26);
+
             LoadConsoles();
         }
 
@@ -66,7 +82,7 @@ namespace ModioX.Forms.Dialogs
                 {
                     Image consoleImage = consoleImage = Resources.PlayStation3Fat;
 
-                    switch (consoleProfile.Type)
+                    switch (consoleProfile.PlatformType)
                     {
                         case PlatformType.PlayStation3Fat:
                             consoleImage = Resources.PlayStation3Fat;
@@ -97,7 +113,7 @@ namespace ModioX.Forms.Dialogs
                             break;
                     }
 
-                    ConsoleItem consoleItem = new(consoleProfile.Name, consoleImage) { ConsoleProfile = consoleProfile };
+                    ProfileItem consoleItem = new(consoleProfile.Name, consoleImage) { ConsoleProfile = consoleProfile };
                     consoleItem.OnClick += ConsoleItem_Click;
                     consoleItem.OnDoubleClick += ConsoleItem_DoubleClick;
                     PanelConsoleProfiles.Controls.Add(consoleItem);
@@ -105,11 +121,11 @@ namespace ModioX.Forms.Dialogs
             }
             else
             {
-                foreach (ConsoleProfile consoleProfile in Settings.ConsoleProfiles.FindAll(x => x.TypePrefix == ConsoleType))
+                foreach (ConsoleProfile consoleProfile in Settings.ConsoleProfiles.FindAll(x => x.Platform == Platform))
                 {
                     Image consoleImage = consoleImage = Resources.PlayStation3Fat;
 
-                    switch (consoleProfile.Type)
+                    switch (consoleProfile.PlatformType)
                     {
                         case PlatformType.PlayStation3Fat:
                             consoleImage = Resources.PlayStation3Fat;
@@ -140,75 +156,69 @@ namespace ModioX.Forms.Dialogs
                             break;
                     }
 
-                    ConsoleItem consoleItem = new(consoleProfile.Name, consoleImage) { ConsoleProfile = consoleProfile };
+                    ProfileItem consoleItem = new(consoleProfile.Name, consoleImage) { ConsoleProfile = consoleProfile };
                     consoleItem.OnClick += ConsoleItem_Click;
                     consoleItem.OnDoubleClick += ConsoleItem_DoubleClick;
                     PanelConsoleProfiles.Controls.Add(consoleItem);
                 }
             }
 
-            NoConsolesItem.Visible = PanelConsoleProfiles.Controls.Count == 0;
+            NoConsoleProfiles.Visible = PanelConsoleProfiles.Controls.Count == 0;
             ScrollBarConsoleProfiles.Visible = PanelConsoleProfiles.Controls.Count != 0 && PanelConsoleProfiles.VerticalScroll.Visible;
 
-            ButtonEditConsole.Enabled = ConsoleProfile != null;
-            ButtonDeleteConsole.Enabled = ConsoleProfile != null;
+            ButtonEditProfile.Enabled = ConsoleProfile != null;
+            ButtonDeleteProfile.Enabled = ConsoleProfile != null;
         }
 
         private void ConsoleItem_Click(object sender, EventArgs e)
         {
             ResetConsoleItems();
 
-            if ((Control)sender is not ConsoleItem)
+            if ((Control)sender is not ProfileItem)
             {
                 SelectedItem = ((Control)sender).Parent;
             }
             else
             {
-                SelectedItem = (Control)sender as ConsoleItem;
+                SelectedItem = (Control)sender as ProfileItem;
             }
 
-            SelectedConsole = SelectedItem as ConsoleItem;
+            SelectedConsole = SelectedItem as ProfileItem;
             SelectedConsole.IsSelected = true;
 
             ConsoleProfile = SelectedConsole.ConsoleProfile;
 
-            ButtonEditConsole.Enabled = ConsoleProfile != null;
-            ButtonDeleteConsole.Enabled = ConsoleProfile != null;
+            ButtonEditProfile.Enabled = ConsoleProfile != null;
+            ButtonDeleteProfile.Enabled = ConsoleProfile != null;
         }
 
         private void ConsoleItem_DoubleClick(object sender, EventArgs e)
         {
             ResetConsoleItems();
 
-            if ((Control)sender is not ConsoleItem)
+            if ((Control)sender is not ProfileItem)
             {
                 SelectedItem = ((Control)sender).Parent;
             }
             else
             {
-                SelectedItem = (Control)sender as ConsoleItem;
+                SelectedItem = (Control)sender as ProfileItem;
             }
 
-            SelectedConsole = SelectedItem as ConsoleItem;
+            SelectedConsole = SelectedItem as ProfileItem;
             SelectedConsole.IsSelected = true;
 
             ConsoleProfile = SelectedConsole.ConsoleProfile;
 
-            if (!IsEditing)
-            {
-                if (ConsoleProfile != null)
-                {
-                    DialogResult = DialogResult.OK;
-                    Close();
-                }
-            }
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void ResetConsoleItems()
         {
             foreach (Control ctrl in PanelConsoleProfiles.Controls)
             {
-                ConsoleItem item = ctrl as ConsoleItem;
+                ProfileItem item = ctrl as ProfileItem;
                 item.IsSelected = false;
             }
         }
@@ -217,7 +227,7 @@ namespace ModioX.Forms.Dialogs
         {
             foreach (object control in PanelConsoleProfiles.Controls)
             {
-                if (control is ConsoleItem item)
+                if (control is ProfileItem item)
                 {
                     item.ShouldHover = false;
                 }
@@ -234,7 +244,7 @@ namespace ModioX.Forms.Dialogs
             {
                 foreach (object control in PanelConsoleProfiles.Controls)
                 {
-                    if (control is ConsoleItem item)
+                    if (control is ProfileItem item)
                     {
                         item.ShouldHover = true;
                     }
@@ -248,7 +258,7 @@ namespace ModioX.Forms.Dialogs
             {
                 if (MainWindow.IsConsoleConnected && MainWindow.ConsoleProfile == ConsoleProfile)
                 {
-                    XtraMessageBox.Show(this, "You can't edit the details because you're connected to the console.", "Console Connected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    XtraMessageBox.Show(this, "You can't edit the details while you're connected to it.", "Connected Console", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
@@ -256,7 +266,7 @@ namespace ModioX.Forms.Dialogs
                 {
                     foreach (object control in PanelConsoleProfiles.Controls)
                     {
-                        if (control is ConsoleItem item)
+                        if (control is ProfileItem item)
                         {
                             item.ShouldHover = false;
                         }
@@ -276,7 +286,7 @@ namespace ModioX.Forms.Dialogs
             catch (Exception ex)
             {
                 Program.Log.Error(ex, "Error editing console.");
-                XtraMessageBox.Show(this, "Error editing console.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                XtraMessageBox.Show(this, "Error editing console.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -286,7 +296,7 @@ namespace ModioX.Forms.Dialogs
             {
                 if (MainWindow.IsConsoleConnected && MainWindow.ConsoleProfile == ConsoleProfile)
                 {
-                    XtraMessageBox.Show(this, "You can't delete this console because you're connected to it.", "Console Connected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    XtraMessageBox.Show(this, "You can't edit the details while you're connected to it.", "Connected Console", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 

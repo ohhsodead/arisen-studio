@@ -51,35 +51,6 @@ namespace ModioX.Extensions
         }
 
         /// <summary>
-        /// Remove the characters that aren't allowed in the username.
-        /// </summary>
-        /// <param name="userName"></param>
-        /// <returns>A formatted username.</returns>
-        public static string FormatUserName(this string userName)
-        {
-            string username = userName.Replace("@", "").Replace(" ", "-").Replace("_", "-").Trim();
-            return Regex.Replace(username, @"[^0-9a-zA-Z_]+", "");
-        }
-
-        /// <summary>
-        /// Remove all the bad words from a string and replaces them with an asterisk.
-        /// </summary>
-        /// <param name="text"></param>
-        /// <returns>Returns same string without all of the bad words.</returns>
-        public static string CensorString(this string text)
-        {
-            ProfanityFilter.ProfanityFilter filter = new();
-            filter.AllowList.Add("lmao");
-            filter.AllowList.Add("lmfao");
-            filter.AllowList.Add("wtf");
-            filter.AllowList.Add("ffs");
-            filter.AllowList.Add("fs");
-            filter.AllowList.Add("omg");
-            filter.AllowList.Add("omfg");
-            return filter.CensorString(text, '*', false);
-        }
-
-        /// <summary>
         /// Replace all URLs with the <paramref name="message" />
         /// </summary>
         /// <param name="text">String possibly containing URLs</param>
@@ -90,35 +61,6 @@ namespace ModioX.Extensions
             return Regex.Replace(text,
                 @"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$",
                 message);
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="original"></param>
-        /// <param name="toBeReplaced"></param>
-        /// <param name="newValue"></param>
-        /// <returns></returns>
-        public static string ReplaceAll(this string original, string[] toBeReplaced, string newValue)
-        {
-            if (string.IsNullOrEmpty(original) || toBeReplaced == null || toBeReplaced.Length <= 0)
-            {
-                return original;
-            }
-
-            newValue = newValue switch
-            {
-                null => string.Empty,
-                _ => newValue
-            };
-
-            foreach (string str in from string str in toBeReplaced
-                                   where !string.IsNullOrEmpty(str)
-                                   select str)
-            {
-                original = original.Replace(str, newValue);
-            }
-
-            return original;
         }
 
         /// <summary>
@@ -147,19 +89,6 @@ namespace ModioX.Extensions
             return offset;
         }
 
-        public static string StringToHex(this string hexString)
-        {
-            StringBuilder sb = new();
-
-            foreach (char t in hexString)
-            {
-                //Note: X for upper, x for lower case letters
-                sb.Append(Convert.ToInt32(t).ToString("X"));
-            }
-
-            return sb.ToString();
-        }
-
         public static string ConvertStringToHex(this string input, Encoding encoding)
         {
             byte[] stringBytes = encoding.GetBytes(input);
@@ -169,83 +98,6 @@ namespace ModioX.Extensions
                 sbBytes.Append($"{b:X2}");
             }
             return sbBytes.ToString();
-        }
-
-        public static byte[] ToByteArray(this string bytes)
-        {
-            string[] bytesAsString = bytes.Split(',');
-            List<byte> byteArray = new();
-
-            foreach (string byteString in bytesAsString)
-            {
-                byteArray.Add(byte.Parse(byteString.Trim()));
-            }
-
-            return byteArray.ToArray();
-        }
-
-        public static byte[] StringToByteArray(this string hex)
-        {
-            return (from x in Enumerable.Range(0, hex.Length)
-                    where x % 2 == 0
-                    select Convert.ToByte(hex.Substring(x, 2), 16)).ToArray();
-        }
-
-        public static byte[] ToBytes(this string hex)
-        {
-            byte[] bytes = new byte[hex.Length / 2];
-
-            for (int i = 0; i < hex.Length; i += 2)
-            {
-                bytes[i / 2] = Convert.ToByte(hex.Substring(i, 2), 16);
-            }
-
-            return bytes;
-        }
-
-        public static byte[] HexToBytes(this string hex)
-        {
-            if (string.IsNullOrWhiteSpace(hex))
-            {
-                throw new ArgumentException("Hex cannot be null/empty/whitespace");
-            }
-
-            if (hex.Length % 2 != 0)
-            {
-                throw new FormatException("Hex must have an even number of characters");
-            }
-
-            bool startsWithHexStart = hex.StartsWith("0x", StringComparison.OrdinalIgnoreCase);
-
-            switch (startsWithHexStart)
-            {
-                case true when hex.Length == 2:
-                    throw new ArgumentException("There are no characters in the hex string");
-            }
-
-            int startIndex = startsWithHexStart ? 2 : 0;
-
-            byte[] bytesArr = new byte[(hex.Length - startIndex) / 2];
-
-            char left;
-            char right;
-
-            try
-            {
-                int x = 0;
-                for (int i = startIndex; i < hex.Length; i += 2, x++)
-                {
-                    left = hex[i];
-                    right = hex[i + 1];
-                    bytesArr[x] = (byte)((hexmap[left] << 4) | hexmap[right]);
-                }
-
-                return bytesArr;
-            }
-            catch (KeyNotFoundException)
-            {
-                throw new FormatException("Hex string has non-hex character");
-            }
         }
 
         public static int Find(this string String, string _Ptr)

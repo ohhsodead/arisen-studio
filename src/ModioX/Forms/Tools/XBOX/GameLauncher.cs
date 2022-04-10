@@ -1,7 +1,7 @@
-﻿using System;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
+using System;
 using XDevkit;
 
 namespace ModioX.Forms.Tools.XBOX

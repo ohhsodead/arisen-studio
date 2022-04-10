@@ -1,10 +1,10 @@
-﻿using System;
-using System.Diagnostics;
-using System.Globalization;
-using DevExpress.Utils;
+﻿using DevExpress.Utils;
 using DevExpress.XtraEditors;
 using Humanizer;
 using ModioX.Forms.Windows;
+using System;
+using System.Diagnostics;
+using System.Globalization;
 
 namespace ModioX.Controls
 {

@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using ModioX.Database;
+﻿using ModioX.Database;
 using ModioX.Extensions;
 using ModioX.Io;
 using ModioX.Models.Database;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ModioX.Models.Resources
 {
     public class SettingsData
     {
-        public string[] BlackListUserNames { get; } = { "@ChanServ", "ChanServ", "@ModioX", "ModioX", "ModioX-Owner", "ohhsodead", "admin", "developer" };
+        public bool FirstTimeUse{ get; set; } = true;
 
         public List<ConsoleProfile> ConsoleProfiles { get; set; } = new();
 
@@ -20,7 +20,7 @@ namespace ModioX.Models.Resources
 
         public string Language { get; set; } = "English";
 
-        public PlatformPrefix StartupLibrary { get; set; } = PlatformPrefix.PS3;
+        public Platform StartupLibrary { get; set; } = Platform.PS3;
 
         public bool UseFormattedFileSizes { get; set; } = true;
 
@@ -64,11 +64,7 @@ namespace ModioX.Models.Resources
 
         public string PackagesInstallPath { get; set; } = "/dev_hdd0/packages/";
 
-        public List<FavoritesList> FavoriteIds { get; set; } = new()
-        {
-            new FavoritesList() { Platform = PlatformPrefix.PS3, Ids = new() },
-            new FavoritesList() { Platform = PlatformPrefix.XBOX, Ids = new() }
-        };
+        public bool ShowCurrentGamePlaying { get; set; } = false;
 
         public List<string> FavoritePackages { get; set; } = new();
 
@@ -76,13 +72,41 @@ namespace ModioX.Models.Resources
 
         public List<DownloadedItem> DownloadedMods { get; set; } = new();
 
-        public List<InstalledModInfo> InstalledMods { get; set; } = new();
-
-        public List<UserImport> ImportedItems { get; set; } = new();
+        public List<ImportedMod> ImportedMods { get; set; } = new();
 
         public List<CustomList> CustomLists { get; set; } = new();
 
-        public List<ModsOffsetValues> CustomOffsetsValues { get; set; } = new();
+        public List<int> FavoriteModsPS3 { get; set; } = new();
+
+        public List<int> FavoriteModsXBOX { get; set; } = new();
+
+        public List<int> FavoriteGameSaves { get; set; } = new();
+
+        public void AddFavoriteForPS3(int modId)
+        {
+            if (!FavoriteModsPS3.Contains(modId))
+            {
+                FavoriteModsPS3.Add(modId);
+            }
+        }
+
+        public void RemoveFavoriteForPS3(int modId)
+        {
+            FavoriteModsPS3.RemoveAll(x => x == modId);
+        }
+
+        public void AddFavoriteForXBOX(int modId)
+        {
+            if (!FavoriteModsXBOX.Contains(modId))
+            {
+                FavoriteModsXBOX.Add(modId);
+            }
+        }
+
+        public void RemoveFavoriteForXBOX(int modId)
+        {
+            FavoriteModsXBOX.RemoveAll(x => x == modId);
+        }
 
         // PS3 
 
@@ -94,39 +118,7 @@ namespace ModioX.Models.Resources
 
         public List<ListItem> GameFilesXBOX { get; set; } = new();
 
-        // Chat Room Settings
-
-        public string ChatUserName { get; set; } = DataExtensions.LocalUserName.Length > 16
-            ? DataExtensions.LocalUserName.Substring(0, 16)
-            : DataExtensions.LocalUserName;
-
-        public ChatNotificationType ChatNotificationType { get; set; } = ChatNotificationType.Mentioned;
-
-        public bool ChatBlockPrivateMessages { get; set; } = false;
-
-        public bool ChatMuteSounds { get; set; } = false;
-
-        public bool ChatHideUnreadCount { get; set; } = false;
-
-        public List<string> ChatIgnoredUsers { get; set; } = new();
-
-        public List<string> ChatWhiteListUsers { get; set; } = new();
-
-        public void AddFavorite(PlatformPrefix consoleType, int modId)
-        {
-            FavoritesList favoritesList = FavoriteIds.Find(x => x.Platform == consoleType);
-
-            FavoriteIds[FavoriteIds.IndexOf(favoritesList)].Ids.Add(modId);
-        }
-
-        public void RemoveFavorite(PlatformPrefix consoleType, int modId)
-        {
-            FavoritesList favoritesList = FavoriteIds.Find(x => x.Platform == consoleType);
-
-            FavoriteIds[FavoriteIds.IndexOf(favoritesList)].Ids.RemoveAll(x => x == modId);
-        }
-
-        public void AddFavoriteOackage(string modId)
+        public void AddFavoritePackage(string modId)
         {
             FavoritePackages.Add(modId);
         }
@@ -140,12 +132,12 @@ namespace ModioX.Models.Resources
         /// Add a custom list with the specified name.
         /// </summary>
         /// <param name="name"> Custom List Name </param>
-        /// <param name="consoleType"> Console Type </param>
-        public void AddCustomList(string name, PlatformPrefix consoleType)
+        /// <param name="platform"> Console Type </param>
+        public void AddCustomList(string name, Platform platform)
         {
             CustomLists.Add(new CustomList
             {
-                Platform = consoleType,
+                Platform = platform,
                 Name = name
             });
         }
@@ -155,20 +147,20 @@ namespace ModioX.Models.Resources
         /// </summary>
         /// <param name="oldName"> Old list name </param>
         /// <param name="newName"> New list name </param>
-        /// <param name="consoleType"> Console Type </param>
-        public void RenameCustomList(string oldName, string newName, PlatformPrefix consoleType)
+        /// <param name="platform"> Console Type </param>
+        public void RenameCustomList(string oldName, string newName, Platform platform)
         {
-            CustomList customList = CustomLists.Find(x => x.Platform == consoleType && x.Name.EqualsIgnoreCase(oldName));
+            CustomList customList = CustomLists.Find(x => x.Platform == platform && x.Name.EqualsIgnoreCase(oldName));
 
             switch (customList)
             {
                 case null:
-                    CustomLists.Add(new CustomList { Platform = consoleType, Name = newName });
+                    CustomLists.Add(new CustomList { Platform = platform, Name = newName });
                     break;
                 default:
                     CustomLists[CustomLists.IndexOf(customList)] = new CustomList
                     {
-                        Platform = consoleType,
+                        Platform = platform,
                         Name = newName,
                         ModIds = customList.ModIds
                     };
@@ -181,10 +173,10 @@ namespace ModioX.Models.Resources
         /// </summary>
         /// <param name="name"> Custom list name </param>
         /// <param name="modId"> Mod Id to add </param>
-        /// <param name="consoleType"> Console type </param>
-        public void AddModToCustomList(string name, int modId, PlatformPrefix consoleType)
+        /// <param name="platform"> Console type </param>
+        public void AddModToCustomList(string name, int modId, Platform platform)
         {
-            CustomList customList = CustomLists.Find(x => x.Platform == consoleType && x.Name.EqualsIgnoreCase(name));
+            CustomList customList = CustomLists.Find(x => x.Platform == platform && x.Name.EqualsIgnoreCase(name));
 
             switch (customList.ModIds.Contains(modId))
             {
@@ -199,10 +191,10 @@ namespace ModioX.Models.Resources
         /// </summary>
         /// <param name="name"> Custom list name </param>
         /// <param name="modId"> Mod Id to remove </param>
-        /// <param name="consoleType"> Console type </param>
-        public void RemoveModFromCustomList(string name, int modId, PlatformPrefix consoleType)
+        /// <param name="platform"> Console type </param>
+        public void RemoveModFromCustomList(string name, int modId, Platform platform)
         {
-            CustomList customList = CustomLists.Find(x => x.Platform == consoleType && x.Name.EqualsIgnoreCase(name));
+            CustomList customList = CustomLists.Find(x => x.Platform == platform && x.Name.EqualsIgnoreCase(name));
             customList.ModIds.Remove(modId);
         }
 
@@ -240,61 +232,59 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Update the installed mods.
         /// </summary>
-        /// <param name="consoleType"> </param>
+        /// <param name="consoleProfile"> </param>
         /// <param name="categoryId"> </param>
         /// <param name="modId"> </param>
-        /// <param name="region"> </param>
-        /// <param name="noOfFiles"> </param>
+        /// <param name="totalFiles"> </param>
         /// <param name="dateInstalled"> </param>
         /// <param name="downloadFiles"> </param>
-        public void UpdateInstalledMods(PlatformPrefix consoleType, string categoryId, int modId, int totalFiles, DateTime dateInstalled, DownloadFiles downloadFiles)
+        public void UpdateInstalledMods(ConsoleProfile consoleProfile, string categoryId, int modId, int totalFiles, DateTime dateInstalled, DownloadFiles downloadFiles)
         {
-            RemoveInstalledMods(consoleType, categoryId, modId);
+            RemoveInstalledMods(consoleProfile, categoryId, modId);
 
-            InstalledMods.Add(new InstalledModInfo
+            consoleProfile.InstalledMods.Add(new InstalledModInfo
             {
-                Platform = consoleType,
+                Platform = consoleProfile.Platform,
                 CategoryId = categoryId,
                 ModId = modId,
                 TotalFiles = totalFiles,
                 DateInstalled = dateInstalled,
-                DownloadFiles = downloadFiles,
+                DownloadFiles = downloadFiles
             });
         }
 
         /// <summary>
         /// Remove the installed mod matching the <see cref="ModItemData.GameId" /> and <see cref="ModsData.ModItem.Id" />
         /// </summary>
-        /// <param name="consoleType"> </param>
+        /// <param name="consoleProfile"> </param>
         /// <param name="categoryId"> </param>
         /// <param name="modId"> </param>
-        public void RemoveInstalledMods(PlatformPrefix consoleType, string categoryId, int modId)
+        public void RemoveInstalledMods(ConsoleProfile consoleProfile, string categoryId, int modId)
         {
-            InstalledMods.RemoveAll(x => x.Platform == consoleType && x.CategoryId.EqualsIgnoreCase(categoryId) && x.ModId.Equals(modId));
+            consoleProfile.InstalledMods.RemoveAll(x => x.CategoryId.EqualsIgnoreCase(categoryId) && x.ModId.Equals(modId));
         }
 
         /// <summary>
         /// Get the <see cref="InstalledModInfo" /> for the <see cref="ModsData.ModItem.Id" /> if one exists.
         /// </summary>
-        /// <param name="consoleType"> </param>
+        /// <param name="consoleProfile"> </param>
         /// <param name="categoryId"> </param>
         /// <param name="modId"> </param>
         /// <returns> </returns>
-        public InstalledModInfo GetInstalledMods(PlatformPrefix consoleType, string categoryId, int modId)
+        public InstalledModInfo GetInstalledMods(ConsoleProfile consoleProfile, string categoryId, int modId)
         {
-            return InstalledMods.FirstOrDefault(x => x.Platform == consoleType && x.CategoryId.EqualsIgnoreCase(categoryId) && x.ModId.Equals(modId));
+            return consoleProfile.InstalledMods.FirstOrDefault(x => x.CategoryId.EqualsIgnoreCase(categoryId) && x.ModId.Equals(modId));
         }
 
         /// <summary>
         /// Get the <see cref="InstalledModInfo" /> for the <see cref="ModsData.ModItem.Id" /> if one exists.
         /// </summary>
-        /// <param name="consoleType"> </param>
+        /// <param name="consoleProfile"> </param>
         /// <param name="categoryId"> </param>
-        /// <param name="modId"> </param>
         /// <returns> </returns>
-        public InstalledModInfo GetInstalledMods(PlatformPrefix consoleType, string categoryId)
+        public InstalledModInfo GetInstalledMods(ConsoleProfile consoleProfile, string categoryId)
         {
-            return InstalledMods.FirstOrDefault(x => x.Platform == consoleType && x.CategoryId.EqualsIgnoreCase(categoryId));
+            return consoleProfile.InstalledMods.FirstOrDefault(x => x.CategoryId.EqualsIgnoreCase(categoryId));
         }
 
         /// <summary>
@@ -331,7 +321,7 @@ namespace ModioX.Models.Resources
                 if (modIds.Contains(modItem.Id))
                     if (!modItem.Region.Equals("ALL") || !modItem.Regions.Contains("All Regions") ||
                         !modItem.Regions.Contains("-") || !modItem.Regions.Contains("n/a") ||
-                        !modItem.Regions.Contains(""))
+                        !modItem.Regions.Contains(string.Empty))
                         switch (regions.Any(x => modItem.Regions.Any(y => y == x)))
                         {
                             case false:
@@ -361,7 +351,7 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Get the <see cref="InstalledModInfo" /> for the <see cref="PackageItemData" /> if one exists.
         /// </summary>
-        /// <param name="consoleType"> </param>
+        /// <param name="platform"> </param>
         /// <param name="categoryId"> </param>
         /// <param name="modId"> </param>
         /// <returns> </returns>
@@ -373,7 +363,7 @@ namespace ModioX.Models.Resources
         /// <summary>
         /// Remove the installed mod matching the <see cref="ModItemData.GameId" /> and <see cref="ModsData.ModItem.Id" />
         /// </summary>
-        /// <param name="consoleType"> </param>
+        /// <param name="platform"> </param>
         /// <param name="categoryId"> </param>
         /// <param name="modId"> </param>
         public void RemoveInstalledPackage(PackageItemData package)
@@ -406,11 +396,11 @@ namespace ModioX.Models.Resources
         /// Get the custom list matching the specified name.
         /// </summary>
         /// <param name="name"> </param>
-        /// <param name="consoleType"> </param>
+        /// <param name="platform"> </param>
         /// <returns> </returns>
-        public CustomList GetCustomListByName(string name, PlatformPrefix consoleType)
+        public CustomList GetCustomListByName(string name, Platform platform)
         {
-            foreach (CustomList customList in from CustomList customList in CustomLists.FindAll(x => x.Platform == consoleType)
+            foreach (CustomList customList in from CustomList customList in CustomLists.FindAll(x => x.Platform == platform)
                                               where customList.Name.EqualsIgnoreCase(name)
                                               select customList)
             {
@@ -419,23 +409,6 @@ namespace ModioX.Models.Resources
 
             return null;
         }
-
-        /// <summary>
-        /// Update the mods offsets and values.
-        /// </summary>
-        /// <param name="modsOffsetValues"> </param>
-        public void UpdateOffsetValues(ModsOffsetValues modsOffsetValues)
-        {
-            CustomOffsetsValues.RemoveAll(x => x.ConsoleType == modsOffsetValues.ConsoleType && x.Name == modsOffsetValues.Name && x.Game == modsOffsetValues.Game && x.OffsetsValues == modsOffsetValues.OffsetsValues);
-
-            CustomOffsetsValues.Add(new ModsOffsetValues
-            {
-                ConsoleType = modsOffsetValues.ConsoleType,
-                Name = modsOffsetValues.Name,
-                Game = modsOffsetValues.Game,
-                OffsetsValues = modsOffsetValues.OffsetsValues
-            });
-        }
     }
 
     /// <summary>
@@ -443,11 +416,13 @@ namespace ModioX.Models.Resources
     /// </summary>
     public class ConsoleProfile
     {
+        public int? Id { get; set; } = null;
+
         public string Name { get; set; }
 
-        public PlatformType Type { get; set; } = PlatformType.PlayStation3Fat;
+        public Platform Platform { get; set; } = Platform.PS3;
 
-        public PlatformPrefix TypePrefix { get; set; } = PlatformPrefix.PS3;
+        public PlatformType PlatformType { get; set; } = PlatformType.PlayStation3Fat;
 
         public string Address { get; set; }
 
@@ -460,6 +435,8 @@ namespace ModioX.Models.Resources
         public bool UseDefaultCredentials { get; set; } = true;
 
         public bool UseDefaultConsole { get; set; } = false;
+
+        public List<InstalledModInfo> InstalledMods { get; set; } = new();
 
         /// <summary>
         /// Get the profile as format: Name (Address)
@@ -476,15 +453,11 @@ namespace ModioX.Models.Resources
     /// </summary>
     public class InstalledModInfo
     {
-        public string Type { get; set; }
-
-        public PlatformPrefix Platform { get; set; } = PlatformPrefix.PS3;
+        public Platform Platform { get; set; }
 
         public string CategoryId { get; set; }
 
         public int ModId { get; set; }
-
-        public string Region { get; set; }
 
         public int TotalFiles { get; set; }
 
@@ -493,11 +466,11 @@ namespace ModioX.Models.Resources
         public DownloadFiles DownloadFiles { get; set; }
     }
 
-    public class UserImport
+    public class ImportedMod
     {
         public string Type { get; set; }
 
-        public PlatformPrefix Platform { get; set; } = PlatformPrefix.PS3;
+        public Platform Platform { get; set; } = Platform.PS3;
 
         public string CategoryId { get; set; }
 
@@ -511,7 +484,7 @@ namespace ModioX.Models.Resources
 
         public string Creator { get; set; }
 
-        public List<ListItem> Files { get; set; }
+        public List<InstallItem> Files { get; set; }
     }
 
     /// <summary>
@@ -547,25 +520,18 @@ namespace ModioX.Models.Resources
     /// </summary>
     public class CustomList
     {
-        public PlatformPrefix Platform { get; set; } = PlatformPrefix.PS3;
+        public Platform Platform { get; set; } = Platform.PS3;
 
         public string Name { get; set; }
 
         public List<int> ModIds { get; set; } = new();
     }
 
-    public class FavoritesList
-    {
-        public PlatformPrefix Platform { get; set; } = PlatformPrefix.PS3;
-
-        public List<int> Ids { get; set; } = new();
-    }
-
     public class DownloadedItem
     {
         public string Type { get; set; }
 
-        public PlatformPrefix Platform { get; set; } = PlatformPrefix.PS3;
+        public Platform Platform { get; set; } = Platform.PS3;
 
         public int ModId { get; set; }
 
@@ -576,23 +542,5 @@ namespace ModioX.Models.Resources
         public DownloadFiles DownloadFile { get; set; }
 
         public DateTime DateTime { get; set; }
-    }
-
-    public class ModsOffsetValues
-    {
-        public PlatformPrefix ConsoleType { get; set; } = PlatformPrefix.PS3;
-
-        public string Name { get; set; }
-
-        public string Game { get; set; }
-
-        public List<OffsetValue> OffsetsValues { get; set; } = new();
-    }
-
-    public class OffsetValue
-    {
-        public string Offset { get; set; }
-
-        public string Value { get; set; }
     }
 }

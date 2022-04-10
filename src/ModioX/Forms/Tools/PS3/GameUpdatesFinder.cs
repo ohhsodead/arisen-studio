@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using Humanizer;
@@ -13,6 +6,14 @@ using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Io;
 using ModioX.Models.Game_Updates;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Linq;
+using System.Resources;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Tools.PS3
 {
@@ -23,6 +24,8 @@ namespace ModioX.Forms.Tools.PS3
             InitializeComponent();
         }
 
+        public ResourceManager Language = MainWindow.ResourceLanguage;
+
         private void GameUpdatesFinder_Load(object sender, EventArgs e)
         {
         }
@@ -31,7 +34,7 @@ namespace ModioX.Forms.Tools.PS3
         {
             if (string.IsNullOrWhiteSpace(TextBoxTitleID.Text))
             {
-                XtraMessageBox.Show("You haven't specified a title ID.", "Empty Field", MessageBoxButtons.OK,
+                XtraMessageBox.Show("You haven't specified a title ID.", Language.GetString("NO_INPUT"), MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
                 return;
             }
@@ -43,24 +46,23 @@ namespace ModioX.Forms.Tools.PS3
             switch (gameUpdates)
             {
                 case null:
-                    XtraMessageBox.Show("Unable to find details for this title ID.", "Error", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Unable to find details for this title ID.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 default:
                     {
                         GridGameUpdates.DataSource = null;
 
                         DataTable gameUpdateFiles = DataExtensions.CreateDataTable(new List<DataColumn>
-                    {
-                        new("File URL", typeof(string)),
-                        new("File SHA1", typeof(string)),
-                        new("File Name", typeof(string)),
-                        new("File Version", typeof(string)),
-                        new("File Size", typeof(string)),
-                        new("System Version", typeof(string))
-                    });
+                        {
+                            new("File URL", typeof(string)),
+                            new("File SHA1", typeof(string)),
+                            new("File Name", typeof(string)),
+                            new("File Version", typeof(string)),
+                            new("File Size", typeof(string)),
+                            new("System Version", typeof(string))
+                        });
 
-                        string gameTitle = Regex.Replace(gameUpdates.Tag.Package.Last().Paramsfo.TITLE, @"\(.*?\)", "").Trim().Replace("Â®", "®");
+                        string gameTitle = Regex.Replace(gameUpdates.Tag.Package.Last().Paramsfo.TITLE, @"\(.*?\)", string.Empty).Trim().Replace("Â®", "®");
                         gameUpdates.Tag.Package.Reverse();
 
                         foreach (Package update in gameUpdates.Tag.Package)
@@ -69,11 +71,11 @@ namespace ModioX.Forms.Tools.PS3
                                 update.Url,
                                 update.Sha1sum,
                                 gameTitle,
-                                "v" + update.Version.RemoveFirstInstanceOfString("0"),
+                                update.Version.RemoveFirstInstanceOfString("0"),
                                 MainWindow.Settings.UseFormattedFileSizes
                                     ? long.Parse(update.Size).Bytes().Humanize("#")
-                                    : update.Size + " Bytes",
-                                "v" + update.Ps3_system_ver.RemoveFirstInstanceOfString("0").Replace("000", "00"));
+                                    : update.Size + " " + Language.GetString("LABEL_BYTES"),
+                                    update.Ps3_system_ver.RemoveFirstInstanceOfString("0").Replace("000", "00"));
                         }
 
                         GridGameUpdates.DataSource = gameUpdateFiles;
@@ -121,18 +123,17 @@ namespace ModioX.Forms.Tools.PS3
                         string fileName = Path.GetFileName(updateUrl);
                         string filePath = KnownFolders.GetPath(KnownFolder.Downloads) + "/" + fileName;
 
-                        SetStatus("Downloading file: " + fileName);
+                        SetStatus(string.Format(Language.GetString("FILE_DOWNLOADING"), fileName));
                         HttpExtensions.DownloadFile(updateUrl, filePath);
 
-                        SetStatus("Installing file: " + fileName);
+                        SetStatus(string.Format(Language.GetString("FILE_INSTALLING"), fileName));
                         FtpExtensions.UploadFile(filePath, MainWindow.Settings.PackagesInstallPath + fileName);
-                        SetStatus("Successfully installed package file to your Packages folder.");
-                        XtraMessageBox.Show("Successfully installed package file to your Packages folder.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        SetStatus("Successfully installed package file.");
+                        XtraMessageBox.Show("Successfully installed package file.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     }
                 default:
-                    XtraMessageBox.Show("You must be connected to your console to install the update package file.",
-                        "Not Connected");
+                    XtraMessageBox.Show("You must be connected to your console to install the update package file.", Language.GetString("NOT_CONNECTED"));
                     break;
             }
         }
@@ -141,15 +142,14 @@ namespace ModioX.Forms.Tools.PS3
         {
             string updateUrl = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[0]);
             string fileName = Path.GetFileName(updateUrl);
-            string folderPath = DialogExtensions.ShowFolderBrowseDialog(this,
-                "Select the folder where you want to download the game update package.");
+            string folderPath = DialogExtensions.ShowFolderBrowseDialog(this, "Select the folder where you want to download the game update package.");
 
             if (folderPath != null)
             {
                 SetStatus("Downloading package: " + fileName);
                 HttpExtensions.DownloadFile(updateUrl, folderPath + "/" + fileName);
                 SetStatus("Successfully downloaded package file to the specified folder.");
-                XtraMessageBox.Show("Successfully downloaded package file to the specified folder.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Successfully downloaded package file to the specified folder.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -157,14 +157,14 @@ namespace ModioX.Forms.Tools.PS3
         {
             string updateUrl = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[0]);
             Clipboard.SetText(updateUrl);
-            XtraMessageBox.Show("Update URL has been copied to clipboard.", "Copied", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            XtraMessageBox.Show("Update URL has been copied to clipboard.", Language.GetString("LABEL_COPIED"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ButtonCopySHA1ToClipboard_Click(object sender, EventArgs e)
         {
             string updateSHA1 = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[1]);
             Clipboard.SetText(updateSHA1);
-            XtraMessageBox.Show("Update SHA1 has been copied to clipboard.", "Copied", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            XtraMessageBox.Show("Update SHA1 has been copied to clipboard.", Language.GetString("LABEL_COPIED"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>

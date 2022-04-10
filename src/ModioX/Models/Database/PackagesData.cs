@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using ModioX.Database;
+﻿using ModioX.Database;
 using ModioX.Extensions;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ModioX.Models.Database
 {

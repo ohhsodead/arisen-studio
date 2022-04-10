@@ -51,8 +51,6 @@ namespace ModioX.Forms.Dialogs.Details
             this.LabelTitleIdRegion = new DevExpress.XtraEditors.LabelControl();
             this.LabelName = new DevExpress.XtraEditors.LabelControl();
             this.PanelActions = new DevExpress.Utils.Layout.StackPanel();
-            this.ButtonActions = new DevExpress.XtraEditors.DropDownButton();
-            this.MenuActions = new DevExpress.XtraBars.PopupMenu(this.components);
             this.MenuItemInstallFiles = new DevExpress.XtraBars.BarButtonItem();
             this.BarManager = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -60,7 +58,9 @@ namespace ModioX.Forms.Dialogs.Details
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.ButtonDownload = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonFaq = new DevExpress.XtraEditors.SimpleButton();
             this.Images = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.ButtonInstall = new DevExpress.XtraEditors.SimpleButton();
             this.PanelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelHeader)).BeginInit();
             this.PanelHeader.SuspendLayout();
@@ -70,7 +70,6 @@ namespace ModioX.Forms.Dialogs.Details
             this.PanelRegion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelActions)).BeginInit();
             this.PanelActions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MenuActions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Images)).BeginInit();
             this.SuspendLayout();
@@ -83,11 +82,10 @@ namespace ModioX.Forms.Dialogs.Details
             this.PanelDetails.Controls.Add(this.LabelHeaderFileSize);
             this.PanelDetails.Controls.Add(this.LabelContentId);
             this.PanelDetails.Controls.Add(this.LabelHeaderContentId);
-            this.PanelDetails.Controls.Add(this.PanelHeader);
             this.PanelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelDetails.Location = new System.Drawing.Point(0, 0);
+            this.PanelDetails.Location = new System.Drawing.Point(0, 80);
             this.PanelDetails.Name = "PanelDetails";
-            this.PanelDetails.Size = new System.Drawing.Size(428, 271);
+            this.PanelDetails.Size = new System.Drawing.Size(428, 191);
             this.PanelDetails.TabIndex = 1;
             // 
             // LabelSha256
@@ -95,7 +93,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.LabelSha256.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSha256.Appearance.Options.UseFont = true;
             this.LabelSha256.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSha256.Location = new System.Drawing.Point(15, 230);
+            this.LabelSha256.Location = new System.Drawing.Point(15, 145);
             this.LabelSha256.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LabelSha256.Name = "LabelSha256";
             this.LabelSha256.Size = new System.Drawing.Size(9, 15);
@@ -107,7 +105,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.LabelHeaderSha256.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelHeaderSha256.Appearance.Options.UseFont = true;
             this.LabelHeaderSha256.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderSha256.Location = new System.Drawing.Point(15, 207);
+            this.LabelHeaderSha256.Location = new System.Drawing.Point(15, 122);
             this.LabelHeaderSha256.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
             this.LabelHeaderSha256.Name = "LabelHeaderSha256";
             this.LabelHeaderSha256.Size = new System.Drawing.Size(50, 15);
@@ -119,7 +117,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.LabelFileSize.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelFileSize.Appearance.Options.UseFont = true;
             this.LabelFileSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileSize.Location = new System.Drawing.Point(15, 179);
+            this.LabelFileSize.Location = new System.Drawing.Point(15, 94);
             this.LabelFileSize.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LabelFileSize.Name = "LabelFileSize";
             this.LabelFileSize.Size = new System.Drawing.Size(9, 15);
@@ -131,7 +129,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.LabelHeaderFileSize.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelHeaderFileSize.Appearance.Options.UseFont = true;
             this.LabelHeaderFileSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderFileSize.Location = new System.Drawing.Point(15, 156);
+            this.LabelHeaderFileSize.Location = new System.Drawing.Point(15, 71);
             this.LabelHeaderFileSize.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
             this.LabelHeaderFileSize.Name = "LabelHeaderFileSize";
             this.LabelHeaderFileSize.Size = new System.Drawing.Size(45, 15);
@@ -143,7 +141,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.LabelContentId.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelContentId.Appearance.Options.UseFont = true;
             this.LabelContentId.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelContentId.Location = new System.Drawing.Point(15, 128);
+            this.LabelContentId.Location = new System.Drawing.Point(15, 43);
             this.LabelContentId.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LabelContentId.Name = "LabelContentId";
             this.LabelContentId.Size = new System.Drawing.Size(9, 15);
@@ -155,7 +153,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.LabelHeaderContentId.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelHeaderContentId.Appearance.Options.UseFont = true;
             this.LabelHeaderContentId.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderContentId.Location = new System.Drawing.Point(15, 105);
+            this.LabelHeaderContentId.Location = new System.Drawing.Point(15, 20);
             this.LabelHeaderContentId.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
             this.LabelHeaderContentId.Name = "LabelHeaderContentId";
             this.LabelHeaderContentId.Size = new System.Drawing.Size(61, 15);
@@ -174,7 +172,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.PanelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelHeader.Location = new System.Drawing.Point(0, 0);
             this.PanelHeader.Name = "PanelHeader";
-            this.PanelHeader.Size = new System.Drawing.Size(428, 89);
+            this.PanelHeader.Size = new System.Drawing.Size(428, 80);
             this.PanelHeader.TabIndex = 1191;
             // 
             // PanelVersion
@@ -183,7 +181,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.PanelVersion.Controls.Add(this.LabelModifiedDate);
             this.PanelVersion.Controls.Add(this.LabelHeaderModifiedDate);
             this.PanelVersion.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.PanelVersion.Location = new System.Drawing.Point(301, 60);
+            this.PanelVersion.Location = new System.Drawing.Point(301, 41);
             this.PanelVersion.Name = "PanelVersion";
             this.PanelVersion.Size = new System.Drawing.Size(117, 22);
             this.PanelVersion.TabIndex = 1189;
@@ -213,11 +211,10 @@ namespace ModioX.Forms.Dialogs.Details
             // 
             // SeparatorHeader
             // 
-            this.SeparatorHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SeparatorHeader.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.SeparatorHeader.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
             this.SeparatorHeader.LineColor = System.Drawing.Color.Gainsboro;
-            this.SeparatorHeader.Location = new System.Drawing.Point(0, 42);
+            this.SeparatorHeader.Location = new System.Drawing.Point(0, 69);
             this.SeparatorHeader.Name = "SeparatorHeader";
             this.SeparatorHeader.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.SeparatorHeader.Size = new System.Drawing.Size(428, 11);
@@ -257,7 +254,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.PanelRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelRegion.Controls.Add(this.LabelTitleIdRegion);
             this.PanelRegion.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.PanelRegion.Location = new System.Drawing.Point(269, 12);
+            this.PanelRegion.Location = new System.Drawing.Point(269, 3);
             this.PanelRegion.Name = "PanelRegion";
             this.PanelRegion.Size = new System.Drawing.Size(119, 22);
             this.PanelRegion.TabIndex = 1190;
@@ -288,7 +285,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.LabelName.AutoEllipsis = true;
             this.LabelName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelName.Location = new System.Drawing.Point(12, 63);
+            this.LabelName.Location = new System.Drawing.Point(12, 44);
             this.LabelName.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(283, 15);
@@ -297,45 +294,14 @@ namespace ModioX.Forms.Dialogs.Details
             // 
             // PanelActions
             // 
-            this.PanelActions.Controls.Add(this.ButtonActions);
+            this.PanelActions.Controls.Add(this.ButtonInstall);
             this.PanelActions.Controls.Add(this.ButtonDownload);
+            this.PanelActions.Controls.Add(this.ButtonFaq);
             this.PanelActions.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelActions.Location = new System.Drawing.Point(0, 271);
             this.PanelActions.Name = "PanelActions";
             this.PanelActions.Size = new System.Drawing.Size(428, 42);
             this.PanelActions.TabIndex = 1175;
-            // 
-            // ButtonActions
-            // 
-            this.ButtonActions.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ButtonActions.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ButtonActions.Appearance.Options.UseFont = true;
-            this.ButtonActions.Appearance.Options.UseTextOptions = true;
-            this.ButtonActions.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.ButtonActions.DropDownControl = this.MenuActions;
-            this.ButtonActions.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonActions.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonActions.ImageOptions.ImageToTextIndent = 4;
-            this.ButtonActions.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonActions.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonActions.ImageOptions.SvgImage")));
-            this.ButtonActions.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonActions.Location = new System.Drawing.Point(8, 8);
-            this.ButtonActions.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
-            this.ButtonActions.Name = "ButtonActions";
-            this.ButtonActions.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.ButtonActions.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonActions.Size = new System.Drawing.Size(126, 26);
-            this.ButtonActions.TabIndex = 1173;
-            this.ButtonActions.Text = "Not Installed";
-            // 
-            // MenuActions
-            // 
-            this.MenuActions.DrawMenuSideStrip = DevExpress.Utils.DefaultBoolean.False;
-            this.MenuActions.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.MenuItemInstallFiles)});
-            this.MenuActions.Manager = this.BarManager;
-            this.MenuActions.Name = "MenuActions";
-            this.MenuActions.BeforePopup += new System.ComponentModel.CancelEventHandler(this.MenuActions_BeforePopup);
             // 
             // MenuItemInstallFiles
             // 
@@ -399,7 +365,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.ButtonDownload.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonDownload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonDownload.ImageOptions.SvgImage")));
             this.ButtonDownload.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonDownload.Location = new System.Drawing.Point(140, 8);
+            this.ButtonDownload.Location = new System.Drawing.Point(94, 8);
             this.ButtonDownload.Name = "ButtonDownload";
             this.ButtonDownload.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonDownload.Size = new System.Drawing.Size(102, 26);
@@ -407,10 +373,51 @@ namespace ModioX.Forms.Dialogs.Details
             this.ButtonDownload.Text = "Download";
             this.ButtonDownload.Click += new System.EventHandler(this.ButtonDownload_Click);
             // 
+            // ButtonFaq
+            // 
+            this.ButtonFaq.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonFaq.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonFaq.Appearance.Options.UseFont = true;
+            this.ButtonFaq.Appearance.Options.UseForeColor = true;
+            this.ButtonFaq.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonFaq.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonFaq.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonFaq.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonFaq.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonFaq.ImageOptions.SvgImage")));
+            this.ButtonFaq.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonFaq.Location = new System.Drawing.Point(202, 8);
+            this.ButtonFaq.Name = "ButtonFaq";
+            this.ButtonFaq.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonFaq.Size = new System.Drawing.Size(72, 26);
+            this.ButtonFaq.TabIndex = 1180;
+            this.ButtonFaq.Text = "FAQ";
+            this.ButtonFaq.Click += new System.EventHandler(this.ButtonFaq_Click);
+            // 
             // Images
             // 
             this.Images.Add("delete", "image://svgimages/outlook inspired/delete.svg");
             this.Images.Add("check", "image://svgimages/icon builder/actions_check.svg");
+            // 
+            // ButtonInstall
+            // 
+            this.ButtonInstall.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonInstall.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonInstall.Appearance.Options.UseFont = true;
+            this.ButtonInstall.Appearance.Options.UseForeColor = true;
+            this.ButtonInstall.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonInstall.ImageOptions.Image = global::ModioX.Properties.Resources.install;
+            this.ButtonInstall.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonInstall.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonInstall.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonInstall.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.ButtonInstall.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonInstall.Location = new System.Drawing.Point(8, 8);
+            this.ButtonInstall.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.ButtonInstall.Name = "ButtonInstall";
+            this.ButtonInstall.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonInstall.Size = new System.Drawing.Size(80, 26);
+            this.ButtonInstall.TabIndex = 1181;
+            this.ButtonInstall.Text = "Install";
             // 
             // PackageDialog
             // 
@@ -422,6 +429,7 @@ namespace ModioX.Forms.Dialogs.Details
             this.ControlBox = false;
             this.Controls.Add(this.PanelDetails);
             this.Controls.Add(this.PanelActions);
+            this.Controls.Add(this.PanelHeader);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -453,7 +461,6 @@ namespace ModioX.Forms.Dialogs.Details
             this.PanelRegion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelActions)).EndInit();
             this.PanelActions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MenuActions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Images)).EndInit();
             this.ResumeLayout(false);
@@ -465,8 +472,6 @@ namespace ModioX.Forms.Dialogs.Details
 
         private XtraScrollableControl PanelDetails;
         private DevExpress.Utils.Layout.StackPanel PanelActions;
-        private DropDownButton ButtonActions;
-        private DevExpress.XtraBars.PopupMenu MenuActions;
         private DevExpress.XtraBars.BarManager BarManager;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
@@ -491,5 +496,7 @@ namespace ModioX.Forms.Dialogs.Details
         private LabelControl LabelHeaderFileSize;
         private LabelControl LabelContentId;
         private LabelControl LabelHeaderContentId;
+        private SimpleButton ButtonFaq;
+        private SimpleButton ButtonInstall;
     }
 }

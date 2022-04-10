@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.IO;
-using System.Text;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using IniParser;
@@ -13,6 +7,13 @@ using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Io;
 using ModioX.Properties;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Resources;
+using System.Text;
+using System.Windows.Forms;
 using XDevkit;
 
 namespace ModioX.Forms.Tools.XBOX
@@ -23,6 +24,8 @@ namespace ModioX.Forms.Tools.XBOX
         {
             InitializeComponent();
         }
+
+        public ResourceManager Language = MainWindow.ResourceLanguage;
 
         /// <summary>
         /// Get the xbox console connection.
@@ -88,7 +91,7 @@ namespace ModioX.Forms.Tools.XBOX
             catch (Exception ex)
             {
                 Program.Log.Error(ex, $"Unable to load the launch.ini file. Error: {ex.Message}");
-                XtraMessageBox.Show(this, $"Unable to load the launch.ini file. Edit the file path in Settings to your correct file location.\n\nError Message: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(this, $"Unable to load the launch.ini file. Edit the file path in Settings to your correct file location.\n\nError Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
         }
@@ -102,7 +105,7 @@ namespace ModioX.Forms.Tools.XBOX
         private void LoadLaunchFileSection(string sectionName)
         {
             DataTableFileSections.Rows.Clear();
-            
+
             IniData launchFile = LaunchFileData;
 
             foreach (SectionData section in launchFile.Sections)
@@ -139,7 +142,7 @@ namespace ModioX.Forms.Tools.XBOX
             LaunchFileData[section][key] = value;
 
             LoadLaunchFileData();
-            XtraMessageBox.Show(this, "Launch.ini file has been saved and uploaded to your console.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            XtraMessageBox.Show(this, "Launch.ini file has been saved and uploaded to your console.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void CheckBoxEnableLiveBlock_CheckedChanged(object sender, EventArgs e)
@@ -198,7 +201,7 @@ namespace ModioX.Forms.Tools.XBOX
         {
             if (File.Exists(LocalLaunchBackupFilePath))
             {
-                if (XtraMessageBox.Show(this, "Do you really want to restore to the default file? All edited values will be lost.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (XtraMessageBox.Show(this, "Do you really want to restore to the default file? All edited values will be lost.",  Language.GetString("CONFIRM"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     File.WriteAllBytes("launch.ini", Encoding.UTF8.GetBytes(Resources.launch));
                     XboxConsole.SendFile("launch.ini", ConsoleLaunchFilePath);
@@ -215,7 +218,7 @@ namespace ModioX.Forms.Tools.XBOX
         {
             if (File.Exists(LocalLaunchBackupFilePath))
             {
-                if (XtraMessageBox.Show(this, "Do you really want to restore the backup file? All edited values will be lost.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (XtraMessageBox.Show(this, "Do you really want to restore the backup file? All edited values will be lost.",  Language.GetString("CONFIRM"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     XboxConsole.SendFile(LocalLaunchBackupFilePath, ConsoleLaunchFilePath);
                     LoadLaunchFileData();
@@ -233,12 +236,12 @@ namespace ModioX.Forms.Tools.XBOX
             {
                 new FileIniDataParser().WriteFile(LocalLaunchFilePath, LaunchFileData);
                 XboxConsole.SendFile(LocalLaunchFilePath, ConsoleLaunchFilePath);
-                XtraMessageBox.Show(this, "launch.ini file has been edited and uploaded to your console.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show(this, "launch.ini file has been edited and uploaded to your console.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 Program.Log.Error(ex, $"Unable to save or upload launch.ini file. Error: {ex.Message}");
-                XtraMessageBox.Show(this, $"There was a problem saving or uploading the launch.ini file.\n\nError: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(this, $"There was a problem saving or uploading the launch.ini file.\n\nError: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

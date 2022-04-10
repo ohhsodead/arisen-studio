@@ -54,8 +54,7 @@ namespace ModioX.Forms.Tools.PS3
             this.ButtonDeleteAll = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonBackupFile = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonRestoreFile = new DevExpress.XtraEditors.SimpleButton();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.PanelFileDetails = new DevExpress.XtraEditors.PanelControl();
             this.LabelInstallPath = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.LabelLocalPath = new DevExpress.XtraEditors.LabelControl();
@@ -74,10 +73,8 @@ namespace ModioX.Forms.Tools.PS3
             this.GroupBackupFiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).BeginInit();
             this.PanelButtons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelFileDetails)).BeginInit();
+            this.PanelFileDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // GridBackupFiles
@@ -86,7 +83,7 @@ namespace ModioX.Forms.Tools.PS3
             this.GridBackupFiles.Location = new System.Drawing.Point(2, 23);
             this.GridBackupFiles.MainView = this.GridViewBackupFiles;
             this.GridBackupFiles.Name = "GridBackupFiles";
-            this.GridBackupFiles.Size = new System.Drawing.Size(617, 197);
+            this.GridBackupFiles.Size = new System.Drawing.Size(586, 373);
             this.GridBackupFiles.TabIndex = 12;
             this.GridBackupFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewBackupFiles});
@@ -166,11 +163,15 @@ namespace ModioX.Forms.Tools.PS3
             // 
             // GroupBackupFiles
             // 
+            this.GroupBackupFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupBackupFiles.Controls.Add(this.GridBackupFiles);
+            this.GroupBackupFiles.Controls.Add(this.PanelFileDetails);
             this.GroupBackupFiles.Controls.Add(this.PanelButtons);
             this.GroupBackupFiles.Location = new System.Drawing.Point(12, 12);
             this.GroupBackupFiles.Name = "GroupBackupFiles";
-            this.GroupBackupFiles.Size = new System.Drawing.Size(621, 261);
+            this.GroupBackupFiles.Size = new System.Drawing.Size(920, 437);
             this.GroupBackupFiles.TabIndex = 17;
             this.GroupBackupFiles.Text = "BACKUP FILES";
             // 
@@ -182,9 +183,9 @@ namespace ModioX.Forms.Tools.PS3
             this.PanelButtons.Controls.Add(this.ButtonBackupFile);
             this.PanelButtons.Controls.Add(this.ButtonRestoreFile);
             this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelButtons.Location = new System.Drawing.Point(2, 220);
+            this.PanelButtons.Location = new System.Drawing.Point(2, 396);
             this.PanelButtons.Name = "PanelButtons";
-            this.PanelButtons.Size = new System.Drawing.Size(617, 39);
+            this.PanelButtons.Size = new System.Drawing.Size(916, 39);
             this.PanelButtons.TabIndex = 1181;
             // 
             // ButtonEdit
@@ -238,49 +239,42 @@ namespace ModioX.Forms.Tools.PS3
             this.ButtonRestoreFile.Text = "Restore File";
             this.ButtonRestoreFile.Click += new System.EventHandler(this.ButtonRestoreFile_Click);
             // 
-            // groupControl1
+            // PanelFileDetails
             // 
-            this.groupControl1.Controls.Add(this.panelControl1);
-            this.groupControl1.Location = new System.Drawing.Point(12, 279);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(621, 206);
-            this.groupControl1.TabIndex = 16;
-            this.groupControl1.Text = "BACKUP FILE DETAILS";
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl1.Controls.Add(this.LabelInstallPath);
-            this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.LabelLocalPath);
-            this.panelControl1.Controls.Add(this.labelControl13);
-            this.panelControl1.Controls.Add(this.LabelCreatedOn);
-            this.panelControl1.Controls.Add(this.labelControl11);
-            this.panelControl1.Controls.Add(this.LabelFileSize);
-            this.panelControl1.Controls.Add(this.labelControl9);
-            this.panelControl1.Controls.Add(this.LabelFileName);
-            this.panelControl1.Controls.Add(this.labelControl7);
-            this.panelControl1.Controls.Add(this.LabelGameTitle);
-            this.panelControl1.Controls.Add(this.labelControl4);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(2, 23);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(617, 181);
-            this.panelControl1.TabIndex = 1182;
+            this.PanelFileDetails.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PanelFileDetails.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.PanelFileDetails.Controls.Add(this.LabelInstallPath);
+            this.PanelFileDetails.Controls.Add(this.labelControl2);
+            this.PanelFileDetails.Controls.Add(this.LabelLocalPath);
+            this.PanelFileDetails.Controls.Add(this.labelControl13);
+            this.PanelFileDetails.Controls.Add(this.LabelCreatedOn);
+            this.PanelFileDetails.Controls.Add(this.labelControl11);
+            this.PanelFileDetails.Controls.Add(this.LabelFileSize);
+            this.PanelFileDetails.Controls.Add(this.labelControl9);
+            this.PanelFileDetails.Controls.Add(this.LabelFileName);
+            this.PanelFileDetails.Controls.Add(this.labelControl7);
+            this.PanelFileDetails.Controls.Add(this.LabelGameTitle);
+            this.PanelFileDetails.Controls.Add(this.labelControl4);
+            this.PanelFileDetails.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PanelFileDetails.Location = new System.Drawing.Point(588, 23);
+            this.PanelFileDetails.Name = "PanelFileDetails";
+            this.PanelFileDetails.Size = new System.Drawing.Size(330, 373);
+            this.PanelFileDetails.TabIndex = 1182;
             // 
             // LabelInstallPath
             // 
+            this.LabelInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelInstallPath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelInstallPath.Appearance.Options.UseFont = true;
             this.LabelInstallPath.Appearance.Options.UseTextOptions = true;
             this.LabelInstallPath.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.LabelInstallPath.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelInstallPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelInstallPath.Location = new System.Drawing.Point(95, 137);
+            this.LabelInstallPath.Location = new System.Drawing.Point(97, 178);
             this.LabelInstallPath.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.LabelInstallPath.Name = "LabelInstallPath";
-            this.LabelInstallPath.Size = new System.Drawing.Size(512, 34);
+            this.LabelInstallPath.Size = new System.Drawing.Size(229, 62);
             this.LabelInstallPath.TabIndex = 50;
             this.LabelInstallPath.Text = "...";
             // 
@@ -289,7 +283,7 @@ namespace ModioX.Forms.Tools.PS3
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl2.Location = new System.Drawing.Point(8, 137);
+            this.labelControl2.Location = new System.Drawing.Point(10, 178);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(64, 15);
@@ -298,16 +292,18 @@ namespace ModioX.Forms.Tools.PS3
             // 
             // LabelLocalPath
             // 
+            this.LabelLocalPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelLocalPath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelLocalPath.Appearance.Options.UseFont = true;
             this.LabelLocalPath.Appearance.Options.UseTextOptions = true;
             this.LabelLocalPath.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.LabelLocalPath.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelLocalPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelLocalPath.Location = new System.Drawing.Point(95, 92);
+            this.LabelLocalPath.Location = new System.Drawing.Point(95, 100);
             this.LabelLocalPath.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.LabelLocalPath.Name = "LabelLocalPath";
-            this.LabelLocalPath.Size = new System.Drawing.Size(512, 34);
+            this.LabelLocalPath.Size = new System.Drawing.Size(229, 72);
             this.LabelLocalPath.TabIndex = 48;
             this.LabelLocalPath.Text = "...";
             // 
@@ -316,7 +312,7 @@ namespace ModioX.Forms.Tools.PS3
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.labelControl13.Appearance.Options.UseFont = true;
             this.labelControl13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl13.Location = new System.Drawing.Point(8, 92);
+            this.labelControl13.Location = new System.Drawing.Point(8, 100);
             this.labelControl13.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(59, 15);
@@ -325,14 +321,16 @@ namespace ModioX.Forms.Tools.PS3
             // 
             // LabelCreatedOn
             // 
+            this.LabelCreatedOn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelCreatedOn.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelCreatedOn.Appearance.Options.UseFont = true;
             this.LabelCreatedOn.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelCreatedOn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelCreatedOn.Location = new System.Drawing.Point(95, 71);
+            this.LabelCreatedOn.Location = new System.Drawing.Point(95, 77);
             this.LabelCreatedOn.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.LabelCreatedOn.Name = "LabelCreatedOn";
-            this.LabelCreatedOn.Size = new System.Drawing.Size(512, 15);
+            this.LabelCreatedOn.Size = new System.Drawing.Size(229, 15);
             this.LabelCreatedOn.TabIndex = 46;
             this.LabelCreatedOn.Text = "...";
             // 
@@ -341,7 +339,7 @@ namespace ModioX.Forms.Tools.PS3
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl11.Location = new System.Drawing.Point(8, 71);
+            this.labelControl11.Location = new System.Drawing.Point(8, 77);
             this.labelControl11.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(66, 15);
@@ -350,14 +348,16 @@ namespace ModioX.Forms.Tools.PS3
             // 
             // LabelFileSize
             // 
+            this.LabelFileSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelFileSize.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelFileSize.Appearance.Options.UseFont = true;
             this.LabelFileSize.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelFileSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileSize.Location = new System.Drawing.Point(95, 50);
+            this.LabelFileSize.Location = new System.Drawing.Point(95, 54);
             this.LabelFileSize.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.LabelFileSize.Name = "LabelFileSize";
-            this.LabelFileSize.Size = new System.Drawing.Size(512, 15);
+            this.LabelFileSize.Size = new System.Drawing.Size(229, 15);
             this.LabelFileSize.TabIndex = 44;
             this.LabelFileSize.Text = "...";
             // 
@@ -366,7 +366,7 @@ namespace ModioX.Forms.Tools.PS3
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl9.Location = new System.Drawing.Point(8, 50);
+            this.labelControl9.Location = new System.Drawing.Point(8, 54);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(48, 15);
@@ -375,14 +375,16 @@ namespace ModioX.Forms.Tools.PS3
             // 
             // LabelFileName
             // 
+            this.LabelFileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelFileName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelFileName.Appearance.Options.UseFont = true;
             this.LabelFileName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelFileName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileName.Location = new System.Drawing.Point(95, 29);
+            this.LabelFileName.Location = new System.Drawing.Point(95, 31);
             this.LabelFileName.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.LabelFileName.Name = "LabelFileName";
-            this.LabelFileName.Size = new System.Drawing.Size(512, 15);
+            this.LabelFileName.Size = new System.Drawing.Size(229, 15);
             this.LabelFileName.TabIndex = 42;
             this.LabelFileName.Text = "...";
             // 
@@ -391,7 +393,7 @@ namespace ModioX.Forms.Tools.PS3
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl7.Location = new System.Drawing.Point(8, 29);
+            this.labelControl7.Location = new System.Drawing.Point(8, 31);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(58, 15);
@@ -400,6 +402,8 @@ namespace ModioX.Forms.Tools.PS3
             // 
             // LabelGameTitle
             // 
+            this.LabelGameTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelGameTitle.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelGameTitle.Appearance.Options.UseFont = true;
             this.LabelGameTitle.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
@@ -407,7 +411,7 @@ namespace ModioX.Forms.Tools.PS3
             this.LabelGameTitle.Location = new System.Drawing.Point(95, 8);
             this.LabelGameTitle.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.LabelGameTitle.Name = "LabelGameTitle";
-            this.LabelGameTitle.Size = new System.Drawing.Size(512, 15);
+            this.LabelGameTitle.Size = new System.Drawing.Size(229, 15);
             this.LabelGameTitle.TabIndex = 40;
             this.LabelGameTitle.Text = "...";
             // 
@@ -429,8 +433,7 @@ namespace ModioX.Forms.Tools.PS3
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(645, 497);
-            this.Controls.Add(this.groupControl1);
+            this.ClientSize = new System.Drawing.Size(944, 461);
             this.Controls.Add(this.GroupBackupFiles);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
@@ -449,11 +452,9 @@ namespace ModioX.Forms.Tools.PS3
             this.GroupBackupFiles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).EndInit();
             this.PanelButtons.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelFileDetails)).EndInit();
+            this.PanelFileDetails.ResumeLayout(false);
+            this.PanelFileDetails.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -471,11 +472,10 @@ namespace ModioX.Forms.Tools.PS3
         private DataGridViewTextBoxColumn ColumnCreatedOn;
         private GridView GridViewBackupFiles;
         private GroupControl GroupBackupFiles;
-        private GroupControl groupControl1;
         private StackPanel PanelButtons;
         private SimpleButton ButtonDelete;
         private SimpleButton ButtonDeleteAll;
-        private PanelControl panelControl1;
+        private PanelControl PanelFileDetails;
         private LabelControl LabelInstallPath;
         private LabelControl labelControl2;
         private LabelControl LabelLocalPath;

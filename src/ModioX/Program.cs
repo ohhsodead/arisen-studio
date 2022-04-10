@@ -1,18 +1,19 @@
-﻿using System;
-using System.Text;
-using System.Threading;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ModioX.Forms.Windows;
 using ModioX.Io;
 using NLog;
 using NLog.Config;
 using NLog.Targets;
+using System;
+using System.Text;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace ModioX
 {
     internal static class Program
     {
+        public static Mutex mutex = new(true, "ModioX");
         public static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
         /// <summary>
@@ -21,14 +22,24 @@ namespace ModioX
         [STAThread]
         private static void Main()
         {
-            ConfigureLogger();
+            if (mutex.WaitOne(TimeSpan.Zero, true))
+            {
+                ConfigureLogger();
 
-            Application.ThreadException += Application_ThreadException;
-            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+                Application.ThreadException += Application_ThreadException;
+                AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                DevExpress.UserSkins.BonusSkins.Register();
+                DevExpress.Skins.SkinManager.EnableFormSkins();
+                DevExpress.Skins.SkinManager.EnableMdiFormSkins();
+
+                Application.Run(new MainWindow());
+
+                mutex.ReleaseMutex();
+                mutex.Dispose();
+            }
         }
 
         private static void ConfigureLogger()

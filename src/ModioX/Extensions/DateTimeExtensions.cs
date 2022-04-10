@@ -1,6 +1,6 @@
-﻿using System;
+﻿using ModioX.Net;
+using System;
 using System.Globalization;
-using ModioX.Net;
 
 namespace ModioX.Extensions
 {

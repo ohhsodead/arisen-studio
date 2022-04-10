@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using ModioX.Database;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Resources;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Tools.PS3
 {
@@ -19,6 +20,8 @@ namespace ModioX.Forms.Tools.PS3
         {
             InitializeComponent();
         }
+
+        public ResourceManager Language = MainWindow.ResourceLanguage;
 
         /// <summary>
         /// Get the user's settings data.
@@ -119,18 +122,18 @@ namespace ModioX.Forms.Tools.PS3
             {
                 Settings.GameRegionsPS3.RemoveAt(GridViewGameRegions.FocusedRowHandle);
                 LoadSavedGameRegions();
-                XtraMessageBox.Show("Saved game region has now been deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Saved game region has now been deleted.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void ButtonDeleteAll_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Do you really want to delete all of your saved game regions?", "Confirm",
+            if (XtraMessageBox.Show("Do you really want to delete all of your saved game regions?",  Language.GetString("CONFIRM"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Settings.GameRegionsPS3.Clear();
                 LoadSavedGameRegions();
-                XtraMessageBox.Show("All saved game regions have now been deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("All saved game regions have now been deleted.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -199,7 +202,7 @@ namespace ModioX.Forms.Tools.PS3
                 }
             }
 
-            XtraMessageBox.Show("All game regions have now been saved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            XtraMessageBox.Show("All game regions have now been saved.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
         }
     }

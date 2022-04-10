@@ -1,10 +1,10 @@
-﻿using System;
+﻿using ModioX.Extensions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
-using ModioX.Extensions;
 
 namespace ModioX.Net
 {
@@ -19,16 +19,16 @@ namespace ModioX.Net
         public FtpConnection(string host)
         {
             Port = 0x15;
-            _username = "";
-            _password = "";
+            _username = string.Empty;
+            _password = string.Empty;
             Host = host;
         }
 
         public FtpConnection(string host, int port)
         {
             Port = 0x15;
-            _username = "";
-            _password = "";
+            _username = string.Empty;
+            _password = string.Empty;
             Host = host;
             Port = port;
         }
@@ -36,8 +36,8 @@ namespace ModioX.Net
         public FtpConnection(string host, string username, string password)
         {
             Port = 0x15;
-            _username = "";
-            _password = "";
+            _username = string.Empty;
+            _password = string.Empty;
             Host = host;
             _username = username;
             _password = password;
@@ -46,8 +46,8 @@ namespace ModioX.Net
         public FtpConnection(string host, int port, string username, string password)
         {
             Port = 0x15;
-            _username = "";
-            _password = "";
+            _username = string.Empty;
+            _password = string.Empty;
             Host = host;
             Port = port;
             _username = username;
@@ -433,7 +433,7 @@ namespace ModioX.Net
                     }
             }
 
-            return "";
+            return string.Empty;
         }
 
         public void SetCurrentDirectory(string directory)

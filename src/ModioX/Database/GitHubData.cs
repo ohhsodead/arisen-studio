@@ -1,10 +1,10 @@
-﻿using System.IO;
+﻿using ModioX.Constants;
+using ModioX.Models.Database;
+using Newtonsoft.Json;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using ModioX.Constants;
-using ModioX.Models.Database;
-using Newtonsoft.Json;
 
 namespace ModioX.Database
 {
@@ -29,11 +29,6 @@ namespace ModioX.Database
         /// Contains the mods from the Xbox database.
         /// </summary>
         public GameSavesData GameSaves { get; private set; }
-
-        /// <summary>
-        /// Contains the offsets from the database.
-        /// </summary>
-        public OffsetsData ModsOffsets { get; private set; }
 
         /// <summary>
         /// Contains the Xbox 360 Games Title IDs.
@@ -66,6 +61,11 @@ namespace ModioX.Database
         public PackagesData ThemesPS3 { get; private set; }
 
         /// <summary>
+        /// Contains PS3 Avatars in PKG format.
+        /// </summary>
+        public GameCheatsData GameCheatsPS3 { get; private set; }
+
+        /// <summary>
         /// Contains announcements.
         /// </summary>
         public AnnouncementsData Announcements { get; private set; }
@@ -83,13 +83,13 @@ namespace ModioX.Database
                 ModsPS3 = await GetModsPS3Async(),
                 PluginsXBOX = await GetPluginsXBOXAsync(),
                 GameSaves = await GetGameSavesAsync(),
-                ModsOffsets = await GetModsOffsetsAsync(),
                 GamesXBOXTitleIds = await GetGamesTitleIdsXBOXAsync(),
                 GamesPS3 = await GetGamesPackagesAsync(),
                 DemosPS3 = await GetDemosPackagesAsync(),
                 DLCsPS3 = await GetDLCsPackagesAsync(),
                 AvatarsPS3 = await GetAvatarsPackagesAsync(),
-                ThemesPS3 = await GetThemesPackagesAsync()
+                ThemesPS3 = await GetThemesPackagesAsync(),
+                GameCheatsPS3 = await GetGameCheatsAsync()
             };
 
             data.CategoriesData.Categories = data.CategoriesData.Categories.OrderBy(o => o.Title).ToList();
@@ -230,7 +230,7 @@ namespace ModioX.Database
         private static async Task<GamesTitleIdsDataXBOX> GetGamesTitleIdsXBOXAsync()
         {
             using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.GamesTitleIdsXBOX).ConfigureAwait(true);
+            using Stream stream = await client.GetStreamAsync(Urls.GameTitleIdsXBOX).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
@@ -250,20 +250,6 @@ namespace ModioX.Database
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
             return new JsonSerializer().Deserialize<GameSavesData>(jsonReader);
-        }
-
-        /// <summary>
-        /// Download and return the mods data.
-        /// </summary>
-        /// <returns> ModsData </returns>
-        private static async Task<OffsetsData> GetModsOffsetsAsync()
-        {
-            using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.ModsDataOffsets).ConfigureAwait(true);
-            using StreamReader streamReader = new(stream);
-            using JsonReader jsonReader = new JsonTextReader(streamReader);
-
-            return new JsonSerializer().Deserialize<OffsetsData>(jsonReader);
         }
 
         public PackageItemData GetPackage(string category, string url)
@@ -333,6 +319,20 @@ namespace ModioX.Database
             count += ThemesPS3.Packages.Count;
 
             return count;
+        }
+
+        /// <summary>
+        /// Download and return the mods data.
+        /// </summary>
+        /// <returns> ModsData </returns>
+        private static async Task<GameCheatsData> GetGameCheatsAsync()
+        {
+            using HttpClient client = new();
+            using Stream stream = await client.GetStreamAsync(Urls.GameCheatsDataPS3).ConfigureAwait(true);
+            using StreamReader streamReader = new(stream);
+            using JsonReader jsonReader = new JsonTextReader(streamReader);
+
+            return new JsonSerializer().Deserialize<GameCheatsData>(jsonReader);
         }
     }
 }

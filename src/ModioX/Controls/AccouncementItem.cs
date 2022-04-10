@@ -1,10 +1,11 @@
-﻿using System;
-using System.Diagnostics;
-using System.Globalization;
-using DevExpress.Utils;
+﻿using DevExpress.Utils;
 using DevExpress.XtraEditors;
 using Humanizer;
 using ModioX.Forms.Windows;
+using System;
+using System.Diagnostics;
+using System.Globalization;
+using System.Windows;
 
 namespace ModioX.Controls
 {
@@ -36,7 +37,7 @@ namespace ModioX.Controls
             try
             {
                 MainWindow.Settings.DismissedAnnouncements.Add(Id);
-                Dispose();
+                Hide();
             }
             catch { }
         }

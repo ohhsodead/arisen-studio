@@ -46,8 +46,6 @@ namespace ModioX.Forms.Dialogs
             this.GroupListItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GroupListItems.AppearanceCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.WindowText;
-            this.GroupListItems.AppearanceCaption.Options.UseForeColor = true;
             this.GroupListItems.Controls.Add(this.GridControlListItems);
             this.GroupListItems.Location = new System.Drawing.Point(12, 12);
             this.GroupListItems.Name = "GroupListItems";

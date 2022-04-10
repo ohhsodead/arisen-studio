@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using DevExpress.Data;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Mask;
@@ -9,12 +6,15 @@ using Humanizer;
 using ModioX.Database;
 using ModioX.Forms.Dialogs;
 using ModioX.Forms.Dialogs.Details;
-using ModioX.Forms.Settings;
+using ModioX.Forms.Dialogs.Importing;
 using ModioX.Forms.Tools.PS3;
 using ModioX.Forms.Tools.XBOX;
-using ModioX.Forms.Windows;
 using ModioX.Models.Database;
 using ModioX.Models.Resources;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ModioX.Extensions
 {
@@ -22,13 +22,13 @@ namespace ModioX.Extensions
     {
         #region Details
 
-        public static void ShowItemDetailsDialog(Form owner, PlatformPrefix consoleType, CategoriesData categories, ModItemData modItem)
+        public static void ShowItemDetailsDialog(Form owner, Platform platform, CategoriesData categories, ModItemData modItem)
         {
             XtraForm detailsDialog = new();
 
-            switch (consoleType)
+            switch (platform)
             {
-                case PlatformPrefix.PS3:
+                case Platform.PS3:
                     if (modItem.GetCategoryType(categories) == CategoryType.Game)
                     {
                         detailsDialog = new GameModDialog
@@ -52,7 +52,7 @@ namespace ModioX.Extensions
                     }
                     break;
 
-                case PlatformPrefix.XBOX:
+                case Platform.XBOX360:
                     detailsDialog = new PluginDialog
                     {
                         ModItem = modItem
@@ -120,6 +120,28 @@ namespace ModioX.Extensions
 
             detailsDialog.Owner = owner;
             detailsDialog.ShowDialog();
+
+            //Get rid of the overlay form  
+            overlayForm.Dispose();
+        }
+
+        public static void ShowItemGameCheatsDialog(Form owner, GameCheatItemData gameCheatItem)
+        {
+            using GameCheatsDialog cheatsDialog = new();
+            cheatsDialog.GameCheatItem = gameCheatItem;
+
+            XtraForm overlayForm = new();
+            overlayForm.StartPosition = FormStartPosition.Manual;
+            overlayForm.FormBorderStyle = FormBorderStyle.None;
+            overlayForm.Opacity = .50d;
+            overlayForm.BackColor = Color.Black;
+            overlayForm.Size = owner.Size;
+            overlayForm.Location = owner.Location;
+            overlayForm.ShowInTaskbar = false;
+            overlayForm.Show(owner);
+
+            cheatsDialog.Owner = owner;
+            cheatsDialog.ShowDialog();
 
             //Get rid of the overlay form  
             overlayForm.Dispose();
@@ -337,9 +359,9 @@ namespace ModioX.Extensions
             return XtraMessageBox.Show(args);
         }
 
-        public static ConsoleProfile ShowConnectionsDialog(Form owner, PlatformPrefix consoleType)
+        public static ConsoleProfile ShowConnectionsDialog(Form owner, Platform platform)
         {
-            using ConnectionsDialog connectConsole = new() { ConsoleType = consoleType };
+            using ConnectionsDialog connectConsole = new() { Platform = platform };
             return connectConsole.ShowDialog(owner) == DialogResult.OK ? connectConsole.ConsoleProfile : null;
         }
 
@@ -379,39 +401,39 @@ namespace ModioX.Extensions
             return saveFileDialog.ShowDialog(owner) == DialogResult.OK ? saveFileDialog.FileName : null;
         }
 
-        public static SortOptionsDialog ShowSortOptions(Form owner, string sortOption, List<string> sortOptions, DevExpress.Data.ColumnSortOrder sortOrder)
+        public static SortOptionsDialog ShowSortOptions(Form owner, string sortOption, List<string> sortOptions, ColumnSortOrder sortOrder)
         {
             using SortOptionsDialog sortOptionsDialog = new() { SortOption = sortOption, SortOptions = sortOptions, SortOrder = sortOrder };
             return sortOptionsDialog.ShowDialog(owner) == DialogResult.OK ? sortOptionsDialog : null;
         }
 
-        public static void ShowFileManager(Form owner)
+        public static void ShowImportedModsDialog(Form owner)
         {
-            using FileManagerWindow fileManagerWindow = new();
-            fileManagerWindow.ShowDialog(owner);
+            using ImportedModsDialog importedModsDialog = new();
+            importedModsDialog.ShowDialog(owner);
         }
 
-        public static void ShowOffsetsPoker(Form owner)
+        public static ImportedMod ShowImportNewDialog(Form owner, bool isEditing = false, ImportedMod importedMod = null)
         {
-            using OffsetsPokerWindow offsetsPokerWindow = new();
-            offsetsPokerWindow.ShowDialog(owner);
+            using ImportNewDialog newImportDialog = new() { IsEditing = isEditing, ImportedMod = importedMod };
+            return newImportDialog.ShowDialog(owner) == DialogResult.OK ? newImportDialog.ImportedMod : null;
         }
 
-        public static void ShowImportOffsetsDialog(Form owner, ModsOffsetValues modsOffsetValues)
+        public static InstallItem ShowImportNewFileDialog(Form owner, InstallItem installItem)
         {
-            using ImportOffsetsDialog importOffsetsDialog = new() { ModsOffsetValues = modsOffsetValues };
-            importOffsetsDialog.ShowDialog(owner);
-        }
-
-        public static OffsetValue ShowImportOffsetsValuesDialog(Form owner, OffsetValue offsetValue)
-        {
-            using ImportOffsetsValuesDialog importOffsetsValuesDialog = new() { OffsetValue = offsetValue };
-            return importOffsetsValuesDialog.ShowDialog(owner) == DialogResult.OK ? importOffsetsValuesDialog.OffsetValue : null;
+            using InstallFileDialog installFileDialog = new() { InstallItem = installItem };
+            return installFileDialog.ShowDialog(owner) == DialogResult.OK ? installItem : null;
         }
 
         #region Help
 
-        public static void ShowWhatsNewDialog(Form owner, Models.Release_Data.GitHubData gitHubData)
+        public static void ShowPackagesFaqDialog(Form owner)
+        {
+            using PackagesFaqDialog packagesFaqDialog = new();
+            packagesFaqDialog.ShowDialog(owner);
+        }
+
+        public static void ShowWhatsNewDialog(Form owner, Models.Release_Data.GitHubReleaseData gitHubData)
         {
             try
             {
@@ -434,50 +456,9 @@ namespace ModioX.Extensions
 
         #endregion
 
-        public static void ShowChatRoom(Form owner)
-        {
-            foreach (Form form in Application.OpenForms)
-            {
-                switch (form)
-                {
-                    case ChatRoomWindow:
-                        form.Focus();
-                        return;
-                }
-            }
-
-            string UserName = MainWindow.Settings.ChatUserName;
-
-            if (UserName.IsNullOrEmpty())
-            {
-                string userName = ShowTextInputDialog(owner, "Set User Name", "User Name:", DataExtensions.LocalUserName,
-                    16);
-
-                if (userName.IsNullOrWhiteSpace())
-                {
-                    XtraMessageBox.Show("You must enter a username.", "Invalid Username", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
-
-                switch (Environment.UserName.Equals("ohhsodead"))
-                {
-                    case false when MainWindow.Settings.BlackListUserNames.AnyContainsIgnoreCase(UserName):
-                        XtraMessageBox.Show("Your username can't include the project or the owner's name.", "Invalid Username", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        return;
-                    default:
-                        UserName = userName;
-                        break;
-                }
-            }
-
-            MainWindow.Settings.ChatUserName = UserName.FormatUserName();
-
-            new ChatRoomWindow().Show();
-        }
-
         public static void ShowSubmitModsDialog(Form owner)
         {
-            using SubmitModsDialog requestModsDialog = new();
+            using RequestModsDialog requestModsDialog = new();
             requestModsDialog.ShowDialog(owner);
         }
 
@@ -543,12 +524,6 @@ namespace ModioX.Extensions
         {
             using GameRegions gameRegionsDialog = new();
             gameRegionsDialog.ShowDialog(owner);
-        }
-
-        public static void ShowCustomListsDialog(Form owner, PlatformPrefix consoleType)
-        {
-            using CustomLists customListsDialog = new() { ConsoleType = consoleType };
-            customListsDialog.ShowDialog(owner);
         }
 
         #endregion

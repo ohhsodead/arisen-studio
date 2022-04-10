@@ -1,6 +1,6 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
 namespace ModioX.Forms.Dialogs
 {

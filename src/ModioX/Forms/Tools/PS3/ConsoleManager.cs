@@ -1,8 +1,9 @@
-﻿using System;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ModioX.Forms.Windows;
 using PS3Lib;
+using System;
+using System.Resources;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Tools.PS3
 {
@@ -13,31 +14,33 @@ namespace ModioX.Forms.Tools.PS3
             InitializeComponent();
         }
 
+        public ResourceManager Language = MainWindow.ResourceLanguage;
+
         private PS3API PS3 { get; } = new(SelectAPI.PS3Manager);
 
         private void ConsoleManager_Load(object sender, EventArgs e)
         {
             try
             {
-                UpdateStatus("Connecting to console...");
+                UpdateStatus(Language.GetString("CONNECTING_TO_CONSOLE"));
 
                 PS3.PS3MAPI.ConnectTarget(MainWindow.ConsoleProfile.Address);
 
                 if (PS3.PS3MAPI.IsConnected())
                 {
-                    UpdateStatus("Successfully connected to console.");
+                    UpdateStatus(Language.GetString("SUCCESS_CONNECTED"));
                     LoadDetails();
                 }
                 else
                 {
-                    UpdateStatus("Unable to connect to console.");
-                    XtraMessageBox.Show(this, "Unable to connect to console. You must have webMAN installed to use this feature.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    UpdateStatus(Language.GetString("UNABLE_TO_CONNECT"));
+                    XtraMessageBox.Show(this, Language.GetString("WEBMAN_REQUIRED"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Close();
                 }
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show(this, $"Unable to connect to console. You must have webMAN installed to use this feature.\n\nMessage: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(this, Language.GetString("WEBMAN_REQUIRED"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
         }
@@ -77,7 +80,7 @@ namespace ModioX.Forms.Tools.PS3
             catch (Exception ex)
             {
                 UpdateStatus($"Unable to fetch console details.", ex);
-                XtraMessageBox.Show(this, $"Unable to fetch console details.\n\nError Message: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(this, $"Unable to fetch console details.\n\nError Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

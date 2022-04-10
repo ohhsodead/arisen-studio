@@ -1,7 +1,9 @@
-﻿using System;
+﻿using HtmlAgilityPack;
+using System;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 
 namespace ModioX.Extensions
 {
@@ -17,6 +19,12 @@ namespace ModioX.Extensions
         /// <returns></returns>
         public static bool IsWebManInstalled(string ip)
         {
+            // alternative 
+            //Ping ping = new();
+            //IPAddress address = IPAddress.Parse(ip);
+            //PingReply pong = ping.Send(address);
+            //return pong.Status == IPStatus.Success;
+
             Socket socket = new(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             try
@@ -66,6 +74,53 @@ namespace ModioX.Extensions
         public static void RebuildDatabase(string ip)
         {
             HandleRequest(ip, "rebuild.ps3");
+        }
+
+        public static string GetGame(string ip)
+        {
+            try
+            {
+                string game;
+
+                HtmlWeb web = new();
+
+                var htmlDoc = web.Load("http://" + ip + "/cpursx.ps3?/sman.ps3");
+
+                var node = htmlDoc.DocumentNode.SelectNodes("//body//h2");
+
+                var res = node[0].InnerText;
+
+                //var soup = BeautifulSoup(html, "html.parser");
+                //var strings = soup.findAll("h2");
+                //var res = strings[0].text;
+
+                if (res.StartsWith("BL") || res.StartsWith("NP") || res.StartsWith("BC"))
+                {
+                    //game = res.Split(" ", 1)[1].encode("ascii", "ignore").decode();
+                    //game = game.Split(new string [ ' ' ]);
+                    //game.Remove(-1);
+                    //game = " ".join(game);
+
+                    game = res.Substring(res.IndexOf(' ') + 1);
+                    game = game.Substring(0, game.Length - 13);
+                    game = game.Replace(" &nbsp; ", string.Empty);
+                    game = game.Replace("á", "\u00e1");
+                    game = game.Replace("Â", "\u00c2");
+                    var bytes = Encoding.ASCII.GetBytes(game);
+                    game = Encoding.ASCII.GetString(bytes);
+                    game = game.Replace("?", string.Empty);
+                }
+                else
+                {
+                    game = "XMB Menu";
+                }
+
+                return game;
+            }
+            catch
+            {
+                return string.Empty;
+            }
         }
 
         #region Mount Game

@@ -20,13 +20,17 @@
         /// <summary>
         /// Direct download to the news feed file hosted via Lyfe's web server.
         /// </summary>
-        //internal const string RssFeedData = "https://rss.brewtools.dev/news.xml";
         internal const string RssFeedData = "https://dl.dropbox.com/s/y2m8fhrih1whrn3/news.xml?raw=true";
 
         /// <summary>
         /// Direct link to the project repo hosted on GitHub.
         /// </summary>
         internal const string GitHubRepo = "https://github.com/ohhsodead/ModioX/";
+
+        /// <summary>
+        /// Direct link to fetch the latest release information via GitHub API.
+        /// </summary>
+        internal const string GitHubReleases = "https://api.github.com/repos/ohhsodead/ModioX/releases";
 
         /// <summary>
         /// Direct link to fetch the latest release information via GitHub API.
@@ -76,7 +80,7 @@
         /// <summary>
         /// Direct link to the Xbox 360 games title Ids hosted on GitHub.
         /// </summary>
-        internal const string GamesTitleIdsXBOX = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/.database/xbox-games-titleids.json";
+        internal const string GameTitleIdsXBOX = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/.database/xbox-titleids.json";
 
         /// <summary>
         /// Direct link to the game saves file hosted on GitHub.
@@ -86,6 +90,6 @@
         /// <summary>
         /// Direct link to the ps3 game offsets database file hosted on GitHub.
         /// </summary>
-        internal const string GameCheatsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/.database/ps3-cheats.json";
+        internal const string GameCheatsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/ModioX/master/.database/ps3-game-cheats.json";
     }
 }

@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.ComponentModel;
-using System.IO;
-using System.Windows.Forms;
+﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
-using DevExpress.XtraBars;
 using Isolib.STFSPackage;
-using ModioX.Forms.Windows;
 using ModioX.Extensions;
+using ModioX.Forms.Windows;
 using ModioX.Io;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Resources;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Tools.XBOX
 {
@@ -20,6 +21,8 @@ namespace ModioX.Forms.Tools.XBOX
             InitializeComponent();
         }
 
+        public ResourceManager Language = MainWindow.ResourceLanguage;
+
         public Stfs PackageGameSave { get; set; }
 
         public string PackageGameSavePath { get; set; }
@@ -28,7 +31,7 @@ namespace ModioX.Forms.Tools.XBOX
 
         private void GameSaveResigner_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void GameSaveResigner_FormClosing(object sender, FormClosingEventArgs e)
@@ -105,7 +108,7 @@ namespace ModioX.Forms.Tools.XBOX
                 LoadFile();
 
                 UpdateStatus($"Successfully loaded game save.");
-                XtraMessageBox.Show(this, "Successfully loaded game save!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show(this, "Successfully loaded game save!", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -146,7 +149,7 @@ namespace ModioX.Forms.Tools.XBOX
                 }
                 else
                 {
-                    XtraMessageBox.Show(this, "Image file size is too big!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show(this, "Image file size is too big!", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -162,7 +165,7 @@ namespace ModioX.Forms.Tools.XBOX
         {
             try
             {
-                string fileName = DialogExtensions.ShowOpenFileDialog(this, "Load Profile", "");
+                string fileName = DialogExtensions.ShowOpenFileDialog(this, "Load Profile", string.Empty);
 
                 if (!fileName.IsNullOrEmpty())
                 {
@@ -181,7 +184,7 @@ namespace ModioX.Forms.Tools.XBOX
             catch (Exception ex)
             {
                 UpdateStatus($"Unable to load profile details.", ex);
-                XtraMessageBox.Show(this, $"Unable to load profile details. Error Message: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(this, $"Unable to load profile details. Error Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -207,7 +210,7 @@ namespace ModioX.Forms.Tools.XBOX
 
                     if (profile == null)
                     {
-                        XtraMessageBox.Show(this, $"You don't have any profiles saved or none was selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show(this, $"You don't have any profiles saved or none was selected.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -216,7 +219,7 @@ namespace ModioX.Forms.Tools.XBOX
                 }
                 else
                 {
-                    XtraMessageBox.Show(this, $"You haven't saved any profiled.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show(this, $"You haven't saved any profiled.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -241,13 +244,13 @@ namespace ModioX.Forms.Tools.XBOX
                 else
                 {
                     UpdateStatus("No profiles were found or you didn't select one.");
-                    XtraMessageBox.Show(this, "No profiles were found or you didn't select one.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show(this, "No profiles were found or you didn't select one.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
                 UpdateStatus($"Unable to find profile files on console.", ex);
-                XtraMessageBox.Show(this, $"Unable to find profile files on console. Error Message: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(this, $"Unable to find profile files on console. Error Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -287,7 +290,7 @@ namespace ModioX.Forms.Tools.XBOX
                 PackageGameSavePath = string.Empty;
 
                 UpdateStatus($"Unable to parse game save file.", ex);
-                XtraMessageBox.Show(this, $"Unable to parse game save file. Error Message: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(this, $"Unable to parse game save file. Error Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -301,12 +304,12 @@ namespace ModioX.Forms.Tools.XBOX
                 TextBoxConsoleId.Text = PackageProfle.HeaderData.ConsoleID;
 
                 UpdateStatus($"Successfully loaded profile file.");
-                XtraMessageBox.Show(this, "Successfully loaded profile!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show(this, "Successfully loaded profile!", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 UpdateStatus($"Unable to load profile.", ex);
-                XtraMessageBox.Show(this, $"Unable to load profile. Error Message: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(this, $"Unable to load profile. Error Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -332,12 +335,12 @@ namespace ModioX.Forms.Tools.XBOX
                 PackageGameSave.Finish();
 
                 UpdateStatus("Successfully saved and resigned game save.");
-                XtraMessageBox.Show(this, "Successfully saved and resigned game save!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show(this, "Successfully saved and resigned game save!", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 UpdateStatus("Unable to save or resign game save.", ex);
-                XtraMessageBox.Show(this, $"Unable to save or resign game save file.\n\nError Message: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(this, $"Unable to save or resign game save file.\n\nError Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

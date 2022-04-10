@@ -35,19 +35,19 @@ namespace ModioX.Forms.Dialogs
             this.LabelUserPass = new DevExpress.XtraEditors.LabelControl();
             this.LabelLogin = new DevExpress.XtraEditors.LabelControl();
             this.LabelName = new DevExpress.XtraEditors.LabelControl();
-            this.LabelConsoleAddress = new DevExpress.XtraEditors.LabelControl();
+            this.LabelAddress = new DevExpress.XtraEditors.LabelControl();
             this.ButtonOK = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonChangeCredentials = new DevExpress.XtraEditors.SimpleButton();
-            this.LabelConsoleType = new DevExpress.XtraEditors.LabelControl();
+            this.ButtonChangeLoginDetails = new DevExpress.XtraEditors.SimpleButton();
+            this.LabelPlatformType = new DevExpress.XtraEditors.LabelControl();
             this.ImageConsole = new DevExpress.XtraEditors.PictureEdit();
-            this.ComboBoxConsoleType = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.TextBoxConsoleAddress = new DevExpress.XtraEditors.TextEdit();
+            this.ComboBoxPlatform = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.TextBoxAddress = new DevExpress.XtraEditors.TextEdit();
             this.TextBoxConnectionName = new DevExpress.XtraEditors.TextEdit();
             this.CheckBoxUseDefaultConsole = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageConsole.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxConsoleType.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsoleAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxPlatform.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConnectionName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxUseDefaultConsole.Properties)).BeginInit();
             this.SuspendLayout();
@@ -86,16 +86,16 @@ namespace ModioX.Forms.Dialogs
             this.LabelName.TabIndex = 5;
             this.LabelName.Text = "Connection Name";
             // 
-            // LabelConsoleAddress
+            // LabelAddress
             // 
-            this.LabelConsoleAddress.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelConsoleAddress.Appearance.Options.UseFont = true;
-            this.LabelConsoleAddress.Location = new System.Drawing.Point(150, 72);
-            this.LabelConsoleAddress.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
-            this.LabelConsoleAddress.Name = "LabelConsoleAddress";
-            this.LabelConsoleAddress.Size = new System.Drawing.Size(42, 15);
-            this.LabelConsoleAddress.TabIndex = 14;
-            this.LabelConsoleAddress.Text = "Address";
+            this.LabelAddress.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelAddress.Appearance.Options.UseFont = true;
+            this.LabelAddress.Location = new System.Drawing.Point(150, 72);
+            this.LabelAddress.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
+            this.LabelAddress.Name = "LabelAddress";
+            this.LabelAddress.Size = new System.Drawing.Size(55, 15);
+            this.LabelAddress.TabIndex = 14;
+            this.LabelAddress.Text = "IP Address";
             // 
             // ButtonOK
             // 
@@ -119,26 +119,26 @@ namespace ModioX.Forms.Dialogs
             this.ButtonCancel.TabIndex = 7;
             this.ButtonCancel.Text = "Cancel";
             // 
-            // ButtonChangeCredentials
+            // ButtonChangeLoginDetails
             // 
-            this.ButtonChangeCredentials.Location = new System.Drawing.Point(422, 98);
-            this.ButtonChangeCredentials.Name = "ButtonChangeCredentials";
-            this.ButtonChangeCredentials.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonChangeCredentials.Size = new System.Drawing.Size(80, 24);
-            this.ButtonChangeCredentials.TabIndex = 4;
-            this.ButtonChangeCredentials.Text = "Change";
-            this.ButtonChangeCredentials.Click += new System.EventHandler(this.ButtonChangeCredentials_Click);
+            this.ButtonChangeLoginDetails.Location = new System.Drawing.Point(422, 98);
+            this.ButtonChangeLoginDetails.Name = "ButtonChangeLoginDetails";
+            this.ButtonChangeLoginDetails.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonChangeLoginDetails.Size = new System.Drawing.Size(80, 24);
+            this.ButtonChangeLoginDetails.TabIndex = 4;
+            this.ButtonChangeLoginDetails.Text = "Change";
+            this.ButtonChangeLoginDetails.Click += new System.EventHandler(this.ButtonChangeCredentials_Click);
             // 
-            // LabelConsoleType
+            // LabelPlatformType
             // 
-            this.LabelConsoleType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelConsoleType.Appearance.Options.UseFont = true;
-            this.LabelConsoleType.Location = new System.Drawing.Point(150, 43);
-            this.LabelConsoleType.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
-            this.LabelConsoleType.Name = "LabelConsoleType";
-            this.LabelConsoleType.Size = new System.Drawing.Size(71, 15);
-            this.LabelConsoleType.TabIndex = 1146;
-            this.LabelConsoleType.Text = "Console Type";
+            this.LabelPlatformType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelPlatformType.Appearance.Options.UseFont = true;
+            this.LabelPlatformType.Location = new System.Drawing.Point(150, 43);
+            this.LabelPlatformType.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
+            this.LabelPlatformType.Name = "LabelPlatformType";
+            this.LabelPlatformType.Size = new System.Drawing.Size(74, 15);
+            this.LabelPlatformType.TabIndex = 1146;
+            this.LabelPlatformType.Text = "Platform Type";
             // 
             // ImageConsole
             // 
@@ -156,17 +156,17 @@ namespace ModioX.Forms.Dialogs
             this.ImageConsole.Size = new System.Drawing.Size(132, 132);
             this.ImageConsole.TabIndex = 0;
             // 
-            // ComboBoxConsoleType
+            // ComboBoxPlatform
             // 
-            this.ComboBoxConsoleType.EditValue = "";
-            this.ComboBoxConsoleType.Location = new System.Drawing.Point(264, 40);
-            this.ComboBoxConsoleType.Name = "ComboBoxConsoleType";
-            this.ComboBoxConsoleType.Properties.AllowFocused = false;
-            this.ComboBoxConsoleType.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ComboBoxConsoleType.Properties.Appearance.Options.UseFont = true;
-            this.ComboBoxConsoleType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ComboBoxPlatform.EditValue = "";
+            this.ComboBoxPlatform.Location = new System.Drawing.Point(264, 40);
+            this.ComboBoxPlatform.Name = "ComboBoxPlatform";
+            this.ComboBoxPlatform.Properties.AllowFocused = false;
+            this.ComboBoxPlatform.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ComboBoxPlatform.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxPlatform.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboBoxConsoleType.Properties.Items.AddRange(new object[] {
+            this.ComboBoxPlatform.Properties.Items.AddRange(new object[] {
             "PlayStation 3 (Fat)",
             "PlayStation 3 (Slim)",
             "PlayStation 3 (Super Slim)",
@@ -174,19 +174,19 @@ namespace ModioX.Forms.Dialogs
             "Xbox 360 Elite (Fat/Black)",
             "Xbox 360 S (Slim)",
             "Xbox 360 E (Slim E)"});
-            this.ComboBoxConsoleType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxConsoleType.Size = new System.Drawing.Size(238, 22);
-            this.ComboBoxConsoleType.TabIndex = 1;
-            this.ComboBoxConsoleType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxConsoleType_SelectedIndexChanged);
+            this.ComboBoxPlatform.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ComboBoxPlatform.Size = new System.Drawing.Size(238, 22);
+            this.ComboBoxPlatform.TabIndex = 1;
+            this.ComboBoxPlatform.SelectedIndexChanged += new System.EventHandler(this.ComboBoxPlatformType_SelectedIndexChanged);
             // 
-            // TextBoxConsoleAddress
+            // TextBoxAddress
             // 
-            this.TextBoxConsoleAddress.Location = new System.Drawing.Point(264, 68);
-            this.TextBoxConsoleAddress.Name = "TextBoxConsoleAddress";
-            this.TextBoxConsoleAddress.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxConsoleAddress.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxConsoleAddress.Size = new System.Drawing.Size(238, 22);
-            this.TextBoxConsoleAddress.TabIndex = 2;
+            this.TextBoxAddress.Location = new System.Drawing.Point(264, 68);
+            this.TextBoxAddress.Name = "TextBoxAddress";
+            this.TextBoxAddress.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxAddress.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxAddress.Size = new System.Drawing.Size(238, 22);
+            this.TextBoxAddress.TabIndex = 2;
             // 
             // TextBoxConnectionName
             // 
@@ -209,7 +209,6 @@ namespace ModioX.Forms.Dialogs
             this.CheckBoxUseDefaultConsole.Size = new System.Drawing.Size(18, 18);
             this.CheckBoxUseDefaultConsole.TabIndex = 3;
             this.CheckBoxUseDefaultConsole.Visible = false;
-            this.CheckBoxUseDefaultConsole.CheckedChanged += new System.EventHandler(this.CheckBoxUseDefaultConsole_CheckedChanged);
             this.CheckBoxUseDefaultConsole.CheckStateChanged += new System.EventHandler(this.CheckBoxUseDefaultConsole_CheckStateChanged);
             // 
             // NewConnectionDialog
@@ -222,16 +221,16 @@ namespace ModioX.Forms.Dialogs
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(514, 216);
             this.Controls.Add(this.ImageConsole);
-            this.Controls.Add(this.ComboBoxConsoleType);
-            this.Controls.Add(this.LabelConsoleType);
-            this.Controls.Add(this.ButtonChangeCredentials);
+            this.Controls.Add(this.ComboBoxPlatform);
+            this.Controls.Add(this.LabelPlatformType);
+            this.Controls.Add(this.ButtonChangeLoginDetails);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonOK);
-            this.Controls.Add(this.TextBoxConsoleAddress);
+            this.Controls.Add(this.TextBoxAddress);
             this.Controls.Add(this.TextBoxConnectionName);
             this.Controls.Add(this.LabelName);
             this.Controls.Add(this.LabelLogin);
-            this.Controls.Add(this.LabelConsoleAddress);
+            this.Controls.Add(this.LabelAddress);
             this.Controls.Add(this.CheckBoxUseDefaultConsole);
             this.Controls.Add(this.LabelUserPass);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -249,8 +248,8 @@ namespace ModioX.Forms.Dialogs
             this.Text = "Connection Details";
             this.Load += new System.EventHandler(this.ConsolesWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ImageConsole.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxConsoleType.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxConsoleAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxPlatform.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConnectionName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxUseDefaultConsole.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -260,16 +259,16 @@ namespace ModioX.Forms.Dialogs
 
         #endregion
         private LabelControl LabelName;
-        private LabelControl LabelConsoleAddress;
+        private LabelControl LabelAddress;
         private LabelControl LabelUserPass;
         private LabelControl LabelLogin;
         private TextEdit TextBoxConnectionName;
-        private TextEdit TextBoxConsoleAddress;
+        private TextEdit TextBoxAddress;
         private SimpleButton ButtonOK;
         private SimpleButton ButtonCancel;
-        private SimpleButton ButtonChangeCredentials;
-        private LabelControl LabelConsoleType;
-        private ComboBoxEdit ComboBoxConsoleType;
+        private SimpleButton ButtonChangeLoginDetails;
+        private LabelControl LabelPlatformType;
+        private ComboBoxEdit ComboBoxPlatform;
         private PictureEdit ImageConsole;
         private CheckEdit CheckBoxUseDefaultConsole;
     }

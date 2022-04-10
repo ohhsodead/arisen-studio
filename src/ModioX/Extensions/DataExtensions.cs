@@ -1,17 +1,14 @@
-﻿using System;
+﻿using ModioX.Forms.Windows;
+using ModioX.Models.Resources;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace ModioX.Extensions
 {
     internal class DataExtensions
     {
-        /// <summary>
-        /// Get the current logged-in users name.
-        /// </summary>
-        /// <returns>Current User Name</returns>
-        public static string LocalUserName => Environment.UserName.FormatUserName();
-
         /// <summary>
         /// Create and return a new DataTable with the specified columns and rows.
         /// </summary>
@@ -34,30 +31,26 @@ namespace ModioX.Extensions
             return dataTable;
         }
 
-        public static Type GetDataType(string typeName)
+        public static int GenerateUniqueId()
         {
-            if (Type.GetType(typeName, false, true) == typeof(int))
-            {
-                return typeof(int);
-            }
+            List<int?> ids = new();
 
-            if (Type.GetType(typeName, false, true) == typeof(uint))
-            {
-                return typeof(uint);
-            }
+            ids.AddRange(from ConsoleProfile console in MainWindow.Settings.ConsoleProfiles
+                         select console.Id);
 
-            if (Type.GetType(typeName, false, true) == typeof(bool))
-            {
-                return typeof(bool);
-            }
+            Random rndm = new();
 
-            if (Type.GetType(typeName, false, true) == typeof(string))
-            {
-                return typeof(string);
-            }
+            int id;
 
-            return typeof(string);
+            do
+            {
+                id = rndm.Next(0, 1000000);
+            }
+            while (ids.Contains(id));
+
+            return id;
         }
+
     }
 
     public class ListItem
@@ -65,5 +58,12 @@ namespace ModioX.Extensions
         public string Value { get; set; }
 
         public string Name { get; set; }
+    }
+
+    public class InstallItem
+    {
+        public string LocalFilePath { get; set; }
+
+        public string InstallFilePath { get; set; }
     }
 }

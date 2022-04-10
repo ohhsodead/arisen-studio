@@ -1,8 +1,8 @@
-﻿using System;
+﻿using ModioX.Database;
+using ModioX.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using ModioX.Database;
-using ModioX.Extensions;
 
 namespace ModioX.Models.Database
 {

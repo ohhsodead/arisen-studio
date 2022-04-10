@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using ModioX.Database;
+﻿using ModioX.Database;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ModioX.Models.Database
 {
@@ -50,22 +50,22 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Get all of the mods matching the specified filters.
         /// </summary>
-        /// <param name="consoleType"></param>
+        /// <param name="categoriesData"></param>
         /// <param name="categoryId"></param>
         /// <param name="name"></param>
         /// <param name="firmware"></param>
         /// <param name="modType"></param>
         /// <param name="region"></param>
         /// <param name="version"></param>
-        /// <param name="author"></param>
-        /// <param name="isCustomList"></param>
+        /// <param name="creator"></param>
+        /// <param name="favorites"></param>
         /// <returns></returns>
         public List<ModItemData> GetModItems(CategoriesData categoriesData, string categoryId, string name, string firmware, string modType, string region, string version, string creator, bool favorites = false)
         {
             if (favorites)
             {
                 return Mods.Where(x =>
-                    MainWindow.Settings.FavoriteIds.Exists(y => y.Platform == PlatformPrefix.PS3 && y.Ids.Contains(x.Id)) &&
+                    MainWindow.Settings.FavoriteModsPS3.Contains(x.Id) &&
                     x.GetCategoryType(categoriesData) == CategoryType.Game &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
@@ -94,18 +94,20 @@ namespace ModioX.Models.Database
         /// <summary>
         /// Get all of the mods matching the specified filters.
         /// </summary>
+        /// <param name="categoriesData"></param>
         /// <param name="categoryId"></param>
         /// <param name="name"></param>
         /// <param name="firmware"></param>
         /// <param name="version"></param>
-        /// <param name="author"></param>
+        /// <param name="creator"></param>
+        /// <param name="favorites"
         /// <returns></returns>
         public List<ModItemData> GetHomebrewItems(CategoriesData categoriesData, string categoryId, string name, string firmware, string version, string creator, bool favorites = false)
         {
             if (favorites)
             {
                 return Mods.Where(x =>
-                    MainWindow.Settings.FavoriteIds.Exists(y => y.Platform == PlatformPrefix.PS3 && y.Ids.Contains(x.Id)) &&
+                    MainWindow.Settings.FavoriteModsPS3.Contains(x.Id) &&
                     x.GetCategoryType(categoriesData) == CategoryType.Homebrew &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
@@ -133,15 +135,17 @@ namespace ModioX.Models.Database
         /// <param name="categoryId"></param>
         /// <param name="name"></param>
         /// <param name="firmware"></param>
+        /// <param name="modType"></param>
         /// <param name="version"></param>
         /// <param name="creator"></param>
+        /// <param name="favorites"</param>
         /// <returns></returns>
         public List<ModItemData> GetResourceItems(CategoriesData categoriesData, string categoryId, string name, string firmware, string modType, string version, string creator, bool favorites = false)
         {
             if (favorites)
             {
                 return Mods.Where(x =>
-                    MainWindow.Settings.FavoriteIds.Exists(y => y.Platform == PlatformPrefix.PS3 && y.Ids.Contains(x.Id)) &&
+                    MainWindow.Settings.FavoriteModsPS3.Contains(x.Id) &&
                     x.GetCategoryType(categoriesData) == CategoryType.Resource &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
@@ -171,7 +175,7 @@ namespace ModioX.Models.Database
         /// <param name="categoryId"></param>
         /// <param name="name"></param>
         /// <param name="version"></param>
-        /// <param name="author"></param>
+        /// <param name="creator"></param>
         /// <param name="favorites"></param>
         /// <returns></returns>
         public List<ModItemData> GetPluginItems(string categoryId, string name, string version, string creator, bool favorites = false)
@@ -179,7 +183,7 @@ namespace ModioX.Models.Database
             if (favorites)
             {
                 return Mods.Where(x =>
-                MainWindow.Settings.FavoriteIds.Exists(y => y.Platform == PlatformPrefix.XBOX && y.Ids.Contains(x.Id)) &&
+                    MainWindow.Settings.FavoriteModsXBOX.Contains(x.Id) &&
                 (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId))
                 && x.Name.ContainsIgnoreCase(name)
                 && x.Versions.ToArray().AnyContainsIgnoreCase(version)
@@ -204,9 +208,9 @@ namespace ModioX.Models.Database
         /// <see cref="ModItemData.Id" />
         /// </param>
         /// <returns> Mod details for the <see cref="ModItemData.Id" /> </returns>
-        public ModItemData GetModById(PlatformPrefix consoleType, int id)
+        public ModItemData GetModById(Platform platform, int id)
         {
-            return Mods.FirstOrDefault(modItem => modItem.GetPlatform() == consoleType && modItem.Id.Equals(id));
+            return Mods.FirstOrDefault(modItem => modItem.GetPlatform() == platform && modItem.Id.Equals(id));
         }
     }
 }

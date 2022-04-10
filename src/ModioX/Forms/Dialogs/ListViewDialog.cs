@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using ModioX.Extensions;
+using ModioX.Forms.Windows;
+using System;
+using System.Collections.Generic;
+using System.Data;
 using static ModioX.Extensions.DataExtensions;
 
 namespace ModioX.Forms.Dialogs
@@ -22,7 +22,7 @@ namespace ModioX.Forms.Dialogs
 
         private void ListViewDialog_Load(object sender, EventArgs e)
         {
-            GroupListItems.AppearanceCaption.ForeColor = Color.White;
+            GroupListItems.Text = MainWindow.ResourceLanguage.GetString("CHOOSE_ITEM");
 
             using (DataTable dataTable = CreateDataTable(new List<DataColumn>
             {

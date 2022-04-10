@@ -32,13 +32,13 @@ namespace ModioX
     /// <summary>
     /// Get the prefix for the type of console.
     /// </summary>
-    public enum PlatformPrefix
+    public enum Platform
     {
         [Description("PlayStation 3")]
         PS3,
 
         [Description("Xbox 360")]
-        XBOX
+        XBOX360
     }
 
     public enum FilterType
@@ -60,22 +60,28 @@ namespace ModioX
 
     public enum TransferType
     {
+        [Description("INSTALLING_MODS")]
         InstallMods,
+
+        [Description("UNINSTALLING_MODS")]
         UninstallMods,
+
+        [Description("DOWNLOADING_MODS")]
         DownloadMods,
 
+        [Description("INSTALLING_PACKAGE")]
         InstallPackage,
+
+        [Description("UNINSTALLING_PACKAGE")]
         UninstallPackage,
+
+        [Description("DOWNLOADING_PACKAGE")]
         DownloadPackage,
 
+        [Description("INSTALLING_GAME_SAVE")]
         InstallGameSave,
-        DownloadGameSave,
-    }
 
-    public enum ChatNotificationType
-    {
-        AllMessages,
-        Mentioned,
-        None
+        [Description("DOWNLOADING_GAME_SAVE")]
+        DownloadGameSave
     }
 }

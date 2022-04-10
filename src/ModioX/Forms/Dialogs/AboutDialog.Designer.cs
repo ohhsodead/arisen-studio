@@ -204,7 +204,7 @@ namespace ModioX.Forms.Dialogs
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "About";
-            this.Load += new System.EventHandler(this.AboutWindow_Load);
+            this.Load += new System.EventHandler(this.AboutDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GroupInformation)).EndInit();
             this.GroupInformation.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GroupSpecialThanks)).EndInit();

@@ -1,5 +1,5 @@
-﻿using DevExpress.XtraSplashScreen;
-using DevExpress.Utils.Drawing;
+﻿using DevExpress.Utils.Drawing;
+using DevExpress.XtraSplashScreen;
 using System.Drawing;
 
 namespace ModioX.Controls

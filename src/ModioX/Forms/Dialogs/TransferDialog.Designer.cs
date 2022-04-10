@@ -129,6 +129,7 @@ namespace ModioX.Forms.Dialogs
             // 
             // ProgressBarStatus
             // 
+            this.ProgressBarStatus.EditValue = 0;
             this.ProgressBarStatus.Location = new System.Drawing.Point(12, 75);
             this.ProgressBarStatus.Name = "ProgressBarStatus";
             this.ProgressBarStatus.Properties.ProgressAnimationMode = DevExpress.Utils.Drawing.ProgressAnimationMode.Cycle;
@@ -150,7 +151,7 @@ namespace ModioX.Forms.Dialogs
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.LabelModName);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("TransferDialog.IconOptions.Icon")));

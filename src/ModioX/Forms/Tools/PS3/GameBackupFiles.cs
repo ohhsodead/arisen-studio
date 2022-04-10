@@ -1,14 +1,15 @@
-﻿using System;
-using System.Data;
-using System.IO;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using Humanizer;
 using ModioX.Database;
 using ModioX.Extensions;
 using ModioX.Forms.Windows;
 using ModioX.Models.Resources;
+using System;
+using System.Data;
+using System.IO;
+using System.Resources;
+using System.Windows.Forms;
 
 namespace ModioX.Forms.Tools.PS3
 {
@@ -18,6 +19,8 @@ namespace ModioX.Forms.Tools.PS3
         {
             InitializeComponent();
         }
+
+        public ResourceManager Language = MainWindow.ResourceLanguage;
 
         private void GameBackupFiles_Load(object sender, EventArgs e)
         {
@@ -41,7 +44,7 @@ namespace ModioX.Forms.Tools.PS3
                 dt.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId).Title,
                     backupFile.FileName,
                     File.Exists(backupFile.LocalPath)
-                        ? MainWindow.Settings.UseFormattedFileSizes ? fileBytes.Bytes().Humanize() : fileBytes + " bytes"
+                        ? MainWindow.Settings.UseFormattedFileSizes ? fileBytes.Bytes().Humanize() : fileBytes + " " + Language.GetString("LABEL_BYTES")
                         : "No File Exists",
                     backupFile.CreatedDate.ToLocalTime());
             }
@@ -70,7 +73,7 @@ namespace ModioX.Forms.Tools.PS3
                         LabelFileName.Text = backupFile.FileName;
                         LabelFileSize.Text = File.Exists(backupFile.LocalPath)
                             ? MainWindow.Settings.UseFormattedFileSizes ? fileSize.Bytes().Humanize()
-                            : fileSize.ToString("{0:n}") + " bytes"
+                            : fileSize.ToString("{0:n}") + " " + Language.GetString("LABEL_BYTES")
                             : "No File Exists";
                         LabelCreatedOn.Text = backupFile.CreatedDate.ToLocalTime().ToString();
                         LabelLocalPath.Text = backupFile.LocalPath;
@@ -151,13 +154,13 @@ namespace ModioX.Forms.Tools.PS3
             try
             {
                 MainWindow.FtpClient.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
-                XtraMessageBox.Show(this, $"Successfully backed up file {backupFile.FileName} from {backupFile.InstallPath}.", "Success");
+                XtraMessageBox.Show(this, $"Successfully backed up file {backupFile.FileName} from {backupFile.InstallPath}.", Language.GetString("SUCCESS"));
             }
             catch (Exception ex)
             {
                 Program.Log.Error(ex, $"Unable to backup game file. Error: {ex.Message}");
                 XtraMessageBox.Show(this,
-                    "There was a problem downloading the file. Make sure the file exists on your console.", "Error",
+                    "There was a problem downloading the file. Make sure the file exists on your console.", Language.GetString("ERROR"),
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -180,13 +183,13 @@ namespace ModioX.Forms.Tools.PS3
                 FtpExtensions.UploadFile(backupFile.LocalPath, backupFile.InstallPath);
                 XtraMessageBox.Show(
                     $"Successfully restored file: {backupFile.FileName} to path: {backupFile.InstallPath}",
-                    "Success");
+                   Language.GetString("SUCCESS"));
             }
             catch (Exception ex)
             {
                 Program.Log.Error(ex, "There was an issue attempting to restore file.");
                 XtraMessageBox.Show(this,
-                    "There was an issue restoring file. Make sure the local file exists on your computer.", "Error",
+                    "There was an issue restoring file. Make sure the local file exists on your computer.", Language.GetString("ERROR"),
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

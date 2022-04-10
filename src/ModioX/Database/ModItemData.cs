@@ -1,15 +1,15 @@
-﻿using System;
+﻿using ModioX.Extensions;
+using ModioX.Forms.Windows;
+using ModioX.Io;
+using ModioX.Models.Database;
+using ModioX.Models.Resources;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
-using ModioX.Extensions;
-using ModioX.Forms.Windows;
-using ModioX.Io;
-using ModioX.Models.Database;
-using ModioX.Models.Resources;
 
 namespace ModioX.Database
 {
@@ -44,13 +44,13 @@ namespace ModioX.Database
 
         public List<DownloadFiles> DownloadFiles { get; set; }
 
-        public PlatformPrefix GetPlatform()
+        public Platform GetPlatform()
         {
             return Platform switch
             {
-                "PS3" => PlatformPrefix.PS3,
-                "XBOX" => PlatformPrefix.XBOX,
-                _ => PlatformPrefix.PS3
+                "PS3" => ModioX.Platform.PS3,
+                "XBOX" => ModioX.Platform.XBOX360,
+                _ => ModioX.Platform.PS3
             };
         }
 

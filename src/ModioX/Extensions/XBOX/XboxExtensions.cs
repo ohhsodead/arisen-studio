@@ -64,7 +64,40 @@ namespace ModioX.Extensions
             object[] objArray = new object[] { "consolefeatures ver=", "2", " type=15 params=\"A\\0\\A\\1\\", typeof(int), @"\", (int)temperatureType, "\\\"" };
             string command = string.Concat(objArray);
             console.SendTextCommand(0, command, out string response);
-            return uint.Parse(response.Substring(response.Find(" ") + 1), NumberStyles.HexNumber);
+            return uint.Parse(response.Substring(StringExtensions.Find(response, " ") + 1), NumberStyles.HexNumber);
+        }
+
+        /// <summary>
+        /// Retrieves Current Title ID
+        /// </summary>
+        /// <returns></returns>
+        public static uint GetTitleID(this IXboxConsole console)
+        {
+            object[] objArray = new object[] { "consolefeatures ver=", "2", " type=16 params=\"A\\0\\A\\0\\\"" };
+            string command = string.Concat(objArray);
+            console.SendTextCommand(0, command, out string response);
+            return uint.Parse(response.Substring(Find(response, " ") + 1), NumberStyles.HexNumber);
+        }
+
+        public static int Find(this string String, string _Ptr)
+        {
+            if (_Ptr.Length == 0 || String.Length == 0)
+                return -1;
+            for (int index1 = 0; index1 < String.Length; ++index1)
+            {
+                if ((int)String[index1] == (int)_Ptr[0])
+                {
+                    bool flag = true;
+                    for (int index2 = 0; index2 < _Ptr.Length; ++index2)
+                    {
+                        if ((int)String[index1 + index2] != (int)_Ptr[index2])
+                            flag = false;
+                    }
+                    if (flag)
+                        return index1;
+                }
+            }
+            return -1;
         }
 
         private static readonly byte[] memoryBuffer = new byte[32];
