@@ -118,1099 +118,1099 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ADVANCED" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Avancerat</value>
   </data>
   <data name="ALL_CATEGORIES" xml:space="preserve">
-    <value>All Categories</value>
+    <value>Alla Kategorier</value>
   </data>
   <data name="ALL_GAMES" xml:space="preserve">
-    <value>All Games</value>
+    <value>Alla Spel</value>
   </data>
   <data name="ANOTHER_MOD_INSTALLED" xml:space="preserve">
-    <value>{0} is installed to: {1}\nInstalling multiple mods for the same game can lead to problems such as conflicts.\n\nDo you want to uninstall the current files?</value>
+    <value>{0} är installerad till: {1}\nInstallation av flera moddar för samma spel kan leda till problem som konflikter.\n\nVill du avinstallera aktuella filer?</value>
   </data>
   <data name="ANY" xml:space="preserve">
-    <value>ANY</value>
+    <value>VILKET SOM</value>
   </data>
   <data name="ARCHIVE_DOWNLOADING" xml:space="preserve">
-    <value>Downloading archive...</value>
+    <value>Laddar ner arkiv...</value>
   </data>
   <data name="ARCHIVE_DOWNLOADING_EXTRACTING_ARCHIVE" xml:space="preserve">
-    <value>Downloading and extracting archive...</value>
+    <value>Laddar ner och extraherar arkiv...</value>
   </data>
   <data name="ARCHIVE_DOWNLOAD_SUCCESS" xml:space="preserve">
-    <value>Successfully downloaded archive file.</value>
+    <value>Lyckades ladda ner arkiv-fil.</value>
   </data>
   <data name="AUTOMATION" xml:space="preserve">
-    <value>Automation</value>
+    <value>Automatisering</value>
   </data>
   <data name="AUTO_DETECT_GAME_REGIONS" xml:space="preserve">
-    <value>Automatically detect game regions*</value>
+    <value>Identifiera spelregioner automatiskt*</value>
   </data>
   <data name="AUTO_DETECT_GAME_TITLES" xml:space="preserve">
-    <value>Automatically detect game titles</value>
+    <value>Identifiera speltitlar automatiskt</value>
   </data>
   <data name="BACKUP_FILES" xml:space="preserve">
-    <value>Backup Files</value>
+    <value>Säkerhetskopiera Filer</value>
   </data>
   <data name="BACKUP_GAME_FILES" xml:space="preserve">
-    <value>Do you want to backup the current game files? These files can be restored when uninstalling the mods.</value>
+    <value>Vill du säkerhetskopiera de aktuella spelfilerna? Dessa filer kan återställas när du avinstallerar moddarna.</value>
   </data>
   <data name="BACKUP_RESTORE_GAME_FILES" xml:space="preserve">
-    <value>Backup/Restore Game Files</value>
+    <value>Säkerhetskopiera/Återställ Spelfiler</value>
   </data>
   <data name="CANT_FIND_BACKUP_FILE" xml:space="preserve">
-    <value>You made a backup of {0}. However, this file has either been moved or deleted.\n\nIf you've moved this file, go to Tools &gt; Game Backup Files and set the new local file path. If this file was deleted, remove the backup file data and backup the file again.\n\nThis file cannot be uninstalled to avoid missing game files, so it will be ignored.</value>
+    <value>Du gjorde en säkerhetskopia av {0}. Den här filen har dock antingen flyttats eller tagits bort.\n\nOm du har flyttat denna fil, gå till Verktyg &gt; Säkerhetskopierade Spelfiler och ange den nya lokala sökvägen. Om den här filen raderades, ta bort säkerhetskopieringsfilens data och säkerhetskopiera filen igen.\n\nDen här filen kan inte avinstalleras för att undvika saknade spelfiler, så den kommer att ignoreras.</value>
   </data>
   <data name="CANT_UNINSTALL_CFW_FILES" xml:space="preserve">
-    <value>You cannot uninstall files from the firmware folder. Any missing files could impact your console performance.</value>
+    <value>Du kan inte avinstallera filer från mappen med inbyggd programvara. Alla filer som saknas kan påverka konsolens prestanda.</value>
   </data>
   <data name="CHEAT_APPLIED" xml:space="preserve">
-    <value>Successfully applied cheat to game.</value>
+    <value>Lyckades tillämpa fusk till spelet.</value>
   </data>
   <data name="CHEAT_NOT_APPLIED" xml:space="preserve">
-    <value>Unable to apply cheat to game. Error: {0}</value>
+    <value>Det går inte att tillämpa fusket i spelet. Fel: {0}</value>
   </data>
   <data name="CHEAT_NOT_SUPPORTED" xml:space="preserve">
-    <value>This cheat can't be applied because it contains opcode that hasn't been implemented yet.</value>
+    <value>Det här fusket kan inte tillämpas eftersom det innehåller opcode som ännu inte har implementerats.</value>
   </data>
   <data name="CHOOSE_ITEM" xml:space="preserve">
-    <value>Choose Item...</value>
+    <value>Välj objekt...</value>
   </data>
   <data name="CONFIRM" xml:space="preserve">
-    <value>Confirm</value>
+    <value>Bekräfta</value>
   </data>
   <data name="CONFIRM_DELETE" xml:space="preserve">
-    <value>Confirm Delete</value>
+    <value>Bekräfta Radering</value>
   </data>
   <data name="CONFIRM_DELETE_ALL_DOWNLOADS" xml:space="preserve">
-    <value>Do you really want to delete all of your downloads?</value>
+    <value>Vill du verkligen ta bort alla dina nedladdningar?</value>
   </data>
   <data name="CONFIRM_DELETE_ALL_TITLE" xml:space="preserve">
-    <value>Confirm Delete All</value>
+    <value>Bekräfta Radera Allt</value>
   </data>
   <data name="CONFIRM_DELETE_ITEM" xml:space="preserve">
-    <value>Do you really want to delete the selected item?</value>
+    <value>Vill du verkligen ta bort det markerade objektet?</value>
   </data>
   <data name="CONFIRM_DELETE_ITEM_DOWNLOADS" xml:space="preserve">
-    <value>Do you really want to delete the selected item from your downloads?</value>
+    <value>Vill du verkligen ta bort det markerade objektet från dina nedladdningar?</value>
   </data>
   <data name="CONNECTED_NOTIFICATION" xml:space="preserve">
-    <value>You are now connected to ModioX ★</value>
+    <value>Du är nu ansluten till ModioX ★</value>
   </data>
   <data name="CONNECTING_TO_CONSOLE" xml:space="preserve">
-    <value>Connecting to: {0}</value>
+    <value>Ansluter till: {0}</value>
   </data>
   <data name="CONNECTIONS" xml:space="preserve">
-    <value>Connections</value>
+    <value>Anslutningar</value>
   </data>
   <data name="CONNECTION_FAILED" xml:space="preserve">
-    <value>Connection Failed</value>
+    <value>Anslutningen misslyckades</value>
   </data>
   <data name="CONNECT_TO_CONSOLE" xml:space="preserve">
-    <value>Connect to console...</value>
+    <value>Anslut till konsolen...</value>
   </data>
   <data name="CONSOLE_MANAGER" xml:space="preserve">
-    <value>Console Manager</value>
+    <value>Konsolhanterare</value>
   </data>
   <data name="CONSOLE_PROFILES" xml:space="preserve">
-    <value>Console Profiles</value>
+    <value>Konsol Profiler</value>
   </data>
   <data name="CUSTOMIZATION" xml:space="preserve">
-    <value>Customization</value>
+    <value>Anpassning</value>
   </data>
   <data name="DATA_MISSING" xml:space="preserve">
-    <value>DATA MISSING</value>
+    <value>DATA SAKNAS</value>
   </data>
   <data name="DEFAULT_GAME_REGIONS" xml:space="preserve">
-    <value>Default Game Regions</value>
+    <value>Förvalda Spelregioner</value>
   </data>
   <data name="DELETE" xml:space="preserve">
-    <value>Delete</value>
+    <value>Radera</value>
   </data>
   <data name="DELETED" xml:space="preserve">
-    <value>Deleted</value>
+    <value>Raderad</value>
   </data>
   <data name="DELETE_ALL_ITEMS" xml:space="preserve">
-    <value>Delete All Items</value>
+    <value>Radera alla objekt</value>
   </data>
   <data name="DELETE_ITEM" xml:space="preserve">
-    <value>Delete Item</value>
+    <value>Radera objekt</value>
   </data>
   <data name="DELETE_ITEMS_SUCCESS" xml:space="preserve">
-    <value>Successfully deleted all items.</value>
+    <value>Lyckades ta bort alla objekt.</value>
   </data>
   <data name="DELETE_ITEM_ERROR" xml:space="preserve">
-    <value>Unable to delete item. Error: {0}</value>
+    <value>Kunde inte radera objekt. Fel: {0}</value>
   </data>
   <data name="DELETE_ITEM_SUCCESS" xml:space="preserve">
-    <value>Successfully deleted item.</value>
+    <value>Lyckades ta bort objektet.</value>
   </data>
   <data name="DIRECTORY_EMPTY" xml:space="preserve">
-    <value>Empty Directory</value>
+    <value>Tom Katalog</value>
   </data>
   <data name="DIRECTORY_NOT_EXIST" xml:space="preserve">
-    <value>This directory doesn't exist on your computer.</value>
+    <value>Den här katalogen finns inte på din dator.</value>
   </data>
   <data name="DIRECTORY_NOT_FOUND" xml:space="preserve">
-    <value>Directory Not Found</value>
+    <value>Katalogen hittades inte</value>
   </data>
   <data name="DISCONNECTING_FROM_CONSOLE" xml:space="preserve">
-    <value>Disconnecting from console.</value>
+    <value>Kopplar bort från konsolen.</value>
   </data>
   <data name="DISCONNECT_FROM_CONSOLE" xml:space="preserve">
-    <value>Disconnect from console</value>
+    <value>Koppla från konsolen</value>
   </data>
   <data name="DISCONNECT_LOWERCASE" xml:space="preserve">
-    <value>Disconnect</value>
+    <value>Koppla från</value>
   </data>
   <data name="DOWNLOADED" xml:space="preserve">
-    <value>Downloaded</value>
+    <value>Nedladdad</value>
   </data>
   <data name="DOWNLOADING" xml:space="preserve">
-    <value>Downloading</value>
+    <value>Laddar ner</value>
   </data>
   <data name="DOWNLOADING_GAME_SAVE" xml:space="preserve">
-    <value>Downloading Game Save</value>
+    <value>Laddar ner Spelsparning</value>
   </data>
   <data name="DOWNLOADING_MODS" xml:space="preserve">
-    <value>Downloading Mods</value>
+    <value>Laddar ner Moddar</value>
   </data>
   <data name="DOWNLOADING_PACKAGE" xml:space="preserve">
-    <value>Downloading Package</value>
+    <value>Laddar ner Paket</value>
   </data>
   <data name="DOWNLOADS_FOLDER" xml:space="preserve">
-    <value>Downloads Folder</value>
+    <value>Mapp för nedladdningar</value>
   </data>
   <data name="DOWNLOADS_LOCATION" xml:space="preserve">
-    <value>Downloads Location</value>
+    <value>Plats för nedladdningar</value>
   </data>
   <data name="DOWNLOAD_CANCELED" xml:space="preserve">
-    <value>Download canceled.</value>
+    <value>Nedladdningen avbröts.</value>
   </data>
   <data name="DOWNLOAD_FOLDER_NOT_FOUND" xml:space="preserve">
-    <value>Download folder doesn't exist on your computer. You can change the download location in your settings.</value>
+    <value>Nedladdningsmappen finns inte på din dator. Du kan ändra nedladdningsplatsen i dina inställningar.</value>
   </data>
   <data name="ENABLE_HARDWARE_ACCELERATION" xml:space="preserve">
-    <value>Enable Hardware Acceleration</value>
+    <value>Aktivera Maskinvaruacceleration</value>
   </data>
   <data name="ERROR" xml:space="preserve">
-    <value>Error</value>
+    <value>Fel</value>
   </data>
   <data name="ERROR_OCCURRED" xml:space="preserve">
-    <value>An error occurred: {0}</value>
+    <value>Ett fel uppstod: {0}</value>
   </data>
   <data name="FAVORITES_ADD" xml:space="preserve">
-    <value>Favorite</value>
+    <value>Favorit</value>
   </data>
   <data name="FAVORITES_HIDE" xml:space="preserve">
-    <value>Hide Favorites</value>
+    <value>Dölj Favoriter</value>
   </data>
   <data name="FAVORITES_SHOW" xml:space="preserve">
-    <value>Show Favorites</value>
+    <value>Visa Favoriter</value>
   </data>
   <data name="FETCHED_LISTING" xml:space="preserve">
-    <value>Successfully fetched directory listing.</value>
+    <value>Lyckades hämta mapplistan.</value>
   </data>
   <data name="FETCHING_DRIVES" xml:space="preserve">
-    <value>Fetching drives</value>
+    <value>Hämtar enheter</value>
   </data>
   <data name="FETCHING_LISTING" xml:space="preserve">
-    <value>Fetching directory listing of: {0}</value>
+    <value>Hämtar mapplista för: {0}</value>
   </data>
   <data name="FETCHING_LISTING_ERROR" xml:space="preserve">
-    <value>Unable to fetch directory listing for path: {0} - Error: {1}</value>
+    <value>Det gick inte att hämta kataloglistan för sökväg: {0} - Fel: {1}</value>
   </data>
   <data name="FETCHING_ROOT_DIRECTORIES" xml:space="preserve">
-    <value>Fetching root directories</value>
+    <value>Hämtar rotkataloger</value>
   </data>
   <data name="FILE" xml:space="preserve">
-    <value>File</value>
+    <value>Fil</value>
   </data>
   <data name="FILES" xml:space="preserve">
-    <value>Files</value>
+    <value>Filer</value>
   </data>
   <data name="FILES_INSTALL_ERROR" xml:space="preserve">
-    <value>Unable to install files. Error: {0}</value>
+    <value>Kunde inte installera filer. Fel: {0}</value>
   </data>
   <data name="FILES_INSTALL_SUCCESS" xml:space="preserve">
-    <value>Successfully installed {0} files.</value>
+    <value>{0} filer har installerats.</value>
   </data>
   <data name="FILES_NOT_INSTALLED_TO_CONNECTED_CONSOLE" xml:space="preserve">
-    <value>These files weren't installed to the connected console.</value>
+    <value>Dessa filer installerades inte till den anslutna konsolen.</value>
   </data>
   <data name="FILES_REINSTALL" xml:space="preserve">
-    <value>{0} is already installed to: {1}\n\nDo you want to reinstall the files?</value>
+    <value>{0} är redan installerad till: {1}\n\nVill du installera om filerna?</value>
   </data>
   <data name="FILES_UNINSTALLING" xml:space="preserve">
-    <value>Uninstalling files...</value>
+    <value>Avinstallerar filer...</value>
   </data>
   <data name="FILES_UNINSTALL_SUCCESS" xml:space="preserve">
-    <value>Successfully uninstalled {0} files.</value>
+    <value>Avinstallerade {0} filer.</value>
   </data>
   <data name="FILE_BACKUP_CREATED" xml:space="preserve">
-    <value>Successfully created backup file.</value>
+    <value>Lyckades skapa säkerhetskopieringsfil.</value>
   </data>
   <data name="FILE_BACKUP_CREATING" xml:space="preserve">
-    <value>Creating backup of file: {0}</value>
+    <value>Skapar säkerhetskopia av filen: {0}</value>
   </data>
   <data name="FILE_DELETED" xml:space="preserve">
-    <value>Successfully deleted file: {0}</value>
+    <value>Lyckades ta bort fil: {0}</value>
   </data>
   <data name="FILE_DELETING" xml:space="preserve">
-    <value>Deleting file: {0}</value>
+    <value>Tar bort fil: {0}</value>
   </data>
   <data name="FILE_DOWNLOADED" xml:space="preserve">
-    <value>Successfully downloaded file: {0}</value>
+    <value>Lyckades ladda ner fil: {0}</value>
   </data>
   <data name="FILE_DOWNLOADING" xml:space="preserve">
-    <value>Downloading file: {0}</value>
+    <value>Laddar ner fil: {0}</value>
   </data>
   <data name="FILE_DOWNLOAD_ERROR" xml:space="preserve">
-    <value>Unable to download file. Error: {0}</value>
+    <value>Kunde inte ladda ner filen. Fel: {0}</value>
   </data>
   <data name="FILE_DOWNLOAD_LOCATION" xml:space="preserve">
-    <value>Downloading file: {0} to {1}</value>
+    <value>Laddar ner fil: {0} till {1}</value>
   </data>
   <data name="FILE_DOWNLOAD_SUCCESS" xml:space="preserve">
-    <value>Successfully downloaded file.</value>
+    <value>Lyckades ladda ner fil.</value>
   </data>
   <data name="FILE_INSTALL_ERROR" xml:space="preserve">
-    <value>Unable to install file. Error: {0}</value>
+    <value>Kunde inte installera filen. Fel: {0}</value>
   </data>
   <data name="FILE_INSTALL_LOCATION" xml:space="preserve">
-    <value>Installing file: {0} to {1}</value>
+    <value>Installerar fil: {0} till {1}</value>
   </data>
   <data name="FILE_INSTALL_SUCCESS" xml:space="preserve">
-    <value>Successfully installed file(s).</value>
+    <value>Lyckades installera fil(er).</value>
   </data>
   <data name="FILE_MISSING" xml:space="preserve">
-    <value>File Missing</value>
+    <value>Filen Saknas</value>
   </data>
   <data name="FILE_NAME" xml:space="preserve">
-    <value>File Name:</value>
+    <value>Filnamn:</value>
   </data>
   <data name="FILE_NAME_DUPLICATE" xml:space="preserve">
-    <value>Duplicate Name</value>
+    <value>Dubblettnamn</value>
   </data>
   <data name="FILE_NAME_EMPTY" xml:space="preserve">
-    <value>The file name can't be empty.</value>
+    <value>Filnamnet får inte vara tomt.</value>
   </data>
   <data name="FILE_NAME_EXISTS" xml:space="preserve">
-    <value>A file with this name already exists.</value>
+    <value>En fil med detta namn finns redan.</value>
   </data>
   <data name="FILE_NAME_EXISTS_IN_GAMES" xml:space="preserve">
-    <value>You already have a file with this name in your games.</value>
+    <value>Du har redan en fil med detta namn i dina spel.</value>
   </data>
   <data name="FILE_REINSTALL" xml:space="preserve">
-    <value>{0} is already installed.\n\nDo you want to reinstall the file?</value>
+    <value>{0} är redan installerad.\n\nVill du installera om filen?</value>
   </data>
   <data name="FILE_RENAME" xml:space="preserve">
-    <value>Rename File</value>
+    <value>Döp om Fil</value>
   </data>
   <data name="FILE_RENAMED" xml:space="preserve">
-    <value>Successfully renamed file to: {0}</value>
+    <value>Lyckades döpa om fil till: {0}</value>
   </data>
   <data name="FILE_RENAME_ERROR" xml:space="preserve">
-    <value>Unable to rename file. Error: {0}</value>
+    <value>Kunde inte byta namn på filen. Fel: {0}</value>
   </data>
   <data name="FILE_RENAME_GAME" xml:space="preserve">
-    <value>Do you want to rename this file?\n\nNote: It will not affect being able to load the game.</value>
+    <value>Vill du byta namn på denna fil?\n\nObs: Det kommer inte att påverka möjligheten att ladda spelet.</value>
   </data>
   <data name="FILE_RENAMING" xml:space="preserve">
-    <value>Renaming file to: {0}</value>
+    <value>Döper om fil till: {0}</value>
   </data>
   <data name="FILE_UNINSTALL_ERROR" xml:space="preserve">
-    <value>Unable to uninstall files. Error: {0}</value>
+    <value>Kunde inte avinstallera filer. Fel: {0}</value>
   </data>
   <data name="FILE_UNINSTALL_LOCATION" xml:space="preserve">
-    <value>Uninstalling file: {0} from {1}</value>
+    <value>Avinstallerar fil: {0} från {1}</value>
   </data>
   <data name="FILE_UNINSTALL_SUCCESSS" xml:space="preserve">
-    <value>Successfully uninstalled file.</value>
+    <value>Lyckades avinstallera filen.</value>
   </data>
   <data name="FILE_UPLOADED" xml:space="preserve">
-    <value>Successfully uploaded file: {0}</value>
+    <value>Lyckades ladda upp fil: {0}</value>
   </data>
   <data name="FILE_UPLOADING" xml:space="preserve">
-    <value>Uploading file to: {0}</value>
+    <value>Laddar upp fil till: {0}</value>
   </data>
   <data name="FILE_UPLOAD_NOT_FOUND" xml:space="preserve">
-    <value>This file doesn't exist on your computer.</value>
+    <value>Den här filen finns inte på din dator.</value>
   </data>
   <data name="FOLDER_CREATE" xml:space="preserve">
-    <value>Add New Folder</value>
+    <value>Lägg till Ny Mapp</value>
   </data>
   <data name="FOLDER_CREATED" xml:space="preserve">
-    <value>Successfully created folder: {0}</value>
+    <value>Mapp: {0} har skapats</value>
   </data>
   <data name="FOLDER_CREATE_ERROR" xml:space="preserve">
-    <value>Unable to create new folder. Error: {0}</value>
+    <value>Kunde inte skapa ny mapp. Fel: {0}</value>
   </data>
   <data name="FOLDER_CREATING" xml:space="preserve">
-    <value>Creating folder: {0}</value>
+    <value>Skapar mapp: {0}</value>
   </data>
   <data name="FOLDER_DELETED" xml:space="preserve">
-    <value>Successfully deleted folder: {0}</value>
+    <value>Lyckades ta bort mapp: {0}</value>
   </data>
   <data name="FOLDER_DELETE_SUCCESS" xml:space="preserve">
-    <value>Successfully deleted folder.</value>
+    <value>Lyckades radera mapp.</value>
   </data>
   <data name="FOLDER_DELETING" xml:space="preserve">
-    <value>Deleting folder: {0}</value>
+    <value>Tar bort mapp: {0}</value>
   </data>
   <data name="FOLDER_DOWNLOADED" xml:space="preserve">
-    <value>Successfully downloaded folder: {0}</value>
+    <value>Lyckades ladda ner mapp: {0}</value>
   </data>
   <data name="FOLDER_DOWNLOADING" xml:space="preserve">
-    <value>Downloading folder: {0}</value>
+    <value>Laddar ner mapp: {0}</value>
   </data>
   <data name="FOLDER_DOWNLOAD_ERROR" xml:space="preserve">
-    <value>Unable to download folder. Error: {0}</value>
+    <value>Kunde inte ladda ner mapp. Fel: {0}</value>
   </data>
   <data name="FOLDER_NAME" xml:space="preserve">
-    <value>Folder Name:</value>
+    <value>Mappens Namn:</value>
   </data>
   <data name="FOLDER_NAME_EXISTS" xml:space="preserve">
-    <value>A folder with this name already exists</value>
+    <value>En mapp med detta namn finns redan</value>
   </data>
   <data name="FOLDER_RENAME" xml:space="preserve">
-    <value>Rename Folder</value>
+    <value>Döp om Mapp</value>
   </data>
   <data name="FOLDER_RENAMED" xml:space="preserve">
-    <value>Successfully renamed folder: {0}</value>
+    <value>Lyckades döpa om mapp: {0}</value>
   </data>
   <data name="FOLDER_RENAME_ERROR" xml:space="preserve">
-    <value>Unable to rename folder. Error: {0}</value>
+    <value>Kunde inte döpa om mappen. Fel: {0}</value>
   </data>
   <data name="FOLDER_RENAMING" xml:space="preserve">
-    <value>Renaming folder: {0}</value>
+    <value>Döper om mapp: {0}</value>
   </data>
   <data name="FOLDER_UPLOADED" xml:space="preserve">
-    <value>Successfully uploaded folder: {0}</value>
+    <value>Lyckades ladda upp mapp: {0}</value>
   </data>
   <data name="FOLDER_UPLOADING" xml:space="preserve">
-    <value>Uploading folder to: {0}</value>
+    <value>Laddar upp mapp till: {0}</value>
   </data>
   <data name="FORBIDDEN" xml:space="preserve">
-    <value>Forbidden</value>
+    <value>Förbjudet</value>
   </data>
   <data name="FOUND_GAME_REGION" xml:space="preserve">
-    <value>Found game region: {0}</value>
+    <value>Hittade spelregion: {0}</value>
   </data>
   <data name="FOUND_PREVIOUS_INSTALL" xml:space="preserve">
-    <value>Found previous installation details.</value>
+    <value>Hittade tidigare installationsuppgifter.</value>
   </data>
   <data name="FOUND_USB_DEVICE" xml:space="preserve">
-    <value>Found USB device: {0}</value>
+    <value>Hittade USB-enhet: {0}</value>
   </data>
   <data name="FOUND_USER_PROFILE" xml:space="preserve">
-    <value>Found user profile: {0}</value>
+    <value>Hittade användarprofil: {0}</value>
   </data>
   <data name="GAME_LAUNCHER" xml:space="preserve">
-    <value>Game Launcher</value>
+    <value>Spel Startare</value>
   </data>
   <data name="GAME_REGIONS" xml:space="preserve">
-    <value>Default Game Regions</value>
+    <value>Förvalda Spelregioner</value>
   </data>
   <data name="GAME_SAVES" xml:space="preserve">
-    <value>GAME SAVES</value>
+    <value>SPELSPARNINGAR</value>
   </data>
   <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
-    <value>Game Save Resigner</value>
+    <value>Spelsparnings Omsignerare</value>
   </data>
   <data name="GAME_UPDATE_FINDER" xml:space="preserve">
-    <value>Game Update Finder</value>
+    <value>Hitta Speluppdateringar</value>
   </data>
   <data name="GETTING_DOWNLOAD_FILES" xml:space="preserve">
-    <value>Getting archive file download link...</value>
+    <value>Hämtar nedladdningslänk för arkivfil...</value>
   </data>
   <data name="GETTING_GAME_REGION" xml:space="preserve">
-    <value>Getting game region...</value>
+    <value>Hämtar spelregion...</value>
   </data>
   <data name="GETTING_PREVIOUS_INSTALL" xml:space="preserve">
-    <value>Getting previous install details...</value>
+    <value>Hämtar tidigare installationsinformation...</value>
   </data>
   <data name="GETTING_USB_DEVICE" xml:space="preserve">
-    <value>Getting USB device...</value>
+    <value>Hämtar USB-enhet...</value>
   </data>
   <data name="GETTING_USER_PROFILE" xml:space="preserve">
-    <value>Getting user profile...</value>
+    <value>Hämtar användarprofil...</value>
   </data>
   <data name="HELP" xml:space="preserve">
-    <value>HELP</value>
+    <value>HJÄLP</value>
   </data>
   <data name="HOWTO_GUIDE" xml:space="preserve">
-    <value>How-To Guides for ModioX</value>
+    <value>Guider för ModioX</value>
   </data>
   <data name="HOW_TO_ACTIVATE_DEMO" xml:space="preserve">
-    <value>Activating a C00/Demo package is very easy and doesn't require a rap file. It can be done using ReActPSN or PSNPatch.\n\nReActPSN : Run the homebrew while pressing and holding circle on your controller.
-\nPSNPatch : Run PSNPatch and press R1. It should displays a list of the games that have been unlocked.</value>
+    <value>Att aktivera ett C00/Demo-paket är mycket enkelt och kräver inte en rap-fil. Det kan göras med ReActPSN eller PSNPatch.\n\nReActPSN : Kör homebrew medan du trycker på och håller in cirkel på din styrenhet.
+\nPSNPatch : Kör PSNPatch och tryck på R1. Den bör visa en lista över de spel som har låsts upp.</value>
   </data>
   <data name="HOW_TO_ACTIVATE_DEMO_QUESTION" xml:space="preserve">
-    <value>How do I activate a C00/Demo that has a free license?</value>
+    <value>Hur aktiverar jag en C00/Demo som har en gratislicens?</value>
   </data>
   <data name="HOW_TO_ACTIVATE_RAP" xml:space="preserve">
-    <value>Activating a package using a rap file requires few steps. It can be done with ReActPSN or PSNPatch. However, I will only describe how to do it with ReActPSN.\n\n1. Format a USB key in FAT32.\n2. Create the folder 'exdata' at the root of the USB key.\n3. Move the corresponding RAP file for the games you want to activate in the exdata folder.\nWarning: Do not rename rap files ! You need to leave their original ugly name.\n4. Connect the USB key in the right USB port of the PS3 (the closest to the bluray drive).\n5. Delete the ReActPSN user on your PS3 if it exists.\n6. Create the account 'aa' (without quotes) and open the account.\n7. Run ReActPSN and the screen should go black, then you should hear beeps and then the PS3 should reboot.\n8. The user 'aa' should be gone now and the account 'ReActPSN' automatically created.\n9. You're done!</value>
+    <value>Att aktivera ett paket med en rap-fil kräver några steg. Det kan göras med ReActPSN eller PSNPatch. Jag kommer dock bara att beskriva hur man gör det med ReActPSN.\n\n1. Formatera en USB-enhet i FAT32.\n2. Skapa mappen "exdata" i roten på USB-enheten.\n3. Flytta motsvarande RAP-fil för de spel du vill aktivera i exdata mappen.\nVarning: Döp inte om rap-filerna! Du måste lämna deras ursprungliga fula namn.\n4. Anslut USB-enheten i den högra USB-porten på PS3 (närmast bluray-enheten).\n5. Radera ReActPSN-användaren på din PS3 om den finns.\n6. Skapa kontot "aa" (utan citat-tecken) och öppna kontot.\n7. Kör ReActPSN och skärmen borde bli svart, sedan ska du höra pip och sedan ska PS3 startas om.\n8. Användaren "aa" bör vara borta nu och kontot "ReActPSN" skapas automatiskt.\nDu är klar!</value>
   </data>
   <data name="HOW_TO_ACTIVATE_RAP_QUESTION" xml:space="preserve">
-    <value>How do I activate a PSN package with a RAP file?</value>
+    <value>Hur aktiverar jag ett PSN-paket med en RAP-fil?</value>
   </data>
   <data name="ICON" xml:space="preserve">
-    <value>Icon</value>
+    <value>Ikon</value>
   </data>
   <data name="IDLE" xml:space="preserve">
-    <value>Idle</value>
+    <value>Inaktiv</value>
   </data>
   <data name="IMPORTANT_MESSAGE" xml:space="preserve">
-    <value>Important Message</value>
+    <value>Viktigt Meddelande</value>
   </data>
   <data name="INITIALIZED" xml:space="preserve">
-    <value>Initialized</value>
+    <value>Initierad</value>
   </data>
   <data name="INITIALIZING_APP_DB" xml:space="preserve">
-    <value>Initializing the application database</value>
+    <value>Initierar programdatabasen</value>
   </data>
   <data name="INSERT_USB_DEVICE" xml:space="preserve">
-    <value>Insert a USB device to your computer first and then install the files again.</value>
+    <value>Sätt i en USB-enhet till datorn först och installera sedan filerna igen.</value>
   </data>
   <data name="INSERT_USB_DEVICE_TO_CONSOLE" xml:space="preserve">
-    <value>One or more files needs to be installed to a USB device whch is connected to your console.\nInsert a USB device to your console and click 'Yes' to continue. Otherwise click 'No' to ignore the USB files.</value>
+    <value>En eller flera filer måste installeras på en USB-enhet som är ansluten till konsolen.\nSätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars klickar du på "Nej" för att ignorera USB-filerna.</value>
   </data>
   <data name="INSTALLED" xml:space="preserve">
-    <value>Installed</value>
+    <value>Installerad</value>
   </data>
   <data name="INSTALLING" xml:space="preserve">
-    <value>Installing</value>
+    <value>Installerar</value>
   </data>
   <data name="INSTALLING_BACKUP_FILE_LOCATION" xml:space="preserve">
-    <value>Installing backup file: {0} to {1}</value>
+    <value>Installerar säkerhetskopieringsfil: {0} till {1}</value>
   </data>
   <data name="INSTALLING_FILE" xml:space="preserve">
-    <value>Installing file: {0}</value>
+    <value>Installerar fil: {0}</value>
   </data>
   <data name="INSTALLING_GAME_SAVE" xml:space="preserve">
-    <value>Installing Game Save</value>
+    <value>Installerar Spelsparning</value>
   </data>
   <data name="INSTALLING_MODS" xml:space="preserve">
-    <value>Installing Mods</value>
+    <value>Installerar Moddar</value>
   </data>
   <data name="INSTALLING_PACKAGE_FILE" xml:space="preserve">
-    <value>Installing Package</value>
+    <value>Installerar Paket</value>
   </data>
   <data name="INSTALL_CANCELED" xml:space="preserve">
-    <value>Installation canceled.</value>
+    <value>Installationen avbröts.</value>
   </data>
   <data name="INSTALL_FILE" xml:space="preserve">
-    <value>Install File</value>
+    <value>Installera Fil</value>
   </data>
   <data name="INSTALL_FILES" xml:space="preserve">
-    <value>Install Files</value>
+    <value>Installera Filer</value>
   </data>
   <data name="INSTALL_FILES_TO_USB_DEVICE" xml:space="preserve">
-    <value>Install Files to USB</value>
+    <value>Installera Filer på USB-enhet</value>
   </data>
   <data name="INSTALL_GAME_SAVES_TO_LOCAL_USB" xml:space="preserve">
-    <value>Install Game Saves to local USB device</value>
+    <value>Installera Spelsparningar på lokal USB-enhet</value>
   </data>
   <data name="INSTALL_HOMEBREW_TO_LOCAL_USB" xml:space="preserve">
-    <value>Install Homebrew to local USB device*</value>
+    <value>Installera Homebrew på lokal USB-enhet*</value>
   </data>
   <data name="INSTALL_MODS_TO_LOCAL_USB" xml:space="preserve">
-    <value>Install Mods/Plugins to local USB device</value>
+    <value>Installera Moddar/Plugins på lokal USB-enhet</value>
   </data>
   <data name="INSTALL_PACKAGES_TO_LOCAL_USB" xml:space="preserve">
-    <value>Install Packages to local USB device*</value>
+    <value>Installera Paket på lokal USB-enhet*</value>
   </data>
   <data name="INSTALL_RESOURCES_TO_LOCAL_USB" xml:space="preserve">
-    <value>Install Resources to local USB device*</value>
+    <value>Installera Resurser på lokal USB-enhet*</value>
   </data>
   <data name="LABEL_ADDRESS_NAME" xml:space="preserve">
-    <value>IP Address/Name</value>
+    <value>IP-adress/Namn</value>
   </data>
   <data name="LABEL_ADD_TO_GAMES" xml:space="preserve">
-    <value>Add to Games</value>
+    <value>Lägg till i Spel</value>
   </data>
   <data name="LABEL_ALL_REGIONS" xml:space="preserve">
-    <value>All Regions</value>
+    <value>Alla Regioner</value>
   </data>
   <data name="LABEL_APPLY" xml:space="preserve">
-    <value>Apply</value>
+    <value>Tillämpa</value>
   </data>
   <data name="LABEL_BYTES" xml:space="preserve">
     <value>Bytes</value>
   </data>
   <data name="LABEL_CANCEL" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Avbryt</value>
   </data>
   <data name="LABEL_CATEGORY" xml:space="preserve">
-    <value>Category</value>
+    <value>Kategori</value>
   </data>
   <data name="LABEL_CHANGE" xml:space="preserve">
-    <value>Change</value>
+    <value>Ändra</value>
   </data>
   <data name="LABEL_CHEATS" xml:space="preserve">
-    <value>Cheats</value>
+    <value>Fusk</value>
   </data>
   <data name="LABEL_CLOSE" xml:space="preserve">
-    <value>Close</value>
+    <value>Stäng</value>
   </data>
   <data name="LABEL_CONNECTION_DETAILS" xml:space="preserve">
-    <value>Connection Details</value>
+    <value>Anslutningsdetaljer</value>
   </data>
   <data name="LABEL_CONNECTION_NAME" xml:space="preserve">
-    <value>Connection Name</value>
+    <value>Anslutningsnamn</value>
   </data>
   <data name="LABEL_CONTENT_ID" xml:space="preserve">
-    <value>Content ID</value>
+    <value>Innehålls-ID</value>
   </data>
   <data name="LABEL_COPIED" xml:space="preserve">
-    <value>Copied</value>
+    <value>Kopierad</value>
   </data>
   <data name="LABEL_CREATED_BY" xml:space="preserve">
-    <value>Created By</value>
+    <value>Skapad Av</value>
   </data>
   <data name="LABEL_CREATOR" xml:space="preserve">
-    <value>Creator</value>
+    <value>Skapare</value>
   </data>
   <data name="LABEL_DEFAULT" xml:space="preserve">
-    <value>Default</value>
+    <value>Standard</value>
   </data>
   <data name="LABEL_DEFAULT_CONSOLE" xml:space="preserve">
-    <value>Default Console</value>
+    <value>Standardkonsol</value>
   </data>
   <data name="LABEL_DELETE" xml:space="preserve">
-    <value>Delete</value>
+    <value>Radera</value>
   </data>
   <data name="LABEL_DESCRIPTION" xml:space="preserve">
-    <value>Description</value>
+    <value>Beskrivning</value>
   </data>
   <data name="LABEL_DIRECTORIES" xml:space="preserve">
-    <value>Directories</value>
+    <value>Mappar</value>
   </data>
   <data name="LABEL_DIRECTORY" xml:space="preserve">
-    <value>Directory</value>
+    <value>Mapp</value>
   </data>
   <data name="LABEL_DOWNLOAD" xml:space="preserve">
-    <value>Download</value>
+    <value>Ladda ner</value>
   </data>
   <data name="LABEL_DOWNLOADED_ON" xml:space="preserve">
-    <value>Downloaded On</value>
+    <value>Nerladdad den</value>
   </data>
   <data name="LABEL_FAVORITE" xml:space="preserve">
-    <value>Favorite</value>
+    <value>Favorit</value>
   </data>
   <data name="LABEL_FILE" xml:space="preserve">
-    <value>File</value>
+    <value>Fil</value>
   </data>
   <data name="LABEL_FILES" xml:space="preserve">
-    <value>Files</value>
+    <value>Filer</value>
   </data>
   <data name="LABEL_FILE_SIZE" xml:space="preserve">
-    <value>File Size</value>
+    <value>Filstorlek</value>
   </data>
   <data name="LABEL_GAME_CHEATS" xml:space="preserve">
-    <value>Game Cheats</value>
+    <value>Spelfusk</value>
   </data>
   <data name="LABEL_GAME_MODE" xml:space="preserve">
-    <value>Game Mode</value>
+    <value>Spelläge</value>
   </data>
   <data name="LABEL_GAME_MODS" xml:space="preserve">
-    <value>Game Mods</value>
+    <value>Spelmoddar</value>
   </data>
   <data name="LABEL_GAME_SAVES" xml:space="preserve">
-    <value>Game Saves</value>
+    <value>Spelsparningar</value>
   </data>
   <data name="LABEL_HOMEBREW" xml:space="preserve">
     <value>Homebrew</value>
   </data>
   <data name="LABEL_IMAGE" xml:space="preserve">
-    <value>Image</value>
+    <value>Bild</value>
   </data>
   <data name="LABEL_INSTALL" xml:space="preserve">
-    <value>Install</value>
+    <value>Installera</value>
   </data>
   <data name="LABEL_INSTALLED" xml:space="preserve">
-    <value>Installed</value>
+    <value>Installerad</value>
   </data>
   <data name="LABEL_IP_ADDRESS" xml:space="preserve">
-    <value>IP Address</value>
+    <value>IP-Adress</value>
   </data>
   <data name="LABEL_LAST_MODIFIED" xml:space="preserve">
-    <value>Modified On</value>
+    <value>Ändrad den</value>
   </data>
   <data name="LABEL_LOGIN" xml:space="preserve">
-    <value>Login</value>
+    <value>Logga in</value>
   </data>
   <data name="LABEL_LOGIN_DETAILS" xml:space="preserve">
-    <value>Login Details</value>
+    <value>Inloggningsuppgifter</value>
   </data>
   <data name="LABEL_MODIFIED_DATE" xml:space="preserve">
-    <value>Modified Date</value>
+    <value>Ändrad den</value>
   </data>
   <data name="LABEL_MOD_TYPE" xml:space="preserve">
-    <value>Mod Type</value>
+    <value>Mod Typ</value>
   </data>
   <data name="LABEL_NAME" xml:space="preserve">
-    <value>Name</value>
+    <value>Namn</value>
   </data>
   <data name="LABEL_NEW_FOLDER" xml:space="preserve">
-    <value>New Folder</value>
+    <value>Ny mapp</value>
   </data>
   <data name="LABEL_NEXT" xml:space="preserve">
-    <value>Next</value>
+    <value>Nästa</value>
   </data>
   <data name="LABEL_NOT_INSTALLED" xml:space="preserve">
-    <value>Not Installed</value>
+    <value>Inte Installerad</value>
   </data>
   <data name="LABEL_OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="LABEL_OPEN_EXPLORER" xml:space="preserve">
-    <value>Open Explorer</value>
+    <value>Öppna Utforskare</value>
   </data>
   <data name="LABEL_OPEN_PATH" xml:space="preserve">
-    <value>Open Path</value>
+    <value>Öppna Sökväg</value>
   </data>
   <data name="LABEL_PACKAGES" xml:space="preserve">
-    <value>Packages</value>
+    <value>Paket</value>
   </data>
   <data name="LABEL_PASSWORD" xml:space="preserve">
-    <value>Password</value>
+    <value>Lösenord</value>
   </data>
   <data name="LABEL_PLATFORM" xml:space="preserve">
-    <value>Platform</value>
+    <value>Plattform</value>
   </data>
   <data name="LABEL_PLATFORM_TYPE" xml:space="preserve">
-    <value>Platform Type</value>
+    <value>Plattformstyp</value>
   </data>
   <data name="LABEL_PLUGINS" xml:space="preserve">
-    <value>Plugins</value>
+    <value>Tillägg</value>
   </data>
   <data name="LABEL_PREVIOUS" xml:space="preserve">
-    <value>Previous</value>
+    <value>Föregående</value>
   </data>
   <data name="LABEL_REFRESH" xml:space="preserve">
-    <value>Refresh</value>
+    <value>Uppdatera</value>
   </data>
   <data name="LABEL_REGION" xml:space="preserve">
     <value>Region</value>
   </data>
   <data name="LABEL_RENAME" xml:space="preserve">
-    <value>Rename</value>
+    <value>Döp om</value>
   </data>
   <data name="LABEL_REPORT" xml:space="preserve">
-    <value>Report</value>
+    <value>Rapportera</value>
   </data>
   <data name="LABEL_RESOURCES" xml:space="preserve">
-    <value>Resources</value>
+    <value>Resurser</value>
   </data>
   <data name="LABEL_SIZE" xml:space="preserve">
-    <value>Size</value>
+    <value>Storlek</value>
   </data>
   <data name="LABEL_STATUS" xml:space="preserve">
     <value>Status</value>
   </data>
   <data name="LABEL_SUBMITTED_BY" xml:space="preserve">
-    <value>Submitted By</value>
+    <value>Tillagd av</value>
   </data>
   <data name="LABEL_SYSTEM_TYPE" xml:space="preserve">
-    <value>System Type</value>
+    <value>Systemtyp</value>
   </data>
   <data name="LABEL_TYPE" xml:space="preserve">
-    <value>Type</value>
+    <value>Typ</value>
   </data>
   <data name="LABEL_UNFAVORITE" xml:space="preserve">
-    <value>Unfavorite</value>
+    <value>Ta bort favorit</value>
   </data>
   <data name="LABEL_UPLOAD" xml:space="preserve">
-    <value>Upload</value>
+    <value>Ladda upp</value>
   </data>
   <data name="LABEL_USERNAME" xml:space="preserve">
-    <value>Username</value>
+    <value>Användarnamn</value>
   </data>
   <data name="LABEL_USE_DEFAULT" xml:space="preserve">
-    <value>Use Default</value>
+    <value>Använd Standard</value>
   </data>
   <data name="LABEL_VERSION" xml:space="preserve">
     <value>Version</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Language</value>
+    <value>Språk</value>
   </data>
   <data name="LANGUAGE_HELP" xml:space="preserve">
-    <value>Sorry, but this language is currently not supported yet. If you would like to help us add this language, please join our Discord Server and let us know!</value>
+    <value>Tyvärr, men det här språket stöds för närvarande inte än. Om du vill hjälpa oss att lägga till detta språk, vänligen gå med i vår Discord-server och låt oss veta!</value>
   </data>
   <data name="LANGUAGE_NOT_SUPPORTED" xml:space="preserve">
-    <value>Language Not Supported</value>
+    <value>Språket stöds inte</value>
   </data>
   <data name="LAST_UPDATED" xml:space="preserve">
-    <value>Last Updated</value>
+    <value>Senast uppdaterad</value>
   </data>
   <data name="LAUNCH_FILE_EDITOR" xml:space="preserve">
-    <value>Launch File Editor</value>
+    <value>Starta Filredigerare</value>
   </data>
   <data name="LAUNCH_FILE_PATH" xml:space="preserve">
-    <value>launch.ini File Path</value>
+    <value>launch.ini Filsökväg</value>
   </data>
   <data name="MANAGE_IMPORTED_MODS" xml:space="preserve">
-    <value>Manage Imported Mods</value>
+    <value>Hantera Importerade Moddar</value>
   </data>
   <data name="MESSAGE" xml:space="preserve">
-    <value>Message</value>
+    <value>Meddelande</value>
   </data>
   <data name="MISSING" xml:space="preserve">
-    <value>MISSING</value>
+    <value>SAKNAS</value>
   </data>
   <data name="MOD_NOT_INSTALLED" xml:space="preserve">
-    <value>{0} is not installed on your console.\n\nDo you want to try uninstalling the file anyway?</value>
+    <value>{0} är inte installerad på din konsol.\n\nVill du försöka avinstallera filen ändå?</value>
   </data>
   <data name="MOTHERBOARD" xml:space="preserve">
-    <value>Motherboard</value>
+    <value>Moderkort</value>
   </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
-    <value>Make sure Neighborhood is installed on your computer</value>
+    <value>Se till att Grannskapet är installerat på din dator</value>
   </data>
   <data name="NOTICE_INSTALL_REBUG_FILES" xml:space="preserve">
-    <value>These files are being installed to the firmware folder (dev_rebug) which is for REBUG Custom Firmware only. Please read everything below before proceeding.\n\n- It's recommended to first create a backup of the entire folder before installing any files.\n- Your console must be running Rebug custom firmware.\n- REBUG TOOLBOX must be open during installation\n- Any missing or corrupt files in this folder can impact your console performance.\n- If you have issues after rebooting console, enter recovery mode and reinstall the custom firmware.\n\nOnly continue at your own risk and only if you know what you're doing.\n\nDo you want to continue?</value>
+    <value>Dessa filer installeras till mappen firmware (dev_rebug) som endast är avsedd för REBUG Custom Firmware. Läs allt nedan innan du fortsätter.\n\n- Det rekommenderas att först skapa en säkerhetskopia av hela mappen innan du installerar några filer.\n- Din konsol måste köra Rebug custom firmware.\n- REBUG TOOLBOX måste köras under installationen\n- Alla saknade eller skadade filer i den här mappen kan påverka konsolens prestanda.\n- Om du har problem efter omstart av konsol, gå in i återställningsläge och installera om custom firmware.\n\nFortsätt endast på egen risk och bara om du vet vad du gör.\n\nVill du fortsätta?</value>
   </data>
   <data name="NOTIFY_ICON" xml:space="preserve">
-    <value>Notify Icon</value>
+    <value>Notifikations-ikon</value>
   </data>
   <data name="NOTIFY_MESSAGE" xml:space="preserve">
-    <value>Notify Message</value>
+    <value>Notifikationsmeddelande</value>
   </data>
   <data name="NOT_CONNECTED" xml:space="preserve">
-    <value>Not Connected</value>
+    <value>Inte Ansluten</value>
   </data>
   <data name="NOT_INSTALLED" xml:space="preserve">
-    <value>Not Installed</value>
+    <value>Inte Installerad</value>
   </data>
   <data name="NOT_SUPPORTED_GAME_REGION" xml:space="preserve">
-    <value>Game region isn't supported.</value>
+    <value>Spelregionen stöds inte.</value>
   </data>
   <data name="NO_ANNOUNCEMENTS" xml:space="preserve">
-    <value>NO ANNOUNCEMENTS</value>
+    <value>INGA MEDDELANDEN</value>
   </data>
   <data name="NO_BACKUP_FILE" xml:space="preserve">
-    <value>No Backup File</value>
+    <value>Ingen Säkerhetskopieringsfil</value>
   </data>
   <data name="NO_BACKUP_FILE_FOUND" xml:space="preserve">
-    <value>You don't have a backup for the: {0} file. This file will be ignored to prevent issues with missing game files. You must install the game update to restore the original file.</value>
+    <value>Du har ingen säkerhetskopia för: {0} filen. Denna fil kommer att ignoreras för att förhindra problem med saknade spelfiler. Du måste installera speluppdateringen för att återställa originalfilen.</value>
   </data>
   <data name="NO_CONSOLE_CONNECTED" xml:space="preserve">
-    <value>No Console Connected</value>
+    <value>Ingen Konsol Ansluten</value>
   </data>
   <data name="NO_CONSOLE_PROFILE" xml:space="preserve">
-    <value>No Console Profile</value>
+    <value>Ingen Konsolprofil</value>
   </data>
   <data name="NO_CONSOLE_PROFILES" xml:space="preserve">
-    <value>NO CONSOLE PROFILES</value>
+    <value>INGA KONSOLPROFILER</value>
   </data>
   <data name="NO_DOWNLOAD_FILES_SELECTED" xml:space="preserve">
-    <value>No archive file download selected.</value>
+    <value>Ingen nedladdningsbar arkivfil vald.</value>
   </data>
   <data name="NO_GAME_REGION_FOLDER_FOUND" xml:space="preserve">
-    <value>Unable to find the game update folder for this region.\nInstall the correct mods for this game or choose a different game region.</value>
+    <value>Det går inte att hitta mappen för speluppdateringar för denna region.\nInstallera rätt moddar för detta spel eller välj en annan spelregion.</value>
   </data>
   <data name="NO_GAME_REGION_FOUND" xml:space="preserve">
-    <value>Game region cannot be found on console.</value>
+    <value>Spelregionen kan inte hittas i konsolen.</value>
   </data>
   <data name="NO_GAME_REGION_SELECTED" xml:space="preserve">
-    <value>No game region selected.</value>
+    <value>Ingen spelregion vald.</value>
   </data>
   <data name="NO_INPUT" xml:space="preserve">
-    <value>No Input</value>
+    <value>Ingen Input</value>
   </data>
   <data name="NO_INTERNET_CONNECTION" xml:space="preserve">
-    <value>You must be connected to the Internet to use this application.</value>
+    <value>Du måste vara ansluten till Internet för att använda denna applikation.</value>
   </data>
   <data name="NO_INTERNET_CONNECTION_TITLE" xml:space="preserve">
-    <value>No Internet Detected</value>
+    <value>Inget Internet Upptäckt</value>
   </data>
   <data name="NO_LISTS" xml:space="preserve">
-    <value>You Have No Lists</value>
+    <value>Du har inga listor</value>
   </data>
   <data name="NO_MORE_DETAILS" xml:space="preserve">
-    <value>No other details can be found for this yet.</value>
+    <value>Inga andra detaljer kan hittas för detta ännu.</value>
   </data>
   <data name="NO_NEWS_IS_GOOD_NEWS" xml:space="preserve">
-    <value>No news is good news!</value>
+    <value>Inga nyheter är goda nyheter!</value>
   </data>
   <data name="NO_PREVIOUS_INSTALL_FOUND" xml:space="preserve">
-    <value>No previous installation found.</value>
+    <value>Ingen tidigare installation hittades.</value>
   </data>
   <data name="NO_USB_DEVICES" xml:space="preserve">
-    <value>No USB Devices</value>
+    <value>Inga USB-enheter</value>
   </data>
   <data name="NO_USB_DEVICES_CONNECTED" xml:space="preserve">
-    <value>No USB devices connected.</value>
+    <value>Inga USB-enheter är anslutna.</value>
   </data>
   <data name="NO_USB_DEVICE_FOUND" xml:space="preserve">
-    <value>No USB device found.</value>
+    <value>Ingen USB-enhet hittades.</value>
   </data>
   <data name="NO_USB_DEVICE_SELECTED" xml:space="preserve">
-    <value>No USB device selected.</value>
+    <value>Ingen USB-enhet har valts.</value>
   </data>
   <data name="NO_USER_PROFILE_SELECTED" xml:space="preserve">
-    <value>No user profile selected.</value>
+    <value>Ingen användarprofil har valts.</value>
   </data>
   <data name="OPEN_FILE" xml:space="preserve">
-    <value>Open File</value>
+    <value>Öppna Fil</value>
   </data>
   <data name="OPEN_FOLDER" xml:space="preserve">
-    <value>Open Folder</value>
+    <value>Öppna Mapp</value>
   </data>
   <data name="OVERWRITE_MODS" xml:space="preserve">
-    <value>Overwrite Mods</value>
+    <value>Skriv över Moddar</value>
   </data>
   <data name="PACKAGES_INSTALL_FILE_PATH" xml:space="preserve">
-    <value>Packages Install File Path</value>
+    <value>Installationssökväg för Paket</value>
   </data>
   <data name="PACKAGE_MANAGER" xml:space="preserve">
-    <value>Package File Manager</value>
+    <value>Paketfilhanterare</value>
   </data>
   <data name="PREPARING_DOWNLOAD" xml:space="preserve">
-    <value>Preparing to download archive...</value>
+    <value>Förbereder för att ladda ner arkiv...</value>
   </data>
   <data name="PREPARING_INSTALL" xml:space="preserve">
-    <value>Preparing to install files...</value>
+    <value>Förbereder att installera filer...</value>
   </data>
   <data name="PREPARING_UNINSTALL" xml:space="preserve">
-    <value>Preparing to uninstall files...</value>
+    <value>Förbereder för att avinstallera filer...</value>
   </data>
   <data name="PROFILE_ADD_INSTRUCTION" xml:space="preserve">
-    <value>Click 'Add New Profile' to create one</value>
+    <value>Klicka på 'Lägg till ny profil' för att skapa en</value>
   </data>
   <data name="PROFILE_ADD_NEW" xml:space="preserve">
-    <value>Add New Profile</value>
+    <value>Lägg till Ny Profil</value>
   </data>
   <data name="PROFILE_DELETE" xml:space="preserve">
-    <value>Delete Profile</value>
+    <value>Radera Profil</value>
   </data>
   <data name="PROFILE_EDIT" xml:space="preserve">
-    <value>Edit Profile</value>
+    <value>Redigera Profil</value>
   </data>
   <data name="READY_TO_CONNECT" xml:space="preserve">
-    <value>Ready to connect...</value>
+    <value>Redo att ansluta...</value>
   </data>
   <data name="READY_TO_START_GAME" xml:space="preserve">
-    <value>Ready to start game.</value>
+    <value>Redo att starta spelet.</value>
   </data>
   <data name="REDIRECTING" xml:space="preserve">
-    <value>Redirecting...</value>
+    <value>Omdirigerar...</value>
   </data>
   <data name="REDIRECT_TO_GITHUB_ISSUES" xml:space="preserve">
-    <value>You will now be redirected to our GitHub Issues page and all details will be automatically filled for you. Please provide information about the issue to help us fix your problem.\nClick the 'Submit' button to open a new issue which can help us fix any problems.</value>
+    <value>Du kommer nu att omdirigeras till vår GitHub Issues sida och alla detaljer kommer automatiskt att fyllas i åt dig. Ange information om problemet för att hjälpa oss att åtgärda ditt problem.\nKlicka på "Skicka" knappen för att öppna ett nytt ärende som kan hjälpa oss att lösa eventuella problem.</value>
   </data>
   <data name="REINSTALL_FILE" xml:space="preserve">
-    <value>Reinstall File</value>
+    <value>Installera om Fil</value>
   </data>
   <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
-    <value>Files have been installed to a USB device connected to your console. You can either uninstall them now or manually delete them.\n\nIf you would like to uninstall the files now, connect the same USB device you installed the mods to into the same port of your console and click 'Yes' to continue.\nIf you don't want to uninstall the files, click 'No' and all of these files will be ignored.</value>
+    <value>Filer har installerats på en USB-enhet som är ansluten till konsolen. Du kan antingen avinstallera dem nu eller manuellt ta bort dem.\n\nOm du vill avinstallera filerna nu, ansluta samma USB-enhet som du installerade moddarna på till samma port på konsolen och klicka på "Ja" för att fortsätta.\nOm du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer kommer att ignoreras.</value>
   </data>
   <data name="RESTART_REQUIRED" xml:space="preserve">
-    <value>Restart Required</value>
+    <value>Omstart Krävs</value>
   </data>
   <data name="RESTART_TAKE_AFFECT" xml:space="preserve">
-    <value>You must restart the application for this change to take effect. Do you want to restart now?</value>
+    <value>Du måste starta om programmet för att denna ändring ska träda i kraft. Vill du starta om nu?</value>
   </data>
   <data name="RICH_PRESENCE" xml:space="preserve">
-    <value>Rich Presence</value>
+    <value>Rik Närvaro</value>
   </data>
   <data name="SCANNING_XBOX_CONSOLES" xml:space="preserve">
-    <value>Scanning for Xbox consoles...</value>
+    <value>Söker efter Xbox-konsoler...</value>
   </data>
   <data name="SCANNING_XBOX_FINISHED" xml:space="preserve">
-    <value>Finished scanning for Xbox consoles.</value>
+    <value>Slutförd skanning av Xbox-konsoler.</value>
   </data>
   <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
-    <value>This mod type (Script) can't be installed on the PS3 because it needs the user manual addition.</value>
+    <value>Den här moddtypen (Script) kan inte installeras på PS3 eftersom den behöver ett manuellt tillägg.</value>
   </data>
   <data name="SETUP_PROFILES_EDIT" xml:space="preserve">
-    <value>Edit Console Profiles</value>
+    <value>Redigera Konsolprofiler</value>
   </data>
   <data name="SETUP_PROFILE_ADD" xml:space="preserve">
-    <value>Add Console Profile</value>
+    <value>Lägg till Konsolprofil</value>
   </data>
   <data name="SETUP_SCAN_XBOX_CONSOLES" xml:space="preserve">
-    <value>Scan For Xbox Consoles</value>
+    <value>Sök efter Xbox-Konsoler</value>
   </data>
   <data name="SETUP_SET_DOWNLOADS_LOCATION" xml:space="preserve">
-    <value>Set Downloads Location</value>
+    <value>Ange Nedladdningsplats</value>
   </data>
   <data name="SETUP_STARTUP_LIBRARY" xml:space="preserve">
-    <value>Startup Library</value>
+    <value>Startbibliotek</value>
   </data>
   <data name="SHOW_CURRENT_GAME_PLAYING" xml:space="preserve">
-    <value>Show current game playing</value>
+    <value>Visa aktuellt spel</value>
   </data>
   <data name="SHOW_GAMES_IN_EXTERNAL_DEVICES" xml:space="preserve">
-    <value>Show games list from external device*</value>
+    <value>Visa spellista från extern enhet*</value>
   </data>
   <data name="STARTING_INSTALL" xml:space="preserve">
-    <value>Starting install...</value>
+    <value>Startar installation...</value>
   </data>
   <data name="SUCCESS" xml:space="preserve">
-    <value>Success</value>
+    <value>Slutförd</value>
   </data>
   <data name="SUCCESS_CONNECTED" xml:space="preserve">
-    <value>Successfully connected to console.</value>
+    <value>Anslutning till konsolen lyckades.</value>
   </data>
   <data name="SUCCESS_DISCONNECTED" xml:space="preserve">
-    <value>Successfully disconnected from console.</value>
+    <value>Bortkoppling från konsolen lyckades.</value>
   </data>
   <data name="SUCCESS_LOADED_DB" xml:space="preserve">
-    <value>Successfully loaded the database - Finalizing application data...</value>
+    <value>Lyckades ladda databasen - Slutför programdata...</value>
   </data>
   <data name="SUCCESS_ROOT_DIRECTORIES" xml:space="preserve">
-    <value>Successfully fetched root directories</value>
+    <value>Lyckades hämta rotkataloger</value>
   </data>
   <data name="SYSTEM_TEMPERATURES" xml:space="preserve">
-    <value>System Temperatures</value>
+    <value>System Temperaturer</value>
   </data>
   <data name="TITLE_ANNOUNCEMENTS" xml:space="preserve">
-    <value>ANNOUNCEMENTS</value>
+    <value>MEDDELANDEN</value>
   </data>
   <data name="TITLE_CHANGE_LOG" xml:space="preserve">
-    <value>CHANGE LOG</value>
+    <value>ÄNDRINGSLOGG</value>
   </data>
   <data name="TITLE_CONNECT" xml:space="preserve">
-    <value>CONNECT</value>
+    <value>ANSLUT</value>
   </data>
   <data name="TITLE_CONTRIBUTORS" xml:space="preserve">
-    <value>CONTRIBUTORS</value>
+    <value>BIDRAGARE</value>
   </data>
   <data name="TITLE_CREDITS" xml:space="preserve">
-    <value>CREDITS</value>
+    <value>MEDVERKANDE</value>
   </data>
   <data name="TITLE_DASHBOARD" xml:space="preserve">
-    <value>DASHBOARD</value>
+    <value>INSTRUMENTBRÄDA</value>
   </data>
   <data name="TITLE_DOWNLOADS" xml:space="preserve">
-    <value>DOWNLOADS</value>
+    <value>NEDLADDNINGAR</value>
   </data>
   <data name="TITLE_FILE_MANAGER" xml:space="preserve">
-    <value>FILE MANAGER</value>
+    <value>FILHANTERARE</value>
   </data>
   <data name="TITLE_GAMES" xml:space="preserve">
-    <value>GAMES</value>
+    <value>SPEL</value>
   </data>
   <data name="TITLE_GAME_CHEATS" xml:space="preserve">
-    <value>GAME CHEATS</value>
+    <value>SPELFUSK</value>
   </data>
   <data name="TITLE_GAME_MODS" xml:space="preserve">
-    <value>GAME MODS</value>
+    <value>SPELMODDAR</value>
   </data>
   <data name="TITLE_GET_STARTED" xml:space="preserve">
-    <value>GET STARTED</value>
+    <value>KOM IGÅNG</value>
   </data>
   <data name="TITLE_HOMEBREW" xml:space="preserve">
     <value>HOMEBREW</value>
   </data>
   <data name="TITLE_INSTALLED_MODS" xml:space="preserve">
-    <value>INSTALLED MODS</value>
+    <value>INSTALLERADE MODDAR</value>
   </data>
   <data name="TITLE_INTERFACE" xml:space="preserve">
-    <value>INTERFACE</value>
+    <value>GRÄNSSNITT</value>
   </data>
   <data name="TITLE_LATEST_NEWS" xml:space="preserve">
-    <value>LATEST NEWS</value>
+    <value>SENASTE NYHETER</value>
   </data>
   <data name="TITLE_OPTIONS" xml:space="preserve">
-    <value>OPTIONS</value>
+    <value>ALTERNATIV</value>
   </data>
   <data name="TITLE_PACKAGES" xml:space="preserve">
-    <value>PACKAGES</value>
+    <value>PAKET</value>
   </data>
   <data name="TITLE_PLUGINS" xml:space="preserve">
-    <value>PLUGINS</value>
+    <value>PLUGIN</value>
   </data>
   <data name="TITLE_RESOURCES" xml:space="preserve">
-    <value>RESOURCES</value>
+    <value>RESURSER</value>
   </data>
   <data name="TITLE_SPECIAL_THANKS" xml:space="preserve">
-    <value>SPECIAL THANKS</value>
+    <value>SÄRSKILDA TACK</value>
   </data>
   <data name="TITLE_STATISTICS" xml:space="preserve">
-    <value>STATISTICS</value>
+    <value>STATISTIK</value>
   </data>
   <data name="TITLE_SUBMIT_MODS" xml:space="preserve">
-    <value>SUBMIT MODS</value>
+    <value>SKICKA MODDAR</value>
   </data>
   <data name="TITLE_TOOLS" xml:space="preserve">
-    <value>TOOLS</value>
+    <value>VERKTYG</value>
   </data>
   <data name="UNABLE_LOAD_DATABASE" xml:space="preserve">
-    <value>Unable to load database.</value>
+    <value>Kunde inte ladda databasen.</value>
   </data>
   <data name="UNABLE_TO_CONNECT" xml:space="preserve">
-    <value>Unable to connect to console.</value>
+    <value>Kunde inte ansluta till konsolen.</value>
   </data>
   <data name="UNABLE_TO_OPEN_EXPLORER" xml:space="preserve">
-    <value>Unable to open File Explorer for directory: {0} - Error {1}</value>
+    <value>Kan inte öppna Utforskaren för mapp: {0} - Fel {1}</value>
   </data>
   <data name="UNFAVORITE" xml:space="preserve">
-    <value>Unfavorite</value>
+    <value>Avfavorit</value>
   </data>
   <data name="UNINSTALLED" xml:space="preserve">
-    <value>Uninstalled</value>
+    <value>Avinstallerad</value>
   </data>
   <data name="UNINSTALLING" xml:space="preserve">
-    <value>Uninstalling</value>
+    <value>Avinstallerar</value>
   </data>
   <data name="UNINSTALLING_MODS" xml:space="preserve">
-    <value>Uninstalling Mods</value>
+    <value>Avinstallerar Moddar</value>
   </data>
   <data name="UNINSTALLING_PACKAGE" xml:space="preserve">
-    <value>Uninstalling Package</value>
+    <value>Avinstallerar Paket</value>
   </data>
   <data name="UNINSTALL_ALL_ITEMS" xml:space="preserve">
-    <value>Uninstall All Items</value>
+    <value>Avinstallera Alla Objekt</value>
   </data>
   <data name="UNINSTALL_CANCELED" xml:space="preserve">
-    <value>Uninstallation canceled.</value>
+    <value>Avinstallationen avbröts.</value>
   </data>
   <data name="UNINSTALL_FILE" xml:space="preserve">
-    <value>Uninstall File</value>
+    <value>Avinstallera Fil</value>
   </data>
   <data name="UNINSTALL_FILES" xml:space="preserve">
-    <value>Uninstall Files</value>
+    <value>Avinstallera Filer</value>
   </data>
   <data name="UNINSTALL_ITEM" xml:space="preserve">
-    <value>Uninstall Item</value>
+    <value>Avinstallera Objekt</value>
   </data>
   <data name="UNINSTALL_USB_FILES" xml:space="preserve">
-    <value>Uninstall USB Files</value>
+    <value>Avinstallera USB-filer</value>
   </data>
   <data name="UPLOAD_ERROR" xml:space="preserve">
-    <value>Unable to upload to console. Error: {0}</value>
+    <value>Kunde inte ladda upp till konsolen. Fel: {0}</value>
   </data>
   <data name="USB_DEVICES" xml:space="preserve">
-    <value>USB Devices</value>
+    <value>USB-Enheter</value>
   </data>
   <data name="USE_FORMATTED_FILE_SIZES" xml:space="preserve">
-    <value>Use formatted file sizes (e.g. "3 MB")</value>
+    <value>Använd formaterade filstorlekar (t.ex. "3 MB")</value>
   </data>
   <data name="USE_RELATIVE_TIMES" xml:space="preserve">
-    <value>Use relative times (e.g. "3 months ago")</value>
+    <value>Använd relativa tider (t.ex. "3 månader sedan")</value>
   </data>
   <data name="VIEW_DETAILS" xml:space="preserve">
-    <value>View Details</value>
+    <value>Visa Detaljer</value>
   </data>
   <data name="WEBMAN_REQUIRED" xml:space="preserve">
-    <value>This feature requires webMAN installed on your console.</value>
+    <value>Denna funktion kräver att webMAN är installerat på din konsol.</value>
   </data>
   <data name="XBOX_CONSOLES" xml:space="preserve">
-    <value>Xbox Consoles</value>
+    <value>Xbox konsoler</value>
   </data>
   <data name="YOU_MUST_BE_CONNECTED_TO_UNINSTALL_FILES" xml:space="preserve">
-    <value>You must be connected to {0} to uninstall the files.</value>
+    <value>Du måste vara ansluten till {0} för att avinstallera filerna.</value>
   </data>
   <data name="YOU_MUST_BE_CONNECTED_TO_USE_FEATURE" xml:space="preserve">
-    <value>You must be connected to your console to use this feature.</value>
+    <value>Du måste vara ansluten till din konsol för att använda denna funktion.</value>
   </data>
   <data name="YOU_MUST_BE_CONNECTED_TO_VIEW_INSTALLED_MODS" xml:space="preserve">
-    <value>You must be connected to your console to view installed mods.</value>
+    <value>Du måste vara ansluten till din konsol för att visa installerade moddar.</value>
   </data>
 </root>
