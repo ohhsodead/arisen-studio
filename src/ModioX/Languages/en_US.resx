@@ -127,7 +127,7 @@
     <value>All Games</value>
   </data>
   <data name="ANOTHER_MOD_INSTALLED" xml:space="preserve">
-    <value>{0} is installed to: {1}\nMore than one mods installed for the same game might cause issues, like conflicts.\n\nWould you like to uninstall the current mods?</value>
+    <value>{0} is installed to: {1}\nInstalling multiple mods for the same game can lead to problems such as conflicts.\n\nDo you want to uninstall the current files?</value>
   </data>
   <data name="ANY" xml:space="preserve">
     <value>ANY</value>
@@ -154,13 +154,13 @@
     <value>Backup Files</value>
   </data>
   <data name="BACKUP_GAME_FILES" xml:space="preserve">
-    <value>Would you like to backup the current game files? These files can be restored when uninstalling the mods.</value>
+    <value>Do you want to backup the current game files? These files can be restored when uninstalling the mods.</value>
   </data>
   <data name="BACKUP_RESTORE_GAME_FILES" xml:space="preserve">
     <value>Backup/Restore Game Files</value>
   </data>
   <data name="CANT_FIND_BACKUP_FILE" xml:space="preserve">
-    <value>You have created a backup for the {0} file, but it's either missing or has been deleted.\n\nIf this file has been moved, open Tools &gt; Game Backup Files and set the local file path again. If this file has been deleted, then delete the game backup file data and backup the file again.\n\nFor now, this file will be ignored to prevent issues with missing game files.</value>
+    <value>You made a backup of {0}. However, this file has either been moved or deleted.\n\nIf you've moved this file, go to Tools &gt; Game Backup Files and set the new local file path. If this file was deleted, remove the backup file data and backup the file again.\n\nThis file cannot be uninstalled to avoid missing game files, so it will be ignored.</value>
   </data>
   <data name="CANT_UNINSTALL_CFW_FILES" xml:space="preserve">
     <value>You cannot uninstall files from the firmware folder. Any missing files could impact your console performance.</value>
@@ -340,7 +340,7 @@
     <value>These files weren't installed to the connected console.</value>
   </data>
   <data name="FILES_REINSTALL" xml:space="preserve">
-    <value>{0} is already installed to: {1}\n\nWould you like to reinstall the files?</value>
+    <value>{0} is already installed to: {1}\n\nDo you want to reinstall the files?</value>
   </data>
   <data name="FILES_UNINSTALLING" xml:space="preserve">
     <value>Uninstalling files...</value>
@@ -403,7 +403,7 @@
     <value>You already have a file with this name in your games.</value>
   </data>
   <data name="FILE_REINSTALL" xml:space="preserve">
-    <value>{0} is already installed.\n\nWould you like to reinstall the file?</value>
+    <value>{0} is already installed.\n\nDo you want to reinstall the file?</value>
   </data>
   <data name="FILE_RENAME" xml:space="preserve">
     <value>Rename File</value>
@@ -555,6 +555,9 @@
   </data>
   <data name="HOW_TO_ACTIVATE_RAP_QUESTION" xml:space="preserve">
     <value>How do I activate a PSN package with a RAP file?</value>
+  </data>
+  <data name="ICON" xml:space="preserve">
+    <value>Icon</value>
   </data>
   <data name="IDLE" xml:space="preserve">
     <value>Idle</value>
@@ -844,17 +847,29 @@
   <data name="MANAGE_IMPORTED_MODS" xml:space="preserve">
     <value>Manage Imported Mods</value>
   </data>
+  <data name="MESSAGE" xml:space="preserve">
+    <value>Message</value>
+  </data>
   <data name="MISSING" xml:space="preserve">
     <value>MISSING</value>
   </data>
   <data name="MOD_NOT_INSTALLED" xml:space="preserve">
-    <value>{0} is not installed on your console.\n\nWould you like to attempt to uninstall the file anyway?</value>
+    <value>{0} is not installed on your console.\n\nDo you want to try uninstalling the file anyway?</value>
+  </data>
+  <data name="MOTHERBOARD" xml:space="preserve">
+    <value>Motherboard</value>
   </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Make sure Neighborhood is installed on your computer</value>
   </data>
   <data name="NOTICE_INSTALL_REBUG_FILES" xml:space="preserve">
     <value>These files are being installed to the firmware folder (dev_rebug) which is for REBUG Custom Firmware only. Please read everything below before proceeding.\n\n- It's recommended to first create a backup of the entire folder before installing any files.\n- Your console must be running Rebug custom firmware.\n- REBUG TOOLBOX must be open during installation\n- Any missing or corrupt files in this folder can impact your console performance.\n- If you have issues after rebooting console, enter recovery mode and reinstall the custom firmware.\n\nOnly continue at your own risk and only if you know what you're doing.\n\nDo you want to continue?</value>
+  </data>
+  <data name="NOTIFY_ICON" xml:space="preserve">
+    <value>Notify Icon</value>
+  </data>
+  <data name="NOTIFY_MESSAGE" xml:space="preserve">
+    <value>Notify Message</value>
   </data>
   <data name="NOT_CONNECTED" xml:space="preserve">
     <value>Not Connected</value>
@@ -989,7 +1004,7 @@
     <value>Restart Required</value>
   </data>
   <data name="RESTART_TAKE_AFFECT" xml:space="preserve">
-    <value>You must restart the application for this change to take effect. Would you like to restart now?</value>
+    <value>You must restart the application for this change to take effect. Do you want to restart now?</value>
   </data>
   <data name="RICH_PRESENCE" xml:space="preserve">
     <value>Rich Presence</value>
@@ -1041,6 +1056,9 @@
   </data>
   <data name="SUCCESS_ROOT_DIRECTORIES" xml:space="preserve">
     <value>Successfully fetched root directories</value>
+  </data>
+  <data name="SYSTEM_TEMPERATURES" xml:space="preserve">
+    <value>System Temperatures</value>
   </data>
   <data name="TITLE_ANNOUNCEMENTS" xml:space="preserve">
     <value>ANNOUNCEMENTS</value>
