@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## Beta v2.1.2
 - Fixed bug when navigating pages
+- Other minor bug fixes and improvements
 
 ## Beta v2.1.1
 - Added Paths tab to Settings
