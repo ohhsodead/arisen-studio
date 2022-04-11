@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## Beta v2.1.2
+- Fixed bug when navigating pages
+
 ## Beta v2.1.1
 - Added Paths tab to Settings
 - Fixed crash when starting application (#62)
