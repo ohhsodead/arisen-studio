@@ -1,6 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## Beta v2.1.2
+- Fixed bug when navigating pages
+- Other minor bug fixes and improvements
+
+## Beta v2.1.1
+- Added Paths tab to Settings
+- Fixed crash when starting application (#62)
+- Fixed showing previous language after restart
+- Improvements to design style
+
 ## Beta v2.1.0
 - Updated FluentFTP package to 37.0.2
 - Updated Humanizer package to 2.14.1
