@@ -51,46 +51,6 @@
                   }
                ]
             },
-            {
-               "Name":"Max Bomb",
-               "Offsets":[
-                  {
-                     "Opcode":"00002000",
-                     "Param1":"0032F7FC",
-                     "Param2":"00000009"
-                  },
-                  {
-                     "Opcode":"00002000",
-                     "Param1":"0032FAD4",
-                     "Param2":"00000009"
-                  },
-                  {
-                     "Opcode":"00002000",
-                     "Param1":"0032F968",
-                     "Param2":"00000009"
-                  }
-               ]
-            },
-            {
-               "Name":"Score (Press Select)",
-               "Offsets":[
-                  {
-                     "Opcode":"00002000",
-                     "Param1":"0032F7C8",
-                     "Param2":"3B9AC9FF"
-                  },
-                  {
-                     "Opcode":"00002000",
-                     "Param1":"0032F934",
-                     "Param2":"3B9AC9FF"
-                  },
-                  {
-                     "Opcode":"00002000",
-                     "Param1":"0032FAA0",
-                     "Param2":"3B9AC9FF"
-                  }
-               ]
-            }
          ]
       },
       {

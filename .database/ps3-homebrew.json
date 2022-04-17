@@ -1,0 +1,1387 @@
+{
+   "LastUpdated":"2022-02-23T01:13:37.126946+01:00",
+   "Mods":[
+      {
+         "Platform":"PS3",
+         "Id":117,
+         "CategoryId":"hg",
+         "Name":"Scogger HD",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"ThatOtherDev",
+         "SubmittedBy":"ohhsodead",
+         "Version":"0.1",
+         "GameMode":"SP",
+         "ModType":"PKG",
+         "Description":"Just move from side to side and avoid the oncoming cylinders. The high score is automatically saved.\n\nControls:\nAnalog sticks = Move",
+         "DownloadFiles":[
+            {
+               "Name":"Scogger HD",
+               "Region":"",
+               "Version":"0.1",
+               "Url":"https://dl.dropbox.com/s/d4zavnm6cvqt96l/Scogger%20HD.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/scogger-hd.pkg.455.v0.1_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":118,
+         "CategoryId":"hg",
+         "Name":"Cylinder Dodge",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"scognito",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.1",
+         "GameMode":"SP",
+         "ModType":"PKG",
+         "Description":"scognito, a homebrew dev, has released Scogger is a simple puzzle style homebrew game that has been created on various platforms such as PSP, DS, Wii, Gamecube, mobile phones and now your lovely hacked PS3",
+         "DownloadFiles":[
+            {
+               "Name":"Cylinder Dodge",
+               "Region":"",
+               "Version":"1.1",
+               "Url":"https://dl.dropbox.com/s/iit4vmabn31wjn3/Cylinder%20Dodge.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/CylinderDodge_v1.1.pkg.418.v1.1_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":120,
+         "CategoryId":"hg",
+         "Name":"BreakOutX",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"Island-Time",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.5",
+         "GameMode":"SP",
+         "ModType":"PKG",
+         "Description":"A homebrew version of brickbreaker.",
+         "DownloadFiles":[
+            {
+               "Name":"BreakOutX",
+               "Region":"",
+               "Version":"1.5",
+               "Url":"https://dl.dropbox.com/s/3t724ggazt6x3xy/BreakOutX.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/BreakOutX_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":121,
+         "CategoryId":"ha",
+         "Name":"Movian (Official/deank)",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"Andreas Smas / deank",
+         "SubmittedBy":"ohhsodead",
+         "Version":"5.0.548 & 5.0.722",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Movian (formerly known as Showtime Media Center) is a media player for use on HTPC media centers. It is primarily intended to be controlled via keypad input such as a IR or bluetooth remote control, keyboards, etc but works also very well with a pointer device.\n\nA quick overview of its features:\n- Playback of video (mkv, mpg, mp4, divx, etc.) and audio files\n- .srt, txt and .sub (Microdvd) subtitles support\n- Per-file and per-folder settings\n- Javascript plugins\n- Unified search\n- View photos and images in slideshow mode\n- Live TV streaming from Tvheadend\n- Icecast/Shoutcast radio streaming\n- Navi-X, YouTube, Opensubtitles integration\n- FTP Server, NTFS support, Temperature monitor\n- FTP client support (Stream content directly from FTP servers)\n- Custom background (via plugin)\n- Support for BIG5 character encoding, On Screen Keyboard layouts.\n\nAvailable on Android, Linux, OS/X, Raspberry Pi and PS3\n\nNote: Movian has its own project site where you can learn and even participate. Also you can download the latest releases in the download page.",
+         "DownloadFiles":[
+            {
+               "Name":"Movian (Official)",
+               "Region":"",
+               "Version":"5.0.548",
+               "Url":"https://dl.dropbox.com/s/7lqszypetmtixcv/Movian%20%28Official%29.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/movian-5.0.548.pkg.197.v5.0.548.pkg"
+               ]
+            },
+            {
+               "Name":"Movian (deank)",
+               "Region":"",
+               "Version":"5.0.720",
+               "Url":"https://dl.dropbox.com/s/0z482kzxy9y7jx7/Movian%20%28deank%29.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/movian-5.0.722-deank-playstation3.pkg.261.v5.0.722"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":122,
+         "CategoryId":"ha",
+         "Name":"Advanced Power Options",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"DeViL303",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.10",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Adds options for rebooting, rebuilding database etc. Also installs a Reload XMB pkg to dev_hdd0/packages/, install that if you want that feature on the menu.\n\nNow works on HEN and CEX/DEX so the name changed to 'Advanced Power Options'",
+         "DownloadFiles":[
+            {
+               "Name":"Advanced Power Options",
+               "Region":"",
+               "Version":"1.10",
+               "Url":"https://dl.dropbox.com/s/iugwh9l5c7ayyeh/Advanced%20Power%20Options.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/Advanced_Power_Options_v1.10.pkg.402.v1.10_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":123,
+         "CategoryId":"ha",
+         "Name":"Extras Category",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"DeViL303",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0.1",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"An XMB Mod that Completely Replaces your Network Category with Custom Items",
+         "DownloadFiles":[
+            {
+               "Name":"Extras Category",
+               "Region":"",
+               "Version":"1.0.1",
+               "Url":"https://dl.dropbox.com/s/wcal9ds8t81c5ur/CEX/DEX%20Extras%20Category.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/CEX/DEX_Extras_Category_Installer_v1.01.pkg.450.v1.0.1_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":124,
+         "CategoryId":"ha",
+         "Name":"HAN Toolbox",
+         "FirmwareType":"HAN",
+         "Region":"",
+         "CreatedBy":"DeViL303 & pink1",
+         "SubmittedBy":"ohhsodead",
+         "Version":"0.10",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"This XMB menu expands the experience of PS3Xploit 3.0 HAN, adding several useful functions and quick links to the exploit originally developed by DeViL303 & pink1",
+         "DownloadFiles":[
+            {
+               "Name":"HAN Toolbox",
+               "Region":"",
+               "Version":"0.10",
+               "Url":"https://dl.dropbox.com/s/vosuvlrb9gden6m/HAN%20Toolbox.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/HAN_Toolbox_v0.7.1_CEX-EN.pkg.736.v0.7.1_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":125,
+         "CategoryId":"ha",
+         "Name":"HEN Toolbox",
+         "FirmwareType":"HEN",
+         "Region":"",
+         "CreatedBy":"DeViL303",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.00 (4.87)",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"New XMB menu with a full set of tools for HEN\n\nONLY FOR HEN 2.2.2 and above, bin needs to be on flash.\n\nHen ToolBox v1.00 (v4) for HFW 4.86 HEN 3.0.1",
+         "DownloadFiles":[
+            {
+               "Name":"HEN Toolbox",
+               "Region":"",
+               "Version":"1.00 (4.87)",
+               "Url":"https://dl.dropbox.com/s/1f4iz2hicdlkxj0/HEN%20Toolbox.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/HEN__Toolbox_v1.00_fw487.pkg.107.v1.00(4.87)_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":126,
+         "CategoryId":"ha",
+         "Name":"HENBrew Store",
+         "FirmwareType":"HEN",
+         "Region":"",
+         "CreatedBy":"ShaolinAssassin",
+         "SubmittedBy":"ohhsodead",
+         "Version":"2019.06.16",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"This installs a set of XML that let you download PS3 homebrew apps directly from XMB.\n\nHBS is now divided into 2 parts\nThe Feed - where apps are listed by release date \nThe Store - where apps are listed by category",
+         "DownloadFiles":[
+            {
+               "Name":"HENBrew Store",
+               "Region":"",
+               "Version":"2019.06.16",
+               "Url":"https://dl.dropbox.com/s/qckrmqll6fw5jea/HENBrew%20Store.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/HENBrew_Store.pkg.861.v2019.06.16_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":127,
+         "CategoryId":"ha",
+         "Name":"IRISMAN Full Edition",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"various",
+         "SubmittedBy":"ohhsodead",
+         "Version":"4.88",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Iris Manager fork including latest mamba from NzV..\n\nCredits:\n- Iris Manager: Estwald / D_skywalk\n- IRISMAN: aldostools\n- Unofficial IRISMAN Updates: Joonie / Alexander\n\n- Mamba support by Estwald, NzV, Rancid-O, Joonie, Habib, aldostools, Zar, littlebalup, KW, Alexander, Haxxxen, Evilnat, deank, Team Cobra\n- Zip, rar, 7z support by bucanero",
+         "DownloadFiles":[
+            {
+               "Name":"IRISMAN Full Edition",
+               "Region":"",
+               "Version":"4.88",
+               "Url":"https://dl.dropbox.com/s/tpmu019c4smzfz3/IRISMAN%20Full%20Edition.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/IRISMAN_4.88.pkg.188.v4.88.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":128,
+         "CategoryId":"ha",
+         "Name":"MambaPRX Loader (Unofficial)",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"various",
+         "SubmittedBy":"ohhsodead",
+         "Version":"4.84.2",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"MAMBA/PRX Loader is a homebrew that allows you to load MAMBA and/or VSH plugins (with MAMBA or PRX Loader) by two different ways : at system boot or after boot (from XMB).\n\nIt provides almost all the features of a CEX/DEX Cobra on a regular CEX/DEX.\n\nFull Mamba support from CEX/DEX 4.46 to 4.84 CEX / DEX.\nPartial support (no PS2ISO/PSPISO) on CEX/DEX 3.55, 4.21 to 4.41 CEX/DEX/n\nNote: This application is not supported on consoles with noBD. ",
+         "DownloadFiles":[
+            {
+               "Name":"MambaPRX Loader (Unofficial)",
+               "Region":"",
+               "Version":"4.84.2",
+               "Url":"https://dl.dropbox.com/s/ic40k8a0xkefp3g/MambaPRX%20Loader%20%5Bunofficial%5D.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/MAMBA_PRX_Loader_4.84.2.pkg.722.v4.84.2_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":129,
+         "CategoryId":"ha",
+         "Name":"ManaGunZ",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"zar",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.39",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"This is another Backup Manager made from the ground. It allows you to mount a backup stored in your USB device or in the internal hdd as a virtual Blue-Ray using 4 differents UI : 'List', 'Grid', 'XMB' and 'Flow'. ",
+         "DownloadFiles":[
+            {
+               "Name":"ManaGunZ",
+               "Region":"",
+               "Version":"1.38",
+               "Url":"https://dl.dropbox.com/s/o630hymjzwf0u2k/ManaGunZ.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/ManaGunZ_v1.39.pkg.324.v1.39.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":130,
+         "CategoryId":"ha",
+         "Name":"OpenPS3FTP",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"jjolano",
+         "SubmittedBy":"ohhsodead",
+         "Version":"4.2a",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"OpenPS3FTP is an open source ftp server for the PS3. It has an implementation of most ftp commands and also supports most ftp clients. It has some compliance to the ftp RFC.\n\nDefault login details:\n- username: root\n- any password is accepted unless if the passwd file (containing the password) exists",
+         "DownloadFiles":[
+            {
+               "Name":"OpenPS3FTP",
+               "Region":"",
+               "Version":"4.2a",
+               "Url":"https://dl.dropbox.com/s/hos293c5qlgof6i/OpenPS3FTP.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/NPXS91337.pkg.846.v4.2a_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":131,
+         "CategoryId":"ha",
+         "Name":"prepNTFS",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"deank",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.01",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Prepare NTFS drives for webMAN access. prepNTFS reads the /PS3ISO, /PSXISO, /DVDISO and /BDISO folders (PS3 Games, DVD Video and Blu-ray movies) in your NTFS external drive and allows to mount and play your ISOS using webMAN 1.24 and later. ",
+         "DownloadFiles":[
+            {
+               "Name":"prepNTFS",
+               "Region":"",
+               "Version":"1.01",
+               "Url":"https://dl.dropbox.com/s/ug729o4zsn4c28q/prepNTFS.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/prepNTFS.pkg.569.v1.01_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":132,
+         "CategoryId":"ha",
+         "Name":"PS2 Classics Manager",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"CaptainCPS-X",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.02",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"PS2 Classics Manager is a tool that helps users manage their PS2 games collection and convert them easily to PS2 Classics encrypted format.\n\nMain Features (Quick List)\n- Set PS2 converted games active in PS2 Classics Placeholder\n- Encrypt valid PS2 ISO(s) / BIN(s) as PS2 Classics and automatically patch LIMG segment (no need for anything else, just the ISO / BIN)\n- Import External PS2 games (ISO / BIN / ENC). Split games supported (.ISO.66600 / .BIN.66600 / .ENC.66600)\n- Game List with display of Cover images, Information box, Title ID, Title acquired from a text DB and more.\n- Memory Cards manager to easily switch between your collection of VME, and assign them as SLOT 1 or SLOT 2.\n- Automatic export / decryption of the active Memory Cards to XMB->Memory Card Utility as VM2.\n…more at the change log. ",
+         "DownloadFiles":[
+            {
+               "Name":"PS2 Classics Manager",
+               "Region":"",
+               "Version":"1.02",
+               "Url":"https://dl.dropbox.com/s/wfr4ed4zg6fr7uy/PS2%20Classics%20Manager.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/PS2_CLASSIC_MANAGER_1.02_[20130411]_CEX4XX_UPD.pkg.207.v1.02_brewology_com.pkg",
+                  "/dev_hdd0/packages/[PS2U10000]_PS2_Classics_Placeholder_R3.pkg.237.v1.00_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":133,
+         "CategoryId":"ha",
+         "Name":"PS2 ISO Launcher",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"HABIB",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.03",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"This Placeholder is used to launch PS2 ISO or PS2 Classic Format games on nonBC PS3 CEX/DEX enabled Consoles.\n\n**Requires Activation (AIO Download)\nhttps://mega.nz/#!p9QFTBpA!vezmFjP9HvXnx91oMxh6RYksQosEr8NdoAiBCbsM6FY ",
+         "DownloadFiles":[
+            {
+               "Name":"PS2 ISO Launcher",
+               "Region":"",
+               "Version":"1.03",
+               "Url":"https://dl.dropbox.com/s/4g6b4w036dhhucw/PS2%20ISO%20Launcher.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/ISO_LAUNCHER_1.03.pkg.231.v1.03_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":134,
+         "CategoryId":"ha",
+         "Name":"PS2 Launcher (REBUG Edition)",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"Rebug Team",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.00",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"PS2 ISO / Classic Launcher for PS3 consoles non-Backward Compatible (with PS2) is a tool that allows to launch PS2 ISOs and PS2 Classics. It's a work around to fix the wireless pad sync issues on CEX/DEX 4.65.\n\n* PS2 Launcher is equivalent to PS2 Classic Place holder [they both do the same function]. ",
+         "DownloadFiles":[
+            {
+               "Name":"PS2 Launcher (REBUG Edition)",
+               "Region":"",
+               "Version":"1.00",
+               "Url":"https://dl.dropbox.com/s/5wady8orvfge77g/PS2%20Launcher%20REBUG%20Edition.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/PS2_Launcher_REBUG_Edition.pkg.192.v1.00_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":135,
+         "CategoryId":"ha",
+         "Name":"PS3 EXTRANET",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"0_obeWAN",
+         "SubmittedBy":"ohhsodead",
+         "Version":"2.10",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Web portal for PlayStation 3 with links to Homebrew, managers, mods, ...\n\nThis package will allow you access to the PS3 EXTRANET portal in 12 languages to choose:\nArabic, Brasil (Portuguese), Chinese, Dutch, English, French, Italian, Japan, Norwegian, Russian, Spanish, Swedish. ",
+         "DownloadFiles":[
+            {
+               "Name":"PS3 EXTRANET",
+               "Region":"",
+               "Version":"2.10",
+               "Url":"https://dl.dropbox.com/s/pjwygqu4pijl8b2/PS3%20EXTRANET.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/PS3_EXTRANET_Installer_Multi.pkg.398.v2.10_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":136,
+         "CategoryId":"ha",
+         "Name":"PSN Patch (Stealth)",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"KW",
+         "SubmittedBy":"ohhsodead",
+         "Version":"2017.02B",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"PSNPatch WITH COBRA PLUGIN\nfor 4.XX CEX/DEX COBRA & NON-COBRA Editions\n\nThis is a small app made by KW and inspired in the works of stoker25 (psidpatch) and user (psnope).\n\nThe major objective is to spoof the console Id and disable CEX/DEX syscalls extensions in order to make your system more 'safe' to go into the PSN. (Note that MORE safe doesn't mean IT IS safe !). It also deletes the boot history execution.\n\nThe optional cobra plugins unloads from memory after activation.\n\nHow to Use (Summary by kozarovv)\nGeneral rule is to install psn patch ----> run ----> go to toolbox (select) ----> install psnpatch plugin. After that restart your PS3. Ir's one time process, now your psn access should be locked until you use L3+R3+R2 from the XMB.\n\nSo generally you need to mount game, use combo, run game. That's all, but remember that if you want to change game or run ANY homebrew. You need to first restart your ps3 to lock psn access, and remember there is no 100% that you will don't get ban.\n\n\nA new homebrew blocker is included in the psnpatch plugin - in the plugin only.\nIt is enabled by default.\nIf you don't want to use it, go into psnpatch xmb application, toolbox menu, and disable it there.\nThe homebrew blocker blocks home brew excution when CEX/DEX Syscalls are disabled.\nExecution will be locked until the next reboot.\nThe homebrew blocker runs in cobra, near-cobra (mamba) and non-cobra systems.\nThis implementation is compatible with eventually future cobra updates for core homebrew blockers.\n\nThe approach used is detailed in the homebrew_blocker module source code included in this pasnpatch distribution\n\nIt was heavily tested, namely simulating crashes, forced reboots, recovery menu accesses, file system recovery and database rebuilds. Up to know is failsafe proof, but as usual there is no warranty ;)\n\nDownload PSN Patch 2017.02/B: www.sendspace.com/file/8wbzhf\n\nOFFICIAL SUPPORT FORUM psx-place.com",
+         "DownloadFiles":[
+            {
+               "Name":"PSN Patch (Stealth)",
+               "Region":"",
+               "Version":"2017.02B",
+               "Url":"https://dl.dropbox.com/s/0po9zy9nv3mdfxv/PSN%20Patch%20%28Stealth%29.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/psnpatch_2017.02B.pkg.423.v2017.02B_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":137,
+         "CategoryId":"ha",
+         "Name":"REBUG TOOLBOX Multi",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"Joonie86",
+         "SubmittedBy":"ohhsodead",
+         "Version":"02.03.05",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Rebug Toolbox is an application designed to complete the full function of REBUG REX EDITION",
+         "DownloadFiles":[
+            {
+               "Name":"REBUG TOOLBOX Multi",
+               "Region":"",
+               "Version":"02.03.05",
+               "Url":"https://dl.dropbox.com/s/5uwfre1uc2b4yy3/REBUG%20TOOLBOX%20Multi.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/REBUG_TOOLBOX_02.03.05.MULTI.16.pkg.668.v02.03.05_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":138,
+         "CategoryId":"ha",
+         "Name":"SEN Enabler",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"Evilnat",
+         "SubmittedBy":"ohhsodead",
+         "Version":"6.2.7",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Allows to enable PSN/SEN access with other options available.\n\nWorks on all CFW, Normal, Rebug, Cobra and DEX.\nDo NOT install on HEN.\n\n** A NO BAN IS NOT GUARANTEED, USE WITH CAUTION **",
+         "DownloadFiles":[
+            {
+               "Name":"SEN Enabler",
+               "Region":"",
+               "Version":"6.2.7",
+               "Url":"https://dl.dropbox.com/s/46h9lt0s9vzyc55/SEN%20Enabler.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/SEN_Enabler_v6.2.7_[CEX-DEX]_[4.87].pkg.690.v6.2.7_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":139,
+         "CategoryId":"ha",
+         "Name":"Showtime Disc Access",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"andbey0nd",
+         "SubmittedBy":"ohhsodead",
+         "Version":"11.0",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Allows Showtime to play all your backup videos/music from optical data discs (DVD-R/RW, CD-R/RW, BD-R/RE) which usually are not accessible from Showtime. Adds support for screenshots of movies while Showtime is playing, remote access to Showtime via 'Remote Play' and play music from XMB [Music] column while Showtime is displaying photo slideshow.",
+         "DownloadFiles":[
+            {
+               "Name":"Showtime Disc Access",
+               "Region":"",
+               "Version":"11.0",
+               "Url":"https://dl.dropbox.com/s/ex8g1fd1opqre6t/Showtime%20Disc%20Access.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/stDISC11.pkg.294.v11.0_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":140,
+         "CategoryId":"ha",
+         "Name":"webMAN MOD",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"aldostools",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.47.38",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"webMAN MOD is a homebrew plugin with many features added on the original webMAN/sMAN by Deank. We wanted to integrate most of the existing features available on the PS3 Scene like an AIO plugin, and webMAN MOD was born.\n\n\n- For content stored remotely on PC use ps3netsrv_20190701.zip\n- For ROMS support install ROMS/PKG Launcher and RetroArch.\n- For NTFS support on lite edition, scan content with prepNTFS\n- For PS2 Classics games install the CONFIG database & PS2 Classics Launcher\n- For PSP ISO install both PSP launchers for Minis & Remasters\n\n\nVisit the Official GitHub repository for additional add-ons, source code and previous versions",
+         "DownloadFiles":[
+            {
+               "Name":"webMAN MOD",
+               "Region":"",
+               "Version":"1.47.36",
+               "Url":"https://dl.dropbox.com/s/7va193whg8b8117/webMAN%20MOD.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/webMAN_MOD_1.47.38_Installer.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":141,
+         "CategoryId":"ha",
+         "Name":"What's New on PSX-Place",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"DeViL303",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"This XMB mod for Rebug 4.81 brings a PSX-Place news feed to your XMB, it shows the latest 30 items, and at the bottom there is 3 extra links to some handy scene sites. ",
+         "DownloadFiles":[
+            {
+               "Name":"What's New on PSX-Place",
+               "Region":"",
+               "Version":"1.0",
+               "Url":"https://dl.dropbox.com/s/lb6eep1qvsoe9no/Whats%20New%20on%20PSX-Place.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/Whats_New_on_PSX-Place_v1.00.pkg.719.v1.00_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":142,
+         "CategoryId":"ha",
+         "Name":"Retro Homebrew Collection (Nintendo NES)",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"STLcardsWS",
+         "SubmittedBy":"ohhsodead",
+         "Version":"Vol. 2",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Here comes Volume #2 of the Retro Homebrew Collection, be sure to check back at Vol. 1 where we covered the immortal Atari 2600 and many of the great Homebrew Games that can be played on a Homebrew Enabled PS3 Console. Now in this latest volume we are exploring some of the Games created by various developers for the iconic console Nintendo NES console. In this edition I have included over 60 games, that range from Puzzle, Adventure, Shooters and more can be found in this collections to a little something for everyone.\n\nRetro Homebrew Collections Vol. 2: Nintendo NES Edition: ​\n\nThis is the 2nd Volume of PSX-Place.com 's Retro Homebrew Collection contains over 60+ Nintendo NES Homebrew Games. You can find the previous edition (Retro Homebrew Collections Vol. 1: Atari 2600 Edition) via this link . This collection uses emulation from 'RetroArch's - Netsopia core' and is packed into a standalone emulator with various homebrew roms from around the NES communities. Thus again this collection proves no console scene is ever dead... We hope you enjoy Vol. 2 and please gives us some feedback how we can improve Vol. 3 and also what Retro Console would you like to see featured.\n\nPackage Contents:\n\nA Standalone Nestopia RetroArch Emulator\nCustom Main-Menu Skin\n62 NES Homebrew Games (by various developer's)\nSingle-Page DDS Manual (NES Controls)\n\nHow to load Homebrew Games?\n\nDownload the PKG.\nInstall 'Retro Homebrew Collections Vol. 2: Nintendo NES Edition' via install package files\nScroll to 'Retro Homebrew Collection Vol. 2' and start the app.\nOnce in RetroArch's Main-Menu, scroll to 'Load Content (Nestopia)'\nSelect one of the 62 games on the list and Enjoy :) ..",
+         "DownloadFiles":[
+            {
+               "Name":"Retro Homebrew Collection (Nintendo NES)",
+               "Region":"",
+               "Version":"Vol. 2",
+               "Url":"https://dl.dropbox.com/s/ec6nkudpqcn0yfw/Retro%20Homebrew%20Collection%20Vol.%202.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/Retro_Homebrew_Collection_Vol._2_-_Nintendo_NES_Edition.pkg.399.vol._2_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":143,
+         "CategoryId":"ha",
+         "Name":"Retro Homebrew Collection (Atari 2600)",
+         "FirmwareType":"CEX/DEX/HEN",
+         "Region":"",
+         "CreatedBy":"STLcardsWS",
+         "SubmittedBy":"ohhsodead",
+         "Version":"Vol. 1",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"One of the best things about Homebrew Development is the Games & Emulation along with the creativity that comes from many homebrew projects. With the power of emulation we can not only explore the Homebrew Games created for the PS3, but also play all the Retro Homebrew Games designed for other Retro Systems, These Homebrew Communities continue to evolve even 30+ years after the consoles has been discontinued .Proving that no Console Scene is dead. In this First Edition of PSX-Place.com: Retro Homebrew Collection we [break]ss[/break] are going to take a look at some of the great homebrews games created for the classic Atari 2600.\n\nAbout: Retro Homebrew Collections\n\nThis is a collection of Homebrew Creations for the Atari 2600. Thanks to emulators on the PS3 (RetroArch) we can enjoy these many Homebrew Games that were created for Retro Consoles. Most of these titles have been released in the recent months/years proving that no console scene is dead. In this Ps3 installable PKG file it will installed a stripped down RetroArch v1.0.0.2 that only contains the Stella libretro core (emulator for Atari 2600). With 24 Homebrew Roms that are listed below .. Stay tuned for Volume II, comment below on what you think should be the systems we cover next .......",
+         "DownloadFiles":[
+            {
+               "Name":"Retro Homebrew Collection (Atari 2600)",
+               "Region":"",
+               "Version":"Vol. 1",
+               "Url":"https://dl.dropbox.com/s/cwomn6zx5nl28s6/Retro%20Homebrew%20Collection%20Vol.%201.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/Retro_Homebrew_Collection_Vol_1_-_Atari_2600_Edition.pkg.295.vol._1_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":144,
+         "CategoryId":"hg",
+         "Name":"Five Nights at Freddy's",
+         "FirmwareType":"CEX/DEX/HEN",
+         "Region":"",
+         "CreatedBy":"Sandroron",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "ModType":"PKG",
+         "Description":"This is Work in Progress Port of the popular Survival Horror Five Nights at Freddy's, which is a point and click style game. Originally developed by Scott Cawthon for Android, IOS and other devices back in August of 2014. The game was developed using Lua Player for PS3, just like other recent ports Flappy Bird Family and Swing Copters by Sandroron.",
+         "DownloadFiles":[
+            {
+               "Name":"Five Nights at Freddy's",
+               "Region":"",
+               "Version":"1.0",
+               "Url":"https://dl.dropbox.com/s/uwhgq27dgozgl8p/Five%20Nights%20at%20Freddy%27s.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/FNaF_2nd_Preview.pkg.929.v1.0_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":145,
+         "CategoryId":"hg",
+         "Name":"Flappy Birds Family",
+         "FirmwareType":"CEX/DEX/HEN",
+         "Region":"",
+         "CreatedBy":"Sandroron",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "ModType":"PKG",
+         "Description":"This is a PS3Lua Port Flappy Bird (by sandroron), the first known PS3 Game to be developed on the PS3Lua Player. Flappy Bird is a very popular indie game that has been ported to nearly every gaming console ranging from the Atari 2600 to now the PlayStation 3.\n\n<a href=\"https://psx-place.com/ps3-news/366/flappy-birds-family-v10-by-sandroron.html\">psx-place.com/ps3-news/366/flappy-birds-family-v10-by-sandroron.html</a>",
+         "DownloadFiles":[
+            {
+               "Name":"Flappy Birds Family",
+               "Region":"",
+               "Version":"1.0",
+               "Url":"https://dl.dropbox.com/s/t20cgxhjaerw9j9/Flappy%20Birds%20Family.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/Flappy_Birds_Family_v1.0_by_Sandroron.pkg.324.v1.0_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":146,
+         "CategoryId":"hg",
+         "Name":"Ps3UserCheat",
+         "FirmwareType":"CEX/DEX/HEN",
+         "Region":"",
+         "CreatedBy":"oct0xor",
+         "SubmittedBy":"ohhsodead",
+         "Version":"2.3",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"PS3USERCHEAT(CHT dongle) is an another revolutionary product from PS3BREAK TEAM, used WORLD NEW TECHNOLOGY. Meanwhile it is also the world's first dongle that supports PS3 game roms and PS3 AR cheat perfectly. That is to say, when you use it, you don't need to buy the expensive genuine blu-ray game CD, just need to have some free game roms. You will be invincible in the game because of special effects while simultaneously have never experienced such extraordinary feeling. Main functions:\n1. A unique global cheat dongle for 3.55 CEX/DEX.\n2. Infinite health, infinite ammo, invincibility.\n3. Powerful multi-level coding, unique code.\n4. Support psn games cheat.",
+         "DownloadFiles":[
+            {
+               "Name":"Ps3UserCheat",
+               "Region":"",
+               "Version":"2.3",
+               "Url":"https://dl.dropbox.com/s/o9a2sgltoncoqa2/Ps3UserCheat.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/ps3usercheat.pkg.558.v2.3_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":151,
+         "CategoryId":"ha",
+         "Name":"Atari Emulator",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"Strange-Clouds",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"This is a popular PS3 Emulator",
+         "DownloadFiles":[
+            {
+               "Name":"Atari Emulator",
+               "Region":"",
+               "Version":"1.0",
+               "Url":"https://dl.dropbox.com/s/6r12wozw8a8iv4q/Atari%20Emulator.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/stella-3.3-ps3-release3-CEX/DEX.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":195,
+         "CategoryId":"ha",
+         "Name":"Apollo Save Tool",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"Bucanero",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.6.4",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Apollo Save Tool is an application to manage save-game files on the PlayStation 3.\n\nThe apollo-ps3 homebrew app allows to download, unlock, patch and resign save-game files directly on your PS3.",
+         "DownloadFiles":[
+            {
+               "Name":"Apollo Save Tool",
+               "Region":"",
+               "Version":"1.6.4",
+               "Url":"https://dl.dropbox.com/s/kqwuvt4ktufx8c6/Apollo%20Save%20Tool.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/apollo-ps3.pkg.170.v1.6.4_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":195,
+         "CategoryId":"ha",
+         "Name":"Unlock HDD Space",
+         "FirmwareType":"CEX/DEX/HEN",
+         "Region":"",
+         "CreatedBy":"3141card",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"This tool by 3141card unlocks up to 8% extra of the total space on the internal HDD of the PS3. Run it again to restore the original settings if necessary.\n\nYou use this app at your own risk! It works on CFW and HEN.\n\nAll credits to einsteinx2 on psx-place.com for his great tutorial.",
+         "DownloadFiles":[
+            {
+               "Name":"Unlock HDD Space",
+               "Region":"",
+               "Version":"1.4.6",
+               "Url":"https://dl.dropbox.com/s/gy79fsf8hn4jif8/Unlock%20HDD%20Space.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/Unlock_HDD_Space.pkg.372.v1.0.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":196,
+         "CategoryId":"ha",
+         "Name":"reActPSN",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"ccregame",
+         "SubmittedBy":"ohhsodead",
+         "Version":"3.20",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"reActPSN is a backup launcher and OFFLINE PSN license generator. This tool lets you backup and restore the licenses of your games without any private information. It can fix selfs and edats, and convert PS2 isos to PS2 Classics.",
+         "DownloadFiles":[
+            {
+               "Name":"reActPSN",
+               "Region":"",
+               "Version":"3.20",
+               "Url":"https://dl.dropbox.com/s/bwpu0qfmiqx5j6c/reActPSN%20v3.20.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/reActPSN V3.20+ 4.85.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":199,
+         "CategoryId":"ha",
+         "Name":"PKGi",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"bucanero",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.2.2",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"PKGi PS3 is a PlayStation 3 port of PSVita pkgi.",
+         "DownloadFiles":[
+            {
+               "Name":"PKGi",
+               "Region":"",
+               "Version":"1.2.2",
+               "Url":"https://dl.dropbox.com/s/thbx4qdh2h246fj/PKGi.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/pkgi-ps3.pkg.485.v1.2.2_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":200,
+         "CategoryId":"ha",
+         "Name":"ArtemisPS3",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"Dnawrkshp",
+         "SubmittedBy":"ohhsodead",
+         "Version":"6.2",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Artemis PS3 Hacking System is a collection of open-source, free applications that allows you to apply Netcheat codes to many of your favorite games with ease.\n\nvr6 bucanero",
+         "DownloadFiles":[
+            {
+               "Name":"ArtemisPS3",
+               "Region":"",
+               "Version":"6.2",
+               "Url":"https://dl.dropbox.com/s/agq2wz9cf2jj3vl/ArtemisPS3.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/ArtemisPS3-GUI.pkg.274.vr6.2_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":201,
+         "CategoryId":"ha",
+         "Name":"RetroArch",
+         "FirmwareType":"DEX",
+         "Region":"",
+         "CreatedBy":"Themaister/TwinAphex",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.8.4",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"RetroArch is a modular multi-system emulator system that is designed to be fast, lightweight, and portable. It has features few other emulators frontends have, such as real-time rewinding and game-aware shading.\n\n46 Cores:\n- 2048\n- Arcade (FinalBurn Neo)\n- FBA Alpha 2012 (multiple systems including: Neo Geo, CPS-1, CPS-2, CPS-3, Sega System 16 and System 18)\n- FCEU-MM (NES/Famicom)\n- FreeIntv (Mattel - Intellivision)\n- Fuse (ZX Spectrum)\n- Gambatte (Game Boy Color)\n- GearBoy (Game Boy Color)\n- Gearsystem (Sega Master System / Game Gear)\n- Genesis Plus GX (Sega Genesis/Megadrive)\n- GW (Handheld Electronic)\n- Handy (Atari Lynx)\n- Magnavox - Odyssey2 / Phillips Videopac+ (O2EM)\n- MAME 2000 / 2003 / 2003+ (Multiple Arcade Machine Emulator)\n- Mednafen Lynx (Atari Lynx)\n- Mednafen NGP (NeoGeo Pocket)\n- Mednafen PCE Fast (PC Engine)\n- Mednafen Supergrafx (Beetle SGX)\n- Mednafen VB (Virtual Boy)\n- Mednafen WSwam (WonderSwam)\n- mGBA (Game Boy Advance)\n- Nestopia (NES/Famicom)\n- NXEngine (Cave Story)\n- Outrun Game Engine (Cannonball)\n- Palm OS (Mu)\n- PokeMini (Nintendo - Pokémon Mini)\n- PRBoom (Doom)\n- ProSystem (Atari 7800)\n- QuickNES (NES/Famicom)\n- SNES9x 2005 / SNES9x 2010 (Super Nintendo)\n- Stella (Atari 2600)\n- TGB Dual (Game Boy Color)\n- TyrQuake (Quake 1)\n- VBA Next (Game Boy Advance)\n- Vectrex (VECX)\n- Virtual Jaguar",
+         "DownloadFiles":[
+            {
+               "Name":"RetroArch",
+               "Region":"",
+               "Version":"1.8.4",
+               "Url":"https://dl.dropbox.com/s/mz2qy7wpdj39qsk/RetroArchPS3.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/RetroArch.PS3.DEX.PS3.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":202,
+         "CategoryId":"ha",
+         "Name":"ScummVM",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"ScummVM Team",
+         "SubmittedBy":"ohhsodead",
+         "Version":"2.2.0",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"ScummVM is an emulator for the PS3 and other platforms originally designed to play LucasArts adventure games that use the SCUMM system. It also supports a variety of non-SCUMM games by companies like Revolution Software and Adventure Soft.",
+         "DownloadFiles":[
+            {
+               "Name":"ScummVM",
+               "Region":"",
+               "Version":"2.2.0",
+               "Url":"https://dl.dropbox.com/s/n9i71mi3hg2nnmw/ScummVM.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/scummvm-ps3.pkg.408.v2.2.0_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":203,
+         "CategoryId":"ha",
+         "Name":"MAME",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"Ole",
+         "SubmittedBy":"ohhsodead",
+         "Version":"0.125",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"MAME ported to PS3 compiled by using psl1ght v.2 sdk\n\nFeatures:\n- full set of games, although only older / smaller games are playable\n- simple selection of games (no rescanning or installation, just select the game zip file and off you go!)\n- TATE mode switch in the initial menu\n- HW rendering using arcade shader\n- sonfigurable scanlines (off, 10 - 100 % intensity)\n- TV set switch: 16/9 or 4/3\n- 2 player support\n- configurable button layout for individual player\n- sound in 48000 kHz ",
+         "DownloadFiles":[
+            {
+               "Name":"MAME",
+               "Region":"",
+               "Version":"0.125",
+               "Url":"https://dl.dropbox.com/s/8urfg5gtfidmlsn/MAME.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/MAME0125_install.pkg.815.v0.125_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":204,
+         "CategoryId":"ha",
+         "Name":"IDPSet",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"zar",
+         "SubmittedBy":"ohhsodead",
+         "Version":"0.92",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"IDPSet is a tool to make CEX and DEX dump and you can permanently change your console IDPS (NAND and NOR) and change the PSID too. You just have to run IDPSet on your CEX/DEX (with eid_root_key and valid idps.bin on the root of your USB key).\n\nIt can generate a DEX and CEX dump of the current NOR/NAND that is compatible with the REBUG switch CEX<->DEX function. Easy to use, Windows is not needed! ",
+         "DownloadFiles":[
+            {
+               "Name":"IDPSet",
+               "Region":"",
+               "Version":"0.92",
+               "Url":"https://dl.dropbox.com/s/5y9obzydg1fyfmt/IDPSet.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/IDPSet_v0.92.pkg.732.v0.92_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":205,
+         "CategoryId":"ha",
+         "Name":"Control Fan Utility",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"Estwald",
+         "SubmittedBy":"ohhsodead",
+         "Version":"4.86",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Control Fan Utility is an application that let you set the speed of the fan for your PS3 console or install a payload that runs behind games and controls the fan speed to keep the temperature under a certain reading.\n\nThe utility is intended to work on CEX/DEX CEX/DEX 3.41, 3.55, 4.21, 4.30, 4.31, 4.40, 4.41, 4.46, 4.50, 4.53, 4.55, 4.60, 4.65, 4.66, 4.70, 4.75, 4.76, 4.78, 4.80, 4.81, 4.82,4.83,4.84,4.85",
+         "DownloadFiles":[
+            {
+               "Name":"Control Fan Utility",
+               "Region":"",
+               "Version":"4.86",
+               "Url":"https://dl.dropbox.com/s/he3umy1ql090yt3/Control%20Fan%20Utility.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/control_fan_utility.pkg.268.v4.86_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":207,
+         "CategoryId":"ha",
+         "Name":"gameDATA Tool",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"andbey0nd",
+         "SubmittedBy":"ohhsodead",
+         "Version":"2.0",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Homebrew application\nADVERTISEMENT\nthat lets you switch [game data] locations, between internal and external\ngameDATA app for PS3:\nAllows the user to switch location of [game data] between internal HDD and first external USB HDD\nAllows to install PSN games (or any application/pkg) to external USB HDD\nAllows to get back to normal mode when you use 'Ext. Game Data' option in multiMAN\nAllows saving space on internal HDD\nHow to use after you install gameDATA.pkg:\nMake sure that no payloads are loaded (do a clean PS3 restart).\n1) If you wish to install stuff to external USB - launch the app from 'Game Data Mode: [HDD]'\n2) You're now in USB MODE (the icon will change to USB device with 'Game Data Mode: [USB]' title\n3) Install PSN games or launch games - their data will go to the external USB HDD/stick\n4) Play your PSN (or disc) games from external USB device\n5) Once you're done with the game, either reboot your PS3 or launch the 'Game Data Mode: [USB]' to get back to normal mode\n\ngameDATA Tool Rev. 2 CHANGELOG:\nInstalls on all connected USB drives (but uses the first detected USB for the game-data storage)\nWorks properly after a clean PS3 start (when no payloads are preloaded by other tools/managers) (bugfix from rev 1)\nSupports all firmwares: MFW/CEX/DEX 3.41, 3.55, including Cobra 3.55 and TrueBlue 3.55 (utilizing syscall35)\nSmaller in size (124KB on internal HDD and 47KB on external USB)\nProps to Jay-jay for extending its features",
+         "DownloadFiles":[
+            {
+               "Name":"gameDATA Tool",
+               "Region":"",
+               "Version":"2.0",
+               "Url":"https://dl.dropbox.com/s/rx7h5v2m73aucpx/gameDATA%20Tool.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/gameDATA2.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":208,
+         "CategoryId":"hg",
+         "Name":"Sketch Fight",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"andbey0nd",
+         "SubmittedBy":"ohhsodead",
+         "Version":"0.1",
+         "GameMode":"SP",
+         "ModType":"PKG",
+         "Description":"Change log (0.1):\nThis is a first version of something I have put together for the soon closing Scenery Beta 2011 international homebrew showcase.\n\nSketch Fight is a simple two player fighting game with crudely done hand drawn graphics that are intended to look like something a person would doodle when trying to cope with the mind numbing repetition and tedium that is school.\n\nI only have one PS3 controller at the moment so I haven't been able to test it properly... Let me know if it isn't controlling correctly.\n\nEdit: Apparently when a second controller is connected both controllers effect both players. So it is pretty much unplayable. I'll probably buy a second controller sometime soon so that I can test multiplayer games myself.\nPS3 controls:\n\nLeft directional button = Move left\nRight directional button = Move right\nDown directional button = Move crouch\nX button = Jump\nSquare button = punch\nCircle button = kick",
+         "DownloadFiles":[
+            {
+               "Name":"Sketch Fight",
+               "Region":"",
+               "Version":"0.1",
+               "Url":"https://dl.dropbox.com/s/3ev3lzq9nxg51zo/Sketch%20Fight.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/SketchFight v0.1.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":214,
+         "CategoryId":"hg",
+         "Name":"Super Mario War",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"blckbearx",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.8_r7a",
+         "GameMode":"SP",
+         "ModType":"PKG",
+         "Description":"Super Mario War PS3 Port by lachrymose, updated to work without the need of copying the game files to '/dev_hdd0/' or a USB stick. Resigned to 3.55 to work with HEN.\nTested on:\n- SuperSlim on HFW 4.84.2 using HEN v2.0.0.\n- SuperSlim on HFW 4.85.1 using HEN v3.0.0.\n\nChanges:\nr5:\nUNINSTALL PREVIOUS VERSION BEFORE INSTALLING 1.8_r7a\n-Now it's only 24MB! (deleted a lot of unused leftover files)\n-Source available on GitHub\n\nr4:\n(20/11/2019)\n-EBOOT got f*cked when repacking, recompiled and resigned it. Now it should work fine.\n(18/11/2019)\n-Made a background with game assets so it fits better the game\n-Fixed the game icon (again)\n\nand that's it, I just couldn't stand the previous icon/wallpaper.\n\nr3:\n- Automatically installs 'smw' folder to '/dev_hdd0/game/SMW00PS33/USRDIR/' and code changed to read that folder from there.\n- Fixed XMB icon proportions.\n- Added XMB wallpaper.\n- Changed name in PARAM.SFO from 'SuperMarioWar' to 'Super Mario War'\n\nThanks to lachrymose for making the first port and @aldostools for the 25 directory depth psn_package_npdrm.exe (thanks to that I was able to add the 'smw' folder in USRDIR).",
+         "DownloadFiles":[
+            {
+               "Name":"Super Mario War",
+               "Region":"",
+               "Version":"1.8_r7a",
+               "Url":"https://dl.dropbox.com/s/4l5f6xdt1tf4re8/Super%20Mario%20War.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/Super_Mario_War_1.8_r7a.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":216,
+         "CategoryId":"ha",
+         "Name":"XMB Mods Collection",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"0_obeWAN",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Disk image (iso) allowing the install and change\n- coldboots\n- XMB waves\n- PSN icons\n- XMB fonts",
+         "DownloadFiles":[
+            {
+               "Name":"XMB Mods Collection",
+               "Region":"",
+               "Version":"1.0",
+               "Url":"https://dl.dropbox.com/s/9hkqd9bx9psi69y/XMB%20Mods%20Collection.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/PS3EXTRA_XMB_mods_collection.pkg.935.v1.0_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":249,
+         "CategoryId":"ha",
+         "Name":"PS3 4K Pro",
+         "FirmwareType":"CEX/DEX/HEN",
+         "Region":"",
+         "CreatedBy":"Luan Teles",
+         "SubmittedBy":"ohhsodead",
+         "Version":"5.1",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"It's a Collection Of Mods that Changes the PS3™ System Look:​\n\n- PS4™ Boot Sounds.\n- PS4™ GameBoot Sounds.\n- PS4™ XMB Sounds.\n- PS4™ PS Store Icon.\n- PS4™ System Fonts.\n- PS4™ Browser Navigation Buttons.\n- PS4™ Game Format Tags.\n- PS3™ 4K Pro Boot Logo.\n- PS3™ 4K Pro GameBoot Logo.\n- PS3™ 4K Pro System Texts.\n- PSP™ Wave Background.\n- PSP™ Colors Background.\n- PSP™ System Colors.\n- PS Vita™ Music Controls Background.\n- PS Vita™ Video Controls Background.\n- PS Vita™ Photos Controls Background.\n- Added: Improved Particles in The Wave Background.\n- Added: New Background Clock Bar\n- Added: New Animated Clock Icon\n- Added: Facebook Icon under Network.\n- Added: Advanced Reboot Options under Users Category.\n- Added: PS3™ 4K Pro Theme under Themes.\n- Added: '2160p'* Resolution Option in Output Resolutions.\n- Added: PS3™ 4K Pro Logo in About Game Options.\n- Added: PS3™ 4K Pro in System Credits.\n- Added: PS4™ Loading Style Animation in Information Page.\n- Added: Boost Mode.\n- Added: Side Menu Animations.\n- Added: Buttons Animations.\n- Added: New Impose Screen.\n- Added: New Battery Level Indicators\n- ~ Full=Green, Half=Yellow, Weak=Orange, Empty=Red.\n- - New Controller Indicators.\n- ~ 1=Red, 2=Blue, 3=Green, 4=Yellow.\n- Added: Music Online Player.\n- Added: PodCast Online Player.\n- Added: Video Online Player.\n- Added: TV Online Player.\n- Added: Manga Reader.\n- Added: Screen Saver Mode.\n- New Notification Background.\n- New Icon for PSN.\n- New Icon for Throphies.\n- New Icon for Online Folder\n- New Icon for My Games.\n- New Icon for File Manager.\n- New Icon for RetroArch XMB.\n- New Icon for Pkg Launcher.\n- New Icon for PSP™ Launcher.\n- New Icon for MultiMan.\n- Translated Debug Options for All Languages.\n- Translated System Reboot for All Languages.\n- Priority Apps Bubbles.Read Me:\n\n#Possible Issues:\n\n-Issue #1 : Not Enough Space\n-Fix:\n      CEX/DEX: Go to dev_blind/rebug/package/ and delete the PKG\n      HEN: Reinstall the HFW\n\nReason:\n      CEX/DEX: Cobra includes the REBUG TOOLBOX inside the flash, not having free space.\n      HEN: Some mods install flash files, leaving it full.\n\n\n-Issue #2 : Size and Destination Files are Different\n-Fix:  \n      HEN/CEX/DEX: Go to dev_hdd0/game/PROTOOLBX and delete it\n\nReason: It checks every file beeing installed, if different it will not allow it, since the installer isn't mine\ni can't disable this.\n\nEVERY NEW VERSION NUMBER VERSION, 5.XX to 5,X+1.X THIS STEP NEEDS TO BE DONE.\n\n======================================================================================\n\nDEX USERS\n\ndelete dev_blind/rebug/packages/ The rebug toolbox.pkg inside of it\n\ndev_blind/vsh/modules:\n\nvsh.self.cexsp\nvsh.self.swap\nxmb_plugin.cex\nsysconf_plugin.cex\n\nMAKE SURE THAT YOU SELECTED YOUR DESIRED VSH/DEBUG SETTINGS TYPE IN THE REBUG TOOLBOX.\n\nSince you won't be able to swap it again,\n\nThere isn't really a thing that i can do about it, since DEX has swap files inside the flash and 0MB available.\n\n\nI don't feel like replacing then with 0byte files, but maybe i can do it, since most of normal users will not touch it",
+         "DownloadFiles":[
+            {
+               "Name":"PS3 4K Pro (CFW)",
+               "Region":"",
+               "Version":"5.1",
+               "Url":"https://dl.dropbox.com/s/zwos2a8ko9xjtvu/PS3%204K%20Pro%20%28CFW%29.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/[CFW] PS3 4K Pro v5.1.pkg"
+               ]
+            },
+            {
+               "Name":"PS3 4K Pro (HEN)",
+               "Region":"",
+               "Version":"5.1",
+               "Url":"https://dl.dropbox.com/s/benoer1r77z769t/PS3%204K%20Pro%20%28HEN%29.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/[HEN] PS3 4K Pro v5.1.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":280,
+         "CategoryId":"ha",
+         "Name":"Minus 18MB",
+         "FirmwareType":"DEX",
+         "Region":"",
+         "CreatedBy":"Sean",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.00",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"This package does something magic, it installs 18MB of free space onto your dev_flash partition. The package is actually 18MB in size too funnily enough. :)\n\nIt uses some dark quantum power that has been hidden from us for centuries by hard drive companies, to actually add free space instead of taking it away. If there is any interest, I might consider releasing a 1TB free space adjuster package for dev_hdd0 :-p\n\nThis uses a little trick, when Minus_18MB installs you will gain 18MB of free space on flash, and you will find a new package in dev_hdd0/packages/ called 'Plus_18MB.pkg' , Install that and you will lose your free space again. More magic.\n\nNOTE 1: This is not an 'installer' application, this pkg installs the free space directly in one step from package manager to dev_blind. Due to that, this package file needs dev_blind to be enabled before install or it can not adjust the free space, you have been warned. :)\n\nThanks to @aldostools and @lmn7 for their work on force_install_to packages.\n\nNOTE 2: This is only tested on the latest Rebug (4.84.2 REX) but it should work fine on other recent CEX/DEX, just 2 whats new icons will turn red if not on Rebug. When restoring using the Plus_18MB.pkg it actually restores the 4.84 REX hknw_plugin.sprx, so if you are not on Rebug 4.84 REX, you can restore by installing CEX/DEX again. USE AT YOUR OWN RISK!",
+         "DownloadFiles":[
+            {
+               "Name":"Minus 18MB",
+               "Region":"",
+               "Version":"1.00",
+               "Url":"https://dl.dropbox.com/s/198ac4obojklxwh/Minus%2018MB.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/Minus_18MB.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":281,
+         "CategoryId":"ha",
+         "Name":"Extended Download Plugin",
+         "FirmwareType":"HEN",
+         "Region":"",
+         "CreatedBy":"Sean",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.01",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Here is v1.01 of the Extended Download Plugin HEN Edition\n\nThis allows any file type to be downloaded to any mounted writable partition. This will only download to dev_hdd0 properly when you have HEN enabled. This adds the required xml and icons, HEN does the rest.\n\nIf you are on CEX/DEX use the one made for CEX/DEX that adds the patched sprx = HERE\n\nThis is the exact same as the CEX/DEX edition except it has one more path added = dev_hdd0/hen/, and it does not include the sprx as its already built into HEN as a RAM patch.\n\nThis requires version 2.0.1 MOD of PS3 HEN which can be got HERE\n\nIf you are on newer HEN 2.0.2 or newer, then you don't need this, as it's included in the HEN PKG.\n\nNOTE: There might be bugs, so use at your own risk.\n\nKnown bug: Background downloading does not work fully for unknown file types, They will download fully, but they will stay in dev_hdd0/vsh/task/xxxxxxxx/ , they will also say 99% on the XMB even though they are actually 100%.\n\nThis has paths added to dev_hdd0, and a media section which allows direct downloads into dev_hdd0/photo, dev_hdd0/video and dev_hdd0/music. All items now have custom icons and a warning symbols on all dev_blind paths.",
+         "DownloadFiles":[
+            {
+               "Name":"Extended Download Plugin",
+               "Region":"",
+               "Version":"1.01",
+               "Url":"https://dl.dropbox.com/s/awmml4lzejsnxw8/Extended%20Download%20Plugin.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/Extended_Download_Plugin_HEN_Edition_v1.01.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":282,
+         "CategoryId":"ha",
+         "Name":"Podcast Player",
+         "FirmwareType":"CEX/DEX/HEN/HAN",
+         "Region":"",
+         "CreatedBy":"Sean",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.00",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Just a small simple XMB mod that adds queries to the category_music.xml for podcast packages at dev_hdd0/game/PODCASTxx/USRDIR/podcast.xml\n\nNotes: dev_blind must be enabled to install this pkg. Its compatible with CEX/DEX and HEN/HAN.",
+         "DownloadFiles":[
+            {
+               "Name":"Podcast Player",
+               "Region":"",
+               "Version":"1.00",
+               "Url":"https://dl.dropbox.com/s/27edjc8bnmzhfwi/Podcast%20Player.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/Podcast_Enabler.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":289,
+         "CategoryId":"hg",
+         "Name":"OpenSupaplex",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"sergiou87",
+         "SubmittedBy":"ohhsodead",
+         "Version":"7.1.2",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"OpenSupaplex is a 1:1 reimplementation of the original game 'Supaplex', with just a few changes to make it easy to use with game controllers, and also easy to port to any platform.\n\nThe game was developed in the early 90's. Since then the source code has been lost. Some enthusiasts have disassembled the game, fixed many bugs, and added many features.",
+         "DownloadFiles":[
+            {
+               "Name":"OpenSupaplex",
+               "Region":"",
+               "Version":"7.1.2",
+               "Url":"https://dl.dropbox.com/s/dppmru17rtr9kk4/OpenSupaplex%20v7.1.2.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/OpenSupaplex-ps3-v7.1.2.pkg.331.v7.1.2_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":290,
+         "CategoryId":"ha",
+         "Name":"Simple File Manager",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"sergiou87",
+         "SubmittedBy":"ohhsodead",
+         "Version":"0.5.2",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Simple file manager for PS3 that supports on exFAT and FAT file systems.",
+         "DownloadFiles":[
+            {
+               "Name":"Simple File Manager",
+               "Region":"",
+               "Version":"0.5.2",
+               "Url":"https://dl.dropbox.com/s/ccua67m9g2t5bo2/Simple%20File%20Manager.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/sfm_ps3.pkg.222.v0.5.2_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":291,
+         "CategoryId":"ha",
+         "Name":"MONSTER Manager",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"sergiou87",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.07",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Another backup manager based on the open source project Iris Manager. ",
+         "DownloadFiles":[
+            {
+               "Name":"MONSTER Manager",
+               "Region":"",
+               "Version":"1.07",
+               "Url":"https://dl.dropbox.com/s/nhlng72zh9tktof/MONSTER%20Manager.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/MONSTER-adds-107-CEX/DEXPS3_4.86.pkg.731.v1.07_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":292,
+         "CategoryId":"ha",
+         "Name":"Play Manager",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"_Slash_",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.12",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"Another backup manager based on the open source project Iris Manager.",
+         "DownloadFiles":[
+            {
+               "Name":"Play Manager",
+               "Region":"",
+               "Version":"1.12",
+               "Url":"https://dl.dropbox.com/s/09jw2khnf77czj6/Player%20Manager.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/Play_Manager_v1.12.pkg.490.v1.12_brewology_com.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":310,
+         "CategoryId":"ha",
+         "Name":"WikiStore",
+         "FirmwareType":"CEX/DEX",
+         "Region":"",
+         "CreatedBy":"TheWizWikii",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0.8",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"What is it:\n\nModified version of the Original HAN Toolbox (unofficial add-on for PS3Xploit) This is a Fr33shop / Store where you can download PSX, PS2, PSP, PS3 PSN games and Exclusives directly from your PS3 console. You will have access to Hombrew downloads, retro emulators and a lot of modifications for your console. In addition, you will be able to make use of all the exploits from the XMB menu without the need to access the console's internet browser or use a pc (local host).\nOn which consoles and firmwares it works:\n\nWIKISTORE is compatible with all PS3 consoles (All models) either FAT / SLIM / SUPER SLIM in the following firmwares: 4.86 HFW or 4.86 CFW Rebug LITE\n\nWIKISTORE\nHow to install:\n\nHere you have a list with all the available pkg's and what each one installs.\nPKG What installs each of these PKGs\n15.280_Licenses.pkg Install the PSN license pack of Games and DLCs of PS3, PS2, PSX, PSP of all life (Not Recommended)\n15,280 Licensess.zip License Pack to be installed separately manually to the exdata folder of the USB or HDD (Recommended)\nFix_CFW_486_REBUG_LITE.pkg Installs a fix in case WIKISTORE is not displayed in this specific CFW\nFix_HFW_486_HEN.pkg Installs a fix in case WIKISTORE is displayed on the console only HFW / HEN\nWIKISTORE_CFW_1.0.8.pkg WIKISTORE installer for CFW\nWIKISTORE_HFW_1.0.8.pkg WIKISTORE Installer for HFW 'HEN'\n\nWebMAN MOD is needed to use all the WIKISTORE functions you can download it from the Aldo repository https://github.com/aldostools/webMAN-MOD/releases or from this post https://dl.itstime2play.com/threads/webman -mod-v1-47-28-plugin.7 /\n\nCredits:\n\n# PS3XploitTeam (esc0rtd3w - Habib - bguerville) official HEN and tools http://ps3xploit.com/\n# DeVil303 (Official HAN / HEN Toolbox) and some usefull apps\n# pink1 (Official HAN Toolbox)\n# Berion (some icons)\n# ShaolinAssassin (contribution in HAN Toolbox)\n# lmn7 (Exploits Offline and Make pkg custom)\n# Joonie (HFW 4.86 and contributions)\n# Louay (Bluetooth & USB Headset)\n# Ignacio (Many contri",
+         "DownloadFiles":[
+            {
+               "Name":"WikiStore (CEX/DEX)",
+               "Region":"",
+               "Version":"1.0.8",
+               "Url":"https://dl.dropbox.com/s/hcyo4b49ktodkjb/WikiStore%20%5BCFW%5D.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/WIKISTORE_CFW_1.0.8.pkg",
+                  "/dev_hdd0/packages/Fix_CFW_486_REBUG_LITE.pkg",
+                  "/dev_hdd0/packages/15.280_Licencias.pkg"
+               ]
+            },
+            {
+               "Name":"WikiStore (HEN)",
+               "Region":"",
+               "Version":"1.0.8",
+               "Url":"https://dl.dropbox.com/s/axqd1o4m95kixjm/WikiStore%20%5BHEN%5D.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/WIKISTORE_HFW_1.0.8.pkg",
+                  "/dev_hdd0/packages/Fix_HFW_486_HEN.pkg",
+                  "/dev_hdd0/packages/15.280_Licencias.pkg"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":369,
+         "CategoryId":"ha",
+         "Name":"Ultimate Toolbox",
+         "FirmwareType":"CEX/DEX/HEN",
+         "Region":"",
+         "CreatedBy":"DeViL303",
+         "SubmittedBy":"ohhsodead",
+         "Version":"2.03",
+         "GameMode":"",
+         "ModType":"PKG",
+         "Description":"This is a collection of new and old mods and patches/ A lot made by DeViL303 and some gathered from all over the PS3 scene. This Toolbox makes it easier to apply lots of common firmware patches and visual XMB modifications and more.",
+         "DownloadFiles":[
+            {
+               "Name":"Ultimate Toolbox (FULL)",
+               "Region":"",
+               "Version":"2.03",
+               "Url":"https://dl.dropbox.com/s/s980dy7iqioy18v/Ultimate%20Toolbox%20%28FULL%29.zip?raw=true",
+               "InstallPaths":[
+                  "/dev_hdd0/packages/Ultimate_Toolbox_v2.03_FULL_version.pkg"
+               ]
+            }
+         ]
+      }
+   ]
+}
