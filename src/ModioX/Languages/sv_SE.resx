@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -144,11 +144,17 @@
   <data name="AUTOMATION" xml:space="preserve">
     <value>Automatisering</value>
   </data>
+  <data name="AUTO_DELETE_FILES_AFTER_INSTALLING" xml:space="preserve">
+    <value>Ta automatiskt bort lokala filer efter installation</value>
+  </data>
   <data name="AUTO_DETECT_GAME_REGIONS" xml:space="preserve">
     <value>Identifiera spelregioner automatiskt*</value>
   </data>
   <data name="AUTO_DETECT_GAME_TITLES" xml:space="preserve">
     <value>Identifiera speltitlar automatiskt</value>
+  </data>
+  <data name="AUTO_LOAD_DIRECTORY_LISTINGS" xml:space="preserve">
+    <value>Ladda kataloglistor automatiskt</value>
   </data>
   <data name="BACKUP_FILES" xml:space="preserve">
     <value>Säkerhetskopiera Filer</value>
@@ -266,12 +272,6 @@
   </data>
   <data name="DISCONNECT_LOWERCASE" xml:space="preserve">
     <value>Koppla från</value>
-  </data>
-  <data name="DOWNLOADED" xml:space="preserve">
-    <value>Nedladdad</value>
-  </data>
-  <data name="DOWNLOADING" xml:space="preserve">
-    <value>Laddar ner</value>
   </data>
   <data name="DOWNLOADING_GAME_SAVE" xml:space="preserve">
     <value>Laddar ner Spelsparning</value>
@@ -578,7 +578,7 @@
     <value>Sätt i en USB-enhet till datorn först och installera sedan filerna igen.</value>
   </data>
   <data name="INSERT_USB_DEVICE_TO_CONSOLE" xml:space="preserve">
-    <value>En eller flera filer måste installeras på en USB-enhet som är ansluten till konsolen.\nSätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars klickar du på "Nej" för att ignorera USB-filerna.</value>
+    <value>En eller flera filer måste installeras på en USB-enhet som är ansluten till konsolen.\nSätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars klickar du på "Nej" för att ignorera dessa filer.</value>
   </data>
   <data name="INSTALLED" xml:space="preserve">
     <value>Installerad</value>
@@ -640,6 +640,9 @@
   <data name="LABEL_APPLY" xml:space="preserve">
     <value>Tillämpa</value>
   </data>
+  <data name="LABEL_ASCENDING" xml:space="preserve">
+    <value>Stigande</value>
+  </data>
   <data name="LABEL_BASE_DIRECTORY" xml:space="preserve">
     <value>Baskatalog</value>
   </data>
@@ -688,6 +691,9 @@
   <data name="LABEL_DELETE" xml:space="preserve">
     <value>Radera</value>
   </data>
+  <data name="LABEL_DESCENDING" xml:space="preserve">
+    <value>Fallande</value>
+  </data>
   <data name="LABEL_DESCRIPTION" xml:space="preserve">
     <value>Beskrivning</value>
   </data>
@@ -700,11 +706,17 @@
   <data name="LABEL_DOWNLOAD" xml:space="preserve">
     <value>Ladda ner</value>
   </data>
+  <data name="LABEL_DOWNLOADED" xml:space="preserve">
+    <value>Nedladdad</value>
+  </data>
   <data name="LABEL_DOWNLOADED_ON" xml:space="preserve">
     <value>Nerladdad den</value>
   </data>
+  <data name="LABEL_DOWNLOADING" xml:space="preserve">
+    <value>Laddar ner</value>
+  </data>
   <data name="LABEL_DOWNLOADS" xml:space="preserve">
-    <value>NEDLADDNINGAR</value>
+    <value>Nerladdningar</value>
   </data>
   <data name="LABEL_FAVORITE" xml:space="preserve">
     <value>Favorit</value>
@@ -718,6 +730,9 @@
   <data name="LABEL_FILE_SIZE" xml:space="preserve">
     <value>Filstorlek</value>
   </data>
+  <data name="LABEL_GAME" xml:space="preserve">
+    <value>Spel</value>
+  </data>
   <data name="LABEL_GAME_CHEATS" xml:space="preserve">
     <value>Spelfusk</value>
   </data>
@@ -730,6 +745,9 @@
   <data name="LABEL_GAME_SAVES" xml:space="preserve">
     <value>Spelsparningar</value>
   </data>
+  <data name="LABEL_HIDE_FAVORITES" xml:space="preserve">
+    <value>Dölj Favoriter</value>
+  </data>
   <data name="LABEL_HOMEBREW" xml:space="preserve">
     <value>Homebrew</value>
   </data>
@@ -741,6 +759,9 @@
   </data>
   <data name="LABEL_INSTALLED" xml:space="preserve">
     <value>Installerad</value>
+  </data>
+  <data name="LABEL_INSTALLED_ON" xml:space="preserve">
+    <value>Installerad den</value>
   </data>
   <data name="LABEL_IP_ADDRESS" xml:space="preserve">
     <value>IP-Adress</value>
@@ -814,8 +835,20 @@
   <data name="LABEL_RESOURCES" xml:space="preserve">
     <value>Resurser</value>
   </data>
+  <data name="LABEL_SHOW_FAVORITES" xml:space="preserve">
+    <value>Visa Favoriter</value>
+  </data>
   <data name="LABEL_SIZE" xml:space="preserve">
     <value>Storlek</value>
+  </data>
+  <data name="LABEL_SORT_BY" xml:space="preserve">
+    <value>Sortera efter</value>
+  </data>
+  <data name="LABEL_SORT_OPTIONS" xml:space="preserve">
+    <value>Sorteringsalternativ</value>
+  </data>
+  <data name="LABEL_SORT_ORDER" xml:space="preserve">
+    <value>Sorteringsordning</value>
   </data>
   <data name="LABEL_STATUS" xml:space="preserve">
     <value>Status</value>
@@ -825,6 +858,9 @@
   </data>
   <data name="LABEL_SYSTEM_TYPE" xml:space="preserve">
     <value>Systemtyp</value>
+  </data>
+  <data name="LABEL_TOTAL_FILES" xml:space="preserve">
+    <value>Totalt antal filer</value>
   </data>
   <data name="LABEL_TYPE" xml:space="preserve">
     <value>Typ</value>
@@ -888,9 +924,6 @@
   </data>
   <data name="NOT_CONNECTED" xml:space="preserve">
     <value>Inte Ansluten</value>
-  </data>
-  <data name="NOT_INSTALLED" xml:space="preserve">
-    <value>Inte Installerad</value>
   </data>
   <data name="NOT_SUPPORTED_GAME_REGION" xml:space="preserve">
     <value>Spelregionen stöds inte.</value>
@@ -1010,10 +1043,19 @@
     <value>Du kommer nu att omdirigeras till vår GitHub Issues sida och alla detaljer kommer automatiskt att fyllas i åt dig. Ange information om problemet för att hjälpa oss att åtgärda ditt problem.\nKlicka på "Skicka" knappen för att öppna ett nytt ärende som kan hjälpa oss att lösa eventuella problem.</value>
   </data>
   <data name="REFER_TO_BASE_DIRECTORY" xml:space="preserve">
-    <value>Använd %BASE_DIR% för att referera till baskatalogen.</value>
+    <value>Använd %BASE_DIR% för att hänvisa till Baskatalogen.</value>
   </data>
   <data name="REINSTALL_FILE" xml:space="preserve">
     <value>Installera om Fil</value>
+  </data>
+  <data name="REMEMBER_CONSOLE_DIRECTORY_PATH" xml:space="preserve">
+    <value>Kom ihåg senaste konsolens sökväg</value>
+  </data>
+  <data name="REMEMBER_GAME_REGIONS_WHEN_INSTALLING" xml:space="preserve">
+    <value>Kom ihåg spelregioner vid installation*</value>
+  </data>
+  <data name="REMEMBER_LOCAL_DIRECTORY_PATH" xml:space="preserve">
+    <value>Kom ihåg senaste sökväg för lokal katalog</value>
   </data>
   <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
     <value>Filer har installerats på en USB-enhet som är ansluten till konsolen. Du kan antingen avinstallera dem nu eller manuellt ta bort dem.\n\nOm du vill avinstallera filerna nu, ansluta samma USB-enhet som du installerade moddarna på till samma port på konsolen och klicka på "Ja" för att fortsätta.\nOm du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer kommer att ignoreras.</value>
