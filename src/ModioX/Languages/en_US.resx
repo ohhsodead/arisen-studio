@@ -144,11 +144,17 @@
   <data name="AUTOMATION" xml:space="preserve">
     <value>Automation</value>
   </data>
+  <data name="AUTO_DELETE_FILES_AFTER_INSTALLING" xml:space="preserve">
+    <value>Automatically delete local files after installing</value>
+  </data>
   <data name="AUTO_DETECT_GAME_REGIONS" xml:space="preserve">
     <value>Automatically detect game regions*</value>
   </data>
   <data name="AUTO_DETECT_GAME_TITLES" xml:space="preserve">
     <value>Automatically detect game titles</value>
+  </data>
+  <data name="AUTO_LOAD_DIRECTORY_LISTINGS" xml:space="preserve">
+    <value>Automatically load directory listings</value>
   </data>
   <data name="BACKUP_FILES" xml:space="preserve">
     <value>Backup Files</value>
@@ -246,6 +252,9 @@
   <data name="DELETE_ITEM_SUCCESS" xml:space="preserve">
     <value>Successfully deleted item.</value>
   </data>
+  <data name="DIRECTORIES_MUST_BE_WRITABLE" xml:space="preserve">
+    <value>All directories must be writable.</value>
+  </data>
   <data name="DIRECTORY_EMPTY" xml:space="preserve">
     <value>Empty Directory</value>
   </data>
@@ -263,12 +272,6 @@
   </data>
   <data name="DISCONNECT_LOWERCASE" xml:space="preserve">
     <value>Disconnect</value>
-  </data>
-  <data name="DOWNLOADED" xml:space="preserve">
-    <value>Downloaded</value>
-  </data>
-  <data name="DOWNLOADING" xml:space="preserve">
-    <value>Downloading</value>
   </data>
   <data name="DOWNLOADING_GAME_SAVE" xml:space="preserve">
     <value>Downloading Game Save</value>
@@ -540,8 +543,8 @@
   <data name="HELP" xml:space="preserve">
     <value>HELP</value>
   </data>
-  <data name="HOWTO_GUIDE" xml:space="preserve">
-    <value>How-To Guides for ModioX</value>
+  <data name="HELP_TRANSLATE" xml:space="preserve">
+    <value>Help translate ModioX on Crowdin</value>
   </data>
   <data name="HOW_TO_ACTIVATE_DEMO" xml:space="preserve">
     <value>Activating a C00/Demo package is very easy and doesn't require a rap file. It can be done using ReActPSN or PSNPatch.\n\nReActPSN : Run the homebrew while pressing and holding circle on your controller.
@@ -575,7 +578,7 @@
     <value>Insert a USB device to your computer first and then install the files again.</value>
   </data>
   <data name="INSERT_USB_DEVICE_TO_CONSOLE" xml:space="preserve">
-    <value>One or more files needs to be installed to a USB device whch is connected to your console.\nInsert a USB device to your console and click 'Yes' to continue. Otherwise click 'No' to ignore the USB files.</value>
+    <value>One or more files needs to be installed to a USB device which is connected to your console.\nInsert a USB device to your console and click 'Yes' to continue. Otherwise click 'No' to ignore these files.</value>
   </data>
   <data name="INSTALLED" xml:space="preserve">
     <value>Installed</value>
@@ -637,6 +640,12 @@
   <data name="LABEL_APPLY" xml:space="preserve">
     <value>Apply</value>
   </data>
+  <data name="LABEL_ASCENDING" xml:space="preserve">
+    <value>Ascending</value>
+  </data>
+  <data name="LABEL_BASE_DIRECTORY" xml:space="preserve">
+    <value>Base Directory</value>
+  </data>
   <data name="LABEL_BYTES" xml:space="preserve">
     <value>Bytes</value>
   </data>
@@ -682,6 +691,9 @@
   <data name="LABEL_DELETE" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="LABEL_DESCENDING" xml:space="preserve">
+    <value>Descending</value>
+  </data>
   <data name="LABEL_DESCRIPTION" xml:space="preserve">
     <value>Description</value>
   </data>
@@ -694,8 +706,17 @@
   <data name="LABEL_DOWNLOAD" xml:space="preserve">
     <value>Download</value>
   </data>
+  <data name="LABEL_DOWNLOADED" xml:space="preserve">
+    <value>Downloaded</value>
+  </data>
   <data name="LABEL_DOWNLOADED_ON" xml:space="preserve">
     <value>Downloaded On</value>
+  </data>
+  <data name="LABEL_DOWNLOADING" xml:space="preserve">
+    <value>Downloading</value>
+  </data>
+  <data name="LABEL_DOWNLOADS" xml:space="preserve">
+    <value>Downloads</value>
   </data>
   <data name="LABEL_FAVORITE" xml:space="preserve">
     <value>Favorite</value>
@@ -709,6 +730,9 @@
   <data name="LABEL_FILE_SIZE" xml:space="preserve">
     <value>File Size</value>
   </data>
+  <data name="LABEL_GAME" xml:space="preserve">
+    <value>Game</value>
+  </data>
   <data name="LABEL_GAME_CHEATS" xml:space="preserve">
     <value>Game Cheats</value>
   </data>
@@ -721,6 +745,9 @@
   <data name="LABEL_GAME_SAVES" xml:space="preserve">
     <value>Game Saves</value>
   </data>
+  <data name="LABEL_HIDE_FAVORITES" xml:space="preserve">
+    <value>Hide Favorites</value>
+  </data>
   <data name="LABEL_HOMEBREW" xml:space="preserve">
     <value>Homebrew</value>
   </data>
@@ -732,6 +759,9 @@
   </data>
   <data name="LABEL_INSTALLED" xml:space="preserve">
     <value>Installed</value>
+  </data>
+  <data name="LABEL_INSTALLED_ON" xml:space="preserve">
+    <value>Installed On</value>
   </data>
   <data name="LABEL_IP_ADDRESS" xml:space="preserve">
     <value>IP Address</value>
@@ -805,8 +835,20 @@
   <data name="LABEL_RESOURCES" xml:space="preserve">
     <value>Resources</value>
   </data>
+  <data name="LABEL_SHOW_FAVORITES" xml:space="preserve">
+    <value>Show Favorites</value>
+  </data>
   <data name="LABEL_SIZE" xml:space="preserve">
     <value>Size</value>
+  </data>
+  <data name="LABEL_SORT_BY" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="LABEL_SORT_OPTIONS" xml:space="preserve">
+    <value>Sort Options</value>
+  </data>
+  <data name="LABEL_SORT_ORDER" xml:space="preserve">
+    <value>Sort Order</value>
   </data>
   <data name="LABEL_STATUS" xml:space="preserve">
     <value>Status</value>
@@ -816,6 +858,9 @@
   </data>
   <data name="LABEL_SYSTEM_TYPE" xml:space="preserve">
     <value>System Type</value>
+  </data>
+  <data name="LABEL_TOTAL_FILES" xml:space="preserve">
+    <value>Total Files</value>
   </data>
   <data name="LABEL_TYPE" xml:space="preserve">
     <value>Type</value>
@@ -853,9 +898,6 @@
   <data name="LAUNCH_FILE_PATH" xml:space="preserve">
     <value>launch.ini File Path</value>
   </data>
-  <data name="MANAGE_IMPORTED_MODS" xml:space="preserve">
-    <value>Manage Imported Mods</value>
-  </data>
   <data name="MESSAGE" xml:space="preserve">
     <value>Message</value>
   </data>
@@ -882,9 +924,6 @@
   </data>
   <data name="NOT_CONNECTED" xml:space="preserve">
     <value>Not Connected</value>
-  </data>
-  <data name="NOT_INSTALLED" xml:space="preserve">
-    <value>Not Installed</value>
   </data>
   <data name="NOT_SUPPORTED_GAME_REGION" xml:space="preserve">
     <value>Game region isn't supported.</value>
@@ -1003,8 +1042,20 @@
   <data name="REDIRECT_TO_GITHUB_ISSUES" xml:space="preserve">
     <value>You will now be redirected to our GitHub Issues page and all details will be automatically filled for you. Please provide information about the issue to help us fix your problem.\nClick the 'Submit' button to open a new issue which can help us fix any problems.</value>
   </data>
+  <data name="REFER_TO_BASE_DIRECTORY" xml:space="preserve">
+    <value>Use %BASE_DIR% to refer to the Base Directory.</value>
+  </data>
   <data name="REINSTALL_FILE" xml:space="preserve">
     <value>Reinstall File</value>
+  </data>
+  <data name="REMEMBER_CONSOLE_DIRECTORY_PATH" xml:space="preserve">
+    <value>Remember last console directory path</value>
+  </data>
+  <data name="REMEMBER_GAME_REGIONS_WHEN_INSTALLING" xml:space="preserve">
+    <value>Remember game regions when installing*</value>
+  </data>
+  <data name="REMEMBER_LOCAL_DIRECTORY_PATH" xml:space="preserve">
+    <value>Remember last local directory path</value>
   </data>
   <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
     <value>Files have been installed to a USB device connected to your console. You can either uninstall them now or manually delete them.\n\nIf you would like to uninstall the files now, connect the same USB device you installed the mods to into the same port of your console and click 'Yes' to continue.\nIf you don't want to uninstall the files, click 'No' and all of these files will be ignored.</value>
@@ -1026,6 +1077,9 @@
   </data>
   <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
     <value>This mod type (Script) can't be installed on the PS3 because it needs the user manual addition.</value>
+  </data>
+  <data name="SETUP_HOWTO_GUIDE" xml:space="preserve">
+    <value>How-To Guides for ModioX</value>
   </data>
   <data name="SETUP_PROFILES_EDIT" xml:space="preserve">
     <value>Edit Console Profiles</value>
@@ -1102,8 +1156,14 @@
   <data name="TITLE_GAME_MODS" xml:space="preserve">
     <value>GAME MODS</value>
   </data>
+  <data name="TITLE_GAME_SAVES" xml:space="preserve">
+    <value>GAME SAVES</value>
+  </data>
   <data name="TITLE_GET_STARTED" xml:space="preserve">
     <value>GET STARTED</value>
+  </data>
+  <data name="TITLE_HELP" xml:space="preserve">
+    <value>HELP</value>
   </data>
   <data name="TITLE_HOMEBREW" xml:space="preserve">
     <value>HOMEBREW</value>
@@ -1128,6 +1188,9 @@
   </data>
   <data name="TITLE_RESOURCES" xml:space="preserve">
     <value>RESOURCES</value>
+  </data>
+  <data name="TITLE_SETTINGS" xml:space="preserve">
+    <value>SETTINGS</value>
   </data>
   <data name="TITLE_SPECIAL_THANKS" xml:space="preserve">
     <value>SPECIAL THANKS</value>
