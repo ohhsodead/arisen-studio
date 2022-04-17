@@ -7,7 +7,7 @@ The elegant, powerful, and open-source mod manager. ModioX allows you to easily 
 
 ![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/DashboardPage.png?raw=true)
 
-![Mods Page](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/ModsPage.png?raw=true)
+![Mods Page](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/GameModsPage.png?raw=true)
 
 **Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/FTCS3Xu)!
 
