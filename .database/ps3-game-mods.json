@@ -5025,7 +5025,7 @@
                   "/dev_hdd0/game/{REGION}/USRDIR/update.rpf"
                ]
             }
-        ]
+         ]
       },
       {
          "Platform":"PS3",
@@ -5051,7 +5051,7 @@
                   "/dev_hdd0/tmp/PUv2.sprx"
                ]
             }
-        ]
+         ]
       },
       {
          "Platform":"PS3",
@@ -7546,7 +7546,7 @@
             }
          ]
       },
-	  {
+      {
          "Platform":"PS3",
          "Id":371,
          "CategoryId":"th",
@@ -7571,7 +7571,7 @@
             }
          ]
       },
-	  {
+      {
          "Platform":"PS3",
          "Id":372,
          "CategoryId":"gta5",
@@ -7596,7 +7596,7 @@
             }
          ]
       },
-	  {
+      {
          "Platform":"PS3",
          "Id":373,
          "CategoryId":"codmw1",
@@ -7620,7 +7620,7 @@
                   "/dev_hdd0/tmp/Retribution.sprx"
                ]
             },
-			{
+            {
                "Name":"Retribution Menu (BLUS30072)",
                "Region":"BLUS30072",
                "Version":"2.0",
@@ -7632,7 +7632,7 @@
             }
          ]
       },
-	  {
+      {
          "Platform":"PS3",
          "Id":374,
          "CategoryId":"codmw1",
@@ -7658,7 +7658,7 @@
             }
          ]
       },
-	  {
+      {
          "Platform":"PS3",
          "Id":375,
          "CategoryId":"codmw1",
