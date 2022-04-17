@@ -347,8 +347,8 @@
       },
       {
          "Title":"Plugins",
-         "Id":"plugins",
-         "Type":"plugins",
+         "Id":"plugin",
+         "Type":"plugin",
          "Regions":[
 
          ]
