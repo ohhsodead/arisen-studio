@@ -246,6 +246,9 @@
   <data name="DELETE_ITEM_SUCCESS" xml:space="preserve">
     <value>Lyckades ta bort objektet.</value>
   </data>
+  <data name="DIRECTORIES_MUST_BE_WRITABLE" xml:space="preserve">
+    <value>Alla kataloger måste vara skrivbara.</value>
+  </data>
   <data name="DIRECTORY_EMPTY" xml:space="preserve">
     <value>Tom Katalog</value>
   </data>
@@ -540,8 +543,8 @@
   <data name="HELP" xml:space="preserve">
     <value>HJÄLP</value>
   </data>
-  <data name="HOWTO_GUIDE" xml:space="preserve">
-    <value>Guider för ModioX</value>
+  <data name="HELP_TRANSLATE" xml:space="preserve">
+    <value>Hjälp till att översätta ModioX på Crowdin</value>
   </data>
   <data name="HOW_TO_ACTIVATE_DEMO" xml:space="preserve">
     <value>Att aktivera ett C00/Demo-paket är mycket enkelt och kräver inte en rap-fil. Det kan göras med ReActPSN eller PSNPatch.\n\nReActPSN : Kör homebrew medan du trycker på och håller in cirkel på din styrenhet.
@@ -637,6 +640,9 @@
   <data name="LABEL_APPLY" xml:space="preserve">
     <value>Tillämpa</value>
   </data>
+  <data name="LABEL_BASE_DIRECTORY" xml:space="preserve">
+    <value>Baskatalog</value>
+  </data>
   <data name="LABEL_BYTES" xml:space="preserve">
     <value>Bytes</value>
   </data>
@@ -696,6 +702,9 @@
   </data>
   <data name="LABEL_DOWNLOADED_ON" xml:space="preserve">
     <value>Nerladdad den</value>
+  </data>
+  <data name="LABEL_DOWNLOADS" xml:space="preserve">
+    <value>NEDLADDNINGAR</value>
   </data>
   <data name="LABEL_FAVORITE" xml:space="preserve">
     <value>Favorit</value>
@@ -853,9 +862,6 @@
   <data name="LAUNCH_FILE_PATH" xml:space="preserve">
     <value>launch.ini Filsökväg</value>
   </data>
-  <data name="MANAGE_IMPORTED_MODS" xml:space="preserve">
-    <value>Hantera Importerade Moddar</value>
-  </data>
   <data name="MESSAGE" xml:space="preserve">
     <value>Meddelande</value>
   </data>
@@ -1003,6 +1009,9 @@
   <data name="REDIRECT_TO_GITHUB_ISSUES" xml:space="preserve">
     <value>Du kommer nu att omdirigeras till vår GitHub Issues sida och alla detaljer kommer automatiskt att fyllas i åt dig. Ange information om problemet för att hjälpa oss att åtgärda ditt problem.\nKlicka på "Skicka" knappen för att öppna ett nytt ärende som kan hjälpa oss att lösa eventuella problem.</value>
   </data>
+  <data name="REFER_TO_BASE_DIRECTORY" xml:space="preserve">
+    <value>Använd %BASE_DIR% för att referera till baskatalogen.</value>
+  </data>
   <data name="REINSTALL_FILE" xml:space="preserve">
     <value>Installera om Fil</value>
   </data>
@@ -1026,6 +1035,9 @@
   </data>
   <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
     <value>Den här moddtypen (Script) kan inte installeras på PS3 eftersom den behöver ett manuellt tillägg.</value>
+  </data>
+  <data name="SETUP_HOWTO_GUIDE" xml:space="preserve">
+    <value>Guider för ModioX</value>
   </data>
   <data name="SETUP_PROFILES_EDIT" xml:space="preserve">
     <value>Redigera Konsolprofiler</value>
@@ -1102,8 +1114,14 @@
   <data name="TITLE_GAME_MODS" xml:space="preserve">
     <value>SPELMODDAR</value>
   </data>
+  <data name="TITLE_GAME_SAVES" xml:space="preserve">
+    <value>SPELSPARNINGAR</value>
+  </data>
   <data name="TITLE_GET_STARTED" xml:space="preserve">
     <value>KOM IGÅNG</value>
+  </data>
+  <data name="TITLE_HELP" xml:space="preserve">
+    <value>HJÄLP</value>
   </data>
   <data name="TITLE_HOMEBREW" xml:space="preserve">
     <value>HOMEBREW</value>
@@ -1128,6 +1146,9 @@
   </data>
   <data name="TITLE_RESOURCES" xml:space="preserve">
     <value>RESURSER</value>
+  </data>
+  <data name="TITLE_SETTINGS" xml:space="preserve">
+    <value>INSTÄLLNINGAR</value>
   </data>
   <data name="TITLE_SPECIAL_THANKS" xml:space="preserve">
     <value>SÄRSKILDA TACK</value>
