@@ -736,6 +736,9 @@
   <data name="LABEL_DOWNLOAD_FILE" xml:space="preserve">
     <value>Download File</value>
   </data>
+  <data name="LABEL_DOWNLOAD_FILES" xml:space="preserve">
+    <value>Download Files</value>
+  </data>
   <data name="LABEL_EDIT" xml:space="preserve">
     <value>Edit</value>
   </data>
@@ -894,6 +897,9 @@
   </data>
   <data name="LABEL_SYSTEM_TYPE" xml:space="preserve">
     <value>System Type</value>
+  </data>
+  <data name="LABEL_TITLE_ID" xml:space="preserve">
+    <value>Title ID</value>
   </data>
   <data name="LABEL_TOTAL_FILES" xml:space="preserve">
     <value>Total Files</value>
