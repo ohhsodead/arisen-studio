@@ -159,14 +159,14 @@
   <data name="BACKUP_FILES" xml:space="preserve">
     <value>Backup Files</value>
   </data>
-  <data name="BACKUP_GAME_FILES" xml:space="preserve">
-    <value>Do you want to backup the current game files? These files can be restored when uninstalling the mods.</value>
+  <data name="BACKUP_FILE_MANAGER" xml:space="preserve">
+    <value>Backup File Manager</value>
   </data>
-  <data name="BACKUP_RESTORE_GAME_FILES" xml:space="preserve">
-    <value>Backup/Restore Game Files</value>
+  <data name="BACKUP_GAME_FILES" xml:space="preserve">
+    <value>Some game files will be overwritten. Do you want to backup the current game files? These files can be restored when uninstalling the mods.</value>
   </data>
   <data name="CANT_FIND_BACKUP_FILE" xml:space="preserve">
-    <value>You made a backup of {0}. However, this file has either been moved or deleted.\n\nIf you've moved this file, go to Tools &gt; Game Backup Files and set the new local file path. If this file was deleted, remove the backup file data and backup the file again.\n\nThis file cannot be uninstalled to avoid missing game files, so it will be ignored.</value>
+    <value>There is a backup data for {0}.\n\nHowever, this file has either been moved or deleted.\n\nIf you've moved this file, go to Tools &gt; Game Backup Files and set the new local file path. If this file was deleted, remove the backup file data and backup the file again.\n\nThis file cannot be uninstalled to avoid missing game files, so it will be ignored.</value>
   </data>
   <data name="CANT_UNINSTALL_CFW_FILES" xml:space="preserve">
     <value>You cannot uninstall files from the firmware folder. Any missing files could impact your console performance.</value>
@@ -202,7 +202,7 @@
     <value>Do you really want to delete the selected item from your downloads?</value>
   </data>
   <data name="CONNECTED_NOTIFICATION" xml:space="preserve">
-    <value>You are now connected to ModioX ★</value>
+    <value>You are now connected to Modio ★</value>
   </data>
   <data name="CONNECTING_TO_CONSOLE" xml:space="preserve">
     <value>Connecting to: {0}</value>
@@ -544,7 +544,7 @@
     <value>HELP</value>
   </data>
   <data name="HELP_TRANSLATE" xml:space="preserve">
-    <value>Help translate ModioX on Crowdin</value>
+    <value>Help translate Modio on Crowdin</value>
   </data>
   <data name="HOW_TO_ACTIVATE_DEMO" xml:space="preserve">
     <value>Activating a C00/Demo package is very easy and doesn't require a rap file. It can be done using ReActPSN or PSNPatch.\n\nReActPSN : Run the homebrew while pressing and holding circle on your controller.
@@ -634,6 +634,9 @@
   <data name="LABEL_ADD_TO_GAMES" xml:space="preserve">
     <value>Add to Games</value>
   </data>
+  <data name="LABEL_ALL" xml:space="preserve">
+    <value>All</value>
+  </data>
   <data name="LABEL_ALL_REGIONS" xml:space="preserve">
     <value>All Regions</value>
   </data>
@@ -642,6 +645,9 @@
   </data>
   <data name="LABEL_ASCENDING" xml:space="preserve">
     <value>Ascending</value>
+  </data>
+  <data name="LABEL_BACKUP_FILE" xml:space="preserve">
+    <value>Backup File</value>
   </data>
   <data name="LABEL_BASE_DIRECTORY" xml:space="preserve">
     <value>Base Directory</value>
@@ -673,11 +679,17 @@
   <data name="LABEL_CONTENT_ID" xml:space="preserve">
     <value>Content ID</value>
   </data>
+  <data name="LABEL_CONTRIBUTORS" xml:space="preserve">
+    <value>Contributors</value>
+  </data>
   <data name="LABEL_COPIED" xml:space="preserve">
     <value>Copied</value>
   </data>
   <data name="LABEL_CREATED_BY" xml:space="preserve">
     <value>Created By</value>
+  </data>
+  <data name="LABEL_CREATED_ON" xml:space="preserve">
+    <value>Created On</value>
   </data>
   <data name="LABEL_CREATOR" xml:space="preserve">
     <value>Creator</value>
@@ -690,6 +702,9 @@
   </data>
   <data name="LABEL_DELETE" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="LABEL_DELETE_ALL" xml:space="preserve">
+    <value>Delete All</value>
   </data>
   <data name="LABEL_DESCENDING" xml:space="preserve">
     <value>Descending</value>
@@ -718,6 +733,12 @@
   <data name="LABEL_DOWNLOADS" xml:space="preserve">
     <value>Downloads</value>
   </data>
+  <data name="LABEL_DOWNLOAD_FILE" xml:space="preserve">
+    <value>Download File</value>
+  </data>
+  <data name="LABEL_EDIT" xml:space="preserve">
+    <value>Edit</value>
+  </data>
   <data name="LABEL_FAVORITE" xml:space="preserve">
     <value>Favorite</value>
   </data>
@@ -726,6 +747,9 @@
   </data>
   <data name="LABEL_FILES" xml:space="preserve">
     <value>Files</value>
+  </data>
+  <data name="LABEL_FILE_NAME" xml:space="preserve">
+    <value>File Name</value>
   </data>
   <data name="LABEL_FILE_SIZE" xml:space="preserve">
     <value>File Size</value>
@@ -745,6 +769,9 @@
   <data name="LABEL_GAME_SAVES" xml:space="preserve">
     <value>Game Saves</value>
   </data>
+  <data name="LABEL_GAME_TITLE" xml:space="preserve">
+    <value>Game Title</value>
+  </data>
   <data name="LABEL_HIDE_FAVORITES" xml:space="preserve">
     <value>Hide Favorites</value>
   </data>
@@ -763,11 +790,17 @@
   <data name="LABEL_INSTALLED_ON" xml:space="preserve">
     <value>Installed On</value>
   </data>
+  <data name="LABEL_INSTALL_FILE" xml:space="preserve">
+    <value>Install File</value>
+  </data>
   <data name="LABEL_IP_ADDRESS" xml:space="preserve">
     <value>IP Address</value>
   </data>
   <data name="LABEL_LAST_MODIFIED" xml:space="preserve">
     <value>Modified On</value>
+  </data>
+  <data name="LABEL_LIBRARIES" xml:space="preserve">
+    <value>Libraries</value>
   </data>
   <data name="LABEL_LOGIN" xml:space="preserve">
     <value>Login</value>
@@ -835,6 +868,9 @@
   <data name="LABEL_RESOURCES" xml:space="preserve">
     <value>Resources</value>
   </data>
+  <data name="LABEL_RESTORE_FILE" xml:space="preserve">
+    <value>Restore File</value>
+  </data>
   <data name="LABEL_SHOW_FAVORITES" xml:space="preserve">
     <value>Show Favorites</value>
   </data>
@@ -861,6 +897,9 @@
   </data>
   <data name="LABEL_TOTAL_FILES" xml:space="preserve">
     <value>Total Files</value>
+  </data>
+  <data name="LABEL_TRANSLATORS" xml:space="preserve">
+    <value>Translators</value>
   </data>
   <data name="LABEL_TYPE" xml:space="preserve">
     <value>Type</value>
@@ -1006,7 +1045,10 @@
   <data name="PACKAGES_INSTALL_FILE_PATH" xml:space="preserve">
     <value>Packages Install File Path</value>
   </data>
-  <data name="PACKAGE_MANAGER" xml:space="preserve">
+  <data name="PACKAGE_FILES" xml:space="preserve">
+    <value>Package Files</value>
+  </data>
+  <data name="PACKAGE_FILE_MANAGER" xml:space="preserve">
     <value>Package File Manager</value>
   </data>
   <data name="PREPARING_DOWNLOAD" xml:space="preserve">
@@ -1079,7 +1121,7 @@
     <value>This mod type (Script) can't be installed on the PS3 because it needs the user manual addition.</value>
   </data>
   <data name="SETUP_HOWTO_GUIDE" xml:space="preserve">
-    <value>How-To Guides for ModioX</value>
+    <value>How-To Guides for Modio</value>
   </data>
   <data name="SETUP_PROFILES_EDIT" xml:space="preserve">
     <value>Edit Console Profiles</value>
