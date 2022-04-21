@@ -56,7 +56,7 @@ Please give this project a ⭐ if you find it useful.
 Download and run the latest version of the Windows installer, "Modio.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Modio/releases/latest) page.
 
 ## Bug Reports
-ModioX isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/Modio/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
+Modio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/Modio/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
 
 ## Contributing
 
