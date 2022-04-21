@@ -787,6 +787,9 @@
   <data name="LABEL_INSTALL" xml:space="preserve">
     <value>Install</value>
   </data>
+  <data name="LABEL_INSTALLATION_FILES" xml:space="preserve">
+    <value>Installation Files</value>
+  </data>
   <data name="LABEL_INSTALLED" xml:space="preserve">
     <value>Installed</value>
   </data>
@@ -801,6 +804,9 @@
   </data>
   <data name="LABEL_LAST_MODIFIED" xml:space="preserve">
     <value>Modified On</value>
+  </data>
+  <data name="LABEL_LAST_UPDATED" xml:space="preserve">
+    <value>Last Updated</value>
   </data>
   <data name="LABEL_LIBRARIES" xml:space="preserve">
     <value>Libraries</value>
