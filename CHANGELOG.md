@@ -1,6 +1,35 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## Beta v2.1.3
+- Project renamed to Modio, also a new icon
+- Added Edit Advanced Settings Tile to Dashboard
+- Added Transfer tab to Settings
+- Added option to delete local files after installing
+- Added option to always backup game files
+- Added Homebrew path to Settings
+- Added Resources path to Settings
+- Added support for Xbox 360 game cheats
+- Added About page replacing the dialog
+- Added Downloads to mod details
+- Added set previous window state
+- Fixed loading Package File Manager
+- Fixed loading Console Manager
+- Fixed downloading Packages using Base Directory
+- Fixed Change Log text now wraps for long items
+- Fixed "Open Folder" for Downloads
+- Fixed setting Downloads folder from Dashboard
+- Redesigned the mod details
+- Removed Imported Mods feature
+- Backup Files has changed to Backup File Manager
+- Reduced hitting the GitHub API rate limit
+- More strings are supported by translations
+- Database files have been split by category types
+- Moved database files to its own git repository
+- Improvements to user interface design
+
+Note: Sorting Packages by file size doesn't work correctly. I'm working on a fix for this.
+
 ## Beta v2.1.2
 - Fixed bug when navigating pages
 - Other minor bug fixes and improvements
