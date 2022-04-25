@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -17,6 +18,8 @@ namespace Modio.Database
         public string Region { get; set; } = string.Empty;
 
         public string Version { get; set; }
+
+        public DateTime LastUpdated { get; set; }
 
         public string Url { get; set; }
 

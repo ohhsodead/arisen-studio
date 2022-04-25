@@ -35,71 +35,71 @@
         /// <summary>
         /// Direct link to the Categories file hosted on GitHub.
         /// </summary>
-        internal const string CategoriesData = "https://raw.githubusercontent.com/ohhsodead/Modio/master/.database/categories.json";
-
-        /// <summary>
-        /// Direct link to the PS3 Game Mods file hosted on GitHub.
-        /// </summary>
-        internal const string GameModsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio/master/.database/ps3-game-mods.json";
-
-        /// <summary>
-        /// Direct link to the PS3 Homebrew file hosted on GitHub.
-        /// </summary>
-        internal const string HomebrewDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio/master/.database/ps3-homebrew.json";
-
-        /// <summary>
-        /// Direct link to the PS3 Resources file hosted on GitHub.
-        /// </summary>
-        internal const string ResourcesDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio/master/.database/ps3-resources.json";
-
-        /// <summary>
-        /// Direct link to the PS3 Games packages file hosted on GitHub.
-        /// </summary>
-        internal const string PackagesGamesDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio/master/.database/ps3-packages-games.json";
-
-        /// <summary>
-        /// Direct link to the PS3 Demos packages file hosted on GitHub.
-        /// </summary>
-        internal const string PackagesDemosDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio/master/.database/ps3-packages-demos.json";
-
-        /// <summary>
-        /// Direct link to the PS3 DLC packages file hosted on GitHub.
-        /// </summary>
-        internal const string PackagesDLCsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio/master/.database/ps3-packages-dlcs.json";
-
-        /// <summary>
-        /// Direct link to the PS3 Avatars packages file hosted on GitHub.
-        /// </summary>
-        internal const string PackagesAvatarsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio/master/.database/ps3-packages-avatars.json";
-
-        /// <summary>
-        /// Direct link to the PS3 Themes packages file hosted on GitHub.
-        /// </summary>
-        internal const string PackagesThemesDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio/master/.database/ps3-packages-themes.json";
-
-        /// <summary>
-        /// Direct link to the ps3 game offsets database file hosted on GitHub.
-        /// </summary>
-        internal const string GameCheatsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio/master/.database/ps3-game-cheats.json";
-
-        /// <summary>
-        /// Direct link to the Xbox 360 mods file hosted on GitHub.
-        /// </summary>
-        internal const string PluginsDataXBOX = "https://raw.githubusercontent.com/ohhsodead/Modio/master/.database/xbox-plugins.json";
-
-        /// <summary>
-        /// Direct link to the ps3 game offsets database file hosted on GitHub.
-        /// </summary>
-        internal const string GameCheatsDataXBOX = "https://raw.githubusercontent.com/ohhsodead/Modio/master/.database/xbox-game-cheats.json";
+        internal const string CategoriesData = "https://raw.githubusercontent.com/ohhsodead/Modio-Database/main/categories.json";
 
         /// <summary>
         /// Direct link to the game saves file hosted on GitHub.
         /// </summary>
-        internal const string GameSavesData = "https://raw.githubusercontent.com/ohhsodead/Modio/master/.database/game-saves.json";
+        internal const string GameSavesData = "https://raw.githubusercontent.com/ohhsodead/Modio-Database/main/game-saves.json";
+
+        /// <summary>
+        /// Direct link to the PS3 Game Mods file hosted on GitHub.
+        /// </summary>
+        internal const string GameModsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio-Database/main/PS3/game-mods.json";
+
+        /// <summary>
+        /// Direct link to the PS3 Homebrew file hosted on GitHub.
+        /// </summary>
+        internal const string HomebrewDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio-Database/main/PS3/homebrew.json";
+
+        /// <summary>
+        /// Direct link to the PS3 Resources file hosted on GitHub.
+        /// </summary>
+        internal const string ResourcesDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio-Database/main/PS3/resources.json";
+
+        /// <summary>
+        /// Direct link to the PS3 Avatars packages file hosted on GitHub.
+        /// </summary>
+        internal const string PackagesAvatarsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio-Database/main/PS3/packages/avatars.json";
+
+        /// <summary>
+        /// Direct link to the PS3 Demos packages file hosted on GitHub.
+        /// </summary>
+        internal const string PackagesDemosDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio-Database/main/PS3/packages/demos.json";
+
+        /// <summary>
+        /// Direct link to the PS3 DLC packages file hosted on GitHub.
+        /// </summary>
+        internal const string PackagesDLCsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio-Database/main/PS3/packages/dlcs.json";
+
+        /// <summary>
+        /// Direct link to the PS3 Games packages file hosted on GitHub.
+        /// </summary>
+        internal const string PackagesGamesDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio-Database/main/PS3/packages/games.json";
+
+        /// <summary>
+        /// Direct link to the PS3 Themes packages file hosted on GitHub.
+        /// </summary>
+        internal const string PackagesThemesDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio-Database/main/PS3/packages/themes.json";
+
+        /// <summary>
+        /// Direct link to the ps3 game offsets database file hosted on GitHub.
+        /// </summary>
+        internal const string GameCheatsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Modio-Database/main/PS3/game-cheats.json";
+
+        /// <summary>
+        /// Direct link to the Xbox 360 mods file hosted on GitHub.
+        /// </summary>
+        internal const string PluginsDataXBOX = "https://raw.githubusercontent.com/ohhsodead/Modio-Database/main/XBOX360/plugins.json";
+
+        /// <summary>
+        /// Direct link to the ps3 game offsets database file hosted on GitHub.
+        /// </summary>
+        internal const string GameCheatsDataXBOX = "https://raw.githubusercontent.com/ohhsodead/Modio-Database/main/XBOX360/game-cheats.json";
 
         /// <summary>
         /// Direct link to the Xbox 360 games title Ids hosted on GitHub.
         /// </summary>
-        internal const string GameTitleIdsXBOX = "https://raw.githubusercontent.com/ohhsodead/Modio/master/.database/xbox-titleids.json";
+        internal const string GameTitleIdsXBOX = "https://raw.githubusercontent.com/ohhsodead/Modio-Database/main/XBOX360/titleids.json";
     }
 }

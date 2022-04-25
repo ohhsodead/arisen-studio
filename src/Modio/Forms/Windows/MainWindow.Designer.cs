@@ -46,21 +46,21 @@ namespace Modio.Forms.Windows
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.TileItemElement tileItemElement26 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement27 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement28 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.Utils.Animation.Transition transition1 = new DevExpress.Utils.Animation.Transition();
             DevExpress.Utils.Animation.FadeTransition fadeTransition1 = new DevExpress.Utils.Animation.FadeTransition();
             DevExpress.Utils.Animation.Transition transition2 = new DevExpress.Utils.Animation.Transition();
             DevExpress.Utils.Animation.FadeTransition fadeTransition2 = new DevExpress.Utils.Animation.FadeTransition();
             DevExpress.Utils.Animation.Transition transition3 = new DevExpress.Utils.Animation.Transition();
             DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement16 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
@@ -69,7 +69,7 @@ namespace Modio.Forms.Windows
             DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement16 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement19 = new DevExpress.XtraEditors.TileItemElement();
@@ -79,7 +79,7 @@ namespace Modio.Forms.Windows
             DevExpress.XtraEditors.TileItemElement tileItemElement23 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement24 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement25 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement28 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement26 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement29 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement30 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement31 = new DevExpress.XtraEditors.TileItemElement();
@@ -90,6 +90,7 @@ namespace Modio.Forms.Windows
             DevExpress.XtraEditors.TileItemElement tileItemElement36 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement37 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement38 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement39 = new DevExpress.XtraEditors.TileItemElement();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.MainMenu = new DevExpress.XtraBars.BarManager(this.components);
             this.BarStatus = new DevExpress.XtraBars.Bar();
@@ -103,8 +104,8 @@ namespace Modio.Forms.Windows
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.MenuItemTools = new DevExpress.XtraBars.BarButtonItem();
             this.MenuTools = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.MenuItemPS3BackupFileManager = new DevExpress.XtraBars.BarButtonItem();
             this.MenuItemPS3GameUpdateFinder = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuItemPS3BackupFileManager = new DevExpress.XtraBars.BarButtonItem();
             this.MenuItemPS3PackageFileManager = new DevExpress.XtraBars.BarButtonItem();
             this.MenuItemPS3ConsoleManager = new DevExpress.XtraBars.BarButtonItem();
             this.MenuItemPS3WebManControls = new DevExpress.XtraBars.BarSubItem();
@@ -125,9 +126,9 @@ namespace Modio.Forms.Windows
             this.MenuItemPS3UnmountGame = new DevExpress.XtraBars.BarButtonItem();
             this.MenuItemPS3NotifyMessage = new DevExpress.XtraBars.BarButtonItem();
             this.MenuItemPS3VirtualController = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuItemXboxGameSaveResigner = new DevExpress.XtraBars.BarButtonItem();
             this.MenuItemXboxGameLauncher = new DevExpress.XtraBars.BarButtonItem();
             this.MenuItemXboxPluginsEditor = new DevExpress.XtraBars.BarButtonItem();
-            this.MenuItemXboxGameSaveResigner = new DevExpress.XtraBars.BarButtonItem();
             this.MenuItemXboxXBDMControls = new DevExpress.XtraBars.BarSubItem();
             this.MenuItemXboxPowerFunctions = new DevExpress.XtraBars.BarSubItem();
             this.MenuItemXboxPowerShutdown = new DevExpress.XtraBars.BarButtonItem();
@@ -252,14 +253,14 @@ namespace Modio.Forms.Windows
             this.PanelToolItems = new DevExpress.XtraEditors.PanelControl();
             this.TileControlTools = new DevExpress.XtraEditors.TileControl();
             this.TileGroupTools = new DevExpress.XtraEditors.TileGroup();
-            this.TileItemToolsBackupFileManager = new DevExpress.XtraEditors.TileItem();
             this.TileItemToolsGameUpdateFinder = new DevExpress.XtraEditors.TileItem();
+            this.TileItemToolsBackupFileManager = new DevExpress.XtraEditors.TileItem();
             this.TileItemToolsPackageManager = new DevExpress.XtraEditors.TileItem();
             this.TileItemToolsConsoleManager = new DevExpress.XtraEditors.TileItem();
             this.TileItemToolsDefaultGameRegions = new DevExpress.XtraEditors.TileItem();
+            this.TileItemToolsGameSaveResigner = new DevExpress.XtraEditors.TileItem();
             this.TileItemToolsGameLauncher = new DevExpress.XtraEditors.TileItem();
             this.TileItemToolsLaunchFileEditor = new DevExpress.XtraEditors.TileItem();
-            this.TileItemToolsGameSaveResigner = new DevExpress.XtraEditors.TileItem();
             this.LabelHeaderTools = new DevExpress.XtraEditors.LabelControl();
             this.PanelChangeLog = new DevExpress.XtraEditors.PanelControl();
             this.ButtonChangeLogPrevious = new DevExpress.XtraEditors.SimpleButton();
@@ -281,6 +282,7 @@ namespace Modio.Forms.Windows
             this.TileItemEditConsoleProfiles = new DevExpress.XtraEditors.TileItem();
             this.TileItemStartupLibrary = new DevExpress.XtraEditors.TileItem();
             this.TileItemSetDownloadsLocation = new DevExpress.XtraEditors.TileItem();
+            this.TileItemEditAdvancedSettings = new DevExpress.XtraEditors.TileItem();
             this.LabelHeaderGetStarted = new DevExpress.XtraEditors.LabelControl();
             this.PanelInstalledMods = new System.Windows.Forms.Panel();
             this.GridControlInstalledMods = new DevExpress.XtraGrid.GridControl();
@@ -394,7 +396,6 @@ namespace Modio.Forms.Windows
             this.TabControlSettings = new DevExpress.XtraTab.XtraTabControl();
             this.TabPageInterface = new DevExpress.XtraTab.XtraTabPage();
             this.LabelSettingsHelpTranslate = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.LabelSettingsOptionsOnlyForPS3 = new DevExpress.XtraEditors.LabelControl();
             this.LabelSettingsAutoLoadDirectoryListings = new DevExpress.XtraEditors.LabelControl();
             this.ToggleSettingsAutoLoadDirectoryListings = new DevExpress.XtraEditors.ToggleSwitch();
             this.LabelSettingsEnableHardwareAcceleration = new DevExpress.XtraEditors.LabelControl();
@@ -447,26 +448,32 @@ namespace Modio.Forms.Windows
             this.LabelSettingsLaunchIniFilePath = new DevExpress.XtraEditors.LabelControl();
             this.TextBoxSettingsLaunchIniFilePath = new DevExpress.XtraEditors.TextEdit();
             this.TabPagePaths = new DevExpress.XtraTab.XtraTabPage();
+            this.ButtonSettingsPathResources = new DevExpress.XtraEditors.SimpleButton();
+            this.LabelSettingsPathResources = new DevExpress.XtraEditors.LabelControl();
+            this.TextBoxSettingsPathResources = new DevExpress.XtraEditors.TextEdit();
+            this.ButtonSettingsPathHomebrew = new DevExpress.XtraEditors.SimpleButton();
+            this.LabelSettingsPathHomebrew = new DevExpress.XtraEditors.LabelControl();
+            this.TextBoxSettingsPathHomebrew = new DevExpress.XtraEditors.TextEdit();
             this.LabelSettingsDirectoriesMustBeWritable = new DevExpress.XtraEditors.LabelControl();
             this.LabelSettingsReferToBaseDirectory = new DevExpress.XtraEditors.LabelControl();
             this.ButtonSettingsPathDownloads = new DevExpress.XtraEditors.SimpleButton();
-            this.LabelSettingsDownloads = new DevExpress.XtraEditors.LabelControl();
-            this.TextBoxSettingsDownloads = new DevExpress.XtraEditors.TextEdit();
+            this.LabelSettingsPathDownloads = new DevExpress.XtraEditors.LabelControl();
+            this.TextBoxSettingsPathDownloads = new DevExpress.XtraEditors.TextEdit();
             this.ButtonSettingsPathGameSaves = new DevExpress.XtraEditors.SimpleButton();
-            this.LabelSettingsGameSaves = new DevExpress.XtraEditors.LabelControl();
-            this.TextBoxSettingsGameSaves = new DevExpress.XtraEditors.TextEdit();
+            this.LabelSettingsPathGameSaves = new DevExpress.XtraEditors.LabelControl();
+            this.TextBoxSettingsPathGameSaves = new DevExpress.XtraEditors.TextEdit();
             this.ButtonSettingsPathPlugins = new DevExpress.XtraEditors.SimpleButton();
-            this.LabelSettingsPlugins = new DevExpress.XtraEditors.LabelControl();
-            this.TextBoxSettingsPlugins = new DevExpress.XtraEditors.TextEdit();
+            this.LabelSettingsPathPlugins = new DevExpress.XtraEditors.LabelControl();
+            this.TextBoxSettingsPathPlugins = new DevExpress.XtraEditors.TextEdit();
             this.ButtonSettingsPathPackages = new DevExpress.XtraEditors.SimpleButton();
-            this.LabelSettingsPackages = new DevExpress.XtraEditors.LabelControl();
-            this.TextBoxSettingsPackages = new DevExpress.XtraEditors.TextEdit();
+            this.LabelSettingsPathPackages = new DevExpress.XtraEditors.LabelControl();
+            this.TextBoxSettingsPathPackages = new DevExpress.XtraEditors.TextEdit();
             this.ButtonSettingsPathGameMods = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonSettingsPathBaseDirectory = new DevExpress.XtraEditors.SimpleButton();
-            this.LabelSettingsGameMods = new DevExpress.XtraEditors.LabelControl();
-            this.TextBoxSettingsGameMods = new DevExpress.XtraEditors.TextEdit();
-            this.LabelSettingsBaseDirectory = new DevExpress.XtraEditors.LabelControl();
-            this.TextBoxSettingsBaseDirectory = new DevExpress.XtraEditors.TextEdit();
+            this.LabelSettingsPathGameMods = new DevExpress.XtraEditors.LabelControl();
+            this.TextBoxSettingsPathGameMods = new DevExpress.XtraEditors.TextEdit();
+            this.LabelSettingsPathBaseDirectory = new DevExpress.XtraEditors.LabelControl();
+            this.TextBoxSettingsPathBaseDirectory = new DevExpress.XtraEditors.TextEdit();
             this.TabPageDiscord = new DevExpress.XtraTab.XtraTabPage();
             this.LabelSettingsShowCurrentGamePlaying = new DevExpress.XtraEditors.LabelControl();
             this.ToggleSettingsShowCurrentGamePlaying = new DevExpress.XtraEditors.ToggleSwitch();
@@ -805,12 +812,14 @@ namespace Modio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPackagesInstallPath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsLaunchIniFilePath.Properties)).BeginInit();
             this.TabPagePaths.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsDownloads.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsGameSaves.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPlugins.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPackages.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsGameMods.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsBaseDirectory.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathResources.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathHomebrew.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathDownloads.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathGameSaves.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathPlugins.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathPackages.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathGameMods.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathBaseDirectory.Properties)).BeginInit();
             this.TabPageDiscord.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsShowCurrentGamePlaying.Properties)).BeginInit();
             this.PageGameSaves.SuspendLayout();
@@ -1135,19 +1144,19 @@ namespace Modio.Forms.Windows
             this.MenuTools.Manager = this.MainMenu;
             this.MenuTools.Name = "MenuTools";
             // 
-            // MenuItemPS3BackupFileManager
-            // 
-            this.MenuItemPS3BackupFileManager.Caption = "Backup File Manager";
-            this.MenuItemPS3BackupFileManager.Id = 7;
-            this.MenuItemPS3BackupFileManager.Name = "MenuItemPS3BackupFileManager";
-            this.MenuItemPS3BackupFileManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3GameBackupFiles_ItemClick);
-            // 
             // MenuItemPS3GameUpdateFinder
             // 
             this.MenuItemPS3GameUpdateFinder.Caption = "Game Update Finder";
             this.MenuItemPS3GameUpdateFinder.Id = 8;
             this.MenuItemPS3GameUpdateFinder.Name = "MenuItemPS3GameUpdateFinder";
             this.MenuItemPS3GameUpdateFinder.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3GameUpdateFinder_ItemClick);
+            // 
+            // MenuItemPS3BackupFileManager
+            // 
+            this.MenuItemPS3BackupFileManager.Caption = "Backup File Manager";
+            this.MenuItemPS3BackupFileManager.Id = 7;
+            this.MenuItemPS3BackupFileManager.Name = "MenuItemPS3BackupFileManager";
+            this.MenuItemPS3BackupFileManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3GameBackupFiles_ItemClick);
             // 
             // MenuItemPS3PackageFileManager
             // 
@@ -1310,6 +1319,13 @@ namespace Modio.Forms.Windows
             this.MenuItemPS3VirtualController.Name = "MenuItemPS3VirtualController";
             this.MenuItemPS3VirtualController.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonPS3VirtualController_ItemClick);
             // 
+            // MenuItemXboxGameSaveResigner
+            // 
+            this.MenuItemXboxGameSaveResigner.Caption = "Game Save Resigner";
+            this.MenuItemXboxGameSaveResigner.Id = 132;
+            this.MenuItemXboxGameSaveResigner.Name = "MenuItemXboxGameSaveResigner";
+            this.MenuItemXboxGameSaveResigner.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxGameSaveResigner_ItemClick);
+            // 
             // MenuItemXboxGameLauncher
             // 
             this.MenuItemXboxGameLauncher.Caption = "Game Launcher";
@@ -1323,13 +1339,6 @@ namespace Modio.Forms.Windows
             this.MenuItemXboxPluginsEditor.Id = 102;
             this.MenuItemXboxPluginsEditor.Name = "MenuItemXboxPluginsEditor";
             this.MenuItemXboxPluginsEditor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxLaunchFileEditor_ItemClick);
-            // 
-            // MenuItemXboxGameSaveResigner
-            // 
-            this.MenuItemXboxGameSaveResigner.Caption = "Game Save Resigner";
-            this.MenuItemXboxGameSaveResigner.Id = 132;
-            this.MenuItemXboxGameSaveResigner.Name = "MenuItemXboxGameSaveResigner";
-            this.MenuItemXboxGameSaveResigner.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonXboxGameSaveResigner_ItemClick);
             // 
             // MenuItemXboxXBDMControls
             // 
@@ -2084,15 +2093,15 @@ namespace Modio.Forms.Windows
             this.TileItemGameModsShowFavorites.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemGameModsShowFavorites.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.TileItemGameModsShowFavorites.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement26.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement26.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement26.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement26.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement26.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement26.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage3")));
-            tileItemElement26.Text = "Show Favorites";
-            tileItemElement26.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemGameModsShowFavorites.Elements.Add(tileItemElement26);
+            tileItemElement27.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement27.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement27.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement27.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement27.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement27.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage3")));
+            tileItemElement27.Text = "Show Favorites";
+            tileItemElement27.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemGameModsShowFavorites.Elements.Add(tileItemElement27);
             this.TileItemGameModsShowFavorites.Id = 6;
             this.TileItemGameModsShowFavorites.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemGameModsShowFavorites.Name = "TileItemGameModsShowFavorites";
@@ -2112,15 +2121,15 @@ namespace Modio.Forms.Windows
             this.TileItemGameModsSortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemGameModsSortOptions.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.TileItemGameModsSortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement27.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            tileItemElement27.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement27.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement27.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement27.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement27.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement27.Text = "Sort Options";
-            tileItemElement27.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemGameModsSortOptions.Elements.Add(tileItemElement27);
+            tileItemElement28.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            tileItemElement28.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement28.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement28.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement28.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement28.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement28.Text = "Sort Options";
+            tileItemElement28.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemGameModsSortOptions.Elements.Add(tileItemElement28);
             this.TileItemGameModsSortOptions.Id = 1;
             this.TileItemGameModsSortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemGameModsSortOptions.Name = "TileItemGameModsSortOptions";
@@ -3080,32 +3089,6 @@ namespace Modio.Forms.Windows
             this.TileGroupTools.Items.Add(this.TileItemToolsLaunchFileEditor);
             this.TileGroupTools.Name = "TileGroupTools";
             // 
-            // TileItemToolsBackupFileManager
-            // 
-            this.TileItemToolsBackupFileManager.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.BackColor = System.Drawing.Color.DarkOrchid;
-            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.BorderColor = System.Drawing.Color.DarkOrchid;
-            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.Options.UseBorderColor = true;
-            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.Options.UseFont = true;
-            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.TileItemToolsBackupFileManager.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement9.ImageOptions.Image = global::Modio.Properties.Resources.backup_restore;
-            tileItemElement9.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement9.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
-            tileItemElement9.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement9.Text = "Backup File Manager";
-            tileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemToolsBackupFileManager.Elements.Add(tileItemElement9);
-            this.TileItemToolsBackupFileManager.Id = 0;
-            this.TileItemToolsBackupFileManager.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.TileItemToolsBackupFileManager.Name = "TileItemToolsBackupFileManager";
-            this.TileItemToolsBackupFileManager.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.TileItemToolsGameBackupFiles_ItemClick);
-            // 
             // TileItemToolsGameUpdateFinder
             // 
             this.TileItemToolsGameUpdateFinder.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
@@ -3120,17 +3103,43 @@ namespace Modio.Forms.Windows
             this.TileItemToolsGameUpdateFinder.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.TileItemToolsGameUpdateFinder.AppearanceItem.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.TileItemToolsGameUpdateFinder.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement8.ImageOptions.Image = global::Modio.Properties.Resources.find_file;
-            tileItemElement8.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement8.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
-            tileItemElement8.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement8.Text = "Game Update Finder";
-            tileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemToolsGameUpdateFinder.Elements.Add(tileItemElement8);
+            tileItemElement9.ImageOptions.Image = global::Modio.Properties.Resources.find_file;
+            tileItemElement9.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement9.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
+            tileItemElement9.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement9.Text = "Game Update Finder";
+            tileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemToolsGameUpdateFinder.Elements.Add(tileItemElement9);
             this.TileItemToolsGameUpdateFinder.Id = 0;
             this.TileItemToolsGameUpdateFinder.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.TileItemToolsGameUpdateFinder.Name = "TileItemToolsGameUpdateFinder";
             this.TileItemToolsGameUpdateFinder.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.TileItemToolsGameUpdateFinder_ItemClick);
+            // 
+            // TileItemToolsBackupFileManager
+            // 
+            this.TileItemToolsBackupFileManager.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.BackColor = System.Drawing.Color.DarkOrchid;
+            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.BorderColor = System.Drawing.Color.DarkOrchid;
+            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.Options.UseBorderColor = true;
+            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.Options.UseFont = true;
+            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.Options.UseTextOptions = true;
+            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
+            this.TileItemToolsBackupFileManager.AppearanceItem.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.TileItemToolsBackupFileManager.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
+            tileItemElement10.ImageOptions.Image = global::Modio.Properties.Resources.backup_restore;
+            tileItemElement10.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement10.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
+            tileItemElement10.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement10.Text = "Backup File Manager";
+            tileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemToolsBackupFileManager.Elements.Add(tileItemElement10);
+            this.TileItemToolsBackupFileManager.Id = 0;
+            this.TileItemToolsBackupFileManager.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.TileItemToolsBackupFileManager.Name = "TileItemToolsBackupFileManager";
+            this.TileItemToolsBackupFileManager.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.TileItemToolsGameBackupFiles_ItemClick);
             // 
             // TileItemToolsPackageManager
             // 
@@ -3146,13 +3155,13 @@ namespace Modio.Forms.Windows
             this.TileItemToolsPackageManager.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.TileItemToolsPackageManager.AppearanceItem.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.TileItemToolsPackageManager.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement10.ImageOptions.Image = global::Modio.Properties.Resources.folder_settings;
-            tileItemElement10.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement10.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
-            tileItemElement10.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement10.Text = "Package File Manager";
-            tileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemToolsPackageManager.Elements.Add(tileItemElement10);
+            tileItemElement11.ImageOptions.Image = global::Modio.Properties.Resources.folder_settings;
+            tileItemElement11.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement11.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
+            tileItemElement11.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement11.Text = "Package File Manager";
+            tileItemElement11.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemToolsPackageManager.Elements.Add(tileItemElement11);
             this.TileItemToolsPackageManager.Id = 7;
             this.TileItemToolsPackageManager.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.TileItemToolsPackageManager.Name = "TileItemToolsPackageManager";
@@ -3172,16 +3181,16 @@ namespace Modio.Forms.Windows
             this.TileItemToolsConsoleManager.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.TileItemToolsConsoleManager.AppearanceItem.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.TileItemToolsConsoleManager.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement11.AnchorIndent = -50;
-            tileItemElement11.Appearance.Normal.Options.UseTextOptions = true;
-            tileItemElement11.Appearance.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            tileItemElement11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            tileItemElement11.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement11.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
-            tileItemElement11.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement11.Text = "Console Manager";
-            tileItemElement11.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemToolsConsoleManager.Elements.Add(tileItemElement11);
+            tileItemElement12.AnchorIndent = -50;
+            tileItemElement12.Appearance.Normal.Options.UseTextOptions = true;
+            tileItemElement12.Appearance.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            tileItemElement12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            tileItemElement12.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement12.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
+            tileItemElement12.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement12.Text = "Console Manager";
+            tileItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemToolsConsoleManager.Elements.Add(tileItemElement12);
             this.TileItemToolsConsoleManager.Id = 3;
             this.TileItemToolsConsoleManager.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.TileItemToolsConsoleManager.Name = "TileItemToolsConsoleManager";
@@ -3201,17 +3210,44 @@ namespace Modio.Forms.Windows
             this.TileItemToolsDefaultGameRegions.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.TileItemToolsDefaultGameRegions.AppearanceItem.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.TileItemToolsDefaultGameRegions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement12.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement12.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
-            tileItemElement12.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
-            tileItemElement12.Text = "Default Game Regions";
-            tileItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemToolsDefaultGameRegions.Elements.Add(tileItemElement12);
+            tileItemElement13.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement13.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
+            tileItemElement13.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement13.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
+            tileItemElement13.Text = "Default Game Regions";
+            tileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemToolsDefaultGameRegions.Elements.Add(tileItemElement13);
             this.TileItemToolsDefaultGameRegions.Id = 11;
             this.TileItemToolsDefaultGameRegions.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.TileItemToolsDefaultGameRegions.Name = "TileItemToolsDefaultGameRegions";
             this.TileItemToolsDefaultGameRegions.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.TileItemToolsCustomizeGameRegions_ItemClick);
+            // 
+            // TileItemToolsGameSaveResigner
+            // 
+            this.TileItemToolsGameSaveResigner.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.BackColor = System.Drawing.Color.DarkOrchid;
+            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.BorderColor = System.Drawing.Color.DarkOrchid;
+            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.Options.UseBorderColor = true;
+            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.Options.UseFont = true;
+            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.Options.UseTextOptions = true;
+            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
+            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.TileItemToolsGameSaveResigner.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
+            tileItemElement14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            tileItemElement14.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement14.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
+            tileItemElement14.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement14.ImageOptions.ImageToTextIndent = 5;
+            tileItemElement14.Text = "Game Save Resigner";
+            tileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemToolsGameSaveResigner.Elements.Add(tileItemElement14);
+            this.TileItemToolsGameSaveResigner.Id = 8;
+            this.TileItemToolsGameSaveResigner.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.TileItemToolsGameSaveResigner.Name = "TileItemToolsGameSaveResigner";
+            this.TileItemToolsGameSaveResigner.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.TileItemToolsGameSaveResigner_ItemClick);
             // 
             // TileItemToolsGameLauncher
             // 
@@ -3226,13 +3262,13 @@ namespace Modio.Forms.Windows
             this.TileItemToolsGameLauncher.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.TileItemToolsGameLauncher.AppearanceItem.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.TileItemToolsGameLauncher.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement14.ImageOptions.Image = global::Modio.Properties.Resources.game_controller;
-            tileItemElement14.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement14.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
-            tileItemElement14.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement14.Text = "Games Launcher";
-            tileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemToolsGameLauncher.Elements.Add(tileItemElement14);
+            tileItemElement15.ImageOptions.Image = global::Modio.Properties.Resources.game_controller;
+            tileItemElement15.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement15.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
+            tileItemElement15.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement15.Text = "Games Launcher";
+            tileItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemToolsGameLauncher.Elements.Add(tileItemElement15);
             this.TileItemToolsGameLauncher.Id = 9;
             this.TileItemToolsGameLauncher.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.TileItemToolsGameLauncher.Name = "TileItemToolsGameLauncher";
@@ -3252,45 +3288,18 @@ namespace Modio.Forms.Windows
             this.TileItemToolsLaunchFileEditor.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.TileItemToolsLaunchFileEditor.AppearanceItem.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.TileItemToolsLaunchFileEditor.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement15.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            tileItemElement15.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement15.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
-            tileItemElement15.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement15.ImageOptions.ImageToTextIndent = 5;
-            tileItemElement15.Text = "Launch File Editor";
-            tileItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemToolsLaunchFileEditor.Elements.Add(tileItemElement15);
+            tileItemElement16.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            tileItemElement16.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement16.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
+            tileItemElement16.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement16.ImageOptions.ImageToTextIndent = 5;
+            tileItemElement16.Text = "Launch File Editor";
+            tileItemElement16.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemToolsLaunchFileEditor.Elements.Add(tileItemElement16);
             this.TileItemToolsLaunchFileEditor.Id = 4;
             this.TileItemToolsLaunchFileEditor.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.TileItemToolsLaunchFileEditor.Name = "TileItemToolsLaunchFileEditor";
             this.TileItemToolsLaunchFileEditor.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.TileItemToolsLaunchFileEditor_ItemClick);
-            // 
-            // TileItemToolsGameSaveResigner
-            // 
-            this.TileItemToolsGameSaveResigner.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.BackColor = System.Drawing.Color.DarkOrchid;
-            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.BorderColor = System.Drawing.Color.DarkOrchid;
-            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.Options.UseBorderColor = true;
-            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.Options.UseFont = true;
-            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.TileItemToolsGameSaveResigner.AppearanceItem.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.TileItemToolsGameSaveResigner.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            tileItemElement13.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement13.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
-            tileItemElement13.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement13.ImageOptions.ImageToTextIndent = 5;
-            tileItemElement13.Text = "Game Save Resigner";
-            tileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemToolsGameSaveResigner.Elements.Add(tileItemElement13);
-            this.TileItemToolsGameSaveResigner.Id = 8;
-            this.TileItemToolsGameSaveResigner.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.TileItemToolsGameSaveResigner.Name = "TileItemToolsGameSaveResigner";
-            this.TileItemToolsGameSaveResigner.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.TileItemToolsGameSaveResigner_ItemClick);
             // 
             // LabelHeaderTools
             // 
@@ -3362,7 +3371,7 @@ namespace Modio.Forms.Windows
             this.PanelChangeLogText.MinimumSize = new System.Drawing.Size(393, 0);
             this.PanelChangeLogText.Name = "PanelChangeLogText";
             this.PanelChangeLogText.Padding = new System.Windows.Forms.Padding(0, 0, 0, 6);
-            this.PanelChangeLogText.Size = new System.Drawing.Size(397, 293);
+            this.PanelChangeLogText.Size = new System.Drawing.Size(397, 251);
             this.PanelChangeLogText.TabIndex = 1;
             // 
             // LabelChangeLog
@@ -3373,9 +3382,11 @@ namespace Modio.Forms.Windows
             this.LabelChangeLog.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.LabelChangeLog.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.LabelChangeLog.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.LabelChangeLog.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.LabelChangeLog.Dock = System.Windows.Forms.DockStyle.Top;
             this.LabelChangeLog.Location = new System.Drawing.Point(0, 0);
             this.LabelChangeLog.Name = "LabelChangeLog";
-            this.LabelChangeLog.Size = new System.Drawing.Size(70, 17);
+            this.LabelChangeLog.Size = new System.Drawing.Size(397, 17);
             this.LabelChangeLog.TabIndex = 3;
             this.LabelChangeLog.Text = "Change Log";
             // 
@@ -3463,7 +3474,7 @@ namespace Modio.Forms.Windows
             this.TileControlSetup.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.TileControlSetup.ItemBorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
             this.TileControlSetup.Location = new System.Drawing.Point(7, 41);
-            this.TileControlSetup.MaxId = 10;
+            this.TileControlSetup.MaxId = 11;
             this.TileControlSetup.Name = "TileControlSetup";
             this.TileControlSetup.Padding = new System.Windows.Forms.Padding(14, 10, 10, 10);
             this.TileControlSetup.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
@@ -3479,6 +3490,7 @@ namespace Modio.Forms.Windows
             this.TileGroupSetup.Items.Add(this.TileItemEditConsoleProfiles);
             this.TileGroupSetup.Items.Add(this.TileItemStartupLibrary);
             this.TileGroupSetup.Items.Add(this.TileItemSetDownloadsLocation);
+            this.TileGroupSetup.Items.Add(this.TileItemEditAdvancedSettings);
             this.TileGroupSetup.Name = "TileGroupSetup";
             // 
             // TileItemHowToUseGuides
@@ -3640,6 +3652,29 @@ namespace Modio.Forms.Windows
             this.TileItemSetDownloadsLocation.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.TileItemSetDownloadsLocation.Name = "TileItemSetDownloadsLocation";
             this.TileItemSetDownloadsLocation.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.TileItemSetDownloadsLocation_ItemClick);
+            // 
+            // TileItemEditAdvancedSettings
+            // 
+            this.TileItemEditAdvancedSettings.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.TileItemEditAdvancedSettings.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.TileItemEditAdvancedSettings.AppearanceItem.Normal.Options.UseFont = true;
+            this.TileItemEditAdvancedSettings.AppearanceItem.Normal.Options.UseTextOptions = true;
+            this.TileItemEditAdvancedSettings.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TileItemEditAdvancedSettings.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
+            this.TileItemEditAdvancedSettings.AppearanceItem.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.TileItemEditAdvancedSettings.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
+            tileItemElement8.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement8.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
+            tileItemElement8.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement8.ImageOptions.ImageToTextIndent = 5;
+            tileItemElement8.ImageOptions.SvgImage = global::Modio.Properties.Resources.viewsettings;
+            tileItemElement8.Text = "Edit Advanced Settings";
+            tileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemEditAdvancedSettings.Elements.Add(tileItemElement8);
+            this.TileItemEditAdvancedSettings.Id = 10;
+            this.TileItemEditAdvancedSettings.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.TileItemEditAdvancedSettings.Name = "TileItemEditAdvancedSettings";
+            this.TileItemEditAdvancedSettings.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.TileItemEditAdvancedSettings_ItemClick);
             // 
             // LabelHeaderGetStarted
             // 
@@ -4231,16 +4266,16 @@ namespace Modio.Forms.Windows
             this.TileItemInstalledModsDeleteItem.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemInstalledModsDeleteItem.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemInstalledModsDeleteItem.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement16.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement16.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
-            tileItemElement16.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement16.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement16.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement16.ImageOptions.SvgImage = global::Modio.Properties.Resources.delete;
-            tileItemElement16.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement16.Text = "Delete Item";
-            tileItemElement16.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemInstalledModsDeleteItem.Elements.Add(tileItemElement16);
+            tileItemElement17.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement17.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            tileItemElement17.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement17.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement17.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement17.ImageOptions.SvgImage = global::Modio.Properties.Resources.delete;
+            tileItemElement17.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement17.Text = "Delete Item";
+            tileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemInstalledModsDeleteItem.Elements.Add(tileItemElement17);
             this.TileItemInstalledModsDeleteItem.Enabled = false;
             this.TileItemInstalledModsDeleteItem.Id = 5;
             this.TileItemInstalledModsDeleteItem.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -4262,16 +4297,16 @@ namespace Modio.Forms.Windows
             this.TileItemInstalledModsDeleteAll.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemInstalledModsDeleteAll.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemInstalledModsDeleteAll.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement17.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement17.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
-            tileItemElement17.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement17.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement17.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement17.ImageOptions.SvgImage = global::Modio.Properties.Resources.delete;
-            tileItemElement17.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement17.Text = "Delete All Items";
-            tileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemInstalledModsDeleteAll.Elements.Add(tileItemElement17);
+            tileItemElement18.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement18.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            tileItemElement18.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement18.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement18.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement18.ImageOptions.SvgImage = global::Modio.Properties.Resources.delete;
+            tileItemElement18.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement18.Text = "Delete All Items";
+            tileItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemInstalledModsDeleteAll.Elements.Add(tileItemElement18);
             this.TileItemInstalledModsDeleteAll.Enabled = false;
             this.TileItemInstalledModsDeleteAll.Id = 4;
             this.TileItemInstalledModsDeleteAll.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -4293,16 +4328,16 @@ namespace Modio.Forms.Windows
             this.TileItemInstalledModsUninstallItem.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemInstalledModsUninstallItem.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemInstalledModsUninstallItem.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement18.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement18.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
-            tileItemElement18.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement18.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement18.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement18.ImageOptions.SvgImage = global::Modio.Properties.Resources.uninstall_svg;
-            tileItemElement18.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement18.Text = "Uninstall Item";
-            tileItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemInstalledModsUninstallItem.Elements.Add(tileItemElement18);
+            tileItemElement19.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement19.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            tileItemElement19.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement19.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement19.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement19.ImageOptions.SvgImage = global::Modio.Properties.Resources.uninstall_svg;
+            tileItemElement19.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement19.Text = "Uninstall Item";
+            tileItemElement19.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemInstalledModsUninstallItem.Elements.Add(tileItemElement19);
             this.TileItemInstalledModsUninstallItem.Enabled = false;
             this.TileItemInstalledModsUninstallItem.Id = 2;
             this.TileItemInstalledModsUninstallItem.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -4324,16 +4359,16 @@ namespace Modio.Forms.Windows
             this.TileItemInstalledModsUninstallAllItems.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemInstalledModsUninstallAllItems.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemInstalledModsUninstallAllItems.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement19.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement19.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
-            tileItemElement19.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement19.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement19.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement19.ImageOptions.SvgImage = global::Modio.Properties.Resources.uninstall_svg;
-            tileItemElement19.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement19.Text = "Uninstall All Items";
-            tileItemElement19.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemInstalledModsUninstallAllItems.Elements.Add(tileItemElement19);
+            tileItemElement20.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement20.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            tileItemElement20.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement20.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement20.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement20.ImageOptions.SvgImage = global::Modio.Properties.Resources.uninstall_svg;
+            tileItemElement20.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement20.Text = "Uninstall All Items";
+            tileItemElement20.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemInstalledModsUninstallAllItems.Elements.Add(tileItemElement20);
             this.TileItemInstalledModsUninstallAllItems.Enabled = false;
             this.TileItemInstalledModsUninstallAllItems.Id = 0;
             this.TileItemInstalledModsUninstallAllItems.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -4355,16 +4390,16 @@ namespace Modio.Forms.Windows
             this.TileItemInstalledModsViewDetails.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemInstalledModsViewDetails.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemInstalledModsViewDetails.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement20.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement20.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
-            tileItemElement20.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement20.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement20.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement20.ImageOptions.SvgImage = global::Modio.Properties.Resources.info;
-            tileItemElement20.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement20.Text = "View Details";
-            tileItemElement20.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemInstalledModsViewDetails.Elements.Add(tileItemElement20);
+            tileItemElement21.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement21.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            tileItemElement21.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement21.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement21.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement21.ImageOptions.SvgImage = global::Modio.Properties.Resources.info;
+            tileItemElement21.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement21.Text = "View Details";
+            tileItemElement21.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemInstalledModsViewDetails.Elements.Add(tileItemElement21);
             this.TileItemInstalledModsViewDetails.Enabled = false;
             this.TileItemInstalledModsViewDetails.Id = 3;
             this.TileItemInstalledModsViewDetails.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -4839,16 +4874,16 @@ namespace Modio.Forms.Windows
             this.TileItemDownloadsOpenFolder.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemDownloadsOpenFolder.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemDownloadsOpenFolder.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement21.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement21.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
-            tileItemElement21.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement21.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement21.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement21.ImageOptions.SvgImage = global::Modio.Properties.Resources.downloads_folder;
-            tileItemElement21.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement21.Text = "Open Folder";
-            tileItemElement21.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemDownloadsOpenFolder.Elements.Add(tileItemElement21);
+            tileItemElement22.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement22.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            tileItemElement22.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement22.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement22.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement22.ImageOptions.SvgImage = global::Modio.Properties.Resources.downloads_folder;
+            tileItemElement22.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement22.Text = "Open Folder";
+            tileItemElement22.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemDownloadsOpenFolder.Elements.Add(tileItemElement22);
             this.TileItemDownloadsOpenFolder.Id = 0;
             this.TileItemDownloadsOpenFolder.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemDownloadsOpenFolder.Name = "TileItemDownloadsOpenFolder";
@@ -4867,16 +4902,16 @@ namespace Modio.Forms.Windows
             this.TileItemDownloadsOpenFile.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemDownloadsOpenFile.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemDownloadsOpenFile.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement22.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement22.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
-            tileItemElement22.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement22.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement22.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement22.ImageOptions.SvgImage = global::Modio.Properties.Resources.open_file;
-            tileItemElement22.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement22.Text = "Open File";
-            tileItemElement22.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemDownloadsOpenFile.Elements.Add(tileItemElement22);
+            tileItemElement23.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement23.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            tileItemElement23.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement23.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement23.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement23.ImageOptions.SvgImage = global::Modio.Properties.Resources.open_file;
+            tileItemElement23.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement23.Text = "Open File";
+            tileItemElement23.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemDownloadsOpenFile.Elements.Add(tileItemElement23);
             this.TileItemDownloadsOpenFile.Enabled = false;
             this.TileItemDownloadsOpenFile.Id = 0;
             this.TileItemDownloadsOpenFile.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -4898,16 +4933,16 @@ namespace Modio.Forms.Windows
             this.TileItemDownloadsDeleteAllItems.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemDownloadsDeleteAllItems.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemDownloadsDeleteAllItems.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement23.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement23.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement23.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement23.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement23.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement23.ImageOptions.SvgImage = global::Modio.Properties.Resources.delete;
-            tileItemElement23.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement23.Text = "Delete All Items";
-            tileItemElement23.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemDownloadsDeleteAllItems.Elements.Add(tileItemElement23);
+            tileItemElement24.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement24.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement24.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement24.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement24.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement24.ImageOptions.SvgImage = global::Modio.Properties.Resources.delete;
+            tileItemElement24.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement24.Text = "Delete All Items";
+            tileItemElement24.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemDownloadsDeleteAllItems.Elements.Add(tileItemElement24);
             this.TileItemDownloadsDeleteAllItems.Enabled = false;
             this.TileItemDownloadsDeleteAllItems.Id = 1;
             this.TileItemDownloadsDeleteAllItems.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -4929,16 +4964,16 @@ namespace Modio.Forms.Windows
             this.TileItemDownloadsDeleteItem.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemDownloadsDeleteItem.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemDownloadsDeleteItem.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement24.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement24.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement24.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement24.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement24.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement24.ImageOptions.SvgImage = global::Modio.Properties.Resources.delete;
-            tileItemElement24.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement24.Text = "Delete Item";
-            tileItemElement24.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemDownloadsDeleteItem.Elements.Add(tileItemElement24);
+            tileItemElement25.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement25.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement25.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement25.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement25.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement25.ImageOptions.SvgImage = global::Modio.Properties.Resources.delete;
+            tileItemElement25.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement25.Text = "Delete Item";
+            tileItemElement25.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemDownloadsDeleteItem.Elements.Add(tileItemElement25);
             this.TileItemDownloadsDeleteItem.Enabled = false;
             this.TileItemDownloadsDeleteItem.Id = 2;
             this.TileItemDownloadsDeleteItem.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -4960,16 +4995,16 @@ namespace Modio.Forms.Windows
             this.TileItemDownloadsViewDetails.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemDownloadsViewDetails.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemDownloadsViewDetails.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement25.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement25.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
-            tileItemElement25.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement25.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement25.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement25.ImageOptions.SvgImage = global::Modio.Properties.Resources.info;
-            tileItemElement25.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement25.Text = "View Details";
-            tileItemElement25.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemDownloadsViewDetails.Elements.Add(tileItemElement25);
+            tileItemElement26.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement26.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            tileItemElement26.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement26.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement26.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement26.ImageOptions.SvgImage = global::Modio.Properties.Resources.info;
+            tileItemElement26.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement26.Text = "View Details";
+            tileItemElement26.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemDownloadsViewDetails.Elements.Add(tileItemElement26);
             this.TileItemDownloadsViewDetails.Enabled = false;
             this.TileItemDownloadsViewDetails.Id = 8;
             this.TileItemDownloadsViewDetails.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -5695,7 +5730,6 @@ namespace Modio.Forms.Windows
             this.TabPageInterface.Appearance.PageClient.Options.UseBackColor = true;
             this.TabPageInterface.AutoScroll = true;
             this.TabPageInterface.Controls.Add(this.LabelSettingsHelpTranslate);
-            this.TabPageInterface.Controls.Add(this.LabelSettingsOptionsOnlyForPS3);
             this.TabPageInterface.Controls.Add(this.LabelSettingsAutoLoadDirectoryListings);
             this.TabPageInterface.Controls.Add(this.ToggleSettingsAutoLoadDirectoryListings);
             this.TabPageInterface.Controls.Add(this.LabelSettingsEnableHardwareAcceleration);
@@ -5734,17 +5768,6 @@ namespace Modio.Forms.Windows
             this.LabelSettingsHelpTranslate.TabIndex = 1219;
             this.LabelSettingsHelpTranslate.Text = "Help translate Modio on Crowdin";
             this.LabelSettingsHelpTranslate.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelSettingsHelpTranslate_HyperlinkClick);
-            // 
-            // LabelSettingsOptionsOnlyForPS3
-            // 
-            this.LabelSettingsOptionsOnlyForPS3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelSettingsOptionsOnlyForPS3.Appearance.Options.UseFont = true;
-            this.LabelSettingsOptionsOnlyForPS3.Location = new System.Drawing.Point(15, 599);
-            this.LabelSettingsOptionsOnlyForPS3.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelSettingsOptionsOnlyForPS3.Name = "LabelSettingsOptionsOnlyForPS3";
-            this.LabelSettingsOptionsOnlyForPS3.Size = new System.Drawing.Size(225, 15);
-            this.LabelSettingsOptionsOnlyForPS3.TabIndex = 1213;
-            this.LabelSettingsOptionsOnlyForPS3.Text = "*These options only apply for PlayStation 3";
             // 
             // LabelSettingsAutoLoadDirectoryListings
             // 
@@ -5875,9 +5898,9 @@ namespace Modio.Forms.Windows
             this.LabelSettingsAutoDetectGameRegions.Location = new System.Drawing.Point(94, 453);
             this.LabelSettingsAutoDetectGameRegions.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelSettingsAutoDetectGameRegions.Name = "LabelSettingsAutoDetectGameRegions";
-            this.LabelSettingsAutoDetectGameRegions.Size = new System.Drawing.Size(190, 15);
+            this.LabelSettingsAutoDetectGameRegions.Size = new System.Drawing.Size(185, 15);
             this.LabelSettingsAutoDetectGameRegions.TabIndex = 1193;
-            this.LabelSettingsAutoDetectGameRegions.Text = "Automatically detect game regions*\r\n";
+            this.LabelSettingsAutoDetectGameRegions.Text = "Automatically detect game regions";
             // 
             // LabelSettingsShowGamesFromExternalDevices
             // 
@@ -5886,9 +5909,9 @@ namespace Modio.Forms.Windows
             this.LabelSettingsShowGamesFromExternalDevices.Location = new System.Drawing.Point(94, 423);
             this.LabelSettingsShowGamesFromExternalDevices.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelSettingsShowGamesFromExternalDevices.Name = "LabelSettingsShowGamesFromExternalDevices";
-            this.LabelSettingsShowGamesFromExternalDevices.Size = new System.Drawing.Size(206, 15);
+            this.LabelSettingsShowGamesFromExternalDevices.Size = new System.Drawing.Size(201, 15);
             this.LabelSettingsShowGamesFromExternalDevices.TabIndex = 1192;
-            this.LabelSettingsShowGamesFromExternalDevices.Text = "Show games list from external devices*\r\n";
+            this.LabelSettingsShowGamesFromExternalDevices.Text = "Show games list from external devices";
             // 
             // ToggleSettingsAutoDetectGameTitles
             // 
@@ -6387,36 +6410,108 @@ namespace Modio.Forms.Windows
             // 
             // TabPagePaths
             // 
+            this.TabPagePaths.Controls.Add(this.ButtonSettingsPathResources);
+            this.TabPagePaths.Controls.Add(this.LabelSettingsPathResources);
+            this.TabPagePaths.Controls.Add(this.TextBoxSettingsPathResources);
+            this.TabPagePaths.Controls.Add(this.ButtonSettingsPathHomebrew);
+            this.TabPagePaths.Controls.Add(this.LabelSettingsPathHomebrew);
+            this.TabPagePaths.Controls.Add(this.TextBoxSettingsPathHomebrew);
             this.TabPagePaths.Controls.Add(this.LabelSettingsDirectoriesMustBeWritable);
             this.TabPagePaths.Controls.Add(this.LabelSettingsReferToBaseDirectory);
             this.TabPagePaths.Controls.Add(this.ButtonSettingsPathDownloads);
-            this.TabPagePaths.Controls.Add(this.LabelSettingsDownloads);
-            this.TabPagePaths.Controls.Add(this.TextBoxSettingsDownloads);
+            this.TabPagePaths.Controls.Add(this.LabelSettingsPathDownloads);
+            this.TabPagePaths.Controls.Add(this.TextBoxSettingsPathDownloads);
             this.TabPagePaths.Controls.Add(this.ButtonSettingsPathGameSaves);
-            this.TabPagePaths.Controls.Add(this.LabelSettingsGameSaves);
-            this.TabPagePaths.Controls.Add(this.TextBoxSettingsGameSaves);
+            this.TabPagePaths.Controls.Add(this.LabelSettingsPathGameSaves);
+            this.TabPagePaths.Controls.Add(this.TextBoxSettingsPathGameSaves);
             this.TabPagePaths.Controls.Add(this.ButtonSettingsPathPlugins);
-            this.TabPagePaths.Controls.Add(this.LabelSettingsPlugins);
-            this.TabPagePaths.Controls.Add(this.TextBoxSettingsPlugins);
+            this.TabPagePaths.Controls.Add(this.LabelSettingsPathPlugins);
+            this.TabPagePaths.Controls.Add(this.TextBoxSettingsPathPlugins);
             this.TabPagePaths.Controls.Add(this.ButtonSettingsPathPackages);
-            this.TabPagePaths.Controls.Add(this.LabelSettingsPackages);
-            this.TabPagePaths.Controls.Add(this.TextBoxSettingsPackages);
+            this.TabPagePaths.Controls.Add(this.LabelSettingsPathPackages);
+            this.TabPagePaths.Controls.Add(this.TextBoxSettingsPathPackages);
             this.TabPagePaths.Controls.Add(this.ButtonSettingsPathGameMods);
             this.TabPagePaths.Controls.Add(this.ButtonSettingsPathBaseDirectory);
-            this.TabPagePaths.Controls.Add(this.LabelSettingsGameMods);
-            this.TabPagePaths.Controls.Add(this.TextBoxSettingsGameMods);
-            this.TabPagePaths.Controls.Add(this.LabelSettingsBaseDirectory);
-            this.TabPagePaths.Controls.Add(this.TextBoxSettingsBaseDirectory);
+            this.TabPagePaths.Controls.Add(this.LabelSettingsPathGameMods);
+            this.TabPagePaths.Controls.Add(this.TextBoxSettingsPathGameMods);
+            this.TabPagePaths.Controls.Add(this.LabelSettingsPathBaseDirectory);
+            this.TabPagePaths.Controls.Add(this.TextBoxSettingsPathBaseDirectory);
             this.TabPagePaths.Name = "TabPagePaths";
             this.TabPagePaths.Padding = new System.Windows.Forms.Padding(0, 0, 0, 14);
             this.TabPagePaths.Size = new System.Drawing.Size(1268, 653);
             this.TabPagePaths.Text = "  PATHS  ";
             // 
+            // ButtonSettingsPathResources
+            // 
+            this.ButtonSettingsPathResources.Location = new System.Drawing.Point(486, 321);
+            this.ButtonSettingsPathResources.Name = "ButtonSettingsPathResources";
+            this.ButtonSettingsPathResources.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonSettingsPathResources.Size = new System.Drawing.Size(36, 22);
+            this.ButtonSettingsPathResources.TabIndex = 1207;
+            this.ButtonSettingsPathResources.Text = "...";
+            this.ButtonSettingsPathResources.Click += new System.EventHandler(this.ButtonSettingsPathResources_Click);
+            // 
+            // LabelSettingsPathResources
+            // 
+            this.LabelSettingsPathResources.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelSettingsPathResources.Appearance.Options.UseFont = true;
+            this.LabelSettingsPathResources.Location = new System.Drawing.Point(15, 297);
+            this.LabelSettingsPathResources.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsPathResources.Name = "LabelSettingsPathResources";
+            this.LabelSettingsPathResources.Size = new System.Drawing.Size(57, 15);
+            this.LabelSettingsPathResources.TabIndex = 1205;
+            this.LabelSettingsPathResources.Text = "Resources";
+            // 
+            // TextBoxSettingsPathResources
+            // 
+            this.TextBoxSettingsPathResources.EditValue = "";
+            this.TextBoxSettingsPathResources.Location = new System.Drawing.Point(15, 321);
+            this.TextBoxSettingsPathResources.Name = "TextBoxSettingsPathResources";
+            this.TextBoxSettingsPathResources.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsPathResources.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathResources.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathResources.Size = new System.Drawing.Size(465, 22);
+            this.TextBoxSettingsPathResources.TabIndex = 1206;
+            this.TextBoxSettingsPathResources.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathResources_EditValueChanged);
+            // 
+            // ButtonSettingsPathHomebrew
+            // 
+            this.ButtonSettingsPathHomebrew.Location = new System.Drawing.Point(486, 256);
+            this.ButtonSettingsPathHomebrew.Name = "ButtonSettingsPathHomebrew";
+            this.ButtonSettingsPathHomebrew.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonSettingsPathHomebrew.Size = new System.Drawing.Size(36, 22);
+            this.ButtonSettingsPathHomebrew.TabIndex = 1204;
+            this.ButtonSettingsPathHomebrew.Text = "...";
+            this.ButtonSettingsPathHomebrew.Click += new System.EventHandler(this.ButtonSettingsPathHomebrew_Click);
+            // 
+            // LabelSettingsPathHomebrew
+            // 
+            this.LabelSettingsPathHomebrew.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelSettingsPathHomebrew.Appearance.Options.UseFont = true;
+            this.LabelSettingsPathHomebrew.Location = new System.Drawing.Point(15, 232);
+            this.LabelSettingsPathHomebrew.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsPathHomebrew.Name = "LabelSettingsPathHomebrew";
+            this.LabelSettingsPathHomebrew.Size = new System.Drawing.Size(63, 15);
+            this.LabelSettingsPathHomebrew.TabIndex = 1202;
+            this.LabelSettingsPathHomebrew.Text = "Homebrew";
+            // 
+            // TextBoxSettingsPathHomebrew
+            // 
+            this.TextBoxSettingsPathHomebrew.EditValue = "";
+            this.TextBoxSettingsPathHomebrew.Location = new System.Drawing.Point(15, 256);
+            this.TextBoxSettingsPathHomebrew.Name = "TextBoxSettingsPathHomebrew";
+            this.TextBoxSettingsPathHomebrew.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsPathHomebrew.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathHomebrew.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathHomebrew.Size = new System.Drawing.Size(465, 22);
+            this.TextBoxSettingsPathHomebrew.TabIndex = 1203;
+            this.TextBoxSettingsPathHomebrew.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathHomebrew_EditValueChanged);
+            // 
             // LabelSettingsDirectoriesMustBeWritable
             // 
             this.LabelSettingsDirectoriesMustBeWritable.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsDirectoriesMustBeWritable.Appearance.Options.UseFont = true;
-            this.LabelSettingsDirectoriesMustBeWritable.Location = new System.Drawing.Point(15, 435);
+            this.LabelSettingsDirectoriesMustBeWritable.Location = new System.Drawing.Point(15, 577);
             this.LabelSettingsDirectoriesMustBeWritable.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelSettingsDirectoriesMustBeWritable.Name = "LabelSettingsDirectoriesMustBeWritable";
             this.LabelSettingsDirectoriesMustBeWritable.Size = new System.Drawing.Size(166, 15);
@@ -6427,7 +6522,7 @@ namespace Modio.Forms.Windows
             // 
             this.LabelSettingsReferToBaseDirectory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsReferToBaseDirectory.Appearance.Options.UseFont = true;
-            this.LabelSettingsReferToBaseDirectory.Location = new System.Drawing.Point(15, 414);
+            this.LabelSettingsReferToBaseDirectory.Location = new System.Drawing.Point(15, 556);
             this.LabelSettingsReferToBaseDirectory.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelSettingsReferToBaseDirectory.Name = "LabelSettingsReferToBaseDirectory";
             this.LabelSettingsReferToBaseDirectory.Size = new System.Drawing.Size(248, 15);
@@ -6444,32 +6539,32 @@ namespace Modio.Forms.Windows
             this.ButtonSettingsPathDownloads.Text = "...";
             this.ButtonSettingsPathDownloads.Click += new System.EventHandler(this.ButtonSettingsPathDownloads_Click);
             // 
-            // LabelSettingsDownloads
+            // LabelSettingsPathDownloads
             // 
-            this.LabelSettingsDownloads.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelSettingsDownloads.Appearance.Options.UseFont = true;
-            this.LabelSettingsDownloads.Location = new System.Drawing.Point(15, 102);
-            this.LabelSettingsDownloads.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.LabelSettingsDownloads.Name = "LabelSettingsDownloads";
-            this.LabelSettingsDownloads.Size = new System.Drawing.Size(61, 15);
-            this.LabelSettingsDownloads.TabIndex = 1197;
-            this.LabelSettingsDownloads.Text = "Downloads";
+            this.LabelSettingsPathDownloads.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelSettingsPathDownloads.Appearance.Options.UseFont = true;
+            this.LabelSettingsPathDownloads.Location = new System.Drawing.Point(15, 102);
+            this.LabelSettingsPathDownloads.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsPathDownloads.Name = "LabelSettingsPathDownloads";
+            this.LabelSettingsPathDownloads.Size = new System.Drawing.Size(61, 15);
+            this.LabelSettingsPathDownloads.TabIndex = 1197;
+            this.LabelSettingsPathDownloads.Text = "Downloads";
             // 
-            // TextBoxSettingsDownloads
+            // TextBoxSettingsPathDownloads
             // 
-            this.TextBoxSettingsDownloads.EditValue = "";
-            this.TextBoxSettingsDownloads.Location = new System.Drawing.Point(15, 126);
-            this.TextBoxSettingsDownloads.Name = "TextBoxSettingsDownloads";
-            this.TextBoxSettingsDownloads.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxSettingsDownloads.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxSettingsDownloads.Properties.MaxLength = 16;
-            this.TextBoxSettingsDownloads.Size = new System.Drawing.Size(465, 22);
-            this.TextBoxSettingsDownloads.TabIndex = 1198;
-            this.TextBoxSettingsDownloads.EditValueChanged += new System.EventHandler(this.TextBoxSettingsDownloads_EditValueChanged);
+            this.TextBoxSettingsPathDownloads.EditValue = "";
+            this.TextBoxSettingsPathDownloads.Location = new System.Drawing.Point(15, 126);
+            this.TextBoxSettingsPathDownloads.Name = "TextBoxSettingsPathDownloads";
+            this.TextBoxSettingsPathDownloads.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsPathDownloads.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathDownloads.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathDownloads.Size = new System.Drawing.Size(465, 22);
+            this.TextBoxSettingsPathDownloads.TabIndex = 1198;
+            this.TextBoxSettingsPathDownloads.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathDownloads_EditValueChanged);
             // 
             // ButtonSettingsPathGameSaves
             // 
-            this.ButtonSettingsPathGameSaves.Location = new System.Drawing.Point(486, 386);
+            this.ButtonSettingsPathGameSaves.Location = new System.Drawing.Point(486, 516);
             this.ButtonSettingsPathGameSaves.Name = "ButtonSettingsPathGameSaves";
             this.ButtonSettingsPathGameSaves.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonSettingsPathGameSaves.Size = new System.Drawing.Size(36, 22);
@@ -6477,32 +6572,32 @@ namespace Modio.Forms.Windows
             this.ButtonSettingsPathGameSaves.Text = "...";
             this.ButtonSettingsPathGameSaves.Click += new System.EventHandler(this.ButtonSettingsPathGameSaves_Click);
             // 
-            // LabelSettingsGameSaves
+            // LabelSettingsPathGameSaves
             // 
-            this.LabelSettingsGameSaves.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelSettingsGameSaves.Appearance.Options.UseFont = true;
-            this.LabelSettingsGameSaves.Location = new System.Drawing.Point(15, 362);
-            this.LabelSettingsGameSaves.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.LabelSettingsGameSaves.Name = "LabelSettingsGameSaves";
-            this.LabelSettingsGameSaves.Size = new System.Drawing.Size(68, 15);
-            this.LabelSettingsGameSaves.TabIndex = 1194;
-            this.LabelSettingsGameSaves.Text = "Game Saves";
+            this.LabelSettingsPathGameSaves.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelSettingsPathGameSaves.Appearance.Options.UseFont = true;
+            this.LabelSettingsPathGameSaves.Location = new System.Drawing.Point(15, 492);
+            this.LabelSettingsPathGameSaves.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsPathGameSaves.Name = "LabelSettingsPathGameSaves";
+            this.LabelSettingsPathGameSaves.Size = new System.Drawing.Size(68, 15);
+            this.LabelSettingsPathGameSaves.TabIndex = 1194;
+            this.LabelSettingsPathGameSaves.Text = "Game Saves";
             // 
-            // TextBoxSettingsGameSaves
+            // TextBoxSettingsPathGameSaves
             // 
-            this.TextBoxSettingsGameSaves.EditValue = "";
-            this.TextBoxSettingsGameSaves.Location = new System.Drawing.Point(15, 386);
-            this.TextBoxSettingsGameSaves.Name = "TextBoxSettingsGameSaves";
-            this.TextBoxSettingsGameSaves.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxSettingsGameSaves.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxSettingsGameSaves.Properties.MaxLength = 16;
-            this.TextBoxSettingsGameSaves.Size = new System.Drawing.Size(465, 22);
-            this.TextBoxSettingsGameSaves.TabIndex = 1195;
-            this.TextBoxSettingsGameSaves.EditValueChanged += new System.EventHandler(this.TextBoxSettingsGameSaves_EditValueChanged);
+            this.TextBoxSettingsPathGameSaves.EditValue = "";
+            this.TextBoxSettingsPathGameSaves.Location = new System.Drawing.Point(15, 516);
+            this.TextBoxSettingsPathGameSaves.Name = "TextBoxSettingsPathGameSaves";
+            this.TextBoxSettingsPathGameSaves.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsPathGameSaves.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathGameSaves.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathGameSaves.Size = new System.Drawing.Size(465, 22);
+            this.TextBoxSettingsPathGameSaves.TabIndex = 1195;
+            this.TextBoxSettingsPathGameSaves.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathGameSaves_EditValueChanged);
             // 
             // ButtonSettingsPathPlugins
             // 
-            this.ButtonSettingsPathPlugins.Location = new System.Drawing.Point(486, 321);
+            this.ButtonSettingsPathPlugins.Location = new System.Drawing.Point(486, 451);
             this.ButtonSettingsPathPlugins.Name = "ButtonSettingsPathPlugins";
             this.ButtonSettingsPathPlugins.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonSettingsPathPlugins.Size = new System.Drawing.Size(36, 22);
@@ -6510,32 +6605,32 @@ namespace Modio.Forms.Windows
             this.ButtonSettingsPathPlugins.Text = "...";
             this.ButtonSettingsPathPlugins.Click += new System.EventHandler(this.ButtonSettingsPathPlugins_Click);
             // 
-            // LabelSettingsPlugins
+            // LabelSettingsPathPlugins
             // 
-            this.LabelSettingsPlugins.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelSettingsPlugins.Appearance.Options.UseFont = true;
-            this.LabelSettingsPlugins.Location = new System.Drawing.Point(15, 297);
-            this.LabelSettingsPlugins.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.LabelSettingsPlugins.Name = "LabelSettingsPlugins";
-            this.LabelSettingsPlugins.Size = new System.Drawing.Size(39, 15);
-            this.LabelSettingsPlugins.TabIndex = 1191;
-            this.LabelSettingsPlugins.Text = "Plugins";
+            this.LabelSettingsPathPlugins.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelSettingsPathPlugins.Appearance.Options.UseFont = true;
+            this.LabelSettingsPathPlugins.Location = new System.Drawing.Point(15, 427);
+            this.LabelSettingsPathPlugins.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsPathPlugins.Name = "LabelSettingsPathPlugins";
+            this.LabelSettingsPathPlugins.Size = new System.Drawing.Size(39, 15);
+            this.LabelSettingsPathPlugins.TabIndex = 1191;
+            this.LabelSettingsPathPlugins.Text = "Plugins";
             // 
-            // TextBoxSettingsPlugins
+            // TextBoxSettingsPathPlugins
             // 
-            this.TextBoxSettingsPlugins.EditValue = "";
-            this.TextBoxSettingsPlugins.Location = new System.Drawing.Point(15, 321);
-            this.TextBoxSettingsPlugins.Name = "TextBoxSettingsPlugins";
-            this.TextBoxSettingsPlugins.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxSettingsPlugins.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxSettingsPlugins.Properties.MaxLength = 16;
-            this.TextBoxSettingsPlugins.Size = new System.Drawing.Size(465, 22);
-            this.TextBoxSettingsPlugins.TabIndex = 1192;
-            this.TextBoxSettingsPlugins.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPlugins_EditValueChanged);
+            this.TextBoxSettingsPathPlugins.EditValue = "";
+            this.TextBoxSettingsPathPlugins.Location = new System.Drawing.Point(15, 451);
+            this.TextBoxSettingsPathPlugins.Name = "TextBoxSettingsPathPlugins";
+            this.TextBoxSettingsPathPlugins.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsPathPlugins.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathPlugins.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathPlugins.Size = new System.Drawing.Size(465, 22);
+            this.TextBoxSettingsPathPlugins.TabIndex = 1192;
+            this.TextBoxSettingsPathPlugins.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathPlugins_EditValueChanged);
             // 
             // ButtonSettingsPathPackages
             // 
-            this.ButtonSettingsPathPackages.Location = new System.Drawing.Point(486, 256);
+            this.ButtonSettingsPathPackages.Location = new System.Drawing.Point(486, 386);
             this.ButtonSettingsPathPackages.Name = "ButtonSettingsPathPackages";
             this.ButtonSettingsPathPackages.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonSettingsPathPackages.Size = new System.Drawing.Size(36, 22);
@@ -6543,28 +6638,28 @@ namespace Modio.Forms.Windows
             this.ButtonSettingsPathPackages.Text = "...";
             this.ButtonSettingsPathPackages.Click += new System.EventHandler(this.ButtonSettingsPathPackages_Click);
             // 
-            // LabelSettingsPackages
+            // LabelSettingsPathPackages
             // 
-            this.LabelSettingsPackages.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelSettingsPackages.Appearance.Options.UseFont = true;
-            this.LabelSettingsPackages.Location = new System.Drawing.Point(15, 232);
-            this.LabelSettingsPackages.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.LabelSettingsPackages.Name = "LabelSettingsPackages";
-            this.LabelSettingsPackages.Size = new System.Drawing.Size(51, 15);
-            this.LabelSettingsPackages.TabIndex = 1188;
-            this.LabelSettingsPackages.Text = "Packages";
+            this.LabelSettingsPathPackages.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelSettingsPathPackages.Appearance.Options.UseFont = true;
+            this.LabelSettingsPathPackages.Location = new System.Drawing.Point(15, 362);
+            this.LabelSettingsPathPackages.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsPathPackages.Name = "LabelSettingsPathPackages";
+            this.LabelSettingsPathPackages.Size = new System.Drawing.Size(51, 15);
+            this.LabelSettingsPathPackages.TabIndex = 1188;
+            this.LabelSettingsPathPackages.Text = "Packages";
             // 
-            // TextBoxSettingsPackages
+            // TextBoxSettingsPathPackages
             // 
-            this.TextBoxSettingsPackages.EditValue = "";
-            this.TextBoxSettingsPackages.Location = new System.Drawing.Point(15, 256);
-            this.TextBoxSettingsPackages.Name = "TextBoxSettingsPackages";
-            this.TextBoxSettingsPackages.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxSettingsPackages.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxSettingsPackages.Properties.MaxLength = 16;
-            this.TextBoxSettingsPackages.Size = new System.Drawing.Size(465, 22);
-            this.TextBoxSettingsPackages.TabIndex = 1189;
-            this.TextBoxSettingsPackages.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPackages_EditValueChanged);
+            this.TextBoxSettingsPathPackages.EditValue = "";
+            this.TextBoxSettingsPathPackages.Location = new System.Drawing.Point(15, 386);
+            this.TextBoxSettingsPathPackages.Name = "TextBoxSettingsPathPackages";
+            this.TextBoxSettingsPathPackages.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsPathPackages.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathPackages.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathPackages.Size = new System.Drawing.Size(465, 22);
+            this.TextBoxSettingsPathPackages.TabIndex = 1189;
+            this.TextBoxSettingsPathPackages.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathPackages_EditValueChanged);
             // 
             // ButtonSettingsPathGameMods
             // 
@@ -6586,52 +6681,52 @@ namespace Modio.Forms.Windows
             this.ButtonSettingsPathBaseDirectory.Text = "...";
             this.ButtonSettingsPathBaseDirectory.Click += new System.EventHandler(this.ButtonSettingsPathBaseDirectory_Click);
             // 
-            // LabelSettingsGameMods
+            // LabelSettingsPathGameMods
             // 
-            this.LabelSettingsGameMods.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelSettingsGameMods.Appearance.Options.UseFont = true;
-            this.LabelSettingsGameMods.Location = new System.Drawing.Point(15, 167);
-            this.LabelSettingsGameMods.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.LabelSettingsGameMods.Name = "LabelSettingsGameMods";
-            this.LabelSettingsGameMods.Size = new System.Drawing.Size(66, 15);
-            this.LabelSettingsGameMods.TabIndex = 1184;
-            this.LabelSettingsGameMods.Text = "Game Mods";
+            this.LabelSettingsPathGameMods.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelSettingsPathGameMods.Appearance.Options.UseFont = true;
+            this.LabelSettingsPathGameMods.Location = new System.Drawing.Point(15, 167);
+            this.LabelSettingsPathGameMods.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsPathGameMods.Name = "LabelSettingsPathGameMods";
+            this.LabelSettingsPathGameMods.Size = new System.Drawing.Size(66, 15);
+            this.LabelSettingsPathGameMods.TabIndex = 1184;
+            this.LabelSettingsPathGameMods.Text = "Game Mods";
             // 
-            // TextBoxSettingsGameMods
+            // TextBoxSettingsPathGameMods
             // 
-            this.TextBoxSettingsGameMods.EditValue = "";
-            this.TextBoxSettingsGameMods.Location = new System.Drawing.Point(15, 191);
-            this.TextBoxSettingsGameMods.Name = "TextBoxSettingsGameMods";
-            this.TextBoxSettingsGameMods.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxSettingsGameMods.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxSettingsGameMods.Properties.MaxLength = 16;
-            this.TextBoxSettingsGameMods.Size = new System.Drawing.Size(465, 22);
-            this.TextBoxSettingsGameMods.TabIndex = 1185;
-            this.TextBoxSettingsGameMods.EditValueChanged += new System.EventHandler(this.TextBoxSettingsGameMods_EditValueChanged);
+            this.TextBoxSettingsPathGameMods.EditValue = "";
+            this.TextBoxSettingsPathGameMods.Location = new System.Drawing.Point(15, 191);
+            this.TextBoxSettingsPathGameMods.Name = "TextBoxSettingsPathGameMods";
+            this.TextBoxSettingsPathGameMods.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsPathGameMods.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathGameMods.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathGameMods.Size = new System.Drawing.Size(465, 22);
+            this.TextBoxSettingsPathGameMods.TabIndex = 1185;
+            this.TextBoxSettingsPathGameMods.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathGameMods_EditValueChanged);
             // 
-            // LabelSettingsBaseDirectory
+            // LabelSettingsPathBaseDirectory
             // 
-            this.LabelSettingsBaseDirectory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelSettingsBaseDirectory.Appearance.Options.UseFont = true;
-            this.LabelSettingsBaseDirectory.Location = new System.Drawing.Point(15, 15);
-            this.LabelSettingsBaseDirectory.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.LabelSettingsBaseDirectory.Name = "LabelSettingsBaseDirectory";
-            this.LabelSettingsBaseDirectory.Size = new System.Drawing.Size(82, 15);
-            this.LabelSettingsBaseDirectory.TabIndex = 1179;
-            this.LabelSettingsBaseDirectory.Text = "Base Directory";
+            this.LabelSettingsPathBaseDirectory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelSettingsPathBaseDirectory.Appearance.Options.UseFont = true;
+            this.LabelSettingsPathBaseDirectory.Location = new System.Drawing.Point(15, 15);
+            this.LabelSettingsPathBaseDirectory.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsPathBaseDirectory.Name = "LabelSettingsPathBaseDirectory";
+            this.LabelSettingsPathBaseDirectory.Size = new System.Drawing.Size(82, 15);
+            this.LabelSettingsPathBaseDirectory.TabIndex = 1179;
+            this.LabelSettingsPathBaseDirectory.Text = "Base Directory";
             // 
-            // TextBoxSettingsBaseDirectory
+            // TextBoxSettingsPathBaseDirectory
             // 
-            this.TextBoxSettingsBaseDirectory.EditValue = "";
-            this.TextBoxSettingsBaseDirectory.Location = new System.Drawing.Point(15, 39);
-            this.TextBoxSettingsBaseDirectory.Name = "TextBoxSettingsBaseDirectory";
-            this.TextBoxSettingsBaseDirectory.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxSettingsBaseDirectory.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxSettingsBaseDirectory.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.TextBoxSettingsBaseDirectory.Properties.MaxLength = 16;
-            this.TextBoxSettingsBaseDirectory.Size = new System.Drawing.Size(465, 22);
-            this.TextBoxSettingsBaseDirectory.TabIndex = 1181;
-            this.TextBoxSettingsBaseDirectory.EditValueChanged += new System.EventHandler(this.TextBoxSettingsBaseDirectory_EditValueChanged);
+            this.TextBoxSettingsPathBaseDirectory.EditValue = "";
+            this.TextBoxSettingsPathBaseDirectory.Location = new System.Drawing.Point(15, 39);
+            this.TextBoxSettingsPathBaseDirectory.Name = "TextBoxSettingsPathBaseDirectory";
+            this.TextBoxSettingsPathBaseDirectory.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsPathBaseDirectory.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathBaseDirectory.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.TextBoxSettingsPathBaseDirectory.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathBaseDirectory.Size = new System.Drawing.Size(465, 22);
+            this.TextBoxSettingsPathBaseDirectory.TabIndex = 1181;
+            this.TextBoxSettingsPathBaseDirectory.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathBaseDirectory_EditValueChanged);
             // 
             // TabPageDiscord
             // 
@@ -6647,7 +6742,7 @@ namespace Modio.Forms.Windows
             // 
             this.LabelSettingsShowCurrentGamePlaying.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsShowCurrentGamePlaying.Appearance.Options.UseFont = true;
-            this.LabelSettingsShowCurrentGamePlaying.Location = new System.Drawing.Point(94, 49);
+            this.LabelSettingsShowCurrentGamePlaying.Location = new System.Drawing.Point(94, 53);
             this.LabelSettingsShowCurrentGamePlaying.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelSettingsShowCurrentGamePlaying.Name = "LabelSettingsShowCurrentGamePlaying";
             this.LabelSettingsShowCurrentGamePlaying.Size = new System.Drawing.Size(165, 15);
@@ -6656,7 +6751,7 @@ namespace Modio.Forms.Windows
             // 
             // ToggleSettingsShowCurrentGamePlaying
             // 
-            this.ToggleSettingsShowCurrentGamePlaying.Location = new System.Drawing.Point(14, 45);
+            this.ToggleSettingsShowCurrentGamePlaying.Location = new System.Drawing.Point(14, 49);
             this.ToggleSettingsShowCurrentGamePlaying.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
             this.ToggleSettingsShowCurrentGamePlaying.MenuManager = this.MainMenu;
             this.ToggleSettingsShowCurrentGamePlaying.Name = "ToggleSettingsShowCurrentGamePlaying";
@@ -7008,15 +7103,15 @@ namespace Modio.Forms.Windows
             this.TileItemGameSavesSortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemGameSavesSortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemGameSavesSortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement28.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            tileItemElement28.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement28.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement28.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement28.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement28.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            tileItemElement28.Text = "Sort Options";
-            tileItemElement28.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemGameSavesSortOptions.Elements.Add(tileItemElement28);
+            tileItemElement29.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            tileItemElement29.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement29.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement29.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement29.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement29.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            tileItemElement29.Text = "Sort Options";
+            tileItemElement29.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemGameSavesSortOptions.Elements.Add(tileItemElement29);
             this.TileItemGameSavesSortOptions.Id = 1;
             this.TileItemGameSavesSortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemGameSavesSortOptions.Name = "TileItemGameSavesSortOptions";
@@ -7358,15 +7453,15 @@ namespace Modio.Forms.Windows
             this.TileItemPluginsShowFavorites.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemPluginsShowFavorites.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemPluginsShowFavorites.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement29.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement29.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement29.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement29.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement29.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement29.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage4")));
-            tileItemElement29.Text = "Show Favorites";
-            tileItemElement29.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemPluginsShowFavorites.Elements.Add(tileItemElement29);
+            tileItemElement30.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement30.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement30.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement30.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement30.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement30.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage4")));
+            tileItemElement30.Text = "Show Favorites";
+            tileItemElement30.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemPluginsShowFavorites.Elements.Add(tileItemElement30);
             this.TileItemPluginsShowFavorites.Id = 2;
             this.TileItemPluginsShowFavorites.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemPluginsShowFavorites.Name = "TileItemPluginsShowFavorites";
@@ -7385,15 +7480,15 @@ namespace Modio.Forms.Windows
             this.TileItemPluginsSortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemPluginsSortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemPluginsSortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement30.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
-            tileItemElement30.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement30.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement30.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement30.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement30.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            tileItemElement30.Text = "Sort Options";
-            tileItemElement30.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemPluginsSortOptions.Elements.Add(tileItemElement30);
+            tileItemElement31.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            tileItemElement31.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement31.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement31.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement31.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement31.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            tileItemElement31.Text = "Sort Options";
+            tileItemElement31.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemPluginsSortOptions.Elements.Add(tileItemElement31);
             this.TileItemPluginsSortOptions.Id = 1;
             this.TileItemPluginsSortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemPluginsSortOptions.Name = "TileItemPluginsSortOptions";
@@ -7879,15 +7974,15 @@ namespace Modio.Forms.Windows
             this.TileItemPackagesSortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemPackagesSortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemPackagesSortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement31.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
-            tileItemElement31.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement31.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement31.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement31.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement31.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            tileItemElement31.Text = "Sort Options";
-            tileItemElement31.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemPackagesSortOptions.Elements.Add(tileItemElement31);
+            tileItemElement32.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            tileItemElement32.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement32.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement32.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement32.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement32.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            tileItemElement32.Text = "Sort Options";
+            tileItemElement32.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemPackagesSortOptions.Elements.Add(tileItemElement32);
             this.TileItemPackagesSortOptions.Id = 1;
             this.TileItemPackagesSortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemPackagesSortOptions.Name = "TileItemPackagesSortOptions";
@@ -7959,15 +8054,15 @@ namespace Modio.Forms.Windows
             this.TileItemResourcesShowFavorites.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemResourcesShowFavorites.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemResourcesShowFavorites.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement32.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement32.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement32.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement32.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement32.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement32.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage5")));
-            tileItemElement32.Text = "Show Favorites";
-            tileItemElement32.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemResourcesShowFavorites.Elements.Add(tileItemElement32);
+            tileItemElement33.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement33.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement33.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement33.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement33.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement33.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage5")));
+            tileItemElement33.Text = "Show Favorites";
+            tileItemElement33.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemResourcesShowFavorites.Elements.Add(tileItemElement33);
             this.TileItemResourcesShowFavorites.Id = 2;
             this.TileItemResourcesShowFavorites.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemResourcesShowFavorites.Name = "TileItemResourcesShowFavorites";
@@ -7986,15 +8081,15 @@ namespace Modio.Forms.Windows
             this.TileItemResourcesSortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemResourcesSortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemResourcesSortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement33.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
-            tileItemElement33.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement33.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement33.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement33.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement33.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            tileItemElement33.Text = "Sort Options";
-            tileItemElement33.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemResourcesSortOptions.Elements.Add(tileItemElement33);
+            tileItemElement34.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            tileItemElement34.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement34.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement34.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement34.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement34.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            tileItemElement34.Text = "Sort Options";
+            tileItemElement34.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemResourcesSortOptions.Elements.Add(tileItemElement34);
             this.TileItemResourcesSortOptions.Id = 1;
             this.TileItemResourcesSortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemResourcesSortOptions.Name = "TileItemResourcesSortOptions";
@@ -8406,14 +8501,14 @@ namespace Modio.Forms.Windows
             this.TileItemHomebrewShowFavorites.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemHomebrewShowFavorites.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemHomebrewShowFavorites.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement34.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement34.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement34.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement34.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement34.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage6")));
-            tileItemElement34.Text = "Show Favorites";
-            tileItemElement34.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemHomebrewShowFavorites.Elements.Add(tileItemElement34);
+            tileItemElement35.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement35.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement35.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement35.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement35.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage6")));
+            tileItemElement35.Text = "Show Favorites";
+            tileItemElement35.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemHomebrewShowFavorites.Elements.Add(tileItemElement35);
             this.TileItemHomebrewShowFavorites.Id = 6;
             this.TileItemHomebrewShowFavorites.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemHomebrewShowFavorites.Name = "TileItemHomebrewShowFavorites";
@@ -8432,15 +8527,15 @@ namespace Modio.Forms.Windows
             this.TileItemHomebrewSortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemHomebrewSortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemHomebrewSortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement35.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
-            tileItemElement35.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement35.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement35.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement35.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement35.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            tileItemElement35.Text = "Sort Options";
-            tileItemElement35.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemHomebrewSortOptions.Elements.Add(tileItemElement35);
+            tileItemElement36.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
+            tileItemElement36.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement36.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement36.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement36.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement36.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            tileItemElement36.Text = "Sort Options";
+            tileItemElement36.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemHomebrewSortOptions.Elements.Add(tileItemElement36);
             this.TileItemHomebrewSortOptions.Id = 1;
             this.TileItemHomebrewSortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemHomebrewSortOptions.Name = "TileItemHomebrewSortOptions";
@@ -8814,14 +8909,14 @@ namespace Modio.Forms.Windows
             this.TileItemGameCheatsSortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemGameCheatsSortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemGameCheatsSortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement36.ImageOptions.Image = global::Modio.Properties.Resources.sort_32x32;
-            tileItemElement36.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
-            tileItemElement36.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement36.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement36.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement36.Text = "Sort Options";
-            tileItemElement36.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemGameCheatsSortOptions.Elements.Add(tileItemElement36);
+            tileItemElement37.ImageOptions.Image = global::Modio.Properties.Resources.sort_32x32;
+            tileItemElement37.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            tileItemElement37.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement37.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement37.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement37.Text = "Sort Options";
+            tileItemElement37.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemGameCheatsSortOptions.Elements.Add(tileItemElement37);
             this.TileItemGameCheatsSortOptions.Id = 6;
             this.TileItemGameCheatsSortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemGameCheatsSortOptions.Name = "TileItemGameCheatsSortOptions";
@@ -9210,14 +9305,14 @@ namespace Modio.Forms.Windows
             this.tileItem1.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem1.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem1.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement37.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement37.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement37.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
-            tileItemElement37.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement37.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement37.Text = "Delete";
-            tileItemElement37.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem1.Elements.Add(tileItemElement37);
+            tileItemElement38.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement38.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement38.ImageOptions.ImageSize = new System.Drawing.Size(22, 22);
+            tileItemElement38.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement38.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement38.Text = "Delete";
+            tileItemElement38.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem1.Elements.Add(tileItemElement38);
             this.tileItem1.Enabled = false;
             this.tileItem1.Id = 2;
             this.tileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -9248,14 +9343,14 @@ namespace Modio.Forms.Windows
             this.tileItem2.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem2.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem2.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement38.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
-            tileItemElement38.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement38.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
-            tileItemElement38.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement38.ImageOptions.ImageToTextIndent = 5;
-            tileItemElement38.Text = "Game Save Resigner";
-            tileItemElement38.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem2.Elements.Add(tileItemElement38);
+            tileItemElement39.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
+            tileItemElement39.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement39.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
+            tileItemElement39.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement39.ImageOptions.ImageToTextIndent = 5;
+            tileItemElement39.Text = "Game Save Resigner";
+            tileItemElement39.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem2.Elements.Add(tileItemElement39);
             this.tileItem2.Id = 8;
             this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem2.Name = "tileItem2";
@@ -10096,6 +10191,7 @@ namespace Modio.Forms.Windows
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.False;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("MainWindow.IconOptions.Icon")));
+            this.IconOptions.Image = global::Modio.Properties.Resources.icon;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(1020, 700);
             this.Name = "MainWindow";
@@ -10144,7 +10240,6 @@ namespace Modio.Forms.Windows
             this.PanelChangeLog.ResumeLayout(false);
             this.PanelChangeLog.PerformLayout();
             this.PanelChangeLogText.ResumeLayout(false);
-            this.PanelChangeLogText.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelAnnouncements)).EndInit();
             this.PanelAnnouncements.ResumeLayout(false);
             this.PanelAnnouncements.PerformLayout();
@@ -10256,12 +10351,14 @@ namespace Modio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsLaunchIniFilePath.Properties)).EndInit();
             this.TabPagePaths.ResumeLayout(false);
             this.TabPagePaths.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsDownloads.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsGameSaves.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPlugins.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPackages.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsGameMods.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsBaseDirectory.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathResources.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathHomebrew.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathDownloads.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathGameSaves.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathPlugins.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathPackages.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathGameMods.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathBaseDirectory.Properties)).EndInit();
             this.TabPageDiscord.ResumeLayout(false);
             this.TabPageDiscord.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsShowCurrentGamePlaying.Properties)).EndInit();
@@ -10664,8 +10761,8 @@ namespace Modio.Forms.Windows
         private LabelControl LabelPackagesFilterName;
         private ComboBoxEdit ComboBoxFilterPackagesCategories;
         private LabelControl LabelPackagesFilterCategory;
-        private LabelControl LabelSettingsBaseDirectory;
-        private TextEdit TextBoxSettingsBaseDirectory;
+        private LabelControl LabelSettingsPathBaseDirectory;
+        private TextEdit TextBoxSettingsPathBaseDirectory;
         private TileItem TileItemHowToUseGuides;
         private Panel PanelPlugins;
         private GridControl GridControlPlugins;
@@ -10780,7 +10877,6 @@ namespace Modio.Forms.Windows
         private BarButtonItem MenuItemSendFeedback;
         private LabelControl LabelSettingsAutoLoadDirectoryListings;
         private ToggleSwitch ToggleSettingsAutoLoadDirectoryListings;
-        private LabelControl LabelSettingsOptionsOnlyForPS3;
         private BarButtonItem barButtonItem1;
         private PanelControl PanelStatistics;
         private XtraScrollableControl PanelStatisticsText;
@@ -10935,22 +11031,22 @@ namespace Modio.Forms.Windows
         private SimpleButton ButtonChangeLogNext;
         private DevExpress.XtraTab.XtraTabPage TabPagePaths;
         private SimpleButton ButtonSettingsPathBaseDirectory;
-        private LabelControl LabelSettingsGameMods;
-        private TextEdit TextBoxSettingsGameMods;
+        private LabelControl LabelSettingsPathGameMods;
+        private TextEdit TextBoxSettingsPathGameMods;
         private SimpleButton ButtonSettingsPathGameMods;
         private SimpleButton ButtonSettingsPathPackages;
-        private LabelControl LabelSettingsPackages;
-        private TextEdit TextBoxSettingsPackages;
+        private LabelControl LabelSettingsPathPackages;
+        private TextEdit TextBoxSettingsPathPackages;
         private SimpleButton ButtonSettingsPathPlugins;
-        private LabelControl LabelSettingsPlugins;
-        private TextEdit TextBoxSettingsPlugins;
+        private LabelControl LabelSettingsPathPlugins;
+        private TextEdit TextBoxSettingsPathPlugins;
         private SimpleButton ButtonSettingsPathGameSaves;
-        private LabelControl LabelSettingsGameSaves;
-        private TextEdit TextBoxSettingsGameSaves;
+        private LabelControl LabelSettingsPathGameSaves;
+        private TextEdit TextBoxSettingsPathGameSaves;
         private HyperlinkLabelControl LabelSettingsHelpTranslate;
         private SimpleButton ButtonSettingsPathDownloads;
-        private LabelControl LabelSettingsDownloads;
-        private TextEdit TextBoxSettingsDownloads;
+        private LabelControl LabelSettingsPathDownloads;
+        private TextEdit TextBoxSettingsPathDownloads;
         private LabelControl LabelSettingsDirectoriesMustBeWritable;
         private LabelControl LabelSettingsReferToBaseDirectory;
         private LabelControl LabelSettingsCleanUpFilesAfterInstalling;
@@ -10971,5 +11067,12 @@ namespace Modio.Forms.Windows
         private ToggleSwitch ToggleSettingsAlwaysBackupGameFiles;
         private LabelControl LabelSettingsAlwaysBackupGameFiles;
         private LabelControl LabelSettingsInstallingUninstalling;
+        private SimpleButton ButtonSettingsPathResources;
+        private LabelControl LabelSettingsPathResources;
+        private TextEdit TextBoxSettingsPathResources;
+        private SimpleButton ButtonSettingsPathHomebrew;
+        private LabelControl LabelSettingsPathHomebrew;
+        private TextEdit TextBoxSettingsPathHomebrew;
+        private TileItem TileItemEditAdvancedSettings;
     }
 }

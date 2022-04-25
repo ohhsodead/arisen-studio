@@ -9,11 +9,6 @@ namespace Modio.Models.Database
     public class GameSavesData
     {
         /// <summary>
-        /// Get the date/time the database was last updated.
-        /// </summary>
-        public DateTime LastUpdated { get; set; }
-
-        /// <summary>
         /// Get the mods from the database.
         /// </summary>
         public List<GameSaveItemData> GameSaves { get; set; }

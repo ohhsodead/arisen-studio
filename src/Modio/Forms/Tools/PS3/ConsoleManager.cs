@@ -33,14 +33,15 @@ namespace Modio.Forms.Tools.PS3
                 }
                 else
                 {
-                    UpdateStatus(Language.GetString("UNABLE_TO_CONNECT"));
-                    XtraMessageBox.Show(this, Language.GetString("WEBMAN_REQUIRED"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    UpdateStatus("Console Manager: " + Language.GetString("UNABLE_TO_CONNECT"));
+                    XtraMessageBox.Show(this, Language.GetString("UNABLE_TO_CONNECT"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Close();
                 }
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show(this, Language.GetString("WEBMAN_REQUIRED"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                UpdateStatus("Console Manager: " + Language.GetString("UNABLE_TO_CONNECT"), ex);
+                XtraMessageBox.Show(this, Language.GetString("UNABLE_TO_CONNECT"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
         }

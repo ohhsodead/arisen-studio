@@ -183,6 +183,9 @@
   <data name="CHOOSE_ITEM" xml:space="preserve">
     <value>Choose Item...</value>
   </data>
+  <data name="CLEANING_INSTALL_FILES" xml:space="preserve">
+    <value>Cleaning the local installation files...</value>
+  </data>
   <data name="CONFIRM" xml:space="preserve">
     <value>Confirm</value>
   </data>
@@ -617,19 +620,22 @@
     <value>Install Game Saves to local USB device</value>
   </data>
   <data name="INSTALL_HOMEBREW_TO_LOCAL_USB" xml:space="preserve">
-    <value>Install Homebrew to local USB device*</value>
+    <value>Install Homebrew to local USB device</value>
   </data>
   <data name="INSTALL_MODS_TO_LOCAL_USB" xml:space="preserve">
-    <value>Install Mods/Plugins to local USB device</value>
+    <value>Install Game Mods/Plugins to local USB device</value>
   </data>
   <data name="INSTALL_PACKAGES_TO_LOCAL_USB" xml:space="preserve">
-    <value>Install Packages to local USB device*</value>
+    <value>Install Packages to local USB device</value>
   </data>
   <data name="INSTALL_RESOURCES_TO_LOCAL_USB" xml:space="preserve">
-    <value>Install Resources to local USB device*</value>
+    <value>Install Resources to local USB device</value>
   </data>
   <data name="LABEL_ADDRESS_NAME" xml:space="preserve">
     <value>IP Address/Name</value>
+  </data>
+  <data name="LABEL_ADD_TO_FAVORITES" xml:space="preserve">
+    <value>Add to Favorites</value>
   </data>
   <data name="LABEL_ADD_TO_GAMES" xml:space="preserve">
     <value>Add to Games</value>
@@ -868,11 +874,17 @@
   <data name="LABEL_REGION" xml:space="preserve">
     <value>Region</value>
   </data>
+  <data name="LABEL_REMOVE_FROM_FAVORITES" xml:space="preserve">
+    <value>Remove from Favorites</value>
+  </data>
   <data name="LABEL_RENAME" xml:space="preserve">
     <value>Rename</value>
   </data>
   <data name="LABEL_REPORT" xml:space="preserve">
     <value>Report</value>
+  </data>
+  <data name="LABEL_REPORT_ISSUE" xml:space="preserve">
+    <value>Report Issue</value>
   </data>
   <data name="LABEL_RESOURCES" xml:space="preserve">
     <value>Resources</value>
@@ -1106,7 +1118,7 @@
     <value>Remember last console directory path</value>
   </data>
   <data name="REMEMBER_GAME_REGIONS_WHEN_INSTALLING" xml:space="preserve">
-    <value>Remember game regions when installing*</value>
+    <value>Remember game regions when installing</value>
   </data>
   <data name="REMEMBER_LOCAL_DIRECTORY_PATH" xml:space="preserve">
     <value>Remember last local directory path</value>
@@ -1154,7 +1166,7 @@
     <value>Show current game playing</value>
   </data>
   <data name="SHOW_GAMES_IN_EXTERNAL_DEVICES" xml:space="preserve">
-    <value>Show games list from external device*</value>
+    <value>Show games list from external device</value>
   </data>
   <data name="STARTING_INSTALL" xml:space="preserve">
     <value>Starting install...</value>

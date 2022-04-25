@@ -31,6 +31,8 @@ namespace Modio.Database
 
         public string Region { get; set; } = "n/a";
 
+        public DateTime LastUpdated { get; set; }
+
         public string CreatedBy { get; set; }
 
         public string SubmittedBy { get; set; }

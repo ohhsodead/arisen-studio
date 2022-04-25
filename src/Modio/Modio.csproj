@@ -79,6 +79,11 @@
     <Reference Include="DevExpress.BonusSkins.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 21.2\Components\Bin\Framework\DevExpress.Images.v21.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraDialogs.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -116,6 +121,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Urls.cs" />
+    <Compile Include="Controls\DownloadFilesItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DownloadFilesItem.Designer.cs">
+      <DependentUpon>DownloadFilesItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FeatureNotAvailableOverlay.cs" />
     <Compile Include="Controls\NoProfilesItem.cs">
       <SubType>UserControl</SubType>
@@ -123,7 +134,6 @@
     <Compile Include="Controls\NoProfilesItem.Designer.cs">
       <DependentUpon>NoProfilesItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database\GameSaveDownloadFiles.cs" />
     <Compile Include="Database\GameCheatItemData.cs" />
     <Compile Include="Database\GameSaveItemData.cs" />
     <Compile Include="Database\PackageItemData.cs" />
@@ -349,6 +359,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Templates\GitHubTemplates.cs" />
+    <EmbeddedResource Include="Controls\DownloadFilesItem.resx">
+      <DependentUpon>DownloadFilesItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\NoProfilesItem.resx">
       <DependentUpon>NoProfilesItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -538,7 +551,7 @@
     <None Include="Resources\Icons\find_file.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icon.ico" />
+    <None Include="Resources\Icons\viewsettings.svg" />
     <None Include="Resources\Icons\sort_32x32.png" />
     <None Include="Resources\Icons\install_svg.svg" />
     <None Include="Resources\Icons\sort.svg" />
@@ -549,6 +562,11 @@
     <None Include="Resources\Icons\cheats.png" />
     <None Include="Resources\Icons\delete.svg" />
     <None Include="Resources\Icons\downloads_folder.svg" />
+    <None Include="Resources\Icons\download_svg.svg" />
+    <None Include="Resources\Icons\arrow_down.svg" />
+    <None Include="Resources\Icons\arrow_up.svg" />
+    <Content Include="icon.ico" />
+    <None Include="Resources\icon.png" />
     <Content Include="Resources\Icons\homebrew.png" />
     <Content Include="Resources\Icons\import.png" />
     <Content Include="Resources\Icons\packages.png" />

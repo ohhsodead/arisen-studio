@@ -148,6 +148,8 @@ namespace Modio.Forms.Windows
         /// </summary>
         private async void MainWindow_Load(object sender, EventArgs e)
         {
+            Enabled = false;
+
             SuppressFormShadowShowing();
 
             UserLookAndFeel.Default.StyleChanged += MainWindow_StyleChanged;
@@ -212,8 +214,6 @@ namespace Modio.Forms.Windows
         {
             Settings.WindowState = WindowState == FormWindowState.Minimized ? FormWindowState.Normal : FormWindowState.Maximized;
 
-            SaveApplicationSettings();
-
             if (DiscordClient != null)
             {
                 DiscordClient.ClearPresence();
@@ -270,6 +270,8 @@ namespace Modio.Forms.Windows
 
                     break;
             }
+
+            SaveApplicationSettings();
         }
 
         private void MainWindow_StyleChanged(object sender, EventArgs e)
@@ -299,6 +301,7 @@ namespace Modio.Forms.Windows
         /// </summary>
         private void InitializeFinished()
         {
+            Enabled = true;
             WindowState = Settings.WindowState;
 
             SetStatus(ResourceLanguage.GetString("SUCCESS_LOADED_DB"));
@@ -469,7 +472,7 @@ namespace Modio.Forms.Windows
 
         private void ButtonPS3GameBackupFiles_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogExtensions.ShowGameBackupFiles(this);
+            DialogExtensions.ShowGameBackupFileManager(this);
         }
 
         private void ButtonPS3GameUpdateFinder_ItemClick(object sender, ItemClickEventArgs e)
@@ -1267,6 +1270,12 @@ namespace Modio.Forms.Windows
             }
         }
 
+        private void TileItemEditAdvancedSettings_ItemClick(object sender, TileItemEventArgs e)
+        {
+            NavigationMenu.SelectElement(NavigationItemSettings);
+            NavigationFrame.SelectedPage = PageSettings;
+        }
+
         // Tools Tile Items
 
         private void TileItemToolsGameBackupFiles_ItemClick(object sender, TileItemEventArgs e)
@@ -1277,7 +1286,7 @@ namespace Modio.Forms.Windows
                 return;
             }
 
-            DialogExtensions.ShowGameBackupFiles(this);
+            DialogExtensions.ShowGameBackupFileManager(this);
         }
 
         private void TileItemToolsGameUpdateFinder_ItemClick(object sender, TileItemEventArgs e)
@@ -1602,7 +1611,7 @@ namespace Modio.Forms.Windows
                 new(ResourceLanguage.GetString("LABEL_MOD_TYPE"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_REGION"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_VERSION"), typeof(string)),
-                new("Downloaded On", typeof(string))
+                new(ResourceLanguage.GetString("LABEL_DOWNLOADED_ON"), typeof(string))
             });
 
         private void LoadDownloadsCategories()
@@ -1661,8 +1670,8 @@ namespace Modio.Forms.Windows
 
             //GridViewDownloads.Columns[3].MinWidth = 100; // Ignore column
 
-            GridViewDownloads.Columns[4].MinWidth = 100;
-            GridViewDownloads.Columns[4].MaxWidth = 100;
+            GridViewDownloads.Columns[4].MinWidth = 116;
+            GridViewDownloads.Columns[4].MaxWidth = 116;
 
             GridViewDownloads.Columns[5].MinWidth = 90;
             GridViewDownloads.Columns[5].MaxWidth = 90;
@@ -1843,7 +1852,7 @@ namespace Modio.Forms.Windows
 
                     InstalledModInfo installedModInfo = ConsoleProfile != null ? Settings.GetInstalledMods(consoleProfile, modItemData.CategoryId, modItemData.Id) : null;
 
-                    ShowTransferModsDialog(this, TransferType.UninstallMods, modItemData, installedModInfo == null ? string.Empty : installedModInfo.DownloadFiles.Region);
+                    ShowTransferModsDialog(this, TransferType.UninstallMods, modItemData, null, installedModInfo == null ? string.Empty : installedModInfo.DownloadFiles.Region);
                 }
             }
 
@@ -1887,7 +1896,7 @@ namespace Modio.Forms.Windows
 
                         if (modItemData.Id == selectedmodItemData.Id)
                         {
-                            ShowTransferModsDialog(this, TransferType.UninstallMods, modItemData, installedModInfo == null ? string.Empty : installedModInfo.DownloadFiles.Region);
+                            ShowTransferModsDialog(this, TransferType.UninstallMods, modItemData, null, installedModInfo == null ? string.Empty : installedModInfo.DownloadFiles.Region);
                             break;
                         }
                     }
@@ -2161,8 +2170,8 @@ namespace Modio.Forms.Windows
             //GridViewInstalledMods.Columns[4].MinWidth = 80;
             //GridViewInstalledMods.Columns[4].MaxWidth = 80;
 
-            GridViewInstalledMods.Columns[5].MinWidth = 100;
-            GridViewInstalledMods.Columns[5].MaxWidth = 100;
+            GridViewInstalledMods.Columns[5].MinWidth = 116;
+            GridViewInstalledMods.Columns[5].MaxWidth = 116;
 
             GridViewInstalledMods.Columns[6].MinWidth = 88;
             GridViewInstalledMods.Columns[6].MaxWidth = 88;
@@ -3981,12 +3990,12 @@ namespace Modio.Forms.Windows
                 LabelSettingsLaunchIniFilePath.Text = ResourceLanguage.GetString("LAUNCH_FILE_PATH");
 
                 // Settings: Paths
-                LabelSettingsBaseDirectory.Text = ResourceLanguage.GetString("LABEL_BASE_DIRECTORY");
-                LabelSettingsDownloads.Text = ResourceLanguage.GetString("LABEL_DOWNLOADS");
-                LabelSettingsGameMods.Text = ResourceLanguage.GetString("LABEL_GAME_MODS");
-                LabelSettingsPackages.Text = ResourceLanguage.GetString("LABEL_PACKAGES");
-                LabelSettingsPlugins.Text = ResourceLanguage.GetString("LABEL_PLUGINS");
-                LabelSettingsGameSaves.Text = ResourceLanguage.GetString("LABEL_GAME_SAVES");
+                LabelSettingsPathBaseDirectory.Text = ResourceLanguage.GetString("LABEL_BASE_DIRECTORY");
+                LabelSettingsPathDownloads.Text = ResourceLanguage.GetString("LABEL_DOWNLOADS");
+                LabelSettingsPathGameMods.Text = ResourceLanguage.GetString("LABEL_GAME_MODS");
+                LabelSettingsPathPackages.Text = ResourceLanguage.GetString("LABEL_PACKAGES");
+                LabelSettingsPathPlugins.Text = ResourceLanguage.GetString("LABEL_PLUGINS");
+                LabelSettingsPathGameSaves.Text = ResourceLanguage.GetString("LABEL_GAME_SAVES");
 
                 LabelSettingsReferToBaseDirectory.Text = ResourceLanguage.GetString("REFER_TO_BASE_DIRECTORY");
                 LabelSettingsDirectoriesMustBeWritable.Text = ResourceLanguage.GetString("DIRECTORIES_MUST_BE_WRITABLE");
@@ -4095,7 +4104,7 @@ namespace Modio.Forms.Windows
 
         private void LabelSettingsHelpTranslate_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
         {
-            Process.Start("https://crowdin.com/project/Modio");
+            Process.Start("https://crowdin.com/project/modio");
         }
 
         private void LoadSettings()
@@ -4142,12 +4151,14 @@ namespace Modio.Forms.Windows
             TextBoxSettingsLaunchIniFilePath.Text = Settings.LaunchIniFilePath;
 
             /* Paths */
-            TextBoxSettingsBaseDirectory.Text = Settings.PathBaseDirectory;
-            TextBoxSettingsDownloads.Text = Settings.PathDownloads;
-            TextBoxSettingsGameMods.Text = Settings.PathGameMods;
-            TextBoxSettingsPackages.Text = Settings.PathPackages;
-            TextBoxSettingsPlugins.Text = Settings.PathPlugins;
-            TextBoxSettingsGameSaves.Text = Settings.PathGameSaves;
+            TextBoxSettingsPathBaseDirectory.Text = Settings.PathBaseDirectory;
+            TextBoxSettingsPathDownloads.Text = Settings.PathDownloads;
+            TextBoxSettingsPathGameMods.Text = Settings.PathGameMods;
+            TextBoxSettingsPathHomebrew.Text = Settings.PathHomebrew;
+            TextBoxSettingsPathResources.Text = Settings.PathResources;
+            TextBoxSettingsPathPackages.Text = Settings.PathPackages;
+            TextBoxSettingsPathPlugins.Text = Settings.PathPlugins;
+            TextBoxSettingsPathGameSaves.Text = Settings.PathGameSaves;
 
             /* Discord */
 
@@ -4334,19 +4345,24 @@ namespace Modio.Forms.Windows
 
         /* Paths */
 
+        private void TextBoxSettingsPathBaseDirectory_EditValueChanged(object sender, EventArgs e)
+        {
+            Settings.PathBaseDirectory = TextBoxSettingsPathBaseDirectory.Text;
+        }
+
         private void ButtonSettingsPathBaseDirectory_Click(object sender, EventArgs e)
         {
             string path = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_BASE_DIRECTORY"));
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsBaseDirectory.Text = path;
+                TextBoxSettingsPathBaseDirectory.Text = path;
             }
         }
 
-        private void TextBoxSettingsBaseDirectory_EditValueChanged(object sender, EventArgs e)
+        private void TextBoxSettingsPathDownloads_EditValueChanged(object sender, EventArgs e)
         {
-            Settings.PathBaseDirectory = TextBoxSettingsBaseDirectory.Text;
+            Settings.PathDownloads = TextBoxSettingsPathDownloads.Text;
         }
 
         private void ButtonSettingsPathDownloads_Click(object sender, EventArgs e)
@@ -4355,13 +4371,13 @@ namespace Modio.Forms.Windows
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsDownloads.Text = path;
+                TextBoxSettingsPathDownloads.Text = path;
             }
         }
 
-        private void TextBoxSettingsDownloads_EditValueChanged(object sender, EventArgs e)
+        private void TextBoxSettingsPathGameMods_EditValueChanged(object sender, EventArgs e)
         {
-            Settings.PathDownloads = TextBoxSettingsDownloads.Text;
+            Settings.PathGameMods = TextBoxSettingsPathGameMods.Text;
         }
 
         private void ButtonSettingsPathGameMods_Click(object sender, EventArgs e)
@@ -4370,13 +4386,44 @@ namespace Modio.Forms.Windows
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsGameMods.Text = path;
+                TextBoxSettingsPathGameMods.Text = path;
             }
         }
 
-        private void TextBoxSettingsGameMods_EditValueChanged(object sender, EventArgs e)
+
+        private void TextBoxSettingsPathHomebrew_EditValueChanged(object sender, EventArgs e)
         {
-            Settings.PathGameMods = TextBoxSettingsGameMods.Text;
+            Settings.PathHomebrew = TextBoxSettingsPathHomebrew.Text;
+        }
+
+        private void ButtonSettingsPathHomebrew_Click(object sender, EventArgs e)
+        {
+            string path = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_HOMEBREW"));
+
+            if (!path.IsNullOrEmpty())
+            {
+                TextBoxSettingsPathHomebrew.Text = path;
+            }
+        }
+
+        private void TextBoxSettingsPathResources_EditValueChanged(object sender, EventArgs e)
+        {
+            Settings.PathResources = TextBoxSettingsPathResources.Text;
+        }
+
+        private void ButtonSettingsPathResources_Click(object sender, EventArgs e)
+        {
+            string path = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_RESOURCES"));
+
+            if (!path.IsNullOrEmpty())
+            {
+                TextBoxSettingsPathResources.Text = path;
+            }
+        }
+
+        private void TextBoxSettingsPathPackages_EditValueChanged(object sender, EventArgs e)
+        {
+            Settings.PathPackages = TextBoxSettingsPathPackages.Text;
         }
 
         private void ButtonSettingsPathPackages_Click(object sender, EventArgs e)
@@ -4385,13 +4432,13 @@ namespace Modio.Forms.Windows
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsPackages.Text = path;
+                TextBoxSettingsPathPackages.Text = path;
             }
         }
 
-        private void TextBoxSettingsPackages_EditValueChanged(object sender, EventArgs e)
+        private void TextBoxSettingsPathPlugins_EditValueChanged(object sender, EventArgs e)
         {
-            Settings.PathPackages = TextBoxSettingsPackages.Text;
+            Settings.PathPlugins = TextBoxSettingsPathPlugins.Text;
         }
 
         private void ButtonSettingsPathPlugins_Click(object sender, EventArgs e)
@@ -4400,13 +4447,13 @@ namespace Modio.Forms.Windows
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsPlugins.Text = path;
+                TextBoxSettingsPathPlugins.Text = path;
             }
         }
 
-        private void TextBoxSettingsPlugins_EditValueChanged(object sender, EventArgs e)
+        private void TextBoxSettingsPathGameSaves_EditValueChanged(object sender, EventArgs e)
         {
-            Settings.PathPlugins = TextBoxSettingsPlugins.Text;
+            Settings.PathGameSaves = TextBoxSettingsPathGameSaves.Text;
         }
 
         private void ButtonSettingsPathGameSaves_Click(object sender, EventArgs e)
@@ -4415,13 +4462,8 @@ namespace Modio.Forms.Windows
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsGameSaves.Text = path;
+                TextBoxSettingsPathGameSaves.Text = path;
             }
-        }
-
-        private void TextBoxSettingsGameSaves_EditValueChanged(object sender, EventArgs e)
-        {
-            Settings.PathGameSaves = TextBoxSettingsGameSaves.Text;
         }
 
         // Tools
@@ -4467,18 +4509,17 @@ namespace Modio.Forms.Windows
 
         private void SetDownloadsLocation()
         {
-            string baseDirectory = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_BASE_DIRECTORY"));
+            string downloadsPath = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_DOWNLOADS"));
 
-            if (!baseDirectory.IsNullOrEmpty())
+            if (!downloadsPath.IsNullOrEmpty())
             {
-                if (!Directory.Exists(baseDirectory))
+                if (!Directory.Exists(downloadsPath))
                 {
                     XtraMessageBox.Show(this, ResourceLanguage.GetString("DIRECTORY_NOT_EXIST"), ResourceLanguage.GetString("DIRECTORY_NOT_FOUND"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
-                Settings.PathBaseDirectory = baseDirectory + @"\";
-                TextBoxSettingsBaseDirectory.Text = Settings.PathBaseDirectory;
+                TextBoxSettingsPathDownloads.Text = downloadsPath + @"\";
             }
         }
 
@@ -4852,8 +4893,8 @@ namespace Modio.Forms.Windows
             GridViewGameMods.Columns[3].MinWidth = 88;
             GridViewGameMods.Columns[3].MaxWidth = 88;
 
-            GridViewGameMods.Columns[4].MinWidth = 96;
-            GridViewGameMods.Columns[4].MaxWidth = 96;
+            GridViewGameMods.Columns[4].MinWidth = 116;
+            GridViewGameMods.Columns[4].MaxWidth = 116;
 
             GridViewGameMods.Columns[5].MinWidth = 90;
             GridViewGameMods.Columns[5].MaxWidth = 90;
@@ -5566,8 +5607,8 @@ namespace Modio.Forms.Windows
             GridViewResources.Columns[3].MinWidth = 88;
             GridViewResources.Columns[3].MaxWidth = 88;
 
-            GridViewResources.Columns[4].MinWidth = 96;
-            GridViewResources.Columns[4].MaxWidth = 96;
+            GridViewResources.Columns[4].MinWidth = 108;
+            GridViewResources.Columns[4].MaxWidth = 108;
 
             GridViewResources.Columns[5].MinWidth = 70;
             GridViewResources.Columns[5].MaxWidth = 70;
@@ -6225,8 +6266,8 @@ namespace Modio.Forms.Windows
 
             //GridViewPlugins.Columns[2].MinWidth = 180; //125
 
-            GridViewPlugins.Columns[3].MinWidth = 68;
-            GridViewPlugins.Columns[3].MaxWidth = 68;
+            GridViewPlugins.Columns[3].MinWidth = 72;
+            GridViewPlugins.Columns[3].MaxWidth = 72;
 
             GridViewPlugins.Columns[4].MinWidth = 132;
             GridViewPlugins.Columns[4].MaxWidth = 132;
@@ -6838,11 +6879,11 @@ namespace Modio.Forms.Windows
             }
         }
 
-        public void ShowTransferModsDialog(Form owner, TransferType transferType, ModItemData modItemData, string region = "")
+        public void ShowTransferModsDialog(Form owner, TransferType transferType, ModItemData modItemData, DownloadFiles downloadFiles = null, string region = "")
         {
             UpdateModsRowStatus(modItemData.Id, transferType == TransferType.DownloadMods ? ResourceLanguage.GetString("DOWNLOADING") : transferType == TransferType.InstallMods ? ResourceLanguage.GetString("INSTALLING") : ResourceLanguage.GetString("UNINSTALLING"));
 
-            DialogExtensions.ShowTransferModsDialog(owner, transferType, Database.CategoriesData.GetCategoryById(modItemData.CategoryId), modItemData, region);
+            DialogExtensions.ShowTransferFilesDialog(owner, transferType, Database.CategoriesData.GetCategoryById(modItemData.CategoryId), modItemData, downloadFiles, region);
             UpdateModsRowStatus(modItemData.Id, transferType == TransferType.DownloadMods ? ResourceLanguage.GetString("LABEL_DOWNLOADED") : transferType == TransferType.InstallMods ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
             LoadInstalledMods();
             LoadDownloads();

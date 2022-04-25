@@ -43,6 +43,8 @@ namespace Modio.Forms.Dialogs
 
         public string GameRegion { get; set; }
 
+        public DownloadFiles DownloadFiles { get; set; }
+
         private void TransferDialog_Load(object sender, EventArgs e)
         {
             Text = Language.GetString(TransferType.Humanize());
@@ -139,10 +141,18 @@ namespace Modio.Forms.Dialogs
             {
                 UpdateStatus(Language.GetString("PREPARING_INSTALL"));
 
+                UpdateStatus(Language.GetString("GETTING_DOWNLOAD_FILES"));
+
                 DownloadFiles downloadFiles;
 
-                UpdateStatus(Language.GetString("GETTING_DOWNLOAD_FILES"));
-                downloadFiles = modItem.GetDownloadFiles(this);
+                if (DownloadFiles == null)
+                {
+                    downloadFiles = modItem.GetDownloadFiles(this);
+                }
+                else
+                {
+                    downloadFiles = DownloadFiles;
+                }
 
                 if (downloadFiles == null)
                 {
@@ -156,7 +166,7 @@ namespace Modio.Forms.Dialogs
                 UpdateStatus(Language.GetString("DOWNLOADING_EXTRACTING_ARCHIVE"));
                 modItem.DownloadInstallFiles(downloadFiles);
 
-                if (MainWindow.Settings.InstallGameModsPluginsToUsbDevice)
+                if (Settings.InstallGameModsPluginsToUsbDevice)
                 {
                     UpdateStatus(Language.GetString("GETTING_USB_DEVICE"));
 
@@ -209,6 +219,8 @@ namespace Modio.Forms.Dialogs
                             {
                                 try
                                 {
+                                    UpdateStatus(Language.GetString("CLEANING_INSTALL_FILES"));
+
                                     Directory.Delete(modItem.DownloadDataDirectory(downloadFiles), true);
                                     File.Delete(modItem.ArchiveZipFile(downloadFiles));
                                 }
@@ -233,7 +245,7 @@ namespace Modio.Forms.Dialogs
                 }
 
                 // Check whether this mod is already installed
-                bool isInstalled = ConsoleProfile != null && MainWindow.Settings.GetInstalledMods(ConsoleProfile, modItem.CategoryId, modItem.Id) != null;
+                bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItem.CategoryId, modItem.Id) != null;
 
                 if (isInstalled)
                 {
@@ -251,7 +263,7 @@ namespace Modio.Forms.Dialogs
                             try
                             {
                                 // Checks whether a mod is already installed and skip backing up game files
-                                InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId) : null;
+                                InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId) : null;
 
                                 if (installedModInfo != null)
                                 {
@@ -315,10 +327,10 @@ namespace Modio.Forms.Dialogs
                                         return;
                                     }
 
-                                    switch (MainWindow.Settings.RememberGameRegions)
+                                    switch (Settings.RememberGameRegions)
                                     {
                                         case true:
-                                            MainWindow.Settings.UpdateGameRegion(modItem.CategoryId, gameRegion);
+                                            Settings.UpdateGameRegion(modItem.CategoryId, gameRegion);
                                             break;
                                     }
 
@@ -496,6 +508,8 @@ namespace Modio.Forms.Dialogs
                                 {
                                     try
                                     {
+                                        UpdateStatus(Language.GetString("CLEANING_INSTALL_FILES"));
+
                                         Directory.Delete(modItem.DownloadDataDirectory(downloadFiles), true);
                                         File.Delete(modItem.ArchiveZipFile(downloadFiles));
                                     }
@@ -504,7 +518,7 @@ namespace Modio.Forms.Dialogs
 
                                 IsSuccessful = true;
 
-                                MainWindow.Settings.UpdateInstalledMods(ConsoleProfile, Category.Id, modItem.Id, indexFiles - 1, DateTime.Now, downloadFiles);
+                                Settings.UpdateInstalledMods(ConsoleProfile, Category.Id, modItem.Id, indexFiles - 1, DateTime.Now, downloadFiles);
 
                                 if (MainWindow.IsWebManInstalled)
                                 {
@@ -564,6 +578,8 @@ namespace Modio.Forms.Dialogs
                                 {
                                     try
                                     {
+                                        UpdateStatus(Language.GetString("CLEANING_INSTALL_FILES"));
+
                                         Directory.Delete(modItem.DownloadDataDirectory(downloadFiles), true);
                                         File.Delete(modItem.ArchiveZipFile(downloadFiles));
                                     }
@@ -573,7 +589,7 @@ namespace Modio.Forms.Dialogs
                                 IsSuccessful = true;
 
                                 // Update installed mods
-                                MainWindow.Settings.UpdateInstalledMods(ConsoleProfile, Category.Id, modItem.Id, indexFiles - 1, DateTime.Now, downloadFiles);
+                                Settings.UpdateInstalledMods(ConsoleProfile, Category.Id, modItem.Id, indexFiles - 1, DateTime.Now, downloadFiles);
 
                                 // Log status
                                 UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_SUCCESS"), indexFiles - 1) + $" {(Category.CategoryType == CategoryType.Game ? Language.GetString("READY_TO_START_GAME") : string.Empty)}");
@@ -620,7 +636,7 @@ namespace Modio.Forms.Dialogs
 
                 UpdateStatus(Language.GetString("GETTING_PREVIOUS_INSTALL"));
 
-                InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, modItem.CategoryId, modItem.Id) : null;
+                InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? Settings.GetInstalledMods(ConsoleProfile, modItem.CategoryId, modItem.Id) : null;
 
                 string gameRegion;
                 string userId;
@@ -679,9 +695,9 @@ namespace Modio.Forms.Dialogs
 
                                 UpdateStatus(string.Format(Language.GetString("FOUND_GAME_REGION"), gameRegion));
 
-                                if (MainWindow.Settings.RememberGameRegions)
+                                if (Settings.RememberGameRegions)
                                 {
-                                    MainWindow.Settings.UpdateGameRegion(modItem.CategoryId, gameRegion);
+                                    Settings.UpdateGameRegion(modItem.CategoryId, gameRegion);
                                 }
                             }
 
@@ -840,7 +856,7 @@ namespace Modio.Forms.Dialogs
                                 }
                             }
 
-                            MainWindow.Settings.RemoveInstalledMods(ConsoleProfile, Category.Id, modItem.Id);
+                            Settings.RemoveInstalledMods(ConsoleProfile, Category.Id, modItem.Id);
 
                             if (MainWindow.IsWebManInstalled)
                             {
@@ -883,7 +899,7 @@ namespace Modio.Forms.Dialogs
 
                             IsSuccessful = true;
 
-                            MainWindow.Settings.RemoveInstalledMods(ConsoleProfile, Category.Id, modItem.Id);
+                            Settings.RemoveInstalledMods(ConsoleProfile, Category.Id, modItem.Id);
 
                             UpdateStatus(string.Format(Language.GetString("FILES_UNINSTALL_SUCCESS"), indexFiles - 1));
                         }
@@ -910,7 +926,14 @@ namespace Modio.Forms.Dialogs
 
                 DownloadFiles downloadFiles;
 
-                downloadFiles = modItem.GetDownloadFiles(this);
+                if (DownloadFiles == null)
+                {
+                    downloadFiles = modItem.GetDownloadFiles(this);
+                }
+                else
+                {
+                    downloadFiles = DownloadFiles;
+                }
 
                 if (downloadFiles == null)
                 {
@@ -939,7 +962,7 @@ namespace Modio.Forms.Dialogs
                 UpdateStatus(Language.GetString("PREPARING_INSTALL"));
 
                 // Check whether this mod is already installed
-                bool isInstalled = MainWindow.Settings.GetInstalledPackage(packageItem) != null;
+                bool isInstalled = Settings.GetInstalledPackage(packageItem) != null;
 
                 if (isInstalled)
                 {
@@ -952,12 +975,12 @@ namespace Modio.Forms.Dialogs
 
                 try
                 {
-                    Directory.CreateDirectory($@"{MainWindow.Settings.PathPackages}{PackageItem.Name.RemoveInvalidChars()}\");
+                    Directory.CreateDirectory($@"{IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages)}{PackageItem.Name.RemoveInvalidChars()}\");
 
-                    string localFilePathPKG = $@"{MainWindow.Settings.PathPackages}{PackageItem.Name.RemoveInvalidChars()}\{PackageItem.Name.RemoveInvalidChars()}.pkg";
-                    string localFilePathRAP = $@"{MainWindow.Settings.PathPackages}{PackageItem.Name.RemoveInvalidChars()}\{PackageItem.ContentId.RemoveInvalidChars()}.rap";
+                    string localFilePathPKG = $@"{IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages)}{PackageItem.Name.RemoveInvalidChars()}\{PackageItem.Name.RemoveInvalidChars()}.pkg";
+                    string localFilePathRAP = $@"{IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages)}{PackageItem.Name.RemoveInvalidChars()}\{PackageItem.ContentId.RemoveInvalidChars()}.rap";
 
-                    UpdateStatus(string.Format(Language.GetString("FILE_DOWNLOAD_LOCATION"), packageItem.Name + ".pkg", MainWindow.Settings.PathPackages + PackageItem.Name.RemoveInvalidChars()));
+                    UpdateStatus(string.Format(Language.GetString("FILE_DOWNLOAD_LOCATION"), packageItem.Name + ".pkg", IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages) + PackageItem.Name.RemoveInvalidChars()));
                     HttpExtensions.DownloadFile(PackageItem.Url, localFilePathPKG);
                     Language.GetString("FILE_DOWNLOAD_SUCCESS");
 
@@ -965,7 +988,7 @@ namespace Modio.Forms.Dialogs
 
                     if (PackageItem.IsRapRequired && !PackageItem.IsRapMissing)
                     {
-                        UpdateStatus(string.Format(Language.GetString("FILE_DOWNLOAD_LOCATION"), packageItem.ContentId + ".rap", MainWindow.Settings.PathPackages + PackageItem.Name.RemoveInvalidChars()));
+                        UpdateStatus(string.Format(Language.GetString("FILE_DOWNLOAD_LOCATION"), packageItem.ContentId + ".rap", IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages) + PackageItem.Name.RemoveInvalidChars()));
                         HttpExtensions.DownloadFile(PackageItem.RapUrl, localFilePathRAP);
                         Language.GetString("FILE_DOWNLOAD_SUCCESS");
                         includeRAP = true;
@@ -988,13 +1011,15 @@ namespace Modio.Forms.Dialogs
                     }
 
                     // Update installed packages
-                    MainWindow.Settings.UpdateInstalledPackage(PackageItem, localFilePathPKG, DateTime.Now);
+                    Settings.UpdateInstalledPackage(PackageItem, localFilePathPKG, DateTime.Now);
 
                     if (Settings.CleanUpLocalFilesAfterInstalling)
                     {
                         try
                         {
-                            Directory.Delete($@"{MainWindow.Settings.PathPackages}{PackageItem.Name.RemoveInvalidChars()}", true);
+                            UpdateStatus(Language.GetString("CLEANING_INSTALL_FILES"));
+
+                            Directory.Delete($@"{IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages)}{PackageItem.Name.RemoveInvalidChars()}", true);
                         }
                         catch { }
                     }
@@ -1025,7 +1050,7 @@ namespace Modio.Forms.Dialogs
                 Language.GetString("PREPARING_UNINSTALL");
 
                 // Check whether this mod is already installed
-                bool isNotInstalled = MainWindow.Settings.GetInstalledPackage(packageItem) == null;
+                bool isNotInstalled = Settings.GetInstalledPackage(packageItem) == null;
 
                 if (isNotInstalled)
                 {
@@ -1049,7 +1074,7 @@ namespace Modio.Forms.Dialogs
                     IsSuccessful = true;
 
                     // Update installed packages
-                    MainWindow.Settings.RemoveInstalledPackage(PackageItem);
+                    Settings.RemoveInstalledPackage(PackageItem);
 
                     // Log status
                     Language.GetString("FILE_UNINSTALL_SUCCESS");
@@ -1077,7 +1102,7 @@ namespace Modio.Forms.Dialogs
 
                 try
                 {
-                    string downloadFolder = Settings.PathPackages;
+                    string downloadFolder = IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages);
 
                     if (!Directory.Exists(downloadFolder))
                     {
@@ -1122,7 +1147,16 @@ namespace Modio.Forms.Dialogs
             {
                 UpdateStatus(Language.GetString("PREPARING_INSTALL"));
 
-                GameSaveDownloadFiles downloadFiles = gameSaveItem.DownloadFiles[0];
+                DownloadFiles downloadFiles = null;
+
+                if (DownloadFiles == null)
+                {
+                    downloadFiles = gameSaveItem.DownloadFiles[0];
+                }
+                else
+                {
+                    downloadFiles = DownloadFiles;
+                }
 
                 int indexFiles = 1;
                 int totalFiles = downloadFiles.InstallPaths.Count;
@@ -1131,7 +1165,7 @@ namespace Modio.Forms.Dialogs
                 gameSaveItem.DownloadInstallFiles(downloadFiles);
                 Language.GetString("ARCHIVE_DOWNLOAD_SUCCESS");
 
-                if (MainWindow.Settings.InstallGameSavesToUsbDevice)
+                if (Settings.InstallGameSavesToUsbDevice)
                 {
                     UpdateStatus(Language.GetString("GETTING_USB_DEVICE"));
 
@@ -1185,6 +1219,8 @@ namespace Modio.Forms.Dialogs
                             {
                                 try
                                 {
+                                    UpdateStatus(Language.GetString("CLEANING_INSTALL_FILES"));
+
                                     Directory.Delete(gameSaveItem.DownloadDataDirectory(downloadFiles), true);
                                     File.Delete(gameSaveItem.ArchiveZipFile(downloadFiles));
                                 }
@@ -1271,6 +1307,8 @@ namespace Modio.Forms.Dialogs
                                 {
                                     try
                                     {
+                                        UpdateStatus(Language.GetString("CLEANING_INSTALL_FILES"));
+
                                         Directory.Delete(gameSaveItem.DownloadDataDirectory(downloadFiles), true);
                                         File.Delete(gameSaveItem.ArchiveZipFile(downloadFiles));
                                     }
@@ -1333,6 +1371,8 @@ namespace Modio.Forms.Dialogs
                                 {
                                     try
                                     {
+                                        UpdateStatus(Language.GetString("CLEANING_INSTALL_FILES"));
+
                                         Directory.Delete(gameSaveItem.DownloadDataDirectory(downloadFiles), true);
                                         File.Delete(gameSaveItem.ArchiveZipFile(downloadFiles));
                                     }
@@ -1370,7 +1410,7 @@ namespace Modio.Forms.Dialogs
                 {
                     UpdateStatus(Language.GetString("PREPARING_DOWNLOAD"));
 
-                    string downloadFolder = Settings.PathGameSaves;
+                    string downloadFolder = IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathGameSaves);
 
                     if (!Directory.Exists(downloadFolder))
                     {

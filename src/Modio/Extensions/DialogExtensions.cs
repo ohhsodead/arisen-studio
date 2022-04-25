@@ -264,13 +264,14 @@ namespace Modio.Extensions
             return (int)XtraInputBox.Show(args);
         }
 
-        public static void ShowTransferModsDialog(Form owner, TransferType transferType, Category category, ModItemData modItem, string region = "")
+        public static void ShowTransferFilesDialog(Form owner, TransferType transferType, Category category, ModItemData modItem, DownloadFiles downloadFiles = null, string region = "")
         {
             using TransferDialog transferDialog = new()
             {
                 TransferType = transferType,
                 Category = category,
                 ModItem = modItem,
+                DownloadFiles = downloadFiles,
                 GameRegion = region
             };
 
@@ -290,13 +291,14 @@ namespace Modio.Extensions
             transferDialog.ShowDialog();
         }
 
-        public static void ShowTransferGameSavesDialog(Form owner, TransferType transferType, Category category, GameSaveItemData gameSaveItem)
+        public static void ShowTransferGameSavesDialog(Form owner, TransferType transferType, Category category, GameSaveItemData gameSaveItem, DownloadFiles downloadFiles = null)
         {
             using TransferDialog transferDialog = new()
             {
                 TransferType = transferType,
                 Category = category,
-                GameSaveItem = gameSaveItem
+                GameSaveItem = gameSaveItem,
+                DownloadFiles = downloadFiles,
             };
 
             transferDialog.Owner = owner;
@@ -439,7 +441,7 @@ namespace Modio.Extensions
 
         #region PS3 Tools
 
-        public static void ShowGameBackupFiles(Form owner)
+        public static void ShowGameBackupFileManager(Form owner)
         {
             using BackupFileManager backupFiles = new();
             backupFiles.ShowDialog(owner);

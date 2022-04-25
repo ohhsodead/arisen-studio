@@ -32,19 +32,21 @@ namespace Modio.Forms.Dialogs.Details
         {
             // Display details in UI
             LabelCategory.Text = PackageItem.Category;
+            LabelRegion.Text = $"({PackageItem.Region})";
             LabelName.Text = PackageItem.Name.Replace("&", "&&");
-            LabelTitleIdRegion.Text = $"{PackageItem.TitleId} ({PackageItem.Region})";
-            LabelContentId.Text = PackageItem.ContentId;
-            LabelModifiedDate.Text = PackageItem.IsDateMissing ? Language.GetString("DATA_MISSING") : Settings.UseRelativeTimes ? DateTime.Parse(PackageItem.ModifiedDate).Humanize() : DateTime.Parse(PackageItem.ModifiedDate).ToString("MM/dd/yyyy", CultureInfo.CurrentCulture);
+            LabelModifiedDate.Text = PackageItem.IsDateMissing ? Language.GetString("DATA_MISSING") : Settings.UseRelativeTimes ? DateTime.Parse(PackageItem.ModifiedDate).Humanize() : DateTime.Parse(PackageItem.ModifiedDate).ToLongDateString();
             LabelFileSize.Text = PackageItem.IsSizeMissing ? Language.GetString("DATA_MISSING") : Settings.UseFormattedFileSizes ? long.Parse(PackageItem.Size).Bytes().Humanize("#.##") : PackageItem.Size + " " + Language.GetString("LABEL_BYTES");
+            LabelTitleID.Text = PackageItem.TitleId;
+            LabelContentId.Text = PackageItem.ContentId;
             LabelSha256.Text = PackageItem.IsSha256Missing ? Language.GetString("DATA_MISSING") : PackageItem.Sha256;
 
             LabelHeaderModifiedDate.Text = Language.GetString("LABEL_MODIFIED_DATE");
-            LabelHeaderContentId.Text = Language.GetString("LABEL_CONTENT_ID");
             LabelHeaderFileSize.Text = Language.GetString("LABEL_FILE_SIZE");
+            LabelHeaderTitleId.Text = Language.GetString("LABEL_TITLE_ID");
+            LabelHeaderContentId.Text = Language.GetString("LABEL_CONTENT_ID");
 
-            ButtonInstall.SetControlText(Language.GetString("LABEL_INSTALL"), 26);
-            ButtonDownload.SetControlText(Language.GetString("LABEL_DOWNLOAD"), 26);
+            ButtonInstall.SetControlText(Language.GetString("LABEL_INSTALL_FILE"), 26);
+            ButtonDownload.SetControlText(Language.GetString("LABEL_DOWNLOAD_FILE"), 26);
         }
 
         private void ImageCloseDetails_Click(object sender, EventArgs e)
@@ -52,15 +54,7 @@ namespace Modio.Forms.Dialogs.Details
             Close();
         }
 
-        private void MenuActions_BeforePopup(object sender, CancelEventArgs e)
-        {
-            if (PackageItem != null)
-            {
-                MenuItemInstallFiles.Enabled = Settings.InstallPackagesToUsbDevice | MainWindow.IsConsoleConnected;
-            }
-        }
-
-        private void MenuItemInstallFiles_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonInstall_Click(object sender, EventArgs e)
         {
             DialogExtensions.ShowTransferPackagesDialog(this, TransferType.InstallPackage, PackageItem);
         }

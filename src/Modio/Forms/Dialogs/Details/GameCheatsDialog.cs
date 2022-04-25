@@ -40,8 +40,8 @@ namespace Modio.Forms.Dialogs.Details
 
             // Display details in UI
             LabelGame.Text = GameCheatItem.Game;
-            LabelVersion.Text = GameCheatItem.Version;
-            LabelRegion.Text = GameCheatItem.Region;
+            LabelRegion.Text = "- " + GameCheatItem.Region;
+            LabelVersion.Text = $"({GameCheatItem.Version})";
 
             foreach (Cheats cheat in GameCheatItem.Cheats)
             {

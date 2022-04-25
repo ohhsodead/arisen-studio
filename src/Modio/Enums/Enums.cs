@@ -56,6 +56,7 @@ namespace Modio
         Game,
         Homebrew,
         Resource,
+        GameSave,
         Plugin
     }
 

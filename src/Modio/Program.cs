@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
 using Modio.Forms.Windows;
 using Modio.Io;
 using NLog;
@@ -29,9 +30,11 @@ namespace Modio
                 Application.ThreadException += Application_ThreadException;
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
+                //SplashScreenManager.ShowForm(typeof(SplashScreen1));
+                //SplashScreenManager.Default.WaitForSplashFormClose();
+
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                DevExpress.UserSkins.BonusSkins.Register();
                 DevExpress.Skins.SkinManager.EnableFormSkins();
                 DevExpress.Skins.SkinManager.EnableMdiFormSkins();
 

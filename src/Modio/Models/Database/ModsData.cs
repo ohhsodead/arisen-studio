@@ -10,11 +10,6 @@ namespace Modio.Models.Database
     public class ModsData
     {
         /// <summary>
-        /// Get the date/time the database was last updated.
-        /// </summary>
-        public DateTime LastUpdated { get; set; }
-
-        /// <summary>
         /// Get the mods from the database.
         /// </summary>
         public List<ModItemData> Mods { get; set; }
@@ -65,7 +60,7 @@ namespace Modio.Models.Database
             if (favorites)
             {
                 return Mods.Where(x =>
-                    MainWindow.Settings.FavoriteModsPS3.Contains(x.Id) &&
+                    MainWindow.Settings.FavoriteMods.Exists(y => y.ModId == x.Id) &&
                     x.GetCategoryType(categoriesData) == CategoryType.Game &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
@@ -107,7 +102,7 @@ namespace Modio.Models.Database
             if (favorites)
             {
                 return Mods.Where(x =>
-                    MainWindow.Settings.FavoriteModsPS3.Contains(x.Id) &&
+                    MainWindow.Settings.FavoriteMods.Exists(y => y.ModId == x.Id) &&
                     x.GetCategoryType(categoriesData) == CategoryType.Homebrew &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
@@ -145,7 +140,7 @@ namespace Modio.Models.Database
             if (favorites)
             {
                 return Mods.Where(x =>
-                    MainWindow.Settings.FavoriteModsPS3.Contains(x.Id) &&
+                    MainWindow.Settings.FavoriteMods.Exists(y => y.ModId == x.Id) &&
                     x.GetCategoryType(categoriesData) == CategoryType.Resource &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
@@ -173,6 +168,7 @@ namespace Modio.Models.Database
         /// Get all of the mods matching the specified filters.
         /// </summary>
         /// <param name="categoryId"></param>
+        /// <param name="modId"></param>
         /// <param name="name"></param>
         /// <param name="version"></param>
         /// <param name="creator"></param>
@@ -183,21 +179,21 @@ namespace Modio.Models.Database
             if (favorites)
             {
                 return Mods.Where(x =>
-                    MainWindow.Settings.FavoriteModsXBOX.Contains(x.Id) &&
-                (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId))
-                && x.Name.ContainsIgnoreCase(name)
-                && x.Versions.ToArray().AnyContainsIgnoreCase(version)
-                && x.Creators.ToArray().AnyContainsIgnoreCase(creator))
-                .ToList();
+                    MainWindow.Settings.FavoriteMods.Exists(y => y.ModId == x.Id) &&
+                    (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
+                    x.Name.ContainsIgnoreCase(name) &&
+                    x.Versions.ToArray().AnyContainsIgnoreCase(version) &&
+                    x.Creators.ToArray().AnyContainsIgnoreCase(creator))
+                    .ToList();
             }
             else
             {
                 return Mods.Where(x =>
-                (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId))
-                && x.Name.ContainsIgnoreCase(name)
-                && x.Versions.ToArray().AnyContainsIgnoreCase(version)
-                && x.Creators.ToArray().AnyContainsIgnoreCase(creator))
-                .ToList();
+                    (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
+                    x.Name.ContainsIgnoreCase(name) &&
+                    x.Versions.ToArray().AnyContainsIgnoreCase(version) &&
+                    x.Creators.ToArray().AnyContainsIgnoreCase(creator))
+                    .ToList();
             }
         }
 

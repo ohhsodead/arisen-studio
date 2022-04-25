@@ -26,6 +26,8 @@ public class GameSaveItemData
 
     public string Region { get; set; }
 
+    public DateTime LastUpdated { get; set; }
+
     public string CreatedBy { get; set; }
 
     public string SubmittedBy { get; set; }
@@ -36,7 +38,7 @@ public class GameSaveItemData
 
     public string Description { get; set; }
 
-    public List<GameSaveDownloadFiles> DownloadFiles { get; set; }
+    public List<DownloadFiles> DownloadFiles { get; set; }
 
     public IEnumerable<string> Creators => CreatedBy.Split(new char[] { '/', '&' }).Select(x => x.Trim());
 
@@ -54,7 +56,7 @@ public class GameSaveItemData
     /// Get the directory for extracting modded files.
     /// </summary>
     /// <returns> </returns>
-    public string DownloadDataDirectory(GameSaveDownloadFiles downloadFiles)
+    public string DownloadDataDirectory(DownloadFiles downloadFiles)
     {
         return $@"{MainWindow.Settings.PathGameMods.GetFullPath(MainWindow.Settings.PathBaseDirectory)}\{Platform.Humanize()}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}-{Version}-{Id}\";
     }
@@ -63,7 +65,7 @@ public class GameSaveItemData
     /// Get the downloaded mods archive file path.
     /// </summary>
     /// <returns> Mods Archive File Path </returns>
-    public string ArchiveZipFile(GameSaveDownloadFiles downloadFiles)
+    public string ArchiveZipFile(DownloadFiles downloadFiles)
     {
         return $@"{MainWindow.Settings.PathGameSaves.GetFullPath(MainWindow.Settings.PathBaseDirectory)}\{Platform.Humanize()}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}-{Version}-{Id}.zip";
     }
@@ -72,7 +74,7 @@ public class GameSaveItemData
     /// Download the modded files archive and extracts all files to <see cref="DownloadDataDirectory" />.
     /// </summary>
     /// <param name="downloadFiles"> </param>
-    public void DownloadInstallFiles(GameSaveDownloadFiles downloadFiles)
+    public void DownloadInstallFiles(DownloadFiles downloadFiles)
     {
         string archivePath = DownloadDataDirectory(downloadFiles);
         string archiveFilePath = ArchiveZipFile(downloadFiles);

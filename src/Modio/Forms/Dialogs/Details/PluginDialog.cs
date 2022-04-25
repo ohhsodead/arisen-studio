@@ -1,6 +1,8 @@
 ﻿using DevExpress.Utils;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using Humanizer;
+using Modio.Controls;
 using Modio.Database;
 using Modio.Extensions;
 using Modio.Forms.Windows;
@@ -10,8 +12,11 @@ using Modio.Templates;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Globalization;
+using System.Linq;
 using System.Resources;
 using System.Windows.Forms;
+using ScrollOrientation = DevExpress.XtraEditors.ScrollOrientation;
 
 namespace Modio.Forms.Dialogs.Details
 {
@@ -27,13 +32,25 @@ namespace Modio.Forms.Dialogs.Details
         public ResourceManager Language = MainWindow.ResourceLanguage;
         public CategoriesData Categories = MainWindow.Database.CategoriesData;
 
+        public CategoryType CategoryType;
         public ModItemData ModItem;
+
+        public FavoriteItem FavoriteItem;
 
         private void PluginDialog_Load(object sender, EventArgs e)
         {
+            InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id) : null;
+
+            LabelHeaderModType.Text = Language.GetString("LABEL_MOD_TYPE");
+            LabelHeaderVersion.Text = Language.GetString("LABEL_VERSION");
+            LabelHeaderGameMode.Text = Language.GetString("LABEL_GAME_MODE");
+            LabelHeaderCreatedBy.Text = Language.GetString("LABEL_CREATED_BY");
+            LabelHeaderSubmittedBy.Text = Language.GetString("LABEL_SUBMITTED_BY");
+
             //Display details in UI
             LabelCategory.Text = Categories.GetCategoryById(ModItem.CategoryId).Title;
             LabelName.Text = ModItem.Name.Replace("&", "&&");
+            LabelLastUpdated.Text = Settings.UseRelativeTimes ? ModItem.LastUpdated.Humanize() : ModItem.LastUpdated.ToLongDateString();
             LabelVersion.Text = string.Join(" & ", ModItem.Versions).Replace("&", "&&");
             LabelGameMode.Text = string.Join(", ", ModItem.GameModes);
             LabelCreatedBy.Text = ModItem.CreatedBy.Replace("&", "&&");
@@ -42,37 +59,42 @@ namespace Modio.Forms.Dialogs.Details
                 ? Language.GetString("NO_MORE_DETAILS")
                 : ModItem.Description.Replace("&", "&&");
 
-            InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id) : null;
-
-            if (installedModInfo == null)
+            int count = 0;
+            foreach (DownloadFiles downloadFile in ModItem.DownloadFiles)
             {
-                ButtonActions.SetControlText(Language.GetString("LABEL_NOT_INSTALLED"), 26);
-                ButtonActions.ImageOptions.SvgImage = Images[0];
+                count++;
+
+                DownloadFilesItem downloadItem = new()
+                {
+                    CategoryType = CategoryType.Plugin,
+                    ModItem = ModItem,
+                    DownloadFiles = downloadFile
+                };
+
+                if (ModItem.DownloadFiles.Count() > 1 && count != 1)
+                {
+                    downloadItem.ShowSeparator = true;
+                }
+
+                downloadItem.Dock = DockStyle.Top;
+                TabDownloads.Controls.Add(downloadItem);
+            }
+
+            TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
+            TabDownloads.Text = $"{Language.GetString("LABEL_DOWNLOADS")} ({ModItem.DownloadFiles.Count})";
+
+            FavoriteItem = Settings.CreateFavoriteItem(Categories, ModItem);
+
+            if (Settings.FavoriteMods.Contains(FavoriteItem))
+            {
+                ButtonFavorite.SetControlText(Language.GetString("LABEL_REMOVE_FROM_FAVORITES"), 26);
             }
             else
             {
-                ButtonActions.SetControlText(Language.GetString("LABEL_INSTALLED"), 26);;
-                ButtonActions.ImageOptions.SvgImage = Images[1];
+                ButtonFavorite.SetControlText(Language.GetString("LABEL_ADD_TO_FAVORITES"), 26);
             }
 
-            if (Settings.FavoriteModsXBOX.Exists(x => x == ModItem.Id))
-            {
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_UNFAVORITE"), 26);
-            }
-            else
-            {
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_FAVORITE"), 26);;
-            }
-
-            LabelHeaderModType.Text = Language.GetString("LABEL_MOD_TYPE");
-            LabelHeaderVersion.Text = Language.GetString("LABEL_VERSION");
-            LabelHeaderGameMode.Text = Language.GetString("LABEL_GAME_MODE");
-            LabelHeaderCreatedBy.Text = Language.GetString("LABEL_CREATED_BY");
-            LabelHeaderSubmittedBy.Text = Language.GetString("LABEL_SUBMITTED_BY");
-            LabelHeaderDescription.Text = Language.GetString("LABEL_DESCRIPTION");
-
-            ButtonDownload.SetControlText(Language.GetString("LABEL_DOWNLOAD"), 26);
-            ButtonReport.SetControlText(Language.GetString("LABEL_REPORT"), 26);
+            ButtonReport.SetControlText(Language.GetString("LABEL_REPORT_ISSUE"), 26);
         }
 
         private void ImageCloseDetails_Click(object sender, EventArgs e)
@@ -80,40 +102,28 @@ namespace Modio.Forms.Dialogs.Details
             Close();
         }
 
-        private void MenuActions_BeforePopup(object sender, CancelEventArgs e)
+        private void TabDescription_Scroll(object sender, XtraScrollEventArgs e)
         {
-            if (ModItem != null)
+            if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
             {
-                InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id) : null;
-
-                bool isInstalled = installedModInfo != null && installedModInfo.ModId.Equals(ModItem.Id);
-
-                MenuItemInstallFiles.Caption = isInstalled ? $"{Language.GetString("UNINSTALL_FILES")}..." : $"{Language.GetString("INSTALL_FILES")}...";
-                MenuItemInstallFiles.Enabled = MainWindow.Settings.InstallGameModsPluginsToUsbDevice | MainWindow.IsConsoleConnected;
+                TabDownloads.VerticalScroll.Value = e.NewValue;
             }
         }
 
-        private void MenuItemInstallFiles_ItemClick(object sender, ItemClickEventArgs e)
+        private void TabDownloads_Scroll(object sender, XtraScrollEventArgs e)
         {
-            InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id) : null;
-            bool isInstalled = installedModInfo != null;
-
-            if (isInstalled)
+            if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
             {
-                DialogExtensions.ShowTransferModsDialog(this, TransferType.UninstallMods, ModItem.GetCategory(Categories), ModItem);
-            }
-            else
-            {
-                DialogExtensions.ShowTransferModsDialog(this, TransferType.InstallMods, ModItem.GetCategory(Categories), ModItem);
+                TabDownloads.VerticalScroll.Value = e.NewValue;
             }
         }
 
-        private void ButtonDownload_Click(object sender, EventArgs e)
+        private void LabelDescription_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
         {
-            DialogExtensions.ShowTransferModsDialog(this, TransferType.DownloadMods, ModItem.GetCategory(Categories), ModItem);
+            Process.Start(e.Link);
         }
 
-        private void ButtonReport_Click(object sender, EventArgs e)
+        private void ButtonReportIssue_Click(object sender, EventArgs e)
         {
             XtraMessageBox.Show(Language.GetString("REDIRECT_TO_GITHUB_ISSUES"), Language.GetString("REDIRECTING"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             GitHubTemplates.OpenReportTemplatePlugins(Categories.GetCategoryById(ModItem.CategoryId), ModItem);
@@ -121,15 +131,15 @@ namespace Modio.Forms.Dialogs.Details
 
         private void ButtonFavorite_Click(object sender, EventArgs e)
         {
-            if (Settings.FavoriteModsXBOX.Contains(ModItem.Id))
+            if (Settings.FavoriteMods.Contains(FavoriteItem))
             {
-                Settings.RemoveFavoriteForXBOX(ModItem.Id);
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_FAVORITE"), 26);;
+                Settings.FavoriteMods.RemoveAll(x => x == FavoriteItem);
+                ButtonFavorite.SetControlText(Language.GetString("LABEL_ADD_TO_FAVORITES"), 26);
             }
             else
             {
-                Settings.AddFavoriteForXBOX(ModItem.Id);
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_UNFAVORITE"), 26);
+                Settings.FavoriteMods.Add(FavoriteItem);
+                ButtonFavorite.SetControlText(Language.GetString("LABEL_REMOVE_FROM_FAVORITES"), 26);
             }
         }
 
@@ -142,11 +152,6 @@ namespace Modio.Forms.Dialogs.Details
             }
 
             return base.ProcessDialogKey(keyData);
-        }
-
-        private void LabelDescription_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
-        {
-            Process.Start(e.Link);
         }
     }
 }

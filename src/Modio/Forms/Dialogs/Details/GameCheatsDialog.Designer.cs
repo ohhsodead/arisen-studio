@@ -38,10 +38,10 @@ namespace Modio.Forms.Dialogs.Details
             this.PanelHeader = new DevExpress.XtraEditors.PanelControl();
             this.SeparatorHeader = new DevExpress.XtraEditors.SeparatorControl();
             this.ImageCloseDetails = new DevExpress.XtraEditors.SvgImageBox();
-            this.LabelGame = new DevExpress.XtraEditors.LabelControl();
             this.PanelRegion = new System.Windows.Forms.FlowLayoutPanel();
-            this.LabelVersion = new DevExpress.XtraEditors.LabelControl();
+            this.LabelGame = new DevExpress.XtraEditors.LabelControl();
             this.LabelRegion = new DevExpress.XtraEditors.LabelControl();
+            this.LabelVersion = new DevExpress.XtraEditors.LabelControl();
             this.PanelActions = new DevExpress.Utils.Layout.StackPanel();
             this.ButtonApply = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonReport = new DevExpress.XtraEditors.SimpleButton();
@@ -61,10 +61,10 @@ namespace Modio.Forms.Dialogs.Details
             // 
             this.PanelDetails.Controls.Add(this.GridControlCheats);
             this.PanelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelDetails.Location = new System.Drawing.Point(0, 80);
+            this.PanelDetails.Location = new System.Drawing.Point(0, 50);
             this.PanelDetails.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.PanelDetails.Name = "PanelDetails";
-            this.PanelDetails.Size = new System.Drawing.Size(650, 202);
+            this.PanelDetails.Size = new System.Drawing.Size(650, 228);
             this.PanelDetails.TabIndex = 1;
             // 
             // GridControlCheats
@@ -73,11 +73,11 @@ namespace Modio.Forms.Dialogs.Details
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridControlCheats.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GridControlCheats.Location = new System.Drawing.Point(12, 3);
+            this.GridControlCheats.Location = new System.Drawing.Point(16, 3);
             this.GridControlCheats.MainView = this.GridViewCheats;
-            this.GridControlCheats.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.GridControlCheats.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.GridControlCheats.Name = "GridControlCheats";
-            this.GridControlCheats.Size = new System.Drawing.Size(628, 183);
+            this.GridControlCheats.Size = new System.Drawing.Size(620, 225);
             this.GridControlCheats.TabIndex = 6;
             this.GridControlCheats.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewCheats});
@@ -122,13 +122,11 @@ namespace Modio.Forms.Dialogs.Details
             this.PanelHeader.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.PanelHeader.Controls.Add(this.SeparatorHeader);
             this.PanelHeader.Controls.Add(this.ImageCloseDetails);
-            this.PanelHeader.Controls.Add(this.LabelGame);
             this.PanelHeader.Controls.Add(this.PanelRegion);
-            this.PanelHeader.Controls.Add(this.LabelRegion);
             this.PanelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelHeader.Location = new System.Drawing.Point(0, 0);
             this.PanelHeader.Name = "PanelHeader";
-            this.PanelHeader.Size = new System.Drawing.Size(650, 80);
+            this.PanelHeader.Size = new System.Drawing.Size(650, 50);
             this.PanelHeader.TabIndex = 1190;
             // 
             // SeparatorHeader
@@ -136,9 +134,9 @@ namespace Modio.Forms.Dialogs.Details
             this.SeparatorHeader.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.SeparatorHeader.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
             this.SeparatorHeader.LineColor = System.Drawing.Color.Gainsboro;
-            this.SeparatorHeader.Location = new System.Drawing.Point(0, 70);
+            this.SeparatorHeader.Location = new System.Drawing.Point(0, 40);
             this.SeparatorHeader.Name = "SeparatorHeader";
-            this.SeparatorHeader.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.SeparatorHeader.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
             this.SeparatorHeader.Size = new System.Drawing.Size(650, 10);
             this.SeparatorHeader.TabIndex = 1185;
             // 
@@ -146,14 +144,27 @@ namespace Modio.Forms.Dialogs.Details
             // 
             this.ImageCloseDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ImageCloseDetails.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageCloseDetails.Location = new System.Drawing.Point(616, 10);
+            this.ImageCloseDetails.Location = new System.Drawing.Point(613, 10);
             this.ImageCloseDetails.Name = "ImageCloseDetails";
-            this.ImageCloseDetails.Size = new System.Drawing.Size(24, 24);
+            this.ImageCloseDetails.Size = new System.Drawing.Size(26, 26);
             this.ImageCloseDetails.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.ImageCloseDetails.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ImageCloseDetails.SvgImage")));
             this.ImageCloseDetails.TabIndex = 1171;
             this.ImageCloseDetails.Text = "Close";
             this.ImageCloseDetails.Click += new System.EventHandler(this.ImageCloseDetails_Click);
+            // 
+            // PanelRegion
+            // 
+            this.PanelRegion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelRegion.Controls.Add(this.LabelGame);
+            this.PanelRegion.Controls.Add(this.LabelRegion);
+            this.PanelRegion.Controls.Add(this.LabelVersion);
+            this.PanelRegion.Location = new System.Drawing.Point(16, 12);
+            this.PanelRegion.Name = "PanelRegion";
+            this.PanelRegion.Size = new System.Drawing.Size(591, 22);
+            this.PanelRegion.TabIndex = 1190;
+            this.PanelRegion.WrapContents = false;
             // 
             // LabelGame
             // 
@@ -162,25 +173,28 @@ namespace Modio.Forms.Dialogs.Details
             this.LabelGame.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.LabelGame.Appearance.Options.UseFont = true;
             this.LabelGame.AutoEllipsis = true;
-            this.LabelGame.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelGame.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGame.Location = new System.Drawing.Point(12, 13);
-            this.LabelGame.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.LabelGame.Location = new System.Drawing.Point(0, 1);
+            this.LabelGame.Margin = new System.Windows.Forms.Padding(0, 1, 3, 10);
             this.LabelGame.Name = "LabelGame";
-            this.LabelGame.Size = new System.Drawing.Size(435, 17);
+            this.LabelGame.Size = new System.Drawing.Size(35, 17);
             this.LabelGame.TabIndex = 1184;
             this.LabelGame.Text = "Game";
             // 
-            // PanelRegion
+            // LabelRegion
             // 
-            this.PanelRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelRegion.Controls.Add(this.LabelVersion);
-            this.PanelRegion.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.PanelRegion.Location = new System.Drawing.Point(452, 12);
-            this.PanelRegion.Name = "PanelRegion";
-            this.PanelRegion.Size = new System.Drawing.Size(158, 22);
-            this.PanelRegion.TabIndex = 1190;
-            this.PanelRegion.WrapContents = false;
+            this.LabelRegion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelRegion.Appearance.Options.UseFont = true;
+            this.LabelRegion.AutoEllipsis = true;
+            this.LabelRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelRegion.Location = new System.Drawing.Point(41, 3);
+            this.LabelRegion.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.LabelRegion.Name = "LabelRegion";
+            this.LabelRegion.Size = new System.Drawing.Size(47, 15);
+            this.LabelRegion.TabIndex = 1170;
+            this.LabelRegion.Text = "- Region";
             // 
             // LabelVersion
             // 
@@ -191,37 +205,22 @@ namespace Modio.Forms.Dialogs.Details
             this.LabelVersion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.LabelVersion.AutoEllipsis = true;
             this.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelVersion.Location = new System.Drawing.Point(113, 3);
+            this.LabelVersion.Location = new System.Drawing.Point(94, 3);
             this.LabelVersion.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LabelVersion.Name = "LabelVersion";
-            this.LabelVersion.Size = new System.Drawing.Size(42, 15);
+            this.LabelVersion.Size = new System.Drawing.Size(50, 15);
             this.LabelVersion.TabIndex = 1188;
-            this.LabelVersion.Text = "Version";
-            // 
-            // LabelRegion
-            // 
-            this.LabelRegion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelRegion.Appearance.Options.UseFont = true;
-            this.LabelRegion.AutoEllipsis = true;
-            this.LabelRegion.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.LabelRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelRegion.Location = new System.Drawing.Point(12, 44);
-            this.LabelRegion.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.LabelRegion.Name = "LabelRegion";
-            this.LabelRegion.Size = new System.Drawing.Size(626, 15);
-            this.LabelRegion.TabIndex = 1170;
-            this.LabelRegion.Text = "Region";
+            this.LabelVersion.Text = "(Version)";
             // 
             // PanelActions
             // 
             this.PanelActions.Controls.Add(this.ButtonApply);
             this.PanelActions.Controls.Add(this.ButtonReport);
             this.PanelActions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelActions.Location = new System.Drawing.Point(0, 282);
+            this.PanelActions.Location = new System.Drawing.Point(0, 278);
+            this.PanelActions.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.PanelActions.Name = "PanelActions";
-            this.PanelActions.Size = new System.Drawing.Size(650, 50);
+            this.PanelActions.Size = new System.Drawing.Size(650, 54);
             this.PanelActions.TabIndex = 1175;
             // 
             // ButtonApply
@@ -237,13 +236,13 @@ namespace Modio.Forms.Dialogs.Details
             this.ButtonApply.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonApply.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonApply.ImageOptions.SvgImage")));
             this.ButtonApply.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonApply.Location = new System.Drawing.Point(12, 12);
-            this.ButtonApply.Margin = new System.Windows.Forms.Padding(12, 3, 3, 3);
+            this.ButtonApply.Location = new System.Drawing.Point(16, 14);
+            this.ButtonApply.Margin = new System.Windows.Forms.Padding(16, 3, 3, 3);
             this.ButtonApply.Name = "ButtonApply";
             this.ButtonApply.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonApply.Size = new System.Drawing.Size(81, 26);
+            this.ButtonApply.Size = new System.Drawing.Size(116, 26);
             this.ButtonApply.TabIndex = 1176;
-            this.ButtonApply.Text = "Apply";
+            this.ButtonApply.Text = "Apply Cheat";
             this.ButtonApply.Click += new System.EventHandler(this.ButtonApply_Click);
             // 
             // ButtonReport
@@ -259,12 +258,12 @@ namespace Modio.Forms.Dialogs.Details
             this.ButtonReport.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonReport.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonReport.ImageOptions.SvgImage")));
             this.ButtonReport.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonReport.Location = new System.Drawing.Point(99, 12);
+            this.ButtonReport.Location = new System.Drawing.Point(138, 14);
             this.ButtonReport.Name = "ButtonReport";
             this.ButtonReport.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonReport.Size = new System.Drawing.Size(84, 26);
+            this.ButtonReport.Size = new System.Drawing.Size(115, 25);
             this.ButtonReport.TabIndex = 1177;
-            this.ButtonReport.Text = "Report";
+            this.ButtonReport.Text = "Report Issue";
             this.ButtonReport.Click += new System.EventHandler(this.ButtonReport_Click);
             // 
             // GameCheatsDialog

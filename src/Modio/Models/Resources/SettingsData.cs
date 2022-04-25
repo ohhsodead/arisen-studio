@@ -31,24 +31,6 @@ namespace Modio.Models.Resources
 
         public bool EnableHardwareAcceleration { get; set; } = false;
 
-        public bool InstallGameModsPluginsToUsbDevice { get; set; } = false;
-
-        public bool InstallHomebrewToUsbDevice { get; set; } = false;
-
-        public bool InstallResourcesToUsbDevice { get; set; } = false;
-
-        public bool InstallPackagesToUsbDevice { get; set; } = false;
-
-        public bool InstallGameSavesToUsbDevice { get; set; } = false;
-
-        public bool RememberGameRegions { get; set; } = true;
-
-        public bool CleanUpLocalFilesAfterInstalling { get; set; } = false;
-
-        public bool AlwaysBackupGameFiles { get; set; } = true;
-
-        public bool AskBeforeOverwritingFiles { get; set; } = true;
-
         public bool AutoDetectGameRegions { get; set; } = false;
 
         public bool AutoDetectGameTitles { get; set; } = false;
@@ -69,6 +51,24 @@ namespace Modio.Models.Resources
 
         public string ConsolePathXBOX { get; set; } = @"HDD:\";
 
+        // Transfer
+
+        public bool InstallGameModsPluginsToUsbDevice { get; set; } = false;
+
+        public bool InstallHomebrewToUsbDevice { get; set; } = false;
+
+        public bool InstallResourcesToUsbDevice { get; set; } = false;
+
+        public bool InstallPackagesToUsbDevice { get; set; } = false;
+
+        public bool InstallGameSavesToUsbDevice { get; set; } = false;
+
+        public bool RememberGameRegions { get; set; } = true;
+
+        public bool CleanUpLocalFilesAfterInstalling { get; set; } = false;
+
+        public bool AlwaysBackupGameFiles { get; set; } = true;
+
         // Tools
 
         public string LaunchIniFilePath { get; set; } = @"Hdd:\launch.ini";
@@ -87,6 +87,10 @@ namespace Modio.Models.Resources
 
         public string PathGameMods { get; set; } = $@"%BASE_DIR%\Game Mods\";
 
+        public string PathHomebrew { get; set; } = $@"%BASE_DIR%\Homebrew\";
+
+        public string PathResources { get; set; } = $@"%BASE_DIR%\Resources\";
+
         public string PathPackages { get; set; } = $@"%BASE_DIR%\Packages\";
 
         public string PathPlugins { get; set; } = $@"%BASE_DIR%\Plugins\";
@@ -99,36 +103,42 @@ namespace Modio.Models.Resources
 
         public List<string> FavoritePackages { get; set; } = new();
 
-        public List<int> FavoriteModsPS3 { get; set; } = new();
+        public List<FavoriteItem> FavoriteMods { get; set; } = new();
 
-        public List<int> FavoriteModsXBOX { get; set; } = new();
-
-        public List<int> FavoriteGameSaves { get; set; } = new();
-
-        public void AddFavoriteForPS3(int modId)
+        public void AddRemoveFavoriteModItem(FavoriteItem favoriteItem)
         {
-            if (!FavoriteModsPS3.Contains(modId))
+            if (FavoriteMods.Contains(favoriteItem))
             {
-                FavoriteModsPS3.Add(modId);
+                FavoriteMods.RemoveAll(x => x == favoriteItem);
+            }
+            else
+            {
+                FavoriteMods.Add(favoriteItem);
             }
         }
 
-        public void RemoveFavoriteForPS3(int modId)
+        public FavoriteItem CreateFavoriteItem(CategoriesData categoriesData, ModItemData modItem)
         {
-            FavoriteModsPS3.RemoveAll(x => x == modId);
+            return new() { CategoryType = categoriesData.GetCategoryById(modItem.CategoryId).CategoryType, CategoryId = modItem.CategoryId, ModId = modItem.Id, Platform = modItem.GetPlatform() };
         }
 
-        public void AddFavoriteForXBOX(int modId)
+        public List<FavoriteItem> FavoriteGameSaves { get; set; } = new();
+
+        public void AddRemoveGameSaveItem(FavoriteItem favoriteItem)
         {
-            if (!FavoriteModsXBOX.Contains(modId))
+            if (FavoriteGameSaves.Contains(favoriteItem))
             {
-                FavoriteModsXBOX.Add(modId);
+                FavoriteGameSaves.RemoveAll(x => x == favoriteItem);
+            }
+            else
+            {
+                FavoriteGameSaves.Add(favoriteItem);
             }
         }
 
-        public void RemoveFavoriteForXBOX(int modId)
+        public FavoriteItem CreateFavoriteGameSaveItem(CategoriesData categoriesData, GameSaveItemData saveGameItem)
         {
-            FavoriteModsXBOX.RemoveAll(x => x == modId);
+            return new() { CategoryType = categoriesData.GetCategoryById(saveGameItem.CategoryId).CategoryType, CategoryId = saveGameItem.CategoryId, ModId = saveGameItem.Id, Platform = saveGameItem.GetPlatform() };
         }
 
         // PS3
@@ -146,10 +156,6 @@ namespace Modio.Models.Resources
             FavoritePackages.Add(modId);
         }
 
-        public void RemoveFavoritePackage(string modId)
-        {
-            FavoritePackages.RemoveAll(x => x == modId);
-        }
 
         /// <summary>
         /// Gets the user's saved game region for the specified <see cref="ModsData.ModItem.GameId" />
@@ -262,46 +268,6 @@ namespace Modio.Models.Resources
             }
 
             return modTypes.Distinct().ToList();
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="modsData"> </param>
-        /// <param name="modIds"> </param>
-        /// <returns> </returns>
-        public List<string> GetRegionsForMods(ModsData modsData, List<int> modIds)
-        {
-            List<string> regions = new();
-
-            foreach (ModItemData modItem in modsData.Mods)
-                if (modIds.Contains(modItem.Id))
-                    if (!modItem.Region.Equals("ALL") || !modItem.Regions.Contains("All Regions") ||
-                        !modItem.Regions.Contains("-") || !modItem.Regions.Contains("n/a") ||
-                        !modItem.Regions.Contains(string.Empty))
-                        switch (regions.Any(x => modItem.Regions.Any(y => y == x)))
-                        {
-                            case false:
-                                {
-                                    switch (modItem.Regions.Contains("All Regions"))
-                                    {
-                                        case false:
-                                            {
-                                                switch (modItem.Regions.Contains("n/a"))
-                                                {
-                                                    case false:
-                                                        regions.AddRange(modItem.Regions);
-                                                        break;
-                                                }
-
-                                                break;
-                                            }
-                                    }
-
-                                    break;
-                                }
-                        }
-
-            return regions.Distinct().ToList();
         }
 
         /// <summary>
@@ -434,8 +400,6 @@ namespace Modio.Models.Resources
 
     public class DownloadedItem
     {
-        public string Type { get; set; }
-
         public Platform Platform { get; set; } = Platform.PS3;
 
         public int ModId { get; set; }
@@ -447,5 +411,16 @@ namespace Modio.Models.Resources
         public DownloadFiles DownloadFile { get; set; }
 
         public DateTime DateTime { get; set; }
+    }
+
+    public class FavoriteItem
+    {
+        public CategoryType CategoryType { get; set; }
+
+        public Platform Platform { get; set; }
+
+        public int ModId { get; set; }
+
+        public string CategoryId { get; set; }
     }
 }
