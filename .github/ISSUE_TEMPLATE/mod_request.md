@@ -1,5 +1,5 @@
 ---
-name: [MOD REQUEST] Mod Name
+name: Mod Request
 about: Request a mod to be added to the database
 ---
 
