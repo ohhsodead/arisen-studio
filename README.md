@@ -69,7 +69,7 @@ If you are already familiar with the Crowdin platform and want to contribute you
 
 ## Requesting Mods
 
-I know that not all mods aren't on our database, but if you open an issue with the details then we can get them added for you!
+Our [database](https://github.com/ohhsodead/Modio-Database) will not have every mod that's out there. You can help us increase our library for mods that are missing. Use our simple [form](https://forms.gle/iSFmyFP1J8ioUELy9) with all the details, then we'll get it added for you!
 
 ## Credits & Libraries
 
