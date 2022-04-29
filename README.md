@@ -31,14 +31,14 @@ Please give this project a ⭐ if you find it useful.
 * Automatically detect and remember game regions
 * Backup and restore original game files
 * Download official game updates
-* Browse/mount/unmount games
+* Browse, mount and unmount games
 * Package File Manager
 * Console Manager (IDPS/PSID, LEDs, etc.)
 * webMAN commands (Reboot, Show Version, etc.)
 
 ### Xbox 360
-* Launch games using XEX files
-* Resign game saves to profiles
+* Launch games using `XEX` files
+* Resign game-saves to user profiles
 * Backup and edit the launch.ini file
 * XBDM commands (Reboot, Shutdown, etc.)
 
