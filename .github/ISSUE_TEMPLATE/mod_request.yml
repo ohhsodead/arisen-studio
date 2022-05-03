@@ -4,10 +4,10 @@ labels: [mod request]
 body:
   - type: dropdown
     attributes:
-      label: Platform
-      options:
-        - PlayStation 3
-        - Xbox 360
+    label: Platform
+    options:
+      - PlayStation 3
+      - Xbox 360
   validations:
     required: true
   - type: input
