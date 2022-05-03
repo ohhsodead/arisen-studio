@@ -1,5 +1,5 @@
 name: Bug Report
-description: Create a bug report to help improve Files
+description: Create a bug report to help improve Modio
 labels: [bug]
 body:
   - type: textarea
