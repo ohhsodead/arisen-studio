@@ -21,9 +21,9 @@ body:
   attributes:
     label: Name
     description: |
-	  Please provide the name as accurate as possible.
+      Please provide the name as accurate as possible.
       
-	  Tip: If it's mod menu then use the menu's name, if it's a game-save then best describe it in a few words (e.g. 100% Completed Story Mode).
+      Tip: If it's mod menu then use the menu's name, if it's a game-save then best describe it in a few words (e.g. 100% Completed Story Mode).
   validations:
     required: true
 - type: input
