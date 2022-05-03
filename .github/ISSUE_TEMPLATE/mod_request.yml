@@ -35,8 +35,8 @@ body:
   attributes:
     label: Relevant Links
     description: |
-	  At least one or more links that showcase and has a download link, e.g. YouTube video, forum post or anywhere that contains a download and other details.
-        
+      At least one or more links that showcase and has a download link, e.g. YouTube video, forum post or anywhere that contains a download and other details.
+      
       Tip: You can also add the files to a `zip` or `rar` file by clicking this area to highlight it and then dragging the file in.
   validations:
     required: true
