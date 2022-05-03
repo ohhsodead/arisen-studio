@@ -1,16 +1,49 @@
----
 name: Feature Request
-about: Suggest an idea for this project
----
+description: This project thrives from differentiation from competing apps. Suggest an idea for Modio
+labels: [feature request]
+body:
+  - type: textarea
+    attributes:
+      label: What's the Problem?
+      description: If your feature request is related to a problem, describe it clearly.
+  - type: textarea
+    attributes:
+      label: Solution/Idea
+      description: Describe your solution/idea.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Alternatives
+      description: Describe alternatives you've considered
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+        Please include a list of what the feature should and shouldn't do by filling in the table below.
 
-**Describe the solution you would like**
-A clear and concise description of what you want to happen.
+        'Must' implies that the feature should not ship without this capability.
+        'Should' is something we should push hard for, but is not absolutely required to ship.
+        'Could' is a nice-to-have; a good stretch goal that isn't painful if we don't achieve it.
+        'Won't' is a clear statement that the proposal/feature will intentionally not have that capability.
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
-
-**Additional details**
-Add any other context or screenshots about the feature request here.
+        This list will evolve and grow as the proposal becomes more refined over time.
+        A good rule of thumb is to start your proposal with no more than 7 high-level requirements.
+  - type: textarea
+    attributes:
+      label: Priorities
+      description: describe all the elements of your idea and how important they are.
+      value: |
+        | Capability | Priority |
+        | :---------- | :------- |
+        | This proposal will allow developers to accomplish W | Must |
+        | This proposal will allow end users to accomplish X | Should |
+        | This proposal will allow developers to accomplish Y | Could |
+        | This proposal will allow end users to accomplish Z | Won't |
+  - type: textarea
+    attributes:
+      label: Comments
+      description: Additional information, comments or screenshots about the feature request.
