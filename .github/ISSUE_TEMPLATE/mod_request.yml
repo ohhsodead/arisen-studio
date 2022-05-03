@@ -2,7 +2,7 @@ name: Mod Request
 description: Request a mod to be added to the database
 labels: [mod request]
 body:
-  - type: dropdown
+- type: dropdown
     attributes:
     label: Platform
     options:
@@ -10,14 +10,14 @@ body:
       - Xbox 360
   validations:
     required: true
-  - type: input
+- type: input
     attributes:
     label: Game/Category
     description: "How often do you or others encounter this bug?"
     placeholder: "Example: 'Borderlands 2', or 'Homebrew'"
   validations:
     required: true
-  - type: input
+- type: input
     attributes:
     label: Name
     description: |
@@ -27,17 +27,17 @@ body:
     placeholder: "Example: 'Borderlands 2', or 'Homebrew'"
   validations:
     required: true
-  - type: input
+- type: input
     attributes:
     label: Creator
   validations:
     required: true
-  - type: textarea
+- type: textarea
     attributes:
       label: Relevant Links
       description: |
-        At least one or more links that showcase and has a download link, e.g. YouTube video, forum post, etc.
+        At least one or more links that showcase and has a download link, e.g. YouTube video, forum post or anywhere that contains a download and other details.
         
-        Tip: You can add the files to a `zip` or `rar` file by clicking this area to highlight it and then dragging the file in.
+        Tip: You can also add the files to a `zip` or `rar` file by clicking this area to highlight it and then dragging the file in.
     validations:
       required: true
