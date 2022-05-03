@@ -1,9 +1,9 @@
 name: Mod Request
-description: Request a mod to be added to the database
+description: Request mods to be added to Modio
 labels: [mod request]
 body:
 - type: dropdown
-    attributes:
+  attributes:
     label: Platform
     options:
       - PlayStation 3
@@ -11,14 +11,14 @@ body:
   validations:
     required: true
 - type: input
-    attributes:
+  attributes:
     label: Game/Category
     description: "How often do you or others encounter this bug?"
     placeholder: "Example: 'Borderlands 2', or 'Homebrew'"
   validations:
     required: true
 - type: input
-    attributes:
+  attributes:
     label: Name
     description: |
     Please provide the name as accurate as possible.
@@ -28,16 +28,16 @@ body:
   validations:
     required: true
 - type: input
-    attributes:
+  attributes:
     label: Creator
   validations:
     required: true
 - type: textarea
-    attributes:
-      label: Relevant Links
-      description: |
-        At least one or more links that showcase and has a download link, e.g. YouTube video, forum post or anywhere that contains a download and other details.
+  attributes:
+    label: Relevant Links
+    description: |
+	At least one or more links that showcase and has a download link, e.g. YouTube video, forum post or anywhere that contains a download and other details.
         
-        Tip: You can also add the files to a `zip` or `rar` file by clicking this area to highlight it and then dragging the file in.
-    validations:
-      required: true
+    Tip: You can also add the files to a `zip` or `rar` file by clicking this area to highlight it and then dragging the file in.
+  validations:
+    required: true
