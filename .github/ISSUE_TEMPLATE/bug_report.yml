@@ -29,7 +29,7 @@ body:
     id: files-version
     attributes:
       label: Modio Version
-      description: Which version of Modio are you using? The version number can be found by going to Help -> About
+      description: Which version of Modio are you using? The version number can be found by going to Help > About
       placeholder: "e.g. Version: Beta 2.0.1 OS Version: 10.0.22000.282"
     validations:
       required: true
