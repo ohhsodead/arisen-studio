@@ -1,0 +1,43 @@
+name: Mod Request
+description: Request a mod to be added to the database
+labels: [mod request]
+body:
+  - type: dropdown
+    attributes:
+      label: Platform
+      options:
+        - PlayStation 3
+        - Xbox 360
+  validations:
+    required: true
+  - type: input
+    attributes:
+    label: Game/Category
+    description: "How often do you or others encounter this bug?"
+    placeholder: "Example: 'Borderlands 2', or 'Homebrew'"
+  validations:
+    required: true
+  - type: input
+    attributes:
+    label: Name
+    description: |
+    Please provide the name as accurate as possible.
+    
+    Tip: If it's mod menu then use the menu's name/title, if it's a game-save then best describe it in a few words (e.g. 100% Completed Story Mode).
+    placeholder: "Example: 'Borderlands 2', or 'Homebrew'"
+  validations:
+    required: true
+  - type: input
+    attributes:
+    label: Creator
+  validations:
+    required: true
+  - type: textarea
+    attributes:
+      label: Relevant Links
+      description: |
+        At least one or more links that showcase and has a download link, e.g. YouTube video, forum post, etc.
+        
+        Tip: You can add the files to a `zip` or `rar` file by clicking this area to highlight it and then dragging the file in.
+    validations:
+      required: true
