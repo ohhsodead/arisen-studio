@@ -69,7 +69,7 @@ If you are already familiar with the Crowdin platform and want to contribute you
 
 ## Requesting Mods
 
-Our [database](https://github.com/ohhsodead/Modio-Database) will not have every mod that's out there. You can help us increase our library for mods that are missing. Use our simple [form](https://forms.gle/iSFmyFP1J8ioUELy9) with all the details, then we'll get it added for you!
+Our [database](https://github.com/ohhsodead/Modio-Database) will not have every mod that's out there. You can help contribute to our library using our simple [Google form](https://forms.gle/iSFmyFP1J8ioUELy9) with all the details, then we'll get it added for you!
 
 ## Credits & Libraries
 
@@ -86,6 +86,7 @@ Our [database](https://github.com/ohhsodead/Modio-Database) will not have every 
 * [NLog](https://nlog-project.org/)
 * [PS3Lib](https://github.com/iMCSx/PS3Lib)
 * [WebMAN API](https://github.com/FxckingCoder/WebmanAPI)
+* [WebView2](https://aka.ms/webview)
 * [XDevkit](https://microsoft.com/)
 
 [<a href="https://crowdin.com/?utm_source=badge&utm_medium=referral&utm_campaign=badge-add-on" rel="nofollow"><img style="width:140;height:40px" src="https://badges.crowdin.net/badge/light/crowdin-on-dark.png" srcset="https://badges.crowdin.net/badge/light/crowdin-on-dark.png 1x,https://badges.crowdin.net/badge/light/crowdin-on-dark@2x.png 2x" alt="Crowdin | Agile localization for tech companies" /></a>](https://crowdin.com)
