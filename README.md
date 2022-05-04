@@ -82,6 +82,7 @@ Our [database](https://github.com/ohhsodead/Modio-Database) will not have every 
 * [HtmlAgilityPack](https://html-agility-pack.net/)
 * [Humanizer](https://github.com/Humanizr/Humanizer)
 * [INI File Parser](https://github.com/rickyah/ini-parser)
+* [ISOLib](https://github.com/PureIso)
 * [Newtonsoft.Json](https://newtonsoft.com/json)
 * [NLog](https://nlog-project.org/)
 * [PARAM.SFO](https://www.aldostools.org/)
