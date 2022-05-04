@@ -84,8 +84,9 @@ Our [database](https://github.com/ohhsodead/Modio-Database) will not have every 
 * [INI File Parser](https://github.com/rickyah/ini-parser)
 * [Newtonsoft.Json](https://newtonsoft.com/json)
 * [NLog](https://nlog-project.org/)
+* [PARAM.SFO](https://www.aldostools.org/)
 * [PS3Lib](https://github.com/iMCSx/PS3Lib)
-* [WebMAN API](https://github.com/FxckingCoder/WebmanAPI)
+* [WebMAN API](https://github.com/aldostools/webMAN-MOD)
 * [WebView2](https://aka.ms/webview)
 * [XDevkit](https://microsoft.com/)
 
