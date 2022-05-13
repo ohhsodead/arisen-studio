@@ -1,0 +1,16 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<svg x="0px" y="0px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" id="Layer_1" style="enable-background:new 0 0 32 32">
+  <style type="text/css">
+	.Blue{fill:#1177D7;}
+	.Yellow{fill:#FFB115;}
+	.Black{fill:#727272;}
+	.Green{fill:#039C23;}
+	.Red{fill:#D11C1C;}
+	.st0{opacity:0.75;}
+	.st1{opacity:0.5;}
+</style>
+  <g id="Refresh_1_">
+    <path d="M24.5,7.5C22.3,5.3,19.3,4,16,4C10.1,4,5.1,8.3,4.2,14h4.1c0.9-3.4,4-6,7.7-6c2.2,0,4.2,0.9,5.6,2.4L18,14   h5.7h4.1H28V4L24.5,7.5z" class="Green" />
+    <path d="M16.2,24c-2.2,0-4.2-0.9-5.6-2.4l3.6-3.6H8.4H4.4H4.2v10l3.5-3.5c2.2,2.2,5.2,3.5,8.5,3.5   C22.1,28,27,23.7,28,18h-4.1C23,21.4,19.9,24,16.2,24z" class="Green" />
+  </g>
+</svg>

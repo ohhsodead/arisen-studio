@@ -1,13 +1,13 @@
-# ModioX
-[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/ModioX.svg)](https://github.com/ohhsodead/ModioX/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/ModioX/total.svg)](https://github.com/ohhsodead/ModioX/releases/) [![Crowdin](https://badges.crowdin.net/modiox/localized.svg)](https://crowdin.com/project/modiox) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/ModioX.svg)](https://gitHub.com/ohhsodead/ModioX/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/ModioX.svg)](https://github.com/ohhsodead/ModioX/issues?q=is%3Aissue+is%3Aclosed)  [![Join our Discord](https://img.shields.io/badge/chat%20on-discord-7289DA)](https://discord.gg/FTCS3Xu)
+# Modio
+[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/Modio.svg)](https://github.com/ohhsodead/Modio/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/Modio/total.svg)](https://github.com/ohhsodead/Modio/releases/) [![Crowdin](https://badges.crowdin.net/modio/localized.svg)](https://crowdin.com/project/modio) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/Modio.svg)](https://gitHub.com/ohhsodead/Modio/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/Modio.svg)](https://github.com/ohhsodead/Modio/issues?q=is%3Aissue+is%3Aclosed)  [![Join our Discord](https://img.shields.io/badge/chat%20on-discord-7289DA)](https://discord.gg/FTCS3Xu)
 
-The elegant, powerful, and open-source mod manager. ModioX allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by myself, a few friends, and awesome contributors. ModioX can also be used as an FTP client to install and uninstall mods directly from your console. Without the need to search up old posts or use file managers - this will do everything for you.
+The elegant, powerful, and open-source mod manager. Modio allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by myself, a few friends, and awesome contributors. Modio can also be used as an FTP client to install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.
 
 **the only one of its kind...**
 
-![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/DashboardPage.png?raw=true)
+![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/Modio/master/.screenshots/demo/DashboardPage.png?raw=true)
 
-![Mods Page](https://raw.githubusercontent.com/ohhsodead/ModioX/master/.screenshots/demo/ModsPage.png?raw=true)
+![Mods Page](https://raw.githubusercontent.com/ohhsodead/Modio/master/.screenshots/demo/GameModsPage.png?raw=true)
 
 **Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/FTCS3Xu)!
 
@@ -24,20 +24,21 @@ Please give this project a ⭐ if you find it useful.
 * Install and uninstall mods directly to your console
 * Manage your downloads and installed mods
 * File Manager with local and console listings
+* Apply cheats (RTM) to supported games
 * Discord rich presence to show game playing
 
 ### PlayStation 3
 * Automatically detect and remember game regions
 * Backup and restore original game files
 * Download official game updates
-* Browse/mount/unmount games
+* Browse, mount and unmount games
 * Package File Manager
 * Console Manager (IDPS/PSID, LEDs, etc.)
 * webMAN commands (Reboot, Show Version, etc.)
 
 ### Xbox 360
-* Launch games using XEX files
-* Resign game saves to profiles
+* Launch games using `XEX` files
+* Resign game-saves to user profiles
 * Backup and edit the launch.ini file
 * XBDM commands (Reboot, Shutdown, etc.)
 
@@ -52,10 +53,10 @@ Please give this project a ⭐ if you find it useful.
 
 ### Windows
 
-Download and run the latest version of the Windows installer, "ModioX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/ModioX/releases/latest) page.
+Download and run the latest version of the Windows installer, "Modio.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Modio/releases/latest) page.
 
 ## Bug Reports
-ModioX isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/ModioX/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
+Modio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/Modio/issues/new/choose). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
 
 ## Contributing
 
@@ -64,11 +65,11 @@ You're also welcome to submit any pull requests with fixes and suggestions, like
 ### Translations
 For the localization process we use the collaborative platform from [Crowdin](https://crowdin.com/), thanks to their generosity for providing a professional service to Open Source projects free of charge. Please read the [introduction for new translators](https://support.crowdin.com/crowdin-intro/) and [guide for using the online editor](https://support.crowdin.com/online-editor/) to understand how it works.
 
-If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to our [Crowdin project](https://crowdin.com/projects/modiox) to get started.
+If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to our [Crowdin project](https://crowdin.com/projects/modio) to get started.
 
 ## Requesting Mods
 
-I know that not all mods aren't on our database, but if you open an issue with the details then we can get them added for you!
+Our [database](https://github.com/ohhsodead/Modio-Database) will not have every mod that's out there. You can help contribute to our library using our simple [Google form](https://forms.gle/iSFmyFP1J8ioUELy9) with all the details, then we'll get it added for you!
 
 ## Credits & Libraries
 
@@ -81,17 +82,20 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [HtmlAgilityPack](https://html-agility-pack.net/)
 * [Humanizer](https://github.com/Humanizr/Humanizer)
 * [INI File Parser](https://github.com/rickyah/ini-parser)
+* [ISOLib](https://github.com/PureIso)
 * [Newtonsoft.Json](https://newtonsoft.com/json)
 * [NLog](https://nlog-project.org/)
+* [PARAM.SFO](https://www.aldostools.org/)
 * [PS3Lib](https://github.com/iMCSx/PS3Lib)
-* [WebMAN API](https://github.com/FxckingCoder/WebmanAPI)
+* [WebMAN API](https://github.com/aldostools/webMAN-MOD)
+* [WebView2](https://aka.ms/webview)
 * [XDevkit](https://microsoft.com/)
 
 [<a href="https://crowdin.com/?utm_source=badge&utm_medium=referral&utm_campaign=badge-add-on" rel="nofollow"><img style="width:140;height:40px" src="https://badges.crowdin.net/badge/light/crowdin-on-dark.png" srcset="https://badges.crowdin.net/badge/light/crowdin-on-dark.png 1x,https://badges.crowdin.net/badge/light/crowdin-on-dark@2x.png 2x" alt="Crowdin | Agile localization for tech companies" /></a>](https://crowdin.com)
 
 ## Contributors
 
-* [crystall1nedev ](https://github.com/crystall1nedev)
+* [crystall1nedev](https://github.com/crystall1nedev)
 * [EgoMaw](https://github.com/EgoMaw)
 * [goldug](http://djopposite.se/)
 * [oSerenity](https://github.com/oSerenity)

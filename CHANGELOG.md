@@ -1,6 +1,70 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## Beta v2.1.3
+- Project renamed to Modio, also a new icon
+- Added Edit Advanced Settings Tile to Dashboard
+- Added Transfer tab to Settings
+- Added option to delete local files after installing
+- Added option to always backup game files
+- Added Homebrew path to Settings
+- Added Resources path to Settings
+- Added support for Xbox 360 game cheats
+- Added About page replacing the dialog
+- Added Downloads to mod details
+- Added set previous window state
+- Fixed loading Package File Manager
+- Fixed loading Console Manager
+- Fixed downloading Packages using Base Directory
+- Fixed Change Log text now wraps for long items
+- Fixed "Open Folder" for Downloads
+- Fixed setting Downloads folder from Dashboard
+- Redesigned the mod details
+- Removed Imported Mods feature
+- Backup Files has changed to Backup File Manager
+- Reduced hitting the GitHub API rate limit
+- More strings are supported by translations
+- Database files have been split by category types
+- Moved database files to its own git repository
+- Improvements to user interface design
+
+Note: Sorting Packages by file size doesn't work correctly. I'm working on a fix for this.
+
+## Beta v2.1.2
+- Fixed bug when navigating pages
+- Other minor bug fixes and improvements
+
+## Beta v2.1.1
+- Added Paths tab to Settings
+- Fixed crash when starting application (#62)
+- Fixed showing previous language after restart
+- Improvements to design style
+
+## Beta v2.1.0
+- Updated FluentFTP package to 37.0.2
+- Updated Humanizer package to 2.14.1
+- Updated NLog package to 4.7.15
+- Added Discord Rich Presence option
+- Added Game Cheats page for RTM
+- Added Swedish language (Thanks goldug!)
+- Added delete buttons to Installed Mods page
+- Added status to the footer
+- Added connection status to the footer
+- Added extra details when viewing scripts
+- Added FAQ help for using packages
+- Added hyperlink support for descriptions
+- Changed DPI awareness to system
+- Fixed webMAN package detection
+- Fixed dismissing announcements
+- Removed Custom Lists, use Favorites
+- Removed Chat Room, might be a separate project
+- Updated messages for more clarification
+- Only one instance of the application can be open
+- Installed Mods now saved to current console profile
+- Other improvements to code and design
+
+Note: Sorting Packages by file size doesn't work correctly. I'm working on a fix for this.
+
 ## Beta v2.0.2
 - Minor improvements to interface (#52)
 - Added FAQ dialog for using Packages
