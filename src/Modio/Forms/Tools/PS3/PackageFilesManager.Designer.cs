@@ -9,7 +9,7 @@ using DevExpress.XtraWaitForm;
 
 namespace Modio.Forms.Tools.PS3
 {
-    partial class PackageFileManager
+    partial class PackageFilesManager
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@ namespace Modio.Forms.Tools.PS3
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PackageFileManager));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PackageFilesManager));
             this.GroupPackageFiles = new DevExpress.XtraEditors.GroupControl();
             this.GridPackageFiles = new DevExpress.XtraGrid.GridControl();
             this.GridViewPackageFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -86,10 +86,13 @@ namespace Modio.Forms.Tools.PS3
             // GridPackageFiles
             // 
             this.GridPackageFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridPackageFiles.EmbeddedNavigator.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.GridPackageFiles.EmbeddedNavigator.Appearance.Options.UseFont = true;
+            this.GridPackageFiles.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.GridPackageFiles.Location = new System.Drawing.Point(0, 25);
             this.GridPackageFiles.MainView = this.GridViewPackageFiles;
             this.GridPackageFiles.Name = "GridPackageFiles";
-            this.GridPackageFiles.Size = new System.Drawing.Size(608, 261);
+            this.GridPackageFiles.Size = new System.Drawing.Size(608, 262);
             this.GridPackageFiles.TabIndex = 0;
             this.GridPackageFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewPackageFiles});
@@ -117,9 +120,9 @@ namespace Modio.Forms.Tools.PS3
             this.PanelButtons.Controls.Add(this.ButtonDelete);
             this.PanelButtons.Controls.Add(this.ButtonDeleteAll);
             this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelButtons.Location = new System.Drawing.Point(0, 286);
+            this.PanelButtons.Location = new System.Drawing.Point(0, 287);
             this.PanelButtons.Name = "PanelButtons";
-            this.PanelButtons.Size = new System.Drawing.Size(608, 41);
+            this.PanelButtons.Size = new System.Drawing.Size(608, 40);
             this.PanelButtons.TabIndex = 1180;
             // 
             // ButtonInstallFile
@@ -254,7 +257,7 @@ namespace Modio.Forms.Tools.PS3
             // LabelStatus
             // 
             this.LabelStatus.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.LabelStatus.Caption = "Status";
+            this.LabelStatus.Caption = "Idle";
             this.LabelStatus.Id = 3;
             this.LabelStatus.Name = "LabelStatus";
             // 
@@ -302,7 +305,7 @@ namespace Modio.Forms.Tools.PS3
             this.barStaticItem2.Id = 2;
             this.barStaticItem2.Name = "barStaticItem2";
             // 
-            // PackageFileManager
+            // PackageFilesManager
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.Appearance.Options.UseForeColor = true;
@@ -317,16 +320,17 @@ namespace Modio.Forms.Tools.PS3
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("PackageFileManager.IconOptions.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("PackageFilesManager.IconOptions.Icon")));
+            this.IconOptions.Image = global::Modio.Properties.Resources.icon;
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "PackageFileManager";
+            this.Name = "PackageFilesManager";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Package File Manger";
-            this.Load += new System.EventHandler(this.PackageManager_Load);
+            this.Load += new System.EventHandler(this.PackageFilesManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GroupPackageFiles)).EndInit();
             this.GroupPackageFiles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridPackageFiles)).EndInit();

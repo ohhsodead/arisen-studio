@@ -22,25 +22,25 @@ namespace Modio.Forms.Tools.PS3
         {
             try
             {
-                UpdateStatus(Language.GetString("CONNECTING_TO_CONSOLE"));
+                SetStatus(Language.GetString("CONNECTING_TO_CONSOLE"));
 
                 PS3.PS3MAPI.ConnectTarget(MainWindow.ConsoleProfile.Address);
 
                 if (PS3.PS3MAPI.IsConnected())
                 {
-                    UpdateStatus(Language.GetString("SUCCESS_CONNECTED"));
+                    SetStatus(Language.GetString("SUCCESS_CONNECTED"));
                     LoadDetails();
                 }
                 else
                 {
-                    UpdateStatus("Console Manager: " + Language.GetString("UNABLE_TO_CONNECT"));
+                    SetStatus("Console Manager: " + Language.GetString("UNABLE_TO_CONNECT"));
                     XtraMessageBox.Show(this, Language.GetString("UNABLE_TO_CONNECT"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Close();
                 }
             }
             catch (Exception ex)
             {
-                UpdateStatus("Console Manager: " + Language.GetString("UNABLE_TO_CONNECT"), ex);
+                SetStatus("Console Manager: " + Language.GetString("UNABLE_TO_CONNECT"), ex);
                 XtraMessageBox.Show(this, Language.GetString("UNABLE_TO_CONNECT"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
@@ -76,11 +76,11 @@ namespace Modio.Forms.Tools.PS3
                 LabelFirmwareType.Text = PS3.PS3MAPI.GetFirmwareType();
                 LabelCoreVersion.Text = PS3.PS3MAPI.GetCoreVersion();
 
-                UpdateStatus("Successfully loaded console details.");
+                SetStatus("Successfully loaded console details.");
             }
             catch (Exception ex)
             {
-                UpdateStatus($"Unable to fetch console details.", ex);
+                SetStatus($"Unable to fetch console details.", ex);
                 XtraMessageBox.Show(this, $"Unable to fetch console details.\n\nError Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -89,21 +89,25 @@ namespace Modio.Forms.Tools.PS3
         {
             PS3.PS3MAPI.SetConsoleLed(PS3ManagerAPI.PS3MAPI.PS3_CMD.LedColor.Green, (PS3ManagerAPI.PS3MAPI.PS3_CMD.LedMode)RadioGroupLEDsGreen.SelectedIndex);
             PS3.PS3MAPI.SetConsoleLed(PS3ManagerAPI.PS3MAPI.PS3_CMD.LedColor.Red, (PS3ManagerAPI.PS3MAPI.PS3_CMD.LedMode)RadioGroupLEDsRed.SelectedIndex);
+            SetStatus("Console LEDs have been set.");
         }
 
         private void ButtonRingBuzzer_Click(object sender, EventArgs e)
         {
             PS3.PS3MAPI.RingBuzzer((PS3ManagerAPI.PS3MAPI.PS3_CMD.BuzzerMode)RadioGroupBuzzerMode.SelectedIndex);
+            SetStatus("IDPS has been set.");
         }
 
         private void ButtonSetIDPS_Click(object sender, EventArgs e)
         {
             PS3.PS3MAPI.SetConsoleID(TextBoxIDPS.Text);
+            SetStatus("IDPS has been set.");
         }
 
         private void ButtonSetPSID_Click(object sender, EventArgs e)
         {
             PS3.PS3MAPI.SetPSID(TextBoxPSID.Text);
+            SetStatus("PSID has been set.");
         }
 
         /// <summary>
@@ -111,7 +115,7 @@ namespace Modio.Forms.Tools.PS3
         /// </summary>
         /// <param name="status"></param>
         /// <param name="ex"></param>
-        public void UpdateStatus(string status, Exception ex = null)
+        public void SetStatus(string status, Exception ex = null)
         {
             if (InvokeRequired)
             {

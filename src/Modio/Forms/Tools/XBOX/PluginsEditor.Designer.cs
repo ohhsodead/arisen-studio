@@ -118,7 +118,7 @@ namespace Modio.Forms.Tools.XBOX
             this.CheckBoxEnableLiveStrong.Name = "CheckBoxEnableLiveStrong";
             this.CheckBoxEnableLiveStrong.Properties.AutoWidth = true;
             this.CheckBoxEnableLiveStrong.Properties.Caption = "Enable Live Strong";
-            this.CheckBoxEnableLiveStrong.Size = new System.Drawing.Size(116, 18);
+            this.CheckBoxEnableLiveStrong.Size = new System.Drawing.Size(117, 19);
             this.CheckBoxEnableLiveStrong.TabIndex = 5;
             this.CheckBoxEnableLiveStrong.CheckedChanged += new System.EventHandler(this.CheckBoxEnableLiveStrong_CheckedChanged);
             // 
@@ -128,7 +128,7 @@ namespace Modio.Forms.Tools.XBOX
             this.CheckBoxEnableLiveBlock.Name = "CheckBoxEnableLiveBlock";
             this.CheckBoxEnableLiveBlock.Properties.AutoWidth = true;
             this.CheckBoxEnableLiveBlock.Properties.Caption = "Enable Live Block";
-            this.CheckBoxEnableLiveBlock.Size = new System.Drawing.Size(108, 18);
+            this.CheckBoxEnableLiveBlock.Size = new System.Drawing.Size(109, 19);
             this.CheckBoxEnableLiveBlock.TabIndex = 4;
             this.CheckBoxEnableLiveBlock.ToolTip = "if set to true, this will block the console from resolving LIVE related dns\r\nif n" +
     "ot set this value will be TRUE";
@@ -140,9 +140,9 @@ namespace Modio.Forms.Tools.XBOX
             this.PanelButtons.Controls.Add(this.ButtonRestoreBackup);
             this.PanelButtons.Controls.Add(this.ButtonSave);
             this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelButtons.Location = new System.Drawing.Point(2, 280);
+            this.PanelButtons.Location = new System.Drawing.Point(0, 282);
             this.PanelButtons.Name = "PanelButtons";
-            this.PanelButtons.Size = new System.Drawing.Size(424, 39);
+            this.PanelButtons.Size = new System.Drawing.Size(428, 39);
             this.PanelButtons.TabIndex = 1181;
             // 
             // ButtonRestoreDefault
@@ -242,6 +242,7 @@ namespace Modio.Forms.Tools.XBOX
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("PluginsEditor.IconOptions.Icon")));
+            this.IconOptions.Image = global::Modio.Properties.Resources.icon;
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

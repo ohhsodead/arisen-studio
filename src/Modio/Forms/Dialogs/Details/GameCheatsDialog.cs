@@ -40,8 +40,8 @@ namespace Modio.Forms.Dialogs.Details
 
             // Display details in UI
             LabelGame.Text = GameCheatItem.Game;
-            LabelRegion.Text = "- " + GameCheatItem.Region;
-            LabelVersion.Text = $"({GameCheatItem.Version})";
+            LabelVersion.Text = "- " + GameCheatItem.Version;
+            LabelRegion.Text = $"({GameCheatItem.Region})";
 
             foreach (Cheats cheat in GameCheatItem.Cheats)
             {
@@ -50,8 +50,8 @@ namespace Modio.Forms.Dialogs.Details
 
             GridControlCheats.DataSource = DataTableCheats;
 
-            ButtonApply.SetControlText(Language.GetString("LABEL_APPLY"), 26);
-            ButtonReport.SetControlText(Language.GetString("LABEL_REPORT"), 26);
+            ButtonApplyCheat.SetControlText(Language.GetString("LABEL_APPLY_CHEAT"), 26);
+            ButtonReportIssue.SetControlText(Language.GetString("LABEL_REPORT_ISSUE"), 26);
         }
 
         private void ImageCloseDetails_Click(object sender, EventArgs e)
@@ -66,8 +66,7 @@ namespace Modio.Forms.Dialogs.Details
 
         private void GridViewCheats_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            ButtonApply.Enabled = GridViewCheats.SelectedRowsCount > 0;
-            ButtonReport.Enabled = GridViewCheats.SelectedRowsCount > 0;
+            ButtonApplyCheat.Enabled = GridViewCheats.SelectedRowsCount > 0;
         }
 
         private Cheats SelectedCheatItem;

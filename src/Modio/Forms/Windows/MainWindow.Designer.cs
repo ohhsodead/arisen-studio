@@ -228,7 +228,7 @@ namespace Modio.Forms.Windows
             this.MenuButtonTools = new DevExpress.XtraBars.BarButtonItem();
             this.MenuButtonOptions = new DevExpress.XtraBars.BarButtonItem();
             this.MenuButtonHelp = new DevExpress.XtraBars.BarButtonItem();
-            this.MenuButtonSubmitMods = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuButtonRequestMods = new DevExpress.XtraBars.BarButtonItem();
             this.repositoryItemRadioGroup2 = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
             this.NavigationMenu = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.NavigationGroupDashboard = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -2413,7 +2413,7 @@ namespace Modio.Forms.Windows
             this.toolbarFormControl1.TitleItemLinks.Add(this.MenuButtonConnect, true);
             this.toolbarFormControl1.TitleItemLinks.Add(this.MenuButtonTools);
             this.toolbarFormControl1.TitleItemLinks.Add(this.MenuButtonHelp);
-            this.toolbarFormControl1.TitleItemLinks.Add(this.MenuButtonSubmitMods);
+            this.toolbarFormControl1.TitleItemLinks.Add(this.MenuButtonRequestMods);
             this.toolbarFormControl1.ToolbarForm = this;
             // 
             // ToolbarFormManager
@@ -2430,7 +2430,7 @@ namespace Modio.Forms.Windows
             this.MenuButtonTools,
             this.MenuButtonOptions,
             this.MenuButtonHelp,
-            this.MenuButtonSubmitMods});
+            this.MenuButtonRequestMods});
             this.ToolbarFormManager.MaxItemId = 10;
             this.ToolbarFormManager.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemRadioGroup2});
@@ -2509,14 +2509,14 @@ namespace Modio.Forms.Windows
             this.MenuButtonHelp.Name = "MenuButtonHelp";
             this.MenuButtonHelp.Size = new System.Drawing.Size(0, 31);
             // 
-            // MenuButtonSubmitMods
+            // MenuButtonRequestMods
             // 
-            this.MenuButtonSubmitMods.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.MenuButtonSubmitMods.Caption = "SUBMIT MODS";
-            this.MenuButtonSubmitMods.Id = 5;
-            this.MenuButtonSubmitMods.Name = "MenuButtonSubmitMods";
-            this.MenuButtonSubmitMods.Size = new System.Drawing.Size(0, 31);
-            this.MenuButtonSubmitMods.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MenuItemButtonSubmitMods_ItemClick);
+            this.MenuButtonRequestMods.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.MenuButtonRequestMods.Caption = "REQUEST MODS";
+            this.MenuButtonRequestMods.Id = 5;
+            this.MenuButtonRequestMods.Name = "MenuButtonRequestMods";
+            this.MenuButtonRequestMods.Size = new System.Drawing.Size(0, 31);
+            this.MenuButtonRequestMods.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MenuItemButtonRequestMods_ItemClick);
             // 
             // repositoryItemRadioGroup2
             // 
@@ -3021,8 +3021,9 @@ namespace Modio.Forms.Windows
             this.ImageLatestNewsRefresh.Size = new System.Drawing.Size(20, 20);
             this.ImageLatestNewsRefresh.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.ImageLatestNewsRefresh.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ImageLatestNewsRefresh.SvgImage")));
+            this.ImageLatestNewsRefresh.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.ImageLatestNewsRefresh.TabIndex = 2;
-            this.ImageLatestNewsRefresh.Text = "svgImageBox1";
+            this.ImageLatestNewsRefresh.Text = "Refresh";
             this.ImageLatestNewsRefresh.Click += new System.EventHandler(this.ImageReloadNewsItems_Click);
             // 
             // PanelNewsItems
@@ -3371,7 +3372,7 @@ namespace Modio.Forms.Windows
             this.PanelChangeLogText.MinimumSize = new System.Drawing.Size(393, 0);
             this.PanelChangeLogText.Name = "PanelChangeLogText";
             this.PanelChangeLogText.Padding = new System.Windows.Forms.Padding(0, 0, 0, 6);
-            this.PanelChangeLogText.Size = new System.Drawing.Size(397, 251);
+            this.PanelChangeLogText.Size = new System.Drawing.Size(397, 294);
             this.PanelChangeLogText.TabIndex = 1;
             // 
             // LabelChangeLog
@@ -6469,7 +6470,10 @@ namespace Modio.Forms.Windows
             this.TextBoxSettingsPathResources.Name = "TextBoxSettingsPathResources";
             this.TextBoxSettingsPathResources.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxSettingsPathResources.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathResources.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.TextBoxSettingsPathResources.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathResources.Properties.ReadOnly = true;
+            this.TextBoxSettingsPathResources.Properties.UseReadOnlyAppearance = false;
             this.TextBoxSettingsPathResources.Size = new System.Drawing.Size(465, 22);
             this.TextBoxSettingsPathResources.TabIndex = 1206;
             this.TextBoxSettingsPathResources.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathResources_EditValueChanged);
@@ -6502,7 +6506,10 @@ namespace Modio.Forms.Windows
             this.TextBoxSettingsPathHomebrew.Name = "TextBoxSettingsPathHomebrew";
             this.TextBoxSettingsPathHomebrew.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxSettingsPathHomebrew.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathHomebrew.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.TextBoxSettingsPathHomebrew.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathHomebrew.Properties.ReadOnly = true;
+            this.TextBoxSettingsPathHomebrew.Properties.UseReadOnlyAppearance = false;
             this.TextBoxSettingsPathHomebrew.Size = new System.Drawing.Size(465, 22);
             this.TextBoxSettingsPathHomebrew.TabIndex = 1203;
             this.TextBoxSettingsPathHomebrew.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathHomebrew_EditValueChanged);
@@ -6557,7 +6564,10 @@ namespace Modio.Forms.Windows
             this.TextBoxSettingsPathDownloads.Name = "TextBoxSettingsPathDownloads";
             this.TextBoxSettingsPathDownloads.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxSettingsPathDownloads.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathDownloads.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.TextBoxSettingsPathDownloads.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathDownloads.Properties.ReadOnly = true;
+            this.TextBoxSettingsPathDownloads.Properties.UseReadOnlyAppearance = false;
             this.TextBoxSettingsPathDownloads.Size = new System.Drawing.Size(465, 22);
             this.TextBoxSettingsPathDownloads.TabIndex = 1198;
             this.TextBoxSettingsPathDownloads.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathDownloads_EditValueChanged);
@@ -6590,7 +6600,10 @@ namespace Modio.Forms.Windows
             this.TextBoxSettingsPathGameSaves.Name = "TextBoxSettingsPathGameSaves";
             this.TextBoxSettingsPathGameSaves.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxSettingsPathGameSaves.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathGameSaves.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.TextBoxSettingsPathGameSaves.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathGameSaves.Properties.ReadOnly = true;
+            this.TextBoxSettingsPathGameSaves.Properties.UseReadOnlyAppearance = false;
             this.TextBoxSettingsPathGameSaves.Size = new System.Drawing.Size(465, 22);
             this.TextBoxSettingsPathGameSaves.TabIndex = 1195;
             this.TextBoxSettingsPathGameSaves.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathGameSaves_EditValueChanged);
@@ -6623,7 +6636,10 @@ namespace Modio.Forms.Windows
             this.TextBoxSettingsPathPlugins.Name = "TextBoxSettingsPathPlugins";
             this.TextBoxSettingsPathPlugins.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxSettingsPathPlugins.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathPlugins.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.TextBoxSettingsPathPlugins.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathPlugins.Properties.ReadOnly = true;
+            this.TextBoxSettingsPathPlugins.Properties.UseReadOnlyAppearance = false;
             this.TextBoxSettingsPathPlugins.Size = new System.Drawing.Size(465, 22);
             this.TextBoxSettingsPathPlugins.TabIndex = 1192;
             this.TextBoxSettingsPathPlugins.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathPlugins_EditValueChanged);
@@ -6656,7 +6672,10 @@ namespace Modio.Forms.Windows
             this.TextBoxSettingsPathPackages.Name = "TextBoxSettingsPathPackages";
             this.TextBoxSettingsPathPackages.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxSettingsPathPackages.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathPackages.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.TextBoxSettingsPathPackages.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathPackages.Properties.ReadOnly = true;
+            this.TextBoxSettingsPathPackages.Properties.UseReadOnlyAppearance = false;
             this.TextBoxSettingsPathPackages.Size = new System.Drawing.Size(465, 22);
             this.TextBoxSettingsPathPackages.TabIndex = 1189;
             this.TextBoxSettingsPathPackages.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathPackages_EditValueChanged);
@@ -6699,7 +6718,10 @@ namespace Modio.Forms.Windows
             this.TextBoxSettingsPathGameMods.Name = "TextBoxSettingsPathGameMods";
             this.TextBoxSettingsPathGameMods.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxSettingsPathGameMods.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPathGameMods.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.TextBoxSettingsPathGameMods.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathGameMods.Properties.ReadOnly = true;
+            this.TextBoxSettingsPathGameMods.Properties.UseReadOnlyAppearance = false;
             this.TextBoxSettingsPathGameMods.Size = new System.Drawing.Size(465, 22);
             this.TextBoxSettingsPathGameMods.TabIndex = 1185;
             this.TextBoxSettingsPathGameMods.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathGameMods_EditValueChanged);
@@ -6724,6 +6746,8 @@ namespace Modio.Forms.Windows
             this.TextBoxSettingsPathBaseDirectory.Properties.Appearance.Options.UseFont = true;
             this.TextBoxSettingsPathBaseDirectory.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.TextBoxSettingsPathBaseDirectory.Properties.MaxLength = 16;
+            this.TextBoxSettingsPathBaseDirectory.Properties.ReadOnly = true;
+            this.TextBoxSettingsPathBaseDirectory.Properties.UseReadOnlyAppearance = false;
             this.TextBoxSettingsPathBaseDirectory.Size = new System.Drawing.Size(465, 22);
             this.TextBoxSettingsPathBaseDirectory.TabIndex = 1181;
             this.TextBoxSettingsPathBaseDirectory.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathBaseDirectory_EditValueChanged);
@@ -9193,7 +9217,7 @@ namespace Modio.Forms.Windows
             this.LabelAboutTranslators.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.LabelAboutTranslators.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.LabelAboutTranslators.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.LabelAboutTranslators.Location = new System.Drawing.Point(5, 378);
+            this.LabelAboutTranslators.Location = new System.Drawing.Point(5, 432);
             this.LabelAboutTranslators.Name = "LabelAboutTranslators";
             this.LabelAboutTranslators.Size = new System.Drawing.Size(48, 34);
             this.LabelAboutTranslators.TabIndex = 7;
@@ -9205,7 +9229,7 @@ namespace Modio.Forms.Windows
             // 
             this.LabelAboutHeaderTranslators.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.LabelAboutHeaderTranslators.Appearance.Options.UseFont = true;
-            this.LabelAboutHeaderTranslators.Location = new System.Drawing.Point(5, 355);
+            this.LabelAboutHeaderTranslators.Location = new System.Drawing.Point(5, 409);
             this.LabelAboutHeaderTranslators.Name = "LabelAboutHeaderTranslators";
             this.LabelAboutHeaderTranslators.Size = new System.Drawing.Size(67, 17);
             this.LabelAboutHeaderTranslators.TabIndex = 6;
@@ -9220,7 +9244,7 @@ namespace Modio.Forms.Windows
             this.LabelAboutContributors.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.LabelAboutContributors.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.LabelAboutContributors.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.LabelAboutContributors.Location = new System.Drawing.Point(5, 278);
+            this.LabelAboutContributors.Location = new System.Drawing.Point(5, 331);
             this.LabelAboutContributors.Name = "LabelAboutContributors";
             this.LabelAboutContributors.Size = new System.Drawing.Size(82, 68);
             this.LabelAboutContributors.TabIndex = 5;
@@ -9231,7 +9255,7 @@ namespace Modio.Forms.Windows
             // 
             this.LabelAboutHeaderContributors.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.LabelAboutHeaderContributors.Appearance.Options.UseFont = true;
-            this.LabelAboutHeaderContributors.Location = new System.Drawing.Point(5, 255);
+            this.LabelAboutHeaderContributors.Location = new System.Drawing.Point(5, 308);
             this.LabelAboutHeaderContributors.Name = "LabelAboutHeaderContributors";
             this.LabelAboutHeaderContributors.Size = new System.Drawing.Size(77, 17);
             this.LabelAboutHeaderContributors.TabIndex = 4;
@@ -9248,7 +9272,7 @@ namespace Modio.Forms.Windows
             this.LabelAboutLibraries.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.LabelAboutLibraries.Location = new System.Drawing.Point(5, 26);
             this.LabelAboutLibraries.Name = "LabelAboutLibraries";
-            this.LabelAboutLibraries.Size = new System.Drawing.Size(144, 221);
+            this.LabelAboutLibraries.Size = new System.Drawing.Size(144, 272);
             this.LabelAboutLibraries.TabIndex = 3;
             this.LabelAboutLibraries.Text = resources.GetString("LabelAboutLibraries.Text");
             this.LabelAboutLibraries.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelAboutLibraries_HyperlinkClick);
@@ -10599,7 +10623,7 @@ namespace Modio.Forms.Windows
         private BarButtonItem MenuButtonTools;
         private BarButtonItem MenuButtonOptions;
         private BarButtonItem MenuButtonHelp;
-        private BarButtonItem MenuButtonSubmitMods;
+        private BarButtonItem MenuButtonRequestMods;
         private PanelControl PanelChangeLog;
         private LabelControl LabelChangeLogVersion;
         private XtraScrollableControl PanelChangeLogText;

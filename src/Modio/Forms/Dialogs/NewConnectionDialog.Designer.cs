@@ -206,7 +206,7 @@ namespace Modio.Forms.Dialogs
             this.CheckBoxUseDefaultConsole.Properties.AutoWidth = true;
             this.CheckBoxUseDefaultConsole.Properties.Caption = "";
             this.CheckBoxUseDefaultConsole.Properties.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.CheckBoxUseDefaultConsole_Properties_EditValueChanging);
-            this.CheckBoxUseDefaultConsole.Size = new System.Drawing.Size(18, 18);
+            this.CheckBoxUseDefaultConsole.Size = new System.Drawing.Size(19, 19);
             this.CheckBoxUseDefaultConsole.TabIndex = 3;
             this.CheckBoxUseDefaultConsole.Visible = false;
             this.CheckBoxUseDefaultConsole.CheckStateChanged += new System.EventHandler(this.CheckBoxUseDefaultConsole_CheckStateChanged);
@@ -238,6 +238,7 @@ namespace Modio.Forms.Dialogs
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("NewConnectionDialog.IconOptions.Icon")));
+            this.IconOptions.Image = global::Modio.Properties.Resources.icon;
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

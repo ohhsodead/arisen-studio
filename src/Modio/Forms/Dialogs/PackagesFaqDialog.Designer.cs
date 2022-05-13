@@ -64,10 +64,10 @@ namespace Modio.Forms.Dialogs
             this.LabelActivateDemo.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.LabelActivateDemo.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelActivateDemo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelActivateDemo.Location = new System.Drawing.Point(5, 26);
+            this.LabelActivateDemo.Location = new System.Drawing.Point(3, 28);
             this.LabelActivateDemo.Name = "LabelActivateDemo";
             this.LabelActivateDemo.Padding = new System.Windows.Forms.Padding(3);
-            this.LabelActivateDemo.Size = new System.Drawing.Size(619, 73);
+            this.LabelActivateDemo.Size = new System.Drawing.Size(623, 73);
             this.LabelActivateDemo.TabIndex = 19;
             this.LabelActivateDemo.Text = resources.GetString("LabelActivateDemo.Text");
             // 
@@ -104,10 +104,10 @@ namespace Modio.Forms.Dialogs
             this.LabelActivateRAP.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.LabelActivateRAP.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelActivateRAP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelActivateRAP.Location = new System.Drawing.Point(5, 26);
+            this.LabelActivateRAP.Location = new System.Drawing.Point(3, 28);
             this.LabelActivateRAP.Name = "LabelActivateRAP";
             this.LabelActivateRAP.Padding = new System.Windows.Forms.Padding(3);
-            this.LabelActivateRAP.Size = new System.Drawing.Size(619, 178);
+            this.LabelActivateRAP.Size = new System.Drawing.Size(623, 178);
             this.LabelActivateRAP.TabIndex = 19;
             this.LabelActivateRAP.Text = resources.GetString("LabelActivateRAP.Text");
             // 
@@ -127,6 +127,7 @@ namespace Modio.Forms.Dialogs
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("PackagesFaqDialog.IconOptions.Icon")));
+            this.IconOptions.Image = global::Modio.Properties.Resources.icon;
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

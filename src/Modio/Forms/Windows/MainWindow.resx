@@ -958,16 +958,19 @@
   <data name="LabelAboutLibraries.Text" xml:space="preserve">
     <value>&lt;a href="https://github.com/ravibpatel/AutoUpdater.NET/"&gt;AutoUpdater.NET&lt;/a&gt;
 &lt;a href="https://github.com/arminreiter/FeedReader/"&gt;CodeHollow.FeedReader&lt;/a&gt;
-&lt;a href="https://github.com/Lachee/discord-rpc-csharp"&gt;Discord Rich Presence&lt;/a&gt;
+&lt;a href="https://github.com/Lachee/discord-rpc-csharp"&gt;Discord RPC&lt;/a&gt;
 &lt;a href="https://devexpress.com/"&gt;DevExpress&lt;/a&gt;
 &lt;a href="https://github.com/robinrodricks/FluentFTP"&gt;FluentFTP&lt;/a&gt;
 &lt;a href="https://html-agility-pack.net/"&gt;HtmlAgilityPack&lt;/a&gt;
 &lt;a href="https://github.com/Humanizr/Humanizer"&gt;Humanizer&lt;/a&gt;
 &lt;a href="https://github.com/rickyah/ini-parser"&gt;INI File Parser&lt;/a&gt;
+&lt;a href="https://github.com/PureIso"&gt;ISOLib&lt;/a&gt;
 &lt;a href="https://newtonsoft.com/json"&gt;Newtonsoft.Json&lt;/a&gt;
 &lt;a href="https://nlog-project.org/"&gt;NLog&lt;/a&gt;
+&lt;a href="https://www.aldostools.org/"&gt;PARAM.SFO&lt;/a&gt;
 &lt;a href="https://github.com/iMCSx/PS3Lib"&gt;PS3Lib&lt;/a&gt;
 &lt;a href="https://github.com/aldostools/webMAN-MOD"&gt;webMAN API&lt;/a&gt;
+&lt;a href="https://aka.ms/webview"&gt;WebView2&lt;/a&gt;
 &lt;a href="https://microsoft.com/"&gt;XDevkit&lt;/a&gt;</value>
   </data>
   <data name="NavigationItemDashboard.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v21.2" mimetype="application/x-microsoft.net.object.bytearray.base64">

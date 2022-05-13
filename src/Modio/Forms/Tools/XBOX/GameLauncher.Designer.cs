@@ -59,9 +59,9 @@ namespace Modio.Forms.Tools.XBOX
             this.ListBoxGames.Appearance.Options.UseFont = true;
             this.ListBoxGames.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.ListBoxGames.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListBoxGames.Location = new System.Drawing.Point(2, 23);
+            this.ListBoxGames.Location = new System.Drawing.Point(0, 25);
             this.ListBoxGames.Name = "ListBoxGames";
-            this.ListBoxGames.Size = new System.Drawing.Size(276, 255);
+            this.ListBoxGames.Size = new System.Drawing.Size(280, 255);
             this.ListBoxGames.TabIndex = 0;
             this.ListBoxGames.SelectedIndexChanged += new System.EventHandler(this.ListBoxGames_SelectedIndexChanged);
             // 
@@ -187,9 +187,9 @@ namespace Modio.Forms.Tools.XBOX
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 344);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 345);
             this.barDockControlBottom.Manager = this.BarManager;
-            this.barDockControlBottom.Size = new System.Drawing.Size(308, 23);
+            this.barDockControlBottom.Size = new System.Drawing.Size(308, 22);
             // 
             // barDockControlLeft
             // 
@@ -197,7 +197,7 @@ namespace Modio.Forms.Tools.XBOX
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.BarManager;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 344);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 345);
             // 
             // barDockControlRight
             // 
@@ -205,7 +205,7 @@ namespace Modio.Forms.Tools.XBOX
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(308, 0);
             this.barDockControlRight.Manager = this.BarManager;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 344);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
             // 
             // GameLauncher
             // 
@@ -224,6 +224,7 @@ namespace Modio.Forms.Tools.XBOX
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("GameLauncher.IconOptions.Icon")));
+            this.IconOptions.Image = global::Modio.Properties.Resources.icon;
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

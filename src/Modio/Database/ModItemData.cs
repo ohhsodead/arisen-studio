@@ -188,6 +188,10 @@ namespace Modio.Database
                             modes.Add("Singleplayer");
                             break;
 
+                        case "CO OP":
+                            modes.Add("Co-Operative");
+                            break;
+
                         case "SPEC OPS":
                             modes.Add("Special Ops");
                             break;

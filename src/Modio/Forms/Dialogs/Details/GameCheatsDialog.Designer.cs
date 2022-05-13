@@ -40,11 +40,11 @@ namespace Modio.Forms.Dialogs.Details
             this.ImageCloseDetails = new DevExpress.XtraEditors.SvgImageBox();
             this.PanelRegion = new System.Windows.Forms.FlowLayoutPanel();
             this.LabelGame = new DevExpress.XtraEditors.LabelControl();
-            this.LabelRegion = new DevExpress.XtraEditors.LabelControl();
             this.LabelVersion = new DevExpress.XtraEditors.LabelControl();
+            this.LabelRegion = new DevExpress.XtraEditors.LabelControl();
             this.PanelActions = new DevExpress.Utils.Layout.StackPanel();
-            this.ButtonApply = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonReport = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonApplyCheat = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonReportIssue = new DevExpress.XtraEditors.SimpleButton();
             this.PanelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlCheats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewCheats)).BeginInit();
@@ -158,8 +158,8 @@ namespace Modio.Forms.Dialogs.Details
             this.PanelRegion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelRegion.Controls.Add(this.LabelGame);
-            this.PanelRegion.Controls.Add(this.LabelRegion);
             this.PanelRegion.Controls.Add(this.LabelVersion);
+            this.PanelRegion.Controls.Add(this.LabelRegion);
             this.PanelRegion.Location = new System.Drawing.Point(16, 12);
             this.PanelRegion.Name = "PanelRegion";
             this.PanelRegion.Size = new System.Drawing.Size(591, 22);
@@ -181,41 +181,41 @@ namespace Modio.Forms.Dialogs.Details
             this.LabelGame.TabIndex = 1184;
             this.LabelGame.Text = "Game";
             // 
-            // LabelRegion
-            // 
-            this.LabelRegion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelRegion.Appearance.Options.UseFont = true;
-            this.LabelRegion.AutoEllipsis = true;
-            this.LabelRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelRegion.Location = new System.Drawing.Point(41, 3);
-            this.LabelRegion.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.LabelRegion.Name = "LabelRegion";
-            this.LabelRegion.Size = new System.Drawing.Size(47, 15);
-            this.LabelRegion.TabIndex = 1170;
-            this.LabelRegion.Text = "- Region";
-            // 
             // LabelVersion
             // 
-            this.LabelVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelVersion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelVersion.Appearance.Options.UseFont = true;
-            this.LabelVersion.Appearance.Options.UseTextOptions = true;
-            this.LabelVersion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.LabelVersion.AutoEllipsis = true;
             this.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelVersion.Location = new System.Drawing.Point(94, 3);
+            this.LabelVersion.Location = new System.Drawing.Point(41, 3);
             this.LabelVersion.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LabelVersion.Name = "LabelVersion";
             this.LabelVersion.Size = new System.Drawing.Size(50, 15);
-            this.LabelVersion.TabIndex = 1188;
-            this.LabelVersion.Text = "(Version)";
+            this.LabelVersion.TabIndex = 1170;
+            this.LabelVersion.Text = "- Version";
+            // 
+            // LabelRegion
+            // 
+            this.LabelRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelRegion.Appearance.Options.UseFont = true;
+            this.LabelRegion.Appearance.Options.UseTextOptions = true;
+            this.LabelRegion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.LabelRegion.AutoEllipsis = true;
+            this.LabelRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelRegion.Location = new System.Drawing.Point(97, 3);
+            this.LabelRegion.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.LabelRegion.Name = "LabelRegion";
+            this.LabelRegion.Size = new System.Drawing.Size(53, 15);
+            this.LabelRegion.TabIndex = 1188;
+            this.LabelRegion.Text = "(REGION)";
             // 
             // PanelActions
             // 
-            this.PanelActions.Controls.Add(this.ButtonApply);
-            this.PanelActions.Controls.Add(this.ButtonReport);
+            this.PanelActions.Controls.Add(this.ButtonApplyCheat);
+            this.PanelActions.Controls.Add(this.ButtonReportIssue);
             this.PanelActions.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelActions.Location = new System.Drawing.Point(0, 278);
             this.PanelActions.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -223,48 +223,47 @@ namespace Modio.Forms.Dialogs.Details
             this.PanelActions.Size = new System.Drawing.Size(650, 54);
             this.PanelActions.TabIndex = 1175;
             // 
-            // ButtonApply
+            // ButtonApplyCheat
             // 
-            this.ButtonApply.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ButtonApply.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ButtonApply.Appearance.Options.UseFont = true;
-            this.ButtonApply.Appearance.Options.UseForeColor = true;
-            this.ButtonApply.Enabled = false;
-            this.ButtonApply.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonApply.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonApply.ImageOptions.ImageToTextIndent = 6;
-            this.ButtonApply.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonApply.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonApply.ImageOptions.SvgImage")));
-            this.ButtonApply.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonApply.Location = new System.Drawing.Point(16, 14);
-            this.ButtonApply.Margin = new System.Windows.Forms.Padding(16, 3, 3, 3);
-            this.ButtonApply.Name = "ButtonApply";
-            this.ButtonApply.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonApply.Size = new System.Drawing.Size(116, 26);
-            this.ButtonApply.TabIndex = 1176;
-            this.ButtonApply.Text = "Apply Cheat";
-            this.ButtonApply.Click += new System.EventHandler(this.ButtonApply_Click);
+            this.ButtonApplyCheat.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonApplyCheat.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonApplyCheat.Appearance.Options.UseFont = true;
+            this.ButtonApplyCheat.Appearance.Options.UseForeColor = true;
+            this.ButtonApplyCheat.Enabled = false;
+            this.ButtonApplyCheat.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonApplyCheat.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonApplyCheat.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonApplyCheat.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonApplyCheat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonApplyCheat.ImageOptions.SvgImage")));
+            this.ButtonApplyCheat.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonApplyCheat.Location = new System.Drawing.Point(16, 14);
+            this.ButtonApplyCheat.Margin = new System.Windows.Forms.Padding(16, 3, 3, 3);
+            this.ButtonApplyCheat.Name = "ButtonApplyCheat";
+            this.ButtonApplyCheat.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonApplyCheat.Size = new System.Drawing.Size(116, 26);
+            this.ButtonApplyCheat.TabIndex = 1176;
+            this.ButtonApplyCheat.Text = "Apply Cheat";
+            this.ButtonApplyCheat.Click += new System.EventHandler(this.ButtonApply_Click);
             // 
-            // ButtonReport
+            // ButtonReportIssue
             // 
-            this.ButtonReport.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ButtonReport.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ButtonReport.Appearance.Options.UseFont = true;
-            this.ButtonReport.Appearance.Options.UseForeColor = true;
-            this.ButtonReport.Enabled = false;
-            this.ButtonReport.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonReport.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonReport.ImageOptions.ImageToTextIndent = 6;
-            this.ButtonReport.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonReport.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonReport.ImageOptions.SvgImage")));
-            this.ButtonReport.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonReport.Location = new System.Drawing.Point(138, 14);
-            this.ButtonReport.Name = "ButtonReport";
-            this.ButtonReport.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonReport.Size = new System.Drawing.Size(115, 25);
-            this.ButtonReport.TabIndex = 1177;
-            this.ButtonReport.Text = "Report Issue";
-            this.ButtonReport.Click += new System.EventHandler(this.ButtonReport_Click);
+            this.ButtonReportIssue.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonReportIssue.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonReportIssue.Appearance.Options.UseFont = true;
+            this.ButtonReportIssue.Appearance.Options.UseForeColor = true;
+            this.ButtonReportIssue.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonReportIssue.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonReportIssue.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonReportIssue.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonReportIssue.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonReportIssue.ImageOptions.SvgImage")));
+            this.ButtonReportIssue.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonReportIssue.Location = new System.Drawing.Point(138, 14);
+            this.ButtonReportIssue.Name = "ButtonReportIssue";
+            this.ButtonReportIssue.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonReportIssue.Size = new System.Drawing.Size(115, 25);
+            this.ButtonReportIssue.TabIndex = 1177;
+            this.ButtonReportIssue.Text = "Report Issue";
+            this.ButtonReportIssue.Click += new System.EventHandler(this.ButtonReport_Click);
             // 
             // GameCheatsDialog
             // 
@@ -286,6 +285,7 @@ namespace Modio.Forms.Dialogs.Details
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("GameCheatsDialog.IconOptions.Icon")));
+            this.IconOptions.Image = global::Modio.Properties.Resources.icon;
             this.IconOptions.ShowIcon = false;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MaximizeBox = false;
@@ -314,11 +314,11 @@ namespace Modio.Forms.Dialogs.Details
 
         private XtraScrollableControl PanelDetails;
         private DevExpress.Utils.Layout.StackPanel PanelActions;
-        private SimpleButton ButtonApply;
-        private SimpleButton ButtonReport;
-        private LabelControl LabelRegion;
-        private LabelControl LabelGame;
+        private SimpleButton ButtonApplyCheat;
+        private SimpleButton ButtonReportIssue;
         private LabelControl LabelVersion;
+        private LabelControl LabelGame;
+        private LabelControl LabelRegion;
         private PanelControl PanelHeader;
         private SvgImageBox ImageCloseDetails;
         private SeparatorControl SeparatorHeader;

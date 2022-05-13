@@ -214,61 +214,58 @@ namespace Modio.Forms.Windows
         {
             Settings.WindowState = WindowState == FormWindowState.Minimized ? FormWindowState.Normal : FormWindowState.Maximized;
 
+            SaveApplicationSettings();
+
             if (DiscordClient != null)
             {
                 DiscordClient.ClearPresence();
                 DiscordClient.Deinitialize();
             }
 
-            switch (IsConsoleConnected)
+            if (IsConsoleConnected)
             {
-                case false:
-                    return;
-                default:
-                    try
+                try
+                {
+                    if (!TextBoxFileManagerLocalPath.Text.IsNullOrWhiteSpace())
                     {
-                        if (!TextBoxFileManagerLocalPath.Text.IsNullOrWhiteSpace())
-                        {
-                            switch (ConsoleProfile.Platform)
-                            {
-                                case Platform.PS3:
-                                    Settings.LocalPathPS3 = TextBoxFileManagerLocalPath.Text;
-                                    break;
-                                case Platform.XBOX360:
-                                    Settings.LocalPathXBOX = TextBoxFileManagerLocalPath.Text;
-                                    break;
-                            }
-                        }
-
-                        if (!TextBoxFileManagerConsolePath.Text.IsNullOrWhiteSpace())
-                        {
-                            switch (ConsoleProfile.Platform)
-                            {
-                                case Platform.PS3:
-                                    Settings.ConsolePathPS3 = TextBoxFileManagerConsolePath.Text;
-                                    break;
-                                case Platform.XBOX360:
-                                    Settings.ConsolePathXBOX = TextBoxFileManagerConsolePath.Text;
-                                    break;
-                            }
-                        }
-
                         switch (ConsoleProfile.Platform)
                         {
                             case Platform.PS3:
-                                FtpClient.Dispose();
+                                Settings.LocalPathPS3 = TextBoxFileManagerLocalPath.Text;
                                 break;
                             case Platform.XBOX360:
-                                XboxConsole.CloseConnection(0);
+                                Settings.LocalPathXBOX = TextBoxFileManagerLocalPath.Text;
                                 break;
                         }
                     }
-                    catch
+
+                    if (!TextBoxFileManagerConsolePath.Text.IsNullOrWhiteSpace())
                     {
-                        // false positive; the console might be powered off
+                        switch (ConsoleProfile.Platform)
+                        {
+                            case Platform.PS3:
+                                Settings.ConsolePathPS3 = TextBoxFileManagerConsolePath.Text;
+                                break;
+                            case Platform.XBOX360:
+                                Settings.ConsolePathXBOX = TextBoxFileManagerConsolePath.Text;
+                                break;
+                        }
                     }
 
-                    break;
+                    switch (ConsoleProfile.Platform)
+                    {
+                        case Platform.PS3:
+                            FtpClient.Dispose();
+                            break;
+                        case Platform.XBOX360:
+                            XboxConsole.CloseConnection(0);
+                            break;
+                    }
+                }
+                catch
+                {
+                    // false positive; the console might be powered off
+                }
             }
 
             SaveApplicationSettings();
@@ -797,9 +794,9 @@ namespace Modio.Forms.Windows
 
         // RIGHT MENU
 
-        private void MenuItemButtonSubmitMods_ItemClick(object sender, ItemClickEventArgs e)
+        private void MenuItemButtonRequestMods_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogExtensions.ShowSubmitModsDialog(this);
+            DialogExtensions.ShowRequestModsDialog(this);
         }
 
 #endregion
@@ -818,11 +815,11 @@ namespace Modio.Forms.Windows
                 FtpClient = new FtpClient
                 {
                     Host = ConsoleProfile.Address,
-                    Port = ConsoleProfile.Platform == Platform.PS3 ? 21 : 21,
+                    Port = 21,
                     Credentials = ConsoleProfile.UseDefaultCredentials
                     ? new NetworkCredential("anonymous", "anonymous")
                     : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password),
-                    SocketKeepAlive = true
+                    SocketKeepAlive = true,
                     //ReadTimeout = -1,
                     //SslProtocols = System.Security.Authentication.SslProtocols.Tls12
                 };
@@ -1205,7 +1202,7 @@ namespace Modio.Forms.Windows
 
         private void TileItemHowToGuides_ItemClick(object sender, TileItemEventArgs e)
         {
-            XtraMessageBox.Show(this, "Our How-To-Guides has been moved to our Discord server.", "Guides", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            XtraMessageBox.Show(this, "Our How-To-Guides has been moved to our Discord server.", "How-To Guides", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void TileItemAddNewConsole_ItemClick(object sender, TileItemEventArgs e)
@@ -3863,7 +3860,7 @@ namespace Modio.Forms.Windows
                 MenuButtonTools.Caption = ResourceLanguage.GetString("TITLE_TOOLS");
                 MenuButtonOptions.Caption = ResourceLanguage.GetString("TITLE_OPTIONS");
                 MenuButtonHelp.Caption = ResourceLanguage.GetString("TITLE_HELP");
-                MenuButtonSubmitMods.Caption = ResourceLanguage.GetString("TITLE_SUBMIT_MODS");
+                MenuButtonRequestMods.Caption = ResourceLanguage.GetString("TITLE_SUBMIT_MODS");
                 MenuItemConnectToPS3.Caption = ResourceLanguage.GetString("CONNECT_TO_CONSOLE");
                 MenuItemConnectToXBOX.Caption = ResourceLanguage.GetString("CONNECT_TO_CONSOLE");
 
@@ -4128,18 +4125,21 @@ namespace Modio.Forms.Windows
             ToggleSettingsEnableHardwareAcceleration.IsOn = Settings.EnableHardwareAcceleration;
 
             // Automation
+            ToggleSettingsShowGamesFromExternalDevices.IsOn = Settings.ShowGamesFromExternalDevices;
+            ToggleSettingsAutoDetectGameRegions.IsOn = Settings.AutoDetectGameRegions;
+            ToggleSettingsAutoDetectGameTitles.IsOn = Settings.AutoDetectGameTitles;
+            ToggleSettingsAutoLoadDirectoryListings.IsOn = Settings.AutoLoadDirectoryListings;
+            ToggleSettingsRememberLocalPath.IsOn = Settings.RememberLocalPath;
+            ToggleSettingsRememberConsolePath.IsOn = Settings.RememberConsolePath;
+
+            /* Transfer */
             ToggleSettingsInstallModsToUsbDevice.IsOn = Settings.InstallGameModsPluginsToUsbDevice;
             ToggleSettingsInstallHomebrewToUsbDevice.IsOn = Settings.InstallHomebrewToUsbDevice;
             ToggleSettingsInstallResourcesToUsbDevice.IsOn = Settings.InstallResourcesToUsbDevice;
             ToggleSettingsInstallGameSavesToUsbDevice.IsOn = Settings.InstallGameSavesToUsbDevice;
             ToggleSettingsCleanUpLocalFilesAfterInstalling.IsOn = Settings.CleanUpLocalFilesAfterInstalling;
-            ToggleSettingsShowGamesFromExternalDevices.IsOn = Settings.ShowGamesFromExternalDevices;
-            ToggleSettingsAutoDetectGameRegions.IsOn = Settings.AutoDetectGameRegions;
-            ToggleSettingsAutoDetectGameTitles.IsOn = Settings.AutoDetectGameTitles;
             ToggleSettingsRememberGameRegions.IsOn = Settings.RememberGameRegions;
-            ToggleSettingsAutoLoadDirectoryListings.IsOn = Settings.AutoLoadDirectoryListings;
-            ToggleSettingsRememberLocalPath.IsOn = Settings.RememberLocalPath;
-            ToggleSettingsRememberConsolePath.IsOn = Settings.RememberConsolePath;
+            ToggleSettingsAlwaysBackupGameFiles.IsOn = Settings.AlwaysBackupGameFiles;
 
 
             /* Tools */
@@ -5844,8 +5844,8 @@ namespace Modio.Forms.Windows
                 new(ResourceLanguage.GetString("LABEL_CATEGORY"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_NAME"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_REGION"), typeof(string)),
-                new("Modified Date", typeof(string)),
-                new("File Size", typeof(string)),
+                new(ResourceLanguage.GetString("LABEL_MODIFIED_DATE"), typeof(string)),
+                new(ResourceLanguage.GetString("LABEL_FILE_SIZE"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_STATUS"), typeof(string))
             });
 

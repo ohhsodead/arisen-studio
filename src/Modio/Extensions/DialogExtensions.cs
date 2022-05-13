@@ -433,7 +433,7 @@ namespace Modio.Extensions
 
         #endregion
 
-        public static void ShowSubmitModsDialog(Form owner)
+        public static void ShowRequestModsDialog(Form owner)
         {
             using RequestModsDialog requestModsDialog = new();
             requestModsDialog.ShowDialog(owner);
@@ -443,7 +443,7 @@ namespace Modio.Extensions
 
         public static void ShowGameBackupFileManager(Form owner)
         {
-            using BackupFileManager backupFiles = new();
+            using BackupFilesManager backupFiles = new();
             backupFiles.ShowDialog(owner);
         }
 
@@ -467,7 +467,7 @@ namespace Modio.Extensions
 
         public static void ShowPackageManager(Form owner)
         {
-            using PackageFileManager packageManager = new();
+            using PackageFilesManager packageManager = new();
             packageManager.ShowDialog(owner);
         }
 

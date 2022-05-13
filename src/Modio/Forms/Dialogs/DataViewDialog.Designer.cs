@@ -94,6 +94,7 @@ namespace Modio.Forms.Dialogs
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DataViewDialog.IconOptions.Icon")));
+            this.IconOptions.Image = global::Modio.Properties.Resources.icon;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(500, 744);
             this.MinimizeBox = false;

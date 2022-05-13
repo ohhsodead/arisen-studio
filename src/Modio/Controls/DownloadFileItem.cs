@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Modio.Controls
 {
-    public partial class DownloadFilesItem : XtraUserControl
+    public partial class DownloadFileItem : XtraUserControl
     {
 
         public SettingsData Settings = MainWindow.Settings;
@@ -33,7 +33,7 @@ namespace Modio.Controls
 
         public bool ShowSeparator { get; set; } = false;
 
-        public DownloadFilesItem()
+        public DownloadFileItem()
         {
             InitializeComponent();
         }
@@ -73,16 +73,19 @@ namespace Modio.Controls
 
         bool isExpanded = false;
 
-        private void ImageShowFiles_Click(object sender, EventArgs e)
+        private void ImageExpand_Click(object sender, EventArgs e)
         {
             if (isExpanded)
             {
+                ImageExpand.SvgImage = SvgImages[0];
                 LabelInstallationFiles.Visible = false;
                 ListBoxInstallFiles.Visible = false;
                 isExpanded = false;
             }
             else
             {
+                //ImageShowFiles.SvgImage = Properties.Resources.arrow_up;
+                ImageExpand.SvgImage = SvgImages[1];
                 LabelInstallationFiles.Visible = true;
                 ListBoxInstallFiles.Visible = true;
                 isExpanded = true;

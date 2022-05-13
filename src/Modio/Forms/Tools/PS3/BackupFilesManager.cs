@@ -13,18 +13,18 @@ using System.Windows.Forms;
 
 namespace Modio.Forms.Tools.PS3
 {
-    public partial class BackupFileManager : XtraForm
+    public partial class BackupFilesManager : XtraForm
     {
-        public BackupFileManager()
+        public BackupFilesManager()
         {
             InitializeComponent();
         }
 
         public ResourceManager Language = MainWindow.ResourceLanguage;
 
-        private void BackupManager_Load(object sender, EventArgs e)
+        private void BackupFilesManager_Load(object sender, EventArgs e)
         {
-            Text = Language.GetString("BACKUP_FILE_MANAGER");
+            Text = Language.GetString("BACKUP_FILES_MANAGER");
             GroupBackupFiles.Text = Language.GetString("BACKUP_FILES");
 
             ButtonEdit.SetControlText(Language.GetString("LABEL_EDIT"));

@@ -21,10 +21,10 @@ namespace Modio.Forms.Dialogs.Details
             InitializeComponent();
         }
 
-        public SettingsData Settings = MainWindow.Settings;
-        public ConsoleProfile ConsoleProfile = MainWindow.ConsoleProfile;
-        public ResourceManager Language = MainWindow.ResourceLanguage;
-        public CategoriesData Categories = MainWindow.Database.CategoriesData;
+        public static SettingsData Settings = MainWindow.Settings;
+        public static ConsoleProfile ConsoleProfile = MainWindow.ConsoleProfile;
+        public static ResourceManager Language = MainWindow.ResourceLanguage;
+        public static CategoriesData Categories = MainWindow.Database.CategoriesData;
 
         public PackageItemData PackageItem;
 

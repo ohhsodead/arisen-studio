@@ -8,7 +8,7 @@ using DevExpress.XtraWaitForm;
 
 namespace Modio.Forms.Tools.PS3
 {
-    partial class BackupFileManager
+    partial class BackupFilesManager
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@ namespace Modio.Forms.Tools.PS3
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupFileManager));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupFilesManager));
             this.GridBackupFiles = new DevExpress.XtraGrid.GridControl();
             this.GridViewBackupFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColumnGameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,6 +81,9 @@ namespace Modio.Forms.Tools.PS3
             // GridBackupFiles
             // 
             this.GridBackupFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridBackupFiles.EmbeddedNavigator.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.GridBackupFiles.EmbeddedNavigator.Appearance.Options.UseFont = true;
+            this.GridBackupFiles.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.GridBackupFiles.Location = new System.Drawing.Point(0, 25);
             this.GridBackupFiles.MainView = this.GridViewBackupFiles;
             this.GridBackupFiles.Name = "GridBackupFiles";
@@ -471,6 +474,7 @@ namespace Modio.Forms.Tools.PS3
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("BackupFileManager.IconOptions.Icon")));
+            this.IconOptions.Image = global::Modio.Properties.Resources.icon;
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -478,7 +482,7 @@ namespace Modio.Forms.Tools.PS3
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Backup File Manager";
-            this.Load += new System.EventHandler(this.BackupManager_Load);
+            this.Load += new System.EventHandler(this.BackupFilesManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridBackupFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewBackupFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupBackupFiles)).EndInit();

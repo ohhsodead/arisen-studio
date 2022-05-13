@@ -114,13 +114,14 @@ namespace Modio.Forms.Tools.PS3
             // 
             // GridGameUpdates
             // 
-            this.GridGameUpdates.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridGameUpdates.Location = new System.Drawing.Point(2, 61);
+            this.GridGameUpdates.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GridGameUpdates.EmbeddedNavigator.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.GridGameUpdates.EmbeddedNavigator.Appearance.Options.UseFont = true;
+            this.GridGameUpdates.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.GridGameUpdates.Location = new System.Drawing.Point(0, 62);
             this.GridGameUpdates.MainView = this.GridViewGameUpdates;
             this.GridGameUpdates.Name = "GridGameUpdates";
-            this.GridGameUpdates.Size = new System.Drawing.Size(618, 266);
+            this.GridGameUpdates.Size = new System.Drawing.Size(622, 266);
             this.GridGameUpdates.TabIndex = 1183;
             this.GridGameUpdates.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewGameUpdates});
@@ -165,9 +166,9 @@ namespace Modio.Forms.Tools.PS3
             this.stackPanel2.Controls.Add(this.ButtonCopyURLToClipboard);
             this.stackPanel2.Controls.Add(this.ButtonCopySHA1ToClipboard);
             this.stackPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.stackPanel2.Location = new System.Drawing.Point(2, 327);
+            this.stackPanel2.Location = new System.Drawing.Point(0, 328);
             this.stackPanel2.Name = "stackPanel2";
-            this.stackPanel2.Size = new System.Drawing.Size(618, 39);
+            this.stackPanel2.Size = new System.Drawing.Size(622, 40);
             this.stackPanel2.TabIndex = 1181;
             // 
             // ButtonInstallToConsole
@@ -295,7 +296,7 @@ namespace Modio.Forms.Tools.PS3
             // LabelStatus
             // 
             this.LabelStatus.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.LabelStatus.Caption = "Status";
+            this.LabelStatus.Caption = "Idle";
             this.LabelStatus.Id = 3;
             this.LabelStatus.Name = "LabelStatus";
             // 
@@ -311,9 +312,9 @@ namespace Modio.Forms.Tools.PS3
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 393);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 394);
             this.barDockControlBottom.Manager = this.BarManagerStatus;
-            this.barDockControlBottom.Size = new System.Drawing.Size(644, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(644, 24);
             // 
             // barDockControlLeft
             // 
@@ -321,7 +322,7 @@ namespace Modio.Forms.Tools.PS3
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.BarManagerStatus;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 393);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 394);
             // 
             // barDockControlRight
             // 
@@ -329,7 +330,7 @@ namespace Modio.Forms.Tools.PS3
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(644, 0);
             this.barDockControlRight.Manager = this.BarManagerStatus;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 393);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 394);
             // 
             // barHeaderItem1
             // 
@@ -359,6 +360,7 @@ namespace Modio.Forms.Tools.PS3
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("GameUpdatesFinder.IconOptions.Icon")));
+            this.IconOptions.Image = global::Modio.Properties.Resources.icon;
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

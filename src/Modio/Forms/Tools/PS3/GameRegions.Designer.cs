@@ -55,6 +55,7 @@ namespace Modio.Forms.Tools.PS3
             this.LabelSearch = new DevExpress.XtraEditors.LabelControl();
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
             this.ButtonAddGameRegion = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonDetectRegions = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.GroupSavedGameRegions)).BeginInit();
             this.GroupSavedGameRegions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridGameRegions)).BeginInit();
@@ -125,11 +126,11 @@ namespace Modio.Forms.Tools.PS3
             // GridGameRegions
             // 
             this.GridGameRegions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridGameRegions.Location = new System.Drawing.Point(2, 23);
+            this.GridGameRegions.Location = new System.Drawing.Point(0, 25);
             this.GridGameRegions.MainView = this.GridViewGameRegions;
             this.GridGameRegions.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.GridGameRegions.Name = "GridGameRegions";
-            this.GridGameRegions.Size = new System.Drawing.Size(410, 172);
+            this.GridGameRegions.Size = new System.Drawing.Size(414, 172);
             this.GridGameRegions.TabIndex = 0;
             this.GridGameRegions.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewGameRegions});
@@ -155,9 +156,9 @@ namespace Modio.Forms.Tools.PS3
             this.PanelButtons.Controls.Add(this.ButtonDelete);
             this.PanelButtons.Controls.Add(this.ButtonDeleteAll);
             this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelButtons.Location = new System.Drawing.Point(2, 195);
+            this.PanelButtons.Location = new System.Drawing.Point(0, 197);
             this.PanelButtons.Name = "PanelButtons";
-            this.PanelButtons.Size = new System.Drawing.Size(410, 39);
+            this.PanelButtons.Size = new System.Drawing.Size(414, 39);
             this.PanelButtons.TabIndex = 1173;
             // 
             // ButtonDelete
@@ -257,9 +258,9 @@ namespace Modio.Forms.Tools.PS3
             // 
             this.stackPanel1.Controls.Add(this.ButtonAddGameRegion);
             this.stackPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.stackPanel1.Location = new System.Drawing.Point(2, 73);
+            this.stackPanel1.Location = new System.Drawing.Point(0, 75);
             this.stackPanel1.Name = "stackPanel1";
-            this.stackPanel1.Size = new System.Drawing.Size(410, 39);
+            this.stackPanel1.Size = new System.Drawing.Size(414, 39);
             this.stackPanel1.TabIndex = 1173;
             // 
             // ButtonAddGameRegion
@@ -273,6 +274,19 @@ namespace Modio.Forms.Tools.PS3
             this.ButtonAddGameRegion.Text = "Add Game Region";
             this.ButtonAddGameRegion.Click += new System.EventHandler(this.ButtonAddGameRegion_Click);
             // 
+            // ButtonDetectRegions
+            // 
+            this.ButtonDetectRegions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonDetectRegions.Enabled = false;
+            this.ButtonDetectRegions.Location = new System.Drawing.Point(14, 388);
+            this.ButtonDetectRegions.Margin = new System.Windows.Forms.Padding(5);
+            this.ButtonDetectRegions.Name = "ButtonDetectRegions";
+            this.ButtonDetectRegions.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDetectRegions.Size = new System.Drawing.Size(119, 24);
+            this.ButtonDetectRegions.TabIndex = 1182;
+            this.ButtonDetectRegions.Text = "Detect Regions";
+            this.ButtonDetectRegions.Click += new System.EventHandler(this.ButtonDetectRegions_Click);
+            // 
             // GameRegions
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
@@ -282,6 +296,7 @@ namespace Modio.Forms.Tools.PS3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(438, 426);
+            this.Controls.Add(this.ButtonDetectRegions);
             this.Controls.Add(this.GroupAddGameRegion);
             this.Controls.Add(this.GroupSavedGameRegions);
             this.Controls.Add(this.ButtonSaveAll);
@@ -289,6 +304,7 @@ namespace Modio.Forms.Tools.PS3
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("GameRegions.IconOptions.Icon")));
+            this.IconOptions.Image = global::Modio.Properties.Resources.icon;
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -334,5 +350,6 @@ namespace Modio.Forms.Tools.PS3
         private LabelControl LabelGameRegion;
         private ComboBoxEdit ComboBoxGameRegion;
         private LabelControl LabelSearch;
+        private SimpleButton ButtonDetectRegions;
     }
 }
