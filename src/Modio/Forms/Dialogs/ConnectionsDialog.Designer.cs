@@ -48,19 +48,19 @@ namespace Modio.Forms.Dialogs
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
+            this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
             this.toolbarFormManager2 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
             ((System.ComponentModel.ISupportInitialize)(this.GroupConsoleProfiles)).BeginInit();
             this.GroupConsoleProfiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             this.fluentDesignFormContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).BeginInit();
             this.PanelButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonEditProfile
@@ -73,7 +73,7 @@ namespace Modio.Forms.Dialogs
             this.ButtonEditProfile.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.ButtonEditProfile.ImageOptions.ImageToTextIndent = 5;
             this.ButtonEditProfile.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonEditProfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonEditConsole.ImageOptions.SvgImage")));
+            this.ButtonEditProfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonEditProfile.ImageOptions.SvgImage")));
             this.ButtonEditProfile.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             this.ButtonEditProfile.Location = new System.Drawing.Point(42, 0);
             this.ButtonEditProfile.Name = "ButtonEditProfile";
@@ -92,7 +92,7 @@ namespace Modio.Forms.Dialogs
             this.ButtonDeleteProfile.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.ButtonDeleteProfile.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.ButtonDeleteProfile.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonDeleteProfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonDeleteConsole.ImageOptions.SvgImage")));
+            this.ButtonDeleteProfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonDeleteProfile.ImageOptions.SvgImage")));
             this.ButtonDeleteProfile.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
             this.ButtonDeleteProfile.Location = new System.Drawing.Point(156, 0);
             this.ButtonDeleteProfile.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
@@ -145,10 +145,10 @@ namespace Modio.Forms.Dialogs
             // 
             this.PanelConsoleProfiles.AutoScroll = true;
             this.PanelConsoleProfiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelConsoleProfiles.Location = new System.Drawing.Point(2, 23);
+            this.PanelConsoleProfiles.Location = new System.Drawing.Point(0, 25);
             this.PanelConsoleProfiles.Name = "PanelConsoleProfiles";
             this.PanelConsoleProfiles.Padding = new System.Windows.Forms.Padding(4);
-            this.PanelConsoleProfiles.Size = new System.Drawing.Size(476, 343);
+            this.PanelConsoleProfiles.Size = new System.Drawing.Size(480, 343);
             this.PanelConsoleProfiles.TabIndex = 0;
             this.PanelConsoleProfiles.Scroll += new System.Windows.Forms.ScrollEventHandler(this.PanelConsoleProfiles_Scroll);
             this.PanelConsoleProfiles.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.PanelConsoleProfiles_ControlAddedOrRemoved);
@@ -170,7 +170,7 @@ namespace Modio.Forms.Dialogs
             this.ButtonAddNewProfile.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.ButtonAddNewProfile.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.ButtonAddNewProfile.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonAddNewProfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonAddNewConsole.ImageOptions.SvgImage")));
+            this.ButtonAddNewProfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonAddNewProfile.ImageOptions.SvgImage")));
             this.ButtonAddNewProfile.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             this.ButtonAddNewProfile.Location = new System.Drawing.Point(12, 386);
             this.ButtonAddNewProfile.Name = "ButtonAddNewProfile";
@@ -230,6 +230,18 @@ namespace Modio.Forms.Dialogs
             this.fluentDesignFormContainer1.Size = new System.Drawing.Size(504, 424);
             this.fluentDesignFormContainer1.TabIndex = 14;
             // 
+            // PanelButtons
+            // 
+            this.PanelButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelButtons.Controls.Add(this.ButtonDeleteProfile);
+            this.PanelButtons.Controls.Add(this.ButtonEditProfile);
+            this.PanelButtons.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.RightToLeft;
+            this.PanelButtons.Location = new System.Drawing.Point(216, 386);
+            this.PanelButtons.Name = "PanelButtons";
+            this.PanelButtons.Size = new System.Drawing.Size(276, 26);
+            this.PanelButtons.TabIndex = 0;
+            // 
             // toolbarFormManager2
             // 
             this.toolbarFormManager2.DockControls.Add(this.barDockControl1);
@@ -270,18 +282,6 @@ namespace Modio.Forms.Dialogs
             this.barDockControl4.Manager = this.toolbarFormManager2;
             this.barDockControl4.Size = new System.Drawing.Size(0, 424);
             // 
-            // PanelButtons
-            // 
-            this.PanelButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelButtons.Controls.Add(this.ButtonDeleteProfile);
-            this.PanelButtons.Controls.Add(this.ButtonEditProfile);
-            this.PanelButtons.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.RightToLeft;
-            this.PanelButtons.Location = new System.Drawing.Point(216, 386);
-            this.PanelButtons.Name = "PanelButtons";
-            this.PanelButtons.Size = new System.Drawing.Size(276, 26);
-            this.PanelButtons.TabIndex = 0;
-            // 
             // ConnectionsDialog
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
@@ -307,6 +307,7 @@ namespace Modio.Forms.Dialogs
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("ConnectionsDialog.IconOptions.Icon")));
+            this.IconOptions.Image = global::Modio.Properties.Resources.icon;
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -321,9 +322,9 @@ namespace Modio.Forms.Dialogs
             this.GroupConsoleProfiles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
             this.fluentDesignFormContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).EndInit();
             this.PanelButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

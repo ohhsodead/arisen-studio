@@ -27,17 +27,17 @@ namespace Modio.Forms.Dialogs.Details
             InitializeComponent();
         }
 
-        public SettingsData Settings = MainWindow.Settings;
-        public ConsoleProfile ConsoleProfile = MainWindow.ConsoleProfile;
-        public ResourceManager Language = MainWindow.ResourceLanguage;
-        public CategoriesData Categories = MainWindow.Database.CategoriesData;
+        public static SettingsData Settings = MainWindow.Settings;
+        public static ConsoleProfile ConsoleProfile = MainWindow.ConsoleProfile;
+        public static ResourceManager Language = MainWindow.ResourceLanguage;
+        public static CategoriesData Categories = MainWindow.Database.CategoriesData;
 
         public CategoryType CategoryType;
         public ModItemData ModItem;
 
-        public FavoriteItem FavoriteItem;
-
         public InstalledModInfo InstalledModInfo;
+
+        private bool IsFavorite;
 
         private void HomebrewDialog_Load(object sender, EventArgs e)
         {
@@ -48,7 +48,7 @@ namespace Modio.Forms.Dialogs.Details
             // Display details in UI
             LabelCategory.Text = Categories.GetCategoryById(ModItem.CategoryId).Title;
             LabelName.Text = ModItem.Name.Replace("&", "&&");
-            LabelLastUpdated.Text = Settings.UseRelativeTimes ? ModItem.LastUpdated.Humanize() : ModItem.LastUpdated.ToString("MM/dd/yyyy", CultureInfo.CurrentCulture);
+            LabelLastUpdated.Text = MainWindow.Settings.UseRelativeTimes ? ModItem.LastUpdated.Humanize() : ModItem.LastUpdated.ToString("MM/dd/yyyy", CultureInfo.CurrentCulture);
             LabelSystemType.Text = ModItem.FirmwareType;
             LabelVersion.Text = string.Join(" & ", ModItem.Versions).Replace("&", "&&");
             LabelCreatedBy.Text = ModItem.CreatedBy.Replace("&", "&&");
@@ -65,7 +65,7 @@ namespace Modio.Forms.Dialogs.Details
             {
                 count++;
 
-                DownloadFilesItem downloadItem = new()
+                DownloadFileItem downloadItem = new()
                 {
                     CategoryType = CategoryType.Homebrew,
                     ModItem = ModItem,
@@ -84,9 +84,9 @@ namespace Modio.Forms.Dialogs.Details
             TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
             TabDownloads.Text = $"{Language.GetString("LABEL_DOWNLOADS")} ({ModItem.DownloadFiles.Count})";
 
-            FavoriteItem = Settings.CreateFavoriteItem(Categories, ModItem);
+            IsFavorite = MainWindow.Settings.FavoriteMods.Exists(x => x.CategoryType == CategoryType && x.CategoryId == ModItem.CategoryId && x.ModId == ModItem.Id && x.Platform == ModItem.GetPlatform());
 
-            if (Settings.FavoriteMods.Contains(FavoriteItem))
+            if (IsFavorite)
             {
                 ButtonFavorite.SetControlText(Language.GetString("LABEL_REMOVE_FROM_FAVORITES"), 26);
             }
@@ -132,15 +132,17 @@ namespace Modio.Forms.Dialogs.Details
 
         private void ButtonFavorite_Click(object sender, EventArgs e)
         {
-            if (Settings.FavoriteMods.Contains(FavoriteItem))
+            if (IsFavorite)
             {
-                Settings.FavoriteMods.RemoveAll(x => x == FavoriteItem);
+                Settings.FavoriteMods.RemoveAll(x => x.CategoryType == CategoryType && x.CategoryId == ModItem.CategoryId && x.ModId == ModItem.Id && x.Platform == ModItem.GetPlatform());
                 ButtonFavorite.SetControlText(Language.GetString("LABEL_ADD_TO_FAVORITES"), 26);
+                IsFavorite = false;
             }
             else
             {
-                Settings.FavoriteMods.Add(FavoriteItem);
+                Settings.FavoriteMods.Add(new() { CategoryType = CategoryType, CategoryId = ModItem.CategoryId, ModId = ModItem.Id, Platform = ModItem.GetPlatform() });
                 ButtonFavorite.SetControlText(Language.GetString("LABEL_REMOVE_FROM_FAVORITES"), 26);
+                IsFavorite = true;
             }
         }
 

@@ -1,7 +1,7 @@
 ﻿
 namespace Modio.Controls
 {
-    partial class DownloadFilesItem
+    partial class DownloadFileItem
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,9 +29,9 @@ namespace Modio.Controls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LabelName = new DevExpress.XtraEditors.LabelControl();
             this.LabelHeaderRegion = new DevExpress.XtraEditors.LabelControl();
-            this.ImageShowFiles = new DevExpress.XtraEditors.SvgImageBox();
             this.LabelRegion = new DevExpress.XtraEditors.LabelControl();
             this.LabelLastUpdated = new DevExpress.XtraEditors.LabelControl();
             this.LabelHeaderLastUpdated = new DevExpress.XtraEditors.LabelControl();
@@ -43,11 +43,14 @@ namespace Modio.Controls
             this.ImageInstall = new DevExpress.XtraEditors.SvgImageBox();
             this.ListBoxInstallFiles = new DevExpress.XtraEditors.ListBoxControl();
             this.LabelInstallationFiles = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.ImageShowFiles)).BeginInit();
+            this.SvgImages = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.ImageExpand = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.Separator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageInstall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListBoxInstallFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SvgImages)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageExpand.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelName
@@ -72,29 +75,11 @@ namespace Modio.Controls
             this.LabelHeaderRegion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.LabelHeaderRegion.AutoEllipsis = true;
             this.LabelHeaderRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderRegion.Location = new System.Drawing.Point(484, 12);
+            this.LabelHeaderRegion.Location = new System.Drawing.Point(551, 12);
             this.LabelHeaderRegion.Name = "LabelHeaderRegion";
             this.LabelHeaderRegion.Size = new System.Drawing.Size(39, 15);
             this.LabelHeaderRegion.TabIndex = 1188;
             this.LabelHeaderRegion.Text = "Region";
-            // 
-            // ImageShowFiles
-            // 
-            this.ImageShowFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImageShowFiles.ContextButtonOptions.AllowGlyphSkinning = true;
-            this.ImageShowFiles.ContextButtonOptions.ItemCursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageShowFiles.ContextButtonOptions.PanelCursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageShowFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageShowFiles.ImageAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            this.ImageShowFiles.Location = new System.Drawing.Point(714, 18);
-            this.ImageShowFiles.Name = "ImageShowFiles";
-            this.ImageShowFiles.ShowToolTips = DevExpress.Utils.DefaultBoolean.False;
-            this.ImageShowFiles.Size = new System.Drawing.Size(24, 24);
-            this.ImageShowFiles.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
-            this.ImageShowFiles.SvgImage = global::Modio.Properties.Resources.arrow_down;
-            this.ImageShowFiles.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            this.ImageShowFiles.TabIndex = 1192;
-            this.ImageShowFiles.Click += new System.EventHandler(this.ImageShowFiles_Click);
             // 
             // LabelRegion
             // 
@@ -105,7 +90,7 @@ namespace Modio.Controls
             this.LabelRegion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.LabelRegion.AutoEllipsis = true;
             this.LabelRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelRegion.Location = new System.Drawing.Point(484, 33);
+            this.LabelRegion.Location = new System.Drawing.Point(551, 33);
             this.LabelRegion.Name = "LabelRegion";
             this.LabelRegion.Size = new System.Drawing.Size(62, 15);
             this.LabelRegion.TabIndex = 1193;
@@ -120,7 +105,7 @@ namespace Modio.Controls
             this.LabelLastUpdated.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.LabelLastUpdated.AutoEllipsis = true;
             this.LabelLastUpdated.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelLastUpdated.Location = new System.Drawing.Point(365, 33);
+            this.LabelLastUpdated.Location = new System.Drawing.Point(432, 33);
             this.LabelLastUpdated.Name = "LabelLastUpdated";
             this.LabelLastUpdated.Size = new System.Drawing.Size(70, 15);
             this.LabelLastUpdated.TabIndex = 1195;
@@ -135,7 +120,7 @@ namespace Modio.Controls
             this.LabelHeaderLastUpdated.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.LabelHeaderLastUpdated.AutoEllipsis = true;
             this.LabelHeaderLastUpdated.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderLastUpdated.Location = new System.Drawing.Point(365, 12);
+            this.LabelHeaderLastUpdated.Location = new System.Drawing.Point(432, 12);
             this.LabelHeaderLastUpdated.Name = "LabelHeaderLastUpdated";
             this.LabelHeaderLastUpdated.Size = new System.Drawing.Size(73, 15);
             this.LabelHeaderLastUpdated.TabIndex = 1194;
@@ -150,7 +135,7 @@ namespace Modio.Controls
             this.LabelVersion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.LabelVersion.AutoEllipsis = true;
             this.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelVersion.Location = new System.Drawing.Point(584, 33);
+            this.LabelVersion.Location = new System.Drawing.Point(651, 33);
             this.LabelVersion.Name = "LabelVersion";
             this.LabelVersion.Size = new System.Drawing.Size(27, 15);
             this.LabelVersion.TabIndex = 1197;
@@ -165,7 +150,7 @@ namespace Modio.Controls
             this.LabelHeaderVersion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.LabelHeaderVersion.AutoEllipsis = true;
             this.LabelHeaderVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderVersion.Location = new System.Drawing.Point(584, 12);
+            this.LabelHeaderVersion.Location = new System.Drawing.Point(651, 12);
             this.LabelHeaderVersion.Name = "LabelHeaderVersion";
             this.LabelHeaderVersion.Size = new System.Drawing.Size(42, 15);
             this.LabelHeaderVersion.TabIndex = 1196;
@@ -194,7 +179,7 @@ namespace Modio.Controls
             this.Separator.Location = new System.Drawing.Point(0, 104);
             this.Separator.Name = "Separator";
             this.Separator.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.Separator.Size = new System.Drawing.Size(750, 10);
+            this.Separator.Size = new System.Drawing.Size(817, 10);
             this.Separator.TabIndex = 1199;
             // 
             // ImageDownload
@@ -204,7 +189,7 @@ namespace Modio.Controls
             this.ImageDownload.ContextButtonOptions.ItemCursor = System.Windows.Forms.Cursors.Hand;
             this.ImageDownload.ContextButtonOptions.PanelCursor = System.Windows.Forms.Cursors.Hand;
             this.ImageDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageDownload.Location = new System.Drawing.Point(684, 18);
+            this.ImageDownload.Location = new System.Drawing.Point(751, 18);
             this.ImageDownload.Name = "ImageDownload";
             this.ImageDownload.ShowToolTips = DevExpress.Utils.DefaultBoolean.False;
             this.ImageDownload.Size = new System.Drawing.Size(24, 24);
@@ -221,7 +206,7 @@ namespace Modio.Controls
             this.ImageInstall.ContextButtonOptions.ItemCursor = System.Windows.Forms.Cursors.Hand;
             this.ImageInstall.ContextButtonOptions.PanelCursor = System.Windows.Forms.Cursors.Hand;
             this.ImageInstall.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageInstall.Location = new System.Drawing.Point(654, 18);
+            this.ImageInstall.Location = new System.Drawing.Point(721, 18);
             this.ImageInstall.Name = "ImageInstall";
             this.ImageInstall.ShowToolTips = DevExpress.Utils.DefaultBoolean.False;
             this.ImageInstall.Size = new System.Drawing.Size(24, 24);
@@ -260,7 +245,31 @@ namespace Modio.Controls
             this.LabelInstallationFiles.Text = "Installation Files";
             this.LabelInstallationFiles.Visible = false;
             // 
-            // DownloadFilesItem
+            // SvgImages
+            // 
+            this.SvgImages.ImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            this.SvgImages.Add("arrow_down", "arrow_down", typeof(Modio.Properties.Resources));
+            this.SvgImages.Add("arrow_up", "arrow_up", typeof(Modio.Properties.Resources));
+            // 
+            // ImageExpand
+            // 
+            this.ImageExpand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ImageExpand.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ImageExpand.EditValue = global::Modio.Properties.Resources.arrow_down;
+            this.ImageExpand.Location = new System.Drawing.Point(781, 18);
+            this.ImageExpand.Name = "ImageExpand";
+            this.ImageExpand.Properties.AllowFocused = false;
+            this.ImageExpand.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.ImageExpand.Properties.Appearance.Options.UseBackColor = true;
+            this.ImageExpand.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.ImageExpand.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.ImageExpand.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.ImageExpand.Properties.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            this.ImageExpand.Size = new System.Drawing.Size(24, 24);
+            this.ImageExpand.TabIndex = 1204;
+            this.ImageExpand.Click += new System.EventHandler(this.ImageExpand_Click);
+            // 
+            // DownloadFileItem
             // 
             this.Appearance.BackColor = System.Drawing.Color.Black;
             this.Appearance.Options.UseBackColor = true;
@@ -268,6 +277,7 @@ namespace Modio.Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Controls.Add(this.ImageExpand);
             this.Controls.Add(this.LabelInstallationFiles);
             this.Controls.Add(this.ListBoxInstallFiles);
             this.Controls.Add(this.ImageInstall);
@@ -280,17 +290,17 @@ namespace Modio.Controls
             this.Controls.Add(this.LabelLastUpdated);
             this.Controls.Add(this.LabelHeaderLastUpdated);
             this.Controls.Add(this.LabelRegion);
-            this.Controls.Add(this.ImageShowFiles);
             this.Controls.Add(this.LabelHeaderRegion);
             this.Margin = new System.Windows.Forms.Padding(2, 0, 3, 0);
-            this.Name = "DownloadFilesItem";
-            this.Size = new System.Drawing.Size(750, 114);
+            this.Name = "DownloadFileItem";
+            this.Size = new System.Drawing.Size(817, 114);
             this.Load += new System.EventHandler(this.DownloadItem_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ImageShowFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Separator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageDownload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageInstall)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListBoxInstallFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SvgImages)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageExpand.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,7 +309,6 @@ namespace Modio.Controls
         #endregion
         private DevExpress.XtraEditors.LabelControl LabelHeaderRegion;
         private DevExpress.XtraEditors.LabelControl LabelName;
-        private DevExpress.XtraEditors.SvgImageBox ImageShowFiles;
         private DevExpress.XtraEditors.LabelControl LabelRegion;
         private DevExpress.XtraEditors.LabelControl LabelLastUpdated;
         private DevExpress.XtraEditors.LabelControl LabelHeaderLastUpdated;
@@ -311,5 +320,7 @@ namespace Modio.Controls
         private DevExpress.XtraEditors.SvgImageBox ImageInstall;
         private DevExpress.XtraEditors.ListBoxControl ListBoxInstallFiles;
         private DevExpress.XtraEditors.LabelControl LabelInstallationFiles;
+        private DevExpress.Utils.SvgImageCollection SvgImages;
+        private DevExpress.XtraEditors.PictureEdit ImageExpand;
     }
 }

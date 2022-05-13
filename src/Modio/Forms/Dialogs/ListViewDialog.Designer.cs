@@ -56,11 +56,11 @@ namespace Modio.Forms.Dialogs
             // GridControlListItems
             // 
             this.GridControlListItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridControlListItems.Location = new System.Drawing.Point(2, 23);
+            this.GridControlListItems.Location = new System.Drawing.Point(0, 25);
             this.GridControlListItems.MainView = this.GridViewListItems;
             this.GridControlListItems.Margin = new System.Windows.Forms.Padding(0);
             this.GridControlListItems.Name = "GridControlListItems";
-            this.GridControlListItems.Size = new System.Drawing.Size(170, 189);
+            this.GridControlListItems.Size = new System.Drawing.Size(174, 189);
             this.GridControlListItems.TabIndex = 1;
             this.GridControlListItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewListItems});
@@ -101,6 +101,7 @@ namespace Modio.Forms.Dialogs
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("ListViewDialog.IconOptions.Icon")));
+            this.IconOptions.Image = global::Modio.Properties.Resources.icon;
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

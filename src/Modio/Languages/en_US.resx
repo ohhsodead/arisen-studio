@@ -160,7 +160,7 @@
     <value>Backup Files</value>
   </data>
   <data name="BACKUP_FILE_MANAGER" xml:space="preserve">
-    <value>Backup File Manager</value>
+    <value>Backup Files Manager</value>
   </data>
   <data name="BACKUP_GAME_FILES" xml:space="preserve">
     <value>Some game files will be overwritten. Do you want to backup the current game files? These files can be restored when uninstalling the mods.</value>
@@ -203,6 +203,9 @@
   </data>
   <data name="CONFIRM_DELETE_ITEM_DOWNLOADS" xml:space="preserve">
     <value>Do you really want to delete the selected item from your downloads?</value>
+  </data>
+  <data name="CONNECTED" xml:space="preserve">
+    <value>Connected</value>
   </data>
   <data name="CONNECTED_NOTIFICATION" xml:space="preserve">
     <value>You are now connected to Modio ★</value>
@@ -649,6 +652,9 @@
   <data name="LABEL_APPLY" xml:space="preserve">
     <value>Apply</value>
   </data>
+  <data name="LABEL_APPLY_CHEAT" xml:space="preserve">
+    <value>Apply Cheat</value>
+  </data>
   <data name="LABEL_ASCENDING" xml:space="preserve">
     <value>Ascending</value>
   </data>
@@ -1073,7 +1079,7 @@
     <value>Package Files</value>
   </data>
   <data name="PACKAGE_FILE_MANAGER" xml:space="preserve">
-    <value>Package File Manager</value>
+    <value>Package Files Manager</value>
   </data>
   <data name="PREPARING_DOWNLOAD" xml:space="preserve">
     <value>Preparing to download archive...</value>

@@ -1,4 +1,0 @@
-﻿[*.cs]
-
-# IDE0059: Unnecessary assignment of a value
-dotnet_diagnostic.IDE0059.severity = suggestion

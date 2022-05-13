@@ -16,9 +16,9 @@ using FtpExtensions = Modio.Extensions.FtpExtensions;
 
 namespace Modio.Forms.Tools.PS3
 {
-    public partial class PackageFileManager : XtraForm
+    public partial class PackageFilesManager : XtraForm
     {
-        public PackageFileManager()
+        public PackageFilesManager()
         {
             InitializeComponent();
         }
@@ -31,9 +31,9 @@ namespace Modio.Forms.Tools.PS3
 
         private List<FtpListItem> PackageFiles { get; } = new();
 
-        private void PackageManager_Load(object sender, EventArgs e)
+        private void PackageFilesManager_Load(object sender, EventArgs e)
         {
-            Text = Language.GetString("PACKAGE_FILE_MANAGER");
+            Text = Language.GetString("PACKAGE_FILES_MANAGER");
             GroupPackageFiles.Text = Language.GetString("PACKAGE_FILES");
 
             ButtonInstallFile.Text = Language.GetString("LABEL_INSTALL_FILE");
@@ -50,47 +50,65 @@ namespace Modio.Forms.Tools.PS3
 
         private void LoadPackages()
         {
-            GridPackageFiles.DataSource = null;
+            try
+            {
+                GridPackageFiles.DataSource = null;
 
-            DataTable packages = DataExtensions.CreateDataTable(new List<DataColumn>
+                DataTable packages = DataExtensions.CreateDataTable(new List<DataColumn>
             {
                 new(Language.GetString("LABEL_FILE_NAME"), typeof(string)),
                 new(Language.GetString("LABEL_MODIFIED_DATE"), typeof(string)),
                 new(Language.GetString("LABEL_FILE_SIZE"), typeof(string))
             });
 
-            FtpClient.SetWorkingDirectory(PackageFilesPath);
+                FtpClient.SetWorkingDirectory(PackageFilesPath);
 
-            foreach (FtpListItem listItem in FtpClient.GetListing(PackageFilesPath))
-            {
-                switch (listItem.Type)
+                foreach (FtpListItem listItem in FtpClient.GetListing(PackageFilesPath))
                 {
-                    case FtpFileSystemObjectType.File when listItem.Name.EndsWithIgnoreCase(".pkg"):
-                        PackageFiles.Add(listItem);
-                        break;
+                    switch (listItem.Type)
+                    {
+                        case FtpFileSystemObjectType.File when listItem.Name.EndsWithIgnoreCase(".pkg"):
+                            PackageFiles.Add(listItem);
+                            break;
 
-                    case FtpFileSystemObjectType.Directory:
-                        break;
+                        case FtpFileSystemObjectType.Directory:
+                            break;
 
-                    case FtpFileSystemObjectType.Link:
-                        break;
+                        case FtpFileSystemObjectType.Link:
+                            break;
+                    }
                 }
-            }
 
-            foreach (FtpListItem package in PackageFiles)
+                foreach (FtpListItem package in PackageFiles)
+                {
+                    packages.Rows.Add(package.Name,
+                                      MainWindow.Settings.UseRelativeTimes ? package.Modified.Humanize() : package.Modified.ToString("MM/dd/yyyy", CultureInfo.CurrentCulture),
+                                      MainWindow.Settings.UseFormattedFileSizes ? package.Size.Bytes().Humanize("#") : package.Size + " " + Language.GetString("LABEL_BYTES"));
+                }
+
+                GridPackageFiles.DataSource = packages;
+
+                //GridViewPackageFiles.Columns[0].Width = 350;
+                GridViewPackageFiles.Columns[1].Width = 70;
+                GridViewPackageFiles.Columns[2].Width = 70;
+
+                ButtonDeleteAll.Enabled = packages.Rows.Count > 0;
+
+                UpdateStatus(Language.GetString("FETCHED_LISTING"));
+            }
+            catch (Exception ex)
             {
-                packages.Rows.Add(package.Name,
-                                  MainWindow.Settings.UseRelativeTimes ? package.Modified.Humanize() : package.Modified.ToString("MM/dd/yyyy", CultureInfo.CurrentCulture),
-                                  MainWindow.Settings.UseFormattedFileSizes ? package.Size.Bytes().Humanize("#") : package.Size + " " + Language.GetString("LABEL_BYTES"));
+                TimerWait.Enabled = false;
+
+                ButtonInstallFile.Enabled = false;
+                ButtonDownloadFile.Enabled = false;
+                ButtonDelete.Enabled = false;
+                ButtonDeleteAll.Enabled = false;
+
+                UpdateStatus(string.Format(Language.GetString("FETCHING_LISTING_ERROR"), PackageFilesPath, ex.Message), ex);
+                XtraMessageBox.Show(string.Format(Language.GetString("FETCHING_LISTING_ERROR"), PackageFilesPath, ex.Message));
+                Close();
             }
-
-            GridPackageFiles.DataSource = packages;
-
-            //GridViewPackageFiles.Columns[0].Width = 350;
-            GridViewPackageFiles.Columns[1].Width = 150;
-            GridViewPackageFiles.Columns[2].Width = 150;
-
-            ButtonDeleteAll.Enabled = packages.Rows.Count > 0;
         }
 
         private void GridViewPackageFiles_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
@@ -179,10 +197,19 @@ namespace Modio.Forms.Tools.PS3
         /// Set the current status.
         /// </summary>
         /// <param name="text"> </param>
-        private void UpdateStatus(string text)
+        private void UpdateStatus(string text, Exception ex = null)
         {
             LabelStatus.Caption = text;
             Refresh();
+
+            if (ex == null)
+            {
+                Program.Log.Info(text);
+            }
+            else
+            {
+                Program.Log.Error(ex, text);
+            }
         }
     }
 }

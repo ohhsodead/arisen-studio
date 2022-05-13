@@ -56,8 +56,8 @@ namespace Modio
         Game,
         Homebrew,
         Resource,
-        GameSave,
-        Plugin
+        Plugin,
+        GameSave
     }
 
     public enum TransferType

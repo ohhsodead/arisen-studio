@@ -28,15 +28,15 @@ namespace Modio.Forms.Dialogs.Details
             InitializeComponent();
         }
 
-        public SettingsData Settings = MainWindow.Settings;
-        public ConsoleProfile ConsoleProfile = MainWindow.ConsoleProfile;
-        public ResourceManager Language = MainWindow.ResourceLanguage;
-        public CategoriesData Categories = MainWindow.Database.CategoriesData;
+        public static SettingsData Settings = MainWindow.Settings;
+        public static ConsoleProfile ConsoleProfile = MainWindow.ConsoleProfile;
+        public static ResourceManager Language = MainWindow.ResourceLanguage;
+        public static CategoriesData Categories = MainWindow.Database.CategoriesData;
 
         public CategoryType CategoryType;
         public GameSaveItemData GameSaveItem;
 
-        public FavoriteItem FavoriteItem;
+        public bool IsFavorite;
 
         private void GameSaveDialog_Load(object sender, EventArgs e)
         {
@@ -65,7 +65,7 @@ namespace Modio.Forms.Dialogs.Details
             {
                 count++;
 
-                DownloadFilesItem downloadItem = new()
+                DownloadFileItem downloadItem = new()
                 {
                     CategoryType = CategoryType.GameSave,
                     GameSaveItem = GameSaveItem,
@@ -90,15 +90,15 @@ namespace Modio.Forms.Dialogs.Details
             TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
             TabDownloads.Text = $"{Language.GetString("LABEL_DOWNLOADS")} ({GameSaveItem.DownloadFiles.Count})";
 
-            FavoriteItem = Settings.CreateFavoriteGameSaveItem(Categories, GameSaveItem);
+            IsFavorite = Settings.FavoriteGameSaves.Exists(x => x.CategoryType == CategoryType && x.CategoryId == GameSaveItem.CategoryId && x.ModId == GameSaveItem.Id && x.Platform == GameSaveItem.GetPlatform());
 
-            if (Settings.FavoriteGameSaves.Contains(FavoriteItem))
+            if (IsFavorite)
             {
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_ADD_TO_FAVORITES"), 26);
+                ButtonFavorite.SetControlText(Language.GetString("LABEL_REMOVE_FROM_FAVORITES"), 26);
             }
             else
             {
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_REMOVE_FROM_FAVORITES"), 26);
+                ButtonFavorite.SetControlText(Language.GetString("LABEL_ADD_TO_FAVORITES"), 26);
             }
 
             ButtonReportIssue.SetControlText(Language.GetString("LABEL_REPORT_ISSUE"), 26);
@@ -133,17 +133,17 @@ namespace Modio.Forms.Dialogs.Details
 
         private void ButtonFavorite_Click(object sender, EventArgs e)
         {
-            FavoriteItem = Settings.CreateFavoriteGameSaveItem(Categories, GameSaveItem);
-
-            if (Settings.FavoriteGameSaves.Exists(x => x == FavoriteItem))
+            if (IsFavorite)
             {
-                Settings.FavoriteGameSaves.RemoveAll(x => x == FavoriteItem);
+                MainWindow.Settings.FavoriteGameSaves.RemoveAll(x => x.CategoryType == CategoryType && x.CategoryId == GameSaveItem.CategoryId && x.ModId == GameSaveItem.Id && x.Platform == GameSaveItem.GetPlatform());
                 ButtonFavorite.SetControlText(Language.GetString("LABEL_ADD_TO_FAVORITES"), 26);
+                IsFavorite = false;
             }
             else
             {
-                Settings.FavoriteGameSaves.Add(FavoriteItem);
+                MainWindow.Settings.FavoriteGameSaves.Add(new() { CategoryType = CategoryType, CategoryId = GameSaveItem.CategoryId, ModId = GameSaveItem.Id, Platform = GameSaveItem.GetPlatform() });
                 ButtonFavorite.SetControlText(Language.GetString("LABEL_REMOVE_FROM_FAVORITES"), 26);
+                IsFavorite = true;
             }
         }
 

@@ -101,8 +101,6 @@ namespace Modio.Models.Resources
 
         // Favorites
 
-        public List<string> FavoritePackages { get; set; } = new();
-
         public List<FavoriteItem> FavoriteMods { get; set; } = new();
 
         public void AddRemoveFavoriteModItem(FavoriteItem favoriteItem)
@@ -119,7 +117,7 @@ namespace Modio.Models.Resources
 
         public FavoriteItem CreateFavoriteItem(CategoriesData categoriesData, ModItemData modItem)
         {
-            return new() { CategoryType = categoriesData.GetCategoryById(modItem.CategoryId).CategoryType, CategoryId = modItem.CategoryId, ModId = modItem.Id, Platform = modItem.GetPlatform() };
+            return new() { CategoryType = modItem.GetCategoryType(categoriesData), CategoryId = modItem.CategoryId, ModId = modItem.Id, Platform = modItem.GetPlatform() };
         }
 
         public List<FavoriteItem> FavoriteGameSaves { get; set; } = new();
@@ -150,12 +148,6 @@ namespace Modio.Models.Resources
         // Xbox 360
 
         public List<ListItem> GameFilesXBOX { get; set; } = new();
-
-        public void AddFavoritePackage(string modId)
-        {
-            FavoritePackages.Add(modId);
-        }
-
 
         /// <summary>
         /// Gets the user's saved game region for the specified <see cref="ModsData.ModItem.GameId" />

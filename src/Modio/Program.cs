@@ -30,9 +30,6 @@ namespace Modio
                 Application.ThreadException += Application_ThreadException;
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
-                //SplashScreenManager.ShowForm(typeof(SplashScreen1));
-                //SplashScreenManager.Default.WaitForSplashFormClose();
-
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 DevExpress.Skins.SkinManager.EnableFormSkins();

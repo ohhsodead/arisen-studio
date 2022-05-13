@@ -35,6 +35,8 @@ namespace Modio.Forms.Tools.PS3
 
         private void GameRegions_Load(object sender, EventArgs e)
         {
+            ButtonDetectRegions.Enabled = MainWindow.IsConsoleConnected;
+
             ComboBoxGameTitle.Properties.Items.Clear();
             ComboBoxGameRegion.Properties.Items.Clear();
 
@@ -204,6 +206,25 @@ namespace Modio.Forms.Tools.PS3
 
             XtraMessageBox.Show("All game regions have now been saved.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
+        }
+
+        private void ButtonDetectRegions_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("All saved game regions will be cleared. Do you want to continue?", "Game Region", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                foreach (Category category in Database.CategoriesData.Categories.Where(x => x.CategoryType == CategoryType.Game))
+                {
+                    foreach (string region in category.Regions)
+                    {
+                        if (FtpExtensions.DirectoryExists($"/dev_hdd0/game/{region}"))
+                        {
+                            Settings.UpdateGameRegion(category.Id, region);
+                        }
+                    }
+                }
+
+                LoadSavedGameRegions();
+            }
         }
     }
 }

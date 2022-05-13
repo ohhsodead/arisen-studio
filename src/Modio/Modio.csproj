@@ -121,11 +121,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Urls.cs" />
-    <Compile Include="Controls\DownloadFilesItem.cs">
+    <Compile Include="Controls\DownloadFileItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\DownloadFilesItem.Designer.cs">
-      <DependentUpon>DownloadFilesItem.cs</DependentUpon>
+    <Compile Include="Controls\DownloadFileItem.Designer.cs">
+      <DependentUpon>DownloadFileItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\FeatureNotAvailableOverlay.cs" />
     <Compile Include="Controls\NoProfilesItem.cs">
@@ -149,6 +149,12 @@
     </Compile>
     <Compile Include="Forms\Dialogs\Details\GameCheatsDialog.Designer.cs">
       <DependentUpon>GameCheatsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Imports\ImportedModsManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Imports\ImportedModsManager.Designer.cs">
+      <DependentUpon>ImportedModsManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\PackagesFaqDialog.cs">
       <SubType>Form</SubType>
@@ -191,6 +197,12 @@
     </Compile>
     <Compile Include="Forms\Dialogs\Details\HomebrewDialog.Designer.cs">
       <DependentUpon>HomebrewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Imports\NewModDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Imports\NewModDialog.Designer.cs">
+      <DependentUpon>NewModDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\SortOptionsDialog.cs">
       <SubType>Form</SubType>
@@ -266,11 +278,11 @@
     <Compile Include="Forms\Windows\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\PS3\BackupFileManager.cs">
+    <Compile Include="Forms\Tools\PS3\BackupFilesManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\PS3\BackupFileManager.Designer.cs">
-      <DependentUpon>BackupFileManager.cs</DependentUpon>
+    <Compile Include="Forms\Tools\PS3\BackupFilesManager.Designer.cs">
+      <DependentUpon>BackupFilesManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\PS3\GameUpdatesFinder.cs">
       <SubType>Form</SubType>
@@ -278,11 +290,11 @@
     <Compile Include="Forms\Tools\PS3\GameUpdatesFinder.Designer.cs">
       <DependentUpon>GameUpdatesFinder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\PS3\PackageFileManager.cs">
+    <Compile Include="Forms\Tools\PS3\PackageFilesManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tools\PS3\PackageFileManager.Designer.cs">
-      <DependentUpon>PackageFileManager.cs</DependentUpon>
+    <Compile Include="Forms\Tools\PS3\PackageFilesManager.Designer.cs">
+      <DependentUpon>PackageFilesManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\XBOX\GameLauncher.cs">
       <SubType>Form</SubType>
@@ -359,14 +371,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Templates\GitHubTemplates.cs" />
-    <EmbeddedResource Include="Controls\DownloadFilesItem.resx">
-      <DependentUpon>DownloadFilesItem.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\DownloadFileItem.resx">
+      <DependentUpon>DownloadFileItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\NoProfilesItem.resx">
       <DependentUpon>NoProfilesItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\Details\GameCheatsDialog.resx">
       <DependentUpon>GameCheatsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\Imports\ImportedModsManager.resx">
+      <DependentUpon>ImportedModsManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\PackagesFaqDialog.resx">
       <DependentUpon>PackagesFaqDialog.cs</DependentUpon>
@@ -389,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\Details\HomebrewDialog.resx">
       <DependentUpon>HomebrewDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\Imports\NewModDialog.resx">
+      <DependentUpon>NewModDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\SortOptionsDialog.resx">
       <DependentUpon>SortOptionsDialog.cs</DependentUpon>
@@ -432,14 +450,14 @@
     <EmbeddedResource Include="Forms\Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\PS3\BackupFileManager.resx">
-      <DependentUpon>BackupFileManager.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Tools\PS3\BackupFilesManager.resx">
+      <DependentUpon>BackupFilesManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\PS3\GameUpdatesFinder.resx">
       <DependentUpon>GameUpdatesFinder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\PS3\PackageFileManager.resx">
-      <DependentUpon>PackageFileManager.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Tools\PS3\PackageFilesManager.resx">
+      <DependentUpon>PackageFilesManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\BackupFileDialog.resx">
       <DependentUpon>BackupFileDialog.cs</DependentUpon>
@@ -534,6 +552,9 @@
     <PackageReference Include="ini-parser">
       <Version>2.5.2</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.Web.WebView2">
+      <Version>1.0.1210.39</Version>
+    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>
     </PackageReference>
@@ -551,6 +572,8 @@
     <None Include="Resources\Icons\find_file.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\refresh2_16x16.png" />
+    <None Include="Resources\refresh2_32x32.png" />
     <None Include="Resources\Icons\viewsettings.svg" />
     <None Include="Resources\Icons\sort_32x32.png" />
     <None Include="Resources\Icons\install_svg.svg" />
@@ -567,6 +590,9 @@
     <None Include="Resources\Icons\arrow_up.svg" />
     <Content Include="icon.ico" />
     <None Include="Resources\icon.png" />
+    <None Include="Resources\actions_refresh.svg" />
+    <None Include="Resources\actions_reload.svg" />
+    <None Include="Resources\actions_reload1.svg" />
     <Content Include="Resources\Icons\homebrew.png" />
     <Content Include="Resources\Icons\import.png" />
     <Content Include="Resources\Icons\packages.png" />
