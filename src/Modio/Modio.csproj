@@ -531,38 +531,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Autoupdater.NET.Official">
-      <Version>1.7.0</Version>
-    </PackageReference>
-    <PackageReference Include="CodeHollow.FeedReader">
-      <Version>1.2.4</Version>
-    </PackageReference>
-    <PackageReference Include="DiscordRichPresence">
-      <Version>1.0.175</Version>
-    </PackageReference>
-    <PackageReference Include="FluentFTP">
-      <Version>37.0.2</Version>
-    </PackageReference>
-    <PackageReference Include="HtmlAgilityPack">
-      <Version>1.11.42</Version>
-    </PackageReference>
-    <PackageReference Include="Humanizer">
-      <Version>2.14.1</Version>
-    </PackageReference>
-    <PackageReference Include="ini-parser">
-      <Version>2.5.2</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Web.WebView2">
-      <Version>1.0.1210.39</Version>
-    </PackageReference>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="NLog">
-      <Version>4.7.15</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Icons\backup_restore.png" />
   </ItemGroup>
   <ItemGroup>
@@ -597,6 +565,38 @@
     <Content Include="Resources\Icons\import.png" />
     <Content Include="Resources\Icons\packages.png" />
     <Content Include="Resources\Icons\resources.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autoupdater.NET.Official">
+      <Version>1.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="CodeHollow.FeedReader">
+      <Version>1.2.4</Version>
+    </PackageReference>
+    <PackageReference Include="DiscordRichPresence">
+      <Version>1.0.175</Version>
+    </PackageReference>
+    <PackageReference Include="FluentFTP">
+      <Version>37.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="HtmlAgilityPack">
+      <Version>1.11.42</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer">
+      <Version>2.14.1</Version>
+    </PackageReference>
+    <PackageReference Include="ini-parser">
+      <Version>2.5.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Web.WebView2">
+      <Version>1.0.1210.39</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="NLog">
+      <Version>4.7.15</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
