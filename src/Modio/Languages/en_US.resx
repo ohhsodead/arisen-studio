@@ -159,7 +159,7 @@
   <data name="BACKUP_FILES" xml:space="preserve">
     <value>Backup Files</value>
   </data>
-  <data name="BACKUP_FILE_MANAGER" xml:space="preserve">
+  <data name="BACKUP_FILES_MANAGER" xml:space="preserve">
     <value>Backup Files Manager</value>
   </data>
   <data name="BACKUP_GAME_FILES" xml:space="preserve">
@@ -192,17 +192,14 @@
   <data name="CONFIRM_DELETE" xml:space="preserve">
     <value>Confirm Delete</value>
   </data>
-  <data name="CONFIRM_DELETE_ALL_DOWNLOADS" xml:space="preserve">
-    <value>Do you really want to delete all of your downloads?</value>
-  </data>
-  <data name="CONFIRM_DELETE_ALL_TITLE" xml:space="preserve">
+  <data name="CONFIRM_DELETE_ALL" xml:space="preserve">
     <value>Confirm Delete All</value>
+  </data>
+  <data name="CONFIRM_DELETE_ALL_ITEMS" xml:space="preserve">
+    <value>Do you really want to delete all of these items?</value>
   </data>
   <data name="CONFIRM_DELETE_ITEM" xml:space="preserve">
     <value>Do you really want to delete the selected item?</value>
-  </data>
-  <data name="CONFIRM_DELETE_ITEM_DOWNLOADS" xml:space="preserve">
-    <value>Do you really want to delete the selected item from your downloads?</value>
   </data>
   <data name="CONNECTED" xml:space="preserve">
     <value>Connected</value>
@@ -227,6 +224,12 @@
   </data>
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Console Profiles</value>
+  </data>
+  <data name="COPIED_SHA1" xml:space="preserve">
+    <value>Update SHA1 has been copied to clipboard.</value>
+  </data>
+  <data name="COPIED_URL" xml:space="preserve">
+    <value>Update URL has been copied to clipboard.</value>
   </data>
   <data name="CUSTOMIZATION" xml:space="preserve">
     <value>Customization</value>
@@ -306,8 +309,14 @@
   <data name="ERROR" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="ERROR_LAUNCHING_GAME" xml:space="preserve">
+    <value>Unable to launch game file. Error: {0}</value>
+  </data>
   <data name="ERROR_OCCURRED" xml:space="preserve">
-    <value>An error occurred: {0}</value>
+    <value>An error occurred: {0}\n\nPlease try agian later. If the problem persists &lt;a href="https://github.com/ohhsodead/Modio/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;open a new issue&lt;/a&gt; on our GitHub tracker.</value>
+  </data>
+  <data name="EXTRACT_IMAGE" xml:space="preserve">
+    <value>Extract Image</value>
   </data>
   <data name="FAVORITES_ADD" xml:space="preserve">
     <value>Favorite</value>
@@ -384,6 +393,9 @@
   <data name="FILE_DOWNLOAD_SUCCESS" xml:space="preserve">
     <value>Successfully downloaded file.</value>
   </data>
+  <data name="FILE_INSTALLING" xml:space="preserve">
+    <value>Installing file: {0}</value>
+  </data>
   <data name="FILE_INSTALL_ERROR" xml:space="preserve">
     <value>Unable to install file. Error: {0}</value>
   </data>
@@ -419,6 +431,9 @@
   </data>
   <data name="FILE_RENAMED" xml:space="preserve">
     <value>Successfully renamed file to: {0}</value>
+  </data>
+  <data name="FILE_RENAMED_SUCCESS" xml:space="preserve">
+    <value>Successfully renamed game file.</value>
   </data>
   <data name="FILE_RENAME_ERROR" xml:space="preserve">
     <value>Unable to rename file. Error: {0}</value>
@@ -528,8 +543,8 @@
   <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
     <value>Game Save Resigner</value>
   </data>
-  <data name="GAME_UPDATE_FINDER" xml:space="preserve">
-    <value>Game Update Finder</value>
+  <data name="GAME_UPDATES_FINDER" xml:space="preserve">
+    <value>Game Updates Finder</value>
   </data>
   <data name="GETTING_DOWNLOAD_FILES" xml:space="preserve">
     <value>Getting archive file download link...</value>
@@ -595,9 +610,6 @@
   <data name="INSTALLING_BACKUP_FILE_LOCATION" xml:space="preserve">
     <value>Installing backup file: {0} to {1}</value>
   </data>
-  <data name="INSTALLING_FILE" xml:space="preserve">
-    <value>Installing file: {0}</value>
-  </data>
   <data name="INSTALLING_GAME_SAVE" xml:space="preserve">
     <value>Installing Game Save</value>
   </data>
@@ -633,6 +645,9 @@
   </data>
   <data name="INSTALL_RESOURCES_TO_LOCAL_USB" xml:space="preserve">
     <value>Install Resources to local USB device</value>
+  </data>
+  <data name="INVALID_TITLE_ID" xml:space="preserve">
+    <value>Invalid ID or cannot be found. Are you sure this is a valid PS3 Title ID?</value>
   </data>
   <data name="LABEL_ADDRESS_NAME" xml:space="preserve">
     <value>IP Address/Name</value>
@@ -697,6 +712,12 @@
   <data name="LABEL_COPIED" xml:space="preserve">
     <value>Copied</value>
   </data>
+  <data name="LABEL_COPY_SHA1" xml:space="preserve">
+    <value>Copy SHA1 to Clipboard</value>
+  </data>
+  <data name="LABEL_COPY_URL" xml:space="preserve">
+    <value>Copy URL to Clipboard</value>
+  </data>
   <data name="LABEL_CREATED_BY" xml:space="preserve">
     <value>Created By</value>
   </data>
@@ -754,6 +775,9 @@
   <data name="LABEL_EDIT" xml:space="preserve">
     <value>Edit</value>
   </data>
+  <data name="LABEL_EDIT_NAME" xml:space="preserve">
+    <value>Edit Name</value>
+  </data>
   <data name="LABEL_FAVORITE" xml:space="preserve">
     <value>Favorite</value>
   </data>
@@ -772,8 +796,14 @@
   <data name="LABEL_GAME" xml:space="preserve">
     <value>Game</value>
   </data>
+  <data name="LABEL_GAMES" xml:space="preserve">
+    <value>Games</value>
+  </data>
   <data name="LABEL_GAME_CHEATS" xml:space="preserve">
     <value>Game Cheats</value>
+  </data>
+  <data name="LABEL_GAME_FILE" xml:space="preserve">
+    <value>Game File</value>
   </data>
   <data name="LABEL_GAME_MODE" xml:space="preserve">
     <value>Game Mode</value>
@@ -795,6 +825,9 @@
   </data>
   <data name="LABEL_IMAGE" xml:space="preserve">
     <value>Image</value>
+  </data>
+  <data name="LABEL_IMAGE_SIZE_TOO_BIG" xml:space="preserve">
+    <value>Image file size is too big!</value>
   </data>
   <data name="LABEL_INSTALL" xml:space="preserve">
     <value>Install</value>
@@ -820,6 +853,9 @@
   <data name="LABEL_LAST_UPDATED" xml:space="preserve">
     <value>Last Updated</value>
   </data>
+  <data name="LABEL_LAUNCH_GAME" xml:space="preserve">
+    <value>Launch Game</value>
+  </data>
   <data name="LABEL_LIBRARIES" xml:space="preserve">
     <value>Libraries</value>
   </data>
@@ -828,6 +864,9 @@
   </data>
   <data name="LABEL_LOGIN_DETAILS" xml:space="preserve">
     <value>Login Details</value>
+  </data>
+  <data name="LABEL_MINIMUM_FIRMWARE" xml:space="preserve">
+    <value>Minimum FW</value>
   </data>
   <data name="LABEL_MODIFIED_DATE" xml:space="preserve">
     <value>Modified Date</value>
@@ -847,6 +886,9 @@
   <data name="LABEL_NOT_INSTALLED" xml:space="preserve">
     <value>Not Installed</value>
   </data>
+  <data name="LABEL_NO_GAMES" xml:space="preserve">
+    <value>No games added yet.\n\nYou can add your game files using the File Manager.</value>
+  </data>
   <data name="LABEL_OK" xml:space="preserve">
     <value>OK</value>
   </data>
@@ -855,6 +897,9 @@
   </data>
   <data name="LABEL_OPEN_PATH" xml:space="preserve">
     <value>Open Path</value>
+  </data>
+  <data name="LABEL_OPEN_PROFILE" xml:space="preserve">
+    <value>Open Profile</value>
   </data>
   <data name="LABEL_PACKAGES" xml:space="preserve">
     <value>Packages</value>
@@ -898,6 +943,30 @@
   <data name="LABEL_RESTORE_FILE" xml:space="preserve">
     <value>Restore File</value>
   </data>
+  <data name="LABEL_RING_BUZZER" xml:space="preserve">
+    <value>Ring Buzzer</value>
+  </data>
+  <data name="LABEL_SAVE_PROFILE" xml:space="preserve">
+    <value>Save Profile</value>
+  </data>
+  <data name="LABEL_SEARCH" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="LABEL_SEARCHING" xml:space="preserve">
+    <value>Searching...</value>
+  </data>
+  <data name="LABEL_SEARCH_SUCCESS" xml:space="preserve">
+    <value>Successfully fetched items.</value>
+  </data>
+  <data name="LABEL_SET" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="LABEL_SET_LEDS" xml:space="preserve">
+    <value>Set LEDs</value>
+  </data>
+  <data name="LABEL_SET_VALUE" xml:space="preserve">
+    <value>Set Value</value>
+  </data>
   <data name="LABEL_SHOW_FAVORITES" xml:space="preserve">
     <value>Show Favorites</value>
   </data>
@@ -921,6 +990,9 @@
   </data>
   <data name="LABEL_SYSTEM_TYPE" xml:space="preserve">
     <value>System Type</value>
+  </data>
+  <data name="LABEL_TITLE" xml:space="preserve">
+    <value>Title</value>
   </data>
   <data name="LABEL_TITLE_ID" xml:space="preserve">
     <value>Title ID</value>
@@ -1129,6 +1201,9 @@
   <data name="REMEMBER_LOCAL_DIRECTORY_PATH" xml:space="preserve">
     <value>Remember last local directory path</value>
   </data>
+  <data name="REPLACE_IMAGE" xml:space="preserve">
+    <value>Replace Image</value>
+  </data>
   <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
     <value>Files have been installed to a USB device connected to your console. You can either uninstall them now or manually delete them.\n\nIf you would like to uninstall the files now, connect the same USB device you installed the mods to into the same port of your console and click 'Yes' to continue.\nIf you don't want to uninstall the files, click 'No' and all of these files will be ignored.</value>
   </data>
@@ -1149,6 +1224,9 @@
   </data>
   <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
     <value>This mod type (Script) can't be installed on the PS3 because it needs the user manual addition.</value>
+  </data>
+  <data name="SETUP_EDIT_ADVANCED_SETTINGS" xml:space="preserve">
+    <value>Edit Advanced Settings</value>
   </data>
   <data name="SETUP_HOWTO_GUIDE" xml:space="preserve">
     <value>How-To Guides for Modio</value>
@@ -1185,6 +1263,12 @@
   </data>
   <data name="SUCCESS_DISCONNECTED" xml:space="preserve">
     <value>Successfully disconnected from console.</value>
+  </data>
+  <data name="SUCCESS_LAUNCHED_GAME" xml:space="preserve">
+    <value>Successfully launched game.</value>
+  </data>
+  <data name="SUCCESS_LAUNCH_GAME" xml:space="preserve">
+    <value>Successfully launched game.</value>
   </data>
   <data name="SUCCESS_LOADED_DB" xml:space="preserve">
     <value>Successfully loaded the database - Finalizing application data...</value>
@@ -1347,5 +1431,8 @@
   </data>
   <data name="YOU_MUST_BE_CONNECTED_TO_VIEW_INSTALLED_MODS" xml:space="preserve">
     <value>You must be connected to your console to view installed mods.</value>
+  </data>
+  <data name="YOU_MUST_ENTER_TITLE_ID" xml:space="preserve">
+    <value>You must enter a title ID.</value>
   </data>
 </root>
