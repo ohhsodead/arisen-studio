@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<svg x="0px" y="0px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" id="Layer_1" style="enable-background:new 0 0 32 32">
+  <style type="text/css">
+	.Blue{fill:#1177D7;}
+	.Yellow{fill:#FFB115;}
+	.Black{fill:#727272;}
+	.Green{fill:#039C23;}
+	.Red{fill:#D11C1C;}
+	.st0{opacity:0.75;}
+	.st1{opacity:0.5;}
+</style>
+  <g id="Reload_1_">
+    <path d="M16,4c3.3,0,6.3,1.3,8.5,3.5L28,4v10h-0.2h-4.1H18l3.6-3.6C20.2,8.9,18.2,8,16,8c-4.4,0-8,3.6-8,8s3.6,8,8,8   c3.7,0,6.8-2.6,7.7-6h4.1c-1,5.7-5.9,10-11.8,10C9.4,28,4,22.6,4,16C4,9.4,9.4,4,16,4z" class="Green" />
+  </g>
+</svg>

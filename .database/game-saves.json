@@ -1,0 +1,547 @@
+{
+   "LastUpdated":"2022-02-23T01:13:37.126946+01:00",
+   "GameSaves":[
+      {
+         "Platform":"PS3",
+         "Id":0,
+         "CategoryId":"dsp3",
+         "Name":"Story Completed (100%)",
+         "Region":"BLES00310",
+         "CreatedBy":"StealthNinja_87",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"100% Unlocked Dead Space 3 Save.\nAll suits are unlocked, Bunch of resources, Powerful weapons.",
+         "DownloadFiles":[
+            {
+               "Name":"Dead Space 3 (100% Complete)",
+               "Region":"BLES00310",
+               "Url":"https://dl.dropbox.com/s/sifefdywi7d5hsu/Complete%20%28100%25%29.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00310-SAVE2758750202117218/HED-DATA",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00310-SAVE2758750202117218/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00310-SAVE2758750202117218/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00310-SAVE2758750202117218/PARAM.SFO",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00310-SAVE2758750202117218/USR-DATA"
+               ]
+            }
+         ]
+      },
+	  {
+         "Platform":"PS3",
+         "Id":1,
+         "CategoryId":"tesvs",
+         "Name":"Main Story Quests Completed (100%)",
+         "Region":"BLES00310",
+         "CreatedBy":"08campbellc",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"Main Story Quests Completed (100%).",
+         "DownloadFiles":[
+            {
+               "Name":"Main Story Quests Completed (100%)",
+               "Region":"BLES00310",
+               "Url":"https://dl.dropbox.com/s/6yubtc9bmh30ar3/Main%20Story%20Quests%20Completed.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01329-SAVE-PLAYER-3/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01329-SAVE-PLAYER-3/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01329-SAVE-PLAYER-3/PARAM.SFO",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01329-SAVE-PLAYER-3/SYS-DATA"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":2,
+         "CategoryId":"tesvs",
+         "Name":"Start at Level 90 w/ 10000 Stats",
+         "Region":"BLUS30778",
+         "CreatedBy":"Ckeel12201",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"You start at level 90 at the beginning of the game. You have 10000 in every stat 1 million gold.",
+         "DownloadFiles":[
+            {
+               "Name":"Start at Level 90 w/ 10000 Stats",
+               "Region":"BLUS30778",
+               "Url":"https://dl.dropbox.com/s/zgoborc4oz5yz0p/Level%2090%20%2B%2010000%20Stats.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30778-SAVE-PLAYER-2/_gspinfo.dat",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30778-SAVE-PLAYER-2/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30778-SAVE-PLAYER-2/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30778-SAVE-PLAYER-2/PARAM.SFO",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30778-SAVE-PLAYER-2/PIC1.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30778-SAVE-PLAYER-2/SYS-DATA"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":3,
+         "CategoryId":"ac3",
+         "Name":"Completed Story Mode (100%)",
+         "Region":"BLES01667",
+         "CreatedBy":"DM13",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"Save with all DLCs and 100% synchro and all outfits.",
+         "DownloadFiles":[
+            {
+               "Name":"Completed Story Mode (100%)",
+               "Region":"BLES01667",
+               "Url":"https://dl.dropbox.com/s/738lpadhfdhocdj/Complete%20Story%20Mode.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01667AC3AC3_0/AC3_0.SAV",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01667AC3AC3_0/BK_0.SAV",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01667AC3AC3_0/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01667AC3AC3_0/ICON1.PAM",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01667AC3AC3_0/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01667AC3AC3_0/PARAM.SFO",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01667AC3AC3_0/PIC1.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01667AC3AC3_0/SND0.AT3"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":4,
+         "CategoryId":"bio2",
+         "Name":"Story Mode Completed (100%)",
+         "Region":"BLUS30420",
+         "CreatedBy":"SaveMyGame",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"Story mode has been completed.",
+         "DownloadFiles":[
+            {
+               "Name":"Story Mode Completed (100%)",
+               "Region":"BLUS30420",
+               "Url":"https://dl.dropbox.com/s/lwq1queepdnzui3/Story%20Complete.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30420-AUTOSAVE/DLCINFO.PKG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30420-AUTOSAVE/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30420-AUTOSAVE/MAINSAVE.BSG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30420-AUTOSAVE/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30420-AUTOSAVE/PARAM.SFO"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":5,
+         "CategoryId":"bor2",
+         "Name":"Commando Level 50, Max Skill Points, Infinite Ammo + More (100%)",
+         "Region":"BLES01684",
+         "CreatedBy":"FT_SuPrEm_Hicham",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"Commando level 50, Skill point max, unilimited ammos, Sancturay safe full of weapons, artefacts, shield, cash",
+         "DownloadFiles":[
+            {
+               "Name":"Commando Level 50, Max Skill Points, Infinite Ammo + More (100%)",
+               "Region":"BLES01684",
+               "Url":"https://dl.dropbox.com/s/j8n96bgerkl458z/Story%20Complete.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01684-SAVE-SAVE0007/PIC1.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01684-SAVE-SAVE0007/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01684-SAVE-SAVE0007/SAVE0007.SAV",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01684-SAVE-SAVE0007/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01684-SAVE-SAVE0007/PARAM.SFO"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":6,
+         "CategoryId":"re6",
+         "Name":"Infinite Ammo, Infinite Health, Infinite Points + More",
+         "Region":"BLES014650",
+         "CreatedBy":"armandu78",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"Commando level 50, Sancturay safe full of weapons, artefacts, shield, cash\n\n- New skill add 'Training' which gives you infinite ammo/no reload for every weapon\n- Infinite health bars\n- Infinite Skill points\n- Soot 1 emblem to get them all\n- Play in any dificulty and still get the professional trophy",
+         "DownloadFiles":[
+            {
+               "Name":"Infinite Ammo, Infinite Health, Infinite Points + More",
+               "Region":"BLES014650",
+               "Url":"https://dl.dropbox.com/s/0ign9t09ar5myma/Infinite%20Ammo%2C%20Infinite%20Health%2C%20Infinite%20Points%20%2B%20More.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/PIC1.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/DATA0.DAT",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/PARAM.SFO"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":7,
+         "CategoryId":"re6",
+         "Name":"Platinum Save & Some Mods",
+         "Region":"BLES014650",
+         "CreatedBy":"unknown",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"",
+         "DownloadFiles":[
+            {
+               "Name":"Platinum Save & Some Mods",
+               "Region":"BLES014650",
+               "Url":"https://dl.dropbox.com/s/w8u7wfithcqo3jg/Platinum%20Save%20%26%20Some%20Mods.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/PIC1.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/DATA0.DAT",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/PARAM.SFO"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":8,
+         "CategoryId":"re5",
+         "Name":"Story Mode Complete (100%) (Pro Mode, All Weapons, etc.)",
+         "Region":"BLUS30270",
+         "CreatedBy":"ILoveVideoGames",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"100% complete.\nGame beat on pro.\n700+ rotten eggs.\n2,000,000+ currency.\nAll best weapons upgraded fully.\n900+ magnum ammo.\n1800+ machine gun ammo.\n700+ shotgun ammo.\n700+ handgun ammo.\n900+ rifle ammo",
+         "DownloadFiles":[
+            {
+               "Name":"Story Mode Complete (100%) (Pro Mode, All Weapons, etc.)",
+               "Region":"BLUS30270",
+               "Url":"https://dl.dropbox.com/s/n1dxih97s3pxm36/Complete%20Story%20Mode.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS3027010/PIC1.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS3027010/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS3027010/DATA0.DAT",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS3027010/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS3027010/PARAM.SFO"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":9,
+         "CategoryId":"rdgrid",
+         "Name":"Story Mode Complete (100%) (Gold for All Races)",
+         "Region":"BLUS30142",
+         "CreatedBy":"unknown",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"All gold for all race, game 100% done",
+         "DownloadFiles":[
+            {
+               "Name":"Story Mode Complete (100%) (Gold for All Races)",
+               "Region":"BLUS30142",
+               "Url":"https://dl.dropbox.com/s/1kpkq14gtz4lwdd/Complete%20%28100%25%29.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30142AUTOSAVE/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30142AUTOSAVE/ICON1.PAM",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30142AUTOSAVE/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30142AUTOSAVE/PARAM.SFO",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30142AUTOSAVE/PIC1.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30142AUTOSAVE/SAVEDATA"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":10,
+         "CategoryId":"rdgrid",
+         "Name":"Story Mode Complete (100%) (All Race Trophies Gold)",
+         "Region":"BLES00256",
+         "CreatedBy":"unknown",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"100% Complete, every race trophy in gold, every car unlocked, 4 bonus cars, every sponsor, 100.000.000€ to spend, best team mate",
+         "DownloadFiles":[
+            {
+               "Name":"Story Mode Complete (100%) (All Race Trophies Gold)",
+               "Region":"BLES00256",
+               "Url":"https://dl.dropbox.com/s/duoijhog6iot68g/Complete%20%28100%25%29%20-%20All%20Race%20Trophy%20Gold.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/ICON1.PAM",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/PARAM.SFO",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/PIC1.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/SAVEDATA"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":11,
+         "CategoryId":"rdgrid",
+         "Name":"Story Mode Complete (100%) (All cars, Sponsors, etc.)",
+         "Region":"BLES00256",
+         "CreatedBy":"unknown",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"All cars, All sponsors, Best Teammate, £139,000+, All trophies, English.",
+         "DownloadFiles":[
+            {
+               "Name":"Story Mode Complete (100%) (All cars, Sponsors, etc.)",
+               "Region":"BLES00256",
+               "Url":"https://dl.dropbox.com/s/8j5zcwxy8b5bva3/Complete%20%28100%25%29%20-%20All%20cars%2C%20All%20sponsors.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/ICON1.PAM",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/PARAM.SFO",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/PIC1.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES00256AUTOSAVE/SAVEDATA"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":12,
+         "CategoryId":"pure",
+         "Name":"Story Mode Complete (100%) (All Cars, Sponsors, etc.)",
+         "Region":"BLUS30182",
+         "CreatedBy":"jcool32",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"All cars, All sponsors, Best Teammate, £139,000+, All trophies, English.",
+         "DownloadFiles":[
+            {
+               "Name":"Story Mode Complete (100%) (All Cars, Sponsors, etc.)",
+               "Region":"BLUS30182",
+               "Url":"https://dl.dropbox.com/s/453yxj6orf6fvai/Complete%20Story%20Mode.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30182_SAVE/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30182_SAVE/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS30182_SAVE/PARAM.SFO"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":13,
+         "CategoryId":"tek5dr",
+         "Name":"Story Mode Complete (100%) + All Unlocked",
+         "Region":"NPUB30009",
+         "CreatedBy":"froggityfrogfro",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"All unlocked, all gallery items purchased, Lili Destroyer 265 W, 40 L Christie Destroyer 210 W, 16 L",
+         "DownloadFiles":[
+            {
+               "Name":"Story Mode Complete (100%) + All Unlocked",
+               "Region":"NPUB30009",
+               "Url":"https://dl.dropbox.com/s/9o6ii5d6d39vern/Story%20Mode%20Complete%20%28100%25%29%20%2B%20All%20Unlocked.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/PARAM.SFO",
+                  "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/PIC1.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/SYS-DATA"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":14,
+         "CategoryId":"tr",
+         "Name":"Story Mode Complete (100%)",
+         "Region":"BLES01780",
+         "CreatedBy":"OM",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"Story mode completed (100%)",
+         "DownloadFiles":[
+            {
+               "Name":"Story Mode Complete (100%)",
+               "Region":"BLES01780",
+               "Url":"https://dl.dropbox.com/s/qjuymq0s0nmt8xx/Story%20Mode%20Complete%20%28100%25%29.zip?dl=0?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01780-SAVE-1/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01780-SAVE-1/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01780-SAVE-1/PARAM.SFO",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01780-SAVE-1/PROGRESS",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES01780-SAVE-1/SYS-DATA"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":15,
+         "CategoryId":"tr",
+         "Name":"Modded Starter Save (Salvage 9999, Arrow 40, etc.)",
+         "Region":"BLUS31036",
+         "CreatedBy":"X-GHOST-",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"A modded starter save for Tomb Raider.\n\nIt includes:\nSalvage 9999 *After point acquisition\nArrow 40 *After obtaining an arrow\nSkill Point(s)999\n\nThis is the US version\n\nEnjoy",
+         "DownloadFiles":[
+            {
+               "Name":"Modded Starter Save (Salvage 9999, Arrow 40, etc.)",
+               "Region":"BLUS31036",
+               "Url":"https://dl.dropbox.com/s/tmqz1yeixm2973r/Modded%20Starter%20Save.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS31036-SAVE-1/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS31036-SAVE-1/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS31036-SAVE-1/PARAM.SFO",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS31036-SAVE-1/PROGRESS",
+                  "/{USBDEV}/PS3/SAVEDATA/BLUS31036-SAVE-1/SYS-DATA"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":16,
+         "CategoryId":"re6",
+         "Name":"Ultimate Save (All Skills, Weapons, etc.)",
+         "Region":"BLES014650",
+         "CreatedBy":"X-GHOST-X",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"Max Skill Points (No skills buyed so you can get trophy.)\nAll Waepons (Trophy pops by using a weapon )\nAll levels of difficulty to rank s, including the new (Trophys pop after play a chapter)\nAll Emblems (Destroy one for Throphy)\nAll Medals Story (Trophys pop after play a chapter)\nAll Medals Merc Mode\nHidden Skill Training = inf Ammo and inf Stamina\nAll Costumes for Merc Mode\n500 Health Pills for all Characters\nand all bonus material",
+         "DownloadFiles":[
+            {
+               "Name":"Ultimate Save (All Skills, Weapons, etc.)",
+               "Region":"BLES014650",
+               "Url":"https://dl.dropbox.com/s/r4fs1o49dwx1vlw/Ultimate%20Save.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/PIC1.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/DATA0.DAT",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/PARAM.SFO"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":17,
+         "CategoryId":"re6",
+         "Name":"Complete Story Mode (100%)",
+         "Region":"BLES014650",
+         "CreatedBy":"Onaga",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"Story mode completed (100%)",
+         "DownloadFiles":[
+            {
+               "Name":"Complete Story Mode (100%)",
+               "Region":"BLES014650",
+               "Url":"https://dl.dropbox.com/s/71v29cykglcheri/Complete%20Save%20%28100%25%29.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/PIC1.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/DATA0.DAT",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/BLES014650/PARAM.SFO"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"PS3",
+         "Id":18,
+         "CategoryId":"tek5dr",
+         "Name":"All Unlocked & All Gallery Items Purchased",
+         "Region":"NPUB30009",
+         "CreatedBy":"chimuel2191",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"All Unlocked, All Gallery Items Purchased, Lili ranked as Destroyer with 265W and 40L",
+         "DownloadFiles":[
+            {
+               "Name":"All Unlocked & All Gallery Items Purchased",
+               "Region":"NPUB30009",
+               "Url":"https://dl.dropbox.com/s/17v4asur6ekj2g6/All%20Unlocked%2C%20All%20Gallery%20Items%20Purchased.zip?raw=true",
+               "InstallPaths":[
+                  "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/ICON0.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/PARAM.PFD",
+                  "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/PARAM.SFO",
+                  "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/PIC1.PNG",
+                  "/{USBDEV}/PS3/SAVEDATA/NPUB30009-SYSTEM/SYS-DATA"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"XBOX",
+         "Id":19,
+         "CategoryId":"dsp2",
+         "Name":"Credits 999.999 & All Items Unlocked",
+         "Region":"ALL",
+         "CreatedBy":"Unknown",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"Credits 999.999 & All Items Unlocked",
+         "DownloadFiles":[
+            {
+               "Name":"Credits 999.999 & All Items Unlocked",
+               "Region":"ALL",
+               "Url":"https://dl.dropbox.com/s/ahbyibkyez8l844/Credits%20999.999%20%26%20All%20Items%20Unlocked.zip?raw=true",
+               "InstallPaths":[
+                  "Hdd:\\ModioX\\Game Saves\\Dead Space 2\\ds_slot_02"
+               ]
+            }
+         ]
+      },
+      {
+         "Platform":"XBOX",
+         "Id":20,
+         "CategoryId":"dsp2",
+         "Name":"Completed Missions & Unlimited Money",
+         "Region":"ALL",
+         "CreatedBy":"Unknown",
+         "SubmittedBy":"ohhsodead",
+         "Version":"1.0",
+         "GameMode":"SP",
+         "Description":"Completed Missions & Unlimited Money",
+         "DownloadFiles":[
+            {
+               "Name":"Completed Missions & Unlimited Money",
+               "Region":"ALL",
+               "Url":"https://dl.dropbox.com/s/uedk1foeokainhm/Completed%20Missions%20%26%20Unlimited%20Money.zip?raw=true",
+               "InstallPaths":[
+                  "Hdd:\\ModioX\\Game Saves\\Dead Space 2\\complete_missions_unlimited_money"
+               ]
+            }
+         ]
+      }
+   ]
+}

@@ -1,0 +1,1351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ADVANCED" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="ALL_CATEGORIES" xml:space="preserve">
+    <value>All Categories</value>
+  </data>
+  <data name="ALL_GAMES" xml:space="preserve">
+    <value>All Games</value>
+  </data>
+  <data name="ANOTHER_MOD_INSTALLED" xml:space="preserve">
+    <value>{0} is installed to: {1}\nInstalling multiple mods for the same game can lead to problems such as conflicts.\n\nDo you want to uninstall the current files?</value>
+  </data>
+  <data name="ANY" xml:space="preserve">
+    <value>ANY</value>
+  </data>
+  <data name="ARCHIVE_DOWNLOADING" xml:space="preserve">
+    <value>Downloading archive...</value>
+  </data>
+  <data name="ARCHIVE_DOWNLOADING_EXTRACTING_ARCHIVE" xml:space="preserve">
+    <value>Downloading and extracting archive...</value>
+  </data>
+  <data name="ARCHIVE_DOWNLOAD_SUCCESS" xml:space="preserve">
+    <value>Successfully downloaded archive file.</value>
+  </data>
+  <data name="AUTOMATION" xml:space="preserve">
+    <value>Automation</value>
+  </data>
+  <data name="AUTO_DELETE_FILES_AFTER_INSTALLING" xml:space="preserve">
+    <value>Automatically delete local files after installing</value>
+  </data>
+  <data name="AUTO_DETECT_GAME_REGIONS" xml:space="preserve">
+    <value>Automatically detect game regions*</value>
+  </data>
+  <data name="AUTO_DETECT_GAME_TITLES" xml:space="preserve">
+    <value>Automatically detect game titles</value>
+  </data>
+  <data name="AUTO_LOAD_DIRECTORY_LISTINGS" xml:space="preserve">
+    <value>Automatically load directory listings</value>
+  </data>
+  <data name="BACKUP_FILES" xml:space="preserve">
+    <value>Backup Files</value>
+  </data>
+  <data name="BACKUP_FILE_MANAGER" xml:space="preserve">
+    <value>Backup Files Manager</value>
+  </data>
+  <data name="BACKUP_GAME_FILES" xml:space="preserve">
+    <value>Some game files will be overwritten. Do you want to backup the current game files? These files can be restored when uninstalling the mods.</value>
+  </data>
+  <data name="CANT_FIND_BACKUP_FILE" xml:space="preserve">
+    <value>There is a backup data for {0}.\n\nHowever, this file has either been moved or deleted.\n\nIf you've moved this file, go to Tools &gt; Game Backup Files and set the new local file path. If this file was deleted, remove the backup file data and backup the file again.\n\nThis file cannot be uninstalled to avoid missing game files, so it will be ignored.</value>
+  </data>
+  <data name="CANT_UNINSTALL_CFW_FILES" xml:space="preserve">
+    <value>You cannot uninstall files from the firmware folder. Any missing files could impact your console performance.</value>
+  </data>
+  <data name="CHEAT_APPLIED" xml:space="preserve">
+    <value>Successfully applied cheat to game.</value>
+  </data>
+  <data name="CHEAT_NOT_APPLIED" xml:space="preserve">
+    <value>Unable to apply cheat to game. Error: {0}</value>
+  </data>
+  <data name="CHEAT_NOT_SUPPORTED" xml:space="preserve">
+    <value>This cheat can't be applied because it contains opcode that hasn't been implemented yet.</value>
+  </data>
+  <data name="CHOOSE_ITEM" xml:space="preserve">
+    <value>Choose Item...</value>
+  </data>
+  <data name="CLEANING_INSTALL_FILES" xml:space="preserve">
+    <value>Cleaning the local installation files...</value>
+  </data>
+  <data name="CONFIRM" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="CONFIRM_DELETE" xml:space="preserve">
+    <value>Confirm Delete</value>
+  </data>
+  <data name="CONFIRM_DELETE_ALL_DOWNLOADS" xml:space="preserve">
+    <value>Do you really want to delete all of your downloads?</value>
+  </data>
+  <data name="CONFIRM_DELETE_ALL_TITLE" xml:space="preserve">
+    <value>Confirm Delete All</value>
+  </data>
+  <data name="CONFIRM_DELETE_ITEM" xml:space="preserve">
+    <value>Do you really want to delete the selected item?</value>
+  </data>
+  <data name="CONFIRM_DELETE_ITEM_DOWNLOADS" xml:space="preserve">
+    <value>Do you really want to delete the selected item from your downloads?</value>
+  </data>
+  <data name="CONNECTED" xml:space="preserve">
+    <value>Connected</value>
+  </data>
+  <data name="CONNECTED_NOTIFICATION" xml:space="preserve">
+    <value>You are now connected to Modio ★</value>
+  </data>
+  <data name="CONNECTING_TO_CONSOLE" xml:space="preserve">
+    <value>Connecting to: {0}</value>
+  </data>
+  <data name="CONNECTIONS" xml:space="preserve">
+    <value>Connections</value>
+  </data>
+  <data name="CONNECTION_FAILED" xml:space="preserve">
+    <value>Connection Failed</value>
+  </data>
+  <data name="CONNECT_TO_CONSOLE" xml:space="preserve">
+    <value>Connect to console...</value>
+  </data>
+  <data name="CONSOLE_MANAGER" xml:space="preserve">
+    <value>Console Manager</value>
+  </data>
+  <data name="CONSOLE_PROFILES" xml:space="preserve">
+    <value>Console Profiles</value>
+  </data>
+  <data name="CUSTOMIZATION" xml:space="preserve">
+    <value>Customization</value>
+  </data>
+  <data name="DATA_MISSING" xml:space="preserve">
+    <value>DATA MISSING</value>
+  </data>
+  <data name="DEFAULT_GAME_REGIONS" xml:space="preserve">
+    <value>Default Game Regions</value>
+  </data>
+  <data name="DELETE" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DELETED" xml:space="preserve">
+    <value>Deleted</value>
+  </data>
+  <data name="DELETE_ALL_ITEMS" xml:space="preserve">
+    <value>Delete All Items</value>
+  </data>
+  <data name="DELETE_ITEM" xml:space="preserve">
+    <value>Delete Item</value>
+  </data>
+  <data name="DELETE_ITEMS_SUCCESS" xml:space="preserve">
+    <value>Successfully deleted all items.</value>
+  </data>
+  <data name="DELETE_ITEM_ERROR" xml:space="preserve">
+    <value>Unable to delete item. Error: {0}</value>
+  </data>
+  <data name="DELETE_ITEM_SUCCESS" xml:space="preserve">
+    <value>Successfully deleted item.</value>
+  </data>
+  <data name="DIRECTORIES_MUST_BE_WRITABLE" xml:space="preserve">
+    <value>All directories must be writable.</value>
+  </data>
+  <data name="DIRECTORY_EMPTY" xml:space="preserve">
+    <value>Empty Directory</value>
+  </data>
+  <data name="DIRECTORY_NOT_EXIST" xml:space="preserve">
+    <value>This directory doesn't exist on your computer.</value>
+  </data>
+  <data name="DIRECTORY_NOT_FOUND" xml:space="preserve">
+    <value>Directory Not Found</value>
+  </data>
+  <data name="DISCONNECTING_FROM_CONSOLE" xml:space="preserve">
+    <value>Disconnecting from console.</value>
+  </data>
+  <data name="DISCONNECT_FROM_CONSOLE" xml:space="preserve">
+    <value>Disconnect from console</value>
+  </data>
+  <data name="DISCONNECT_LOWERCASE" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="DOWNLOADING_GAME_SAVE" xml:space="preserve">
+    <value>Downloading Game Save</value>
+  </data>
+  <data name="DOWNLOADING_MODS" xml:space="preserve">
+    <value>Downloading Mods</value>
+  </data>
+  <data name="DOWNLOADING_PACKAGE" xml:space="preserve">
+    <value>Downloading Package</value>
+  </data>
+  <data name="DOWNLOADS_FOLDER" xml:space="preserve">
+    <value>Downloads Folder</value>
+  </data>
+  <data name="DOWNLOADS_LOCATION" xml:space="preserve">
+    <value>Downloads Location</value>
+  </data>
+  <data name="DOWNLOAD_CANCELED" xml:space="preserve">
+    <value>Download canceled.</value>
+  </data>
+  <data name="DOWNLOAD_FOLDER_NOT_FOUND" xml:space="preserve">
+    <value>Download folder doesn't exist on your computer. You can change the download location in your settings.</value>
+  </data>
+  <data name="ENABLE_HARDWARE_ACCELERATION" xml:space="preserve">
+    <value>Enable Hardware Acceleration</value>
+  </data>
+  <data name="ERROR" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ERROR_OCCURRED" xml:space="preserve">
+    <value>An error occurred: {0}</value>
+  </data>
+  <data name="FAVORITES_ADD" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="FAVORITES_HIDE" xml:space="preserve">
+    <value>Hide Favorites</value>
+  </data>
+  <data name="FAVORITES_SHOW" xml:space="preserve">
+    <value>Show Favorites</value>
+  </data>
+  <data name="FETCHED_LISTING" xml:space="preserve">
+    <value>Successfully fetched directory listing.</value>
+  </data>
+  <data name="FETCHING_DRIVES" xml:space="preserve">
+    <value>Fetching drives</value>
+  </data>
+  <data name="FETCHING_LISTING" xml:space="preserve">
+    <value>Fetching directory listing of: {0}</value>
+  </data>
+  <data name="FETCHING_LISTING_ERROR" xml:space="preserve">
+    <value>Unable to fetch directory listing for path: {0} - Error: {1}</value>
+  </data>
+  <data name="FETCHING_ROOT_DIRECTORIES" xml:space="preserve">
+    <value>Fetching root directories</value>
+  </data>
+  <data name="FILE" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="FILES" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="FILES_INSTALL_ERROR" xml:space="preserve">
+    <value>Unable to install files. Error: {0}</value>
+  </data>
+  <data name="FILES_INSTALL_SUCCESS" xml:space="preserve">
+    <value>Successfully installed {0} files.</value>
+  </data>
+  <data name="FILES_NOT_INSTALLED_TO_CONNECTED_CONSOLE" xml:space="preserve">
+    <value>These files weren't installed to the connected console.</value>
+  </data>
+  <data name="FILES_REINSTALL" xml:space="preserve">
+    <value>{0} is already installed to: {1}\n\nDo you want to reinstall the files?</value>
+  </data>
+  <data name="FILES_UNINSTALLING" xml:space="preserve">
+    <value>Uninstalling files...</value>
+  </data>
+  <data name="FILES_UNINSTALL_SUCCESS" xml:space="preserve">
+    <value>Successfully uninstalled {0} files.</value>
+  </data>
+  <data name="FILE_BACKUP_CREATED" xml:space="preserve">
+    <value>Successfully created backup file.</value>
+  </data>
+  <data name="FILE_BACKUP_CREATING" xml:space="preserve">
+    <value>Creating backup of file: {0}</value>
+  </data>
+  <data name="FILE_DELETED" xml:space="preserve">
+    <value>Successfully deleted file: {0}</value>
+  </data>
+  <data name="FILE_DELETING" xml:space="preserve">
+    <value>Deleting file: {0}</value>
+  </data>
+  <data name="FILE_DOWNLOADED" xml:space="preserve">
+    <value>Successfully downloaded file: {0}</value>
+  </data>
+  <data name="FILE_DOWNLOADING" xml:space="preserve">
+    <value>Downloading file: {0}</value>
+  </data>
+  <data name="FILE_DOWNLOAD_ERROR" xml:space="preserve">
+    <value>Unable to download file. Error: {0}</value>
+  </data>
+  <data name="FILE_DOWNLOAD_LOCATION" xml:space="preserve">
+    <value>Downloading file: {0} to {1}</value>
+  </data>
+  <data name="FILE_DOWNLOAD_SUCCESS" xml:space="preserve">
+    <value>Successfully downloaded file.</value>
+  </data>
+  <data name="FILE_INSTALL_ERROR" xml:space="preserve">
+    <value>Unable to install file. Error: {0}</value>
+  </data>
+  <data name="FILE_INSTALL_LOCATION" xml:space="preserve">
+    <value>Installing file: {0} to {1}</value>
+  </data>
+  <data name="FILE_INSTALL_SUCCESS" xml:space="preserve">
+    <value>Successfully installed file(s).</value>
+  </data>
+  <data name="FILE_MISSING" xml:space="preserve">
+    <value>File Missing</value>
+  </data>
+  <data name="FILE_NAME" xml:space="preserve">
+    <value>File Name:</value>
+  </data>
+  <data name="FILE_NAME_DUPLICATE" xml:space="preserve">
+    <value>Duplicate Name</value>
+  </data>
+  <data name="FILE_NAME_EMPTY" xml:space="preserve">
+    <value>The file name can't be empty.</value>
+  </data>
+  <data name="FILE_NAME_EXISTS" xml:space="preserve">
+    <value>A file with this name already exists.</value>
+  </data>
+  <data name="FILE_NAME_EXISTS_IN_GAMES" xml:space="preserve">
+    <value>You already have a file with this name in your games.</value>
+  </data>
+  <data name="FILE_REINSTALL" xml:space="preserve">
+    <value>{0} is already installed.\n\nDo you want to reinstall the file?</value>
+  </data>
+  <data name="FILE_RENAME" xml:space="preserve">
+    <value>Rename File</value>
+  </data>
+  <data name="FILE_RENAMED" xml:space="preserve">
+    <value>Successfully renamed file to: {0}</value>
+  </data>
+  <data name="FILE_RENAME_ERROR" xml:space="preserve">
+    <value>Unable to rename file. Error: {0}</value>
+  </data>
+  <data name="FILE_RENAME_GAME" xml:space="preserve">
+    <value>Do you want to rename this file?\n\nNote: It will not affect being able to load the game.</value>
+  </data>
+  <data name="FILE_RENAMING" xml:space="preserve">
+    <value>Renaming file to: {0}</value>
+  </data>
+  <data name="FILE_UNINSTALL_ERROR" xml:space="preserve">
+    <value>Unable to uninstall files. Error: {0}</value>
+  </data>
+  <data name="FILE_UNINSTALL_LOCATION" xml:space="preserve">
+    <value>Uninstalling file: {0} from {1}</value>
+  </data>
+  <data name="FILE_UNINSTALL_SUCCESSS" xml:space="preserve">
+    <value>Successfully uninstalled file.</value>
+  </data>
+  <data name="FILE_UPLOADED" xml:space="preserve">
+    <value>Successfully uploaded file: {0}</value>
+  </data>
+  <data name="FILE_UPLOADING" xml:space="preserve">
+    <value>Uploading file to: {0}</value>
+  </data>
+  <data name="FILE_UPLOAD_NOT_FOUND" xml:space="preserve">
+    <value>This file doesn't exist on your computer.</value>
+  </data>
+  <data name="FOLDER_CREATE" xml:space="preserve">
+    <value>Add New Folder</value>
+  </data>
+  <data name="FOLDER_CREATED" xml:space="preserve">
+    <value>Successfully created folder: {0}</value>
+  </data>
+  <data name="FOLDER_CREATE_ERROR" xml:space="preserve">
+    <value>Unable to create new folder. Error: {0}</value>
+  </data>
+  <data name="FOLDER_CREATING" xml:space="preserve">
+    <value>Creating folder: {0}</value>
+  </data>
+  <data name="FOLDER_DELETED" xml:space="preserve">
+    <value>Successfully deleted folder: {0}</value>
+  </data>
+  <data name="FOLDER_DELETE_SUCCESS" xml:space="preserve">
+    <value>Successfully deleted folder.</value>
+  </data>
+  <data name="FOLDER_DELETING" xml:space="preserve">
+    <value>Deleting folder: {0}</value>
+  </data>
+  <data name="FOLDER_DOWNLOADED" xml:space="preserve">
+    <value>Successfully downloaded folder: {0}</value>
+  </data>
+  <data name="FOLDER_DOWNLOADING" xml:space="preserve">
+    <value>Downloading folder: {0}</value>
+  </data>
+  <data name="FOLDER_DOWNLOAD_ERROR" xml:space="preserve">
+    <value>Unable to download folder. Error: {0}</value>
+  </data>
+  <data name="FOLDER_NAME" xml:space="preserve">
+    <value>Folder Name:</value>
+  </data>
+  <data name="FOLDER_NAME_EXISTS" xml:space="preserve">
+    <value>A folder with this name already exists</value>
+  </data>
+  <data name="FOLDER_RENAME" xml:space="preserve">
+    <value>Rename Folder</value>
+  </data>
+  <data name="FOLDER_RENAMED" xml:space="preserve">
+    <value>Successfully renamed folder: {0}</value>
+  </data>
+  <data name="FOLDER_RENAME_ERROR" xml:space="preserve">
+    <value>Unable to rename folder. Error: {0}</value>
+  </data>
+  <data name="FOLDER_RENAMING" xml:space="preserve">
+    <value>Renaming folder: {0}</value>
+  </data>
+  <data name="FOLDER_UPLOADED" xml:space="preserve">
+    <value>Successfully uploaded folder: {0}</value>
+  </data>
+  <data name="FOLDER_UPLOADING" xml:space="preserve">
+    <value>Uploading folder to: {0}</value>
+  </data>
+  <data name="FORBIDDEN" xml:space="preserve">
+    <value>Forbidden</value>
+  </data>
+  <data name="FOUND_GAME_REGION" xml:space="preserve">
+    <value>Found game region: {0}</value>
+  </data>
+  <data name="FOUND_PREVIOUS_INSTALL" xml:space="preserve">
+    <value>Found previous installation details.</value>
+  </data>
+  <data name="FOUND_USB_DEVICE" xml:space="preserve">
+    <value>Found USB device: {0}</value>
+  </data>
+  <data name="FOUND_USER_PROFILE" xml:space="preserve">
+    <value>Found user profile: {0}</value>
+  </data>
+  <data name="GAME_LAUNCHER" xml:space="preserve">
+    <value>Game Launcher</value>
+  </data>
+  <data name="GAME_REGIONS" xml:space="preserve">
+    <value>Default Game Regions</value>
+  </data>
+  <data name="GAME_SAVES" xml:space="preserve">
+    <value>GAME SAVES</value>
+  </data>
+  <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
+    <value>Game Save Resigner</value>
+  </data>
+  <data name="GAME_UPDATE_FINDER" xml:space="preserve">
+    <value>Game Update Finder</value>
+  </data>
+  <data name="GETTING_DOWNLOAD_FILES" xml:space="preserve">
+    <value>Getting archive file download link...</value>
+  </data>
+  <data name="GETTING_GAME_REGION" xml:space="preserve">
+    <value>Getting game region...</value>
+  </data>
+  <data name="GETTING_PREVIOUS_INSTALL" xml:space="preserve">
+    <value>Getting previous install details...</value>
+  </data>
+  <data name="GETTING_USB_DEVICE" xml:space="preserve">
+    <value>Getting USB device...</value>
+  </data>
+  <data name="GETTING_USER_PROFILE" xml:space="preserve">
+    <value>Getting user profile...</value>
+  </data>
+  <data name="HELP" xml:space="preserve">
+    <value>HELP</value>
+  </data>
+  <data name="HELP_TRANSLATE" xml:space="preserve">
+    <value>Help translate Modio on Crowdin</value>
+  </data>
+  <data name="HOW_TO_ACTIVATE_DEMO" xml:space="preserve">
+    <value>Activating a C00/Demo package is very easy and doesn't require a rap file. It can be done using ReActPSN or PSNPatch.\n\nReActPSN : Run the homebrew while pressing and holding circle on your controller.
+\nPSNPatch : Run PSNPatch and press R1. It should displays a list of the games that have been unlocked.</value>
+  </data>
+  <data name="HOW_TO_ACTIVATE_DEMO_QUESTION" xml:space="preserve">
+    <value>How do I activate a C00/Demo that has a free license?</value>
+  </data>
+  <data name="HOW_TO_ACTIVATE_RAP" xml:space="preserve">
+    <value>Activating a package using a rap file requires few steps. It can be done with ReActPSN or PSNPatch. However, I will only describe how to do it with ReActPSN.\n\n1. Format a USB key in FAT32.\n2. Create the folder 'exdata' at the root of the USB key.\n3. Move the corresponding RAP file for the games you want to activate in the exdata folder.\nWarning: Do not rename rap files ! You need to leave their original ugly name.\n4. Connect the USB key in the right USB port of the PS3 (the closest to the bluray drive).\n5. Delete the ReActPSN user on your PS3 if it exists.\n6. Create the account 'aa' (without quotes) and open the account.\n7. Run ReActPSN and the screen should go black, then you should hear beeps and then the PS3 should reboot.\n8. The user 'aa' should be gone now and the account 'ReActPSN' automatically created.\n9. You're done!</value>
+  </data>
+  <data name="HOW_TO_ACTIVATE_RAP_QUESTION" xml:space="preserve">
+    <value>How do I activate a PSN package with a RAP file?</value>
+  </data>
+  <data name="ICON" xml:space="preserve">
+    <value>Icon</value>
+  </data>
+  <data name="IDLE" xml:space="preserve">
+    <value>Idle</value>
+  </data>
+  <data name="IMPORTANT_MESSAGE" xml:space="preserve">
+    <value>Important Message</value>
+  </data>
+  <data name="INITIALIZED" xml:space="preserve">
+    <value>Initialized</value>
+  </data>
+  <data name="INITIALIZING_APP_DB" xml:space="preserve">
+    <value>Initializing the application database</value>
+  </data>
+  <data name="INSERT_USB_DEVICE" xml:space="preserve">
+    <value>Insert a USB device to your computer first and then install the files again.</value>
+  </data>
+  <data name="INSERT_USB_DEVICE_TO_CONSOLE" xml:space="preserve">
+    <value>One or more files needs to be installed to a USB device which is connected to your console.\nInsert a USB device to your console and click 'Yes' to continue. Otherwise click 'No' to ignore these files.</value>
+  </data>
+  <data name="INSTALLED" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="INSTALLING" xml:space="preserve">
+    <value>Installing</value>
+  </data>
+  <data name="INSTALLING_BACKUP_FILE_LOCATION" xml:space="preserve">
+    <value>Installing backup file: {0} to {1}</value>
+  </data>
+  <data name="INSTALLING_FILE" xml:space="preserve">
+    <value>Installing file: {0}</value>
+  </data>
+  <data name="INSTALLING_GAME_SAVE" xml:space="preserve">
+    <value>Installing Game Save</value>
+  </data>
+  <data name="INSTALLING_MODS" xml:space="preserve">
+    <value>Installing Mods</value>
+  </data>
+  <data name="INSTALLING_PACKAGE_FILE" xml:space="preserve">
+    <value>Installing Package</value>
+  </data>
+  <data name="INSTALL_CANCELED" xml:space="preserve">
+    <value>Installation canceled.</value>
+  </data>
+  <data name="INSTALL_FILE" xml:space="preserve">
+    <value>Install File</value>
+  </data>
+  <data name="INSTALL_FILES" xml:space="preserve">
+    <value>Install Files</value>
+  </data>
+  <data name="INSTALL_FILES_TO_USB_DEVICE" xml:space="preserve">
+    <value>Install Files to USB</value>
+  </data>
+  <data name="INSTALL_GAME_SAVES_TO_LOCAL_USB" xml:space="preserve">
+    <value>Install Game Saves to local USB device</value>
+  </data>
+  <data name="INSTALL_HOMEBREW_TO_LOCAL_USB" xml:space="preserve">
+    <value>Install Homebrew to local USB device</value>
+  </data>
+  <data name="INSTALL_MODS_TO_LOCAL_USB" xml:space="preserve">
+    <value>Install Game Mods/Plugins to local USB device</value>
+  </data>
+  <data name="INSTALL_PACKAGES_TO_LOCAL_USB" xml:space="preserve">
+    <value>Install Packages to local USB device</value>
+  </data>
+  <data name="INSTALL_RESOURCES_TO_LOCAL_USB" xml:space="preserve">
+    <value>Install Resources to local USB device</value>
+  </data>
+  <data name="LABEL_ADDRESS_NAME" xml:space="preserve">
+    <value>IP Address/Name</value>
+  </data>
+  <data name="LABEL_ADD_TO_FAVORITES" xml:space="preserve">
+    <value>Add to Favorites</value>
+  </data>
+  <data name="LABEL_ADD_TO_GAMES" xml:space="preserve">
+    <value>Add to Games</value>
+  </data>
+  <data name="LABEL_ALL" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="LABEL_ALL_REGIONS" xml:space="preserve">
+    <value>All Regions</value>
+  </data>
+  <data name="LABEL_APPLY" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="LABEL_APPLY_CHEAT" xml:space="preserve">
+    <value>Apply Cheat</value>
+  </data>
+  <data name="LABEL_ASCENDING" xml:space="preserve">
+    <value>Ascending</value>
+  </data>
+  <data name="LABEL_BACKUP_FILE" xml:space="preserve">
+    <value>Backup File</value>
+  </data>
+  <data name="LABEL_BASE_DIRECTORY" xml:space="preserve">
+    <value>Base Directory</value>
+  </data>
+  <data name="LABEL_BYTES" xml:space="preserve">
+    <value>Bytes</value>
+  </data>
+  <data name="LABEL_CANCEL" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="LABEL_CATEGORY" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="LABEL_CHANGE" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="LABEL_CHEATS" xml:space="preserve">
+    <value>Cheats</value>
+  </data>
+  <data name="LABEL_CLOSE" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="LABEL_CONNECTION_DETAILS" xml:space="preserve">
+    <value>Connection Details</value>
+  </data>
+  <data name="LABEL_CONNECTION_NAME" xml:space="preserve">
+    <value>Connection Name</value>
+  </data>
+  <data name="LABEL_CONTENT_ID" xml:space="preserve">
+    <value>Content ID</value>
+  </data>
+  <data name="LABEL_CONTRIBUTORS" xml:space="preserve">
+    <value>Contributors</value>
+  </data>
+  <data name="LABEL_COPIED" xml:space="preserve">
+    <value>Copied</value>
+  </data>
+  <data name="LABEL_CREATED_BY" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="LABEL_CREATED_ON" xml:space="preserve">
+    <value>Created On</value>
+  </data>
+  <data name="LABEL_CREATOR" xml:space="preserve">
+    <value>Creator</value>
+  </data>
+  <data name="LABEL_DEFAULT" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="LABEL_DEFAULT_CONSOLE" xml:space="preserve">
+    <value>Default Console</value>
+  </data>
+  <data name="LABEL_DELETE" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="LABEL_DELETE_ALL" xml:space="preserve">
+    <value>Delete All</value>
+  </data>
+  <data name="LABEL_DESCENDING" xml:space="preserve">
+    <value>Descending</value>
+  </data>
+  <data name="LABEL_DESCRIPTION" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="LABEL_DIRECTORIES" xml:space="preserve">
+    <value>Directories</value>
+  </data>
+  <data name="LABEL_DIRECTORY" xml:space="preserve">
+    <value>Directory</value>
+  </data>
+  <data name="LABEL_DOWNLOAD" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="LABEL_DOWNLOADED" xml:space="preserve">
+    <value>Downloaded</value>
+  </data>
+  <data name="LABEL_DOWNLOADED_ON" xml:space="preserve">
+    <value>Downloaded On</value>
+  </data>
+  <data name="LABEL_DOWNLOADING" xml:space="preserve">
+    <value>Downloading</value>
+  </data>
+  <data name="LABEL_DOWNLOADS" xml:space="preserve">
+    <value>Downloads</value>
+  </data>
+  <data name="LABEL_DOWNLOAD_FILE" xml:space="preserve">
+    <value>Download File</value>
+  </data>
+  <data name="LABEL_DOWNLOAD_FILES" xml:space="preserve">
+    <value>Download Files</value>
+  </data>
+  <data name="LABEL_EDIT" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="LABEL_FAVORITE" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="LABEL_FILE" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="LABEL_FILES" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="LABEL_FILE_NAME" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="LABEL_FILE_SIZE" xml:space="preserve">
+    <value>File Size</value>
+  </data>
+  <data name="LABEL_GAME" xml:space="preserve">
+    <value>Game</value>
+  </data>
+  <data name="LABEL_GAME_CHEATS" xml:space="preserve">
+    <value>Game Cheats</value>
+  </data>
+  <data name="LABEL_GAME_MODE" xml:space="preserve">
+    <value>Game Mode</value>
+  </data>
+  <data name="LABEL_GAME_MODS" xml:space="preserve">
+    <value>Game Mods</value>
+  </data>
+  <data name="LABEL_GAME_SAVES" xml:space="preserve">
+    <value>Game Saves</value>
+  </data>
+  <data name="LABEL_GAME_TITLE" xml:space="preserve">
+    <value>Game Title</value>
+  </data>
+  <data name="LABEL_HIDE_FAVORITES" xml:space="preserve">
+    <value>Hide Favorites</value>
+  </data>
+  <data name="LABEL_HOMEBREW" xml:space="preserve">
+    <value>Homebrew</value>
+  </data>
+  <data name="LABEL_IMAGE" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="LABEL_INSTALL" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="LABEL_INSTALLATION_FILES" xml:space="preserve">
+    <value>Installation Files</value>
+  </data>
+  <data name="LABEL_INSTALLED" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="LABEL_INSTALLED_ON" xml:space="preserve">
+    <value>Installed On</value>
+  </data>
+  <data name="LABEL_INSTALL_FILE" xml:space="preserve">
+    <value>Install File</value>
+  </data>
+  <data name="LABEL_IP_ADDRESS" xml:space="preserve">
+    <value>IP Address</value>
+  </data>
+  <data name="LABEL_LAST_MODIFIED" xml:space="preserve">
+    <value>Modified On</value>
+  </data>
+  <data name="LABEL_LAST_UPDATED" xml:space="preserve">
+    <value>Last Updated</value>
+  </data>
+  <data name="LABEL_LIBRARIES" xml:space="preserve">
+    <value>Libraries</value>
+  </data>
+  <data name="LABEL_LOGIN" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LABEL_LOGIN_DETAILS" xml:space="preserve">
+    <value>Login Details</value>
+  </data>
+  <data name="LABEL_MODIFIED_DATE" xml:space="preserve">
+    <value>Modified Date</value>
+  </data>
+  <data name="LABEL_MOD_TYPE" xml:space="preserve">
+    <value>Mod Type</value>
+  </data>
+  <data name="LABEL_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="LABEL_NEW_FOLDER" xml:space="preserve">
+    <value>New Folder</value>
+  </data>
+  <data name="LABEL_NEXT" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="LABEL_NOT_INSTALLED" xml:space="preserve">
+    <value>Not Installed</value>
+  </data>
+  <data name="LABEL_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="LABEL_OPEN_EXPLORER" xml:space="preserve">
+    <value>Open Explorer</value>
+  </data>
+  <data name="LABEL_OPEN_PATH" xml:space="preserve">
+    <value>Open Path</value>
+  </data>
+  <data name="LABEL_PACKAGES" xml:space="preserve">
+    <value>Packages</value>
+  </data>
+  <data name="LABEL_PASSWORD" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="LABEL_PLATFORM" xml:space="preserve">
+    <value>Platform</value>
+  </data>
+  <data name="LABEL_PLATFORM_TYPE" xml:space="preserve">
+    <value>Platform Type</value>
+  </data>
+  <data name="LABEL_PLUGINS" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="LABEL_PREVIOUS" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="LABEL_REFRESH" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="LABEL_REGION" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="LABEL_REMOVE_FROM_FAVORITES" xml:space="preserve">
+    <value>Remove from Favorites</value>
+  </data>
+  <data name="LABEL_RENAME" xml:space="preserve">
+    <value>Rename</value>
+  </data>
+  <data name="LABEL_REPORT" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="LABEL_REPORT_ISSUE" xml:space="preserve">
+    <value>Report Issue</value>
+  </data>
+  <data name="LABEL_RESOURCES" xml:space="preserve">
+    <value>Resources</value>
+  </data>
+  <data name="LABEL_RESTORE_FILE" xml:space="preserve">
+    <value>Restore File</value>
+  </data>
+  <data name="LABEL_SHOW_FAVORITES" xml:space="preserve">
+    <value>Show Favorites</value>
+  </data>
+  <data name="LABEL_SIZE" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="LABEL_SORT_BY" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="LABEL_SORT_OPTIONS" xml:space="preserve">
+    <value>Sort Options</value>
+  </data>
+  <data name="LABEL_SORT_ORDER" xml:space="preserve">
+    <value>Sort Order</value>
+  </data>
+  <data name="LABEL_STATUS" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="LABEL_SUBMITTED_BY" xml:space="preserve">
+    <value>Submitted By</value>
+  </data>
+  <data name="LABEL_SYSTEM_TYPE" xml:space="preserve">
+    <value>System Type</value>
+  </data>
+  <data name="LABEL_TITLE_ID" xml:space="preserve">
+    <value>Title ID</value>
+  </data>
+  <data name="LABEL_TOTAL_FILES" xml:space="preserve">
+    <value>Total Files</value>
+  </data>
+  <data name="LABEL_TRANSLATORS" xml:space="preserve">
+    <value>Translators</value>
+  </data>
+  <data name="LABEL_TYPE" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="LABEL_UNFAVORITE" xml:space="preserve">
+    <value>Unfavorite</value>
+  </data>
+  <data name="LABEL_UPLOAD" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="LABEL_USERNAME" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="LABEL_USE_DEFAULT" xml:space="preserve">
+    <value>Use Default</value>
+  </data>
+  <data name="LABEL_VERSION" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="LANGUAGE" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LANGUAGE_HELP" xml:space="preserve">
+    <value>Sorry, but this language is currently not supported yet. If you would like to help us add this language, please join our Discord Server and let us know!</value>
+  </data>
+  <data name="LANGUAGE_NOT_SUPPORTED" xml:space="preserve">
+    <value>Language Not Supported</value>
+  </data>
+  <data name="LAST_UPDATED" xml:space="preserve">
+    <value>Last Updated</value>
+  </data>
+  <data name="LAUNCH_FILE_EDITOR" xml:space="preserve">
+    <value>Launch File Editor</value>
+  </data>
+  <data name="LAUNCH_FILE_PATH" xml:space="preserve">
+    <value>launch.ini File Path</value>
+  </data>
+  <data name="MESSAGE" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="MISSING" xml:space="preserve">
+    <value>MISSING</value>
+  </data>
+  <data name="MOD_NOT_INSTALLED" xml:space="preserve">
+    <value>{0} is not installed on your console.\n\nDo you want to try uninstalling the file anyway?</value>
+  </data>
+  <data name="MOTHERBOARD" xml:space="preserve">
+    <value>Motherboard</value>
+  </data>
+  <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
+    <value>Make sure Neighborhood is installed on your computer</value>
+  </data>
+  <data name="NOTICE_INSTALL_REBUG_FILES" xml:space="preserve">
+    <value>These files are being installed to the firmware folder (dev_rebug) which is for REBUG Custom Firmware only. Please read everything below before proceeding.\n\n- It's recommended to first create a backup of the entire folder before installing any files.\n- Your console must be running Rebug custom firmware.\n- REBUG TOOLBOX must be open during installation\n- Any missing or corrupt files in this folder can impact your console performance.\n- If you have issues after rebooting console, enter recovery mode and reinstall the custom firmware.\n\nOnly continue at your own risk and only if you know what you're doing.\n\nDo you want to continue?</value>
+  </data>
+  <data name="NOTIFY_ICON" xml:space="preserve">
+    <value>Notify Icon</value>
+  </data>
+  <data name="NOTIFY_MESSAGE" xml:space="preserve">
+    <value>Notify Message</value>
+  </data>
+  <data name="NOT_CONNECTED" xml:space="preserve">
+    <value>Not Connected</value>
+  </data>
+  <data name="NOT_SUPPORTED_GAME_REGION" xml:space="preserve">
+    <value>Game region isn't supported.</value>
+  </data>
+  <data name="NO_ANNOUNCEMENTS" xml:space="preserve">
+    <value>NO ANNOUNCEMENTS</value>
+  </data>
+  <data name="NO_BACKUP_FILE" xml:space="preserve">
+    <value>No Backup File</value>
+  </data>
+  <data name="NO_BACKUP_FILE_FOUND" xml:space="preserve">
+    <value>You don't have a backup for the: {0} file. This file will be ignored to prevent issues with missing game files. You must install the game update to restore the original file.</value>
+  </data>
+  <data name="NO_CONSOLE_CONNECTED" xml:space="preserve">
+    <value>No Console Connected</value>
+  </data>
+  <data name="NO_CONSOLE_PROFILE" xml:space="preserve">
+    <value>No Console Profile</value>
+  </data>
+  <data name="NO_CONSOLE_PROFILES" xml:space="preserve">
+    <value>NO CONSOLE PROFILES</value>
+  </data>
+  <data name="NO_DOWNLOAD_FILES_SELECTED" xml:space="preserve">
+    <value>No archive file download selected.</value>
+  </data>
+  <data name="NO_GAME_REGION_FOLDER_FOUND" xml:space="preserve">
+    <value>Unable to find the game update folder for this region.\nInstall the correct mods for this game or choose a different game region.</value>
+  </data>
+  <data name="NO_GAME_REGION_FOUND" xml:space="preserve">
+    <value>Game region cannot be found on console.</value>
+  </data>
+  <data name="NO_GAME_REGION_SELECTED" xml:space="preserve">
+    <value>No game region selected.</value>
+  </data>
+  <data name="NO_INPUT" xml:space="preserve">
+    <value>No Input</value>
+  </data>
+  <data name="NO_INTERNET_CONNECTION" xml:space="preserve">
+    <value>You must be connected to the Internet to use this application.</value>
+  </data>
+  <data name="NO_INTERNET_CONNECTION_TITLE" xml:space="preserve">
+    <value>No Internet Detected</value>
+  </data>
+  <data name="NO_LISTS" xml:space="preserve">
+    <value>You Have No Lists</value>
+  </data>
+  <data name="NO_MORE_DETAILS" xml:space="preserve">
+    <value>No other details can be found for this yet.</value>
+  </data>
+  <data name="NO_NEWS_IS_GOOD_NEWS" xml:space="preserve">
+    <value>No news is good news!</value>
+  </data>
+  <data name="NO_PREVIOUS_INSTALL_FOUND" xml:space="preserve">
+    <value>No previous installation found.</value>
+  </data>
+  <data name="NO_USB_DEVICES" xml:space="preserve">
+    <value>No USB Devices</value>
+  </data>
+  <data name="NO_USB_DEVICES_CONNECTED" xml:space="preserve">
+    <value>No USB devices connected.</value>
+  </data>
+  <data name="NO_USB_DEVICE_FOUND" xml:space="preserve">
+    <value>No USB device found.</value>
+  </data>
+  <data name="NO_USB_DEVICE_SELECTED" xml:space="preserve">
+    <value>No USB device selected.</value>
+  </data>
+  <data name="NO_USER_PROFILE_SELECTED" xml:space="preserve">
+    <value>No user profile selected.</value>
+  </data>
+  <data name="OPEN_FILE" xml:space="preserve">
+    <value>Open File</value>
+  </data>
+  <data name="OPEN_FOLDER" xml:space="preserve">
+    <value>Open Folder</value>
+  </data>
+  <data name="OVERWRITE_MODS" xml:space="preserve">
+    <value>Overwrite Mods</value>
+  </data>
+  <data name="PACKAGES_INSTALL_FILE_PATH" xml:space="preserve">
+    <value>Packages Install File Path</value>
+  </data>
+  <data name="PACKAGE_FILES" xml:space="preserve">
+    <value>Package Files</value>
+  </data>
+  <data name="PACKAGE_FILE_MANAGER" xml:space="preserve">
+    <value>Package Files Manager</value>
+  </data>
+  <data name="PREPARING_DOWNLOAD" xml:space="preserve">
+    <value>Preparing to download archive...</value>
+  </data>
+  <data name="PREPARING_INSTALL" xml:space="preserve">
+    <value>Preparing to install files...</value>
+  </data>
+  <data name="PREPARING_UNINSTALL" xml:space="preserve">
+    <value>Preparing to uninstall files...</value>
+  </data>
+  <data name="PROFILE_ADD_INSTRUCTION" xml:space="preserve">
+    <value>Click 'Add New Profile' to create one</value>
+  </data>
+  <data name="PROFILE_ADD_NEW" xml:space="preserve">
+    <value>Add New Profile</value>
+  </data>
+  <data name="PROFILE_DELETE" xml:space="preserve">
+    <value>Delete Profile</value>
+  </data>
+  <data name="PROFILE_EDIT" xml:space="preserve">
+    <value>Edit Profile</value>
+  </data>
+  <data name="READY_TO_CONNECT" xml:space="preserve">
+    <value>Ready to connect...</value>
+  </data>
+  <data name="READY_TO_START_GAME" xml:space="preserve">
+    <value>Ready to start game.</value>
+  </data>
+  <data name="REDIRECTING" xml:space="preserve">
+    <value>Redirecting...</value>
+  </data>
+  <data name="REDIRECT_TO_GITHUB_ISSUES" xml:space="preserve">
+    <value>You will now be redirected to our GitHub Issues page and all details will be automatically filled for you. Please provide information about the issue to help us fix your problem.\nClick the 'Submit' button to open a new issue which can help us fix any problems.</value>
+  </data>
+  <data name="REFER_TO_BASE_DIRECTORY" xml:space="preserve">
+    <value>Use %BASE_DIR% to refer to the Base Directory.</value>
+  </data>
+  <data name="REINSTALL_FILE" xml:space="preserve">
+    <value>Reinstall File</value>
+  </data>
+  <data name="REMEMBER_CONSOLE_DIRECTORY_PATH" xml:space="preserve">
+    <value>Remember last console directory path</value>
+  </data>
+  <data name="REMEMBER_GAME_REGIONS_WHEN_INSTALLING" xml:space="preserve">
+    <value>Remember game regions when installing</value>
+  </data>
+  <data name="REMEMBER_LOCAL_DIRECTORY_PATH" xml:space="preserve">
+    <value>Remember last local directory path</value>
+  </data>
+  <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
+    <value>Files have been installed to a USB device connected to your console. You can either uninstall them now or manually delete them.\n\nIf you would like to uninstall the files now, connect the same USB device you installed the mods to into the same port of your console and click 'Yes' to continue.\nIf you don't want to uninstall the files, click 'No' and all of these files will be ignored.</value>
+  </data>
+  <data name="RESTART_REQUIRED" xml:space="preserve">
+    <value>Restart Required</value>
+  </data>
+  <data name="RESTART_TAKE_AFFECT" xml:space="preserve">
+    <value>You must restart the application for this change to take effect. Do you want to restart now?</value>
+  </data>
+  <data name="RICH_PRESENCE" xml:space="preserve">
+    <value>Rich Presence</value>
+  </data>
+  <data name="SCANNING_XBOX_CONSOLES" xml:space="preserve">
+    <value>Scanning for Xbox consoles...</value>
+  </data>
+  <data name="SCANNING_XBOX_FINISHED" xml:space="preserve">
+    <value>Finished scanning for Xbox consoles.</value>
+  </data>
+  <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
+    <value>This mod type (Script) can't be installed on the PS3 because it needs the user manual addition.</value>
+  </data>
+  <data name="SETUP_HOWTO_GUIDE" xml:space="preserve">
+    <value>How-To Guides for Modio</value>
+  </data>
+  <data name="SETUP_PROFILES_EDIT" xml:space="preserve">
+    <value>Edit Console Profiles</value>
+  </data>
+  <data name="SETUP_PROFILE_ADD" xml:space="preserve">
+    <value>Add Console Profile</value>
+  </data>
+  <data name="SETUP_SCAN_XBOX_CONSOLES" xml:space="preserve">
+    <value>Scan For Xbox Consoles</value>
+  </data>
+  <data name="SETUP_SET_DOWNLOADS_LOCATION" xml:space="preserve">
+    <value>Set Downloads Location</value>
+  </data>
+  <data name="SETUP_STARTUP_LIBRARY" xml:space="preserve">
+    <value>Startup Library</value>
+  </data>
+  <data name="SHOW_CURRENT_GAME_PLAYING" xml:space="preserve">
+    <value>Show current game playing</value>
+  </data>
+  <data name="SHOW_GAMES_IN_EXTERNAL_DEVICES" xml:space="preserve">
+    <value>Show games list from external device</value>
+  </data>
+  <data name="STARTING_INSTALL" xml:space="preserve">
+    <value>Starting install...</value>
+  </data>
+  <data name="SUCCESS" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="SUCCESS_CONNECTED" xml:space="preserve">
+    <value>Successfully connected to console.</value>
+  </data>
+  <data name="SUCCESS_DISCONNECTED" xml:space="preserve">
+    <value>Successfully disconnected from console.</value>
+  </data>
+  <data name="SUCCESS_LOADED_DB" xml:space="preserve">
+    <value>Successfully loaded the database - Finalizing application data...</value>
+  </data>
+  <data name="SUCCESS_ROOT_DIRECTORIES" xml:space="preserve">
+    <value>Successfully fetched root directories</value>
+  </data>
+  <data name="SYSTEM_TEMPERATURES" xml:space="preserve">
+    <value>System Temperatures</value>
+  </data>
+  <data name="TITLE_ANNOUNCEMENTS" xml:space="preserve">
+    <value>ANNOUNCEMENTS</value>
+  </data>
+  <data name="TITLE_CHANGE_LOG" xml:space="preserve">
+    <value>CHANGE LOG</value>
+  </data>
+  <data name="TITLE_CONNECT" xml:space="preserve">
+    <value>CONNECT</value>
+  </data>
+  <data name="TITLE_CONTRIBUTORS" xml:space="preserve">
+    <value>CONTRIBUTORS</value>
+  </data>
+  <data name="TITLE_CREDITS" xml:space="preserve">
+    <value>CREDITS</value>
+  </data>
+  <data name="TITLE_DASHBOARD" xml:space="preserve">
+    <value>DASHBOARD</value>
+  </data>
+  <data name="TITLE_DOWNLOADS" xml:space="preserve">
+    <value>DOWNLOADS</value>
+  </data>
+  <data name="TITLE_FILE_MANAGER" xml:space="preserve">
+    <value>FILE MANAGER</value>
+  </data>
+  <data name="TITLE_GAMES" xml:space="preserve">
+    <value>GAMES</value>
+  </data>
+  <data name="TITLE_GAME_CHEATS" xml:space="preserve">
+    <value>GAME CHEATS</value>
+  </data>
+  <data name="TITLE_GAME_MODS" xml:space="preserve">
+    <value>GAME MODS</value>
+  </data>
+  <data name="TITLE_GAME_SAVES" xml:space="preserve">
+    <value>GAME SAVES</value>
+  </data>
+  <data name="TITLE_GET_STARTED" xml:space="preserve">
+    <value>GET STARTED</value>
+  </data>
+  <data name="TITLE_HELP" xml:space="preserve">
+    <value>HELP</value>
+  </data>
+  <data name="TITLE_HOMEBREW" xml:space="preserve">
+    <value>HOMEBREW</value>
+  </data>
+  <data name="TITLE_INSTALLED_MODS" xml:space="preserve">
+    <value>INSTALLED MODS</value>
+  </data>
+  <data name="TITLE_INTERFACE" xml:space="preserve">
+    <value>INTERFACE</value>
+  </data>
+  <data name="TITLE_LATEST_NEWS" xml:space="preserve">
+    <value>LATEST NEWS</value>
+  </data>
+  <data name="TITLE_OPTIONS" xml:space="preserve">
+    <value>OPTIONS</value>
+  </data>
+  <data name="TITLE_PACKAGES" xml:space="preserve">
+    <value>PACKAGES</value>
+  </data>
+  <data name="TITLE_PLUGINS" xml:space="preserve">
+    <value>PLUGINS</value>
+  </data>
+  <data name="TITLE_RESOURCES" xml:space="preserve">
+    <value>RESOURCES</value>
+  </data>
+  <data name="TITLE_SETTINGS" xml:space="preserve">
+    <value>SETTINGS</value>
+  </data>
+  <data name="TITLE_SPECIAL_THANKS" xml:space="preserve">
+    <value>SPECIAL THANKS</value>
+  </data>
+  <data name="TITLE_STATISTICS" xml:space="preserve">
+    <value>STATISTICS</value>
+  </data>
+  <data name="TITLE_SUBMIT_MODS" xml:space="preserve">
+    <value>SUBMIT MODS</value>
+  </data>
+  <data name="TITLE_TOOLS" xml:space="preserve">
+    <value>TOOLS</value>
+  </data>
+  <data name="UNABLE_LOAD_DATABASE" xml:space="preserve">
+    <value>Unable to load database.</value>
+  </data>
+  <data name="UNABLE_TO_CONNECT" xml:space="preserve">
+    <value>Unable to connect to console.</value>
+  </data>
+  <data name="UNABLE_TO_OPEN_EXPLORER" xml:space="preserve">
+    <value>Unable to open File Explorer for directory: {0} - Error {1}</value>
+  </data>
+  <data name="UNFAVORITE" xml:space="preserve">
+    <value>Unfavorite</value>
+  </data>
+  <data name="UNINSTALLED" xml:space="preserve">
+    <value>Uninstalled</value>
+  </data>
+  <data name="UNINSTALLING" xml:space="preserve">
+    <value>Uninstalling</value>
+  </data>
+  <data name="UNINSTALLING_MODS" xml:space="preserve">
+    <value>Uninstalling Mods</value>
+  </data>
+  <data name="UNINSTALLING_PACKAGE" xml:space="preserve">
+    <value>Uninstalling Package</value>
+  </data>
+  <data name="UNINSTALL_ALL_ITEMS" xml:space="preserve">
+    <value>Uninstall All Items</value>
+  </data>
+  <data name="UNINSTALL_CANCELED" xml:space="preserve">
+    <value>Uninstallation canceled.</value>
+  </data>
+  <data name="UNINSTALL_FILE" xml:space="preserve">
+    <value>Uninstall File</value>
+  </data>
+  <data name="UNINSTALL_FILES" xml:space="preserve">
+    <value>Uninstall Files</value>
+  </data>
+  <data name="UNINSTALL_ITEM" xml:space="preserve">
+    <value>Uninstall Item</value>
+  </data>
+  <data name="UNINSTALL_USB_FILES" xml:space="preserve">
+    <value>Uninstall USB Files</value>
+  </data>
+  <data name="UPLOAD_ERROR" xml:space="preserve">
+    <value>Unable to upload to console. Error: {0}</value>
+  </data>
+  <data name="USB_DEVICES" xml:space="preserve">
+    <value>USB Devices</value>
+  </data>
+  <data name="USE_FORMATTED_FILE_SIZES" xml:space="preserve">
+    <value>Use formatted file sizes (e.g. "3 MB")</value>
+  </data>
+  <data name="USE_RELATIVE_TIMES" xml:space="preserve">
+    <value>Use relative times (e.g. "3 months ago")</value>
+  </data>
+  <data name="VIEW_DETAILS" xml:space="preserve">
+    <value>View Details</value>
+  </data>
+  <data name="WEBMAN_REQUIRED" xml:space="preserve">
+    <value>This feature requires webMAN installed on your console.</value>
+  </data>
+  <data name="XBOX_CONSOLES" xml:space="preserve">
+    <value>Xbox Consoles</value>
+  </data>
+  <data name="YOU_MUST_BE_CONNECTED_TO_UNINSTALL_FILES" xml:space="preserve">
+    <value>You must be connected to {0} to uninstall the files.</value>
+  </data>
+  <data name="YOU_MUST_BE_CONNECTED_TO_USE_FEATURE" xml:space="preserve">
+    <value>You must be connected to your console to use this feature.</value>
+  </data>
+  <data name="YOU_MUST_BE_CONNECTED_TO_VIEW_INSTALLED_MODS" xml:space="preserve">
+    <value>You must be connected to your console to view installed mods.</value>
+  </data>
+</root>

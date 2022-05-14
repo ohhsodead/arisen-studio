@@ -1,0 +1,601 @@
+{
+   "LastUpdated":"2022-02-23T01:13:37.126946+01:00",
+   "Mods":[
+      {
+         "Id":1,
+         "ConsoleType":"PS3",
+         "GameId":"codmw2",
+         "GameVersion":"1.14",
+         "Memory":[
+            {
+               "Name":"Name",
+               "Category":"Lobby Mods",
+               "Description":"Set your account display name. This doesn't stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33157404",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"string"
+                  }
+               ]
+            },
+			{
+               "Name":"Clan Tag",
+               "Category":"Lobby Mods",
+               "Description":"Set your account clan tag.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"21910732",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"string"
+                  }
+               ]
+            },
+            {
+               "Name":"Prestige Level",
+               "Category":"Account Stats",
+               "Description":"Set your account prestige level. Play a game and get a couple of kills/deaths for it to stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528476",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Instant Level 70",
+               "Category":"Account Stats",
+               "Description":"Set your account to level 70. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528468",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"20642600",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"Score",
+               "Category":"Account Stats",
+               "Description":"Set your account score. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528484",
+                     "Toggleable":false,
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Kills",
+               "Category":"Account Stats",
+               "Description":"Set your account kills. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528488",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Deaths",
+               "Category":"Account Stats",
+               "Description":"Set your account deaths. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528496",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Assists",
+               "Category":"Account Stats",
+               "Description":"Set your account assists. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528504",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Headshots",
+               "Category":"Account Stats",
+               "Description":"Set your account headshots. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528508",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Wins",
+               "Category":"Account Stats",
+               "Description":"Set your account wins. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528540",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Losses",
+               "Category":"Account Stats",
+               "Description":"Set your account losses. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528544",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Ties",
+               "Category":"Account Stats",
+               "Description":"Set your account ties. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528548",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Win Streak",
+               "Category":"Account Stats",
+               "Description":"Set your account win streak. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528552",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Kill Streak",
+               "Category":"Account Stats",
+               "Description":"Set your account kill streak. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33528492",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"",
+                     "Type":"int"
+                  }
+               ]
+            },
+            {
+               "Name":"Unlock All",
+               "Category":"Account Stats",
+               "Description":"Unlock all challenges. Play a full game and get a couple of kills/deaths for it to stick.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"33530055",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"0A0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010909020202020202090902020202020209090202020202020909020202020202090902020202020209090202020202090902020202020209090202020202020909020202020202090902020202020209090202020209090202020209090202020209090202020202090902020202020909020202020209090202999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999904020404040204040202030303020305050505050202000000000000000000000000000000000000000000000000000000000000000009000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000E80300000F400000140000003C0000000F00000014000000280000000A000000E80300000F400000140000003C0000000F00000014000000280000000A000000E80300000F400000140000003C0000000F00000014000000280000000A000000E80300000F400000140000003C0000000F00000014000000280000000A000000E8030000F4300000140000003C0000000F00000014000000280000000A000000E80300000F4000003C000000",
+                     "Type":"hex"
+                  },
+                  {
+                     "Address":"33529415",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"16777216",
+                     "Type":"byte"
+                  },
+                  {
+                     "Address":"33529479",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"16777216",
+                     "Type":"byte"
+                  },
+                  {
+                     "Address":"33529543",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"16777216",
+                     "Type":"byte"
+                  },
+                  {
+                     "Address":"33529607",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"16777216",
+                     "Type":"byte"
+                  },
+                  {
+                     "Address":"33529671",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"16777216",
+                     "Type":"byte"
+                  },
+                  {
+                     "Address":"33529735",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"16777216",
+                     "Type":"byte"
+                  },
+                  {
+                     "Address":"33529799",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"16777216",
+                     "Type":"byte"
+                  },
+                  {
+                     "Address":"33529863",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"16777216",
+                     "Type":"byte"
+                  },
+                  {
+                     "Address":"33529927",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"16777216",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"God Mode",
+               "Category":"Host Mods",
+               "Description":"Give yourself infinite health. You must be host for this to work.",
+               "GameMode":"Multiplayer",
+               "Toggleable":true,
+               "Offsets":[
+                  {
+                     "Address":"21996634",
+                     "Enable":"4294901760",
+                     "Disable":"6553600",
+                     "Value":"",
+                     "Type":"hex"
+                  }
+               ]
+            },
+            {
+               "Name":"Unlimited Ammo",
+               "Category":"Host Mods",
+               "Description":"Give yourself unlimited ammo. You must be host for this to work.",
+               "GameMode":"Multiplayer",
+               "Toggleable":true,
+               "Offsets":[
+                  {
+                     "Address":"21898476",
+                     "Enable":"268435455",
+                     "Disable":"100",
+                     "Value":"",
+                     "Type":"hex"
+                  },
+				  {
+                     "Address":"21898604",
+                     "Enable":"268435455",
+                     "Disable":"100",
+                     "Value":"",
+                     "Type":"hex"
+                  },
+				  {
+                     "Address":"21898460",
+                     "Enable":"268435455",
+                     "Disable":"100",
+                     "Value":"",
+                     "Type":"hex"
+                  },
+				  {
+                     "Address":"21898580",
+                     "Enable":"268435455",
+                     "Disable":"100",
+                     "Value":"",
+                     "Type":"hex"
+                  },
+				  {
+                     "Address":"21898616",
+                     "Enable":"268435455",
+                     "Disable":"100",
+                     "Value":"",
+                     "Type":"hex"
+                  },
+				  {
+                     "Address":"21898608",
+                     "Enable":"268435455",
+                     "Disable":"100",
+                     "Value":"",
+                     "Type":"hex"
+                  },
+				  {
+                     "Address":"21898584",
+                     "Enable":"268435455",
+                     "Disable":"100",
+                     "Value":"",
+                     "Type":"hex"
+                  },
+				  {
+                     "Address":"21898616",
+                     "Enable":"268435455",
+                     "Disable":"100",
+                     "Value":"",
+                     "Type":"hex"
+                  },
+				  {
+                     "Address":"21898484",
+                     "Enable":"268435455",
+                     "Disable":"100",
+                     "Value":"",
+                     "Type":"hex"
+                  },
+				  {
+                     "Address":"21898592",
+                     "Enable":"268435455",
+                     "Disable":"100",
+                     "Value":"",
+                     "Type":"hex"
+                  }
+               ]
+            },
+            {
+               "Name":"All Perks",
+               "Category":"Host Mods",
+               "Description":"Give yourself all perks. You must be host for this to work.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"21898794",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"Fore Host",
+               "Category":"Host Mods",
+               "Description":"Toggle force host.",
+               "GameMode":"Multiplayer",
+               "Toggleable":true,
+               "Offsets":[
+				  {
+                     "Address":"624609280",
+                     "Enable":"386000013C800200308450004BF863ED419E007C",
+                     "Disable":"386000013C800200308450004BF863ED419E007C",
+                     "Value":"",
+                     "Type":"byte"
+                  },
+                  {
+                     "Address":"33574912",
+                     "Enable":"7365742070617274795F636F6E6E65637454696D656F757420313B7365742070617274795F686F737420313B7365742070617274795F686F73746D6967726174696F6E20303B736574206F6E6C696E6567616D6520313B736574206F6E6C696E6567616D65616E64686F737420313B736574206F6E6C696E65756E72616E6B656467616D65616E64686F737420303B736574206D6967726174696F6E5F6D736774696D656F757420303B736574206D6967726174696F6E5F74696D654265747765656E203939393939393B736574206D6967726174696F6E5F766572626F736542726F61646361737454696D6520303B736574206D6967726174696F6E50696E6754696D6520313B7365742062616E647769647468746573745F6475726174696F6E20303B7365742062616E647769647468746573745F656E61626C6520303B7365742062616E647769647468746573745F696E67616D655F656E61626C6520303B7365742062616E647769647468746573745F74696D656F757420303B73657420636C5F6D6967726174696F6E54696D656F757420303B736574206C6F6262795F70617274795365617263685761697454696D6520303B7365742062616E647769647468746573745F616E6E6F756E6365696E74657276616C20303B7365742070617274796D6967726174655F62726F6164636173745F696E74657276616C2039393939393B7365742070617274796D6967726174655F70696E67746573745F74696D656F757420303B7365742070617274796D6967726174655F74696D656F757420303B7365742070617274796D6967726174655F74696D656F75746D617820303B7365742070617274796D6967726174655F70696E67746573745F726574727920303B7365742070617274796D6967726174655F70696E67746573745F74696D656F757420303B73657420675F6B69636B486F7374496649646C6520303B7365742078626C6976655F706C61794576656E4966446F776E20313B7365742070617274795F686F73746D6967726174696F6E20303B73657420626164686F73745F656E6447616D654966495375636B20303B73657420626164686F73745F6D6178446F495375636B4672616D657320303B73657420626164686F73745F6D6178486170707950696E6754696D65203939393B73657420626164686F73745F6D696E546F74616C436C69656E7473466F7248617070795465737420313800",
+                     "Disable":"7365742070617274795F636F6E6E65637454696D656F757420313030303B7365742070617274795F686F737420313B7365742070617274795F686F73746D6967726174696F6E20313B736574206D6967726174696F6E5F6D736774696D656F7574203530303B736574206D6967726174696F6E5F74696D654265747765656E2033303030303B736574206D6967726174696F6E5F766572626F736542726F61646361737454696D65203130303B736574206D6967726174696F6E50696E6754696D652031303B7365742062616E647769647468746573745F6475726174696F6E203530303B7365742062616E647769647468746573745F656E61626C6520313B7365742062616E647769647468746573745F696E67616D655F656E61626C6520313B7365742062616E647769647468746573745F74696D656F757420313530303B73657420636C5F6D6967726174696F6E54696D656F75742034303B736574206C6F6262795F70617274795365617263685761697454696D6520313030303B7365742062616E647769647468746573745F616E6E6F756E6365696E74657276616C203230303B7365742070617274796D6967726174655F62726F6164636173745F696E74657276616C203230303B7365742070617274796D6967726174655F70696E67746573745F74696D656F7574203630303B7365742070617274796D6967726174655F74696D656F757420383030303B7365742070617274796D6967726174655F74696D656F75746D61782031353030303B7365742070617274796D6967726174655F70696E67746573745F7265747279203130303B7365742070617274796D6967726174655F70696E67746573745F74696D656F7574203630303B73657420675F6B69636B486F7374496649646C6520313B7365742078626C6976655F706C61794576656E4966446F776E20303B7365742070617274795F686F73746D6967726174696F6E20313B73657420626164686F73745F656E6447616D654966495375636B20313B73657420626164686F73745F6D6178446F495375636B4672616D6573203330303B73657420626164686F73745F6D6178486170707950696E6754696D65203430303B73657420626164686F73745F6D696E546F74616C436C69656E7473466F72486170707954657374203300",
+                     "Value":"",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"Super Fore Host",
+               "Category":"Host Mods",
+               "Description":"Toggle super force host.",
+               "GameMode":"Multiplayer",
+               "Toggleable":true,
+               "Offsets":[
+				  {
+                     "Address":"30492871",
+                     "Enable":"01",
+                     "Disable":"00",
+                     "Value":"",
+                     "Type":"byte"
+                  },
+                  {
+                     "Address":"30492856",
+                     "Enable":"01",
+                     "Disable":"00",
+                     "Value":"",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"Red Boxes",
+               "Category":"Host Mods",
+               "Description":"Show red boxes over users. You must be host for this to work.",
+               "GameMode":"Multiplayer",
+               "Toggleable":true,
+               "Offsets":[
+                  {
+                     "Address":"21897747",
+                     "Enable":"55",
+                     "Disable":"00",
+                     "Value":"",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"No Clip",
+               "Category":"Host Mods",
+               "Description":"Give yourself no clip. You must be host for this to work.",
+               "GameMode":"Multiplayer",
+               "Toggleable":true,
+               "Offsets":[
+                  {
+                     "Address":"22009635",
+                     "Enable":"01",
+                     "Disable":"00",
+                     "Value":"",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"Suicide",
+               "Category":"Host Mods",
+               "Description":"Kill yourself. You must be host for this to work.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"21897760",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"3305111552",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"No Recoil",
+               "Category":"Host Mods",
+               "Description":"Give yourself no recoil. You must be host for this to work.",
+               "GameMode":"Multiplayer",
+               "Toggleable":true,
+               "Offsets":[
+                  {
+                     "Address":"21898430",
+                     "Enable":"04",
+                     "Disable":"0000",
+                     "Value":"",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"Force 18 Players",
+               "Category":"Host Mods",
+               "Description":"Force 18 players in the game. You must be host for this to work.",
+               "GameMode":"Multiplayer",
+               "Toggleable":true,
+               "Offsets":[
+                  {
+                     "Address":"30027937",
+                     "Enable":"38",
+                     "Disable":"32",
+                     "Value":"",
+                     "Type":"byte"
+                  }
+               ]
+            },
+            {
+               "Name":"Force 18 Players",
+               "Category":"Non Host Mods",
+               "Description":"Force 18 players in the game. You must be host for this to work.",
+               "GameMode":"Multiplayer",
+               "Toggleable":true,
+               "Offsets":[
+                  {
+                     "Address":"30027937",
+                     "Enable":"38",
+                     "Disable":"32",
+                     "Value":"",
+                     "Type":"byte"
+                  }
+               ]
+            }
+         ]
+      },
+	  {
+         "Id":2,
+         "ConsoleType":"XBOX",
+         "GameId":"codmw2",
+         "GameVersion":"TU8",
+         "Memory":[
+            {
+               "Name":"Super Jump",
+               "Category":"Host Mods",
+               "Description":"Give all players super jump.",
+               "GameMode":"Multiplayer",
+               "Toggleable":false,
+               "Offsets":[
+                  {
+                     "Address":"2181044284",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"4479C00",
+                     "Type":"byte"
+                  },
+				  {
+                     "Address":"2181040216",
+                     "Enable":"",
+                     "Disable":"",
+                     "Value":"4479C00",
+                     "Type":"byte"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
