@@ -62,6 +62,9 @@ Modio isn't perfect. If you encounter any issues, you are encouraged to submit b
 
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
 
+If you like Modio, then feel free to contribute with a *small donation*, I'd really appreciate it!
+[PayPal](https://www.paypal.com/donate/?hosted_button_id=DFEYRZVJWAC4E) (Funds are mainly to cover the high server costs)
+
 ### Translations
 For the localization process we use the collaborative platform from [Crowdin](https://crowdin.com/), thanks to their generosity for providing a professional service to Open Source projects free of charge. Please read the [introduction for new translators](https://support.crowdin.com/crowdin-intro/) and [guide for using the online editor](https://support.crowdin.com/online-editor/) to understand how it works.
 
