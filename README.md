@@ -9,6 +9,8 @@ The elegant, powerful, and open-source mod manager. Modio allows you to easily b
 
 ![Mods Page](https://raw.githubusercontent.com/ohhsodead/Modio/master/.screenshots/demo/GameModsPage.png?raw=true)
 
+![Mod Details](https://raw.githubusercontent.com/ohhsodead/Modio/master/.screenshots/demo/ModDetails.png?raw=true)
+
 **Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/FTCS3Xu)!
 
 Please give this project a ⭐ if you find it useful.
