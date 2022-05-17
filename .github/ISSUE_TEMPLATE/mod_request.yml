@@ -1,5 +1,5 @@
 name: Mod Request
-description: Request a mod to be added to the Modio database
+description: Request a mod to be added to the database
 labels: [feature request]
 body:
   - type: dropdown
