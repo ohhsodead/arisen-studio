@@ -52,7 +52,7 @@ body:
       label: Game Regions
       description: Provide the supported regions (if applicable)
     validations:
-      required: true
+      required: false
   - type: textarea
     id: sources
     attributes:
