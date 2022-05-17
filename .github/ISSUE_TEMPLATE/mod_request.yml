@@ -1,0 +1,55 @@
+name: Mod Request
+description: Request a mod to be added to the Modio database
+labels: [feature request]
+body:
+  - type: dropdown
+    attributes:
+      label: What platform is the mod for?
+      options:
+        - PlayStation 3
+        - Xbox 360
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Mod Name
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: Game/Category
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Creator
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Description
+      description: Describe the mod features
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: System Type (PS3)
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: CEX
+        - label: DEX
+        - label: HEN
+        - label: ALL
+          required: false
+  - type: textarea
+    attributes:
+      label: Game Regions
+      description: Provide the supported regions (if applicable)
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Source/Links
+      description: Please enter one or more sources for a forum post, youtube video, or anywhere that contains a download or other details
+    validations:
+      required: true
