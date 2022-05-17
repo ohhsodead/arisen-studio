@@ -3,6 +3,7 @@ description: Request a mod to be added to the Modio database
 labels: [feature request]
 body:
   - type: dropdown
+    id: platform
     attributes:
       label: What platform is the mod for?
       options:
@@ -11,16 +12,19 @@ body:
     validations:
       required: true
   - type: input
+    id: name
     attributes:
       label: Mod Name
     validations:
       required: false
   - type: input
+    id: category
     attributes:
       label: Game/Category
     validations:
       required: true
   - type: input
+    id: creator
     attributes:
       label: Creator
     validations:
@@ -32,22 +36,25 @@ body:
     validations:
       required: true
   - type: checkboxes
+    id: system-types
     attributes:
       label: System Type (PS3)
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      description: If the platform is PS3, then you must choose at least one console type.
       options:
         - label: CEX
         - label: DEX
         - label: HEN
         - label: ALL
           required: false
-  - type: textarea
+  - type: textarea  
+    id: game-regions
     attributes:
       label: Game Regions
       description: Provide the supported regions (if applicable)
     validations:
-      required: false
+      required: true
   - type: textarea
+    id: sources
     attributes:
       label: Source/Links
       description: Please enter one or more sources for a forum post, youtube video, or anywhere that contains a download or other details
