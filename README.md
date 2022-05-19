@@ -25,7 +25,7 @@ Please give this project a ⭐ if you find it useful.
 * Download the mods to your computer
 * Install and uninstall mods directly to your console
 * Manage your downloads and installed mods
-* File Manager with local and console listings
+* File manager with local and console listings
 * Apply cheats (RTM) to supported games
 * Discord rich presence to show game playing
 
@@ -35,13 +35,16 @@ Please give this project a ⭐ if you find it useful.
 * Download official game updates
 * Browse/mount/unmount games
 * Package File Manager
-* Console Manager (IDPS/PSID, LEDs, etc.)
+* `boot_plugins.txt` file editor
+* Console manager (IDPS/PSID, LEDs, etc.)
 * webMAN commands (Reboot, Show Version, etc.)
 
 ### Xbox 360
-* Launch games using XEX files
+* Launch games using the`XEX` file
 * Resign game saves to profiles
-* Backup and edit the launch.ini file
+* Load/unload modules without restarting
+* Spoof XUID for all CoDs
+* Backup and edit the `launch.ini` file
 * XBDM commands (Reboot, Shutdown, etc.)
 
 ## Requirements
