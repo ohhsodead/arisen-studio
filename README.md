@@ -34,9 +34,9 @@ Please give this project a ⭐ if you find it useful.
 * Backup and restore original game files
 * Download official game updates
 * Browse/mount/unmount games
-* Package File Manager
-* `boot_plugins.txt` file editor
+* Package file manager
 * Console manager (IDPS/PSID, LEDs, etc.)
+* Edit and backup/restore `boot_plugins.txt` file
 * webMAN commands (Reboot, Show Version, etc.)
 
 ### Xbox 360
@@ -44,7 +44,7 @@ Please give this project a ⭐ if you find it useful.
 * Resign game saves to profiles
 * Load/unload modules without restarting
 * Spoof XUID for all CoDs
-* Backup and edit the `launch.ini` file
+* Edit and backup/restore `launch.ini` file
 * XBDM commands (Reboot, Shutdown, etc.)
 
 ## Requirements
@@ -103,8 +103,8 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [crystall1nedev ](https://github.com/crystall1nedev)
 * [EgoMaw](https://github.com/EgoMaw)
 * [goldug](http://djopposite.se/)
-* [TheHiddenHour](https://github.com/TheHiddenHour)
 * [oSerenity](https://github.com/oSerenity)
+* [TheHiddenHour](https://github.com/TheHiddenHour)
 
 ## Disclaimer
 
