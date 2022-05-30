@@ -1,15 +1,15 @@
-# Modio
-[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/Modio.svg)](https://github.com/ohhsodead/Modio/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/Modio/total.svg)](https://github.com/ohhsodead/Modio/releases/) [![Crowdin](https://badges.crowdin.net/modiox/localized.svg)](https://crowdin.com/project/modiox) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/Modio.svg)](https://gitHub.com/ohhsodead/Modio/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/Modio.svg)](https://github.com/ohhsodead/Modio/issues?q=is%3Aissue+is%3Aclosed)  [![Join our Discord](https://img.shields.io/badge/chat%20on-discord-7289DA)](https://discord.gg/FTCS3Xu)
+# NeoModsX
+[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/NeoModsX.svg)](https://github.com/ohhsodead/NeoModsX/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/NeoModsX/total.svg)](https://github.com/ohhsodead/NeoModsX/releases/) [![Crowdin](https://badges.crowdin.net/NeoModsXx/localized.svg)](https://crowdin.com/project/NeoModsXx) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/NeoModsX.svg)](https://gitHub.com/ohhsodead/NeoModsX/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/NeoModsX.svg)](https://github.com/ohhsodead/NeoModsX/issues?q=is%3Aissue+is%3Aclosed)  [![Join our Discord](https://img.shields.io/badge/chat%20on-discord-7289DA)](https://discord.gg/FTCS3Xu)
 
-The elegant, powerful, and open-source mod manager. Modio allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by myself, a few friends, and awesome contributors. Modio can also be used as an FTP client to automatically install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.
+The elegant, powerful, and open-source mod manager. NeoModsX allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by myself, a few friends, and awesome contributors. NeoModsX can also be used as an FTP client to automatically install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.
 
 **the only one of its kind...**
 
-![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/Modio/master/.screenshots/demo/DashboardPage.png?raw=true)
+![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/demo/DashboardPage.png?raw=true)
 
-![Mods Page](https://raw.githubusercontent.com/ohhsodead/Modio/master/.screenshots/demo/GameModsPage.png?raw=true)
+![Mods Page](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/demo/GameModsPage.png?raw=true)
 
-![Mod Details](https://raw.githubusercontent.com/ohhsodead/Modio/master/.screenshots/demo/ModDetails.png?raw=true)
+![Mod Details](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/demo/ModDetails.png?raw=true)
 
 **Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/FTCS3Xu)!
 
@@ -58,22 +58,22 @@ Please give this project a ⭐ if you find it useful.
 
 ### Windows
 
-Download and run the latest version of the Windows installer, "Modio.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Modio/releases/latest) page.
+Download and run the latest version of the Windows installer, "NeoModsX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/NeoModsX/releases/latest) page.
 
 ## Bug Reports
-Modio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/Modio/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
+NeoModsX isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/NeoModsX/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
 
 ## Contributing
 
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
 
-If you like Modio, then feel free to contribute with a *small donation*, I'd really appreciate it!
+If you like NeoModsX, then feel free to contribute with a *small donation*, I'd really appreciate it!
 [PayPal](https://www.paypal.com/donate/?hosted_button_id=DFEYRZVJWAC4E) (Funds are mainly to cover the high server costs)
 
 ### Translations
 For the localization process we use the collaborative platform from [Crowdin](https://crowdin.com/), thanks to their generosity for providing a professional service to Open Source projects free of charge. Please read the [introduction for new translators](https://support.crowdin.com/crowdin-intro/) and [guide for using the online editor](https://support.crowdin.com/online-editor/) to understand how it works.
 
-If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to our [Crowdin project](https://crowdin.com/projects/modio) to get started.
+If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to our [Crowdin project](https://crowdin.com/projects/NeoModsX) to get started.
 
 ## Requesting Mods
 
