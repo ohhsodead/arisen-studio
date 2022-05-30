@@ -1,6 +1,26 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## Beta v2.2.0
+- Updated NLog package to 5.0.0
+- Reverted project name and logo
+- Added WebView2 package
+- Added Google Form to Request Mods
+- Added Boot Plugins Editor for PS3
+- Added Modules Loader for Xbox 360
+- Added XUID Spoofer for Xbox 360
+- Added option to always show rich presence
+- Added option to detect all game regions for PS3
+- Added option to edit name in Game Launcher for Xbox 360
+- Added drag and drop for File Manager
+- Moved help menu to a three vertical dots button
+- Fixed Favorites not being saved after closing
+- Fixed missing text in connect menu for disconnecting
+- Fixed File Manager not loading due to wrong localization value
+- Improvements to design/controls layout
+
+Note: Request Mods form will not load if NeoModsX is installed to the "C:\Program Files\" folder.
+
 ## Beta v2.1.3
 - Project renamed to Modio, also a new icon
 - Added Edit Advanced Settings Tile to Dashboard
