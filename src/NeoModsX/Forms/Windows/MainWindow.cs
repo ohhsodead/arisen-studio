@@ -847,6 +847,7 @@ namespace NeoModsX.Forms.Windows
                                 ? new NetworkCredential("anonymous", "anonymous")
                                 : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password),
                                 SocketKeepAlive = true,
+                                DataConnectionType = FtpDataConnectionType.PASV,
                                 //ReadTimeout = -1,
                                 //SslProtocols = System.Security.Authentication.SslProtocols.Tls12
                             };
