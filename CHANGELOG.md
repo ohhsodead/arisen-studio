@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## Beta v2.2.1
 - Fixed "failed to get epsv port" error message
+- Other minor improvements
 
 ## Beta v2.2.0
 - Updated NLog package to 5.0.0
