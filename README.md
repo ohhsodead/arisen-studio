@@ -1,5 +1,5 @@
 # NeoModsX
-[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/NeoModsX.svg)](https://github.com/ohhsodead/NeoModsX/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/NeoModsX/total.svg)](https://github.com/ohhsodead/NeoModsX/releases/) [![Crowdin](https://badges.crowdin.net/modio/localized.svg)](https://crowdin.com/project/NeoModsX) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/NeoModsX.svg)](https://gitHub.com/ohhsodead/NeoModsX/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/NeoModsX.svg)](https://github.com/ohhsodead/NeoModsX/issues?q=is%3Aissue+is%3Aclosed)  [![Join our Discord](https://img.shields.io/badge/chat%20on-discord-7289DA)](https://discord.gg/FTCS3Xu)
+[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/NeoModsX.svg)](https://github.com/ohhsodead/NeoModsX/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/NeoModsX/total.svg)](https://github.com/ohhsodead/NeoModsX/releases/) [![Crowdin](https://badges.crowdin.net/neomods/localized.svg)](https://crowdin.com/project/NeoMods) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/NeoModsX.svg)](https://gitHub.com/ohhsodead/NeoModsX/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/NeoModsX.svg)](https://github.com/ohhsodead/NeoModsX/issues?q=is%3Aissue+is%3Aclosed)  [![Join our Discord](https://img.shields.io/badge/chat%20on-discord-7289DA)](https://discord.gg/FTCS3Xu)
 
 The elegant, powerful, and open-source mod manager. NeoModsX allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by myself, a few friends, and awesome contributors. NeoModsX can also be used as an FTP client to automatically install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.
 
@@ -73,7 +73,7 @@ If you like NeoModsX, then feel free to contribute with a *small donation*, I'd 
 ### Translations
 For the localization process we use the collaborative platform from [Crowdin](https://crowdin.com/), thanks to their generosity for providing a professional service to Open Source projects free of charge. Please read the [introduction for new translators](https://support.crowdin.com/crowdin-intro/) and [guide for using the online editor](https://support.crowdin.com/online-editor/) to understand how it works.
 
-If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to our [Crowdin project](https://crowdin.com/projects/NeoModsX) to get started.
+If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to our [Crowdin project](https://crowdin.com/projects/neomods) to get started.
 
 ## Requesting Mods
 
