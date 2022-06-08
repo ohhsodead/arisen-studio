@@ -89,6 +89,7 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [FluentFTP](https://github.com/robinrodricks/FluentFTP)
 * [HtmlAgilityPack](https://html-agility-pack.net/)
 * [Humanizer](https://github.com/Humanizr/Humanizer)
+* [Icons8](https://icons8.com/)
 * [INI File Parser](https://github.com/rickyah/ini-parser)
 * [Newtonsoft.Json](https://newtonsoft.com/json)
 * [NLog](https://nlog-project.org/)
