@@ -105,7 +105,8 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [EgoMaw](https://github.com/EgoMaw)
 * [goldug](http://djopposite.se/)
 * [oSerenity](https://github.com/oSerenity)
-* [TheHiddenHour](https://github.com/TheHiddenHour)
+* [TheHiddenHour](https://github.com/TheHiddenHour) 
+* [tsuiarts](mailto:nurishafa26@gmail.com)
 
 ## Disclaimer
 
