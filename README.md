@@ -5,11 +5,11 @@ The elegant, powerful, and open-source mod manager. NeoModsX allows you to easil
 
 **the only one of its kind...**
 
-![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/demo/DashboardPage.png?raw=true)
+![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/DashboardPage.png?raw=true)
 
-![Mods Page](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/demo/GameModsPage.png?raw=true)
+![Mods Page](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/GameModsPage.png?raw=true)
 
-![Mod Details](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/demo/ModDetails.png?raw=true)
+![Mod Details](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/ModDetails.png?raw=true)
 
 **Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/FTCS3Xu)!
 
