@@ -1,5 +1,14 @@
-# NeoModsX
-[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/NeoModsX.svg)](https://github.com/ohhsodead/NeoModsX/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/NeoModsX/total.svg)](https://github.com/ohhsodead/NeoModsX/releases/) [![Crowdin](https://badges.crowdin.net/neomods/localized.svg)](https://crowdin.com/project/neomods) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/NeoModsX.svg)](https://gitHub.com/ohhsodead/NeoModsX/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/NeoModsX.svg)](https://github.com/ohhsodead/NeoModsX/issues?q=is%3Aissue+is%3Aclosed)  [![Join our Discord](https://img.shields.io/badge/chat%20on-discord-7289DA)](https://discord.gg/FTCS3Xu)
+<h1 align="center">NeoModsX</h1>
+<p align="center">Browse, Download and Install Mods for PlayStation 3 & Xbox 360</p>
+
+<p align="center">  
+  <a href="https://github.com/ohhsodead/NeoModsX/releases/"><img src="https://img.shields.io/github/release/ohhsodead/NeoModsX.svg" /></a>
+  <a href="https://github.com/ohhsodead/NeoModsX/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/NeoModsX/total.svg" /></a>
+  <a href="https://crowdin.com/project/neomods"><img src="https://badges.crowdin.net/neomods/localized.svg" /></a>
+  <a href="https://gitHub.com/ohhsodead/NeoModsX/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/NeoModsX.svg" /></a>
+  <a href="https://github.com/ohhsodead/NeoModsX/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/NeoModsX.svg" /></a>
+  <a href="https://discord.gg/FTCS3Xu"><img src="https://img.shields.io/badge/chat%20on-discord-7289DA" /></a>
+</p>
 
 The elegant, powerful, and open-source mod manager. NeoModsX allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by myself, a few friends, and awesome contributors. NeoModsX can also be used as an FTP client to automatically install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.
 
@@ -107,6 +116,9 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [oSerenity](https://github.com/oSerenity)
 * [TheHiddenHour](https://github.com/TheHiddenHour) 
 * [tsuiarts](mailto:nurishafa26@gmail.com)
+
+## Supporters
+[![Stargazers repo roster for @ohhsodead/NeoModsX](https://reporoster.com/stars/notext/ohhsodead/NeoModsX)](https://github.com/ohhsodead/NeoModsX/stargazers)
 
 ## Disclaimer
 
