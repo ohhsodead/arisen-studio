@@ -7,7 +7,9 @@
   <a href="https://crowdin.com/project/neomods"><img src="https://badges.crowdin.net/neomods/localized.svg" /></a>
   <a href="https://gitHub.com/ohhsodead/NeoModsX/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/NeoModsX.svg" /></a>
   <a href="https://github.com/ohhsodead/NeoModsX/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/NeoModsX.svg" /></a>
-  <a href="https://discord.gg/FTCS3Xu"><img src="https://img.shields.io/badge/chat%20on-discord-7289DA" /></a>
+  </br>
+  <a href="https://twitter.com/NeoModsX"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
+  <a href="https://discord.gg/h22szNhF7V"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
 </p>
 
 The elegant, powerful, and open-source mod manager. NeoModsX allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by myself, a few friends, and awesome contributors. NeoModsX can also be used as an FTP client to automatically install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.
