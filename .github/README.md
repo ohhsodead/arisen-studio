@@ -8,7 +8,7 @@
   <a href="https://gitHub.com/ohhsodead/NeoModsX/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/NeoModsX.svg" /></a>
   <a href="https://github.com/ohhsodead/NeoModsX/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/NeoModsX.svg" /></a>
   </br>
-  <a href="https://sourceforge.net/projects/modio/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
+  <a href="https://sourceforge.net/projects/neomodsx/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
   <a href="https://twitter.com/NeoModsX"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
   <a href="https://discord.gg/h22szNhF7V"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
 </p>
