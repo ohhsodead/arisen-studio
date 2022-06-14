@@ -2,14 +2,14 @@
 <p align="center">Browse, Download and Install Mods for PlayStation 3 & Xbox 360</p>
 
 <p align="center">  
-  <a href="https://github.com/ohhsodead/NeoModsX/releases/"><img src="https://img.shields.io/github/release/ohhsodead/NeoModsX.svg" /></a>
-  <a href="https://github.com/ohhsodead/NeoModsX/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/NeoModsX/total.svg" /></a>
+  <a href="https://github.com/ohhsodead/Arisen-Mods/releases/"><img src="https://img.shields.io/github/release/ohhsodead/Arisen-Mods.svg" /></a>
+  <a href="https://github.com/ohhsodead/Arisen-Mods/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/Arisen-Mods/total.svg" /></a>
   <a href="https://crowdin.com/project/neomods"><img src="https://badges.crowdin.net/neomods/localized.svg" /></a>
-  <a href="https://gitHub.com/ohhsodead/NeoModsX/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/NeoModsX.svg" /></a>
-  <a href="https://github.com/ohhsodead/NeoModsX/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/NeoModsX.svg" /></a>
+  <a href="https://gitHub.com/ohhsodead/Arisen-Mods/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/Arisen-Mods.svg" /></a>
+  <a href="https://github.com/ohhsodead/Arisen-Mods/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/Arisen-Mods.svg" /></a>
   </br>
   <a href="https://sourceforge.net/projects/neomodsx/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
-  <a href="https://twitter.com/NeoModsX"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
+  <a href="https://twitter.com/ArisenMods"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
   <a href="https://discord.gg/h22szNhF7V"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
 </p>
 
@@ -17,11 +17,11 @@ The elegant, powerful, and open-source mod manager. NeoModsX allows you to easil
 
 **the only one of its kind...**
 
-![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/DashboardPage.png?raw=true)
+![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/master/.screenshots/DashboardPage.png?raw=true)
 
-![Mods Page](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/GameModsPage.png?raw=true)
+![Mods Page](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/master/.screenshots/GameModsPage.png?raw=true)
 
-![Mod Details](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/ModDetails.png?raw=true)
+![Mod Details](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/master/.screenshots/ModDetails.png?raw=true)
 
 **Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/FTCS3Xu)!
 
@@ -70,10 +70,10 @@ Please give this project a ⭐ if you find it useful.
 
 ### Windows
 
-Download and run the latest version of the Windows installer, "NeoModsX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/NeoModsX/releases/latest) page.
+Download and run the latest version of the Windows installer, "NeoModsX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Arisen-Mods/releases/latest) page.
 
 ## Bug Reports
-NeoModsX isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/NeoModsX/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
+NeoModsX isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/Arisen-Mods/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
 
 ## Contributing
 
@@ -121,7 +121,7 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [tsuiarts](mailto:nurishafa26@gmail.com)
 
 ## Supporters
-[![Stargazers repo roster for @ohhsodead/NeoModsX](https://reporoster.com/stars/notext/ohhsodead/NeoModsX)](https://github.com/ohhsodead/NeoModsX/stargazers)
+[![Stargazers repo roster for @ohhsodead/Arisen-Mods](https://reporoster.com/stars/notext/ohhsodead/Arisen-Mods)](https://github.com/ohhsodead/Arisen-Mods/stargazers)
 
 ## Disclaimer
 
