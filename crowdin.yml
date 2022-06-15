@@ -1,3 +1,3 @@
 files:
-  - source: /src/Arisen-Mods/Languages/en_US.resx
-    translation: /src/Arisen-Mods/Languages/%locale_with_underscore%.%file_extension%
+  - source: /src/Arisen Mods/Languages/en_US.resx
+    translation: /src/Arisen Mods/Languages/%locale_with_underscore%.%file_extension%
