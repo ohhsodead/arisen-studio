@@ -1,15 +1,27 @@
-# NeoModsX
-[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/NeoModsX.svg)](https://github.com/ohhsodead/NeoModsX/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/NeoModsX/total.svg)](https://github.com/ohhsodead/NeoModsX/releases/) [![Crowdin](https://badges.crowdin.net/neomods/localized.svg)](https://crowdin.com/project/neomods) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/NeoModsX.svg)](https://gitHub.com/ohhsodead/NeoModsX/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/NeoModsX.svg)](https://github.com/ohhsodead/NeoModsX/issues?q=is%3Aissue+is%3Aclosed)  [![Join our Discord](https://img.shields.io/badge/chat%20on-discord-7289DA)](https://discord.gg/FTCS3Xu)
+<h1 align="center">Arisen Mods</h1>
+<p align="center">Browse, Download and Install Mods for PlayStation 3 & Xbox 360</p>
 
-The elegant, powerful, and open-source mod manager. NeoModsX allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by myself, a few friends, and awesome contributors. NeoModsX can also be used as an FTP client to automatically install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.
+<p align="center">  
+  <a href="https://github.com/ohhsodead/Arisen-Mods/releases/"><img src="https://img.shields.io/github/release/ohhsodead/Arisen-Mods.svg" /></a>
+  <a href="https://github.com/ohhsodead/Arisen-Mods/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/Arisen-Mods/total.svg" /></a>
+  <a href="https://crowdin.com/project/neomods"><img src="https://badges.crowdin.net/neomods/localized.svg" /></a>
+  <a href="https://gitHub.com/ohhsodead/Arisen-Mods/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/Arisen-Mods.svg" /></a>
+  <a href="https://github.com/ohhsodead/Arisen-Mods/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/Arisen-Mods.svg" /></a>
+  </br>
+  <a href="https://sourceforge.net/projects/neomodsx/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
+  <a href="https://twitter.com/ArisenMods"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
+  <a href="https://discord.gg/h22szNhF7V"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
+</p>
+
+The elegant, powerful, and open-source mod manager. Arisen Mods allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by myself, a few friends, and awesome contributors. Arisen Mods can also be used as an FTP client to automatically install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.
 
 **the only one of its kind...**
 
-![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/DashboardPage.png?raw=true)
+![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/master/.screenshots/DashboardPage.png?raw=true)
 
-![Mods Page](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/GameModsPage.png?raw=true)
+![Mods Page](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/master/.screenshots/GameModsPage.png?raw=true)
 
-![Mod Details](https://raw.githubusercontent.com/ohhsodead/NeoModsX/master/.screenshots/ModDetails.png?raw=true)
+![Mod Details](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/master/.screenshots/ModDetails.png?raw=true)
 
 **Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/FTCS3Xu)!
 
@@ -58,10 +70,10 @@ Please give this project a ⭐ if you find it useful.
 
 ### Windows
 
-Download and run the latest version of the Windows installer, "NeoModsX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/NeoModsX/releases/latest) page.
+Download and run the latest version of the Windows installer, "NeoModsX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Arisen-Mods/releases/latest) page.
 
 ## Bug Reports
-NeoModsX isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/NeoModsX/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
+NeoModsX isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/Arisen-Mods/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
 
 ## Contributing
 
@@ -107,6 +119,9 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [oSerenity](https://github.com/oSerenity)
 * [TheHiddenHour](https://github.com/TheHiddenHour) 
 * [tsuiarts](mailto:nurishafa26@gmail.com)
+
+## Supporters
+[![Stargazers repo roster for @ohhsodead/Arisen-Mods](https://reporoster.com/stars/notext/ohhsodead/Arisen-Mods)](https://github.com/ohhsodead/Arisen-Mods/stargazers)
 
 ## Disclaimer
 
