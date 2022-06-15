@@ -70,10 +70,10 @@ Please give this project a ⭐ if you find it useful.
 
 ### Windows
 
-Download and run the latest version of the Windows installer, "NeoModsX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Arisen-Mods/releases/latest) page.
+Download and run the latest version of the Windows installer, "ArisenMods.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Arisen-Mods/releases/latest) page.
 
 ## Bug Reports
-NeoModsX isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/Arisen-Mods/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
+Arisen Mods isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/Arisen-Mods/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
 
 ## Contributing
 
