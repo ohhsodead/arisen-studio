@@ -8,7 +8,7 @@
   <a href="https://gitHub.com/ohhsodead/Arisen-Mods/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/Arisen-Mods.svg" /></a>
   <a href="https://github.com/ohhsodead/Arisen-Mods/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/Arisen-Mods.svg" /></a>
   </br>
-  <a href="https://sourceforge.net/projects/neomodsx/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
+  <a href="https://sourceforge.net/projects/arisenmods/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
   <a href="https://twitter.com/ArisenMods"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
   <a href="https://discord.gg/h22szNhF7V"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
 </p>
@@ -116,6 +116,7 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [crystall1nedev ](https://github.com/crystall1nedev)
 * [EgoMaw](https://github.com/EgoMaw)
 * [goldug](http://djopposite.se/)
+* [NCKwolf](https://twitter.com/NCKwolf)
 * [oSerenity](https://github.com/oSerenity)
 * [TheHiddenHour](https://github.com/TheHiddenHour) 
 * [tsuiarts](mailto:nurishafa26@gmail.com)
