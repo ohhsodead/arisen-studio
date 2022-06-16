@@ -98,6 +98,7 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [CodeHollow.FeedReader](https://github.com/arminreiter/FeedReader/)
 * [Discord Rich Presence](https://github.com/Lachee/discord-rpc-csharp)
 * [DevExpress](https://devexpress.com/)
+* [Flaticon](https://www.flaticon.com/free-icons/official)
 * [FluentFTP](https://github.com/robinrodricks/FluentFTP)
 * [HtmlAgilityPack](https://html-agility-pack.net/)
 * [Humanizer](https://github.com/Humanizr/Humanizer)
