@@ -4,11 +4,11 @@
 <p align="center">  
   <a href="https://github.com/ohhsodead/Arisen-Mods/releases/"><img src="https://img.shields.io/github/release/ohhsodead/Arisen-Mods.svg" /></a>
   <a href="https://github.com/ohhsodead/Arisen-Mods/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/Arisen-Mods/total.svg" /></a>
-  <a href="https://crowdin.com/project/neomods"><img src="https://badges.crowdin.net/neomods/localized.svg" /></a>
+  <a href="https://crowdin.com/project/arisenmods"><img src="https://badges.crowdin.net/arisenmods/localized.svg" /></a>
   <a href="https://gitHub.com/ohhsodead/Arisen-Mods/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/Arisen-Mods.svg" /></a>
   <a href="https://github.com/ohhsodead/Arisen-Mods/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/Arisen-Mods.svg" /></a>
   </br>
-  <a href="https://sourceforge.net/projects/neomodsx/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
+  <a href="https://sourceforge.net/projects/arisenmods/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
   <a href="https://twitter.com/ArisenMods"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
   <a href="https://discord.gg/h22szNhF7V"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
 </p>
@@ -70,10 +70,10 @@ Please give this project a ⭐ if you find it useful.
 
 ### Windows
 
-Download and run the latest version of the Windows installer, "NeoModsX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Arisen-Mods/releases/latest) page.
+Download and run the latest version of the Windows installer, "ArisenMods.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Arisen-Mods/releases/latest) page.
 
 ## Bug Reports
-NeoModsX isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/Arisen-Mods/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
+Arisen Mods isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/Arisen-Mods/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
 
 ## Contributing
 
@@ -85,7 +85,7 @@ If you like NeoModsX, then feel free to contribute with a *small donation*, I'd 
 ### Translations
 For the localization process we use the collaborative platform from [Crowdin](https://crowdin.com/), thanks to their generosity for providing a professional service to Open Source projects free of charge. Please read the [introduction for new translators](https://support.crowdin.com/crowdin-intro/) and [guide for using the online editor](https://support.crowdin.com/online-editor/) to understand how it works.
 
-If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to our [Crowdin project](https://crowdin.com/project/neomods) to get started.
+If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to our [Crowdin project](https://crowdin.com/project/arisenmods) to get started.
 
 ## Requesting Mods
 
@@ -98,6 +98,7 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [CodeHollow.FeedReader](https://github.com/arminreiter/FeedReader/)
 * [Discord Rich Presence](https://github.com/Lachee/discord-rpc-csharp)
 * [DevExpress](https://devexpress.com/)
+* [Flaticon](https://www.flaticon.com/free-icons/official)
 * [FluentFTP](https://github.com/robinrodricks/FluentFTP)
 * [HtmlAgilityPack](https://html-agility-pack.net/)
 * [Humanizer](https://github.com/Humanizr/Humanizer)
@@ -116,6 +117,7 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [crystall1nedev ](https://github.com/crystall1nedev)
 * [EgoMaw](https://github.com/EgoMaw)
 * [goldug](http://djopposite.se/)
+* [NCKwolf](https://twitter.com/NCKwolf)
 * [oSerenity](https://github.com/oSerenity)
 * [TheHiddenHour](https://github.com/TheHiddenHour) 
 * [tsuiarts](mailto:nurishafa26@gmail.com)
