@@ -56,6 +56,7 @@ Please give this project a ⭐ if you find it useful.
 * Resign game saves to profiles
 * Load/unload modules without rebooting
 * Spoof XUID for all CoDs
+* Console manager (LEDs, fan speed, etc.)
 * Edit and backup/restore `launch.ini` file
 * XBDM commands (Reboot, Shutdown, etc.)
 
@@ -79,7 +80,7 @@ Arisen Mods isn't perfect. If you encounter any issues, you are encouraged to su
 
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
 
-If you like NeoModsX, then feel free to contribute with a *small donation*, I'd really appreciate it!
+If you like Arisen Mods, then feel free to contribute with a *small donation*, I'd really appreciate it!
 [PayPal](https://www.paypal.com/donate/?hosted_button_id=DFEYRZVJWAC4E) (Funds are mainly to cover the high server costs)
 
 ### Translations
