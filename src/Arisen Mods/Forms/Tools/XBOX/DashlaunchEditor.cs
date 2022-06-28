@@ -18,9 +18,9 @@ using XDevkit;
 
 namespace ArisenMods.Forms.Tools.XBOX
 {
-    public partial class LaunchFileEditor : XtraForm
+    public partial class DashlaunchEditor : XtraForm
     {
-        public LaunchFileEditor()
+        public DashlaunchEditor()
         {
             InitializeComponent();
         }
@@ -62,8 +62,10 @@ namespace ArisenMods.Forms.Tools.XBOX
         /// </summary>
         public IniData LaunchFileData { get; set; }
 
-        private void LaunchFileEditor_Load(object sender, EventArgs e)
+        private void DashlaunchEditor_Load(object sender, EventArgs e)
         {
+            Text = Language.GetString("DASHLAUNCH_EDITOR");
+
             ButtonSetValue.Text = Language.GetString("LABEL_SET_VALUE");
 
             ButtonRestoreDefault.Text = Language.GetString("LABEL_RESTORE_DEFAULT");

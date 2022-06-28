@@ -77,6 +77,8 @@ namespace ArisenMods.Forms.Dialogs.Details
             // 
             // PanelDetails
             // 
+            this.PanelDetails.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.PanelDetails.Appearance.Options.UseBackColor = true;
             this.PanelDetails.Controls.Add(this.TablePanelStats);
             this.PanelDetails.Controls.Add(this.TabPane);
             this.PanelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -145,7 +147,7 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.StatSubmittedBy.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.StatSubmittedBy.Appearance.Options.UseBackColor = true;
             this.TablePanelStats.SetColumn(this.StatSubmittedBy, 4);
-            this.StatSubmittedBy.Location = new System.Drawing.Point(587, 3);
+            this.StatSubmittedBy.Location = new System.Drawing.Point(588, 3);
             this.StatSubmittedBy.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.StatSubmittedBy.Name = "StatSubmittedBy";
             this.TablePanelStats.SetRow(this.StatSubmittedBy, 0);
@@ -159,11 +161,11 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.StatCreatedBy.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.StatCreatedBy.Appearance.Options.UseBackColor = true;
             this.TablePanelStats.SetColumn(this.StatCreatedBy, 3);
-            this.StatCreatedBy.Location = new System.Drawing.Point(441, 3);
+            this.StatCreatedBy.Location = new System.Drawing.Point(432, 3);
             this.StatCreatedBy.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.StatCreatedBy.Name = "StatCreatedBy";
             this.TablePanelStats.SetRow(this.StatCreatedBy, 0);
-            this.StatCreatedBy.Size = new System.Drawing.Size(140, 40);
+            this.StatCreatedBy.Size = new System.Drawing.Size(150, 40);
             this.StatCreatedBy.TabIndex = 3;
             this.StatCreatedBy.Title = "Created By";
             this.StatCreatedBy.Value = "Value";
@@ -177,7 +179,7 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.StatModType.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.StatModType.Name = "StatModType";
             this.TablePanelStats.SetRow(this.StatModType, 0);
-            this.StatModType.Size = new System.Drawing.Size(140, 40);
+            this.StatModType.Size = new System.Drawing.Size(131, 40);
             this.StatModType.TabIndex = 2;
             this.StatModType.Title = "Mod Type";
             this.StatModType.Value = "Value";
@@ -215,6 +217,8 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.TabPane.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TabPane.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.TabPane.Appearance.Options.UseBackColor = true;
             this.TabPane.AppearanceButton.Hovered.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.TabPane.AppearanceButton.Hovered.Options.UseFont = true;
             this.TabPane.AppearanceButton.Normal.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -237,6 +241,8 @@ namespace ArisenMods.Forms.Dialogs.Details
             // 
             // TabDescription
             // 
+            this.TabDescription.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.TabDescription.Appearance.Options.UseBackColor = true;
             this.TabDescription.AutoScroll = true;
             this.TabDescription.Caption = "Description";
             this.TabDescription.Controls.Add(this.LabelDescription);
@@ -457,7 +463,7 @@ namespace ArisenMods.Forms.Dialogs.Details
             // 
             // GameModDialog
             // 
-            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;

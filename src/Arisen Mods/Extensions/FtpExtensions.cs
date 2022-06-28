@@ -174,9 +174,9 @@ namespace ArisenMods.Extensions
             {
                 using WebClient request = new();
                 byte[] newFileData = request.DownloadData(fileUrl);
-                PARAM_SFO PARAM_SFO = new(newFileData);
+                PARAM_SFO paramSfo = new(newFileData);
 
-                return PARAM_SFO != null ? PARAM_SFO.Title : "Not Recongized";
+                return paramSfo != null ? paramSfo.Title : "Not Recongized";
             }
             catch (WebException ex)
             {
@@ -432,7 +432,7 @@ namespace ArisenMods.Extensions
         /// Get all of the games from the public drive, and on connected USB devices (if enabled in settings).
         /// </summary>
         /// <returns> </returns>
-        public static List<ListItem> GetGamesBD()
+        public static List<ListItem> GetGamesBd()
         {
             List<ListItem> games = new();
 
@@ -462,7 +462,7 @@ namespace ArisenMods.Extensions
         /// Get all of the games from the public drive, and on connected USB devices (if enabled in settings).
         /// </summary>
         /// <returns> </returns>
-        public static List<ListItem> GetGamesISO()
+        public static List<ListItem> GetGamesIso()
         {
             List<ListItem> games = new();
 
@@ -490,7 +490,7 @@ namespace ArisenMods.Extensions
         /// Get all of the games from the public drive, and on connected USB devices (if enabled in settings).
         /// </summary>
         /// <returns> </returns>
-        public static List<ListItem> GetGamesPSN()
+        public static List<ListItem> GetGamesPsn()
         {
             List<ListItem> gamesPath = new();
 

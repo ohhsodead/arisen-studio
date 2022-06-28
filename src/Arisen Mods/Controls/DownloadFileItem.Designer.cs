@@ -194,7 +194,7 @@ namespace ArisenMods.Controls
             this.ImageDownload.ShowToolTips = DevExpress.Utils.DefaultBoolean.False;
             this.ImageDownload.Size = new System.Drawing.Size(24, 24);
             this.ImageDownload.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
-            this.ImageDownload.SvgImage = global::ArisenMods.Properties.Resources.download_svg;
+            this.ImageDownload.SvgImage = global::ArisenMods.Properties.Resources.download;
             this.ImageDownload.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.ImageDownload.TabIndex = 1200;
             this.ImageDownload.Click += new System.EventHandler(this.ImageDownload_Click);

@@ -13,8 +13,6 @@ namespace ArisenMods.Models.Resources
     {
         public FormWindowState WindowState { get; set; } = FormWindowState.Normal;
 
-        public bool FirstTimeUse { get; set; } = true;
-
         public List<ConsoleProfile> ConsoleProfiles { get; set; } = new();
 
         public bool FirstTimeOpenAfterUpdate { get; set; } = true;
@@ -22,8 +20,6 @@ namespace ArisenMods.Models.Resources
         public List<int> DismissedAnnouncements { get; set; } = new();
 
         public string Language { get; set; } = "English";
-
-        public Platform StartupLibrary { get; set; } = Platform.PS3;
 
         public bool UseFormattedFileSizes { get; set; } = true;
 
@@ -43,13 +39,13 @@ namespace ArisenMods.Models.Resources
 
         public bool RememberConsolePath { get; set; } = false;
 
-        public string LocalPathPS3 { get; set; } = KnownFolders.GetPath(KnownFolder.Documents);
+        public string LocalPathPs3 { get; set; } = KnownFolders.GetPath(KnownFolder.Documents);
 
-        public string LocalPathXBOX { get; set; } = KnownFolders.GetPath(KnownFolder.Documents);
+        public string LocalPathXbox { get; set; } = KnownFolders.GetPath(KnownFolder.Documents);
 
-        public string ConsolePathPS3 { get; set; } = "/dev_hdd0/";
+        public string ConsolePathPs3 { get; set; } = "/dev_hdd0/";
 
-        public string ConsolePathXBOX { get; set; } = @"HDD:\";
+        public string ConsolePathXbox { get; set; } = @"HDD:\";
 
         // Transfer
 
@@ -145,13 +141,13 @@ namespace ArisenMods.Models.Resources
 
         // PS3
 
-        public List<GameRegion> GameRegionsPS3 { get; set; } = new();
+        public List<GameRegion> GameRegionsPs3 { get; set; } = new();
 
         public List<InstalledPackageInfo> InstalledPackages { get; set; } = new();
 
         // Xbox 360
 
-        public List<ListItem> GameFilesXBOX { get; set; } = new();
+        public List<ListItem> GameFilesXbox { get; set; } = new();
 
         /// <summary>
         /// Gets the user's saved game region for the specified <see cref="ModsData.ModItem.GameId" />
@@ -160,7 +156,7 @@ namespace ArisenMods.Models.Resources
         /// <returns> Game Region </returns>
         public string GetGameRegion(string gameId)
         {
-            return GameRegionsPS3.FirstOrDefault(region => region.GameId.EqualsIgnoreCase(gameId))?.Region;
+            return GameRegionsPs3.FirstOrDefault(region => region.GameId.EqualsIgnoreCase(gameId))?.Region;
         }
 
         /// <summary>
@@ -171,15 +167,15 @@ namespace ArisenMods.Models.Resources
         public void UpdateGameRegion(string gameId, string region)
         {
             int gameIdIndex =
-                GameRegionsPS3.FindIndex(x => string.Equals(x.GameId, gameId, StringComparison.OrdinalIgnoreCase));
+                GameRegionsPs3.FindIndex(x => string.Equals(x.GameId, gameId, StringComparison.OrdinalIgnoreCase));
 
             switch (gameIdIndex)
             {
                 case -1:
-                    GameRegionsPS3.Add(new GameRegion() { GameId = gameId, Region = region });
+                    GameRegionsPs3.Add(new GameRegion() { GameId = gameId, Region = region });
                     break;
                 default:
-                    GameRegionsPS3[gameIdIndex].Region = region;
+                    GameRegionsPs3[gameIdIndex].Region = region;
                     break;
             }
         }
@@ -309,6 +305,19 @@ namespace ArisenMods.Models.Resources
                 DateTime = dateInstalled
             });
         }
+
+        public ConsoleProfile GetDefaultProfile()
+        {
+            foreach (ConsoleProfile consoleProfile in ConsoleProfiles)
+            {
+                if (consoleProfile.IsDefault)
+                {
+                    return consoleProfile;
+                }
+            }
+
+            return null;
+        }
     }
 
     /// <summary>
@@ -335,6 +344,8 @@ namespace ArisenMods.Models.Resources
         public bool UseDefaultCredentials { get; set; } = true;
 
         public bool UseDefaultConsole { get; set; } = false;
+
+        public bool IsDefault { get; set; } = true;
 
         public List<InstalledModInfo> InstalledMods { get; set; } = new();
 

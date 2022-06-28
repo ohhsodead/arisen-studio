@@ -39,10 +39,10 @@ namespace ArisenMods.Forms.Dialogs.Details
             InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id) : null;
 
             StatLastUpdated.Title = Language.GetString("LABEL_LAST_UPDATED");
-            StatVersion.Text = Language.GetString("LABEL_VERSION");
-            StatGameMode.Text = Language.GetString("LABEL_GAME_MODE");
-            StatCreatedBy.Text = Language.GetString("LABEL_CREATED_BY");
-            StatSubmittedBy.Text = Language.GetString("LABEL_SUBMITTED_BY");
+            StatVersion.Title = Language.GetString("LABEL_VERSION");
+            StatGameMode.Title = Language.GetString("LABEL_GAME_MODE");
+            StatCreatedBy.Title = Language.GetString("LABEL_CREATED_BY");
+            StatSubmittedBy.Title = Language.GetString("LABEL_SUBMITTED_BY");
 
             //Display details in UI
             LabelCategory.Text = Categories.GetCategoryById(ModItem.CategoryId).Title;

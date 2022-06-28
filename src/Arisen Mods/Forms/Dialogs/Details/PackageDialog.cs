@@ -40,8 +40,8 @@ namespace ArisenMods.Forms.Dialogs.Details
             StatModifiedDate.Value = PackageItem.IsDateMissing ? Language.GetString("DATA_MISSING") : Settings.UseRelativeTimes ? DateTime.Parse(PackageItem.ModifiedDate).Humanize() : DateTime.Parse(PackageItem.ModifiedDate).ToLongDateString();
             StatFileSize.Value = PackageItem.IsSizeMissing ? Language.GetString("DATA_MISSING") : Settings.UseFormattedFileSizes ? long.Parse(PackageItem.Size).Bytes().Humanize("#.##") : PackageItem.Size + " " + Language.GetString("LABEL_BYTES");
             StatTitleId.Value = PackageItem.TitleId;
-            StatContentId.Text = PackageItem.ContentId;
-            StatSha256.Text = PackageItem.IsSha256Missing ? Language.GetString("DATA_MISSING") : PackageItem.Sha256;
+            StatContentId.Value = PackageItem.ContentId;
+            StatSha256.Value = PackageItem.IsSha256Missing ? Language.GetString("DATA_MISSING") : PackageItem.Sha256;
 
             ButtonInstall.SetControlText(Language.GetString("LABEL_INSTALL_FILE"), 26);
             ButtonDownload.SetControlText(Language.GetString("LABEL_DOWNLOAD_FILE"), 26);

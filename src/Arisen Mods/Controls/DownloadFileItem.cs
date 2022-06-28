@@ -40,8 +40,8 @@ namespace ArisenMods.Controls
 
         private void DownloadItem_Load(object sender, EventArgs e)
         {
-            BackColor = Color.Transparent;
-            ListBoxInstallFiles.BackColor = Parent.BackColor;
+            BackColor = Color.FromArgb(45, 45, 48);
+            ListBoxInstallFiles.BackColor = Color.FromArgb(45, 45, 48);
 
             LabelName.Text = DownloadFiles.Name;
             LabelFilesCount.Text = $"{DownloadFiles.InstallPaths.Count()} {(DownloadFiles.InstallPaths.Count() == 1 ? Language.GetString("LABEL_FILE") : Language.GetString("LABEL_FILES"))}";
@@ -133,12 +133,12 @@ namespace ArisenMods.Controls
             }
         }
 
-        private const int WM_HSCROLL = 0x114;
-        private const int WM_VSCROLL = 0x115;
+        private const int WmHscroll = 0x114;
+        private const int WmVscroll = 0x115;
 
         protected override void WndProc(ref Message m)
         {
-            if ((m.Msg == WM_HSCROLL || m.Msg == WM_VSCROLL)
+            if ((m.Msg == WmHscroll || m.Msg == WmVscroll)
             && (((int)m.WParam & 0xFFFF) == 5))
             {
                 // Change SB_THUMBTRACK to SB_THUMBPOSITION
@@ -151,7 +151,7 @@ namespace ArisenMods.Controls
         {
             get
             {
-                var cp = base.CreateParams;
+                CreateParams cp = base.CreateParams;
                 cp.ExStyle |= 0x02000000;    // Turn on WS_EX_COMPOSITED
                 return cp;
             }

@@ -1,7 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using Humanizer;
-using ArisenMods.Database;
 using ArisenMods.Extensions;
 using ArisenMods.Forms.Windows;
 using ArisenMods.Models.Resources;
@@ -75,7 +74,7 @@ namespace ArisenMods.Forms.Tools.PS3
                     try
                     {
                         BackupFile backupFile = MainWindow.BackupFiles.BackupFiles[GridViewBackupFiles.FocusedRowHandle];
-                        Category category = MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId);
+                        Database.Category category = MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId);
 
                         long fileSize = File.Exists(backupFile.LocalPath) ? new FileInfo(backupFile.LocalPath).Length : 0;
 

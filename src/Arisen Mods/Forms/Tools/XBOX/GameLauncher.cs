@@ -31,11 +31,11 @@ namespace ArisenMods.Forms.Tools.XBOX
 
         private void LoadGames()
         {
-            LabelNoGames.Visible = MainWindow.Settings.GameFilesXBOX.Count <= 0;
+            LabelNoGames.Visible = MainWindow.Settings.GameFilesXbox.Count <= 0;
 
             UpdateStatus("Fetching games list...");
 
-            foreach (ListItem game in MainWindow.Settings.GameFilesXBOX)
+            foreach (ListItem game in MainWindow.Settings.GameFilesXbox)
             {
                 ListBoxGames.Items.Add(game.Name);
             }
@@ -51,12 +51,12 @@ namespace ArisenMods.Forms.Tools.XBOX
 
         private void ButtonEditName_Click(object sender, EventArgs e)
         {
-            string oldName = MainWindow.Settings.GameFilesXBOX[ListBoxGames.SelectedIndex].Name;
+            string oldName = MainWindow.Settings.GameFilesXbox[ListBoxGames.SelectedIndex].Name;
             string newName = DialogExtensions.ShowTextInputDialog(this, Language.GetString("GAME_FILE"), Language.GetString("LABEL_NAME") + ":", oldName);
 
             if (!newName.IsNullOrWhiteSpace())
             {
-                MainWindow.Settings.GameFilesXBOX[ListBoxGames.SelectedIndex].Name = newName;
+                MainWindow.Settings.GameFilesXbox[ListBoxGames.SelectedIndex].Name = newName;
                 XtraMessageBox.Show(this, Language.GetString("FILE_RENAMED_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadGames();
             }
@@ -68,8 +68,8 @@ namespace ArisenMods.Forms.Tools.XBOX
             {
                 UpdateStatus("Launching game...");
 
-                ListItem gameItem = MainWindow.Settings.GameFilesXBOX[ListBoxGames.SelectedIndex];
-                XboxConsole.LaunchXEX(gameItem.Value, gameItem.Value);
+                ListItem gameItem = MainWindow.Settings.GameFilesXbox[ListBoxGames.SelectedIndex];
+                XboxConsole.LaunchXex(gameItem.Value, gameItem.Value);
 
                 UpdateStatus("Successfully launched game.");
                 XtraMessageBox.Show(this, Language.GetString("SUCCESS_LAUNCHED_GAME"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);

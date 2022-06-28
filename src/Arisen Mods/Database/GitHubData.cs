@@ -1,4 +1,5 @@
 ﻿using ArisenMods.Constants;
+using ArisenMods.Models.Dashboard;
 using ArisenMods.Models.Database;
 using Newtonsoft.Json;
 using System.IO;
@@ -18,47 +19,47 @@ namespace ArisenMods.Database
         /// <summary>
         /// Contains the mods from the PS3 database.
         /// </summary>
-        public ModsData GameModsPS3 { get; private set; }
+        public ModsData GameModsPs3 { get; private set; }
 
         /// <summary>
         /// Contains the mods from the PS3 database.
         /// </summary>
-        public ModsData HomebrewPS3 { get; private set; }
+        public ModsData HomebrewPs3 { get; private set; }
 
         /// <summary>
         /// Contains the mods from the PS3 database.
         /// </summary>
-        public ModsData ResourcesPS3 { get; private set; }
+        public ModsData ResourcesPs3 { get; private set; }
 
         /// <summary>
         /// Contains PS3 Games in PKG format.
         /// </summary>
-        public PackagesData GamesPS3 { get; private set; }
+        public PackagesData GamesPs3 { get; private set; }
 
         /// <summary>
         /// Contains PS3 DLCs in PKG format.
         /// </summary>
-        public PackagesData DemosPS3 { get; private set; }
+        public PackagesData DemosPs3 { get; private set; }
 
         /// <summary>
         /// Contains PS3 DLCs in PKG format.
         /// </summary>
-        public PackagesData DLCsPS3 { get; private set; }
+        public PackagesData DLCsPs3 { get; private set; }
 
         /// <summary>
         /// Contains PS3 Avatars in PKG format.
         /// </summary>
-        public PackagesData AvatarsPS3 { get; private set; }
+        public PackagesData AvatarsPs3 { get; private set; }
 
         /// <summary>
         /// Contains PS3 Avatars in PKG format.
         /// </summary>
-        public PackagesData ThemesPS3 { get; private set; }
+        public PackagesData ThemesPs3 { get; private set; }
 
         /// <summary>
         /// Contains the mods from the Xbox database.
         /// </summary>
-        public ModsData PluginsXBOX { get; private set; }
+        public ModsData PluginsXbox { get; private set; }
 
         /// <summary>
         /// Contains the game saves for both platforms
@@ -68,22 +69,27 @@ namespace ArisenMods.Database
         /// <summary>
         /// Contains the game cheats for PS3
         /// </summary>
-        public GameCheatsData GameCheatsPS3 { get; private set; }
+        public GameCheatsData GameCheatsPs3 { get; private set; }
 
         /// <summary>
         /// Contains the game cheats for Xbox 360
         /// </summary>
-        public GameCheatsData GameCheatsXBOX { get; private set; }
+        public GameCheatsData GameCheatsXbox { get; private set; }
 
         /// <summary>
         /// Contains the Xbox 360 Games Title IDs.
         /// </summary>
-        public GamesTitleIdsDataXBOX GamesTitleIdsXBOX { get; private set; }
+        public GamesTitleIdsDataXbox GamesTitleIdsXbox { get; private set; }
 
         /// <summary>
         /// Contains announcements.
         /// </summary>
         public AnnouncementsData Announcements { get; private set; }
+
+        /// <summary>
+        /// Contains favorite mods.
+        /// </summary>
+        public FavoriteModsData FavoritesMods { get; private set; }
 
         /// <summary>
         /// Initialization of the class.
@@ -95,19 +101,20 @@ namespace ArisenMods.Database
             {
                 Announcements = await GetAnnouncementsAsync(),
                 CategoriesData = await GetCategoriesAsync(),
-                GameModsPS3 = await GetGameModsPS3Async(),
-                HomebrewPS3 = await GetHomebrewPS3Async(),
-                ResourcesPS3 = await GetResourcesPS3Async(),
-                PluginsXBOX = await GetPluginsXBOXAsync(),
+                GameModsPs3 = await GetGameModsPs3Async(),
+                HomebrewPs3 = await GetHomebrewPs3Async(),
+                ResourcesPs3 = await GetResourcesPs3Async(),
+                PluginsXbox = await GetPluginsXboxAsync(),
                 GameSaves = await GetGameSavesAsync(),
-                GamesPS3 = await GetGamesPackagesAsync(),
-                DemosPS3 = await GetDemosPackagesAsync(),
-                DLCsPS3 = await GetDLCsPackagesAsync(),
-                AvatarsPS3 = await GetAvatarsPackagesAsync(),
-                ThemesPS3 = await GetThemesPackagesAsync(),
-                GameCheatsPS3 = await GetGameCheatsPS3Async(),
-                GameCheatsXBOX = await GetGameCheatsXBOXAsync(),
-                GamesTitleIdsXBOX = await GetGamesTitleIdsXBOXAsync(),
+                GamesPs3 = await GetGamesPackagesAsync(),
+                DemosPs3 = await GetDemosPackagesAsync(),
+                DLCsPs3 = await GetDlCsPackagesAsync(),
+                AvatarsPs3 = await GetAvatarsPackagesAsync(),
+                ThemesPs3 = await GetThemesPackagesAsync(),
+                GameCheatsPs3 = await GetGameCheatsPs3Async(),
+                GameCheatsXbox = await GetGameCheatsXboxAsync(),
+                GamesTitleIdsXbox = await GetGamesTitleIdsXboxAsync(),
+                FavoritesMods = await GetFavoriteModsAsync(),
             };
 
             data.CategoriesData.Categories = data.CategoriesData.Categories.OrderBy(o => o.Title).ToList();
@@ -116,7 +123,7 @@ namespace ArisenMods.Database
         }
 
         /// <summary>
-        /// Download and return the mods data.
+        /// Download and return the announcements data.
         /// </summary>
         /// <returns> ModsData </returns>
         private static async Task<AnnouncementsData> GetAnnouncementsAsync()
@@ -144,13 +151,13 @@ namespace ArisenMods.Database
         }
 
         /// <summary>
-        /// Download and return the mods data.
+        /// Download and return the game mods data.
         /// </summary>
         /// <returns> ModsData </returns>
-        private static async Task<ModsData> GetGameModsPS3Async()
+        private static async Task<ModsData> GetGameModsPs3Async()
         {
             using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.GameModsDataPS3).ConfigureAwait(true);
+            using Stream stream = await client.GetStreamAsync(Urls.GameModsDataPs3).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
@@ -158,13 +165,13 @@ namespace ArisenMods.Database
         }
 
         /// <summary>
-        /// Download and return the mods data.
+        /// Download and return the homebrew data.
         /// </summary>
         /// <returns> ModsData </returns>
-        private static async Task<ModsData> GetHomebrewPS3Async()
+        private static async Task<ModsData> GetHomebrewPs3Async()
         {
             using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.HomebrewDataPS3).ConfigureAwait(true);
+            using Stream stream = await client.GetStreamAsync(Urls.HomebrewDataPs3).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
@@ -172,13 +179,13 @@ namespace ArisenMods.Database
         }
 
         /// <summary>
-        /// Download and return the mods data.
+        /// Download and return the resources data.
         /// </summary>
         /// <returns> ModsData </returns>
-        private static async Task<ModsData> GetResourcesPS3Async()
+        private static async Task<ModsData> GetResourcesPs3Async()
         {
             using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.ResourcesDataPS3).ConfigureAwait(true);
+            using Stream stream = await client.GetStreamAsync(Urls.ResourcesDataPs3).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
@@ -186,13 +193,13 @@ namespace ArisenMods.Database
         }
 
         /// <summary>
-        /// Download and return the mods data.
+        /// Download and return the games packages data.
         /// </summary>
         /// <returns> ModsData </returns>
         private static async Task<PackagesData> GetGamesPackagesAsync()
         {
             using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.PackagesGamesDataPS3).ConfigureAwait(true);
+            using Stream stream = await client.GetStreamAsync(Urls.PackagesGamesDataPs3).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
@@ -206,7 +213,7 @@ namespace ArisenMods.Database
         private static async Task<PackagesData> GetDemosPackagesAsync()
         {
             using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.PackagesDemosDataPS3).ConfigureAwait(true);
+            using Stream stream = await client.GetStreamAsync(Urls.PackagesDemosDataPs3).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
@@ -214,13 +221,13 @@ namespace ArisenMods.Database
         }
 
         /// <summary>
-        /// Download and return the mods data.
+        /// Download and return the DLCs packages data.
         /// </summary>
         /// <returns> ModsData </returns>
-        private static async Task<PackagesData> GetDLCsPackagesAsync()
+        private static async Task<PackagesData> GetDlCsPackagesAsync()
         {
             using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.PackagesDLCsDataPS3).ConfigureAwait(true);
+            using Stream stream = await client.GetStreamAsync(Urls.PackagesDlCsDataPs3).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
@@ -228,13 +235,13 @@ namespace ArisenMods.Database
         }
 
         /// <summary>
-        /// Download and return the mods data.
+        /// Download and return the avatars packages data.
         /// </summary>
         /// <returns> ModsData </returns>
         private static async Task<PackagesData> GetAvatarsPackagesAsync()
         {
             using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.PackagesAvatarsDataPS3).ConfigureAwait(true);
+            using Stream stream = await client.GetStreamAsync(Urls.PackagesAvatarsDataPs3).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
@@ -242,13 +249,13 @@ namespace ArisenMods.Database
         }
 
         /// <summary>
-        /// Download and return the mods data.
+        /// Download and return the theme packages data.
         /// </summary>
         /// <returns> ModsData </returns>
         private static async Task<PackagesData> GetThemesPackagesAsync()
         {
             using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.PackagesThemesDataPS3).ConfigureAwait(true);
+            using Stream stream = await client.GetStreamAsync(Urls.PackagesThemesDataPs3).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
@@ -256,13 +263,13 @@ namespace ArisenMods.Database
         }
 
         /// <summary>
-        /// Download and return the mods data.
+        /// Download and return the plugins data.
         /// </summary>
         /// <returns> ModsData </returns>
-        private static async Task<ModsData> GetPluginsXBOXAsync()
+        private static async Task<ModsData> GetPluginsXboxAsync()
         {
             using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.PluginsDataXBOX).ConfigureAwait(true);
+            using Stream stream = await client.GetStreamAsync(Urls.PluginsDataXbox).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
@@ -270,7 +277,7 @@ namespace ArisenMods.Database
         }
 
         /// <summary>
-        /// Download and return the mods data.
+        /// Download and return the game saves data.
         /// </summary>
         /// <returns> ModsData </returns>
         private static async Task<GameSavesData> GetGameSavesAsync()
@@ -285,54 +292,52 @@ namespace ArisenMods.Database
 
         public PackageItemData GetPackage(string category, string url)
         {
-            if (category == "Games")
+            switch (category)
             {
-                foreach (PackageItemData package in GamesPS3.Packages)
+                case "Games":
                 {
-                    if (package.Url == url)
+                    foreach (PackageItemData package in GamesPs3.Packages.Where(package => package.Url == url))
                     {
                         return package;
                     }
+
+                    break;
                 }
-            }
-            else if (category == "Demos")
-            {
-                foreach (PackageItemData package in DemosPS3.Packages)
+                case "Demos":
                 {
-                    if (package.Url == url)
+                    foreach (PackageItemData package in DemosPs3.Packages.Where(package => package.Url == url))
                     {
                         return package;
                     }
+
+                    break;
                 }
-            }
-            else if (category == "DLCs")
-            {
-                foreach (PackageItemData package in DLCsPS3.Packages)
+                case "DLCs":
                 {
-                    if (package.Url == url)
+                    foreach (PackageItemData package in DLCsPs3.Packages.Where(package => package.Url == url))
                     {
                         return package;
                     }
+
+                    break;
                 }
-            }
-            else if (category == "Avatars")
-            {
-                foreach (PackageItemData package in AvatarsPS3.Packages)
+                case "Avatars":
                 {
-                    if (package.Url == url)
+                    foreach (PackageItemData package in AvatarsPs3.Packages.Where(package => package.Url == url))
                     {
                         return package;
                     }
+
+                    break;
                 }
-            }
-            else if (category == "Themes")
-            {
-                foreach (PackageItemData package in ThemesPS3.Packages)
+                case "Themes":
                 {
-                    if (package.Url == url)
+                    foreach (PackageItemData package in ThemesPs3.Packages.Where(package => package.Url == url))
                     {
                         return package;
                     }
+
+                    break;
                 }
             }
 
@@ -343,11 +348,11 @@ namespace ArisenMods.Database
         {
             int count = 0;
 
-            count += GamesPS3.Packages.Count;
-            count += DemosPS3.Packages.Count;
-            count += DLCsPS3.Packages.Count;
-            count += AvatarsPS3.Packages.Count;
-            count += ThemesPS3.Packages.Count;
+            count += GamesPs3.Packages.Count;
+            count += DemosPs3.Packages.Count;
+            count += DLCsPs3.Packages.Count;
+            count += AvatarsPs3.Packages.Count;
+            count += ThemesPs3.Packages.Count;
 
             return count;
         }
@@ -356,10 +361,10 @@ namespace ArisenMods.Database
         /// Download and return the game cheats data.
         /// </summary>
         /// <returns> ModsData </returns>
-        private static async Task<GameCheatsData> GetGameCheatsPS3Async()
+        private static async Task<GameCheatsData> GetGameCheatsPs3Async()
         {
             using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.GameCheatsDataPS3).ConfigureAwait(true);
+            using Stream stream = await client.GetStreamAsync(Urls.GameCheatsDataPs3).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
@@ -370,10 +375,10 @@ namespace ArisenMods.Database
         /// Download and return the game cheats data.
         /// </summary>
         /// <returns> ModsData </returns>
-        private static async Task<GameCheatsData> GetGameCheatsXBOXAsync()
+        private static async Task<GameCheatsData> GetGameCheatsXboxAsync()
         {
             using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.GameCheatsDataXBOX).ConfigureAwait(true);
+            using Stream stream = await client.GetStreamAsync(Urls.GameCheatsDataXbox).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
@@ -381,36 +386,50 @@ namespace ArisenMods.Database
         }
 
         /// <summary>
-        /// Download and return the mods data.
+        /// Download and return the Xbox title Ids data.
         /// </summary>
         /// <returns> ModsData </returns>
-        private static async Task<GamesTitleIdsDataXBOX> GetGamesTitleIdsXBOXAsync()
+        private static async Task<GamesTitleIdsDataXbox> GetGamesTitleIdsXboxAsync()
         {
             using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.GameTitleIdsXBOX).ConfigureAwait(true);
+            using Stream stream = await client.GetStreamAsync(Urls.GameTitleIdsXbox).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
-            return new JsonSerializer().Deserialize<GamesTitleIdsDataXBOX>(jsonReader);
+            return new JsonSerializer().Deserialize<GamesTitleIdsDataXbox>(jsonReader);
+        }
+
+        /// <summary>
+        /// Download and return the favorite mods data.
+        /// </summary>
+        /// <returns> ModsData </returns>
+        private static async Task<FavoriteModsData> GetFavoriteModsAsync()
+        {
+            using HttpClient client = new();
+            using Stream stream = await client.GetStreamAsync(Urls.FavoriteModsData).ConfigureAwait(true);
+            using StreamReader streamReader = new(stream);
+            using JsonReader jsonReader = new JsonTextReader(streamReader);
+
+            return new JsonSerializer().Deserialize<FavoriteModsData>(jsonReader);
         }
 
         public ModItemData GetModItem(Platform platform, CategoryType categoryType, int modId)
         {
             if (platform == Platform.PS3 && categoryType == CategoryType.Game)
             {
-                return GameModsPS3.GetModById(platform, modId);
+                return GameModsPs3.GetModById(platform, modId);
             }
             else if (platform == Platform.PS3 && categoryType == CategoryType.Homebrew)
             {
-                return HomebrewPS3.GetModById(platform, modId);
+                return HomebrewPs3.GetModById(platform, modId);
             }
             else if (platform == Platform.PS3 && categoryType == CategoryType.Resource)
             {
-                return ResourcesPS3.GetModById(platform, modId);
+                return ResourcesPs3.GetModById(platform, modId);
             }
             else if (platform == Platform.XBOX360)
             {
-                return PluginsXBOX.GetModById(platform, modId);
+                return PluginsXbox.GetModById(platform, modId);
             }
             else
             {

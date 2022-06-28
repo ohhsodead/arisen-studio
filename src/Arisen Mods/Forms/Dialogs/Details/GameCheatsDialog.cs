@@ -25,7 +25,7 @@ namespace ArisenMods.Forms.Dialogs.Details
 
         public ResourceManager Language = MainWindow.ResourceLanguage;
 
-        public PS3API PS3 = MainWindow.PS3API;
+        public PS3API Ps3 = MainWindow.Ps3Api;
         public GameCheatItemData GameCheatItem = null;
 
         private DataTable DataTableCheats { get; } = DataExtensions.CreateDataTable(
@@ -119,7 +119,7 @@ namespace ArisenMods.Forms.Dialogs.Details
                         param1 = Convert.ToUInt32(lastReturn, 16);
                     }
 
-                    PS3.PS3MAPI.Extension.WriteInt32(param1, (int)param2);
+                    Ps3.PS3MAPI.Extension.WriteInt32(param1, (int)param2);
                 }
             }
             catch (Exception ex)

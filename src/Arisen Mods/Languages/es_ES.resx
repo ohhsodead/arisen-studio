@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ADD_NEW_PROFILE" xml:space="preserve">
+    <value>Añadir nuevo perfil</value>
+  </data>
   <data name="ADVANCED" xml:space="preserve">
     <value>Avanzado</value>
+  </data>
+  <data name="ADVANCED_SETTINGS" xml:space="preserve">
+    <value>Ajustes avanzados</value>
   </data>
   <data name="ALL_CATEGORIES" xml:space="preserve">
     <value>Todas las Categorías</value>
@@ -159,17 +165,26 @@
   <data name="BACKUP_FILES" xml:space="preserve">
     <value>Copias de seguridad</value>
   </data>
-  <data name="BACKUP_FILE_MANAGER" xml:space="preserve">
+  <data name="BACKUP_FILES_MANAGER" xml:space="preserve">
     <value>Administrador de las copias de seguridad</value>
   </data>
   <data name="BACKUP_GAME_FILES" xml:space="preserve">
     <value>Algunos archivos del juego se sobrescribirán. ¿Quieres hacer una copia de seguridad de los archivos del juego actual? Estos archivos se pueden restaurar al desinstalar los mods.</value>
+  </data>
+  <data name="BOOT_PLUGINS_EDITOR" xml:space="preserve">
+    <value>Editor de Plugins de Arrancar</value>
+  </data>
+  <data name="BOOT_PLUGINS_FILE_SAVED" xml:space="preserve">
+    <value>El archivo boot_plugins.txt ha sido editado y subido a tu consola.</value>
   </data>
   <data name="CANT_FIND_BACKUP_FILE" xml:space="preserve">
     <value>Hay una copia de seguridad para {0}.\n\nSin embargo, este archivo se movió o eliminó.\n\nSi movió este archivo, vaya a Herramientas &gt; Archivos de copia de seguridad del juego y configure la nueva ruta del archivo local. Si se eliminó este archivo, elimine los datos del archivo de copia de seguridad y vuelva a hacer una copia de seguridad del archivo.\n\nEste archivo no se puede desinstalar para evitar que falten archivos del juego, por lo que se ignorará.</value>
   </data>
   <data name="CANT_UNINSTALL_CFW_FILES" xml:space="preserve">
     <value>No pueden desinstalar archivos de la carpeta firmware. Cualquier archivo que falte podría afectar el rendimiento de su consola.</value>
+  </data>
+  <data name="CHANGE_PROFILE" xml:space="preserve">
+    <value>Cambiar perfil</value>
   </data>
   <data name="CHEAT_APPLIED" xml:space="preserve">
     <value>Trucos aplicados al juego con éxito.</value>
@@ -192,17 +207,14 @@
   <data name="CONFIRM_DELETE" xml:space="preserve">
     <value>Confirmar Eliminación</value>
   </data>
-  <data name="CONFIRM_DELETE_ALL_DOWNLOADS" xml:space="preserve">
-    <value>¿Realmente quieres eliminar todas tus descargas?</value>
+  <data name="CONFIRM_DELETE_ALL" xml:space="preserve">
+    <value>Confirmar eliminar todo</value>
   </data>
-  <data name="CONFIRM_DELETE_ALL_TITLE" xml:space="preserve">
-    <value>Confirmar Eliminar Todo</value>
+  <data name="CONFIRM_DELETE_ALL_ITEMS" xml:space="preserve">
+    <value>¿Realmente quieres eliminar todos estos elementos?</value>
   </data>
   <data name="CONFIRM_DELETE_ITEM" xml:space="preserve">
     <value>¿Realmente quieres borrar el elemento seleccionado?</value>
-  </data>
-  <data name="CONFIRM_DELETE_ITEM_DOWNLOADS" xml:space="preserve">
-    <value>¿Realmente quieres eliminar el elemento seleccionado de tus descargas?</value>
   </data>
   <data name="CONNECTED" xml:space="preserve">
     <value>Conectado</value>
@@ -213,11 +225,17 @@
   <data name="CONNECTING_TO_CONSOLE" xml:space="preserve">
     <value>Conectando a: {0}</value>
   </data>
+  <data name="CONNECTION" xml:space="preserve">
+    <value>Conexión</value>
+  </data>
   <data name="CONNECTIONS" xml:space="preserve">
     <value>Conexiones</value>
   </data>
   <data name="CONNECTION_FAILED" xml:space="preserve">
     <value>Conexión Fallida</value>
+  </data>
+  <data name="CONNECT_CONSOLE" xml:space="preserve">
+    <value>Conectar consola</value>
   </data>
   <data name="CONNECT_TO_CONSOLE" xml:space="preserve">
     <value>Conectando a la consola...</value>
@@ -228,17 +246,23 @@
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Perfiles de la Consola</value>
   </data>
+  <data name="COPIED_SHA1" xml:space="preserve">
+    <value>La actualización SHA1 ha sido copiada al portapapeles.</value>
+  </data>
+  <data name="COPIED_URL" xml:space="preserve">
+    <value>La actualización URL ha sido copiada al portapapeles.</value>
+  </data>
+  <data name="CREATE_BACKUP_FILE" xml:space="preserve">
+    <value>Debes primero crear un archivo de copia de seguridad para restaurar.</value>
+  </data>
   <data name="CUSTOMIZATION" xml:space="preserve">
     <value>Personalización</value>
   </data>
   <data name="DASHLAUNCH_EDITOR" xml:space="preserve">
-    <value />
+    <value>Editor de Dashlaunch</value>
   </data>
   <data name="DATA_MISSING" xml:space="preserve">
     <value>FALTA DE DATOS</value>
-  </data>
-  <data name="DEFAULT_GAME_REGIONS" xml:space="preserve">
-    <value>Regiones de Juego Predeterminadas</value>
   </data>
   <data name="DELETE" xml:space="preserve">
     <value>Eliminar</value>
@@ -276,11 +300,14 @@
   <data name="DISCONNECTING_FROM_CONSOLE" xml:space="preserve">
     <value>Desconectando de la consola.</value>
   </data>
-  <data name="DISCONNECT_FROM_CONSOLE" xml:space="preserve">
-    <value>Desconectar de la consola</value>
+  <data name="DISCONNECT_CONSOLE" xml:space="preserve">
+    <value>Desconectar consola</value>
   </data>
   <data name="DISCONNECT_LOWERCASE" xml:space="preserve">
     <value>Desconectar</value>
+  </data>
+  <data name="DISCORD_RICH_PRESENCE" xml:space="preserve">
+    <value>Discord Rich Presence</value>
   </data>
   <data name="DOWNLOADING_GAME_SAVE" xml:space="preserve">
     <value>Descargando partida guardada</value>
@@ -303,14 +330,23 @@
   <data name="DOWNLOAD_FOLDER_NOT_FOUND" xml:space="preserve">
     <value>La carpeta de descarga no existe en su computadora. Puede cambiar la ubicación de descarga en su configuración.</value>
   </data>
+  <data name="EDIT_PROFILES" xml:space="preserve">
+    <value>Editar perfiles</value>
+  </data>
   <data name="ENABLE_HARDWARE_ACCELERATION" xml:space="preserve">
     <value>Habilitar la aceleración de hardware</value>
   </data>
   <data name="ERROR" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="ERROR_LAUNCHING_GAME" xml:space="preserve">
+    <value>Incapaz de iniciar el archivo de juego. Error: {0}</value>
+  </data>
   <data name="ERROR_OCCURRED" xml:space="preserve">
     <value>Un error ocurrió: {0}</value>
+  </data>
+  <data name="EXTRACT_IMAGE" xml:space="preserve">
+    <value>Extraer imagen</value>
   </data>
   <data name="FAVORITES_ADD" xml:space="preserve">
     <value>Favorito</value>
@@ -387,6 +423,9 @@
   <data name="FILE_DOWNLOAD_SUCCESS" xml:space="preserve">
     <value>Archivo descargado con éxito.</value>
   </data>
+  <data name="FILE_INSTALLING" xml:space="preserve">
+    <value>Instalando archivo: {0}</value>
+  </data>
   <data name="FILE_INSTALL_ERROR" xml:space="preserve">
     <value>Incapaz de descargar archivo. Error: {0}</value>
   </data>
@@ -411,8 +450,8 @@
   <data name="FILE_NAME_EXISTS" xml:space="preserve">
     <value>Un archivo con este nombre ya existe.</value>
   </data>
-  <data name="FILE_NAME_EXISTS_IN_GAMES" xml:space="preserve">
-    <value>Ya tienes un archivo con este nombre en tus juegos.</value>
+  <data name="FILE_NAME_EXISTS_IN_MODULES" xml:space="preserve">
+    <value>Ya tienes un módulo con este nombre.</value>
   </data>
   <data name="FILE_REINSTALL" xml:space="preserve">
     <value>{0} ya está instalado.\n\n¿Quieres reinstalar el archivo?</value>
@@ -423,14 +462,20 @@
   <data name="FILE_RENAMED" xml:space="preserve">
     <value>Archivo renombrado con éxito a: {0}</value>
   </data>
+  <data name="FILE_RENAMED_SUCCESS" xml:space="preserve">
+    <value>Archivo de juego renombrado con éxito.</value>
+  </data>
   <data name="FILE_RENAME_ERROR" xml:space="preserve">
     <value>Incapaz de renombrar el archivo. Error: {0}</value>
   </data>
-  <data name="FILE_RENAME_GAME" xml:space="preserve">
-    <value>¿Quieres Renombrar este archivo?\n\nNota: No afectará a que sea posible cargar el juego.</value>
+  <data name="FILE_RENAME_MODULE" xml:space="preserve">
+    <value>¿Quieres renombrar este archivo?\n\nNota: No afectará a que sea posible cargar el módulo.</value>
   </data>
   <data name="FILE_RENAMING" xml:space="preserve">
     <value>Renombrándolo archivo a: {0}</value>
+  </data>
+  <data name="FILE_SAVE_ERROR" xml:space="preserve">
+    <value>Hubo un problema guardando o subiendo el archivo.\n\nError: {0}</value>
   </data>
   <data name="FILE_UNINSTALL_ERROR" xml:space="preserve">
     <value>Incapaz de desinstalar archivos. Error: {0}</value>
@@ -519,8 +564,14 @@
   <data name="FOUND_USER_PROFILE" xml:space="preserve">
     <value>Perfil de usuario encontrado: {0}</value>
   </data>
-  <data name="GAME_LAUNCHER" xml:space="preserve">
-    <value>Lanzador de Juego</value>
+  <data name="GAMES" xml:space="preserve">
+    <value>Juegos</value>
+  </data>
+  <data name="GAMES_LAUNCHER" xml:space="preserve">
+    <value>Iniciador de juegos</value>
+  </data>
+  <data name="GAME_NOT_SUPPORTED" xml:space="preserve">
+    <value>Este juego no está soportado actualmente.</value>
   </data>
   <data name="GAME_REGIONS" xml:space="preserve">
     <value>Regiones del Juego Predeterminadas</value>
@@ -531,8 +582,8 @@
   <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
     <value>Game Save Resigner</value>
   </data>
-  <data name="GAME_UPDATE_FINDER" xml:space="preserve">
-    <value>Buscador de actualizaciones de juegos</value>
+  <data name="GAME_UPDATES" xml:space="preserve">
+    <value>Actualizaciones del juego</value>
   </data>
   <data name="GETTING_DOWNLOAD_FILES" xml:space="preserve">
     <value>Obteniendo el enlace de descarga del archivo...</value>
@@ -549,11 +600,17 @@
   <data name="GETTING_USER_PROFILE" xml:space="preserve">
     <value>Obteniendo perfil de usuario...</value>
   </data>
+  <data name="HARD_REBOOT" xml:space="preserve">
+    <value>Reinicio duro</value>
+  </data>
   <data name="HELP" xml:space="preserve">
     <value>AYUDA</value>
   </data>
   <data name="HELP_TRANSLATE" xml:space="preserve">
     <value>Ayuda a traducir Modio en Crowdin</value>
+  </data>
+  <data name="HOME" xml:space="preserve">
+    <value>Inicio</value>
   </data>
   <data name="HOW_TO_ACTIVATE_DEMO" xml:space="preserve">
     <value>Activar un paquete C00/Demo es muy fácil y no requiere un archivo rap. Se puede hacer usando ReActPSN o PSNPatch.\n\nReActPSN: Ejecute el homebrew mientras mantiene presionado el círculo en su controlador.
@@ -567,6 +624,9 @@
   </data>
   <data name="HOW_TO_ACTIVATE_RAP_QUESTION" xml:space="preserve">
     <value>¿Cómo activo un paquete PSN con un archivo RAP?</value>
+  </data>
+  <data name="HOW_TO_GUIDES" xml:space="preserve">
+    <value>Guías rápidas</value>
   </data>
   <data name="ICON" xml:space="preserve">
     <value>Icono</value>
@@ -598,9 +658,6 @@
   <data name="INSTALLING_BACKUP_FILE_LOCATION" xml:space="preserve">
     <value>Instalando copia de seguridad: {0} de {1}</value>
   </data>
-  <data name="INSTALLING_FILE" xml:space="preserve">
-    <value>Instalando archivo: {0}</value>
-  </data>
   <data name="INSTALLING_GAME_SAVE" xml:space="preserve">
     <value>Instalando partida guardada</value>
   </data>
@@ -631,11 +688,20 @@
   <data name="INSTALL_MODS_TO_LOCAL_USB" xml:space="preserve">
     <value>Instalar mods de juegos/plugins en el dispositivo USB local</value>
   </data>
+  <data name="INSTALL_MODS_TO_USB" xml:space="preserve">
+    <value>Instalar mods para USB</value>
+  </data>
   <data name="INSTALL_PACKAGES_TO_LOCAL_USB" xml:space="preserve">
     <value>Instalar paquetes en un dispositivo USB local</value>
   </data>
   <data name="INSTALL_RESOURCES_TO_LOCAL_USB" xml:space="preserve">
     <value>Instalar recursos en el dispositivo USB local</value>
+  </data>
+  <data name="INVALID_TITLE_ID" xml:space="preserve">
+    <value>ID inválido o no pudo ser encontrado. ¿Estás seguro de que este es un título ID válido de PS3?</value>
+  </data>
+  <data name="IP_GRABBER" xml:space="preserve">
+    <value>Capturador de IP</value>
   </data>
   <data name="LABEL_ADDRESS_NAME" xml:space="preserve">
     <value>Dirección IP/Nombre</value>
@@ -643,8 +709,8 @@
   <data name="LABEL_ADD_TO_FAVORITES" xml:space="preserve">
     <value>Añadir a favoritos</value>
   </data>
-  <data name="LABEL_ADD_TO_GAMES" xml:space="preserve">
-    <value>Añadir a juegos</value>
+  <data name="LABEL_ADD_TO_MODULES" xml:space="preserve">
+    <value>Añadir a módulos</value>
   </data>
   <data name="LABEL_ALL" xml:space="preserve">
     <value>Todo</value>
@@ -699,6 +765,12 @@
   </data>
   <data name="LABEL_COPIED" xml:space="preserve">
     <value>Copiado</value>
+  </data>
+  <data name="LABEL_COPY_SHA1" xml:space="preserve">
+    <value>Copiar SHA1 al portapapeles</value>
+  </data>
+  <data name="LABEL_COPY_URL" xml:space="preserve">
+    <value>Copiar URL al portapapeles</value>
   </data>
   <data name="LABEL_CREATED_BY" xml:space="preserve">
     <value>Creado Por</value>
@@ -757,6 +829,9 @@
   <data name="LABEL_EDIT" xml:space="preserve">
     <value>Editar</value>
   </data>
+  <data name="LABEL_EDIT_NAME" xml:space="preserve">
+    <value>Editar nombre</value>
+  </data>
   <data name="LABEL_FAVORITE" xml:space="preserve">
     <value>Favorito</value>
   </data>
@@ -769,14 +844,23 @@
   <data name="LABEL_FILE_NAME" xml:space="preserve">
     <value>Nombre del Archivo</value>
   </data>
+  <data name="LABEL_FILE_PATH" xml:space="preserve">
+    <value>Ruta de archivo</value>
+  </data>
   <data name="LABEL_FILE_SIZE" xml:space="preserve">
     <value>Tamaño del Archivo</value>
   </data>
   <data name="LABEL_GAME" xml:space="preserve">
     <value>Juego</value>
   </data>
+  <data name="LABEL_GAMES" xml:space="preserve">
+    <value>Juegos</value>
+  </data>
   <data name="LABEL_GAME_CHEATS" xml:space="preserve">
     <value>Trucos del Juego</value>
+  </data>
+  <data name="LABEL_GAME_FILE" xml:space="preserve">
+    <value>Archivo del juego</value>
   </data>
   <data name="LABEL_GAME_MODE" xml:space="preserve">
     <value>Modo de Juego</value>
@@ -798,6 +882,9 @@
   </data>
   <data name="LABEL_IMAGE" xml:space="preserve">
     <value>Imagen</value>
+  </data>
+  <data name="LABEL_IMAGE_SIZE_TOO_BIG" xml:space="preserve">
+    <value>¡El tamaño del archivo de la imagen es demasiado grande!</value>
   </data>
   <data name="LABEL_INSTALL" xml:space="preserve">
     <value>Instalar</value>
@@ -823,8 +910,14 @@
   <data name="LABEL_LAST_UPDATED" xml:space="preserve">
     <value>Última Actualización</value>
   </data>
+  <data name="LABEL_LAUNCH_GAME" xml:space="preserve">
+    <value>Iniciar el juego</value>
+  </data>
   <data name="LABEL_LIBRARIES" xml:space="preserve">
     <value>Librerías</value>
+  </data>
+  <data name="LABEL_LOAD_MODULE" xml:space="preserve">
+    <value>Cargar módulo</value>
   </data>
   <data name="LABEL_LOGIN" xml:space="preserve">
     <value>Iniciar sesión</value>
@@ -832,8 +925,17 @@
   <data name="LABEL_LOGIN_DETAILS" xml:space="preserve">
     <value>Detalles de acceso</value>
   </data>
+  <data name="LABEL_MINIMUM_FIRMWARE" xml:space="preserve">
+    <value>Mínimo FW</value>
+  </data>
+  <data name="LABEL_MIN_FW" xml:space="preserve">
+    <value>Mín. FW</value>
+  </data>
   <data name="LABEL_MODIFIED_DATE" xml:space="preserve">
     <value>Fecha modificada</value>
+  </data>
+  <data name="LABEL_MODULES" xml:space="preserve">
+    <value>Módulos</value>
   </data>
   <data name="LABEL_MOD_TYPE" xml:space="preserve">
     <value>Tipo de mod</value>
@@ -850,14 +952,23 @@
   <data name="LABEL_NOT_INSTALLED" xml:space="preserve">
     <value>No instalado</value>
   </data>
+  <data name="LABEL_NO_GAMES" xml:space="preserve">
+    <value>No hay juegos añadidos aún.\n\nPuedes añadirlos usando el administrador de archivos.</value>
+  </data>
   <data name="LABEL_OK" xml:space="preserve">
     <value>OK</value>
+  </data>
+  <data name="LABEL_OPEN" xml:space="preserve">
+    <value>Abrir</value>
   </data>
   <data name="LABEL_OPEN_EXPLORER" xml:space="preserve">
     <value>Abrir explorador</value>
   </data>
   <data name="LABEL_OPEN_PATH" xml:space="preserve">
     <value>Abrir ruta</value>
+  </data>
+  <data name="LABEL_OPEN_PROFILE" xml:space="preserve">
+    <value>Abrir perfil</value>
   </data>
   <data name="LABEL_PACKAGES" xml:space="preserve">
     <value>Paquetes</value>
@@ -898,8 +1009,44 @@
   <data name="LABEL_RESOURCES" xml:space="preserve">
     <value>Recursos</value>
   </data>
+  <data name="LABEL_RESTORE_BACKUP" xml:space="preserve">
+    <value>Restaurar copia de seguridad</value>
+  </data>
+  <data name="LABEL_RESTORE_DEFAULT" xml:space="preserve">
+    <value>Restaurar valores predeterminados</value>
+  </data>
   <data name="LABEL_RESTORE_FILE" xml:space="preserve">
     <value>Restaurar archivo</value>
+  </data>
+  <data name="LABEL_RING_BUZZER" xml:space="preserve">
+    <value>Ring Buzzer</value>
+  </data>
+  <data name="LABEL_SAVE_AND_UPDATE" xml:space="preserve">
+    <value>Guardar y actualizar</value>
+  </data>
+  <data name="LABEL_SAVE_PROFILE" xml:space="preserve">
+    <value>Guardar perfil</value>
+  </data>
+  <data name="LABEL_SEARCH" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="LABEL_SEARCHING" xml:space="preserve">
+    <value>Buscando...</value>
+  </data>
+  <data name="LABEL_SEARCH_SUCCESS" xml:space="preserve">
+    <value>Elementos obtenidos con éxito.</value>
+  </data>
+  <data name="LABEL_SET" xml:space="preserve">
+    <value>Establecer</value>
+  </data>
+  <data name="LABEL_SET_FAN_SPEED" xml:space="preserve">
+    <value>Establecer velocidad del ventilador</value>
+  </data>
+  <data name="LABEL_SET_LEDS" xml:space="preserve">
+    <value>Establecer LEDs</value>
+  </data>
+  <data name="LABEL_SET_VALUE" xml:space="preserve">
+    <value>Establecer valor</value>
   </data>
   <data name="LABEL_SHOW_FAVORITES" xml:space="preserve">
     <value>Mostrar favoritos</value>
@@ -925,6 +1072,9 @@
   <data name="LABEL_SYSTEM_TYPE" xml:space="preserve">
     <value>Tipo de sistema</value>
   </data>
+  <data name="LABEL_TITLE" xml:space="preserve">
+    <value>Título</value>
+  </data>
   <data name="LABEL_TITLE_ID" xml:space="preserve">
     <value>ID del título</value>
   </data>
@@ -939,6 +1089,9 @@
   </data>
   <data name="LABEL_UNFAVORITE" xml:space="preserve">
     <value>Eliminar de favorito</value>
+  </data>
+  <data name="LABEL_UNLOAD_MODULE" xml:space="preserve">
+    <value>Descargar módulo</value>
   </data>
   <data name="LABEL_UPLOAD" xml:space="preserve">
     <value>Subir</value>
@@ -967,17 +1120,92 @@
   <data name="LAUNCH_FILE_PATH" xml:space="preserve">
     <value>ruta del archivo launch.ini</value>
   </data>
+  <data name="LAUNCH_FILE_SAVED" xml:space="preserve">
+    <value>El archivo launch.ini ha sido editado y subido a tu consola.</value>
+  </data>
   <data name="MESSAGE" xml:space="preserve">
     <value>Mensaje</value>
   </data>
   <data name="MISSING" xml:space="preserve">
     <value>FALTA</value>
   </data>
+  <data name="MODDING_TOOLS" xml:space="preserve">
+    <value>Herramientas de modding</value>
+  </data>
+  <data name="MODULE_ALREADY_LOADED" xml:space="preserve">
+    <value>El módulo ya ha sido cargado.</value>
+  </data>
+  <data name="MODULE_LOADED" xml:space="preserve">
+    <value>El módulo ya ha sido cargado.</value>
+  </data>
+  <data name="MODULE_LOADER" xml:space="preserve">
+    <value>Cargador de módulo</value>
+  </data>
+  <data name="MODULE_LOAD_ERROR" xml:space="preserve">
+    <value>Incapaz de cargar el módulo.\n\nError: {0}</value>
+  </data>
+  <data name="MODULE_LOAD_SUCCESS" xml:space="preserve">
+    <value>Módulo cargado con éxito.</value>
+  </data>
+  <data name="MODULE_NOT_LOADED" xml:space="preserve">
+    <value>El módulo no ha sido cargado.</value>
+  </data>
+  <data name="MODULE_UNLOAD_ERROR" xml:space="preserve">
+    <value>Incapaz de descargar el módulo.\n\nError: {0}</value>
+  </data>
+  <data name="MODULE_UNLOAD_SUCCESS" xml:space="preserve">
+    <value>Módulo descargado con éxito.</value>
+  </data>
   <data name="MOD_NOT_INSTALLED" xml:space="preserve">
     <value>{0} no está instalado en tu consola.\n\n¿Quieres probar a desinstalar el archivo de todas maneras?</value>
   </data>
   <data name="MOTHERBOARD" xml:space="preserve">
     <value>Tarjeta madre</value>
+  </data>
+  <data name="MOUNT_BD" xml:space="preserve">
+    <value>Montar BD</value>
+  </data>
+  <data name="MOUNT_ISO" xml:space="preserve">
+    <value>Montar ISO</value>
+  </data>
+  <data name="MOUNT_PSN" xml:space="preserve">
+    <value>Montar PSN</value>
+  </data>
+  <data name="NAVIGATION_DASHBOARD" xml:space="preserve">
+    <value>TABLERO</value>
+  </data>
+  <data name="NAVIGATION_DOWNLOADS" xml:space="preserve">
+    <value>DESCARGAS</value>
+  </data>
+  <data name="NAVIGATION_FILE_MANAGER" xml:space="preserve">
+    <value>ADMINISTRADOR DE ARCHIVOS</value>
+  </data>
+  <data name="NAVIGATION_GAME_CHEATS" xml:space="preserve">
+    <value>TRUCOS DE JUEGOS</value>
+  </data>
+  <data name="NAVIGATION_GAME_MODS" xml:space="preserve">
+    <value>MODS DE JUEGOS</value>
+  </data>
+  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
+    <value>PARTIDAS GUARDADAS</value>
+  </data>
+  <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
+    <value>HOMEBREW</value>
+  </data>
+  <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
+    <value>MODS INSTALADOS</value>
+  </data>
+  <data name="NAVIGATION_PACKAGES" xml:space="preserve">
+    <value>PAQUETES</value>
+  </data>
+  <data name="NAVIGATION_PLUGINS" xml:space="preserve">
+    <value>PLUGINS</value>
+  </data>
+  <data name="NAVIGATION_RESOURCES" xml:space="preserve">
+    <value>RECURSOS</value>
+  </data>
+  <data name="NAVIGATION_SETTINGS" xml:space="preserve">
+    <value>AJUSTES</value>
   </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Make sure Neighborhood is installed on your computer</value>
@@ -1081,6 +1309,9 @@
   <data name="PACKAGE_FILE_MANAGER" xml:space="preserve">
     <value>Administrador de archivos de paquetes</value>
   </data>
+  <data name="POWER" xml:space="preserve">
+    <value>Potencia</value>
+  </data>
   <data name="PREPARING_DOWNLOAD" xml:space="preserve">
     <value>Preparándose para descargar el archivo...</value>
   </data>
@@ -1102,11 +1333,20 @@
   <data name="PROFILE_EDIT" xml:space="preserve">
     <value>Editar Perfil</value>
   </data>
+  <data name="QUICK_REBOOT" xml:space="preserve">
+    <value>Reinicio rápido</value>
+  </data>
+  <data name="QUICK_SETTINGS" xml:space="preserve">
+    <value>Ajustes rápidos</value>
+  </data>
   <data name="READY_TO_CONNECT" xml:space="preserve">
     <value>Preparado para conectar...</value>
   </data>
   <data name="READY_TO_START_GAME" xml:space="preserve">
     <value>Preparado para iniciar el juego.</value>
+  </data>
+  <data name="RECONNECT_CONSOLE" xml:space="preserve">
+    <value>Reconectar consola</value>
   </data>
   <data name="REDIRECTING" xml:space="preserve">
     <value>Redireccionando...</value>
@@ -1129,14 +1369,26 @@
   <data name="REMEMBER_LOCAL_DIRECTORY_PATH" xml:space="preserve">
     <value>Recordar la última ruta del directorio local</value>
   </data>
+  <data name="REPLACE_IMAGE" xml:space="preserve">
+    <value>Reemplazar imagen</value>
+  </data>
   <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
     <value>Los archivos se han instalado en un dispositivo USB conectado a su consola. Puede desinstalarlos ahora o eliminarlos manualmente.\n\nSi desea desinstalar los archivos ahora, conecte el mismo dispositivo USB en el que instaló los mods en el mismo puerto de su consola y haga clic en 'Sí' para continuar.\ nSi no desea desinstalar los archivos, haga clic en 'No' y se ignorarán todos estos archivos.</value>
+  </data>
+  <data name="RESTART" xml:space="preserve">
+    <value>Reiniciar</value>
   </data>
   <data name="RESTART_REQUIRED" xml:space="preserve">
     <value>Reinicio requerido</value>
   </data>
   <data name="RESTART_TAKE_AFFECT" xml:space="preserve">
     <value>Debes reiniciar la aplicación para que este cambio surta efecto. ¿Quieres reiniciar ahora?</value>
+  </data>
+  <data name="RESTORE_BACKUP_FILE" xml:space="preserve">
+    <value>¿Realmente quieres restaurar el archivo de copia de seguridad? Todos los cambios se perderán.</value>
+  </data>
+  <data name="RESTORE_DEFAULT_FILE" xml:space="preserve">
+    <value>¿Realmente quieres restaurar al archivo por defecto? Todos los cambios se perderán.</value>
   </data>
   <data name="RICH_PRESENCE" xml:space="preserve">
     <value>Rica presencia</value>
@@ -1147,32 +1399,23 @@
   <data name="SCANNING_XBOX_FINISHED" xml:space="preserve">
     <value>Escaneo terminado para consolas Xbox.</value>
   </data>
+  <data name="SCAN_XBOX_CONSOLES" xml:space="preserve">
+    <value>Escanear consolas Xbox</value>
+  </data>
   <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
     <value>Este tipo de mod (Script) no se puede instalar en la PS3 porque necesita la adición del manual de usuario.</value>
-  </data>
-  <data name="SETUP_HOWTO_GUIDE" xml:space="preserve">
-    <value>Guías de ayuda para Modio</value>
-  </data>
-  <data name="SETUP_PROFILES_EDIT" xml:space="preserve">
-    <value>Editar perfiles de consola</value>
-  </data>
-  <data name="SETUP_PROFILE_ADD" xml:space="preserve">
-    <value>Agregar perfil de consola</value>
-  </data>
-  <data name="SETUP_SCAN_XBOX_CONSOLES" xml:space="preserve">
-    <value>Buscar consolas Xbox</value>
-  </data>
-  <data name="SETUP_SET_DOWNLOADS_LOCATION" xml:space="preserve">
-    <value>Establecer ubicación de descargas</value>
-  </data>
-  <data name="SETUP_STARTUP_LIBRARY" xml:space="preserve">
-    <value>Biblioteca de inicio</value>
   </data>
   <data name="SHOW_CURRENT_GAME_PLAYING" xml:space="preserve">
     <value>Mostrar el juego al que se juega actualmente</value>
   </data>
   <data name="SHOW_GAMES_IN_EXTERNAL_DEVICES" xml:space="preserve">
     <value>Mostrar la lista de juegos desde un dispositivo externo</value>
+  </data>
+  <data name="SHUTDOWN" xml:space="preserve">
+    <value>Apagar</value>
+  </data>
+  <data name="SOFT_REBOOT" xml:space="preserve">
+    <value>Reinicio suave</value>
   </data>
   <data name="STARTING_INSTALL" xml:space="preserve">
     <value>Iniciando instalación...</value>
@@ -1186,6 +1429,12 @@
   <data name="SUCCESS_DISCONNECTED" xml:space="preserve">
     <value>Con éxito desconectado de la consola.</value>
   </data>
+  <data name="SUCCESS_LAUNCHED_GAME" xml:space="preserve">
+    <value>Juego iniciado con éxito.</value>
+  </data>
+  <data name="SUCCESS_LAUNCH_GAME" xml:space="preserve">
+    <value>Juego iniciado con éxito.</value>
+  </data>
   <data name="SUCCESS_LOADED_DB" xml:space="preserve">
     <value>La base de datos se cargó con éxito: finalizando los datos de la aplicación...</value>
   </data>
@@ -1195,14 +1444,14 @@
   <data name="SYSTEM_TEMPERATURES" xml:space="preserve">
     <value>Temperaturas del sistema</value>
   </data>
+  <data name="TAKE_SCREENSHOT" xml:space="preserve">
+    <value>Tomar captura de pantalla</value>
+  </data>
   <data name="TITLE_ANNOUNCEMENTS" xml:space="preserve">
     <value>ANUNCIOS</value>
   </data>
   <data name="TITLE_CHANGE_LOG" xml:space="preserve">
     <value>REGISTRO DE CAMBIOS</value>
-  </data>
-  <data name="TITLE_CONNECT" xml:space="preserve">
-    <value>CONECTAR</value>
   </data>
   <data name="TITLE_CONTRIBUTORS" xml:space="preserve">
     <value>CONTRIBUTORES</value>
@@ -1210,38 +1459,8 @@
   <data name="TITLE_CREDITS" xml:space="preserve">
     <value>CRÉDITOS</value>
   </data>
-  <data name="TITLE_DASHBOARD" xml:space="preserve">
-    <value>TABLERO</value>
-  </data>
-  <data name="TITLE_DOWNLOADS" xml:space="preserve">
-    <value>DESCARGAS</value>
-  </data>
-  <data name="TITLE_FILE_MANAGER" xml:space="preserve">
-    <value>ADMINISTRADOR DE ARCHIVO</value>
-  </data>
   <data name="TITLE_GAMES" xml:space="preserve">
     <value>JUEGOS</value>
-  </data>
-  <data name="TITLE_GAME_CHEATS" xml:space="preserve">
-    <value>TRUCOS DE JUEGOS</value>
-  </data>
-  <data name="TITLE_GAME_MODS" xml:space="preserve">
-    <value>MODS DE JUEGOS</value>
-  </data>
-  <data name="TITLE_GAME_SAVES" xml:space="preserve">
-    <value>PARTIDAS GUARDADAS</value>
-  </data>
-  <data name="TITLE_GET_STARTED" xml:space="preserve">
-    <value>EMPEZAR</value>
-  </data>
-  <data name="TITLE_HELP" xml:space="preserve">
-    <value>AYUDA</value>
-  </data>
-  <data name="TITLE_HOMEBREW" xml:space="preserve">
-    <value>CERDO CASERO</value>
-  </data>
-  <data name="TITLE_INSTALLED_MODS" xml:space="preserve">
-    <value>MODS INSTALADOS</value>
   </data>
   <data name="TITLE_INTERFACE" xml:space="preserve">
     <value>INTERFAZ</value>
@@ -1252,17 +1471,11 @@
   <data name="TITLE_OPTIONS" xml:space="preserve">
     <value>OPCIONES</value>
   </data>
-  <data name="TITLE_PACKAGES" xml:space="preserve">
-    <value>PAQUETES</value>
+  <data name="TITLE_OUR_FAVORITE_MODS" xml:space="preserve">
+    <value>NUESTROS MODS FAVORITOS</value>
   </data>
-  <data name="TITLE_PLUGINS" xml:space="preserve">
-    <value>PLUGINS</value>
-  </data>
-  <data name="TITLE_RESOURCES" xml:space="preserve">
-    <value>RECURSOS</value>
-  </data>
-  <data name="TITLE_SETTINGS" xml:space="preserve">
-    <value>AJUSTES</value>
+  <data name="TITLE_RECENTLY_UPDATED" xml:space="preserve">
+    <value>ACTUALIZADO RECIENTEMENTE</value>
   </data>
   <data name="TITLE_SPECIAL_THANKS" xml:space="preserve">
     <value>GRACIAS ESPECIALES</value>
@@ -1270,11 +1483,8 @@
   <data name="TITLE_STATISTICS" xml:space="preserve">
     <value>ESTADÍSTICAS</value>
   </data>
-  <data name="TITLE_SUBMIT_MODS" xml:space="preserve">
-    <value>ENVIAR MODS</value>
-  </data>
-  <data name="TITLE_TOOLS" xml:space="preserve">
-    <value>HERRAMIENTAS</value>
+  <data name="TOOLS" xml:space="preserve">
+    <value>Herramientas</value>
   </data>
   <data name="UNABLE_LOAD_DATABASE" xml:space="preserve">
     <value>Incapaz de cargar la base de datos.</value>
@@ -1318,6 +1528,9 @@
   <data name="UNINSTALL_USB_FILES" xml:space="preserve">
     <value>Desinstalar archivos USB</value>
   </data>
+  <data name="UNMOUNT" xml:space="preserve">
+    <value>Desmontar</value>
+  </data>
   <data name="UPLOAD_ERROR" xml:space="preserve">
     <value>No se puede cargar a la consola. Error: {0}</value>
   </data>
@@ -1333,11 +1546,32 @@
   <data name="VIEW_DETAILS" xml:space="preserve">
     <value>Ver detalles</value>
   </data>
+  <data name="VIRTUAL_CONTROLLER" xml:space="preserve">
+    <value>Controlador virtual</value>
+  </data>
+  <data name="WEBMAN_COMMANDS" xml:space="preserve">
+    <value>Comandos webMAN</value>
+  </data>
   <data name="WEBMAN_REQUIRED" xml:space="preserve">
     <value>Esta función requiere que webMAN esté instalado en tu consola.</value>
   </data>
+  <data name="XBDM_COMMANDS" xml:space="preserve">
+    <value>Comandos XBDM</value>
+  </data>
   <data name="XBOX_CONSOLES" xml:space="preserve">
     <value>Consolas Xbox</value>
+  </data>
+  <data name="XUID_GET_ERROR" xml:space="preserve">
+    <value>Hubo un error obteniendo el XUID. Recuerda, ¡debes estar conectado para que esta función funcione!</value>
+  </data>
+  <data name="XUID_SET_ERROR" xml:space="preserve">
+    <value>Incapaz de establecer el XUID para el juego.</value>
+  </data>
+  <data name="XUID_SET_SUCCESS" xml:space="preserve">
+    <value>XUID cambiado para el juego con éxito.</value>
+  </data>
+  <data name="XUID_SPOOFER" xml:space="preserve">
+    <value>Falsificador de XUID</value>
   </data>
   <data name="YOU_MUST_BE_CONNECTED_TO_UNINSTALL_FILES" xml:space="preserve">
     <value>Debes estar conectado a {0} para desinstalar los archivos.</value>
@@ -1347,5 +1581,8 @@
   </data>
   <data name="YOU_MUST_BE_CONNECTED_TO_VIEW_INSTALLED_MODS" xml:space="preserve">
     <value>Debes estar conectado a tu consola para ver los mods instalados.</value>
+  </data>
+  <data name="YOU_MUST_ENTER_TITLE_ID" xml:space="preserve">
+    <value>Debes introducir un título ID.</value>
   </data>
 </root>

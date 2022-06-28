@@ -2,7 +2,6 @@
 using DevExpress.XtraEditors;
 using Humanizer;
 using ArisenMods.Controls;
-using ArisenMods.Database;
 using ArisenMods.Extensions;
 using ArisenMods.Forms.Windows;
 using ArisenMods.Models.Database;
@@ -67,7 +66,7 @@ namespace ArisenMods.Forms.Dialogs.Details
             LabelDescription.Text += extraDescription.ToString();
 
             int count = 0;
-            foreach (DownloadFiles downloadFile in GameSaveItem.DownloadFiles)
+            foreach (Database.DownloadFiles downloadFile in GameSaveItem.DownloadFiles)
             {
                 count++;
 

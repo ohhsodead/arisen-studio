@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace ArisenMods.Models.Database
 {
-    public class GamesTitleIdsDataXBOX
+    public class GamesTitleIdsDataXbox
     {
         /// <summary>
         /// Get the date/time the database was last updated.
@@ -16,7 +16,7 @@ namespace ArisenMods.Models.Database
         /// <summary>
         /// Get the mods from the database.
         /// </summary>
-        public List<GamesTitleIdsXBOX> Games { get; set; }
+        public List<GamesTitleIdsXbox> Games { get; set; }
 
         /// <summary>
         /// Get the game title for the specified titleId.

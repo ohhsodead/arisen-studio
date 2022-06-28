@@ -38,7 +38,7 @@ namespace ArisenMods.Forms.Dialogs
         /// <summary>
         /// Get the console profile details.
         /// </summary>
-        public Platform Platform { get; set; }
+        public Platform? Platform { get; set; } = null;
 
         /// <summary>
         /// Get the console profile details.
@@ -121,45 +121,91 @@ namespace ArisenMods.Forms.Dialogs
             }
             else
             {
-                foreach (ConsoleProfile consoleProfile in Settings.ConsoleProfiles.FindAll(x => x.Platform == Platform))
+                if (Platform == null)
                 {
-                    Image consoleImage = consoleImage = Resources.PlayStation3Fat;
-
-                    switch (consoleProfile.PlatformType)
+                    foreach (ConsoleProfile consoleProfile in Settings.ConsoleProfiles)
                     {
-                        case PlatformType.PlayStation3Fat:
-                            consoleImage = Resources.PlayStation3Fat;
-                            break;
+                        Image consoleImage = consoleImage = Resources.PlayStation3Fat;
 
-                        case PlatformType.PlayStation3Slim:
-                            consoleImage = Resources.PlayStation3Slim;
-                            break;
+                        switch (consoleProfile.PlatformType)
+                        {
+                            case PlatformType.PlayStation3Fat:
+                                consoleImage = Resources.PlayStation3Fat;
+                                break;
 
-                        case PlatformType.PlayStation3SuperSlim:
-                            consoleImage = Resources.PlayStation3Slim;
-                            break;
+                            case PlatformType.PlayStation3Slim:
+                                consoleImage = Resources.PlayStation3Slim;
+                                break;
 
-                        case PlatformType.Xbox360FatWhite:
-                            consoleImage = Resources.XboxFat;
-                            break;
+                            case PlatformType.PlayStation3SuperSlim:
+                                consoleImage = Resources.PlayStation3Slim;
+                                break;
 
-                        case PlatformType.Xbox360EliteFatBlack:
-                            consoleImage = Resources.XboxFatElite;
-                            break;
+                            case PlatformType.Xbox360FatWhite:
+                                consoleImage = Resources.XboxFat;
+                                break;
 
-                        case PlatformType.Xbox360Slim:
-                            consoleImage = Resources.XboxSlim;
-                            break;
+                            case PlatformType.Xbox360EliteFatBlack:
+                                consoleImage = Resources.XboxFatElite;
+                                break;
 
-                        case PlatformType.Xbox360SlimE:
-                            consoleImage = Resources.XboxSlimE;
-                            break;
+                            case PlatformType.Xbox360Slim:
+                                consoleImage = Resources.XboxSlim;
+                                break;
+
+                            case PlatformType.Xbox360SlimE:
+                                consoleImage = Resources.XboxSlimE;
+                                break;
+                        }
+
+                        ProfileItem consoleItem = new(consoleProfile.Name, consoleImage) { ConsoleProfile = consoleProfile };
+                        consoleItem.OnClick += ConsoleItem_Click;
+                        consoleItem.OnDoubleClick += ConsoleItem_DoubleClick;
+                        PanelConsoleProfiles.Controls.Add(consoleItem);
                     }
+                }
+                else
+                {
+                    foreach (ConsoleProfile consoleProfile in Settings.ConsoleProfiles.FindAll(x => x.Platform == Platform))
+                    {
+                        Image consoleImage = consoleImage = Resources.PlayStation3Fat;
 
-                    ProfileItem consoleItem = new(consoleProfile.Name, consoleImage) { ConsoleProfile = consoleProfile };
-                    consoleItem.OnClick += ConsoleItem_Click;
-                    consoleItem.OnDoubleClick += ConsoleItem_DoubleClick;
-                    PanelConsoleProfiles.Controls.Add(consoleItem);
+                        switch (consoleProfile.PlatformType)
+                        {
+                            case PlatformType.PlayStation3Fat:
+                                consoleImage = Resources.PlayStation3Fat;
+                                break;
+
+                            case PlatformType.PlayStation3Slim:
+                                consoleImage = Resources.PlayStation3Slim;
+                                break;
+
+                            case PlatformType.PlayStation3SuperSlim:
+                                consoleImage = Resources.PlayStation3Slim;
+                                break;
+
+                            case PlatformType.Xbox360FatWhite:
+                                consoleImage = Resources.XboxFat;
+                                break;
+
+                            case PlatformType.Xbox360EliteFatBlack:
+                                consoleImage = Resources.XboxFatElite;
+                                break;
+
+                            case PlatformType.Xbox360Slim:
+                                consoleImage = Resources.XboxSlim;
+                                break;
+
+                            case PlatformType.Xbox360SlimE:
+                                consoleImage = Resources.XboxSlimE;
+                                break;
+                        }
+
+                        ProfileItem consoleItem = new(consoleProfile.Name, consoleImage) { ConsoleProfile = consoleProfile };
+                        consoleItem.OnClick += ConsoleItem_Click;
+                        consoleItem.OnDoubleClick += ConsoleItem_DoubleClick;
+                        PanelConsoleProfiles.Controls.Add(consoleItem);
+                    }
                 }
             }
 

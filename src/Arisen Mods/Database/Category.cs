@@ -1,7 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using ArisenMods.Extensions;
 using ArisenMods.Forms.Windows;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -59,7 +58,7 @@ namespace ArisenMods.Database
             {
                 case true:
                     {
-                        List<string> foundRegions = Regions.Where(region => FtpExtensions.DirectoryExists($"/dev_hdd0/game/{region}")).ToList();
+                        System.Collections.Generic.List<string> foundRegions = Regions.Where(region => FtpExtensions.DirectoryExists($"/dev_hdd0/game/{region}")).ToList();
 
                         foreach (string region in foundRegions.Where(region => XtraMessageBox.Show($"Game Region: {region} has been found for: {Title}\n\nIs this correct?", "Game Region",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))

@@ -62,11 +62,11 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.TabDownloads = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.TablePanelStats = new DevExpress.Utils.Layout.TablePanel();
+            this.StatGameMode = new ArisenMods.Controls.StatItem();
             this.StatVersion = new ArisenMods.Controls.StatItem();
             this.StatSubmittedBy = new ArisenMods.Controls.StatItem();
             this.StatCreatedBy = new ArisenMods.Controls.StatItem();
             this.StatLastUpdated = new ArisenMods.Controls.StatItem();
-            this.StatGameMode = new ArisenMods.Controls.StatItem();
             this.PanelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelHeader)).BeginInit();
             this.PanelHeader.SuspendLayout();
@@ -402,6 +402,8 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.TabPane.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TabPane.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.TabPane.Appearance.Options.UseBackColor = true;
             this.TabPane.AppearanceButton.Hovered.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.TabPane.AppearanceButton.Hovered.Options.UseFont = true;
             this.TabPane.AppearanceButton.Normal.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -425,6 +427,8 @@ namespace ArisenMods.Forms.Dialogs.Details
             // 
             // TabDescription
             // 
+            this.TabDescription.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.TabDescription.Appearance.Options.UseBackColor = true;
             this.TabDescription.AutoScroll = true;
             this.TabDescription.Caption = "Description";
             this.TabDescription.Controls.Add(this.LabelDescription);
@@ -456,11 +460,13 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.TabDownloads.AutoScroll = true;
             this.TabDownloads.Caption = "Downloads";
             this.TabDownloads.Name = "TabDownloads";
-            this.TabDownloads.Size = new System.Drawing.Size(776, 307);
+            this.TabDownloads.Size = new System.Drawing.Size(776, 361);
             this.TabDownloads.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.TabDownloads_Scroll);
             // 
             // xtraScrollableControl1
             // 
+            this.xtraScrollableControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.xtraScrollableControl1.Appearance.Options.UseBackColor = true;
             this.xtraScrollableControl1.Controls.Add(this.TablePanelStats);
             this.xtraScrollableControl1.Controls.Add(this.TabPane);
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -492,6 +498,20 @@ namespace ArisenMods.Forms.Dialogs.Details
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
             this.TablePanelStats.Size = new System.Drawing.Size(773, 49);
             this.TablePanelStats.TabIndex = 1205;
+            // 
+            // StatGameMode
+            // 
+            this.StatGameMode.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.StatGameMode.Appearance.Options.UseBackColor = true;
+            this.TablePanelStats.SetColumn(this.StatGameMode, 2);
+            this.StatGameMode.Location = new System.Drawing.Point(295, 3);
+            this.StatGameMode.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.StatGameMode.Name = "StatGameMode";
+            this.TablePanelStats.SetRow(this.StatGameMode, 0);
+            this.StatGameMode.Size = new System.Drawing.Size(140, 36);
+            this.StatGameMode.TabIndex = 6;
+            this.StatGameMode.Title = "Game Mode";
+            this.StatGameMode.Value = "Value";
             // 
             // StatVersion
             // 
@@ -549,23 +569,9 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.StatLastUpdated.Title = "Last Updated";
             this.StatLastUpdated.Value = "Value";
             // 
-            // StatGameMode
-            // 
-            this.StatGameMode.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.StatGameMode.Appearance.Options.UseBackColor = true;
-            this.TablePanelStats.SetColumn(this.StatGameMode, 2);
-            this.StatGameMode.Location = new System.Drawing.Point(295, 3);
-            this.StatGameMode.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.StatGameMode.Name = "StatGameMode";
-            this.TablePanelStats.SetRow(this.StatGameMode, 0);
-            this.StatGameMode.Size = new System.Drawing.Size(140, 36);
-            this.StatGameMode.TabIndex = 6;
-            this.StatGameMode.Title = "Game Mode";
-            this.StatGameMode.Value = "Value";
-            // 
             // PluginDialog
             // 
-            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;

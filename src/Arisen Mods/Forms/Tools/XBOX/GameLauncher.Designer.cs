@@ -56,9 +56,9 @@ namespace ArisenMods.Forms.Tools.XBOX
             this.ListBoxGames.Appearance.Options.UseFont = true;
             this.ListBoxGames.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.ListBoxGames.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListBoxGames.Location = new System.Drawing.Point(0, 25);
+            this.ListBoxGames.Location = new System.Drawing.Point(2, 21);
             this.ListBoxGames.Name = "ListBoxGames";
-            this.ListBoxGames.Size = new System.Drawing.Size(284, 288);
+            this.ListBoxGames.Size = new System.Drawing.Size(280, 290);
             this.ListBoxGames.TabIndex = 0;
             this.ListBoxGames.SelectedIndexChanged += new System.EventHandler(this.ListBoxGames_SelectedIndexChanged);
             // 
@@ -83,7 +83,7 @@ namespace ArisenMods.Forms.Tools.XBOX
             this.LabelNoGames.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.LabelNoGames.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelNoGames.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.LabelNoGames.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.LabelNoGames.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelNoGames.Appearance.Options.UseBackColor = true;
             this.LabelNoGames.Appearance.Options.UseFont = true;
@@ -104,12 +104,13 @@ namespace ArisenMods.Forms.Tools.XBOX
             this.ButtonLaunchGame.Appearance.Options.UseFont = true;
             this.ButtonLaunchGame.AutoSize = true;
             this.ButtonLaunchGame.Enabled = false;
-            this.ButtonLaunchGame.Location = new System.Drawing.Point(42, 0);
+            this.ButtonLaunchGame.Location = new System.Drawing.Point(49, 0);
+            this.ButtonLaunchGame.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.ButtonLaunchGame.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonLaunchGame.Name = "ButtonLaunchGame";
-            this.ButtonLaunchGame.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonLaunchGame.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonLaunchGame.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonLaunchGame.Size = new System.Drawing.Size(104, 24);
+            this.ButtonLaunchGame.Size = new System.Drawing.Size(100, 24);
             this.ButtonLaunchGame.TabIndex = 1;
             this.ButtonLaunchGame.Text = "Launch Game";
             this.ButtonLaunchGame.Click += new System.EventHandler(this.ButtonLaunchGame_Click);
@@ -138,9 +139,9 @@ namespace ArisenMods.Forms.Tools.XBOX
             this.ButtonEditName.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.ButtonEditName.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonEditName.Name = "ButtonEditName";
-            this.ButtonEditName.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonEditName.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonEditName.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonEditName.Size = new System.Drawing.Size(86, 24);
+            this.ButtonEditName.Size = new System.Drawing.Size(82, 24);
             this.ButtonEditName.TabIndex = 16;
             this.ButtonEditName.Text = "Edit Name";
             this.ButtonEditName.Click += new System.EventHandler(this.ButtonEditName_Click);

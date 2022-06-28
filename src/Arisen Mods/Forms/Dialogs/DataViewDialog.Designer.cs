@@ -50,7 +50,7 @@ namespace ArisenMods.Forms.Dialogs
             this.PanelDetails.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PanelDetails.Location = new System.Drawing.Point(12, 12);
             this.PanelDetails.Name = "PanelDetails";
-            this.PanelDetails.Size = new System.Drawing.Size(460, 75);
+            this.PanelDetails.Size = new System.Drawing.Size(460, 57);
             this.PanelDetails.TabIndex = 1;
             // 
             // LabelTitle
@@ -87,7 +87,7 @@ namespace ArisenMods.Forms.Dialogs
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(484, 99);
+            this.ClientSize = new System.Drawing.Size(484, 81);
             this.Controls.Add(this.PanelDetails);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);

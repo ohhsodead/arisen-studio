@@ -238,7 +238,7 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.ButtonDownload.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.ButtonDownload.ImageOptions.ImageToTextIndent = 6;
             this.ButtonDownload.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonDownload.ImageOptions.SvgImage = global::ArisenMods.Properties.Resources.download_svg;
+            this.ButtonDownload.ImageOptions.SvgImage = global::ArisenMods.Properties.Resources.download;
             this.ButtonDownload.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             this.ButtonDownload.Location = new System.Drawing.Point(118, 12);
             this.ButtonDownload.Name = "ButtonDownload";

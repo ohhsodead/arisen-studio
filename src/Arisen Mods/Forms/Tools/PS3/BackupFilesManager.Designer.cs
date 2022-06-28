@@ -391,68 +391,78 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             // ButtonEdit
             // 
+            this.ButtonEdit.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonEdit.Appearance.Options.UseFont = true;
             this.ButtonEdit.AutoSize = true;
             this.ButtonEdit.Location = new System.Drawing.Point(0, 0);
             this.ButtonEdit.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.ButtonEdit.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonEdit.Name = "ButtonEdit";
-            this.ButtonEdit.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonEdit.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonEdit.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonEdit.Size = new System.Drawing.Size(51, 24);
+            this.ButtonEdit.Size = new System.Drawing.Size(47, 24);
             this.ButtonEdit.TabIndex = 8;
             this.ButtonEdit.Text = "Edit";
             this.ButtonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
             // 
             // ButtonDelete
             // 
+            this.ButtonDelete.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonDelete.Appearance.Options.UseFont = true;
             this.ButtonDelete.AutoSize = true;
-            this.ButtonDelete.Location = new System.Drawing.Point(57, 0);
+            this.ButtonDelete.Location = new System.Drawing.Point(53, 0);
             this.ButtonDelete.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonDelete.Name = "ButtonDelete";
-            this.ButtonDelete.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonDelete.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonDelete.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonDelete.Size = new System.Drawing.Size(64, 24);
+            this.ButtonDelete.Size = new System.Drawing.Size(60, 24);
             this.ButtonDelete.TabIndex = 6;
             this.ButtonDelete.Text = "Delete";
             this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
             // ButtonDeleteAll
             // 
+            this.ButtonDeleteAll.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonDeleteAll.Appearance.Options.UseFont = true;
             this.ButtonDeleteAll.AutoSize = true;
-            this.ButtonDeleteAll.Location = new System.Drawing.Point(127, 0);
+            this.ButtonDeleteAll.Location = new System.Drawing.Point(119, 0);
             this.ButtonDeleteAll.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonDeleteAll.Name = "ButtonDeleteAll";
-            this.ButtonDeleteAll.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonDeleteAll.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonDeleteAll.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonDeleteAll.Size = new System.Drawing.Size(80, 24);
+            this.ButtonDeleteAll.Size = new System.Drawing.Size(77, 24);
             this.ButtonDeleteAll.TabIndex = 7;
             this.ButtonDeleteAll.Text = "Delete All";
             this.ButtonDeleteAll.Click += new System.EventHandler(this.ButtonDeleteAll_Click);
             // 
             // ButtonRestoreFile
             // 
+            this.ButtonRestoreFile.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonRestoreFile.Appearance.Options.UseFont = true;
             this.ButtonRestoreFile.AutoSize = true;
-            this.ButtonRestoreFile.Location = new System.Drawing.Point(213, 0);
+            this.ButtonRestoreFile.Location = new System.Drawing.Point(202, 0);
             this.ButtonRestoreFile.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonRestoreFile.Name = "ButtonRestoreFile";
-            this.ButtonRestoreFile.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonRestoreFile.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonRestoreFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonRestoreFile.Size = new System.Drawing.Size(91, 24);
+            this.ButtonRestoreFile.Size = new System.Drawing.Size(87, 24);
             this.ButtonRestoreFile.TabIndex = 10;
             this.ButtonRestoreFile.Text = "Restore File";
             this.ButtonRestoreFile.Click += new System.EventHandler(this.ButtonRestoreFile_Click);
             // 
             // ButtonBackupFile
             // 
+            this.ButtonBackupFile.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonBackupFile.Appearance.ForeColor = System.Drawing.Color.White;
+            this.ButtonBackupFile.Appearance.Options.UseFont = true;
             this.ButtonBackupFile.Appearance.Options.UseForeColor = true;
             this.ButtonBackupFile.AutoSize = true;
-            this.ButtonBackupFile.Location = new System.Drawing.Point(310, 0);
+            this.ButtonBackupFile.Location = new System.Drawing.Point(295, 0);
             this.ButtonBackupFile.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonBackupFile.Name = "ButtonBackupFile";
-            this.ButtonBackupFile.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonBackupFile.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonBackupFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonBackupFile.Size = new System.Drawing.Size(89, 24);
+            this.ButtonBackupFile.Size = new System.Drawing.Size(87, 24);
             this.ButtonBackupFile.TabIndex = 9;
             this.ButtonBackupFile.Text = "Backup File";
             this.ButtonBackupFile.Click += new System.EventHandler(this.ButtonBackupFile_Click);

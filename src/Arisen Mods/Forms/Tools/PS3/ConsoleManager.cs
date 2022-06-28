@@ -16,7 +16,7 @@ namespace ArisenMods.Forms.Tools.PS3
 
         public ResourceManager Language = MainWindow.ResourceLanguage;
 
-        private PS3API PS3 { get; } = new(SelectAPI.PS3Manager);
+        private PS3API Ps3 { get; } = new(SelectAPI.PS3Manager);
 
         private void ConsoleManager_Load(object sender, EventArgs e)
         {
@@ -30,9 +30,9 @@ namespace ArisenMods.Forms.Tools.PS3
             {
                 SetStatus(Language.GetString("CONNECTING_TO_CONSOLE"));
 
-                PS3.PS3MAPI.ConnectTarget(MainWindow.ConsoleProfile.Address);
+                Ps3.PS3MAPI.ConnectTarget(MainWindow.ConsoleProfile.Address);
 
-                if (PS3.PS3MAPI.IsConnected())
+                if (Ps3.PS3MAPI.IsConnected())
                 {
                     SetStatus(Language.GetString("SUCCESS_CONNECTED"));
                     LoadDetails();
@@ -56,9 +56,9 @@ namespace ArisenMods.Forms.Tools.PS3
         {
             try
             {
-                if (PS3.PS3MAPI.IsConnected())
+                if (Ps3.PS3MAPI.IsConnected())
                 {
-                    PS3.PS3MAPI.DisconnectTarget();
+                    Ps3.PS3MAPI.DisconnectTarget();
                 }
             }
             catch { }
@@ -73,14 +73,14 @@ namespace ArisenMods.Forms.Tools.PS3
         {
             try
             {
-                PS3.PS3MAPI.GetTemperatureCelcius(out uint tempCell, out uint tempRsx);
+                Ps3.PS3MAPI.GetTemperatureCelcius(out uint tempCell, out uint tempRsx);
 
                 LabelTempCELL.Text = Convert.ToString(tempCell) + " °C";
                 LabelTempRSX.Text = Convert.ToString(tempRsx) + " °C";
 
-                LabelFirmwareVersion.Text = PS3.PS3MAPI.GetFirmwareVersion();
-                LabelFirmwareType.Text = PS3.PS3MAPI.GetFirmwareType();
-                LabelCoreVersion.Text = PS3.PS3MAPI.GetCoreVersion();
+                LabelFirmwareVersion.Text = Ps3.PS3MAPI.GetFirmwareVersion();
+                LabelFirmwareType.Text = Ps3.PS3MAPI.GetFirmwareType();
+                LabelCoreVersion.Text = Ps3.PS3MAPI.GetCoreVersion();
 
                 SetStatus("Successfully loaded console details.");
             }
@@ -93,26 +93,26 @@ namespace ArisenMods.Forms.Tools.PS3
 
         private void ButtonSetLEDs_Click(object sender, EventArgs e)
         {
-            PS3.PS3MAPI.SetConsoleLed(PS3ManagerAPI.PS3MAPI.PS3_CMD.LedColor.Green, (PS3ManagerAPI.PS3MAPI.PS3_CMD.LedMode)RadioGroupLEDsGreen.SelectedIndex);
-            PS3.PS3MAPI.SetConsoleLed(PS3ManagerAPI.PS3MAPI.PS3_CMD.LedColor.Red, (PS3ManagerAPI.PS3MAPI.PS3_CMD.LedMode)RadioGroupLEDsRed.SelectedIndex);
+            Ps3.PS3MAPI.SetConsoleLed(PS3ManagerAPI.PS3MAPI.PS3_CMD.LedColor.Green, (PS3ManagerAPI.PS3MAPI.PS3_CMD.LedMode)RadioGroupLEDsGreen.SelectedIndex);
+            Ps3.PS3MAPI.SetConsoleLed(PS3ManagerAPI.PS3MAPI.PS3_CMD.LedColor.Red, (PS3ManagerAPI.PS3MAPI.PS3_CMD.LedMode)RadioGroupLEDsRed.SelectedIndex);
             SetStatus("Console LEDs have been set.");
         }
 
         private void ButtonRingBuzzer_Click(object sender, EventArgs e)
         {
-            PS3.PS3MAPI.RingBuzzer((PS3ManagerAPI.PS3MAPI.PS3_CMD.BuzzerMode)RadioGroupBuzzerMode.SelectedIndex);
-            SetStatus("IDPS has been set.");
+            Ps3.PS3MAPI.RingBuzzer((PS3ManagerAPI.PS3MAPI.PS3_CMD.BuzzerMode)RadioGroupBuzzerMode.SelectedIndex);
+            SetStatus("Ring buzzer set.");
         }
 
         private void ButtonSetIDPS_Click(object sender, EventArgs e)
         {
-            PS3.PS3MAPI.SetConsoleID(TextBoxIDPS.Text);
+            Ps3.PS3MAPI.SetConsoleID(TextBoxIDPS.Text);
             SetStatus("IDPS has been set.");
         }
 
         private void ButtonSetPSID_Click(object sender, EventArgs e)
         {
-            PS3.PS3MAPI.SetPSID(TextBoxPSID.Text);
+            Ps3.PS3MAPI.SetPSID(TextBoxPSID.Text);
             SetStatus("PSID has been set.");
         }
 

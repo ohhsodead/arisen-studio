@@ -7,7 +7,7 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace ArisenMods.Forms.Tools.XBOX
 {
-    partial class LaunchFileEditor
+    partial class DashlaunchEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,6 @@ namespace ArisenMods.Forms.Tools.XBOX
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LaunchFileEditor));
             this.GridLaunchFile = new DevExpress.XtraGrid.GridControl();
             this.GridViewLaunchFile = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.CheckBoxEnableLiveStrong = new DevExpress.XtraEditors.CheckEdit();
@@ -65,6 +64,7 @@ namespace ArisenMods.Forms.Tools.XBOX
             this.GridLaunchFile.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridLaunchFile.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GridLaunchFile.Location = new System.Drawing.Point(12, 65);
             this.GridLaunchFile.MainView = this.GridViewLaunchFile;
             this.GridLaunchFile.Name = "GridLaunchFile";
@@ -91,21 +91,25 @@ namespace ArisenMods.Forms.Tools.XBOX
             // 
             // CheckBoxEnableLiveStrong
             // 
-            this.CheckBoxEnableLiveStrong.Location = new System.Drawing.Point(126, 40);
+            this.CheckBoxEnableLiveStrong.Location = new System.Drawing.Point(125, 40);
             this.CheckBoxEnableLiveStrong.Name = "CheckBoxEnableLiveStrong";
+            this.CheckBoxEnableLiveStrong.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.CheckBoxEnableLiveStrong.Properties.Appearance.Options.UseFont = true;
             this.CheckBoxEnableLiveStrong.Properties.AutoWidth = true;
             this.CheckBoxEnableLiveStrong.Properties.Caption = "Enable Live Strong";
-            this.CheckBoxEnableLiveStrong.Size = new System.Drawing.Size(117, 19);
+            this.CheckBoxEnableLiveStrong.Size = new System.Drawing.Size(119, 19);
             this.CheckBoxEnableLiveStrong.TabIndex = 5;
             this.CheckBoxEnableLiveStrong.CheckedChanged += new System.EventHandler(this.CheckBoxEnableLiveStrong_CheckedChanged);
             // 
             // CheckBoxEnableLiveBlock
             // 
-            this.CheckBoxEnableLiveBlock.Location = new System.Drawing.Point(12, 40);
+            this.CheckBoxEnableLiveBlock.Location = new System.Drawing.Point(11, 40);
             this.CheckBoxEnableLiveBlock.Name = "CheckBoxEnableLiveBlock";
+            this.CheckBoxEnableLiveBlock.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.CheckBoxEnableLiveBlock.Properties.Appearance.Options.UseFont = true;
             this.CheckBoxEnableLiveBlock.Properties.AutoWidth = true;
             this.CheckBoxEnableLiveBlock.Properties.Caption = "Enable Live Block";
-            this.CheckBoxEnableLiveBlock.Size = new System.Drawing.Size(109, 19);
+            this.CheckBoxEnableLiveBlock.Size = new System.Drawing.Size(113, 19);
             this.CheckBoxEnableLiveBlock.TabIndex = 4;
             this.CheckBoxEnableLiveBlock.ToolTip = "if set to true, this will block the console from resolving LIVE related dns\r\nif n" +
     "ot set this value will be TRUE";
@@ -114,14 +118,23 @@ namespace ArisenMods.Forms.Tools.XBOX
             // ButtonRestoreDefault
             // 
             this.ButtonRestoreDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonRestoreDefault.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonRestoreDefault.Appearance.Options.UseFont = true;
             this.ButtonRestoreDefault.AutoSize = true;
+            this.ButtonRestoreDefault.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonRestoreDefault.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonRestoreDefault.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonRestoreDefault.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonRestoreDefault.ImageOptions.SvgImage = global::ArisenMods.Properties.Resources.restore_file;
+            this.ButtonRestoreDefault.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            this.ButtonRestoreDefault.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             this.ButtonRestoreDefault.Location = new System.Drawing.Point(0, 0);
             this.ButtonRestoreDefault.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.ButtonRestoreDefault.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonRestoreDefault.Name = "ButtonRestoreDefault";
-            this.ButtonRestoreDefault.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonRestoreDefault.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.ButtonRestoreDefault.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonRestoreDefault.Size = new System.Drawing.Size(111, 24);
+            this.ButtonRestoreDefault.Size = new System.Drawing.Size(121, 24);
             this.ButtonRestoreDefault.TabIndex = 9;
             this.ButtonRestoreDefault.Text = "Restore Default";
             this.ButtonRestoreDefault.Click += new System.EventHandler(this.ButtonRestoreDefault_Click);
@@ -129,13 +142,21 @@ namespace ArisenMods.Forms.Tools.XBOX
             // ButtonRestoreBackup
             // 
             this.ButtonRestoreBackup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonRestoreBackup.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonRestoreBackup.Appearance.Options.UseFont = true;
             this.ButtonRestoreBackup.AutoSize = true;
-            this.ButtonRestoreBackup.Location = new System.Drawing.Point(117, 0);
+            this.ButtonRestoreBackup.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonRestoreBackup.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonRestoreBackup.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonRestoreBackup.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonRestoreBackup.ImageOptions.SvgImage = global::ArisenMods.Properties.Resources.restore_backup;
+            this.ButtonRestoreBackup.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonRestoreBackup.Location = new System.Drawing.Point(127, 0);
             this.ButtonRestoreBackup.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonRestoreBackup.Name = "ButtonRestoreBackup";
-            this.ButtonRestoreBackup.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonRestoreBackup.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.ButtonRestoreBackup.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonRestoreBackup.Size = new System.Drawing.Size(110, 24);
+            this.ButtonRestoreBackup.Size = new System.Drawing.Size(122, 24);
             this.ButtonRestoreBackup.TabIndex = 7;
             this.ButtonRestoreBackup.Text = "Restore Backup";
             this.ButtonRestoreBackup.Click += new System.EventHandler(this.ButtonRestoreBackup_Click);
@@ -143,13 +164,21 @@ namespace ArisenMods.Forms.Tools.XBOX
             // ButtonSaveUpdate
             // 
             this.ButtonSaveUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonSaveUpdate.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonSaveUpdate.Appearance.Options.UseFont = true;
             this.ButtonSaveUpdate.AutoSize = true;
-            this.ButtonSaveUpdate.Location = new System.Drawing.Point(233, 0);
+            this.ButtonSaveUpdate.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonSaveUpdate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonSaveUpdate.ImageOptions.ImageToTextIndent = 4;
+            this.ButtonSaveUpdate.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonSaveUpdate.ImageOptions.SvgImage = global::ArisenMods.Properties.Resources.save_update;
+            this.ButtonSaveUpdate.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonSaveUpdate.Location = new System.Drawing.Point(255, 0);
             this.ButtonSaveUpdate.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonSaveUpdate.Name = "ButtonSaveUpdate";
-            this.ButtonSaveUpdate.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonSaveUpdate.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.ButtonSaveUpdate.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonSaveUpdate.Size = new System.Drawing.Size(116, 24);
+            this.ButtonSaveUpdate.Size = new System.Drawing.Size(131, 24);
             this.ButtonSaveUpdate.TabIndex = 8;
             this.ButtonSaveUpdate.Text = "Save && Update";
             this.ButtonSaveUpdate.Click += new System.EventHandler(this.ButtonSaveUpdate_Click);
@@ -206,6 +235,8 @@ namespace ArisenMods.Forms.Tools.XBOX
             // ButtonSetValue
             // 
             this.ButtonSetValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonSetValue.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonSetValue.Appearance.Options.UseFont = true;
             this.ButtonSetValue.Location = new System.Drawing.Point(362, 12);
             this.ButtonSetValue.Name = "ButtonSetValue";
             this.ButtonSetValue.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
@@ -226,7 +257,7 @@ namespace ArisenMods.Forms.Tools.XBOX
             this.PanelButtons.Size = new System.Drawing.Size(428, 24);
             this.PanelButtons.TabIndex = 1182;
             // 
-            // LaunchFileEditor
+            // DashlaunchEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -242,16 +273,15 @@ namespace ArisenMods.Forms.Tools.XBOX
             this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("LaunchFileEditor.IconOptions.Icon")));
             this.IconOptions.Image = global::ArisenMods.Properties.Resources.arisenmods;
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "LaunchFileEditor";
+            this.Name = "DashlaunchEditor";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Launch File Editor";
-            this.Load += new System.EventHandler(this.LaunchFileEditor_Load);
+            this.Text = "Dashlaunch Editor";
+            this.Load += new System.EventHandler(this.DashlaunchEditor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridLaunchFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewLaunchFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxEnableLiveStrong.Properties)).EndInit();

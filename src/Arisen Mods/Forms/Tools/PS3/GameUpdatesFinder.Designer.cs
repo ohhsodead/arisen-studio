@@ -153,41 +153,47 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             // ButtonInstallFile
             // 
+            this.ButtonInstallFile.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonInstallFile.Appearance.Options.UseFont = true;
             this.ButtonInstallFile.AutoSize = true;
             this.ButtonInstallFile.Enabled = false;
             this.ButtonInstallFile.Location = new System.Drawing.Point(0, 0);
             this.ButtonInstallFile.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.ButtonInstallFile.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonInstallFile.Name = "ButtonInstallFile";
-            this.ButtonInstallFile.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonInstallFile.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonInstallFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonInstallFile.Size = new System.Drawing.Size(83, 24);
+            this.ButtonInstallFile.Size = new System.Drawing.Size(79, 24);
             this.ButtonInstallFile.TabIndex = 3;
             this.ButtonInstallFile.Text = "Install File";
             this.ButtonInstallFile.Click += new System.EventHandler(this.ButtonInstallFile_Click);
             // 
             // ButtonDownloadFile
             // 
+            this.ButtonDownloadFile.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonDownloadFile.Appearance.Options.UseFont = true;
             this.ButtonDownloadFile.AutoSize = true;
             this.ButtonDownloadFile.Enabled = false;
-            this.ButtonDownloadFile.Location = new System.Drawing.Point(89, 0);
+            this.ButtonDownloadFile.Location = new System.Drawing.Point(85, 0);
             this.ButtonDownloadFile.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonDownloadFile.Name = "ButtonDownloadFile";
-            this.ButtonDownloadFile.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonDownloadFile.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonDownloadFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonDownloadFile.Size = new System.Drawing.Size(106, 24);
+            this.ButtonDownloadFile.Size = new System.Drawing.Size(102, 24);
             this.ButtonDownloadFile.TabIndex = 4;
             this.ButtonDownloadFile.Text = "Download File";
             this.ButtonDownloadFile.Click += new System.EventHandler(this.ButtonDownloadFile_Click);
             // 
             // ButtonCopyURLToClipboard
             // 
+            this.ButtonCopyURLToClipboard.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonCopyURLToClipboard.Appearance.Options.UseFont = true;
             this.ButtonCopyURLToClipboard.AutoSize = true;
             this.ButtonCopyURLToClipboard.Enabled = false;
-            this.ButtonCopyURLToClipboard.Location = new System.Drawing.Point(362, 0);
+            this.ButtonCopyURLToClipboard.Location = new System.Drawing.Point(355, 0);
             this.ButtonCopyURLToClipboard.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonCopyURLToClipboard.Name = "ButtonCopyURLToClipboard";
-            this.ButtonCopyURLToClipboard.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonCopyURLToClipboard.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonCopyURLToClipboard.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCopyURLToClipboard.Size = new System.Drawing.Size(148, 24);
             this.ButtonCopyURLToClipboard.TabIndex = 6;
@@ -196,14 +202,16 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             // ButtonCopySHA1ToClipboard
             // 
+            this.ButtonCopySHA1ToClipboard.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonCopySHA1ToClipboard.Appearance.Options.UseFont = true;
             this.ButtonCopySHA1ToClipboard.AutoSize = true;
             this.ButtonCopySHA1ToClipboard.Enabled = false;
-            this.ButtonCopySHA1ToClipboard.Location = new System.Drawing.Point(201, 0);
+            this.ButtonCopySHA1ToClipboard.Location = new System.Drawing.Point(193, 0);
             this.ButtonCopySHA1ToClipboard.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonCopySHA1ToClipboard.Name = "ButtonCopySHA1ToClipboard";
-            this.ButtonCopySHA1ToClipboard.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonCopySHA1ToClipboard.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonCopySHA1ToClipboard.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonCopySHA1ToClipboard.Size = new System.Drawing.Size(155, 24);
+            this.ButtonCopySHA1ToClipboard.Size = new System.Drawing.Size(156, 24);
             this.ButtonCopySHA1ToClipboard.TabIndex = 5;
             this.ButtonCopySHA1ToClipboard.Text = "Copy SHA1 to Clipboard";
             this.ButtonCopySHA1ToClipboard.Click += new System.EventHandler(this.ButtonCopySHA1ToClipboard_Click);

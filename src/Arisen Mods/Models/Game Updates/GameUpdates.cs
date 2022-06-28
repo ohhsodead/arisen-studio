@@ -12,12 +12,12 @@ namespace ArisenMods.Models.Game_Updates
         [XmlAttribute(AttributeName = "size")] public string Size { get; set; }
 
         [XmlAttribute(AttributeName = "sha1sum")]
-        public string Sha1sum { get; set; }
+        public string Sha1Sum { get; set; }
 
         [XmlAttribute(AttributeName = "url")] public string Url { get; set; }
 
         [XmlAttribute(AttributeName = "ps3_system_ver")]
-        public string Ps3_system_ver { get; set; }
+        public string Ps3SystemVer { get; set; }
 
         [XmlElement(ElementName = "paramsfo")] public Paramsfo Paramsfo { get; set; }
     }
@@ -25,7 +25,7 @@ namespace ArisenMods.Models.Game_Updates
     [XmlRoot(ElementName = "paramsfo")]
     public class Paramsfo
     {
-        [XmlElement(ElementName = "TITLE")] public string TITLE { get; set; }
+        [XmlElement(ElementName = "TITLE")] public string Title { get; set; }
     }
 
     [XmlRoot(ElementName = "tag")]

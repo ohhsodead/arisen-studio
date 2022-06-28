@@ -1,5 +1,4 @@
-﻿using DevExpress.Utils.Drawing;
-using DevExpress.XtraSplashScreen;
+﻿using DevExpress.XtraSplashScreen;
 using System.Drawing;
 
 namespace ArisenMods.Controls
@@ -24,7 +23,7 @@ namespace ArisenMods.Controls
             //to disable the default drawing algorithm. 
             context.Handled = true;
             //Provides access to the drawing surface. 
-            GraphicsCache cache = context.DrawArgs.Cache;
+            DevExpress.Utils.Drawing.GraphicsCache cache = context.DrawArgs.Cache;
             //Adjust the TextRenderingHint option
             //to improve the image quality.
             cache.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;

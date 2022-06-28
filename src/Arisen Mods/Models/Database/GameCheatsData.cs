@@ -60,9 +60,9 @@ namespace ArisenMods.Models.Database
         {
             HashSet<string> set = new();
 
-            foreach (var list in GameCheats)
+            foreach (GameCheatItemData list in GameCheats)
             {
-                foreach (var item in list.Cheats)
+                foreach (Cheats item in list.Cheats)
                 {
                     set.Add(item.Name);
                 }

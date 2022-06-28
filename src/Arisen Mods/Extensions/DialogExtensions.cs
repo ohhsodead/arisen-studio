@@ -366,6 +366,12 @@ namespace ArisenMods.Extensions
             return connectConsole.ShowDialog(owner) == DialogResult.OK ? connectConsole.ConsoleProfile : null;
         }
 
+        public static ConsoleProfile ShowConnectionsDialog(Form owner)
+        {
+            using ConnectionsDialog connectConsole = new();
+            return connectConsole.ShowDialog(owner) == DialogResult.OK ? connectConsole.ConsoleProfile : null;
+        }
+
         public static void ShowEditConnectionsDialog(Form owner, bool isEditing)
         {
             using ConnectionsDialog connectConsole = new() { IsEditing = isEditing };
@@ -453,9 +459,9 @@ namespace ArisenMods.Extensions
             return backupFileDialog.ShowDialog(owner) == DialogResult.OK ? backupFileDialog.BackupFile : null;
         }
 
-        public static void ShowConsoleManager(Form owner)
+        public static void ShowPs3ConsoleManager(Form owner)
         {
-            using ConsoleManager consoleManager = new();
+            using Forms.Tools.PS3.ConsoleManager consoleManager = new();
             consoleManager.ShowDialog(owner);
         }
 
@@ -505,9 +511,15 @@ namespace ArisenMods.Extensions
             xuidGameSpoofer.ShowDialog(owner);
         }
 
-        public static void ShowXboxLaunchFileEditor(Form owner)
+        public static void ShowXboxConsoleManager(Form owner)
         {
-            using LaunchFileEditor pluginsEditor = new();
+            using Forms.Tools.XBOX.ConsoleManager consoleManager = new();
+            consoleManager.ShowDialog(owner);
+        }
+
+        public static void ShowXboxDashlaunchEditor(Form owner)
+        {
+            using DashlaunchEditor pluginsEditor = new();
             pluginsEditor.ShowDialog(owner);
         }
 

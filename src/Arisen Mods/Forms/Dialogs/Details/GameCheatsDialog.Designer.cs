@@ -59,6 +59,8 @@ namespace ArisenMods.Forms.Dialogs.Details
             // 
             // PanelDetails
             // 
+            this.PanelDetails.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.PanelDetails.Appearance.Options.UseBackColor = true;
             this.PanelDetails.Controls.Add(this.GridControlCheats);
             this.PanelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelDetails.Location = new System.Drawing.Point(0, 50);
@@ -72,6 +74,8 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.GridControlCheats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridControlCheats.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.GridControlCheats.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
             this.GridControlCheats.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GridControlCheats.Location = new System.Drawing.Point(16, 3);
             this.GridControlCheats.MainView = this.GridViewCheats;
@@ -85,18 +89,8 @@ namespace ArisenMods.Forms.Dialogs.Details
             // GridViewCheats
             // 
             this.GridViewCheats.ActiveFilterEnabled = false;
-            this.GridViewCheats.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.GridViewCheats.Appearance.Empty.Options.UseBackColor = true;
-            this.GridViewCheats.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.GridViewCheats.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.GridViewCheats.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.GridViewCheats.Appearance.HideSelectionRow.Options.UseBackColor = true;
-            this.GridViewCheats.Appearance.Row.BackColor = System.Drawing.Color.Transparent;
             this.GridViewCheats.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GridViewCheats.Appearance.Row.Options.UseBackColor = true;
             this.GridViewCheats.Appearance.Row.Options.UseFont = true;
-            this.GridViewCheats.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.GridViewCheats.Appearance.SelectedRow.Options.UseBackColor = true;
             this.GridViewCheats.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.GridViewCheats.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.GridViewCheats.GridControl = this.GridControlCheats;
@@ -267,7 +261,7 @@ namespace ArisenMods.Forms.Dialogs.Details
             // 
             // GameCheatsDialog
             // 
-            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;

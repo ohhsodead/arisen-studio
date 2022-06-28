@@ -52,7 +52,7 @@ namespace ArisenMods.Forms.Tools.PS3
                 new("Game Region", typeof(string))
             }))
             {
-                foreach (GameRegion gameRegion in Settings.GameRegionsPS3)
+                foreach (GameRegion gameRegion in Settings.GameRegionsPs3)
                 {
                     gameRegions.Rows.Add(Database.CategoriesData.GetCategoryById(gameRegion.GameId).Title,
                         gameRegion.Region);
@@ -116,7 +116,7 @@ namespace ArisenMods.Forms.Tools.PS3
             if (XtraMessageBox.Show("Do you really want to delete the selected saved game region?", "Delete",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                Settings.GameRegionsPS3.RemoveAt(GridViewGameRegions.FocusedRowHandle);
+                Settings.GameRegionsPs3.RemoveAt(GridViewGameRegions.FocusedRowHandle);
                 LoadSavedGameRegions();
                 XtraMessageBox.Show("Saved game region has now been deleted.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -127,7 +127,7 @@ namespace ArisenMods.Forms.Tools.PS3
             if (XtraMessageBox.Show("Do you really want to delete all of your saved game regions?",  Language.GetString("CONFIRM"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                Settings.GameRegionsPS3.Clear();
+                Settings.GameRegionsPs3.Clear();
                 LoadSavedGameRegions();
                 XtraMessageBox.Show("All saved game regions have now been deleted.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -219,6 +219,11 @@ namespace ArisenMods.Forms.Tools.PS3
 
                 LoadSavedGameRegions();
             }
+        }
+
+        private void ComboBoxGameRegion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

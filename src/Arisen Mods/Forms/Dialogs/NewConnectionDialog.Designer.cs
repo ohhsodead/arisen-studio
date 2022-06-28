@@ -45,11 +45,14 @@ namespace ArisenMods.Forms.Dialogs
             this.TextBoxAddress = new DevExpress.XtraEditors.TextEdit();
             this.TextBoxConnectionName = new DevExpress.XtraEditors.TextEdit();
             this.CheckBoxUseDefaultConsole = new DevExpress.XtraEditors.CheckEdit();
+            this.LabelDefault = new DevExpress.XtraEditors.LabelControl();
+            this.CheckBoxDefault = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageConsole.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxPlatform.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConnectionName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxUseDefaultConsole.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxDefault.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelUserPass
@@ -100,7 +103,7 @@ namespace ArisenMods.Forms.Dialogs
             // ButtonOK
             // 
             this.ButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOK.Location = new System.Drawing.Point(332, 180);
+            this.ButtonOK.Location = new System.Drawing.Point(332, 173);
             this.ButtonOK.Name = "ButtonOK";
             this.ButtonOK.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonOK.Size = new System.Drawing.Size(80, 24);
@@ -112,7 +115,7 @@ namespace ArisenMods.Forms.Dialogs
             // 
             this.ButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonCancel.Location = new System.Drawing.Point(422, 180);
+            this.ButtonCancel.Location = new System.Drawing.Point(422, 173);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCancel.Size = new System.Drawing.Size(80, 24);
@@ -211,15 +214,40 @@ namespace ArisenMods.Forms.Dialogs
             this.CheckBoxUseDefaultConsole.Visible = false;
             this.CheckBoxUseDefaultConsole.CheckStateChanged += new System.EventHandler(this.CheckBoxUseDefaultConsole_CheckStateChanged);
             // 
+            // LabelDefault
+            // 
+            this.LabelDefault.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelDefault.Appearance.Options.UseFont = true;
+            this.LabelDefault.Location = new System.Drawing.Point(150, 132);
+            this.LabelDefault.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
+            this.LabelDefault.Name = "LabelDefault";
+            this.LabelDefault.Size = new System.Drawing.Size(41, 15);
+            this.LabelDefault.TabIndex = 1149;
+            this.LabelDefault.Text = "Default:";
+            // 
+            // CheckBoxDefault
+            // 
+            this.CheckBoxDefault.Location = new System.Drawing.Point(264, 130);
+            this.CheckBoxDefault.Name = "CheckBoxDefault";
+            this.CheckBoxDefault.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.CheckBoxDefault.Properties.Appearance.Options.UseFont = true;
+            this.CheckBoxDefault.Properties.AutoWidth = true;
+            this.CheckBoxDefault.Properties.Caption = "";
+            this.CheckBoxDefault.Properties.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.CheckBoxUseDefaultConsole_Properties_EditValueChanging);
+            this.CheckBoxDefault.Size = new System.Drawing.Size(19, 19);
+            this.CheckBoxDefault.TabIndex = 1147;
+            this.CheckBoxDefault.CheckStateChanged += new System.EventHandler(this.CheckBoxDefault_CheckStateChanged);
+            this.CheckBoxDefault.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.CheckBoxDefault_EditValueChanging);
+            // 
             // NewConnectionDialog
             // 
-            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(514, 216);
+            this.ClientSize = new System.Drawing.Size(514, 209);
+            this.Controls.Add(this.LabelDefault);
+            this.Controls.Add(this.CheckBoxDefault);
             this.Controls.Add(this.ImageConsole);
             this.Controls.Add(this.ComboBoxPlatform);
             this.Controls.Add(this.LabelPlatformType);
@@ -253,6 +281,7 @@ namespace ArisenMods.Forms.Dialogs
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConnectionName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxUseDefaultConsole.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxDefault.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +301,7 @@ namespace ArisenMods.Forms.Dialogs
         private ComboBoxEdit ComboBoxPlatform;
         private PictureEdit ImageConsole;
         private CheckEdit CheckBoxUseDefaultConsole;
+        private LabelControl LabelDefault;
+        private CheckEdit CheckBoxDefault;
     }
 }

@@ -34,6 +34,12 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameSaveDialog));
             this.PanelDetails = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.TablePanelStats = new DevExpress.Utils.Layout.TablePanel();
+            this.StatLastUpdated = new ArisenMods.Controls.StatItem();
+            this.StatCreatedBy = new ArisenMods.Controls.StatItem();
+            this.StatSubmittedBy = new ArisenMods.Controls.StatItem();
+            this.StatVersion = new ArisenMods.Controls.StatItem();
+            this.StatGameMode = new ArisenMods.Controls.StatItem();
             this.TabPane = new DevExpress.XtraBars.Navigation.TabPane();
             this.TabDescription = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.LabelDescription = new DevExpress.XtraEditors.LabelControl();
@@ -49,13 +55,9 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.ButtonFavorite = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonReportIssue = new DevExpress.XtraEditors.SimpleButton();
             this.Images = new DevExpress.Utils.SvgImageCollection(this.components);
-            this.StatLastUpdated = new ArisenMods.Controls.StatItem();
-            this.StatCreatedBy = new ArisenMods.Controls.StatItem();
-            this.StatSubmittedBy = new ArisenMods.Controls.StatItem();
-            this.StatVersion = new ArisenMods.Controls.StatItem();
-            this.StatGameMode = new ArisenMods.Controls.StatItem();
-            this.TablePanelStats = new DevExpress.Utils.Layout.TablePanel();
             this.PanelDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TablePanelStats)).BeginInit();
+            this.TablePanelStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabPane)).BeginInit();
             this.TabPane.SuspendLayout();
             this.TabDescription.SuspendLayout();
@@ -67,12 +69,12 @@ namespace ArisenMods.Forms.Dialogs.Details
             ((System.ComponentModel.ISupportInitialize)(this.PanelActions)).BeginInit();
             this.PanelActions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Images)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TablePanelStats)).BeginInit();
-            this.TablePanelStats.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelDetails
             // 
+            this.PanelDetails.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.PanelDetails.Appearance.Options.UseBackColor = true;
             this.PanelDetails.Controls.Add(this.TablePanelStats);
             this.PanelDetails.Controls.Add(this.TabPane);
             this.PanelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -82,11 +84,106 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.PanelDetails.Size = new System.Drawing.Size(800, 370);
             this.PanelDetails.TabIndex = 1;
             // 
+            // TablePanelStats
+            // 
+            this.TablePanelStats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TablePanelStats.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 19.85F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 40.15F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 50F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 50F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 50F)});
+            this.TablePanelStats.Controls.Add(this.StatGameMode);
+            this.TablePanelStats.Controls.Add(this.StatVersion);
+            this.TablePanelStats.Controls.Add(this.StatSubmittedBy);
+            this.TablePanelStats.Controls.Add(this.StatCreatedBy);
+            this.TablePanelStats.Controls.Add(this.StatLastUpdated);
+            this.TablePanelStats.Location = new System.Drawing.Point(14, 14);
+            this.TablePanelStats.Name = "TablePanelStats";
+            this.TablePanelStats.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
+            this.TablePanelStats.Size = new System.Drawing.Size(773, 49);
+            this.TablePanelStats.TabIndex = 1198;
+            // 
+            // StatLastUpdated
+            // 
+            this.StatLastUpdated.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.StatLastUpdated.Appearance.Options.UseBackColor = true;
+            this.TablePanelStats.SetColumn(this.StatLastUpdated, 0);
+            this.StatLastUpdated.Location = new System.Drawing.Point(3, 3);
+            this.StatLastUpdated.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.StatLastUpdated.Name = "StatLastUpdated";
+            this.TablePanelStats.SetRow(this.StatLastUpdated, 0);
+            this.StatLastUpdated.Size = new System.Drawing.Size(140, 36);
+            this.StatLastUpdated.TabIndex = 0;
+            this.StatLastUpdated.Title = "Last Updated";
+            this.StatLastUpdated.Value = "Value";
+            // 
+            // StatCreatedBy
+            // 
+            this.StatCreatedBy.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.StatCreatedBy.Appearance.Options.UseBackColor = true;
+            this.TablePanelStats.SetColumn(this.StatCreatedBy, 3);
+            this.StatCreatedBy.Location = new System.Drawing.Point(441, 3);
+            this.StatCreatedBy.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.StatCreatedBy.Name = "StatCreatedBy";
+            this.TablePanelStats.SetRow(this.StatCreatedBy, 0);
+            this.StatCreatedBy.Size = new System.Drawing.Size(140, 36);
+            this.StatCreatedBy.TabIndex = 3;
+            this.StatCreatedBy.Title = "Created By";
+            this.StatCreatedBy.Value = "Value";
+            // 
+            // StatSubmittedBy
+            // 
+            this.StatSubmittedBy.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.StatSubmittedBy.Appearance.Options.UseBackColor = true;
+            this.TablePanelStats.SetColumn(this.StatSubmittedBy, 4);
+            this.StatSubmittedBy.Location = new System.Drawing.Point(587, 3);
+            this.StatSubmittedBy.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.StatSubmittedBy.Name = "StatSubmittedBy";
+            this.TablePanelStats.SetRow(this.StatSubmittedBy, 0);
+            this.StatSubmittedBy.Size = new System.Drawing.Size(140, 36);
+            this.StatSubmittedBy.TabIndex = 4;
+            this.StatSubmittedBy.Title = "Submitted By";
+            this.StatSubmittedBy.Value = "Value";
+            // 
+            // StatVersion
+            // 
+            this.StatVersion.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.StatVersion.Appearance.Options.UseBackColor = true;
+            this.TablePanelStats.SetColumn(this.StatVersion, 1);
+            this.StatVersion.Location = new System.Drawing.Point(149, 3);
+            this.StatVersion.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.StatVersion.Name = "StatVersion";
+            this.TablePanelStats.SetRow(this.StatVersion, 0);
+            this.StatVersion.Size = new System.Drawing.Size(140, 35);
+            this.StatVersion.TabIndex = 5;
+            this.StatVersion.Title = "Version";
+            this.StatVersion.Value = "Value";
+            // 
+            // StatGameMode
+            // 
+            this.StatGameMode.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.StatGameMode.Appearance.Options.UseBackColor = true;
+            this.TablePanelStats.SetColumn(this.StatGameMode, 2);
+            this.StatGameMode.Location = new System.Drawing.Point(295, 3);
+            this.StatGameMode.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.StatGameMode.Name = "StatGameMode";
+            this.TablePanelStats.SetRow(this.StatGameMode, 0);
+            this.StatGameMode.Size = new System.Drawing.Size(140, 35);
+            this.StatGameMode.TabIndex = 6;
+            this.StatGameMode.Title = "Game Mode";
+            this.StatGameMode.Value = "Value";
+            // 
             // TabPane
             // 
             this.TabPane.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TabPane.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.TabPane.Appearance.Options.UseBackColor = true;
             this.TabPane.AppearanceButton.Hovered.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.TabPane.AppearanceButton.Hovered.Options.UseFont = true;
             this.TabPane.AppearanceButton.Normal.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -109,6 +206,8 @@ namespace ArisenMods.Forms.Dialogs.Details
             // 
             // TabDescription
             // 
+            this.TabDescription.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.TabDescription.Appearance.Options.UseBackColor = true;
             this.TabDescription.AutoScroll = true;
             this.TabDescription.Caption = "Description";
             this.TabDescription.Controls.Add(this.LabelDescription);
@@ -137,10 +236,12 @@ namespace ArisenMods.Forms.Dialogs.Details
             // 
             // TabDownloads
             // 
+            this.TabDownloads.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.TabDownloads.Appearance.Options.UseBackColor = true;
             this.TabDownloads.AutoScroll = true;
             this.TabDownloads.Caption = "Downloads";
             this.TabDownloads.Name = "TabDownloads";
-            this.TabDownloads.Size = new System.Drawing.Size(776, 189);
+            this.TabDownloads.Size = new System.Drawing.Size(776, 255);
             this.TabDownloads.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.TabDownloads_Scroll);
             // 
             // PanelHeader
@@ -295,102 +396,9 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.Images.Add("delete", "image://svgimages/outlook inspired/delete.svg");
             this.Images.Add("check", "image://svgimages/icon builder/actions_check.svg");
             // 
-            // StatLastUpdated
-            // 
-            this.StatLastUpdated.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.StatLastUpdated.Appearance.Options.UseBackColor = true;
-            this.TablePanelStats.SetColumn(this.StatLastUpdated, 0);
-            this.StatLastUpdated.Location = new System.Drawing.Point(3, 3);
-            this.StatLastUpdated.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.StatLastUpdated.Name = "StatLastUpdated";
-            this.TablePanelStats.SetRow(this.StatLastUpdated, 0);
-            this.StatLastUpdated.Size = new System.Drawing.Size(140, 36);
-            this.StatLastUpdated.TabIndex = 0;
-            this.StatLastUpdated.Title = "Last Updated";
-            this.StatLastUpdated.Value = "Value";
-            // 
-            // StatCreatedBy
-            // 
-            this.StatCreatedBy.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.StatCreatedBy.Appearance.Options.UseBackColor = true;
-            this.TablePanelStats.SetColumn(this.StatCreatedBy, 3);
-            this.StatCreatedBy.Location = new System.Drawing.Point(441, 3);
-            this.StatCreatedBy.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.StatCreatedBy.Name = "StatCreatedBy";
-            this.TablePanelStats.SetRow(this.StatCreatedBy, 0);
-            this.StatCreatedBy.Size = new System.Drawing.Size(140, 36);
-            this.StatCreatedBy.TabIndex = 3;
-            this.StatCreatedBy.Title = "Created By";
-            this.StatCreatedBy.Value = "Value";
-            // 
-            // StatSubmittedBy
-            // 
-            this.StatSubmittedBy.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.StatSubmittedBy.Appearance.Options.UseBackColor = true;
-            this.TablePanelStats.SetColumn(this.StatSubmittedBy, 4);
-            this.StatSubmittedBy.Location = new System.Drawing.Point(587, 3);
-            this.StatSubmittedBy.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.StatSubmittedBy.Name = "StatSubmittedBy";
-            this.TablePanelStats.SetRow(this.StatSubmittedBy, 0);
-            this.StatSubmittedBy.Size = new System.Drawing.Size(140, 36);
-            this.StatSubmittedBy.TabIndex = 4;
-            this.StatSubmittedBy.Title = "Submitted By";
-            this.StatSubmittedBy.Value = "Value";
-            // 
-            // StatVersion
-            // 
-            this.StatVersion.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.StatVersion.Appearance.Options.UseBackColor = true;
-            this.TablePanelStats.SetColumn(this.StatVersion, 1);
-            this.StatVersion.Location = new System.Drawing.Point(149, 3);
-            this.StatVersion.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.StatVersion.Name = "StatVersion";
-            this.TablePanelStats.SetRow(this.StatVersion, 0);
-            this.StatVersion.Size = new System.Drawing.Size(140, 35);
-            this.StatVersion.TabIndex = 5;
-            this.StatVersion.Title = "Version";
-            this.StatVersion.Value = "Value";
-            // 
-            // StatGameMode
-            // 
-            this.StatGameMode.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.StatGameMode.Appearance.Options.UseBackColor = true;
-            this.TablePanelStats.SetColumn(this.StatGameMode, 2);
-            this.StatGameMode.Location = new System.Drawing.Point(295, 3);
-            this.StatGameMode.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.StatGameMode.Name = "StatGameMode";
-            this.TablePanelStats.SetRow(this.StatGameMode, 0);
-            this.StatGameMode.Size = new System.Drawing.Size(140, 35);
-            this.StatGameMode.TabIndex = 6;
-            this.StatGameMode.Title = "Game Mode";
-            this.StatGameMode.Value = "Value";
-            // 
-            // TablePanelStats
-            // 
-            this.TablePanelStats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TablePanelStats.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 19.85F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 40.15F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 50F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 50F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 50F)});
-            this.TablePanelStats.Controls.Add(this.StatGameMode);
-            this.TablePanelStats.Controls.Add(this.StatVersion);
-            this.TablePanelStats.Controls.Add(this.StatSubmittedBy);
-            this.TablePanelStats.Controls.Add(this.StatCreatedBy);
-            this.TablePanelStats.Controls.Add(this.StatLastUpdated);
-            this.TablePanelStats.Location = new System.Drawing.Point(14, 14);
-            this.TablePanelStats.Name = "TablePanelStats";
-            this.TablePanelStats.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
-            this.TablePanelStats.Size = new System.Drawing.Size(773, 49);
-            this.TablePanelStats.TabIndex = 1198;
-            // 
             // GameSaveDialog
             // 
-            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
@@ -419,6 +427,8 @@ namespace ArisenMods.Forms.Dialogs.Details
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.GameSaveDialog_Load);
             this.PanelDetails.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TablePanelStats)).EndInit();
+            this.TablePanelStats.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TabPane)).EndInit();
             this.TabPane.ResumeLayout(false);
             this.TabDescription.ResumeLayout(false);
@@ -431,8 +441,6 @@ namespace ArisenMods.Forms.Dialogs.Details
             ((System.ComponentModel.ISupportInitialize)(this.PanelActions)).EndInit();
             this.PanelActions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Images)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TablePanelStats)).EndInit();
-            this.TablePanelStats.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

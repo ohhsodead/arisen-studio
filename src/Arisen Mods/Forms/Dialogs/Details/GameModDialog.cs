@@ -155,12 +155,12 @@ namespace ArisenMods.Forms.Dialogs.Details
             Process.Start(e.Link);
         }
 
-        private const int WM_HSCROLL = 0x114;
-        private const int WM_VSCROLL = 0x115;
+        private const int WmHscroll = 0x114;
+        private const int WmVscroll = 0x115;
 
         protected override void WndProc(ref Message m)
         {
-            if ((m.Msg == WM_HSCROLL || m.Msg == WM_VSCROLL)
+            if ((m.Msg == WmHscroll || m.Msg == WmVscroll)
             && (((int)m.WParam & 0xFFFF) == 5))
             {
                 // Change SB_THUMBTRACK to SB_THUMBPOSITION
@@ -173,7 +173,7 @@ namespace ArisenMods.Forms.Dialogs.Details
         {
             get
             {
-                var cp = base.CreateParams;
+                CreateParams cp = base.CreateParams;
                 cp.ExStyle |= 0x02000000;    // Turn on WS_EX_COMPOSITED
                 return cp;
             }

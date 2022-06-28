@@ -50,61 +50,66 @@
         /// <summary>
         /// Direct link to the PS3 Game Mods file hosted on GitHub.
         /// </summary>
-        internal const string GameModsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/game-mods.json";
+        internal const string GameModsDataPs3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/game-mods.json";
 
         /// <summary>
         /// Direct link to the PS3 Homebrew file hosted on GitHub.
         /// </summary>
-        internal const string HomebrewDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/homebrew.json";
+        internal const string HomebrewDataPs3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/homebrew.json";
 
         /// <summary>
         /// Direct link to the PS3 Resources file hosted on GitHub.
         /// </summary>
-        internal const string ResourcesDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/resources.json";
+        internal const string ResourcesDataPs3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/resources.json";
 
         /// <summary>
         /// Direct link to the PS3 Avatars packages file hosted on GitHub.
         /// </summary>
-        internal const string PackagesAvatarsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/packages/avatars.json";
+        internal const string PackagesAvatarsDataPs3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/packages/avatars.json";
 
         /// <summary>
         /// Direct link to the PS3 Demos packages file hosted on GitHub.
         /// </summary>
-        internal const string PackagesDemosDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/packages/demos.json";
+        internal const string PackagesDemosDataPs3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/packages/demos.json";
 
         /// <summary>
         /// Direct link to the PS3 DLC packages file hosted on GitHub.
         /// </summary>
-        internal const string PackagesDLCsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/packages/dlcs.json";
+        internal const string PackagesDlCsDataPs3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/packages/dlcs.json";
 
         /// <summary>
         /// Direct link to the PS3 Games packages file hosted on GitHub.
         /// </summary>
-        internal const string PackagesGamesDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/packages/games.json";
+        internal const string PackagesGamesDataPs3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/packages/games.json";
 
         /// <summary>
         /// Direct link to the PS3 Themes packages file hosted on GitHub.
         /// </summary>
-        internal const string PackagesThemesDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/packages/themes.json";
+        internal const string PackagesThemesDataPs3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/packages/themes.json";
 
         /// <summary>
         /// Direct link to the ps3 game offsets database file hosted on GitHub.
         /// </summary>
-        internal const string GameCheatsDataPS3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/game-cheats.json";
+        internal const string GameCheatsDataPs3 = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/PS3/game-cheats.json";
 
         /// <summary>
         /// Direct link to the Xbox 360 mods file hosted on GitHub.
         /// </summary>
-        internal const string PluginsDataXBOX = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/XBOX360/plugins.json";
+        internal const string PluginsDataXbox = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/XBOX360/plugins.json";
 
         /// <summary>
         /// Direct link to the ps3 game offsets database file hosted on GitHub.
         /// </summary>
-        internal const string GameCheatsDataXBOX = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/XBOX360/game-cheats.json";
+        internal const string GameCheatsDataXbox = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/XBOX360/game-cheats.json";
 
         /// <summary>
-        /// Direct link to the Xbox 360 games title Ids hosted on GitHub.
+        /// Direct link to the Xbox 360 games title Ids file hosted on GitHub.
         /// </summary>
-        internal const string GameTitleIdsXBOX = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/XBOX360/titleids.json";
+        internal const string GameTitleIdsXbox = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/XBOX360/titleids.json";
+
+        /// <summary>
+        /// Direct link to the current favorite mods file hosted on GitHub.
+        /// </summary>
+        internal const string FavoriteModsData = "https://raw.githubusercontent.com/ohhsodead/Arisen-Mods-Database/main/favorites.json";
     }
 }

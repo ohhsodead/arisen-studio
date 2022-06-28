@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ADD_NEW_PROFILE" xml:space="preserve">
+    <value>Yeni Profil Ekle</value>
+  </data>
   <data name="ADVANCED" xml:space="preserve">
     <value>Gelişmiş</value>
+  </data>
+  <data name="ADVANCED_SETTINGS" xml:space="preserve">
+    <value>Gelişmiş Ayarlar</value>
   </data>
   <data name="ALL_CATEGORIES" xml:space="preserve">
     <value>Tüm Kategoriler</value>
@@ -130,7 +136,7 @@
     <value>{0} şuraya kurulur: {1}\nAynı oyun için birden çok mod kurmak, çakışma gibi sorunlara yol açabilir.\n\nMevcut dosyaları kaldırmak istiyor musunuz?</value>
   </data>
   <data name="ANY" xml:space="preserve">
-    <value>ANY</value>
+    <value>HİÇ</value>
   </data>
   <data name="ARCHIVE_DOWNLOADING" xml:space="preserve">
     <value>Arşiv indiriliyor...</value>
@@ -177,6 +183,9 @@
   <data name="CANT_UNINSTALL_CFW_FILES" xml:space="preserve">
     <value>Üretici yazılımı klasöründen dosyaları kaldıramazsınız. Eksik dosyalar konsol performansınızı etkileyebilir.</value>
   </data>
+  <data name="CHANGE_PROFILE" xml:space="preserve">
+    <value>Profili Değiştir</value>
+  </data>
   <data name="CHEAT_APPLIED" xml:space="preserve">
     <value>Oyuna hile başarıyla uygulandı.</value>
   </data>
@@ -211,16 +220,22 @@
     <value>Bağlandı</value>
   </data>
   <data name="CONNECTED_NOTIFICATION" xml:space="preserve">
-    <value>Modio ile bağlısınız ★</value>
+    <value>Arisen Mods ile bağlısınız ★</value>
   </data>
   <data name="CONNECTING_TO_CONSOLE" xml:space="preserve">
     <value>Bağlanıyor: {0}</value>
+  </data>
+  <data name="CONNECTION" xml:space="preserve">
+    <value>Bağlantı</value>
   </data>
   <data name="CONNECTIONS" xml:space="preserve">
     <value>Bağlantılar</value>
   </data>
   <data name="CONNECTION_FAILED" xml:space="preserve">
     <value>Bağlantı Başarısız</value>
+  </data>
+  <data name="CONNECT_CONSOLE" xml:space="preserve">
+    <value>Konsola Bağlan</value>
   </data>
   <data name="CONNECT_TO_CONSOLE" xml:space="preserve">
     <value>Konsola bağlan...</value>
@@ -248,9 +263,6 @@
   </data>
   <data name="DATA_MISSING" xml:space="preserve">
     <value>EKSİK VERİ</value>
-  </data>
-  <data name="DEFAULT_GAME_REGIONS" xml:space="preserve">
-    <value>Varsayılan Oyun Bölgeleri</value>
   </data>
   <data name="DELETE" xml:space="preserve">
     <value>Sil</value>
@@ -286,13 +298,16 @@
     <value>Dizin Bulunamadı</value>
   </data>
   <data name="DISCONNECTING_FROM_CONSOLE" xml:space="preserve">
-    <value>Konsoldan bağlantı kesiliyor.</value>
+    <value>Konsol bağlantısı kesiliyor.</value>
   </data>
-  <data name="DISCONNECT_FROM_CONSOLE" xml:space="preserve">
-    <value>Konsol bağlantısını kes</value>
+  <data name="DISCONNECT_CONSOLE" xml:space="preserve">
+    <value>Konsol Bağlantısını Kes</value>
   </data>
   <data name="DISCONNECT_LOWERCASE" xml:space="preserve">
-    <value>Bağlantıyı kes</value>
+    <value>Bağlantıyı Kes</value>
+  </data>
+  <data name="DISCORD_RICH_PRESENCE" xml:space="preserve">
+    <value>Discord Zengin İçerik</value>
   </data>
   <data name="DOWNLOADING_GAME_SAVE" xml:space="preserve">
     <value>Oyun Kaydı İndiriliyor</value>
@@ -315,6 +330,9 @@
   <data name="DOWNLOAD_FOLDER_NOT_FOUND" xml:space="preserve">
     <value>İndirme klasörü bilgisayarınızda mevcut değil. İndirme konumunu ayarlarınızdan değiştirebilirsiniz.</value>
   </data>
+  <data name="EDIT_PROFILES" xml:space="preserve">
+    <value>Profilleri Düzenle</value>
+  </data>
   <data name="ENABLE_HARDWARE_ACCELERATION" xml:space="preserve">
     <value>Donanım Hızlandırıcısını Etkinleştir</value>
   </data>
@@ -325,7 +343,7 @@
     <value>Oyun dosyası başlatılamıyor. Hata: {0}</value>
   </data>
   <data name="ERROR_OCCURRED" xml:space="preserve">
-    <value>Bir hata oluştu: {0}</value>
+    <value>Bir hata oluştu: {0}\n\nLütfen sonra deneyin. Sorun devam ederse &lt;a href="https://github.com/ohhsodead/ArisenMods/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt; yeni konu aç&lt;/a&gt; GitHub üstünde.</value>
   </data>
   <data name="EXTRACT_IMAGE" xml:space="preserve">
     <value>Görüntüyü Ayıkla</value>
@@ -412,10 +430,10 @@
     <value>Dosya kurulamıyor. Hata: {0}</value>
   </data>
   <data name="FILE_INSTALL_LOCATION" xml:space="preserve">
-    <value>Installing file: {0} to {1}</value>
+    <value>Dosya kuruluyor: {0} - {1}</value>
   </data>
   <data name="FILE_INSTALL_SUCCESS" xml:space="preserve">
-    <value>Successfully installed file(s).</value>
+    <value>Dosya başarıyla kuruldu.</value>
   </data>
   <data name="FILE_MISSING" xml:space="preserve">
     <value>Eksik Dosya</value>
@@ -439,7 +457,7 @@
     <value>{0} zaten kurulu.\n\nDosyayı tekrar kurmak istiyor musunuz?</value>
   </data>
   <data name="FILE_RENAME" xml:space="preserve">
-    <value>Yeniden Adlandır</value>
+    <value>Dosyayı Adlandır</value>
   </data>
   <data name="FILE_RENAMED" xml:space="preserve">
     <value>Dosya başarıyla yeniden adlandırıldı: {0}</value>
@@ -454,58 +472,58 @@
     <value>Bu dosyayı yeniden adlandırmak istiyor musunuz?\n\nNot: Modülün yüklenmesini etkilemeyecektir.</value>
   </data>
   <data name="FILE_RENAMING" xml:space="preserve">
-    <value>Renaming file to: {0}</value>
+    <value>Dosya yeniden adlandırılıyor: {0}</value>
   </data>
   <data name="FILE_SAVE_ERROR" xml:space="preserve">
     <value>Dosya kaydedilirken veya yüklenirken sorun oluştu.\n\nHata: {0}</value>
   </data>
   <data name="FILE_UNINSTALL_ERROR" xml:space="preserve">
-    <value>Unable to uninstall files. Error: {0}</value>
+    <value>Dosyalar kaldırılamıyor. Hata: {0}</value>
   </data>
   <data name="FILE_UNINSTALL_LOCATION" xml:space="preserve">
-    <value>Uninstalling file: {0} from {1}</value>
+    <value>Kaldırılacak dosya: {0} - {1}</value>
   </data>
   <data name="FILE_UNINSTALL_SUCCESSS" xml:space="preserve">
-    <value>Successfully uninstalled file.</value>
+    <value>Dosya başarıyla kaldırıldı.</value>
   </data>
   <data name="FILE_UPLOADED" xml:space="preserve">
-    <value>Successfully uploaded file: {0}</value>
+    <value>Dosya başarıyla yüklendi: {0}</value>
   </data>
   <data name="FILE_UPLOADING" xml:space="preserve">
-    <value>Uploading file to: {0}</value>
+    <value>Dosya şuraya yükleniyor: {0}</value>
   </data>
   <data name="FILE_UPLOAD_NOT_FOUND" xml:space="preserve">
-    <value>This file doesn't exist on your computer.</value>
+    <value>Bu dosya bilgisayarınızda yok.</value>
   </data>
   <data name="FOLDER_CREATE" xml:space="preserve">
     <value>Yeni Klasör Ekle</value>
   </data>
   <data name="FOLDER_CREATED" xml:space="preserve">
-    <value>Successfully created folder: {0}</value>
+    <value>Klasör başarıyla oluşturuldu: {0}</value>
   </data>
   <data name="FOLDER_CREATE_ERROR" xml:space="preserve">
-    <value>Unable to create new folder. Error: {0}</value>
+    <value>Yeni klasör oluşturulamıyor. Hata: {0}</value>
   </data>
   <data name="FOLDER_CREATING" xml:space="preserve">
-    <value>Creating folder: {0}</value>
+    <value>Klasör oluştur: {0}</value>
   </data>
   <data name="FOLDER_DELETED" xml:space="preserve">
-    <value>Successfully deleted folder: {0}</value>
+    <value>Klasör başarıyla silindi: {0}</value>
   </data>
   <data name="FOLDER_DELETE_SUCCESS" xml:space="preserve">
-    <value>Successfully deleted folder.</value>
+    <value>Klasör başarıyla silindi.</value>
   </data>
   <data name="FOLDER_DELETING" xml:space="preserve">
-    <value>Deleting folder: {0}</value>
+    <value>Klasör siliniyor: {0}</value>
   </data>
   <data name="FOLDER_DOWNLOADED" xml:space="preserve">
-    <value>Successfully downloaded folder: {0}</value>
+    <value>Klasör başarıyla indirildi: {0}</value>
   </data>
   <data name="FOLDER_DOWNLOADING" xml:space="preserve">
-    <value>Downloading folder: {0}</value>
+    <value>Klasör indiriliyor: {0}</value>
   </data>
   <data name="FOLDER_DOWNLOAD_ERROR" xml:space="preserve">
-    <value>Unable to download folder. Error: {0}</value>
+    <value>Klasör indirilemiyor. Hata: {0}</value>
   </data>
   <data name="FOLDER_NAME" xml:space="preserve">
     <value>Klasör Adı:</value>
@@ -517,19 +535,19 @@
     <value>Klasörü Adlandır</value>
   </data>
   <data name="FOLDER_RENAMED" xml:space="preserve">
-    <value>Successfully renamed folder: {0}</value>
+    <value>Klasör başarıyla adlandırıldı: {0}</value>
   </data>
   <data name="FOLDER_RENAME_ERROR" xml:space="preserve">
-    <value>Unable to rename folder. Error: {0}</value>
+    <value>Klasör adlandırılamıyor. Hata: {0}</value>
   </data>
   <data name="FOLDER_RENAMING" xml:space="preserve">
-    <value>Renaming folder: {0}</value>
+    <value>Klasör adlandırılıyor: {0}</value>
   </data>
   <data name="FOLDER_UPLOADED" xml:space="preserve">
-    <value>Successfully uploaded folder: {0}</value>
+    <value>Klasör başarıyla yüklendi: {0}</value>
   </data>
   <data name="FOLDER_UPLOADING" xml:space="preserve">
-    <value>Uploading folder to: {0}</value>
+    <value>Klasör şuraya yükleniyor: {0}</value>
   </data>
   <data name="FORBIDDEN" xml:space="preserve">
     <value>Yasak</value>
@@ -546,6 +564,9 @@
   <data name="FOUND_USER_PROFILE" xml:space="preserve">
     <value>Bulunan kullanıcı profili: {0}</value>
   </data>
+  <data name="GAMES" xml:space="preserve">
+    <value>Oyunlar</value>
+  </data>
   <data name="GAMES_LAUNCHER" xml:space="preserve">
     <value>Oyun Başlatıcı</value>
   </data>
@@ -561,8 +582,8 @@
   <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
     <value>Oyun Kaydı Yeniden İmzala</value>
   </data>
-  <data name="GAME_UPDATES_FINDER" xml:space="preserve">
-    <value>Oyun Güncelleme Bulucu</value>
+  <data name="GAME_UPDATES" xml:space="preserve">
+    <value>Oyun Güncellemeleri</value>
   </data>
   <data name="GETTING_DOWNLOAD_FILES" xml:space="preserve">
     <value>Arşiv dosyası indirme bağlantısı alınıyor...</value>
@@ -579,24 +600,33 @@
   <data name="GETTING_USER_PROFILE" xml:space="preserve">
     <value>Kullanıcı profili alınıyor...</value>
   </data>
+  <data name="HARD_REBOOT" xml:space="preserve">
+    <value>Tam Yeniden Başlat</value>
+  </data>
   <data name="HELP" xml:space="preserve">
     <value>YARDIM</value>
   </data>
   <data name="HELP_TRANSLATE" xml:space="preserve">
-    <value>Help translate Modio on Crowdin</value>
+    <value>Arisen Mod çevirisine Crowdin ile yardım edin</value>
+  </data>
+  <data name="HOME" xml:space="preserve">
+    <value>Ev</value>
   </data>
   <data name="HOW_TO_ACTIVATE_DEMO" xml:space="preserve">
-    <value>Activating a C00/Demo package is very easy and doesn't require a rap file. It can be done using ReActPSN or PSNPatch.\n\nReActPSN : Run the homebrew while pressing and holding circle on your controller.
-\nPSNPatch : Run PSNPatch and press R1. It should displays a list of the games that have been unlocked.</value>
+    <value>Bir C00/Demo paketini etkinleştirmek kolaydır bir rap dosyası gerektirmez. ReActPSN veya PSNPatch kullanılarak yapılabilir.\n\nReActPSN : Kontrol cihazınızdaki daireye basılı tutarken 'homebrew' çalıştırın.
+\nPSNPatch : PSNPatch çalıştırın ve R1 düğmesine basın. Kilidi açılmış oyunların bir listesini göstermelidir.</value>
   </data>
   <data name="HOW_TO_ACTIVATE_DEMO_QUESTION" xml:space="preserve">
     <value>Ücretsiz lisansı olan bir C00/Demo nasıl etkinleştiririm?</value>
   </data>
   <data name="HOW_TO_ACTIVATE_RAP" xml:space="preserve">
-    <value>Activating a package using a rap file requires few steps. It can be done with ReActPSN or PSNPatch. However, I will only describe how to do it with ReActPSN.\n\n1. Format a USB key in FAT32.\n2. Create the folder 'exdata' at the root of the USB key.\n3. Move the corresponding RAP file for the games you want to activate in the exdata folder.\nWarning: Do not rename rap files ! You need to leave their original ugly name.\n4. Connect the USB key in the right USB port of the PS3 (the closest to the bluray drive).\n5. Delete the ReActPSN user on your PS3 if it exists.\n6. Create the account 'aa' (without quotes) and open the account.\n7. Run ReActPSN and the screen should go black, then you should hear beeps and then the PS3 should reboot.\n8. The user 'aa' should be gone now and the account 'ReActPSN' automatically created.\n9. You're done!</value>
+    <value>Bir rap dosyası kullanarak bir paketi etkinleştirmek birkaç adım gerektirir. ReActPSN veya PSNPatch ile yapılabilir. ReActPSN ile nasıl yapılacağını anlatacağım.\n\n1. USB cihazını FAT32 olarak biçimlendirin.\n2. USB cihazı ana dizinde 'exdata' klasörü oluşturun.\n3. Etkinleştirmek istediğiniz oyunlar için ilgili RAP dosyasını exdata klasörüne taşıyın.\nUyarı: Rap dosyalarını yeniden adlandırmayın! Orijinal çirkin isimlerini bırakmanız gerekiyor.\n4. USB cihazını PS3 sağ USB bağlantı noktasına (bluray sürücüsüne yakın olana) bağlayın.\n5. Varsa, PS3 üstünden ReActPSN kullanıcısını silin.\n6. 'aa' hesabını (tırnak işaretleri olmadan) oluşturun ve hesabı açın.\n7. ReActPSN çalıştırın, ekran kararacaktır, ardından bip sesleri duymalısınız ve ardından PS3 yeniden başlatılmalıdır.\n8. 'aa' kullanıcısı şimdi gitmiş olmalı ve 'ReActPSN' hesabı otomatik olarak oluşturulmalıdır.\n9. Şimdi hazırısınız!</value>
   </data>
   <data name="HOW_TO_ACTIVATE_RAP_QUESTION" xml:space="preserve">
     <value>RAP dosyası içeren bir PSN paketini nasıl etkinleştiririm?</value>
+  </data>
+  <data name="HOW_TO_GUIDES" xml:space="preserve">
+    <value>Kullanım Klavuzları</value>
   </data>
   <data name="ICON" xml:space="preserve">
     <value>Simge</value>
@@ -617,7 +647,7 @@
     <value>Önce bilgisayarınıza bir USB cihazı takın ve ardından dosyaları yeniden kurun.</value>
   </data>
   <data name="INSERT_USB_DEVICE_TO_CONSOLE" xml:space="preserve">
-    <value>One or more files needs to be installed to a USB device which is connected to your console.\nInsert a USB device to your console and click 'Yes' to continue. Otherwise click 'No' to ignore these files.</value>
+    <value>Konsolunuza bağlı bir USB cihazına bir veya daha fazla dosyanın kurulması gerekiyor.\nKonsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa bu dosyaları yok saymak için 'Hayır' tıklayın.</value>
   </data>
   <data name="INSTALLED" xml:space="preserve">
     <value>Kurulu</value>
@@ -626,19 +656,19 @@
     <value>Kuruluyor</value>
   </data>
   <data name="INSTALLING_BACKUP_FILE_LOCATION" xml:space="preserve">
-    <value>Installing backup file: {0} to {1}</value>
+    <value>Yedek dosyası kuruluyor: {0} - {1}</value>
   </data>
   <data name="INSTALLING_GAME_SAVE" xml:space="preserve">
-    <value>Installing Game Save</value>
+    <value>Oyun Kaydı Kuruluyor</value>
   </data>
   <data name="INSTALLING_MODS" xml:space="preserve">
-    <value>Installing Mods</value>
+    <value>Modlar Kuruluyor</value>
   </data>
   <data name="INSTALLING_PACKAGE_FILE" xml:space="preserve">
-    <value>Installing Package</value>
+    <value>Paketler Kuruluyor</value>
   </data>
   <data name="INSTALL_CANCELED" xml:space="preserve">
-    <value>Installation canceled.</value>
+    <value>Kurulum iptal edildi.</value>
   </data>
   <data name="INSTALL_FILE" xml:space="preserve">
     <value>Dosyayı Kur</value>
@@ -658,6 +688,9 @@
   <data name="INSTALL_MODS_TO_LOCAL_USB" xml:space="preserve">
     <value>Oyun Modları/Eklentileri yerel USB cihazına kur</value>
   </data>
+  <data name="INSTALL_MODS_TO_USB" xml:space="preserve">
+    <value>Modları USB Üstünden Kur</value>
+  </data>
   <data name="INSTALL_PACKAGES_TO_LOCAL_USB" xml:space="preserve">
     <value>Paketleri yerel USB cihazına kur</value>
   </data>
@@ -666,6 +699,9 @@
   </data>
   <data name="INVALID_TITLE_ID" xml:space="preserve">
     <value>Geçersiz ID veya bulunamıyor. Bunun doğru bir PS3 Başlık ID olduğundan emin misiniz?</value>
+  </data>
+  <data name="IP_GRABBER" xml:space="preserve">
+    <value>IP Yakalayıcı</value>
   </data>
   <data name="LABEL_ADDRESS_NAME" xml:space="preserve">
     <value>IP Adresi/İsim</value>
@@ -737,10 +773,10 @@
     <value>URL Panoya Kopyala</value>
   </data>
   <data name="LABEL_CREATED_BY" xml:space="preserve">
-    <value>Created By</value>
+    <value>Oluşturan</value>
   </data>
   <data name="LABEL_CREATED_ON" xml:space="preserve">
-    <value>Created On</value>
+    <value>Oluşturuldu</value>
   </data>
   <data name="LABEL_CREATOR" xml:space="preserve">
     <value>Oluşturan</value>
@@ -788,7 +824,7 @@
     <value>Dosya İndir</value>
   </data>
   <data name="LABEL_DOWNLOAD_FILES" xml:space="preserve">
-    <value>Download Files</value>
+    <value>Dosyaları İndir</value>
   </data>
   <data name="LABEL_EDIT" xml:space="preserve">
     <value>Düzenle</value>
@@ -845,22 +881,22 @@
     <value>Ev Yapımı</value>
   </data>
   <data name="LABEL_IMAGE" xml:space="preserve">
-    <value>Image</value>
+    <value>Resim</value>
   </data>
   <data name="LABEL_IMAGE_SIZE_TOO_BIG" xml:space="preserve">
     <value>Resim dosyası boyutu çok büyük!</value>
   </data>
   <data name="LABEL_INSTALL" xml:space="preserve">
-    <value>Install</value>
+    <value>Kur</value>
   </data>
   <data name="LABEL_INSTALLATION_FILES" xml:space="preserve">
-    <value>Installation Files</value>
+    <value>Kurulum Dosyaları</value>
   </data>
   <data name="LABEL_INSTALLED" xml:space="preserve">
     <value>Kurulu</value>
   </data>
   <data name="LABEL_INSTALLED_ON" xml:space="preserve">
-    <value>Installed On</value>
+    <value>Kurulum</value>
   </data>
   <data name="LABEL_INSTALL_FILE" xml:space="preserve">
     <value>Install File</value>
@@ -869,7 +905,7 @@
     <value>IP Adresi</value>
   </data>
   <data name="LABEL_LAST_MODIFIED" xml:space="preserve">
-    <value>Modified On</value>
+    <value>Düzenleme</value>
   </data>
   <data name="LABEL_LAST_UPDATED" xml:space="preserve">
     <value>Son Güncellenme</value>
@@ -921,6 +957,9 @@
   </data>
   <data name="LABEL_OK" xml:space="preserve">
     <value>Tamam</value>
+  </data>
+  <data name="LABEL_OPEN" xml:space="preserve">
+    <value>Aç</value>
   </data>
   <data name="LABEL_OPEN_EXPLORER" xml:space="preserve">
     <value>Gezgini Aç</value>
@@ -983,7 +1022,7 @@
     <value>Zil Sesi</value>
   </data>
   <data name="LABEL_SAVE_AND_UPDATE" xml:space="preserve">
-    <value>Kaydet &amp;&amp; Güncelle</value>
+    <value>Kaydet &amp; Güncelle</value>
   </data>
   <data name="LABEL_SAVE_PROFILE" xml:space="preserve">
     <value>Profili Kaydet</value>
@@ -1000,11 +1039,14 @@
   <data name="LABEL_SET" xml:space="preserve">
     <value>Ayarla</value>
   </data>
+  <data name="LABEL_SET_FAN_SPEED" xml:space="preserve">
+    <value>Fan Hızını Ayarla</value>
+  </data>
   <data name="LABEL_SET_LEDS" xml:space="preserve">
     <value>LED Ayarla</value>
   </data>
   <data name="LABEL_SET_VALUE" xml:space="preserve">
-    <value>Değer Belirle</value>
+    <value>Değer Ayarla</value>
   </data>
   <data name="LABEL_SHOW_FAVORITES" xml:space="preserve">
     <value>Favorileri Göster</value>
@@ -1046,7 +1088,7 @@
     <value>Tür</value>
   </data>
   <data name="LABEL_UNFAVORITE" xml:space="preserve">
-    <value>Unfavorite</value>
+    <value>Favorilerden Çıkar</value>
   </data>
   <data name="LABEL_UNLOAD_MODULE" xml:space="preserve">
     <value>Modülü Pasifleştir</value>
@@ -1087,14 +1129,17 @@
   <data name="MISSING" xml:space="preserve">
     <value>EKSİK</value>
   </data>
-  <data name="MODULES_LOADER" xml:space="preserve">
-    <value>Modül Yükleyici</value>
+  <data name="MODDING_TOOLS" xml:space="preserve">
+    <value>Modlama Araçları</value>
   </data>
   <data name="MODULE_ALREADY_LOADED" xml:space="preserve">
     <value>Modül zaten yüklendi.</value>
   </data>
   <data name="MODULE_LOADED" xml:space="preserve">
     <value>Modül zaten yüklendi.</value>
+  </data>
+  <data name="MODULE_LOADER" xml:space="preserve">
+    <value>Modül Yükleyici</value>
   </data>
   <data name="MODULE_LOAD_ERROR" xml:space="preserve">
     <value>Modül yüklenemiyor.\n\nHata: {0}</value>
@@ -1117,8 +1162,53 @@
   <data name="MOTHERBOARD" xml:space="preserve">
     <value>Anakart</value>
   </data>
+  <data name="MOUNT_BD" xml:space="preserve">
+    <value>BD Bağla</value>
+  </data>
+  <data name="MOUNT_ISO" xml:space="preserve">
+    <value>ISO Bağla</value>
+  </data>
+  <data name="MOUNT_PSN" xml:space="preserve">
+    <value>PSN Bağla</value>
+  </data>
+  <data name="NAVIGATION_DASHBOARD" xml:space="preserve">
+    <value>PANEL</value>
+  </data>
+  <data name="NAVIGATION_DOWNLOADS" xml:space="preserve">
+    <value>İNDİRİLENLER</value>
+  </data>
+  <data name="NAVIGATION_FILE_MANAGER" xml:space="preserve">
+    <value>DOSYA YÖNETİCİSİ</value>
+  </data>
+  <data name="NAVIGATION_GAME_CHEATS" xml:space="preserve">
+    <value>OYUN HİLELERİ</value>
+  </data>
+  <data name="NAVIGATION_GAME_MODS" xml:space="preserve">
+    <value>OYUN MODLARI</value>
+  </data>
+  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
+    <value>OYUN KAYITLARI</value>
+  </data>
+  <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
+    <value>EV YAPIMI</value>
+  </data>
+  <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
+    <value>KURULU MODLAR</value>
+  </data>
+  <data name="NAVIGATION_PACKAGES" xml:space="preserve">
+    <value>PAKETLER</value>
+  </data>
+  <data name="NAVIGATION_PLUGINS" xml:space="preserve">
+    <value>EKLENTİLER</value>
+  </data>
+  <data name="NAVIGATION_RESOURCES" xml:space="preserve">
+    <value>KAYNAKLAR</value>
+  </data>
+  <data name="NAVIGATION_SETTINGS" xml:space="preserve">
+    <value>AYARLAR</value>
+  </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
-    <value>Make sure Neighborhood is installed on your computer</value>
+    <value>Bilgisayarınızda 'Neighborhood' kurulu olduğundan emin olun</value>
   </data>
   <data name="NOTICE_INSTALL_REBUG_FILES" xml:space="preserve">
     <value>These files are being installed to the firmware folder (dev_rebug) which is for REBUG Custom Firmware only. Please read everything below before proceeding.\n\n- It's recommended to first create a backup of the entire folder before installing any files.\n- Your console must be running Rebug custom firmware.\n- REBUG TOOLBOX must be open during installation\n- Any missing or corrupt files in this folder can impact your console performance.\n- If you have issues after rebooting console, enter recovery mode and reinstall the custom firmware.\n\nOnly continue at your own risk and only if you know what you're doing.\n\nDo you want to continue?</value>
@@ -1178,7 +1268,7 @@
     <value>Listeniz Yok</value>
   </data>
   <data name="NO_MORE_DETAILS" xml:space="preserve">
-    <value>Bunun için henüz başka bir ayrıntı bulunamadı.</value>
+    <value>Bunun için henüz başka ayrıntı yok... Daha fazlasını sağlayabilirseniz lütfen bize bildirin!</value>
   </data>
   <data name="NO_NEWS_IS_GOOD_NEWS" xml:space="preserve">
     <value>Her haber iyi haber değildir!</value>
@@ -1219,6 +1309,9 @@
   <data name="PACKAGE_FILE_MANAGER" xml:space="preserve">
     <value>Paket Dosyaları Yöneticisi</value>
   </data>
+  <data name="POWER" xml:space="preserve">
+    <value>Güç</value>
+  </data>
   <data name="PREPARING_DOWNLOAD" xml:space="preserve">
     <value>Arşivi indirmeye hazırlanıyor...</value>
   </data>
@@ -1240,11 +1333,20 @@
   <data name="PROFILE_EDIT" xml:space="preserve">
     <value>Profili Düzenle</value>
   </data>
+  <data name="QUICK_REBOOT" xml:space="preserve">
+    <value>Hızlı Yeniden Başlat</value>
+  </data>
+  <data name="QUICK_SETTINGS" xml:space="preserve">
+    <value>Hızlı Ayarlar</value>
+  </data>
   <data name="READY_TO_CONNECT" xml:space="preserve">
     <value>Bağlanmaya hazır...</value>
   </data>
   <data name="READY_TO_START_GAME" xml:space="preserve">
     <value>Oyun başlamaya hazır.</value>
+  </data>
+  <data name="RECONNECT_CONSOLE" xml:space="preserve">
+    <value>Konsola Tekrar Bağlan</value>
   </data>
   <data name="REDIRECTING" xml:space="preserve">
     <value>Yönlendiriliyor...</value>
@@ -1271,7 +1373,10 @@
     <value>Görseli Değiştir</value>
   </data>
   <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
-    <value>Files have been installed to a USB device connected to your console. You can either uninstall them now or manually delete them.\n\nIf you would like to uninstall the files now, connect the same USB device you installed the mods to into the same port of your console and click 'Yes' to continue.\nIf you don't want to uninstall the files, click 'No' and all of these files will be ignored.</value>
+    <value>Dosyalar, konsolunuza bağlı bir USB cihazına kuruldu. Bunları şimdi kaldırabilir veya el ile silebilirsiniz.\n\nDosyaları şimdi kaldırmak istiyorsanız, modları kurduğunuz aynı USB cihazını konsolunuzun aynı bağlantı noktasına bağlayın ve devam etmek için 'Evet' tıklayın.\nDosyaları kaldırmak istemiyorsanız, 'Hayır' tıklayın ve bu dosyaların tümü yok sayılacaktır.</value>
+  </data>
+  <data name="RESTART" xml:space="preserve">
+    <value>Yeniden Başlat</value>
   </data>
   <data name="RESTART_REQUIRED" xml:space="preserve">
     <value>Yeniden Başlatılmalı</value>
@@ -1294,35 +1399,23 @@
   <data name="SCANNING_XBOX_FINISHED" xml:space="preserve">
     <value>Xbox konsolları için tarama tamamlandı.</value>
   </data>
-  <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
-    <value>Bu mod türü (Script) kullanım kılavuzunun eklenmesi gerektiğinden PS3 üstüne kurulamaz.</value>
-  </data>
-  <data name="SETUP_EDIT_ADVANCED_SETTINGS" xml:space="preserve">
-    <value>Gelişmiş Ayarları Düzenle</value>
-  </data>
-  <data name="SETUP_HOWTO_GUIDE" xml:space="preserve">
-    <value>Modio Yardım Kılavuzu</value>
-  </data>
-  <data name="SETUP_PROFILES_EDIT" xml:space="preserve">
-    <value>Konsol Profili Düzenle</value>
-  </data>
-  <data name="SETUP_PROFILE_ADD" xml:space="preserve">
-    <value>Konsol Profili Ekle</value>
-  </data>
-  <data name="SETUP_SCAN_XBOX_CONSOLES" xml:space="preserve">
+  <data name="SCAN_XBOX_CONSOLES" xml:space="preserve">
     <value>Xbox Konsolları Tara</value>
   </data>
-  <data name="SETUP_SET_DOWNLOADS_LOCATION" xml:space="preserve">
-    <value>İndirilenlerin Konumunu Ayarla</value>
-  </data>
-  <data name="SETUP_STARTUP_LIBRARY" xml:space="preserve">
-    <value>Başlangıç ​​Kitaplığı</value>
+  <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
+    <value>Bu mod türü (Script) kullanım kılavuzunun eklenmesi gerektiğinden PS3 üstüne kurulamaz.</value>
   </data>
   <data name="SHOW_CURRENT_GAME_PLAYING" xml:space="preserve">
     <value>Oynanan mevcut oyunu göster</value>
   </data>
   <data name="SHOW_GAMES_IN_EXTERNAL_DEVICES" xml:space="preserve">
     <value>Harici cihazdan oyun listesini göster</value>
+  </data>
+  <data name="SHUTDOWN" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="SOFT_REBOOT" xml:space="preserve">
+    <value>Hafif Yeniden Başlat</value>
   </data>
   <data name="STARTING_INSTALL" xml:space="preserve">
     <value>Kurulum başlatılıyor...</value>
@@ -1351,14 +1444,14 @@
   <data name="SYSTEM_TEMPERATURES" xml:space="preserve">
     <value>Sistem Sıcaklıkları</value>
   </data>
+  <data name="TAKE_SCREENSHOT" xml:space="preserve">
+    <value>Ekran Görüntüsü Al</value>
+  </data>
   <data name="TITLE_ANNOUNCEMENTS" xml:space="preserve">
     <value>DUYURULAR</value>
   </data>
   <data name="TITLE_CHANGE_LOG" xml:space="preserve">
     <value>DEĞİŞİKLİKLER</value>
-  </data>
-  <data name="TITLE_CONNECT" xml:space="preserve">
-    <value>BAĞLAN</value>
   </data>
   <data name="TITLE_CONTRIBUTORS" xml:space="preserve">
     <value>KATKICILAR</value>
@@ -1366,38 +1459,8 @@
   <data name="TITLE_CREDITS" xml:space="preserve">
     <value>CREDITS</value>
   </data>
-  <data name="TITLE_DASHBOARD" xml:space="preserve">
-    <value>PANEL</value>
-  </data>
-  <data name="TITLE_DOWNLOADS" xml:space="preserve">
-    <value>İNDİRİLENLER</value>
-  </data>
-  <data name="TITLE_FILE_MANAGER" xml:space="preserve">
-    <value>DOSYA YÖNETİCİSİ</value>
-  </data>
   <data name="TITLE_GAMES" xml:space="preserve">
     <value>OYUNLAR</value>
-  </data>
-  <data name="TITLE_GAME_CHEATS" xml:space="preserve">
-    <value>OYUN HİLELERİ</value>
-  </data>
-  <data name="TITLE_GAME_MODS" xml:space="preserve">
-    <value>OYUN MODLARI</value>
-  </data>
-  <data name="TITLE_GAME_SAVES" xml:space="preserve">
-    <value>OYUN KAYITLARI</value>
-  </data>
-  <data name="TITLE_GET_STARTED" xml:space="preserve">
-    <value>ŞİMDİ BAŞLA</value>
-  </data>
-  <data name="TITLE_HELP" xml:space="preserve">
-    <value>YARDIM</value>
-  </data>
-  <data name="TITLE_HOMEBREW" xml:space="preserve">
-    <value>EV YAPIMI</value>
-  </data>
-  <data name="TITLE_INSTALLED_MODS" xml:space="preserve">
-    <value>KURULU MODLAR</value>
   </data>
   <data name="TITLE_INTERFACE" xml:space="preserve">
     <value>ARAYÜZ</value>
@@ -1408,17 +1471,11 @@
   <data name="TITLE_OPTIONS" xml:space="preserve">
     <value>SEÇENEKLER</value>
   </data>
-  <data name="TITLE_PACKAGES" xml:space="preserve">
-    <value>PAKETLER</value>
+  <data name="TITLE_OUR_FAVORITE_MODS" xml:space="preserve">
+    <value>FAVORİ MODLARIMIZ</value>
   </data>
-  <data name="TITLE_PLUGINS" xml:space="preserve">
-    <value>EKLENTİLER</value>
-  </data>
-  <data name="TITLE_RESOURCES" xml:space="preserve">
-    <value>KAYNAKLAR</value>
-  </data>
-  <data name="TITLE_SETTINGS" xml:space="preserve">
-    <value>AYARLAR</value>
+  <data name="TITLE_RECENTLY_UPDATED" xml:space="preserve">
+    <value>SON GÜNCELLENENLER</value>
   </data>
   <data name="TITLE_SPECIAL_THANKS" xml:space="preserve">
     <value>ÖZEL TEŞEKKÜRLER</value>
@@ -1426,11 +1483,8 @@
   <data name="TITLE_STATISTICS" xml:space="preserve">
     <value>İSTATİSTİKLER</value>
   </data>
-  <data name="TITLE_SUBMIT_MODS" xml:space="preserve">
-    <value>MODLARI GÖNDER</value>
-  </data>
-  <data name="TITLE_TOOLS" xml:space="preserve">
-    <value>ARAÇLAR</value>
+  <data name="TOOLS" xml:space="preserve">
+    <value>Araçlar</value>
   </data>
   <data name="UNABLE_LOAD_DATABASE" xml:space="preserve">
     <value>Veritabanı yüklenemiyor.</value>
@@ -1442,7 +1496,7 @@
     <value>Dizin için Dosya Gezgini açılamıyor: {0} - Hata {1}</value>
   </data>
   <data name="UNFAVORITE" xml:space="preserve">
-    <value>Unfavorite</value>
+    <value>Favorilerden Çıkar</value>
   </data>
   <data name="UNINSTALLED" xml:space="preserve">
     <value>Kaldırıldı</value>
@@ -1474,6 +1528,9 @@
   <data name="UNINSTALL_USB_FILES" xml:space="preserve">
     <value>USB Dosyalarını Kaldır</value>
   </data>
+  <data name="UNMOUNT" xml:space="preserve">
+    <value>Ayır</value>
+  </data>
   <data name="UPLOAD_ERROR" xml:space="preserve">
     <value>Konsola yüklenemiyor. Hata: {0}</value>
   </data>
@@ -1489,8 +1546,17 @@
   <data name="VIEW_DETAILS" xml:space="preserve">
     <value>Ayrıntıları Göster</value>
   </data>
+  <data name="VIRTUAL_CONTROLLER" xml:space="preserve">
+    <value>Sanal Kontrolcü</value>
+  </data>
+  <data name="WEBMAN_COMMANDS" xml:space="preserve">
+    <value>webMAN Komutları</value>
+  </data>
   <data name="WEBMAN_REQUIRED" xml:space="preserve">
     <value>Bu özellik için konsolda webMAN kurulu olmalıdır.</value>
+  </data>
+  <data name="XBDM_COMMANDS" xml:space="preserve">
+    <value>XBDM Komutları</value>
   </data>
   <data name="XBOX_CONSOLES" xml:space="preserve">
     <value>Xbox Konsolu</value>
@@ -1503,6 +1569,9 @@
   </data>
   <data name="XUID_SET_SUCCESS" xml:space="preserve">
     <value>Oyun için XUID başarıyla değiştirildi.</value>
+  </data>
+  <data name="XUID_SPOOFER" xml:space="preserve">
+    <value>XUID Taklidi</value>
   </data>
   <data name="YOU_MUST_BE_CONNECTED_TO_UNINSTALL_FILES" xml:space="preserve">
     <value>Dosyaları kaldırmak için {0} üstünde bağlı olmanız gerekir.</value>

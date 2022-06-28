@@ -29,9 +29,9 @@ namespace ArisenMods.Database
 
         public string Sha256 { get; set; }
 
-        public string InstallFilePathPKG => $"/dev_hdd0/packages/{Name.RemoveInvalidChars()}.pkg";
+        public string InstallFilePathPkg => $"/dev_hdd0/packages/{Name.RemoveInvalidChars()}.pkg";
 
-        public string InstallFilePathRAP => $"/dev_hdd0/exdata/{ContentId.RemoveInvalidChars()}.rap";
+        public string InstallFilePathRap => $"/dev_hdd0/exdata/{ContentId.RemoveInvalidChars()}.rap";
 
         public bool IsNameMissing => Name.IsNullOrEmpty();
 

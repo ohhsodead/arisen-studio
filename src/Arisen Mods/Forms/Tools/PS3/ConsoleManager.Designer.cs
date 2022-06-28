@@ -109,7 +109,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.LabelHeaderTempCELL.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelHeaderTempCELL.Appearance.Options.UseFont = true;
-            this.LabelHeaderTempCELL.Location = new System.Drawing.Point(233, 72);
+            this.LabelHeaderTempCELL.Location = new System.Drawing.Point(233, 66);
             this.LabelHeaderTempCELL.Name = "LabelHeaderTempCELL";
             this.LabelHeaderTempCELL.Size = new System.Drawing.Size(29, 15);
             this.LabelHeaderTempCELL.TabIndex = 12;
@@ -119,7 +119,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.LabelHeaderTempRSX.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelHeaderTempRSX.Appearance.Options.UseFont = true;
-            this.LabelHeaderTempRSX.Location = new System.Drawing.Point(233, 100);
+            this.LabelHeaderTempRSX.Location = new System.Drawing.Point(233, 98);
             this.LabelHeaderTempRSX.Name = "LabelHeaderTempRSX";
             this.LabelHeaderTempRSX.Size = new System.Drawing.Size(23, 15);
             this.LabelHeaderTempRSX.TabIndex = 8;
@@ -129,7 +129,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.LabelHeaderFirmwareVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelHeaderFirmwareVersion.Appearance.Options.UseFont = true;
-            this.LabelHeaderFirmwareVersion.Location = new System.Drawing.Point(15, 40);
+            this.LabelHeaderFirmwareVersion.Location = new System.Drawing.Point(15, 34);
             this.LabelHeaderFirmwareVersion.Name = "LabelHeaderFirmwareVersion";
             this.LabelHeaderFirmwareVersion.Size = new System.Drawing.Size(94, 15);
             this.LabelHeaderFirmwareVersion.TabIndex = 4;
@@ -213,9 +213,9 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 392);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 388);
             this.barDockControlBottom.Manager = this.BarManager;
-            this.barDockControlBottom.Size = new System.Drawing.Size(705, 22);
+            this.barDockControlBottom.Size = new System.Drawing.Size(705, 26);
             // 
             // barDockControlLeft
             // 
@@ -223,7 +223,7 @@ namespace ArisenMods.Forms.Tools.PS3
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.BarManager;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 392);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 388);
             // 
             // barDockControlRight
             // 
@@ -231,7 +231,7 @@ namespace ArisenMods.Forms.Tools.PS3
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(705, 0);
             this.barDockControlRight.Manager = this.BarManager;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 392);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 388);
             // 
             // MenuButtonFile
             // 
@@ -350,7 +350,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.LabelCoreVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelCoreVersion.Appearance.Options.UseFont = true;
-            this.LabelCoreVersion.Location = new System.Drawing.Point(139, 104);
+            this.LabelCoreVersion.Location = new System.Drawing.Point(139, 98);
             this.LabelCoreVersion.Name = "LabelCoreVersion";
             this.LabelCoreVersion.Size = new System.Drawing.Size(5, 15);
             this.LabelCoreVersion.TabIndex = 21;
@@ -360,7 +360,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(15, 104);
+            this.labelControl14.Location = new System.Drawing.Point(15, 98);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(70, 15);
             this.labelControl14.TabIndex = 20;
@@ -370,7 +370,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.LabelFirmwareType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelFirmwareType.Appearance.Options.UseFont = true;
-            this.LabelFirmwareType.Location = new System.Drawing.Point(139, 72);
+            this.LabelFirmwareType.Location = new System.Drawing.Point(139, 66);
             this.LabelFirmwareType.Name = "LabelFirmwareType";
             this.LabelFirmwareType.Size = new System.Drawing.Size(5, 15);
             this.LabelFirmwareType.TabIndex = 19;
@@ -380,7 +380,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(15, 72);
+            this.labelControl12.Location = new System.Drawing.Point(15, 66);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(80, 15);
             this.labelControl12.TabIndex = 18;
@@ -390,7 +390,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.LabelTempRSX.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelTempRSX.Appearance.Options.UseFont = true;
-            this.LabelTempRSX.Location = new System.Drawing.Point(279, 100);
+            this.LabelTempRSX.Location = new System.Drawing.Point(279, 98);
             this.LabelTempRSX.Name = "LabelTempRSX";
             this.LabelTempRSX.Size = new System.Drawing.Size(5, 15);
             this.LabelTempRSX.TabIndex = 17;
@@ -400,7 +400,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.LabelTempCELL.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelTempCELL.Appearance.Options.UseFont = true;
-            this.LabelTempCELL.Location = new System.Drawing.Point(279, 72);
+            this.LabelTempCELL.Location = new System.Drawing.Point(279, 66);
             this.LabelTempCELL.Name = "LabelTempCELL";
             this.LabelTempCELL.Size = new System.Drawing.Size(5, 15);
             this.LabelTempCELL.TabIndex = 16;
@@ -410,7 +410,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(233, 40);
+            this.labelControl7.Location = new System.Drawing.Point(233, 34);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(79, 15);
             this.labelControl7.TabIndex = 15;
@@ -437,7 +437,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.LabelFirmwareVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelFirmwareVersion.Appearance.Options.UseFont = true;
-            this.LabelFirmwareVersion.Location = new System.Drawing.Point(139, 40);
+            this.LabelFirmwareVersion.Location = new System.Drawing.Point(139, 34);
             this.LabelFirmwareVersion.Name = "LabelFirmwareVersion";
             this.LabelFirmwareVersion.Size = new System.Drawing.Size(5, 15);
             this.LabelFirmwareVersion.TabIndex = 13;
@@ -484,7 +484,7 @@ namespace ArisenMods.Forms.Tools.PS3
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(212, 40);
+            this.labelControl3.Location = new System.Drawing.Point(212, 34);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(39, 15);
             this.labelControl3.TabIndex = 1178;
@@ -493,7 +493,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // RadioGroupBuzzerMode
             // 
             this.RadioGroupBuzzerMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RadioGroupBuzzerMode.Location = new System.Drawing.Point(211, 97);
+            this.RadioGroupBuzzerMode.Location = new System.Drawing.Point(211, 91);
             this.RadioGroupBuzzerMode.Name = "RadioGroupBuzzerMode";
             this.RadioGroupBuzzerMode.Properties.AllowFocused = false;
             this.RadioGroupBuzzerMode.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -514,7 +514,7 @@ namespace ArisenMods.Forms.Tools.PS3
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(212, 72);
+            this.labelControl2.Location = new System.Drawing.Point(212, 66);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(34, 15);
             this.labelControl2.TabIndex = 1176;
@@ -539,7 +539,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             // RadioGroupLEDsRed
             // 
-            this.RadioGroupLEDsRed.Location = new System.Drawing.Point(111, 97);
+            this.RadioGroupLEDsRed.Location = new System.Drawing.Point(111, 91);
             this.RadioGroupLEDsRed.Name = "RadioGroupLEDsRed";
             this.RadioGroupLEDsRed.Properties.AllowFocused = false;
             this.RadioGroupLEDsRed.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -560,7 +560,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(112, 72);
+            this.labelControl1.Location = new System.Drawing.Point(112, 66);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(23, 15);
             this.labelControl1.TabIndex = 1174;
@@ -568,7 +568,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             // RadioGroupLEDsGreen
             // 
-            this.RadioGroupLEDsGreen.Location = new System.Drawing.Point(14, 97);
+            this.RadioGroupLEDsGreen.Location = new System.Drawing.Point(14, 91);
             this.RadioGroupLEDsGreen.Name = "RadioGroupLEDsGreen";
             this.RadioGroupLEDsGreen.Properties.AllowFocused = false;
             this.RadioGroupLEDsGreen.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -589,7 +589,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(15, 72);
+            this.labelControl4.Location = new System.Drawing.Point(15, 66);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(34, 15);
             this.labelControl4.TabIndex = 6;
@@ -599,7 +599,7 @@ namespace ArisenMods.Forms.Tools.PS3
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(15, 40);
+            this.labelControl5.Location = new System.Drawing.Point(15, 34);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(65, 15);
             this.labelControl5.TabIndex = 4;

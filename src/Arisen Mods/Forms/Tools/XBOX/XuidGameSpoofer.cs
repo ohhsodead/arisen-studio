@@ -23,33 +23,33 @@ namespace ArisenMods.Forms.Tools.XBOX
 
         private readonly uint XUserFindUserAddress = 0x81829158/*17502 0x81829018*/, XamFreeMemory = 0x81AA2000;
 
-        private enum XUIDAddr : uint
+        private enum XuidAddr : uint
         {
-            COD4 = 0x84C24BBC,
-            WAW = 0x852336B5,
-            MW2 = 0x838BA824,
-            BO1 = 0x841987D5,
-            MW3 = 0x839691AC,
-            BO2 = 0x841E1B30,
-            GHOSTS = 0x83F0A35C,
-            AW = 0x84493A94
+            Cod4 = 0x84C24BBC,
+            Waw = 0x852336B5,
+            Mw2 = 0x838BA824,
+            Bo1 = 0x841987D5,
+            Mw3 = 0x839691AC,
+            Bo2 = 0x841E1B30,
+            Ghosts = 0x83F0A35C,
+            Aw = 0x84493A94
         };
 
         public enum Title : uint
         {
-            DASHBOARD = 0xFFFE07D1,
-            XEX_MENU = 0xFFFF0055,
-            XEX_MENU_ALT = 0xC0DE9999,
-            XSHELL = 0xFFFE07FF,
-            GTA_V = 0x545408A7,
-            COD4 = 0x415607E6,
-            MW2 = 0x41560817,
-            BO1 = 0x41560855,
-            MW3 = 0x415608CB,
-            BO2 = 0x415608C3,
-            GHOSTS = 0x415608FC,
-            AW = 0x41560914,
-            BO3 = 0x4156091D
+            Dashboard = 0xFFFE07D1,
+            XexMenu = 0xFFFF0055,
+            XexMenuAlt = 0xC0DE9999,
+            Xshell = 0xFFFE07FF,
+            GtaV = 0x545408A7,
+            Cod4 = 0x415607E6,
+            Mw2 = 0x41560817,
+            Bo1 = 0x41560855,
+            Mw3 = 0x415608CB,
+            Bo2 = 0x415608C3,
+            Ghosts = 0x415608FC,
+            Aw = 0x41560914,
+            Bo3 = 0x4156091D
         };
 
         private void XuidGameSpoofer_Load(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace ArisenMods.Forms.Tools.XBOX
         {
             if (TextBoxGamertag.Text.Length > 4 && TextBoxGamertag.Text.Length <= 15)
             {
-                string result = GetXUID(TextBoxGamertag.Text);
+                string result = GetXuid(TextBoxGamertag.Text);
 
                 if (result == "ERROR")
                 {
@@ -82,7 +82,7 @@ namespace ArisenMods.Forms.Tools.XBOX
 
         private void ButtonSetXuid_Click(object sender, EventArgs e)
         {
-            bool success = SetXUID(XuidAddress(), TextBoxGamertag.Text, TextBoxXuid.Text);
+            bool success = SetXuid(XuidAddress(), TextBoxGamertag.Text, TextBoxXuid.Text);
 
             if (success)
             {
@@ -94,7 +94,7 @@ namespace ArisenMods.Forms.Tools.XBOX
             }
         }
 
-        private string GetXUID(string gamertag)
+        private string GetXuid(string gamertag)
         {
             if (MainWindow.IsConsoleConnected)
             {
@@ -113,15 +113,15 @@ namespace ArisenMods.Forms.Tools.XBOX
             {
                 if (MainWindow.IsConsoleConnected)
                 {
-                    return XboxConsole.GetCurrentTitleID() switch
+                    return XboxConsole.GetCurrentTitleId() switch
                     {
-                        (uint)Title.COD4 => (uint)XUIDAddr.COD4,
-                        (uint)Title.MW2 => (uint)XUIDAddr.MW2,
-                        (uint)Title.BO1 => (uint)XUIDAddr.BO1,
-                        (uint)Title.MW3 => (uint)XUIDAddr.MW3,
-                        (uint)Title.BO2 => (uint)XUIDAddr.BO2,
-                        (uint)Title.GHOSTS => (uint)XUIDAddr.GHOSTS,
-                        (uint)Title.AW => (uint)XUIDAddr.AW,
+                        (uint)Title.Cod4 => (uint)XuidAddr.Cod4,
+                        (uint)Title.Mw2 => (uint)XuidAddr.Mw2,
+                        (uint)Title.Bo1 => (uint)XuidAddr.Bo1,
+                        (uint)Title.Mw3 => (uint)XuidAddr.Mw3,
+                        (uint)Title.Bo2 => (uint)XuidAddr.Bo2,
+                        (uint)Title.Ghosts => (uint)XuidAddr.Ghosts,
+                        (uint)Title.Aw => (uint)XuidAddr.Aw,
                         _ => 0xDE,
                     };
                 }
@@ -138,7 +138,7 @@ namespace ArisenMods.Forms.Tools.XBOX
             return Encoding.UTF8.GetBytes(input).Reverse().ToArray();
         }
 
-        private bool SetXUID(uint address, string GT, string XUID)
+        private bool SetXuid(uint address, string gt, string xuid)
         {
             if (address == 0xEE || address == 0xDE)
             {
@@ -146,25 +146,25 @@ namespace ArisenMods.Forms.Tools.XBOX
                 return false;
             }
 
-            bool BO2 = XboxConsole.GetCurrentTitleID() == (uint)Title.BO2;
+            bool bo2 = XboxConsole.GetCurrentTitleId() == (uint)Title.Bo2;
 
             if (address != 0)
             {
-                if (GT.Length > 0)
+                if (gt.Length > 0)
                 {
-                    if (BO2)
+                    if (bo2)
                     {
-                        XboxConsole.WriteBytes(0x81AA2C8C, ReverseBytes(GT + "\0"));
+                        XboxConsole.WriteBytes(0x81AA2C8C, ReverseBytes(gt + "\0"));
                     }
 
-                    XboxConsole.WriteBytes(address, Encoding.UTF8.GetBytes(GT + "\0"));
+                    XboxConsole.WriteBytes(address, Encoding.UTF8.GetBytes(gt + "\0"));
                 }
-                if (XUID.Length == 16)
+                if (xuid.Length == 16)
                 {
-                    XboxConsole.WriteBytes(address + (uint)(BO2 ? 0x20 : 0x24), StringExtensions.HexStringToBytes(XUID));
-                    XboxConsole.WriteBytes(address + (uint)(BO2 ? 0x28 : 0x2C), StringExtensions.HexStringToBytes(StringExtensions.ConvertStringToHex(XUID, Encoding.ASCII)));
+                    XboxConsole.WriteBytes(address + (uint)(bo2 ? 0x20 : 0x24), StringExtensions.HexStringToBytes(xuid));
+                    XboxConsole.WriteBytes(address + (uint)(bo2 ? 0x28 : 0x2C), StringExtensions.HexStringToBytes(StringExtensions.ConvertStringToHex(xuid, Encoding.ASCII)));
 
-                    if (BO2)
+                    if (bo2)
                     {
                         XboxConsole.WriteBytes(0x825DE218, new byte[] { 0x48, 0x00, 0x00, 0x00 }); // XUID Check
                     }

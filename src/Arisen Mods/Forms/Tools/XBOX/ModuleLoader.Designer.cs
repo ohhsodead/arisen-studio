@@ -81,13 +81,15 @@ namespace ArisenMods.Forms.Tools.XBOX
             // ButtonRefreshModules
             // 
             this.ButtonRefreshModules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonRefreshModules.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonRefreshModules.Appearance.Options.UseFont = true;
             this.ButtonRefreshModules.AutoSize = true;
-            this.ButtonRefreshModules.Location = new System.Drawing.Point(118, 0);
+            this.ButtonRefreshModules.Location = new System.Drawing.Point(115, 0);
             this.ButtonRefreshModules.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonRefreshModules.Name = "ButtonRefreshModules";
-            this.ButtonRefreshModules.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonRefreshModules.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonRefreshModules.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonRefreshModules.Size = new System.Drawing.Size(118, 24);
+            this.ButtonRefreshModules.Size = new System.Drawing.Size(115, 24);
             this.ButtonRefreshModules.TabIndex = 9;
             this.ButtonRefreshModules.Text = "Refresh Modules";
             this.ButtonRefreshModules.Click += new System.EventHandler(this.ButtonRefreshModules_Click);
@@ -95,15 +97,17 @@ namespace ArisenMods.Forms.Tools.XBOX
             // ButtonUnloadModule
             // 
             this.ButtonUnloadModule.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonUnloadModule.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonUnloadModule.Appearance.Options.UseFont = true;
             this.ButtonUnloadModule.AutoSize = true;
             this.ButtonUnloadModule.Enabled = false;
             this.ButtonUnloadModule.Location = new System.Drawing.Point(0, 0);
             this.ButtonUnloadModule.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.ButtonUnloadModule.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonUnloadModule.Name = "ButtonUnloadModule";
-            this.ButtonUnloadModule.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonUnloadModule.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonUnloadModule.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonUnloadModule.Size = new System.Drawing.Size(112, 24);
+            this.ButtonUnloadModule.Size = new System.Drawing.Size(109, 24);
             this.ButtonUnloadModule.TabIndex = 8;
             this.ButtonUnloadModule.Text = "Unload Module";
             this.ButtonUnloadModule.Click += new System.EventHandler(this.ButtonUnloadModule_Click);
@@ -136,7 +140,7 @@ namespace ArisenMods.Forms.Tools.XBOX
             // 
             // ComboBoxDrives
             // 
-            this.ComboBoxDrives.EditValue = "Hdd:\\";
+            this.ComboBoxDrives.EditValue = "HDD:\\";
             this.ComboBoxDrives.Location = new System.Drawing.Point(12, 13);
             this.ComboBoxDrives.Name = "ComboBoxDrives";
             this.ComboBoxDrives.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -144,18 +148,21 @@ namespace ArisenMods.Forms.Tools.XBOX
             this.ComboBoxDrives.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ComboBoxDrives.Properties.Items.AddRange(new object[] {
-            "Hdd:\\",
+            "HDD:\\",
             "USB0:\\",
             "USB1:\\",
             "USB2:\\",
             "USB3:\\",
             "USB4:\\"});
+            this.ComboBoxDrives.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ComboBoxDrives.Size = new System.Drawing.Size(60, 22);
             this.ComboBoxDrives.TabIndex = 1184;
             // 
             // ButtonInjectPlugin
             // 
             this.ButtonInjectPlugin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonInjectPlugin.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonInjectPlugin.Appearance.Options.UseFont = true;
             this.ButtonInjectPlugin.Location = new System.Drawing.Point(242, 12);
             this.ButtonInjectPlugin.Name = "ButtonInjectPlugin";
             this.ButtonInjectPlugin.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;

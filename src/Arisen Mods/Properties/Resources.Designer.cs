@@ -83,6 +83,26 @@ namespace ArisenMods.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage actions_question {
+            get {
+                object obj = ResourceManager.GetObject("actions_question", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage actions_question1 {
+            get {
+                object obj = ResourceManager.GetObject("actions_question1", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage actions_refresh {
             get {
                 object obj = ResourceManager.GetObject("actions_refresh", resourceCulture);
@@ -101,31 +121,11 @@ namespace ArisenMods.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
-        /// </summary>
-        internal static DevExpress.Utils.Svg.SvgImage actions_reload1 {
-            get {
-                object obj = ResourceManager.GetObject("actions_reload1", resourceCulture);
-                return ((DevExpress.Utils.Svg.SvgImage)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap add_file {
             get {
                 object obj = ResourceManager.GetObject("add_file", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap add_profile {
-            get {
-                object obj = ResourceManager.GetObject("add_profile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,39 @@ namespace ArisenMods.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backup_files {
+            get {
+                object obj = ResourceManager.GetObject("backup_files", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backup_restore {
             get {
                 object obj = ResourceManager.GetObject("backup_restore", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap boot_plugins_editor {
+            get {
+                object obj = ResourceManager.GetObject("boot_plugins_editor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap capture {
+            get {
+                object obj = ResourceManager.GetObject("capture", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -201,12 +231,72 @@ namespace ArisenMods.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap connect {
+            get {
+                object obj = ResourceManager.GetObject("connect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap console_manager {
+            get {
+                object obj = ResourceManager.GetObject("console_manager", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap console_power {
+            get {
+                object obj = ResourceManager.GetObject("console_power", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap disconnect {
+            get {
+                object obj = ResourceManager.GetObject("disconnect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap discord_status {
+            get {
+                object obj = ResourceManager.GetObject("discord_status", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap discord_status1 {
+            get {
+                object obj = ResourceManager.GetObject("discord_status1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -241,16 +331,6 @@ namespace ArisenMods.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
-        /// </summary>
-        internal static DevExpress.Utils.Svg.SvgImage download_svg {
-            get {
-                object obj = ResourceManager.GetObject("download_svg", resourceCulture);
-                return ((DevExpress.Utils.Svg.SvgImage)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap downloads {
@@ -261,11 +341,21 @@ namespace ArisenMods.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static DevExpress.Utils.Svg.SvgImage downloads_folder {
+        internal static System.Drawing.Bitmap downloads_folder {
             get {
                 object obj = ResourceManager.GetObject("downloads_folder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage downloads_folder1 {
+            get {
+                object obj = ResourceManager.GetObject("downloads_folder1", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
             }
         }
@@ -293,9 +383,39 @@ namespace ArisenMods.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_save {
+            get {
+                object obj = ResourceManager.GetObject("edit_save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap equal_sign {
             get {
                 object obj = ResourceManager.GetObject("equal_sign", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_editor {
+            get {
+                object obj = ResourceManager.GetObject("file_editor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_launch {
+            get {
+                object obj = ResourceManager.GetObject("file_launch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,6 +463,56 @@ namespace ArisenMods.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap game_controller1 {
+            get {
+                object obj = ResourceManager.GetObject("game_controller1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap game_patch {
+            get {
+                object obj = ResourceManager.GetObject("game_patch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap game_region {
+            get {
+                object obj = ResourceManager.GetObject("game_region", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap games_folder {
+            get {
+                object obj = ResourceManager.GetObject("games_folder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap globe {
+            get {
+                object obj = ResourceManager.GetObject("globe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap homebrew {
             get {
                 object obj = ResourceManager.GetObject("homebrew", resourceCulture);
@@ -356,6 +526,26 @@ namespace ArisenMods.Properties {
         internal static System.Drawing.Bitmap import {
             get {
                 object obj = ResourceManager.GetObject("import", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap index_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("index_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap index_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("index_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -441,12 +631,12 @@ namespace ArisenMods.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static DevExpress.Utils.Svg.SvgImage modules {
+        internal static System.Drawing.Bitmap modules {
             get {
                 object obj = ResourceManager.GetObject("modules", resourceCulture);
-                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -456,6 +646,26 @@ namespace ArisenMods.Properties {
         internal static System.Drawing.Bitmap more_or_equal {
             get {
                 object obj = ResourceManager.GetObject("more_or_equal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new_profile {
+            get {
+                object obj = ResourceManager.GetObject("new_profile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notify {
+            get {
+                object obj = ResourceManager.GetObject("notify", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -477,6 +687,16 @@ namespace ArisenMods.Properties {
             get {
                 object obj = ResourceManager.GetObject("open_url", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap package_manager {
+            get {
+                object obj = ResourceManager.GetObject("package_manager", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -523,9 +743,29 @@ namespace ArisenMods.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap plugins_editor {
+            get {
+                object obj = ResourceManager.GetObject("plugins_editor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap profile {
             get {
                 object obj = ResourceManager.GetObject("profile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profile_switch {
+            get {
+                object obj = ResourceManager.GetObject("profile_switch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -563,6 +803,76 @@ namespace ArisenMods.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage restore_backup {
+            get {
+                object obj = ResourceManager.GetObject("restore_backup", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage restore_file {
+            get {
+                object obj = ResourceManager.GetObject("restore_file", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage save_update {
+            get {
+                object obj = ResourceManager.GetObject("save_update", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_file {
+            get {
+                object obj = ResourceManager.GetObject("search_file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_profiles {
+            get {
+                object obj = ResourceManager.GetObject("search_profiles", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_web {
+            get {
+                object obj = ResourceManager.GetObject("search_web", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shutdown {
+            get {
+                object obj = ResourceManager.GetObject("shutdown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage sort {
             get {
                 object obj = ResourceManager.GetObject("sort", resourceCulture);
@@ -586,6 +896,26 @@ namespace ArisenMods.Properties {
         internal static DevExpress.Utils.Svg.SvgImage spoof {
             get {
                 object obj = ResourceManager.GetObject("spoof", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spoofer {
+            get {
+                object obj = ResourceManager.GetObject("spoofer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage stop {
+            get {
+                object obj = ResourceManager.GetObject("stop", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
             }
         }
@@ -626,6 +956,16 @@ namespace ArisenMods.Properties {
         internal static System.Drawing.Bitmap update_file {
             get {
                 object obj = ResourceManager.GetObject("update_file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usb_connection {
+            get {
+                object obj = ResourceManager.GetObject("usb_connection", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

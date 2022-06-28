@@ -52,6 +52,7 @@ namespace ArisenMods.Forms.Tools.PS3
             this.GridBootPlugins.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridBootPlugins.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GridBootPlugins.Location = new System.Drawing.Point(12, 12);
             this.GridBootPlugins.MainView = this.GridViewBootPlugins;
             this.GridBootPlugins.Name = "GridBootPlugins";
@@ -77,14 +78,16 @@ namespace ArisenMods.Forms.Tools.PS3
             // ButtonRestoreDefault
             // 
             this.ButtonRestoreDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonRestoreDefault.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonRestoreDefault.Appearance.Options.UseFont = true;
             this.ButtonRestoreDefault.AutoSize = true;
             this.ButtonRestoreDefault.Location = new System.Drawing.Point(0, 0);
             this.ButtonRestoreDefault.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.ButtonRestoreDefault.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonRestoreDefault.Name = "ButtonRestoreDefault";
-            this.ButtonRestoreDefault.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonRestoreDefault.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonRestoreDefault.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonRestoreDefault.Size = new System.Drawing.Size(111, 24);
+            this.ButtonRestoreDefault.Size = new System.Drawing.Size(107, 24);
             this.ButtonRestoreDefault.TabIndex = 9;
             this.ButtonRestoreDefault.Text = "Restore Default";
             this.ButtonRestoreDefault.Click += new System.EventHandler(this.ButtonRestoreDefault_Click);
@@ -92,13 +95,15 @@ namespace ArisenMods.Forms.Tools.PS3
             // ButtonRestoreBackup
             // 
             this.ButtonRestoreBackup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonRestoreBackup.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonRestoreBackup.Appearance.Options.UseFont = true;
             this.ButtonRestoreBackup.AutoSize = true;
-            this.ButtonRestoreBackup.Location = new System.Drawing.Point(117, 0);
+            this.ButtonRestoreBackup.Location = new System.Drawing.Point(113, 0);
             this.ButtonRestoreBackup.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonRestoreBackup.Name = "ButtonRestoreBackup";
-            this.ButtonRestoreBackup.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonRestoreBackup.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonRestoreBackup.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonRestoreBackup.Size = new System.Drawing.Size(110, 24);
+            this.ButtonRestoreBackup.Size = new System.Drawing.Size(108, 24);
             this.ButtonRestoreBackup.TabIndex = 7;
             this.ButtonRestoreBackup.Text = "Restore Backup";
             this.ButtonRestoreBackup.Click += new System.EventHandler(this.ButtonRestoreBackup_Click);
@@ -106,13 +111,15 @@ namespace ArisenMods.Forms.Tools.PS3
             // ButtonSaveUpdate
             // 
             this.ButtonSaveUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonSaveUpdate.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonSaveUpdate.Appearance.Options.UseFont = true;
             this.ButtonSaveUpdate.AutoSize = true;
-            this.ButtonSaveUpdate.Location = new System.Drawing.Point(233, 0);
+            this.ButtonSaveUpdate.Location = new System.Drawing.Point(227, 0);
             this.ButtonSaveUpdate.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonSaveUpdate.Name = "ButtonSaveUpdate";
-            this.ButtonSaveUpdate.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonSaveUpdate.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonSaveUpdate.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonSaveUpdate.Size = new System.Drawing.Size(116, 24);
+            this.ButtonSaveUpdate.Size = new System.Drawing.Size(115, 24);
             this.ButtonSaveUpdate.TabIndex = 8;
             this.ButtonSaveUpdate.Text = "Save && Update";
             this.ButtonSaveUpdate.Click += new System.EventHandler(this.ButtonSaveUpdate_Click);

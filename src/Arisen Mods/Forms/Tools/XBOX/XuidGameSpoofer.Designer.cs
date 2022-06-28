@@ -71,9 +71,9 @@ namespace ArisenMods.Forms.Tools.XBOX
             this.ButtonGetXuid.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.ButtonGetXuid.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonGetXuid.Name = "ButtonGetXuid";
-            this.ButtonGetXuid.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonGetXuid.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonGetXuid.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonGetXuid.Size = new System.Drawing.Size(78, 24);
+            this.ButtonGetXuid.Size = new System.Drawing.Size(74, 24);
             this.ButtonGetXuid.TabIndex = 16;
             this.ButtonGetXuid.Text = "Get XUID";
             this.ButtonGetXuid.Click += new System.EventHandler(this.ButtonGetXuid_Click);
@@ -96,12 +96,12 @@ namespace ArisenMods.Forms.Tools.XBOX
             this.ButtonSetXuid.Appearance.Options.UseFont = true;
             this.ButtonSetXuid.AutoSize = true;
             this.ButtonSetXuid.Enabled = false;
-            this.ButtonSetXuid.Location = new System.Drawing.Point(84, 0);
+            this.ButtonSetXuid.Location = new System.Drawing.Point(80, 0);
             this.ButtonSetXuid.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonSetXuid.Name = "ButtonSetXuid";
-            this.ButtonSetXuid.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.ButtonSetXuid.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonSetXuid.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonSetXuid.Size = new System.Drawing.Size(76, 24);
+            this.ButtonSetXuid.Size = new System.Drawing.Size(72, 24);
             this.ButtonSetXuid.TabIndex = 17;
             this.ButtonSetXuid.Text = "Set XUID";
             this.ButtonSetXuid.Click += new System.EventHandler(this.ButtonSetXuid_Click);

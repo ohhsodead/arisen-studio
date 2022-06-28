@@ -13,7 +13,7 @@ namespace ArisenMods
 {
     internal static class Program
     {
-        public static Mutex mutex = new(true, "Arisen Mods");
+        public static Mutex Mutex = new(true, "Arisen Mods");
         public static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace ArisenMods
         [STAThread]
         private static void Main()
         {
-            if (mutex.WaitOne(TimeSpan.Zero, true))
+            if (Mutex.WaitOne(TimeSpan.Zero, true))
             {
                 ConfigureLogger();
 
@@ -38,8 +38,8 @@ namespace ArisenMods
 
                 Application.Run(new MainWindow());
 
-                mutex.ReleaseMutex();
-                mutex.Dispose();
+                Mutex.ReleaseMutex();
+                Mutex.Dispose();
             }
         }
 

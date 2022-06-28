@@ -11,7 +11,6 @@ using System.Data;
 using System.Resources;
 using System.Windows.Forms;
 using XDevkit;
-using PeXploit;
 using JRPC_Client;
 
 namespace ArisenMods.Forms.Tools.XBOX

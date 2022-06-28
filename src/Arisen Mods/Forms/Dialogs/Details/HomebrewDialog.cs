@@ -40,25 +40,24 @@ namespace ArisenMods.Forms.Dialogs.Details
         private void HomebrewDialog_Load(object sender, EventArgs e)
         {
             StatLastUpdated.Title = Language.GetString("LABEL_LAST_UPDATED");
-            StatSystemType.Value = Language.GetString("LABEL_SYSTEM_TYPE");
-            StatVersion.Text = Language.GetString("LABEL_VERSION");
-            StatCreatedBy.Text = Language.GetString("LABEL_CREATED_BY");
-            StatSubmittedBy.Text = Language.GetString("LABEL_SUBMITTED_BY");
+            StatSystemType.Title = Language.GetString("LABEL_SYSTEM_TYPE");
+            StatVersion.Title = Language.GetString("LABEL_VERSION");
+            StatCreatedBy.Title = Language.GetString("LABEL_CREATED_BY");
+            StatSubmittedBy.Title = Language.GetString("LABEL_SUBMITTED_BY");
 
             // Display details in UI
             LabelCategory.Text = Categories.GetCategoryById(ModItem.CategoryId).Title;
             LabelName.Text = ModItem.Name.Replace("&", "&&");
 
-            StatLastUpdated.Text = MainWindow.Settings.UseRelativeTimes ? ModItem.LastUpdated.Humanize() : ModItem.LastUpdated.ToString("MM/dd/yyyy", CultureInfo.CurrentCulture);
-            StatSystemType.Text = ModItem.FirmwareType;
-            StatCreatedBy.Text = ModItem.CreatedBy.IsNullOrWhiteSpace() ? "Unknown" : ModItem.CreatedBy.Replace("&", "&&");
-            StatSubmittedBy.Text = ModItem.SubmittedBy.Replace("&", "&&");
-            StatVersion.Text = string.Join(" & ", ModItem.Versions).Replace("&", "&&");
+            StatLastUpdated.Value = MainWindow.Settings.UseRelativeTimes ? ModItem.LastUpdated.Humanize() : ModItem.LastUpdated.ToString("MM/dd/yyyy", CultureInfo.CurrentCulture);
+            StatSystemType.Value = ModItem.FirmwareType;
+            StatCreatedBy.Value = ModItem.CreatedBy.IsNullOrWhiteSpace() ? "Unknown" : ModItem.CreatedBy.Replace("&", "&&");
+            StatSubmittedBy.Value = ModItem.SubmittedBy.Replace("&", "&&");
+            StatVersion.Value = string.Join(" & ", ModItem.Versions).Replace("&", "&&");
 
             LabelDescription.Text = string.IsNullOrWhiteSpace(ModItem.Description)
                 ? Language.GetString("NO_MORE_DETAILS")
                 : ModItem.Description.Replace("&", "&&");
-
             
             InstalledModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id) : null;
 

@@ -7,7 +7,6 @@ using ArisenMods.Forms.Windows;
 using ArisenMods.Models.Database;
 using ArisenMods.Models.Resources;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -170,7 +169,7 @@ namespace ArisenMods.Forms.Dialogs
                 {
                     UpdateStatus(Language.GetString("GETTING_USB_DEVICE"));
 
-                    List<ListItem> localUsbDevices = UsbExtensions.GetUsbDevices();
+                    System.Collections.Generic.List<ListItem> localUsbDevices = UsbExtensions.GetUsbDevices();
 
                     if (localUsbDevices.Count < 1)
                     {
@@ -977,41 +976,41 @@ namespace ArisenMods.Forms.Dialogs
                 {
                     Directory.CreateDirectory($@"{IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages)}{PackageItem.Name.RemoveInvalidChars()}\");
 
-                    string localFilePathPKG = $@"{IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages)}{PackageItem.Name.RemoveInvalidChars()}\{PackageItem.Name.RemoveInvalidChars()}.pkg";
-                    string localFilePathRAP = $@"{IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages)}{PackageItem.Name.RemoveInvalidChars()}\{PackageItem.ContentId.RemoveInvalidChars()}.rap";
+                    string localFilePathPkg = $@"{IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages)}{PackageItem.Name.RemoveInvalidChars()}\{PackageItem.Name.RemoveInvalidChars()}.pkg";
+                    string localFilePathRap = $@"{IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages)}{PackageItem.Name.RemoveInvalidChars()}\{PackageItem.ContentId.RemoveInvalidChars()}.rap";
 
                     UpdateStatus(string.Format(Language.GetString("FILE_DOWNLOAD_LOCATION"), packageItem.Name + ".pkg", IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages) + PackageItem.Name.RemoveInvalidChars()));
-                    HttpExtensions.DownloadFile(PackageItem.Url, localFilePathPKG);
+                    HttpExtensions.DownloadFile(PackageItem.Url, localFilePathPkg);
                     Language.GetString("FILE_DOWNLOAD_SUCCESS");
 
-                    bool includeRAP = false;
+                    bool includeRap = false;
 
                     if (PackageItem.IsRapRequired && !PackageItem.IsRapMissing)
                     {
                         UpdateStatus(string.Format(Language.GetString("FILE_DOWNLOAD_LOCATION"), packageItem.ContentId + ".rap", IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages) + PackageItem.Name.RemoveInvalidChars()));
-                        HttpExtensions.DownloadFile(PackageItem.RapUrl, localFilePathRAP);
+                        HttpExtensions.DownloadFile(PackageItem.RapUrl, localFilePathRap);
                         Language.GetString("FILE_DOWNLOAD_SUCCESS");
-                        includeRAP = true;
+                        includeRap = true;
                     }
 
                     UpdateStatus(Language.GetString("STARTING_INSTALL"));
 
-                    string parentInstallFolderPKG = Path.GetDirectoryName(packageItem.InstallFilePathPKG).Replace(@"\", "/");
-                    string parentInstallFolderRAP = Path.GetDirectoryName(packageItem.InstallFilePathRAP).Replace(@"\", "/");
+                    string parentInstallFolderPkg = Path.GetDirectoryName(packageItem.InstallFilePathPkg).Replace(@"\", "/");
+                    string parentInstallFolderRap = Path.GetDirectoryName(packageItem.InstallFilePathRap).Replace(@"\", "/");
 
-                    UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), packageItem.Name + ".pkg", parentInstallFolderPKG));
-                    FtpExtensions.UploadFile(localFilePathPKG, packageItem.InstallFilePathPKG);
+                    UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), packageItem.Name + ".pkg", parentInstallFolderPkg));
+                    FtpExtensions.UploadFile(localFilePathPkg, packageItem.InstallFilePathPkg);
                     Language.GetString("FILE_INSTALL_SUCCESS");
 
-                    if (includeRAP)
+                    if (includeRap)
                     {
-                        UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), packageItem.ContentId + ".rap", parentInstallFolderRAP));
-                        FtpExtensions.UploadFile(localFilePathRAP, packageItem.InstallFilePathRAP);
+                        UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), packageItem.ContentId + ".rap", parentInstallFolderRap));
+                        FtpExtensions.UploadFile(localFilePathRap, packageItem.InstallFilePathRap);
                         Language.GetString("FILE_INSTALL_SUCCESS");
                     }
 
                     // Update installed packages
-                    Settings.UpdateInstalledPackage(PackageItem, localFilePathPKG, DateTime.Now);
+                    Settings.UpdateInstalledPackage(PackageItem, localFilePathPkg, DateTime.Now);
 
                     if (Settings.CleanUpLocalFilesAfterInstalling)
                     {
@@ -1065,10 +1064,10 @@ namespace ArisenMods.Forms.Dialogs
                 {
                     Language.GetString("FILES_UNINSTALLING");
 
-                    string parentInstallFolder = Path.GetDirectoryName(packageItem.InstallFilePathPKG).Replace(@"\", "/");
+                    string parentInstallFolder = Path.GetDirectoryName(packageItem.InstallFilePathPkg).Replace(@"\", "/");
 
                     UpdateStatus(string.Format(Language.GetString("FILE_UNINSTALL_LOCATION"), packageItem.Name + ".pkg", parentInstallFolder));
-                    FtpExtensions.DeleteFile(packageItem.InstallFilePathPKG);
+                    FtpExtensions.DeleteFile(packageItem.InstallFilePathPkg);
                     Language.GetString("FILE_UNINSTALL_SUCCESS");
 
                     IsSuccessful = true;
@@ -1109,17 +1108,17 @@ namespace ArisenMods.Forms.Dialogs
                         Directory.CreateDirectory(downloadFolder);
                     }
 
-                    string downloadLocationPKG = downloadFolder + @"\" + packageItem.Name.RemoveInvalidChars() + ".pkg";
-                    string downloadLocationRAP = downloadFolder + @"\" + packageItem.ContentId.RemoveInvalidChars() + ".rap";
+                    string downloadLocationPkg = downloadFolder + @"\" + packageItem.Name.RemoveInvalidChars() + ".pkg";
+                    string downloadLocationRap = downloadFolder + @"\" + packageItem.ContentId.RemoveInvalidChars() + ".rap";
 
                     UpdateStatus(string.Format(Language.GetString("FILE_DOWNLOAD_LOCATION"), packageItem.Name + ".rap", downloadFolder));
-                    HttpExtensions.DownloadFile(packageItem.Url, downloadLocationPKG);
+                    HttpExtensions.DownloadFile(packageItem.Url, downloadLocationPkg);
                     Language.GetString("FILE_DOWNLOAD_SUCCESS");
 
                     if (PackageItem.IsRapRequired && !PackageItem.IsRapMissing)
                     {
                         UpdateStatus(string.Format(Language.GetString("FILE_DOWNLOAD_LOCATION"), packageItem.ContentId + ".rap", downloadFolder));
-                        HttpExtensions.DownloadFile(PackageItem.RapUrl, downloadLocationRAP);
+                        HttpExtensions.DownloadFile(PackageItem.RapUrl, downloadLocationRap);
                         Language.GetString("FILE_DOWNLOAD_SUCCESS");
                     }
 
@@ -1169,7 +1168,7 @@ namespace ArisenMods.Forms.Dialogs
                 {
                     UpdateStatus(Language.GetString("GETTING_USB_DEVICE"));
 
-                    List<ListItem> localUsbDevices = UsbExtensions.GetUsbDevices();
+                    System.Collections.Generic.List<ListItem> localUsbDevices = UsbExtensions.GetUsbDevices();
 
                     if (localUsbDevices.Count < 1)
                     {

@@ -84,11 +84,11 @@ namespace ArisenMods.Extensions
 
                 HtmlWeb web = new();
 
-                var htmlDoc = web.Load("http://" + ip + "/cpursx.ps3?/sman.ps3");
+                HtmlDocument htmlDoc = web.Load("http://" + ip + "/cpursx.ps3?/sman.ps3");
 
-                var node = htmlDoc.DocumentNode.SelectNodes("//body//h2");
+                HtmlNodeCollection node = htmlDoc.DocumentNode.SelectNodes("//body//h2");
 
-                var res = node[0].InnerText;
+                string res = node[0].InnerText;
 
                 //var soup = BeautifulSoup(html, "html.parser");
                 //var strings = soup.findAll("h2");
@@ -106,7 +106,7 @@ namespace ArisenMods.Extensions
                     game = game.Replace(" &nbsp; ", string.Empty);
                     game = game.Replace("á", "\u00e1");
                     game = game.Replace("Â", "\u00c2");
-                    var bytes = Encoding.ASCII.GetBytes(game);
+                    byte[] bytes = Encoding.ASCII.GetBytes(game);
                     game = Encoding.ASCII.GetString(bytes);
                     game = game.Replace("?", string.Empty);
                 }
@@ -269,7 +269,7 @@ namespace ArisenMods.Extensions
         /// </summary>
         /// <param name="ip"> PS3 Local IP Address </param>
         /// <returns> </returns>
-        public static void NotifyCPURSXTemperature(string ip)
+        public static void NotifyCpursxTemperature(string ip)
         {
             HandleRequest(ip, "cpursx.ps3");
         }

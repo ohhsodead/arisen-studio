@@ -1,9 +1,7 @@
-﻿using Humanizer;
-using ArisenMods.Extensions;
+﻿using ArisenMods.Extensions;
 using ArisenMods.Forms.Windows;
 using ArisenMods.Models.Database;
 using ArisenMods.Models.Resources;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

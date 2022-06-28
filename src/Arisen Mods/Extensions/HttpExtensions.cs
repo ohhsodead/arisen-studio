@@ -45,7 +45,7 @@ namespace ArisenMods.Extensions
         /// </summary>
         /// <param name="titleId">  </param>
         /// <returns> </returns>
-        public static Titlepatch GetGameUpdatesFromTitleID(string titleId)
+        public static Titlepatch GetGameUpdatesFromTitleId(string titleId)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace ArisenMods.Extensions
                 using WebClient webClient = new();
                 XmlSerializer serializer = new(typeof(Titlepatch));
                 string titlePath = webClient.DownloadString("https://a0.ww.np.dl.playstation.net/tpl/np/" + titleId + "/" +
-                                                            titleId + "-ver.xml");
+                                                         titleId + "-ver.xml");
                 using TextReader textReader = new StringReader(titlePath);
                 return (Titlepatch)serializer.Deserialize(textReader);
             }

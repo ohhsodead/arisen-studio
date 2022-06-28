@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ArisenMods.Models.Database
+namespace ArisenMods.Models.Dashboard
 {
     public class AnnouncementsData
     {

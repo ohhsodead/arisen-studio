@@ -53,6 +53,21 @@ namespace ArisenMods.Forms.Dialogs
             CheckBoxUseDefaultConsole.Visible = ConsoleProfile.Platform == Platform.XBOX360;
             CheckBoxUseDefaultConsole.CheckState = ConsoleProfile.UseDefaultConsole ? CheckState.Checked : CheckState.Unchecked;
             //CheckBoxUseDefaultConsole.Checked = ConsoleProfile.UseDefaultConsole;
+
+            int defaults = 0;
+
+            foreach (ConsoleProfile console in MainWindow.Settings.ConsoleProfiles)
+            {
+                if (!console.Name.EqualsIgnoreCase(TextBoxConnectionName.Text))
+                {
+                    if (console.IsDefault)
+                    {
+                        defaults++;
+                    }
+                }
+            }
+
+            CheckBoxDefault.Checked = defaults == 0;
         }
 
         private void ComboBoxPlatformType_SelectedIndexChanged(object sender, EventArgs e)
@@ -169,6 +184,56 @@ namespace ArisenMods.Forms.Dialogs
                     ConsoleProfile.UseDefaultCredentials = true;
                     break;
             }
+        }
+
+        private void CheckBoxDefault_CheckStateChanged(object sender, EventArgs e)
+        {
+            int defaults = 0;
+
+            foreach (ConsoleProfile console in MainWindow.Settings.ConsoleProfiles)
+            {
+                if (!console.Name.EqualsIgnoreCase(TextBoxConnectionName.Text))
+                {
+                    if (console.IsDefault)
+                    {
+                        defaults++;
+                    }
+                }
+            }
+
+            if (!CheckBoxDefault.Checked && defaults == 0)
+            {
+                XtraMessageBox.Show(this, "You must have one console profile set as default.", Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                CheckBoxDefault.Checked = true;
+                return;
+            }
+
+            ConsoleProfile.IsDefault = CheckBoxDefault.Checked;
+        }
+
+        private void CheckBoxDefault_EditValueChanging(object sender, ChangingEventArgs e)
+        {
+            int defaults = 0;
+
+            foreach (ConsoleProfile console in MainWindow.Settings.ConsoleProfiles)
+            {
+                if (!console.Name.EqualsIgnoreCase(TextBoxConnectionName.Text))
+                {
+                    if (console.IsDefault)
+                    {
+                        defaults++;
+                    }
+                }
+            }
+
+            if (defaults > 0)
+            {
+                XtraMessageBox.Show(this, "You already have a console profile set as your default.", Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Cancel = true;
+                return;
+            }
+
+            ConsoleProfile.IsDefault = CheckBoxDefault.Checked;
         }
 
         private void ButtonOK_Click(object sender, EventArgs e)

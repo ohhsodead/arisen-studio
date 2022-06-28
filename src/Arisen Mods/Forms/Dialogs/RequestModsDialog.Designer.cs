@@ -124,7 +124,7 @@ namespace ArisenMods.Forms.Dialogs
             // 
             this.ButtonRefresh.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.ButtonRefresh.Id = 0;
-            this.ButtonRefresh.ImageOptions.SvgImage = global::ArisenMods.Properties.Resources.actions_reload1;
+            this.ButtonRefresh.ImageOptions.SvgImage = global::ArisenMods.Properties.Resources.actions_reload;
             this.ButtonRefresh.Name = "ButtonRefresh";
             this.ButtonRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonRefresh_ItemClick);
             // 

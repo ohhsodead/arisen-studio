@@ -5,7 +5,6 @@ using DevExpress.XtraGrid.Views.Grid;
 using Humanizer;
 using ArisenMods.Extensions;
 using ArisenMods.Forms.Windows;
-using ArisenMods.Models.Game_Updates;
 using ArisenMods.Models.Resources;
 using System;
 using System.Collections.Generic;
@@ -64,7 +63,7 @@ namespace ArisenMods.Forms.Tools.PS3
 
                 SetStatus(Language.GetString("LABEL_SEARCHING"));
 
-                Titlepatch gameUpdates = HttpExtensions.GetGameUpdatesFromTitleID(TextBoxTitleID.Text);
+                Models.Game_Updates.Titlepatch gameUpdates = HttpExtensions.GetGameUpdatesFromTitleId(TextBoxTitleID.Text);
 
                 if (gameUpdates == null)
                 {
@@ -74,20 +73,20 @@ namespace ArisenMods.Forms.Tools.PS3
                 {
                     GridGameUpdates.DataSource = null;
 
-                    LabelTitle.Text = Regex.Replace(gameUpdates.Tag.Package.Last().Paramsfo.TITLE, @"\(.*?\)", string.Empty).Trim().Replace("Â®", "®"); // gameUpdates.Tag.Package.Last().Paramsfo.TITLE.Replace("Â®", "®"); 
+                    LabelTitle.Text = Regex.Replace(gameUpdates.Tag.Package.Last().Paramsfo.Title, @"\(.*?\)", string.Empty).Trim().Replace("Â®", "®"); // gameUpdates.Tag.Package.Last().Paramsfo.TITLE.Replace("Â®", "®"); 
                     gameUpdates.Tag.Package.Reverse();
 
-                    foreach (Package update in gameUpdates.Tag.Package)
+                    foreach (Models.Game_Updates.Package update in gameUpdates.Tag.Package)
                     {
                         GameUpdateFiles.Rows.Add(
                             update.Url,
-                            update.Sha1sum,
+                            update.Sha1Sum,
                             Path.GetFileName(new Uri(update.Url).LocalPath),
                             update.Version.TrimStart('0'),
                             MainWindow.Settings.UseFormattedFileSizes
                                 ? long.Parse(update.Size).Bytes().Humanize("#")
                                 : update.Size + " " + Language.GetString("LABEL_BYTES"),
-                            update.Ps3_system_ver.TrimStart('0').Substring(0, update.Ps3_system_ver.Length - 3));
+                            update.Ps3SystemVer.TrimStart('0').Substring(0, update.Ps3SystemVer.Length - 3));
                     }
 
                     GridGameUpdates.DataSource = GameUpdateFiles;
@@ -180,8 +179,8 @@ namespace ArisenMods.Forms.Tools.PS3
 
         private void ButtonCopySHA1ToClipboard_Click(object sender, EventArgs e)
         {
-            string updateSHA1 = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[1]);
-            Clipboard.SetText(updateSHA1);
+            string updateSha1 = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[1]);
+            Clipboard.SetText(updateSha1);
             XtraMessageBox.Show(Language.GetString("COPIED_SHA1"), Language.GetString("LABEL_COPIED"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

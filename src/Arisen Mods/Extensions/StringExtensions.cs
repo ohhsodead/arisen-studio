@@ -9,7 +9,7 @@ namespace ArisenMods.Extensions
 {
     internal static class StringExtensions
     {
-        private static readonly Dictionary<char, byte> hexmap = new()
+        private static readonly Dictionary<char, byte> Hexmap = new()
         {
             { 'a', 0xA },
             { 'b', 0xB },
@@ -100,12 +100,12 @@ namespace ArisenMods.Extensions
             return sbBytes.ToString();
         }
 
-        public static string BytesToHexString(byte[] Buffer)
+        public static string BytesToHexString(byte[] buffer)
         {
             string str = "";
-            for (int i = 0; i < Buffer.Length; i++)
+            for (int i = 0; i < buffer.Length; i++)
             {
-                str = str + Buffer[i].ToString("X2");
+                str = str + buffer[i].ToString("X2");
             }
 
             return str;
@@ -130,19 +130,19 @@ namespace ArisenMods.Extensions
             catch (Exception) { return new byte[1]; }
         }
 
-        public static int Find(this string String, string _Ptr)
+        public static int Find(this string @string, string ptr)
         {
-            if (_Ptr.Length != 0 && String.Length != 0)
+            if (ptr.Length != 0 && @string.Length != 0)
             {
-                for (int i = 0; i < String.Length; i++)
+                for (int i = 0; i < @string.Length; i++)
                 {
-                    if (String[i] == _Ptr[0])
+                    if (@string[i] == ptr[0])
                     {
                         bool flag = true;
                         int num2 = 0;
                         while (true)
                         {
-                            if (num2 >= _Ptr.Length)
+                            if (num2 >= ptr.Length)
                             {
                                 if (!flag)
                                 {
@@ -152,7 +152,7 @@ namespace ArisenMods.Extensions
                                 return i;
                             }
 
-                            if (String[i + num2] != _Ptr[num2])
+                            if (@string[i + num2] != ptr[num2])
                             {
                                 flag = false;
                             }

@@ -6,7 +6,6 @@ using DevExpress.Utils;
 using DevExpress.Utils.Drawing;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Navigation;
-using DevExpress.XtraBars.ToolbarForm;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
@@ -17,13 +16,11 @@ using DevExpress.XtraSplashScreen;
 using DiscordRPC;
 using FluentFTP;
 using Humanizer;
-using JRPC_Client;
 using Microsoft.VisualBasic.FileIO;
 using ArisenMods.Constants;
 using ArisenMods.Controls;
 using ArisenMods.Database;
 using ArisenMods.Extensions;
-using ArisenMods.Forms.Dialogs;
 using ArisenMods.Io;
 using ArisenMods.Models.Database;
 using ArisenMods.Models.Release_Data;
@@ -46,10 +43,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using XDevkit;
 using FtpExtensions = ArisenMods.Extensions.FtpExtensions;
+using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraBars.Ribbon.ViewInfo;
 
 namespace ArisenMods.Forms.Windows
 {
-    public partial class MainWindow : ToolbarForm
+    public partial class MainWindow : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         /// <summary>
         /// Initialize application.
@@ -92,6 +91,18 @@ namespace ArisenMods.Forms.Windows
         /// Get the current console profile data.
         /// </summary>
         public static ConsoleProfile ConsoleProfile { get; private set; }
+        //{
+        //    get
+        //    {
+        //        return ConsoleProfile;
+        //    }
+
+        //    set
+        //    {
+        //        ConsoleProfile = value;
+        //        ribbonControl1.ApplicationButtonText = ConsoleProfile.Name;
+        //    }
+        //}
 
         /// <summary>
         /// Get whether a console is currently connected.
@@ -133,7 +144,7 @@ namespace ArisenMods.Forms.Windows
         /// <summary>
         /// Contains the PS3 API for communicating with the console.
         /// </summary>
-        public static PS3API PS3API { get; private set; }
+        public static PS3API Ps3Api { get; private set; }
 
         /// <summary>
         /// Determines whether webMAN is installed on the console.
@@ -164,7 +175,7 @@ namespace ArisenMods.Forms.Windows
                 "Initializing...",
                 this);
 
-            Text = $@"Arisen Mods - {UpdateExtensions.CurrentVersionName}";
+            Text = $@"Arisen Mods [{UpdateExtensions.CurrentVersionName}]";
 
             LoadApplicationSettings();
 
@@ -173,23 +184,6 @@ namespace ArisenMods.Forms.Windows
                 Program.Log.Info("Internet connection detected.");
 
                 UpdateExtensions.CheckApplicationVersion();
-
-                if (Settings.FirstTimeUse)
-                {
-                    string platform = DialogExtensions.ShowListItemDialog(this, ResourceLanguage.GetString("SETUP_STARTUP_LIBRARY"), ResourceLanguage.GetString("LABEL_PLATFORM"), new string[] { "PlayStation 3", "Xbox 360" });
-
-                    if (platform.IsNullOrEmpty())
-                    {
-                        SetPlatform(Platform.PS3);
-                        Settings.FirstTimeUse = false;
-                    }
-                    else
-                    {
-                        SetPlatform(platform.DehumanizeTo<Platform>());
-                        Settings.StartupLibrary = platform.DehumanizeTo<Platform>();
-                        Settings.FirstTimeUse = false;
-                    }
-                }
 
                 if (Settings.FirstTimeOpenAfterUpdate)
                 {
@@ -229,6 +223,7 @@ namespace ArisenMods.Forms.Windows
             {
                 DiscordClient.ClearPresence();
                 DiscordClient.Deinitialize();
+                DiscordClient.Dispose();
             }
 
             if (IsConsoleConnected)
@@ -240,10 +235,10 @@ namespace ArisenMods.Forms.Windows
                         switch (ConsoleProfile.Platform)
                         {
                             case Platform.PS3:
-                                Settings.LocalPathPS3 = TextBoxFileManagerLocalPath.Text;
+                                Settings.LocalPathPs3 = TextBoxFileManagerLocalPath.Text;
                                 break;
                             case Platform.XBOX360:
-                                Settings.LocalPathXBOX = TextBoxFileManagerLocalPath.Text;
+                                Settings.LocalPathXbox = TextBoxFileManagerLocalPath.Text;
                                 break;
                         }
                     }
@@ -253,10 +248,10 @@ namespace ArisenMods.Forms.Windows
                         switch (ConsoleProfile.Platform)
                         {
                             case Platform.PS3:
-                                Settings.ConsolePathPS3 = TextBoxFileManagerConsolePath.Text;
+                                Settings.ConsolePathPs3 = TextBoxFileManagerConsolePath.Text;
                                 break;
                             case Platform.XBOX360:
-                                Settings.ConsolePathXBOX = TextBoxFileManagerConsolePath.Text;
+                                Settings.ConsolePathXbox = TextBoxFileManagerConsolePath.Text;
                                 break;
                         }
                     }
@@ -312,19 +307,17 @@ namespace ArisenMods.Forms.Windows
 
             SetStatus(ResourceLanguage.GetString("SUCCESS_LOADED_DB"));
 
-            SetPlatform(Settings.StartupLibrary);
-
-            foreach (string firmwareType in Database.GameModsPS3.AllFirmwareTypes.Where(firmwareType => !ComboBoxGameModsFilterSystemType.Properties.Items.Contains(firmwareType)))
+            foreach (string firmwareType in Database.GameModsPs3.AllFirmwareTypes.Where(firmwareType => !ComboBoxGameModsFilterSystemType.Properties.Items.Contains(firmwareType)))
             {
                 ComboBoxGameModsFilterSystemType.Properties.Items.Add(firmwareType);
             }
 
-            foreach (string firmwareType in Database.HomebrewPS3.AllFirmwareTypes.Where(firmwareType => !ComboBoxHomebrewFilterSystemType.Properties.Items.Contains(firmwareType)))
+            foreach (string firmwareType in Database.HomebrewPs3.AllFirmwareTypes.Where(firmwareType => !ComboBoxHomebrewFilterSystemType.Properties.Items.Contains(firmwareType)))
             {
                 ComboBoxHomebrewFilterSystemType.Properties.Items.Add(firmwareType);
             }
 
-            foreach (string firmwareType in Database.ResourcesPS3.AllFirmwareTypes.Where(firmwareType => !ComboBoxResourcesFilterSystemType.Properties.Items.Contains(firmwareType)))
+            foreach (string firmwareType in Database.ResourcesPs3.AllFirmwareTypes.Where(firmwareType => !ComboBoxResourcesFilterSystemType.Properties.Items.Contains(firmwareType)))
             {
                 ComboBoxResourcesFilterSystemType.Properties.Items.Add(firmwareType);
             }
@@ -336,7 +329,6 @@ namespace ArisenMods.Forms.Windows
             LoadSettings();
 
             // Dashboard tab
-            SetTileDefaultModsText();
             LoadStatistics();
             LoadChangeLog();
             LoadAnnouncements();
@@ -355,8 +347,25 @@ namespace ArisenMods.Forms.Windows
 
             SetAboutInfo();
 
+            SplashScreenManager.CloseForm();
+            CreateFormShadow();
+            Opacity = 1;
+            BringToFront();
+
+            PageDashboard.AutoScroll = true;
+
+            EnableConsoleActions();
+            UpdateControlColors();
+            Focus();
+
+            NavigationMenu.SelectElement(NavigationItemDashboard);
+
+            SetConsoleProfile();
+            LoadOurFavoriteMods();
+            LoadRecentlyUpdated();
+
 #if !DEBUG
-            if (Settings.StartupLibrary == Platform.PS3)
+            if (ConsoleProfile.Platform == Platform.PS3)
             {
                 NavigationItemGameMods.Visible = true;
                 NavigationItemPackages.Visible = true;
@@ -373,19 +382,44 @@ namespace ArisenMods.Forms.Windows
                 NavigationItemPlugins.Visible = true;
             }
 #endif
+        }
 
-            SplashScreenManager.CloseForm();
-            CreateFormShadow();
-            Opacity = 1;
-            BringToFront();
+        private void SetConsoleProfile()
+        {
+            if (Settings.ConsoleProfiles.Count() == 0)
+            {
+                ConsoleProfile consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
 
-            PageDashboard.AutoScroll = true;
+                if (consoleProfile != null)
+                {
+                    consoleProfile.IsDefault = true;
+                    Settings.ConsoleProfiles.Add(consoleProfile);
+                    SetStatusConsole(consoleProfile);
+                    return;
+                }
+                else
+                {
+                    SetConsoleProfile();
+                }
+            }
 
-            EnableConsoleActions();
-            UpdateControlColors();
-            Focus();
+            ConsoleProfile defaultProfile = Settings.GetDefaultProfile();
 
-            NavigationMenu.SelectElement(NavigationItemDashboard);
+            if (defaultProfile == null)
+            {
+                XtraMessageBox.Show(this, "You must have one console profile set as default.", ResourceLanguage.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                DialogExtensions.ShowEditConnectionsDialog(this, true);
+
+                SetConsoleProfile();
+
+                //if (defaultProfile == null)
+                //{
+                //    SetConsoleProfile();
+                //}
+            }
+
+            SetStatusConsole(defaultProfile);
         }
 
         private void UpdateControlColors()
@@ -413,9 +447,9 @@ namespace ArisenMods.Forms.Windows
             }
         }
 
-        private IOverlaySplashScreenHandle handleOverlayRequiresWebMAN = null;
+        private IOverlaySplashScreenHandle HandleOverlayRequiresWebMan = null;
 
-        private void CloseOverlayRequiresWebMAN(NavigationPage page, IOverlaySplashScreenHandle handle)
+        private void CloseOverlayRequiresWebMan(NavigationPage page, IOverlaySplashScreenHandle handle)
         {
             if (handle != null)
             {
@@ -424,11 +458,27 @@ namespace ArisenMods.Forms.Windows
             }
         }
 
-    #region Title Menu Bar
+        #region Ribbon Page
 
-        // CONNECT
+        // Connection
 
-        private void MenuItemConnectToPS3_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonConnectConsole_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            switch (IsConsoleConnected)
+            {
+                case true:
+                    ConnectConsole();
+                    break;
+                default:
+                    {
+                        ConnectConsole();
+
+                        break;
+                    }
+            }
+        }
+
+        private void ButtonDisconnectConsole_ItemClick(object sender, ItemClickEventArgs e)
         {
             switch (IsConsoleConnected)
             {
@@ -437,94 +487,188 @@ namespace ArisenMods.Forms.Windows
                     break;
                 default:
                     {
-                        ConsoleProfile consoleProfile = DialogExtensions.ShowConnectionsDialog(this, Platform.PS3);
-
-                        if (consoleProfile != null)
-                        {
-                            SetStatusConsole(consoleProfile);
-                            ConnectConsole();
-                        }
+                        DisconnectConsole();
 
                         break;
                     }
             }
         }
 
-        private void MenuItemConnectToXBOX_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonChangeProfile_ItemClick(object sender, ItemClickEventArgs e)
         {
-            switch (IsConsoleConnected)
+            ConsoleProfile consoleProfile = DialogExtensions.ShowConnectionsDialog(this);
+
+            if (consoleProfile != null)
             {
-                case true:
+                if (ConsoleProfile != consoleProfile && IsConsoleConnected)
+                {
                     DisconnectConsole();
-                    break;
-                default:
-                    {
-                        ConsoleProfile consoleProfile = DialogExtensions.ShowConnectionsDialog(this, Platform.XBOX360);
+                }
 
-                        if (consoleProfile != null)
-                        {
-                            SetStatusConsole(consoleProfile);
-                            ConnectConsole();
-                        }
-
-                        break;
-                    }
+                SetStatusConsole(consoleProfile);
             }
         }
 
-        // TOOLS MENU
-
-        // PS3
-
-        private void MenuItemPS3GameBackupFiles_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonAddNewProfile_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogExtensions.ShowGameBackupFileManager(this);
+            ConsoleProfile consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
+
+            if (consoleProfile != null)
+            {
+                Settings.ConsoleProfiles.Add(consoleProfile);
+            }
         }
 
-        private void MenuItemPS3GameUpdateFinder_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonScanXboxConsoles_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus(ResourceLanguage.GetString("SCANNING_XBOX_CONSOLES"));
+            Extensions.Helpers.ScanForXboxConsoles(this);
+            SetStatus(ResourceLanguage.GetString("SCANNING_XBOX_FINISHED"));
+        }
+
+        private void ButtonEditConsoles_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowEditConnectionsDialog(this, true);
+        }
+
+        private void ButtonHowToGuides_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XtraMessageBox.Show(this, "Our How-To-Guides have been moved to our Discord server.", "How-To Guides", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Process.Start(Urls.DiscordServer);
+        }
+
+        private void ButtonDownloadsFolder_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetDownloadsLocation();
+        }
+
+        private void ButtonDiscordPresence_CheckedChanged(object sender, ItemClickEventArgs e)
+        {
+            if (ButtonDiscordPresence.Checked)
+            {
+                Settings.AlwaysShowPresence = true;
+                EnableDiscordRpc();
+            }
+            else
+            {
+                Settings.AlwaysShowPresence = false;
+                DisableDiscordRpc();
+            }
+        }
+
+        private void ButtonInstallModsToUSB_CheckedChanged(object sender, ItemClickEventArgs e)
+        {
+            Settings.InstallGameModsPluginsToUsbDevice = ButtonInstallModsToUSB.Checked;
+        }
+
+        private void ButtonAdvancedSettings_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            NavigationMenu.SelectElement(NavigationItemSettings);
+            NavigationFrame.SelectedPage = PageSettings;
+        }
+
+        // Modding Tools
+
+        private void ButtonToolsPsGameUpdates_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowGameUpdatesFinder(this);
         }
 
-        private void MenuItemPS3PackageManager_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsPsBackupFilesManager_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowGameBackupFileManager(this);
+        }
+
+        private void ButtonToolsPsPackageManager_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowPackageManager(this);
         }
 
-        private void MenuItemPS3ConsoleManager_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsPsConsoleManager_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogExtensions.ShowConsoleManager(this);
+            DialogExtensions.ShowPs3ConsoleManager(this);
         }
 
-        private void MenuItemPS3BootPluginsEditor_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsPsGameRegions_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowGameRegionsDialog(this);
+        }
+
+        private void ButtonToolsPsBootPluginsEditor_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogExtensions.ShowBootPluginsEditor(this);
         }
 
-        private void MenuItemPS3ShowSystemInformation_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsXboxGameSaveResigner_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SetStatus("WebMAN Controls - Notifying: System Information");
-            WebManExtensions.NotifySystemInformation(ConsoleProfile.Address);
-            SetStatus("WebMAN Controls - Successfully Notified: System Information");
+            DialogExtensions.ShowXboxGameSaveResigner(this);
         }
 
-        private void MenuItemPS3ShowTemperatures_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsXboxGamesLauncher_ItemClick(object sender, ItemClickEventArgs e)
         {
-            WebManExtensions.NotifyCPURSXTemperature(ConsoleProfile.Address);
-            SetStatus("WebMAN Controls - Successfully Notified: System Temperature");
+            DialogExtensions.ShowXboxGameLauncher(this);
         }
 
-        private void MenuItemPS3ShowMinimumVersion_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsXboxModuleLoader_ItemClick(object sender, ItemClickEventArgs e)
         {
-            WebManExtensions.NotifyMinimumVersion(ConsoleProfile.Address);
-            SetStatus("WebMAN Controls - Successfully Notified: System Minimum Version");
+            DialogExtensions.ShowXboxModuleLoader(this);
         }
 
-        private void MenuItemPS3MountBD_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsXboxXuidSpoofer_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowXboxXuidGameSpoofer(this);
+        }
+
+        private void ButtonToolsXboxDashlaunchEditor_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowXboxDashlaunchEditor(this);
+        }
+
+        private void ButtonToolsPsPowerShutdown_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus("WebMAN Controls - Shutting Down Console...");
+            WebManExtensions.Power(ConsoleProfile.Address, WebManExtensions.PowerFlags.Shutdown);
+            SetStatus("WebMAN Controls - Successfully Shutdown Console.");
+            DisconnectConsole();
+        }
+
+        private void ButtonToolsPsPowerRestart_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus("WebMAN Controls - Restarting Console...");
+            WebManExtensions.Power(ConsoleProfile.Address, WebManExtensions.PowerFlags.Restart);
+            SetStatus("WebMAN Controls - Successfully Restarted Console.");
+            DisconnectConsole();
+        }
+
+        private void ButtonToolsPsPowerSoftReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus("WebMAN Controls - Soft Rebooting Console...");
+            WebManExtensions.Power(ConsoleProfile.Address, WebManExtensions.PowerFlags.SoftReboot);
+            SetStatus("WebMAN Controls - Successfully Soft Rebooted Console.");
+            DisconnectConsole();
+        }
+
+        private void ButtonToolsPsPowerHardReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus("WebMAN Controls - Hard Rebooting Console...");
+            WebManExtensions.Power(ConsoleProfile.Address, WebManExtensions.PowerFlags.HardReboot);
+            SetStatus("WebMAN Controls - Successfully Hard Rebooted Console.");
+            DisconnectConsole();
+        }
+
+        private void ButtonToolsPsPowerQuickReboot_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus("WebMAN Controls - Quick Rebooting Console...");
+            WebManExtensions.Power(ConsoleProfile.Address, WebManExtensions.PowerFlags.QuickReboot);
+            SetStatus("WebMAN Controls - Successfully Quick Rebooted Console.");
+            DisconnectConsole();
+        }
+
+        private void ButtonToolsPsGamesMountBD_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus("Fetching games (BD) list...");
 
-            List<ListItem> games = FtpExtensions.GetGamesBD();
+            List<ListItem> games = FtpExtensions.GetGamesBd();
 
             switch (games.Count)
             {
@@ -549,11 +693,11 @@ namespace ArisenMods.Forms.Windows
             }
         }
 
-        private void MenuItemPS3MountISO_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsPsGamesMountISO_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus("Fetching games (ISO) list...");
 
-            List<ListItem> games = FtpExtensions.GetGamesISO();
+            List<ListItem> games = FtpExtensions.GetGamesIso();
 
             switch (games.Count)
             {
@@ -578,11 +722,11 @@ namespace ArisenMods.Forms.Windows
             }
         }
 
-        private void MenuItemPS3MountPSN_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsPsGamesMountPSN_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus("Fetching games (PSN) list...");
 
-            List<ListItem> games = FtpExtensions.GetGamesPSN();
+            List<ListItem> games = FtpExtensions.GetGamesPsn();
 
             switch (games.Count)
             {
@@ -607,46 +751,14 @@ namespace ArisenMods.Forms.Windows
             }
         }
 
-        private void MenuItemPS3Unmount_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsPsGamesUnmount_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus("WebMAN Controls - Unmounting Game...");
             WebManExtensions.Unmount(ConsoleProfile.Address);
             SetStatus("WebMAN Controls - Successfully Unmounted Game");
         }
 
-        private void MenuItemPS3Shutdown_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            SetStatus("WebMAN Controls - Shutting Down Console...");
-            WebManExtensions.Power(ConsoleProfile.Address, WebManExtensions.PowerFlags.Shutdown);
-            SetStatus("WebMAN Controls - Successfully Shutdown Console.");
-            DisconnectConsole();
-        }
-
-        private void MenuItemPS3Restart_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            SetStatus("WebMAN Controls - Restarting Console...");
-            WebManExtensions.Power(ConsoleProfile.Address, WebManExtensions.PowerFlags.Restart);
-            SetStatus("WebMAN Controls - Successfully Restarted Console.");
-            DisconnectConsole();
-        }
-
-        private void MenuItemPS3SoftReboot_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            SetStatus("WebMAN Controls - Soft Rebooting Console...");
-            WebManExtensions.Power(ConsoleProfile.Address, WebManExtensions.PowerFlags.SoftReboot);
-            SetStatus("WebMAN Controls - Successfully Soft Rebooted Console.");
-            DisconnectConsole();
-        }
-
-        private void MenuItemPS3HardReboot_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            SetStatus("WebMAN Controls - Hard Rebooting Console...");
-            WebManExtensions.Power(ConsoleProfile.Address, WebManExtensions.PowerFlags.HardReboot);
-            SetStatus("WebMAN Controls - Successfully Hard Rebooted Console.");
-            DisconnectConsole();
-        }
-
-        private void MenuItemPS3NotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsPsNotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
         {
             string notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:");
 
@@ -654,6 +766,7 @@ namespace ArisenMods.Forms.Windows
             {
                 SetStatus("No message was entered. Cancelled.");
             }
+
             {
                 SetStatus("WebMAN Controls - Notifying Message...");
                 WebManExtensions.NotifyPopup(ConsoleProfile.Address, notifyMessage);
@@ -661,54 +774,32 @@ namespace ArisenMods.Forms.Windows
             }
         }
 
-        private void MenuItemPS3VirtualController_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsPsVirtualController_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus("WebMAN Controls - Virtual Controller: Opening in Web Browser");
             Process.Start("http://pad.aldostools.org/pad.html");
             SetStatus("WebMAN Controls - Virtual Controller: Opened in Web Browser");
         }
 
-        // XBOX
-
-        private void MenuItemXboxModuleLoader_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowXboxModuleLoader(this);
-        }
-
-        private void MenuItemXboxGameSaveResigner_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowXboxGameSaveResigner(this);
-        }
-
-        private void MenuItemXboxXuidGameSpoofer_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowXboxXuidGameSpoofer(this);
-        }
-
-        private void MenuItemXboxLaunchFileEditor_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowXboxLaunchFileEditor(this);
-        }
-
-        private void MenuItemXboxXBDMShutdown_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsXboxPowerShutdown_ItemClick(object sender, ItemClickEventArgs e)
         {
             XboxConsole.Shutdown();
             DisconnectConsole();
         }
 
-        private void MenuItemXboxXBDMSoftReboot_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsXboxPowerSoftReboot_ItemClick(object sender, ItemClickEventArgs e)
         {
             XboxConsole.Reboot(string.Empty, string.Empty, string.Empty, XboxRebootFlags.Cold);
             DisconnectConsole();
         }
 
-        private void MenuItemXboxXBDMHardReboot_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsXboxPowerHardReboot_ItemClick(object sender, ItemClickEventArgs e)
         {
             XboxConsole.Reboot(string.Empty, string.Empty, string.Empty, XboxRebootFlags.Warm);
             DisconnectConsole();
         }
 
-        private void MenuItemXboxTakeScreenshot_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsXboxTakeScreenshot_ItemClick(object sender, ItemClickEventArgs e)
         {
             string filePath = DialogExtensions.ShowSaveFileDialog(this, "Save Screenshot File", "Bitmap Image (*.bmp)|*.bmp");
 
@@ -725,17 +816,12 @@ namespace ArisenMods.Forms.Windows
             }
         }
 
-        private void MenuItemXboxShowSystemInfo_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsXboxConsoleManager_ItemClick(object sender, ItemClickEventArgs e)
         {
-            XtraMessageBox.Show(
-                $"CPU: {XboxConsole.GetTemperature(JRPC.TemperatureType.CPU)}°C\n" +
-                $"EDRAM: {XboxConsole.GetTemperature(JRPC.TemperatureType.EDRAM)}°C\n" +
-                $"GPU: {XboxConsole.GetTemperature(JRPC.TemperatureType.GPU)}°C\n" +
-                $"{ResourceLanguage.GetString("MOTHERBOARD")} {XboxConsole.GetTemperature(JRPC.TemperatureType.MotherBoard)}°C",
-                ResourceLanguage.GetString("SYSTEM_TEMPERATURES"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DialogExtensions.ShowXboxConsoleManager(this);
         }
 
-        private void MenuItemXboxXNotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsXboxNotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
         {
             string notifyMessage = DialogExtensions.ShowTextInputDialog(this, ResourceLanguage.GetString("NOTIFY_MESSAGE"), ResourceLanguage.GetString("MESSAGE"));
 
@@ -751,7 +837,7 @@ namespace ArisenMods.Forms.Windows
             XboxConsole.XNotify(notifyMessage, notifyIcon.DehumanizeTo<XNotifyLogo>());
         }
 
-        // HELP MENU
+        // Extra Menu (Top Right)
 
         private void MenuItemRequestMods_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -816,13 +902,6 @@ namespace ArisenMods.Forms.Windows
             NavigationFrame.SelectedPage = PageAbout;
         }
 
-        // RIGHT MENU
-
-        private void MenuItemButtonRequestMods_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowRequestModsDialog(this);
-        }
-
 #endregion
 
     #region Connect & Disconnect Functions
@@ -866,8 +945,6 @@ namespace ArisenMods.Forms.Windows
 
                             SetPlatform(ConsoleProfile.Platform);
 
-                            MenuItemConnectToPS3.Caption = $"{ResourceLanguage.GetString("DISCONNECT_FROM_CONSOLE")}";
-                            MenuItemConnectToXBOX.Enabled = false;
                             break;
                         }
                     case Platform.XBOX360:
@@ -879,10 +956,11 @@ namespace ArisenMods.Forms.Windows
 
                         SetPlatform(ConsoleProfile.Platform);
 
-                        MenuItemConnectToXBOX.Caption = $"{ResourceLanguage.GetString("DISCONNECT_FROM_CONSOLE")}";
-                        MenuItemConnectToPS3.Enabled = false;
                         break;
                 }
+
+                ButtonConnectConsole.Caption = ResourceLanguage.GetString("RECONNECT_CONSOLE");
+                ButtonDisconnectConsole.Enabled = true;
 
                 SetStatusConsole(ConsoleProfile);
                 SetStatusIsConnected(true);
@@ -903,21 +981,15 @@ namespace ArisenMods.Forms.Windows
                     TimerLoadConsole.Enabled = true;
                     hadLoadedFileManager = true;
                 }
-
-                // Only reload categories if the console type hasn't been changed
-                if (Platform != Settings.StartupLibrary)
-                {
-                    LoadGameModsCategories();
-                    LoadHomebrewCategories();
-                    LoadResourcesCategories();
-                }
             }
             catch (Exception ex)
             {
                 SetStatus(ResourceLanguage.GetString("UNABLE_TO_CONNECT"), ex);
                 XtraMessageBox.Show(this,
-                    $"{ResourceLanguage.GetString("UNABLE_TO_CONNECT")} {(ConsoleProfile.Platform == Platform.XBOX360 ? $"\n{ResourceLanguage.GetString("NEIGHBORHOOD_NOT_FOUND")}" : string.Empty)}\n\n{ResourceLanguage.GetString("ERROR")}: {ex.Message}",
-                    ResourceLanguage.GetString("CONNECTION_FAILED"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    $"{ResourceLanguage.GetString("UNABLE_TO_CONNECT")} {(ConsoleProfile.Platform == Platform.XBOX360 ? $"\n{ResourceLanguage.GetString("NEIGHBORHOOD_NOT_FOUND")}" : string.Empty)}\n\n{ResourceLanguage.GetString("ERROR")}: {ex.Message}",
+                                    ResourceLanguage.GetString("CONNECTION_FAILED"),
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
             }
         }
 
@@ -959,11 +1031,8 @@ namespace ArisenMods.Forms.Windows
 
             EnableConsoleActions();
 
-            MenuItemConnectToPS3.Enabled = true;
-            MenuItemConnectToPS3.Caption = ResourceLanguage.GetString("CONNECT_TO_CONSOLE");
-
-            MenuItemConnectToXBOX.Enabled = true;
-            MenuItemConnectToXBOX.Caption = ResourceLanguage.GetString("CONNECT_TO_CONSOLE");
+            ButtonConnectConsole.Caption = ResourceLanguage.GetString("CONNECT_CONSOLE");
+            ButtonDisconnectConsole.Enabled = false;
 
             SetStatus(ResourceLanguage.GetString("SUCCESS_DISCONNECTED"));
             XtraMessageBox.Show(this, ResourceLanguage.GetString("SUCCESS_DISCONNECTED"), ResourceLanguage.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1022,6 +1091,7 @@ namespace ArisenMods.Forms.Windows
         private void NavigationItemSettings_Click(object sender, EventArgs e)
         {
             NavigationFrame.SelectedPage = PageSettings;
+            LoadSettings();
         }
 
         private bool hasLoadedGameMods = false;
@@ -1119,30 +1189,30 @@ namespace ArisenMods.Forms.Windows
 
             if (!IsConsoleConnected)
             {
-                if (handleOverlayRequiresWebMAN == null)
+                if (HandleOverlayRequiresWebMan == null)
                 {
-                    handleOverlayRequiresWebMAN = ShowOverlayFeatureNotAvailable(PageGameCheats, ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"));
+                    HandleOverlayRequiresWebMan = ShowOverlayFeatureNotAvailable(PageGameCheats, ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"));
                 }
             }
             else
             {
-                if (handleOverlayRequiresWebMAN != null)
+                if (HandleOverlayRequiresWebMan != null)
                 {
-                    CloseOverlayRequiresWebMAN(PageGameCheats, handleOverlayRequiresWebMAN);
+                    CloseOverlayRequiresWebMan(PageGameCheats, HandleOverlayRequiresWebMan);
                 }
 
                 if (!IsWebManInstalled)
                 {
-                    if (handleOverlayRequiresWebMAN == null)
+                    if (HandleOverlayRequiresWebMan == null)
                     {
-                        handleOverlayRequiresWebMAN = ShowOverlayFeatureNotAvailable(PageGameCheats, ResourceLanguage.GetString("WEBMAN_REQUIRED"));
+                        HandleOverlayRequiresWebMan = ShowOverlayFeatureNotAvailable(PageGameCheats, ResourceLanguage.GetString("WEBMAN_REQUIRED"));
                     }
                 }
                 else
                 {
-                    if (handleOverlayRequiresWebMAN != null)
+                    if (HandleOverlayRequiresWebMan != null)
                     {
-                        CloseOverlayRequiresWebMAN(PageGameCheats, handleOverlayRequiresWebMAN);
+                        CloseOverlayRequiresWebMan(PageGameCheats, HandleOverlayRequiresWebMan);
                     }
                 }
             }
@@ -1152,22 +1222,188 @@ namespace ArisenMods.Forms.Windows
 
     #region Dashboard Page
 
+        private void LoadOurFavoriteMods()
+        {
+            //TileGroupOurFavoriteMods.Items.Clear();
+            TileItemFavoriteMods.Visible = false;
+
+            foreach (Models.Dashboard.FavoriteModsData.Favorite favorite in Database.FavoritesMods.Favorites)
+            {
+                if (favorite.GetPlatform() == ConsoleProfile.Platform)
+                {
+                    TileGroupOurFavoriteMods.Items.Add(FavoriteModsItem(favorite.GetPlatform(), favorite.CategoryId, favorite.ModId, favorite.Name));
+                }
+            }
+        }
+
+        private TileItem FavoriteModsItem(Platform platform, string categoryId, int modId, string modName)
+        {
+            TileItem tileItem = new();
+
+            tileItem.TextAlignment = TileItemContentAlignment.TopLeft;
+            tileItem.ItemSize = TileItemSize.Medium;
+
+            tileItem.Elements.Assign(TileItemFavoriteMods.Elements);
+            //tileItem.Elements.Add(new TileItemElement() { Text = Database.CategoriesData.GetCategoryById(categoryId).Title, AnchorAlignment = AnchorAlignment.Top, TextAlignment = TileItemContentAlignment.MiddleCenter, TextLocation = new Point(0, -20) });
+            //tileItem.Elements.Add(new TileItemElement() { Text = modName, AnchorAlignment = AnchorAlignment.Bottom, AnchorElement = tileItem.Elements[0], AnchorIndent = 20, AnchorOffset = new Point(-2, 0), TextAlignment = TileItemContentAlignment.MiddleCenter });
+            //tileItem.Elements.Add(new TileItemElement() { Text = platform.Humanize(), ColumnIndex = 2 });
+
+            tileItem.Elements[0].Text = Database.CategoriesData.GetCategoryById(categoryId).Title;
+            //tileItem.Elements[0].Appearance.Normal.Font = new Font("Segoe UI", 10.95F, FontStyle.Regular);
+            //tileItem.Elements[0].Appearance.Normal.TextOptions.HAlignment = HorzAlignment.Center;
+            //tileItem.Elements[0].Appearance.Normal.TextOptions.Trimming = Trimming.EllipsisCharacter;
+            //tileItem.Elements[0].Appearance.Normal.TextOptions.WordWrap = WordWrap.Wrap;
+
+            tileItem.Elements[1].Text = modName;
+            //tileItem.Elements[1].Appearance.Normal.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular);
+            //tileItem.Elements[1].Appearance.Normal.TextOptions.HAlignment = HorzAlignment.Center;
+            //tileItem.Elements[1].Appearance.Normal.TextOptions.VAlignment = VertAlignment.Center;
+            //tileItem.Elements[1].Appearance.Normal.TextOptions.Trimming = Trimming.EllipsisCharacter;
+            //tileItem.Elements[1].Appearance.Normal.TextOptions.WordWrap = WordWrap.Wrap;
+
+            tileItem.Tag = platform.Humanize() + "|" + modId.ToString();
+
+            if (platform == Platform.PS3)
+            {
+                tileItem.AppearanceItem.Normal.BackColor = Color.FromArgb(0, 120, 215);
+                tileItem.AppearanceItem.Normal.BorderColor = Color.FromArgb(0, 120, 215);
+            }
+            else
+            {
+                tileItem.AppearanceItem.Normal.BackColor = Color.FromArgb(26, 163, 86);
+                tileItem.AppearanceItem.Normal.BorderColor = Color.FromArgb(26, 163, 86);
+            }
+
+            tileItem.ItemClick += FavoriteModsItem_Click;
+
+            return tileItem;
+        }
+
+        private void FavoriteModsItem_Click(object sender, TileItemEventArgs e)
+        {
+            TileItem tileItem = sender as TileItem;
+            string categoryTitle = tileItem.Elements[0].Text;
+            Category category = Database.CategoriesData.GetCategoryByTitle(categoryTitle);
+            string modName = tileItem.Elements[1].Text;
+            Platform platform = tileItem.Tag.ToString().Split('|')[0].DehumanizeTo<Platform>();
+            int modId = int.Parse(tileItem.Tag.ToString().Split('|')[1]);
+
+            if (platform == Platform.PS3)
+            {
+                ShowDetails(platform, categoryTitle, modId);
+
+                //if (category.CategoryType == CategoryType.Game)
+                //{
+                //    //NavigationFrame.SelectedPage = PageGameMods;
+                //    //NavigationMenu.SelectElement(NavigationItemGameMods);
+                //    //ComboBoxGameModsFilterGame.SelectedItem = category.Title;
+                //    //SearchGameMods();
+                //}
+            }
+            else if (platform == Platform.XBOX360)
+            {
+                ShowDetails(platform, categoryTitle, modId);
+
+                //if (category.CategoryType == CategoryType.Game)
+                //{
+                //    //NavigationFrame.SelectedPage = PageGameMods;
+                //    //NavigationMenu.SelectElement(NavigationItemGameMods);
+                //    //ComboBoxGameModsFilterGame.SelectedItem = category.Title;
+                //    //SearchGameMods();
+                //}
+            }
+        }
+
+        private void LoadRecentlyUpdated()
+        {
+            TileItemRecentlyUpdated.Visible = false;
+
+            foreach (ModItemData item in Database.GameModsPs3.Mods.OrderBy(x => x.LastUpdated).ToList().Take(3))
+            {
+                TileGroupRecentlyUpdated.Items.Add(RecentlyUpdatedItem(item.GetPlatform(), item.CategoryId, item.Id, item.Name));
+            }
+
+            foreach (ModItemData item in Database.HomebrewPs3.Mods.OrderBy(x => x.LastUpdated).ToList().Take(3))
+            {
+                TileGroupRecentlyUpdated.Items.Add(RecentlyUpdatedItem(item.GetPlatform(), item.CategoryId, item.Id, item.Name));
+            }
+        }
+
+        private TileItem RecentlyUpdatedItem(Platform platform, string categoryId, int modId, string modName)
+        {
+            Category category = Database.CategoriesData.GetCategoryById(categoryId);
+
+            TileItem tileItem = new();
+
+            tileItem.TextAlignment = TileItemContentAlignment.TopLeft;
+            tileItem.ItemSize = TileItemSize.Medium;
+
+            tileItem.Elements.Assign(TileItemRecentlyUpdated.Elements);
+
+            tileItem.Elements[0].Text = Database.CategoriesData.GetCategoryById(categoryId).Title;
+            tileItem.Elements[1].Text = modName;
+
+            tileItem.Tag = platform.Humanize() + "|" + modId.ToString();
+
+            tileItem.AppearanceItem.Normal.BackColor = Color.Coral;
+            tileItem.AppearanceItem.Normal.BorderColor = Color.Coral;
+
+            tileItem.ItemClick += RecentlyUpdatedItem_Click;
+
+            return tileItem;
+        }
+
+        private void RecentlyUpdatedItem_Click(object sender, TileItemEventArgs e)
+        {
+            TileItem tileItem = sender as TileItem;
+            string categoryTitle = tileItem.Elements[0].Text;
+            Category category = Database.CategoriesData.GetCategoryByTitle(categoryTitle);
+            string modName = tileItem.Elements[1].Text;
+            Platform platform = tileItem.Tag.ToString().Split('|')[0].DehumanizeTo<Platform>();
+            int modId = int.Parse(tileItem.Tag.ToString().Split('|')[1]);
+
+            if (platform == Platform.PS3)
+            {
+                ShowDetails(platform, categoryTitle, modId);
+
+                //if (category.CategoryType == CategoryType.Game)
+                //{
+                //    //NavigationFrame.SelectedPage = PageGameMods;
+                //    //NavigationMenu.SelectElement(NavigationItemGameMods);
+                //    //ComboBoxGameModsFilterGame.SelectedItem = category.Title;
+                //    //SearchGameMods();
+                //}
+            }
+            else if (platform == Platform.XBOX360)
+            {
+                ShowDetails(platform, categoryTitle, modId);
+
+                //if (category.CategoryType == CategoryType.Game)
+                //{
+                //    //NavigationFrame.SelectedPage = PageGameMods;
+                //    //NavigationMenu.SelectElement(NavigationItemGameMods);
+                //    //ComboBoxGameModsFilterGame.SelectedItem = category.Title;
+                //    //SearchGameMods();
+                //}
+            }
+        }
+
         private void LoadStatistics()
         {
             LabelHeaderStatistics.Text = ResourceLanguage.GetString("TITLE_STATISTICS");
 
             LabelStatisticsPlayStation3.Text =
-                $"{Database.GameModsPS3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Game).Count:N0} {ResourceLanguage.GetString("LABEL_GAME_MODS")}\n" +
-                $"{Database.HomebrewPS3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count:N0} {ResourceLanguage.GetString("LABEL_HOMEBREW")}\n" +
-                $"{Database.ResourcesPS3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Resource).Count:N0} {ResourceLanguage.GetString("LABEL_RESOURCES")}\n" +
+                $"{Database.GameModsPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Game).Count:N0} {ResourceLanguage.GetString("LABEL_GAME_MODS")}\n" +
+                $"{Database.HomebrewPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count:N0} {ResourceLanguage.GetString("LABEL_HOMEBREW")}\n" +
+                $"{Database.ResourcesPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Resource).Count:N0} {ResourceLanguage.GetString("LABEL_RESOURCES")}\n" +
                 $"{Database.PackagesCount():N0} {ResourceLanguage.GetString("LABEL_PACKAGES")}\n" +
                 $"{Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.PS3).ToList().Count:N0} {ResourceLanguage.GetString("LABEL_GAME_SAVES")}\n" +
-                $"{Database.GameCheatsPS3.GetTotalCheats():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
+                $"{Database.GameCheatsPs3.GetTotalCheats():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
 
             LabelStatisticsXbox360.Text =
-                $"{Database.PluginsXBOX.Mods.Count:N0} {ResourceLanguage.GetString("LABEL_PLUGINS")}\n" +
+                $"{Database.PluginsXbox.Mods.Count:N0} {ResourceLanguage.GetString("LABEL_PLUGINS")}\n" +
                 $"{Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.XBOX360).ToList().Count:N0} {ResourceLanguage.GetString("LABEL_GAME_SAVES")}\n" +
-                $"{Database.GameCheatsXBOX.GetTotalCheats():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
+                $"{Database.GameCheatsXbox.GetTotalCheats():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
 
             LabelStatisticsLastUpdated.Text = $"{ResourceLanguage.GetString("LAST_UPDATED")}: {Database.CategoriesData.LastUpdated.ToLocalTime().ToShortDateString()}";
         }
@@ -1177,7 +1413,7 @@ namespace ArisenMods.Forms.Windows
             PanelAnnouncementsItems.Controls.Clear();
             Database.Announcements.Announcements.Reverse();
 
-            foreach (AnnouncementsData.Announcement announcement in Database.Announcements.Announcements)
+            foreach (Models.Dashboard.AnnouncementsData.Announcement announcement in Database.Announcements.Announcements)
             {
                 if (!Settings.DismissedAnnouncements.Contains(announcement.Id))
                 {
@@ -1221,186 +1457,6 @@ namespace ArisenMods.Forms.Windows
 
             LabelChangeLogVersion.Text = $"{gitHubData.Name} ({gitHubData.PublishedAt.DateTime.ToOrdinalWords()})";
             LabelChangeLog.Text = releaseBody.Replace("- ", "• ");
-        }
-
-        // Setup Tile Items
-
-        private void TileItemHowToGuides_ItemClick(object sender, TileItemEventArgs e)
-        {
-            XtraMessageBox.Show(this, "Our How-To-Guides has been moved to our Discord server.", "How-To Guides", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void TileItemAddNewConsole_ItemClick(object sender, TileItemEventArgs e)
-        {
-            ConsoleProfile consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
-
-            if (consoleProfile != null)
-            {
-                Settings.ConsoleProfiles.Add(consoleProfile);
-            }
-        }
-
-        private void TileItemScanForXboxConsoles_ItemClick(object sender, TileItemEventArgs e)
-        {
-            SetStatus(ResourceLanguage.GetString("SCANNING_XBOX_CONSOLES"));
-            Extensions.Helpers.ScanForXboxConsoles(this);
-            SetStatus(ResourceLanguage.GetString("SCANNING_XBOX_FINISHED"));
-        }
-
-        private void TileItemEditConsoleProfiles_ItemClick(object sender, TileItemEventArgs e)
-        {
-            DialogExtensions.ShowEditConnectionsDialog(this, true);
-        }
-
-        private void TileItemStartupLibrary_ItemClick(object sender, TileItemEventArgs e)
-        {
-            if (IsConsoleConnected)
-            {
-                DisconnectConsole();
-            }
-
-            if (Platform == Platform.PS3)
-            {
-                SetPlatform(Platform.XBOX360);
-                Settings.StartupLibrary = Platform.XBOX360;
-                e.Item.Elements[1].Text = Platform.Humanize();
-            }
-            else if (Platform == Platform.XBOX360)
-            {
-                SetPlatform(Platform.PS3);
-                Settings.StartupLibrary = Platform.PS3;
-                e.Item.Elements[1].Text = Platform.Humanize();
-            }
-
-            PageDashboard.Refresh();
-        }
-
-        private void TileItemSetDownloadsLocation_ItemClick(object sender, TileItemEventArgs e)
-        {
-            SetDownloadsLocation();
-        }
-
-        private void SetTileDefaultModsText()
-        {
-            if (Platform == Platform.PS3)
-            {
-                TileItemStartupLibrary.Elements[1].Text = "PlayStation 3";
-            }
-            else if (Platform == Platform.XBOX360)
-            {
-                TileItemStartupLibrary.Elements[1].Text = "Xbox 360";
-            }
-        }
-
-        private void TileItemEditAdvancedSettings_ItemClick(object sender, TileItemEventArgs e)
-        {
-            NavigationMenu.SelectElement(NavigationItemSettings);
-            NavigationFrame.SelectedPage = PageSettings;
-        }
-
-        // Tools Tile Items
-
-        private void TileItemToolsGameUpdateFinder_ItemClick(object sender, TileItemEventArgs e)
-        {
-            DialogExtensions.ShowGameUpdatesFinder(this);
-        }
-
-        private void TileItemToolsGameBackupFiles_ItemClick(object sender, TileItemEventArgs e)
-        {
-            if (!IsConsoleConnected)
-            {
-                XtraMessageBox.Show(this, ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE."), ResourceLanguage.GetString("NOT_CONNECTED"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            DialogExtensions.ShowGameBackupFileManager(this);
-        }
-
-        private void TileItemToolsPackageManager_ItemClick(object sender, TileItemEventArgs e)
-        {
-            if (!IsConsoleConnected)
-            {
-                XtraMessageBox.Show(this, ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"), ResourceLanguage.GetString("NOT_CONNECTED"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            DialogExtensions.ShowPackageManager(this);
-        }
-
-        private void TileItemToolsConsoleManager_ItemClick(object sender, TileItemEventArgs e)
-        {
-            if (!IsConsoleConnected)
-            {
-                XtraMessageBox.Show(this, ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"), ResourceLanguage.GetString("NOT_CONNECTED"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            DialogExtensions.ShowConsoleManager(this);
-        }
-
-        private void TileItemToolsDefaultGameRegions_ItemClick(object sender, TileItemEventArgs e)
-        {
-            DialogExtensions.ShowGameRegionsDialog(this);
-        }
-
-        private void TileItemToolsBootPluginsEditor_ItemClick(object sender, TileItemEventArgs e)
-        {
-            if (!IsConsoleConnected)
-            {
-                XtraMessageBox.Show(this, ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"), ResourceLanguage.GetString("NOT_CONNECTED"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            DialogExtensions.ShowBootPluginsEditor(this);
-        }
-
-        private void TileItemToolsGameSaveResigner_ItemClick(object sender, TileItemEventArgs e)
-        {
-            DialogExtensions.ShowXboxGameSaveResigner(this);
-        }
-
-        private void TileItemToolsGameLauncher_ItemClick(object sender, TileItemEventArgs e)
-        {
-            if (!IsConsoleConnected)
-            {
-                XtraMessageBox.Show(this, ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"), ResourceLanguage.GetString("NOT_CONNECTED"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            DialogExtensions.ShowXboxGameLauncher(this);
-        }
-
-        private void TileItemToolsModuleLauncher_ItemClick(object sender, TileItemEventArgs e)
-        {
-            if (!IsConsoleConnected)
-            {
-                XtraMessageBox.Show(this, ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"), ResourceLanguage.GetString("NOT_CONNECTED"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            DialogExtensions.ShowXboxModuleLoader(this);
-        }
-
-        private void TileItemToolsXuidGameSpoofer_ItemClick(object sender, TileItemEventArgs e)
-        {
-            if (!IsConsoleConnected)
-            {
-                XtraMessageBox.Show(this, ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"), ResourceLanguage.GetString("NOT_CONNECTED"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            DialogExtensions.ShowXboxXuidGameSpoofer(this);
-        }
-
-        private void TileItemToolsLaunchFileEditor_ItemClick(object sender, TileItemEventArgs e)
-        {
-            if (!IsConsoleConnected)
-            {
-                XtraMessageBox.Show(this, ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"), ResourceLanguage.GetString("NOT_CONNECTED"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            DialogExtensions.ShowXboxLaunchFileEditor(this);
         }
 
         private void PanelAnnouncementsItems_ControlAdded(object sender, ControlEventArgs e)
@@ -2406,13 +2462,13 @@ namespace ArisenMods.Forms.Windows
             {
                 case true when Platform == Platform.PS3:
                     {
-                        if (Settings.LocalPathPS3.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathPS3))
+                        if (Settings.LocalPathPs3.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathPs3))
                         {
                             LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents) + @"\");
                         }
                         else
                         {
-                            LoadLocalDirectory(Settings.LocalPathPS3);
+                            LoadLocalDirectory(Settings.LocalPathPs3);
                         }
 
                         break;
@@ -2421,11 +2477,11 @@ namespace ArisenMods.Forms.Windows
                     {
                         switch (Platform)
                         {
-                            case Platform.XBOX360 when Settings.LocalPathXBOX.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathXBOX):
+                            case Platform.XBOX360 when Settings.LocalPathXbox.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathXbox):
                                 LoadLocalDirectory(KnownFolders.GetPath(KnownFolder.Documents) + @"\");
                                 break;
                             case Platform.XBOX360:
-                                LoadLocalDirectory(Settings.LocalPathXBOX);
+                                LoadLocalDirectory(Settings.LocalPathXbox);
                                 break;
                         }
 
@@ -2487,26 +2543,26 @@ namespace ArisenMods.Forms.Windows
                     {
                         case Platform.PS3:
 
-                            if (Settings.ConsolePathPS3.Equals("/") || Settings.ConsolePathPS3.IsNullOrWhiteSpace())
+                            if (Settings.ConsolePathPs3.Equals("/") || Settings.ConsolePathPs3.IsNullOrWhiteSpace())
                             {
                                 LoadConsoleDirectory("/" + ComboBoxFileManagerConsoleDrives.Properties.Items[0] + "/");
                             }
                             else
                             {
-                                LoadConsoleDirectory(Settings.ConsolePathPS3);
+                                LoadConsoleDirectory(Settings.ConsolePathPs3);
                             }
 
                             break;
 
                         case Platform.XBOX360:
 
-                            if (Settings.ConsolePathXBOX.Equals(@"\") || Settings.ConsolePathXBOX.IsNullOrWhiteSpace())
+                            if (Settings.ConsolePathXbox.Equals(@"\") || Settings.ConsolePathXbox.IsNullOrWhiteSpace())
                             {
                                 LoadConsoleDirectory(ComboBoxFileManagerConsoleDrives.Properties.Items[0] + @":\");
                             }
                             else
                             {
-                                LoadConsoleDirectory(Settings.ConsolePathXBOX);
+                                LoadConsoleDirectory(Settings.ConsolePathXbox);
                             }
 
                             break;
@@ -3309,7 +3365,7 @@ namespace ArisenMods.Forms.Windows
                             //           ? $" ({MainWindow.Database.GamesXBOXTitleIds.GetTitleFromTitleId(folder.Name.Replace(DirectoryPathConsole, "").Replace(@"\", ""))})"
                             //           : "";
                             string gameTitle = Settings.AutoDetectGameTitles
-                                       ? $" ({Database.GamesTitleIdsXBOX.GetTitleFromTitleId(folder.Name.Replace(DirectoryPathConsole, string.Empty).Replace(@"\", string.Empty))})"
+                                       ? $" ({Database.GamesTitleIdsXbox.GetTitleFromTitleId(folder.Name.Replace(DirectoryPathConsole, string.Empty).Replace(@"\", string.Empty))})"
                                        : string.Empty;
                             DataTableConsoleFiles.Rows.Add("folder",
                                                            ImageFolder,
@@ -3639,13 +3695,13 @@ namespace ArisenMods.Forms.Windows
                 }
             }
 
-            if (Settings.GameFilesXBOX.Any(x => x.Name.EqualsIgnoreCase(fileName)))
+            if (Settings.GameFilesXbox.Any(x => x.Name.EqualsIgnoreCase(fileName)))
             {
                 XtraMessageBox.Show(ResourceLanguage.GetString("FILE_NAME_EXISTS_IN_MODULES"), ResourceLanguage.GetString("FILE_NAME_DUPLICATE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            Settings.GameFilesXBOX.Add(new()
+            Settings.GameFilesXbox.Add(new()
             {
                 Name = fileName,
                 Value = DirectoryPathConsole + name
@@ -3996,8 +4052,9 @@ namespace ArisenMods.Forms.Windows
         private Dictionary<string, string> LanguageResources { get; } = new()
         {
             { "English", "ArisenMods.Languages.en_US" },
-            { "Svenska", "ArisenMods.Languages.sv_SE" },
             { "Español", "ArisenMods.Languages.es_ES" },
+            { "Svenska", "ArisenMods.Languages.sv_SE" },
+            { "Türkçe", "ArisenMods.Languages.tr_TR" },
             //{ "Português", "ArisenMods.Languages.pt_PT" },
             //{ "Português (Brasil)", "ArisenMods.Languages.pt_BR" }
         };
@@ -4061,60 +4118,90 @@ namespace ArisenMods.Forms.Windows
             {
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(ResourceLanguage.BaseName.Replace("_", "-").Replace("ArisenMods.Languages.", ""));
 
-                // Menu Bar
-                MenuButtonConnect.Caption = ResourceLanguage.GetString("TITLE_CONNECT");
-                MenuButtonTools.Caption = ResourceLanguage.GetString("TITLE_TOOLS");
-                MenuButtonOptions.Caption = ResourceLanguage.GetString("TITLE_OPTIONS");
-                MenuButtonRequestMods.Caption = ResourceLanguage.GetString("TITLE_SUBMIT_MODS");
-                MenuItemConnectToPS3.Caption = ResourceLanguage.GetString("CONNECT_TO_CONSOLE");
-                MenuItemConnectToXBOX.Caption = ResourceLanguage.GetString("CONNECT_TO_CONSOLE");
+                // Ribbon Bar
+                RibbonPageHome.Text = ResourceLanguage.GetString("HOME");
+                RibbonPageModdingTools.Text = ResourceLanguage.GetString("MODDING_TOOLS");
+                RibbonGroupConnection.Text = ResourceLanguage.GetString("CONNECTION");
+                RibbonGroupConnsoleProfiles.Text = ResourceLanguage.GetString("CONSOLE_PROFILES");
+                RibbonGroupQuickSettings.Text = ResourceLanguage.GetString("QUICK_SETTINGS");
+                RibbonGroupTools.Text = ResourceLanguage.GetString("TOOLS");
+                RibbonGroupWebManCommands.Text = ResourceLanguage.GetString("WEBMAN_COMMANDS");
+                RibbonGroupXbdmCommands.Text = ResourceLanguage.GetString("XBDM_COMMANDS");
+
+                ButtonConnectConsole.Caption = ResourceLanguage.GetString("CONNECT_CONSOLE");
+                ButtonDisconnectConsole.Caption = ResourceLanguage.GetString("DISCONNECT_CONSOLE");
+                ButtonChangeProfile.Caption = ResourceLanguage.GetString("CHANGE_PROFILE");
+                ButtonAddNewProfile.Caption = ResourceLanguage.GetString("ADD_NEW_PROFILE");
+                ButtonScanXboxConsoles.Caption = ResourceLanguage.GetString("SCAN_XBOX_CONSOLES");
+                ButtonEditProfiles.Caption = ResourceLanguage.GetString("EDIT_PROFILES");
+                ButtonHowToGuides.Caption = ResourceLanguage.GetString("HOW_TO_GUIDES");
+                ButtonDownloadsFolder.Caption = ResourceLanguage.GetString("DOWNLOADS_FOLDER");
+                ButtonDiscordPresence.Caption = ResourceLanguage.GetString("DISCORD_RICH_PRESENCE");
+                ButtonInstallModsToUSB.Caption = ResourceLanguage.GetString("INSTALL_MODS_TO_USB");
+                ButtonAdvancedSettings.Caption = ResourceLanguage.GetString("ADVANCED_SETTINGS");
+
+                ButtonToolsPsGameUpdates.Caption = ResourceLanguage.GetString("GAME_UPDATES");
+                ButtonToolsPsBackupFilesManager.Caption = ResourceLanguage.GetString("BACKUP_FILES_MANAGER");
+                ButtonToolsPsPackageManager.Caption = ResourceLanguage.GetString("PACKAGE_MANAGER");
+                ButtonToolsPsConsoleManager.Caption = ResourceLanguage.GetString("CONSOLE_MANAGER");
+                ButtonToolsPsGameRegions.Caption = ResourceLanguage.GetString("GAME_REGIONS");
+                ButtonToolsPsBootPluginsEditor.Caption = ResourceLanguage.GetString("BOOT_PLUGINS_EDITOR");
+
+                ButtonToolsXboxGameSaveResigner.Caption = ResourceLanguage.GetString("GAME_SAVE_RESIGNER");
+                ButtonToolsXboxGamesLauncher.Caption = ResourceLanguage.GetString("GAMES_LAUNCHER");
+                ButtonToolsXboxModuleLoader.Caption = ResourceLanguage.GetString("MODULE_LOADER");
+                ButtonToolsXboxXuidSpoofer.Caption = ResourceLanguage.GetString("XUID_SPOOFER");
+                ButtonToolsXboxDashlaunchEditor.Caption = ResourceLanguage.GetString("DASHLAUNCH_EDITOR");
+
+                ButtonToolsPsPower.Caption = ResourceLanguage.GetString("POWER");
+                ButtonToolsPsPowerShutdown.Caption = ResourceLanguage.GetString("SHUTDOWN");
+                ButtonToolsPsPowerRestart.Caption = ResourceLanguage.GetString("RESTART");
+                ButtonToolsPsPowerSoftReboot.Caption = ResourceLanguage.GetString("SOFT_REBOOT");
+                ButtonToolsPsPowerHardReboot.Caption = ResourceLanguage.GetString("HARD_REBOOT");
+                ButtonToolsPsPowerQuickReboot.Caption = ResourceLanguage.GetString("QUICK_REBOOT");
+                ButtonToolsPsGames.Caption = ResourceLanguage.GetString("GAMES");
+                ButtonToolsPsGamesMountBD.Caption = ResourceLanguage.GetString("MOUNT_BD");
+                ButtonToolsPsGamesMountISO.Caption = ResourceLanguage.GetString("MOUNT_ISO");
+                ButtonToolsPsGamesMountPSN.Caption = ResourceLanguage.GetString("MOUNT_PSN");
+                ButtonToolsPsGamesUnmount.Caption = ResourceLanguage.GetString("UNMOUNT");
+                ButtonToolsPsNotifyMessage.Caption = ResourceLanguage.GetString("NOTIFY_MESSAGE");
+                ButtonToolsPsVirtualController.Caption = ResourceLanguage.GetString("VIRTUAL_CONTROLLER");
+
+                ButtonToolsXboxPower.Caption = ResourceLanguage.GetString("POWER");
+                ButtonToolsXboxPowerShutdown.Caption = ResourceLanguage.GetString("SHUTDOWN");
+                ButtonToolsXboxPowerSoftReboot.Caption = ResourceLanguage.GetString("SOFT_REBOOT");
+                ButtonToolsXboxPowerHardReboot.Caption = ResourceLanguage.GetString("HARD_REBOOT");
+                ButtonToolsXboxTakeScreenshot.Caption = ResourceLanguage.GetString("TAKE_SCREENSHOT");
+                ButtonToolsXboxConsoleManager.Caption = ResourceLanguage.GetString("CONSOLE_MANAGER");
+                ButtonToolsXboxNotifyMessage.Caption = ResourceLanguage.GetString("NOTIFY_MESSAGE");
 
                 // Navigation Menu
-                NavigationItemDashboard.Text = ResourceLanguage.GetString("TITLE_DASHBOARD");
-                NavigationItemInstalledMods.Text = ResourceLanguage.GetString("TITLE_INSTALLED_MODS");
-                NavigationItemDownloads.Text = ResourceLanguage.GetString("TITLE_DOWNLOADS");
-                NavigationItemFileManager.Text = ResourceLanguage.GetString("TITLE_FILE_MANAGER");
-                NavigationItemSettings.Text = ResourceLanguage.GetString("TITLE_SETTINGS");
+                NavigationItemDashboard.Text = ResourceLanguage.GetString("NAVIGATION_DASHBOARD");
+                NavigationItemInstalledMods.Text = ResourceLanguage.GetString("NAVIGATION_INSTALLED_MODS");
+                NavigationItemDownloads.Text = ResourceLanguage.GetString("NAVIGATION_DOWNLOADS");
+                NavigationItemFileManager.Text = ResourceLanguage.GetString("NAVIGATION_FILE_MANAGER");
+                NavigationItemSettings.Text = ResourceLanguage.GetString("NAVIGATION_SETTINGS");
 
-                NavigationItemGameMods.Text = ResourceLanguage.GetString("TITLE_GAME_MODS");
-                NavigationItemHomebrew.Text = ResourceLanguage.GetString("TITLE_HOMEBREW");
-                NavigationItemResources.Text = ResourceLanguage.GetString("TITLE_RESOURCES");
-                NavigationItemPackages.Text = ResourceLanguage.GetString("TITLE_PACKAGES");
-                NavigationItemPlugins.Text = ResourceLanguage.GetString("TITLE_PLUGINS");
-                NavigationItemGameSaves.Text = ResourceLanguage.GetString("TITLE_GAME_SAVES");
-                NavigationItemGameCheats.Text = ResourceLanguage.GetString("TITLE_GAME_CHEATS");
+                NavigationItemGameMods.Text = ResourceLanguage.GetString("NAVIGATION_GAME_MODS");
+                NavigationItemHomebrew.Text = ResourceLanguage.GetString("NAVIGATION_HOMEBREW");
+                NavigationItemResources.Text = ResourceLanguage.GetString("NAVIGATION_RESOURCES");
+                NavigationItemPackages.Text = ResourceLanguage.GetString("NAVIGATION_PACKAGES");
+                NavigationItemPlugins.Text = ResourceLanguage.GetString("NAVIGATION_PLUGINS");
+                NavigationItemGameSaves.Text = ResourceLanguage.GetString("NAVIGATION_GAME_SAVES");
+                NavigationItemGameCheats.Text = ResourceLanguage.GetString("NAVIGATION_GAME_CHEATS");
 
                 // Dashboard
-                LabelHeaderGetStarted.Text = ResourceLanguage.GetString("TITLE_GET_STARTED");
-                LabelHeaderTools.Text = ResourceLanguage.GetString("TITLE_TOOLS");
+                LabelHeaderOurFavoriteMods.Text = ResourceLanguage.GetString("TITLE_OUR_FAVORITE_MODS");
+                LabelHeaderRecentlyUpdated.Text = ResourceLanguage.GetString("TITLE_RECENTLY_UPDATED");
                 LabelHeaderAnnouncements.Text = ResourceLanguage.GetString("TITLE_ANNOUNCEMENTS");
                 LabelHeaderLatestNews.Text = ResourceLanguage.GetString("TITLE_LATEST_NEWS");
                 LabelHeaderChangeLog.Text = ResourceLanguage.GetString("TITLE_CHANGE_LOG");
+                ButtonChangeLogNext.Text = ResourceLanguage.GetString("LABEL_NEXT");
+                ButtonChangeLogPrevious.Text = ResourceLanguage.GetString("LABEL_PREVIOUS");
                 LoadStatistics();
                 LoadNewsFeed();
                 LoadAnnouncements();
                 NoAnnouncementsItem.LoadText();
-                TileItemHowToUseGuides.Text = ResourceLanguage.GetString("SETUP_HOWTO_GUIDE");
-                TileItemAddNewConsole.Text = ResourceLanguage.GetString("SETUP_PROFILE_ADD");
-                TileItemScanForXboxConsoles.Text = ResourceLanguage.GetString("SETUP_SCAN_XBOX_CONSOLES");
-                TileItemEditConsoleProfiles.Text = ResourceLanguage.GetString("SETUP_PROFILES_EDIT");
-                TileItemStartupLibrary.Text = ResourceLanguage.GetString("SETUP_STARTUP_LIBRARY");
-                TileItemSetDownloadsLocation.Text = ResourceLanguage.GetString("SETUP_SET_DOWNLOADS_LOCATION");
-                TileItemEditAdvancedSettings.Text = ResourceLanguage.GetString("SETUP_EDIT_ADVANCED_SETTINGS");
-
-                TileItemToolsBackupFileManager.Text = ResourceLanguage.GetString("BACKUP_FILES_MANAGER");
-                TileItemToolsGameUpdateFinder.Text = ResourceLanguage.GetString("GAME_UPDATES_FINDER");
-                TileItemToolsPackageManager.Text = ResourceLanguage.GetString("PACKAGE_FILES_MANAGER");
-                TileItemToolsConsoleManager.Text = ResourceLanguage.GetString("CONSOLE_MANAGER");
-                TileItemToolsDefaultGameRegions.Text = ResourceLanguage.GetString("GAME_REGIONS");
-                TileItemToolsBootPluginsEditor.Text = ResourceLanguage.GetString("BOOT_PLUGINS_EDITOR");
-                TileItemToolsGamesLauncher.Text = ResourceLanguage.GetString("GAMES_LAUNCHER");
-                TileItemToolsModulesLoader.Text = ResourceLanguage.GetString("MODULES_LOADER");
-                TileItemToolsLaunchDashlaunchEditor.Text = ResourceLanguage.GetString("DASHLAUNCH_EDITOR");
-                TileItemToolsGameSaveResigner.Text = ResourceLanguage.GetString("GAME_SAVE_RESIGNER");
-
-                ButtonChangeLogNext.Text = ResourceLanguage.GetString("LABEL_NEXT");
-                ButtonChangeLogPrevious.Text = ResourceLanguage.GetString("LABEL_PREVIOUS");
 
                 // Downloads
                 TileItemDownloadsOpenFolder.Text = ResourceLanguage.GetString("OPEN_FOLDER");
@@ -4166,8 +4253,6 @@ namespace ArisenMods.Forms.Windows
                 // Settings: Interface
                 LabelSettingsLanguage.Text = ResourceLanguage.GetString("LANGUAGE");
                 LabelSettingsHelpTranslate.Text = ResourceLanguage.GetString("HELP_TRANSLATE");
-
-                LabelSettingsStartupLibrary.Text = ResourceLanguage.GetString("SETUP_STARTUP_LIBRARY");
 
                 LabelSettingsCustomization.Text = ResourceLanguage.GetString("CUSTOMIZATION");
                 LabelSettingsUseFormattedFileSizes.Text = ResourceLanguage.GetString("USE_FORMATTED_FILE_SIZES");
@@ -4317,14 +4402,6 @@ namespace ArisenMods.Forms.Windows
         {
             /* Appearance */
 
-            // Startup Database
-            RadioGroupSettingsStartupLibrary.SelectedIndex = Settings.StartupLibrary switch
-            {
-                Platform.PS3 => 0,
-                Platform.XBOX360 => 1,
-                _ => 0
-            };
-
             // Customization
             ToggleSettingsUseFormattedFileSizes.IsOn = Settings.UseFormattedFileSizes;
             ToggleSettingsUseRelativeTimes.IsOn = Settings.UseRelativeTimes;
@@ -4382,13 +4459,13 @@ namespace ArisenMods.Forms.Windows
 
             if (Settings.AlwaysShowPresence || Settings.ShowCurrentGamePlaying)
             {
-                EnableDiscordRPC();
+                EnableDiscordRpc();
             }
         }
 
         private DiscordRpcClient DiscordClient { get; set; } = null;
 
-        public void EnableDiscordRPC()
+        public void EnableDiscordRpc()
         {
             DiscordClient = new DiscordRpcClient("842507057256595536");
             DiscordClient.Initialize();
@@ -4399,7 +4476,15 @@ namespace ArisenMods.Forms.Windows
             timer.Start();
         }
 
-        System.Timers.Timer timer = new(10000);
+        public void DisableDiscordRpc()
+        {
+            timer.Stop();
+            DiscordClient.ClearPresence();
+            DiscordClient.Dispose();
+            DiscordClient = null;
+        }
+
+        private readonly System.Timers.Timer timer = new(10000);
 
         public void SetPresence()
         {
@@ -4444,7 +4529,7 @@ namespace ArisenMods.Forms.Windows
                         }
                         else
                         {
-                            game = XboxConsole.GetTitleID().ToString("X");
+                            game = XboxConsole.GetTitleId().ToString("X");
 
                             if (string.IsNullOrWhiteSpace(game))
                             {
@@ -4452,7 +4537,7 @@ namespace ArisenMods.Forms.Windows
                             }
                             else
                             {
-                                game = Database.GamesTitleIdsXBOX.GetTitleFromTitleId(game);
+                                game = Database.GamesTitleIdsXbox.GetTitleFromTitleId(game);
                             }
                         }
 
@@ -4481,21 +4566,6 @@ namespace ArisenMods.Forms.Windows
         }
 
         /* Interface */
-
-        // Startup Library
-
-        private void RadioSettingsStartupLibrary_Properties_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Settings.StartupLibrary = RadioGroupSettingsStartupLibrary.SelectedIndex == 0 ? Platform.PS3 : Platform.XBOX360;
-
-            if (Settings.StartupLibrary != Platform)
-            {
-                if (XtraMessageBox.Show(this, ResourceLanguage.GetString("RESTART_TAKE_AFFECT"), ResourceLanguage.GetString("RESTART_REQUIRED"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    Application.Restart();
-                }
-            }
-        }
 
         // Customisation
 
@@ -4560,6 +4630,7 @@ namespace ArisenMods.Forms.Windows
 
         private void ToggleSettingsInstallModsToUsbDevice_Toggled(object sender, EventArgs e)
         {
+            ButtonInstallModsToUSB.Checked = ToggleSettingsInstallModsToUsbDevice.IsOn;
             Settings.InstallGameModsPluginsToUsbDevice = ToggleSettingsInstallModsToUsbDevice.IsOn;
         }
 
@@ -4639,7 +4710,6 @@ namespace ArisenMods.Forms.Windows
                 TextBoxSettingsPathGameMods.Text = path;
             }
         }
-
 
         private void TextBoxSettingsPathHomebrew_EditValueChanged(object sender, EventArgs e)
         {
@@ -4777,11 +4847,12 @@ namespace ArisenMods.Forms.Windows
 
         private void ToggleSettingsAlwaysShowPresence_Toggled(object sender, EventArgs e)
         {
+            ButtonDiscordPresence.Checked = ToggleSettingsAlwaysShowPresence.IsOn;
             Settings.AlwaysShowPresence = ToggleSettingsAlwaysShowPresence.IsOn;
 
             if (Settings.AlwaysShowPresence)
             {
-                EnableDiscordRPC();
+                EnableDiscordRpc();
             }
             else
             {
@@ -4810,7 +4881,7 @@ namespace ArisenMods.Forms.Windows
                 ToggleSettingsAlwaysShowPresence.IsOn = true;
                 ToggleSettingsAlwaysShowPresence.Toggled += ToggleSettingsAlwaysShowPresence_Toggled;
 
-                EnableDiscordRPC();
+                EnableDiscordRpc();
             }
             
             if (!Settings.AlwaysShowPresence)
@@ -4848,7 +4919,7 @@ namespace ArisenMods.Forms.Windows
 
         private void TileItemGameModsSortBy_ItemClick(object sender, TileItemEventArgs e)
         {
-            SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterGameModsSortOption, new List<string> { ResourceLanguage.GetString("LABEL_GAME"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_SYSTEM_TYPE"), ResourceLanguage.GetString("LABEL_MOD_TYPE"), ResourceLanguage.GetString("LABEL_REGION"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR") }, FilterGameModsSortOrder);
+            Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterGameModsSortOption, new List<string> { ResourceLanguage.GetString("LABEL_GAME"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_SYSTEM_TYPE"), ResourceLanguage.GetString("LABEL_MOD_TYPE"), ResourceLanguage.GetString("LABEL_REGION"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR") }, FilterGameModsSortOrder);
 
             if (sortOptions != null)
             {
@@ -5063,7 +5134,7 @@ namespace ArisenMods.Forms.Windows
                     break;
                 default:
                     {
-                        foreach (string modType in Database.GameModsPS3.AllModTypesForCategoryId(category.Id))
+                        foreach (string modType in Database.GameModsPs3.AllModTypesForCategoryId(category.Id))
                         {
                             ComboBoxGameModsFilterModType.Properties.Items.Add(modType);
                         }
@@ -5094,7 +5165,7 @@ namespace ArisenMods.Forms.Windows
 
             BeginInvoke(new Action(() =>
             {
-                foreach (ModItemData modItemData in Database.GameModsPS3.GetGameMods(Database.CategoriesData, FilterGameModsCategoryId, FilterGameModsName, FilterGameModsSystemType, FilterGameModsType, FilterGameModsRegion, FilterGameModsVersion, FilterGameModsCreator, FilterGameModsShowFavorites))
+                foreach (ModItemData modItemData in Database.GameModsPs3.GetGameMods(Database.CategoriesData, FilterGameModsCategoryId, FilterGameModsName, FilterGameModsSystemType, FilterGameModsType, FilterGameModsRegion, FilterGameModsVersion, FilterGameModsCreator, FilterGameModsShowFavorites))
                 {
                     bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id) != null;
 
@@ -5283,7 +5354,7 @@ namespace ArisenMods.Forms.Windows
 
         private void TileItemHomebrewSortBy_ItemClick(object sender, TileItemEventArgs e)
         {
-            SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterHomebrewSortOption, new List<string> { ResourceLanguage.GetString("LABEL_CATEGORY"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_SYSTEM_TYPE"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR") }, FilterHomebrewSortOrder);
+            Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterHomebrewSortOption, new List<string> { ResourceLanguage.GetString("LABEL_CATEGORY"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_SYSTEM_TYPE"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR") }, FilterHomebrewSortOrder);
 
             if (sortOptions != null)
             {
@@ -5469,7 +5540,7 @@ namespace ArisenMods.Forms.Windows
 
             BeginInvoke(new Action(() =>
             {
-                foreach (ModItemData modItemData in Database.HomebrewPS3.GetHomebrew(Database.CategoriesData, FilterHomebrewCategoryId, FilterHomebrewName, FilterHomebrewSystemType, FilterHomebrewVersion, FilterHomebrewCreator, FilterHomebrewShowFavorites))
+                foreach (ModItemData modItemData in Database.HomebrewPs3.GetHomebrew(Database.CategoriesData, FilterHomebrewCategoryId, FilterHomebrewName, FilterHomebrewSystemType, FilterHomebrewVersion, FilterHomebrewCreator, FilterHomebrewShowFavorites))
                 {
                     bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id) != null;
 
@@ -5609,7 +5680,7 @@ namespace ArisenMods.Forms.Windows
 
         private void TileItemResourcesSortBy_ItemClick(object sender, TileItemEventArgs e)
         {
-            SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterResourcesSortOption, new List<string> { ResourceLanguage.GetString("LABEL_CATEGORY"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_SYSTEM_TYPE"), ResourceLanguage.GetString("LABEL_MOD_TYPE"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR") }, FilterResourcesSortOrder);
+            Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterResourcesSortOption, new List<string> { ResourceLanguage.GetString("LABEL_CATEGORY"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_SYSTEM_TYPE"), ResourceLanguage.GetString("LABEL_MOD_TYPE"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR") }, FilterResourcesSortOrder);
 
             if (sortOptions != null)
             {
@@ -5806,7 +5877,7 @@ namespace ArisenMods.Forms.Windows
                     break;
                 default:
                     {
-                        foreach (string modType in Database.ResourcesPS3.AllModTypesForCategoryId(category.Id))
+                        foreach (string modType in Database.ResourcesPs3.AllModTypesForCategoryId(category.Id))
                         {
                             ComboBoxResourcesFilterModType.Properties.Items.Add(modType);
                         }
@@ -5825,7 +5896,7 @@ namespace ArisenMods.Forms.Windows
 
             BeginInvoke(new Action(() =>
             {
-                foreach (ModItemData modItemData in Database.ResourcesPS3.GetResources(Database.CategoriesData, FilterResourcesCategoryId, FilterResourcesName, FilterResourcesSystemType, FilterResourcesModType, FilterResourcesVersion, FilterResourcesCreator, FilterResourcesShowFavorites).OrderBy(x => x.Name))
+                foreach (ModItemData modItemData in Database.ResourcesPs3.GetResources(Database.CategoriesData, FilterResourcesCategoryId, FilterResourcesName, FilterResourcesSystemType, FilterResourcesModType, FilterResourcesVersion, FilterResourcesCreator, FilterResourcesShowFavorites).OrderBy(x => x.Name))
                 {
                     bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id) != null;
 
@@ -5949,7 +6020,7 @@ namespace ArisenMods.Forms.Windows
 
         private void TileItemPackagesSortBy_ItemClick(object sender, TileItemEventArgs e)
         {
-            SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterPackagesSortOption, new List<string> { ResourceLanguage.GetString("LABEL_CATEGORY"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_REGION"), "Modified Date", "File Size", ResourceLanguage.GetString("LABEL_STATUS") }, FilterPackagesSortOrder);
+            Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterPackagesSortOption, new List<string> { ResourceLanguage.GetString("LABEL_CATEGORY"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_REGION"), "Modified Date", "File Size", ResourceLanguage.GetString("LABEL_STATUS") }, FilterPackagesSortOrder);
 
             if (sortOptions != null)
             {
@@ -5998,23 +6069,23 @@ namespace ArisenMods.Forms.Windows
 
             if (ComboBoxFilterPackagesCategories.SelectedItem.Equals("Games"))
             {
-                PackagesData = Database.GamesPS3;
+                PackagesData = Database.GamesPs3;
             }
             else if (ComboBoxFilterPackagesCategories.SelectedItem.Equals("Demos"))
             {
-                PackagesData = Database.DemosPS3;
+                PackagesData = Database.DemosPs3;
             }
             else if (ComboBoxFilterPackagesCategories.SelectedItem.Equals("DLCs"))
             {
-                PackagesData = Database.DLCsPS3;
+                PackagesData = Database.DLCsPs3;
             }
             else if (ComboBoxFilterPackagesCategories.SelectedItem.Equals("Avatars"))
             {
-                PackagesData = Database.AvatarsPS3;
+                PackagesData = Database.AvatarsPs3;
             }
             else if (ComboBoxFilterPackagesCategories.SelectedItem.Equals("Themes"))
             {
-                PackagesData = Database.ThemesPS3;
+                PackagesData = Database.ThemesPs3;
             }
 
             FilterPackagesCategory = ComboBoxFilterPackagesCategories.SelectedItem as string;
@@ -6360,11 +6431,11 @@ namespace ArisenMods.Forms.Windows
         {
             List<PackageItemData> packages = new();
 
-            packages.AddRange(Database.GamesPS3.Packages.Where(x => !x.IsNameMissing && !x.IsUrlMissing));
-            packages.AddRange(Database.DemosPS3.Packages.Where(x => !x.IsNameMissing && !x.IsUrlMissing));
-            packages.AddRange(Database.DLCsPS3.Packages.Where(x => !x.IsNameMissing && !x.IsUrlMissing));
-            packages.AddRange(Database.AvatarsPS3.Packages.Where(x => !x.IsNameMissing && !x.IsUrlMissing));
-            packages.AddRange(Database.ThemesPS3.Packages.Where(x => !x.IsNameMissing && !x.IsUrlMissing));
+            packages.AddRange(Database.GamesPs3.Packages.Where(x => !x.IsNameMissing && !x.IsUrlMissing));
+            packages.AddRange(Database.DemosPs3.Packages.Where(x => !x.IsNameMissing && !x.IsUrlMissing));
+            packages.AddRange(Database.DLCsPs3.Packages.Where(x => !x.IsNameMissing && !x.IsUrlMissing));
+            packages.AddRange(Database.AvatarsPs3.Packages.Where(x => !x.IsNameMissing && !x.IsUrlMissing));
+            packages.AddRange(Database.ThemesPs3.Packages.Where(x => !x.IsNameMissing && !x.IsUrlMissing));
 
             return packages;
         }
@@ -6396,7 +6467,7 @@ namespace ArisenMods.Forms.Windows
 
         private void TileItemPluginsSortBy_ItemClick(object sender, TileItemEventArgs e)
         {
-            SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterPluginsSortOption, new List<string> { ResourceLanguage.GetString("LABEL_CATEGORY"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR"), ResourceLanguage.GetString("LABEL_STATUS") }, FilterPluginsSortOrder);
+            Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterPluginsSortOption, new List<string> { ResourceLanguage.GetString("LABEL_CATEGORY"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR"), ResourceLanguage.GetString("LABEL_STATUS") }, FilterPluginsSortOrder);
 
             if (sortOptions != null)
             {
@@ -6512,7 +6583,7 @@ namespace ArisenMods.Forms.Windows
 
             DataTablePlugins.Rows.Clear();
 
-            foreach (ModItemData modItemData in Database.PluginsXBOX.GetPluginItems(FilterPluginsCategoryId, FilterPluginsName, FilterPluginsVersion, FilterPluginsCreator, FilterPluginsShowFavorites))
+            foreach (ModItemData modItemData in Database.PluginsXbox.GetPluginItems(FilterPluginsCategoryId, FilterPluginsName, FilterPluginsVersion, FilterPluginsCreator, FilterPluginsShowFavorites))
             {
                 bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id) != null;
 
@@ -6575,7 +6646,7 @@ namespace ArisenMods.Forms.Windows
 
         private void GridViewPlugins_RowClick(object sender, RowClickEventArgs e)
         {
-            ModItemData selectedPlugin = Database.PluginsXBOX.GetModById(Platform.XBOX360, int.Parse(GridViewPlugins.GetRowCellDisplayText(e.RowHandle, "Id")));
+            ModItemData selectedPlugin = Database.PluginsXbox.GetModById(Platform.XBOX360, int.Parse(GridViewPlugins.GetRowCellDisplayText(e.RowHandle, "Id")));
             ShowPluginDetails(selectedPlugin.Id);
         }
 
@@ -6625,7 +6696,7 @@ namespace ArisenMods.Forms.Windows
 
         private void TileItemGameSavesSortBy_ItemClick(object sender, TileItemEventArgs e)
         {
-            SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterGameSavesSortOption, new List<string> { ResourceLanguage.GetString("LABEL_GAME"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_REGION"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR") }, FilterGameSavesSortOrder);
+            Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterGameSavesSortOption, new List<string> { ResourceLanguage.GetString("LABEL_GAME"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_REGION"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR") }, FilterGameSavesSortOrder);
 
             if (sortOptions != null)
             {
@@ -6827,7 +6898,7 @@ namespace ArisenMods.Forms.Windows
 
         private void TileItemGameCheatsSortOptions_ItemClick(object sender, TileItemEventArgs e)
         {
-            SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterGameCheatsSortOption, new List<string> { ResourceLanguage.GetString("LABEL_GAME") }, FilterGameCheatsSortOrder);
+            Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterGameCheatsSortOption, new List<string> { ResourceLanguage.GetString("LABEL_GAME") }, FilterGameCheatsSortOrder);
 
             if (sortOptions != null)
             {
@@ -6852,7 +6923,7 @@ namespace ArisenMods.Forms.Windows
 
             ComboBoxGameCheatsFilterGame.Properties.Items.Add($"<{ResourceLanguage.GetString("ALL_GAMES")}>");
 
-            foreach (GameCheatItemData gameCheat in Database.GameCheatsPS3.GameCheats.OrderBy(x => x.Game))
+            foreach (GameCheatItemData gameCheat in Database.GameCheatsPs3.GameCheats.OrderBy(x => x.Game))
             {
                 ComboBoxGameCheatsFilterGame.Properties.Items.Add(gameCheat.Game);
             }
@@ -6895,7 +6966,7 @@ namespace ArisenMods.Forms.Windows
 
             DataTableGameCheats.Rows.Clear();
 
-            foreach (GameCheatItemData game in Database.GameCheatsPS3.GameCheats.FindAll(x => x.Game.ContainsIgnoreCase(FilterGameCheatsGame)).OrderBy(x => x.Game))
+            foreach (GameCheatItemData game in Database.GameCheatsPs3.GameCheats.FindAll(x => x.Game.ContainsIgnoreCase(FilterGameCheatsGame)).OrderBy(x => x.Game))
             {
                 DataTableGameCheats.Rows.Add(
                     game.Game,
@@ -6931,7 +7002,7 @@ namespace ArisenMods.Forms.Windows
 
         private void GridViewGameCheats_RowClick(object sender, RowClickEventArgs e)
         {
-            GameCheatItemData selectedGameCheats = Database.GameCheatsPS3.GetGameCheatById(GridViewGameCheats.GetRowCellDisplayText(e.RowHandle, GridViewGameCheats.Columns[0]), GridViewGameCheats.GetRowCellDisplayText(e.RowHandle, GridViewGameCheats.Columns[1]), GridViewGameCheats.GetRowCellDisplayText(e.RowHandle, GridViewGameCheats.Columns[2]));
+            GameCheatItemData selectedGameCheats = Database.GameCheatsPs3.GetGameCheatById(GridViewGameCheats.GetRowCellDisplayText(e.RowHandle, GridViewGameCheats.Columns[0]), GridViewGameCheats.GetRowCellDisplayText(e.RowHandle, GridViewGameCheats.Columns[1]), GridViewGameCheats.GetRowCellDisplayText(e.RowHandle, GridViewGameCheats.Columns[2]));
 
             ShowGameCheats(selectedGameCheats);
         }
@@ -6988,7 +7059,7 @@ namespace ArisenMods.Forms.Windows
         /// <param name="modId"> Specifies the <see cref="ModsData.modItemData.Id" /> </param>
         private void ShowGameModDetails(int modId)
         {
-            ModItemData modItemData = Database.GameModsPS3.GetModById(Platform.PS3, modId);
+            ModItemData modItemData = Database.GameModsPs3.GetModById(Platform.PS3, modId);
 
             switch (modItemData)
             {
@@ -7005,7 +7076,7 @@ namespace ArisenMods.Forms.Windows
         /// <param name="modId"> Specifies the <see cref="ModsData.modItemData.Id" /> </param>
         private void ShowHomebrewDetails(int modId)
         {
-            ModItemData modItemData = Database.HomebrewPS3.GetModById(Platform.PS3, modId);
+            ModItemData modItemData = Database.HomebrewPs3.GetModById(Platform.PS3, modId);
 
             switch (modItemData)
             {
@@ -7022,7 +7093,7 @@ namespace ArisenMods.Forms.Windows
         /// <param name="modId"> Specifies the <see cref="ModsData.modItemData.Id" /> </param>
         private void ShowResourceDetails(int modId)
         {
-            ModItemData modItemData = Database.ResourcesPS3.GetModById(Platform.PS3, modId);
+            ModItemData modItemData = Database.ResourcesPs3.GetModById(Platform.PS3, modId);
 
             switch (modItemData)
             {
@@ -7057,7 +7128,7 @@ namespace ArisenMods.Forms.Windows
         /// <param name="modId"> Specifies the Id of <see cref="ModItemData" /> </param>
         private void ShowPluginDetails(int modId)
         {
-            ModItemData modItemData = Database.PluginsXBOX.GetModById(Platform.XBOX360, modId);
+            ModItemData modItemData = Database.PluginsXbox.GetModById(Platform.XBOX360, modId);
 
             switch (modItemData)
             {
@@ -7237,96 +7308,90 @@ namespace ArisenMods.Forms.Windows
             NavigationItemPlugins.Visible = Platform == Platform.XBOX360;
 #endif
 
-            TileItemScanForXboxConsoles.Visible = Platform == Platform.XBOX360;
+            ButtonScanXboxConsoles.Visibility =
+                Platform == Platform.XBOX360
+                    ? BarItemVisibility.Always
+                    : BarItemVisibility.Never;
 
             // PS3 Features
 
-            MenuItemPS3BackupFileManager.Visibility =
+            ButtonToolsPsGameUpdates.Visibility =
                 Platform == Platform.PS3
                     ? BarItemVisibility.Always
                     : BarItemVisibility.Never;
-            MenuItemPS3BackupFileManager.Enabled = IsConsoleConnected && Platform == Platform.PS3;
+            ButtonToolsPsGameUpdates.Enabled = IsConsoleConnected && Platform == Platform.PS3;
 
-            MenuItemPS3GameUpdateFinder.Visibility =
+            ButtonToolsPsBackupFilesManager.Visibility =
                 Platform == Platform.PS3
                     ? BarItemVisibility.Always
                     : BarItemVisibility.Never;
-            MenuItemPS3GameUpdateFinder.Enabled = IsConsoleConnected && Platform == Platform.PS3;
+            ButtonToolsPsBackupFilesManager.Enabled = IsConsoleConnected && Platform == Platform.PS3;
 
-            MenuItemPS3ConsoleManager.Visibility =
+            ButtonToolsPsPackageManager.Visibility =
                 Platform == Platform.PS3
                     ? BarItemVisibility.Always
                     : BarItemVisibility.Never;
-            MenuItemPS3ConsoleManager.Enabled = IsConsoleConnected && Platform == Platform.PS3;
+            ButtonToolsPsPackageManager.Enabled = IsConsoleConnected && Platform == Platform.PS3;
 
-            MenuItemPS3PackageFileManager.Visibility =
+            ButtonToolsPsConsoleManager.Visibility =
                 Platform == Platform.PS3
                     ? BarItemVisibility.Always
                     : BarItemVisibility.Never;
-            MenuItemPS3PackageFileManager.Enabled = IsConsoleConnected && Platform == Platform.PS3;
+            ButtonToolsPsConsoleManager.Enabled = IsConsoleConnected && Platform == Platform.PS3;
 
-            MenuItemPS3BootPluginsEditor.Visibility =
+            ButtonToolsPsGameRegions.Visibility =
                 Platform == Platform.PS3
                     ? BarItemVisibility.Always
                     : BarItemVisibility.Never;
-            MenuItemPS3BootPluginsEditor.Enabled = IsConsoleConnected && Platform == Platform.PS3;
+            ButtonToolsPsGameRegions.Enabled = IsConsoleConnected && Platform == Platform.PS3;
 
-            MenuItemPS3WebManControls.Visibility =
+            ButtonToolsPsBootPluginsEditor.Visibility =
                 Platform == Platform.PS3
                     ? BarItemVisibility.Always
                     : BarItemVisibility.Never;
-            MenuItemPS3WebManControls.Enabled = IsConsoleConnected && IsWebManInstalled && Platform == Platform.PS3;
+            ButtonToolsPsBootPluginsEditor.Enabled = IsConsoleConnected && IsWebManInstalled && Platform == Platform.PS3;
 
-            TileItemToolsBackupFileManager.Visible = Platform == Platform.PS3;
-            TileItemToolsGameUpdateFinder.Visible = Platform == Platform.PS3;
-            TileItemToolsPackageManager.Visible = Platform == Platform.PS3;
-            TileItemToolsConsoleManager.Visible = Platform == Platform.PS3;
-            TileItemToolsDefaultGameRegions.Visible = Platform == Platform.PS3;
-            TileItemToolsBootPluginsEditor.Visible = Platform == Platform.PS3;
-
+            RibbonGroupWebManCommands.Visible = Platform == Platform.PS3;
+            RibbonGroupWebManCommands.Enabled = IsConsoleConnected && Platform == Platform.PS3;
 
             // Xbox Features
 
-            MenuItemXboxPluginsEditor.Visibility =
+            ButtonToolsXboxGameSaveResigner.Visibility =
                 Platform == Platform.XBOX360
                     ? BarItemVisibility.Always
                     : BarItemVisibility.Never;
-            MenuItemXboxPluginsEditor.Enabled = IsConsoleConnected && Platform == Platform.XBOX360;
+            ButtonToolsXboxGameSaveResigner.Enabled = IsConsoleConnected && Platform == Platform.XBOX360;
 
-            MenuItemXboxGameLauncher.Visibility =
+            ButtonToolsXboxGamesLauncher.Visibility =
                 Platform == Platform.XBOX360
                     ? BarItemVisibility.Always
                     : BarItemVisibility.Never;
-            MenuItemXboxGameLauncher.Enabled = IsConsoleConnected && Platform == Platform.XBOX360;
+            ButtonToolsXboxGamesLauncher.Enabled = IsConsoleConnected && Platform == Platform.XBOX360;
 
-            MenuItemXboxModuleLoader.Visibility =
+            ButtonToolsXboxModuleLoader.Visibility =
                 Platform == Platform.XBOX360
                     ? BarItemVisibility.Always
                     : BarItemVisibility.Never;
-            MenuItemXboxModuleLoader.Enabled = IsConsoleConnected && Platform == Platform.XBOX360;
+            ButtonToolsXboxModuleLoader.Enabled = IsConsoleConnected && Platform == Platform.XBOX360;
 
-            MenuItemXboxXuidGameSpoofer.Visibility =
+            ButtonToolsXboxXuidSpoofer.Visibility =
                 Platform == Platform.XBOX360
                     ? BarItemVisibility.Always
                     : BarItemVisibility.Never;
-            MenuItemXboxXuidGameSpoofer.Enabled = IsConsoleConnected && Platform == Platform.XBOX360;
+            ButtonToolsXboxXuidSpoofer.Enabled = IsConsoleConnected && Platform == Platform.XBOX360;
 
-            MenuItemXboxGameSaveResigner.Visibility =
+            ButtonToolsXboxDashlaunchEditor.Visibility =
                 Platform == Platform.XBOX360
                     ? BarItemVisibility.Always
                     : BarItemVisibility.Never;
+            ButtonToolsXboxDashlaunchEditor.Enabled = IsConsoleConnected && Platform == Platform.XBOX360;
 
-            MenuItemXboxXBDMControls.Visibility =
-                Platform == Platform.XBOX360
-                    ? BarItemVisibility.Always
-                    : BarItemVisibility.Never;
-            MenuItemXboxXBDMControls.Enabled = IsConsoleConnected && Platform == Platform.XBOX360;
+            RibbonGroupXbdmCommands.Visible = Platform == Platform.XBOX360;
+            RibbonGroupXbdmCommands.Enabled = IsConsoleConnected && Platform == Platform.XBOX360;
 
-            TileItemToolsGameSaveResigner.Visible = Platform == Platform.XBOX360;
-            TileItemToolsGamesLauncher.Visible = Platform == Platform.XBOX360;
-            TileItemToolsModulesLoader.Visible = Platform == Platform.XBOX360;
-            TileItemToolsXuidGameSpoofer.Visible = Platform == Platform.XBOX360;
-            TileItemToolsLaunchDashlaunchEditor.Visible = Platform == Platform.XBOX360;
+            // Reload Pages
+            SearchGameSaves();
+            SearchGameCheats();
         }
 
         /// <summary>
@@ -7335,7 +7400,7 @@ namespace ArisenMods.Forms.Windows
         /// <param name="consoleProfile"> </param>
         private void SetStatusConsole(ConsoleProfile consoleProfile)
         {
-            StatusLabelConsoleProfile.Caption = consoleProfile == null ? ResourceLanguage.GetString("IDLE") : consoleProfile.ToString();
+            ribbonControl1.ApplicationButtonText = consoleProfile.Name;
             ConsoleProfile = consoleProfile;
         }
 
@@ -7350,12 +7415,12 @@ namespace ArisenMods.Forms.Windows
             if (IsConsoleConnected)
             {
                 StatusLabelHeaderIsConnected.Caption = ResourceLanguage.GetString("CONNECTED");
-                StatusLabelHeaderIsConnected.ItemAppearance.Normal.ForeColor = Color.FromArgb(0, 255, 0);
+                //StatusLabelHeaderIsConnected.ItemAppearance.Normal.ForeColor = Color.FromArgb(0, 255, 0);
             }
             else
             {
                 StatusLabelHeaderIsConnected.Caption = ResourceLanguage.GetString("NOT_CONNECTED");
-                StatusLabelHeaderIsConnected.ItemAppearance.Normal.ForeColor = Color.FromArgb(255, 0, 0);
+                //StatusLabelHeaderIsConnected.ItemAppearance.Normal.ForeColor = Color.FromArgb(255, 0, 0);
             }
         }
 
@@ -7438,7 +7503,7 @@ namespace ArisenMods.Forms.Windows
             catch (Exception ex)
             {
                 SetStatus($"Unable to load application settings data. {ResourceLanguage.GetString("ERROR")}: {ex.Message}", ex);
-                XtraMessageBox.Show(this, $"There is a problem loading the application settings data.\n\n{ResourceLanguage.GetString("ERROR")}: " + ex.Message, ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(this, string.Format("There is a problem loading the application settings data.\n\n{0}: {1}", ResourceLanguage.GetString("ERROR"), ex.Message), ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -7471,7 +7536,7 @@ namespace ArisenMods.Forms.Windows
             catch (Exception ex)
             {
                 Program.Log.Info(ex, $"Unable to save application data. {ResourceLanguage.GetString("ERROR")}: {ex.Message}");
-                XtraMessageBox.Show(this, $"There is a problem saving the application settings data.\n\n{ResourceLanguage.GetString("ERROR")}: " + ex.Message, ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(this, string.Format("There is a problem saving the application settings data.\n\n{0}: {1}", ResourceLanguage.GetString("ERROR"), ex.Message), ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -7492,6 +7557,7 @@ namespace ArisenMods.Forms.Windows
         protected SkinElement GetSeparatorSkinElement(UserLookAndFeel lookAndFeel)
         {
             SkinElement elem = AccordionControlSkins.GetSkin(lookAndFeel.ActiveLookAndFeel)[AccordionControlSkins.SkinSeparator];
+
             if (elem != null)
             {
                 return elem;
@@ -7622,6 +7688,16 @@ namespace ArisenMods.Forms.Windows
 
                 cellViewInfo.CellValueRect.X = indent;
                 cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
+            }
+        }
+
+        private void RibbonControl1_MouseDown(object sender, MouseEventArgs e)
+        {
+            RibbonHitInfo info = (sender as RibbonControl).CalcHitInfo(e.Location);
+
+            if (info.HitTest == RibbonHitTest.ApplicationButton)
+            {
+                DXMouseEventArgs.GetMouseArgs(e).Handled = true;
             }
         }
     }
