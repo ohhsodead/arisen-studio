@@ -1,6 +1,31 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## Beta v2.3.0
+- Renamed project to Arisen Mods
+- Updated DevExpress to 22.1
+- Updated AutoUpdater.NET package to 1.7.3
+- Updated FluentFTP package to 37.0.4
+- Updated HtmlAgilityPack package to 1.11.43
+- Updated NLog package to 5.0.1
+- Updated WebView package to 1.0.1245.22
+- Added Tomlyn package for Xbox game patches
+- Added ribbon strip to replace menu bar
+- Added Our Favorite Mods section to Dashboard
+- Added Recently Updated section to Dashboard
+- Added default option for console profiles
+- Added option to open Request Mods form in browser
+- Added support for Spanish and Turkish translations
+- Added Console Manager for Xbox 360
+- Fixed issue with installing game mods
+- Fixed issue with wrong mod dialogs being shown
+- Fixed Module Loader not able to fetch modules
+- Fixed Dashlaunch Editor saving the launch.ini file
+- Fixed problems with using higher scaling
+- Replaced XDRPC with JRPC2
+- Improved layout of the details dialog
+- Lots of improvements to layout/design
+
 ## Beta v2.2.1
 - Fixed "failed to get epsv port" error message
 - Other minor improvements
