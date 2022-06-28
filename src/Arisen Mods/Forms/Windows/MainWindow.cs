@@ -1453,10 +1453,8 @@ namespace ArisenMods.Forms.Windows
 
             GitHubReleaseData gitHubData = UpdateExtensions.AllReleases[0];
 
-            string releaseBody = gitHubData.Body.Substring(0, gitHubData.Body.Trim().LastIndexOf(Environment.NewLine, StringComparison.Ordinal));
-
             LabelChangeLogVersion.Text = $"{gitHubData.Name} ({gitHubData.PublishedAt.DateTime.ToOrdinalWords()})";
-            LabelChangeLog.Text = releaseBody.Replace("- ", "• ");
+            LabelChangeLog.Text = gitHubData.Body.Replace("- ", "• ");
         }
 
         private void PanelAnnouncementsItems_ControlAdded(object sender, ControlEventArgs e)

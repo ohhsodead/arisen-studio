@@ -426,10 +426,9 @@ namespace ArisenMods.Extensions
         {
             try
             {
-                string releaseBody = gitHubData.Body;
-                string releaseBodyWithoutLastLine = releaseBody.Substring(0, releaseBody.Trim().LastIndexOf(Environment.NewLine, StringComparison.Ordinal));
+                string body = gitHubData.Body;
 
-                ShowDataViewDialog(owner, $"{gitHubData.Name} - What's New", $"Change Log ({gitHubData.PublishedAt.DateTime.ToOrdinalWords()})", releaseBodyWithoutLastLine.Replace("- ", "• "));
+                ShowDataViewDialog(owner, $"{gitHubData.Name} - What's New", $"Change Log ({gitHubData.PublishedAt.DateTime.ToOrdinalWords()})", body.Replace("- ", "• "));
             }
             catch (Exception ex)
             {
