@@ -17,11 +17,11 @@ The elegant, powerful, and open-source mod manager. Arisen Mods allows you to ea
 
 **the only one of its kind...**
 
-![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/master/.screenshots/DashboardPage.png?raw=true)
+![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/main/.screenshots/DashboardPage.png?raw=true)
 
-![Mods Page](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/master/.screenshots/GameModsPage.png?raw=true)
+![Mods Page](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/main/.screenshots/GameModsPage.png?raw=true)
 
-![Mod Details](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/master/.screenshots/ModDetails.png?raw=true)
+![Mod Details](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/main/.screenshots/ModDetails.png?raw=true)
 
 **Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/FTCS3Xu)!
 
