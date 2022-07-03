@@ -4,7 +4,7 @@
 <p align="center">  
   <a href="https://github.com/ohhsodead/Arisen-Mods/releases/"><img src="https://img.shields.io/github/release/ohhsodead/Arisen-Mods.svg" /></a>
   <a href="https://github.com/ohhsodead/Arisen-Mods/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/Arisen-Mods/total.svg" /></a>
-  <a href="https://crowdin.com/project/arisenmods"><img src="https://badges.crowdin.net/arisenmods/localized.svg" /></a>
+  <a href="https://crowdin.com/project/arisenstudio"><img src="https://badges.crowdin.net/arisenstudio/localized.svg" /></a>
   <a href="https://gitHub.com/ohhsodead/Arisen-Mods/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/Arisen-Mods.svg" /></a>
   <a href="https://github.com/ohhsodead/Arisen-Mods/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/Arisen-Mods.svg" /></a>
   </br>
@@ -86,7 +86,7 @@ If you like Arisen Studio, then feel free to contribute with a *small donation*,
 ### Translations
 For the localization process we use the collaborative platform from [Crowdin](https://crowdin.com/), thanks to their generosity for providing a professional service to Open Source projects free of charge. Please read the [introduction for new translators](https://support.crowdin.com/crowdin-intro/) and [guide for using the online editor](https://support.crowdin.com/online-editor/) to understand how it works.
 
-If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to our [Crowdin project](https://crowdin.com/project/arisenmods) to get started.
+If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to our [Crowdin project](https://crowdin.com/project/arisenstudio) to get started.
 
 ## Requesting Mods
 
