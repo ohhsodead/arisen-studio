@@ -55,6 +55,7 @@ Please give this project a ⭐ if you find it useful.
 * Launch games using the`XEX` file
 * Resign game saves to profiles
 * Load/unload modules without rebooting
+* Take screenshots of your screen
 * Spoof XUID for all CoDs
 * Console manager (LEDs, fan speed, etc.)
 * Edit and backup/restore `launch.ini` file
