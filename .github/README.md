@@ -4,7 +4,7 @@
 <p align="center">  
   <a href="https://github.com/ohhsodead/Arisen-Mods/releases/"><img src="https://img.shields.io/github/release/ohhsodead/Arisen-Mods.svg" /></a>
   <a href="https://github.com/ohhsodead/Arisen-Mods/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/Arisen-Mods/total.svg" /></a>
-  <a href="https://crowdin.com/project/arisenstudio"><img src="https://badges.crowdin.net/arisenstudio/localized.svg" /></a>
+  <a href="https://crowdin.com/project/arisenstudio"><img src="https://badges.crowdin.net/arisenstudio/localized.svg"></a>
   <a href="https://gitHub.com/ohhsodead/Arisen-Mods/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/Arisen-Mods.svg" /></a>
   <a href="https://github.com/ohhsodead/Arisen-Mods/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/Arisen-Mods.svg" /></a>
   </br>
