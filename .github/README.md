@@ -1,4 +1,4 @@
-<h1 align="center">Arisen Mods</h1>
+<h1 align="center">Arisen Studio</h1>
 <p align="center">Browse, Download and Install Mods for PlayStation 3 & Xbox 360</p>
 
 <p align="center">  
@@ -9,11 +9,11 @@
   <a href="https://github.com/ohhsodead/Arisen-Mods/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/Arisen-Mods.svg" /></a>
   </br>
   <a href="https://sourceforge.net/projects/arisenmods/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
-  <a href="https://twitter.com/ArisenMods"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
+  <a href="https://twitter.com/arisenstudio"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
   <a href="https://discord.gg/h22szNhF7V"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
 </p>
 
-The elegant, powerful, and open-source mod manager. Arisen Mods allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by myself, a few friends, and awesome contributors. Arisen Mods can also be used as an FTP client to automatically install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.
+The elegant, powerful, and open-source mod manager. Arisen Studio allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by myself, a few friends, and awesome contributors. Arisen Studio can also be used as an FTP client to automatically install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.
 
 **the only one of its kind...**
 
@@ -74,13 +74,13 @@ Please give this project a ⭐ if you find it useful.
 Download and run the latest version of the Windows installer, "ArisenMods.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Arisen-Mods/releases/latest) page.
 
 ## Bug Reports
-Arisen Mods isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/Arisen-Mods/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
+Arisen Studio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/Arisen-Mods/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
 
 ## Contributing
 
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
 
-If you like Arisen Mods, then feel free to contribute with a *small donation*, I'd really appreciate it!
+If you like Arisen Studio, then feel free to contribute with a *small donation*, I'd really appreciate it!
 [PayPal](https://www.paypal.com/donate/?hosted_button_id=DFEYRZVJWAC4E) (Funds are mainly to cover the high server costs)
 
 ### Translations
