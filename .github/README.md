@@ -98,18 +98,18 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * Appropriate Creators of all Mods
 * [AutoUpdater.NET](https://github.com/ravibpatel/AutoUpdater.NET)
 * [CodeHollow.FeedReader](https://github.com/arminreiter/FeedReader/)
-* [Discord Rich Presence](https://github.com/Lachee/discord-rpc-csharp)
+* [Discord RPC](https://github.com/Lachee/discord-rpc-csharp)
 * [DevExpress](https://devexpress.com/)
 * [Flaticon](https://www.flaticon.com/free-icons/official)
 * [FluentFTP](https://github.com/robinrodricks/FluentFTP)
 * [HtmlAgilityPack](https://html-agility-pack.net/)
 * [Humanizer](https://github.com/Humanizr/Humanizer)
 * [Icons8](https://icons8.com/)
+* [Imgur.API](https://github.com/DamienDennehy/Imgur.API)
 * [INI File Parser](https://github.com/rickyah/ini-parser)
 * [Newtonsoft.Json](https://newtonsoft.com/json)
 * [NLog](https://nlog-project.org/)
 * [PS3Lib](https://github.com/iMCSx/PS3Lib)
-* [WebMAN API](https://github.com/FxckingCoder/WebmanAPI)
 * [XDevkit](https://microsoft.com/)
 
 [<a href="https://crowdin.com/?utm_source=badge&utm_medium=referral&utm_campaign=badge-add-on" rel="nofollow"><img style="width:140;height:40px" src="https://badges.crowdin.net/badge/light/crowdin-on-dark.png" srcset="https://badges.crowdin.net/badge/light/crowdin-on-dark.png 1x,https://badges.crowdin.net/badge/light/crowdin-on-dark@2x.png 2x" alt="Crowdin | Agile localization for tech companies" /></a>](https://crowdin.com)
@@ -123,6 +123,11 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [oSerenity](https://github.com/oSerenity)
 * [TheHiddenHour](https://github.com/TheHiddenHour) 
 * [tsuiarts](mailto:nurishafa26@gmail.com)
+
+## Translators
+* [goldug](http://djopposite.se/)
+* [Serdar Sağlam](mailto:serdarsaglam@msn.com)
+* [Kloido](mailto:jaortiz2026@gmail.com)
 
 ## Supporters
 [![Stargazers repo roster for @ohhsodead/Arisen-Mods](https://reporoster.com/stars/notext/ohhsodead/Arisen-Mods)](https://github.com/ohhsodead/Arisen-Mods/stargazers)
