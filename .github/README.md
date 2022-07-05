@@ -52,7 +52,7 @@ Please give this project a ⭐ if you find it useful.
 * webMAN commands (Reboot, Show Version, etc.)
 
 ### Xbox 360
-* Launch games using the`XEX` file
+* Launch games using the `XEX` file
 * Resign game saves to profiles
 * Load/unload modules without rebooting
 * Take screenshots of your screen
