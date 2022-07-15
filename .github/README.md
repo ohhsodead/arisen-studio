@@ -130,7 +130,7 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [Kloido](mailto:jaortiz2026@gmail.com)
 
 ## Supporters
-[![Stargazers repo roster for @ohhsodead/Arisen-Mods](https://reporoster.com/stars/notext/ohhsodead/Arisen-Mods)](https://github.com/ohhsodead/Arisen-Mods/stargazers)
+[![Stargazers repo roster for @ohhsodead/Arisen-Mods](https://reporoster.com/stars/ohhsodead/Arisen-Mods)](https://github.com/ohhsodead/Arisen-Mods/stargazers)
 
 ## Disclaimer
 
