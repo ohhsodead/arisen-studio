@@ -98,8 +98,8 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * Appropriate Creators of all Mods
 * [AutoUpdater.NET](https://github.com/ravibpatel/AutoUpdater.NET)
 * [CodeHollow.FeedReader](https://github.com/arminreiter/FeedReader/)
-* [Discord RPC](https://github.com/Lachee/discord-rpc-csharp)
 * [DevExpress](https://devexpress.com/)
+* [Discord RPC](https://github.com/Lachee/discord-rpc-csharp)
 * [Flaticon](https://www.flaticon.com/free-icons/official)
 * [FluentFTP](https://github.com/robinrodricks/FluentFTP)
 * [HtmlAgilityPack](https://html-agility-pack.net/)
