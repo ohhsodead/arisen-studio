@@ -471,7 +471,9 @@ Do you want to reinstall the files?</value>
     <value>You already have a module with this name.</value>
   </data>
   <data name="FILE_REINSTALL" xml:space="preserve">
-    <value>{0} is already installed.\n\nDo you want to reinstall the file?</value>
+    <value>{0} is already installed.
+
+Do you want to reinstall the file?</value>
   </data>
   <data name="FILE_RENAME" xml:space="preserve">
     <value>Rename File</value>
@@ -637,7 +639,7 @@ Error: {0}</value>
     <value>Activating a C00/Demo package is very easy and doesn't require a rap file. It can be done using ReActPSN or PSNPatch.
 
 ReActPSN : Run the homebrew while pressing and holding circle on your controller.
-\nPSNPatch : Run PSNPatch and press R1. It should displays a list of the games that have been unlocked.</value>
+PSNPatch : Run PSNPatch and press R1. It should displays a list of the games that have been unlocked.</value>
   </data>
   <data name="HOW_TO_ACTIVATE_DEMO_QUESTION" xml:space="preserve">
     <value>How do I activate a C00/Demo that has a free license?</value>
@@ -1416,7 +1418,9 @@ Install the correct mods for this game or choose a different game region.</value
     <value>Redirecting...</value>
   </data>
   <data name="REDIRECT_TO_GITHUB_ISSUES" xml:space="preserve">
-    <value>You will now be redirected to our GitHub Issues page and all details will be automatically filled for you. Please provide information about the issue to help us fix your problem.\nClick the 'Submit' button to open a new issue which can help us fix any problems.</value>
+    <value>You will now be redirected to our GitHub Issues page and all details will be automatically filled for you. Please provide information about the issue to help us fix your problem.
+
+Click the 'Submit' button to open a new issue which can help us fix any problems.</value>
   </data>
   <data name="REFER_TO_BASE_DIRECTORY" xml:space="preserve">
     <value>Use %BASE_DIR% to refer to the Base Directory.</value>
