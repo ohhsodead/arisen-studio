@@ -268,6 +268,9 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
   <data name="CREATE_BACKUP_FILE" xml:space="preserve">
     <value>You must first create a backup file to restore.</value>
   </data>
+  <data name="CURRENT_GAME" xml:space="preserve">
+    <value>Current Game:</value>
+  </data>
   <data name="CUSTOMIZATION" xml:space="preserve">
     <value>Customization</value>
   </data>
@@ -358,7 +361,7 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
   <data name="ERROR_OCCURRED" xml:space="preserve">
     <value>An error occurred: {0}
 
-Please try agian later. If the problem persists &lt;a href="https://github.com/ohhsodead/ArisenMods/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;open a new issue&lt;/a&gt; on our GitHub tracker.</value>
+Please try again later. If the problem persists &lt;a href="https://github.com/ohhsodead/ArisenMods/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;open a new issue&lt;/a&gt; on our GitHub tracker.</value>
   </data>
   <data name="EXTRACT_IMAGE" xml:space="preserve">
     <value>Extract Image</value>
@@ -989,6 +992,9 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   <data name="LABEL_NEXT" xml:space="preserve">
     <value>Next</value>
   </data>
+  <data name="LABEL_NONE" xml:space="preserve">
+    <value>None</value>
+  </data>
   <data name="LABEL_NOT_INSTALLED" xml:space="preserve">
     <value>Not Installed</value>
   </data>
@@ -1125,9 +1131,6 @@ You can add them using the File Manager.</value>
   </data>
   <data name="LABEL_TOTAL_FILES" xml:space="preserve">
     <value>Total Files</value>
-  </data>
-  <data name="LABEL_TOTAL_RESULTS" xml:space="preserve">
-    <value>Showing {0} of {1} total results</value>
   </data>
   <data name="LABEL_TRANSLATORS" xml:space="preserve">
     <value>Translators</value>
@@ -1490,6 +1493,9 @@ If you don't want to uninstall the files, click 'No' and all of these files will
   </data>
   <data name="STARTING_INSTALL" xml:space="preserve">
     <value>Starting install...</value>
+  </data>
+  <data name="STATUS" xml:space="preserve">
+    <value>Status:</value>
   </data>
   <data name="SUCCESS" xml:space="preserve">
     <value>Success</value>
