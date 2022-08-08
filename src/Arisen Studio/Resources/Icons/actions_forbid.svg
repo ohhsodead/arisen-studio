@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<svg x="0px" y="0px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" id="Layer_1" style="enable-background:new 0 0 32 32">
+  <style type="text/css">
+	.Blue{fill:#1177D7;}
+	.Yellow{fill:#FFB115;}
+	.Black{fill:#727272;}
+	.Green{fill:#039C23;}
+	.Red{fill:#D11C1C;}
+	.st0{opacity:0.75;}
+	.st1{opacity:0.5;}
+</style>
+  <g id="Forbid">
+    <path d="M16,4C9.4,4,4,9.4,4,16s5.4,12,12,12s12-5.4,12-12S22.6,4,16,4z M16,8c1.5,0,2.9,0.4,4.1,1.1l-11,11   C8.4,18.9,8,17.5,8,16C8,11.6,11.6,8,16,8z M16,24c-1.5,0-2.8-0.4-4-1.1L22.9,12c0.7,1.2,1.1,2.5,1.1,4C24,20.4,20.4,24,16,24z" class="Red" />
+  </g>
+</svg>

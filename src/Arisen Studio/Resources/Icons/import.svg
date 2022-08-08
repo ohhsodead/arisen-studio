@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<svg x="0px" y="0px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" id="Layer_1" style="enable-background:new 0 0 32 32">
+  <style type="text/css">
+	.Red{fill:#D11C1C;}
+	.Black{fill:#727272;}
+	.Blue{fill:#1177D7;}
+	.Green{fill:#039C23;}
+	.Yellow{fill:#FFB115;}
+	.White{fill:#FFFFFF;}
+	.st0{opacity:0.5;}
+	.st1{opacity:0.75;}
+	.st2{opacity:0.25;}
+</style>
+  <g id="Import">
+    <path d="M10,12H6V6h4V12z M22,17v1v9c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1V7c0-0.6,0.4-1,1-1h3v8h14L22,17z M18,18H4   v6h14V18z" class="Black" />
+    <polygon points="30,6 22,6 22,2 14,8 22,14 22,10 30,10  " class="Green" />
+  </g>
+</svg>
