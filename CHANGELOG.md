@@ -3,6 +3,41 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Beta v3.0.0
+- Updated AutoUpdater.NET package to 1.7.4
+- Updated FluentFTP package to 39.1.0
+- Updated WebView2 package to 1.0.1293.44
+- Application data is now saved to "\AppData\Roaming\"
+- Added prompt when creating a profile for the first time
+- Added option to create a "guest" profile
+- Added Imgur.API package
+- Added project social icons to about page
+- Added application description to about page
+- Added Current Game to status bar
+- Added Take Screenshot dialog for Xbox 360
+- Added option to give screenshot file name
+- Added preview of the screenshot image
+- Added option to upload screenshot to Imgur.com
+- Added XboxHDKey for Xbox 360
+- Moved help menu to the ribbon menu
+- Fixed tools not changing when switching platforms
+- Fixed sections not changing when switching platforms
+- Fixed download files to correct paths
+- Fixed details dialog not showing full values
+- Fixed categories being shown when don't have any results
+- Fixed Resources being shown in Game Saves tab
+- Fixed Resources details dialog cutting off values
+- Fixed Resources not filtering by status
+- Fixed Packages showing results without URL
+- Fixed sorting Packages by file size
+- Fixed filtering by Modified Date for Packages
+- Fixed clearing the Modified Date filter in Packages
+- Fixed issues with creating backups when installing files
+- Fixed creating and saving backup files data
+- Fixed line breaks formatting
+- Fixed clearing discord rich presence when disabling
+- Improved startup screen to show application faster
+
 ## Beta v2.3.0
 - Renamed project to Arisen Mods
 - Updated DevExpress to 22.1
