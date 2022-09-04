@@ -3,7 +3,7 @@ name: Feature Request
 description: Suggest an idea to help us make Arisen Studio better
 title: "[Feature]: "
 labels:
-  - "feature_request"
+  - "feature request"
 
 body:
   - type: markdown
