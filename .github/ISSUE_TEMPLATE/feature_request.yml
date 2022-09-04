@@ -3,7 +3,7 @@ name: Feature Request
 description: Suggest an idea to help us improve W&B
 title: "[Feature]: "
 labels:
-  - "feature request"
+  - "feature_request"
 
 body:
   - type: markdown
