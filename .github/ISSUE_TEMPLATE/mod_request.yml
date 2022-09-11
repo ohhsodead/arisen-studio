@@ -1,0 +1,85 @@
+---
+name: Mod Request
+description: Request a mod to be added to the database
+title: "[Mod Request]: "
+labels:
+  - "mod request"
+
+body:
+  - type: input
+    attributes:
+      label: Mod Name
+      description: |
+        Please provide the name as accurate as possible. If it's mod menu then use the menu's name/title, if it's a game-save then best describe it in a few words (e.g. 100% Completed Story Mode).
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Description
+      description: |
+        Enter some description, such as useful details, main features, what is it and how it works.
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Game/Category Title
+      description: |
+        Enter the game title (e.g. Battlefield 3) or the category it should be in (e.g. Avatars, Coldboots, Homebrews)
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: What platform?
+      multiple: false
+      options:
+        - PlayStation 3
+        - Xbox 360
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: consoletype
+    attributes:
+      label: Code of Conduct
+      description: |
+        If the platform is PlayStation 3, then you must choose at least one console type that is supported.
+      options:
+        - label: CEX
+        - label: DEX
+        - label: HEN
+          required: false
+
+  - type: input
+    attributes:
+      label: Created By
+      description: |
+        Please provide the name as accurate as possible. If it's mod menu then use the menu's name/title, if it's a game-save then best describe it in a few words (e.g. 100% Completed Story Mode).
+    validations:
+      required: true
+      
+  - type: input
+    attributes:
+      label: Submitted By
+      description: |
+        Enter your name here. It will be displayed that in the mod's details the you have contributed this.
+    validations:
+      required: true
+      
+  - type: input
+    attributes:
+      label: Game Region
+      description: |
+        Enter all of the game regions that it supports (if applicable)
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Additional Context
+      description: |
+        Enter one or more sources from either a forum post, youtube video, or anywhere that contains a download or other details
+    validations:
+      required: true
