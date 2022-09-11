@@ -23,7 +23,7 @@ The elegant, powerful, and open-source mod manager. Arisen Studio allows you to 
 
 ![Mod Details](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/main/.screenshots/ModDetails.png?raw=true)
 
-**Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/FTCS3Xu)!
+**Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/h22szNhF7V)!
 
 Please give this project a ⭐ if you find it useful.
 
