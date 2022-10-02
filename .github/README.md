@@ -2,11 +2,11 @@
 <p align="center">Browse, Download and Install Mods for PlayStation 3 & Xbox 360</p>
 
 <p align="center">  
-  <a href="https://github.com/ohhsodead/Arisen-Mods/releases/"><img src="https://img.shields.io/github/release/ohhsodead/Arisen-Mods.svg" /></a>
-  <a href="https://github.com/ohhsodead/Arisen-Mods/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/Arisen-Mods/total.svg" /></a>
+  <a href="https://github.com/ohhsodead/arisen-studio/releases/"><img src="https://img.shields.io/github/release/ohhsodead/arisen-studio.svg" /></a>
+  <a href="https://github.com/ohhsodead/arisen-studio/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/arisen-studio/total.svg" /></a>
   <a href="https://crowdin.com/project/arisenstudio"><img src="https://badges.crowdin.net/arisenstudio/localized.svg"></a>
-  <a href="https://gitHub.com/ohhsodead/Arisen-Mods/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/Arisen-Mods.svg" /></a>
-  <a href="https://github.com/ohhsodead/Arisen-Mods/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/Arisen-Mods.svg" /></a>
+  <a href="https://gitHub.com/ohhsodead/arisen-studio/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/arisen-studio.svg" /></a>
+  <a href="https://github.com/ohhsodead/arisen-studio/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/arisen-studio.svg" /></a>
   </br>
   <a href="https://sourceforge.net/projects/arisenstudio/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
   <a href="https://twitter.com/arisenstudio"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
@@ -17,13 +17,13 @@ The elegant, powerful, and open-source mod manager. Arisen Studio allows you to 
 
 **the only one of its kind...**
 
-![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/main/.screenshots/DashboardPage.png?raw=true)
+![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/Dashboard.png?raw=true)
 
-![Mods Page](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/main/.screenshots/GameModsPage.png?raw=true)
+![Mods Page](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/GameMods.png?raw=true)
 
-![Mod Details](https://raw.githubusercontent.com/ohhsodead/Arisen-Mods/main/.screenshots/ModDetails.png?raw=true)
+![Mod Details](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/ModDetails.png?raw=true)
 
-**Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/FTCS3Xu)!
+**Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/h22szNhF7V)!
 
 Please give this project a ⭐ if you find it useful.
 
