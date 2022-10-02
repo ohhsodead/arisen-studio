@@ -17,9 +17,9 @@ The elegant, powerful, and open-source mod manager. Arisen Studio allows you to 
 
 **the only one of its kind...**
 
-![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/Dashboard.png?raw=true)
+![Dashboard](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/Dashboard.png?raw=true)
 
-![Mods Page](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/GameMods.png?raw=true)
+![Game Mods](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/GameMods.png?raw=true)
 
 ![Mod Details](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/ModDetails.png?raw=true)
 
