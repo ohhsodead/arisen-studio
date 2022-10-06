@@ -72,10 +72,10 @@ Please give this project a ⭐ if you find it useful.
 
 ### Windows
 
-Download and run the latest version of the Windows installer, "ArisenStudio.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Arisen-Mods/releases/latest) page.
+Download and run the latest version of the Windows installer, "ArisenStudio.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/arisen-studio/releases/latest) page.
 
 ## Bug Reports
-Arisen Studio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/Arisen-Mods/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
+Arisen Studio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/arisen-studio/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
 
 ## Contributing
 
@@ -130,7 +130,7 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [Kloido](mailto:jaortiz2026@gmail.com)
 
 ## Supporters
-[![Stargazers repo roster for @ohhsodead/Arisen-Mods](https://reporoster.com/stars/ohhsodead/Arisen-Mods)](https://github.com/ohhsodead/Arisen-Mods/stargazers)
+[![Stargazers repo roster for @ohhsodead/arisen-studio](https://reporoster.com/stars/ohhsodead/arisen-studio)](https://github.com/ohhsodead/arisen-studio/stargazers)
 
 ## Disclaimer
 
