@@ -38,8 +38,6 @@ body:
   attributes:
     label: Screenshots
     description: If applicable, add screenshots to help explain your problem.
-    placeholder: |
-      Attach your screenshots here
   validations:
     required: false
     render: markdown
