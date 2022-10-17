@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Beta v3.0.1
+- Updated AutoUpdater.NET package to 1.7.5
+- Updated FluentFTP package to 39.4.0
+- Updated HtmlAgilityPack package to 1.11.45
+- Updated NLog package to 5.0.2
+- Added option to show/hide game playing
+- Fixed showing current game playing
+- Fixed installing files to USB device
+- Fixed installing files when no backup files exist
+
 ## Beta v3.0.0
 - Updated AutoUpdater.NET package to 1.7.4
 - Updated FluentFTP package to 39.1.0
