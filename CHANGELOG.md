@@ -3,6 +3,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Beta v3.0.2
+
+- Updated AutoUpdater.NET package to 1.7.6
+- Updated DiscordRichPresence package to 1.1.3.18
+- Updated FluentFTP package to 44.0.1
+- Updated HtmlAgilityPack package to 1.11.46
+- Updated Newtonsoft.Json package to 13.0.2
+- Updated NLog package to 5.1.1
+- Updated SharpZipLib package to 1.4.1
+- Updated Tomlyn package to 0.16.2
+- Updated WebView2 package to 1.0.1518.46
+- Added Always Show Game Playing to Settings
+- Added delay in searching packages
+- Fixed install buttons enabling for correct category
+- Fixed detecting if webMAN is installed on PS3
+- Fixed returning null if no backup file exists
+- Fixed wrong values under Tools in Settings
+- Fixed package downloads crashing Downloads tab
+- Packages will not show in the Downloads tab
+- Game Cheats tab disabled/hidden until complete
+- Game title returns zero if unable to get title ID
+- Changed Request Mods form to allow uploading files
+
 ## Beta v3.0.1
 - Updated AutoUpdater.NET package to 1.7.5
 - Updated FluentFTP package to 39.4.0
