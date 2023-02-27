@@ -8,6 +8,11 @@
   <a href="https://gitHub.com/ohhsodead/arisen-studio/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/arisen-studio.svg" /></a>
   <a href="https://github.com/ohhsodead/arisen-studio/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/arisen-studio.svg" /></a>
   </br>
+  <a href="https://arisen.studio/"><img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https://arisen.studio/" /></a>
+  <a href="https://arisenstudio.app/"><img src="https://img.shields.io/website?down_message=offline&label=web%20store&up_message=online&url=https://arisenstudio.app" />
+  <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/website?down_message=offline&label=database&up_message=online&url=https://github.com%2Fohhsodead%2Farisen-studio-database" /></a>
+  </a>
+  </br>
   <a href="https://sourceforge.net/projects/arisenstudio/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
   <a href="https://twitter.com/arisenstudio"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
   <a href="https://discord.gg/h22szNhF7V"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
@@ -131,6 +136,9 @@ I know that not all mods aren't on our database, but if you open an issue with t
 
 ## Supporters
 [![Stargazers repo roster for @ohhsodead/arisen-studio](https://reporoster.com/stars/ohhsodead/arisen-studio)](https://github.com/ohhsodead/arisen-studio/stargazers)
+
+## News & Updates
+Here:
 
 ## Disclaimer
 
