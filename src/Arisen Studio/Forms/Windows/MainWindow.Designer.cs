@@ -286,6 +286,8 @@ namespace ArisenStudio.Forms.Windows
             this.PageSettings = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.TabControlSettings = new DevExpress.XtraTab.XtraTabControl();
             this.TabPageInterface = new DevExpress.XtraTab.XtraTabPage();
+            this.LabelSettingsAlwaysShowGamePlaying = new DevExpress.XtraEditors.LabelControl();
+            this.ToggleSettingsAlwaysShowGamePlaying = new DevExpress.XtraEditors.ToggleSwitch();
             this.LabelSettingsHelpTranslate = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.LabelSettingsAutoLoadDirectoryListings = new DevExpress.XtraEditors.LabelControl();
             this.ToggleSettingsAutoLoadDirectoryListings = new DevExpress.XtraEditors.ToggleSwitch();
@@ -501,6 +503,7 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxGameCheatsFilterRegion = new DevExpress.XtraEditors.ComboBoxEdit();
             this.LabelGameCheatsFilterRegion = new DevExpress.XtraEditors.LabelControl();
             this.PageAbout = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ImageSocialWebsite = new System.Windows.Forms.PictureBox();
             this.ImageSocialTwitter = new System.Windows.Forms.PictureBox();
             this.ImageSocialDiscord = new System.Windows.Forms.PictureBox();
             this.ImageSocialGitHub = new System.Windows.Forms.PictureBox();
@@ -691,8 +694,8 @@ namespace ArisenStudio.Forms.Windows
             this.PanelInstalledModsFilters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageInstalledModsFilterTotalFilesType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageInstalledModsFilterTotalFilesTypeBack.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DateTimeInstalledModsFilterInstalledOn.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateTimeInstalledModsFilterInstalledOn.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DateTimeInstalledModsFilterInstalledOn.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageInstalledModsFilterInstalledOnType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageInstalledModsFilterInstalledOnTypeBack.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericBoxInstalledModsFilterTotalFiles.Properties)).BeginInit();
@@ -710,8 +713,8 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.GridViewDownloads)).BeginInit();
             this.PanelFiltersDownloads.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxDownloadsFilterRegion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DateTimeDownloadsFilterDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateTimeDownloadsFilterDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DateTimeDownloadsFilterDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageDownloadsFilterOnType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageDownloadsFilterOnTypeBack.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxDownloadsFilterVersion.Properties)).BeginInit();
@@ -757,6 +760,7 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.TabControlSettings)).BeginInit();
             this.TabControlSettings.SuspendLayout();
             this.TabPageInterface.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAlwaysShowGamePlaying.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAutoLoadDirectoryListings.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsEnableHardwareAcceleration.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsRememberConsolePath.Properties)).BeginInit();
@@ -823,8 +827,8 @@ namespace ArisenStudio.Forms.Windows
             this.PanelPackagesFilters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImagePackagesFilterFileSizeType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagePackagesFilterFileSizeBack.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxPackagesFilterModifiedDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxPackagesFilterModifiedDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxPackagesFilterModifiedDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagePackagesFilterDateType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxPackagesFilterStatus.Properties)).BeginInit();
@@ -872,6 +876,7 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterVersion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterRegion.Properties)).BeginInit();
             this.PageAbout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageSocialWebsite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageSocialTwitter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageSocialDiscord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageSocialGitHub)).BeginInit();
@@ -4533,6 +4538,8 @@ namespace ArisenStudio.Forms.Windows
             this.TabPageInterface.Appearance.PageClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.TabPageInterface.Appearance.PageClient.Options.UseBackColor = true;
             this.TabPageInterface.AutoScroll = true;
+            this.TabPageInterface.Controls.Add(this.LabelSettingsAlwaysShowGamePlaying);
+            this.TabPageInterface.Controls.Add(this.ToggleSettingsAlwaysShowGamePlaying);
             this.TabPageInterface.Controls.Add(this.LabelSettingsHelpTranslate);
             this.TabPageInterface.Controls.Add(this.LabelSettingsAutoLoadDirectoryListings);
             this.TabPageInterface.Controls.Add(this.ToggleSettingsAutoLoadDirectoryListings);
@@ -4562,6 +4569,30 @@ namespace ArisenStudio.Forms.Windows
             this.TabPageInterface.Size = new System.Drawing.Size(1250, 508);
             this.TabPageInterface.Text = "  INTERFACE  ";
             // 
+            // LabelSettingsAlwaysShowGamePlaying
+            // 
+            this.LabelSettingsAlwaysShowGamePlaying.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSettingsAlwaysShowGamePlaying.Appearance.Options.UseFont = true;
+            this.LabelSettingsAlwaysShowGamePlaying.Location = new System.Drawing.Point(96, 332);
+            this.LabelSettingsAlwaysShowGamePlaying.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
+            this.LabelSettingsAlwaysShowGamePlaying.Name = "LabelSettingsAlwaysShowGamePlaying";
+            this.LabelSettingsAlwaysShowGamePlaying.Size = new System.Drawing.Size(184, 15);
+            this.LabelSettingsAlwaysShowGamePlaying.TabIndex = 1221;
+            this.LabelSettingsAlwaysShowGamePlaying.Text = "Always show current game playing";
+            // 
+            // ToggleSettingsAlwaysShowGamePlaying
+            // 
+            this.ToggleSettingsAlwaysShowGamePlaying.Location = new System.Drawing.Point(14, 327);
+            this.ToggleSettingsAlwaysShowGamePlaying.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
+            this.ToggleSettingsAlwaysShowGamePlaying.Name = "ToggleSettingsAlwaysShowGamePlaying";
+            this.ToggleSettingsAlwaysShowGamePlaying.Properties.AutoWidth = true;
+            this.ToggleSettingsAlwaysShowGamePlaying.Properties.OffText = "Off";
+            this.ToggleSettingsAlwaysShowGamePlaying.Properties.OnText = "On";
+            this.ToggleSettingsAlwaysShowGamePlaying.Properties.ShowText = false;
+            this.ToggleSettingsAlwaysShowGamePlaying.Size = new System.Drawing.Size(74, 25);
+            this.ToggleSettingsAlwaysShowGamePlaying.TabIndex = 1220;
+            this.ToggleSettingsAlwaysShowGamePlaying.Toggled += new System.EventHandler(this.ToggleSettingsAlwaysShowGamePlaying_Toggled);
+            // 
             // LabelSettingsHelpTranslate
             // 
             this.LabelSettingsHelpTranslate.Location = new System.Drawing.Point(14, 68);
@@ -4575,7 +4606,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.LabelSettingsAutoLoadDirectoryListings.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsAutoLoadDirectoryListings.Appearance.Options.UseFont = true;
-            this.LabelSettingsAutoLoadDirectoryListings.Location = new System.Drawing.Point(96, 422);
+            this.LabelSettingsAutoLoadDirectoryListings.Location = new System.Drawing.Point(96, 452);
             this.LabelSettingsAutoLoadDirectoryListings.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
             this.LabelSettingsAutoLoadDirectoryListings.Name = "LabelSettingsAutoLoadDirectoryListings";
             this.LabelSettingsAutoLoadDirectoryListings.Size = new System.Drawing.Size(190, 15);
@@ -4584,7 +4615,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ToggleSettingsAutoLoadDirectoryListings
             // 
-            this.ToggleSettingsAutoLoadDirectoryListings.Location = new System.Drawing.Point(14, 417);
+            this.ToggleSettingsAutoLoadDirectoryListings.Location = new System.Drawing.Point(14, 447);
             this.ToggleSettingsAutoLoadDirectoryListings.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
             this.ToggleSettingsAutoLoadDirectoryListings.Name = "ToggleSettingsAutoLoadDirectoryListings";
             this.ToggleSettingsAutoLoadDirectoryListings.Properties.AutoWidth = true;
@@ -4634,7 +4665,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.LabelSettingsRememberConsolePath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsRememberConsolePath.Appearance.Options.UseFont = true;
-            this.LabelSettingsRememberConsolePath.Location = new System.Drawing.Point(96, 482);
+            this.LabelSettingsRememberConsolePath.Location = new System.Drawing.Point(96, 512);
             this.LabelSettingsRememberConsolePath.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
             this.LabelSettingsRememberConsolePath.Name = "LabelSettingsRememberConsolePath";
             this.LabelSettingsRememberConsolePath.Size = new System.Drawing.Size(200, 15);
@@ -4645,7 +4676,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.LabelSettingsRememberLocalPath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsRememberLocalPath.Appearance.Options.UseFont = true;
-            this.LabelSettingsRememberLocalPath.Location = new System.Drawing.Point(96, 452);
+            this.LabelSettingsRememberLocalPath.Location = new System.Drawing.Point(96, 482);
             this.LabelSettingsRememberLocalPath.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
             this.LabelSettingsRememberLocalPath.Name = "LabelSettingsRememberLocalPath";
             this.LabelSettingsRememberLocalPath.Size = new System.Drawing.Size(184, 15);
@@ -4654,7 +4685,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ToggleSettingsRememberConsolePath
             // 
-            this.ToggleSettingsRememberConsolePath.Location = new System.Drawing.Point(14, 477);
+            this.ToggleSettingsRememberConsolePath.Location = new System.Drawing.Point(14, 507);
             this.ToggleSettingsRememberConsolePath.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
             this.ToggleSettingsRememberConsolePath.Name = "ToggleSettingsRememberConsolePath";
             this.ToggleSettingsRememberConsolePath.Properties.AutoWidth = true;
@@ -4667,7 +4698,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ToggleSettingsRememberLocalPath
             // 
-            this.ToggleSettingsRememberLocalPath.Location = new System.Drawing.Point(14, 447);
+            this.ToggleSettingsRememberLocalPath.Location = new System.Drawing.Point(14, 477);
             this.ToggleSettingsRememberLocalPath.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
             this.ToggleSettingsRememberLocalPath.Name = "ToggleSettingsRememberLocalPath";
             this.ToggleSettingsRememberLocalPath.Properties.AutoWidth = true;
@@ -4682,7 +4713,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.LabelSettingsAutoDetectGameTitles.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsAutoDetectGameTitles.Appearance.Options.UseFont = true;
-            this.LabelSettingsAutoDetectGameTitles.Location = new System.Drawing.Point(96, 392);
+            this.LabelSettingsAutoDetectGameTitles.Location = new System.Drawing.Point(96, 422);
             this.LabelSettingsAutoDetectGameTitles.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
             this.LabelSettingsAutoDetectGameTitles.Name = "LabelSettingsAutoDetectGameTitles";
             this.LabelSettingsAutoDetectGameTitles.Size = new System.Drawing.Size(171, 15);
@@ -4693,7 +4724,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.LabelSettingsAutoDetectGameRegions.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsAutoDetectGameRegions.Appearance.Options.UseFont = true;
-            this.LabelSettingsAutoDetectGameRegions.Location = new System.Drawing.Point(96, 362);
+            this.LabelSettingsAutoDetectGameRegions.Location = new System.Drawing.Point(96, 392);
             this.LabelSettingsAutoDetectGameRegions.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
             this.LabelSettingsAutoDetectGameRegions.Name = "LabelSettingsAutoDetectGameRegions";
             this.LabelSettingsAutoDetectGameRegions.Size = new System.Drawing.Size(185, 15);
@@ -4704,7 +4735,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.LabelSettingsShowGamesFromExternalDevices.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsShowGamesFromExternalDevices.Appearance.Options.UseFont = true;
-            this.LabelSettingsShowGamesFromExternalDevices.Location = new System.Drawing.Point(96, 332);
+            this.LabelSettingsShowGamesFromExternalDevices.Location = new System.Drawing.Point(96, 362);
             this.LabelSettingsShowGamesFromExternalDevices.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
             this.LabelSettingsShowGamesFromExternalDevices.Name = "LabelSettingsShowGamesFromExternalDevices";
             this.LabelSettingsShowGamesFromExternalDevices.Size = new System.Drawing.Size(201, 15);
@@ -4713,7 +4744,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ToggleSettingsAutoDetectGameTitles
             // 
-            this.ToggleSettingsAutoDetectGameTitles.Location = new System.Drawing.Point(14, 387);
+            this.ToggleSettingsAutoDetectGameTitles.Location = new System.Drawing.Point(14, 417);
             this.ToggleSettingsAutoDetectGameTitles.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
             this.ToggleSettingsAutoDetectGameTitles.Name = "ToggleSettingsAutoDetectGameTitles";
             this.ToggleSettingsAutoDetectGameTitles.Properties.AutoWidth = true;
@@ -4726,7 +4757,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ToggleSettingsAutoDetectGameRegions
             // 
-            this.ToggleSettingsAutoDetectGameRegions.Location = new System.Drawing.Point(14, 357);
+            this.ToggleSettingsAutoDetectGameRegions.Location = new System.Drawing.Point(14, 387);
             this.ToggleSettingsAutoDetectGameRegions.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
             this.ToggleSettingsAutoDetectGameRegions.Name = "ToggleSettingsAutoDetectGameRegions";
             this.ToggleSettingsAutoDetectGameRegions.Properties.AutoWidth = true;
@@ -4739,7 +4770,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ToggleSettingsShowGamesFromExternalDevices
             // 
-            this.ToggleSettingsShowGamesFromExternalDevices.Location = new System.Drawing.Point(14, 327);
+            this.ToggleSettingsShowGamesFromExternalDevices.Location = new System.Drawing.Point(14, 357);
             this.ToggleSettingsShowGamesFromExternalDevices.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
             this.ToggleSettingsShowGamesFromExternalDevices.Name = "ToggleSettingsShowGamesFromExternalDevices";
             this.ToggleSettingsShowGamesFromExternalDevices.Properties.AutoWidth = true;
@@ -5126,7 +5157,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             // TextBoxSettingsPackagesInstallPath
             // 
-            this.TextBoxSettingsPackagesInstallPath.Location = new System.Drawing.Point(14, 196);
+            this.TextBoxSettingsPackagesInstallPath.Location = new System.Drawing.Point(14, 69);
             this.TextBoxSettingsPackagesInstallPath.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
             this.TextBoxSettingsPackagesInstallPath.Name = "TextBoxSettingsPackagesInstallPath";
             this.TextBoxSettingsPackagesInstallPath.Size = new System.Drawing.Size(701, 20);
@@ -5156,7 +5187,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             // TextBoxSettingsLaunchIniFilePath
             // 
-            this.TextBoxSettingsLaunchIniFilePath.Location = new System.Drawing.Point(14, 69);
+            this.TextBoxSettingsLaunchIniFilePath.Location = new System.Drawing.Point(14, 196);
             this.TextBoxSettingsLaunchIniFilePath.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
             this.TextBoxSettingsLaunchIniFilePath.Name = "TextBoxSettingsLaunchIniFilePath";
             this.TextBoxSettingsLaunchIniFilePath.Size = new System.Drawing.Size(701, 20);
@@ -6548,6 +6579,7 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxPackagesFilterName.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.TextBoxPackagesFilterName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.TextBoxPackagesFilterName.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxPackagesFilterName.Properties.EditValueChangedDelay = 1500;
             this.TextBoxPackagesFilterName.Properties.NullValuePrompt = "Search...";
             this.TextBoxPackagesFilterName.Size = new System.Drawing.Size(746, 22);
             this.TextBoxPackagesFilterName.TabIndex = 1;
@@ -7863,6 +7895,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             // PageAbout
             // 
+            this.PageAbout.Controls.Add(this.ImageSocialWebsite);
             this.PageAbout.Controls.Add(this.ImageSocialTwitter);
             this.PageAbout.Controls.Add(this.ImageSocialDiscord);
             this.PageAbout.Controls.Add(this.ImageSocialGitHub);
@@ -7871,6 +7904,19 @@ namespace ArisenStudio.Forms.Windows
             this.PageAbout.Controls.Add(this.PanelControlAboutLibrariesContributors);
             this.PageAbout.Name = "PageAbout";
             this.PageAbout.Size = new System.Drawing.Size(1277, 569);
+            // 
+            // ImageSocialWebsite
+            // 
+            this.ImageSocialWebsite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ImageSocialWebsite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ImageSocialWebsite.Image = global::ArisenStudio.Properties.Resources.website;
+            this.ImageSocialWebsite.Location = new System.Drawing.Point(1136, 19);
+            this.ImageSocialWebsite.Name = "ImageSocialWebsite";
+            this.ImageSocialWebsite.Size = new System.Drawing.Size(26, 26);
+            this.ImageSocialWebsite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImageSocialWebsite.TabIndex = 10;
+            this.ImageSocialWebsite.TabStop = false;
+            this.ImageSocialWebsite.Click += new System.EventHandler(this.ImageSocialWebsite_Click);
             // 
             // ImageSocialTwitter
             // 
@@ -7943,10 +7989,10 @@ namespace ArisenStudio.Forms.Windows
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelControlAboutLibrariesContributors.Controls.Add(this.PanelAbout);
-            this.PanelControlAboutLibrariesContributors.Location = new System.Drawing.Point(18, 126);
+            this.PanelControlAboutLibrariesContributors.Location = new System.Drawing.Point(18, 119);
             this.PanelControlAboutLibrariesContributors.Margin = new System.Windows.Forms.Padding(7, 7, 3, 7);
             this.PanelControlAboutLibrariesContributors.Name = "PanelControlAboutLibrariesContributors";
-            this.PanelControlAboutLibrariesContributors.Size = new System.Drawing.Size(1240, 425);
+            this.PanelControlAboutLibrariesContributors.Size = new System.Drawing.Size(1240, 432);
             this.PanelControlAboutLibrariesContributors.TabIndex = 4;
             // 
             // PanelAbout
@@ -7957,7 +8003,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelAbout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelAbout.Location = new System.Drawing.Point(2, 2);
             this.PanelAbout.Name = "PanelAbout";
-            this.PanelAbout.Size = new System.Drawing.Size(1236, 421);
+            this.PanelAbout.Size = new System.Drawing.Size(1236, 428);
             this.PanelAbout.TabIndex = 7;
             // 
             // TablePanelCredits
@@ -7985,7 +8031,7 @@ namespace ArisenStudio.Forms.Windows
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
-            this.TablePanelCredits.Size = new System.Drawing.Size(1393, 676);
+            this.TablePanelCredits.Size = new System.Drawing.Size(1403, 676);
             this.TablePanelCredits.TabIndex = 8;
             // 
             // LabelAbout
@@ -8004,7 +8050,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelAbout.Location = new System.Drawing.Point(7, 7);
             this.LabelAbout.Name = "LabelAbout";
             this.TablePanelCredits.SetRow(this.LabelAbout, 0);
-            this.LabelAbout.Size = new System.Drawing.Size(1383, 522);
+            this.LabelAbout.Size = new System.Drawing.Size(1393, 522);
             this.LabelAbout.TabIndex = 7;
             this.LabelAbout.Text = resources.GetString("LabelAbout.Text");
             // 
@@ -8022,7 +8068,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelAboutTranslators.Location = new System.Drawing.Point(7, 655);
             this.LabelAboutTranslators.Name = "LabelAboutTranslators";
             this.TablePanelCredits.SetRow(this.LabelAboutTranslators, 7);
-            this.LabelAboutTranslators.Size = new System.Drawing.Size(1383, 14);
+            this.LabelAboutTranslators.Size = new System.Drawing.Size(1393, 14);
             this.LabelAboutTranslators.TabIndex = 7;
             this.LabelAboutTranslators.Text = resources.GetString("LabelAboutTranslators.Text");
             this.LabelAboutTranslators.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelAboutTranslators_HyperlinkClick);
@@ -9771,6 +9817,7 @@ namespace ArisenStudio.Forms.Windows
             this.StatusLabelHeaderCurrentGame.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.StatusLabelHeaderCurrentGame.ItemAppearance.Normal.Options.UseFont = true;
             this.StatusLabelHeaderCurrentGame.Name = "StatusLabelHeaderCurrentGame";
+            this.StatusLabelHeaderCurrentGame.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // StatusLabelCurrentGame
             // 
@@ -9778,6 +9825,7 @@ namespace ArisenStudio.Forms.Windows
             this.StatusLabelCurrentGame.Caption = "n/a";
             this.StatusLabelCurrentGame.Id = 69;
             this.StatusLabelCurrentGame.Name = "StatusLabelCurrentGame";
+            this.StatusLabelCurrentGame.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // RibbonPageHome
             // 
@@ -10027,7 +10075,7 @@ namespace ArisenStudio.Forms.Windows
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("MainWindow.IconOptions.Icon")));
             this.IconOptions.Image = global::ArisenStudio.Properties.Resources.arisenstudio;
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.MinimumSize = new System.Drawing.Size(1032, 700);
+            this.MinimumSize = new System.Drawing.Size(1420, 700);
             this.Name = "MainWindow";
             this.Ribbon = this.ribbonControl1;
             this.RibbonVisibility = DevExpress.XtraBars.Ribbon.RibbonVisibility.Visible;
@@ -10151,6 +10199,7 @@ namespace ArisenStudio.Forms.Windows
             this.TabControlSettings.ResumeLayout(false);
             this.TabPageInterface.ResumeLayout(false);
             this.TabPageInterface.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAlwaysShowGamePlaying.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAutoLoadDirectoryListings.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsEnableHardwareAcceleration.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsRememberConsolePath.Properties)).EndInit();
@@ -10277,6 +10326,7 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterRegion.Properties)).EndInit();
             this.PageAbout.ResumeLayout(false);
             this.PageAbout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageSocialWebsite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageSocialTwitter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageSocialDiscord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageSocialGitHub)).EndInit();
@@ -10913,5 +10963,8 @@ namespace ArisenStudio.Forms.Windows
         private BarStaticItem StatusLabelHeaderCurrentGame;
         private BarStaticItem StatusLabelCurrentGame;
         private Timer TimerCurrentGame;
+        private LabelControl LabelSettingsAlwaysShowGamePlaying;
+        private ToggleSwitch ToggleSettingsAlwaysShowGamePlaying;
+        private PictureBox ImageSocialWebsite;
     }
 }

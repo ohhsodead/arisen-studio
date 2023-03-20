@@ -25,12 +25,26 @@ namespace ArisenStudio.Extensions
             //PingReply pong = ping.Send(address);
             //return pong.Status == IPStatus.Success;
 
-            Socket socket = new(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            //Socket socket = new(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             try
             {
-                socket.Connect(ip, 21);
-                return socket.Connected;
+                //WebRequest request = WebRequest.Create("http://" + ip + "/" + command);
+                //WebResponse response = request.GetResponse();
+
+                //using (Stream dataStream = response.GetResponseStream())
+                //{
+                //    StreamReader read = new(dataStream);
+                //    read.ReadToEnd();
+                //}
+
+                //response.Close();
+
+                SetConsoleLed(ip, LedColor.Green);
+
+                return true;
+                //socket.Connect(ip, 21);
+                //return socket.Connected;
             }
             catch (Exception ex)
             {

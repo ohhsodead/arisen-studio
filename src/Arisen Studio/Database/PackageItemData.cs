@@ -7,6 +7,8 @@ namespace ArisenStudio.Database
     /// </summary>
     public class PackageItemData
     {
+        public int Id { get; set; }
+
         public string Category { get; set; }
 
         public string TitleId { get; set; }

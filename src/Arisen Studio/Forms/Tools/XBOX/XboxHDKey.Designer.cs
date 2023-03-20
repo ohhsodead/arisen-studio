@@ -124,7 +124,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.TextBoxMotherboardSerial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxMotherboardSerial.Location = new System.Drawing.Point(12, 84);
+            this.TextBoxMotherboardSerial.Location = new System.Drawing.Point(-9, 33);
             this.TextBoxMotherboardSerial.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.TextBoxMotherboardSerial.Name = "TextBoxMotherboardSerial";
             this.TextBoxMotherboardSerial.Properties.AllowFocused = false;

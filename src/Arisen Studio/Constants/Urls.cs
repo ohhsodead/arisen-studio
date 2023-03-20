@@ -10,7 +10,8 @@
         /// <summary>
         /// Direct link to the request mods google form
         /// </summary>
-        internal const string RequestModsForm = "https://docs.google.com/forms/d/e/1FAIpQLScbeLBheZWjAp03d281pQHL2RvU93SLx2UXQZddx8i2nS2JmA/viewform?embedded=true";
+        //internal const string RequestModsForm = "https://docs.google.com/forms/d/e/1FAIpQLScbeLBheZWjAp03d281pQHL2RvU93SLx2UXQZddx8i2nS2JmA/viewform?embedded=true";
+        internal const string RequestModsForm = "https://arisen.studio/request-mods.html";
 
         /// <summary>
         /// Direct link to the update data file hosted on Dropbox.
@@ -75,7 +76,7 @@
         /// <summary>
         /// Direct link to the PS3 DLC packages file hosted on GitHub.
         /// </summary>
-        internal const string PackagesDlCsDataPs3 = "https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/PS3/packages/dlcs.json";
+        internal const string PackagesDLCsDataPs3 = "https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/PS3/packages/dlcs.json";
 
         /// <summary>
         /// Direct link to the PS3 Games packages file hosted on GitHub.

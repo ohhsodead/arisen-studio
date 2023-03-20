@@ -15,6 +15,7 @@ using System.Resources;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using FluentFTP.Exceptions;
 
 namespace ArisenStudio.Forms.Dialogs
 {
@@ -119,6 +120,12 @@ namespace ArisenStudio.Forms.Dialogs
 
                 ButtonOpenPath.Visible = !LocalPath.IsNullOrEmpty() && Directory.Exists(LocalPath) && IsSuccessful;
             }
+            
+            if (IsSuccessful)
+            {
+                ProgressBarStatus.Properties.Stopped = true;
+                //ProgressBarStatus.Properties.ProgressAnimationMode = DevExpress.Utils.Drawing.ProgressAnimationMode.;
+            }
         }
 
         private DialogResult GetDialogResult(string caption, string title, MessageBoxButtons buttons, MessageBoxIcon icon)
@@ -206,7 +213,7 @@ namespace ArisenStudio.Forms.Dialogs
                                     // Check whether install file matches the specified install file
                                     if (installFilePath.EndsWith(localFileName))
                                     {
-                                        UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{localFileName} ({indexFiles}/{totalFiles}) to {parentFolderPath}"));
+                                        UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{localFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
                                         File.Copy(localFilePath, installPath + Path.GetFileName(localFilePath), true);
                                         UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
 
@@ -1128,7 +1135,20 @@ namespace ArisenStudio.Forms.Dialogs
                         Language.GetString("FILE_DOWNLOAD_SUCCESS");
                     }
 
-                    Settings.DownloadedMods.Add(new() { ModId = 0, CategoryId = "PACKAGE", DateTime = DateTime.Now, DownloadFile = new() { InstallPaths = new List<string>() { PackageItem.InstallFilePathPkg + PackageItem.InstallFilePathRap }, LastUpdated = DateTime.Now, Name = Name.RemoveInvalidChars(), Region = "ALL", Url = packageItem.Url, Version = "" } });
+                    Settings.DownloadedMods.Add(new()
+                    {
+                        ModId = PackageItem.Id,
+                        CategoryId = "package",
+                        DateTime = DateTime.Now,
+                        DownloadFile = new()
+                        {
+                            InstallPaths = new List<string>() { PackageItem.InstallFilePathPkg + PackageItem.InstallFilePathRap },
+                            LastUpdated = DateTime.Now,
+                            Name = Name.RemoveInvalidChars(),
+                            Region = packageItem.Region,
+                            Url = packageItem.Url,
+                            Version = "n/a"
+                  } });
 
                     LocalPath = downloadFolder;
 

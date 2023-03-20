@@ -52,12 +52,20 @@ namespace ArisenStudio.Models.Resources
         {
             if (BackupFiles.Count > 0)
             {
-                return
-                    BackupFiles.First(backupFile =>
+                BackupFile backupFile = BackupFiles.FirstOrDefault(backupFile =>
                     backupFile.Platform == platform &&
                     backupFile.CategoryId.EqualsIgnoreCase(gameId) &&
                     backupFile.FileName.ContainsIgnoreCase(fileName) &&
                     backupFile.InstallPath.ContainsIgnoreCase(installPath));
+
+                if (backupFile == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return backupFile;
+                }
             }
 
             return null;

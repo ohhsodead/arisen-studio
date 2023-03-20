@@ -59,6 +59,7 @@ namespace ArisenStudio.Models.Database
         public Category GetCategoryByTitle(string title)
         {
             Category category = Categories.FirstOrDefault(x => x.Title.EqualsIgnoreCase(title));
+
             if (category != null)
             {
                 return category;

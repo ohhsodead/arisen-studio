@@ -17,6 +17,8 @@ namespace ArisenStudio.Models.Resources
 
         public bool FirstTimeOpenAfterUpdate { get; set; } = true;
 
+        public bool ShowRecommendations { get; set; } = true;
+
         public List<int> DismissedAnnouncements { get; set; } = new();
 
         public string Language { get; set; } = "English";
@@ -26,6 +28,8 @@ namespace ArisenStudio.Models.Resources
         public bool UseRelativeTimes { get; set; } = true;
 
         public bool EnableHardwareAcceleration { get; set; } = false;
+
+        public bool AlwaysShowCurrentGamePlaying { get; set; } = false;
 
         public bool AutoDetectGameRegions { get; set; } = false;
 
@@ -414,6 +418,8 @@ namespace ArisenStudio.Models.Resources
         public string CategoryId { get; set; }
 
         public string FilePath { get; set; }
+
+        public string Url { get; set; }
 
         public DownloadFiles DownloadFile { get; set; }
 

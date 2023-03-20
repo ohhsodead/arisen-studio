@@ -3,6 +3,7 @@ using ArisenStudio.Models.Dashboard;
 using ArisenStudio.Models.Database;
 using ICSharpCode.SharpZipLib.Zip;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -111,17 +112,18 @@ namespace ArisenStudio.Database
                 GameSaves = await GetGameSavesAsync(),
                 GamesPs3 = await GetGamesPackagesAsync(),
                 DemosPs3 = await GetDemosPackagesAsync(),
-                DLCsPs3 = await GetDlCsPackagesAsync(),
+                DLCsPs3 = await GetDLCsPackagesAsync(),
                 AvatarsPs3 = await GetAvatarsPackagesAsync(),
                 ThemesPs3 = await GetThemesPackagesAsync(),
                 GameCheatsPs3 = await GetGameCheatsPs3Async(),
                 GamePatchesXbox = await GetGamePatchesXboxAsync(),
-                //GameCheatsXbox = await GetGameCheatsXboxAsync(),
                 GamesTitleIdsXbox = await GetGamesTitleIdsXboxAsync(),
                 FavoritesMods = await GetFavoriteModsAsync(),
             };
 
-            //data.GamePatchesXbox = GetGamePatchesXboxAsync();
+            //data.GamePatchesXbox = await GetGamePatchesXboxAsync();
+
+            //data.CategoriesData.Categories.Add(new() { Id = "package", Regions = new string[] { }, Title = "Package", Type = "package" });
 
             data.CategoriesData.Categories = data.CategoriesData.Categories.OrderBy(o => o.Title).ToList();
 
@@ -198,6 +200,8 @@ namespace ArisenStudio.Database
             return new JsonSerializer().Deserialize<ModsData>(jsonReader);
         }
 
+        static int pkgId = 0;
+
         /// <summary>
         /// Download and return the games packages data.
         /// </summary>
@@ -209,7 +213,16 @@ namespace ArisenStudio.Database
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
-            return new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+            //return new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+
+            PackagesData games = new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+
+            foreach (PackageItemData package in games.Packages)
+            {
+                package.Id = pkgId++;
+            }
+
+            return games;
         }
 
         /// <summary>
@@ -223,21 +236,39 @@ namespace ArisenStudio.Database
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
-            return new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+            //return new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+
+            PackagesData demos = new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+
+            foreach (PackageItemData package in demos.Packages)
+            {
+                package.Id = pkgId++;
+            }
+
+            return demos;
         }
 
         /// <summary>
         /// Download and return the DLCs packages data.
         /// </summary>
         /// <returns> ModsData </returns>
-        private static async Task<PackagesData> GetDlCsPackagesAsync()
+        private static async Task<PackagesData> GetDLCsPackagesAsync()
         {
             using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.PackagesDlCsDataPs3).ConfigureAwait(true);
+            using Stream stream = await client.GetStreamAsync(Urls.PackagesDLCsDataPs3).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
-            return new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+            //return new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+
+            PackagesData dlcs = new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+
+            foreach (PackageItemData package in dlcs.Packages)
+            {
+                package.Id = pkgId++;
+            }
+
+            return dlcs;
         }
 
         /// <summary>
@@ -251,7 +282,16 @@ namespace ArisenStudio.Database
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
-            return new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+            //return new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+
+            PackagesData avatars = new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+
+            foreach (PackageItemData package in avatars.Packages)
+            {
+                package.Id = pkgId++;
+            }
+
+            return avatars;
         }
 
         /// <summary>
@@ -265,7 +305,16 @@ namespace ArisenStudio.Database
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
-            return new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+            //return new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+
+            PackagesData themes = new JsonSerializer().Deserialize<PackagesData>(jsonReader);
+
+            foreach (PackageItemData package in themes.Packages)
+            {
+                package.Id = pkgId++;
+            }
+
+            return themes;
         }
 
         /// <summary>
@@ -345,6 +394,9 @@ namespace ArisenStudio.Database
 
                         break;
                     }
+
+                default:
+                    break;
             }
 
             return null;

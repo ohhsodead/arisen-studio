@@ -54,11 +54,10 @@ namespace ArisenStudio.Forms.Dialogs
             this.WebView.CreationProperties = null;
             this.WebView.DefaultBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.WebView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WebView.Location = new System.Drawing.Point(0, 32);
+            this.WebView.Location = new System.Drawing.Point(0, 40);
             this.WebView.Name = "WebView";
-            this.WebView.Size = new System.Drawing.Size(598, 764);
-            this.WebView.Source = new System.Uri("https://docs.google.com/forms/d/e/1FAIpQLScbeLBheZWjAp03d281pQHL2RvU93SLx2UXQZddx" +
-        "8i2nS2JmA/viewform?embedded=true", System.UriKind.Absolute);
+            this.WebView.Size = new System.Drawing.Size(598, 756);
+            this.WebView.Source = new System.Uri("https://form.jotform.com/223613539362355", System.UriKind.Absolute);
             this.WebView.TabIndex = 0;
             this.WebView.ZoomFactor = 1D;
             this.WebView.NavigationStarting += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs>(this.WebView_NavigationStarting);
@@ -69,7 +68,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.ToolbarControl.Location = new System.Drawing.Point(0, 0);
             this.ToolbarControl.Manager = this.ToolbarManager;
             this.ToolbarControl.Name = "ToolbarControl";
-            this.ToolbarControl.Size = new System.Drawing.Size(598, 32);
+            this.ToolbarControl.Size = new System.Drawing.Size(598, 40);
             this.ToolbarControl.TabIndex = 1;
             this.ToolbarControl.TabStop = false;
             this.ToolbarControl.TitleItemLinks.Add(this.ButtonOpenLink);
@@ -92,7 +91,7 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 32);
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 40);
             this.barDockControlTop.Manager = this.ToolbarManager;
             this.barDockControlTop.Size = new System.Drawing.Size(598, 0);
             // 
@@ -108,17 +107,17 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 32);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.ToolbarManager;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 764);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 756);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(598, 32);
+            this.barDockControlRight.Location = new System.Drawing.Point(598, 40);
             this.barDockControlRight.Manager = this.ToolbarManager;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 764);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 756);
             // 
             // ButtonRefresh
             // 

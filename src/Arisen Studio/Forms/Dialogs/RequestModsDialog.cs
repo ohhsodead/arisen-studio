@@ -32,13 +32,13 @@ namespace ArisenStudio.Forms.Dialogs
 
             if (XtraMessageBox.Show(this, "It looks like the form is taking a while to load. Do you want to load it in your web browser?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                Process.Start(Urls.RequestModsForm);
+                Process.Start("https://form.jotform.com/223613539362355");
             }
         }
 
         private void ButtonRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            WebView.Source = new Uri(Urls.RequestModsForm);
+            WebView.Source = new Uri("https://form.jotform.com/223613539362355");
         }
 
         private void ButtonOpenLink_ItemClick(object sender, ItemClickEventArgs e)

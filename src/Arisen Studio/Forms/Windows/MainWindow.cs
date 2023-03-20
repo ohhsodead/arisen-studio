@@ -45,6 +45,7 @@ using FtpExtensions = ArisenStudio.Extensions.FtpExtensions;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Ribbon.ViewInfo;
 using JRPC_Client;
+using FluentFTP.Exceptions;
 
 namespace ArisenStudio.Forms.Windows
 {
@@ -402,6 +403,11 @@ namespace ArisenStudio.Forms.Windows
             LoadRecentlyUpdated();
             EnableConsoleActions();
 
+            if (Settings.ShowRecommendations)
+            {
+                ShowRecommendations();
+            }
+
 #if !DEBUG
             if (ConsoleProfile.Platform == Platform.PS3)
             {
@@ -420,6 +426,56 @@ namespace ArisenStudio.Forms.Windows
                 NavigationItemPlugins.Visible = true;
             }
 #endif
+        }
+
+        private void ShowRecommendations()
+        {
+            XtraMessageBoxArgs args = new();
+            args.Owner = Window;
+            args.Showing += PopupArgs_Showing;
+            args.AllowHtmlText = DefaultBoolean.True;
+            args.HyperlinkClick += PopupArgs_HyperlinkClick;
+            args.Caption = "Recommendations";
+            args.Text =
+                "<b>Please read this message before using to give you the easiest and best experience with Arisen Studio.</b>\n\n\n" +
+                "<b>PlayStation 3</b>\n\n" +
+                "<b>Requirements:</b>\n" +
+                "- webMAN, multiMAN or Rebug Toolbox\n\n" +
+                "<b>Usage:</b>\n" +
+                "- You must have webMAN installed so that all functions can work properly.\n" +
+                "- You must have webMAN installed so that all functions can work properly.\n" +
+                "- You must have Rebug Toolbox or MultiMAN open when installing/transferring files.\n" +
+                "- Arisen Studio heavily depends on webMAN MODD because it's used for a lot of features\n\n" +
+                "<b>Xbox 360</b>\n\n" +
+                "<b>Requirements:</b>\n" +
+                "- DashLaunch & Xbdm.xex as Plugin #1\n\n" +
+                "<b>Usage:</b>\n" +
+                "- You must be at the Dashboard when installing files or using any built-in tools.\n\n" +
+                "More helpful information be found on our <a href=https://arisen.studio/>website</a>.";
+            //"- You must have Rebug Toolbox or MultiMAN open when installing/transferring files.";
+
+            args.Buttons = new DialogResult[] { DialogResult.Yes, DialogResult.No };
+
+            if (XtraMessageBox.Show(args) == DialogResult.No)
+            {
+                Settings.ShowRecommendations = false;
+            }
+
+            //XtraMessageBox.Show(Window, "", "", MessageBoxButtons.OK, MessageBoxIcon.Information, )
+        }
+
+        private void PopupArgs_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
+        {
+            Process.Start(e.Link);
+        }
+
+        private void PopupArgs_Showing(object sender, XtraMessageShowingArgs e)
+        {
+            //e.Form.Text = "Recommendations";
+            e.Buttons[DialogResult.Yes].Text = "I Understood";
+            e.Buttons[DialogResult.Yes].Width = 100;
+            e.Buttons[DialogResult.No].Text = "Don't Show Me Again";
+            e.Buttons[DialogResult.No].Width = 150;
         }
 
         private void SetConsoleProfile()
@@ -642,12 +698,13 @@ namespace ArisenStudio.Forms.Windows
 
         private void ButtonRequestMods_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Process.Start(Urls.RequestModsForm);
+            //Process.Start(Urls.RequestModsForm);
+            DialogExtensions.ShowRequestModsDialog(this);
         }
 
         private void ButtonSendFeedback_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Process.Start($"{Urls.GitHubRepo}/issues/new");
+            Process.Start($"{Urls.GitHubRepo}issues/new/choose");
         }
 
         // Modding Tools
@@ -951,9 +1008,10 @@ namespace ArisenStudio.Forms.Windows
                                 Credentials = ConsoleProfile.UseDefaultCredentials
                                 ? new NetworkCredential("anonymous", "anonymous")
                                 : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password),
-                                SocketKeepAlive = true,
-                                DataConnectionType = FtpDataConnectionType.PASV,
-                                ReadTimeout = -1,
+                                Config = new() { SocketKeepAlive = true, DataConnectionType = FtpDataConnectionType.AutoActive, ReadTimeout = 90000, ConnectTimeout = 90000, DataConnectionConnectTimeout = 90000, DataConnectionReadTimeout = 90000 },
+                                //SocketKeepAlive = true,
+                                //DataConnectionType = FtpDataConnectionType.PASV,
+                                //ReadTimeout = -1,
                                 //ConnectTimeout = -1
                                 //SslProtocols = System.Security.Authentication.SslProtocols.Tls12
                             };
@@ -1494,7 +1552,7 @@ namespace ArisenStudio.Forms.Windows
 
             Feed feed = await FeedReader.ReadAsync(Urls.RssFeedData);
 
-            foreach (FeedItem item in feed.Items)
+            foreach (FeedItem item in feed.Items.Reverse())
             {
                 NewsItem newsItem = new(item.Title, item.Description, (DateTime)item.PublishingDate) { Dock = DockStyle.Top };
                 PanelNewsItems.Controls.Add(newsItem);
@@ -1796,7 +1854,7 @@ namespace ArisenStudio.Forms.Windows
         {
             LoadDownloadsCategories();
 
-            GridViewDownloads.ShowLoadingPanel();
+            GridViewDownloads.ShowLoadingPanel();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 
             DataTableDownloads.Rows.Clear();
 
@@ -1807,6 +1865,15 @@ namespace ArisenStudio.Forms.Windows
                 //ModItemData modItemData = downloadedItem.Platform == Platform.PS3
                 //    ? Database.ModsPS3(Database).GetModById(downloadedItem.Platform, downloadedItem.ModId)
                 //    : Database.PluginsXBOX.GetModById(downloadedItem.Platform, downloadedItem.ModId);
+
+                PackageItemData packageItemData = Database.GetPackage(downloadedItem.CategoryId, downloadedItem.Url);
+
+                //if (modItemData.ModTypes.ToArray().AnyContainsIgnoreCase(FilterDownloadsModTyp) && packageItemData.Regions.ToArray().AnyContainsIgnoreCase(FilterDownloadsRegion) && packageItemData.Versions.ToArray().AnyContainsIgnoreCase(FilterDownloadsVersion))
+                //{
+
+
+                //    continue;
+                //}
 
                 ModItemData modItemData = Database.GetModItem(downloadedItem.Platform, category.CategoryType, downloadedItem.ModId);
 
@@ -1820,6 +1887,29 @@ namespace ArisenStudio.Forms.Windows
                                                 downloadedItem.DownloadFile.Region,
                                                 downloadedItem.DownloadFile.Version,
                                                 Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
+
+                    //if (category.CategoryType == CategoryType.Package)
+                    //{
+                    //    DataTableDownloads.Rows.Add(modItemData.Id,
+                    //                            downloadedItem.Platform.Humanize(),
+                    //                            category.Title,
+                    //                            File.Exists(downloadedItem.FilePath) ? downloadedItem.DownloadFile.Name : $"{downloadedItem.DownloadFile.Name} ({ResourceLanguage.GetString("FILE_MISSING")})",
+                    //                            modItemData.ModType,
+                    //                            downloadedItem.DownloadFile.Region,
+                    //                            downloadedItem.DownloadFile.Version,
+                    //                            Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
+                    //}
+                }
+                else if (packageItemData != null)
+                {
+                    DataTableDownloads.Rows.Add(modItemData.Id,
+                                                        downloadedItem.Platform.Humanize(),
+                                                        category.Title,
+                                                        File.Exists(downloadedItem.FilePath) ? downloadedItem.DownloadFile.Name : $"{downloadedItem.DownloadFile.Name} ({ResourceLanguage.GetString("FILE_MISSING")})",
+                                                        modItemData.ModType,
+                                                        downloadedItem.DownloadFile.Region,
+                                                        downloadedItem.DownloadFile.Version,
+                                                        Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
                 }
             }
 
@@ -1876,40 +1966,151 @@ namespace ArisenStudio.Forms.Windows
                 //    ? Database.ModsPS3(Database).GetModById(downloadedItem.Platform, downloadedItem.ModId)
                 //    : Database.PluginsXBOX.GetModById(downloadedItem.Platform, downloadedItem.ModId);
 
+                PackageItemData packageItemData = Database.GetPackage(downloadedItem.CategoryId, downloadedItem.Url);
                 ModItemData modItemData = Database.GetModItem(downloadedItem.Platform, Database.CategoriesData.GetCategoryById(downloadedItem.CategoryId).CategoryType, downloadedItem.ModId);
 
-                if (modItemData.ModTypes.ToArray().AnyContainsIgnoreCase(FilterDownloadsModType) && modItemData.Regions.ToArray().AnyContainsIgnoreCase(FilterDownloadsRegion) && modItemData.Versions.ToArray().AnyContainsIgnoreCase(FilterDownloadsVersion))
+
+                if (modItemData != null)
                 {
-                    bool shouldLoadDates = true;
-
-                    if (FilterDownloadsDownloadOn != null)
+                    if (modItemData.ModTypes.ToArray().AnyContainsIgnoreCase(FilterDownloadsModType) && modItemData.Regions.ToArray().AnyContainsIgnoreCase(FilterDownloadsRegion) && modItemData.Versions.ToArray().AnyContainsIgnoreCase(FilterDownloadsVersion))
                     {
-                        if (FilterDownloadsDownloadOnType == FilterType.Equal && downloadedItem.DateTime == FilterDownloadsDownloadOn)
-                        {
-                            shouldLoadDates = true;
-                        }
-                        else if (FilterDownloadsDownloadOnType == FilterType.MoreThanOrEqual && downloadedItem.DateTime >= FilterDownloadsDownloadOn)
-                        {
-                            shouldLoadDates = true;
-                        }
-                        else if (FilterDownloadsDownloadOnType == FilterType.LessThanOrEqual && downloadedItem.DateTime <= FilterDownloadsDownloadOn)
-                        {
-                            shouldLoadDates = true;
-                        }
-                    }
+                        bool shouldLoadDates = true;
 
-                    if (shouldLoadDates)
-                    {
-                        DataTableDownloads.Rows.Add(modItemData.Id,
-                                                    downloadedItem.Platform.Humanize(),
-                                                    category.Title,
-                                                    File.Exists(downloadedItem.FilePath) ? downloadedItem.DownloadFile.Name : $"{downloadedItem.DownloadFile.Name} ({ResourceLanguage.GetString("FILE_MISSING")})",
-                                                    modItemData.ModType,
-                                                    downloadedItem.DownloadFile.Region,
-                                                    downloadedItem.DownloadFile.Version,
-                                                    Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
+                        if (FilterDownloadsDownloadOn != null)
+                        {
+                            if (FilterDownloadsDownloadOnType == FilterType.Equal && downloadedItem.DateTime == FilterDownloadsDownloadOn)
+                            {
+                                shouldLoadDates = true;
+                            }
+                            else if (FilterDownloadsDownloadOnType == FilterType.MoreThanOrEqual && downloadedItem.DateTime >= FilterDownloadsDownloadOn)
+                            {
+                                shouldLoadDates = true;
+                            }
+                            else if (FilterDownloadsDownloadOnType == FilterType.LessThanOrEqual && downloadedItem.DateTime <= FilterDownloadsDownloadOn)
+                            {
+                                shouldLoadDates = true;
+                            }
+                        }
+
+                        if (shouldLoadDates)
+                        {
+                            DataTableDownloads.Rows.Add(modItemData.Id,
+                                                        downloadedItem.Platform.Humanize(),
+                                                        category.Title,
+                                                        File.Exists(downloadedItem.FilePath) ? downloadedItem.DownloadFile.Name : $"{downloadedItem.DownloadFile.Name} ({ResourceLanguage.GetString("FILE_MISSING")})",
+                                                        modItemData.ModType,
+                                                        downloadedItem.DownloadFile.Region,
+                                                        downloadedItem.DownloadFile.Version,
+                                                        Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
+                        }
                     }
                 }
+                else if (packageItemData != null)
+                {
+                    if (FilterDownloadsModType == string.Empty && FilterDownloadsRegion == string.Empty && FilterDownloadsVersion == string.Empty)
+                    {
+                        bool shouldLoadDates = true;
+
+                        if (FilterDownloadsDownloadOn != null)
+                        {
+                            if (FilterDownloadsDownloadOnType == FilterType.Equal && downloadedItem.DateTime == FilterDownloadsDownloadOn)
+                            {
+                                shouldLoadDates = true;
+                            }
+                            else if (FilterDownloadsDownloadOnType == FilterType.MoreThanOrEqual && downloadedItem.DateTime >= FilterDownloadsDownloadOn)
+                            {
+                                shouldLoadDates = true;
+                            }
+                            else if (FilterDownloadsDownloadOnType == FilterType.LessThanOrEqual && downloadedItem.DateTime <= FilterDownloadsDownloadOn)
+                            {
+                                shouldLoadDates = true;
+                            }
+                        }
+
+                        if (shouldLoadDates)
+                        {
+                            DataTableDownloads.Rows.Add(modItemData.Id,
+                                                        downloadedItem.Platform.Humanize(),
+                                                        category.Title,
+                                                        File.Exists(downloadedItem.FilePath) ? downloadedItem.DownloadFile.Name : $"{downloadedItem.DownloadFile.Name} ({ResourceLanguage.GetString("FILE_MISSING")})",
+                                                        modItemData.ModType,
+                                                        downloadedItem.DownloadFile.Region,
+                                                        downloadedItem.DownloadFile.Version,
+                                                        Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
+                        }
+
+                        //continue;
+                    }
+                }
+
+                //if (FilterDownloadsModType == string.Empty && FilterDownloadsRegion == string.Empty && FilterDownloadsVersion == string.Empty)
+                //{
+                //    bool shouldLoadDates = true;
+
+                //    if (FilterDownloadsDownloadOn != null)
+                //    {
+                //        if (FilterDownloadsDownloadOnType == FilterType.Equal && downloadedItem.DateTime == FilterDownloadsDownloadOn)
+                //        {
+                //            shouldLoadDates = true;
+                //        }
+                //        else if (FilterDownloadsDownloadOnType == FilterType.MoreThanOrEqual && downloadedItem.DateTime >= FilterDownloadsDownloadOn)
+                //        {
+                //            shouldLoadDates = true;
+                //        }
+                //        else if (FilterDownloadsDownloadOnType == FilterType.LessThanOrEqual && downloadedItem.DateTime <= FilterDownloadsDownloadOn)
+                //        {
+                //            shouldLoadDates = true;
+                //        }
+                //    }
+
+                //    if (shouldLoadDates)
+                //    {
+                //        DataTableDownloads.Rows.Add(modItemData.Id,
+                //                                    downloadedItem.Platform.Humanize(),
+                //                                    category.Title,
+                //                                    File.Exists(downloadedItem.FilePath) ? downloadedItem.DownloadFile.Name : $"{downloadedItem.DownloadFile.Name} ({ResourceLanguage.GetString("FILE_MISSING")})",
+                //                                    modItemData.ModType,
+                //                                    downloadedItem.DownloadFile.Region,
+                //                                    downloadedItem.DownloadFile.Version,
+                //                                    Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
+                //    }
+
+                //    //continue;
+                //}
+
+                //if (modItemData.ModTypes.ToArray().AnyContainsIgnoreCase(FilterDownloadsModType) && modItemData.Regions.ToArray().AnyContainsIgnoreCase(FilterDownloadsRegion) && modItemData.Versions.ToArray().AnyContainsIgnoreCase(FilterDownloadsVersion))
+                //else if (modItemData.ModTypes.ToArray().AnyContainsIgnoreCase(FilterDownloadsModType) && modItemData.Regions.ToArray().AnyContainsIgnoreCase(FilterDownloadsRegion) && modItemData.Versions.ToArray().AnyContainsIgnoreCase(FilterDownloadsVersion))
+                //{
+                //    bool shouldLoadDates = true;
+
+                //    if (FilterDownloadsDownloadOn != null)
+                //    {
+                //        if (FilterDownloadsDownloadOnType == FilterType.Equal && downloadedItem.DateTime == FilterDownloadsDownloadOn)
+                //        {
+                //            shouldLoadDates = true;
+                //        }
+                //        else if (FilterDownloadsDownloadOnType == FilterType.MoreThanOrEqual && downloadedItem.DateTime >= FilterDownloadsDownloadOn)
+                //        {
+                //            shouldLoadDates = true;
+                //        }
+                //        else if (FilterDownloadsDownloadOnType == FilterType.LessThanOrEqual && downloadedItem.DateTime <= FilterDownloadsDownloadOn)
+                //        {
+                //            shouldLoadDates = true;
+                //        }
+                //    }
+
+                //    if (shouldLoadDates)
+                //    {
+                //        DataTableDownloads.Rows.Add(modItemData.Id,
+                //                                    downloadedItem.Platform.Humanize(),
+                //                                    category.Title,
+                //                                    File.Exists(downloadedItem.FilePath) ? downloadedItem.DownloadFile.Name : $"{downloadedItem.DownloadFile.Name} ({ResourceLanguage.GetString("FILE_MISSING")})",
+                //                                    modItemData.ModType,
+                //                                    downloadedItem.DownloadFile.Region,
+                //                                    downloadedItem.DownloadFile.Version,
+                //                                    Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
+                //    }
+                //}
             }
 
             GridControlDownloads.DataSource = DataTableDownloads;
@@ -4469,6 +4670,7 @@ namespace ArisenStudio.Forms.Windows
             ToggleSettingsEnableHardwareAcceleration.IsOn = Settings.EnableHardwareAcceleration;
 
             // Automation
+            ToggleSettingsAlwaysShowGamePlaying.IsOn = Settings.AlwaysShowCurrentGamePlaying;
             ToggleSettingsShowGamesFromExternalDevices.IsOn = Settings.ShowGamesFromExternalDevices;
             ToggleSettingsAutoDetectGameRegions.IsOn = Settings.AutoDetectGameRegions;
             ToggleSettingsAutoDetectGameTitles.IsOn = Settings.AutoDetectGameTitles;
@@ -4652,15 +4854,18 @@ namespace ArisenStudio.Forms.Windows
                         }
                         else
                         {
-                            game = XboxConsole.GetTitleId().ToString("X");
+                            if (XboxConsole.GetTitleId() != 0)
+                            {
+                                game = XboxConsole.GetTitleId().ToString("X");
 
-                            if (string.IsNullOrWhiteSpace(game))
-                            {
-                                game = "Dashboard";
-                            }
-                            else
-                            {
-                                game = Database.GamesTitleIdsXbox.GetTitleFromTitleId(game);
+                                if (string.IsNullOrWhiteSpace(game))
+                                {
+                                    game = "Dashboard";
+                                }
+                                else
+                                {
+                                    game = Database.GamesTitleIdsXbox.GetTitleFromTitleId(game);
+                                }
                             }
                         }
 
@@ -4728,6 +4933,27 @@ namespace ArisenStudio.Forms.Windows
         }
 
         // Automation
+
+        private void ToggleSettingsAlwaysShowGamePlaying_Toggled(object sender, EventArgs e)
+        {
+            Settings.AlwaysShowCurrentGamePlaying = ToggleSettingsAlwaysShowGamePlaying.IsOn;
+
+            if (IsConsoleConnected)
+            {
+                if (Settings.AlwaysShowCurrentGamePlaying)
+                {
+                    StatusLabelHeaderCurrentGame.Visibility = BarItemVisibility.Always;
+                    StatusLabelCurrentGame.Visibility = BarItemVisibility.Always;
+                    TimerCurrentGame.Enabled = true;
+                }
+                else
+                {
+                    StatusLabelHeaderCurrentGame.Visibility = BarItemVisibility.Never;
+                    StatusLabelCurrentGame.Visibility = BarItemVisibility.Never;
+                    TimerCurrentGame.Enabled = false;
+                }
+            }
+        }
 
         private void ToggleSettingsShowGamesFromExternalDevices_Toggled(object sender, EventArgs e)
         {
@@ -7553,6 +7779,11 @@ namespace ArisenStudio.Forms.Windows
             Process.Start(e.Link);
         }
 
+        private void ImageSocialWebsite_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://arisen.studio/");
+        }
+
         private void ImageSocialTwitter_Click(object sender, EventArgs e)
         {
             Process.Start("https://twitter.com/ohhsodead");
@@ -7596,6 +7827,7 @@ namespace ArisenStudio.Forms.Windows
             NavigationItemResources.Visible = Platform == Platform.PS3;
             NavigationItemPackages.Visible = Platform == Platform.PS3;
             NavigationItemPlugins.Visible = Platform == Platform.XBOX360;
+            NavigationItemGameCheats.Visible = false;
 
 
             ButtonScanXboxConsoles.Visibility =
@@ -7715,9 +7947,20 @@ namespace ArisenStudio.Forms.Windows
 
             if (IsConsoleConnected)
             {
-                TimerCurrentGame.Enabled = true;
-                StatusLabelHeaderIsConnected.Caption = ResourceLanguage.GetString("CONNECTED");
+                if (Settings.AlwaysShowCurrentGamePlaying)
+                {
+                    StatusLabelHeaderCurrentGame.Visibility = BarItemVisibility.Always;
+                    StatusLabelCurrentGame.Visibility = BarItemVisibility.Always;
+                    TimerCurrentGame.Enabled = true;
+                }
+                else
+                {
+                    StatusLabelHeaderCurrentGame.Visibility = BarItemVisibility.Never;
+                    StatusLabelCurrentGame.Visibility = BarItemVisibility.Never;
+                    TimerCurrentGame.Enabled = false;
+                }
 
+                StatusLabelHeaderIsConnected.Caption = ResourceLanguage.GetString("CONNECTED");
             }
             else
             {
@@ -7749,18 +7992,21 @@ namespace ArisenStudio.Forms.Windows
             }
             else
             {
-                string game = XboxConsole.GetTitleId().ToString("X");
-
-                if (string.IsNullOrWhiteSpace(game))
+                if (XboxConsole.GetTitleId() != 0)
                 {
-                    game = "Dashboard";
-                }
-                else
-                {
-                    game = Database.GamesTitleIdsXbox.GetTitleFromTitleId(game);
-                }
+                    string game = XboxConsole.GetTitleId().ToString("X");
 
-                StatusLabelCurrentGame.Caption = game;
+                    if (string.IsNullOrWhiteSpace(game))
+                    {
+                        game = "Dashboard";
+                    }
+                    else
+                    {
+                        game = Database.GamesTitleIdsXbox.GetTitleFromTitleId(game);
+                    }
+
+                    StatusLabelCurrentGame.Caption = game;
+                }
             }
         }
 

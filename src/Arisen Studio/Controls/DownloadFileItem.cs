@@ -66,8 +66,35 @@ namespace ArisenStudio.Controls
 
             if (!MainWindow.IsConsoleConnected)
             {
-                ImageInstall.SvgImageColorizationMode = SvgImageColorizationMode.Default;
-                ImageInstall.Enabled = false;
+                if (CategoryType is CategoryType.Game or CategoryType.Plugin)
+                {
+                    if (!MainWindow.Settings.InstallGameModsPluginsToUsbDevice)
+                    {
+                        ImageInstall.SvgImageColorizationMode = SvgImageColorizationMode.Default;
+                        ImageInstall.Enabled = false;
+                    }
+                }
+                else if (CategoryType is CategoryType.Homebrew)
+                {
+                    if (!MainWindow.Settings.InstallHomebrewToUsbDevice)
+                    {
+                        ImageInstall.SvgImageColorizationMode = SvgImageColorizationMode.Default;
+                        ImageInstall.Enabled = false;
+                    }
+                }
+                else if (CategoryType is CategoryType.Resource)
+                {
+                    if (!MainWindow.Settings.InstallResourcesToUsbDevice)
+                    {
+                        ImageInstall.SvgImageColorizationMode = SvgImageColorizationMode.Default;
+                        ImageInstall.Enabled = false;
+                    }
+                }
+                else
+                {
+                    ImageInstall.SvgImageColorizationMode = SvgImageColorizationMode.Default;
+                    ImageInstall.Enabled = false;
+                }
             }
         }
 

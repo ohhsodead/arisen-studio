@@ -27,6 +27,7 @@ namespace ArisenStudio.Database
             "game" => CategoryType.Game,
             "homebrew" => CategoryType.Homebrew,
             "resource" => CategoryType.Resource,
+            "package" => CategoryType.Package,
             "plugin" => CategoryType.Plugin,
             _ => CategoryType.Game
         };

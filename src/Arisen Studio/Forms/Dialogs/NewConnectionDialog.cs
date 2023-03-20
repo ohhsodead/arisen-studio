@@ -74,7 +74,8 @@ namespace ArisenStudio.Forms.Dialogs
 
         private void NewConnectionDialog_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (DialogResult == DialogResult.Cancel && CloseOnCancel)
+            //if (DialogResult == DialogResult.Cancel && CloseOnCancel)
+            if (MainWindow.Settings.ConsoleProfiles.Count == 0)
             {
                 if (XtraMessageBox.Show(this, string.Format("At least one console profile must be created to use Arisen Studio.\n\nWould you like to create a Guest profile?"), Language.GetString("ERROR"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
@@ -91,6 +92,12 @@ namespace ArisenStudio.Forms.Dialogs
                     TextBoxAddress.Text = "192.168.1.1";
                     CheckBoxDefault.Checked = true;
                     ConsoleProfile.Platform = platform;
+
+                    ////ConsoleProfile.Name = "Guest";
+                    ////ConsoleProfile.Address = "192.168.1.1";
+                    ////ConsoleProfile.Platform = platform;
+                    ////ConsoleProfile.IsDefault = true;
+                    ButtonOK.PerformClick();
                     e.Cancel = false;
                 }
                 else

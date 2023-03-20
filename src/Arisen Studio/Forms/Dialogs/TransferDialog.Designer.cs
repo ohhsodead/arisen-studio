@@ -136,7 +136,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.ProgressBarStatus.Location = new System.Drawing.Point(12, 75);
             this.ProgressBarStatus.Name = "ProgressBarStatus";
             this.ProgressBarStatus.Properties.AllowFocused = false;
-            this.ProgressBarStatus.Properties.ProgressViewStyle = DevExpress.XtraEditors.Controls.ProgressViewStyle.Solid;
+            this.ProgressBarStatus.Properties.ProgressAnimationMode = DevExpress.Utils.Drawing.ProgressAnimationMode.Cycle;
             this.ProgressBarStatus.Size = new System.Drawing.Size(530, 18);
             this.ProgressBarStatus.TabIndex = 20;
             // 

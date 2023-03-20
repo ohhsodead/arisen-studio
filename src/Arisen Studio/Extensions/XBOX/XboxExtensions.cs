@@ -135,9 +135,10 @@ namespace ArisenStudio.Extensions
 
                 return console.XamGetCurrentTitleId();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("Couldn't get current title ID.");
+                Program.Log.Error(ex, "Couldn't get current title ID");
+                return 0;
             }
         }
 
