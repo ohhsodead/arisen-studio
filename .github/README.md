@@ -8,18 +8,23 @@
   <a href="https://gitHub.com/ohhsodead/arisen-studio/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/arisen-studio.svg" /></a>
   <a href="https://github.com/ohhsodead/arisen-studio/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/arisen-studio.svg" /></a>
   </br>
+  <a href="https://arisen.studio/"><img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https://arisen.studio/" /></a>
+  <a href="https://arisenstudio.app/"><img src="https://img.shields.io/website?down_message=offline&label=web%20store&up_message=online&url=https%3A%2F%2Farisenstudio.app%2F" />
+  <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/website?down_message=offline&label=database&up_message=online&url=https://github.com%2Fohhsodead%2Farisen-studio-database" /></a>
+  </a>
+  </br>
   <a href="https://sourceforge.net/projects/arisenstudio/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
   <a href="https://twitter.com/arisenstudio"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
   <a href="https://discord.gg/h22szNhF7V"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
 </p>
 
-The elegant, powerful, and open-source mod manager. Arisen Studio allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by myself, a few friends, and awesome contributors. Arisen Studio can also be used as an FTP client to automatically install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.
+The elegant, powerful, and open-source mod manager. Arisen Studio allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by me, some friends, and awesome contributors. Arisen Studio can also be used as an FTP client to automatically install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.
 
 **the only one of its kind...**
 
-![Dashboard Page](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/Dashboard.png?raw=true)
+![Dashboard](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/Dashboard.png?raw=true)
 
-![Mods Page](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/GameMods.png?raw=true)
+![Game Mods](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/GameMods.png?raw=true)
 
 ![Mod Details](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/ModDetails.png?raw=true)
 
@@ -72,10 +77,10 @@ Please give this project a ⭐ if you find it useful.
 
 ### Windows
 
-Download and run the latest version of the Windows installer, "ArisenStudio.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Arisen-Mods/releases/latest) page.
+Download and run the latest version of the Windows installer, "ArisenStudio.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/arisen-studio/releases/latest) page.
 
 ## Bug Reports
-Arisen Studio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/Arisen-Mods/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
+Arisen Studio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/arisen-studio/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
 
 ## Contributing
 
@@ -130,7 +135,10 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [Kloido](mailto:jaortiz2026@gmail.com)
 
 ## Supporters
-[![Stargazers repo roster for @ohhsodead/Arisen-Mods](https://reporoster.com/stars/ohhsodead/Arisen-Mods)](https://github.com/ohhsodead/Arisen-Mods/stargazers)
+[![Stargazers repo roster for @ohhsodead/arisen-studio](https://reporoster.com/stars/ohhsodead/arisen-studio)](https://github.com/ohhsodead/arisen-studio/stargazers)
+
+## News & Updates
+Here:
 
 ## Disclaimer
 
