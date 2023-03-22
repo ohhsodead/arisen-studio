@@ -43,7 +43,6 @@ Please give this project a ⭐ if you find it useful.
 * Install and uninstall mods directly to your console
 * Manage your downloads and installed mods
 * File manager with local and console listings
-* Apply cheats (RTM) to supported games
 * Discord rich presence to show game playing
 
 ### PlayStation 3
