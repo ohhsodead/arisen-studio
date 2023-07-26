@@ -361,7 +361,7 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
   <data name="ERROR_OCCURRED" xml:space="preserve">
     <value>Un error ocurrió: {0}
 
-Por favor inténtalo más tarde. Si el problema persiste &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;abrir un nuevo problema&lt;/a&gt; en nuestro seguimiento de GitHub.</value>
+Por favor, inténtalo más tarde. Si el problema persiste &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;abre un nuevo problema&lt;/a&gt; en nuestro seguimiento de GitHub.</value>
   </data>
   <data name="EXTRACT_IMAGE" xml:space="preserve">
     <value>Extraer imagen</value>
@@ -1336,7 +1336,7 @@ Instala los mods correctos para este juego o elige una región de juego diferent
     <value>No tienes listas</value>
   </data>
   <data name="NO_MORE_DETAILS" xml:space="preserve">
-    <value>No otros detalles pueden ser encontrados para esto por ahora.</value>
+    <value>No hay más detalles disponibles, por ahora... ¡Por favor, háznoslo saber si puedes proporcionar más!</value>
   </data>
   <data name="NO_NEWS_IS_GOOD_NEWS" xml:space="preserve">
     <value>¡Sin noticias son buenas noticias!</value>
@@ -1420,7 +1420,7 @@ Instala los mods correctos para este juego o elige una región de juego diferent
     <value>Redireccionando...</value>
   </data>
   <data name="REDIRECT_TO_GITHUB_ISSUES" xml:space="preserve">
-    <value>Ahora serás redirigido a nuestra página de problemas de GitHub y todos los detalles se completarán automáticamente para ti. Por favor proporciona la información sobre el problema para ayudarnos a solucionarlo.
+    <value>Ahora serás redirigido a nuestra página de problemas de GitHub y todos los detalles se completarán automáticamente para ti. Por favor, proporciona la información sobre el problema para ayudarnos a solucionarlo.
 
 Haz clic en el botón 'Enviar' para abrir un nuevo problema que puede ayudarnos a solucionar cualquier problema.</value>
   </data>
@@ -1464,7 +1464,7 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
     <value>¿Realmente quieres restaurar al archivo por defecto? Todos los cambios se perderán.</value>
   </data>
   <data name="RICH_PRESENCE" xml:space="preserve">
-    <value>Rica presencia</value>
+    <value>Rich Presence</value>
   </data>
   <data name="SCANNING_XBOX_CONSOLES" xml:space="preserve">
     <value>Escaneando por consolas Xbox...</value>
