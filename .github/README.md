@@ -129,15 +129,14 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [tsuiarts](mailto:nurishafa26@gmail.com)
 
 ## Translators
+
 * [goldug](http://djopposite.se/)
 * [Serdar Sağlam](mailto:serdarsaglam@msn.com)
 * [Kloido](mailto:jaortiz2026@gmail.com)
 
 ## Supporters
-[![Stargazers repo roster for @ohhsodead/arisen-studio](https://reporoster.com/stars/ohhsodead/arisen-studio)](https://github.com/ohhsodead/arisen-studio/stargazers)
 
-## News & Updates
-Here:
+[![Stargazers repo roster for @ohhsodead/arisen-studio](https://reporoster.com/stars/ohhsodead/arisen-studio)](https://github.com/ohhsodead/arisen-studio/stargazers)
 
 ## Disclaimer
 
