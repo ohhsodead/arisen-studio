@@ -266,7 +266,7 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
     <value>La actualización URL ha sido copiada al portapapeles.</value>
   </data>
   <data name="CREATE_BACKUP_FILE" xml:space="preserve">
-    <value>Debes primero crear un archivo de copia de seguridad para restaurar.</value>
+    <value>Primero debes crear un archivo de copia de seguridad para restaurar.</value>
   </data>
   <data name="CURRENT_GAME" xml:space="preserve">
     <value>Juego actual:</value>
