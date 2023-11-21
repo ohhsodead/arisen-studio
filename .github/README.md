@@ -136,7 +136,7 @@ I know that not all mods aren't on our database, but if you open an issue with t
 
 ## Supporters
 
-[![Stargazers repo roster for @ohhsodead/arisen-studio](https://reporoster.com/stars/ohhsodead/arisen-studio)](https://github.com/ohhsodead/arisen-studio/stargazers)
+[![Stargazers repo roster for @ohhsodead/arisen-studio](https://bytecrank.com/nastyox/reporoster/php/stargazersSVG.php?user=ohhsodead&repo=arisen-studio)](https://github.com/ohhsodead/arisen-studio/stargazers)
 
 ## Disclaimer
 
