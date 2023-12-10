@@ -1,6 +1,5 @@
 ﻿using ArisenStudio.Database;
 using ArisenStudio.Extensions;
-using ArisenStudio.Io;
 using ArisenStudio.Models.Database;
 using System;
 using System.Collections.Generic;
@@ -100,6 +99,11 @@ namespace ArisenStudio.Models.Resources
         public string PathPlugins { get; set; } = @"%BASE_DIR%\Plugins\";
 
         public string PathGameSaves { get; set; } = @"%BASE_DIR%\Game Saves\";
+
+        public string GetFullPath(string path)
+        {
+            return path.Replace(@"%BASE_DIR%", PathBaseDirectory);
+        }
 
         public List<DownloadedItem> DownloadedMods { get; set; } = new();
 

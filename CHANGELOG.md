@@ -3,6 +3,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Beta v3.0.4
+
+- Updated Autoupdater.NET package to 1.8.1
+- Updated WebView2 package to 1.0.1722.45
+- Updated NLog package to 5.1.4
+- Added Game Launcher GUI for PS3
+- Added option to launch game for PS3
+- Added ignore overwrite for homebrew
+- Fixed "Code 425" when connecting (#75)
+
+## Beta v3.0.3
+
+- Updated CodeHollow.FeedReader package to 1.2.6
+- Updated FluentFTP package to 46.0.2
+- Updated SharpZipLib package to 1.4.2
+- Added prompt with requirements/usage on startup
+- Added better configurations for when using FTP
+- Fixed creating Guest profile on startup
+- Fixed opening external link for submit mods form
+- Fixed refresh button in submit mods dialog
+- Fixed timeout when using file manager
+- Fixed and updated the Xbox 360 libraries
+
 ## Beta v3.0.2
 
 - Updated AutoUpdater.NET package to 1.7.6

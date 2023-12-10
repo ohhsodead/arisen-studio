@@ -448,10 +448,11 @@ namespace ArisenStudio.Forms.Windows
                 "- Arisen Studio heavily depends on webMAN MODD because it's used for a lot of features\n\n" +
                 "<b>Xbox 360</b>\n\n" +
                 "<b>Requirements:</b>\n" +
+                "- Neighborhood on your computer\n" +
                 "- DashLaunch & Xbdm.xex as Plugin #1\n\n" +
                 "<b>Usage:</b>\n" +
                 "- You must be at the Dashboard when installing files or using any built-in tools.\n\n" +
-                "More helpful information be found on our <a href=https://arisen.studio/>website</a>.";
+                "More helpful information be found on our <a href=https://arisenstudio.info/>website</a>.";
             //"- You must have Rebug Toolbox or MultiMAN open when installing/transferring files.";
 
             args.Buttons = new DialogResult[] { DialogResult.Yes, DialogResult.No };
@@ -809,6 +810,15 @@ namespace ArisenStudio.Forms.Windows
             DisconnectConsole();
         }
 
+        private void ButtonToolsPsGamesOpenGUI_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus("WebMAN Controls - Opening Game Launcher...");
+            //WebManExtensions.OpenGamesGUI(ConsoleProfile.Address);
+            var gameLauncher = new Tools.PS3.GameLauncher();
+            gameLauncher.ShowDialog(this);
+            SetStatus("WebMAN Controls - Successfully Opened Game Launcher.");
+        }
+
         private void ButtonToolsPsGamesMountBD_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus("Fetching games (BD) list...");
@@ -903,6 +913,13 @@ namespace ArisenStudio.Forms.Windows
             SetStatus("WebMAN Controls - Successfully Unmounted Game");
         }
 
+        private void ButtonToolsPsGamesStartGame_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetStatus("WebMAN Controls - Launching Game...");
+            WebManExtensions.LaunchGame(ConsoleProfile.Address);
+            SetStatus("WebMAN Controls - Successfully Launched Game.");
+        }
+
         private void ButtonToolsPsNotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
         {
             string notifyMessage = DialogExtensions.ShowTextInputDialog(this, "Notify Message", "Message:");
@@ -995,42 +1012,34 @@ namespace ArisenStudio.Forms.Windows
         {
             try
             {
+                string platformString = ConsoleProfile.Platform.ToString().ToLowerInvariant();
+
                 SetStatus(string.Format(ResourceLanguage.GetString("CONNECTING_TO_CONSOLE"), $"{ConsoleProfile.Name} ({ConsoleProfile.Address})"));
 
                 switch (ConsoleProfile.Platform)
                 {
                     case Platform.PS3:
+                        FtpClient = new FtpClient
                         {
-                            FtpClient = new FtpClient
-                            {
-                                Host = ConsoleProfile.Address,
-                                Port = 21,
-                                Credentials = ConsoleProfile.UseDefaultCredentials
-                                ? new NetworkCredential("anonymous", "anonymous")
-                                : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password),
-                                Config = new() { SocketKeepAlive = true, DataConnectionType = FtpDataConnectionType.AutoActive, ReadTimeout = 90000, ConnectTimeout = 90000, DataConnectionConnectTimeout = 90000, DataConnectionReadTimeout = 90000 },
-                                //SocketKeepAlive = true,
-                                //DataConnectionType = FtpDataConnectionType.PASV,
-                                //ReadTimeout = -1,
-                                //ConnectTimeout = -1
-                                //SslProtocols = System.Security.Authentication.SslProtocols.Tls12
-                            };
+                            Host = ConsoleProfile.Address,
+                            Port = 21,
+                            Credentials = ConsoleProfile.UseDefaultCredentials
+                            ? new NetworkCredential("anonymous", "anonymous")
+                            : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password),
+                            Config = new() { SocketKeepAlive = true, DataConnectionType = FtpDataConnectionType.PASV, ReadTimeout = 90000, ConnectTimeout = 90000, DataConnectionConnectTimeout = 90000, DataConnectionReadTimeout = 90000 },
+                            //Config = new() { SocketKeepAlive = true, DataConnectionType = FtpDataConnectionType.AutoActive, ReadTimeout = 90000, ConnectTimeout = 90000, DataConnectionConnectTimeout = 90000, DataConnectionReadTimeout = 90000 },
+                        };
 
-                            FtpClient.Connect();
+                        FtpClient.Connect();
 
-                            IsWebManInstalled = WebManExtensions.IsWebManInstalled(ConsoleProfile.Address);
+                        IsWebManInstalled = WebManExtensions.IsWebManInstalled(ConsoleProfile.Address);
 
-                            switch (IsWebManInstalled)
-                            {
-                                case true:
-                                    WebManExtensions.NotifyPopup(ConsoleProfile.Address, ResourceLanguage.GetString("CONNECTED_NOTIFICATION"));
-                                    break;
-                            }
+                        NotifyIfWebManInstalled(platformString, IsWebManInstalled);
 
-                            SetPlatform(ConsoleProfile.Platform);
+                        SetPlatform(ConsoleProfile.Platform);
 
-                            break;
-                        }
+                        break;
+
                     case Platform.XBOX360:
                         XboxManager = new XboxManager();
 
@@ -1038,15 +1047,19 @@ namespace ArisenStudio.Forms.Windows
                             ? XboxManager.OpenConsole(XboxManager.DefaultConsole)
                             : XboxManager.OpenConsole(ConsoleProfile.Address);
 
+                        JRPC.Connect(XboxConsole, out _);
+
                         if (!JRPC.Connect(XboxConsole, out _))
                         {
-                            //XboxConsole.Connect(out IXboxConsole XboxConsole);
-                            XtraMessageBox.Show(this, "You must have JRPC2 module set as a plugin on your console to use some features.", ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ShowErrorMessage("You must have JRPC2 module set as a plugin on your console to use some features.");
                         }
 
                         SetPlatform(ConsoleProfile.Platform);
 
                         break;
+
+                    default:
+                        throw new NotImplementedException();
                 }
 
                 ButtonConnectConsole.Caption = ResourceLanguage.GetString("RECONNECT_CONSOLE");
@@ -1082,6 +1095,21 @@ namespace ArisenStudio.Forms.Windows
                                     MessageBoxIcon.Error);
             }
         }
+
+        private void NotifyIfWebManInstalled(string platform, bool isWebManInstalled)
+        {
+            if (isWebManInstalled)
+            {
+                switch (platform)
+                {
+                    case "ps3":
+                        WebManExtensions.NotifyPopup(ConsoleProfile.Address, ResourceLanguage.GetString("CONNECTED_NOTIFICATION"));
+                        break;
+                }
+            }
+        }
+
+        private void ShowErrorMessage(string message) => XtraMessageBox.Show(this, message, ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         /// <summary>
         /// Disconnects from the console and flushes all resources from the FTP connections.
@@ -1649,7 +1677,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void TileItemDownloadsDeleteItem_ItemClick(object sender, TileItemEventArgs e)
         {
-            if (XtraMessageBox.Show(this, ResourceLanguage.GetString("CONFIRM_DELETE_ITEM_DOWNLOADS"), ResourceLanguage.GetString("CONFIRM_DELETE"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (XtraMessageBox.Show(this, ResourceLanguage.GetString("CONFIRM_DELETE_ITEM"), ResourceLanguage.GetString("CONFIRM_DELETE"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int? downloadItemModId = GridViewDownloads.GetFocusedRowCellValue("ModId") as int?;
                 Platform downloadItemPlatform = GridViewDownloads.GetFocusedRowCellValue(ResourceLanguage.GetString("LABEL_PLATFORM")).ToString().DehumanizeTo<Platform>();
@@ -2146,7 +2174,7 @@ namespace ArisenStudio.Forms.Windows
         {
             if (GridViewInstalledMods.SelectedRowsCount > 0)
             {
-                if (XtraMessageBox.Show(this, ResourceLanguage.GetString("CONFIRM_DELETE"), ResourceLanguage.GetString("CONFIRM_DELETE"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                if (XtraMessageBox.Show(this, ResourceLanguage.GetString("CONFIRM_DELETE_ITEM"), ResourceLanguage.GetString("CONFIRM_DELETE"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     int consoleId = int.Parse(GridViewInstalledMods.GetFocusedRowCellDisplayText(GridViewInstalledMods.Columns[0]));
                     int modId = int.Parse(GridViewInstalledMods.GetFocusedRowCellDisplayText(GridViewInstalledMods.Columns[1]));
@@ -4517,9 +4545,6 @@ namespace ArisenStudio.Forms.Windows
                 LabelSettingsUseFormattedFileSizes.Text = ResourceLanguage.GetString("USE_FORMATTED_FILE_SIZES");
                 LabelSettingsUseRelativeTimes.Text = ResourceLanguage.GetString("USE_RELATIVE_TIMES");
 
-                LabelSettingsAdvanced.Text = ResourceLanguage.GetString("ADVANCED");
-                LabelSettingsEnableHardwareAcceleration.Text = ResourceLanguage.GetString("ENABLE_HARDWARE_ACCELERATION");
-
                 LabelSettingsAutomation.Text = ResourceLanguage.GetString("AUTOMATION");
                 LabelSettingsInstallModsToUsbDevice.Text = ResourceLanguage.GetString("INSTALL_MODS_TO_LOCAL_USB");
                 LabelSettingsInstallHomebrewToUsbDevice.Text = ResourceLanguage.GetString("INSTALL_HOMEBREW_TO_LOCAL_USB");
@@ -4664,10 +4689,6 @@ namespace ArisenStudio.Forms.Windows
             // Customization
             ToggleSettingsUseFormattedFileSizes.IsOn = Settings.UseFormattedFileSizes;
             ToggleSettingsUseRelativeTimes.IsOn = Settings.UseRelativeTimes;
-
-            // Advanced
-
-            ToggleSettingsEnableHardwareAcceleration.IsOn = Settings.EnableHardwareAcceleration;
 
             // Automation
             ToggleSettingsAlwaysShowGamePlaying.IsOn = Settings.AlwaysShowCurrentGamePlaying;
@@ -4917,21 +4938,6 @@ namespace ArisenStudio.Forms.Windows
             Settings.UseRelativeTimes = ToggleSettingsUseRelativeTimes.IsOn;
         }
 
-        // Advanced
-
-        private void ToggleSettingsEnableDirectXHardwareAcceleration_Toggled(object sender, EventArgs e)
-        {
-            if (Settings.EnableHardwareAcceleration != ToggleSettingsEnableHardwareAcceleration.IsOn)
-            {
-                Settings.EnableHardwareAcceleration = ToggleSettingsEnableHardwareAcceleration.IsOn;
-
-                if (XtraMessageBox.Show(this, ResourceLanguage.GetString("RESTART_TAKE_AFFECT"), ResourceLanguage.GetString("RESTART_REQUIRED"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    Application.Restart();
-                }
-            }
-        }
-
         // Automation
 
         private void ToggleSettingsAlwaysShowGamePlaying_Toggled(object sender, EventArgs e)
@@ -5027,7 +5033,34 @@ namespace ArisenStudio.Forms.Windows
 
         private void TextBoxSettingsPathBaseDirectory_EditValueChanged(object sender, EventArgs e)
         {
+            if (TextBoxSettingsPathBaseDirectory.Text.Contains(@"\\"))
+            {
+                TextBoxSettingsPathBaseDirectory.Text = TextBoxSettingsPathBaseDirectory.Text.Replace(@"\\", @"\");
+            }
+
             Settings.PathBaseDirectory = TextBoxSettingsPathBaseDirectory.Text;
+
+            //if (TextBoxSettingsPathBaseDirectory.Text.Contains(@"\\"))
+            //{
+            //    TextBoxSettingsPathBaseDirectory.Text.Replace(@"\\", @"\");
+            //    Settings.PathBaseDirectory = TextBoxSettingsPathBaseDirectory.Text += @"\";
+            //}
+        }
+
+        private void TextBoxSettingsPathBaseDirectory_Leave(object sender, EventArgs e)
+        {
+            if (TextBoxSettingsPathBaseDirectory.Text.Contains(@"\\"))
+            {
+                //Settings.PathBaseDirectory = TextBoxSettingsPathBaseDirectory.Text;
+                TextBoxSettingsPathBaseDirectory.Text = TextBoxSettingsPathBaseDirectory.Text.Replace(@"\\", @"\");
+                Settings.PathBaseDirectory = TextBoxSettingsPathBaseDirectory.Text += @"\";
+            }
+
+            if (!TextBoxSettingsPathBaseDirectory.Text.EndsWith(@"\"))
+            {
+                //Settings.PathBaseDirectory = TextBoxSettingsPathBaseDirectory.Text;
+                TextBoxSettingsPathBaseDirectory.Text += @"\";
+            }
         }
 
         private void ButtonSettingsPathBaseDirectory_Click(object sender, EventArgs e)
@@ -5036,13 +5069,26 @@ namespace ArisenStudio.Forms.Windows
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsPathBaseDirectory.Text = path;
+                TextBoxSettingsPathBaseDirectory.Text = path + @"\";
             }
         }
 
         private void TextBoxSettingsPathDownloads_EditValueChanged(object sender, EventArgs e)
         {
-            Settings.PathDownloads = TextBoxSettingsPathDownloads.Text;
+            if (TextBoxSettingsPathDownloads.Text.Contains(@"\\"))
+            {
+                TextBoxSettingsPathDownloads.Text = TextBoxSettingsPathDownloads.Text.Replace(@"\\", @"\");
+            }
+
+            Settings.PathDownloads = TextBoxSettingsPathDownloads.Text + @"\";
+        }
+
+        private void TextBoxSettingsPathDownloads_Leave(object sender, EventArgs e)
+        {
+            if (!TextBoxSettingsPathDownloads.Text.EndsWith(@"\"))
+            {
+                TextBoxSettingsPathDownloads.Text += @"\";
+            }
         }
 
         private void ButtonSettingsPathDownloads_Click(object sender, EventArgs e)
@@ -5051,13 +5097,26 @@ namespace ArisenStudio.Forms.Windows
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsPathDownloads.Text = path;
+                TextBoxSettingsPathDownloads.Text = path + @"\";
             }
         }
 
         private void TextBoxSettingsPathGameMods_EditValueChanged(object sender, EventArgs e)
         {
+            if (TextBoxSettingsPathGameMods.Text.Contains(@"\\"))
+            {
+                TextBoxSettingsPathGameMods.Text = TextBoxSettingsPathGameMods.Text.Replace(@"\\", @"\");
+            }
+
             Settings.PathGameMods = TextBoxSettingsPathGameMods.Text;
+        }
+
+        private void TextBoxSettingsPathGameMods_Leave(object sender, EventArgs e)
+        {
+            if (!TextBoxSettingsPathGameMods.Text.EndsWith(@"\"))
+            {
+                TextBoxSettingsPathGameMods.Text += @"\";
+            }
         }
 
         private void ButtonSettingsPathGameMods_Click(object sender, EventArgs e)
@@ -5066,13 +5125,26 @@ namespace ArisenStudio.Forms.Windows
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsPathGameMods.Text = path;
+                TextBoxSettingsPathGameMods.Text = path + @"\";
             }
         }
 
         private void TextBoxSettingsPathHomebrew_EditValueChanged(object sender, EventArgs e)
         {
+            if (TextBoxSettingsPathHomebrew.Text.Contains(@"\\"))
+            {
+                TextBoxSettingsPathHomebrew.Text = TextBoxSettingsPathHomebrew.Text.Replace(@"\\", @"\");
+            }
+
             Settings.PathHomebrew = TextBoxSettingsPathHomebrew.Text;
+        }
+
+        private void TextBoxSettingsPathHomebrew_Leave(object sender, EventArgs e)
+        {
+            if (!TextBoxSettingsPathHomebrew.Text.EndsWith(@"\"))
+            {
+                TextBoxSettingsPathHomebrew.Text += @"\";
+            }
         }
 
         private void ButtonSettingsPathHomebrew_Click(object sender, EventArgs e)
@@ -5081,13 +5153,26 @@ namespace ArisenStudio.Forms.Windows
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsPathHomebrew.Text = path;
+                TextBoxSettingsPathHomebrew.Text = path + @"\";
             }
         }
 
         private void TextBoxSettingsPathResources_EditValueChanged(object sender, EventArgs e)
         {
+            if (TextBoxSettingsPathResources.Text.Contains(@"\\"))
+            {
+                TextBoxSettingsPathResources.Text = TextBoxSettingsPathResources.Text.Replace(@"\\", @"\");
+            }
+
             Settings.PathResources = TextBoxSettingsPathResources.Text;
+        }
+
+        private void TextBoxSettingsPathResources_Leave(object sender, EventArgs e)
+        {
+            if (!TextBoxSettingsPathResources.Text.EndsWith(@"\"))
+            {
+                TextBoxSettingsPathResources.Text += @"\";
+            }
         }
 
         private void ButtonSettingsPathResources_Click(object sender, EventArgs e)
@@ -5096,13 +5181,26 @@ namespace ArisenStudio.Forms.Windows
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsPathResources.Text = path;
+                TextBoxSettingsPathResources.Text = path + @"\";
             }
         }
 
         private void TextBoxSettingsPathPackages_EditValueChanged(object sender, EventArgs e)
         {
+            if (TextBoxSettingsPathPackages.Text.Contains(@"\\"))
+            {
+                TextBoxSettingsPathPackages.Text = TextBoxSettingsPathPackages.Text.Replace(@"\\", @"\");
+            }
+
             Settings.PathPackages = TextBoxSettingsPathPackages.Text;
+        }
+
+        private void TextBoxSettingsPathPackages_Leave(object sender, EventArgs e)
+        {
+            if (!TextBoxSettingsPathPackages.Text.EndsWith(@"\"))
+            {
+                TextBoxSettingsPathPackages.Text += @"\";
+            }
         }
 
         private void ButtonSettingsPathPackages_Click(object sender, EventArgs e)
@@ -5111,13 +5209,26 @@ namespace ArisenStudio.Forms.Windows
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsPathPackages.Text = path;
+                TextBoxSettingsPathPackages.Text = path + @"\";
             }
         }
 
         private void TextBoxSettingsPathPlugins_EditValueChanged(object sender, EventArgs e)
         {
+            if (TextBoxSettingsPathPlugins.Text.Contains(@"\\"))
+            {
+                TextBoxSettingsPathPlugins.Text = TextBoxSettingsPathPlugins.Text.Replace(@"\\", @"\");
+            }
+
             Settings.PathPlugins = TextBoxSettingsPathPlugins.Text;
+        }
+
+        private void TextBoxSettingsPathPlugins_Leave(object sender, EventArgs e)
+        {
+            if (!TextBoxSettingsPathPlugins.Text.EndsWith(@"\"))
+            {
+                TextBoxSettingsPathPlugins.Text += @"\";
+            }
         }
 
         private void ButtonSettingsPathPlugins_Click(object sender, EventArgs e)
@@ -5126,13 +5237,26 @@ namespace ArisenStudio.Forms.Windows
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsPathPlugins.Text = path;
+                TextBoxSettingsPathPlugins.Text = path + @"\";
             }
         }
 
         private void TextBoxSettingsPathGameSaves_EditValueChanged(object sender, EventArgs e)
         {
+            if (TextBoxSettingsPathGameSaves.Text.Contains(@"\\"))
+            {
+                TextBoxSettingsPathGameSaves.Text = TextBoxSettingsPathGameSaves.Text.Replace(@"\\", @"\");
+            }
+
             Settings.PathGameSaves = TextBoxSettingsPathGameSaves.Text;
+        }
+
+        private void TextBoxSettingsPathGameSaves_Leave(object sender, EventArgs e)
+        {
+            if (!TextBoxSettingsPathGameSaves.Text.EndsWith(@"\"))
+            {
+                TextBoxSettingsPathGameSaves.Text += @"\";
+            }
         }
 
         private void ButtonSettingsPathGameSaves_Click(object sender, EventArgs e)
@@ -5141,7 +5265,7 @@ namespace ArisenStudio.Forms.Windows
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsPathGameSaves.Text = path;
+                TextBoxSettingsPathGameSaves.Text = path + @"\";
             }
         }
 
@@ -7781,7 +7905,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void ImageSocialWebsite_Click(object sender, EventArgs e)
         {
-            Process.Start("https://arisen.studio/");
+            Process.Start("https://arisenstudio.info/");
         }
 
         private void ImageSocialTwitter_Click(object sender, EventArgs e)

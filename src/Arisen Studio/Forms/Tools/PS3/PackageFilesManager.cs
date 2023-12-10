@@ -50,18 +50,20 @@ namespace ArisenStudio.Forms.Tools.PS3
             TimerWait.Enabled = false;
         }
 
+        private static DataTable DataTablePackages { get; } = DataExtensions.CreateDataTable(new List<DataColumn>
+        {
+            new(Language.GetString("LABEL_FILE_NAME"), typeof(string)),
+            new(Language.GetString("LABEL_MODIFIED_DATE"), typeof(string)),
+            new(Language.GetString("LABEL_FILE_SIZE"), typeof(string))
+        });
+
         private void LoadPackages()
         {
             try
             {
-                GridPackageFiles.DataSource = null;
+                GridViewPackageFiles.ShowLoadingPanel();
 
-                DataTable packages = DataExtensions.CreateDataTable(new List<DataColumn>
-            {
-                new(Language.GetString("LABEL_FILE_NAME"), typeof(string)),
-                new(Language.GetString("LABEL_MODIFIED_DATE"), typeof(string)),
-                new(Language.GetString("LABEL_FILE_SIZE"), typeof(string))
-            });
+                DataTablePackages.Rows.Clear();
 
                 FtpClient.SetWorkingDirectory(PackageFilesPath);
 
@@ -83,20 +85,22 @@ namespace ArisenStudio.Forms.Tools.PS3
 
                 foreach (FtpListItem package in PackageFiles)
                 {
-                    packages.Rows.Add(package.Name,
-                                      MainWindow.Settings.UseRelativeTimes ? package.Modified.Humanize() : package.Modified.ToString("MM/dd/yyyy", CultureInfo.CurrentCulture),
-                                      MainWindow.Settings.UseFormattedFileSizes ? package.Size.Bytes().Humanize("#") : package.Size + " " + Language.GetString("LABEL_BYTES"));
+                    DataTablePackages.Rows.Add(package.Name,
+                        MainWindow.Settings.UseRelativeTimes ? package.Modified.Humanize() : package.Modified.ToString("MM/dd/yyyy", CultureInfo.CurrentCulture),
+                        MainWindow.Settings.UseFormattedFileSizes ? package.Size.Bytes().Humanize("#") : package.Size + " " + Language.GetString("LABEL_BYTES"));
                 }
 
-                GridPackageFiles.DataSource = packages;
+                GridPackageFiles.DataSource = DataTablePackages;
 
                 //GridViewPackageFiles.Columns[0].Width = 350;
                 GridViewPackageFiles.Columns[1].Width = 70;
                 GridViewPackageFiles.Columns[2].Width = 70;
 
-                ButtonDeleteAll.Enabled = packages.Rows.Count > 0;
+                ButtonDeleteAll.Enabled = DataTablePackages.Rows.Count > 0;
 
                 UpdateStatus(Language.GetString("FETCHED_LISTING"));
+
+                GridViewPackageFiles.HideLoadingPanel();
             }
             catch (Exception ex)
             {
@@ -106,6 +110,8 @@ namespace ArisenStudio.Forms.Tools.PS3
                 ButtonDownloadFile.Enabled = false;
                 ButtonDelete.Enabled = false;
                 ButtonDeleteAll.Enabled = false;
+
+                GridViewPackageFiles.HideLoadingPanel();
 
                 UpdateStatus(string.Format(Language.GetString("FETCHING_LISTING_ERROR"), PackageFilesPath, ex.Message), ex);
                 XtraMessageBox.Show(string.Format(Language.GetString("FETCHING_LISTING_ERROR"), PackageFilesPath, ex.Message));

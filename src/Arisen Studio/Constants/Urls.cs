@@ -11,7 +11,7 @@
         /// Direct link to the request mods google form
         /// </summary>
         //internal const string RequestModsForm = "https://docs.google.com/forms/d/e/1FAIpQLScbeLBheZWjAp03d281pQHL2RvU93SLx2UXQZddx8i2nS2JmA/viewform?embedded=true";
-        internal const string RequestModsForm = "https://arisen.studio/request-mods.html";
+        internal const string RequestModsForm = "https://arisenstudio.info/submit";
 
         /// <summary>
         /// Direct link to the update data file hosted on Dropbox.

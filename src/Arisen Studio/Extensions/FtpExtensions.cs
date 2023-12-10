@@ -429,7 +429,7 @@ namespace ArisenStudio.Extensions
         }
 
         /// <summary>
-        /// Get all of the games from the public drive, and on connected USB devices (if enabled in settings).
+        /// Get all of the games from the internal drive, and external USB devices (if enabled in settings).
         /// </summary>
         /// <returns> </returns>
         public static List<ListItem> GetGamesBd()
@@ -459,7 +459,7 @@ namespace ArisenStudio.Extensions
         }
 
         /// <summary>
-        /// Get all of the games from the public drive, and on connected USB devices (if enabled in settings).
+        /// Get all of the games from the internal drive, and external USB devices (if enabled in settings).
         /// </summary>
         /// <returns> </returns>
         public static List<ListItem> GetGamesIso()
@@ -487,7 +487,7 @@ namespace ArisenStudio.Extensions
         }
 
         /// <summary>
-        /// Get all of the games from the public drive, and on connected USB devices (if enabled in settings).
+        /// Get all of the games from the internal drive, and external devices (if enabled in settings).
         /// </summary>
         /// <returns> </returns>
         public static List<ListItem> GetGamesPsn()

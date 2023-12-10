@@ -743,7 +743,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Console Manager";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameSaveResigner_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsoleManager_FormClosing);
             this.Load += new System.EventHandler(this.ConsoleManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PopupImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).EndInit();

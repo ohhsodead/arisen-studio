@@ -139,6 +139,18 @@ namespace ArisenStudio.Forms.Dialogs
 
         private bool IsSuccessful = false;
 
+        private bool PathExists(string path, string DirName)
+        {
+            XDevkit.IXboxFiles xboxDirectories = MainWindow.XboxConsole.DirectoryFiles(path);
+
+            for (int i = 0; i < xboxDirectories.Count; i++)
+            {
+                if(xboxDirectories[i].IsDirectory && xboxDirectories[i].Name == (path + DirName)) 
+                    return true;
+            }
+            return false;
+        }
+
         /// <summary> 
         /// Install the specified <see cref="ModItemData"/> files.
         /// </summary>
@@ -567,9 +579,15 @@ namespace ArisenStudio.Forms.Dialogs
                                         if (string.Equals(installFileName, Path.GetFileName(localFilePath), StringComparison.OrdinalIgnoreCase))
                                         {
                                             UpdateStatus($"Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentFolderPath}");
-                                            MainWindow.XboxConsole.MakeDirectory(@"Hdd:\ArisenMods\");
-                                            MainWindow.XboxConsole.MakeDirectory(@"Hdd:\ArisenMods\" + modItem.CategoryId.ToUpper() + @"\");
-                                            MainWindow.XboxConsole.SendFile(localFilePath, installPath);
+                                          
+                                            if(!PathExists(@"Hdd:\", "Arisen Mods"))
+                                                MainWindow.XboxConsole.MakeDirectory(@"Hdd:\Arisen Mods\");
+
+                                            if(!PathExists(@"Hdd:\Arisen Mods\", modItem.CategoryId.ToUpper()))
+                                                MainWindow.XboxConsole.MakeDirectory(@"Hdd:\Arisen Mods\" + modItem.CategoryId.ToUpper() + @"\");
+
+                                            MainWindow.XboxConsole.SendFile(localFilePath.Replace("\\\\", "\\").Replace("\\\\", "\\"), installPath);
+                                            
                                             UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
 
                                             indexFiles++;
@@ -610,6 +628,18 @@ namespace ArisenStudio.Forms.Dialogs
                         }
                 }
             });
+        }
+
+        private bool FileExists(string path, string pathWithFileName)
+        {
+            XDevkit.IXboxFiles xboxDirectories = MainWindow.XboxConsole.DirectoryFiles(path);
+
+            for (int i = 0; i < xboxDirectories.Count; i++)
+            {
+                if (!xboxDirectories[i].IsDirectory && xboxDirectories[i].Name == pathWithFileName)
+                    return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -887,14 +917,19 @@ namespace ArisenStudio.Forms.Dialogs
                             // Loop through the install file paths
                             foreach (string installFilePath in downloadFiles.InstallPaths)
                             {
-                                string parentDirectoryPath = Path.GetDirectoryName(installFilePath).Replace(@"\", "/") + "/";
+                                string installedPath = installFilePath.Replace("{CATEGORYID}", modItem.CategoryId.ToUpper());
+                                string parentDirectoryPath = Path.GetDirectoryName(installedPath);
 
                                 // Uninstall files
-                                if (Path.HasExtension(installFilePath))
+                                if (Path.HasExtension(installedPath))
                                 {
+                                    
                                     // Check whether file is being installed to game update folder
-                                    UpdateStatus(string.Format(Language.GetString("FILE_UNINSTALL_LOCATION"), $"{Path.GetFileName(installFilePath)} ({indexFiles}/{totalFiles})", parentDirectoryPath));
-                                    MainWindow.XboxConsole.DeleteFile(installFilePath);
+                                    UpdateStatus(string.Format(Language.GetString("FILE_UNINSTALL_LOCATION"), $"{Path.GetFileName(installedPath)} ({indexFiles}/{totalFiles})", parentDirectoryPath));
+                                    
+                                    if(FileExists(parentDirectoryPath, installedPath))
+                                        MainWindow.XboxConsole.DeleteFile(installedPath);
+
                                     UpdateStatus(Language.GetString("FILE_UNINSTALL_SUCCESS"));
                                     indexFiles++;
                                 }

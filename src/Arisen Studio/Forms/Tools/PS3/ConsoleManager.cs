@@ -52,7 +52,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             }
         }
 
-        private void GameSaveResigner_FormClosing(object sender, FormClosingEventArgs e)
+        private void ConsoleManager_FormClosing(object sender, FormClosingEventArgs e)
         {
             try
             {

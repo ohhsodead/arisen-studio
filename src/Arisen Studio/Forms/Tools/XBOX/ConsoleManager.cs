@@ -40,7 +40,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
         /// </summary>
         public ProfileItem SelectedConsole { get; private set; }
 
-        private Control SelectedItem;
+        private Control SelectedItem = null;
 
         private void ConsoleManager_Load(object sender, EventArgs e)
         {

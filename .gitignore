@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 src/ModioX/Properties/licenses.licx
+/Arisen Studio Android

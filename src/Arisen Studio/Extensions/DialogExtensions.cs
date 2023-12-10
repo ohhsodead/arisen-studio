@@ -536,7 +536,7 @@ namespace ArisenStudio.Extensions
 
         public static void ShowXboxGameLauncher(Form owner)
         {
-            using GameLauncher gameLauncher = new();
+            using Forms.Tools.XBOX.GameLauncher gameLauncher = new();
             gameLauncher.ShowDialog(owner);
         }
 

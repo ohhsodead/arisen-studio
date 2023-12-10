@@ -176,6 +176,16 @@ namespace ArisenStudio.Extensions
         }
 
         /// <summary>
+        /// Unmount current game
+        /// </summary>
+        /// <param name="ip"> PS3 Local IP Address </param>
+        /// <returns> </returns>
+        public static void LaunchGame(string ip)
+        {
+            HandleRequest(ip, "play.ps3");
+        }
+
+        /// <summary>
         /// External game data
         /// </summary>
         /// <param name="ip"> PS3 Local IP Address </param>

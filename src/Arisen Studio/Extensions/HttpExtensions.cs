@@ -54,15 +54,13 @@ namespace ArisenStudio.Extensions
 
                 using WebClient webClient = new();
                 XmlSerializer serializer = new(typeof(Titlepatch));
-                string titlePath = webClient.DownloadString("https://a0.ww.np.dl.playstation.net/tpl/np/" + titleId + "/" +
-                                                         titleId + "-ver.xml");
+                string titlePath = webClient.DownloadString("https://a0.ww.np.dl.playstation.net/tpl/np/" + titleId + "/" + titleId + "-ver.xml");
                 using TextReader textReader = new StringReader(titlePath);
                 return (Titlepatch)serializer.Deserialize(textReader);
             }
             catch (Exception ex)
             {
-                Program.Log.Error(ex,
-                    $"Unable to fetch game update for title ID: {titleId} or it wasn't recognized. Error Message: {ex.Message}");
+                Program.Log.Error(ex, $"Unable to fetch game update for title ID: {titleId} or it wasn't recognized. Error Message: {ex.Message}");
                 return null;
             }
         }
@@ -74,7 +72,6 @@ namespace ArisenStudio.Extensions
         public static void DownloadFile(string url, string filePath)
         {
             Directory.CreateDirectory(Path.GetDirectoryName(filePath));
-
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls13;
             ServicePointManager.ServerCertificateValidationCallback = (_, _, _, _) => true;
 

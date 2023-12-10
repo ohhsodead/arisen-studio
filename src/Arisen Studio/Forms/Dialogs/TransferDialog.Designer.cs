@@ -32,7 +32,6 @@ namespace ArisenStudio.Forms.Dialogs
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransferDialog));
             this.LabelModName = new DevExpress.XtraEditors.LabelControl();
             this.ButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.LabelStatus = new DevExpress.XtraEditors.LabelControl();
@@ -48,7 +47,7 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.LabelModName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelModName.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelModName.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.LabelModName.Appearance.Options.UseFont = true;
             this.LabelModName.Appearance.Options.UseTextOptions = true;
             this.LabelModName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -154,11 +153,10 @@ namespace ArisenStudio.Forms.Dialogs
             this.Controls.Add(this.LabelStatus);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.LabelModName);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("TransferDialog.IconOptions.Icon")));
             this.IconOptions.Image = global::ArisenStudio.Properties.Resources.arisenstudio;
             this.LookAndFeel.SkinName = "Office 2019 Black";
             this.LookAndFeel.UseDefaultLookAndFeel = false;

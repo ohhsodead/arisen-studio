@@ -349,9 +349,6 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
   <data name="EDIT_PROFILES" xml:space="preserve">
     <value>Edit Profiles</value>
   </data>
-  <data name="ENABLE_HARDWARE_ACCELERATION" xml:space="preserve">
-    <value>Enable Hardware Acceleration</value>
-  </data>
   <data name="ERROR" xml:space="preserve">
     <value>Error</value>
   </data>
