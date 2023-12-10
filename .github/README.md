@@ -8,7 +8,7 @@
   <a href="https://gitHub.com/ohhsodead/arisen-studio/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/arisen-studio.svg" /></a>
   <a href="https://github.com/ohhsodead/arisen-studio/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/arisen-studio.svg" /></a>
   </br>
-  <a href="https://arisen.studio/"><img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https://arisen.studio/" /></a>
+  <a href="https://arisenstudio.info/"><img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https://arisenstudio.info/" /></a>
   <a href="https://arisenstudio.app/"><img src="https://img.shields.io/website?down_message=offline&label=web%20store&up_message=online&url=https%3A%2F%2Farisenstudio.app%2F" />
   <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/website?down_message=offline&label=database&up_message=online&url=https://github.com%2Fohhsodead%2Farisen-studio-database" /></a>
   </a>
@@ -43,7 +43,6 @@ Please give this project a ⭐ if you find it useful.
 * Install and uninstall mods directly to your console
 * Manage your downloads and installed mods
 * File manager with local and console listings
-* Apply cheats (RTM) to supported games
 * Discord rich presence to show game playing
 
 ### PlayStation 3
@@ -130,15 +129,14 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [tsuiarts](mailto:nurishafa26@gmail.com)
 
 ## Translators
+
 * [goldug](http://djopposite.se/)
 * [Serdar Sağlam](mailto:serdarsaglam@msn.com)
 * [Kloido](mailto:jaortiz2026@gmail.com)
 
 ## Supporters
-[![Stargazers repo roster for @ohhsodead/arisen-studio](https://reporoster.com/stars/ohhsodead/arisen-studio)](https://github.com/ohhsodead/arisen-studio/stargazers)
 
-## News & Updates
-Here:
+[![Stargazers repo roster for @ohhsodead/arisen-studio](https://bytecrank.com/nastyox/reporoster/php/stargazersSVG.php?user=ohhsodead&repo=arisen-studio)](https://github.com/ohhsodead/arisen-studio/stargazers)
 
 ## Disclaimer
 

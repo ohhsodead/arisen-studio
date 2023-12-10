@@ -3,9 +3,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Beta v3.0.4
+## Beta v3.1.1
+- Fixed wrong language for installer
+- Hotfix for resource files issue
 
-- Updated Autoupdater.NET package to 1.8.1
+## Beta v3.1.0
+- Updated DevExpress library to 23.1
+- Updated AutoUpdater.NET package to 1.8.4
+- Updated DiscordRichPresence package to 1.2.1.24
+- Updated FluentFTP package to 48.0.3
+- Updated HtmlAgilityPack package to 1.11.54
+- Updated WebView2 package to 1.0.2151.40
+- Updated NLog package to 5.2.6
+- Updated to the new domain
+- Fixed possible issue when trying to connect to Xbox
+- Fixed issue when transferring Xbox files (by Huawei)
+- Fixed default paths when installing not working
+- Fixed paths being limited to only 16 characters
+- Fixed game saves being downloaded as PKG type
+- Removed Hardware Acceleration from Settings
+- Other minor fixes and improvements
+
+## Beta v3.0.4
+- Updated AutoUpdater.NET package to 1.8.1
 - Updated WebView2 package to 1.0.1722.45
 - Updated NLog package to 5.1.4
 - Added Game Launcher GUI for PS3
@@ -14,7 +34,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Fixed "Code 425" when connecting (#75)
 
 ## Beta v3.0.3
-
 - Updated CodeHollow.FeedReader package to 1.2.6
 - Updated FluentFTP package to 46.0.2
 - Updated SharpZipLib package to 1.4.2
@@ -26,8 +45,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Fixed timeout when using file manager
 - Fixed and updated the Xbox 360 libraries
 
-## Beta v3.0.2
 
+## Beta v3.0.2
 - Updated AutoUpdater.NET package to 1.7.6
 - Updated DiscordRichPresence package to 1.1.3.18
 - Updated FluentFTP package to 44.0.1
