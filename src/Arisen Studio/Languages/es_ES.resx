@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -200,7 +200,7 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
     <value>Trucos aplicados al juego con éxito.</value>
   </data>
   <data name="CHEAT_NOT_APPLIED" xml:space="preserve">
-    <value>No se pueden aplicar trucos al juego. Error: {0}</value>
+    <value>Incapaz de aplicar el truco al juego. Error: {0}</value>
   </data>
   <data name="CHEAT_NOT_SUPPORTED" xml:space="preserve">
     <value>Este truco no se puede aplicar porque contiene un código de operación que aún no se ha implementado.</value>
@@ -266,7 +266,7 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
     <value>La actualización URL ha sido copiada al portapapeles.</value>
   </data>
   <data name="CREATE_BACKUP_FILE" xml:space="preserve">
-    <value>Debes primero crear un archivo de copia de seguridad para restaurar.</value>
+    <value>Primero debes crear un archivo de copia de seguridad para restaurar.</value>
   </data>
   <data name="CURRENT_GAME" xml:space="preserve">
     <value>Juego actual:</value>
@@ -358,7 +358,7 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
   <data name="ERROR_OCCURRED" xml:space="preserve">
     <value>Un error ocurrió: {0}
 
-Por favor inténtalo más tarde. Si el problema persiste &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;abrir un nuevo problema&lt;/a&gt; en nuestro seguimiento de GitHub.</value>
+Por favor, inténtalo más tarde. Si el problema persiste &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;abre un nuevo problema&lt;/a&gt; en nuestro seguimiento de GitHub.</value>
   </data>
   <data name="EXTRACT_IMAGE" xml:space="preserve">
     <value>Extraer imagen</value>
@@ -382,7 +382,7 @@ Por favor inténtalo más tarde. Si el problema persiste &lt;a href="https://git
     <value>Obteniendo la lista del directorio de: {0}</value>
   </data>
   <data name="FETCHING_LISTING_ERROR" xml:space="preserve">
-    <value>No se puede obtener la lista de directorios para la ruta: {0} - Error: {1}</value>
+    <value>Incapaz de obtener la lista de directorios para la ruta: {0} - Error: {1}</value>
   </data>
   <data name="FETCHING_ROOT_DIRECTORIES" xml:space="preserve">
     <value>Obteniendo directorios raíz</value>
@@ -1310,7 +1310,7 @@ Sólo continúa bajo tu propio riesgo y solo si sabes lo que estás haciendo.
     <value>No se seleccionó ninguna descarga de archivo.</value>
   </data>
   <data name="NO_GAME_REGION_FOLDER_FOUND" xml:space="preserve">
-    <value>No se puede encontrar la carpeta de actualización del juego para esta región.
+    <value>Incapaz de encontrar la carpeta de actualización del juego para esta región.
 
 Instala los mods correctos para este juego o elige una región de juego diferente.</value>
   </data>
@@ -1333,7 +1333,7 @@ Instala los mods correctos para este juego o elige una región de juego diferent
     <value>No tienes listas</value>
   </data>
   <data name="NO_MORE_DETAILS" xml:space="preserve">
-    <value>No otros detalles pueden ser encontrados para esto por ahora.</value>
+    <value>No hay más detalles disponibles, por ahora... ¡Por favor, háznoslo saber si puedes proporcionar más!</value>
   </data>
   <data name="NO_NEWS_IS_GOOD_NEWS" xml:space="preserve">
     <value>¡Sin noticias son buenas noticias!</value>
@@ -1417,7 +1417,7 @@ Instala los mods correctos para este juego o elige una región de juego diferent
     <value>Redireccionando...</value>
   </data>
   <data name="REDIRECT_TO_GITHUB_ISSUES" xml:space="preserve">
-    <value>Ahora serás redirigido a nuestra página de problemas de GitHub y todos los detalles se completarán automáticamente para ti. Por favor proporciona la información sobre el problema para ayudarnos a solucionarlo.
+    <value>Ahora serás redirigido a nuestra página de problemas de GitHub y todos los detalles se completarán automáticamente para ti. Por favor, proporciona la información sobre el problema para ayudarnos a solucionarlo.
 
 Haz clic en el botón 'Enviar' para abrir un nuevo problema que puede ayudarnos a solucionar cualquier problema.</value>
   </data>
@@ -1461,7 +1461,7 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
     <value>¿Realmente quieres restaurar al archivo por defecto? Todos los cambios se perderán.</value>
   </data>
   <data name="RICH_PRESENCE" xml:space="preserve">
-    <value>Rica presencia</value>
+    <value>Rich Presence</value>
   </data>
   <data name="SCANNING_XBOX_CONSOLES" xml:space="preserve">
     <value>Escaneando por consolas Xbox...</value>
@@ -1545,7 +1545,7 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
     <value>OPCIONES</value>
   </data>
   <data name="TITLE_OUR_FAVORITE_GAMES" xml:space="preserve">
-    <value>Our Favorite Games</value>
+    <value>Nuestros Juegos Favoritos</value>
   </data>
   <data name="TITLE_OUR_FAVORITE_MODS" xml:space="preserve">
     <value>NUESTROS MODS FAVORITOS</value>
