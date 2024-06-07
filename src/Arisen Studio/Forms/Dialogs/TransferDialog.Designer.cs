@@ -63,7 +63,7 @@ namespace ArisenStudio.Forms.Dialogs
             // ButtonCancel
             // 
             this.ButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonCancel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonCancel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.ButtonCancel.Appearance.Options.UseFont = true;
             this.ButtonCancel.Location = new System.Drawing.Point(467, 162);
             this.ButtonCancel.Name = "ButtonCancel";
@@ -96,7 +96,7 @@ namespace ArisenStudio.Forms.Dialogs
             // ButtonOpenPath
             // 
             this.ButtonOpenPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOpenPath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonOpenPath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.ButtonOpenPath.Appearance.Options.UseFont = true;
             this.ButtonOpenPath.Location = new System.Drawing.Point(364, 162);
             this.ButtonOpenPath.Name = "ButtonOpenPath";

@@ -1,8 +1,10 @@
 ﻿using ArisenStudio.Constants;
+using ArisenStudio.Extensions;
 using ArisenStudio.Models.Dashboard;
 using ArisenStudio.Models.Database;
 using ICSharpCode.SharpZipLib.Zip;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Bson;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -93,7 +95,12 @@ namespace ArisenStudio.Database
         /// <summary>
         /// Contains favorite mods.
         /// </summary>
-        public FavoriteModsData FavoritesMods { get; private set; }
+        public FavoriteGamesData FavoriteGames { get; private set; }
+
+        /// <summary>
+        /// Contains favorite mods.
+        /// </summary>
+        public FavoriteModsData FavoriteMods { get; private set; }
 
         /// <summary>
         /// Initialization of the class.
@@ -118,7 +125,8 @@ namespace ArisenStudio.Database
                 GameCheatsPs3 = await GetGameCheatsPs3Async(),
                 GamePatchesXbox = await GetGamePatchesXboxAsync(),
                 GamesTitleIdsXbox = await GetGamesTitleIdsXboxAsync(),
-                FavoritesMods = await GetFavoriteModsAsync(),
+                FavoriteGames = await GetFavoriteGamesAsync(),
+                FavoriteMods = await GetFavoriteModsAsync(),
             };
 
             //data.GamePatchesXbox = await GetGamePatchesXboxAsync();
@@ -128,6 +136,13 @@ namespace ArisenStudio.Database
             data.CategoriesData.Categories = data.CategoriesData.Categories.OrderBy(o => o.Title).ToList();
 
             return data;
+        }
+
+        private static readonly HttpClient _instance = new HttpClient();
+
+        public static HttpClient Instance
+        {
+            get { return _instance; }
         }
 
         /// <summary>
@@ -141,6 +156,15 @@ namespace ArisenStudio.Database
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
+            //var client = HttpExtensions.HttpClientInstance;
+
+            //using (var data = HttpExtensions.HttpClientSingleton(Urls.AnnouncementsData, ""))
+            //{
+            //    using StreamReader streamReader = new(data);
+            //    using JsonReader jsonReader = new JsonTextReader(streamReader);
+            //    return new JsonSerializer().Deserialize<AnnouncementsData>(jsonReader);
+            //}
+
             return new JsonSerializer().Deserialize<AnnouncementsData>(jsonReader);
         }
 
@@ -150,8 +174,8 @@ namespace ArisenStudio.Database
         /// <returns> CategoriesData </returns>
         private static async Task<CategoriesData> GetCategoriesAsync()
         {
-            using HttpClient client = new();
-            using Stream stream = await client.GetStreamAsync(Urls.CategoriesData).ConfigureAwait(true);
+            //using HttpClient client = new();
+            using Stream stream = await _instance.GetStreamAsync(Urls.CategoriesData).ConfigureAwait(true);
             using StreamReader streamReader = new(stream);
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
@@ -479,6 +503,20 @@ namespace ArisenStudio.Database
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
             return new JsonSerializer().Deserialize<GamesTitleIdsDataXbox>(jsonReader);
+        }
+
+        /// <summary>
+        /// Download and return the favorite mods data.
+        /// </summary>
+        /// <returns> ModsData </returns>
+        private static async Task<FavoriteGamesData> GetFavoriteGamesAsync()
+        {
+            using HttpClient client = new();
+            using Stream stream = await client.GetStreamAsync(Urls.FavoriteGamesData).ConfigureAwait(true);
+            using StreamReader streamReader = new(stream);
+            using JsonReader jsonReader = new JsonTextReader(streamReader);
+
+            return new JsonSerializer().Deserialize<FavoriteGamesData>(jsonReader);
         }
 
         /// <summary>

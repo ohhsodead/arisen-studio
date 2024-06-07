@@ -121,9 +121,10 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TablePanelStats.SetColumn(this.StatGameMode, 1);
             this.StatGameMode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StatGameMode.Location = new System.Drawing.Point(149, 59);
+            this.StatGameMode.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.StatGameMode.Name = "StatGameMode";
             this.TablePanelStats.SetRow(this.StatGameMode, 1);
-            this.StatGameMode.Size = new System.Drawing.Size(140, 50);
+            this.StatGameMode.Size = new System.Drawing.Size(140, 43);
             this.StatGameMode.TabIndex = 6;
             this.StatGameMode.Title = "Game Mode";
             this.StatGameMode.Value = "Value";
@@ -135,9 +136,10 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TablePanelStats.SetColumn(this.StatVersion, 0);
             this.StatVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StatVersion.Location = new System.Drawing.Point(3, 59);
+            this.StatVersion.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.StatVersion.Name = "StatVersion";
             this.TablePanelStats.SetRow(this.StatVersion, 1);
-            this.StatVersion.Size = new System.Drawing.Size(140, 50);
+            this.StatVersion.Size = new System.Drawing.Size(140, 43);
             this.StatVersion.TabIndex = 5;
             this.StatVersion.Title = "Version";
             this.StatVersion.Value = "Value";
@@ -149,9 +151,10 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TablePanelStats.SetColumn(this.StatSubmittedBy, 4);
             this.StatSubmittedBy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StatSubmittedBy.Location = new System.Drawing.Point(588, 3);
+            this.StatSubmittedBy.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.StatSubmittedBy.Name = "StatSubmittedBy";
             this.TablePanelStats.SetRow(this.StatSubmittedBy, 0);
-            this.StatSubmittedBy.Size = new System.Drawing.Size(182, 50);
+            this.StatSubmittedBy.Size = new System.Drawing.Size(182, 43);
             this.StatSubmittedBy.TabIndex = 4;
             this.StatSubmittedBy.Title = "Submitted By";
             this.StatSubmittedBy.Value = "Value";
@@ -163,9 +166,10 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TablePanelStats.SetColumn(this.StatCreatedBy, 3);
             this.StatCreatedBy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StatCreatedBy.Location = new System.Drawing.Point(432, 3);
+            this.StatCreatedBy.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.StatCreatedBy.Name = "StatCreatedBy";
             this.TablePanelStats.SetRow(this.StatCreatedBy, 0);
-            this.StatCreatedBy.Size = new System.Drawing.Size(150, 50);
+            this.StatCreatedBy.Size = new System.Drawing.Size(150, 43);
             this.StatCreatedBy.TabIndex = 3;
             this.StatCreatedBy.Title = "Created By";
             this.StatCreatedBy.Value = "Value";
@@ -177,9 +181,10 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TablePanelStats.SetColumn(this.StatModType, 2);
             this.StatModType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StatModType.Location = new System.Drawing.Point(295, 3);
+            this.StatModType.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.StatModType.Name = "StatModType";
             this.TablePanelStats.SetRow(this.StatModType, 0);
-            this.StatModType.Size = new System.Drawing.Size(131, 50);
+            this.StatModType.Size = new System.Drawing.Size(131, 43);
             this.StatModType.TabIndex = 2;
             this.StatModType.Title = "Mod Type";
             this.StatModType.Value = "Value";
@@ -191,9 +196,10 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TablePanelStats.SetColumn(this.StatSystemType, 1);
             this.StatSystemType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StatSystemType.Location = new System.Drawing.Point(149, 3);
+            this.StatSystemType.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.StatSystemType.Name = "StatSystemType";
             this.TablePanelStats.SetRow(this.StatSystemType, 0);
-            this.StatSystemType.Size = new System.Drawing.Size(140, 50);
+            this.StatSystemType.Size = new System.Drawing.Size(140, 43);
             this.StatSystemType.TabIndex = 1;
             this.StatSystemType.Title = "System Type";
             this.StatSystemType.Value = "Value";
@@ -204,6 +210,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatLastUpdated.Appearance.Options.UseBackColor = true;
             this.StatLastUpdated.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StatLastUpdated.Location = new System.Drawing.Point(3, 3);
+            this.StatLastUpdated.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.StatLastUpdated.Name = "StatLastUpdated";
             this.StatLastUpdated.Size = new System.Drawing.Size(140, 63);
             this.StatLastUpdated.TabIndex = 0;
@@ -246,7 +253,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TabDescription.Caption = "Description";
             this.TabDescription.Controls.Add(this.LabelDescription);
             this.TabDescription.Name = "TabDescription";
-            this.TabDescription.Size = new System.Drawing.Size(776, 309);
+            this.TabDescription.Size = new System.Drawing.Size(776, 304);
             this.TabDescription.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.TabDescription_Scroll);
             // 
             // LabelDescription
@@ -273,7 +280,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TabDownloads.AutoScroll = true;
             this.TabDownloads.Caption = "Downloads";
             this.TabDownloads.Name = "TabDownloads";
-            this.TabDownloads.Size = new System.Drawing.Size(776, 309);
+            this.TabDownloads.Size = new System.Drawing.Size(776, 304);
             this.TabDownloads.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.TabDownloads_Scroll);
             // 
             // PanelHeader

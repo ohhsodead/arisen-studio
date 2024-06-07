@@ -26,7 +26,10 @@ namespace ArisenStudio
         Xbox360Slim,
 
         [Description("Xbox 360 E (Slim E)")]
-        Xbox360SlimE
+        Xbox360SlimE,
+
+        [Description("PlayStation 4 (All)")]
+        PlayStation4,
     }
 
     /// <summary>
@@ -38,7 +41,10 @@ namespace ArisenStudio
         PS3,
 
         [Description("Xbox 360")]
-        XBOX360
+        XBOX360,
+
+        [Description("PlayStation 4")]
+        PS4
     }
 
     public enum FilterType

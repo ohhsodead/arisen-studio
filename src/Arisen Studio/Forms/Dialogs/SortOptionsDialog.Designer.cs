@@ -93,13 +93,13 @@ namespace ArisenStudio.Forms.Dialogs
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Creator"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Version")});
             this.RadioGroupSortOptions.Properties.Padding = new System.Windows.Forms.Padding(0);
-            this.RadioGroupSortOptions.Size = new System.Drawing.Size(254, 96);
+            this.RadioGroupSortOptions.Size = new System.Drawing.Size(254, 100);
             this.RadioGroupSortOptions.TabIndex = 1174;
             this.RadioGroupSortOptions.SelectedIndexChanged += new System.EventHandler(this.RadioGroupSortOptions_SelectedIndexChanged);
             // 
             // RadioGroupSortOrder
             // 
-            this.RadioGroupSortOrder.Location = new System.Drawing.Point(11, 154);
+            this.RadioGroupSortOrder.Location = new System.Drawing.Point(11, 158);
             this.RadioGroupSortOrder.Name = "RadioGroupSortOrder";
             this.RadioGroupSortOrder.Properties.AllowFocused = false;
             this.RadioGroupSortOrder.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -111,7 +111,7 @@ namespace ArisenStudio.Forms.Dialogs
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Ascending"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Descending")});
             this.RadioGroupSortOrder.Properties.Padding = new System.Windows.Forms.Padding(0);
-            this.RadioGroupSortOrder.Size = new System.Drawing.Size(254, 48);
+            this.RadioGroupSortOrder.Size = new System.Drawing.Size(254, 50);
             this.RadioGroupSortOrder.TabIndex = 1176;
             this.RadioGroupSortOrder.SelectedIndexChanged += new System.EventHandler(this.RadioGroupSortOrder_SelectedIndexChanged);
             // 
@@ -121,7 +121,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelSortOrder.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.LabelSortOrder.Appearance.Options.UseFont = true;
             this.LabelSortOrder.Appearance.Options.UseForeColor = true;
-            this.LabelSortOrder.Location = new System.Drawing.Point(12, 134);
+            this.LabelSortOrder.Location = new System.Drawing.Point(12, 138);
             this.LabelSortOrder.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelSortOrder.Name = "LabelSortOrder";
             this.LabelSortOrder.Size = new System.Drawing.Size(57, 15);

@@ -5,7 +5,7 @@ namespace ArisenStudio.Models.Dashboard
     public partial class FavoriteModsData
     {
         /// <summary>
-        /// Get the announcements.
+        /// Get the favorites.
         /// </summary>
         public List<Favorite> Favorites { get; set; }
 

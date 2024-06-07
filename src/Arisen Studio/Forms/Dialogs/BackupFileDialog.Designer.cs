@@ -53,10 +53,10 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.LabelLocalFilePath.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.LabelLocalFilePath.Appearance.Options.UseForeColor = true;
-            this.LabelLocalFilePath.Location = new System.Drawing.Point(12, 104);
+            this.LabelLocalFilePath.Location = new System.Drawing.Point(12, 108);
             this.LabelLocalFilePath.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelLocalFilePath.Name = "LabelLocalFilePath";
-            this.LabelLocalFilePath.Size = new System.Drawing.Size(76, 13);
+            this.LabelLocalFilePath.Size = new System.Drawing.Size(79, 16);
             this.LabelLocalFilePath.TabIndex = 7;
             this.LabelLocalFilePath.Text = "Local File Path:";
             // 
@@ -64,21 +64,22 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.LabelInstallFilePath.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.LabelInstallFilePath.Appearance.Options.UseForeColor = true;
-            this.LabelInstallFilePath.Location = new System.Drawing.Point(12, 58);
+            this.LabelInstallFilePath.Location = new System.Drawing.Point(12, 60);
             this.LabelInstallFilePath.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelInstallFilePath.Name = "LabelInstallFilePath";
-            this.LabelInstallFilePath.Size = new System.Drawing.Size(81, 13);
+            this.LabelInstallFilePath.Size = new System.Drawing.Size(82, 16);
             this.LabelInstallFilePath.TabIndex = 9;
             this.LabelInstallFilePath.Text = "Install File Path:";
             // 
             // LabelGameId
             // 
+            this.LabelGameId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelGameId.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.LabelGameId.Appearance.Options.UseForeColor = true;
-            this.LabelGameId.Location = new System.Drawing.Point(203, 12);
+            this.LabelGameId.Location = new System.Drawing.Point(213, 12);
             this.LabelGameId.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelGameId.Name = "LabelGameId";
-            this.LabelGameId.Size = new System.Drawing.Size(45, 13);
+            this.LabelGameId.Size = new System.Drawing.Size(46, 16);
             this.LabelGameId.TabIndex = 12;
             this.LabelGameId.Text = "Game Id:";
             // 
@@ -89,7 +90,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelFilename.Location = new System.Drawing.Point(12, 12);
             this.LabelFilename.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelFilename.Name = "LabelFilename";
-            this.LabelFilename.Size = new System.Drawing.Size(53, 13);
+            this.LabelFilename.Size = new System.Drawing.Size(55, 16);
             this.LabelFilename.TabIndex = 14;
             this.LabelFilename.Text = "File Name:";
             // 
@@ -102,19 +103,18 @@ namespace ArisenStudio.Forms.Dialogs
             this.TextBoxFileName.Name = "TextBoxFileName";
             this.TextBoxFileName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxFileName.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxFileName.Size = new System.Drawing.Size(185, 22);
+            this.TextBoxFileName.Size = new System.Drawing.Size(195, 24);
             this.TextBoxFileName.TabIndex = 0;
             // 
             // TextBoxGameId
             // 
-            this.TextBoxGameId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxGameId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxGameId.Enabled = false;
-            this.TextBoxGameId.Location = new System.Drawing.Point(203, 30);
+            this.TextBoxGameId.Location = new System.Drawing.Point(213, 30);
             this.TextBoxGameId.Name = "TextBoxGameId";
             this.TextBoxGameId.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxGameId.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxGameId.Size = new System.Drawing.Size(108, 22);
+            this.TextBoxGameId.Size = new System.Drawing.Size(108, 24);
             this.TextBoxGameId.TabIndex = 1;
             // 
             // TextBoxInstallPathConsole
@@ -122,11 +122,11 @@ namespace ArisenStudio.Forms.Dialogs
             this.TextBoxInstallPathConsole.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxInstallPathConsole.Enabled = false;
-            this.TextBoxInstallPathConsole.Location = new System.Drawing.Point(12, 76);
+            this.TextBoxInstallPathConsole.Location = new System.Drawing.Point(12, 78);
             this.TextBoxInstallPathConsole.Name = "TextBoxInstallPathConsole";
             this.TextBoxInstallPathConsole.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxInstallPathConsole.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxInstallPathConsole.Size = new System.Drawing.Size(299, 22);
+            this.TextBoxInstallPathConsole.Size = new System.Drawing.Size(309, 24);
             this.TextBoxInstallPathConsole.TabIndex = 2;
             // 
             // TextBoxInstallPathLocal
@@ -134,18 +134,18 @@ namespace ArisenStudio.Forms.Dialogs
             this.TextBoxInstallPathLocal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxInstallPathLocal.Enabled = false;
-            this.TextBoxInstallPathLocal.Location = new System.Drawing.Point(12, 122);
+            this.TextBoxInstallPathLocal.Location = new System.Drawing.Point(12, 126);
             this.TextBoxInstallPathLocal.Name = "TextBoxInstallPathLocal";
             this.TextBoxInstallPathLocal.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxInstallPathLocal.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxInstallPathLocal.Size = new System.Drawing.Size(248, 22);
+            this.TextBoxInstallPathLocal.Size = new System.Drawing.Size(258, 24);
             this.TextBoxInstallPathLocal.TabIndex = 3;
             // 
             // ButtonCancel
             // 
             this.ButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonCancel.Location = new System.Drawing.Point(236, 165);
+            this.ButtonCancel.Location = new System.Drawing.Point(246, 185);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCancel.Size = new System.Drawing.Size(75, 23);
@@ -156,7 +156,7 @@ namespace ArisenStudio.Forms.Dialogs
             // ButtonOK
             // 
             this.ButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOK.Location = new System.Drawing.Point(155, 165);
+            this.ButtonOK.Location = new System.Drawing.Point(165, 185);
             this.ButtonOK.Name = "ButtonOK";
             this.ButtonOK.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonOK.Size = new System.Drawing.Size(75, 23);
@@ -166,10 +166,11 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             // ButtonBrowseLocalPath
             // 
-            this.ButtonBrowseLocalPath.Location = new System.Drawing.Point(266, 122);
+            this.ButtonBrowseLocalPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonBrowseLocalPath.Location = new System.Drawing.Point(276, 126);
             this.ButtonBrowseLocalPath.Name = "ButtonBrowseLocalPath";
             this.ButtonBrowseLocalPath.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonBrowseLocalPath.Size = new System.Drawing.Size(45, 22);
+            this.ButtonBrowseLocalPath.Size = new System.Drawing.Size(45, 24);
             this.ButtonBrowseLocalPath.TabIndex = 4;
             this.ButtonBrowseLocalPath.Text = "...";
             this.ButtonBrowseLocalPath.Click += new System.EventHandler(this.ButtonBrowseLocalPath_Click);
@@ -182,7 +183,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(323, 200);
+            this.ClientSize = new System.Drawing.Size(333, 220);
             this.Controls.Add(this.ButtonBrowseLocalPath);
             this.Controls.Add(this.ButtonOK);
             this.Controls.Add(this.ButtonCancel);

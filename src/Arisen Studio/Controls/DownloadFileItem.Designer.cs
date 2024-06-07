@@ -30,6 +30,7 @@ namespace ArisenStudio.Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DownloadFileItem));
             this.LabelName = new DevExpress.XtraEditors.LabelControl();
             this.LabelHeaderRegion = new DevExpress.XtraEditors.LabelControl();
             this.LabelRegion = new DevExpress.XtraEditors.LabelControl();
@@ -176,7 +177,7 @@ namespace ArisenStudio.Controls
             this.Separator.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Separator.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
             this.Separator.LineColor = System.Drawing.SystemColors.WindowFrame;
-            this.Separator.Location = new System.Drawing.Point(0, 114);
+            this.Separator.Location = new System.Drawing.Point(0, 130);
             this.Separator.Name = "Separator";
             this.Separator.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.Separator.Size = new System.Drawing.Size(745, 6);
@@ -191,12 +192,13 @@ namespace ArisenStudio.Controls
             this.ImageDownload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ImageDownload.Location = new System.Drawing.Point(679, 18);
             this.ImageDownload.Name = "ImageDownload";
-            this.ImageDownload.ShowToolTips = DevExpress.Utils.DefaultBoolean.False;
+            this.ImageDownload.ShowToolTips = DevExpress.Utils.DefaultBoolean.True;
             this.ImageDownload.Size = new System.Drawing.Size(24, 24);
             this.ImageDownload.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
-            this.ImageDownload.SvgImage = global::ArisenStudio.Properties.Resources.download;
+            this.ImageDownload.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download;
             this.ImageDownload.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.ImageDownload.TabIndex = 1200;
+            this.ImageDownload.ToolTip = "Download Files";
             this.ImageDownload.Click += new System.EventHandler(this.ImageDownload_Click);
             // 
             // ImageInstall
@@ -208,12 +210,14 @@ namespace ArisenStudio.Controls
             this.ImageInstall.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ImageInstall.Location = new System.Drawing.Point(649, 18);
             this.ImageInstall.Name = "ImageInstall";
-            this.ImageInstall.ShowToolTips = DevExpress.Utils.DefaultBoolean.False;
+            this.ImageInstall.ShowToolTips = DevExpress.Utils.DefaultBoolean.True;
             this.ImageInstall.Size = new System.Drawing.Size(24, 24);
             this.ImageInstall.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
-            this.ImageInstall.SvgImage = global::ArisenStudio.Properties.Resources.install_svg;
+            this.ImageInstall.SvgImage = global::ArisenStudio.Properties.Resources.icons8_install;
             this.ImageInstall.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.ImageInstall.TabIndex = 1201;
+            this.ImageInstall.ToolTip = "Install Files";
+            this.ImageInstall.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.ImageInstall.Click += new System.EventHandler(this.ImageInstall_Click);
             // 
             // ListBoxInstallFiles
@@ -228,7 +232,7 @@ namespace ArisenStudio.Controls
             this.ListBoxInstallFiles.Name = "ListBoxInstallFiles";
             this.ListBoxInstallFiles.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.ListBoxInstallFiles.ShowFocusRect = false;
-            this.ListBoxInstallFiles.Size = new System.Drawing.Size(730, 18);
+            this.ListBoxInstallFiles.Size = new System.Drawing.Size(730, 34);
             this.ListBoxInstallFiles.TabIndex = 1202;
             this.ListBoxInstallFiles.Visible = false;
             this.ListBoxInstallFiles.DrawItem += new DevExpress.XtraEditors.ListBoxDrawItemEventHandler(this.ListBoxInstallFiles_DrawItem);
@@ -250,14 +254,14 @@ namespace ArisenStudio.Controls
             // SvgImages
             // 
             this.SvgImages.ImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            this.SvgImages.Add("arrow_down", "arrow_down", typeof(ArisenStudio.Properties.Resources));
-            this.SvgImages.Add("arrow_up", "arrow_up", typeof(ArisenStudio.Properties.Resources));
+            this.SvgImages.Add("expand", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SvgImages.expand"))));
+            this.SvgImages.Add("collapse", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SvgImages.collapse"))));
             // 
             // ImageExpand
             // 
             this.ImageExpand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ImageExpand.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageExpand.EditValue = global::ArisenStudio.Properties.Resources.arrow_down;
+            this.ImageExpand.EditValue = global::ArisenStudio.Properties.Resources.icons8_expand;
             this.ImageExpand.Location = new System.Drawing.Point(709, 18);
             this.ImageExpand.Name = "ImageExpand";
             this.ImageExpand.Properties.AllowFocused = false;
@@ -269,6 +273,9 @@ namespace ArisenStudio.Controls
             this.ImageExpand.Properties.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.ImageExpand.Size = new System.Drawing.Size(24, 24);
             this.ImageExpand.TabIndex = 1204;
+            this.ImageExpand.ToolTip = "Show Files";
+            this.ImageExpand.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Object;
+            this.ImageExpand.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.ImageExpand.Click += new System.EventHandler(this.ImageExpand_Click);
             // 
             // DownloadFileItem
@@ -295,7 +302,7 @@ namespace ArisenStudio.Controls
             this.Controls.Add(this.LabelHeaderRegion);
             this.Margin = new System.Windows.Forms.Padding(2, 0, 3, 0);
             this.Name = "DownloadFileItem";
-            this.Size = new System.Drawing.Size(745, 120);
+            this.Size = new System.Drawing.Size(745, 136);
             this.Load += new System.EventHandler(this.DownloadItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Separator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageDownload)).EndInit();

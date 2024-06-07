@@ -22,7 +22,7 @@ namespace ArisenStudio.Models.Database
         /// <param name="version"></param>
         /// <param name="creator"></param>
         /// <returns></returns>
-        public List<GameSaveItemData> GetGameSaveItems(Platform platform, string categoryId, string name, string region, string version, string creator)
+        public List<GameSaveItemData> GetGameSaveItems(Platform platform, string categoryId, string name, string region, string version)
         {
             return categoryId switch
             {
@@ -30,17 +30,15 @@ namespace ArisenStudio.Models.Database
                 //consoleProfile.FavoriteIds.Any(y => y == x.Id) &&
                 x.Name.ContainsIgnoreCase(name) &&
                 x.Region.ContainsIgnoreCase(region) &&
-                x.Version.ContainsIgnoreCase(version) &&
-                x.Creators.ToArray().AnyContainsIgnoreCase(creator))
+                x.Version.ContainsIgnoreCase(version))
                 .ToList(),
                 _ => GameSaves.Where(x =>
                     x.GetPlatform() == platform &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
                     x.Region.ContainsIgnoreCase(region) &&
-                    x.Version.ContainsIgnoreCase(version) &&
-                    x.Creators.ToArray().AnyContainsIgnoreCase(creator))
-                    .ToList()
+                    x.Version.ContainsIgnoreCase(version))
+                .ToList()
             };
         }
 

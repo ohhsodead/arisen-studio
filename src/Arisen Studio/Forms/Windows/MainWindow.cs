@@ -46,6 +46,11 @@ using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Ribbon.ViewInfo;
 using JRPC_Client;
 using FluentFTP.Exceptions;
+using Microsoft.Web.WebView2.WinForms;
+using Microsoft.Web.WebView2.Core;
+using System.Security.Policy;
+using DevExpress.XtraCharts;
+using AdsJumboWinForm;
 
 namespace ArisenStudio.Forms.Windows
 {
@@ -165,7 +170,7 @@ namespace ArisenStudio.Forms.Windows
 
         private IOverlaySplashScreenHandle ShowProgressPanel()
         {
-            overlayBackground = new() { BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder, Size = new Size(Window.Size.Width - 2, Window.Size.Height - 31), Location = new Point(-6, 30), Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom };
+            overlayBackground = new() { BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder, Size = new Size(Window.Size.Width - 2, Window.Size.Height - 28), Location = new Point(-12, 30), Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom };
             Controls.Add(overlayBackground);
             return SplashScreenManager.ShowOverlayForm(overlayBackground, splashScreenOptions);
             //return SplashScreenManager.ShowOverlayForm(this, splashScreenOptions);
@@ -366,11 +371,15 @@ namespace ArisenStudio.Forms.Windows
 
             SetStatus($"{ResourceLanguage.GetString("INITIALIZED")} Arisen Studio ({UpdateExtensions.CurrentVersionName}) - {ResourceLanguage.GetString("READY_TO_CONNECT")}");
 
+            SetConsoleProfile();
+            SetAboutInfo();
+
             // Settings tab
             LoadLanguages();
             LoadSettings();
 
             // Dashboard tab
+            LoadCurrentPoll();
             LoadStatistics();
             LoadChangeLog();
             LoadAnnouncements();
@@ -387,8 +396,6 @@ namespace ArisenStudio.Forms.Windows
                 ChangeLanguage(Settings.Language);
             }
 
-            SetAboutInfo();
-
             PageDashboard.AutoScroll = true;
 
             UpdateControlColors();
@@ -396,12 +403,11 @@ namespace ArisenStudio.Forms.Windows
 
             NavigationMenu.SelectElement(NavigationItemDashboard);
 
-            CloseProgressPanel(handleProgressPanel);
-
-            SetConsoleProfile();
-            LoadOurFavoriteMods();
-            LoadRecentlyUpdated();
             EnableConsoleActions();
+
+            BannerAdDashboard.ShowAd(802, 134, "33krwjd74qn6");
+
+            CloseProgressPanel(handleProgressPanel);
 
             if (Settings.ShowRecommendations)
             {
@@ -430,8 +436,10 @@ namespace ArisenStudio.Forms.Windows
 
         private void ShowRecommendations()
         {
-            XtraMessageBoxArgs args = new();
-            args.Owner = Window;
+            XtraMessageBoxArgs args = new()
+            {
+                Owner = Window
+            };
             args.Showing += PopupArgs_Showing;
             args.AllowHtmlText = DefaultBoolean.True;
             args.HyperlinkClick += PopupArgs_HyperlinkClick;
@@ -455,7 +463,7 @@ namespace ArisenStudio.Forms.Windows
                 "More helpful information be found on our <a href=https://arisenstudio.info/>website</a>.";
             //"- You must have Rebug Toolbox or MultiMAN open when installing/transferring files.";
 
-            args.Buttons = new DialogResult[] { DialogResult.Yes, DialogResult.No };
+            args.Buttons = new[] { DialogResult.Yes, DialogResult.No };
 
             if (XtraMessageBox.Show(args) == DialogResult.No)
             {
@@ -529,17 +537,6 @@ namespace ArisenStudio.Forms.Windows
         }
 
         private void CloseOverlayFeatureNotAvailable(NavigationPage page, IOverlaySplashScreenHandle handle)
-        {
-            if (handle != null)
-            {
-                page.Enabled = true;
-                SplashScreenManager.CloseOverlayForm(handle);
-            }
-        }
-
-        private IOverlaySplashScreenHandle HandleOverlayRequiresWebMan = null;
-
-        private void CloseOverlayRequiresWebMan(NavigationPage page, IOverlaySplashScreenHandle handle)
         {
             if (handle != null)
             {
@@ -623,8 +620,10 @@ namespace ArisenStudio.Forms.Windows
 
         private void ButtonHowToGuides_ItemClick(object sender, ItemClickEventArgs e)
         {
-            XtraMessageBox.Show(this, "Our How-To-Guides have been moved to our Discord server.", "How-To Guides", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Process.Start(Urls.DiscordServer);
+            if (XtraMessageBox.Show(this, "Our How-To-Guides have been moved to our new website at https://arisen.studio/\n\nWould you like to open the link in your browser?.", "How-To Guides", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                Process.Start(Urls.ProjectWebsite);
+            }
         }
 
         private void ButtonDownloadsFolder_ItemClick(object sender, ItemClickEventArgs e)
@@ -1293,52 +1292,99 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private bool hasLoadedGameCheats = false;
+        #endregion
 
-        private void NavigationItemGameCheats_Click(object sender, EventArgs e)
+        #region Dashboard Page
+
+        private void LoadFavoriteGames()
         {
-            NavigationFrame.SelectedPage = PageGameCheats;
-
-            if (!hasLoadedGameCheats)
+            foreach (var tileItem in TileGroupFavoriteGames.Items.OfType<TileItem>().Except(new[] { TileItemFavoriteGames }).ToList())
             {
-                SearchGameCheats();
-                hasLoadedGameCheats = true;
+                TileGroupFavoriteGames.Items.Remove(tileItem);
             }
 
-            if (!IsConsoleConnected)
-            {
-                if (HandleOverlayRequiresWebMan == null)
-                {
-                    HandleOverlayRequiresWebMan = ShowOverlayFeatureNotAvailable(PageGameCheats, ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"));
-                }
-            }
-            else
-            {
-                if (HandleOverlayRequiresWebMan != null)
-                {
-                    CloseOverlayRequiresWebMan(PageGameCheats, HandleOverlayRequiresWebMan);
-                }
+            TileItemFavoriteGames.Visible = false;
 
-                if (!IsWebManInstalled)
+            foreach (Models.Dashboard.FavoriteGamesData.Favorite game in Database.FavoriteGames.Favorites)
+            {
+                if (game.GetPlatform() == ConsoleProfile.Platform)
                 {
-                    if (HandleOverlayRequiresWebMan == null)
-                    {
-                        HandleOverlayRequiresWebMan = ShowOverlayFeatureNotAvailable(PageGameCheats, ResourceLanguage.GetString("WEBMAN_REQUIRED"));
-                    }
-                }
-                else
-                {
-                    if (HandleOverlayRequiresWebMan != null)
-                    {
-                        CloseOverlayRequiresWebMan(PageGameCheats, HandleOverlayRequiresWebMan);
-                    }
+                    TileGroupFavoriteGames.Items.Add(FavoriteGameItem(game.GetPlatform(), game.CategoryId, game.ImageUrl));
                 }
             }
         }
 
-        #endregion
+        private TileItem FavoriteGameItem(Platform platform, string categoryId, string imageUrl)
+        {
+            TileItem tileItem = new()
+            {
+                TextAlignment = TileItemContentAlignment.BottomLeft,
+                ItemSize = TileItemSize.Wide
+            };
 
-        #region Dashboard Page
+            tileItem.Elements.Assign(TileItemFavoriteGames.Elements);
+
+            tileItem.Elements[0].Text = Database.CategoriesData.GetCategoryById(categoryId).Title;
+            //tileItem.Elements[1].Text = (ConsoleProfile.Platform == Platform.PS3 ?  Database.GameModsPs3.GetGameMods(categoryId).Count().ToString() : Database.GameModsPs3.AllModTypesForCategoryId(categoryId).Count().ToString()) + " " + "Total Mods";
+            tileItem.Elements[1].Text = (ConsoleProfile.Platform == Platform.PS3 ? Database.GameModsPs3.Mods.Where(x => x.CategoryId == categoryId).Count().ToString() : Database.PluginsXbox.Mods.Where(x => x.CategoryId == categoryId).Count().ToString()) + " " + "Total Mods";
+
+            tileItem.Tag = platform.Humanize() + "|" + categoryId;
+
+            //if (platform == Platform.PS3)
+            //{
+            //    tileItem.AppearanceItem.Normal.BackColor = Color.FromArgb(0, 120, 215);
+            //    tileItem.AppearanceItem.Normal.BorderColor = Color.FromArgb(0, 120, 215);
+            //}
+            //else
+            //{
+            //    tileItem.AppearanceItem.Normal.BackColor = Color.FromArgb(26, 163, 86);
+            //    tileItem.AppearanceItem.Normal.BorderColor = Color.FromArgb(26, 163, 86);
+            //}
+
+            if (!string.IsNullOrWhiteSpace(imageUrl))
+            {
+                var tileImage = HttpExtensions.GetImageFromUrl(imageUrl);
+
+                //tileItem.BackgroundImage = HttpExtensions.GetImageFromUrl(imageUrl);
+                tileItem.BackgroundImage = ImageExtensions.AdjustBrightness(tileImage, 0.30F);
+                tileItem.BackgroundImageScaleMode = TileItemImageScaleMode.ZoomOutside;
+                tileItem.BackgroundImageAlignment = TileItemContentAlignment.MiddleCenter;
+            }
+
+            tileItem.ItemClick += FavoriteGameItem_Click;
+
+            return tileItem;
+        }
+
+        private void FavoriteGameItem_Click(object sender, TileItemEventArgs e)
+        {
+            TileItem tileItem = sender as TileItem;
+            string categoryTitle = tileItem.Elements[0].Text;
+            Platform platform = tileItem.Tag.ToString().Split('|')[0].DehumanizeTo<Platform>();
+            string categoryId = tileItem.Tag.ToString().Split('|')[1];
+
+            if (platform == Platform.PS3)
+            {
+                if (!hasLoadedGameMods)
+                {
+                    LoadGameModsCategories();
+                    SearchGameMods();
+                    hasLoadedGameMods = true;
+                }
+
+                NavigationFrame.SelectedPage = PageGameMods;
+                NavigationMenu.SelectElement(NavigationItemGameMods);
+                ComboBoxGameModsFilterGame.SelectedItem = categoryTitle;
+            }
+            else if (platform == Platform.XBOX360)
+            {
+                NavigationFrame.SelectedPage = PagePlugins;
+                NavigationMenu.SelectElement(NavigationItemPlugins);
+                ComboBoxPluginsFilterCategory.SelectedItem = categoryTitle; // Database.CategoriesData.GetCategoryById(categoryId).Title;
+                //LoadGameModsCategories();
+                SearchPlugins();
+            }
+        }
 
         private void LoadOurFavoriteMods()
         {
@@ -1349,21 +1395,22 @@ namespace ArisenStudio.Forms.Windows
 
             TileItemFavoriteMods.Visible = false;
 
-            foreach (Models.Dashboard.FavoriteModsData.Favorite favorite in Database.FavoritesMods.Favorites)
+            foreach (Models.Dashboard.FavoriteModsData.Favorite favorite in Database.FavoriteMods.Favorites)
             {
                 if (favorite.GetPlatform() == ConsoleProfile.Platform)
                 {
-                    TileGroupOurFavoriteMods.Items.Add(FavoriteModsItem(favorite.GetPlatform(), favorite.CategoryId, favorite.ModId, favorite.Name));
+                    TileGroupOurFavoriteMods.Items.Add(FavoriteModItem(favorite.GetPlatform(), favorite.CategoryId, favorite.ModId, favorite.Name));
                 }
             }
         }
 
-        private TileItem FavoriteModsItem(Platform platform, string categoryId, int modId, string modName)
+        private TileItem FavoriteModItem(Platform platform, string categoryId, int modId, string modName)
         {
-            TileItem tileItem = new();
-
-            tileItem.TextAlignment = TileItemContentAlignment.TopLeft;
-            tileItem.ItemSize = TileItemSize.Medium;
+            TileItem tileItem = new()
+            {
+                TextAlignment = TileItemContentAlignment.TopLeft,
+                ItemSize = TileItemSize.Medium
+            };
 
             tileItem.Elements.Assign(TileItemFavoriteMods.Elements);
 
@@ -1421,135 +1468,66 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void LoadRecentlyUpdated()
+        private async void LoadCurrentPoll()
         {
-            foreach (var tileItem in TileGroupRecentlyUpdated.Items.OfType<TileItem>().Except(new[] { TileItemRecentlyUpdated }).ToList())
+            await InitializeWebPollAsync();
+        }
+
+        private async Task InitializeWebPollAsync()
+        {
+            if (WebViewPoll.CoreWebView2 == null)
             {
-                TileGroupRecentlyUpdated.Items.Remove(tileItem);
+                WebViewPoll.CoreWebView2InitializationCompleted += WebViewPoll_CoreWebView2InitializationCompleted;
+                WebViewPoll.NavigationCompleted += WebViewPoll_NavigationCompleted;
+                WebViewPoll.NavigationStarting += WebViewPoll_NavigationStarting;
+                await WebViewPoll.EnsureCoreWebView2Async(null);
             }
+        }
 
-            TileItemRecentlyUpdated.Visible = false;
-
-            if (ConsoleProfile.Platform == Platform.PS3)
+        private void WebViewPoll_CoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
+        {
+            if (e.IsSuccess)
             {
-                //foreach (ModItemData item in Database.GameModsPs3.Mods.SelectMany(x => x.DownloadFiles.OrderBy(y => y.LastUpdated).ToList().Take(3)))
-                //{
-                //    TileGroupRecentlyUpdated.Items.Add(RecentlyUpdatedItem(item.GetPlatform(), item.CategoryId, item.Id, item.Name));
-                //}
-
-                foreach (ModItemData item in Database.GameModsPs3.Mods.Take(3).ToList())
+                if (!string.IsNullOrEmpty(Properties.Resources.PollLink))
                 {
-                    foreach (DownloadFiles downloadFiles in item.DownloadFiles.OrderBy(y => y.LastUpdated).ToList())
-                    {
-                        TileGroupRecentlyUpdated.Items.Add(RecentlyUpdatedItem(item.GetPlatform(), item.CategoryId, item.Id, item.Name));
-                    }
+                    WebViewPoll.CoreWebView2.NavigateToString(Properties.Resources.PollLink);
                 }
 
-                foreach (ModItemData item in Database.HomebrewPs3.Mods.Take(3).ToList())
-                {
-                    foreach (DownloadFiles downloadFiles in item.DownloadFiles.OrderBy(y => y.LastUpdated).ToList())
-                    {
-                        TileGroupRecentlyUpdated.Items.Add(RecentlyUpdatedItem(item.GetPlatform(), item.CategoryId, item.Id, item.Name));
-                    }
-                }
-
-                //foreach (ModItemData item in Database.HomebrewPs3.Mods.SelectMany(x => x.DownloadFiles.OrderBy(y => y.LastUpdated).ToList().Take(3)))
-                //{
-                //    TileGroupRecentlyUpdated.Items.Add(RecentlyUpdatedItem(item.GetPlatform(), item.CategoryId, item.Id, item.Name));
-                //}
+                //Credits：https://blog.jussipalo.com/2021/02/webview2-how-to-hide-scrollbars.html
+                WebViewPoll.ExecuteScriptAsync("document.querySelector('body').style.overflow='scroll';var style=document.createElement('style');style.type='text/css';style.innerHTML='::-webkit-scrollbar{display:none}';document.getElementsByTagName('body')[0].appendChild(style)");
             }
             else
             {
-                foreach (ModItemData item in Database.PluginsXbox.Mods.Take(6).ToList())
-                {
-                    foreach (DownloadFiles downloadFiles in item.DownloadFiles.OrderBy(y => y.LastUpdated).ToList())
-                    {
-                        TileGroupRecentlyUpdated.Items.Add(RecentlyUpdatedItem(item.GetPlatform(), item.CategoryId, item.Id, item.Name));
-                    }
-                }
-
-                //foreach (ModItemData item in Database.PluginsXbox.Mods.SelectMany(x => x.DownloadFiles.OrderBy(y => y.LastUpdated).ToList().Take(6)))
-                //{
-                //    TileGroupRecentlyUpdated.Items.Add(RecentlyUpdatedItem(item.GetPlatform(), item.CategoryId, item.Id, item.Name));
-                //}
+                SetStatus($"CoreWebView2 Initialization Failed - " + e.InitializationException.Message, e.InitializationException);
             }
         }
 
-        private TileItem RecentlyUpdatedItem(Platform platform, string categoryId, int modId, string modName)
+        private void WebViewPoll_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
         {
-            Category category = Database.CategoriesData.GetCategoryById(categoryId);
-
-            TileItem tileItem = new();
-
-            tileItem.TextAlignment = TileItemContentAlignment.TopLeft;
-            tileItem.ItemSize = TileItemSize.Medium;
-
-            tileItem.Elements.Assign(TileItemRecentlyUpdated.Elements);
-
-            tileItem.Elements[0].Text = Database.CategoriesData.GetCategoryById(categoryId).Title;
-            tileItem.Elements[1].Text = modName;
-
-            tileItem.Tag = platform.Humanize() + "|" + modId.ToString();
-
-            tileItem.AppearanceItem.Normal.BackColor = Color.Coral;
-            tileItem.AppearanceItem.Normal.BorderColor = Color.Coral;
-
-            tileItem.ItemClick += RecentlyUpdatedItem_Click;
-
-            return tileItem;
-        }
-
-        private void RecentlyUpdatedItem_Click(object sender, TileItemEventArgs e)
-        {
-            TileItem tileItem = sender as TileItem;
-            string categoryTitle = tileItem.Elements[0].Text;
-            Platform platform = tileItem.Tag.ToString().Split('|')[0].DehumanizeTo<Platform>();
-            int modId = int.Parse(tileItem.Tag.ToString().Split('|')[1]);
-
-            if (platform == Platform.PS3)
+            if (e.IsSuccess)
             {
-                ShowDetails(platform, categoryTitle, modId);
-
-                //if (category.CategoryType == CategoryType.Game)
-                //{
-                //    //NavigationFrame.SelectedPage = PageGameMods;
-                //    //NavigationMenu.SelectElement(NavigationItemGameMods);
-                //    //ComboBoxGameModsFilterGame.SelectedItem = category.Title;
-                //    //SearchGameMods();
-                //}
-            }
-            else if (platform == Platform.XBOX360)
-            {
-                ShowDetails(platform, categoryTitle, modId);
-
-                //if (category.CategoryType == CategoryType.Game)
-                //{
-                //    //NavigationFrame.SelectedPage = PageGameMods;
-                //    //NavigationMenu.SelectElement(NavigationItemGameMods);
-                //    //ComboBoxGameModsFilterGame.SelectedItem = category.Title;
-                //    //SearchGameMods();
-                //}
+                ((WebView2)sender).ExecuteScriptAsync("document.querySelector('body').style.overflow='hidden'");
             }
         }
 
-        private void LoadStatistics()
+        private void WebViewPoll_NavigationStarting(object sender, CoreWebView2NavigationStartingEventArgs e)
         {
-            LabelHeaderStatistics.Text = ResourceLanguage.GetString("TITLE_STATISTICS");
+            //cancel the current event
+            //if (!e.Uri.ToString().StartsWith(url))
+            //{
+            //    e.Cancel = true;
+            //    System.Diagnostics.Process.Start(e.Uri.ToString());
+            //}
 
-            LabelStatisticsPlayStation3.Text =
-                $"{Database.GameModsPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Game).Count:N0} {ResourceLanguage.GetString("LABEL_GAME_MODS")}\n" +
-                $"{Database.HomebrewPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count:N0} {ResourceLanguage.GetString("LABEL_HOMEBREW")}\n" +
-                $"{Database.ResourcesPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Resource).Count:N0} {ResourceLanguage.GetString("LABEL_RESOURCES")}\n" +
-                $"{Database.PackagesCount():N0} {ResourceLanguage.GetString("LABEL_PACKAGES")}\n" +
-                $"{Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.PS3).ToList().Count:N0} {ResourceLanguage.GetString("LABEL_GAME_SAVES")}\n" +
-                $"{Database.GameCheatsPs3.GetTotalCheats():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
+            if (e.NavigationKind is CoreWebView2NavigationKind.BackOrForward or CoreWebView2NavigationKind.Reload)
+            {
+                e.Cancel = true;
+            }
 
-            LabelStatisticsXbox360.Text =
-                $"{Database.PluginsXbox.Mods.Count:N0} {ResourceLanguage.GetString("LABEL_PLUGINS")}\n" +
-                $"{Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.XBOX360).ToList().Count:N0} {ResourceLanguage.GetString("LABEL_GAME_SAVES")}\n" +
-                $"{Database.GamePatchesXbox.GetTotalCheats():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
-
-            LabelStatisticsLastUpdated.Text = $"{ResourceLanguage.GetString("LAST_UPDATED")}: {Database.CategoriesData.LastUpdated.ToLocalTime().ToShortDateString()}";
+            //if (e.NavigationKind == CoreWebView2NavigationKind.Reload)
+            //{
+            //    e.Cancel = true;
+            //}
         }
 
         private void LoadAnnouncements()
@@ -1571,7 +1549,7 @@ namespace ArisenStudio.Forms.Windows
                 }
             }
 
-            NoAnnouncementsItem.Visible = PanelAnnouncementsItems.Controls.Count < 1;
+            NoAnnouncements.Visible = PanelAnnouncementsItems.Controls.Count < 1;
         }
 
         private async void LoadNewsFeed()
@@ -1587,6 +1565,96 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
+        private void LoadStatistics()
+        {
+            chartControl1.Titles.Add(new ChartTitle() { Text = "Statistics" });
+
+            Series series1 = new("Statistics", ViewType.Pie)
+            {
+                // Bind the series to data.
+                DataSource = DataPoint.GetDataPoints(
+                Database.GameModsPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Game).Count,
+                Database.HomebrewPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count,
+                Database.ResourcesPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Resource).Count,
+                Database.PackagesCount(),
+                Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.PS3).ToList().Count),
+
+                ArgumentDataMember = "Argument"
+            };
+
+            series1.ValueDataMembers.AddRange(new string[] { "Value" });
+
+            // Add the series to the chart.
+            chartControl1.Series.Add(series1);
+
+            // Access diagram settings.
+            SimpleDiagram diagram = (SimpleDiagram)chartControl1.Diagram;
+            diagram.Margins.All = 10;
+
+            // Format the the series labels.
+            series1.Label.TextPattern = "{VP:p0} ({V:.##}M km²)";
+
+            // Format the series legend items.
+            series1.LegendTextPattern = "{A}";
+
+            // Adjust the position of series labels. 
+            ((PieSeriesLabel)series1.Label).Position = PieSeriesLabelPosition.TwoColumns;
+
+            // Detect overlapping of series labels.
+            ((PieSeriesLabel)series1.Label).ResolveOverlappingMode = ResolveOverlappingMode.Default;
+
+            // Access the view-type-specific options of the series.
+            PieSeriesView myView = (PieSeriesView)series1.View;
+
+            // Specify the pie rotation.
+            myView.Rotation = -60;
+
+            // Specify a data filter to explode points.
+            //myView.ExplodedPointsFilters.Add(new SeriesPointFilter(SeriesPointKey.Value_1, DataFilterCondition.GreaterThanOrEqual, 9));
+            //myView.ExplodedPointsFilters.Add(new SeriesPointFilter(SeriesPointKey.Argument, DataFilterCondition.NotEqual, "Others"));
+            //myView.ExplodeMode = PieExplodeMode.UseFilters;
+            //myView.ExplodedDistancePercentage = 30;
+            //myView.RuntimeExploding = true;
+
+            // Customize the legend.
+            chartControl1.Legend.Visibility = DefaultBoolean.True;
+
+            LabelHeaderStatistics.Text = ResourceLanguage.GetString("TITLE_STATISTICS");
+
+            LabelStatisticsPlayStation3.Text =
+                $"{Database.GameModsPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Game).Count:N0} {ResourceLanguage.GetString("LABEL_GAME_MODS")}\n" +
+                $"{Database.HomebrewPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count:N0} {ResourceLanguage.GetString("LABEL_HOMEBREW")}\n" +
+                $"{Database.ResourcesPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Resource).Count:N0} {ResourceLanguage.GetString("LABEL_RESOURCES")}\n" +
+                $"{Database.PackagesCount():N0} {ResourceLanguage.GetString("LABEL_PACKAGES")}\n" +
+                $"{Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.PS3).ToList().Count:N0} {ResourceLanguage.GetString("LABEL_GAME_SAVES")}\n" +
+                $"{Database.GameCheatsPs3.GetTotalCheats():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
+
+            LabelStatisticsXbox360.Text =
+                $"{Database.PluginsXbox.Mods.Count:N0} {ResourceLanguage.GetString("LABEL_PLUGINS")}\n" +
+                $"{Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.XBOX360).ToList().Count:N0} {ResourceLanguage.GetString("LABEL_GAME_SAVES")}\n" +
+                $"{Database.GamePatchesXbox.GetTotalCheats():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
+
+            LabelStatisticsLastUpdated.Text = $"{ResourceLanguage.GetString("LAST_UPDATED")}: {Database.CategoriesData.LastUpdated.ToLocalTime().ToShortDateString()}";
+        }
+
+        public class DataPoint
+        {
+            public string Argument { get; set; }
+
+            public double Value { get; set; }
+
+            public static List<DataPoint> GetDataPoints(int gameMods, int homebrew, int resources, int packages, int gameSaves)
+            {
+                return new List<DataPoint> {
+                    new DataPoint { Argument = "Game Mods",     Value = gameMods},
+                    new DataPoint { Argument = "Homebrew",      Value = homebrew},
+                    new DataPoint { Argument = "Resources",     Value = resources},
+                    new DataPoint { Argument = "Packages",      Value = packages},
+                    new DataPoint { Argument = "Game Saves",    Value = gameSaves}
+                };
+            }
+        }
+
         private int ChangeLogsCurrent;
         private int ChangeLogsMaximum;
 
@@ -1597,18 +1665,18 @@ namespace ArisenStudio.Forms.Windows
 
             GitHubReleaseData gitHubData = UpdateExtensions.AllReleases[0];
 
-            LabelChangeLogVersion.Text = $"{gitHubData.Name} ({gitHubData.PublishedAt.DateTime.ToOrdinalWords()})";
+            LabelChangeLogVersion.Text = $"{gitHubData.Name}"; //({gitHubData.PublishedAt.DateTime.ToOrdinalWords()})";
             LabelChangeLog.Text = gitHubData.Body.Replace("- ", "• ");
         }
 
         private void PanelAnnouncementsItems_ControlAdded(object sender, ControlEventArgs e)
         {
-            NoAnnouncementsItem.Visible = PanelAnnouncementsItems.Controls.Count < 1;
+            NoAnnouncements.Visible = PanelAnnouncementsItems.Controls.Count < 1;
         }
 
         private void PanelAnnouncementsItems_ControlRemoved(object sender, ControlEventArgs e)
         {
-            NoAnnouncementsItem.Visible = PanelAnnouncementsItems.Controls.Count < 1;
+            NoAnnouncements.Visible = PanelAnnouncementsItems.Controls.Count < 1;
         }
 
         private void ImageReloadNewsItems_Click(object sender, EventArgs e)
@@ -1628,7 +1696,7 @@ namespace ArisenStudio.Forms.Windows
 
             string releaseBody = gitHubData.Body.Substring(0, gitHubData.Body.Trim().LastIndexOf(Environment.NewLine, StringComparison.Ordinal));
 
-            LabelChangeLogVersion.Text = $"{gitHubData.Name} ({gitHubData.PublishedAt.DateTime.ToOrdinalWords()})";
+            LabelChangeLogVersion.Text = $"{gitHubData.Name}"; // ({gitHubData.PublishedAt.DateTime.ToOrdinalWords()})";
             LabelChangeLog.Text = releaseBody.Replace("- ", "• ");
 
             ButtonChangeLogPrevious.Enabled = ChangeLogsCurrent != ChangeLogsMaximum - 1;
@@ -1643,7 +1711,7 @@ namespace ArisenStudio.Forms.Windows
 
             string releaseBody = gitHubData.Body.Substring(0, gitHubData.Body.Trim().LastIndexOf(Environment.NewLine, StringComparison.Ordinal));
 
-            LabelChangeLogVersion.Text = $"{gitHubData.Name} ({gitHubData.PublishedAt.DateTime.ToOrdinalWords()})";
+            LabelChangeLogVersion.Text = $"{gitHubData.Name}"; // ({gitHubData.PublishedAt.DateTime.ToOrdinalWords()})";
             LabelChangeLog.Text = releaseBody.Replace("- ", "• ");
 
             ButtonChangeLogPrevious.Enabled = ChangeLogsCurrent != ChangeLogsMaximum;
@@ -1818,7 +1886,7 @@ namespace ArisenStudio.Forms.Windows
             SearchDownloads();
         }
 
-        private void ImageDownloadsFilterDownloadOnType_Click(object sender, EventArgs e)
+        private void ImageDownloadsFilterOnType_Click(object sender, EventArgs e)
         {
             if (FilterDownloadsDownloadOnType == FilterType.Equal)
             {
@@ -1839,7 +1907,7 @@ namespace ArisenStudio.Forms.Windows
             SearchDownloads();
         }
 
-        private void DateTimeFilterDownloadsDate_EditValueChanged(object sender, EventArgs e)
+        private void DateTimeDownloadsFilterDate_EditValueChanged(object sender, EventArgs e)
         {
             if (DateTimeDownloadsFilterDate.Text.IsValidDate("MM/dd/yyyy"))
             {
@@ -1882,7 +1950,7 @@ namespace ArisenStudio.Forms.Windows
         {
             LoadDownloadsCategories();
 
-            GridViewDownloads.ShowLoadingPanel();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+            GridViewDownloads.ShowLoadingPanel();
 
             DataTableDownloads.Rows.Clear();
 
@@ -1890,18 +1958,7 @@ namespace ArisenStudio.Forms.Windows
             {
                 Category category = Database.CategoriesData.GetCategoryById(downloadedItem.CategoryId);
 
-                //ModItemData modItemData = downloadedItem.Platform == Platform.PS3
-                //    ? Database.ModsPS3(Database).GetModById(downloadedItem.Platform, downloadedItem.ModId)
-                //    : Database.PluginsXBOX.GetModById(downloadedItem.Platform, downloadedItem.ModId);
-
                 PackageItemData packageItemData = Database.GetPackage(downloadedItem.CategoryId, downloadedItem.Url);
-
-                //if (modItemData.ModTypes.ToArray().AnyContainsIgnoreCase(FilterDownloadsModTyp) && packageItemData.Regions.ToArray().AnyContainsIgnoreCase(FilterDownloadsRegion) && packageItemData.Versions.ToArray().AnyContainsIgnoreCase(FilterDownloadsVersion))
-                //{
-
-
-                //    continue;
-                //}
 
                 ModItemData modItemData = Database.GetModItem(downloadedItem.Platform, category.CategoryType, downloadedItem.ModId);
 
@@ -1915,18 +1972,6 @@ namespace ArisenStudio.Forms.Windows
                                                 downloadedItem.DownloadFile.Region,
                                                 downloadedItem.DownloadFile.Version,
                                                 Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
-
-                    //if (category.CategoryType == CategoryType.Package)
-                    //{
-                    //    DataTableDownloads.Rows.Add(modItemData.Id,
-                    //                            downloadedItem.Platform.Humanize(),
-                    //                            category.Title,
-                    //                            File.Exists(downloadedItem.FilePath) ? downloadedItem.DownloadFile.Name : $"{downloadedItem.DownloadFile.Name} ({ResourceLanguage.GetString("FILE_MISSING")})",
-                    //                            modItemData.ModType,
-                    //                            downloadedItem.DownloadFile.Region,
-                    //                            downloadedItem.DownloadFile.Version,
-                    //                            Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
-                    //}
                 }
                 else if (packageItemData != null)
                 {
@@ -1935,7 +1980,7 @@ namespace ArisenStudio.Forms.Windows
                                                         category.Title,
                                                         File.Exists(downloadedItem.FilePath) ? downloadedItem.DownloadFile.Name : $"{downloadedItem.DownloadFile.Name} ({ResourceLanguage.GetString("FILE_MISSING")})",
                                                         modItemData.ModType,
-                                                        downloadedItem.DownloadFile.Region,
+                                                        string.IsNullOrEmpty(downloadedItem.DownloadFile.Region) ? "n/a" : downloadedItem.DownloadFile.Region,
                                                         downloadedItem.DownloadFile.Version,
                                                         Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
                 }
@@ -1947,27 +1992,26 @@ namespace ArisenStudio.Forms.Windows
 
             GridViewDownloads.Columns[0].Visible = false;
 
-            GridViewDownloads.Columns[1].MinWidth = 104;
-            GridViewDownloads.Columns[1].MaxWidth = 104;
+            GridViewDownloads.Columns[1].MinWidth = 122;
+            GridViewDownloads.Columns[1].MaxWidth = 122;
 
-            GridViewDownloads.Columns[2].MinWidth = 226;
-            GridViewDownloads.Columns[2].MaxWidth = 226;
+            GridViewDownloads.Columns[2].MinWidth = 250;
+            GridViewDownloads.Columns[2].MaxWidth = 250;
 
             //GridViewDownloads.Columns[3].MinWidth = 100; // Ignore column
 
-            GridViewDownloads.Columns[4].MinWidth = 116;
-            GridViewDownloads.Columns[4].MaxWidth = 116;
+            GridViewDownloads.Columns[4].MinWidth = 132;
+            GridViewDownloads.Columns[4].MaxWidth = 132;
 
-            GridViewDownloads.Columns[5].MinWidth = 90;
-            GridViewDownloads.Columns[5].MaxWidth = 90;
+            GridViewDownloads.Columns[5].MinWidth = 110;
+            GridViewDownloads.Columns[5].MaxWidth = 110;
 
-            GridViewDownloads.Columns[6].MinWidth = 68;
-            GridViewDownloads.Columns[6].MaxWidth = 68;
+            GridViewDownloads.Columns[6].MinWidth = 92;
+            GridViewDownloads.Columns[6].MaxWidth = 92;
 
-            GridViewDownloads.Columns[7].MinWidth = 96;
-            GridViewDownloads.Columns[7].MaxWidth = 96;
+            GridViewDownloads.Columns[7].MinWidth = 100;
+            GridViewDownloads.Columns[7].MaxWidth = 100;
 
-            TileItemDownloadsDeleteAllItems.Enabled = GridViewDownloads.RowCount > 0;
             TileItemDownloadsDeleteItem.Enabled = GridViewDownloads.SelectedRowsCount > 0;
             TileItemDownloadsViewDetails.Enabled = GridViewDownloads.SelectedRowsCount > 0;
 
@@ -1989,10 +2033,6 @@ namespace ArisenStudio.Forms.Windows
             x.CategoryId.ContainsIgnoreCase(FilterDownloadsCategoryId)))
             {
                 Category category = Database.CategoriesData.GetCategoryById(downloadedItem.CategoryId);
-
-                //ModItemData modItemData = downloadedItem.Platform == Platform.PS3
-                //    ? Database.ModsPS3(Database).GetModById(downloadedItem.Platform, downloadedItem.ModId)
-                //    : Database.PluginsXBOX.GetModById(downloadedItem.Platform, downloadedItem.ModId);
 
                 PackageItemData packageItemData = Database.GetPackage(downloadedItem.CategoryId, downloadedItem.Url);
                 ModItemData modItemData = Database.GetModItem(downloadedItem.Platform, Database.CategoriesData.GetCategoryById(downloadedItem.CategoryId).CategoryType, downloadedItem.ModId);
@@ -2027,7 +2067,7 @@ namespace ArisenStudio.Forms.Windows
                                                         category.Title,
                                                         File.Exists(downloadedItem.FilePath) ? downloadedItem.DownloadFile.Name : $"{downloadedItem.DownloadFile.Name} ({ResourceLanguage.GetString("FILE_MISSING")})",
                                                         modItemData.ModType,
-                                                        downloadedItem.DownloadFile.Region,
+                                                        string.IsNullOrEmpty(downloadedItem.DownloadFile.Region) ? "n/a" : downloadedItem.DownloadFile.Region,
                                                         downloadedItem.DownloadFile.Version,
                                                         Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
                         }
@@ -2062,7 +2102,7 @@ namespace ArisenStudio.Forms.Windows
                                                         category.Title,
                                                         File.Exists(downloadedItem.FilePath) ? downloadedItem.DownloadFile.Name : $"{downloadedItem.DownloadFile.Name} ({ResourceLanguage.GetString("FILE_MISSING")})",
                                                         modItemData.ModType,
-                                                        downloadedItem.DownloadFile.Region,
+                                                        string.IsNullOrEmpty(downloadedItem.DownloadFile.Region) ? "n/a" : downloadedItem.DownloadFile.Region,
                                                         downloadedItem.DownloadFile.Version,
                                                         Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
                         }
@@ -2070,82 +2110,12 @@ namespace ArisenStudio.Forms.Windows
                         //continue;
                     }
                 }
-
-                //if (FilterDownloadsModType == string.Empty && FilterDownloadsRegion == string.Empty && FilterDownloadsVersion == string.Empty)
-                //{
-                //    bool shouldLoadDates = true;
-
-                //    if (FilterDownloadsDownloadOn != null)
-                //    {
-                //        if (FilterDownloadsDownloadOnType == FilterType.Equal && downloadedItem.DateTime == FilterDownloadsDownloadOn)
-                //        {
-                //            shouldLoadDates = true;
-                //        }
-                //        else if (FilterDownloadsDownloadOnType == FilterType.MoreThanOrEqual && downloadedItem.DateTime >= FilterDownloadsDownloadOn)
-                //        {
-                //            shouldLoadDates = true;
-                //        }
-                //        else if (FilterDownloadsDownloadOnType == FilterType.LessThanOrEqual && downloadedItem.DateTime <= FilterDownloadsDownloadOn)
-                //        {
-                //            shouldLoadDates = true;
-                //        }
-                //    }
-
-                //    if (shouldLoadDates)
-                //    {
-                //        DataTableDownloads.Rows.Add(modItemData.Id,
-                //                                    downloadedItem.Platform.Humanize(),
-                //                                    category.Title,
-                //                                    File.Exists(downloadedItem.FilePath) ? downloadedItem.DownloadFile.Name : $"{downloadedItem.DownloadFile.Name} ({ResourceLanguage.GetString("FILE_MISSING")})",
-                //                                    modItemData.ModType,
-                //                                    downloadedItem.DownloadFile.Region,
-                //                                    downloadedItem.DownloadFile.Version,
-                //                                    Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
-                //    }
-
-                //    //continue;
-                //}
-
-                //if (modItemData.ModTypes.ToArray().AnyContainsIgnoreCase(FilterDownloadsModType) && modItemData.Regions.ToArray().AnyContainsIgnoreCase(FilterDownloadsRegion) && modItemData.Versions.ToArray().AnyContainsIgnoreCase(FilterDownloadsVersion))
-                //else if (modItemData.ModTypes.ToArray().AnyContainsIgnoreCase(FilterDownloadsModType) && modItemData.Regions.ToArray().AnyContainsIgnoreCase(FilterDownloadsRegion) && modItemData.Versions.ToArray().AnyContainsIgnoreCase(FilterDownloadsVersion))
-                //{
-                //    bool shouldLoadDates = true;
-
-                //    if (FilterDownloadsDownloadOn != null)
-                //    {
-                //        if (FilterDownloadsDownloadOnType == FilterType.Equal && downloadedItem.DateTime == FilterDownloadsDownloadOn)
-                //        {
-                //            shouldLoadDates = true;
-                //        }
-                //        else if (FilterDownloadsDownloadOnType == FilterType.MoreThanOrEqual && downloadedItem.DateTime >= FilterDownloadsDownloadOn)
-                //        {
-                //            shouldLoadDates = true;
-                //        }
-                //        else if (FilterDownloadsDownloadOnType == FilterType.LessThanOrEqual && downloadedItem.DateTime <= FilterDownloadsDownloadOn)
-                //        {
-                //            shouldLoadDates = true;
-                //        }
-                //    }
-
-                //    if (shouldLoadDates)
-                //    {
-                //        DataTableDownloads.Rows.Add(modItemData.Id,
-                //                                    downloadedItem.Platform.Humanize(),
-                //                                    category.Title,
-                //                                    File.Exists(downloadedItem.FilePath) ? downloadedItem.DownloadFile.Name : $"{downloadedItem.DownloadFile.Name} ({ResourceLanguage.GetString("FILE_MISSING")})",
-                //                                    modItemData.ModType,
-                //                                    downloadedItem.DownloadFile.Region,
-                //                                    downloadedItem.DownloadFile.Version,
-                //                                    Settings.UseRelativeTimes ? downloadedItem.DateTime.Humanize() : $"{downloadedItem.DateTime:g}");
-                //    }
-                //}
             }
 
             GridControlDownloads.DataSource = DataTableDownloads;
 
             GridViewDownloads.FocusedRowHandle = -1;
 
-            TileItemDownloadsDeleteAllItems.Enabled = GridViewDownloads.RowCount > 0;
             TileItemDownloadsDeleteItem.Enabled = GridViewDownloads.SelectedRowsCount > 0;
             TileItemDownloadsViewDetails.Enabled = GridViewDownloads.SelectedRowsCount > 0;
 
@@ -2187,23 +2157,6 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void TileItemInstalledModsDeleteAll_ItemClick(object sender, TileItemEventArgs e)
-        {
-            if (GridViewInstalledMods.SelectedRowsCount > 0)
-            {
-                if (XtraMessageBox.Show(this, ResourceLanguage.GetString("CONFIRM_DELETE_ALL_ITEMS"), ResourceLanguage.GetString("CONFIRM_DELETE_ALL"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                {
-                    foreach (ConsoleProfile consoleProfile in Settings.ConsoleProfiles)
-                    {
-                        consoleProfile.InstalledMods.Clear();
-                    }
-                }
-
-                DataTableInstalledMods.Rows.Clear();
-                XtraMessageBox.Show(this, ResourceLanguage.GetString("DELETE_ITEMS_SUCCESS"), ResourceLanguage.GetString("DELETED"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-
         private void TileItemInstalledModsViewDetails_ItemClick(object sender, TileItemEventArgs e)
         {
             int modId = int.Parse(GridViewInstalledMods.GetFocusedRowCellDisplayText(GridViewInstalledMods.Columns[1]));
@@ -2223,39 +2176,7 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void TileItemInstalledModsUninstallAll_ItemClick(object sender, TileItemEventArgs e)
-        {
-            foreach (ConsoleProfile consoleProfile in Settings.ConsoleProfiles)
-            {
-                foreach (InstalledModInfo installedMod in consoleProfile.InstalledMods)
-                {
-                    if (!IsConsoleConnected && ConsoleProfile == null)
-                    {
-                        XtraMessageBox.Show(this, string.Format(ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_UNINSTALL_FILES"), $"{consoleProfile.Name} ({consoleProfile.Platform.Humanize()})"), ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else if (IsConsoleConnected && ConsoleProfile.Id != consoleProfile.Id)
-                    {
-                        XtraMessageBox.Show(this, $"{ResourceLanguage.GetString("FILES_NOT_INSTALLED_TO_CONNECTED_CONSOLE")} {string.Format(ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_UNINSTALL_FILES"), $"{consoleProfile.Name} ({consoleProfile.Platform.Humanize()})")}", ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    //ModItemData modItemData = installedMod.Platform == Platform.PS3
-                    //? Database.ModsPS3(Database).GetModById(installedMod.Platform, installedMod.ModId)
-                    //: Database.PluginsXBOX.GetModById(installedMod.Platform, installedMod.ModId);
-
-                    ModItemData modItemData = Database.GetModItem(installedMod.Platform, Database.CategoriesData.GetCategoryById(installedMod.CategoryId).CategoryType, installedMod.ModId);
-
-                    InstalledModInfo installedModInfo = ConsoleProfile != null ? Settings.GetInstalledMods(consoleProfile, modItemData.CategoryId, modItemData.Id) : null;
-
-                    ShowTransferModsDialog(this, TransferType.UninstallMods, modItemData, null, installedModInfo == null ? string.Empty : installedModInfo.DownloadFiles.Region);
-                }
-            }
-
-            LoadInstalledMods();
-        }
-
-        private void TileItemInstalledModsUninstallSelected_ItemClick(object sender, TileItemEventArgs e)
+        private void TileItemInstalledModsUninstallItem_ItemClick(object sender, TileItemEventArgs e)
         {
             if (GridViewInstalledMods.SelectedRowsCount > 0)
             {
@@ -2376,7 +2297,7 @@ namespace ArisenStudio.Forms.Windows
             SearchInstalledMods();
         }
 
-        private void TextBoxFilterInstalledModsName_EditValueChanged(object sender, EventArgs e)
+        private void TextBoxInstalledModsFilterName_TextChanged(object sender, EventArgs e)
         {
             FilterInstalledModsFileName = TextBoxInstalledModsFilterName.Text;
 
@@ -2412,11 +2333,11 @@ namespace ArisenStudio.Forms.Windows
 
         private void ComboBoxInstalledModsFilterCreator_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FilterInstalledModsCreator = ComboBoxInstalledModsFilterCreator.SelectedIndex == 0 | ComboBoxInstalledModsFilterCreator.SelectedIndex == -1
-                ? string.Empty
-                : ComboBoxInstalledModsFilterCreator.SelectedItem as string;
+            //FilterInstalledModsCreator = ComboBoxInstalledModsFilterCreator.SelectedIndex == 0 | ComboBoxInstalledModsFilterCreator.SelectedIndex == -1
+            //    ? string.Empty
+            //    : ComboBoxInstalledModsFilterCreator.SelectedItem as string;
 
-            SearchInstalledMods();
+            //SearchInstalledMods();
         }
 
         private void ImageInstalledModsFilterTotalFilesType_Click(object sender, EventArgs e)
@@ -2437,10 +2358,10 @@ namespace ArisenStudio.Forms.Windows
                 ImageInstalledModsFilterTotalFilesType.Image = Properties.Resources.equal_sign;
             }
 
-            SearchDownloads();
+            SearchInstalledMods();
         }
 
-        private void NumericBoxFilterInstalledModsFiles_Properties_EditValueChanged(object sender, EventArgs e)
+        private void NumericBoxInstalledModsFilterTotalFiles_Properties_EditValueChanged(object sender, EventArgs e)
         {
             FilterInstalledModsTotalFiles = NumericBoxInstalledModsFilterTotalFiles.Value <= -1
                 ? null
@@ -2467,10 +2388,10 @@ namespace ArisenStudio.Forms.Windows
                 ImageInstalledModsFilterInstalledOnType.Image = Properties.Resources.equal_sign;
             }
 
-            SearchDownloads();
+            SearchInstalledMods();
         }
 
-        private void DateTimeBoxFilterInstalledModsInstalledOn_Properties_EditValueChanged(object sender, EventArgs e)
+        private void DateTimeInstalledModsFilterInstalledOn_Properties_EditValueChanged(object sender, EventArgs e)
         {
             if (DateTimeInstalledModsFilterInstalledOn.Text.ToString().IsValidDate("MM/dd/yyyy"))
             {
@@ -2504,7 +2425,6 @@ namespace ArisenStudio.Forms.Windows
                 new(ResourceLanguage.GetString("LABEL_MOD_TYPE"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_REGION"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_VERSION"), typeof(string)),
-                new(ResourceLanguage.GetString("LABEL_CREATOR"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_TOTAL_FILES"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_INSTALLED_ON"), typeof(string))
             });
@@ -2540,9 +2460,8 @@ namespace ArisenStudio.Forms.Windows
                                                     modCategory.Title,
                                                     installedModInfo.DownloadFiles.Name,
                                                     modItemData.ModType,
-                                                    installedModInfo.DownloadFiles.Region,
+                                                    string.IsNullOrEmpty(installedModInfo.DownloadFiles.Region) ? "n/a" : installedModInfo.DownloadFiles.Region,
                                                     installedModInfo.DownloadFiles.Version,
-                                                    modItemData.CreatedBy,
                                                     $"{installedModInfo.TotalFiles}{(installedModInfo.TotalFiles > 1 ? $" {ResourceLanguage.GetString("FILES")}" : $" {ResourceLanguage.GetString("FILE")}")}",
                                                     Settings.UseRelativeTimes ? installedModInfo.DateInstalled.Humanize() : $"{installedModInfo.DateInstalled:g}");
 
@@ -2557,32 +2476,29 @@ namespace ArisenStudio.Forms.Windows
             GridViewInstalledMods.Columns[0].Visible = false;
             GridViewInstalledMods.Columns[1].Visible = false;
 
-            GridViewInstalledMods.Columns[2].MinWidth = 104;
-            GridViewInstalledMods.Columns[2].MaxWidth = 104;
+            GridViewInstalledMods.Columns[2].MinWidth = 122;
+            GridViewInstalledMods.Columns[2].MaxWidth = 122;
 
-            GridViewInstalledMods.Columns[3].MinWidth = 226;
-            GridViewInstalledMods.Columns[3].MaxWidth = 226;
+            GridViewInstalledMods.Columns[3].MinWidth = 250;
+            GridViewInstalledMods.Columns[3].MaxWidth = 250;
 
             //GridViewInstalledMods.Columns[4].MinWidth = 80;
             //GridViewInstalledMods.Columns[4].MaxWidth = 80;
 
-            GridViewInstalledMods.Columns[5].MinWidth = 116;
-            GridViewInstalledMods.Columns[5].MaxWidth = 116;
+            GridViewInstalledMods.Columns[5].MinWidth = 132;
+            GridViewInstalledMods.Columns[5].MaxWidth = 132;
 
-            GridViewInstalledMods.Columns[6].MinWidth = 88;
-            GridViewInstalledMods.Columns[6].MaxWidth = 88;
+            GridViewInstalledMods.Columns[6].MinWidth = 110;
+            GridViewInstalledMods.Columns[6].MaxWidth = 110;
 
-            GridViewInstalledMods.Columns[7].MinWidth = 70;
-            GridViewInstalledMods.Columns[7].MaxWidth = 70;
+            GridViewInstalledMods.Columns[7].MinWidth = 92;
+            GridViewInstalledMods.Columns[7].MaxWidth = 92;
 
-            GridViewInstalledMods.Columns[8].MinWidth = 132;
-            GridViewInstalledMods.Columns[8].MaxWidth = 132;
+            GridViewInstalledMods.Columns[8].MinWidth = 94;
+            GridViewInstalledMods.Columns[8].MaxWidth = 94;
 
-            GridViewInstalledMods.Columns[9].MinWidth = 76;
-            GridViewInstalledMods.Columns[9].MaxWidth = 76;
-
-            GridViewInstalledMods.Columns[10].MinWidth = 94;
-            GridViewInstalledMods.Columns[10].MaxWidth = 94;
+            GridViewInstalledMods.Columns[9].MinWidth = 100;
+            GridViewInstalledMods.Columns[9].MaxWidth = 100;
 
             //TileItemInstalledModsUninstallAllItems.Enabled = IsConsoleConnected && GridViewInstalledMods.RowCount > 0;
             //TileItemInstalledModsUninstallItem.Enabled = IsConsoleConnected && GridViewInstalledMods.SelectedRowsCount > 0;
@@ -2657,9 +2573,8 @@ namespace ArisenStudio.Forms.Windows
                                                         modCategory.Title,
                                                         installedModInfo.DownloadFiles.Name,
                                                         modItemData.ModType,
-                                                        installedModInfo.DownloadFiles.Region,
+                                                        string.IsNullOrEmpty(installedModInfo.DownloadFiles.Region) ? "n/a" : installedModInfo.DownloadFiles.Region,
                                                         installedModInfo.DownloadFiles.Version,
-                                                        modItemData.CreatedBy,
                                                         $"{installedModInfo.TotalFiles}{(installedModInfo.TotalFiles > 1 ? $" {ResourceLanguage.GetString("FILES")}" : $" {ResourceLanguage.GetString("FILE")}")}",
                                                         Settings.UseRelativeTimes ? installedModInfo.DateInstalled.Humanize() : $"{installedModInfo.DateInstalled:g}");
 
@@ -2673,9 +2588,7 @@ namespace ArisenStudio.Forms.Windows
             GridViewInstalledMods.FocusedRowHandle = -1;
 
             TileItemInstalledModsDeleteItem.Enabled = GridViewInstalledMods.RowCount > 0;
-            TileItemInstalledModsDeleteAll.Enabled = GridViewInstalledMods.RowCount > 0;
             TileItemInstalledModsUninstallItem.Enabled = IsConsoleConnected && GridViewInstalledMods.SelectedRowsCount > 0;
-            TileItemInstalledModsUninstallAllItems.Enabled = IsConsoleConnected && GridViewInstalledMods.RowCount > 0;
             TileItemInstalledModsViewDetails.Enabled = GridViewInstalledMods.SelectedRowsCount > 0;
 
             GridViewInstalledMods.HideLoadingPanel();
@@ -2684,18 +2597,14 @@ namespace ArisenStudio.Forms.Windows
         private void GridViewInstalledMods_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
             TileItemInstalledModsDeleteItem.Enabled = GridViewInstalledMods.RowCount > 0;
-            TileItemInstalledModsDeleteAll.Enabled = GridViewInstalledMods.RowCount > 0;
             TileItemInstalledModsUninstallItem.Enabled = IsConsoleConnected && GridViewInstalledMods.SelectedRowsCount > 0;
-            TileItemInstalledModsUninstallAllItems.Enabled = IsConsoleConnected && GridViewInstalledMods.RowCount > 0;
             TileItemInstalledModsViewDetails.Enabled = GridViewInstalledMods.SelectedRowsCount > 0;
         }
 
         private void GridViewInstalledMods_RowClick(object sender, RowClickEventArgs e)
         {
             TileItemInstalledModsDeleteItem.Enabled = GridViewInstalledMods.RowCount > 0;
-            TileItemInstalledModsDeleteAll.Enabled = GridViewInstalledMods.RowCount > 0;
             TileItemInstalledModsUninstallItem.Enabled = IsConsoleConnected && GridViewInstalledMods.SelectedRowsCount > 0;
-            TileItemInstalledModsUninstallAllItems.Enabled = IsConsoleConnected && GridViewInstalledMods.RowCount > 0;
             TileItemInstalledModsViewDetails.Enabled = GridViewInstalledMods.SelectedRowsCount > 0;
         }
 
@@ -4475,10 +4384,10 @@ namespace ArisenStudio.Forms.Windows
                 NavigationItemPackages.Text = ResourceLanguage.GetString("NAVIGATION_PACKAGES");
                 NavigationItemPlugins.Text = ResourceLanguage.GetString("NAVIGATION_PLUGINS");
                 NavigationItemGameSaves.Text = ResourceLanguage.GetString("NAVIGATION_GAME_SAVES");
-                NavigationItemGameCheats.Text = ResourceLanguage.GetString("NAVIGATION_GAME_CHEATS");
 
                 // Dashboard
-                LabelHeaderOurFavoriteMods.Text = ResourceLanguage.GetString("TITLE_OUR_FAVORITE_MODS");
+                LabelHeaderFavoriteGames.Text = ResourceLanguage.GetString("TITLE_OUR_FAVORITE_GAMES");
+                LabelHeaderFavoriteMods.Text = ResourceLanguage.GetString("TITLE_OUR_FAVORITE_MODS");
                 LabelHeaderRecentlyUpdated.Text = ResourceLanguage.GetString("TITLE_RECENTLY_UPDATED");
                 LabelHeaderAnnouncements.Text = ResourceLanguage.GetString("TITLE_ANNOUNCEMENTS");
                 LabelHeaderLatestNews.Text = ResourceLanguage.GetString("TITLE_LATEST_NEWS");
@@ -4488,12 +4397,11 @@ namespace ArisenStudio.Forms.Windows
                 LoadStatistics();
                 LoadNewsFeed();
                 LoadAnnouncements();
-                NoAnnouncementsItem.LoadText();
+                NoAnnouncements.LoadText();
 
                 // Downloads
                 TileItemDownloadsOpenFolder.Text = ResourceLanguage.GetString("OPEN_FOLDER");
                 TileItemDownloadsOpenFile.Text = ResourceLanguage.GetString("OPEN_FILE");
-                TileItemDownloadsDeleteAllItems.Text = ResourceLanguage.GetString("DELETE_ALL_ITEMS");
                 TileItemDownloadsDeleteItem.Text = ResourceLanguage.GetString("DELETE_ITEM");
                 TileItemDownloadsViewDetails.Text = ResourceLanguage.GetString("VIEW_DETAILS");
 
@@ -4506,9 +4414,7 @@ namespace ArisenStudio.Forms.Windows
                 LabelDownloadsFilterDownloadedOn.Text = ResourceLanguage.GetString("LABEL_DOWNLOADED_ON");
 
                 // Installed Mods
-                TileItemInstalledModsDeleteAll.Text = ResourceLanguage.GetString("DELETE_ALL_ITEMS");
                 TileItemInstalledModsDeleteItem.Text = ResourceLanguage.GetString("DELETE_ITEM");
-                TileItemInstalledModsUninstallAllItems.Text = ResourceLanguage.GetString("UNINSTALL_ALL_ITEMS");
                 TileItemInstalledModsUninstallItem.Text = ResourceLanguage.GetString("UNINSTALL_ITEM");
                 TileItemInstalledModsViewDetails.Text = ResourceLanguage.GetString("VIEW_DETAILS");
 
@@ -4518,7 +4424,7 @@ namespace ArisenStudio.Forms.Windows
                 LabelInstalledModsFilterModType.Text = ResourceLanguage.GetString("LABEL_MOD_TYPE");
                 LabelInstalledModsFilterRegion.Text = ResourceLanguage.GetString("LABEL_REGION");
                 LabelInstalledModsFilterVersion.Text = ResourceLanguage.GetString("LABEL_VERSION");
-                LabelInstalledModsFilterCreator.Text = ResourceLanguage.GetString("LABEL_CREATOR");
+                //LabelInstalledModsFilterCreator.Text = ResourceLanguage.GetString("LABEL_CREATOR");
                 LabelInstalledModsFilterTotalFiles.Text = ResourceLanguage.GetString("LABEL_TOTAL_FILES");
                 LabelInstalledModsFilterInstalledOn.Text = ResourceLanguage.GetString("LABEL_INSTALLED_ON");
 
@@ -4589,7 +4495,6 @@ namespace ArisenStudio.Forms.Windows
                 LabelGameModsFilterModType.Text = ResourceLanguage.GetString("LABEL_MOD_TYPE");
                 LabelGameModsFilterRegion.Text = ResourceLanguage.GetString("LABEL_REGION");
                 LabelGameModsFilterVersion.Text = ResourceLanguage.GetString("LABEL_VERSION");
-                LabelGameModsFilterCreator.Text = ResourceLanguage.GetString("LABEL_CREATOR");
                 LabelGameModsFilterStatus.Text = ResourceLanguage.GetString("LABEL_STATUS");
 
                 ComboBoxGameModsFilterStatus.Properties.Items.Clear();
@@ -4606,7 +4511,6 @@ namespace ArisenStudio.Forms.Windows
                 LabelHomebrewFilterName.Text = ResourceLanguage.GetString("LABEL_NAME");
                 LabelHomebrewFilterSystemType.Text = ResourceLanguage.GetString("LABEL_SYSTEM_TYPE");
                 LabelHomebrewFilterVersion.Text = ResourceLanguage.GetString("LABEL_VERSION");
-                LabelHomebrewFilterCreator.Text = ResourceLanguage.GetString("LABEL_CREATOR");
                 LabelHomebrewFilterStatus.Text = ResourceLanguage.GetString("LABEL_STATUS");
 
                 // Resources
@@ -4618,7 +4522,6 @@ namespace ArisenStudio.Forms.Windows
                 LabelResourcesFilterSystemType.Text = ResourceLanguage.GetString("LABEL_SYSTEM_TYPE");
                 LabelResourcesFilterModType.Text = ResourceLanguage.GetString("LABEL_MOD_TYPE");
                 LabelResourcesFilterVersion.Text = ResourceLanguage.GetString("LABEL_VERSION");
-                LabelResourcesFilterCreator.Text = ResourceLanguage.GetString("LABEL_CREATOR");
                 LabelResourcesFilterStatus.Text = ResourceLanguage.GetString("LABEL_STATUS");
 
                 // Packages
@@ -4638,7 +4541,6 @@ namespace ArisenStudio.Forms.Windows
                 LabelPluginsFilterCategory.Text = ResourceLanguage.GetString("LABEL_CATEGORY");
                 LabelPluginsFilterName.Text = ResourceLanguage.GetString("LABEL_NAME");
                 LabelPluginsFilterVersion.Text = ResourceLanguage.GetString("LABEL_VERSION");
-                LabelPluginsFilterCreator.Text = ResourceLanguage.GetString("LABEL_CREATOR");
                 LabelPluginsFilterStatus.Text = ResourceLanguage.GetString("LABEL_STATUS");
 
                 // Game Saves
@@ -4648,14 +4550,6 @@ namespace ArisenStudio.Forms.Windows
                 LabelGameSavesFilterName.Text = ResourceLanguage.GetString("LABEL_NAME");
                 LabelGameSavesFilterRegion.Text = ResourceLanguage.GetString("LABEL_REGION");
                 LabelGameSavesFilterVersion.Text = ResourceLanguage.GetString("LABEL_VERSION");
-                LabelGameSavesFilterCreator.Text = ResourceLanguage.GetString("LABEL_CREATOR");
-
-                // Game Cheats
-                TileItemGameCheatsSortOptions.Text = ResourceLanguage.GetString("LABEL_SORT_OPTIONS");
-
-                LabelGameCheatsFilterGame.Text = ResourceLanguage.GetString("LABEL_GAME");
-                //LabelGameCheatsFilterRegion.Text = ResourceLanguage.GetString("LABEL_REGION");
-                //LabelGameCheatsFilterVersion.Text = ResourceLanguage.GetString("LABEL_VERSION");
 
                 // About
                 LabelAboutHeaderLibraries.Text = ResourceLanguage.GetString("LABEL_LIBRARIES");
@@ -5330,7 +5224,6 @@ namespace ArisenStudio.Forms.Windows
 
         private void ToggleSettingsAlwaysShowPresence_Toggled(object sender, EventArgs e)
         {
-            //ButtonDiscordPresence.Checked = ToggleSettingsAlwaysShowPresence.IsOn;
             Settings.AlwaysShowPresence = ToggleSettingsAlwaysShowPresence.IsOn;
 
             if (Settings.AlwaysShowPresence)
@@ -5342,15 +5235,6 @@ namespace ArisenStudio.Forms.Windows
                 ToggleSettingsShowCurrentGamePlaying.Toggled -= ToggleSettingsShowCurrentGamePlaying_Toggled;
                 ToggleSettingsShowCurrentGamePlaying.IsOn = false;
                 ToggleSettingsShowCurrentGamePlaying.Toggled += ToggleSettingsShowCurrentGamePlaying_Toggled;
-
-                //if (DiscordClient != null)
-                //{
-                //    DiscordClient.ClearPresence();
-                //    DiscordClient.Dispose();
-                //    DiscordClient = null;
-                //}
-
-                //timer.Stop();
 
                 Settings.AlwaysShowPresence = false;
                 Settings.ShowCurrentGamePlaying = false;
@@ -5375,18 +5259,6 @@ namespace ArisenStudio.Forms.Windows
             if (!Settings.AlwaysShowPresence)
             {
                 DisableDiscordRpc();
-
-                //if (!DiscordClient.IsDisposed)
-                //{
-                //    //DiscordClient.ClearPresence();
-                //    //DiscordClient.Deinitialize();
-                //    //DiscordClient.Dispose();
-
-                //    DisableDiscordRpc();
-                //}
-
-                //DiscordTimer.Stop();
-                //DisableDiscordRpc();
             }
         }
 
@@ -5410,7 +5282,7 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void TileItemGameModsSortBy_ItemClick(object sender, TileItemEventArgs e)
+        private void TileItemGameModsSortOptions_ItemClick(object sender, TileItemEventArgs e)
         {
             Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterGameModsSortOption, new List<string> { ResourceLanguage.GetString("LABEL_GAME"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_SYSTEM_TYPE"), ResourceLanguage.GetString("LABEL_MOD_TYPE"), ResourceLanguage.GetString("LABEL_REGION"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR") }, FilterGameModsSortOrder);
 
@@ -5468,16 +5340,11 @@ namespace ArisenStudio.Forms.Windows
         private string FilterGameModsVersion { get; set; } = string.Empty;
 
         /// <summary>
-        /// Get/set the author for filtering mods.
-        /// </summary>
-        private string FilterGameModsCreator { get; set; } = string.Empty;
-
-        /// <summary>
         /// Get/set the status for filtering mods.
         /// </summary>
         private string FilterGameModsStatus { get; set; } = string.Empty;
 
-        private void ComboBoxGameModsFilterCategory_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxGameModsFilterGame_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ComboBoxGameModsFilterGame.SelectedIndex == 0 | ComboBoxGameModsFilterGame.SelectedIndex == -1)
             {
@@ -5493,7 +5360,7 @@ namespace ArisenStudio.Forms.Windows
             SearchGameMods();
         }
 
-        private void TextBoxFilterGameModsName_TextChanged(object sender, EventArgs e)
+        private void TextBoxGameModsFilterName_TextChanged(object sender, EventArgs e)
         {
             FilterGameModsName = TextBoxGameModsFilterName.Text;
 
@@ -5536,15 +5403,6 @@ namespace ArisenStudio.Forms.Windows
             SearchGameMods();
         }
 
-        private void ComboBoxGameModsFilterCreator_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FilterGameModsCreator = ComboBoxGameModsFilterCreator.SelectedIndex == 0 | ComboBoxGameModsFilterCreator.SelectedIndex == -1
-                ? string.Empty
-                : ComboBoxGameModsFilterCreator.SelectedItem as string;
-
-            SearchGameMods();
-        }
-
         private void ComboBoxGameModsFilterStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             FilterGameModsStatus = ComboBoxGameModsFilterStatus.SelectedIndex == 0 | ComboBoxGameModsFilterStatus.SelectedIndex == -1
@@ -5558,9 +5416,9 @@ namespace ArisenStudio.Forms.Windows
         {
             ComboBoxGameModsFilterGame.Properties.Items.Clear();
 
-            ComboBoxGameModsFilterGame.SelectedIndexChanged -= ComboBoxGameModsFilterCategory_SelectedIndexChanged;
+            ComboBoxGameModsFilterGame.SelectedIndexChanged -= ComboBoxGameModsFilterGame_SelectedIndexChanged;
             ComboBoxGameModsFilterGame.SelectedIndex = -1;
-            ComboBoxGameModsFilterGame.SelectedIndexChanged += ComboBoxGameModsFilterCategory_SelectedIndexChanged;
+            ComboBoxGameModsFilterGame.SelectedIndexChanged += ComboBoxGameModsFilterGame_SelectedIndexChanged;
 
             ComboBoxGameModsFilterGame.Properties.Items.Add($"<{ResourceLanguage.GetString("ALL_CATEGORIES")}>");
 
@@ -5572,9 +5430,6 @@ namespace ArisenStudio.Forms.Windows
 
             ComboBoxGameModsFilterVersion.Properties.Items.Clear();
             ComboBoxGameModsFilterVersion.Properties.Items.Add($"<{ResourceLanguage.GetString("ANY")}>");
-
-            ComboBoxGameModsFilterCreator.Properties.Items.Clear();
-            ComboBoxGameModsFilterCreator.Properties.Items.Add($"<{ResourceLanguage.GetString("ANY")}>");
 
             foreach (Category category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Game == x.CategoryType).OrderBy(x => x.Title))
             {
@@ -5611,14 +5466,6 @@ namespace ArisenStudio.Forms.Windows
                 {
                     ComboBoxGameModsFilterVersion.Properties.Items.Add(version);
                 }
-
-                foreach (string author in from string author in modItemData.Creators
-                                          where !ComboBoxGameModsFilterCreator.Properties.Items.Contains(author)
-                                          where !ignoreValues.Exists(x => x.EqualsIgnoreCase(author))
-                                          select author)
-                {
-                    ComboBoxGameModsFilterCreator.Properties.Items.Add(author);
-                }
             }
         }
 
@@ -5632,7 +5479,6 @@ namespace ArisenStudio.Forms.Windows
                 new(ResourceLanguage.GetString("LABEL_MOD_TYPE"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_REGION"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_VERSION"), typeof(string)),
-                new(ResourceLanguage.GetString("LABEL_CREATOR"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_STATUS"), typeof(string))
             });
 
@@ -5666,7 +5512,7 @@ namespace ArisenStudio.Forms.Windows
 
             BeginInvoke(new Action(() =>
             {
-                foreach (ModItemData modItemData in Database.GameModsPs3.GetGameMods(Database.CategoriesData, FilterGameModsCategoryId, FilterGameModsName, FilterGameModsSystemType, FilterGameModsType, FilterGameModsRegion, FilterGameModsVersion, FilterGameModsCreator, FilterGameModsShowFavorites))
+                foreach (ModItemData modItemData in Database.GameModsPs3.GetGameMods(Database.CategoriesData, FilterGameModsCategoryId, FilterGameModsName, FilterGameModsSystemType, FilterGameModsType, FilterGameModsRegion, FilterGameModsVersion, FilterGameModsShowFavorites))
                 {
                     bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id) != null;
 
@@ -5694,7 +5540,6 @@ namespace ArisenStudio.Forms.Windows
                                                modItemData.ModType,
                                                modItemData.Region,
                                                string.Join(" & ", modItemData.Versions),
-                                               modItemData.CreatedBy.IsNullOrWhiteSpace() ? "Unknown" : modItemData.CreatedBy,
                                                isDownloadNotInstalled ? ResourceLanguage.GetString("LABEL_DOWNLOADED") : isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
 
                     countResults++;
@@ -5708,28 +5553,25 @@ namespace ArisenStudio.Forms.Windows
 
             GridViewGameMods.Columns[0].Visible = false;
 
-            GridViewGameMods.Columns[1].MinWidth = 232;
-            GridViewGameMods.Columns[1].MaxWidth = 232;
+            GridViewGameMods.Columns[1].MinWidth = 250;
+            GridViewGameMods.Columns[1].MaxWidth = 250;
 
             //GridViewGameMods.Columns[2].MinWidth = 30;
 
-            GridViewGameMods.Columns[3].MinWidth = 88;
-            GridViewGameMods.Columns[3].MaxWidth = 88;
+            GridViewGameMods.Columns[3].MinWidth = 110;
+            GridViewGameMods.Columns[3].MaxWidth = 110;
 
-            GridViewGameMods.Columns[4].MinWidth = 116;
-            GridViewGameMods.Columns[4].MaxWidth = 116;
+            GridViewGameMods.Columns[4].MinWidth = 128;
+            GridViewGameMods.Columns[4].MaxWidth = 128;
 
-            GridViewGameMods.Columns[5].MinWidth = 90;
-            GridViewGameMods.Columns[5].MaxWidth = 90;
+            GridViewGameMods.Columns[5].MinWidth = 112;
+            GridViewGameMods.Columns[5].MaxWidth = 112;
 
-            GridViewGameMods.Columns[6].MinWidth = 70;
-            GridViewGameMods.Columns[6].MaxWidth = 70;
+            GridViewGameMods.Columns[6].MinWidth = 94;
+            GridViewGameMods.Columns[6].MaxWidth = 94;
 
-            GridViewGameMods.Columns[7].MinWidth = 132;
-            GridViewGameMods.Columns[7].MaxWidth = 132;
-
-            GridViewGameMods.Columns[8].MinWidth = 94;
-            GridViewGameMods.Columns[8].MaxWidth = 94;
+            GridViewGameMods.Columns[7].MinWidth = 100;
+            GridViewGameMods.Columns[7].MaxWidth = 100;
 
             GridViewGameMods.SortInfo.ClearAndAddRange(new[] {
                 new GridColumnSortInfo(GridViewGameMods.Columns[FilterGameModsSortOption], FilterGameModsSortOrder),
@@ -5751,17 +5593,15 @@ namespace ArisenStudio.Forms.Windows
             ComboBoxGameModsFilterVersion.SelectedIndex = string.IsNullOrEmpty(FilterGameModsVersion) ? -1 : ComboBoxGameModsFilterVersion.Properties.Items.IndexOf(FilterGameModsVersion);
             ComboBoxGameModsFilterVersion.SelectedIndexChanged += ComboBoxGameModsFilterVersion_SelectedIndexChanged;
 
-            ComboBoxGameModsFilterCreator.SelectedIndexChanged -= ComboBoxGameModsFilterCreator_SelectedIndexChanged;
-            ComboBoxGameModsFilterCreator.SelectedIndex = string.IsNullOrEmpty(FilterGameModsCreator) ? -1 : ComboBoxGameModsFilterCreator.Properties.Items.IndexOf(FilterGameModsCreator);
-            ComboBoxGameModsFilterCreator.SelectedIndexChanged += ComboBoxGameModsFilterCreator_SelectedIndexChanged;
-
             ComboBoxGameModsFilterStatus.SelectedIndexChanged -= ComboBoxGameModsFilterStatus_SelectedIndexChanged;
             ComboBoxGameModsFilterStatus.SelectedIndex = string.IsNullOrEmpty(FilterGameModsStatus) ? -1 : ComboBoxGameModsFilterStatus.Properties.Items.IndexOf(FilterGameModsStatus);
             ComboBoxGameModsFilterStatus.SelectedIndexChanged += ComboBoxGameModsFilterStatus_SelectedIndexChanged;
 
             GridViewGameMods.HideLoadingPanel();
 
-            GridViewGameMods.FocusedRowHandle = 0;
+            GridControlGameMods.Refresh();
+            GridViewGameMods.FocusedRowHandle = 1;
+            GridControlGameMods.Refresh();
         }
 
         private void GridViewGameMods_RowClick(object sender, RowClickEventArgs e)
@@ -5779,7 +5619,7 @@ namespace ArisenStudio.Forms.Windows
 
         #region Homebrew Page
 
-        private void TileItemHomebrewShowFavorites_ItemClicko(object sender, TileItemEventArgs e)
+        private void TileItemHomebrewShowFavorites_ItemClick(object sender, TileItemEventArgs e)
         {
             if (FilterHomebrewShowFavorites)
             {
@@ -5843,11 +5683,6 @@ namespace ArisenStudio.Forms.Windows
         private string FilterHomebrewVersion { get; set; } = string.Empty;
 
         /// <summary>
-        /// Get/set the author for filtering mods.
-        /// </summary>
-        private string FilterHomebrewCreator { get; set; } = string.Empty;
-
-        /// <summary>
         /// Get/set the status for filtering mods.
         /// </summary>
         private string FilterHomebrewStatus { get; set; } = string.Empty;
@@ -5898,15 +5733,6 @@ namespace ArisenStudio.Forms.Windows
             SearchHomebrew();
         }
 
-        private void ComboBoxHomebrewFilterCreator_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FilterHomebrewCreator = ComboBoxHomebrewFilterCreator.SelectedIndex == 0 | ComboBoxHomebrewFilterCreator.SelectedIndex == -1
-                ? string.Empty
-                : ComboBoxHomebrewFilterCreator.SelectedItem as string;
-
-            SearchHomebrew();
-        }
-
         private void ComboBoxHomebrewFilterStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             FilterHomebrewStatus = ComboBoxHomebrewFilterStatus.SelectedIndex == 0 | ComboBoxHomebrewFilterStatus.SelectedIndex == -1
@@ -5936,9 +5762,6 @@ namespace ArisenStudio.Forms.Windows
             ComboBoxHomebrewFilterVersion.Properties.Items.Clear();
             ComboBoxHomebrewFilterVersion.Properties.Items.Add($"<{ResourceLanguage.GetString("ANY")}>");
 
-            ComboBoxHomebrewFilterCreator.Properties.Items.Clear();
-            ComboBoxHomebrewFilterCreator.Properties.Items.Add($"<{ResourceLanguage.GetString("ANY")}>");
-
             foreach (ModItemData modItemData in Database.HomebrewPs3.Mods)
             {
                 foreach (string version in from string version in modItemData.Versions
@@ -5947,14 +5770,6 @@ namespace ArisenStudio.Forms.Windows
                                            select version)
                 {
                     ComboBoxHomebrewFilterVersion.Properties.Items.Add(version);
-                }
-
-                foreach (string author in from string author in modItemData.Creators
-                                          where !ComboBoxHomebrewFilterCreator.Properties.Items.Contains(author)
-                                          where !ignoreValues.Exists(x => x.EqualsIgnoreCase(author))
-                                          select author)
-                {
-                    ComboBoxHomebrewFilterCreator.Properties.Items.Add(author);
                 }
             }
         }
@@ -5967,7 +5782,6 @@ namespace ArisenStudio.Forms.Windows
                 new(ResourceLanguage.GetString("LABEL_NAME"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_SYSTEM_TYPE"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_VERSION"), typeof(string)),
-                new(ResourceLanguage.GetString("LABEL_CREATOR"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_STATUS"), typeof(string))
             });
 
@@ -6004,7 +5818,7 @@ namespace ArisenStudio.Forms.Windows
 
             BeginInvoke(new Action(() =>
             {
-                foreach (ModItemData modItemData in Database.HomebrewPs3.GetHomebrew(Database.CategoriesData, FilterHomebrewCategoryId, FilterHomebrewName, FilterHomebrewSystemType, FilterHomebrewVersion, FilterHomebrewCreator, FilterHomebrewShowFavorites))
+                foreach (ModItemData modItemData in Database.HomebrewPs3.GetHomebrew(Database.CategoriesData, FilterHomebrewCategoryId, FilterHomebrewName, FilterHomebrewSystemType, FilterHomebrewVersion, FilterHomebrewShowFavorites))
                 {
                     bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id) != null;
 
@@ -6030,7 +5844,6 @@ namespace ArisenStudio.Forms.Windows
                                                modItemData.Name,
                                                modItemData.FirmwareType,
                                                string.Join(" & ", modItemData.Versions),
-                                               modItemData.CreatedBy.IsNullOrWhiteSpace() ? "Unknown" : modItemData.CreatedBy,
                                                isDownloadNotInstalled ? ResourceLanguage.GetString("LABEL_DOWNLOADED") : isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
                 }
             }));
@@ -6039,22 +5852,19 @@ namespace ArisenStudio.Forms.Windows
 
             GridViewHomebrew.Columns[0].Visible = false;
 
-            GridViewHomebrew.Columns[1].MinWidth = 232;
-            GridViewHomebrew.Columns[1].MaxWidth = 232;
+            GridViewHomebrew.Columns[1].MinWidth = 250;
+            GridViewHomebrew.Columns[1].MaxWidth = 250;
 
             //GridViewHomebrew.Columns[2].MinWidth = 30;
 
-            GridViewHomebrew.Columns[3].MinWidth = 88;
-            GridViewHomebrew.Columns[3].MaxWidth = 88;
+            GridViewHomebrew.Columns[3].MinWidth = 110;
+            GridViewHomebrew.Columns[3].MaxWidth = 110;
 
-            GridViewHomebrew.Columns[4].MinWidth = 70;
-            GridViewHomebrew.Columns[4].MaxWidth = 70;
+            GridViewHomebrew.Columns[4].MinWidth = 92;
+            GridViewHomebrew.Columns[4].MaxWidth = 92;
 
-            GridViewHomebrew.Columns[5].MinWidth = 132;
-            GridViewHomebrew.Columns[5].MaxWidth = 132;
-
-            GridViewHomebrew.Columns[6].MinWidth = 94;
-            GridViewHomebrew.Columns[6].MaxWidth = 94;
+            GridViewHomebrew.Columns[5].MinWidth = 100;
+            GridViewHomebrew.Columns[5].MaxWidth = 100;
 
             GridViewHomebrew.SortInfo.ClearAndAddRange(new[] {
                 new GridColumnSortInfo(GridViewHomebrew.Columns[FilterHomebrewSortOption], FilterHomebrewSortOrder),
@@ -6067,10 +5877,6 @@ namespace ArisenStudio.Forms.Windows
             ComboBoxHomebrewFilterVersion.SelectedIndexChanged -= ComboBoxHomebrewFilterVersion_SelectedIndexChanged;
             ComboBoxHomebrewFilterVersion.SelectedIndex = string.IsNullOrEmpty(FilterHomebrewVersion) ? -1 : ComboBoxHomebrewFilterVersion.Properties.Items.IndexOf(FilterHomebrewVersion);
             ComboBoxHomebrewFilterVersion.SelectedIndexChanged += ComboBoxHomebrewFilterVersion_SelectedIndexChanged;
-
-            ComboBoxHomebrewFilterCreator.SelectedIndexChanged -= ComboBoxHomebrewFilterCreator_SelectedIndexChanged;
-            ComboBoxHomebrewFilterCreator.SelectedIndex = string.IsNullOrEmpty(FilterHomebrewCreator) ? -1 : ComboBoxHomebrewFilterCreator.Properties.Items.IndexOf(FilterHomebrewCreator);
-            ComboBoxHomebrewFilterCreator.SelectedIndexChanged += ComboBoxHomebrewFilterCreator_SelectedIndexChanged;
 
             ComboBoxHomebrewFilterStatus.SelectedIndexChanged -= ComboBoxHomebrewFilterStatus_SelectedIndexChanged;
             ComboBoxHomebrewFilterStatus.SelectedIndex = string.IsNullOrEmpty(FilterHomebrewStatus) ? -1 : ComboBoxHomebrewFilterStatus.Properties.Items.IndexOf(FilterHomebrewStatus);
@@ -6088,22 +5894,6 @@ namespace ArisenStudio.Forms.Windows
         {
             int modId = (int)GridViewHomebrew.GetRowCellValue(e.RowHandle, GridViewHomebrew.Columns[0]);
             ShowHomebrewDetails(modId);
-        }
-
-        private void MenuItemHomebrewInstallFiles_ItemClick(object sender, EventArgs e)
-        {
-            ModItemData modItemData = SelectedHomebrewItem;
-            InstalledModInfo installedModInfo = ConsoleProfile != null ? Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id) : null;
-            bool isInstalled = installedModInfo != null;
-
-            if (isInstalled)
-            {
-                ShowTransferModsDialog(Window, TransferType.UninstallMods, modItemData);
-            }
-            else
-            {
-                ShowTransferModsDialog(Window, TransferType.InstallMods, modItemData);
-            }
         }
 
         #endregion
@@ -6179,11 +5969,6 @@ namespace ArisenStudio.Forms.Windows
         private string FilterResourcesVersion { get; set; } = string.Empty;
 
         /// <summary>
-        /// Get/set the author for filtering mods.
-        /// </summary>
-        private string FilterResourcesCreator { get; set; } = string.Empty;
-
-        /// <summary>
         /// Get/set the status for filtering mods.
         /// </summary>
         private string FilterResourcesStatus { get; set; } = string.Empty;
@@ -6238,15 +6023,6 @@ namespace ArisenStudio.Forms.Windows
             SearchResources();
         }
 
-        private void ComboBoxResourcesFilterCreator_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FilterResourcesCreator = ComboBoxResourcesFilterCreator.SelectedIndex == 0 | ComboBoxResourcesFilterCreator.SelectedIndex == -1
-                ? string.Empty
-                : ComboBoxResourcesFilterCreator.SelectedItem as string;
-
-            SearchResources();
-        }
-
         private void ComboBoxResourcesFilterStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             FilterResourcesStatus = ComboBoxResourcesFilterStatus.SelectedIndex == 0 | ComboBoxResourcesFilterStatus.SelectedIndex == -1
@@ -6279,9 +6055,6 @@ namespace ArisenStudio.Forms.Windows
             ComboBoxResourcesFilterVersion.Properties.Items.Clear();
             ComboBoxResourcesFilterVersion.Properties.Items.Add($"<{ResourceLanguage.GetString("ANY")}>");
 
-            ComboBoxResourcesFilterCreator.Properties.Items.Clear();
-            ComboBoxResourcesFilterCreator.Properties.Items.Add($"<{ResourceLanguage.GetString("ANY")}>");
-
             foreach (ModItemData modItemData in Database.ResourcesPs3.Mods)
             {
                 foreach (string modType in from string modType in modItemData.ModTypes
@@ -6299,14 +6072,6 @@ namespace ArisenStudio.Forms.Windows
                 {
                     ComboBoxResourcesFilterVersion.Properties.Items.Add(version);
                 }
-
-                foreach (string author in from string author in modItemData.Creators
-                                          where !ComboBoxResourcesFilterCreator.Properties.Items.Contains(author)
-                                          where !ignoreValues.Exists(x => x.EqualsIgnoreCase(author))
-                                          select author)
-                {
-                    ComboBoxResourcesFilterCreator.Properties.Items.Add(author);
-                }
             }
         }
 
@@ -6319,7 +6084,6 @@ namespace ArisenStudio.Forms.Windows
                 new(ResourceLanguage.GetString("LABEL_SYSTEM_TYPE"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_MOD_TYPE"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_VERSION"), typeof(string)),
-                new(ResourceLanguage.GetString("LABEL_CREATOR"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_STATUS"), typeof(string))
             });
 
@@ -6357,7 +6121,7 @@ namespace ArisenStudio.Forms.Windows
 
             BeginInvoke(new Action(() =>
             {
-                foreach (ModItemData modItemData in Database.ResourcesPs3.GetResources(Database.CategoriesData, FilterResourcesCategoryId, FilterResourcesName, FilterResourcesSystemType, FilterResourcesModType, FilterResourcesVersion, FilterResourcesCreator, FilterResourcesShowFavorites).OrderBy(x => x.Name))
+                foreach (ModItemData modItemData in Database.ResourcesPs3.GetResources(Database.CategoriesData, FilterResourcesCategoryId, FilterResourcesName, FilterResourcesSystemType, FilterResourcesModType, FilterResourcesVersion, FilterResourcesShowFavorites).OrderBy(x => x.Name))
                 {
                     bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id) != null;
 
@@ -6384,7 +6148,6 @@ namespace ArisenStudio.Forms.Windows
                                                 modItemData.FirmwareType,
                                                 modItemData.ModType,
                                                 string.Join(" & ", modItemData.Versions),
-                                                modItemData.CreatedBy.IsNullOrWhiteSpace() ? "Unknown" : modItemData.CreatedBy,
                                                 isDownloadNotInstalled ? ResourceLanguage.GetString("LABEL_DOWNLOADED") : isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
                 }
             }));
@@ -6393,25 +6156,22 @@ namespace ArisenStudio.Forms.Windows
 
             GridViewResources.Columns[0].Visible = false;
 
-            GridViewResources.Columns[1].MinWidth = 232;
-            GridViewResources.Columns[1].MaxWidth = 232;
+            GridViewResources.Columns[1].MinWidth = 250;
+            GridViewResources.Columns[1].MaxWidth = 250;
 
             //GridViewResources.Columns[2].MinWidth = 30;
 
-            GridViewResources.Columns[3].MinWidth = 88;
-            GridViewResources.Columns[3].MaxWidth = 88;
+            GridViewResources.Columns[3].MinWidth = 110;
+            GridViewResources.Columns[3].MaxWidth = 110;
 
-            GridViewResources.Columns[4].MinWidth = 108;
-            GridViewResources.Columns[4].MaxWidth = 108;
+            GridViewResources.Columns[4].MinWidth = 128;
+            GridViewResources.Columns[4].MaxWidth = 128;
 
-            GridViewResources.Columns[5].MinWidth = 70;
-            GridViewResources.Columns[5].MaxWidth = 70;
+            GridViewResources.Columns[5].MinWidth = 94;
+            GridViewResources.Columns[5].MaxWidth = 94;
 
-            GridViewResources.Columns[6].MinWidth = 132;
-            GridViewResources.Columns[6].MaxWidth = 132;
-
-            GridViewResources.Columns[7].MinWidth = 94;
-            GridViewResources.Columns[7].MaxWidth = 94;
+            GridViewResources.Columns[6].MinWidth = 100;
+            GridViewResources.Columns[6].MaxWidth = 100;
 
             GridViewResources.SortInfo.ClearAndAddRange(new[] {
                 new GridColumnSortInfo(GridViewResources.Columns[FilterResourcesSortOption], FilterResourcesSortOrder),
@@ -6428,10 +6188,6 @@ namespace ArisenStudio.Forms.Windows
             ComboBoxResourcesFilterVersion.SelectedIndexChanged -= ComboBoxResourcesFilterVersion_SelectedIndexChanged;
             ComboBoxResourcesFilterVersion.SelectedIndex = string.IsNullOrEmpty(FilterResourcesVersion) ? -1 : ComboBoxResourcesFilterVersion.Properties.Items.IndexOf(FilterResourcesVersion);
             ComboBoxResourcesFilterVersion.SelectedIndexChanged += ComboBoxResourcesFilterVersion_SelectedIndexChanged;
-
-            ComboBoxResourcesFilterCreator.SelectedIndexChanged -= ComboBoxResourcesFilterCreator_SelectedIndexChanged;
-            ComboBoxResourcesFilterCreator.SelectedIndex = string.IsNullOrEmpty(FilterResourcesCreator) ? -1 : ComboBoxResourcesFilterCreator.Properties.Items.IndexOf(FilterResourcesCreator);
-            ComboBoxResourcesFilterCreator.SelectedIndexChanged += ComboBoxResourcesFilterCreator_SelectedIndexChanged;
 
             ComboBoxResourcesFilterStatus.SelectedIndexChanged -= ComboBoxResourcesFilterStatus_SelectedIndexChanged;
             ComboBoxResourcesFilterStatus.SelectedIndex = string.IsNullOrEmpty(FilterResourcesStatus) ? -1 : ComboBoxResourcesFilterStatus.Properties.Items.IndexOf(FilterResourcesStatus);
@@ -6848,8 +6604,8 @@ namespace ArisenStudio.Forms.Windows
 
             GridViewPackages.Columns[0].Visible = false;
 
-            GridViewPackages.Columns[1].MinWidth = 82;
-            GridViewPackages.Columns[1].MaxWidth = 82;
+            GridViewPackages.Columns[1].MinWidth = 98;
+            GridViewPackages.Columns[1].MaxWidth = 98;
 
             //GridViewGames.Columns[2].MinWidth = 232;
             //GridViewGames.Columns[2].MaxWidth = 232;
@@ -6863,8 +6619,8 @@ namespace ArisenStudio.Forms.Windows
             GridViewPackages.Columns[5].MaxWidth = 92;
             GridViewPackages.Columns[5].MinWidth = 92;
 
-            GridViewPackages.Columns[6].MaxWidth = 94;
-            GridViewPackages.Columns[6].MinWidth = 94;
+            GridViewPackages.Columns[6].MaxWidth = 100;
+            GridViewPackages.Columns[6].MinWidth = 100;
 
             GridViewPackages.SortInfo.ClearAndAddRange(new[] {
                 new GridColumnSortInfo(GridViewPackages.Columns[FilterPackagesSortOption], FilterPackagesSortOrder),
@@ -7086,8 +6842,6 @@ namespace ArisenStudio.Forms.Windows
 
         private string FilterPluginsVersion { get; set; } = string.Empty;
 
-        private string FilterPluginsCreator { get; set; } = string.Empty;
-
         private string FilterPluginsStatus { get; set; } = string.Empty;
 
         private void ComboBoxPluginsFilterCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -7125,19 +6879,6 @@ namespace ArisenStudio.Forms.Windows
             SearchPlugins();
         }
 
-        private void ComboBoxPluginsFilterCreator_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ComboBoxPluginsFilterCreator.SelectedIndex is (-1) or 0)
-            {
-                FilterPluginsCreator = string.Empty;
-                SearchPlugins();
-                return;
-            }
-
-            FilterPluginsCreator = ComboBoxPluginsFilterCreator.SelectedItem as string;
-            SearchPlugins();
-        }
-
         private void ComboBoxPluginsFilterStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ComboBoxPluginsFilterStatus.SelectedIndex is (-1) or 0)
@@ -7158,7 +6899,6 @@ namespace ArisenStudio.Forms.Windows
                 new(ResourceLanguage.GetString("LABEL_CATEGORY"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_NAME"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_VERSION"), typeof(string)),
-                new(ResourceLanguage.GetString("LABEL_CREATOR"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_STATUS"), typeof(string))
             });
 
@@ -7171,7 +6911,7 @@ namespace ArisenStudio.Forms.Windows
 
             DataTablePlugins.Rows.Clear();
 
-            foreach (ModItemData modItemData in Database.PluginsXbox.GetPluginItems(FilterPluginsCategoryId, FilterPluginsName, FilterPluginsVersion, FilterPluginsCreator, FilterPluginsShowFavorites))
+            foreach (ModItemData modItemData in Database.PluginsXbox.GetPluginItems(FilterPluginsCategoryId, FilterPluginsName, FilterPluginsVersion, FilterPluginsShowFavorites))
             {
                 bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id) != null;
 
@@ -7198,7 +6938,6 @@ namespace ArisenStudio.Forms.Windows
                                           category.Title,
                                           modItemData.Name,
                                           modItemData.Version,
-                                          modItemData.CreatedBy.IsNullOrWhiteSpace() ? "Unknown" : modItemData.CreatedBy,
                                           isDownloadNotInstalled ? ResourceLanguage.GetString("LABEL_DOWNLOADED") : isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
             }
 
@@ -7206,19 +6945,16 @@ namespace ArisenStudio.Forms.Windows
 
             GridViewPlugins.Columns[0].Visible = false;
 
-            GridViewPlugins.Columns[1].MinWidth = 232;
-            GridViewPlugins.Columns[1].MaxWidth = 232;
+            GridViewPlugins.Columns[1].MinWidth = 250;
+            GridViewPlugins.Columns[1].MaxWidth = 250;
 
             //GridViewPlugins.Columns[2].MinWidth = 180; //125
 
-            GridViewPlugins.Columns[3].MinWidth = 72;
-            GridViewPlugins.Columns[3].MaxWidth = 72;
+            GridViewPlugins.Columns[3].MinWidth = 94;
+            GridViewPlugins.Columns[3].MaxWidth = 94;
 
-            GridViewPlugins.Columns[4].MinWidth = 132;
-            GridViewPlugins.Columns[4].MaxWidth = 132;
-
-            GridViewPlugins.Columns[5].MinWidth = 92;
-            GridViewPlugins.Columns[5].MaxWidth = 92;
+            GridViewPlugins.Columns[4].MinWidth = 100;
+            GridViewPlugins.Columns[4].MaxWidth = 100;
 
             GridViewPlugins.SortInfo.ClearAndAddRange(new[] {
                 new GridColumnSortInfo(GridViewPlugins.Columns[FilterPluginsSortOption], FilterPluginsSortOrder),
@@ -7271,11 +7007,6 @@ namespace ArisenStudio.Forms.Windows
         /// Get/set the version for filtering game saves.
         /// </summary>
         private string FilterGameSavesVersion { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Get/set the version for filtering game saves.
-        /// </summary>
-        private string FilterGameSavesCreator { get; set; } = string.Empty;
 
         /// <summary>
         /// Get/set the downloads status for filtering game saves.
@@ -7335,15 +7066,6 @@ namespace ArisenStudio.Forms.Windows
             SearchGameSaves();
         }
 
-        private void ComboBoxGameSavesFilterCreator_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FilterGameSavesCreator = ComboBoxGameSavesFilterCreator.SelectedIndex == 0 | ComboBoxGameSavesFilterCreator.SelectedIndex == -1
-                ? string.Empty
-                : ComboBoxGameSavesFilterCreator.SelectedItem as string;
-
-            SearchGameSaves();
-        }
-
         private static DataTable DataTableGameSaves { get; } = DataExtensions.CreateDataTable(
             new List<DataColumn>()
             {
@@ -7352,7 +7074,6 @@ namespace ArisenStudio.Forms.Windows
                 new(ResourceLanguage.GetString("LABEL_NAME"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_REGION"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_VERSION"), typeof(string)),
-                new(ResourceLanguage.GetString("LABEL_CREATOR"), typeof(string))
             });
 
         private void LoadGameSavesCategories()
@@ -7388,14 +7109,6 @@ namespace ArisenStudio.Forms.Windows
                 {
                     ComboBoxGameSavesFilterVersion.Properties.Items.Add(version);
                 }
-
-                foreach (string author in from string author in gameSaveItem.Creators
-                                          where !ComboBoxGameSavesFilterCreator.Properties.Items.Contains(author)
-                                          where !ignoreValues.Exists(x => x.EqualsIgnoreCase(author))
-                                          select author)
-                {
-                    ComboBoxGameSavesFilterCreator.Properties.Items.Add(author);
-                }
             }
         }
 
@@ -7410,7 +7123,7 @@ namespace ArisenStudio.Forms.Windows
 
             DataTableGameSaves.Rows.Clear();
 
-            foreach (GameSaveItemData gameSaveItem in Database.GameSaves.GetGameSaveItems(Platform, FilterGameSavesCategoryId, FilterGameSavesName, FilterGameSavesRegion, FilterGameSavesVersion, FilterGameSavesCreator))
+            foreach (GameSaveItemData gameSaveItem in Database.GameSaves.GetGameSaveItems(Platform, FilterGameSavesCategoryId, FilterGameSavesName, FilterGameSavesRegion, FilterGameSavesVersion))
             {
                 Category category = Database.CategoriesData.GetCategoryById(gameSaveItem.CategoryId);
 
@@ -7418,27 +7131,23 @@ namespace ArisenStudio.Forms.Windows
                                             category.Title,
                                             gameSaveItem.Name,
                                             gameSaveItem.Region,
-                                            gameSaveItem.Version,
-                                            gameSaveItem.CreatedBy.IsNullOrWhiteSpace() ? "Unknown" : gameSaveItem.CreatedBy);
+                                            gameSaveItem.Version);
             }
 
             GridControlGameSaves.DataSource = DataTableGameSaves;
 
             GridViewGameSaves.Columns[0].Visible = false;
 
-            GridViewGameSaves.Columns[1].MinWidth = 232;
-            GridViewGameSaves.Columns[1].MaxWidth = 232;
+            GridViewGameSaves.Columns[1].MinWidth = 250;
+            GridViewGameSaves.Columns[1].MaxWidth = 250;
 
             //GridViewGameSaves.Columns[2].MinWidth = 180; // Ignore column
 
-            GridViewGameSaves.Columns[3].MinWidth = 90;
-            GridViewGameSaves.Columns[3].MaxWidth = 90;
+            GridViewGameSaves.Columns[3].MinWidth = 112;
+            GridViewGameSaves.Columns[3].MaxWidth = 112;
 
-            GridViewGameSaves.Columns[4].MinWidth = 70;
-            GridViewGameSaves.Columns[4].MaxWidth = 70;
-
-            GridViewGameSaves.Columns[5].MinWidth = 132;
-            GridViewGameSaves.Columns[5].MaxWidth = 132;
+            GridViewGameSaves.Columns[4].MinWidth = 92;
+            GridViewGameSaves.Columns[4].MaxWidth = 92;
 
             ComboBoxGameSavesFilterRegion.SelectedIndexChanged -= ComboBoxGameSavesFilterRegion_SelectedIndexChanged;
             ComboBoxGameSavesFilterRegion.SelectedIndex = string.IsNullOrEmpty(FilterGameSavesRegion) ? -1 : ComboBoxGameSavesFilterRegion.Properties.Items.IndexOf(FilterGameSavesRegion);
@@ -7447,10 +7156,6 @@ namespace ArisenStudio.Forms.Windows
             ComboBoxGameSavesFilterVersion.SelectedIndexChanged -= ComboBoxGameSavesFilterVersion_SelectedIndexChanged;
             ComboBoxGameSavesFilterVersion.SelectedIndex = string.IsNullOrEmpty(FilterGameSavesVersion) ? -1 : ComboBoxGameSavesFilterVersion.Properties.Items.IndexOf(FilterGameSavesVersion);
             ComboBoxGameSavesFilterVersion.SelectedIndexChanged += ComboBoxGameSavesFilterVersion_SelectedIndexChanged;
-
-            ComboBoxGameSavesFilterCreator.SelectedIndexChanged -= ComboBoxGameSavesFilterCreator_SelectedIndexChanged;
-            ComboBoxGameSavesFilterCreator.SelectedIndex = string.IsNullOrEmpty(FilterGameSavesCreator) ? -1 : ComboBoxGameSavesFilterCreator.Properties.Items.IndexOf(FilterGameSavesCreator);
-            ComboBoxGameSavesFilterCreator.SelectedIndexChanged += ComboBoxGameSavesFilterCreator_SelectedIndexChanged;
 
             GridViewGameSaves.SortInfo.ClearAndAddRange(new[] {
                 new GridColumnSortInfo(GridViewGameSaves.Columns[FilterGameSavesSortOption], FilterGameSavesSortOrder),
@@ -7479,153 +7184,7 @@ namespace ArisenStudio.Forms.Windows
 
         #endregion
 
-        #region Game Cheats Page
-
-        private void TileItemGameCheatsSortOptions_ItemClick(object sender, TileItemEventArgs e)
-        {
-            Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterGameCheatsSortOption, new List<string> { ResourceLanguage.GetString("LABEL_GAME") }, FilterGameCheatsSortOrder);
-
-            if (sortOptions != null)
-            {
-                FilterGameCheatsSortOption = sortOptions.SortOption;
-                FilterGameCheatsSortOrder = sortOptions.SortOrder;
-                SearchGameCheats();
-            }
-        }
-
-        private static DataTable DataTableGameCheats { get; } = DataExtensions.CreateDataTable(
-            new List<DataColumn>()
-            {
-                new(ResourceLanguage.GetString("LABEL_GAME"), typeof(string)),
-                new(ResourceLanguage.GetString("LABEL_REGION"), typeof(string)),
-                new(ResourceLanguage.GetString("LABEL_VERSION"), typeof(string)),
-                new("Cheats", typeof(string))
-            });
-
-        private void LoadGameCheatsCategories()
-        {
-            ComboBoxGameCheatsFilterGame.Properties.Items.Clear();
-
-            ComboBoxGameCheatsFilterGame.Properties.Items.Add($"<{ResourceLanguage.GetString("ALL_GAMES")}>");
-
-            if (ConsoleProfile.Platform == Platform.PS3)
-            {
-                foreach (GameCheatItemData gameCheat in Database.GameCheatsPs3.GameCheats.OrderBy(x => x.Game))
-                {
-                    ComboBoxGameCheatsFilterGame.Properties.Items.Add(gameCheat.Game);
-                }
-            }
-            else
-            {
-                foreach (GamePatchItemData gamePatch in Database.GamePatchesXbox.GamePatches.OrderBy(x => x.TitleName))
-                {
-                    ComboBoxGameCheatsFilterGame.Properties.Items.Add(gamePatch.TitleName);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Get/set the sort option column.
-        /// </summary>
-        private string FilterGameCheatsSortOption { get; set; } = ResourceLanguage.GetString("LABEL_GAME");
-
-        /// <summary>
-        /// Get/set the sort order.
-        /// </summary>
-        private ColumnSortOrder FilterGameCheatsSortOrder { get; set; } = ColumnSortOrder.Ascending;
-
-        public string FilterGameCheatsGame { get; set; } = string.Empty;
-
-        private void ComboBoxGameCheatsFilterGame_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ComboBoxGameCheatsFilterGame.SelectedIndex == 0 | ComboBoxGameCheatsFilterGame.SelectedIndex == -1)
-            {
-                FilterGameCheatsGame = string.Empty;
-            }
-            else
-            {
-                FilterGameCheatsGame = ComboBoxGameCheatsFilterGame.SelectedItem as string;
-            }
-
-            SearchGameCheats();
-        }
-
-        /// <summary>
-        /// Load all game saves.
-        /// </summary>
-        public void SearchGameCheats()
-        {
-            LoadGameCheatsCategories();
-
-            GridViewGameCheats.ShowLoadingPanel();
-
-            DataTableGameCheats.Rows.Clear();
-
-            if (ConsoleProfile.Platform == Platform.PS3)
-            {
-                foreach (GameCheatItemData game in Database.GameCheatsPs3.GameCheats.FindAll(x => x.Game.ContainsIgnoreCase(FilterGameCheatsGame)).OrderBy(x => x.Game))
-                {
-                    DataTableGameCheats.Rows.Add(
-                        game.Game,
-                        game.Region,
-                        game.Version,
-                        $"{game.Cheats.Count():N0} {ResourceLanguage.GetString("LABEL_CHEATS")}");
-                }
-            }
-            else
-            {
-                foreach (GamePatchItemData game in Database.GamePatchesXbox.GamePatches.FindAll(x => x.TitleName.ContainsIgnoreCase(FilterGameCheatsGame)).OrderBy(x => x.TitleName))
-                {
-                    DataTableGameCheats.Rows.Add(
-                        game.TitleName,
-                        game.TitleId,
-                        string.Empty, //game.Version,
-                        $"{game.Patch.Count():N0} {ResourceLanguage.GetString("LABEL_CHEATS")}");
-                }
-            }
-
-            GridControlGameCheats.DataSource = DataTableGameCheats;
-
-            //GridViewGameCheats.Columns[0].MinWidth = 232; // Ignore column
-
-            GridViewGameCheats.Columns[1].MinWidth = 116;
-            GridViewGameCheats.Columns[1].MaxWidth = 116;
-
-            GridViewGameCheats.Columns[2].MinWidth = 70;
-            GridViewGameCheats.Columns[2].MaxWidth = 70;
-
-            GridViewGameCheats.Columns[3].MinWidth = 84;
-            GridViewGameCheats.Columns[3].MaxWidth = 84;
-
-            GridViewGameCheats.SortInfo.ClearAndAddRange(new[] {
-                new GridColumnSortInfo(GridViewGameCheats.Columns[FilterGameCheatsSortOption], FilterGameCheatsSortOrder),
-            });
-
-            GridViewGameCheats.HideLoadingPanel();
-
-            if (GridViewGameCheats.RowCount > 0)
-            {
-                GridViewGameCheats.FocusedRowHandle = 0;
-            }
-        }
-
-        private void GridViewGameCheats_RowClick(object sender, RowClickEventArgs e)
-        {
-            if (ConsoleProfile.Platform == Platform.PS3)
-            {
-                GameCheatItemData selectedGameCheats = Database.GameCheatsPs3.GetGameCheatById(GridViewGameCheats.GetRowCellDisplayText(e.RowHandle, GridViewGameCheats.Columns[0]), GridViewGameCheats.GetRowCellDisplayText(e.RowHandle, GridViewGameCheats.Columns[1]), GridViewGameCheats.GetRowCellDisplayText(e.RowHandle, GridViewGameCheats.Columns[2]));
-                ShowGameCheats(selectedGameCheats);
-            }
-            else
-            {
-                GamePatchItemData selectedGamePatches = Database.GamePatchesXbox.GetGamePatchByTitleId(GridViewGameCheats.GetRowCellDisplayText(e.RowHandle, GridViewGameCheats.Columns[0]), GridViewGameCheats.GetRowCellDisplayText(e.RowHandle, GridViewGameCheats.Columns[1])); //GridViewGameCheats.GetRowCellDisplayText(e.RowHandle, GridViewGameCheats.Columns[2]));
-                ShowGamePatches(selectedGamePatches);
-            }
-        }
-
-        #endregion
-
-        #region Show mods item's details
+        #region Show Item Details
 
         private void ShowDetails(Platform platform, string category, int modId)
         {
@@ -7793,7 +7352,7 @@ namespace ArisenStudio.Forms.Windows
 
         #endregion
 
-        #region Install, Uninstall, Download & Favorite Functions
+        #region Update Status / Show Transfer Dialogs
 
         private void UpdateModsRowStatus(int modId, string text)
         {
@@ -7951,7 +7510,7 @@ namespace ArisenStudio.Forms.Windows
             NavigationItemResources.Visible = Platform == Platform.PS3;
             NavigationItemPackages.Visible = Platform == Platform.PS3;
             NavigationItemPlugins.Visible = Platform == Platform.XBOX360;
-            NavigationItemGameCheats.Visible = false;
+            //NavigationItemGameCheats.Visible = false;
 
 
             ButtonScanXboxConsoles.Visibility =
@@ -8043,7 +7602,7 @@ namespace ArisenStudio.Forms.Windows
 
             // Reload Pages
             SearchGameSaves();
-            SearchGameCheats();
+            //SearchGameCheats();
 #endif
         }
 
@@ -8057,8 +7616,8 @@ namespace ArisenStudio.Forms.Windows
             ConsoleProfile = consoleProfile;
             Platform = consoleProfile.Platform;
             EnableConsoleActions();
+            LoadFavoriteGames();
             LoadOurFavoriteMods();
-            LoadRecentlyUpdated();
         }
 
         /// <summary>
@@ -8208,11 +7767,6 @@ namespace ArisenStudio.Forms.Windows
                     }
                 }
 
-                if (Settings.EnableHardwareAcceleration)
-                {
-                    WindowsFormsSettings.ForceDirectXPaint();
-                }
-
                 Program.Log.Info("Successfully loaded application settings data.");
             }
             catch (Exception ex)
@@ -8289,123 +7843,6 @@ namespace ArisenStudio.Forms.Windows
             ObjectPainter.DrawObject(cache, SkinElementPainter.Default, skinElemInfo);
         }
 
-        private void GridViewDownloads_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_PLATFORM"))
-            {
-                GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-                int indent = cellViewInfo.Bounds.X + 7;
-
-                cellViewInfo.CellValueRect.X = indent;
-                cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            }
-        }
-
-        private void GridViewInstalledMods_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_PLATFORM"))
-            {
-                GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-                int indent = cellViewInfo.Bounds.X + 7;
-
-                cellViewInfo.CellValueRect.X = indent;
-                cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            }
-        }
-
-        private void GridViewGameMods_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_GAME"))
-            {
-                GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-                int indent = cellViewInfo.Bounds.X + 7;
-
-                cellViewInfo.CellValueRect.X = indent;
-                cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            }
-        }
-
-        private void GridViewHomebrew_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_CATEGORY"))
-            {
-                GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-                int indent = cellViewInfo.Bounds.X + 7;
-
-                cellViewInfo.CellValueRect.X = indent;
-                cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            }
-        }
-
-        private void GridViewResources_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_CATEGORY"))
-            {
-                GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-                int indent = cellViewInfo.Bounds.X + 7;
-
-                cellViewInfo.CellValueRect.X = indent;
-                cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            }
-        }
-
-        private void GridViewPackages_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_CATEGORY"))
-            {
-                GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-                int indent = cellViewInfo.Bounds.X + 7;
-
-                cellViewInfo.CellValueRect.X = indent;
-                cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            }
-        }
-
-        private void GridViewPlugins_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_CATEGORY"))
-            {
-                GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-                int indent = cellViewInfo.Bounds.X + 7;
-
-                cellViewInfo.CellValueRect.X = indent;
-                cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            }
-        }
-
-        private void GridViewGameSaves_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_GAME"))
-            {
-                GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-                int indent = cellViewInfo.Bounds.X + 7;
-
-                cellViewInfo.CellValueRect.X = indent;
-                cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            }
-        }
-
-        private void GridViewGameCheats_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_GAME"))
-            {
-                GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-                int indent = cellViewInfo.Bounds.X + 7;
-
-                cellViewInfo.CellValueRect.X = indent;
-                cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            }
-        }
-
         private void RibbonControl1_MouseDown(object sender, MouseEventArgs e)
         {
             RibbonHitInfo info = (sender as RibbonControl).CalcHitInfo(e.Location);
@@ -8414,6 +7851,124 @@ namespace ArisenStudio.Forms.Windows
             {
                 DXMouseEventArgs.GetMouseArgs(e).Handled = true;
             }
+        }
+
+        private void GridViewDownloads_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
+        {
+            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_PLATFORM"))
+            //{
+            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
+
+            //    //int indent = cellViewInfo.Bounds.X + 7;
+            //    int indent = cellViewInfo.Bounds.X;
+
+            //    cellViewInfo.CellValueRect.X = indent;
+            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
+            //}
+        }
+
+        private void GridViewInstalledMods_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
+        {
+            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_PLATFORM"))
+            //{
+            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
+
+            //    int indent = cellViewInfo.Bounds.X + 7;
+
+            //    cellViewInfo.CellValueRect.X = indent;
+            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
+            //}
+        }
+
+        private void GridViewGameMods_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
+        {
+            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_GAME"))
+            //{
+            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
+
+            //    int indent = cellViewInfo.Bounds.X + 7;
+
+            //    cellViewInfo.CellValueRect.X = indent;
+            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
+            //}
+        }
+
+        private void GridViewHomebrew_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
+        {
+            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_CATEGORY"))
+            //{
+            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
+
+            //    int indent = cellViewInfo.Bounds.X + 7;
+
+            //    cellViewInfo.CellValueRect.X = indent;
+            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
+            //}
+        }
+
+        private void GridViewResources_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
+        {
+            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_CATEGORY"))
+            //{
+            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
+
+            //    int indent = cellViewInfo.Bounds.X + 7;
+
+            //    cellViewInfo.CellValueRect.X = indent;
+            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
+            //}
+        }
+
+        private void GridViewPackages_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
+        {
+            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_CATEGORY"))
+            //{
+            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
+
+            //    int indent = cellViewInfo.Bounds.X + 7;
+
+            //    cellViewInfo.CellValueRect.X = indent;
+            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
+            //}
+        }
+
+        private void GridViewPlugins_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
+        {
+            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_CATEGORY"))
+            //{
+            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
+
+            //    int indent = cellViewInfo.Bounds.X + 7;
+
+            //    cellViewInfo.CellValueRect.X = indent;
+            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
+            //}
+        }
+
+        private void GridViewGameSaves_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
+        {
+            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_GAME"))
+            //{
+            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
+
+            //    int indent = cellViewInfo.Bounds.X + 7;
+
+            //    cellViewInfo.CellValueRect.X = indent;
+            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
+            //}
+        }
+
+        private void GridViewGameCheats_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
+        {
+            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_GAME"))
+            //{
+            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
+
+            //    int indent = cellViewInfo.Bounds.X + 7;
+
+            //    cellViewInfo.CellValueRect.X = indent;
+            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
+            //}
         }
     }
 }

@@ -87,7 +87,7 @@ namespace ArisenStudio.Forms.Dialogs
                         platform = userPlatform.DehumanizeTo<Platform>();
                     }
 
-                    TextBoxConnectionName.Text = "Guest";
+                    TextBoxConnectionName.Text = "New Console";
                     ComboBoxPlatform.SelectedIndex = platform == Platform.PS3 ? 0 : 3;
                     TextBoxAddress.Text = "192.168.1.1";
                     CheckBoxDefault.Checked = true;
@@ -151,6 +151,12 @@ namespace ArisenStudio.Forms.Dialogs
                     ConsoleProfile.PlatformType = PlatformType.Xbox360SlimE;
                     ConsoleProfile.Platform = Platform.XBOX360;
                     ImageConsole.Image = Properties.Resources.XboxSlimE;
+                    break;
+
+                case 7:
+                    ConsoleProfile.PlatformType = PlatformType.PlayStation4;
+                    ConsoleProfile.Platform = Platform.PS4;
+                    ImageConsole.Image = Properties.Resources.PlayStation3Fat;
                     break;
                 default:
                     goto case 0;
@@ -296,6 +302,10 @@ namespace ArisenStudio.Forms.Dialogs
                 case true when ConsoleProfile.Platform == Platform.XBOX360:
                     ConsoleProfile.Username = "xboxftp";
                     ConsoleProfile.Password = "xboxftp";
+                    break;
+                case true when ConsoleProfile.Platform == Platform.PS4:
+                    ConsoleProfile.Username = "anonymous";
+                    ConsoleProfile.Password = "anonymous";
                     break;
             }
 

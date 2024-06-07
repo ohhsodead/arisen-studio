@@ -3,6 +3,11 @@
     public static class Urls
     {
         /// <summary>
+        /// Official project website
+        /// </summary>
+        internal const string ProjectWebsite = "https://arisen.studio";
+        
+        /// <summary>
         /// Direct link to the project's Discord server.
         /// </summary>
         internal const string DiscordServer = "https://discord.gg/h22szNhF7V";
@@ -11,7 +16,7 @@
         /// Direct link to the request mods google form
         /// </summary>
         //internal const string RequestModsForm = "https://docs.google.com/forms/d/e/1FAIpQLScbeLBheZWjAp03d281pQHL2RvU93SLx2UXQZddx8i2nS2JmA/viewform?embedded=true";
-        internal const string RequestModsForm = "https://arisenstudio.info/submit";
+        internal const string RequestModsForm = "https://arisen.studio/submit";
 
         /// <summary>
         /// Direct link to the update data file hosted on Dropbox.
@@ -116,6 +121,11 @@
         /// <summary>
         /// Direct link to the current favorite mods file hosted on GitHub.
         /// </summary>
-        internal const string FavoriteModsData = "https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/favorites.json";
+        internal const string FavoriteGamesData = "https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/favorite-games.json";
+
+        /// <summary>
+        /// Direct link to the current favorite mods file hosted on GitHub.
+        /// </summary>
+        internal const string FavoriteModsData = "https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/favorite-mods.json";
     }
 }

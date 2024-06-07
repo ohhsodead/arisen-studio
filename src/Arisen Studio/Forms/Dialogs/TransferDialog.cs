@@ -59,7 +59,7 @@ namespace ArisenStudio.Forms.Dialogs
             }
             else if (TransferType is TransferType.InstallPackage or TransferType.UninstallPackage or TransferType.DownloadPackage)
             {
-                LabelModName.Text = $"{PackageItem.Category})\n{PackageItem.Name} ({PackageItem.Region})".Replace("&", "&&");
+                LabelModName.Text = $"{PackageItem.Category}\n{PackageItem.Name} ({PackageItem.Region})".Replace("&", "&&");
             }
             else if (TransferType is TransferType.InstallGameSave or TransferType.DownloadGameSave)
             {
@@ -703,7 +703,7 @@ namespace ArisenStudio.Forms.Dialogs
                                 // Alerts the user that uninstalling files from dev_rebug folders isn't allowed
                                 case true:
                                     GetDialogResult(Language.GetString("CANT_UNINSTALL_CFW_FILES"), Language.GetString("FORBIDDEN"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    Language.GetString("INSTALL_CANCELED");
+                                    UpdateStatus(Language.GetString("INSTALL_CANCELED"));
                                     return;
                             }
 
@@ -1006,7 +1006,7 @@ namespace ArisenStudio.Forms.Dialogs
                 {
                     if (GetDialogResult(string.Format(Language.GetString("FILE_REINSTALL"), $"{packageItem.Name} ({packageItem.Category})"), MainWindow.ResourceLanguage.GetString("REINSTALL_FILE"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     {
-                        Language.GetString("INSTALL_CANCELED");
+                        UpdateStatus(Language.GetString("INSTALL_CANCELED"));
                         return;
                     }
                 }
@@ -1020,7 +1020,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                     UpdateStatus(string.Format(Language.GetString("FILE_DOWNLOAD_LOCATION"), packageItem.Name + ".pkg", IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages) + PackageItem.Name.RemoveInvalidChars()));
                     HttpExtensions.DownloadFile(PackageItem.Url, localFilePathPkg);
-                    Language.GetString("FILE_DOWNLOAD_SUCCESS");
+                    UpdateStatus(Language.GetString("FILE_DOWNLOAD_SUCCESS"));
 
                     bool includeRap = false;
 
@@ -1028,7 +1028,7 @@ namespace ArisenStudio.Forms.Dialogs
                     {
                         UpdateStatus(string.Format(Language.GetString("FILE_DOWNLOAD_LOCATION"), packageItem.ContentId + ".rap", IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathPackages) + PackageItem.Name.RemoveInvalidChars()));
                         HttpExtensions.DownloadFile(PackageItem.RapUrl, localFilePathRap);
-                        Language.GetString("FILE_DOWNLOAD_SUCCESS");
+                        UpdateStatus(Language.GetString("FILE_DOWNLOAD_SUCCESS"));
                         includeRap = true;
                     }
 
@@ -1039,13 +1039,13 @@ namespace ArisenStudio.Forms.Dialogs
 
                     UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), packageItem.Name + ".pkg", parentInstallFolderPkg));
                     FtpExtensions.UploadFile(localFilePathPkg, packageItem.InstallFilePathPkg);
-                    Language.GetString("FILE_INSTALL_SUCCESS");
+                    UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
 
                     if (includeRap)
                     {
                         UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), packageItem.ContentId + ".rap", parentInstallFolderRap));
                         FtpExtensions.UploadFile(localFilePathRap, packageItem.InstallFilePathRap);
-                        Language.GetString("FILE_INSTALL_SUCCESS");
+                        UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
                     }
 
                     // Update installed packages
@@ -1065,7 +1065,7 @@ namespace ArisenStudio.Forms.Dialogs
                     IsSuccessful = true;
 
                     // Log status
-                    Language.GetString("FILE_INSTALL_SUCCESS");
+                    UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
                 }
                 catch (WebException ex)
                 {
@@ -1085,7 +1085,7 @@ namespace ArisenStudio.Forms.Dialogs
         {
             await Task.Run(() =>
             {
-                Language.GetString("PREPARING_UNINSTALL");
+                UpdateStatus(Language.GetString("PREPARING_UNINSTALL"));
 
                 // Check whether this mod is already installed
                 bool isNotInstalled = Settings.GetInstalledPackage(packageItem) == null;
@@ -1094,20 +1094,20 @@ namespace ArisenStudio.Forms.Dialogs
                 {
                     if (GetDialogResult(string.Format(Language.GetString("MOD_NOT_INSTALLED"), $"{packageItem.Name} ({packageItem.Category})"), Language.GetString("NOT_INSTALLED"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     {
-                        Language.GetString("UNINSTALL_CANCELED");
+                        UpdateStatus(Language.GetString("UNINSTALL_CANCELED"));
                         return;
                     }
                 }
 
                 try
                 {
-                    Language.GetString("FILES_UNINSTALLING");
+                    UpdateStatus(Language.GetString("FILES_UNINSTALLING"));
 
                     string parentInstallFolder = Path.GetDirectoryName(packageItem.InstallFilePathPkg).Replace(@"\", "/");
 
                     UpdateStatus(string.Format(Language.GetString("FILE_UNINSTALL_LOCATION"), packageItem.Name + ".pkg", parentInstallFolder));
                     FtpExtensions.DeleteFile(packageItem.InstallFilePathPkg);
-                    Language.GetString("FILE_UNINSTALL_SUCCESS");
+                    UpdateStatus(Language.GetString("FILE_UNINSTALL_SUCCESS"));
 
                     IsSuccessful = true;
 
@@ -1115,7 +1115,7 @@ namespace ArisenStudio.Forms.Dialogs
                     Settings.RemoveInstalledPackage(PackageItem);
 
                     // Log status
-                    Language.GetString("FILE_UNINSTALL_SUCCESS");
+                    UpdateStatus(Language.GetString("FILE_UNINSTALL_SUCCESS"));
                 }
                 catch (WebException ex)
                 {
@@ -1136,7 +1136,7 @@ namespace ArisenStudio.Forms.Dialogs
         {
             await Task.Run(() =>
             {
-                Language.GetString("PREPARING_DOWNLOAD");
+                UpdateStatus(Language.GetString("PREPARING_DOWNLOAD"));
 
                 try
                 {
@@ -1161,13 +1161,13 @@ namespace ArisenStudio.Forms.Dialogs
 
                     UpdateStatus(string.Format(Language.GetString("FILE_DOWNLOAD_LOCATION"), packageItem.Name + ".pkg", downloadFolder));
                     HttpExtensions.DownloadFile(packageItem.Url, downloadLocationPkg);
-                    Language.GetString("FILE_DOWNLOAD_SUCCESS");
+                    UpdateStatus(Language.GetString("FILE_DOWNLOAD_SUCCESS"));
 
                     if (PackageItem.IsRapRequired && !PackageItem.IsRapMissing)
                     {
                         UpdateStatus(string.Format(Language.GetString("FILE_DOWNLOAD_LOCATION"), packageItem.ContentId + ".rap", downloadFolder));
                         HttpExtensions.DownloadFile(PackageItem.RapUrl, downloadLocationRap);
-                        Language.GetString("FILE_DOWNLOAD_SUCCESS");
+                        UpdateStatus(Language.GetString("FILE_DOWNLOAD_SUCCESS"));
                     }
 
                     Settings.DownloadedMods.Add(new()
@@ -1228,9 +1228,9 @@ namespace ArisenStudio.Forms.Dialogs
                 int indexFiles = 1;
                 int totalFiles = downloadFiles.InstallPaths.Count;
 
-                Language.GetString("ARCHIVE_DOWNLOADING_EXTRACTING_ARCHIVE");
+                UpdateStatus(Language.GetString("ARCHIVE_DOWNLOADING_EXTRACTING_ARCHIVE"));
                 gameSaveItem.DownloadInstallFiles(downloadFiles);
-                Language.GetString("ARCHIVE_DOWNLOAD_SUCCESS");
+                UpdateStatus(Language.GetString("ARCHIVE_DOWNLOAD_SUCCESS"));
 
                 if (Settings.InstallGameSavesToUsbDevice)
                 {
@@ -1337,7 +1337,7 @@ namespace ArisenStudio.Forms.Dialogs
                                     }
                                     else
                                     {
-                                        Language.GetString("INSTALL_CANCELED");
+                                        UpdateStatus(Language.GetString("INSTALL_CANCELED"));
                                         return;
                                     }
                                 }

@@ -61,7 +61,7 @@ namespace ArisenStudio.Controls
             // ImageIcon
             // 
             this.ImageIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ImageIcon.EditValue = global::ArisenStudio.Properties.Resources.announcement;
+            this.ImageIcon.EditValue = global::ArisenStudio.Properties.Resources.icons8_announcement;
             this.ImageIcon.Location = new System.Drawing.Point(75, 41);
             this.ImageIcon.Name = "ImageIcon";
             this.ImageIcon.Properties.AllowFocused = false;
@@ -71,6 +71,7 @@ namespace ArisenStudio.Controls
             this.ImageIcon.Properties.ContextButtonOptions.AllowGlyphSkinning = true;
             this.ImageIcon.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.ImageIcon.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.ImageIcon.Properties.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.ImageIcon.Size = new System.Drawing.Size(100, 100);
             this.ImageIcon.TabIndex = 1169;
             // 

@@ -26,8 +26,6 @@ namespace ArisenStudio.Models.Resources
 
         public bool UseRelativeTimes { get; set; } = true;
 
-        public bool EnableHardwareAcceleration { get; set; } = false;
-
         public bool AlwaysShowCurrentGamePlaying { get; set; } = false;
 
         public bool AutoDetectGameRegions { get; set; } = false;

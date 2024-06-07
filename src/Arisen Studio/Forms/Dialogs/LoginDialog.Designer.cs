@@ -73,7 +73,7 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.TextBoxUsername.Location = new System.Drawing.Point(90, 12);
             this.TextBoxUsername.Name = "TextBoxUsername";
-            this.TextBoxUsername.Size = new System.Drawing.Size(282, 20);
+            this.TextBoxUsername.Size = new System.Drawing.Size(282, 22);
             this.TextBoxUsername.TabIndex = 0;
             this.TextBoxUsername.EditValueChanged += new System.EventHandler(this.TextBoxUsername_EditValueChanged);
             // 
@@ -81,7 +81,7 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.TextBoxPassword.Location = new System.Drawing.Point(90, 41);
             this.TextBoxPassword.Name = "TextBoxPassword";
-            this.TextBoxPassword.Size = new System.Drawing.Size(282, 20);
+            this.TextBoxPassword.Size = new System.Drawing.Size(282, 22);
             this.TextBoxPassword.TabIndex = 1;
             this.TextBoxPassword.EditValueChanged += new System.EventHandler(this.TextBoxPassword_EditValueChanged);
             // 

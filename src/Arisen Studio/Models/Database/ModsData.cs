@@ -51,10 +51,9 @@ namespace ArisenStudio.Models.Database
         /// <param name="modType"></param>
         /// <param name="region"></param>
         /// <param name="version"></param>
-        /// <param name="creator"></param>
         /// <param name="favorites"></param>
         /// <returns></returns>
-        public List<ModItemData> GetGameMods(CategoriesData categoriesData, string categoryId, string name, string firmware, string modType, string region, string version, string creator, bool favorites = false)
+        public List<ModItemData> GetGameMods(CategoriesData categoriesData, string categoryId, string name, string firmware, string modType, string region, string version, bool favorites = false)
         {
             if (favorites)
             {
@@ -66,8 +65,7 @@ namespace ArisenStudio.Models.Database
                     x.FirmwareTypes.Exists(y => y.ContainsIgnoreCase(firmware)) &&
                     x.ModType.ContainsIgnoreCase(modType) &&
                     x.Region.ContainsIgnoreCase(region) &&
-                    x.Versions.ToArray().AnyContainsIgnoreCase(version) &&
-                    x.Creators.ToArray().AnyContainsIgnoreCase(creator))
+                    x.Versions.ToArray().AnyContainsIgnoreCase(version))
                     .ToList();
             }
             else
@@ -79,8 +77,7 @@ namespace ArisenStudio.Models.Database
                     x.FirmwareTypes.Exists(y => y.ContainsIgnoreCase(firmware)) &&
                     x.ModType.ContainsIgnoreCase(modType) &&
                     x.Region.ContainsIgnoreCase(region) &&
-                    x.Versions.ToArray().AnyContainsIgnoreCase(version) &&
-                    x.Creators.ToArray().AnyContainsIgnoreCase(creator))
+                    x.Versions.ToArray().AnyContainsIgnoreCase(version))
                     .ToList();
             }
         }
@@ -93,10 +90,9 @@ namespace ArisenStudio.Models.Database
         /// <param name="name"></param>
         /// <param name="firmware"></param>
         /// <param name="version"></param>
-        /// <param name="creator"></param>
         /// <param name="favorites"
         /// <returns></returns>
-        public List<ModItemData> GetHomebrew(CategoriesData categoriesData, string categoryId, string name, string firmware, string version, string creator, bool favorites = false)
+        public List<ModItemData> GetHomebrew(CategoriesData categoriesData, string categoryId, string name, string firmware, string version, bool favorites = false)
         {
             if (favorites)
             {
@@ -106,8 +102,7 @@ namespace ArisenStudio.Models.Database
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
                     x.FirmwareTypes.Exists(y => y.ContainsIgnoreCase(firmware)) &&
-                    x.Versions.ToArray().AnyContainsIgnoreCase(version) &&
-                    x.Creators.ToArray().AnyContainsIgnoreCase(creator))
+                    x.Versions.ToArray().AnyContainsIgnoreCase(version))
                     .ToList();
             }
             else
@@ -117,8 +112,7 @@ namespace ArisenStudio.Models.Database
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
                     x.FirmwareTypes.Exists(y => y.ContainsIgnoreCase(firmware)) &&
-                    x.Versions.ToArray().AnyContainsIgnoreCase(version) &&
-                    x.Creators.ToArray().AnyContainsIgnoreCase(creator))
+                    x.Versions.ToArray().AnyContainsIgnoreCase(version))
                     .ToList();
             }
         }
@@ -131,10 +125,9 @@ namespace ArisenStudio.Models.Database
         /// <param name="firmware"></param>
         /// <param name="modType"></param>
         /// <param name="version"></param>
-        /// <param name="creator"></param>
         /// <param name="favorites"</param>
         /// <returns></returns>
-        public List<ModItemData> GetResources(CategoriesData categoriesData, string categoryId, string name, string firmware, string modType, string version, string creator, bool favorites = false)
+        public List<ModItemData> GetResources(CategoriesData categoriesData, string categoryId, string name, string firmware, string modType, string version, bool favorites = false)
         {
             if (favorites)
             {
@@ -145,8 +138,7 @@ namespace ArisenStudio.Models.Database
                     x.Name.ContainsIgnoreCase(name) &&
                     x.FirmwareTypes.Exists(y => y.ContainsIgnoreCase(firmware)) &&
                     x.ModType.ContainsIgnoreCase(modType) &&
-                    x.Versions.ToArray().AnyContainsIgnoreCase(version) &&
-                    x.Creators.ToArray().AnyContainsIgnoreCase(creator))
+                    x.Versions.ToArray().AnyContainsIgnoreCase(version))
                     .ToList();
             }
             else
@@ -157,8 +149,7 @@ namespace ArisenStudio.Models.Database
                     x.Name.ContainsIgnoreCase(name) &&
                     x.FirmwareTypes.Exists(y => y.ContainsIgnoreCase(firmware)) &&
                     x.ModType.ContainsIgnoreCase(modType) &&
-                    x.Versions.ToArray().AnyContainsIgnoreCase(version) &&
-                    x.Creators.ToArray().AnyContainsIgnoreCase(creator))
+                    x.Versions.ToArray().AnyContainsIgnoreCase(version))
                     .ToList();
             }
         }
@@ -173,7 +164,7 @@ namespace ArisenStudio.Models.Database
         /// <param name="creator"></param>
         /// <param name="favorites"></param>
         /// <returns></returns>
-        public List<ModItemData> GetPluginItems(string categoryId, string name, string version, string creator, bool favorites = false)
+        public List<ModItemData> GetPluginItems(string categoryId, string name, string version, bool favorites = false)
         {
             if (favorites)
             {
@@ -181,8 +172,7 @@ namespace ArisenStudio.Models.Database
                     MainWindow.Settings.FavoriteMods.Exists(y => y.ModId == x.Id) &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
-                    x.Versions.ToArray().AnyContainsIgnoreCase(version) &&
-                    x.Creators.ToArray().AnyContainsIgnoreCase(creator))
+                    x.Versions.ToArray().AnyContainsIgnoreCase(version))
                     .ToList();
             }
             else
@@ -190,8 +180,7 @@ namespace ArisenStudio.Models.Database
                 return Mods.Where(x =>
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
-                    x.Versions.ToArray().AnyContainsIgnoreCase(version) &&
-                    x.Creators.ToArray().AnyContainsIgnoreCase(creator))
+                    x.Versions.ToArray().AnyContainsIgnoreCase(version))
                     .ToList();
             }
         }

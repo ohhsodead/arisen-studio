@@ -76,26 +76,31 @@
     <DelaySign>false</DelaySign>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.Desktop.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Drawing.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Images.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.BonusSkins.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Drawing.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Office.v23.1.Core, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Pdf.v23.1.Core, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v23.1.Core, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v23.1.Core, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraBars.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraDialogs.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraNavBar.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraRichEdit.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v23.2.UI, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v23.2.UI, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v23.2.Wizard, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDialogs.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="ISOLib, Version=0.2.2.0, Culture=neutral, PublicKeyToken=5a4742d0f8b86e59, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\References\ISOLib.dll</HintPath>
@@ -158,10 +163,12 @@
     <Compile Include="Database\PackageItemData.cs" />
     <Compile Include="Database\GamesTitleIdsXBOX.cs" />
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Extensions\GraphicExtensions.cs" />
     <Compile Include="Extensions\Helpers\Helpers.cs" />
     <Compile Include="Extensions\ImgurUploader.cs" />
     <Compile Include="Extensions\IoExtensions.cs" />
     <Compile Include="Extensions\PS3\WebManExtensions.cs" />
+    <Compile Include="Extensions\PS4\PS4Extensions.cs" />
     <Compile Include="Extensions\UsbExtensions.cs" />
     <Compile Include="Extensions\XBOX\XboxExtensions.cs" />
     <Compile Include="Forms\Dialogs\Details\GameCheatsDialog.cs">
@@ -372,6 +379,7 @@
     </Compile>
     <Compile Include="Io\Archives.cs" />
     <Compile Include="Io\UserFolders.cs" />
+    <Compile Include="Models\Dashboard\FavoriteGamesData.cs" />
     <Compile Include="Models\Dashboard\FavoriteModsData.cs" />
     <Compile Include="Models\Dashboard\AnnouncementsData.cs" />
     <Compile Include="Models\Database\GameCheatsData.cs" />
@@ -624,8 +632,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AdsJumbo.WinForm.WPF">
+      <Version>1.5.0</Version>
+    </PackageReference>
     <PackageReference Include="Autoupdater.NET.Official">
-      <Version>1.8.4</Version>
+      <Version>1.8.6</Version>
     </PackageReference>
     <PackageReference Include="CodeHollow.FeedReader">
       <Version>1.2.6</Version>
@@ -634,10 +645,10 @@
       <Version>1.2.1.24</Version>
     </PackageReference>
     <PackageReference Include="FluentFTP">
-      <Version>48.0.3</Version>
+      <Version>50.0.1</Version>
     </PackageReference>
     <PackageReference Include="HtmlAgilityPack">
-      <Version>1.11.54</Version>
+      <Version>1.11.61</Version>
     </PackageReference>
     <PackageReference Include="Humanizer">
       <Version>2.14.1</Version>
@@ -649,19 +660,19 @@
       <Version>2.5.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Web.WebView2">
-      <Version>1.0.2151.40</Version>
+      <Version>1.0.2478.35</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>
     </PackageReference>
     <PackageReference Include="NLog">
-      <Version>5.2.6</Version>
+      <Version>5.3.2</Version>
     </PackageReference>
     <PackageReference Include="SharpZipLib">
       <Version>1.4.2</Version>
     </PackageReference>
     <PackageReference Include="Tomlyn">
-      <Version>0.16.2</Version>
+      <Version>0.17.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -674,7 +685,6 @@
     <None Include="Resources\Icons\find_file.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="xdevkit.dll" />
     <None Include="Resources\website.png" />
     <None Include="Resources\Icons\xbox_manager.png" />
     <None Include="Resources\Icons\Socials\twitter.png" />
@@ -682,6 +692,32 @@
     <None Include="Resources\Icons\Socials\discord.png" />
     <Content Include="arisenstudio.ico" />
     <None Include="Resources\arisenstudio.png" />
+    <None Include="Resources\icons8-delete.svg" />
+    <None Include="Resources\icons8-opened-folder.svg" />
+    <None Include="Resources\icons8-preview-file-24.png" />
+    <None Include="Resources\icons8-preview-file.svg" />
+    <None Include="Resources\icons8-refresh.svg" />
+    <None Include="Resources\icons8-info.svg" />
+    <None Include="Resources\icons8-install.svg" />
+    <None Include="Resources\icons8-download.svg" />
+    <None Include="Resources\icons8-expand.svg" />
+    <None Include="Resources\icons8-collapse.svg" />
+    <None Include="Resources\icons8-announcement.svg" />
+    <None Include="Resources\icons8-no-profile.svg" />
+    <None Include="Resources\icons8-list.svg" />
+    <None Include="Resources\icons8-settings.svg" />
+    <None Include="Resources\icons8-tools.svg" />
+    <None Include="Resources\icons8-beer.svg" />
+    <None Include="Resources\icons8-opened-box.svg" />
+    <None Include="Resources\icons8-plugin.svg" />
+    <None Include="Resources\icons8-save.svg" />
+    <None Include="Resources\icons8-uninstall.svg" />
+    <None Include="Resources\icons8-heart.svg" />
+    <None Include="Resources\icons8-sort.svg" />
+    <None Include="Resources\icons8-equals.svg" />
+    <None Include="Resources\icons8-advanced-search.svg" />
+    <None Include="Resources\icons8-anvil.svg" />
+    <None Include="Resources\icons8-home.svg" />
     <Content Include="Resources\Icons\about.svg" />
     <Content Include="Resources\Icons\actions_forbid.svg" />
     <Content Include="Resources\Icons\check.svg" />

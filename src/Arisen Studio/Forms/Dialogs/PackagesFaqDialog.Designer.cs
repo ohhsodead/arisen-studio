@@ -64,10 +64,10 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelActivateDemo.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.LabelActivateDemo.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelActivateDemo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelActivateDemo.Location = new System.Drawing.Point(3, 28);
+            this.LabelActivateDemo.Location = new System.Drawing.Point(5, 25);
             this.LabelActivateDemo.Name = "LabelActivateDemo";
             this.LabelActivateDemo.Padding = new System.Windows.Forms.Padding(3);
-            this.LabelActivateDemo.Size = new System.Drawing.Size(623, 73);
+            this.LabelActivateDemo.Size = new System.Drawing.Size(619, 74);
             this.LabelActivateDemo.TabIndex = 19;
             this.LabelActivateDemo.Text = resources.GetString("LabelActivateDemo.Text");
             // 
@@ -104,10 +104,10 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelActivateRAP.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.LabelActivateRAP.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelActivateRAP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelActivateRAP.Location = new System.Drawing.Point(3, 28);
+            this.LabelActivateRAP.Location = new System.Drawing.Point(5, 25);
             this.LabelActivateRAP.Name = "LabelActivateRAP";
             this.LabelActivateRAP.Padding = new System.Windows.Forms.Padding(3);
-            this.LabelActivateRAP.Size = new System.Drawing.Size(623, 178);
+            this.LabelActivateRAP.Size = new System.Drawing.Size(619, 179);
             this.LabelActivateRAP.TabIndex = 19;
             this.LabelActivateRAP.Text = resources.GetString("LabelActivateRAP.Text");
             // 

@@ -30,7 +30,6 @@ namespace ArisenStudio.Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NoProfilesItem));
             this.LabelTitle = new DevExpress.XtraEditors.LabelControl();
             this.ImageIcon = new DevExpress.XtraEditors.PictureEdit();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
@@ -62,7 +61,7 @@ namespace ArisenStudio.Controls
             // ImageIcon
             // 
             this.ImageIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ImageIcon.EditValue = ((object)(resources.GetObject("ImageIcon.EditValue")));
+            this.ImageIcon.EditValue = global::ArisenStudio.Properties.Resources.icons8_no_profile;
             this.ImageIcon.Location = new System.Drawing.Point(102, 27);
             this.ImageIcon.Name = "ImageIcon";
             this.ImageIcon.Properties.AllowFocused = false;
@@ -74,6 +73,7 @@ namespace ArisenStudio.Controls
             this.ImageIcon.Properties.ContextButtonOptions.AllowGlyphSkinning = true;
             this.ImageIcon.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.ImageIcon.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.ImageIcon.Properties.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.ImageIcon.Size = new System.Drawing.Size(110, 110);
             this.ImageIcon.TabIndex = 1169;
             // 
@@ -97,7 +97,7 @@ namespace ArisenStudio.Controls
             this.LabelSubTitle.TabIndex = 1170;
             this.LabelSubTitle.Text = "Click \'Add New Console\' to create a profile";
             // 
-            // NoConsolesItem
+            // NoProfilesItem
             // 
             this.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.Appearance.Options.UseBackColor = true;
@@ -109,7 +109,7 @@ namespace ArisenStudio.Controls
             this.Controls.Add(this.LabelTitle);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.Name = "NoConsolesItem";
+            this.Name = "NoProfilesItem";
             this.Size = new System.Drawing.Size(315, 250);
             this.Load += new System.EventHandler(this.NoConsolesItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ImageIcon.Properties)).EndInit();

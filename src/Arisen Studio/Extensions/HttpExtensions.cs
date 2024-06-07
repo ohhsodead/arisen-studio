@@ -3,8 +3,13 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Net;
+using System.Net.Http.Headers;
+using System.Net.Http;
 using System.Net.NetworkInformation;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.Collections.Generic;
+using System.Windows.Media.Imaging;
 
 namespace ArisenStudio.Extensions
 {
@@ -39,6 +44,50 @@ namespace ArisenStudio.Extensions
         public static Stream GetStream(string url)
         {
             return ((HttpWebResponse)GetRequest(url).GetResponse()).GetResponseStream();
+        }
+
+        //public static async Task<string> HttpGetForLargeFileInRightWay(string url)
+        //{
+        //    using (HttpClient client = new HttpClient())
+        //    {
+        //        using (HttpResponseMessage response = await client.GetAsync(url, HttpCompletionOption.ResponseHeadersRead))
+        //        using (Stream streamToReadFrom = await response.Content.ReadAsStreamAsync())
+        //        {
+        //            string fileToWriteTo = Path.GetTempFileName();
+        //            using (Stream streamToWriteTo = File.Open(fileToWriteTo, FileMode.Create))
+        //            {
+        //                await streamToReadFrom.CopyToAsync(streamToWriteTo);
+        //            }
+        //        }
+        //    }
+        //}
+
+        private static readonly HttpClient _instance = new();
+
+        // Static constructor to ensure only one instance is created.
+        public static HttpClient HttpClientSingleton(string uri, string contentType = "text/plain")
+        {
+            // Configure the HttpClient instance here if necessary, e.g., set the base URI, default headers, etc.
+            _instance.BaseAddress = new Uri(uri);
+            _instance.DefaultRequestHeaders.Accept.Clear();
+            _instance.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(contentType));
+            return _instance;
+            // Implement other settings like Timeout, DefaultRequestHeaders, etc.
+        }
+
+        public static HttpClient HttpClientInstance
+        {
+            get { return _instance; }
+        }
+
+        public static async Task<string> GetResponseString(string uri)
+        {
+            var httpClient = new HttpClient();
+
+            var response = await httpClient.GetAsync(uri);
+            var contents = await response.Content.ReadAsStringAsync();
+
+            return contents;
         }
 
         /// <summary>
@@ -85,7 +134,30 @@ namespace ArisenStudio.Extensions
         /// <returns> </returns>
         public static Bitmap GetImageFromUrl(string url)
         {
-            return new(GetStream(url));
+            //return await new(GetResponseString(url));
+            //return new(GetStream(url));
+
+            //var image = new BitmapImage(new Uri(url));
+            //image.ImageOpened += (s, e) =>
+            //{
+            //    image.CreateOptions = BitmapCreateOptions.None;
+            //    WriteableBitmap wb = new WriteableBitmap(image);
+            //    MemoryStream ms = new MemoryStream();
+            //    wb.SaveJpeg(ms, image.PixelWidth, image.PixelHeight, 0, 100);
+            //    byte[] imageBytes = ms.ToArray();
+            //};
+
+            //return image;
+
+            //var webClient = new WebClient();
+            //byte[] imageBytes = webClient.DownloadData(url);
+
+            //return new(imageBytes);
+
+            WebRequest request = WebRequest.Create(url);
+            WebResponse response = request.GetResponse();
+            Stream responseStream = response.GetResponseStream();
+            return new(responseStream);
         }
 
         /// <summary>
@@ -97,7 +169,11 @@ namespace ArisenStudio.Extensions
             try
             {
                 Program.Log.Info("Checking for Internet connection...");
-                return NetworkInterface.GetIsNetworkAvailable();
+                //return NetworkInterface.GetIsNetworkAvailable();
+                using Ping pr = new();
+                PingReply p = pr.Send("8.8.8.8", 1000, new byte[32]);
+
+                return p.Status == IPStatus.Success;
             }
             catch (Exception ex)
             {
