@@ -1544,6 +1544,9 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
   <data name="TITLE_OPTIONS" xml:space="preserve">
     <value>OPCIONES</value>
   </data>
+  <data name="TITLE_OUR_FAVORITE_GAMES" xml:space="preserve">
+    <value>Our Favorite Games</value>
+  </data>
   <data name="TITLE_OUR_FAVORITE_MODS" xml:space="preserve">
     <value>NUESTROS MODS FAVORITOS</value>
   </data>

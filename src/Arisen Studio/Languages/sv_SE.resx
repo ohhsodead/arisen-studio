@@ -1545,6 +1545,9 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   <data name="TITLE_OPTIONS" xml:space="preserve">
     <value>ALTERNATIV</value>
   </data>
+  <data name="TITLE_OUR_FAVORITE_GAMES" xml:space="preserve">
+    <value>Our Favorite Games</value>
+  </data>
   <data name="TITLE_OUR_FAVORITE_MODS" xml:space="preserve">
     <value>VÅRA FAVORIT MODDAR</value>
   </data>

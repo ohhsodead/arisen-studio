@@ -1545,6 +1545,9 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
   <data name="TITLE_OPTIONS" xml:space="preserve">
     <value>SEÇENEKLER</value>
   </data>
+  <data name="TITLE_OUR_FAVORITE_GAMES" xml:space="preserve">
+    <value>Our Favorite Games</value>
+  </data>
   <data name="TITLE_OUR_FAVORITE_MODS" xml:space="preserve">
     <value>FAVORİ MODLARIMIZ</value>
   </data>

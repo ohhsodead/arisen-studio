@@ -600,7 +600,7 @@ Error: {0}</value>
     <value>Default Game Regions</value>
   </data>
   <data name="GAME_SAVES" xml:space="preserve">
-    <value>GAME SAVES</value>
+    <value>Game Saves</value>
   </data>
   <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
     <value>Game Save Resigner</value>
@@ -627,7 +627,7 @@ Error: {0}</value>
     <value>Hard Reboot</value>
   </data>
   <data name="HELP" xml:space="preserve">
-    <value>HELP</value>
+    <value>Help</value>
   </data>
   <data name="HELP_TRANSLATE" xml:space="preserve">
     <value>Help translate Arisen Studio on Crowdin</value>
@@ -1226,40 +1226,40 @@ Do you want to try uninstalling the file(s) anyway?</value>
     <value>Mount PSN</value>
   </data>
   <data name="NAVIGATION_DASHBOARD" xml:space="preserve">
-    <value>DASHBOARD</value>
+    <value>Dashboard</value>
   </data>
   <data name="NAVIGATION_DOWNLOADS" xml:space="preserve">
-    <value>DOWNLOADS</value>
+    <value>Downloads</value>
   </data>
   <data name="NAVIGATION_FILE_MANAGER" xml:space="preserve">
-    <value>FILE MANAGER</value>
+    <value>File Manager</value>
   </data>
   <data name="NAVIGATION_GAME_CHEATS" xml:space="preserve">
-    <value>GAME CHEATS</value>
+    <value>Game Cheats</value>
   </data>
   <data name="NAVIGATION_GAME_MODS" xml:space="preserve">
-    <value>GAME MODS</value>
+    <value>Game Mods</value>
   </data>
   <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
-    <value>GAME SAVES</value>
+    <value>Game Saves</value>
   </data>
   <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
-    <value>HOMEBREW</value>
+    <value>Homebrew</value>
   </data>
   <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
-    <value>INSTALLED MODS</value>
+    <value>Installed Mods</value>
   </data>
   <data name="NAVIGATION_PACKAGES" xml:space="preserve">
-    <value>PACKAGES</value>
+    <value>Packages</value>
   </data>
   <data name="NAVIGATION_PLUGINS" xml:space="preserve">
-    <value>PLUGINS</value>
+    <value>Plugins</value>
   </data>
   <data name="NAVIGATION_RESOURCES" xml:space="preserve">
-    <value>RESOURCES</value>
+    <value>Resources</value>
   </data>
   <data name="NAVIGATION_SETTINGS" xml:space="preserve">
-    <value>SETTINGS</value>
+    <value>Settings</value>
   </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Make sure Neighborhood is installed on your computer</value>
@@ -1522,40 +1522,43 @@ If you don't want to uninstall the files, click 'No' and all of these files will
     <value>Take Screenshot</value>
   </data>
   <data name="TITLE_ANNOUNCEMENTS" xml:space="preserve">
-    <value>ANNOUNCEMENTS</value>
+    <value>Announcements</value>
   </data>
   <data name="TITLE_CHANGE_LOG" xml:space="preserve">
-    <value>CHANGE LOG</value>
+    <value>Change Log</value>
   </data>
   <data name="TITLE_CONTRIBUTORS" xml:space="preserve">
-    <value>CONTRIBUTORS</value>
+    <value>Contributors</value>
   </data>
   <data name="TITLE_CREDITS" xml:space="preserve">
-    <value>CREDITS</value>
+    <value>Credits</value>
   </data>
   <data name="TITLE_GAMES" xml:space="preserve">
-    <value>GAMES</value>
+    <value>Games</value>
   </data>
   <data name="TITLE_INTERFACE" xml:space="preserve">
-    <value>INTERFACE</value>
+    <value>Interface</value>
   </data>
   <data name="TITLE_LATEST_NEWS" xml:space="preserve">
-    <value>LATEST NEWS</value>
+    <value>Latest News</value>
   </data>
   <data name="TITLE_OPTIONS" xml:space="preserve">
-    <value>OPTIONS</value>
+    <value>Options</value>
+  </data>
+  <data name="TITLE_OUR_FAVORITE_GAMES" xml:space="preserve">
+    <value>Our Favorite Games</value>
   </data>
   <data name="TITLE_OUR_FAVORITE_MODS" xml:space="preserve">
-    <value>OUR FAVORITE MODS</value>
+    <value>Our Favorite Mods</value>
   </data>
   <data name="TITLE_RECENTLY_UPDATED" xml:space="preserve">
-    <value>RECENTLY UPDATED</value>
+    <value>Recently Updated</value>
   </data>
   <data name="TITLE_SPECIAL_THANKS" xml:space="preserve">
-    <value>SPECIAL THANKS</value>
+    <value>Special Thanks</value>
   </data>
   <data name="TITLE_STATISTICS" xml:space="preserve">
-    <value>STATISTICS</value>
+    <value>Statistics</value>
   </data>
   <data name="TOOLS" xml:space="preserve">
     <value>Tools</value>
