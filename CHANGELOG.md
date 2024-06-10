@@ -3,6 +3,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Beta v3.1.2
+- Improved overall design and layout
+- Updated project with new coding standards
+- Updated icons to fit current themes
+- Updated AutoUpdater.NET library to 1.8.6
+- Updated DevExpress library to 23.2
+- Updated FluentFTP package to 50.0.1
+- Updated HtmlAgilityPack package to 1.11.61
+- Updated WebView2 package to 1.0.2478.35
+- Updated NLog package to 5.3.2
+- Updated Tomlyn package to 0.17.0
+- About page is easier to manage, less buggy
+- Added Our Favorite Games section
+- Added Current Poll section
+- Added option to install PKG after uploading
+- Added missing icons from File Manager
+
 ## Beta v3.1.1
 - Fixed wrong language for installer
 - Hotfix for resource files issue
