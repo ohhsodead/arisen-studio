@@ -118,572 +118,573 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ADD_NEW_PROFILE" xml:space="preserve">
-    <value>Añadir nuevo perfil</value>
+    <value>Adic. novo perfil</value>
   </data>
   <data name="ADVANCED" xml:space="preserve">
-    <value>Avanzado</value>
+    <value>Avançado</value>
   </data>
   <data name="ADVANCED_SETTINGS" xml:space="preserve">
-    <value>Ajustes avanzados</value>
+    <value>Configs. avançadas</value>
   </data>
   <data name="ALL_CATEGORIES" xml:space="preserve">
-    <value>Todas las categorías</value>
+    <value>Todas as categorias</value>
   </data>
   <data name="ALL_GAMES" xml:space="preserve">
-    <value>Todos los juegos</value>
+    <value>Todos os jogos</value>
   </data>
   <data name="ANOTHER_MOD_INSTALLED" xml:space="preserve">
-    <value>{0} es instalado a: {1}
+    <value>{0} está instalado em: {1}
 
-Instalar múltiples mods para el mismo juego puede llevar a problemas como conflictos.
+Instalar vários mods no mesmo jogo pode causar problemas, como conflitos.
 
-¿Quieres desinstalar los archivos actuales?</value>
+Deseja desinstalar os arquivos atuais?</value>
   </data>
   <data name="ANY" xml:space="preserve">
-    <value>CUALQUIER</value>
+    <value>QUALQUER</value>
   </data>
   <data name="ARCHIVE_DOWNLOADING" xml:space="preserve">
-    <value>Descargando archivo...</value>
+    <value>Baixando arquivo...</value>
   </data>
   <data name="ARCHIVE_DOWNLOADING_EXTRACTING_ARCHIVE" xml:space="preserve">
-    <value>Descargando y extrayendo archivo...</value>
+    <value>Baixando e extraindo arquivo...</value>
   </data>
   <data name="ARCHIVE_DOWNLOAD_SUCCESS" xml:space="preserve">
-    <value>Archivo descargado con éxito.</value>
+    <value>Arquivo baixado com êxito.</value>
   </data>
   <data name="AUTOMATION" xml:space="preserve">
-    <value>Automatización</value>
+    <value>Automação</value>
   </data>
   <data name="AUTO_DELETE_FILES_AFTER_INSTALLING" xml:space="preserve">
-    <value>Borrar automáticamente los archivos locales después de la instalación</value>
+    <value>Excluir automaticamente os arquivos locais após a instalação</value>
   </data>
   <data name="AUTO_DETECT_GAME_REGIONS" xml:space="preserve">
-    <value>Detectar automáticamente las regiones del juego*</value>
+    <value>Detectar região dos jogos automaticamente*</value>
   </data>
   <data name="AUTO_DETECT_GAME_TITLES" xml:space="preserve">
-    <value>Detectar automáticamente títulos del juego</value>
+    <value>Detectar título dos jogos automaticamente</value>
   </data>
   <data name="AUTO_LOAD_DIRECTORY_LISTINGS" xml:space="preserve">
-    <value>Cargar automáticamente los listados de directorios</value>
+    <value>Carregar listagens de diretórios automaticamente</value>
   </data>
   <data name="BACKUP_FILES" xml:space="preserve">
-    <value>Copias de seguridad</value>
+    <value>Backups</value>
   </data>
   <data name="BACKUP_FILES_MANAGER" xml:space="preserve">
-    <value>Administrador de las copias de seguridad</value>
+    <value>Gerenciador de backups</value>
   </data>
   <data name="BACKUP_GAME_FILES" xml:space="preserve">
-    <value>Algunos archivos del juego se sobrescribirán. ¿Quieres hacer una copia de seguridad de los archivos del juego actual? Estos archivos se pueden restaurar al desinstalar los mods.</value>
+    <value>Alguns arquivos do jogo serão substituídos. Você deseja fazer backup dos arquivos do jogo atual? Estes arquivos podem ser restaurados quando os mods forem desinstalados.</value>
   </data>
   <data name="BOOT_PLUGINS_EDITOR" xml:space="preserve">
-    <value>Editor de Plugins de inicio</value>
+    <value>Editor do boot_plugins</value>
   </data>
   <data name="BOOT_PLUGINS_FILE_SAVED" xml:space="preserve">
-    <value>El archivo boot_plugins.txt ha sido editado y subido a tu consola.</value>
+    <value>O arquivo boot_plugins.txt foi editado e carregado para o seu console.</value>
   </data>
   <data name="CANT_FIND_BACKUP_FILE" xml:space="preserve">
-    <value>Hay una copia de seguridad para {0}.
+    <value>Há um backup de dados para {0}.
 
-Sin embargo, este archivo ha sido movido o eliminado.
+No entanto, esse arquivo foi movido ou excluído.
 
-Si moviste este archivo, ve a Herramientas &gt; Archivos de copia de seguridad del juego y configura la nueva ruta del archivo local. Si se eliminó este archivo, elimina los datos del archivo de copia de seguridad y vuelve a hacer una copia de seguridad del archivo de nuevo.
+Se você moveu esse arquivo, vá em Ferramentas &gt; Arquivos de backup do seu jogo e defina o novo caminho para o arquivo. Se esse arquivo foi excluído, remova os dados do arquivo de backup e faça backup do arquivo novamente.
 
-Este archivo no puede desinstalado para evitar que falten archivos del juego, por lo que se ignorará.</value>
+Este arquivo não pode ser desinstalado para evitar arquivos de jogo ausentes, portanto, ele será ignorado.</value>
   </data>
   <data name="CANT_UNINSTALL_CFW_FILES" xml:space="preserve">
-    <value>No puedes desinstalar archivos de la carpeta firmware. Cualquier archivo que falte podría afectar el rendimiento de tu consola.</value>
+    <value>Você não pode desinstalar arquivos da pasta do firmware. Qualquer arquivo ausente pode afetar o desempenho do console.</value>
   </data>
   <data name="CHANGE_PROFILE" xml:space="preserve">
-    <value>Cambiar perfil</value>
+    <value>Alterar perfil</value>
   </data>
   <data name="CHEAT_APPLIED" xml:space="preserve">
-    <value>Trucos aplicados al juego con éxito.</value>
+    <value>Código ativado com êxito.</value>
   </data>
   <data name="CHEAT_NOT_APPLIED" xml:space="preserve">
-    <value>Incapaz de aplicar el truco al juego. Error: {0}</value>
+    <value>Não foi possível ativar o código no jogo. Erro: {0}</value>
   </data>
   <data name="CHEAT_NOT_SUPPORTED" xml:space="preserve">
-    <value>Este truco no se puede aplicar porque contiene un código de operación que aún no se ha implementado.</value>
+    <value>Este código não pôde ser aplicado porque contém "opcode" que ainda não foi implementado.</value>
   </data>
   <data name="CHOOSE_ITEM" xml:space="preserve">
-    <value>Escoger elemento...</value>
+    <value>Escolher item...</value>
   </data>
   <data name="CLEANING_INSTALL_FILES" xml:space="preserve">
-    <value>Limpiando los archivos de instalación local...</value>
+    <value>Limpando os arquivos locais de instalação...</value>
   </data>
   <data name="CONFIRM" xml:space="preserve">
     <value>Confirmar</value>
   </data>
   <data name="CONFIRM_DELETE" xml:space="preserve">
-    <value>Confirmar la eliminación</value>
+    <value>Confirmar exclusão</value>
   </data>
   <data name="CONFIRM_DELETE_ALL" xml:space="preserve">
-    <value>Confirmar eliminar todo</value>
+    <value>Confirmar excluir tudo</value>
   </data>
   <data name="CONFIRM_DELETE_ALL_ITEMS" xml:space="preserve">
-    <value>¿Realmente quieres eliminar todos estos elementos?</value>
+    <value>Tem certeza de que deseja excluir todos estes itens?</value>
   </data>
   <data name="CONFIRM_DELETE_ITEM" xml:space="preserve">
-    <value>¿Realmente quieres borrar el elemento seleccionado?</value>
+    <value>Tem certeza de que deseja excluir o item selecionado?</value>
   </data>
   <data name="CONNECTED" xml:space="preserve">
     <value>Conectado</value>
   </data>
   <data name="CONNECTED_NOTIFICATION" xml:space="preserve">
-    <value>Ahora estás conectado a Arisen Studio ★</value>
+    <value>Você está conectado ao Arisen Studio ★</value>
   </data>
   <data name="CONNECTING_TO_CONSOLE" xml:space="preserve">
-    <value>Conectando a: {0}</value>
+    <value>Conectando-se a: {0}</value>
   </data>
   <data name="CONNECTION" xml:space="preserve">
-    <value>Conexión</value>
+    <value>Conexão</value>
   </data>
   <data name="CONNECTIONS" xml:space="preserve">
-    <value>Conexiones</value>
+    <value>Conexões</value>
   </data>
   <data name="CONNECTION_FAILED" xml:space="preserve">
-    <value>Conexión fallida</value>
+    <value>Falha na conexão</value>
   </data>
   <data name="CONNECT_CONSOLE" xml:space="preserve">
-    <value>Conectar consola</value>
+    <value>Conectar console</value>
   </data>
   <data name="CONNECT_TO_CONSOLE" xml:space="preserve">
-    <value>Conectar a la consola...</value>
+    <value>Conectar ao console...</value>
   </data>
   <data name="CONSOLE_INFO" xml:space="preserve">
-    <value>Información de la consola</value>
+    <value>Informações do console</value>
   </data>
   <data name="CONSOLE_MANAGER" xml:space="preserve">
-    <value>Administrador de la consola</value>
+    <value>Gerenciador do console</value>
   </data>
   <data name="CONSOLE_PROFILES" xml:space="preserve">
-    <value>Perfiles de la consola</value>
+    <value>Perfis dos consoles</value>
   </data>
   <data name="COPIED_SHA1" xml:space="preserve">
-    <value>La actualización SHA1 ha sido copiada al portapapeles.</value>
+    <value>Atualização do SHA1 foi copiada para a área de transferência.</value>
   </data>
   <data name="COPIED_URL" xml:space="preserve">
-    <value>La actualización URL ha sido copiada al portapapeles.</value>
+    <value>Atualização do URL foi copiada para a área de transferência.</value>
   </data>
   <data name="CREATE_BACKUP_FILE" xml:space="preserve">
-    <value>Primero debes crear un archivo de copia de seguridad para restaurar.</value>
+    <value>Primeiro, crie um arquivo de backup para restauração.</value>
   </data>
   <data name="CURRENT_GAME" xml:space="preserve">
-    <value>Juego actual:</value>
+    <value>Jogo atual:</value>
   </data>
   <data name="CUSTOMIZATION" xml:space="preserve">
-    <value>Personalización</value>
+    <value>Personalização</value>
   </data>
   <data name="DASHLAUNCH_EDITOR" xml:space="preserve">
     <value>Editor de Dashlaunch</value>
   </data>
   <data name="DATA_MISSING" xml:space="preserve">
-    <value>FALTA DE DATOS</value>
+    <value>DADOS AUSENTES</value>
   </data>
   <data name="DELETE" xml:space="preserve">
-    <value>Eliminar</value>
+    <value>Excluir</value>
   </data>
   <data name="DELETED" xml:space="preserve">
-    <value>Eliminado</value>
+    <value>Excluído</value>
   </data>
   <data name="DELETE_ALL_ITEMS" xml:space="preserve">
-    <value>Eliminar todos los elementos</value>
+    <value>Excluir itens (tudo)</value>
   </data>
   <data name="DELETE_ITEM" xml:space="preserve">
-    <value>Eliminar elemento</value>
+    <value>Excluir item</value>
   </data>
   <data name="DELETE_ITEMS_SUCCESS" xml:space="preserve">
-    <value>Se han eliminado todos los elementos con éxito.</value>
+    <value>Todos os itens excluídos com êxito.</value>
   </data>
   <data name="DELETE_ITEM_ERROR" xml:space="preserve">
-    <value>Incapaz de eliminar elemento. Error: {0}</value>
+    <value>Não foi possível excluir o item. Erro: {0}</value>
   </data>
   <data name="DELETE_ITEM_SUCCESS" xml:space="preserve">
-    <value>Elemento eliminado con éxito.</value>
+    <value>Item excluído com êxito.</value>
   </data>
   <data name="DIRECTORIES_MUST_BE_WRITABLE" xml:space="preserve">
-    <value>Todos los directorios deben ser escribibles.</value>
+    <value>Todos os diretórios devem ter permissões de escrita.</value>
   </data>
   <data name="DIRECTORY_EMPTY" xml:space="preserve">
-    <value>Directorio vacío</value>
+    <value>Diretório vazio</value>
   </data>
   <data name="DIRECTORY_NOT_EXIST" xml:space="preserve">
-    <value>Este directorio no existe en tu computadora.</value>
+    <value>Este diretório não existe em seu computador.</value>
   </data>
   <data name="DIRECTORY_NOT_FOUND" xml:space="preserve">
-    <value>Directorio no encontrado</value>
+    <value>Diretório não encontrado</value>
   </data>
   <data name="DISCONNECTING_FROM_CONSOLE" xml:space="preserve">
-    <value>Desconectando de la consola.</value>
+    <value>Desconectando-se do console.</value>
   </data>
   <data name="DISCONNECT_CONSOLE" xml:space="preserve">
-    <value>Desconectar consola</value>
+    <value>Desconectar console</value>
   </data>
   <data name="DISCONNECT_LOWERCASE" xml:space="preserve">
     <value>Desconectar</value>
   </data>
   <data name="DISCORD_RICH_PRESENCE" xml:space="preserve">
-    <value>Discord Rich Presence</value>
+    <value>Rich Presence do Discord</value>
   </data>
   <data name="DOWNLOADING_GAME_SAVE" xml:space="preserve">
-    <value>Descargando partida guardada</value>
+    <value>Baixando dados do jogo</value>
   </data>
   <data name="DOWNLOADING_MODS" xml:space="preserve">
-    <value>Descargando mods</value>
+    <value>Baixando mods</value>
   </data>
   <data name="DOWNLOADING_PACKAGE" xml:space="preserve">
-    <value>Descargando paquete</value>
+    <value>Baixando pacote</value>
   </data>
   <data name="DOWNLOADS_FOLDER" xml:space="preserve">
-    <value>Carpeta de descargas</value>
+    <value>Pasta de downloads</value>
   </data>
   <data name="DOWNLOADS_LOCATION" xml:space="preserve">
-    <value>Localización de las descargas</value>
+    <value>Local de Downloads</value>
   </data>
   <data name="DOWNLOAD_CANCELED" xml:space="preserve">
-    <value>Descarga cancelada.</value>
+    <value>Download cancelado.</value>
   </data>
   <data name="DOWNLOAD_FOLDER_NOT_FOUND" xml:space="preserve">
-    <value>La carpeta de descarga no existe en su computadora. Puede cambiar la ubicación de descarga en su configuración.</value>
+    <value>A pasta para download não existe em seu computador. Você pode alterar o local de download nas configurações.</value>
   </data>
   <data name="EDIT_PROFILES" xml:space="preserve">
-    <value>Editar perfiles</value>
+    <value>Editar perfis</value>
   </data>
   <data name="ERROR" xml:space="preserve">
-    <value>Error</value>
+    <value>Erro</value>
   </data>
   <data name="ERROR_LAUNCHING_GAME" xml:space="preserve">
-    <value>Incapaz de iniciar el archivo de juego. Error: {0}</value>
+    <value>Não foi possível iniciar os arquivos do jogo. Erro: {0}</value>
   </data>
   <data name="ERROR_OCCURRED" xml:space="preserve">
-    <value>Un error ocurrió: {0}
+    <value>Ocorreu um erro: {0}
 
-Por favor, inténtalo más tarde. Si el problema persiste &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;abre un nuevo problema&lt;/a&gt; en nuestro seguimiento de GitHub.</value>
+Por favor, tente novamente mais tarde. Se o problema persistir &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;abra uma nova pergunta&lt;/a&gt; no nosso rastreador GitHub.</value>
   </data>
   <data name="EXTRACT_IMAGE" xml:space="preserve">
-    <value>Extraer imagen</value>
+    <value>Extrair imagem</value>
   </data>
   <data name="FAVORITES_ADD" xml:space="preserve">
-    <value>Favorito</value>
+    <value>Favoritar</value>
   </data>
   <data name="FAVORITES_HIDE" xml:space="preserve">
     <value>Ocultar favoritos</value>
   </data>
   <data name="FAVORITES_SHOW" xml:space="preserve">
-    <value>Mostrar favoritos</value>
+    <value>Mostrar Favoritos</value>
   </data>
   <data name="FETCHED_LISTING" xml:space="preserve">
-    <value>Listado de directorio obtenido con éxito.</value>
+    <value>Lista de diretórios obtida com sucesso.</value>
   </data>
   <data name="FETCHING_DRIVES" xml:space="preserve">
-    <value>Obteniendo unidades</value>
+    <value>Buscando drives</value>
   </data>
   <data name="FETCHING_LISTING" xml:space="preserve">
-    <value>Obteniendo la lista del directorio de: {0}</value>
+    <value>Buscando lista de diretório de: {0}</value>
   </data>
   <data name="FETCHING_LISTING_ERROR" xml:space="preserve">
-    <value>Incapaz de obtener la lista de directorios para la ruta: {0} - Error: {1}</value>
+    <value>Não foi possível obter a listagem do diretório para o caminho: {0} - Erro: {1}</value>
   </data>
   <data name="FETCHING_ROOT_DIRECTORIES" xml:space="preserve">
-    <value>Obteniendo directorios raíz</value>
+    <value>Buscando diretórios na raiz</value>
   </data>
   <data name="FILE" xml:space="preserve">
-    <value>Archivo</value>
+    <value>Arquivo</value>
   </data>
   <data name="FILES" xml:space="preserve">
-    <value>Archivos</value>
+    <value>Arquivos</value>
   </data>
   <data name="FILES_INSTALL_ERROR" xml:space="preserve">
-    <value>Incapaz de instalar archivos. Error: {0}</value>
+    <value>Não foi possível instalar os arquivos. Erro: {0}</value>
   </data>
   <data name="FILES_INSTALL_SUCCESS" xml:space="preserve">
-    <value>Se han instalado con éxito {0} archivos.</value>
+    <value>{0} arquivos instalados com sucesso.</value>
   </data>
   <data name="FILES_NOT_INSTALLED_TO_CONNECTED_CONSOLE" xml:space="preserve">
-    <value>Estos archivos no se instalaron en la consola conectada.</value>
+    <value>Estes arquivos não foram instalados no console conectado.</value>
   </data>
   <data name="FILES_REINSTALL" xml:space="preserve">
-    <value>{0} ya está instalado para: {1}
+    <value>{0} já está instalado em: {1}
 
-¿Quieres reinstalar los archivos?</value>
+Você deseja reinstalar os arquivos?</value>
   </data>
   <data name="FILES_UNINSTALLING" xml:space="preserve">
-    <value>Desinstalando archivos...</value>
+    <value>Desinstalando arquivos...</value>
   </data>
   <data name="FILES_UNINSTALL_SUCCESS" xml:space="preserve">
-    <value>Desinstalados con éxito {0} archivos.</value>
+    <value>{0} Arquivos removidos com sucesso.</value>
   </data>
   <data name="FILE_BACKUP_CREATED" xml:space="preserve">
-    <value>Copia de seguridad creada con éxito.</value>
+    <value>Arquivo de backup criado com sucesso.</value>
   </data>
   <data name="FILE_BACKUP_CREATING" xml:space="preserve">
-    <value>Creando copia de seguridad: {0}</value>
+    <value>Criando backup do arquivo: {0}</value>
   </data>
   <data name="FILE_DELETED" xml:space="preserve">
-    <value>Archivo eliminado con éxito: {0}</value>
+    <value>{0} Deletado com sucesso</value>
   </data>
   <data name="FILE_DELETING" xml:space="preserve">
-    <value>Eliminando archivo: {0}</value>
+    <value>Excluindo arquivo: {0}</value>
   </data>
   <data name="FILE_DOWNLOADED" xml:space="preserve">
-    <value>Archivo descargado con éxito: {0}</value>
+    <value>O arquivo {0} foi baixado com êxito</value>
   </data>
   <data name="FILE_DOWNLOADING" xml:space="preserve">
-    <value>Descargando archivo: {0}</value>
+    <value>Baixando arquivo: {0}</value>
   </data>
   <data name="FILE_DOWNLOAD_ERROR" xml:space="preserve">
-    <value>Incapaz de descargar archivo. Error: {0}</value>
+    <value>Não foi possível baixar o arquivo. Erro: {0}</value>
   </data>
   <data name="FILE_DOWNLOAD_LOCATION" xml:space="preserve">
-    <value>Descargando archivo: {0} a {1}</value>
+    <value>Baixando arquivo: {0} para {1}</value>
   </data>
   <data name="FILE_DOWNLOAD_SUCCESS" xml:space="preserve">
-    <value>Archivo descargado con éxito.</value>
+    <value>Arquivo baixado com êxito.</value>
   </data>
   <data name="FILE_INSTALLING" xml:space="preserve">
-    <value>Instalando archivo: {0}</value>
+    <value>Instalando o arquivo: {0}</value>
   </data>
   <data name="FILE_INSTALL_ERROR" xml:space="preserve">
-    <value>Incapaz de descargar archivo. Error: {0}</value>
+    <value>Não foi possível instalar o arquivo. Erro: {0}</value>
   </data>
   <data name="FILE_INSTALL_LOCATION" xml:space="preserve">
-    <value>Instalando archivo: {0} a {1}</value>
+    <value>Instalando arquivo: {0} em {1}</value>
   </data>
   <data name="FILE_INSTALL_SUCCESS" xml:space="preserve">
-    <value>Archivo(s) instalado(s) con éxito.</value>
+    <value>Arquivo(s) instalados com êxito.</value>
   </data>
   <data name="FILE_MISSING" xml:space="preserve">
-    <value>Archivo faltante</value>
+    <value>Arquivo ausente</value>
   </data>
   <data name="FILE_NAME" xml:space="preserve">
-    <value>Nombre del archivo:</value>
+    <value>Nome do arquivo:</value>
   </data>
   <data name="FILE_NAME_DUPLICATE" xml:space="preserve">
-    <value>Duplicar nombre</value>
+    <value>Nome duplicado</value>
   </data>
   <data name="FILE_NAME_EMPTY" xml:space="preserve">
-    <value>El nombre del archivo no puede estar vacío.</value>
+    <value>O nome do arquivo não pode estar vazio.</value>
   </data>
   <data name="FILE_NAME_EXISTS" xml:space="preserve">
-    <value>Un archivo con este nombre ya existe.</value>
+    <value>Já existe um arquivo com este nome.</value>
   </data>
   <data name="FILE_NAME_EXISTS_IN_MODULES" xml:space="preserve">
-    <value>Ya tienes un módulo con este nombre.</value>
+    <value>Você já tem um módulo com este nome.</value>
   </data>
   <data name="FILE_REINSTALL" xml:space="preserve">
-    <value>{0} ya está instalado.
+    <value>{0} já está instalado. 
 
-¿Quieres reinstalar el archivo?</value>
+Você deseja reinstalar o arquivo?</value>
   </data>
   <data name="FILE_RENAME" xml:space="preserve">
-    <value>Renombrar archivo</value>
+    <value>Renomear arquivo</value>
   </data>
   <data name="FILE_RENAMED" xml:space="preserve">
-    <value>Archivo renombrado con éxito a: {0}</value>
+    <value>Êxito ao renomear arquivo como: {0}</value>
   </data>
   <data name="FILE_RENAMED_SUCCESS" xml:space="preserve">
-    <value>Archivo de juego renombrado con éxito.</value>
+    <value>Arquivo do jogo renomeado com sucesso.</value>
   </data>
   <data name="FILE_RENAME_ERROR" xml:space="preserve">
-    <value>Incapaz de renombrar el archivo. Error: {0}</value>
+    <value>Não foi possível renomear o arquivo. Erro: {0}</value>
   </data>
   <data name="FILE_RENAME_MODULE" xml:space="preserve">
-    <value>¿Quieres renombrar este archivo?
+    <value>Você deseja renomear este arquivo?
 
-Nota: No afectará a que sea posible cargar el módulo.</value>
+Nota: Ele não afetará o carregamento do módulo.</value>
   </data>
   <data name="FILE_RENAMING" xml:space="preserve">
-    <value>Renombrando archivo a: {0}</value>
+    <value>Renomeando o arquivo como: {0}</value>
   </data>
   <data name="FILE_SAVE_ERROR" xml:space="preserve">
-    <value>Hubo un problema al guardar o subir el archivo.
+    <value>Houve um problema ao salvar ou ao carregar o arquivo.
 
-Error: {0}</value>
+Erro: {0}</value>
   </data>
   <data name="FILE_UNINSTALL_ERROR" xml:space="preserve">
-    <value>Incapaz de desinstalar archivos. Error: {0}</value>
+    <value>Não foi possível desinstalar os arquivos. Erro: {0}</value>
   </data>
   <data name="FILE_UNINSTALL_LOCATION" xml:space="preserve">
-    <value>Desinstalando archivo: {0} desde {1}</value>
+    <value>Desinstalando arquivo: {0} de {1}</value>
   </data>
   <data name="FILE_UNINSTALL_SUCCESSS" xml:space="preserve">
-    <value>Archivo desinstalado con éxito.</value>
+    <value>Arquivo desinstalado com êxito.</value>
   </data>
   <data name="FILE_UPLOADED" xml:space="preserve">
-    <value>Archivo subido con éxito: {0}</value>
+    <value>Arquivo carregado com êxito: {0}</value>
   </data>
   <data name="FILE_UPLOADING" xml:space="preserve">
-    <value>Subiendo archivo a: {0}</value>
+    <value>Carregando pasta em: {0}</value>
   </data>
   <data name="FILE_UPLOAD_NOT_FOUND" xml:space="preserve">
-    <value>Este archivo no existe en tu computadora.</value>
+    <value>Este arquivo não existe em seu computador.</value>
   </data>
   <data name="FOLDER_CREATE" xml:space="preserve">
-    <value>Añadir nueva carpeta</value>
+    <value>Nova pasta</value>
   </data>
   <data name="FOLDER_CREATED" xml:space="preserve">
-    <value>Carpeta creada con éxito: {0}</value>
+    <value>Pasta criada com êxito: {0}</value>
   </data>
   <data name="FOLDER_CREATE_ERROR" xml:space="preserve">
-    <value>Incapaz de crear una nueva carpeta. Error: {0}</value>
+    <value>Não foi possível criar nova pasta. Erro: {0}</value>
   </data>
   <data name="FOLDER_CREATING" xml:space="preserve">
-    <value>Creando carpeta: {0}</value>
+    <value>Criando pasta: {0}</value>
   </data>
   <data name="FOLDER_DELETED" xml:space="preserve">
-    <value>Carpeta eliminada con éxito: {0}</value>
+    <value>Pasta excluída com êxito: {0}</value>
   </data>
   <data name="FOLDER_DELETE_SUCCESS" xml:space="preserve">
-    <value>Carpeta eliminada con éxito.</value>
+    <value>Pasta excluída com êxito.</value>
   </data>
   <data name="FOLDER_DELETING" xml:space="preserve">
-    <value>Eliminando carpeta: {0}</value>
+    <value>Excluindo pasta: {0}</value>
   </data>
   <data name="FOLDER_DOWNLOADED" xml:space="preserve">
-    <value>Carpeta descargada con éxito: {0}</value>
+    <value>Pasta baixada com êxito: {0}</value>
   </data>
   <data name="FOLDER_DOWNLOADING" xml:space="preserve">
-    <value>Descargando carpeta: {0}</value>
+    <value>Baixando pasta: {0}</value>
   </data>
   <data name="FOLDER_DOWNLOAD_ERROR" xml:space="preserve">
-    <value>Incapaz de descargar carpeta. Error: {0}</value>
+    <value>Não foi possível baixar a pasta. Erro: {0}</value>
   </data>
   <data name="FOLDER_NAME" xml:space="preserve">
-    <value>Nombre de la carpeta:</value>
+    <value>Nome da pasta:</value>
   </data>
   <data name="FOLDER_NAME_EXISTS" xml:space="preserve">
-    <value>Una carpeta con este nombre ya existe</value>
+    <value>Já existe uma pasta com esse nome</value>
   </data>
   <data name="FOLDER_RENAME" xml:space="preserve">
-    <value>Renombrar carpeta</value>
+    <value>Renomear pasta</value>
   </data>
   <data name="FOLDER_RENAMED" xml:space="preserve">
-    <value>Carpeta renombrada con éxito: {0}</value>
+    <value>Pasta renomeada com êxito: {0}</value>
   </data>
   <data name="FOLDER_RENAME_ERROR" xml:space="preserve">
-    <value>Incapaz de renombrar carpeta. Error: {0}</value>
+    <value>Não foi possível renomear a pasta. Erro: {0}</value>
   </data>
   <data name="FOLDER_RENAMING" xml:space="preserve">
-    <value>Renombrando carpeta: {0}</value>
+    <value>Renomeando pasta: {0}</value>
   </data>
   <data name="FOLDER_UPLOADED" xml:space="preserve">
-    <value>Carpeta subida con éxito: {0}</value>
+    <value>Pasta carregada com êxito: {0}</value>
   </data>
   <data name="FOLDER_UPLOADING" xml:space="preserve">
-    <value>Subiendo carpeta a: {0}</value>
+    <value>Carregando pasta em: {0}</value>
   </data>
   <data name="FORBIDDEN" xml:space="preserve">
-    <value>Prohibido</value>
+    <value>Proibido</value>
   </data>
   <data name="FOUND_GAME_REGION" xml:space="preserve">
-    <value>Región de juego encontrada: {0}</value>
+    <value>Região de jogo encontrada: {0}</value>
   </data>
   <data name="FOUND_PREVIOUS_INSTALL" xml:space="preserve">
-    <value>Se encontraron detalles de instalación previos.</value>
+    <value>Encontrado detalhes da instalação anterior.</value>
   </data>
   <data name="FOUND_USB_DEVICE" xml:space="preserve">
     <value>Dispositivo USB encontrado: {0}</value>
   </data>
   <data name="FOUND_USER_PROFILE" xml:space="preserve">
-    <value>Perfil de usuario encontrado: {0}</value>
+    <value>Perfil de usuário encontrado: {0}</value>
   </data>
   <data name="GAMES" xml:space="preserve">
-    <value>Juegos</value>
+    <value>Jogos</value>
   </data>
   <data name="GAMES_LAUNCHER" xml:space="preserve">
-    <value>Iniciador de juegos</value>
+    <value>Iniciador de Jogos</value>
   </data>
   <data name="GAME_NOT_SUPPORTED" xml:space="preserve">
-    <value>Este juego no está soportado actualmente.</value>
+    <value>Não há suporte para este jogo no momento.</value>
   </data>
   <data name="GAME_REGIONS" xml:space="preserve">
-    <value>Regiones del juego predeterminadas</value>
+    <value>Regiões padrão do jogo</value>
   </data>
   <data name="GAME_SAVES" xml:space="preserve">
-    <value>PARTIDAS GUARDADAS</value>
+    <value>JOGOS SALVOS</value>
   </data>
   <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
-    <value>Game Save Resigner</value>
+    <value>Reassinar os Dados Salvos do Jogo</value>
   </data>
   <data name="GAME_UPDATES" xml:space="preserve">
-    <value>Actualizaciones del juego</value>
+    <value>Atualizações de jogos</value>
   </data>
   <data name="GETTING_DOWNLOAD_FILES" xml:space="preserve">
-    <value>Obteniendo el enlace de descarga del archivo...</value>
+    <value>Obtendo link de download do arquivo...</value>
   </data>
   <data name="GETTING_GAME_REGION" xml:space="preserve">
-    <value>Obteniendo la región del juego...</value>
+    <value>Obtendo região do jogo...</value>
   </data>
   <data name="GETTING_PREVIOUS_INSTALL" xml:space="preserve">
-    <value>Obteniendo detalles de instalación previos...</value>
+    <value>Obtendo detalhes da instalação anterior...</value>
   </data>
   <data name="GETTING_USB_DEVICE" xml:space="preserve">
-    <value>Obteniendo dispositivo USB...</value>
+    <value>Obtendo o dispositivo USB...</value>
   </data>
   <data name="GETTING_USER_PROFILE" xml:space="preserve">
-    <value>Obteniendo perfil de usuario...</value>
+    <value>Obtendo perfil de usuário...</value>
   </data>
   <data name="HARD_REBOOT" xml:space="preserve">
-    <value>Reinicio duro</value>
+    <value>Reinício Completo</value>
   </data>
   <data name="HELP" xml:space="preserve">
-    <value>AYUDA</value>
+    <value>AJUDA</value>
   </data>
   <data name="HELP_TRANSLATE" xml:space="preserve">
-    <value>Ayuda a traducir Arisen Studio en Crowdin</value>
+    <value>Ajude a traduzir o Arisen Studio no Crowdin</value>
   </data>
   <data name="HOME" xml:space="preserve">
-    <value>Inicio</value>
+    <value>Início</value>
   </data>
   <data name="HOW_TO_ACTIVATE_DEMO" xml:space="preserve">
-    <value>Activar un paquete C00/Demo es muy fácil y no requiere un archivo rap. Puede ser hecho usando ReActPSN o ParchePSN.
+    <value>Ativar um pacote C00/Demo é muito fácil e não requer o arquivo rap. Pode ser feito usando ReActPSN ou PSNPatch.
 
-ReActPSN : Ejecuta el homebrew mientras pulsas y mantienes el círculo en tu controlador.
-PaquetePSN : Ejecuta PaquetePSN y presiona R1. Debería mostrar una lista de los juegos que han sido desbloqueados.</value>
+ReActPSN: Execute o homebrew enquanto pressiona e segura o círculo no seu controle.
+PSNPatch : Execute PSNPatch e pressione R1. Ele deve exibir uma lista dos jogos que foram desbloqueados.</value>
   </data>
   <data name="HOW_TO_ACTIVATE_DEMO_QUESTION" xml:space="preserve">
-    <value>¿Cómo activo un C00/Demo que tiene una licencia gratuita?</value>
+    <value>Como faço para ativar uma Demonstração que tem uma licença gratuita?</value>
   </data>
   <data name="HOW_TO_ACTIVATE_RAP" xml:space="preserve">
-    <value>Activar un paquete usando un archivo rap requiere unos pocos pasos. Puede ser hecho con ReActPSN o ParchePSN. Sin embargo, solamente describiré como hacerlo con ReActPSN.
+    <value>Ativar um pacote usando um arquivo rap requer alguns passos. Isso pode ser feito com ReActPSN ou PSNPatch. No entanto, eu só vou descrever como fazer isso com ReActPSN.
 
-1. Formatea una llave USB en FAT32.
-2. Crea la carpeta 'exdata' en la raíz de la llave USB.
-3. Mueve el correspondiente archivo RAP a los juegos que quieres activar en la carpeta exdata. Atención: ¡No renombres los archivos rap! Necesitas dejar su feo nombre original.
-4. Conecta la llave USB en el puerto USB derecho de la PS3 (el más cercano a la unidad bluray).
-5. Elimina el usuario ReActPSN en tu PS3 si existe.
-6. Crea una cuenta 'aa' (sin las comillas) y abre la cuenta.
-7. Ejecuta ReActPSN y la pantalla debería volverse negra, entonces deberías escuchar bips y luego la PS3 debería reiniciarse.
-8. El usuario 'aa' debería haber desaparecido y la cuenta 'ReActPSN' automáticamente creada.
-9. ¡Ya está!</value>
+1. Formate um Pen Drive em FAT32.
+2. Crie uma pasta 'exdata' na raiz de seu Pen Drive.
+3. Move o arquivo RAP correspondente para os jogos que deseja ativar na pasta de 'exdata'.
+Aviso: Não renomeie os arquivos do rap ! Você precisa deixar o nome original feio do arquivo.
+4. Conecte seu Pen Drive na porta USB direita do PS3 (o mais próximo do Driver de Disco do PS3).
+5. Apague o usuário ReActPSN no seu PS3 caso ele exista.
+6. Crie a conta 'aa' (sem aspas) e abra a conta.
+7. Execute ReActPSN e a tela deve ficar preta, então você deve ouvir os beeps e então a PS3 deve reiniciar.
+8. O usuário 'aa' deve ter sumido agora e a conta 'ReActPSN' deve ser criada automaticamente.
+9. Pronto!</value>
   </data>
   <data name="HOW_TO_ACTIVATE_RAP_QUESTION" xml:space="preserve">
-    <value>¿Cómo activo un paquete PSN con un archivo RAP?</value>
+    <value>Como posso ativar um pacote PSN com um arquivo RAP?</value>
   </data>
   <data name="HOW_TO_GUIDES" xml:space="preserve">
-    <value>Guías rápidas</value>
+    <value>Guias de instruções</value>
   </data>
   <data name="ICON" xml:space="preserve">
-    <value>Icono</value>
+    <value>Ícone</value>
   </data>
   <data name="IDLE" xml:space="preserve">
-    <value>Inactivo</value>
+    <value>Inativo</value>
   </data>
   <data name="IMPORTANT_MESSAGE" xml:space="preserve">
-    <value>Mensaje importante</value>
+    <value>Mensagem importante</value>
   </data>
   <data name="INITIALIZED" xml:space="preserve">
     <value>Inicializado</value>
   </data>
   <data name="INITIALIZING_APP_DB" xml:space="preserve">
-    <value>Inicializar la base de datos de la aplicación</value>
+    <value>Inicializando banco de dados do aplicativo</value>
   </data>
   <data name="INSERT_USB_DEVICE" xml:space="preserve">
-    <value>Primero inserte un dispositivo USB en su computadora y luego vuelva a instalar los archivos.</value>
+    <value>Insira primeiro um dispositivo USB em seu computador e, em seguida, reinstale os arquivos.</value>
   </data>
   <data name="INSERT_USB_DEVICE_TO_CONSOLE" xml:space="preserve">
-    <value>Uno o más archivos necesitan ser instalados en un dispositivo USB que esté conectado a tu consola.
-Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De lo contrario, haz clic en 'No' para ignorar estos archivos.</value>
+    <value>Um ou mais arquivos precisam ser instalados em um dispositivo USB que está conectado ao seu console.
+Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso contrário, clique em "Não" para ignorar esses arquivos.</value>
   </data>
   <data name="INSTALLED" xml:space="preserve">
     <value>Instalado</value>
@@ -692,82 +693,82 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
     <value>Instalando</value>
   </data>
   <data name="INSTALLING_BACKUP_FILE_LOCATION" xml:space="preserve">
-    <value>Instalando copia de seguridad: {0} de {1}</value>
+    <value>Instalando arquivo de backup: {0} para {1}</value>
   </data>
   <data name="INSTALLING_GAME_SAVE" xml:space="preserve">
-    <value>Instalando partida guardada</value>
+    <value>Instalando Dados Salvos do Jogo</value>
   </data>
   <data name="INSTALLING_MODS" xml:space="preserve">
     <value>Instalando mods</value>
   </data>
   <data name="INSTALLING_PACKAGE_FILE" xml:space="preserve">
-    <value>Instalando paquete</value>
+    <value>Instalando pacote</value>
   </data>
   <data name="INSTALL_CANCELED" xml:space="preserve">
-    <value>Instalación cancelada.</value>
+    <value>Instalação cancelada.</value>
   </data>
   <data name="INSTALL_FILE" xml:space="preserve">
-    <value>Instalar archivo</value>
+    <value>Instalar arquivo</value>
   </data>
   <data name="INSTALL_FILES" xml:space="preserve">
-    <value>Instalar archivos</value>
+    <value>Instalar arquivos</value>
   </data>
   <data name="INSTALL_FILES_TO_USB_DEVICE" xml:space="preserve">
-    <value>Instalar archivos a USB</value>
+    <value>Instalar arquivos no USB</value>
   </data>
   <data name="INSTALL_GAME_SAVES_TO_LOCAL_USB" xml:space="preserve">
-    <value>Instalar las partidas guardadas en un dispositivo USB local</value>
+    <value>Instalar Dados Salvos no Dispositivo USB Local</value>
   </data>
   <data name="INSTALL_HOMEBREW_TO_LOCAL_USB" xml:space="preserve">
-    <value>Instalar el Homebrew en un dispositivo USB local</value>
+    <value>Instalar homebrew no dispositivo USB local</value>
   </data>
   <data name="INSTALL_MODS_TO_LOCAL_USB" xml:space="preserve">
-    <value>Instalar mods de juegos/plugins en el dispositivo USB local</value>
+    <value>Instalar mods de jogos/plugins no dispositivo USB local</value>
   </data>
   <data name="INSTALL_MODS_TO_USB" xml:space="preserve">
-    <value>Instalar mods para USB</value>
+    <value>Instalar mods no USB</value>
   </data>
   <data name="INSTALL_PACKAGES_TO_LOCAL_USB" xml:space="preserve">
-    <value>Instalar paquetes en un dispositivo USB local</value>
+    <value>Instalar pacotes no dispositivo USB local</value>
   </data>
   <data name="INSTALL_RESOURCES_TO_LOCAL_USB" xml:space="preserve">
-    <value>Instalar recursos en el dispositivo USB local</value>
+    <value>Instalar recursos no dispositivo USB local</value>
   </data>
   <data name="INVALID_TITLE_ID" xml:space="preserve">
-    <value>ID inválido o no pudo ser encontrado. ¿Estás seguro de que este es un título ID válido de PS3?</value>
+    <value>ID inválido ou não pôde ser encontrado. Tem certeza de que este é um Título de ID válido do PS3?</value>
   </data>
   <data name="IP_GRABBER" xml:space="preserve">
-    <value>Capturador de IP</value>
+    <value>IP Grabber</value>
   </data>
   <data name="LABEL_ADDRESS_NAME" xml:space="preserve">
-    <value>Dirección IP/Nombre</value>
+    <value>Endereço/Nome Do IP</value>
   </data>
   <data name="LABEL_ADD_TO_FAVORITES" xml:space="preserve">
-    <value>Añadir a favoritos</value>
+    <value>Adicionar aos Favoritos</value>
   </data>
   <data name="LABEL_ADD_TO_MODULES" xml:space="preserve">
-    <value>Añadir a módulos</value>
+    <value>Adicionar aos Módulos</value>
   </data>
   <data name="LABEL_ALL" xml:space="preserve">
-    <value>Todo</value>
+    <value>Todos</value>
   </data>
   <data name="LABEL_ALL_REGIONS" xml:space="preserve">
-    <value>Todas las regiones</value>
+    <value>Todas as Regiões</value>
   </data>
   <data name="LABEL_APPLY" xml:space="preserve">
     <value>Aplicar</value>
   </data>
   <data name="LABEL_APPLY_CHEAT" xml:space="preserve">
-    <value>Aplicar truco</value>
+    <value>Ativar código</value>
   </data>
   <data name="LABEL_ASCENDING" xml:space="preserve">
-    <value>Ascendiendo</value>
+    <value>Crescente</value>
   </data>
   <data name="LABEL_BACKUP_FILE" xml:space="preserve">
-    <value>Copia de seguridad</value>
+    <value>Arquivo de backup</value>
   </data>
   <data name="LABEL_BASE_DIRECTORY" xml:space="preserve">
-    <value>Directorio base</value>
+    <value>Diretório-base</value>
   </data>
   <data name="LABEL_BYTES" xml:space="preserve">
     <value>Bytes</value>
@@ -776,139 +777,139 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
     <value>Cancelar</value>
   </data>
   <data name="LABEL_CATEGORY" xml:space="preserve">
-    <value>Categoría</value>
+    <value>Categoria</value>
   </data>
   <data name="LABEL_CHANGE" xml:space="preserve">
-    <value>Cambiar</value>
+    <value>Alterar</value>
   </data>
   <data name="LABEL_CHEATS" xml:space="preserve">
-    <value>Trucos</value>
+    <value>Códigos</value>
   </data>
   <data name="LABEL_CLOSE" xml:space="preserve">
-    <value>Cerrar</value>
+    <value>Fechar</value>
   </data>
   <data name="LABEL_CONNECTION_DETAILS" xml:space="preserve">
-    <value>Detalles de la conexión</value>
+    <value>Detalhes da conexão</value>
   </data>
   <data name="LABEL_CONNECTION_NAME" xml:space="preserve">
-    <value>Nombre de la conexión</value>
+    <value>Nome da conexão</value>
   </data>
   <data name="LABEL_CONTENT_ID" xml:space="preserve">
-    <value>ID del contenido</value>
+    <value>ID do conteúdo</value>
   </data>
   <data name="LABEL_CONTRIBUTORS" xml:space="preserve">
-    <value>Contribuidores</value>
+    <value>Colaboradores</value>
   </data>
   <data name="LABEL_COPIED" xml:space="preserve">
     <value>Copiado</value>
   </data>
   <data name="LABEL_COPY_SHA1" xml:space="preserve">
-    <value>Copiar SHA1 al portapapeles</value>
+    <value>Copiar SHA1 para Área de Transferência</value>
   </data>
   <data name="LABEL_COPY_URL" xml:space="preserve">
-    <value>Copiar URL al portapapeles</value>
+    <value>Copiar URL para Área de Transferência</value>
   </data>
   <data name="LABEL_CREATED_BY" xml:space="preserve">
-    <value>Creado por</value>
+    <value>Criado por</value>
   </data>
   <data name="LABEL_CREATED_ON" xml:space="preserve">
-    <value>Creado en</value>
+    <value>Criado em</value>
   </data>
   <data name="LABEL_CREATOR" xml:space="preserve">
-    <value>Creador</value>
+    <value>Criador</value>
   </data>
   <data name="LABEL_DEFAULT" xml:space="preserve">
-    <value>Predeterminado</value>
+    <value>Padrão</value>
   </data>
   <data name="LABEL_DEFAULT_CONSOLE" xml:space="preserve">
-    <value>Consola predeterminada</value>
+    <value>Console padrão</value>
   </data>
   <data name="LABEL_DELETE" xml:space="preserve">
-    <value>Eliminar</value>
+    <value>Excluir</value>
   </data>
   <data name="LABEL_DELETE_ALL" xml:space="preserve">
-    <value>Eliminar todo</value>
+    <value>Excluir Tudo</value>
   </data>
   <data name="LABEL_DESCENDING" xml:space="preserve">
-    <value>Descendiendo</value>
+    <value>Decrescente</value>
   </data>
   <data name="LABEL_DESCRIPTION" xml:space="preserve">
-    <value>Descripción</value>
+    <value>Descrição</value>
   </data>
   <data name="LABEL_DIRECTORIES" xml:space="preserve">
-    <value>Directorios</value>
+    <value>Diretórios</value>
   </data>
   <data name="LABEL_DIRECTORY" xml:space="preserve">
-    <value>Directorio</value>
+    <value>Diretório</value>
   </data>
   <data name="LABEL_DOWNLOAD" xml:space="preserve">
-    <value>Descargar</value>
+    <value>Baixar</value>
   </data>
   <data name="LABEL_DOWNLOADED" xml:space="preserve">
-    <value>Descargado</value>
+    <value>Baixado</value>
   </data>
   <data name="LABEL_DOWNLOADED_ON" xml:space="preserve">
-    <value>Descargado en</value>
+    <value>Baixado em</value>
   </data>
   <data name="LABEL_DOWNLOADING" xml:space="preserve">
-    <value>Descargando</value>
+    <value>Baixando</value>
   </data>
   <data name="LABEL_DOWNLOADS" xml:space="preserve">
-    <value>Descargas</value>
+    <value>Downloads</value>
   </data>
   <data name="LABEL_DOWNLOAD_FILE" xml:space="preserve">
-    <value>Descargar archivo</value>
+    <value>Baixar arquivo</value>
   </data>
   <data name="LABEL_DOWNLOAD_FILES" xml:space="preserve">
-    <value>Descargar archivos</value>
+    <value>Baixar arquivos</value>
   </data>
   <data name="LABEL_EDIT" xml:space="preserve">
     <value>Editar</value>
   </data>
   <data name="LABEL_EDIT_NAME" xml:space="preserve">
-    <value>Editar nombre</value>
+    <value>Editar Nome</value>
   </data>
   <data name="LABEL_FAVORITE" xml:space="preserve">
     <value>Favorito</value>
   </data>
   <data name="LABEL_FILE" xml:space="preserve">
-    <value>Archivo</value>
+    <value>Arquivo</value>
   </data>
   <data name="LABEL_FILES" xml:space="preserve">
-    <value>Archivos</value>
+    <value>Arquivos</value>
   </data>
   <data name="LABEL_FILE_NAME" xml:space="preserve">
-    <value>Nombre del archivo</value>
+    <value>Nome do arquivo</value>
   </data>
   <data name="LABEL_FILE_PATH" xml:space="preserve">
-    <value>Ruta del archivo</value>
+    <value>Caminho do Arquivo</value>
   </data>
   <data name="LABEL_FILE_SIZE" xml:space="preserve">
-    <value>Tamaño del archivo</value>
+    <value>Tamanho</value>
   </data>
   <data name="LABEL_GAME" xml:space="preserve">
-    <value>Juego</value>
+    <value>Jogo</value>
   </data>
   <data name="LABEL_GAMES" xml:space="preserve">
-    <value>Juegos</value>
+    <value>Jogos</value>
   </data>
   <data name="LABEL_GAME_CHEATS" xml:space="preserve">
-    <value>Trucos del juego</value>
+    <value>Códigos</value>
   </data>
   <data name="LABEL_GAME_FILE" xml:space="preserve">
-    <value>Archivo del juego</value>
+    <value>Arquivo do jogo</value>
   </data>
   <data name="LABEL_GAME_MODE" xml:space="preserve">
-    <value>Modo de juego</value>
+    <value>Modo de jogo</value>
   </data>
   <data name="LABEL_GAME_MODS" xml:space="preserve">
-    <value>Mods del juego</value>
+    <value>Mods de jogos</value>
   </data>
   <data name="LABEL_GAME_SAVES" xml:space="preserve">
-    <value>Partidas guardadas</value>
+    <value>Jogos salvos</value>
   </data>
   <data name="LABEL_GAME_TITLE" xml:space="preserve">
-    <value>Título del juego</value>
+    <value>Título do Jogo</value>
   </data>
   <data name="LABEL_HIDE_FAVORITES" xml:space="preserve">
     <value>Ocultar favoritos</value>
@@ -917,61 +918,61 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
     <value>Homebrew</value>
   </data>
   <data name="LABEL_IMAGE" xml:space="preserve">
-    <value>Imagen</value>
+    <value>Imagem</value>
   </data>
   <data name="LABEL_IMAGE_SIZE_TOO_BIG" xml:space="preserve">
-    <value>¡El tamaño del archivo de la imagen es demasiado grande!</value>
+    <value>O tamanho do arquivo de imagem é muito grande!</value>
   </data>
   <data name="LABEL_IMPORT_FROM_KV_FILE" xml:space="preserve">
-    <value>Importar de archivo KV</value>
+    <value>Importar de um arquivo KV</value>
   </data>
   <data name="LABEL_INSTALL" xml:space="preserve">
     <value>Instalar</value>
   </data>
   <data name="LABEL_INSTALLATION_FILES" xml:space="preserve">
-    <value>Archivos de instalación</value>
+    <value>Arquivos de instalação</value>
   </data>
   <data name="LABEL_INSTALLED" xml:space="preserve">
     <value>Instalado</value>
   </data>
   <data name="LABEL_INSTALLED_ON" xml:space="preserve">
-    <value>Instalado en</value>
+    <value>Instalado em</value>
   </data>
   <data name="LABEL_INSTALL_FILE" xml:space="preserve">
-    <value>Instalar archivo</value>
+    <value>Instalar arquivo</value>
   </data>
   <data name="LABEL_IP_ADDRESS" xml:space="preserve">
-    <value>Dirección IP</value>
+    <value>Endereço IP</value>
   </data>
   <data name="LABEL_LAST_MODIFIED" xml:space="preserve">
-    <value>Modificado en</value>
+    <value>Modificado em</value>
   </data>
   <data name="LABEL_LAST_UPDATED" xml:space="preserve">
-    <value>Última actualización</value>
+    <value>Última atualização</value>
   </data>
   <data name="LABEL_LAUNCH_GAME" xml:space="preserve">
-    <value>Iniciar el juego</value>
+    <value>Iniciar jogo</value>
   </data>
   <data name="LABEL_LIBRARIES" xml:space="preserve">
-    <value>Librerías</value>
+    <value>Bibliotecas</value>
   </data>
   <data name="LABEL_LOAD_MODULE" xml:space="preserve">
-    <value>Cargar módulo</value>
+    <value>Carregar Módulo</value>
   </data>
   <data name="LABEL_LOGIN" xml:space="preserve">
-    <value>Iniciar sesión</value>
+    <value>Login</value>
   </data>
   <data name="LABEL_LOGIN_DETAILS" xml:space="preserve">
-    <value>Detalles de acceso</value>
+    <value>Detalhes de login</value>
   </data>
   <data name="LABEL_MINIMUM_FIRMWARE" xml:space="preserve">
-    <value>FW mínimo</value>
+    <value>Mínimo FW</value>
   </data>
   <data name="LABEL_MIN_FW" xml:space="preserve">
-    <value>Mín. FW</value>
+    <value>Min. FW</value>
   </data>
   <data name="LABEL_MODIFIED_DATE" xml:space="preserve">
-    <value>Fecha modificada</value>
+    <value>Modificação</value>
   </data>
   <data name="LABEL_MODULES" xml:space="preserve">
     <value>Módulos</value>
@@ -980,24 +981,24 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
     <value>Tipo de mod</value>
   </data>
   <data name="LABEL_NAME" xml:space="preserve">
-    <value>Nombre</value>
+    <value>Nome</value>
   </data>
   <data name="LABEL_NEW_FOLDER" xml:space="preserve">
-    <value>Nueva carpeta</value>
+    <value>Nova pasta</value>
   </data>
   <data name="LABEL_NEXT" xml:space="preserve">
-    <value>Siguiente</value>
+    <value>Avançar</value>
   </data>
   <data name="LABEL_NONE" xml:space="preserve">
-    <value>Ninguno</value>
+    <value>Nenhum</value>
   </data>
   <data name="LABEL_NOT_INSTALLED" xml:space="preserve">
-    <value>No instalado</value>
+    <value>Não Instalado</value>
   </data>
   <data name="LABEL_NO_GAMES" xml:space="preserve">
-    <value>No hay juegos añadidos aún.
+    <value>Nenhum jogo adicionado.
 
-Puedes añadirlos usando el administrador de archivos.</value>
+Você pode usar o Gerenciador de Arquivos para adicionar um jogo.</value>
   </data>
   <data name="LABEL_OK" xml:space="preserve">
     <value>OK</value>
@@ -1006,19 +1007,19 @@ Puedes añadirlos usando el administrador de archivos.</value>
     <value>Abrir</value>
   </data>
   <data name="LABEL_OPEN_EXPLORER" xml:space="preserve">
-    <value>Abrir explorador</value>
+    <value>Explorador</value>
   </data>
   <data name="LABEL_OPEN_PATH" xml:space="preserve">
-    <value>Abrir ruta</value>
+    <value>Abrir caminho</value>
   </data>
   <data name="LABEL_OPEN_PROFILE" xml:space="preserve">
-    <value>Abrir perfil</value>
+    <value>Abrir Perfil</value>
   </data>
   <data name="LABEL_PACKAGES" xml:space="preserve">
-    <value>Paquetes</value>
+    <value>Pacotes</value>
   </data>
   <data name="LABEL_PASSWORD" xml:space="preserve">
-    <value>Contraseña</value>
+    <value>Senha</value>
   </data>
   <data name="LABEL_PLATFORM" xml:space="preserve">
     <value>Plataforma</value>
@@ -1030,190 +1031,190 @@ Puedes añadirlos usando el administrador de archivos.</value>
     <value>Plugins</value>
   </data>
   <data name="LABEL_PREVIOUS" xml:space="preserve">
-    <value>Previo</value>
+    <value>Anterior</value>
   </data>
   <data name="LABEL_REFRESH" xml:space="preserve">
-    <value>Actualizar</value>
+    <value>Atualizar</value>
   </data>
   <data name="LABEL_REGION" xml:space="preserve">
-    <value>Región</value>
+    <value>Região</value>
   </data>
   <data name="LABEL_REMOVE_FROM_FAVORITES" xml:space="preserve">
-    <value>Eliminar de favoritos</value>
+    <value>Remover dos favoritos</value>
   </data>
   <data name="LABEL_RENAME" xml:space="preserve">
-    <value>Renombrar</value>
+    <value>Renomear</value>
   </data>
   <data name="LABEL_REPORT" xml:space="preserve">
     <value>Reportar</value>
   </data>
   <data name="LABEL_REPORT_ISSUE" xml:space="preserve">
-    <value>Reportar problema</value>
+    <value>Relatar Problema</value>
   </data>
   <data name="LABEL_RESOURCES" xml:space="preserve">
     <value>Recursos</value>
   </data>
   <data name="LABEL_RESTORE_BACKUP" xml:space="preserve">
-    <value>Restaurar copia de seguridad</value>
+    <value>Recuperar Backup</value>
   </data>
   <data name="LABEL_RESTORE_DEFAULT" xml:space="preserve">
-    <value>Restaurar valores predeterminados</value>
+    <value>Restaurar padrão</value>
   </data>
   <data name="LABEL_RESTORE_FILE" xml:space="preserve">
-    <value>Restaurar archivo</value>
+    <value>Restaurar arquivo</value>
   </data>
   <data name="LABEL_RING_BUZZER" xml:space="preserve">
-    <value>Ring Buzzer</value>
+    <value>Campainha de toque</value>
   </data>
   <data name="LABEL_SAVE_AND_UPDATE" xml:space="preserve">
-    <value>Guardar y actualizar</value>
+    <value>Salvar e atualizar</value>
   </data>
   <data name="LABEL_SAVE_FILE" xml:space="preserve">
-    <value>Guardar archivo</value>
+    <value>Salvar Arquivo</value>
   </data>
   <data name="LABEL_SAVE_PROFILE" xml:space="preserve">
-    <value>Guardar perfil</value>
+    <value>Salvar perfil</value>
   </data>
   <data name="LABEL_SEARCH" xml:space="preserve">
-    <value>Buscar</value>
+    <value>Pesquisar</value>
   </data>
   <data name="LABEL_SEARCHING" xml:space="preserve">
-    <value>Buscando...</value>
+    <value>Pesquisando...</value>
   </data>
   <data name="LABEL_SEARCH_SUCCESS" xml:space="preserve">
-    <value>Elementos obtenidos con éxito.</value>
+    <value>Itens obtidos com sucesso.</value>
   </data>
   <data name="LABEL_SET" xml:space="preserve">
-    <value>Establecer</value>
+    <value>Definir</value>
   </data>
   <data name="LABEL_SET_FAN_SPEED" xml:space="preserve">
-    <value>Establecer velocidad del ventilador</value>
+    <value>Definir velocidade do ventilador</value>
   </data>
   <data name="LABEL_SET_LEDS" xml:space="preserve">
-    <value>Establecer LEDs</value>
+    <value>Configurar LEDs</value>
   </data>
   <data name="LABEL_SET_VALUE" xml:space="preserve">
-    <value>Establecer valor</value>
+    <value>Definir valor</value>
   </data>
   <data name="LABEL_SHOW_FAVORITES" xml:space="preserve">
-    <value>Mostrar favoritos</value>
+    <value>Mostrar Favoritos</value>
   </data>
   <data name="LABEL_SIZE" xml:space="preserve">
-    <value>Tamaño</value>
+    <value>Tamanho</value>
   </data>
   <data name="LABEL_SORT_BY" xml:space="preserve">
     <value>Ordenar por</value>
   </data>
   <data name="LABEL_SORT_OPTIONS" xml:space="preserve">
-    <value>Opciones de clasificación</value>
+    <value>Classificar</value>
   </data>
   <data name="LABEL_SORT_ORDER" xml:space="preserve">
-    <value>Orden de clasificación</value>
+    <value>Classificar por</value>
   </data>
   <data name="LABEL_STATUS" xml:space="preserve">
-    <value>Estado</value>
+    <value>Status</value>
   </data>
   <data name="LABEL_SUBMITTED_BY" xml:space="preserve">
-    <value>Presentado por</value>
+    <value>Enviado por</value>
   </data>
   <data name="LABEL_SYSTEM_TYPE" xml:space="preserve">
-    <value>Tipo de sistema</value>
+    <value>Tipo de Sistema</value>
   </data>
   <data name="LABEL_TITLE" xml:space="preserve">
     <value>Título</value>
   </data>
   <data name="LABEL_TITLE_ID" xml:space="preserve">
-    <value>ID del título</value>
+    <value>Título ID</value>
   </data>
   <data name="LABEL_TOTAL_FILES" xml:space="preserve">
-    <value>Archivos totales</value>
+    <value>Total de arquivos</value>
   </data>
   <data name="LABEL_TRANSLATORS" xml:space="preserve">
-    <value>Traductores</value>
+    <value>Tradutores</value>
   </data>
   <data name="LABEL_TYPE" xml:space="preserve">
     <value>Tipo</value>
   </data>
   <data name="LABEL_UNFAVORITE" xml:space="preserve">
-    <value>Eliminar de favorito</value>
+    <value>Desfavoritar</value>
   </data>
   <data name="LABEL_UNLOAD_MODULE" xml:space="preserve">
-    <value>Descargar módulo</value>
+    <value>Descarregar Módulo</value>
   </data>
   <data name="LABEL_UPLOAD" xml:space="preserve">
-    <value>Subir</value>
+    <value>Carregar</value>
   </data>
   <data name="LABEL_USERNAME" xml:space="preserve">
-    <value>Nombre de usuario</value>
+    <value>Nome de usuário</value>
   </data>
   <data name="LABEL_USE_DEFAULT" xml:space="preserve">
-    <value>Usar por defecto</value>
+    <value>Usar padrão</value>
   </data>
   <data name="LABEL_VERSION" xml:space="preserve">
-    <value>Versión</value>
+    <value>Versão</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
     <value>Idioma</value>
   </data>
   <data name="LANGUAGE_HELP" xml:space="preserve">
-    <value>Lo sentimos, pero este idioma aún no está soportado. Si deseas ayudarnos a agregar este idioma, ¡únete a nuestro servidor de Discord y háznoslo saber!</value>
+    <value>Desculpe, mas este idioma ainda não é suportado. Se você gostaria de nos ajudar a adicionar este idioma, entre no nosso servidor do Discord e nos avise!</value>
   </data>
   <data name="LANGUAGE_NOT_SUPPORTED" xml:space="preserve">
-    <value>Idioma no soportado</value>
+    <value>Idioma Sem Suporte</value>
   </data>
   <data name="LAST_UPDATED" xml:space="preserve">
-    <value>Última actualización</value>
+    <value>Última atualização</value>
   </data>
   <data name="LAUNCH_FILE_PATH" xml:space="preserve">
-    <value>Ruta del archivo launch.ini</value>
+    <value>Caminho do arquivo launch.ini</value>
   </data>
   <data name="LAUNCH_FILE_SAVED" xml:space="preserve">
-    <value>El archivo launch.ini ha sido editado y subido a tu consola.</value>
+    <value>O arquivo launch.ini foi editado e carregado para o seu console.</value>
   </data>
   <data name="MESSAGE" xml:space="preserve">
-    <value>Mensaje</value>
+    <value>Mensagem</value>
   </data>
   <data name="MISSING" xml:space="preserve">
-    <value>FALTA</value>
+    <value>SUMIU</value>
   </data>
   <data name="MODDING_TOOLS" xml:space="preserve">
-    <value>Herramientas de modding</value>
+    <value>Ferramentas de modding</value>
   </data>
   <data name="MODULE_ALREADY_LOADED" xml:space="preserve">
-    <value>El módulo ya ha sido cargado.</value>
+    <value>O módulo já foi carregado.</value>
   </data>
   <data name="MODULE_LOADED" xml:space="preserve">
-    <value>El módulo ya ha sido cargado.</value>
+    <value>O módulo já foi carregado.</value>
   </data>
   <data name="MODULE_LOADER" xml:space="preserve">
-    <value>Cargador de módulo</value>
+    <value>Carregador de Módulos</value>
   </data>
   <data name="MODULE_LOAD_ERROR" xml:space="preserve">
-    <value>Incapaz de cargar el módulo.
+    <value>Não foi possível carregar o módulo.
 
-Error: {0}</value>
+Erro: {0}</value>
   </data>
   <data name="MODULE_LOAD_SUCCESS" xml:space="preserve">
-    <value>Módulo cargado con éxito.</value>
+    <value>Módulo carregado com sucesso.</value>
   </data>
   <data name="MODULE_NOT_LOADED" xml:space="preserve">
-    <value>El módulo no ha sido cargado.</value>
+    <value>O módulo não foi carregado.</value>
   </data>
   <data name="MODULE_UNLOAD_ERROR" xml:space="preserve">
-    <value>Incapaz de descargar el módulo.
+    <value>Não foi possível descarregar o módulo.
 
-Error: {0}</value>
+Erro: {0}</value>
   </data>
   <data name="MODULE_UNLOAD_SUCCESS" xml:space="preserve">
-    <value>Módulo descargado con éxito.</value>
+    <value>Módulo descarregado com sucesso.</value>
   </data>
   <data name="MOD_NOT_INSTALLED" xml:space="preserve">
-    <value>{0} no está instalado en tu consola.
+    <value>{0} não está instalado em seu console.
 
-¿Quieres intentar desinstalar el(los) archivo(s) de todas formas?</value>
+Você quer tentar desinstalar o(s) arquivo(s) mesmo assim?</value>
   </data>
   <data name="MOTHERBOARD" xml:space="preserve">
-    <value>Tarjeta madre</value>
+    <value>Placa-mãe</value>
   </data>
   <data name="MOUNT_BD" xml:space="preserve">
     <value>Montar BD</value>
@@ -1225,22 +1226,22 @@ Error: {0}</value>
     <value>Montar PSN</value>
   </data>
   <data name="NAVIGATION_DASHBOARD" xml:space="preserve">
-    <value>TABLERO</value>
+    <value>PAINEL</value>
   </data>
   <data name="NAVIGATION_DOWNLOADS" xml:space="preserve">
-    <value>DESCARGAS</value>
+    <value>DOWNLOADS</value>
   </data>
   <data name="NAVIGATION_FILE_MANAGER" xml:space="preserve">
-    <value>ADMINISTRADOR DE ARCHIVOS</value>
+    <value>GERENC. DE ARQUIVOS</value>
   </data>
   <data name="NAVIGATION_GAME_CHEATS" xml:space="preserve">
-    <value>TRUCOS DE JUEGOS</value>
+    <value>CÓDIGOS</value>
   </data>
   <data name="NAVIGATION_GAME_MODS" xml:space="preserve">
-    <value>MODS DE JUEGOS</value>
+    <value>MODS DE JOGOS</value>
   </data>
   <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
-    <value>PARTIDAS GUARDADAS</value>
+    <value>JOGOS SALVOS</value>
   </data>
   <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
     <value>HOMEBREW</value>
@@ -1249,7 +1250,7 @@ Error: {0}</value>
     <value>MODS INSTALADOS</value>
   </data>
   <data name="NAVIGATION_PACKAGES" xml:space="preserve">
-    <value>PAQUETES</value>
+    <value>PACOTES</value>
   </data>
   <data name="NAVIGATION_PLUGINS" xml:space="preserve">
     <value>PLUGINS</value>
@@ -1258,321 +1259,321 @@ Error: {0}</value>
     <value>RECURSOS</value>
   </data>
   <data name="NAVIGATION_SETTINGS" xml:space="preserve">
-    <value>AJUSTES</value>
+    <value>CONFIGURAÇÕES</value>
   </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
-    <value>Make sure Neighborhood is installed on your computer</value>
+    <value>Certifique-se de que o Vizinho está instalado no seu computador</value>
   </data>
   <data name="NOTICE_INSTALL_REBUG_FILES" xml:space="preserve">
-    <value>Estos archivos están siendo instalados en la carpeta firmware (dev_rebug) que es solamente para REBUG Custom Firmware. Por favor, lee todo lo de abajo antes de proceder.
+    <value>Esses arquivos estão sendo instalados na pasta de firmware (dev_rebug) que é somente para REBUG Custom Firmware. Por favor, leia tudo abaixo antes de prosseguir.
 
-- Se recomienda crear primero una copia de seguridad de toda la carpeta antes de instalar cualquier archivo.
-- Tu consola debe estar ejecutando un firmware personalizado de Rebug.
-- REBUG TOOLBOX debe estar abierto durante la instalación
-- Cualquier archivo faltante o corrupto en esta carpeta puede afectar al rendimiento de la consola.
-- Si tienes problemas después de reiniciar la consola, entra en el modo de recuperación y reinstala el firmware personalizado.
+- É recomendado criar primeiro um backup da pasta inteira antes de instalar qualquer arquivo.
+- Seu console deve estar executando o custom firmware do Rebug
+- REBUG TOOLBOX deve ser aberto durante a instalação
+- Qualquer arquivo ausente ou corrompido nesta pasta pode afetar o desempenho do console.
+- Se você tiver problemas depois de reiniciar o console, entre no modo de recuperação e reinstale o custom firmware.
 
-Sólo continúa bajo tu propio riesgo y solo si sabes lo que estás haciendo.
+Só continue por sua conta e risco e somente se você souber o que está fazendo.
 
-¿Quieres continuar?</value>
+Você quer continuar?</value>
   </data>
   <data name="NOTIFY_ICON" xml:space="preserve">
-    <value>Notificar icono</value>
+    <value>Ícone de notificação</value>
   </data>
   <data name="NOTIFY_MESSAGE" xml:space="preserve">
-    <value>Notificar mensaje</value>
+    <value>Notificação de mensagem</value>
   </data>
   <data name="NOT_CONNECTED" xml:space="preserve">
-    <value>No conectado</value>
+    <value>Não conectado</value>
   </data>
   <data name="NOT_SUPPORTED_GAME_REGION" xml:space="preserve">
-    <value>La región del juego no está soportada.</value>
+    <value>Não há suporte para esta região do jogo.</value>
   </data>
   <data name="NO_ANNOUNCEMENTS" xml:space="preserve">
-    <value>SIN ANUNCIOS</value>
+    <value>NÃO HÁ COMUNICADOS</value>
   </data>
   <data name="NO_BACKUP_FILE" xml:space="preserve">
-    <value>No hay copia de seguridad</value>
+    <value>Nenhum Arquivo de Backup</value>
   </data>
   <data name="NO_BACKUP_FILE_FOUND" xml:space="preserve">
-    <value>No tienes una copia de seguridad para el: {0} archivo. Este archivo se ignorará para evitar problemas con los archivos del juego que faltan. Debes instalar la actualización del juego para restaurar el archivo original.</value>
+    <value>Você não tem um ‘backup’ para o arquivo {0}. Este arquivo será ignorado para evitar problemas com arquivos de jogo faltando. Você precisa instalar a atualização do jogo para restaurar o arquivo original.</value>
   </data>
   <data name="NO_CONSOLE_CONNECTED" xml:space="preserve">
-    <value>Ninguna consola conectada</value>
+    <value>Não há Console Conectado</value>
   </data>
   <data name="NO_CONSOLE_PROFILE" xml:space="preserve">
-    <value>Sin perfil de consola</value>
+    <value>Nenhum Perfil de Console</value>
   </data>
   <data name="NO_CONSOLE_PROFILES" xml:space="preserve">
-    <value>SIN PERFILES DE CONSOLA</value>
+    <value>NENHUM PERFIL DE CONSOLE</value>
   </data>
   <data name="NO_DOWNLOAD_FILES_SELECTED" xml:space="preserve">
-    <value>No se seleccionó ninguna descarga de archivo.</value>
+    <value>Nenhum arquivo de download selecionado.</value>
   </data>
   <data name="NO_GAME_REGION_FOLDER_FOUND" xml:space="preserve">
-    <value>Incapaz de encontrar la carpeta de actualización del juego para esta región.
+    <value>Não foi possível encontrar a pasta de atualização do jogo para esta região.
 
-Instala los mods correctos para este juego o elige una región de juego diferente.</value>
+Instale os mods corretos para este jogo ou escolha uma região de jogo diferente.</value>
   </data>
   <data name="NO_GAME_REGION_FOUND" xml:space="preserve">
-    <value>La región del juego no se puede encontrar en la consola.</value>
+    <value>A região do jogo não foi encontrada no console.</value>
   </data>
   <data name="NO_GAME_REGION_SELECTED" xml:space="preserve">
-    <value>No se seleccionó ninguna región del juego.</value>
+    <value>Nenhuma região do jogo selecionada.</value>
   </data>
   <data name="NO_INPUT" xml:space="preserve">
-    <value>Sin entrada</value>
+    <value>Sem Entrada</value>
   </data>
   <data name="NO_INTERNET_CONNECTION" xml:space="preserve">
-    <value>Debe estar conectado a Internet para usar esta aplicación.</value>
+    <value>Você precisa estar conectado à Internet para usar este aplicativo.</value>
   </data>
   <data name="NO_INTERNET_CONNECTION_TITLE" xml:space="preserve">
-    <value>No se ha detectado Internet</value>
+    <value>Internet não detectada</value>
   </data>
   <data name="NO_LISTS" xml:space="preserve">
-    <value>No tienes listas</value>
+    <value>Você não possui listas</value>
   </data>
   <data name="NO_MORE_DETAILS" xml:space="preserve">
-    <value>No hay más detalles disponibles, por ahora... ¡Por favor, háznoslo saber si puedes proporcionar más!</value>
+    <value>Nenhum outro detalhe está disponível ainda... Avise-nos se você pode fornecer mais!</value>
   </data>
   <data name="NO_NEWS_IS_GOOD_NEWS" xml:space="preserve">
-    <value>¡Sin noticias son buenas noticias!</value>
+    <value>A falta de notícia é uma ótima notícia!</value>
   </data>
   <data name="NO_PREVIOUS_INSTALL_FOUND" xml:space="preserve">
-    <value>No se encontró ninguna instalación previa.</value>
+    <value>Nenhuma instalação anterior encontrada.</value>
   </data>
   <data name="NO_USB_DEVICES" xml:space="preserve">
-    <value>Sin dispositivos USB</value>
+    <value>Não há dispositivos USB</value>
   </data>
   <data name="NO_USB_DEVICES_CONNECTED" xml:space="preserve">
-    <value>No hay dispositivos USB conectados.</value>
+    <value>Não há dispositivos USB conectados.</value>
   </data>
   <data name="NO_USB_DEVICE_FOUND" xml:space="preserve">
-    <value>No se encontró ningún dispositivo USB.</value>
+    <value>Nenhum dispositivo USB encontrado.</value>
   </data>
   <data name="NO_USB_DEVICE_SELECTED" xml:space="preserve">
-    <value>Ningún dispositivo USB seleccionado.</value>
+    <value>Nenhum dispositivo USB selecionado.</value>
   </data>
   <data name="NO_USER_PROFILE_SELECTED" xml:space="preserve">
-    <value>Ningún perfil de usuario seleccionado.</value>
+    <value>Nenhum perfil selecionado.</value>
   </data>
   <data name="OPEN_FILE" xml:space="preserve">
-    <value>Abrir archivo</value>
+    <value>Abrir Arquivo</value>
   </data>
   <data name="OPEN_FOLDER" xml:space="preserve">
-    <value>Abrir carpeta</value>
+    <value>Abrir Pasta</value>
   </data>
   <data name="OVERWRITE_MODS" xml:space="preserve">
-    <value>Sobrescribir mods</value>
+    <value>Substituir mods</value>
   </data>
   <data name="PACKAGES_INSTALL_FILE_PATH" xml:space="preserve">
-    <value>Ruta del archivo de instalación de paquetes</value>
+    <value>Caminho do arquivo de instalação de pacotes</value>
   </data>
   <data name="PACKAGE_FILES" xml:space="preserve">
-    <value>Archivos de paquete</value>
+    <value>Pacote de Arquivos</value>
   </data>
   <data name="PACKAGE_FILE_MANAGER" xml:space="preserve">
-    <value>Administrador de archivos de paquetes</value>
+    <value>Gerenciador de Pacote de Arquivos</value>
   </data>
   <data name="POWER" xml:space="preserve">
-    <value>Potencia</value>
+    <value>Liga/Desliga</value>
   </data>
   <data name="PREPARING_DOWNLOAD" xml:space="preserve">
-    <value>Preparándose para descargar el archivo...</value>
+    <value>Preparando para baixar o arquivo...</value>
   </data>
   <data name="PREPARING_INSTALL" xml:space="preserve">
-    <value>Preparándose para instalar archivos...</value>
+    <value>Preparando para instalar arquivos...</value>
   </data>
   <data name="PREPARING_UNINSTALL" xml:space="preserve">
-    <value>Preparándose para desinstalar archivos...</value>
+    <value>Preparando para desinstalar arquivos...</value>
   </data>
   <data name="PROFILE_ADD_INSTRUCTION" xml:space="preserve">
-    <value>Haz clic en 'Agregar nuevo perfil' para crear uno</value>
+    <value>Clique em "Adic. novo perfil" para criar um</value>
   </data>
   <data name="PROFILE_ADD_NEW" xml:space="preserve">
-    <value>Añadir nuevo perfil</value>
+    <value>Adic. novo perfil</value>
   </data>
   <data name="PROFILE_DELETE" xml:space="preserve">
-    <value>Eliminar perfil</value>
+    <value>Excluir perfil</value>
   </data>
   <data name="PROFILE_EDIT" xml:space="preserve">
     <value>Editar perfil</value>
   </data>
   <data name="QUICK_REBOOT" xml:space="preserve">
-    <value>Reinicio rápido</value>
+    <value>Reinicialização rápida</value>
   </data>
   <data name="QUICK_SETTINGS" xml:space="preserve">
-    <value>Ajustes rápidos</value>
+    <value>Configurações rápidas</value>
   </data>
   <data name="READY_TO_CONNECT" xml:space="preserve">
-    <value>Preparado para conectar...</value>
+    <value>Pronto para conectar...</value>
   </data>
   <data name="READY_TO_START_GAME" xml:space="preserve">
-    <value>Preparado para iniciar el juego.</value>
+    <value>Pronto para iniciar o jogo.</value>
   </data>
   <data name="RECONNECT_CONSOLE" xml:space="preserve">
-    <value>Reconectar consola</value>
+    <value>Reconectar console</value>
   </data>
   <data name="REDIRECTING" xml:space="preserve">
-    <value>Redireccionando...</value>
+    <value>Redirecionando...</value>
   </data>
   <data name="REDIRECT_TO_GITHUB_ISSUES" xml:space="preserve">
-    <value>Ahora serás redirigido a nuestra página de problemas de GitHub y todos los detalles se completarán automáticamente para ti. Por favor, proporciona la información sobre el problema para ayudarnos a solucionarlo.
+    <value>Agora você será redirecionado para nossa página de Problemas do GitHub e todos os detalhes serão preenchidos automaticamente para você. Forneça informações sobre o problema para nos ajudar a corrigir o problema.
 
-Haz clic en el botón 'Enviar' para abrir un nuevo problema que puede ayudarnos a solucionar cualquier problema.</value>
+Clique no botão 'Enviar' para abrir um novo problema que pode nos ajudar a corrigir quaisquer problemas.</value>
   </data>
   <data name="REFER_TO_BASE_DIRECTORY" xml:space="preserve">
-    <value>Utilizar %BASE_DIR% para hacer referencia al directorio base.</value>
+    <value>Use %BASE_DIR% para se referir ao diretório base.</value>
   </data>
   <data name="REINSTALL_FILE" xml:space="preserve">
-    <value>Reinstalar archivo</value>
+    <value>Reinstalar arquivo</value>
   </data>
   <data name="REMEMBER_CONSOLE_DIRECTORY_PATH" xml:space="preserve">
-    <value>Recordar la última ruta del directorio de la consola</value>
+    <value>Lembrar do último diretório do console</value>
   </data>
   <data name="REMEMBER_GAME_REGIONS_WHEN_INSTALLING" xml:space="preserve">
-    <value>Recordar las regiones del juego al instalar</value>
+    <value>Lembrar regiões dos jogos ao instalar</value>
   </data>
   <data name="REMEMBER_LOCAL_DIRECTORY_PATH" xml:space="preserve">
-    <value>Recordar la última ruta del directorio local</value>
+    <value>Lembrar o último caminho do diretório local</value>
   </data>
   <data name="REPLACE_IMAGE" xml:space="preserve">
-    <value>Reemplazar imagen</value>
+    <value>Substituir imagem</value>
   </data>
   <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
-    <value>Los archivos se han instalado en un dispositivo USB conectado a tu consola. Puedes desinstalarlos ahora o eliminarlos manualmente.
+    <value>Os arquivos foram instalados em um dispositivo USB conectado ao console. Você pode desinstalá-los agora ou excluí-los manualmente.
 
-Si deseas desinstalar los archivos ahora, conecta el mismo dispositivo USB en el que instalaste los mods en el mismo puerto de tu consola y haz clic en 'Sí' para continuar.
-Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos estos archivos.</value>
+Se você gostaria de desinstalar os arquivos agora, conecte o mesmo dispositivo USB que você instalou os mods na mesma porta do seu console e clique em 'Sim' para continuar.
+Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arquivos serão ignorados.</value>
   </data>
   <data name="RESTART" xml:space="preserve">
     <value>Reiniciar</value>
   </data>
   <data name="RESTART_REQUIRED" xml:space="preserve">
-    <value>Reinicio requerido</value>
+    <value>Reinicialização necessária</value>
   </data>
   <data name="RESTART_TAKE_AFFECT" xml:space="preserve">
-    <value>Debes reiniciar la aplicación para que este cambio surta efecto. ¿Quieres reiniciar ahora?</value>
+    <value>Você deve reiniciar o aplicativo para que esta alteração tenha efeito. Deseja reiniciar agora?</value>
   </data>
   <data name="RESTORE_BACKUP_FILE" xml:space="preserve">
-    <value>¿Realmente quieres restaurar el archivo de copia de seguridad? Todos los cambios se perderán.</value>
+    <value>Você realmente deseja restaurar o arquivo de backup? Todas as alterações serão perdidas.</value>
   </data>
   <data name="RESTORE_DEFAULT_FILE" xml:space="preserve">
-    <value>¿Realmente quieres restaurar al archivo por defecto? Todos los cambios se perderán.</value>
+    <value>Tem certeza de que deseja restaurar o arquivo padrão? Todas as alterações serão perdidas.</value>
   </data>
   <data name="RICH_PRESENCE" xml:space="preserve">
     <value>Rich Presence</value>
   </data>
   <data name="SCANNING_XBOX_CONSOLES" xml:space="preserve">
-    <value>Escaneando por consolas Xbox...</value>
+    <value>Procurando pelos consoles da Xbox...</value>
   </data>
   <data name="SCANNING_XBOX_FINISHED" xml:space="preserve">
-    <value>Escaneo terminado para consolas Xbox.</value>
+    <value>Terminou a verificação de consoles Xbox.</value>
   </data>
   <data name="SCAN_XBOX_CONSOLES" xml:space="preserve">
-    <value>Escanear consolas Xbox</value>
+    <value>Escanear Xbox Consoles</value>
   </data>
   <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
-    <value>Este tipo de mod (Script) no se puede instalar en la PS3 porque necesita la adición manual del usuario.</value>
+    <value>Este tipo de mod (Script) não pode ser instalado no PS3 porque ele precisa da adição manual do usuário.</value>
   </data>
   <data name="SHOW_CURRENT_GAME_PLAYING" xml:space="preserve">
-    <value>Mostrar el juego al que se juega actualmente</value>
+    <value>Mostrar jogo em andamento</value>
   </data>
   <data name="SHOW_GAMES_IN_EXTERNAL_DEVICES" xml:space="preserve">
-    <value>Mostrar la lista de juegos desde un dispositivo externo</value>
+    <value>Mostrar lista de jogos do dispositivo externo</value>
   </data>
   <data name="SHUTDOWN" xml:space="preserve">
-    <value>Apagar</value>
+    <value>Desligar</value>
   </data>
   <data name="SOFT_REBOOT" xml:space="preserve">
-    <value>Reinicio suave</value>
+    <value>Reinicialização Rápida</value>
   </data>
   <data name="STARTING_INSTALL" xml:space="preserve">
-    <value>Iniciando instalación...</value>
+    <value>Iniciando a instalação...</value>
   </data>
   <data name="STATUS" xml:space="preserve">
-    <value>Estado:</value>
+    <value>Status:</value>
   </data>
   <data name="SUCCESS" xml:space="preserve">
-    <value>Éxito</value>
+    <value>Êxito</value>
   </data>
   <data name="SUCCESS_CONNECTED" xml:space="preserve">
-    <value>Conectado con éxito a la consola.</value>
+    <value>Conectado com sucesso ao console.</value>
   </data>
   <data name="SUCCESS_DISCONNECTED" xml:space="preserve">
-    <value>Desconectado con éxito de la consola.</value>
+    <value>Conectado com sucesso ao console.</value>
   </data>
   <data name="SUCCESS_LAUNCHED_GAME" xml:space="preserve">
-    <value>Juego iniciado con éxito.</value>
+    <value>Jogo iniciado com êxito.</value>
   </data>
   <data name="SUCCESS_LAUNCH_GAME" xml:space="preserve">
-    <value>Juego iniciado con éxito.</value>
+    <value>Jogo iniciado com êxito.</value>
   </data>
   <data name="SUCCESS_LOADED_DB" xml:space="preserve">
-    <value>La base de datos se cargó con éxito - Finalizando los datos de la aplicación...</value>
+    <value>Carregado com sucesso o banco de dados - Finalizando dados do aplicativo...</value>
   </data>
   <data name="SUCCESS_ROOT_DIRECTORIES" xml:space="preserve">
-    <value>Directorios raíz obtenidos con éxito</value>
+    <value>Diretórios da raiz obtidos com sucesso</value>
   </data>
   <data name="SYSTEM_TEMPERATURES" xml:space="preserve">
-    <value>Temperaturas del sistema</value>
+    <value>Temperaturas do sistema</value>
   </data>
   <data name="TAKE_SCREENSHOT" xml:space="preserve">
-    <value>Tomar captura de pantalla</value>
+    <value>Capturar tela</value>
   </data>
   <data name="TITLE_ANNOUNCEMENTS" xml:space="preserve">
-    <value>Anuncios</value>
+    <value>COMUNICADOS</value>
   </data>
   <data name="TITLE_CHANGE_LOG" xml:space="preserve">
-    <value>Registro De Cambios</value>
+    <value>Registro de Alterações</value>
   </data>
   <data name="TITLE_CONTRIBUTORS" xml:space="preserve">
-    <value>Contributores</value>
+    <value>Colaboradores</value>
   </data>
   <data name="TITLE_CREDITS" xml:space="preserve">
-    <value>Créditos</value>
+    <value>CRÉDITOS</value>
   </data>
   <data name="TITLE_GAMES" xml:space="preserve">
-    <value>Juegos</value>
+    <value>JOGOS</value>
   </data>
   <data name="TITLE_INTERFACE" xml:space="preserve">
-    <value>Interfaz</value>
+    <value>INTERFACE</value>
   </data>
   <data name="TITLE_LATEST_NEWS" xml:space="preserve">
-    <value>ÚLtimas Noticias</value>
+    <value>ÚLTIMAS NOTÍCIAS</value>
   </data>
   <data name="TITLE_OPTIONS" xml:space="preserve">
-    <value>Opciones</value>
+    <value>OPÇÕES</value>
   </data>
   <data name="TITLE_OUR_FAVORITE_GAMES" xml:space="preserve">
-    <value>Nuestros Juegos Favoritos</value>
+    <value>Nossos Jogos Favoritos</value>
   </data>
   <data name="TITLE_OUR_FAVORITE_MODS" xml:space="preserve">
-    <value>Nuestros Mods Favoritos</value>
+    <value>NOSSOS MODS FAVORITOS</value>
   </data>
   <data name="TITLE_RECENTLY_UPDATED" xml:space="preserve">
-    <value>Actualizado Recientemente</value>
+    <value>ATUALIZADOS RECENTEMENTE</value>
   </data>
   <data name="TITLE_SPECIAL_THANKS" xml:space="preserve">
-    <value>Gracias Especiales</value>
+    <value>Agradecimentos Especiais</value>
   </data>
   <data name="TITLE_STATISTICS" xml:space="preserve">
-    <value>Estadísticas</value>
+    <value>ESTATÍSTICAS</value>
   </data>
   <data name="TOOLS" xml:space="preserve">
-    <value>Herramientas</value>
+    <value>Ferramentas</value>
   </data>
   <data name="UNABLE_LOAD_DATABASE" xml:space="preserve">
-    <value>Incapaz de cargar la base de datos.</value>
+    <value>Não foi possível copiar o banco de dados.</value>
   </data>
   <data name="UNABLE_TO_CONNECT" xml:space="preserve">
-    <value>Incapaz de conectar a la consola.</value>
+    <value>Não foi possível conectar-se ao console.</value>
   </data>
   <data name="UNABLE_TO_OPEN_EXPLORER" xml:space="preserve">
-    <value>Incapaz de abrir el explorador de archivos para el directorio: {0} - Error {1}</value>
+    <value>Não foi possível abrir o Gerenciador de Arquivos para o diretório: {0} - Erro {1}</value>
   </data>
   <data name="UNFAVORITE" xml:space="preserve">
-    <value>Eliminar de favorito</value>
+    <value>Desfavoritar</value>
   </data>
   <data name="UNINSTALLED" xml:space="preserve">
     <value>Desinstalado</value>
@@ -1584,81 +1585,81 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
     <value>Desinstalando mods</value>
   </data>
   <data name="UNINSTALLING_PACKAGE" xml:space="preserve">
-    <value>Desinstalando paquete</value>
+    <value>Desinstalando pacote</value>
   </data>
   <data name="UNINSTALL_ALL_ITEMS" xml:space="preserve">
-    <value>Desinstalar todos los elementos</value>
+    <value>Desinstalar Todos</value>
   </data>
   <data name="UNINSTALL_CANCELED" xml:space="preserve">
-    <value>Desinstalación cancelada.</value>
+    <value>Desinstalação cancelada.</value>
   </data>
   <data name="UNINSTALL_FILE" xml:space="preserve">
-    <value>Desinstalar archivo</value>
+    <value>Desinstalar arquivo</value>
   </data>
   <data name="UNINSTALL_FILES" xml:space="preserve">
-    <value>Desinstalar archivos</value>
+    <value>Desinstalar arquivos</value>
   </data>
   <data name="UNINSTALL_ITEM" xml:space="preserve">
-    <value>Desinstalar elemento</value>
+    <value>Desinstalar Item</value>
   </data>
   <data name="UNINSTALL_USB_FILES" xml:space="preserve">
-    <value>Desinstalar archivos USB</value>
+    <value>Desinstalar arquivos USB</value>
   </data>
   <data name="UNMOUNT" xml:space="preserve">
     <value>Desmontar</value>
   </data>
   <data name="UPLOAD_ERROR" xml:space="preserve">
-    <value>Incapaz de subir a la consola. Error: {0}</value>
+    <value>Não foi possível enviar para o console. Erro: {0}</value>
   </data>
   <data name="USB_DEVICES" xml:space="preserve">
     <value>Dispositivos USB</value>
   </data>
   <data name="USE_FORMATTED_FILE_SIZES" xml:space="preserve">
-    <value>Usar tamaños de archivo con formato (por ejemplo, "3 MB")</value>
+    <value>Usar tamanhos de arquivos formatados (por exemplo, "3 MB")</value>
   </data>
   <data name="USE_RELATIVE_TIMES" xml:space="preserve">
-    <value>Usar tiempos relativos (por ejemplo, "hace 3 meses")</value>
+    <value>Use tempos relativos (ex: "3 meses atrás")</value>
   </data>
   <data name="VIEW_DETAILS" xml:space="preserve">
-    <value>Ver detalles</value>
+    <value>Ver Detalhes</value>
   </data>
   <data name="VIRTUAL_CONTROLLER" xml:space="preserve">
-    <value>Controlador virtual</value>
+    <value>Controle virtual</value>
   </data>
   <data name="WEBMAN_COMMANDS" xml:space="preserve">
-    <value>Comandos webMAN</value>
+    <value>Comandos do webMAN</value>
   </data>
   <data name="WEBMAN_REQUIRED" xml:space="preserve">
-    <value>Esta función requiere que webMAN esté instalado en tu consola.</value>
+    <value>Este recurso requer a instalação do webMAN no seu console.</value>
   </data>
   <data name="XBDM_COMMANDS" xml:space="preserve">
     <value>Comandos XBDM</value>
   </data>
   <data name="XBOX_CONSOLES" xml:space="preserve">
-    <value>Consolas Xbox</value>
+    <value>Consoles Xbox</value>
   </data>
   <data name="XUID_GET_ERROR" xml:space="preserve">
-    <value>Hubo un error obteniendo el XUID. Recuerda, ¡debes estar conectado para que esta función funcione!</value>
+    <value>Houve um erro ao obter o XUID. Lembre-se, você deve estar online para que esta função funcione!</value>
   </data>
   <data name="XUID_SET_ERROR" xml:space="preserve">
-    <value>Incapaz de establecer el XUID para el juego.</value>
+    <value>Não é possível definir o XUID para o jogo.</value>
   </data>
   <data name="XUID_SET_SUCCESS" xml:space="preserve">
-    <value>XUID cambiado para el juego con éxito.</value>
+    <value>XUID foi alterado para o jogo com sucesso.</value>
   </data>
   <data name="XUID_SPOOFER" xml:space="preserve">
-    <value>Falsificador de XUID</value>
+    <value>XUID Spoofer</value>
   </data>
   <data name="YOU_MUST_BE_CONNECTED_TO_UNINSTALL_FILES" xml:space="preserve">
-    <value>Debes estar conectado a {0} para desinstalar los archivos.</value>
+    <value>Você precisa estar conectado a {0} para desinstalar os arquivos.</value>
   </data>
   <data name="YOU_MUST_BE_CONNECTED_TO_USE_FEATURE" xml:space="preserve">
-    <value>Debes estar conectado a tu consola para usar esta función.</value>
+    <value>Você precisa estar conectado ao seu console para usar este recurso.</value>
   </data>
   <data name="YOU_MUST_BE_CONNECTED_TO_VIEW_INSTALLED_MODS" xml:space="preserve">
-    <value>Debes estar conectado a tu consola para ver los mods instalados.</value>
+    <value>Você precisa estar conectado ao seu console para visualizar mods instalados.</value>
   </data>
   <data name="YOU_MUST_ENTER_TITLE_ID" xml:space="preserve">
-    <value>Debes introducir un título ID.</value>
+    <value>Você deve inserir um título de ID.</value>
   </data>
 </root>
