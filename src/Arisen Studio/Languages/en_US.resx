@@ -132,6 +132,9 @@
   <data name="ALL_GAMES" xml:space="preserve">
     <value>All Games</value>
   </data>
+  <data name="ANNOUNCEMENTS" xml:space="preserve">
+    <value>Announcements</value>
+  </data>
   <data name="ANOTHER_MOD_INSTALLED" xml:space="preserve">
     <value>{0} is installed to: {1}
 
@@ -192,6 +195,9 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
   </data>
   <data name="CANT_UNINSTALL_CFW_FILES" xml:space="preserve">
     <value>You cannot uninstall files from the firmware folder. Any missing files could impact your console performance.</value>
+  </data>
+  <data name="CHANGE_LOG" xml:space="preserve">
+    <value>Change Log</value>
   </data>
   <data name="CHANGE_PROFILE" xml:space="preserve">
     <value>Change Profile</value>
@@ -259,6 +265,9 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Console Profiles</value>
   </data>
+  <data name="CONTRIBUTORS" xml:space="preserve">
+    <value>Contributors</value>
+  </data>
   <data name="COPIED_SHA1" xml:space="preserve">
     <value>Update SHA1 has been copied to clipboard.</value>
   </data>
@@ -267,6 +276,9 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
   </data>
   <data name="CREATE_BACKUP_FILE" xml:space="preserve">
     <value>You must first create a backup file to restore.</value>
+  </data>
+  <data name="CREDITS" xml:space="preserve">
+    <value>Credits</value>
   </data>
   <data name="CURRENT_GAME" xml:space="preserve">
     <value>Current Game:</value>
@@ -734,6 +746,9 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   <data name="INSTALL_RESOURCES_TO_LOCAL_USB" xml:space="preserve">
     <value>Install Resources to local USB device</value>
   </data>
+  <data name="INTERFACE" xml:space="preserve">
+    <value>Interface</value>
+  </data>
   <data name="INVALID_TITLE_ID" xml:space="preserve">
     <value>Invalid ID or cannot be found. Are you sure this is a valid PS3 Title ID?</value>
   </data>
@@ -1087,6 +1102,9 @@ You can add them using the File Manager.</value>
   <data name="LABEL_SET" xml:space="preserve">
     <value>Set</value>
   </data>
+  <data name="LABEL_SETUP" xml:space="preserve">
+    <value>Setup</value>
+  </data>
   <data name="LABEL_SET_FAN_SPEED" xml:space="preserve">
     <value>Set Fan Speed</value>
   </data>
@@ -1153,6 +1171,9 @@ You can add them using the File Manager.</value>
   <data name="LABEL_VERSION" xml:space="preserve">
     <value>Version</value>
   </data>
+  <data name="LABEL_WELCOME" xml:space="preserve">
+    <value>Welcome to Arisen Studio</value>
+  </data>
   <data name="LANGUAGE" xml:space="preserve">
     <value>Language</value>
   </data>
@@ -1164,6 +1185,9 @@ You can add them using the File Manager.</value>
   </data>
   <data name="LAST_UPDATED" xml:space="preserve">
     <value>Last Updated</value>
+  </data>
+  <data name="LATEST_NEWS" xml:space="preserve">
+    <value>Latest News</value>
   </data>
   <data name="LAUNCH_FILE_PATH" xml:space="preserve">
     <value>launch.ini File Path</value>
@@ -1363,6 +1387,15 @@ Install the correct mods for this game or choose a different game region.</value
   <data name="OPEN_FOLDER" xml:space="preserve">
     <value>Open Folder</value>
   </data>
+  <data name="OPTIONS" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
+    <value>Our Favorite Games</value>
+  </data>
+  <data name="OUR_FAVORITE_MODS" xml:space="preserve">
+    <value>Our Favorite Mods</value>
+  </data>
   <data name="OVERWRITE_MODS" xml:space="preserve">
     <value>Overwrite Mods</value>
   </data>
@@ -1410,6 +1443,9 @@ Install the correct mods for this game or choose a different game region.</value
   </data>
   <data name="READY_TO_START_GAME" xml:space="preserve">
     <value>Ready to start game.</value>
+  </data>
+  <data name="RECENTLY_UPDATED" xml:space="preserve">
+    <value>Recently Updated</value>
   </data>
   <data name="RECONNECT_CONSOLE" xml:space="preserve">
     <value>Reconnect Console</value>
@@ -1488,6 +1524,9 @@ If you don't want to uninstall the files, click 'No' and all of these files will
   <data name="SOFT_REBOOT" xml:space="preserve">
     <value>Soft Reboot</value>
   </data>
+  <data name="SPECIAL_THANKS" xml:space="preserve">
+    <value>Special Thanks</value>
+  </data>
   <data name="STARTING_INSTALL" xml:space="preserve">
     <value>Starting install...</value>
   </data>
@@ -1520,42 +1559,6 @@ If you don't want to uninstall the files, click 'No' and all of these files will
   </data>
   <data name="TAKE_SCREENSHOT" xml:space="preserve">
     <value>Take Screenshot</value>
-  </data>
-  <data name="TITLE_ANNOUNCEMENTS" xml:space="preserve">
-    <value>Announcements</value>
-  </data>
-  <data name="TITLE_CHANGE_LOG" xml:space="preserve">
-    <value>Change Log</value>
-  </data>
-  <data name="TITLE_CONTRIBUTORS" xml:space="preserve">
-    <value>Contributors</value>
-  </data>
-  <data name="TITLE_CREDITS" xml:space="preserve">
-    <value>Credits</value>
-  </data>
-  <data name="TITLE_GAMES" xml:space="preserve">
-    <value>Games</value>
-  </data>
-  <data name="TITLE_INTERFACE" xml:space="preserve">
-    <value>Interface</value>
-  </data>
-  <data name="TITLE_LATEST_NEWS" xml:space="preserve">
-    <value>Latest News</value>
-  </data>
-  <data name="TITLE_OPTIONS" xml:space="preserve">
-    <value>Options</value>
-  </data>
-  <data name="TITLE_OUR_FAVORITE_GAMES" xml:space="preserve">
-    <value>Our Favorite Games</value>
-  </data>
-  <data name="TITLE_OUR_FAVORITE_MODS" xml:space="preserve">
-    <value>Our Favorite Mods</value>
-  </data>
-  <data name="TITLE_RECENTLY_UPDATED" xml:space="preserve">
-    <value>Recently Updated</value>
-  </data>
-  <data name="TITLE_SPECIAL_THANKS" xml:space="preserve">
-    <value>Special Thanks</value>
   </data>
   <data name="TITLE_STATISTICS" xml:space="preserve">
     <value>Statistics</value>

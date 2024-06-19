@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -1087,6 +1087,9 @@ Du kan lägga till dem med filhanteraren.</value>
   <data name="LABEL_SET" xml:space="preserve">
     <value>Ange</value>
   </data>
+  <data name="LABEL_SETUP" xml:space="preserve">
+    <value>Inställningar</value>
+  </data>
   <data name="LABEL_SET_FAN_SPEED" xml:space="preserve">
     <value>Ställ in fläkthastighet</value>
   </data>
@@ -1152,6 +1155,9 @@ Du kan lägga till dem med filhanteraren.</value>
   </data>
   <data name="LABEL_VERSION" xml:space="preserve">
     <value>Version</value>
+  </data>
+  <data name="LABEL_WELCOME" xml:space="preserve">
+    <value>Välkommen till Arisen Studio</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
     <value>Språk</value>
@@ -1521,43 +1527,43 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   <data name="TAKE_SCREENSHOT" xml:space="preserve">
     <value>Ta skärmdump</value>
   </data>
-  <data name="TITLE_ANNOUNCEMENTS" xml:space="preserve">
+  <data name="ANNOUNCEMENTS" xml:space="preserve">
     <value>MEDDELANDEN</value>
   </data>
-  <data name="TITLE_CHANGE_LOG" xml:space="preserve">
+  <data name="CHANGE_LOG" xml:space="preserve">
     <value>ÄNDRINGSLOGG</value>
   </data>
-  <data name="TITLE_CONTRIBUTORS" xml:space="preserve">
+  <data name="CONTRIBUTORS" xml:space="preserve">
     <value>BIDRAGARE</value>
   </data>
-  <data name="TITLE_CREDITS" xml:space="preserve">
+  <data name="CREDITS" xml:space="preserve">
     <value>MEDVERKANDE</value>
   </data>
-  <data name="TITLE_GAMES" xml:space="preserve">
+  <data name="GAMES" xml:space="preserve">
     <value>SPEL</value>
   </data>
-  <data name="TITLE_INTERFACE" xml:space="preserve">
+  <data name="INTERFACE" xml:space="preserve">
     <value>GRÄNSSNITT</value>
   </data>
-  <data name="TITLE_LATEST_NEWS" xml:space="preserve">
+  <data name="LATEST_NEWS" xml:space="preserve">
     <value>SENASTE NYHETER</value>
   </data>
-  <data name="TITLE_OPTIONS" xml:space="preserve">
+  <data name="OPTIONS" xml:space="preserve">
     <value>ALTERNATIV</value>
   </data>
-  <data name="TITLE_OUR_FAVORITE_GAMES" xml:space="preserve">
+  <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
     <value>Våra Favoritspel</value>
   </data>
-  <data name="TITLE_OUR_FAVORITE_MODS" xml:space="preserve">
+  <data name="OUR_FAVORITE_MODS" xml:space="preserve">
     <value>VÅRA FAVORIT MODDAR</value>
   </data>
-  <data name="TITLE_RECENTLY_UPDATED" xml:space="preserve">
+  <data name="RECENTLY_UPDATED" xml:space="preserve">
     <value>SENAST UPPDATERAD</value>
   </data>
-  <data name="TITLE_SPECIAL_THANKS" xml:space="preserve">
+  <data name="SPECIAL_THANKS" xml:space="preserve">
     <value>SÄRSKILDA TACK</value>
   </data>
-  <data name="TITLE_STATISTICS" xml:space="preserve">
+  <data name="STATISTICS" xml:space="preserve">
     <value>STATISTIK</value>
   </data>
   <data name="TOOLS" xml:space="preserve">
