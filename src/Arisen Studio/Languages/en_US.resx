@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ABOUT" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="ADD_NEW_PROFILE" xml:space="preserve">
     <value>Add New Profile</value>
   </data>
@@ -1387,6 +1390,12 @@ Install the correct mods for this game or choose a different game region.</value
   <data name="OPEN_FOLDER" xml:space="preserve">
     <value>Open Folder</value>
   </data>
+  <data name="OPEN_LOG_FILE" xml:space="preserve">
+    <value>Open Log File</value>
+  </data>
+  <data name="OPEN_LOG_FOLDER" xml:space="preserve">
+    <value>Open Log Folder</value>
+  </data>
   <data name="OPTIONS" xml:space="preserve">
     <value>Options</value>
   </data>
@@ -1476,6 +1485,9 @@ Click the 'Submit' button to open a new issue which can help us fix any problems
   <data name="REPLACE_IMAGE" xml:space="preserve">
     <value>Replace Image</value>
   </data>
+  <data name="REQUEST_MODS" xml:space="preserve">
+    <value>Request Mods</value>
+  </data>
   <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
     <value>Files have been installed to a USB device connected to your console. You can either uninstall them now or manually delete them.
 
@@ -1511,6 +1523,12 @@ If you don't want to uninstall the files, click 'No' and all of these files will
   </data>
   <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
     <value>This mod type (Script) can't be installed on the PS3 because it needs the user manual addition.</value>
+  </data>
+  <data name="SEND_FEEDBACK" xml:space="preserve">
+    <value>Send Feedback</value>
+  </data>
+  <data name="SETUP_WIZARD" xml:space="preserve">
+    <value>Setup Wizard</value>
   </data>
   <data name="SHOW_CURRENT_GAME_PLAYING" xml:space="preserve">
     <value>Show current game playing</value>
