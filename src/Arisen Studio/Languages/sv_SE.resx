@@ -600,7 +600,7 @@ Fel: {0}</value>
     <value>Förvalda Spelregioner</value>
   </data>
   <data name="GAME_SAVES" xml:space="preserve">
-    <value>SPELSPARNINGAR</value>
+    <value>Spelsparningar</value>
   </data>
   <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
     <value>Spelsparnings Omsignerare</value>
@@ -627,7 +627,7 @@ Fel: {0}</value>
     <value>Hård omstart</value>
   </data>
   <data name="HELP" xml:space="preserve">
-    <value>HJÄLP</value>
+    <value>Hjälp</value>
   </data>
   <data name="HELP_TRANSLATE" xml:space="preserve">
     <value>Hjälp till att översätta Arisen Studio på Crowdin</value>
@@ -1232,40 +1232,37 @@ Vill du försöka avinstallera filen/filerna ändå?</value>
     <value>Montera PSN</value>
   </data>
   <data name="NAVIGATION_DASHBOARD" xml:space="preserve">
-    <value>INSTRUMENTBRÄDA</value>
+    <value>Instrumentbräda</value>
   </data>
   <data name="NAVIGATION_DOWNLOADS" xml:space="preserve">
-    <value>NEDLADDNINGAR</value>
+    <value>Nedladdningar</value>
   </data>
   <data name="NAVIGATION_FILE_MANAGER" xml:space="preserve">
-    <value>FILHANTERARE</value>
+    <value>Filhanterare</value>
   </data>
   <data name="NAVIGATION_GAME_CHEATS" xml:space="preserve">
-    <value>SPELFUSK</value>
+    <value>Spelfusk</value>
   </data>
   <data name="NAVIGATION_GAME_MODS" xml:space="preserve">
-    <value>SPELMODDAR</value>
-  </data>
-  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
-    <value>SPELSPARNINGAR</value>
+    <value>Spelmoddar</value>
   </data>
   <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
-    <value>HOMEBREW</value>
+    <value>Homebrew</value>
   </data>
   <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
-    <value>INSTALLERADE MODDAR</value>
+    <value>Installerade Moddar</value>
   </data>
   <data name="NAVIGATION_PACKAGES" xml:space="preserve">
-    <value>PAKET</value>
+    <value>Paket</value>
   </data>
   <data name="NAVIGATION_PLUGINS" xml:space="preserve">
-    <value>PLUGIN</value>
+    <value>Plugin</value>
   </data>
   <data name="NAVIGATION_RESOURCES" xml:space="preserve">
-    <value>RESURSER</value>
+    <value>Resurser</value>
   </data>
   <data name="NAVIGATION_SETTINGS" xml:space="preserve">
-    <value>INSTÄLLNINGAR</value>
+    <value>Inställningar</value>
   </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Se till att Grannskapet är installerat på din dator</value>
@@ -1539,9 +1536,6 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   <data name="CREDITS" xml:space="preserve">
     <value>MEDVERKANDE</value>
   </data>
-  <data name="GAMES" xml:space="preserve">
-    <value>SPEL</value>
-  </data>
   <data name="INTERFACE" xml:space="preserve">
     <value>GRÄNSSNITT</value>
   </data>
@@ -1667,5 +1661,8 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   </data>
   <data name="YOU_MUST_ENTER_TITLE_ID" xml:space="preserve">
     <value>Du måste ange ett titel-id.</value>
+  </data>
+  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
+    <value>Spelsparningar</value>
   </data>
 </root>

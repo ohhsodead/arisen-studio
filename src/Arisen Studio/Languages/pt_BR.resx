@@ -600,7 +600,7 @@ Erro: {0}</value>
     <value>Regiões padrão do jogo</value>
   </data>
   <data name="GAME_SAVES" xml:space="preserve">
-    <value>JOGOS SALVOS</value>
+    <value>Jogos Salvos</value>
   </data>
   <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
     <value>Reassinar os Dados Salvos do Jogo</value>
@@ -627,7 +627,7 @@ Erro: {0}</value>
     <value>Reinício Completo</value>
   </data>
   <data name="HELP" xml:space="preserve">
-    <value>AJUDA</value>
+    <value>Ajuda</value>
   </data>
   <data name="HELP_TRANSLATE" xml:space="preserve">
     <value>Ajude a traduzir o Arisen Studio no Crowdin</value>
@@ -1232,40 +1232,37 @@ Você quer tentar desinstalar o(s) arquivo(s) mesmo assim?</value>
     <value>Montar PSN</value>
   </data>
   <data name="NAVIGATION_DASHBOARD" xml:space="preserve">
-    <value>PAINEL</value>
+    <value>Painel</value>
   </data>
   <data name="NAVIGATION_DOWNLOADS" xml:space="preserve">
-    <value>DOWNLOADS</value>
+    <value>Downloads</value>
   </data>
   <data name="NAVIGATION_FILE_MANAGER" xml:space="preserve">
-    <value>GERENC. DE ARQUIVOS</value>
+    <value>Gerenc de Arquivos</value>
   </data>
   <data name="NAVIGATION_GAME_CHEATS" xml:space="preserve">
-    <value>CÓDIGOS</value>
+    <value>Códigos</value>
   </data>
   <data name="NAVIGATION_GAME_MODS" xml:space="preserve">
-    <value>MODS DE JOGOS</value>
-  </data>
-  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
-    <value>JOGOS SALVOS</value>
+    <value>Mods de Jogos</value>
   </data>
   <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
-    <value>HOMEBREW</value>
+    <value>Homebrew</value>
   </data>
   <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
-    <value>MODS INSTALADOS</value>
+    <value>Mods Instalados</value>
   </data>
   <data name="NAVIGATION_PACKAGES" xml:space="preserve">
-    <value>PACOTES</value>
+    <value>Pacotes</value>
   </data>
   <data name="NAVIGATION_PLUGINS" xml:space="preserve">
-    <value>PLUGINS</value>
+    <value>Plugins</value>
   </data>
   <data name="NAVIGATION_RESOURCES" xml:space="preserve">
-    <value>RECURSOS</value>
+    <value>Recursos</value>
   </data>
   <data name="NAVIGATION_SETTINGS" xml:space="preserve">
-    <value>CONFIGURAÇÕES</value>
+    <value>Configurações</value>
   </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Certifique-se de que o Vizinho está instalado no seu computador</value>
@@ -1539,9 +1536,6 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   <data name="CREDITS" xml:space="preserve">
     <value>CRÉDITOS</value>
   </data>
-  <data name="GAMES" xml:space="preserve">
-    <value>JOGOS</value>
-  </data>
   <data name="INTERFACE" xml:space="preserve">
     <value>INTERFACE</value>
   </data>
@@ -1667,5 +1661,8 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   </data>
   <data name="YOU_MUST_ENTER_TITLE_ID" xml:space="preserve">
     <value>Você deve inserir um título de ID.</value>
+  </data>
+  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
+    <value>Jogos Salvos</value>
   </data>
 </root>

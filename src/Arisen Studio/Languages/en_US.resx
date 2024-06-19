@@ -1252,6 +1252,9 @@ Do you want to try uninstalling the file(s) anyway?</value>
   <data name="MOUNT_PSN" xml:space="preserve">
     <value>Mount PSN</value>
   </data>
+  <data name="NAVIGATION_APPLICATIONS" xml:space="preserve">
+    <value>Applications</value>
+  </data>
   <data name="NAVIGATION_DASHBOARD" xml:space="preserve">
     <value>Dashboard</value>
   </data>

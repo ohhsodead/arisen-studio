@@ -600,7 +600,7 @@ Hata: {0}</value>
     <value>Varsayılan Oyun Bölgeleri</value>
   </data>
   <data name="GAME_SAVES" xml:space="preserve">
-    <value>OYUN KAYITLARI</value>
+    <value>Oyun Kayitlari</value>
   </data>
   <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
     <value>Oyun Kaydı Yeniden İmzala</value>
@@ -627,7 +627,7 @@ Hata: {0}</value>
     <value>Tam Yeniden Başlat</value>
   </data>
   <data name="HELP" xml:space="preserve">
-    <value>YARDIM</value>
+    <value>Yardim</value>
   </data>
   <data name="HELP_TRANSLATE" xml:space="preserve">
     <value>Arisen Studio çevirisine Crowdin ile yardım edin</value>
@@ -1232,40 +1232,37 @@ Yine de dosyaları kaldırmayı denemek istiyor musunuz?</value>
     <value>PSN Bağla</value>
   </data>
   <data name="NAVIGATION_DASHBOARD" xml:space="preserve">
-    <value>PANEL</value>
+    <value>Panel</value>
   </data>
   <data name="NAVIGATION_DOWNLOADS" xml:space="preserve">
-    <value>İNDİRİLENLER</value>
+    <value>Indi̇ri̇lenler</value>
   </data>
   <data name="NAVIGATION_FILE_MANAGER" xml:space="preserve">
-    <value>DOSYA YÖNETİCİSİ</value>
+    <value>Dosya Yöneti̇ci̇si̇</value>
   </data>
   <data name="NAVIGATION_GAME_CHEATS" xml:space="preserve">
-    <value>OYUN HİLELERİ</value>
+    <value>Oyun Hi̇leleri̇</value>
   </data>
   <data name="NAVIGATION_GAME_MODS" xml:space="preserve">
-    <value>OYUN MODLARI</value>
-  </data>
-  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
-    <value>OYUN KAYITLARI</value>
+    <value>Oyun Modlari</value>
   </data>
   <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
-    <value>EV YAPIMI</value>
+    <value>Homebrew</value>
   </data>
   <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
-    <value>KURULU MODLAR</value>
+    <value>Kurulu Modlar</value>
   </data>
   <data name="NAVIGATION_PACKAGES" xml:space="preserve">
-    <value>PAKETLER</value>
+    <value>Paketler</value>
   </data>
   <data name="NAVIGATION_PLUGINS" xml:space="preserve">
-    <value>EKLENTİLER</value>
+    <value>Eklenti̇Ler</value>
   </data>
   <data name="NAVIGATION_RESOURCES" xml:space="preserve">
-    <value>KAYNAKLAR</value>
+    <value>Kaynaklar</value>
   </data>
   <data name="NAVIGATION_SETTINGS" xml:space="preserve">
-    <value>AYARLAR</value>
+    <value>Ayarlar</value>
   </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Bilgisayarınızda 'Neighborhood' kurulu olduğundan emin olun</value>
@@ -1539,9 +1536,6 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
   <data name="CREDITS" xml:space="preserve">
     <value>CREDITS</value>
   </data>
-  <data name="GAMES" xml:space="preserve">
-    <value>OYUNLAR</value>
-  </data>
   <data name="INTERFACE" xml:space="preserve">
     <value>ARAYÜZ</value>
   </data>
@@ -1667,5 +1661,8 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
   </data>
   <data name="YOU_MUST_ENTER_TITLE_ID" xml:space="preserve">
     <value>Bir başlık ID girmelisiniz.</value>
+  </data>
+  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
+    <value>Oyun Kayitlari</value>
   </data>
 </root>
