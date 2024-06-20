@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ABOUT" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
   <data name="ADD_NEW_PROFILE" xml:space="preserve">
     <value>Adic. novo perfil</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="ALL_GAMES" xml:space="preserve">
     <value>Todos os jogos</value>
+  </data>
+  <data name="ANNOUNCEMENTS" xml:space="preserve">
+    <value>COMUNICADOS</value>
   </data>
   <data name="ANOTHER_MOD_INSTALLED" xml:space="preserve">
     <value>{0} está instalado em: {1}
@@ -192,6 +198,9 @@ Este arquivo não pode ser desinstalado para evitar arquivos de jogo ausentes, p
   </data>
   <data name="CANT_UNINSTALL_CFW_FILES" xml:space="preserve">
     <value>Você não pode desinstalar arquivos da pasta do firmware. Qualquer arquivo ausente pode afetar o desempenho do console.</value>
+  </data>
+  <data name="CHANGE_LOG" xml:space="preserve">
+    <value>Registro de Alterações</value>
   </data>
   <data name="CHANGE_PROFILE" xml:space="preserve">
     <value>Alterar perfil</value>
@@ -259,6 +268,9 @@ Este arquivo não pode ser desinstalado para evitar arquivos de jogo ausentes, p
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Perfis dos consoles</value>
   </data>
+  <data name="CONTRIBUTORS" xml:space="preserve">
+    <value>Colaboradores</value>
+  </data>
   <data name="COPIED_SHA1" xml:space="preserve">
     <value>Atualização do SHA1 foi copiada para a área de transferência.</value>
   </data>
@@ -267,6 +279,9 @@ Este arquivo não pode ser desinstalado para evitar arquivos de jogo ausentes, p
   </data>
   <data name="CREATE_BACKUP_FILE" xml:space="preserve">
     <value>Primeiro, crie um arquivo de backup para restauração.</value>
+  </data>
+  <data name="CREDITS" xml:space="preserve">
+    <value>CRÉDITOS</value>
   </data>
   <data name="CURRENT_GAME" xml:space="preserve">
     <value>Jogo atual:</value>
@@ -600,7 +615,7 @@ Erro: {0}</value>
     <value>Regiões padrão do jogo</value>
   </data>
   <data name="GAME_SAVES" xml:space="preserve">
-    <value>Jogos Salvos</value>
+    <value>JOGOS SALVOS</value>
   </data>
   <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
     <value>Reassinar os Dados Salvos do Jogo</value>
@@ -627,7 +642,7 @@ Erro: {0}</value>
     <value>Reinício Completo</value>
   </data>
   <data name="HELP" xml:space="preserve">
-    <value>Ajuda</value>
+    <value>AJUDA</value>
   </data>
   <data name="HELP_TRANSLATE" xml:space="preserve">
     <value>Ajude a traduzir o Arisen Studio no Crowdin</value>
@@ -733,6 +748,9 @@ Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso 
   </data>
   <data name="INSTALL_RESOURCES_TO_LOCAL_USB" xml:space="preserve">
     <value>Instalar recursos no dispositivo USB local</value>
+  </data>
+  <data name="INTERFACE" xml:space="preserve">
+    <value>Interface</value>
   </data>
   <data name="INVALID_TITLE_ID" xml:space="preserve">
     <value>ID inválido ou não pôde ser encontrado. Tem certeza de que este é um Título de ID válido do PS3?</value>
@@ -1157,7 +1175,7 @@ Você pode usar o Gerenciador de Arquivos para adicionar um jogo.</value>
     <value>Versão</value>
   </data>
   <data name="LABEL_WELCOME" xml:space="preserve">
-    <value>Bem vindo ao Arisen Studio</value>
+    <value>Bem-vindo a Arisen Studio</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
     <value>Idioma</value>
@@ -1170,6 +1188,9 @@ Você pode usar o Gerenciador de Arquivos para adicionar um jogo.</value>
   </data>
   <data name="LAST_UPDATED" xml:space="preserve">
     <value>Última atualização</value>
+  </data>
+  <data name="LATEST_NEWS" xml:space="preserve">
+    <value>Últimas Notícias</value>
   </data>
   <data name="LAUNCH_FILE_PATH" xml:space="preserve">
     <value>Caminho do arquivo launch.ini</value>
@@ -1231,38 +1252,44 @@ Você quer tentar desinstalar o(s) arquivo(s) mesmo assim?</value>
   <data name="MOUNT_PSN" xml:space="preserve">
     <value>Montar PSN</value>
   </data>
+  <data name="NAVIGATION_APPLICATIONS" xml:space="preserve">
+    <value>Aplicativos</value>
+  </data>
   <data name="NAVIGATION_DASHBOARD" xml:space="preserve">
-    <value>Painel</value>
+    <value>PAINEL</value>
   </data>
   <data name="NAVIGATION_DOWNLOADS" xml:space="preserve">
-    <value>Downloads</value>
+    <value>DOWNLOADS</value>
   </data>
   <data name="NAVIGATION_FILE_MANAGER" xml:space="preserve">
-    <value>Gerenc de Arquivos</value>
+    <value>GERENC. DE ARQUIVOS</value>
   </data>
   <data name="NAVIGATION_GAME_CHEATS" xml:space="preserve">
-    <value>Códigos</value>
+    <value>CÓDIGOS</value>
   </data>
   <data name="NAVIGATION_GAME_MODS" xml:space="preserve">
-    <value>Mods de Jogos</value>
+    <value>MODS DE JOGOS</value>
+  </data>
+  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
+    <value>JOGOS SALVOS</value>
   </data>
   <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
-    <value>Homebrew</value>
+    <value>HOMEBREW</value>
   </data>
   <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
-    <value>Mods Instalados</value>
+    <value>MODS INSTALADOS</value>
   </data>
   <data name="NAVIGATION_PACKAGES" xml:space="preserve">
-    <value>Pacotes</value>
+    <value>PACOTES</value>
   </data>
   <data name="NAVIGATION_PLUGINS" xml:space="preserve">
-    <value>Plugins</value>
+    <value>PLUGINS</value>
   </data>
   <data name="NAVIGATION_RESOURCES" xml:space="preserve">
-    <value>Recursos</value>
+    <value>RECURSOS</value>
   </data>
   <data name="NAVIGATION_SETTINGS" xml:space="preserve">
-    <value>Configurações</value>
+    <value>CONFIGURAÇÕES</value>
   </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Certifique-se de que o Vizinho está instalado no seu computador</value>
@@ -1366,6 +1393,21 @@ Instale os mods corretos para este jogo ou escolha uma região de jogo diferente
   <data name="OPEN_FOLDER" xml:space="preserve">
     <value>Abrir Pasta</value>
   </data>
+  <data name="OPEN_LOG_FILE" xml:space="preserve">
+    <value>Abrir Arquivo de Registro</value>
+  </data>
+  <data name="OPEN_LOG_FOLDER" xml:space="preserve">
+    <value>Abrir Pasta de Registros</value>
+  </data>
+  <data name="OPTIONS" xml:space="preserve">
+    <value>Opções</value>
+  </data>
+  <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
+    <value>Nossos Jogos Favoritos</value>
+  </data>
+  <data name="OUR_FAVORITE_MODS" xml:space="preserve">
+    <value>Nossos Mods Favoritos</value>
+  </data>
   <data name="OVERWRITE_MODS" xml:space="preserve">
     <value>Substituir mods</value>
   </data>
@@ -1414,6 +1456,9 @@ Instale os mods corretos para este jogo ou escolha uma região de jogo diferente
   <data name="READY_TO_START_GAME" xml:space="preserve">
     <value>Pronto para iniciar o jogo.</value>
   </data>
+  <data name="RECENTLY_UPDATED" xml:space="preserve">
+    <value>ATUALIZADOS RECENTEMENTE</value>
+  </data>
   <data name="RECONNECT_CONSOLE" xml:space="preserve">
     <value>Reconectar console</value>
   </data>
@@ -1442,6 +1487,9 @@ Clique no botão 'Enviar' para abrir um novo problema que pode nos ajudar a corr
   </data>
   <data name="REPLACE_IMAGE" xml:space="preserve">
     <value>Substituir imagem</value>
+  </data>
+  <data name="REQUEST_MODS" xml:space="preserve">
+    <value>Solicitação de Mods</value>
   </data>
   <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
     <value>Os arquivos foram instalados em um dispositivo USB conectado ao console. Você pode desinstalá-los agora ou excluí-los manualmente.
@@ -1479,6 +1527,12 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
     <value>Este tipo de mod (Script) não pode ser instalado no PS3 porque ele precisa da adição manual do usuário.</value>
   </data>
+  <data name="SEND_FEEDBACK" xml:space="preserve">
+    <value>Enviar Opinião</value>
+  </data>
+  <data name="SETUP_WIZARD" xml:space="preserve">
+    <value>Assistente de Instalação</value>
+  </data>
   <data name="SHOW_CURRENT_GAME_PLAYING" xml:space="preserve">
     <value>Mostrar jogo em andamento</value>
   </data>
@@ -1490,6 +1544,9 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   </data>
   <data name="SOFT_REBOOT" xml:space="preserve">
     <value>Reinicialização Rápida</value>
+  </data>
+  <data name="SPECIAL_THANKS" xml:space="preserve">
+    <value>Agradecimentos Especiais</value>
   </data>
   <data name="STARTING_INSTALL" xml:space="preserve">
     <value>Iniciando a instalação...</value>
@@ -1524,40 +1581,7 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   <data name="TAKE_SCREENSHOT" xml:space="preserve">
     <value>Capturar tela</value>
   </data>
-  <data name="ANNOUNCEMENTS" xml:space="preserve">
-    <value>COMUNICADOS</value>
-  </data>
-  <data name="CHANGE_LOG" xml:space="preserve">
-    <value>Registro de Alterações</value>
-  </data>
-  <data name="CONTRIBUTORS" xml:space="preserve">
-    <value>Colaboradores</value>
-  </data>
-  <data name="CREDITS" xml:space="preserve">
-    <value>CRÉDITOS</value>
-  </data>
-  <data name="INTERFACE" xml:space="preserve">
-    <value>INTERFACE</value>
-  </data>
-  <data name="LATEST_NEWS" xml:space="preserve">
-    <value>ÚLTIMAS NOTÍCIAS</value>
-  </data>
-  <data name="OPTIONS" xml:space="preserve">
-    <value>OPÇÕES</value>
-  </data>
-  <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
-    <value>Nossos Jogos Favoritos</value>
-  </data>
-  <data name="OUR_FAVORITE_MODS" xml:space="preserve">
-    <value>NOSSOS MODS FAVORITOS</value>
-  </data>
-  <data name="RECENTLY_UPDATED" xml:space="preserve">
-    <value>ATUALIZADOS RECENTEMENTE</value>
-  </data>
-  <data name="SPECIAL_THANKS" xml:space="preserve">
-    <value>Agradecimentos Especiais</value>
-  </data>
-  <data name="STATISTICS" xml:space="preserve">
+  <data name="TITLE_STATISTICS" xml:space="preserve">
     <value>ESTATÍSTICAS</value>
   </data>
   <data name="TOOLS" xml:space="preserve">
@@ -1661,8 +1685,5 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   </data>
   <data name="YOU_MUST_ENTER_TITLE_ID" xml:space="preserve">
     <value>Você deve inserir um título de ID.</value>
-  </data>
-  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
-    <value>Jogos Salvos</value>
   </data>
 </root>

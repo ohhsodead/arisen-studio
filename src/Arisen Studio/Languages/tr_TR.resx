@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ABOUT" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
   <data name="ADD_NEW_PROFILE" xml:space="preserve">
     <value>Yeni Profil Ekle</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="ALL_GAMES" xml:space="preserve">
     <value>Tüm Oyunlar</value>
+  </data>
+  <data name="ANNOUNCEMENTS" xml:space="preserve">
+    <value>Duyurular</value>
   </data>
   <data name="ANOTHER_MOD_INSTALLED" xml:space="preserve">
     <value>{0} şuraya kurulur: {1}
@@ -192,6 +198,9 @@ Oyun dosyalarının kaybolmasını önlemek için bu dosya kaldırılamaz, bu ne
   </data>
   <data name="CANT_UNINSTALL_CFW_FILES" xml:space="preserve">
     <value>Üretici yazılımı klasöründen dosyaları kaldıramazsınız. Eksik dosyalar konsol performansınızı etkileyebilir.</value>
+  </data>
+  <data name="CHANGE_LOG" xml:space="preserve">
+    <value>DEĞİŞİKLİKLER</value>
   </data>
   <data name="CHANGE_PROFILE" xml:space="preserve">
     <value>Profili Değiştir</value>
@@ -259,6 +268,9 @@ Oyun dosyalarının kaybolmasını önlemek için bu dosya kaldırılamaz, bu ne
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Konsol Profilleri</value>
   </data>
+  <data name="CONTRIBUTORS" xml:space="preserve">
+    <value>KATKICILAR</value>
+  </data>
   <data name="COPIED_SHA1" xml:space="preserve">
     <value>SHA1 güncellemesi panoya kopyalandı.</value>
   </data>
@@ -267,6 +279,9 @@ Oyun dosyalarının kaybolmasını önlemek için bu dosya kaldırılamaz, bu ne
   </data>
   <data name="CREATE_BACKUP_FILE" xml:space="preserve">
     <value>Geri yüklemek için önce bir yedekleme dosyası oluşturmalısınız.</value>
+  </data>
+  <data name="CREDITS" xml:space="preserve">
+    <value>CREDITS</value>
   </data>
   <data name="CURRENT_GAME" xml:space="preserve">
     <value>Mevcut Oyun:</value>
@@ -600,7 +615,7 @@ Hata: {0}</value>
     <value>Varsayılan Oyun Bölgeleri</value>
   </data>
   <data name="GAME_SAVES" xml:space="preserve">
-    <value>Oyun Kayitlari</value>
+    <value>OYUN KAYITLARI</value>
   </data>
   <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
     <value>Oyun Kaydı Yeniden İmzala</value>
@@ -627,7 +642,7 @@ Hata: {0}</value>
     <value>Tam Yeniden Başlat</value>
   </data>
   <data name="HELP" xml:space="preserve">
-    <value>Yardim</value>
+    <value>YARDIM</value>
   </data>
   <data name="HELP_TRANSLATE" xml:space="preserve">
     <value>Arisen Studio çevirisine Crowdin ile yardım edin</value>
@@ -733,6 +748,9 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   </data>
   <data name="INSTALL_RESOURCES_TO_LOCAL_USB" xml:space="preserve">
     <value>Kaynakları yerel USB cihazına kurun</value>
+  </data>
+  <data name="INTERFACE" xml:space="preserve">
+    <value>ARAYÜZ</value>
   </data>
   <data name="INVALID_TITLE_ID" xml:space="preserve">
     <value>Geçersiz ID veya bulunamıyor. Bunun doğru bir PS3 Başlık ID olduğundan emin misiniz?</value>
@@ -1171,6 +1189,9 @@ Bunları Dosya Yöneticisini kullanarak ekleyebilirsiniz.</value>
   <data name="LAST_UPDATED" xml:space="preserve">
     <value>Son Güncellenme</value>
   </data>
+  <data name="LATEST_NEWS" xml:space="preserve">
+    <value>SON YENİLİKLER</value>
+  </data>
   <data name="LAUNCH_FILE_PATH" xml:space="preserve">
     <value>launch.ini Dosya Yolu</value>
   </data>
@@ -1231,38 +1252,44 @@ Yine de dosyaları kaldırmayı denemek istiyor musunuz?</value>
   <data name="MOUNT_PSN" xml:space="preserve">
     <value>PSN Bağla</value>
   </data>
+  <data name="NAVIGATION_APPLICATIONS" xml:space="preserve">
+    <value>Uygulamalar</value>
+  </data>
   <data name="NAVIGATION_DASHBOARD" xml:space="preserve">
-    <value>Panel</value>
+    <value>PANEL</value>
   </data>
   <data name="NAVIGATION_DOWNLOADS" xml:space="preserve">
-    <value>Indi̇ri̇lenler</value>
+    <value>İNDİRİLENLER</value>
   </data>
   <data name="NAVIGATION_FILE_MANAGER" xml:space="preserve">
-    <value>Dosya Yöneti̇ci̇si̇</value>
+    <value>DOSYA YÖNETİCİSİ</value>
   </data>
   <data name="NAVIGATION_GAME_CHEATS" xml:space="preserve">
-    <value>Oyun Hi̇leleri̇</value>
+    <value>OYUN HİLELERİ</value>
   </data>
   <data name="NAVIGATION_GAME_MODS" xml:space="preserve">
-    <value>Oyun Modlari</value>
+    <value>OYUN MODLARI</value>
+  </data>
+  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
+    <value>OYUN KAYITLARI</value>
   </data>
   <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
-    <value>Homebrew</value>
+    <value>EV YAPIMI</value>
   </data>
   <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
-    <value>Kurulu Modlar</value>
+    <value>KURULU MODLAR</value>
   </data>
   <data name="NAVIGATION_PACKAGES" xml:space="preserve">
-    <value>Paketler</value>
+    <value>PAKETLER</value>
   </data>
   <data name="NAVIGATION_PLUGINS" xml:space="preserve">
-    <value>Eklenti̇Ler</value>
+    <value>EKLENTİLER</value>
   </data>
   <data name="NAVIGATION_RESOURCES" xml:space="preserve">
-    <value>Kaynaklar</value>
+    <value>KAYNAKLAR</value>
   </data>
   <data name="NAVIGATION_SETTINGS" xml:space="preserve">
-    <value>Ayarlar</value>
+    <value>AYARLAR</value>
   </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Bilgisayarınızda 'Neighborhood' kurulu olduğundan emin olun</value>
@@ -1366,6 +1393,21 @@ Bu oyun için doğru modları kurun veya farklı bir oyun bölgesi seçin.</valu
   <data name="OPEN_FOLDER" xml:space="preserve">
     <value>Klasör Aç</value>
   </data>
+  <data name="OPEN_LOG_FILE" xml:space="preserve">
+    <value>Log Dosyasını Aç</value>
+  </data>
+  <data name="OPEN_LOG_FOLDER" xml:space="preserve">
+    <value>Sistem Günlüğü Klasörünü Aç</value>
+  </data>
+  <data name="OPTIONS" xml:space="preserve">
+    <value>SEÇENEKLER</value>
+  </data>
+  <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
+    <value>Favori Oyunlarınız</value>
+  </data>
+  <data name="OUR_FAVORITE_MODS" xml:space="preserve">
+    <value>FAVORİ MODLARIMIZ</value>
+  </data>
   <data name="OVERWRITE_MODS" xml:space="preserve">
     <value>Modların Üzerine Yaz</value>
   </data>
@@ -1414,6 +1456,9 @@ Bu oyun için doğru modları kurun veya farklı bir oyun bölgesi seçin.</valu
   <data name="READY_TO_START_GAME" xml:space="preserve">
     <value>Oyun başlamaya hazır.</value>
   </data>
+  <data name="RECENTLY_UPDATED" xml:space="preserve">
+    <value>SON GÜNCELLENENLER</value>
+  </data>
   <data name="RECONNECT_CONSOLE" xml:space="preserve">
     <value>Konsola Tekrar Bağlan</value>
   </data>
@@ -1442,6 +1487,9 @@ Bir sorunu çözmemize yardımcı olmak için 'Gönder' düğmesini tıklayın.<
   </data>
   <data name="REPLACE_IMAGE" xml:space="preserve">
     <value>Görseli Değiştir</value>
+  </data>
+  <data name="REQUEST_MODS" xml:space="preserve">
+    <value>İstek Modlar</value>
   </data>
   <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
     <value>Dosyalar, konsolunuza bağlı bir USB cihazına kuruldu. Bunları şimdi kaldırabilir veya el ile silebilirsiniz.
@@ -1479,6 +1527,12 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
   <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
     <value>Bu mod türü (Script) kullanım kılavuzunun eklenmesi gerektiğinden PS3 üstüne kurulamaz.</value>
   </data>
+  <data name="SEND_FEEDBACK" xml:space="preserve">
+    <value>Geri Bildirim Gönder</value>
+  </data>
+  <data name="SETUP_WIZARD" xml:space="preserve">
+    <value>Kurulum Sihirbazı</value>
+  </data>
   <data name="SHOW_CURRENT_GAME_PLAYING" xml:space="preserve">
     <value>Oynanan mevcut oyunu göster</value>
   </data>
@@ -1490,6 +1544,9 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
   </data>
   <data name="SOFT_REBOOT" xml:space="preserve">
     <value>Hafif Yeniden Başlat</value>
+  </data>
+  <data name="SPECIAL_THANKS" xml:space="preserve">
+    <value>ÖZEL TEŞEKKÜRLER</value>
   </data>
   <data name="STARTING_INSTALL" xml:space="preserve">
     <value>Kurulum başlatılıyor...</value>
@@ -1524,40 +1581,7 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
   <data name="TAKE_SCREENSHOT" xml:space="preserve">
     <value>Ekran Görüntüsü Al</value>
   </data>
-  <data name="ANNOUNCEMENTS" xml:space="preserve">
-    <value>DUYURULAR</value>
-  </data>
-  <data name="CHANGE_LOG" xml:space="preserve">
-    <value>DEĞİŞİKLİKLER</value>
-  </data>
-  <data name="CONTRIBUTORS" xml:space="preserve">
-    <value>KATKICILAR</value>
-  </data>
-  <data name="CREDITS" xml:space="preserve">
-    <value>CREDITS</value>
-  </data>
-  <data name="INTERFACE" xml:space="preserve">
-    <value>ARAYÜZ</value>
-  </data>
-  <data name="LATEST_NEWS" xml:space="preserve">
-    <value>SON YENİLİKLER</value>
-  </data>
-  <data name="OPTIONS" xml:space="preserve">
-    <value>SEÇENEKLER</value>
-  </data>
-  <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
-    <value>Favori Oyunlarınız</value>
-  </data>
-  <data name="OUR_FAVORITE_MODS" xml:space="preserve">
-    <value>FAVORİ MODLARIMIZ</value>
-  </data>
-  <data name="RECENTLY_UPDATED" xml:space="preserve">
-    <value>SON GÜNCELLENENLER</value>
-  </data>
-  <data name="SPECIAL_THANKS" xml:space="preserve">
-    <value>ÖZEL TEŞEKKÜRLER</value>
-  </data>
-  <data name="STATISTICS" xml:space="preserve">
+  <data name="TITLE_STATISTICS" xml:space="preserve">
     <value>İSTATİSTİKLER</value>
   </data>
   <data name="TOOLS" xml:space="preserve">
@@ -1661,8 +1685,5 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
   </data>
   <data name="YOU_MUST_ENTER_TITLE_ID" xml:space="preserve">
     <value>Bir başlık ID girmelisiniz.</value>
-  </data>
-  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
-    <value>Oyun Kayitlari</value>
   </data>
 </root>
