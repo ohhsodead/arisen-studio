@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ABOUT" xml:space="preserve">
+    <value>Om</value>
+  </data>
   <data name="ADD_NEW_PROFILE" xml:space="preserve">
     <value>Lägg till Ny Profil</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="ALL_GAMES" xml:space="preserve">
     <value>Alla Spel</value>
+  </data>
+  <data name="ANNOUNCEMENTS" xml:space="preserve">
+    <value>MEDDELANDEN</value>
   </data>
   <data name="ANOTHER_MOD_INSTALLED" xml:space="preserve">
     <value>{0} är installerad på: {1}
@@ -192,6 +198,9 @@ Den här filen kan inte avinstalleras för att undvika saknade spelfiler, så de
   </data>
   <data name="CANT_UNINSTALL_CFW_FILES" xml:space="preserve">
     <value>Du kan inte avinstallera filer från mappen med inbyggd programvara. Alla filer som saknas kan påverka konsolens prestanda.</value>
+  </data>
+  <data name="CHANGE_LOG" xml:space="preserve">
+    <value>ÄNDRINGSLOGG</value>
   </data>
   <data name="CHANGE_PROFILE" xml:space="preserve">
     <value>Byt profil</value>
@@ -259,6 +268,9 @@ Den här filen kan inte avinstalleras för att undvika saknade spelfiler, så de
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Konsol Profiler</value>
   </data>
+  <data name="CONTRIBUTORS" xml:space="preserve">
+    <value>Bidragare</value>
+  </data>
   <data name="COPIED_SHA1" xml:space="preserve">
     <value>Uppdaterad SHA1 har kopierats till urklipp.</value>
   </data>
@@ -267,6 +279,9 @@ Den här filen kan inte avinstalleras för att undvika saknade spelfiler, så de
   </data>
   <data name="CREATE_BACKUP_FILE" xml:space="preserve">
     <value>Först måste du skapa en säkerhetskopia innan du kan återställa.</value>
+  </data>
+  <data name="CREDITS" xml:space="preserve">
+    <value>MEDVERKANDE</value>
   </data>
   <data name="CURRENT_GAME" xml:space="preserve">
     <value>Nuvarande spel:</value>
@@ -600,7 +615,7 @@ Fel: {0}</value>
     <value>Förvalda Spelregioner</value>
   </data>
   <data name="GAME_SAVES" xml:space="preserve">
-    <value>Spelsparningar</value>
+    <value>SPELSPARNINGAR</value>
   </data>
   <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
     <value>Spelsparnings Omsignerare</value>
@@ -627,7 +642,7 @@ Fel: {0}</value>
     <value>Hård omstart</value>
   </data>
   <data name="HELP" xml:space="preserve">
-    <value>Hjälp</value>
+    <value>HJÄLP</value>
   </data>
   <data name="HELP_TRANSLATE" xml:space="preserve">
     <value>Hjälp till att översätta Arisen Studio på Crowdin</value>
@@ -733,6 +748,9 @@ Sätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars
   </data>
   <data name="INSTALL_RESOURCES_TO_LOCAL_USB" xml:space="preserve">
     <value>Installera Resurser på lokal USB-enhet*</value>
+  </data>
+  <data name="INTERFACE" xml:space="preserve">
+    <value>GRÄNSSNITT</value>
   </data>
   <data name="INVALID_TITLE_ID" xml:space="preserve">
     <value>Ogiltigt eller okänt ID. Är du säker på att detta är ett giltigt PS3 titel-id?</value>
@@ -1171,6 +1189,9 @@ Du kan lägga till dem med filhanteraren.</value>
   <data name="LAST_UPDATED" xml:space="preserve">
     <value>Senast uppdaterad</value>
   </data>
+  <data name="LATEST_NEWS" xml:space="preserve">
+    <value>SENASTE NYHETER</value>
+  </data>
   <data name="LAUNCH_FILE_PATH" xml:space="preserve">
     <value>launch.ini Filsökväg</value>
   </data>
@@ -1231,38 +1252,44 @@ Vill du försöka avinstallera filen/filerna ändå?</value>
   <data name="MOUNT_PSN" xml:space="preserve">
     <value>Montera PSN</value>
   </data>
+  <data name="NAVIGATION_APPLICATIONS" xml:space="preserve">
+    <value>Appar</value>
+  </data>
   <data name="NAVIGATION_DASHBOARD" xml:space="preserve">
-    <value>Instrumentbräda</value>
+    <value>INSTRUMENTBRÄDA</value>
   </data>
   <data name="NAVIGATION_DOWNLOADS" xml:space="preserve">
-    <value>Nedladdningar</value>
+    <value>NEDLADDNINGAR</value>
   </data>
   <data name="NAVIGATION_FILE_MANAGER" xml:space="preserve">
-    <value>Filhanterare</value>
+    <value>FILHANTERARE</value>
   </data>
   <data name="NAVIGATION_GAME_CHEATS" xml:space="preserve">
-    <value>Spelfusk</value>
+    <value>SPELFUSK</value>
   </data>
   <data name="NAVIGATION_GAME_MODS" xml:space="preserve">
-    <value>Spelmoddar</value>
+    <value>SPELMODDAR</value>
+  </data>
+  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
+    <value>SPELSPARNINGAR</value>
   </data>
   <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
-    <value>Homebrew</value>
+    <value>HOMEBREW</value>
   </data>
   <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
-    <value>Installerade Moddar</value>
+    <value>INSTALLERADE MODDAR</value>
   </data>
   <data name="NAVIGATION_PACKAGES" xml:space="preserve">
-    <value>Paket</value>
+    <value>PAKET</value>
   </data>
   <data name="NAVIGATION_PLUGINS" xml:space="preserve">
-    <value>Plugin</value>
+    <value>PLUGIN</value>
   </data>
   <data name="NAVIGATION_RESOURCES" xml:space="preserve">
-    <value>Resurser</value>
+    <value>RESURSER</value>
   </data>
   <data name="NAVIGATION_SETTINGS" xml:space="preserve">
-    <value>Inställningar</value>
+    <value>INSTÄLLNINGAR</value>
   </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Se till att Grannskapet är installerat på din dator</value>
@@ -1366,6 +1393,21 @@ Installera rätt moddar för detta spel eller välj en annan spelregion.</value>
   <data name="OPEN_FOLDER" xml:space="preserve">
     <value>Öppna Mapp</value>
   </data>
+  <data name="OPEN_LOG_FILE" xml:space="preserve">
+    <value>Öppna Loggfilen</value>
+  </data>
+  <data name="OPEN_LOG_FOLDER" xml:space="preserve">
+    <value>Öppna Mappen med Loggar</value>
+  </data>
+  <data name="OPTIONS" xml:space="preserve">
+    <value>ALTERNATIV</value>
+  </data>
+  <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
+    <value>Våra Favoritspel</value>
+  </data>
+  <data name="OUR_FAVORITE_MODS" xml:space="preserve">
+    <value>VÅRA FAVORIT MODDAR</value>
+  </data>
   <data name="OVERWRITE_MODS" xml:space="preserve">
     <value>Skriv över Moddar</value>
   </data>
@@ -1414,6 +1456,9 @@ Installera rätt moddar för detta spel eller välj en annan spelregion.</value>
   <data name="READY_TO_START_GAME" xml:space="preserve">
     <value>Redo att starta spelet.</value>
   </data>
+  <data name="RECENTLY_UPDATED" xml:space="preserve">
+    <value>SENAST UPPDATERAD</value>
+  </data>
   <data name="RECONNECT_CONSOLE" xml:space="preserve">
     <value>Återanslut Konsolen</value>
   </data>
@@ -1442,6 +1487,9 @@ Klicka på "Skicka" knappen för att öppna ett nytt ärende som kan hjälpa oss
   </data>
   <data name="REPLACE_IMAGE" xml:space="preserve">
     <value>Ersätt Avbildning</value>
+  </data>
+  <data name="REQUEST_MODS" xml:space="preserve">
+    <value>Be om Moddar</value>
   </data>
   <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
     <value>Filer har installerats på en USB-enhet som är ansluten till konsolen. Du kan antingen avinstallera dem nu eller manuellt ta bort dem.
@@ -1479,6 +1527,12 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
     <value>Den här moddtypen (Script) kan inte installeras på PS3 eftersom den behöver ett manuellt tillägg.</value>
   </data>
+  <data name="SEND_FEEDBACK" xml:space="preserve">
+    <value>Skicka Synpunkter</value>
+  </data>
+  <data name="SETUP_WIZARD" xml:space="preserve">
+    <value>Installationsguide</value>
+  </data>
   <data name="SHOW_CURRENT_GAME_PLAYING" xml:space="preserve">
     <value>Visa aktuellt spel</value>
   </data>
@@ -1490,6 +1544,9 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   </data>
   <data name="SOFT_REBOOT" xml:space="preserve">
     <value>Mjuk omstart</value>
+  </data>
+  <data name="SPECIAL_THANKS" xml:space="preserve">
+    <value>SÄRSKILDA TACK</value>
   </data>
   <data name="STARTING_INSTALL" xml:space="preserve">
     <value>Startar installation...</value>
@@ -1524,40 +1581,7 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   <data name="TAKE_SCREENSHOT" xml:space="preserve">
     <value>Ta skärmdump</value>
   </data>
-  <data name="ANNOUNCEMENTS" xml:space="preserve">
-    <value>MEDDELANDEN</value>
-  </data>
-  <data name="CHANGE_LOG" xml:space="preserve">
-    <value>ÄNDRINGSLOGG</value>
-  </data>
-  <data name="CONTRIBUTORS" xml:space="preserve">
-    <value>BIDRAGARE</value>
-  </data>
-  <data name="CREDITS" xml:space="preserve">
-    <value>MEDVERKANDE</value>
-  </data>
-  <data name="INTERFACE" xml:space="preserve">
-    <value>GRÄNSSNITT</value>
-  </data>
-  <data name="LATEST_NEWS" xml:space="preserve">
-    <value>SENASTE NYHETER</value>
-  </data>
-  <data name="OPTIONS" xml:space="preserve">
-    <value>ALTERNATIV</value>
-  </data>
-  <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
-    <value>Våra Favoritspel</value>
-  </data>
-  <data name="OUR_FAVORITE_MODS" xml:space="preserve">
-    <value>VÅRA FAVORIT MODDAR</value>
-  </data>
-  <data name="RECENTLY_UPDATED" xml:space="preserve">
-    <value>SENAST UPPDATERAD</value>
-  </data>
-  <data name="SPECIAL_THANKS" xml:space="preserve">
-    <value>SÄRSKILDA TACK</value>
-  </data>
-  <data name="STATISTICS" xml:space="preserve">
+  <data name="TITLE_STATISTICS" xml:space="preserve">
     <value>STATISTIK</value>
   </data>
   <data name="TOOLS" xml:space="preserve">
@@ -1661,8 +1685,5 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   </data>
   <data name="YOU_MUST_ENTER_TITLE_ID" xml:space="preserve">
     <value>Du måste ange ett titel-id.</value>
-  </data>
-  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
-    <value>Spelsparningar</value>
   </data>
 </root>
