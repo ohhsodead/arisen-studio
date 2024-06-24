@@ -6,29 +6,29 @@ labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
-      value: |
-        **Thanks :heart: for taking the time to fill out this feature request report!**
-        We kindly ask that you search to see if an issue [already exists](https://github.com/ohhsodead/arisen-studio/issues?q=is%3Aissue+sort%3Acreated-desc+) for your feature.
+      value: "
+        <img src='https://github.com/ohhsodead/arisen-studio/blob/main/src/Arisen%20Studio/Resources/arisenstudio.png?raw=true' align='left' width='80' height='80'>
+        Thank you for finding the time to propose a new feature!
 
-        We are also happy to accept contributions from our users. For more details see [here](https://github.com/ohhsodead/arisen-studio/blob/main/CONTRIBUTING.md).
+        We appreciate the community's efforts to improve Arisen Studio.
 
+        Note, that after you create an issue, if you have a change ready to submit!
+
+        You can open [Pull Request](https://github.com/ohhsodead/arisen-studio/pulls) immediately after.
+        <br clear='left'/>"
   - type: textarea
     attributes:
-      label: Description
-      description: |
-        A clear and concise description of the feature you're interested in.
+      label: Feature description
+      description: Describe your feature request
     validations:
       required: true
-
   - type: textarea
     attributes:
-      label: Suggested Solution
-      description: |
-        Describe the solution you'd like. A clear and concise description of what you want to happen.
+      label: Use case
+      description: Describe what you are trying to achieve
     validations:
-      required: true
-
-  - type: textarea
+      required: false
+   - type: textarea
     attributes:
       label: Alternatives
       description: |
@@ -36,8 +36,7 @@ body:
         A clear and concise description of any alternative solutions or features you've considered.
     validations:
       required: false
-
-  - type: textarea
+- type: textarea
     attributes:
       label: Additional Context
       description: |
