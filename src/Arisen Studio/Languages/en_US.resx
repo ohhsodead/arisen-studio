@@ -271,11 +271,15 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
   <data name="CONTRIBUTORS" xml:space="preserve">
     <value>Contributors</value>
   </data>
+  <data name="COPIED_LINK" xml:space="preserve">
+    <value>Link has been copied to clipboard.</value>
+    <comment>Shows a popup when a URL/Link has been copied to users clipboard.</comment>
+  </data>
   <data name="COPIED_SHA1" xml:space="preserve">
-    <value>Update SHA1 has been copied to clipboard.</value>
+    <value>SHA1 has been copied to clipboard.</value>
   </data>
   <data name="COPIED_URL" xml:space="preserve">
-    <value>Update URL has been copied to clipboard.</value>
+    <value>URL has been copied to clipboard.</value>
   </data>
   <data name="CREATE_BACKUP_FILE" xml:space="preserve">
     <value>You must first create a backup file to restore.</value>
@@ -782,6 +786,10 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   <data name="LABEL_ASCENDING" xml:space="preserve">
     <value>Ascending</value>
   </data>
+  <data name="LABEL_BACK" xml:space="preserve">
+    <value>Back</value>
+    <comment>Example: Go "Back" to previous page</comment>
+  </data>
   <data name="LABEL_BACKUP_FILE" xml:space="preserve">
     <value>Backup File</value>
   </data>
@@ -904,6 +912,9 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   </data>
   <data name="LABEL_FILE_SIZE" xml:space="preserve">
     <value>File Size</value>
+  </data>
+  <data name="LABEL_FW_VERSION" xml:space="preserve">
+    <value>FW Version</value>
   </data>
   <data name="LABEL_GAME" xml:space="preserve">
     <value>Game</value>
@@ -1551,6 +1562,9 @@ If you don't want to uninstall the files, click 'No' and all of these files will
   <data name="STARTING_INSTALL" xml:space="preserve">
     <value>Starting install...</value>
   </data>
+  <data name="STATISTICS" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
   <data name="STATUS" xml:space="preserve">
     <value>Status:</value>
   </data>
@@ -1580,9 +1594,6 @@ If you don't want to uninstall the files, click 'No' and all of these files will
   </data>
   <data name="TAKE_SCREENSHOT" xml:space="preserve">
     <value>Take Screenshot</value>
-  </data>
-  <data name="TITLE_STATISTICS" xml:space="preserve">
-    <value>Statistics</value>
   </data>
   <data name="TOOLS" xml:space="preserve">
     <value>Tools</value>
