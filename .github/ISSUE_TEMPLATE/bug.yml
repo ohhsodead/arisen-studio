@@ -1,43 +1,59 @@
+---
 name: Bug Report
 description: File a bug report
-title: "[Bug]: "
+title: "[Bug Report]: "
 labels: ["bug"]
 body:
-- type: checkboxes
+- type: markdown
   attributes:
-    label: Is there an existing issue for this?
-    description: Please search to see if an issue already exists for the bug you encountered.
-    options:
-    - label: I have searched the existing issues
+    value: "
+      <img src='https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/src/Arisen%20Studio/Resources/arisenstudio.png' align='left' width='80' height='80'>
+      Thank you for finding the time to propose a new feature!
+
+      We appreciate the community's efforts to improve Amplication.
+
+      Note, that after you create an issue, if you have a change ready to submit!
+
+      You can open [Pull Request](https://github.com/amplication/amplication/pulls) immediately after.
+      <br clear='left'/>"
+- type: textarea
+  attributes:
+    label: What happened?
+    description: Please provide as much info as possible.
+    placeholder: >
+      Please provide the context in which the problem occurred and explain what happened
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: What you expected to happen
+    description: What do you think went wrong?
+    placeholder: >
+      Please explain why you think the behaviour is erroneous. It is extremely helpful if you copy&paste
+      the fragment of logs showing the exact error messages or wrong behaviour and screenshots for
+      UI problems or a video of you demonstrating the problem. You can include files by
+      dragging and dropping them here.
+    validations:
       required: true
 - type: textarea
   attributes:
-    label: Current Behavior
-    description: A concise description of what you're experiencing.
-  validations:
-    required: false
-- type: textarea
-  attributes:
-    label: Expected Behavior
-    description: A concise description of what you expected to happen.
-  validations:
-    required: false
-- type: textarea
-  attributes:
-    label: Steps To Reproduce
-    description: Steps to reproduce the behavior.
+    label: How to reproduce
+    description: >
+        What should we do to reproduce the problem? 
     placeholder: |
       1. Go to '...'
       2. Click on '....'
       3. Scroll down to '....'
       4. See error
   validations:
-    required: false
+    required: true
     render: markdown
 - type: textarea
   attributes:
-    label: Screenshots
-    description: If applicable, add screenshots to help explain your problem.
+    label: Logs
+    description: Please attach your log files. 
+    placeholder: >
+      Use the 'Open Log Folder' button at the top menu in Arisen Studio to show the most recent logs then drag and drop the most recent file named 'log.log' one here.
   validations:
     required: false
     render: markdown
@@ -45,7 +61,7 @@ body:
   attributes:
     label: Anything else?
     description: |
-      Links? References? Anything that will give us more context about the issue you are encountering!
+      Anything that will give us more context about the issue you are encountering!
 
       Tip: You can attach images or log files by clicking this area to highlight it and then dragging files in.
   validations:
