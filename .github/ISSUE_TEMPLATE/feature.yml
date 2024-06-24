@@ -8,14 +8,14 @@ body:
   attributes:
     value: "
       <img src='https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/src/Arisen%20Studio/Resources/arisenstudio.png' align='left' width='80' height='80'>
-      Thank you for finding the time to propose a new feature!
+        Thank you for finding the time to propose a new feature!
 
-      We appreciate the community's efforts to improve Arisen Studio.
+        We appreciate the community's efforts to improve Arisen Studio.
 
-      Note, that after you create an issue, if you have a change ready to submit!
+        Note, that after you create an issue, if you have a change ready to submit!
 
-      You can open [Pull Request](https://github.com/ohhsodead/arisen-studio/pulls) immediately after.
-      <br clear='left'/>"
+        You can open [Pull Request](https://github.com/ohhsodead/arisen-studio/pulls) immediately after.
+        <br clear='left'/>"
 - type: textarea
   attributes:
     label: Feature description
