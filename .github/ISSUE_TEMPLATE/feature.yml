@@ -1,0 +1,44 @@
+name: Feature Request
+description: Suggest an idea to help us make Arisen Studio better
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+- type: markdown
+  attributes:
+    value: "
+      <img src='https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/src/Arisen%20Studio/Resources/arisenstudio.png' align='left' width='80' height='80'>
+        Thank you for finding the time to propose a new feature!
+
+        We appreciate the community's efforts to improve Arisen Studio.
+
+        Note, that after you create an issue, if you have a change ready to submit!
+
+        You can open [Pull Request](https://github.com/ohhsodead/arisen-studio/pulls) immediately after.
+        <br clear='left'/>"
+- type: textarea
+  attributes:
+    label: Feature description
+    description: Describe your feature request
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Use case
+    description: Describe what you are trying to achieve
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Alternatives
+    description: |
+      Describe alternatives you've considered.
+      A clear and concise description of any alternative solutions or features you've considered.
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Additional Context
+    description: |
+      Add any other context about the problem here.
+  validations:
+    required: false

@@ -1,33 +1,40 @@
-<h1 align="center">Arisen Studio</h1>
+<h1 align="center">
+    <img src='https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/src/Arisen%20Studio/Resources/arisenstudio.png' align='center' width='60' height='60'> Arisen Studio
+</h1>
+
 <p align="center">Browse, Download and Install Mods for PlayStation 3 & Xbox 360</p>
 
-<p align="center">  
+<h4 align="center">
   <a href="https://github.com/ohhsodead/arisen-studio/releases/"><img src="https://img.shields.io/github/release/ohhsodead/arisen-studio.svg" /></a>
   <a href="https://github.com/ohhsodead/arisen-studio/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/arisen-studio/total.svg" /></a>
   <a href="https://crowdin.com/project/arisenstudio"><img src="https://badges.crowdin.net/arisenstudio/localized.svg"></a>
   <a href="https://gitHub.com/ohhsodead/arisen-studio/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/arisen-studio.svg" /></a>
   <a href="https://github.com/ohhsodead/arisen-studio/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/arisen-studio.svg" /></a>
-  </br>
+  <br>
   <a href="https://arisen.studio/"><img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https://arisen.studio/" /></a>
   <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/website?down_message=offline&label=database&up_message=online&url=https://github.com%2Fohhsodead%2Farisen-studio-database" /></a>
   </a>
   </br>
   <a href="https://sourceforge.net/projects/arisenstudio/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
   <a href="https://twitter.com/arisenstudio"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
-  <a href="https://discord.gg/h22szNhF7V"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
-</p>
+  <a href="https://discord.gg/FTCS3Xu"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
+</h4>
+
+## Introduction
 
 The elegant, powerful, and open-source mod manager. Arisen Studio allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by me, some friends, and awesome contributors. Arisen Studio can also be used as an FTP client to automatically install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.
 
 **the only one of its kind...**
 
-![Dashboard](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/Dashboard.png?raw=true)
+![Dashboard](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/assets/Dashboard.png?raw=true)
 
-![Game Mods](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/GameMods.png?raw=true)
+![Game Mods](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/assets/GameMods.png?raw=true)
 
-![Mod Details](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.screenshots/ModDetails.png?raw=true)
+![Mod Details](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/assets/ModDetails.png?raw=true)
 
-**Comments, ideas, suggestions?** You can contact me in our [Discord Server](https://discord.gg/h22szNhF7V)!
+**Comments, ideas, suggestions?**
+
+<a href="https://discord.gg/FTCS3Xu"><img src="https://arisen.studio/images/discord_banner_purple.svg" /></a>
 
 Please give this project a ⭐ if you find it useful.
 
@@ -78,7 +85,7 @@ Please give this project a ⭐ if you find it useful.
 Download and run the latest version of the Windows installer, "ArisenStudio.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/arisen-studio/releases/latest) page.
 
 ## Bug Reports
-Arisen Studio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/arisen-studio/issues/new). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
+Arisen Studio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&labels=bug&projects=&template=bug.yml&title=%5BBug+Report%5D%3A+). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
 
 ## Contributing
 
@@ -94,11 +101,11 @@ If you are already familiar with the Crowdin platform and want to contribute you
 
 ## Requesting Mods
 
-I know that not all mods aren't on our database, but if you open an issue with the details then we can get them added for you!
+I know that not all mods aren't on our database, but if you [open an issue](https://github.com/ohhsodead/arisen-studio-database/issues/new?assignees=&labels=mod+request&projects=&template=mod_request.yml&title=%5BRequest%5D%3A+) with the details then we can get them added for you!
 
 ## Credits & Libraries
 
-* Appropriate Creators of all Mods
+* Appropriate Creators Of All Files
 * [AutoUpdater.NET](https://github.com/ravibpatel/AutoUpdater.NET)
 * [CodeHollow.FeedReader](https://github.com/arminreiter/FeedReader/)
 * [DevExpress](https://devexpress.com/)
@@ -113,13 +120,14 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [Newtonsoft.Json](https://newtonsoft.com/json)
 * [NLog](https://nlog-project.org/)
 * [PS3Lib](https://github.com/iMCSx/PS3Lib)
+* [webMAN MOD](https://github.com/aldostools/webMAN-MOD)
 * [XDevkit](https://microsoft.com/)
 
 [<a href="https://crowdin.com/?utm_source=badge&utm_medium=referral&utm_campaign=badge-add-on" rel="nofollow"><img style="width:140;height:40px" src="https://badges.crowdin.net/badge/light/crowdin-on-dark.png" srcset="https://badges.crowdin.net/badge/light/crowdin-on-dark.png 1x,https://badges.crowdin.net/badge/light/crowdin-on-dark@2x.png 2x" alt="Crowdin | Agile localization for tech companies" /></a>](https://crowdin.com)
 
 ## Contributors
 
-* [crystall1nedev ](https://github.com/crystall1nedev)
+* [crystall1nedev](https://github.com/crystall1nedev)
 * [EgoMaw](https://github.com/EgoMaw)
 * [goldug](http://djopposite.se/)
 * [NCKwolf](https://twitter.com/NCKwolf)
@@ -134,6 +142,7 @@ I know that not all mods aren't on our database, but if you open an issue with t
 * [Kloido](mailto:jaortiz2026@gmail.com)
 * [klwerous](https://crowdin.com/profile/klwerous)
 * [WTFj)](https://crowdin.com/profile/WTFj)
+* [Crowdin Team](https://crowdin.com/project/arisenstudio/members)
 
 ## Supporters
 
