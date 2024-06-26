@@ -120,6 +120,9 @@
   <data name="ABOUT" xml:space="preserve">
     <value>Om</value>
   </data>
+  <data name="ADD_CONSOLES_MANUALLY" xml:space="preserve">
+    <value>Det går inte att hitta konsoler som använder Grannskapet. Du kan manuellt mata in detaljerna på nästa sida.</value>
+  </data>
   <data name="ADD_NEW_PROFILE" xml:space="preserve">
     <value>Lägg till Ny Profil</value>
   </data>
@@ -265,6 +268,9 @@ Den här filen kan inte avinstalleras för att undvika saknade spelfiler, så de
   <data name="CONSOLE_MANAGER" xml:space="preserve">
     <value>Konsolhanterare</value>
   </data>
+  <data name="CONSOLE_NAME_ALREADY_EXISTS" xml:space="preserve">
+    <value>Konsolnamn '{0}' finns redan i din lista över profiler. \n\nVill du fortfarande lägga till den?</value>
+  </data>
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Konsol Profiler</value>
   </data>
@@ -298,6 +304,9 @@ Den här filen kan inte avinstalleras för att undvika saknade spelfiler, så de
   </data>
   <data name="DATA_MISSING" xml:space="preserve">
     <value>DATA SAKNAS</value>
+  </data>
+  <data name="DEFAULT_CONSOLE_ALREADY_EXISTS" xml:space="preserve">
+    <value>Du har redan satt '{0}' som standardkonsol. Redigera den konsolen och avmarkera alternativet "Använd standard" för att ställa in den här konsolen som standard.</value>
   </data>
   <data name="DELETE" xml:space="preserve">
     <value>Radera</value>
@@ -364,6 +373,9 @@ Den här filen kan inte avinstalleras för att undvika saknade spelfiler, så de
   </data>
   <data name="DOWNLOAD_FOLDER_NOT_FOUND" xml:space="preserve">
     <value>Nedladdningsmappen finns inte på din dator. Du kan ändra nedladdningsplatsen i dina inställningar.</value>
+  </data>
+  <data name="DUPLICATE_NAME" xml:space="preserve">
+    <value>Dubblettnamn</value>
   </data>
   <data name="EDIT_PROFILES" xml:space="preserve">
     <value>Redigera Profiler</value>
@@ -1056,6 +1068,9 @@ Du kan lägga till dem med filhanteraren.</value>
   <data name="LABEL_PLATFORM_TYPE" xml:space="preserve">
     <value>Plattformstyp</value>
   </data>
+  <data name="LABEL_PLAYABLE_VERSION" xml:space="preserve">
+    <value>Spelbar Version</value>
+  </data>
   <data name="LABEL_PLUGINS" xml:space="preserve">
     <value>Tillägg</value>
   </data>
@@ -1305,6 +1320,12 @@ Vill du försöka avinstallera filen/filerna ändå?</value>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Se till att Grannskapet är installerat på din dator</value>
   </data>
+  <data name="NEIGHBORHOOD_SCAN" xml:space="preserve">
+    <value>Vill du använda Grannskap för att automatiskt lägga till dina konsoler?</value>
+  </data>
+  <data name="NEIGHBORHOOD_SCAN_FAILED" xml:space="preserve">
+    <value>Det gick inte att hitta konsoler som använder Grannskap.</value>
+  </data>
   <data name="NOTICE_INSTALL_REBUG_FILES" xml:space="preserve">
     <value>Dessa filer installeras till mappen firmware (dev_rebug) som endast är avsedd för REBUG Custom Firmware. Läs allt nedan innan du fortsätter.
 
@@ -1531,6 +1552,9 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   </data>
   <data name="SCANNING_XBOX_FINISHED" xml:space="preserve">
     <value>Slutförd skanning av Xbox-konsoler.</value>
+  </data>
+  <data name="SCAN_FAILED" xml:space="preserve">
+    <value>Skanning Misslyckades</value>
   </data>
   <data name="SCAN_XBOX_CONSOLES" xml:space="preserve">
     <value>Skanna Xbox-Konsoler</value>
