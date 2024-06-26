@@ -120,6 +120,9 @@
   <data name="ABOUT" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="ADD_CONSOLES_MANUALLY" xml:space="preserve">
+    <value>Unable to find any consoles using Neighborhood. You can manually input the details on the next page.</value>
+  </data>
   <data name="ADD_NEW_PROFILE" xml:space="preserve">
     <value>Add New Profile</value>
   </data>
@@ -265,6 +268,9 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
   <data name="CONSOLE_MANAGER" xml:space="preserve">
     <value>Console Manager</value>
   </data>
+  <data name="CONSOLE_NAME_ALREADY_EXISTS" xml:space="preserve">
+    <value>Console name '{0}' already exists in your list of profiles. \n\nDo you still want to add it?</value>
+  </data>
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Console Profiles</value>
   </data>
@@ -298,6 +304,9 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
   </data>
   <data name="DATA_MISSING" xml:space="preserve">
     <value>DATA MISSING</value>
+  </data>
+  <data name="DEFAULT_CONSOLE_ALREADY_EXISTS" xml:space="preserve">
+    <value>You have already set '{0}' as your default console. Please edit that console and uncheck the 'Use Default' option to set this console as the default.</value>
   </data>
   <data name="DELETE" xml:space="preserve">
     <value>Delete</value>
@@ -365,6 +374,9 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
   <data name="DOWNLOAD_FOLDER_NOT_FOUND" xml:space="preserve">
     <value>Download folder doesn't exist on your computer. You can change the download location in your settings.</value>
   </data>
+  <data name="DUPLICATE_NAME" xml:space="preserve">
+    <value>Duplicate Name</value>
+  </data>
   <data name="EDIT_PROFILES" xml:space="preserve">
     <value>Edit Profiles</value>
   </data>
@@ -375,9 +387,7 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
     <value>Unable to launch game file. Error: {0}</value>
   </data>
   <data name="ERROR_OCCURRED" xml:space="preserve">
-    <value>An error occurred: {0}
-
-Please try again later. If the problem persists &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;open a new issue&lt;/a&gt; on our GitHub tracker.</value>
+    <value>An error occurred: {0}\n\nPlease try again later. If the problem persists &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug.yml"&gt;open a new issue&lt;/a&gt; on our GitHub tracker.</value>
   </data>
   <data name="EXTRACT_IMAGE" xml:space="preserve">
     <value>Extract Image</value>
@@ -1056,6 +1066,9 @@ You can add them using the File Manager.</value>
   <data name="LABEL_PLATFORM_TYPE" xml:space="preserve">
     <value>Platform Type</value>
   </data>
+  <data name="LABEL_PLAYABLE_VERSION" xml:space="preserve">
+    <value>Playable Version</value>
+  </data>
   <data name="LABEL_PLUGINS" xml:space="preserve">
     <value>Plugins</value>
   </data>
@@ -1305,6 +1318,12 @@ Do you want to try uninstalling the file(s) anyway?</value>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Make sure Neighborhood is installed on your computer</value>
   </data>
+  <data name="NEIGHBORHOOD_SCAN" xml:space="preserve">
+    <value>Would you like to use Neighborhood to automatically add your consoles?</value>
+  </data>
+  <data name="NEIGHBORHOOD_SCAN_FAILED" xml:space="preserve">
+    <value>Unable to find any consoles using Neighborhood.</value>
+  </data>
   <data name="NOTICE_INSTALL_REBUG_FILES" xml:space="preserve">
     <value>These files are being installed to the firmware folder (dev_rebug) which is for REBUG Custom Firmware only. Please read everything below before proceeding.
 
@@ -1531,6 +1550,9 @@ If you don't want to uninstall the files, click 'No' and all of these files will
   </data>
   <data name="SCANNING_XBOX_FINISHED" xml:space="preserve">
     <value>Finished scanning for Xbox consoles.</value>
+  </data>
+  <data name="SCAN_FAILED" xml:space="preserve">
+    <value>Scan Failed</value>
   </data>
   <data name="SCAN_XBOX_CONSOLES" xml:space="preserve">
     <value>Scan Xbox Consoles</value>
