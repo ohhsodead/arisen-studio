@@ -1565,6 +1565,9 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   <data name="SEND_FEEDBACK" xml:space="preserve">
     <value>Skicka Synpunkter</value>
   </data>
+  <data name="SETUP_COMPLETE" xml:space="preserve">
+    <value>Du har slutfört konfigurationen!</value>
+  </data>
   <data name="SETUP_WIZARD" xml:space="preserve">
     <value>Installationsguide</value>
   </data>
