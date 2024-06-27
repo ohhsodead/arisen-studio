@@ -84,9 +84,9 @@ Please give this project a ⭐ if you find it useful.
 
 Download and run the latest version of the Windows installer, "ArisenStudio.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/arisen-studio/releases/latest) page.
 
-## Support this
+## Support Us
 
-If you find this project helpful and would like to support its development, please consider making a *small donation*. Your support is greatly appreciated! Funds are mainly to cover the high server costs
+If you find this project helpful and would like to support its development, please consider making a *small donation*. Your support is greatly appreciated! Funds are mainly to cover the high server costs.
 
 <a href="https://www.paypal.com/donate/?business=8KX4YQ46ZNNDJ"><img title="Donate" src="https://img.shields.io/badge/Donate-PayPal?style=for-the-badge&logo=paypal&labelColor=orange&color=orange" alt="donate" /></a>
 
