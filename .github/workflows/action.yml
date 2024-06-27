@@ -1,0 +1,29 @@
+name: 'stargazers'
+description: 'Embedd latest stargazers of repository in README file'
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+    - uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - shell: bash
+      run: |
+        python -m pip install -r ${{ github.action_path }}/requirements.txt
+    - shell: bash
+      run: |-
+        README_PATH=$(readlink -f README.md)
+        python ${{ github.action_path }}/stargazers.py ${{ github.server_url }}/${{ github.repository }} $README_PATH
+    - shell: bash
+      run: |-
+        git config --global user.email "stargazers-bot@example.com"
+        git config --global user.name "stargazers-bot"
+        git diff --quiet || (git add README.md && git commit -m "⭐ Update stargazers ⭐")
+        git push -f
