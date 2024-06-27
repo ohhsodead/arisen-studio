@@ -120,6 +120,9 @@
   <data name="ABOUT" xml:space="preserve">
     <value>Hakkında</value>
   </data>
+  <data name="ADD_CONSOLES_MANUALLY" xml:space="preserve">
+    <value>Çevre kullanılarak herhangi bir konsol bulunamıyor. Sonraki sayfada ayrıntıları el ile girebilirsiniz.</value>
+  </data>
   <data name="ADD_NEW_PROFILE" xml:space="preserve">
     <value>Yeni Profil Ekle</value>
   </data>
@@ -200,7 +203,7 @@ Oyun dosyalarının kaybolmasını önlemek için bu dosya kaldırılamaz, bu ne
     <value>Üretici yazılımı klasöründen dosyaları kaldıramazsınız. Eksik dosyalar konsol performansınızı etkileyebilir.</value>
   </data>
   <data name="CHANGE_LOG" xml:space="preserve">
-    <value>DEĞİŞİKLİKLER</value>
+    <value>Değişiklikler</value>
   </data>
   <data name="CHANGE_PROFILE" xml:space="preserve">
     <value>Profili Değiştir</value>
@@ -265,23 +268,30 @@ Oyun dosyalarının kaybolmasını önlemek için bu dosya kaldırılamaz, bu ne
   <data name="CONSOLE_MANAGER" xml:space="preserve">
     <value>Konsol Yöneticisi</value>
   </data>
+  <data name="CONSOLE_NAME_ALREADY_EXISTS" xml:space="preserve">
+    <value>Konsol adı '{0}' profil listenizde zaten mevcut. \n\nYinede eklemek istiyor musunuz?</value>
+  </data>
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Konsol Profilleri</value>
   </data>
   <data name="CONTRIBUTORS" xml:space="preserve">
-    <value>KATKICILAR</value>
+    <value>Katkıcılar</value>
+  </data>
+  <data name="COPIED_LINK" xml:space="preserve">
+    <value>Bağlantı panoya kopyalandı.</value>
+    <comment>Shows a popup when a URL/Link has been copied to users clipboard.</comment>
   </data>
   <data name="COPIED_SHA1" xml:space="preserve">
-    <value>SHA1 güncellemesi panoya kopyalandı.</value>
+    <value>SHA1 panoya kopyalandı.</value>
   </data>
   <data name="COPIED_URL" xml:space="preserve">
-    <value>Güncelleme URL adresi panoya kopyalandı.</value>
+    <value>URL panoya kopyalandı.</value>
   </data>
   <data name="CREATE_BACKUP_FILE" xml:space="preserve">
     <value>Geri yüklemek için önce bir yedekleme dosyası oluşturmalısınız.</value>
   </data>
   <data name="CREDITS" xml:space="preserve">
-    <value>CREDITS</value>
+    <value>Hazırlayanlar</value>
   </data>
   <data name="CURRENT_GAME" xml:space="preserve">
     <value>Mevcut Oyun:</value>
@@ -294,6 +304,9 @@ Oyun dosyalarının kaybolmasını önlemek için bu dosya kaldırılamaz, bu ne
   </data>
   <data name="DATA_MISSING" xml:space="preserve">
     <value>EKSİK VERİ</value>
+  </data>
+  <data name="DEFAULT_CONSOLE_ALREADY_EXISTS" xml:space="preserve">
+    <value>'{0}' zaten varsayılan konsolunuz olarak ayarlı. Bu konsolu düzenleyin ve bu konsolu varsayılan olarak ayarlamak için 'Varsayılanı Kullan' seçeneğinin işaretini kaldırın.</value>
   </data>
   <data name="DELETE" xml:space="preserve">
     <value>Sil</value>
@@ -360,6 +373,9 @@ Oyun dosyalarının kaybolmasını önlemek için bu dosya kaldırılamaz, bu ne
   </data>
   <data name="DOWNLOAD_FOLDER_NOT_FOUND" xml:space="preserve">
     <value>İndirme klasörü bilgisayarınızda mevcut değil. İndirme konumunu ayarlarınızdan değiştirebilirsiniz.</value>
+  </data>
+  <data name="DUPLICATE_NAME" xml:space="preserve">
+    <value>Yinelenen İsim</value>
   </data>
   <data name="EDIT_PROFILES" xml:space="preserve">
     <value>Profilleri Düzenle</value>
@@ -750,7 +766,7 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
     <value>Kaynakları yerel USB cihazına kurun</value>
   </data>
   <data name="INTERFACE" xml:space="preserve">
-    <value>ARAYÜZ</value>
+    <value>Arayüz</value>
   </data>
   <data name="INVALID_TITLE_ID" xml:space="preserve">
     <value>Geçersiz ID veya bulunamıyor. Bunun doğru bir PS3 Başlık ID olduğundan emin misiniz?</value>
@@ -781,6 +797,10 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   </data>
   <data name="LABEL_ASCENDING" xml:space="preserve">
     <value>Artan</value>
+  </data>
+  <data name="LABEL_BACK" xml:space="preserve">
+    <value>Geri</value>
+    <comment>Example: Go "Back" to previous page</comment>
   </data>
   <data name="LABEL_BACKUP_FILE" xml:space="preserve">
     <value>Yedek Dosyası</value>
@@ -904,6 +924,9 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   </data>
   <data name="LABEL_FILE_SIZE" xml:space="preserve">
     <value>Dosya Boyutu</value>
+  </data>
+  <data name="LABEL_FW_VERSION" xml:space="preserve">
+    <value>FW Sürümü</value>
   </data>
   <data name="LABEL_GAME" xml:space="preserve">
     <value>Oyun</value>
@@ -1044,6 +1067,9 @@ Bunları Dosya Yöneticisini kullanarak ekleyebilirsiniz.</value>
   </data>
   <data name="LABEL_PLATFORM_TYPE" xml:space="preserve">
     <value>Platform Türü</value>
+  </data>
+  <data name="LABEL_PLAYABLE_VERSION" xml:space="preserve">
+    <value>Oynanabilir Sürüm</value>
   </data>
   <data name="LABEL_PLUGINS" xml:space="preserve">
     <value>Eklentiler</value>
@@ -1190,7 +1216,7 @@ Bunları Dosya Yöneticisini kullanarak ekleyebilirsiniz.</value>
     <value>Son Güncellenme</value>
   </data>
   <data name="LATEST_NEWS" xml:space="preserve">
-    <value>SON YENİLİKLER</value>
+    <value>Son Yenilikler</value>
   </data>
   <data name="LAUNCH_FILE_PATH" xml:space="preserve">
     <value>launch.ini Dosya Yolu</value>
@@ -1294,6 +1320,12 @@ Yine de dosyaları kaldırmayı denemek istiyor musunuz?</value>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Bilgisayarınızda 'Neighborhood' kurulu olduğundan emin olun</value>
   </data>
+  <data name="NEIGHBORHOOD_SCAN" xml:space="preserve">
+    <value>Konsollarınızı otomatik olarak eklemek için Çevreyi kullanmak ister misiniz?</value>
+  </data>
+  <data name="NEIGHBORHOOD_SCAN_FAILED" xml:space="preserve">
+    <value>Çevre kullanılarak herhangi bir konsol bulunamıyor.</value>
+  </data>
   <data name="NOTICE_INSTALL_REBUG_FILES" xml:space="preserve">
     <value>Bu dosyalar, yalnızca REBUG Custom Firmware için olan firmware klasörüne (dev_rebug) kurulur. Lütfen devam etmeden önce aşağıdaki her şeyi okuyun.
 
@@ -1394,19 +1426,19 @@ Bu oyun için doğru modları kurun veya farklı bir oyun bölgesi seçin.</valu
     <value>Klasör Aç</value>
   </data>
   <data name="OPEN_LOG_FILE" xml:space="preserve">
-    <value>Log Dosyasını Aç</value>
+    <value>Günlük Dosyasını Aç</value>
   </data>
   <data name="OPEN_LOG_FOLDER" xml:space="preserve">
-    <value>Sistem Günlüğü Klasörünü Aç</value>
+    <value>Günlük Klasörünü Aç</value>
   </data>
   <data name="OPTIONS" xml:space="preserve">
-    <value>SEÇENEKLER</value>
+    <value>Şeçenekler</value>
   </data>
   <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
     <value>Favori Oyunlarınız</value>
   </data>
   <data name="OUR_FAVORITE_MODS" xml:space="preserve">
-    <value>FAVORİ MODLARIMIZ</value>
+    <value>Favori Modlarınız</value>
   </data>
   <data name="OVERWRITE_MODS" xml:space="preserve">
     <value>Modların Üzerine Yaz</value>
@@ -1457,7 +1489,7 @@ Bu oyun için doğru modları kurun veya farklı bir oyun bölgesi seçin.</valu
     <value>Oyun başlamaya hazır.</value>
   </data>
   <data name="RECENTLY_UPDATED" xml:space="preserve">
-    <value>SON GÜNCELLENENLER</value>
+    <value>Son Güncellenen</value>
   </data>
   <data name="RECONNECT_CONSOLE" xml:space="preserve">
     <value>Konsola Tekrar Bağlan</value>
@@ -1489,7 +1521,7 @@ Bir sorunu çözmemize yardımcı olmak için 'Gönder' düğmesini tıklayın.<
     <value>Görseli Değiştir</value>
   </data>
   <data name="REQUEST_MODS" xml:space="preserve">
-    <value>İstek Modlar</value>
+    <value>Mod Talep Et</value>
   </data>
   <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
     <value>Dosyalar, konsolunuza bağlı bir USB cihazına kuruldu. Bunları şimdi kaldırabilir veya el ile silebilirsiniz.
@@ -1521,6 +1553,9 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
   <data name="SCANNING_XBOX_FINISHED" xml:space="preserve">
     <value>Xbox konsolları için tarama tamamlandı.</value>
   </data>
+  <data name="SCAN_FAILED" xml:space="preserve">
+    <value>Tarama Başarısız</value>
+  </data>
   <data name="SCAN_XBOX_CONSOLES" xml:space="preserve">
     <value>Xbox Konsolları Tara</value>
   </data>
@@ -1529,6 +1564,9 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
   </data>
   <data name="SEND_FEEDBACK" xml:space="preserve">
     <value>Geri Bildirim Gönder</value>
+  </data>
+  <data name="SETUP_COMPLETE" xml:space="preserve">
+    <value>Kurulumu Tamamladınız!</value>
   </data>
   <data name="SETUP_WIZARD" xml:space="preserve">
     <value>Kurulum Sihirbazı</value>
@@ -1550,6 +1588,9 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
   </data>
   <data name="STARTING_INSTALL" xml:space="preserve">
     <value>Kurulum başlatılıyor...</value>
+  </data>
+  <data name="STATISTICS" xml:space="preserve">
+    <value>İstatistikler</value>
   </data>
   <data name="STATUS" xml:space="preserve">
     <value>Durum:</value>
@@ -1580,9 +1621,6 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
   </data>
   <data name="TAKE_SCREENSHOT" xml:space="preserve">
     <value>Ekran Görüntüsü Al</value>
-  </data>
-  <data name="TITLE_STATISTICS" xml:space="preserve">
-    <value>İSTATİSTİKLER</value>
   </data>
   <data name="TOOLS" xml:space="preserve">
     <value>Araçlar</value>
