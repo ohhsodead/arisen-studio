@@ -153,9 +153,6 @@ I know that not all mods aren't on our database, but if you [open an issue](http
 
 [![Stargazers repo roster for @ohhsodead/arisen-studio](https://bytecrank.com/nastyox/reporoster/php/stargazersSVG.php?user=ohhsodead&repo=arisen-studio)](https://github.com/ohhsodead/arisen-studio/stargazers)
 
-<!-- stargazers -->
-<!-- stargazers -->
-
 ## Disclaimer
 
 I can accept no responsibility for any damage you cause to your system by using this tool.
