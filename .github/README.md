@@ -159,4 +159,4 @@ I can accept no responsibility for any damage you cause to your system by using 
 
 ## License
 
-This project is released under the GNU General Public License v3.
+This project is released under the MIT License.
