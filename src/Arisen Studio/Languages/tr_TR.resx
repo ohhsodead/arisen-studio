@@ -1434,6 +1434,12 @@ Bu oyun için doğru modları kurun veya farklı bir oyun bölgesi seçin.</valu
   <data name="OPTIONS" xml:space="preserve">
     <value>Şeçenekler</value>
   </data>
+  <data name="OUR_FAVORITE_APPS" xml:space="preserve">
+    <value>Favori Uygulamalarımız</value>
+  </data>
+  <data name="OUR_FAVORITE_CATEGORIES" xml:space="preserve">
+    <value>Favori Kategorilerimiz</value>
+  </data>
   <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
     <value>Favori Oyunlarınız</value>
   </data>
@@ -1463,6 +1469,9 @@ Bu oyun için doğru modları kurun veya farklı bir oyun bölgesi seçin.</valu
   </data>
   <data name="PREPARING_UNINSTALL" xml:space="preserve">
     <value>Dosyaları kaldırmaya hazırlanıyor...</value>
+  </data>
+  <data name="PROFILE" xml:space="preserve">
+    <value>Profil</value>
   </data>
   <data name="PROFILE_ADD_INSTRUCTION" xml:space="preserve">
     <value>Tıkla 'Yeni Profil Oluştur'</value>
