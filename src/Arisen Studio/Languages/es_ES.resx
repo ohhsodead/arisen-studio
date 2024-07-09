@@ -120,6 +120,9 @@
   <data name="ABOUT" xml:space="preserve">
     <value>Acerca de</value>
   </data>
+  <data name="ADD_CONSOLES_MANUALLY" xml:space="preserve">
+    <value>No se puede encontrar ninguna consola usando Neighborhood. Puede introducir manualmente los detalles en la página siguiente.</value>
+  </data>
   <data name="ADD_NEW_PROFILE" xml:space="preserve">
     <value>Añadir nuevo perfil</value>
   </data>
@@ -265,17 +268,24 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
   <data name="CONSOLE_MANAGER" xml:space="preserve">
     <value>Administrador de la consola</value>
   </data>
+  <data name="CONSOLE_NAME_ALREADY_EXISTS" xml:space="preserve">
+    <value>El nombre de consola '{0}' ya existe en tu lista de perfiles. \n\n¿Todavía quieres añadirlo?</value>
+  </data>
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Perfiles de la consola</value>
   </data>
   <data name="CONTRIBUTORS" xml:space="preserve">
     <value>Contribuidores</value>
   </data>
+  <data name="COPIED_LINK" xml:space="preserve">
+    <value>El enlace se ha copiado al portapapeles.</value>
+    <comment>Shows a popup when a URL/Link has been copied to users clipboard.</comment>
+  </data>
   <data name="COPIED_SHA1" xml:space="preserve">
-    <value>La actualización SHA1 ha sido copiada al portapapeles.</value>
+    <value>El SHA1 se ha copiado al portapapeles.</value>
   </data>
   <data name="COPIED_URL" xml:space="preserve">
-    <value>La actualización URL ha sido copiada al portapapeles.</value>
+    <value>La URL se ha copiado al portapapeles.</value>
   </data>
   <data name="CREATE_BACKUP_FILE" xml:space="preserve">
     <value>Primero debes crear un archivo de copia de seguridad para restaurar.</value>
@@ -294,6 +304,9 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
   </data>
   <data name="DATA_MISSING" xml:space="preserve">
     <value>FALTA DE DATOS</value>
+  </data>
+  <data name="DEFAULT_CONSOLE_ALREADY_EXISTS" xml:space="preserve">
+    <value>Ya has establecido '{0}' como tu consola predeterminada. Por favor, edite esa consola y desmarque la opción "Usar predeterminado" para establecer esta consola como la predeterminada.</value>
   </data>
   <data name="DELETE" xml:space="preserve">
     <value>Eliminar</value>
@@ -360,6 +373,9 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
   </data>
   <data name="DOWNLOAD_FOLDER_NOT_FOUND" xml:space="preserve">
     <value>La carpeta de descarga no existe en su computadora. Puede cambiar la ubicación de descarga en su configuración.</value>
+  </data>
+  <data name="DUPLICATE_NAME" xml:space="preserve">
+    <value>Duplicar nombre</value>
   </data>
   <data name="EDIT_PROFILES" xml:space="preserve">
     <value>Editar perfiles</value>
@@ -781,6 +797,10 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
   <data name="LABEL_ASCENDING" xml:space="preserve">
     <value>Ascendiendo</value>
   </data>
+  <data name="LABEL_BACK" xml:space="preserve">
+    <value>Atrás</value>
+    <comment>Example: Go "Back" to previous page</comment>
+  </data>
   <data name="LABEL_BACKUP_FILE" xml:space="preserve">
     <value>Copia de seguridad</value>
   </data>
@@ -903,6 +923,9 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
   </data>
   <data name="LABEL_FILE_SIZE" xml:space="preserve">
     <value>Tamaño del archivo</value>
+  </data>
+  <data name="LABEL_FW_VERSION" xml:space="preserve">
+    <value>Versión de firmware</value>
   </data>
   <data name="LABEL_GAME" xml:space="preserve">
     <value>Juego</value>
@@ -1043,6 +1066,9 @@ Puedes añadirlos usando el administrador de archivos.</value>
   </data>
   <data name="LABEL_PLATFORM_TYPE" xml:space="preserve">
     <value>Tipo de plataforma</value>
+  </data>
+  <data name="LABEL_PLAYABLE_VERSION" xml:space="preserve">
+    <value>Versión reproducible</value>
   </data>
   <data name="LABEL_PLUGINS" xml:space="preserve">
     <value>Plugins</value>
@@ -1293,6 +1319,12 @@ Error: {0}</value>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Make sure Neighborhood is installed on your computer</value>
   </data>
+  <data name="NEIGHBORHOOD_SCAN" xml:space="preserve">
+    <value>¿Te gustaría usar Neighborhood para añadir automáticamente tus consolas?</value>
+  </data>
+  <data name="NEIGHBORHOOD_SCAN_FAILED" xml:space="preserve">
+    <value>No se puede encontrar ninguna consola usando Neighborhood.</value>
+  </data>
   <data name="NOTICE_INSTALL_REBUG_FILES" xml:space="preserve">
     <value>Estos archivos están siendo instalados en la carpeta firmware (dev_rebug) que es solamente para REBUG Custom Firmware. Por favor, lee todo lo de abajo antes de proceder.
 
@@ -1401,6 +1433,12 @@ Instala los mods correctos para este juego o elige una región de juego diferent
   <data name="OPTIONS" xml:space="preserve">
     <value>Opciones</value>
   </data>
+  <data name="OUR_FAVORITE_APPS" xml:space="preserve">
+    <value>Nuestras Aplicaciones Favoritas</value>
+  </data>
+  <data name="OUR_FAVORITE_CATEGORIES" xml:space="preserve">
+    <value>Nuestras Categorías Favoritas</value>
+  </data>
   <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
     <value>Nuestros juegos favoritos</value>
   </data>
@@ -1430,6 +1468,9 @@ Instala los mods correctos para este juego o elige una región de juego diferent
   </data>
   <data name="PREPARING_UNINSTALL" xml:space="preserve">
     <value>Preparándose para desinstalar archivos...</value>
+  </data>
+  <data name="PROFILE" xml:space="preserve">
+    <value>Perfil</value>
   </data>
   <data name="PROFILE_ADD_INSTRUCTION" xml:space="preserve">
     <value>Haz clic en 'Agregar nuevo perfil' para crear uno</value>
@@ -1520,6 +1561,9 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
   <data name="SCANNING_XBOX_FINISHED" xml:space="preserve">
     <value>Escaneo terminado para consolas Xbox.</value>
   </data>
+  <data name="SCAN_FAILED" xml:space="preserve">
+    <value>Escaneo fallido</value>
+  </data>
   <data name="SCAN_XBOX_CONSOLES" xml:space="preserve">
     <value>Escanear consolas Xbox</value>
   </data>
@@ -1528,6 +1572,9 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
   </data>
   <data name="SEND_FEEDBACK" xml:space="preserve">
     <value>Enviar comentarios</value>
+  </data>
+  <data name="SETUP_COMPLETE" xml:space="preserve">
+    <value>¡Has terminado la configuración!</value>
   </data>
   <data name="SETUP_WIZARD" xml:space="preserve">
     <value>Asistente de instalación</value>
@@ -1549,6 +1596,9 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
   </data>
   <data name="STARTING_INSTALL" xml:space="preserve">
     <value>Iniciando instalación...</value>
+  </data>
+  <data name="STATISTICS" xml:space="preserve">
+    <value>Estadísticas</value>
   </data>
   <data name="STATUS" xml:space="preserve">
     <value>Estado:</value>
@@ -1579,9 +1629,6 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
   </data>
   <data name="TAKE_SCREENSHOT" xml:space="preserve">
     <value>Tomar captura de pantalla</value>
-  </data>
-  <data name="TITLE_STATISTICS" xml:space="preserve">
-    <value>ESTADÍSTICAS</value>
   </data>
   <data name="TOOLS" xml:space="preserve">
     <value>Herramientas</value>
