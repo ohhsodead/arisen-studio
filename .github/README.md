@@ -13,6 +13,7 @@
   <br>
   <a href="https://arisen.studio/"><img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https://arisen.studio/" /></a>
   <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/website?down_message=offline&label=database&up_message=online&url=https://github.com%2Fohhsodead%2Farisen-studio-database" /></a>
+  <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fohhsodead%2Farisen-studio-database%2Fmain%2Fbadge%2Fmod_count_badge.json&label=total%20mods" /></a>
   </a>
   </br>
   <a href="https://sourceforge.net/projects/arisenstudio/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
@@ -96,6 +97,10 @@ Arisen Studio isn't perfect. If you encounter any issues, you are encouraged to 
 ## Contributing
 
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
+
+### Database
+
+Arisen Studio uses a self-curated repository as its database, which can be found [here](https://github.com/ohhsodead/arisen-studio-database). This repository contains all the necessary data for the project. When contributing, ensure that any database-related changes or additions are made to this repository.
 
 ### Translations
 For the localization process we use the collaborative platform from [Crowdin](https://crowdin.com/), thanks to their generosity for providing a professional service to Open Source projects free of charge. Please read the [introduction for new translators](https://support.crowdin.com/crowdin-intro/) and [guide for using the online editor](https://support.crowdin.com/online-editor/) to understand how it works.
