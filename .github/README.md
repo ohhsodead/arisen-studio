@@ -17,7 +17,7 @@
   </a>
   </br>
   <a href="https://sourceforge.net/projects/arisenstudio/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
-  <a href="https://twitter.com/arisenstudio"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
+  <a href="https://twitter.com/arisenstudio"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=x&logoColor=white" alt="Tweet"></a>
   <a href="https://discord.gg/FTCS3Xu"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
 </h4>
 
