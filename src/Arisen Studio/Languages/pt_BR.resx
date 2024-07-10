@@ -120,6 +120,9 @@
   <data name="ABOUT" xml:space="preserve">
     <value>Sobre</value>
   </data>
+  <data name="ADD_CONSOLES_MANUALLY" xml:space="preserve">
+    <value>Não foi possível encontrar consoles usando o Neighborhood. Insira os detalhes manualmente na próxima página.</value>
+  </data>
   <data name="ADD_NEW_PROFILE" xml:space="preserve">
     <value>Adic. novo perfil</value>
   </data>
@@ -265,17 +268,24 @@ Este arquivo não pode ser desinstalado para evitar arquivos de jogo ausentes, p
   <data name="CONSOLE_MANAGER" xml:space="preserve">
     <value>Gerenciador do console</value>
   </data>
+  <data name="CONSOLE_NAME_ALREADY_EXISTS" xml:space="preserve">
+    <value>Já existe um console chamado '{0}' na lista de perfis. \n\nVocê quer adicionar este console mesmo assim?</value>
+  </data>
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Perfis dos consoles</value>
   </data>
   <data name="CONTRIBUTORS" xml:space="preserve">
     <value>Colaboradores</value>
   </data>
+  <data name="COPIED_LINK" xml:space="preserve">
+    <value>Link copiado na área de transferência.</value>
+    <comment>Shows a popup when a URL/Link has been copied to users clipboard.</comment>
+  </data>
   <data name="COPIED_SHA1" xml:space="preserve">
-    <value>Atualização do SHA1 foi copiada para a área de transferência.</value>
+    <value>SHA1 copiado na área de transferência.</value>
   </data>
   <data name="COPIED_URL" xml:space="preserve">
-    <value>Atualização do URL foi copiada para a área de transferência.</value>
+    <value>URL copiada na área de transferência.</value>
   </data>
   <data name="CREATE_BACKUP_FILE" xml:space="preserve">
     <value>Primeiro, crie um arquivo de backup para restauração.</value>
@@ -294,6 +304,9 @@ Este arquivo não pode ser desinstalado para evitar arquivos de jogo ausentes, p
   </data>
   <data name="DATA_MISSING" xml:space="preserve">
     <value>DADOS AUSENTES</value>
+  </data>
+  <data name="DEFAULT_CONSOLE_ALREADY_EXISTS" xml:space="preserve">
+    <value>O console '{0}' já está definido como o console padrão. Edite-o e desmarque a opção de "Usar padrão" para conseguir definir este console como o padrão.</value>
   </data>
   <data name="DELETE" xml:space="preserve">
     <value>Excluir</value>
@@ -360,6 +373,9 @@ Este arquivo não pode ser desinstalado para evitar arquivos de jogo ausentes, p
   </data>
   <data name="DOWNLOAD_FOLDER_NOT_FOUND" xml:space="preserve">
     <value>A pasta para download não existe em seu computador. Você pode alterar o local de download nas configurações.</value>
+  </data>
+  <data name="DUPLICATE_NAME" xml:space="preserve">
+    <value>Nome duplicado</value>
   </data>
   <data name="EDIT_PROFILES" xml:space="preserve">
     <value>Editar perfis</value>
@@ -615,7 +631,7 @@ Erro: {0}</value>
     <value>Regiões padrão do jogo</value>
   </data>
   <data name="GAME_SAVES" xml:space="preserve">
-    <value>JOGOS SALVOS</value>
+    <value>Jogos salvos</value>
   </data>
   <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
     <value>Reassinar os Dados Salvos do Jogo</value>
@@ -782,6 +798,10 @@ Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso 
   <data name="LABEL_ASCENDING" xml:space="preserve">
     <value>Crescente</value>
   </data>
+  <data name="LABEL_BACK" xml:space="preserve">
+    <value>Voltar</value>
+    <comment>Example: Go "Back" to previous page</comment>
+  </data>
   <data name="LABEL_BACKUP_FILE" xml:space="preserve">
     <value>Arquivo de backup</value>
   </data>
@@ -904,6 +924,9 @@ Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso 
   </data>
   <data name="LABEL_FILE_SIZE" xml:space="preserve">
     <value>Tamanho</value>
+  </data>
+  <data name="LABEL_FW_VERSION" xml:space="preserve">
+    <value>Versão do FW</value>
   </data>
   <data name="LABEL_GAME" xml:space="preserve">
     <value>Jogo</value>
@@ -1044,6 +1067,9 @@ Você pode usar o Gerenciador de Arquivos para adicionar um jogo.</value>
   </data>
   <data name="LABEL_PLATFORM_TYPE" xml:space="preserve">
     <value>Tipo de plataforma</value>
+  </data>
+  <data name="LABEL_PLAYABLE_VERSION" xml:space="preserve">
+    <value>Versão compatível</value>
   </data>
   <data name="LABEL_PLUGINS" xml:space="preserve">
     <value>Plugins</value>
@@ -1262,13 +1288,13 @@ Você quer tentar desinstalar o(s) arquivo(s) mesmo assim?</value>
     <value>DOWNLOADS</value>
   </data>
   <data name="NAVIGATION_FILE_MANAGER" xml:space="preserve">
-    <value>GERENC. DE ARQUIVOS</value>
+    <value>Gerenc. de arquivos</value>
   </data>
   <data name="NAVIGATION_GAME_CHEATS" xml:space="preserve">
     <value>CÓDIGOS</value>
   </data>
   <data name="NAVIGATION_GAME_MODS" xml:space="preserve">
-    <value>MODS DE JOGOS</value>
+    <value>Mods de jogos</value>
   </data>
   <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
     <value>JOGOS SALVOS</value>
@@ -1277,7 +1303,7 @@ Você quer tentar desinstalar o(s) arquivo(s) mesmo assim?</value>
     <value>HOMEBREW</value>
   </data>
   <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
-    <value>MODS INSTALADOS</value>
+    <value>Arquivos instalados</value>
   </data>
   <data name="NAVIGATION_PACKAGES" xml:space="preserve">
     <value>PACOTES</value>
@@ -1293,6 +1319,12 @@ Você quer tentar desinstalar o(s) arquivo(s) mesmo assim?</value>
   </data>
   <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
     <value>Certifique-se de que o Vizinho está instalado no seu computador</value>
+  </data>
+  <data name="NEIGHBORHOOD_SCAN" xml:space="preserve">
+    <value>Deseja adicionar seus consoles automaticamente com o Neighborhood?</value>
+  </data>
+  <data name="NEIGHBORHOOD_SCAN_FAILED" xml:space="preserve">
+    <value>Não foi possível encontrar consoles usando o Neighborhood.</value>
   </data>
   <data name="NOTICE_INSTALL_REBUG_FILES" xml:space="preserve">
     <value>Esses arquivos estão sendo instalados na pasta de firmware (dev_rebug) que é somente para REBUG Custom Firmware. Por favor, leia tudo abaixo antes de prosseguir.
@@ -1402,6 +1434,12 @@ Instale os mods corretos para este jogo ou escolha uma região de jogo diferente
   <data name="OPTIONS" xml:space="preserve">
     <value>Opções</value>
   </data>
+  <data name="OUR_FAVORITE_APPS" xml:space="preserve">
+    <value>Nossas aplicações favoritas</value>
+  </data>
+  <data name="OUR_FAVORITE_CATEGORIES" xml:space="preserve">
+    <value>Nossas categorias favoritas</value>
+  </data>
   <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
     <value>Nossos Jogos Favoritos</value>
   </data>
@@ -1431,6 +1469,9 @@ Instale os mods corretos para este jogo ou escolha uma região de jogo diferente
   </data>
   <data name="PREPARING_UNINSTALL" xml:space="preserve">
     <value>Preparando para desinstalar arquivos...</value>
+  </data>
+  <data name="PROFILE" xml:space="preserve">
+    <value>Perfil</value>
   </data>
   <data name="PROFILE_ADD_INSTRUCTION" xml:space="preserve">
     <value>Clique em "Adic. novo perfil" para criar um</value>
@@ -1521,6 +1562,9 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   <data name="SCANNING_XBOX_FINISHED" xml:space="preserve">
     <value>Terminou a verificação de consoles Xbox.</value>
   </data>
+  <data name="SCAN_FAILED" xml:space="preserve">
+    <value>Falha na varredura</value>
+  </data>
   <data name="SCAN_XBOX_CONSOLES" xml:space="preserve">
     <value>Escanear Xbox Consoles</value>
   </data>
@@ -1529,6 +1573,9 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   </data>
   <data name="SEND_FEEDBACK" xml:space="preserve">
     <value>Enviar Opinião</value>
+  </data>
+  <data name="SETUP_COMPLETE" xml:space="preserve">
+    <value>Configuração concluída!</value>
   </data>
   <data name="SETUP_WIZARD" xml:space="preserve">
     <value>Assistente de Instalação</value>
@@ -1550,6 +1597,9 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   </data>
   <data name="STARTING_INSTALL" xml:space="preserve">
     <value>Iniciando a instalação...</value>
+  </data>
+  <data name="STATISTICS" xml:space="preserve">
+    <value>Estatísticas</value>
   </data>
   <data name="STATUS" xml:space="preserve">
     <value>Status:</value>
@@ -1580,9 +1630,6 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   </data>
   <data name="TAKE_SCREENSHOT" xml:space="preserve">
     <value>Capturar tela</value>
-  </data>
-  <data name="TITLE_STATISTICS" xml:space="preserve">
-    <value>ESTATÍSTICAS</value>
   </data>
   <data name="TOOLS" xml:space="preserve">
     <value>Ferramentas</value>

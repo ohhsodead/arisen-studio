@@ -13,10 +13,12 @@
   <br>
   <a href="https://arisen.studio/"><img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https://arisen.studio/" /></a>
   <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/website?down_message=offline&label=database&up_message=online&url=https://github.com%2Fohhsodead%2Farisen-studio-database" /></a>
+  <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fohhsodead%2Farisen-studio-database%2Fmain%2Fbadge%2Fmod_count_badge.json&label=total%20mods" /></a>
+  <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/Badges/package_count_badge.json&label=total%20packages" /></a>
   </a>
   </br>
   <a href="https://sourceforge.net/projects/arisenstudio/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
-  <a href="https://twitter.com/arisenstudio"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="Tweet"></a>
+  <a href="https://twitter.com/arisenstudio"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=x&logoColor=white" alt="Tweet"></a>
   <a href="https://discord.gg/FTCS3Xu"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
 </h4>
 
@@ -84,15 +86,22 @@ Please give this project a ⭐ if you find it useful.
 
 Download and run the latest version of the Windows installer, "ArisenStudio.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/arisen-studio/releases/latest) page.
 
+## Support Us
+
+If you find this project helpful and would like to support its development, please consider making a *small donation*. Your support is greatly appreciated! Funds are mainly to cover the high server costs.
+
+<a href="https://www.paypal.com/donate/?business=8KX4YQ46ZNNDJ"><img title="Donate" src="https://img.shields.io/badge/Donate-PayPal?style=for-the-badge&logo=paypal&labelColor=orange&color=orange" alt="donate" /></a>
+
 ## Bug Reports
-Arisen Studio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&labels=bug&projects=&template=bug.yml&title=%5BBug+Report%5D%3A+). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
+Arisen Studio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/arisen-studio/issues/new?&labels=bug&template=bug.yml&title=%5BBug+Report%5D%3A+). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
 
 ## Contributing
 
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
 
-If you like Arisen Studio, then feel free to contribute with a *small donation*, I'd really appreciate it!
-[PayPal](https://www.paypal.com/donate/?hosted_button_id=DFEYRZVJWAC4E) (Funds are mainly to cover the high server costs)
+### Database
+
+Arisen Studio uses a self-curated repository as its database, which can be found [here](https://github.com/ohhsodead/arisen-studio-database). This repository contains all the necessary data for the project. When contributing, ensure that any database-related changes or additions are made to this repository.
 
 ### Translations
 For the localization process we use the collaborative platform from [Crowdin](https://crowdin.com/), thanks to their generosity for providing a professional service to Open Source projects free of charge. Please read the [introduction for new translators](https://support.crowdin.com/crowdin-intro/) and [guide for using the online editor](https://support.crowdin.com/online-editor/) to understand how it works.
@@ -101,7 +110,7 @@ If you are already familiar with the Crowdin platform and want to contribute you
 
 ## Requesting Mods
 
-I know that not all mods aren't on our database, but if you [open an issue](https://github.com/ohhsodead/arisen-studio-database/issues/new?assignees=&labels=mod+request&projects=&template=mod_request.yml&title=%5BRequest%5D%3A+) with the details then we can get them added for you!
+I know that not all mods aren't on our database, but if you [open an issue](https://github.com/ohhsodead/arisen-studio-database/issues/new?&labels=request&template=mod_request.yml&title=%5BRequest%5D%3A+) with the details then we can get them added for you!
 
 ## Credits & Libraries
 
@@ -120,8 +129,10 @@ I know that not all mods aren't on our database, but if you [open an issue](http
 * [Newtonsoft.Json](https://newtonsoft.com/json)
 * [NLog](https://nlog-project.org/)
 * [PS3Lib](https://github.com/iMCSx/PS3Lib)
+* [SharpZipLib](https://github.com/icsharpcode/SharpZipLib)
+* [Tomlyn](https://github.com/xoofx/Tomlyn)
 * [webMAN MOD](https://github.com/aldostools/webMAN-MOD)
-* [XDevkit](https://microsoft.com/)
+* [xdevkit](https://microsoft.com/)
 
 [<a href="https://crowdin.com/?utm_source=badge&utm_medium=referral&utm_campaign=badge-add-on" rel="nofollow"><img style="width:140;height:40px" src="https://badges.crowdin.net/badge/light/crowdin-on-dark.png" srcset="https://badges.crowdin.net/badge/light/crowdin-on-dark.png 1x,https://badges.crowdin.net/badge/light/crowdin-on-dark@2x.png 2x" alt="Crowdin | Agile localization for tech companies" /></a>](https://crowdin.com)
 
@@ -154,4 +165,4 @@ I can accept no responsibility for any damage you cause to your system by using 
 
 ## License
 
-This project is released under the GNU General Public License v3.
+This project is released under the MIT License.

@@ -1434,6 +1434,12 @@ Installera rätt moddar för detta spel eller välj en annan spelregion.</value>
   <data name="OPTIONS" xml:space="preserve">
     <value>ALTERNATIV</value>
   </data>
+  <data name="OUR_FAVORITE_APPS" xml:space="preserve">
+    <value>Våra Favoritappar</value>
+  </data>
+  <data name="OUR_FAVORITE_CATEGORIES" xml:space="preserve">
+    <value>Våra Favoritkategorier</value>
+  </data>
   <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
     <value>Våra Favoritspel</value>
   </data>
@@ -1463,6 +1469,9 @@ Installera rätt moddar för detta spel eller välj en annan spelregion.</value>
   </data>
   <data name="PREPARING_UNINSTALL" xml:space="preserve">
     <value>Förbereder för att avinstallera filer...</value>
+  </data>
+  <data name="PROFILE" xml:space="preserve">
+    <value>Profil</value>
   </data>
   <data name="PROFILE_ADD_INSTRUCTION" xml:space="preserve">
     <value>Klicka på 'Lägg till ny profil' för att skapa en</value>
@@ -1564,6 +1573,9 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   </data>
   <data name="SEND_FEEDBACK" xml:space="preserve">
     <value>Skicka Synpunkter</value>
+  </data>
+  <data name="SETUP_COMPLETE" xml:space="preserve">
+    <value>Du har slutfört konfigurationen!</value>
   </data>
   <data name="SETUP_WIZARD" xml:space="preserve">
     <value>Installationsguide</value>
