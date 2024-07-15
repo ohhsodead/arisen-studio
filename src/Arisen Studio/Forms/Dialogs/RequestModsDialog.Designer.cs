@@ -123,6 +123,7 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.ButtonRefresh.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.ButtonRefresh.Id = 0;
+            this.ButtonRefresh.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.ButtonRefresh.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.actions_reload;
             this.ButtonRefresh.Name = "ButtonRefresh";
             this.ButtonRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonRefresh_ItemClick);
@@ -131,6 +132,7 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.ButtonOpenLink.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.ButtonOpenLink.Id = 1;
+            this.ButtonOpenLink.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.ButtonOpenLink.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.open_url;
             this.ButtonOpenLink.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.ButtonOpenLink.Name = "ButtonOpenLink";

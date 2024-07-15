@@ -71,8 +71,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // 
             // GridControlCheats
             // 
-            this.GridControlCheats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.GridControlCheats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridControlCheats.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.GridControlCheats.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
@@ -149,7 +149,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // 
             // PanelRegion
             // 
-            this.PanelRegion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.PanelRegion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelRegion.Controls.Add(this.LabelGame);
             this.PanelRegion.Controls.Add(this.LabelVersion);
@@ -162,7 +162,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // 
             // LabelGame
             // 
-            this.LabelGame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.LabelGame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelGame.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.LabelGame.Appearance.Options.UseFont = true;
@@ -177,7 +177,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // 
             // LabelVersion
             // 
-            this.LabelVersion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.LabelVersion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelVersion.Appearance.Options.UseFont = true;
@@ -223,6 +223,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonApplyCheat.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ButtonApplyCheat.Appearance.Options.UseFont = true;
             this.ButtonApplyCheat.Appearance.Options.UseForeColor = true;
+            this.ButtonApplyCheat.AutoSize = true;
             this.ButtonApplyCheat.Enabled = false;
             this.ButtonApplyCheat.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.ButtonApplyCheat.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
@@ -230,11 +231,13 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonApplyCheat.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonApplyCheat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonApplyCheat.ImageOptions.SvgImage")));
             this.ButtonApplyCheat.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonApplyCheat.Location = new System.Drawing.Point(16, 12);
+            this.ButtonApplyCheat.Location = new System.Drawing.Point(16, 11);
             this.ButtonApplyCheat.Margin = new System.Windows.Forms.Padding(16, 3, 3, 3);
+            this.ButtonApplyCheat.MinimumSize = new System.Drawing.Size(0, 28);
             this.ButtonApplyCheat.Name = "ButtonApplyCheat";
+            this.ButtonApplyCheat.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonApplyCheat.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonApplyCheat.Size = new System.Drawing.Size(116, 26);
+            this.ButtonApplyCheat.Size = new System.Drawing.Size(115, 28);
             this.ButtonApplyCheat.TabIndex = 1176;
             this.ButtonApplyCheat.Text = "Apply Cheat";
             this.ButtonApplyCheat.Click += new System.EventHandler(this.ButtonApply_Click);
@@ -245,16 +248,20 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonReportIssue.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ButtonReportIssue.Appearance.Options.UseFont = true;
             this.ButtonReportIssue.Appearance.Options.UseForeColor = true;
+            this.ButtonReportIssue.AutoSize = true;
             this.ButtonReportIssue.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.ButtonReportIssue.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.ButtonReportIssue.ImageOptions.ImageToTextIndent = 6;
             this.ButtonReportIssue.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonReportIssue.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonReportIssue.ImageOptions.SvgImage")));
             this.ButtonReportIssue.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonReportIssue.Location = new System.Drawing.Point(138, 12);
+            this.ButtonReportIssue.Location = new System.Drawing.Point(138, 11);
+            this.ButtonReportIssue.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ButtonReportIssue.MinimumSize = new System.Drawing.Size(0, 28);
             this.ButtonReportIssue.Name = "ButtonReportIssue";
+            this.ButtonReportIssue.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonReportIssue.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonReportIssue.Size = new System.Drawing.Size(115, 26);
+            this.ButtonReportIssue.Size = new System.Drawing.Size(119, 28);
             this.ButtonReportIssue.TabIndex = 1177;
             this.ButtonReportIssue.Text = "Report Issue";
             this.ButtonReportIssue.Click += new System.EventHandler(this.ButtonReport_Click);
@@ -300,6 +307,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.PanelRegion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelActions)).EndInit();
             this.PanelActions.ResumeLayout(false);
+            this.PanelActions.PerformLayout();
             this.ResumeLayout(false);
 
         }

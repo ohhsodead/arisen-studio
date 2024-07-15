@@ -1,14 +1,11 @@
 ﻿using DevExpress.XtraEditors;
-using ArisenStudio.Controls;
-using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
-using ArisenStudio.Models.Resources;
-using ArisenStudio.Properties;
 using System;
-using System.Drawing;
 using System.Resources;
 using System.Windows.Forms;
 using XDevkit;
+using JRPC_Client;
+using ArisenStudio.Extensions;
 
 namespace ArisenStudio.Forms.Tools.XBOX
 {
@@ -21,229 +18,169 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
         public ResourceManager Language = MainWindow.ResourceLanguage;
 
-        /// <summary>
-        /// Get the user's settings data.
-        /// </summary>
-        public static SettingsData Settings { get; } = MainWindow.Settings;
-
-        private IXboxConsole XboxConsole { get; } = MainWindow.XboxConsole;
-
-        private IXboxManager XboxManager { get; } = MainWindow.XboxManager;
-
-        /// <summary>
-        /// Get the console profile details.
-        /// </summary>
-        public ConsoleProfile ConsoleProfile { get; set; } = MainWindow.ConsoleProfile;
-
-        /// <summary>
-        /// Get the selected console.
-        /// </summary>
-        public ProfileItem SelectedConsole { get; private set; }
-
-        private Control SelectedItem = null;
+        private IXboxConsole Xbox { get; } = MainWindow.XboxConsole;
 
         private void ConsoleManager_Load(object sender, EventArgs e)
         {
             Text = Language.GetString("CONSOLE_MANAGER");
 
-            GroupConsoleProfiles.Text = Language.GetString("CONSOLE_PROFILES");
+            ButtonRefreshDetails.Text = Language.GetString("LABEL_REFRESH");
+            ButtonSetLEDs.Text = Language.GetString("LABEL_SET_LEDS");
+            ButtonDiscTrayOpen.Text = Language.GetString("LABEL_OPEN");
+            ButtonDiscTrayClose.Text = Language.GetString("LABEL_CLOSE");
+            ButtonSetFanSpeed.Text = Language.GetString("LABEL_SET_FAN_SPEED");
 
-            ButtonAddNewProfile.SetControlText(Language.GetString("PROFILE_ADD_NEW"), 26);
-            ButtonEditProfile.SetControlText(Language.GetString("PROFILE_EDIT"), 26);
-            ButtonDeleteProfile.SetControlText(Language.GetString("PROFILE_DELETE"), 26);
-
-            LoadConsoles();
+            LoadDetails();
         }
 
-        private void ConnectionDialog_SizeChanged(object sender, EventArgs e)
+        private void ConsoleManager_FormClosing(object sender, FormClosingEventArgs e)
         {
-            UpdateScrollBar();
+
         }
 
-        private void LoadConsoles()
+        private void ButtonRefreshDetails_Click(object sender, EventArgs e)
         {
-            PanelConsoleProfiles.Controls.Clear();
-            ConsoleProfile = null;
-            SelectedConsole = null;
-
-            foreach (IXboxConsole console in XboxManager.Consoles)
-            {
-                ProfileItem consoleItem = new(console.Name, Resources.XboxSlim)
-                {
-                    ConsoleProfile = new()
-                    {
-                        Address = console.IPAddress.ToString(),
-                        Platform = Platform.XBOX360,
-                        PlatformType = PlatformType.Xbox360FatWhite
-                    }
-                };
-
-                consoleItem.MouseClick += ConsoleItem_MouseDown;
-                consoleItem.OnClick += ConsoleItem_Click;
-                PanelConsoleProfiles.Controls.Add(consoleItem);
-            }
-
-            NoConsoleProfiles.Visible = PanelConsoleProfiles.Controls.Count == 0;
-            ScrollBarConsoleProfiles.Visible = PanelConsoleProfiles.Controls.Count != 0 && PanelConsoleProfiles.VerticalScroll.Visible;
-
-            ButtonEditProfile.Enabled = ConsoleProfile != null;
-            ButtonDeleteProfile.Enabled = ConsoleProfile != null;
+            LoadDetails();
         }
 
-        private void ConsoleItem_Click(object sender, EventArgs e)
-        {
-            //RefreshConsoles();
-        }
-
-        private void ConsoleItem_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                //if (consoleIte)
-                PopupMenuActions.ShowPopup(Cursor.Position);
-            }
-        }
-
-        private void RefreshConosoles(object controlItem)
-        {
-            //ResetConsoleItems(controlItem);
-
-            //if ((Control)controlItem is not ProfileItem)
-            //{
-            //    SelectedItem = (Controlsender).Parent;
-            //}
-            //else
-            //{
-            //    SelectedItem = (Control)controlItem as ProfileItem;
-            //}
-
-            //SelectedConsole = SelectedItem as ProfileItem;
-            //SelectedConsole.IsSelected = true;
-
-            //ConsoleProfile = SelectedConsole.ConsoleProfile;
-
-            //ButtonEditProfile.Enabled = ConsoleProfile != null;
-            //ButtonDeleteProfile.Enabled = ConsoleProfile != null;
-        }
-
-        private void ResetConsoleItems()
-        {
-            foreach (Control ctrl in PanelConsoleProfiles.Controls)
-            {
-                ProfileItem item = ctrl as ProfileItem;
-                item.IsSelected = false;
-            }
-        }
-
-        private void ButtonAddNewConsole_Click(object sender, EventArgs e)
-        {
-            //ConsoleProfile newXboxProfile = DialogExtensions.ShowXboxConsoleManager(this);
-
-            //foreach (object control in Settings.)
-            //{
-            //    if (control is ProfileItem item)
-            //    {
-            //        item.ShouldHover = false;
-            //    }
-            //}
-
-            //ConsoleProfile consoleProfile = DialogExtensions.ShowNewConnectionWindow(this, new ConsoleProfile(), false);
-
-            //if (consoleProfile != null)
-            //{
-            //    Settings.ConsoleProfiles.Add(consoleProfile);
-            //    LoadConsoles();
-            //}
-            //else
-            //{
-            //    foreach (object control in PanelConsoleProfiles.Controls)
-            //    {
-            //        if (control is ProfileItem item)
-            //        {
-            //            item.ShouldHover = true;
-            //        }
-            //    }
-            //}
-        }
-
-        private void ButtonEditConsole_Click(object sender, EventArgs e)
+        private void LoadDetails()
         {
             try
             {
-                if (MainWindow.IsConsoleConnected && MainWindow.ConsoleProfile == ConsoleProfile)
-                {
-                    XtraMessageBox.Show(this, "You can't edit the details while you're connected to it.", "Connected Console", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
+                LabelIPAddress.Text = Xbox.IPAddress.ToString();
+                LabelCPUKey.Text = Xbox.GetCPUKey();
+                LabelKernel.Text = Xbox.GetKernalVersion().ToString();
+                LabelTitleID.Text = Xbox.XamGetCurrentTitleId().ToString();
 
-                if (ConsoleProfile != null)
-                {
-                    foreach (object control in PanelConsoleProfiles.Controls)
-                    {
-                        if (control is ProfileItem item)
-                        {
-                            item.ShouldHover = false;
-                        }
-                    }
+                LabelTempCPU.Text = Xbox.GetTemperature(JRPC.TemperatureType.CPU) + " °C";
+                LabelTempGPU.Text = Xbox.GetTemperature(JRPC.TemperatureType.GPU) + " °C";
+                LabelTempRAM.Text = Xbox.GetTemperature(JRPC.TemperatureType.EDRAM) + " °C";
+                LabelTempMB.Text = Xbox.GetTemperature(JRPC.TemperatureType.MotherBoard) + " °C";
 
-                    int selectedIndex = Settings.ConsoleProfiles.IndexOf(ConsoleProfile);
-                    ConsoleProfile oldConsoleProfile = Settings.ConsoleProfiles[selectedIndex];
+                TextBoxXboxName.Text = Xbox.Name;
 
-                    ConsoleProfile newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
-
-                    Settings.ConsoleProfiles[selectedIndex] = newConsoleProfile;
-
-                    SelectedItem = null;
-                    LoadConsoles();
-                }
+                SetStatus("Successfully loaded console details.");
             }
             catch (Exception ex)
             {
-                Program.Log.Error(ex, "Error editing console.");
-                XtraMessageBox.Show(this, "Error editing console.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                SetStatus($"Unable to fetch console details.", ex);
+                XtraMessageBox.Show(this, $"Unable to fetch console details.\n\nError Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void ButtonDeleteConsole_Click(object sender, EventArgs e)
+        private void ButtonSetLEDs_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete Console", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            JRPC.LEDState ledTopLeft = RadioGroupLEDsTopLeft.SelectedIndex switch
             {
-                if (MainWindow.IsConsoleConnected && MainWindow.ConsoleProfile == ConsoleProfile)
-                {
-                    XtraMessageBox.Show(this, "You can't edit the details while you're connected to it.", "Connected Console", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
+                0 => JRPC.LEDState.GREEN,
+                1 => JRPC.LEDState.ORANGE,
+                2 => JRPC.LEDState.RED,
+                3 => JRPC.LEDState.OFF,
+                _ => JRPC.LEDState.GREEN,
+            };
 
-                Settings.ConsoleProfiles.Remove(ConsoleProfile);
-                SelectedItem = null;
-                LoadConsoles();
+            JRPC.LEDState ledTopRight = RadioGroupLEDsTopRight.SelectedIndex switch
+            {
+                0 => JRPC.LEDState.GREEN,
+                1 => JRPC.LEDState.ORANGE,
+                2 => JRPC.LEDState.RED,
+                3 => JRPC.LEDState.OFF,
+                _ => JRPC.LEDState.GREEN,
+            };
+
+            JRPC.LEDState ledBottomLeft = RadioGroupLEDsBottomLeft.SelectedIndex switch
+            {
+                0 => JRPC.LEDState.GREEN,
+                1 => JRPC.LEDState.ORANGE,
+                2 => JRPC.LEDState.RED,
+                3 => JRPC.LEDState.OFF,
+                _ => JRPC.LEDState.GREEN,
+            };
+
+            JRPC.LEDState ledBottomRight = RadioGroupLEDsBottomRight.SelectedIndex switch
+            {
+                0 => JRPC.LEDState.GREEN,
+                1 => JRPC.LEDState.ORANGE,
+                2 => JRPC.LEDState.RED,
+                3 => JRPC.LEDState.OFF,
+                _ => JRPC.LEDState.GREEN,
+            };
+
+            Xbox.SetLeds(ledTopLeft, ledTopRight, ledBottomLeft, ledBottomRight);
+            SetStatus("Console LEDs colors set.");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="status"></param>
+        /// <param name="ex"></param>
+        public void SetStatus(string status, Exception ex = null)
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke((MethodInvoker)delegate
+                {
+                    LabelStatus.Caption = status;
+                });
+            }
+            else
+            {
+                LabelStatus.Caption = status;
+            }
+
+            if (ex == null)
+            {
+                Program.Log.Info(status);
+            }
+            else
+            {
+                Program.Log.Error(ex, status);
             }
         }
 
-        private void PanelConsoleProfiles_ControlAddedOrRemoved(object sender, ControlEventArgs e)
+        private void ButtonDiscTrayOpen_Click(object sender, EventArgs e)
         {
-            UpdateScrollBar();
+            Xbox.SetTrayState(TrayState.Open);
         }
 
-        private void PanelConsoleProfiles_Scroll(object sender, ScrollEventArgs e)
+        private void ButtonDiscTrayClose_Click(object sender, EventArgs e)
         {
-            ScrollBarConsoleProfiles.Value = PanelConsoleProfiles.VerticalScroll.Value;
+            Xbox.SetTrayState(TrayState.Close);
         }
 
-        private void ScrollBarConsoleProfiles_Scroll(object sender, ScrollEventArgs e)
+        private void ButtonSetFanSpeed_Click(object sender, EventArgs e)
         {
-            PanelConsoleProfiles.VerticalScroll.Value = ScrollBarConsoleProfiles.Value;
-            PanelConsoleProfiles.Refresh();
+            Xbox.SetFanSpeed(0, TrackBarFanSpeed.Value);
         }
 
-        private void UpdateScrollBar()
+        private void TextBoxXboxName_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            ScrollBarConsoleProfiles.Visible = PanelConsoleProfiles.VerticalScroll.Visible;
-            ScrollBarConsoleProfiles.Minimum = PanelConsoleProfiles.VerticalScroll.Minimum;
-            ScrollBarConsoleProfiles.Maximum = PanelConsoleProfiles.VerticalScroll.Maximum;
-            ScrollBarConsoleProfiles.SmallChange = PanelConsoleProfiles.VerticalScroll.SmallChange;
-            ScrollBarConsoleProfiles.LargeChange = PanelConsoleProfiles.VerticalScroll.LargeChange;
-            ScrollBarConsoleProfiles.Value = PanelConsoleProfiles.VerticalScroll.Value;
+            Xbox.ChangeXboxName(TextBoxXboxName.Text);
+
+            XtraMessageBox.Show(this, "Changed Xbox Name. Refresh Neighborhood to see the new name.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void ComboBoxXboxIcon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ComboBoxXboxIcon.SelectedIndex == 0)
+            {
+                Xbox.ChangeXboxIcon(IconColor.Black);
+            }
+            else if (ComboBoxXboxIcon.SelectedIndex == 1)
+            {
+                Xbox.ChangeXboxIcon(IconColor.Blue);
+            }
+            else if (ComboBoxXboxIcon.SelectedIndex == 2)
+            {
+                Xbox.ChangeXboxIcon(IconColor.BlueGray);
+            }
+            else if (ComboBoxXboxIcon.SelectedIndex == 3)
+            {
+                Xbox.ChangeXboxIcon(IconColor.White);
+            }
+
+            XtraMessageBox.Show(this, "Changed Xbox Icon. Refresh Neighborhood to see the new name.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

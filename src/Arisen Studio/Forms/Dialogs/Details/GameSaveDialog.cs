@@ -15,6 +15,8 @@ using System.Resources;
 using System.Text;
 using System.Windows.Forms;
 using ScrollOrientation = DevExpress.XtraEditors.ScrollOrientation;
+using ArisenStudio.Database;
+using System.Drawing;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
@@ -66,7 +68,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             LabelDescription.Text += extraDescription.ToString();
 
             int count = 0;
-            foreach (Database.DownloadFiles downloadFile in GameSaveItem.DownloadFiles)
+            foreach (DownloadFiles downloadFile in GameSaveItem.DownloadFiles)
             {
                 count++;
 
@@ -93,14 +95,14 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
             if (IsFavorite)
             {
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_REMOVE_FROM_FAVORITES"), 26);
+                ButtonFavorite.Text = Language.GetString("LABEL_REMOVE_FROM_FAVORITES");
             }
             else
             {
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_ADD_TO_FAVORITES"), 26);
+                ButtonFavorite.Text = Language.GetString("LABEL_ADD_TO_FAVORITES");
             }
 
-            ButtonReportIssue.SetControlText(Language.GetString("LABEL_REPORT_ISSUE"), 26);
+            ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
         }
 
         private void ImageClose_Click(object sender, EventArgs e)
@@ -116,7 +118,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
             }
         }
 
-
         private void TabDownloads_Scroll(object sender, XtraScrollEventArgs e)
         {
             if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
@@ -130,18 +131,23 @@ namespace ArisenStudio.Forms.Dialogs.Details
             Process.Start(e.Link);
         }
 
+        private void ButtonDownloadLatest_Click(object sender, EventArgs e)
+        {
+            DialogExtensions.ShowTransferGameSavesDialog(this, TransferType.DownloadGameSave, Categories.GetCategoryById(GameSaveItem.CategoryId), GameSaveItem, GameSaveItem.DownloadFiles.Last());
+        }
+
         private void ButtonFavorite_Click(object sender, EventArgs e)
         {
             if (IsFavorite)
             {
                 MainWindow.Settings.FavoriteGameSaves.RemoveAll(x => x.CategoryType == CategoryType && x.CategoryId == GameSaveItem.CategoryId && x.ModId == GameSaveItem.Id && x.Platform == GameSaveItem.GetPlatform());
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_ADD_TO_FAVORITES"), 26);
+                ButtonFavorite.Text = Language.GetString("LABEL_ADD_TO_FAVORITES");
                 IsFavorite = false;
             }
             else
             {
                 MainWindow.Settings.FavoriteGameSaves.Add(new() { CategoryType = CategoryType, CategoryId = GameSaveItem.CategoryId, ModId = GameSaveItem.Id, Platform = GameSaveItem.GetPlatform() });
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_REMOVE_FROM_FAVORITES"), 26);
+                ButtonFavorite.Text = Language.GetString("LABEL_REMOVE_FROM_FAVORITES");
                 IsFavorite = true;
             }
         }
@@ -150,6 +156,24 @@ namespace ArisenStudio.Forms.Dialogs.Details
         {
             XtraMessageBox.Show(Language.GetString("REDIRECT_TO_GITHUB_ISSUES"), Language.GetString("REDIRECTING"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             GitHubTemplates.OpenReportTemplateGameSave(Categories.GetCategoryById(GameSaveItem.CategoryId), GameSaveItem);
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            using Pen pen = new(Color.Transparent, 0);
+            e.Graphics.DrawPath(pen, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            base.OnPaintBackground(e);
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            using Brush brush = new SolidBrush(BackColor);
+            e.Graphics.FillPath(brush, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
         }
 
         protected override bool ProcessDialogKey(Keys keyData)

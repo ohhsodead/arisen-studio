@@ -135,7 +135,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.TextBoxModuleName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxModuleName.Properties.Appearance.Options.UseFont = true;
             this.TextBoxModuleName.Properties.NullValuePrompt = "ModuleName.xex";
-            this.TextBoxModuleName.Size = new System.Drawing.Size(158, 22);
+            this.TextBoxModuleName.Size = new System.Drawing.Size(158, 24);
             this.TextBoxModuleName.TabIndex = 1183;
             // 
             // ComboBoxDrives
@@ -155,7 +155,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             "USB3:\\",
             "USB4:\\"});
             this.ComboBoxDrives.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxDrives.Size = new System.Drawing.Size(60, 22);
+            this.ComboBoxDrives.Size = new System.Drawing.Size(60, 24);
             this.ComboBoxDrives.TabIndex = 1184;
             // 
             // ButtonInjectPlugin
@@ -166,7 +166,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.ButtonInjectPlugin.Location = new System.Drawing.Point(242, 12);
             this.ButtonInjectPlugin.Name = "ButtonInjectPlugin";
             this.ButtonInjectPlugin.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonInjectPlugin.Size = new System.Drawing.Size(97, 23);
+            this.ButtonInjectPlugin.Size = new System.Drawing.Size(97, 25);
             this.ButtonInjectPlugin.TabIndex = 1185;
             this.ButtonInjectPlugin.Text = "Inject Plugin";
             this.ButtonInjectPlugin.Click += new System.EventHandler(this.ButtonInjectPlugin_Click);

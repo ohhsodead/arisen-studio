@@ -18,12 +18,12 @@ namespace ArisenStudio.Extensions
         /// Get the USB ports for PS3.
         /// </summary>
         public static string[] UsbPorts { get; } =
-        {
+        [
             "dev_usb000",
             "dev_usb001",
             "dev_usb002",
             "dev_usb003"
-        };
+        ];
 
         /// <summary>
         /// 
@@ -121,7 +121,7 @@ namespace ArisenStudio.Extensions
         }
 
         /// <summary>
-        /// Downloads the specified console file to the computer
+        /// Downloads the specified console file to the computer.
         /// </summary>
         /// <param name="filePath"> Path of the uploading file directory </param>
         public static bool FileExists(string filePath)
@@ -131,15 +131,13 @@ namespace ArisenStudio.Extensions
         }
 
         /// <summary>
-        /// Renames the specified file to a new name
+        /// Renames the specified file or folder.
         /// </summary>
-        /// <param name="ftpConnection"> </param>
         /// <param name="filePath"> </param>
-        /// <param name="newName"> </param>
+        /// <param name="newFilePath"> </param>
         public static void RenameFileOrFolder(string filePath, string newFilePath)
         {
             FtpClient ftpClient = MainWindow.FtpClient;
-
             ftpClient.Rename(filePath, newFilePath);
         }
 
@@ -151,42 +149,84 @@ namespace ArisenStudio.Extensions
         public static bool CreateDirectory(string consolePath)
         {
             FtpClient ftpClient = MainWindow.FtpClient;
-
             return ftpClient.CreateDirectory(consolePath, true);
         }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="consolePath"></param>
+        /// <param name="localPath"></param>
         public static void DownloadDirectory(string consolePath, string localPath)
         {
             FtpClient ftpClient = MainWindow.FtpClient;
-
             ftpClient.DownloadDirectory(localPath, consolePath, FtpFolderSyncMode.Update, FtpLocalExists.Overwrite);
         }
 
         /// <summary>
-        /// Gets the folder names inside the specified console path.
+        /// Gets the game title by fetching the PARAM.SFO file
         /// </summary>
-        /// <param name="consolePath"> Path of the directory to fetch listing from </param>
+        /// <param name="paramFilePath"> Path of the directory to fetch listing from </param>
+        //public static string GetParamTitle(string paramFilePath)
+        //{
+        //    string fileUrl = "ftp://" + MainWindow.ConsoleProfile.Address + ":" + MainWindow.ConsoleProfile.Port + paramFilePath;
+
+        //    try
+        //    {
+        //        using WebClient request = new();
+        //        byte[] newFileData = request.DownloadData(fileUrl);
+        //        PARAM_SFO paramSfo = new(newFileData);
+
+        //        return paramSfo != null ? paramSfo.Title : "Not Recognized";
+        //    }
+        //    catch (WebException ex)
+        //    {
+        //        Program.Log.Error(ex, "Unable to fetch game title from PARAM.SFO file: {0}", paramFilePath);
+        //        return "Not Recognized";
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Program.Log.Error(ex, "Unable to fetch game title from PARAM.SFO file: {0}", paramFilePath);
+        //        return "Not Recognized";
+        //    }
+        //}
+
+        /// <summary>
+        /// Get the game title from the PARAM.SFO file.
+        /// </summary>
+        /// <param name="paramFilePath"> Path of the directory to fetch listing from </param>
         public static string GetParamTitle(string paramFilePath)
         {
-            string fileUrl = "ftp://" + MainWindow.ConsoleProfile.Address + ":" + MainWindow.ConsoleProfile.Port + paramFilePath;
+            FtpClient ftpClient = MainWindow.FtpClient;
 
             try
             {
-                using WebClient request = new();
-                byte[] newFileData = request.DownloadData(fileUrl);
-                PARAM_SFO paramSfo = new(newFileData);
+                if (ftpClient.DownloadBytes(out byte[] file, paramFilePath))
+                {
+                    PARAM_SFO paramSfo = new(file);
 
-                return paramSfo != null ? paramSfo.Title : "Not Recongized";
+                    return paramSfo != null ? paramSfo.Title : "Not Recognized";
+                }
+                else
+                {
+                    throw new Exception(string.Format("File doesn't exist: {0}", paramFilePath));
+                }
+
+                //using WebClient request = new();
+                //byte[] newFileData = request.DownloadData(fileUrl);
+                //PARAM_SFO paramSfo = new(newFileData);
+
+                //return paramSfo != null ? paramSfo.Title : "Not Recognized";
             }
             catch (WebException ex)
             {
                 Program.Log.Error(ex, "Unable to fetch game title from PARAM.SFO file: {0}", paramFilePath);
-                return "Not Recongized";
+                throw new Exception(string.Format("Unable to fetch game title from PARAM.SFO file: {0} - Error: {1}", paramFilePath, ex.Message), ex);
             }
             catch (Exception ex)
             {
                 Program.Log.Error(ex, "Unable to fetch game title from PARAM.SFO file: {0}", paramFilePath);
-                return "Not Recongized";
+                throw new Exception(string.Format("Unable to fetch game title from PARAM.SFO file: {0} - Error: {1}", paramFilePath, ex.Message), ex);
             }
         }
 
@@ -195,7 +235,6 @@ namespace ArisenStudio.Extensions
             MainWindow.Window.SetStatus("Editing profile comment file...");
 
             FtpClient ftpClient = MainWindow.FtpClient;
-            //FtpConnection ftpConnection = MainWindow.FtpConnection;
 
             string userId = GetUserProfileId(owner);
 
@@ -215,6 +254,7 @@ namespace ArisenStudio.Extensions
 
             MemoryStream memoryStream = new();
             ftpClient.DownloadStream(memoryStream, commentFilePath);
+
             using StreamReader streamReader = new(memoryStream);
 
             string currentProfileComment = streamReader.ReadToEnd();
@@ -252,7 +292,7 @@ namespace ArisenStudio.Extensions
             switch (newProfileComment)
             {
                 case null:
-                    XtraMessageBox.Show(owner, "Profile comment file must be equal or less than 64 bytes.", MainWindow.ResourceLanguage.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    XtraMessageBox.Show(owner, "Profile comment file must be equal to or less than 64 bytes.", MainWindow.ResourceLanguage.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
             }
 
@@ -287,7 +327,7 @@ namespace ArisenStudio.Extensions
         {
             FtpClient ftpClient = MainWindow.FtpClient;
 
-            List<ListItem> folderNames = new();
+            List<ListItem> folderNames = [];
 
             if (!ftpClient.DirectoryExists(consolePath))
             {
@@ -322,7 +362,7 @@ namespace ArisenStudio.Extensions
         {
             FtpClient ftpClient = MainWindow.FtpClient;
 
-            List<ListItem> fileNames = new();
+            List<ListItem> fileNames = [];
 
             if (!ftpClient.DirectoryExists(consolePath))
             {
@@ -353,7 +393,7 @@ namespace ArisenStudio.Extensions
         {
             List<ListItem> userIds = GetFolderNames("/dev_hdd0/home/");
 
-            List<ListItem> userNames = new();
+            List<ListItem> userNames = [];
 
             foreach (ListItem userId in userIds)
             {
@@ -434,11 +474,12 @@ namespace ArisenStudio.Extensions
         /// <returns> </returns>
         public static List<ListItem> GetGamesBd()
         {
-            List<ListItem> games = new();
-
-            // Games on Interal HDD
-            games.AddRange(GetFolderNames("/dev_hdd0/GAMES/"));
-            games.AddRange(GetFolderNames("/dev_hdd0/GAMEZ/"));
+            List<ListItem> games =
+            [
+                // Games on Interal HDD
+                .. GetFolderNames("/dev_hdd0/GAMES/"),
+                .. GetFolderNames("/dev_hdd0/GAMEZ/"),
+            ];
 
             switch (MainWindow.Settings.ShowGamesFromExternalDevices)
             {
@@ -464,10 +505,11 @@ namespace ArisenStudio.Extensions
         /// <returns> </returns>
         public static List<ListItem> GetGamesIso()
         {
-            List<ListItem> games = new();
-
-            // Games on Interal HDD
-            games.AddRange(GetFileNames("/dev_hdd0/PS3ISO/"));
+            List<ListItem> games =
+            [
+                // Games on Interal HDD
+                .. GetFileNames("/dev_hdd0/PS3ISO/"),
+            ];
 
             switch (MainWindow.Settings.ShowGamesFromExternalDevices)
             {
@@ -492,10 +534,11 @@ namespace ArisenStudio.Extensions
         /// <returns> </returns>
         public static List<ListItem> GetGamesPsn()
         {
-            List<ListItem> gamesPath = new();
-
-            // Games on Interal HDD
-            gamesPath.AddRange(GetFolderNames("/dev_hdd0/GAMEI/"));
+            List<ListItem> gamesPath =
+            [
+                // Games on Interal HDD
+                .. GetFolderNames("/dev_hdd0/GAMEI/"),
+            ];
 
             switch (MainWindow.Settings.ShowGamesFromExternalDevices)
             {
@@ -505,6 +548,84 @@ namespace ArisenStudio.Extensions
                         foreach (string usbPort in UsbPorts)
                         {
                             gamesPath.AddRange(GetFolderNames($"/{usbPort}/GAMEI/"));
+                        }
+
+                        break;
+                    }
+            }
+
+            return gamesPath;
+        }
+
+        /// <summary>
+        /// Get all PS2 (ISO) games from the internal drive, and external devices (if enabled in settings).
+        /// </summary>
+        /// <returns> </returns>
+        public static List<ListItem> GetGamesPs2()
+        {
+            List<ListItem> gamesPath =
+            [
+                // Games on Interal HDD
+                .. GetFileNames("/dev_hdd0/PS2ISO/")
+            ];
+
+            switch (MainWindow.Settings.ShowGamesFromExternalDevices)
+            {
+                // Games on all external devices
+                case true:
+                    {
+                        foreach (string usbPort in UsbPorts)
+                        {
+                            gamesPath.AddRange(GetFolderNames($"/{usbPort}/PS2ISO/"));
+                        }
+
+                        break;
+                    }
+            }
+
+            return gamesPath;
+        }
+
+        /// <summary>
+        /// Get all PS1/PSX (ISO) games from the internal drive, and external devices (if enabled in settings).
+        /// </summary>
+        /// <returns> </returns>
+        public static List<ListItem> GetGamesPsx()
+        {
+            List<ListItem> gamesPath = [.. GetFileNames("/dev_hdd0/PSXISO/")];
+
+            foreach (var folder in GetFolderNames("/dev_hdd0/PSXGAMES/"))
+            {
+                foreach (var item in GetFileNames("/dev_hdd0/PSXGAMES/" + folder.Name))
+                {
+                    if (item.Name.EndsWith(".bin"))
+                    {
+                        item.Name = item.Name.Replace(".bin", "");
+                        gamesPath.Add(item);
+                    }
+                }
+            }
+
+            // Games on all external devices
+            switch (MainWindow.Settings.ShowGamesFromExternalDevices)
+            {
+                case true:
+                    {
+                        foreach (string usbPort in UsbPorts)
+                        {
+                            gamesPath.AddRange(GetFolderNames($"/{usbPort}/PSXISO/"));
+
+                            foreach (var folder in GetFolderNames($"/{usbPort}/PSXGAMES/"))
+                            {
+                                foreach (var item in GetFileNames($"/{usbPort}/PSXGAMES/" + folder.Name))
+                                {
+                                    if (item.Name.EndsWith(".bin"))
+                                    {
+                                        item.Name = item.Name.Replace(".bin", "");
+                                        gamesPath.Add(item);
+                                    }
+                                }
+                            }
                         }
 
                         break;

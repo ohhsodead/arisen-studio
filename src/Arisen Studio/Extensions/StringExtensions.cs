@@ -130,11 +130,27 @@ namespace ArisenStudio.Extensions
             catch (Exception) { return new byte[1]; }
         }
 
+        public static string UIntToIp(uint input)
+        {
+            return $"{(input >> 24) & 0xFF}.{(input >> 16) & 0xFF}.{(input >> 8) & 0xFF}.{input & 0xFF}";
+        }
+
+        public static int GetRandomExcept(int minValue, int maxValue, IEnumerable<int> except)
+        {
+            return GetRandoms(minValue, maxValue).Except(except).First();
+        }
+
+        public static IEnumerable<int> GetRandoms(int minValue, int maxValue)
+        {
+            var random = new Random();
+            while (true) yield return random.Next(minValue, maxValue);
+        }
+
         public static bool ValidNumericString(string value)
         {
             if (!string.IsNullOrEmpty(value) && value.Length > 0)
             {
-                char[] valid_characters = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+                char[] valid_characters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
                 bool valid;
                 foreach (char character in value)
                 {
@@ -162,11 +178,11 @@ namespace ArisenStudio.Extensions
         {
             if (!string.IsNullOrEmpty(value) && value.Length > 0)
             {
-                char[] valid_characters = new char[] {
+                char[] valid_characters = [
                     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
                     'A', 'B', 'C', 'D', 'E', 'F',
                     'a', 'b', 'c', 'd', 'e', 'f'
-                };
+                ];
                 bool valid;
                 foreach (char character in value)
                 {
@@ -188,6 +204,16 @@ namespace ArisenStudio.Extensions
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Remove special characters from a string.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string RemoveSpecialCharacters(this string value)
+        {
+            return Regex.Replace(value, "[^a-zA-Z0-9_.]+", "", RegexOptions.Compiled);
         }
 
         /// <summary>
@@ -219,10 +245,22 @@ namespace ArisenStudio.Extensions
             return string.Equals(value, value2, StringComparison.OrdinalIgnoreCase);
         }
 
+        /// <inheritdoc cref="string.Equals" />
+        public static bool EqualsIgnoreCaseSymbols(this string value, string value2)
+        {
+            return string.Equals(value.RemoveSpecialCharacters(), value2.RemoveSpecialCharacters(), StringComparison.OrdinalIgnoreCase);
+        }
+
         /// <inheritdoc cref="string.Contains" />
         public static bool ContainsIgnoreCase(this string value, string value2)
         {
             return value.ToLower().Contains(value2.ToLower());
+        }
+
+        /// <inheritdoc cref="string.Contains" />
+        public static bool ContainsIgnoreCaseSymbols(this string value, string value2)
+        {
+            return value.RemoveSpecialCharacters().ToLower().Contains(value2.RemoveSpecialCharacters().ToLower());
         }
 
         /// <inheritdoc cref="string.Contains" />

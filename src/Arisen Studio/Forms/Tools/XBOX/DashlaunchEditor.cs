@@ -104,11 +104,11 @@ namespace ArisenStudio.Forms.Tools.XBOX
             }
         }
 
-        private DataTable DataTableFileSections { get; } = DataExtensions.CreateDataTable(new List<DataColumn>
-        {
+        private DataTable DataTableFileSections { get; } = DataExtensions.CreateDataTable(
+        [
             new("Key", typeof(string)),
             new("Value", typeof(string))
-        });
+        ]);
 
         private void LoadLaunchFileSection(string sectionName)
         {

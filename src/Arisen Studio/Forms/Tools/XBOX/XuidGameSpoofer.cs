@@ -98,7 +98,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
         {
             if (MainWindow.IsConsoleConnected)
             {
-                if (XboxConsole.Call<uint>(XUserFindUserAddress, new object[] { 0x9000006F93463L, 0, gamertag, 0x18, XamFreeMemory, 0 }) == 0)
+                if (XboxConsole.Call<uint>(XUserFindUserAddress, [0x9000006F93463L, 0, gamertag, 0x18, XamFreeMemory, 0]) == 0)
                 {
                     return BitConverter.ToString(XboxConsole.ReadBytes(XamFreeMemory, 8)).Replace("-", "");
                 }
@@ -166,7 +166,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
                     if (bo2)
                     {
-                        XboxConsole.WriteBytes(0x825DE218, new byte[] { 0x48, 0x00, 0x00, 0x00 }); // XUID Check
+                        XboxConsole.WriteBytes(0x825DE218, [0x48, 0x00, 0x00, 0x00]); // XUID Check
                     }
                 }
                 else

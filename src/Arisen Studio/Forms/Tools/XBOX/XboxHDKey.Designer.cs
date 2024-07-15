@@ -116,7 +116,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.TextBoxConsoleSerial.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxConsoleSerial.Properties.Appearance.Options.UseFont = true;
             this.TextBoxConsoleSerial.Properties.MaxLength = 12;
-            this.TextBoxConsoleSerial.Size = new System.Drawing.Size(496, 22);
+            this.TextBoxConsoleSerial.Size = new System.Drawing.Size(496, 24);
             this.TextBoxConsoleSerial.TabIndex = 3;
             this.TextBoxConsoleSerial.TextChanged += new System.EventHandler(this.TextBoxConsoleSerial_TextChanged);
             // 
@@ -124,14 +124,14 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.TextBoxMotherboardSerial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxMotherboardSerial.Location = new System.Drawing.Point(-9, 33);
+            this.TextBoxMotherboardSerial.Location = new System.Drawing.Point(12, 86);
             this.TextBoxMotherboardSerial.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.TextBoxMotherboardSerial.Name = "TextBoxMotherboardSerial";
             this.TextBoxMotherboardSerial.Properties.AllowFocused = false;
             this.TextBoxMotherboardSerial.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxMotherboardSerial.Properties.Appearance.Options.UseFont = true;
             this.TextBoxMotherboardSerial.Properties.MaxLength = 16;
-            this.TextBoxMotherboardSerial.Size = new System.Drawing.Size(496, 22);
+            this.TextBoxMotherboardSerial.Size = new System.Drawing.Size(496, 24);
             this.TextBoxMotherboardSerial.TabIndex = 4;
             this.TextBoxMotherboardSerial.TextChanged += new System.EventHandler(this.TextBoxMotherboardSerial_TextChanged);
             // 
@@ -139,13 +139,13 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.TextBoxXboxHDKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxXboxHDKey.Location = new System.Drawing.Point(12, 137);
+            this.TextBoxXboxHDKey.Location = new System.Drawing.Point(12, 141);
             this.TextBoxXboxHDKey.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.TextBoxXboxHDKey.Name = "TextBoxXboxHDKey";
             this.TextBoxXboxHDKey.Properties.AllowFocused = false;
             this.TextBoxXboxHDKey.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxXboxHDKey.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxXboxHDKey.Size = new System.Drawing.Size(496, 22);
+            this.TextBoxXboxHDKey.Size = new System.Drawing.Size(496, 24);
             this.TextBoxXboxHDKey.TabIndex = 5;
             // 
             // LabelHeaderIPAddress
@@ -162,7 +162,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(12, 63);
+            this.labelControl1.Location = new System.Drawing.Point(12, 65);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(326, 15);
             this.labelControl1.TabIndex = 1189;
@@ -172,7 +172,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.LabelXboxHDKey.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelXboxHDKey.Appearance.Options.UseFont = true;
-            this.LabelXboxHDKey.Location = new System.Drawing.Point(12, 114);
+            this.LabelXboxHDKey.Location = new System.Drawing.Point(12, 118);
             this.LabelXboxHDKey.Name = "LabelXboxHDKey";
             this.LabelXboxHDKey.Size = new System.Drawing.Size(63, 15);
             this.LabelXboxHDKey.TabIndex = 1190;

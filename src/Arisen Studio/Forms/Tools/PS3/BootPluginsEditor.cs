@@ -67,10 +67,10 @@ namespace ArisenStudio.Forms.Tools.PS3
             LoadBootPluginsData();
         }
 
-        private DataTable BootPlugins { get; } = DataExtensions.CreateDataTable(new List<DataColumn>
-        {
+        private DataTable BootPlugins { get; } = DataExtensions.CreateDataTable(
+        [
             new(Language.GetString("LABEL_FILE_PATH"), typeof(string))
-        });
+        ]);
 
         private void LoadBootPluginsData()
         {

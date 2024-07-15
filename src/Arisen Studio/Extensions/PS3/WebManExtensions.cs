@@ -9,9 +9,6 @@ namespace ArisenStudio.Extensions
 {
     public static class WebManExtensions
     {
-        // Class By @FxckingCoder Check the below link for updates to this class Thanks for all the
-        // support :D http://www.GitHub.com/FxckingCoder
-
         /// <summary>
         /// Check if WebMAN is installed on the console.
         /// </summary>
@@ -54,6 +51,7 @@ namespace ArisenStudio.Extensions
         }
 
         /// <summary>
+        /// Sends the command to the console.
         /// </summary>
         /// <param name="ip"> PS3 Local IP Address </param>
         /// <param name="command">  </param>
@@ -176,7 +174,7 @@ namespace ArisenStudio.Extensions
         }
 
         /// <summary>
-        /// Unmount current game
+        /// Launch the currently mounted game
         /// </summary>
         /// <param name="ip"> PS3 Local IP Address </param>
         /// <returns> </returns>

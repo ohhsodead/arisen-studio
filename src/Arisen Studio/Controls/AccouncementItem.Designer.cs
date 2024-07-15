@@ -41,12 +41,12 @@ namespace ArisenStudio.Controls
             // 
             this.LabelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelTitle.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelTitle.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.LabelTitle.Appearance.Options.UseFont = true;
             this.LabelTitle.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelTitle.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.LabelTitle.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
-            this.LabelTitle.Location = new System.Drawing.Point(8, 7);
+            this.LabelTitle.Location = new System.Drawing.Point(8, 6);
             this.LabelTitle.Margin = new System.Windows.Forms.Padding(3, 0, 3, 4);
             this.LabelTitle.Name = "LabelTitle";
             this.LabelTitle.Size = new System.Drawing.Size(414, 17);
@@ -75,14 +75,14 @@ namespace ArisenStudio.Controls
             // LabelTimeStamp
             // 
             this.LabelTimeStamp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelTimeStamp.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelTimeStamp.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelTimeStamp.Appearance.Options.UseFont = true;
             this.LabelTimeStamp.Appearance.Options.UseTextOptions = true;
             this.LabelTimeStamp.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.LabelTimeStamp.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelTimeStamp.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.LabelTimeStamp.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
-            this.LabelTimeStamp.Location = new System.Drawing.Point(428, 7);
+            this.LabelTimeStamp.Location = new System.Drawing.Point(430, 6);
             this.LabelTimeStamp.Margin = new System.Windows.Forms.Padding(3, 0, 3, 4);
             this.LabelTimeStamp.Name = "LabelTimeStamp";
             this.LabelTimeStamp.Size = new System.Drawing.Size(95, 15);
@@ -96,12 +96,15 @@ namespace ArisenStudio.Controls
             this.ImageDismiss.ContextButtonOptions.ItemCursor = System.Windows.Forms.Cursors.Hand;
             this.ImageDismiss.ContextButtonOptions.PanelCursor = System.Windows.Forms.Cursors.Hand;
             this.ImageDismiss.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageDismiss.Location = new System.Drawing.Point(532, 7);
+            this.ImageDismiss.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Red;
+            this.ImageDismiss.ItemAppearance.Normal.FillColor = System.Drawing.Color.Gray;
+            this.ImageDismiss.Location = new System.Drawing.Point(531, 4);
             this.ImageDismiss.Name = "ImageDismiss";
             this.ImageDismiss.ShowToolTips = DevExpress.Utils.DefaultBoolean.False;
-            this.ImageDismiss.Size = new System.Drawing.Size(16, 16);
+            this.ImageDismiss.Size = new System.Drawing.Size(18, 18);
             this.ImageDismiss.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.ImageDismiss.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ImageDismiss.SvgImage")));
+            this.ImageDismiss.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
             this.ImageDismiss.TabIndex = 1172;
             this.ImageDismiss.Text = "Dismiss";
             this.ImageDismiss.Click += new System.EventHandler(this.ImageDismiss_Click);

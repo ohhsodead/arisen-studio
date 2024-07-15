@@ -38,7 +38,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.ButtonOpenPath = new DevExpress.XtraEditors.SimpleButton();
             this.Label = new DevExpress.XtraEditors.LabelControl();
-            this.ProgressBarStatus = new DevExpress.XtraEditors.MarqueeProgressBarControl();
+            this.ProgressBarStatus = new DevExpress.XtraEditors.ProgressBarControl();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBarStatus.Properties)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +65,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.ButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonCancel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.ButtonCancel.Appearance.Options.UseFont = true;
-            this.ButtonCancel.Location = new System.Drawing.Point(467, 162);
+            this.ButtonCancel.Location = new System.Drawing.Point(467, 154);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCancel.Size = new System.Drawing.Size(75, 25);
@@ -89,7 +89,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelStatus.Location = new System.Drawing.Point(12, 99);
             this.LabelStatus.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelStatus.Name = "LabelStatus";
-            this.LabelStatus.Size = new System.Drawing.Size(530, 58);
+            this.LabelStatus.Size = new System.Drawing.Size(530, 50);
             this.LabelStatus.TabIndex = 16;
             this.LabelStatus.Text = "Preparing...";
             // 
@@ -98,7 +98,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.ButtonOpenPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonOpenPath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.ButtonOpenPath.Appearance.Options.UseFont = true;
-            this.ButtonOpenPath.Location = new System.Drawing.Point(364, 162);
+            this.ButtonOpenPath.Location = new System.Drawing.Point(364, 154);
             this.ButtonOpenPath.Name = "ButtonOpenPath";
             this.ButtonOpenPath.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonOpenPath.Size = new System.Drawing.Size(97, 25);
@@ -131,21 +131,21 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.ProgressBarStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProgressBarStatus.EditValue = 0;
-            this.ProgressBarStatus.Location = new System.Drawing.Point(12, 75);
+            this.ProgressBarStatus.Location = new System.Drawing.Point(12, 73);
             this.ProgressBarStatus.Name = "ProgressBarStatus";
-            this.ProgressBarStatus.Properties.AllowFocused = false;
-            this.ProgressBarStatus.Properties.ProgressAnimationMode = DevExpress.Utils.Drawing.ProgressAnimationMode.Cycle;
-            this.ProgressBarStatus.Size = new System.Drawing.Size(530, 18);
-            this.ProgressBarStatus.TabIndex = 20;
+            this.ProgressBarStatus.Properties.Step = 1;
+            this.ProgressBarStatus.Size = new System.Drawing.Size(530, 20);
+            this.ProgressBarStatus.TabIndex = 21;
             // 
             // TransferDialog
             // 
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(554, 199);
+            this.ClientSize = new System.Drawing.Size(554, 191);
             this.ControlBox = false;
             this.Controls.Add(this.ProgressBarStatus);
             this.Controls.Add(this.Label);
@@ -158,8 +158,6 @@ namespace ArisenStudio.Forms.Dialogs
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Image = global::ArisenStudio.Properties.Resources.arisenstudio;
-            this.LookAndFeel.SkinName = "Office 2019 Black";
-            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -182,6 +180,6 @@ namespace ArisenStudio.Forms.Dialogs
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private SimpleButton ButtonOpenPath;
         public LabelControl Label;
-        private MarqueeProgressBarControl ProgressBarStatus;
+        private ProgressBarControl ProgressBarStatus;
     }
 }

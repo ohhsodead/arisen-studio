@@ -68,6 +68,11 @@ namespace ArisenStudio.Database
         public ModsData PluginsXbox { get; private set; }
 
         /// <summary>
+        /// Contains the applications from the PS4 database.
+        /// </summary>
+        public AppsData AppsPs4 { get; private set; }
+
+        /// <summary>
         /// Contains the game saves for both platforms
         /// </summary>
         public GameSavesData GameSaves { get; private set; }
@@ -116,6 +121,7 @@ namespace ArisenStudio.Database
                 HomebrewPs3 = await GetHomebrewPs3Async(),
                 ResourcesPs3 = await GetResourcesPs3Async(),
                 PluginsXbox = await GetPluginsXboxAsync(),
+                AppsPs4 = await GetAppsPs4Async(),
                 GameSaves = await GetGameSavesAsync(),
                 GamesPs3 = await GetGamesPackagesAsync(),
                 DemosPs3 = await GetDemosPackagesAsync(),
@@ -353,6 +359,20 @@ namespace ArisenStudio.Database
             using JsonReader jsonReader = new JsonTextReader(streamReader);
 
             return new JsonSerializer().Deserialize<ModsData>(jsonReader);
+        }
+
+        /// <summary>
+        /// Download and return the applications data.
+        /// </summary>
+        /// <returns> ModsData </returns>
+        private static async Task<AppsData> GetAppsPs4Async()
+        {
+            using HttpClient client = new();
+            using Stream stream = await client.GetStreamAsync(Urls.AppsDataPs4).ConfigureAwait(true);
+            using StreamReader streamReader = new(stream);
+            using JsonReader jsonReader = new JsonTextReader(streamReader);
+
+            return new JsonSerializer().Deserialize<AppsData>(jsonReader);
         }
 
         /// <summary>

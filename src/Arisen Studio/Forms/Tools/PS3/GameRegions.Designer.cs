@@ -76,7 +76,8 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.ButtonSaveAll.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonSaveAll.Appearance.Options.UseFont = true;
             this.ButtonSaveAll.AutoSize = true;
-            this.ButtonSaveAll.Location = new System.Drawing.Point(358, 390);
+            this.ButtonSaveAll.Location = new System.Drawing.Point(359, 390);
+            this.ButtonSaveAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ButtonSaveAll.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonSaveAll.Name = "ButtonSaveAll";
             this.ButtonSaveAll.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
@@ -116,14 +117,14 @@ namespace ArisenStudio.Forms.Tools.PS3
             // 
             // GridGameRegions
             // 
-            this.GridGameRegions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.GridGameRegions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridGameRegions.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GridGameRegions.Location = new System.Drawing.Point(12, 12);
+            this.GridGameRegions.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.GridGameRegions.Location = new System.Drawing.Point(13, 12);
             this.GridGameRegions.MainView = this.GridViewGameRegions;
+            this.GridGameRegions.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.GridGameRegions.Name = "GridGameRegions";
-            this.GridGameRegions.Size = new System.Drawing.Size(414, 224);
+            this.GridGameRegions.Size = new System.Drawing.Size(412, 224);
             this.GridGameRegions.TabIndex = 0;
             this.GridGameRegions.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewGameRegions});
@@ -151,7 +152,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.ButtonDelete.AutoSize = true;
             this.ButtonDelete.Enabled = false;
             this.ButtonDelete.Location = new System.Drawing.Point(0, 0);
-            this.ButtonDelete.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.ButtonDelete.Margin = new System.Windows.Forms.Padding(0, 3, 4, 3);
             this.ButtonDelete.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonDelete.Name = "ButtonDelete";
             this.ButtonDelete.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
@@ -167,7 +168,8 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.ButtonDeleteAll.Appearance.Options.UseFont = true;
             this.ButtonDeleteAll.AutoSize = true;
             this.ButtonDeleteAll.Enabled = false;
-            this.ButtonDeleteAll.Location = new System.Drawing.Point(70, 0);
+            this.ButtonDeleteAll.Location = new System.Drawing.Point(72, 0);
+            this.ButtonDeleteAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ButtonDeleteAll.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonDeleteAll.Name = "ButtonDeleteAll";
             this.ButtonDeleteAll.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
@@ -179,7 +181,10 @@ namespace ArisenStudio.Forms.Tools.PS3
             // 
             // ComboBoxGameTitle
             // 
+            this.ComboBoxGameTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBoxGameTitle.Location = new System.Drawing.Point(12, 308);
+            this.ComboBoxGameTitle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboBoxGameTitle.Name = "ComboBoxGameTitle";
             this.ComboBoxGameTitle.Properties.AllowFocused = false;
             this.ComboBoxGameTitle.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -187,27 +192,30 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.ComboBoxGameTitle.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ComboBoxGameTitle.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxGameTitle.Size = new System.Drawing.Size(277, 22);
+            this.ComboBoxGameTitle.Size = new System.Drawing.Size(276, 22);
             this.ComboBoxGameTitle.TabIndex = 3;
             this.ComboBoxGameTitle.SelectedIndexChanged += new System.EventHandler(this.ComboBoxGameTitle_SelectedIndexChanged);
             // 
             // LabelGameRegion
             // 
+            this.LabelGameRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelGameRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelGameRegion.Appearance.Options.UseFont = true;
             this.LabelGameRegion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGameRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameRegion.Location = new System.Drawing.Point(297, 288);
-            this.LabelGameRegion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.LabelGameRegion.Location = new System.Drawing.Point(298, 288);
+            this.LabelGameRegion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 2);
             this.LabelGameRegion.Name = "LabelGameRegion";
-            this.LabelGameRegion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.LabelGameRegion.Size = new System.Drawing.Size(80, 15);
+            this.LabelGameRegion.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelGameRegion.Size = new System.Drawing.Size(82, 15);
             this.LabelGameRegion.TabIndex = 1176;
             this.LabelGameRegion.Text = "Game Region:";
             // 
             // ComboBoxGameRegion
             // 
-            this.ComboBoxGameRegion.Location = new System.Drawing.Point(297, 308);
+            this.ComboBoxGameRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxGameRegion.Location = new System.Drawing.Point(298, 308);
+            this.ComboBoxGameRegion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboBoxGameRegion.Name = "ComboBoxGameRegion";
             this.ComboBoxGameRegion.Properties.AllowFocused = false;
             this.ComboBoxGameRegion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -215,7 +223,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.ComboBoxGameRegion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ComboBoxGameRegion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxGameRegion.Size = new System.Drawing.Size(129, 22);
+            this.ComboBoxGameRegion.Size = new System.Drawing.Size(130, 22);
             this.ComboBoxGameRegion.TabIndex = 4;
             this.ComboBoxGameRegion.SelectedIndexChanged += new System.EventHandler(this.ComboBoxGameRegion_SelectedIndexChanged);
             // 
@@ -226,10 +234,10 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.LabelGameTitle.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGameTitle.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelGameTitle.Location = new System.Drawing.Point(12, 288);
-            this.LabelGameTitle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.LabelGameTitle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 2);
             this.LabelGameTitle.Name = "LabelGameTitle";
-            this.LabelGameTitle.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.LabelGameTitle.Size = new System.Drawing.Size(65, 15);
+            this.LabelGameTitle.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelGameTitle.Size = new System.Drawing.Size(67, 15);
             this.LabelGameTitle.TabIndex = 1174;
             this.LabelGameTitle.Text = "Game Title:";
             // 
@@ -239,7 +247,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.ButtonAddGameRegion.Appearance.Options.UseFont = true;
             this.ButtonAddGameRegion.AutoSize = true;
             this.ButtonAddGameRegion.Location = new System.Drawing.Point(0, 0);
-            this.ButtonAddGameRegion.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.ButtonAddGameRegion.Margin = new System.Windows.Forms.Padding(0, 3, 4, 3);
             this.ButtonAddGameRegion.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonAddGameRegion.Name = "ButtonAddGameRegion";
             this.ButtonAddGameRegion.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
@@ -251,12 +259,13 @@ namespace ArisenStudio.Forms.Tools.PS3
             // 
             // ButtonDetectRegions
             // 
-            this.ButtonDetectRegions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonDetectRegions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonDetectRegions.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonDetectRegions.Appearance.Options.UseFont = true;
             this.ButtonDetectRegions.AutoSize = true;
             this.ButtonDetectRegions.Enabled = false;
-            this.ButtonDetectRegions.Location = new System.Drawing.Point(12, 390);
+            this.ButtonDetectRegions.Location = new System.Drawing.Point(13, 390);
+            this.ButtonDetectRegions.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ButtonDetectRegions.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonDetectRegions.Name = "ButtonDetectRegions";
             this.ButtonDetectRegions.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
@@ -268,19 +277,25 @@ namespace ArisenStudio.Forms.Tools.PS3
             // 
             // PanelButtonsNewRegion
             // 
+            this.PanelButtonsNewRegion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelButtonsNewRegion.Controls.Add(this.ButtonAddGameRegion);
-            this.PanelButtonsNewRegion.Location = new System.Drawing.Point(12, 336);
+            this.PanelButtonsNewRegion.Location = new System.Drawing.Point(13, 340);
+            this.PanelButtonsNewRegion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PanelButtonsNewRegion.Name = "PanelButtonsNewRegion";
-            this.PanelButtonsNewRegion.Size = new System.Drawing.Size(414, 24);
+            this.PanelButtonsNewRegion.Size = new System.Drawing.Size(412, 24);
             this.PanelButtonsNewRegion.TabIndex = 1183;
             // 
             // PanelButtonsGameRegions
             // 
+            this.PanelButtonsGameRegions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelButtonsGameRegions.Controls.Add(this.ButtonDelete);
             this.PanelButtonsGameRegions.Controls.Add(this.ButtonDeleteAll);
-            this.PanelButtonsGameRegions.Location = new System.Drawing.Point(12, 242);
+            this.PanelButtonsGameRegions.Location = new System.Drawing.Point(13, 242);
+            this.PanelButtonsGameRegions.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PanelButtonsGameRegions.Name = "PanelButtonsGameRegions";
-            this.PanelButtonsGameRegions.Size = new System.Drawing.Size(414, 24);
+            this.PanelButtonsGameRegions.Size = new System.Drawing.Size(412, 24);
             this.PanelButtonsGameRegions.TabIndex = 1184;
             // 
             // barStaticItem1
@@ -348,12 +363,13 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.Controls.Add(this.ComboBoxGameTitle);
             this.Controls.Add(this.ButtonSaveAll);
             this.Controls.Add(this.PanelButtonsNewRegion);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("GameRegions.IconOptions.Icon")));
             this.IconOptions.Image = global::ArisenStudio.Properties.Resources.arisenstudio;
             this.IconOptions.ShowIcon = false;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameRegions";

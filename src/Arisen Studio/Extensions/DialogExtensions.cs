@@ -14,14 +14,19 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Reflection;
+using System.Resources;
+using ArisenStudio.Forms.Windows;
 
 namespace ArisenStudio.Extensions
 {
     internal static class DialogExtensions
     {
+        public static ResourceManager Language = MainWindow.ResourceLanguage;
+
         #region Details
 
-        public static void ShowItemDetailsDialog(Form owner, Platform platform, CategoriesData categories, ModItemData modItem)
+        public static void ShowItemDetailsDialog(Form owner, Platform platform, CategoriesData categories, ModItemData modItem, AppItemData appItem = null)
         {
             XtraForm detailsDialog = new();
 
@@ -52,6 +57,14 @@ namespace ArisenStudio.Extensions
                     break;
 
                 case Platform.XBOX360:
+                    detailsDialog = new ApplicationDialog
+                    {
+                        AppItem = appItem
+
+                    };
+                    break;
+
+                case Platform.PS4:
                     detailsDialog = new PluginDialog
                     {
                         ModItem = modItem
@@ -63,14 +76,17 @@ namespace ArisenStudio.Extensions
 
             }
 
-            XtraForm overlayForm = new();
-            overlayForm.StartPosition = FormStartPosition.Manual;
-            overlayForm.FormBorderStyle = FormBorderStyle.None;
-            overlayForm.Opacity = .50d;
-            overlayForm.BackColor = Color.Black;
-            overlayForm.Size = owner.Size;
-            overlayForm.Location = owner.Location;
-            overlayForm.ShowInTaskbar = false;
+            XtraForm overlayForm = new()
+            {
+                StartPosition = FormStartPosition.Manual,
+                FormBorderStyle = FormBorderStyle.None,
+                Opacity = .50d,
+                BackColor = Color.Black,
+                Size = owner.Size,
+                Location = owner.Location,
+                ShowInTaskbar = false
+            };
+
             overlayForm.Show(owner);
 
             detailsDialog.Owner = owner;
@@ -85,14 +101,17 @@ namespace ArisenStudio.Extensions
             using PackageDialog detailsDialog = new();
             detailsDialog.PackageItem = packageItem;
 
-            XtraForm overlayForm = new();
-            overlayForm.StartPosition = FormStartPosition.Manual;
-            overlayForm.FormBorderStyle = FormBorderStyle.None;
-            overlayForm.Opacity = .50d;
-            overlayForm.BackColor = Color.Black;
-            overlayForm.Size = owner.Size;
-            overlayForm.Location = owner.Location;
-            overlayForm.ShowInTaskbar = false;
+            XtraForm overlayForm = new()
+            {
+                StartPosition = FormStartPosition.Manual,
+                FormBorderStyle = FormBorderStyle.None,
+                Opacity = .50d,
+                BackColor = Color.Black,
+                Size = owner.Size,
+                Location = owner.Location,
+                ShowInTaskbar = false
+            };
+
             overlayForm.Show(owner);
 
             detailsDialog.Owner = owner;
@@ -107,14 +126,17 @@ namespace ArisenStudio.Extensions
             using GameSaveDialog detailsDialog = new();
             detailsDialog.GameSaveItem = gameSaveItem;
 
-            XtraForm overlayForm = new();
-            overlayForm.StartPosition = FormStartPosition.Manual;
-            overlayForm.FormBorderStyle = FormBorderStyle.None;
-            overlayForm.Opacity = .50d;
-            overlayForm.BackColor = Color.Black;
-            overlayForm.Size = owner.Size;
-            overlayForm.Location = owner.Location;
-            overlayForm.ShowInTaskbar = false;
+            XtraForm overlayForm = new()
+            {
+                StartPosition = FormStartPosition.Manual,
+                FormBorderStyle = FormBorderStyle.None,
+                Opacity = .50d,
+                BackColor = Color.Black,
+                Size = owner.Size,
+                Location = owner.Location,
+                ShowInTaskbar = false
+            };
+
             overlayForm.Show(owner);
 
             detailsDialog.Owner = owner;
@@ -129,14 +151,17 @@ namespace ArisenStudio.Extensions
             using GameCheatsDialog cheatsDialog = new();
             cheatsDialog.GameCheatItem = gameCheatItem;
 
-            XtraForm overlayForm = new();
-            overlayForm.StartPosition = FormStartPosition.Manual;
-            overlayForm.FormBorderStyle = FormBorderStyle.None;
-            overlayForm.Opacity = .50d;
-            overlayForm.BackColor = Color.Black;
-            overlayForm.Size = owner.Size;
-            overlayForm.Location = owner.Location;
-            overlayForm.ShowInTaskbar = false;
+            XtraForm overlayForm = new()
+            {
+                StartPosition = FormStartPosition.Manual,
+                FormBorderStyle = FormBorderStyle.None,
+                Opacity = .50d,
+                BackColor = Color.Black,
+                Size = owner.Size,
+                Location = owner.Location,
+                ShowInTaskbar = false
+            };
+
             overlayForm.Show(owner);
 
             cheatsDialog.Owner = owner;
@@ -151,14 +176,17 @@ namespace ArisenStudio.Extensions
             using GamePatchesDialog patchesDialog = new();
             patchesDialog.GamePatchItem = gamePatchItem;
 
-            XtraForm overlayForm = new();
-            overlayForm.StartPosition = FormStartPosition.Manual;
-            overlayForm.FormBorderStyle = FormBorderStyle.None;
-            overlayForm.Opacity = .50d;
-            overlayForm.BackColor = Color.Black;
-            overlayForm.Size = owner.Size;
-            overlayForm.Location = owner.Location;
-            overlayForm.ShowInTaskbar = false;
+            XtraForm overlayForm = new()
+            {
+                StartPosition = FormStartPosition.Manual,
+                FormBorderStyle = FormBorderStyle.None,
+                Opacity = .50d,
+                BackColor = Color.Black,
+                Size = owner.Size,
+                Location = owner.Location,
+                ShowInTaskbar = false
+            };
+
             overlayForm.Show(owner);
 
             patchesDialog.Owner = owner;
@@ -221,12 +249,14 @@ namespace ArisenStudio.Extensions
             comboBoxEdit.Properties.Items.AddRange(items);
             comboBoxEdit.SelectedIndex = -1;
 
-            XtraInputBoxArgs args = new();
-            args.Owner = owner;
-            args.Caption = title;
-            args.Prompt = labelText;
-            args.DefaultResponse = null;
-            args.Editor = comboBoxEdit;
+            XtraInputBoxArgs args = new()
+            {
+                Owner = owner,
+                Caption = title,
+                Prompt = labelText,
+                DefaultResponse = null,
+                Editor = comboBoxEdit
+            };
 
             return (string)XtraInputBox.Show(args);
         }
@@ -239,12 +269,14 @@ namespace ArisenStudio.Extensions
             textEdit.Properties.MaxLength = maxLength == 0 ? int.MaxValue : maxLength;
             textEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
 
-            XtraInputBoxArgs args = new();
-            args.Owner = owner;
-            args.Caption = title;
-            args.Prompt = labelText;
-            args.DefaultResponse = inputText;
-            args.Editor = textEdit;
+            XtraInputBoxArgs args = new()
+            {
+                Owner = owner,
+                Caption = title,
+                Prompt = labelText,
+                DefaultResponse = inputText,
+                Editor = textEdit
+            };
 
             return (string)XtraInputBox.Show(args);
         }
@@ -252,18 +284,17 @@ namespace ArisenStudio.Extensions
         public static string[] ShowMultiTextInputDialog(Form owner, string title, string labelText, string[] inputText = null, int maxLength = 0)
         {
             MemoEdit textEdit = new();
-            //textEdit.Text = inputText;
-            //textEdit.Properties.LinesCount = 12;
-            //textEdit.EditValue = inputText;
             textEdit.Properties.MaxLength = maxLength == 0 ? int.MaxValue : maxLength;
             textEdit.Lines = inputText;
 
-            XtraInputBoxArgs args = new();
-            args.Owner = owner;
-            args.Caption = title;
-            args.Prompt = labelText;
-            args.DefaultResponse = null;
-            args.Editor = textEdit;
+            XtraInputBoxArgs args = new()
+            {
+                Owner = owner,
+                Caption = title,
+                Prompt = labelText,
+                DefaultResponse = null,
+                Editor = textEdit
+            };
 
             return (string[])XtraInputBox.Show(args);
         }
@@ -276,12 +307,14 @@ namespace ArisenStudio.Extensions
             textEdit.Properties.MaxLength = maxValue == 0 ? int.MaxValue : maxValue;
             textEdit.Properties.MaskSettings.DataType = typeof(int);
 
-            XtraInputBoxArgs args = new();
-            args.Owner = owner;
-            args.Caption = title;
-            args.Prompt = labelText;
-            args.DefaultResponse = null;
-            args.Editor = textEdit;
+            XtraInputBoxArgs args = new()
+            {
+                Owner = owner,
+                Caption = title,
+                Prompt = labelText,
+                DefaultResponse = null,
+                Editor = textEdit
+            };
 
             return (int)XtraInputBox.Show(args);
         }
@@ -290,17 +323,19 @@ namespace ArisenStudio.Extensions
         {
             using ColorPickEdit colorPickEdit = new();
 
-            XtraInputBoxArgs args = new();
-            args.Owner = owner;
-            args.Caption = title;
-            args.Prompt = labelText;
-            args.DefaultResponse = null;
-            args.Editor = colorPickEdit;
+            XtraInputBoxArgs args = new()
+            {
+                Owner = owner,
+                Caption = title,
+                Prompt = labelText,
+                DefaultResponse = null,
+                Editor = colorPickEdit
+            };
 
             return (Color)XtraInputBox.Show(args);
         }
 
-        public static void ShowTransferFilesDialog(Form owner, TransferType transferType, Category category, ModItemData modItem, DownloadFiles downloadFiles = null, string region = "")
+        public static void ShowTransferFilesDialog(Form owner, TransferType transferType, Category category, ModItemData modItem, DownloadFiles downloadFiles, string region = "")
         {
             using TransferDialog transferDialog = new()
             {
@@ -309,6 +344,20 @@ namespace ArisenStudio.Extensions
                 ModItem = modItem,
                 DownloadFiles = downloadFiles,
                 GameRegion = region
+            };
+
+            transferDialog.Owner = owner;
+            transferDialog.ShowDialog();
+        }
+
+        public static void ShowTransferFilesDialog(Form owner, TransferType transferType, Category category, AppItemData appData, AppItemFile appFile)
+        {
+            using TransferDialog transferDialog = new()
+            {
+                TransferType = transferType,
+                Category = category,
+                AppItem = appData,
+                AppItemFile = appFile,
             };
 
             transferDialog.Owner = owner;
@@ -348,10 +397,9 @@ namespace ArisenStudio.Extensions
                 Icon = icon,
                 Caption = caption,
                 Text = text,
-                Buttons = results
+                Buttons = results,
+                DefaultButtonIndex = 0
             };
-
-            args.DefaultButtonIndex = 0;
 
             args.Showing += (o, e) =>
             {
@@ -396,6 +444,8 @@ namespace ArisenStudio.Extensions
             return XtraMessageBox.Show(args);
         }
 
+        public static void ShowErrorMessage(Form owner, string message) => XtraMessageBox.Show(owner, message, Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         public static ConsoleProfile ShowConnectionsDialog(Form owner, Platform platform)
         {
             using ConnectionsDialog connectConsole = new() { Platform = platform };
@@ -426,10 +476,10 @@ namespace ArisenStudio.Extensions
             return isEditing ? consoleProfile : null;
         }
 
-        public static void ShowXboxConsoleManger(Form owner)
+        public static void ShowNewCustomModsDialog(Form owner, CustomMod customItem = null, bool isEditing = false)
         {
-            using Forms.Tools.XBOX.ConsoleManager consoleManager = new();
-            consoleManager.ShowDialog(owner);
+            using NewCustomDialog customDialog = new() { IsEditing = isEditing, CustomMod = customItem };
+            customDialog.ShowDialog(owner);
         }
 
         public static string ShowFolderBrowseDialog(Form owner, string description)
@@ -484,6 +534,12 @@ namespace ArisenStudio.Extensions
         {
             using RequestModsDialog requestModsDialog = new();
             requestModsDialog.ShowDialog(owner);
+        }
+
+        public static void ShowSetupWizardDialog(Form owner)
+        {
+            using SetupWizardDialog setupWizardDialog = new();
+            setupWizardDialog.ShowDialog(owner);
         }
 
         #region PS3 Tools
@@ -558,9 +614,9 @@ namespace ArisenStudio.Extensions
             takeScreenshot.ShowDialog(owner);
         }
 
-        public static void ShowXboxConsoleInfo(Form owner)
+        public static void ShowXboxConsoleManager(Form owner)
         {
-            using Forms.Tools.XBOX.ConsoleInfo consoleManager = new();
+            using Forms.Tools.XBOX.ConsoleManager consoleManager = new();
             consoleManager.ShowDialog(owner);
         }
 

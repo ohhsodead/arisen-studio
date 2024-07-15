@@ -16,6 +16,8 @@ namespace ArisenStudio.Forms.Dialogs
             InitializeComponent();
         }
 
+        private const string FormUrl = "https://form.jotform.com/223613539362355";
+
         private readonly Timer LoadTimer = new();
 
         private void RequestModsDialog_Load(object sender, EventArgs e)
@@ -30,15 +32,15 @@ namespace ArisenStudio.Forms.Dialogs
         {
             LoadTimer.Enabled = false;
 
-            if (XtraMessageBox.Show(this, "It looks like the form is taking a while to load. Do you want to load it in your web browser?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (XtraMessageBox.Show(this, "It looks like the form is taking a while to load. Do you want to load it in your web browser?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Process.Start("https://form.jotform.com/223613539362355");
+                Process.Start(FormUrl);
             }
         }
 
         private void ButtonRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            WebView.Source = new Uri("https://form.jotform.com/223613539362355");
+            WebView.Source = new Uri(FormUrl);
         }
 
         private void ButtonOpenLink_ItemClick(object sender, ItemClickEventArgs e)

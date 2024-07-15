@@ -10,7 +10,7 @@ namespace ArisenStudio.Models.Database
         /// <summary>
         /// Get the mods from the database.
         /// </summary>
-        public List<GameCheatItemData> GameCheats { get; set; } = new();
+        public List<GameCheatItemData> GameCheats { get; set; } = [];
 
         /// <summary>
         /// Get all of the mods matching the specified filters.
@@ -58,7 +58,7 @@ namespace ArisenStudio.Models.Database
         /// <returns></returns>
         public int GetTotalCheats()
         {
-            HashSet<string> set = new();
+            HashSet<string> set = [];
 
             foreach (GameCheatItemData list in GameCheats)
             {

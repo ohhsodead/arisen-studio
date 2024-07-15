@@ -40,7 +40,7 @@ public class GameSaveItemData
 
     public List<DownloadFiles> DownloadFiles { get; set; }
 
-    public IEnumerable<string> Creators => CreatedBy.Split(new char[] { '/', '&' }).Select(x => x.Trim());
+    public IEnumerable<string> Creators => CreatedBy.Split(['/', '&']).Select(x => x.Trim());
 
     public Platform GetPlatform()
     {
@@ -48,6 +48,7 @@ public class GameSaveItemData
         {
             "PS3" => ArisenStudio.Platform.PS3,
             "XBOX" => ArisenStudio.Platform.XBOX360,
+            "PS4" => ArisenStudio.Platform.PS4,
             _ => ArisenStudio.Platform.PS3
         };
     }

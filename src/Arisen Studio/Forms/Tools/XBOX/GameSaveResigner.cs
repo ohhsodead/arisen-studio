@@ -31,7 +31,8 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
         private void GameSaveResigner_Load(object sender, EventArgs e)
         {
-
+            MenuButtonFile.Caption = Language.GetString("FILE");
+            MenuButtonProfile.Caption = Language.GetString("PROFILE");
         }
 
         private void GameSaveResigner_FormClosing(object sender, FormClosingEventArgs e)
@@ -192,7 +193,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
         {
             if (Directory.Exists(UserFolders.XboxProfiles))
             {
-                List<ListItem> profiles = new();
+                List<ListItem> profiles = [];
 
                 foreach (string profile in Directory.GetFiles(UserFolders.XboxProfiles, "*.*", SearchOption.AllDirectories))
                 {
@@ -228,7 +229,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
         {
             try
             {
-                ListItem selectedProfile = Helpers.GetXboxProfileFile(MainWindow.XboxConsole, this);
+                ListItem selectedProfile = XboxExtensions.GetXboxProfileFile(MainWindow.XboxConsole, this);
 
                 if (selectedProfile != null)
                 {

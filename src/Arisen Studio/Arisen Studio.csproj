@@ -76,31 +76,20 @@
     <DelaySign>false</DelaySign>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Charts.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.Desktop.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Drawing.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Images.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.Office.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Pdf.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v23.2.UI, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraBars.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v23.2.UI, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v23.2.Wizard, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraDialogs.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraNavBar.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraRichEdit.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v24.1.Core, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Drawing.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v24.1.Core, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v24.1.UI, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraWizard.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="ISOLib, Version=0.2.2.0, Culture=neutral, PublicKeyToken=5a4742d0f8b86e59, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\References\ISOLib.dll</HintPath>
@@ -115,19 +104,20 @@
       <HintPath>..\References\PARAM.SFO.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
-    <Reference Include="PS3Lib, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="PS3Lib, Version=4.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Plugins\PS3\PS3Lib.dll</HintPath>
+      <HintPath>..\..\..\Arisen GSC Injector\src\References\PS3Lib.dll</HintPath>
     </Reference>
     <Reference Include="PS3ManagerAPI, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Plugins\PS3 Manager\Fake CCAPI\PS3ManagerAPI.dll</HintPath>
+      <HintPath>..\..\..\Arisen GSC Injector\src\References\PS3ManagerAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="xdevkit, Version=2.0.21256.0, Culture=neutral, processorArchitecture=AMD64">
@@ -138,6 +128,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Urls.cs" />
+    <Compile Include="Controls\DownloadAppFileItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DownloadAppFileItem.Designer.cs">
+      <DependentUpon>DownloadAppFileItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DownloadFileItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -157,14 +153,15 @@
     <Compile Include="Controls\StatItem.Designer.cs">
       <DependentUpon>StatItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database\AppItemFile.cs" />
     <Compile Include="Database\GameCheatItemData.cs" />
     <Compile Include="Database\GamePatchItemData.cs" />
     <Compile Include="Database\GameSaveItemData.cs" />
+    <Compile Include="Database\AppItemData.cs" />
     <Compile Include="Database\PackageItemData.cs" />
     <Compile Include="Database\GamesTitleIdsXBOX.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Extensions\GraphicExtensions.cs" />
-    <Compile Include="Extensions\Helpers\Helpers.cs" />
     <Compile Include="Extensions\ImgurUploader.cs" />
     <Compile Include="Extensions\IoExtensions.cs" />
     <Compile Include="Extensions\PS3\WebManExtensions.cs" />
@@ -182,6 +179,18 @@
     </Compile>
     <Compile Include="Forms\Dialogs\Details\GamePatchesDialog.Designer.cs">
       <DependentUpon>GamePatchesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Details\ApplicationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Details\ApplicationDialog.Designer.cs">
+      <DependentUpon>ApplicationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\NewCustomDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\NewCustomDialog.Designer.cs">
+      <DependentUpon>NewCustomDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\PackagesFaqDialog.cs">
       <SubType>Form</SubType>
@@ -305,12 +314,6 @@
     <Compile Include="Forms\Tools\XBOX\ConsoleManager.Designer.cs">
       <DependentUpon>ConsoleManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tools\XBOX\ConsoleInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Tools\XBOX\ConsoleInfo.Designer.cs">
-      <DependentUpon>ConsoleInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Tools\XBOX\XboxHDKey.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -377,6 +380,12 @@
     <Compile Include="Forms\Tools\XBOX\DashlaunchEditor.Designer.cs">
       <DependentUpon>DashlaunchEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dialogs\SetupWizardDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\SetupWizardDialog.Designer.cs">
+      <DependentUpon>SetupWizardDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Io\Archives.cs" />
     <Compile Include="Io\UserFolders.cs" />
     <Compile Include="Models\Dashboard\FavoriteGamesData.cs" />
@@ -385,6 +394,7 @@
     <Compile Include="Models\Database\GameCheatsData.cs" />
     <Compile Include="Models\Database\GamePatchesData.cs" />
     <Compile Include="Models\Database\GameSavesData.cs" />
+    <Compile Include="Models\Database\AppsData.cs" />
     <Compile Include="Models\Database\PackagesData.cs" />
     <Compile Include="Models\Database\GamesTitleIdsDataXBOX.cs" />
     <Compile Include="Models\Game Updates\GameUpdates.cs" />
@@ -442,6 +452,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Templates\GitHubTemplates.cs" />
+    <EmbeddedResource Include="Controls\DownloadAppFileItem.resx">
+      <DependentUpon>DownloadAppFileItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\DownloadFileItem.resx">
       <DependentUpon>DownloadFileItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -457,6 +470,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\Details\GamePatchesDialog.resx">
       <DependentUpon>GamePatchesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\Details\ApplicationDialog.resx">
+      <DependentUpon>ApplicationDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\NewCustomDialog.resx">
+      <DependentUpon>NewCustomDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\PackagesFaqDialog.resx">
       <DependentUpon>PackagesFaqDialog.cs</DependentUpon>
@@ -527,9 +546,6 @@
     <EmbeddedResource Include="Forms\Tools\XBOX\ConsoleManager.resx">
       <DependentUpon>ConsoleManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tools\XBOX\ConsoleInfo.resx">
-      <DependentUpon>ConsoleInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX\XboxHDKey.resx">
       <DependentUpon>XboxHDKey.cs</DependentUpon>
     </EmbeddedResource>
@@ -573,10 +589,16 @@
     <EmbeddedResource Include="Forms\Dialogs\ListViewDialog.resx">
       <DependentUpon>ListViewDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\SetupWizardDialog.resx">
+      <DependentUpon>SetupWizardDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Languages\en_US.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Languages\es_ES.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\pt_BR.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Languages\sv_SE.resx">
@@ -593,29 +615,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icons\uninstall.png" />
-    <None Include="Resources\Icons\install.png" />
-    <None Include="Resources\Icons\three_dots.png" />
-    <None Include="Resources\Icons\profile.png" />
-    <None Include="Resources\Icons\downloads.png" />
-    <None Include="Resources\Icons\dots.png" />
-    <None Include="Resources\Icons\announcement.png" />
-    <None Include="Resources\Icons\add_file.png" />
-    <None Include="Resources\Icons\less_or_equal.png" />
-    <None Include="Resources\Icons\more_or_equal.png" />
-    <None Include="Resources\Icons\equal_sign.png" />
-    <None Include="Resources\Icons\find_profile.png" />
-    <None Include="Resources\Icons\world.png" />
-    <None Include="Resources\Icons\folder_settings.png" />
-    <None Include="Resources\Icons\edit_file.png" />
-    <None Include="Resources\Icons\library.png" />
-    <None Include="Resources\Icons\XboxSlimE.png" />
-    <None Include="Resources\Icons\PlayStation3Fat.png" />
-    <None Include="Resources\Icons\PlayStation3SuperSlim.png" />
-    <None Include="Resources\Icons\XboxFat.png" />
-    <None Include="Resources\Icons\XboxFatElite.png" />
-    <None Include="Resources\Icons\PlayStation3Slim.png" />
-    <None Include="Resources\Icons\XboxSlim.png" />
     <None Include="App.config" />
     <None Include="Resources\launch.ini" />
   </ItemGroup>
@@ -636,7 +635,7 @@
       <Version>1.5.0</Version>
     </PackageReference>
     <PackageReference Include="Autoupdater.NET.Official">
-      <Version>1.8.6</Version>
+      <Version>1.9.1</Version>
     </PackageReference>
     <PackageReference Include="CodeHollow.FeedReader">
       <Version>1.2.6</Version>
@@ -645,7 +644,7 @@
       <Version>1.2.1.24</Version>
     </PackageReference>
     <PackageReference Include="FluentFTP">
-      <Version>50.0.1</Version>
+      <Version>50.1.0</Version>
     </PackageReference>
     <PackageReference Include="HtmlAgilityPack">
       <Version>1.11.61</Version>
@@ -660,7 +659,7 @@
       <Version>2.5.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Web.WebView2">
-      <Version>1.0.2478.35</Version>
+      <Version>1.0.2592.51</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>
@@ -676,128 +675,167 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icons\backup_restore.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icons\update_file.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icons\find_file.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\website.png" />
-    <None Include="Resources\Icons\xbox_manager.png" />
+    <None Include="Resources\Icons\icons8-games.svg" />
+    <None Include="Resources\Icons\icons8-user-mods.svg" />
+    <None Include="Resources\Icons\icons8-custom-mods.svg" />
+    <None Include="Resources\Icons\icons8-custom.svg" />
+    <None Include="Resources\Icons\icons8-add-new.svg" />
+    <None Include="Resources\Icons\icons8-edit.svg" />
+    <None Include="Resources\Icons\icons8-share.svg" />
+    <None Include="Resources\Icons\icons8-download-from-cloud.svg" />
+    <None Include="Resources\Icons\icon-custom-mods.svg" />
+    <None Include="Resources\Icons\icons8-show-details.svg" />
+    <None Include="Resources\Icons\icons8-open-archive.svg" />
+    <None Include="Resources\Icons\icons8-edit-details.svg" />
+    <None Include="Resources\Icons\icons8-add-favorite.svg" />
+    <Content Include="Resources\Icons\about.svg" />
+    <Content Include="Resources\Icons\actions_arrow3left.svg" />
+    <Content Include="Resources\Icons\actions_arrow3right.svg" />
+    <Content Include="Resources\Icons\actions_forbid.svg" />
+    <Content Include="Resources\Icons\actions_question.svg" />
+    <Content Include="Resources\Icons\actions_refresh.svg" />
+    <Content Include="Resources\Icons\actions_reload.svg" />
+    <Content Include="Resources\Icons\actions_reload1.svg" />
+    <Content Include="Resources\Icons\add_file.png" />
+    <Content Include="Resources\Icons\announcement.png" />
+    <Content Include="Resources\Icons\arrow_down.svg" />
+    <Content Include="Resources\Icons\arrow_up.svg" />
+    <Content Include="Resources\Icons\backup_files.png" />
+    <Content Include="Resources\Icons\backup_restore.png" />
+    <Content Include="Resources\Icons\boot_plugins_editor.png" />
+    <Content Include="Resources\Icons\capture.png" />
+    <Content Include="Resources\Icons\change_profile.png" />
+    <Content Include="Resources\Icons\cheats.png" />
+    <Content Include="Resources\Icons\check.svg" />
+    <Content Include="Resources\Icons\connect.png" />
+    <Content Include="Resources\Icons\console_manager.png" />
+    <Content Include="Resources\Icons\console_power.png" />
+    <Content Include="Resources\Icons\delete.svg" />
+    <Content Include="Resources\Icons\disconnect.png" />
+    <Content Include="Resources\Icons\discord_status.png" />
+    <Content Include="Resources\Icons\discord_status1.png" />
+    <Content Include="Resources\Icons\dots.png" />
+    <Content Include="Resources\Icons\dots_vertical.svg" />
+    <Content Include="Resources\Icons\download.svg" />
+    <Content Include="Resources\Icons\downloads.png" />
+    <Content Include="Resources\Icons\downloads_folder.png" />
+    <Content Include="Resources\Icons\downloads_folder.svg" />
+    <Content Include="Resources\Icons\edit_file.png" />
+    <Content Include="Resources\Icons\edit_profile.png" />
+    <Content Include="Resources\Icons\edit_save.png" />
+    <Content Include="Resources\Icons\equal_sign.png" />
+    <Content Include="Resources\Icons\feedback.png" />
+    <Content Include="Resources\Icons\file_editor.png" />
+    <Content Include="Resources\Icons\file_folder.png" />
+    <Content Include="Resources\Icons\file_launch.png" />
+    <Content Include="Resources\Icons\find_file.png" />
+    <Content Include="Resources\Icons\find_profile.png" />
+    <Content Include="Resources\Icons\folder_settings.png" />
+    <Content Include="Resources\Icons\form.png" />
+    <Content Include="Resources\Icons\games_folder.png" />
+    <Content Include="Resources\Icons\game_controller.png" />
+    <Content Include="Resources\Icons\game_patch.png" />
+    <Content Include="Resources\Icons\game_region.png" />
+    <Content Include="Resources\Icons\globe.png" />
+    <Content Include="Resources\Icons\homebrew.png" />
+    <Content Include="Resources\Icons\icons8-advanced-search.svg" />
+    <Content Include="Resources\Icons\icons8-announcement.svg" />
+    <Content Include="Resources\Icons\icons8-anvil.svg" />
+    <Content Include="Resources\Icons\icons8-applications.svg" />
+    <Content Include="Resources\Icons\icons8-beer.svg" />
+    <Content Include="Resources\Icons\icons8-collapse.svg" />
+    <Content Include="Resources\Icons\icons8-copy-link.svg" />
+    <Content Include="Resources\Icons\icons8-delete.svg" />
+    <None Include="Resources\Icons\icons8-download-file.svg" />
+    <Content Include="Resources\Icons\icons8-download.svg" />
+    <Content Include="Resources\Icons\icons8-equals.svg" />
+    <Content Include="Resources\Icons\icons8-expand.svg" />
+    <Content Include="Resources\Icons\icons8-heart.svg" />
+    <Content Include="Resources\Icons\icons8-home.svg" />
+    <Content Include="Resources\Icons\icons8-info.svg" />
+    <Content Include="Resources\Icons\icons8-install.svg" />
+    <Content Include="Resources\Icons\icons8-list.svg" />
+    <Content Include="Resources\Icons\icons8-no-profile.svg" />
+    <Content Include="Resources\Icons\icons8-opened-box.svg" />
+    <Content Include="Resources\Icons\icons8-opened-folder.svg" />
+    <Content Include="Resources\Icons\icons8-plugin.svg" />
+    <Content Include="Resources\Icons\icons8-preview-file-24.png" />
+    <Content Include="Resources\Icons\icons8-preview-file.svg" />
+    <Content Include="Resources\Icons\icons8-project-setup.svg" />
+    <Content Include="Resources\Icons\icons8-refresh.svg" />
+    <Content Include="Resources\Icons\icons8-save.svg" />
+    <Content Include="Resources\Icons\icons8-settings.svg" />
+    <Content Include="Resources\Icons\icons8-sort.svg" />
+    <Content Include="Resources\Icons\icons8-tools.svg" />
+    <Content Include="Resources\Icons\icons8-uninstall.svg" />
+    <Content Include="Resources\Icons\import.png" />
+    <Content Include="Resources\Icons\import.svg" />
+    <Content Include="Resources\Icons\index_16x16.png" />
+    <Content Include="Resources\Icons\index_32x32.png" />
+    <Content Include="Resources\Icons\info.svg" />
+    <Content Include="Resources\Icons\install.png" />
+    <Content Include="Resources\Icons\install_svg.svg" />
+    <Content Include="Resources\Icons\key.png" />
+    <Content Include="Resources\Icons\launcher.svg" />
+    <Content Include="Resources\Icons\less_or_equal.png" />
+    <Content Include="Resources\Icons\library.png" />
+    <Content Include="Resources\Icons\log_file.png" />
+    <Content Include="Resources\Icons\modules.png" />
+    <Content Include="Resources\Icons\modules.svg" />
+    <Content Include="Resources\Icons\more_or_equal.png" />
+    <Content Include="Resources\Icons\new_profile.png" />
+    <Content Include="Resources\Icons\notify.png" />
+    <Content Include="Resources\Icons\open_file.svg" />
+    <Content Include="Resources\Icons\open_url.svg" />
+    <Content Include="Resources\Icons\packages.png" />
+    <Content Include="Resources\Icons\package_manager.png" />
+    <Content Include="Resources\Icons\PlayStation3Fat.png" />
+    <Content Include="Resources\Icons\PlayStation3Slim.png" />
+    <Content Include="Resources\Icons\PlayStation3SuperSlim.png" />
+    <Content Include="Resources\Icons\playstation4.png" />
+    <Content Include="Resources\Icons\plugins_editor.png" />
+    <Content Include="Resources\Icons\profile.png" />
+    <Content Include="Resources\Icons\profile_switch.png" />
+    <Content Include="Resources\Icons\refresh2_16x16.png" />
+    <Content Include="Resources\Icons\refresh2_32x32.png" />
+    <Content Include="Resources\Icons\request.png" />
+    <Content Include="Resources\Icons\resources.png" />
+    <Content Include="Resources\Icons\restore_backup.svg" />
+    <Content Include="Resources\Icons\restore_file.svg" />
+    <Content Include="Resources\Icons\save_update.svg" />
+    <Content Include="Resources\Icons\search_file.png" />
+    <Content Include="Resources\Icons\search_profiles.png" />
+    <Content Include="Resources\Icons\search_web.png" />
+    <Content Include="Resources\Icons\send_feedback.png" />
+    <Content Include="Resources\Icons\shutdown.png" />
+    <None Include="Resources\Icons\Socials\discord.svg" />
+    <None Include="Resources\Icons\Socials\github.svg" />
+    <None Include="Resources\Icons\Socials\twitter.svg" />
+    <None Include="Resources\Icons\Socials\website.svg" />
+    <Content Include="Resources\Icons\sort.svg" />
+    <Content Include="Resources\Icons\sort_32x32.png" />
+    <Content Include="Resources\Icons\spoof.svg" />
+    <Content Include="Resources\Icons\spoofer.png" />
+    <Content Include="Resources\Icons\stop.svg" />
+    <Content Include="Resources\Icons\switch_profile.png" />
+    <Content Include="Resources\Icons\three_dots.png" />
+    <Content Include="Resources\Icons\uninstall.png" />
+    <Content Include="Resources\Icons\uninstall.svg" />
+    <Content Include="Resources\Icons\update_file.png" />
+    <Content Include="Resources\Icons\usb_connection.png" />
+    <Content Include="Resources\Icons\viewsettings.svg" />
+    <Content Include="Resources\Icons\world.png" />
+    <Content Include="Resources\Icons\XboxFat.png" />
+    <Content Include="Resources\Icons\XboxFatElite.png" />
+    <Content Include="Resources\Icons\XboxSlim.png" />
+    <Content Include="Resources\Icons\XboxSlimE.png" />
+    <Content Include="Resources\Icons\xbox_manager.png" />
+    <None Include="Resources\Icons\website.png" />
     <None Include="Resources\Icons\Socials\twitter.png" />
     <None Include="Resources\Icons\Socials\github.png" />
     <None Include="Resources\Icons\Socials\discord.png" />
     <Content Include="arisenstudio.ico" />
     <None Include="Resources\arisenstudio.png" />
-    <None Include="Resources\icons8-delete.svg" />
-    <None Include="Resources\icons8-opened-folder.svg" />
-    <None Include="Resources\icons8-preview-file-24.png" />
-    <None Include="Resources\icons8-preview-file.svg" />
-    <None Include="Resources\icons8-refresh.svg" />
-    <None Include="Resources\icons8-info.svg" />
-    <None Include="Resources\icons8-install.svg" />
-    <None Include="Resources\icons8-download.svg" />
-    <None Include="Resources\icons8-expand.svg" />
-    <None Include="Resources\icons8-collapse.svg" />
-    <None Include="Resources\icons8-announcement.svg" />
-    <None Include="Resources\icons8-no-profile.svg" />
-    <None Include="Resources\icons8-list.svg" />
-    <None Include="Resources\icons8-settings.svg" />
-    <None Include="Resources\icons8-tools.svg" />
-    <None Include="Resources\icons8-beer.svg" />
-    <None Include="Resources\icons8-opened-box.svg" />
-    <None Include="Resources\icons8-plugin.svg" />
-    <None Include="Resources\icons8-save.svg" />
-    <None Include="Resources\icons8-uninstall.svg" />
-    <None Include="Resources\icons8-heart.svg" />
-    <None Include="Resources\icons8-sort.svg" />
-    <None Include="Resources\icons8-equals.svg" />
-    <None Include="Resources\icons8-advanced-search.svg" />
-    <None Include="Resources\icons8-anvil.svg" />
-    <None Include="Resources\icons8-home.svg" />
-    <Content Include="Resources\Icons\about.svg" />
-    <Content Include="Resources\Icons\actions_forbid.svg" />
-    <Content Include="Resources\Icons\check.svg" />
-    <Content Include="Resources\Icons\feedback.png" />
-    <Content Include="Resources\Icons\file_folder.png" />
-    <Content Include="Resources\Icons\form.png" />
-    <Content Include="Resources\Icons\import.svg" />
-    <Content Include="Resources\Icons\log_file.png" />
-    <Content Include="Resources\Icons\request.png" />
-    <Content Include="Resources\Icons\send_feedback.png" />
-    <None Include="Resources\Icons\key.png" />
-    <None Include="Resources\Icons\index_16x16.png" />
-    <None Include="Resources\Icons\index_32x32.png" />
-    <None Include="Resources\Icons\viewsettings.svg" />
-    <None Include="Resources\Icons\usb_connection.png" />
-    <None Include="Resources\Icons\notify.png" />
-    <None Include="Resources\Icons\shutdown.png" />
-    <None Include="Resources\Icons\profile_switch.png" />
-    <None Include="Resources\Icons\switch_profile.png" />
-    <None Include="Resources\Icons\spoofer.png" />
-    <None Include="Resources\Icons\modules.png" />
-    <None Include="Resources\Icons\plugins_editor.png" />
-    <None Include="Resources\Icons\package_manager.png" />
-    <None Include="Resources\Icons\search_web.png" />
-    <None Include="Resources\Icons\search_file.png" />
-    <None Include="Resources\Icons\stop.svg" />
-    <None Include="Resources\Icons\search_profiles.png" />
-    <None Include="Resources\Icons\new_profile.png" />
-    <None Include="Resources\Icons\save_update.svg" />
-    <None Include="Resources\Icons\restore_file.svg" />
-    <None Include="Resources\Icons\restore_backup.svg" />
-    <None Include="Resources\Icons\open_url.svg" />
-    <None Include="Resources\Icons\spoof.svg" />
-    <None Include="Resources\Icons\launcher.svg" />
-    <None Include="Resources\Icons\modules.svg" />
-    <None Include="Resources\Icons\refresh2_16x16.png" />
-    <None Include="Resources\Icons\refresh2_32x32.png" />
-    <None Include="Resources\Icons\sort_32x32.png" />
-    <None Include="Resources\Icons\install_svg.svg" />
-    <None Include="Resources\Icons\sort.svg" />
-    <None Include="Resources\Icons\open_file.svg" />
-    <None Include="Resources\Icons\info.svg" />
-    <None Include="Resources\Icons\uninstall.svg" />
-    <None Include="Resources\Icons\cheats.png" />
-    <None Include="Resources\Icons\delete.svg" />
-    <None Include="Resources\Icons\arrow_down.svg" />
-    <None Include="Resources\Icons\arrow_up.svg" />
-    <None Include="Resources\Icons\actions_refresh.svg" />
-    <None Include="Resources\Icons\actions_reload.svg" />
-    <None Include="Resources\Icons\actions_reload1.svg" />
-    <None Include="Resources\Icons\actions_arrow3right.svg" />
-    <None Include="Resources\Icons\actions_arrow3left.svg" />
-    <None Include="Resources\Icons\dots_vertical.svg" />
-    <None Include="Resources\Icons\console_power.png" />
-    <None Include="Resources\Icons\change_profile.png" />
-    <None Include="Resources\Icons\edit_profile.png" />
-    <None Include="Resources\Icons\backup_files.png" />
-    <None Include="Resources\Icons\game_patch.png" />
-    <None Include="Resources\Icons\console_manager.png" />
-    <None Include="Resources\Icons\game_region.png" />
-    <None Include="Resources\Icons\globe.png" />
-    <None Include="Resources\Icons\boot_plugins_editor.png" />
-    <None Include="Resources\Icons\edit_save.png" />
-    <None Include="Resources\Icons\file_launch.png" />
-    <None Include="Resources\Icons\file_editor.png" />
-    <None Include="Resources\Icons\games_folder.png" />
-    <None Include="Resources\Icons\game_controller.png" />
-    <None Include="Resources\Icons\capture.png" />
-    <None Include="Resources\Icons\downloads_folder.png" />
-    <None Include="Resources\Icons\connect.png" />
-    <None Include="Resources\Icons\disconnect.png" />
-    <None Include="Resources\Icons\discord_status1.png" />
-    <None Include="Resources\Icons\discord_status.png" />
-    <None Include="Resources\Icons\actions_question.svg" />
-    <Content Include="Resources\Icons\download.svg" />
-    <Content Include="Resources\Icons\downloads_folder.svg" />
-    <Content Include="Resources\Icons\homebrew.png" />
-    <Content Include="Resources\Icons\import.png" />
-    <Content Include="Resources\Icons\packages.png" />
-    <Content Include="Resources\Icons\resources.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

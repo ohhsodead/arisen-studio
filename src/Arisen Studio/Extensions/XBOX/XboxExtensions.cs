@@ -1,6 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Windows.Forms;
+using ArisenStudio.Forms.Windows;
+using ArisenStudio.Models.Resources;
+using DevExpress.XtraCharts.Native;
+using DevExpress.XtraEditors;
 using JRPC_Client;
 using XDevkit;
 
@@ -8,6 +14,155 @@ namespace ArisenStudio.Extensions
 {
     internal static class XboxExtensions
     {
+        public static List<ConsoleProfile> ScanForConsoles(Form owner)
+        {
+            List<ConsoleProfile> consoles = [];
+
+            IXboxManager xboxManager = new XboxManagerClass();
+
+            foreach (IXboxConsole console in xboxManager.Consoles)
+            {
+                if (MainWindow.Settings.ConsoleProfiles.Exists(x => x.Platform == Platform.XBOX360 && x.Name.Equals(console.Name)))
+                {
+                    if (XtraMessageBox.Show(owner, string.Format(MainWindow.ResourceLanguage.GetString("CONSOLE_NAME_ALREADY_EXISTS"), console.Name), MainWindow.ResourceLanguage.GetString("DUPLICATE_NAME"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        consoles.Add(
+                            new()
+                            {
+                                Id = DataExtensions.GenerateUniqueId(),
+                                Name = console.Name,
+                                Address = StringExtensions.UIntToIp(console.IPAddress),
+                                Platform = Platform.XBOX360,
+                                PlatformType = PlatformType.Xbox360FatWhite,
+                                UseDefaultCredentials = true
+                            });
+                    }
+                }
+                else
+                {
+                    consoles.Add(
+                        new()
+                        {
+                            Id = DataExtensions.GenerateUniqueId(),
+                            Name = console.Name,
+                            Address = StringExtensions.UIntToIp(console.IPAddress),
+                            Platform = Platform.XBOX360,
+                            PlatformType = PlatformType.Xbox360FatWhite,
+                            UseDefaultCredentials = true
+                        });
+                }
+            }
+
+            return consoles;
+        }
+
+        public static void ScanForXboxConsoles(Form owner)
+        {
+            try
+            {
+                XboxManager xboxManager = new();
+
+                int count = 0;
+
+                foreach (string xbox in xboxManager.Consoles)
+                {
+                    if (MainWindow.Settings.ConsoleProfiles.Exists(x => x.Platform == Platform.XBOX360 && x.Name.Equals(xbox)))
+                    {
+                        if (XtraMessageBox.Show(owner, $"A console name: {xbox} already exists in your profiles.\n\nWould you like to it again?", "Duplicate Console", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        {
+                            MainWindow.Settings.ConsoleProfiles.Add(
+                                new()
+                                {
+                                    Name = xbox,
+                                    Address = xbox,
+                                    PlatformType = PlatformType.Xbox360EliteFatBlack,
+                                    Platform = Platform.XBOX360
+                                });
+
+                            count++;
+                        }
+                    }
+                    else
+                    {
+                        MainWindow.Settings.ConsoleProfiles.Add(
+                               new()
+                               {
+                                   Name = xbox,
+                                   Address = xbox,
+                                   PlatformType = PlatformType.Xbox360EliteFatBlack,
+                                   Platform = Platform.XBOX360
+                               });
+
+                        count++;
+                    }
+                }
+
+                XtraMessageBox.Show(owner, $"A total of {count} consoles were added to your profiles.", MainWindow.ResourceLanguage.GetString("XBOX_CONSOLES"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MainWindow.Window.SetStatus("Unable to scan for Xbox consoles.", ex);
+                XtraMessageBox.Show(owner, $"Unable to scan for Xbox consoles.\n\nError: {ex.Message}", MainWindow.ResourceLanguage.GetString("XBOX_CONSOLES"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public static ListItem GetXboxProfileFile(IXboxConsole xboxConsole, Form owner)
+        {
+            List<ListItem> consoleProfiles = [];
+            List<string> consoleProfilesPaths = [];
+
+            IXboxFiles xboxFiles = xboxConsole.DirectoryFiles(@"Hdd:\Content\");
+
+            foreach (IXboxFile file in xboxFiles)
+            {
+                if (file.IsDirectory)
+                {
+                    MessageBox.Show(file.Name);
+
+                    if (!file.Name.Contains("0000000000000000"))
+                    {
+                        consoleProfilesPaths.Add(file.Name);
+                    }
+                }
+            }
+
+            foreach (string profile in consoleProfilesPaths)
+            {
+                string profilePath = @$"Hdd:\Content\{profile.Replace(@"Hdd:\Content\", string.Empty)}\FFFE07D1\00010000\";
+
+                try
+                {
+                    foreach (IXboxFile file in xboxConsole.DirectoryFiles(profilePath))
+                    {
+                        if (!file.IsDirectory)
+                        {
+                            string profileName = profile.Replace(@"Hdd:\Content\", string.Empty).Replace(@"\FFFE07D1\00010000\", string.Empty);
+
+                            consoleProfiles.Add(new()
+                            {
+                                Name = profileName,
+                                Value = file.Name
+                            });
+                        }
+                    }
+                }
+                catch
+                {
+                    // Profile file doesn't exist, so skip to next one
+                    continue;
+                }
+            }
+
+            if (consoleProfiles.Count > 0)
+            {
+                return DialogExtensions.ShowListViewDialog(owner, "Choose Profile", consoleProfiles);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static void XNotify(this IXboxConsole console, string text, XNotifyLogo icon)
         {
             string command = "consolefeatures ver=2" + " type=12 params=\"A\\0\\A\\2\\" + 2 + "/" + text.Length + "\\" + text.ConvertStringToHex(Encoding.ASCII) + "\\" + 1 + "\\";
@@ -20,22 +175,39 @@ namespace ArisenStudio.Extensions
             console.CallVoid(JRPC.ThreadType.Title, "xam.xex", 656, 34, 0xFF, 2, text.ToWCHAR(), 1);
         }
 
+        public static void ChangeXboxName(this IXboxConsole console, string name)
+        {
+            console.SendTextCommand(0, "dbgname name=" + name, out _);
+        }
+
+        public static void ChangeXboxIcon(this IXboxConsole console, IconColor icon)
+        {
+            console.SendTextCommand(0, "setcolor name=" + icon.ToString().ToLower(), out _);
+        }
+
+        /// <summary>
+        /// Open/Closes the tray
+        /// </summary>
+        /// <param name="console"></param>
+        /// <param name="state"></param>
         public static void SetTrayState(this IXboxConsole console, TrayState state)
         {
             switch (state)
             {
                 case TrayState.Open:
-                    console.CallVoid(console.ResolveFunction("xam.xex", (int)XboxShortcuts.OpenTray), new object[] { 0, 0, 0, 0 });
+                    console.CallVoid(console.ResolveFunction("xam.xex", (int)XboxShortcuts.OpenTray), [0, 0, 0, 0]);
                     break;
                 case TrayState.Close:
-                    console.CallVoid(console.ResolveFunction("xam.xex", (int)XboxShortcuts.CloseTray), new object[] { 0, 0, 0, 0 });
+                    console.CallVoid(console.ResolveFunction("xam.xex", (int)XboxShortcuts.CloseTray), [0, 0, 0, 0]);
                     break;
             }
         }
 
-        /// Controls The Fan Speed.
+        /// <summary>
+        /// Controls the fan speed
         /// </summary>
-        /// <param name="Value_1"></param>
+        /// <param name="console"></param>
+        /// <param name="value1"></param>
         /// <param name="input"></param>
         /// <returns></returns>
         public static bool SetFanSpeed(this IXboxConsole console, int value1, int input)
@@ -146,7 +318,7 @@ namespace ArisenStudio.Extensions
         {
             try
             {
-                return Call<uint>(console, "xam.xex", 463, new object[] { });
+                return Call<uint>(console, "xam.xex", 463, []);
 
                 //return console.ResolveFunction("xam.xex", 463);
             }
@@ -385,7 +557,7 @@ namespace ArisenStudio.Extensions
 
         public static void WriteString(this IXboxConsole xbCon, uint address, string @string)
         {
-            byte[] array = new byte[0];
+            byte[] array = [];
             for (int i = 0; i < @string.Length; i++)
             {
                 byte value = (byte)@string[i];
@@ -399,6 +571,15 @@ namespace ArisenStudio.Extensions
         {
             xbCon.DebugTarget.SetMemory(offset, (uint)memory.Length, memory, out _);
         }
+    }
+
+    public enum IconColor
+    {
+        Black,
+        Blue,
+        BlueGray,
+        NoSideCar,
+        White,
     }
 
     public enum XNotifyLogo : uint

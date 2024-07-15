@@ -46,11 +46,11 @@ namespace ArisenStudio.Forms.Tools.PS3
         {
             GridGameRegions.DataSource = null;
 
-            using (DataTable gameRegions = DataExtensions.CreateDataTable(new List<DataColumn>
-            {
+            using (DataTable gameRegions = DataExtensions.CreateDataTable(
+            [
                 new("Game Title", typeof(string)),
                 new("Game Region", typeof(string))
-            }))
+            ]))
             {
                 foreach (GameRegion gameRegion in Settings.GameRegionsPs3)
                 {

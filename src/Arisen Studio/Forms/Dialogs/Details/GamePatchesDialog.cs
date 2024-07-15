@@ -31,12 +31,11 @@ namespace ArisenStudio.Forms.Dialogs.Details
         public GamePatchItemData GamePatchItem = null;
 
         private DataTable DataTablePatch { get; } = DataExtensions.CreateDataTable(
-            new List<DataColumn>()
-            {
+            [
                 new("Name", typeof(string)),
                 new("Author", typeof(string)),
                 //new("Enabled", typeof(string))
-            });
+            ]);
 
         private void GamePatchesDialog_Load(object sender, EventArgs e)
         {

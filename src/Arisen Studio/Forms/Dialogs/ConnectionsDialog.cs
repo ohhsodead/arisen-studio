@@ -26,11 +26,6 @@ namespace ArisenStudio.Forms.Dialogs
         public static SettingsData Settings { get; } = MainWindow.Settings;
 
         /// <summary>
-        /// Get whether dialog is being shown on startup
-        /// </summary>
-        public bool IsStartup { get; set; } = true;
-
-        /// <summary>
         /// Get whether user is editing console profiles.
         /// </summary>
         public bool IsEditing { get; set; } = false;
@@ -96,6 +91,10 @@ namespace ArisenStudio.Forms.Dialogs
                             consoleImage = Resources.PlayStation3Slim;
                             break;
 
+                        case PlatformType.PlayStation4:
+                            consoleImage = Resources.PlayStation4;
+                            break;
+
                         case PlatformType.Xbox360FatWhite:
                             consoleImage = Resources.XboxFat;
                             break;
@@ -141,6 +140,10 @@ namespace ArisenStudio.Forms.Dialogs
                                 consoleImage = Resources.PlayStation3Slim;
                                 break;
 
+                            case PlatformType.PlayStation4:
+                                consoleImage = Resources.PlayStation4;
+                                break;
+
                             case PlatformType.Xbox360FatWhite:
                                 consoleImage = Resources.XboxFat;
                                 break;
@@ -182,6 +185,10 @@ namespace ArisenStudio.Forms.Dialogs
 
                             case PlatformType.PlayStation3SuperSlim:
                                 consoleImage = Resources.PlayStation3Slim;
+                                break;
+
+                            case PlatformType.PlayStation4:
+                                consoleImage = Resources.PlayStation4;
                                 break;
 
                             case PlatformType.Xbox360FatWhite:

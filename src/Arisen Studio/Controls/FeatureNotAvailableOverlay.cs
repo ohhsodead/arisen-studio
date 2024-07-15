@@ -3,19 +3,10 @@ using System.Drawing;
 
 namespace ArisenStudio.Controls
 {
-    internal class FeatureNotAvailableOverlay : OverlayWindowPainterBase
+    internal class FeatureNotAvailableOverlay(string message) : OverlayWindowPainterBase
     {
         // Defines the string’s font.
-        readonly Font drawFont;
-
-        // Defines the string's message.
-        readonly string messageString;
-
-        public FeatureNotAvailableOverlay(string message)
-        {
-            drawFont = new Font("Segoe UI", 14.5F);
-            messageString = message;
-        }
+        readonly Font drawFont = new("Segoe UI", 14.5F);
 
         protected override void Draw(OverlayWindowCustomDrawContext context)
         {
@@ -36,12 +27,12 @@ namespace ArisenStudio.Controls
             //Get the system's black brush.
             Brush drawBrush = Brushes.Gainsboro;
             //Calculate the size of the message string.
-            SizeF textSize = cache.CalcTextSize(messageString, drawFont);
+            SizeF textSize = cache.CalcTextSize(message, drawFont);
             //A point that specifies the upper-left corner of the rectangle where the string will be drawn.
             PointF drawPoint = new(bounds.Left + (bounds.Width / 2) - (textSize.Width / 2),
                                    bounds.Top + (bounds.Height / 2) - (textSize.Height / 2));
             //Draw the string on the screen.
-            cache.DrawString(messageString, drawFont, drawBrush, drawPoint);
+            cache.DrawString(message, drawFont, drawBrush, drawPoint);
         }
     }
 }

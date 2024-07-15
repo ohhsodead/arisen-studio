@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Windows.Media.Imaging;
+using FluentFTP;
 
 namespace ArisenStudio.Extensions
 {
@@ -39,55 +40,11 @@ namespace ArisenStudio.Extensions
 
         /// <summary>
         /// </summary>
-        /// <param name="url">  </param>
+        /// <param name="url"> URL to get stream </param>
         /// <returns></returns>
         public static Stream GetStream(string url)
         {
             return ((HttpWebResponse)GetRequest(url).GetResponse()).GetResponseStream();
-        }
-
-        //public static async Task<string> HttpGetForLargeFileInRightWay(string url)
-        //{
-        //    using (HttpClient client = new HttpClient())
-        //    {
-        //        using (HttpResponseMessage response = await client.GetAsync(url, HttpCompletionOption.ResponseHeadersRead))
-        //        using (Stream streamToReadFrom = await response.Content.ReadAsStreamAsync())
-        //        {
-        //            string fileToWriteTo = Path.GetTempFileName();
-        //            using (Stream streamToWriteTo = File.Open(fileToWriteTo, FileMode.Create))
-        //            {
-        //                await streamToReadFrom.CopyToAsync(streamToWriteTo);
-        //            }
-        //        }
-        //    }
-        //}
-
-        private static readonly HttpClient _instance = new();
-
-        // Static constructor to ensure only one instance is created.
-        public static HttpClient HttpClientSingleton(string uri, string contentType = "text/plain")
-        {
-            // Configure the HttpClient instance here if necessary, e.g., set the base URI, default headers, etc.
-            _instance.BaseAddress = new Uri(uri);
-            _instance.DefaultRequestHeaders.Accept.Clear();
-            _instance.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(contentType));
-            return _instance;
-            // Implement other settings like Timeout, DefaultRequestHeaders, etc.
-        }
-
-        public static HttpClient HttpClientInstance
-        {
-            get { return _instance; }
-        }
-
-        public static async Task<string> GetResponseString(string uri)
-        {
-            var httpClient = new HttpClient();
-
-            var response = await httpClient.GetAsync(uri);
-            var contents = await response.Content.ReadAsStringAsync();
-
-            return contents;
         }
 
         /// <summary>
@@ -134,26 +91,6 @@ namespace ArisenStudio.Extensions
         /// <returns> </returns>
         public static Bitmap GetImageFromUrl(string url)
         {
-            //return await new(GetResponseString(url));
-            //return new(GetStream(url));
-
-            //var image = new BitmapImage(new Uri(url));
-            //image.ImageOpened += (s, e) =>
-            //{
-            //    image.CreateOptions = BitmapCreateOptions.None;
-            //    WriteableBitmap wb = new WriteableBitmap(image);
-            //    MemoryStream ms = new MemoryStream();
-            //    wb.SaveJpeg(ms, image.PixelWidth, image.PixelHeight, 0, 100);
-            //    byte[] imageBytes = ms.ToArray();
-            //};
-
-            //return image;
-
-            //var webClient = new WebClient();
-            //byte[] imageBytes = webClient.DownloadData(url);
-
-            //return new(imageBytes);
-
             WebRequest request = WebRequest.Create(url);
             WebResponse response = request.GetResponse();
             Stream responseStream = response.GetResponseStream();
@@ -181,6 +118,49 @@ namespace ArisenStudio.Extensions
             }
 
             return false;
+        }
+
+        public static List<string> ScanForConsoles()
+        {
+            string baseIpAddress = "192.168.1."; 
+            List<string> foundAddress = [];
+
+            for (int i = 1; i <= 255; i++)
+            {
+                string ipAddress = baseIpAddress + i.ToString();
+
+                if (PingIpAddress(ipAddress))
+                {
+                    foundAddress.Add(ipAddress);
+
+                    Console.WriteLine($"Found device at: {ipAddress}");
+                    // Further logic to check for PS3 or modded PS3 consoles
+                    // Example: Check specific ports or UPnP services
+
+                    FtpClient ftpClient = new();
+
+                    ftpClient.Connect();
+                }
+            }
+
+
+            return foundAddress;
+        }
+
+        private static bool PingIpAddress(string ipAddress)
+        {
+            try
+            {
+                using (Ping ping = new())
+                {
+                    PingReply reply = ping.Send(ipAddress, 1000); // Timeout set to 1000 ms (1 second)
+                    return reply.Status == IPStatus.Success;
+                }
+            }
+            catch (PingException)
+            {
+                return false;
+            }
         }
     }
 }

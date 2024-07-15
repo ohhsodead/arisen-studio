@@ -50,6 +50,7 @@ namespace ArisenStudio.Database
             return Platform switch
             {
                 "PS3" => ArisenStudio.Platform.PS3,
+                "PS4" => ArisenStudio.Platform.PS4,
                 "XBOX" => ArisenStudio.Platform.XBOX360,
                 _ => ArisenStudio.Platform.PS3
             };
@@ -76,13 +77,13 @@ namespace ArisenStudio.Database
         /// Get all the mod types.
         /// </summary>
         /// <returns> </returns>
-        public IEnumerable<string> ModTypes => ModType.Split(new char[] { '/', '&' }).Select(x => x.Trim());
+        public IEnumerable<string> ModTypes => ModType.Split(['/', '&']).Select(x => x.Trim());
 
         /// <summary>
         /// Get all the authors.
         /// </summary>
 
-        public IEnumerable<string> Creators => CreatedBy.Split(new char[] { '/', '&' }).Select(x => x.Trim());
+        public IEnumerable<string> Creators => CreatedBy.Split(['/', '&']).Select(x => x.Trim());
 
         /// <summary>
         /// Get all the mod versions if there are multiple.
@@ -92,7 +93,7 @@ namespace ArisenStudio.Database
         {
             get
             {
-                List<string> versions = new();
+                List<string> versions = [];
 
                 switch (Version)
                 {
@@ -121,7 +122,7 @@ namespace ArisenStudio.Database
         /// Get all the supported firmwares.
         /// </summary>
         /// <returns> </returns>
-        public List<string> FirmwareTypes => FirmwareType.Split('/').ToList();
+        public List<string> FirmwareTypes => [.. FirmwareType.Split('/')];
 
         /// <summary>
         /// Get the supported game regions.
@@ -131,7 +132,7 @@ namespace ArisenStudio.Database
         {
             get
             {
-                List<string> regions = new();
+                List<string> regions = [];
 
                 foreach (string region in Region.Split('/'))
                 {
@@ -164,7 +165,7 @@ namespace ArisenStudio.Database
         {
             get
             {
-                List<string> modes = new();
+                List<string> modes = [];
 
                 foreach (string mode in GameMode.Split('/'))
                 {

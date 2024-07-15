@@ -90,7 +90,8 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.LabelNoGames.Appearance.Options.UseTextOptions = true;
             this.LabelNoGames.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.LabelNoGames.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
-            this.LabelNoGames.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.LabelNoGames.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.LabelNoGames.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelNoGames.Location = new System.Drawing.Point(31, 70);
             this.LabelNoGames.Name = "LabelNoGames";
             this.LabelNoGames.Size = new System.Drawing.Size(222, 60);

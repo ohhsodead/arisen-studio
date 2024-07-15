@@ -1,6 +1,8 @@
 ﻿using ArisenStudio.Database;
 using ArisenStudio.Extensions;
+using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Database;
+using Humanizer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +14,15 @@ namespace ArisenStudio.Models.Resources
     {
         public FormWindowState WindowState { get; set; } = FormWindowState.Normal;
 
-        public List<ConsoleProfile> ConsoleProfiles { get; set; } = new();
+        public List<ConsoleProfile> ConsoleProfiles { get; set; } = [];
+
+        public List<CustomMod> CustomMods { get; set; } = [];
+
+        public bool FirstTimeUse { get; set; } = true;
 
         public bool FirstTimeOpenAfterUpdate { get; set; } = true;
 
-        public bool ShowRecommendations { get; set; } = true;
-
-        public List<int> DismissedAnnouncements { get; set; } = new();
+        public List<int> DismissedAnnouncements { get; set; } = [];
 
         public string Language { get; set; } = "English";
 
@@ -40,13 +44,15 @@ namespace ArisenStudio.Models.Resources
 
         public bool RememberConsolePath { get; set; } = false;
 
-        public string LocalPathPs3 { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        public string LocalPathPs3 { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-        public string LocalPathXbox { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        public string LocalPathXbox { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
         public string ConsolePathPs3 { get; set; } = "/dev_hdd0/";
 
         public string ConsolePathXbox { get; set; } = @"HDD:\";
+
+        public List<DownloadedItem> DownloadedMods { get; set; } = [];
 
         // Transfer
 
@@ -57,6 +63,8 @@ namespace ArisenStudio.Models.Resources
         public bool InstallResourcesToUsbDevice { get; set; } = false;
 
         public bool InstallPackagesToUsbDevice { get; set; } = false;
+
+        public bool InstallApplicationsToUsbDevice { get; set; } = false;
 
         public bool InstallGameSavesToUsbDevice { get; set; } = false;
 
@@ -72,7 +80,9 @@ namespace ArisenStudio.Models.Resources
 
         public string BootPluginsFilePath { get; set; } = @"/dev_hdd0/boot_plugins.txt";
 
-        public string PackageInstallPath { get; set; } = "/dev_hdd0/packages/";
+        public string PackageInstallPathPS3 { get; set; } = "/dev_hdd0/packages/";
+
+        public string PackageInstallPathPS4 { get; set; } = "/data/pkg/{TitleId}/{Name}-{Version}.pkg";
 
         // Discord
 
@@ -103,11 +113,23 @@ namespace ArisenStudio.Models.Resources
             return path.Replace(@"%BASE_DIR%", PathBaseDirectory);
         }
 
-        public List<DownloadedItem> DownloadedMods { get; set; } = new();
+        // Custom Mods
+
+        public List<CustomMod> GetCustomMods(CategoriesData categoriesData, string platform, string category, string name, string modType, string version)
+        {
+            return CustomMods.Where(x =>
+                    x.Platform.Humanize().Equals(platform) &&
+                    x.Category.ContainsIgnoreCaseSymbols(category) &&
+                    x.Name.ContainsIgnoreCase(name) &&
+                    x.ModType.ContainsIgnoreCase(modType) &&
+                    //x.Region.ContainsIgnoreCase(region) &&
+                    x.Version.EqualsIgnoreCase(version))
+                    .ToList();
+        }
 
         // Favorites
 
-        public List<FavoriteItem> FavoriteMods { get; set; } = new();
+        public List<FavoriteItem> FavoriteMods { get; set; } = [];
 
         public void AddRemoveFavoriteModItem(FavoriteItem favoriteItem)
         {
@@ -126,7 +148,7 @@ namespace ArisenStudio.Models.Resources
             return new() { CategoryType = modItem.GetCategoryType(categoriesData), CategoryId = modItem.CategoryId, ModId = modItem.Id, Platform = modItem.GetPlatform() };
         }
 
-        public List<FavoriteItem> FavoriteGameSaves { get; set; } = new();
+        public List<FavoriteItem> FavoriteGameSaves { get; set; } = [];
 
         public void AddRemoveGameSaveItem(FavoriteItem favoriteItem)
         {
@@ -147,13 +169,13 @@ namespace ArisenStudio.Models.Resources
 
         // PS3
 
-        public List<GameRegion> GameRegionsPs3 { get; set; } = new();
+        public List<GameRegion> GameRegionsPs3 { get; set; } = [];
 
-        public List<InstalledPackageInfo> InstalledPackages { get; set; } = new();
+        public List<InstalledPackageInfo> InstalledPackages { get; set; } = [];
 
         // Xbox 360
 
-        public List<ListItem> GameFilesXbox { get; set; } = new();
+        public List<ListItem> GameFilesXbox { get; set; } = [];
 
         /// <summary>
         /// Gets the user's saved game region for the specified <see cref="ModsData.ModItem.GameId" />
@@ -255,7 +277,7 @@ namespace ArisenStudio.Models.Resources
         /// <returns> </returns>
         public List<string> GetModTypesForMods(ModsData modsData, List<int> modIds)
         {
-            List<string> modTypes = new();
+            List<string> modTypes = [];
 
             foreach (ModItemData modItem in modsData.Mods)
             {
@@ -312,6 +334,59 @@ namespace ArisenStudio.Models.Resources
             });
         }
 
+        public ConsoleProfile CreateDefaultProfile(Platform? platform = null)
+        {
+            ConsoleProfile consoleProfile;
+
+            if (!platform.HasValue)
+            {
+                PlatformType platformType;
+
+                if (platform.Value == Platform.PS3)
+                {
+                    platformType = PlatformType.PlayStation3Fat;
+                }
+                else if(platform.Value == Platform.PS4)
+                {
+                    platformType = PlatformType.PlayStation4;
+                }
+                else
+                {
+                    platformType = PlatformType.Xbox360FatWhite;
+                }
+
+                consoleProfile = new()
+                {
+                    Id = DataExtensions.GenerateUniqueId(),
+                    Platform = platform.Value,
+                    PlatformType = platformType,
+                    Name = "Default Profile",
+                    IsDefault = true,
+                    Address = "192.168.0.69",
+                    Port = 21,
+                    UseDefaultCredentials = true,
+                    UseDefaultConsole = false
+                };
+            }
+            else
+            {
+                consoleProfile = new()
+                {
+                    Id = DataExtensions.GenerateUniqueId(),
+                    Platform = Platform.PS3,
+                    PlatformType = PlatformType.PlayStation3Fat,
+                    Name = "Default Profile",
+                    IsDefault = true,
+                    Address = "192.168.0.69",
+                    Port = 21,
+                    UseDefaultCredentials = true,
+                    UseDefaultConsole = false
+                };
+            }
+
+            return consoleProfile;
+        }
+
         public ConsoleProfile GetDefaultProfile()
         {
             foreach (ConsoleProfile consoleProfile in ConsoleProfiles)
@@ -324,6 +399,25 @@ namespace ArisenStudio.Models.Resources
 
             return null;
         }
+    }
+
+    public class CustomMod
+    {
+        public int ModId { get; set; } = 0;
+
+        public Platform Platform { get; set; } = Platform.PS3;
+
+        public string CategoryType { get; set; }
+
+        public string Category { get; set; }
+
+        public string Name { get; set; }
+
+        public string ModType { get; set; }
+
+        public string Version { get; set; }
+
+        public List<ListItem> Files { get; set; }
     }
 
     /// <summary>
@@ -353,7 +447,7 @@ namespace ArisenStudio.Models.Resources
 
         public bool IsDefault { get; set; } = true;
 
-        public List<InstalledModInfo> InstalledMods { get; set; } = new();
+        public List<InstalledModInfo> InstalledMods { get; set; } = [];
 
         /// <summary>
         /// Get the profile as format: Name (Address)

@@ -61,7 +61,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
-            this.PanelButtonsFooter = new DevExpress.Utils.Layout.StackPanel();
+            this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
             this.PanelButtonsHeader = new DevExpress.Utils.Layout.StackPanel();
             this.PanelGameTitle = new DevExpress.Utils.Layout.StackPanel();
             this.LabelHeaderTitle = new DevExpress.XtraEditors.LabelControl();
@@ -70,8 +70,8 @@ namespace ArisenStudio.Forms.Tools.PS3
             ((System.ComponentModel.ISupportInitialize)(this.GridGameUpdates)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewGameUpdates)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManagerStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PanelButtonsFooter)).BeginInit();
-            this.PanelButtonsFooter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).BeginInit();
+            this.PanelButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtonsHeader)).BeginInit();
             this.PanelButtonsHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelGameTitle)).BeginInit();
@@ -270,7 +270,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             // BarStatus
             // 
             this.BarStatus.BarItemVertIndent = 5;
-            this.BarStatus.BarName = "Status bar";
+            this.BarStatus.BarName = "Status";
             this.BarStatus.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
             this.BarStatus.DockCol = 0;
             this.BarStatus.DockRow = 0;
@@ -312,9 +312,9 @@ namespace ArisenStudio.Forms.Tools.PS3
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 389);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 385);
             this.barDockControlBottom.Manager = this.BarManagerStatus;
-            this.barDockControlBottom.Size = new System.Drawing.Size(644, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(644, 28);
             // 
             // barDockControlLeft
             // 
@@ -322,7 +322,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.BarManagerStatus;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 389);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 385);
             // 
             // barDockControlRight
             // 
@@ -330,7 +330,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(644, 0);
             this.barDockControlRight.Manager = this.BarManagerStatus;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 389);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 385);
             // 
             // barHeaderItem1
             // 
@@ -344,18 +344,18 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.barStaticItem2.Id = 2;
             this.barStaticItem2.Name = "barStaticItem2";
             // 
-            // PanelButtonsFooter
+            // PanelButtons
             // 
-            this.PanelButtonsFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.PanelButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelButtonsFooter.Controls.Add(this.ButtonInstallFile);
-            this.PanelButtonsFooter.Controls.Add(this.ButtonDownloadFile);
-            this.PanelButtonsFooter.Controls.Add(this.ButtonCopySHA1ToClipboard);
-            this.PanelButtonsFooter.Controls.Add(this.ButtonCopyURLToClipboard);
-            this.PanelButtonsFooter.Location = new System.Drawing.Point(12, 351);
-            this.PanelButtonsFooter.Name = "PanelButtonsFooter";
-            this.PanelButtonsFooter.Size = new System.Drawing.Size(620, 24);
-            this.PanelButtonsFooter.TabIndex = 1184;
+            this.PanelButtons.Controls.Add(this.ButtonInstallFile);
+            this.PanelButtons.Controls.Add(this.ButtonDownloadFile);
+            this.PanelButtons.Controls.Add(this.ButtonCopySHA1ToClipboard);
+            this.PanelButtons.Controls.Add(this.ButtonCopyURLToClipboard);
+            this.PanelButtons.Location = new System.Drawing.Point(12, 351);
+            this.PanelButtons.Name = "PanelButtons";
+            this.PanelButtons.Size = new System.Drawing.Size(620, 24);
+            this.PanelButtons.TabIndex = 1184;
             // 
             // PanelButtonsHeader
             // 
@@ -415,7 +415,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(644, 413);
             this.Controls.Add(this.PanelButtonsHeader);
-            this.Controls.Add(this.PanelButtonsFooter);
+            this.Controls.Add(this.PanelButtons);
             this.Controls.Add(this.GridGameUpdates);
             this.Controls.Add(this.PanelGameTitle);
             this.Controls.Add(this.barDockControlLeft);
@@ -439,9 +439,9 @@ namespace ArisenStudio.Forms.Tools.PS3
             ((System.ComponentModel.ISupportInitialize)(this.GridGameUpdates)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewGameUpdates)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManagerStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PanelButtonsFooter)).EndInit();
-            this.PanelButtonsFooter.ResumeLayout(false);
-            this.PanelButtonsFooter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).EndInit();
+            this.PanelButtons.ResumeLayout(false);
+            this.PanelButtons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtonsHeader)).EndInit();
             this.PanelButtonsHeader.ResumeLayout(false);
             this.PanelButtonsHeader.PerformLayout();
@@ -477,7 +477,7 @@ namespace ArisenStudio.Forms.Tools.PS3
         private BarDockControl barDockControlRight;
         private BarHeaderItem barHeaderItem1;
         private BarStaticItem barStaticItem2;
-        private StackPanel PanelButtonsFooter;
+        private StackPanel PanelButtons;
         private StackPanel PanelButtonsHeader;
         private StackPanel PanelGameTitle;
         private LabelControl LabelHeaderTitle;

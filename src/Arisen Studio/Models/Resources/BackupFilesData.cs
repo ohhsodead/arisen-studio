@@ -12,7 +12,7 @@ namespace ArisenStudio.Models.Resources
 {
     public class BackupFilesData
     {
-        public List<BackupFile> BackupFiles { get; set; } = new();
+        public List<BackupFile> BackupFiles { get; set; } = [];
 
         /// <summary>
         /// Create/store a backup of the specified file, and then downloads it locally to a known path

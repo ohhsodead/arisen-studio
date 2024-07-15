@@ -15,6 +15,7 @@ using System.Linq;
 using System.Resources;
 using System.Windows.Forms;
 using ScrollOrientation = DevExpress.XtraEditors.ScrollOrientation;
+using System.Drawing;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
@@ -145,6 +146,24 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 ButtonFavorite.SetControlText(Language.GetString("LABEL_REMOVE_FROM_FAVORITES"), 26);
                 IsFavorite = true;
             }
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            using Pen pen = new(Color.Transparent, 0);
+            e.Graphics.DrawPath(pen, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            base.OnPaintBackground(e);
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            using Brush brush = new SolidBrush(BackColor);
+            e.Graphics.FillPath(brush, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
         }
 
         protected override bool ProcessDialogKey(Keys keyData)

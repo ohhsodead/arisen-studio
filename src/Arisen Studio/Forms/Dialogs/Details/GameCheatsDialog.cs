@@ -14,6 +14,7 @@ using System.Resources;
 using System.Text;
 using System.Windows.Forms;
 using ArisenStudio.Models.Resources;
+using System.Drawing;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
@@ -33,10 +34,9 @@ namespace ArisenStudio.Forms.Dialogs.Details
         public GameCheatItemData GameCheatItem = null;
 
         private DataTable DataTableCheats { get; } = DataExtensions.CreateDataTable(
-            new List<DataColumn>()
-            {
+            [
                 new("Cheat Name", typeof(string))
-            });
+            ]);
 
         private void GameCheatsDialog_Load(object sender, EventArgs e)
         {
@@ -145,6 +145,24 @@ namespace ArisenStudio.Forms.Dialogs.Details
             }
 
             return "00000000";
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            using Pen pen = new(Color.Transparent, 0);
+            e.Graphics.DrawPath(pen, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            base.OnPaintBackground(e);
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            using Brush brush = new SolidBrush(BackColor);
+            e.Graphics.FillPath(brush, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
         }
 
         protected override bool ProcessDialogKey(Keys keyData)

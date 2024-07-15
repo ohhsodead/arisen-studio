@@ -39,17 +39,18 @@ namespace ArisenStudio.Forms.Tools.PS3
             ButtonDownloadFile.Text = Language.GetString("LABEL_DOWNLOAD_FILE");
             ButtonCopySHA1ToClipboard.Text = Language.GetString("LABEL_COPY_SHA1");
             ButtonCopyURLToClipboard.Text = Language.GetString("LABEL_COPY_URL");
+            LabelStatus.Caption = Language.GetString("IDLE");
         }
 
-        private DataTable GameUpdateFiles { get; } = DataExtensions.CreateDataTable(new List<DataColumn>
-        {
+        private DataTable GameUpdateFiles { get; } = DataExtensions.CreateDataTable(
+        [
             new("URL", typeof(string)),
             new("SHA1", typeof(string)),
             new(Language.GetString("LABEL_FILE_NAME"), typeof(string)),
             new(Language.GetString("LABEL_VERSION"), typeof(string)),
             new(Language.GetString("LABEL_SIZE"), typeof(string)),
             new(Language.GetString("LABEL_MIN_FW"), typeof(string))
-        });
+        ]);
 
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
@@ -145,7 +146,7 @@ namespace ArisenStudio.Forms.Tools.PS3
                 HttpExtensions.DownloadFile(updateUrl, filePath);
 
                 SetStatus(string.Format(Language.GetString("FILE_INSTALLING"), fileName));
-                FtpExtensions.UploadFile(filePath, MainWindow.Settings.PackageInstallPath + fileName);
+                FtpExtensions.UploadFile(filePath, MainWindow.Settings.PackageInstallPathPS3 + fileName);
                 SetStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
                 XtraMessageBox.Show(Language.GetString("FILE_INSTALL_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

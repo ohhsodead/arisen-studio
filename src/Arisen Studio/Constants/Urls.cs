@@ -10,7 +10,7 @@
         /// <summary>
         /// Direct link to the project's Discord server.
         /// </summary>
-        internal const string DiscordServer = "https://discord.gg/h22szNhF7V";
+        internal const string DiscordServer = "https://discord.gg/FTCS3Xu";
 
         /// <summary>
         /// Direct link to the request mods google form
@@ -37,6 +37,11 @@
         /// Direct link to the project repo hosted on GitHub.
         /// </summary>
         internal const string GitHubRepo = "https://github.com/ohhsodead/arisen-studio/";
+
+        /// <summary>
+        /// Direct link to the project repo hosted on GitHub.
+        /// </summary>
+        internal const string GitHubDatabase = "https://github.com/ohhsodead/arisen-studio-database/";
 
         /// <summary>
         /// Direct link to get the release information via GitHub API.
@@ -99,17 +104,22 @@
         internal const string GameCheatsDataPs3 = "https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/PS3/game-cheats.json";
 
         /// <summary>
+        /// Direct link to the PS4 apps file hosted on GitHub.
+        /// </summary>
+        internal const string AppsDataPs4 = "https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/PS4/applications.json";
+
+        /// <summary>
         /// Direct link to the Xbox 360 mods file hosted on GitHub.
         /// </summary>
         internal const string PluginsDataXbox = "https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/XBOX360/plugins.json";
 
         /// <summary>
-        /// Direct link to the ps3 game offsets database file hosted on GitHub.
+        /// Direct link to the Xbox 360 game offsets database file hosted on GitHub.
         /// </summary>
         //internal const string GameCheatsDataXbox = "https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/XBOX360/game-cheats.json";
 
         /// <summary>
-        /// Direct link to the ps3 game offsets database file hosted on GitHub.
+        /// Direct link to the Xbox 360 game patches database file hosted on GitHub.
         /// </summary>
         internal const string GamePatchesDataXbox = "https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/XBOX360/game-patches.zip";
 

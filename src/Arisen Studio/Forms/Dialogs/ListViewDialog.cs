@@ -24,11 +24,11 @@ namespace ArisenStudio.Forms.Dialogs
         {
             GroupListItems.Text = MainWindow.ResourceLanguage.GetString("CHOOSE_ITEM");
 
-            using (DataTable dataTable = CreateDataTable(new List<DataColumn>
-            {
+            using (DataTable dataTable = CreateDataTable(
+            [
                 new("Value", typeof(string)),
                 new("Name", typeof(string))
-            }))
+            ]))
             {
                 foreach (ListItem item in Items)
                 {

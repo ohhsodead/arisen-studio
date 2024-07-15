@@ -12,6 +12,10 @@ using System.Globalization;
 using System.Linq;
 using System.Resources;
 using System.Windows.Forms;
+using System.Windows;
+using DevExpress.LookAndFeel;
+using DevExpress.Utils.Drawing;
+using DevExpress.Utils.Svg;
 
 namespace ArisenStudio.Controls
 {
@@ -24,6 +28,8 @@ namespace ArisenStudio.Controls
         public CategoriesData Categories = MainWindow.Database.CategoriesData;
 
         public ModItemData ModItem { get; set; }
+
+        public AppItemData AppItem { get; set; }
 
         public GameSaveItemData GameSaveItem { get; set; }
 
@@ -59,7 +65,7 @@ namespace ArisenStudio.Controls
                 ListBoxInstallFiles.Items.Add(installFile);
             }
 
-            int totalHeight = DownloadFiles.InstallPaths.Count() * 19;
+            int totalHeight = DownloadFiles.InstallPaths.Count() * 24;
             ListBoxInstallFiles.Height = totalHeight;
 
             Separator.Visible = ShowSeparator;
@@ -70,60 +76,35 @@ namespace ArisenStudio.Controls
                 {
                     if (!MainWindow.Settings.InstallGameModsPluginsToUsbDevice)
                     {
-                        ImageInstall.SvgImageColorizationMode = SvgImageColorizationMode.Default;
-                        ImageInstall.Enabled = false;
+                        ImageInstall.Visible = false;
                     }
                 }
                 else if (CategoryType is CategoryType.Homebrew)
                 {
                     if (!MainWindow.Settings.InstallHomebrewToUsbDevice)
                     {
-                        ImageInstall.SvgImageColorizationMode = SvgImageColorizationMode.Default;
-                        ImageInstall.Enabled = false;
+                        ImageInstall.Visible = false;
                     }
                 }
                 else if (CategoryType is CategoryType.Resource)
                 {
                     if (!MainWindow.Settings.InstallResourcesToUsbDevice)
                     {
-                        ImageInstall.SvgImageColorizationMode = SvgImageColorizationMode.Default;
-                        ImageInstall.Enabled = false;
+                        ImageInstall.Visible = false;
+                    }
+                }
+                else if (CategoryType is CategoryType.Package)
+                {
+                    if (!MainWindow.Settings.InstallPackagesToUsbDevice)
+                    {
+                        ImageInstall.Visible = false;
                     }
                 }
                 else
                 {
-                    ImageInstall.SvgImageColorizationMode = SvgImageColorizationMode.Default;
-                    ImageInstall.Enabled = false;
+                    ImageInstall.Visible = false;
                 }
             }
-        }
-
-        bool isExpanded = false;
-
-        private void ImageExpand_Click(object sender, EventArgs e)
-        {
-            if (isExpanded)
-            {
-                ImageExpand.SvgImage = SvgImages[0];
-                LabelInstallationFiles.Visible = false;
-                ListBoxInstallFiles.Visible = false;
-                isExpanded = false;
-            }
-            else
-            {
-                //ImageShowFiles.SvgImage = Properties.Resources.arrow_up;
-                ImageExpand.SvgImage = SvgImages[1];
-                LabelInstallationFiles.Visible = true;
-                ListBoxInstallFiles.Visible = true;
-                isExpanded = true;
-            }
-        }
-
-        private void ListBoxInstallFiles_DrawItem(object sender, ListBoxDrawItemEventArgs e)
-        {
-            ListBoxControl control = (ListBoxControl)sender;
-            e.Appearance.BackColor = control.BackColor;
-            e.Appearance.ForeColor = control.ForeColor;
         }
 
         private void ImageInstall_Click(object sender, EventArgs e)
@@ -158,6 +139,40 @@ namespace ArisenStudio.Controls
             {
                 DialogExtensions.ShowTransferGameSavesDialog(ParentForm, TransferType.DownloadGameSave, Categories.GetCategoryById(GameSaveItem.CategoryId), GameSaveItem, DownloadFiles);
             }
+        }
+
+        private void ImageCopyLink_Click(object sender, EventArgs e)
+        {
+            System.Windows.Clipboard.SetText(DownloadFiles.Url);
+            XtraMessageBox.Show(this, Language.GetString("COPIED_LINK"), Language.GetString("LABEL_COPIED"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        bool isExpanded = false;
+
+        private void ImageExpand_Click(object sender, EventArgs e)
+        {
+            if (isExpanded)
+            {
+                ImageExpand.SvgImage = SvgImages[0];
+                LabelInstallationFiles.Visible = false;
+                ListBoxInstallFiles.Visible = false;
+                isExpanded = false;
+            }
+            else
+            {
+                //ImageShowFiles.SvgImage = Properties.Resources.arrow_up;
+                ImageExpand.SvgImage = SvgImages[1];
+                LabelInstallationFiles.Visible = true;
+                ListBoxInstallFiles.Visible = true;
+                isExpanded = true;
+            }
+        }
+
+        private void ListBoxInstallFiles_DrawItem(object sender, ListBoxDrawItemEventArgs e)
+        {
+            ListBoxControl control = (ListBoxControl)sender;
+            e.Appearance.BackColor = control.BackColor;
+            e.Appearance.ForeColor = control.ForeColor;
         }
 
         private const int WmHscroll = 0x114;

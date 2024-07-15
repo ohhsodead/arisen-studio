@@ -119,7 +119,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.TextBoxGamertag.Properties.Appearance.Options.UseFont = true;
             this.TextBoxGamertag.Properties.MaxLength = 15;
             this.TextBoxGamertag.Properties.NullValuePrompt = "None";
-            this.TextBoxGamertag.Size = new System.Drawing.Size(270, 22);
+            this.TextBoxGamertag.Size = new System.Drawing.Size(270, 24);
             this.TextBoxGamertag.TabIndex = 1186;
             // 
             // LabelGamertag
@@ -136,7 +136,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.LabelXuid.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelXuid.Appearance.Options.UseFont = true;
-            this.LabelXuid.Location = new System.Drawing.Point(12, 46);
+            this.LabelXuid.Location = new System.Drawing.Point(12, 48);
             this.LabelXuid.Name = "LabelXuid";
             this.LabelXuid.Size = new System.Drawing.Size(29, 15);
             this.LabelXuid.TabIndex = 1189;
@@ -146,7 +146,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.TextBoxXuid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxXuid.Location = new System.Drawing.Point(78, 43);
+            this.TextBoxXuid.Location = new System.Drawing.Point(78, 45);
             this.TextBoxXuid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxXuid.Name = "TextBoxXuid";
             this.TextBoxXuid.Properties.AllowFocused = false;
@@ -154,7 +154,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.TextBoxXuid.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxXuid.Properties.Appearance.Options.UseFont = true;
             this.TextBoxXuid.Properties.NullValuePrompt = "None";
-            this.TextBoxXuid.Size = new System.Drawing.Size(270, 22);
+            this.TextBoxXuid.Size = new System.Drawing.Size(270, 24);
             this.TextBoxXuid.TabIndex = 1188;
             // 
             // XuidGameSpoofer

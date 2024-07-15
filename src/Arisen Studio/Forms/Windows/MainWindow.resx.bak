@@ -123,14 +123,49 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>31</value>
   </metadata>
+  <data name="labelControl8.Text" xml:space="preserve">
+    <value>&lt;a href="http://djopposite.se/"&gt;goldug&lt;/a&gt;
+&lt;a href="mailto:jaortiz2026@gmail.com"&gt;Kloido&lt;/a&gt;
+&lt;a href="https://twitter.com/NCKwolf/"&gt;NCKwolf&lt;/a&gt;
+&lt;a href="mailto:serdarsaglam@msn.com"&gt;Serdar Sağlam&lt;/a&gt;
+&lt;a href="https://twitter.com/Z1bUrG3/"&gt;z1burg3&lt;/a&gt;</value>
+  </data>
+  <data name="labelControl4.Text" xml:space="preserve">
+    <value>&lt;a href="https://github.com/crystall1nedev"&gt;crystall1nedev&lt;/a&gt;
+&lt;a href="https://github.com/EgoMaw"&gt;EgoMaw&lt;/a&gt;
+&lt;a href="http://djopposite.se/"&gt;goldug&lt;/a&gt;
+&lt;a href="https://twitter.com/NCKwolf"&gt;NCKwolf&lt;/a&gt;
+&lt;a href="https://github.com/TheHiddenHour/"&gt;TheHiddenHour&lt;/a&gt;
+&lt;a href="https://github.com/oSerenity"&gt;oSerenity&lt;/a&gt;
+&lt;a href="mailto:nurishafa26@gmail.com"&gt;tsuiarts&lt;/a&gt;</value>
+  </data>
+  <data name="labelControl2.Text" xml:space="preserve">
+    <value>&lt;a href="https://github.com/ravibpatel/AutoUpdater.NET/"&gt;AutoUpdater.NET&lt;/a&gt;
+&lt;a href="https://github.com/arminreiter/FeedReader/"&gt;CodeHollow.FeedReader&lt;/a&gt;
+&lt;a href="https://github.com/Lachee/discord-rpc-csharp"&gt;Discord RPC&lt;/a&gt;
+&lt;a href="https://devexpress.com/"&gt;DevExpress&lt;/a&gt;
+&lt;a href="https://github.com/robinrodricks/FluentFTP"&gt;FluentFTP&lt;/a&gt;
+&lt;a href="https://html-agility-pack.net/"&gt;HtmlAgilityPack&lt;/a&gt;
+&lt;a href="https://github.com/Humanizr/Humanizer"&gt;Humanizer&lt;/a&gt;
+&lt;a href="https://icons8.com/"&gt;Icons8&lt;/a&gt;
+&lt;a href="https://github.com/rickyah/ini-parser"&gt;INI File Parser&lt;/a&gt;
+&lt;a href="https://github.com/PureIso"&gt;ISOLib&lt;/a&gt;
+&lt;a href="https://newtonsoft.com/json"&gt;Newtonsoft.Json&lt;/a&gt;
+&lt;a href="https://nlog-project.org/"&gt;NLog&lt;/a&gt;
+&lt;a href="https://www.aldostools.org/"&gt;PARAM.SFO&lt;/a&gt;
+&lt;a href="https://github.com/iMCSx/PS3Lib"&gt;PS3Lib&lt;/a&gt;
+&lt;a href="https://github.com/aldostools/webMAN-MOD"&gt;webMAN API&lt;/a&gt;
+&lt;a href="https://aka.ms/webview"&gt;WebView2&lt;/a&gt;
+&lt;a href="https://microsoft.com/"&gt;XDevkit&lt;/a&gt;</value>
+  </data>
   <metadata name="ImageCollection.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>293, -1</value>
   </metadata>
-  <assembly alias="DevExpress.Utils.v23.2" name="DevExpress.Utils.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <assembly alias="DevExpress.Utils.v23.2" name="DevExpress.Utils.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="ImageCollection.ImageStream" type="DevExpress.Utils.ImageCollectionStreamer, DevExpress.Utils.v23.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFpEZXZFeHByZXNzLlV0aWxzLnYyMy4yLCBWZXJzaW9uPTIzLjIu
-        My4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEMAwAAAFFT
+        NS4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEMAwAAAFFT
         eXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRv
         a2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAAChEZXZFeHByZXNzLlV0aWxzLkltYWdlQ29sbGVjdGlvblN0
         cmVhbWVyAgAAAAlJbWFnZVNpemUERGF0YQQHE1N5c3RlbS5EcmF3aW5nLlNpemUDAAAAAgIAAAAF/P//

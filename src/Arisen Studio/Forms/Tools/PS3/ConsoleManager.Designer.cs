@@ -59,7 +59,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.MenuItemAddExistingProfile = new DevExpress.XtraBars.BarButtonItem();
             this.MenuItemSaveToDevice = new DevExpress.XtraBars.BarSubItem();
             this.MenuItemNoDeviceFound = new DevExpress.XtraBars.BarButtonItem();
-            this.GroupGameSave = new DevExpress.XtraEditors.GroupControl();
+            this.GroupDetails = new DevExpress.XtraEditors.GroupControl();
             this.LabelCoreVersion = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.LabelFirmwareType = new DevExpress.XtraEditors.LabelControl();
@@ -69,7 +69,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.ButtonRefreshDetails = new DevExpress.XtraEditors.SimpleButton();
             this.LabelFirmwareVersion = new DevExpress.XtraEditors.LabelControl();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.GroupLedBuzzers = new DevExpress.XtraEditors.GroupControl();
             this.ButtonRingBuzzer = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.RadioGroupBuzzerMode = new DevExpress.XtraEditors.RadioGroup();
@@ -92,10 +92,10 @@ namespace ArisenStudio.Forms.Tools.PS3
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopupMenuFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopupMenuProfile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GroupGameSave)).BeginInit();
-            this.GroupGameSave.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupDetails)).BeginInit();
+            this.GroupDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupLedBuzzers)).BeginInit();
+            this.GroupLedBuzzers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RadioGroupBuzzerMode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadioGroupLEDsRed.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadioGroupLEDsGreen.Properties)).BeginInit();
@@ -213,9 +213,9 @@ namespace ArisenStudio.Forms.Tools.PS3
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 388);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 385);
             this.barDockControlBottom.Manager = this.BarManager;
-            this.barDockControlBottom.Size = new System.Drawing.Size(705, 26);
+            this.barDockControlBottom.Size = new System.Drawing.Size(705, 29);
             // 
             // barDockControlLeft
             // 
@@ -223,7 +223,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.BarManager;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 388);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 385);
             // 
             // barDockControlRight
             // 
@@ -231,7 +231,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(705, 0);
             this.barDockControlRight.Manager = this.BarManager;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 388);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 385);
             // 
             // MenuButtonFile
             // 
@@ -324,27 +324,27 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.MenuItemNoDeviceFound.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.Caption;
             this.MenuItemNoDeviceFound.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
             // 
-            // GroupGameSave
+            // GroupDetails
             // 
-            this.GroupGameSave.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.GroupGameSave.Controls.Add(this.LabelCoreVersion);
-            this.GroupGameSave.Controls.Add(this.labelControl14);
-            this.GroupGameSave.Controls.Add(this.LabelFirmwareType);
-            this.GroupGameSave.Controls.Add(this.labelControl12);
-            this.GroupGameSave.Controls.Add(this.LabelTempRSX);
-            this.GroupGameSave.Controls.Add(this.LabelTempCELL);
-            this.GroupGameSave.Controls.Add(this.labelControl7);
-            this.GroupGameSave.Controls.Add(this.ButtonRefreshDetails);
-            this.GroupGameSave.Controls.Add(this.LabelFirmwareVersion);
-            this.GroupGameSave.Controls.Add(this.LabelHeaderTempCELL);
-            this.GroupGameSave.Controls.Add(this.LabelHeaderTempRSX);
-            this.GroupGameSave.Controls.Add(this.LabelHeaderFirmwareVersion);
-            this.GroupGameSave.Location = new System.Drawing.Point(12, 12);
-            this.GroupGameSave.Name = "GroupGameSave";
-            this.GroupGameSave.Padding = new System.Windows.Forms.Padding(12);
-            this.GroupGameSave.Size = new System.Drawing.Size(343, 245);
-            this.GroupGameSave.TabIndex = 11;
-            this.GroupGameSave.Text = "Details";
+            this.GroupDetails.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.GroupDetails.Controls.Add(this.LabelCoreVersion);
+            this.GroupDetails.Controls.Add(this.labelControl14);
+            this.GroupDetails.Controls.Add(this.LabelFirmwareType);
+            this.GroupDetails.Controls.Add(this.labelControl12);
+            this.GroupDetails.Controls.Add(this.LabelTempRSX);
+            this.GroupDetails.Controls.Add(this.LabelTempCELL);
+            this.GroupDetails.Controls.Add(this.labelControl7);
+            this.GroupDetails.Controls.Add(this.ButtonRefreshDetails);
+            this.GroupDetails.Controls.Add(this.LabelFirmwareVersion);
+            this.GroupDetails.Controls.Add(this.LabelHeaderTempCELL);
+            this.GroupDetails.Controls.Add(this.LabelHeaderTempRSX);
+            this.GroupDetails.Controls.Add(this.LabelHeaderFirmwareVersion);
+            this.GroupDetails.Location = new System.Drawing.Point(12, 12);
+            this.GroupDetails.Name = "GroupDetails";
+            this.GroupDetails.Padding = new System.Windows.Forms.Padding(12);
+            this.GroupDetails.Size = new System.Drawing.Size(343, 245);
+            this.GroupDetails.TabIndex = 11;
+            this.GroupDetails.Text = "Details";
             // 
             // LabelCoreVersion
             // 
@@ -443,24 +443,24 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.LabelFirmwareVersion.TabIndex = 13;
             this.LabelFirmwareVersion.Text = "-";
             // 
-            // groupControl1
+            // GroupLedBuzzers
             // 
-            this.groupControl1.Controls.Add(this.ButtonRingBuzzer);
-            this.groupControl1.Controls.Add(this.labelControl3);
-            this.groupControl1.Controls.Add(this.RadioGroupBuzzerMode);
-            this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.ButtonSetLEDs);
-            this.groupControl1.Controls.Add(this.RadioGroupLEDsRed);
-            this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.RadioGroupLEDsGreen);
-            this.groupControl1.Controls.Add(this.labelControl4);
-            this.groupControl1.Controls.Add(this.labelControl5);
-            this.groupControl1.Location = new System.Drawing.Point(363, 12);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Padding = new System.Windows.Forms.Padding(12);
-            this.groupControl1.Size = new System.Drawing.Size(330, 245);
-            this.groupControl1.TabIndex = 13;
-            this.groupControl1.Text = "LEDs && Buzzer";
+            this.GroupLedBuzzers.Controls.Add(this.ButtonRingBuzzer);
+            this.GroupLedBuzzers.Controls.Add(this.labelControl3);
+            this.GroupLedBuzzers.Controls.Add(this.RadioGroupBuzzerMode);
+            this.GroupLedBuzzers.Controls.Add(this.labelControl2);
+            this.GroupLedBuzzers.Controls.Add(this.ButtonSetLEDs);
+            this.GroupLedBuzzers.Controls.Add(this.RadioGroupLEDsRed);
+            this.GroupLedBuzzers.Controls.Add(this.labelControl1);
+            this.GroupLedBuzzers.Controls.Add(this.RadioGroupLEDsGreen);
+            this.GroupLedBuzzers.Controls.Add(this.labelControl4);
+            this.GroupLedBuzzers.Controls.Add(this.labelControl5);
+            this.GroupLedBuzzers.Location = new System.Drawing.Point(363, 12);
+            this.GroupLedBuzzers.Name = "GroupLedBuzzers";
+            this.GroupLedBuzzers.Padding = new System.Windows.Forms.Padding(12);
+            this.GroupLedBuzzers.Size = new System.Drawing.Size(330, 245);
+            this.GroupLedBuzzers.TabIndex = 13;
+            this.GroupLedBuzzers.Text = "LEDs && Buzzer";
             // 
             // ButtonRingBuzzer
             // 
@@ -676,7 +676,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.TextBoxPSID.Properties.BeepOnError = true;
             this.TextBoxPSID.Properties.NullValuePrompt = "None";
             this.TextBoxPSID.Properties.UseMaskAsDisplayFormat = true;
-            this.TextBoxPSID.Size = new System.Drawing.Size(522, 22);
+            this.TextBoxPSID.Size = new System.Drawing.Size(522, 24);
             this.TextBoxPSID.TabIndex = 5;
             // 
             // TextBoxIDPS
@@ -693,7 +693,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.TextBoxIDPS.Properties.BeepOnError = true;
             this.TextBoxIDPS.Properties.NullValuePrompt = "None";
             this.TextBoxIDPS.Properties.UseMaskAsDisplayFormat = true;
-            this.TextBoxIDPS.Size = new System.Drawing.Size(522, 22);
+            this.TextBoxIDPS.Size = new System.Drawing.Size(522, 24);
             this.TextBoxIDPS.TabIndex = 4;
             // 
             // LabelHeaderPSID
@@ -723,8 +723,8 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 414);
             this.Controls.Add(this.GroupConsoleIds);
-            this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.GroupGameSave);
+            this.Controls.Add(this.GroupLedBuzzers);
+            this.Controls.Add(this.GroupDetails);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -749,12 +749,12 @@ namespace ArisenStudio.Forms.Tools.PS3
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopupMenuFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopupMenuProfile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GroupGameSave)).EndInit();
-            this.GroupGameSave.ResumeLayout(false);
-            this.GroupGameSave.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupDetails)).EndInit();
+            this.GroupDetails.ResumeLayout(false);
+            this.GroupDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupLedBuzzers)).EndInit();
+            this.GroupLedBuzzers.ResumeLayout(false);
+            this.GroupLedBuzzers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RadioGroupBuzzerMode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadioGroupLEDsRed.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadioGroupLEDsGreen.Properties)).EndInit();
@@ -775,10 +775,10 @@ namespace ArisenStudio.Forms.Tools.PS3
         private DevExpress.XtraBars.PopupMenu PopupMenuFile;
         private DevExpress.XtraBars.PopupMenu PopupImage;
         private DevExpress.XtraBars.PopupMenu PopupMenuProfile;
-        private GroupControl groupControl1;
+        private GroupControl GroupLedBuzzers;
         private LabelControl labelControl4;
         private LabelControl labelControl5;
-        private GroupControl GroupGameSave;
+        private GroupControl GroupDetails;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarManager BarManager;
         private DevExpress.XtraBars.BarButtonItem MenuButtonFile;

@@ -41,40 +41,6 @@ namespace ArisenStudio.Extensions
         {
             using StreamReader streamReader = new(HttpExtensions.GetStream(Urls.GitHubReleases));
             return JsonConvert.DeserializeObject<List<GitHubReleaseData>>(streamReader.ReadToEnd());
-
-            //using StreamReader streamReader = new(HttpExtensions.GetStream(Urls.GitHubReleases));
-            //var data = HttpExtensions.HttpGetForLargeFileInRightWay(Urls.GitHubReleases);
-            //data.RunSynchronously();
-            //data.Start();
-            //return JsonConvert.DeserializeObject<List<GitHubReleaseData>>(Task.Run(data.Wait));
-
-            //HttpClient client = new HttpClient();
-            //HttpResponseMessage response = await client.GetAsync(Urls.GitHubReleases);
-            //response.EnsureSuccessStatusCode();
-            //string data = await response.Content.ReadAsStringAsync();
-            //return JsonConvert.DeserializeObject<List<GitHubReleaseData>>(response.Content.ReadAsStringAsync());
-            //return JsonConvert.DeserializeObject<List<GitHubReleaseData>>(data);
-            //return data;
-
-
-            //using StreamReader streamReader = new(HttpExtensions.GetResponseString(Urls.GitHubReleases));
-            //return JsonConvert.DeserializeObject<List<GitHubReleaseData>>(HttpExtensions.GetResponseString(Urls.GitHubReleases).Result);
-
-            //using HttpClient client = new();
-            //using Stream stream = await client.GetStreamAsync(Urls.GitHubReleases).ConfigureAwait(true);
-            //using StreamReader streamReader = new(stream);
-            //using JsonReader jsonReader = new JsonTextReader(streamReader);
-
-            //var client = HttpExtensions.HttpClientInstance;
-
-            //using (var data = HttpExtensions.HttpClientSingleton(Urls.AnnouncementsData, ""))
-            //{
-            //    using StreamReader streamReader = new(data);
-            //    using JsonReader jsonReader = new JsonTextReader(streamReader);
-            //    return new JsonSerializer().Deserialize<AnnouncementsData>(jsonReader);
-            //}
-
-            //return new JsonSerializer().Deserialize<List<GitHubReleaseData>>(jsonReader);
         }
 
         /// <summary>

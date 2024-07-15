@@ -14,6 +14,7 @@ using System.Linq;
 using System.Resources;
 using System.Windows.Forms;
 using ScrollOrientation = DevExpress.XtraEditors.ScrollOrientation;
+using System.Drawing;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
@@ -86,19 +87,24 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
             if (IsFavorite)
             {
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_REMOVE_FROM_FAVORITES"), 26);
+                ButtonFavorite.Text = Language.GetString("LABEL_REMOVE_FROM_FAVORITES");
             }
             else
             {
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_ADD_TO_FAVORITES"), 26);
+                ButtonFavorite.Text = Language.GetString("LABEL_ADD_TO_FAVORITES");
             }
 
-            ButtonReport.SetControlText(Language.GetString("LABEL_REPORT_ISSUE"), 26);
+            ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
         }
 
         private void ImageClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void LabelDescription_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
+        {
+            Process.Start(e.Link);
         }
 
         private void TabDescription_Scroll(object sender, XtraScrollEventArgs e)
@@ -117,10 +123,9 @@ namespace ArisenStudio.Forms.Dialogs.Details
             }
         }
 
-        private void ButtonReportIssue_Click(object sender, EventArgs e)
+        private void ButtonDownloadLatest_Click(object sender, EventArgs e)
         {
-            XtraMessageBox.Show(Language.GetString("REDIRECT_TO_GITHUB_ISSUES"), Language.GetString("REDIRECTING"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-            GitHubTemplates.OpenReportTemplate(Categories.GetCategoryById(ModItem.CategoryId), ModItem);
+            DialogExtensions.ShowTransferFilesDialog(this, TransferType.DownloadMods, ModItem.GetCategory(Categories), ModItem, ModItem.DownloadFiles.Last());
         }
 
         private void ButtonFavorite_Click(object sender, EventArgs e)
@@ -128,15 +133,39 @@ namespace ArisenStudio.Forms.Dialogs.Details
             if (IsFavorite)
             {
                 MainWindow.Settings.FavoriteMods.RemoveAll(x => x.CategoryType == CategoryType && x.CategoryId == ModItem.CategoryId && x.ModId == ModItem.Id && x.Platform == ModItem.GetPlatform());
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_ADD_TO_FAVORITES"), 26);
+                ButtonFavorite.Text = Language.GetString("LABEL_ADD_TO_FAVORITES");
                 IsFavorite = false;
             }
             else
             {
                 MainWindow.Settings.FavoriteMods.Add(new() { CategoryType = CategoryType, CategoryId = ModItem.CategoryId, ModId = ModItem.Id, Platform = ModItem.GetPlatform() });
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_REMOVE_FROM_FAVORITES"), 26);
+                ButtonFavorite.Text = Language.GetString("LABEL_REMOVE_FROM_FAVORITES");
                 IsFavorite = true;
             }
+        }
+
+        private void ButtonReportIssue_Click(object sender, EventArgs e)
+        {
+            XtraMessageBox.Show(Language.GetString("REDIRECT_TO_GITHUB_ISSUES"), Language.GetString("REDIRECTING"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            GitHubTemplates.OpenReportTemplate(Categories.GetCategoryById(ModItem.CategoryId), ModItem);
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            using Pen pen = new(Color.Transparent, 0);
+            e.Graphics.DrawPath(pen, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            base.OnPaintBackground(e);
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            using Brush brush = new SolidBrush(BackColor);
+            e.Graphics.FillPath(brush, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
         }
 
         protected override bool ProcessDialogKey(Keys keyData)
@@ -148,11 +177,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
             }
 
             return base.ProcessDialogKey(keyData);
-        }
-
-        private void LabelDescription_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
-        {
-            Process.Start(e.Link);
         }
     }
 }

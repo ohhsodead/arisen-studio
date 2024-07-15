@@ -7,7 +7,7 @@ namespace ArisenStudio.Extensions
     {
         public static List<ListItem> GetLocalUsbDevices()
         {
-            List<ListItem> usbDevices = new();
+            List<ListItem> usbDevices = [];
 
             foreach (DriveInfo drive in DriveInfo.GetDrives())
             {

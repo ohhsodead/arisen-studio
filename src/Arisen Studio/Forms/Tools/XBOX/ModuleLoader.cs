@@ -44,12 +44,12 @@ namespace ArisenStudio.Forms.Tools.XBOX
             LoadModules();
         }
 
-        private DataTable Modules { get; } = DataExtensions.CreateDataTable(new List<DataColumn>
-        {
+        private DataTable Modules { get; } = DataExtensions.CreateDataTable(
+        [
             //new("Module Path", typeof(string)),
             new(Language.GetString("LABEL_NAME"), typeof(string)),
             new(Language.GetString("LABEL_SIZE"), typeof(string))
-        });
+        ]);
 
         private void LoadModules()
         {
@@ -97,7 +97,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
         {
             try
             {
-                object[] arguments = new object[] { ComboBoxDrives.Text + TextBoxModuleName.Text, 8, 0, 0 };
+                object[] arguments = [ComboBoxDrives.Text + TextBoxModuleName.Text, 8, 0, 0];
                 XboxExtensions.Call<uint>(XboxConsole, "xboxkrnl.exe", 0x199, arguments);
 
                 //XboxExtensions.Call<uint>(XboxConsole, "xboxkrnl.exe", 409, new object[] { moduleName, 8, 0, 0 });
@@ -137,7 +137,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
                         XboxExtensions.WriteInt16(XboxConsole, moduleHandle + 0x40, 1);
                     }
 
-                    object[] arguments = new object[] { moduleHandle };
+                    object[] arguments = [moduleHandle];
                     XboxConsole.CallVoid("xboxkrnl.exe", 0x1a1, arguments);
 
                     LoadModules();
@@ -160,7 +160,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
         private uint GetModuleHandle(string moduleName)
         {
-            object[] arguments = new object[] { moduleName };
+            object[] arguments = [moduleName];
             return XboxExtensions.Call<uint>(XboxConsole, "xam.xex", 0x44e, arguments);
         }
     }

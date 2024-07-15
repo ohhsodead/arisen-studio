@@ -33,13 +33,26 @@ namespace ArisenStudio.Extensions
 
         public static int GenerateUniqueId()
         {
-            List<int?> ids = new();
+            //List<int?> ids =
+            //[
+            //    .. from ConsoleProfile console in MainWindow.Settings.ConsoleProfiles select console.Id,
+            //];
 
-            ids.AddRange(from ConsoleProfile console in MainWindow.Settings.ConsoleProfiles
-                         select console.Id);
+            //Random rndm = new();
+
+            //int id;
+
+            //do
+            //{
+            //    id = rndm.Next(0, 1000000);
+            //}
+            //while (ids.Contains(id));
+
+            //return id;
+
+            List<int?> ids = MainWindow.Settings.ConsoleProfiles.Select(console => console.Id).ToList();
 
             Random rndm = new();
-
             int id;
 
             do
@@ -50,7 +63,6 @@ namespace ArisenStudio.Extensions
 
             return id;
         }
-
     }
 
     public class ListItem

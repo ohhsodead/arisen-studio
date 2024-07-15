@@ -108,6 +108,8 @@ namespace ArisenStudio.Forms.Dialogs
             this.GroupConsoleProfiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupConsoleProfiles.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GroupConsoleProfiles.AppearanceCaption.Options.UseFont = true;
             this.GroupConsoleProfiles.Controls.Add(this.NoConsoleProfiles);
             this.GroupConsoleProfiles.Controls.Add(this.ScrollBarConsoleProfiles);
             this.GroupConsoleProfiles.Controls.Add(this.PanelConsoleProfiles);
@@ -145,10 +147,10 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.PanelConsoleProfiles.AutoScroll = true;
             this.PanelConsoleProfiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelConsoleProfiles.Location = new System.Drawing.Point(0, 25);
+            this.PanelConsoleProfiles.Location = new System.Drawing.Point(2, 21);
             this.PanelConsoleProfiles.Name = "PanelConsoleProfiles";
             this.PanelConsoleProfiles.Padding = new System.Windows.Forms.Padding(4);
-            this.PanelConsoleProfiles.Size = new System.Drawing.Size(480, 343);
+            this.PanelConsoleProfiles.Size = new System.Drawing.Size(476, 345);
             this.PanelConsoleProfiles.TabIndex = 0;
             this.PanelConsoleProfiles.Scroll += new System.Windows.Forms.ScrollEventHandler(this.PanelConsoleProfiles_Scroll);
             this.PanelConsoleProfiles.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.PanelConsoleProfiles_ControlAddedOrRemoved);

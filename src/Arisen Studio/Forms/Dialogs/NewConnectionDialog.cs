@@ -1,9 +1,9 @@
-﻿using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
-using Humanizer;
-using ArisenStudio.Extensions;
+﻿using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Resources;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
+using Humanizer;
 using System;
 using System.Net;
 using System.Resources;
@@ -26,7 +26,7 @@ namespace ArisenStudio.Forms.Dialogs
 
         public bool CloseOnCancel { get; set; } = false;
 
-        private void ConsolesWindow_Load(object sender, EventArgs e)
+        private void NewConnectionDialog_Load(object sender, EventArgs e)
         {
             Text = Language.GetString("LABEL_CONNECTION_DETAILS");
 
@@ -49,8 +49,8 @@ namespace ArisenStudio.Forms.Dialogs
 
             TextBoxConnectionName.SelectionStart = TextBoxConnectionName.Text.Length;
 
-            LabelUserPass.Visible = ConsoleProfile.Platform == Platform.PS3;
-            ButtonChangeLoginDetails.Visible = ConsoleProfile.Platform == Platform.PS3;
+            LabelUserPass.Visible = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
+            ButtonChangeLoginDetails.Visible = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
 
             CheckBoxUseDefaultConsole.Visible = ConsoleProfile.Platform == Platform.XBOX360;
             CheckBoxUseDefaultConsole.CheckState = ConsoleProfile.UseDefaultConsole ? CheckState.Checked : CheckState.Unchecked;
@@ -77,9 +77,9 @@ namespace ArisenStudio.Forms.Dialogs
             //if (DialogResult == DialogResult.Cancel && CloseOnCancel)
             if (MainWindow.Settings.ConsoleProfiles.Count == 0)
             {
-                if (XtraMessageBox.Show(this, string.Format("At least one console profile must be created to use Arisen Studio.\n\nWould you like to create a Guest profile?"), Language.GetString("ERROR"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                if (XtraMessageBox.Show(this, string.Format("At least one console profile must be created to use Arisen Studio.\n\nWould you like to create the Default profile?"), Language.GetString("ERROR"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
-                    string userPlatform = DialogExtensions.ShowListItemDialog(this, "Default Platform", Language.GetString("LABEL_PLATFORM"), new string[] { "PlayStation 3", "Xbox 360" });
+                    string userPlatform = DialogExtensions.ShowListItemDialog(this, "Default Platform", Language.GetString("LABEL_PLATFORM"), ["PlayStation 3", "Xbox 360"]);
                     Platform platform = Platform.PS3;
 
                     if (!string.IsNullOrEmpty(userPlatform))
@@ -93,10 +93,10 @@ namespace ArisenStudio.Forms.Dialogs
                     CheckBoxDefault.Checked = true;
                     ConsoleProfile.Platform = platform;
 
-                    ////ConsoleProfile.Name = "Guest";
-                    ////ConsoleProfile.Address = "192.168.1.1";
-                    ////ConsoleProfile.Platform = platform;
-                    ////ConsoleProfile.IsDefault = true;
+                    //ConsoleProfile.Name = "Guest";
+                    //ConsoleProfile.Address = "192.168.1.1";
+                    //ConsoleProfile.Platform = platform;
+                    //ConsoleProfile.IsDefault = true;
                     ButtonOK.PerformClick();
                     e.Cancel = false;
                 }
@@ -130,47 +130,73 @@ namespace ArisenStudio.Forms.Dialogs
                     break;
 
                 case 3:
+                    ConsoleProfile.PlatformType = PlatformType.PlayStation4;
+                    ConsoleProfile.Platform = Platform.PS4;
+                    ImageConsole.Image = Properties.Resources.PlayStation4;
+                    break;
+
+                case 4:
                     ConsoleProfile.PlatformType = PlatformType.Xbox360FatWhite;
                     ConsoleProfile.Platform = Platform.XBOX360;
                     ImageConsole.Image = Properties.Resources.XboxFat;
                     break;
 
-                case 4:
+                case 5:
                     ConsoleProfile.PlatformType = PlatformType.Xbox360EliteFatBlack;
                     ConsoleProfile.Platform = Platform.XBOX360;
                     ImageConsole.Image = Properties.Resources.XboxFatElite;
                     break;
 
-                case 5:
+                case 6:
                     ConsoleProfile.PlatformType = PlatformType.Xbox360Slim;
                     ConsoleProfile.Platform = Platform.XBOX360;
                     ImageConsole.Image = Properties.Resources.XboxSlim;
                     break;
 
-                case 6:
+                case 7:
                     ConsoleProfile.PlatformType = PlatformType.Xbox360SlimE;
                     ConsoleProfile.Platform = Platform.XBOX360;
                     ImageConsole.Image = Properties.Resources.XboxSlimE;
-                    break;
-
-                case 7:
-                    ConsoleProfile.PlatformType = PlatformType.PlayStation4;
-                    ConsoleProfile.Platform = Platform.PS4;
-                    ImageConsole.Image = Properties.Resources.PlayStation3Fat;
                     break;
                 default:
                     goto case 0;
             }
 
-            LabelAddress.Text = (ConsoleProfile.Platform == Platform.PS3 ? Language.GetString("LABEL_IP_ADDRESS") : Language.GetString("LABEL_ADDRESS_NAME")) + ":";
+            //LabelAddress.Text = (ConsoleProfile.Platform == Platform.PS3 ? Language.GetString("LABEL_IP_ADDRESS") : Language.GetString("LABEL_IP_OR_NAME")) + ":";
 
-            LabelLogin.Text = (ConsoleProfile.Platform == Platform.PS3 ? Language.GetString("LABEL_LOGIN") : Language.GetString("LABEL_USE_DEFAULT")) + ":";
-            LabelUserPass.Visible = ConsoleProfile.Platform == Platform.PS3;
-            ButtonChangeLoginDetails.Visible = ConsoleProfile.Platform == Platform.PS3;
+            if (ConsoleProfile.Platform == Platform.PS3)
+            {
+                LabelAddress.Text = Language.GetString("LABEL_IP_ADDRESS") + ":";
+            }
+            else if (ConsoleProfile.Platform == Platform.PS4)
+            {
+                LabelAddress.Text = Language.GetString("LABEL_IP_ADDRESS") + ":";
+            }
+            else if (ConsoleProfile.Platform == Platform.XBOX360)
+            {
+                LabelAddress.Text = Language.GetString("LABEL_IP_OR_NAME") + ":";
+            }
+
+            //LabelLogin.Text = (ConsoleProfile.Platform == Platform.PS3 ? Language.GetString("LABEL_LOGIN") : Language.GetString("LABEL_USE_DEFAULT")) + ":";
+
+            if (ConsoleProfile.Platform == Platform.PS3)
+            {
+                LabelLogin.Text = Language.GetString("LABEL_LOGIN") + ":";
+            }
+            else if (ConsoleProfile.Platform == Platform.PS4)
+            {
+                LabelLogin.Text = Language.GetString("LABEL_LOGIN") + ":";
+            }
+            else if (ConsoleProfile.Platform == Platform.XBOX360)
+            {
+                LabelLogin.Text = Language.GetString("LABEL_USE_DEFAULT") + ":";
+            }
+
+            LabelUserPass.Visible = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
+            ButtonChangeLoginDetails.Visible = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
 
             CheckBoxUseDefaultConsole.Visible = ConsoleProfile.Platform == Platform.XBOX360;
         }
-
 
         private void CheckBoxUseDefaultConsole_CheckStateChanged(object sender, EventArgs e)
         {
@@ -183,6 +209,7 @@ namespace ArisenStudio.Forms.Dialogs
 
             //TextBoxConsoleAddress.Text = ConsoleProfile.Platform == ConsolePlatform.PS3 ? ConsoleProfile.Address : "Default";
             TextBoxAddress.Text = CheckBoxUseDefaultConsole.Checked ? Language.GetString("LABEL_DEFAULT_CONSOLE") : ConsoleProfile.Address;
+            ButtonChangeLoginDetails.Enabled = !CheckBoxUseDefaultConsole.Checked;
         }
 
         private void CheckBoxUseDefaultConsole_Properties_EditValueChanging(object sender, ChangingEventArgs e)
@@ -194,7 +221,7 @@ namespace ArisenStudio.Forms.Dialogs
                     if (consoleProfile.UseDefaultConsole)
                     {
                         e.Cancel = true;
-                        XtraMessageBox.Show(this, $"You have already marked: '{consoleProfile.Name}' as your default console.\n\nPlease edit that console and uncheck the 'Use Default' option to mark this one as default.", Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        XtraMessageBox.Show(this, string.Format(Language.GetString("DEFAULT_CONSOLE_ALREADY_EXISTS"), consoleProfile.Name), Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                 }
@@ -299,17 +326,26 @@ namespace ArisenStudio.Forms.Dialogs
                     ConsoleProfile.Username = "anonymous";
                     ConsoleProfile.Password = "anonymous";
                     break;
+                case true when ConsoleProfile.Platform == Platform.PS4:
+                    ConsoleProfile.Username = "";
+                    ConsoleProfile.Password = "";
+                    break;
                 case true when ConsoleProfile.Platform == Platform.XBOX360:
                     ConsoleProfile.Username = "xboxftp";
                     ConsoleProfile.Password = "xboxftp";
                     break;
-                case true when ConsoleProfile.Platform == Platform.PS4:
-                    ConsoleProfile.Username = "anonymous";
-                    ConsoleProfile.Password = "anonymous";
-                    break;
             }
 
-            bool isAddressValid = ConsoleProfile.Platform == Platform.XBOX360 ? true : IPAddress.TryParse(TextBoxAddress.Text, out _);
+            bool isAddressValid;
+
+            if (ConsoleProfile.UseDefaultConsole)
+            {
+                isAddressValid = true;
+            }
+            else
+            {
+                isAddressValid = ConsoleProfile.Platform == Platform.XBOX360 ? true : IPAddress.TryParse(TextBoxAddress.Text, out _);
+            }
 
             switch (isAddressValid)
             {

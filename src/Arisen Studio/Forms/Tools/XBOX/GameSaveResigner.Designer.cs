@@ -50,9 +50,6 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.LabelHeaderDisplayName = new DevExpress.XtraEditors.LabelControl();
             this.ImageBackground = new DevExpress.XtraEditors.PictureEdit();
             this.BarManager = new DevExpress.XtraBars.BarManager(this.components);
-            this.PopupImage = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.MenuItemExtract = new DevExpress.XtraBars.BarButtonItem();
-            this.MenuItemReplace = new DevExpress.XtraBars.BarButtonItem();
             this.MenuMain = new DevExpress.XtraBars.Bar();
             this.MenuButtonFile = new DevExpress.XtraBars.BarButtonItem();
             this.PopupMenuFile = new DevExpress.XtraBars.PopupMenu(this.components);
@@ -72,6 +69,9 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.MenuItemReplace = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuItemExtract = new DevExpress.XtraBars.BarButtonItem();
+            this.PopupImage = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ImageContent.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxTitleId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxDeviceId.Properties)).BeginInit();
@@ -82,15 +82,15 @@ namespace ArisenStudio.Forms.Tools.XBOX
             ((System.ComponentModel.ISupportInitialize)(this.ImagePackage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBackground.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PopupImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopupMenuFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopupMenuProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PopupImage)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageContent
             // 
             this.ImageContent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImageContent.Location = new System.Drawing.Point(438, 44);
+            this.ImageContent.Location = new System.Drawing.Point(438, 50);
             this.ImageContent.Name = "ImageContent";
             this.ImageContent.Properties.AllowFocused = false;
             this.ImageContent.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -105,7 +105,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.LabelHeaderTitleId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelHeaderTitleId.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelHeaderTitleId.Appearance.Options.UseFont = true;
-            this.LabelHeaderTitleId.Location = new System.Drawing.Point(351, 130);
+            this.LabelHeaderTitleId.Location = new System.Drawing.Point(351, 136);
             this.LabelHeaderTitleId.Name = "LabelHeaderTitleId";
             this.LabelHeaderTitleId.Size = new System.Drawing.Size(39, 15);
             this.LabelHeaderTitleId.TabIndex = 18;
@@ -115,7 +115,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.TextBoxTitleId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxTitleId.EditValue = "";
-            this.TextBoxTitleId.Location = new System.Drawing.Point(400, 127);
+            this.TextBoxTitleId.Location = new System.Drawing.Point(400, 133);
             this.TextBoxTitleId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxTitleId.Name = "TextBoxTitleId";
             this.TextBoxTitleId.Properties.AllowFocused = false;
@@ -132,14 +132,14 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.TextBoxTitleId.Properties.MaxLength = 8;
             this.TextBoxTitleId.Properties.NullValuePrompt = "None";
             this.TextBoxTitleId.Properties.ReadOnly = true;
-            this.TextBoxTitleId.Size = new System.Drawing.Size(114, 22);
+            this.TextBoxTitleId.Size = new System.Drawing.Size(114, 24);
             this.TextBoxTitleId.TabIndex = 17;
             // 
             // TextBoxDeviceId
             // 
             this.TextBoxDeviceId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxDeviceId.Location = new System.Drawing.Point(116, 127);
+            this.TextBoxDeviceId.Location = new System.Drawing.Point(108, 133);
             this.TextBoxDeviceId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxDeviceId.Name = "TextBoxDeviceId";
             this.TextBoxDeviceId.Properties.AllowFocused = false;
@@ -148,14 +148,14 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.TextBoxDeviceId.Properties.Appearance.Options.UseFont = true;
             this.TextBoxDeviceId.Properties.MaxLength = 40;
             this.TextBoxDeviceId.Properties.NullValuePrompt = "None";
-            this.TextBoxDeviceId.Size = new System.Drawing.Size(224, 22);
+            this.TextBoxDeviceId.Size = new System.Drawing.Size(224, 24);
             this.TextBoxDeviceId.TabIndex = 7;
             // 
             // TextBoxProfileId
             // 
             this.TextBoxProfileId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxProfileId.Location = new System.Drawing.Point(116, 97);
+            this.TextBoxProfileId.Location = new System.Drawing.Point(108, 103);
             this.TextBoxProfileId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxProfileId.Name = "TextBoxProfileId";
             this.TextBoxProfileId.Properties.AllowFocused = false;
@@ -164,14 +164,14 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.TextBoxProfileId.Properties.Appearance.Options.UseFont = true;
             this.TextBoxProfileId.Properties.MaxLength = 16;
             this.TextBoxProfileId.Properties.NullValuePrompt = "None";
-            this.TextBoxProfileId.Size = new System.Drawing.Size(224, 22);
+            this.TextBoxProfileId.Size = new System.Drawing.Size(224, 24);
             this.TextBoxProfileId.TabIndex = 6;
             // 
             // TextBoxConsoleId
             // 
             this.TextBoxConsoleId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxConsoleId.Location = new System.Drawing.Point(116, 157);
+            this.TextBoxConsoleId.Location = new System.Drawing.Point(108, 163);
             this.TextBoxConsoleId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxConsoleId.Name = "TextBoxConsoleId";
             this.TextBoxConsoleId.Properties.AllowFocused = false;
@@ -180,14 +180,14 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.TextBoxConsoleId.Properties.Appearance.Options.UseFont = true;
             this.TextBoxConsoleId.Properties.MaxLength = 10;
             this.TextBoxConsoleId.Properties.NullValuePrompt = "None";
-            this.TextBoxConsoleId.Size = new System.Drawing.Size(224, 22);
+            this.TextBoxConsoleId.Size = new System.Drawing.Size(224, 24);
             this.TextBoxConsoleId.TabIndex = 8;
             // 
             // TextBoxTitleName
             // 
             this.TextBoxTitleName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxTitleName.Location = new System.Drawing.Point(116, 67);
+            this.TextBoxTitleName.Location = new System.Drawing.Point(108, 73);
             this.TextBoxTitleName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxTitleName.Name = "TextBoxTitleName";
             this.TextBoxTitleName.Properties.AllowFocused = false;
@@ -195,14 +195,14 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.TextBoxTitleName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxTitleName.Properties.Appearance.Options.UseFont = true;
             this.TextBoxTitleName.Properties.NullValuePrompt = "None";
-            this.TextBoxTitleName.Size = new System.Drawing.Size(224, 22);
+            this.TextBoxTitleName.Size = new System.Drawing.Size(224, 24);
             this.TextBoxTitleName.TabIndex = 5;
             // 
             // TextBoxDisplayName
             // 
             this.TextBoxDisplayName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxDisplayName.Location = new System.Drawing.Point(116, 37);
+            this.TextBoxDisplayName.Location = new System.Drawing.Point(108, 43);
             this.TextBoxDisplayName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxDisplayName.Name = "TextBoxDisplayName";
             this.TextBoxDisplayName.Properties.AllowFocused = false;
@@ -210,15 +210,14 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.TextBoxDisplayName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxDisplayName.Properties.Appearance.Options.UseFont = true;
             this.TextBoxDisplayName.Properties.NullValuePrompt = "None";
-            this.TextBoxDisplayName.Size = new System.Drawing.Size(224, 22);
+            this.TextBoxDisplayName.Size = new System.Drawing.Size(224, 24);
             this.TextBoxDisplayName.TabIndex = 4;
             // 
             // ImagePackage
             // 
             this.ImagePackage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImagePackage.Location = new System.Drawing.Point(360, 44);
+            this.ImagePackage.Location = new System.Drawing.Point(360, 50);
             this.ImagePackage.Name = "ImagePackage";
-            this.BarManager.SetPopupContextMenu(this.ImagePackage, this.PopupImage);
             this.ImagePackage.Properties.AllowFocused = false;
             this.ImagePackage.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.ImagePackage.Properties.NullText = " ";
@@ -231,7 +230,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.LabelHeaderDeviceId.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelHeaderDeviceId.Appearance.Options.UseFont = true;
-            this.LabelHeaderDeviceId.Location = new System.Drawing.Point(20, 130);
+            this.LabelHeaderDeviceId.Location = new System.Drawing.Point(12, 136);
             this.LabelHeaderDeviceId.Name = "LabelHeaderDeviceId";
             this.LabelHeaderDeviceId.Size = new System.Drawing.Size(52, 15);
             this.LabelHeaderDeviceId.TabIndex = 12;
@@ -241,7 +240,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.LabelHeaderProfileId.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelHeaderProfileId.Appearance.Options.UseFont = true;
-            this.LabelHeaderProfileId.Location = new System.Drawing.Point(20, 100);
+            this.LabelHeaderProfileId.Location = new System.Drawing.Point(12, 106);
             this.LabelHeaderProfileId.Name = "LabelHeaderProfileId";
             this.LabelHeaderProfileId.Size = new System.Drawing.Size(51, 15);
             this.LabelHeaderProfileId.TabIndex = 10;
@@ -251,7 +250,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.LabelHeaderConsoleId.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelHeaderConsoleId.Appearance.Options.UseFont = true;
-            this.LabelHeaderConsoleId.Location = new System.Drawing.Point(20, 160);
+            this.LabelHeaderConsoleId.Location = new System.Drawing.Point(12, 166);
             this.LabelHeaderConsoleId.Name = "LabelHeaderConsoleId";
             this.LabelHeaderConsoleId.Size = new System.Drawing.Size(60, 15);
             this.LabelHeaderConsoleId.TabIndex = 8;
@@ -261,7 +260,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.LabelHeaderTitleName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelHeaderTitleName.Appearance.Options.UseFont = true;
-            this.LabelHeaderTitleName.Location = new System.Drawing.Point(20, 70);
+            this.LabelHeaderTitleName.Location = new System.Drawing.Point(12, 76);
             this.LabelHeaderTitleName.Name = "LabelHeaderTitleName";
             this.LabelHeaderTitleName.Size = new System.Drawing.Size(60, 15);
             this.LabelHeaderTitleName.TabIndex = 6;
@@ -271,7 +270,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.LabelHeaderDisplayName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelHeaderDisplayName.Appearance.Options.UseFont = true;
-            this.LabelHeaderDisplayName.Location = new System.Drawing.Point(20, 40);
+            this.LabelHeaderDisplayName.Location = new System.Drawing.Point(12, 46);
             this.LabelHeaderDisplayName.Name = "LabelHeaderDisplayName";
             this.LabelHeaderDisplayName.Size = new System.Drawing.Size(76, 15);
             this.LabelHeaderDisplayName.TabIndex = 4;
@@ -280,7 +279,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // ImageBackground
             // 
             this.ImageBackground.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImageBackground.Location = new System.Drawing.Point(352, 37);
+            this.ImageBackground.Location = new System.Drawing.Point(352, 43);
             this.ImageBackground.Name = "ImageBackground";
             this.ImageBackground.Properties.AllowFocused = false;
             this.ImageBackground.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
@@ -318,31 +317,6 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.BarManager.MaxItemId = 20;
             this.BarManager.StatusBar = this.MenuStatus;
             // 
-            // PopupImage
-            // 
-            this.PopupImage.AutoFillEditorWidth = false;
-            this.PopupImage.DrawMenuSideStrip = DevExpress.Utils.DefaultBoolean.False;
-            this.PopupImage.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.MenuItemExtract),
-            new DevExpress.XtraBars.LinkPersistInfo(this.MenuItemReplace)});
-            this.PopupImage.Manager = this.BarManager;
-            this.PopupImage.Name = "PopupImage";
-            this.PopupImage.BeforePopup += new System.ComponentModel.CancelEventHandler(this.PopupImage_BeforePopup);
-            // 
-            // MenuItemExtract
-            // 
-            this.MenuItemExtract.Caption = "Extract...";
-            this.MenuItemExtract.Id = 9;
-            this.MenuItemExtract.Name = "MenuItemExtract";
-            this.MenuItemExtract.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MenuItemExtract_ItemClick);
-            // 
-            // MenuItemReplace
-            // 
-            this.MenuItemReplace.Caption = "Replace...";
-            this.MenuItemReplace.Id = 8;
-            this.MenuItemReplace.Name = "MenuItemReplace";
-            this.MenuItemReplace.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MenuItemReplace_ItemClick);
-            // 
             // MenuMain
             // 
             this.MenuMain.BarItemHorzIndent = 6;
@@ -366,7 +340,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.MenuButtonFile.ActAsDropDown = true;
             this.MenuButtonFile.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.MenuButtonFile.Caption = "FILE";
+            this.MenuButtonFile.Caption = "File";
             this.MenuButtonFile.DropDownControl = this.PopupMenuFile;
             this.MenuButtonFile.Id = 2;
             this.MenuButtonFile.Name = "MenuButtonFile";
@@ -418,7 +392,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.MenuButtonProfile.ActAsDropDown = true;
             this.MenuButtonProfile.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.MenuButtonProfile.Caption = "PROFILE";
+            this.MenuButtonProfile.Caption = "Profile";
             this.MenuButtonProfile.DropDownControl = this.PopupMenuProfile;
             this.MenuButtonProfile.Id = 10;
             this.MenuButtonProfile.Name = "MenuButtonProfile";
@@ -495,37 +469,62 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.BarManager;
-            this.barDockControlTop.Size = new System.Drawing.Size(536, 25);
+            this.barDockControlTop.Size = new System.Drawing.Size(526, 31);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 193);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 201);
             this.barDockControlBottom.Manager = this.BarManager;
-            this.barDockControlBottom.Size = new System.Drawing.Size(536, 22);
+            this.barDockControlBottom.Size = new System.Drawing.Size(526, 29);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
             this.barDockControlLeft.Manager = this.BarManager;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 168);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 170);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(536, 25);
+            this.barDockControlRight.Location = new System.Drawing.Point(526, 31);
             this.barDockControlRight.Manager = this.BarManager;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 168);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 170);
+            // 
+            // MenuItemReplace
+            // 
+            this.MenuItemReplace.Caption = "Replace...";
+            this.MenuItemReplace.Id = 8;
+            this.MenuItemReplace.Name = "MenuItemReplace";
+            this.MenuItemReplace.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MenuItemReplace_ItemClick);
+            // 
+            // MenuItemExtract
+            // 
+            this.MenuItemExtract.Caption = "Extract...";
+            this.MenuItemExtract.Id = 9;
+            this.MenuItemExtract.Name = "MenuItemExtract";
+            this.MenuItemExtract.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MenuItemExtract_ItemClick);
+            // 
+            // PopupImage
+            // 
+            this.PopupImage.AutoFillEditorWidth = false;
+            this.PopupImage.DrawMenuSideStrip = DevExpress.Utils.DefaultBoolean.False;
+            this.PopupImage.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.MenuItemExtract),
+            new DevExpress.XtraBars.LinkPersistInfo(this.MenuItemReplace)});
+            this.PopupImage.Manager = this.BarManager;
+            this.PopupImage.Name = "PopupImage";
+            this.PopupImage.BeforePopup += new System.ComponentModel.CancelEventHandler(this.PopupImage_BeforePopup);
             // 
             // GameSaveResigner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 215);
+            this.ClientSize = new System.Drawing.Size(526, 230);
             this.Controls.Add(this.ImageContent);
             this.Controls.Add(this.LabelHeaderTitleId);
             this.Controls.Add(this.LabelHeaderDisplayName);
@@ -570,9 +569,9 @@ namespace ArisenStudio.Forms.Tools.XBOX
             ((System.ComponentModel.ISupportInitialize)(this.ImagePackage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBackground.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PopupImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopupMenuFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopupMenuProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PopupImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -30,9 +30,9 @@ namespace ArisenStudio.Forms.Tools.PS3
 
         private static FtpClient FtpClient { get; } = MainWindow.FtpClient;
 
-        private static string PackageFilesPath { get; } = MainWindow.Settings.PackageInstallPath;
+        private static string PackageFilesPath { get; } = MainWindow.Settings.PackageInstallPathPS3;
 
-        private List<FtpListItem> PackageFiles { get; } = new();
+        private List<FtpListItem> PackageFiles { get; } = [];
 
         private void PackageFilesManager_Load(object sender, EventArgs e)
         {
@@ -50,12 +50,12 @@ namespace ArisenStudio.Forms.Tools.PS3
             TimerWait.Enabled = false;
         }
 
-        private static DataTable DataTablePackages { get; } = DataExtensions.CreateDataTable(new List<DataColumn>
-        {
+        private static DataTable DataTablePackages { get; } = DataExtensions.CreateDataTable(
+        [
             new(Language.GetString("LABEL_FILE_NAME"), typeof(string)),
             new(Language.GetString("LABEL_MODIFIED_DATE"), typeof(string)),
             new(Language.GetString("LABEL_FILE_SIZE"), typeof(string))
-        });
+        ]);
 
         private void LoadPackages()
         {

@@ -19,7 +19,7 @@ namespace ArisenStudio.Forms.Dialogs
 
         public ResourceManager Language = MainWindow.ResourceLanguage;
 
-        public List<string> SortOptions { get; set; } = new();
+        public List<string> SortOptions { get; set; } = [];
 
         public string SortOption { get; set; }
 

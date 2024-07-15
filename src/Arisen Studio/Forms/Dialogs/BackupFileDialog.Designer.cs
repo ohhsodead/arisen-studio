@@ -56,7 +56,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelLocalFilePath.Location = new System.Drawing.Point(12, 108);
             this.LabelLocalFilePath.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelLocalFilePath.Name = "LabelLocalFilePath";
-            this.LabelLocalFilePath.Size = new System.Drawing.Size(79, 16);
+            this.LabelLocalFilePath.Size = new System.Drawing.Size(76, 13);
             this.LabelLocalFilePath.TabIndex = 7;
             this.LabelLocalFilePath.Text = "Local File Path:";
             // 
@@ -67,7 +67,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelInstallFilePath.Location = new System.Drawing.Point(12, 60);
             this.LabelInstallFilePath.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelInstallFilePath.Name = "LabelInstallFilePath";
-            this.LabelInstallFilePath.Size = new System.Drawing.Size(82, 16);
+            this.LabelInstallFilePath.Size = new System.Drawing.Size(81, 13);
             this.LabelInstallFilePath.TabIndex = 9;
             this.LabelInstallFilePath.Text = "Install File Path:";
             // 
@@ -79,7 +79,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelGameId.Location = new System.Drawing.Point(213, 12);
             this.LabelGameId.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelGameId.Name = "LabelGameId";
-            this.LabelGameId.Size = new System.Drawing.Size(46, 16);
+            this.LabelGameId.Size = new System.Drawing.Size(45, 13);
             this.LabelGameId.TabIndex = 12;
             this.LabelGameId.Text = "Game Id:";
             // 
@@ -90,7 +90,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelFilename.Location = new System.Drawing.Point(12, 12);
             this.LabelFilename.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelFilename.Name = "LabelFilename";
-            this.LabelFilename.Size = new System.Drawing.Size(55, 16);
+            this.LabelFilename.Size = new System.Drawing.Size(53, 13);
             this.LabelFilename.TabIndex = 14;
             this.LabelFilename.Text = "File Name:";
             // 

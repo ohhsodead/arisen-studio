@@ -16,6 +16,9 @@ namespace ArisenStudio
         [Description("PlayStation 3 (Super Slim)")]
         PlayStation3SuperSlim,
 
+        [Description("PlayStation 4 (All Models)")]
+        PlayStation4,
+
         [Description("Xbox 360 (Fat/White)")]
         Xbox360FatWhite,
 
@@ -27,9 +30,6 @@ namespace ArisenStudio
 
         [Description("Xbox 360 E (Slim E)")]
         Xbox360SlimE,
-
-        [Description("PlayStation 4 (All)")]
-        PlayStation4,
     }
 
     /// <summary>
@@ -40,11 +40,11 @@ namespace ArisenStudio
         [Description("PlayStation 3")]
         PS3,
 
-        [Description("Xbox 360")]
-        XBOX360,
-
         [Description("PlayStation 4")]
-        PS4
+        PS4,
+
+        [Description("Xbox 360")]
+        XBOX360
     }
 
     public enum FilterType
@@ -62,6 +62,7 @@ namespace ArisenStudio
         Game,
         Homebrew,
         Resource,
+        Application,
         Package,
         Plugin,
         GameSave
@@ -86,6 +87,15 @@ namespace ArisenStudio
 
         [Description("DOWNLOADING_PACKAGE")]
         DownloadPackage,
+
+        [Description("INSTALLING_APPLICATION")]
+        InstallApplication,
+
+        [Description("UNINSTALLING_APPLICATION")]
+        UninstallApplication,
+
+        [Description("DOWNLOADING_APPLICATION")]
+        DownloadApplication,
 
         [Description("INSTALLING_GAME_SAVE")]
         InstallGameSave,
