@@ -9,8 +9,8 @@ TOKEN = os.getenv('GITHUB_TOKEN')
 
 # GitHub API URL for repository releases
 releases_url = f'https://api.github.com/repos/{OWNER}/{REPO}/releases'
-mod_count_url = 'https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/badges/mod_count_badge.json'
-package_count_url = 'https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/badges/package_count_badge.json'
+mod_count_url = 'https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/.github/badges/mod-count-badge.json'
+package_count_url = 'https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/.github/badges/mod-package-badge.json'
 
 headers = {
     'Authorization': f'token {TOKEN}'
