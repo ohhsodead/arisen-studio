@@ -13,8 +13,8 @@
   <br>
   <a href="https://arisen.studio/"><img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https://arisen.studio/" /></a>
   <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/website?down_message=offline&label=database&up_message=online&url=https://github.com%2Fohhsodead%2Farisen-studio-database" /></a>
-  <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/badges/mod_count_badge.json&label=total%20mods" /></a>
-  <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/badges/package_count_badge.json&label=total%20packages" /></a>
+  <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/.github/badges/mod-count-badge.json&label=total%20mods" /></a>
+  <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/.github/badges/package-count-badge.json&label=total%20packages" /></a>
   </a>
   </br>
   <a href="https://sourceforge.net/projects/arisenstudio/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
