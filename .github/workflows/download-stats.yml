@@ -26,12 +26,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python .github/scripts/fetch_download_stats.py
+          python scripts/fetch_download_stats.py
 
       - name: Commit JSON file
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add download_stats.json
+          git add .github/stats/download_stats.json
           git commit -m 'Update download stats'
           git push
