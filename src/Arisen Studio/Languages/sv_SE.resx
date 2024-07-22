@@ -217,6 +217,9 @@ Den här filen kan inte avinstalleras för att undvika saknade spelfiler, så de
   <data name="CHEAT_NOT_SUPPORTED" xml:space="preserve">
     <value>Det här fusket kan inte tillämpas eftersom det innehåller opcode som ännu inte har implementerats.</value>
   </data>
+  <data name="CHECKING_FILES" xml:space="preserve">
+    <value>Kontrollerar Filer</value>
+  </data>
   <data name="CHOOSE_ITEM" xml:space="preserve">
     <value>Välj objekt...</value>
   </data>
@@ -726,6 +729,9 @@ Sätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars
   <data name="INSTALLING_BACKUP_FILE_LOCATION" xml:space="preserve">
     <value>Installerar säkerhetskopieringsfil: {0} till {1}</value>
   </data>
+  <data name="INSTALLING_FILES" xml:space="preserve">
+    <value>Installerar Filer</value>
+  </data>
   <data name="INSTALLING_GAME_SAVE" xml:space="preserve">
     <value>Installerar Spelsparning</value>
   </data>
@@ -817,11 +823,17 @@ Sätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars
   <data name="LABEL_CATEGORY" xml:space="preserve">
     <value>Kategori</value>
   </data>
+  <data name="LABEL_CATEGORY_TYPE" xml:space="preserve">
+    <value>Kategorityp</value>
+  </data>
   <data name="LABEL_CHANGE" xml:space="preserve">
     <value>Ändra</value>
   </data>
   <data name="LABEL_CHEATS" xml:space="preserve">
     <value>Fusk</value>
+  </data>
+  <data name="LABEL_CHOOSE_FILE" xml:space="preserve">
+    <value>Välj Fil</value>
   </data>
   <data name="LABEL_CLOSE" xml:space="preserve">
     <value>Stäng</value>
@@ -982,6 +994,9 @@ Sätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars
   <data name="LABEL_INSTALL_FILE" xml:space="preserve">
     <value>Install File</value>
   </data>
+  <data name="LABEL_INSTALL_PATH" xml:space="preserve">
+    <value>Installationssökväg</value>
+  </data>
   <data name="LABEL_IP_ADDRESS" xml:space="preserve">
     <value>IP-Adress</value>
   </data>
@@ -1000,6 +1015,9 @@ Sätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars
   <data name="LABEL_LOAD_MODULE" xml:space="preserve">
     <value>Ladda modul</value>
   </data>
+  <data name="LABEL_LOCAL_FILE" xml:space="preserve">
+    <value>Lokal Fil</value>
+  </data>
   <data name="LABEL_LOGIN" xml:space="preserve">
     <value>Logga in</value>
   </data>
@@ -1017,6 +1035,9 @@ Sätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars
   </data>
   <data name="LABEL_MODULES" xml:space="preserve">
     <value>Moduler</value>
+  </data>
+  <data name="LABEL_MOD_DETAILS" xml:space="preserve">
+    <value>Mod Detaljer</value>
   </data>
   <data name="LABEL_MOD_TYPE" xml:space="preserve">
     <value>Mod Typ</value>
@@ -1601,6 +1622,10 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   <data name="STATISTICS" xml:space="preserve">
     <value>Statistik</value>
   </data>
+  <data name="STATS_DOWNLOADS" xml:space="preserve">
+    <value>{0} Nedladdningar</value>
+    <comment>Number of downloads.</comment>
+  </data>
   <data name="STATUS" xml:space="preserve">
     <value>Status:</value>
   </data>
@@ -1651,6 +1676,9 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   </data>
   <data name="UNINSTALLING" xml:space="preserve">
     <value>Avinstallerar</value>
+  </data>
+  <data name="UNINSTALLING_FILES" xml:space="preserve">
+    <value>Avinstallerar Filer</value>
   </data>
   <data name="UNINSTALLING_MODS" xml:space="preserve">
     <value>Avinstallerar Moddar</value>
