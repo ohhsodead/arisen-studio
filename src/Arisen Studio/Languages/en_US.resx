@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -216,6 +216,9 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
   </data>
   <data name="CHEAT_NOT_SUPPORTED" xml:space="preserve">
     <value>This cheat can't be applied because it contains opcode that hasn't been implemented yet.</value>
+  </data>
+  <data name="CHECKING_FILES" xml:space="preserve">
+    <value>Checking Files</value>
   </data>
   <data name="CHOOSE_ITEM" xml:space="preserve">
     <value>Choose Item...</value>
@@ -432,9 +435,7 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
     <value>These files weren't installed to the connected console.</value>
   </data>
   <data name="FILES_REINSTALL" xml:space="preserve">
-    <value>{0} is already installed to: {1}
-
-Do you want to reinstall the files?</value>
+    <value>{0} is already installed to: {1}\n\nDo you want to reinstall the files?</value>
   </data>
   <data name="FILES_UNINSTALLING" xml:space="preserve">
     <value>Uninstalling files...</value>
@@ -724,6 +725,9 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   <data name="INSTALLING_BACKUP_FILE_LOCATION" xml:space="preserve">
     <value>Installing backup file: {0} to {1}</value>
   </data>
+  <data name="INSTALLING_FILES" xml:space="preserve">
+    <value>Installing Files</value>
+  </data>
   <data name="INSTALLING_GAME_SAVE" xml:space="preserve">
     <value>Installing Game Save</value>
   </data>
@@ -815,11 +819,17 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   <data name="LABEL_CATEGORY" xml:space="preserve">
     <value>Category</value>
   </data>
+  <data name="LABEL_CATEGORY_TYPE" xml:space="preserve">
+    <value>Category Type</value>
+  </data>
   <data name="LABEL_CHANGE" xml:space="preserve">
     <value>Change</value>
   </data>
   <data name="LABEL_CHEATS" xml:space="preserve">
     <value>Cheats</value>
+  </data>
+  <data name="LABEL_CHOOSE_FILE" xml:space="preserve">
+    <value>Choose File</value>
   </data>
   <data name="LABEL_CLOSE" xml:space="preserve">
     <value>Close</value>
@@ -980,6 +990,9 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   <data name="LABEL_INSTALL_FILE" xml:space="preserve">
     <value>Install File</value>
   </data>
+  <data name="LABEL_INSTALL_PATH" xml:space="preserve">
+    <value>Install Path</value>
+  </data>
   <data name="LABEL_IP_ADDRESS" xml:space="preserve">
     <value>IP Address</value>
   </data>
@@ -998,6 +1011,9 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   <data name="LABEL_LOAD_MODULE" xml:space="preserve">
     <value>Load Module</value>
   </data>
+  <data name="LABEL_LOCAL_FILE" xml:space="preserve">
+    <value>Local File</value>
+  </data>
   <data name="LABEL_LOGIN" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -1015,6 +1031,9 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   </data>
   <data name="LABEL_MODULES" xml:space="preserve">
     <value>Modules</value>
+  </data>
+  <data name="LABEL_MOD_DETAILS" xml:space="preserve">
+    <value>Mod Details</value>
   </data>
   <data name="LABEL_MOD_TYPE" xml:space="preserve">
     <value>Mod Type</value>
@@ -1599,6 +1618,10 @@ If you don't want to uninstall the files, click 'No' and all of these files will
   <data name="STATISTICS" xml:space="preserve">
     <value>Statistics</value>
   </data>
+  <data name="STATS_DOWNLOADS" xml:space="preserve">
+    <value>{0} Downloads</value>
+    <comment>Number of downloads.</comment>
+  </data>
   <data name="STATUS" xml:space="preserve">
     <value>Status:</value>
   </data>
@@ -1649,6 +1672,9 @@ If you don't want to uninstall the files, click 'No' and all of these files will
   </data>
   <data name="UNINSTALLING" xml:space="preserve">
     <value>Uninstalling</value>
+  </data>
+  <data name="UNINSTALLING_FILES" xml:space="preserve">
+    <value>Uninstalling Files</value>
   </data>
   <data name="UNINSTALLING_MODS" xml:space="preserve">
     <value>Uninstalling Mods</value>
