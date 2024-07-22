@@ -40,8 +40,8 @@ total_mods = int(mod_count) + int(package_count)
 
 # Prepare the JSON data
 data = {
-    'total_downloads': total_downloads,
-    'total_mods': total_mods
+    'totalDownloads': total_downloads,
+    'totalMods': total_mods
 }
 
 # Ensure the .github/stats/ directory exists
