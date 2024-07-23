@@ -217,6 +217,9 @@ Oyun dosyalarının kaybolmasını önlemek için bu dosya kaldırılamaz, bu ne
   <data name="CHEAT_NOT_SUPPORTED" xml:space="preserve">
     <value>Bu hile, henüz uygulanmamış işlem kodu içerdiğinden uygulanamaz.</value>
   </data>
+  <data name="CHECKING_FILES" xml:space="preserve">
+    <value>Dosyalar Denetleniyor</value>
+  </data>
   <data name="CHOOSE_ITEM" xml:space="preserve">
     <value>Öge Seç...</value>
   </data>
@@ -726,6 +729,9 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   <data name="INSTALLING_BACKUP_FILE_LOCATION" xml:space="preserve">
     <value>Yedek dosyası kuruluyor: {0} - {1}</value>
   </data>
+  <data name="INSTALLING_FILES" xml:space="preserve">
+    <value>Kurulan Dosyalar</value>
+  </data>
   <data name="INSTALLING_GAME_SAVE" xml:space="preserve">
     <value>Oyun Kaydı Kuruluyor</value>
   </data>
@@ -817,11 +823,17 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   <data name="LABEL_CATEGORY" xml:space="preserve">
     <value>Kategori</value>
   </data>
+  <data name="LABEL_CATEGORY_TYPE" xml:space="preserve">
+    <value>Kategori Türü</value>
+  </data>
   <data name="LABEL_CHANGE" xml:space="preserve">
     <value>Değiştir</value>
   </data>
   <data name="LABEL_CHEATS" xml:space="preserve">
     <value>Hileler</value>
+  </data>
+  <data name="LABEL_CHOOSE_FILE" xml:space="preserve">
+    <value>Dosya Seç</value>
   </data>
   <data name="LABEL_CLOSE" xml:space="preserve">
     <value>Kapat</value>
@@ -982,6 +994,9 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   <data name="LABEL_INSTALL_FILE" xml:space="preserve">
     <value>Install File</value>
   </data>
+  <data name="LABEL_INSTALL_PATH" xml:space="preserve">
+    <value>Kurulum Yolu</value>
+  </data>
   <data name="LABEL_IP_ADDRESS" xml:space="preserve">
     <value>IP Adresi</value>
   </data>
@@ -1000,6 +1015,9 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   <data name="LABEL_LOAD_MODULE" xml:space="preserve">
     <value>Modül Yükle</value>
   </data>
+  <data name="LABEL_LOCAL_FILE" xml:space="preserve">
+    <value>Yerel Dosya</value>
+  </data>
   <data name="LABEL_LOGIN" xml:space="preserve">
     <value>Giriş</value>
   </data>
@@ -1017,6 +1035,9 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   </data>
   <data name="LABEL_MODULES" xml:space="preserve">
     <value>Modüller</value>
+  </data>
+  <data name="LABEL_MOD_DETAILS" xml:space="preserve">
+    <value>Mod Ayrıntıları</value>
   </data>
   <data name="LABEL_MOD_TYPE" xml:space="preserve">
     <value>Mod Türü</value>
@@ -1601,6 +1622,10 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
   <data name="STATISTICS" xml:space="preserve">
     <value>İstatistikler</value>
   </data>
+  <data name="STATS_DOWNLOADS" xml:space="preserve">
+    <value>{0} İndirme</value>
+    <comment>Number of downloads.</comment>
+  </data>
   <data name="STATUS" xml:space="preserve">
     <value>Durum:</value>
   </data>
@@ -1651,6 +1676,9 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
   </data>
   <data name="UNINSTALLING" xml:space="preserve">
     <value>Kaldırılıyor</value>
+  </data>
+  <data name="UNINSTALLING_FILES" xml:space="preserve">
+    <value>Kaldırılan Dosyalar</value>
   </data>
   <data name="UNINSTALLING_MODS" xml:space="preserve">
     <value>Modlar Kaldırılıyor</value>

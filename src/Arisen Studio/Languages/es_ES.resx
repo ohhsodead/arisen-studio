@@ -217,6 +217,9 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
   <data name="CHEAT_NOT_SUPPORTED" xml:space="preserve">
     <value>Este truco no se puede aplicar porque contiene un código de operación que aún no se ha implementado.</value>
   </data>
+  <data name="CHECKING_FILES" xml:space="preserve">
+    <value>Comprobando Archivos</value>
+  </data>
   <data name="CHOOSE_ITEM" xml:space="preserve">
     <value>Escoger elemento...</value>
   </data>
@@ -725,6 +728,9 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
   <data name="INSTALLING_BACKUP_FILE_LOCATION" xml:space="preserve">
     <value>Instalando copia de seguridad: {0} de {1}</value>
   </data>
+  <data name="INSTALLING_FILES" xml:space="preserve">
+    <value>Instalando Archivos</value>
+  </data>
   <data name="INSTALLING_GAME_SAVE" xml:space="preserve">
     <value>Instalando partida guardada</value>
   </data>
@@ -816,11 +822,17 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
   <data name="LABEL_CATEGORY" xml:space="preserve">
     <value>Categoría</value>
   </data>
+  <data name="LABEL_CATEGORY_TYPE" xml:space="preserve">
+    <value>Tipo de Categoría</value>
+  </data>
   <data name="LABEL_CHANGE" xml:space="preserve">
     <value>Cambiar</value>
   </data>
   <data name="LABEL_CHEATS" xml:space="preserve">
     <value>Trucos</value>
+  </data>
+  <data name="LABEL_CHOOSE_FILE" xml:space="preserve">
+    <value>Elegir Archivo</value>
   </data>
   <data name="LABEL_CLOSE" xml:space="preserve">
     <value>Cerrar</value>
@@ -981,6 +993,9 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
   <data name="LABEL_INSTALL_FILE" xml:space="preserve">
     <value>Instalar archivo</value>
   </data>
+  <data name="LABEL_INSTALL_PATH" xml:space="preserve">
+    <value>Ruta de instalación</value>
+  </data>
   <data name="LABEL_IP_ADDRESS" xml:space="preserve">
     <value>Dirección IP</value>
   </data>
@@ -999,6 +1014,9 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
   <data name="LABEL_LOAD_MODULE" xml:space="preserve">
     <value>Cargar módulo</value>
   </data>
+  <data name="LABEL_LOCAL_FILE" xml:space="preserve">
+    <value>Código de Módulo</value>
+  </data>
   <data name="LABEL_LOGIN" xml:space="preserve">
     <value>Iniciar sesión</value>
   </data>
@@ -1016,6 +1034,9 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
   </data>
   <data name="LABEL_MODULES" xml:space="preserve">
     <value>Módulos</value>
+  </data>
+  <data name="LABEL_MOD_DETAILS" xml:space="preserve">
+    <value>Detalles del Mod</value>
   </data>
   <data name="LABEL_MOD_TYPE" xml:space="preserve">
     <value>Tipo de mod</value>
@@ -1600,6 +1621,10 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
   <data name="STATISTICS" xml:space="preserve">
     <value>Estadísticas</value>
   </data>
+  <data name="STATS_DOWNLOADS" xml:space="preserve">
+    <value>{0} Descargas</value>
+    <comment>Number of downloads.</comment>
+  </data>
   <data name="STATUS" xml:space="preserve">
     <value>Estado:</value>
   </data>
@@ -1650,6 +1675,9 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
   </data>
   <data name="UNINSTALLING" xml:space="preserve">
     <value>Desinstalando</value>
+  </data>
+  <data name="UNINSTALLING_FILES" xml:space="preserve">
+    <value>Desinstalando Archivos</value>
   </data>
   <data name="UNINSTALLING_MODS" xml:space="preserve">
     <value>Desinstalando mods</value>
