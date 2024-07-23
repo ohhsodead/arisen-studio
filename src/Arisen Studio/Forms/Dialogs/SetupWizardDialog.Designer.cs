@@ -103,18 +103,18 @@
             this.LabelAbout.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelAbout.Location = new System.Drawing.Point(0, 0);
             this.LabelAbout.Name = "LabelAbout";
-            this.LabelAbout.Size = new System.Drawing.Size(345, 192);
+            this.LabelAbout.Size = new System.Drawing.Size(323, 192);
             this.LabelAbout.TabIndex = 1173;
             this.LabelAbout.Text = resources.GetString("LabelAbout.Text");
             // 
             // TabControlChangeLog
             // 
             this.TabControlChangeLog.Dock = System.Windows.Forms.DockStyle.Right;
-            this.TabControlChangeLog.Location = new System.Drawing.Point(356, 0);
+            this.TabControlChangeLog.Location = new System.Drawing.Point(329, 0);
             this.TabControlChangeLog.Name = "TabControlChangeLog";
             this.TabControlChangeLog.SelectedTabPage = this.TabPageChangeLog;
             this.TabControlChangeLog.ShowHeaderFocus = DevExpress.Utils.DefaultBoolean.False;
-            this.TabControlChangeLog.Size = new System.Drawing.Size(276, 339);
+            this.TabControlChangeLog.Size = new System.Drawing.Size(303, 339);
             this.TabControlChangeLog.TabIndex = 1172;
             this.TabControlChangeLog.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabPageChangeLog});
@@ -123,7 +123,7 @@
             // 
             this.TabPageChangeLog.Controls.Add(this.PanelChangeLog);
             this.TabPageChangeLog.Name = "TabPageChangeLog";
-            this.TabPageChangeLog.Size = new System.Drawing.Size(274, 315);
+            this.TabPageChangeLog.Size = new System.Drawing.Size(301, 315);
             this.TabPageChangeLog.Text = "Change Log";
             // 
             // PanelChangeLog
@@ -137,7 +137,7 @@
             this.PanelChangeLog.Location = new System.Drawing.Point(0, 0);
             this.PanelChangeLog.Name = "PanelChangeLog";
             this.PanelChangeLog.Padding = new System.Windows.Forms.Padding(2);
-            this.PanelChangeLog.Size = new System.Drawing.Size(274, 315);
+            this.PanelChangeLog.Size = new System.Drawing.Size(301, 315);
             this.PanelChangeLog.TabIndex = 2;
             // 
             // LabelChangeLogVersion
@@ -358,7 +358,7 @@
             this.Name = "SetupWizardDialog";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Setup";
+            this.Text = "Setup Wizard";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SetupWizardDialog_FormClosing);
             this.Load += new System.EventHandler(this.SetupWizardDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.WizardControlMain)).EndInit();

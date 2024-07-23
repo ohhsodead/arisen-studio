@@ -41,6 +41,32 @@ namespace ArisenStudio.Models.Resources
         }
 
         /// <summary>
+        /// Create/store a backup of the specified file, and then downloads it locally to a known path
+        /// </summary>
+        /// <param name="customItem"> </param>
+        /// <param name="fileName"> </param>
+        /// <param name="installFilePath"> </param>
+        public void CreateBackupFile(CustomItemData customItem, string fileName, string installFilePath)
+        {
+            string gameBackupFolder = GetGameBackupFolder(customItem);
+
+            Directory.CreateDirectory(gameBackupFolder);
+
+            BackupFile backupFile = new()
+            {
+                Platform = customItem.Platform,
+                CategoryId = customItem.Category,
+                FileName = fileName,
+                LocalPath = Path.Combine(gameBackupFolder, fileName),
+                InstallPath = installFilePath,
+                CreatedDate = DateTime.Now
+            };
+
+            MainWindow.FtpClient.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
+            BackupFiles.Add(backupFile);
+        }
+
+        /// <summary>
         /// Gets the <see cref="BackupFile" /> information for the specified game id, file name and
         /// install path
         /// </summary>
@@ -53,10 +79,10 @@ namespace ArisenStudio.Models.Resources
             if (BackupFiles.Count > 0)
             {
                 BackupFile backupFile = BackupFiles.FirstOrDefault(backupFile =>
-                    backupFile.Platform == platform &&
-                    backupFile.CategoryId.EqualsIgnoreCase(gameId) &&
-                    backupFile.FileName.ContainsIgnoreCase(fileName) &&
-                    backupFile.InstallPath.ContainsIgnoreCase(installPath));
+                backupFile.Platform == platform &&
+                backupFile.CategoryId.EqualsIgnoreCase(gameId) &&
+                backupFile.FileName.ContainsIgnoreCase(fileName) &&
+                backupFile.InstallPath.ContainsIgnoreCase(installPath));
 
                 if (backupFile == null)
                 {
@@ -79,6 +105,16 @@ namespace ArisenStudio.Models.Resources
         public string GetGameBackupFolder(ModItemData modItem)
         {
             return Path.Combine(UserFolders.BackupFiles, modItem.CategoryId);
+        }
+
+        /// <summary>
+        /// Create and return the game backup files folder for the specified <see cref="ModsData.ModItem" />
+        /// </summary>
+        /// <param name="modItem"> </param>
+        /// <returns> </returns>
+        public string GetGameBackupFolder(CustomItemData customItem)
+        {
+            return Path.Combine(UserFolders.BackupFiles, customItem.Id.ToString());
         }
 
         /// <summary>

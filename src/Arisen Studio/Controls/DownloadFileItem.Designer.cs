@@ -205,7 +205,7 @@ namespace ArisenStudio.Controls
             this.ImageDownload.ContextButtonOptions.ItemCursor = System.Windows.Forms.Cursors.Hand;
             this.ImageDownload.ContextButtonOptions.PanelCursor = System.Windows.Forms.Cursors.Hand;
             this.ImageDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageDownload.ItemAppearance.Disabled.FillColor = System.Drawing.Color.Gray;
+            this.ImageDownload.ItemAppearance.Disabled.FillColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ImageDownload.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
             this.ImageDownload.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
             this.ImageDownload.ItemAppearance.Pressed.FillColor = System.Drawing.Color.White;
@@ -229,11 +229,8 @@ namespace ArisenStudio.Controls
             this.ImageInstall.ContextButtonOptions.ItemCursor = System.Windows.Forms.Cursors.Hand;
             this.ImageInstall.ContextButtonOptions.PanelCursor = System.Windows.Forms.Cursors.Hand;
             this.ImageInstall.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageInstall.ItemAppearance.Disabled.FillColor = System.Drawing.Color.Gray;
+            this.ImageInstall.ItemAppearance.Disabled.FillColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ImageInstall.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
-            this.ImageInstall.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
-            this.ImageInstall.ItemAppearance.Pressed.FillColor = System.Drawing.Color.White;
-            this.ImageInstall.ItemAppearance.Selected.FillColor = System.Drawing.Color.White;
             this.ImageInstall.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
             this.ImageInstall.Location = new System.Drawing.Point(618, 14);
             this.ImageInstall.Name = "ImageInstall";
@@ -290,7 +287,7 @@ namespace ArisenStudio.Controls
             this.ImageCopyLink.ContextButtonOptions.ItemCursor = System.Windows.Forms.Cursors.Hand;
             this.ImageCopyLink.ContextButtonOptions.PanelCursor = System.Windows.Forms.Cursors.Hand;
             this.ImageCopyLink.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageCopyLink.ItemAppearance.Disabled.FillColor = System.Drawing.Color.Gray;
+            this.ImageCopyLink.ItemAppearance.Disabled.FillColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ImageCopyLink.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
             this.ImageCopyLink.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
             this.ImageCopyLink.ItemAppearance.Pressed.FillColor = System.Drawing.Color.White;

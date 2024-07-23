@@ -43,28 +43,25 @@ namespace ArisenStudio.Models.Database
             if (favorites)
             {
                 return Mods.Where(x =>
-                    x.GetCategoryType(categoriesData) == CategoryType.Application &&
                     MainWindow.Settings.FavoriteMods.Exists(y => y.ModId == x.Id) &&
-                    x.GetCategoryName(categoriesData).EqualsIgnoreCase(categoryId) &&
+                    //x.GetCategoryName(categoriesData).EqualsIgnoreCase(categoryId) &&
                     //x.GetCategoryType(categoriesData) == CategoryType.Homebrew &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
                     x.FirmwareVersions.Exists(y => y.ContainsIgnoreCase(fwVersion)) &&
-                    x.Versions.ToArray().AnyContainsIgnoreCase(version))
+                    //x.Versions.ToArray().AnyContainsIgnoreCase(version) &&
+                    x.Versions.Exists(y => y.ContainsIgnoreCase(version)))
                     .ToList();
             }
             else
             {
                 return Mods.Where(x =>
-                    x.GetCategoryType(categoriesData) == CategoryType.Application &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     //x.GetCategoryName(categoriesData).EqualsIgnoreCase(categoryId) &&
-                    //(categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
                     x.FirmwareVersions.Exists(y => y.ContainsIgnoreCase(fwVersion)) &&
-                    //x.Version.ContainsIgnoreCase(version) &&
-                    //x.Region.ContainsIgnoreCase(region) &&
-                    x.Versions.ToArray().AnyContainsIgnoreCase(version))
+                    //x.Versions.ToArray().AnyContainsIgnoreCase(version) &&
+                    x.Versions.Exists(y => y.ContainsIgnoreCase(version)))
                     .ToList();
             }
         }
@@ -75,10 +72,10 @@ namespace ArisenStudio.Models.Database
         /// <param name="id">
         /// <see cref="AppItemData.Id" />
         /// </param>
-        /// <returns> Mod details for the <see cref="AppItemData.Id" /> </returns>
-        public AppItemData GetModById(Platform platform, int id)
+        /// <returns> App details for the <see cref="AppItemData.Id" /> </returns>
+        public AppItemData GetModById(int id)
         {
-            return Mods.FirstOrDefault(modItem => modItem.GetPlatform() == platform && modItem.Id.Equals(id));
+            return Mods.First(modItem => modItem.Id.Equals(id));
         }
     }
 }

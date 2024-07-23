@@ -76,28 +76,28 @@ namespace ArisenStudio.Controls
                 {
                     if (!MainWindow.Settings.InstallGameModsPluginsToUsbDevice)
                     {
-                        ImageInstall.Visible = false;
+                        ImageInstall.Enabled = false;
                     }
                 }
                 else if (CategoryType is CategoryType.Homebrew)
                 {
                     if (!MainWindow.Settings.InstallHomebrewToUsbDevice)
                     {
-                        ImageInstall.Visible = false;
+                        ImageInstall.Enabled = false;
                     }
                 }
                 else if (CategoryType is CategoryType.Resource)
                 {
                     if (!MainWindow.Settings.InstallResourcesToUsbDevice)
                     {
-                        ImageInstall.Visible = false;
+                        ImageInstall.Enabled = false;
                     }
                 }
                 else if (CategoryType is CategoryType.Package)
                 {
                     if (!MainWindow.Settings.InstallPackagesToUsbDevice)
                     {
-                        ImageInstall.Visible = false;
+                        ImageInstall.Enabled = false;
                     }
                 }
                 else
@@ -111,7 +111,7 @@ namespace ArisenStudio.Controls
         {
             if (CategoryType is CategoryType.Game or CategoryType.Homebrew or CategoryType.Resource or CategoryType.Plugin)
             {
-                InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id) : null;
+                InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, CategoryType, ModItem.Id) : null;
                 bool isInstalled = installedModInfo != null;
 
                 if (isInstalled)
@@ -160,7 +160,6 @@ namespace ArisenStudio.Controls
             }
             else
             {
-                //ImageShowFiles.SvgImage = Properties.Resources.arrow_up;
                 ImageExpand.SvgImage = SvgImages[1];
                 LabelInstallationFiles.Visible = true;
                 ListBoxInstallFiles.Visible = true;

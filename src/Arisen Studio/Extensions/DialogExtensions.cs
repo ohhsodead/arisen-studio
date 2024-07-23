@@ -26,9 +26,39 @@ namespace ArisenStudio.Extensions
 
         #region Details
 
-        public static void ShowItemDetailsDialog(Form owner, Platform platform, CategoriesData categories, ModItemData modItem, AppItemData appItem = null)
+        public static void ShowCustomItemDetailsDialog(Form owner, CustomItemData customItem)
         {
-            XtraForm detailsDialog = new();
+            XtraForm overlayForm = new()
+            {
+                StartPosition = FormStartPosition.Manual,
+                FormBorderStyle = FormBorderStyle.None,
+                Opacity = .50d,
+                BackColor = Color.Black,
+                Size = owner.Size,
+                Location = owner.Location,
+                ShowInTaskbar = false
+            };
+
+            overlayForm.Show(owner);
+
+            XtraForm detailsDialog = new CustomModDialog
+            {
+                CustomItem = customItem,
+                Owner = owner
+            };
+
+            detailsDialog.ShowDialog();
+
+            // Get rid of the overlay form  
+            overlayForm.Dispose();
+        }
+
+        public static void ShowItemDetailsDialog(Form owner, CategoriesData categories, ModItemData modItem, AppItemData appItem = null)
+        {
+            XtraForm detailsDialog = new()
+            {
+                Owner = owner
+            };
 
             switch (modItem.GetPlatform())
             {
@@ -37,6 +67,7 @@ namespace ArisenStudio.Extensions
                     {
                         detailsDialog = new GameModDialog
                         {
+                            CategoryType = CategoryType.Game,
                             ModItem = modItem
                         };
                     }
@@ -44,6 +75,7 @@ namespace ArisenStudio.Extensions
                     {
                         detailsDialog = new HomebrewDialog
                         {
+                            CategoryType = CategoryType.Homebrew,
                             ModItem = modItem
                         };
                     }
@@ -51,23 +83,18 @@ namespace ArisenStudio.Extensions
                     {
                         detailsDialog = new ResourceDialog
                         {
+                            CategoryType = CategoryType.Resource,
                             ModItem = modItem
                         };
                     }
                     break;
 
                 case Platform.XBOX360:
-                    detailsDialog = new ApplicationDialog
-                    {
-                        AppItem = appItem
-
-                    };
-                    break;
-
-                case Platform.PS4:
                     detailsDialog = new PluginDialog
                     {
+                        CategoryType = CategoryType.Plugin,
                         ModItem = modItem
+
                     };
                     break;
 
@@ -89,17 +116,32 @@ namespace ArisenStudio.Extensions
 
             overlayForm.Show(owner);
 
-            detailsDialog.Owner = owner;
             detailsDialog.ShowDialog();
 
-            //Get rid of the overlay form  
             overlayForm.Dispose();
         }
 
-        public static void ShowItemPackageDetailsDialog(Form owner, PackageItemData packageItem)
+        public static void ShowItemDetailsDialog(Form owner, CategoriesData categories, AppItemData appItem)
         {
-            using PackageDialog detailsDialog = new();
-            detailsDialog.PackageItem = packageItem;
+            XtraForm detailsDialog = new()
+            {
+                Owner = owner
+            };
+
+            switch (appItem.GetPlatform())
+            {
+                case Platform.PS4:
+                    detailsDialog = new ApplicationDialog
+                    {
+                        CategoryType = CategoryType.Application,
+                        AppItem = appItem
+                    };
+                    break;
+
+                default:
+                    break;
+
+            }
 
             XtraForm overlayForm = new()
             {
@@ -114,10 +156,34 @@ namespace ArisenStudio.Extensions
 
             overlayForm.Show(owner);
 
-            detailsDialog.Owner = owner;
             detailsDialog.ShowDialog();
 
-            //Get rid of the overlay form  
+            overlayForm.Dispose();
+        }
+
+        public static void ShowItemPackageDetailsDialog(Form owner, PackageItemData packageItem)
+        {
+            PackageDialog detailsDialog = new()
+            {
+                Owner = owner,
+                PackageItem = packageItem
+            };
+
+            XtraForm overlayForm = new()
+            {
+                StartPosition = FormStartPosition.Manual,
+                FormBorderStyle = FormBorderStyle.None,
+                Opacity = .50d,
+                BackColor = Color.Black,
+                Size = owner.Size,
+                Location = owner.Location,
+                ShowInTaskbar = false
+            };
+
+            overlayForm.Show(owner);
+
+            detailsDialog.ShowDialog();
+
             overlayForm.Dispose();
         }
 
@@ -142,7 +208,6 @@ namespace ArisenStudio.Extensions
             detailsDialog.Owner = owner;
             detailsDialog.ShowDialog();
 
-            //Get rid of the overlay form  
             overlayForm.Dispose();
         }
 
@@ -167,7 +232,6 @@ namespace ArisenStudio.Extensions
             cheatsDialog.Owner = owner;
             cheatsDialog.ShowDialog();
 
-            //Get rid of the overlay form  
             overlayForm.Dispose();
         }
 
@@ -191,8 +255,7 @@ namespace ArisenStudio.Extensions
 
             patchesDialog.Owner = owner;
             patchesDialog.ShowDialog();
-
-            //Get rid of the overlay form  
+            
             overlayForm.Dispose();
         }
 
@@ -333,6 +396,19 @@ namespace ArisenStudio.Extensions
             };
 
             return (Color)XtraInputBox.Show(args);
+        }
+
+        public static void ShowTransferFilesDialog(Form owner, TransferType transferType, CustomItemData customItem)
+        {
+            using TransferDialog transferDialog = new()
+            {
+                TransferType = transferType,
+                //Category = category,
+                CustomMod = customItem
+            };
+
+            transferDialog.Owner = owner;
+            transferDialog.ShowDialog();
         }
 
         public static void ShowTransferFilesDialog(Form owner, TransferType transferType, Category category, ModItemData modItem, DownloadFiles downloadFiles, string region = "")
@@ -476,7 +552,7 @@ namespace ArisenStudio.Extensions
             return isEditing ? consoleProfile : null;
         }
 
-        public static void ShowNewCustomModsDialog(Form owner, CustomMod customItem = null, bool isEditing = false)
+        public static void ShowNewCustomModsDialog(Form owner, CustomItemData customItem = null, bool isEditing = false)
         {
             using NewCustomDialog customDialog = new() { IsEditing = isEditing, CustomMod = customItem };
             customDialog.ShowDialog(owner);

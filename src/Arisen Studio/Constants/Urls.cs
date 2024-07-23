@@ -3,35 +3,40 @@
     public static class Urls
     {
         /// <summary>
-        /// Official project website
+        /// Link to official project website.
         /// </summary>
-        internal const string ProjectWebsite = "https://arisen.studio";
-        
+        internal const string ProjectWebsite = "https://arisen.studio/";
+
         /// <summary>
-        /// Direct link to the project's Discord server.
+        /// Link to help page on the official project website.
+        /// </summary>
+        internal const string ProjectHelp = "https://arisen.studio/help";
+
+        /// <summary>
+        /// Direct link to the project's Discord Server.
         /// </summary>
         internal const string DiscordServer = "https://discord.gg/FTCS3Xu";
 
         /// <summary>
-        /// Direct link to the request mods google form
+        /// Direct link to the request mods form on the project website.
         /// </summary>
         //internal const string RequestModsForm = "https://docs.google.com/forms/d/e/1FAIpQLScbeLBheZWjAp03d281pQHL2RvU93SLx2UXQZddx8i2nS2JmA/viewform?embedded=true";
         internal const string RequestModsForm = "https://arisen.studio/submit";
 
         /// <summary>
-        /// Direct link to the update data file hosted on Dropbox.
+        /// Direct link to the update data file hosted @Goldug's server for Arisen.
         /// </summary>
-        internal const string UpdateData = "https://dl.dropbox.com/s/xmiho4d326syupf/Update.xml?raw=true";
+        internal const string UpdateData = "https://db.arisen.studio/DATA/update.xml";
 
         /// <summary>
-        /// Direct download to the announcements file hosted on Dropbox.
+        /// Direct download to the announcements file hosted on @Goldug's server for Arisen.
         /// </summary>
-        internal const string AnnouncementsData = "https://dl.dropbox.com/s/vnk3s1yb3veyhom/announcements.json?raw=true";
+        internal const string AnnouncementsData = "https://db.arisen.studio/DATA/announcements.json";
 
         /// <summary>
-        /// Direct download to the news feed file hosted via Lyfe's web server.
+        /// Direct download to the news feed file hosted on @Goldug's server for Arisen.
         /// </summary>
-        internal const string RssFeedData = "https://dl.dropbox.com/s/y2m8fhrih1whrn3/news.xml?raw=true";
+        internal const string RssFeedData = "https://db.arisen.studio/DATA/news.xml";
 
         /// <summary>
         /// Direct link to the project repo hosted on GitHub.
@@ -39,7 +44,7 @@
         internal const string GitHubRepo = "https://github.com/ohhsodead/arisen-studio/";
 
         /// <summary>
-        /// Direct link to the project repo hosted on GitHub.
+        /// Direct link to the project server hosted on GitHub.
         /// </summary>
         internal const string GitHubDatabase = "https://github.com/ohhsodead/arisen-studio-database/";
 
@@ -47,6 +52,11 @@
         /// Direct link to get the release information via GitHub API.
         /// </summary>
         internal const string GitHubReleases = "https://api.github.com/repos/ohhsodead/arisen-studio/releases";
+
+        /// <summary>
+        /// Direct link to the Categories file hosted on GitHub.
+        /// </summary>
+        internal const string StatsData = "https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/stats/stats.json";
 
         /// <summary>
         /// Direct link to the Categories file hosted on GitHub.

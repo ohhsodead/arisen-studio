@@ -46,7 +46,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
             StatCreatedBy.Title = Language.GetString("LABEL_CREATED_BY");
             StatSubmittedBy.Title = Language.GetString("LABEL_SUBMITTED_BY");
 
-            // Display details in UI
             LabelCategory.Text = Categories.GetCategoryById(ModItem.CategoryId).Title;
             LabelName.Text = ModItem.Name.Replace("&", "&&");
 
@@ -60,7 +59,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 ? Language.GetString("NO_MORE_DETAILS")
                 : ModItem.Description.Replace("&", "&&");
 
-            InstalledModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id) : null;
+            InstalledModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id, false) : null;
 
             int count = 0;
             foreach (DownloadFiles downloadFile in ModItem.DownloadFiles)
@@ -114,7 +113,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
         {
             if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
             {
-                TabDownloads.VerticalScroll.Value = e.NewValue;
+                TabDescription.VerticalScroll.Value = e.NewValue;
             }
         }
 

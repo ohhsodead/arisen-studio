@@ -163,6 +163,30 @@ namespace ArisenStudio.Extensions
             }
         }
 
+        public static bool PathExists(string path, string dirName)
+        {
+            IXboxFiles xboxDirectories = MainWindow.XboxConsole.DirectoryFiles(path);
+
+            for (int i = 0; i < xboxDirectories.Count; i++)
+            {
+                if (xboxDirectories[i].IsDirectory && xboxDirectories[i].Name == (path + dirName))
+                    return true;
+            }
+            return false;
+        }
+
+        public static bool FileExists(string path, string pathWithFileName)
+        {
+            IXboxFiles xboxDirectories = MainWindow.XboxConsole.DirectoryFiles(path);
+
+            for (int i = 0; i < xboxDirectories.Count; i++)
+            {
+                if (!xboxDirectories[i].IsDirectory && xboxDirectories[i].Name == pathWithFileName)
+                    return true;
+            }
+            return false;
+        }
+
         public static void XNotify(this IXboxConsole console, string text, XNotifyLogo icon)
         {
             string command = "consolefeatures ver=2" + " type=12 params=\"A\\0\\A\\2\\" + 2 + "/" + text.Length + "\\" + text.ConvertStringToHex(Encoding.ASCII) + "\\" + 1 + "\\";

@@ -80,7 +80,11 @@
     <Reference Include="DevExpress.Data.Desktop.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v24.1.Core, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v24.1.Core, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v24.1.Core, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v24.1.Core, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -88,7 +92,10 @@
     <Reference Include="DevExpress.XtraDialogs.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraWizard.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="ISOLib, Version=0.2.2.0, Culture=neutral, PublicKeyToken=5a4742d0f8b86e59, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -120,6 +127,7 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
     <Reference Include="xdevkit, Version=2.0.21256.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
@@ -128,6 +136,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Urls.cs" />
+    <Compile Include="Controls\CustomFileItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomFileItem.Designer.cs">
+      <DependentUpon>CustomFileItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DownloadAppFileItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,6 +160,12 @@
     </Compile>
     <Compile Include="Controls\NoProfilesItem.Designer.cs">
       <DependentUpon>NoProfilesItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ToolItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ToolItem.Designer.cs">
+      <DependentUpon>ToolItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\StatItem.cs">
       <SubType>UserControl</SubType>
@@ -173,6 +193,12 @@
     </Compile>
     <Compile Include="Forms\Dialogs\Details\GameCheatsDialog.Designer.cs">
       <DependentUpon>GameCheatsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Details\CustomModDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Details\CustomModDialog.Designer.cs">
+      <DependentUpon>CustomModDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\Details\GamePatchesDialog.cs">
       <SubType>Form</SubType>
@@ -395,6 +421,7 @@
     <Compile Include="Models\Database\GamePatchesData.cs" />
     <Compile Include="Models\Database\GameSavesData.cs" />
     <Compile Include="Models\Database\AppsData.cs" />
+    <Compile Include="Models\Database\StatsData.cs" />
     <Compile Include="Models\Database\PackagesData.cs" />
     <Compile Include="Models\Database\GamesTitleIdsDataXBOX.cs" />
     <Compile Include="Models\Game Updates\GameUpdates.cs" />
@@ -452,6 +479,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Templates\GitHubTemplates.cs" />
+    <EmbeddedResource Include="Controls\CustomFileItem.resx">
+      <DependentUpon>CustomFileItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\DownloadAppFileItem.resx">
       <DependentUpon>DownloadAppFileItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -462,11 +492,17 @@
       <DependentUpon>NoProfilesItem.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ToolItem.resx">
+      <DependentUpon>ToolItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\StatItem.resx">
       <DependentUpon>StatItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\Details\GameCheatsDialog.resx">
       <DependentUpon>GameCheatsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\Details\CustomModDialog.resx">
+      <DependentUpon>CustomModDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\Details\GamePatchesDialog.resx">
       <DependentUpon>GamePatchesDialog.cs</DependentUpon>
@@ -675,6 +711,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Icons\request.svg" />
+    <None Include="Resources\Icons\scan-users.svg" />
     <None Include="Resources\Icons\icons8-games.svg" />
     <None Include="Resources\Icons\icons8-user-mods.svg" />
     <None Include="Resources\Icons\icons8-custom-mods.svg" />
@@ -688,6 +726,13 @@
     <None Include="Resources\Icons\icons8-open-archive.svg" />
     <None Include="Resources\Icons\icons8-edit-details.svg" />
     <None Include="Resources\Icons\icons8-add-favorite.svg" />
+    <None Include="Resources\arisenstudio.svg" />
+    <None Include="Resources\Icons\connect.svg" />
+    <None Include="Resources\Icons\disconnect.svg" />
+    <None Include="Resources\Icons\add-user.svg" />
+    <None Include="Resources\Icons\edit-user.svg" />
+    <None Include="Resources\Icons\change-user.svg" />
+    <None Include="Resources\Icons\bug.svg" />
     <Content Include="Resources\Icons\about.svg" />
     <Content Include="Resources\Icons\actions_arrow3left.svg" />
     <Content Include="Resources\Icons\actions_arrow3right.svg" />

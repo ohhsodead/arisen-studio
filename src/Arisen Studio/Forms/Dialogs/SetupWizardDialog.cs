@@ -58,7 +58,7 @@ namespace ArisenStudio.Forms.Dialogs
 
         private void SetupWizardDialog_Load(object sender, EventArgs e)
         {
-            Text = Language.GetString("LABEL_SETUP");
+            Text = Language.GetString("SETUP_WIZARD");
 
             WizardControlMain.NextText = "&" + Language.GetString("LABEL_NEXT") + " >";
             WizardControlMain.PreviousText = "< &" + Language.GetString("LABEL_BACK");

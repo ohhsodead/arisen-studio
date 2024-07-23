@@ -70,6 +70,12 @@ namespace ArisenStudio
 
     public enum TransferType
     {
+        [Description("INSTALLING_FILES")]
+        InstallCustom,
+
+        [Description("UNINSTALLING_FILES")]
+        UninstallCustom,
+
         [Description("INSTALLING_MODS")]
         InstallMods,
 

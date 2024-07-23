@@ -233,7 +233,7 @@ namespace ArisenStudio.Database
         static int pkgId = 0;
 
         /// <summary>
-        /// Download and return the games packages data.
+        /// Download and return the Games packages data.
         /// </summary>
         /// <returns> ModsData </returns>
         private static async Task<PackagesData> GetGamesPackagesAsync()
@@ -256,7 +256,7 @@ namespace ArisenStudio.Database
         }
 
         /// <summary>
-        /// Download and return the mods data.
+        /// Download and return Demos packages data.
         /// </summary>
         /// <returns> ModsData </returns>
         private static async Task<PackagesData> GetDemosPackagesAsync()
@@ -302,7 +302,7 @@ namespace ArisenStudio.Database
         }
 
         /// <summary>
-        /// Download and return the avatars packages data.
+        /// Download and return the Avatars packages data.
         /// </summary>
         /// <returns> ModsData </returns>
         private static async Task<PackagesData> GetAvatarsPackagesAsync()
@@ -325,7 +325,7 @@ namespace ArisenStudio.Database
         }
 
         /// <summary>
-        /// Download and return the theme packages data.
+        /// Download and return the Themes packages data.
         /// </summary>
         /// <returns> ModsData </returns>
         private static async Task<PackagesData> GetThemesPackagesAsync()
@@ -348,7 +348,7 @@ namespace ArisenStudio.Database
         }
 
         /// <summary>
-        /// Download and return the plugins data.
+        /// Download and return the Plugins data.
         /// </summary>
         /// <returns> ModsData </returns>
         private static async Task<ModsData> GetPluginsXboxAsync()
@@ -362,7 +362,7 @@ namespace ArisenStudio.Database
         }
 
         /// <summary>
-        /// Download and return the applications data.
+        /// Download and return the Applications data.
         /// </summary>
         /// <returns> ModsData </returns>
         private static async Task<AppsData> GetAppsPs4Async()
@@ -376,7 +376,7 @@ namespace ArisenStudio.Database
         }
 
         /// <summary>
-        /// Download and return the game saves data.
+        /// Download and return the Game Saves data.
         /// </summary>
         /// <returns> ModsData </returns>
         private static async Task<GameSavesData> GetGameSavesAsync()
@@ -389,6 +389,12 @@ namespace ArisenStudio.Database
             return new JsonSerializer().Deserialize<GameSavesData>(jsonReader);
         }
 
+        /// <summary>
+        /// Get specific package matching the Category and URL.
+        /// </summary>
+        /// <param name="category"></param>
+        /// <param name="url"></param>
+        /// <returns></returns>
         public PackageItemData GetPackage(string category, string url)
         {
             switch (category)
@@ -512,7 +518,7 @@ namespace ArisenStudio.Database
         }
 
         /// <summary>
-        /// Download and return the Xbox title Ids data.
+        /// Download and return the Xbox Title IDs data.
         /// </summary>
         /// <returns> ModsData </returns>
         private static async Task<GamesTitleIdsDataXbox> GetGamesTitleIdsXboxAsync()
@@ -575,6 +581,11 @@ namespace ArisenStudio.Database
             {
                 return null;
             }
+        }
+
+        public AppItemData GetAppItem(int modId)
+        {
+            return AppsPs4.GetModById(modId);
         }
     }
 }

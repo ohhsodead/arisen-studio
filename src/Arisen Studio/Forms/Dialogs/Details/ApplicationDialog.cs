@@ -40,16 +40,15 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void ApplicationDialog_Load(object sender, EventArgs e)
         {
+            LabelCategory.Text = Categories.GetCategoryById(AppItem.CategoryId).Title;
+            LabelName.Text = AppItem.Name.Replace("&", "&&");
+
             //StatTitleId.Title = Language.GetString("LABEL_TITLE_ID");
             StatFwVersions.Title = Language.GetString("LABEL_SYSTEM_TYPE");
             StatVersion.Title = Language.GetString("LABEL_VERSION");
             StatVersion.Title = Language.GetString("LABEL_CREATED_BY");
             StatCreatedBy.Title = Language.GetString("LABEL_SUBMITTED_BY");
             StatLastUpdated.Title = Language.GetString("LABEL_LAST_UPDATED");
-
-            // Display details in UI
-            LabelCategory.Text = Categories.GetCategoryById(AppItem.CategoryId).Title;
-            LabelName.Text = AppItem.Name.Replace("&", "&&");
 
             StatTitleId.Value = AppItem.TitleId;
             StatFwVersions.Value = string.Join("/", [.. AppItem.FirmwareVersions]);
@@ -65,7 +64,10 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 ? Language.GetString("NO_MORE_DETAILS")
                 : AppItem.Description.Replace("&", "&&");
 
-            InstalledModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, AppItem.CategoryId, AppItem.Id) : null;
+            ButtonDownload.Text = Language.GetString("LABEL_DOWNLOAD");
+            ButtonInstall.Text = Language.GetString("LABEL_INSTALL");
+
+            InstalledModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, AppItem.CategoryId, AppItem.Id, false) : null;
 
             int count = 0;
             foreach (AppItemFile appItem in AppItem.DownloadFiles)
@@ -87,6 +89,14 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
                 fileItem.Dock = DockStyle.Top;
                 TabDownloads.Controls.Add(fileItem);
+            }
+
+            if (!MainWindow.IsConsoleConnected)
+            {
+                if (!MainWindow.Settings.InstallPackagesToUsbDevice)
+                {
+                    ButtonInstall.Visible = false;
+                }
             }
 
             IsFavorite = MainWindow.Settings.FavoriteMods.Exists(x => x.CategoryType == CategoryType && x.CategoryId == AppItem.CategoryId && x.ModId == AppItem.Id && x.Platform == AppItem.GetPlatform());
@@ -117,7 +127,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
         {
             if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
             {
-                TabDownloads.VerticalScroll.Value = e.NewValue;
+                TabDescription.VerticalScroll.Value = e.NewValue;
             }
         }
 

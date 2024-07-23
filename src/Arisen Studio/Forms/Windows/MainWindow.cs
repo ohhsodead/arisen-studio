@@ -56,7 +56,7 @@ using DevExpress.Utils.About;
 
 namespace ArisenStudio.Forms.Windows
 {
-    public partial class MainWindow : RibbonForm
+    public partial class MainWindow : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         /// <summary>
         /// Initialize application.
@@ -623,14 +623,14 @@ namespace ArisenStudio.Forms.Windows
         {
             NavigationMenu.SelectElement(NavigationItemSettings);
             NavigationFrame.SelectedPage = PageSettings;
-            TabControlSettings.SelectedTabPage = TabPageDiscord;
+            TabControlSettings.SelectedPage = TabPageDiscord;
         }
 
         private void ButtonInstallModsToUSB_CheckedChanged(object sender, ItemClickEventArgs e)
         {
             NavigationMenu.SelectElement(NavigationItemSettings);
             NavigationFrame.SelectedPage = PageSettings;
-            TabControlSettings.SelectedTabPage = TabPageTransfers;
+            TabControlSettings.SelectedPage = TabPageTransfer;
         }
 
         private void ButtonAdvancedSettings_ItemClick(object sender, ItemClickEventArgs e)
@@ -1170,13 +1170,13 @@ namespace ArisenStudio.Forms.Windows
         private void NavigationItemDownloads_Click(object sender, EventArgs e)
         {
             NavigationFrame.SelectedPage = PageDownloads;
-            SearchDownloads();
+            LoadDownloads();
         }
 
         private void NavigationItemInstalledMods_Click(object sender, EventArgs e)
         {
             NavigationFrame.SelectedPage = PageInstalledFiles;
-            SearchInstalledMods();
+            LoadInstalledMods();
         }
 
         private bool hadLoadedFileManager = false;
@@ -1681,7 +1681,9 @@ namespace ArisenStudio.Forms.Windows
 
             LabelHeaderStatistics.Text = ResourceLanguage.GetString("STATISTICS");
 
-            LabelStatisticsPlayStation3.Text =
+            LabelStatsDownloads.Text = string.Format(ResourceLanguage.GetString("STATS_DOWNLOADS"), UpdateExtensions.StatsData.TotalDownloads);
+
+            LabelStatsPlayStation3.Text =
                 $"{Database.GameModsPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Game).Count:N0} {ResourceLanguage.GetString("LABEL_GAME_MODS")}\n" +
                 $"{Database.HomebrewPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count:N0} {ResourceLanguage.GetString("LABEL_HOMEBREW")}\n" +
                 $"{Database.ResourcesPs3.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Resource).Count:N0} {ResourceLanguage.GetString("LABEL_RESOURCES")}\n" +
@@ -1694,12 +1696,12 @@ namespace ArisenStudio.Forms.Windows
                 $"{Database.AppsPs4.Mods.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Game).Count:N0} {ResourceLanguage.GetString("LABEL_APPLICATIONS")}";
                 //$"{Database.GamePatchesXbox.GetTotalCheats():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
 
-            LabelStatisticsXbox360.Text =
+            LabelStatsXbox360.Text =
                 $"{Database.PluginsXbox.Mods.Count:N0} {ResourceLanguage.GetString("LABEL_PLUGINS")}\n" +
                 $"{Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.XBOX360).ToList().Count:N0} {ResourceLanguage.GetString("LABEL_GAME_SAVES")}\n" +
                 $"{Database.GamePatchesXbox.GetTotalCheats():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
 
-            LabelStatisticsLastUpdated.Text = $"{ResourceLanguage.GetString("LAST_UPDATED")}: {Database.CategoriesData.LastUpdated.ToLocalTime().ToShortDateString()}";
+            LabelStatsLastUpdated.Text = $"{ResourceLanguage.GetString("LAST_UPDATED")}: {Database.CategoriesData.LastUpdated.ToLocalTime().ToShortDateString()}";
         }
 
         public class DataPoint
@@ -1786,6 +1788,8 @@ namespace ArisenStudio.Forms.Windows
         #endregion
 
         #region Downloads Page
+
+        private int SelectedDownloadId = -1;
 
         private void TileItemDownloadsOpenFolder_ItemClick(object sender, TileItemEventArgs e)
         {
@@ -2179,20 +2183,23 @@ namespace ArisenStudio.Forms.Windows
             GridControlDownloads.DataSource = DataTableDownloads;
 
             GridViewDownloads.FocusedRowHandle = -1;
+            GridViewDownloads.MoveFirst();
 
+            TileItemDownloadsOpenFile.Enabled = GridViewDownloads.SelectedRowsCount > 0;
             TileItemDownloadsDeleteItem.Enabled = GridViewDownloads.SelectedRowsCount > 0;
             TileItemDownloadsViewDetails.Enabled = GridViewDownloads.SelectedRowsCount > 0;
 
             GridViewDownloads.HideLoadingPanel();
         }
 
-        private int SelectedDownloadId = -1;
-
         private void GridViewDownloads_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            if (e.FocusedRowHandle != -1)
+            if (SelectedDownloadId != -1)
             {
-                SelectedDownloadId = (int)GridViewDownloads.GetRowCellValue(e.FocusedRowHandle, GridViewDownloads.Columns[0]);
+                if (GridViewDownloads.RowCount > 0)
+                {
+                    SelectedDownloadId = (int)GridViewDownloads.GetRowCellValue(e.FocusedRowHandle, GridViewDownloads.Columns[0]);
+                }
             }
 
             TileItemDownloadsOpenFile.Enabled = e.FocusedRowHandle != -1;
@@ -2215,11 +2222,27 @@ namespace ArisenStudio.Forms.Windows
             TileItemDownloadsViewDetails.Enabled = SelectedDownloadId != -1;
         }
 
+        private void GridViewDownloads_DoubleClick(object sender, EventArgs e)
+        {
+            if (SelectedDownloadId != -1)
+            {
+                int modId = int.Parse(GridViewDownloads.GetFocusedRowCellDisplayText(GridViewDownloads.Columns[0]));
+                Platform platform = GridViewDownloads.GetFocusedRowCellDisplayText(GridViewDownloads.Columns[1]).DehumanizeTo<Platform>();
+                string category = GridViewDownloads.GetFocusedRowCellDisplayText(GridViewDownloads.Columns[2]);
+
+                ModItemData modItemData = Database.GetModItem(platform, Database.CategoriesData.GetCategoryByTitle(category).CategoryType, modId);
+
+                ShowDetails(platform, category, modId);
+            }
+        }
+
         #endregion
 
-        #region Installed Mods Page
+        #region Installed Files Page
 
-        private void TileItemInstalledModsDeleteItem_ItemClick(object sender, TileItemEventArgs e)
+        private int SelectedInstalledFilesModId = -1;
+
+        private void TileItemInstalledFilesDeleteItem_ItemClick(object sender, TileItemEventArgs e)
         {
             if (GridViewInstalledFiles.SelectedRowsCount > 0)
             {
@@ -2236,69 +2259,123 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void TileItemInstalledModsViewDetails_ItemClick(object sender, TileItemEventArgs e)
+        private void TileItemInstalledFilesViewDetails_ItemClick(object sender, TileItemEventArgs e)
         {
-            int modId = int.Parse(GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]));
-            //Platform platform = GridViewInstalledMods.GetRowCellDisplayText(GridViewInstalledMods.FocusedRowHandle, ResourceLanguage.GetString("LABEL_PLATFORM")).DehumanizeTo<Platform>();
-            Platform platform = GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[2]).DehumanizeTo<Platform>();
-            string category = GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[3]);
+            // Check if ModId has custom mods format and then get the ModId from it otherwise get it as normal
+            int modId;
+            bool isCustom = false;
 
-            //ModItemData modItemData = platform == Platform.PS3
-            //    ? Database.ModsPS3(Database).GetModById(platform, int.Parse(GridViewInstalledMods.GetFocusedRowCellDisplayText(GridViewInstalledMods.Columns[1])))
-            //    : Database.PluginsXBOX.GetModById(platform, int.Parse(GridViewInstalledMods.GetFocusedRowCellDisplayText(GridViewInstalledMods.Columns[1])));
-
-            ModItemData modItemData = Database.GetModItem(platform, Database.CategoriesData.GetCategoryByTitle(category).CategoryType, modId);
-
-            if (modItemData != null)
+            if (GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]).Contains("|"))
             {
-                ShowDetails(modItemData.GetPlatform(), category, modItemData.Id);
+                modId = int.Parse(GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]).Split('|')[1]);
+                isCustom = true;
             }
-        }
-
-        private void TileItemInstalledModsUninstallItem_ItemClick(object sender, TileItemEventArgs e)
-        {
-            if (GridViewInstalledFiles.SelectedRowsCount > 0)
+            else
             {
-                int consoleId = int.Parse(GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[0]));
-                int modId = int.Parse(GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]));
+                modId = int.Parse(GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]));
+            }
+
+            if (isCustom)
+            {
+                CustomItemData customItemData = Settings.GetCustomMod(modId);
+
+                if (customItemData != null)
+                {
+                    ShowCustomModDetails(modId);
+                }
+            }
+            else
+            {
                 Platform platform = GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[2]).DehumanizeTo<Platform>();
                 string category = GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[3]);
 
-                foreach (ConsoleProfile consoleProfile in Settings.ConsoleProfiles.FindAll(x => x.Id == consoleId))
+                ModItemData modItemData = Database.GetModItem(platform, Database.CategoriesData.GetCategoryByTitle(category).CategoryType, modId);
+
+                if (modItemData != null)
                 {
-                    foreach (InstalledModInfo installedModInfo in consoleProfile.InstalledMods)
+                    ShowDetails(modItemData.GetPlatform(), category, modItemData.Id);
+                }
+            }
+        }
+
+        private void TileItemInstalledFilesUninstallItem_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedInstalledFilesModId != -1)
+            {
+                if (GridViewInstalledFiles.RowCount > 0)
+                {
+                    // Check if ModId has custom mods format and then get the ModId from it otherwise get it as normal
+                    int modId;
+                    bool isCustom = false;
+
+                    if (GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]).Contains("|"))
                     {
-                        if (!IsConsoleConnected && ConsoleProfile == null)
+                        modId = int.Parse(GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]).Split('|')[1]);
+                        isCustom = true;
+                    }
+                    else
+                    {
+                        modId = int.Parse(GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]));
+                    }
+
+                    int consoleId = int.Parse(GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[0]));
+
+                    foreach (ConsoleProfile consoleProfile in Settings.ConsoleProfiles.FindAll(x => x.Id == consoleId))
+                    {
+                        foreach (InstalledModInfo installedModInfo in consoleProfile.InstalledMods)
                         {
-                            XtraMessageBox.Show(this, $"You must be connected to: {consoleProfile.Name} ({consoleProfile.Platform.Humanize()}) to uninstall the files.", ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                        else if (IsConsoleConnected && ConsoleProfile.Id != consoleProfile.Id)
-                        {
-                            XtraMessageBox.Show(this, $"These files weren't installed to the connected console. You must connect to: {consoleProfile.Name} ({consoleProfile.Platform.Humanize()}) to uninstall the files.", ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
+                            if (!IsConsoleConnected && ConsoleProfile == null)
+                            {
+                                XtraMessageBox.Show(this, string.Format(ResourceLanguage.GetString("UNINSTALL_CONNECTION_REQUIREMENT"), consoleProfile.Name, consoleProfile.Platform.Humanize()), ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                return;
+                            }
+                            else if (IsConsoleConnected && ConsoleProfile.Id != consoleProfile.Id)
+                            {
+                                XtraMessageBox.Show(this, string.Format(ResourceLanguage.GetString("UNINSTALL_CONNECT_TO_REQUIRED_CONSOLE"), consoleProfile.Name, consoleProfile.Platform.Humanize()), ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                return;
+                            }
 
-                        //ModItemData selectedmodItemData = platform == Platform.PS3
-                        //    ? Database.ModsPS3(Database).GetModById(platform, modId)
-                        //    : Database.PluginsXBOX.GetModById(platform, modId);
+                            if (isCustom)
+                            {
+                                if (installedModInfo.IsCustom)
+                                {
+                                    CustomItemData customItemData = Settings.GetCustomMod(installedModInfo.ModId);
 
-                        //ModItemData modItemData = platform == Platform.PS3
-                        //    ? Database.ModsPS3(Database).GetModById(platform, installedModInfo.ModId)
-                        //    : Database.PluginsXBOX.GetModById(platform, installedModInfo.ModId);
+                                    if (modId == installedModInfo.ModId)
+                                    {
+                                        ShowTransferCustomModsDialog(this, TransferType.UninstallCustom, customItemData);
+                                    }
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                Platform platform = GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[2]).DehumanizeTo<Platform>();
+                                string category = GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[3]);
 
-                        ModItemData selectedmodItemData = Database.GetModItem(platform, Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId).CategoryType, modId);
-                        ModItemData modItemData = Database.GetModItem(platform, Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId).CategoryType, installedModInfo.ModId);
+                                if (installedModInfo.Platform == platform && installedModInfo.ModId == modId) //&& installedModInfo.CategoryId == Database.CategoriesData.GetCategoryByTitle(category).Id)
+                                {
+                                    if (platform is Platform.PS3 or Platform.XBOX360)
+                                    {
+                                        ModItemData modItemData = Database.GetModItem(platform, Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId).CategoryType, installedModInfo.ModId);
 
-                        if (modItemData.Id == selectedmodItemData.Id)
-                        {
-                            ShowTransferModsDialog(this, TransferType.UninstallMods, modItemData, null, installedModInfo == null ? string.Empty : installedModInfo.DownloadFiles.Region);
-                            break;
+                                        ShowTransferModsDialog(this, TransferType.UninstallMods, modItemData, null, installedModInfo == null ? string.Empty : installedModInfo.DownloadFiles.Region);
+                                        break;
+                                    }
+                                    else if (platform == Platform.PS4)
+                                    {
+                                        AppItemData appItemData = Database.GetAppItem(installedModInfo.ModId);
+
+                                        ShowTransferAppsFileDialog(this, TransferType.UninstallApplication, appItemData);
+                                        break;
+                                    }
+                                }
+                            }
                         }
                     }
-                }
 
-                LoadInstalledMods();
+                    LoadInstalledMods();
+                }
             }
         }
 
@@ -2315,7 +2392,7 @@ namespace ArisenStudio.Forms.Windows
         /// <summary>
         /// Get/set the file name for filtering installed mods.
         /// </summary>
-        private string FilterInstalledModsFileName { get; set; } = string.Empty;
+        private string FilterInstalledModsName { get; set; } = string.Empty;
 
         /// <summary>
         /// Get/set the mod type for filtering installed mods.
@@ -2378,7 +2455,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void TextBoxInstalledModsFilterName_TextChanged(object sender, EventArgs e)
         {
-            FilterInstalledModsFileName = TextBoxInstalledFilesFilterName.Text;
+            FilterInstalledModsName = TextBoxInstalledFilesFilterName.Text;
 
             SearchInstalledMods();
         }
@@ -2487,7 +2564,7 @@ namespace ArisenStudio.Forms.Windows
         private static DataTable DataTableInstalledMods { get; } = DataExtensions.CreateDataTable(
             [
                 new("ProfileId", typeof(int)),
-                new("ModId", typeof(int)),
+                new("ModId", typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_PLATFORM"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_CATEGORY"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_NAME"), typeof(string)),
@@ -2515,24 +2592,44 @@ namespace ArisenStudio.Forms.Windows
             {
                 foreach (InstalledModInfo installedModInfo in consoleProfile.InstalledMods)
                 {
-                    Category modCategory = Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId);
-
                     //ModItemData modItemData = installedModInfo.Platform == Platform.PS3
                     //    ? Database.ModsPS3(Database).GetModById(installedModInfo.Platform, installedModInfo.ModId)
                     //    : Database.PluginsXBOX.GetModById(installedModInfo.Platform, installedModInfo.ModId);
 
-                    ModItemData modItemData = Database.GetModItem(installedModInfo.Platform, Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId).CategoryType, installedModInfo.ModId);
+                    if (installedModInfo.IsCustom)
+                    {
+                        CustomItemData customMod = Settings.GetCustomMod(installedModInfo.ModId);
 
-                    DataTableInstalledMods.Rows.Add(consoleProfile.Id,
-                                                    modItemData.Id.ToString(),
-                                                    installedModInfo.Platform.Humanize(),
-                                                    modCategory.Title,
-                                                    installedModInfo.DownloadFiles.Name,
-                                                    modItemData.ModType,
-                                                    string.IsNullOrEmpty(installedModInfo.DownloadFiles.Region) ? "n/a" : installedModInfo.DownloadFiles.Region,
-                                                    installedModInfo.DownloadFiles.Version,
-                                                    $"{installedModInfo.TotalFiles}{(installedModInfo.TotalFiles > 1 ? $" {ResourceLanguage.GetString("FILES")}" : $" {ResourceLanguage.GetString("FILE")}")}",
-                                                    Settings.UseRelativeTimes ? installedModInfo.DateInstalled.Humanize() : $"{installedModInfo.DateInstalled:g}");
+                        Category modCategory = Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId);
+
+                        DataTableInstalledMods.Rows.Add(consoleProfile.Id,
+                                                        "custom|" + customMod.Id.ToString(),
+                                                        installedModInfo.Platform.Humanize(),
+                                                        modCategory.Title,
+                                                        installedModInfo.DownloadFiles.Name,
+                                                        customMod.ModType,
+                                                        string.IsNullOrEmpty(installedModInfo.DownloadFiles.Region) ? "n/a" : installedModInfo.DownloadFiles.Region,
+                                                        installedModInfo.DownloadFiles.Version,
+                                                        $"{installedModInfo.TotalFiles}{(installedModInfo.TotalFiles > 1 ? $" {ResourceLanguage.GetString("FILES")}" : $" {ResourceLanguage.GetString("FILE")}")}",
+                                                        Settings.UseRelativeTimes ? installedModInfo.DateInstalled.Humanize() : $"{installedModInfo.DateInstalled:g}");
+                    }
+                    else
+                    {
+                        ModItemData modItemData = Database.GetModItem(installedModInfo.Platform, Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId).CategoryType, installedModInfo.ModId);
+
+                        Category modCategory = Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId);
+
+                        DataTableInstalledMods.Rows.Add(consoleProfile.Id,
+                                                        modItemData.Id.ToString(),
+                                                        installedModInfo.Platform.Humanize(),
+                                                        modCategory.Title,
+                                                        installedModInfo.DownloadFiles.Name,
+                                                        modItemData.ModType,
+                                                        string.IsNullOrEmpty(installedModInfo.DownloadFiles.Region) ? "n/a" : installedModInfo.DownloadFiles.Region,
+                                                        installedModInfo.DownloadFiles.Version,
+                                                        $"{installedModInfo.TotalFiles}{(installedModInfo.TotalFiles > 1 ? $" {ResourceLanguage.GetString("FILES")}" : $" {ResourceLanguage.GetString("FILE")}")}",
+                                                        Settings.UseRelativeTimes ? installedModInfo.DateInstalled.Humanize() : $"{installedModInfo.DateInstalled:g}");
+                    }
 
                     totalFiles += installedModInfo.TotalFiles;
                 }
@@ -2586,11 +2683,16 @@ namespace ArisenStudio.Forms.Windows
 
             foreach (ConsoleProfile consoleProfile in Settings.ConsoleProfiles.Where(x => x.Platform.Humanize() == FilterInstalledModsPlatform))
             {
-                foreach (InstalledModInfo installedModInfo in consoleProfile.InstalledMods.Where(x => x.CategoryId == FilterInstalledModsCategoryId))
+                foreach (InstalledModInfo installedModInfo in consoleProfile.InstalledMods.Where(x => x.CategoryId == FilterInstalledModsCategoryId)) //&& x.Name.ContainsIgnoreCaseSymbols(FilterInstalledModsName))
                 {
                     Category category = Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId);
 
                     ModItemData modItemData = Database.GetModItem(installedModInfo.Platform, Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId).CategoryType, installedModInfo.ModId);
+
+                    if (!modItemData.Name.ContainsIgnoreCaseSymbols(FilterInstalledModsName))
+                    {
+                        continue;
+                    }
 
                     bool shouldLoadFiles = true;
 
@@ -2657,6 +2759,17 @@ namespace ArisenStudio.Forms.Windows
 
         private void GridViewInstalledMods_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
+            if (SelectedInstalledFilesModId != -1)
+            {
+                if (GridViewInstalledFiles.RowCount > 0)
+                {
+                    SelectedInstalledFilesModId =
+                        GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]).Contains("|") ?
+                        (int)GridViewInstalledFiles.GetRowCellValue(e.FocusedRowHandle, GridViewInstalledFiles.Columns[1]) :
+                        int.Parse(GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]));
+                }
+            }
+
             TileItemInstalledModsDeleteItem.Enabled = GridViewInstalledFiles.RowCount > 0;
             TileItemInstalledModsUninstallItem.Enabled = IsConsoleConnected && GridViewInstalledFiles.SelectedRowsCount > 0;
             TileItemInstalledModsViewDetails.Enabled = GridViewInstalledFiles.SelectedRowsCount > 0;
@@ -2664,9 +2777,65 @@ namespace ArisenStudio.Forms.Windows
 
         private void GridViewInstalledMods_RowClick(object sender, RowClickEventArgs e)
         {
+            DXMouseEventArgs ea = e;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                SelectedInstalledFilesModId = 
+                    GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]).Contains("|") ? 
+                    (int)GridViewInstalledFiles.GetRowCellValue(e.RowHandle, GridViewInstalledFiles.Columns[1]) :
+                    int.Parse(GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]));
+            }
+
             TileItemInstalledModsDeleteItem.Enabled = GridViewInstalledFiles.RowCount > 0;
             TileItemInstalledModsUninstallItem.Enabled = IsConsoleConnected && GridViewInstalledFiles.SelectedRowsCount > 0;
             TileItemInstalledModsViewDetails.Enabled = GridViewInstalledFiles.SelectedRowsCount > 0;
+        }
+
+        private void GridViewInstalledMods_DoubleClick(object sender, EventArgs e)
+        {
+            if (SelectedInstalledFilesModId != -1)
+            {
+                if (GridViewInstalledFiles.RowCount > 0)
+                {
+                    // Check if ModId has custom mods format and then get the ModId from it otherwise get it as normal
+                    int modId;
+                    bool isCustom = false;
+
+                    if (GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]).Contains("|"))
+                    {
+                        modId = int.Parse(GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]).Split('|')[1]);
+                        isCustom = true;
+                    }
+                    else
+                    {
+                        modId = int.Parse(GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[1]));
+                    }
+
+                    if (isCustom)
+                    {
+                        CustomItemData customItemData = Settings.GetCustomMod(modId);
+
+                        if (customItemData != null)
+                        {
+                            ShowCustomModDetails(modId);
+                        }
+                    }
+                    else
+                    {
+                        Platform platform = GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[2]).DehumanizeTo<Platform>();
+                        string category = GridViewInstalledFiles.GetFocusedRowCellDisplayText(GridViewInstalledFiles.Columns[3]);
+
+                        ModItemData modItemData = Database.GetModItem(platform, Database.CategoriesData.GetCategoryByTitle(category).CategoryType, modId);
+
+                        if (modItemData != null)
+                        {
+                            ShowDetails(modItemData.GetPlatform(), category, modItemData.Id);
+                        }
+                    }
+                }
+            }
         }
 
         #endregion
@@ -4669,9 +4838,9 @@ namespace ArisenStudio.Forms.Windows
                 LabelGameSavesFilterVersion.Text = ResourceLanguage.GetString("LABEL_VERSION");
 
                 // About
-                LabelAboutHeaderLibraries.Text = ResourceLanguage.GetString("LABEL_LIBRARIES");
+                LabelHeaderLibraries.Text = ResourceLanguage.GetString("LABEL_LIBRARIES");
                 LabelAboutHeaderContributors.Text = ResourceLanguage.GetString("LABEL_CONTRIBUTORS");
-                LabelAboutHeaderTranslators.Text = ResourceLanguage.GetString("LABEL_TRANSLATORS");
+                LabelHeaderTranslators.Text = ResourceLanguage.GetString("LABEL_TRANSLATORS");
             }
             catch (Exception ex)
             {
@@ -5385,37 +5554,46 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void TileItemCustomModsTileItemCustomAdd_ItemClick(object sender, TileItemEventArgs e)
+        private void TileItemCustomAdd_ItemClick(object sender, TileItemEventArgs e)
         {
-            //if (FilterCustomModsShowFavorites)
-            //{
-            //    FilterCustomModsShowFavorites = false;
-            //    TileItemCustomModsShowFavorites.Text = ResourceLanguage.GetString("LABEL_SHOW_FAVORITES");
-            //    SearchCustomMods();
-            //}
-            //else
-            //{
-            //    FilterCustomModsShowFavorites = true;
-            //    TileItemCustomModsShowFavorites.Text = ResourceLanguage.GetString("LABEL_HIDE_FAVORITES");
-            //    SearchCustomMods();
-            //}
+            DialogExtensions.ShowNewCustomModsDialog(this);
         }
 
         private void TileItemCustomEdit_ItemClick(object sender, TileItemEventArgs e)
         {
-            if (SelectedGameModId != -1)
+            if (SelectedCustomModId != -1)
             {
-                //var modItem = Database.CustomModsPs3.GetModById(Platform.PS3, SelectedGameModId);
+                var customItem = Settings.GetCustomMod(SelectedCustomModId);
+                DialogExtensions.ShowNewCustomModsDialog(this, customItem, true);
+
+                for (int i = 0; i < GridViewCustomMods.RowCount; i++)
+                {
+                    if ((int)GridViewCustomMods.GetRowCellValue(i, GridViewGameMods.Columns[0]) == SelectedCustomModId)
+                    {
+                        GridViewCustomMods.SetRowCellValue(i, ResourceLanguage.GetString("LABEL_PLATFORM"), customItem.Platform.Humanize());
+                        GridViewCustomMods.SetRowCellValue(i, ResourceLanguage.GetString("LABEL_CATEGORY"), customItem.Category);
+                        GridViewCustomMods.SetRowCellValue(i, ResourceLanguage.GetString("LABEL_NAME"), customItem.Name);
+                        GridViewCustomMods.SetRowCellValue(i, ResourceLanguage.GetString("LABEL_MOD_TYPE"), customItem.ModType);
+                        GridViewCustomMods.SetRowCellValue(i, ResourceLanguage.GetString("LABEL_VERSION"), customItem.Version);
+                        break;
+                    }
+                }
+
                 //Settings.FavoriteMods.Add(new() { Platform = modItem.GetPlatform(), CategoryId = modItem.CategoryId, CategoryType = Database.CategoriesData.GetCategoryById(modItem.CategoryId).CategoryType, ModId = modItem.Id });
             }
         }
 
         private void TileItemCustomDelete_ItemClick(object sender, TileItemEventArgs e)
         {
-            if (SelectedGameModId != -1)
+            if (SelectedCustomModId != -1)
             {
-                //var modItem = Database.CustomModsPs3.GetModById(Platform.PS3, SelectedGameModId);
-                //ShowTransferModsDialog(this, TransferType.DownloadMods, modItem, modItem.DownloadFiles.Last());
+                var customItem = Settings.GetCustomMod(SelectedCustomModId);
+
+                if (XtraMessageBox.Show(this, ResourceLanguage.GetString("CONFIRM_DELETE_ITEM"), ResourceLanguage.GetString("CONFIRM_DELETE"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    Settings.CustomMods.Remove(customItem);
+                    XtraMessageBox.Show(this, ResourceLanguage.GetString("DELETE_ITEM_SUCCESS"), ResourceLanguage.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -5423,7 +5601,32 @@ namespace ArisenStudio.Forms.Windows
         {
             if (SelectedCustomModId != -1)
             {
-                //ShowDetails(SelectedGameModId);
+                ShowCustomModDetails(SelectedCustomModId);
+            }
+        }
+
+        private void TileItemCustomInstall_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedCustomModId != -1)
+            {
+                var customItem = Settings.GetCustomMod(SelectedCustomModId);
+
+                ShowTransferCustomModsDialog(this, TransferType.InstallCustom, customItem);
+                //var modItem = Database.CustomModsPs3.GetModById(Platform.PS3, SelectedCustomModId);
+                //Settings.FavoriteMods.Add(new() { Platform = modItem.GetPlatform(), CategoryId = modItem.CategoryId, CategoryType = Database.CategoriesData.GetCategoryById(modItem.CategoryId).CategoryType, ModId = modItem.Id });
+            }
+        }
+
+        private void TileItemCustomUninstall_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedCustomModId != -1)
+            {
+                var customItem = Settings.GetCustomMod(SelectedCustomModId);
+
+                ShowTransferCustomModsDialog(this, TransferType.UninstallCustom, customItem);
+
+                //var modItem = Database.CustomModsPs3.GetModById(Platform.PS3, SelectedCustomModId);
+                //Settings.FavoriteMods.Add(new() { Platform = modItem.GetPlatform(), CategoryId = modItem.CategoryId, CategoryType = Database.CategoriesData.GetCategoryById(modItem.CategoryId).CategoryType, ModId = modItem.Id });
             }
         }
 
@@ -5552,7 +5755,7 @@ namespace ArisenStudio.Forms.Windows
 
             List<string> ignoreValues = ["n/a", "-", "all regions", "all", "n", "a", ""];
 
-            foreach (CustomMod customMod in Settings.CustomMods)
+            foreach (CustomItemData customMod in Settings.CustomMods)
             {
                 foreach (string modType in from string modType in customMod.ModType
                                            where !ComboBoxCustomModsFilterModType.Properties.Items.Contains(modType)
@@ -5576,7 +5779,7 @@ namespace ArisenStudio.Forms.Windows
             [
                 new("Id", typeof(int)),
                 new(ResourceLanguage.GetString("LABEL_PLATFORM"), typeof(string)),
-                new(ResourceLanguage.GetString("LABEL_GAME"), typeof(string)),
+                new(ResourceLanguage.GetString("LABEL_CATEGORY"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_NAME"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_MOD_TYPE"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_VERSION"), typeof(string)),
@@ -5613,16 +5816,17 @@ namespace ArisenStudio.Forms.Windows
 
             BeginInvoke(new Action(() =>
             {
-                foreach (CustomMod customMod in Settings.CustomMods.FindAll(x =>
+                foreach (CustomItemData customMod in Settings.CustomMods.FindAll(x =>
                 x.Platform.Humanize().ContainsIgnoreCase(FilterCustomModsPlatform) &&
                 //x.DownloadFile.Name.ContainsIgnoreCase(FilterDownloadsFileName) &&
                 x.Category.ContainsIgnoreCaseSymbols(FilterCustomModsCategory) &&
                 x.Name.EqualsIgnoreCaseSymbols(FilterCustomModsName) &&
-                x.ModType.ContainsIgnoreCaseSymbols(FilterCustomModsType)))
+                x.ModType.ContainsIgnoreCaseSymbols(FilterCustomModsType) &&
+                x.Version.EqualsIgnoreCase(FilterCustomModsVersion)))
                 {
-                    bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, customMod.CategoryId, customMod.ModId) != null;
+                    bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, category.Id, customMod.Id, true) != null;
 
-                    bool isDownloaded = Settings.DownloadedMods.Any(x => x.Platform == customMod.Platform && x.ModId == customMod.ModId);
+                    bool isDownloaded = Settings.DownloadedMods.Any(x => x.Platform == customMod.Platform && x.ModId == customMod.Id);
 
                     if (FilterCustomModsStatus == ResourceLanguage.GetString("LABEL_INSTALLED") && !isInstalled)
                     {
@@ -5634,13 +5838,13 @@ namespace ArisenStudio.Forms.Windows
                     }
 
                     DataTableCustomMods.Rows.Add(
-                        customModData.ModId,
-                        customModData.Platform.Humanize(),
-                        customModData.Category,
-                        customModData.Name,
-                        customModData.ModType,
-                        customModData.Version,
-                        isDownloadNotInstalled ? ResourceLanguage.GetString("LABEL_DOWNLOADED") : isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
+                        customMod.Id,
+                        customMod.Platform.Humanize(),
+                        customMod.Category,
+                        customMod.Name,
+                        customMod.ModType,
+                        customMod.Version,
+                        isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
 
                     countResults++;
                 }
@@ -5650,25 +5854,22 @@ namespace ArisenStudio.Forms.Windows
 
             GridViewCustomMods.Columns[0].Visible = false;
 
-            GridViewCustomMods.Columns[1].MinWidth = 250;
-            GridViewCustomMods.Columns[1].MaxWidth = 250;
+            GridViewCustomMods.Columns[1].MinWidth = 122;
+            GridViewCustomMods.Columns[1].MaxWidth = 122;
 
-            //GridViewCustomMods.Columns[2].MinWidth = 30;
+            GridViewCustomMods.Columns[2].MinWidth = 250;
+            GridViewCustomMods.Columns[2].MaxWidth = 250;
 
-            GridViewCustomMods.Columns[3].MinWidth = 110;
-            GridViewCustomMods.Columns[3].MaxWidth = 110;
+            //GridViewCustomMods.Columns[3].MinWidth = 30;
 
             GridViewCustomMods.Columns[4].MinWidth = 128;
             GridViewCustomMods.Columns[4].MaxWidth = 128;
 
-            GridViewCustomMods.Columns[5].MinWidth = 112;
-            GridViewCustomMods.Columns[5].MaxWidth = 112;
+            GridViewCustomMods.Columns[5].MinWidth = 96;
+            GridViewCustomMods.Columns[5].MaxWidth = 96;
 
-            GridViewCustomMods.Columns[6].MinWidth = 96;
-            GridViewCustomMods.Columns[6].MaxWidth = 96;
-
-            GridViewCustomMods.Columns[7].MinWidth = 100;
-            GridViewCustomMods.Columns[7].MaxWidth = 100;
+            GridViewCustomMods.Columns[6].MinWidth = 100;
+            GridViewCustomMods.Columns[6].MaxWidth = 100;
 
             GridViewCustomMods.SortInfo.ClearAndAddRange([
                 new GridColumnSortInfo(GridViewCustomMods.Columns[FilterCustomModsSortOption], FilterCustomModsSortOrder),
@@ -6022,7 +6223,7 @@ namespace ArisenStudio.Forms.Windows
             {
                 foreach (ModItemData modItemData in Database.GameModsPs3.GetGameMods(Database.CategoriesData, FilterGameModsCategoryId, FilterGameModsName, FilterGameModsSystemType, FilterGameModsType, FilterGameModsRegion, FilterGameModsVersion, FilterGameModsShowFavorites))
                 {
-                    bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id) != null;
+                    bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id, false) != null;
 
                     bool isDownloaded = Settings.DownloadedMods.Any(x => x.Platform == modItemData.GetPlatform() && x.ModId == modItemData.Id);
 
@@ -6111,15 +6312,20 @@ namespace ArisenStudio.Forms.Windows
             //GridControlGameMods.Refresh();
 
             GridViewGameMods.HideLoadingPanel();
+            GridViewGameMods.MoveFirst();
         }
 
         private void GridViewGameMods_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
             if (e.FocusedRowHandle != -1)
             {
-                SelectedGameModId = (int)GridViewGameMods.GetRowCellValue(e.FocusedRowHandle, GridViewGameMods.Columns[0]);
+                if (GridViewGameMods.RowCount > 0)
+                {
+                    SelectedGameModId = (int)GridViewGameMods.GetRowCellValue(e.FocusedRowHandle, GridViewGameMods.Columns[0]);
+                }
             }
 
+            TileItemGameModsAddFavorite.Enabled = e.FocusedRowHandle != -1;
             TileItemGameModsDownload.Enabled = e.FocusedRowHandle != -1;
             TileItemGameModsShowDetails.Enabled = e.FocusedRowHandle != -1;
         }
@@ -6134,6 +6340,7 @@ namespace ArisenStudio.Forms.Windows
                 SelectedGameModId = (int)GridViewGameMods.GetRowCellValue(info.RowHandle, GridViewGameMods.Columns[0]);
             }
 
+            TileItemGameModsAddFavorite.Enabled = SelectedGameModId != -1;
             TileItemGameModsDownload.Enabled = SelectedGameModId != -1;
             TileItemGameModsShowDetails.Enabled = SelectedGameModId != -1;
         }
@@ -6386,7 +6593,7 @@ namespace ArisenStudio.Forms.Windows
             {
                 foreach (ModItemData modItemData in Database.HomebrewPs3.GetHomebrew(Database.CategoriesData, FilterHomebrewCategoryId, FilterHomebrewName, FilterHomebrewSystemType, FilterHomebrewVersion, FilterHomebrewShowFavorites))
                 {
-                    bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id) != null;
+                    bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id, false) != null;
 
                     bool isDownloaded = Settings.DownloadedMods.Any(x => x.Platform == modItemData.GetPlatform() && x.ModId == modItemData.Id);
 
@@ -6495,6 +6702,20 @@ namespace ArisenStudio.Forms.Windows
 
         #region Resources Page
 
+        private int SelectedResourceId = -1;
+
+        private void TileItemResourcesSortBy_ItemClick(object sender, TileItemEventArgs e)
+        {
+            Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterResourcesSortOption, [ResourceLanguage.GetString("LABEL_CATEGORY"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_SYSTEM_TYPE"), ResourceLanguage.GetString("LABEL_MOD_TYPE"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR")], FilterResourcesSortOrder);
+
+            if (sortOptions != null)
+            {
+                FilterResourcesSortOption = sortOptions.SortOption;
+                FilterResourcesSortOrder = sortOptions.SortOrder;
+                SearchResources();
+            }
+        }
+
         private void TileItemResourcesShowFavorites_ItemClick(object sender, TileItemEventArgs e)
         {
             if (FilterResourcesShowFavorites)
@@ -6511,15 +6732,29 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void TileItemResourcesSortBy_ItemClick(object sender, TileItemEventArgs e)
+        private void TileItemResourcesAddFavorite_ItemClick(object sender, TileItemEventArgs e)
         {
-            Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterResourcesSortOption, [ResourceLanguage.GetString("LABEL_CATEGORY"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_SYSTEM_TYPE"), ResourceLanguage.GetString("LABEL_MOD_TYPE"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR")], FilterResourcesSortOrder);
-
-            if (sortOptions != null)
+            if (SelectedResourceId != -1)
             {
-                FilterResourcesSortOption = sortOptions.SortOption;
-                FilterResourcesSortOrder = sortOptions.SortOrder;
-                SearchResources();
+                var modItem = Database.ResourcesPs3.GetModById(Platform.PS3, SelectedResourceId);
+                Settings.FavoriteMods.Add(new() { Platform = modItem.GetPlatform(), CategoryId = modItem.CategoryId, CategoryType = Database.CategoriesData.GetCategoryById(modItem.CategoryId).CategoryType, ModId = modItem.Id });
+            }
+        }
+
+        private void TileItemResourcesDownload_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedResourceId != -1)
+            {
+                var modItem = Database.ResourcesPs3.GetModById(Platform.PS3, SelectedResourceId);
+                ShowTransferModsDialog(this, TransferType.DownloadMods, modItem, modItem.DownloadFiles.Last());
+            }
+        }
+
+        private void TileItemResourcesShowDetails_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedResourceId != -1)
+            {
+                ShowResourceDetails(SelectedResourceId);
             }
         }
 
@@ -6717,7 +6952,7 @@ namespace ArisenStudio.Forms.Windows
             {
                 foreach (ModItemData modItemData in Database.ResourcesPs3.GetResources(Database.CategoriesData, FilterResourcesCategoryId, FilterResourcesName, FilterResourcesSystemType, FilterResourcesModType, FilterResourcesVersion, FilterResourcesShowFavorites).OrderBy(x => x.Name))
                 {
-                    bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id) != null;
+                    bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id, false) != null;
 
                     bool isDownloaded = Settings.DownloadedMods.Any(x => x.Platform == modItemData.GetPlatform() && x.ModId == modItemData.Id);
 
@@ -6795,15 +7030,50 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
+        private void GridViewResources_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            if (e.FocusedRowHandle != -1)
+            {
+                SelectedResourceId = (int)GridViewResources.GetRowCellValue(e.FocusedRowHandle, GridViewResources.Columns[0]);
+            }
+
+            TileItemResourcesDownload.Enabled = e.FocusedRowHandle != -1;
+            TileItemResourcesShowDetails.Enabled = e.FocusedRowHandle != -1;
+        }
+
         private void GridViewResources_RowClick(object sender, RowClickEventArgs e)
         {
-            int modId = (int)GridViewResources.GetRowCellValue(e.RowHandle, GridViewResources.Columns[0]);
-            ShowResourceDetails(modId);
+            DXMouseEventArgs ea = e;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                SelectedResourceId = (int)GridViewResources.GetRowCellValue(e.RowHandle, GridViewResources.Columns[0]);
+                ShowResourceDetails(SelectedResourceId);
+            }
+
+            TileItemResourcesDownload.Enabled = SelectedResourceId != -1;
+            TileItemResourcesShowDetails.Enabled = SelectedResourceId != -1;
+        }
+
+        private void GridViewResources_DoubleClick(object sender, EventArgs e)
+        {
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                SelectedResourceId = (int)GridViewResources.GetRowCellValue(info.RowHandle, GridViewResources.Columns[0]);
+                ShowResourceDetails(SelectedResourceId);
+            }
         }
 
         #endregion
 
         #region Packages Page
+
+        private string SelectedPackageCategory = string.Empty;
+        private string SelectedPackageUrl = string.Empty;
 
         private void TileItemPackagesSortBy_ItemClick(object sender, TileItemEventArgs e)
         {
@@ -6814,6 +7084,42 @@ namespace ArisenStudio.Forms.Windows
                 FilterPackagesSortOption = sortOptions.SortOption;
                 FilterPackagesSortOrder = sortOptions.SortOrder;
                 SearchPackages();
+            }
+        }
+
+        private void TileItemPackagesAddFavorite_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (!SelectedPackageCategory.IsNullOrEmpty())
+            {
+                var package = Database.GetPackage(SelectedPackageCategory, SelectedPackageUrl);
+
+                Settings.FavoriteMods.Add(new() { Platform = Platform.PS3, CategoryId = SelectedPackageCategory, CategoryType = CategoryType.Package, ModId = package.Id });
+            }
+        }
+
+        private void TileItemPackagesDownload_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (!SelectedPackageCategory.IsNullOrEmpty())
+            {
+                var modItem = Database.GameModsPs3.GetModById(Platform.PS3, SelectedGameModId);
+                ShowTransferModsDialog(this, TransferType.DownloadMods, modItem, modItem.DownloadFiles.Last());
+            }
+        }
+
+        private void TileItemPackagesInstall_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (!SelectedPackageCategory.IsNullOrEmpty())
+            {
+                var modItem = Database.GameModsPs3.GetModById(Platform.PS3, SelectedGameModId);
+                ShowTransferModsDialog(this, TransferType.InstallPackage, modItem, modItem.DownloadFiles.Last());
+            }
+        }
+
+        private void TileItemPackagesShowDetails_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (!SelectedPackageCategory.IsNullOrEmpty())
+            {
+                ShowPackageDetails(SelectedPackageCategory, SelectedPackageUrl);
             }
         }
 
@@ -7355,14 +7661,52 @@ namespace ArisenStudio.Forms.Windows
             return packages;
         }
 
+        private void GridViewPackages_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            if (e.FocusedRowHandle != -1)
+            {
+                SelectedPackageCategory = GridViewPackages.GetFocusedRowCellDisplayText(GridViewPackages.Columns[1]);
+                SelectedPackageUrl = GridViewPackages.GetFocusedRowCellDisplayText(GridViewPackages.Columns[0]);
+            }
+
+            TileItemPackagesDownload.Enabled = e.FocusedRowHandle != -1;
+            TileItemPackagesShowDetails.Enabled = e.FocusedRowHandle != -1;
+        }
+
         private void GridViewPackages_RowClick(object sender, RowClickEventArgs e)
         {
-            ShowPackageDetails(GridViewPackages.GetFocusedRowCellDisplayText(GridViewPackages.Columns[1]), GridViewPackages.GetFocusedRowCellDisplayText(GridViewPackages.Columns[0]));
+            DXMouseEventArgs ea = e;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                SelectedPackageCategory = GridViewPackages.GetFocusedRowCellDisplayText(GridViewPackages.Columns[1]);
+                SelectedPackageUrl = GridViewPackages.GetFocusedRowCellDisplayText(GridViewPackages.Columns[0]);
+            }
+
+            TileItemPackagesDownload.Enabled = e.RowHandle != -1;
+            TileItemPackagesShowDetails.Enabled = e.RowHandle != -1;
+        }
+
+        private void GridViewPackages_DoubleClick(object sender, EventArgs e)
+        {
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                SelectedPackageCategory = GridViewPackages.GetFocusedRowCellDisplayText(GridViewPackages.Columns[1]);
+                SelectedPackageUrl = GridViewPackages.GetFocusedRowCellDisplayText(GridViewPackages.Columns[0]);
+
+                ShowPackageDetails(SelectedPackageCategory, SelectedPackageUrl);
+            }
         }
 
         #endregion
 
         #region Plugins Page
+
+        private int SelectedPluginId = -1;
 
         private void TileItemPluginsShowFavorites_ItemClick(object sender, TileItemEventArgs e)
         {
@@ -7387,6 +7731,32 @@ namespace ArisenStudio.Forms.Windows
                 FilterPluginsSortOption = sortOptions.SortOption;
                 FilterPluginsSortOrder = sortOptions.SortOrder;
                 SearchPlugins();
+            }
+        }
+
+        private void TileItemPluginsAddFavorite_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedPluginId != -1)
+            {
+                var modItem = Database.PluginsXbox.GetModById(Platform.XBOX360, SelectedGameModId);
+                Settings.FavoriteMods.Add(new() { Platform = modItem.GetPlatform(), CategoryId = modItem.CategoryId, CategoryType = Database.CategoriesData.GetCategoryById(modItem.CategoryId).CategoryType, ModId = modItem.Id });
+            }
+        }
+
+        private void TileItemPluginsDownload_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedPluginId != -1)
+            {
+                var modItem = Database.PluginsXbox.GetModById(Platform.XBOX360, SelectedGameModId);
+                ShowTransferModsDialog(this, TransferType.DownloadMods, modItem, modItem.DownloadFiles.Last());
+            }
+        }
+
+        private void TileItemPluginsShowDetails_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedPluginId != -1)
+            {
+                ShowPluginDetails(SelectedPluginId);
             }
         }
 
@@ -7472,7 +7842,7 @@ namespace ArisenStudio.Forms.Windows
 
             foreach (ModItemData modItemData in Database.PluginsXbox.GetPluginItems(FilterPluginsCategoryId, FilterPluginsName, FilterPluginsVersion, FilterPluginsShowFavorites))
             {
-                bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id) != null;
+                bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id, false) != null;
 
                 bool isDownloaded = Settings.DownloadedMods.Any(x => x.Platform == modItemData.GetPlatform() && x.ModId == modItemData.Id);
 
@@ -7527,15 +7897,53 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
+        private void GridViewPlugins_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            if (e.FocusedRowHandle != -1)
+            {
+                SelectedPluginId = (int)GridViewPlugins.GetRowCellValue(e.FocusedRowHandle, GridViewPlugins.Columns[0]);
+            }
+
+            TileItemPluginsDownload.Enabled = e.FocusedRowHandle != -1;
+            TileItemPluginsShowDetails.Enabled = e.FocusedRowHandle != -1;
+        }
+
         private void GridViewPlugins_RowClick(object sender, RowClickEventArgs e)
         {
-            ModItemData selectedPlugin = Database.PluginsXbox.GetModById(Platform.XBOX360, int.Parse(GridViewPlugins.GetRowCellDisplayText(e.RowHandle, "Id")));
-            ShowPluginDetails(selectedPlugin.Id);
+            DXMouseEventArgs ea = e;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                SelectedPluginId = (int)GridViewPlugins.GetRowCellValue(info.RowHandle, GridViewPlugins.Columns[0]);
+            }
+
+            TileItemPluginsDownload.Enabled = SelectedPluginId != -1;
+            TileItemPluginsShowDetails.Enabled = SelectedPluginId != -1;
+        }
+
+        private void GridViewPlugins_DoubleClick(object sender, EventArgs e)
+        {
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                //string colCaption = info.Column == null ? "N/A" : info.Column.GetCaption();
+                //MessageBox.Show(string.Format("DoubleClick on row: {0}, column: {1}.", info.RowHandle, colCaption));
+
+                SelectedPluginId = (int)GridViewPlugins.GetRowCellValue(info.RowHandle, GridViewPlugins.Columns[0]); ;
+
+                ModItemData selectedPlugin = Database.PluginsXbox.GetModById(Platform.XBOX360, SelectedPluginId);
+                ShowPluginDetails(selectedPlugin.Id);
+            }
         }
 
         #endregion
 
         #region Applications Page
+
+        private int SelectedAppId = -1;
 
         private void TileItemAppsShowFavorites_ItemClick(object sender, TileItemEventArgs e)
         {
@@ -7560,6 +7968,32 @@ namespace ArisenStudio.Forms.Windows
                 FilterAppsSortOption = sortOptions.SortOption;
                 FilterAppsSortOrder = sortOptions.SortOrder;
                 SearchApps();
+            }
+        }
+
+        private void TileItemAppsAddFavorite_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedAppId != -1)
+            {
+                var modItem = Database.AppsPs4.GetModById(SelectedAppId);
+                Settings.FavoriteMods.Add(new() { Platform = modItem.GetPlatform(), CategoryId = modItem.CategoryId, CategoryType = Database.CategoriesData.GetCategoryById(modItem.CategoryId).CategoryType, ModId = modItem.Id });
+            }
+        }
+
+        private void TileItemAppsDownload_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedAppId != -1)
+            {
+                var appItem = Database.AppsPs4.GetModById(SelectedAppId);
+                ShowTransferAppsFileDialog(this, TransferType.DownloadMods, appItem);
+            }
+        }
+
+        private void TileItemAppsShowDetails_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedAppId != -1)
+            {
+                ShowAppDetails(SelectedAppId);
             }
         }
 
@@ -7705,7 +8139,7 @@ namespace ArisenStudio.Forms.Windows
 
             Category category;
 
-            if (FilterGameModsCategoryId.IsNullOrWhiteSpace())
+            if (FilterAppsCategoryId.IsNullOrWhiteSpace())
             {
                 category = new Category()
                 {
@@ -7724,7 +8158,7 @@ namespace ArisenStudio.Forms.Windows
 
             foreach (AppItemData appItemData in Database.AppsPs4.GetAppItems(Database.CategoriesData, FilterAppsCategoryId, FilterAppsName, FilterAppsVersion, FilterAppsFWVersion, FilterAppsShowFavorites))
             {
-                bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, appItemData.CategoryId, appItemData.Id) != null;
+                bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, appItemData.CategoryId, appItemData.Id, false) != null;
 
                 bool isDownloaded = Settings.DownloadedMods.Any(x => x.Platform == appItemData.GetPlatform() && x.ModId == appItemData.Id);
 
@@ -7783,15 +8217,49 @@ namespace ArisenStudio.Forms.Windows
             GridViewApps.MoveFirst();
         }
 
+        private void GridViewApps_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            if (e.FocusedRowHandle != -1)
+            {
+                SelectedAppId = (int)GridViewApps.GetRowCellValue(e.FocusedRowHandle, GridViewApps.Columns[0]);
+            }
+
+            TileItemAppsDownload.Enabled = e.FocusedRowHandle != -1;
+            TileItemAppsShowDetails.Enabled = e.FocusedRowHandle != -1;
+        }
+
         private void GridViewApps_RowClick(object sender, RowClickEventArgs e)
         {
-            AppItemData selectedPlugin = Database.AppsPs4.GetModById(Platform.XBOX360, int.Parse(GridViewApps.GetRowCellDisplayText(e.RowHandle, "Id")));
-            ShowAppDetails(selectedPlugin.Id);
+            DXMouseEventArgs ea = e;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                SelectedAppId = (int)GridViewApps.GetRowCellValue(info.RowHandle, GridViewApps.Columns[0]);
+            }
+
+            TileItemAppsDownload.Enabled = SelectedAppId != -1;
+            TileItemAppsShowDetails.Enabled = SelectedAppId != -1;
+        }
+
+        private void GridViewApps_DoubleClick(object sender, EventArgs e)
+        {
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                AppItemData appItem = Database.AppsPs4.GetModById((int)GridViewApps.GetRowCellValue(info.RowHandle, GridViewApps.Columns[0]));
+                SelectedAppId = appItem.Id;
+                ShowAppDetails(SelectedAppId);
+            }
         }
 
         #endregion
 
         #region Games Page
+
+        private int SelectedGameId = -1;
 
         private void TileItemGamesFavorites_ItemClick(object sender, TileItemEventArgs e)
         {
@@ -7818,6 +8286,32 @@ namespace ArisenStudio.Forms.Windows
                 FilterGamesSortOption = sortOptions.SortOption;
                 FilterGamesSortOrder = sortOptions.SortOrder;
                 SearchGames();
+            }
+        }
+
+        private void TileItemGamesAddFavorite_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedGameId != -1)
+            {
+                var modItem = Database.AppsPs4.GetModById(SelectedGameId);
+                Settings.FavoriteMods.Add(new() { Platform = modItem.GetPlatform(), CategoryId = modItem.CategoryId, CategoryType = Database.CategoriesData.GetCategoryById(modItem.CategoryId).CategoryType, ModId = modItem.Id });
+            }
+        }
+
+        private void TileItemGamesDownload_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedGameId != -1)
+            {
+                var modItem = Database.AppsPs4.GetModById(SelectedGameId);
+                ShowTransferAppsFileDialog(this, TransferType.DownloadApplication, modItem);
+            }
+        }
+
+        private void TileItemGamesShowDetails_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedGameId != -1)
+            {
+                ShowAppDetails(SelectedGameId);
             }
         }
 
@@ -7964,7 +8458,7 @@ namespace ArisenStudio.Forms.Windows
             ]);
 
         /// <summary>
-        /// Load all Games for Xbox.
+        /// Load all Games for PS4.
         /// </summary>
         public void SearchGames()
         {
@@ -7976,7 +8470,7 @@ namespace ArisenStudio.Forms.Windows
 
             foreach (AppItemData appItemData in Database.AppsPs4.GetAppItems(Database.CategoriesData, FilterGamesCategoryId, FilterGamesName, FilterGamesVersion, FilterGamesFWVersion, FilterGamesShowFavorites))
             {
-                bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, appItemData.CategoryId, appItemData.Id) != null;
+                bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, appItemData.CategoryId, appItemData.Id, false) != null;
 
                 bool isDownloaded = Settings.DownloadedMods.Any(x => x.Platform == appItemData.GetPlatform() && x.ModId == appItemData.Id);
 
@@ -8036,15 +8530,92 @@ namespace ArisenStudio.Forms.Windows
             GridViewGames.MoveFirst();
         }
 
+        private void GridViewGames_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            if (e.FocusedRowHandle != -1)
+            {
+                SelectedGameId = (int)GridViewGames.GetRowCellValue(e.FocusedRowHandle, GridViewGames.Columns[0]);
+            }
+
+            TileItemGamesDownload.Enabled = e.FocusedRowHandle != -1;
+            TileItemGamesShowDetails.Enabled = e.FocusedRowHandle != -1;
+        }
+
         private void GridViewGames_RowClick(object sender, RowClickEventArgs e)
         {
-            AppItemData selectedPlugin = Database.AppsPs4.GetModById(Platform.XBOX360, int.Parse(GridViewGames.GetRowCellDisplayText(e.RowHandle, "Id")));
-            ShowAppDetails(selectedPlugin.Id);
+            DXMouseEventArgs ea = e;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                //SelectedGameId = (int)GridViewGames.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]);
+                //AppItemData selectedPlugin = Database.AppsPs4.GetModById(Platform.XBOX360, int.Parse(GridViewGames.GetRowCellDisplayText(e.RowHandle, "Id")));
+                SelectedGameId = (int)GridViewGames.GetRowCellValue(e.RowHandle, GridViewGames.Columns[0]);
+            }
+
+            TileItemGamesDownload.Enabled = SelectedGameId != -1;
+            TileItemGamesShowDetails.Enabled = SelectedGameId != -1;
+        }
+
+        private void GridViewGames_DoubleClick(object sender, EventArgs e)
+        {
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                AppItemData selectedPlugin = Database.AppsPs4.GetModById((int)GridViewGames.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]));
+                SelectedGameId = selectedPlugin.Id;
+                ShowAppDetails(selectedPlugin.Id);
+
+                //int modId = (int)GridViewGames.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]);
+                //SelectedGameId = modId;
+                //ShowGameModDetails(modId);
+            }
         }
 
         #endregion
 
         #region Game Saves Page
+
+        private GameSaveItemData SelectedGameSaveItem { get; set; }
+
+        private void TileItemGameSavesSortBy_ItemClick(object sender, TileItemEventArgs e)
+        {
+            Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterGameSavesSortOption, [ResourceLanguage.GetString("LABEL_GAME"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_REGION"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR")], FilterGameSavesSortOrder);
+
+            if (sortOptions != null)
+            {
+                FilterGameSavesSortOption = sortOptions.SortOption;
+                FilterGameSavesSortOrder = sortOptions.SortOrder;
+                SearchGameSaves();
+            }
+        }
+
+        private void TileItemGameSavesAddFavorite_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedGameSaveItem != null)
+            {
+                var gameSaveItem = Database.GameSaves.GameSaves.First(x => x.GetPlatform() == ConsoleProfile.Platform && x.Id == SelectedGameSaveItem.Id);
+                Settings.FavoriteMods.Add(new() { Platform = gameSaveItem.GetPlatform(), CategoryId = gameSaveItem.CategoryId, CategoryType = CategoryType.GameSave, ModId = gameSaveItem.Id });
+            }
+        }
+
+        private void TileItemGameSavesDownload_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedGameSaveItem != null)
+            {
+                ShowTransferGameSavesFileDialog(this, TransferType.DownloadGameSave, SelectedGameSaveItem);
+            }
+        }
+
+        private void TileItemGameSavesShowDetails_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedGameSaveItem != null)
+            {
+                ShowGameSaveDetails(ConsoleProfile.Platform, SelectedGameSaveItem.Id);
+            }
+        }
 
         /// <summary>
         /// Get/set the sort option column.
@@ -8075,23 +8646,6 @@ namespace ArisenStudio.Forms.Windows
         /// Get/set the version for filtering game saves.
         /// </summary>
         private string FilterGameSavesVersion { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Get/set the downloads status for filtering game saves.
-        /// </summary>
-        private GameSaveItemData SelectedGameSaveItem { get; set; }
-
-        private void TileItemGameSavesSortBy_ItemClick(object sender, TileItemEventArgs e)
-        {
-            Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterGameSavesSortOption, [ResourceLanguage.GetString("LABEL_GAME"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_REGION"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR")], FilterGameSavesSortOrder);
-
-            if (sortOptions != null)
-            {
-                FilterGameSavesSortOption = sortOptions.SortOption;
-                FilterGameSavesSortOrder = sortOptions.SortOrder;
-                SearchGameSaves();
-            }
-        }
 
         private void ComboBoxGameSavesFilterCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -8236,17 +8790,48 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void GridViewGameSaves_RowClick(object sender, RowClickEventArgs e)
+        private void GridViewGameSaves_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            GameSaveItemData selectedGameSave = Database.GameSaves.GetModById(Platform, int.Parse(GridViewGameSaves.GetRowCellDisplayText(e.RowHandle, "Id")));
-            SelectedGameSaveItem = selectedGameSave;
+            if (e.FocusedRowHandle != -1)
+            {
+                SelectedGameSaveItem = Database.GameSaves.GetModById(Platform, (int)GridViewGameSaves.GetRowCellValue(e.FocusedRowHandle, GridViewGames.Columns[0]));
+            }
 
-            ShowGameSaveDetails(Platform, selectedGameSave.Id);
+            TileItemGameSavesDownload.Enabled = e.FocusedRowHandle != -1;
+            TileItemGameSavesShowDetails.Enabled = e.FocusedRowHandle != -1;
         }
 
-        private void MenuItemGameSavesInstallFiles_ItemClick(object sender, ItemClickEventArgs e)
+        private void GridViewGameSaves_RowClick(object sender, RowClickEventArgs e)
         {
-            ShowTransferGameSavesFileDialog(Window, TransferType.InstallGameSave, SelectedGameSaveItem);
+            DXMouseEventArgs ea = e;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                SelectedGameSaveItem = Database.GameSaves.GetModById(Platform, (int)GridViewGameSaves.GetRowCellValue(e.RowHandle, GridViewGames.Columns[0]));
+            }
+
+            TileItemGameSavesDownload.Enabled = SelectedGameSaveItem != null;
+            TileItemGameSavesShowDetails.Enabled = SelectedGameSaveItem != null;
+        }
+
+        private void GridViewGameSaves_DoubleClick(object sender, EventArgs e)
+        {
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                //string colCaption = info.Column == null ? "N/A" : info.Column.GetCaption();
+                //MessageBox.Show(string.Format("DoubleClick on row: {0}, column: {1}.", info.RowHandle, colCaption));
+
+                //int modId = (int)GridViewGames.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]);
+                //SelectedGameModId = modId;
+
+                SelectedGameSaveItem = Database.GameSaves.GetModById(Platform, (int)GridViewGameSaves.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]));
+
+                ShowGameSaveDetails(ConsoleProfile.Platform, SelectedGameSaveItem.Id);
+            }
         }
 
         #endregion
@@ -8320,9 +8905,26 @@ namespace ArisenStudio.Forms.Windows
         }
 
         /// <summary>
+        /// Show the custom mods details dialog.
+        /// </summary>
+        /// <param name="modId"> Specifies the <see cref="CustomItemData.Id" /> </param>
+        private void ShowCustomModDetails(int modId)
+        {
+            CustomItemData customItem = Settings.GetCustomMod(modId);
+
+            switch (customItem)
+            {
+                case null:
+                    return;
+            }
+
+            ShowCustomModDetails(SelectedCustomModId);
+        }
+
+        /// <summary>
         /// Show the game mods details dialog.
         /// </summary>
-        /// <param name="modId"> Specifies the <see cref="ModsData.modItemData.Id" /> </param>
+        /// <param name="modId"> Specifies the <see cref="ModItemData.Id" /> </param>
         private void ShowGameModDetails(int modId)
         {
             ModItemData modItemData = Database.GameModsPs3.GetModById(Platform.PS3, modId);
@@ -8333,7 +8935,7 @@ namespace ArisenStudio.Forms.Windows
                     return;
             }
 
-            DialogExtensions.ShowItemDetailsDialog(this, Platform, Database.CategoriesData, modItemData);
+            DialogExtensions.ShowItemDetailsDialog(this, Database.CategoriesData, modItemData);
         }
 
         /// <summary>
@@ -8350,7 +8952,7 @@ namespace ArisenStudio.Forms.Windows
                     return;
             }
 
-            DialogExtensions.ShowItemDetailsDialog(this, Platform, Database.CategoriesData, modItemData);
+            DialogExtensions.ShowItemDetailsDialog(this, Database.CategoriesData, modItemData);
         }
 
         /// <summary>
@@ -8367,7 +8969,7 @@ namespace ArisenStudio.Forms.Windows
                     return;
             }
 
-            DialogExtensions.ShowItemDetailsDialog(this, Platform, Database.CategoriesData, modItemData);
+            DialogExtensions.ShowItemDetailsDialog(this, Database.CategoriesData, modItemData);
         }
 
         /// <summary>
@@ -8402,16 +9004,16 @@ namespace ArisenStudio.Forms.Windows
                     return;
             }
 
-            DialogExtensions.ShowItemDetailsDialog(this, Platform, Database.CategoriesData, modItemData);
+            DialogExtensions.ShowItemDetailsDialog(this, Database.CategoriesData, modItemData);
         }
 
         /// <summary>
-        /// Show the application details dialog.
+        /// Show the application details dialog matching the specified <see cref="AppItemData.Id" />
         /// </summary>
         /// <param name="modId"> Specifies the Id of <see cref="AppItemData" /> </param>
         private void ShowAppDetails(int modId)
         {
-            AppItemData appItemData = Database.AppsPs4.GetModById(Platform.PS4, modId);
+            AppItemData appItemData = Database.AppsPs4.GetModById(modId);
 
             switch (appItemData)
             {
@@ -8419,7 +9021,7 @@ namespace ArisenStudio.Forms.Windows
                     return;
             }
 
-            DialogExtensions.ShowItemDetailsDialog(this, Platform, Database.CategoriesData, null, appItemData);
+            DialogExtensions.ShowItemDetailsDialog(this, Database.CategoriesData, null, appItemData);
         }
 
         /// <summary>
@@ -8461,6 +9063,28 @@ namespace ArisenStudio.Forms.Windows
         #endregion
 
         #region Update Status / Show Transfer Dialogs
+
+        private void UpdateCustomModsRowStatus(int modId, string text)
+        {
+            for (int i = 0; i < GridViewCustomMods.RowCount; i++)
+            {
+                if ((int)GridViewCustomMods.GetRowCellValue(i, GridViewCustomMods.Columns[0]) == modId)
+                {
+                    if (InvokeRequired)
+                    {
+                        BeginInvoke(new Action(() =>
+                        {
+                            GridViewCustomMods.SetRowCellValue(i, ResourceLanguage.GetString("LABEL_STATUS"), text);
+                        }));
+                    }
+                    else
+                    {
+                        GridViewCustomMods.SetRowCellValue(i, ResourceLanguage.GetString("LABEL_STATUS"), text);
+                    }
+                    break;
+                }
+            }
+        }
 
         private void UpdateModsRowStatus(int modId, string text)
         {
@@ -8506,6 +9130,28 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
+        private void UpdateAppsRowStatus(int modId, string text)
+        {
+            for (int i = 0; i < GridViewApps.RowCount; i++)
+            {
+                if ((int)GridViewApps.GetRowCellValue(i, GridViewApps.Columns[0]) == modId)
+                {
+                    if (InvokeRequired)
+                    {
+                        BeginInvoke(new Action(() =>
+                        {
+                            GridViewApps.SetRowCellValue(i, ResourceLanguage.GetString("LABEL_STATUS"), text);
+                        }));
+                    }
+                    else
+                    {
+                        GridViewApps.SetRowCellValue(i, ResourceLanguage.GetString("LABEL_STATUS"), text);
+                    }
+                    break;
+                }
+            }
+        }
+
         private void UpdateGameSavesRowStatus(int gameSaveId, string text)
         {
             for (int i = 0; i < GridViewGameSaves.RowCount; i++)
@@ -8528,12 +9174,21 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        public void ShowTransferModsDialog(Form owner, TransferType transferType, ModItemData modItemData, DownloadFiles downloadFiles = null, string region = "")
+        public void ShowTransferCustomModsDialog(Form owner, TransferType transferType, CustomItemData customItem)
         {
-            UpdateModsRowStatus(modItemData.Id, transferType == TransferType.DownloadMods ? ResourceLanguage.GetString("DOWNLOADING") : transferType == TransferType.InstallMods ? ResourceLanguage.GetString("INSTALLING") : ResourceLanguage.GetString("UNINSTALLING"));
+            UpdateCustomModsRowStatus(customItem.Id, transferType == TransferType.DownloadMods ? ResourceLanguage.GetString("DOWNLOADING") : transferType == TransferType.InstallMods ? ResourceLanguage.GetString("INSTALLING") : ResourceLanguage.GetString("UNINSTALLING"));
 
-            DialogExtensions.ShowTransferFilesDialog(owner, transferType, Database.CategoriesData.GetCategoryById(modItemData.CategoryId), modItemData, downloadFiles, region);
-            UpdateModsRowStatus(modItemData.Id, transferType == TransferType.DownloadMods ? ResourceLanguage.GetString("LABEL_DOWNLOADED") : transferType == TransferType.InstallMods ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
+            DialogExtensions.ShowTransferFilesDialog(owner, transferType, customItem);
+            UpdateModsRowStatus(customItem.Id, transferType == TransferType.DownloadMods ? ResourceLanguage.GetString("LABEL_DOWNLOADED") : transferType == TransferType.InstallMods ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
+            LoadInstalledMods();
+        }
+
+        public void ShowTransferModsDialog(Form owner, TransferType transferType, ModItemData modItem, DownloadFiles downloadFiles = null, string region = "")
+        {
+            UpdateModsRowStatus(modItem.Id, transferType == TransferType.DownloadMods ? ResourceLanguage.GetString("DOWNLOADING") : transferType == TransferType.InstallMods ? ResourceLanguage.GetString("INSTALLING") : ResourceLanguage.GetString("UNINSTALLING"));
+
+            DialogExtensions.ShowTransferFilesDialog(owner, transferType, Database.CategoriesData.GetCategoryById(modItem.CategoryId), modItem, downloadFiles, region);
+            UpdateModsRowStatus(modItem.Id, transferType == TransferType.DownloadMods ? ResourceLanguage.GetString("LABEL_DOWNLOADED") : transferType == TransferType.InstallMods ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
             LoadInstalledMods();
             LoadDownloads();
         }
@@ -8545,6 +9200,14 @@ namespace ArisenStudio.Forms.Windows
             DialogExtensions.ShowTransferPackagesDialog(owner, transferType, packageItem);
             UpdatePackagesRowStatus(packageItem.Url, transferType == TransferType.DownloadPackage ? ResourceLanguage.GetString("LABEL_DOWNLOADED") : transferType == TransferType.InstallPackage ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
             LoadDownloads();
+        }
+
+        public void ShowTransferAppsFileDialog(Form owner, TransferType transferType, AppItemData appItemData)
+        {
+            UpdateAppsRowStatus(appItemData.Id, transferType == TransferType.DownloadGameSave ? ResourceLanguage.GetString("DOWNLOADING") : ResourceLanguage.GetString("INSTALLING"));
+
+            DialogExtensions.ShowTransferFilesDialog(owner, transferType, Database.CategoriesData.GetCategoryById(appItemData.CategoryId), appItemData, appItemData.DownloadFiles.Last());
+            UpdateAppsRowStatus(appItemData.Id, transferType == TransferType.DownloadGameSave ? ResourceLanguage.GetString("LABEL_DOWNLOADED") : ResourceLanguage.GetString("LABEL_INSTALLED"));
         }
 
         public void ShowTransferGameSavesFileDialog(Form owner, TransferType transferType, GameSaveItemData gameSaveItem)
@@ -8561,8 +9224,9 @@ namespace ArisenStudio.Forms.Windows
 
         private void SetAboutInfo()
         {
-            LabelAboutTitle.Text = $@"Arisen Studio ({UpdateExtensions.CurrentVersionName})";
-            LabelAboutSubTitle.Text = string.Format(LabelAboutSubTitle.Text, GitHubAllReleases[0].PublishedAt.DateTime.ToShortDateString());
+            //LabelAboutTitle.Text = $@"Arisen Studio ({UpdateExtensions.CurrentVersionName})";
+            LabelAboutVersion.Text = $"{UpdateExtensions.CurrentVersionName} ({GitHubAllReleases[0].PublishedAt.DateTime.ToShortDateString()})";
+            //LabelAboutSubTitle.Text = string.Format(LabelAboutSubTitle.Text, GitHubAllReleases[0].PublishedAt.DateTime.ToShortDateString());
         }
 
         private void LabelAboutSubTitle_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
@@ -8572,7 +9236,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void ImageSocialWebsite_Click(object sender, EventArgs e)
         {
-            Process.Start("https://arisenstudio.info/");
+            Process.Start(Urls.ProjectWebsite);
         }
 
         private void ImageSocialTwitter_Click(object sender, EventArgs e)
@@ -8948,7 +9612,7 @@ namespace ArisenStudio.Forms.Windows
         protected void DrawSeparator(GraphicsCache cache, AccordionElementBaseViewInfo elementInfo)
         {
             SkinElement skinElem = GetSeparatorSkinElement(elementInfo.ControlInfo.LookAndFeel);
-            Rectangle rect = new(elementInfo.HeaderBounds.X, elementInfo.HeaderBounds.Bottom - skinElem.Size.MinSize.Height + 2, elementInfo.HeaderBounds.Width, skinElem.Size.MinSize.Height + 3);
+            Rectangle rect = new(elementInfo.HeaderBounds.X, elementInfo.HeaderBounds.Bottom - skinElem.Size.MinSize.Height + 2, elementInfo.HeaderBounds.Width, skinElem.Size.MinSize.Height + 1);
             SkinElementInfo skinElemInfo = new(skinElem, rect);
             ObjectPainter.DrawObject(cache, SkinElementPainter.Default, skinElemInfo);
         }

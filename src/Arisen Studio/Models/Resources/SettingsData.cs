@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using static DevExpress.Utils.Drawing.Helpers.NativeMethods;
 
 namespace ArisenStudio.Models.Resources
 {
@@ -16,7 +17,7 @@ namespace ArisenStudio.Models.Resources
 
         public List<ConsoleProfile> ConsoleProfiles { get; set; } = [];
 
-        public List<CustomMod> CustomMods { get; set; } = [];
+        public List<CustomItemData> CustomMods { get; set; } = [];
 
         public bool FirstTimeUse { get; set; } = true;
 
@@ -115,7 +116,7 @@ namespace ArisenStudio.Models.Resources
 
         // Custom Mods
 
-        public List<CustomMod> GetCustomMods(CategoriesData categoriesData, string platform, string category, string name, string modType, string version)
+        public List<CustomItemData> GetCustomMods(CategoriesData categoriesData, string platform, string category, string name, string modType, string version)
         {
             return CustomMods.Where(x =>
                     x.Platform.Humanize().Equals(platform) &&
@@ -125,6 +126,11 @@ namespace ArisenStudio.Models.Resources
                     //x.Region.ContainsIgnoreCase(region) &&
                     x.Version.EqualsIgnoreCase(version))
                     .ToList();
+        }
+
+        public CustomItemData GetCustomMod(int modId)
+        {
+            return CustomMods.Find(x => x.Id.Equals(modId));
         }
 
         // Favorites
@@ -209,28 +215,31 @@ namespace ArisenStudio.Models.Resources
         }
 
         /// <summary>
-        /// Update the installed mods.
+        /// Update the list of installed mods.
         /// </summary>
-        /// <param name="consoleProfile"> </param>
-        /// <param name="categoryId"> </param>
-        /// <param name="modId"> </param>
-        /// <param name="totalFiles"> </param>
-        /// <param name="dateInstalled"> </param>
-        /// <param name="downloadFiles"> </param>
-        public void UpdateInstalledMods(ConsoleProfile consoleProfile, string categoryId, int modId, int totalFiles, DateTime dateInstalled, DownloadFiles downloadFiles)
+        /// <param name="consoleProfile"></param>
+        /// <param name="categoryId"></param>
+        /// <param name="modId"></param>
+        /// <param name="totalFiles"></param>
+        /// <param name="dateInstalled"></param>
+        /// <param name="downloadFiles"></param>
+        /// <param name="isCustom"></param>
+        public void UpdateInstalledMods(ConsoleProfile consoleProfile, string categoryId, CategoryType categoryType, int modId, int totalFiles, DateTime dateInstalled, DownloadFiles downloadFiles, bool isCustom = false)
         {
             if (consoleProfile != null)
             {
-                RemoveInstalledMods(consoleProfile, categoryId, modId);
+                RemoveInstalledMods(consoleProfile, categoryId, modId, isCustom);
 
                 consoleProfile.InstalledMods.Add(new InstalledModInfo
                 {
                     Platform = consoleProfile.Platform,
                     CategoryId = categoryId,
+                    CategoryType = categoryType,
                     ModId = modId,
                     TotalFiles = totalFiles,
                     DateInstalled = dateInstalled,
-                    DownloadFiles = downloadFiles
+                    DownloadFiles = downloadFiles,
+                    IsCustom = isCustom
                 });
             }
         }
@@ -241,9 +250,10 @@ namespace ArisenStudio.Models.Resources
         /// <param name="consoleProfile"> </param>
         /// <param name="categoryId"> </param>
         /// <param name="modId"> </param>
-        public void RemoveInstalledMods(ConsoleProfile consoleProfile, string categoryId, int modId)
+        /// <param name="isCustom"> </param>
+        public void RemoveInstalledMods(ConsoleProfile consoleProfile, string categoryId, int modId, bool isCustom)
         {
-            consoleProfile.InstalledMods.RemoveAll(x => x.CategoryId.EqualsIgnoreCase(categoryId) && x.ModId.Equals(modId));
+            consoleProfile.InstalledMods.RemoveAll(x => x.CategoryId.EqualsIgnoreCase(categoryId) && x.ModId.Equals(modId) && x.IsCustom == isCustom);
         }
 
         /// <summary>
@@ -252,10 +262,11 @@ namespace ArisenStudio.Models.Resources
         /// <param name="consoleProfile"> </param>
         /// <param name="categoryId"> </param>
         /// <param name="modId"> </param>
+        /// <param name="isCustom"> </param>
         /// <returns> </returns>
-        public InstalledModInfo GetInstalledMods(ConsoleProfile consoleProfile, string categoryId, int modId)
+        public InstalledModInfo GetInstalledMods(ConsoleProfile consoleProfile, string categoryId, int modId, bool isCustom)
         {
-            return consoleProfile.InstalledMods.FirstOrDefault(x => x.CategoryId.EqualsIgnoreCase(categoryId) && x.ModId.Equals(modId));
+            return consoleProfile.InstalledMods.FirstOrDefault(x => x.CategoryId.EqualsIgnoreCase(categoryId) && x.ModId.Equals(modId) && x.IsCustom == isCustom);
         }
 
         /// <summary>
@@ -267,6 +278,19 @@ namespace ArisenStudio.Models.Resources
         public InstalledModInfo GetInstalledMods(ConsoleProfile consoleProfile, string categoryId)
         {
             return consoleProfile.InstalledMods.FirstOrDefault(x => x.CategoryId.EqualsIgnoreCase(categoryId));
+        }
+
+        /// <summary>
+        /// Get the <see cref="InstalledModInfo" /> for the <see cref="ModsData.ModItem.Id" /> if one exists.
+        /// </summary>
+        /// <param name="consoleProfile"> </param>
+        /// <param name="categoryId"> </param>
+        /// <param name="modId"> </param>
+        /// <param name="isCustom"> </param>
+        /// <returns> </returns>
+        public InstalledModInfo GetInstalledMods(ConsoleProfile consoleProfile, CategoryType categoryType, int modId)
+        {
+            return consoleProfile.InstalledMods.FirstOrDefault(x => x.CategoryType.Equals(categoryType) && x.ModId.Equals(modId));
         }
 
         /// <summary>
@@ -401,13 +425,13 @@ namespace ArisenStudio.Models.Resources
         }
     }
 
-    public class CustomMod
+    public class CustomItemData
     {
-        public int ModId { get; set; } = 0;
+        public int Id { get; set; } = 0;
 
         public Platform Platform { get; set; } = Platform.PS3;
 
-        public string CategoryType { get; set; }
+        public CategoryType CategoryType { get; set; } = CategoryType.Game;
 
         public string Category { get; set; }
 
@@ -416,6 +440,8 @@ namespace ArisenStudio.Models.Resources
         public string ModType { get; set; }
 
         public string Version { get; set; }
+
+        public string Description { get; set; }
 
         public List<ListItem> Files { get; set; }
     }
@@ -468,13 +494,19 @@ namespace ArisenStudio.Models.Resources
 
         public string CategoryId { get; set; }
 
+        public CategoryType CategoryType { get; set; }
+
         public int ModId { get; set; }
+
+        public string Name { get; set; }
 
         public int TotalFiles { get; set; }
 
         public DateTime DateInstalled { get; set; }
 
         public DownloadFiles DownloadFiles { get; set; }
+
+        public bool IsCustom { get; set; }
     }
 
     /// <summary>

@@ -35,13 +35,15 @@ namespace ArisenStudio.Forms.Dialogs.Details
         public CategoryType CategoryType;
         public ModItemData ModItem;
 
+        public InstalledModInfo InstalledModInfo;
+
         public bool IsFavorite;
 
         private void GameModDialog_Load(object sender, EventArgs e)
         {
             Region = new Region(GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 20));
 
-            InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id) : null;
+            InstalledModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id, false) : null;
 
             StatLastUpdated.Title = Language.GetString("LABEL_LAST_UPDATED");
             StatSystemType.Title = Language.GetString("LABEL_SYSTEM_TYPE");
@@ -64,18 +66,12 @@ namespace ArisenStudio.Forms.Dialogs.Details
             StatSubmittedBy.Value = ModItem.SubmittedBy.Replace("&", "&&");
             StatGameMode.Value = string.Join(", ", ModItem.GameModes);
 
+            TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
+            TabDownloads.Text = $"{Language.GetString("LABEL_DOWNLOADS")} ({ModItem.DownloadFiles.Count})";
+
             LabelDescription.Text = string.IsNullOrWhiteSpace(ModItem.Description)
                 ? Language.GetString("NO_MORE_DETAILS")
                 : ModItem.Description.Replace("&", "&&");
-
-            //Regex rgxUrls = new(@"(((http|ftp|https):\/\/)?[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:\/~\+#]*[\w\-\@?^=%&amp;\/~\+#])?)");
-            //string result = rgxUrls.Replace(ModItem.Description, $"<a href=\"$1\"> here </a>");
-
-            //foreach (Match match in rgxUrls.Matches(ModItem.Description))
-            //{
-            //    LabelDescription.Text.Replace(match.Value, $"<a href=\"$1\"> {match.Value} </a>");
-            //    //string result = rgxUrls.Replace(ModItem.Description, $"<a href=\"$1\"> {match.Value} </a>");
-            //}
 
             if (ModItem.ModType.Equals("SCRIPT"))
             {
@@ -103,8 +99,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 TabDownloads.Controls.Add(downloadItem);
             }
 
-            TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
-            TabDownloads.Text = $"{Language.GetString("LABEL_DOWNLOADS")} ({ModItem.DownloadFiles.Count})";
+            ButtonDownload.Text = Language.GetString("LABEL_DOWNLOAD");
+            ButtonInstall.Text = Language.GetString("LABEL_INSTALL");
 
             IsFavorite = Settings.FavoriteMods.Exists(x => x.CategoryType == CategoryType && x.CategoryId == ModItem.CategoryId && x.ModId == ModItem.Id && x.Platform == ModItem.GetPlatform());
 
@@ -129,7 +125,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
         {
             if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
             {
-                TabDownloads.VerticalScroll.Value = e.NewValue;
+                TabDescription.VerticalScroll.Value = e.NewValue;
             }
         }
 
@@ -155,6 +151,18 @@ namespace ArisenStudio.Forms.Dialogs.Details
         private void ButtonDownloadLatest_Click(object sender, EventArgs e)
         {
             DialogExtensions.ShowTransferFilesDialog(this, TransferType.DownloadMods, ModItem.GetCategory(Categories), ModItem, ModItem.DownloadFiles.Last());
+        }
+
+        private void ButtonInstallLatest_Click(object sender, EventArgs e)
+        {
+            if (InstalledModInfo == null)
+            {
+                DialogExtensions.ShowTransferFilesDialog(this, TransferType.InstallMods, ModItem.GetCategory(Categories), ModItem, ModItem.DownloadFiles.Last());
+            }
+            else
+            {
+                DialogExtensions.ShowTransferFilesDialog(this, TransferType.UninstallMods, ModItem.GetCategory(Categories), ModItem, InstalledModInfo.DownloadFiles);
+            }
         }
 
         private void ButtonFavorite_Click(object sender, EventArgs e)

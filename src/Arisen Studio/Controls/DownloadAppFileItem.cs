@@ -69,7 +69,7 @@ namespace ArisenStudio.Controls
 
         private void ImageInstall_Click(object sender, EventArgs e)
         {
-            InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, AppItemData.CategoryId, AppItemData.Id) : null;
+            InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, AppItemData.CategoryId, AppItemData.Id, false) : null;
             bool isInstalled = installedModInfo != null;
 
             if (isInstalled)

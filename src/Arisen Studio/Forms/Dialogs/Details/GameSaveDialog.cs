@@ -114,7 +114,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
         {
             if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
             {
-                TabDownloads.VerticalScroll.Value = e.NewValue;
+                TabDescription.VerticalScroll.Value = e.NewValue;
             }
         }
 

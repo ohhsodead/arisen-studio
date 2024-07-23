@@ -15,6 +15,7 @@ using System.Resources;
 using System.Windows.Forms;
 using ScrollOrientation = DevExpress.XtraEditors.ScrollOrientation;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
@@ -55,6 +56,9 @@ namespace ArisenStudio.Forms.Dialogs.Details
             StatSubmittedBy.Value = ModItem.SubmittedBy.Replace("&", "&&");
             StatVersion.Value = string.Join(" & ", ModItem.Versions).Replace("&", "&&");
 
+            TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
+            TabDownloads.Text = $"{Language.GetString("LABEL_DOWNLOADS")} ({ModItem.DownloadFiles.Count})";
+
             LabelDescription.Text = string.IsNullOrWhiteSpace(ModItem.Description)
                 ? Language.GetString("NO_MORE_DETAILS")
                 : ModItem.Description.Replace("&", "&&");
@@ -80,8 +84,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 TabDownloads.Controls.Add(downloadItem);
             }
 
-            TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
-            TabDownloads.Text = $"{Language.GetString("LABEL_DOWNLOADS")} ({ModItem.DownloadFiles.Count})";
+            ButtonDownload.Text = Language.GetString("LABEL_DOWNLOAD");
+            ButtonInstall.Text = Language.GetString("LABEL_INSTALL");
 
             IsFavorite = Settings.FavoriteMods.Exists(x => x.CategoryType == CategoryType && x.CategoryId == ModItem.CategoryId && x.ModId == ModItem.Id && x.Platform == ModItem.GetPlatform());
 
@@ -111,7 +115,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
         {
             if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
             {
-                TabDownloads.VerticalScroll.Value = e.NewValue;
+                TabDescription.VerticalScroll.Value = e.NewValue;
             }
         }
 
@@ -123,9 +127,14 @@ namespace ArisenStudio.Forms.Dialogs.Details
             }
         }
 
+        private void ButtonInstall_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void ButtonDownloadLatest_Click(object sender, EventArgs e)
         {
-            DialogExtensions.ShowTransferFilesDialog(this, TransferType.DownloadMods, ModItem.GetCategory(Categories), ModItem, ModItem.DownloadFiles.Last());
+            DialogExtensions.ShowTransferFilesDialog(this, TransferType.DownloadMods, ModItem.GetCategory(Categories), ModItem, ModItem.GetDownloadFiles(this));
         }
 
         private void ButtonFavorite_Click(object sender, EventArgs e)

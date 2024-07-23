@@ -10,9 +10,7 @@ using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
-using ArisenStudio.Models.Dashboard;
-using System.Net.Http;
-using System.Threading.Tasks;
+using ArisenStudio.Models.Database;
 
 namespace ArisenStudio.Extensions
 {
@@ -34,6 +32,11 @@ namespace ArisenStudio.Extensions
         public static List<GitHubReleaseData> AllReleases { get; set; } = GetAllReleasesData();
 
         /// <summary>
+        /// Get download stats from GitHub.
+        /// </summary>
+        public static StatsData StatsData { get; set; } = GetDownloadStats();
+
+        /// <summary>
         /// Get all release information from the GitHub API.
         /// </summary>
         /// <returns> </returns>
@@ -44,8 +47,18 @@ namespace ArisenStudio.Extensions
         }
 
         /// <summary>
-        /// Check the current application version against the latest version hosted on GitHub. If
-        /// this version is outdated, then download and run the latest version installer.
+        /// Get download stats from GitHub.
+        /// </summary>
+        /// <returns> </returns>
+        public static StatsData GetDownloadStats()
+        {
+            using StreamReader streamReader = new(HttpExtensions.GetStream(Urls.StatsData));
+            return JsonConvert.DeserializeObject<StatsData>(streamReader.ReadToEnd());
+        }
+
+        /// <summary>
+        /// Check the current application version against the latest version in GitHub Releases. 
+        /// If there's a newer version, then download and update the files.
         /// </summary>
         public static void CheckApplicationVersion()
         {
@@ -60,7 +73,7 @@ namespace ArisenStudio.Extensions
         }
 
         /// <summary>
-        /// 
+        /// Check for the a newer version and prompt the user.
         /// </summary>
         /// <param name="args"></param>
         private static void AutoUpdaterOnCheckForUpdateEvent(UpdateInfoEventArgs args)

@@ -143,14 +143,14 @@
         Niw0eiIgY2xhc3M9IkdyZWVuIiAvPg0KICA8L2c+DQo8L3N2Zz4L
 </value>
   </data>
-  <data name="labelControl8.Text" xml:space="preserve">
+  <data name="LabelCreditsTranslators.Text" xml:space="preserve">
     <value>&lt;a href="http://djopposite.se/"&gt;goldug&lt;/a&gt;
 &lt;a href="mailto:jaortiz2026@gmail.com"&gt;Kloido&lt;/a&gt;
 &lt;a href="https://twitter.com/NCKwolf/"&gt;NCKwolf&lt;/a&gt;
 &lt;a href="mailto:serdarsaglam@msn.com"&gt;Serdar Sağlam&lt;/a&gt;
 &lt;a href="https://twitter.com/Z1bUrG3/"&gt;z1burg3&lt;/a&gt;</value>
   </data>
-  <data name="labelControl4.Text" xml:space="preserve">
+  <data name="LabelCreditsContributors.Text" xml:space="preserve">
     <value>&lt;a href="https://github.com/crystall1nedev"&gt;crystall1nedev&lt;/a&gt;
 &lt;a href="https://github.com/EgoMaw"&gt;EgoMaw&lt;/a&gt;
 &lt;a href="http://djopposite.se/"&gt;goldug&lt;/a&gt;
@@ -159,7 +159,7 @@
 &lt;a href="https://github.com/oSerenity"&gt;oSerenity&lt;/a&gt;
 &lt;a href="mailto:nurishafa26@gmail.com"&gt;tsuiarts&lt;/a&gt;</value>
   </data>
-  <data name="labelControl2.Text" xml:space="preserve">
+  <data name="LabelCreditsLibraries.Text" xml:space="preserve">
     <value>&lt;a href="https://github.com/ravibpatel/AutoUpdater.NET/"&gt;AutoUpdater.NET&lt;/a&gt;
 &lt;a href="https://github.com/arminreiter/FeedReader/"&gt;CodeHollow.FeedReader&lt;/a&gt;
 &lt;a href="https://github.com/Lachee/discord-rpc-csharp"&gt;Discord RPC&lt;/a&gt;
@@ -174,10 +174,13 @@
 &lt;a href="https://nlog-project.org/"&gt;NLog&lt;/a&gt;
 &lt;a href="https://www.aldostools.org/"&gt;PARAM.SFO&lt;/a&gt;
 &lt;a href="https://github.com/iMCSx/PS3Lib"&gt;PS3Lib&lt;/a&gt;
-&lt;a href="https://github.com/aldostools/webMAN-MOD"&gt;webMAN API&lt;/a&gt;
+&lt;a href="https://github.com/aldostools/webMAN-MOD"&gt;webMAN MOD&lt;/a&gt;
 &lt;a href="https://aka.ms/webview"&gt;WebView2&lt;/a&gt;
 &lt;a href="https://microsoft.com/"&gt;XDevkit&lt;/a&gt;</value>
   </data>
+  <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>574, 1</value>
+  </metadata>
   <metadata name="ImageCollection.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>293, -1</value>
   </metadata>

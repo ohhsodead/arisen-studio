@@ -54,7 +54,7 @@ namespace ArisenStudio.Controls
             this.LabelName.AutoEllipsis = true;
             this.LabelName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelName.Location = new System.Drawing.Point(4, 11);
+            this.LabelName.Location = new System.Drawing.Point(4, 10);
             this.LabelName.Margin = new System.Windows.Forms.Padding(0, 1, 3, 3);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(446, 17);
@@ -141,7 +141,7 @@ namespace ArisenStudio.Controls
             this.LabelPlayableVersions.AutoEllipsis = true;
             this.LabelPlayableVersions.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelPlayableVersions.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelPlayableVersions.Location = new System.Drawing.Point(4, 34);
+            this.LabelPlayableVersions.Location = new System.Drawing.Point(4, 33);
             this.LabelPlayableVersions.Margin = new System.Windows.Forms.Padding(3, 3, 3, 14);
             this.LabelPlayableVersions.Name = "LabelPlayableVersions";
             this.LabelPlayableVersions.Size = new System.Drawing.Size(446, 15);
@@ -154,7 +154,7 @@ namespace ArisenStudio.Controls
             this.Separator.LineAlignment = DevExpress.XtraEditors.Alignment.Near;
             this.Separator.LineColor = System.Drawing.SystemColors.WindowFrame;
             this.Separator.LineThickness = 2;
-            this.Separator.Location = new System.Drawing.Point(0, 62);
+            this.Separator.Location = new System.Drawing.Point(0, 61);
             this.Separator.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.Separator.Name = "Separator";
             this.Separator.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -247,7 +247,7 @@ namespace ArisenStudio.Controls
             this.Controls.Add(this.LabelHeaderLastUpdated);
             this.Margin = new System.Windows.Forms.Padding(2, 0, 3, 0);
             this.Name = "DownloadAppFileItem";
-            this.Size = new System.Drawing.Size(776, 63);
+            this.Size = new System.Drawing.Size(776, 62);
             this.Load += new System.EventHandler(this.DownloadItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Separator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageDownload)).EndInit();

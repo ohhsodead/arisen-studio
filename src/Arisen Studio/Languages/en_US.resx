@@ -1688,6 +1688,14 @@ If you don't want to uninstall the files, click 'No' and all of these files will
   <data name="UNINSTALL_CANCELED" xml:space="preserve">
     <value>Uninstallation canceled.</value>
   </data>
+  <data name="UNINSTALL_CONNECTION_REQUIREMENT" xml:space="preserve">
+    <value>You must be connected to: {0} ({1}) to uninstall the files.</value>
+    <comment>Example: You must be connected to: {Console Name} ({PS3}) to uninstall these files.</comment>
+  </data>
+  <data name="UNINSTALL_CONNECT_TO_REQUIRED_CONSOLE" xml:space="preserve">
+    <value>These files were not installed on the connected console. Please connect to {0} ({1}) to uninstall them."</value>
+    <comment>Example: These files were not installed on the connected console. Please connect to {Console Name} ({PS3}) to uninstall them."</comment>
+  </data>
   <data name="UNINSTALL_FILE" xml:space="preserve">
     <value>Uninstall File</value>
   </data>

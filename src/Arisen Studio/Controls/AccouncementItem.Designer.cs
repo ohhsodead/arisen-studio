@@ -98,10 +98,11 @@ namespace ArisenStudio.Controls
             this.ImageDismiss.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ImageDismiss.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Red;
             this.ImageDismiss.ItemAppearance.Normal.FillColor = System.Drawing.Color.Gray;
-            this.ImageDismiss.Location = new System.Drawing.Point(531, 4);
+            this.ImageDismiss.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
+            this.ImageDismiss.Location = new System.Drawing.Point(530, 3);
             this.ImageDismiss.Name = "ImageDismiss";
             this.ImageDismiss.ShowToolTips = DevExpress.Utils.DefaultBoolean.False;
-            this.ImageDismiss.Size = new System.Drawing.Size(18, 18);
+            this.ImageDismiss.Size = new System.Drawing.Size(20, 20);
             this.ImageDismiss.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.ImageDismiss.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ImageDismiss.SvgImage")));
             this.ImageDismiss.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;

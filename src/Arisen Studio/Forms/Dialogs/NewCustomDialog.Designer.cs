@@ -32,60 +32,49 @@ namespace ArisenStudio.Forms.Dialogs
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewCustomDialog));
-            this.LabelLogin = new DevExpress.XtraEditors.LabelControl();
             this.LabelName = new DevExpress.XtraEditors.LabelControl();
             this.LabelCategoryType = new DevExpress.XtraEditors.LabelControl();
-            this.ButtonOK = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonSave = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonChangeLoginDetails = new DevExpress.XtraEditors.SimpleButton();
             this.LabelPlatform = new DevExpress.XtraEditors.LabelControl();
             this.ComboBoxPlatform = new DevExpress.XtraEditors.ComboBoxEdit();
             this.TextBoxName = new DevExpress.XtraEditors.TextEdit();
-            this.CheckBoxUseDefaultConsole = new DevExpress.XtraEditors.CheckEdit();
-            this.LabelDefault = new DevExpress.XtraEditors.LabelControl();
-            this.CheckBoxDefault = new DevExpress.XtraEditors.CheckEdit();
             this.ComboBoxCategoryType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ComboBoxCategory = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelCategory = new DevExpress.XtraEditors.LabelControl();
+            this.LabelVersion = new DevExpress.XtraEditors.LabelControl();
             this.ComboBoxModType = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelModType = new DevExpress.XtraEditors.LabelControl();
             this.GridViewFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.GridControlFiles = new DevExpress.XtraGrid.GridControl();
-            this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
-            this.ButtonInstallFile = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonDownloadFile = new DevExpress.XtraEditors.SimpleButton();
             this.TextBoxVersion = new DevExpress.XtraEditors.TextEdit();
+            this.LabelDescription = new DevExpress.XtraEditors.LabelControl();
+            this.TextBoxDescription = new DevExpress.XtraRichEdit.RichEditControl();
+            this.GroupInstallationFiles = new DevExpress.XtraEditors.GroupControl();
+            this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
+            this.ButtonChooseFile = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonDeleteFile = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonDeleteAll = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonHelp = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxPlatform.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxUseDefaultConsole.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxDefault.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxCategoryType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxCategory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxModType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxVersion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupInstallationFiles)).BeginInit();
+            this.GroupInstallationFiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).BeginInit();
             this.PanelButtons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxVersion.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // LabelLogin
-            // 
-            this.LabelLogin.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelLogin.Appearance.Options.UseFont = true;
-            this.LabelLogin.Location = new System.Drawing.Point(12, 116);
-            this.LabelLogin.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
-            this.LabelLogin.Name = "LabelLogin";
-            this.LabelLogin.Size = new System.Drawing.Size(33, 15);
-            this.LabelLogin.TabIndex = 1141;
-            this.LabelLogin.Text = "Login:";
             // 
             // LabelName
             // 
             this.LabelName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelName.Appearance.Options.UseFont = true;
-            this.LabelName.Location = new System.Drawing.Point(258, 12);
+            this.LabelName.Location = new System.Drawing.Point(12, 62);
             this.LabelName.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(32, 15);
@@ -103,37 +92,27 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelCategoryType.TabIndex = 14;
             this.LabelCategoryType.Text = "Category Type";
             // 
-            // ButtonOK
+            // ButtonSave
             // 
-            this.ButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOK.Location = new System.Drawing.Point(324, 415);
-            this.ButtonOK.Name = "ButtonOK";
-            this.ButtonOK.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonOK.Size = new System.Drawing.Size(80, 24);
-            this.ButtonOK.TabIndex = 10;
-            this.ButtonOK.Text = "Save";
-            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
+            this.ButtonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonSave.Location = new System.Drawing.Point(324, 426);
+            this.ButtonSave.Name = "ButtonSave";
+            this.ButtonSave.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonSave.Size = new System.Drawing.Size(80, 24);
+            this.ButtonSave.TabIndex = 11;
+            this.ButtonSave.Text = "Save";
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // ButtonCancel
             // 
             this.ButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonCancel.Location = new System.Drawing.Point(410, 415);
+            this.ButtonCancel.Location = new System.Drawing.Point(410, 426);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCancel.Size = new System.Drawing.Size(80, 24);
-            this.ButtonCancel.TabIndex = 11;
+            this.ButtonCancel.TabIndex = 12;
             this.ButtonCancel.Text = "Cancel";
-            // 
-            // ButtonChangeLoginDetails
-            // 
-            this.ButtonChangeLoginDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonChangeLoginDetails.Location = new System.Drawing.Point(410, 116);
-            this.ButtonChangeLoginDetails.Name = "ButtonChangeLoginDetails";
-            this.ButtonChangeLoginDetails.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonChangeLoginDetails.Size = new System.Drawing.Size(80, 24);
-            this.ButtonChangeLoginDetails.TabIndex = 4;
-            this.ButtonChangeLoginDetails.Text = "Change";
             // 
             // LabelPlatform
             // 
@@ -168,46 +147,14 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             // TextBoxName
             // 
-            this.TextBoxName.Location = new System.Drawing.Point(258, 32);
+            this.TextBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxName.Location = new System.Drawing.Point(12, 82);
             this.TextBoxName.Name = "TextBoxName";
             this.TextBoxName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxName.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxName.Size = new System.Drawing.Size(232, 24);
+            this.TextBoxName.Size = new System.Drawing.Size(240, 24);
             this.TextBoxName.TabIndex = 4;
-            // 
-            // CheckBoxUseDefaultConsole
-            // 
-            this.CheckBoxUseDefaultConsole.Location = new System.Drawing.Point(264, 118);
-            this.CheckBoxUseDefaultConsole.Name = "CheckBoxUseDefaultConsole";
-            this.CheckBoxUseDefaultConsole.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.CheckBoxUseDefaultConsole.Properties.Appearance.Options.UseFont = true;
-            this.CheckBoxUseDefaultConsole.Properties.AutoWidth = true;
-            this.CheckBoxUseDefaultConsole.Properties.Caption = "";
-            this.CheckBoxUseDefaultConsole.Size = new System.Drawing.Size(20, 20);
-            this.CheckBoxUseDefaultConsole.TabIndex = 3;
-            this.CheckBoxUseDefaultConsole.Visible = false;
-            // 
-            // LabelDefault
-            // 
-            this.LabelDefault.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LabelDefault.Appearance.Options.UseFont = true;
-            this.LabelDefault.Location = new System.Drawing.Point(12, 148);
-            this.LabelDefault.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
-            this.LabelDefault.Name = "LabelDefault";
-            this.LabelDefault.Size = new System.Drawing.Size(41, 15);
-            this.LabelDefault.TabIndex = 1149;
-            this.LabelDefault.Text = "Default:";
-            // 
-            // CheckBoxDefault
-            // 
-            this.CheckBoxDefault.Location = new System.Drawing.Point(264, 150);
-            this.CheckBoxDefault.Name = "CheckBoxDefault";
-            this.CheckBoxDefault.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.CheckBoxDefault.Properties.Appearance.Options.UseFont = true;
-            this.CheckBoxDefault.Properties.AutoWidth = true;
-            this.CheckBoxDefault.Properties.Caption = "";
-            this.CheckBoxDefault.Size = new System.Drawing.Size(20, 20);
-            this.CheckBoxDefault.TabIndex = 1147;
             // 
             // ComboBoxCategoryType
             // 
@@ -237,7 +184,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.ComboBoxCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBoxCategory.EditValue = "";
-            this.ComboBoxCategory.Location = new System.Drawing.Point(12, 82);
+            this.ComboBoxCategory.Location = new System.Drawing.Point(258, 32);
             this.ComboBoxCategory.Name = "ComboBoxCategory";
             this.ComboBoxCategory.Properties.AllowFocused = false;
             this.ComboBoxCategory.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -252,35 +199,37 @@ namespace ArisenStudio.Forms.Dialogs
             "Resource",
             "Application",
             "Game"});
-            this.ComboBoxCategory.Size = new System.Drawing.Size(240, 24);
+            this.ComboBoxCategory.Size = new System.Drawing.Size(232, 24);
             this.ComboBoxCategory.TabIndex = 3;
             // 
-            // labelControl1
+            // LabelCategory
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(12, 62);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(83, 15);
-            this.labelControl1.TabIndex = 1151;
-            this.labelControl1.Text = "Category Name";
+            this.LabelCategory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelCategory.Appearance.Options.UseFont = true;
+            this.LabelCategory.Location = new System.Drawing.Point(258, 12);
+            this.LabelCategory.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
+            this.LabelCategory.Name = "LabelCategory";
+            this.LabelCategory.Size = new System.Drawing.Size(48, 15);
+            this.LabelCategory.TabIndex = 1151;
+            this.LabelCategory.Text = "Category";
             // 
-            // labelControl2
+            // LabelVersion
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(258, 62);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(39, 15);
-            this.labelControl2.TabIndex = 1154;
-            this.labelControl2.Text = "Version";
+            this.LabelVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelVersion.Appearance.Options.UseFont = true;
+            this.LabelVersion.Location = new System.Drawing.Point(400, 62);
+            this.LabelVersion.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
+            this.LabelVersion.Name = "LabelVersion";
+            this.LabelVersion.Size = new System.Drawing.Size(39, 15);
+            this.LabelVersion.TabIndex = 1154;
+            this.LabelVersion.Text = "Version";
             // 
             // ComboBoxModType
             // 
+            this.ComboBoxModType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBoxModType.EditValue = "";
-            this.ComboBoxModType.Location = new System.Drawing.Point(354, 82);
+            this.ComboBoxModType.Location = new System.Drawing.Point(258, 82);
             this.ComboBoxModType.Name = "ComboBoxModType";
             this.ComboBoxModType.Properties.AllowFocused = false;
             this.ComboBoxModType.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -297,16 +246,17 @@ namespace ArisenStudio.Forms.Dialogs
             this.ComboBoxModType.Size = new System.Drawing.Size(136, 24);
             this.ComboBoxModType.TabIndex = 6;
             // 
-            // labelControl3
+            // LabelModType
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(354, 62);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(53, 15);
-            this.labelControl3.TabIndex = 1156;
-            this.labelControl3.Text = "Mod Type";
+            this.LabelModType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelModType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelModType.Appearance.Options.UseFont = true;
+            this.LabelModType.Location = new System.Drawing.Point(258, 62);
+            this.LabelModType.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
+            this.LabelModType.Name = "LabelModType";
+            this.LabelModType.Size = new System.Drawing.Size(53, 15);
+            this.LabelModType.TabIndex = 1156;
+            this.LabelModType.Text = "Mod Type";
             // 
             // GridViewFiles
             // 
@@ -329,66 +279,143 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             // GridControlFiles
             // 
-            this.GridControlFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridControlFiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridControlFiles.EmbeddedNavigator.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.GridControlFiles.EmbeddedNavigator.Appearance.Options.UseFont = true;
             this.GridControlFiles.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.GridControlFiles.Location = new System.Drawing.Point(12, 180);
+            this.GridControlFiles.Location = new System.Drawing.Point(2, 22);
             this.GridControlFiles.MainView = this.GridViewFiles;
             this.GridControlFiles.Name = "GridControlFiles";
-            this.GridControlFiles.Size = new System.Drawing.Size(478, 194);
-            this.GridControlFiles.TabIndex = 7;
+            this.GridControlFiles.Size = new System.Drawing.Size(474, 133);
+            this.GridControlFiles.TabIndex = 8;
             this.GridControlFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewFiles});
             // 
-            // PanelButtons
-            // 
-            this.PanelButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelButtons.Controls.Add(this.ButtonInstallFile);
-            this.PanelButtons.Controls.Add(this.ButtonDownloadFile);
-            this.PanelButtons.Location = new System.Drawing.Point(12, 380);
-            this.PanelButtons.Name = "PanelButtons";
-            this.PanelButtons.Size = new System.Drawing.Size(478, 24);
-            this.PanelButtons.TabIndex = 1185;
-            // 
-            // ButtonInstallFile
-            // 
-            this.ButtonInstallFile.AutoSize = true;
-            this.ButtonInstallFile.Enabled = false;
-            this.ButtonInstallFile.Location = new System.Drawing.Point(0, 0);
-            this.ButtonInstallFile.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.ButtonInstallFile.MinimumSize = new System.Drawing.Size(0, 24);
-            this.ButtonInstallFile.Name = "ButtonInstallFile";
-            this.ButtonInstallFile.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
-            this.ButtonInstallFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonInstallFile.Size = new System.Drawing.Size(95, 24);
-            this.ButtonInstallFile.TabIndex = 8;
-            this.ButtonInstallFile.Text = "Choose File";
-            // 
-            // ButtonDownloadFile
-            // 
-            this.ButtonDownloadFile.AutoSize = true;
-            this.ButtonDownloadFile.Enabled = false;
-            this.ButtonDownloadFile.Location = new System.Drawing.Point(101, 0);
-            this.ButtonDownloadFile.MinimumSize = new System.Drawing.Size(0, 24);
-            this.ButtonDownloadFile.Name = "ButtonDownloadFile";
-            this.ButtonDownloadFile.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
-            this.ButtonDownloadFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonDownloadFile.Size = new System.Drawing.Size(89, 24);
-            this.ButtonDownloadFile.TabIndex = 9;
-            this.ButtonDownloadFile.Text = "Delete File";
-            // 
             // TextBoxVersion
             // 
-            this.TextBoxVersion.Location = new System.Drawing.Point(258, 82);
+            this.TextBoxVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxVersion.Location = new System.Drawing.Point(400, 82);
             this.TextBoxVersion.Name = "TextBoxVersion";
             this.TextBoxVersion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxVersion.Properties.Appearance.Options.UseFont = true;
             this.TextBoxVersion.Size = new System.Drawing.Size(90, 24);
             this.TextBoxVersion.TabIndex = 5;
+            // 
+            // LabelDescription
+            // 
+            this.LabelDescription.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelDescription.Appearance.Options.UseFont = true;
+            this.LabelDescription.Location = new System.Drawing.Point(12, 112);
+            this.LabelDescription.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
+            this.LabelDescription.Name = "LabelDescription";
+            this.LabelDescription.Size = new System.Drawing.Size(60, 15);
+            this.LabelDescription.TabIndex = 1187;
+            this.LabelDescription.Text = "Description";
+            // 
+            // TextBoxDescription
+            // 
+            this.TextBoxDescription.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
+            this.TextBoxDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxDescription.Appearance.Text.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxDescription.Appearance.Text.Options.UseFont = true;
+            this.TextBoxDescription.LayoutUnit = DevExpress.XtraRichEdit.DocumentLayoutUnit.Pixel;
+            this.TextBoxDescription.Location = new System.Drawing.Point(12, 132);
+            this.TextBoxDescription.LookAndFeel.SkinName = "WXI";
+            this.TextBoxDescription.Name = "TextBoxDescription";
+            this.TextBoxDescription.Options.Behavior.FontSource = DevExpress.XtraRichEdit.RichEditBaseValueSource.Control;
+            this.TextBoxDescription.Options.ClipboardFormats.Html = DevExpress.XtraRichEdit.RichEditClipboardMode.Disabled;
+            this.TextBoxDescription.Options.DocumentSaveOptions.CurrentFormat = DevExpress.XtraRichEdit.DocumentFormat.PlainText;
+            this.TextBoxDescription.Options.Export.Mht.HtmlNumberingListExportFormat = DevExpress.XtraRichEdit.Export.Html.HtmlNumberingListExportFormat.PlainTextFormat;
+            this.TextBoxDescription.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
+            this.TextBoxDescription.Options.Import.Html.AutoDetectEncoding = false;
+            this.TextBoxDescription.Size = new System.Drawing.Size(478, 79);
+            this.TextBoxDescription.TabIndex = 7;
+            this.TextBoxDescription.Views.SimpleView.AdjustColorsToSkins = true;
+            this.TextBoxDescription.Views.SimpleView.BackColor = System.Drawing.Color.Transparent;
+            this.TextBoxDescription.Views.SimpleView.Padding = new DevExpress.Portable.PortablePadding(2);
+            // 
+            // GroupInstallationFiles
+            // 
+            this.GroupInstallationFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupInstallationFiles.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GroupInstallationFiles.AppearanceCaption.Options.UseFont = true;
+            this.GroupInstallationFiles.Controls.Add(this.GridControlFiles);
+            this.GroupInstallationFiles.Controls.Add(this.PanelButtons);
+            this.GroupInstallationFiles.Location = new System.Drawing.Point(12, 217);
+            this.GroupInstallationFiles.Name = "GroupInstallationFiles";
+            this.GroupInstallationFiles.Size = new System.Drawing.Size(478, 189);
+            this.GroupInstallationFiles.TabIndex = 1189;
+            this.GroupInstallationFiles.Text = "Installation Files";
+            // 
+            // PanelButtons
+            // 
+            this.PanelButtons.Controls.Add(this.ButtonChooseFile);
+            this.PanelButtons.Controls.Add(this.ButtonDeleteFile);
+            this.PanelButtons.Controls.Add(this.ButtonDeleteAll);
+            this.PanelButtons.Controls.Add(this.ButtonHelp);
+            this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelButtons.Location = new System.Drawing.Point(2, 155);
+            this.PanelButtons.Name = "PanelButtons";
+            this.PanelButtons.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.PanelButtons.Size = new System.Drawing.Size(474, 32);
+            this.PanelButtons.TabIndex = 1186;
+            // 
+            // ButtonChooseFile
+            // 
+            this.ButtonChooseFile.AutoSize = true;
+            this.ButtonChooseFile.Enabled = false;
+            this.ButtonChooseFile.Location = new System.Drawing.Point(0, 8);
+            this.ButtonChooseFile.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.ButtonChooseFile.MinimumSize = new System.Drawing.Size(0, 24);
+            this.ButtonChooseFile.Name = "ButtonChooseFile";
+            this.ButtonChooseFile.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonChooseFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonChooseFile.Size = new System.Drawing.Size(95, 24);
+            this.ButtonChooseFile.TabIndex = 9;
+            this.ButtonChooseFile.Text = "Choose File";
+            // 
+            // ButtonDeleteFile
+            // 
+            this.ButtonDeleteFile.AutoSize = true;
+            this.ButtonDeleteFile.Enabled = false;
+            this.ButtonDeleteFile.Location = new System.Drawing.Point(101, 8);
+            this.ButtonDeleteFile.MinimumSize = new System.Drawing.Size(0, 24);
+            this.ButtonDeleteFile.Name = "ButtonDeleteFile";
+            this.ButtonDeleteFile.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonDeleteFile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDeleteFile.Size = new System.Drawing.Size(68, 24);
+            this.ButtonDeleteFile.TabIndex = 10;
+            this.ButtonDeleteFile.Text = "Delete";
+            // 
+            // ButtonDeleteAll
+            // 
+            this.ButtonDeleteAll.AutoSize = true;
+            this.ButtonDeleteAll.Enabled = false;
+            this.ButtonDeleteAll.Location = new System.Drawing.Point(175, 8);
+            this.ButtonDeleteAll.MinimumSize = new System.Drawing.Size(0, 24);
+            this.ButtonDeleteAll.Name = "ButtonDeleteAll";
+            this.ButtonDeleteAll.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonDeleteAll.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDeleteAll.Size = new System.Drawing.Size(84, 24);
+            this.ButtonDeleteAll.TabIndex = 11;
+            this.ButtonDeleteAll.Text = "Delete All";
+            // 
+            // ButtonHelp
+            // 
+            this.ButtonHelp.AutoSize = true;
+            this.ButtonHelp.Enabled = false;
+            this.ButtonHelp.Location = new System.Drawing.Point(265, 8);
+            this.ButtonHelp.MinimumSize = new System.Drawing.Size(0, 24);
+            this.ButtonHelp.Name = "ButtonHelp";
+            this.ButtonHelp.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonHelp.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonHelp.Size = new System.Drawing.Size(59, 24);
+            this.ButtonHelp.TabIndex = 12;
+            this.ButtonHelp.Text = "Help";
+            this.ButtonHelp.Click += new System.EventHandler(this.ButtonHelp_Click);
             // 
             // NewCustomDialog
             // 
@@ -396,28 +423,24 @@ namespace ArisenStudio.Forms.Dialogs
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(502, 451);
-            this.Controls.Add(this.PanelButtons);
-            this.Controls.Add(this.GridControlFiles);
+            this.ClientSize = new System.Drawing.Size(502, 462);
+            this.Controls.Add(this.GroupInstallationFiles);
+            this.Controls.Add(this.TextBoxDescription);
+            this.Controls.Add(this.LabelDescription);
             this.Controls.Add(this.ComboBoxModType);
-            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.LabelModType);
             this.Controls.Add(this.TextBoxVersion);
-            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.LabelVersion);
             this.Controls.Add(this.ComboBoxCategory);
-            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.LabelCategory);
             this.Controls.Add(this.ComboBoxCategoryType);
-            this.Controls.Add(this.LabelDefault);
-            this.Controls.Add(this.CheckBoxDefault);
             this.Controls.Add(this.ComboBoxPlatform);
             this.Controls.Add(this.LabelPlatform);
-            this.Controls.Add(this.ButtonChangeLoginDetails);
             this.Controls.Add(this.ButtonCancel);
-            this.Controls.Add(this.ButtonOK);
+            this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.TextBoxName);
             this.Controls.Add(this.LabelName);
-            this.Controls.Add(this.LabelLogin);
             this.Controls.Add(this.LabelCategoryType);
-            this.Controls.Add(this.CheckBoxUseDefaultConsole);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -429,23 +452,22 @@ namespace ArisenStudio.Forms.Dialogs
             this.MinimizeBox = false;
             this.Name = "NewCustomDialog";
             this.ShowInTaskbar = false;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Custom Mod Details";
+            this.Text = "Mod Details";
             this.Load += new System.EventHandler(this.NewCustomDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxPlatform.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxUseDefaultConsole.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxDefault.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxCategoryType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxCategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxModType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxVersion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupInstallationFiles)).EndInit();
+            this.GroupInstallationFiles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).EndInit();
             this.PanelButtons.ResumeLayout(false);
             this.PanelButtons.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxVersion.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,27 +476,27 @@ namespace ArisenStudio.Forms.Dialogs
         #endregion
         private LabelControl LabelName;
         private LabelControl LabelCategoryType;
-        private LabelControl LabelLogin;
         private TextEdit TextBoxName;
-        private SimpleButton ButtonOK;
+        private SimpleButton ButtonSave;
         private SimpleButton ButtonCancel;
-        private SimpleButton ButtonChangeLoginDetails;
         private LabelControl LabelPlatform;
         private ComboBoxEdit ComboBoxPlatform;
-        private CheckEdit CheckBoxUseDefaultConsole;
-        private LabelControl LabelDefault;
-        private CheckEdit CheckBoxDefault;
         private ComboBoxEdit ComboBoxCategoryType;
         private ComboBoxEdit ComboBoxCategory;
-        private LabelControl labelControl1;
-        private LabelControl labelControl2;
+        private LabelControl LabelCategory;
+        private LabelControl LabelVersion;
         private ComboBoxEdit ComboBoxModType;
-        private LabelControl labelControl3;
+        private LabelControl LabelModType;
         private DevExpress.XtraGrid.Views.Grid.GridView GridViewFiles;
         private DevExpress.XtraGrid.GridControl GridControlFiles;
-        private DevExpress.Utils.Layout.StackPanel PanelButtons;
-        private SimpleButton ButtonInstallFile;
-        private SimpleButton ButtonDownloadFile;
         private TextEdit TextBoxVersion;
+        private LabelControl LabelDescription;
+        private DevExpress.XtraRichEdit.RichEditControl TextBoxDescription;
+        private GroupControl GroupInstallationFiles;
+        private DevExpress.Utils.Layout.StackPanel PanelButtons;
+        private SimpleButton ButtonChooseFile;
+        private SimpleButton ButtonDeleteFile;
+        private SimpleButton ButtonDeleteAll;
+        private SimpleButton ButtonHelp;
     }
 }

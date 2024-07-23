@@ -62,7 +62,7 @@ namespace ArisenStudio.Database
 
         public List<string> Versions => [.. Version.Split('/')];
 
-        public List<string> FirmwareVersions => [.. PlayableVersion.Split('/')];
+        public List<string> FirmwareVersions => [.. PlayableVersion.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries)];
 
         /// <summary>
         /// Get the category data.

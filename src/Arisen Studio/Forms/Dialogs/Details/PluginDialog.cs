@@ -33,11 +33,13 @@ namespace ArisenStudio.Forms.Dialogs.Details
         public CategoryType CategoryType;
         public ModItemData ModItem;
 
+        public InstalledModInfo InstalledModInfo;
+
         public bool IsFavorite;
 
         private void PluginDialog_Load(object sender, EventArgs e)
         {
-            InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id) : null;
+            InstalledModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id, false) : null;
 
             StatLastUpdated.Title = Language.GetString("LABEL_LAST_UPDATED");
             StatVersion.Title = Language.GetString("LABEL_VERSION");
@@ -55,6 +57,9 @@ namespace ArisenStudio.Forms.Dialogs.Details
             StatCreatedBy.Value = ModItem.CreatedBy.IsNullOrWhiteSpace() ? "Unknown" : ModItem.CreatedBy.Replace("&", "&&");
             StatSubmittedBy.Value = ModItem.SubmittedBy.Replace("&", "&&");
 
+            TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
+            TabDownloads.Text = $"{Language.GetString("LABEL_DOWNLOADS")} ({ModItem.DownloadFiles.Count})";
+
             LabelDescription.Text = string.IsNullOrWhiteSpace(ModItem.Description)
                 ? Language.GetString("NO_MORE_DETAILS")
                 : ModItem.Description.Replace("&", "&&");
@@ -66,7 +71,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
                 DownloadFileItem downloadItem = new()
                 {
-                    CategoryType = CategoryType.Plugin,
+                    CategoryType = CategoryType,
                     ModItem = ModItem,
                     DownloadFiles = downloadFile
                 };
@@ -80,8 +85,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 TabDownloads.Controls.Add(downloadItem);
             }
 
-            TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
-            TabDownloads.Text = $"{Language.GetString("LABEL_DOWNLOADS")} ({ModItem.DownloadFiles.Count})";
+            ButtonDownload.Text = Language.GetString("LABEL_DOWNLOAD");
+            ButtonInstall.Text = Language.GetString("LABEL_INSTALL");
 
             IsFavorite = Settings.FavoriteMods.Exists(x => x.CategoryType == CategoryType && x.CategoryId == ModItem.CategoryId && x.ModId == ModItem.Id && x.Platform == ModItem.GetPlatform());
 
