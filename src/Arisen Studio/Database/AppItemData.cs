@@ -2,10 +2,8 @@
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Database;
 using ArisenStudio.Models.Resources;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -46,15 +44,15 @@ namespace ArisenStudio.Database
             return ArisenStudio.Platform.PS4;
         }
 
-        public string GetVersion(DownloadFiles downloadFiles)
+        public string GetVersion(AppItemFile appFile)
         {
-            if (downloadFiles.Version.IsNullOrEmpty())
+            if (appFile.Version.IsNullOrEmpty())
             {
                 return string.Empty;
             }
             else
             {
-                return downloadFiles.Version;
+                return appFile.Version;
             }
         }
 
@@ -95,85 +93,66 @@ namespace ArisenStudio.Database
         }
 
         /// <summary>
-        /// Get the download URL specified by the user if there are multiple types.
-        /// </summary>
-        /// <returns> Download Archive URL </returns>
-        public AppItemFile GetDownloadFiles(Form owner)
-        {
-            switch (DownloadFiles.Count)
-            {
-                case <= 1:
-                    return DownloadFiles.First();
-            }
-
-            List<string> downloadNames = DownloadFiles.Select(x => x.Name).ToList();
-            ListItem downloadName = DialogExtensions.ShowListViewDialog(owner, "Install Downloads", downloadNames.ConvertAll(x => new ListItem { Value = x, Name = x }));
-
-            return downloadName != null ? DownloadFiles.First(x => x.Name.Equals(downloadName.Value)) : null;
-        }
-
-        /// <summary>
         /// Get the directory for extracting modded files.
         /// </summary>
         /// <returns> </returns>
-        public string DownloadDataDirectory(DownloadFiles downloadFiles)
+        public string DownloadFilesDirectory(AppItemFile appFile)
         {
-            return $@"{MainWindow.Settings.PathGameMods.GetFullPath(MainWindow.Settings.PathBaseDirectory)}\{Platform}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}-{GetVersion(downloadFiles)}-{Id}\";
+            return $@"{MainWindow.Settings.PathGameMods.GetFullPath(MainWindow.Settings.PathBaseDirectory)}\{Platform}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{appFile.Name.RemoveInvalidChars()}-{GetVersion(appFile)}-{Id}\";
         }
 
         /// <summary>
-        /// Get the downloaded mods archive file path.
+        /// Get the downloaded files path.
         /// </summary>
         /// <returns> Mods Archive File Path </returns>
-        public string ArchiveZipFile(DownloadFiles downloadFiles)
+        public string LocalFilePath(AppItemFile appFile)
         {
-            return $@"{MainWindow.Settings.PathGameMods.GetFullPath(MainWindow.Settings.PathBaseDirectory)}\{Platform}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}-{GetVersion(downloadFiles)}-{Id}.zip";
+            return $@"{MainWindow.Settings.PathGameMods.GetFullPath(MainWindow.Settings.PathBaseDirectory)}\{Platform}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{appFile.Name.RemoveInvalidChars()}{GetVersion(appFile)}-{Id}.pkg";
         }
 
         /// <summary>
         /// Download the modded files archive and extracts all files to <see cref="DownloadDataDirectory" />.
         /// </summary>
-        /// <param name="downloadFiles"> </param>
-        public void DownloadInstallFiles(DownloadFiles downloadFiles)
+        /// <param name="appFile"> </param>
+        public void DownloadInstallFiles(AppItemFile appFile)
         {
-            string archivePath = DownloadDataDirectory(downloadFiles);
-            string archiveFilePath = ArchiveZipFile(downloadFiles);
+            string folderPath = DownloadFilesDirectory(appFile);
+            string filePath = LocalFilePath(appFile);
 
-            if (Directory.Exists(archivePath))
+            if (Directory.Exists(folderPath))
             {
                 try
                 {
-                    Directory.Delete(archivePath, true);
+                    Directory.Delete(folderPath, true);
                 }
                 catch (Exception) { }
             }
 
-            if (!Directory.Exists(archivePath))
+            if (!Directory.Exists(folderPath))
             {
-                Directory.CreateDirectory(archivePath);
+                Directory.CreateDirectory(folderPath);
             }
 
-            if (!Directory.Exists(Path.GetDirectoryName(archiveFilePath)))
+            if (!Directory.Exists(Path.GetDirectoryName(folderPath)))
             {
-                Directory.CreateDirectory(archiveFilePath);
+                Directory.CreateDirectory(folderPath);
             }
 
-            if (File.Exists(archiveFilePath))
+            if (File.Exists(filePath))
             {
-                File.Delete(archiveFilePath);
+                File.Delete(filePath);
             }
 
             using (WebClient webClient = new())
             {
-                webClient.Headers.Add("Accept: application/zip");
+                //webClient.Headers.Add("Accept: application/zip");
                 webClient.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
-                webClient.DownloadFile(new Uri(downloadFiles.Url), archiveFilePath);
+                webClient.DownloadFile(new Uri(appFile.GetFileUrl(TitleId)), filePath);
             }
 
-            ZipFile.ExtractToDirectory(archiveFilePath, archivePath);
-
+            /*
             DownloadedItem downloadItem = MainWindow.Settings.DownloadedMods.FirstOrDefault(x => x.Platform == GetPlatform() && x.ModId == Id);
-
+            
             if (downloadItem == null)
             {
                 MainWindow.Settings.DownloadedMods.Add(
@@ -182,8 +161,8 @@ namespace ArisenStudio.Database
                         Platform = GetPlatform(),
                         ModId = Id,
                         CategoryId = CategoryId,
-                        DownloadFile = downloadFiles,
-                        FilePath = archiveFilePath,
+                        DownloadFile = appFile,
+                        FilePath = filePath,
                         DateTime = DateTime.Now
                     });
             }
@@ -200,6 +179,7 @@ namespace ArisenStudio.Database
                         DateTime = DateTime.Now
                     };
             }
+            */
         }
     }
 }

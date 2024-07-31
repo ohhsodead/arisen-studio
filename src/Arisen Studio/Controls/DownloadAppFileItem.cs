@@ -38,7 +38,7 @@ namespace ArisenStudio.Controls
 
         private void DownloadItem_Load(object sender, EventArgs e)
         {
-            BackColor = Color.FromArgb(45, 45, 48);
+            BackColor = Parent.BackColor;
 
             LabelHeaderLastUpdated.Text = Language.GetString("LABEL_LAST_UPDATED");
             LabelHeaderVersion.Text = Language.GetString("LABEL_VERSION");
@@ -53,9 +53,9 @@ namespace ArisenStudio.Controls
 
             if (!MainWindow.IsConsoleConnected)
             {
-                if (CategoryType is CategoryType.Application)
+                if (CategoryType is CategoryType.Homebrew)
                 {
-                    if (!MainWindow.Settings.InstallApplicationsToUsbDevice)
+                    if (!MainWindow.Settings.InstallHomebrewToUsbDevice)
                     {
                         ImageInstall.Visible = false;
                     }

@@ -72,7 +72,7 @@ namespace ArisenStudio.Controls
             this.LabelLastUpdated.AutoEllipsis = true;
             this.LabelLastUpdated.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelLastUpdated.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelLastUpdated.Location = new System.Drawing.Point(464, 34);
+            this.LabelLastUpdated.Location = new System.Drawing.Point(464, 33);
             this.LabelLastUpdated.Name = "LabelLastUpdated";
             this.LabelLastUpdated.Size = new System.Drawing.Size(123, 15);
             this.LabelLastUpdated.TabIndex = 1195;
@@ -89,7 +89,7 @@ namespace ArisenStudio.Controls
             this.LabelHeaderLastUpdated.AutoEllipsis = true;
             this.LabelHeaderLastUpdated.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelHeaderLastUpdated.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderLastUpdated.Location = new System.Drawing.Point(464, 12);
+            this.LabelHeaderLastUpdated.Location = new System.Drawing.Point(464, 10);
             this.LabelHeaderLastUpdated.Name = "LabelHeaderLastUpdated";
             this.LabelHeaderLastUpdated.Size = new System.Drawing.Size(123, 17);
             this.LabelHeaderLastUpdated.TabIndex = 1194;
@@ -105,7 +105,7 @@ namespace ArisenStudio.Controls
             this.LabelVersion.AutoEllipsis = true;
             this.LabelVersion.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelVersion.Location = new System.Drawing.Point(593, 34);
+            this.LabelVersion.Location = new System.Drawing.Point(593, 33);
             this.LabelVersion.Name = "LabelVersion";
             this.LabelVersion.Size = new System.Drawing.Size(81, 15);
             this.LabelVersion.TabIndex = 1197;
@@ -122,7 +122,7 @@ namespace ArisenStudio.Controls
             this.LabelHeaderVersion.AutoEllipsis = true;
             this.LabelHeaderVersion.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelHeaderVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderVersion.Location = new System.Drawing.Point(593, 12);
+            this.LabelHeaderVersion.Location = new System.Drawing.Point(593, 10);
             this.LabelHeaderVersion.Name = "LabelHeaderVersion";
             this.LabelHeaderVersion.Size = new System.Drawing.Size(81, 17);
             this.LabelHeaderVersion.TabIndex = 1196;
@@ -172,7 +172,7 @@ namespace ArisenStudio.Controls
             this.ImageDownload.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
             this.ImageDownload.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
             this.ImageDownload.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.ImageDownload.Location = new System.Drawing.Point(716, 16);
+            this.ImageDownload.Location = new System.Drawing.Point(716, 13);
             this.ImageDownload.Name = "ImageDownload";
             this.ImageDownload.ShowToolTips = DevExpress.Utils.DefaultBoolean.True;
             this.ImageDownload.Size = new System.Drawing.Size(26, 26);
@@ -194,7 +194,7 @@ namespace ArisenStudio.Controls
             this.ImageInstall.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
             this.ImageInstall.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
             this.ImageInstall.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.ImageInstall.Location = new System.Drawing.Point(686, 16);
+            this.ImageInstall.Location = new System.Drawing.Point(686, 13);
             this.ImageInstall.Name = "ImageInstall";
             this.ImageInstall.ShowToolTips = DevExpress.Utils.DefaultBoolean.True;
             this.ImageInstall.Size = new System.Drawing.Size(26, 26);
@@ -216,7 +216,7 @@ namespace ArisenStudio.Controls
             this.ImageCopyLink.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
             this.ImageCopyLink.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
             this.ImageCopyLink.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.ImageCopyLink.Location = new System.Drawing.Point(746, 16);
+            this.ImageCopyLink.Location = new System.Drawing.Point(746, 13);
             this.ImageCopyLink.Name = "ImageCopyLink";
             this.ImageCopyLink.ShowToolTips = DevExpress.Utils.DefaultBoolean.True;
             this.ImageCopyLink.Size = new System.Drawing.Size(26, 26);

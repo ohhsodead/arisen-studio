@@ -50,7 +50,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.PanelDetails.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PanelDetails.Location = new System.Drawing.Point(12, 12);
             this.PanelDetails.Name = "PanelDetails";
-            this.PanelDetails.Size = new System.Drawing.Size(460, 57);
+            this.PanelDetails.Size = new System.Drawing.Size(352, 57);
             this.PanelDetails.TabIndex = 1;
             // 
             // LabelTitle
@@ -60,12 +60,13 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelTitle.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.LabelTitle.Appearance.Options.UseFont = true;
             this.LabelTitle.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.PanelDetails.SetFlowBreak(this.LabelTitle, true);
             this.LabelTitle.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.LabelTitle.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
             this.LabelTitle.Location = new System.Drawing.Point(3, 0);
             this.LabelTitle.Margin = new System.Windows.Forms.Padding(3, 0, 3, 4);
             this.LabelTitle.Name = "LabelTitle";
-            this.LabelTitle.Size = new System.Drawing.Size(452, 18);
+            this.LabelTitle.Size = new System.Drawing.Size(321, 18);
             this.LabelTitle.TabIndex = 1168;
             this.LabelTitle.Text = "Title";
             // 
@@ -87,7 +88,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(484, 81);
+            this.ClientSize = new System.Drawing.Size(373, 81);
             this.Controls.Add(this.PanelDetails);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -96,9 +97,9 @@ namespace ArisenStudio.Forms.Dialogs
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DataViewDialog.IconOptions.Icon")));
             this.IconOptions.Image = global::ArisenStudio.Properties.Resources.arisenstudio;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(500, 744);
+            this.MaximumSize = new System.Drawing.Size(400, 744);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(486, 43);
+            this.MinimumSize = new System.Drawing.Size(375, 43);
             this.Name = "DataViewDialog";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

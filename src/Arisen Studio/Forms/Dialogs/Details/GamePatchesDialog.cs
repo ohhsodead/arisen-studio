@@ -63,8 +63,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
             GridViewCheats.Columns[1].MinWidth = 130;
             GridViewCheats.Columns[1].MaxWidth = 130;
 
-            ButtonApplyCheat.SetControlText(Language.GetString("LABEL_APPLY_CHEAT"), 26);
-            ButtonReportIssue.SetControlText(Language.GetString("LABEL_REPORT_ISSUE"), 26);
+            ButtonApplyCheat.Text = Language.GetString("LABEL_APPLY_CHEAT");
+            ButtonReportIssue.Text = Language.GetString("LABEL_REPORT_ISSUE");
         }
 
         private void ImageClose_Click(object sender, EventArgs e)

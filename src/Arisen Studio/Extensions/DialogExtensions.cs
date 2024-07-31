@@ -92,7 +92,8 @@ namespace ArisenStudio.Extensions
                 case Platform.XBOX360:
                     detailsDialog = new PluginDialog
                     {
-                        CategoryType = CategoryType.Plugin,
+                        //CategoryType = CategoryType.Homebrew,
+                        CategoryType = modItem.GetCategoryType(categories),
                         ModItem = modItem
 
                     };
@@ -133,7 +134,7 @@ namespace ArisenStudio.Extensions
                 case Platform.PS4:
                     detailsDialog = new ApplicationDialog
                     {
-                        CategoryType = CategoryType.Application,
+                        CategoryType = CategoryType.Homebrew,
                         AppItem = appItem
                     };
                     break;
@@ -303,14 +304,15 @@ namespace ArisenStudio.Extensions
             return listViewDialog.SelectedItem ?? null;
         }
 
-        public static string ShowListItemDialog(Form owner, string title, string labelText, string[] items)
+        public static string ShowListItemDialog(Form owner, string title, string labelText, string[] items, bool allowCancel = true)
         {
             using ComboBoxEdit comboBoxEdit = new();
             comboBoxEdit.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
+            comboBoxEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             comboBoxEdit.Properties.ShowNullValuePrompt = ShowNullValuePromptOptions.Default;
             comboBoxEdit.Properties.NullValuePrompt = "Select...";
             comboBoxEdit.Properties.Items.AddRange(items);
-            comboBoxEdit.SelectedIndex = -1;
+            comboBoxEdit.SelectedIndex = 0;
 
             XtraInputBoxArgs args = new()
             {
@@ -318,8 +320,14 @@ namespace ArisenStudio.Extensions
                 Caption = title,
                 Prompt = labelText,
                 DefaultResponse = null,
-                Editor = comboBoxEdit
+                Editor = comboBoxEdit,
+                DefaultButtonIndex = 0
             };
+
+            if (!allowCancel)
+            {
+                (args as XtraBaseArgs).Buttons = [DialogResult.OK];
+            }
 
             return (string)XtraInputBox.Show(args);
         }
@@ -540,16 +548,44 @@ namespace ArisenStudio.Extensions
             connectConsole.ShowDialog(owner);
         }
 
-        public static ConsoleProfile ShowNewConnectionWindow(Form owner, ConsoleProfile consoleProfile, bool isEditing, bool closeOnCancel = false)
+        public static ConsoleProfile ShowNewConnectionWindow(Form owner, ConsoleProfile consoleProfile, bool isEditing, bool createDefaultIfNull = false)
         {
-            using NewConnectionDialog newConnectionDialog = new() { ConsoleProfile = consoleProfile, IsEditingProfile = isEditing, CloseOnCancel = closeOnCancel };
+            using NewConnectionDialog newConnectionDialog = new() { ConsoleProfile = consoleProfile, IsEditingProfile = isEditing };
 
             if (newConnectionDialog.ShowDialog(owner) == DialogResult.OK)
             {
                 return newConnectionDialog.ConsoleProfile;
             }
 
+            if (isEditing)
+            {
+                return consoleProfile;
+            }
+            else
+            {
+                if (createDefaultIfNull)
+                {
+                    Platform platform = ShowPlatformList(owner, true);
+                    return MainWindow.Settings.CreateDefaultProfile(platform);
+                }
+            }
+
             return isEditing ? consoleProfile : null;
+        }
+
+        public static Platform ShowPlatformList(Form owner, bool isRequired = true)
+        {
+            string selectedItem = ShowListItemDialog(owner, "Choose Platform", "Platform:", ["PlayStation 3", "PlayStation 4", "Xbox 360"], false);
+
+            if (isRequired && selectedItem.IsNullOrWhiteSpace())
+            {
+                return ShowPlatformList(owner, isRequired);
+            }
+            else
+            {
+                Platform platform = selectedItem.DehumanizeTo<Platform>();
+                return platform;
+            }
         }
 
         public static void ShowNewCustomModsDialog(Form owner, CustomItemData customItem = null, bool isEditing = false)
@@ -596,7 +632,7 @@ namespace ArisenStudio.Extensions
             {
                 string body = gitHubData.Body;
 
-                ShowDataViewDialog(owner, $"{gitHubData.Name} - What's New", $"Change Log ({gitHubData.PublishedAt.DateTime.ToOrdinalWords()})", body.Replace("- ", "• "));
+                ShowDataViewDialog(owner, $"Change Log - What's New", $"{gitHubData.Name} ({gitHubData.PublishedAt.DateTime.ToOrdinalWords()})", body.Replace("- ", "• "));
             }
             catch (Exception ex)
             {

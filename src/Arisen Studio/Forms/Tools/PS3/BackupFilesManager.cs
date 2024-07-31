@@ -27,11 +27,11 @@ namespace ArisenStudio.Forms.Tools.PS3
         {
             Text = Language.GetString("BACKUP_FILES_MANAGER");
 
-            ButtonEdit.SetControlText(Language.GetString("LABEL_EDIT"));
-            ButtonDelete.SetControlText(Language.GetString("LABEL_DELETE"));
-            ButtonDeleteAll.SetControlText(Language.GetString("LABEL_DELETE_ALL"));
-            ButtonBackupFile.SetControlText(Language.GetString("LABEL_BACKUP_FILE"));
-            ButtonRestoreFile.SetControlText(Language.GetString("LABEL_RESTORE_FILE"));
+            ButtonEdit.Text = Language.GetString("LABEL_EDIT");
+            ButtonDelete.Text = Language.GetString("LABEL_DELETE");
+            ButtonDeleteAll.Text = Language.GetString("LABEL_DELETE_ALL");
+            ButtonBackupFile.Text = Language.GetString("LABEL_BACKUP_FILE");
+            ButtonRestoreFile.Text = Language.GetString("LABEL_RESTORE_FILE");
 
             LoadBackupFiles();
         }

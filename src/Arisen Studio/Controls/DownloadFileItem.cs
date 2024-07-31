@@ -46,8 +46,8 @@ namespace ArisenStudio.Controls
 
         private void DownloadItem_Load(object sender, EventArgs e)
         {
-            BackColor = Color.FromArgb(45, 45, 48);
-            ListBoxInstallFiles.BackColor = Color.FromArgb(45, 45, 48);
+            BackColor = Parent.BackColor;
+            ListBoxInstallFiles.BackColor = Parent.BackColor;
 
             LabelName.Text = DownloadFiles.Name;
             LabelFilesCount.Text = $"{DownloadFiles.InstallPaths.Count()} {(DownloadFiles.InstallPaths.Count() == 1 ? Language.GetString("LABEL_FILE") : Language.GetString("LABEL_FILES"))}";
@@ -65,39 +65,32 @@ namespace ArisenStudio.Controls
                 ListBoxInstallFiles.Items.Add(installFile);
             }
 
-            int totalHeight = DownloadFiles.InstallPaths.Count() * 24;
+            int totalHeight = DownloadFiles.InstallPaths.Count() * 38;
             ListBoxInstallFiles.Height = totalHeight;
 
             Separator.Visible = ShowSeparator;
 
             if (!MainWindow.IsConsoleConnected)
             {
-                if (CategoryType is CategoryType.Game or CategoryType.Plugin)
-                {
-                    if (!MainWindow.Settings.InstallGameModsPluginsToUsbDevice)
-                    {
-                        ImageInstall.Enabled = false;
-                    }
-                }
-                else if (CategoryType is CategoryType.Homebrew)
+                if (CategoryType is CategoryType.Homebrew)
                 {
                     if (!MainWindow.Settings.InstallHomebrewToUsbDevice)
                     {
-                        ImageInstall.Enabled = false;
+                        ImageInstall.Visible = false;
                     }
                 }
                 else if (CategoryType is CategoryType.Resource)
                 {
                     if (!MainWindow.Settings.InstallResourcesToUsbDevice)
                     {
-                        ImageInstall.Enabled = false;
+                        ImageInstall.Visible = false;
                     }
                 }
                 else if (CategoryType is CategoryType.Package)
                 {
                     if (!MainWindow.Settings.InstallPackagesToUsbDevice)
                     {
-                        ImageInstall.Enabled = false;
+                        ImageInstall.Visible = false;
                     }
                 }
                 else
@@ -109,7 +102,7 @@ namespace ArisenStudio.Controls
 
         private void ImageInstall_Click(object sender, EventArgs e)
         {
-            if (CategoryType is CategoryType.Game or CategoryType.Homebrew or CategoryType.Resource or CategoryType.Plugin)
+            if (CategoryType is CategoryType.Game or CategoryType.Homebrew or CategoryType.Resource)
             {
                 InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, CategoryType, ModItem.Id) : null;
                 bool isInstalled = installedModInfo != null;
@@ -131,7 +124,7 @@ namespace ArisenStudio.Controls
 
         private void ImageDownload_Click(object sender, EventArgs e)
         {
-            if (CategoryType is CategoryType.Game or CategoryType.Homebrew or CategoryType.Resource or CategoryType.Plugin)
+            if (CategoryType is CategoryType.Game or CategoryType.Homebrew or CategoryType.Resource)
             {
                 DialogExtensions.ShowTransferFilesDialog(ParentForm, TransferType.DownloadMods, ModItem.GetCategory(Categories), ModItem, DownloadFiles);
             }

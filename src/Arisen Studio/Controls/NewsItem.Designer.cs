@@ -38,12 +38,12 @@ namespace ArisenStudio.Controls
             // 
             this.LabelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelTitle.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.LabelTitle.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.LabelTitle.Appearance.Options.UseFont = true;
             this.LabelTitle.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelTitle.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.LabelTitle.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
-            this.LabelTitle.Location = new System.Drawing.Point(8, 7);
+            this.LabelTitle.Location = new System.Drawing.Point(8, 6);
             this.LabelTitle.Margin = new System.Windows.Forms.Padding(3, 0, 3, 4);
             this.LabelTitle.Name = "LabelTitle";
             this.LabelTitle.Size = new System.Drawing.Size(411, 17);
@@ -79,7 +79,7 @@ namespace ArisenStudio.Controls
             this.LabelTimeStamp.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelTimeStamp.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.LabelTimeStamp.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
-            this.LabelTimeStamp.Location = new System.Drawing.Point(425, 7);
+            this.LabelTimeStamp.Location = new System.Drawing.Point(425, 6);
             this.LabelTimeStamp.Margin = new System.Windows.Forms.Padding(3, 0, 3, 4);
             this.LabelTimeStamp.Name = "LabelTimeStamp";
             this.LabelTimeStamp.Size = new System.Drawing.Size(122, 15);

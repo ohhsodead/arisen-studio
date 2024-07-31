@@ -65,7 +65,7 @@ namespace ArisenStudio.Forms.Dialogs
                 ComboBoxModType.Properties.Items.Add(category.Title);
             }
 
-            foreach (var modTypes in MainWindow.Database.GameModsPs3.Mods.Select(x => x.ModTypes))
+            foreach (var modTypes in MainWindow.Database.GameModsPS3.Library.Select(x => x.ModTypes))
             {
                 ComboBoxModType.Properties.Items.AddRange(modTypes.ToList());
             }
@@ -134,20 +134,20 @@ namespace ArisenStudio.Forms.Dialogs
                     ComboBoxCategory.Properties.Items.Add(category.Title);
                 }
             }
-            else if (ComboBoxCategoryType.SelectedIndex == 4)
-            {
-                foreach (var category in MainWindow.Database.CategoriesData.GetCategoriesByType(CategoryType.Application))
-                {
-                    ComboBoxCategory.Properties.Items.Add(category.Title);
-                }
-            }
-            else if (ComboBoxCategoryType.SelectedIndex == 5)
-            {
-                foreach (var category in MainWindow.Database.CategoriesData.GetCategoriesByType(CategoryType.Plugin))
-                {
-                    ComboBoxCategory.Properties.Items.Add(category.Title);
-                }
-            }
+            //else if (ComboBoxCategoryType.SelectedIndex == 4)
+            //{
+            //    foreach (var category in MainWindow.Database.CategoriesData.GetCategoriesByType(CategoryType.Application))
+            //    {
+            //        ComboBoxCategory.Properties.Items.Add(category.Title);
+            //    }
+            //}
+            //else if (ComboBoxCategoryType.SelectedIndex == 5)
+            //{
+            //    foreach (var category in MainWindow.Database.CategoriesData.GetCategoriesByType(CategoryType.Plugin))
+            //    {
+            //        ComboBoxCategory.Properties.Items.Add(category.Title);
+            //    }
+            //}
         }
 
         private void ButtonHelp_Click(object sender, EventArgs e)
@@ -161,11 +161,11 @@ namespace ArisenStudio.Forms.Dialogs
             {
                 List<int> modIds = [];
 
-                modIds.AddRange(MainWindow.Database.GameModsPs3.Mods.Select(x => x.Id));
-                modIds.AddRange(MainWindow.Database.HomebrewPs3.Mods.Select(x => x.Id));
-                modIds.AddRange(MainWindow.Database.ResourcesPs3.Mods.Select(x => x.Id));
-                modIds.AddRange(MainWindow.Database.PluginsXbox.Mods.Select(x => x.Id));
-                modIds.AddRange(MainWindow.Database.AppsPs4.Mods.Select(x => x.Id));
+                modIds.AddRange(MainWindow.Database.GameModsPS3.Library.Select(x => x.Id));
+                modIds.AddRange(MainWindow.Database.HomebrewPS3.Library.Select(x => x.Id));
+                modIds.AddRange(MainWindow.Database.ResourcesPS3.Library.Select(x => x.Id));
+                modIds.AddRange(MainWindow.Database.HomebrewXbox.Library.Select(x => x.Id));
+                modIds.AddRange(MainWindow.Database.HomebrewPS4.Library.Select(x => x.Id));
 
                 CustomMod.Id = Extensions.StringExtensions.GetRandomExcept(1, 10000000, modIds);
             }

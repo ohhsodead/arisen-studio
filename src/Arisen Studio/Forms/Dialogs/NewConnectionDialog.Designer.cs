@@ -36,7 +36,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelLogin = new DevExpress.XtraEditors.LabelControl();
             this.LabelName = new DevExpress.XtraEditors.LabelControl();
             this.LabelAddress = new DevExpress.XtraEditors.LabelControl();
-            this.ButtonOK = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonSave = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonChangeLoginDetails = new DevExpress.XtraEditors.SimpleButton();
             this.LabelPlatformType = new DevExpress.XtraEditors.LabelControl();
@@ -47,12 +47,15 @@ namespace ArisenStudio.Forms.Dialogs
             this.CheckBoxUseDefaultConsole = new DevExpress.XtraEditors.CheckEdit();
             this.LabelDefault = new DevExpress.XtraEditors.LabelControl();
             this.CheckBoxDefault = new DevExpress.XtraEditors.CheckEdit();
+            this.LabelGoldHEN = new DevExpress.XtraEditors.LabelControl();
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageConsole.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxPlatform.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConnectionName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxUseDefaultConsole.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxDefault.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelUserPass
@@ -82,7 +85,7 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.LabelName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelName.Appearance.Options.UseFont = true;
-            this.LabelName.Location = new System.Drawing.Point(150, 19);
+            this.LabelName.Location = new System.Drawing.Point(150, 16);
             this.LabelName.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(100, 15);
@@ -93,29 +96,29 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.LabelAddress.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelAddress.Appearance.Options.UseFont = true;
-            this.LabelAddress.Location = new System.Drawing.Point(150, 91);
+            this.LabelAddress.Location = new System.Drawing.Point(150, 88);
             this.LabelAddress.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelAddress.Name = "LabelAddress";
             this.LabelAddress.Size = new System.Drawing.Size(58, 15);
             this.LabelAddress.TabIndex = 14;
             this.LabelAddress.Text = "IP Address:";
             // 
-            // ButtonOK
+            // ButtonSave
             // 
-            this.ButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOK.Location = new System.Drawing.Point(354, 212);
-            this.ButtonOK.Name = "ButtonOK";
-            this.ButtonOK.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonOK.Size = new System.Drawing.Size(80, 24);
-            this.ButtonOK.TabIndex = 6;
-            this.ButtonOK.Text = "OK";
-            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
+            this.ButtonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonSave.Location = new System.Drawing.Point(444, 212);
+            this.ButtonSave.Name = "ButtonSave";
+            this.ButtonSave.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonSave.Size = new System.Drawing.Size(80, 24);
+            this.ButtonSave.TabIndex = 8;
+            this.ButtonSave.Text = "Save";
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
             // ButtonCancel
             // 
             this.ButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonCancel.Location = new System.Drawing.Point(444, 212);
+            this.ButtonCancel.Location = new System.Drawing.Point(354, 212);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCancel.Size = new System.Drawing.Size(80, 24);
@@ -137,7 +140,7 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.LabelPlatformType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelPlatformType.Appearance.Options.UseFont = true;
-            this.LabelPlatformType.Location = new System.Drawing.Point(150, 55);
+            this.LabelPlatformType.Location = new System.Drawing.Point(150, 52);
             this.LabelPlatformType.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelPlatformType.Name = "LabelPlatformType";
             this.LabelPlatformType.Size = new System.Drawing.Size(77, 15);
@@ -183,7 +186,7 @@ namespace ArisenStudio.Forms.Dialogs
             "Xbox 360 S (Slim)",
             "Xbox 360 E (Slim E)"});
             this.ComboBoxPlatform.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxPlatform.Size = new System.Drawing.Size(260, 22);
+            this.ComboBoxPlatform.Size = new System.Drawing.Size(260, 24);
             this.ComboBoxPlatform.TabIndex = 1;
             this.ComboBoxPlatform.SelectedIndexChanged += new System.EventHandler(this.ComboBoxPlatformType_SelectedIndexChanged);
             // 
@@ -195,7 +198,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.TextBoxAddress.Name = "TextBoxAddress";
             this.TextBoxAddress.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxAddress.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxAddress.Size = new System.Drawing.Size(260, 22);
+            this.TextBoxAddress.Size = new System.Drawing.Size(260, 24);
             this.TextBoxAddress.TabIndex = 2;
             // 
             // TextBoxConnectionName
@@ -206,19 +209,19 @@ namespace ArisenStudio.Forms.Dialogs
             this.TextBoxConnectionName.Name = "TextBoxConnectionName";
             this.TextBoxConnectionName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxConnectionName.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxConnectionName.Size = new System.Drawing.Size(260, 22);
+            this.TextBoxConnectionName.Size = new System.Drawing.Size(260, 24);
             this.TextBoxConnectionName.TabIndex = 0;
             // 
             // CheckBoxUseDefaultConsole
             // 
-            this.CheckBoxUseDefaultConsole.Location = new System.Drawing.Point(264, 122);
+            this.CheckBoxUseDefaultConsole.Location = new System.Drawing.Point(264, 124);
             this.CheckBoxUseDefaultConsole.Name = "CheckBoxUseDefaultConsole";
             this.CheckBoxUseDefaultConsole.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CheckBoxUseDefaultConsole.Properties.Appearance.Options.UseFont = true;
             this.CheckBoxUseDefaultConsole.Properties.AutoWidth = true;
-            this.CheckBoxUseDefaultConsole.Properties.Caption = "";
+            this.CheckBoxUseDefaultConsole.Properties.Caption = "Use Default Credentials";
             this.CheckBoxUseDefaultConsole.Properties.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.CheckBoxUseDefaultConsole_Properties_EditValueChanging);
-            this.CheckBoxUseDefaultConsole.Size = new System.Drawing.Size(19, 19);
+            this.CheckBoxUseDefaultConsole.Size = new System.Drawing.Size(146, 20);
             this.CheckBoxUseDefaultConsole.TabIndex = 3;
             this.CheckBoxUseDefaultConsole.Visible = false;
             this.CheckBoxUseDefaultConsole.CheckStateChanged += new System.EventHandler(this.CheckBoxUseDefaultConsole_CheckStateChanged);
@@ -227,7 +230,7 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.LabelDefault.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelDefault.Appearance.Options.UseFont = true;
-            this.LabelDefault.Location = new System.Drawing.Point(150, 156);
+            this.LabelDefault.Location = new System.Drawing.Point(150, 160);
             this.LabelDefault.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelDefault.Name = "LabelDefault";
             this.LabelDefault.Size = new System.Drawing.Size(41, 15);
@@ -236,17 +239,43 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             // CheckBoxDefault
             // 
-            this.CheckBoxDefault.Location = new System.Drawing.Point(264, 154);
+            this.CheckBoxDefault.Location = new System.Drawing.Point(264, 158);
             this.CheckBoxDefault.Name = "CheckBoxDefault";
             this.CheckBoxDefault.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CheckBoxDefault.Properties.Appearance.Options.UseFont = true;
             this.CheckBoxDefault.Properties.AutoWidth = true;
-            this.CheckBoxDefault.Properties.Caption = "";
+            this.CheckBoxDefault.Properties.Caption = "Set Default Console";
             this.CheckBoxDefault.Properties.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.CheckBoxUseDefaultConsole_Properties_EditValueChanging);
-            this.CheckBoxDefault.Size = new System.Drawing.Size(19, 19);
-            this.CheckBoxDefault.TabIndex = 1147;
+            this.CheckBoxDefault.Size = new System.Drawing.Size(127, 20);
+            this.CheckBoxDefault.TabIndex = 5;
             this.CheckBoxDefault.CheckStateChanged += new System.EventHandler(this.CheckBoxDefault_CheckStateChanged);
             this.CheckBoxDefault.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.CheckBoxDefault_EditValueChanging);
+            // 
+            // LabelGoldHEN
+            // 
+            this.LabelGoldHEN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelGoldHEN.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelGoldHEN.Appearance.Options.UseFont = true;
+            this.LabelGoldHEN.Location = new System.Drawing.Point(444, 181);
+            this.LabelGoldHEN.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
+            this.LabelGoldHEN.Name = "LabelGoldHEN";
+            this.LabelGoldHEN.Size = new System.Drawing.Size(52, 15);
+            this.LabelGoldHEN.TabIndex = 1151;
+            this.LabelGoldHEN.Text = "GoldHEN:";
+            this.LabelGoldHEN.Visible = false;
+            // 
+            // checkEdit1
+            // 
+            this.checkEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkEdit1.Location = new System.Drawing.Point(444, 155);
+            this.checkEdit1.Name = "checkEdit1";
+            this.checkEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.checkEdit1.Properties.Appearance.Options.UseFont = true;
+            this.checkEdit1.Properties.AutoWidth = true;
+            this.checkEdit1.Properties.Caption = "GoldHEN";
+            this.checkEdit1.Properties.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.CheckBoxUseDefaultConsole_Properties_EditValueChanging);
+            this.checkEdit1.Size = new System.Drawing.Size(73, 20);
+            this.checkEdit1.TabIndex = 6;
             // 
             // NewConnectionDialog
             // 
@@ -255,6 +284,8 @@ namespace ArisenStudio.Forms.Dialogs
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(536, 248);
+            this.Controls.Add(this.LabelGoldHEN);
+            this.Controls.Add(this.checkEdit1);
             this.Controls.Add(this.LabelDefault);
             this.Controls.Add(this.CheckBoxDefault);
             this.Controls.Add(this.ImageConsole);
@@ -262,7 +293,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.Controls.Add(this.LabelPlatformType);
             this.Controls.Add(this.ButtonChangeLoginDetails);
             this.Controls.Add(this.ButtonCancel);
-            this.Controls.Add(this.ButtonOK);
+            this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.TextBoxAddress);
             this.Controls.Add(this.TextBoxConnectionName);
             this.Controls.Add(this.LabelName);
@@ -292,6 +323,7 @@ namespace ArisenStudio.Forms.Dialogs
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxConnectionName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxUseDefaultConsole.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxDefault.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,7 +336,7 @@ namespace ArisenStudio.Forms.Dialogs
         private LabelControl LabelLogin;
         private TextEdit TextBoxConnectionName;
         private TextEdit TextBoxAddress;
-        private SimpleButton ButtonOK;
+        private SimpleButton ButtonSave;
         private SimpleButton ButtonCancel;
         private SimpleButton ButtonChangeLoginDetails;
         private LabelControl LabelPlatformType;
@@ -313,5 +345,7 @@ namespace ArisenStudio.Forms.Dialogs
         private CheckEdit CheckBoxUseDefaultConsole;
         private LabelControl LabelDefault;
         private CheckEdit CheckBoxDefault;
+        private LabelControl LabelGoldHEN;
+        private CheckEdit checkEdit1;
     }
 }

@@ -71,10 +71,10 @@ namespace ArisenStudio.Forms.Dialogs
 
             TabPageChangeLog.Text = Language.GetString("CHANGE_LOG");
 
-            ButtonAddNewProfile.SetControlText(Language.GetString("PROFILE_ADD_NEW"), 26);
+            ButtonAddNewProfile.Text = Language.GetString("PROFILE_ADD_NEW");
             //ButtonFindXboxConsoles.SetControlText(Language.GetString("XBOX_SCAN_CONSOLES"), 26);
-            ButtonEditProfile.SetControlText(Language.GetString("PROFILE_EDIT"), 26);
-            ButtonDeleteProfile.SetControlText(Language.GetString("PROFILE_DELETE"), 26);
+            ButtonEditProfile.Text = Language.GetString("PROFILE_EDIT");
+            ButtonDeleteProfile.Text = Language.GetString("PROFILE_DELETE");
 
             LoadChangeLog();
             LoadConsoles();
@@ -88,7 +88,8 @@ namespace ArisenStudio.Forms.Dialogs
             {
                 if (Platform == null)
                 {
-                    Settings.ConsoleProfiles.Add(Settings.CreateDefaultProfile());
+                    Platform platform = DialogExtensions.ShowPlatformList(this, true);
+                    Settings.ConsoleProfiles.Add(Settings.CreateDefaultProfile(platform));
                 }
                 else
                 {

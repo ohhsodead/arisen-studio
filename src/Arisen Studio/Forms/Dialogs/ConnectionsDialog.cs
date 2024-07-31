@@ -53,9 +53,9 @@ namespace ArisenStudio.Forms.Dialogs
 
             GroupConsoleProfiles.Text = Language.GetString("CONSOLE_PROFILES");
 
-            ButtonAddNewProfile.SetControlText(Language.GetString("PROFILE_ADD_NEW"), 26);
-            ButtonEditProfile.SetControlText(Language.GetString("PROFILE_EDIT"), 26);
-            ButtonDeleteProfile.SetControlText(Language.GetString("PROFILE_DELETE"), 26);
+            ButtonAddNewProfile.Text = Language.GetString("PROFILE_ADD_NEW");
+            ButtonEditProfile.Text = Language.GetString("PROFILE_EDIT");
+            ButtonDeleteProfile.Text = Language.GetString("PROFILE_DELETE");
 
             LoadConsoles();
         }

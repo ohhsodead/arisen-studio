@@ -161,7 +161,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             }
             else
             {
-                DialogExtensions.ShowTransferFilesDialog(this, TransferType.UninstallMods, ModItem.GetCategory(Categories), ModItem, InstalledModInfo.DownloadFiles);
+                DialogExtensions.ShowTransferFilesDialog(this, TransferType.UninstallMods, ModItem.GetCategory(Categories), ModItem, (DownloadFiles)InstalledModInfo.DownloadFiles);
             }
         }
 

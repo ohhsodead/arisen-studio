@@ -95,7 +95,7 @@ namespace ArisenStudio.Forms.Dialogs
             // ButtonSave
             // 
             this.ButtonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSave.Location = new System.Drawing.Point(324, 426);
+            this.ButtonSave.Location = new System.Drawing.Point(324, 441);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonSave.Size = new System.Drawing.Size(80, 24);
@@ -107,7 +107,7 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.ButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonCancel.Location = new System.Drawing.Point(410, 426);
+            this.ButtonCancel.Location = new System.Drawing.Point(410, 441);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCancel.Size = new System.Drawing.Size(80, 24);
@@ -286,7 +286,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.GridControlFiles.Location = new System.Drawing.Point(2, 22);
             this.GridControlFiles.MainView = this.GridViewFiles;
             this.GridControlFiles.Name = "GridControlFiles";
-            this.GridControlFiles.Size = new System.Drawing.Size(474, 133);
+            this.GridControlFiles.Size = new System.Drawing.Size(474, 116);
             this.GridControlFiles.TabIndex = 8;
             this.GridControlFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewFiles});
@@ -323,6 +323,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.TextBoxDescription.LayoutUnit = DevExpress.XtraRichEdit.DocumentLayoutUnit.Pixel;
             this.TextBoxDescription.Location = new System.Drawing.Point(12, 132);
             this.TextBoxDescription.LookAndFeel.SkinName = "WXI";
+            this.TextBoxDescription.Margin = new System.Windows.Forms.Padding(3, 3, 3, 6);
             this.TextBoxDescription.Name = "TextBoxDescription";
             this.TextBoxDescription.Options.Behavior.FontSource = DevExpress.XtraRichEdit.RichEditBaseValueSource.Control;
             this.TextBoxDescription.Options.ClipboardFormats.Html = DevExpress.XtraRichEdit.RichEditClipboardMode.Disabled;
@@ -330,7 +331,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.TextBoxDescription.Options.Export.Mht.HtmlNumberingListExportFormat = DevExpress.XtraRichEdit.Export.Html.HtmlNumberingListExportFormat.PlainTextFormat;
             this.TextBoxDescription.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
             this.TextBoxDescription.Options.Import.Html.AutoDetectEncoding = false;
-            this.TextBoxDescription.Size = new System.Drawing.Size(478, 79);
+            this.TextBoxDescription.Size = new System.Drawing.Size(478, 94);
             this.TextBoxDescription.TabIndex = 7;
             this.TextBoxDescription.Views.SimpleView.AdjustColorsToSkins = true;
             this.TextBoxDescription.Views.SimpleView.BackColor = System.Drawing.Color.Transparent;
@@ -344,9 +345,10 @@ namespace ArisenStudio.Forms.Dialogs
             this.GroupInstallationFiles.AppearanceCaption.Options.UseFont = true;
             this.GroupInstallationFiles.Controls.Add(this.GridControlFiles);
             this.GroupInstallationFiles.Controls.Add(this.PanelButtons);
-            this.GroupInstallationFiles.Location = new System.Drawing.Point(12, 217);
+            this.GroupInstallationFiles.Location = new System.Drawing.Point(12, 240);
+            this.GroupInstallationFiles.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.GroupInstallationFiles.Name = "GroupInstallationFiles";
-            this.GroupInstallationFiles.Size = new System.Drawing.Size(478, 189);
+            this.GroupInstallationFiles.Size = new System.Drawing.Size(478, 172);
             this.GroupInstallationFiles.TabIndex = 1189;
             this.GroupInstallationFiles.Text = "Installation Files";
             // 
@@ -357,7 +359,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.PanelButtons.Controls.Add(this.ButtonDeleteAll);
             this.PanelButtons.Controls.Add(this.ButtonHelp);
             this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelButtons.Location = new System.Drawing.Point(2, 155);
+            this.PanelButtons.Location = new System.Drawing.Point(2, 138);
             this.PanelButtons.Name = "PanelButtons";
             this.PanelButtons.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.PanelButtons.Size = new System.Drawing.Size(474, 32);
@@ -423,7 +425,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(502, 462);
+            this.ClientSize = new System.Drawing.Size(502, 477);
             this.Controls.Add(this.GroupInstallationFiles);
             this.Controls.Add(this.TextBoxDescription);
             this.Controls.Add(this.LabelDescription);

@@ -75,7 +75,7 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.ButtonClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ButtonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.ButtonClose.Location = new System.Drawing.Point(292, 367);
+            this.ButtonClose.Location = new System.Drawing.Point(292, 359);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonClose.Size = new System.Drawing.Size(74, 24);
@@ -119,7 +119,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(659, 403);
+            this.ClientSize = new System.Drawing.Size(659, 395);
             this.Controls.Add(this.GroupActivateRAP);
             this.Controls.Add(this.ButtonClose);
             this.Controls.Add(this.GroupActivateDemo);

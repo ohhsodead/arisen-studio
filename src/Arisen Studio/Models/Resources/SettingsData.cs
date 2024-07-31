@@ -45,11 +45,11 @@ namespace ArisenStudio.Models.Resources
 
         public bool RememberConsolePath { get; set; } = false;
 
-        public string LocalPathPs3 { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        public string LocalPathPS3 { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
         public string LocalPathXbox { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-        public string ConsolePathPs3 { get; set; } = "/dev_hdd0/";
+        public string ConsolePathPS3 { get; set; } = "/dev_hdd0/";
 
         public string ConsolePathXbox { get; set; } = @"HDD:\";
 
@@ -57,15 +57,13 @@ namespace ArisenStudio.Models.Resources
 
         // Transfer
 
-        public bool InstallGameModsPluginsToUsbDevice { get; set; } = false;
+        public bool InstallGameModsToUsbDevice { get; set; } = false;
 
         public bool InstallHomebrewToUsbDevice { get; set; } = false;
 
         public bool InstallResourcesToUsbDevice { get; set; } = false;
 
         public bool InstallPackagesToUsbDevice { get; set; } = false;
-
-        public bool InstallApplicationsToUsbDevice { get; set; } = false;
 
         public bool InstallGameSavesToUsbDevice { get; set; } = false;
 
@@ -224,7 +222,7 @@ namespace ArisenStudio.Models.Resources
         /// <param name="dateInstalled"></param>
         /// <param name="downloadFiles"></param>
         /// <param name="isCustom"></param>
-        public void UpdateInstalledMods(ConsoleProfile consoleProfile, string categoryId, CategoryType categoryType, int modId, int totalFiles, DateTime dateInstalled, DownloadFiles downloadFiles, bool isCustom = false)
+        public void UpdateInstalledMods(ConsoleProfile consoleProfile, string categoryId, CategoryType categoryType, int modId, int totalFiles, DateTime dateInstalled, object downloadFiles, bool isCustom = false)
         {
             if (consoleProfile != null)
             {
@@ -303,7 +301,7 @@ namespace ArisenStudio.Models.Resources
         {
             List<string> modTypes = [];
 
-            foreach (ModItemData modItem in modsData.Mods)
+            foreach (ModItemData modItem in modsData.Library)
             {
                 if (modIds.Contains(modItem.Id))
                 {
@@ -362,7 +360,7 @@ namespace ArisenStudio.Models.Resources
         {
             ConsoleProfile consoleProfile;
 
-            if (!platform.HasValue)
+            if (platform.HasValue)
             {
                 PlatformType platformType;
 
@@ -370,7 +368,7 @@ namespace ArisenStudio.Models.Resources
                 {
                     platformType = PlatformType.PlayStation3Fat;
                 }
-                else if(platform.Value == Platform.PS4)
+                else if (platform.Value == Platform.PS4)
                 {
                     platformType = PlatformType.PlayStation4;
                 }
@@ -386,7 +384,7 @@ namespace ArisenStudio.Models.Resources
                     PlatformType = platformType,
                     Name = "Default Profile",
                     IsDefault = true,
-                    Address = "192.168.0.69",
+                    Address = "192.168.0.1",
                     Port = 21,
                     UseDefaultCredentials = true,
                     UseDefaultConsole = false
@@ -504,14 +502,13 @@ namespace ArisenStudio.Models.Resources
 
         public DateTime DateInstalled { get; set; }
 
-        public DownloadFiles DownloadFiles { get; set; }
+        public object DownloadFiles { get; set; }
 
         public bool IsCustom { get; set; }
     }
 
     /// <summary>
-    /// Create a new game region class with the specified <see cref="CategoriesData.Category.Id" />
-    /// and <see cref="ModsData.ModItem.Region" />.
+    /// Create a new game region class with the specified <see cref="CategoriesData.Category.Id" /> and <see cref="ModsData.ModItem.Region" />.
     /// </summary>
     public class GameRegion
     {

@@ -60,8 +60,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
                 GridControlCheats.DataSource = DataTableCheats;
 
-                ButtonApplyCheat.SetControlText(Language.GetString("LABEL_APPLY_CHEAT"), 26);
-                ButtonReportIssue.SetControlText(Language.GetString("LABEL_REPORT_ISSUE"), 26);
+                ButtonApplyCheat.Text = Language.GetString("LABEL_APPLY_CHEAT");
+                ButtonReportIssue.Text = Language.GetString("LABEL_REPORT_ISSUE");
             }
             catch (Exception ex)
             {

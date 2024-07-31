@@ -43,10 +43,10 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ImageClose = new DevExpress.XtraEditors.SvgImageBox();
             this.LabelName = new DevExpress.XtraEditors.LabelControl();
             this.PanelActions = new DevExpress.Utils.Layout.StackPanel();
-            this.ButtonInstall = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonDownload = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonInstall = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonFaq = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonReport = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonShare = new DevExpress.XtraEditors.SimpleButton();
             this.Images = new DevExpress.Utils.SvgImageCollection(this.components);
             this.PanelDetails = new DevExpress.XtraEditors.XtraScrollableControl();
             this.StatContentId = new ArisenStudio.Controls.StatItem();
@@ -203,12 +203,36 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.PanelActions.Controls.Add(this.ButtonDownload);
             this.PanelActions.Controls.Add(this.ButtonInstall);
             this.PanelActions.Controls.Add(this.ButtonFaq);
-            this.PanelActions.Controls.Add(this.ButtonReport);
+            this.PanelActions.Controls.Add(this.ButtonShare);
             this.PanelActions.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelActions.Location = new System.Drawing.Point(0, 278);
             this.PanelActions.Name = "PanelActions";
             this.PanelActions.Size = new System.Drawing.Size(800, 54);
             this.PanelActions.TabIndex = 1175;
+            // 
+            // ButtonDownload
+            // 
+            this.ButtonDownload.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonDownload.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonDownload.Appearance.Options.UseFont = true;
+            this.ButtonDownload.Appearance.Options.UseForeColor = true;
+            this.ButtonDownload.AutoSize = true;
+            this.ButtonDownload.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonDownload.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonDownload.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonDownload.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonDownload.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.download;
+            this.ButtonDownload.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonDownload.Location = new System.Drawing.Point(12, 12);
+            this.ButtonDownload.Margin = new System.Windows.Forms.Padding(12, 3, 4, 3);
+            this.ButtonDownload.MinimumSize = new System.Drawing.Size(0, 30);
+            this.ButtonDownload.Name = "ButtonDownload";
+            this.ButtonDownload.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonDownload.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDownload.Size = new System.Drawing.Size(113, 30);
+            this.ButtonDownload.TabIndex = 1179;
+            this.ButtonDownload.Text = "Download";
+            this.ButtonDownload.Click += new System.EventHandler(this.ButtonDownload_Click);
             // 
             // ButtonInstall
             // 
@@ -237,30 +261,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonInstall.Text = "Install";
             this.ButtonInstall.Click += new System.EventHandler(this.ButtonInstall_Click);
             // 
-            // ButtonDownload
-            // 
-            this.ButtonDownload.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ButtonDownload.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ButtonDownload.Appearance.Options.UseFont = true;
-            this.ButtonDownload.Appearance.Options.UseForeColor = true;
-            this.ButtonDownload.AutoSize = true;
-            this.ButtonDownload.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonDownload.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonDownload.ImageOptions.ImageToTextIndent = 6;
-            this.ButtonDownload.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonDownload.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.download;
-            this.ButtonDownload.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonDownload.Location = new System.Drawing.Point(12, 12);
-            this.ButtonDownload.Margin = new System.Windows.Forms.Padding(12, 3, 4, 3);
-            this.ButtonDownload.MinimumSize = new System.Drawing.Size(0, 30);
-            this.ButtonDownload.Name = "ButtonDownload";
-            this.ButtonDownload.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
-            this.ButtonDownload.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonDownload.Size = new System.Drawing.Size(113, 30);
-            this.ButtonDownload.TabIndex = 1179;
-            this.ButtonDownload.Text = "Download";
-            this.ButtonDownload.Click += new System.EventHandler(this.ButtonDownload_Click);
-            // 
             // ButtonFaq
             // 
             this.ButtonFaq.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -285,29 +285,29 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonFaq.Text = "FAQ";
             this.ButtonFaq.Click += new System.EventHandler(this.ButtonFaq_Click);
             // 
-            // ButtonReport
+            // ButtonShare
             // 
-            this.ButtonReport.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ButtonReport.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ButtonReport.Appearance.Options.UseFont = true;
-            this.ButtonReport.Appearance.Options.UseForeColor = true;
-            this.ButtonReport.AutoSize = true;
-            this.ButtonReport.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonReport.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonReport.ImageOptions.ImageToTextIndent = 6;
-            this.ButtonReport.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonReport.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_share;
-            this.ButtonReport.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonReport.Location = new System.Drawing.Point(320, 12);
-            this.ButtonReport.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ButtonReport.MinimumSize = new System.Drawing.Size(0, 30);
-            this.ButtonReport.Name = "ButtonReport";
-            this.ButtonReport.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
-            this.ButtonReport.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonReport.Size = new System.Drawing.Size(130, 30);
-            this.ButtonReport.TabIndex = 1184;
-            this.ButtonReport.Text = "Share Details";
-            this.ButtonReport.Visible = false;
+            this.ButtonShare.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonShare.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonShare.Appearance.Options.UseFont = true;
+            this.ButtonShare.Appearance.Options.UseForeColor = true;
+            this.ButtonShare.AutoSize = true;
+            this.ButtonShare.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonShare.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonShare.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonShare.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonShare.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_share;
+            this.ButtonShare.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonShare.Location = new System.Drawing.Point(320, 12);
+            this.ButtonShare.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ButtonShare.MinimumSize = new System.Drawing.Size(0, 30);
+            this.ButtonShare.Name = "ButtonShare";
+            this.ButtonShare.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonShare.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonShare.Size = new System.Drawing.Size(130, 30);
+            this.ButtonShare.TabIndex = 1184;
+            this.ButtonShare.Text = "Share Details";
+            this.ButtonShare.Visible = false;
             // 
             // Images
             // 
@@ -482,6 +482,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
         private Controls.StatItem StatSha256;
         private Controls.StatItem StatContentId;
         private Controls.StatItem StatModifiedDate;
-        private SimpleButton ButtonReport;
+        private SimpleButton ButtonShare;
     }
 }

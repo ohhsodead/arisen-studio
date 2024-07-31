@@ -1,10 +1,12 @@
 ﻿using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Resources;
+using DevExpress.Utils.Mdi;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using Humanizer;
 using System;
+using System.Drawing;
 using System.Net;
 using System.Resources;
 using System.Windows.Forms;
@@ -24,11 +26,16 @@ namespace ArisenStudio.Forms.Dialogs
 
         public bool IsEditingProfile { get; set; } = false;
 
-        public bool CloseOnCancel { get; set; } = false;
-
         private void NewConnectionDialog_Load(object sender, EventArgs e)
         {
-            Text = Language.GetString("LABEL_CONNECTION_DETAILS");
+            if (IsEditingProfile)
+            {
+                Text = Language.GetString("LABEL_EDIT_CONNECTION_DETAILS");
+            }
+            else
+            {
+                Text = Language.GetString("LABEL_NEW_CONNECTION_DETAILS");
+            }
 
             LabelName.Text = Language.GetString("LABEL_CONNECTION_NAME") + ":";
             LabelPlatformType.Text = Language.GetString("LABEL_PLATFORM_TYPE") + ":";
@@ -36,7 +43,7 @@ namespace ArisenStudio.Forms.Dialogs
             LabelLogin.Text = Language.GetString("LABEL_LOGIN") + ":";
 
             ButtonChangeLoginDetails.Text = Language.GetString("LABEL_CHANGE");
-            ButtonOK.Text = Language.GetString("LABEL_OK");
+            ButtonSave.Text = Language.GetString("LABEL_SAVE");
             ButtonCancel.Text = Language.GetString("LABEL_CANCEL");
 
             TextBoxConnectionName.Text = ConsoleProfile.Name;
@@ -72,39 +79,74 @@ namespace ArisenStudio.Forms.Dialogs
             CheckBoxDefault.Checked = defaults == 0;
         }
 
-        private void NewConnectionDialog_FormClosing(object sender, FormClosingEventArgs e)
+        private void NewConnectionDialog_FormClosed(object sender, FormClosedEventArgs e)
         {
             //if (DialogResult == DialogResult.Cancel && CloseOnCancel)
-            if (MainWindow.Settings.ConsoleProfiles.Count == 0)
-            {
-                if (XtraMessageBox.Show(this, string.Format("At least one console profile must be created to use Arisen Studio.\n\nWould you like to create the Default profile?"), Language.GetString("ERROR"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                {
-                    string userPlatform = DialogExtensions.ShowListItemDialog(this, "Default Platform", Language.GetString("LABEL_PLATFORM"), ["PlayStation 3", "Xbox 360"]);
-                    Platform platform = Platform.PS3;
+            //if (MainWindow.Settings.ConsoleProfiles.Count == 0)
+            //{
+            //    if (XtraMessageBox.Show(this, string.Format("At least one console profile must be created to use Arisen Studio.\n\nWould you like to create the Default profile?"), Language.GetString("ERROR"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            //    {
+            //        string userPlatform = DialogExtensions.ShowListItemDialog(this, "Default Platform", Language.GetString("LABEL_PLATFORM"), ["PlayStation 3", "Xbox 360"]);
+            //        Platform platform = Platform.PS3;
 
-                    if (!string.IsNullOrEmpty(userPlatform))
-                    {
-                        platform = userPlatform.DehumanizeTo<Platform>();
-                    }
+            //        if (!string.IsNullOrEmpty(userPlatform))
+            //        {
+            //            platform = userPlatform.DehumanizeTo<Platform>();
+            //        }
 
-                    TextBoxConnectionName.Text = "New Console";
-                    ComboBoxPlatform.SelectedIndex = platform == Platform.PS3 ? 0 : 3;
-                    TextBoxAddress.Text = "192.168.1.1";
-                    CheckBoxDefault.Checked = true;
-                    ConsoleProfile.Platform = platform;
+            //        TextBoxConnectionName.Text = "New Console";
+            //        ComboBoxPlatform.SelectedIndex = platform == Platform.PS3 ? 0 : 3;
+            //        TextBoxAddress.Text = "192.168.1.1";
+            //        CheckBoxDefault.Checked = true;
+            //        ConsoleProfile.Platform = platform;
 
-                    //ConsoleProfile.Name = "Guest";
-                    //ConsoleProfile.Address = "192.168.1.1";
-                    //ConsoleProfile.Platform = platform;
-                    //ConsoleProfile.IsDefault = true;
-                    ButtonOK.PerformClick();
-                    e.Cancel = false;
-                }
-                else
-                {
-                    e.Cancel = true;
-                }
-            }
+            //        //ConsoleProfile.Name = "Guest";
+            //        //ConsoleProfile.Address = "192.168.1.1";
+            //        //ConsoleProfile.Platform = platform;
+            //        //ConsoleProfile.IsDefault = true;
+            //        DialogResult = DialogResult.OK;
+            //        e.Cnacel = false;
+            //    }
+            //    else
+            //    {
+            //        e.Cancel = true;
+            //    }
+            //}
+        }
+
+        private void NewConnectionDialog_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ////if (DialogResult == DialogResult.Cancel && CloseOnCancel)
+            //if (MainWindow.Settings.ConsoleProfiles.Count == 0)
+            //{
+            //    if (XtraMessageBox.Show(this, string.Format("At least one console profile must be created to use Arisen Studio.\n\nWould you like to create the Default profile?"), Language.GetString("ERROR"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            //    {
+            //        string userPlatform = DialogExtensions.ShowListItemDialog(this, "Default Platform", Language.GetString("LABEL_PLATFORM"), ["PlayStation 3", "Xbox 360"]);
+            //        Platform platform = Platform.PS3;
+
+            //        if (!string.IsNullOrEmpty(userPlatform))
+            //        {
+            //            platform = userPlatform.DehumanizeTo<Platform>();
+            //        }
+
+            //        TextBoxConnectionName.Text = "New Console";
+            //        ComboBoxPlatform.SelectedIndex = platform == Platform.PS3 ? 0 : 3;
+            //        TextBoxAddress.Text = "192.168.1.1";
+            //        CheckBoxDefault.Checked = true;
+            //        ConsoleProfile.Platform = platform;
+
+            //        //ConsoleProfile.Name = "Guest";
+            //        //ConsoleProfile.Address = "192.168.1.1";
+            //        //ConsoleProfile.Platform = platform;
+            //        //ConsoleProfile.IsDefault = true;
+            //        DialogResult = DialogResult.OK;
+            //        e.Cancel = false;
+            //    }
+            //    else
+            //    {
+            //        e.Cancel = true;
+            //    }
+            //}
         }
 
         private void ComboBoxPlatformType_SelectedIndexChanged(object sender, EventArgs e)
@@ -130,10 +172,11 @@ namespace ArisenStudio.Forms.Dialogs
                     break;
 
                 case 3:
-                    ConsoleProfile.PlatformType = PlatformType.PlayStation4;
-                    ConsoleProfile.Platform = Platform.PS4;
-                    ImageConsole.Image = Properties.Resources.PlayStation4;
                     break;
+                    //ConsoleProfile.PlatformType = PlatformType.PlayStation4;
+                    //ConsoleProfile.Platform = Platform.PS4;
+                    //ImageConsole.Image = Properties.Resources.PlayStation4;
+                    //break;
 
                 case 4:
                     ConsoleProfile.PlatformType = PlatformType.Xbox360FatWhite;
@@ -273,7 +316,7 @@ namespace ArisenStudio.Forms.Dialogs
 
             if (!CheckBoxDefault.Checked && defaults == 0)
             {
-                XtraMessageBox.Show(this, "You must have one console profile set as default.", Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                XtraMessageBox.Show(this, Language.GetString("MUST_HAVE_DEFAULT_CONSOLE"), Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 CheckBoxDefault.Checked = true;
                 return;
             }
@@ -283,24 +326,17 @@ namespace ArisenStudio.Forms.Dialogs
 
         private void CheckBoxDefault_EditValueChanging(object sender, ChangingEventArgs e)
         {
-            int defaults = 0;
-
-            foreach (ConsoleProfile console in MainWindow.Settings.ConsoleProfiles)
+            foreach (ConsoleProfile consoleProfile in MainWindow.Settings.ConsoleProfiles)
             {
-                if (!console.Name.EqualsIgnoreCase(TextBoxConnectionName.Text))
+                if (!consoleProfile.Name.EqualsIgnoreCase(TextBoxConnectionName.Text))
                 {
-                    if (console.IsDefault)
+                    if (consoleProfile.IsDefault)
                     {
-                        defaults++;
+                        XtraMessageBox.Show(this, string.Format(Language.GetString("DEFAULT_CONSOLE_ALREADY_EXISTS"), consoleProfile.Name), Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        e.Cancel = true;
+                        return;
                     }
                 }
-            }
-
-            if (defaults > 0)
-            {
-                XtraMessageBox.Show(this, "You already have a console profile set as your default.", Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Cancel = true;
-                return;
             }
 
             ConsoleProfile.IsDefault = CheckBoxDefault.Checked;
@@ -310,13 +346,13 @@ namespace ArisenStudio.Forms.Dialogs
         {
             if (string.IsNullOrWhiteSpace(TextBoxConnectionName.Text))
             {
-                XtraMessageBox.Show(this, "You must enter a connection name.", Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                XtraMessageBox.Show(this, Language.GetString("MISSING_CONNECTION_NAME"), Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(TextBoxAddress.Text))
             {
-                XtraMessageBox.Show(this, ConsoleProfile.Platform == Platform.PS3 ? "You must enter an IP Address." : "You must enter an IP Address or Console Name.", Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                XtraMessageBox.Show(this, ConsoleProfile.Platform == Platform.PS3 ? Language.GetString("MISSING_IP_ADDRESS") : Language.GetString("MISSING_IP_OR_NAME"), Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -354,7 +390,7 @@ namespace ArisenStudio.Forms.Dialogs
                         switch (IsEditingProfile)
                         {
                             case true when ConsoleProfile.Name != TextBoxConnectionName.Text && ProfileExists(TextBoxConnectionName.Text):
-                                XtraMessageBox.Show(this, "A console profile with this name already exists.", "Profile Name Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                XtraMessageBox.Show(this, Language.GetString("PROFILE_NAME_EXISTS"), Language.GetString("LABEL_CONNECTION_DETAILS"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 break;
                             case true:
                                 ConsoleProfile.Name = TextBoxConnectionName.Text;
@@ -365,7 +401,7 @@ namespace ArisenStudio.Forms.Dialogs
                                 {
                                     if (ProfileExists(TextBoxConnectionName.Text))
                                     {
-                                        XtraMessageBox.Show(this, "A console profile with this name already exists.", "Profile Name Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        XtraMessageBox.Show(this, Language.GetString("PROFILE_NAME_EXISTS"), Language.GetString("LABEL_CONNECTION_DETAILS"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                     }
                                     else
                                     {
@@ -382,7 +418,7 @@ namespace ArisenStudio.Forms.Dialogs
                         break;
                     }
                 default:
-                    XtraMessageBox.Show(this, "IP Address isn't in the correct format.", "Invalid IP Address", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    XtraMessageBox.Show(this, Language.GetString("INCORRECT_IP_FORMAT"), Language.GetString("INVALID_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
             }
         }

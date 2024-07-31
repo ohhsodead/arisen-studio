@@ -9,19 +9,19 @@ namespace ArisenStudio.Models.Database
     public class ModsData
     {
         /// <summary>
-        /// Get the mods from the database.
+        /// Get the Library from the database.
         /// </summary>
-        public List<ModItemData> Mods { get; set; }
+        public List<ModItemData> Library { get; set; }
 
         /// <summary>
-        /// Get the supported firmwares from all of the mods.
+        /// Get the supported firmwares from the Library.
         /// </summary>
         /// <returns> Firmwares Supported </returns>
         public List<string> AllFirmwareTypes
         {
             get
             {
-                List<string> firmwares = Mods.SelectMany(x => x.FirmwareTypes).Where(x => !x.EqualsIgnoreCase("-")).Distinct().ToList();
+                List<string> firmwares = Library.SelectMany(x => x.FirmwareTypes).Where(x => !x.EqualsIgnoreCase("-")).Distinct().ToList();
                 firmwares.Sort();
                 return firmwares.Distinct().ToList();
             }
@@ -36,7 +36,7 @@ namespace ArisenStudio.Models.Database
         /// <returns> </returns>
         public List<string> AllModTypesForCategoryId(string categoryId)
         {
-            List<string> modTypes = Mods.Where(x => x.CategoryId.EqualsIgnoreCase(categoryId)).SelectMany(x => x.ModTypes).Distinct().ToList();
+            List<string> modTypes = Library.Where(x => x.CategoryId.EqualsIgnoreCase(categoryId)).SelectMany(x => x.ModTypes).Distinct().ToList();
             modTypes.Sort();
             return modTypes;
         }
@@ -57,7 +57,7 @@ namespace ArisenStudio.Models.Database
         {
             if (favorites)
             {
-                return Mods.Where(x =>
+                return Library.Where(x =>
                     MainWindow.Settings.FavoriteMods.Exists(y => y.ModId == x.Id) &&
                     x.GetCategoryType(categoriesData) == CategoryType.Game &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
@@ -70,7 +70,7 @@ namespace ArisenStudio.Models.Database
             }
             else
             {
-                return Mods.Where(x =>
+                return Library.Where(x =>
                     x.GetCategoryType(categoriesData) == CategoryType.Game &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
@@ -96,7 +96,7 @@ namespace ArisenStudio.Models.Database
         {
             if (favorites)
             {
-                return Mods.Where(x =>
+                return Library.Where(x =>
                     MainWindow.Settings.FavoriteMods.Exists(y => y.ModId == x.Id) &&
                     x.GetCategoryType(categoriesData) == CategoryType.Homebrew &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
@@ -107,7 +107,7 @@ namespace ArisenStudio.Models.Database
             }
             else
             {
-                return Mods.Where(x =>
+                return Library.Where(x =>
                     x.GetCategoryType(categoriesData) == CategoryType.Homebrew &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
@@ -131,7 +131,7 @@ namespace ArisenStudio.Models.Database
         {
             if (favorites)
             {
-                return Mods.Where(x =>
+                return Library.Where(x =>
                     MainWindow.Settings.FavoriteMods.Exists(y => y.ModId == x.Id) &&
                     x.GetCategoryType(categoriesData) == CategoryType.Resource &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
@@ -143,7 +143,7 @@ namespace ArisenStudio.Models.Database
             }
             else
             {
-                return Mods.Where(x =>
+                return Library.Where(x =>
                     x.GetCategoryType(categoriesData) == CategoryType.Resource &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
@@ -164,12 +164,13 @@ namespace ArisenStudio.Models.Database
         /// <param name="creator"></param>
         /// <param name="favorites"></param>
         /// <returns></returns>
-        public List<ModItemData> GetPluginItems(string categoryId, string name, string version, bool favorites = false)
+        public List<ModItemData> GetGameModsXbox(CategoriesData categoriesData, string categoryId, string name, string version, bool favorites = false)
         {
             if (favorites)
             {
-                return Mods.Where(x =>
+                return Library.Where(x =>
                     MainWindow.Settings.FavoriteMods.Exists(y => y.ModId == x.Id) &&
+                    x.GetCategoryType(categoriesData) == CategoryType.Game &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
                     x.Versions.ToArray().AnyContainsIgnoreCase(version))
@@ -177,7 +178,40 @@ namespace ArisenStudio.Models.Database
             }
             else
             {
-                return Mods.Where(x =>
+                return Library.Where(x =>
+                    x.GetCategoryType(categoriesData) == CategoryType.Game &&
+                    (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
+                    x.Name.ContainsIgnoreCase(name) &&
+                    x.Versions.ToArray().AnyContainsIgnoreCase(version))
+                    .ToList();
+            }
+        }
+
+        /// <summary>
+        /// Get all of the mods matching the specified filters.
+        /// </summary>
+        /// <param name="categoryId"></param>
+        /// <param name="name"></param>
+        /// <param name="version"></param>
+        /// <param name="creator"></param>
+        /// <param name="favorites"></param>
+        /// <returns></returns>
+        public List<ModItemData> GetHomebrewXbox(CategoriesData categoriesData, string categoryId, string name, string version, bool favorites = false)
+        {
+            if (favorites)
+            {
+                return Library.Where(x =>
+                    MainWindow.Settings.FavoriteMods.Exists(y => y.ModId == x.Id) &&
+                    x.GetCategoryType(categoriesData) == CategoryType.Homebrew &&
+                    (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
+                    x.Name.ContainsIgnoreCase(name) &&
+                    x.Versions.ToArray().AnyContainsIgnoreCase(version))
+                    .ToList();
+            }
+            else
+            {
+                return Library.Where(x =>
+                    x.GetCategoryType(categoriesData) == CategoryType.Homebrew &&
                     (categoryId.IsNullOrEmpty() ? x.CategoryId.ContainsIgnoreCase(categoryId) : x.CategoryId.EqualsIgnoreCase(categoryId)) &&
                     x.Name.ContainsIgnoreCase(name) &&
                     x.Versions.ToArray().AnyContainsIgnoreCase(version))
@@ -194,7 +228,7 @@ namespace ArisenStudio.Models.Database
         /// <returns> Mod details for the <see cref="ModItemData.Id" /> </returns>
         public ModItemData GetModById(Platform platform, int id)
         {
-            return Mods.FirstOrDefault(modItem => modItem.GetPlatform() == platform && modItem.Id.Equals(id));
+            return Library.FirstOrDefault(modItem => modItem.GetPlatform() == platform && modItem.Id.Equals(id));
         }
     }
 }

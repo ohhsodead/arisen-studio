@@ -62,9 +62,7 @@ namespace ArisenStudio
         Game,
         Homebrew,
         Resource,
-        Application,
         Package,
-        Plugin,
         GameSave
     }
 

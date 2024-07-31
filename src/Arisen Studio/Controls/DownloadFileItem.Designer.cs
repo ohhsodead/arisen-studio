@@ -192,7 +192,7 @@ namespace ArisenStudio.Controls
             this.Separator.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Separator.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
             this.Separator.LineColor = System.Drawing.SystemColors.WindowFrame;
-            this.Separator.Location = new System.Drawing.Point(0, 130);
+            this.Separator.Location = new System.Drawing.Point(0, 134);
             this.Separator.Name = "Separator";
             this.Separator.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Separator.Size = new System.Drawing.Size(746, 6);
@@ -229,7 +229,7 @@ namespace ArisenStudio.Controls
             this.ImageInstall.ContextButtonOptions.ItemCursor = System.Windows.Forms.Cursors.Hand;
             this.ImageInstall.ContextButtonOptions.PanelCursor = System.Windows.Forms.Cursors.Hand;
             this.ImageInstall.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageInstall.ItemAppearance.Disabled.FillColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ImageInstall.ItemAppearance.Disabled.FillColor = System.Drawing.SystemColors.ControlDark;
             this.ImageInstall.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
             this.ImageInstall.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
             this.ImageInstall.Location = new System.Drawing.Point(618, 14);
@@ -250,12 +250,12 @@ namespace ArisenStudio.Controls
             this.ListBoxInstallFiles.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.ListBoxInstallFiles.Appearance.Options.UseFont = true;
             this.ListBoxInstallFiles.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.ListBoxInstallFiles.Location = new System.Drawing.Point(0, 82);
+            this.ListBoxInstallFiles.Location = new System.Drawing.Point(-9, 82);
             this.ListBoxInstallFiles.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
             this.ListBoxInstallFiles.Name = "ListBoxInstallFiles";
             this.ListBoxInstallFiles.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.ListBoxInstallFiles.ShowFocusRect = false;
-            this.ListBoxInstallFiles.Size = new System.Drawing.Size(738, 34);
+            this.ListBoxInstallFiles.Size = new System.Drawing.Size(751, 38);
             this.ListBoxInstallFiles.TabIndex = 1202;
             this.ListBoxInstallFiles.Visible = false;
             this.ListBoxInstallFiles.DrawItem += new DevExpress.XtraEditors.ListBoxDrawItemEventHandler(this.ListBoxInstallFiles_DrawItem);
@@ -349,7 +349,7 @@ namespace ArisenStudio.Controls
             this.Controls.Add(this.LabelHeaderRegion);
             this.Margin = new System.Windows.Forms.Padding(2, 0, 3, 0);
             this.Name = "DownloadFileItem";
-            this.Size = new System.Drawing.Size(746, 136);
+            this.Size = new System.Drawing.Size(746, 140);
             this.Load += new System.EventHandler(this.DownloadItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Separator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageDownload)).EndInit();

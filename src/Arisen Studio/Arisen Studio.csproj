@@ -101,9 +101,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\References\ISOLib.dll</HintPath>
     </Reference>
-    <Reference Include="JRPC, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Plugins\xdevkit + jrpc\JRPC.dll</HintPath>
+    <Reference Include="JRPC">
+      <HintPath>..\..\..\..\Resources\xdevkit + jrpc\JRPC.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
@@ -128,10 +127,9 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
-    <Reference Include="xdevkit, Version=2.0.21256.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="xdevkit">
+      <HintPath>..\..\..\..\Resources\xdevkit.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>..\..\..\..\Plugins\xdevkit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +179,7 @@
     <Compile Include="Database\PackageItemData.cs" />
     <Compile Include="Database\GamesTitleIdsXBOX.cs" />
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Extensions\SimpleCache.cs" />
     <Compile Include="Extensions\GraphicExtensions.cs" />
     <Compile Include="Extensions\ImgurUploader.cs" />
     <Compile Include="Extensions\IoExtensions.cs" />
@@ -882,5 +881,6 @@
     <Content Include="arisenstudio.ico" />
     <None Include="Resources\arisenstudio.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -59,7 +59,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.MenuItemAddExistingProfile = new DevExpress.XtraBars.BarButtonItem();
             this.MenuItemSaveToDevice = new DevExpress.XtraBars.BarSubItem();
             this.MenuItemNoDeviceFound = new DevExpress.XtraBars.BarButtonItem();
-            this.GroupGameSave = new DevExpress.XtraEditors.GroupControl();
+            this.GroupDetails = new DevExpress.XtraEditors.GroupControl();
             this.LabelTempMB = new DevExpress.XtraEditors.LabelControl();
             this.LabelHeaderTempMB = new DevExpress.XtraEditors.LabelControl();
             this.LabelTempRAM = new DevExpress.XtraEditors.LabelControl();
@@ -94,16 +94,16 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.LabelHeaderFanSpeed = new DevExpress.XtraEditors.LabelControl();
             this.LabelHeaderDiscTray = new DevExpress.XtraEditors.LabelControl();
             this.GroupNeighborhoodEditor = new DevExpress.XtraEditors.GroupControl();
-            this.LabelHeaderName = new DevExpress.XtraEditors.LabelControl();
-            this.ComboBoxXboxIcon = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.LabelHeaderIconColor = new DevExpress.XtraEditors.LabelControl();
             this.TextBoxXboxName = new DevExpress.XtraEditors.ButtonEdit();
+            this.LabelHeaderIconColor = new DevExpress.XtraEditors.LabelControl();
+            this.ComboBoxXboxIcon = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.LabelHeaderName = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.PopupImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopupMenuFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopupMenuProfile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GroupGameSave)).BeginInit();
-            this.GroupGameSave.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupDetails)).BeginInit();
+            this.GroupDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GroupLEDColors)).BeginInit();
             this.GroupLEDColors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RadioGroupLEDsBottomRight.Properties)).BeginInit();
@@ -116,8 +116,8 @@ namespace ArisenStudio.Forms.Tools.XBOX
             ((System.ComponentModel.ISupportInitialize)(this.TrackBarFanSpeed.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupNeighborhoodEditor)).BeginInit();
             this.GroupNeighborhoodEditor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxXboxIcon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxXboxName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxXboxIcon.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelHeaderTempCPU
@@ -228,9 +228,9 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 498);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 495);
             this.barDockControlBottom.Manager = this.BarManager;
-            this.barDockControlBottom.Size = new System.Drawing.Size(702, 26);
+            this.barDockControlBottom.Size = new System.Drawing.Size(702, 29);
             // 
             // barDockControlLeft
             // 
@@ -238,7 +238,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.BarManager;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 498);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 495);
             // 
             // barDockControlRight
             // 
@@ -246,7 +246,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(702, 0);
             this.barDockControlRight.Manager = this.BarManager;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 498);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 495);
             // 
             // MenuButtonFile
             // 
@@ -339,38 +339,38 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.MenuItemNoDeviceFound.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.Caption;
             this.MenuItemNoDeviceFound.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
             // 
-            // GroupGameSave
+            // GroupDetails
             // 
-            this.GroupGameSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GroupDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GroupGameSave.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.GroupGameSave.AppearanceCaption.Options.UseFont = true;
-            this.GroupGameSave.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.GroupGameSave.Controls.Add(this.LabelTempMB);
-            this.GroupGameSave.Controls.Add(this.LabelHeaderTempMB);
-            this.GroupGameSave.Controls.Add(this.LabelTempRAM);
-            this.GroupGameSave.Controls.Add(this.LabelHeaderTempRAM);
-            this.GroupGameSave.Controls.Add(this.LabelTitleID);
-            this.GroupGameSave.Controls.Add(this.LabelHeaderTitleID);
-            this.GroupGameSave.Controls.Add(this.LabelKernel);
-            this.GroupGameSave.Controls.Add(this.LabelHeaderKernel);
-            this.GroupGameSave.Controls.Add(this.LabelCPUKey);
-            this.GroupGameSave.Controls.Add(this.LabelHeaderCPUKey);
-            this.GroupGameSave.Controls.Add(this.LabelTempGPU);
-            this.GroupGameSave.Controls.Add(this.LabelTempCPU);
-            this.GroupGameSave.Controls.Add(this.LabelHeaderTemperatures);
-            this.GroupGameSave.Controls.Add(this.ButtonRefreshDetails);
-            this.GroupGameSave.Controls.Add(this.LabelIPAddress);
-            this.GroupGameSave.Controls.Add(this.LabelHeaderTempCPU);
-            this.GroupGameSave.Controls.Add(this.LabelHeaderTempGPU);
-            this.GroupGameSave.Controls.Add(this.LabelHeaderIPAddress);
-            this.GroupGameSave.Location = new System.Drawing.Point(12, 12);
-            this.GroupGameSave.Name = "GroupGameSave";
-            this.GroupGameSave.Padding = new System.Windows.Forms.Padding(5);
-            this.GroupGameSave.Size = new System.Drawing.Size(678, 243);
-            this.GroupGameSave.TabIndex = 11;
-            this.GroupGameSave.Text = "Details";
+            this.GroupDetails.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.GroupDetails.AppearanceCaption.Options.UseFont = true;
+            this.GroupDetails.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.GroupDetails.Controls.Add(this.LabelTempMB);
+            this.GroupDetails.Controls.Add(this.LabelHeaderTempMB);
+            this.GroupDetails.Controls.Add(this.LabelTempRAM);
+            this.GroupDetails.Controls.Add(this.LabelHeaderTempRAM);
+            this.GroupDetails.Controls.Add(this.LabelTitleID);
+            this.GroupDetails.Controls.Add(this.LabelHeaderTitleID);
+            this.GroupDetails.Controls.Add(this.LabelKernel);
+            this.GroupDetails.Controls.Add(this.LabelHeaderKernel);
+            this.GroupDetails.Controls.Add(this.LabelCPUKey);
+            this.GroupDetails.Controls.Add(this.LabelHeaderCPUKey);
+            this.GroupDetails.Controls.Add(this.LabelTempGPU);
+            this.GroupDetails.Controls.Add(this.LabelTempCPU);
+            this.GroupDetails.Controls.Add(this.LabelHeaderTemperatures);
+            this.GroupDetails.Controls.Add(this.ButtonRefreshDetails);
+            this.GroupDetails.Controls.Add(this.LabelIPAddress);
+            this.GroupDetails.Controls.Add(this.LabelHeaderTempCPU);
+            this.GroupDetails.Controls.Add(this.LabelHeaderTempGPU);
+            this.GroupDetails.Controls.Add(this.LabelHeaderIPAddress);
+            this.GroupDetails.Location = new System.Drawing.Point(12, 12);
+            this.GroupDetails.Name = "GroupDetails";
+            this.GroupDetails.Padding = new System.Windows.Forms.Padding(5);
+            this.GroupDetails.Size = new System.Drawing.Size(678, 243);
+            this.GroupDetails.TabIndex = 11;
+            this.GroupDetails.Text = "System Details";
             // 
             // LabelTempMB
             // 
@@ -811,15 +811,28 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.GroupNeighborhoodEditor.TabIndex = 1183;
             this.GroupNeighborhoodEditor.Text = "Neighborhood Editor";
             // 
-            // LabelHeaderName
+            // TextBoxXboxName
             // 
-            this.LabelHeaderName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderName.Appearance.Options.UseFont = true;
-            this.LabelHeaderName.Location = new System.Drawing.Point(10, 29);
-            this.LabelHeaderName.Name = "LabelHeaderName";
-            this.LabelHeaderName.Size = new System.Drawing.Size(79, 15);
-            this.LabelHeaderName.TabIndex = 5;
-            this.LabelHeaderName.Text = "Console Name";
+            this.TextBoxXboxName.Location = new System.Drawing.Point(10, 50);
+            this.TextBoxXboxName.MenuManager = this.BarManager;
+            this.TextBoxXboxName.Name = "TextBoxXboxName";
+            this.TextBoxXboxName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.TextBoxXboxName.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxXboxName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK)});
+            this.TextBoxXboxName.Size = new System.Drawing.Size(154, 24);
+            this.TextBoxXboxName.TabIndex = 8;
+            this.TextBoxXboxName.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.TextBoxXboxName_ButtonClick);
+            // 
+            // LabelHeaderIconColor
+            // 
+            this.LabelHeaderIconColor.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderIconColor.Appearance.Options.UseFont = true;
+            this.LabelHeaderIconColor.Location = new System.Drawing.Point(170, 29);
+            this.LabelHeaderIconColor.Name = "LabelHeaderIconColor";
+            this.LabelHeaderIconColor.Size = new System.Drawing.Size(56, 15);
+            this.LabelHeaderIconColor.TabIndex = 7;
+            this.LabelHeaderIconColor.Text = "Icon Color";
             // 
             // ComboBoxXboxIcon
             // 
@@ -836,32 +849,19 @@ namespace ArisenStudio.Forms.Tools.XBOX
             "Blue",
             "BlueGray",
             "White"});
-            this.ComboBoxXboxIcon.Size = new System.Drawing.Size(107, 22);
+            this.ComboBoxXboxIcon.Size = new System.Drawing.Size(107, 24);
             this.ComboBoxXboxIcon.TabIndex = 6;
             this.ComboBoxXboxIcon.SelectedIndexChanged += new System.EventHandler(this.ComboBoxXboxIcon_SelectedIndexChanged);
             // 
-            // LabelHeaderIconColor
+            // LabelHeaderName
             // 
-            this.LabelHeaderIconColor.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
-            this.LabelHeaderIconColor.Appearance.Options.UseFont = true;
-            this.LabelHeaderIconColor.Location = new System.Drawing.Point(170, 29);
-            this.LabelHeaderIconColor.Name = "LabelHeaderIconColor";
-            this.LabelHeaderIconColor.Size = new System.Drawing.Size(56, 15);
-            this.LabelHeaderIconColor.TabIndex = 7;
-            this.LabelHeaderIconColor.Text = "Icon Color";
-            // 
-            // TextBoxXboxName
-            // 
-            this.TextBoxXboxName.Location = new System.Drawing.Point(10, 50);
-            this.TextBoxXboxName.MenuManager = this.BarManager;
-            this.TextBoxXboxName.Name = "TextBoxXboxName";
-            this.TextBoxXboxName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.TextBoxXboxName.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxXboxName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK)});
-            this.TextBoxXboxName.Size = new System.Drawing.Size(154, 22);
-            this.TextBoxXboxName.TabIndex = 8;
-            this.TextBoxXboxName.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.TextBoxXboxName_ButtonClick);
+            this.LabelHeaderName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.LabelHeaderName.Appearance.Options.UseFont = true;
+            this.LabelHeaderName.Location = new System.Drawing.Point(10, 29);
+            this.LabelHeaderName.Name = "LabelHeaderName";
+            this.LabelHeaderName.Size = new System.Drawing.Size(79, 15);
+            this.LabelHeaderName.TabIndex = 5;
+            this.LabelHeaderName.Text = "Console Name";
             // 
             // ConsoleManager
             // 
@@ -872,7 +872,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.Controls.Add(this.GroupNeighborhoodEditor);
             this.Controls.Add(this.GroupDiscFan);
             this.Controls.Add(this.GroupLEDColors);
-            this.Controls.Add(this.GroupGameSave);
+            this.Controls.Add(this.GroupDetails);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -897,9 +897,9 @@ namespace ArisenStudio.Forms.Tools.XBOX
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopupMenuFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PopupMenuProfile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GroupGameSave)).EndInit();
-            this.GroupGameSave.ResumeLayout(false);
-            this.GroupGameSave.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupDetails)).EndInit();
+            this.GroupDetails.ResumeLayout(false);
+            this.GroupDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GroupLEDColors)).EndInit();
             this.GroupLEDColors.ResumeLayout(false);
             this.GroupLEDColors.PerformLayout();
@@ -915,8 +915,8 @@ namespace ArisenStudio.Forms.Tools.XBOX
             ((System.ComponentModel.ISupportInitialize)(this.GroupNeighborhoodEditor)).EndInit();
             this.GroupNeighborhoodEditor.ResumeLayout(false);
             this.GroupNeighborhoodEditor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxXboxIcon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxXboxName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxXboxIcon.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -931,7 +931,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
         private DevExpress.XtraBars.PopupMenu PopupMenuProfile;
         private GroupControl GroupLEDColors;
         private LabelControl LabelHeaderLedTopLeft;
-        private GroupControl GroupGameSave;
+        private GroupControl GroupDetails;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarManager BarManager;
         private DevExpress.XtraBars.BarButtonItem MenuButtonFile;

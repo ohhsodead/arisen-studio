@@ -60,7 +60,7 @@ namespace ArisenStudio.Controls
             this.LabelHeaderLocalFile.AutoEllipsis = true;
             this.LabelHeaderLocalFile.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelHeaderLocalFile.Location = new System.Drawing.Point(0, 0);
-            this.LabelHeaderLocalFile.Margin = new System.Windows.Forms.Padding(0, 1, 3, 3);
+            this.LabelHeaderLocalFile.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelHeaderLocalFile.Name = "LabelHeaderLocalFile";
             this.LabelHeaderLocalFile.Size = new System.Drawing.Size(62, 17);
             this.LabelHeaderLocalFile.TabIndex = 1190;
@@ -78,7 +78,7 @@ namespace ArisenStudio.Controls
             this.LabelLastModified.AutoEllipsis = true;
             this.LabelLastModified.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelLastModified.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelLastModified.Location = new System.Drawing.Point(464, 34);
+            this.LabelLastModified.Location = new System.Drawing.Point(464, 35);
             this.LabelLastModified.Name = "LabelLastModified";
             this.LabelLastModified.Size = new System.Drawing.Size(115, 15);
             this.LabelLastModified.TabIndex = 1195;
@@ -114,9 +114,9 @@ namespace ArisenStudio.Controls
             this.LabelSize.AutoEllipsis = true;
             this.LabelSize.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSize.Location = new System.Drawing.Point(585, 34);
+            this.LabelSize.Location = new System.Drawing.Point(585, 35);
             this.LabelSize.Name = "LabelSize";
-            this.LabelSize.Size = new System.Drawing.Size(125, 15);
+            this.LabelSize.Size = new System.Drawing.Size(95, 15);
             this.LabelSize.TabIndex = 1197;
             this.LabelSize.Text = "1.0.0";
             // 
@@ -134,7 +134,7 @@ namespace ArisenStudio.Controls
             this.LabelHeaderSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelHeaderSize.Location = new System.Drawing.Point(585, 12);
             this.LabelHeaderSize.Name = "LabelHeaderSize";
-            this.LabelHeaderSize.Size = new System.Drawing.Size(125, 17);
+            this.LabelHeaderSize.Size = new System.Drawing.Size(95, 17);
             this.LabelHeaderSize.TabIndex = 1196;
             this.LabelHeaderSize.Text = "Size";
             // 
@@ -150,7 +150,6 @@ namespace ArisenStudio.Controls
             this.LabelLocalFile.AutoEllipsis = true;
             this.LabelLocalFile.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelLocalFile.Location = new System.Drawing.Point(68, 0);
-            this.LabelLocalFile.Margin = new System.Windows.Forms.Padding(3, 3, 3, 14);
             this.LabelLocalFile.MinimumSize = new System.Drawing.Size(380, 0);
             this.LabelLocalFile.Name = "LabelLocalFile";
             this.LabelLocalFile.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
@@ -164,7 +163,7 @@ namespace ArisenStudio.Controls
             this.Separator.LineAlignment = DevExpress.XtraEditors.Alignment.Near;
             this.Separator.LineColor = System.Drawing.SystemColors.WindowFrame;
             this.Separator.LineThickness = 2;
-            this.Separator.Location = new System.Drawing.Point(0, 61);
+            this.Separator.Location = new System.Drawing.Point(0, 63);
             this.Separator.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.Separator.Name = "Separator";
             this.Separator.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -182,7 +181,7 @@ namespace ArisenStudio.Controls
             this.ImageDownload.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
             this.ImageDownload.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
             this.ImageDownload.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.ImageDownload.Location = new System.Drawing.Point(716, 16);
+            this.ImageDownload.Location = new System.Drawing.Point(716, 13);
             this.ImageDownload.Name = "ImageDownload";
             this.ImageDownload.ShowToolTips = DevExpress.Utils.DefaultBoolean.True;
             this.ImageDownload.Size = new System.Drawing.Size(26, 26);
@@ -205,7 +204,7 @@ namespace ArisenStudio.Controls
             this.ImageInstall.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
             this.ImageInstall.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
             this.ImageInstall.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.ImageInstall.Location = new System.Drawing.Point(686, 16);
+            this.ImageInstall.Location = new System.Drawing.Point(686, 13);
             this.ImageInstall.Name = "ImageInstall";
             this.ImageInstall.ShowToolTips = DevExpress.Utils.DefaultBoolean.True;
             this.ImageInstall.Size = new System.Drawing.Size(26, 26);
@@ -228,7 +227,7 @@ namespace ArisenStudio.Controls
             this.ImageOpenFolder.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
             this.ImageOpenFolder.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
             this.ImageOpenFolder.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.ImageOpenFolder.Location = new System.Drawing.Point(746, 16);
+            this.ImageOpenFolder.Location = new System.Drawing.Point(746, 13);
             this.ImageOpenFolder.Name = "ImageOpenFolder";
             this.ImageOpenFolder.ShowToolTips = DevExpress.Utils.DefaultBoolean.True;
             this.ImageOpenFolder.Size = new System.Drawing.Size(26, 26);
@@ -252,7 +251,7 @@ namespace ArisenStudio.Controls
             // 
             this.PanelInstalPath.Controls.Add(this.LabelHeaderInstallPath);
             this.PanelInstalPath.Controls.Add(this.LabelInstallPath);
-            this.PanelInstalPath.Location = new System.Drawing.Point(4, 31);
+            this.PanelInstalPath.Location = new System.Drawing.Point(4, 33);
             this.PanelInstalPath.Margin = new System.Windows.Forms.Padding(3, 3, 3, 14);
             this.PanelInstalPath.Name = "PanelInstalPath";
             this.PanelInstalPath.Size = new System.Drawing.Size(454, 17);
@@ -265,7 +264,7 @@ namespace ArisenStudio.Controls
             this.LabelHeaderInstallPath.AutoEllipsis = true;
             this.LabelHeaderInstallPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelHeaderInstallPath.Location = new System.Drawing.Point(0, 0);
-            this.LabelHeaderInstallPath.Margin = new System.Windows.Forms.Padding(0, 1, 3, 3);
+            this.LabelHeaderInstallPath.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelHeaderInstallPath.Name = "LabelHeaderInstallPath";
             this.LabelHeaderInstallPath.Size = new System.Drawing.Size(74, 17);
             this.LabelHeaderInstallPath.TabIndex = 1190;
@@ -283,7 +282,6 @@ namespace ArisenStudio.Controls
             this.LabelInstallPath.AutoEllipsis = true;
             this.LabelInstallPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelInstallPath.Location = new System.Drawing.Point(80, 0);
-            this.LabelInstallPath.Margin = new System.Windows.Forms.Padding(3, 3, 3, 14);
             this.LabelInstallPath.MaximumSize = new System.Drawing.Size(380, 0);
             this.LabelInstallPath.Name = "LabelInstallPath";
             this.LabelInstallPath.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
@@ -311,7 +309,7 @@ namespace ArisenStudio.Controls
             this.Controls.Add(this.PanelLocalFile);
             this.Margin = new System.Windows.Forms.Padding(2, 0, 3, 0);
             this.Name = "CustomFileItem";
-            this.Size = new System.Drawing.Size(776, 62);
+            this.Size = new System.Drawing.Size(776, 64);
             this.Load += new System.EventHandler(this.CustomFileItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Separator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageDownload)).EndInit();

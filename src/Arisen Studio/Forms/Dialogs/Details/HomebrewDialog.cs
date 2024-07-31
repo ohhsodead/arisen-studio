@@ -89,14 +89,14 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
             if (IsFavorite)
             {
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_REMOVE_FROM_FAVORITES"), 26);
+                ButtonFavorite.Text = Language.GetString("LABEL_REMOVE_FROM_FAVORITES");
             }
             else
             {
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_ADD_TO_FAVORITES"), 26);
+                ButtonFavorite.Text = Language.GetString("LABEL_ADD_TO_FAVORITES");
             }
 
-            ButtonReport.SetControlText(Language.GetString("LABEL_REPORT_ISSUE"), 26);
+            ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
         }
 
         private void ImageClose_Click(object sender, EventArgs e)
@@ -136,13 +136,13 @@ namespace ArisenStudio.Forms.Dialogs.Details
             if (IsFavorite)
             {
                 Settings.FavoriteMods.RemoveAll(x => x.CategoryType == CategoryType && x.CategoryId == ModItem.CategoryId && x.ModId == ModItem.Id && x.Platform == ModItem.GetPlatform());
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_ADD_TO_FAVORITES"), 26);
+                ButtonFavorite.Text = Language.GetString("LABEL_ADD_TO_FAVORITES");
                 IsFavorite = false;
             }
             else
             {
                 Settings.FavoriteMods.Add(new() { CategoryType = CategoryType, CategoryId = ModItem.CategoryId, ModId = ModItem.Id, Platform = ModItem.GetPlatform() });
-                ButtonFavorite.SetControlText(Language.GetString("LABEL_REMOVE_FROM_FAVORITES"), 26);
+                ButtonFavorite.Text = Language.GetString("LABEL_REMOVE_FROM_FAVORITES");
                 IsFavorite = true;
             }
         }
