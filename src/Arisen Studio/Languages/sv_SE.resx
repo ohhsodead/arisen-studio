@@ -1692,6 +1692,14 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   <data name="UNINSTALL_CANCELED" xml:space="preserve">
     <value>Avinstallationen avbröts.</value>
   </data>
+  <data name="UNINSTALL_CONNECTION_REQUIREMENT" xml:space="preserve">
+    <value>Du måste vara ansluten till: {0} ({1}) för att avinstallera filerna.</value>
+    <comment>Example: You must be connected to: {Console Name} ({PS3}) to uninstall these files.</comment>
+  </data>
+  <data name="UNINSTALL_CONNECT_TO_REQUIRED_CONSOLE" xml:space="preserve">
+    <value>Dessa filer har inte installerats på den anslutna konsolen. Anslut till {0} ({1}) för att avinstallera dem."</value>
+    <comment>Example: These files were not installed on the connected console. Please connect to {Console Name} ({PS3}) to uninstall them."</comment>
+  </data>
   <data name="UNINSTALL_FILE" xml:space="preserve">
     <value>Avinstallera Fil</value>
   </data>

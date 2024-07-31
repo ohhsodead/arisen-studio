@@ -1692,6 +1692,14 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
   <data name="UNINSTALL_CANCELED" xml:space="preserve">
     <value>Kaldırma iptal edildi.</value>
   </data>
+  <data name="UNINSTALL_CONNECTION_REQUIREMENT" xml:space="preserve">
+    <value>Dosyaları kaldırmak için şuraya bağlı olmanız gerekir: {0} ({1}).</value>
+    <comment>Example: You must be connected to: {Console Name} ({PS3}) to uninstall these files.</comment>
+  </data>
+  <data name="UNINSTALL_CONNECT_TO_REQUIRED_CONSOLE" xml:space="preserve">
+    <value>Bu dosyalar bağlı konsola kurulmadı. Bunları kaldırmak için lütfen {0} ({1}) ile bağlantı kurun."</value>
+    <comment>Example: These files were not installed on the connected console. Please connect to {Console Name} ({PS3}) to uninstall them."</comment>
+  </data>
   <data name="UNINSTALL_FILE" xml:space="preserve">
     <value>Dosyayı Kaldır</value>
   </data>
