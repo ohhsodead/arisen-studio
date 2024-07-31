@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -307,6 +307,9 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
   </data>
   <data name="DATA_MISSING" xml:space="preserve">
     <value>DATA MISSING</value>
+  </data>
+  <data name="DEFAULT_ALREADY_EXISTS" xml:space="preserve">
+    <value>You already have a console profile set as your default.</value>
   </data>
   <data name="DEFAULT_CONSOLE_ALREADY_EXISTS" xml:space="preserve">
     <value>You have already set '{0}' as your default console. Please edit that console and uncheck the 'Use Default' option to set this console as the default.</value>
@@ -703,6 +706,9 @@ Warning: Do not rename rap files ! You need to leave their original ugly name.
   <data name="IMPORTANT_MESSAGE" xml:space="preserve">
     <value>Important Message</value>
   </data>
+  <data name="INCORRECT_IP_FORMAT" xml:space="preserve">
+    <value>IP Address isn't in the correct format.</value>
+  </data>
   <data name="INITIALIZED" xml:space="preserve">
     <value>Initialized</value>
   </data>
@@ -769,6 +775,9 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   </data>
   <data name="INTERFACE" xml:space="preserve">
     <value>Interface</value>
+  </data>
+  <data name="INVALID_INPUT" xml:space="preserve">
+    <value>Invalid Input</value>
   </data>
   <data name="INVALID_TITLE_ID" xml:space="preserve">
     <value>Invalid ID or cannot be found. Are you sure this is a valid PS3 Title ID?</value>
@@ -912,6 +921,10 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   <data name="LABEL_EDIT" xml:space="preserve">
     <value>Edit</value>
   </data>
+  <data name="LABEL_EDIT_CONNECTION_DETAILS" xml:space="preserve">
+    <value>Edit Connection Details</value>
+    <comment>Displays in the title of the dialog popup.</comment>
+  </data>
   <data name="LABEL_EDIT_NAME" xml:space="preserve">
     <value>Edit Name</value>
   </data>
@@ -996,6 +1009,9 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   <data name="LABEL_IP_ADDRESS" xml:space="preserve">
     <value>IP Address</value>
   </data>
+  <data name="LABEL_IP_OR_NAME" xml:space="preserve">
+    <value>IP/Name</value>
+  </data>
   <data name="LABEL_LAST_MODIFIED" xml:space="preserve">
     <value>Modified On</value>
   </data>
@@ -1040,6 +1056,10 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   </data>
   <data name="LABEL_NAME" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="LABEL_NEW_CONNECTION_DETAILS" xml:space="preserve">
+    <value>New Connection Details</value>
+    <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_NEW_FOLDER" xml:space="preserve">
     <value>New Folder</value>
@@ -1246,6 +1266,15 @@ You can add them using the File Manager.</value>
   </data>
   <data name="MISSING" xml:space="preserve">
     <value>MISSING</value>
+  </data>
+  <data name="MISSING_CONNECTION_NAME" xml:space="preserve">
+    <value>You must enter a connection name.</value>
+  </data>
+  <data name="MISSING_IP_ADDRESS" xml:space="preserve">
+    <value>You must enter an IP Address.</value>
+  </data>
+  <data name="MISSING_IP_OR_NAME" xml:space="preserve">
+    <value>You must enter an IP Address or Console Name.</value>
   </data>
   <data name="MODDING_TOOLS" xml:space="preserve">
     <value>Modding Tools</value>
@@ -1501,6 +1530,9 @@ Install the correct mods for this game or choose a different game region.</value
   </data>
   <data name="PROFILE_EDIT" xml:space="preserve">
     <value>Edit Profile</value>
+  </data>
+  <data name="PROFILE_NAME_EXISTS" xml:space="preserve">
+    <value>A console profile with this name already exists. Please choose a different name or rename the existing one.</value>
   </data>
   <data name="QUICK_REBOOT" xml:space="preserve">
     <value>Quick Reboot</value>
