@@ -308,6 +308,9 @@ Oyun dosyalarının kaybolmasını önlemek için bu dosya kaldırılamaz, bu ne
   <data name="DATA_MISSING" xml:space="preserve">
     <value>EKSİK VERİ</value>
   </data>
+  <data name="DEFAULT_ALREADY_EXISTS" xml:space="preserve">
+    <value>Zaten varsayılan olarak ayarlanmış bir konsol profiliniz var.</value>
+  </data>
   <data name="DEFAULT_CONSOLE_ALREADY_EXISTS" xml:space="preserve">
     <value>'{0}' zaten varsayılan konsolunuz olarak ayarlı. Bu konsolu düzenleyin ve bu konsolu varsayılan olarak ayarlamak için 'Varsayılanı Kullan' seçeneğinin işaretini kaldırın.</value>
   </data>
@@ -707,6 +710,9 @@ Uyarı: Rap dosyalarını yeniden adlandırmayın! Orijinal çirkin isimlerini b
   <data name="IMPORTANT_MESSAGE" xml:space="preserve">
     <value>Önemli Mesajlar</value>
   </data>
+  <data name="INCORRECT_IP_FORMAT" xml:space="preserve">
+    <value>IP Adresi doğru biçimde değil.</value>
+  </data>
   <data name="INITIALIZED" xml:space="preserve">
     <value>Başlatıldı</value>
   </data>
@@ -773,6 +779,9 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   </data>
   <data name="INTERFACE" xml:space="preserve">
     <value>Arayüz</value>
+  </data>
+  <data name="INVALID_INPUT" xml:space="preserve">
+    <value>Geçersiz Giriş</value>
   </data>
   <data name="INVALID_TITLE_ID" xml:space="preserve">
     <value>Geçersiz ID veya bulunamıyor. Bunun doğru bir PS3 Başlık ID olduğundan emin misiniz?</value>
@@ -916,6 +925,10 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   <data name="LABEL_EDIT" xml:space="preserve">
     <value>Düzenle</value>
   </data>
+  <data name="LABEL_EDIT_CONNECTION_DETAILS" xml:space="preserve">
+    <value>Bağlantı Ayrıntılarını Düzenle</value>
+    <comment>Displays in the title of the dialog popup.</comment>
+  </data>
   <data name="LABEL_EDIT_NAME" xml:space="preserve">
     <value>İsim Düzenle</value>
   </data>
@@ -1000,6 +1013,9 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   <data name="LABEL_IP_ADDRESS" xml:space="preserve">
     <value>IP Adresi</value>
   </data>
+  <data name="LABEL_IP_OR_NAME" xml:space="preserve">
+    <value>IP/İsim</value>
+  </data>
   <data name="LABEL_LAST_MODIFIED" xml:space="preserve">
     <value>Düzenleme</value>
   </data>
@@ -1044,6 +1060,10 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   </data>
   <data name="LABEL_NAME" xml:space="preserve">
     <value>İsim</value>
+  </data>
+  <data name="LABEL_NEW_CONNECTION_DETAILS" xml:space="preserve">
+    <value>Yeni Bağlantı Ayrıntıları</value>
+    <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_NEW_FOLDER" xml:space="preserve">
     <value>Yeni Klasör</value>
@@ -1250,6 +1270,15 @@ Bunları Dosya Yöneticisini kullanarak ekleyebilirsiniz.</value>
   </data>
   <data name="MISSING" xml:space="preserve">
     <value>EKSİK</value>
+  </data>
+  <data name="MISSING_CONNECTION_NAME" xml:space="preserve">
+    <value>Bir bağlantı adı girmelisiniz.</value>
+  </data>
+  <data name="MISSING_IP_ADDRESS" xml:space="preserve">
+    <value>Bir IP Adresi girmelisiniz.</value>
+  </data>
+  <data name="MISSING_IP_OR_NAME" xml:space="preserve">
+    <value>Bir IP Adresi veya Konsol Adı girmelisiniz.</value>
   </data>
   <data name="MODDING_TOOLS" xml:space="preserve">
     <value>Modlama Araçları</value>
@@ -1505,6 +1534,9 @@ Bu oyun için doğru modları kurun veya farklı bir oyun bölgesi seçin.</valu
   </data>
   <data name="PROFILE_EDIT" xml:space="preserve">
     <value>Profili Düzenle</value>
+  </data>
+  <data name="PROFILE_NAME_EXISTS" xml:space="preserve">
+    <value>Bu ada sahip bir konsol profili zaten mevcut. Lütfen farklı bir ad seçin veya mevcut olanı yeniden adlandırın.</value>
   </data>
   <data name="QUICK_REBOOT" xml:space="preserve">
     <value>Hızlı Yeniden Başlat</value>
