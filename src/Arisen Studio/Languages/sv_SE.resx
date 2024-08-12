@@ -308,6 +308,9 @@ Den här filen kan inte avinstalleras för att undvika saknade spelfiler, så de
   <data name="DATA_MISSING" xml:space="preserve">
     <value>DATA SAKNAS</value>
   </data>
+  <data name="DEFAULT_ALREADY_EXISTS" xml:space="preserve">
+    <value>Du har redan en konsolprofil inställd som standard.</value>
+  </data>
   <data name="DEFAULT_CONSOLE_ALREADY_EXISTS" xml:space="preserve">
     <value>Du har redan satt '{0}' som standardkonsol. Redigera den konsolen och avmarkera alternativet "Använd standard" för att ställa in den här konsolen som standard.</value>
   </data>
@@ -707,6 +710,9 @@ Varning: Döp inte om rap-filerna! Du måste lämna deras ursprungliga fula namn
   <data name="IMPORTANT_MESSAGE" xml:space="preserve">
     <value>Viktigt Meddelande</value>
   </data>
+  <data name="INCORRECT_IP_FORMAT" xml:space="preserve">
+    <value>IP-adressen är inte i rätt format.</value>
+  </data>
   <data name="INITIALIZED" xml:space="preserve">
     <value>Initierad</value>
   </data>
@@ -773,6 +779,9 @@ Sätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars
   </data>
   <data name="INTERFACE" xml:space="preserve">
     <value>GRÄNSSNITT</value>
+  </data>
+  <data name="INVALID_INPUT" xml:space="preserve">
+    <value>Felaktig Inmatning</value>
   </data>
   <data name="INVALID_TITLE_ID" xml:space="preserve">
     <value>Ogiltigt eller okänt ID. Är du säker på att detta är ett giltigt PS3 titel-id?</value>
@@ -916,6 +925,10 @@ Sätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars
   <data name="LABEL_EDIT" xml:space="preserve">
     <value>Edit</value>
   </data>
+  <data name="LABEL_EDIT_CONNECTION_DETAILS" xml:space="preserve">
+    <value>Redigera Anslutningsdetaljer</value>
+    <comment>Displays in the title of the dialog popup.</comment>
+  </data>
   <data name="LABEL_EDIT_NAME" xml:space="preserve">
     <value>Redigera namn</value>
   </data>
@@ -1000,6 +1013,9 @@ Sätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars
   <data name="LABEL_IP_ADDRESS" xml:space="preserve">
     <value>IP-Adress</value>
   </data>
+  <data name="LABEL_IP_OR_NAME" xml:space="preserve">
+    <value>IP/Namn</value>
+  </data>
   <data name="LABEL_LAST_MODIFIED" xml:space="preserve">
     <value>Ändrad den</value>
   </data>
@@ -1044,6 +1060,10 @@ Sätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars
   </data>
   <data name="LABEL_NAME" xml:space="preserve">
     <value>Namn</value>
+  </data>
+  <data name="LABEL_NEW_CONNECTION_DETAILS" xml:space="preserve">
+    <value>Nya Anslutningsdetaljer</value>
+    <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_NEW_FOLDER" xml:space="preserve">
     <value>Ny mapp</value>
@@ -1250,6 +1270,15 @@ Du kan lägga till dem med filhanteraren.</value>
   </data>
   <data name="MISSING" xml:space="preserve">
     <value>SAKNAS</value>
+  </data>
+  <data name="MISSING_CONNECTION_NAME" xml:space="preserve">
+    <value>Du måste ange ett namn på anslutningen.</value>
+  </data>
+  <data name="MISSING_IP_ADDRESS" xml:space="preserve">
+    <value>Du måste ange en IP-adress.</value>
+  </data>
+  <data name="MISSING_IP_OR_NAME" xml:space="preserve">
+    <value>Du måste ange en IP-adress eller konsolnamn.</value>
   </data>
   <data name="MODDING_TOOLS" xml:space="preserve">
     <value>Modding Verktyg</value>
@@ -1505,6 +1534,9 @@ Installera rätt moddar för detta spel eller välj en annan spelregion.</value>
   </data>
   <data name="PROFILE_EDIT" xml:space="preserve">
     <value>Redigera Profil</value>
+  </data>
+  <data name="PROFILE_NAME_EXISTS" xml:space="preserve">
+    <value>En konsolprofil med detta namn finns redan. Välj ett annat namn eller byt namn på den befintliga.</value>
   </data>
   <data name="QUICK_REBOOT" xml:space="preserve">
     <value>Snabb omstart</value>
