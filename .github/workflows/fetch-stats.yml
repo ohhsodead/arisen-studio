@@ -2,7 +2,7 @@ name: Generate Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight
+    - cron: '0 0 */4 * *'
   workflow_dispatch: # Allows manual triggering
 
 jobs:
