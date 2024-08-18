@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -217,6 +217,9 @@ Este arquivo não pode ser desinstalado para evitar arquivos de jogo ausentes, p
   <data name="CHEAT_NOT_SUPPORTED" xml:space="preserve">
     <value>Este código não pôde ser aplicado porque contém "opcode" que ainda não foi implementado.</value>
   </data>
+  <data name="CHECKING_FILES" xml:space="preserve">
+    <value>Checando Arquivos</value>
+  </data>
   <data name="CHOOSE_ITEM" xml:space="preserve">
     <value>Escolher item...</value>
   </data>
@@ -305,8 +308,8 @@ Este arquivo não pode ser desinstalado para evitar arquivos de jogo ausentes, p
   <data name="DATA_MISSING" xml:space="preserve">
     <value>DADOS AUSENTES</value>
   </data>
-  <data name="DEFAULT_CONSOLE_ALREADY_EXISTS" xml:space="preserve">
-    <value>O console '{0}' já está definido como o console padrão. Edite-o e desmarque a opção de "Usar padrão" para conseguir definir este console como o padrão.</value>
+  <data name="DEFAULT_PROFILE_ALREADY_EXISTS" xml:space="preserve">
+    <value>Você já definiu '{0}' como seu perfil padrão. Gostaria de substituí-lo por este?</value>
   </data>
   <data name="DELETE" xml:space="preserve">
     <value>Excluir</value>
@@ -704,6 +707,9 @@ Aviso: Não renomeie os arquivos do rap ! Você precisa deixar o nome original f
   <data name="IMPORTANT_MESSAGE" xml:space="preserve">
     <value>Mensagem importante</value>
   </data>
+  <data name="INCORRECT_IP_FORMAT" xml:space="preserve">
+    <value>Endereço IP não está no formato correto.</value>
+  </data>
   <data name="INITIALIZED" xml:space="preserve">
     <value>Inicializado</value>
   </data>
@@ -725,6 +731,9 @@ Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso 
   </data>
   <data name="INSTALLING_BACKUP_FILE_LOCATION" xml:space="preserve">
     <value>Instalando arquivo de backup: {0} para {1}</value>
+  </data>
+  <data name="INSTALLING_FILES" xml:space="preserve">
+    <value>Instalando Arquivos</value>
   </data>
   <data name="INSTALLING_GAME_SAVE" xml:space="preserve">
     <value>Instalando Dados Salvos do Jogo</value>
@@ -767,6 +776,9 @@ Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso 
   </data>
   <data name="INTERFACE" xml:space="preserve">
     <value>Interface</value>
+  </data>
+  <data name="INVALID_INPUT" xml:space="preserve">
+    <value>Entrada Inválida</value>
   </data>
   <data name="INVALID_TITLE_ID" xml:space="preserve">
     <value>ID inválido ou não pôde ser encontrado. Tem certeza de que este é um Título de ID válido do PS3?</value>
@@ -817,20 +829,26 @@ Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso 
   <data name="LABEL_CATEGORY" xml:space="preserve">
     <value>Categoria</value>
   </data>
+  <data name="LABEL_CATEGORY_TYPE" xml:space="preserve">
+    <value>Tipo de Categoria</value>
+  </data>
   <data name="LABEL_CHANGE" xml:space="preserve">
     <value>Alterar</value>
   </data>
   <data name="LABEL_CHEATS" xml:space="preserve">
     <value>Códigos</value>
   </data>
+  <data name="LABEL_CHOOSE_FILE" xml:space="preserve">
+    <value>Selecionar Arquivo</value>
+  </data>
   <data name="LABEL_CLOSE" xml:space="preserve">
     <value>Fechar</value>
   </data>
-  <data name="LABEL_CONNECTION_DETAILS" xml:space="preserve">
-    <value>Detalhes da conexão</value>
+  <data name="LABEL_PROFILE_DETAILS" xml:space="preserve">
+    <value>Detalhes do Perfil</value>
   </data>
-  <data name="LABEL_CONNECTION_NAME" xml:space="preserve">
-    <value>Nome da conexão</value>
+  <data name="LABEL_PROFILE_NAME" xml:space="preserve">
+    <value>Nome do Perfil</value>
   </data>
   <data name="LABEL_CONTENT_ID" xml:space="preserve">
     <value>ID do conteúdo</value>
@@ -903,6 +921,10 @@ Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso 
   </data>
   <data name="LABEL_EDIT" xml:space="preserve">
     <value>Editar</value>
+  </data>
+  <data name="LABEL_EDIT_PROFILE_DETAILS" xml:space="preserve">
+    <value>Editar Detalhes do Perfil</value>
+    <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_EDIT_NAME" xml:space="preserve">
     <value>Editar Nome</value>
@@ -982,8 +1004,14 @@ Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso 
   <data name="LABEL_INSTALL_FILE" xml:space="preserve">
     <value>Instalar arquivo</value>
   </data>
+  <data name="LABEL_INSTALL_PATH" xml:space="preserve">
+    <value>Caminho para a instalação</value>
+  </data>
   <data name="LABEL_IP_ADDRESS" xml:space="preserve">
     <value>Endereço IP</value>
+  </data>
+  <data name="LABEL_IP_OR_NAME" xml:space="preserve">
+    <value>IP/Nome</value>
   </data>
   <data name="LABEL_LAST_MODIFIED" xml:space="preserve">
     <value>Modificado em</value>
@@ -999,6 +1027,9 @@ Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso 
   </data>
   <data name="LABEL_LOAD_MODULE" xml:space="preserve">
     <value>Carregar Módulo</value>
+  </data>
+  <data name="LABEL_LOCAL_FILE" xml:space="preserve">
+    <value>Local do Arquivo</value>
   </data>
   <data name="LABEL_LOGIN" xml:space="preserve">
     <value>Login</value>
@@ -1018,11 +1049,18 @@ Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso 
   <data name="LABEL_MODULES" xml:space="preserve">
     <value>Módulos</value>
   </data>
+  <data name="LABEL_MOD_DETAILS" xml:space="preserve">
+    <value>Detalhes do mod</value>
+  </data>
   <data name="LABEL_MOD_TYPE" xml:space="preserve">
     <value>Tipo de mod</value>
   </data>
   <data name="LABEL_NAME" xml:space="preserve">
     <value>Nome</value>
+  </data>
+  <data name="LABEL_NEW_PROFILE_DETAILS" xml:space="preserve">
+    <value>Detalhes do Novo Perfil</value>
+    <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_NEW_FOLDER" xml:space="preserve">
     <value>Nova pasta</value>
@@ -1229,6 +1267,15 @@ Você pode usar o Gerenciador de Arquivos para adicionar um jogo.</value>
   </data>
   <data name="MISSING" xml:space="preserve">
     <value>SUMIU</value>
+  </data>
+  <data name="MISSING_PROFILE_NAME" xml:space="preserve">
+    <value>Você deve digitar o nome do perfil.</value>
+  </data>
+  <data name="MISSING_IP_ADDRESS" xml:space="preserve">
+    <value>Você deve digitar um endereço IP.</value>
+  </data>
+  <data name="MISSING_IP_OR_NAME" xml:space="preserve">
+    <value>Você deve digitar um endereço IP ou Nome do Console.</value>
   </data>
   <data name="MODDING_TOOLS" xml:space="preserve">
     <value>Ferramentas de modding</value>
@@ -1485,6 +1532,9 @@ Instale os mods corretos para este jogo ou escolha uma região de jogo diferente
   <data name="PROFILE_EDIT" xml:space="preserve">
     <value>Editar perfil</value>
   </data>
+  <data name="PROFILE_NAME_EXISTS" xml:space="preserve">
+    <value>Um perfil de console com este nome já existe. Por favor, escolha um nome diferente ou renomeie o existente.</value>
+  </data>
   <data name="QUICK_REBOOT" xml:space="preserve">
     <value>Reinicialização rápida</value>
   </data>
@@ -1601,6 +1651,10 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   <data name="STATISTICS" xml:space="preserve">
     <value>Estatísticas</value>
   </data>
+  <data name="STATS_DOWNLOADS" xml:space="preserve">
+    <value>{0} Baixados</value>
+    <comment>Number of downloads.</comment>
+  </data>
   <data name="STATUS" xml:space="preserve">
     <value>Status:</value>
   </data>
@@ -1652,6 +1706,9 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   <data name="UNINSTALLING" xml:space="preserve">
     <value>Desinstalando</value>
   </data>
+  <data name="UNINSTALLING_FILES" xml:space="preserve">
+    <value>Desinstalando arquivos</value>
+  </data>
   <data name="UNINSTALLING_MODS" xml:space="preserve">
     <value>Desinstalando mods</value>
   </data>
@@ -1663,6 +1720,14 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   </data>
   <data name="UNINSTALL_CANCELED" xml:space="preserve">
     <value>Desinstalação cancelada.</value>
+  </data>
+  <data name="UNINSTALL_CONNECTION_REQUIREMENT" xml:space="preserve">
+    <value>Você precisa estar conectado a: {0} ({1}) para desinstalar os arquivos.</value>
+    <comment>Example: You must be connected to: {Console Name} ({PS3}) to uninstall these files.</comment>
+  </data>
+  <data name="UNINSTALL_CONNECT_TO_REQUIRED_CONSOLE" xml:space="preserve">
+    <value>Esses arquivos não foram instalados no console conectado. Por favor, conecte-se a {0} ({1}) para desinstalá-los."</value>
+    <comment>Example: These files were not installed on the connected console. Please connect to {Console Name} ({PS3}) to uninstall them."</comment>
   </data>
   <data name="UNINSTALL_FILE" xml:space="preserve">
     <value>Desinstalar arquivo</value>
@@ -1736,5 +1801,20 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   <data name="LABEL_SAVE" xml:space="preserve">
     <value>Salvar</value>
     <comment>Save Profile</comment>
+  </data>
+  <data name="LABEL_PASSIVE_MODE" xml:space="preserve">
+    <value>Modo Passivo</value>
+    <comment>Passive Connection FTP</comment>
+  </data>
+  <data name="LABEL_DEFAULT_CREDENTIALS" xml:space="preserve">
+    <value>Credenciais Padrão</value>
+    <comment>Use Default Connection Details</comment>
+  </data>
+  <data name="LABEL_DEFAULT_PROFILE" xml:space="preserve">
+    <value>Perfil padro</value>
+    <comment>Set as default profile for startup</comment>
+  </data>
+  <data name="MUST_HAVE_DEFAULT_CONSOLE" xml:space="preserve">
+    <value>Você deve ter pelo menos um perfil definido como seu padrão.</value>
   </data>
 </root>
