@@ -254,7 +254,7 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
     <value>Connection</value>
   </data>
   <data name="CONNECTIONS" xml:space="preserve">
-    <value>Connections</value>
+    <value>Profile</value>
   </data>
   <data name="CONNECTION_FAILED" xml:space="preserve">
     <value>Connection Failed</value>
@@ -308,11 +308,8 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
   <data name="DATA_MISSING" xml:space="preserve">
     <value>DATA MISSING</value>
   </data>
-  <data name="DEFAULT_ALREADY_EXISTS" xml:space="preserve">
-    <value>You already have a console profile set as your default.</value>
-  </data>
-  <data name="DEFAULT_CONSOLE_ALREADY_EXISTS" xml:space="preserve">
-    <value>You have already set '{0}' as your default console. Please edit that console and uncheck the 'Use Default' option to set this console as the default.</value>
+  <data name="DEFAULT_PROFILE_ALREADY_EXISTS" xml:space="preserve">
+    <value>You've already set '{0}' as your default profile. Would you like to replace it with this one?</value>
   </data>
   <data name="DELETE" xml:space="preserve">
     <value>Delete</value>
@@ -843,11 +840,11 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   <data name="LABEL_CLOSE" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="LABEL_CONNECTION_DETAILS" xml:space="preserve">
-    <value>Connection Details</value>
+  <data name="LABEL_PROFILE_DETAILS" xml:space="preserve">
+    <value>Profile Details</value>
   </data>
-  <data name="LABEL_CONNECTION_NAME" xml:space="preserve">
-    <value>Connection Name</value>
+  <data name="LABEL_PROFILE_NAME" xml:space="preserve">
+    <value>Profile Name</value>
   </data>
   <data name="LABEL_CONTENT_ID" xml:space="preserve">
     <value>Content ID</value>
@@ -921,8 +918,8 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   <data name="LABEL_EDIT" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="LABEL_EDIT_CONNECTION_DETAILS" xml:space="preserve">
-    <value>Edit Connection Details</value>
+  <data name="LABEL_EDIT_PROFILE_DETAILS" xml:space="preserve">
+    <value>Edit Profile Details</value>
     <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_EDIT_NAME" xml:space="preserve">
@@ -1057,8 +1054,8 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
   <data name="LABEL_NAME" xml:space="preserve">
     <value>Name</value>
   </data>
-  <data name="LABEL_NEW_CONNECTION_DETAILS" xml:space="preserve">
-    <value>New Connection Details</value>
+  <data name="LABEL_NEW_PROFILE_DETAILS" xml:space="preserve">
+    <value>New Profile Details</value>
     <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_NEW_FOLDER" xml:space="preserve">
@@ -1074,9 +1071,7 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
     <value>Not Installed</value>
   </data>
   <data name="LABEL_NO_GAMES" xml:space="preserve">
-    <value>No games added yet.
-
-You can add them using the File Manager.</value>
+    <value>No games added yet.\n\nYou can add them using the File Manager.</value>
   </data>
   <data name="LABEL_OK" xml:space="preserve">
     <value>OK</value>
@@ -1267,8 +1262,8 @@ You can add them using the File Manager.</value>
   <data name="MISSING" xml:space="preserve">
     <value>MISSING</value>
   </data>
-  <data name="MISSING_CONNECTION_NAME" xml:space="preserve">
-    <value>You must enter a connection name.</value>
+  <data name="MISSING_PROFILE_NAME" xml:space="preserve">
+    <value>You must enter a profile name.</value>
   </data>
   <data name="MISSING_IP_ADDRESS" xml:space="preserve">
     <value>You must enter an IP Address.</value>
@@ -1796,5 +1791,24 @@ If you don't want to uninstall the files, click 'No' and all of these files will
   </data>
   <data name="YOU_MUST_ENTER_TITLE_ID" xml:space="preserve">
     <value>You must enter a title ID.</value>
+  </data>
+  <data name="LABEL_SAVE" xml:space="preserve">
+    <value>Save</value>
+    <comment>Save Profile</comment>
+  </data>
+  <data name="LABEL_PASSIVE_MODE" xml:space="preserve">
+    <value>Passive Mode</value>
+    <comment>Passive Connection FTP</comment>
+  </data>
+  <data name="LABEL_DEFAULT_CREDENTIALS" xml:space="preserve">
+    <value>Default Credentials</value>
+    <comment>Use Default Connection Details</comment>
+  </data>
+  <data name="LABEL_DEFAULT_PROFILE" xml:space="preserve">
+    <value>Default Profile</value>
+    <comment>Set as default profile for startup</comment>
+  </data>
+  <data name="MUST_HAVE_DEFAULT_CONSOLE" xml:space="preserve">
+    <value>You must have at least one profile set as your default.</value>
   </data>
 </root>
