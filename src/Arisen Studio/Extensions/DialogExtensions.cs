@@ -260,6 +260,30 @@ namespace ArisenStudio.Extensions
             overlayForm.Dispose();
         }
 
+        public static void ShowGameTrainers(Form owner, TrainerItem trainerItem)
+        {
+            using GameTrainersDialog gameTrainersDialog = new();
+            gameTrainersDialog.TrainerItem = trainerItem;
+
+            XtraForm overlayForm = new()
+            {
+                StartPosition = FormStartPosition.Manual,
+                FormBorderStyle = FormBorderStyle.None,
+                Opacity = .50d,
+                BackColor = Color.Black,
+                Size = owner.Size,
+                Location = owner.Location,
+                ShowInTaskbar = false
+            };
+
+            overlayForm.Show(owner);
+
+            gameTrainersDialog.Owner = owner;
+            gameTrainersDialog.ShowDialog();
+
+            overlayForm.Dispose();
+        }
+
         #endregion
 
         public static void ShowDataViewDialog(Form owner, string title, string subtitle, string body)

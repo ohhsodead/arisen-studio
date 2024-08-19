@@ -5,7 +5,6 @@ using ArisenStudio.Database;
 using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Templates;
-using PS3Lib;
 using System;
 using System.Data;
 using System.Linq;
@@ -32,34 +31,34 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private DataTable DataTableCheats { get; } = DataExtensions.CreateDataTable(
             [
-                new("Cheat Name", typeof(string))
+                new("Name", typeof(string)),
+                new("Type", typeof(string)),
+                new("Last Updated", typeof(string)),
+                new("# Files", typeof(string)),
             ]);
 
         private void GameTrainersDialog_Load(object sender, EventArgs e)
         {
             try
             {
-#if !DEBUG
-                PS3 = new(SelectAPI.TargetManager);
-                PS3.ConnectTarget(ConsoleProfile.Address);
-                PS3.AttachProcess();
-#endif
-
                 // Display details in UI
-                LabelGame.Text = TrainerItem.TitleId;
-                LabelVersion.Text = "- " + TrainerItem.Version;
-                LabelRegion.Text = $"({TrainerItem.Region})";
+                LabelGame.Text = MainWindow.Database.TitleIdsX360.GetTitleFromTitleId(TrainerItem.TitleId);
+                LabelTitleId.Text = "(" + TrainerItem.TitleId + ")";
 
                 DataTableCheats.Rows.Clear();
 
-                foreach (Cheats cheat in GameCheatItem.Cheats)
+                foreach (Trainer trainer in TrainerItem.Trainers)
                 {
-                    DataTableCheats.Rows.Add(cheat.Name);
+                    DataTableCheats.Rows.Add(
+                        trainer.Name,
+                        trainer.Type,
+                        trainer.LastUpdated,
+                        trainer.InstallPaths.Count());
                 }
 
                 GridControlCheats.DataSource = DataTableCheats;
 
-                ButtonApplyCheat.Text = Language.GetString("LABEL_APPLY_CHEAT");
+                ButtonInstallTrainer.Text = Language.GetString("LABEL_APPLY_CHEAT");
                 ButtonReportIssue.Text = Language.GetString("LABEL_REPORT_ISSUE");
             }
             catch (Exception ex)
@@ -82,12 +81,10 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void GridViewCheats_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            ButtonApplyCheat.Enabled = GridViewCheats.SelectedRowsCount > 0;
+            ButtonInstallTrainer.Enabled = GridViewCheats.SelectedRowsCount > 0;
         }
 
-        private Cheats SelectedCheatItem { get; set; }
-
-        private void ButtonApply_Click(object sender, EventArgs e)
+        private void ButtonInstallTrainer_Click(object sender, EventArgs e)
         {
             if (!ContainsUnimplementedOpcodes())
             {
@@ -162,6 +159,30 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
             using Brush brush = new SolidBrush(BackColor);
             e.Graphics.FillPath(brush, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
+        }
+
+        private const int WmHscroll = 0x114;
+        private const int WmVscroll = 0x115;
+
+        protected override void WndProc(ref Message m)
+        {
+            if ((m.Msg == WmHscroll || m.Msg == WmVscroll)
+            && (((int)m.WParam & 0xFFFF) == 5))
+            {
+                // Change SB_THUMBTRACK to SB_THUMBPOSITION
+                m.WParam = (IntPtr)(((int)m.WParam & ~0xFFFF) | 4);
+            }
+            base.WndProc(ref m);
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;    // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
         }
 
         protected override bool ProcessDialogKey(Keys keyData)

@@ -4965,6 +4965,7 @@ namespace ArisenStudio.Forms.Windows
             ToggleSettingsCleanUpLocalFilesAfterInstalling.IsOn = Settings.CleanUpLocalFilesAfterInstalling;
             ToggleSettingsRememberGameRegions.IsOn = Settings.RememberGameRegions;
             ToggleSettingsAlwaysBackupGameFiles.IsOn = Settings.AlwaysBackupGameFiles;
+            ToggleSettingsForceInstallAnyRegions.IsOn = Settings.IgnoreSupportedRegionsAndForceInstall;
 
 
             /* Files */
@@ -4977,6 +4978,9 @@ namespace ArisenStudio.Forms.Windows
 
             // Launch.ini File Path
             TextBoxSettingsLaunchIniFilePath.Text = Settings.LaunchIniFilePath;
+
+            // Aurora Folder Path
+            TextBoxSettingsAuroraFolderPath.Text = Settings.AuroraFolderPath;
 
             /* Paths */
             TextBoxSettingsPathBaseDirectory.Text = Settings.PathBaseDirectory;
@@ -5253,6 +5257,11 @@ namespace ArisenStudio.Forms.Windows
             Settings.AlwaysBackupGameFiles = ToggleSettingsAlwaysBackupGameFiles.IsOn;
         }
 
+        private void ToggleSettingsForceInstallAnyRegions_Toggled(object sender, EventArgs e)
+        {
+            Settings.IgnoreSupportedRegionsAndForceInstall = ToggleSettingsForceInstallAnyRegions.IsOn;
+        }
+
         /* Paths */
 
         private void TextBoxSettingsPathBaseDirectory_EditValueChanged(object sender, EventArgs e)
@@ -5512,6 +5521,20 @@ namespace ArisenStudio.Forms.Windows
                 }
 
                 Settings.LaunchIniFilePath = TextBoxSettingsLaunchIniFilePath.Text;
+            }
+        }
+
+        private void TextBoxSettingsAuroraFolderPath_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (TextBoxSettingsAuroraFolderPath.Text.IsNullOrEmpty() | TextBoxSettingsAuroraFolderPath.Text.IsNullOrWhiteSpace())
+                {
+                    TextBoxSettingsAuroraFolderPath.Text = Settings.AuroraFolderPath;
+                    return;
+                }
+
+                Settings.AuroraFolderPath = TextBoxSettingsAuroraFolderPath.Text;
             }
         }
 
@@ -9396,11 +9419,11 @@ namespace ArisenStudio.Forms.Windows
         {
             if (e.FocusedRowHandle != -1)
             {
-                SelectedGameCheatsItem = Database.GameCheats.GetModById(Platform, (int)GridViewGameCheats.GetRowCellValue(e.FocusedRowHandle, GridViewGames.Columns[0]));
+                SelectedGameCheatsItem = Database.GameCheatsPS3.GameCheats.First(x => x.Game == (string)GridViewGameCheats.GetRowCellValue(e.FocusedRowHandle, GridViewGameCheats.Columns[0]));
             }
 
-            TileItemGameCheatsDownload.Enabled = e.FocusedRowHandle != -1;
-            TileItemGameCheatsShowDetails.Enabled = e.FocusedRowHandle != -1;
+            //TileItemGameCheatsDownload.Enabled = e.FocusedRowHandle != -1;
+            //TileItemGameCheatsShowDetails.Enabled = e.FocusedRowHandle != -1;
         }
 
         private void GridViewGameCheats_RowClick(object sender, RowClickEventArgs e)
@@ -9410,11 +9433,11 @@ namespace ArisenStudio.Forms.Windows
             GridHitInfo info = view.CalcHitInfo(ea.Location);
             if (info.InRow)
             {
-                SelectedGameCheatsItem = Database.GameCheats.GetModById(Platform, (int)GridViewGameCheats.GetRowCellValue(e.RowHandle, GridViewGames.Columns[0]));
+                SelectedGameCheatsItem = Database.GameCheatsPS3.GameCheats.First(x => x.Game == (string)GridViewGameCheats.GetRowCellValue(e.RowHandle, GridViewGameCheats.Columns[0]));
             }
 
-            TileItemGameCheatsDownload.Enabled = SelectedGameCheatsItem != null;
-            TileItemGameCheatsShowDetails.Enabled = SelectedGameCheatsItem != null;
+            //TileItemGameCheatsDownload.Enabled = SelectedGameCheatsItem != null;
+            //TileItemGameCheatsShowDetails.Enabled = SelectedGameCheatsItem != null;
         }
 
         private void GridViewGameCheats_DoubleClick(object sender, EventArgs e)
@@ -9430,7 +9453,7 @@ namespace ArisenStudio.Forms.Windows
                 //int modId = (int)GridViewGames.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]);
                 //SelectedGameModXboxId = modId;
 
-                SelectedGameCheatsItem = Database.GameCheats.GetModById(Platform, (int)GridViewGameCheats.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]));
+                SelectedGameCheatsItem = Database.GameCheatsPS3.GameCheats.First(x => x.Game == (string)GridViewGameCheats.GetRowCellValue(info.RowHandle, GridViewGameCheats.Columns[0]));
 
                 ShowGameCheats(SelectedGameCheatsItem);
             }
@@ -9626,9 +9649,9 @@ namespace ArisenStudio.Forms.Windows
             GridViewTrainers.Columns[3].MinWidth = 92;
             GridViewTrainers.Columns[3].MaxWidth = 92;
 
-            ComboBoxTrainersFilterRegion.SelectedIndexChanged -= ComboBoxTrainersFilterRegion_SelectedIndexChanged;
-            ComboBoxTrainersFilterRegion.SelectedIndex = string.IsNullOrEmpty(FilterTrainersRegion) ? -1 : ComboBoxTrainersFilterRegion.Properties.Items.IndexOf(FilterTrainersRegion);
-            ComboBoxTrainersFilterRegion.SelectedIndexChanged += ComboBoxTrainersFilterRegion_SelectedIndexChanged;
+            ComboBoxTrainersFilterType.SelectedIndexChanged -= ComboBoxTrainersFilterRegion_SelectedIndexChanged;
+            ComboBoxTrainersFilterType.SelectedIndex = string.IsNullOrEmpty(FilterTrainersRegion) ? -1 : ComboBoxTrainersFilterRegion.Properties.Items.IndexOf(FilterTrainersRegion);
+            ComboBoxTrainersFilterType.SelectedIndexChanged += ComboBoxTrainersFilterRegion_SelectedIndexChanged;
 
             ComboBoxTrainersFilterVersion.SelectedIndexChanged -= ComboBoxTrainersFilterVersion_SelectedIndexChanged;
             ComboBoxTrainersFilterVersion.SelectedIndex = string.IsNullOrEmpty(FilterTrainersVersion) ? -1 : ComboBoxTrainersFilterVersion.Properties.Items.IndexOf(FilterTrainersVersion);
@@ -10684,11 +10707,6 @@ namespace ArisenStudio.Forms.Windows
             //    cellViewInfo.CellValueRect.X = indent;
             //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
             //}
-        }
-
-        private void ButtonToolsPsGameCheats_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            DialogExtensions.ShowGameRegionsDialog(this);
         }
     }
 }

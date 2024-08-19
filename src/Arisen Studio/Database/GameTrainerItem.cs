@@ -20,7 +20,7 @@ public class TrainerItem
 
     public string Description { get; set; }
 
-    public List<TrainerData> Trainers { get; set; }
+    public List<Trainer> Trainers { get; set; }
 
     public Platform GetPlatform()
     {
@@ -31,7 +31,7 @@ public class TrainerItem
     /// Get the directory for extracting the files.
     /// </summary>
     /// <returns> </returns>
-    public string DownloadDataDirectory(TrainerData trainerData)
+    public string DownloadDataDirectory(Trainer trainerData)
     {
         return $@"{MainWindow.Settings.PathGameMods.GetFullPath(MainWindow.Settings.PathBaseDirectory)}\{GetPlatform().Humanize()}\{TitleId.RemoveInvalidChars()}\{trainerData.Name.RemoveInvalidChars()}\";
     }
@@ -40,7 +40,7 @@ public class TrainerItem
     /// Get the downloaded archive file path.
     /// </summary>
     /// <returns> Archive File Path </returns>
-    public string ArchiveZipFile(TrainerData trainerData)
+    public string ArchiveZipFile(Trainer trainerData)
     {
         return $@"{MainWindow.Settings.PathGameSaves.GetFullPath(MainWindow.Settings.PathBaseDirectory)}\{GetPlatform().Humanize()}\{TitleId.RemoveInvalidChars()}\{trainerData.Name.RemoveInvalidChars()}.zip";
     }
@@ -49,7 +49,7 @@ public class TrainerItem
     /// Download the archive and extracts all files to <see cref="DownloadDataDirectory" />.
     /// </summary>
     /// <param name="trainerData"> </param>
-    public void DownloadInstallFiles(TrainerData trainerData)
+    public void DownloadInstallFiles(Trainer trainerData)
     {
         string archivePath = DownloadDataDirectory(trainerData);
         string archiveFilePath = ArchiveZipFile(trainerData);
@@ -78,17 +78,17 @@ public class TrainerItem
 
         ZipFile.ExtractToDirectory(archiveFilePath, archivePath);
     }
+}
 
-    public class TrainerData
-    {
-        public DateTime LastUpdated { get; set; }
+public class Trainer
+{
+    public DateTime LastUpdated { get; set; }
 
-        public string Name { get; set; }
+    public string Name { get; set; }
 
-        public string Type { get; set; }
+    public string Type { get; set; }
 
-        public string Url { get; set; }
+    public string Url { get; set; }
 
-        public string[] InstallPaths { get; set; }
-    }
+    public string[] InstallPaths { get; set; }
 }

@@ -113,6 +113,9 @@ namespace ArisenStudio.Forms.Windows
             DevExpress.XtraEditors.TileItemElement tileItemElement55 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement56 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement57 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement58 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement59 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement60 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             DevExpress.XtraEditors.TileItemElement tileItemElement61 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement62 = new DevExpress.XtraEditors.TileItemElement();
@@ -175,9 +178,6 @@ namespace ArisenStudio.Forms.Windows
             DevExpress.XtraEditors.TileItemElement tileItemElement109 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement110 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement111 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement58 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement59 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement60 = new DevExpress.XtraEditors.TileItemElement();
             this.PageGameModsPS3 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.PanelGameGameMods = new System.Windows.Forms.Panel();
             this.GridControlGameModsPS3 = new DevExpress.XtraGrid.GridControl();
@@ -437,6 +437,8 @@ namespace ArisenStudio.Forms.Windows
             this.ToggleSettingsAutoDetectGameTitles = new DevExpress.XtraEditors.ToggleSwitch();
             this.LabelSettingsShowGamesFromExternalDevices = new DevExpress.XtraEditors.LabelControl();
             this.TabPageTransfer = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.LabelSettingsForceInstallAnyRegions = new DevExpress.XtraEditors.LabelControl();
+            this.ToggleSettingsForceInstallAnyRegions = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.LabelSettingsInstallingUninstalling = new DevExpress.XtraEditors.LabelControl();
             this.ToggleSettingsInstallAppsToUsbDevice = new DevExpress.XtraEditors.ToggleSwitch();
@@ -457,6 +459,8 @@ namespace ArisenStudio.Forms.Windows
             this.ToggleSettingsAlwaysBackupGameFiles = new DevExpress.XtraEditors.ToggleSwitch();
             this.LabelSettingsInstallModsToUsbDevice = new DevExpress.XtraEditors.LabelControl();
             this.TabPageFiles = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.TextBoxSettingsAuroraFolderPath = new DevExpress.XtraEditors.TextEdit();
+            this.LabelSettingsAuroraPath = new DevExpress.XtraEditors.LabelControl();
             this.SeparatorSettingsFiles1 = new DevExpress.XtraEditors.SeparatorControl();
             this.LabelSettingsFilesPS3 = new DevExpress.XtraEditors.LabelControl();
             this.LabelSettingsFilesPS4 = new DevExpress.XtraEditors.LabelControl();
@@ -663,10 +667,16 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlGameCheats = new DevExpress.XtraGrid.GridControl();
             this.GridViewGameCheats = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.PanelFiltersCheats = new System.Windows.Forms.Panel();
+            this.ComboBoxGameCheatsFilterNumberCheats = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.separatorControl93 = new DevExpress.XtraEditors.SeparatorControl();
             this.SeparatorCheats2 = new DevExpress.XtraEditors.SeparatorControl();
+            this.SeparatorCheats3 = new DevExpress.XtraEditors.SeparatorControl();
             this.SeparatorCheats4 = new DevExpress.XtraEditors.SeparatorControl();
             this.ComboBoxGameCheatsFilterGame = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.ComboBoxGameCheatsFilterVersion = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.ComboBoxGameCheatsFilterRegion = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.PanelCheatsActions = new DevExpress.XtraEditors.PanelControl();
@@ -786,6 +796,29 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem44 = new DevExpress.XtraEditors.TileItem();
             this.tileItem45 = new DevExpress.XtraEditors.TileItem();
             this.tileItem46 = new DevExpress.XtraEditors.TileItem();
+            this.PageTrainers = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.GridControlTrainers = new DevExpress.XtraGrid.GridControl();
+            this.GridViewTrainers = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.PanelTrainersFilters = new System.Windows.Forms.Panel();
+            this.ComboBoxTrainersFilterTitleId = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.ComboBoxTrainersFilterNumberCheats = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.separatorControl94 = new DevExpress.XtraEditors.SeparatorControl();
+            this.separatorControl95 = new DevExpress.XtraEditors.SeparatorControl();
+            this.ComboBoxTrainersFilterDashType = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl50 = new DevExpress.XtraEditors.LabelControl();
+            this.separatorControl90 = new DevExpress.XtraEditors.SeparatorControl();
+            this.separatorControl91 = new DevExpress.XtraEditors.SeparatorControl();
+            this.separatorControl92 = new DevExpress.XtraEditors.SeparatorControl();
+            this.ComboBoxTrainersFilterGame = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.PanelTrainersActions = new DevExpress.XtraEditors.PanelControl();
+            this.TileControlTrainers = new DevExpress.XtraEditors.TileControl();
+            this.TileGroupTrainers = new DevExpress.XtraEditors.TileGroup();
+            this.TileItemTrainersSortOptions = new DevExpress.XtraEditors.TileItem();
+            this.tileItem4 = new DevExpress.XtraEditors.TileItem();
+            this.tileItem6 = new DevExpress.XtraEditors.TileItem();
             this.ImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.TimerLoadConsole = new System.Windows.Forms.Timer(this.components);
             this.panel12 = new System.Windows.Forms.Panel();
@@ -1437,43 +1470,6 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsXboxVersion = new DevExpress.XtraEditors.LabelControl();
             this.LabelGameModsXboxStatus = new DevExpress.XtraEditors.LabelControl();
             this.LabelGameModsXboxCategory = new DevExpress.XtraEditors.LabelControl();
-            this.PageTrainers = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.GridControlTrainers = new DevExpress.XtraGrid.GridControl();
-            this.GridViewTrainers = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.PanelTrainersFilters = new System.Windows.Forms.Panel();
-            this.separatorControl89 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl90 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl91 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl92 = new DevExpress.XtraEditors.SeparatorControl();
-            this.ComboBoxTrainersFilterGame = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.PanelTrainersActions = new DevExpress.XtraEditors.PanelControl();
-            this.TileControlTrainers = new DevExpress.XtraEditors.TileControl();
-            this.TileGroupTrainers = new DevExpress.XtraEditors.TileGroup();
-            this.TileItemTrainersSortOptions = new DevExpress.XtraEditors.TileItem();
-            this.tileItem4 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem6 = new DevExpress.XtraEditors.TileItem();
-            this.separatorControl93 = new DevExpress.XtraEditors.SeparatorControl();
-            this.ComboBoxGameCheatsFilterNumberCheats = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.ComboBoxGameCheatsFilterVersion = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.SeparatorCheats3 = new DevExpress.XtraEditors.SeparatorControl();
-            this.ComboBoxTrainersFilterNumberCheats = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.separatorControl94 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl95 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl96 = new DevExpress.XtraEditors.SeparatorControl();
-            this.ComboBoxTrainersFilterTitleUpdate = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl49 = new DevExpress.XtraEditors.LabelControl();
-            this.ComboBoxTrainersFilterDashType = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl50 = new DevExpress.XtraEditors.LabelControl();
-            this.ComboBoxTrainersFilterTitleId = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.LabelSettingsAuroraPath = new DevExpress.XtraEditors.LabelControl();
-            this.LabelSettingsForceInstallAnyRegions = new DevExpress.XtraEditors.LabelControl();
-            this.ToggleSettingsForceInstallAnyRegions = new DevExpress.XtraEditors.ToggleSwitch();
             this.PageGameModsPS3.SuspendLayout();
             this.PanelGameGameMods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlGameModsPS3)).BeginInit();
@@ -1617,6 +1613,7 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAutoDetectGameRegions.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAutoDetectGameTitles.Properties)).BeginInit();
             this.TabPageTransfer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsForceInstallAnyRegions.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsInstallAppsToUsbDevice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsInstallResourcesToUsbDevice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsInstallGameSavesToUsbDevice.Properties)).BeginInit();
@@ -1627,6 +1624,7 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsInstallModsToUsbDevice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAlwaysBackupGameFiles.Properties)).BeginInit();
             this.TabPageFiles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsAuroraFolderPath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorSettingsFiles1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsLaunchIniFilePath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPackagesInstallPathPS4.Properties)).BeginInit();
@@ -1747,9 +1745,13 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.GridControlGameCheats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewGameCheats)).BeginInit();
             this.PanelFiltersCheats.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterNumberCheats.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl93)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorCheats2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SeparatorCheats3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorCheats4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterGame.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterVersion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterRegion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelCheatsActions)).BeginInit();
             this.PanelCheatsActions.SuspendLayout();
@@ -1821,6 +1823,21 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl88)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelHomebrewPS4Actions)).BeginInit();
             this.PanelHomebrewPS4Actions.SuspendLayout();
+            this.PageTrainers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlTrainers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewTrainers)).BeginInit();
+            this.PanelTrainersFilters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterTitleId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterNumberCheats.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl94)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl95)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterDashType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl90)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl91)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl92)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterGame.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelTrainersActions)).BeginInit();
+            this.PanelTrainersActions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RibbonControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuTopInfo)).BeginInit();
@@ -2157,30 +2174,6 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit65.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuConsoleFiles)).BeginInit();
-            this.PageTrainers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridControlTrainers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewTrainers)).BeginInit();
-            this.PanelTrainersFilters.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl89)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl90)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl91)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl92)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterGame.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PanelTrainersActions)).BeginInit();
-            this.PanelTrainersActions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl93)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterNumberCheats.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterVersion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SeparatorCheats3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterNumberCheats.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl94)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl95)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl96)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterTitleUpdate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterDashType.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterTitleId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsForceInstallAnyRegions.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // PageGameModsPS3
@@ -6936,6 +6929,32 @@ namespace ArisenStudio.Forms.Windows
             this.TabPageTransfer.Name = "TabPageTransfer";
             this.TabPageTransfer.Size = new System.Drawing.Size(1288, 533);
             // 
+            // LabelSettingsForceInstallAnyRegions
+            // 
+            this.LabelSettingsForceInstallAnyRegions.Appearance.Options.UseFont = true;
+            this.LabelSettingsForceInstallAnyRegions.Location = new System.Drawing.Point(60, 323);
+            this.LabelSettingsForceInstallAnyRegions.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelSettingsForceInstallAnyRegions.Name = "LabelSettingsForceInstallAnyRegions";
+            this.LabelSettingsForceInstallAnyRegions.Size = new System.Drawing.Size(180, 13);
+            this.LabelSettingsForceInstallAnyRegions.TabIndex = 1227;
+            this.LabelSettingsForceInstallAnyRegions.Text = "Force install unsupported regions*";
+            this.LabelSettingsForceInstallAnyRegions.ToolTip = "Warning: You may have issues trying to use mods that aren\'t supported by the game" +
+    "\r\n\r\nUse at your own risk!";
+            this.LabelSettingsForceInstallAnyRegions.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Warning;
+            // 
+            // ToggleSettingsForceInstallAnyRegions
+            // 
+            this.ToggleSettingsForceInstallAnyRegions.Location = new System.Drawing.Point(0, 320);
+            this.ToggleSettingsForceInstallAnyRegions.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
+            this.ToggleSettingsForceInstallAnyRegions.Name = "ToggleSettingsForceInstallAnyRegions";
+            this.ToggleSettingsForceInstallAnyRegions.Properties.AutoWidth = true;
+            this.ToggleSettingsForceInstallAnyRegions.Properties.OffText = "Off";
+            this.ToggleSettingsForceInstallAnyRegions.Properties.OnText = "On";
+            this.ToggleSettingsForceInstallAnyRegions.Properties.ShowText = false;
+            this.ToggleSettingsForceInstallAnyRegions.Size = new System.Drawing.Size(54, 24);
+            this.ToggleSettingsForceInstallAnyRegions.TabIndex = 1226;
+            this.ToggleSettingsForceInstallAnyRegions.Toggled += new System.EventHandler(this.ToggleSettingsForceInstallAnyRegions_Toggled);
+            // 
             // labelControl18
             // 
             this.labelControl18.Appearance.Options.UseFont = true;
@@ -7157,7 +7176,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.TabPageFiles.AutoScroll = true;
             this.TabPageFiles.Caption = "Files";
-            this.TabPageFiles.Controls.Add(this.textEdit1);
+            this.TabPageFiles.Controls.Add(this.TextBoxSettingsAuroraFolderPath);
             this.TabPageFiles.Controls.Add(this.LabelSettingsAuroraPath);
             this.TabPageFiles.Controls.Add(this.SeparatorSettingsFiles1);
             this.TabPageFiles.Controls.Add(this.LabelSettingsFilesPS3);
@@ -7172,6 +7191,25 @@ namespace ArisenStudio.Forms.Windows
             this.TabPageFiles.Controls.Add(this.LabelSettingsFilesXbox);
             this.TabPageFiles.Name = "TabPageFiles";
             this.TabPageFiles.Size = new System.Drawing.Size(1288, 533);
+            // 
+            // TextBoxSettingsAuroraFolderPath
+            // 
+            this.TextBoxSettingsAuroraFolderPath.Location = new System.Drawing.Point(0, 391);
+            this.TextBoxSettingsAuroraFolderPath.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
+            this.TextBoxSettingsAuroraFolderPath.Name = "TextBoxSettingsAuroraFolderPath";
+            this.TextBoxSettingsAuroraFolderPath.Size = new System.Drawing.Size(701, 22);
+            this.TextBoxSettingsAuroraFolderPath.TabIndex = 1182;
+            this.TextBoxSettingsAuroraFolderPath.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSettingsAuroraFolderPath_KeyDown);
+            // 
+            // LabelSettingsAuroraPath
+            // 
+            this.LabelSettingsAuroraPath.Appearance.Options.UseFont = true;
+            this.LabelSettingsAuroraPath.Location = new System.Drawing.Point(0, 369);
+            this.LabelSettingsAuroraPath.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.LabelSettingsAuroraPath.Name = "LabelSettingsAuroraPath";
+            this.LabelSettingsAuroraPath.Size = new System.Drawing.Size(61, 13);
+            this.LabelSettingsAuroraPath.TabIndex = 1183;
+            this.LabelSettingsAuroraPath.Text = "Aurora Path";
             // 
             // SeparatorSettingsFiles1
             // 
@@ -10461,7 +10499,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsTranslators.Location = new System.Drawing.Point(0, 504);
             this.LabelCreditsTranslators.Name = "LabelCreditsTranslators";
             this.LabelCreditsTranslators.Padding = new System.Windows.Forms.Padding(12, 3, 0, 12);
-            this.LabelCreditsTranslators.Size = new System.Drawing.Size(1247, 100);
+            this.LabelCreditsTranslators.Size = new System.Drawing.Size(1264, 100);
             this.LabelCreditsTranslators.TabIndex = 18;
             this.LabelCreditsTranslators.Text = resources.GetString("LabelCreditsTranslators.Text");
             // 
@@ -10474,7 +10512,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHeaderTranslators.Location = new System.Drawing.Point(0, 476);
             this.LabelHeaderTranslators.Name = "LabelHeaderTranslators";
             this.LabelHeaderTranslators.Padding = new System.Windows.Forms.Padding(12, 6, 0, 3);
-            this.LabelHeaderTranslators.Size = new System.Drawing.Size(1247, 28);
+            this.LabelHeaderTranslators.Size = new System.Drawing.Size(1264, 28);
             this.LabelHeaderTranslators.TabIndex = 17;
             this.LabelHeaderTranslators.Text = "Translators";
             // 
@@ -10488,7 +10526,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsContributors.Location = new System.Drawing.Point(0, 354);
             this.LabelCreditsContributors.Name = "LabelCreditsContributors";
             this.LabelCreditsContributors.Padding = new System.Windows.Forms.Padding(12, 3, 0, 0);
-            this.LabelCreditsContributors.Size = new System.Drawing.Size(1247, 122);
+            this.LabelCreditsContributors.Size = new System.Drawing.Size(1264, 122);
             this.LabelCreditsContributors.TabIndex = 16;
             this.LabelCreditsContributors.Text = resources.GetString("LabelCreditsContributors.Text");
             // 
@@ -10501,7 +10539,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelAboutHeaderContributors.Location = new System.Drawing.Point(0, 326);
             this.LabelAboutHeaderContributors.Name = "LabelAboutHeaderContributors";
             this.LabelAboutHeaderContributors.Padding = new System.Windows.Forms.Padding(12, 6, 0, 3);
-            this.LabelAboutHeaderContributors.Size = new System.Drawing.Size(1247, 28);
+            this.LabelAboutHeaderContributors.Size = new System.Drawing.Size(1264, 28);
             this.LabelAboutHeaderContributors.TabIndex = 15;
             this.LabelAboutHeaderContributors.Text = "Contributors";
             // 
@@ -10516,7 +10554,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsLibraries.Location = new System.Drawing.Point(0, 34);
             this.LabelCreditsLibraries.Name = "LabelCreditsLibraries";
             this.LabelCreditsLibraries.Padding = new System.Windows.Forms.Padding(12, 3, 0, 0);
-            this.LabelCreditsLibraries.Size = new System.Drawing.Size(1247, 292);
+            this.LabelCreditsLibraries.Size = new System.Drawing.Size(1264, 292);
             this.LabelCreditsLibraries.TabIndex = 14;
             this.LabelCreditsLibraries.Text = resources.GetString("LabelCreditsLibraries.Text");
             // 
@@ -10529,7 +10567,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHeaderLibraries.Location = new System.Drawing.Point(0, 0);
             this.LabelHeaderLibraries.Name = "LabelHeaderLibraries";
             this.LabelHeaderLibraries.Padding = new System.Windows.Forms.Padding(12, 12, 0, 3);
-            this.LabelHeaderLibraries.Size = new System.Drawing.Size(1247, 34);
+            this.LabelHeaderLibraries.Size = new System.Drawing.Size(1264, 34);
             this.LabelHeaderLibraries.TabIndex = 13;
             this.LabelHeaderLibraries.Text = "Third-Party Libraries";
             // 
@@ -10611,6 +10649,59 @@ namespace ArisenStudio.Forms.Windows
             this.PanelFiltersCheats.Size = new System.Drawing.Size(1288, 76);
             this.PanelFiltersCheats.TabIndex = 1184;
             // 
+            // ComboBoxGameCheatsFilterNumberCheats
+            // 
+            this.ComboBoxGameCheatsFilterNumberCheats.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxGameCheatsFilterNumberCheats.Location = new System.Drawing.Point(1190, 34);
+            this.ComboBoxGameCheatsFilterNumberCheats.Name = "ComboBoxGameCheatsFilterNumberCheats";
+            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AllowFocused = false;
+            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.ComboBoxGameCheatsFilterNumberCheats.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ComboBoxGameCheatsFilterNumberCheats.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AutoComplete = false;
+            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AutoHeight = false;
+            this.ComboBoxGameCheatsFilterNumberCheats.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ComboBoxGameCheatsFilterNumberCheats.Properties.DropDownRows = 12;
+            this.ComboBoxGameCheatsFilterNumberCheats.Properties.NullValuePrompt = "Select...";
+            this.ComboBoxGameCheatsFilterNumberCheats.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ComboBoxGameCheatsFilterNumberCheats.Size = new System.Drawing.Size(84, 30);
+            this.ComboBoxGameCheatsFilterNumberCheats.TabIndex = 1216;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Appearance.Options.UseForeColor = true;
+            this.labelControl9.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelControl9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl9.Location = new System.Drawing.Point(1190, 12);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.labelControl9.Size = new System.Drawing.Size(59, 17);
+            this.labelControl9.TabIndex = 1217;
+            this.labelControl9.Text = "# Cheats";
+            // 
+            // separatorControl93
+            // 
+            this.separatorControl93.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.separatorControl93.BackColor = System.Drawing.Color.Transparent;
+            this.separatorControl93.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
+            this.separatorControl93.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
+            this.separatorControl93.LineOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.separatorControl93.LineThickness = 1;
+            this.separatorControl93.Location = new System.Drawing.Point(1172, 12);
+            this.separatorControl93.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
+            this.separatorControl93.Name = "separatorControl93";
+            this.separatorControl93.Padding = new System.Windows.Forms.Padding(0);
+            this.separatorControl93.Size = new System.Drawing.Size(3, 52);
+            this.separatorControl93.TabIndex = 1215;
+            // 
             // SeparatorCheats2
             // 
             this.SeparatorCheats2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -10625,6 +10716,21 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorCheats2.Padding = new System.Windows.Forms.Padding(0);
             this.SeparatorCheats2.Size = new System.Drawing.Size(3, 52);
             this.SeparatorCheats2.TabIndex = 1214;
+            // 
+            // SeparatorCheats3
+            // 
+            this.SeparatorCheats3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SeparatorCheats3.BackColor = System.Drawing.Color.Transparent;
+            this.SeparatorCheats3.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
+            this.SeparatorCheats3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
+            this.SeparatorCheats3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.SeparatorCheats3.LineThickness = 1;
+            this.SeparatorCheats3.Location = new System.Drawing.Point(1058, 12);
+            this.SeparatorCheats3.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
+            this.SeparatorCheats3.Name = "SeparatorCheats3";
+            this.SeparatorCheats3.Padding = new System.Windows.Forms.Padding(0);
+            this.SeparatorCheats3.Size = new System.Drawing.Size(3, 52);
+            this.SeparatorCheats3.TabIndex = 1213;
             // 
             // SeparatorCheats4
             // 
@@ -10675,6 +10781,44 @@ namespace ArisenStudio.Forms.Windows
             this.labelControl1.Size = new System.Drawing.Size(41, 17);
             this.labelControl1.TabIndex = 1171;
             this.labelControl1.Text = "Game";
+            // 
+            // ComboBoxGameCheatsFilterVersion
+            // 
+            this.ComboBoxGameCheatsFilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxGameCheatsFilterVersion.Location = new System.Drawing.Point(1076, 34);
+            this.ComboBoxGameCheatsFilterVersion.Name = "ComboBoxGameCheatsFilterVersion";
+            this.ComboBoxGameCheatsFilterVersion.Properties.AllowFocused = false;
+            this.ComboBoxGameCheatsFilterVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.ComboBoxGameCheatsFilterVersion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ComboBoxGameCheatsFilterVersion.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxGameCheatsFilterVersion.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ComboBoxGameCheatsFilterVersion.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.ComboBoxGameCheatsFilterVersion.Properties.AutoComplete = false;
+            this.ComboBoxGameCheatsFilterVersion.Properties.AutoHeight = false;
+            this.ComboBoxGameCheatsFilterVersion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ComboBoxGameCheatsFilterVersion.Properties.DropDownRows = 12;
+            this.ComboBoxGameCheatsFilterVersion.Properties.NullValuePrompt = "Select...";
+            this.ComboBoxGameCheatsFilterVersion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ComboBoxGameCheatsFilterVersion.Size = new System.Drawing.Size(84, 30);
+            this.ComboBoxGameCheatsFilterVersion.TabIndex = 1164;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseForeColor = true;
+            this.labelControl3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelControl3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl3.Location = new System.Drawing.Point(1073, 12);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.labelControl3.Size = new System.Drawing.Size(53, 17);
+            this.labelControl3.TabIndex = 1165;
+            this.labelControl3.Text = "Version";
             // 
             // ComboBoxGameCheatsFilterRegion
             // 
@@ -12930,6 +13074,418 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem46.Name = "tileItem46";
             this.tileItem46.Padding = new System.Windows.Forms.Padding(0);
             // 
+            // PageTrainers
+            // 
+            this.PageTrainers.Controls.Add(this.GridControlTrainers);
+            this.PageTrainers.Controls.Add(this.PanelTrainersFilters);
+            this.PageTrainers.Controls.Add(this.PanelTrainersActions);
+            this.PageTrainers.Name = "PageTrainers";
+            this.PageTrainers.Size = new System.Drawing.Size(1288, 571);
+            // 
+            // GridControlTrainers
+            // 
+            this.GridControlTrainers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridControlTrainers.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.GridControlTrainers.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
+            this.GridControlTrainers.EmbeddedNavigator.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.GridControlTrainers.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GridControlTrainers.Location = new System.Drawing.Point(0, 146);
+            this.GridControlTrainers.MainView = this.GridViewTrainers;
+            this.GridControlTrainers.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.GridControlTrainers.Name = "GridControlTrainers";
+            this.GridControlTrainers.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.GridControlTrainers.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlTrainers.TabIndex = 1186;
+            this.GridControlTrainers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewTrainers});
+            // 
+            // GridViewTrainers
+            // 
+            this.GridViewTrainers.ActiveFilterEnabled = false;
+            this.GridViewTrainers.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.GridViewTrainers.Appearance.Empty.Options.UseBackColor = true;
+            this.GridViewTrainers.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.GridViewTrainers.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GridViewTrainers.Appearance.Row.Options.UseBackColor = true;
+            this.GridViewTrainers.Appearance.Row.Options.UseFont = true;
+            this.GridViewTrainers.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
+            this.GridViewTrainers.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.GridViewTrainers.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.GridViewTrainers.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
+            this.GridViewTrainers.GridControl = this.GridControlTrainers;
+            this.GridViewTrainers.GroupRowHeight = 30;
+            this.GridViewTrainers.Name = "GridViewTrainers";
+            this.GridViewTrainers.OptionsBehavior.Editable = false;
+            this.GridViewTrainers.OptionsBehavior.ReadOnly = true;
+            this.GridViewTrainers.OptionsCustomization.AllowFilter = false;
+            this.GridViewTrainers.OptionsFilter.AllowFilterEditor = false;
+            this.GridViewTrainers.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.GridViewTrainers.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.GridViewTrainers.OptionsSelection.EnableAppearanceHotTrackedRow = DevExpress.Utils.DefaultBoolean.True;
+            this.GridViewTrainers.OptionsView.ShowColumnHeaders = false;
+            this.GridViewTrainers.OptionsView.ShowGroupPanel = false;
+            this.GridViewTrainers.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
+            this.GridViewTrainers.OptionsView.ShowIndicator = false;
+            this.GridViewTrainers.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
+            this.GridViewTrainers.RowHeight = 30;
+            this.GridViewTrainers.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            // 
+            // PanelTrainersFilters
+            // 
+            this.PanelTrainersFilters.BackColor = System.Drawing.Color.Transparent;
+            this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterTitleId);
+            this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterNumberCheats);
+            this.PanelTrainersFilters.Controls.Add(this.labelControl14);
+            this.PanelTrainersFilters.Controls.Add(this.separatorControl94);
+            this.PanelTrainersFilters.Controls.Add(this.separatorControl95);
+            this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterDashType);
+            this.PanelTrainersFilters.Controls.Add(this.labelControl50);
+            this.PanelTrainersFilters.Controls.Add(this.separatorControl90);
+            this.PanelTrainersFilters.Controls.Add(this.separatorControl91);
+            this.PanelTrainersFilters.Controls.Add(this.separatorControl92);
+            this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterGame);
+            this.PanelTrainersFilters.Controls.Add(this.labelControl10);
+            this.PanelTrainersFilters.Controls.Add(this.labelControl13);
+            this.PanelTrainersFilters.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTrainersFilters.Location = new System.Drawing.Point(0, 70);
+            this.PanelTrainersFilters.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
+            this.PanelTrainersFilters.Name = "PanelTrainersFilters";
+            this.PanelTrainersFilters.Size = new System.Drawing.Size(1288, 76);
+            this.PanelTrainersFilters.TabIndex = 1187;
+            // 
+            // ComboBoxTrainersFilterTitleId
+            // 
+            this.ComboBoxTrainersFilterTitleId.Location = new System.Drawing.Point(886, 34);
+            this.ComboBoxTrainersFilterTitleId.Name = "ComboBoxTrainersFilterTitleId";
+            this.ComboBoxTrainersFilterTitleId.Properties.AllowFocused = false;
+            this.ComboBoxTrainersFilterTitleId.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.ComboBoxTrainersFilterTitleId.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ComboBoxTrainersFilterTitleId.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxTrainersFilterTitleId.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ComboBoxTrainersFilterTitleId.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.ComboBoxTrainersFilterTitleId.Properties.AutoComplete = false;
+            this.ComboBoxTrainersFilterTitleId.Properties.AutoHeight = false;
+            this.ComboBoxTrainersFilterTitleId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ComboBoxTrainersFilterTitleId.Properties.DropDownRows = 15;
+            this.ComboBoxTrainersFilterTitleId.Properties.NullValuePrompt = "Select...";
+            this.ComboBoxTrainersFilterTitleId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ComboBoxTrainersFilterTitleId.Size = new System.Drawing.Size(131, 30);
+            this.ComboBoxTrainersFilterTitleId.TabIndex = 1227;
+            // 
+            // ComboBoxTrainersFilterNumberCheats
+            // 
+            this.ComboBoxTrainersFilterNumberCheats.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxTrainersFilterNumberCheats.Location = new System.Drawing.Point(1190, 34);
+            this.ComboBoxTrainersFilterNumberCheats.Name = "ComboBoxTrainersFilterNumberCheats";
+            this.ComboBoxTrainersFilterNumberCheats.Properties.AllowFocused = false;
+            this.ComboBoxTrainersFilterNumberCheats.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.ComboBoxTrainersFilterNumberCheats.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ComboBoxTrainersFilterNumberCheats.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxTrainersFilterNumberCheats.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ComboBoxTrainersFilterNumberCheats.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.ComboBoxTrainersFilterNumberCheats.Properties.AutoComplete = false;
+            this.ComboBoxTrainersFilterNumberCheats.Properties.AutoHeight = false;
+            this.ComboBoxTrainersFilterNumberCheats.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ComboBoxTrainersFilterNumberCheats.Properties.DropDownRows = 12;
+            this.ComboBoxTrainersFilterNumberCheats.Properties.NullValuePrompt = "Select...";
+            this.ComboBoxTrainersFilterNumberCheats.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ComboBoxTrainersFilterNumberCheats.Size = new System.Drawing.Size(84, 30);
+            this.ComboBoxTrainersFilterNumberCheats.TabIndex = 1225;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelControl14.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl14.Appearance.Options.UseFont = true;
+            this.labelControl14.Appearance.Options.UseForeColor = true;
+            this.labelControl14.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelControl14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl14.Location = new System.Drawing.Point(1190, 12);
+            this.labelControl14.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.labelControl14.Size = new System.Drawing.Size(68, 17);
+            this.labelControl14.TabIndex = 1226;
+            this.labelControl14.Text = "# Trainers";
+            // 
+            // separatorControl94
+            // 
+            this.separatorControl94.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.separatorControl94.BackColor = System.Drawing.Color.Transparent;
+            this.separatorControl94.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
+            this.separatorControl94.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
+            this.separatorControl94.LineOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.separatorControl94.LineThickness = 1;
+            this.separatorControl94.Location = new System.Drawing.Point(1172, 12);
+            this.separatorControl94.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
+            this.separatorControl94.Name = "separatorControl94";
+            this.separatorControl94.Padding = new System.Windows.Forms.Padding(0);
+            this.separatorControl94.Size = new System.Drawing.Size(3, 52);
+            this.separatorControl94.TabIndex = 1224;
+            // 
+            // separatorControl95
+            // 
+            this.separatorControl95.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.separatorControl95.BackColor = System.Drawing.Color.Transparent;
+            this.separatorControl95.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
+            this.separatorControl95.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
+            this.separatorControl95.LineOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.separatorControl95.LineThickness = 1;
+            this.separatorControl95.Location = new System.Drawing.Point(1029, 12);
+            this.separatorControl95.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
+            this.separatorControl95.Name = "separatorControl95";
+            this.separatorControl95.Padding = new System.Windows.Forms.Padding(0);
+            this.separatorControl95.Size = new System.Drawing.Size(3, 52);
+            this.separatorControl95.TabIndex = 1223;
+            // 
+            // ComboBoxTrainersFilterDashType
+            // 
+            this.ComboBoxTrainersFilterDashType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxTrainersFilterDashType.Location = new System.Drawing.Point(1047, 34);
+            this.ComboBoxTrainersFilterDashType.Name = "ComboBoxTrainersFilterDashType";
+            this.ComboBoxTrainersFilterDashType.Properties.AllowFocused = false;
+            this.ComboBoxTrainersFilterDashType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.ComboBoxTrainersFilterDashType.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ComboBoxTrainersFilterDashType.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxTrainersFilterDashType.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ComboBoxTrainersFilterDashType.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.ComboBoxTrainersFilterDashType.Properties.AutoComplete = false;
+            this.ComboBoxTrainersFilterDashType.Properties.AutoHeight = false;
+            this.ComboBoxTrainersFilterDashType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ComboBoxTrainersFilterDashType.Properties.DropDownRows = 12;
+            this.ComboBoxTrainersFilterDashType.Properties.NullValuePrompt = "Select...";
+            this.ComboBoxTrainersFilterDashType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ComboBoxTrainersFilterDashType.Size = new System.Drawing.Size(113, 30);
+            this.ComboBoxTrainersFilterDashType.TabIndex = 1218;
+            // 
+            // labelControl50
+            // 
+            this.labelControl50.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl50.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelControl50.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl50.Appearance.Options.UseFont = true;
+            this.labelControl50.Appearance.Options.UseForeColor = true;
+            this.labelControl50.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelControl50.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl50.Location = new System.Drawing.Point(1044, 12);
+            this.labelControl50.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
+            this.labelControl50.Name = "labelControl50";
+            this.labelControl50.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.labelControl50.Size = new System.Drawing.Size(36, 17);
+            this.labelControl50.TabIndex = 1219;
+            this.labelControl50.Text = "Type";
+            // 
+            // separatorControl90
+            // 
+            this.separatorControl90.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.separatorControl90.BackColor = System.Drawing.Color.Transparent;
+            this.separatorControl90.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
+            this.separatorControl90.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
+            this.separatorControl90.LineOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.separatorControl90.LineThickness = 1;
+            this.separatorControl90.Location = new System.Drawing.Point(1192, 12);
+            this.separatorControl90.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
+            this.separatorControl90.Name = "separatorControl90";
+            this.separatorControl90.Padding = new System.Windows.Forms.Padding(0);
+            this.separatorControl90.Size = new System.Drawing.Size(3, 52);
+            this.separatorControl90.TabIndex = 1213;
+            // 
+            // separatorControl91
+            // 
+            this.separatorControl91.BackColor = System.Drawing.Color.Transparent;
+            this.separatorControl91.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
+            this.separatorControl91.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
+            this.separatorControl91.LineOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.separatorControl91.LineThickness = 1;
+            this.separatorControl91.Location = new System.Drawing.Point(868, 12);
+            this.separatorControl91.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
+            this.separatorControl91.Name = "separatorControl91";
+            this.separatorControl91.Padding = new System.Windows.Forms.Padding(0);
+            this.separatorControl91.Size = new System.Drawing.Size(3, 52);
+            this.separatorControl91.TabIndex = 1212;
+            // 
+            // separatorControl92
+            // 
+            this.separatorControl92.BackColor = System.Drawing.Color.Transparent;
+            this.separatorControl92.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.separatorControl92.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
+            this.separatorControl92.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
+            this.separatorControl92.LineThickness = 1;
+            this.separatorControl92.Location = new System.Drawing.Point(0, 73);
+            this.separatorControl92.Margin = new System.Windows.Forms.Padding(0);
+            this.separatorControl92.Name = "separatorControl92";
+            this.separatorControl92.Padding = new System.Windows.Forms.Padding(0);
+            this.separatorControl92.Size = new System.Drawing.Size(1288, 3);
+            this.separatorControl92.TabIndex = 1172;
+            // 
+            // ComboBoxTrainersFilterGame
+            // 
+            this.ComboBoxTrainersFilterGame.Location = new System.Drawing.Point(0, 34);
+            this.ComboBoxTrainersFilterGame.Name = "ComboBoxTrainersFilterGame";
+            this.ComboBoxTrainersFilterGame.Properties.AllowFocused = false;
+            this.ComboBoxTrainersFilterGame.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.ComboBoxTrainersFilterGame.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ComboBoxTrainersFilterGame.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxTrainersFilterGame.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ComboBoxTrainersFilterGame.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.ComboBoxTrainersFilterGame.Properties.AutoComplete = false;
+            this.ComboBoxTrainersFilterGame.Properties.AutoHeight = false;
+            this.ComboBoxTrainersFilterGame.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ComboBoxTrainersFilterGame.Properties.DropDownRows = 15;
+            this.ComboBoxTrainersFilterGame.Properties.NullValuePrompt = "Select...";
+            this.ComboBoxTrainersFilterGame.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ComboBoxTrainersFilterGame.Size = new System.Drawing.Size(856, 30);
+            this.ComboBoxTrainersFilterGame.TabIndex = 1170;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Appearance.Options.UseForeColor = true;
+            this.labelControl10.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelControl10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl10.Location = new System.Drawing.Point(-3, 12);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.labelControl10.Size = new System.Drawing.Size(41, 17);
+            this.labelControl10.TabIndex = 1171;
+            this.labelControl10.Text = "Game";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.Appearance.Options.UseForeColor = true;
+            this.labelControl13.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelControl13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl13.Location = new System.Drawing.Point(886, 12);
+            this.labelControl13.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.labelControl13.Size = new System.Drawing.Size(52, 17);
+            this.labelControl13.TabIndex = 1157;
+            this.labelControl13.Text = "Title ID";
+            // 
+            // PanelTrainersActions
+            // 
+            this.PanelTrainersActions.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.PanelTrainersActions.Appearance.Options.UseBackColor = true;
+            this.PanelTrainersActions.Controls.Add(this.TileControlTrainers);
+            this.PanelTrainersActions.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTrainersActions.Location = new System.Drawing.Point(0, 0);
+            this.PanelTrainersActions.LookAndFeel.SkinName = "WXI";
+            this.PanelTrainersActions.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.PanelTrainersActions.Margin = new System.Windows.Forms.Padding(0);
+            this.PanelTrainersActions.Name = "PanelTrainersActions";
+            this.PanelTrainersActions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelTrainersActions.TabIndex = 1188;
+            // 
+            // TileControlTrainers
+            // 
+            this.TileControlTrainers.AllowDisabledStateIndication = false;
+            this.TileControlTrainers.AllowDrag = false;
+            this.TileControlTrainers.AllowDragTilesBetweenGroups = false;
+            this.TileControlTrainers.AllowGlyphSkinning = true;
+            this.TileControlTrainers.AllowItemHover = true;
+            this.TileControlTrainers.AllowSelectedItemBorder = false;
+            this.TileControlTrainers.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.TileControlTrainers.AppearanceItem.Disabled.Options.UseForeColor = true;
+            this.TileControlTrainers.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
+            this.TileControlTrainers.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
+            this.TileControlTrainers.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.TileControlTrainers.AppearanceItem.Normal.Options.UseForeColor = true;
+            this.TileControlTrainers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.TileControlTrainers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TileControlTrainers.Groups.Add(this.TileGroupTrainers);
+            this.TileControlTrainers.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.TileControlTrainers.IndentBetweenItems = 2;
+            this.TileControlTrainers.ItemBorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
+            this.TileControlTrainers.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.Fade;
+            this.TileControlTrainers.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileControlTrainers.ItemPadding = new System.Windows.Forms.Padding(0);
+            this.TileControlTrainers.ItemSize = 98;
+            this.TileControlTrainers.ItemTextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
+            this.TileControlTrainers.Location = new System.Drawing.Point(2, 2);
+            this.TileControlTrainers.MaxId = 8;
+            this.TileControlTrainers.Name = "TileControlTrainers";
+            this.TileControlTrainers.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.TileControlTrainers.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
+            this.TileControlTrainers.RowCount = 1;
+            this.TileControlTrainers.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
+            this.TileControlTrainers.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlTrainers.TabIndex = 1;
+            this.TileControlTrainers.Text = "TileControlModsActions";
+            // 
+            // TileGroupTrainers
+            // 
+            this.TileGroupTrainers.Items.Add(this.TileItemTrainersSortOptions);
+            this.TileGroupTrainers.Items.Add(this.tileItem4);
+            this.TileGroupTrainers.Items.Add(this.tileItem6);
+            this.TileGroupTrainers.Name = "TileGroupTrainers";
+            this.TileGroupTrainers.Text = "Game Saves Actions";
+            // 
+            // TileItemTrainersSortOptions
+            // 
+            this.TileItemTrainersSortOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.TileItemTrainersSortOptions.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.TileItemTrainersSortOptions.AppearanceItem.Disabled.Options.UseForeColor = true;
+            this.TileItemTrainersSortOptions.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
+            this.TileItemTrainersSortOptions.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
+            this.TileItemTrainersSortOptions.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.TileItemTrainersSortOptions.AppearanceItem.Normal.Options.UseForeColor = true;
+            this.TileItemTrainersSortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
+            this.TileItemTrainersSortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TileItemTrainersSortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
+            tileItemElement58.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement58.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement58.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement58.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement58.Text = "";
+            tileItemElement58.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemTrainersSortOptions.Elements.Add(tileItemElement58);
+            this.TileItemTrainersSortOptions.Id = 1;
+            this.TileItemTrainersSortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
+            this.TileItemTrainersSortOptions.Name = "TileItemTrainersSortOptions";
+            this.TileItemTrainersSortOptions.Padding = new System.Windows.Forms.Padding(0);
+            // 
+            // tileItem4
+            // 
+            this.tileItem4.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileItem4.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
+            tileItemElement59.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement59.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement59.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement59.Text = "";
+            this.tileItem4.Elements.Add(tileItemElement59);
+            this.tileItem4.Enabled = false;
+            this.tileItem4.Id = 6;
+            this.tileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
+            this.tileItem4.Name = "tileItem4";
+            this.tileItem4.Padding = new System.Windows.Forms.Padding(0);
+            // 
+            // tileItem6
+            // 
+            this.tileItem6.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileItem6.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
+            tileItemElement60.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement60.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement60.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement60.Text = "";
+            this.tileItem6.Elements.Add(tileItemElement60);
+            this.tileItem6.Enabled = false;
+            this.tileItem6.Id = 7;
+            this.tileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
+            this.tileItem6.Name = "tileItem6";
+            this.tileItem6.Padding = new System.Windows.Forms.Padding(0);
+            // 
             // ImageCollection
             // 
             this.ImageCollection.ImageSize = new System.Drawing.Size(20, 20);
@@ -13706,7 +14262,6 @@ namespace ArisenStudio.Forms.Windows
             this.ButtonToolsPsGameCheats.LargeWidth = 74;
             this.ButtonToolsPsGameCheats.Name = "ButtonToolsPsGameCheats";
             this.ButtonToolsPsGameCheats.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsPsGameCheats.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGameCheats_ItemClick);
             // 
             // RibbonPageHome
             // 
@@ -23175,639 +23730,6 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsXboxCategory.Size = new System.Drawing.Size(61, 17);
             this.LabelGameModsXboxCategory.TabIndex = 1171;
             // 
-            // PageTrainers
-            // 
-            this.PageTrainers.Controls.Add(this.GridControlTrainers);
-            this.PageTrainers.Controls.Add(this.PanelTrainersFilters);
-            this.PageTrainers.Controls.Add(this.PanelTrainersActions);
-            this.PageTrainers.Name = "PageTrainers";
-            this.PageTrainers.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // GridControlTrainers
-            // 
-            this.GridControlTrainers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridControlTrainers.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.GridControlTrainers.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.GridControlTrainers.EmbeddedNavigator.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.GridControlTrainers.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GridControlTrainers.Location = new System.Drawing.Point(0, 146);
-            this.GridControlTrainers.MainView = this.GridViewTrainers;
-            this.GridControlTrainers.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.GridControlTrainers.Name = "GridControlTrainers";
-            this.GridControlTrainers.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.GridControlTrainers.Size = new System.Drawing.Size(1288, 425);
-            this.GridControlTrainers.TabIndex = 1186;
-            this.GridControlTrainers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.GridViewTrainers});
-            // 
-            // GridViewTrainers
-            // 
-            this.GridViewTrainers.ActiveFilterEnabled = false;
-            this.GridViewTrainers.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.GridViewTrainers.Appearance.Empty.Options.UseBackColor = true;
-            this.GridViewTrainers.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.GridViewTrainers.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GridViewTrainers.Appearance.Row.Options.UseBackColor = true;
-            this.GridViewTrainers.Appearance.Row.Options.UseFont = true;
-            this.GridViewTrainers.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.GridViewTrainers.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.GridViewTrainers.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.GridViewTrainers.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.GridViewTrainers.GridControl = this.GridControlTrainers;
-            this.GridViewTrainers.GroupRowHeight = 30;
-            this.GridViewTrainers.Name = "GridViewTrainers";
-            this.GridViewTrainers.OptionsBehavior.Editable = false;
-            this.GridViewTrainers.OptionsBehavior.ReadOnly = true;
-            this.GridViewTrainers.OptionsCustomization.AllowFilter = false;
-            this.GridViewTrainers.OptionsFilter.AllowFilterEditor = false;
-            this.GridViewTrainers.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.GridViewTrainers.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.GridViewTrainers.OptionsSelection.EnableAppearanceHotTrackedRow = DevExpress.Utils.DefaultBoolean.True;
-            this.GridViewTrainers.OptionsView.ShowColumnHeaders = false;
-            this.GridViewTrainers.OptionsView.ShowGroupPanel = false;
-            this.GridViewTrainers.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.GridViewTrainers.OptionsView.ShowIndicator = false;
-            this.GridViewTrainers.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.GridViewTrainers.RowHeight = 30;
-            this.GridViewTrainers.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // PanelTrainersFilters
-            // 
-            this.PanelTrainersFilters.BackColor = System.Drawing.Color.Transparent;
-            this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterTitleId);
-            this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterNumberCheats);
-            this.PanelTrainersFilters.Controls.Add(this.labelControl14);
-            this.PanelTrainersFilters.Controls.Add(this.separatorControl94);
-            this.PanelTrainersFilters.Controls.Add(this.separatorControl95);
-            this.PanelTrainersFilters.Controls.Add(this.separatorControl96);
-            this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterTitleUpdate);
-            this.PanelTrainersFilters.Controls.Add(this.labelControl49);
-            this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterDashType);
-            this.PanelTrainersFilters.Controls.Add(this.labelControl50);
-            this.PanelTrainersFilters.Controls.Add(this.separatorControl89);
-            this.PanelTrainersFilters.Controls.Add(this.separatorControl90);
-            this.PanelTrainersFilters.Controls.Add(this.separatorControl91);
-            this.PanelTrainersFilters.Controls.Add(this.separatorControl92);
-            this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterGame);
-            this.PanelTrainersFilters.Controls.Add(this.labelControl10);
-            this.PanelTrainersFilters.Controls.Add(this.labelControl13);
-            this.PanelTrainersFilters.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelTrainersFilters.Location = new System.Drawing.Point(0, 70);
-            this.PanelTrainersFilters.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
-            this.PanelTrainersFilters.Name = "PanelTrainersFilters";
-            this.PanelTrainersFilters.Size = new System.Drawing.Size(1288, 76);
-            this.PanelTrainersFilters.TabIndex = 1187;
-            // 
-            // separatorControl89
-            // 
-            this.separatorControl89.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl89.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl89.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl89.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl89.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl89.LineThickness = 1;
-            this.separatorControl89.Location = new System.Drawing.Point(1078, 12);
-            this.separatorControl89.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl89.Name = "separatorControl89";
-            this.separatorControl89.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl89.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl89.TabIndex = 1214;
-            // 
-            // separatorControl90
-            // 
-            this.separatorControl90.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl90.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl90.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl90.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl90.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl90.LineThickness = 1;
-            this.separatorControl90.Location = new System.Drawing.Point(1192, 12);
-            this.separatorControl90.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl90.Name = "separatorControl90";
-            this.separatorControl90.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl90.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl90.TabIndex = 1213;
-            // 
-            // separatorControl91
-            // 
-            this.separatorControl91.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl91.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl91.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl91.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl91.LineThickness = 1;
-            this.separatorControl91.Location = new System.Drawing.Point(754, 12);
-            this.separatorControl91.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl91.Name = "separatorControl91";
-            this.separatorControl91.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl91.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl91.TabIndex = 1212;
-            // 
-            // separatorControl92
-            // 
-            this.separatorControl92.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl92.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separatorControl92.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl92.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl92.LineThickness = 1;
-            this.separatorControl92.Location = new System.Drawing.Point(0, 73);
-            this.separatorControl92.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl92.Name = "separatorControl92";
-            this.separatorControl92.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl92.Size = new System.Drawing.Size(1288, 3);
-            this.separatorControl92.TabIndex = 1172;
-            // 
-            // ComboBoxTrainersFilterGame
-            // 
-            this.ComboBoxTrainersFilterGame.Location = new System.Drawing.Point(0, 34);
-            this.ComboBoxTrainersFilterGame.Name = "ComboBoxTrainersFilterGame";
-            this.ComboBoxTrainersFilterGame.Properties.AllowFocused = false;
-            this.ComboBoxTrainersFilterGame.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.ComboBoxTrainersFilterGame.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxTrainersFilterGame.Properties.Appearance.Options.UseFont = true;
-            this.ComboBoxTrainersFilterGame.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxTrainersFilterGame.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.ComboBoxTrainersFilterGame.Properties.AutoComplete = false;
-            this.ComboBoxTrainersFilterGame.Properties.AutoHeight = false;
-            this.ComboBoxTrainersFilterGame.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboBoxTrainersFilterGame.Properties.DropDownRows = 15;
-            this.ComboBoxTrainersFilterGame.Properties.NullValuePrompt = "Select...";
-            this.ComboBoxTrainersFilterGame.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxTrainersFilterGame.Size = new System.Drawing.Size(742, 30);
-            this.ComboBoxTrainersFilterGame.TabIndex = 1170;
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Appearance.Options.UseForeColor = true;
-            this.labelControl10.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl10.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl10.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl10.Size = new System.Drawing.Size(41, 17);
-            this.labelControl10.TabIndex = 1171;
-            this.labelControl10.Text = "Game";
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl13.Location = new System.Drawing.Point(772, 12);
-            this.labelControl13.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl13.Size = new System.Drawing.Size(52, 17);
-            this.labelControl13.TabIndex = 1157;
-            this.labelControl13.Text = "Title ID";
-            // 
-            // PanelTrainersActions
-            // 
-            this.PanelTrainersActions.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.PanelTrainersActions.Appearance.Options.UseBackColor = true;
-            this.PanelTrainersActions.Controls.Add(this.TileControlTrainers);
-            this.PanelTrainersActions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelTrainersActions.Location = new System.Drawing.Point(0, 0);
-            this.PanelTrainersActions.LookAndFeel.SkinName = "WXI";
-            this.PanelTrainersActions.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.PanelTrainersActions.Margin = new System.Windows.Forms.Padding(0);
-            this.PanelTrainersActions.Name = "PanelTrainersActions";
-            this.PanelTrainersActions.Size = new System.Drawing.Size(1288, 70);
-            this.PanelTrainersActions.TabIndex = 1188;
-            // 
-            // TileControlTrainers
-            // 
-            this.TileControlTrainers.AllowDisabledStateIndication = false;
-            this.TileControlTrainers.AllowDrag = false;
-            this.TileControlTrainers.AllowDragTilesBetweenGroups = false;
-            this.TileControlTrainers.AllowGlyphSkinning = true;
-            this.TileControlTrainers.AllowItemHover = true;
-            this.TileControlTrainers.AllowSelectedItemBorder = false;
-            this.TileControlTrainers.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.TileControlTrainers.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.TileControlTrainers.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.TileControlTrainers.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.TileControlTrainers.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.TileControlTrainers.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.TileControlTrainers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.TileControlTrainers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TileControlTrainers.Groups.Add(this.TileGroupTrainers);
-            this.TileControlTrainers.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.TileControlTrainers.IndentBetweenItems = 2;
-            this.TileControlTrainers.ItemBorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            this.TileControlTrainers.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.Fade;
-            this.TileControlTrainers.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileControlTrainers.ItemPadding = new System.Windows.Forms.Padding(0);
-            this.TileControlTrainers.ItemSize = 98;
-            this.TileControlTrainers.ItemTextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
-            this.TileControlTrainers.Location = new System.Drawing.Point(2, 2);
-            this.TileControlTrainers.MaxId = 8;
-            this.TileControlTrainers.Name = "TileControlTrainers";
-            this.TileControlTrainers.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.TileControlTrainers.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.TileControlTrainers.RowCount = 1;
-            this.TileControlTrainers.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.TileControlTrainers.Size = new System.Drawing.Size(1284, 66);
-            this.TileControlTrainers.TabIndex = 1;
-            this.TileControlTrainers.Text = "TileControlModsActions";
-            // 
-            // TileGroupTrainers
-            // 
-            this.TileGroupTrainers.Items.Add(this.TileItemTrainersSortOptions);
-            this.TileGroupTrainers.Items.Add(this.tileItem4);
-            this.TileGroupTrainers.Items.Add(this.tileItem6);
-            this.TileGroupTrainers.Name = "TileGroupTrainers";
-            this.TileGroupTrainers.Text = "Game Saves Actions";
-            // 
-            // TileItemTrainersSortOptions
-            // 
-            this.TileItemTrainersSortOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.TileItemTrainersSortOptions.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.TileItemTrainersSortOptions.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.TileItemTrainersSortOptions.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.TileItemTrainersSortOptions.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.TileItemTrainersSortOptions.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.TileItemTrainersSortOptions.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.TileItemTrainersSortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.TileItemTrainersSortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.TileItemTrainersSortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement58.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement58.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement58.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement58.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement58.Text = "";
-            tileItemElement58.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemTrainersSortOptions.Elements.Add(tileItemElement58);
-            this.TileItemTrainersSortOptions.Id = 1;
-            this.TileItemTrainersSortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.TileItemTrainersSortOptions.Name = "TileItemTrainersSortOptions";
-            this.TileItemTrainersSortOptions.Padding = new System.Windows.Forms.Padding(0);
-            // 
-            // tileItem4
-            // 
-            this.tileItem4.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem4.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement59.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement59.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement59.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement59.Text = "";
-            this.tileItem4.Elements.Add(tileItemElement59);
-            this.tileItem4.Enabled = false;
-            this.tileItem4.Id = 6;
-            this.tileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem4.Name = "tileItem4";
-            this.tileItem4.Padding = new System.Windows.Forms.Padding(0);
-            // 
-            // tileItem6
-            // 
-            this.tileItem6.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem6.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement60.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement60.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement60.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement60.Text = "";
-            this.tileItem6.Elements.Add(tileItemElement60);
-            this.tileItem6.Enabled = false;
-            this.tileItem6.Id = 7;
-            this.tileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem6.Name = "tileItem6";
-            this.tileItem6.Padding = new System.Windows.Forms.Padding(0);
-            // 
-            // separatorControl93
-            // 
-            this.separatorControl93.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl93.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl93.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl93.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl93.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl93.LineThickness = 1;
-            this.separatorControl93.Location = new System.Drawing.Point(1172, 12);
-            this.separatorControl93.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl93.Name = "separatorControl93";
-            this.separatorControl93.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl93.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl93.TabIndex = 1215;
-            // 
-            // ComboBoxGameCheatsFilterNumberCheats
-            // 
-            this.ComboBoxGameCheatsFilterNumberCheats.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGameCheatsFilterNumberCheats.Location = new System.Drawing.Point(1190, 34);
-            this.ComboBoxGameCheatsFilterNumberCheats.Name = "ComboBoxGameCheatsFilterNumberCheats";
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AllowFocused = false;
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.Appearance.Options.UseFont = true;
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AutoComplete = false;
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AutoHeight = false;
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.DropDownRows = 12;
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.NullValuePrompt = "Select...";
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxGameCheatsFilterNumberCheats.Size = new System.Drawing.Size(84, 30);
-            this.ComboBoxGameCheatsFilterNumberCheats.TabIndex = 1216;
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Appearance.Options.UseForeColor = true;
-            this.labelControl9.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl9.Location = new System.Drawing.Point(1190, 12);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl9.Size = new System.Drawing.Size(59, 17);
-            this.labelControl9.TabIndex = 1217;
-            this.labelControl9.Text = "# Cheats";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl3.Location = new System.Drawing.Point(1073, 12);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl3.Size = new System.Drawing.Size(53, 17);
-            this.labelControl3.TabIndex = 1165;
-            this.labelControl3.Text = "Version";
-            // 
-            // ComboBoxGameCheatsFilterVersion
-            // 
-            this.ComboBoxGameCheatsFilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGameCheatsFilterVersion.Location = new System.Drawing.Point(1076, 34);
-            this.ComboBoxGameCheatsFilterVersion.Name = "ComboBoxGameCheatsFilterVersion";
-            this.ComboBoxGameCheatsFilterVersion.Properties.AllowFocused = false;
-            this.ComboBoxGameCheatsFilterVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.ComboBoxGameCheatsFilterVersion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxGameCheatsFilterVersion.Properties.Appearance.Options.UseFont = true;
-            this.ComboBoxGameCheatsFilterVersion.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxGameCheatsFilterVersion.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.ComboBoxGameCheatsFilterVersion.Properties.AutoComplete = false;
-            this.ComboBoxGameCheatsFilterVersion.Properties.AutoHeight = false;
-            this.ComboBoxGameCheatsFilterVersion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboBoxGameCheatsFilterVersion.Properties.DropDownRows = 12;
-            this.ComboBoxGameCheatsFilterVersion.Properties.NullValuePrompt = "Select...";
-            this.ComboBoxGameCheatsFilterVersion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxGameCheatsFilterVersion.Size = new System.Drawing.Size(84, 30);
-            this.ComboBoxGameCheatsFilterVersion.TabIndex = 1164;
-            // 
-            // SeparatorCheats3
-            // 
-            this.SeparatorCheats3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SeparatorCheats3.BackColor = System.Drawing.Color.Transparent;
-            this.SeparatorCheats3.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.SeparatorCheats3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.SeparatorCheats3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.SeparatorCheats3.LineThickness = 1;
-            this.SeparatorCheats3.Location = new System.Drawing.Point(1058, 12);
-            this.SeparatorCheats3.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.SeparatorCheats3.Name = "SeparatorCheats3";
-            this.SeparatorCheats3.Padding = new System.Windows.Forms.Padding(0);
-            this.SeparatorCheats3.Size = new System.Drawing.Size(3, 52);
-            this.SeparatorCheats3.TabIndex = 1213;
-            // 
-            // ComboBoxTrainersFilterNumberCheats
-            // 
-            this.ComboBoxTrainersFilterNumberCheats.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxTrainersFilterNumberCheats.Location = new System.Drawing.Point(1190, 34);
-            this.ComboBoxTrainersFilterNumberCheats.Name = "ComboBoxTrainersFilterNumberCheats";
-            this.ComboBoxTrainersFilterNumberCheats.Properties.AllowFocused = false;
-            this.ComboBoxTrainersFilterNumberCheats.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.ComboBoxTrainersFilterNumberCheats.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxTrainersFilterNumberCheats.Properties.Appearance.Options.UseFont = true;
-            this.ComboBoxTrainersFilterNumberCheats.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxTrainersFilterNumberCheats.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.ComboBoxTrainersFilterNumberCheats.Properties.AutoComplete = false;
-            this.ComboBoxTrainersFilterNumberCheats.Properties.AutoHeight = false;
-            this.ComboBoxTrainersFilterNumberCheats.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboBoxTrainersFilterNumberCheats.Properties.DropDownRows = 12;
-            this.ComboBoxTrainersFilterNumberCheats.Properties.NullValuePrompt = "Select...";
-            this.ComboBoxTrainersFilterNumberCheats.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxTrainersFilterNumberCheats.Size = new System.Drawing.Size(84, 30);
-            this.ComboBoxTrainersFilterNumberCheats.TabIndex = 1225;
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl14.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Appearance.Options.UseForeColor = true;
-            this.labelControl14.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl14.Location = new System.Drawing.Point(1190, 12);
-            this.labelControl14.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl14.Size = new System.Drawing.Size(68, 17);
-            this.labelControl14.TabIndex = 1226;
-            this.labelControl14.Text = "# Trainers";
-            // 
-            // separatorControl94
-            // 
-            this.separatorControl94.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl94.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl94.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl94.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl94.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl94.LineThickness = 1;
-            this.separatorControl94.Location = new System.Drawing.Point(1172, 12);
-            this.separatorControl94.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl94.Name = "separatorControl94";
-            this.separatorControl94.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl94.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl94.TabIndex = 1224;
-            // 
-            // separatorControl95
-            // 
-            this.separatorControl95.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl95.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl95.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl95.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl95.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl95.LineThickness = 1;
-            this.separatorControl95.Location = new System.Drawing.Point(915, 12);
-            this.separatorControl95.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl95.Name = "separatorControl95";
-            this.separatorControl95.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl95.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl95.TabIndex = 1223;
-            // 
-            // separatorControl96
-            // 
-            this.separatorControl96.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl96.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl96.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl96.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl96.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl96.LineThickness = 1;
-            this.separatorControl96.Location = new System.Drawing.Point(1058, 12);
-            this.separatorControl96.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl96.Name = "separatorControl96";
-            this.separatorControl96.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl96.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl96.TabIndex = 1222;
-            // 
-            // ComboBoxTrainersFilterTitleUpdate
-            // 
-            this.ComboBoxTrainersFilterTitleUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxTrainersFilterTitleUpdate.Location = new System.Drawing.Point(1076, 34);
-            this.ComboBoxTrainersFilterTitleUpdate.Name = "ComboBoxTrainersFilterTitleUpdate";
-            this.ComboBoxTrainersFilterTitleUpdate.Properties.AllowFocused = false;
-            this.ComboBoxTrainersFilterTitleUpdate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.ComboBoxTrainersFilterTitleUpdate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxTrainersFilterTitleUpdate.Properties.Appearance.Options.UseFont = true;
-            this.ComboBoxTrainersFilterTitleUpdate.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxTrainersFilterTitleUpdate.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.ComboBoxTrainersFilterTitleUpdate.Properties.AutoComplete = false;
-            this.ComboBoxTrainersFilterTitleUpdate.Properties.AutoHeight = false;
-            this.ComboBoxTrainersFilterTitleUpdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboBoxTrainersFilterTitleUpdate.Properties.DropDownRows = 12;
-            this.ComboBoxTrainersFilterTitleUpdate.Properties.NullValuePrompt = "Select...";
-            this.ComboBoxTrainersFilterTitleUpdate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxTrainersFilterTitleUpdate.Size = new System.Drawing.Size(84, 30);
-            this.ComboBoxTrainersFilterTitleUpdate.TabIndex = 1220;
-            // 
-            // labelControl49
-            // 
-            this.labelControl49.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl49.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl49.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl49.Appearance.Options.UseFont = true;
-            this.labelControl49.Appearance.Options.UseForeColor = true;
-            this.labelControl49.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl49.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl49.Location = new System.Drawing.Point(1073, 12);
-            this.labelControl49.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl49.Name = "labelControl49";
-            this.labelControl49.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl49.Size = new System.Drawing.Size(82, 17);
-            this.labelControl49.TabIndex = 1221;
-            this.labelControl49.Text = "Title Update";
-            // 
-            // ComboBoxTrainersFilterDashType
-            // 
-            this.ComboBoxTrainersFilterDashType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxTrainersFilterDashType.Location = new System.Drawing.Point(933, 34);
-            this.ComboBoxTrainersFilterDashType.Name = "ComboBoxTrainersFilterDashType";
-            this.ComboBoxTrainersFilterDashType.Properties.AllowFocused = false;
-            this.ComboBoxTrainersFilterDashType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.ComboBoxTrainersFilterDashType.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxTrainersFilterDashType.Properties.Appearance.Options.UseFont = true;
-            this.ComboBoxTrainersFilterDashType.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxTrainersFilterDashType.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.ComboBoxTrainersFilterDashType.Properties.AutoComplete = false;
-            this.ComboBoxTrainersFilterDashType.Properties.AutoHeight = false;
-            this.ComboBoxTrainersFilterDashType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboBoxTrainersFilterDashType.Properties.DropDownRows = 12;
-            this.ComboBoxTrainersFilterDashType.Properties.NullValuePrompt = "Select...";
-            this.ComboBoxTrainersFilterDashType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxTrainersFilterDashType.Size = new System.Drawing.Size(113, 30);
-            this.ComboBoxTrainersFilterDashType.TabIndex = 1218;
-            // 
-            // labelControl50
-            // 
-            this.labelControl50.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl50.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl50.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl50.Appearance.Options.UseFont = true;
-            this.labelControl50.Appearance.Options.UseForeColor = true;
-            this.labelControl50.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl50.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl50.Location = new System.Drawing.Point(930, 12);
-            this.labelControl50.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl50.Name = "labelControl50";
-            this.labelControl50.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl50.Size = new System.Drawing.Size(107, 17);
-            this.labelControl50.TabIndex = 1219;
-            this.labelControl50.Text = "Dashboard Type";
-            // 
-            // ComboBoxTrainersFilterTitleId
-            // 
-            this.ComboBoxTrainersFilterTitleId.Location = new System.Drawing.Point(772, 34);
-            this.ComboBoxTrainersFilterTitleId.Name = "ComboBoxTrainersFilterTitleId";
-            this.ComboBoxTrainersFilterTitleId.Properties.AllowFocused = false;
-            this.ComboBoxTrainersFilterTitleId.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.ComboBoxTrainersFilterTitleId.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxTrainersFilterTitleId.Properties.Appearance.Options.UseFont = true;
-            this.ComboBoxTrainersFilterTitleId.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxTrainersFilterTitleId.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.ComboBoxTrainersFilterTitleId.Properties.AutoComplete = false;
-            this.ComboBoxTrainersFilterTitleId.Properties.AutoHeight = false;
-            this.ComboBoxTrainersFilterTitleId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboBoxTrainersFilterTitleId.Properties.DropDownRows = 15;
-            this.ComboBoxTrainersFilterTitleId.Properties.NullValuePrompt = "Select...";
-            this.ComboBoxTrainersFilterTitleId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxTrainersFilterTitleId.Size = new System.Drawing.Size(131, 30);
-            this.ComboBoxTrainersFilterTitleId.TabIndex = 1227;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(0, 391);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(701, 22);
-            this.textEdit1.TabIndex = 1182;
-            // 
-            // LabelSettingsAuroraPath
-            // 
-            this.LabelSettingsAuroraPath.Appearance.Options.UseFont = true;
-            this.LabelSettingsAuroraPath.Location = new System.Drawing.Point(0, 369);
-            this.LabelSettingsAuroraPath.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.LabelSettingsAuroraPath.Name = "LabelSettingsAuroraPath";
-            this.LabelSettingsAuroraPath.Size = new System.Drawing.Size(61, 13);
-            this.LabelSettingsAuroraPath.TabIndex = 1183;
-            this.LabelSettingsAuroraPath.Text = "Aurora Path";
-            // 
-            // LabelSettingsForceInstallAnyRegions
-            // 
-            this.LabelSettingsForceInstallAnyRegions.Appearance.Options.UseFont = true;
-            this.LabelSettingsForceInstallAnyRegions.Location = new System.Drawing.Point(60, 323);
-            this.LabelSettingsForceInstallAnyRegions.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelSettingsForceInstallAnyRegions.Name = "LabelSettingsForceInstallAnyRegions";
-            this.LabelSettingsForceInstallAnyRegions.Size = new System.Drawing.Size(180, 13);
-            this.LabelSettingsForceInstallAnyRegions.TabIndex = 1227;
-            this.LabelSettingsForceInstallAnyRegions.Text = "Force install unsupported regions*";
-            this.LabelSettingsForceInstallAnyRegions.ToolTip = "Warning: You may have issues trying to use mods that aren\'t supported by the game" +
-    "\r\n\r\nUse at your own risk!";
-            this.LabelSettingsForceInstallAnyRegions.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Warning;
-            // 
-            // ToggleSettingsForceInstallAnyRegions
-            // 
-            this.ToggleSettingsForceInstallAnyRegions.Location = new System.Drawing.Point(0, 320);
-            this.ToggleSettingsForceInstallAnyRegions.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
-            this.ToggleSettingsForceInstallAnyRegions.Name = "ToggleSettingsForceInstallAnyRegions";
-            this.ToggleSettingsForceInstallAnyRegions.Properties.AutoWidth = true;
-            this.ToggleSettingsForceInstallAnyRegions.Properties.OffText = "Off";
-            this.ToggleSettingsForceInstallAnyRegions.Properties.OnText = "On";
-            this.ToggleSettingsForceInstallAnyRegions.Properties.ShowText = false;
-            this.ToggleSettingsForceInstallAnyRegions.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsForceInstallAnyRegions.TabIndex = 1226;
-            // 
             // MainWindow
             // 
             this.Appearance.Options.UseFont = true;
@@ -24000,6 +23922,7 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAutoDetectGameTitles.Properties)).EndInit();
             this.TabPageTransfer.ResumeLayout(false);
             this.TabPageTransfer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsForceInstallAnyRegions.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsInstallAppsToUsbDevice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsInstallResourcesToUsbDevice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsInstallGameSavesToUsbDevice.Properties)).EndInit();
@@ -24011,6 +23934,7 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAlwaysBackupGameFiles.Properties)).EndInit();
             this.TabPageFiles.ResumeLayout(false);
             this.TabPageFiles.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsAuroraFolderPath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorSettingsFiles1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsLaunchIniFilePath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPackagesInstallPathPS4.Properties)).EndInit();
@@ -24140,9 +24064,13 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.GridViewGameCheats)).EndInit();
             this.PanelFiltersCheats.ResumeLayout(false);
             this.PanelFiltersCheats.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterNumberCheats.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl93)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorCheats2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SeparatorCheats3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorCheats4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterGame.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterVersion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterRegion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelCheatsActions)).EndInit();
             this.PanelCheatsActions.ResumeLayout(false);
@@ -24218,6 +24146,22 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl88)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelHomebrewPS4Actions)).EndInit();
             this.PanelHomebrewPS4Actions.ResumeLayout(false);
+            this.PageTrainers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlTrainers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewTrainers)).EndInit();
+            this.PanelTrainersFilters.ResumeLayout(false);
+            this.PanelTrainersFilters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterTitleId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterNumberCheats.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl94)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl95)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterDashType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl90)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl91)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl92)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterGame.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelTrainersActions)).EndInit();
+            this.PanelTrainersActions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ImageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RibbonControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuTopInfo)).EndInit();
@@ -24583,31 +24527,6 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit65.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuConsoleFiles)).EndInit();
-            this.PageTrainers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridControlTrainers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewTrainers)).EndInit();
-            this.PanelTrainersFilters.ResumeLayout(false);
-            this.PanelTrainersFilters.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl89)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl90)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl91)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl92)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterGame.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PanelTrainersActions)).EndInit();
-            this.PanelTrainersActions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl93)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterNumberCheats.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterVersion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SeparatorCheats3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterNumberCheats.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl94)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl95)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl96)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterTitleUpdate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterDashType.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterTitleId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsForceInstallAnyRegions.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -25877,7 +25796,6 @@ namespace ArisenStudio.Forms.Windows
         private GridControl GridControlTrainers;
         private GridView GridViewTrainers;
         private Panel PanelTrainersFilters;
-        private SeparatorControl separatorControl89;
         private SeparatorControl separatorControl90;
         private SeparatorControl separatorControl91;
         private SeparatorControl separatorControl92;
@@ -25900,15 +25818,12 @@ namespace ArisenStudio.Forms.Windows
         private LabelControl labelControl14;
         private SeparatorControl separatorControl94;
         private SeparatorControl separatorControl95;
-        private SeparatorControl separatorControl96;
-        private ComboBoxEdit ComboBoxTrainersFilterTitleUpdate;
-        private LabelControl labelControl49;
         private ComboBoxEdit ComboBoxTrainersFilterDashType;
         private LabelControl labelControl50;
         private ComboBoxEdit ComboBoxTrainersFilterTitleId;
         private LabelControl LabelSettingsForceInstallAnyRegions;
         private ToggleSwitch ToggleSettingsForceInstallAnyRegions;
-        private TextEdit textEdit1;
+        private TextEdit TextBoxSettingsAuroraFolderPath;
         private LabelControl LabelSettingsAuroraPath;
     }
 }

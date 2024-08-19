@@ -73,6 +73,8 @@ namespace ArisenStudio.Models.Resources
 
         public bool AlwaysBackupGameFiles { get; set; } = true;
 
+        public bool IgnoreSupportedRegionsAndForceInstall { get; set; } = false;
+
         // Tools
 
         public string AuroraFolderPath { get; set; } = @"Hdd:\Aurora\";

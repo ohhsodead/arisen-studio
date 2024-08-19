@@ -145,6 +145,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ImageClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ImageClose.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Red;
             this.ImageClose.ItemAppearance.Normal.FillColor = System.Drawing.Color.Gray;
+            this.ImageClose.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
             this.ImageClose.Location = new System.Drawing.Point(613, 10);
             this.ImageClose.Name = "ImageClose";
             this.ImageClose.Size = new System.Drawing.Size(26, 26);
