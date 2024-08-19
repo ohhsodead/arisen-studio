@@ -3,88 +3,112 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
-public class SimpleCache<T>
+namespace ArisenStudio.Extensions
 {
-    private readonly Dictionary<string, CacheItem> _cache = [];
-    private readonly TimeSpan _expirationTime;
-    private readonly string _cacheFilePath;
-
-    public SimpleCache(TimeSpan expirationTime, string cacheFileName)
+    public class SimpleCache<T>
     {
-        _expirationTime = expirationTime;
+        private readonly Dictionary<string, CacheItem> _cache = new();
+        private readonly string _cacheFilePath;
+        private readonly string _cacheShaFilePath;
 
-        string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        string directoryPath = Path.Combine(appDataPath, "Arisen Studio", "Cache");
-
-        Directory.CreateDirectory(directoryPath);
-
-        _cacheFilePath = Path.Combine(directoryPath, cacheFileName);
-
-        LoadCacheFromFile();
-    }
-
-    public void Add(string key, T value)
-    {
-        var cacheItem = new CacheItem
+        public SimpleCache(string cacheFileName)
         {
-            Value = value,
-            Expiration = DateTime.Now.Add(_expirationTime)
-        };
-        _cache[key] = cacheItem;
-        SaveCacheToFile();
-    }
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string directoryPath = Path.Combine(appDataPath, "Arisen Studio", "Cache");
 
-    public bool TryGetValue(string key, out T value)
-    {
-        if (_cache.TryGetValue(key, out var cacheItem))
+            Directory.CreateDirectory(directoryPath);
+
+            _cacheFilePath = Path.Combine(directoryPath, cacheFileName);
+            _cacheShaFilePath = Path.Combine(directoryPath, $"{cacheFileName}.sha");
+
+            LoadCacheFromFile();
+        }
+
+        public void Add(string key, T value, string sha)
         {
-            if (cacheItem.Expiration > DateTime.Now)
+            var cacheItem = new CacheItem
+            {
+                Value = value,
+                Sha = sha
+            };
+            _cache[key] = cacheItem;
+            SaveCacheToFile();
+            SaveShaToFile();
+        }
+
+        public bool TryGetValue(string key, out T value, out string sha)
+        {
+            if (_cache.TryGetValue(key, out var cacheItem))
             {
                 value = cacheItem.Value;
+                sha = cacheItem.Sha;
                 return true;
             }
-            else
-            {
-                _cache.Remove(key);
-                SaveCacheToFile();
-            }
+            value = default;
+            sha = null;
+            return false;
         }
-        value = default;
-        return false;
-    }
 
-    private void SaveCacheToFile()
-    {
-        var json = JsonConvert.SerializeObject(_cache);
-        File.WriteAllText(_cacheFilePath, json);
-    }
-
-    private void LoadCacheFromFile()
-    {
-//#if !DEBUG
-        if (File.Exists(_cacheFilePath))
+        private void SaveCacheToFile()
         {
-            var json = File.ReadAllText(_cacheFilePath);
-            var loadedCache = JsonConvert.DeserializeObject<Dictionary<string, CacheItem>>(json);
+            var json = JsonConvert.SerializeObject(_cache);
+            File.WriteAllText(_cacheFilePath, json);
+        }
 
-            if (loadedCache != null)
+        private void SaveShaToFile()
+        {
+            var shaCache = new Dictionary<string, string>();
+            foreach (var item in _cache)
             {
-                foreach (var item in loadedCache)
+                shaCache[item.Key] = item.Value.Sha;
+            }
+            var json = JsonConvert.SerializeObject(shaCache);
+            File.WriteAllText(_cacheShaFilePath, json);
+        }
+
+        private void LoadCacheFromFile()
+        {
+            if (File.Exists(_cacheFilePath))
+            {
+                var json = File.ReadAllText(_cacheFilePath);
+                var loadedCache = JsonConvert.DeserializeObject<Dictionary<string, CacheItem>>(json);
+
+                if (loadedCache != null)
                 {
-                    if (item.Value.Expiration > DateTime.Now)
+                    foreach (var item in loadedCache)
                     {
                         _cache[item.Key] = item.Value;
                     }
                 }
             }
+            LoadShaFromFile();
         }
-//#endif
-    }
 
-    private class CacheItem
-    {
-        public T Value { get; set; }
+        private void LoadShaFromFile()
+        {
+            if (File.Exists(_cacheShaFilePath))
+            {
+                var json = File.ReadAllText(_cacheShaFilePath);
+                var shaCache = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
 
-        public DateTime Expiration { get; set; }
+                if (shaCache != null)
+                {
+                    foreach (var item in shaCache)
+                    {
+                        if (_cache.TryGetValue(item.Key, out var cacheItem))
+                        {
+                            cacheItem.Sha = item.Value;
+                            _cache[item.Key] = cacheItem;
+                        }
+                    }
+                }
+            }
+        }
+
+        private class CacheItem
+        {
+            public T Value { get; set; }
+            public string Sha { get; set; }
+        }
     }
 }

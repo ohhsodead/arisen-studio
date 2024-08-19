@@ -35,7 +35,7 @@ namespace ArisenStudio.Models.Database
         }
 
         /// <summary>
-        /// Get the game data matching the specified title
+        /// Get the Category data matching the specified CategoryId
         /// </summary>
         /// <param name="categoryId"> Title of the game </param>
         /// <returns> Game information </returns>
@@ -48,11 +48,11 @@ namespace ArisenStudio.Models.Database
                 return category;
             }
 
-            throw new Exception("Unable to find game data matching the specified id: " + categoryId);
+            throw new Exception("Unable to find category data matching the specified id: " + categoryId);
         }
 
         /// <summary>
-        /// Get the game data matching the specified title
+        /// Get the Category data for the first match of the Title
         /// </summary>
         /// <param name="title"> Title of the game </param>
         /// <returns> Game information </returns>

@@ -34,7 +34,7 @@ namespace ArisenStudio.Extensions
                                 Address = StringExtensions.UIntToIp(console.IPAddress),
                                 Platform = Platform.XBOX360,
                                 PlatformType = PlatformType.Xbox360FatWhite,
-                                UseDefaultCredentials = true
+                                UseDefaultLogin = true
                             });
                     }
                 }
@@ -48,7 +48,7 @@ namespace ArisenStudio.Extensions
                             Address = StringExtensions.UIntToIp(console.IPAddress),
                             Platform = Platform.XBOX360,
                             PlatformType = PlatformType.Xbox360FatWhite,
-                            UseDefaultCredentials = true
+                            UseDefaultLogin = true
                         });
                 }
             }

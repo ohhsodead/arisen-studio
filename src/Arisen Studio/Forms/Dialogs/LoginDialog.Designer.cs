@@ -92,7 +92,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.ButtonUseDefault.Name = "ButtonUseDefault";
             this.ButtonUseDefault.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonUseDefault.Size = new System.Drawing.Size(102, 23);
-            this.ButtonUseDefault.TabIndex = 4;
+            this.ButtonUseDefault.TabIndex = 2;
             this.ButtonUseDefault.Text = "Use Default";
             // 
             // ButtonCancel
@@ -113,7 +113,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.ButtonOK.Name = "ButtonOK";
             this.ButtonOK.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonOK.Size = new System.Drawing.Size(84, 23);
-            this.ButtonOK.TabIndex = 2;
+            this.ButtonOK.TabIndex = 4;
             this.ButtonOK.Text = "OK";
             // 
             // LoginDialog

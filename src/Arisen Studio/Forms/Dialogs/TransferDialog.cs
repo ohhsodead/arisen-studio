@@ -634,6 +634,7 @@ namespace ArisenStudio.Forms.Dialogs
             for (int i = 0; i < 100; i++)
             {
                 UpdateStatus(Language.GetString("PREPARING_INSTALL"));
+                Program.Log.Info(string.Format("{0} ({1})" + modItem.Name, modItem.Id));
 
                 await Task.Run(async () =>
                 {

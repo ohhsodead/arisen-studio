@@ -193,12 +193,6 @@ namespace ArisenStudio.Forms.Dialogs
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ComboBoxCategory.Properties.DropDownRows = 9;
             this.ComboBoxCategory.Properties.HighlightedItemStyle = DevExpress.XtraEditors.HighlightStyle.Skinned;
-            this.ComboBoxCategory.Properties.Items.AddRange(new object[] {
-            "Mod",
-            "Homebrew",
-            "Resource",
-            "Application",
-            "Game"});
             this.ComboBoxCategory.Size = new System.Drawing.Size(232, 24);
             this.ComboBoxCategory.TabIndex = 3;
             // 

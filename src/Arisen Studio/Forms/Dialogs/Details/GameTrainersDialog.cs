@@ -17,9 +17,9 @@ using System.Drawing;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
-    public partial class GameCheatsDialog : XtraForm
+    public partial class GameTrainersDialog : XtraForm
     {
-        public GameCheatsDialog()
+        public GameTrainersDialog()
         {
             InitializeComponent();
         }
@@ -28,16 +28,14 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         public static ConsoleProfile ConsoleProfile = MainWindow.ConsoleProfile;
 
-        public static PS3API PS3 = new();
-
-        public GameCheatItemData GameCheatItem = null;
+        public TrainerItem TrainerItem = null;
 
         private DataTable DataTableCheats { get; } = DataExtensions.CreateDataTable(
             [
                 new("Cheat Name", typeof(string))
             ]);
 
-        private void GameCheatsDialog_Load(object sender, EventArgs e)
+        private void GameTrainersDialog_Load(object sender, EventArgs e)
         {
             try
             {
@@ -48,9 +46,9 @@ namespace ArisenStudio.Forms.Dialogs.Details
 #endif
 
                 // Display details in UI
-                LabelGame.Text = GameCheatItem.Game;
-                LabelVersion.Text = "- " + GameCheatItem.Version;
-                LabelRegion.Text = $"({GameCheatItem.Region})";
+                LabelGame.Text = TrainerItem.TitleId;
+                LabelVersion.Text = "- " + TrainerItem.Version;
+                LabelRegion.Text = $"({TrainerItem.Region})";
 
                 DataTableCheats.Rows.Clear();
 

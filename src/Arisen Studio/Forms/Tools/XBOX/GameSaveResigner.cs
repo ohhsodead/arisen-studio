@@ -33,6 +33,8 @@ namespace ArisenStudio.Forms.Tools.XBOX
         {
             MenuButtonFile.Caption = Language.GetString("FILE");
             MenuButtonProfile.Caption = Language.GetString("PROFILE");
+
+            MenuItemAddProfileFromConsole.Enabled = MainWindow.IsConsoleConnected;
         }
 
         private void GameSaveResigner_FormClosing(object sender, FormClosingEventArgs e)

@@ -3,7 +3,7 @@ using DevExpress.XtraEditors;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
-    partial class GameCheatsDialog
+    partial class GameTrainersDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameCheatsDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameTrainersDialog));
             this.PanelDetails = new DevExpress.XtraEditors.XtraScrollableControl();
             this.GridControlCheats = new DevExpress.XtraGrid.GridControl();
             this.GridViewCheats = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -292,17 +292,17 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("GameCheatsDialog.IconOptions.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("GameTrainersDialog.IconOptions.Icon")));
             this.IconOptions.Image = global::ArisenStudio.Properties.Resources.arisenstudio;
             this.IconOptions.ShowIcon = false;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "GameCheatsDialog";
+            this.Name = "GameTrainersDialog";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Load += new System.EventHandler(this.GameCheatsDialog_Load);
+            this.Load += new System.EventHandler(this.GameTrainersDialog_Load);
             this.PanelDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridControlCheats)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewCheats)).EndInit();

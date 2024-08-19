@@ -75,6 +75,8 @@ namespace ArisenStudio.Models.Resources
 
         // Tools
 
+        public string AuroraFolderPath { get; set; } = @"Hdd:\Aurora\";
+
         public string LaunchIniFilePath { get; set; } = @"Hdd:\launch.ini";
 
         public string BootPluginsFilePath { get; set; } = @"/dev_hdd0/boot_plugins.txt";
@@ -386,8 +388,7 @@ namespace ArisenStudio.Models.Resources
                     IsDefault = true,
                     Address = "192.168.0.1",
                     Port = 21,
-                    UseDefaultCredentials = true,
-                    UseDefaultConsole = false
+                    UseDefaultLogin = true,
                 };
             }
             else
@@ -401,8 +402,7 @@ namespace ArisenStudio.Models.Resources
                     IsDefault = true,
                     Address = "192.168.0.69",
                     Port = 21,
-                    UseDefaultCredentials = true,
-                    UseDefaultConsole = false
+                    UseDefaultLogin = true,
                 };
             }
 
@@ -441,7 +441,7 @@ namespace ArisenStudio.Models.Resources
 
         public string Description { get; set; }
 
-        public List<ListItem> Files { get; set; }
+        public List<ListItem> Files { get; set; } = new();
     }
 
     /// <summary>
@@ -465,11 +465,13 @@ namespace ArisenStudio.Models.Resources
 
         public string Password { get; set; }
 
-        public bool UseDefaultCredentials { get; set; } = true;
+        public bool PassiveMode { get; set; } = false;
 
-        public bool UseDefaultConsole { get; set; } = false;
+        public bool UseDefaultLogin { get; set; } = true;
 
         public bool IsDefault { get; set; } = true;
+
+        public bool GoldHEN { get; set; } = true;
 
         public List<InstalledModInfo> InstalledMods { get; set; } = [];
 

@@ -71,7 +71,7 @@
         /// <summary>
         /// Direct link to the Categories file hosted on GitHub.
         /// </summary>
-        internal const string CategoriesData = "https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/categories.json";
+        internal const string CategoriesData = "https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/categories-new.json";
 
         /// <summary>
         /// Direct link to the Game Saves for both platforms file hosted on GitHub.
@@ -147,6 +147,10 @@
         /// Direct link to the Xbox 360 game patches database file hosted on GitHub.
         /// </summary>
         internal const string GamePatchesDataXbox = "https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/XBOX360/game-patches.zip";
+        /// <summary>
+        /// Direct link to the Xbox 360 game patches database file hosted on GitHub.
+        /// </summary>
+        internal const string TrainersDataXbox = "https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/XBOX360/trainers.json";
 
         /// <summary>
         /// Direct link to the Xbox 360 games title Ids file hosted on GitHub.

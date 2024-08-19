@@ -1,4 +1,5 @@
-﻿using ArisenStudio.Extensions;
+﻿using ArisenStudio.Constants;
+using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Resources;
 using DevExpress.Utils.Mdi;
@@ -6,6 +7,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using Humanizer;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Net;
 using System.Resources;
@@ -13,9 +15,9 @@ using System.Windows.Forms;
 
 namespace ArisenStudio.Forms.Dialogs
 {
-    public partial class NewConnectionDialog : XtraForm
+    public partial class NewProfileDialog : XtraForm
     {
-        public NewConnectionDialog()
+        public NewProfileDialog()
         {
             InitializeComponent();
         }
@@ -26,48 +28,53 @@ namespace ArisenStudio.Forms.Dialogs
 
         public bool IsEditingProfile { get; set; } = false;
 
-        private void NewConnectionDialog_Load(object sender, EventArgs e)
+        private void NewProfileDialog_Load(object sender, EventArgs e)
         {
             if (IsEditingProfile)
             {
-                Text = Language.GetString("LABEL_EDIT_CONNECTION_DETAILS");
+                Text = Language.GetString("LABEL_EDIT_PROFILE_DETAILS");
             }
             else
             {
-                Text = Language.GetString("LABEL_NEW_CONNECTION_DETAILS");
+                Text = Language.GetString("LABEL_NEW_PROFILE_DETAILS");
             }
 
-            LabelName.Text = Language.GetString("LABEL_CONNECTION_NAME") + ":";
+            LabelName.Text = Language.GetString("LABEL_PROFILE_NAME") + ":";
             LabelPlatformType.Text = Language.GetString("LABEL_PLATFORM_TYPE") + ":";
             LabelAddress.Text = Language.GetString("LABEL_IP_ADDRESS") + ":";
-            LabelLogin.Text = Language.GetString("LABEL_LOGIN") + ":";
+            LabelLoginDetails.Text = Language.GetString("LABEL_LOGIN_DETAILS") + ":";
+            LabelOptions.Text = Language.GetString("OPTIONS") + ":";
 
+            CheckBoxDefaultLogin.Text = Language.GetString("LABEL_DEFAULT_CREDENTIALS");
             ButtonChangeLoginDetails.Text = Language.GetString("LABEL_CHANGE");
+            CheckBoxPassiveMode.Text = Language.GetString("LABEL_PASSIVE_MODE");
+            CheckBoxDefaultProfile.Text = Language.GetString("LABEL_DEFAULT_PROFILE");
             ButtonSave.Text = Language.GetString("LABEL_SAVE");
             ButtonCancel.Text = Language.GetString("LABEL_CANCEL");
 
-            TextBoxConnectionName.Text = ConsoleProfile.Name;
+            TextBoxProfileName.Text = ConsoleProfile.Name;
             ComboBoxPlatform.SelectedIndex = ComboBoxPlatform.Properties.Items.IndexOf(ConsoleProfile.PlatformType.Humanize());
             TextBoxAddress.Text = ConsoleProfile.Address;
 
-            LabelUserPass.Text = ConsoleProfile.UseDefaultCredentials
-                ? Language.GetString("LABEL_DEFAULT")
-                : ConsoleProfile.Username + " / " + ConsoleProfile.Password;
+            //LabelUserPass.Text = ConsoleProfile.UseDefaultCredentials
+            //    ? Language.GetString("LABEL_DEFAULT")
+            //    : ConsoleProfile.Username + " / " + ConsoleProfile.Password;
 
-            TextBoxConnectionName.SelectionStart = TextBoxConnectionName.Text.Length;
+            //LabelUserPass.Visible = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
+            ButtonChangeLoginDetails.Enabled = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
 
-            LabelUserPass.Visible = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
-            ButtonChangeLoginDetails.Visible = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
+            //CheckBoxDefaultLogin.Enabled = ConsoleProfile.Platform == Platform.XBOX360;
+            //CheckBoxDefaultLogin.CheckState = ConsoleProfile.UseDefaultLogin ? CheckState.Checked : CheckState.Unchecked;
+            CheckBoxDefaultLogin.Checked = ConsoleProfile.UseDefaultLogin;
 
-            CheckBoxUseDefaultConsole.Visible = ConsoleProfile.Platform == Platform.XBOX360;
-            CheckBoxUseDefaultConsole.CheckState = ConsoleProfile.UseDefaultConsole ? CheckState.Checked : CheckState.Unchecked;
-            //CheckBoxUseDefaultConsole.Checked = ConsoleProfile.UseDefaultConsole;
+            CheckBoxPassiveMode.Enabled = ConsoleProfile.Platform == Platform.PS3;
+            CheckBoxPassiveMode.Checked = ConsoleProfile.PassiveMode;
 
             int defaults = 0;
 
             foreach (ConsoleProfile console in MainWindow.Settings.ConsoleProfiles)
             {
-                if (!console.Name.EqualsIgnoreCase(TextBoxConnectionName.Text))
+                if (!console.Name.EqualsIgnoreCase(TextBoxProfileName.Text))
                 {
                     if (console.IsDefault)
                     {
@@ -76,10 +83,12 @@ namespace ArisenStudio.Forms.Dialogs
                 }
             }
 
-            CheckBoxDefault.Checked = defaults == 0;
+            CheckBoxDefaultProfile.Checked = defaults == 0;
+
+            TextBoxProfileName.SelectionStart = TextBoxProfileName.Text.Length;
         }
 
-        private void NewConnectionDialog_FormClosed(object sender, FormClosedEventArgs e)
+        private void NewProfileDialog_FormClosed(object sender, FormClosedEventArgs e)
         {
             //if (DialogResult == DialogResult.Cancel && CloseOnCancel)
             //if (MainWindow.Settings.ConsoleProfiles.Count == 0)
@@ -94,7 +103,7 @@ namespace ArisenStudio.Forms.Dialogs
             //            platform = userPlatform.DehumanizeTo<Platform>();
             //        }
 
-            //        TextBoxConnectionName.Text = "New Console";
+            //        TextBoxProfileName.Text = "New Console";
             //        ComboBoxPlatform.SelectedIndex = platform == Platform.PS3 ? 0 : 3;
             //        TextBoxAddress.Text = "192.168.1.1";
             //        CheckBoxDefault.Checked = true;
@@ -114,7 +123,7 @@ namespace ArisenStudio.Forms.Dialogs
             //}
         }
 
-        private void NewConnectionDialog_FormClosing(object sender, FormClosingEventArgs e)
+        private void NewProfileDialog_FormClosing(object sender, FormClosingEventArgs e)
         {
             ////if (DialogResult == DialogResult.Cancel && CloseOnCancel)
             //if (MainWindow.Settings.ConsoleProfiles.Count == 0)
@@ -129,7 +138,7 @@ namespace ArisenStudio.Forms.Dialogs
             //            platform = userPlatform.DehumanizeTo<Platform>();
             //        }
 
-            //        TextBoxConnectionName.Text = "New Console";
+            //        TextBoxProfileName.Text = "New Console";
             //        ComboBoxPlatform.SelectedIndex = platform == Platform.PS3 ? 0 : 3;
             //        TextBoxAddress.Text = "192.168.1.1";
             //        CheckBoxDefault.Checked = true;
@@ -149,6 +158,11 @@ namespace ArisenStudio.Forms.Dialogs
             //}
         }
 
+        private void NewProfileDialog_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Process.Start(Urls.ProjectWebsite + "help");
+        }
+
         private void ComboBoxPlatformType_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (ComboBoxPlatform.SelectedIndex)
@@ -156,19 +170,19 @@ namespace ArisenStudio.Forms.Dialogs
                 case 0:
                     ConsoleProfile.PlatformType = PlatformType.PlayStation3Fat;
                     ConsoleProfile.Platform = Platform.PS3;
-                    ImageConsole.Image = Properties.Resources.PlayStation3Fat;
+                    //ImageConsole.Image = Properties.Resources.PlayStation3Fat;
                     break;
 
                 case 1:
                     ConsoleProfile.PlatformType = PlatformType.PlayStation3Slim;
                     ConsoleProfile.Platform = Platform.PS3;
-                    ImageConsole.Image = Properties.Resources.PlayStation3Slim;
+                    //ImageConsole.Image = Properties.Resources.PlayStation3Slim;
                     break;
 
                 case 2:
                     ConsoleProfile.PlatformType = PlatformType.PlayStation3SuperSlim;
                     ConsoleProfile.Platform = Platform.PS3;
-                    ImageConsole.Image = Properties.Resources.PlayStation3SuperSlim;
+                    //ImageConsole.Image = Properties.Resources.PlayStation3SuperSlim;
                     break;
 
                 case 3:
@@ -181,25 +195,25 @@ namespace ArisenStudio.Forms.Dialogs
                 case 4:
                     ConsoleProfile.PlatformType = PlatformType.Xbox360FatWhite;
                     ConsoleProfile.Platform = Platform.XBOX360;
-                    ImageConsole.Image = Properties.Resources.XboxFat;
+                    //ImageConsole.Image = Properties.Resources.XboxFat;
                     break;
 
                 case 5:
                     ConsoleProfile.PlatformType = PlatformType.Xbox360EliteFatBlack;
                     ConsoleProfile.Platform = Platform.XBOX360;
-                    ImageConsole.Image = Properties.Resources.XboxFatElite;
+                    //ImageConsole.Image = Properties.Resources.XboxFatElite;
                     break;
 
                 case 6:
                     ConsoleProfile.PlatformType = PlatformType.Xbox360Slim;
                     ConsoleProfile.Platform = Platform.XBOX360;
-                    ImageConsole.Image = Properties.Resources.XboxSlim;
+                    //ImageConsole.Image = Properties.Resources.XboxSlim;
                     break;
 
                 case 7:
                     ConsoleProfile.PlatformType = PlatformType.Xbox360SlimE;
                     ConsoleProfile.Platform = Platform.XBOX360;
-                    ImageConsole.Image = Properties.Resources.XboxSlimE;
+                    //ImageConsole.Image = Properties.Resources.XboxSlimE;
                     break;
                 default:
                     goto case 0;
@@ -222,46 +236,45 @@ namespace ArisenStudio.Forms.Dialogs
 
             //LabelLogin.Text = (ConsoleProfile.Platform == Platform.PS3 ? Language.GetString("LABEL_LOGIN") : Language.GetString("LABEL_USE_DEFAULT")) + ":";
 
-            if (ConsoleProfile.Platform == Platform.PS3)
-            {
-                LabelLogin.Text = Language.GetString("LABEL_LOGIN") + ":";
-            }
-            else if (ConsoleProfile.Platform == Platform.PS4)
-            {
-                LabelLogin.Text = Language.GetString("LABEL_LOGIN") + ":";
-            }
-            else if (ConsoleProfile.Platform == Platform.XBOX360)
-            {
-                LabelLogin.Text = Language.GetString("LABEL_USE_DEFAULT") + ":";
-            }
+            //if (ConsoleProfile.Platform == Platform.PS3)
+            //{
+            //    LabelLoginDetails.Text = Language.GetString("LABEL_LOGIN_DETAILS") + ":";
+            //}
+            //else if (ConsoleProfile.Platform == Platform.PS4)
+            //{
+            //    LabelLoginDetails.Text = Language.GetString("LABEL_LOGIN_DETAILS") + ":";
+            //}
+            //else if (ConsoleProfile.Platform == Platform.XBOX360)
+            //{
+            //    LabelLoginDetails.Text = Language.GetString("LABEL_USE_DEFAULT") + ":";
+            //}
 
-            LabelUserPass.Visible = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
-            ButtonChangeLoginDetails.Visible = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
+            //LabelUserPass.Visible = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
+            ButtonChangeLoginDetails.Enabled = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
+            CheckBoxPassiveMode.Enabled = ConsoleProfile.Platform == Platform.PS3;
 
-            CheckBoxUseDefaultConsole.Visible = ConsoleProfile.Platform == Platform.XBOX360;
+            //CheckBoxDefault.Enabled = ConsoleProfile.Platform == Platform.XBOX360;
         }
 
-        private void CheckBoxUseDefaultConsole_CheckStateChanged(object sender, EventArgs e)
+        private void CheckBoxDefaultLogin_CheckStateChanged(object sender, EventArgs e)
         {
-            //CheckBoxUseDefaultConsole.Checked = (bool)e.NewValue;
+            ConsoleProfile.UseDefaultLogin = CheckBoxDefaultLogin.Checked;
 
-            ConsoleProfile.UseDefaultConsole = CheckBoxUseDefaultConsole.Checked;
-
-            LabelAddress.Enabled = !CheckBoxUseDefaultConsole.Checked;
-            TextBoxAddress.Enabled = !CheckBoxUseDefaultConsole.Checked;
+            LabelAddress.Enabled = !CheckBoxDefaultLogin.Checked;
+            TextBoxAddress.Enabled = !CheckBoxDefaultLogin.Checked;
 
             //TextBoxConsoleAddress.Text = ConsoleProfile.Platform == ConsolePlatform.PS3 ? ConsoleProfile.Address : "Default";
-            TextBoxAddress.Text = CheckBoxUseDefaultConsole.Checked ? Language.GetString("LABEL_DEFAULT_CONSOLE") : ConsoleProfile.Address;
-            ButtonChangeLoginDetails.Enabled = !CheckBoxUseDefaultConsole.Checked;
+            TextBoxAddress.Text = CheckBoxDefaultLogin.Checked ? Language.GetString("LABEL_DEFAULT_PROFILE") : ConsoleProfile.Address;
+            ButtonChangeLoginDetails.Enabled = !CheckBoxDefaultLogin.Checked;
         }
 
-        private void CheckBoxUseDefaultConsole_Properties_EditValueChanging(object sender, ChangingEventArgs e)
+        private void CheckBoxDefaultLogin_Properties_EditValueChanging(object sender, ChangingEventArgs e)
         {
             foreach (ConsoleProfile consoleProfile in MainWindow.Settings.ConsoleProfiles.FindAll(x => x.Platform == Platform.XBOX360))
             {
                 if (consoleProfile != ConsoleProfile)
                 {
-                    if (consoleProfile.UseDefaultConsole)
+                    if (consoleProfile.UseDefaultLogin)
                     {
                         e.Cancel = true;
                         XtraMessageBox.Show(this, string.Format(Language.GetString("DEFAULT_CONSOLE_ALREADY_EXISTS"), consoleProfile.Name), Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -283,29 +296,39 @@ namespace ArisenStudio.Forms.Dialogs
             switch (setCredentials)
             {
                 case DialogResult.OK:
-                    LabelUserPass.Text = consoleCredentials.TextBoxUsername.Text + @" / " + consoleCredentials.TextBoxPassword.Text;
+                    //LabelUserPass.Text = consoleCredentials.TextBoxUsername.Text + @" / " + consoleCredentials.TextBoxPassword.Text;
 
                     ConsoleProfile.Username = consoleCredentials.TextBoxUsername.Text;
                     ConsoleProfile.Password = consoleCredentials.TextBoxPassword.Text;
-                    ConsoleProfile.UseDefaultCredentials = false;
+                    ConsoleProfile.UseDefaultLogin = false;
                     break;
                 case DialogResult.Abort:
-                    LabelUserPass.Text = Language.GetString("LABEL_DEFAULT");
+                    //LabelUserPass.Text = Language.GetString("LABEL_DEFAULT");
 
                     ConsoleProfile.Username = string.Empty;
                     ConsoleProfile.Password = string.Empty;
-                    ConsoleProfile.UseDefaultCredentials = true;
+                    ConsoleProfile.UseDefaultLogin = true;
                     break;
             }
         }
 
-        private void CheckBoxDefault_CheckStateChanged(object sender, EventArgs e)
+        private void CheckBoxPassiveMode_CheckStateChanged(object sender, EventArgs e)
+        {
+            ConsoleProfile.PassiveMode = CheckBoxPassiveMode.Checked;
+        }
+
+        private void CheckBoxGoldHEN_CheckStateChanged(object sender, EventArgs e)
+        {
+            ConsoleProfile.GoldHEN = CheckBoxGoldHEN.Checked;
+        }
+
+        private void CheckBoxDefaultProfile_CheckStateChanged(object sender, EventArgs e)
         {
             int defaults = 0;
 
             foreach (ConsoleProfile console in MainWindow.Settings.ConsoleProfiles)
             {
-                if (!console.Name.EqualsIgnoreCase(TextBoxConnectionName.Text))
+                if (!console.Name.EqualsIgnoreCase(TextBoxProfileName.Text))
                 {
                     if (console.IsDefault)
                     {
@@ -314,39 +337,39 @@ namespace ArisenStudio.Forms.Dialogs
                 }
             }
 
-            if (!CheckBoxDefault.Checked && defaults == 0)
+            if (!CheckBoxDefaultProfile.Checked && defaults == 0)
             {
                 XtraMessageBox.Show(this, Language.GetString("MUST_HAVE_DEFAULT_CONSOLE"), Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                CheckBoxDefault.Checked = true;
+                CheckBoxDefaultProfile.Checked = true;
                 return;
             }
 
-            ConsoleProfile.IsDefault = CheckBoxDefault.Checked;
+            ConsoleProfile.IsDefault = CheckBoxDefaultProfile.Checked;
         }
 
-        private void CheckBoxDefault_EditValueChanging(object sender, ChangingEventArgs e)
+        private void CheckBoxDefaultProfile_EditValueChanging(object sender, ChangingEventArgs e)
         {
             foreach (ConsoleProfile consoleProfile in MainWindow.Settings.ConsoleProfiles)
             {
-                if (!consoleProfile.Name.EqualsIgnoreCase(TextBoxConnectionName.Text))
+                if (!consoleProfile.Name.EqualsIgnoreCase(TextBoxProfileName.Text))
                 {
                     if (consoleProfile.IsDefault)
                     {
-                        XtraMessageBox.Show(this, string.Format(Language.GetString("DEFAULT_CONSOLE_ALREADY_EXISTS"), consoleProfile.Name), Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        XtraMessageBox.Show(this, string.Format(Language.GetString("DEFAULT_PROFILE_ALREADY_EXISTS"), consoleProfile.Name), Language.GetString("LABEL_DEFAULT_PROFILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         e.Cancel = true;
                         return;
                     }
                 }
             }
 
-            ConsoleProfile.IsDefault = CheckBoxDefault.Checked;
+            ConsoleProfile.IsDefault = CheckBoxDefaultProfile.Checked;
         }
 
-        private void ButtonOK_Click(object sender, EventArgs e)
+        private void ButtonSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TextBoxConnectionName.Text))
+            if (string.IsNullOrWhiteSpace(TextBoxProfileName.Text))
             {
-                XtraMessageBox.Show(this, Language.GetString("MISSING_CONNECTION_NAME"), Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                XtraMessageBox.Show(this, Language.GetString("MISSING_PROFILE_NAME"), Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -356,7 +379,7 @@ namespace ArisenStudio.Forms.Dialogs
                 return;
             }
 
-            switch (ConsoleProfile.UseDefaultCredentials)
+            switch (ConsoleProfile.UseDefaultLogin)
             {
                 case true when ConsoleProfile.Platform == Platform.PS3:
                     ConsoleProfile.Username = "anonymous";
@@ -374,7 +397,7 @@ namespace ArisenStudio.Forms.Dialogs
 
             bool isAddressValid;
 
-            if (ConsoleProfile.UseDefaultConsole)
+            if (ConsoleProfile.UseDefaultLogin)
             {
                 isAddressValid = true;
             }
@@ -389,24 +412,24 @@ namespace ArisenStudio.Forms.Dialogs
                     {
                         switch (IsEditingProfile)
                         {
-                            case true when ConsoleProfile.Name != TextBoxConnectionName.Text && ProfileExists(TextBoxConnectionName.Text):
-                                XtraMessageBox.Show(this, Language.GetString("PROFILE_NAME_EXISTS"), Language.GetString("LABEL_CONNECTION_DETAILS"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            case true when ConsoleProfile.Name != TextBoxProfileName.Text && ProfileExists(TextBoxProfileName.Text):
+                                XtraMessageBox.Show(this, Language.GetString("PROFILE_NAME_EXISTS"), Language.GetString("LABEL_PROFILE_DETAILS"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 break;
                             case true:
-                                ConsoleProfile.Name = TextBoxConnectionName.Text;
+                                ConsoleProfile.Name = TextBoxProfileName.Text;
                                 ConsoleProfile.Address = TextBoxAddress.Text;
                                 DialogResult = DialogResult.OK;
                                 break;
                             default:
                                 {
-                                    if (ProfileExists(TextBoxConnectionName.Text))
+                                    if (ProfileExists(TextBoxProfileName.Text))
                                     {
-                                        XtraMessageBox.Show(this, Language.GetString("PROFILE_NAME_EXISTS"), Language.GetString("LABEL_CONNECTION_DETAILS"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        XtraMessageBox.Show(this, Language.GetString("PROFILE_NAME_EXISTS"), Language.GetString("LABEL_PROFILE_DETAILS"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                     }
                                     else
                                     {
                                         ConsoleProfile.Id = DataExtensions.GenerateUniqueId();
-                                        ConsoleProfile.Name = TextBoxConnectionName.Text;
+                                        ConsoleProfile.Name = TextBoxProfileName.Text;
                                         ConsoleProfile.Address = TextBoxAddress.Text;
                                         DialogResult = DialogResult.OK;
                                     }

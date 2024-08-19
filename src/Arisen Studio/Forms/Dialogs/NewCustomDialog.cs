@@ -50,25 +50,37 @@ namespace ArisenStudio.Forms.Dialogs
             ButtonSave.Text = Language.GetString("LABEL_SAVE");
             ButtonCancel.Text = Language.GetString("LABEL_CANCEL");
 
-            ComboBoxPlatform.SelectedIndex = ComboBoxPlatform.Properties.Items.IndexOf(CustomMod.Platform.Humanize());
-            ComboBoxCategoryType.SelectedIndex = ComboBoxCategoryType.Properties.Items.IndexOf(CustomMod.CategoryType.Humanize());
-            ComboBoxCategory.SelectedIndex = ComboBoxCategory.Properties.Items.IndexOf(CustomMod.Category);
-            TextBoxName.Text = CustomMod.Name;
-            ComboBoxModType.SelectedIndex = ComboBoxModType.Properties.Items.IndexOf(CustomMod.ModType);
-            TextBoxVersion.Text = CustomMod.Version;
-            //TextBoxAddress.Text = CustomItem.Address;
+            if (CustomMod != null)
+            {
+                try
+                {
+                    ComboBoxPlatform.SelectedIndex = ComboBoxPlatform.Properties.Items.IndexOf(CustomMod.Platform.Humanize());
+                    ComboBoxCategoryType.SelectedIndex = ComboBoxCategoryType.Properties.Items.IndexOf(CustomMod.CategoryType.Humanize());
+                    ComboBoxCategory.SelectedIndex = ComboBoxCategory.Properties.Items.IndexOf(CustomMod.Category);
+                    TextBoxName.Text = CustomMod.Name;
+                    ComboBoxModType.SelectedIndex = ComboBoxModType.Properties.Items.IndexOf(CustomMod.ModType);
+                    TextBoxVersion.Text = CustomMod.Version;
+                    //TextBoxAddress.Text = CustomItem.Address;
+                }
+                catch { }
+            }
 
             TextBoxName.SelectionStart = TextBoxName.Text.Length;
 
-            foreach (var category in MainWindow.Database.CategoriesData.Categories)
+            foreach (var category in MainWindow.Database.CategoriesData.Categories.Distinct())
             {
-                ComboBoxModType.Properties.Items.Add(category.Title);
+                ComboBoxCategory.Properties.Items.Add(category.Title);
             }
 
-            foreach (var modTypes in MainWindow.Database.GameModsPS3.Library.Select(x => x.ModTypes))
+            foreach (var modTypes in MainWindow.Database.GameModsPS3.Library.Select(x => x.ModTypes.Distinct()).Distinct())
             {
-                ComboBoxModType.Properties.Items.AddRange(modTypes.ToList());
+                //if (ComboBoxModType.Properties.Items.Contains(modTypes.Any()))
+                //{
+                    ComboBoxModType.Properties.Items.AddRange(modTypes.Distinct().ToList());
+                //}
             }
+
+            ComboBoxModType.Properties.Items.Add("XEX");
 
             //LabelUserPass.Visible = CustomItem.Platform == Platform.PS3 | CustomItem.Platform == Platform.PS4;
             //ButtonChangeLoginDetails.Visible = CustomItem.Platform == Platform.PS3 | CustomItem.Platform == Platform.PS4;

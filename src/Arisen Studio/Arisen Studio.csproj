@@ -134,6 +134,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Urls.cs" />
+    <Compile Include="Controls\ChangeLogItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ChangeLogItem.Designer.cs">
+      <DependentUpon>ChangeLogItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CustomFileItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -174,11 +180,13 @@
     <Compile Include="Database\AppItemFile.cs" />
     <Compile Include="Database\GameCheatItemData.cs" />
     <Compile Include="Database\GamePatchItemData.cs" />
+    <Compile Include="Database\GameTrainerItem.cs" />
     <Compile Include="Database\GameSaveItemData.cs" />
     <Compile Include="Database\AppItemData.cs" />
     <Compile Include="Database\PackageItemData.cs" />
-    <Compile Include="Database\GamesTitleIdsXBOX.cs" />
+    <Compile Include="Database\TitleIdsXbox.cs" />
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Extensions\GitHubCacheUpdater.cs" />
     <Compile Include="Extensions\SimpleCache.cs" />
     <Compile Include="Extensions\GraphicExtensions.cs" />
     <Compile Include="Extensions\ImgurUploader.cs" />
@@ -187,6 +195,12 @@
     <Compile Include="Extensions\PS4\PS4Extensions.cs" />
     <Compile Include="Extensions\UsbExtensions.cs" />
     <Compile Include="Extensions\XBOX\XboxExtensions.cs" />
+    <Compile Include="Forms\Dialogs\Details\GameTrainersDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Details\GameTrainersDialog.Designer.cs">
+      <DependentUpon>GameTrainersDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\Details\GameCheatsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -418,11 +432,12 @@
     <Compile Include="Models\Dashboard\AnnouncementsData.cs" />
     <Compile Include="Models\Database\GameCheatsData.cs" />
     <Compile Include="Models\Database\GamePatchesData.cs" />
+    <Compile Include="Models\Database\GameTrainersData.cs" />
     <Compile Include="Models\Database\GameSavesData.cs" />
     <Compile Include="Models\Database\AppsData.cs" />
     <Compile Include="Models\Database\StatsData.cs" />
     <Compile Include="Models\Database\PackagesData.cs" />
-    <Compile Include="Models\Database\GamesTitleIdsDataXBOX.cs" />
+    <Compile Include="Models\Database\TitleIdsDataXbox.cs" />
     <Compile Include="Models\Game Updates\GameUpdates.cs" />
     <Compile Include="Models\Resources\BackupFilesData.cs" />
     <Compile Include="Extensions\FtpExtensions.cs" />
@@ -460,11 +475,11 @@
     <Compile Include="Models\Database\ModsData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\Dialogs\NewConnectionDialog.cs">
+    <Compile Include="Forms\Dialogs\NewProfileDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Dialogs\NewConnectionDialog.Designer.cs">
-      <DependentUpon>NewConnectionDialog.cs</DependentUpon>
+    <Compile Include="Forms\Dialogs\NewProfileDialog.Designer.cs">
+      <DependentUpon>NewProfileDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\ListViewDialog.cs">
       <SubType>Form</SubType>
@@ -478,6 +493,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Templates\GitHubTemplates.cs" />
+    <EmbeddedResource Include="Controls\ChangeLogItem.resx">
+      <DependentUpon>ChangeLogItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomFileItem.resx">
       <DependentUpon>CustomFileItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -496,6 +515,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\StatItem.resx">
       <DependentUpon>StatItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\Details\GameTrainersDialog.resx">
+      <DependentUpon>GameTrainersDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\Details\GameCheatsDialog.resx">
       <DependentUpon>GameCheatsDialog.cs</DependentUpon>
@@ -618,8 +640,8 @@
     <EmbeddedResource Include="Forms\Tools\XBOX\DashlaunchEditor.resx">
       <DependentUpon>DashlaunchEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dialogs\NewConnectionDialog.resx">
-      <DependentUpon>NewConnectionDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Dialogs\NewProfileDialog.resx">
+      <DependentUpon>NewProfileDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\ListViewDialog.resx">
       <DependentUpon>ListViewDialog.cs</DependentUpon>
@@ -670,7 +692,7 @@
       <Version>1.5.0</Version>
     </PackageReference>
     <PackageReference Include="Autoupdater.NET.Official">
-      <Version>1.9.1</Version>
+      <Version>1.9.2</Version>
     </PackageReference>
     <PackageReference Include="CodeHollow.FeedReader">
       <Version>1.2.6</Version>
@@ -679,10 +701,10 @@
       <Version>1.2.1.24</Version>
     </PackageReference>
     <PackageReference Include="FluentFTP">
-      <Version>50.1.0</Version>
+      <Version>51.0.0</Version>
     </PackageReference>
     <PackageReference Include="HtmlAgilityPack">
-      <Version>1.11.61</Version>
+      <Version>1.11.63</Version>
     </PackageReference>
     <PackageReference Include="Humanizer">
       <Version>2.14.1</Version>
@@ -694,13 +716,13 @@
       <Version>2.5.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Web.WebView2">
-      <Version>1.0.2592.51</Version>
+      <Version>1.0.2651.64</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>
     </PackageReference>
     <PackageReference Include="NLog">
-      <Version>5.3.2</Version>
+      <Version>5.3.3</Version>
     </PackageReference>
     <PackageReference Include="SharpZipLib">
       <Version>1.4.2</Version>

@@ -550,11 +550,11 @@ namespace ArisenStudio.Extensions
 
         public static ConsoleProfile ShowNewConnectionWindow(Form owner, ConsoleProfile consoleProfile, bool isEditing, bool createDefaultIfNull = false)
         {
-            using NewConnectionDialog newConnectionDialog = new() { ConsoleProfile = consoleProfile, IsEditingProfile = isEditing };
+            using NewProfileDialog newProfileDialog = new() { ConsoleProfile = consoleProfile, IsEditingProfile = isEditing };
 
-            if (newConnectionDialog.ShowDialog(owner) == DialogResult.OK)
+            if (newProfileDialog.ShowDialog(owner) == DialogResult.OK)
             {
-                return newConnectionDialog.ConsoleProfile;
+                return newProfileDialog.ConsoleProfile;
             }
 
             if (isEditing)
@@ -690,6 +690,12 @@ namespace ArisenStudio.Extensions
         {
             using BootPluginsEditor bootPluginsEditor = new();
             bootPluginsEditor.ShowDialog(owner);
+        }
+
+        public static void ShowGameCheats(Form owner)
+        {
+            using GameCheatsDialog gameCheatsDialog = new();
+            gameCheatsDialog.ShowDialog(owner);
         }
 
         #endregion

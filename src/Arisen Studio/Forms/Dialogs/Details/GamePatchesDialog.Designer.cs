@@ -65,7 +65,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.PanelDetails.Location = new System.Drawing.Point(0, 50);
             this.PanelDetails.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.PanelDetails.Name = "PanelDetails";
-            this.PanelDetails.Size = new System.Drawing.Size(650, 297);
+            this.PanelDetails.Size = new System.Drawing.Size(650, 300);
             this.PanelDetails.TabIndex = 1;
             // 
             // GridControlCheats
@@ -80,7 +80,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.GridControlCheats.MainView = this.GridViewCheats;
             this.GridControlCheats.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.GridControlCheats.Name = "GridControlCheats";
-            this.GridControlCheats.Size = new System.Drawing.Size(620, 294);
+            this.GridControlCheats.Size = new System.Drawing.Size(620, 297);
             this.GridControlCheats.TabIndex = 6;
             this.GridControlCheats.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewCheats});
@@ -105,6 +105,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.GridViewCheats.OptionsFilter.AllowFilterEditor = false;
             this.GridViewCheats.OptionsMenu.ShowAutoFilterRowItem = false;
             this.GridViewCheats.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.GridViewCheats.OptionsSelection.EnableAppearanceHotTrackedRow = DevExpress.Utils.DefaultBoolean.True;
             this.GridViewCheats.OptionsView.ShowColumnHeaders = false;
             this.GridViewCheats.OptionsView.ShowGroupPanel = false;
             this.GridViewCheats.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
@@ -141,6 +142,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // 
             this.ImageClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ImageClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ImageClose.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Red;
+            this.ImageClose.ItemAppearance.Normal.FillColor = System.Drawing.Color.Gray;
             this.ImageClose.Location = new System.Drawing.Point(613, 10);
             this.ImageClose.Name = "ImageClose";
             this.ImageClose.Size = new System.Drawing.Size(26, 26);
@@ -198,7 +201,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.PanelActions.Controls.Add(this.ButtonApplyCheat);
             this.PanelActions.Controls.Add(this.ButtonReportIssue);
             this.PanelActions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelActions.Location = new System.Drawing.Point(0, 347);
+            this.PanelActions.Location = new System.Drawing.Point(0, 350);
             this.PanelActions.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.PanelActions.Name = "PanelActions";
             this.PanelActions.Size = new System.Drawing.Size(650, 50);
@@ -210,6 +213,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonApplyCheat.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ButtonApplyCheat.Appearance.Options.UseFont = true;
             this.ButtonApplyCheat.Appearance.Options.UseForeColor = true;
+            this.ButtonApplyCheat.AutoSize = true;
             this.ButtonApplyCheat.Enabled = false;
             this.ButtonApplyCheat.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.ButtonApplyCheat.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
@@ -217,11 +221,13 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonApplyCheat.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonApplyCheat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonApplyCheat.ImageOptions.SvgImage")));
             this.ButtonApplyCheat.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonApplyCheat.Location = new System.Drawing.Point(16, 12);
-            this.ButtonApplyCheat.Margin = new System.Windows.Forms.Padding(16, 3, 3, 3);
+            this.ButtonApplyCheat.Location = new System.Drawing.Point(12, 11);
+            this.ButtonApplyCheat.Margin = new System.Windows.Forms.Padding(12, 3, 4, 3);
+            this.ButtonApplyCheat.MinimumSize = new System.Drawing.Size(0, 28);
             this.ButtonApplyCheat.Name = "ButtonApplyCheat";
+            this.ButtonApplyCheat.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
             this.ButtonApplyCheat.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonApplyCheat.Size = new System.Drawing.Size(116, 26);
+            this.ButtonApplyCheat.Size = new System.Drawing.Size(123, 28);
             this.ButtonApplyCheat.TabIndex = 1176;
             this.ButtonApplyCheat.Text = "Apply Cheat";
             this.ButtonApplyCheat.Click += new System.EventHandler(this.ButtonApply_Click);
@@ -232,16 +238,20 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonReportIssue.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ButtonReportIssue.Appearance.Options.UseFont = true;
             this.ButtonReportIssue.Appearance.Options.UseForeColor = true;
+            this.ButtonReportIssue.AutoSize = true;
             this.ButtonReportIssue.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.ButtonReportIssue.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.ButtonReportIssue.ImageOptions.ImageToTextIndent = 6;
             this.ButtonReportIssue.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonReportIssue.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonReportIssue.ImageOptions.SvgImage")));
             this.ButtonReportIssue.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonReportIssue.Location = new System.Drawing.Point(138, 12);
+            this.ButtonReportIssue.Location = new System.Drawing.Point(143, 11);
+            this.ButtonReportIssue.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ButtonReportIssue.MinimumSize = new System.Drawing.Size(0, 28);
             this.ButtonReportIssue.Name = "ButtonReportIssue";
+            this.ButtonReportIssue.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
             this.ButtonReportIssue.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonReportIssue.Size = new System.Drawing.Size(115, 26);
+            this.ButtonReportIssue.Size = new System.Drawing.Size(127, 28);
             this.ButtonReportIssue.TabIndex = 1177;
             this.ButtonReportIssue.Text = "Report Issue";
             this.ButtonReportIssue.Click += new System.EventHandler(this.ButtonReport_Click);
@@ -256,7 +266,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(650, 397);
+            this.ClientSize = new System.Drawing.Size(650, 400);
             this.ControlBox = false;
             this.Controls.Add(this.PanelDetails);
             this.Controls.Add(this.PanelActions);
@@ -287,6 +297,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.PanelRegion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelActions)).EndInit();
             this.PanelActions.ResumeLayout(false);
+            this.PanelActions.PerformLayout();
             this.ResumeLayout(false);
 
         }

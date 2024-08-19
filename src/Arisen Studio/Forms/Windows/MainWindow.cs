@@ -410,17 +410,17 @@ namespace ArisenStudio.Forms.Windows
                 NavigationItemHomebrew.Visible = true;
                 NavigationItemPackages.Visible = true;
                 NavigationItemResources.Visible = true;
-                NavigationItemApplications.Visible = false;
                 NavigationItemGames.Visible = false;
+                NavigationItemGameCheats.Visible = true;
             }
             else if (ConsoleProfile.Platform == Platform.PS4)
             {
                 NavigationItemGameMods.Visible = false;
-                NavigationItemHomebrew.Visible = false;
+                NavigationItemHomebrew.Visible = true;
                 NavigationItemPackages.Visible = false;
                 NavigationItemResources.Visible = false;
-                NavigationItemApplications.Visible = true;
                 NavigationItemGames.Visible = true;
+                NavigationItemGameCheats.Visible = false;
             }
             else if (ConsoleProfile.Platform == Platform.XBOX360)
             {
@@ -428,8 +428,8 @@ namespace ArisenStudio.Forms.Windows
                 NavigationItemHomebrew.Visible = true;
                 NavigationItemPackages.Visible = false;
                 NavigationItemResources.Visible = false;
-                NavigationItemApplications.Visible = false;
                 NavigationItemGames.Visible = false;
+                NavigationItemGameCheats.Visible = false;
             }
 #endif
         }
@@ -978,10 +978,10 @@ namespace ArisenStudio.Forms.Windows
                         {
                             Host = ConsoleProfile.Address,
                             Port = 21,
-                            Credentials = ConsoleProfile.UseDefaultCredentials
+                            Credentials = ConsoleProfile.UseDefaultLogin
                             ? new NetworkCredential("anonymous", "anonymous")
                             : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password),
-                            Config = new() { SocketKeepAlive = true, DataConnectionType = FtpDataConnectionType.PASV, ReadTimeout = 90000, ConnectTimeout = 90000, DataConnectionConnectTimeout = 90000, DataConnectionReadTimeout = 90000 },
+                            Config = new() { SocketKeepAlive = true, DataConnectionType = ConsoleProfile.PassiveMode ? FtpDataConnectionType.PASV : FtpDataConnectionType.AutoActive, ReadTimeout = 90000, ConnectTimeout = 90000, DataConnectionConnectTimeout = 90000, DataConnectionReadTimeout = 90000 },
                             //Config = new() { SocketKeepAlive = true, DataConnectionType = FtpDataConnectionType.AutoActive, ReadTimeout = 90000, ConnectTimeout = 90000, DataConnectionConnectTimeout = 90000, DataConnectionReadTimeout = 90000 },
                         };
 
@@ -998,7 +998,7 @@ namespace ArisenStudio.Forms.Windows
                     case Platform.XBOX360:
                         XboxManager = new XboxManager();
 
-                        XboxConsole = ConsoleProfile.UseDefaultConsole
+                        XboxConsole = ConsoleProfile.UseDefaultLogin
                             ? XboxManager.OpenConsole(XboxManager.DefaultConsole)
                             : XboxManager.OpenConsole(ConsoleProfile.Address);
 
@@ -1349,6 +1349,20 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
+        private bool hasLoadedGameCheats = false;
+
+        private void NavigationItemGameCheats_Click(object sender, EventArgs e)
+        {
+            NavigationFrame.SelectedPage = PageGameCheats;
+
+            if (!hasLoadedGameCheats)
+            {
+                LoadGameCheatsCategories();
+                SearchGameCheats();
+                hasLoadedGameCheats = true;
+            }
+        }
+
         #endregion
 
         #region Dashboard Page
@@ -1406,7 +1420,7 @@ namespace ArisenStudio.Forms.Windows
             }
             else if (ConsoleProfile.Platform == Platform.XBOX360)
             {
-                tileItem.Elements[1].Text = Database.GameModsXbox.Library.Where(x => x.CategoryId == categoryId).Count().ToString() + " Total Game Mods";
+                tileItem.Elements[1].Text = Database.GameModsX360.Library.Where(x => x.CategoryId == categoryId).Count().ToString() + " Total Game Mods";
             }
 
             tileItem.Tag = platform.Humanize() + "|" + categoryId;
@@ -1632,56 +1646,116 @@ namespace ArisenStudio.Forms.Windows
 
         private void LoadStatistics()
         {
-            chartControl1.Titles.Add(new ChartTitle() { Text = "Statistics" });
+            //chartControl1.Titles.Add(new ChartTitle() { Text = "Statistics" });
 
-            Series series1 = new("Statistics", ViewType.Pie)
+            //Series series1 = new("Statistics", ViewType.Pie)
+            //{
+            //    // Bind the series to data.
+            //    DataSource = DataPoint.GetDataPoints(
+            //    Database.GameModsPS3.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Game).Count,
+            //    Database.HomebrewPS3.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count,
+            //    Database.ResourcesPS3.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Resource).Count,
+            //    Database.PackagesCount(),
+            //    Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.PS3).ToList().Count),
+
+            //    ArgumentDataMember = "Argument"
+            //};
+
+            //series1.ValueDataMembers.AddRange(["Value"]);
+
+            //// Add the series to the chart.
+            //chartControl1.Series.Add(series1);
+
+            //// Access diagram settings.
+            //SimpleDiagram diagram = (SimpleDiagram)chartControl1.Diagram; diagram.Margins.All = 10;
+
+            //// Format the the series labels.
+            //series1.Label.TextPattern = "{VP:p0} ({V:.##}M km²)";
+
+            //// Format the series legend items.
+            //series1.LegendTextPattern = "{A}";
+
+            //// Adjust the position of series labels. 
+            //((PieSeriesLabel)series1.Label).Position = PieSeriesLabelPosition.TwoColumns;
+
+            //// Detect overlapping of series labels.
+            //((PieSeriesLabel)series1.Label).ResolveOverlappingMode = ResolveOverlappingMode.Default;
+
+            //// Access the view-type-specific options of the series.
+            //PieSeriesView myView = (PieSeriesView)series1.View;
+
+            //// Specify the pie rotation.
+            //myView.Rotation = -60;
+
+            //// Specify a data filter to explode points.
+            ////myView.ExplodedPointsFilters.Add(new SeriesPointFilter(SeriesPointKey.Value_1, DataFilterCondition.GreaterThanOrEqual, 9));
+            ////myView.ExplodedPointsFilters.Add(new SeriesPointFilter(SeriesPointKey.Argument, DataFilterCondition.NotEqual, "Others"));
+            ////myView.ExplodeMode = PieExplodeMode.UseFilters;
+            ////myView.ExplodedDistancePercentage = 30;
+            ////myView.RuntimeExploding = true;
+
+            //// Customize the legend.
+            //chartControl1.Legend.Visibility = DefaultBoolean.True;
+
+
+            /**/
+            // Create a new pie series
+            Series series = new("Categories", ViewType.Pie);
+
+            // Sample data for categories and subcategories
+            var data = new Dictionary<string, Dictionary<string, double>>
             {
-                // Bind the series to data.
-                DataSource = DataPoint.GetDataPoints(
-                Database.GameModsPS3.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Game).Count,
-                Database.HomebrewPS3.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count,
-                Database.ResourcesPS3.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Resource).Count,
-                Database.PackagesCount(),
-                Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.PS3).ToList().Count),
-
-                ArgumentDataMember = "Argument"
+                { "PlayStation 3", new Dictionary<string, double>
+                    {
+                        { "Game Mods", Database.GameModsPS3.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Game).Count },
+                        { "Homebrew", Database.GameModsPS3.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count },
+                        { "Resources", Database.GameModsPS3.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Resource).Count },
+                        { "Packages", Database.PackagesCount() },
+                        //{ "Sub 1.5", 10 }
+                    }
+                },
+                { "PlayStation 4", new Dictionary<string, double>
+                    {
+                        { "Homebrew", 22 },
+                        { "Games", 28 },
+                        //{ "Sub 2.3", 20 },
+                        //{ "Sub 2.4", 18 },
+                        //{ "Sub 2.5", 12 }
+                    }
+                },
+                { "Xbox 360", new Dictionary<string, double>
+                    {
+                        { "Game Mods", 30 },
+                        { "Homebrew", 20 },
+                        //{ "Sub 3.3", 25 },
+                        //{ "Sub 3.4", 15 },
+                        //{ "Sub 3.5", 10 }
+                    }
+                }
             };
 
-            series1.ValueDataMembers.AddRange(["Value"]);
+            // Add data points to the series
+            foreach (var category in data)
+            {
+                foreach (var subCategory in category.Value)
+                {
+                    series.Points.Add(new SeriesPoint($"{category.Key} - {subCategory.Key}", subCategory.Value));
+                }
+            }
 
-            // Add the series to the chart.
-            chartControl1.Series.Add(series1);
+            // Add the series to the chart
+            chartControl1.Series.Add(series);
 
-            // Access diagram settings.
-            SimpleDiagram diagram = (SimpleDiagram)chartControl1.Diagram; diagram.Margins.All = 10;
+            // Customize the chart (optional)
+            //chartControl1.Titles.Add(new ChartTitle() { Text = "Categories and Subcategories Pie Chart" });
 
-            // Format the the series labels.
-            series1.Label.TextPattern = "{VP:p0} ({V:.##}M km²)";
+            // Customize legend
+            chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            chartControl1.Legend.AlignmentHorizontal = LegendAlignmentHorizontal.Center;
+            chartControl1.Legend.AlignmentVertical = LegendAlignmentVertical.BottomOutside;
 
-            // Format the series legend items.
-            series1.LegendTextPattern = "{A}";
-
-            // Adjust the position of series labels. 
-            ((PieSeriesLabel)series1.Label).Position = PieSeriesLabelPosition.TwoColumns;
-
-            // Detect overlapping of series labels.
-            ((PieSeriesLabel)series1.Label).ResolveOverlappingMode = ResolveOverlappingMode.Default;
-
-            // Access the view-type-specific options of the series.
-            PieSeriesView myView = (PieSeriesView)series1.View;
-
-            // Specify the pie rotation.
-            myView.Rotation = -60;
-
-            // Specify a data filter to explode points.
-            //myView.ExplodedPointsFilters.Add(new SeriesPointFilter(SeriesPointKey.Value_1, DataFilterCondition.GreaterThanOrEqual, 9));
-            //myView.ExplodedPointsFilters.Add(new SeriesPointFilter(SeriesPointKey.Argument, DataFilterCondition.NotEqual, "Others"));
-            //myView.ExplodeMode = PieExplodeMode.UseFilters;
-            //myView.ExplodedDistancePercentage = 30;
-            //myView.RuntimeExploding = true;
-
-            // Customize the legend.
-            chartControl1.Legend.Visibility = DefaultBoolean.True;
+            // Enable tooltips
+            series.Label.TextPattern = "{A}: {VP:p0}";
 
             LabelHeaderStatistics.Text = ResourceLanguage.GetString("STATISTICS");
 
@@ -1701,8 +1775,8 @@ namespace ArisenStudio.Forms.Windows
             //$"{Database.GamePatchesXbox.GetTotalCheats():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
 
             LabelStatsXbox360.Text =
-                $"{Database.GameModsXbox.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Game).Count:N0} {ResourceLanguage.GetString("LABEL_GAME_MODS")}\n" +
-                $"{Database.HomebrewXbox.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count:N0} {ResourceLanguage.GetString("LABEL_HOMEBREW")}\n" +
+                $"{Database.GameModsX360.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Game).Count:N0} {ResourceLanguage.GetString("LABEL_GAME_MODS")}\n" +
+                $"{Database.HomebrewX360.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count:N0} {ResourceLanguage.GetString("LABEL_HOMEBREW")}\n" +
                 $"{Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.XBOX360).ToList().Count:N0} {ResourceLanguage.GetString("LABEL_GAME_SAVES")}";
             //$"{Database.GamePatchesXbox.GetTotalCheats():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
 
@@ -2599,7 +2673,7 @@ namespace ArisenStudio.Forms.Windows
                 {
                     //ModItemData modItemData = installedModInfo.Platform == Platform.PS3
                     //    ? Database.ModsPS3(Database).GetModById(installedModInfo.Platform, installedModInfo.ModId)
-                    //    : Database.GameModsXboxXBOX.GetModById(installedModInfo.Platform, installedModInfo.ModId);
+                    //    : Database.GameModsX360XBOX.GetModById(installedModInfo.Platform, installedModInfo.ModId);
 
                     if (installedModInfo.IsCustom)
                     {
@@ -3790,7 +3864,7 @@ namespace ArisenStudio.Forms.Windows
                             //           ? $" ({MainWindow.Database.GamesXBOXTitleIds.GetTitleFromTitleId(folder.Name.Replace(DirectoryPathConsole, "").Replace(@"\", ""))})"
                             //           : "";
                             string gameTitle = Settings.AutoDetectGameTitles
-                                       ? $" ({Database.GamesTitleIdsXbox.GetTitleFromTitleId(folder.Name.Replace(DirectoryPathConsole, string.Empty).Replace(@"\", string.Empty))})"
+                                       ? $" ({Database.TitleIdsX360.GetTitleFromTitleId(folder.Name.Replace(DirectoryPathConsole, string.Empty).Replace(@"\", string.Empty))})"
                                        : string.Empty;
                             DataTableConsoleFiles.Rows.Add("folder",
                                                            ImageCollection.Images[1],
@@ -4641,7 +4715,7 @@ namespace ArisenStudio.Forms.Windows
                 LabelHeaderRecentlyUpdated.Text = ResourceLanguage.GetString("RECENTLY_UPDATED");
                 LabelHeaderAnnouncements.Text = ResourceLanguage.GetString("ANNOUNCEMENTS");
                 LabelHeaderLatestNews.Text = ResourceLanguage.GetString("LATEST_NEWS");
-                LabelHeaderChangeLog.Text = ResourceLanguage.GetString("CHANGE_LOG");
+                LabelHeaderWhatsNew.Text = ResourceLanguage.GetString("CHANGE_LOG");
                 ButtonChangeLogNext.Text = ResourceLanguage.GetString("LABEL_NEXT");
                 ButtonChangeLogPrevious.Text = ResourceLanguage.GetString("LABEL_PREVIOUS");
                 LoadStatistics();
@@ -4714,6 +4788,7 @@ namespace ArisenStudio.Forms.Windows
                 LabelSettingsAutoLoadDirectoryListings.Text = ResourceLanguage.GetString("AUTO_LOAD_DIRECTORY_LISTINGS");
                 LabelSettingsRememberLocalPath.Text = ResourceLanguage.GetString("REMEMBER_LOCAL_DIRECTORY_PATH");
                 LabelSettingsRememberConsolePath.Text = ResourceLanguage.GetString("REMEMBER_CONSOLE_DIRECTORY_PATH");
+                LabelSettingsForceInstallAnyRegions.Text = ResourceLanguage.GetString("LABEL_INSTALL_IGNORE_REGIONS");
 
                 // Settings: Files
                 LabelSettingsPackagesFilePathPS3.Text = ResourceLanguage.GetString("PACKAGES_INSTALL_FILE_PATH");
@@ -5029,7 +5104,7 @@ namespace ArisenStudio.Forms.Windows
                                 }
                                 else
                                 {
-                                    game = Database.GamesTitleIdsXbox.GetTitleFromTitleId(game);
+                                    game = Database.TitleIdsX360.GetTitleFromTitleId(game);
                                 }
                             }
                         }
@@ -5525,7 +5600,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void TileItemCustomAdd_ItemClick(object sender, TileItemEventArgs e)
         {
-            DialogExtensions.ShowNewCustomModsDialog(this);
+            DialogExtensions.ShowNewCustomModsDialog(this, new CustomItemData());
         }
 
         private void TileItemCustomEdit_ItemClick(object sender, TileItemEventArgs e)
@@ -5924,13 +5999,15 @@ namespace ArisenStudio.Forms.Windows
             if (FilterGameModsPS3ShowFavorites)
             {
                 FilterGameModsPS3ShowFavorites = false;
-                TileItemGameModsPS3ShowFavorites.Text = ResourceLanguage.GetString("LABEL_SHOW_FAVORITES");
+                //TileItemGameModsPS3ShowFavorites.Text = ResourceLanguage.GetString("LABEL_SHOW_FAVORITES");
+                TileItemGameModsPS3ShowFavorites.Elements[0].ImageOptions.SvgImage = Properties.Resources.icons8_heart;
                 SearchGameModsPS3();
             }
             else
             {
                 FilterGameModsPS3ShowFavorites = true;
-                TileItemGameModsPS3ShowFavorites.Text = ResourceLanguage.GetString("LABEL_HIDE_FAVORITES");
+                //TileItemGameModsPS3ShowFavorites.Text = ResourceLanguage.GetString("LABEL_HIDE_FAVORITES");
+                TileItemGameModsPS3ShowFavorites.Elements[0].ImageOptions.SvgImage = Properties.Resources.icons8_heart;
                 SearchGameModsPS3();
             }
         }
@@ -6430,11 +6507,6 @@ namespace ArisenStudio.Forms.Windows
         /// </summary>
         private string FilterHomebrewStatus { get; set; } = string.Empty;
 
-        /// <summary>
-        /// Get/set the selected mods info selected by the user.
-        /// </summary>
-        private static ModItemData SelectedHomebrewItem { get; set; }
-
         private void ComboBoxHomebrewFilterCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ComboBoxHomebrewFilterCategory.SelectedIndex == 0 | ComboBoxHomebrewFilterCategory.SelectedIndex == -1)
@@ -6519,7 +6591,7 @@ namespace ArisenStudio.Forms.Windows
 
         private static DataTable DataTableHomebrew { get; } = DataExtensions.CreateDataTable(
             [
-                new("ID", typeof(int)),
+                new("Id", typeof(int)),
                 new(ResourceLanguage.GetString("LABEL_CATEGORY"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_NAME"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_SYSTEM_TYPE"), typeof(string)),
@@ -7707,7 +7779,7 @@ namespace ArisenStudio.Forms.Windows
         {
             if (SelectedGameModXboxId != -1)
             {
-                var modItem = Database.GameModsXbox.GetModById(Platform.XBOX360, SelectedGameModXboxId);
+                var modItem = Database.GameModsX360.GetModById(Platform.XBOX360, SelectedGameModXboxId);
                 Settings.FavoriteMods.Add(new() { Platform = modItem.GetPlatform(), CategoryId = modItem.CategoryId, CategoryType = Database.CategoriesData.GetCategoryById(modItem.CategoryId).CategoryType, ModId = modItem.Id });
             }
         }
@@ -7716,7 +7788,7 @@ namespace ArisenStudio.Forms.Windows
         {
             if (SelectedGameModXboxId != -1)
             {
-                var modItem = Database.GameModsXbox.GetModById(Platform.XBOX360, SelectedGameModXboxId);
+                var modItem = Database.GameModsX360.GetModById(Platform.XBOX360, SelectedGameModXboxId);
                 ShowTransferModsDialog(this, TransferType.DownloadMods, modItem, modItem.DownloadFiles.Last());
             }
         }
@@ -7815,7 +7887,7 @@ namespace ArisenStudio.Forms.Windows
 
             foreach (Category category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Game == x.CategoryType).OrderBy(x => x.Title))
             {
-                if (Database.GameModsXbox.Library.Any(x => x.GetPlatform() == ConsoleProfile.Platform && x.CategoryId.Equals(category.Id)))
+                if (Database.GameModsX360.Library.Any(x => x.GetPlatform() == ConsoleProfile.Platform && x.CategoryId.Equals(category.Id)))
                 {
                     ComboBoxGameModsXboxFilterGame.Properties.Items.Add(category.Title);
                 }
@@ -7823,7 +7895,7 @@ namespace ArisenStudio.Forms.Windows
 
             List<string> ignoreValues = ["n/a", "-", "all regions", "all", "n", "a", ""];
 
-            foreach (ModItemData modItemData in Database.GameModsXbox.Library)
+            foreach (ModItemData modItemData in Database.GameModsX360.Library)
             {
                 foreach (string version in from string version in modItemData.Versions
                                            where !ComboBoxGameModsXboxFilterVersion.Properties.Items.Contains(version)
@@ -7844,7 +7916,7 @@ namespace ArisenStudio.Forms.Windows
 
             DataTableGameModsXbox.Rows.Clear();
 
-            foreach (ModItemData modItemData in Database.GameModsXbox.GetGameModsXbox(Database.CategoriesData, FilterGameModsXboxCategoryId, FilterGameModsXboxName, FilterGameModsXboxVersion, FilterGameModsXboxShowFavorites))
+            foreach (ModItemData modItemData in Database.GameModsX360.GetGameModsXbox(Database.CategoriesData, FilterGameModsXboxCategoryId, FilterGameModsXboxName, FilterGameModsXboxVersion, FilterGameModsXboxShowFavorites))
             {
                 bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id, false) != null;
 
@@ -7938,7 +8010,7 @@ namespace ArisenStudio.Forms.Windows
 
                 SelectedGameModXboxId = (int)GridViewGameModsXbox.GetRowCellValue(info.RowHandle, GridViewGameModsXbox.Columns[0]); ;
 
-                ModItemData selectedPlugin = Database.GameModsXbox.GetModById(Platform.XBOX360, SelectedGameModXboxId);
+                ModItemData selectedPlugin = Database.GameModsX360.GetModById(Platform.XBOX360, SelectedGameModXboxId);
                 ShowHomebrewDetails(Platform.XBOX360, selectedPlugin.Id);
             }
         }
@@ -7979,7 +8051,7 @@ namespace ArisenStudio.Forms.Windows
         {
             if (SelectedHomebrewXboxId != -1)
             {
-                var modItem = Database.HomebrewXbox.GetModById(Platform.XBOX360, SelectedHomebrewXboxId);
+                var modItem = Database.HomebrewX360.GetModById(Platform.XBOX360, SelectedHomebrewXboxId);
                 Settings.FavoriteMods.Add(new() { Platform = modItem.GetPlatform(), CategoryId = modItem.CategoryId, CategoryType = Database.CategoriesData.GetCategoryById(modItem.CategoryId).CategoryType, ModId = modItem.Id });
             }
         }
@@ -7988,7 +8060,7 @@ namespace ArisenStudio.Forms.Windows
         {
             if (SelectedHomebrewXboxId != -1)
             {
-                var modItem = Database.HomebrewXbox.GetModById(Platform.XBOX360, SelectedHomebrewXboxId);
+                var modItem = Database.HomebrewX360.GetModById(Platform.XBOX360, SelectedHomebrewXboxId);
                 ShowTransferModsDialog(this, TransferType.DownloadMods, modItem, modItem.DownloadFiles.Last());
             }
         }
@@ -8087,7 +8159,7 @@ namespace ArisenStudio.Forms.Windows
 
             foreach (Category category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Game == x.CategoryType).OrderBy(x => x.Title))
             {
-                if (Database.HomebrewXbox.Library.Any(x => x.GetPlatform() == ConsoleProfile.Platform && x.CategoryId.Equals(category.Id)))
+                if (Database.HomebrewX360.Library.Any(x => x.GetPlatform() == ConsoleProfile.Platform && x.CategoryId.Equals(category.Id)))
                 {
                     ComboBoxHomebrewXboxFilterCategory.Properties.Items.Add(category.Title);
                 }
@@ -8095,7 +8167,7 @@ namespace ArisenStudio.Forms.Windows
 
             List<string> ignoreValues = ["n/a", "-", "all regions", "all", "n", "a", ""];
 
-            foreach (ModItemData modItemData in Database.HomebrewXbox.Library)
+            foreach (ModItemData modItemData in Database.HomebrewX360.Library)
             {
                 foreach (string version in from string version in modItemData.Versions
                                            where !ComboBoxHomebrewXboxFilterVersion.Properties.Items.Contains(version)
@@ -8116,7 +8188,7 @@ namespace ArisenStudio.Forms.Windows
 
             DataTableHomebrewXbox.Rows.Clear();
 
-            foreach (ModItemData modItemData in Database.HomebrewXbox.GetHomebrewXbox(Database.CategoriesData, FilterHomebrewXboxCategoryId, FilterHomebrewXboxName, FilterHomebrewXboxVersion, FilterHomebrewXboxShowFavorites))
+            foreach (ModItemData modItemData in Database.HomebrewX360.GetHomebrewXbox(Database.CategoriesData, FilterHomebrewXboxCategoryId, FilterHomebrewXboxName, FilterHomebrewXboxVersion, FilterHomebrewXboxShowFavorites))
             {
                 bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItemData.CategoryId, modItemData.Id, false) != null;
 
@@ -8210,7 +8282,7 @@ namespace ArisenStudio.Forms.Windows
 
                 SelectedGameModXboxId = (int)GridViewHomebrewXbox.GetRowCellValue(info.RowHandle, GridViewHomebrewXbox.Columns[0]); ;
 
-                ModItemData selectedPlugin = Database.HomebrewXbox.GetModById(Platform.XBOX360, SelectedGameModXboxId);
+                ModItemData selectedPlugin = Database.HomebrewX360.GetModById(Platform.XBOX360, SelectedGameModXboxId);
                 ShowHomebrewDetails(Platform.XBOX360, selectedPlugin.Id);
             }
         }
@@ -9112,6 +9184,514 @@ namespace ArisenStudio.Forms.Windows
 
         #endregion
 
+        #region Game Cheats Page
+
+        private GameCheatItemData SelectedGameCheatsItem { get; set; }
+
+        private void TileItemGameCheatsSortBy_ItemClick(object sender, TileItemEventArgs e)
+        {
+            Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterGameCheatsSortOption, [ResourceLanguage.GetString("LABEL_GAME"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_REGION"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CHEATS")], FilterGameCheatsSortOrder);
+
+            if (sortOptions != null)
+            {
+                FilterGameCheatsSortOption = sortOptions.SortOption;
+                FilterGameCheatsSortOrder = sortOptions.SortOrder;
+                SearchGameCheats();
+            }
+        }
+
+        private void TileItemGameCheatsAddFavorite_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedGameCheatsItem != null)
+            {
+                //var gameCheatItem = Database.GameCheatsPS3.GameCheats.First(x => x.Game == );
+                //Settings.FavoriteMods.Add(new() { Platform = gameSaveItem.GetPlatform(), CategoryId = gameSaveItem.CategoryId, CategoryType = CategoryType.GameSave, ModId = gameSaveItem.Id });
+            }
+        }
+
+        private void TileItemGameCheatsDownload_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedGameCheatsItem != null)
+            {
+                //ShowTransferGameCheatsFileDialog(this, TransferType.DownloadGameSave, SelectedGameCheatsItem);
+            }
+        }
+
+        private void TileItemGameCheatsShowDetails_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedGameSaveItem != null)
+            {
+                ShowGameCheats(SelectedGameCheatsItem);
+            }
+        }
+
+        /// <summary>
+        /// Get/set the sort option column.
+        /// </summary>
+        private string FilterGameCheatsSortOption { get; set; } = ResourceLanguage.GetString("LABEL_GAME");
+
+        /// <summary>
+        /// Get/set the sort order.
+        /// </summary>
+        private ColumnSortOrder FilterGameCheatsSortOrder { get; set; } = ColumnSortOrder.Ascending;
+
+        /// <summary>
+        /// Get/set the category Id for filtering game saves.
+        /// </summary>
+        private string FilterGameCheatsCategoryId { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Get/set the file name for filtering game saves.
+        /// </summary>
+        private string FilterGameCheatsName { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Get/set the mod type for filtering game saves.
+        /// </summary>
+        private string FilterGameCheatsRegion { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Get/set the version for filtering game saves.
+        /// </summary>
+        private string FilterGameCheatsVersion { get; set; } = string.Empty;
+
+        private void ComboBoxGameCheatsFilterGame_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ComboBoxGameCheatsFilterGame.SelectedIndex == 0 | ComboBoxGameCheatsFilterGame.SelectedIndex == -1)
+            {
+                FilterGameCheatsCategoryId = string.Empty;
+            }
+            else
+            {
+                string selectedCategory = ComboBoxGameCheatsFilterGame.SelectedItem as string;
+                Category category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
+                FilterGameCheatsCategoryId = category.Id;
+            }
+
+            SearchGameCheats();
+        }
+
+        private void ComboBoxGameCheatsFilterRegion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterGameCheatsRegion = ComboBoxGameCheatsFilterRegion.SelectedIndex == 0 | ComboBoxGameCheatsFilterRegion.SelectedIndex == -1
+                ? string.Empty
+                : ComboBoxGameCheatsFilterRegion.SelectedItem as string;
+
+            SearchGameCheats();
+        }
+
+        private void ComboBoxGameCheatsFilterVersion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterGameCheatsVersion = ComboBoxGameCheatsFilterVersion.SelectedIndex == 0 | ComboBoxGameCheatsFilterVersion.SelectedIndex == -1
+                ? string.Empty
+                : ComboBoxGameCheatsFilterVersion.SelectedItem as string;
+
+            SearchGameCheats();
+        }
+
+        private static DataTable DataTableGameCheats { get; } = DataExtensions.CreateDataTable(
+            [
+                new(ResourceLanguage.GetString("LABEL_GAME"), typeof(string)),
+                new(ResourceLanguage.GetString("LABEL_REGION"), typeof(string)),
+                new(ResourceLanguage.GetString("LABEL_VERSION"), typeof(string)),
+                new(ResourceLanguage.GetString("LABEL_CHEATS"), typeof(string)),
+            ]);
+
+        private void LoadGameCheatsCategories()
+        {
+            ComboBoxGameCheatsFilterGame.Properties.Items.Clear();
+
+            ComboBoxGameCheatsFilterGame.Properties.Items.Add($"<{ResourceLanguage.GetString("ALL_GAMES")}>");
+
+            //foreach (Category category in Database.CategoriesData.Categories.FindAll(x => x.CategoryType == CategoryType.Game).OrderBy(x => x.Title))
+            //{
+            //    if (Database.GameCheatsPS3.GameCheats.Any(x => x.Game.Equals(category.Title)))
+            //    {
+            //        ComboBoxGameCheatsFilterGame.Properties.Items.Add(category.Title);
+            //    }
+            //}
+
+            foreach (GameCheatItemData game in Database.GameCheatsPS3.GameCheats.OrderBy(x => x.Game))
+            {
+                ComboBoxGameCheatsFilterGame.Properties.Items.Add(game.Game);
+            }
+
+            List<string> ignoreValues = ["n/a", "-", "all regions", "all", "n", "a"];
+
+            foreach (GameCheatItemData gameCheatItem in Database.GameCheatsPS3.GameCheats)
+            {
+                foreach (string region in from string region in gameCheatItem.Region.Split(' ')
+                                          where !ComboBoxGameCheatsFilterRegion.Properties.Items.Contains(region)
+                                          where !ignoreValues.Exists(x => x.EqualsIgnoreCase(region))
+                                          select region)
+                {
+                    ComboBoxGameCheatsFilterRegion.Properties.Items.Add(region);
+                }
+
+                foreach (string version in from string version in gameCheatItem.Version.Split('/')
+                                           where !ComboBoxGameCheatsFilterVersion.Properties.Items.Contains(version)
+                                           where !ignoreValues.Exists(x => x.EqualsIgnoreCase(version))
+                                           select version)
+                {
+                    ComboBoxGameCheatsFilterVersion.Properties.Items.Add(version);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Search game cheats.
+        /// </summary>
+        public void SearchGameCheats()
+        {
+            LoadGameCheatsCategories();
+
+            GridViewGameCheats.ShowLoadingPanel();
+
+            DataTableGameCheats.Rows.Clear();
+
+            foreach (GameCheatItemData gameCheatItem in Database.GameCheatsPS3.GameCheats.FindAll(x => x.Game == FilterGameCheatsName && x.Region == FilterGameCheatsRegion && x.Version == FilterGameCheatsVersion))
+            {
+                Category category = Database.CategoriesData.GetCategoryById(gameCheatItem.Game);
+
+                DataTableGameCheats.Rows.Add(gameCheatItem.Game,
+                                             gameCheatItem.Region,
+                                             gameCheatItem.Version,
+                                             gameCheatItem.Cheats.Count() + " Cheats");
+            }
+
+            GridControlGameCheats.DataSource = DataTableGameCheats;
+
+            //GridViewGameCheats.Columns[0].Visible = false;
+
+            GridViewGameCheats.Columns[1].MinWidth = 112;
+            GridViewGameCheats.Columns[1].MaxWidth = 112;
+
+            GridViewGameCheats.Columns[2].MinWidth = 112;
+            GridViewGameCheats.Columns[2].MaxWidth = 112;
+
+            GridViewGameCheats.Columns[3].MinWidth = 92;
+            GridViewGameCheats.Columns[3].MaxWidth = 92;
+
+            ComboBoxGameCheatsFilterRegion.SelectedIndexChanged -= ComboBoxGameCheatsFilterRegion_SelectedIndexChanged;
+            ComboBoxGameCheatsFilterRegion.SelectedIndex = string.IsNullOrEmpty(FilterGameCheatsRegion) ? -1 : ComboBoxGameCheatsFilterRegion.Properties.Items.IndexOf(FilterGameCheatsRegion);
+            ComboBoxGameCheatsFilterRegion.SelectedIndexChanged += ComboBoxGameCheatsFilterRegion_SelectedIndexChanged;
+
+            ComboBoxGameCheatsFilterVersion.SelectedIndexChanged -= ComboBoxGameCheatsFilterVersion_SelectedIndexChanged;
+            ComboBoxGameCheatsFilterVersion.SelectedIndex = string.IsNullOrEmpty(FilterGameCheatsVersion) ? -1 : ComboBoxGameCheatsFilterVersion.Properties.Items.IndexOf(FilterGameCheatsVersion);
+            ComboBoxGameCheatsFilterVersion.SelectedIndexChanged += ComboBoxGameCheatsFilterVersion_SelectedIndexChanged;
+
+            GridViewGameCheats.SortInfo.ClearAndAddRange([
+                new GridColumnSortInfo(GridViewGameCheats.Columns[FilterGameCheatsSortOption], FilterGameCheatsSortOrder),
+            ]);
+
+            GridViewGameCheats.HideLoadingPanel();
+
+            if (GridViewGameCheats.RowCount > 0)
+            {
+                GridViewGameCheats.FocusedRowHandle = 0;
+            }
+        }
+
+        private void GridViewGameCheats_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            if (e.FocusedRowHandle != -1)
+            {
+                SelectedGameCheatsItem = Database.GameCheats.GetModById(Platform, (int)GridViewGameCheats.GetRowCellValue(e.FocusedRowHandle, GridViewGames.Columns[0]));
+            }
+
+            TileItemGameCheatsDownload.Enabled = e.FocusedRowHandle != -1;
+            TileItemGameCheatsShowDetails.Enabled = e.FocusedRowHandle != -1;
+        }
+
+        private void GridViewGameCheats_RowClick(object sender, RowClickEventArgs e)
+        {
+            DXMouseEventArgs ea = e;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                SelectedGameCheatsItem = Database.GameCheats.GetModById(Platform, (int)GridViewGameCheats.GetRowCellValue(e.RowHandle, GridViewGames.Columns[0]));
+            }
+
+            TileItemGameCheatsDownload.Enabled = SelectedGameCheatsItem != null;
+            TileItemGameCheatsShowDetails.Enabled = SelectedGameCheatsItem != null;
+        }
+
+        private void GridViewGameCheats_DoubleClick(object sender, EventArgs e)
+        {
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                //string colCaption = info.Column == null ? "N/A" : info.Column.GetCaption();
+                //MessageBox.Show(string.Format("DoubleClick on row: {0}, column: {1}.", info.RowHandle, colCaption));
+
+                //int modId = (int)GridViewGames.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]);
+                //SelectedGameModXboxId = modId;
+
+                SelectedGameCheatsItem = Database.GameCheats.GetModById(Platform, (int)GridViewGameCheats.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]));
+
+                ShowGameCheats(SelectedGameCheatsItem);
+            }
+        }
+
+        #endregion
+
+        #region Trainers Page
+
+        private GameCheatItemData SelectedTrainersItem { get; set; }
+
+        private void TileItemTrainersSortBy_ItemClick(object sender, TileItemEventArgs e)
+        {
+            Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterTrainersSortOption, [ResourceLanguage.GetString("LABEL_GAME"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_REGION"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CHEATS")], FilterTrainersSortOrder);
+
+            if (sortOptions != null)
+            {
+                FilterTrainersSortOption = sortOptions.SortOption;
+                FilterTrainersSortOrder = sortOptions.SortOrder;
+                SearchTrainers();
+            }
+        }
+
+        private void TileItemTrainersAddFavorite_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedTrainersItem != null)
+            {
+                //var gameCheatItem = Database.TrainersPS3.Trainers.First(x => x.Game == );
+                //Settings.FavoriteMods.Add(new() { Platform = gameSaveItem.GetPlatform(), CategoryId = gameSaveItem.CategoryId, CategoryType = CategoryType.GameSave, ModId = gameSaveItem.Id });
+            }
+        }
+
+        private void TileItemTrainersDownload_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedTrainersItem != null)
+            {
+                //ShowTransferTrainersFileDialog(this, TransferType.DownloadGameSave, SelectedTrainersItem);
+            }
+        }
+
+        private void TileItemTrainersShowDetails_ItemClick(object sender, TileItemEventArgs e)
+        {
+            if (SelectedGameSaveItem != null)
+            {
+                ShowTrainers(SelectedTrainersItem);
+            }
+        }
+
+        /// <summary>
+        /// Get/set the sort option column.
+        /// </summary>
+        private string FilterTrainersSortOption { get; set; } = ResourceLanguage.GetString("LABEL_GAME");
+
+        /// <summary>
+        /// Get/set the sort order.
+        /// </summary>
+        private ColumnSortOrder FilterTrainersSortOrder { get; set; } = ColumnSortOrder.Ascending;
+
+        /// <summary>
+        /// Get/set the category Id for filtering game saves.
+        /// </summary>
+        private string FilterTrainersCategoryId { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Get/set the file name for filtering game saves.
+        /// </summary>
+        private string FilterTrainersName { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Get/set the mod type for filtering game saves.
+        /// </summary>
+        private string FilterTrainersRegion { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Get/set the version for filtering game saves.
+        /// </summary>
+        private string FilterTrainersVersion { get; set; } = string.Empty;
+
+        private void ComboBoxTrainersFilterGame_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ComboBoxTrainersFilterGame.SelectedIndex == 0 | ComboBoxTrainersFilterGame.SelectedIndex == -1)
+            {
+                FilterTrainersCategoryId = string.Empty;
+            }
+            else
+            {
+                string selectedCategory = ComboBoxTrainersFilterGame.SelectedItem as string;
+                Category category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
+                FilterTrainersCategoryId = category.Id;
+            }
+
+            SearchTrainers();
+        }
+
+        private void ComboBoxTrainersFilterRegion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterTrainersRegion = ComboBoxTrainersFilterRegion.SelectedIndex == 0 | ComboBoxTrainersFilterRegion.SelectedIndex == -1
+                ? string.Empty
+                : ComboBoxTrainersFilterRegion.SelectedItem as string;
+
+            SearchTrainers();
+        }
+
+        private void ComboBoxTrainersFilterVersion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterTrainersVersion = ComboBoxTrainersFilterVersion.SelectedIndex == 0 | ComboBoxTrainersFilterVersion.SelectedIndex == -1
+                ? string.Empty
+                : ComboBoxTrainersFilterVersion.SelectedItem as string;
+
+            SearchTrainers();
+        }
+
+        private static DataTable DataTableTrainers { get; } = DataExtensions.CreateDataTable(
+            [
+                new(ResourceLanguage.GetString("LABEL_GAME"), typeof(string)),
+                new(ResourceLanguage.GetString("LABEL_REGION"), typeof(string)),
+                new(ResourceLanguage.GetString("LABEL_VERSION"), typeof(string)),
+                new(ResourceLanguage.GetString("LABEL_CHEATS"), typeof(string)),
+            ]);
+
+        private void LoadTrainersCategories()
+        {
+            ComboBoxTrainersFilterGame.Properties.Items.Clear();
+
+            ComboBoxTrainersFilterGame.Properties.Items.Add($"<{ResourceLanguage.GetString("ALL_GAMES")}>");
+
+            //foreach (Category category in Database.CategoriesData.Categories.FindAll(x => x.CategoryType == CategoryType.Game).OrderBy(x => x.Title))
+            //{
+            //    if (Database.TrainersPS3.Trainers.Any(x => x.Game.Equals(category.Title)))
+            //    {
+            //        ComboBoxTrainersFilterGame.Properties.Items.Add(category.Title);
+            //    }
+            //}
+
+            foreach (GameCheatItemData game in Database.TrainersPS3.Trainers.OrderBy(x => x.Game))
+            {
+                ComboBoxTrainersFilterGame.Properties.Items.Add(game.Game);
+            }
+
+            List<string> ignoreValues = ["n/a", "-", "all regions", "all", "n", "a"];
+
+            foreach (GameCheatItemData gameCheatItem in Database.TrainersPS3.Trainers)
+            {
+                foreach (string region in from string region in gameCheatItem.Region.Split(' ')
+                                          where !ComboBoxTrainersFilterRegion.Properties.Items.Contains(region)
+                                          where !ignoreValues.Exists(x => x.EqualsIgnoreCase(region))
+                                          select region)
+                {
+                    ComboBoxTrainersFilterRegion.Properties.Items.Add(region);
+                }
+
+                foreach (string version in from string version in gameCheatItem.Version.Split('/')
+                                           where !ComboBoxTrainersFilterVersion.Properties.Items.Contains(version)
+                                           where !ignoreValues.Exists(x => x.EqualsIgnoreCase(version))
+                                           select version)
+                {
+                    ComboBoxTrainersFilterVersion.Properties.Items.Add(version);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Search game cheats.
+        /// </summary>
+        public void SearchTrainers()
+        {
+            LoadTrainersCategories();
+
+            GridViewTrainers.ShowLoadingPanel();
+
+            DataTableTrainers.Rows.Clear();
+
+            foreach (GameCheatItemData gameCheatItem in Database.TrainersPS3.Trainers.FindAll(x => x.Game == FilterTrainersName && x.Region == FilterTrainersRegion && x.Version == FilterTrainersVersion))
+            {
+                Category category = Database.CategoriesData.GetCategoryById(gameCheatItem.Game);
+
+                DataTableTrainers.Rows.Add(gameCheatItem.Game,
+                                             gameCheatItem.Region,
+                                             gameCheatItem.Version,
+                                             gameCheatItem.Cheats.Count() + " Cheats");
+            }
+
+            GridControlTrainers.DataSource = DataTableTrainers;
+
+            //GridViewTrainers.Columns[0].Visible = false;
+
+            GridViewTrainers.Columns[1].MinWidth = 112;
+            GridViewTrainers.Columns[1].MaxWidth = 112;
+
+            GridViewTrainers.Columns[2].MinWidth = 112;
+            GridViewTrainers.Columns[2].MaxWidth = 112;
+
+            GridViewTrainers.Columns[3].MinWidth = 92;
+            GridViewTrainers.Columns[3].MaxWidth = 92;
+
+            ComboBoxTrainersFilterRegion.SelectedIndexChanged -= ComboBoxTrainersFilterRegion_SelectedIndexChanged;
+            ComboBoxTrainersFilterRegion.SelectedIndex = string.IsNullOrEmpty(FilterTrainersRegion) ? -1 : ComboBoxTrainersFilterRegion.Properties.Items.IndexOf(FilterTrainersRegion);
+            ComboBoxTrainersFilterRegion.SelectedIndexChanged += ComboBoxTrainersFilterRegion_SelectedIndexChanged;
+
+            ComboBoxTrainersFilterVersion.SelectedIndexChanged -= ComboBoxTrainersFilterVersion_SelectedIndexChanged;
+            ComboBoxTrainersFilterVersion.SelectedIndex = string.IsNullOrEmpty(FilterTrainersVersion) ? -1 : ComboBoxTrainersFilterVersion.Properties.Items.IndexOf(FilterTrainersVersion);
+            ComboBoxTrainersFilterVersion.SelectedIndexChanged += ComboBoxTrainersFilterVersion_SelectedIndexChanged;
+
+            GridViewTrainers.SortInfo.ClearAndAddRange([
+                new GridColumnSortInfo(GridViewTrainers.Columns[FilterTrainersSortOption], FilterTrainersSortOrder),
+            ]);
+
+            GridViewTrainers.HideLoadingPanel();
+
+            if (GridViewTrainers.RowCount > 0)
+            {
+                GridViewTrainers.FocusedRowHandle = 0;
+            }
+        }
+
+        private void GridViewTrainers_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            if (e.FocusedRowHandle != -1)
+            {
+                SelectedTrainersItem = Database.Trainers.GetModById(Platform, (int)GridViewTrainers.GetRowCellValue(e.FocusedRowHandle, GridViewGames.Columns[0]));
+            }
+
+            TileItemTrainersDownload.Enabled = e.FocusedRowHandle != -1;
+            TileItemTrainersShowDetails.Enabled = e.FocusedRowHandle != -1;
+        }
+
+        private void GridViewTrainers_RowClick(object sender, RowClickEventArgs e)
+        {
+            DXMouseEventArgs ea = e;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                SelectedTrainersItem = Database.Trainers.GetModById(Platform, (int)GridViewTrainers.GetRowCellValue(e.RowHandle, GridViewGames.Columns[0]));
+            }
+
+            TileItemTrainersDownload.Enabled = SelectedTrainersItem != null;
+            TileItemTrainersShowDetails.Enabled = SelectedTrainersItem != null;
+        }
+
+        private void GridViewTrainers_DoubleClick(object sender, EventArgs e)
+        {
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow)
+            {
+                //string colCaption = info.Column == null ? "N/A" : info.Column.GetCaption();
+                //MessageBox.Show(string.Format("DoubleClick on row: {0}, column: {1}.", info.RowHandle, colCaption));
+
+                //int modId = (int)GridViewGames.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]);
+                //SelectedGameModXboxId = modId;
+
+                SelectedTrainersItem = Database.Trainers.GetModById(Platform, (int)GridViewTrainers.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]));
+
+                ShowTrainers(SelectedTrainersItem);
+            }
+        }
+
+        #endregion
+
         #region Show Item Details
 
         /// <summary>
@@ -9215,7 +9795,7 @@ namespace ArisenStudio.Forms.Windows
             }
             else
             {
-                modItemData = Database.GameModsXbox.GetModById(platform, modId);
+                modItemData = Database.GameModsX360.GetModById(platform, modId);
             }
 
             switch (modItemData)
@@ -9241,7 +9821,7 @@ namespace ArisenStudio.Forms.Windows
             }
             if (platform == Platform.XBOX360)
             {
-                modItemData = Database.HomebrewXbox.GetModById(platform, modId);
+                modItemData = Database.HomebrewX360.GetModById(platform, modId);
             }
             else
             {
@@ -9331,7 +9911,7 @@ namespace ArisenStudio.Forms.Windows
         }
 
         /// <summary>
-        /// Show the details dialog.
+        /// Show the game cheats dialog for the selected game.
         /// </summary>
         /// <param name="gameCheatItem"> Specifies the <see cref="GameCheatItemData" /> </param>
         private void ShowGameCheats(GameCheatItemData gameCheatItem)
@@ -9342,10 +9922,19 @@ namespace ArisenStudio.Forms.Windows
         /// <summary>
         /// Show the details dialog.
         /// </summary>
-        /// <param name="gameCheatItem"> Specifies the <see cref="GameCheatItemData" /> </param>
+        /// <param name="gamePatchItem"> Specifies the <see cref="GamePatchItemData" /> </param>
         private void ShowGamePatches(GamePatchItemData gamePatchItem)
         {
             DialogExtensions.ShowItemGamePatchesDialog(this, gamePatchItem);
+        }
+
+        /// <summary>
+        /// Show the details dialog.
+        /// </summary>
+        /// <param name="trainerItem"> Specifies the <see cref="TrainerItem" /> </param>
+        private void ShowGameTrainers(TrainerItem trainerItem)
+        {
+            DialogExtensions.ShowGameTrainers(this, trainerItem);
         }
 
         #endregion
@@ -9631,13 +10220,11 @@ namespace ArisenStudio.Forms.Windows
         private void EnableConsoleActions()
         {
 #if !DEBUG
-            NavigationItemGameMods.Visible = Platform == Platform.PS3 | Platform == Platform.XBOX360;
-            NavigationItemHomebrew.Visible = Platform == Platform.PS3 | Platform == Platform.XBOX360;
+            NavigationItemGameMods.Visible = Platform == Platform.PS3 | Platform == Platform.PS4 | Platform == Platform.XBOX360;
+            NavigationItemHomebrew.Visible = Platform == Platform.PS3 | Platform == Platform.PS4 | Platform == Platform.XBOX360;
             NavigationItemResources.Visible = Platform == Platform.PS3;
             NavigationItemPackages.Visible = Platform == Platform.PS3;
-            NavigationItemApplications.Visible = Platform == Platform.PS4;
             NavigationItemGames.Visible = Platform == Platform.PS4;
-            NavigationItemPlugins.Visible = Platform == Platform.XBOX360;
             //NavigationItemGameCheats.Visible = false;
 
             ButtonScanXboxConsoles.Visibility =
@@ -9696,7 +10283,7 @@ namespace ArisenStudio.Forms.Windows
                 Platform == Platform.XBOX360
                     ? BarItemVisibility.Always
                     : BarItemVisibility.Never;
-            ButtonToolsXboxGameSaveResigner.Enabled = IsConsoleConnected && Platform == Platform.XBOX360;
+            ButtonToolsXboxGameSaveResigner.Enabled = Platform == Platform.XBOX360;
 
             ButtonToolsXboxGamesLauncher.Visibility =
                 Platform == Platform.XBOX360
@@ -9816,7 +10403,7 @@ namespace ArisenStudio.Forms.Windows
                     }
                     else
                     {
-                        game = Database.GamesTitleIdsXbox.GetTitleFromTitleId(game);
+                        game = Database.TitleIdsX360.GetTitleFromTitleId(game);
                     }
 
                     StatusLabelCurrentGame.Caption = game;
@@ -10097,6 +10684,11 @@ namespace ArisenStudio.Forms.Windows
             //    cellViewInfo.CellValueRect.X = indent;
             //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
             //}
+        }
+
+        private void ButtonToolsPsGameCheats_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogExtensions.ShowGameRegionsDialog(this);
         }
     }
 }

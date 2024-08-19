@@ -7,7 +7,6 @@ using ArisenStudio.Forms.Windows;
 using ArisenStudio.Io;
 using ArisenStudio.Models.Resources;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Resources;
@@ -76,6 +75,13 @@ namespace ArisenStudio.Forms.Tools.PS3
         {
             try
             {
+                if (!FtpClient.FileExists(ConsoleBootPluginsFilePath))
+                {
+                    Program.Log.Error("Unable to load the boot_plugins.txt file. It doesn't exist on the console.");
+                    XtraMessageBox.Show(this, $"Unable to find the boot_plugins.txt file on your console.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Close();
+                }
+
                 Directory.CreateDirectory(LocalBootPluginsFileBackupDirectory);
                 Directory.CreateDirectory(LocalBootPluginsFileDirectory);
 

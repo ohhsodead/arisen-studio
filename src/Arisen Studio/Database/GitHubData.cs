@@ -1,4 +1,5 @@
 ﻿using ArisenStudio.Constants;
+using ArisenStudio.Extensions;
 using ArisenStudio.Models.Dashboard;
 using ArisenStudio.Models.Database;
 using Newtonsoft.Json;
@@ -11,6 +12,21 @@ namespace ArisenStudio.Database
 {
     public class GitHubData
     {
+        /// <summary>
+        /// Contains announcements.
+        /// </summary>
+        public AnnouncementsData Announcements { get; private set; }
+
+        /// <summary>
+        /// Contains favorite mods.
+        /// </summary>
+        public FavoriteGamesData FavoriteGames { get; private set; }
+
+        /// <summary>
+        /// Contains favorite mods.
+        /// </summary>
+        public FavoriteModsData FavoriteMods { get; private set; }
+
         /// <summary>
         /// Contains the Categories from the database.
         /// </summary>
@@ -59,12 +75,12 @@ namespace ArisenStudio.Database
         /// <summary>
         /// Contains the mods from the Xbox database.
         /// </summary>
-        public ModsData GameModsXbox { get; private set; }
+        public ModsData GameModsX360 { get; private set; }
 
         /// <summary>
         /// Contains the mods from the Xbox database.
         /// </summary>
-        public ModsData HomebrewXbox { get; private set; }
+        public ModsData HomebrewX360 { get; private set; }
 
         /// <summary>
         /// Contains the homebrew from the PS4 database.
@@ -84,45 +100,32 @@ namespace ArisenStudio.Database
         /// <summary>
         /// Contains the game cheats for Xbox 360.
         /// </summary>
-        public GamePatchesData GamePatchesXbox { get; private set; }
+        public GamePatchesData GamePatchesX360 { get; private set; }
 
         /// <summary>
         /// Contains the Xbox 360 Games Title IDs.
         /// </summary>
-        public GamesTitleIdsDataXbox GamesTitleIdsXbox { get; private set; }
-
-        /// <summary>
-        /// Contains announcements.
-        /// </summary>
-        public AnnouncementsData Announcements { get; private set; }
-
-        /// <summary>
-        /// Contains favorite mods.
-        /// </summary>
-        public FavoriteGamesData FavoriteGames { get; private set; }
-
-        /// <summary>
-        /// Contains favorite mods.
-        /// </summary>
-        public FavoriteModsData FavoriteMods { get; private set; }
+        public TitleIdsDataXbox TitleIdsX360 { get; private set; }
 
         /// <summary>
         /// Stores database files in memory and then locally.
         /// </summary>
         private readonly SimpleCache<CategoriesData> _categoriesCache;
-        private readonly SimpleCache<ModsData> _gameModsCache;
-        private readonly SimpleCache<ModsData> _homebrewCache;
-        private readonly SimpleCache<ModsData> _resourcesCache;
-        private readonly SimpleCache<ModsData> _pluginsCache;
-        private readonly SimpleCache<AppsData> _appsCache;
+        private readonly SimpleCache<ModsData> _gameModsCachePS3;
+        private readonly SimpleCache<ModsData> _homebrewCachePS3;
+        private readonly SimpleCache<ModsData> _resourcesCachePS3;
+        private readonly SimpleCache<ModsData> _gameModsCacheX360;
+        private readonly SimpleCache<ModsData> _homebrewCacheX360;
+        private readonly SimpleCache<TrainersData> _trainersCacheX360;
+        private readonly SimpleCache<AppsData> _homebrewCachePS4;
+        private readonly SimpleCache<PackagesData> _gamePackagesCachePS3;
+        private readonly SimpleCache<PackagesData> _demoPackagesCachePS3;
+        private readonly SimpleCache<PackagesData> _avatarPackagesCachePS3;
+        private readonly SimpleCache<PackagesData> _dlcPackagesCachePS3;
+        private readonly SimpleCache<PackagesData> _themePackagesCachePS3;
+        private readonly SimpleCache<GameCheatsData> _gameCheatsCachePS3;
         private readonly SimpleCache<GameSavesData> _gameSavesCache;
-        private readonly SimpleCache<PackagesData> _gamePackagesCache;
-        private readonly SimpleCache<PackagesData> _demoPackagesCache;
-        private readonly SimpleCache<PackagesData> _avatarPackagesCache;
-        private readonly SimpleCache<PackagesData> _dlcPackagesCache;
-        private readonly SimpleCache<PackagesData> _themePackagesCache;
-        private readonly SimpleCache<GameCheatsData> _gameCheatsCache;
-        private readonly SimpleCache<GamesTitleIdsDataXbox> _gameTitleIdsCache;
+        private readonly SimpleCache<TitleIdsDataXbox> _titleIdsCacheX360;
         private readonly SimpleCache<FavoriteGamesData> _favoriteGamesCache;
         private readonly SimpleCache<FavoriteModsData> _favoriteModsCache;
 
@@ -133,22 +136,24 @@ namespace ArisenStudio.Database
         /// </summary>
         public GitHubData()
         {
-            _categoriesCache = new SimpleCache<CategoriesData>(TimeSpan.FromDays(7), "categoriesCache.json");
-            _gameModsCache = new SimpleCache<ModsData>(TimeSpan.FromDays(7), "gameModsCache.json");
-            _homebrewCache = new SimpleCache<ModsData>(TimeSpan.FromDays(7), "homebrewCache.json");
-            _resourcesCache = new SimpleCache<ModsData>(TimeSpan.FromDays(7), "resourcesPlugins.json");
-            _pluginsCache = new SimpleCache<ModsData>(TimeSpan.FromDays(7), "pluginsCache.json");
-            _appsCache = new SimpleCache<AppsData>(TimeSpan.FromDays(7), "appsCache.json");
-            _gameSavesCache = new SimpleCache<GameSavesData>(TimeSpan.FromDays(7), "gameSavesCache.json");
-            _gamePackagesCache = new SimpleCache<PackagesData>(TimeSpan.FromDays(30), "gamePackageCache.json");
-            _demoPackagesCache = new SimpleCache<PackagesData>(TimeSpan.FromDays(30), "demoPackageCache.json");
-            _avatarPackagesCache = new SimpleCache<PackagesData>(TimeSpan.FromDays(30), "avatarPackageCache.json");
-            _dlcPackagesCache = new SimpleCache<PackagesData>(TimeSpan.FromDays(30), "dlcPackageCache.json");
-            _themePackagesCache = new SimpleCache<PackagesData>(TimeSpan.FromDays(30), "themePackageCache.json");
-            _gameCheatsCache = new SimpleCache<GameCheatsData>(TimeSpan.FromDays(30), "gameCheatsCache.json");
-            _gameTitleIdsCache = new SimpleCache<GamesTitleIdsDataXbox>(TimeSpan.FromDays(30), "gameTitleIdsCache.json");
-            _favoriteGamesCache = new SimpleCache<FavoriteGamesData>(TimeSpan.FromDays(30), "favoriteGamesCache.json");
-            _favoriteModsCache = new SimpleCache<FavoriteModsData>(TimeSpan.FromDays(30), "favoriteModsCache.json");
+            _favoriteGamesCache = new SimpleCache<FavoriteGamesData>("favoriteGamesCache.json");
+            _favoriteModsCache = new SimpleCache<FavoriteModsData>("favoriteModsCache.json");
+            _categoriesCache = new SimpleCache<CategoriesData>("categoriesCache.json");
+            _gameModsCachePS3 = new SimpleCache<ModsData>("gameModsCachePS3.json");
+            _homebrewCachePS3 = new SimpleCache<ModsData>("homebrewCachePS3.json");
+            _resourcesCachePS3 = new SimpleCache<ModsData>("resourcesCachePS3.json");
+            _gameCheatsCachePS3 = new SimpleCache<GameCheatsData>("gameCheatsCachePS3.json");
+            _gameModsCacheX360 = new SimpleCache<ModsData>("gameModsX360.json");
+            _homebrewCacheX360 = new SimpleCache<ModsData>("homebrewX360.json");
+            _trainersCacheX360 = new SimpleCache<TrainersData>("trainersCacheX360.json");
+            _homebrewCachePS4 = new SimpleCache<AppsData>("homebrewPS4.json");
+            _gamePackagesCachePS3 = new SimpleCache<PackagesData>("gamePackageCachePS3.json");
+            _demoPackagesCachePS3 = new SimpleCache<PackagesData>("demoPackageCachePS3.json");
+            _avatarPackagesCachePS3 = new SimpleCache<PackagesData>("avatarPackageCachePS3.json");
+            _dlcPackagesCachePS3 = new SimpleCache<PackagesData>("dlcPackageCachePS3.json");
+            _themePackagesCachePS3 = new SimpleCache<PackagesData>("themePackageCachePS3.json");
+            _gameSavesCache = new SimpleCache<GameSavesData>("gameSavesCache.json");
+            _titleIdsCacheX360 = new SimpleCache<TitleIdsDataXbox>("titleIdsCacheX360.json");
 
             _httpClient = new HttpClient();
         }
@@ -161,16 +166,36 @@ namespace ArisenStudio.Database
         /// <param name="cacheKey"></param>
         /// <param name="fetchFunction"></param>
         /// <returns></returns>
-        private async Task<T> GetFromCacheOrFetchAsync<T>(SimpleCache<T> cache, string cacheKey, Func<Task<T>> fetchFunction)
+        public async Task<T> GetFromCacheOrFetchAsync<T>(SimpleCache<T> cache, string cacheKey, string filePath, Func<Task<T>> fetchFunction)
         {
-            if (cache.TryGetValue(cacheKey, out var cachedData))
+            // Use a different name for the variable in the cache check scope
+            if (cache.TryGetValue(cacheKey, out var cachedData, out var cachedSha))
             {
-                return cachedData;
+                var cacheSha = cachedSha; // Renamed variable to avoid conflict
+                var currentSha = await GetLatestCommitShaForFileAsync(filePath); // Renamed variable for the latest SHA
+                if (cacheSha == currentSha)
+                {
+                    return cachedData;
+                }
             }
 
             var data = await fetchFunction();
-            cache.Add(cacheKey, data);
+            var newSha = await GetLatestCommitShaForFileAsync(filePath); // Renamed variable for new SHA
+            cache.Add(cacheKey, data, newSha);
             return data;
+        }
+
+        private async Task<string> GetLatestCommitShaForFileAsync(string filePath)
+        {
+            var response = await _httpClient.GetStringAsync($"https://api.github.com/repos/ohhsodead/arisen-studio-database/commits?path={filePath}");
+            var commits = JsonConvert.DeserializeObject<GitHubCommit[]>(response);
+            return commits.FirstOrDefault()?.Sha ?? string.Empty;
+        }
+
+        private class GitHubCommit
+        {
+            [JsonProperty("sha")]
+            public string Sha { get; set; }
         }
 
         /// <summary>
@@ -184,23 +209,23 @@ namespace ArisenStudio.Database
             GitHubData data = new()
             {
                 Announcements = await fetcher.GetAnnouncements(),
-                CategoriesData = await fetcher.GetCategories(),
-                GameModsPS3 = await fetcher.GetGameMods(),
-                HomebrewPS3 = await fetcher.GetHomebrew(),
-                ResourcesPS3 = await fetcher.GetResources(),
-                GameModsXbox = await fetcher.GetGameModsXbox(),
-                HomebrewXbox = await fetcher.GetHomebrewXbox(),
-                HomebrewPS4 = await fetcher.GetHomebrewPS4(),
-                GameSaves = await fetcher.GetGameSaves(),
-                GamesPS3 = await fetcher.GetGamesPackages(),
-                DemosPS3 = await fetcher.GetDemosPackages(),
-                DLCsPS3 = await fetcher.GetDLCsPackages(),
-                AvatarsPS3 = await fetcher.GetAvatarsPackages(),
-                ThemesPS3 = await fetcher.GetThemePackages(),
-                GameCheatsPS3 = await fetcher.GetGameCheats(),
-                GamesTitleIdsXbox = await fetcher.GetGamesTitleIds(),
                 FavoriteGames = await fetcher.GetFavoriteGames(),
-                FavoriteMods = await fetcher.GetFavoriteMods()
+                FavoriteMods = await fetcher.GetFavoriteMods(),
+                CategoriesData = await fetcher.GetCategories(),
+                GameModsPS3 = await fetcher.GetGameModsPS3(),
+                HomebrewPS3 = await fetcher.GetHomebrewPS3(),
+                ResourcesPS3 = await fetcher.GetResourcesPS3(),
+                GameModsX360 = await fetcher.GetGameModsX360(),
+                HomebrewX360 = await fetcher.GetHomebrewX360(),
+                HomebrewPS4 = await fetcher.GetHomebrewPS4(),
+                GamesPS3 = await fetcher.GetGamesPkgsPS3(),
+                DemosPS3 = await fetcher.GetDemosPkgsPS3(),
+                DLCsPS3 = await fetcher.GetDLCsPkgsPS3(),
+                AvatarsPS3 = await fetcher.GetAvatarsPkgsPS3(),
+                ThemesPS3 = await fetcher.GetThemesPkgsPS3(),
+                GameSaves = await fetcher.GetGameSaves(),
+                GameCheatsPS3 = await fetcher.GetGameCheats(),
+                TitleIdsX360 = await fetcher.GetTitleIds()
             };
 
             data.CategoriesData.Categories = [.. data.CategoriesData.Categories.OrderBy(o => o.Title)];
@@ -218,10 +243,30 @@ namespace ArisenStudio.Database
         }
 
         /// <summary>
+        /// Fetch the current Favorite Games data either from cache or the source file.
+        /// </summary>
+        /// <returns> ModsData </returns>
+        public Task<FavoriteGamesData> GetFavoriteGames() => GetFromCacheOrFetchAsync(_favoriteGamesCache, "favoriteGames", "favorite-games.json", async () =>
+        {
+            var response = await _httpClient.GetStringAsync(Urls.FavoriteGamesData);
+            return JsonConvert.DeserializeObject<FavoriteGamesData>(response);
+        });
+
+        /// <summary>
+        /// Fetch the current Favorite Mods data either from cache or the source file.
+        /// </summary>
+        /// <returns> ModsData </returns>
+        public Task<FavoriteModsData> GetFavoriteMods() => GetFromCacheOrFetchAsync(_favoriteModsCache, "favoriteMods", "favorite-mods.json", async () =>
+        {
+            var response = await _httpClient.GetStringAsync(Urls.FavoriteModsData);
+            return JsonConvert.DeserializeObject<FavoriteModsData>(response);
+        });
+
+        /// <summary>
         /// Fetch the Categories data either from cache or the source file.
         /// </summary>
         /// <returns></returns>
-        public Task<CategoriesData> GetCategories() => GetFromCacheOrFetchAsync(_categoriesCache, "categories", async () =>
+        public Task<CategoriesData> GetCategories() => GetFromCacheOrFetchAsync(_categoriesCache, "categories", "categories.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.CategoriesData);
             return JsonConvert.DeserializeObject<CategoriesData>(response);
@@ -231,7 +276,7 @@ namespace ArisenStudio.Database
         /// Fetch the Game Mods data either from cache or the source file.
         /// </summary>
         /// <returns></returns>
-        public Task<ModsData> GetGameMods() => GetFromCacheOrFetchAsync(_gameModsCache, "gameMods", async () =>
+        public Task<ModsData> GetGameModsPS3() => GetFromCacheOrFetchAsync(_gameModsCachePS3, "gameModsPS3", "PS3/game-mods-new.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.GameModsDataPS3);
             return JsonConvert.DeserializeObject<ModsData>(response);
@@ -241,7 +286,7 @@ namespace ArisenStudio.Database
         /// Fetch the Homebrew data either from cache or the source file.
         /// </summary>
         /// <returns></returns>
-        public Task<ModsData> GetHomebrew() => GetFromCacheOrFetchAsync(_homebrewCache, "homebrew", async () =>
+        private Task<ModsData> GetHomebrewPS3() => GetFromCacheOrFetchAsync(_homebrewCachePS3, "homebrewPS3", "PS3/homebrew-new.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.HomebrewDataPS3);
             return JsonConvert.DeserializeObject<ModsData>(response);
@@ -251,7 +296,7 @@ namespace ArisenStudio.Database
         /// Fetch the Resources data either from cache or the source file.
         /// </summary>
         /// <returns></returns>
-        public Task<ModsData> GetResources() => GetFromCacheOrFetchAsync(_resourcesCache, "resources", async () =>
+        private Task<ModsData> GetResourcesPS3() => GetFromCacheOrFetchAsync(_resourcesCachePS3, "resourcesPS3", "PS3/resources-new.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.ResourcesDataPS3);
             return JsonConvert.DeserializeObject<ModsData>(response);
@@ -263,7 +308,7 @@ namespace ArisenStudio.Database
         /// Fetch the Game Packages data either from cache or the source file.
         /// </summary>
         /// <returns> ModsData </returns>
-        public Task<PackagesData> GetGamesPackages() => GetFromCacheOrFetchAsync(_gamePackagesCache, "gamePackages", async () =>
+        private Task<PackagesData> GetGamesPkgsPS3() => GetFromCacheOrFetchAsync(_gamePackagesCachePS3, "gamesPkgsPS3", "PS3/packages/games.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.PackagesGamesDataPS3);
 
@@ -281,7 +326,7 @@ namespace ArisenStudio.Database
         /// Fetch the Demo Packages data either from cache or the source file.
         /// </summary>
         /// <returns> ModsData </returns>
-        public Task<PackagesData> GetDemosPackages() => GetFromCacheOrFetchAsync(_demoPackagesCache, "demoPackages", async () =>
+        private Task<PackagesData> GetDemosPkgsPS3() => GetFromCacheOrFetchAsync(_demoPackagesCachePS3, "demosPkgsPS3", "PS3/packages/demos.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.PackagesDemosDataPS3);
             PackagesData demos = JsonConvert.DeserializeObject<PackagesData>(response);
@@ -298,7 +343,7 @@ namespace ArisenStudio.Database
         /// Fetch the DLC Packages data either from cache or the source file.
         /// </summary>
         /// <returns> ModsData </returns>
-        public Task<PackagesData> GetDLCsPackages() => GetFromCacheOrFetchAsync(_dlcPackagesCache, "dlcPackages", async () =>
+        private Task<PackagesData> GetDLCsPkgsPS3() => GetFromCacheOrFetchAsync(_dlcPackagesCachePS3, "DLCsPkgsPS3", "PS3/packages/dlcs.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.PackagesDLCsDataPS3);
             PackagesData dlcs = JsonConvert.DeserializeObject<PackagesData>(response);
@@ -315,7 +360,7 @@ namespace ArisenStudio.Database
         /// Fetch the Avatar Packages data either from cache or the source file.
         /// </summary>
         /// <returns> ModsData </returns>
-        public Task<PackagesData> GetAvatarsPackages() => GetFromCacheOrFetchAsync(_avatarPackagesCache, "avatarPackages", async () =>
+        private Task<PackagesData> GetAvatarsPkgsPS3() => GetFromCacheOrFetchAsync(_avatarPackagesCachePS3, "avatarsPkgsPS3", "PS3/packages/avatars.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.PackagesAvatarsDataPS3);
             PackagesData avatars = JsonConvert.DeserializeObject<PackagesData>(response);
@@ -332,7 +377,7 @@ namespace ArisenStudio.Database
         /// Fetch the Theme Packages data either from cache or the source file.
         /// </summary>
         /// <returns> ModsData </returns>
-        public Task<PackagesData> GetThemePackages() => GetFromCacheOrFetchAsync(_themePackagesCache, "themePackages", async () =>
+        private Task<PackagesData> GetThemesPkgsPS3() => GetFromCacheOrFetchAsync(_themePackagesCachePS3, "themesPkgsPS3", "PS3/packages/themes.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.PackagesThemesDataPS3);
             PackagesData themes = JsonConvert.DeserializeObject<PackagesData>(response);
@@ -349,7 +394,7 @@ namespace ArisenStudio.Database
         /// Fetch the Applications data either from cache or the source file.
         /// </summary>
         /// <returns> ModsData </returns>
-        public Task<AppsData> GetHomebrewPS4() => GetFromCacheOrFetchAsync(_appsCache, "homebrewPS4", async () =>
+        public Task<AppsData> GetHomebrewPS4() => GetFromCacheOrFetchAsync(_homebrewCachePS4, "homebrewPS4", "PS4/homebrew.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.HomebrewDataPS4);
             return JsonConvert.DeserializeObject<AppsData>(response);
@@ -359,7 +404,7 @@ namespace ArisenStudio.Database
         /// Fetch the Plugins data either from cache or the source file.
         /// </summary>
         /// <returns> ModsData </returns>
-        public Task<ModsData> GetGameModsXbox() => GetFromCacheOrFetchAsync(_pluginsCache, "gameModsXbox", async () =>
+        public Task<ModsData> GetGameModsX360() => GetFromCacheOrFetchAsync(_gameModsCacheX360, "gameModsXB360", "XBOX360/game-mods.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.GameModsDataXbox);
             return JsonConvert.DeserializeObject<ModsData>(response);
@@ -369,7 +414,7 @@ namespace ArisenStudio.Database
         /// Fetch the Plugins data either from cache or the source file.
         /// </summary>
         /// <returns> ModsData </returns>
-        public Task<ModsData> GetHomebrewXbox() => GetFromCacheOrFetchAsync(_pluginsCache, "homebrewXbox", async () =>
+        public Task<ModsData> GetHomebrewX360() => GetFromCacheOrFetchAsync(_homebrewCacheX360, "homebrewXB360", "XBOX360/homebrew.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.HomebrewDataXbox);
             return JsonConvert.DeserializeObject<ModsData>(response);
@@ -379,7 +424,7 @@ namespace ArisenStudio.Database
         /// Fetch the Game Saves data either from cache or the source file.
         /// </summary>
         /// <returns> ModsData </returns>
-        public Task<GameSavesData> GetGameSaves() => GetFromCacheOrFetchAsync(_gameSavesCache, "gameSaves", async () =>
+        public Task<GameSavesData> GetGameSaves() => GetFromCacheOrFetchAsync(_gameSavesCache, "gameSaves", "resources.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.GameSavesData);
             return JsonConvert.DeserializeObject<GameSavesData>(response);
@@ -389,7 +434,7 @@ namespace ArisenStudio.Database
         /// Fetch the Game Cheats data either from cache or the source file.
         /// </summary>
         /// <returns> ModsData </returns>
-        public Task<GameCheatsData> GetGameCheats() => GetFromCacheOrFetchAsync(_gameCheatsCache, "gameCheats", async () =>
+        public Task<GameCheatsData> GetGameCheats() => GetFromCacheOrFetchAsync(_gameCheatsCachePS3, "gameCheatsPS3", "PS3/game-cheats.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.GameCheatsDataPS3);
             return JsonConvert.DeserializeObject<GameCheatsData>(response);
@@ -399,30 +444,10 @@ namespace ArisenStudio.Database
         /// Fetch the Game Title Ids data either from cache or the source file.
         /// </summary>
         /// <returns> ModsData </returns>
-        public Task<GamesTitleIdsDataXbox> GetGamesTitleIds() => GetFromCacheOrFetchAsync(_gameTitleIdsCache, "gameTitleIds", async () =>
+        public Task<TitleIdsDataXbox> GetTitleIds() => GetFromCacheOrFetchAsync(_titleIdsCacheX360, "titleIdsX360", "XBOX360/titleids.json", async () =>
         {
             var response = await _httpClient.GetStringAsync(Urls.GameTitleIdsXbox);
-            return JsonConvert.DeserializeObject<GamesTitleIdsDataXbox>(response);
-        });
-
-        /// <summary>
-        /// Fetch the current Favorite Games data either from cache or the source file.
-        /// </summary>
-        /// <returns> ModsData </returns>
-        public Task<FavoriteGamesData> GetFavoriteGames() => GetFromCacheOrFetchAsync(_favoriteGamesCache, "favoriteGames", async () =>
-        {
-            var response = await _httpClient.GetStringAsync(Urls.FavoriteGamesData);
-            return JsonConvert.DeserializeObject<FavoriteGamesData>(response);
-        });
-
-        /// <summary>
-        /// Fetch the current Favorite Mods data either from cache or the source file.
-        /// </summary>
-        /// <returns> ModsData </returns>
-        public Task<FavoriteModsData> GetFavoriteMods() => GetFromCacheOrFetchAsync(_favoriteModsCache, "favoriteMods", async () =>
-        {
-            var response = await _httpClient.GetStringAsync(Urls.FavoriteModsData);
-            return JsonConvert.DeserializeObject<FavoriteModsData>(response);
+            return JsonConvert.DeserializeObject<TitleIdsDataXbox>(response);
         });
 
         /// <summary>
@@ -515,13 +540,13 @@ namespace ArisenStudio.Database
             {
                 return ResourcesPS3.GetModById(platform, modId);
             }
-            else if (platform == Platform.XBOX360 && categoryType == CategoryType.Resource)
+            else if (platform == Platform.XBOX360 && categoryType == CategoryType.Game)
             {
-                return GameModsXbox.GetModById(platform, modId);
+                return GameModsX360.GetModById(platform, modId);
             }
-            else if (platform == Platform.XBOX360 && categoryType == CategoryType.Resource)
+            else if (platform == Platform.XBOX360 && categoryType == CategoryType.Homebrew)
             {
-                return HomebrewXbox.GetModById(platform, modId);
+                return HomebrewX360.GetModById(platform, modId);
             }
             else
             {

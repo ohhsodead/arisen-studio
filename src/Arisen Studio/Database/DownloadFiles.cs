@@ -28,7 +28,7 @@ namespace ArisenStudio.Database
         /// <summary>
         /// Check whether any files are being installed to a game folder.
         /// </summary>
-        public bool RequiresGameRegion => InstallPaths.Any(x => x.Contains("{REGION}"));
+        public bool RequiresGameRegion => InstallPaths.Any(static x => x.Contains("{REGION}"));
 
         /// <summary>
         /// Check whether any files are being installed to a profile user's folder.
