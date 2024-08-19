@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -308,8 +308,8 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
   <data name="DATA_MISSING" xml:space="preserve">
     <value>FALTA DE DATOS</value>
   </data>
-  <data name="DEFAULT_CONSOLE_ALREADY_EXISTS" xml:space="preserve">
-    <value>Ya has establecido '{0}' como tu consola predeterminada. Por favor, edite esa consola y desmarque la opción "Usar predeterminado" para establecer esta consola como la predeterminada.</value>
+  <data name="DEFAULT_PROFILE_ALREADY_EXISTS" xml:space="preserve">
+    <value>Ya has establecido '{0}' como tu perfil predeterminado. ¿Quieres reemplazarlo con este?</value>
   </data>
   <data name="DELETE" xml:space="preserve">
     <value>Eliminar</value>
@@ -706,6 +706,9 @@ PaquetePSN : Ejecuta PaquetePSN y presiona R1. Debería mostrar una lista de los
   <data name="IMPORTANT_MESSAGE" xml:space="preserve">
     <value>Mensaje importante</value>
   </data>
+  <data name="INCORRECT_IP_FORMAT" xml:space="preserve">
+    <value>Dirección IP no está en el formato correcto.</value>
+  </data>
   <data name="INITIALIZED" xml:space="preserve">
     <value>Inicializado</value>
   </data>
@@ -773,6 +776,9 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
   <data name="INTERFACE" xml:space="preserve">
     <value>Interfaz</value>
   </data>
+  <data name="INVALID_INPUT" xml:space="preserve">
+    <value>Entrada Inválida</value>
+  </data>
   <data name="INVALID_TITLE_ID" xml:space="preserve">
     <value>ID inválido o no pudo ser encontrado. ¿Estás seguro de que este es un título ID válido de PS3?</value>
   </data>
@@ -837,11 +843,11 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
   <data name="LABEL_CLOSE" xml:space="preserve">
     <value>Cerrar</value>
   </data>
-  <data name="LABEL_CONNECTION_DETAILS" xml:space="preserve">
-    <value>Detalles de la conexión</value>
+  <data name="LABEL_PROFILE_DETAILS" xml:space="preserve">
+    <value>Detalles del Perfil</value>
   </data>
-  <data name="LABEL_CONNECTION_NAME" xml:space="preserve">
-    <value>Nombre de la conexión</value>
+  <data name="LABEL_PROFILE_NAME" xml:space="preserve">
+    <value>Nombre de Perfil</value>
   </data>
   <data name="LABEL_CONTENT_ID" xml:space="preserve">
     <value>ID del contenido</value>
@@ -914,6 +920,10 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
   </data>
   <data name="LABEL_EDIT" xml:space="preserve">
     <value>Editar</value>
+  </data>
+  <data name="LABEL_EDIT_PROFILE_DETAILS" xml:space="preserve">
+    <value>Editar los Detalles de Perfil</value>
+    <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_EDIT_NAME" xml:space="preserve">
     <value>Editar nombre</value>
@@ -999,6 +1009,9 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
   <data name="LABEL_IP_ADDRESS" xml:space="preserve">
     <value>Dirección IP</value>
   </data>
+  <data name="LABEL_IP_OR_NAME" xml:space="preserve">
+    <value>IP/Nombre</value>
+  </data>
   <data name="LABEL_LAST_MODIFIED" xml:space="preserve">
     <value>Modificado en</value>
   </data>
@@ -1043,6 +1056,10 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
   </data>
   <data name="LABEL_NAME" xml:space="preserve">
     <value>Nombre</value>
+  </data>
+  <data name="LABEL_NEW_PROFILE_DETAILS" xml:space="preserve">
+    <value>Añadir Detalles del Perfil</value>
+    <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_NEW_FOLDER" xml:space="preserve">
     <value>Nueva carpeta</value>
@@ -1249,6 +1266,15 @@ Puedes añadirlos usando el administrador de archivos.</value>
   </data>
   <data name="MISSING" xml:space="preserve">
     <value>FALTA</value>
+  </data>
+  <data name="MISSING_PROFILE_NAME" xml:space="preserve">
+    <value>Debe introducir un nombre de perfil.</value>
+  </data>
+  <data name="MISSING_IP_ADDRESS" xml:space="preserve">
+    <value>Debe introducir una dirección IP.</value>
+  </data>
+  <data name="MISSING_IP_OR_NAME" xml:space="preserve">
+    <value>Debe introducir una dirección IP o nombre de la consola.</value>
   </data>
   <data name="MODDING_TOOLS" xml:space="preserve">
     <value>Herramientas de modding</value>
@@ -1505,6 +1531,9 @@ Instala los mods correctos para este juego o elige una región de juego diferent
   <data name="PROFILE_EDIT" xml:space="preserve">
     <value>Editar perfil</value>
   </data>
+  <data name="PROFILE_NAME_EXISTS" xml:space="preserve">
+    <value>Un perfil con ese nombre ya existe. Elija otro nombre o edite el perfil existente.</value>
+  </data>
   <data name="QUICK_REBOOT" xml:space="preserve">
     <value>Reinicio rápido</value>
   </data>
@@ -1691,6 +1720,14 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
   <data name="UNINSTALL_CANCELED" xml:space="preserve">
     <value>Desinstalación cancelada.</value>
   </data>
+  <data name="UNINSTALL_CONNECTION_REQUIREMENT" xml:space="preserve">
+    <value>Debes estar conectado a: {0} ({1}) para desinstalar los archivos.</value>
+    <comment>Example: You must be connected to: {Console Name} ({PS3}) to uninstall these files.</comment>
+  </data>
+  <data name="UNINSTALL_CONNECT_TO_REQUIRED_CONSOLE" xml:space="preserve">
+    <value>Estos archivos no fueron instalados en la consola conectada. Por favor, conéctate a {0} ({1}) para desinstalarlos."</value>
+    <comment>Example: These files were not installed on the connected console. Please connect to {Console Name} ({PS3}) to uninstall them."</comment>
+  </data>
   <data name="UNINSTALL_FILE" xml:space="preserve">
     <value>Desinstalar archivo</value>
   </data>
@@ -1761,7 +1798,22 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
     <value>Debes introducir un título ID.</value>
   </data>
   <data name="LABEL_SAVE" xml:space="preserve">
-    <value>Guardar</value>
+    <value>Salva</value>
     <comment>Save Profile</comment>
+  </data>
+  <data name="LABEL_PASSIVE_MODE" xml:space="preserve">
+    <value>Modo Pasivo</value>
+    <comment>Passive Connection FTP</comment>
+  </data>
+  <data name="LABEL_DEFAULT_CREDENTIALS" xml:space="preserve">
+    <value>Credenciales por Defecto</value>
+    <comment>Use Default Connection Details</comment>
+  </data>
+  <data name="LABEL_DEFAULT_PROFILE" xml:space="preserve">
+    <value>Perfil Predeterminado</value>
+    <comment>Set as default profile for startup</comment>
+  </data>
+  <data name="MUST_HAVE_DEFAULT_CONSOLE" xml:space="preserve">
+    <value>Debe tener al menos un perfil establecido como predeterminado.</value>
   </data>
 </root>
