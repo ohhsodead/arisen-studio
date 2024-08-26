@@ -272,7 +272,9 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
     <value>Console Manager</value>
   </data>
   <data name="CONSOLE_NAME_ALREADY_EXISTS" xml:space="preserve">
-    <value>Console name '{0}' already exists in your list of profiles. \n\nDo you still want to add it?</value>
+    <value>Console name '{0}' already exists in your list of profiles.
+
+Do you still want to add it?</value>
   </data>
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Console Profiles</value>
@@ -390,7 +392,9 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
     <value>Unable to launch game file. Error: {0}</value>
   </data>
   <data name="ERROR_OCCURRED" xml:space="preserve">
-    <value>An error occurred: {0}\n\nPlease try again later. If the problem persists &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug.yml"&gt;open a new issue&lt;/a&gt; on our GitHub tracker.</value>
+    <value>An error occurred: {0}
+
+Please try again later. If the issue continues, you can report it by &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?labels=bug&amp;template=bug.yml"&gt;opening a new issue&lt;/a&gt; on our GitHub tracker.</value>
   </data>
   <data name="EXTRACT_IMAGE" xml:space="preserve">
     <value>Extract Image</value>
@@ -435,7 +439,9 @@ This file cannot be uninstalled to avoid missing game files, so it will be ignor
     <value>These files weren't installed to the connected console.</value>
   </data>
   <data name="FILES_REINSTALL" xml:space="preserve">
-    <value>{0} is already installed to: {1}\n\nDo you want to reinstall the files?</value>
+    <value>{0} is already installed to: {1}
+
+Do you want to reinstall the files?</value>
   </data>
   <data name="FILES_UNINSTALLING" xml:space="preserve">
     <value>Uninstalling files...</value>
@@ -717,6 +723,7 @@ Warning: Do not rename rap files ! You need to leave their original ugly name.
   </data>
   <data name="INSERT_USB_DEVICE_TO_CONSOLE" xml:space="preserve">
     <value>One or more files needs to be installed to a USB device which is connected to your console.
+
 Insert a USB device to your console and click 'Yes' to continue. Otherwise click 'No' to ignore these files.</value>
   </data>
   <data name="INSTALLED" xml:space="preserve">
@@ -1071,7 +1078,9 @@ Insert a USB device to your console and click 'Yes' to continue. Otherwise click
     <value>Not Installed</value>
   </data>
   <data name="LABEL_NO_GAMES" xml:space="preserve">
-    <value>No games added yet.\n\nYou can add them using the File Manager.</value>
+    <value>No games added yet.
+
+You can add them using the File Manager.</value>
   </data>
   <data name="LABEL_OK" xml:space="preserve">
     <value>OK</value>
@@ -1580,6 +1589,7 @@ Click the 'Submit' button to open a new issue which can help us fix any problems
     <value>Files have been installed to a USB device connected to your console. You can either uninstall them now or manually delete them.
 
 If you would like to uninstall the files now, connect the same USB device you installed the mods to into the same port of your console and click 'Yes' to continue.
+
 If you don't want to uninstall the files, click 'No' and all of these files will be ignored.</value>
   </data>
   <data name="RESTART" xml:space="preserve">
@@ -1814,5 +1824,60 @@ If you don't want to uninstall the files, click 'No' and all of these files will
   <data name="LABEL_INSTALL_IGNORE_REGIONS" xml:space="preserve">
     <value>Force install unsupported regions*</value>
     <comment>Mods that aren't supported will still be installed</comment>
+  </data>
+  <data name="INSTALLING_TRAINER" xml:space="preserve">
+    <value>Installing Trainer</value>
+  </data>
+  <data name="DOWNLOADING_TRAINER" xml:space="preserve">
+    <value>Downloading Trainer</value>
+  </data>
+  <data name="UNINSTALLING_TRAINER" xml:space="preserve">
+    <value>Uninstalling Trainer</value>
+  </data>
+  <data name="AURORA_PATH_DOESNT_EXIST" xml:space="preserve">
+    <value>Your Aurora folder is either invalid or doesn't exist on your console. Check Settings to make sure it's correct and try installing again.
+
+Aurora Path: {0}</value>
+  </data>
+  <data name="LOCAL_CACHE" xml:space="preserve">
+    <value>Local Cache</value>
+  </data>
+  <data name="CLEAR_CACHE" xml:space="preserve">
+    <value>Clear Cache</value>
+  </data>
+  <data name="CLEAR_CACHE_RESTART" xml:space="preserve">
+    <value>Clear &amp;&amp; Restart</value>
+  </data>
+  <data name="CLEAR_LOCAL_CACHE_ON_CLOSE" xml:space="preserve">
+    <value>Clear local cache on close</value>
+  </data>
+  <data name="ALWAYS_BACKUP_GAME_FILES" xml:space="preserve">
+    <value>Always backup current game files</value>
+  </data>
+  <data name="LABEL_APP_DATA" xml:space="preserve">
+    <value>App Data</value>
+  </data>
+  <data name="LABEL_TEMP" xml:space="preserve">
+    <value>Temp</value>
+  </data>
+  <data name="YES" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="LABEL_EDIT_LOGIN_CREDENTIALS" xml:space="preserve">
+    <value>Edit Login Credentials</value>
+  </data>
+  <data name="PROFILE_INFO" xml:space="preserve">
+    <value>Profile Information</value>
+  </data>
+  <data name="LABEL_DOWNLOAD_LATEST" xml:space="preserve">
+    <value>Download Latest</value>
+    <comment>Download the mods latest version</comment>
+  </data>
+  <data name="LABEL_INSTALL_LATEST" xml:space="preserve">
+    <value>Install Latest</value>
+    <comment>Download the mods latest version</comment>
   </data>
 </root>
