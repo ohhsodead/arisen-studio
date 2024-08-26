@@ -121,7 +121,7 @@
     <value>Acerca de</value>
   </data>
   <data name="ADD_CONSOLES_MANUALLY" xml:space="preserve">
-    <value>No se puede encontrar ninguna consola usando Neighborhood. Puede introducir manualmente los detalles en la página siguiente.</value>
+    <value>No se puede encontrar ninguna consola usando Neighborhood. Puedes introducir manualmente los detalles en la siguiente página.</value>
   </data>
   <data name="ADD_NEW_PROFILE" xml:space="preserve">
     <value>Añadir nuevo perfil</value>
@@ -218,7 +218,7 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
     <value>Este truco no se puede aplicar porque contiene un código de operación que aún no se ha implementado.</value>
   </data>
   <data name="CHECKING_FILES" xml:space="preserve">
-    <value>Comprobando Archivos</value>
+    <value>Comprobando archivos</value>
   </data>
   <data name="CHOOSE_ITEM" xml:space="preserve">
     <value>Escoger elemento...</value>
@@ -707,7 +707,7 @@ PaquetePSN : Ejecuta PaquetePSN y presiona R1. Debería mostrar una lista de los
     <value>Mensaje importante</value>
   </data>
   <data name="INCORRECT_IP_FORMAT" xml:space="preserve">
-    <value>Dirección IP no está en el formato correcto.</value>
+    <value>La dirección IP no está en el formato correcto.</value>
   </data>
   <data name="INITIALIZED" xml:space="preserve">
     <value>Inicializado</value>
@@ -732,7 +732,7 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
     <value>Instalando copia de seguridad: {0} de {1}</value>
   </data>
   <data name="INSTALLING_FILES" xml:space="preserve">
-    <value>Instalando Archivos</value>
+    <value>Instalando archivos</value>
   </data>
   <data name="INSTALLING_GAME_SAVE" xml:space="preserve">
     <value>Instalando partida guardada</value>
@@ -1815,5 +1815,9 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
   </data>
   <data name="MUST_HAVE_DEFAULT_CONSOLE" xml:space="preserve">
     <value>Debe tener al menos un perfil establecido como predeterminado.</value>
+  </data>
+  <data name="LABEL_INSTALL_IGNORE_REGIONS" xml:space="preserve">
+    <value>Forzar la instalación de regiones no soportadas*</value>
+    <comment>Mods that aren't supported will still be installed</comment>
   </data>
 </root>
