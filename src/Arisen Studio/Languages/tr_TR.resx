@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -272,7 +272,9 @@ Oyun dosyalarının kaybolmasını önlemek için bu dosya kaldırılamaz, bu ne
     <value>Konsol Yöneticisi</value>
   </data>
   <data name="CONSOLE_NAME_ALREADY_EXISTS" xml:space="preserve">
-    <value>Konsol adı '{0}' profil listenizde zaten mevcut. \n\nYinede eklemek istiyor musunuz?</value>
+    <value>Konsol adı '{0}' profil listenizde zaten mevcut. 
+
+Yinede eklemek istiyor musunuz?</value>
   </data>
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Konsol Profilleri</value>
@@ -308,11 +310,8 @@ Oyun dosyalarının kaybolmasını önlemek için bu dosya kaldırılamaz, bu ne
   <data name="DATA_MISSING" xml:space="preserve">
     <value>EKSİK VERİ</value>
   </data>
-  <data name="DEFAULT_ALREADY_EXISTS" xml:space="preserve">
-    <value>Zaten varsayılan olarak ayarlanmış bir konsol profiliniz var.</value>
-  </data>
-  <data name="DEFAULT_CONSOLE_ALREADY_EXISTS" xml:space="preserve">
-    <value>'{0}' zaten varsayılan konsolunuz olarak ayarlı. Bu konsolu düzenleyin ve bu konsolu varsayılan olarak ayarlamak için 'Varsayılanı Kullan' seçeneğinin işaretini kaldırın.</value>
+  <data name="DEFAULT_PROFILE_ALREADY_EXISTS" xml:space="preserve">
+    <value>'{0}' profili zaten varsayılan profil olarak ayarlı. Bununla değiştirmek ister misiniz?</value>
   </data>
   <data name="DELETE" xml:space="preserve">
     <value>Sil</value>
@@ -395,7 +394,7 @@ Oyun dosyalarının kaybolmasını önlemek için bu dosya kaldırılamaz, bu ne
   <data name="ERROR_OCCURRED" xml:space="preserve">
     <value>Bir hata oluştu: {0}
 
-Lütfen sonra deneyin. Sorun devam ederse &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt; yeni konu aç&lt;/a&gt; GitHub üstünde.</value>
+Lütfen sonra deneyin. Sorun devam ederse bildirin &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?labels=bug&amp;template=bug.yml"&gt;yeni konu aç&lt;/a&gt; GitHub üstünde.</value>
   </data>
   <data name="EXTRACT_IMAGE" xml:space="preserve">
     <value>Görüntüyü Ayıkla</value>
@@ -724,6 +723,7 @@ Uyarı: Rap dosyalarını yeniden adlandırmayın! Orijinal çirkin isimlerini b
   </data>
   <data name="INSERT_USB_DEVICE_TO_CONSOLE" xml:space="preserve">
     <value>Konsolunuza bağlı bir USB cihazına bir veya daha fazla dosyanın kurulması gerekiyor.
+
 Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa bu dosyaları yok saymak için 'Hayır' tıklayın.</value>
   </data>
   <data name="INSTALLED" xml:space="preserve">
@@ -847,11 +847,11 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   <data name="LABEL_CLOSE" xml:space="preserve">
     <value>Kapat</value>
   </data>
-  <data name="LABEL_CONNECTION_DETAILS" xml:space="preserve">
-    <value>Bağlantı Ayrıntıları</value>
+  <data name="LABEL_PROFILE_DETAILS" xml:space="preserve">
+    <value>Profil Ayrıntıları</value>
   </data>
-  <data name="LABEL_CONNECTION_NAME" xml:space="preserve">
-    <value>Bağlantı Adı</value>
+  <data name="LABEL_PROFILE_NAME" xml:space="preserve">
+    <value>Profil Adı</value>
   </data>
   <data name="LABEL_CONTENT_ID" xml:space="preserve">
     <value>İçerik ID</value>
@@ -925,8 +925,8 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   <data name="LABEL_EDIT" xml:space="preserve">
     <value>Düzenle</value>
   </data>
-  <data name="LABEL_EDIT_CONNECTION_DETAILS" xml:space="preserve">
-    <value>Bağlantı Ayrıntılarını Düzenle</value>
+  <data name="LABEL_EDIT_PROFILE_DETAILS" xml:space="preserve">
+    <value>Profil Ayrıntılarını Düzenle</value>
     <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_EDIT_NAME" xml:space="preserve">
@@ -1061,8 +1061,8 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   <data name="LABEL_NAME" xml:space="preserve">
     <value>İsim</value>
   </data>
-  <data name="LABEL_NEW_CONNECTION_DETAILS" xml:space="preserve">
-    <value>Yeni Bağlantı Ayrıntıları</value>
+  <data name="LABEL_NEW_PROFILE_DETAILS" xml:space="preserve">
+    <value>Yeni Profil Ayrıntıları</value>
     <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_NEW_FOLDER" xml:space="preserve">
@@ -1080,7 +1080,7 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
   <data name="LABEL_NO_GAMES" xml:space="preserve">
     <value>Henüz oyun eklenmemiş.
 
-Bunları Dosya Yöneticisini kullanarak ekleyebilirsiniz.</value>
+Dosya Yöneticisini kullanarak ekleyebilirsiniz.</value>
   </data>
   <data name="LABEL_OK" xml:space="preserve">
     <value>Tamam</value>
@@ -1271,8 +1271,8 @@ Bunları Dosya Yöneticisini kullanarak ekleyebilirsiniz.</value>
   <data name="MISSING" xml:space="preserve">
     <value>EKSİK</value>
   </data>
-  <data name="MISSING_CONNECTION_NAME" xml:space="preserve">
-    <value>Bir bağlantı adı girmelisiniz.</value>
+  <data name="MISSING_PROFILE_NAME" xml:space="preserve">
+    <value>Bir profil adı girmelisiniz.</value>
   </data>
   <data name="MISSING_IP_ADDRESS" xml:space="preserve">
     <value>Bir IP Adresi girmelisiniz.</value>
@@ -1588,8 +1588,9 @@ Bir sorunu çözmemize yardımcı olmak için 'Gönder' düğmesini tıklayın.<
   <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
     <value>Dosyalar, konsolunuza bağlı bir USB cihazına kuruldu. Bunları şimdi kaldırabilir veya el ile silebilirsiniz.
 
-Dosyaları şimdi kaldırmak istiyorsanız, modları yüklediğiniz aynı USB cihazını konsolunuzun aynı bağlantı noktasına bağlayın ve devam etmek için 'Evet'i tıklayın.
-Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların tümü yok sayılacaktır.</value>
+Dosyaları şimdi kaldırmak istiyorsanız, modları kurduğunuz aynı USB cihazını konsolunuzun aynı bağlantı noktasına bağlayın ve devam etmek için 'Evet' tıklayın.
+
+Dosyaları kaldırmak istemiyorsanız, 'Hayır' tıklayın ve bu dosyaların tümü yok sayılacaktır.</value>
   </data>
   <data name="RESTART" xml:space="preserve">
     <value>Yeniden Başlat</value>
@@ -1802,7 +1803,81 @@ Dosyaları kaldırmak istemiyorsanız, 'Hayır'ı tıklayın ve bu dosyaların t
     <value>Bir başlık ID girmelisiniz.</value>
   </data>
   <data name="LABEL_SAVE" xml:space="preserve">
-    <value>Kaydetmek</value>
+    <value>Kaydet</value>
     <comment>Save Profile</comment>
+  </data>
+  <data name="LABEL_PASSIVE_MODE" xml:space="preserve">
+    <value>Pasif Mod</value>
+    <comment>Passive Connection FTP</comment>
+  </data>
+  <data name="LABEL_DEFAULT_CREDENTIALS" xml:space="preserve">
+    <value>Varsayılan Kimlik Bilgileri</value>
+    <comment>Use Default Connection Details</comment>
+  </data>
+  <data name="LABEL_DEFAULT_PROFILE" xml:space="preserve">
+    <value>Varsayılan Profil</value>
+    <comment>Set as default profile for startup</comment>
+  </data>
+  <data name="MUST_HAVE_DEFAULT_CONSOLE" xml:space="preserve">
+    <value>Varsayılan olarak en az bir profilinizin ayarlanmış olması gerekir.</value>
+  </data>
+  <data name="LABEL_INSTALL_IGNORE_REGIONS" xml:space="preserve">
+    <value>Desteklenmeyen bölgeleri zorla kur*</value>
+    <comment>Mods that aren't supported will still be installed</comment>
+  </data>
+  <data name="INSTALLING_TRAINER" xml:space="preserve">
+    <value>Hile Kuruluyor</value>
+  </data>
+  <data name="DOWNLOADING_TRAINER" xml:space="preserve">
+    <value>Hile İndiriliyor</value>
+  </data>
+  <data name="UNINSTALLING_TRAINER" xml:space="preserve">
+    <value>Hile Kaldırılıyor</value>
+  </data>
+  <data name="AURORA_PATH_DOESNT_EXIST" xml:space="preserve">
+    <value>Aurora klasörü geçersiz veya konsolunuzda mevcut değil. Doğru olduğundan emin olmak için Ayarları kontrol edin ve tekrar kurmayı deneyin.
+
+Aurora Yolu: {0}</value>
+  </data>
+  <data name="LOCAL_CACHE" xml:space="preserve">
+    <value>Yerel Önbellek</value>
+  </data>
+  <data name="CLEAR_CACHE" xml:space="preserve">
+    <value>Önbelleği Temizle</value>
+  </data>
+  <data name="CLEAR_CACHE_RESTART" xml:space="preserve">
+    <value>Temizle &amp;&amp; Yeniden Başlat</value>
+  </data>
+  <data name="CLEAR_LOCAL_CACHE_ON_CLOSE" xml:space="preserve">
+    <value>Kapatıldığında yerel önbelleği temizle</value>
+  </data>
+  <data name="ALWAYS_BACKUP_GAME_FILES" xml:space="preserve">
+    <value>Mevcut oyun dosyalarını her zaman yedekle</value>
+  </data>
+  <data name="LABEL_APP_DATA" xml:space="preserve">
+    <value>Uygulama Verisi</value>
+  </data>
+  <data name="LABEL_TEMP" xml:space="preserve">
+    <value>Geçici</value>
+  </data>
+  <data name="YES" xml:space="preserve">
+    <value>Evet</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>Hayır</value>
+  </data>
+  <data name="LABEL_EDIT_LOGIN_CREDENTIALS" xml:space="preserve">
+    <value>Kimlik Bilgilerini Düzenle</value>
+  </data>
+  <data name="PROFILE_INFO" xml:space="preserve">
+    <value>Profil Bilgileri</value>
+  </data>
+  <data name="LABEL_DOWNLOAD_LATEST" xml:space="preserve">
+    <value>Son Sürümü İndir</value>
+    <comment>Download the mods latest version</comment>
+  </data>
+  <data name="LABEL_INSTALL_LATEST" xml:space="preserve">
+    <value>Son Sürümü Kur</value>
+    <comment>Download the mods latest version</comment>
   </data>
 </root>
