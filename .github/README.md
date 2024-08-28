@@ -153,7 +153,7 @@ I know that not all mods aren't on our database, but if you [open an issue](http
 * [Serdar Sağlam](mailto:serdarsaglam@msn.com)
 * [Kloido](mailto:jaortiz2026@gmail.com)
 * [klwerous](https://crowdin.com/profile/klwerous)
-* [WTFj)](https://crowdin.com/profile/WTFj)
+* [WTFj](https://crowdin.com/profile/WTFj)
 * [Crowdin Team](https://crowdin.com/project/arisenstudio/members)
 
 ## Supporters
